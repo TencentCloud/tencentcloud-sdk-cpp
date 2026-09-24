@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ags/v20250920/model/CloudRegistry.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>更新后的 Registry 详情。</p>
+                     * @return Registry <p>更新后的 Registry 详情。</p>
+                     * 
+                     */
+                    CloudRegistry GetRegistry() const;
+
+                    /**
+                     * 判断参数 Registry 是否已赋值
+                     * @return Registry 是否已赋值
+                     * 
+                     */
+                    bool RegistryHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>更新后的 Registry 详情。</p>
+                     */
+                    CloudRegistry m_registry;
+                    bool m_registryHasBeenSet;
 
                 };
             }

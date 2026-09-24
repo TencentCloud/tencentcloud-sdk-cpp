@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型输出模态</p>
-                     * @return Capability <p>模型输出模态</p>
+                     * 获取<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
+                     * @return Capability <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
                      * 
                      */
                     std::string GetCapability() const;
 
                     /**
-                     * 设置<p>模型输出模态</p>
-                     * @param _capability <p>模型输出模态</p>
+                     * 设置<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
+                     * @param _capability <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
                      * 
                      */
                     void SetCapability(const std::string& _capability);
@@ -125,6 +125,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CapabilityHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>rerank： 重排序</li><li>video： 视频</li></ul>
+                     * @return Capabilities <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>rerank： 重排序</li><li>video： 视频</li></ul>
+                     * 
+                     */
+                    std::vector<std::string> GetCapabilities() const;
+
+                    /**
+                     * 设置<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>rerank： 重排序</li><li>video： 视频</li></ul>
+                     * @param _capabilities <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>rerank： 重排序</li><li>video： 视频</li></ul>
+                     * 
+                     */
+                    void SetCapabilities(const std::vector<std::string>& _capabilities);
+
+                    /**
+                     * 判断参数 Capabilities 是否已赋值
+                     * @return Capabilities 是否已赋值
+                     * 
+                     */
+                    bool CapabilitiesHasBeenSet() const;
 
                 private:
 
@@ -147,10 +168,16 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * <p>模型输出模态</p>
+                     * <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
                      */
                     std::string m_capability;
                     bool m_capabilityHasBeenSet;
+
+                    /**
+                     * <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>rerank： 重排序</li><li>video： 视频</li></ul>
+                     */
+                    std::vector<std::string> m_capabilities;
+                    bool m_capabilitiesHasBeenSet;
 
                 };
             }

@@ -67,6 +67,8 @@
 #include <tencentcloud/teo/v20220901/model/CreateFunctionRuleResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateInferenceAPITokenRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateInferenceAPITokenResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateInferenceDomainRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateInferenceDomainResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateInferenceServiceRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateInferenceServiceResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateJustInTimeTranscodeTemplateRequest.h>
@@ -241,6 +243,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeIdentificationsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeInferenceAPITokensRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeInferenceAPITokensResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceDomainsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeInferenceDomainsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeInferenceHardwareSpecificationsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeInferenceHardwareSpecificationsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeInferenceServiceDeploymentLogsRequest.h>
@@ -481,6 +485,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyZoneStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneWorkModeRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneWorkModeResponse.h>
+#include <tencentcloud/teo/v20220901/model/OperateInferenceDomainRequest.h>
+#include <tencentcloud/teo/v20220901/model/OperateInferenceDomainResponse.h>
 #include <tencentcloud/teo/v20220901/model/OperateInferenceServiceRequest.h>
 #include <tencentcloud/teo/v20220901/model/OperateInferenceServiceResponse.h>
 #include <tencentcloud/teo/v20220901/model/RefreshMultiPathGatewaySecretKeyRequest.h>
@@ -571,6 +577,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInferenceAPITokenResponse> CreateInferenceAPITokenOutcome;
                 typedef std::future<CreateInferenceAPITokenOutcome> CreateInferenceAPITokenOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateInferenceAPITokenRequest&, CreateInferenceAPITokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInferenceAPITokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInferenceDomainResponse> CreateInferenceDomainOutcome;
+                typedef std::future<CreateInferenceDomainOutcome> CreateInferenceDomainOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateInferenceDomainRequest&, CreateInferenceDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInferenceDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInferenceServiceResponse> CreateInferenceServiceOutcome;
                 typedef std::future<CreateInferenceServiceOutcome> CreateInferenceServiceOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateInferenceServiceRequest&, CreateInferenceServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInferenceServiceAsyncHandler;
@@ -832,6 +841,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInferenceAPITokensResponse> DescribeInferenceAPITokensOutcome;
                 typedef std::future<DescribeInferenceAPITokensOutcome> DescribeInferenceAPITokensOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeInferenceAPITokensRequest&, DescribeInferenceAPITokensOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferenceAPITokensAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInferenceDomainsResponse> DescribeInferenceDomainsOutcome;
+                typedef std::future<DescribeInferenceDomainsOutcome> DescribeInferenceDomainsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeInferenceDomainsRequest&, DescribeInferenceDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferenceDomainsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInferenceHardwareSpecificationsResponse> DescribeInferenceHardwareSpecificationsOutcome;
                 typedef std::future<DescribeInferenceHardwareSpecificationsOutcome> DescribeInferenceHardwareSpecificationsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeInferenceHardwareSpecificationsRequest&, DescribeInferenceHardwareSpecificationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferenceHardwareSpecificationsAsyncHandler;
@@ -1192,6 +1204,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyZoneWorkModeResponse> ModifyZoneWorkModeOutcome;
                 typedef std::future<ModifyZoneWorkModeOutcome> ModifyZoneWorkModeOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyZoneWorkModeRequest&, ModifyZoneWorkModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneWorkModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::OperateInferenceDomainResponse> OperateInferenceDomainOutcome;
+                typedef std::future<OperateInferenceDomainOutcome> OperateInferenceDomainOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::OperateInferenceDomainRequest&, OperateInferenceDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateInferenceDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::OperateInferenceServiceResponse> OperateInferenceServiceOutcome;
                 typedef std::future<OperateInferenceServiceOutcome> OperateInferenceServiceOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::OperateInferenceServiceRequest&, OperateInferenceServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateInferenceServiceAsyncHandler;
@@ -1423,6 +1438,19 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateInferenceAPITokenOutcome CreateInferenceAPIToken(const Model::CreateInferenceAPITokenRequest &request);
                 void CreateInferenceAPITokenAsync(const Model::CreateInferenceAPITokenRequest& request, const CreateInferenceAPITokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInferenceAPITokenOutcomeCallable CreateInferenceAPITokenCallable(const Model::CreateInferenceAPITokenRequest& request);
+
+                /**
+                 *创建推理服务域名，用于通过自定义域名访问推理服务，一个推理服务下最多支持创建 5 个自定义域名。
+创建成功后，还需完成以下步骤，域名才能正常对外提供访问：
+1. 校验域名 CNAME 配置状态，请参考 [CheckCnameStatus](https://cloud.tencent.com/document/api/1552/94491) 接口；
+2. 验证归属权，请参考 [VerifyOwnership](https://cloud.tencent.com/document/api/1552/98879) 接口；
+3. 配置域名证书，请参考 [ModifyHostsCertificate](https://cloud.tencent.com/document/api/1552/80764) 接口。
+                 * @param req CreateInferenceDomainRequest
+                 * @return CreateInferenceDomainOutcome
+                 */
+                CreateInferenceDomainOutcome CreateInferenceDomain(const Model::CreateInferenceDomainRequest &request);
+                void CreateInferenceDomainAsync(const Model::CreateInferenceDomainRequest& request, const CreateInferenceDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInferenceDomainOutcomeCallable CreateInferenceDomainCallable(const Model::CreateInferenceDomainRequest& request);
 
                 /**
                  *创建推理服务，支持设置服务名称、监听端口、容器镜像配置和资源配置，创建成功后提供推理访问地址。
@@ -2246,6 +2274,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeInferenceAPITokensOutcome DescribeInferenceAPITokens(const Model::DescribeInferenceAPITokensRequest &request);
                 void DescribeInferenceAPITokensAsync(const Model::DescribeInferenceAPITokensRequest& request, const DescribeInferenceAPITokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInferenceAPITokensOutcomeCallable DescribeInferenceAPITokensCallable(const Model::DescribeInferenceAPITokensRequest& request);
+
+                /**
+                 *查询推理服务域名列表，返回域名的Cname地址、归属权验证和证书等相关信息。
+                 * @param req DescribeInferenceDomainsRequest
+                 * @return DescribeInferenceDomainsOutcome
+                 */
+                DescribeInferenceDomainsOutcome DescribeInferenceDomains(const Model::DescribeInferenceDomainsRequest &request);
+                void DescribeInferenceDomainsAsync(const Model::DescribeInferenceDomainsRequest& request, const DescribeInferenceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInferenceDomainsOutcomeCallable DescribeInferenceDomainsCallable(const Model::DescribeInferenceDomainsRequest& request);
 
                 /**
                  *查询推理硬件规格列表，返回各规格的 CPU、内存、GPU 和显存等配置，创建服务时可从中选择所需规格。
@@ -3367,6 +3404,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyZoneWorkModeOutcome ModifyZoneWorkMode(const Model::ModifyZoneWorkModeRequest &request);
                 void ModifyZoneWorkModeAsync(const Model::ModifyZoneWorkModeRequest& request, const ModifyZoneWorkModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyZoneWorkModeOutcomeCallable ModifyZoneWorkModeCallable(const Model::ModifyZoneWorkModeRequest& request);
+
+                /**
+                 *操作推理服务域名，支持停止、启用和删除推理服务域名，删除后的资源不可恢复。
+                 * @param req OperateInferenceDomainRequest
+                 * @return OperateInferenceDomainOutcome
+                 */
+                OperateInferenceDomainOutcome OperateInferenceDomain(const Model::OperateInferenceDomainRequest &request);
+                void OperateInferenceDomainAsync(const Model::OperateInferenceDomainRequest& request, const OperateInferenceDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OperateInferenceDomainOutcomeCallable OperateInferenceDomainCallable(const Model::OperateInferenceDomainRequest& request);
 
                 /**
                  *操作推理服务，支持停止、启动和删除推理服务，删除后资源不可恢复。

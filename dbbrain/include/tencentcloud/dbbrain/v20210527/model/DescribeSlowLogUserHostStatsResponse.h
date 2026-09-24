@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取来源地址数目。
-                     * @return TotalCount 来源地址数目。
+                     * 获取<p>来源地址数目。</p>
+                     * @return TotalCount <p>来源地址数目。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取各来源地址的慢日志占比详情列表。
-                     * @return Items 各来源地址的慢日志占比详情列表。
+                     * 获取<p>各来源地址的慢日志占比详情列表。</p>
+                     * @return Items <p>各来源地址的慢日志占比详情列表。</p>
                      * 
                      */
                     std::vector<SlowLogHost> GetItems() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool ItemsHasBeenSet() const;
 
                     /**
-                     * 获取各来源用户名的慢日志占比详情列表。
-                     * @return UserNameItems 各来源用户名的慢日志占比详情列表。
+                     * 获取<p>各来源用户名的慢日志占比详情列表。</p>
+                     * @return UserNameItems <p>各来源用户名的慢日志占比详情列表。</p>
                      * 
                      */
                     std::vector<SlowLogUser> GetUserNameItems() const;
@@ -88,8 +88,8 @@ namespace TencentCloud
                     bool UserNameItemsHasBeenSet() const;
 
                     /**
-                     * 获取来源用户数目。
-                     * @return UserTotalCount 来源用户数目。
+                     * 获取<p>来源用户数目。</p>
+                     * @return UserTotalCount <p>来源用户数目。</p>
                      * 
                      */
                     int64_t GetUserTotalCount() const;
@@ -104,25 +104,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 来源地址数目。
+                     * <p>来源地址数目。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 各来源地址的慢日志占比详情列表。
+                     * <p>各来源地址的慢日志占比详情列表。</p>
                      */
                     std::vector<SlowLogHost> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
-                     * 各来源用户名的慢日志占比详情列表。
+                     * <p>各来源用户名的慢日志占比详情列表。</p>
                      */
                     std::vector<SlowLogUser> m_userNameItems;
                     bool m_userNameItemsHasBeenSet;
 
                     /**
-                     * 来源用户数目。
+                     * <p>来源用户数目。</p>
                      */
                     int64_t m_userTotalCount;
                     bool m_userTotalCountHasBeenSet;

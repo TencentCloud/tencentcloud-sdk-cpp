@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-RejectRegistryRecordResponse::RejectRegistryRecordResponse()
+RejectRegistryRecordResponse::RejectRegistryRecordResponse() :
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome RejectRegistryRecordResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("Version") && !rsp["Version"].IsNull())
+    {
+        if (!rsp["Version"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Version` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_version.Deserialize(rsp["Version"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_versionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string RejectRegistryRecordResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_version.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string RejectRegistryRecordResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+CloudRecordVersion RejectRegistryRecordResponse::GetVersion() const
+{
+    return m_version;
+}
+
+bool RejectRegistryRecordResponse::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
 
 

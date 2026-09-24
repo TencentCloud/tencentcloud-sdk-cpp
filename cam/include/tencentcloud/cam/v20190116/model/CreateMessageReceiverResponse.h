@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>手机号验证地址。</p>
+                     * @return PhoneNumVerifyLink <p>手机号验证地址。</p>
+                     * 
+                     */
+                    std::string GetPhoneNumVerifyLink() const;
+
+                    /**
+                     * 判断参数 PhoneNumVerifyLink 是否已赋值
+                     * @return PhoneNumVerifyLink 是否已赋值
+                     * 
+                     */
+                    bool PhoneNumVerifyLinkHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>手机号验证地址。</p>
+                     */
+                    std::string m_phoneNumVerifyLink;
+                    bool m_phoneNumVerifyLinkHasBeenSet;
 
                 };
             }

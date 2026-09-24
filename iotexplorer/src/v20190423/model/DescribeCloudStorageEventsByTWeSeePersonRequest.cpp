@@ -28,6 +28,8 @@ DescribeCloudStorageEventsByTWeSeePersonRequest::DescribeCloudStorageEventsByTWe
     m_personIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_channelIdHasBeenSet(false)
 {
 }
@@ -77,6 +79,22 @@ string DescribeCloudStorageEventsByTWeSeePersonRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
     }
 
     if (m_channelIdHasBeenSet)
@@ -173,6 +191,38 @@ void DescribeCloudStorageEventsByTWeSeePersonRequest::SetOffset(const uint64_t& 
 bool DescribeCloudStorageEventsByTWeSeePersonRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+int64_t DescribeCloudStorageEventsByTWeSeePersonRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeCloudStorageEventsByTWeSeePersonRequest::SetStartTime(const int64_t& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeCloudStorageEventsByTWeSeePersonRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+int64_t DescribeCloudStorageEventsByTWeSeePersonRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeCloudStorageEventsByTWeSeePersonRequest::SetEndTime(const int64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeCloudStorageEventsByTWeSeePersonRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 uint64_t DescribeCloudStorageEventsByTWeSeePersonRequest::GetChannelId() const

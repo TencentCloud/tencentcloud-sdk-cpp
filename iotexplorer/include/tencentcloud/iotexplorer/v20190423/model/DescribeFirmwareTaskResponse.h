@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取固件任务ID
-                     * @return TaskId 固件任务ID
+                     * 获取<p>固件任务ID</p>
+                     * @return TaskId <p>固件任务ID</p>
                      * 
                      */
                     uint64_t GetTaskId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取固件任务状态
-                     * @return Status 固件任务状态
+                     * 获取<p>固件任务状态</p>
+                     * @return Status <p>固件任务状态</p>
                      * 
                      */
                     int64_t GetStatus() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取固件任务创建时间，单位：秒
-                     * @return CreateTime 固件任务创建时间，单位：秒
+                     * 获取<p>固件任务创建时间，单位：秒</p>
+                     * @return CreateTime <p>固件任务创建时间，单位：秒</p>
                      * 
                      */
                     int64_t GetCreateTime() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取固件任务升级类型
-                     * @return Type 固件任务升级类型
+                     * 获取<p>固件任务升级类型</p>
+                     * @return Type <p>固件任务升级类型</p>
                      * 
                      */
                     int64_t GetType() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取产品名称
-                     * @return ProductName 产品名称
+                     * 获取<p>产品名称</p>
+                     * @return ProductName <p>产品名称</p>
                      * 
                      */
                     std::string GetProductName() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）
-                     * @return UpgradeMode 固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）
+                     * 获取<p>固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）</p>
+                     * @return UpgradeMode <p>固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）</p>
                      * 
                      */
                     std::string GetUpgradeMode() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool UpgradeModeHasBeenSet() const;
 
                     /**
-                     * 获取产品ID
-                     * @return ProductId 产品ID
+                     * 获取<p>产品ID</p>
+                     * @return ProductId <p>产品ID</p>
                      * 
                      */
                     std::string GetProductId() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回
-                     * @return OriginalVersion 原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回
+                     * 获取<p>原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回</p>
+                     * @return OriginalVersion <p>原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回</p>
                      * 
                      */
                     std::string GetOriginalVersion() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool OriginalVersionHasBeenSet() const;
 
                     /**
-                     * 获取创建账号ID
-                     * @return CreateUserId 创建账号ID
+                     * 获取<p>创建账号ID</p>
+                     * @return CreateUserId <p>创建账号ID</p>
                      * 
                      */
                     uint64_t GetCreateUserId() const;
@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool CreateUserIdHasBeenSet() const;
 
                     /**
-                     * 获取创建账号ID昵称
-                     * @return CreatorNickName 创建账号ID昵称
+                     * 获取<p>创建账号ID昵称</p>
+                     * @return CreatorNickName <p>创建账号ID昵称</p>
                      * 
                      */
                     std::string GetCreatorNickName() const;
@@ -184,8 +184,8 @@ namespace TencentCloud
                     bool CreatorNickNameHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间
-                     * @return DelayTime 延迟时间
+                     * 获取<p>延迟时间</p>
+                     * @return DelayTime <p>延迟时间</p>
                      * 
                      */
                     uint64_t GetDelayTime() const;
@@ -198,8 +198,8 @@ namespace TencentCloud
                     bool DelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取超时时间
-                     * @return TimeoutInterval 超时时间
+                     * 获取<p>超时时间</p>
+                     * @return TimeoutInterval <p>超时时间</p>
                      * 
                      */
                     uint64_t GetTimeoutInterval() const;
@@ -212,8 +212,8 @@ namespace TencentCloud
                     bool TimeoutIntervalHasBeenSet() const;
 
                     /**
-                     * 获取静默升级or用户确认升级
-                     * @return UpgradeMethod 静默升级or用户确认升级
+                     * 获取<p>静默升级or用户确认升级</p>
+                     * @return UpgradeMethod <p>静默升级or用户确认升级</p>
                      * 
                      */
                     uint64_t GetUpgradeMethod() const;
@@ -226,8 +226,8 @@ namespace TencentCloud
                     bool UpgradeMethodHasBeenSet() const;
 
                     /**
-                     * 获取最大重试次数
-                     * @return MaxRetryNum 最大重试次数
+                     * 获取<p>最大重试次数</p>
+                     * @return MaxRetryNum <p>最大重试次数</p>
                      * 
                      */
                     uint64_t GetMaxRetryNum() const;
@@ -240,8 +240,8 @@ namespace TencentCloud
                     bool MaxRetryNumHasBeenSet() const;
 
                     /**
-                     * 获取固件类型
-                     * @return FwType 固件类型
+                     * 获取<p>固件类型</p>
+                     * @return FwType <p>固件类型</p>
                      * 
                      */
                     std::string GetFwType() const;
@@ -254,8 +254,8 @@ namespace TencentCloud
                     bool FwTypeHasBeenSet() const;
 
                     /**
-                     * 获取重试间隔时间单位min
-                     * @return RetryInterval 重试间隔时间单位min
+                     * 获取<p>重试间隔时间单位min</p>
+                     * @return RetryInterval <p>重试间隔时间单位min</p>
                      * 
                      */
                     uint64_t GetRetryInterval() const;
@@ -268,8 +268,8 @@ namespace TencentCloud
                     bool RetryIntervalHasBeenSet() const;
 
                     /**
-                     * 获取是否覆盖任务
-                     * @return OverrideMode 是否覆盖任务
+                     * 获取<p>是否覆盖任务</p>
+                     * @return OverrideMode <p>是否覆盖任务</p>
                      * 
                      */
                     uint64_t GetOverrideMode() const;
@@ -282,8 +282,8 @@ namespace TencentCloud
                     bool OverrideModeHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义消息
-                     * @return TaskUserDefine 用户自定义消息
+                     * 获取<p>用户自定义消息</p>
+                     * @return TaskUserDefine <p>用户自定义消息</p>
                      * 
                      */
                     std::string GetTaskUserDefine() const;
@@ -296,8 +296,8 @@ namespace TencentCloud
                     bool TaskUserDefineHasBeenSet() const;
 
                     /**
-                     * 获取每分钟发送设备量
-                     * @return RateLimit 每分钟发送设备量
+                     * 获取<p>每分钟发送设备量</p>
+                     * @return RateLimit <p>每分钟发送设备量</p>
                      * 
                      */
                     int64_t GetRateLimit() const;
@@ -309,121 +309,161 @@ namespace TencentCloud
                      */
                     bool RateLimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务截止时间，Unix 时间戳（单位：秒）。传入 0 或不传表示不设截止，任务按原重试/超时策略执行完毕。 </p><p>单位：秒</p>
+                     * @return EndTime <p>任务截止时间，Unix 时间戳（单位：秒）。传入 0 或不传表示不设截止，任务按原重试/超时策略执行完毕。 </p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetEndTime() const;
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务开始调度时间，Unix 时间戳（单位：秒）。传入 0 或不传时任务立即创建执行，与 DelayTime 同时传入时，本参数优先生效。 </p><p>单位：秒</p>
+                     * @return StartTime <p>任务开始调度时间，Unix 时间戳（单位：秒）。传入 0 或不传时任务立即创建执行，与 DelayTime 同时传入时，本参数优先生效。 </p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetStartTime() const;
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 固件任务ID
+                     * <p>固件任务ID</p>
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 固件任务状态
+                     * <p>固件任务状态</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 固件任务创建时间，单位：秒
+                     * <p>固件任务创建时间，单位：秒</p>
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 固件任务升级类型
+                     * <p>固件任务升级类型</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 产品名称
+                     * <p>产品名称</p>
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）
+                     * <p>固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）</p>
                      */
                     std::string m_upgradeMode;
                     bool m_upgradeModeHasBeenSet;
 
                     /**
-                     * 产品ID
+                     * <p>产品ID</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回
+                     * <p>原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回</p>
                      */
                     std::string m_originalVersion;
                     bool m_originalVersionHasBeenSet;
 
                     /**
-                     * 创建账号ID
+                     * <p>创建账号ID</p>
                      */
                     uint64_t m_createUserId;
                     bool m_createUserIdHasBeenSet;
 
                     /**
-                     * 创建账号ID昵称
+                     * <p>创建账号ID昵称</p>
                      */
                     std::string m_creatorNickName;
                     bool m_creatorNickNameHasBeenSet;
 
                     /**
-                     * 延迟时间
+                     * <p>延迟时间</p>
                      */
                     uint64_t m_delayTime;
                     bool m_delayTimeHasBeenSet;
 
                     /**
-                     * 超时时间
+                     * <p>超时时间</p>
                      */
                     uint64_t m_timeoutInterval;
                     bool m_timeoutIntervalHasBeenSet;
 
                     /**
-                     * 静默升级or用户确认升级
+                     * <p>静默升级or用户确认升级</p>
                      */
                     uint64_t m_upgradeMethod;
                     bool m_upgradeMethodHasBeenSet;
 
                     /**
-                     * 最大重试次数
+                     * <p>最大重试次数</p>
                      */
                     uint64_t m_maxRetryNum;
                     bool m_maxRetryNumHasBeenSet;
 
                     /**
-                     * 固件类型
+                     * <p>固件类型</p>
                      */
                     std::string m_fwType;
                     bool m_fwTypeHasBeenSet;
 
                     /**
-                     * 重试间隔时间单位min
+                     * <p>重试间隔时间单位min</p>
                      */
                     uint64_t m_retryInterval;
                     bool m_retryIntervalHasBeenSet;
 
                     /**
-                     * 是否覆盖任务
+                     * <p>是否覆盖任务</p>
                      */
                     uint64_t m_overrideMode;
                     bool m_overrideModeHasBeenSet;
 
                     /**
-                     * 用户自定义消息
+                     * <p>用户自定义消息</p>
                      */
                     std::string m_taskUserDefine;
                     bool m_taskUserDefineHasBeenSet;
 
                     /**
-                     * 每分钟发送设备量
+                     * <p>每分钟发送设备量</p>
                      */
                     int64_t m_rateLimit;
                     bool m_rateLimitHasBeenSet;
+
+                    /**
+                     * <p>任务截止时间，Unix 时间戳（单位：秒）。传入 0 或不传表示不设截止，任务按原重试/超时策略执行完毕。 </p><p>单位：秒</p>
+                     */
+                    int64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * <p>任务开始调度时间，Unix 时间戳（单位：秒）。传入 0 或不传时任务立即创建执行，与 DelayTime 同时传入时，本参数优先生效。 </p><p>单位：秒</p>
+                     */
+                    int64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
 
                 };
             }

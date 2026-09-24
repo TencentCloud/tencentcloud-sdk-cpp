@@ -24,28 +24,34 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/ApproveRegistryRecordRequest.h
   include/tencentcloud/ags/v20250920/model/AppendEventResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryRecordResponse.h
-  include/tencentcloud/ags/v20250920/model/DescribeSandboxToolListRequest.h
+  include/tencentcloud/ags/v20250920/model/DescribeQuotaOverviewRequest.h
+  include/tencentcloud/ags/v20250920/model/CloudSkillSourceInput.h
   include/tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskResponse.h
   include/tencentcloud/ags/v20250920/model/QuotaResourceInfo.h
   include/tencentcloud/ags/v20250920/model/ResumeSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/ModifySessionSpaceResponse.h
   include/tencentcloud/ags/v20250920/model/DescribePreCacheImageTaskRequest.h
+  include/tencentcloud/ags/v20250920/model/CloudRecord.h
   include/tencentcloud/ags/v20250920/model/DescribeDeploymentResponse.h
   include/tencentcloud/ags/v20250920/model/RejectRegistryRecordResponse.h
+  include/tencentcloud/ags/v20250920/model/CloudTag.h
   include/tencentcloud/ags/v20250920/model/DNSConfig.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryRecordListRequest.h
+  include/tencentcloud/ags/v20250920/model/CloudRegistry.h
   include/tencentcloud/ags/v20250920/model/UpdateRegistryResponse.h
   include/tencentcloud/ags/v20250920/model/ApproveRegistryRecordResponse.h
   include/tencentcloud/ags/v20250920/model/DeleteSessionRequest.h
   include/tencentcloud/ags/v20250920/model/ResumeSandboxInstanceResponse.h
   include/tencentcloud/ags/v20250920/model/AcquireSandboxInstanceTokenRequest.h
+  include/tencentcloud/ags/v20250920/model/CloudRecordVersion.h
   include/tencentcloud/ags/v20250920/model/DescribeAPIKeyListResponse.h
   include/tencentcloud/ags/v20250920/model/PreviewRegistryRecordResponse.h
   include/tencentcloud/ags/v20250920/model/CreateSessionRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeDeploymentRequest.h
   include/tencentcloud/ags/v20250920/model/ResourceConfiguration.h
   include/tencentcloud/ags/v20250920/model/DescribeSessionSpaceResponse.h
-  include/tencentcloud/ags/v20250920/model/DeleteSandboxToolRequest.h
+  include/tencentcloud/ags/v20250920/model/CreateSandboxToolResponse.h
+  include/tencentcloud/ags/v20250920/model/CloudVersionApprovalAction.h
   include/tencentcloud/ags/v20250920/model/VPCConfig.h
   include/tencentcloud/ags/v20250920/model/CreateRegistryResponse.h
   include/tencentcloud/ags/v20250920/model/DeleteAPIKeyRequest.h
@@ -54,16 +60,15 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/GetSkillPackageUploadURLRequest.h
   include/tencentcloud/ags/v20250920/model/UpdateSandboxToolRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeSessionSpacesResponse.h
-  include/tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListResponse.h
-  include/tencentcloud/ags/v20250920/model/StopSandboxInstanceResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryRecordVersionListResponse.h
+  include/tencentcloud/ags/v20250920/model/StopSandboxInstanceResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryRecordVersionListRequest.h
   include/tencentcloud/ags/v20250920/model/RejectRegistryRecordRequest.h
   include/tencentcloud/ags/v20250920/model/CreateDeploymentRequest.h
   include/tencentcloud/ags/v20250920/model/CfsStorageSource.h
   include/tencentcloud/ags/v20250920/model/StopSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/GetSkillPackageDownloadURLRequest.h
-  include/tencentcloud/ags/v20250920/model/DeleteSandboxToolResponse.h
+  include/tencentcloud/ags/v20250920/model/DescribeSandboxToolListResponse.h
   include/tencentcloud/ags/v20250920/model/SessionInfo.h
   include/tencentcloud/ags/v20250920/model/DescribeQuotaOverviewResponse.h
   include/tencentcloud/ags/v20250920/model/UpdateSandboxToolResponse.h
@@ -71,10 +76,11 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/DescribeRegistryRecordRequest.h
   include/tencentcloud/ags/v20250920/model/CancelRegistryRecordRequest.h
   include/tencentcloud/ags/v20250920/model/APIKeyInfo.h
+  include/tencentcloud/ags/v20250920/model/DescribeSandboxToolListRequest.h
   include/tencentcloud/ags/v20250920/model/StorageSource.h
-  include/tencentcloud/ags/v20250920/model/CreateSandboxToolResponse.h
+  include/tencentcloud/ags/v20250920/model/DeleteSandboxToolRequest.h
   include/tencentcloud/ags/v20250920/model/CreateAPIKeyRequest.h
-  include/tencentcloud/ags/v20250920/model/DescribeSandboxToolListResponse.h
+  include/tencentcloud/ags/v20250920/model/DeleteSandboxToolResponse.h
   include/tencentcloud/ags/v20250920/model/SandboxTool.h
   include/tencentcloud/ags/v20250920/model/CreateRegistryRecordResponse.h
   include/tencentcloud/ags/v20250920/model/SessionSpaceInfo.h
@@ -83,23 +89,24 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/CustomConfiguration.h
   include/tencentcloud/ags/v20250920/model/SyncRegistryRecordRequest.h
   include/tencentcloud/ags/v20250920/model/LogSources.h
-  include/tencentcloud/ags/v20250920/model/DescribeSessionRequest.h
+  include/tencentcloud/ags/v20250920/model/DescribeRegistryRequest.h
   include/tencentcloud/ags/v20250920/model/DeleteRegistryResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeAPIKeyListRequest.h
-  include/tencentcloud/ags/v20250920/model/DescribeSessionSpaceRequest.h
+  include/tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListResponse.h
   include/tencentcloud/ags/v20250920/model/EventInfo.h
   include/tencentcloud/ags/v20250920/model/GetSkillPackageUploadURLResponse.h
   include/tencentcloud/ags/v20250920/model/CreateSessionSpaceResponse.h
-  include/tencentcloud/ags/v20250920/model/DescribeRegistryListResponse.h
+  include/tencentcloud/ags/v20250920/model/CLSConfig.h
   include/tencentcloud/ags/v20250920/model/UpdateRegistryRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeSessionsResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeDeploymentListRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryAuditLogListRequest.h
   include/tencentcloud/ags/v20250920/model/PauseSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryRecordListResponse.h
+  include/tencentcloud/ags/v20250920/model/CloudAuditLog.h
   include/tencentcloud/ags/v20250920/model/UpdateRegistryRecordRequest.h
   include/tencentcloud/ags/v20250920/model/CreateAPIKeyResponse.h
-  include/tencentcloud/ags/v20250920/model/DescribeRegistryRequest.h
+  include/tencentcloud/ags/v20250920/model/DescribeSessionRequest.h
   include/tencentcloud/ags/v20250920/model/AcquireDeploymentTokenRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeEventsResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeDeploymentListResponse.h
@@ -116,14 +123,17 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/MountOption.h
   include/tencentcloud/ags/v20250920/model/CreateSessionResponse.h
   include/tencentcloud/ags/v20250920/model/StartSandboxInstanceResponse.h
+  include/tencentcloud/ags/v20250920/model/DescribeSessionSpaceRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListRequest.h
   include/tencentcloud/ags/v20250920/model/NetworkConfiguration.h
   include/tencentcloud/ags/v20250920/model/ModifyDeploymentRequest.h
+  include/tencentcloud/ags/v20250920/model/CloudAgentSourceInput.h
   include/tencentcloud/ags/v20250920/model/ImageStorageSource.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryAuditLogListResponse.h
   include/tencentcloud/ags/v20250920/model/AcquireSandboxInstanceTokenResponse.h
   include/tencentcloud/ags/v20250920/model/AccountQuotaOverview.h
   include/tencentcloud/ags/v20250920/model/AgentBucketStorageSource.h
+  include/tencentcloud/ags/v20250920/model/CloudRecordLabelMutation.h
   include/tencentcloud/ags/v20250920/model/PauseSandboxInstanceResponse.h
   include/tencentcloud/ags/v20250920/model/CosStorageSource.h
   include/tencentcloud/ags/v20250920/model/StartSandboxInstanceRequest.h
@@ -133,7 +143,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/WAAConfiguration.h
   include/tencentcloud/ags/v20250920/model/StorageMount.h
   include/tencentcloud/ags/v20250920/model/ComputerConfiguration.h
-  include/tencentcloud/ags/v20250920/model/CLSConfig.h
+  include/tencentcloud/ags/v20250920/model/DescribeRegistryListResponse.h
   include/tencentcloud/ags/v20250920/model/UpdateRegistryRecordResponse.h
   include/tencentcloud/ags/v20250920/model/DeleteSessionSpaceRequest.h
   include/tencentcloud/ags/v20250920/model/OSWorldConfiguration.h
@@ -158,17 +168,18 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/QuotaGroupOverview.h
   include/tencentcloud/ags/v20250920/model/DeleteSessionResponse.h
   include/tencentcloud/ags/v20250920/model/LifecycleConfiguration.h
+  include/tencentcloud/ags/v20250920/model/PreviewRegistryRecordRequest.h
+  include/tencentcloud/ags/v20250920/model/CloudFilter.h
   include/tencentcloud/ags/v20250920/model/DescribeEventsRequest.h
   include/tencentcloud/ags/v20250920/model/EventContentInfo.h
   include/tencentcloud/ags/v20250920/model/PortConfiguration.h
   include/tencentcloud/ags/v20250920/model/Filter.h
   include/tencentcloud/ags/v20250920/model/CreateRegistryRequest.h
-  include/tencentcloud/ags/v20250920/model/DescribeQuotaOverviewRequest.h
   include/tencentcloud/ags/v20250920/model/ModifyDeploymentResponse.h
   include/tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskRequest.h
   include/tencentcloud/ags/v20250920/model/LogConfiguration.h
   include/tencentcloud/ags/v20250920/model/MetadataVar.h
-  include/tencentcloud/ags/v20250920/model/PreviewRegistryRecordRequest.h
+  include/tencentcloud/ags/v20250920/model/CloudMCPSourceInput.h
   include/tencentcloud/ags/v20250920/model/EnvVar.h
   include/tencentcloud/ags/v20250920/model/EventActionsInfo.h
   )
@@ -180,28 +191,34 @@ set(ags_src
   src/v20250920/model/ApproveRegistryRecordRequest.cpp
   src/v20250920/model/AppendEventResponse.cpp
   src/v20250920/model/DescribeRegistryRecordResponse.cpp
-  src/v20250920/model/DescribeSandboxToolListRequest.cpp
+  src/v20250920/model/DescribeQuotaOverviewRequest.cpp
+  src/v20250920/model/CloudSkillSourceInput.cpp
   src/v20250920/model/CreatePreCacheImageTaskResponse.cpp
   src/v20250920/model/QuotaResourceInfo.cpp
   src/v20250920/model/ResumeSandboxInstanceRequest.cpp
   src/v20250920/model/ModifySessionSpaceResponse.cpp
   src/v20250920/model/DescribePreCacheImageTaskRequest.cpp
+  src/v20250920/model/CloudRecord.cpp
   src/v20250920/model/DescribeDeploymentResponse.cpp
   src/v20250920/model/RejectRegistryRecordResponse.cpp
+  src/v20250920/model/CloudTag.cpp
   src/v20250920/model/DNSConfig.cpp
   src/v20250920/model/DescribeRegistryRecordListRequest.cpp
+  src/v20250920/model/CloudRegistry.cpp
   src/v20250920/model/UpdateRegistryResponse.cpp
   src/v20250920/model/ApproveRegistryRecordResponse.cpp
   src/v20250920/model/DeleteSessionRequest.cpp
   src/v20250920/model/ResumeSandboxInstanceResponse.cpp
   src/v20250920/model/AcquireSandboxInstanceTokenRequest.cpp
+  src/v20250920/model/CloudRecordVersion.cpp
   src/v20250920/model/DescribeAPIKeyListResponse.cpp
   src/v20250920/model/PreviewRegistryRecordResponse.cpp
   src/v20250920/model/CreateSessionRequest.cpp
   src/v20250920/model/DescribeDeploymentRequest.cpp
   src/v20250920/model/ResourceConfiguration.cpp
   src/v20250920/model/DescribeSessionSpaceResponse.cpp
-  src/v20250920/model/DeleteSandboxToolRequest.cpp
+  src/v20250920/model/CreateSandboxToolResponse.cpp
+  src/v20250920/model/CloudVersionApprovalAction.cpp
   src/v20250920/model/VPCConfig.cpp
   src/v20250920/model/CreateRegistryResponse.cpp
   src/v20250920/model/DeleteAPIKeyRequest.cpp
@@ -210,16 +227,15 @@ set(ags_src
   src/v20250920/model/GetSkillPackageUploadURLRequest.cpp
   src/v20250920/model/UpdateSandboxToolRequest.cpp
   src/v20250920/model/DescribeSessionSpacesResponse.cpp
-  src/v20250920/model/DescribeSandboxInstanceListResponse.cpp
-  src/v20250920/model/StopSandboxInstanceResponse.cpp
   src/v20250920/model/DescribeRegistryRecordVersionListResponse.cpp
+  src/v20250920/model/StopSandboxInstanceResponse.cpp
   src/v20250920/model/DescribeRegistryRecordVersionListRequest.cpp
   src/v20250920/model/RejectRegistryRecordRequest.cpp
   src/v20250920/model/CreateDeploymentRequest.cpp
   src/v20250920/model/CfsStorageSource.cpp
   src/v20250920/model/StopSandboxInstanceRequest.cpp
   src/v20250920/model/GetSkillPackageDownloadURLRequest.cpp
-  src/v20250920/model/DeleteSandboxToolResponse.cpp
+  src/v20250920/model/DescribeSandboxToolListResponse.cpp
   src/v20250920/model/SessionInfo.cpp
   src/v20250920/model/DescribeQuotaOverviewResponse.cpp
   src/v20250920/model/UpdateSandboxToolResponse.cpp
@@ -227,10 +243,11 @@ set(ags_src
   src/v20250920/model/DescribeRegistryRecordRequest.cpp
   src/v20250920/model/CancelRegistryRecordRequest.cpp
   src/v20250920/model/APIKeyInfo.cpp
+  src/v20250920/model/DescribeSandboxToolListRequest.cpp
   src/v20250920/model/StorageSource.cpp
-  src/v20250920/model/CreateSandboxToolResponse.cpp
+  src/v20250920/model/DeleteSandboxToolRequest.cpp
   src/v20250920/model/CreateAPIKeyRequest.cpp
-  src/v20250920/model/DescribeSandboxToolListResponse.cpp
+  src/v20250920/model/DeleteSandboxToolResponse.cpp
   src/v20250920/model/SandboxTool.cpp
   src/v20250920/model/CreateRegistryRecordResponse.cpp
   src/v20250920/model/SessionSpaceInfo.cpp
@@ -239,23 +256,24 @@ set(ags_src
   src/v20250920/model/CustomConfiguration.cpp
   src/v20250920/model/SyncRegistryRecordRequest.cpp
   src/v20250920/model/LogSources.cpp
-  src/v20250920/model/DescribeSessionRequest.cpp
+  src/v20250920/model/DescribeRegistryRequest.cpp
   src/v20250920/model/DeleteRegistryResponse.cpp
   src/v20250920/model/DescribeAPIKeyListRequest.cpp
-  src/v20250920/model/DescribeSessionSpaceRequest.cpp
+  src/v20250920/model/DescribeSandboxInstanceListResponse.cpp
   src/v20250920/model/EventInfo.cpp
   src/v20250920/model/GetSkillPackageUploadURLResponse.cpp
   src/v20250920/model/CreateSessionSpaceResponse.cpp
-  src/v20250920/model/DescribeRegistryListResponse.cpp
+  src/v20250920/model/CLSConfig.cpp
   src/v20250920/model/UpdateRegistryRequest.cpp
   src/v20250920/model/DescribeSessionsResponse.cpp
   src/v20250920/model/DescribeDeploymentListRequest.cpp
   src/v20250920/model/DescribeRegistryAuditLogListRequest.cpp
   src/v20250920/model/PauseSandboxInstanceRequest.cpp
   src/v20250920/model/DescribeRegistryRecordListResponse.cpp
+  src/v20250920/model/CloudAuditLog.cpp
   src/v20250920/model/UpdateRegistryRecordRequest.cpp
   src/v20250920/model/CreateAPIKeyResponse.cpp
-  src/v20250920/model/DescribeRegistryRequest.cpp
+  src/v20250920/model/DescribeSessionRequest.cpp
   src/v20250920/model/AcquireDeploymentTokenRequest.cpp
   src/v20250920/model/DescribeEventsResponse.cpp
   src/v20250920/model/DescribeDeploymentListResponse.cpp
@@ -272,14 +290,17 @@ set(ags_src
   src/v20250920/model/MountOption.cpp
   src/v20250920/model/CreateSessionResponse.cpp
   src/v20250920/model/StartSandboxInstanceResponse.cpp
+  src/v20250920/model/DescribeSessionSpaceRequest.cpp
   src/v20250920/model/DescribeSandboxInstanceListRequest.cpp
   src/v20250920/model/NetworkConfiguration.cpp
   src/v20250920/model/ModifyDeploymentRequest.cpp
+  src/v20250920/model/CloudAgentSourceInput.cpp
   src/v20250920/model/ImageStorageSource.cpp
   src/v20250920/model/DescribeRegistryAuditLogListResponse.cpp
   src/v20250920/model/AcquireSandboxInstanceTokenResponse.cpp
   src/v20250920/model/AccountQuotaOverview.cpp
   src/v20250920/model/AgentBucketStorageSource.cpp
+  src/v20250920/model/CloudRecordLabelMutation.cpp
   src/v20250920/model/PauseSandboxInstanceResponse.cpp
   src/v20250920/model/CosStorageSource.cpp
   src/v20250920/model/StartSandboxInstanceRequest.cpp
@@ -289,7 +310,7 @@ set(ags_src
   src/v20250920/model/WAAConfiguration.cpp
   src/v20250920/model/StorageMount.cpp
   src/v20250920/model/ComputerConfiguration.cpp
-  src/v20250920/model/CLSConfig.cpp
+  src/v20250920/model/DescribeRegistryListResponse.cpp
   src/v20250920/model/UpdateRegistryRecordResponse.cpp
   src/v20250920/model/DeleteSessionSpaceRequest.cpp
   src/v20250920/model/OSWorldConfiguration.cpp
@@ -314,17 +335,18 @@ set(ags_src
   src/v20250920/model/QuotaGroupOverview.cpp
   src/v20250920/model/DeleteSessionResponse.cpp
   src/v20250920/model/LifecycleConfiguration.cpp
+  src/v20250920/model/PreviewRegistryRecordRequest.cpp
+  src/v20250920/model/CloudFilter.cpp
   src/v20250920/model/DescribeEventsRequest.cpp
   src/v20250920/model/EventContentInfo.cpp
   src/v20250920/model/PortConfiguration.cpp
   src/v20250920/model/Filter.cpp
   src/v20250920/model/CreateRegistryRequest.cpp
-  src/v20250920/model/DescribeQuotaOverviewRequest.cpp
   src/v20250920/model/ModifyDeploymentResponse.cpp
   src/v20250920/model/CreatePreCacheImageTaskRequest.cpp
   src/v20250920/model/LogConfiguration.cpp
   src/v20250920/model/MetadataVar.cpp
-  src/v20250920/model/PreviewRegistryRecordRequest.cpp
+  src/v20250920/model/CloudMCPSourceInput.cpp
   src/v20250920/model/EnvVar.cpp
   src/v20250920/model/EventActionsInfo.cpp
   )

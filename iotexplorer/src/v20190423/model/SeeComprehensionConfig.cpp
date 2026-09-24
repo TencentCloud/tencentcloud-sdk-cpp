@@ -31,7 +31,9 @@ SeeComprehensionConfig::SeeComprehensionConfig() :
     m_enableKeywordsHasBeenSet(false),
     m_summaryPromptHasBeenSet(false),
     m_enableFaceDetectionHasBeenSet(false),
-    m_inputRotateDegreeHasBeenSet(false)
+    m_inputRotateDegreeHasBeenSet(false),
+    m_enableExtendedOutputHasBeenSet(false),
+    m_extendedOutputPromptsHasBeenSet(false)
 {
 }
 
@@ -163,6 +165,36 @@ CoreInternalOutcome SeeComprehensionConfig::Deserialize(const rapidjson::Value &
         m_inputRotateDegreeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableExtendedOutput") && !value["EnableExtendedOutput"].IsNull())
+    {
+        if (!value["EnableExtendedOutput"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeComprehensionConfig.EnableExtendedOutput` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableExtendedOutput = value["EnableExtendedOutput"].GetBool();
+        m_enableExtendedOutputHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtendedOutputPrompts") && !value["ExtendedOutputPrompts"].IsNull())
+    {
+        if (!value["ExtendedOutputPrompts"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SeeComprehensionConfig.ExtendedOutputPrompts` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExtendedOutputPrompts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SeeExtendedOutputPrompt item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_extendedOutputPrompts.push_back(item);
+        }
+        m_extendedOutputPromptsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +300,29 @@ void SeeComprehensionConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "InputRotateDegree";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inputRotateDegree, allocator);
+    }
+
+    if (m_enableExtendedOutputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableExtendedOutput";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableExtendedOutput, allocator);
+    }
+
+    if (m_extendedOutputPromptsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtendedOutputPrompts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extendedOutputPrompts.begin(); itr != m_extendedOutputPrompts.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -447,5 +502,37 @@ void SeeComprehensionConfig::SetInputRotateDegree(const int64_t& _inputRotateDeg
 bool SeeComprehensionConfig::InputRotateDegreeHasBeenSet() const
 {
     return m_inputRotateDegreeHasBeenSet;
+}
+
+bool SeeComprehensionConfig::GetEnableExtendedOutput() const
+{
+    return m_enableExtendedOutput;
+}
+
+void SeeComprehensionConfig::SetEnableExtendedOutput(const bool& _enableExtendedOutput)
+{
+    m_enableExtendedOutput = _enableExtendedOutput;
+    m_enableExtendedOutputHasBeenSet = true;
+}
+
+bool SeeComprehensionConfig::EnableExtendedOutputHasBeenSet() const
+{
+    return m_enableExtendedOutputHasBeenSet;
+}
+
+vector<SeeExtendedOutputPrompt> SeeComprehensionConfig::GetExtendedOutputPrompts() const
+{
+    return m_extendedOutputPrompts;
+}
+
+void SeeComprehensionConfig::SetExtendedOutputPrompts(const vector<SeeExtendedOutputPrompt>& _extendedOutputPrompts)
+{
+    m_extendedOutputPrompts = _extendedOutputPrompts;
+    m_extendedOutputPromptsHasBeenSet = true;
+}
+
+bool SeeComprehensionConfig::ExtendedOutputPromptsHasBeenSet() const
+{
+    return m_extendedOutputPromptsHasBeenSet;
 }
 

@@ -61,6 +61,8 @@
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeMessageEventListResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeSkillListRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeSkillListResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeUserAccessTokenRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeUserAccessTokenResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/MigrateAgentSessionRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/MigrateAgentSessionResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentRequest.h>
@@ -144,6 +146,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSkillListResponse> DescribeSkillListOutcome;
                 typedef std::future<DescribeSkillListOutcome> DescribeSkillListOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeSkillListRequest&, DescribeSkillListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserAccessTokenResponse> DescribeUserAccessTokenOutcome;
+                typedef std::future<DescribeUserAccessTokenOutcome> DescribeUserAccessTokenOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeUserAccessTokenRequest&, DescribeUserAccessTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAccessTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::MigrateAgentSessionResponse> MigrateAgentSessionOutcome;
                 typedef std::future<MigrateAgentSessionOutcome> MigrateAgentSessionOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::MigrateAgentSessionRequest&, MigrateAgentSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MigrateAgentSessionAsyncHandler;
@@ -335,6 +340,15 @@ namespace TencentCloud
                 DescribeSkillListOutcome DescribeSkillList(const Model::DescribeSkillListRequest &request);
                 void DescribeSkillListAsync(const Model::DescribeSkillListRequest& request, const DescribeSkillListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSkillListOutcomeCallable DescribeSkillListCallable(const Model::DescribeSkillListRequest& request);
+
+                /**
+                 *根据调用者的 Uin / SubAccountUin 调用 OneID 换取用户级 access_token。换取到的 token 是 OneID 用户身份的短期凭证，供调用方以用户身份访问 OneID 开平接口。默认开启 JIT，SubAccountUin 不存在时自动在目标企业下创建影子用户。
+                 * @param req DescribeUserAccessTokenRequest
+                 * @return DescribeUserAccessTokenOutcome
+                 */
+                DescribeUserAccessTokenOutcome DescribeUserAccessToken(const Model::DescribeUserAccessTokenRequest &request);
+                void DescribeUserAccessTokenAsync(const Model::DescribeUserAccessTokenRequest& request, const DescribeUserAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserAccessTokenOutcomeCallable DescribeUserAccessTokenCallable(const Model::DescribeUserAccessTokenRequest& request);
 
                 /**
                  *将指定会话迁移到目标版本。SessionID / RuntimeID 保持不变，通过 AgentOS UpdateSession 在原沙箱上更新 manifest 到新版本；AgentId 必须与原 Session 一致（禁止跨 Agent 迁移）；ChatToken 复用旧值不轮转。

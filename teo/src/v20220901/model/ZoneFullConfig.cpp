@@ -23,6 +23,7 @@ using namespace std;
 ZoneFullConfig::ZoneFullConfig() :
     m_formatVersionHasBeenSet(false),
     m_zoneConfigHasBeenSet(false),
+    m_zoneCustomVariablesHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_webSecurityHasBeenSet(false),
     m_functionTriggersHasBeenSet(false)
@@ -59,6 +60,23 @@ CoreInternalOutcome ZoneFullConfig::Deserialize(const rapidjson::Value &value)
         }
 
         m_zoneConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneCustomVariables") && !value["ZoneCustomVariables"].IsNull())
+    {
+        if (!value["ZoneCustomVariables"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneFullConfig.ZoneCustomVariables` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_zoneCustomVariables.Deserialize(value["ZoneCustomVariables"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_zoneCustomVariablesHasBeenSet = true;
     }
 
     if (value.HasMember("Rules") && !value["Rules"].IsNull())
@@ -142,6 +160,15 @@ void ZoneFullConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         m_zoneConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_zoneCustomVariablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneCustomVariables";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_zoneCustomVariables.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_rulesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -214,6 +241,22 @@ void ZoneFullConfig::SetZoneConfig(const ZoneConfig& _zoneConfig)
 bool ZoneFullConfig::ZoneConfigHasBeenSet() const
 {
     return m_zoneConfigHasBeenSet;
+}
+
+ZoneCustomVariables ZoneFullConfig::GetZoneCustomVariables() const
+{
+    return m_zoneCustomVariables;
+}
+
+void ZoneFullConfig::SetZoneCustomVariables(const ZoneCustomVariables& _zoneCustomVariables)
+{
+    m_zoneCustomVariables = _zoneCustomVariables;
+    m_zoneCustomVariablesHasBeenSet = true;
+}
+
+bool ZoneFullConfig::ZoneCustomVariablesHasBeenSet() const
+{
+    return m_zoneCustomVariablesHasBeenSet;
 }
 
 vector<ConfigGroupRuleEngineItem> ZoneFullConfig::GetRules() const

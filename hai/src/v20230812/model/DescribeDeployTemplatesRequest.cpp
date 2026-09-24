@@ -23,7 +23,8 @@ using namespace TencentCloud::Hai::V20230812::Model;
 using namespace std;
 
 DescribeDeployTemplatesRequest::DescribeDeployTemplatesRequest() :
-    m_modelIdHasBeenSet(false)
+    m_modelIdHasBeenSet(false),
+    m_serviceIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeDeployTemplatesRequest::ToJsonString() const
         string key = "ModelId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeDeployTemplatesRequest::SetModelId(const string& _modelId)
 bool DescribeDeployTemplatesRequest::ModelIdHasBeenSet() const
 {
     return m_modelIdHasBeenSet;
+}
+
+string DescribeDeployTemplatesRequest::GetServiceId() const
+{
+    return m_serviceId;
+}
+
+void DescribeDeployTemplatesRequest::SetServiceId(const string& _serviceId)
+{
+    m_serviceId = _serviceId;
+    m_serviceIdHasBeenSet = true;
+}
+
+bool DescribeDeployTemplatesRequest::ServiceIdHasBeenSet() const
+{
+    return m_serviceIdHasBeenSet;
 }
 
 

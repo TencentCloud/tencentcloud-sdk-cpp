@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品ID
-                     * @return ProductID 产品ID
+                     * 获取<p>产品ID</p>
+                     * @return ProductID <p>产品ID</p>
                      * 
                      */
                     std::string GetProductID() const;
 
                     /**
-                     * 设置产品ID
-                     * @param _productID 产品ID
+                     * 设置<p>产品ID</p>
+                     * @param _productID <p>产品ID</p>
                      * 
                      */
                     void SetProductID(const std::string& _productID);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIDHasBeenSet() const;
 
                     /**
-                     * 获取固件版本号
-                     * @return FirmwareVersion 固件版本号
+                     * 获取<p>固件版本号</p>
+                     * @return FirmwareVersion <p>固件版本号</p>
                      * 
                      */
                     std::string GetFirmwareVersion() const;
 
                     /**
-                     * 设置固件版本号
-                     * @param _firmwareVersion 固件版本号
+                     * 设置<p>固件版本号</p>
+                     * @param _firmwareVersion <p>固件版本号</p>
                      * 
                      */
                     void SetFirmwareVersion(const std::string& _firmwareVersion);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FirmwareVersionHasBeenSet() const;
 
                     /**
-                     * 获取固件任务ID
-                     * @return TaskId 固件任务ID
+                     * 获取<p>固件任务ID</p>
+                     * @return TaskId <p>固件任务ID</p>
                      * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置固件任务ID
-                     * @param _taskId 固件任务ID
+                     * 设置<p>固件任务ID</p>
+                     * @param _taskId <p>固件任务ID</p>
                      * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品ID
+                     * <p>产品ID</p>
                      */
                     std::string m_productID;
                     bool m_productIDHasBeenSet;
 
                     /**
-                     * 固件版本号
+                     * <p>固件版本号</p>
                      */
                     std::string m_firmwareVersion;
                     bool m_firmwareVersionHasBeenSet;
 
                     /**
-                     * 固件任务ID
+                     * <p>固件任务ID</p>
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;

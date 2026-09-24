@@ -121,6 +121,12 @@
 #include <tencentcloud/dlc/v20210125/model/CreateInferenceServiceResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInternalTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateInternalTableResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateJobRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateJobResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateJobDefinitionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateJobDefinitionResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateJobFromDefinitionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateJobFromDefinitionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateJobSpecRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateJobSpecResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateLabRequest.h>
@@ -249,6 +255,14 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeAdvancedStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeBindablePrometheusRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeBindablePrometheusResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeCatalogTableInfoRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeCatalogTableInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeCatalogTableNamesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeCatalogTableNamesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeCatalogTableNamesPageRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeCatalogTableNamesPageResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeCatalogsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeCatalogsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeClsTopicsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeClsTopicsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeClusterEventLogSwitchRequest.h>
@@ -305,6 +319,18 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeFlowListResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobDefinitionDetailRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobDefinitionDetailResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobDefinitionsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobDefinitionsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobDetailRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobDetailResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobListRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobListResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobLogRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobLogResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobResultRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeJobResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsDirSummaryRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsDirSummaryResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsInfoRequest.h>
@@ -365,6 +391,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeSaleRegionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSaleResourceInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSaleResourceInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSchemaNamesPageRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSchemaNamesPageResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSessionImageVersionRequest.h>
@@ -449,6 +477,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeUsersResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeViewsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeViewsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeWarehousesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeWarehousesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeWorkGroupInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeWorkGroupInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeWorkGroupsRequest.h>
@@ -607,6 +637,8 @@
 #include <tencentcloud/dlc/v20210125/model/ModifyDataEngineDescriptionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ModifyJobDefinitionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ModifyJobDefinitionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyLabPriorityRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyLabPriorityResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyPartitionDescriptionRequest.h>
@@ -904,6 +936,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInternalTableResponse> CreateInternalTableOutcome;
                 typedef std::future<CreateInternalTableOutcome> CreateInternalTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateInternalTableRequest&, CreateInternalTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInternalTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateJobResponse> CreateJobOutcome;
+                typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateJobRequest&, CreateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateJobDefinitionResponse> CreateJobDefinitionOutcome;
+                typedef std::future<CreateJobDefinitionOutcome> CreateJobDefinitionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateJobDefinitionRequest&, CreateJobDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobDefinitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateJobFromDefinitionResponse> CreateJobFromDefinitionOutcome;
+                typedef std::future<CreateJobFromDefinitionOutcome> CreateJobFromDefinitionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateJobFromDefinitionRequest&, CreateJobFromDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobFromDefinitionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateJobSpecResponse> CreateJobSpecOutcome;
                 typedef std::future<CreateJobSpecOutcome> CreateJobSpecOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateJobSpecRequest&, CreateJobSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobSpecAsyncHandler;
@@ -1096,6 +1137,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBindablePrometheusResponse> DescribeBindablePrometheusOutcome;
                 typedef std::future<DescribeBindablePrometheusOutcome> DescribeBindablePrometheusOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeBindablePrometheusRequest&, DescribeBindablePrometheusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindablePrometheusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCatalogTableInfoResponse> DescribeCatalogTableInfoOutcome;
+                typedef std::future<DescribeCatalogTableInfoOutcome> DescribeCatalogTableInfoOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeCatalogTableInfoRequest&, DescribeCatalogTableInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCatalogTableInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCatalogTableNamesResponse> DescribeCatalogTableNamesOutcome;
+                typedef std::future<DescribeCatalogTableNamesOutcome> DescribeCatalogTableNamesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeCatalogTableNamesRequest&, DescribeCatalogTableNamesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCatalogTableNamesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCatalogTableNamesPageResponse> DescribeCatalogTableNamesPageOutcome;
+                typedef std::future<DescribeCatalogTableNamesPageOutcome> DescribeCatalogTableNamesPageOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeCatalogTableNamesPageRequest&, DescribeCatalogTableNamesPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCatalogTableNamesPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCatalogsResponse> DescribeCatalogsOutcome;
+                typedef std::future<DescribeCatalogsOutcome> DescribeCatalogsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeCatalogsRequest&, DescribeCatalogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCatalogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClsTopicsResponse> DescribeClsTopicsOutcome;
                 typedef std::future<DescribeClsTopicsOutcome> DescribeClsTopicsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeClsTopicsRequest&, DescribeClsTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClsTopicsAsyncHandler;
@@ -1180,6 +1233,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeForbiddenTableProResponse> DescribeForbiddenTableProOutcome;
                 typedef std::future<DescribeForbiddenTableProOutcome> DescribeForbiddenTableProOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeForbiddenTableProRequest&, DescribeForbiddenTableProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForbiddenTableProAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobDefinitionDetailResponse> DescribeJobDefinitionDetailOutcome;
+                typedef std::future<DescribeJobDefinitionDetailOutcome> DescribeJobDefinitionDetailOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeJobDefinitionDetailRequest&, DescribeJobDefinitionDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobDefinitionDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobDefinitionsResponse> DescribeJobDefinitionsOutcome;
+                typedef std::future<DescribeJobDefinitionsOutcome> DescribeJobDefinitionsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeJobDefinitionsRequest&, DescribeJobDefinitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobDefinitionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobDetailResponse> DescribeJobDetailOutcome;
+                typedef std::future<DescribeJobDetailOutcome> DescribeJobDetailOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeJobDetailRequest&, DescribeJobDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobListResponse> DescribeJobListOutcome;
+                typedef std::future<DescribeJobListOutcome> DescribeJobListOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeJobListRequest&, DescribeJobListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobLogResponse> DescribeJobLogOutcome;
+                typedef std::future<DescribeJobLogOutcome> DescribeJobLogOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeJobLogRequest&, DescribeJobLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobResultResponse> DescribeJobResultOutcome;
+                typedef std::future<DescribeJobResultOutcome> DescribeJobResultOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeJobResultRequest&, DescribeJobResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLakeFsDirSummaryResponse> DescribeLakeFsDirSummaryOutcome;
                 typedef std::future<DescribeLakeFsDirSummaryOutcome> DescribeLakeFsDirSummaryOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeLakeFsDirSummaryRequest&, DescribeLakeFsDirSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLakeFsDirSummaryAsyncHandler;
@@ -1270,6 +1341,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSaleResourceInfoResponse> DescribeSaleResourceInfoOutcome;
                 typedef std::future<DescribeSaleResourceInfoOutcome> DescribeSaleResourceInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeSaleResourceInfoRequest&, DescribeSaleResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSaleResourceInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSchemaNamesPageResponse> DescribeSchemaNamesPageOutcome;
+                typedef std::future<DescribeSchemaNamesPageOutcome> DescribeSchemaNamesPageOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeSchemaNamesPageRequest&, DescribeSchemaNamesPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSchemaNamesPageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScriptsResponse> DescribeScriptsOutcome;
                 typedef std::future<DescribeScriptsOutcome> DescribeScriptsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeScriptsRequest&, DescribeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScriptsAsyncHandler;
@@ -1396,6 +1470,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeViewsResponse> DescribeViewsOutcome;
                 typedef std::future<DescribeViewsOutcome> DescribeViewsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeViewsRequest&, DescribeViewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeViewsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWarehousesResponse> DescribeWarehousesOutcome;
+                typedef std::future<DescribeWarehousesOutcome> DescribeWarehousesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeWarehousesRequest&, DescribeWarehousesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWarehousesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkGroupInfoResponse> DescribeWorkGroupInfoOutcome;
                 typedef std::future<DescribeWorkGroupInfoOutcome> DescribeWorkGroupInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeWorkGroupInfoRequest&, DescribeWorkGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkGroupInfoAsyncHandler;
@@ -1633,6 +1710,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGovernEventRuleResponse> ModifyGovernEventRuleOutcome;
                 typedef std::future<ModifyGovernEventRuleOutcome> ModifyGovernEventRuleOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifyGovernEventRuleRequest&, ModifyGovernEventRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGovernEventRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyJobDefinitionResponse> ModifyJobDefinitionOutcome;
+                typedef std::future<ModifyJobDefinitionOutcome> ModifyJobDefinitionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ModifyJobDefinitionRequest&, ModifyJobDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJobDefinitionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLabPriorityResponse> ModifyLabPriorityOutcome;
                 typedef std::future<ModifyLabPriorityOutcome> ModifyLabPriorityOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifyLabPriorityRequest&, ModifyLabPriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLabPriorityAsyncHandler;
@@ -2282,6 +2362,33 @@ namespace TencentCloud
                 CreateInternalTableOutcomeCallable CreateInternalTableCallable(const Model::CreateInternalTableRequest& request);
 
                 /**
+                 *创建并提交作业 Action。
+                 * @param req CreateJobRequest
+                 * @return CreateJobOutcome
+                 */
+                CreateJobOutcome CreateJob(const Model::CreateJobRequest &request);
+                void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request);
+
+                /**
+                 *创建作业定义。
+                 * @param req CreateJobDefinitionRequest
+                 * @return CreateJobDefinitionOutcome
+                 */
+                CreateJobDefinitionOutcome CreateJobDefinition(const Model::CreateJobDefinitionRequest &request);
+                void CreateJobDefinitionAsync(const Model::CreateJobDefinitionRequest& request, const CreateJobDefinitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateJobDefinitionOutcomeCallable CreateJobDefinitionCallable(const Model::CreateJobDefinitionRequest& request);
+
+                /**
+                 *按作业定义创建作业。
+                 * @param req CreateJobFromDefinitionRequest
+                 * @return CreateJobFromDefinitionOutcome
+                 */
+                CreateJobFromDefinitionOutcome CreateJobFromDefinition(const Model::CreateJobFromDefinitionRequest &request);
+                void CreateJobFromDefinitionAsync(const Model::CreateJobFromDefinitionRequest& request, const CreateJobFromDefinitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateJobFromDefinitionOutcomeCallable CreateJobFromDefinitionCallable(const Model::CreateJobFromDefinitionRequest& request);
+
+                /**
                  *创建作业配置
                  * @param req CreateJobSpecRequest
                  * @return CreateJobSpecOutcome
@@ -2860,6 +2967,42 @@ namespace TencentCloud
                 DescribeBindablePrometheusOutcomeCallable DescribeBindablePrometheusCallable(const Model::DescribeBindablePrometheusRequest& request);
 
                 /**
+                 *获取 Table 详情
+                 * @param req DescribeCatalogTableInfoRequest
+                 * @return DescribeCatalogTableInfoOutcome
+                 */
+                DescribeCatalogTableInfoOutcome DescribeCatalogTableInfo(const Model::DescribeCatalogTableInfoRequest &request);
+                void DescribeCatalogTableInfoAsync(const Model::DescribeCatalogTableInfoRequest& request, const DescribeCatalogTableInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCatalogTableInfoOutcomeCallable DescribeCatalogTableInfoCallable(const Model::DescribeCatalogTableInfoRequest& request);
+
+                /**
+                 *获取 Schema 下所有 Table
+                 * @param req DescribeCatalogTableNamesRequest
+                 * @return DescribeCatalogTableNamesOutcome
+                 */
+                DescribeCatalogTableNamesOutcome DescribeCatalogTableNames(const Model::DescribeCatalogTableNamesRequest &request);
+                void DescribeCatalogTableNamesAsync(const Model::DescribeCatalogTableNamesRequest& request, const DescribeCatalogTableNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCatalogTableNamesOutcomeCallable DescribeCatalogTableNamesCallable(const Model::DescribeCatalogTableNamesRequest& request);
+
+                /**
+                 *分页查询表名
+                 * @param req DescribeCatalogTableNamesPageRequest
+                 * @return DescribeCatalogTableNamesPageOutcome
+                 */
+                DescribeCatalogTableNamesPageOutcome DescribeCatalogTableNamesPage(const Model::DescribeCatalogTableNamesPageRequest &request);
+                void DescribeCatalogTableNamesPageAsync(const Model::DescribeCatalogTableNamesPageRequest& request, const DescribeCatalogTableNamesPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCatalogTableNamesPageOutcomeCallable DescribeCatalogTableNamesPageCallable(const Model::DescribeCatalogTableNamesPageRequest& request);
+
+                /**
+                 *查询数据目录列表
+                 * @param req DescribeCatalogsRequest
+                 * @return DescribeCatalogsOutcome
+                 */
+                DescribeCatalogsOutcome DescribeCatalogs(const Model::DescribeCatalogsRequest &request);
+                void DescribeCatalogsAsync(const Model::DescribeCatalogsRequest& request, const DescribeCatalogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCatalogsOutcomeCallable DescribeCatalogsCallable(const Model::DescribeCatalogsRequest& request);
+
+                /**
                  *查询 CLS 日志主题列表：TopicName 走模糊匹配，TopicId 走精确匹配，两者均可为空；分页返回。
                  * @param req DescribeClsTopicsRequest
                  * @return DescribeClsTopicsOutcome
@@ -3110,6 +3253,60 @@ namespace TencentCloud
                 DescribeForbiddenTableProOutcome DescribeForbiddenTablePro(const Model::DescribeForbiddenTableProRequest &request);
                 void DescribeForbiddenTableProAsync(const Model::DescribeForbiddenTableProRequest& request, const DescribeForbiddenTableProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeForbiddenTableProOutcomeCallable DescribeForbiddenTableProCallable(const Model::DescribeForbiddenTableProRequest& request);
+
+                /**
+                 *查询作业定义详情。
+                 * @param req DescribeJobDefinitionDetailRequest
+                 * @return DescribeJobDefinitionDetailOutcome
+                 */
+                DescribeJobDefinitionDetailOutcome DescribeJobDefinitionDetail(const Model::DescribeJobDefinitionDetailRequest &request);
+                void DescribeJobDefinitionDetailAsync(const Model::DescribeJobDefinitionDetailRequest& request, const DescribeJobDefinitionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobDefinitionDetailOutcomeCallable DescribeJobDefinitionDetailCallable(const Model::DescribeJobDefinitionDetailRequest& request);
+
+                /**
+                 *查询作业定义列表。
+                 * @param req DescribeJobDefinitionsRequest
+                 * @return DescribeJobDefinitionsOutcome
+                 */
+                DescribeJobDefinitionsOutcome DescribeJobDefinitions(const Model::DescribeJobDefinitionsRequest &request);
+                void DescribeJobDefinitionsAsync(const Model::DescribeJobDefinitionsRequest& request, const DescribeJobDefinitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobDefinitionsOutcomeCallable DescribeJobDefinitionsCallable(const Model::DescribeJobDefinitionsRequest& request);
+
+                /**
+                 *查询作业完整详情 Action。
+                 * @param req DescribeJobDetailRequest
+                 * @return DescribeJobDetailOutcome
+                 */
+                DescribeJobDetailOutcome DescribeJobDetail(const Model::DescribeJobDetailRequest &request);
+                void DescribeJobDetailAsync(const Model::DescribeJobDetailRequest& request, const DescribeJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobDetailOutcomeCallable DescribeJobDetailCallable(const Model::DescribeJobDetailRequest& request);
+
+                /**
+                 *分页查询作业列表 Action. PageSize 上限 200；QueueName 必须配合 PartitionCode。
+                 * @param req DescribeJobListRequest
+                 * @return DescribeJobListOutcome
+                 */
+                DescribeJobListOutcome DescribeJobList(const Model::DescribeJobListRequest &request);
+                void DescribeJobListAsync(const Model::DescribeJobListRequest& request, const DescribeJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobListOutcomeCallable DescribeJobListCallable(const Model::DescribeJobListRequest& request);
+
+                /**
+                 *统一作业日志查询 Action。
+                 * @param req DescribeJobLogRequest
+                 * @return DescribeJobLogOutcome
+                 */
+                DescribeJobLogOutcome DescribeJobLog(const Model::DescribeJobLogRequest &request);
+                void DescribeJobLogAsync(const Model::DescribeJobLogRequest& request, const DescribeJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobLogOutcomeCallable DescribeJobLogCallable(const Model::DescribeJobLogRequest& request);
+
+                /**
+                 *获取 SQL 作业结果集 Action. 仅 MinorType=SPARK_SQL 有效（Batch 固定返回 State=NOT_SUPPORTED）。
+                 * @param req DescribeJobResultRequest
+                 * @return DescribeJobResultOutcome
+                 */
+                DescribeJobResultOutcome DescribeJobResult(const Model::DescribeJobResultRequest &request);
+                void DescribeJobResultAsync(const Model::DescribeJobResultRequest& request, const DescribeJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobResultOutcomeCallable DescribeJobResultCallable(const Model::DescribeJobResultRequest& request);
 
                 /**
                  *查询托管存储指定目录的Summary
@@ -3383,6 +3580,15 @@ RunID, ExperimentID 对应MLflow 实验追踪用的参数 RunID, ExperimentID
                 DescribeSaleResourceInfoOutcome DescribeSaleResourceInfo(const Model::DescribeSaleResourceInfoRequest &request);
                 void DescribeSaleResourceInfoAsync(const Model::DescribeSaleResourceInfoRequest& request, const DescribeSaleResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSaleResourceInfoOutcomeCallable DescribeSaleResourceInfoCallable(const Model::DescribeSaleResourceInfoRequest& request);
+
+                /**
+                 *分页查询 Catalog 下 Schema 列表
+                 * @param req DescribeSchemaNamesPageRequest
+                 * @return DescribeSchemaNamesPageOutcome
+                 */
+                DescribeSchemaNamesPageOutcome DescribeSchemaNamesPage(const Model::DescribeSchemaNamesPageRequest &request);
+                void DescribeSchemaNamesPageAsync(const Model::DescribeSchemaNamesPageRequest& request, const DescribeSchemaNamesPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSchemaNamesPageOutcomeCallable DescribeSchemaNamesPageCallable(const Model::DescribeSchemaNamesPageRequest& request);
 
                 /**
                  *该接口（DescribeScripts）用于查询SQL脚本列表
@@ -3761,6 +3967,15 @@ RunID, ExperimentID 对应MLflow 实验追踪用的参数 RunID, ExperimentID
                 DescribeViewsOutcome DescribeViews(const Model::DescribeViewsRequest &request);
                 void DescribeViewsAsync(const Model::DescribeViewsRequest& request, const DescribeViewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeViewsOutcomeCallable DescribeViewsCallable(const Model::DescribeViewsRequest& request);
+
+                /**
+                 *查询计算仓库列表 Action。
+                 * @param req DescribeWarehousesRequest
+                 * @return DescribeWarehousesOutcome
+                 */
+                DescribeWarehousesOutcome DescribeWarehouses(const Model::DescribeWarehousesRequest &request);
+                void DescribeWarehousesAsync(const Model::DescribeWarehousesRequest& request, const DescribeWarehousesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWarehousesOutcomeCallable DescribeWarehousesCallable(const Model::DescribeWarehousesRequest& request);
 
                 /**
                  *获取工作组详细信息
@@ -4472,6 +4687,15 @@ RunID, ExperimentID 对应MLflow 实验追踪用的参数 RunID, ExperimentID
                 ModifyGovernEventRuleOutcome ModifyGovernEventRule(const Model::ModifyGovernEventRuleRequest &request);
                 void ModifyGovernEventRuleAsync(const Model::ModifyGovernEventRuleRequest& request, const ModifyGovernEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyGovernEventRuleOutcomeCallable ModifyGovernEventRuleCallable(const Model::ModifyGovernEventRuleRequest& request);
+
+                /**
+                 *修改作业定义。
+                 * @param req ModifyJobDefinitionRequest
+                 * @return ModifyJobDefinitionOutcome
+                 */
+                ModifyJobDefinitionOutcome ModifyJobDefinition(const Model::ModifyJobDefinitionRequest &request);
+                void ModifyJobDefinitionAsync(const Model::ModifyJobDefinitionRequest& request, const ModifyJobDefinitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyJobDefinitionOutcomeCallable ModifyJobDefinitionCallable(const Model::ModifyJobDefinitionRequest& request);
 
                 /**
                  *修改实验室的调度优先级（1-9，数字越大优先级越高）

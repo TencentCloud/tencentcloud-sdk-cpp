@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消息接收人的用户名
-                     * @return Name 消息接收人的用户名
+                     * 获取<p>消息接收人的用户名</p>
+                     * @return Name <p>消息接收人的用户名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置消息接收人的用户名
-                     * @param _name 消息接收人的用户名
+                     * 设置<p>消息接收人的用户名</p>
+                     * @param _name <p>消息接收人的用户名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取手机号国际区号，国内为86
-                     * @return CountryCode 手机号国际区号，国内为86
+                     * 获取<p>手机号国际区号，国内为86</p>
+                     * @return CountryCode <p>手机号国际区号，国内为86</p>
                      * 
                      */
                     std::string GetCountryCode() const;
 
                     /**
-                     * 设置手机号国际区号，国内为86
-                     * @param _countryCode 手机号国际区号，国内为86
+                     * 设置<p>手机号国际区号，国内为86</p>
+                     * @param _countryCode <p>手机号国际区号，国内为86</p>
                      * 
                      */
                     void SetCountryCode(const std::string& _countryCode);
@@ -85,36 +85,15 @@ namespace TencentCloud
                     bool CountryCodeHasBeenSet() const;
 
                     /**
-                     * 获取手机号码, 例如：132****2492
-                     * @return PhoneNumber 手机号码, 例如：132****2492
-                     * 
-                     */
-                    std::string GetPhoneNumber() const;
-
-                    /**
-                     * 设置手机号码, 例如：132****2492
-                     * @param _phoneNumber 手机号码, 例如：132****2492
-                     * 
-                     */
-                    void SetPhoneNumber(const std::string& _phoneNumber);
-
-                    /**
-                     * 判断参数 PhoneNumber 是否已赋值
-                     * @return PhoneNumber 是否已赋值
-                     * 
-                     */
-                    bool PhoneNumberHasBeenSet() const;
-
-                    /**
-                     * 获取邮箱，例如：57*****@qq.com
-                     * @return Email 邮箱，例如：57*****@qq.com
+                     * 获取<p>邮箱，例如：57<strong>*</strong>@qq.com</p>
+                     * @return Email <p>邮箱，例如：57<strong>*</strong>@qq.com</p>
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
-                     * 设置邮箱，例如：57*****@qq.com
-                     * @param _email 邮箱，例如：57*****@qq.com
+                     * 设置<p>邮箱，例如：57<strong>*</strong>@qq.com</p>
+                     * @param _email <p>邮箱，例如：57<strong>*</strong>@qq.com</p>
                      * 
                      */
                     void SetEmail(const std::string& _email);
@@ -127,15 +106,36 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取消息接收人的备注，选填
-                     * @return Remark 消息接收人的备注，选填
+                     * 获取<p>手机号码, 例如：132****2492</p>
+                     * @return PhoneNumber <p>手机号码, 例如：132****2492</p>
+                     * 
+                     */
+                    std::string GetPhoneNumber() const;
+
+                    /**
+                     * 设置<p>手机号码, 例如：132****2492</p>
+                     * @param _phoneNumber <p>手机号码, 例如：132****2492</p>
+                     * 
+                     */
+                    void SetPhoneNumber(const std::string& _phoneNumber);
+
+                    /**
+                     * 判断参数 PhoneNumber 是否已赋值
+                     * @return PhoneNumber 是否已赋值
+                     * 
+                     */
+                    bool PhoneNumberHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消息接收人的备注，选填</p>
+                     * @return Remark <p>消息接收人的备注，选填</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置消息接收人的备注，选填
-                     * @param _remark 消息接收人的备注，选填
+                     * 设置<p>消息接收人的备注，选填</p>
+                     * @param _remark <p>消息接收人的备注，选填</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 消息接收人的用户名
+                     * <p>消息接收人的用户名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 手机号国际区号，国内为86
+                     * <p>手机号国际区号，国内为86</p>
                      */
                     std::string m_countryCode;
                     bool m_countryCodeHasBeenSet;
 
                     /**
-                     * 手机号码, 例如：132****2492
-                     */
-                    std::string m_phoneNumber;
-                    bool m_phoneNumberHasBeenSet;
-
-                    /**
-                     * 邮箱，例如：57*****@qq.com
+                     * <p>邮箱，例如：57<strong>*</strong>@qq.com</p>
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 消息接收人的备注，选填
+                     * <p>手机号码, 例如：132****2492</p>
+                     */
+                    std::string m_phoneNumber;
+                    bool m_phoneNumberHasBeenSet;
+
+                    /**
+                     * <p>消息接收人的备注，选填</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

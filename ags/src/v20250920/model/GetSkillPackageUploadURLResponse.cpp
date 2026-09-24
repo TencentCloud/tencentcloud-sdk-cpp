@@ -23,7 +23,11 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-GetSkillPackageUploadURLResponse::GetSkillPackageUploadURLResponse()
+GetSkillPackageUploadURLResponse::GetSkillPackageUploadURLResponse() :
+    m_versionHasBeenSet(false),
+    m_uploadURLHasBeenSet(false),
+    m_contentStatusHasBeenSet(false),
+    m_expireTimeHasBeenSet(false)
 {
 }
 
@@ -61,6 +65,53 @@ CoreInternalOutcome GetSkillPackageUploadURLResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("Version") && !rsp["Version"].IsNull())
+    {
+        if (!rsp["Version"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Version` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_version.Deserialize(rsp["Version"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_versionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UploadURL") && !rsp["UploadURL"].IsNull())
+    {
+        if (!rsp["UploadURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UploadURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uploadURL = string(rsp["UploadURL"].GetString());
+        m_uploadURLHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ContentStatus") && !rsp["ContentStatus"].IsNull())
+    {
+        if (!rsp["ContentStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContentStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contentStatus = string(rsp["ContentStatus"].GetString());
+        m_contentStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpireTime") && !rsp["ExpireTime"].IsNull())
+    {
+        if (!rsp["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(rsp["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +121,39 @@ string GetSkillPackageUploadURLResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_version.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_uploadURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UploadURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uploadURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contentStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +166,45 @@ string GetSkillPackageUploadURLResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+CloudRecordVersion GetSkillPackageUploadURLResponse::GetVersion() const
+{
+    return m_version;
+}
+
+bool GetSkillPackageUploadURLResponse::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+string GetSkillPackageUploadURLResponse::GetUploadURL() const
+{
+    return m_uploadURL;
+}
+
+bool GetSkillPackageUploadURLResponse::UploadURLHasBeenSet() const
+{
+    return m_uploadURLHasBeenSet;
+}
+
+string GetSkillPackageUploadURLResponse::GetContentStatus() const
+{
+    return m_contentStatus;
+}
+
+bool GetSkillPackageUploadURLResponse::ContentStatusHasBeenSet() const
+{
+    return m_contentStatusHasBeenSet;
+}
+
+string GetSkillPackageUploadURLResponse::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+bool GetSkillPackageUploadURLResponse::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
 
 

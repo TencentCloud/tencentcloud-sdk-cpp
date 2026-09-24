@@ -43,7 +43,87 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>COS GET 预签名 URL；带 response-content-disposition；默认 TTL 5 分钟；bearer 凭证禁止持久化。</p>
+                     * @return DownloadURL <p>COS GET 预签名 URL；带 response-content-disposition；默认 TTL 5 分钟；bearer 凭证禁止持久化。</p>
+                     * 
+                     */
+                    std::string GetDownloadURL() const;
+
+                    /**
+                     * 判断参数 DownloadURL 是否已赋值
+                     * @return DownloadURL 是否已赋值
+                     * 
+                     */
+                    bool DownloadURLHasBeenSet() const;
+
+                    /**
+                     * 获取<p>URL 过期时间。</p>
+                     * @return ExpireTime <p>URL 过期时间。</p>
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务端记录的 SHA-256；下载后应本地自检。</p>
+                     * @return SHA256 <p>服务端记录的 SHA-256；下载后应本地自检。</p>
+                     * 
+                     */
+                    std::string GetSHA256() const;
+
+                    /**
+                     * 判断参数 SHA256 是否已赋值
+                     * @return SHA256 是否已赋值
+                     * 
+                     */
+                    bool SHA256HasBeenSet() const;
+
+                    /**
+                     * 获取<p>解析出的 Version ID（Stable Version）。</p>
+                     * @return ResolvedVersionId <p>解析出的 Version ID（Stable Version）。</p>
+                     * 
+                     */
+                    std::string GetResolvedVersionId() const;
+
+                    /**
+                     * 判断参数 ResolvedVersionId 是否已赋值
+                     * @return ResolvedVersionId 是否已赋值
+                     * 
+                     */
+                    bool ResolvedVersionIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>COS GET 预签名 URL；带 response-content-disposition；默认 TTL 5 分钟；bearer 凭证禁止持久化。</p>
+                     */
+                    std::string m_downloadURL;
+                    bool m_downloadURLHasBeenSet;
+
+                    /**
+                     * <p>URL 过期时间。</p>
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * <p>服务端记录的 SHA-256；下载后应本地自检。</p>
+                     */
+                    std::string m_sHA256;
+                    bool m_sHA256HasBeenSet;
+
+                    /**
+                     * <p>解析出的 Version ID（Stable Version）。</p>
+                     */
+                    std::string m_resolvedVersionId;
+                    bool m_resolvedVersionIdHasBeenSet;
 
                 };
             }

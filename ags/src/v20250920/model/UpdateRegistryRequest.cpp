@@ -22,7 +22,9 @@
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-UpdateRegistryRequest::UpdateRegistryRequest()
+UpdateRegistryRequest::UpdateRegistryRequest() :
+    m_registryIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string UpdateRegistryRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_registryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string UpdateRegistryRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string UpdateRegistryRequest::GetRegistryId() const
+{
+    return m_registryId;
+}
+
+void UpdateRegistryRequest::SetRegistryId(const string& _registryId)
+{
+    m_registryId = _registryId;
+    m_registryIdHasBeenSet = true;
+}
+
+bool UpdateRegistryRequest::RegistryIdHasBeenSet() const
+{
+    return m_registryIdHasBeenSet;
+}
+
+string UpdateRegistryRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void UpdateRegistryRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool UpdateRegistryRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
 
 

@@ -148,6 +148,48 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
+                     * 获取<p>起始时间（Unix 时间戳）</p><p>单位：秒</p>
+                     * @return StartTime <p>起始时间（Unix 时间戳）</p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetStartTime() const;
+
+                    /**
+                     * 设置<p>起始时间（Unix 时间戳）</p><p>单位：秒</p>
+                     * @param _startTime <p>起始时间（Unix 时间戳）</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetStartTime(const int64_t& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>结束时间（Unix 时间戳）</p><p>单位：秒</p>
+                     * @return EndTime <p>结束时间（Unix 时间戳）</p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetEndTime() const;
+
+                    /**
+                     * 设置<p>结束时间（Unix 时间戳）</p><p>单位：秒</p>
+                     * @param _endTime <p>结束时间（Unix 时间戳）</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetEndTime(const int64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
                      * 获取<p>通道 ID，非 NVR 设备不填，NVR 设备必填</p>
                      * @return ChannelId <p>通道 ID，非 NVR 设备不填，NVR 设备必填</p>
                      * 
@@ -199,6 +241,18 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>起始时间（Unix 时间戳）</p><p>单位：秒</p>
+                     */
+                    int64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * <p>结束时间（Unix 时间戳）</p><p>单位：秒</p>
+                     */
+                    int64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                     /**
                      * <p>通道 ID，非 NVR 设备不填，NVR 设备必填</p>

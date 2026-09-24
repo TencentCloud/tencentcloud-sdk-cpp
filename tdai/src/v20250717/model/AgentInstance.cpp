@@ -45,7 +45,8 @@ AgentInstance::AgentInstance() :
     m_offlineTimeHasBeenSet(false),
     m_productNameHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
-    m_deploymentFreeHasBeenSet(false)
+    m_deploymentFreeHasBeenSet(false),
+    m_agentMemHasBeenSet(false)
 {
 }
 
@@ -347,6 +348,23 @@ CoreInternalOutcome AgentInstance::Deserialize(const rapidjson::Value &value)
         m_deploymentFreeHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentMem") && !value["AgentMem"].IsNull())
+    {
+        if (!value["AgentMem"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.AgentMem` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agentMem.Deserialize(value["AgentMem"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agentMemHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -583,6 +601,15 @@ void AgentInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DeploymentFree";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deploymentFree, allocator);
+    }
+
+    if (m_agentMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agentMem.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -986,5 +1013,21 @@ void AgentInstance::SetDeploymentFree(const bool& _deploymentFree)
 bool AgentInstance::DeploymentFreeHasBeenSet() const
 {
     return m_deploymentFreeHasBeenSet;
+}
+
+AgentMemInfo AgentInstance::GetAgentMem() const
+{
+    return m_agentMem;
+}
+
+void AgentInstance::SetAgentMem(const AgentMemInfo& _agentMem)
+{
+    m_agentMem = _agentMem;
+    m_agentMemHasBeenSet = true;
+}
+
+bool AgentInstance::AgentMemHasBeenSet() const
+{
+    return m_agentMemHasBeenSet;
 }
 

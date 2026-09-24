@@ -90,6 +90,56 @@ IoaClient::BindBusinessResourceConnectorGroupOutcomeCallable IoaClient::BindBusi
     return prom->get_future();
 }
 
+IoaClient::BindVirtualAccountsOutcome IoaClient::BindVirtualAccounts(const BindVirtualAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindVirtualAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindVirtualAccountsResponse rsp = BindVirtualAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindVirtualAccountsOutcome(rsp);
+        else
+            return BindVirtualAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return BindVirtualAccountsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::BindVirtualAccountsAsync(const BindVirtualAccountsRequest& request, const BindVirtualAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BindVirtualAccountsRequest&;
+    using Resp = BindVirtualAccountsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BindVirtualAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::BindVirtualAccountsOutcomeCallable IoaClient::BindVirtualAccountsCallable(const BindVirtualAccountsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BindVirtualAccountsOutcome>>();
+    BindVirtualAccountsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const BindVirtualAccountsRequest&,
+        BindVirtualAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::CreateBusinessResourceOutcome IoaClient::CreateBusinessResource(const CreateBusinessResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBusinessResource");
@@ -1290,6 +1340,56 @@ IoaClient::DescribeDeviceInfoOutcomeCallable IoaClient::DescribeDeviceInfoCallab
     return prom->get_future();
 }
 
+IoaClient::DescribeDeviceSecurityInfoOutcome IoaClient::DescribeDeviceSecurityInfo(const DescribeDeviceSecurityInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceSecurityInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceSecurityInfoResponse rsp = DescribeDeviceSecurityInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceSecurityInfoOutcome(rsp);
+        else
+            return DescribeDeviceSecurityInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceSecurityInfoOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDeviceSecurityInfoAsync(const DescribeDeviceSecurityInfoRequest& request, const DescribeDeviceSecurityInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeviceSecurityInfoRequest&;
+    using Resp = DescribeDeviceSecurityInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceSecurityInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeDeviceSecurityInfoOutcomeCallable IoaClient::DescribeDeviceSecurityInfoCallable(const DescribeDeviceSecurityInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeviceSecurityInfoOutcome>>();
+    DescribeDeviceSecurityInfoAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDeviceSecurityInfoRequest&,
+        DescribeDeviceSecurityInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::DescribeDeviceVirtualGroupsOutcome IoaClient::DescribeDeviceVirtualGroups(const DescribeDeviceVirtualGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDeviceVirtualGroups");
@@ -1482,6 +1582,56 @@ IoaClient::DescribeLocalAccountsOutcomeCallable IoaClient::DescribeLocalAccounts
         const IoaClient*,
         const DescribeLocalAccountsRequest&,
         DescribeLocalAccountsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::DescribeProfileFieldsMenuOutcome IoaClient::DescribeProfileFieldsMenu(const DescribeProfileFieldsMenuRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProfileFieldsMenu");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProfileFieldsMenuResponse rsp = DescribeProfileFieldsMenuResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProfileFieldsMenuOutcome(rsp);
+        else
+            return DescribeProfileFieldsMenuOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProfileFieldsMenuOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeProfileFieldsMenuAsync(const DescribeProfileFieldsMenuRequest& request, const DescribeProfileFieldsMenuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeProfileFieldsMenuRequest&;
+    using Resp = DescribeProfileFieldsMenuResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeProfileFieldsMenu", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeProfileFieldsMenuOutcomeCallable IoaClient::DescribeProfileFieldsMenuCallable(const DescribeProfileFieldsMenuRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeProfileFieldsMenuOutcome>>();
+    DescribeProfileFieldsMenuAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeProfileFieldsMenuRequest&,
+        DescribeProfileFieldsMenuOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1782,6 +1932,56 @@ IoaClient::DescribeSoftwareInformationOutcomeCallable IoaClient::DescribeSoftwar
         const IoaClient*,
         const DescribeSoftwareInformationRequest&,
         DescribeSoftwareInformationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::DescribeVirtualAccountsOutcome IoaClient::DescribeVirtualAccounts(const DescribeVirtualAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirtualAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirtualAccountsResponse rsp = DescribeVirtualAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirtualAccountsOutcome(rsp);
+        else
+            return DescribeVirtualAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirtualAccountsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeVirtualAccountsAsync(const DescribeVirtualAccountsRequest& request, const DescribeVirtualAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVirtualAccountsRequest&;
+    using Resp = DescribeVirtualAccountsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVirtualAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeVirtualAccountsOutcomeCallable IoaClient::DescribeVirtualAccountsCallable(const DescribeVirtualAccountsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVirtualAccountsOutcome>>();
+    DescribeVirtualAccountsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeVirtualAccountsRequest&,
+        DescribeVirtualAccountsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2282,6 +2482,56 @@ IoaClient::ModifyVirtualDeviceGroupsOutcomeCallable IoaClient::ModifyVirtualDevi
         const IoaClient*,
         const ModifyVirtualDeviceGroupsRequest&,
         ModifyVirtualDeviceGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::UnbindVirtualAccountsOutcome IoaClient::UnbindVirtualAccounts(const UnbindVirtualAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindVirtualAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindVirtualAccountsResponse rsp = UnbindVirtualAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindVirtualAccountsOutcome(rsp);
+        else
+            return UnbindVirtualAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindVirtualAccountsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::UnbindVirtualAccountsAsync(const UnbindVirtualAccountsRequest& request, const UnbindVirtualAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UnbindVirtualAccountsRequest&;
+    using Resp = UnbindVirtualAccountsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UnbindVirtualAccounts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::UnbindVirtualAccountsOutcomeCallable IoaClient::UnbindVirtualAccountsCallable(const UnbindVirtualAccountsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UnbindVirtualAccountsOutcome>>();
+    UnbindVirtualAccountsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const UnbindVirtualAccountsRequest&,
+        UnbindVirtualAccountsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

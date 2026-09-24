@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-DescribeRegistryListResponse::DescribeRegistryListResponse()
+DescribeRegistryListResponse::DescribeRegistryListResponse() :
+    m_registrySetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeRegistryListResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("RegistrySet") && !rsp["RegistrySet"].IsNull())
+    {
+        if (!rsp["RegistrySet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RegistrySet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RegistrySet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudRegistry item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_registrySet.push_back(item);
+        }
+        m_registrySetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeRegistryListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_registrySetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistrySet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_registrySet.begin(); itr != m_registrySet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeRegistryListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<CloudRegistry> DescribeRegistryListResponse::GetRegistrySet() const
+{
+    return m_registrySet;
+}
+
+bool DescribeRegistryListResponse::RegistrySetHasBeenSet() const
+{
+    return m_registrySetHasBeenSet;
+}
+
+int64_t DescribeRegistryListResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeRegistryListResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 

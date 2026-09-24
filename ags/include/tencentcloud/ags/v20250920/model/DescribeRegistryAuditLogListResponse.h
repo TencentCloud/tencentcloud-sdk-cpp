@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ags/v20250920/model/CloudAuditLog.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>Record 维度的审计日志。</p>
+                     * @return AuditLogSet <p>Record 维度的审计日志。</p>
+                     * 
+                     */
+                    std::vector<CloudAuditLog> GetAuditLogSet() const;
+
+                    /**
+                     * 判断参数 AuditLogSet 是否已赋值
+                     * @return AuditLogSet 是否已赋值
+                     * 
+                     */
+                    bool AuditLogSetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>符合条件的总数。</p>
+                     * @return TotalCount <p>符合条件的总数。</p>
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>Record 维度的审计日志。</p>
+                     */
+                    std::vector<CloudAuditLog> m_auditLogSet;
+                    bool m_auditLogSetHasBeenSet;
+
+                    /**
+                     * <p>符合条件的总数。</p>
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

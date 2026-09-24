@@ -146,6 +146,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ModifyWebHookReceiverResponse.h
   include/tencentcloud/cwp/v20180228/model/OpenPortStatistics.h
   include/tencentcloud/cwp/v20180228/model/DescribeRansomDefenseMachineListRequest.h
+  include/tencentcloud/cwp/v20180228/model/RecentLoginItem.h
   include/tencentcloud/cwp/v20180228/model/ExportAssetCoreModuleListRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportAssetMachineDetailResponse.h
   include/tencentcloud/cwp/v20180228/model/ProtectDirRelatedServer.h
@@ -1493,6 +1494,7 @@ set(cwp_src
   src/v20180228/model/ModifyWebHookReceiverResponse.cpp
   src/v20180228/model/OpenPortStatistics.cpp
   src/v20180228/model/DescribeRansomDefenseMachineListRequest.cpp
+  src/v20180228/model/RecentLoginItem.cpp
   src/v20180228/model/ExportAssetCoreModuleListRequest.cpp
   src/v20180228/model/ExportAssetMachineDetailResponse.cpp
   src/v20180228/model/ProtectDirRelatedServer.cpp

@@ -26,7 +26,8 @@ DescribeModelAssociationsRequest::DescribeModelAssociationsRequest() :
     m_modelRouterIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_capabilityHasBeenSet(false)
+    m_capabilityHasBeenSet(false),
+    m_capabilitiesHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,19 @@ string DescribeModelAssociationsRequest::ToJsonString() const
         string key = "Capability";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_capability.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_capabilitiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Capabilities";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_capabilities.begin(); itr != m_capabilities.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -139,6 +153,22 @@ void DescribeModelAssociationsRequest::SetCapability(const string& _capability)
 bool DescribeModelAssociationsRequest::CapabilityHasBeenSet() const
 {
     return m_capabilityHasBeenSet;
+}
+
+vector<string> DescribeModelAssociationsRequest::GetCapabilities() const
+{
+    return m_capabilities;
+}
+
+void DescribeModelAssociationsRequest::SetCapabilities(const vector<string>& _capabilities)
+{
+    m_capabilities = _capabilities;
+    m_capabilitiesHasBeenSet = true;
+}
+
+bool DescribeModelAssociationsRequest::CapabilitiesHasBeenSet() const
+{
+    return m_capabilitiesHasBeenSet;
 }
 
 

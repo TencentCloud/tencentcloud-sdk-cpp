@@ -22,7 +22,10 @@
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-GetSkillPackageUploadURLRequest::GetSkillPackageUploadURLRequest()
+GetSkillPackageUploadURLRequest::GetSkillPackageUploadURLRequest() :
+    m_registryIdHasBeenSet(false),
+    m_recordIdHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string GetSkillPackageUploadURLRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_registryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string GetSkillPackageUploadURLRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string GetSkillPackageUploadURLRequest::GetRegistryId() const
+{
+    return m_registryId;
+}
+
+void GetSkillPackageUploadURLRequest::SetRegistryId(const string& _registryId)
+{
+    m_registryId = _registryId;
+    m_registryIdHasBeenSet = true;
+}
+
+bool GetSkillPackageUploadURLRequest::RegistryIdHasBeenSet() const
+{
+    return m_registryIdHasBeenSet;
+}
+
+string GetSkillPackageUploadURLRequest::GetRecordId() const
+{
+    return m_recordId;
+}
+
+void GetSkillPackageUploadURLRequest::SetRecordId(const string& _recordId)
+{
+    m_recordId = _recordId;
+    m_recordIdHasBeenSet = true;
+}
+
+bool GetSkillPackageUploadURLRequest::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
+}
+
+string GetSkillPackageUploadURLRequest::GetVersionId() const
+{
+    return m_versionId;
+}
+
+void GetSkillPackageUploadURLRequest::SetVersionId(const string& _versionId)
+{
+    m_versionId = _versionId;
+    m_versionIdHasBeenSet = true;
+}
+
+bool GetSkillPackageUploadURLRequest::VersionIdHasBeenSet() const
+{
+    return m_versionIdHasBeenSet;
+}
 
 

@@ -22,7 +22,11 @@
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-DescribeRegistryRecordListRequest::DescribeRegistryRecordListRequest()
+DescribeRegistryRecordListRequest::DescribeRegistryRecordListRequest() :
+    m_registryIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,45 @@ string DescribeRegistryRecordListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_registryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +83,69 @@ string DescribeRegistryRecordListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeRegistryRecordListRequest::GetRegistryId() const
+{
+    return m_registryId;
+}
+
+void DescribeRegistryRecordListRequest::SetRegistryId(const string& _registryId)
+{
+    m_registryId = _registryId;
+    m_registryIdHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordListRequest::RegistryIdHasBeenSet() const
+{
+    return m_registryIdHasBeenSet;
+}
+
+int64_t DescribeRegistryRecordListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeRegistryRecordListRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeRegistryRecordListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeRegistryRecordListRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+vector<CloudFilter> DescribeRegistryRecordListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeRegistryRecordListRequest::SetFilters(const vector<CloudFilter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 

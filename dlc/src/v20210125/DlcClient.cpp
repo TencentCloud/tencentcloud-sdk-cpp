@@ -2490,6 +2490,156 @@ DlcClient::CreateInternalTableOutcomeCallable DlcClient::CreateInternalTableCall
     return prom->get_future();
 }
 
+DlcClient::CreateJobOutcome DlcClient::CreateJob(const CreateJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateJobResponse rsp = CreateJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateJobOutcome(rsp);
+        else
+            return CreateJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateJobOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateJobRequest&;
+    using Resp = CreateJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateJobOutcomeCallable DlcClient::CreateJobCallable(const CreateJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateJobOutcome>>();
+    CreateJobAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateJobRequest&,
+        CreateJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CreateJobDefinitionOutcome DlcClient::CreateJobDefinition(const CreateJobDefinitionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateJobDefinition");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateJobDefinitionResponse rsp = CreateJobDefinitionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateJobDefinitionOutcome(rsp);
+        else
+            return CreateJobDefinitionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateJobDefinitionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateJobDefinitionAsync(const CreateJobDefinitionRequest& request, const CreateJobDefinitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateJobDefinitionRequest&;
+    using Resp = CreateJobDefinitionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateJobDefinition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateJobDefinitionOutcomeCallable DlcClient::CreateJobDefinitionCallable(const CreateJobDefinitionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateJobDefinitionOutcome>>();
+    CreateJobDefinitionAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateJobDefinitionRequest&,
+        CreateJobDefinitionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::CreateJobFromDefinitionOutcome DlcClient::CreateJobFromDefinition(const CreateJobFromDefinitionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateJobFromDefinition");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateJobFromDefinitionResponse rsp = CreateJobFromDefinitionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateJobFromDefinitionOutcome(rsp);
+        else
+            return CreateJobFromDefinitionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateJobFromDefinitionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateJobFromDefinitionAsync(const CreateJobFromDefinitionRequest& request, const CreateJobFromDefinitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateJobFromDefinitionRequest&;
+    using Resp = CreateJobFromDefinitionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateJobFromDefinition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::CreateJobFromDefinitionOutcomeCallable DlcClient::CreateJobFromDefinitionCallable(const CreateJobFromDefinitionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateJobFromDefinitionOutcome>>();
+    CreateJobFromDefinitionAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const CreateJobFromDefinitionRequest&,
+        CreateJobFromDefinitionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::CreateJobSpecOutcome DlcClient::CreateJobSpec(const CreateJobSpecRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateJobSpec");
@@ -5690,6 +5840,206 @@ DlcClient::DescribeBindablePrometheusOutcomeCallable DlcClient::DescribeBindable
     return prom->get_future();
 }
 
+DlcClient::DescribeCatalogTableInfoOutcome DlcClient::DescribeCatalogTableInfo(const DescribeCatalogTableInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCatalogTableInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCatalogTableInfoResponse rsp = DescribeCatalogTableInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCatalogTableInfoOutcome(rsp);
+        else
+            return DescribeCatalogTableInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCatalogTableInfoOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeCatalogTableInfoAsync(const DescribeCatalogTableInfoRequest& request, const DescribeCatalogTableInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCatalogTableInfoRequest&;
+    using Resp = DescribeCatalogTableInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCatalogTableInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeCatalogTableInfoOutcomeCallable DlcClient::DescribeCatalogTableInfoCallable(const DescribeCatalogTableInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCatalogTableInfoOutcome>>();
+    DescribeCatalogTableInfoAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeCatalogTableInfoRequest&,
+        DescribeCatalogTableInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeCatalogTableNamesOutcome DlcClient::DescribeCatalogTableNames(const DescribeCatalogTableNamesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCatalogTableNames");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCatalogTableNamesResponse rsp = DescribeCatalogTableNamesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCatalogTableNamesOutcome(rsp);
+        else
+            return DescribeCatalogTableNamesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCatalogTableNamesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeCatalogTableNamesAsync(const DescribeCatalogTableNamesRequest& request, const DescribeCatalogTableNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCatalogTableNamesRequest&;
+    using Resp = DescribeCatalogTableNamesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCatalogTableNames", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeCatalogTableNamesOutcomeCallable DlcClient::DescribeCatalogTableNamesCallable(const DescribeCatalogTableNamesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCatalogTableNamesOutcome>>();
+    DescribeCatalogTableNamesAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeCatalogTableNamesRequest&,
+        DescribeCatalogTableNamesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeCatalogTableNamesPageOutcome DlcClient::DescribeCatalogTableNamesPage(const DescribeCatalogTableNamesPageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCatalogTableNamesPage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCatalogTableNamesPageResponse rsp = DescribeCatalogTableNamesPageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCatalogTableNamesPageOutcome(rsp);
+        else
+            return DescribeCatalogTableNamesPageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCatalogTableNamesPageOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeCatalogTableNamesPageAsync(const DescribeCatalogTableNamesPageRequest& request, const DescribeCatalogTableNamesPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCatalogTableNamesPageRequest&;
+    using Resp = DescribeCatalogTableNamesPageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCatalogTableNamesPage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeCatalogTableNamesPageOutcomeCallable DlcClient::DescribeCatalogTableNamesPageCallable(const DescribeCatalogTableNamesPageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCatalogTableNamesPageOutcome>>();
+    DescribeCatalogTableNamesPageAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeCatalogTableNamesPageRequest&,
+        DescribeCatalogTableNamesPageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeCatalogsOutcome DlcClient::DescribeCatalogs(const DescribeCatalogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCatalogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCatalogsResponse rsp = DescribeCatalogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCatalogsOutcome(rsp);
+        else
+            return DescribeCatalogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCatalogsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeCatalogsAsync(const DescribeCatalogsRequest& request, const DescribeCatalogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCatalogsRequest&;
+    using Resp = DescribeCatalogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCatalogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeCatalogsOutcomeCallable DlcClient::DescribeCatalogsCallable(const DescribeCatalogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCatalogsOutcome>>();
+    DescribeCatalogsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeCatalogsRequest&,
+        DescribeCatalogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DescribeClsTopicsOutcome DlcClient::DescribeClsTopics(const DescribeClsTopicsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClsTopics");
@@ -7082,6 +7432,306 @@ DlcClient::DescribeForbiddenTableProOutcomeCallable DlcClient::DescribeForbidden
         const DlcClient*,
         const DescribeForbiddenTableProRequest&,
         DescribeForbiddenTableProOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeJobDefinitionDetailOutcome DlcClient::DescribeJobDefinitionDetail(const DescribeJobDefinitionDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobDefinitionDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobDefinitionDetailResponse rsp = DescribeJobDefinitionDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobDefinitionDetailOutcome(rsp);
+        else
+            return DescribeJobDefinitionDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobDefinitionDetailOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeJobDefinitionDetailAsync(const DescribeJobDefinitionDetailRequest& request, const DescribeJobDefinitionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeJobDefinitionDetailRequest&;
+    using Resp = DescribeJobDefinitionDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobDefinitionDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeJobDefinitionDetailOutcomeCallable DlcClient::DescribeJobDefinitionDetailCallable(const DescribeJobDefinitionDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeJobDefinitionDetailOutcome>>();
+    DescribeJobDefinitionDetailAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeJobDefinitionDetailRequest&,
+        DescribeJobDefinitionDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeJobDefinitionsOutcome DlcClient::DescribeJobDefinitions(const DescribeJobDefinitionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobDefinitions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobDefinitionsResponse rsp = DescribeJobDefinitionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobDefinitionsOutcome(rsp);
+        else
+            return DescribeJobDefinitionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobDefinitionsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeJobDefinitionsAsync(const DescribeJobDefinitionsRequest& request, const DescribeJobDefinitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeJobDefinitionsRequest&;
+    using Resp = DescribeJobDefinitionsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobDefinitions", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeJobDefinitionsOutcomeCallable DlcClient::DescribeJobDefinitionsCallable(const DescribeJobDefinitionsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeJobDefinitionsOutcome>>();
+    DescribeJobDefinitionsAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeJobDefinitionsRequest&,
+        DescribeJobDefinitionsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeJobDetailOutcome DlcClient::DescribeJobDetail(const DescribeJobDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobDetailResponse rsp = DescribeJobDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobDetailOutcome(rsp);
+        else
+            return DescribeJobDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobDetailOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeJobDetailAsync(const DescribeJobDetailRequest& request, const DescribeJobDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeJobDetailRequest&;
+    using Resp = DescribeJobDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeJobDetailOutcomeCallable DlcClient::DescribeJobDetailCallable(const DescribeJobDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeJobDetailOutcome>>();
+    DescribeJobDetailAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeJobDetailRequest&,
+        DescribeJobDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeJobListOutcome DlcClient::DescribeJobList(const DescribeJobListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobListResponse rsp = DescribeJobListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobListOutcome(rsp);
+        else
+            return DescribeJobListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobListOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeJobListAsync(const DescribeJobListRequest& request, const DescribeJobListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeJobListRequest&;
+    using Resp = DescribeJobListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeJobListOutcomeCallable DlcClient::DescribeJobListCallable(const DescribeJobListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeJobListOutcome>>();
+    DescribeJobListAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeJobListRequest&,
+        DescribeJobListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeJobLogOutcome DlcClient::DescribeJobLog(const DescribeJobLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobLogResponse rsp = DescribeJobLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobLogOutcome(rsp);
+        else
+            return DescribeJobLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobLogOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeJobLogAsync(const DescribeJobLogRequest& request, const DescribeJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeJobLogRequest&;
+    using Resp = DescribeJobLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeJobLogOutcomeCallable DlcClient::DescribeJobLogCallable(const DescribeJobLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeJobLogOutcome>>();
+    DescribeJobLogAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeJobLogRequest&,
+        DescribeJobLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeJobResultOutcome DlcClient::DescribeJobResult(const DescribeJobResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobResultResponse rsp = DescribeJobResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobResultOutcome(rsp);
+        else
+            return DescribeJobResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobResultOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeJobResultAsync(const DescribeJobResultRequest& request, const DescribeJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeJobResultRequest&;
+    using Resp = DescribeJobResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeJobResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeJobResultOutcomeCallable DlcClient::DescribeJobResultCallable(const DescribeJobResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeJobResultOutcome>>();
+    DescribeJobResultAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeJobResultRequest&,
+        DescribeJobResultOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -8582,6 +9232,56 @@ DlcClient::DescribeSaleResourceInfoOutcomeCallable DlcClient::DescribeSaleResour
         const DlcClient*,
         const DescribeSaleResourceInfoRequest&,
         DescribeSaleResourceInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeSchemaNamesPageOutcome DlcClient::DescribeSchemaNamesPage(const DescribeSchemaNamesPageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSchemaNamesPage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSchemaNamesPageResponse rsp = DescribeSchemaNamesPageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSchemaNamesPageOutcome(rsp);
+        else
+            return DescribeSchemaNamesPageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSchemaNamesPageOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeSchemaNamesPageAsync(const DescribeSchemaNamesPageRequest& request, const DescribeSchemaNamesPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSchemaNamesPageRequest&;
+    using Resp = DescribeSchemaNamesPageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSchemaNamesPage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeSchemaNamesPageOutcomeCallable DlcClient::DescribeSchemaNamesPageCallable(const DescribeSchemaNamesPageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSchemaNamesPageOutcome>>();
+    DescribeSchemaNamesPageAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeSchemaNamesPageRequest&,
+        DescribeSchemaNamesPageOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -10682,6 +11382,56 @@ DlcClient::DescribeViewsOutcomeCallable DlcClient::DescribeViewsCallable(const D
         const DlcClient*,
         const DescribeViewsRequest&,
         DescribeViewsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::DescribeWarehousesOutcome DlcClient::DescribeWarehouses(const DescribeWarehousesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWarehouses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWarehousesResponse rsp = DescribeWarehousesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWarehousesOutcome(rsp);
+        else
+            return DescribeWarehousesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWarehousesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeWarehousesAsync(const DescribeWarehousesRequest& request, const DescribeWarehousesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWarehousesRequest&;
+    using Resp = DescribeWarehousesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWarehouses", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribeWarehousesOutcomeCallable DlcClient::DescribeWarehousesCallable(const DescribeWarehousesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWarehousesOutcome>>();
+    DescribeWarehousesAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribeWarehousesRequest&,
+        DescribeWarehousesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -14632,6 +15382,56 @@ DlcClient::ModifyGovernEventRuleOutcomeCallable DlcClient::ModifyGovernEventRule
         const DlcClient*,
         const ModifyGovernEventRuleRequest&,
         ModifyGovernEventRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ModifyJobDefinitionOutcome DlcClient::ModifyJobDefinition(const ModifyJobDefinitionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyJobDefinition");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyJobDefinitionResponse rsp = ModifyJobDefinitionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyJobDefinitionOutcome(rsp);
+        else
+            return ModifyJobDefinitionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyJobDefinitionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ModifyJobDefinitionAsync(const ModifyJobDefinitionRequest& request, const ModifyJobDefinitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyJobDefinitionRequest&;
+    using Resp = ModifyJobDefinitionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyJobDefinition", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ModifyJobDefinitionOutcomeCallable DlcClient::ModifyJobDefinitionCallable(const ModifyJobDefinitionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyJobDefinitionOutcome>>();
+    ModifyJobDefinitionAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ModifyJobDefinitionRequest&,
+        ModifyJobDefinitionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -62,6 +62,7 @@ DeviceDetail::DeviceDetail() :
     m_deviceNewStrategyVerHasBeenSet(false),
     m_nGNNewStrategyVerHasBeenSet(false),
     m_hostNameHasBeenSet(false),
+    m_profilesHasBeenSet(false),
     m_baseBoardSnHasBeenSet(false),
     m_accountUsersHasBeenSet(false),
     m_identityStrategyVerHasBeenSet(false),
@@ -71,6 +72,7 @@ DeviceDetail::DeviceDetail() :
     m_accountGroupIdHasBeenSet(false),
     m_screenRecordingPermissionHasBeenSet(false),
     m_diskAccessPermissionHasBeenSet(false),
+    m_installationStatusHasBeenSet(false),
     m_remarkNameHasBeenSet(false),
     m_biosUuidHasBeenSet(false)
 {
@@ -494,6 +496,26 @@ CoreInternalOutcome DeviceDetail::Deserialize(const rapidjson::Value &value)
         m_hostNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Profiles") && !value["Profiles"].IsNull())
+    {
+        if (!value["Profiles"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.Profiles` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Profiles"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeviceProfile item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_profiles.push_back(item);
+        }
+        m_profilesHasBeenSet = true;
+    }
+
     if (value.HasMember("BaseBoardSn") && !value["BaseBoardSn"].IsNull())
     {
         if (!value["BaseBoardSn"].IsString())
@@ -582,6 +604,16 @@ CoreInternalOutcome DeviceDetail::Deserialize(const rapidjson::Value &value)
         }
         m_diskAccessPermission = value["DiskAccessPermission"].GetInt64();
         m_diskAccessPermissionHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstallationStatus") && !value["InstallationStatus"].IsNull())
+    {
+        if (!value["InstallationStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetail.InstallationStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_installationStatus = value["InstallationStatus"].GetInt64();
+        m_installationStatusHasBeenSet = true;
     }
 
     if (value.HasMember("RemarkName") && !value["RemarkName"].IsNull())
@@ -944,6 +976,21 @@ void DeviceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_profilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Profiles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_profiles.begin(); itr != m_profiles.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_baseBoardSnHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1014,6 +1061,14 @@ void DeviceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DiskAccessPermission";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskAccessPermission, allocator);
+    }
+
+    if (m_installationStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstallationStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_installationStatus, allocator);
     }
 
     if (m_remarkNameHasBeenSet)
@@ -1691,6 +1746,22 @@ bool DeviceDetail::HostNameHasBeenSet() const
     return m_hostNameHasBeenSet;
 }
 
+vector<DeviceProfile> DeviceDetail::GetProfiles() const
+{
+    return m_profiles;
+}
+
+void DeviceDetail::SetProfiles(const vector<DeviceProfile>& _profiles)
+{
+    m_profiles = _profiles;
+    m_profilesHasBeenSet = true;
+}
+
+bool DeviceDetail::ProfilesHasBeenSet() const
+{
+    return m_profilesHasBeenSet;
+}
+
 string DeviceDetail::GetBaseBoardSn() const
 {
     return m_baseBoardSn;
@@ -1833,6 +1904,22 @@ void DeviceDetail::SetDiskAccessPermission(const int64_t& _diskAccessPermission)
 bool DeviceDetail::DiskAccessPermissionHasBeenSet() const
 {
     return m_diskAccessPermissionHasBeenSet;
+}
+
+int64_t DeviceDetail::GetInstallationStatus() const
+{
+    return m_installationStatus;
+}
+
+void DeviceDetail::SetInstallationStatus(const int64_t& _installationStatus)
+{
+    m_installationStatus = _installationStatus;
+    m_installationStatusHasBeenSet = true;
+}
+
+bool DeviceDetail::InstallationStatusHasBeenSet() const
+{
+    return m_installationStatusHasBeenSet;
 }
 
 string DeviceDetail::GetRemarkName() const

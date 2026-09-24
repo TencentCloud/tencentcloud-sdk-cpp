@@ -23,7 +23,11 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-DescribeRegistryRecordResponse::DescribeRegistryRecordResponse()
+DescribeRegistryRecordResponse::DescribeRegistryRecordResponse() :
+    m_recordHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_resolvedByHasBeenSet(false),
+    m_resolvedLabelHasBeenSet(false)
 {
 }
 
@@ -61,6 +65,60 @@ CoreInternalOutcome DescribeRegistryRecordResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("Record") && !rsp["Record"].IsNull())
+    {
+        if (!rsp["Record"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Record` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_record.Deserialize(rsp["Record"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_recordHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Version") && !rsp["Version"].IsNull())
+    {
+        if (!rsp["Version"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Version` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_version.Deserialize(rsp["Version"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_versionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResolvedBy") && !rsp["ResolvedBy"].IsNull())
+    {
+        if (!rsp["ResolvedBy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResolvedBy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resolvedBy = string(rsp["ResolvedBy"].GetString());
+        m_resolvedByHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResolvedLabel") && !rsp["ResolvedLabel"].IsNull())
+    {
+        if (!rsp["ResolvedLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResolvedLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resolvedLabel = string(rsp["ResolvedLabel"].GetString());
+        m_resolvedLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +128,40 @@ string DescribeRegistryRecordResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_recordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Record";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_record.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_version.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_resolvedByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResolvedBy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resolvedBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resolvedLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResolvedLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resolvedLabel.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +174,45 @@ string DescribeRegistryRecordResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+CloudRecord DescribeRegistryRecordResponse::GetRecord() const
+{
+    return m_record;
+}
+
+bool DescribeRegistryRecordResponse::RecordHasBeenSet() const
+{
+    return m_recordHasBeenSet;
+}
+
+CloudRecordVersion DescribeRegistryRecordResponse::GetVersion() const
+{
+    return m_version;
+}
+
+bool DescribeRegistryRecordResponse::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+string DescribeRegistryRecordResponse::GetResolvedBy() const
+{
+    return m_resolvedBy;
+}
+
+bool DescribeRegistryRecordResponse::ResolvedByHasBeenSet() const
+{
+    return m_resolvedByHasBeenSet;
+}
+
+string DescribeRegistryRecordResponse::GetResolvedLabel() const
+{
+    return m_resolvedLabel;
+}
+
+bool DescribeRegistryRecordResponse::ResolvedLabelHasBeenSet() const
+{
+    return m_resolvedLabelHasBeenSet;
+}
 
 

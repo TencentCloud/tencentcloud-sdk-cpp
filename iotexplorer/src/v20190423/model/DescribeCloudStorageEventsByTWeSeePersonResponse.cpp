@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeCloudStorageEventsByTWeSeePersonResponse::DescribeCloudStorageEventsByTWeSeePersonResponse() :
     m_eventsHasBeenSet(false),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_videoURLHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeCloudStorageEventsByTWeSeePersonResponse::Deserializ
         m_totalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VideoURL") && !rsp["VideoURL"].IsNull())
+    {
+        if (!rsp["VideoURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoURL = string(rsp["VideoURL"].GetString());
+        m_videoURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeCloudStorageEventsByTWeSeePersonResponse::ToJsonString() const
         value.AddMember(iKey, m_total, allocator);
     }
 
+    if (m_videoURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_videoURL.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ uint64_t DescribeCloudStorageEventsByTWeSeePersonResponse::GetTotal() const
 bool DescribeCloudStorageEventsByTWeSeePersonResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+string DescribeCloudStorageEventsByTWeSeePersonResponse::GetVideoURL() const
+{
+    return m_videoURL;
+}
+
+bool DescribeCloudStorageEventsByTWeSeePersonResponse::VideoURLHasBeenSet() const
+{
+    return m_videoURLHasBeenSet;
 }
 
 

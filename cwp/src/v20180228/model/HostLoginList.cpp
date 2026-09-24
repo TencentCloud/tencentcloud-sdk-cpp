@@ -43,7 +43,15 @@ HostLoginList::HostLoginList() :
     m_descHasBeenSet(false),
     m_machineExtraInfoHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_iPAnalyseHasBeenSet(false)
+    m_iPAnalyseHasBeenSet(false),
+    m_hitRuleHasBeenSet(false),
+    m_hitRuleNameHasBeenSet(false),
+    m_alertCountHasBeenSet(false),
+    m_firstDiscoverTimeHasBeenSet(false),
+    m_lastDiscoverTimeHasBeenSet(false),
+    m_harmDescribeHasBeenSet(false),
+    m_suggestSchemeHasBeenSet(false),
+    m_recentLoginListHasBeenSet(false)
 {
 }
 
@@ -296,6 +304,96 @@ CoreInternalOutcome HostLoginList::Deserialize(const rapidjson::Value &value)
         m_iPAnalyseHasBeenSet = true;
     }
 
+    if (value.HasMember("HitRule") && !value["HitRule"].IsNull())
+    {
+        if (!value["HitRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.HitRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitRule = string(value["HitRule"].GetString());
+        m_hitRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("HitRuleName") && !value["HitRuleName"].IsNull())
+    {
+        if (!value["HitRuleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.HitRuleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitRuleName = string(value["HitRuleName"].GetString());
+        m_hitRuleNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlertCount") && !value["AlertCount"].IsNull())
+    {
+        if (!value["AlertCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.AlertCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alertCount = value["AlertCount"].GetInt64();
+        m_alertCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("FirstDiscoverTime") && !value["FirstDiscoverTime"].IsNull())
+    {
+        if (!value["FirstDiscoverTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.FirstDiscoverTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstDiscoverTime = string(value["FirstDiscoverTime"].GetString());
+        m_firstDiscoverTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastDiscoverTime") && !value["LastDiscoverTime"].IsNull())
+    {
+        if (!value["LastDiscoverTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.LastDiscoverTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastDiscoverTime = string(value["LastDiscoverTime"].GetString());
+        m_lastDiscoverTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HarmDescribe") && !value["HarmDescribe"].IsNull())
+    {
+        if (!value["HarmDescribe"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.HarmDescribe` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_harmDescribe = string(value["HarmDescribe"].GetString());
+        m_harmDescribeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SuggestScheme") && !value["SuggestScheme"].IsNull())
+    {
+        if (!value["SuggestScheme"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.SuggestScheme` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_suggestScheme = string(value["SuggestScheme"].GetString());
+        m_suggestSchemeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecentLoginList") && !value["RecentLoginList"].IsNull())
+    {
+        if (!value["RecentLoginList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.RecentLoginList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RecentLoginList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RecentLoginItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_recentLoginList.push_back(item);
+        }
+        m_recentLoginListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -487,6 +585,77 @@ void HostLoginList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_iPAnalyse.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hitRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hitRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hitRuleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitRuleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hitRuleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alertCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlertCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alertCount, allocator);
+    }
+
+    if (m_firstDiscoverTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstDiscoverTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstDiscoverTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastDiscoverTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastDiscoverTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastDiscoverTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_harmDescribeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HarmDescribe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_harmDescribe.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_suggestSchemeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuggestScheme";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestScheme.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recentLoginListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecentLoginList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_recentLoginList.begin(); itr != m_recentLoginList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -858,5 +1027,133 @@ void HostLoginList::SetIPAnalyse(const IPAnalyse& _iPAnalyse)
 bool HostLoginList::IPAnalyseHasBeenSet() const
 {
     return m_iPAnalyseHasBeenSet;
+}
+
+string HostLoginList::GetHitRule() const
+{
+    return m_hitRule;
+}
+
+void HostLoginList::SetHitRule(const string& _hitRule)
+{
+    m_hitRule = _hitRule;
+    m_hitRuleHasBeenSet = true;
+}
+
+bool HostLoginList::HitRuleHasBeenSet() const
+{
+    return m_hitRuleHasBeenSet;
+}
+
+string HostLoginList::GetHitRuleName() const
+{
+    return m_hitRuleName;
+}
+
+void HostLoginList::SetHitRuleName(const string& _hitRuleName)
+{
+    m_hitRuleName = _hitRuleName;
+    m_hitRuleNameHasBeenSet = true;
+}
+
+bool HostLoginList::HitRuleNameHasBeenSet() const
+{
+    return m_hitRuleNameHasBeenSet;
+}
+
+int64_t HostLoginList::GetAlertCount() const
+{
+    return m_alertCount;
+}
+
+void HostLoginList::SetAlertCount(const int64_t& _alertCount)
+{
+    m_alertCount = _alertCount;
+    m_alertCountHasBeenSet = true;
+}
+
+bool HostLoginList::AlertCountHasBeenSet() const
+{
+    return m_alertCountHasBeenSet;
+}
+
+string HostLoginList::GetFirstDiscoverTime() const
+{
+    return m_firstDiscoverTime;
+}
+
+void HostLoginList::SetFirstDiscoverTime(const string& _firstDiscoverTime)
+{
+    m_firstDiscoverTime = _firstDiscoverTime;
+    m_firstDiscoverTimeHasBeenSet = true;
+}
+
+bool HostLoginList::FirstDiscoverTimeHasBeenSet() const
+{
+    return m_firstDiscoverTimeHasBeenSet;
+}
+
+string HostLoginList::GetLastDiscoverTime() const
+{
+    return m_lastDiscoverTime;
+}
+
+void HostLoginList::SetLastDiscoverTime(const string& _lastDiscoverTime)
+{
+    m_lastDiscoverTime = _lastDiscoverTime;
+    m_lastDiscoverTimeHasBeenSet = true;
+}
+
+bool HostLoginList::LastDiscoverTimeHasBeenSet() const
+{
+    return m_lastDiscoverTimeHasBeenSet;
+}
+
+string HostLoginList::GetHarmDescribe() const
+{
+    return m_harmDescribe;
+}
+
+void HostLoginList::SetHarmDescribe(const string& _harmDescribe)
+{
+    m_harmDescribe = _harmDescribe;
+    m_harmDescribeHasBeenSet = true;
+}
+
+bool HostLoginList::HarmDescribeHasBeenSet() const
+{
+    return m_harmDescribeHasBeenSet;
+}
+
+string HostLoginList::GetSuggestScheme() const
+{
+    return m_suggestScheme;
+}
+
+void HostLoginList::SetSuggestScheme(const string& _suggestScheme)
+{
+    m_suggestScheme = _suggestScheme;
+    m_suggestSchemeHasBeenSet = true;
+}
+
+bool HostLoginList::SuggestSchemeHasBeenSet() const
+{
+    return m_suggestSchemeHasBeenSet;
+}
+
+vector<RecentLoginItem> HostLoginList::GetRecentLoginList() const
+{
+    return m_recentLoginList;
+}
+
+void HostLoginList::SetRecentLoginList(const vector<RecentLoginItem>& _recentLoginList)
+{
+    m_recentLoginList = _recentLoginList;
+    m_recentLoginListHasBeenSet = true;
+}
+
+bool HostLoginList::RecentLoginListHasBeenSet() const
+{
+    return m_recentLoginListHasBeenSet;
 }
 

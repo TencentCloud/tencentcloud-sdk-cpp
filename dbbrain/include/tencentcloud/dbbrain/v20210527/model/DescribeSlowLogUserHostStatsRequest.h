@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 获取<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @return InstanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 设置<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @param _instanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询范围的开始时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
-                     * @return StartTime 查询范围的开始时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
+                     * 获取<p>查询范围的开始时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>
+                     * @return StartTime <p>查询范围的开始时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询范围的开始时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
-                     * @param _startTime 查询范围的开始时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
+                     * 设置<p>查询范围的开始时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>
+                     * @param _startTime <p>查询范围的开始时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询范围的结束时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
-                     * @return EndTime 查询范围的结束时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
+                     * 获取<p>查询范围的结束时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>
+                     * @return EndTime <p>查询范围的结束时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询范围的结束时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
-                     * @param _endTime 查询范围的结束时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
+                     * 设置<p>查询范围的结束时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>
+                     * @param _endTime <p>查询范围的结束时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
-                     * @return Product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * 获取<p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>
+                     * @return Product <p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
-                     * @param _product 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * 设置<p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>
+                     * @param _product <p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取SQL模板的MD5值
-                     * @return Md5 SQL模板的MD5值
+                     * 获取<p>SQL模板的MD5值</p>
+                     * @return Md5 <p>SQL模板的MD5值</p>
                      * 
                      */
                     std::string GetMd5() const;
 
                     /**
-                     * 设置SQL模板的MD5值
-                     * @param _md5 SQL模板的MD5值
+                     * 设置<p>SQL模板的MD5值</p>
+                     * @param _md5 <p>SQL模板的MD5值</p>
                      * 
                      */
                     void SetMd5(const std::string& _md5);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool Md5HasBeenSet() const;
 
                     /**
-                     * 获取仅Redis产品使用；实例Proxy ID。
-                     * @return InstanceProxyId 仅Redis产品使用；实例Proxy ID。
+                     * 获取<p>仅Redis产品使用；实例Proxy ID。</p>
+                     * @return InstanceProxyId <p>仅Redis产品使用；实例Proxy ID。</p>
                      * 
                      */
                     std::string GetInstanceProxyId() const;
 
                     /**
-                     * 设置仅Redis产品使用；实例Proxy ID。
-                     * @param _instanceProxyId 仅Redis产品使用；实例Proxy ID。
+                     * 设置<p>仅Redis产品使用；实例Proxy ID。</p>
+                     * @param _instanceProxyId <p>仅Redis产品使用；实例Proxy ID。</p>
                      * 
                      */
                     void SetInstanceProxyId(const std::string& _instanceProxyId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool InstanceProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取仅Redis产品使用；命令。
-                     * @return Cmd 仅Redis产品使用；命令。
+                     * 获取<p>仅Redis产品使用；命令。</p>
+                     * @return Cmd <p>仅Redis产品使用；命令。</p>
                      * 
                      */
                     std::string GetCmd() const;
 
                     /**
-                     * 设置仅Redis产品使用；命令。
-                     * @param _cmd 仅Redis产品使用；命令。
+                     * 设置<p>仅Redis产品使用；命令。</p>
+                     * @param _cmd <p>仅Redis产品使用；命令。</p>
                      * 
                      */
                     void SetCmd(const std::string& _cmd);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 查询范围的开始时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
+                     * <p>查询范围的开始时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询范围的结束时间，格式: "yyyy-MM-dd'T'HH:mm:ssXXX"。
+                     * <p>查询范围的结束时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 服务产品类型，支持值："mysql" - 云数据库 MySQL；"cynosdb" - 云数据库 TDSQL-C for MySQL，默认为"mysql"。
+                     * <p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * SQL模板的MD5值
+                     * <p>SQL模板的MD5值</p>
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
-                     * 仅Redis产品使用；实例Proxy ID。
+                     * <p>仅Redis产品使用；实例Proxy ID。</p>
                      */
                     std::string m_instanceProxyId;
                     bool m_instanceProxyIdHasBeenSet;
 
                     /**
-                     * 仅Redis产品使用；命令。
+                     * <p>仅Redis产品使用；命令。</p>
                      */
                     std::string m_cmd;
                     bool m_cmdHasBeenSet;

@@ -716,7 +716,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayLLMModelServicesOutcomeCallable DescribeCloudNativeAPIGatewayLLMModelServicesCallable(const Model::DescribeCloudNativeAPIGatewayLLMModelServicesRequest& request);
 
                 /**
-                 *查询 AI 网关Token 消耗统计
+                 *查询 AI 网关Token 消耗统计（消费者消费金额数据）
                  * @param req DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest
                  * @return DescribeCloudNativeAPIGatewayLLMTokenUsageListOutcome
                  */
@@ -725,7 +725,7 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayLLMTokenUsageListOutcomeCallable DescribeCloudNativeAPIGatewayLLMTokenUsageListCallable(const Model::DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest& request);
 
                 /**
-                 *查询 AI 网关Token 消耗统计汇总
+                 *查询 AI 网关Token 消耗统计汇总含（消费者消费金额数据）
                  * @param req DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsRequest
                  * @return DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsOutcome
                  */

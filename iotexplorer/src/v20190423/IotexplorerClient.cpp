@@ -340,6 +340,56 @@ IotexplorerClient::BatchInvokeTWeSeeRecognitionTaskOutcomeCallable IotexplorerCl
     return prom->get_future();
 }
 
+IotexplorerClient::BatchPublishMessageOutcome IotexplorerClient::BatchPublishMessage(const BatchPublishMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchPublishMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchPublishMessageResponse rsp = BatchPublishMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchPublishMessageOutcome(rsp);
+        else
+            return BatchPublishMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchPublishMessageOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::BatchPublishMessageAsync(const BatchPublishMessageRequest& request, const BatchPublishMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BatchPublishMessageRequest&;
+    using Resp = BatchPublishMessageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BatchPublishMessage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::BatchPublishMessageOutcomeCallable IotexplorerClient::BatchPublishMessageCallable(const BatchPublishMessageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BatchPublishMessageOutcome>>();
+    BatchPublishMessageAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const BatchPublishMessageRequest&,
+        BatchPublishMessageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::BatchRenewTWeSeeSubscriptionOutcome IotexplorerClient::BatchRenewTWeSeeSubscription(const BatchRenewTWeSeeSubscriptionRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchRenewTWeSeeSubscription");

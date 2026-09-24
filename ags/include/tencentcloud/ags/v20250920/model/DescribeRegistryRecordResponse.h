@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ags/v20250920/model/CloudRecord.h>
+#include <tencentcloud/ags/v20250920/model/CloudRecordVersion.h>
 
 
 namespace TencentCloud
@@ -43,7 +45,96 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>Record 元数据和全部 Label。</p>
+                     * @return Record <p>Record 元数据和全部 Label。</p>
+                     * 
+                     */
+                    CloudRecord GetRecord() const;
+
+                    /**
+                     * 判断参数 Record 是否已赋值
+                     * @return Record 是否已赋值
+                     * 
+                     */
+                    bool RecordHasBeenSet() const;
+
+                    /**
+                     * 获取<p>根据 VersionId / Label 解析得到的完整 Version。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Version <p>根据 VersionId / Label 解析得到的完整 Version。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CloudRecordVersion GetVersion() const;
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     * 
+                     */
+                    bool VersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>解析方式：DEFAULT_STABLE / LABEL / VERSION_ID。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResolvedBy <p>解析方式：DEFAULT_STABLE / LABEL / VERSION_ID。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResolvedBy() const;
+
+                    /**
+                     * 判断参数 ResolvedBy 是否已赋值
+                     * @return ResolvedBy 是否已赋值
+                     * 
+                     */
+                    bool ResolvedByHasBeenSet() const;
+
+                    /**
+                     * 获取<p>通过 Label 解析（ResolvedBy=LABEL 或 DEFAULT_STABLE）时返回该 Label 名称，例如 stable。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResolvedLabel <p>通过 Label 解析（ResolvedBy=LABEL 或 DEFAULT_STABLE）时返回该 Label 名称，例如 stable。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResolvedLabel() const;
+
+                    /**
+                     * 判断参数 ResolvedLabel 是否已赋值
+                     * @return ResolvedLabel 是否已赋值
+                     * 
+                     */
+                    bool ResolvedLabelHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>Record 元数据和全部 Label。</p>
+                     */
+                    CloudRecord m_record;
+                    bool m_recordHasBeenSet;
+
+                    /**
+                     * <p>根据 VersionId / Label 解析得到的完整 Version。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CloudRecordVersion m_version;
+                    bool m_versionHasBeenSet;
+
+                    /**
+                     * <p>解析方式：DEFAULT_STABLE / LABEL / VERSION_ID。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resolvedBy;
+                    bool m_resolvedByHasBeenSet;
+
+                    /**
+                     * <p>通过 Label 解析（ResolvedBy=LABEL 或 DEFAULT_STABLE）时返回该 Label 名称，例如 stable。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resolvedLabel;
+                    bool m_resolvedLabelHasBeenSet;
 
                 };
             }

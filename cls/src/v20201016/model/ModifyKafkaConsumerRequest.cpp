@@ -27,6 +27,8 @@ ModifyKafkaConsumerRequest::ModifyKafkaConsumerRequest() :
     m_compressionHasBeenSet(false),
     m_consumerContentHasBeenSet(false),
     m_hasServicesLogHasBeenSet(false),
+    m_enableInternetConsumeHasBeenSet(false),
+    m_enableIntranetConsumeHasBeenSet(false),
     m_scopeTypeHasBeenSet(false)
 {
 }
@@ -69,6 +71,22 @@ string ModifyKafkaConsumerRequest::ToJsonString() const
         string key = "HasServicesLog";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_hasServicesLog, allocator);
+    }
+
+    if (m_enableInternetConsumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableInternetConsume";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableInternetConsume, allocator);
+    }
+
+    if (m_enableIntranetConsumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableIntranetConsume";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableIntranetConsume, allocator);
     }
 
     if (m_scopeTypeHasBeenSet)
@@ -149,6 +167,38 @@ void ModifyKafkaConsumerRequest::SetHasServicesLog(const uint64_t& _hasServicesL
 bool ModifyKafkaConsumerRequest::HasServicesLogHasBeenSet() const
 {
     return m_hasServicesLogHasBeenSet;
+}
+
+bool ModifyKafkaConsumerRequest::GetEnableInternetConsume() const
+{
+    return m_enableInternetConsume;
+}
+
+void ModifyKafkaConsumerRequest::SetEnableInternetConsume(const bool& _enableInternetConsume)
+{
+    m_enableInternetConsume = _enableInternetConsume;
+    m_enableInternetConsumeHasBeenSet = true;
+}
+
+bool ModifyKafkaConsumerRequest::EnableInternetConsumeHasBeenSet() const
+{
+    return m_enableInternetConsumeHasBeenSet;
+}
+
+bool ModifyKafkaConsumerRequest::GetEnableIntranetConsume() const
+{
+    return m_enableIntranetConsume;
+}
+
+void ModifyKafkaConsumerRequest::SetEnableIntranetConsume(const bool& _enableIntranetConsume)
+{
+    m_enableIntranetConsume = _enableIntranetConsume;
+    m_enableIntranetConsumeHasBeenSet = true;
+}
+
+bool ModifyKafkaConsumerRequest::EnableIntranetConsumeHasBeenSet() const
+{
+    return m_enableIntranetConsumeHasBeenSet;
 }
 
 uint64_t ModifyKafkaConsumerRequest::GetScopeType() const

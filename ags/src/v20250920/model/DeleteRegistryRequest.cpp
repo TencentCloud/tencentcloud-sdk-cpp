@@ -22,7 +22,8 @@
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-DeleteRegistryRequest::DeleteRegistryRequest()
+DeleteRegistryRequest::DeleteRegistryRequest() :
+    m_registryIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DeleteRegistryRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_registryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DeleteRegistryRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteRegistryRequest::GetRegistryId() const
+{
+    return m_registryId;
+}
+
+void DeleteRegistryRequest::SetRegistryId(const string& _registryId)
+{
+    m_registryId = _registryId;
+    m_registryIdHasBeenSet = true;
+}
+
+bool DeleteRegistryRequest::RegistryIdHasBeenSet() const
+{
+    return m_registryIdHasBeenSet;
+}
 
 

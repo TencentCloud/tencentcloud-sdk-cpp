@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取<p>成员 UIN 列表（OperType 为添加/删除成员时使用）</p>
-                     * @return UserUins <p>成员 UIN 列表（OperType 为添加/删除成员时使用）</p>
+                     * 获取<p>成员 UIN 列表（OperType 为添加/删除成员时使用），单次最多100个</p>
+                     * @return UserUins <p>成员 UIN 列表（OperType 为添加/删除成员时使用），单次最多100个</p>
                      * 
                      */
                     std::vector<std::string> GetUserUins() const;
 
                     /**
-                     * 设置<p>成员 UIN 列表（OperType 为添加/删除成员时使用）</p>
-                     * @param _userUins <p>成员 UIN 列表（OperType 为添加/删除成员时使用）</p>
+                     * 设置<p>成员 UIN 列表（OperType 为添加/删除成员时使用），单次最多100个</p>
+                     * @param _userUins <p>成员 UIN 列表（OperType 为添加/删除成员时使用），单次最多100个</p>
                      * 
                      */
                     void SetUserUins(const std::vector<std::string>& _userUins);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * <p>成员 UIN 列表（OperType 为添加/删除成员时使用）</p>
+                     * <p>成员 UIN 列表（OperType 为添加/删除成员时使用），单次最多100个</p>
                      */
                     std::vector<std::string> m_userUins;
                     bool m_userUinsHasBeenSet;

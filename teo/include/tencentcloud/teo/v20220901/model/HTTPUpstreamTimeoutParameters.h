@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取HTTP 应答超时时间，单位为秒，取值：5～600。
-                     * @return ResponseTimeout HTTP 应答超时时间，单位为秒，取值：5～600。
+                     * 获取<p>HTTP 应答超时时间。</p><p>取值范围：[5, 600]</p><p>单位：秒</p><p>默认值：15</p>
+                     * @return ResponseTimeout <p>HTTP 应答超时时间。</p><p>取值范围：[5, 600]</p><p>单位：秒</p><p>默认值：15</p>
                      * 
                      */
                     int64_t GetResponseTimeout() const;
 
                     /**
-                     * 设置HTTP 应答超时时间，单位为秒，取值：5～600。
-                     * @param _responseTimeout HTTP 应答超时时间，单位为秒，取值：5～600。
+                     * 设置<p>HTTP 应答超时时间。</p><p>取值范围：[5, 600]</p><p>单位：秒</p><p>默认值：15</p>
+                     * @param _responseTimeout <p>HTTP 应答超时时间。</p><p>取值范围：[5, 600]</p><p>单位：秒</p><p>默认值：15</p>
                      * 
                      */
                     void SetResponseTimeout(const int64_t& _responseTimeout);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * HTTP 应答超时时间，单位为秒，取值：5～600。
+                     * <p>HTTP 应答超时时间。</p><p>取值范围：[5, 600]</p><p>单位：秒</p><p>默认值：15</p>
                      */
                     int64_t m_responseTimeout;
                     bool m_responseTimeoutHasBeenSet;

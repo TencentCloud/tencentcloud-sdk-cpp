@@ -30,7 +30,9 @@ SlowLogInfoItem::SlowLogInfoItem() :
     m_lockTimeHasBeenSet(false),
     m_rowsExaminedHasBeenSet(false),
     m_rowsSentHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_clientAppNameHasBeenSet(false),
+    m_clientHostNameHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome SlowLogInfoItem::Deserialize(const rapidjson::Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientAppName") && !value["ClientAppName"].IsNull())
+    {
+        if (!value["ClientAppName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowLogInfoItem.ClientAppName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientAppName = string(value["ClientAppName"].GetString());
+        m_clientAppNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClientHostName") && !value["ClientHostName"].IsNull())
+    {
+        if (!value["ClientHostName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowLogInfoItem.ClientHostName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientHostName = string(value["ClientHostName"].GetString());
+        m_clientHostNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void SlowLogInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientAppNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientAppName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientAppName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientHostNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientHostName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientHostName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void SlowLogInfoItem::SetInstanceId(const string& _instanceId)
 bool SlowLogInfoItem::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string SlowLogInfoItem::GetClientAppName() const
+{
+    return m_clientAppName;
+}
+
+void SlowLogInfoItem::SetClientAppName(const string& _clientAppName)
+{
+    m_clientAppName = _clientAppName;
+    m_clientAppNameHasBeenSet = true;
+}
+
+bool SlowLogInfoItem::ClientAppNameHasBeenSet() const
+{
+    return m_clientAppNameHasBeenSet;
+}
+
+string SlowLogInfoItem::GetClientHostName() const
+{
+    return m_clientHostName;
+}
+
+void SlowLogInfoItem::SetClientHostName(const string& _clientHostName)
+{
+    m_clientHostName = _clientHostName;
+    m_clientHostNameHasBeenSet = true;
+}
+
+bool SlowLogInfoItem::ClientHostNameHasBeenSet() const
+{
+    return m_clientHostNameHasBeenSet;
 }
 

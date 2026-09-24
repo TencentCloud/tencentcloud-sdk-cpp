@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ags/v20250920/model/CloudRecordVersion.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>Version 对象数组。</p>
+                     * @return VersionSet <p>Version 对象数组。</p>
+                     * 
+                     */
+                    std::vector<CloudRecordVersion> GetVersionSet() const;
+
+                    /**
+                     * 判断参数 VersionSet 是否已赋值
+                     * @return VersionSet 是否已赋值
+                     * 
+                     */
+                    bool VersionSetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>符合条件的总数。</p>
+                     * @return TotalCount <p>符合条件的总数。</p>
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>Version 对象数组。</p>
+                     */
+                    std::vector<CloudRecordVersion> m_versionSet;
+                    bool m_versionSetHasBeenSet;
+
+                    /**
+                     * <p>符合条件的总数。</p>
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

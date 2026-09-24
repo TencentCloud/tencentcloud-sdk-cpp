@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ags/v20250920/model/CloudRegistry.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>Registry 对象数组。</p>
+                     * @return RegistrySet <p>Registry 对象数组。</p>
+                     * 
+                     */
+                    std::vector<CloudRegistry> GetRegistrySet() const;
+
+                    /**
+                     * 判断参数 RegistrySet 是否已赋值
+                     * @return RegistrySet 是否已赋值
+                     * 
+                     */
+                    bool RegistrySetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>符合条件的总数。</p>
+                     * @return TotalCount <p>符合条件的总数。</p>
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>Registry 对象数组。</p>
+                     */
+                    std::vector<CloudRegistry> m_registrySet;
+                    bool m_registrySetHasBeenSet;
+
+                    /**
+                     * <p>符合条件的总数。</p>
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

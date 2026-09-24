@@ -551,18 +551,18 @@ namespace TencentCloud
                     bool HealthCheckConfigsHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型输出模态</p>
+                     * 获取<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Capability <p>模型输出模态</p>
+                     * @return Capability <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCapability() const;
 
                     /**
-                     * 设置<p>模型输出模态</p>
+                     * 设置<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _capability <p>模型输出模态</p>
+                     * @param _capability <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -744,7 +744,7 @@ namespace TencentCloud
                     bool m_healthCheckConfigsHasBeenSet;
 
                     /**
-                     * <p>模型输出模态</p>
+                     * <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_capability;

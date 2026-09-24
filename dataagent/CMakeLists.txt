@@ -24,6 +24,7 @@ set(dataagent_public_header_model
   include/tencentcloud/dataagent/v20250513/model/QueryUserAuthorityResponse.h
   include/tencentcloud/dataagent/v20250513/model/AddChunkRequest.h
   include/tencentcloud/dataagent/v20250513/model/GetUserInstanceListRequest.h
+  include/tencentcloud/dataagent/v20250513/model/Thinking.h
   include/tencentcloud/dataagent/v20250513/model/ModelList.h
   include/tencentcloud/dataagent/v20250513/model/ModifyChunkRequest.h
   include/tencentcloud/dataagent/v20250513/model/ChatAIResponse.h
@@ -86,6 +87,7 @@ set(dataagent_src
   src/v20250513/model/QueryUserAuthorityResponse.cpp
   src/v20250513/model/AddChunkRequest.cpp
   src/v20250513/model/GetUserInstanceListRequest.cpp
+  src/v20250513/model/Thinking.cpp
   src/v20250513/model/ModelList.cpp
   src/v20250513/model/ModifyChunkRequest.cpp
   src/v20250513/model/ChatAIResponse.cpp

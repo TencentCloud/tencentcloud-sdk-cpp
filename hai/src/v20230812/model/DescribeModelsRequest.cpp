@@ -26,7 +26,8 @@ DescribeModelsRequest::DescribeModelsRequest() :
     m_modelIdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_serviceIdHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string DescribeModelsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_serviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -151,6 +160,22 @@ void DescribeModelsRequest::SetLimit(const int64_t& _limit)
 bool DescribeModelsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeModelsRequest::GetServiceId() const
+{
+    return m_serviceId;
+}
+
+void DescribeModelsRequest::SetServiceId(const string& _serviceId)
+{
+    m_serviceId = _serviceId;
+    m_serviceIdHasBeenSet = true;
+}
+
+bool DescribeModelsRequest::ServiceIdHasBeenSet() const
+{
+    return m_serviceIdHasBeenSet;
 }
 
 

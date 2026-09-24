@@ -115,6 +115,34 @@ namespace TencentCloud
                     bool HasServicesLogHasBeenSet() const;
 
                     /**
+                     * 获取<p>外网消费开关。</p>
+                     * @return EnableInternetConsume <p>外网消费开关。</p>
+                     * 
+                     */
+                    bool GetEnableInternetConsume() const;
+
+                    /**
+                     * 判断参数 EnableInternetConsume 是否已赋值
+                     * @return EnableInternetConsume 是否已赋值
+                     * 
+                     */
+                    bool EnableInternetConsumeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>内网消费开关。</p>
+                     * @return EnableIntranetConsume <p>内网消费开关。</p>
+                     * 
+                     */
+                    bool GetEnableIntranetConsume() const;
+
+                    /**
+                     * 判断参数 EnableIntranetConsume 是否已赋值
+                     * @return EnableIntranetConsume 是否已赋值
+                     * 
+                     */
+                    bool EnableIntranetConsumeHasBeenSet() const;
+
+                    /**
                      * 获取<p>消费范围类型，0:最新，1:历史+最新</p>
                      * @return ScopeType <p>消费范围类型，0:最新，1:历史+最新</p>
                      * 
@@ -159,6 +187,18 @@ namespace TencentCloud
                      */
                     uint64_t m_hasServicesLog;
                     bool m_hasServicesLogHasBeenSet;
+
+                    /**
+                     * <p>外网消费开关。</p>
+                     */
+                    bool m_enableInternetConsume;
+                    bool m_enableInternetConsumeHasBeenSet;
+
+                    /**
+                     * <p>内网消费开关。</p>
+                     */
+                    bool m_enableIntranetConsume;
+                    bool m_enableIntranetConsumeHasBeenSet;
 
                     /**
                      * <p>消费范围类型，0:最新，1:历史+最新</p>

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/ZoneConfig.h>
+#include <tencentcloud/teo/v20220901/model/ZoneCustomVariables.h>
 #include <tencentcloud/teo/v20220901/model/ConfigGroupRuleEngineItem.h>
 #include <tencentcloud/teo/v20220901/model/WebSecurity.h>
 #include <tencentcloud/teo/v20220901/model/ConfigGroupFunctionTrigger.h>
@@ -91,6 +92,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ZoneConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>站点级自定义变量配置，包括变量定义和变量运算。</p>
+                     * @return ZoneCustomVariables <p>站点级自定义变量配置，包括变量定义和变量运算。</p>
+                     * 
+                     */
+                    ZoneCustomVariables GetZoneCustomVariables() const;
+
+                    /**
+                     * 设置<p>站点级自定义变量配置，包括变量定义和变量运算。</p>
+                     * @param _zoneCustomVariables <p>站点级自定义变量配置，包括变量定义和变量运算。</p>
+                     * 
+                     */
+                    void SetZoneCustomVariables(const ZoneCustomVariables& _zoneCustomVariables);
+
+                    /**
+                     * 判断参数 ZoneCustomVariables 是否已赋值
+                     * @return ZoneCustomVariables 是否已赋值
+                     * 
+                     */
+                    bool ZoneCustomVariablesHasBeenSet() const;
 
                     /**
                      * 获取<p>规则级配置，包含「规则引擎」中所有规则，且数组可为空，表示不启用任何规则。</p>
@@ -168,6 +190,12 @@ namespace TencentCloud
                      */
                     ZoneConfig m_zoneConfig;
                     bool m_zoneConfigHasBeenSet;
+
+                    /**
+                     * <p>站点级自定义变量配置，包括变量定义和变量运算。</p>
+                     */
+                    ZoneCustomVariables m_zoneCustomVariables;
+                    bool m_zoneCustomVariablesHasBeenSet;
 
                     /**
                      * <p>规则级配置，包含「规则引擎」中所有规则，且数组可为空，表示不启用任何规则。</p>

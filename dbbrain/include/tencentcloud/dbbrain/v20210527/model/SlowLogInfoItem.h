@@ -256,6 +256,48 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return ClientAppName 
+                     * 
+                     */
+                    std::string GetClientAppName() const;
+
+                    /**
+                     * 设置
+                     * @param _clientAppName 
+                     * 
+                     */
+                    void SetClientAppName(const std::string& _clientAppName);
+
+                    /**
+                     * 判断参数 ClientAppName 是否已赋值
+                     * @return ClientAppName 是否已赋值
+                     * 
+                     */
+                    bool ClientAppNameHasBeenSet() const;
+
+                    /**
+                     * 获取
+                     * @return ClientHostName 
+                     * 
+                     */
+                    std::string GetClientHostName() const;
+
+                    /**
+                     * 设置
+                     * @param _clientHostName 
+                     * 
+                     */
+                    void SetClientHostName(const std::string& _clientHostName);
+
+                    /**
+                     * 判断参数 ClientHostName 是否已赋值
+                     * @return ClientHostName 是否已赋值
+                     * 
+                     */
+                    bool ClientHostNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +359,18 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_clientAppName;
+                    bool m_clientAppNameHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_clientHostName;
+                    bool m_clientHostNameHasBeenSet;
 
                 };
             }

@@ -22,7 +22,11 @@
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-ApproveRegistryRecordRequest::ApproveRegistryRecordRequest()
+ApproveRegistryRecordRequest::ApproveRegistryRecordRequest() :
+    m_registryIdHasBeenSet(false),
+    m_recordIdHasBeenSet(false),
+    m_versionIdHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,38 @@ string ApproveRegistryRecordRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_registryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +76,69 @@ string ApproveRegistryRecordRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ApproveRegistryRecordRequest::GetRegistryId() const
+{
+    return m_registryId;
+}
+
+void ApproveRegistryRecordRequest::SetRegistryId(const string& _registryId)
+{
+    m_registryId = _registryId;
+    m_registryIdHasBeenSet = true;
+}
+
+bool ApproveRegistryRecordRequest::RegistryIdHasBeenSet() const
+{
+    return m_registryIdHasBeenSet;
+}
+
+string ApproveRegistryRecordRequest::GetRecordId() const
+{
+    return m_recordId;
+}
+
+void ApproveRegistryRecordRequest::SetRecordId(const string& _recordId)
+{
+    m_recordId = _recordId;
+    m_recordIdHasBeenSet = true;
+}
+
+bool ApproveRegistryRecordRequest::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
+}
+
+string ApproveRegistryRecordRequest::GetVersionId() const
+{
+    return m_versionId;
+}
+
+void ApproveRegistryRecordRequest::SetVersionId(const string& _versionId)
+{
+    m_versionId = _versionId;
+    m_versionIdHasBeenSet = true;
+}
+
+bool ApproveRegistryRecordRequest::VersionIdHasBeenSet() const
+{
+    return m_versionIdHasBeenSet;
+}
+
+string ApproveRegistryRecordRequest::GetComment() const
+{
+    return m_comment;
+}
+
+void ApproveRegistryRecordRequest::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool ApproveRegistryRecordRequest::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
+}
 
 

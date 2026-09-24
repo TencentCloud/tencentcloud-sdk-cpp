@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * TWeSee 处理云存事件 EventId 的过滤规则配置
+                * TWeSee 处理云存事件的触发条件配置
                 */
                 class SeeEventIdFilterConfig : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取包含的云存事件 ID 集合
-                     * @return IncludeOnly 包含的云存事件 ID 集合
+                     * 获取<p>包含的云存事件 ID 集合</p>
+                     * @return IncludeOnly <p>包含的云存事件 ID 集合</p>
                      * 
                      */
                     std::vector<std::string> GetIncludeOnly() const;
 
                     /**
-                     * 设置包含的云存事件 ID 集合
-                     * @param _includeOnly 包含的云存事件 ID 集合
+                     * 设置<p>包含的云存事件 ID 集合</p>
+                     * @param _includeOnly <p>包含的云存事件 ID 集合</p>
                      * 
                      */
                     void SetIncludeOnly(const std::vector<std::string>& _includeOnly);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IncludeOnlyHasBeenSet() const;
 
                     /**
-                     * 获取排除的云存事件 ID 集合
-                     * @return Exclude 排除的云存事件 ID 集合
+                     * 获取<p>排除的云存事件 ID 集合</p>
+                     * @return Exclude <p>排除的云存事件 ID 集合</p>
                      * 
                      */
                     std::vector<std::string> GetExclude() const;
 
                     /**
-                     * 设置排除的云存事件 ID 集合
-                     * @param _exclude 排除的云存事件 ID 集合
+                     * 设置<p>排除的云存事件 ID 集合</p>
+                     * @param _exclude <p>排除的云存事件 ID 集合</p>
                      * 
                      */
                     void SetExclude(const std::vector<std::string>& _exclude);
@@ -88,19 +88,46 @@ namespace TencentCloud
                      */
                     bool ExcludeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>触发分析的时机</p><p>枚举值：</p><ul><li>end： 在云存事件结束时触发视频理解</li><li>start： 在云存事件开始时触发视频理解</li><li>image_and_video： 上传云存事件缩略图后触发图片理解，并且在云存事件结束时触发视频理解</li></ul><p>默认值：end</p>
+                     * @return TriggerAt <p>触发分析的时机</p><p>枚举值：</p><ul><li>end： 在云存事件结束时触发视频理解</li><li>start： 在云存事件开始时触发视频理解</li><li>image_and_video： 上传云存事件缩略图后触发图片理解，并且在云存事件结束时触发视频理解</li></ul><p>默认值：end</p>
+                     * 
+                     */
+                    std::string GetTriggerAt() const;
+
+                    /**
+                     * 设置<p>触发分析的时机</p><p>枚举值：</p><ul><li>end： 在云存事件结束时触发视频理解</li><li>start： 在云存事件开始时触发视频理解</li><li>image_and_video： 上传云存事件缩略图后触发图片理解，并且在云存事件结束时触发视频理解</li></ul><p>默认值：end</p>
+                     * @param _triggerAt <p>触发分析的时机</p><p>枚举值：</p><ul><li>end： 在云存事件结束时触发视频理解</li><li>start： 在云存事件开始时触发视频理解</li><li>image_and_video： 上传云存事件缩略图后触发图片理解，并且在云存事件结束时触发视频理解</li></ul><p>默认值：end</p>
+                     * 
+                     */
+                    void SetTriggerAt(const std::string& _triggerAt);
+
+                    /**
+                     * 判断参数 TriggerAt 是否已赋值
+                     * @return TriggerAt 是否已赋值
+                     * 
+                     */
+                    bool TriggerAtHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 包含的云存事件 ID 集合
+                     * <p>包含的云存事件 ID 集合</p>
                      */
                     std::vector<std::string> m_includeOnly;
                     bool m_includeOnlyHasBeenSet;
 
                     /**
-                     * 排除的云存事件 ID 集合
+                     * <p>排除的云存事件 ID 集合</p>
                      */
                     std::vector<std::string> m_exclude;
                     bool m_excludeHasBeenSet;
+
+                    /**
+                     * <p>触发分析的时机</p><p>枚举值：</p><ul><li>end： 在云存事件结束时触发视频理解</li><li>start： 在云存事件开始时触发视频理解</li><li>image_and_video： 上传云存事件缩略图后触发图片理解，并且在云存事件结束时触发视频理解</li></ul><p>默认值：end</p>
+                     */
+                    std::string m_triggerAt;
+                    bool m_triggerAtHasBeenSet;
 
                 };
             }

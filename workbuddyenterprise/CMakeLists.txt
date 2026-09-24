@@ -62,6 +62,7 @@ set(workbuddyenterprise_public_header_model
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExternalAgentListRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentA2AConfigRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/AgentVersionItem.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeUserAccessTokenResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionFromSourceResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentListRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentA2AConfigResponse.h
@@ -72,6 +73,7 @@ set(workbuddyenterprise_public_header_model
   include/tencentcloud/workbuddyenterprise/v20260709/model/RoutingItem.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/MessageEventToolCall.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentVersionResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeUserAccessTokenRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/A2AConfig.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentSessionListRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/MessageEvent.h
@@ -137,6 +139,7 @@ set(workbuddyenterprise_src
   src/v20260709/model/DescribeExternalAgentListRequest.cpp
   src/v20260709/model/ModifyAgentA2AConfigRequest.cpp
   src/v20260709/model/AgentVersionItem.cpp
+  src/v20260709/model/DescribeUserAccessTokenResponse.cpp
   src/v20260709/model/CreateAgentVersionFromSourceResponse.cpp
   src/v20260709/model/DescribeAgentListRequest.cpp
   src/v20260709/model/ModifyAgentA2AConfigResponse.cpp
@@ -147,6 +150,7 @@ set(workbuddyenterprise_src
   src/v20260709/model/RoutingItem.cpp
   src/v20260709/model/MessageEventToolCall.cpp
   src/v20260709/model/DescribeAgentVersionResponse.cpp
+  src/v20260709/model/DescribeUserAccessTokenRequest.cpp
   src/v20260709/model/A2AConfig.cpp
   src/v20260709/model/DescribeAgentSessionListRequest.cpp
   src/v20260709/model/MessageEvent.cpp

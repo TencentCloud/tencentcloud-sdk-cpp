@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ioa/v20220601/model/DeviceProfile.h>
 
 
 namespace TencentCloud
@@ -908,6 +909,27 @@ namespace TencentCloud
                     bool HostNameHasBeenSet() const;
 
                     /**
+                     * 获取<p>信息登记数据</p>
+                     * @return Profiles <p>信息登记数据</p>
+                     * 
+                     */
+                    std::vector<DeviceProfile> GetProfiles() const;
+
+                    /**
+                     * 设置<p>信息登记数据</p>
+                     * @param _profiles <p>信息登记数据</p>
+                     * 
+                     */
+                    void SetProfiles(const std::vector<DeviceProfile>& _profiles);
+
+                    /**
+                     * 判断参数 Profiles 是否已赋值
+                     * @return Profiles 是否已赋值
+                     * 
+                     */
+                    bool ProfilesHasBeenSet() const;
+
+                    /**
                      * 获取<p>主板序列号</p>
                      * @return BaseBoardSn <p>主板序列号</p>
                      * 
@@ -1095,6 +1117,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DiskAccessPermissionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>安装状态（私有化：0: 已安装 1: 已卸载 ）（SaaS及一体化：0: 未知 1: 已安装 2: 已卸载）</p>
+                     * @return InstallationStatus <p>安装状态（私有化：0: 已安装 1: 已卸载 ）（SaaS及一体化：0: 未知 1: 已安装 2: 已卸载）</p>
+                     * 
+                     */
+                    int64_t GetInstallationStatus() const;
+
+                    /**
+                     * 设置<p>安装状态（私有化：0: 已安装 1: 已卸载 ）（SaaS及一体化：0: 未知 1: 已安装 2: 已卸载）</p>
+                     * @param _installationStatus <p>安装状态（私有化：0: 已安装 1: 已卸载 ）（SaaS及一体化：0: 未知 1: 已安装 2: 已卸载）</p>
+                     * 
+                     */
+                    void SetInstallationStatus(const int64_t& _installationStatus);
+
+                    /**
+                     * 判断参数 InstallationStatus 是否已赋值
+                     * @return InstallationStatus 是否已赋值
+                     * 
+                     */
+                    bool InstallationStatusHasBeenSet() const;
 
                     /**
                      * 获取<p>终端备注名</p>
@@ -1387,6 +1430,12 @@ namespace TencentCloud
                     bool m_hostNameHasBeenSet;
 
                     /**
+                     * <p>信息登记数据</p>
+                     */
+                    std::vector<DeviceProfile> m_profiles;
+                    bool m_profilesHasBeenSet;
+
+                    /**
                      * <p>主板序列号</p>
                      */
                     std::string m_baseBoardSn;
@@ -1439,6 +1488,12 @@ namespace TencentCloud
                      */
                     int64_t m_diskAccessPermission;
                     bool m_diskAccessPermissionHasBeenSet;
+
+                    /**
+                     * <p>安装状态（私有化：0: 已安装 1: 已卸载 ）（SaaS及一体化：0: 未知 1: 已安装 2: 已卸载）</p>
+                     */
+                    int64_t m_installationStatus;
+                    bool m_installationStatusHasBeenSet;
 
                     /**
                      * <p>终端备注名</p>

@@ -22,7 +22,12 @@
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-DescribeRegistryRecordVersionListRequest::DescribeRegistryRecordVersionListRequest()
+DescribeRegistryRecordVersionListRequest::DescribeRegistryRecordVersionListRequest() :
+    m_registryIdHasBeenSet(false),
+    m_recordIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -33,6 +38,53 @@ string DescribeRegistryRecordVersionListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_registryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +92,85 @@ string DescribeRegistryRecordVersionListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeRegistryRecordVersionListRequest::GetRegistryId() const
+{
+    return m_registryId;
+}
+
+void DescribeRegistryRecordVersionListRequest::SetRegistryId(const string& _registryId)
+{
+    m_registryId = _registryId;
+    m_registryIdHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordVersionListRequest::RegistryIdHasBeenSet() const
+{
+    return m_registryIdHasBeenSet;
+}
+
+string DescribeRegistryRecordVersionListRequest::GetRecordId() const
+{
+    return m_recordId;
+}
+
+void DescribeRegistryRecordVersionListRequest::SetRecordId(const string& _recordId)
+{
+    m_recordId = _recordId;
+    m_recordIdHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordVersionListRequest::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
+}
+
+int64_t DescribeRegistryRecordVersionListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeRegistryRecordVersionListRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordVersionListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeRegistryRecordVersionListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeRegistryRecordVersionListRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordVersionListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+vector<CloudFilter> DescribeRegistryRecordVersionListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeRegistryRecordVersionListRequest::SetFilters(const vector<CloudFilter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordVersionListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 

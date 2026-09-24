@@ -22,7 +22,11 @@
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-DescribeRegistryRecordRequest::DescribeRegistryRecordRequest()
+DescribeRegistryRecordRequest::DescribeRegistryRecordRequest() :
+    m_registryIdHasBeenSet(false),
+    m_recordIdHasBeenSet(false),
+    m_versionIdHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,38 @@ string DescribeRegistryRecordRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_registryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +76,69 @@ string DescribeRegistryRecordRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeRegistryRecordRequest::GetRegistryId() const
+{
+    return m_registryId;
+}
+
+void DescribeRegistryRecordRequest::SetRegistryId(const string& _registryId)
+{
+    m_registryId = _registryId;
+    m_registryIdHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordRequest::RegistryIdHasBeenSet() const
+{
+    return m_registryIdHasBeenSet;
+}
+
+string DescribeRegistryRecordRequest::GetRecordId() const
+{
+    return m_recordId;
+}
+
+void DescribeRegistryRecordRequest::SetRecordId(const string& _recordId)
+{
+    m_recordId = _recordId;
+    m_recordIdHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordRequest::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
+}
+
+string DescribeRegistryRecordRequest::GetVersionId() const
+{
+    return m_versionId;
+}
+
+void DescribeRegistryRecordRequest::SetVersionId(const string& _versionId)
+{
+    m_versionId = _versionId;
+    m_versionIdHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordRequest::VersionIdHasBeenSet() const
+{
+    return m_versionIdHasBeenSet;
+}
+
+string DescribeRegistryRecordRequest::GetLabel() const
+{
+    return m_label;
+}
+
+void DescribeRegistryRecordRequest::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool DescribeRegistryRecordRequest::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
+}
 
 

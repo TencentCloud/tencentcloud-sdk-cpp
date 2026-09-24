@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dataagent/v20250513/model/Thinking.h>
 
 
 namespace TencentCloud
@@ -88,6 +89,132 @@ namespace TencentCloud
                      */
                     bool VendorHasBeenSet() const;
 
+                    /**
+                     * 获取<p>展示名称</p>
+                     * @return DisplayName <p>展示名称</p>
+                     * 
+                     */
+                    std::string GetDisplayName() const;
+
+                    /**
+                     * 设置<p>展示名称</p>
+                     * @param _displayName <p>展示名称</p>
+                     * 
+                     */
+                    void SetDisplayName(const std::string& _displayName);
+
+                    /**
+                     * 判断参数 DisplayName 是否已赋值
+                     * @return DisplayName 是否已赋值
+                     * 
+                     */
+                    bool DisplayNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型描述</p>
+                     * @return Description <p>模型描述</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>模型描述</p>
+                     * @param _description <p>模型描述</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>上下文窗口大小，单位 token</p>
+                     * @return ContextWindow <p>上下文窗口大小，单位 token</p>
+                     * 
+                     */
+                    int64_t GetContextWindow() const;
+
+                    /**
+                     * 设置<p>上下文窗口大小，单位 token</p>
+                     * @param _contextWindow <p>上下文窗口大小，单位 token</p>
+                     * 
+                     */
+                    void SetContextWindow(const int64_t& _contextWindow);
+
+                    /**
+                     * 判断参数 ContextWindow 是否已赋值
+                     * @return ContextWindow 是否已赋值
+                     * 
+                     */
+                    bool ContextWindowHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型图标 URL</p>
+                     * @return IconUrl <p>模型图标 URL</p>
+                     * 
+                     */
+                    std::string GetIconUrl() const;
+
+                    /**
+                     * 设置<p>模型图标 URL</p>
+                     * @param _iconUrl <p>模型图标 URL</p>
+                     * 
+                     */
+                    void SetIconUrl(const std::string& _iconUrl);
+
+                    /**
+                     * 判断参数 IconUrl 是否已赋值
+                     * @return IconUrl 是否已赋值
+                     * 
+                     */
+                    bool IconUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>计费倍率</p>
+                     * @return CreditMultiplier <p>计费倍率</p>
+                     * 
+                     */
+                    double GetCreditMultiplier() const;
+
+                    /**
+                     * 设置<p>计费倍率</p>
+                     * @param _creditMultiplier <p>计费倍率</p>
+                     * 
+                     */
+                    void SetCreditMultiplier(const double& _creditMultiplier);
+
+                    /**
+                     * 判断参数 CreditMultiplier 是否已赋值
+                     * @return CreditMultiplier 是否已赋值
+                     * 
+                     */
+                    bool CreditMultiplierHasBeenSet() const;
+
+                    /**
+                     * 获取<p>思考配置</p>
+                     * @return Thinking <p>思考配置</p>
+                     * 
+                     */
+                    Thinking GetThinking() const;
+
+                    /**
+                     * 设置<p>思考配置</p>
+                     * @param _thinking <p>思考配置</p>
+                     * 
+                     */
+                    void SetThinking(const Thinking& _thinking);
+
+                    /**
+                     * 判断参数 Thinking 是否已赋值
+                     * @return Thinking 是否已赋值
+                     * 
+                     */
+                    bool ThinkingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +228,42 @@ namespace TencentCloud
                      */
                     std::string m_vendor;
                     bool m_vendorHasBeenSet;
+
+                    /**
+                     * <p>展示名称</p>
+                     */
+                    std::string m_displayName;
+                    bool m_displayNameHasBeenSet;
+
+                    /**
+                     * <p>模型描述</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>上下文窗口大小，单位 token</p>
+                     */
+                    int64_t m_contextWindow;
+                    bool m_contextWindowHasBeenSet;
+
+                    /**
+                     * <p>模型图标 URL</p>
+                     */
+                    std::string m_iconUrl;
+                    bool m_iconUrlHasBeenSet;
+
+                    /**
+                     * <p>计费倍率</p>
+                     */
+                    double m_creditMultiplier;
+                    bool m_creditMultiplierHasBeenSet;
+
+                    /**
+                     * <p>思考配置</p>
+                     */
+                    Thinking m_thinking;
+                    bool m_thinkingHasBeenSet;
 
                 };
             }

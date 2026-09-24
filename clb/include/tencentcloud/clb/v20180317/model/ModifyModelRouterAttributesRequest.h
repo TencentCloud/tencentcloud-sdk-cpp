@@ -24,6 +24,9 @@
 #include <tencentcloud/clb/v20180317/model/RateLimitConfigForModelRouter.h>
 #include <tencentcloud/clb/v20180317/model/RouterSettingWithFallBack.h>
 #include <tencentcloud/clb/v20180317/model/EmbeddingConfig.h>
+#include <tencentcloud/clb/v20180317/model/VideoConfig.h>
+#include <tencentcloud/clb/v20180317/model/RerankConfig.h>
+#include <tencentcloud/clb/v20180317/model/DecisionsConfig.h>
 
 
 namespace TencentCloud
@@ -172,15 +175,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型输出模态</p>
-                     * @return Capability <p>模型输出模态</p>
+                     * 获取<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
+                     * @return Capability <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
                      * 
                      */
                     std::string GetCapability() const;
 
                     /**
-                     * 设置<p>模型输出模态</p>
-                     * @param _capability <p>模型输出模态</p>
+                     * 设置<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
+                     * @param _capability <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
                      * 
                      */
                     void SetCapability(const std::string& _capability);
@@ -193,15 +196,15 @@ namespace TencentCloud
                     bool CapabilityHasBeenSet() const;
 
                     /**
-                     * 获取<p>embedding 模态配置</p>
-                     * @return EmbeddingConfig <p>embedding 模态配置</p>
+                     * 获取<p>Embedding 调度配置</p><p>传入该参数时，必须传Capability为embedding</p>
+                     * @return EmbeddingConfig <p>Embedding 调度配置</p><p>传入该参数时，必须传Capability为embedding</p>
                      * 
                      */
                     EmbeddingConfig GetEmbeddingConfig() const;
 
                     /**
-                     * 设置<p>embedding 模态配置</p>
-                     * @param _embeddingConfig <p>embedding 模态配置</p>
+                     * 设置<p>Embedding 调度配置</p><p>传入该参数时，必须传Capability为embedding</p>
+                     * @param _embeddingConfig <p>Embedding 调度配置</p><p>传入该参数时，必须传Capability为embedding</p>
                      * 
                      */
                     void SetEmbeddingConfig(const EmbeddingConfig& _embeddingConfig);
@@ -212,6 +215,69 @@ namespace TencentCloud
                      * 
                      */
                     bool EmbeddingConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Video 调度配置</p>
+                     * @return VideoConfig <p>Video 调度配置</p>
+                     * 
+                     */
+                    VideoConfig GetVideoConfig() const;
+
+                    /**
+                     * 设置<p>Video 调度配置</p>
+                     * @param _videoConfig <p>Video 调度配置</p>
+                     * 
+                     */
+                    void SetVideoConfig(const VideoConfig& _videoConfig);
+
+                    /**
+                     * 判断参数 VideoConfig 是否已赋值
+                     * @return VideoConfig 是否已赋值
+                     * 
+                     */
+                    bool VideoConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Rerank 调度配置</p><p>传入该参数时，必须传Capability为rerank</p>
+                     * @return RerankConfig <p>Rerank 调度配置</p><p>传入该参数时，必须传Capability为rerank</p>
+                     * 
+                     */
+                    RerankConfig GetRerankConfig() const;
+
+                    /**
+                     * 设置<p>Rerank 调度配置</p><p>传入该参数时，必须传Capability为rerank</p>
+                     * @param _rerankConfig <p>Rerank 调度配置</p><p>传入该参数时，必须传Capability为rerank</p>
+                     * 
+                     */
+                    void SetRerankConfig(const RerankConfig& _rerankConfig);
+
+                    /**
+                     * 判断参数 RerankConfig 是否已赋值
+                     * @return RerankConfig 是否已赋值
+                     * 
+                     */
+                    bool RerankConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Decisions 调度配置</p>
+                     * @return DecisionsConfig <p>Decisions 调度配置</p>
+                     * 
+                     */
+                    DecisionsConfig GetDecisionsConfig() const;
+
+                    /**
+                     * 设置<p>Decisions 调度配置</p>
+                     * @param _decisionsConfig <p>Decisions 调度配置</p>
+                     * 
+                     */
+                    void SetDecisionsConfig(const DecisionsConfig& _decisionsConfig);
+
+                    /**
+                     * 判断参数 DecisionsConfig 是否已赋值
+                     * @return DecisionsConfig 是否已赋值
+                     * 
+                     */
+                    bool DecisionsConfigHasBeenSet() const;
 
                 private:
 
@@ -252,16 +318,34 @@ namespace TencentCloud
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * <p>模型输出模态</p>
+                     * <p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>
                      */
                     std::string m_capability;
                     bool m_capabilityHasBeenSet;
 
                     /**
-                     * <p>embedding 模态配置</p>
+                     * <p>Embedding 调度配置</p><p>传入该参数时，必须传Capability为embedding</p>
                      */
                     EmbeddingConfig m_embeddingConfig;
                     bool m_embeddingConfigHasBeenSet;
+
+                    /**
+                     * <p>Video 调度配置</p>
+                     */
+                    VideoConfig m_videoConfig;
+                    bool m_videoConfigHasBeenSet;
+
+                    /**
+                     * <p>Rerank 调度配置</p><p>传入该参数时，必须传Capability为rerank</p>
+                     */
+                    RerankConfig m_rerankConfig;
+                    bool m_rerankConfigHasBeenSet;
+
+                    /**
+                     * <p>Decisions 调度配置</p>
+                     */
+                    DecisionsConfig m_decisionsConfig;
+                    bool m_decisionsConfigHasBeenSet;
 
                 };
             }

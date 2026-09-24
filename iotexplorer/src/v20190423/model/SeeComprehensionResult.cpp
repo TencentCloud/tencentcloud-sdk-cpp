@@ -26,7 +26,8 @@ SeeComprehensionResult::SeeComprehensionResult() :
     m_alternativeSummaryHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_errorMsgHasBeenSet(false),
-    m_keywordsHasBeenSet(false)
+    m_keywordsHasBeenSet(false),
+    m_extendedOutputHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,26 @@ CoreInternalOutcome SeeComprehensionResult::Deserialize(const rapidjson::Value &
         m_keywordsHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtendedOutput") && !value["ExtendedOutput"].IsNull())
+    {
+        if (!value["ExtendedOutput"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SeeComprehensionResult.ExtendedOutput` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExtendedOutput"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SeeExtendedOutput item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_extendedOutput.push_back(item);
+        }
+        m_extendedOutputHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -163,6 +184,21 @@ void SeeComprehensionResult::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_extendedOutputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtendedOutput";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extendedOutput.begin(); itr != m_extendedOutput.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -263,5 +299,21 @@ void SeeComprehensionResult::SetKeywords(const vector<string>& _keywords)
 bool SeeComprehensionResult::KeywordsHasBeenSet() const
 {
     return m_keywordsHasBeenSet;
+}
+
+vector<SeeExtendedOutput> SeeComprehensionResult::GetExtendedOutput() const
+{
+    return m_extendedOutput;
+}
+
+void SeeComprehensionResult::SetExtendedOutput(const vector<SeeExtendedOutput>& _extendedOutput)
+{
+    m_extendedOutput = _extendedOutput;
+    m_extendedOutputHasBeenSet = true;
+}
+
+bool SeeComprehensionResult::ExtendedOutputHasBeenSet() const
+{
+    return m_extendedOutputHasBeenSet;
 }
 

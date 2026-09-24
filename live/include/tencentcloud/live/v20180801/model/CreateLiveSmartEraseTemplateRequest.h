@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取<p>关联的审核模板id, 表audio_conf 。</p>
-                     * @return AuditConfId <p>关联的审核模板id, 表audio_conf 。</p>
+                     * 获取<p>关联的审核模板id, 表audio_conf 。</p><p>取值为DescribeAuditTemplates接口返回的AuditTemplates里面的TemplateId字段</p>
+                     * @return AuditConfId <p>关联的审核模板id, 表audio_conf 。</p><p>取值为DescribeAuditTemplates接口返回的AuditTemplates里面的TemplateId字段</p>
                      * 
                      */
                     uint64_t GetAuditConfId() const;
 
                     /**
-                     * 设置<p>关联的审核模板id, 表audio_conf 。</p>
-                     * @param _auditConfId <p>关联的审核模板id, 表audio_conf 。</p>
+                     * 设置<p>关联的审核模板id, 表audio_conf 。</p><p>取值为DescribeAuditTemplates接口返回的AuditTemplates里面的TemplateId字段</p>
+                     * @param _auditConfId <p>关联的审核模板id, 表audio_conf 。</p><p>取值为DescribeAuditTemplates接口返回的AuditTemplates里面的TemplateId字段</p>
                      * 
                      */
                     void SetAuditConfId(const uint64_t& _auditConfId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool AuditConfIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>天御图片审核策略BizType  Image 。</p>
-                     * @return ImageBizType <p>天御图片审核策略BizType  Image 。</p>
+                     * 获取<p>天御图片审核策略BizType  Image 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Image&quot;的BizType值</p>
+                     * @return ImageBizType <p>天御图片审核策略BizType  Image 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Image&quot;的BizType值</p>
                      * 
                      */
                     std::string GetImageBizType() const;
 
                     /**
-                     * 设置<p>天御图片审核策略BizType  Image 。</p>
-                     * @param _imageBizType <p>天御图片审核策略BizType  Image 。</p>
+                     * 设置<p>天御图片审核策略BizType  Image 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Image&quot;的BizType值</p>
+                     * @param _imageBizType <p>天御图片审核策略BizType  Image 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Image&quot;的BizType值</p>
                      * 
                      */
                     void SetImageBizType(const std::string& _imageBizType);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ImageBizTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>天御音频审核策略BizType  ShortAudio 。</p>
-                     * @return AudioBizType <p>天御音频审核策略BizType  ShortAudio 。</p>
+                     * 获取<p>天御音频审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;ShortAudio&quot;的BizType值</p>
+                     * @return AudioBizType <p>天御音频审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;ShortAudio&quot;的BizType值</p>
                      * 
                      */
                     std::string GetAudioBizType() const;
 
                     /**
-                     * 设置<p>天御音频审核策略BizType  ShortAudio 。</p>
-                     * @param _audioBizType <p>天御音频审核策略BizType  ShortAudio 。</p>
+                     * 设置<p>天御音频审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;ShortAudio&quot;的BizType值</p>
+                     * @param _audioBizType <p>天御音频审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;ShortAudio&quot;的BizType值</p>
                      * 
                      */
                     void SetAudioBizType(const std::string& _audioBizType);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool AudioBizTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>天御音频文本审核策略BizType  ShortAudio 。</p>
-                     * @return AudioTextBizType <p>天御音频文本审核策略BizType  ShortAudio 。</p>
+                     * 获取<p>天御音频文本审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Text&quot;的BizType值</p>
+                     * @return AudioTextBizType <p>天御音频文本审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Text&quot;的BizType值</p>
                      * 
                      */
                     std::string GetAudioTextBizType() const;
 
                     /**
-                     * 设置<p>天御音频文本审核策略BizType  ShortAudio 。</p>
-                     * @param _audioTextBizType <p>天御音频文本审核策略BizType  ShortAudio 。</p>
+                     * 设置<p>天御音频文本审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Text&quot;的BizType值</p>
+                     * @param _audioTextBizType <p>天御音频文本审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Text&quot;的BizType值</p>
                      * 
                      */
                     void SetAudioTextBizType(const std::string& _audioTextBizType);
@@ -294,25 +294,25 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * <p>关联的审核模板id, 表audio_conf 。</p>
+                     * <p>关联的审核模板id, 表audio_conf 。</p><p>取值为DescribeAuditTemplates接口返回的AuditTemplates里面的TemplateId字段</p>
                      */
                     uint64_t m_auditConfId;
                     bool m_auditConfIdHasBeenSet;
 
                     /**
-                     * <p>天御图片审核策略BizType  Image 。</p>
+                     * <p>天御图片审核策略BizType  Image 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Image&quot;的BizType值</p>
                      */
                     std::string m_imageBizType;
                     bool m_imageBizTypeHasBeenSet;
 
                     /**
-                     * <p>天御音频审核策略BizType  ShortAudio 。</p>
+                     * <p>天御音频审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;ShortAudio&quot;的BizType值</p>
                      */
                     std::string m_audioBizType;
                     bool m_audioBizTypeHasBeenSet;
 
                     /**
-                     * <p>天御音频文本审核策略BizType  ShortAudio 。</p>
+                     * <p>天御音频文本审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Text&quot;的BizType值</p>
                      */
                     std::string m_audioTextBizType;
                     bool m_audioTextBizTypeHasBeenSet;

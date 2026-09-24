@@ -28,6 +28,7 @@
 #include <tencentcloud/tdai/v20250717/model/TagItem.h>
 #include <tencentcloud/tdai/v20250717/model/ClawConfigInfo.h>
 #include <tencentcloud/tdai/v20250717/model/CreatingProgress.h>
+#include <tencentcloud/tdai/v20250717/model/AgentMemInfo.h>
 
 
 namespace TencentCloud
@@ -575,6 +576,27 @@ namespace TencentCloud
                      */
                     bool DeploymentFreeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>agent memory 服务详情</p>
+                     * @return AgentMem <p>agent memory 服务详情</p>
+                     * 
+                     */
+                    AgentMemInfo GetAgentMem() const;
+
+                    /**
+                     * 设置<p>agent memory 服务详情</p>
+                     * @param _agentMem <p>agent memory 服务详情</p>
+                     * 
+                     */
+                    void SetAgentMem(const AgentMemInfo& _agentMem);
+
+                    /**
+                     * 判断参数 AgentMem 是否已赋值
+                     * @return AgentMem 是否已赋值
+                     * 
+                     */
+                    bool AgentMemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -726,6 +748,12 @@ namespace TencentCloud
                      */
                     bool m_deploymentFree;
                     bool m_deploymentFreeHasBeenSet;
+
+                    /**
+                     * <p>agent memory 服务详情</p>
+                     */
+                    AgentMemInfo m_agentMem;
+                    bool m_agentMemHasBeenSet;
 
                 };
             }

@@ -35,6 +35,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/BatchDescribeTWeSeeOrdersResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchInvokeTWeSeeRecognitionTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchInvokeTWeSeeRecognitionTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchPublishMessageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BatchPublishMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchRenewTWeSeeSubscriptionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchRenewTWeSeeSubscriptionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BatchUpdateFirmwareRequest.h>
@@ -577,6 +579,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchInvokeTWeSeeRecognitionTaskResponse> BatchInvokeTWeSeeRecognitionTaskOutcome;
                 typedef std::future<BatchInvokeTWeSeeRecognitionTaskOutcome> BatchInvokeTWeSeeRecognitionTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BatchInvokeTWeSeeRecognitionTaskRequest&, BatchInvokeTWeSeeRecognitionTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchInvokeTWeSeeRecognitionTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchPublishMessageResponse> BatchPublishMessageOutcome;
+                typedef std::future<BatchPublishMessageOutcome> BatchPublishMessageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::BatchPublishMessageRequest&, BatchPublishMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchPublishMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchRenewTWeSeeSubscriptionResponse> BatchRenewTWeSeeSubscriptionOutcome;
                 typedef std::future<BatchRenewTWeSeeSubscriptionOutcome> BatchRenewTWeSeeSubscriptionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BatchRenewTWeSeeSubscriptionRequest&, BatchRenewTWeSeeSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchRenewTWeSeeSubscriptionAsyncHandler;
@@ -1398,6 +1403,15 @@ namespace TencentCloud
                 BatchInvokeTWeSeeRecognitionTaskOutcome BatchInvokeTWeSeeRecognitionTask(const Model::BatchInvokeTWeSeeRecognitionTaskRequest &request);
                 void BatchInvokeTWeSeeRecognitionTaskAsync(const Model::BatchInvokeTWeSeeRecognitionTaskRequest& request, const BatchInvokeTWeSeeRecognitionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchInvokeTWeSeeRecognitionTaskOutcomeCallable BatchInvokeTWeSeeRecognitionTaskCallable(const Model::BatchInvokeTWeSeeRecognitionTaskRequest& request);
+
+                /**
+                 *批量设备透传指令控制
+                 * @param req BatchPublishMessageRequest
+                 * @return BatchPublishMessageOutcome
+                 */
+                BatchPublishMessageOutcome BatchPublishMessage(const Model::BatchPublishMessageRequest &request);
+                void BatchPublishMessageAsync(const Model::BatchPublishMessageRequest& request, const BatchPublishMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchPublishMessageOutcomeCallable BatchPublishMessageCallable(const Model::BatchPublishMessageRequest& request);
 
                 /**
                  *批量续费 TWeSee 预付费订阅

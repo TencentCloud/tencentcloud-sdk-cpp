@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体质检模板唯一标识。
-                     * @return Definition 媒体质检模板唯一标识。
+                     * 获取<p>媒体质检模板唯一标识。</p>
+                     * @return Definition <p>媒体质检模板唯一标识。</p>
                      * 
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置媒体质检模板唯一标识。
-                     * @param _definition 媒体质检模板唯一标识。
+                     * 设置<p>媒体质检模板唯一标识。</p>
+                     * @param _definition <p>媒体质检模板唯一标识。</p>
                      * 
                      */
                     void SetDefinition(const int64_t& _definition);
@@ -70,18 +70,18 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取媒体质检模板名称。
+                     * 获取<p>媒体质检模板名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 媒体质检模板名称。
+                     * @return Name <p>媒体质检模板名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置媒体质检模板名称。
+                     * 设置<p>媒体质检模板名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 媒体质检模板名称。
+                     * @param _name <p>媒体质检模板名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,18 +95,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取模板描述信息。
+                     * 获取<p>模板描述信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Comment 模板描述信息。
+                     * @return Comment <p>模板描述信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置模板描述信息。
+                     * 设置<p>模板描述信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _comment 模板描述信息。
+                     * @param _comment <p>模板描述信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -120,26 +120,18 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取模板类型，取值：
-<li>Preset：系统预置模板；</li>
-<li>Custom：用户自定义模板。</li>
+                     * 获取<p>模板类型，取值：</p><li>Preset：系统预置模板；</li><li>Custom：用户自定义模板。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 模板类型，取值：
-<li>Preset：系统预置模板；</li>
-<li>Custom：用户自定义模板。</li>
+                     * @return Type <p>模板类型，取值：</p><li>Preset：系统预置模板；</li><li>Custom：用户自定义模板。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置模板类型，取值：
-<li>Preset：系统预置模板；</li>
-<li>Custom：用户自定义模板。</li>
+                     * 设置<p>模板类型，取值：</p><li>Preset：系统预置模板；</li><li>Custom：用户自定义模板。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 模板类型，取值：
-<li>Preset：系统预置模板；</li>
-<li>Custom：用户自定义模板。</li>
+                     * @param _type <p>模板类型，取值：</p><li>Preset：系统预置模板；</li><li>Custom：用户自定义模板。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -153,18 +145,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取媒体质检配置参数。
+                     * 获取<p>媒体质检配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityControlItemSet 媒体质检配置参数。
+                     * @return QualityControlItemSet <p>媒体质检配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<QualityControlItemConfig> GetQualityControlItemSet() const;
 
                     /**
-                     * 设置媒体质检配置参数。
+                     * 设置<p>媒体质检配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qualityControlItemSet 媒体质检配置参数。
+                     * @param _qualityControlItemSet <p>媒体质检配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -178,18 +170,18 @@ namespace TencentCloud
                     bool QualityControlItemSetHasBeenSet() const;
 
                     /**
-                     * 获取模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 获取<p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return CreateTime <p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 设置<p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param _createTime <p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -203,18 +195,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 获取<p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @return UpdateTime <p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * 设置<p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * @param _updateTime <p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -228,15 +220,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取媒体质检的抽检策略。
-                     * @return Strategy 媒体质检的抽检策略。
+                     * 获取<p>媒体质检的抽检策略。</p>
+                     * @return Strategy <p>媒体质检的抽检策略。</p>
                      * 
                      */
                     QualityControlStrategy GetStrategy() const;
 
                     /**
-                     * 设置媒体质检的抽检策略。
-                     * @param _strategy 媒体质检的抽检策略。
+                     * 设置<p>媒体质检的抽检策略。</p>
+                     * @param _strategy <p>媒体质检的抽检策略。</p>
                      * 
                      */
                     void SetStrategy(const QualityControlStrategy& _strategy);
@@ -251,57 +243,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体质检模板唯一标识。
+                     * <p>媒体质检模板唯一标识。</p>
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 媒体质检模板名称。
+                     * <p>媒体质检模板名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 模板描述信息。
+                     * <p>模板描述信息。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 模板类型，取值：
-<li>Preset：系统预置模板；</li>
-<li>Custom：用户自定义模板。</li>
+                     * <p>模板类型，取值：</p><li>Preset：系统预置模板；</li><li>Custom：用户自定义模板。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 媒体质检配置参数。
+                     * <p>媒体质检配置参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<QualityControlItemConfig> m_qualityControlItemSet;
                     bool m_qualityControlItemSetHasBeenSet;
 
                     /**
-                     * 模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * <p>模板创建时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。
+                     * <p>模板最后修改时间，使用 <a href="https://cloud.tencent.com/document/product/862/37710#52">ISO 日期格式</a>。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 媒体质检的抽检策略。
+                     * <p>媒体质检的抽检策略。</p>
                      */
                     QualityControlStrategy m_strategy;
                     bool m_strategyHasBeenSet;

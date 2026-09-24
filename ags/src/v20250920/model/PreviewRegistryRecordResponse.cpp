@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-PreviewRegistryRecordResponse::PreviewRegistryRecordResponse()
+PreviewRegistryRecordResponse::PreviewRegistryRecordResponse() :
+    m_previewResultHasBeenSet(false),
+    m_resolvedVersionIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome PreviewRegistryRecordResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("PreviewResult") && !rsp["PreviewResult"].IsNull())
+    {
+        if (!rsp["PreviewResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreviewResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewResult = string(rsp["PreviewResult"].GetString());
+        m_previewResultHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResolvedVersionId") && !rsp["ResolvedVersionId"].IsNull())
+    {
+        if (!rsp["ResolvedVersionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResolvedVersionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resolvedVersionId = string(rsp["ResolvedVersionId"].GetString());
+        m_resolvedVersionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string PreviewRegistryRecordResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_previewResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resolvedVersionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResolvedVersionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resolvedVersionId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string PreviewRegistryRecordResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string PreviewRegistryRecordResponse::GetPreviewResult() const
+{
+    return m_previewResult;
+}
+
+bool PreviewRegistryRecordResponse::PreviewResultHasBeenSet() const
+{
+    return m_previewResultHasBeenSet;
+}
+
+string PreviewRegistryRecordResponse::GetResolvedVersionId() const
+{
+    return m_resolvedVersionId;
+}
+
+bool PreviewRegistryRecordResponse::ResolvedVersionIdHasBeenSet() const
+{
+    return m_resolvedVersionIdHasBeenSet;
+}
 
 

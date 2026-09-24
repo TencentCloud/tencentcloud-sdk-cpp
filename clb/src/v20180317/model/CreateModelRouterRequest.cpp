@@ -40,7 +40,10 @@ CreateModelRouterRequest::CreateModelRouterRequest() :
     m_clientTokenHasBeenSet(false),
     m_eipAddressIdHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_embeddingConfigHasBeenSet(false)
+    m_embeddingConfigHasBeenSet(false),
+    m_videoConfigHasBeenSet(false),
+    m_rerankConfigHasBeenSet(false),
+    m_decisionsConfigHasBeenSet(false)
 {
 }
 
@@ -205,6 +208,33 @@ string CreateModelRouterRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_embeddingConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_videoConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_rerankConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RerankConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rerankConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_decisionsConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DecisionsConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_decisionsConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -501,6 +531,54 @@ void CreateModelRouterRequest::SetEmbeddingConfig(const EmbeddingConfig& _embedd
 bool CreateModelRouterRequest::EmbeddingConfigHasBeenSet() const
 {
     return m_embeddingConfigHasBeenSet;
+}
+
+VideoConfig CreateModelRouterRequest::GetVideoConfig() const
+{
+    return m_videoConfig;
+}
+
+void CreateModelRouterRequest::SetVideoConfig(const VideoConfig& _videoConfig)
+{
+    m_videoConfig = _videoConfig;
+    m_videoConfigHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::VideoConfigHasBeenSet() const
+{
+    return m_videoConfigHasBeenSet;
+}
+
+RerankConfig CreateModelRouterRequest::GetRerankConfig() const
+{
+    return m_rerankConfig;
+}
+
+void CreateModelRouterRequest::SetRerankConfig(const RerankConfig& _rerankConfig)
+{
+    m_rerankConfig = _rerankConfig;
+    m_rerankConfigHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::RerankConfigHasBeenSet() const
+{
+    return m_rerankConfigHasBeenSet;
+}
+
+DecisionsConfig CreateModelRouterRequest::GetDecisionsConfig() const
+{
+    return m_decisionsConfig;
+}
+
+void CreateModelRouterRequest::SetDecisionsConfig(const DecisionsConfig& _decisionsConfig)
+{
+    m_decisionsConfig = _decisionsConfig;
+    m_decisionsConfigHasBeenSet = true;
+}
+
+bool CreateModelRouterRequest::DecisionsConfigHasBeenSet() const
+{
+    return m_decisionsConfigHasBeenSet;
 }
 
 

@@ -23,7 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-UpdateRegistryRecordResponse::UpdateRegistryRecordResponse()
+UpdateRegistryRecordResponse::UpdateRegistryRecordResponse() :
+    m_recordHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_uploadURLHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_contentStatusHasBeenSet(false)
 {
 }
 
@@ -61,6 +66,70 @@ CoreInternalOutcome UpdateRegistryRecordResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("Record") && !rsp["Record"].IsNull())
+    {
+        if (!rsp["Record"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Record` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_record.Deserialize(rsp["Record"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_recordHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Version") && !rsp["Version"].IsNull())
+    {
+        if (!rsp["Version"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Version` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_version.Deserialize(rsp["Version"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_versionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UploadURL") && !rsp["UploadURL"].IsNull())
+    {
+        if (!rsp["UploadURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UploadURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uploadURL = string(rsp["UploadURL"].GetString());
+        m_uploadURLHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpireTime") && !rsp["ExpireTime"].IsNull())
+    {
+        if (!rsp["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(rsp["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ContentStatus") && !rsp["ContentStatus"].IsNull())
+    {
+        if (!rsp["ContentStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContentStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contentStatus = string(rsp["ContentStatus"].GetString());
+        m_contentStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +139,48 @@ string UpdateRegistryRecordResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_recordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Record";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_record.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_version.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_uploadURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UploadURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uploadURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contentStatus.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +193,55 @@ string UpdateRegistryRecordResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+CloudRecord UpdateRegistryRecordResponse::GetRecord() const
+{
+    return m_record;
+}
+
+bool UpdateRegistryRecordResponse::RecordHasBeenSet() const
+{
+    return m_recordHasBeenSet;
+}
+
+CloudRecordVersion UpdateRegistryRecordResponse::GetVersion() const
+{
+    return m_version;
+}
+
+bool UpdateRegistryRecordResponse::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+string UpdateRegistryRecordResponse::GetUploadURL() const
+{
+    return m_uploadURL;
+}
+
+bool UpdateRegistryRecordResponse::UploadURLHasBeenSet() const
+{
+    return m_uploadURLHasBeenSet;
+}
+
+string UpdateRegistryRecordResponse::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+bool UpdateRegistryRecordResponse::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string UpdateRegistryRecordResponse::GetContentStatus() const
+{
+    return m_contentStatus;
+}
+
+bool UpdateRegistryRecordResponse::ContentStatusHasBeenSet() const
+{
+    return m_contentStatusHasBeenSet;
+}
 
 

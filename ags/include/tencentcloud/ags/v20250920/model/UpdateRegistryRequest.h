@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>Registry ID。</p>
+                     * @return RegistryId <p>Registry ID。</p>
+                     * 
+                     */
+                    std::string GetRegistryId() const;
+
+                    /**
+                     * 设置<p>Registry ID。</p>
+                     * @param _registryId <p>Registry ID。</p>
+                     * 
+                     */
+                    void SetRegistryId(const std::string& _registryId);
+
+                    /**
+                     * 判断参数 RegistryId 是否已赋值
+                     * @return RegistryId 是否已赋值
+                     * 
+                     */
+                    bool RegistryIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>新的描述；必填；最长 4096。</p>
+                     * @return Description <p>新的描述；必填；最长 4096。</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>新的描述；必填；最长 4096。</p>
+                     * @param _description <p>新的描述；必填；最长 4096。</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>Registry ID。</p>
+                     */
+                    std::string m_registryId;
+                    bool m_registryIdHasBeenSet;
+
+                    /**
+                     * <p>新的描述；必填；最长 4096。</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

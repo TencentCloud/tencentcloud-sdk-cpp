@@ -29,6 +29,8 @@ DescribeKafkaConsumerResponse::DescribeKafkaConsumerResponse() :
     m_compressionHasBeenSet(false),
     m_consumerContentHasBeenSet(false),
     m_hasServicesLogHasBeenSet(false),
+    m_enableInternetConsumeHasBeenSet(false),
+    m_enableIntranetConsumeHasBeenSet(false),
     m_scopeTypeHasBeenSet(false)
 {
 }
@@ -124,6 +126,26 @@ CoreInternalOutcome DescribeKafkaConsumerResponse::Deserialize(const string &pay
         m_hasServicesLogHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EnableInternetConsume") && !rsp["EnableInternetConsume"].IsNull())
+    {
+        if (!rsp["EnableInternetConsume"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableInternetConsume` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableInternetConsume = rsp["EnableInternetConsume"].GetBool();
+        m_enableInternetConsumeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EnableIntranetConsume") && !rsp["EnableIntranetConsume"].IsNull())
+    {
+        if (!rsp["EnableIntranetConsume"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableIntranetConsume` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableIntranetConsume = rsp["EnableIntranetConsume"].GetBool();
+        m_enableIntranetConsumeHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ScopeType") && !rsp["ScopeType"].IsNull())
     {
         if (!rsp["ScopeType"].IsUint64())
@@ -183,6 +205,22 @@ string DescribeKafkaConsumerResponse::ToJsonString() const
         string key = "HasServicesLog";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasServicesLog, allocator);
+    }
+
+    if (m_enableInternetConsumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableInternetConsume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableInternetConsume, allocator);
+    }
+
+    if (m_enableIntranetConsumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableIntranetConsume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableIntranetConsume, allocator);
     }
 
     if (m_scopeTypeHasBeenSet)
@@ -253,6 +291,26 @@ uint64_t DescribeKafkaConsumerResponse::GetHasServicesLog() const
 bool DescribeKafkaConsumerResponse::HasServicesLogHasBeenSet() const
 {
     return m_hasServicesLogHasBeenSet;
+}
+
+bool DescribeKafkaConsumerResponse::GetEnableInternetConsume() const
+{
+    return m_enableInternetConsume;
+}
+
+bool DescribeKafkaConsumerResponse::EnableInternetConsumeHasBeenSet() const
+{
+    return m_enableInternetConsumeHasBeenSet;
+}
+
+bool DescribeKafkaConsumerResponse::GetEnableIntranetConsume() const
+{
+    return m_enableIntranetConsume;
+}
+
+bool DescribeKafkaConsumerResponse::EnableIntranetConsumeHasBeenSet() const
+{
+    return m_enableIntranetConsumeHasBeenSet;
 }
 
 uint64_t DescribeKafkaConsumerResponse::GetScopeType() const

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品ID
-                     * @return ProductID 产品ID
+                     * 获取<p>产品ID</p>
+                     * @return ProductID <p>产品ID</p>
                      * 
                      */
                     std::string GetProductID() const;
 
                     /**
-                     * 设置产品ID
-                     * @param _productID 产品ID
+                     * 设置<p>产品ID</p>
+                     * @param _productID <p>产品ID</p>
                      * 
                      */
                     void SetProductID(const std::string& _productID);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIDHasBeenSet() const;
 
                     /**
-                     * 获取固件新版本号
-                     * @return FirmwareVersion 固件新版本号
+                     * 获取<p>固件新版本号</p>
+                     * @return FirmwareVersion <p>固件新版本号</p>
                      * 
                      */
                     std::string GetFirmwareVersion() const;
 
                     /**
-                     * 设置固件新版本号
-                     * @param _firmwareVersion 固件新版本号
+                     * 设置<p>固件新版本号</p>
+                     * @param _firmwareVersion <p>固件新版本号</p>
                      * 
                      */
                     void SetFirmwareVersion(const std::string& _firmwareVersion);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FirmwareVersionHasBeenSet() const;
 
                     /**
-                     * 获取固件原版本号
-                     * @return FirmwareOriVersion 固件原版本号
+                     * 获取<p>固件原版本号</p>
+                     * @return FirmwareOriVersion <p>固件原版本号</p>
                      * 
                      */
                     std::string GetFirmwareOriVersion() const;
 
                     /**
-                     * 设置固件原版本号
-                     * @param _firmwareOriVersion 固件原版本号
+                     * 设置<p>固件原版本号</p>
+                     * @param _firmwareOriVersion <p>固件原版本号</p>
                      * 
                      */
                     void SetFirmwareOriVersion(const std::string& _firmwareOriVersion);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool FirmwareOriVersionHasBeenSet() const;
 
                     /**
-                     * 获取升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式
-                     * @return UpgradeMethod 升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式
+                     * 获取<p>升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式</p>
+                     * @return UpgradeMethod <p>升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式</p>
                      * 
                      */
                     uint64_t GetUpgradeMethod() const;
 
                     /**
-                     * 设置升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式
-                     * @param _upgradeMethod 升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式
+                     * 设置<p>升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式</p>
+                     * @param _upgradeMethod <p>升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式</p>
                      * 
                      */
                     void SetUpgradeMethod(const uint64_t& _upgradeMethod);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool UpgradeMethodHasBeenSet() const;
 
                     /**
-                     * 获取设备列表文件名称，根据文件列表升级固件需要填写此参数
-                     * @return FileName 设备列表文件名称，根据文件列表升级固件需要填写此参数
+                     * 获取<p>设备列表文件名称，根据文件列表升级固件需要填写此参数</p>
+                     * @return FileName <p>设备列表文件名称，根据文件列表升级固件需要填写此参数</p>
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置设备列表文件名称，根据文件列表升级固件需要填写此参数
-                     * @param _fileName 设备列表文件名称，根据文件列表升级固件需要填写此参数
+                     * 设置<p>设备列表文件名称，根据文件列表升级固件需要填写此参数</p>
+                     * @param _fileName <p>设备列表文件名称，根据文件列表升级固件需要填写此参数</p>
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取设备列表的文件md5值
-                     * @return FileMd5 设备列表的文件md5值
+                     * 获取<p>设备列表的文件md5值</p>
+                     * @return FileMd5 <p>设备列表的文件md5值</p>
                      * 
                      */
                     std::string GetFileMd5() const;
 
                     /**
-                     * 设置设备列表的文件md5值
-                     * @param _fileMd5 设备列表的文件md5值
+                     * 设置<p>设备列表的文件md5值</p>
+                     * @param _fileMd5 <p>设备列表的文件md5值</p>
                      * 
                      */
                     void SetFileMd5(const std::string& _fileMd5);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool FileMd5HasBeenSet() const;
 
                     /**
-                     * 获取设备列表的文件大小值
-                     * @return FileSize 设备列表的文件大小值
+                     * 获取<p>设备列表的文件大小值</p>
+                     * @return FileSize <p>设备列表的文件大小值</p>
                      * 
                      */
                     uint64_t GetFileSize() const;
 
                     /**
-                     * 设置设备列表的文件大小值
-                     * @param _fileSize 设备列表的文件大小值
+                     * 设置<p>设备列表的文件大小值</p>
+                     * @param _fileSize <p>设备列表的文件大小值</p>
                      * 
                      */
                     void SetFileSize(const uint64_t& _fileSize);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取需要升级的设备名称列表
-                     * @return DeviceNames 需要升级的设备名称列表
+                     * 获取<p>需要升级的设备名称列表</p>
+                     * @return DeviceNames <p>需要升级的设备名称列表</p>
                      * 
                      */
                     std::vector<std::string> GetDeviceNames() const;
 
                     /**
-                     * 设置需要升级的设备名称列表
-                     * @param _deviceNames 需要升级的设备名称列表
+                     * 设置<p>需要升级的设备名称列表</p>
+                     * @param _deviceNames <p>需要升级的设备名称列表</p>
                      * 
                      */
                     void SetDeviceNames(const std::vector<std::string>& _deviceNames);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool DeviceNamesHasBeenSet() const;
 
                     /**
-                     * 获取固件升级任务，默认超时时间。 最小取值120秒，最大为900秒
-                     * @return TimeoutInterval 固件升级任务，默认超时时间。 最小取值120秒，最大为900秒
+                     * 获取<p>固件升级任务，默认超时时间。 最小取值120秒，最大为900秒</p>
+                     * @return TimeoutInterval <p>固件升级任务，默认超时时间。 最小取值120秒，最大为900秒</p>
                      * 
                      */
                     uint64_t GetTimeoutInterval() const;
 
                     /**
-                     * 设置固件升级任务，默认超时时间。 最小取值120秒，最大为900秒
-                     * @param _timeoutInterval 固件升级任务，默认超时时间。 最小取值120秒，最大为900秒
+                     * 设置<p>固件升级任务，默认超时时间。 最小取值120秒，最大为900秒</p>
+                     * @param _timeoutInterval <p>固件升级任务，默认超时时间。 最小取值120秒，最大为900秒</p>
                      * 
                      */
                     void SetTimeoutInterval(const uint64_t& _timeoutInterval);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool TimeoutIntervalHasBeenSet() const;
 
                     /**
-                     * 获取固件升级任务类型，默认静态升级值为空或1，动态升级值为7
-                     * @return Type 固件升级任务类型，默认静态升级值为空或1，动态升级值为7
+                     * 获取<p>固件升级任务类型，默认静态升级值为空或1，动态升级值为7</p>
+                     * @return Type <p>固件升级任务类型，默认静态升级值为空或1，动态升级值为7</p>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置固件升级任务类型，默认静态升级值为空或1，动态升级值为7
-                     * @param _type 固件升级任务类型，默认静态升级值为空或1，动态升级值为7
+                     * 设置<p>固件升级任务类型，默认静态升级值为空或1，动态升级值为7</p>
+                     * @param _type <p>固件升级任务类型，默认静态升级值为空或1，动态升级值为7</p>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取任务延迟时间
-                     * @return DelayTime 任务延迟时间
+                     * 获取<p>任务延迟时间</p>
+                     * @return DelayTime <p>任务延迟时间</p>
                      * 
                      */
                     int64_t GetDelayTime() const;
 
                     /**
-                     * 设置任务延迟时间
-                     * @param _delayTime 任务延迟时间
+                     * 设置<p>任务延迟时间</p>
+                     * @param _delayTime <p>任务延迟时间</p>
                      * 
                      */
                     void SetDelayTime(const int64_t& _delayTime);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool DelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否覆盖，0不覆盖，1覆盖
-                     * @return OverrideMode 是否覆盖，0不覆盖，1覆盖
+                     * 获取<p>是否覆盖，0不覆盖，1覆盖</p>
+                     * @return OverrideMode <p>是否覆盖，0不覆盖，1覆盖</p>
                      * 
                      */
                     uint64_t GetOverrideMode() const;
 
                     /**
-                     * 设置是否覆盖，0不覆盖，1覆盖
-                     * @param _overrideMode 是否覆盖，0不覆盖，1覆盖
+                     * 设置<p>是否覆盖，0不覆盖，1覆盖</p>
+                     * @param _overrideMode <p>是否覆盖，0不覆盖，1覆盖</p>
                      * 
                      */
                     void SetOverrideMode(const uint64_t& _overrideMode);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool OverrideModeHasBeenSet() const;
 
                     /**
-                     * 获取失败重试次数
-                     * @return MaxRetryNum 失败重试次数
+                     * 获取<p>失败重试次数</p>
+                     * @return MaxRetryNum <p>失败重试次数</p>
                      * 
                      */
                     uint64_t GetMaxRetryNum() const;
 
                     /**
-                     * 设置失败重试次数
-                     * @param _maxRetryNum 失败重试次数
+                     * 设置<p>失败重试次数</p>
+                     * @param _maxRetryNum <p>失败重试次数</p>
                      * 
                      */
                     void SetMaxRetryNum(const uint64_t& _maxRetryNum);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool MaxRetryNumHasBeenSet() const;
 
                     /**
-                     * 获取重试间隔min
-                     * @return RetryInterval 重试间隔min
+                     * 获取<p>重试间隔min</p>
+                     * @return RetryInterval <p>重试间隔min</p>
                      * 
                      */
                     uint64_t GetRetryInterval() const;
 
                     /**
-                     * 设置重试间隔min
-                     * @param _retryInterval 重试间隔min
+                     * 设置<p>重试间隔min</p>
+                     * @param _retryInterval <p>重试间隔min</p>
                      * 
                      */
                     void SetRetryInterval(const uint64_t& _retryInterval);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool RetryIntervalHasBeenSet() const;
 
                     /**
-                     * 获取固件模块
-                     * @return FwType 固件模块
+                     * 获取<p>固件模块</p>
+                     * @return FwType <p>固件模块</p>
                      * 
                      */
                     std::string GetFwType() const;
 
                     /**
-                     * 设置固件模块
-                     * @param _fwType 固件模块
+                     * 设置<p>固件模块</p>
+                     * @param _fwType <p>固件模块</p>
                      * 
                      */
                     void SetFwType(const std::string& _fwType);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool FwTypeHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义信息
-                     * @return TaskUserDefine 用户自定义信息
+                     * 获取<p>用户自定义信息</p>
+                     * @return TaskUserDefine <p>用户自定义信息</p>
                      * 
                      */
                     std::string GetTaskUserDefine() const;
 
                     /**
-                     * 设置用户自定义信息
-                     * @param _taskUserDefine 用户自定义信息
+                     * 设置<p>用户自定义信息</p>
+                     * @param _taskUserDefine <p>用户自定义信息</p>
                      * 
                      */
                     void SetTaskUserDefine(const std::string& _taskUserDefine);
@@ -379,15 +379,15 @@ namespace TencentCloud
                     bool TaskUserDefineHasBeenSet() const;
 
                     /**
-                     * 获取每分钟下发设备量
-                     * @return RateLimit 每分钟下发设备量
+                     * 获取<p>每分钟下发设备量</p>
+                     * @return RateLimit <p>每分钟下发设备量</p>
                      * 
                      */
                     int64_t GetRateLimit() const;
 
                     /**
-                     * 设置每分钟下发设备量
-                     * @param _rateLimit 每分钟下发设备量
+                     * 设置<p>每分钟下发设备量</p>
+                     * @param _rateLimit <p>每分钟下发设备量</p>
                      * 
                      */
                     void SetRateLimit(const int64_t& _rateLimit);
@@ -399,109 +399,163 @@ namespace TencentCloud
                      */
                     bool RateLimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务截止时间，Unix 时间戳（单位：秒）。传入 0 或不传表示不设截止，任务按原重试/超时策略执行完毕。</p><p>单位：秒</p>
+                     * @return EndTime <p>任务截止时间，Unix 时间戳（单位：秒）。传入 0 或不传表示不设截止，任务按原重试/超时策略执行完毕。</p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetEndTime() const;
+
+                    /**
+                     * 设置<p>任务截止时间，Unix 时间戳（单位：秒）。传入 0 或不传表示不设截止，任务按原重试/超时策略执行完毕。</p><p>单位：秒</p>
+                     * @param _endTime <p>任务截止时间，Unix 时间戳（单位：秒）。传入 0 或不传表示不设截止，任务按原重试/超时策略执行完毕。</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetEndTime(const int64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务开始调度时间，Unix 时间戳（单位：秒）。传入 0 或不传时任务立即创建执行，与 DelayTime 同时传入时，本参数优先生效。</p><p>单位：秒</p>
+                     * @return StartTime <p>任务开始调度时间，Unix 时间戳（单位：秒）。传入 0 或不传时任务立即创建执行，与 DelayTime 同时传入时，本参数优先生效。</p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetStartTime() const;
+
+                    /**
+                     * 设置<p>任务开始调度时间，Unix 时间戳（单位：秒）。传入 0 或不传时任务立即创建执行，与 DelayTime 同时传入时，本参数优先生效。</p><p>单位：秒</p>
+                     * @param _startTime <p>任务开始调度时间，Unix 时间戳（单位：秒）。传入 0 或不传时任务立即创建执行，与 DelayTime 同时传入时，本参数优先生效。</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetStartTime(const int64_t& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 产品ID
+                     * <p>产品ID</p>
                      */
                     std::string m_productID;
                     bool m_productIDHasBeenSet;
 
                     /**
-                     * 固件新版本号
+                     * <p>固件新版本号</p>
                      */
                     std::string m_firmwareVersion;
                     bool m_firmwareVersionHasBeenSet;
 
                     /**
-                     * 固件原版本号
+                     * <p>固件原版本号</p>
                      */
                     std::string m_firmwareOriVersion;
                     bool m_firmwareOriVersionHasBeenSet;
 
                     /**
-                     * 升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式
+                     * <p>升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式</p>
                      */
                     uint64_t m_upgradeMethod;
                     bool m_upgradeMethodHasBeenSet;
 
                     /**
-                     * 设备列表文件名称，根据文件列表升级固件需要填写此参数
+                     * <p>设备列表文件名称，根据文件列表升级固件需要填写此参数</p>
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 设备列表的文件md5值
+                     * <p>设备列表的文件md5值</p>
                      */
                     std::string m_fileMd5;
                     bool m_fileMd5HasBeenSet;
 
                     /**
-                     * 设备列表的文件大小值
+                     * <p>设备列表的文件大小值</p>
                      */
                     uint64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 需要升级的设备名称列表
+                     * <p>需要升级的设备名称列表</p>
                      */
                     std::vector<std::string> m_deviceNames;
                     bool m_deviceNamesHasBeenSet;
 
                     /**
-                     * 固件升级任务，默认超时时间。 最小取值120秒，最大为900秒
+                     * <p>固件升级任务，默认超时时间。 最小取值120秒，最大为900秒</p>
                      */
                     uint64_t m_timeoutInterval;
                     bool m_timeoutIntervalHasBeenSet;
 
                     /**
-                     * 固件升级任务类型，默认静态升级值为空或1，动态升级值为7
+                     * <p>固件升级任务类型，默认静态升级值为空或1，动态升级值为7</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 任务延迟时间
+                     * <p>任务延迟时间</p>
                      */
                     int64_t m_delayTime;
                     bool m_delayTimeHasBeenSet;
 
                     /**
-                     * 是否覆盖，0不覆盖，1覆盖
+                     * <p>是否覆盖，0不覆盖，1覆盖</p>
                      */
                     uint64_t m_overrideMode;
                     bool m_overrideModeHasBeenSet;
 
                     /**
-                     * 失败重试次数
+                     * <p>失败重试次数</p>
                      */
                     uint64_t m_maxRetryNum;
                     bool m_maxRetryNumHasBeenSet;
 
                     /**
-                     * 重试间隔min
+                     * <p>重试间隔min</p>
                      */
                     uint64_t m_retryInterval;
                     bool m_retryIntervalHasBeenSet;
 
                     /**
-                     * 固件模块
+                     * <p>固件模块</p>
                      */
                     std::string m_fwType;
                     bool m_fwTypeHasBeenSet;
 
                     /**
-                     * 用户自定义信息
+                     * <p>用户自定义信息</p>
                      */
                     std::string m_taskUserDefine;
                     bool m_taskUserDefineHasBeenSet;
 
                     /**
-                     * 每分钟下发设备量
+                     * <p>每分钟下发设备量</p>
                      */
                     int64_t m_rateLimit;
                     bool m_rateLimitHasBeenSet;
+
+                    /**
+                     * <p>任务截止时间，Unix 时间戳（单位：秒）。传入 0 或不传表示不设截止，任务按原重试/超时策略执行完毕。</p><p>单位：秒</p>
+                     */
+                    int64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * <p>任务开始调度时间，Unix 时间戳（单位：秒）。传入 0 或不传时任务立即创建执行，与 DelayTime 同时传入时，本参数优先生效。</p><p>单位：秒</p>
+                     */
+                    int64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
 
                 };
             }

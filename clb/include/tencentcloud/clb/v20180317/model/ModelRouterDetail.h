@@ -32,6 +32,9 @@
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
 #include <tencentcloud/clb/v20180317/model/ModelRouterBillingConfigOutput.h>
 #include <tencentcloud/clb/v20180317/model/EmbeddingConfig.h>
+#include <tencentcloud/clb/v20180317/model/VideoConfig.h>
+#include <tencentcloud/clb/v20180317/model/RerankConfig.h>
+#include <tencentcloud/clb/v20180317/model/DecisionsConfig.h>
 
 
 namespace TencentCloud
@@ -596,15 +599,19 @@ namespace TencentCloud
                     bool BillingConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>Embedding配置</p>
-                     * @return EmbeddingConfig <p>Embedding配置</p>
+                     * 获取<p>Embedding调度配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmbeddingConfig <p>Embedding调度配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EmbeddingConfig GetEmbeddingConfig() const;
 
                     /**
-                     * 设置<p>Embedding配置</p>
-                     * @param _embeddingConfig <p>Embedding配置</p>
+                     * 设置<p>Embedding调度配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _embeddingConfig <p>Embedding调度配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEmbeddingConfig(const EmbeddingConfig& _embeddingConfig);
@@ -615,6 +622,94 @@ namespace TencentCloud
                      * 
                      */
                     bool EmbeddingConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CMR关联的负载均衡实例id</p>
+                     * @return LoadBalancerId <p>CMR关联的负载均衡实例id</p>
+                     * 
+                     */
+                    std::string GetLoadBalancerId() const;
+
+                    /**
+                     * 设置<p>CMR关联的负载均衡实例id</p>
+                     * @param _loadBalancerId <p>CMR关联的负载均衡实例id</p>
+                     * 
+                     */
+                    void SetLoadBalancerId(const std::string& _loadBalancerId);
+
+                    /**
+                     * 判断参数 LoadBalancerId 是否已赋值
+                     * @return LoadBalancerId 是否已赋值
+                     * 
+                     */
+                    bool LoadBalancerIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>视频模型设置</p>
+                     * @return VideoConfig <p>视频模型设置</p>
+                     * 
+                     */
+                    VideoConfig GetVideoConfig() const;
+
+                    /**
+                     * 设置<p>视频模型设置</p>
+                     * @param _videoConfig <p>视频模型设置</p>
+                     * 
+                     */
+                    void SetVideoConfig(const VideoConfig& _videoConfig);
+
+                    /**
+                     * 判断参数 VideoConfig 是否已赋值
+                     * @return VideoConfig 是否已赋值
+                     * 
+                     */
+                    bool VideoConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Rerank调度配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RerankConfig <p>Rerank调度配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    RerankConfig GetRerankConfig() const;
+
+                    /**
+                     * 设置<p>Rerank调度配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rerankConfig <p>Rerank调度配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRerankConfig(const RerankConfig& _rerankConfig);
+
+                    /**
+                     * 判断参数 RerankConfig 是否已赋值
+                     * @return RerankConfig 是否已赋值
+                     * 
+                     */
+                    bool RerankConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>决策模型设置</p>
+                     * @return DecisionsConfig <p>决策模型设置</p>
+                     * 
+                     */
+                    DecisionsConfig GetDecisionsConfig() const;
+
+                    /**
+                     * 设置<p>决策模型设置</p>
+                     * @param _decisionsConfig <p>决策模型设置</p>
+                     * 
+                     */
+                    void SetDecisionsConfig(const DecisionsConfig& _decisionsConfig);
+
+                    /**
+                     * 判断参数 DecisionsConfig 是否已赋值
+                     * @return DecisionsConfig 是否已赋值
+                     * 
+                     */
+                    bool DecisionsConfigHasBeenSet() const;
 
                 private:
 
@@ -773,10 +868,36 @@ namespace TencentCloud
                     bool m_billingConfigHasBeenSet;
 
                     /**
-                     * <p>Embedding配置</p>
+                     * <p>Embedding调度配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EmbeddingConfig m_embeddingConfig;
                     bool m_embeddingConfigHasBeenSet;
+
+                    /**
+                     * <p>CMR关联的负载均衡实例id</p>
+                     */
+                    std::string m_loadBalancerId;
+                    bool m_loadBalancerIdHasBeenSet;
+
+                    /**
+                     * <p>视频模型设置</p>
+                     */
+                    VideoConfig m_videoConfig;
+                    bool m_videoConfigHasBeenSet;
+
+                    /**
+                     * <p>Rerank调度配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RerankConfig m_rerankConfig;
+                    bool m_rerankConfigHasBeenSet;
+
+                    /**
+                     * <p>决策模型设置</p>
+                     */
+                    DecisionsConfig m_decisionsConfig;
+                    bool m_decisionsConfigHasBeenSet;
 
                 };
             }

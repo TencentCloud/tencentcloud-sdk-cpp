@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标名
-                     * @return Name 指标名
+                     * 获取<p>指标名</p>
+                     * @return Name <p>指标名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置指标名
-                     * @param _name 指标名
+                     * 设置<p>指标名</p>
+                     * @param _name <p>指标名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取指标值
-                     * @return Value 指标值
+                     * 获取<p>指标值</p>
+                     * @return Value <p>指标值</p>
                      * 
                      */
                     int64_t GetValue() const;
 
                     /**
-                     * 设置指标值
-                     * @param _value 指标值
+                     * 设置<p>指标值</p>
+                     * @param _value <p>指标值</p>
                      * 
                      */
                     void SetValue(const int64_t& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指标名
+                     * <p>指标名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 指标值
+                     * <p>指标值</p>
                      */
                     int64_t m_value;
                     bool m_valueHasBeenSet;

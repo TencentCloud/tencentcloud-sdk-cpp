@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cam::V20190116::Model;
 using namespace std;
 
-CreateMessageReceiverResponse::CreateMessageReceiverResponse()
+CreateMessageReceiverResponse::CreateMessageReceiverResponse() :
+    m_phoneNumVerifyLinkHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateMessageReceiverResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("PhoneNumVerifyLink") && !rsp["PhoneNumVerifyLink"].IsNull())
+    {
+        if (!rsp["PhoneNumVerifyLink"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PhoneNumVerifyLink` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_phoneNumVerifyLink = string(rsp["PhoneNumVerifyLink"].GetString());
+        m_phoneNumVerifyLinkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateMessageReceiverResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_phoneNumVerifyLinkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhoneNumVerifyLink";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phoneNumVerifyLink.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateMessageReceiverResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateMessageReceiverResponse::GetPhoneNumVerifyLink() const
+{
+    return m_phoneNumVerifyLink;
+}
+
+bool CreateMessageReceiverResponse::PhoneNumVerifyLinkHasBeenSet() const
+{
+    return m_phoneNumVerifyLinkHasBeenSet;
+}
 
 

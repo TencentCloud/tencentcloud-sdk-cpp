@@ -29,7 +29,8 @@ AddUserResponse::AddUserResponse() :
     m_passwordHasBeenSet(false),
     m_secretIdHasBeenSet(false),
     m_secretKeyHasBeenSet(false),
-    m_uidHasBeenSet(false)
+    m_uidHasBeenSet(false),
+    m_phoneNumVerifyLinkHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome AddUserResponse::Deserialize(const string &payload)
         m_uidHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PhoneNumVerifyLink") && !rsp["PhoneNumVerifyLink"].IsNull())
+    {
+        if (!rsp["PhoneNumVerifyLink"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PhoneNumVerifyLink` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_phoneNumVerifyLink = string(rsp["PhoneNumVerifyLink"].GetString());
+        m_phoneNumVerifyLinkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +194,14 @@ string AddUserResponse::ToJsonString() const
         string key = "Uid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_uid, allocator);
+    }
+
+    if (m_phoneNumVerifyLinkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhoneNumVerifyLink";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phoneNumVerifyLink.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +274,16 @@ uint64_t AddUserResponse::GetUid() const
 bool AddUserResponse::UidHasBeenSet() const
 {
     return m_uidHasBeenSet;
+}
+
+string AddUserResponse::GetPhoneNumVerifyLink() const
+{
+    return m_phoneNumVerifyLink;
+}
+
+bool AddUserResponse::PhoneNumVerifyLinkHasBeenSet() const
+{
+    return m_phoneNumVerifyLinkHasBeenSet;
 }
 
 

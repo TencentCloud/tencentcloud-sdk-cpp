@@ -1140,6 +1140,56 @@ TeoClient::CreateInferenceAPITokenOutcomeCallable TeoClient::CreateInferenceAPIT
     return prom->get_future();
 }
 
+TeoClient::CreateInferenceDomainOutcome TeoClient::CreateInferenceDomain(const CreateInferenceDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInferenceDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInferenceDomainResponse rsp = CreateInferenceDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInferenceDomainOutcome(rsp);
+        else
+            return CreateInferenceDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInferenceDomainOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateInferenceDomainAsync(const CreateInferenceDomainRequest& request, const CreateInferenceDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateInferenceDomainRequest&;
+    using Resp = CreateInferenceDomainResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateInferenceDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::CreateInferenceDomainOutcomeCallable TeoClient::CreateInferenceDomainCallable(const CreateInferenceDomainRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateInferenceDomainOutcome>>();
+    CreateInferenceDomainAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const CreateInferenceDomainRequest&,
+        CreateInferenceDomainOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::CreateInferenceServiceOutcome TeoClient::CreateInferenceService(const CreateInferenceServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInferenceService");
@@ -5482,6 +5532,56 @@ TeoClient::DescribeInferenceAPITokensOutcomeCallable TeoClient::DescribeInferenc
         const TeoClient*,
         const DescribeInferenceAPITokensRequest&,
         DescribeInferenceAPITokensOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeInferenceDomainsOutcome TeoClient::DescribeInferenceDomains(const DescribeInferenceDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInferenceDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInferenceDomainsResponse rsp = DescribeInferenceDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInferenceDomainsOutcome(rsp);
+        else
+            return DescribeInferenceDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInferenceDomainsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeInferenceDomainsAsync(const DescribeInferenceDomainsRequest& request, const DescribeInferenceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInferenceDomainsRequest&;
+    using Resp = DescribeInferenceDomainsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInferenceDomains", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeInferenceDomainsOutcomeCallable TeoClient::DescribeInferenceDomainsCallable(const DescribeInferenceDomainsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInferenceDomainsOutcome>>();
+    DescribeInferenceDomainsAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeInferenceDomainsRequest&,
+        DescribeInferenceDomainsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -11482,6 +11582,56 @@ TeoClient::ModifyZoneWorkModeOutcomeCallable TeoClient::ModifyZoneWorkModeCallab
         const TeoClient*,
         const ModifyZoneWorkModeRequest&,
         ModifyZoneWorkModeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::OperateInferenceDomainOutcome TeoClient::OperateInferenceDomain(const OperateInferenceDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "OperateInferenceDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OperateInferenceDomainResponse rsp = OperateInferenceDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OperateInferenceDomainOutcome(rsp);
+        else
+            return OperateInferenceDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return OperateInferenceDomainOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::OperateInferenceDomainAsync(const OperateInferenceDomainRequest& request, const OperateInferenceDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const OperateInferenceDomainRequest&;
+    using Resp = OperateInferenceDomainResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "OperateInferenceDomain", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::OperateInferenceDomainOutcomeCallable TeoClient::OperateInferenceDomainCallable(const OperateInferenceDomainRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<OperateInferenceDomainOutcome>>();
+    OperateInferenceDomainAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const OperateInferenceDomainRequest&,
+        OperateInferenceDomainOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>模型内路由策略</p>
+                     * 获取<p>模型内路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoutingStrategy <p>模型内路由策略</p>
+                     * @return RoutingStrategy <p>模型内路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoutingStrategy() const;
 
                     /**
-                     * 设置<p>模型内路由策略</p>
+                     * 设置<p>模型内路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _routingStrategy <p>模型内路由策略</p>
+                     * @param _routingStrategy <p>模型内路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool RoutingStrategyArgsHasBeenSet() const;
 
                     /**
-                     * 获取<p>同一模型请求重试次数</p>
+                     * 获取<p>CMR实例级别模型组内请求重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NumRetries <p>同一模型请求重试次数</p>
+                     * @return NumRetries <p>CMR实例级别模型组内请求重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNumRetries() const;
 
                     /**
-                     * 设置<p>同一模型请求重试次数</p>
+                     * 设置<p>CMR实例级别模型组内请求重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _numRetries <p>同一模型请求重试次数</p>
+                     * @param _numRetries <p>CMR实例级别模型组内请求重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -125,7 +125,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>模型内路由策略</p>
+                     * <p>模型内路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_routingStrategy;
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_routingStrategyArgsHasBeenSet;
 
                     /**
-                     * <p>同一模型请求重试次数</p>
+                     * <p>CMR实例级别模型组内请求重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_numRetries;

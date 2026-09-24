@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子用户用户名
-                     * @return Name 子用户用户名
+                     * 获取<p>子用户用户名</p>
+                     * @return Name <p>子用户用户名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置子用户用户名
-                     * @param _name 子用户用户名
+                     * 设置<p>子用户用户名</p>
+                     * @param _name <p>子用户用户名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取子用户备注
-                     * @return Remark 子用户备注
+                     * 获取<p>子用户备注</p>
+                     * @return Remark <p>子用户备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置子用户备注
-                     * @param _remark 子用户备注
+                     * 设置<p>子用户备注</p>
+                     * @param _remark <p>子用户备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
-                     * @return ConsoleLogin 子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
+                     * 获取<p>子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。</p>
+                     * @return ConsoleLogin <p>子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。</p>
                      * 
                      */
                     uint64_t GetConsoleLogin() const;
 
                     /**
-                     * 设置子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
-                     * @param _consoleLogin 子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
+                     * 设置<p>子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。</p>
+                     * @param _consoleLogin <p>子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。</p>
                      * 
                      */
                     void SetConsoleLogin(const uint64_t& _consoleLogin);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ConsoleLoginHasBeenSet() const;
 
                     /**
-                     * 获取是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。
-                     * @return UseApi 是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。
+                     * 获取<p>是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。</p>
+                     * @return UseApi <p>是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。</p>
                      * 
                      */
                     uint64_t GetUseApi() const;
 
                     /**
-                     * 设置是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。
-                     * @param _useApi 是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。
+                     * 设置<p>是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。</p>
+                     * @param _useApi <p>是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。</p>
                      * 
                      */
                     void SetUseApi(const uint64_t& _useApi);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool UseApiHasBeenSet() const;
 
                     /**
-                     * 获取子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。
-                     * @return Password 子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。
+                     * 获取<p>子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。</p>
+                     * @return Password <p>子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。
-                     * @param _password 子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。
+                     * 设置<p>子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。</p>
+                     * @param _password <p>子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
-                     * @return NeedResetPassword 子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
+                     * 获取<p>子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。</p>
+                     * @return NeedResetPassword <p>子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。</p>
                      * 
                      */
                     uint64_t GetNeedResetPassword() const;
 
                     /**
-                     * 设置子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
-                     * @param _needResetPassword 子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
+                     * 设置<p>子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。</p>
+                     * @param _needResetPassword <p>子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。</p>
                      * 
                      */
                     void SetNeedResetPassword(const uint64_t& _needResetPassword);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool NeedResetPasswordHasBeenSet() const;
 
                     /**
-                     * 获取手机号
-                     * @return PhoneNum 手机号
+                     * 获取<p>手机号</p>
+                     * @return PhoneNum <p>手机号</p>
                      * 
                      */
                     std::string GetPhoneNum() const;
 
                     /**
-                     * 设置手机号
-                     * @param _phoneNum 手机号
+                     * 设置<p>手机号</p>
+                     * @param _phoneNum <p>手机号</p>
                      * 
                      */
                     void SetPhoneNum(const std::string& _phoneNum);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool PhoneNumHasBeenSet() const;
 
                     /**
-                     * 获取区号
-                     * @return CountryCode 区号
+                     * 获取<p>区号</p>
+                     * @return CountryCode <p>区号</p>
                      * 
                      */
                     std::string GetCountryCode() const;
 
                     /**
-                     * 设置区号
-                     * @param _countryCode 区号
+                     * 设置<p>区号</p>
+                     * @param _countryCode <p>区号</p>
                      * 
                      */
                     void SetCountryCode(const std::string& _countryCode);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool CountryCodeHasBeenSet() const;
 
                     /**
-                     * 获取邮箱
-                     * @return Email 邮箱
+                     * 获取<p>邮箱</p>
+                     * @return Email <p>邮箱</p>
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
-                     * 设置邮箱
-                     * @param _email 邮箱
+                     * 设置<p>邮箱</p>
+                     * @param _email <p>邮箱</p>
                      * 
                      */
                     void SetEmail(const std::string& _email);
@@ -234,55 +234,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子用户用户名
+                     * <p>子用户用户名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 子用户备注
+                     * <p>子用户备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
+                     * <p>子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。</p>
                      */
                     uint64_t m_consoleLogin;
                     bool m_consoleLoginHasBeenSet;
 
                     /**
-                     * 是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。
+                     * <p>是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。</p>
                      */
                     uint64_t m_useApi;
                     bool m_useApiHasBeenSet;
 
                     /**
-                     * 子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。
+                     * <p>子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
+                     * <p>子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。</p>
                      */
                     uint64_t m_needResetPassword;
                     bool m_needResetPasswordHasBeenSet;
 
                     /**
-                     * 手机号
+                     * <p>手机号</p>
                      */
                     std::string m_phoneNum;
                     bool m_phoneNumHasBeenSet;
 
                     /**
-                     * 区号
+                     * <p>区号</p>
                      */
                     std::string m_countryCode;
                     bool m_countryCodeHasBeenSet;
 
                     /**
-                     * 邮箱
+                     * <p>邮箱</p>
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;

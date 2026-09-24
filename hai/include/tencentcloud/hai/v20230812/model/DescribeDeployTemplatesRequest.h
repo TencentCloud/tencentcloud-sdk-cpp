@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool ModelIdHasBeenSet() const;
 
+                    /**
+                     * 获取可选。传入当前推理服务 ID 时，仅返回与该服务占用兼容的模板：同一 Scene、卡型家族兼容、机数相等、非机密计算。
+                     * @return ServiceId 可选。传入当前推理服务 ID 时，仅返回与该服务占用兼容的模板：同一 Scene、卡型家族兼容、机数相等、非机密计算。
+                     * 
+                     */
+                    std::string GetServiceId() const;
+
+                    /**
+                     * 设置可选。传入当前推理服务 ID 时，仅返回与该服务占用兼容的模板：同一 Scene、卡型家族兼容、机数相等、非机密计算。
+                     * @param _serviceId 可选。传入当前推理服务 ID 时，仅返回与该服务占用兼容的模板：同一 Scene、卡型家族兼容、机数相等、非机密计算。
+                     * 
+                     */
+                    void SetServiceId(const std::string& _serviceId);
+
+                    /**
+                     * 判断参数 ServiceId 是否已赋值
+                     * @return ServiceId 是否已赋值
+                     * 
+                     */
+                    bool ServiceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;
+
+                    /**
+                     * 可选。传入当前推理服务 ID 时，仅返回与该服务占用兼容的模板：同一 Scene、卡型家族兼容、机数相等、非机密计算。
+                     */
+                    std::string m_serviceId;
+                    bool m_serviceIdHasBeenSet;
 
                 };
             }

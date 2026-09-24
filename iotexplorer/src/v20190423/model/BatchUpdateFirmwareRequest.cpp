@@ -39,7 +39,9 @@ BatchUpdateFirmwareRequest::BatchUpdateFirmwareRequest() :
     m_retryIntervalHasBeenSet(false),
     m_fwTypeHasBeenSet(false),
     m_taskUserDefineHasBeenSet(false),
-    m_rateLimitHasBeenSet(false)
+    m_rateLimitHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -189,6 +191,22 @@ string BatchUpdateFirmwareRequest::ToJsonString() const
         string key = "RateLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_rateLimit, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startTime, allocator);
     }
 
 
@@ -469,6 +487,38 @@ void BatchUpdateFirmwareRequest::SetRateLimit(const int64_t& _rateLimit)
 bool BatchUpdateFirmwareRequest::RateLimitHasBeenSet() const
 {
     return m_rateLimitHasBeenSet;
+}
+
+int64_t BatchUpdateFirmwareRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void BatchUpdateFirmwareRequest::SetEndTime(const int64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool BatchUpdateFirmwareRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+int64_t BatchUpdateFirmwareRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void BatchUpdateFirmwareRequest::SetStartTime(const int64_t& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool BatchUpdateFirmwareRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
 }
 
 

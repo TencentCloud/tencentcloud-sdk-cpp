@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 获取<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @return InstanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
-                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * 设置<p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
+                     * @param _instanceId <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。
-                     * @return StartTime 开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。
+                     * 获取<p>开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。</p>
+                     * @return StartTime <p>开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。
-                     * @param _startTime 开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。
+                     * 设置<p>开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。</p>
+                     * @param _startTime <p>开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
-                     * @return EndTime 截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
+                     * 获取<p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>
+                     * @return EndTime <p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
-                     * @param _endTime 截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
+                     * 设置<p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>
+                     * @param _endTime <p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取"mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，默认为"mysql"。
-                     * @return Product "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，默认为"mysql"。
+                     * 获取<p>&quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>
+                     * @return Product <p>&quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置"mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，默认为"mysql"。
-                     * @param _product "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，默认为"mysql"。
+                     * 设置<p>&quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>
+                     * @param _product <p>&quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取Proxy节点ID。
-                     * @return InstanceProxyId Proxy节点ID。
+                     * 获取<p>Proxy节点ID。</p>
+                     * @return InstanceProxyId <p>Proxy节点ID。</p>
                      * 
                      */
                     std::string GetInstanceProxyId() const;
 
                     /**
-                     * 设置Proxy节点ID。
-                     * @param _instanceProxyId Proxy节点ID。
+                     * 设置<p>Proxy节点ID。</p>
+                     * @param _instanceProxyId <p>Proxy节点ID。</p>
                      * 
                      */
                     void SetInstanceProxyId(const std::string& _instanceProxyId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool InstanceProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取实例节点ID。
-                     * @return InstanceNodeId 实例节点ID。
+                     * 获取<p>实例节点ID。</p>
+                     * @return InstanceNodeId <p>实例节点ID。</p>
                      * 
                      */
                     std::string GetInstanceNodeId() const;
 
                     /**
-                     * 设置实例节点ID。
-                     * @param _instanceNodeId 实例节点ID。
+                     * 设置<p>实例节点ID。</p>
+                     * @param _instanceNodeId <p>实例节点ID。</p>
                      * 
                      */
                     void SetInstanceNodeId(const std::string& _instanceNodeId);
@@ -169,27 +169,15 @@ namespace TencentCloud
                     bool InstanceNodeIdHasBeenSet() const;
 
                     /**
-                     * 获取查询类型，目前支持值：mongod，mongos。
-其中：
-mongod - MongoDB的数据存储节点
-mongos - MongoDB的路由节点
-                     * @return Type 查询类型，目前支持值：mongod，mongos。
-其中：
-mongod - MongoDB的数据存储节点
-mongos - MongoDB的路由节点
+                     * 获取<p>查询类型，目前支持值：mongod，mongos。<br>其中：<br>mongod - MongoDB的数据存储节点<br>mongos - MongoDB的路由节点</p>
+                     * @return Type <p>查询类型，目前支持值：mongod，mongos。<br>其中：<br>mongod - MongoDB的数据存储节点<br>mongos - MongoDB的路由节点</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置查询类型，目前支持值：mongod，mongos。
-其中：
-mongod - MongoDB的数据存储节点
-mongos - MongoDB的路由节点
-                     * @param _type 查询类型，目前支持值：mongod，mongos。
-其中：
-mongod - MongoDB的数据存储节点
-mongos - MongoDB的路由节点
+                     * 设置<p>查询类型，目前支持值：mongod，mongos。<br>其中：<br>mongod - MongoDB的数据存储节点<br>mongos - MongoDB的路由节点</p>
+                     * @param _type <p>查询类型，目前支持值：mongod，mongos。<br>其中：<br>mongod - MongoDB的数据存储节点<br>mongos - MongoDB的路由节点</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -204,46 +192,43 @@ mongos - MongoDB的路由节点
                 private:
 
                     /**
-                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * <p>实例 ID。可通过 <a href="https://cloud.tencent.com/document/api/1130/57798">DescribeDiagDBInstances</a> 接口获取。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。
+                     * <p>开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。
+                     * <p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 TDSQL-C for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，默认为"mysql"。
+                     * <p>&quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * Proxy节点ID。
+                     * <p>Proxy节点ID。</p>
                      */
                     std::string m_instanceProxyId;
                     bool m_instanceProxyIdHasBeenSet;
 
                     /**
-                     * 实例节点ID。
+                     * <p>实例节点ID。</p>
                      */
                     std::string m_instanceNodeId;
                     bool m_instanceNodeIdHasBeenSet;
 
                     /**
-                     * 查询类型，目前支持值：mongod，mongos。
-其中：
-mongod - MongoDB的数据存储节点
-mongos - MongoDB的路由节点
+                     * <p>查询类型，目前支持值：mongod，mongos。<br>其中：<br>mongod - MongoDB的数据存储节点<br>mongos - MongoDB的路由节点</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

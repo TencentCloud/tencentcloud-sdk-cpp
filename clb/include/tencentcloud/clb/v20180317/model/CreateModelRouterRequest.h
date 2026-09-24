@@ -27,6 +27,9 @@
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
 #include <tencentcloud/clb/v20180317/model/ModelRouterBillingConfigInput.h>
 #include <tencentcloud/clb/v20180317/model/EmbeddingConfig.h>
+#include <tencentcloud/clb/v20180317/model/VideoConfig.h>
+#include <tencentcloud/clb/v20180317/model/RerankConfig.h>
+#include <tencentcloud/clb/v20180317/model/DecisionsConfig.h>
 
 
 namespace TencentCloud
@@ -406,15 +409,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取<p>Embedding 配置</p>
-                     * @return EmbeddingConfig <p>Embedding 配置</p>
+                     * 获取<p>Embedding 调度配置</p>
+                     * @return EmbeddingConfig <p>Embedding 调度配置</p>
                      * 
                      */
                     EmbeddingConfig GetEmbeddingConfig() const;
 
                     /**
-                     * 设置<p>Embedding 配置</p>
-                     * @param _embeddingConfig <p>Embedding 配置</p>
+                     * 设置<p>Embedding 调度配置</p>
+                     * @param _embeddingConfig <p>Embedding 调度配置</p>
                      * 
                      */
                     void SetEmbeddingConfig(const EmbeddingConfig& _embeddingConfig);
@@ -425,6 +428,69 @@ namespace TencentCloud
                      * 
                      */
                     bool EmbeddingConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Video 配置</p>
+                     * @return VideoConfig <p>Video 配置</p>
+                     * 
+                     */
+                    VideoConfig GetVideoConfig() const;
+
+                    /**
+                     * 设置<p>Video 配置</p>
+                     * @param _videoConfig <p>Video 配置</p>
+                     * 
+                     */
+                    void SetVideoConfig(const VideoConfig& _videoConfig);
+
+                    /**
+                     * 判断参数 VideoConfig 是否已赋值
+                     * @return VideoConfig 是否已赋值
+                     * 
+                     */
+                    bool VideoConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Rerank 调度配置</p>
+                     * @return RerankConfig <p>Rerank 调度配置</p>
+                     * 
+                     */
+                    RerankConfig GetRerankConfig() const;
+
+                    /**
+                     * 设置<p>Rerank 调度配置</p>
+                     * @param _rerankConfig <p>Rerank 调度配置</p>
+                     * 
+                     */
+                    void SetRerankConfig(const RerankConfig& _rerankConfig);
+
+                    /**
+                     * 判断参数 RerankConfig 是否已赋值
+                     * @return RerankConfig 是否已赋值
+                     * 
+                     */
+                    bool RerankConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Decisions 调度配置</p>
+                     * @return DecisionsConfig <p>Decisions 调度配置</p>
+                     * 
+                     */
+                    DecisionsConfig GetDecisionsConfig() const;
+
+                    /**
+                     * 设置<p>Decisions 调度配置</p>
+                     * @param _decisionsConfig <p>Decisions 调度配置</p>
+                     * 
+                     */
+                    void SetDecisionsConfig(const DecisionsConfig& _decisionsConfig);
+
+                    /**
+                     * 判断参数 DecisionsConfig 是否已赋值
+                     * @return DecisionsConfig 是否已赋值
+                     * 
+                     */
+                    bool DecisionsConfigHasBeenSet() const;
 
                 private:
 
@@ -531,10 +597,28 @@ namespace TencentCloud
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * <p>Embedding 配置</p>
+                     * <p>Embedding 调度配置</p>
                      */
                     EmbeddingConfig m_embeddingConfig;
                     bool m_embeddingConfigHasBeenSet;
+
+                    /**
+                     * <p>Video 配置</p>
+                     */
+                    VideoConfig m_videoConfig;
+                    bool m_videoConfigHasBeenSet;
+
+                    /**
+                     * <p>Rerank 调度配置</p>
+                     */
+                    RerankConfig m_rerankConfig;
+                    bool m_rerankConfigHasBeenSet;
+
+                    /**
+                     * <p>Decisions 调度配置</p>
+                     */
+                    DecisionsConfig m_decisionsConfig;
+                    bool m_decisionsConfigHasBeenSet;
 
                 };
             }

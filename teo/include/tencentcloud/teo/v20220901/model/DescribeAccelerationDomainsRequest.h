@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加速域名所属站点 ID。
-                     * @return ZoneId 加速域名所属站点 ID。
+                     * 获取<p>加速域名所属站点 ID。</p>
+                     * @return ZoneId <p>加速域名所属站点 ID。</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置加速域名所属站点 ID。
-                     * @param _zoneId 加速域名所属站点 ID。
+                     * 设置<p>加速域名所属站点 ID。</p>
+                     * @param _zoneId <p>加速域名所属站点 ID。</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取分页查询偏移量，默认为 0。
-                     * @return Offset 分页查询偏移量，默认为 0。
+                     * 获取<p>分页查询偏移量，默认为 0。</p>
+                     * @return Offset <p>分页查询偏移量，默认为 0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页查询偏移量，默认为 0。
-                     * @param _offset 分页查询偏移量，默认为 0。
+                     * 设置<p>分页查询偏移量，默认为 0。</p>
+                     * @param _offset <p>分页查询偏移量，默认为 0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页查询限制数目，默认值：20，上限：200。
-                     * @return Limit 分页查询限制数目，默认值：20，上限：200。
+                     * 获取<p>分页查询限制数目，默认值：20，上限：200。</p>
+                     * @return Limit <p>分页查询限制数目，默认值：20，上限：200。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页查询限制数目，默认值：20，上限：200。
-                     * @param _limit 分页查询限制数目，默认值：20，上限：200。
+                     * 设置<p>分页查询限制数目，默认值：20，上限：200。</p>
+                     * @param _limit <p>分页查询限制数目，默认值：20，上限：200。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -107,39 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：
-<li>domain-name：按照加速域名进行过滤；</li>
-<li>origin-type：按照源站类型进行过滤；</li>
-<li>origin：按照主源站地址进行过滤；</li>
-<li>backup-origin： 按照备用源站地址进行过滤；</li>
-<li>domain-cname：按照 CNAME 进行过滤；</li>
-<li>share-cname：按照共享 CNAME 进行过滤；</li>
-                     * @return Filters 过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：
-<li>domain-name：按照加速域名进行过滤；</li>
-<li>origin-type：按照源站类型进行过滤；</li>
-<li>origin：按照主源站地址进行过滤；</li>
-<li>backup-origin： 按照备用源站地址进行过滤；</li>
-<li>domain-cname：按照 CNAME 进行过滤；</li>
-<li>share-cname：按照共享 CNAME 进行过滤；</li>
+                     * 获取<p>过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：</p><li>domain-name：按照加速域名进行过滤；</li><li>origin-type：按照源站类型进行过滤；</li><li>origin：按照主源站地址进行过滤；</li><li>backup-origin： 按照备用源站地址进行过滤；</li><li>domain-cname：按照 CNAME 进行过滤；</li><li>share-cname：按照共享 CNAME 进行过滤；</li>
+                     * @return Filters <p>过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：</p><li>domain-name：按照加速域名进行过滤；</li><li>origin-type：按照源站类型进行过滤；</li><li>origin：按照主源站地址进行过滤；</li><li>backup-origin： 按照备用源站地址进行过滤；</li><li>domain-cname：按照 CNAME 进行过滤；</li><li>share-cname：按照共享 CNAME 进行过滤；</li>
                      * 
                      */
                     std::vector<AdvancedFilter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：
-<li>domain-name：按照加速域名进行过滤；</li>
-<li>origin-type：按照源站类型进行过滤；</li>
-<li>origin：按照主源站地址进行过滤；</li>
-<li>backup-origin： 按照备用源站地址进行过滤；</li>
-<li>domain-cname：按照 CNAME 进行过滤；</li>
-<li>share-cname：按照共享 CNAME 进行过滤；</li>
-                     * @param _filters 过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：
-<li>domain-name：按照加速域名进行过滤；</li>
-<li>origin-type：按照源站类型进行过滤；</li>
-<li>origin：按照主源站地址进行过滤；</li>
-<li>backup-origin： 按照备用源站地址进行过滤；</li>
-<li>domain-cname：按照 CNAME 进行过滤；</li>
-<li>share-cname：按照共享 CNAME 进行过滤；</li>
+                     * 设置<p>过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：</p><li>domain-name：按照加速域名进行过滤；</li><li>origin-type：按照源站类型进行过滤；</li><li>origin：按照主源站地址进行过滤；</li><li>backup-origin： 按照备用源站地址进行过滤；</li><li>domain-cname：按照 CNAME 进行过滤；</li><li>share-cname：按照共享 CNAME 进行过滤；</li>
+                     * @param _filters <p>过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：</p><li>domain-name：按照加速域名进行过滤；</li><li>origin-type：按照源站类型进行过滤；</li><li>origin：按照主源站地址进行过滤；</li><li>backup-origin： 按照备用源站地址进行过滤；</li><li>domain-cname：按照 CNAME 进行过滤；</li><li>share-cname：按照共享 CNAME 进行过滤；</li>
                      * 
                      */
                     void SetFilters(const std::vector<AdvancedFilter>& _filters);
@@ -152,23 +128,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取可根据该字段对返回结果进行排序，取值有：
-<li>created_on：加速域名创建时间；</li>
-<li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。
-                     * @return Order 可根据该字段对返回结果进行排序，取值有：
-<li>created_on：加速域名创建时间；</li>
-<li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。
+                     * 获取<p>可根据该字段对返回结果进行排序，取值有：</p><li>created_on：加速域名创建时间；</li><li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。
+                     * @return Order <p>可根据该字段对返回结果进行排序，取值有：</p><li>created_on：加速域名创建时间；</li><li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置可根据该字段对返回结果进行排序，取值有：
-<li>created_on：加速域名创建时间；</li>
-<li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。
-                     * @param _order 可根据该字段对返回结果进行排序，取值有：
-<li>created_on：加速域名创建时间；</li>
-<li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。
+                     * 设置<p>可根据该字段对返回结果进行排序，取值有：</p><li>created_on：加速域名创建时间；</li><li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。
+                     * @param _order <p>可根据该字段对返回结果进行排序，取值有：</p><li>created_on：加速域名创建时间；</li><li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -181,23 +149,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ascill 码的大小排序。取值有：
-<li>asc：升序排列；</li>
-<li>desc：降序排列。</li>不填写使用默认值 asc。
-                     * @return Direction 排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ascill 码的大小排序。取值有：
-<li>asc：升序排列；</li>
-<li>desc：降序排列。</li>不填写使用默认值 asc。
+                     * 获取<p>排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ASCII 码的大小排序。取值有：</p><li>asc：升序排列；</li><li>desc：降序排列。</li>不填写使用默认值 asc。
+                     * @return Direction <p>排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ASCII 码的大小排序。取值有：</p><li>asc：升序排列；</li><li>desc：降序排列。</li>不填写使用默认值 asc。
                      * 
                      */
                     std::string GetDirection() const;
 
                     /**
-                     * 设置排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ascill 码的大小排序。取值有：
-<li>asc：升序排列；</li>
-<li>desc：降序排列。</li>不填写使用默认值 asc。
-                     * @param _direction 排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ascill 码的大小排序。取值有：
-<li>asc：升序排列；</li>
-<li>desc：降序排列。</li>不填写使用默认值 asc。
+                     * 设置<p>排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ASCII 码的大小排序。取值有：</p><li>asc：升序排列；</li><li>desc：降序排列。</li>不填写使用默认值 asc。
+                     * @param _direction <p>排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ASCII 码的大小排序。取值有：</p><li>asc：升序排列；</li><li>desc：降序排列。</li>不填写使用默认值 asc。
                      * 
                      */
                     void SetDirection(const std::string& _direction);
@@ -210,23 +170,15 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取匹配方式，取值有：
-<li>all：返回匹配所有查询条件的加速域名；</li>
-<li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。
-                     * @return Match 匹配方式，取值有：
-<li>all：返回匹配所有查询条件的加速域名；</li>
-<li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。
+                     * 获取<p>匹配方式，取值有：</p><li>all：返回匹配所有查询条件的加速域名；</li><li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。
+                     * @return Match <p>匹配方式，取值有：</p><li>all：返回匹配所有查询条件的加速域名；</li><li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。
                      * 
                      */
                     std::string GetMatch() const;
 
                     /**
-                     * 设置匹配方式，取值有：
-<li>all：返回匹配所有查询条件的加速域名；</li>
-<li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。
-                     * @param _match 匹配方式，取值有：
-<li>all：返回匹配所有查询条件的加速域名；</li>
-<li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。
+                     * 设置<p>匹配方式，取值有：</p><li>all：返回匹配所有查询条件的加速域名；</li><li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。
+                     * @param _match <p>匹配方式，取值有：</p><li>all：返回匹配所有查询条件的加速域名；</li><li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。
                      * 
                      */
                     void SetMatch(const std::string& _match);
@@ -241,55 +193,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加速域名所属站点 ID。
+                     * <p>加速域名所属站点 ID。</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 分页查询偏移量，默认为 0。
+                     * <p>分页查询偏移量，默认为 0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页查询限制数目，默认值：20，上限：200。
+                     * <p>分页查询限制数目，默认值：20，上限：200。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：
-<li>domain-name：按照加速域名进行过滤；</li>
-<li>origin-type：按照源站类型进行过滤；</li>
-<li>origin：按照主源站地址进行过滤；</li>
-<li>backup-origin： 按照备用源站地址进行过滤；</li>
-<li>domain-cname：按照 CNAME 进行过滤；</li>
-<li>share-cname：按照共享 CNAME 进行过滤；</li>
+                     * <p>过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：</p><li>domain-name：按照加速域名进行过滤；</li><li>origin-type：按照源站类型进行过滤；</li><li>origin：按照主源站地址进行过滤；</li><li>backup-origin： 按照备用源站地址进行过滤；</li><li>domain-cname：按照 CNAME 进行过滤；</li><li>share-cname：按照共享 CNAME 进行过滤；</li>
                      */
                     std::vector<AdvancedFilter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 可根据该字段对返回结果进行排序，取值有：
-<li>created_on：加速域名创建时间；</li>
-<li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。
+                     * <p>可根据该字段对返回结果进行排序，取值有：</p><li>created_on：加速域名创建时间；</li><li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ascill 码的大小排序。取值有：
-<li>asc：升序排列；</li>
-<li>desc：降序排列。</li>不填写使用默认值 asc。
+                     * <p>排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ASCII 码的大小排序。取值有：</p><li>asc：升序排列；</li><li>desc：降序排列。</li>不填写使用默认值 asc。
                      */
                     std::string m_direction;
                     bool m_directionHasBeenSet;
 
                     /**
-                     * 匹配方式，取值有：
-<li>all：返回匹配所有查询条件的加速域名；</li>
-<li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。
+                     * <p>匹配方式，取值有：</p><li>all：返回匹配所有查询条件的加速域名；</li><li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。
                      */
                     std::string m_match;
                     bool m_matchHasBeenSet;

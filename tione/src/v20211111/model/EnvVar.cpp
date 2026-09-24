@@ -22,7 +22,8 @@ using namespace std;
 
 EnvVar::EnvVar() :
     m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_isPrivateHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome EnvVar::Deserialize(const rapidjson::Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("IsPrivate") && !value["IsPrivate"].IsNull())
+    {
+        if (!value["IsPrivate"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvVar.IsPrivate` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPrivate = value["IsPrivate"].GetBool();
+        m_isPrivateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void EnvVar::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPrivateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPrivate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPrivate, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void EnvVar::SetValue(const string& _value)
 bool EnvVar::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+bool EnvVar::GetIsPrivate() const
+{
+    return m_isPrivate;
+}
+
+void EnvVar::SetIsPrivate(const bool& _isPrivate)
+{
+    m_isPrivate = _isPrivate;
+    m_isPrivateHasBeenSet = true;
+}
+
+bool EnvVar::IsPrivateHasBeenSet() const
+{
+    return m_isPrivateHasBeenSet;
 }
 

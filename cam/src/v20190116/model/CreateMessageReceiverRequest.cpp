@@ -25,8 +25,8 @@ using namespace std;
 CreateMessageReceiverRequest::CreateMessageReceiverRequest() :
     m_nameHasBeenSet(false),
     m_countryCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
     m_emailHasBeenSet(false),
+    m_phoneNumberHasBeenSet(false),
     m_remarkHasBeenSet(false)
 {
 }
@@ -54,20 +54,20 @@ string CreateMessageReceiverRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_countryCode.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_phoneNumberHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PhoneNumber";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_phoneNumber.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_emailHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Email";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_email.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_phoneNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhoneNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_phoneNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remarkHasBeenSet)
@@ -118,22 +118,6 @@ bool CreateMessageReceiverRequest::CountryCodeHasBeenSet() const
     return m_countryCodeHasBeenSet;
 }
 
-string CreateMessageReceiverRequest::GetPhoneNumber() const
-{
-    return m_phoneNumber;
-}
-
-void CreateMessageReceiverRequest::SetPhoneNumber(const string& _phoneNumber)
-{
-    m_phoneNumber = _phoneNumber;
-    m_phoneNumberHasBeenSet = true;
-}
-
-bool CreateMessageReceiverRequest::PhoneNumberHasBeenSet() const
-{
-    return m_phoneNumberHasBeenSet;
-}
-
 string CreateMessageReceiverRequest::GetEmail() const
 {
     return m_email;
@@ -148,6 +132,22 @@ void CreateMessageReceiverRequest::SetEmail(const string& _email)
 bool CreateMessageReceiverRequest::EmailHasBeenSet() const
 {
     return m_emailHasBeenSet;
+}
+
+string CreateMessageReceiverRequest::GetPhoneNumber() const
+{
+    return m_phoneNumber;
+}
+
+void CreateMessageReceiverRequest::SetPhoneNumber(const string& _phoneNumber)
+{
+    m_phoneNumber = _phoneNumber;
+    m_phoneNumberHasBeenSet = true;
+}
+
+bool CreateMessageReceiverRequest::PhoneNumberHasBeenSet() const
+{
+    return m_phoneNumberHasBeenSet;
 }
 
 string CreateMessageReceiverRequest::GetRemark() const

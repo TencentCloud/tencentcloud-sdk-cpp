@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-DescribeRegistryAuditLogListResponse::DescribeRegistryAuditLogListResponse()
+DescribeRegistryAuditLogListResponse::DescribeRegistryAuditLogListResponse() :
+    m_auditLogSetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeRegistryAuditLogListResponse::Deserialize(const stri
     }
 
 
+    if (rsp.HasMember("AuditLogSet") && !rsp["AuditLogSet"].IsNull())
+    {
+        if (!rsp["AuditLogSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AuditLogSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AuditLogSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudAuditLog item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_auditLogSet.push_back(item);
+        }
+        m_auditLogSetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeRegistryAuditLogListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_auditLogSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuditLogSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_auditLogSet.begin(); itr != m_auditLogSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeRegistryAuditLogListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<CloudAuditLog> DescribeRegistryAuditLogListResponse::GetAuditLogSet() const
+{
+    return m_auditLogSet;
+}
+
+bool DescribeRegistryAuditLogListResponse::AuditLogSetHasBeenSet() const
+{
+    return m_auditLogSetHasBeenSet;
+}
+
+int64_t DescribeRegistryAuditLogListResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeRegistryAuditLogListResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 

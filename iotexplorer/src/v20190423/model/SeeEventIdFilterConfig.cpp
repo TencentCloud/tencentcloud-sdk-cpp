@@ -22,7 +22,8 @@ using namespace std;
 
 SeeEventIdFilterConfig::SeeEventIdFilterConfig() :
     m_includeOnlyHasBeenSet(false),
-    m_excludeHasBeenSet(false)
+    m_excludeHasBeenSet(false),
+    m_triggerAtHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,16 @@ CoreInternalOutcome SeeEventIdFilterConfig::Deserialize(const rapidjson::Value &
             m_exclude.push_back((*itr).GetString());
         }
         m_excludeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TriggerAt") && !value["TriggerAt"].IsNull())
+    {
+        if (!value["TriggerAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeEventIdFilterConfig.TriggerAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerAt = string(value["TriggerAt"].GetString());
+        m_triggerAtHasBeenSet = true;
     }
 
 
@@ -90,6 +101,14 @@ void SeeEventIdFilterConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         }
     }
 
+    if (m_triggerAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerAt.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -123,5 +142,21 @@ void SeeEventIdFilterConfig::SetExclude(const vector<string>& _exclude)
 bool SeeEventIdFilterConfig::ExcludeHasBeenSet() const
 {
     return m_excludeHasBeenSet;
+}
+
+string SeeEventIdFilterConfig::GetTriggerAt() const
+{
+    return m_triggerAt;
+}
+
+void SeeEventIdFilterConfig::SetTriggerAt(const string& _triggerAt)
+{
+    m_triggerAt = _triggerAt;
+    m_triggerAtHasBeenSet = true;
+}
+
+bool SeeEventIdFilterConfig::TriggerAtHasBeenSet() const
+{
+    return m_triggerAtHasBeenSet;
 }
 

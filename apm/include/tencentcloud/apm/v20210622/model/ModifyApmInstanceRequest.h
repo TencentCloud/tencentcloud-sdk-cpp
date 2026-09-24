@@ -1072,6 +1072,27 @@ namespace TencentCloud
                      */
                     bool CrossAccountPeerIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启Token 展示安全保护</p><p>单位：0：不开启，1：开启</p><p>默认值：0</p>
+                     * @return TokenDisplayProtection <p>是否开启Token 展示安全保护</p><p>单位：0：不开启，1：开启</p><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetTokenDisplayProtection() const;
+
+                    /**
+                     * 设置<p>是否开启Token 展示安全保护</p><p>单位：0：不开启，1：开启</p><p>默认值：0</p>
+                     * @param _tokenDisplayProtection <p>是否开启Token 展示安全保护</p><p>单位：0：不开启，1：开启</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetTokenDisplayProtection(const int64_t& _tokenDisplayProtection);
+
+                    /**
+                     * 判断参数 TokenDisplayProtection 是否已赋值
+                     * @return TokenDisplayProtection 是否已赋值
+                     * 
+                     */
+                    bool TokenDisplayProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1367,6 +1388,12 @@ namespace TencentCloud
                      */
                     std::string m_crossAccountPeerId;
                     bool m_crossAccountPeerIdHasBeenSet;
+
+                    /**
+                     * <p>是否开启Token 展示安全保护</p><p>单位：0：不开启，1：开启</p><p>默认值：0</p>
+                     */
+                    int64_t m_tokenDisplayProtection;
+                    bool m_tokenDisplayProtectionHasBeenSet;
 
                 };
             }

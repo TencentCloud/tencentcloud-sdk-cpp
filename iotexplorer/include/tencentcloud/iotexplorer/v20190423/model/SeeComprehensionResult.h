@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeExtendedOutput.h>
 
 
 namespace TencentCloud
@@ -172,6 +173,27 @@ namespace TencentCloud
                      */
                     bool KeywordsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型输出的扩展字段文本</p>
+                     * @return ExtendedOutput <p>模型输出的扩展字段文本</p>
+                     * 
+                     */
+                    std::vector<SeeExtendedOutput> GetExtendedOutput() const;
+
+                    /**
+                     * 设置<p>模型输出的扩展字段文本</p>
+                     * @param _extendedOutput <p>模型输出的扩展字段文本</p>
+                     * 
+                     */
+                    void SetExtendedOutput(const std::vector<SeeExtendedOutput>& _extendedOutput);
+
+                    /**
+                     * 判断参数 ExtendedOutput 是否已赋值
+                     * @return ExtendedOutput 是否已赋值
+                     * 
+                     */
+                    bool ExtendedOutputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +231,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;
+
+                    /**
+                     * <p>模型输出的扩展字段文本</p>
+                     */
+                    std::vector<SeeExtendedOutput> m_extendedOutput;
+                    bool m_extendedOutputHasBeenSet;
 
                 };
             }

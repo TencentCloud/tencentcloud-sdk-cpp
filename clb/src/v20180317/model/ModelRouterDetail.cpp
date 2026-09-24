@@ -46,7 +46,11 @@ ModelRouterDetail::ModelRouterDetail() :
     m_bandwidthHasBeenSet(false),
     m_eipAddressIdHasBeenSet(false),
     m_billingConfigHasBeenSet(false),
-    m_embeddingConfigHasBeenSet(false)
+    m_embeddingConfigHasBeenSet(false),
+    m_loadBalancerIdHasBeenSet(false),
+    m_videoConfigHasBeenSet(false),
+    m_rerankConfigHasBeenSet(false),
+    m_decisionsConfigHasBeenSet(false)
 {
 }
 
@@ -383,6 +387,67 @@ CoreInternalOutcome ModelRouterDetail::Deserialize(const rapidjson::Value &value
         m_embeddingConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("LoadBalancerId") && !value["LoadBalancerId"].IsNull())
+    {
+        if (!value["LoadBalancerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.LoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancerId = string(value["LoadBalancerId"].GetString());
+        m_loadBalancerIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("VideoConfig") && !value["VideoConfig"].IsNull())
+    {
+        if (!value["VideoConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.VideoConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoConfig.Deserialize(value["VideoConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("RerankConfig") && !value["RerankConfig"].IsNull())
+    {
+        if (!value["RerankConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.RerankConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rerankConfig.Deserialize(value["RerankConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rerankConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("DecisionsConfig") && !value["DecisionsConfig"].IsNull())
+    {
+        if (!value["DecisionsConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.DecisionsConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_decisionsConfig.Deserialize(value["DecisionsConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_decisionsConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -627,6 +692,41 @@ void ModelRouterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_embeddingConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_loadBalancerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_videoConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rerankConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RerankConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rerankConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_decisionsConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DecisionsConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_decisionsConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1046,5 +1146,69 @@ void ModelRouterDetail::SetEmbeddingConfig(const EmbeddingConfig& _embeddingConf
 bool ModelRouterDetail::EmbeddingConfigHasBeenSet() const
 {
     return m_embeddingConfigHasBeenSet;
+}
+
+string ModelRouterDetail::GetLoadBalancerId() const
+{
+    return m_loadBalancerId;
+}
+
+void ModelRouterDetail::SetLoadBalancerId(const string& _loadBalancerId)
+{
+    m_loadBalancerId = _loadBalancerId;
+    m_loadBalancerIdHasBeenSet = true;
+}
+
+bool ModelRouterDetail::LoadBalancerIdHasBeenSet() const
+{
+    return m_loadBalancerIdHasBeenSet;
+}
+
+VideoConfig ModelRouterDetail::GetVideoConfig() const
+{
+    return m_videoConfig;
+}
+
+void ModelRouterDetail::SetVideoConfig(const VideoConfig& _videoConfig)
+{
+    m_videoConfig = _videoConfig;
+    m_videoConfigHasBeenSet = true;
+}
+
+bool ModelRouterDetail::VideoConfigHasBeenSet() const
+{
+    return m_videoConfigHasBeenSet;
+}
+
+RerankConfig ModelRouterDetail::GetRerankConfig() const
+{
+    return m_rerankConfig;
+}
+
+void ModelRouterDetail::SetRerankConfig(const RerankConfig& _rerankConfig)
+{
+    m_rerankConfig = _rerankConfig;
+    m_rerankConfigHasBeenSet = true;
+}
+
+bool ModelRouterDetail::RerankConfigHasBeenSet() const
+{
+    return m_rerankConfigHasBeenSet;
+}
+
+DecisionsConfig ModelRouterDetail::GetDecisionsConfig() const
+{
+    return m_decisionsConfig;
+}
+
+void ModelRouterDetail::SetDecisionsConfig(const DecisionsConfig& _decisionsConfig)
+{
+    m_decisionsConfig = _decisionsConfig;
+    m_decisionsConfigHasBeenSet = true;
+}
+
+bool ModelRouterDetail::DecisionsConfigHasBeenSet() const
+{
+    return m_decisionsConfigHasBeenSet;
 }
 

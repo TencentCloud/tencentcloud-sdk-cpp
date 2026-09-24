@@ -42,7 +42,115 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>父 Registry ID。</p>
+                     * @return RegistryId <p>父 Registry ID。</p>
+                     * 
+                     */
+                    std::string GetRegistryId() const;
+
+                    /**
+                     * 设置<p>父 Registry ID。</p>
+                     * @param _registryId <p>父 Registry ID。</p>
+                     * 
+                     */
+                    void SetRegistryId(const std::string& _registryId);
+
+                    /**
+                     * 判断参数 RegistryId 是否已赋值
+                     * @return RegistryId 是否已赋值
+                     * 
+                     */
+                    bool RegistryIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Record ID。</p>
+                     * @return RecordId <p>Record ID。</p>
+                     * 
+                     */
+                    std::string GetRecordId() const;
+
+                    /**
+                     * 设置<p>Record ID。</p>
+                     * @param _recordId <p>Record ID。</p>
+                     * 
+                     */
+                    void SetRecordId(const std::string& _recordId);
+
+                    /**
+                     * 判断参数 RecordId 是否已赋值
+                     * @return RecordId 是否已赋值
+                     * 
+                     */
+                    bool RecordIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Version ID，与 Label 互斥。指定时返回该 Version；均省略时等价于 Label=stable。</p>
+                     * @return VersionId <p>Version ID，与 Label 互斥。指定时返回该 Version；均省略时等价于 Label=stable。</p>
+                     * 
+                     */
+                    std::string GetVersionId() const;
+
+                    /**
+                     * 设置<p>Version ID，与 Label 互斥。指定时返回该 Version；均省略时等价于 Label=stable。</p>
+                     * @param _versionId <p>Version ID，与 Label 互斥。指定时返回该 Version；均省略时等价于 Label=stable。</p>
+                     * 
+                     */
+                    void SetVersionId(const std::string& _versionId);
+
+                    /**
+                     * 判断参数 VersionId 是否已赋值
+                     * @return VersionId 是否已赋值
+                     * 
+                     */
+                    bool VersionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Label 名称，与 VersionId 互斥。指定时返回 Label 当前指向的 Version；均省略时等价于 stable。</p>
+                     * @return Label <p>Label 名称，与 VersionId 互斥。指定时返回 Label 当前指向的 Version；均省略时等价于 stable。</p>
+                     * 
+                     */
+                    std::string GetLabel() const;
+
+                    /**
+                     * 设置<p>Label 名称，与 VersionId 互斥。指定时返回 Label 当前指向的 Version；均省略时等价于 stable。</p>
+                     * @param _label <p>Label 名称，与 VersionId 互斥。指定时返回 Label 当前指向的 Version；均省略时等价于 stable。</p>
+                     * 
+                     */
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     * 
+                     */
+                    bool LabelHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>父 Registry ID。</p>
+                     */
+                    std::string m_registryId;
+                    bool m_registryIdHasBeenSet;
+
+                    /**
+                     * <p>Record ID。</p>
+                     */
+                    std::string m_recordId;
+                    bool m_recordIdHasBeenSet;
+
+                    /**
+                     * <p>Version ID，与 Label 互斥。指定时返回该 Version；均省略时等价于 Label=stable。</p>
+                     */
+                    std::string m_versionId;
+                    bool m_versionIdHasBeenSet;
+
+                    /**
+                     * <p>Label 名称，与 VersionId 互斥。指定时返回 Label 当前指向的 Version；均省略时等价于 stable。</p>
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
 
                 };
             }

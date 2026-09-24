@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ioa/v20220601/model/BindBusinessResourceConnectorGroupRequest.h>
 #include <tencentcloud/ioa/v20220601/model/BindBusinessResourceConnectorGroupResponse.h>
+#include <tencentcloud/ioa/v20220601/model/BindVirtualAccountsRequest.h>
+#include <tencentcloud/ioa/v20220601/model/BindVirtualAccountsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreateBusinessResourceRequest.h>
 #include <tencentcloud/ioa/v20220601/model/CreateBusinessResourceResponse.h>
 #include <tencentcloud/ioa/v20220601/model/CreateCompanyDirectoryConfigRequest.h>
@@ -73,6 +75,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoListResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceInfoRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceInfoResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeviceSecurityInfoRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeviceSecurityInfoResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceVirtualGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceVirtualGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h>
@@ -81,6 +85,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeDirectAccountGroupResourcesResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeLocalAccountsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeLocalAccountsResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeProfileFieldsMenuRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeProfileFieldsMenuResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeResourceGrantedAccountGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeResourceGrantedAccountGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeResourceGrantedAccountsRequest.h>
@@ -93,6 +99,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeSoftwareInformationResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeVirtualAccountsRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeVirtualAccountsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeVirtualDevicesRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeVirtualDevicesResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ExportDeviceDownloadTaskRequest.h>
@@ -113,6 +121,8 @@
 #include <tencentcloud/ioa/v20220601/model/ModifyDeviceTrustStatusResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsResponse.h>
+#include <tencentcloud/ioa/v20220601/model/UnbindVirtualAccountsRequest.h>
+#include <tencentcloud/ioa/v20220601/model/UnbindVirtualAccountsResponse.h>
 
 
 namespace TencentCloud
@@ -130,6 +140,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindBusinessResourceConnectorGroupResponse> BindBusinessResourceConnectorGroupOutcome;
                 typedef std::future<BindBusinessResourceConnectorGroupOutcome> BindBusinessResourceConnectorGroupOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::BindBusinessResourceConnectorGroupRequest&, BindBusinessResourceConnectorGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindBusinessResourceConnectorGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindVirtualAccountsResponse> BindVirtualAccountsOutcome;
+                typedef std::future<BindVirtualAccountsOutcome> BindVirtualAccountsOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::BindVirtualAccountsRequest&, BindVirtualAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindVirtualAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBusinessResourceResponse> CreateBusinessResourceOutcome;
                 typedef std::future<CreateBusinessResourceOutcome> CreateBusinessResourceOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::CreateBusinessResourceRequest&, CreateBusinessResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBusinessResourceAsyncHandler;
@@ -202,6 +215,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceInfoResponse> DescribeDeviceInfoOutcome;
                 typedef std::future<DescribeDeviceInfoOutcome> DescribeDeviceInfoOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDeviceInfoRequest&, DescribeDeviceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceSecurityInfoResponse> DescribeDeviceSecurityInfoOutcome;
+                typedef std::future<DescribeDeviceSecurityInfoOutcome> DescribeDeviceSecurityInfoOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeDeviceSecurityInfoRequest&, DescribeDeviceSecurityInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceSecurityInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceVirtualGroupsResponse> DescribeDeviceVirtualGroupsOutcome;
                 typedef std::future<DescribeDeviceVirtualGroupsOutcome> DescribeDeviceVirtualGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDeviceVirtualGroupsRequest&, DescribeDeviceVirtualGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceVirtualGroupsAsyncHandler;
@@ -214,6 +230,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLocalAccountsResponse> DescribeLocalAccountsOutcome;
                 typedef std::future<DescribeLocalAccountsOutcome> DescribeLocalAccountsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeLocalAccountsRequest&, DescribeLocalAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLocalAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProfileFieldsMenuResponse> DescribeProfileFieldsMenuOutcome;
+                typedef std::future<DescribeProfileFieldsMenuOutcome> DescribeProfileFieldsMenuOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeProfileFieldsMenuRequest&, DescribeProfileFieldsMenuOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProfileFieldsMenuAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceGrantedAccountGroupsResponse> DescribeResourceGrantedAccountGroupsOutcome;
                 typedef std::future<DescribeResourceGrantedAccountGroupsOutcome> DescribeResourceGrantedAccountGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeResourceGrantedAccountGroupsRequest&, DescribeResourceGrantedAccountGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGrantedAccountGroupsAsyncHandler;
@@ -232,6 +251,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSoftwareInformationResponse> DescribeSoftwareInformationOutcome;
                 typedef std::future<DescribeSoftwareInformationOutcome> DescribeSoftwareInformationOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeSoftwareInformationRequest&, DescribeSoftwareInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSoftwareInformationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVirtualAccountsResponse> DescribeVirtualAccountsOutcome;
+                typedef std::future<DescribeVirtualAccountsOutcome> DescribeVirtualAccountsOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeVirtualAccountsRequest&, DescribeVirtualAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirtualAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVirtualDevicesResponse> DescribeVirtualDevicesOutcome;
                 typedef std::future<DescribeVirtualDevicesOutcome> DescribeVirtualDevicesOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeVirtualDevicesRequest&, DescribeVirtualDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVirtualDevicesAsyncHandler;
@@ -262,6 +284,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyVirtualDeviceGroupsResponse> ModifyVirtualDeviceGroupsOutcome;
                 typedef std::future<ModifyVirtualDeviceGroupsOutcome> ModifyVirtualDeviceGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::ModifyVirtualDeviceGroupsRequest&, ModifyVirtualDeviceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVirtualDeviceGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindVirtualAccountsResponse> UnbindVirtualAccountsOutcome;
+                typedef std::future<UnbindVirtualAccountsOutcome> UnbindVirtualAccountsOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::UnbindVirtualAccountsRequest&, UnbindVirtualAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindVirtualAccountsAsyncHandler;
 
 
 
@@ -273,6 +298,15 @@ namespace TencentCloud
                 BindBusinessResourceConnectorGroupOutcome BindBusinessResourceConnectorGroup(const Model::BindBusinessResourceConnectorGroupRequest &request);
                 void BindBusinessResourceConnectorGroupAsync(const Model::BindBusinessResourceConnectorGroupRequest& request, const BindBusinessResourceConnectorGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindBusinessResourceConnectorGroupOutcomeCallable BindBusinessResourceConnectorGroupCallable(const Model::BindBusinessResourceConnectorGroupRequest& request);
+
+                /**
+                 *关联账户到虚拟组上，支持批量，私有化调用path为：capi/Assets/BindVirtualAccount，从7.x版本开始支持
+                 * @param req BindVirtualAccountsRequest
+                 * @return BindVirtualAccountsOutcome
+                 */
+                BindVirtualAccountsOutcome BindVirtualAccounts(const Model::BindVirtualAccountsRequest &request);
+                void BindVirtualAccountsAsync(const Model::BindVirtualAccountsRequest& request, const BindVirtualAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindVirtualAccountsOutcomeCallable BindVirtualAccountsCallable(const Model::BindVirtualAccountsRequest& request);
 
                 /**
                  *创建业务资源，会对一些必填参数进行校验和参数合法性校验，创建业务资源时，先调用下校验相同业务资源接口，看资源是不是有冲突。创建时也会做校验，但没有返回对应的异常信息，私有化调用path为：capi/GatewayResource/CreateBusinessResource
@@ -493,6 +527,15 @@ namespace TencentCloud
                 DescribeDeviceInfoOutcomeCallable DescribeDeviceInfoCallable(const Model::DescribeDeviceInfoRequest& request);
 
                 /**
+                 *查询指定终端的病毒库版本、漏洞库版本、系统修复引擎版本、防火墙状态和实时防护状态
+                 * @param req DescribeDeviceSecurityInfoRequest
+                 * @return DescribeDeviceSecurityInfoOutcome
+                 */
+                DescribeDeviceSecurityInfoOutcome DescribeDeviceSecurityInfo(const Model::DescribeDeviceSecurityInfoRequest &request);
+                void DescribeDeviceSecurityInfoAsync(const Model::DescribeDeviceSecurityInfoRequest& request, const DescribeDeviceSecurityInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceSecurityInfoOutcomeCallable DescribeDeviceSecurityInfoCallable(const Model::DescribeDeviceSecurityInfoRequest& request);
+
+                /**
                  *查询终端自定义分组列表，私有化调用path为：/capi/Assets/Device/DescribeDeviceVirtualGroups
                  * @param req DescribeDeviceVirtualGroupsRequest
                  * @return DescribeDeviceVirtualGroupsOutcome
@@ -527,6 +570,15 @@ namespace TencentCloud
                 DescribeLocalAccountsOutcome DescribeLocalAccounts(const Model::DescribeLocalAccountsRequest &request);
                 void DescribeLocalAccountsAsync(const Model::DescribeLocalAccountsRequest& request, const DescribeLocalAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLocalAccountsOutcomeCallable DescribeLocalAccountsCallable(const Model::DescribeLocalAccountsRequest& request);
+
+                /**
+                 *查询终端描述字段数据,私有化调用path为：capi/Assets/Device/DescribeProfileFieldsMenu
+                 * @param req DescribeProfileFieldsMenuRequest
+                 * @return DescribeProfileFieldsMenuOutcome
+                 */
+                DescribeProfileFieldsMenuOutcome DescribeProfileFieldsMenu(const Model::DescribeProfileFieldsMenuRequest &request);
+                void DescribeProfileFieldsMenuAsync(const Model::DescribeProfileFieldsMenuRequest& request, const DescribeProfileFieldsMenuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProfileFieldsMenuOutcomeCallable DescribeProfileFieldsMenuCallable(const Model::DescribeProfileFieldsMenuRequest& request);
 
                 /**
                  *列表账户组直接关联的资源，私有化调用path为：capi/NGN/DescribeResourceGrantedAccounts
@@ -581,6 +633,15 @@ namespace TencentCloud
                 DescribeSoftwareInformationOutcome DescribeSoftwareInformation(const Model::DescribeSoftwareInformationRequest &request);
                 void DescribeSoftwareInformationAsync(const Model::DescribeSoftwareInformationRequest& request, const DescribeSoftwareInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSoftwareInformationOutcomeCallable DescribeSoftwareInformationCallable(const Model::DescribeSoftwareInformationRequest& request);
+
+                /**
+                 *列表虚拟组的账户，私有化调用path为：/capi/Assets/AccountVirtualGroup/DescribeVirtualAccounts，从7.x版本开始支持
+                 * @param req DescribeVirtualAccountsRequest
+                 * @return DescribeVirtualAccountsOutcome
+                 */
+                DescribeVirtualAccountsOutcome DescribeVirtualAccounts(const Model::DescribeVirtualAccountsRequest &request);
+                void DescribeVirtualAccountsAsync(const Model::DescribeVirtualAccountsRequest& request, const DescribeVirtualAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVirtualAccountsOutcomeCallable DescribeVirtualAccountsCallable(const Model::DescribeVirtualAccountsRequest& request);
 
                 /**
                  *展示自定义分组终端列表，私有化调用path为：/capi/Assets/DescribeVirtualDevices
@@ -671,6 +732,15 @@ namespace TencentCloud
                 ModifyVirtualDeviceGroupsOutcome ModifyVirtualDeviceGroups(const Model::ModifyVirtualDeviceGroupsRequest &request);
                 void ModifyVirtualDeviceGroupsAsync(const Model::ModifyVirtualDeviceGroupsRequest& request, const ModifyVirtualDeviceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyVirtualDeviceGroupsOutcomeCallable ModifyVirtualDeviceGroupsCallable(const Model::ModifyVirtualDeviceGroupsRequest& request);
+
+                /**
+                 *取消关联账户到虚拟组上，支持批量，私有化调用path为：capi/Assets/UnbindVirtualAccount，从7.x版本开始支持
+                 * @param req UnbindVirtualAccountsRequest
+                 * @return UnbindVirtualAccountsOutcome
+                 */
+                UnbindVirtualAccountsOutcome UnbindVirtualAccounts(const Model::UnbindVirtualAccountsRequest &request);
+                void UnbindVirtualAccountsAsync(const Model::UnbindVirtualAccountsRequest& request, const UnbindVirtualAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindVirtualAccountsOutcomeCallable UnbindVirtualAccountsCallable(const Model::UnbindVirtualAccountsRequest& request);
 
             };
         }

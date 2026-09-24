@@ -22,7 +22,11 @@
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-CreateRegistryRequest::CreateRegistryRequest()
+CreateRegistryRequest::CreateRegistryRequest() :
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_approvalModeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,45 @@ string CreateRegistryRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approvalModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApprovalMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_approvalMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +83,69 @@ string CreateRegistryRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateRegistryRequest::GetName() const
+{
+    return m_name;
+}
+
+void CreateRegistryRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool CreateRegistryRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string CreateRegistryRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateRegistryRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateRegistryRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string CreateRegistryRequest::GetApprovalMode() const
+{
+    return m_approvalMode;
+}
+
+void CreateRegistryRequest::SetApprovalMode(const string& _approvalMode)
+{
+    m_approvalMode = _approvalMode;
+    m_approvalModeHasBeenSet = true;
+}
+
+bool CreateRegistryRequest::ApprovalModeHasBeenSet() const
+{
+    return m_approvalModeHasBeenSet;
+}
+
+vector<CloudTag> CreateRegistryRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateRegistryRequest::SetTags(const vector<CloudTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateRegistryRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
 
 

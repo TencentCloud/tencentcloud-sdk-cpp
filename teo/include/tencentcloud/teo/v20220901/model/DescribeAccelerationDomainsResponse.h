@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合查询条件的加速域名个数。
-                     * @return TotalCount 符合查询条件的加速域名个数。
+                     * 获取<p>符合查询条件的加速域名个数。</p>
+                     * @return TotalCount <p>符合查询条件的加速域名个数。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取符合查询条件的所有加速域名的信息。
-                     * @return AccelerationDomains 符合查询条件的所有加速域名的信息。
+                     * 获取<p>符合查询条件的所有加速域名的信息。</p>
+                     * @return AccelerationDomains <p>符合查询条件的所有加速域名的信息。</p>
                      * 
                      */
                     std::vector<AccelerationDomain> GetAccelerationDomains() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合查询条件的加速域名个数。
+                     * <p>符合查询条件的加速域名个数。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 符合查询条件的所有加速域名的信息。
+                     * <p>符合查询条件的所有加速域名的信息。</p>
                      */
                     std::vector<AccelerationDomain> m_accelerationDomains;
                     bool m_accelerationDomainsHasBeenSet;

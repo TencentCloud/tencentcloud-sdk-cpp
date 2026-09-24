@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-DescribeRegistryResponse::DescribeRegistryResponse()
+DescribeRegistryResponse::DescribeRegistryResponse() :
+    m_registryHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DescribeRegistryResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Registry") && !rsp["Registry"].IsNull())
+    {
+        if (!rsp["Registry"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Registry` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_registry.Deserialize(rsp["Registry"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_registryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DescribeRegistryResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_registryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Registry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_registry.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DescribeRegistryResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+CloudRegistry DescribeRegistryResponse::GetRegistry() const
+{
+    return m_registry;
+}
+
+bool DescribeRegistryResponse::RegistryHasBeenSet() const
+{
+    return m_registryHasBeenSet;
+}
 
 

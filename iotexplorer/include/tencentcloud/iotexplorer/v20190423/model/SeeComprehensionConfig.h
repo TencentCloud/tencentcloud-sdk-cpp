@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/iotexplorer/v20190423/model/VisionCustomDetectQuery.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeExtendedOutputPrompt.h>
 
 
 namespace TencentCloud
@@ -278,6 +279,48 @@ namespace TencentCloud
                      */
                     bool InputRotateDegreeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>开启扩展字段输出</p><p>枚举值：</p><ul><li>true： 开启</li><li>false： 关闭</li></ul><p>默认值：false</p>
+                     * @return EnableExtendedOutput <p>开启扩展字段输出</p><p>枚举值：</p><ul><li>true： 开启</li><li>false： 关闭</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetEnableExtendedOutput() const;
+
+                    /**
+                     * 设置<p>开启扩展字段输出</p><p>枚举值：</p><ul><li>true： 开启</li><li>false： 关闭</li></ul><p>默认值：false</p>
+                     * @param _enableExtendedOutput <p>开启扩展字段输出</p><p>枚举值：</p><ul><li>true： 开启</li><li>false： 关闭</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    void SetEnableExtendedOutput(const bool& _enableExtendedOutput);
+
+                    /**
+                     * 判断参数 EnableExtendedOutput 是否已赋值
+                     * @return EnableExtendedOutput 是否已赋值
+                     * 
+                     */
+                    bool EnableExtendedOutputHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义扩展输出的提示词（目前仅支持覆盖 custom）</p>
+                     * @return ExtendedOutputPrompts <p>自定义扩展输出的提示词（目前仅支持覆盖 custom）</p>
+                     * 
+                     */
+                    std::vector<SeeExtendedOutputPrompt> GetExtendedOutputPrompts() const;
+
+                    /**
+                     * 设置<p>自定义扩展输出的提示词（目前仅支持覆盖 custom）</p>
+                     * @param _extendedOutputPrompts <p>自定义扩展输出的提示词（目前仅支持覆盖 custom）</p>
+                     * 
+                     */
+                    void SetExtendedOutputPrompts(const std::vector<SeeExtendedOutputPrompt>& _extendedOutputPrompts);
+
+                    /**
+                     * 判断参数 ExtendedOutputPrompts 是否已赋值
+                     * @return ExtendedOutputPrompts 是否已赋值
+                     * 
+                     */
+                    bool ExtendedOutputPromptsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -345,6 +388,18 @@ namespace TencentCloud
                      */
                     int64_t m_inputRotateDegree;
                     bool m_inputRotateDegreeHasBeenSet;
+
+                    /**
+                     * <p>开启扩展字段输出</p><p>枚举值：</p><ul><li>true： 开启</li><li>false： 关闭</li></ul><p>默认值：false</p>
+                     */
+                    bool m_enableExtendedOutput;
+                    bool m_enableExtendedOutputHasBeenSet;
+
+                    /**
+                     * <p>自定义扩展输出的提示词（目前仅支持覆盖 custom）</p>
+                     */
+                    std::vector<SeeExtendedOutputPrompt> m_extendedOutputPrompts;
+                    bool m_extendedOutputPromptsHasBeenSet;
 
                 };
             }

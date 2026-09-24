@@ -42,7 +42,9 @@ DescribeFirmwareTaskResponse::DescribeFirmwareTaskResponse() :
     m_retryIntervalHasBeenSet(false),
     m_overrideModeHasBeenSet(false),
     m_taskUserDefineHasBeenSet(false),
-    m_rateLimitHasBeenSet(false)
+    m_rateLimitHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -270,6 +272,26 @@ CoreInternalOutcome DescribeFirmwareTaskResponse::Deserialize(const string &payl
         m_rateLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EndTime") && !rsp["EndTime"].IsNull())
+    {
+        if (!rsp["EndTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = rsp["EndTime"].GetInt64();
+        m_endTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("StartTime") && !rsp["StartTime"].IsNull())
+    {
+        if (!rsp["StartTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StartTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = rsp["StartTime"].GetInt64();
+        m_startTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -430,6 +452,22 @@ string DescribeFirmwareTaskResponse::ToJsonString() const
         string key = "RateLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rateLimit, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startTime, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -632,6 +670,26 @@ int64_t DescribeFirmwareTaskResponse::GetRateLimit() const
 bool DescribeFirmwareTaskResponse::RateLimitHasBeenSet() const
 {
     return m_rateLimitHasBeenSet;
+}
+
+int64_t DescribeFirmwareTaskResponse::GetEndTime() const
+{
+    return m_endTime;
+}
+
+bool DescribeFirmwareTaskResponse::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+int64_t DescribeFirmwareTaskResponse::GetStartTime() const
+{
+    return m_startTime;
+}
+
+bool DescribeFirmwareTaskResponse::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
 }
 
 

@@ -99,6 +99,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ModifyListenerResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeTargetHealthResponse.h
   include/tencentcloud/clb/v20180317/model/GuardrailConfig.h
+  include/tencentcloud/clb/v20180317/model/RerankConfig.h
   include/tencentcloud/clb/v20180317/model/ClusterItem.h
   include/tencentcloud/clb/v20180317/model/ModifyModelRouterAttributesRequest.h
   include/tencentcloud/clb/v20180317/model/ModelRouterLog.h
@@ -168,6 +169,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/LBItem.h
   include/tencentcloud/clb/v20180317/model/DescribeTargetHealthRequest.h
   include/tencentcloud/clb/v20180317/model/DeleteIntentRouterRequest.h
+  include/tencentcloud/clb/v20180317/model/DecisionsConfig.h
   include/tencentcloud/clb/v20180317/model/DescribeBlockIPListRequest.h
   include/tencentcloud/clb/v20180317/model/CertIdRelatedWithLoadBalancers.h
   include/tencentcloud/clb/v20180317/model/DescribeClsLogSetRequest.h
@@ -286,6 +288,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ModelRouterSet.h
   include/tencentcloud/clb/v20180317/model/InquiryPriceRenewLoadBalancerResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeCustomizedConfigListRequest.h
+  include/tencentcloud/clb/v20180317/model/VideoConfig.h
   include/tencentcloud/clb/v20180317/model/DescribeTaskStatusResponse.h
   include/tencentcloud/clb/v20180317/model/InquiryPriceModifyLoadBalancerResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeLBListenersRequest.h
@@ -572,6 +575,7 @@ set(clb_src
   src/v20180317/model/ModifyListenerResponse.cpp
   src/v20180317/model/DescribeTargetHealthResponse.cpp
   src/v20180317/model/GuardrailConfig.cpp
+  src/v20180317/model/RerankConfig.cpp
   src/v20180317/model/ClusterItem.cpp
   src/v20180317/model/ModifyModelRouterAttributesRequest.cpp
   src/v20180317/model/ModelRouterLog.cpp
@@ -641,6 +645,7 @@ set(clb_src
   src/v20180317/model/LBItem.cpp
   src/v20180317/model/DescribeTargetHealthRequest.cpp
   src/v20180317/model/DeleteIntentRouterRequest.cpp
+  src/v20180317/model/DecisionsConfig.cpp
   src/v20180317/model/DescribeBlockIPListRequest.cpp
   src/v20180317/model/CertIdRelatedWithLoadBalancers.cpp
   src/v20180317/model/DescribeClsLogSetRequest.cpp
@@ -759,6 +764,7 @@ set(clb_src
   src/v20180317/model/ModelRouterSet.cpp
   src/v20180317/model/InquiryPriceRenewLoadBalancerResponse.cpp
   src/v20180317/model/DescribeCustomizedConfigListRequest.cpp
+  src/v20180317/model/VideoConfig.cpp
   src/v20180317/model/DescribeTaskStatusResponse.cpp
   src/v20180317/model/InquiryPriceModifyLoadBalancerResponse.cpp
   src/v20180317/model/DescribeLBListenersRequest.cpp

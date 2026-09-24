@@ -96,6 +96,27 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否对外不可见,true 表示该环境变量的 Value 为敏感值.</p>
+                     * @return IsPrivate <p>是否对外不可见,true 表示该环境变量的 Value 为敏感值.</p>
+                     * 
+                     */
+                    bool GetIsPrivate() const;
+
+                    /**
+                     * 设置<p>是否对外不可见,true 表示该环境变量的 Value 为敏感值.</p>
+                     * @param _isPrivate <p>是否对外不可见,true 表示该环境变量的 Value 为敏感值.</p>
+                     * 
+                     */
+                    void SetIsPrivate(const bool& _isPrivate);
+
+                    /**
+                     * 判断参数 IsPrivate 是否已赋值
+                     * @return IsPrivate 是否已赋值
+                     * 
+                     */
+                    bool IsPrivateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +132,12 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * <p>是否对外不可见,true 表示该环境变量的 Value 为敏感值.</p>
+                     */
+                    bool m_isPrivate;
+                    bool m_isPrivateHasBeenSet;
 
                 };
             }

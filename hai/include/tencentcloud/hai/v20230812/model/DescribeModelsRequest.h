@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取可选。传入当前推理服务 ID 时，仅返回与该服务同一 Scene、且至少有一条兼容重装模板的模型。自定义部署、机密计算、具身智能服务返回空列表。
+                     * @return ServiceId 可选。传入当前推理服务 ID 时，仅返回与该服务同一 Scene、且至少有一条兼容重装模板的模型。自定义部署、机密计算、具身智能服务返回空列表。
+                     * 
+                     */
+                    std::string GetServiceId() const;
+
+                    /**
+                     * 设置可选。传入当前推理服务 ID 时，仅返回与该服务同一 Scene、且至少有一条兼容重装模板的模型。自定义部署、机密计算、具身智能服务返回空列表。
+                     * @param _serviceId 可选。传入当前推理服务 ID 时，仅返回与该服务同一 Scene、且至少有一条兼容重装模板的模型。自定义部署、机密计算、具身智能服务返回空列表。
+                     * 
+                     */
+                    void SetServiceId(const std::string& _serviceId);
+
+                    /**
+                     * 判断参数 ServiceId 是否已赋值
+                     * @return ServiceId 是否已赋值
+                     * 
+                     */
+                    bool ServiceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 可选。传入当前推理服务 ID 时，仅返回与该服务同一 Scene、且至少有一条兼容重装模板的模型。自定义部署、机密计算、具身智能服务返回空列表。
+                     */
+                    std::string m_serviceId;
+                    bool m_serviceIdHasBeenSet;
 
                 };
             }

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子用户 UIN
-                     * @return Uin 子用户 UIN
+                     * 获取<p>子用户 UIN</p>
+                     * @return Uin <p>子用户 UIN</p>
                      * 
                      */
                     uint64_t GetUin() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取子用户用户名
-                     * @return Name 子用户用户名
+                     * 获取<p>子用户用户名</p>
+                     * @return Name <p>子用户用户名</p>
                      * 
                      */
                     std::string GetName() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取如果输入参数组合为自动生成随机密码，则返回生成的密码
-                     * @return Password 如果输入参数组合为自动生成随机密码，则返回生成的密码
+                     * 获取<p>如果输入参数组合为自动生成随机密码，则返回生成的密码</p>
+                     * @return Password <p>如果输入参数组合为自动生成随机密码，则返回生成的密码</p>
                      * 
                      */
                     std::string GetPassword() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取子用户密钥 ID
-                     * @return SecretId 子用户密钥 ID
+                     * 获取<p>子用户密钥 ID</p>
+                     * @return SecretId <p>子用户密钥 ID</p>
                      * 
                      */
                     std::string GetSecretId() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool SecretIdHasBeenSet() const;
 
                     /**
-                     * 获取子用户密钥 Key
-                     * @return SecretKey 子用户密钥 Key
+                     * 获取<p>子用户密钥 Key</p>
+                     * @return SecretKey <p>子用户密钥 Key</p>
                      * 
                      */
                     std::string GetSecretKey() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool SecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取子用户 UID
-                     * @return Uid 子用户 UID
+                     * 获取<p>子用户 UID</p>
+                     * @return Uid <p>子用户 UID</p>
                      * 
                      */
                     uint64_t GetUid() const;
@@ -127,43 +127,63 @@ namespace TencentCloud
                      */
                     bool UidHasBeenSet() const;
 
+                    /**
+                     * 获取<p>手机号验证地址。</p>
+                     * @return PhoneNumVerifyLink <p>手机号验证地址。</p>
+                     * 
+                     */
+                    std::string GetPhoneNumVerifyLink() const;
+
+                    /**
+                     * 判断参数 PhoneNumVerifyLink 是否已赋值
+                     * @return PhoneNumVerifyLink 是否已赋值
+                     * 
+                     */
+                    bool PhoneNumVerifyLinkHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 子用户 UIN
+                     * <p>子用户 UIN</p>
                      */
                     uint64_t m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 子用户用户名
+                     * <p>子用户用户名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 如果输入参数组合为自动生成随机密码，则返回生成的密码
+                     * <p>如果输入参数组合为自动生成随机密码，则返回生成的密码</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 子用户密钥 ID
+                     * <p>子用户密钥 ID</p>
                      */
                     std::string m_secretId;
                     bool m_secretIdHasBeenSet;
 
                     /**
-                     * 子用户密钥 Key
+                     * <p>子用户密钥 Key</p>
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;
 
                     /**
-                     * 子用户 UID
+                     * <p>子用户 UID</p>
                      */
                     uint64_t m_uid;
                     bool m_uidHasBeenSet;
+
+                    /**
+                     * <p>手机号验证地址。</p>
+                     */
+                    std::string m_phoneNumVerifyLink;
+                    bool m_phoneNumVerifyLinkHasBeenSet;
 
                 };
             }

@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量，默认为 0
-                     * @return Offset 偏移量，默认为 0
+                     * 获取<p>偏移量，默认为 0</p>
+                     * @return Offset <p>偏移量，默认为 0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为 0
-                     * @param _offset 偏移量，默认为 0
+                     * 设置<p>偏移量，默认为 0</p>
+                     * @param _offset <p>偏移量，默认为 0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制量，默认为20，最大值为100
-                     * @return Limit 限制量，默认为20，最大值为100
+                     * 获取<p>限制量，默认为20，最大值为100</p>
+                     * @return Limit <p>限制量，默认为20，最大值为100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置限制量，默认为20，最大值为100
-                     * @param _limit 限制量，默认为20，最大值为100
+                     * 设置<p>限制量，默认为20，最大值为100</p>
+                     * @param _limit <p>限制量，默认为20，最大值为100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取实例ID。每次请求的实例的上限为100。
-                     * @return AndroidInstanceIds 实例ID。每次请求的实例的上限为100。
+                     * 获取<p>实例ID。每次请求的实例的上限为100。</p>
+                     * @return AndroidInstanceIds <p>实例ID。每次请求的实例的上限为100。</p>
                      * 
                      */
                     std::vector<std::string> GetAndroidInstanceIds() const;
 
                     /**
-                     * 设置实例ID。每次请求的实例的上限为100。
-                     * @param _androidInstanceIds 实例ID。每次请求的实例的上限为100。
+                     * 设置<p>实例ID。每次请求的实例的上限为100。</p>
+                     * @param _androidInstanceIds <p>实例ID。每次请求的实例的上限为100。</p>
                      * 
                      */
                     void SetAndroidInstanceIds(const std::vector<std::string>& _androidInstanceIds);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool AndroidInstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例地域。目前还不支持按地域进行聚合查询
-                     * @return AndroidInstanceRegion 实例地域。目前还不支持按地域进行聚合查询
+                     * 获取<p>实例地域。目前还不支持按地域进行聚合查询</p>
+                     * @return AndroidInstanceRegion <p>实例地域。目前还不支持按地域进行聚合查询</p>
                      * 
                      */
                     std::string GetAndroidInstanceRegion() const;
 
                     /**
-                     * 设置实例地域。目前还不支持按地域进行聚合查询
-                     * @param _androidInstanceRegion 实例地域。目前还不支持按地域进行聚合查询
+                     * 设置<p>实例地域。目前还不支持按地域进行聚合查询</p>
+                     * @param _androidInstanceRegion <p>实例地域。目前还不支持按地域进行聚合查询</p>
                      * 
                      */
                     void SetAndroidInstanceRegion(const std::string& _androidInstanceRegion);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool AndroidInstanceRegionHasBeenSet() const;
 
                     /**
-                     * 获取实例可用区
-                     * @return AndroidInstanceZone 实例可用区
+                     * 获取<p>实例可用区</p>
+                     * @return AndroidInstanceZone <p>实例可用区</p>
                      * 
                      */
                     std::string GetAndroidInstanceZone() const;
 
                     /**
-                     * 设置实例可用区
-                     * @param _androidInstanceZone 实例可用区
+                     * 设置<p>实例可用区</p>
+                     * @param _androidInstanceZone <p>实例可用区</p>
                      * 
                      */
                     void SetAndroidInstanceZone(const std::string& _androidInstanceZone);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool AndroidInstanceZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例分组 ID 列表
-                     * @return AndroidInstanceGroupIds 实例分组 ID 列表
+                     * 获取<p>实例分组 ID 列表</p>
+                     * @return AndroidInstanceGroupIds <p>实例分组 ID 列表</p>
                      * 
                      */
                     std::vector<std::string> GetAndroidInstanceGroupIds() const;
 
                     /**
-                     * 设置实例分组 ID 列表
-                     * @param _androidInstanceGroupIds 实例分组 ID 列表
+                     * 设置<p>实例分组 ID 列表</p>
+                     * @param _androidInstanceGroupIds <p>实例分组 ID 列表</p>
                      * 
                      */
                     void SetAndroidInstanceGroupIds(const std::vector<std::string>& _androidInstanceGroupIds);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool AndroidInstanceGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例标签选择器
-                     * @return LabelSelector 实例标签选择器
+                     * 获取<p>实例标签选择器</p>
+                     * @return LabelSelector <p>实例标签选择器</p>
                      * 
                      */
                     std::vector<LabelRequirement> GetLabelSelector() const;
 
                     /**
-                     * 设置实例标签选择器
-                     * @param _labelSelector 实例标签选择器
+                     * 设置<p>实例标签选择器</p>
+                     * @param _labelSelector <p>实例标签选择器</p>
                      * 
                      */
                     void SetLabelSelector(const std::vector<LabelRequirement>& _labelSelector);
@@ -192,35 +192,15 @@ namespace TencentCloud
                     bool LabelSelectorHasBeenSet() const;
 
                     /**
-                     * 获取字段过滤器。Filter 的 Name 有以下值：
-Name：实例名称
-UserId：实例用户ID
-HostSerialNumber：宿主机序列号
-HostServerSerialNumber：机箱序列号
-AndroidInstanceModel：实例型号
-                     * @return Filters 字段过滤器。Filter 的 Name 有以下值：
-Name：实例名称
-UserId：实例用户ID
-HostSerialNumber：宿主机序列号
-HostServerSerialNumber：机箱序列号
-AndroidInstanceModel：实例型号
+                     * 获取<p>字段过滤器。Filter 的 Name 有以下值：<br>Name：实例名称<br>UserId：实例用户ID<br>HostSerialNumber：宿主机序列号<br>HostServerSerialNumber：机箱序列号<br>AndroidInstanceModel：实例型号</p>
+                     * @return Filters <p>字段过滤器。Filter 的 Name 有以下值：<br>Name：实例名称<br>UserId：实例用户ID<br>HostSerialNumber：宿主机序列号<br>HostServerSerialNumber：机箱序列号<br>AndroidInstanceModel：实例型号</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置字段过滤器。Filter 的 Name 有以下值：
-Name：实例名称
-UserId：实例用户ID
-HostSerialNumber：宿主机序列号
-HostServerSerialNumber：机箱序列号
-AndroidInstanceModel：实例型号
-                     * @param _filters 字段过滤器。Filter 的 Name 有以下值：
-Name：实例名称
-UserId：实例用户ID
-HostSerialNumber：宿主机序列号
-HostServerSerialNumber：机箱序列号
-AndroidInstanceModel：实例型号
+                     * 设置<p>字段过滤器。Filter 的 Name 有以下值：<br>Name：实例名称<br>UserId：实例用户ID<br>HostSerialNumber：宿主机序列号<br>HostServerSerialNumber：机箱序列号<br>AndroidInstanceModel：实例型号</p>
+                     * @param _filters <p>字段过滤器。Filter 的 Name 有以下值：<br>Name：实例名称<br>UserId：实例用户ID<br>HostSerialNumber：宿主机序列号<br>HostServerSerialNumber：机箱序列号<br>AndroidInstanceModel：实例型号</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -235,54 +215,49 @@ AndroidInstanceModel：实例型号
                 private:
 
                     /**
-                     * 偏移量，默认为 0
+                     * <p>偏移量，默认为 0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制量，默认为20，最大值为100
+                     * <p>限制量，默认为20，最大值为100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 实例ID。每次请求的实例的上限为100。
+                     * <p>实例ID。每次请求的实例的上限为100。</p>
                      */
                     std::vector<std::string> m_androidInstanceIds;
                     bool m_androidInstanceIdsHasBeenSet;
 
                     /**
-                     * 实例地域。目前还不支持按地域进行聚合查询
+                     * <p>实例地域。目前还不支持按地域进行聚合查询</p>
                      */
                     std::string m_androidInstanceRegion;
                     bool m_androidInstanceRegionHasBeenSet;
 
                     /**
-                     * 实例可用区
+                     * <p>实例可用区</p>
                      */
                     std::string m_androidInstanceZone;
                     bool m_androidInstanceZoneHasBeenSet;
 
                     /**
-                     * 实例分组 ID 列表
+                     * <p>实例分组 ID 列表</p>
                      */
                     std::vector<std::string> m_androidInstanceGroupIds;
                     bool m_androidInstanceGroupIdsHasBeenSet;
 
                     /**
-                     * 实例标签选择器
+                     * <p>实例标签选择器</p>
                      */
                     std::vector<LabelRequirement> m_labelSelector;
                     bool m_labelSelectorHasBeenSet;
 
                     /**
-                     * 字段过滤器。Filter 的 Name 有以下值：
-Name：实例名称
-UserId：实例用户ID
-HostSerialNumber：宿主机序列号
-HostServerSerialNumber：机箱序列号
-AndroidInstanceModel：实例型号
+                     * <p>字段过滤器。Filter 的 Name 有以下值：<br>Name：实例名称<br>UserId：实例用户ID<br>HostSerialNumber：宿主机序列号<br>HostServerSerialNumber：机箱序列号<br>AndroidInstanceModel：实例型号</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

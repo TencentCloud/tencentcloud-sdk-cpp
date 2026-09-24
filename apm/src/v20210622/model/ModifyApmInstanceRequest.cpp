@@ -71,7 +71,8 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_headSamplerArgHasBeenSet(false),
     m_disableAiAbilityHasBeenSet(false),
     m_crossAccountStatusHasBeenSet(false),
-    m_crossAccountPeerIdHasBeenSet(false)
+    m_crossAccountPeerIdHasBeenSet(false),
+    m_tokenDisplayProtectionHasBeenSet(false)
 {
 }
 
@@ -484,6 +485,14 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "CrossAccountPeerId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_crossAccountPeerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenDisplayProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenDisplayProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tokenDisplayProtection, allocator);
     }
 
 
@@ -1276,6 +1285,22 @@ void ModifyApmInstanceRequest::SetCrossAccountPeerId(const string& _crossAccount
 bool ModifyApmInstanceRequest::CrossAccountPeerIdHasBeenSet() const
 {
     return m_crossAccountPeerIdHasBeenSet;
+}
+
+int64_t ModifyApmInstanceRequest::GetTokenDisplayProtection() const
+{
+    return m_tokenDisplayProtection;
+}
+
+void ModifyApmInstanceRequest::SetTokenDisplayProtection(const int64_t& _tokenDisplayProtection)
+{
+    m_tokenDisplayProtection = _tokenDisplayProtection;
+    m_tokenDisplayProtectionHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::TokenDisplayProtectionHasBeenSet() const
+{
+    return m_tokenDisplayProtectionHasBeenSet;
 }
 
 

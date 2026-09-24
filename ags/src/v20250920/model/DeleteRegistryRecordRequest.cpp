@@ -22,7 +22,11 @@
 using namespace TencentCloud::Ags::V20250920::Model;
 using namespace std;
 
-DeleteRegistryRecordRequest::DeleteRegistryRecordRequest()
+DeleteRegistryRecordRequest::DeleteRegistryRecordRequest() :
+    m_registryIdHasBeenSet(false),
+    m_recordIdHasBeenSet(false),
+    m_versionIdHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,38 @@ string DeleteRegistryRecordRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_registryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +76,69 @@ string DeleteRegistryRecordRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteRegistryRecordRequest::GetRegistryId() const
+{
+    return m_registryId;
+}
+
+void DeleteRegistryRecordRequest::SetRegistryId(const string& _registryId)
+{
+    m_registryId = _registryId;
+    m_registryIdHasBeenSet = true;
+}
+
+bool DeleteRegistryRecordRequest::RegistryIdHasBeenSet() const
+{
+    return m_registryIdHasBeenSet;
+}
+
+string DeleteRegistryRecordRequest::GetRecordId() const
+{
+    return m_recordId;
+}
+
+void DeleteRegistryRecordRequest::SetRecordId(const string& _recordId)
+{
+    m_recordId = _recordId;
+    m_recordIdHasBeenSet = true;
+}
+
+bool DeleteRegistryRecordRequest::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
+}
+
+string DeleteRegistryRecordRequest::GetVersionId() const
+{
+    return m_versionId;
+}
+
+void DeleteRegistryRecordRequest::SetVersionId(const string& _versionId)
+{
+    m_versionId = _versionId;
+    m_versionIdHasBeenSet = true;
+}
+
+bool DeleteRegistryRecordRequest::VersionIdHasBeenSet() const
+{
+    return m_versionIdHasBeenSet;
+}
+
+string DeleteRegistryRecordRequest::GetReason() const
+{
+    return m_reason;
+}
+
+void DeleteRegistryRecordRequest::SetReason(const string& _reason)
+{
+    m_reason = _reason;
+    m_reasonHasBeenSet = true;
+}
+
+bool DeleteRegistryRecordRequest::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
+}
 
 

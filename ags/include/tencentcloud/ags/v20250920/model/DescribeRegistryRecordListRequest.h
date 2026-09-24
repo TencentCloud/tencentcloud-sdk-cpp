@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ags/v20250920/model/CloudFilter.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,115 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>父 Registry ID。</p>
+                     * @return RegistryId <p>父 Registry ID。</p>
+                     * 
+                     */
+                    std::string GetRegistryId() const;
+
+                    /**
+                     * 设置<p>父 Registry ID。</p>
+                     * @param _registryId <p>父 Registry ID。</p>
+                     * 
+                     */
+                    void SetRegistryId(const std::string& _registryId);
+
+                    /**
+                     * 判断参数 RegistryId 是否已赋值
+                     * @return RegistryId 是否已赋值
+                     * 
+                     */
+                    bool RegistryIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分页起始偏移，默认 0。</p>
+                     * @return Offset <p>分页起始偏移，默认 0。</p>
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置<p>分页起始偏移，默认 0。</p>
+                     * @param _offset <p>分页起始偏移，默认 0。</p>
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分页条数，默认 20，最大 100。</p>
+                     * @return Limit <p>分页条数，默认 20，最大 100。</p>
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置<p>分页条数，默认 20，最大 100。</p>
+                     * @param _limit <p>分页条数，默认 20，最大 100。</p>
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>过滤条件。支持 Filter.Name：<code>name</code>/<code>search</code>（按 Record Name 模糊搜索）；其他名称返回 <code>InvalidParameter.Filters.Name</code>。</p>
+                     * @return Filters <p>过滤条件。支持 Filter.Name：<code>name</code>/<code>search</code>（按 Record Name 模糊搜索）；其他名称返回 <code>InvalidParameter.Filters.Name</code>。</p>
+                     * 
+                     */
+                    std::vector<CloudFilter> GetFilters() const;
+
+                    /**
+                     * 设置<p>过滤条件。支持 Filter.Name：<code>name</code>/<code>search</code>（按 Record Name 模糊搜索）；其他名称返回 <code>InvalidParameter.Filters.Name</code>。</p>
+                     * @param _filters <p>过滤条件。支持 Filter.Name：<code>name</code>/<code>search</code>（按 Record Name 模糊搜索）；其他名称返回 <code>InvalidParameter.Filters.Name</code>。</p>
+                     * 
+                     */
+                    void SetFilters(const std::vector<CloudFilter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>父 Registry ID。</p>
+                     */
+                    std::string m_registryId;
+                    bool m_registryIdHasBeenSet;
+
+                    /**
+                     * <p>分页起始偏移，默认 0。</p>
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>分页条数，默认 20，最大 100。</p>
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>过滤条件。支持 Filter.Name：<code>name</code>/<code>search</code>（按 Record Name 模糊搜索）；其他名称返回 <code>InvalidParameter.Filters.Name</code>。</p>
+                     */
+                    std::vector<CloudFilter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

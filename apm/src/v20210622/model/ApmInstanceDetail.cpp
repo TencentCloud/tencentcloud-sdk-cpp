@@ -80,7 +80,8 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_logSpanIdKeyHasBeenSet(false),
     m_disableAiAbilityHasBeenSet(false),
     m_crossAccountStatusHasBeenSet(false),
-    m_crossAccountPeerIdHasBeenSet(false)
+    m_crossAccountPeerIdHasBeenSet(false),
+    m_tokenDisplayProtectionHasBeenSet(false)
 {
 }
 
@@ -702,6 +703,16 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_crossAccountPeerIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TokenDisplayProtection") && !value["TokenDisplayProtection"].IsNull())
+    {
+        if (!value["TokenDisplayProtection"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.TokenDisplayProtection` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenDisplayProtection = value["TokenDisplayProtection"].GetInt64();
+        m_tokenDisplayProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1199,6 +1210,14 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CrossAccountPeerId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_crossAccountPeerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenDisplayProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenDisplayProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tokenDisplayProtection, allocator);
     }
 
 }
@@ -2162,5 +2181,21 @@ void ApmInstanceDetail::SetCrossAccountPeerId(const string& _crossAccountPeerId)
 bool ApmInstanceDetail::CrossAccountPeerIdHasBeenSet() const
 {
     return m_crossAccountPeerIdHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetTokenDisplayProtection() const
+{
+    return m_tokenDisplayProtection;
+}
+
+void ApmInstanceDetail::SetTokenDisplayProtection(const int64_t& _tokenDisplayProtection)
+{
+    m_tokenDisplayProtection = _tokenDisplayProtection;
+    m_tokenDisplayProtectionHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::TokenDisplayProtectionHasBeenSet() const
+{
+    return m_tokenDisplayProtectionHasBeenSet;
 }
 

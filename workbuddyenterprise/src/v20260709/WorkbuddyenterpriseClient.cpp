@@ -990,6 +990,56 @@ WorkbuddyenterpriseClient::DescribeSkillListOutcomeCallable WorkbuddyenterpriseC
     return prom->get_future();
 }
 
+WorkbuddyenterpriseClient::DescribeUserAccessTokenOutcome WorkbuddyenterpriseClient::DescribeUserAccessToken(const DescribeUserAccessTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserAccessToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserAccessTokenResponse rsp = DescribeUserAccessTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserAccessTokenOutcome(rsp);
+        else
+            return DescribeUserAccessTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserAccessTokenOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::DescribeUserAccessTokenAsync(const DescribeUserAccessTokenRequest& request, const DescribeUserAccessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserAccessTokenRequest&;
+    using Resp = DescribeUserAccessTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserAccessToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::DescribeUserAccessTokenOutcomeCallable WorkbuddyenterpriseClient::DescribeUserAccessTokenCallable(const DescribeUserAccessTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserAccessTokenOutcome>>();
+    DescribeUserAccessTokenAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const DescribeUserAccessTokenRequest&,
+        DescribeUserAccessTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WorkbuddyenterpriseClient::MigrateAgentSessionOutcome WorkbuddyenterpriseClient::MigrateAgentSession(const MigrateAgentSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "MigrateAgentSession");
