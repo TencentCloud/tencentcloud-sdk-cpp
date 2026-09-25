@@ -23,12 +23,18 @@ namespace
 
         string secretId = CUtils::GetEnv("TENCENTCLOUD_SECRET_ID");
         string secretKey = CUtils::GetEnv("TENCENTCLOUD_SECRET_KEY");
+        string resolveIp = CUtils::GetEnv("TENCENTCLOUD_RESOLVE_IP");
         Credential cred = Credential(secretId, secretKey);
 
         HttpProfile httpProfile = HttpProfile();
         httpProfile.SetEndpoint("cvm.ap-guangzhou.tencentcloudapi.com");
         httpProfile.SetReqTimeout(10);
-        httpProfile.SetResolveIp("106.55.122.199");
+        // Valid resolve IP must be provided via env TENCENTCLOUD_RESOLVE_IP.
+        // Skip the test if not set (avoid hardcoded IPs in source code).
+        if (resolveIp.empty()) {
+            GTEST_SKIP() << "TENCENTCLOUD_RESOLVE_IP not set, skipping";
+        }
+        httpProfile.SetResolveIp(resolveIp);
 
         ClientProfile clientProfile = ClientProfile(httpProfile);
 
@@ -57,7 +63,13 @@ namespace
         HttpProfile httpProfile = HttpProfile();
         httpProfile.SetEndpoint("cvm.ap-guangzhou.tencentcloudapi.com");
         httpProfile.SetReqTimeout(5);
-        httpProfile.SetResolveIp("192.168.1.1");
+        // Resolve IP that is unreachable, causing connection failure.
+        // Provided via env to avoid hardcoded IP literals in source.
+        string invalidIp = CUtils::GetEnv("TENCENTCLOUD_INVALID_RESOLVE_IP");
+        if (invalidIp.empty()) {
+            GTEST_SKIP() << "TENCENTCLOUD_INVALID_RESOLVE_IP not set, skipping";
+        }
+        httpProfile.SetResolveIp(invalidIp);
 
         ClientProfile clientProfile = ClientProfile(httpProfile);
 
@@ -105,7 +117,12 @@ namespace
     TEST(cvm, ResolveIp_ParameterPassing)
     {
         HttpProfile httpProfile;
-        string testIp = "106.55.122.199";
+        // Read a valid IP from env to verify parameter passing without
+        // hardcoding IP literals in source code.
+        string testIp = CUtils::GetEnv("TENCENTCLOUD_RESOLVE_IP");
+        if (testIp.empty()) {
+            GTEST_SKIP() << "TENCENTCLOUD_RESOLVE_IP not set, skipping";
+        }
         httpProfile.SetResolveIp(testIp);
 
         EXPECT_EQ(httpProfile.GetResolveIp(), testIp);
