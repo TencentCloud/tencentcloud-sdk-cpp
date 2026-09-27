@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/TierItem.h>
+#include <tencentcloud/clb/v20180317/model/IntentRouterDecisionModelConfig.h>
 
 
 namespace TencentCloud
@@ -128,15 +129,15 @@ namespace TencentCloud
                     bool RouterDescribeHasBeenSet() const;
 
                     /**
-                     * 获取<p>新的分层配置列表（全量替换）。</p><p>选填；不传则不修改。传入时必须为完整分层集合：复杂度分层须包含全部 4 个分层 SIMPLE/MEDIUM/COMPLEX/REASONING；语义分层须包含 default 及各语义 Tier（取决于实例所用协议，且不可跨协议变更）。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。</p>
-                     * @return Tiers <p>新的分层配置列表（全量替换）。</p><p>选填；不传则不修改。传入时必须为完整分层集合：复杂度分层须包含全部 4 个分层 SIMPLE/MEDIUM/COMPLEX/REASONING；语义分层须包含 default 及各语义 Tier（取决于实例所用协议，且不可跨协议变更）。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。</p>
+                     * 获取<p>新的分层配置列表（全量替换）。</p><p>选填；传入时必须包含全部4个分层：SIMPLE、MEDIUM、COMPLEX、REASONING。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。不传则不修改。</p>
+                     * @return Tiers <p>新的分层配置列表（全量替换）。</p><p>选填；传入时必须包含全部4个分层：SIMPLE、MEDIUM、COMPLEX、REASONING。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。不传则不修改。</p>
                      * 
                      */
                     std::vector<TierItem> GetTiers() const;
 
                     /**
-                     * 设置<p>新的分层配置列表（全量替换）。</p><p>选填；不传则不修改。传入时必须为完整分层集合：复杂度分层须包含全部 4 个分层 SIMPLE/MEDIUM/COMPLEX/REASONING；语义分层须包含 default 及各语义 Tier（取决于实例所用协议，且不可跨协议变更）。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。</p>
-                     * @param _tiers <p>新的分层配置列表（全量替换）。</p><p>选填；不传则不修改。传入时必须为完整分层集合：复杂度分层须包含全部 4 个分层 SIMPLE/MEDIUM/COMPLEX/REASONING；语义分层须包含 default 及各语义 Tier（取决于实例所用协议，且不可跨协议变更）。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。</p>
+                     * 设置<p>新的分层配置列表（全量替换）。</p><p>选填；传入时必须包含全部4个分层：SIMPLE、MEDIUM、COMPLEX、REASONING。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。不传则不修改。</p>
+                     * @param _tiers <p>新的分层配置列表（全量替换）。</p><p>选填；传入时必须包含全部4个分层：SIMPLE、MEDIUM、COMPLEX、REASONING。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。不传则不修改。</p>
                      * 
                      */
                     void SetTiers(const std::vector<TierItem>& _tiers);
@@ -147,6 +148,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TiersHasBeenSet() const;
+
+                    /**
+                     * 获取<p>意图路由使用决策模型配置</p>
+                     * @return DecisionModelConfig <p>意图路由使用决策模型配置</p>
+                     * 
+                     */
+                    IntentRouterDecisionModelConfig GetDecisionModelConfig() const;
+
+                    /**
+                     * 设置<p>意图路由使用决策模型配置</p>
+                     * @param _decisionModelConfig <p>意图路由使用决策模型配置</p>
+                     * 
+                     */
+                    void SetDecisionModelConfig(const IntentRouterDecisionModelConfig& _decisionModelConfig);
+
+                    /**
+                     * 判断参数 DecisionModelConfig 是否已赋值
+                     * @return DecisionModelConfig 是否已赋值
+                     * 
+                     */
+                    bool DecisionModelConfigHasBeenSet() const;
 
                 private:
 
@@ -175,10 +197,16 @@ namespace TencentCloud
                     bool m_routerDescribeHasBeenSet;
 
                     /**
-                     * <p>新的分层配置列表（全量替换）。</p><p>选填；不传则不修改。传入时必须为完整分层集合：复杂度分层须包含全部 4 个分层 SIMPLE/MEDIUM/COMPLEX/REASONING；语义分层须包含 default 及各语义 Tier（取决于实例所用协议，且不可跨协议变更）。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。</p>
+                     * <p>新的分层配置列表（全量替换）。</p><p>选填；传入时必须包含全部4个分层：SIMPLE、MEDIUM、COMPLEX、REASONING。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。不传则不修改。</p>
                      */
                     std::vector<TierItem> m_tiers;
                     bool m_tiersHasBeenSet;
+
+                    /**
+                     * <p>意图路由使用决策模型配置</p>
+                     */
+                    IntentRouterDecisionModelConfig m_decisionModelConfig;
+                    bool m_decisionModelConfigHasBeenSet;
 
                 };
             }

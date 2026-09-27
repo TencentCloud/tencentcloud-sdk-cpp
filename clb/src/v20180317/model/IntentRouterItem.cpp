@@ -27,6 +27,7 @@ IntentRouterItem::IntentRouterItem() :
     m_routerDescribeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_tiersHasBeenSet(false),
+    m_decisionModelConfigHasBeenSet(false),
     m_updatedTimeHasBeenSet(false)
 {
 }
@@ -106,6 +107,23 @@ CoreInternalOutcome IntentRouterItem::Deserialize(const rapidjson::Value &value)
         m_tiersHasBeenSet = true;
     }
 
+    if (value.HasMember("DecisionModelConfig") && !value["DecisionModelConfig"].IsNull())
+    {
+        if (!value["DecisionModelConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntentRouterItem.DecisionModelConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_decisionModelConfig.Deserialize(value["DecisionModelConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_decisionModelConfigHasBeenSet = true;
+    }
+
     if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
     {
         if (!value["UpdatedTime"].IsString())
@@ -176,6 +194,15 @@ void IntentRouterItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_decisionModelConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DecisionModelConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_decisionModelConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_updatedTimeHasBeenSet)
@@ -283,6 +310,22 @@ void IntentRouterItem::SetTiers(const vector<IntentRouterTierItem>& _tiers)
 bool IntentRouterItem::TiersHasBeenSet() const
 {
     return m_tiersHasBeenSet;
+}
+
+IntentRouterDecisionModelConfig IntentRouterItem::GetDecisionModelConfig() const
+{
+    return m_decisionModelConfig;
+}
+
+void IntentRouterItem::SetDecisionModelConfig(const IntentRouterDecisionModelConfig& _decisionModelConfig)
+{
+    m_decisionModelConfig = _decisionModelConfig;
+    m_decisionModelConfigHasBeenSet = true;
+}
+
+bool IntentRouterItem::DecisionModelConfigHasBeenSet() const
+{
+    return m_decisionModelConfigHasBeenSet;
 }
 
 string IntentRouterItem::GetUpdatedTime() const

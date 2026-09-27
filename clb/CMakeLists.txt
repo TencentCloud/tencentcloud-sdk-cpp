@@ -352,6 +352,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ModifyLoadBalancerMixIpTargetResponse.h
   include/tencentcloud/clb/v20180317/model/ModifyModelAttributesResponse.h
   include/tencentcloud/clb/v20180317/model/Sort.h
+  include/tencentcloud/clb/v20180317/model/IntentRouterDecisionModelConfig.h
   include/tencentcloud/clb/v20180317/model/ModelRouterBillingConfigInput.h
   include/tencentcloud/clb/v20180317/model/DisassociateModelsFromModelRouterResponse.h
   include/tencentcloud/clb/v20180317/model/TargetGroupHealthCheck.h
@@ -828,6 +829,7 @@ set(clb_src
   src/v20180317/model/ModifyLoadBalancerMixIpTargetResponse.cpp
   src/v20180317/model/ModifyModelAttributesResponse.cpp
   src/v20180317/model/Sort.cpp
+  src/v20180317/model/IntentRouterDecisionModelConfig.cpp
   src/v20180317/model/ModelRouterBillingConfigInput.cpp
   src/v20180317/model/DisassociateModelsFromModelRouterResponse.cpp
   src/v20180317/model/TargetGroupHealthCheck.cpp

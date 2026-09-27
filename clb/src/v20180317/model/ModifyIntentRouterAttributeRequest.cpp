@@ -27,7 +27,8 @@ ModifyIntentRouterAttributeRequest::ModifyIntentRouterAttributeRequest() :
     m_modelRouterIdHasBeenSet(false),
     m_routeNameHasBeenSet(false),
     m_routerDescribeHasBeenSet(false),
-    m_tiersHasBeenSet(false)
+    m_tiersHasBeenSet(false),
+    m_decisionModelConfigHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,15 @@ string ModifyIntentRouterAttributeRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_decisionModelConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DecisionModelConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_decisionModelConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -171,6 +181,22 @@ void ModifyIntentRouterAttributeRequest::SetTiers(const vector<TierItem>& _tiers
 bool ModifyIntentRouterAttributeRequest::TiersHasBeenSet() const
 {
     return m_tiersHasBeenSet;
+}
+
+IntentRouterDecisionModelConfig ModifyIntentRouterAttributeRequest::GetDecisionModelConfig() const
+{
+    return m_decisionModelConfig;
+}
+
+void ModifyIntentRouterAttributeRequest::SetDecisionModelConfig(const IntentRouterDecisionModelConfig& _decisionModelConfig)
+{
+    m_decisionModelConfig = _decisionModelConfig;
+    m_decisionModelConfigHasBeenSet = true;
+}
+
+bool ModifyIntentRouterAttributeRequest::DecisionModelConfigHasBeenSet() const
+{
+    return m_decisionModelConfigHasBeenSet;
 }
 
 

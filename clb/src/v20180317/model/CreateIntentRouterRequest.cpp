@@ -26,7 +26,8 @@ CreateIntentRouterRequest::CreateIntentRouterRequest() :
     m_modelRouterIdHasBeenSet(false),
     m_routeNameHasBeenSet(false),
     m_tiersHasBeenSet(false),
-    m_routerDescribeHasBeenSet(false)
+    m_routerDescribeHasBeenSet(false),
+    m_decisionModelConfigHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,15 @@ string CreateIntentRouterRequest::ToJsonString() const
         string key = "RouterDescribe";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_routerDescribe.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_decisionModelConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DecisionModelConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_decisionModelConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -146,6 +156,22 @@ void CreateIntentRouterRequest::SetRouterDescribe(const string& _routerDescribe)
 bool CreateIntentRouterRequest::RouterDescribeHasBeenSet() const
 {
     return m_routerDescribeHasBeenSet;
+}
+
+IntentRouterDecisionModelConfig CreateIntentRouterRequest::GetDecisionModelConfig() const
+{
+    return m_decisionModelConfig;
+}
+
+void CreateIntentRouterRequest::SetDecisionModelConfig(const IntentRouterDecisionModelConfig& _decisionModelConfig)
+{
+    m_decisionModelConfig = _decisionModelConfig;
+    m_decisionModelConfigHasBeenSet = true;
+}
+
+bool CreateIntentRouterRequest::DecisionModelConfigHasBeenSet() const
+{
+    return m_decisionModelConfigHasBeenSet;
 }
 
 

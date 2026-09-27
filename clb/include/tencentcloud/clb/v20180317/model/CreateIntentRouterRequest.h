@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/TierItem.h>
+#include <tencentcloud/clb/v20180317/model/IntentRouterDecisionModelConfig.h>
 
 
 namespace TencentCloud
@@ -127,6 +128,27 @@ namespace TencentCloud
                      */
                     bool RouterDescribeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>意图路由使用决策模型配置</p>
+                     * @return DecisionModelConfig <p>意图路由使用决策模型配置</p>
+                     * 
+                     */
+                    IntentRouterDecisionModelConfig GetDecisionModelConfig() const;
+
+                    /**
+                     * 设置<p>意图路由使用决策模型配置</p>
+                     * @param _decisionModelConfig <p>意图路由使用决策模型配置</p>
+                     * 
+                     */
+                    void SetDecisionModelConfig(const IntentRouterDecisionModelConfig& _decisionModelConfig);
+
+                    /**
+                     * 判断参数 DecisionModelConfig 是否已赋值
+                     * @return DecisionModelConfig 是否已赋值
+                     * 
+                     */
+                    bool DecisionModelConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +174,12 @@ namespace TencentCloud
                      */
                     std::string m_routerDescribe;
                     bool m_routerDescribeHasBeenSet;
+
+                    /**
+                     * <p>意图路由使用决策模型配置</p>
+                     */
+                    IntentRouterDecisionModelConfig m_decisionModelConfig;
+                    bool m_decisionModelConfigHasBeenSet;
 
                 };
             }
