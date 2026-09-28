@@ -61,6 +61,8 @@
 #include <tencentcloud/tcb/v20180608/model/CreateMySQLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreatePlatformEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreatePlatformEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/CreatePlatformHTTPServiceRouteRequest.h>
+#include <tencentcloud/tcb/v20180608/model/CreatePlatformHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateTableRequest.h>
@@ -81,6 +83,8 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteFunctionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteHTTPServiceRouteResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DeletePlatformHTTPServiceRouteRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DeletePlatformHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteProviderRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteProviderResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteTableRequest.h>
@@ -159,6 +163,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribePlatformCreditsUsageDetailResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePlatformEnvUsageRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePlatformEnvUsageResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformHTTPServiceRouteRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribePlatformHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePlatformsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePlatformsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h>
@@ -219,6 +225,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyPGInstanceSpecResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyPlatformEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyPlatformEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyPlatformHTTPServiceRouteRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyPlatformHTTPServiceRouteResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyProviderRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyProviderResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyResourcePermissionRequest.h>
@@ -263,6 +271,8 @@
 #include <tencentcloud/tcb/v20180608/model/UpgradePGInstanceToDedicatedResponse.h>
 #include <tencentcloud/tcb/v20180608/model/VerifyHTTPServiceRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/VerifyHTTPServiceRouteResponse.h>
+#include <tencentcloud/tcb/v20180608/model/VerifyPlatformHTTPServiceRouteRequest.h>
+#include <tencentcloud/tcb/v20180608/model/VerifyPlatformHTTPServiceRouteResponse.h>
 
 
 namespace TencentCloud
@@ -334,6 +344,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePlatformEnvResponse> CreatePlatformEnvOutcome;
                 typedef std::future<CreatePlatformEnvOutcome> CreatePlatformEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreatePlatformEnvRequest&, CreatePlatformEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePlatformEnvAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePlatformHTTPServiceRouteResponse> CreatePlatformHTTPServiceRouteOutcome;
+                typedef std::future<CreatePlatformHTTPServiceRouteOutcome> CreatePlatformHTTPServiceRouteOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::CreatePlatformHTTPServiceRouteRequest&, CreatePlatformHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePlatformHTTPServiceRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateStaticStoreResponse> CreateStaticStoreOutcome;
                 typedef std::future<CreateStaticStoreOutcome> CreateStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateStaticStoreRequest&, CreateStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStaticStoreAsyncHandler;
@@ -364,6 +377,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteHTTPServiceRouteResponse> DeleteHTTPServiceRouteOutcome;
                 typedef std::future<DeleteHTTPServiceRouteOutcome> DeleteHTTPServiceRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteHTTPServiceRouteRequest&, DeleteHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHTTPServiceRouteAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePlatformHTTPServiceRouteResponse> DeletePlatformHTTPServiceRouteOutcome;
+                typedef std::future<DeletePlatformHTTPServiceRouteOutcome> DeletePlatformHTTPServiceRouteOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DeletePlatformHTTPServiceRouteRequest&, DeletePlatformHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePlatformHTTPServiceRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteProviderResponse> DeleteProviderOutcome;
                 typedef std::future<DeleteProviderOutcome> DeleteProviderOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteProviderRequest&, DeleteProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProviderAsyncHandler;
@@ -481,6 +497,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePlatformEnvUsageResponse> DescribePlatformEnvUsageOutcome;
                 typedef std::future<DescribePlatformEnvUsageOutcome> DescribePlatformEnvUsageOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribePlatformEnvUsageRequest&, DescribePlatformEnvUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformEnvUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePlatformHTTPServiceRouteResponse> DescribePlatformHTTPServiceRouteOutcome;
+                typedef std::future<DescribePlatformHTTPServiceRouteOutcome> DescribePlatformHTTPServiceRouteOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribePlatformHTTPServiceRouteRequest&, DescribePlatformHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformHTTPServiceRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePlatformsResponse> DescribePlatformsOutcome;
                 typedef std::future<DescribePlatformsOutcome> DescribePlatformsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribePlatformsRequest&, DescribePlatformsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlatformsAsyncHandler;
@@ -571,6 +590,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPlatformEnvResponse> ModifyPlatformEnvOutcome;
                 typedef std::future<ModifyPlatformEnvOutcome> ModifyPlatformEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyPlatformEnvRequest&, ModifyPlatformEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPlatformEnvAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPlatformHTTPServiceRouteResponse> ModifyPlatformHTTPServiceRouteOutcome;
+                typedef std::future<ModifyPlatformHTTPServiceRouteOutcome> ModifyPlatformHTTPServiceRouteOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyPlatformHTTPServiceRouteRequest&, ModifyPlatformHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPlatformHTTPServiceRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProviderResponse> ModifyProviderOutcome;
                 typedef std::future<ModifyProviderOutcome> ModifyProviderOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyProviderRequest&, ModifyProviderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProviderAsyncHandler;
@@ -637,6 +659,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VerifyHTTPServiceRouteResponse> VerifyHTTPServiceRouteOutcome;
                 typedef std::future<VerifyHTTPServiceRouteOutcome> VerifyHTTPServiceRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::VerifyHTTPServiceRouteRequest&, VerifyHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyHTTPServiceRouteAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyPlatformHTTPServiceRouteResponse> VerifyPlatformHTTPServiceRouteOutcome;
+                typedef std::future<VerifyPlatformHTTPServiceRouteOutcome> VerifyPlatformHTTPServiceRouteOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::VerifyPlatformHTTPServiceRouteRequest&, VerifyPlatformHTTPServiceRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyPlatformHTTPServiceRouteAsyncHandler;
 
 
 
@@ -863,6 +888,15 @@ namespace TencentCloud
                 CreatePlatformEnvOutcomeCallable CreatePlatformEnvCallable(const Model::CreatePlatformEnvRequest& request);
 
                 /**
+                 *本接口CreateHTTPServiceRoute用于创建平台版HTTP访问服务路由。如果不传Domain.Routes，仅创建域名信息。首次创建域名后需要调用DescribeHTTPServiceRoute查询域名状态，如果状态是PROCESSING，需要轮询查询域名状态直到SUCCESS或者FAIL。如果状态是FAIL，可以删除后重新创建。创建成功后域名可能无法访问，原因是异步下发的路由，可通过http或者https探测路由是否下发，如果http访问返回404或者https访问握手失败，可等待一会再试，直到访问正常。此外HTTP访问服务提供了默认域名，通过DescribeHTTPServiceRoute接口可直接获取默认域名。
+                 * @param req CreatePlatformHTTPServiceRouteRequest
+                 * @return CreatePlatformHTTPServiceRouteOutcome
+                 */
+                CreatePlatformHTTPServiceRouteOutcome CreatePlatformHTTPServiceRoute(const Model::CreatePlatformHTTPServiceRouteRequest &request);
+                void CreatePlatformHTTPServiceRouteAsync(const Model::CreatePlatformHTTPServiceRouteRequest& request, const CreatePlatformHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePlatformHTTPServiceRouteOutcomeCallable CreatePlatformHTTPServiceRouteCallable(const Model::CreatePlatformHTTPServiceRouteRequest& request);
+
+                /**
                  *创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看
                  * @param req CreateStaticStoreRequest
                  * @return CreateStaticStoreOutcome
@@ -963,6 +997,15 @@ namespace TencentCloud
                 DeleteHTTPServiceRouteOutcome DeleteHTTPServiceRoute(const Model::DeleteHTTPServiceRouteRequest &request);
                 void DeleteHTTPServiceRouteAsync(const Model::DeleteHTTPServiceRouteRequest& request, const DeleteHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteHTTPServiceRouteOutcomeCallable DeleteHTTPServiceRouteCallable(const Model::DeleteHTTPServiceRouteRequest& request);
+
+                /**
+                 *本接口DeleteHTTPServiceRoute用于删除平台版HTTP访问服务域名或者路由。可批量删除多条path路由、删除域名及所有path路由，如果Paths字段为空则删除域名及所有path路由，如果Paths不为空则仅删除path路由。
+                 * @param req DeletePlatformHTTPServiceRouteRequest
+                 * @return DeletePlatformHTTPServiceRouteOutcome
+                 */
+                DeletePlatformHTTPServiceRouteOutcome DeletePlatformHTTPServiceRoute(const Model::DeletePlatformHTTPServiceRouteRequest &request);
+                void DeletePlatformHTTPServiceRouteAsync(const Model::DeletePlatformHTTPServiceRouteRequest& request, const DeletePlatformHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePlatformHTTPServiceRouteOutcomeCallable DeletePlatformHTTPServiceRouteCallable(const Model::DeletePlatformHTTPServiceRouteRequest& request);
 
                 /**
                  *删除认证源
@@ -1368,6 +1411,15 @@ namespace TencentCloud
                 DescribePlatformEnvUsageOutcomeCallable DescribePlatformEnvUsageCallable(const Model::DescribePlatformEnvUsageRequest& request);
 
                 /**
+                 *本接口DescribeHTTPServiceRoute用于查询平台版下HTTP访问服务路由信息。可通过Filters过滤。如果不存在不会返回错误。HTTP访问服务提供了默认域名，通过本接口可直接获取默认域名。前置需已开通 HTTP 访问服务；调用CreateHTTPServiceRoute或者ModifyHTTPServiceRoute后可使用本接口查询创建或者修改结果
+                 * @param req DescribePlatformHTTPServiceRouteRequest
+                 * @return DescribePlatformHTTPServiceRouteOutcome
+                 */
+                DescribePlatformHTTPServiceRouteOutcome DescribePlatformHTTPServiceRoute(const Model::DescribePlatformHTTPServiceRouteRequest &request);
+                void DescribePlatformHTTPServiceRouteAsync(const Model::DescribePlatformHTTPServiceRouteRequest& request, const DescribePlatformHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePlatformHTTPServiceRouteOutcomeCallable DescribePlatformHTTPServiceRouteCallable(const Model::DescribePlatformHTTPServiceRouteRequest& request);
+
+                /**
                  *查询平台版资源信息列表，返回信息包括
 
 1.平台版基础信息如资源id，所属地域等;
@@ -1669,6 +1721,15 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifyPlatformEnvOutcomeCallable ModifyPlatformEnvCallable(const Model::ModifyPlatformEnvRequest& request);
 
                 /**
+                 *本接口ModifyHTTPServiceRoute用于修改平台版HTTP访问服务路由。支持增量修改，对应字段不传参数则不修改
+                 * @param req ModifyPlatformHTTPServiceRouteRequest
+                 * @return ModifyPlatformHTTPServiceRouteOutcome
+                 */
+                ModifyPlatformHTTPServiceRouteOutcome ModifyPlatformHTTPServiceRoute(const Model::ModifyPlatformHTTPServiceRouteRequest &request);
+                void ModifyPlatformHTTPServiceRouteAsync(const Model::ModifyPlatformHTTPServiceRouteRequest& request, const ModifyPlatformHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPlatformHTTPServiceRouteOutcomeCallable ModifyPlatformHTTPServiceRouteCallable(const Model::ModifyPlatformHTTPServiceRouteRequest& request);
+
+                /**
                  *修改身份认证源。更新指定云开发环境下已有身份认证源的配置信息，支持修改基本信息（名称、图标、描述）、协议连接配置（ClientId、ClientSecret、端点地址等）、登录行为控制（透传模式、自动注册、邮箱/手机号自动关联）以及启用状态。
 对于 OIDC 类型身份源，修改 Issuer 后将自动通过 OpenID Connect Discovery 重新获取端点配置。
 若自定义登录（CUSTOM）或邮箱登录（EMAIL）身份源尚不存在，调用该接口时将自动创建。
@@ -1914,6 +1975,30 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 VerifyHTTPServiceRouteOutcome VerifyHTTPServiceRoute(const Model::VerifyHTTPServiceRouteRequest &request);
                 void VerifyHTTPServiceRouteAsync(const Model::VerifyHTTPServiceRouteRequest& request, const VerifyHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VerifyHTTPServiceRouteOutcomeCallable VerifyHTTPServiceRouteCallable(const Model::VerifyHTTPServiceRouteRequest& request);
+
+                /**
+                 *本接口VerifyPlatformHTTPServiceRoute用于前置校验平台版HTTP访问服务域名或者路由。覆盖的校验项包括：
+1. Ownership：域名所有权（TXT/CNAME 记录）；
+2. Cert：证书与域名匹配（CertId 为空时跳过）；
+3. Quota：环境下域名/路径数量配额；
+4. RouteConflict：同域名下路由路径冲突；
+5. DomainConflict：域名被其他环境占用；
+6. InternalAccount：内部域名且非内部账号；
+7. Blacklist：域名黑名单；
+8. CDNResource：AccessType=CDN 时 CDN 资源存在性 / 状态（含 ICP 未备案提示）；
+9. EO：AccessType=EO 时 EdgeOne 侧域名冲突 / 备案 / 归属权预检。
+
+使用方式：
+- 调用本接口前置校验，若 Passed=true 表示所有启用检查项均通过，可继续调用 CreateHTTPServiceRoute 正式创建；
+- 若 Passed=false，前端应根据各 CheckItem 的 Code 精确渲染对应的错误提示与用户操作指引（如 DNS 归属权配置、ICP 备案指引等），用户修正参数后可重复调用本接口，直到通过后再进行创建。
+
+注意：本接口为只读 dry-run 操作，不落库、不创建任何资源，仅返回各项检查的详细结果。本接口通过不代表 CreateHTTPServiceRoute 必然成功（例如证书运行时状态、并发抢占等仍需创建时最终判定），但本接口不通过则 CreateHTTPServiceRoute 必然不通过。
+                 * @param req VerifyPlatformHTTPServiceRouteRequest
+                 * @return VerifyPlatformHTTPServiceRouteOutcome
+                 */
+                VerifyPlatformHTTPServiceRouteOutcome VerifyPlatformHTTPServiceRoute(const Model::VerifyPlatformHTTPServiceRouteRequest &request);
+                void VerifyPlatformHTTPServiceRouteAsync(const Model::VerifyPlatformHTTPServiceRouteRequest& request, const VerifyPlatformHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyPlatformHTTPServiceRouteOutcomeCallable VerifyPlatformHTTPServiceRouteCallable(const Model::VerifyPlatformHTTPServiceRouteRequest& request);
 
             };
         }

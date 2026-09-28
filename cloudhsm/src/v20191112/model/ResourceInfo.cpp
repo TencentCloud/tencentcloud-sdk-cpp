@@ -46,7 +46,10 @@ ResourceInfo::ResourceInfo() :
     m_alarmStatusHasBeenSet(false),
     m_pqcStatusHasBeenSet(false),
     m_pqcFlagHasBeenSet(false),
-    m_deployEnvHasBeenSet(false)
+    m_deployEnvHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_clusterRoleHasBeenSet(false)
 {
 }
 
@@ -335,6 +338,36 @@ CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
         m_deployEnvHasBeenSet = true;
     }
 
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterRole") && !value["ClusterRole"].IsNull())
+    {
+        if (!value["ClusterRole"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.ClusterRole` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterRole = value["ClusterRole"].GetInt64();
+        m_clusterRoleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -562,6 +595,30 @@ void ResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DeployEnv";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deployEnv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterRole, allocator);
     }
 
 }
@@ -981,5 +1038,53 @@ void ResourceInfo::SetDeployEnv(const string& _deployEnv)
 bool ResourceInfo::DeployEnvHasBeenSet() const
 {
     return m_deployEnvHasBeenSet;
+}
+
+string ResourceInfo::GetVersion() const
+{
+    return m_version;
+}
+
+void ResourceInfo::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool ResourceInfo::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+string ResourceInfo::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void ResourceInfo::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool ResourceInfo::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+int64_t ResourceInfo::GetClusterRole() const
+{
+    return m_clusterRole;
+}
+
+void ResourceInfo::SetClusterRole(const int64_t& _clusterRole)
+{
+    m_clusterRole = _clusterRole;
+    m_clusterRoleHasBeenSet = true;
+}
+
+bool ResourceInfo::ClusterRoleHasBeenSet() const
+{
+    return m_clusterRoleHasBeenSet;
 }
 

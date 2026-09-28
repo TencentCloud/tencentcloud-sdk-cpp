@@ -54,7 +54,8 @@ LogResult::LogResult() :
     m_userDefinedHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_writesHasBeenSet(false),
-    m_destinationHasBeenSet(false)
+    m_destinationHasBeenSet(false),
+    m_eventNameHasBeenSet(false)
 {
 }
 
@@ -403,6 +404,16 @@ CoreInternalOutcome LogResult::Deserialize(const rapidjson::Value &value)
         m_destinationHasBeenSet = true;
     }
 
+    if (value.HasMember("EventName") && !value["EventName"].IsNull())
+    {
+        if (!value["EventName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogResult.EventName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventName = string(value["EventName"].GetString());
+        m_eventNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -680,6 +691,14 @@ void LogResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Destination";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_destination.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1227,5 +1246,21 @@ void LogResult::SetDestination(const string& _destination)
 bool LogResult::DestinationHasBeenSet() const
 {
     return m_destinationHasBeenSet;
+}
+
+string LogResult::GetEventName() const
+{
+    return m_eventName;
+}
+
+void LogResult::SetEventName(const string& _eventName)
+{
+    m_eventName = _eventName;
+    m_eventNameHasBeenSet = true;
+}
+
+bool LogResult::EventNameHasBeenSet() const
+{
+    return m_eventNameHasBeenSet;
 }
 

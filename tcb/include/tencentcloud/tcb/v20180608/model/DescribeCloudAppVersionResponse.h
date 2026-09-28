@@ -23,6 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/StaticConfig.h>
 #include <tencentcloud/tcb/v20180608/model/BuildStepStatus.h>
+#include <tencentcloud/tcb/v20180608/model/CloudAppResourceItem.h>
+#include <tencentcloud/tcb/v20180608/model/BuildArtifactInfo.h>
 
 
 namespace TencentCloud
@@ -143,6 +145,76 @@ namespace TencentCloud
                      */
                     bool StepsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务版本快照</p>
+                     * @return Snapshot <p>服务版本快照</p>
+                     * 
+                     */
+                    std::string GetSnapshot() const;
+
+                    /**
+                     * 判断参数 Snapshot 是否已赋值
+                     * @return Snapshot 是否已赋值
+                     * 
+                     */
+                    bool SnapshotHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务版本流量比例</p>
+                     * @return TrafficPercent <p>服务版本流量比例</p>
+                     * 
+                     */
+                    uint64_t GetTrafficPercent() const;
+
+                    /**
+                     * 判断参数 TrafficPercent 是否已赋值
+                     * @return TrafficPercent 是否已赋值
+                     * 
+                     */
+                    bool TrafficPercentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务版本域名</p>
+                     * @return VersionDomain <p>服务版本域名</p>
+                     * 
+                     */
+                    std::string GetVersionDomain() const;
+
+                    /**
+                     * 判断参数 VersionDomain 是否已赋值
+                     * @return VersionDomain 是否已赋值
+                     * 
+                     */
+                    bool VersionDomainHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务管理资源列表</p>
+                     * @return Resources <p>服务管理资源列表</p>
+                     * 
+                     */
+                    std::vector<CloudAppResourceItem> GetResources() const;
+
+                    /**
+                     * 判断参数 Resources 是否已赋值
+                     * @return Resources 是否已赋值
+                     * 
+                     */
+                    bool ResourcesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>[]ArtifactInfo 的 JSON 序列化</p>
+                     * @return Artifacts <p>[]ArtifactInfo 的 JSON 序列化</p>
+                     * 
+                     */
+                    std::vector<BuildArtifactInfo> GetArtifacts() const;
+
+                    /**
+                     * 判断参数 Artifacts 是否已赋值
+                     * @return Artifacts 是否已赋值
+                     * 
+                     */
+                    bool ArtifactsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -186,6 +258,36 @@ namespace TencentCloud
                      */
                     std::vector<BuildStepStatus> m_steps;
                     bool m_stepsHasBeenSet;
+
+                    /**
+                     * <p>服务版本快照</p>
+                     */
+                    std::string m_snapshot;
+                    bool m_snapshotHasBeenSet;
+
+                    /**
+                     * <p>服务版本流量比例</p>
+                     */
+                    uint64_t m_trafficPercent;
+                    bool m_trafficPercentHasBeenSet;
+
+                    /**
+                     * <p>服务版本域名</p>
+                     */
+                    std::string m_versionDomain;
+                    bool m_versionDomainHasBeenSet;
+
+                    /**
+                     * <p>服务管理资源列表</p>
+                     */
+                    std::vector<CloudAppResourceItem> m_resources;
+                    bool m_resourcesHasBeenSet;
+
+                    /**
+                     * <p>[]ArtifactInfo 的 JSON 序列化</p>
+                     */
+                    std::vector<BuildArtifactInfo> m_artifacts;
+                    bool m_artifactsHasBeenSet;
 
                 };
             }

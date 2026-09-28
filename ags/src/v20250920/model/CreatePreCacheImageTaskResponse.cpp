@@ -26,7 +26,8 @@ using namespace std;
 CreatePreCacheImageTaskResponse::CreatePreCacheImageTaskResponse() :
     m_imageHasBeenSet(false),
     m_imageDigestHasBeenSet(false),
-    m_imageRegistryTypeHasBeenSet(false)
+    m_imageRegistryTypeHasBeenSet(false),
+    m_preCacheImageIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome CreatePreCacheImageTaskResponse::Deserialize(const string &p
         m_imageRegistryTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PreCacheImageId") && !rsp["PreCacheImageId"].IsNull())
+    {
+        if (!rsp["PreCacheImageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreCacheImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preCacheImageId = string(rsp["PreCacheImageId"].GetString());
+        m_preCacheImageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string CreatePreCacheImageTaskResponse::ToJsonString() const
         string key = "ImageRegistryType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageRegistryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preCacheImageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreCacheImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preCacheImageId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ string CreatePreCacheImageTaskResponse::GetImageRegistryType() const
 bool CreatePreCacheImageTaskResponse::ImageRegistryTypeHasBeenSet() const
 {
     return m_imageRegistryTypeHasBeenSet;
+}
+
+string CreatePreCacheImageTaskResponse::GetPreCacheImageId() const
+{
+    return m_preCacheImageId;
+}
+
+bool CreatePreCacheImageTaskResponse::PreCacheImageIdHasBeenSet() const
+{
+    return m_preCacheImageIdHasBeenSet;
 }
 
 

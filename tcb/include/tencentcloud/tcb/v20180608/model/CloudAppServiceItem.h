@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务名
-                     * @return ServiceName 服务名
+                     * 获取<p>服务名</p>
+                     * @return ServiceName <p>服务名</p>
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置服务名
-                     * @param _serviceName 服务名
+                     * 设置<p>服务名</p>
+                     * @param _serviceName <p>服务名</p>
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取框架名
-                     * @return Framework 框架名
+                     * 获取<p>框架名</p>
+                     * @return Framework <p>框架名</p>
                      * 
                      */
                     std::string GetFramework() const;
 
                     /**
-                     * 设置框架名
-                     * @param _framework 框架名
+                     * 设置<p>框架名</p>
+                     * @param _framework <p>框架名</p>
                      * 
                      */
                     void SetFramework(const std::string& _framework);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FrameworkHasBeenSet() const;
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取<p>域名</p>
+                     * @return Domain <p>域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置<p>域名</p>
+                     * @param _domain <p>域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取应用路径
-                     * @return AppPath 应用路径
+                     * 获取<p>应用路径</p>
+                     * @return AppPath <p>应用路径</p>
                      * 
                      */
                     std::string GetAppPath() const;
 
                     /**
-                     * 设置应用路径
-                     * @param _appPath 应用路径
+                     * 设置<p>应用路径</p>
+                     * @param _appPath <p>应用路径</p>
                      * 
                      */
                     void SetAppPath(const std::string& _appPath);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool AppPathHasBeenSet() const;
 
                     /**
-                     * 获取服务创建时间
-                     * @return CreateTime 服务创建时间
+                     * 获取<p>服务创建时间</p>
+                     * @return CreateTime <p>服务创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置服务创建时间
-                     * @param _createTime 服务创建时间
+                     * 设置<p>服务创建时间</p>
+                     * @param _createTime <p>服务创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最新版本名
-                     * @return LatestVersionName 最新版本名
+                     * 获取<p>最新版本名</p>
+                     * @return LatestVersionName <p>最新版本名</p>
                      * 
                      */
                     std::string GetLatestVersionName() const;
 
                     /**
-                     * 设置最新版本名
-                     * @param _latestVersionName 最新版本名
+                     * 设置<p>最新版本名</p>
+                     * @param _latestVersionName <p>最新版本名</p>
                      * 
                      */
                     void SetLatestVersionName(const std::string& _latestVersionName);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool LatestVersionNameHasBeenSet() const;
 
                     /**
-                     * 获取最新版本状态
-                     * @return LatestStatus 最新版本状态
+                     * 获取<p>最新版本状态</p>
+                     * @return LatestStatus <p>最新版本状态</p>
                      * 
                      */
                     std::string GetLatestStatus() const;
 
                     /**
-                     * 设置最新版本状态
-                     * @param _latestStatus 最新版本状态
+                     * 设置<p>最新版本状态</p>
+                     * @param _latestStatus <p>最新版本状态</p>
                      * 
                      */
                     void SetLatestStatus(const std::string& _latestStatus);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool LatestStatusHasBeenSet() const;
 
                     /**
-                     * 获取最新版本构建时间
-                     * @return LatestBuildTime 最新版本构建时间
+                     * 获取<p>最新版本构建时间</p>
+                     * @return LatestBuildTime <p>最新版本构建时间</p>
                      * 
                      */
                     std::string GetLatestBuildTime() const;
 
                     /**
-                     * 设置最新版本构建时间
-                     * @param _latestBuildTime 最新版本构建时间
+                     * 设置<p>最新版本构建时间</p>
+                     * @param _latestBuildTime <p>最新版本构建时间</p>
                      * 
                      */
                     void SetLatestBuildTime(const std::string& _latestBuildTime);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool LatestBuildTimeHasBeenSet() const;
 
                     /**
-                     * 获取部署类型
-                     * @return DeployType 部署类型
+                     * 获取<p>部署类型</p>
+                     * @return DeployType <p>部署类型</p>
                      * 
                      */
                     std::string GetDeployType() const;
 
                     /**
-                     * 设置部署类型
-                     * @param _deployType 部署类型
+                     * 设置<p>部署类型</p>
+                     * @param _deployType <p>部署类型</p>
                      * 
                      */
                     void SetDeployType(const std::string& _deployType);
@@ -235,61 +235,115 @@ namespace TencentCloud
                      */
                     bool DeployTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>构建配置</p>
+                     * @return BuildConfig <p>构建配置</p>
+                     * 
+                     */
+                    std::string GetBuildConfig() const;
+
+                    /**
+                     * 设置<p>构建配置</p>
+                     * @param _buildConfig <p>构建配置</p>
+                     * 
+                     */
+                    void SetBuildConfig(const std::string& _buildConfig);
+
+                    /**
+                     * 判断参数 BuildConfig 是否已赋值
+                     * @return BuildConfig 是否已赋值
+                     * 
+                     */
+                    bool BuildConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前流量版本</p>
+                     * @return CurrentVersion <p>当前流量版本</p>
+                     * 
+                     */
+                    std::string GetCurrentVersion() const;
+
+                    /**
+                     * 设置<p>当前流量版本</p>
+                     * @param _currentVersion <p>当前流量版本</p>
+                     * 
+                     */
+                    void SetCurrentVersion(const std::string& _currentVersion);
+
+                    /**
+                     * 判断参数 CurrentVersion 是否已赋值
+                     * @return CurrentVersion 是否已赋值
+                     * 
+                     */
+                    bool CurrentVersionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 服务名
+                     * <p>服务名</p>
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 框架名
+                     * <p>框架名</p>
                      */
                     std::string m_framework;
                     bool m_frameworkHasBeenSet;
 
                     /**
-                     * 域名
+                     * <p>域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 应用路径
+                     * <p>应用路径</p>
                      */
                     std::string m_appPath;
                     bool m_appPathHasBeenSet;
 
                     /**
-                     * 服务创建时间
+                     * <p>服务创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最新版本名
+                     * <p>最新版本名</p>
                      */
                     std::string m_latestVersionName;
                     bool m_latestVersionNameHasBeenSet;
 
                     /**
-                     * 最新版本状态
+                     * <p>最新版本状态</p>
                      */
                     std::string m_latestStatus;
                     bool m_latestStatusHasBeenSet;
 
                     /**
-                     * 最新版本构建时间
+                     * <p>最新版本构建时间</p>
                      */
                     std::string m_latestBuildTime;
                     bool m_latestBuildTimeHasBeenSet;
 
                     /**
-                     * 部署类型
+                     * <p>部署类型</p>
                      */
                     std::string m_deployType;
                     bool m_deployTypeHasBeenSet;
+
+                    /**
+                     * <p>构建配置</p>
+                     */
+                    std::string m_buildConfig;
+                    bool m_buildConfigHasBeenSet;
+
+                    /**
+                     * <p>当前流量版本</p>
+                     */
+                    std::string m_currentVersion;
+                    bool m_currentVersionHasBeenSet;
 
                 };
             }

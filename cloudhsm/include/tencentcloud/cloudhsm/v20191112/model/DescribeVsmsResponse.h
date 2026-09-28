@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取获取实例的总个数
-                     * @return TotalCount 获取实例的总个数
+                     * 获取<p>获取实例的总个数</p>
+                     * @return TotalCount <p>获取实例的总个数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取资源信息
-                     * @return VsmList 资源信息
+                     * 获取<p>资源信息</p>
+                     * @return VsmList <p>资源信息</p>
                      * 
                      */
                     std::vector<ResourceInfo> GetVsmList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 获取实例的总个数
+                     * <p>获取实例的总个数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 资源信息
+                     * <p>资源信息</p>
                      */
                     std::vector<ResourceInfo> m_vsmList;
                     bool m_vsmListHasBeenSet;

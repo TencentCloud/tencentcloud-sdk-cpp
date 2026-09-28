@@ -28,7 +28,8 @@ DescribeVsmsRequest::DescribeVsmsRequest() :
     m_searchWordHasBeenSet(false),
     m_tagFiltersHasBeenSet(false),
     m_manufacturerHasBeenSet(false),
-    m_hsmTypeHasBeenSet(false)
+    m_hsmTypeHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string DescribeVsmsRequest::ToJsonString() const
         string key = "HsmType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hsmType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +205,22 @@ void DescribeVsmsRequest::SetHsmType(const string& _hsmType)
 bool DescribeVsmsRequest::HsmTypeHasBeenSet() const
 {
     return m_hsmTypeHasBeenSet;
+}
+
+string DescribeVsmsRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeVsmsRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeVsmsRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

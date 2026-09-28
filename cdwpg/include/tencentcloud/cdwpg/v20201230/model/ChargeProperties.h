@@ -110,27 +110,6 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取计费类型0-按量计费，1-包年包月
-                     * @return PayMode 计费类型0-按量计费，1-包年包月
-                     * 
-                     */
-                    int64_t GetPayMode() const;
-
-                    /**
-                     * 设置计费类型0-按量计费，1-包年包月
-                     * @param _payMode 计费类型0-按量计费，1-包年包月
-                     * 
-                     */
-                    void SetPayMode(const int64_t& _payMode);
-
-                    /**
-                     * 判断参数 PayMode 是否已赋值
-                     * @return PayMode 是否已赋值
-                     * 
-                     */
-                    bool PayModeHasBeenSet() const;
-
-                    /**
                      * 获取PREPAID、POSTPAID_BY_HOUR
                      * @return ChargeType PREPAID、POSTPAID_BY_HOUR
                      * 
@@ -150,6 +129,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取计费类型0-按量计费，1-包年包月
+                     * @return PayMode 计费类型0-按量计费，1-包年包月
+                     * 
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置计费类型0-按量计费，1-包年包月
+                     * @param _payMode 计费类型0-按量计费，1-包年包月
+                     * 
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
 
                 private:
 
@@ -172,16 +172,16 @@ namespace TencentCloud
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 计费类型0-按量计费，1-包年包月
-                     */
-                    int64_t m_payMode;
-                    bool m_payModeHasBeenSet;
-
-                    /**
                      * PREPAID、POSTPAID_BY_HOUR
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * 计费类型0-按量计费，1-包年包月
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

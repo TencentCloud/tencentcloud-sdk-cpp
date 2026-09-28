@@ -158,7 +158,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DiffDetail.h
   include/tencentcloud/emr/v20190103/model/Disk.h
   include/tencentcloud/emr/v20190103/model/TimeAutoScaleStrategy.h
-  include/tencentcloud/emr/v20190103/model/DescribeBootScriptRequest.h
+  include/tencentcloud/emr/v20190103/model/AirflowDagSourceInput.h
   include/tencentcloud/emr/v20190103/model/EmrProductConfigOutter.h
   include/tencentcloud/emr/v20190103/model/HostPathVolumeSource.h
   include/tencentcloud/emr/v20190103/model/OperationLog.h
@@ -221,7 +221,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/NotRepeatStrategy.h
   include/tencentcloud/emr/v20190103/model/ConfigurationItem.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h
-  include/tencentcloud/emr/v20190103/model/DescribeSLInstanceResponse.h
+  include/tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsResponse.h
   include/tencentcloud/emr/v20190103/model/CBSVolume.h
   include/tencentcloud/emr/v20190103/model/TagInfo.h
   include/tencentcloud/emr/v20190103/model/DescribeBootScriptRsp.h
@@ -268,7 +268,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/EmrListInstance.h
   include/tencentcloud/emr/v20190103/model/DescribeResourceScheduleDiffDetailResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeYarnQueueResponse.h
-  include/tencentcloud/emr/v20190103/model/CreateGroupsSTDRequest.h
+  include/tencentcloud/emr/v20190103/model/DescribeClusterFlowStatusDetailResponse.h
   include/tencentcloud/emr/v20190103/model/ConvertPreToPostClusterRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeNodeDataDisksRequest.h
   include/tencentcloud/emr/v20190103/model/StopParams.h
@@ -334,6 +334,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/RayCluster.h
   include/tencentcloud/emr/v20190103/model/Item.h
   include/tencentcloud/emr/v20190103/model/ModifySLInstanceBasicResponse.h
+  include/tencentcloud/emr/v20190103/model/AirflowCfsSource.h
   include/tencentcloud/emr/v20190103/model/ConfigModifyInfoV2.h
   include/tencentcloud/emr/v20190103/model/DynamicInstanceForm.h
   include/tencentcloud/emr/v20190103/model/Order.h
@@ -350,7 +351,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/RedisInstance.h
   include/tencentcloud/emr/v20190103/model/PodSaleSpec.h
   include/tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewRequest.h
-  include/tencentcloud/emr/v20190103/model/DescribeClusterFlowStatusDetailResponse.h
+  include/tencentcloud/emr/v20190103/model/CreateGroupsSTDRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeSparkApplicationsRequest.h
   include/tencentcloud/emr/v20190103/model/SyncPodStateResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeNodeSpec.h
@@ -393,6 +394,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/NewResourceSpec.h
   include/tencentcloud/emr/v20190103/model/ModifyYarnQueueV2Response.h
+  include/tencentcloud/emr/v20190103/model/AirflowGitSource.h
   include/tencentcloud/emr/v20190103/model/ModifyInspectionSettingsRequest.h
   include/tencentcloud/emr/v20190103/model/NodeRenewPriceDetail.h
   include/tencentcloud/emr/v20190103/model/TriggerCondition.h
@@ -406,11 +408,12 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ResourceDetail.h
   include/tencentcloud/emr/v20190103/model/BootstrapAction.h
   include/tencentcloud/emr/v20190103/model/ModifyYarnQueueV2Request.h
+  include/tencentcloud/emr/v20190103/model/DescribeBootScriptRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h
   include/tencentcloud/emr/v20190103/model/ModifyDynamicInstanceForm.h
   include/tencentcloud/emr/v20190103/model/Execution.h
   include/tencentcloud/emr/v20190103/model/UpdateInstanceSettings.h
-  include/tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsResponse.h
+  include/tencentcloud/emr/v20190103/model/DescribeSLInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/ClusterRelationMeta.h
   include/tencentcloud/emr/v20190103/model/VolumeSetting.h
   include/tencentcloud/emr/v20190103/model/TerminateSLInstanceResponse.h
@@ -429,6 +432,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/CBSInstance.h
   include/tencentcloud/emr/v20190103/model/PodState.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleStrategiesResponse.h
+  include/tencentcloud/emr/v20190103/model/AirflowGitCredentialInput.h
   include/tencentcloud/emr/v20190103/model/ExternalService.h
   include/tencentcloud/emr/v20190103/model/CreateDynamicInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyResponse.h
@@ -593,7 +597,7 @@ set(emr_src
   src/v20190103/model/DiffDetail.cpp
   src/v20190103/model/Disk.cpp
   src/v20190103/model/TimeAutoScaleStrategy.cpp
-  src/v20190103/model/DescribeBootScriptRequest.cpp
+  src/v20190103/model/AirflowDagSourceInput.cpp
   src/v20190103/model/EmrProductConfigOutter.cpp
   src/v20190103/model/HostPathVolumeSource.cpp
   src/v20190103/model/OperationLog.cpp
@@ -656,7 +660,7 @@ set(emr_src
   src/v20190103/model/NotRepeatStrategy.cpp
   src/v20190103/model/ConfigurationItem.cpp
   src/v20190103/model/InquiryPriceCreateInstanceRequest.cpp
-  src/v20190103/model/DescribeSLInstanceResponse.cpp
+  src/v20190103/model/DescribeEmrOverviewMetricsResponse.cpp
   src/v20190103/model/CBSVolume.cpp
   src/v20190103/model/TagInfo.cpp
   src/v20190103/model/DescribeBootScriptRsp.cpp
@@ -703,7 +707,7 @@ set(emr_src
   src/v20190103/model/EmrListInstance.cpp
   src/v20190103/model/DescribeResourceScheduleDiffDetailResponse.cpp
   src/v20190103/model/DescribeYarnQueueResponse.cpp
-  src/v20190103/model/CreateGroupsSTDRequest.cpp
+  src/v20190103/model/DescribeClusterFlowStatusDetailResponse.cpp
   src/v20190103/model/ConvertPreToPostClusterRequest.cpp
   src/v20190103/model/DescribeNodeDataDisksRequest.cpp
   src/v20190103/model/StopParams.cpp
@@ -769,6 +773,7 @@ set(emr_src
   src/v20190103/model/RayCluster.cpp
   src/v20190103/model/Item.cpp
   src/v20190103/model/ModifySLInstanceBasicResponse.cpp
+  src/v20190103/model/AirflowCfsSource.cpp
   src/v20190103/model/ConfigModifyInfoV2.cpp
   src/v20190103/model/DynamicInstanceForm.cpp
   src/v20190103/model/Order.cpp
@@ -785,7 +790,7 @@ set(emr_src
   src/v20190103/model/RedisInstance.cpp
   src/v20190103/model/PodSaleSpec.cpp
   src/v20190103/model/DescribeHBaseTableOverviewRequest.cpp
-  src/v20190103/model/DescribeClusterFlowStatusDetailResponse.cpp
+  src/v20190103/model/CreateGroupsSTDRequest.cpp
   src/v20190103/model/DescribeSparkApplicationsRequest.cpp
   src/v20190103/model/SyncPodStateResponse.cpp
   src/v20190103/model/DescribeNodeSpec.cpp
@@ -828,6 +833,7 @@ set(emr_src
   src/v20190103/model/InquiryPriceUpdateInstanceResponse.cpp
   src/v20190103/model/NewResourceSpec.cpp
   src/v20190103/model/ModifyYarnQueueV2Response.cpp
+  src/v20190103/model/AirflowGitSource.cpp
   src/v20190103/model/ModifyInspectionSettingsRequest.cpp
   src/v20190103/model/NodeRenewPriceDetail.cpp
   src/v20190103/model/TriggerCondition.cpp
@@ -841,11 +847,12 @@ set(emr_src
   src/v20190103/model/ResourceDetail.cpp
   src/v20190103/model/BootstrapAction.cpp
   src/v20190103/model/ModifyYarnQueueV2Request.cpp
+  src/v20190103/model/DescribeBootScriptRequest.cpp
   src/v20190103/model/DescribeClusterNodesRequest.cpp
   src/v20190103/model/ModifyDynamicInstanceForm.cpp
   src/v20190103/model/Execution.cpp
   src/v20190103/model/UpdateInstanceSettings.cpp
-  src/v20190103/model/DescribeEmrOverviewMetricsResponse.cpp
+  src/v20190103/model/DescribeSLInstanceResponse.cpp
   src/v20190103/model/ClusterRelationMeta.cpp
   src/v20190103/model/VolumeSetting.cpp
   src/v20190103/model/TerminateSLInstanceResponse.cpp
@@ -864,6 +871,7 @@ set(emr_src
   src/v20190103/model/CBSInstance.cpp
   src/v20190103/model/PodState.cpp
   src/v20190103/model/DescribeAutoScaleStrategiesResponse.cpp
+  src/v20190103/model/AirflowGitCredentialInput.cpp
   src/v20190103/model/ExternalService.cpp
   src/v20190103/model/CreateDynamicInstanceResponse.cpp
   src/v20190103/model/ModifyAutoScaleStrategyResponse.cpp

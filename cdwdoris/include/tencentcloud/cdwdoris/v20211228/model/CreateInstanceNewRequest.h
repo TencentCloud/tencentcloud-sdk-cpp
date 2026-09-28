@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取FE规格
-                     * @return FeSpec FE规格
+                     * 获取<p>FE规格</p>
+                     * @return FeSpec <p>FE规格</p>
                      * 
                      */
                     CreateInstanceSpec GetFeSpec() const;
 
                     /**
-                     * 设置FE规格
-                     * @param _feSpec FE规格
+                     * 设置<p>FE规格</p>
+                     * @param _feSpec <p>FE规格</p>
                      * 
                      */
                     void SetFeSpec(const CreateInstanceSpec& _feSpec);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FeSpecHasBeenSet() const;
 
                     /**
-                     * 获取BE规格
-                     * @return BeSpec BE规格
+                     * 获取<p>BE规格</p>
+                     * @return BeSpec <p>BE规格</p>
                      * 
                      */
                     CreateInstanceSpec GetBeSpec() const;
 
                     /**
-                     * 设置BE规格
-                     * @param _beSpec BE规格
+                     * 设置<p>BE规格</p>
+                     * @param _beSpec <p>BE规格</p>
                      * 
                      */
                     void SetBeSpec(const CreateInstanceSpec& _beSpec);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool BeSpecHasBeenSet() const;
 
                     /**
-                     * 获取是否高可用
-                     * @return HaFlag 是否高可用
+                     * 获取<p>是否高可用</p>
+                     * @return HaFlag <p>是否高可用</p>
                      * 
                      */
                     bool GetHaFlag() const;
 
                     /**
-                     * 设置是否高可用
-                     * @param _haFlag 是否高可用
+                     * 设置<p>是否高可用</p>
+                     * @param _haFlag <p>是否高可用</p>
                      * 
                      */
                     void SetHaFlag(const bool& _haFlag);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool HaFlagHasBeenSet() const;
 
                     /**
-                     * 获取用户VPCID
-                     * @return UserVPCId 用户VPCID
+                     * 获取<p>用户VPCID</p>
+                     * @return UserVPCId <p>用户VPCID</p>
                      * 
                      */
                     std::string GetUserVPCId() const;
 
                     /**
-                     * 设置用户VPCID
-                     * @param _userVPCId 用户VPCID
+                     * 设置<p>用户VPCID</p>
+                     * @param _userVPCId <p>用户VPCID</p>
                      * 
                      */
                     void SetUserVPCId(const std::string& _userVPCId);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UserVPCIdHasBeenSet() const;
 
                     /**
-                     * 获取用户子网ID
-                     * @return UserSubnetId 用户子网ID
+                     * 获取<p>用户子网ID</p>
+                     * @return UserSubnetId <p>用户子网ID</p>
                      * 
                      */
                     std::string GetUserSubnetId() const;
 
                     /**
-                     * 设置用户子网ID
-                     * @param _userSubnetId 用户子网ID
+                     * 设置<p>用户子网ID</p>
+                     * @param _userSubnetId <p>用户子网ID</p>
                      * 
                      */
                     void SetUserSubnetId(const std::string& _userSubnetId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool UserSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取产品版本号
-                     * @return ProductVersion 产品版本号
+                     * 获取<p>产品版本号</p>
+                     * @return ProductVersion <p>产品版本号</p>
                      * 
                      */
                     std::string GetProductVersion() const;
 
                     /**
-                     * 设置产品版本号
-                     * @param _productVersion 产品版本号
+                     * 设置<p>产品版本号</p>
+                     * @param _productVersion <p>产品版本号</p>
                      * 
                      */
                     void SetProductVersion(const std::string& _productVersion);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ProductVersionHasBeenSet() const;
 
                     /**
-                     * 获取付费类型
-                     * @return ChargeProperties 付费类型
+                     * 获取<p>付费类型</p>
+                     * @return ChargeProperties <p>付费类型</p>
                      * 
                      */
                     ChargeProperties GetChargeProperties() const;
 
                     /**
-                     * 设置付费类型
-                     * @param _chargeProperties 付费类型
+                     * 设置<p>付费类型</p>
+                     * @param _chargeProperties <p>付费类型</p>
                      * 
                      */
                     void SetChargeProperties(const ChargeProperties& _chargeProperties);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ChargePropertiesHasBeenSet() const;
 
                     /**
-                     * 获取实例名字
-                     * @return InstanceName 实例名字
+                     * 获取<p>实例名字</p>
+                     * @return InstanceName <p>实例名字</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名字
-                     * @param _instanceName 实例名字
+                     * 设置<p>实例名字</p>
+                     * @param _instanceName <p>实例名字</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取数据库密码
-                     * @return DorisUserPwd 数据库密码
+                     * 获取<p>数据库密码</p>
+                     * @return DorisUserPwd <p>数据库密码</p>
                      * 
                      */
                     std::string GetDorisUserPwd() const;
 
                     /**
-                     * 设置数据库密码
-                     * @param _dorisUserPwd 数据库密码
+                     * 设置<p>数据库密码</p>
+                     * @param _dorisUserPwd <p>数据库密码</p>
                      * 
                      */
                     void SetDorisUserPwd(const std::string& _dorisUserPwd);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool DorisUserPwdHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return Tags <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tags <p>标签列表</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -278,27 +278,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取高可用类型：
-0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），
-1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count>=3，且为奇数），
-2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count>=5，且为奇数）。
-                     * @return HaType 高可用类型：
-0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），
-1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count>=3，且为奇数），
-2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count>=5，且为奇数）。
+                     * 获取<p>高可用类型：<br>0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），<br>1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count&gt;=3，且为奇数），<br>2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count&gt;=5，且为奇数）。</p>
+                     * @return HaType <p>高可用类型：<br>0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），<br>1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count&gt;=3，且为奇数），<br>2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count&gt;=5，且为奇数）。</p>
                      * 
                      */
                     int64_t GetHaType() const;
 
                     /**
-                     * 设置高可用类型：
-0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），
-1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count>=3，且为奇数），
-2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count>=5，且为奇数）。
-                     * @param _haType 高可用类型：
-0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），
-1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count>=3，且为奇数），
-2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count>=5，且为奇数）。
+                     * 设置<p>高可用类型：<br>0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），<br>1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count&gt;=3，且为奇数），<br>2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count&gt;=5，且为奇数）。</p>
+                     * @param _haType <p>高可用类型：<br>0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），<br>1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count&gt;=3，且为奇数），<br>2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count&gt;=5，且为奇数）。</p>
                      * 
                      */
                     void SetHaType(const int64_t& _haType);
@@ -311,15 +299,15 @@ namespace TencentCloud
                     bool HaTypeHasBeenSet() const;
 
                     /**
-                     * 获取表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
-                     * @return CaseSensitive 表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
+                     * 获取<p>表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储</p>
+                     * @return CaseSensitive <p>表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储</p>
                      * 
                      */
                     int64_t GetCaseSensitive() const;
 
                     /**
-                     * 设置表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
-                     * @param _caseSensitive 表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
+                     * 设置<p>表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储</p>
+                     * @param _caseSensitive <p>表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储</p>
                      * 
                      */
                     void SetCaseSensitive(const int64_t& _caseSensitive);
@@ -332,15 +320,15 @@ namespace TencentCloud
                     bool CaseSensitiveHasBeenSet() const;
 
                     /**
-                     * 获取是否开启多可用区
-                     * @return EnableMultiZones 是否开启多可用区
+                     * 获取<p>是否开启多可用区</p>
+                     * @return EnableMultiZones <p>是否开启多可用区</p>
                      * 
                      */
                     bool GetEnableMultiZones() const;
 
                     /**
-                     * 设置是否开启多可用区
-                     * @param _enableMultiZones 是否开启多可用区
+                     * 设置<p>是否开启多可用区</p>
+                     * @param _enableMultiZones <p>是否开启多可用区</p>
                      * 
                      */
                     void SetEnableMultiZones(const bool& _enableMultiZones);
@@ -353,15 +341,15 @@ namespace TencentCloud
                     bool EnableMultiZonesHasBeenSet() const;
 
                     /**
-                     * 获取开启多可用区后，用户的所有可用区和子网信息
-                     * @return UserMultiZoneInfos 开启多可用区后，用户的所有可用区和子网信息
+                     * 获取<p>开启多可用区后，用户的所有可用区和子网信息</p>
+                     * @return UserMultiZoneInfos <p>开启多可用区后，用户的所有可用区和子网信息</p>
                      * @deprecated
                      */
                     NetworkInfo GetUserMultiZoneInfos() const;
 
                     /**
-                     * 设置开启多可用区后，用户的所有可用区和子网信息
-                     * @param _userMultiZoneInfos 开启多可用区后，用户的所有可用区和子网信息
+                     * 设置<p>开启多可用区后，用户的所有可用区和子网信息</p>
+                     * @param _userMultiZoneInfos <p>开启多可用区后，用户的所有可用区和子网信息</p>
                      * @deprecated
                      */
                     void SetUserMultiZoneInfos(const NetworkInfo& _userMultiZoneInfos);
@@ -374,15 +362,15 @@ namespace TencentCloud
                     bool UserMultiZoneInfosHasBeenSet() const;
 
                     /**
-                     * 获取开启多可用区后，用户的所有可用区和子网信息
-                     * @return UserMultiZoneInfoArr 开启多可用区后，用户的所有可用区和子网信息
+                     * 获取<p>开启多可用区后，用户的所有可用区和子网信息</p>
+                     * @return UserMultiZoneInfoArr <p>开启多可用区后，用户的所有可用区和子网信息</p>
                      * 
                      */
                     std::vector<NetworkInfo> GetUserMultiZoneInfoArr() const;
 
                     /**
-                     * 设置开启多可用区后，用户的所有可用区和子网信息
-                     * @param _userMultiZoneInfoArr 开启多可用区后，用户的所有可用区和子网信息
+                     * 设置<p>开启多可用区后，用户的所有可用区和子网信息</p>
+                     * @param _userMultiZoneInfoArr <p>开启多可用区后，用户的所有可用区和子网信息</p>
                      * 
                      */
                     void SetUserMultiZoneInfoArr(const std::vector<NetworkInfo>& _userMultiZoneInfoArr);
@@ -395,15 +383,15 @@ namespace TencentCloud
                     bool UserMultiZoneInfoArrHasBeenSet() const;
 
                     /**
-                     * 获取是否存算分离
-                     * @return IsSSC 是否存算分离
+                     * 获取<p>是否存算分离</p>
+                     * @return IsSSC <p>是否存算分离</p>
                      * 
                      */
                     bool GetIsSSC() const;
 
                     /**
-                     * 设置是否存算分离
-                     * @param _isSSC 是否存算分离
+                     * 设置<p>是否存算分离</p>
+                     * @param _isSSC <p>是否存算分离</p>
                      * 
                      */
                     void SetIsSSC(const bool& _isSSC);
@@ -416,15 +404,15 @@ namespace TencentCloud
                     bool IsSSCHasBeenSet() const;
 
                     /**
-                     * 获取CU数
-                     * @return SSCCU CU数
+                     * 获取<p>CU数</p>
+                     * @return SSCCU <p>CU数</p>
                      * 
                      */
                     int64_t GetSSCCU() const;
 
                     /**
-                     * 设置CU数
-                     * @param _sSCCU CU数
+                     * 设置<p>CU数</p>
+                     * @param _sSCCU <p>CU数</p>
                      * 
                      */
                     void SetSSCCU(const int64_t& _sSCCU);
@@ -437,15 +425,15 @@ namespace TencentCloud
                     bool SSCCUHasBeenSet() const;
 
                     /**
-                     * 获取缓存盘大小
-                     * @return CacheDiskSize 缓存盘大小
+                     * 获取<p>缓存盘大小</p>
+                     * @return CacheDiskSize <p>缓存盘大小</p>
                      * @deprecated
                      */
                     std::string GetCacheDiskSize() const;
 
                     /**
-                     * 设置缓存盘大小
-                     * @param _cacheDiskSize 缓存盘大小
+                     * 设置<p>缓存盘大小</p>
+                     * @param _cacheDiskSize <p>缓存盘大小</p>
                      * @deprecated
                      */
                     void SetCacheDiskSize(const std::string& _cacheDiskSize);
@@ -458,15 +446,15 @@ namespace TencentCloud
                     bool CacheDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取缓存盘大小
-                     * @return CacheDataDiskSize 缓存盘大小
+                     * 获取<p>缓存盘大小</p>
+                     * @return CacheDataDiskSize <p>缓存盘大小</p>
                      * 
                      */
                     int64_t GetCacheDataDiskSize() const;
 
                     /**
-                     * 设置缓存盘大小
-                     * @param _cacheDataDiskSize 缓存盘大小
+                     * 设置<p>缓存盘大小</p>
+                     * @param _cacheDataDiskSize <p>缓存盘大小</p>
                      * 
                      */
                     void SetCacheDataDiskSize(const int64_t& _cacheDataDiskSize);
@@ -478,130 +466,154 @@ namespace TencentCloud
                      */
                     bool CacheDataDiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>磁盘加密</p>
+                     * @return DiskEncrypt <p>磁盘加密</p>
+                     * 
+                     */
+                    int64_t GetDiskEncrypt() const;
+
+                    /**
+                     * 设置<p>磁盘加密</p>
+                     * @param _diskEncrypt <p>磁盘加密</p>
+                     * 
+                     */
+                    void SetDiskEncrypt(const int64_t& _diskEncrypt);
+
+                    /**
+                     * 判断参数 DiskEncrypt 是否已赋值
+                     * @return DiskEncrypt 是否已赋值
+                     * 
+                     */
+                    bool DiskEncryptHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * FE规格
+                     * <p>FE规格</p>
                      */
                     CreateInstanceSpec m_feSpec;
                     bool m_feSpecHasBeenSet;
 
                     /**
-                     * BE规格
+                     * <p>BE规格</p>
                      */
                     CreateInstanceSpec m_beSpec;
                     bool m_beSpecHasBeenSet;
 
                     /**
-                     * 是否高可用
+                     * <p>是否高可用</p>
                      */
                     bool m_haFlag;
                     bool m_haFlagHasBeenSet;
 
                     /**
-                     * 用户VPCID
+                     * <p>用户VPCID</p>
                      */
                     std::string m_userVPCId;
                     bool m_userVPCIdHasBeenSet;
 
                     /**
-                     * 用户子网ID
+                     * <p>用户子网ID</p>
                      */
                     std::string m_userSubnetId;
                     bool m_userSubnetIdHasBeenSet;
 
                     /**
-                     * 产品版本号
+                     * <p>产品版本号</p>
                      */
                     std::string m_productVersion;
                     bool m_productVersionHasBeenSet;
 
                     /**
-                     * 付费类型
+                     * <p>付费类型</p>
                      */
                     ChargeProperties m_chargeProperties;
                     bool m_chargePropertiesHasBeenSet;
 
                     /**
-                     * 实例名字
+                     * <p>实例名字</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 数据库密码
+                     * <p>数据库密码</p>
                      */
                     std::string m_dorisUserPwd;
                     bool m_dorisUserPwdHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 高可用类型：
-0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），
-1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count>=3，且为奇数），
-2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count>=5，且为奇数）。
+                     * <p>高可用类型：<br>0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），<br>1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count&gt;=3，且为奇数），<br>2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count&gt;=5，且为奇数）。</p>
                      */
                     int64_t m_haType;
                     bool m_haTypeHasBeenSet;
 
                     /**
-                     * 表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储
+                     * <p>表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储</p>
                      */
                     int64_t m_caseSensitive;
                     bool m_caseSensitiveHasBeenSet;
 
                     /**
-                     * 是否开启多可用区
+                     * <p>是否开启多可用区</p>
                      */
                     bool m_enableMultiZones;
                     bool m_enableMultiZonesHasBeenSet;
 
                     /**
-                     * 开启多可用区后，用户的所有可用区和子网信息
+                     * <p>开启多可用区后，用户的所有可用区和子网信息</p>
                      */
                     NetworkInfo m_userMultiZoneInfos;
                     bool m_userMultiZoneInfosHasBeenSet;
 
                     /**
-                     * 开启多可用区后，用户的所有可用区和子网信息
+                     * <p>开启多可用区后，用户的所有可用区和子网信息</p>
                      */
                     std::vector<NetworkInfo> m_userMultiZoneInfoArr;
                     bool m_userMultiZoneInfoArrHasBeenSet;
 
                     /**
-                     * 是否存算分离
+                     * <p>是否存算分离</p>
                      */
                     bool m_isSSC;
                     bool m_isSSCHasBeenSet;
 
                     /**
-                     * CU数
+                     * <p>CU数</p>
                      */
                     int64_t m_sSCCU;
                     bool m_sSCCUHasBeenSet;
 
                     /**
-                     * 缓存盘大小
+                     * <p>缓存盘大小</p>
                      */
                     std::string m_cacheDiskSize;
                     bool m_cacheDiskSizeHasBeenSet;
 
                     /**
-                     * 缓存盘大小
+                     * <p>缓存盘大小</p>
                      */
                     int64_t m_cacheDataDiskSize;
                     bool m_cacheDataDiskSizeHasBeenSet;
+
+                    /**
+                     * <p>磁盘加密</p>
+                     */
+                    int64_t m_diskEncrypt;
+                    bool m_diskEncryptHasBeenSet;
 
                 };
             }

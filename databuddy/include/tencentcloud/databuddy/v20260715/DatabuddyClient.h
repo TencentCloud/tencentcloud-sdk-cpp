@@ -29,22 +29,34 @@
 #include <tencentcloud/databuddy/v20260715/model/CreateConsoleGroupResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateFileRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateFileResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/CreateFolderRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/CreateFolderResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateWorkflowRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateWorkflowResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/CreateWorkspaceRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/CreateWorkspaceResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/DeleteConsoleGroupsRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/DeleteConsoleGroupsResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/DeleteFileRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/DeleteFileResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/DeleteFolderRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/DeleteFolderResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/DeleteWorkflowRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/DeleteWorkflowResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/DeleteWorkspaceRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/DeleteWorkspaceResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/GetFileRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/GetFileResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/GetFolderRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/GetFolderResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/GetWorkflowRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/GetWorkflowResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/GetWorkflowRunRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/GetWorkflowRunResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/GetWorkflowTaskRunRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/GetWorkflowTaskRunResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/GetWorkspaceRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/GetWorkspaceResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/KillWorkflowRunRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/KillWorkflowRunResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListConsoleGroupUsersRequest.h>
@@ -55,6 +67,8 @@
 #include <tencentcloud/databuddy/v20260715/model/ListConsoleRolesResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListConsoleUsersRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/ListConsoleUsersResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/ListFilesRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/ListFilesResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkflowRunsRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkflowRunsResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkflowTaskRunsRequest.h>
@@ -75,8 +89,12 @@
 #include <tencentcloud/databuddy/v20260715/model/UpdateConsoleUsersResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateFileRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateFileResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/UpdateFolderRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/UpdateFolderResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateWorkflowRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateWorkflowResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceResponse.h>
 
 
 namespace TencentCloud
@@ -100,21 +118,36 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFileResponse> CreateFileOutcome;
                 typedef std::future<CreateFileOutcome> CreateFileOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::CreateFileRequest&, CreateFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFolderResponse> CreateFolderOutcome;
+                typedef std::future<CreateFolderOutcome> CreateFolderOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::CreateFolderRequest&, CreateFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFolderAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWorkflowResponse> CreateWorkflowOutcome;
                 typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::CreateWorkflowRequest&, CreateWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWorkspaceResponse> CreateWorkspaceOutcome;
+                typedef std::future<CreateWorkspaceOutcome> CreateWorkspaceOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::CreateWorkspaceRequest&, CreateWorkspaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkspaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteConsoleGroupsResponse> DeleteConsoleGroupsOutcome;
                 typedef std::future<DeleteConsoleGroupsOutcome> DeleteConsoleGroupsOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::DeleteConsoleGroupsRequest&, DeleteConsoleGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsoleGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFileResponse> DeleteFileOutcome;
                 typedef std::future<DeleteFileOutcome> DeleteFileOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::DeleteFileRequest&, DeleteFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFolderResponse> DeleteFolderOutcome;
+                typedef std::future<DeleteFolderOutcome> DeleteFolderOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::DeleteFolderRequest&, DeleteFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFolderAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWorkflowResponse> DeleteWorkflowOutcome;
                 typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::DeleteWorkflowRequest&, DeleteWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWorkspaceResponse> DeleteWorkspaceOutcome;
+                typedef std::future<DeleteWorkspaceOutcome> DeleteWorkspaceOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::DeleteWorkspaceRequest&, DeleteWorkspaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkspaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetFileResponse> GetFileOutcome;
                 typedef std::future<GetFileOutcome> GetFileOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::GetFileRequest&, GetFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFolderResponse> GetFolderOutcome;
+                typedef std::future<GetFolderOutcome> GetFolderOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::GetFolderRequest&, GetFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFolderAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetWorkflowResponse> GetWorkflowOutcome;
                 typedef std::future<GetWorkflowOutcome> GetWorkflowOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::GetWorkflowRequest&, GetWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkflowAsyncHandler;
@@ -124,6 +157,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetWorkflowTaskRunResponse> GetWorkflowTaskRunOutcome;
                 typedef std::future<GetWorkflowTaskRunOutcome> GetWorkflowTaskRunOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::GetWorkflowTaskRunRequest&, GetWorkflowTaskRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkflowTaskRunAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetWorkspaceResponse> GetWorkspaceOutcome;
+                typedef std::future<GetWorkspaceOutcome> GetWorkspaceOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::GetWorkspaceRequest&, GetWorkspaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkspaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::KillWorkflowRunResponse> KillWorkflowRunOutcome;
                 typedef std::future<KillWorkflowRunOutcome> KillWorkflowRunOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::KillWorkflowRunRequest&, KillWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillWorkflowRunAsyncHandler;
@@ -139,6 +175,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListConsoleUsersResponse> ListConsoleUsersOutcome;
                 typedef std::future<ListConsoleUsersOutcome> ListConsoleUsersOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::ListConsoleUsersRequest&, ListConsoleUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListConsoleUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListFilesResponse> ListFilesOutcome;
+                typedef std::future<ListFilesOutcome> ListFilesOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::ListFilesRequest&, ListFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListWorkflowRunsResponse> ListWorkflowRunsOutcome;
                 typedef std::future<ListWorkflowRunsOutcome> ListWorkflowRunsOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::ListWorkflowRunsRequest&, ListWorkflowRunsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkflowRunsAsyncHandler;
@@ -169,9 +208,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateFileResponse> UpdateFileOutcome;
                 typedef std::future<UpdateFileOutcome> UpdateFileOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::UpdateFileRequest&, UpdateFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateFolderResponse> UpdateFolderOutcome;
+                typedef std::future<UpdateFolderOutcome> UpdateFolderOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::UpdateFolderRequest&, UpdateFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFolderAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateWorkflowResponse> UpdateWorkflowOutcome;
                 typedef std::future<UpdateWorkflowOutcome> UpdateWorkflowOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::UpdateWorkflowRequest&, UpdateWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateWorkspaceResponse> UpdateWorkspaceOutcome;
+                typedef std::future<UpdateWorkspaceOutcome> UpdateWorkspaceOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::UpdateWorkspaceRequest&, UpdateWorkspaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkspaceAsyncHandler;
 
 
 
@@ -210,6 +255,15 @@ namespace TencentCloud
                 CreateFileOutcomeCallable CreateFileCallable(const Model::CreateFileRequest& request);
 
                 /**
+                 *创建文件夹
+                 * @param req CreateFolderRequest
+                 * @return CreateFolderOutcome
+                 */
+                CreateFolderOutcome CreateFolder(const Model::CreateFolderRequest &request);
+                void CreateFolderAsync(const Model::CreateFolderRequest& request, const CreateFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFolderOutcomeCallable CreateFolderCallable(const Model::CreateFolderRequest& request);
+
+                /**
                  *创建工作流
                  * @param req CreateWorkflowRequest
                  * @return CreateWorkflowOutcome
@@ -217,6 +271,15 @@ namespace TencentCloud
                 CreateWorkflowOutcome CreateWorkflow(const Model::CreateWorkflowRequest &request);
                 void CreateWorkflowAsync(const Model::CreateWorkflowRequest& request, const CreateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateWorkflowOutcomeCallable CreateWorkflowCallable(const Model::CreateWorkflowRequest& request);
+
+                /**
+                 *创建工作空间
+                 * @param req CreateWorkspaceRequest
+                 * @return CreateWorkspaceOutcome
+                 */
+                CreateWorkspaceOutcome CreateWorkspace(const Model::CreateWorkspaceRequest &request);
+                void CreateWorkspaceAsync(const Model::CreateWorkspaceRequest& request, const CreateWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWorkspaceOutcomeCallable CreateWorkspaceCallable(const Model::CreateWorkspaceRequest& request);
 
                 /**
                  *删除控制台用户组
@@ -254,6 +317,15 @@ namespace TencentCloud
                 DeleteFileOutcomeCallable DeleteFileCallable(const Model::DeleteFileRequest& request);
 
                 /**
+                 *删除文件夹
+                 * @param req DeleteFolderRequest
+                 * @return DeleteFolderOutcome
+                 */
+                DeleteFolderOutcome DeleteFolder(const Model::DeleteFolderRequest &request);
+                void DeleteFolderAsync(const Model::DeleteFolderRequest& request, const DeleteFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFolderOutcomeCallable DeleteFolderCallable(const Model::DeleteFolderRequest& request);
+
+                /**
                  *删除工作流
                  * @param req DeleteWorkflowRequest
                  * @return DeleteWorkflowOutcome
@@ -261,6 +333,15 @@ namespace TencentCloud
                 DeleteWorkflowOutcome DeleteWorkflow(const Model::DeleteWorkflowRequest &request);
                 void DeleteWorkflowAsync(const Model::DeleteWorkflowRequest& request, const DeleteWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteWorkflowOutcomeCallable DeleteWorkflowCallable(const Model::DeleteWorkflowRequest& request);
+
+                /**
+                 *删除工作空间
+                 * @param req DeleteWorkspaceRequest
+                 * @return DeleteWorkspaceOutcome
+                 */
+                DeleteWorkspaceOutcome DeleteWorkspace(const Model::DeleteWorkspaceRequest &request);
+                void DeleteWorkspaceAsync(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWorkspaceOutcomeCallable DeleteWorkspaceCallable(const Model::DeleteWorkspaceRequest& request);
 
                 /**
                  *获取文件的元信息，可选包含文件内容，支持按版本读取历史快照。
@@ -289,6 +370,15 @@ namespace TencentCloud
                 GetFileOutcomeCallable GetFileCallable(const Model::GetFileRequest& request);
 
                 /**
+                 *获取文件夹详情
+                 * @param req GetFolderRequest
+                 * @return GetFolderOutcome
+                 */
+                GetFolderOutcome GetFolder(const Model::GetFolderRequest &request);
+                void GetFolderAsync(const Model::GetFolderRequest& request, const GetFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFolderOutcomeCallable GetFolderCallable(const Model::GetFolderRequest& request);
+
+                /**
                  *获取工作流详细信息
                  * @param req GetWorkflowRequest
                  * @return GetWorkflowOutcome
@@ -314,6 +404,15 @@ namespace TencentCloud
                 GetWorkflowTaskRunOutcome GetWorkflowTaskRun(const Model::GetWorkflowTaskRunRequest &request);
                 void GetWorkflowTaskRunAsync(const Model::GetWorkflowTaskRunRequest& request, const GetWorkflowTaskRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetWorkflowTaskRunOutcomeCallable GetWorkflowTaskRunCallable(const Model::GetWorkflowTaskRunRequest& request);
+
+                /**
+                 *查询工作空间详情
+                 * @param req GetWorkspaceRequest
+                 * @return GetWorkspaceOutcome
+                 */
+                GetWorkspaceOutcome GetWorkspace(const Model::GetWorkspaceRequest &request);
+                void GetWorkspaceAsync(const Model::GetWorkspaceRequest& request, const GetWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetWorkspaceOutcomeCallable GetWorkspaceCallable(const Model::GetWorkspaceRequest& request);
 
                 /**
                  *终止工作流的运行
@@ -359,6 +458,15 @@ namespace TencentCloud
                 ListConsoleUsersOutcome ListConsoleUsers(const Model::ListConsoleUsersRequest &request);
                 void ListConsoleUsersAsync(const Model::ListConsoleUsersRequest& request, const ListConsoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListConsoleUsersOutcomeCallable ListConsoleUsersCallable(const Model::ListConsoleUsersRequest& request);
+
+                /**
+                 *获取文件夹和文件列表
+                 * @param req ListFilesRequest
+                 * @return ListFilesOutcome
+                 */
+                ListFilesOutcome ListFiles(const Model::ListFilesRequest &request);
+                void ListFilesAsync(const Model::ListFilesRequest& request, const ListFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListFilesOutcomeCallable ListFilesCallable(const Model::ListFilesRequest& request);
 
                 /**
                  *工作流运行列表
@@ -471,6 +579,15 @@ namespace TencentCloud
                 UpdateFileOutcomeCallable UpdateFileCallable(const Model::UpdateFileRequest& request);
 
                 /**
+                 *更新文件夹（支持重命名+移动）
+                 * @param req UpdateFolderRequest
+                 * @return UpdateFolderOutcome
+                 */
+                UpdateFolderOutcome UpdateFolder(const Model::UpdateFolderRequest &request);
+                void UpdateFolderAsync(const Model::UpdateFolderRequest& request, const UpdateFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateFolderOutcomeCallable UpdateFolderCallable(const Model::UpdateFolderRequest& request);
+
+                /**
                  *更新工作流
                  * @param req UpdateWorkflowRequest
                  * @return UpdateWorkflowOutcome
@@ -478,6 +595,15 @@ namespace TencentCloud
                 UpdateWorkflowOutcome UpdateWorkflow(const Model::UpdateWorkflowRequest &request);
                 void UpdateWorkflowAsync(const Model::UpdateWorkflowRequest& request, const UpdateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateWorkflowOutcomeCallable UpdateWorkflowCallable(const Model::UpdateWorkflowRequest& request);
+
+                /**
+                 *修改工作空间
+                 * @param req UpdateWorkspaceRequest
+                 * @return UpdateWorkspaceOutcome
+                 */
+                UpdateWorkspaceOutcome UpdateWorkspace(const Model::UpdateWorkspaceRequest &request);
+                void UpdateWorkspaceAsync(const Model::UpdateWorkspaceRequest& request, const UpdateWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateWorkspaceOutcomeCallable UpdateWorkspaceCallable(const Model::UpdateWorkspaceRequest& request);
 
             };
         }

@@ -34,7 +34,8 @@ ImageTaskInput::ImageTaskInput() :
     m_aiExpansionConfigHasBeenSet(false),
     m_aiStoryboardConfigHasBeenSet(false),
     m_understandImageConfigHasBeenSet(false),
-    m_imageQualityConfigHasBeenSet(false)
+    m_imageQualityConfigHasBeenSet(false),
+    m_aiComposeConfigHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,23 @@ CoreInternalOutcome ImageTaskInput::Deserialize(const rapidjson::Value &value)
         m_imageQualityConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("AiComposeConfig") && !value["AiComposeConfig"].IsNull())
+    {
+        if (!value["AiComposeConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskInput.AiComposeConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiComposeConfig.Deserialize(value["AiComposeConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiComposeConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +430,15 @@ void ImageTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageQualityConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aiComposeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiComposeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiComposeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -639,5 +666,21 @@ void ImageTaskInput::SetImageQualityConfig(const ImageQualityConfig& _imageQuali
 bool ImageTaskInput::ImageQualityConfigHasBeenSet() const
 {
     return m_imageQualityConfigHasBeenSet;
+}
+
+AiComposeConfig ImageTaskInput::GetAiComposeConfig() const
+{
+    return m_aiComposeConfig;
+}
+
+void ImageTaskInput::SetAiComposeConfig(const AiComposeConfig& _aiComposeConfig)
+{
+    m_aiComposeConfig = _aiComposeConfig;
+    m_aiComposeConfigHasBeenSet = true;
+}
+
+bool ImageTaskInput::AiComposeConfigHasBeenSet() const
+{
+    return m_aiComposeConfigHasBeenSet;
 }
 

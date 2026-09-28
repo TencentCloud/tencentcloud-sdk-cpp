@@ -27,7 +27,8 @@ DescribeCloudAppListRequest::DescribeCloudAppListRequest() :
     m_deployTypeHasBeenSet(false),
     m_searchKeyHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_pageNoHasBeenSet(false)
+    m_pageNoHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,15 @@ string DescribeCloudAppListRequest::ToJsonString() const
         string key = "PageNo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageNo, allocator);
+    }
+
+    if (m_filterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_filter.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -164,6 +174,22 @@ void DescribeCloudAppListRequest::SetPageNo(const int64_t& _pageNo)
 bool DescribeCloudAppListRequest::PageNoHasBeenSet() const
 {
     return m_pageNoHasBeenSet;
+}
+
+CloudAppFilter DescribeCloudAppListRequest::GetFilter() const
+{
+    return m_filter;
+}
+
+void DescribeCloudAppListRequest::SetFilter(const CloudAppFilter& _filter)
+{
+    m_filter = _filter;
+    m_filterHasBeenSet = true;
+}
+
+bool DescribeCloudAppListRequest::FilterHasBeenSet() const
+{
+    return m_filterHasBeenSet;
 }
 
 

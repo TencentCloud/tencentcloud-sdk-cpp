@@ -24,7 +24,9 @@ using namespace TencentCloud::Cloudhsm::V20191112::Model;
 using namespace std;
 
 GetVsmMonitorInfoResponse::GetVsmMonitorInfoResponse() :
-    m_monitorInfoHasBeenSet(false)
+    m_monitorInfoHasBeenSet(false),
+    m_digestListHasBeenSet(false),
+    m_initStatusHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,36 @@ CoreInternalOutcome GetVsmMonitorInfoResponse::Deserialize(const string &payload
         m_monitorInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DigestList") && !rsp["DigestList"].IsNull())
+    {
+        if (!rsp["DigestList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DigestList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DigestList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VsmDigestItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_digestList.push_back(item);
+        }
+        m_digestListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InitStatus") && !rsp["InitStatus"].IsNull())
+    {
+        if (!rsp["InitStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InitStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_initStatus = rsp["InitStatus"].GetInt64();
+        m_initStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +130,29 @@ string GetVsmMonitorInfoResponse::ToJsonString() const
         }
     }
 
+    if (m_digestListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DigestList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_digestList.begin(); itr != m_digestList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_initStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InitStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_initStatus, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -118,6 +173,26 @@ vector<string> GetVsmMonitorInfoResponse::GetMonitorInfo() const
 bool GetVsmMonitorInfoResponse::MonitorInfoHasBeenSet() const
 {
     return m_monitorInfoHasBeenSet;
+}
+
+vector<VsmDigestItem> GetVsmMonitorInfoResponse::GetDigestList() const
+{
+    return m_digestList;
+}
+
+bool GetVsmMonitorInfoResponse::DigestListHasBeenSet() const
+{
+    return m_digestListHasBeenSet;
+}
+
+int64_t GetVsmMonitorInfoResponse::GetInitStatus() const
+{
+    return m_initStatus;
+}
+
+bool GetVsmMonitorInfoResponse::InitStatusHasBeenSet() const
+{
+    return m_initStatusHasBeenSet;
 }
 
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移
-                     * @return Offset 偏移
+                     * 获取<p>偏移</p>
+                     * @return Offset <p>偏移</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移
-                     * @param _offset 偏移
+                     * 设置<p>偏移</p>
+                     * @param _offset <p>偏移</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取最大数量
-                     * @return Limit 最大数量
+                     * 获取<p>最大数量</p>
+                     * @return Limit <p>最大数量</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置最大数量
-                     * @param _limit 最大数量
+                     * 设置<p>最大数量</p>
+                     * @param _limit <p>最大数量</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取资源ID或者资源名字模糊查询的关键字
-                     * @return SearchWord 资源ID或者资源名字模糊查询的关键字
+                     * 获取<p>资源ID或者资源名字模糊查询的关键字</p>
+                     * @return SearchWord <p>资源ID或者资源名字模糊查询的关键字</p>
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置资源ID或者资源名字模糊查询的关键字
-                     * @param _searchWord 资源ID或者资源名字模糊查询的关键字
+                     * 设置<p>资源ID或者资源名字模糊查询的关键字</p>
+                     * @param _searchWord <p>资源ID或者资源名字模糊查询的关键字</p>
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取标签过滤条件
-                     * @return TagFilters 标签过滤条件
+                     * 获取<p>标签过滤条件</p>
+                     * @return TagFilters <p>标签过滤条件</p>
                      * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
-                     * 设置标签过滤条件
-                     * @param _tagFilters 标签过滤条件
+                     * 设置<p>标签过滤条件</p>
+                     * @param _tagFilters <p>标签过滤条件</p>
                      * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TagFiltersHasBeenSet() const;
 
                     /**
-                     * 获取设备所属的厂商名称，根据厂商来进行筛选
-                     * @return Manufacturer 设备所属的厂商名称，根据厂商来进行筛选
+                     * 获取<p>设备所属的厂商名称，根据厂商来进行筛选</p>
+                     * @return Manufacturer <p>设备所属的厂商名称，根据厂商来进行筛选</p>
                      * 
                      */
                     std::string GetManufacturer() const;
 
                     /**
-                     * 设置设备所属的厂商名称，根据厂商来进行筛选
-                     * @param _manufacturer 设备所属的厂商名称，根据厂商来进行筛选
+                     * 设置<p>设备所属的厂商名称，根据厂商来进行筛选</p>
+                     * @param _manufacturer <p>设备所属的厂商名称，根据厂商来进行筛选</p>
                      * 
                      */
                     void SetManufacturer(const std::string& _manufacturer);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ManufacturerHasBeenSet() const;
 
                     /**
-                     * 获取Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all
-                     * @return HsmType Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all
+                     * 获取<p>Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all</p>
+                     * @return HsmType <p>Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all</p>
                      * 
                      */
                     std::string GetHsmType() const;
 
                     /**
-                     * 设置Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all
-                     * @param _hsmType Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all
+                     * 设置<p>Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all</p>
+                     * @param _hsmType <p>Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all</p>
                      * 
                      */
                     void SetHsmType(const std::string& _hsmType);
@@ -169,43 +169,70 @@ namespace TencentCloud
                      */
                     bool HsmTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置<p>集群id</p>
+                     * @param _clusterId <p>集群id</p>
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 偏移
+                     * <p>偏移</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 最大数量
+                     * <p>最大数量</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 资源ID或者资源名字模糊查询的关键字
+                     * <p>资源ID或者资源名字模糊查询的关键字</p>
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 标签过滤条件
+                     * <p>标签过滤条件</p>
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
 
                     /**
-                     * 设备所属的厂商名称，根据厂商来进行筛选
+                     * <p>设备所属的厂商名称，根据厂商来进行筛选</p>
                      */
                     std::string m_manufacturer;
                     bool m_manufacturerHasBeenSet;
 
                     /**
-                     * Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all
+                     * <p>Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all</p>
                      */
                     std::string m_hsmType;
                     bool m_hsmTypeHasBeenSet;
+
+                    /**
+                     * <p>集群id</p>
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }

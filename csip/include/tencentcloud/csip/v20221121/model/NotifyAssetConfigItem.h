@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>项目ID</p>
+                     * @return ProjectIds <p>项目ID</p>
+                     * 
+                     */
+                    std::vector<uint64_t> GetProjectIds() const;
+
+                    /**
+                     * 设置<p>项目ID</p>
+                     * @param _projectIds <p>项目ID</p>
+                     * 
+                     */
+                    void SetProjectIds(const std::vector<uint64_t>& _projectIds);
+
+                    /**
+                     * 判断参数 ProjectIds 是否已赋值
+                     * @return ProjectIds 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * <p>项目ID</p>
+                     */
+                    std::vector<uint64_t> m_projectIds;
+                    bool m_projectIdsHasBeenSet;
 
                 };
             }

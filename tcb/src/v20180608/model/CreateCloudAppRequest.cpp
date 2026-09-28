@@ -33,7 +33,15 @@ CreateCloudAppRequest::CreateCloudAppRequest() :
     m_envHasBeenSet(false),
     m_customStepsHasBeenSet(false),
     m_secretsHasBeenSet(false),
-    m_nodeJsVersionHasBeenSet(false)
+    m_nodeJsVersionHasBeenSet(false),
+    m_triggerHasBeenSet(false),
+    m_serviceListHasBeenSet(false),
+    m_workingDirHasBeenSet(false),
+    m_routesHasBeenSet(false),
+    m_promoteTypeHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_preDeployCommandHasBeenSet(false),
+    m_postDeployCommandHasBeenSet(false)
 {
 }
 
@@ -154,6 +162,85 @@ string CreateCloudAppRequest::ToJsonString() const
         string key = "NodeJsVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nodeJsVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Trigger";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_trigger.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_serviceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceList.begin(); itr != m_serviceList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_workingDirHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkingDir";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workingDir.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_routesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Routes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_routes.begin(); itr != m_routes.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_promoteTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromoteType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_promoteType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preDeployCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreDeployCommand";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_preDeployCommand.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_postDeployCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostDeployCommand";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_postDeployCommand.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -338,6 +425,134 @@ void CreateCloudAppRequest::SetNodeJsVersion(const string& _nodeJsVersion)
 bool CreateCloudAppRequest::NodeJsVersionHasBeenSet() const
 {
     return m_nodeJsVersionHasBeenSet;
+}
+
+CloudAppTrigger CreateCloudAppRequest::GetTrigger() const
+{
+    return m_trigger;
+}
+
+void CreateCloudAppRequest::SetTrigger(const CloudAppTrigger& _trigger)
+{
+    m_trigger = _trigger;
+    m_triggerHasBeenSet = true;
+}
+
+bool CreateCloudAppRequest::TriggerHasBeenSet() const
+{
+    return m_triggerHasBeenSet;
+}
+
+vector<CloudAppLinkService> CreateCloudAppRequest::GetServiceList() const
+{
+    return m_serviceList;
+}
+
+void CreateCloudAppRequest::SetServiceList(const vector<CloudAppLinkService>& _serviceList)
+{
+    m_serviceList = _serviceList;
+    m_serviceListHasBeenSet = true;
+}
+
+bool CreateCloudAppRequest::ServiceListHasBeenSet() const
+{
+    return m_serviceListHasBeenSet;
+}
+
+string CreateCloudAppRequest::GetWorkingDir() const
+{
+    return m_workingDir;
+}
+
+void CreateCloudAppRequest::SetWorkingDir(const string& _workingDir)
+{
+    m_workingDir = _workingDir;
+    m_workingDirHasBeenSet = true;
+}
+
+bool CreateCloudAppRequest::WorkingDirHasBeenSet() const
+{
+    return m_workingDirHasBeenSet;
+}
+
+vector<CloudAppRoute> CreateCloudAppRequest::GetRoutes() const
+{
+    return m_routes;
+}
+
+void CreateCloudAppRequest::SetRoutes(const vector<CloudAppRoute>& _routes)
+{
+    m_routes = _routes;
+    m_routesHasBeenSet = true;
+}
+
+bool CreateCloudAppRequest::RoutesHasBeenSet() const
+{
+    return m_routesHasBeenSet;
+}
+
+string CreateCloudAppRequest::GetPromoteType() const
+{
+    return m_promoteType;
+}
+
+void CreateCloudAppRequest::SetPromoteType(const string& _promoteType)
+{
+    m_promoteType = _promoteType;
+    m_promoteTypeHasBeenSet = true;
+}
+
+bool CreateCloudAppRequest::PromoteTypeHasBeenSet() const
+{
+    return m_promoteTypeHasBeenSet;
+}
+
+string CreateCloudAppRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateCloudAppRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateCloudAppRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
+}
+
+string CreateCloudAppRequest::GetPreDeployCommand() const
+{
+    return m_preDeployCommand;
+}
+
+void CreateCloudAppRequest::SetPreDeployCommand(const string& _preDeployCommand)
+{
+    m_preDeployCommand = _preDeployCommand;
+    m_preDeployCommandHasBeenSet = true;
+}
+
+bool CreateCloudAppRequest::PreDeployCommandHasBeenSet() const
+{
+    return m_preDeployCommandHasBeenSet;
+}
+
+string CreateCloudAppRequest::GetPostDeployCommand() const
+{
+    return m_postDeployCommand;
+}
+
+void CreateCloudAppRequest::SetPostDeployCommand(const string& _postDeployCommand)
+{
+    m_postDeployCommand = _postDeployCommand;
+    m_postDeployCommandHasBeenSet = true;
+}
+
+bool CreateCloudAppRequest::PostDeployCommandHasBeenSet() const
+{
+    return m_postDeployCommandHasBeenSet;
 }
 
 

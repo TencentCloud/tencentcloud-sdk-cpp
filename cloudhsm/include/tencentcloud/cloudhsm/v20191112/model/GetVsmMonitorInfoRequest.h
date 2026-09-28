@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源Id
-                     * @return ResourceId 资源Id
+                     * 获取<p>资源Id</p>
+                     * @return ResourceId <p>资源Id</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源Id
-                     * @param _resourceId 资源Id
+                     * 设置<p>资源Id</p>
+                     * @param _resourceId <p>资源Id</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源名称
-                     * @return ResourceName 资源名称
+                     * 获取<p>资源名称</p>
+                     * @return ResourceName <p>资源名称</p>
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
-                     * 设置资源名称
-                     * @param _resourceName 资源名称
+                     * 设置<p>资源名称</p>
+                     * @param _resourceName <p>资源名称</p>
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源Id
+                     * <p>资源Id</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源名称
+                     * <p>资源名称</p>
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;

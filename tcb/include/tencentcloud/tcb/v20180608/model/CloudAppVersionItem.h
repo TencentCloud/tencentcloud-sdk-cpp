@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/StaticConfig.h>
 #include <tencentcloud/tcb/v20180608/model/BuildStepStatus.h>
+#include <tencentcloud/tcb/v20180608/model/CloudAppResourceItem.h>
+#include <tencentcloud/tcb/v20180608/model/BuildArtifactInfo.h>
 
 
 namespace TencentCloud
@@ -220,6 +222,111 @@ namespace TencentCloud
                      */
                     bool StepsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务版本部署快照</p>
+                     * @return Snapshot <p>服务版本部署快照</p>
+                     * 
+                     */
+                    std::string GetSnapshot() const;
+
+                    /**
+                     * 设置<p>服务版本部署快照</p>
+                     * @param _snapshot <p>服务版本部署快照</p>
+                     * 
+                     */
+                    void SetSnapshot(const std::string& _snapshot);
+
+                    /**
+                     * 判断参数 Snapshot 是否已赋值
+                     * @return Snapshot 是否已赋值
+                     * 
+                     */
+                    bool SnapshotHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务版本域名</p>
+                     * @return VersionDomain <p>服务版本域名</p>
+                     * 
+                     */
+                    std::string GetVersionDomain() const;
+
+                    /**
+                     * 设置<p>服务版本域名</p>
+                     * @param _versionDomain <p>服务版本域名</p>
+                     * 
+                     */
+                    void SetVersionDomain(const std::string& _versionDomain);
+
+                    /**
+                     * 判断参数 VersionDomain 是否已赋值
+                     * @return VersionDomain 是否已赋值
+                     * 
+                     */
+                    bool VersionDomainHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务版本流量</p>
+                     * @return TrafficPercent <p>服务版本流量</p>
+                     * 
+                     */
+                    uint64_t GetTrafficPercent() const;
+
+                    /**
+                     * 设置<p>服务版本流量</p>
+                     * @param _trafficPercent <p>服务版本流量</p>
+                     * 
+                     */
+                    void SetTrafficPercent(const uint64_t& _trafficPercent);
+
+                    /**
+                     * 判断参数 TrafficPercent 是否已赋值
+                     * @return TrafficPercent 是否已赋值
+                     * 
+                     */
+                    bool TrafficPercentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务资源</p>
+                     * @return Resources <p>服务资源</p>
+                     * 
+                     */
+                    std::vector<CloudAppResourceItem> GetResources() const;
+
+                    /**
+                     * 设置<p>服务资源</p>
+                     * @param _resources <p>服务资源</p>
+                     * 
+                     */
+                    void SetResources(const std::vector<CloudAppResourceItem>& _resources);
+
+                    /**
+                     * 判断参数 Resources 是否已赋值
+                     * @return Resources 是否已赋值
+                     * 
+                     */
+                    bool ResourcesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务产物列表</p>
+                     * @return Artifacts <p>服务产物列表</p>
+                     * 
+                     */
+                    std::vector<BuildArtifactInfo> GetArtifacts() const;
+
+                    /**
+                     * 设置<p>服务产物列表</p>
+                     * @param _artifacts <p>服务产物列表</p>
+                     * 
+                     */
+                    void SetArtifacts(const std::vector<BuildArtifactInfo>& _artifacts);
+
+                    /**
+                     * 判断参数 Artifacts 是否已赋值
+                     * @return Artifacts 是否已赋值
+                     * 
+                     */
+                    bool ArtifactsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -270,6 +377,36 @@ namespace TencentCloud
                      */
                     std::vector<BuildStepStatus> m_steps;
                     bool m_stepsHasBeenSet;
+
+                    /**
+                     * <p>服务版本部署快照</p>
+                     */
+                    std::string m_snapshot;
+                    bool m_snapshotHasBeenSet;
+
+                    /**
+                     * <p>服务版本域名</p>
+                     */
+                    std::string m_versionDomain;
+                    bool m_versionDomainHasBeenSet;
+
+                    /**
+                     * <p>服务版本流量</p>
+                     */
+                    uint64_t m_trafficPercent;
+                    bool m_trafficPercentHasBeenSet;
+
+                    /**
+                     * <p>服务资源</p>
+                     */
+                    std::vector<CloudAppResourceItem> m_resources;
+                    bool m_resourcesHasBeenSet;
+
+                    /**
+                     * <p>服务产物列表</p>
+                     */
+                    std::vector<BuildArtifactInfo> m_artifacts;
+                    bool m_artifactsHasBeenSet;
 
                 };
             }

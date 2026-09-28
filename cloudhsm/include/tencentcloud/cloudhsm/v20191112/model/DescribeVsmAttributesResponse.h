@@ -395,6 +395,34 @@ namespace TencentCloud
                      */
                     bool DeployEnvHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群角色</p>
+                     * @return ClusterRole <p>集群角色</p>
+                     * 
+                     */
+                    int64_t GetClusterRole() const;
+
+                    /**
+                     * 判断参数 ClusterRole 是否已赋值
+                     * @return ClusterRole 是否已赋值
+                     * 
+                     */
+                    bool ClusterRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -546,6 +574,18 @@ namespace TencentCloud
                      */
                     std::string m_deployEnv;
                     bool m_deployEnvHasBeenSet;
+
+                    /**
+                     * <p>集群id</p>
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * <p>集群角色</p>
+                     */
+                    int64_t m_clusterRole;
+                    bool m_clusterRoleHasBeenSet;
 
                 };
             }

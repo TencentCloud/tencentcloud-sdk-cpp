@@ -36,7 +36,9 @@ ImageModerationResponse::ImageModerationResponse() :
     m_bizTypeHasBeenSet(false),
     m_extraHasBeenSet(false),
     m_fileMD5HasBeenSet(false),
-    m_recognitionResultsHasBeenSet(false)
+    m_recognitionResultsHasBeenSet(false),
+    m_storeUrlHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
@@ -254,6 +256,26 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
         m_recognitionResultsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StoreUrl") && !rsp["StoreUrl"].IsNull())
+    {
+        if (!rsp["StoreUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StoreUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storeUrl = string(rsp["StoreUrl"].GetString());
+        m_storeUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Reason") && !rsp["Reason"].IsNull())
+    {
+        if (!rsp["Reason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Reason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reason = string(rsp["Reason"].GetString());
+        m_reasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -403,6 +425,22 @@ string ImageModerationResponse::ToJsonString() const
         }
     }
 
+    if (m_storeUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoreUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storeUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -543,6 +581,26 @@ vector<RecognitionResult> ImageModerationResponse::GetRecognitionResults() const
 bool ImageModerationResponse::RecognitionResultsHasBeenSet() const
 {
     return m_recognitionResultsHasBeenSet;
+}
+
+string ImageModerationResponse::GetStoreUrl() const
+{
+    return m_storeUrl;
+}
+
+bool ImageModerationResponse::StoreUrlHasBeenSet() const
+{
+    return m_storeUrlHasBeenSet;
+}
+
+string ImageModerationResponse::GetReason() const
+{
+    return m_reason;
+}
+
+bool ImageModerationResponse::ReasonHasBeenSet() const
+{
+    return m_reasonHasBeenSet;
 }
 
 

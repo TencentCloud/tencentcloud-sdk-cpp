@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool CosSuffixHasBeenSet() const;
 
+                    /**
+                     * 获取<p>zip 包名称</p>
+                     * @return PackageFileName <p>zip 包名称</p>
+                     * 
+                     */
+                    std::string GetPackageFileName() const;
+
+                    /**
+                     * 设置<p>zip 包名称</p>
+                     * @param _packageFileName <p>zip 包名称</p>
+                     * 
+                     */
+                    void SetPackageFileName(const std::string& _packageFileName);
+
+                    /**
+                     * 判断参数 PackageFileName 是否已赋值
+                     * @return PackageFileName 是否已赋值
+                     * 
+                     */
+                    bool PackageFileNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     std::string m_cosSuffix;
                     bool m_cosSuffixHasBeenSet;
+
+                    /**
+                     * <p>zip 包名称</p>
+                     */
+                    std::string m_packageFileName;
+                    bool m_packageFileNameHasBeenSet;
 
                 };
             }

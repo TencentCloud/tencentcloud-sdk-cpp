@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>镜像地址</p>
-                     * @return Image <p>镜像地址</p>
+                     * 获取<p>镜像地址。仅支持 repository:tag、repository@sha256:&lt;64 位摘要&gt; 或 repository:tag@sha256:&lt;64 位摘要&gt;。</p>
+                     * @return Image <p>镜像地址。仅支持 repository:tag、repository@sha256:&lt;64 位摘要&gt; 或 repository:tag@sha256:&lt;64 位摘要&gt;。</p>
                      * 
                      */
                     std::string GetImage() const;
 
                     /**
-                     * 设置<p>镜像地址</p>
-                     * @param _image <p>镜像地址</p>
+                     * 设置<p>镜像地址。仅支持 repository:tag、repository@sha256:&lt;64 位摘要&gt; 或 repository:tag@sha256:&lt;64 位摘要&gt;。</p>
+                     * @param _image <p>镜像地址。仅支持 repository:tag、repository@sha256:&lt;64 位摘要&gt; 或 repository:tag@sha256:&lt;64 位摘要&gt;。</p>
                      * 
                      */
                     void SetImage(const std::string& _image);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>镜像地址</p>
+                     * <p>镜像地址。仅支持 repository:tag、repository@sha256:&lt;64 位摘要&gt; 或 repository:tag@sha256:&lt;64 位摘要&gt;。</p>
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;

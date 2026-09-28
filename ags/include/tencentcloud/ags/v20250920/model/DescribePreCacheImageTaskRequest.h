@@ -64,6 +64,27 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
+                     * 获取<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     * @return ImageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     * 
+                     */
+                    std::string GetImageRegistryType() const;
+
+                    /**
+                     * 设置<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     * @param _imageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     * 
+                     */
+                    void SetImageRegistryType(const std::string& _imageRegistryType);
+
+                    /**
+                     * 判断参数 ImageRegistryType 是否已赋值
+                     * @return ImageRegistryType 是否已赋值
+                     * 
+                     */
+                    bool ImageRegistryTypeHasBeenSet() const;
+
+                    /**
                      * 获取<p>镜像 Digest</p>
                      * @return ImageDigest <p>镜像 Digest</p>
                      * 
@@ -85,25 +106,25 @@ namespace TencentCloud
                     bool ImageDigestHasBeenSet() const;
 
                     /**
-                     * 获取<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
-                     * @return ImageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     * 获取<p>镜像预热ID，只能ID或三元组（Image、ImageDigest、ImageRegistrytype）二选一查询</p>
+                     * @return PreCacheImageId <p>镜像预热ID，只能ID或三元组（Image、ImageDigest、ImageRegistrytype）二选一查询</p>
                      * 
                      */
-                    std::string GetImageRegistryType() const;
+                    std::string GetPreCacheImageId() const;
 
                     /**
-                     * 设置<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
-                     * @param _imageRegistryType <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     * 设置<p>镜像预热ID，只能ID或三元组（Image、ImageDigest、ImageRegistrytype）二选一查询</p>
+                     * @param _preCacheImageId <p>镜像预热ID，只能ID或三元组（Image、ImageDigest、ImageRegistrytype）二选一查询</p>
                      * 
                      */
-                    void SetImageRegistryType(const std::string& _imageRegistryType);
+                    void SetPreCacheImageId(const std::string& _preCacheImageId);
 
                     /**
-                     * 判断参数 ImageRegistryType 是否已赋值
-                     * @return ImageRegistryType 是否已赋值
+                     * 判断参数 PreCacheImageId 是否已赋值
+                     * @return PreCacheImageId 是否已赋值
                      * 
                      */
-                    bool ImageRegistryTypeHasBeenSet() const;
+                    bool PreCacheImageIdHasBeenSet() const;
 
                 private:
 
@@ -114,16 +135,22 @@ namespace TencentCloud
                     bool m_imageHasBeenSet;
 
                     /**
+                     * <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     */
+                    std::string m_imageRegistryType;
+                    bool m_imageRegistryTypeHasBeenSet;
+
+                    /**
                      * <p>镜像 Digest</p>
                      */
                     std::string m_imageDigest;
                     bool m_imageDigestHasBeenSet;
 
                     /**
-                     * <p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>
+                     * <p>镜像预热ID，只能ID或三元组（Image、ImageDigest、ImageRegistrytype）二选一查询</p>
                      */
-                    std::string m_imageRegistryType;
-                    bool m_imageRegistryTypeHasBeenSet;
+                    std::string m_preCacheImageId;
+                    bool m_preCacheImageIdHasBeenSet;
 
                 };
             }

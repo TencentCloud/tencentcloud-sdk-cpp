@@ -28,7 +28,12 @@ DescribePreCacheImageTaskResponse::DescribePreCacheImageTaskResponse() :
     m_imageDigestHasBeenSet(false),
     m_imageRegistryTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_preCacheImageIdHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_cachedImageSizeBytesHasBeenSet(false),
+    m_lastUsedTimeHasBeenSet(false)
 {
 }
 
@@ -116,6 +121,56 @@ CoreInternalOutcome DescribePreCacheImageTaskResponse::Deserialize(const string 
         m_messageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
+    {
+        if (!rsp["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(rsp["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PreCacheImageId") && !rsp["PreCacheImageId"].IsNull())
+    {
+        if (!rsp["PreCacheImageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreCacheImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preCacheImageId = string(rsp["PreCacheImageId"].GetString());
+        m_preCacheImageIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SourceType") && !rsp["SourceType"].IsNull())
+    {
+        if (!rsp["SourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = string(rsp["SourceType"].GetString());
+        m_sourceTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CachedImageSizeBytes") && !rsp["CachedImageSizeBytes"].IsNull())
+    {
+        if (!rsp["CachedImageSizeBytes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CachedImageSizeBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cachedImageSizeBytes = rsp["CachedImageSizeBytes"].GetInt64();
+        m_cachedImageSizeBytesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LastUsedTime") && !rsp["LastUsedTime"].IsNull())
+    {
+        if (!rsp["LastUsedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LastUsedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastUsedTime = string(rsp["LastUsedTime"].GetString());
+        m_lastUsedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +219,46 @@ string DescribePreCacheImageTaskResponse::ToJsonString() const
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preCacheImageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreCacheImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preCacheImageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cachedImageSizeBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CachedImageSizeBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cachedImageSizeBytes, allocator);
+    }
+
+    if (m_lastUsedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastUsedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastUsedTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +321,56 @@ string DescribePreCacheImageTaskResponse::GetMessage() const
 bool DescribePreCacheImageTaskResponse::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+string DescribePreCacheImageTaskResponse::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+bool DescribePreCacheImageTaskResponse::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string DescribePreCacheImageTaskResponse::GetPreCacheImageId() const
+{
+    return m_preCacheImageId;
+}
+
+bool DescribePreCacheImageTaskResponse::PreCacheImageIdHasBeenSet() const
+{
+    return m_preCacheImageIdHasBeenSet;
+}
+
+string DescribePreCacheImageTaskResponse::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+bool DescribePreCacheImageTaskResponse::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
+int64_t DescribePreCacheImageTaskResponse::GetCachedImageSizeBytes() const
+{
+    return m_cachedImageSizeBytes;
+}
+
+bool DescribePreCacheImageTaskResponse::CachedImageSizeBytesHasBeenSet() const
+{
+    return m_cachedImageSizeBytesHasBeenSet;
+}
+
+string DescribePreCacheImageTaskResponse::GetLastUsedTime() const
+{
+    return m_lastUsedTime;
+}
+
+bool DescribePreCacheImageTaskResponse::LastUsedTimeHasBeenSet() const
+{
+    return m_lastUsedTimeHasBeenSet;
 }
 
 

@@ -30,7 +30,12 @@ DescribeCloudAppVersionResponse::DescribeCloudAppVersionResponse() :
     m_frameworkHasBeenSet(false),
     m_staticConfigHasBeenSet(false),
     m_buildTimeHasBeenSet(false),
-    m_stepsHasBeenSet(false)
+    m_stepsHasBeenSet(false),
+    m_snapshotHasBeenSet(false),
+    m_trafficPercentHasBeenSet(false),
+    m_versionDomainHasBeenSet(false),
+    m_resourcesHasBeenSet(false),
+    m_artifactsHasBeenSet(false)
 {
 }
 
@@ -155,6 +160,76 @@ CoreInternalOutcome DescribeCloudAppVersionResponse::Deserialize(const string &p
         m_stepsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Snapshot") && !rsp["Snapshot"].IsNull())
+    {
+        if (!rsp["Snapshot"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshot` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshot = string(rsp["Snapshot"].GetString());
+        m_snapshotHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TrafficPercent") && !rsp["TrafficPercent"].IsNull())
+    {
+        if (!rsp["TrafficPercent"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrafficPercent` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trafficPercent = rsp["TrafficPercent"].GetUint64();
+        m_trafficPercentHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VersionDomain") && !rsp["VersionDomain"].IsNull())
+    {
+        if (!rsp["VersionDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VersionDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_versionDomain = string(rsp["VersionDomain"].GetString());
+        m_versionDomainHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Resources") && !rsp["Resources"].IsNull())
+    {
+        if (!rsp["Resources"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Resources` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Resources"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudAppResourceItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resources.push_back(item);
+        }
+        m_resourcesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Artifacts") && !rsp["Artifacts"].IsNull())
+    {
+        if (!rsp["Artifacts"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Artifacts` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Artifacts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BuildArtifactInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_artifacts.push_back(item);
+        }
+        m_artifactsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -223,6 +298,60 @@ string DescribeCloudAppVersionResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_steps.begin(); itr != m_steps.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_snapshotHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Snapshot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshot.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trafficPercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficPercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trafficPercent, allocator);
+    }
+
+    if (m_versionDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Resources";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resources.begin(); itr != m_resources.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_artifactsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Artifacts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_artifacts.begin(); itr != m_artifacts.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -309,6 +438,56 @@ vector<BuildStepStatus> DescribeCloudAppVersionResponse::GetSteps() const
 bool DescribeCloudAppVersionResponse::StepsHasBeenSet() const
 {
     return m_stepsHasBeenSet;
+}
+
+string DescribeCloudAppVersionResponse::GetSnapshot() const
+{
+    return m_snapshot;
+}
+
+bool DescribeCloudAppVersionResponse::SnapshotHasBeenSet() const
+{
+    return m_snapshotHasBeenSet;
+}
+
+uint64_t DescribeCloudAppVersionResponse::GetTrafficPercent() const
+{
+    return m_trafficPercent;
+}
+
+bool DescribeCloudAppVersionResponse::TrafficPercentHasBeenSet() const
+{
+    return m_trafficPercentHasBeenSet;
+}
+
+string DescribeCloudAppVersionResponse::GetVersionDomain() const
+{
+    return m_versionDomain;
+}
+
+bool DescribeCloudAppVersionResponse::VersionDomainHasBeenSet() const
+{
+    return m_versionDomainHasBeenSet;
+}
+
+vector<CloudAppResourceItem> DescribeCloudAppVersionResponse::GetResources() const
+{
+    return m_resources;
+}
+
+bool DescribeCloudAppVersionResponse::ResourcesHasBeenSet() const
+{
+    return m_resourcesHasBeenSet;
+}
+
+vector<BuildArtifactInfo> DescribeCloudAppVersionResponse::GetArtifacts() const
+{
+    return m_artifacts;
+}
+
+bool DescribeCloudAppVersionResponse::ArtifactsHasBeenSet() const
+{
+    return m_artifactsHasBeenSet;
 }
 
 

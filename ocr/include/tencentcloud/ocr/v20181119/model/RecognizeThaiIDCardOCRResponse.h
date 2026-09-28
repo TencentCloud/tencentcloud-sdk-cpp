@@ -295,6 +295,34 @@ namespace TencentCloud
                      */
                     bool CardCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>泰文姓名</p>
+                     * @return ThaiFirstName <p>泰文姓名</p>
+                     * 
+                     */
+                    std::string GetThaiFirstName() const;
+
+                    /**
+                     * 判断参数 ThaiFirstName 是否已赋值
+                     * @return ThaiFirstName 是否已赋值
+                     * 
+                     */
+                    bool ThaiFirstNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>泰文姓名</p>
+                     * @return ThaiLastName <p>泰文姓名</p>
+                     * 
+                     */
+                    std::string GetThaiLastName() const;
+
+                    /**
+                     * 判断参数 ThaiLastName 是否已赋值
+                     * @return ThaiLastName 是否已赋值
+                     * 
+                     */
+                    bool ThaiLastNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -404,6 +432,18 @@ namespace TencentCloud
                      */
                     int64_t m_cardCount;
                     bool m_cardCountHasBeenSet;
+
+                    /**
+                     * <p>泰文姓名</p>
+                     */
+                    std::string m_thaiFirstName;
+                    bool m_thaiFirstNameHasBeenSet;
+
+                    /**
+                     * <p>泰文姓名</p>
+                     */
+                    std::string m_thaiLastName;
+                    bool m_thaiLastNameHasBeenSet;
 
                 };
             }

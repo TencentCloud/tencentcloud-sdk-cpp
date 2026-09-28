@@ -43,7 +43,30 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>下载文件名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileName <p>下载文件名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFileName() const;
+
+                    /**
+                     * 判断参数 FileName 是否已赋值
+                     * @return FileName 是否已赋值
+                     * 
+                     */
+                    bool FileNameHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>下载文件名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileName;
+                    bool m_fileNameHasBeenSet;
 
                 };
             }

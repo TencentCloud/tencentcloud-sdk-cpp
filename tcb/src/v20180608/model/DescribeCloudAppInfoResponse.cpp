@@ -32,7 +32,10 @@ DescribeCloudAppInfoResponse::DescribeCloudAppInfoResponse() :
     m_latestVersionNameHasBeenSet(false),
     m_latestStatusHasBeenSet(false),
     m_latestBuildTimeHasBeenSet(false),
-    m_deployTypeHasBeenSet(false)
+    m_deployTypeHasBeenSet(false),
+    m_buildConfigHasBeenSet(false),
+    m_currentVersionHasBeenSet(false),
+    m_previewDomainHasBeenSet(false)
 {
 }
 
@@ -160,6 +163,36 @@ CoreInternalOutcome DescribeCloudAppInfoResponse::Deserialize(const string &payl
         m_deployTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BuildConfig") && !rsp["BuildConfig"].IsNull())
+    {
+        if (!rsp["BuildConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BuildConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_buildConfig = string(rsp["BuildConfig"].GetString());
+        m_buildConfigHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CurrentVersion") && !rsp["CurrentVersion"].IsNull())
+    {
+        if (!rsp["CurrentVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CurrentVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentVersion = string(rsp["CurrentVersion"].GetString());
+        m_currentVersionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PreviewDomain") && !rsp["PreviewDomain"].IsNull())
+    {
+        if (!rsp["PreviewDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreviewDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewDomain = string(rsp["PreviewDomain"].GetString());
+        m_previewDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +273,30 @@ string DescribeCloudAppInfoResponse::ToJsonString() const
         string key = "DeployType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deployType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buildConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buildConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_currentVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currentVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previewDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewDomain.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +399,36 @@ string DescribeCloudAppInfoResponse::GetDeployType() const
 bool DescribeCloudAppInfoResponse::DeployTypeHasBeenSet() const
 {
     return m_deployTypeHasBeenSet;
+}
+
+string DescribeCloudAppInfoResponse::GetBuildConfig() const
+{
+    return m_buildConfig;
+}
+
+bool DescribeCloudAppInfoResponse::BuildConfigHasBeenSet() const
+{
+    return m_buildConfigHasBeenSet;
+}
+
+string DescribeCloudAppInfoResponse::GetCurrentVersion() const
+{
+    return m_currentVersion;
+}
+
+bool DescribeCloudAppInfoResponse::CurrentVersionHasBeenSet() const
+{
+    return m_currentVersionHasBeenSet;
+}
+
+string DescribeCloudAppInfoResponse::GetPreviewDomain() const
+{
+    return m_previewDomain;
+}
+
+bool DescribeCloudAppInfoResponse::PreviewDomainHasBeenSet() const
+{
+    return m_previewDomainHasBeenSet;
 }
 
 

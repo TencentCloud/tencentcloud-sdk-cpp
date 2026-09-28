@@ -2190,6 +2190,56 @@ DbbrainClient::DescribeDatabaseAutonomyStatusOutcomeCallable DbbrainClient::Desc
     return prom->get_future();
 }
 
+DbbrainClient::DescribeDeadLockLogsOutcome DbbrainClient::DescribeDeadLockLogs(const DescribeDeadLockLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeadLockLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeadLockLogsResponse rsp = DescribeDeadLockLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeadLockLogsOutcome(rsp);
+        else
+            return DescribeDeadLockLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeadLockLogsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDeadLockLogsAsync(const DescribeDeadLockLogsRequest& request, const DescribeDeadLockLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeadLockLogsRequest&;
+    using Resp = DescribeDeadLockLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeadLockLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeDeadLockLogsOutcomeCallable DbbrainClient::DescribeDeadLockLogsCallable(const DescribeDeadLockLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeadLockLogsOutcome>>();
+    DescribeDeadLockLogsAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeDeadLockLogsRequest&,
+        DescribeDeadLockLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeDiagDBInstancesOutcome DbbrainClient::DescribeDiagDBInstances(const DescribeDiagDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDiagDBInstances");

@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdwpg::V20201230::Model;
 using namespace std;
 
 DescribeInstanceStateRequest::DescribeInstanceStateRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,19 @@ string DescribeInstanceStateRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -64,6 +78,22 @@ void DescribeInstanceStateRequest::SetInstanceId(const string& _instanceId)
 bool DescribeInstanceStateRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+vector<string> DescribeInstanceStateRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void DescribeInstanceStateRequest::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool DescribeInstanceStateRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
 }
 
 

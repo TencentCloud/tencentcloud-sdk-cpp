@@ -24,8 +24,8 @@ ChargeProperties::ChargeProperties() :
     m_renewFlagHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
-    m_payModeHasBeenSet(false),
-    m_chargeTypeHasBeenSet(false)
+    m_chargeTypeHasBeenSet(false),
+    m_payModeHasBeenSet(false)
 {
 }
 
@@ -64,16 +64,6 @@ CoreInternalOutcome ChargeProperties::Deserialize(const rapidjson::Value &value)
         m_timeUnitHasBeenSet = true;
     }
 
-    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
-    {
-        if (!value["PayMode"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ChargeProperties.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_payMode = value["PayMode"].GetInt64();
-        m_payModeHasBeenSet = true;
-    }
-
     if (value.HasMember("ChargeType") && !value["ChargeType"].IsNull())
     {
         if (!value["ChargeType"].IsString())
@@ -82,6 +72,16 @@ CoreInternalOutcome ChargeProperties::Deserialize(const rapidjson::Value &value)
         }
         m_chargeType = string(value["ChargeType"].GetString());
         m_chargeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChargeProperties.PayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = value["PayMode"].GetInt64();
+        m_payModeHasBeenSet = true;
     }
 
 
@@ -115,20 +115,20 @@ void ChargeProperties::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_timeUnit.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_payModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PayMode";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_payMode, allocator);
-    }
-
     if (m_chargeTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ChargeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_chargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payMode, allocator);
     }
 
 }
@@ -182,22 +182,6 @@ bool ChargeProperties::TimeUnitHasBeenSet() const
     return m_timeUnitHasBeenSet;
 }
 
-int64_t ChargeProperties::GetPayMode() const
-{
-    return m_payMode;
-}
-
-void ChargeProperties::SetPayMode(const int64_t& _payMode)
-{
-    m_payMode = _payMode;
-    m_payModeHasBeenSet = true;
-}
-
-bool ChargeProperties::PayModeHasBeenSet() const
-{
-    return m_payModeHasBeenSet;
-}
-
 string ChargeProperties::GetChargeType() const
 {
     return m_chargeType;
@@ -212,5 +196,21 @@ void ChargeProperties::SetChargeType(const string& _chargeType)
 bool ChargeProperties::ChargeTypeHasBeenSet() const
 {
     return m_chargeTypeHasBeenSet;
+}
+
+int64_t ChargeProperties::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void ChargeProperties::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool ChargeProperties::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
 }
 

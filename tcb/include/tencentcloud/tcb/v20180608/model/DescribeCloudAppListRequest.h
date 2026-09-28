@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/CloudAppFilter.h>
 
 
 namespace TencentCloud
@@ -147,6 +148,27 @@ namespace TencentCloud
                      */
                     bool PageNoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务过滤</p>
+                     * @return Filter <p>服务过滤</p>
+                     * 
+                     */
+                    CloudAppFilter GetFilter() const;
+
+                    /**
+                     * 设置<p>服务过滤</p>
+                     * @param _filter <p>服务过滤</p>
+                     * 
+                     */
+                    void SetFilter(const CloudAppFilter& _filter);
+
+                    /**
+                     * 判断参数 Filter 是否已赋值
+                     * @return Filter 是否已赋值
+                     * 
+                     */
+                    bool FilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +200,12 @@ namespace TencentCloud
                      */
                     int64_t m_pageNo;
                     bool m_pageNoHasBeenSet;
+
+                    /**
+                     * <p>服务过滤</p>
+                     */
+                    CloudAppFilter m_filter;
+                    bool m_filterHasBeenSet;
 
                 };
             }

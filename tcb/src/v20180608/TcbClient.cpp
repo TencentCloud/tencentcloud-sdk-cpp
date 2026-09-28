@@ -990,6 +990,56 @@ TcbClient::CreatePlatformEnvOutcomeCallable TcbClient::CreatePlatformEnvCallable
     return prom->get_future();
 }
 
+TcbClient::CreatePlatformHTTPServiceRouteOutcome TcbClient::CreatePlatformHTTPServiceRoute(const CreatePlatformHTTPServiceRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePlatformHTTPServiceRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePlatformHTTPServiceRouteResponse rsp = CreatePlatformHTTPServiceRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePlatformHTTPServiceRouteOutcome(rsp);
+        else
+            return CreatePlatformHTTPServiceRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePlatformHTTPServiceRouteOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreatePlatformHTTPServiceRouteAsync(const CreatePlatformHTTPServiceRouteRequest& request, const CreatePlatformHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePlatformHTTPServiceRouteRequest&;
+    using Resp = CreatePlatformHTTPServiceRouteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePlatformHTTPServiceRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::CreatePlatformHTTPServiceRouteOutcomeCallable TcbClient::CreatePlatformHTTPServiceRouteCallable(const CreatePlatformHTTPServiceRouteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePlatformHTTPServiceRouteOutcome>>();
+    CreatePlatformHTTPServiceRouteAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreatePlatformHTTPServiceRouteRequest&,
+        CreatePlatformHTTPServiceRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::CreateStaticStoreOutcome TcbClient::CreateStaticStore(const CreateStaticStoreRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateStaticStore");
@@ -1482,6 +1532,56 @@ TcbClient::DeleteHTTPServiceRouteOutcomeCallable TcbClient::DeleteHTTPServiceRou
         const TcbClient*,
         const DeleteHTTPServiceRouteRequest&,
         DeleteHTTPServiceRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DeletePlatformHTTPServiceRouteOutcome TcbClient::DeletePlatformHTTPServiceRoute(const DeletePlatformHTTPServiceRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePlatformHTTPServiceRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePlatformHTTPServiceRouteResponse rsp = DeletePlatformHTTPServiceRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePlatformHTTPServiceRouteOutcome(rsp);
+        else
+            return DeletePlatformHTTPServiceRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePlatformHTTPServiceRouteOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeletePlatformHTTPServiceRouteAsync(const DeletePlatformHTTPServiceRouteRequest& request, const DeletePlatformHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeletePlatformHTTPServiceRouteRequest&;
+    using Resp = DeletePlatformHTTPServiceRouteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeletePlatformHTTPServiceRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DeletePlatformHTTPServiceRouteOutcomeCallable TcbClient::DeletePlatformHTTPServiceRouteCallable(const DeletePlatformHTTPServiceRouteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeletePlatformHTTPServiceRouteOutcome>>();
+    DeletePlatformHTTPServiceRouteAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeletePlatformHTTPServiceRouteRequest&,
+        DeletePlatformHTTPServiceRouteOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3440,6 +3540,56 @@ TcbClient::DescribePlatformEnvUsageOutcomeCallable TcbClient::DescribePlatformEn
     return prom->get_future();
 }
 
+TcbClient::DescribePlatformHTTPServiceRouteOutcome TcbClient::DescribePlatformHTTPServiceRoute(const DescribePlatformHTTPServiceRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePlatformHTTPServiceRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePlatformHTTPServiceRouteResponse rsp = DescribePlatformHTTPServiceRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePlatformHTTPServiceRouteOutcome(rsp);
+        else
+            return DescribePlatformHTTPServiceRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePlatformHTTPServiceRouteOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribePlatformHTTPServiceRouteAsync(const DescribePlatformHTTPServiceRouteRequest& request, const DescribePlatformHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePlatformHTTPServiceRouteRequest&;
+    using Resp = DescribePlatformHTTPServiceRouteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePlatformHTTPServiceRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribePlatformHTTPServiceRouteOutcomeCallable TcbClient::DescribePlatformHTTPServiceRouteCallable(const DescribePlatformHTTPServiceRouteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePlatformHTTPServiceRouteOutcome>>();
+    DescribePlatformHTTPServiceRouteAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribePlatformHTTPServiceRouteRequest&,
+        DescribePlatformHTTPServiceRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribePlatformsOutcome TcbClient::DescribePlatforms(const DescribePlatformsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePlatforms");
@@ -4940,6 +5090,56 @@ TcbClient::ModifyPlatformEnvOutcomeCallable TcbClient::ModifyPlatformEnvCallable
     return prom->get_future();
 }
 
+TcbClient::ModifyPlatformHTTPServiceRouteOutcome TcbClient::ModifyPlatformHTTPServiceRoute(const ModifyPlatformHTTPServiceRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPlatformHTTPServiceRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPlatformHTTPServiceRouteResponse rsp = ModifyPlatformHTTPServiceRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPlatformHTTPServiceRouteOutcome(rsp);
+        else
+            return ModifyPlatformHTTPServiceRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPlatformHTTPServiceRouteOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyPlatformHTTPServiceRouteAsync(const ModifyPlatformHTTPServiceRouteRequest& request, const ModifyPlatformHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyPlatformHTTPServiceRouteRequest&;
+    using Resp = ModifyPlatformHTTPServiceRouteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyPlatformHTTPServiceRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ModifyPlatformHTTPServiceRouteOutcomeCallable TcbClient::ModifyPlatformHTTPServiceRouteCallable(const ModifyPlatformHTTPServiceRouteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyPlatformHTTPServiceRouteOutcome>>();
+    ModifyPlatformHTTPServiceRouteAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyPlatformHTTPServiceRouteRequest&,
+        ModifyPlatformHTTPServiceRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ModifyProviderOutcome TcbClient::ModifyProvider(const ModifyProviderRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyProvider");
@@ -6032,6 +6232,56 @@ TcbClient::VerifyHTTPServiceRouteOutcomeCallable TcbClient::VerifyHTTPServiceRou
         const TcbClient*,
         const VerifyHTTPServiceRouteRequest&,
         VerifyHTTPServiceRouteOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::VerifyPlatformHTTPServiceRouteOutcome TcbClient::VerifyPlatformHTTPServiceRoute(const VerifyPlatformHTTPServiceRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyPlatformHTTPServiceRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyPlatformHTTPServiceRouteResponse rsp = VerifyPlatformHTTPServiceRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyPlatformHTTPServiceRouteOutcome(rsp);
+        else
+            return VerifyPlatformHTTPServiceRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyPlatformHTTPServiceRouteOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::VerifyPlatformHTTPServiceRouteAsync(const VerifyPlatformHTTPServiceRouteRequest& request, const VerifyPlatformHTTPServiceRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VerifyPlatformHTTPServiceRouteRequest&;
+    using Resp = VerifyPlatformHTTPServiceRouteResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "VerifyPlatformHTTPServiceRoute", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::VerifyPlatformHTTPServiceRouteOutcomeCallable TcbClient::VerifyPlatformHTTPServiceRouteCallable(const VerifyPlatformHTTPServiceRouteRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<VerifyPlatformHTTPServiceRouteOutcome>>();
+    VerifyPlatformHTTPServiceRouteAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const VerifyPlatformHTTPServiceRouteRequest&,
+        VerifyPlatformHTTPServiceRouteOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

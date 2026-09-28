@@ -169,6 +169,48 @@ namespace TencentCloud
                      */
                     bool DeployTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>构建配置</p>
+                     * @return BuildConfig <p>构建配置</p>
+                     * 
+                     */
+                    std::string GetBuildConfig() const;
+
+                    /**
+                     * 判断参数 BuildConfig 是否已赋值
+                     * @return BuildConfig 是否已赋值
+                     * 
+                     */
+                    bool BuildConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前服务流量版本</p>
+                     * @return CurrentVersion <p>当前服务流量版本</p>
+                     * 
+                     */
+                    std::string GetCurrentVersion() const;
+
+                    /**
+                     * 判断参数 CurrentVersion 是否已赋值
+                     * @return CurrentVersion 是否已赋值
+                     * 
+                     */
+                    bool CurrentVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>版本关联默认域名</p>
+                     * @return PreviewDomain <p>版本关联默认域名</p>
+                     * 
+                     */
+                    std::string GetPreviewDomain() const;
+
+                    /**
+                     * 判断参数 PreviewDomain 是否已赋值
+                     * @return PreviewDomain 是否已赋值
+                     * 
+                     */
+                    bool PreviewDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +266,24 @@ namespace TencentCloud
                      */
                     std::string m_deployType;
                     bool m_deployTypeHasBeenSet;
+
+                    /**
+                     * <p>构建配置</p>
+                     */
+                    std::string m_buildConfig;
+                    bool m_buildConfigHasBeenSet;
+
+                    /**
+                     * <p>当前服务流量版本</p>
+                     */
+                    std::string m_currentVersion;
+                    bool m_currentVersionHasBeenSet;
+
+                    /**
+                     * <p>版本关联默认域名</p>
+                     */
+                    std::string m_previewDomain;
+                    bool m_previewDomainHasBeenSet;
 
                 };
             }

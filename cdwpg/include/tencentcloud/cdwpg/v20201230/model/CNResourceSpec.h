@@ -48,48 +48,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点类型
-                     * @return Type 节点类型
-                     * 
-                     */
-                    std::string GetType() const;
-
-                    /**
-                     * 设置节点类型
-                     * @param _type 节点类型
-                     * 
-                     */
-                    void SetType(const std::string& _type);
-
-                    /**
-                     * 判断参数 Type 是否已赋值
-                     * @return Type 是否已赋值
-                     * 
-                     */
-                    bool TypeHasBeenSet() const;
-
-                    /**
-                     * 获取机型
-                     * @return SpecName 机型
-                     * 
-                     */
-                    std::string GetSpecName() const;
-
-                    /**
-                     * 设置机型
-                     * @param _specName 机型
-                     * 
-                     */
-                    void SetSpecName(const std::string& _specName);
-
-                    /**
-                     * 判断参数 SpecName 是否已赋值
-                     * @return SpecName 是否已赋值
-                     * 
-                     */
-                    bool SpecNameHasBeenSet() const;
-
-                    /**
                      * 获取节点个数
                      * @return Count 节点个数
                      * 
@@ -131,19 +89,49 @@ namespace TencentCloud
                      */
                     bool DiskSpecHasBeenSet() const;
 
+                    /**
+                     * 获取机型
+                     * @return SpecName 机型
+                     * 
+                     */
+                    std::string GetSpecName() const;
+
+                    /**
+                     * 设置机型
+                     * @param _specName 机型
+                     * 
+                     */
+                    void SetSpecName(const std::string& _specName);
+
+                    /**
+                     * 判断参数 SpecName 是否已赋值
+                     * @return SpecName 是否已赋值
+                     * 
+                     */
+                    bool SpecNameHasBeenSet() const;
+
+                    /**
+                     * 获取节点类型
+                     * @return Type 节点类型
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置节点类型
+                     * @param _type 节点类型
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 节点类型
-                     */
-                    std::string m_type;
-                    bool m_typeHasBeenSet;
-
-                    /**
-                     * 机型
-                     */
-                    std::string m_specName;
-                    bool m_specNameHasBeenSet;
 
                     /**
                      * 节点个数
@@ -156,6 +144,18 @@ namespace TencentCloud
                      */
                     CBSSpec m_diskSpec;
                     bool m_diskSpecHasBeenSet;
+
+                    /**
+                     * 机型
+                     */
+                    std::string m_specName;
+                    bool m_specNameHasBeenSet;
+
+                    /**
+                     * 节点类型
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

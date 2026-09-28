@@ -33,6 +33,7 @@ set(cloudhsm_public_header_model
   include/tencentcloud/cloudhsm/v20191112/model/VsmInfo.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeSupportedHsmRequest.h
   include/tencentcloud/cloudhsm/v20191112/model/GetAlarmEventRequest.h
+  include/tencentcloud/cloudhsm/v20191112/model/VsmDigestItem.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeHSMByVpcIdResponse.h
   include/tencentcloud/cloudhsm/v20191112/model/DescribeUsgRuleResponse.h
   include/tencentcloud/cloudhsm/v20191112/model/Tag.h
@@ -77,6 +78,7 @@ set(cloudhsm_src
   src/v20191112/model/VsmInfo.cpp
   src/v20191112/model/DescribeSupportedHsmRequest.cpp
   src/v20191112/model/GetAlarmEventRequest.cpp
+  src/v20191112/model/VsmDigestItem.cpp
   src/v20191112/model/DescribeHSMByVpcIdResponse.cpp
   src/v20191112/model/DescribeUsgRuleResponse.cpp
   src/v20191112/model/Tag.cpp

@@ -24,8 +24,9 @@ using namespace std;
 
 DescribePreCacheImageTaskRequest::DescribePreCacheImageTaskRequest() :
     m_imageHasBeenSet(false),
+    m_imageRegistryTypeHasBeenSet(false),
     m_imageDigestHasBeenSet(false),
-    m_imageRegistryTypeHasBeenSet(false)
+    m_preCacheImageIdHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,14 @@ string DescribePreCacheImageTaskRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_imageRegistryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageRegistryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageRegistryType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_imageDigestHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -52,12 +61,12 @@ string DescribePreCacheImageTaskRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_imageDigest.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_imageRegistryTypeHasBeenSet)
+    if (m_preCacheImageIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ImageRegistryType";
+        string key = "PreCacheImageId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_imageRegistryType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_preCacheImageId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -84,6 +93,22 @@ bool DescribePreCacheImageTaskRequest::ImageHasBeenSet() const
     return m_imageHasBeenSet;
 }
 
+string DescribePreCacheImageTaskRequest::GetImageRegistryType() const
+{
+    return m_imageRegistryType;
+}
+
+void DescribePreCacheImageTaskRequest::SetImageRegistryType(const string& _imageRegistryType)
+{
+    m_imageRegistryType = _imageRegistryType;
+    m_imageRegistryTypeHasBeenSet = true;
+}
+
+bool DescribePreCacheImageTaskRequest::ImageRegistryTypeHasBeenSet() const
+{
+    return m_imageRegistryTypeHasBeenSet;
+}
+
 string DescribePreCacheImageTaskRequest::GetImageDigest() const
 {
     return m_imageDigest;
@@ -100,20 +125,20 @@ bool DescribePreCacheImageTaskRequest::ImageDigestHasBeenSet() const
     return m_imageDigestHasBeenSet;
 }
 
-string DescribePreCacheImageTaskRequest::GetImageRegistryType() const
+string DescribePreCacheImageTaskRequest::GetPreCacheImageId() const
 {
-    return m_imageRegistryType;
+    return m_preCacheImageId;
 }
 
-void DescribePreCacheImageTaskRequest::SetImageRegistryType(const string& _imageRegistryType)
+void DescribePreCacheImageTaskRequest::SetPreCacheImageId(const string& _preCacheImageId)
 {
-    m_imageRegistryType = _imageRegistryType;
-    m_imageRegistryTypeHasBeenSet = true;
+    m_preCacheImageId = _preCacheImageId;
+    m_preCacheImageIdHasBeenSet = true;
 }
 
-bool DescribePreCacheImageTaskRequest::ImageRegistryTypeHasBeenSet() const
+bool DescribePreCacheImageTaskRequest::PreCacheImageIdHasBeenSet() const
 {
-    return m_imageRegistryTypeHasBeenSet;
+    return m_preCacheImageIdHasBeenSet;
 }
 
 

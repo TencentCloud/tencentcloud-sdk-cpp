@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdwpg/v20201230/model/InstanceStateItem.h>
 
 
 namespace TencentCloud
@@ -44,106 +45,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群状态，例如：Serving
-                     * @return InstanceState 集群状态，例如：Serving
+                     * 获取<p>集群备份任务开启状态2</p>
+                     * @return BackupOpenStatus <p>集群备份任务开启状态2</p>
                      * 
                      */
-                    std::string GetInstanceState() const;
+                    int64_t GetBackupOpenStatus() const;
 
                     /**
-                     * 判断参数 InstanceState 是否已赋值
-                     * @return InstanceState 是否已赋值
+                     * 判断参数 BackupOpenStatus 是否已赋值
+                     * @return BackupOpenStatus 是否已赋值
                      * 
                      */
-                    bool InstanceStateHasBeenSet() const;
+                    bool BackupOpenStatusHasBeenSet() const;
 
                     /**
-                     * 获取集群操作创建时间
-                     * @return FlowCreateTime 集群操作创建时间
-                     * 
-                     */
-                    std::string GetFlowCreateTime() const;
-
-                    /**
-                     * 判断参数 FlowCreateTime 是否已赋值
-                     * @return FlowCreateTime 是否已赋值
-                     * 
-                     */
-                    bool FlowCreateTimeHasBeenSet() const;
-
-                    /**
-                     * 获取集群操作名称
-                     * @return FlowName 集群操作名称
-                     * 
-                     */
-                    std::string GetFlowName() const;
-
-                    /**
-                     * 判断参数 FlowName 是否已赋值
-                     * @return FlowName 是否已赋值
-                     * 
-                     */
-                    bool FlowNameHasBeenSet() const;
-
-                    /**
-                     * 获取集群操作进度
-                     * @return FlowProgress 集群操作进度
-                     * 
-                     */
-                    double GetFlowProgress() const;
-
-                    /**
-                     * 判断参数 FlowProgress 是否已赋值
-                     * @return FlowProgress 是否已赋值
-                     * 
-                     */
-                    bool FlowProgressHasBeenSet() const;
-
-                    /**
-                     * 获取集群状态描述，例如：运行中
-                     * @return InstanceStateDesc 集群状态描述，例如：运行中
-                     * 
-                     */
-                    std::string GetInstanceStateDesc() const;
-
-                    /**
-                     * 判断参数 InstanceStateDesc 是否已赋值
-                     * @return InstanceStateDesc 是否已赋值
-                     * 
-                     */
-                    bool InstanceStateDescHasBeenSet() const;
-
-                    /**
-                     * 获取集群流程错误信息，例如：“创建失败，资源不足”
-                     * @return FlowMsg 集群流程错误信息，例如：“创建失败，资源不足”
-                     * 
-                     */
-                    std::string GetFlowMsg() const;
-
-                    /**
-                     * 判断参数 FlowMsg 是否已赋值
-                     * @return FlowMsg 是否已赋值
-                     * 
-                     */
-                    bool FlowMsgHasBeenSet() const;
-
-                    /**
-                     * 获取当前步骤的名称，例如：”购买资源中“
-                     * @return ProcessName 当前步骤的名称，例如：”购买资源中“
-                     * 
-                     */
-                    std::string GetProcessName() const;
-
-                    /**
-                     * 判断参数 ProcessName 是否已赋值
-                     * @return ProcessName 是否已赋值
-                     * 
-                     */
-                    bool ProcessNameHasBeenSet() const;
-
-                    /**
-                     * 获取集群备份任务开启状态
-                     * @return BackupStatus 集群备份任务开启状态
+                     * 获取<p>集群备份任务开启状态</p>
+                     * @return BackupStatus <p>集群备份任务开启状态</p>
                      * 
                      */
                     int64_t GetBackupStatus() const;
@@ -156,74 +73,178 @@ namespace TencentCloud
                     bool BackupStatusHasBeenSet() const;
 
                     /**
-                     * 获取集群备份任务开启状态2
-                     * @return BackupOpenStatus 集群备份任务开启状态2
+                     * 获取<p>集群操作创建时间</p>
+                     * @return FlowCreateTime <p>集群操作创建时间</p>
                      * 
                      */
-                    int64_t GetBackupOpenStatus() const;
+                    std::string GetFlowCreateTime() const;
 
                     /**
-                     * 判断参数 BackupOpenStatus 是否已赋值
-                     * @return BackupOpenStatus 是否已赋值
+                     * 判断参数 FlowCreateTime 是否已赋值
+                     * @return FlowCreateTime 是否已赋值
                      * 
                      */
-                    bool BackupOpenStatusHasBeenSet() const;
+                    bool FlowCreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群流程错误信息，例如：“创建失败，资源不足”</p>
+                     * @return FlowMsg <p>集群流程错误信息，例如：“创建失败，资源不足”</p>
+                     * 
+                     */
+                    std::string GetFlowMsg() const;
+
+                    /**
+                     * 判断参数 FlowMsg 是否已赋值
+                     * @return FlowMsg 是否已赋值
+                     * 
+                     */
+                    bool FlowMsgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群操作名称</p>
+                     * @return FlowName <p>集群操作名称</p>
+                     * 
+                     */
+                    std::string GetFlowName() const;
+
+                    /**
+                     * 判断参数 FlowName 是否已赋值
+                     * @return FlowName 是否已赋值
+                     * 
+                     */
+                    bool FlowNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群操作进度</p>
+                     * @return FlowProgress <p>集群操作进度</p>
+                     * 
+                     */
+                    double GetFlowProgress() const;
+
+                    /**
+                     * 判断参数 FlowProgress 是否已赋值
+                     * @return FlowProgress 是否已赋值
+                     * 
+                     */
+                    bool FlowProgressHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群状态，例如：Serving</p>
+                     * @return InstanceState <p>集群状态，例如：Serving</p>
+                     * 
+                     */
+                    std::string GetInstanceState() const;
+
+                    /**
+                     * 判断参数 InstanceState 是否已赋值
+                     * @return InstanceState 是否已赋值
+                     * 
+                     */
+                    bool InstanceStateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群状态描述，例如：运行中</p>
+                     * @return InstanceStateDesc <p>集群状态描述，例如：运行中</p>
+                     * 
+                     */
+                    std::string GetInstanceStateDesc() const;
+
+                    /**
+                     * 判断参数 InstanceStateDesc 是否已赋值
+                     * @return InstanceStateDesc 是否已赋值
+                     * 
+                     */
+                    bool InstanceStateDescHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前步骤的名称，例如：”购买资源中“</p>
+                     * @return ProcessName <p>当前步骤的名称，例如：”购买资源中“</p>
+                     * 
+                     */
+                    std::string GetProcessName() const;
+
+                    /**
+                     * 判断参数 ProcessName 是否已赋值
+                     * @return ProcessName 是否已赋值
+                     * 
+                     */
+                    bool ProcessNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>
+                     * @return InstanceStates <p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>
+                     * 
+                     */
+                    std::vector<InstanceStateItem> GetInstanceStates() const;
+
+                    /**
+                     * 判断参数 InstanceStates 是否已赋值
+                     * @return InstanceStates 是否已赋值
+                     * 
+                     */
+                    bool InstanceStatesHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 集群状态，例如：Serving
+                     * <p>集群备份任务开启状态2</p>
                      */
-                    std::string m_instanceState;
-                    bool m_instanceStateHasBeenSet;
+                    int64_t m_backupOpenStatus;
+                    bool m_backupOpenStatusHasBeenSet;
 
                     /**
-                     * 集群操作创建时间
-                     */
-                    std::string m_flowCreateTime;
-                    bool m_flowCreateTimeHasBeenSet;
-
-                    /**
-                     * 集群操作名称
-                     */
-                    std::string m_flowName;
-                    bool m_flowNameHasBeenSet;
-
-                    /**
-                     * 集群操作进度
-                     */
-                    double m_flowProgress;
-                    bool m_flowProgressHasBeenSet;
-
-                    /**
-                     * 集群状态描述，例如：运行中
-                     */
-                    std::string m_instanceStateDesc;
-                    bool m_instanceStateDescHasBeenSet;
-
-                    /**
-                     * 集群流程错误信息，例如：“创建失败，资源不足”
-                     */
-                    std::string m_flowMsg;
-                    bool m_flowMsgHasBeenSet;
-
-                    /**
-                     * 当前步骤的名称，例如：”购买资源中“
-                     */
-                    std::string m_processName;
-                    bool m_processNameHasBeenSet;
-
-                    /**
-                     * 集群备份任务开启状态
+                     * <p>集群备份任务开启状态</p>
                      */
                     int64_t m_backupStatus;
                     bool m_backupStatusHasBeenSet;
 
                     /**
-                     * 集群备份任务开启状态2
+                     * <p>集群操作创建时间</p>
                      */
-                    int64_t m_backupOpenStatus;
-                    bool m_backupOpenStatusHasBeenSet;
+                    std::string m_flowCreateTime;
+                    bool m_flowCreateTimeHasBeenSet;
+
+                    /**
+                     * <p>集群流程错误信息，例如：“创建失败，资源不足”</p>
+                     */
+                    std::string m_flowMsg;
+                    bool m_flowMsgHasBeenSet;
+
+                    /**
+                     * <p>集群操作名称</p>
+                     */
+                    std::string m_flowName;
+                    bool m_flowNameHasBeenSet;
+
+                    /**
+                     * <p>集群操作进度</p>
+                     */
+                    double m_flowProgress;
+                    bool m_flowProgressHasBeenSet;
+
+                    /**
+                     * <p>集群状态，例如：Serving</p>
+                     */
+                    std::string m_instanceState;
+                    bool m_instanceStateHasBeenSet;
+
+                    /**
+                     * <p>集群状态描述，例如：运行中</p>
+                     */
+                    std::string m_instanceStateDesc;
+                    bool m_instanceStateDescHasBeenSet;
+
+                    /**
+                     * <p>当前步骤的名称，例如：”购买资源中“</p>
+                     */
+                    std::string m_processName;
+                    bool m_processNameHasBeenSet;
+
+                    /**
+                     * <p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>
+                     */
+                    std::vector<InstanceStateItem> m_instanceStates;
+                    bool m_instanceStatesHasBeenSet;
 
                 };
             }

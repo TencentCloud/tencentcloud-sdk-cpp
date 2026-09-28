@@ -47,25 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取盘类型
-                     * @return DiskType 盘类型
+                     * 获取个数
+                     * @return DiskCount 个数
                      * 
                      */
-                    std::string GetDiskType() const;
+                    int64_t GetDiskCount() const;
 
                     /**
-                     * 设置盘类型
-                     * @param _diskType 盘类型
+                     * 设置个数
+                     * @param _diskCount 个数
                      * 
                      */
-                    void SetDiskType(const std::string& _diskType);
+                    void SetDiskCount(const int64_t& _diskCount);
 
                     /**
-                     * 判断参数 DiskType 是否已赋值
-                     * @return DiskType 是否已赋值
+                     * 判断参数 DiskCount 是否已赋值
+                     * @return DiskCount 是否已赋值
                      * 
                      */
-                    bool DiskTypeHasBeenSet() const;
+                    bool DiskCountHasBeenSet() const;
 
                     /**
                      * 获取大小
@@ -89,33 +89,33 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取个数
-                     * @return DiskCount 个数
+                     * 获取盘类型
+                     * @return DiskType 盘类型
                      * 
                      */
-                    int64_t GetDiskCount() const;
+                    std::string GetDiskType() const;
 
                     /**
-                     * 设置个数
-                     * @param _diskCount 个数
+                     * 设置盘类型
+                     * @param _diskType 盘类型
                      * 
                      */
-                    void SetDiskCount(const int64_t& _diskCount);
+                    void SetDiskType(const std::string& _diskType);
 
                     /**
-                     * 判断参数 DiskCount 是否已赋值
-                     * @return DiskCount 是否已赋值
+                     * 判断参数 DiskType 是否已赋值
+                     * @return DiskType 是否已赋值
                      * 
                      */
-                    bool DiskCountHasBeenSet() const;
+                    bool DiskTypeHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 盘类型
+                     * 个数
                      */
-                    std::string m_diskType;
-                    bool m_diskTypeHasBeenSet;
+                    int64_t m_diskCount;
+                    bool m_diskCountHasBeenSet;
 
                     /**
                      * 大小
@@ -124,10 +124,10 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 个数
+                     * 盘类型
                      */
-                    int64_t m_diskCount;
-                    bool m_diskCountHasBeenSet;
+                    std::string m_diskType;
+                    bool m_diskTypeHasBeenSet;
 
                 };
             }

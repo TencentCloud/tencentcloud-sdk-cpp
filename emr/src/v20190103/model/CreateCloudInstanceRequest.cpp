@@ -47,7 +47,9 @@ CreateCloudInstanceRequest::CreateCloudInstanceRequest() :
     m_computeResourceGroupIdsHasBeenSet(false),
     m_terminateProtectionHasBeenSet(false),
     m_enableEmrProxyHasBeenSet(false),
-    m_logStoreIDHasBeenSet(false)
+    m_logStoreIDHasBeenSet(false),
+    m_airflowDagSourceHasBeenSet(false),
+    m_airflowGitCredentialHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,24 @@ string CreateCloudInstanceRequest::ToJsonString() const
         string key = "LogStoreID";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logStoreID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_airflowDagSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AirflowDagSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_airflowDagSource.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_airflowGitCredentialHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AirflowGitCredential";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_airflowGitCredential.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -700,6 +720,38 @@ void CreateCloudInstanceRequest::SetLogStoreID(const string& _logStoreID)
 bool CreateCloudInstanceRequest::LogStoreIDHasBeenSet() const
 {
     return m_logStoreIDHasBeenSet;
+}
+
+AirflowDagSourceInput CreateCloudInstanceRequest::GetAirflowDagSource() const
+{
+    return m_airflowDagSource;
+}
+
+void CreateCloudInstanceRequest::SetAirflowDagSource(const AirflowDagSourceInput& _airflowDagSource)
+{
+    m_airflowDagSource = _airflowDagSource;
+    m_airflowDagSourceHasBeenSet = true;
+}
+
+bool CreateCloudInstanceRequest::AirflowDagSourceHasBeenSet() const
+{
+    return m_airflowDagSourceHasBeenSet;
+}
+
+AirflowGitCredentialInput CreateCloudInstanceRequest::GetAirflowGitCredential() const
+{
+    return m_airflowGitCredential;
+}
+
+void CreateCloudInstanceRequest::SetAirflowGitCredential(const AirflowGitCredentialInput& _airflowGitCredential)
+{
+    m_airflowGitCredential = _airflowGitCredential;
+    m_airflowGitCredentialHasBeenSet = true;
+}
+
+bool CreateCloudInstanceRequest::AirflowGitCredentialHasBeenSet() const
+{
+    return m_airflowGitCredentialHasBeenSet;
 }
 
 

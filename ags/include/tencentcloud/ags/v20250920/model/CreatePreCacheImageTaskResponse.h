@@ -85,6 +85,20 @@ namespace TencentCloud
                      */
                     bool ImageRegistryTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>镜像预热ID</p>
+                     * @return PreCacheImageId <p>镜像预热ID</p>
+                     * 
+                     */
+                    std::string GetPreCacheImageId() const;
+
+                    /**
+                     * 判断参数 PreCacheImageId 是否已赋值
+                     * @return PreCacheImageId 是否已赋值
+                     * 
+                     */
+                    bool PreCacheImageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_imageRegistryType;
                     bool m_imageRegistryTypeHasBeenSet;
+
+                    /**
+                     * <p>镜像预热ID</p>
+                     */
+                    std::string m_preCacheImageId;
+                    bool m_preCacheImageIdHasBeenSet;
 
                 };
             }

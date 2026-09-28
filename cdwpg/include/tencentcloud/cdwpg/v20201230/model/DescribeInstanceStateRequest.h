@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群实例名称
-                     * @return InstanceId 集群实例名称
+                     * 获取<p>集群实例名称</p>
+                     * @return InstanceId <p>集群实例名称</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群实例名称
-                     * @param _instanceId 集群实例名称
+                     * 设置<p>集群实例名称</p>
+                     * @param _instanceId <p>集群实例名称</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群实例名称列表（批量查询，优先于 InstanceId；上限100，超出截断）</p>
+                     * @return InstanceIds <p>集群实例名称列表（批量查询，优先于 InstanceId；上限100，超出截断）</p>
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 设置<p>集群实例名称列表（批量查询，优先于 InstanceId；上限100，超出截断）</p>
+                     * @param _instanceIds <p>集群实例名称列表（批量查询，优先于 InstanceId；上限100，超出截断）</p>
+                     * 
+                     */
+                    void SetInstanceIds(const std::vector<std::string>& _instanceIds);
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群实例名称
+                     * <p>集群实例名称</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>集群实例名称列表（批量查询，优先于 InstanceId；上限100，超出截断）</p>
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
 
                 };
             }

@@ -20,7 +20,7 @@ set(cdwpg_public_header
 
 set(cdwpg_public_header_model
   include/tencentcloud/cdwpg/v20201230/model/ConfigParams.h
-  include/tencentcloud/cdwpg/v20201230/model/ModifyInstanceResponse.h
+  include/tencentcloud/cdwpg/v20201230/model/InstanceStateItem.h
   include/tencentcloud/cdwpg/v20201230/model/DescribeInstanceInfoRequest.h
   include/tencentcloud/cdwpg/v20201230/model/DescribeUserHbaConfigResponse.h
   include/tencentcloud/cdwpg/v20201230/model/AccessInfo.h
@@ -43,6 +43,7 @@ set(cdwpg_public_header_model
   include/tencentcloud/cdwpg/v20201230/model/DescribeDBConfigHistoryRequest.h
   include/tencentcloud/cdwpg/v20201230/model/ErrorLogDetail.h
   include/tencentcloud/cdwpg/v20201230/model/DescribeDBParamsRequest.h
+  include/tencentcloud/cdwpg/v20201230/model/ModifyInstanceResponse.h
   include/tencentcloud/cdwpg/v20201230/model/CBSSpec.h
   include/tencentcloud/cdwpg/v20201230/model/DescribeInstanceNodesResponse.h
   include/tencentcloud/cdwpg/v20201230/model/ModifyInstanceRequest.h
@@ -102,7 +103,7 @@ set(cdwpg_public_header_model
 set(cdwpg_src
   src/v20201230/CdwpgClient.cpp
   src/v20201230/model/ConfigParams.cpp
-  src/v20201230/model/ModifyInstanceResponse.cpp
+  src/v20201230/model/InstanceStateItem.cpp
   src/v20201230/model/DescribeInstanceInfoRequest.cpp
   src/v20201230/model/DescribeUserHbaConfigResponse.cpp
   src/v20201230/model/AccessInfo.cpp
@@ -125,6 +126,7 @@ set(cdwpg_src
   src/v20201230/model/DescribeDBConfigHistoryRequest.cpp
   src/v20201230/model/ErrorLogDetail.cpp
   src/v20201230/model/DescribeDBParamsRequest.cpp
+  src/v20201230/model/ModifyInstanceResponse.cpp
   src/v20201230/model/CBSSpec.cpp
   src/v20201230/model/DescribeInstanceNodesResponse.cpp
   src/v20201230/model/ModifyInstanceRequest.cpp

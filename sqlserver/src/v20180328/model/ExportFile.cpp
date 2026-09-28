@@ -29,7 +29,10 @@ ExportFile::ExportFile() :
     m_errMsgHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
-    m_asyncRequestIdHasBeenSet(false)
+    m_asyncRequestIdHasBeenSet(false),
+    m_logStartTimeHasBeenSet(false),
+    m_logEndTimeHasBeenSet(false),
+    m_logFilterHasBeenSet(false)
 {
 }
 
@@ -128,6 +131,36 @@ CoreInternalOutcome ExportFile::Deserialize(const rapidjson::Value &value)
         m_asyncRequestIdHasBeenSet = true;
     }
 
+    if (value.HasMember("LogStartTime") && !value["LogStartTime"].IsNull())
+    {
+        if (!value["LogStartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportFile.LogStartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logStartTime = string(value["LogStartTime"].GetString());
+        m_logStartTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogEndTime") && !value["LogEndTime"].IsNull())
+    {
+        if (!value["LogEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportFile.LogEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logEndTime = string(value["LogEndTime"].GetString());
+        m_logEndTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogFilter") && !value["LogFilter"].IsNull())
+    {
+        if (!value["LogFilter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportFile.LogFilter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logFilter = string(value["LogFilter"].GetString());
+        m_logFilterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +238,30 @@ void ExportFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AsyncRequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_asyncRequestId, allocator);
+    }
+
+    if (m_logStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogFilter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logFilter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +409,53 @@ void ExportFile::SetAsyncRequestId(const int64_t& _asyncRequestId)
 bool ExportFile::AsyncRequestIdHasBeenSet() const
 {
     return m_asyncRequestIdHasBeenSet;
+}
+
+string ExportFile::GetLogStartTime() const
+{
+    return m_logStartTime;
+}
+
+void ExportFile::SetLogStartTime(const string& _logStartTime)
+{
+    m_logStartTime = _logStartTime;
+    m_logStartTimeHasBeenSet = true;
+}
+
+bool ExportFile::LogStartTimeHasBeenSet() const
+{
+    return m_logStartTimeHasBeenSet;
+}
+
+string ExportFile::GetLogEndTime() const
+{
+    return m_logEndTime;
+}
+
+void ExportFile::SetLogEndTime(const string& _logEndTime)
+{
+    m_logEndTime = _logEndTime;
+    m_logEndTimeHasBeenSet = true;
+}
+
+bool ExportFile::LogEndTimeHasBeenSet() const
+{
+    return m_logEndTimeHasBeenSet;
+}
+
+string ExportFile::GetLogFilter() const
+{
+    return m_logFilter;
+}
+
+void ExportFile::SetLogFilter(const string& _logFilter)
+{
+    m_logFilter = _logFilter;
+    m_logFilterHasBeenSet = true;
+}
+
+bool ExportFile::LogFilterHasBeenSet() const
+{
+    return m_logFilterHasBeenSet;
 }
 

@@ -42,7 +42,8 @@ CreateInstanceNewRequest::CreateInstanceNewRequest() :
     m_isSSCHasBeenSet(false),
     m_sSCCUHasBeenSet(false),
     m_cacheDiskSizeHasBeenSet(false),
-    m_cacheDataDiskSizeHasBeenSet(false)
+    m_cacheDataDiskSizeHasBeenSet(false),
+    m_diskEncryptHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,14 @@ string CreateInstanceNewRequest::ToJsonString() const
         string key = "CacheDataDiskSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cacheDataDiskSize, allocator);
+    }
+
+    if (m_diskEncryptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskEncrypt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_diskEncrypt, allocator);
     }
 
 
@@ -557,6 +566,22 @@ void CreateInstanceNewRequest::SetCacheDataDiskSize(const int64_t& _cacheDataDis
 bool CreateInstanceNewRequest::CacheDataDiskSizeHasBeenSet() const
 {
     return m_cacheDataDiskSizeHasBeenSet;
+}
+
+int64_t CreateInstanceNewRequest::GetDiskEncrypt() const
+{
+    return m_diskEncrypt;
+}
+
+void CreateInstanceNewRequest::SetDiskEncrypt(const int64_t& _diskEncrypt)
+{
+    m_diskEncrypt = _diskEncrypt;
+    m_diskEncryptHasBeenSet = true;
+}
+
+bool CreateInstanceNewRequest::DiskEncryptHasBeenSet() const
+{
+    return m_diskEncryptHasBeenSet;
 }
 
 

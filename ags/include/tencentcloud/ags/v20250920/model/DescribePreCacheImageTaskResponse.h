@@ -113,6 +113,76 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>镜像预热创建时间</p>
+                     * @return CreateTime <p>镜像预热创建时间</p>
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>镜像预热ID</p>
+                     * @return PreCacheImageId <p>镜像预热ID</p>
+                     * 
+                     */
+                    std::string GetPreCacheImageId() const;
+
+                    /**
+                     * 判断参数 PreCacheImageId 是否已赋值
+                     * @return PreCacheImageId 是否已赋值
+                     * 
+                     */
+                    bool PreCacheImageIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>镜像预热资源的来源类型，取值为 EXPLICIT、AUTO</p><p>枚举值：</p><ul><li>EXPLICIT： 手动创建</li><li>AUTO： 自动创建</li><li>TCR_AUTO： TCR自动预热</li></ul>
+                     * @return SourceType <p>镜像预热资源的来源类型，取值为 EXPLICIT、AUTO</p><p>枚举值：</p><ul><li>EXPLICIT： 手动创建</li><li>AUTO： 自动创建</li><li>TCR_AUTO： TCR自动预热</li></ul>
+                     * 
+                     */
+                    std::string GetSourceType() const;
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     * 
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>镜像预热存储大小</p><p>单位：Byte</p>
+                     * @return CachedImageSizeBytes <p>镜像预热存储大小</p><p>单位：Byte</p>
+                     * 
+                     */
+                    int64_t GetCachedImageSizeBytes() const;
+
+                    /**
+                     * 判断参数 CachedImageSizeBytes 是否已赋值
+                     * @return CachedImageSizeBytes 是否已赋值
+                     * 
+                     */
+                    bool CachedImageSizeBytesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>该预热镜像最近一次被沙箱实例使用时间</p>
+                     * @return LastUsedTime <p>该预热镜像最近一次被沙箱实例使用时间</p>
+                     * 
+                     */
+                    std::string GetLastUsedTime() const;
+
+                    /**
+                     * 判断参数 LastUsedTime 是否已赋值
+                     * @return LastUsedTime 是否已赋值
+                     * 
+                     */
+                    bool LastUsedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +214,36 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * <p>镜像预热创建时间</p>
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>镜像预热ID</p>
+                     */
+                    std::string m_preCacheImageId;
+                    bool m_preCacheImageIdHasBeenSet;
+
+                    /**
+                     * <p>镜像预热资源的来源类型，取值为 EXPLICIT、AUTO</p><p>枚举值：</p><ul><li>EXPLICIT： 手动创建</li><li>AUTO： 自动创建</li><li>TCR_AUTO： TCR自动预热</li></ul>
+                     */
+                    std::string m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
+
+                    /**
+                     * <p>镜像预热存储大小</p><p>单位：Byte</p>
+                     */
+                    int64_t m_cachedImageSizeBytes;
+                    bool m_cachedImageSizeBytesHasBeenSet;
+
+                    /**
+                     * <p>该预热镜像最近一次被沙箱实例使用时间</p>
+                     */
+                    std::string m_lastUsedTime;
+                    bool m_lastUsedTimeHasBeenSet;
 
                 };
             }

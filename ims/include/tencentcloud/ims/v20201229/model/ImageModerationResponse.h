@@ -232,6 +232,34 @@ namespace TencentCloud
                      */
                     bool RecognitionResultsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>转存地址，开启转存能力返回转存地址</p>
+                     * @return StoreUrl <p>转存地址，开启转存能力返回转存地址</p>
+                     * 
+                     */
+                    std::string GetStoreUrl() const;
+
+                    /**
+                     * 判断参数 StoreUrl 是否已赋值
+                     * @return StoreUrl 是否已赋值
+                     * 
+                     */
+                    bool StoreUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>命中原因，大模型提召回输出原因内容</p>
+                     * @return Reason <p>命中原因，大模型提召回输出原因内容</p>
+                     * 
+                     */
+                    std::string GetReason() const;
+
+                    /**
+                     * 判断参数 Reason 是否已赋值
+                     * @return Reason 是否已赋值
+                     * 
+                     */
+                    bool ReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -312,6 +340,18 @@ namespace TencentCloud
                      */
                     std::vector<RecognitionResult> m_recognitionResults;
                     bool m_recognitionResultsHasBeenSet;
+
+                    /**
+                     * <p>转存地址，开启转存能力返回转存地址</p>
+                     */
+                    std::string m_storeUrl;
+                    bool m_storeUrlHasBeenSet;
+
+                    /**
+                     * <p>命中原因，大模型提召回输出原因内容</p>
+                     */
+                    std::string m_reason;
+                    bool m_reasonHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ BuildSource::BuildSource() :
     m_isPrivateHasBeenSet(false),
     m_codeUrlWithAuthHasBeenSet(false),
     m_cosTimestampHasBeenSet(false),
-    m_cosSuffixHasBeenSet(false)
+    m_cosSuffixHasBeenSet(false),
+    m_packageFileNameHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome BuildSource::Deserialize(const rapidjson::Value &value)
         m_cosSuffixHasBeenSet = true;
     }
 
+    if (value.HasMember("PackageFileName") && !value["PackageFileName"].IsNull())
+    {
+        if (!value["PackageFileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BuildSource.PackageFileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_packageFileName = string(value["PackageFileName"].GetString());
+        m_packageFileNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void BuildSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CosSuffix";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cosSuffix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packageFileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageFileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_packageFileName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void BuildSource::SetCosSuffix(const string& _cosSuffix)
 bool BuildSource::CosSuffixHasBeenSet() const
 {
     return m_cosSuffixHasBeenSet;
+}
+
+string BuildSource::GetPackageFileName() const
+{
+    return m_packageFileName;
+}
+
+void BuildSource::SetPackageFileName(const string& _packageFileName)
+{
+    m_packageFileName = _packageFileName;
+    m_packageFileNameHasBeenSet = true;
+}
+
+bool BuildSource::PackageFileNameHasBeenSet() const
+{
+    return m_packageFileNameHasBeenSet;
 }
 

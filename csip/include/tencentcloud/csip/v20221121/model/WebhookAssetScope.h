@@ -47,31 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产范围类型（对齐 NotifyAssetRange）
-枚举值：
-1：全部主机（可剔除）
-2：自选主机
-3：按标签选择
-                     * @return AssetRange 资产范围类型（对齐 NotifyAssetRange）
-枚举值：
-1：全部主机（可剔除）
-2：自选主机
-3：按标签选择
+                     * 获取<p>资产范围类型（对齐 NotifyAssetRange）<br>枚举值：<br>1：全部主机（可剔除）<br>2：自选主机<br>3：按标签选择</p>
+                     * @return AssetRange <p>资产范围类型（对齐 NotifyAssetRange）<br>枚举值：<br>1：全部主机（可剔除）<br>2：自选主机<br>3：按标签选择</p>
                      * 
                      */
                     int64_t GetAssetRange() const;
 
                     /**
-                     * 设置资产范围类型（对齐 NotifyAssetRange）
-枚举值：
-1：全部主机（可剔除）
-2：自选主机
-3：按标签选择
-                     * @param _assetRange 资产范围类型（对齐 NotifyAssetRange）
-枚举值：
-1：全部主机（可剔除）
-2：自选主机
-3：按标签选择
+                     * 设置<p>资产范围类型（对齐 NotifyAssetRange）<br>枚举值：<br>1：全部主机（可剔除）<br>2：自选主机<br>3：按标签选择</p>
+                     * @param _assetRange <p>资产范围类型（对齐 NotifyAssetRange）<br>枚举值：<br>1：全部主机（可剔除）<br>2：自选主机<br>3：按标签选择</p>
                      * 
                      */
                     void SetAssetRange(const int64_t& _assetRange);
@@ -84,15 +68,15 @@ namespace TencentCloud
                     bool AssetRangeHasBeenSet() const;
 
                     /**
-                     * 获取选中的主机 quuid 列表，仅 AssetRange=2 生效
-                     * @return InstanceIds 选中的主机 quuid 列表，仅 AssetRange=2 生效
+                     * 获取<p>选中的主机 quuid 列表，仅 AssetRange=2 生效</p>
+                     * @return InstanceIds <p>选中的主机 quuid 列表，仅 AssetRange=2 生效</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置选中的主机 quuid 列表，仅 AssetRange=2 生效
-                     * @param _instanceIds 选中的主机 quuid 列表，仅 AssetRange=2 生效
+                     * 设置<p>选中的主机 quuid 列表，仅 AssetRange=2 生效</p>
+                     * @param _instanceIds <p>选中的主机 quuid 列表，仅 AssetRange=2 生效</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -105,15 +89,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取排除的主机 quuid 列表，仅 AssetRange=1 生效
-                     * @return ExcludedInstanceIds 排除的主机 quuid 列表，仅 AssetRange=1 生效
+                     * 获取<p>排除的主机 quuid 列表，仅 AssetRange=1 生效</p>
+                     * @return ExcludedInstanceIds <p>排除的主机 quuid 列表，仅 AssetRange=1 生效</p>
                      * 
                      */
                     std::vector<std::string> GetExcludedInstanceIds() const;
 
                     /**
-                     * 设置排除的主机 quuid 列表，仅 AssetRange=1 生效
-                     * @param _excludedInstanceIds 排除的主机 quuid 列表，仅 AssetRange=1 生效
+                     * 设置<p>排除的主机 quuid 列表，仅 AssetRange=1 生效</p>
+                     * @param _excludedInstanceIds <p>排除的主机 quuid 列表，仅 AssetRange=1 生效</p>
                      * 
                      */
                     void SetExcludedInstanceIds(const std::vector<std::string>& _excludedInstanceIds);
@@ -126,15 +110,15 @@ namespace TencentCloud
                     bool ExcludedInstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取安全中心标签 ID 列表，仅 AssetRange=3 生效
-                     * @return TagIds 安全中心标签 ID 列表，仅 AssetRange=3 生效
+                     * 获取<p>安全中心标签 ID 列表，仅 AssetRange=3 生效</p>
+                     * @return TagIds <p>安全中心标签 ID 列表，仅 AssetRange=3 生效</p>
                      * 
                      */
                     std::vector<int64_t> GetTagIds() const;
 
                     /**
-                     * 设置安全中心标签 ID 列表，仅 AssetRange=3 生效
-                     * @param _tagIds 安全中心标签 ID 列表，仅 AssetRange=3 生效
+                     * 设置<p>安全中心标签 ID 列表，仅 AssetRange=3 生效</p>
+                     * @param _tagIds <p>安全中心标签 ID 列表，仅 AssetRange=3 生效</p>
                      * 
                      */
                     void SetTagIds(const std::vector<int64_t>& _tagIds);
@@ -147,19 +131,15 @@ namespace TencentCloud
                     bool TagIdsHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云标签列表，仅 AssetRange=3 生效
-入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空
-                     * @return CloudTags 腾讯云标签列表，仅 AssetRange=3 生效
-入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空
+                     * 获取<p>腾讯云标签列表，仅 AssetRange=3 生效<br>入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空</p>
+                     * @return CloudTags <p>腾讯云标签列表，仅 AssetRange=3 生效<br>入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空</p>
                      * 
                      */
                     std::vector<std::string> GetCloudTags() const;
 
                     /**
-                     * 设置腾讯云标签列表，仅 AssetRange=3 生效
-入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空
-                     * @param _cloudTags 腾讯云标签列表，仅 AssetRange=3 生效
-入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空
+                     * 设置<p>腾讯云标签列表，仅 AssetRange=3 生效<br>入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空</p>
+                     * @param _cloudTags <p>腾讯云标签列表，仅 AssetRange=3 生效<br>入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空</p>
                      * 
                      */
                     void SetCloudTags(const std::vector<std::string>& _cloudTags);
@@ -171,42 +151,64 @@ namespace TencentCloud
                      */
                     bool CloudTagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>项目ID</p>
+                     * @return ProjectIds <p>项目ID</p>
+                     * 
+                     */
+                    std::vector<uint64_t> GetProjectIds() const;
+
+                    /**
+                     * 设置<p>项目ID</p>
+                     * @param _projectIds <p>项目ID</p>
+                     * 
+                     */
+                    void SetProjectIds(const std::vector<uint64_t>& _projectIds);
+
+                    /**
+                     * 判断参数 ProjectIds 是否已赋值
+                     * @return ProjectIds 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资产范围类型（对齐 NotifyAssetRange）
-枚举值：
-1：全部主机（可剔除）
-2：自选主机
-3：按标签选择
+                     * <p>资产范围类型（对齐 NotifyAssetRange）<br>枚举值：<br>1：全部主机（可剔除）<br>2：自选主机<br>3：按标签选择</p>
                      */
                     int64_t m_assetRange;
                     bool m_assetRangeHasBeenSet;
 
                     /**
-                     * 选中的主机 quuid 列表，仅 AssetRange=2 生效
+                     * <p>选中的主机 quuid 列表，仅 AssetRange=2 生效</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 排除的主机 quuid 列表，仅 AssetRange=1 生效
+                     * <p>排除的主机 quuid 列表，仅 AssetRange=1 生效</p>
                      */
                     std::vector<std::string> m_excludedInstanceIds;
                     bool m_excludedInstanceIdsHasBeenSet;
 
                     /**
-                     * 安全中心标签 ID 列表，仅 AssetRange=3 生效
+                     * <p>安全中心标签 ID 列表，仅 AssetRange=3 生效</p>
                      */
                     std::vector<int64_t> m_tagIds;
                     bool m_tagIdsHasBeenSet;
 
                     /**
-                     * 腾讯云标签列表，仅 AssetRange=3 生效
-入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空
+                     * <p>腾讯云标签列表，仅 AssetRange=3 生效<br>入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空</p>
                      */
                     std::vector<std::string> m_cloudTags;
                     bool m_cloudTagsHasBeenSet;
+
+                    /**
+                     * <p>项目ID</p>
+                     */
+                    std::vector<uint64_t> m_projectIds;
+                    bool m_projectIdsHasBeenSet;
 
                 };
             }

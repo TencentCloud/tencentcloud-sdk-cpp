@@ -21,10 +21,10 @@ using namespace TencentCloud::Cdwpg::V20201230::Model;
 using namespace std;
 
 CNResourceSpec::CNResourceSpec() :
-    m_typeHasBeenSet(false),
-    m_specNameHasBeenSet(false),
     m_countHasBeenSet(false),
-    m_diskSpecHasBeenSet(false)
+    m_diskSpecHasBeenSet(false),
+    m_specNameHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -32,26 +32,6 @@ CoreInternalOutcome CNResourceSpec::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Type") && !value["Type"].IsNull())
-    {
-        if (!value["Type"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNResourceSpec.Type` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_type = string(value["Type"].GetString());
-        m_typeHasBeenSet = true;
-    }
-
-    if (value.HasMember("SpecName") && !value["SpecName"].IsNull())
-    {
-        if (!value["SpecName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNResourceSpec.SpecName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_specName = string(value["SpecName"].GetString());
-        m_specNameHasBeenSet = true;
-    }
 
     if (value.HasMember("Count") && !value["Count"].IsNull())
     {
@@ -80,28 +60,32 @@ CoreInternalOutcome CNResourceSpec::Deserialize(const rapidjson::Value &value)
         m_diskSpecHasBeenSet = true;
     }
 
+    if (value.HasMember("SpecName") && !value["SpecName"].IsNull())
+    {
+        if (!value["SpecName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNResourceSpec.SpecName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specName = string(value["SpecName"].GetString());
+        m_specNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNResourceSpec.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void CNResourceSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_specNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SpecName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_specName.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_countHasBeenSet)
     {
@@ -120,40 +104,24 @@ void CNResourceSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         m_diskSpec.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_specNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string CNResourceSpec::GetType() const
-{
-    return m_type;
-}
-
-void CNResourceSpec::SetType(const string& _type)
-{
-    m_type = _type;
-    m_typeHasBeenSet = true;
-}
-
-bool CNResourceSpec::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
-}
-
-string CNResourceSpec::GetSpecName() const
-{
-    return m_specName;
-}
-
-void CNResourceSpec::SetSpecName(const string& _specName)
-{
-    m_specName = _specName;
-    m_specNameHasBeenSet = true;
-}
-
-bool CNResourceSpec::SpecNameHasBeenSet() const
-{
-    return m_specNameHasBeenSet;
-}
 
 int64_t CNResourceSpec::GetCount() const
 {
@@ -185,5 +153,37 @@ void CNResourceSpec::SetDiskSpec(const CBSSpec& _diskSpec)
 bool CNResourceSpec::DiskSpecHasBeenSet() const
 {
     return m_diskSpecHasBeenSet;
+}
+
+string CNResourceSpec::GetSpecName() const
+{
+    return m_specName;
+}
+
+void CNResourceSpec::SetSpecName(const string& _specName)
+{
+    m_specName = _specName;
+    m_specNameHasBeenSet = true;
+}
+
+bool CNResourceSpec::SpecNameHasBeenSet() const
+{
+    return m_specNameHasBeenSet;
+}
+
+string CNResourceSpec::GetType() const
+{
+    return m_type;
+}
+
+void CNResourceSpec::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CNResourceSpec::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

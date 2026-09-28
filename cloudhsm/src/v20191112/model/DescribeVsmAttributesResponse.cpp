@@ -48,7 +48,9 @@ DescribeVsmAttributesResponse::DescribeVsmAttributesResponse() :
     m_renewFlagHasBeenSet(false),
     m_manufacturerHasBeenSet(false),
     m_pqcFlagHasBeenSet(false),
-    m_deployEnvHasBeenSet(false)
+    m_deployEnvHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_clusterRoleHasBeenSet(false)
 {
 }
 
@@ -356,6 +358,26 @@ CoreInternalOutcome DescribeVsmAttributesResponse::Deserialize(const string &pay
         m_deployEnvHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClusterId") && !rsp["ClusterId"].IsNull())
+    {
+        if (!rsp["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(rsp["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClusterRole") && !rsp["ClusterRole"].IsNull())
+    {
+        if (!rsp["ClusterRole"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterRole` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterRole = rsp["ClusterRole"].GetInt64();
+        m_clusterRoleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -578,6 +600,22 @@ string DescribeVsmAttributesResponse::ToJsonString() const
         string key = "DeployEnv";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deployEnv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterRole, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -840,6 +878,26 @@ string DescribeVsmAttributesResponse::GetDeployEnv() const
 bool DescribeVsmAttributesResponse::DeployEnvHasBeenSet() const
 {
     return m_deployEnvHasBeenSet;
+}
+
+string DescribeVsmAttributesResponse::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+bool DescribeVsmAttributesResponse::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+int64_t DescribeVsmAttributesResponse::GetClusterRole() const
+{
+    return m_clusterRole;
+}
+
+bool DescribeVsmAttributesResponse::ClusterRoleHasBeenSet() const
+{
+    return m_clusterRoleHasBeenSet;
 }
 
 

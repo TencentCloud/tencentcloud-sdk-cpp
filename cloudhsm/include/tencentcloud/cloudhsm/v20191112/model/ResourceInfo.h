@@ -594,6 +594,69 @@ namespace TencentCloud
                      */
                     bool DeployEnvHasBeenSet() const;
 
+                    /**
+                     * 获取<p>vsm版本号</p>
+                     * @return Version <p>vsm版本号</p>
+                     * 
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置<p>vsm版本号</p>
+                     * @param _version <p>vsm版本号</p>
+                     * 
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     * 
+                     */
+                    bool VersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置<p>集群id</p>
+                     * @param _clusterId <p>集群id</p>
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群角色，0-未加入集群 1-主 2-从</p>
+                     * @return ClusterRole <p>集群角色，0-未加入集群 1-主 2-从</p>
+                     * 
+                     */
+                    int64_t GetClusterRole() const;
+
+                    /**
+                     * 设置<p>集群角色，0-未加入集群 1-主 2-从</p>
+                     * @param _clusterRole <p>集群角色，0-未加入集群 1-主 2-从</p>
+                     * 
+                     */
+                    void SetClusterRole(const int64_t& _clusterRole);
+
+                    /**
+                     * 判断参数 ClusterRole 是否已赋值
+                     * @return ClusterRole 是否已赋值
+                     * 
+                     */
+                    bool ClusterRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -751,6 +814,24 @@ namespace TencentCloud
                      */
                     std::string m_deployEnv;
                     bool m_deployEnvHasBeenSet;
+
+                    /**
+                     * <p>vsm版本号</p>
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
+
+                    /**
+                     * <p>集群id</p>
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * <p>集群角色，0-未加入集群 1-主 2-从</p>
+                     */
+                    int64_t m_clusterRole;
+                    bool m_clusterRoleHasBeenSet;
 
                 };
             }

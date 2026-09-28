@@ -27,6 +27,9 @@
 #include <tencentcloud/tcb/v20180608/model/Variable.h>
 #include <tencentcloud/tcb/v20180608/model/BuildStep.h>
 #include <tencentcloud/tcb/v20180608/model/BuildSecret.h>
+#include <tencentcloud/tcb/v20180608/model/CloudAppTrigger.h>
+#include <tencentcloud/tcb/v20180608/model/CloudAppLinkService.h>
+#include <tencentcloud/tcb/v20180608/model/CloudAppRoute.h>
 
 
 namespace TencentCloud
@@ -279,6 +282,174 @@ namespace TencentCloud
                      */
                     bool NodeJsVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>暂不支持：Webhook 触发器功能尚未对外开放，客户端传入的 Trigger 字段会被平台静默忽略（仅日志告警，不拒绝请求）</p>
+                     * @return Trigger <p>暂不支持：Webhook 触发器功能尚未对外开放，客户端传入的 Trigger 字段会被平台静默忽略（仅日志告警，不拒绝请求）</p>
+                     * 
+                     */
+                    CloudAppTrigger GetTrigger() const;
+
+                    /**
+                     * 设置<p>暂不支持：Webhook 触发器功能尚未对外开放，客户端传入的 Trigger 字段会被平台静默忽略（仅日志告警，不拒绝请求）</p>
+                     * @param _trigger <p>暂不支持：Webhook 触发器功能尚未对外开放，客户端传入的 Trigger 字段会被平台静默忽略（仅日志告警，不拒绝请求）</p>
+                     * 
+                     */
+                    void SetTrigger(const CloudAppTrigger& _trigger);
+
+                    /**
+                     * 判断参数 Trigger 是否已赋值
+                     * @return Trigger 是否已赋值
+                     * 
+                     */
+                    bool TriggerHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务列表</p>
+                     * @return ServiceList <p>服务列表</p>
+                     * 
+                     */
+                    std::vector<CloudAppLinkService> GetServiceList() const;
+
+                    /**
+                     * 设置<p>服务列表</p>
+                     * @param _serviceList <p>服务列表</p>
+                     * 
+                     */
+                    void SetServiceList(const std::vector<CloudAppLinkService>& _serviceList);
+
+                    /**
+                     * 判断参数 ServiceList 是否已赋值
+                     * @return ServiceList 是否已赋值
+                     * 
+                     */
+                    bool ServiceListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>全局工作目录</p>
+                     * @return WorkingDir <p>全局工作目录</p>
+                     * 
+                     */
+                    std::string GetWorkingDir() const;
+
+                    /**
+                     * 设置<p>全局工作目录</p>
+                     * @param _workingDir <p>全局工作目录</p>
+                     * 
+                     */
+                    void SetWorkingDir(const std::string& _workingDir);
+
+                    /**
+                     * 判断参数 WorkingDir 是否已赋值
+                     * @return WorkingDir 是否已赋值
+                     * 
+                     */
+                    bool WorkingDirHasBeenSet() const;
+
+                    /**
+                     * 获取<p>路由列表</p>
+                     * @return Routes <p>路由列表</p>
+                     * 
+                     */
+                    std::vector<CloudAppRoute> GetRoutes() const;
+
+                    /**
+                     * 设置<p>路由列表</p>
+                     * @param _routes <p>路由列表</p>
+                     * 
+                     */
+                    void SetRoutes(const std::vector<CloudAppRoute>& _routes);
+
+                    /**
+                     * 判断参数 Routes 是否已赋值
+                     * @return Routes 是否已赋值
+                     * 
+                     */
+                    bool RoutesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>部署类型</p>
+                     * @return PromoteType <p>部署类型</p>
+                     * 
+                     */
+                    std::string GetPromoteType() const;
+
+                    /**
+                     * 设置<p>部署类型</p>
+                     * @param _promoteType <p>部署类型</p>
+                     * 
+                     */
+                    void SetPromoteType(const std::string& _promoteType);
+
+                    /**
+                     * 判断参数 PromoteType 是否已赋值
+                     * @return PromoteType 是否已赋值
+                     * 
+                     */
+                    bool PromoteTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>发布 Token 校验</p>
+                     * @return ClientToken <p>发布 Token 校验</p>
+                     * 
+                     */
+                    std::string GetClientToken() const;
+
+                    /**
+                     * 设置<p>发布 Token 校验</p>
+                     * @param _clientToken <p>发布 Token 校验</p>
+                     * 
+                     */
+                    void SetClientToken(const std::string& _clientToken);
+
+                    /**
+                     * 判断参数 ClientToken 是否已赋值
+                     * @return ClientToken 是否已赋值
+                     * 
+                     */
+                    bool ClientTokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>前置执行命令</p>
+                     * @return PreDeployCommand <p>前置执行命令</p>
+                     * 
+                     */
+                    std::string GetPreDeployCommand() const;
+
+                    /**
+                     * 设置<p>前置执行命令</p>
+                     * @param _preDeployCommand <p>前置执行命令</p>
+                     * 
+                     */
+                    void SetPreDeployCommand(const std::string& _preDeployCommand);
+
+                    /**
+                     * 判断参数 PreDeployCommand 是否已赋值
+                     * @return PreDeployCommand 是否已赋值
+                     * 
+                     */
+                    bool PreDeployCommandHasBeenSet() const;
+
+                    /**
+                     * 获取<p>后置执行命令</p>
+                     * @return PostDeployCommand <p>后置执行命令</p>
+                     * 
+                     */
+                    std::string GetPostDeployCommand() const;
+
+                    /**
+                     * 设置<p>后置执行命令</p>
+                     * @param _postDeployCommand <p>后置执行命令</p>
+                     * 
+                     */
+                    void SetPostDeployCommand(const std::string& _postDeployCommand);
+
+                    /**
+                     * 判断参数 PostDeployCommand 是否已赋值
+                     * @return PostDeployCommand 是否已赋值
+                     * 
+                     */
+                    bool PostDeployCommandHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +517,54 @@ namespace TencentCloud
                      */
                     std::string m_nodeJsVersion;
                     bool m_nodeJsVersionHasBeenSet;
+
+                    /**
+                     * <p>暂不支持：Webhook 触发器功能尚未对外开放，客户端传入的 Trigger 字段会被平台静默忽略（仅日志告警，不拒绝请求）</p>
+                     */
+                    CloudAppTrigger m_trigger;
+                    bool m_triggerHasBeenSet;
+
+                    /**
+                     * <p>服务列表</p>
+                     */
+                    std::vector<CloudAppLinkService> m_serviceList;
+                    bool m_serviceListHasBeenSet;
+
+                    /**
+                     * <p>全局工作目录</p>
+                     */
+                    std::string m_workingDir;
+                    bool m_workingDirHasBeenSet;
+
+                    /**
+                     * <p>路由列表</p>
+                     */
+                    std::vector<CloudAppRoute> m_routes;
+                    bool m_routesHasBeenSet;
+
+                    /**
+                     * <p>部署类型</p>
+                     */
+                    std::string m_promoteType;
+                    bool m_promoteTypeHasBeenSet;
+
+                    /**
+                     * <p>发布 Token 校验</p>
+                     */
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * <p>前置执行命令</p>
+                     */
+                    std::string m_preDeployCommand;
+                    bool m_preDeployCommandHasBeenSet;
+
+                    /**
+                     * <p>后置执行命令</p>
+                     */
+                    std::string m_postDeployCommand;
+                    bool m_postDeployCommandHasBeenSet;
 
                 };
             }

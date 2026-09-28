@@ -29,6 +29,8 @@
 #include <tencentcloud/emr/v20190103/model/ExternalService.h>
 #include <tencentcloud/emr/v20190103/model/ContainerExtraConf.h>
 #include <tencentcloud/emr/v20190103/model/EnableSparkAppMonitorInfo.h>
+#include <tencentcloud/emr/v20190103/model/AirflowDagSourceInput.h>
+#include <tencentcloud/emr/v20190103/model/AirflowGitCredentialInput.h>
 
 
 namespace TencentCloud
@@ -575,6 +577,48 @@ namespace TencentCloud
                      */
                     bool LogStoreIDHasBeenSet() const;
 
+                    /**
+                     * 获取<p>airflow目录源</p>
+                     * @return AirflowDagSource <p>airflow目录源</p>
+                     * 
+                     */
+                    AirflowDagSourceInput GetAirflowDagSource() const;
+
+                    /**
+                     * 设置<p>airflow目录源</p>
+                     * @param _airflowDagSource <p>airflow目录源</p>
+                     * 
+                     */
+                    void SetAirflowDagSource(const AirflowDagSourceInput& _airflowDagSource);
+
+                    /**
+                     * 判断参数 AirflowDagSource 是否已赋值
+                     * @return AirflowDagSource 是否已赋值
+                     * 
+                     */
+                    bool AirflowDagSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>airflow源凭证</p>
+                     * @return AirflowGitCredential <p>airflow源凭证</p>
+                     * 
+                     */
+                    AirflowGitCredentialInput GetAirflowGitCredential() const;
+
+                    /**
+                     * 设置<p>airflow源凭证</p>
+                     * @param _airflowGitCredential <p>airflow源凭证</p>
+                     * 
+                     */
+                    void SetAirflowGitCredential(const AirflowGitCredentialInput& _airflowGitCredential);
+
+                    /**
+                     * 判断参数 AirflowGitCredential 是否已赋值
+                     * @return AirflowGitCredential 是否已赋值
+                     * 
+                     */
+                    bool AirflowGitCredentialHasBeenSet() const;
+
                 private:
 
                     /**
@@ -726,6 +770,18 @@ namespace TencentCloud
                      */
                     std::string m_logStoreID;
                     bool m_logStoreIDHasBeenSet;
+
+                    /**
+                     * <p>airflow目录源</p>
+                     */
+                    AirflowDagSourceInput m_airflowDagSource;
+                    bool m_airflowDagSourceHasBeenSet;
+
+                    /**
+                     * <p>airflow源凭证</p>
+                     */
+                    AirflowGitCredentialInput m_airflowGitCredential;
+                    bool m_airflowGitCredentialHasBeenSet;
 
                 };
             }

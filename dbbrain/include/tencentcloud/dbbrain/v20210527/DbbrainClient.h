@@ -109,6 +109,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDatabaseAutonomyStatusRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDatabaseAutonomyStatusResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDeadLockLogsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDeadLockLogsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDiagDBInstancesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDiagDBInstancesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreRequest.h>
@@ -352,6 +354,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatabaseAutonomyStatusResponse> DescribeDatabaseAutonomyStatusOutcome;
                 typedef std::future<DescribeDatabaseAutonomyStatusOutcome> DescribeDatabaseAutonomyStatusOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDatabaseAutonomyStatusRequest&, DescribeDatabaseAutonomyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseAutonomyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeadLockLogsResponse> DescribeDeadLockLogsOutcome;
+                typedef std::future<DescribeDeadLockLogsOutcome> DescribeDeadLockLogsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDeadLockLogsRequest&, DescribeDeadLockLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeadLockLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiagDBInstancesResponse> DescribeDiagDBInstancesOutcome;
                 typedef std::future<DescribeDiagDBInstancesOutcome> DescribeDiagDBInstancesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDiagDBInstancesRequest&, DescribeDiagDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagDBInstancesAsyncHandler;
@@ -891,6 +896,15 @@ namespace TencentCloud
                 DescribeDatabaseAutonomyStatusOutcome DescribeDatabaseAutonomyStatus(const Model::DescribeDatabaseAutonomyStatusRequest &request);
                 void DescribeDatabaseAutonomyStatusAsync(const Model::DescribeDatabaseAutonomyStatusRequest& request, const DescribeDatabaseAutonomyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabaseAutonomyStatusOutcomeCallable DescribeDatabaseAutonomyStatusCallable(const Model::DescribeDatabaseAutonomyStatusRequest& request);
+
+                /**
+                 *查询实例的死锁事件列表
+                 * @param req DescribeDeadLockLogsRequest
+                 * @return DescribeDeadLockLogsOutcome
+                 */
+                DescribeDeadLockLogsOutcome DescribeDeadLockLogs(const Model::DescribeDeadLockLogsRequest &request);
+                void DescribeDeadLockLogsAsync(const Model::DescribeDeadLockLogsRequest& request, const DescribeDeadLockLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeadLockLogsOutcomeCallable DescribeDeadLockLogsCallable(const Model::DescribeDeadLockLogsRequest& request);
 
                 /**
                  *获取实例信息列表。Region统一选择广州。

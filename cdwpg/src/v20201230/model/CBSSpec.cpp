@@ -21,9 +21,9 @@ using namespace TencentCloud::Cdwpg::V20201230::Model;
 using namespace std;
 
 CBSSpec::CBSSpec() :
-    m_diskTypeHasBeenSet(false),
+    m_diskCountHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
-    m_diskCountHasBeenSet(false)
+    m_diskTypeHasBeenSet(false)
 {
 }
 
@@ -32,14 +32,14 @@ CoreInternalOutcome CBSSpec::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("DiskType") && !value["DiskType"].IsNull())
+    if (value.HasMember("DiskCount") && !value["DiskCount"].IsNull())
     {
-        if (!value["DiskType"].IsString())
+        if (!value["DiskCount"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `CBSSpec.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CBSSpec.DiskCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_diskType = string(value["DiskType"].GetString());
-        m_diskTypeHasBeenSet = true;
+        m_diskCount = value["DiskCount"].GetInt64();
+        m_diskCountHasBeenSet = true;
     }
 
     if (value.HasMember("DiskSize") && !value["DiskSize"].IsNull())
@@ -52,14 +52,14 @@ CoreInternalOutcome CBSSpec::Deserialize(const rapidjson::Value &value)
         m_diskSizeHasBeenSet = true;
     }
 
-    if (value.HasMember("DiskCount") && !value["DiskCount"].IsNull())
+    if (value.HasMember("DiskType") && !value["DiskType"].IsNull())
     {
-        if (!value["DiskCount"].IsInt64())
+        if (!value["DiskType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `CBSSpec.DiskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CBSSpec.DiskType` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_diskCount = value["DiskCount"].GetInt64();
-        m_diskCountHasBeenSet = true;
+        m_diskType = string(value["DiskType"].GetString());
+        m_diskTypeHasBeenSet = true;
     }
 
 
@@ -69,12 +69,12 @@ CoreInternalOutcome CBSSpec::Deserialize(const rapidjson::Value &value)
 void CBSSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_diskTypeHasBeenSet)
+    if (m_diskCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiskType";
+        string key = "DiskCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_diskCount, allocator);
     }
 
     if (m_diskSizeHasBeenSet)
@@ -85,31 +85,31 @@ void CBSSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, m_diskSize, allocator);
     }
 
-    if (m_diskCountHasBeenSet)
+    if (m_diskTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiskCount";
+        string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_diskCount, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
     }
 
 }
 
 
-string CBSSpec::GetDiskType() const
+int64_t CBSSpec::GetDiskCount() const
 {
-    return m_diskType;
+    return m_diskCount;
 }
 
-void CBSSpec::SetDiskType(const string& _diskType)
+void CBSSpec::SetDiskCount(const int64_t& _diskCount)
 {
-    m_diskType = _diskType;
-    m_diskTypeHasBeenSet = true;
+    m_diskCount = _diskCount;
+    m_diskCountHasBeenSet = true;
 }
 
-bool CBSSpec::DiskTypeHasBeenSet() const
+bool CBSSpec::DiskCountHasBeenSet() const
 {
-    return m_diskTypeHasBeenSet;
+    return m_diskCountHasBeenSet;
 }
 
 int64_t CBSSpec::GetDiskSize() const
@@ -128,19 +128,19 @@ bool CBSSpec::DiskSizeHasBeenSet() const
     return m_diskSizeHasBeenSet;
 }
 
-int64_t CBSSpec::GetDiskCount() const
+string CBSSpec::GetDiskType() const
 {
-    return m_diskCount;
+    return m_diskType;
 }
 
-void CBSSpec::SetDiskCount(const int64_t& _diskCount)
+void CBSSpec::SetDiskType(const string& _diskType)
 {
-    m_diskCount = _diskCount;
-    m_diskCountHasBeenSet = true;
+    m_diskType = _diskType;
+    m_diskTypeHasBeenSet = true;
 }
 
-bool CBSSpec::DiskCountHasBeenSet() const
+bool CBSSpec::DiskTypeHasBeenSet() const
 {
-    return m_diskCountHasBeenSet;
+    return m_diskTypeHasBeenSet;
 }
 

@@ -271,6 +271,81 @@ namespace TencentCloud
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志开始时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogStartTime <p>日志开始时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogStartTime() const;
+
+                    /**
+                     * 设置<p>日志开始时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logStartTime <p>日志开始时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLogStartTime(const std::string& _logStartTime);
+
+                    /**
+                     * 判断参数 LogStartTime 是否已赋值
+                     * @return LogStartTime 是否已赋值
+                     * 
+                     */
+                    bool LogStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>日志结束时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogEndTime <p>日志结束时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogEndTime() const;
+
+                    /**
+                     * 设置<p>日志结束时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logEndTime <p>日志结束时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLogEndTime(const std::string& _logEndTime);
+
+                    /**
+                     * 判断参数 LogEndTime 是否已赋值
+                     * @return LogEndTime 是否已赋值
+                     * 
+                     */
+                    bool LogEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>日志过滤条件</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogFilter <p>日志过滤条件</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogFilter() const;
+
+                    /**
+                     * 设置<p>日志过滤条件</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logFilter <p>日志过滤条件</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLogFilter(const std::string& _logFilter);
+
+                    /**
+                     * 判断参数 LogFilter 是否已赋值
+                     * @return LogFilter 是否已赋值
+                     * 
+                     */
+                    bool LogFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +410,27 @@ namespace TencentCloud
                      */
                     int64_t m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;
+
+                    /**
+                     * <p>日志开始时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logStartTime;
+                    bool m_logStartTimeHasBeenSet;
+
+                    /**
+                     * <p>日志结束时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logEndTime;
+                    bool m_logEndTimeHasBeenSet;
+
+                    /**
+                     * <p>日志过滤条件</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logFilter;
+                    bool m_logFilterHasBeenSet;
 
                 };
             }

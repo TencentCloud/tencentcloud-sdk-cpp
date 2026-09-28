@@ -24,15 +24,16 @@ using namespace TencentCloud::Cdwpg::V20201230::Model;
 using namespace std;
 
 DescribeInstanceStateResponse::DescribeInstanceStateResponse() :
-    m_instanceStateHasBeenSet(false),
+    m_backupOpenStatusHasBeenSet(false),
+    m_backupStatusHasBeenSet(false),
     m_flowCreateTimeHasBeenSet(false),
+    m_flowMsgHasBeenSet(false),
     m_flowNameHasBeenSet(false),
     m_flowProgressHasBeenSet(false),
+    m_instanceStateHasBeenSet(false),
     m_instanceStateDescHasBeenSet(false),
-    m_flowMsgHasBeenSet(false),
     m_processNameHasBeenSet(false),
-    m_backupStatusHasBeenSet(false),
-    m_backupOpenStatusHasBeenSet(false)
+    m_instanceStatesHasBeenSet(false)
 {
 }
 
@@ -70,14 +71,24 @@ CoreInternalOutcome DescribeInstanceStateResponse::Deserialize(const string &pay
     }
 
 
-    if (rsp.HasMember("InstanceState") && !rsp["InstanceState"].IsNull())
+    if (rsp.HasMember("BackupOpenStatus") && !rsp["BackupOpenStatus"].IsNull())
     {
-        if (!rsp["InstanceState"].IsString())
+        if (!rsp["BackupOpenStatus"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `InstanceState` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BackupOpenStatus` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_instanceState = string(rsp["InstanceState"].GetString());
-        m_instanceStateHasBeenSet = true;
+        m_backupOpenStatus = rsp["BackupOpenStatus"].GetInt64();
+        m_backupOpenStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BackupStatus") && !rsp["BackupStatus"].IsNull())
+    {
+        if (!rsp["BackupStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupStatus = rsp["BackupStatus"].GetInt64();
+        m_backupStatusHasBeenSet = true;
     }
 
     if (rsp.HasMember("FlowCreateTime") && !rsp["FlowCreateTime"].IsNull())
@@ -88,6 +99,16 @@ CoreInternalOutcome DescribeInstanceStateResponse::Deserialize(const string &pay
         }
         m_flowCreateTime = string(rsp["FlowCreateTime"].GetString());
         m_flowCreateTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FlowMsg") && !rsp["FlowMsg"].IsNull())
+    {
+        if (!rsp["FlowMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowMsg = string(rsp["FlowMsg"].GetString());
+        m_flowMsgHasBeenSet = true;
     }
 
     if (rsp.HasMember("FlowName") && !rsp["FlowName"].IsNull())
@@ -110,6 +131,16 @@ CoreInternalOutcome DescribeInstanceStateResponse::Deserialize(const string &pay
         m_flowProgressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceState") && !rsp["InstanceState"].IsNull())
+    {
+        if (!rsp["InstanceState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceState = string(rsp["InstanceState"].GetString());
+        m_instanceStateHasBeenSet = true;
+    }
+
     if (rsp.HasMember("InstanceStateDesc") && !rsp["InstanceStateDesc"].IsNull())
     {
         if (!rsp["InstanceStateDesc"].IsString())
@@ -118,16 +149,6 @@ CoreInternalOutcome DescribeInstanceStateResponse::Deserialize(const string &pay
         }
         m_instanceStateDesc = string(rsp["InstanceStateDesc"].GetString());
         m_instanceStateDescHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("FlowMsg") && !rsp["FlowMsg"].IsNull())
-    {
-        if (!rsp["FlowMsg"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowMsg` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_flowMsg = string(rsp["FlowMsg"].GetString());
-        m_flowMsgHasBeenSet = true;
     }
 
     if (rsp.HasMember("ProcessName") && !rsp["ProcessName"].IsNull())
@@ -140,24 +161,24 @@ CoreInternalOutcome DescribeInstanceStateResponse::Deserialize(const string &pay
         m_processNameHasBeenSet = true;
     }
 
-    if (rsp.HasMember("BackupStatus") && !rsp["BackupStatus"].IsNull())
+    if (rsp.HasMember("InstanceStates") && !rsp["InstanceStates"].IsNull())
     {
-        if (!rsp["BackupStatus"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `BackupStatus` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_backupStatus = rsp["BackupStatus"].GetInt64();
-        m_backupStatusHasBeenSet = true;
-    }
+        if (!rsp["InstanceStates"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceStates` is not array type"));
 
-    if (rsp.HasMember("BackupOpenStatus") && !rsp["BackupOpenStatus"].IsNull())
-    {
-        if (!rsp["BackupOpenStatus"].IsInt64())
+        const rapidjson::Value &tmpValue = rsp["InstanceStates"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `BackupOpenStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+            InstanceStateItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceStates.push_back(item);
         }
-        m_backupOpenStatus = rsp["BackupOpenStatus"].GetInt64();
-        m_backupOpenStatusHasBeenSet = true;
+        m_instanceStatesHasBeenSet = true;
     }
 
 
@@ -170,12 +191,20 @@ string DescribeInstanceStateResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_instanceStateHasBeenSet)
+    if (m_backupOpenStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceState";
+        string key = "BackupOpenStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_instanceState.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_backupOpenStatus, allocator);
+    }
+
+    if (m_backupStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupStatus, allocator);
     }
 
     if (m_flowCreateTimeHasBeenSet)
@@ -184,6 +213,14 @@ string DescribeInstanceStateResponse::ToJsonString() const
         string key = "FlowCreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flowCreateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowNameHasBeenSet)
@@ -202,20 +239,20 @@ string DescribeInstanceStateResponse::ToJsonString() const
         value.AddMember(iKey, m_flowProgress, allocator);
     }
 
+    if (m_instanceStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceState.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_instanceStateDescHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceStateDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceStateDesc.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_flowMsgHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowMsg";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_flowMsg.c_str(), allocator).Move(), allocator);
     }
 
     if (m_processNameHasBeenSet)
@@ -226,20 +263,19 @@ string DescribeInstanceStateResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_processName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_backupStatusHasBeenSet)
+    if (m_instanceStatesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BackupStatus";
+        string key = "InstanceStates";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_backupStatus, allocator);
-    }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_backupOpenStatusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BackupOpenStatus";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_backupOpenStatus, allocator);
+        int i=0;
+        for (auto itr = m_instanceStates.begin(); itr != m_instanceStates.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -254,14 +290,24 @@ string DescribeInstanceStateResponse::ToJsonString() const
 }
 
 
-string DescribeInstanceStateResponse::GetInstanceState() const
+int64_t DescribeInstanceStateResponse::GetBackupOpenStatus() const
 {
-    return m_instanceState;
+    return m_backupOpenStatus;
 }
 
-bool DescribeInstanceStateResponse::InstanceStateHasBeenSet() const
+bool DescribeInstanceStateResponse::BackupOpenStatusHasBeenSet() const
 {
-    return m_instanceStateHasBeenSet;
+    return m_backupOpenStatusHasBeenSet;
+}
+
+int64_t DescribeInstanceStateResponse::GetBackupStatus() const
+{
+    return m_backupStatus;
+}
+
+bool DescribeInstanceStateResponse::BackupStatusHasBeenSet() const
+{
+    return m_backupStatusHasBeenSet;
 }
 
 string DescribeInstanceStateResponse::GetFlowCreateTime() const
@@ -272,6 +318,16 @@ string DescribeInstanceStateResponse::GetFlowCreateTime() const
 bool DescribeInstanceStateResponse::FlowCreateTimeHasBeenSet() const
 {
     return m_flowCreateTimeHasBeenSet;
+}
+
+string DescribeInstanceStateResponse::GetFlowMsg() const
+{
+    return m_flowMsg;
+}
+
+bool DescribeInstanceStateResponse::FlowMsgHasBeenSet() const
+{
+    return m_flowMsgHasBeenSet;
 }
 
 string DescribeInstanceStateResponse::GetFlowName() const
@@ -294,6 +350,16 @@ bool DescribeInstanceStateResponse::FlowProgressHasBeenSet() const
     return m_flowProgressHasBeenSet;
 }
 
+string DescribeInstanceStateResponse::GetInstanceState() const
+{
+    return m_instanceState;
+}
+
+bool DescribeInstanceStateResponse::InstanceStateHasBeenSet() const
+{
+    return m_instanceStateHasBeenSet;
+}
+
 string DescribeInstanceStateResponse::GetInstanceStateDesc() const
 {
     return m_instanceStateDesc;
@@ -302,16 +368,6 @@ string DescribeInstanceStateResponse::GetInstanceStateDesc() const
 bool DescribeInstanceStateResponse::InstanceStateDescHasBeenSet() const
 {
     return m_instanceStateDescHasBeenSet;
-}
-
-string DescribeInstanceStateResponse::GetFlowMsg() const
-{
-    return m_flowMsg;
-}
-
-bool DescribeInstanceStateResponse::FlowMsgHasBeenSet() const
-{
-    return m_flowMsgHasBeenSet;
 }
 
 string DescribeInstanceStateResponse::GetProcessName() const
@@ -324,24 +380,14 @@ bool DescribeInstanceStateResponse::ProcessNameHasBeenSet() const
     return m_processNameHasBeenSet;
 }
 
-int64_t DescribeInstanceStateResponse::GetBackupStatus() const
+vector<InstanceStateItem> DescribeInstanceStateResponse::GetInstanceStates() const
 {
-    return m_backupStatus;
+    return m_instanceStates;
 }
 
-bool DescribeInstanceStateResponse::BackupStatusHasBeenSet() const
+bool DescribeInstanceStateResponse::InstanceStatesHasBeenSet() const
 {
-    return m_backupStatusHasBeenSet;
-}
-
-int64_t DescribeInstanceStateResponse::GetBackupOpenStatus() const
-{
-    return m_backupOpenStatus;
-}
-
-bool DescribeInstanceStateResponse::BackupOpenStatusHasBeenSet() const
-{
-    return m_backupOpenStatusHasBeenSet;
+    return m_instanceStatesHasBeenSet;
 }
 
 

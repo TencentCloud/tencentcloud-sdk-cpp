@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool InstallDependencyHasBeenSet() const;
 
                     /**
-                     * 获取<p>日志投递到的cls日志集ID</p>
-                     * @return ClsTopicId <p>日志投递到的cls日志集ID</p>
+                     * 获取<p>日志投递到的cls Topic ID</p>
+                     * @return ClsTopicId <p>日志投递到的cls Topic ID</p>
                      * 
                      */
                     std::string GetClsTopicId() const;
 
                     /**
-                     * 设置<p>日志投递到的cls日志集ID</p>
-                     * @param _clsTopicId <p>日志投递到的cls日志集ID</p>
+                     * 设置<p>日志投递到的cls Topic ID</p>
+                     * @param _clsTopicId <p>日志投递到的cls Topic ID</p>
                      * 
                      */
                     void SetClsTopicId(const std::string& _clsTopicId);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool ClsTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>日志投递到的cls Topic ID</p>
-                     * @return ClsLogsetId <p>日志投递到的cls Topic ID</p>
+                     * 获取<p>日志投递到的cls日志集ID</p>
+                     * @return ClsLogsetId <p>日志投递到的cls日志集ID</p>
                      * 
                      */
                     std::string GetClsLogsetId() const;
 
                     /**
-                     * 设置<p>日志投递到的cls Topic ID</p>
-                     * @param _clsLogsetId <p>日志投递到的cls Topic ID</p>
+                     * 设置<p>日志投递到的cls日志集ID</p>
+                     * @param _clsLogsetId <p>日志投递到的cls日志集ID</p>
                      * 
                      */
                     void SetClsLogsetId(const std::string& _clsLogsetId);
@@ -536,13 +536,13 @@ namespace TencentCloud
                     bool m_installDependencyHasBeenSet;
 
                     /**
-                     * <p>日志投递到的cls日志集ID</p>
+                     * <p>日志投递到的cls Topic ID</p>
                      */
                     std::string m_clsTopicId;
                     bool m_clsTopicIdHasBeenSet;
 
                     /**
-                     * <p>日志投递到的cls Topic ID</p>
+                     * <p>日志投递到的cls日志集ID</p>
                      */
                     std::string m_clsLogsetId;
                     bool m_clsLogsetIdHasBeenSet;

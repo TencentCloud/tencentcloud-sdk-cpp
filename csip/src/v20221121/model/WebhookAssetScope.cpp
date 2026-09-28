@@ -25,7 +25,8 @@ WebhookAssetScope::WebhookAssetScope() :
     m_instanceIdsHasBeenSet(false),
     m_excludedInstanceIdsHasBeenSet(false),
     m_tagIdsHasBeenSet(false),
-    m_cloudTagsHasBeenSet(false)
+    m_cloudTagsHasBeenSet(false),
+    m_projectIdsHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,19 @@ CoreInternalOutcome WebhookAssetScope::Deserialize(const rapidjson::Value &value
         m_cloudTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectIds") && !value["ProjectIds"].IsNull())
+    {
+        if (!value["ProjectIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WebhookAssetScope.ProjectIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ProjectIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_projectIds.push_back((*itr).GetUint64());
+        }
+        m_projectIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -160,6 +174,19 @@ void WebhookAssetScope::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         for (auto itr = m_cloudTags.begin(); itr != m_cloudTags.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
@@ -244,5 +271,21 @@ void WebhookAssetScope::SetCloudTags(const vector<string>& _cloudTags)
 bool WebhookAssetScope::CloudTagsHasBeenSet() const
 {
     return m_cloudTagsHasBeenSet;
+}
+
+vector<uint64_t> WebhookAssetScope::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void WebhookAssetScope::SetProjectIds(const vector<uint64_t>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool WebhookAssetScope::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
 }
 

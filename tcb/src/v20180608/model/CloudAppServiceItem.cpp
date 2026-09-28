@@ -29,7 +29,9 @@ CloudAppServiceItem::CloudAppServiceItem() :
     m_latestVersionNameHasBeenSet(false),
     m_latestStatusHasBeenSet(false),
     m_latestBuildTimeHasBeenSet(false),
-    m_deployTypeHasBeenSet(false)
+    m_deployTypeHasBeenSet(false),
+    m_buildConfigHasBeenSet(false),
+    m_currentVersionHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome CloudAppServiceItem::Deserialize(const rapidjson::Value &val
         m_deployTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("BuildConfig") && !value["BuildConfig"].IsNull())
+    {
+        if (!value["BuildConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAppServiceItem.BuildConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_buildConfig = string(value["BuildConfig"].GetString());
+        m_buildConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurrentVersion") && !value["CurrentVersion"].IsNull())
+    {
+        if (!value["CurrentVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAppServiceItem.CurrentVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentVersion = string(value["CurrentVersion"].GetString());
+        m_currentVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void CloudAppServiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "DeployType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deployType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buildConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buildConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_currentVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currentVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void CloudAppServiceItem::SetDeployType(const string& _deployType)
 bool CloudAppServiceItem::DeployTypeHasBeenSet() const
 {
     return m_deployTypeHasBeenSet;
+}
+
+string CloudAppServiceItem::GetBuildConfig() const
+{
+    return m_buildConfig;
+}
+
+void CloudAppServiceItem::SetBuildConfig(const string& _buildConfig)
+{
+    m_buildConfig = _buildConfig;
+    m_buildConfigHasBeenSet = true;
+}
+
+bool CloudAppServiceItem::BuildConfigHasBeenSet() const
+{
+    return m_buildConfigHasBeenSet;
+}
+
+string CloudAppServiceItem::GetCurrentVersion() const
+{
+    return m_currentVersion;
+}
+
+void CloudAppServiceItem::SetCurrentVersion(const string& _currentVersion)
+{
+    m_currentVersion = _currentVersion;
+    m_currentVersionHasBeenSet = true;
+}
+
+bool CloudAppServiceItem::CurrentVersionHasBeenSet() const
+{
+    return m_currentVersionHasBeenSet;
 }
 

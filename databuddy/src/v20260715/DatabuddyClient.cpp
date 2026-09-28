@@ -190,6 +190,56 @@ DatabuddyClient::CreateFileOutcomeCallable DatabuddyClient::CreateFileCallable(c
     return prom->get_future();
 }
 
+DatabuddyClient::CreateFolderOutcome DatabuddyClient::CreateFolder(const CreateFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFolderResponse rsp = CreateFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFolderOutcome(rsp);
+        else
+            return CreateFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFolderOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::CreateFolderAsync(const CreateFolderRequest& request, const CreateFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateFolderRequest&;
+    using Resp = CreateFolderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::CreateFolderOutcomeCallable DatabuddyClient::CreateFolderCallable(const CreateFolderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateFolderOutcome>>();
+    CreateFolderAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const CreateFolderRequest&,
+        CreateFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::CreateWorkflowOutcome DatabuddyClient::CreateWorkflow(const CreateWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateWorkflow");
@@ -232,6 +282,56 @@ DatabuddyClient::CreateWorkflowOutcomeCallable DatabuddyClient::CreateWorkflowCa
         const DatabuddyClient*,
         const CreateWorkflowRequest&,
         CreateWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::CreateWorkspaceOutcome DatabuddyClient::CreateWorkspace(const CreateWorkspaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWorkspace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWorkspaceResponse rsp = CreateWorkspaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWorkspaceOutcome(rsp);
+        else
+            return CreateWorkspaceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWorkspaceOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::CreateWorkspaceAsync(const CreateWorkspaceRequest& request, const CreateWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateWorkspaceRequest&;
+    using Resp = CreateWorkspaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateWorkspace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::CreateWorkspaceOutcomeCallable DatabuddyClient::CreateWorkspaceCallable(const CreateWorkspaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateWorkspaceOutcome>>();
+    CreateWorkspaceAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const CreateWorkspaceRequest&,
+        CreateWorkspaceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -340,6 +440,56 @@ DatabuddyClient::DeleteFileOutcomeCallable DatabuddyClient::DeleteFileCallable(c
     return prom->get_future();
 }
 
+DatabuddyClient::DeleteFolderOutcome DatabuddyClient::DeleteFolder(const DeleteFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFolderResponse rsp = DeleteFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFolderOutcome(rsp);
+        else
+            return DeleteFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFolderOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::DeleteFolderAsync(const DeleteFolderRequest& request, const DeleteFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteFolderRequest&;
+    using Resp = DeleteFolderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::DeleteFolderOutcomeCallable DatabuddyClient::DeleteFolderCallable(const DeleteFolderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteFolderOutcome>>();
+    DeleteFolderAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const DeleteFolderRequest&,
+        DeleteFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::DeleteWorkflowOutcome DatabuddyClient::DeleteWorkflow(const DeleteWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteWorkflow");
@@ -390,6 +540,56 @@ DatabuddyClient::DeleteWorkflowOutcomeCallable DatabuddyClient::DeleteWorkflowCa
     return prom->get_future();
 }
 
+DatabuddyClient::DeleteWorkspaceOutcome DatabuddyClient::DeleteWorkspace(const DeleteWorkspaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWorkspace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWorkspaceResponse rsp = DeleteWorkspaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWorkspaceOutcome(rsp);
+        else
+            return DeleteWorkspaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWorkspaceOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::DeleteWorkspaceAsync(const DeleteWorkspaceRequest& request, const DeleteWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteWorkspaceRequest&;
+    using Resp = DeleteWorkspaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteWorkspace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::DeleteWorkspaceOutcomeCallable DatabuddyClient::DeleteWorkspaceCallable(const DeleteWorkspaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteWorkspaceOutcome>>();
+    DeleteWorkspaceAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const DeleteWorkspaceRequest&,
+        DeleteWorkspaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::GetFileOutcome DatabuddyClient::GetFile(const GetFileRequest &request)
 {
     auto outcome = MakeRequest(request, "GetFile");
@@ -432,6 +632,56 @@ DatabuddyClient::GetFileOutcomeCallable DatabuddyClient::GetFileCallable(const G
         const DatabuddyClient*,
         const GetFileRequest&,
         GetFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::GetFolderOutcome DatabuddyClient::GetFolder(const GetFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFolderResponse rsp = GetFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFolderOutcome(rsp);
+        else
+            return GetFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFolderOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::GetFolderAsync(const GetFolderRequest& request, const GetFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetFolderRequest&;
+    using Resp = GetFolderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::GetFolderOutcomeCallable DatabuddyClient::GetFolderCallable(const GetFolderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetFolderOutcome>>();
+    GetFolderAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const GetFolderRequest&,
+        GetFolderOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -582,6 +832,56 @@ DatabuddyClient::GetWorkflowTaskRunOutcomeCallable DatabuddyClient::GetWorkflowT
         const DatabuddyClient*,
         const GetWorkflowTaskRunRequest&,
         GetWorkflowTaskRunOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::GetWorkspaceOutcome DatabuddyClient::GetWorkspace(const GetWorkspaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetWorkspace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetWorkspaceResponse rsp = GetWorkspaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetWorkspaceOutcome(rsp);
+        else
+            return GetWorkspaceOutcome(o.GetError());
+    }
+    else
+    {
+        return GetWorkspaceOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::GetWorkspaceAsync(const GetWorkspaceRequest& request, const GetWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetWorkspaceRequest&;
+    using Resp = GetWorkspaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetWorkspace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::GetWorkspaceOutcomeCallable DatabuddyClient::GetWorkspaceCallable(const GetWorkspaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetWorkspaceOutcome>>();
+    GetWorkspaceAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const GetWorkspaceRequest&,
+        GetWorkspaceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -832,6 +1132,56 @@ DatabuddyClient::ListConsoleUsersOutcomeCallable DatabuddyClient::ListConsoleUse
         const DatabuddyClient*,
         const ListConsoleUsersRequest&,
         ListConsoleUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::ListFilesOutcome DatabuddyClient::ListFiles(const ListFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListFilesResponse rsp = ListFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListFilesOutcome(rsp);
+        else
+            return ListFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListFilesOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ListFilesAsync(const ListFilesRequest& request, const ListFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListFilesRequest&;
+    using Resp = ListFilesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ListFilesOutcomeCallable DatabuddyClient::ListFilesCallable(const ListFilesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListFilesOutcome>>();
+    ListFilesAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ListFilesRequest&,
+        ListFilesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1340,6 +1690,56 @@ DatabuddyClient::UpdateFileOutcomeCallable DatabuddyClient::UpdateFileCallable(c
     return prom->get_future();
 }
 
+DatabuddyClient::UpdateFolderOutcome DatabuddyClient::UpdateFolder(const UpdateFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateFolderResponse rsp = UpdateFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateFolderOutcome(rsp);
+        else
+            return UpdateFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateFolderOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::UpdateFolderAsync(const UpdateFolderRequest& request, const UpdateFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateFolderRequest&;
+    using Resp = UpdateFolderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateFolder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::UpdateFolderOutcomeCallable DatabuddyClient::UpdateFolderCallable(const UpdateFolderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateFolderOutcome>>();
+    UpdateFolderAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const UpdateFolderRequest&,
+        UpdateFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::UpdateWorkflowOutcome DatabuddyClient::UpdateWorkflow(const UpdateWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateWorkflow");
@@ -1382,6 +1782,56 @@ DatabuddyClient::UpdateWorkflowOutcomeCallable DatabuddyClient::UpdateWorkflowCa
         const DatabuddyClient*,
         const UpdateWorkflowRequest&,
         UpdateWorkflowOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::UpdateWorkspaceOutcome DatabuddyClient::UpdateWorkspace(const UpdateWorkspaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateWorkspace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateWorkspaceResponse rsp = UpdateWorkspaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateWorkspaceOutcome(rsp);
+        else
+            return UpdateWorkspaceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateWorkspaceOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::UpdateWorkspaceAsync(const UpdateWorkspaceRequest& request, const UpdateWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateWorkspaceRequest&;
+    using Resp = UpdateWorkspaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateWorkspace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::UpdateWorkspaceOutcomeCallable DatabuddyClient::UpdateWorkspaceCallable(const UpdateWorkspaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateWorkspaceOutcome>>();
+    UpdateWorkspaceAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const UpdateWorkspaceRequest&,
+        UpdateWorkspaceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

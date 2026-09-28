@@ -38,6 +38,7 @@
 #include <tencentcloud/mps/v20190612/model/AiStoryboardConfig.h>
 #include <tencentcloud/mps/v20190612/model/UnderstandImageConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageQualityConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiComposeConfig.h>
 
 
 namespace TencentCloud
@@ -370,6 +371,27 @@ namespace TencentCloud
                      */
                     bool ImageQualityConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>图层融合配置。</p>
+                     * @return AiComposeConfig <p>图层融合配置。</p>
+                     * 
+                     */
+                    AiComposeConfig GetAiComposeConfig() const;
+
+                    /**
+                     * 设置<p>图层融合配置。</p>
+                     * @param _aiComposeConfig <p>图层融合配置。</p>
+                     * 
+                     */
+                    void SetAiComposeConfig(const AiComposeConfig& _aiComposeConfig);
+
+                    /**
+                     * 判断参数 AiComposeConfig 是否已赋值
+                     * @return AiComposeConfig 是否已赋值
+                     * 
+                     */
+                    bool AiComposeConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -459,6 +481,12 @@ namespace TencentCloud
                      */
                     ImageQualityConfig m_imageQualityConfig;
                     bool m_imageQualityConfigHasBeenSet;
+
+                    /**
+                     * <p>图层融合配置。</p>
+                     */
+                    AiComposeConfig m_aiComposeConfig;
+                    bool m_aiComposeConfigHasBeenSet;
 
                 };
             }
