@@ -1197,6 +1197,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/ListDataSourcesResponse.h
   include/tencentcloud/wedata/v20250806/model/TimeOutStrategyInfo.h
   include/tencentcloud/wedata/v20250806/model/GetCodeFileRequest.h
+  include/tencentcloud/wedata/v20250806/model/GetSQLRunResultResponse.h
   include/tencentcloud/wedata/v20250806/model/ExploreAuthorizationRecycleObject.h
   include/tencentcloud/wedata/v20250806/model/OperateResult.h
   include/tencentcloud/wedata/v20250806/model/ListSchemaPage.h
@@ -1372,8 +1373,10 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/UpdateDataSourceRequest.h
   include/tencentcloud/wedata/v20250806/model/QualityRuleGroupsTableVO.h
   include/tencentcloud/wedata/v20250806/model/AssociateResourceGroupToProjectRequest.h
+  include/tencentcloud/wedata/v20250806/model/ResultColumnInfo.h
   include/tencentcloud/wedata/v20250806/model/ListOpsWorkflowsRequest.h
   include/tencentcloud/wedata/v20250806/model/CreateWorkflowFolderResponse.h
+  include/tencentcloud/wedata/v20250806/model/SqlRunResult.h
   include/tencentcloud/wedata/v20250806/model/GetDataSourceRelatedTasksRequest.h
   include/tencentcloud/wedata/v20250806/model/UpdateTriggerTaskBaseAttribute.h
   include/tencentcloud/wedata/v20250806/model/ResourceFolderPage.h
@@ -1450,6 +1453,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/ListUpstreamTasksRequest.h
   include/tencentcloud/wedata/v20250806/model/ReconciliationStrategyInfo.h
   include/tencentcloud/wedata/v20250806/model/AddCalcEnginesToProjectResponse.h
+  include/tencentcloud/wedata/v20250806/model/SqlRunResultRow.h
   include/tencentcloud/wedata/v20250806/model/RevokePrivilegesRsp.h
   include/tencentcloud/wedata/v20250806/model/ModifyQualityRuleGroupRequest.h
   include/tencentcloud/wedata/v20250806/model/EventListener.h
@@ -1475,6 +1479,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/GetSQLScriptResponse.h
   include/tencentcloud/wedata/v20250806/model/CreateCodeFileRequest.h
   include/tencentcloud/wedata/v20250806/model/ChildDependencyConfigPage.h
+  include/tencentcloud/wedata/v20250806/model/GetSQLRunResultRequest.h
   include/tencentcloud/wedata/v20250806/model/LineageRelation.h
   include/tencentcloud/wedata/v20250806/model/CreateTaskConfiguration.h
   include/tencentcloud/wedata/v20250806/model/CompareQualityResult.h
@@ -1644,6 +1649,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/DataBackfillRange.h
   include/tencentcloud/wedata/v20250806/model/QualityRuleGroupConfig.h
   include/tencentcloud/wedata/v20250806/model/ListTriggerTaskVersionsResponse.h
+  include/tencentcloud/wedata/v20250806/model/SqlRunExecutionResult.h
   include/tencentcloud/wedata/v20250806/model/DeleteCodeFileResponse.h
   include/tencentcloud/wedata/v20250806/model/QualityRuleGroupResult.h
   include/tencentcloud/wedata/v20250806/model/TaskOpsInfo.h
@@ -2852,6 +2858,7 @@ set(wedata_src
   src/v20250806/model/ListDataSourcesResponse.cpp
   src/v20250806/model/TimeOutStrategyInfo.cpp
   src/v20250806/model/GetCodeFileRequest.cpp
+  src/v20250806/model/GetSQLRunResultResponse.cpp
   src/v20250806/model/ExploreAuthorizationRecycleObject.cpp
   src/v20250806/model/OperateResult.cpp
   src/v20250806/model/ListSchemaPage.cpp
@@ -3027,8 +3034,10 @@ set(wedata_src
   src/v20250806/model/UpdateDataSourceRequest.cpp
   src/v20250806/model/QualityRuleGroupsTableVO.cpp
   src/v20250806/model/AssociateResourceGroupToProjectRequest.cpp
+  src/v20250806/model/ResultColumnInfo.cpp
   src/v20250806/model/ListOpsWorkflowsRequest.cpp
   src/v20250806/model/CreateWorkflowFolderResponse.cpp
+  src/v20250806/model/SqlRunResult.cpp
   src/v20250806/model/GetDataSourceRelatedTasksRequest.cpp
   src/v20250806/model/UpdateTriggerTaskBaseAttribute.cpp
   src/v20250806/model/ResourceFolderPage.cpp
@@ -3105,6 +3114,7 @@ set(wedata_src
   src/v20250806/model/ListUpstreamTasksRequest.cpp
   src/v20250806/model/ReconciliationStrategyInfo.cpp
   src/v20250806/model/AddCalcEnginesToProjectResponse.cpp
+  src/v20250806/model/SqlRunResultRow.cpp
   src/v20250806/model/RevokePrivilegesRsp.cpp
   src/v20250806/model/ModifyQualityRuleGroupRequest.cpp
   src/v20250806/model/EventListener.cpp
@@ -3130,6 +3140,7 @@ set(wedata_src
   src/v20250806/model/GetSQLScriptResponse.cpp
   src/v20250806/model/CreateCodeFileRequest.cpp
   src/v20250806/model/ChildDependencyConfigPage.cpp
+  src/v20250806/model/GetSQLRunResultRequest.cpp
   src/v20250806/model/LineageRelation.cpp
   src/v20250806/model/CreateTaskConfiguration.cpp
   src/v20250806/model/CompareQualityResult.cpp
@@ -3299,6 +3310,7 @@ set(wedata_src
   src/v20250806/model/DataBackfillRange.cpp
   src/v20250806/model/QualityRuleGroupConfig.cpp
   src/v20250806/model/ListTriggerTaskVersionsResponse.cpp
+  src/v20250806/model/SqlRunExecutionResult.cpp
   src/v20250806/model/DeleteCodeFileResponse.cpp
   src/v20250806/model/QualityRuleGroupResult.cpp
   src/v20250806/model/TaskOpsInfo.cpp

@@ -169,6 +169,8 @@
 #include <tencentcloud/wedata/v20250806/model/GetResourceGroupMetricsResponse.h>
 #include <tencentcloud/wedata/v20250806/model/GetSQLFolderRequest.h>
 #include <tencentcloud/wedata/v20250806/model/GetSQLFolderResponse.h>
+#include <tencentcloud/wedata/v20250806/model/GetSQLRunResultRequest.h>
+#include <tencentcloud/wedata/v20250806/model/GetSQLRunResultResponse.h>
 #include <tencentcloud/wedata/v20250806/model/GetSQLScriptRequest.h>
 #include <tencentcloud/wedata/v20250806/model/GetSQLScriptResponse.h>
 #include <tencentcloud/wedata/v20250806/model/GetTableRequest.h>
@@ -620,6 +622,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetSQLFolderResponse> GetSQLFolderOutcome;
                 typedef std::future<GetSQLFolderOutcome> GetSQLFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetSQLFolderRequest&, GetSQLFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSQLFolderAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetSQLRunResultResponse> GetSQLRunResultOutcome;
+                typedef std::future<GetSQLRunResultOutcome> GetSQLRunResultOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetSQLRunResultRequest&, GetSQLRunResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSQLRunResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetSQLScriptResponse> GetSQLScriptOutcome;
                 typedef std::future<GetSQLScriptOutcome> GetSQLScriptOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetSQLScriptRequest&, GetSQLScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSQLScriptAsyncHandler;
@@ -1606,6 +1611,15 @@ namespace TencentCloud
                 GetSQLFolderOutcome GetSQLFolder(const Model::GetSQLFolderRequest &request);
                 void GetSQLFolderAsync(const Model::GetSQLFolderRequest& request, const GetSQLFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetSQLFolderOutcomeCallable GetSQLFolderCallable(const Model::GetSQLFolderRequest& request);
+
+                /**
+                 *获取SQL查询任务的数据结果。直接返回预览数据结果，而非预览结果文件路径。不传 JobExecutionId 时返回该任务下全部子查询的结果数组。返回数据总大小不超过 10MB。任务处于非终态（QUEUED/RUNNING）时不报错，返回当前 Status 与空的 Results 数组，并通过 StatusMessage 说明原因，调用方应采用指数退避策略轮询直至进入终态。
+                 * @param req GetSQLRunResultRequest
+                 * @return GetSQLRunResultOutcome
+                 */
+                GetSQLRunResultOutcome GetSQLRunResult(const Model::GetSQLRunResultRequest &request);
+                void GetSQLRunResultAsync(const Model::GetSQLRunResultRequest& request, const GetSQLRunResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetSQLRunResultOutcomeCallable GetSQLRunResultCallable(const Model::GetSQLRunResultRequest& request);
 
                 /**
                  *查询脚本详情

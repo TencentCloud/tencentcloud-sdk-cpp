@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取<p>通过用户组 ID 批量查询</p>
-                     * @return GroupIds <p>通过用户组 ID 批量查询</p>
+                     * 获取<p>通过用户组ID批量查询；用户组ID可通过 ListConsoleGroups 接口获取</p>
+                     * @return GroupIds <p>通过用户组ID批量查询；用户组ID可通过 ListConsoleGroups 接口获取</p>
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
-                     * 设置<p>通过用户组 ID 批量查询</p>
-                     * @param _groupIds <p>通过用户组 ID 批量查询</p>
+                     * 设置<p>通过用户组ID批量查询；用户组ID可通过 ListConsoleGroups 接口获取</p>
+                     * @param _groupIds <p>通过用户组ID批量查询；用户组ID可通过 ListConsoleGroups 接口获取</p>
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * <p>通过用户组 ID 批量查询</p>
+                     * <p>通过用户组ID批量查询；用户组ID可通过 ListConsoleGroups 接口获取</p>
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;

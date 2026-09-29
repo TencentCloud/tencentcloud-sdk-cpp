@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>用户组 ID</p>
-                     * @return GroupId <p>用户组 ID</p>
+                     * 获取<p>用户组 ID，可通过 ListConsoleGroups 接口获取</p>
+                     * @return GroupId <p>用户组 ID，可通过 ListConsoleGroups 接口获取</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置<p>用户组 ID</p>
-                     * @param _groupId <p>用户组 ID</p>
+                     * 设置<p>用户组 ID，可通过 ListConsoleGroups 接口获取</p>
+                     * @param _groupId <p>用户组 ID，可通过 ListConsoleGroups 接口获取</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -172,7 +172,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>用户组 ID</p>
+                     * <p>用户组 ID，可通过 ListConsoleGroups 接口获取</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

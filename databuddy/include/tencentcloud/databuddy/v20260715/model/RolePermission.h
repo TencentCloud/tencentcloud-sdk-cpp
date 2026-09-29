@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模块ID
-                     * @return ModuleId 模块ID
+                     * 获取<p>模块ID，须为当前租户已开通的功能模块（叶子节点）的模块ID（层级编码字符串，如 101=快速开始、109=工作流、116101103=工作空间管理_角色权限），非法值返回 InvalidParameterValue；模块清单可通过控制台「工作空间设置-角色权限」页面查看</p>
+                     * @return ModuleId <p>模块ID，须为当前租户已开通的功能模块（叶子节点）的模块ID（层级编码字符串，如 101=快速开始、109=工作流、116101103=工作空间管理_角色权限），非法值返回 InvalidParameterValue；模块清单可通过控制台「工作空间设置-角色权限」页面查看</p>
                      * 
                      */
                     std::string GetModuleId() const;
 
                     /**
-                     * 设置模块ID
-                     * @param _moduleId 模块ID
+                     * 设置<p>模块ID，须为当前租户已开通的功能模块（叶子节点）的模块ID（层级编码字符串，如 101=快速开始、109=工作流、116101103=工作空间管理_角色权限），非法值返回 InvalidParameterValue；模块清单可通过控制台「工作空间设置-角色权限」页面查看</p>
+                     * @param _moduleId <p>模块ID，须为当前租户已开通的功能模块（叶子节点）的模块ID（层级编码字符串，如 101=快速开始、109=工作流、116101103=工作空间管理_角色权限），非法值返回 InvalidParameterValue；模块清单可通过控制台「工作空间设置-角色权限」页面查看</p>
                      * 
                      */
                     void SetModuleId(const std::string& _moduleId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ModuleIdHasBeenSet() const;
 
                     /**
-                     * 获取权限点
-                     * @return Permissions 权限点
+                     * 获取<p>模块访问权限，单值：R=只读，RW=读写，RWD=读写删除，N=无权限</p>
+                     * @return Permissions <p>模块访问权限，单值：R=只读，RW=读写，RWD=读写删除，N=无权限</p>
                      * 
                      */
                     std::string GetPermissions() const;
 
                     /**
-                     * 设置权限点
-                     * @param _permissions 权限点
+                     * 设置<p>模块访问权限，单值：R=只读，RW=读写，RWD=读写删除，N=无权限</p>
+                     * @param _permissions <p>模块访问权限，单值：R=只读，RW=读写，RWD=读写删除，N=无权限</p>
                      * 
                      */
                     void SetPermissions(const std::string& _permissions);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模块ID
+                     * <p>模块ID，须为当前租户已开通的功能模块（叶子节点）的模块ID（层级编码字符串，如 101=快速开始、109=工作流、116101103=工作空间管理_角色权限），非法值返回 InvalidParameterValue；模块清单可通过控制台「工作空间设置-角色权限」页面查看</p>
                      */
                     std::string m_moduleId;
                     bool m_moduleIdHasBeenSet;
 
                     /**
-                     * 权限点
+                     * <p>模块访问权限，单值：R=只读，RW=读写，RWD=读写删除，N=无权限</p>
                      */
                     std::string m_permissions;
                     bool m_permissionsHasBeenSet;

@@ -24,10 +24,13 @@ using namespace std;
 
 VerifyScenePhotoRequest::VerifyScenePhotoRequest() :
     m_sceneHasBeenSet(false),
+    m_modeHasBeenSet(false),
+    m_videoUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
     m_reasoningPromptHasBeenSet(false),
-    m_reasoningConfigHasBeenSet(false)
+    m_reasoningConfigHasBeenSet(false),
+    m_ignoreWatermarkCategoriesHasBeenSet(false)
 {
 }
 
@@ -44,6 +47,22 @@ string VerifyScenePhotoRequest::ToJsonString() const
         string key = "Scene";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_videoUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_videoUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageUrlHasBeenSet)
@@ -79,6 +98,19 @@ string VerifyScenePhotoRequest::ToJsonString() const
         m_reasoningConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_ignoreWatermarkCategoriesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreWatermarkCategories";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ignoreWatermarkCategories.begin(); itr != m_ignoreWatermarkCategories.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -101,6 +133,38 @@ void VerifyScenePhotoRequest::SetScene(const string& _scene)
 bool VerifyScenePhotoRequest::SceneHasBeenSet() const
 {
     return m_sceneHasBeenSet;
+}
+
+string VerifyScenePhotoRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void VerifyScenePhotoRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool VerifyScenePhotoRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
+}
+
+string VerifyScenePhotoRequest::GetVideoUrl() const
+{
+    return m_videoUrl;
+}
+
+void VerifyScenePhotoRequest::SetVideoUrl(const string& _videoUrl)
+{
+    m_videoUrl = _videoUrl;
+    m_videoUrlHasBeenSet = true;
+}
+
+bool VerifyScenePhotoRequest::VideoUrlHasBeenSet() const
+{
+    return m_videoUrlHasBeenSet;
 }
 
 string VerifyScenePhotoRequest::GetImageUrl() const
@@ -165,6 +229,22 @@ void VerifyScenePhotoRequest::SetReasoningConfig(const ReasoningConfig& _reasoni
 bool VerifyScenePhotoRequest::ReasoningConfigHasBeenSet() const
 {
     return m_reasoningConfigHasBeenSet;
+}
+
+vector<string> VerifyScenePhotoRequest::GetIgnoreWatermarkCategories() const
+{
+    return m_ignoreWatermarkCategories;
+}
+
+void VerifyScenePhotoRequest::SetIgnoreWatermarkCategories(const vector<string>& _ignoreWatermarkCategories)
+{
+    m_ignoreWatermarkCategories = _ignoreWatermarkCategories;
+    m_ignoreWatermarkCategoriesHasBeenSet = true;
+}
+
+bool VerifyScenePhotoRequest::IgnoreWatermarkCategoriesHasBeenSet() const
+{
+    return m_ignoreWatermarkCategoriesHasBeenSet;
 }
 
 

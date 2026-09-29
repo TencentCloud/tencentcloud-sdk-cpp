@@ -3690,6 +3690,56 @@ WedataClient::GetSQLFolderOutcomeCallable WedataClient::GetSQLFolderCallable(con
     return prom->get_future();
 }
 
+WedataClient::GetSQLRunResultOutcome WedataClient::GetSQLRunResult(const GetSQLRunResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetSQLRunResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetSQLRunResultResponse rsp = GetSQLRunResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetSQLRunResultOutcome(rsp);
+        else
+            return GetSQLRunResultOutcome(o.GetError());
+    }
+    else
+    {
+        return GetSQLRunResultOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::GetSQLRunResultAsync(const GetSQLRunResultRequest& request, const GetSQLRunResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetSQLRunResultRequest&;
+    using Resp = GetSQLRunResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetSQLRunResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WedataClient::GetSQLRunResultOutcomeCallable WedataClient::GetSQLRunResultCallable(const GetSQLRunResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetSQLRunResultOutcome>>();
+    GetSQLRunResultAsync(
+    request,
+    [prom](
+        const WedataClient*,
+        const GetSQLRunResultRequest&,
+        GetSQLRunResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WedataClient::GetSQLScriptOutcome WedataClient::GetSQLScript(const GetSQLScriptRequest &request)
 {
     auto outcome = MakeRequest(request, "GetSQLScript");

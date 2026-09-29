@@ -95,6 +95,8 @@
 #include <tencentcloud/live/v20180801/model/CreateLiveRecordRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveRecordTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveRecordTemplateResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateLiveSmartEraseRuleRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateLiveSmartEraseRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveSmartEraseTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveSmartEraseTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveSnapshotRuleRequest.h>
@@ -169,6 +171,10 @@
 #include <tencentcloud/live/v20180801/model/DeleteLiveRecordRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveRecordTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveRecordTemplateResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteLiveSmartEraseRuleRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteLiveSmartEraseRuleResponse.h>
+#include <tencentcloud/live/v20180801/model/DeleteLiveSmartEraseTemplateRequest.h>
+#include <tencentcloud/live/v20180801/model/DeleteLiveSmartEraseTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveSnapshotRuleRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveSnapshotRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveSnapshotTemplateRequest.h>
@@ -321,6 +327,12 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveRecordTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveRecordTemplatesRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveRecordTemplatesResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveSmartEraseRulesRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveSmartEraseRulesResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveSmartEraseTemplateRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveSmartEraseTemplateResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveSmartEraseTemplatesRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveSmartEraseTemplatesResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveSnapshotRulesRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveSnapshotRulesResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveSnapshotTemplateRequest.h>
@@ -467,6 +479,8 @@
 #include <tencentcloud/live/v20180801/model/ModifyLivePushAuthKeyResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveRecordTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveRecordTemplateResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyLiveSmartEraseTemplateRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyLiveSmartEraseTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveSnapshotTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveSnapshotTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveStreamMonitorRequest.h>
@@ -645,6 +659,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLiveRecordTemplateResponse> CreateLiveRecordTemplateOutcome;
                 typedef std::future<CreateLiveRecordTemplateOutcome> CreateLiveRecordTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateLiveRecordTemplateRequest&, CreateLiveRecordTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveRecordTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLiveSmartEraseRuleResponse> CreateLiveSmartEraseRuleOutcome;
+                typedef std::future<CreateLiveSmartEraseRuleOutcome> CreateLiveSmartEraseRuleOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateLiveSmartEraseRuleRequest&, CreateLiveSmartEraseRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveSmartEraseRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLiveSmartEraseTemplateResponse> CreateLiveSmartEraseTemplateOutcome;
                 typedef std::future<CreateLiveSmartEraseTemplateOutcome> CreateLiveSmartEraseTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateLiveSmartEraseTemplateRequest&, CreateLiveSmartEraseTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveSmartEraseTemplateAsyncHandler;
@@ -756,6 +773,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteLiveRecordTemplateResponse> DeleteLiveRecordTemplateOutcome;
                 typedef std::future<DeleteLiveRecordTemplateOutcome> DeleteLiveRecordTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteLiveRecordTemplateRequest&, DeleteLiveRecordTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveRecordTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLiveSmartEraseRuleResponse> DeleteLiveSmartEraseRuleOutcome;
+                typedef std::future<DeleteLiveSmartEraseRuleOutcome> DeleteLiveSmartEraseRuleOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteLiveSmartEraseRuleRequest&, DeleteLiveSmartEraseRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveSmartEraseRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLiveSmartEraseTemplateResponse> DeleteLiveSmartEraseTemplateOutcome;
+                typedef std::future<DeleteLiveSmartEraseTemplateOutcome> DeleteLiveSmartEraseTemplateOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DeleteLiveSmartEraseTemplateRequest&, DeleteLiveSmartEraseTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveSmartEraseTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLiveSnapshotRuleResponse> DeleteLiveSnapshotRuleOutcome;
                 typedef std::future<DeleteLiveSnapshotRuleOutcome> DeleteLiveSnapshotRuleOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteLiveSnapshotRuleRequest&, DeleteLiveSnapshotRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveSnapshotRuleAsyncHandler;
@@ -984,6 +1007,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveRecordTemplatesResponse> DescribeLiveRecordTemplatesOutcome;
                 typedef std::future<DescribeLiveRecordTemplatesOutcome> DescribeLiveRecordTemplatesOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveRecordTemplatesRequest&, DescribeLiveRecordTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveRecordTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveSmartEraseRulesResponse> DescribeLiveSmartEraseRulesOutcome;
+                typedef std::future<DescribeLiveSmartEraseRulesOutcome> DescribeLiveSmartEraseRulesOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveSmartEraseRulesRequest&, DescribeLiveSmartEraseRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveSmartEraseRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveSmartEraseTemplateResponse> DescribeLiveSmartEraseTemplateOutcome;
+                typedef std::future<DescribeLiveSmartEraseTemplateOutcome> DescribeLiveSmartEraseTemplateOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveSmartEraseTemplateRequest&, DescribeLiveSmartEraseTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveSmartEraseTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveSmartEraseTemplatesResponse> DescribeLiveSmartEraseTemplatesOutcome;
+                typedef std::future<DescribeLiveSmartEraseTemplatesOutcome> DescribeLiveSmartEraseTemplatesOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveSmartEraseTemplatesRequest&, DescribeLiveSmartEraseTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveSmartEraseTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLiveSnapshotRulesResponse> DescribeLiveSnapshotRulesOutcome;
                 typedef std::future<DescribeLiveSnapshotRulesOutcome> DescribeLiveSnapshotRulesOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveSnapshotRulesRequest&, DescribeLiveSnapshotRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveSnapshotRulesAsyncHandler;
@@ -1203,6 +1235,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLiveRecordTemplateResponse> ModifyLiveRecordTemplateOutcome;
                 typedef std::future<ModifyLiveRecordTemplateOutcome> ModifyLiveRecordTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyLiveRecordTemplateRequest&, ModifyLiveRecordTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveRecordTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLiveSmartEraseTemplateResponse> ModifyLiveSmartEraseTemplateOutcome;
+                typedef std::future<ModifyLiveSmartEraseTemplateOutcome> ModifyLiveSmartEraseTemplateOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyLiveSmartEraseTemplateRequest&, ModifyLiveSmartEraseTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveSmartEraseTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLiveSnapshotTemplateResponse> ModifyLiveSnapshotTemplateOutcome;
                 typedef std::future<ModifyLiveSnapshotTemplateOutcome> ModifyLiveSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyLiveSnapshotTemplateRequest&, ModifyLiveSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveSnapshotTemplateAsyncHandler;
@@ -1648,6 +1683,15 @@ namespace TencentCloud
                 CreateLiveRecordTemplateOutcomeCallable CreateLiveRecordTemplateCallable(const Model::CreateLiveRecordTemplateRequest& request);
 
                 /**
+                 *创建直播智能擦除规则。
+                 * @param req CreateLiveSmartEraseRuleRequest
+                 * @return CreateLiveSmartEraseRuleOutcome
+                 */
+                CreateLiveSmartEraseRuleOutcome CreateLiveSmartEraseRule(const Model::CreateLiveSmartEraseRuleRequest &request);
+                void CreateLiveSmartEraseRuleAsync(const Model::CreateLiveSmartEraseRuleRequest& request, const CreateLiveSmartEraseRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLiveSmartEraseRuleOutcomeCallable CreateLiveSmartEraseRuleCallable(const Model::CreateLiveSmartEraseRuleRequest& request);
+
+                /**
                  *创建直播智能擦除模板。
                  * @param req CreateLiveSmartEraseTemplateRequest
                  * @return CreateLiveSmartEraseTemplateOutcome
@@ -2011,6 +2055,24 @@ namespace TencentCloud
                 DeleteLiveRecordTemplateOutcome DeleteLiveRecordTemplate(const Model::DeleteLiveRecordTemplateRequest &request);
                 void DeleteLiveRecordTemplateAsync(const Model::DeleteLiveRecordTemplateRequest& request, const DeleteLiveRecordTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteLiveRecordTemplateOutcomeCallable DeleteLiveRecordTemplateCallable(const Model::DeleteLiveRecordTemplateRequest& request);
+
+                /**
+                 *删除直播智能擦除规则。
+                 * @param req DeleteLiveSmartEraseRuleRequest
+                 * @return DeleteLiveSmartEraseRuleOutcome
+                 */
+                DeleteLiveSmartEraseRuleOutcome DeleteLiveSmartEraseRule(const Model::DeleteLiveSmartEraseRuleRequest &request);
+                void DeleteLiveSmartEraseRuleAsync(const Model::DeleteLiveSmartEraseRuleRequest& request, const DeleteLiveSmartEraseRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLiveSmartEraseRuleOutcomeCallable DeleteLiveSmartEraseRuleCallable(const Model::DeleteLiveSmartEraseRuleRequest& request);
+
+                /**
+                 *删除直播智能擦除模板。
+                 * @param req DeleteLiveSmartEraseTemplateRequest
+                 * @return DeleteLiveSmartEraseTemplateOutcome
+                 */
+                DeleteLiveSmartEraseTemplateOutcome DeleteLiveSmartEraseTemplate(const Model::DeleteLiveSmartEraseTemplateRequest &request);
+                void DeleteLiveSmartEraseTemplateAsync(const Model::DeleteLiveSmartEraseTemplateRequest& request, const DeleteLiveSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLiveSmartEraseTemplateOutcomeCallable DeleteLiveSmartEraseTemplateCallable(const Model::DeleteLiveSmartEraseTemplateRequest& request);
 
                 /**
                  *删除截图规则。
@@ -2708,6 +2770,33 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveRecordTemplatesOutcome DescribeLiveRecordTemplates(const Model::DescribeLiveRecordTemplatesRequest &request);
                 void DescribeLiveRecordTemplatesAsync(const Model::DescribeLiveRecordTemplatesRequest& request, const DescribeLiveRecordTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLiveRecordTemplatesOutcomeCallable DescribeLiveRecordTemplatesCallable(const Model::DescribeLiveRecordTemplatesRequest& request);
+
+                /**
+                 *获取直播智能擦除规则列表。
+                 * @param req DescribeLiveSmartEraseRulesRequest
+                 * @return DescribeLiveSmartEraseRulesOutcome
+                 */
+                DescribeLiveSmartEraseRulesOutcome DescribeLiveSmartEraseRules(const Model::DescribeLiveSmartEraseRulesRequest &request);
+                void DescribeLiveSmartEraseRulesAsync(const Model::DescribeLiveSmartEraseRulesRequest& request, const DescribeLiveSmartEraseRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveSmartEraseRulesOutcomeCallable DescribeLiveSmartEraseRulesCallable(const Model::DescribeLiveSmartEraseRulesRequest& request);
+
+                /**
+                 *获取单个直播智能擦除模板
+                 * @param req DescribeLiveSmartEraseTemplateRequest
+                 * @return DescribeLiveSmartEraseTemplateOutcome
+                 */
+                DescribeLiveSmartEraseTemplateOutcome DescribeLiveSmartEraseTemplate(const Model::DescribeLiveSmartEraseTemplateRequest &request);
+                void DescribeLiveSmartEraseTemplateAsync(const Model::DescribeLiveSmartEraseTemplateRequest& request, const DescribeLiveSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveSmartEraseTemplateOutcomeCallable DescribeLiveSmartEraseTemplateCallable(const Model::DescribeLiveSmartEraseTemplateRequest& request);
+
+                /**
+                 *获取直播智能擦除模板。
+                 * @param req DescribeLiveSmartEraseTemplatesRequest
+                 * @return DescribeLiveSmartEraseTemplatesOutcome
+                 */
+                DescribeLiveSmartEraseTemplatesOutcome DescribeLiveSmartEraseTemplates(const Model::DescribeLiveSmartEraseTemplatesRequest &request);
+                void DescribeLiveSmartEraseTemplatesAsync(const Model::DescribeLiveSmartEraseTemplatesRequest& request, const DescribeLiveSmartEraseTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveSmartEraseTemplatesOutcomeCallable DescribeLiveSmartEraseTemplatesCallable(const Model::DescribeLiveSmartEraseTemplatesRequest& request);
 
                 /**
                  *获取截图规则列表
@@ -3420,6 +3509,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ModifyLiveRecordTemplateOutcome ModifyLiveRecordTemplate(const Model::ModifyLiveRecordTemplateRequest &request);
                 void ModifyLiveRecordTemplateAsync(const Model::ModifyLiveRecordTemplateRequest& request, const ModifyLiveRecordTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLiveRecordTemplateOutcomeCallable ModifyLiveRecordTemplateCallable(const Model::ModifyLiveRecordTemplateRequest& request);
+
+                /**
+                 *修改直播智能擦除模板。
+                 * @param req ModifyLiveSmartEraseTemplateRequest
+                 * @return ModifyLiveSmartEraseTemplateOutcome
+                 */
+                ModifyLiveSmartEraseTemplateOutcome ModifyLiveSmartEraseTemplate(const Model::ModifyLiveSmartEraseTemplateRequest &request);
+                void ModifyLiveSmartEraseTemplateAsync(const Model::ModifyLiveSmartEraseTemplateRequest& request, const ModifyLiveSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLiveSmartEraseTemplateOutcomeCallable ModifyLiveSmartEraseTemplateCallable(const Model::ModifyLiveSmartEraseTemplateRequest& request);
 
                 /**
                  *修改截图模板配置。

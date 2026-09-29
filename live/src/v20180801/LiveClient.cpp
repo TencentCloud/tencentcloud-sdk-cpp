@@ -1840,6 +1840,56 @@ LiveClient::CreateLiveRecordTemplateOutcomeCallable LiveClient::CreateLiveRecord
     return prom->get_future();
 }
 
+LiveClient::CreateLiveSmartEraseRuleOutcome LiveClient::CreateLiveSmartEraseRule(const CreateLiveSmartEraseRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLiveSmartEraseRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLiveSmartEraseRuleResponse rsp = CreateLiveSmartEraseRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLiveSmartEraseRuleOutcome(rsp);
+        else
+            return CreateLiveSmartEraseRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLiveSmartEraseRuleOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateLiveSmartEraseRuleAsync(const CreateLiveSmartEraseRuleRequest& request, const CreateLiveSmartEraseRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateLiveSmartEraseRuleRequest&;
+    using Resp = CreateLiveSmartEraseRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateLiveSmartEraseRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CreateLiveSmartEraseRuleOutcomeCallable LiveClient::CreateLiveSmartEraseRuleCallable(const CreateLiveSmartEraseRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateLiveSmartEraseRuleOutcome>>();
+    CreateLiveSmartEraseRuleAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CreateLiveSmartEraseRuleRequest&,
+        CreateLiveSmartEraseRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::CreateLiveSmartEraseTemplateOutcome LiveClient::CreateLiveSmartEraseTemplate(const CreateLiveSmartEraseTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLiveSmartEraseTemplate");
@@ -3682,6 +3732,106 @@ LiveClient::DeleteLiveRecordTemplateOutcomeCallable LiveClient::DeleteLiveRecord
         const LiveClient*,
         const DeleteLiveRecordTemplateRequest&,
         DeleteLiveRecordTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DeleteLiveSmartEraseRuleOutcome LiveClient::DeleteLiveSmartEraseRule(const DeleteLiveSmartEraseRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLiveSmartEraseRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLiveSmartEraseRuleResponse rsp = DeleteLiveSmartEraseRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLiveSmartEraseRuleOutcome(rsp);
+        else
+            return DeleteLiveSmartEraseRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLiveSmartEraseRuleOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteLiveSmartEraseRuleAsync(const DeleteLiveSmartEraseRuleRequest& request, const DeleteLiveSmartEraseRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLiveSmartEraseRuleRequest&;
+    using Resp = DeleteLiveSmartEraseRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLiveSmartEraseRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DeleteLiveSmartEraseRuleOutcomeCallable LiveClient::DeleteLiveSmartEraseRuleCallable(const DeleteLiveSmartEraseRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLiveSmartEraseRuleOutcome>>();
+    DeleteLiveSmartEraseRuleAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DeleteLiveSmartEraseRuleRequest&,
+        DeleteLiveSmartEraseRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DeleteLiveSmartEraseTemplateOutcome LiveClient::DeleteLiveSmartEraseTemplate(const DeleteLiveSmartEraseTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLiveSmartEraseTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLiveSmartEraseTemplateResponse rsp = DeleteLiveSmartEraseTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLiveSmartEraseTemplateOutcome(rsp);
+        else
+            return DeleteLiveSmartEraseTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLiveSmartEraseTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteLiveSmartEraseTemplateAsync(const DeleteLiveSmartEraseTemplateRequest& request, const DeleteLiveSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLiveSmartEraseTemplateRequest&;
+    using Resp = DeleteLiveSmartEraseTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLiveSmartEraseTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DeleteLiveSmartEraseTemplateOutcomeCallable LiveClient::DeleteLiveSmartEraseTemplateCallable(const DeleteLiveSmartEraseTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLiveSmartEraseTemplateOutcome>>();
+    DeleteLiveSmartEraseTemplateAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DeleteLiveSmartEraseTemplateRequest&,
+        DeleteLiveSmartEraseTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7490,6 +7640,156 @@ LiveClient::DescribeLiveRecordTemplatesOutcomeCallable LiveClient::DescribeLiveR
     return prom->get_future();
 }
 
+LiveClient::DescribeLiveSmartEraseRulesOutcome LiveClient::DescribeLiveSmartEraseRules(const DescribeLiveSmartEraseRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveSmartEraseRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveSmartEraseRulesResponse rsp = DescribeLiveSmartEraseRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveSmartEraseRulesOutcome(rsp);
+        else
+            return DescribeLiveSmartEraseRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveSmartEraseRulesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveSmartEraseRulesAsync(const DescribeLiveSmartEraseRulesRequest& request, const DescribeLiveSmartEraseRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLiveSmartEraseRulesRequest&;
+    using Resp = DescribeLiveSmartEraseRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLiveSmartEraseRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeLiveSmartEraseRulesOutcomeCallable LiveClient::DescribeLiveSmartEraseRulesCallable(const DescribeLiveSmartEraseRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLiveSmartEraseRulesOutcome>>();
+    DescribeLiveSmartEraseRulesAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeLiveSmartEraseRulesRequest&,
+        DescribeLiveSmartEraseRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeLiveSmartEraseTemplateOutcome LiveClient::DescribeLiveSmartEraseTemplate(const DescribeLiveSmartEraseTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveSmartEraseTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveSmartEraseTemplateResponse rsp = DescribeLiveSmartEraseTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveSmartEraseTemplateOutcome(rsp);
+        else
+            return DescribeLiveSmartEraseTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveSmartEraseTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveSmartEraseTemplateAsync(const DescribeLiveSmartEraseTemplateRequest& request, const DescribeLiveSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLiveSmartEraseTemplateRequest&;
+    using Resp = DescribeLiveSmartEraseTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLiveSmartEraseTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeLiveSmartEraseTemplateOutcomeCallable LiveClient::DescribeLiveSmartEraseTemplateCallable(const DescribeLiveSmartEraseTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLiveSmartEraseTemplateOutcome>>();
+    DescribeLiveSmartEraseTemplateAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeLiveSmartEraseTemplateRequest&,
+        DescribeLiveSmartEraseTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeLiveSmartEraseTemplatesOutcome LiveClient::DescribeLiveSmartEraseTemplates(const DescribeLiveSmartEraseTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveSmartEraseTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveSmartEraseTemplatesResponse rsp = DescribeLiveSmartEraseTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveSmartEraseTemplatesOutcome(rsp);
+        else
+            return DescribeLiveSmartEraseTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveSmartEraseTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveSmartEraseTemplatesAsync(const DescribeLiveSmartEraseTemplatesRequest& request, const DescribeLiveSmartEraseTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLiveSmartEraseTemplatesRequest&;
+    using Resp = DescribeLiveSmartEraseTemplatesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLiveSmartEraseTemplates", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeLiveSmartEraseTemplatesOutcomeCallable LiveClient::DescribeLiveSmartEraseTemplatesCallable(const DescribeLiveSmartEraseTemplatesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLiveSmartEraseTemplatesOutcome>>();
+    DescribeLiveSmartEraseTemplatesAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeLiveSmartEraseTemplatesRequest&,
+        DescribeLiveSmartEraseTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::DescribeLiveSnapshotRulesOutcome LiveClient::DescribeLiveSnapshotRules(const DescribeLiveSnapshotRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveSnapshotRules");
@@ -11132,6 +11432,56 @@ LiveClient::ModifyLiveRecordTemplateOutcomeCallable LiveClient::ModifyLiveRecord
         const LiveClient*,
         const ModifyLiveRecordTemplateRequest&,
         ModifyLiveRecordTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::ModifyLiveSmartEraseTemplateOutcome LiveClient::ModifyLiveSmartEraseTemplate(const ModifyLiveSmartEraseTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLiveSmartEraseTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLiveSmartEraseTemplateResponse rsp = ModifyLiveSmartEraseTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLiveSmartEraseTemplateOutcome(rsp);
+        else
+            return ModifyLiveSmartEraseTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLiveSmartEraseTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyLiveSmartEraseTemplateAsync(const ModifyLiveSmartEraseTemplateRequest& request, const ModifyLiveSmartEraseTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLiveSmartEraseTemplateRequest&;
+    using Resp = ModifyLiveSmartEraseTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLiveSmartEraseTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::ModifyLiveSmartEraseTemplateOutcomeCallable LiveClient::ModifyLiveSmartEraseTemplateCallable(const ModifyLiveSmartEraseTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLiveSmartEraseTemplateOutcome>>();
+    ModifyLiveSmartEraseTemplateAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const ModifyLiveSmartEraseTemplateRequest&,
+        ModifyLiveSmartEraseTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

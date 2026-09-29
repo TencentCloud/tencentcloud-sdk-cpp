@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>角色ID</p>
-                     * @return Id <p>角色ID</p>
+                     * 获取<p>角色ID，可通过 ListWorkspaceRoles / ListConsoleRoles 接口获取；创建/更新角色时无需填写（由系统自动生成，创建成功后从响应 Data.RoleId 获取）</p>
+                     * @return Id <p>角色ID，可通过 ListWorkspaceRoles / ListConsoleRoles 接口获取；创建/更新角色时无需填写（由系统自动生成，创建成功后从响应 Data.RoleId 获取）</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置<p>角色ID</p>
-                     * @param _id <p>角色ID</p>
+                     * 设置<p>角色ID，可通过 ListWorkspaceRoles / ListConsoleRoles 接口获取；创建/更新角色时无需填写（由系统自动生成，创建成功后从响应 Data.RoleId 获取）</p>
+                     * @param _id <p>角色ID，可通过 ListWorkspaceRoles / ListConsoleRoles 接口获取；创建/更新角色时无需填写（由系统自动生成，创建成功后从响应 Data.RoleId 获取）</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>角色类型</p>
-                     * @return RoleType <p>角色类型</p>
+                     * 获取<p>角色类型：workspace=工作空间系统角色，workspace_custom=工作空间自定义角色，console=控制台角色；查询时返回，创建时无需填写（系统固定创建自定义角色）</p>
+                     * @return RoleType <p>角色类型：workspace=工作空间系统角色，workspace_custom=工作空间自定义角色，console=控制台角色；查询时返回，创建时无需填写（系统固定创建自定义角色）</p>
                      * 
                      */
                     std::string GetRoleType() const;
 
                     /**
-                     * 设置<p>角色类型</p>
-                     * @param _roleType <p>角色类型</p>
+                     * 设置<p>角色类型：workspace=工作空间系统角色，workspace_custom=工作空间自定义角色，console=控制台角色；查询时返回，创建时无需填写（系统固定创建自定义角色）</p>
+                     * @param _roleType <p>角色类型：workspace=工作空间系统角色，workspace_custom=工作空间自定义角色，console=控制台角色；查询时返回，创建时无需填写（系统固定创建自定义角色）</p>
                      * 
                      */
                     void SetRoleType(const std::string& _roleType);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RoleTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>角色来源，参考 web_enum_standard.proto -&gt; RoleSource：0=未指定 1=用户直绑 2=用户组继承 3=两者都有</p>
-                     * @return Source <p>角色来源，参考 web_enum_standard.proto -&gt; RoleSource：0=未指定 1=用户直绑 2=用户组继承 3=两者都有</p>
+                     * 获取<p>角色来源（查询侧字段，创建时无需填写）：0=未指定，1=用户直绑，2=用户组继承，3=两者都有</p>
+                     * @return Source <p>角色来源（查询侧字段，创建时无需填写）：0=未指定，1=用户直绑，2=用户组继承，3=两者都有</p>
                      * 
                      */
                     int64_t GetSource() const;
 
                     /**
-                     * 设置<p>角色来源，参考 web_enum_standard.proto -&gt; RoleSource：0=未指定 1=用户直绑 2=用户组继承 3=两者都有</p>
-                     * @param _source <p>角色来源，参考 web_enum_standard.proto -&gt; RoleSource：0=未指定 1=用户直绑 2=用户组继承 3=两者都有</p>
+                     * 设置<p>角色来源（查询侧字段，创建时无需填写）：0=未指定，1=用户直绑，2=用户组继承，3=两者都有</p>
+                     * @param _source <p>角色来源（查询侧字段，创建时无需填写）：0=未指定，1=用户直绑，2=用户组继承，3=两者都有</p>
                      * 
                      */
                     void SetSource(const int64_t& _source);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取<p>继承来源的用户组名称列表，Source=1 时为空</p>
-                     * @return GroupNames <p>继承来源的用户组名称列表，Source=1 时为空</p>
+                     * 获取<p>继承来源的用户组名称列表（查询侧字段，创建时无需填写），Source=1 时为空</p>
+                     * @return GroupNames <p>继承来源的用户组名称列表（查询侧字段，创建时无需填写），Source=1 时为空</p>
                      * 
                      */
                     std::vector<std::string> GetGroupNames() const;
 
                     /**
-                     * 设置<p>继承来源的用户组名称列表，Source=1 时为空</p>
-                     * @param _groupNames <p>继承来源的用户组名称列表，Source=1 时为空</p>
+                     * 设置<p>继承来源的用户组名称列表（查询侧字段，创建时无需填写），Source=1 时为空</p>
+                     * @param _groupNames <p>继承来源的用户组名称列表（查询侧字段，创建时无需填写），Source=1 时为空</p>
                      * 
                      */
                     void SetGroupNames(const std::vector<std::string>& _groupNames);
@@ -196,7 +196,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>角色ID</p>
+                     * <p>角色ID，可通过 ListWorkspaceRoles / ListConsoleRoles 接口获取；创建/更新角色时无需填写（由系统自动生成，创建成功后从响应 Data.RoleId 获取）</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
@@ -220,19 +220,19 @@ namespace TencentCloud
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * <p>角色类型</p>
+                     * <p>角色类型：workspace=工作空间系统角色，workspace_custom=工作空间自定义角色，console=控制台角色；查询时返回，创建时无需填写（系统固定创建自定义角色）</p>
                      */
                     std::string m_roleType;
                     bool m_roleTypeHasBeenSet;
 
                     /**
-                     * <p>角色来源，参考 web_enum_standard.proto -&gt; RoleSource：0=未指定 1=用户直绑 2=用户组继承 3=两者都有</p>
+                     * <p>角色来源（查询侧字段，创建时无需填写）：0=未指定，1=用户直绑，2=用户组继承，3=两者都有</p>
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * <p>继承来源的用户组名称列表，Source=1 时为空</p>
+                     * <p>继承来源的用户组名称列表（查询侧字段，创建时无需填写），Source=1 时为空</p>
                      */
                     std::vector<std::string> m_groupNames;
                     bool m_groupNamesHasBeenSet;
