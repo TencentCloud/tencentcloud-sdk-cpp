@@ -385,6 +385,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeMonitorReportResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeOriginStreamInfoRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeOriginStreamInfoResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeOriginWhiteIpListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeOriginWhiteIpListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribePlayErrorCodeDetailInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribePlayErrorCodeDetailInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribePlayErrorCodeSumInfoListRequest.h>
@@ -1094,6 +1096,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOriginStreamInfoResponse> DescribeOriginStreamInfoOutcome;
                 typedef std::future<DescribeOriginStreamInfoOutcome> DescribeOriginStreamInfoOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeOriginStreamInfoRequest&, DescribeOriginStreamInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginStreamInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOriginWhiteIpListResponse> DescribeOriginWhiteIpListOutcome;
+                typedef std::future<DescribeOriginWhiteIpListOutcome> DescribeOriginWhiteIpListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeOriginWhiteIpListRequest&, DescribeOriginWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginWhiteIpListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePlayErrorCodeDetailInfoListResponse> DescribePlayErrorCodeDetailInfoListOutcome;
                 typedef std::future<DescribePlayErrorCodeDetailInfoListOutcome> DescribePlayErrorCodeDetailInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribePlayErrorCodeDetailInfoListRequest&, DescribePlayErrorCodeDetailInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePlayErrorCodeDetailInfoListAsyncHandler;
@@ -3055,6 +3060,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeOriginStreamInfoOutcome DescribeOriginStreamInfo(const Model::DescribeOriginStreamInfoRequest &request);
                 void DescribeOriginStreamInfoAsync(const Model::DescribeOriginStreamInfoRequest& request, const DescribeOriginStreamInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOriginStreamInfoOutcomeCallable DescribeOriginStreamInfoCallable(const Model::DescribeOriginStreamInfoRequest& request);
+
+                /**
+                 *获取直播源站的拉流IP白名单列表
+                 * @param req DescribeOriginWhiteIpListRequest
+                 * @return DescribeOriginWhiteIpListOutcome
+                 */
+                DescribeOriginWhiteIpListOutcome DescribeOriginWhiteIpList(const Model::DescribeOriginWhiteIpListRequest &request);
+                void DescribeOriginWhiteIpListAsync(const Model::DescribeOriginWhiteIpListRequest& request, const DescribeOriginWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOriginWhiteIpListOutcomeCallable DescribeOriginWhiteIpListCallable(const Model::DescribeOriginWhiteIpListRequest& request);
 
                 /**
                  *该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。

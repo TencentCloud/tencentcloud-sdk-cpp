@@ -73,6 +73,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/CasterDisplayInfo.h
   include/tencentcloud/live/v20180801/model/ModifyLiveRecordTemplateRequest.h
   include/tencentcloud/live/v20180801/model/CallbackEventInfo.h
+  include/tencentcloud/live/v20180801/model/DescribeOriginWhiteIpListResponse.h
   include/tencentcloud/live/v20180801/model/DescribeTopClientIpSumInfoListResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveStreamStateResponse.h
   include/tencentcloud/live/v20180801/model/DeleteLiveWatermarkRuleRequest.h
@@ -341,6 +342,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeLivePullStreamTaskStatusRequest.h
   include/tencentcloud/live/v20180801/model/AuditImageDeleteDetail.h
   include/tencentcloud/live/v20180801/model/RestartLivePullStreamTaskRequest.h
+  include/tencentcloud/live/v20180801/model/DescribeOriginWhiteIpListRequest.h
   include/tencentcloud/live/v20180801/model/CasterBriefInfo.h
   include/tencentcloud/live/v20180801/model/DescribeCasterTransitionTypesRequest.h
   include/tencentcloud/live/v20180801/model/DelayInfo.h
@@ -726,6 +728,7 @@ set(live_src
   src/v20180801/model/CasterDisplayInfo.cpp
   src/v20180801/model/ModifyLiveRecordTemplateRequest.cpp
   src/v20180801/model/CallbackEventInfo.cpp
+  src/v20180801/model/DescribeOriginWhiteIpListResponse.cpp
   src/v20180801/model/DescribeTopClientIpSumInfoListResponse.cpp
   src/v20180801/model/DescribeLiveStreamStateResponse.cpp
   src/v20180801/model/DeleteLiveWatermarkRuleRequest.cpp
@@ -994,6 +997,7 @@ set(live_src
   src/v20180801/model/DescribeLivePullStreamTaskStatusRequest.cpp
   src/v20180801/model/AuditImageDeleteDetail.cpp
   src/v20180801/model/RestartLivePullStreamTaskRequest.cpp
+  src/v20180801/model/DescribeOriginWhiteIpListRequest.cpp
   src/v20180801/model/CasterBriefInfo.cpp
   src/v20180801/model/DescribeCasterTransitionTypesRequest.cpp
   src/v20180801/model/DelayInfo.cpp

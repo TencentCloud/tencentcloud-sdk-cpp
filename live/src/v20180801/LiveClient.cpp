@@ -9090,6 +9090,56 @@ LiveClient::DescribeOriginStreamInfoOutcomeCallable LiveClient::DescribeOriginSt
     return prom->get_future();
 }
 
+LiveClient::DescribeOriginWhiteIpListOutcome LiveClient::DescribeOriginWhiteIpList(const DescribeOriginWhiteIpListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOriginWhiteIpList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOriginWhiteIpListResponse rsp = DescribeOriginWhiteIpListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOriginWhiteIpListOutcome(rsp);
+        else
+            return DescribeOriginWhiteIpListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOriginWhiteIpListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeOriginWhiteIpListAsync(const DescribeOriginWhiteIpListRequest& request, const DescribeOriginWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeOriginWhiteIpListRequest&;
+    using Resp = DescribeOriginWhiteIpListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeOriginWhiteIpList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeOriginWhiteIpListOutcomeCallable LiveClient::DescribeOriginWhiteIpListCallable(const DescribeOriginWhiteIpListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeOriginWhiteIpListOutcome>>();
+    DescribeOriginWhiteIpListAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeOriginWhiteIpListRequest&,
+        DescribeOriginWhiteIpListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::DescribePlayErrorCodeDetailInfoListOutcome LiveClient::DescribePlayErrorCodeDetailInfoList(const DescribePlayErrorCodeDetailInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePlayErrorCodeDetailInfoList");
