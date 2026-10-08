@@ -33,7 +33,8 @@ SubmitHunyuan3DTaskRequest::SubmitHunyuan3DTaskRequest() :
     m_keepUVHasBeenSet(false),
     m_resultFormatHasBeenSet(false),
     m_seedHasBeenSet(false),
-    m_styleHasBeenSet(false)
+    m_styleHasBeenSet(false),
+    m_storeCosParamHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,15 @@ string SubmitHunyuan3DTaskRequest::ToJsonString() const
         string key = "Style";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_style.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storeCosParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoreCosParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_storeCosParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -321,6 +331,22 @@ void SubmitHunyuan3DTaskRequest::SetStyle(const string& _style)
 bool SubmitHunyuan3DTaskRequest::StyleHasBeenSet() const
 {
     return m_styleHasBeenSet;
+}
+
+AigcStoreCosParam SubmitHunyuan3DTaskRequest::GetStoreCosParam() const
+{
+    return m_storeCosParam;
+}
+
+void SubmitHunyuan3DTaskRequest::SetStoreCosParam(const AigcStoreCosParam& _storeCosParam)
+{
+    m_storeCosParam = _storeCosParam;
+    m_storeCosParamHasBeenSet = true;
+}
+
+bool SubmitHunyuan3DTaskRequest::StoreCosParamHasBeenSet() const
+{
+    return m_storeCosParamHasBeenSet;
 }
 
 

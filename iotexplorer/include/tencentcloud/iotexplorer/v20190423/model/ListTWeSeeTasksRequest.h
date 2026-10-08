@@ -44,48 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>设备名称</p>
-                     * @return DeviceName <p>设备名称</p>
-                     * 
-                     */
-                    std::string GetDeviceName() const;
-
-                    /**
-                     * 设置<p>设备名称</p>
-                     * @param _deviceName <p>设备名称</p>
-                     * 
-                     */
-                    void SetDeviceName(const std::string& _deviceName);
-
-                    /**
-                     * 判断参数 DeviceName 是否已赋值
-                     * @return DeviceName 是否已赋值
-                     * 
-                     */
-                    bool DeviceNameHasBeenSet() const;
-
-                    /**
-                     * 获取<p>分页拉取数量</p>
-                     * @return Limit <p>分页拉取数量</p>
-                     * 
-                     */
-                    uint64_t GetLimit() const;
-
-                    /**
-                     * 设置<p>分页拉取数量</p>
-                     * @param _limit <p>分页拉取数量</p>
-                     * 
-                     */
-                    void SetLimit(const uint64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     * 
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
                      * 获取<p>产品 ID</p>
                      * @return ProductId <p>产品 ID</p>
                      * 
@@ -107,6 +65,27 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>设备名称</p>
+                     * @return DeviceName <p>设备名称</p>
+                     * 
+                     */
+                    std::string GetDeviceName() const;
+
+                    /**
+                     * 设置<p>设备名称</p>
+                     * @param _deviceName <p>设备名称</p>
+                     * 
+                     */
+                    void SetDeviceName(const std::string& _deviceName);
+
+                    /**
+                     * 判断参数 DeviceName 是否已赋值
+                     * @return DeviceName 是否已赋值
+                     * 
+                     */
+                    bool DeviceNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li><li><code>SUMMARIZATION</code>：每日/每周总结</li></ul>
                      * @return ServiceCategory <p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li><li><code>SUMMARIZATION</code>：每日/每周总结</li></ul>
                      * 
@@ -126,6 +105,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ServiceCategoryHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分页拉取数量</p>
+                     * @return Limit <p>分页拉取数量</p>
+                     * 
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置<p>分页拉取数量</p>
+                     * @param _limit <p>分页拉取数量</p>
+                     * 
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
 
                     /**
                      * 获取<p>通道 ID</p>
@@ -298,28 +298,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>设备名称</p>
-                     */
-                    std::string m_deviceName;
-                    bool m_deviceNameHasBeenSet;
-
-                    /**
-                     * <p>分页拉取数量</p>
-                     */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
                      * <p>产品 ID</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
+                     * <p>设备名称</p>
+                     */
+                    std::string m_deviceName;
+                    bool m_deviceNameHasBeenSet;
+
+                    /**
                      * <p>算法类目。可选值：</p><ul><li><code>COMPREHENSION</code>：视觉理解</li><li><code>HIGHLIGHT</code>：视频浓缩</li><li><code>SUMMARIZATION</code>：每日/每周总结</li></ul>
                      */
                     std::string m_serviceCategory;
                     bool m_serviceCategoryHasBeenSet;
+
+                    /**
+                     * <p>分页拉取数量</p>
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                     /**
                      * <p>通道 ID</p>

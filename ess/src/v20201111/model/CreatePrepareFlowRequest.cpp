@@ -24,8 +24,8 @@ using namespace std;
 
 CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_operatorHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
     m_flowNameHasBeenSet(false),
+    m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_unorderedHasBeenSet(false),
     m_deadlineHasBeenSet(false),
@@ -64,20 +64,20 @@ string CreatePrepareFlowRequest::ToJsonString() const
         m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_resourceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_flowNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "FlowName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceTypeHasBeenSet)
@@ -281,22 +281,6 @@ bool CreatePrepareFlowRequest::OperatorHasBeenSet() const
     return m_operatorHasBeenSet;
 }
 
-string CreatePrepareFlowRequest::GetResourceId() const
-{
-    return m_resourceId;
-}
-
-void CreatePrepareFlowRequest::SetResourceId(const string& _resourceId)
-{
-    m_resourceId = _resourceId;
-    m_resourceIdHasBeenSet = true;
-}
-
-bool CreatePrepareFlowRequest::ResourceIdHasBeenSet() const
-{
-    return m_resourceIdHasBeenSet;
-}
-
 string CreatePrepareFlowRequest::GetFlowName() const
 {
     return m_flowName;
@@ -311,6 +295,22 @@ void CreatePrepareFlowRequest::SetFlowName(const string& _flowName)
 bool CreatePrepareFlowRequest::FlowNameHasBeenSet() const
 {
     return m_flowNameHasBeenSet;
+}
+
+string CreatePrepareFlowRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void CreatePrepareFlowRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 int64_t CreatePrepareFlowRequest::GetResourceType() const

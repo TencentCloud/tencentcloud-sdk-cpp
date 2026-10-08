@@ -62,8 +62,8 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>套餐规格。可能取值：</p><ul><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>
-                     * @return ServiceTier <p>套餐规格。可能取值：</p><ul><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>
+                     * 获取<p>套餐规格</p><p>枚举值：</p><ul><li>BASIC： 包年包月基础版</li><li>ADVANCED： 包年包月高级版</li></ul>
+                     * @return ServiceTier <p>套餐规格</p><p>枚举值：</p><ul><li>BASIC： 包年包月基础版</li><li>ADVANCED： 包年包月高级版</li></ul>
                      * 
                      */
                     std::string GetServiceTier() const;
@@ -174,60 +174,32 @@ namespace TencentCloud
                     bool SummarizeConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>当前周期基础能力总额度</p>
-                     * @return QuotaBasic <p>当前周期基础能力总额度</p>
+                     * 获取<p>当前周期内的额度总量</p>
+                     * @return CreditsQuota <p>当前周期内的额度总量</p>
                      * 
                      */
-                    int64_t GetQuotaBasic() const;
+                    double GetCreditsQuota() const;
 
                     /**
-                     * 判断参数 QuotaBasic 是否已赋值
-                     * @return QuotaBasic 是否已赋值
+                     * 判断参数 CreditsQuota 是否已赋值
+                     * @return CreditsQuota 是否已赋值
                      * 
                      */
-                    bool QuotaBasicHasBeenSet() const;
+                    bool CreditsQuotaHasBeenSet() const;
 
                     /**
-                     * 获取<p>当前周期基础能力已用额度</p>
-                     * @return QuotaUsedBasic <p>当前周期基础能力已用额度</p>
+                     * 获取<p>当前周期内的已使用额度</p>
+                     * @return CreditsUsed <p>当前周期内的已使用额度</p>
                      * 
                      */
-                    int64_t GetQuotaUsedBasic() const;
+                    double GetCreditsUsed() const;
 
                     /**
-                     * 判断参数 QuotaUsedBasic 是否已赋值
-                     * @return QuotaUsedBasic 是否已赋值
+                     * 判断参数 CreditsUsed 是否已赋值
+                     * @return CreditsUsed 是否已赋值
                      * 
                      */
-                    bool QuotaUsedBasicHasBeenSet() const;
-
-                    /**
-                     * 获取<p>当前周期高级能力总额度</p>
-                     * @return QuotaAdvanced <p>当前周期高级能力总额度</p>
-                     * 
-                     */
-                    int64_t GetQuotaAdvanced() const;
-
-                    /**
-                     * 判断参数 QuotaAdvanced 是否已赋值
-                     * @return QuotaAdvanced 是否已赋值
-                     * 
-                     */
-                    bool QuotaAdvancedHasBeenSet() const;
-
-                    /**
-                     * 获取<p>当前周期高级能力已用额度</p>
-                     * @return QuotaUsedAdvanced <p>当前周期高级能力已用额度</p>
-                     * 
-                     */
-                    int64_t GetQuotaUsedAdvanced() const;
-
-                    /**
-                     * 判断参数 QuotaUsedAdvanced 是否已赋值
-                     * @return QuotaUsedAdvanced 是否已赋值
-                     * 
-                     */
-                    bool QuotaUsedAdvancedHasBeenSet() const;
+                    bool CreditsUsedHasBeenSet() const;
 
                     /**
                      * 获取<p>额度刷新时间</p>
@@ -243,6 +215,62 @@ namespace TencentCloud
                      */
                     bool QuotaRefreshTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>当前周期基础能力总额度（已废弃，当 ServiceTier=BASIC 时，取值等于 CreditsQuota）</p>
+                     * @return QuotaBasic <p>当前周期基础能力总额度（已废弃，当 ServiceTier=BASIC 时，取值等于 CreditsQuota）</p>
+                     * 
+                     */
+                    int64_t GetQuotaBasic() const;
+
+                    /**
+                     * 判断参数 QuotaBasic 是否已赋值
+                     * @return QuotaBasic 是否已赋值
+                     * 
+                     */
+                    bool QuotaBasicHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前周期基础能力已用额度（已废弃，当 ServiceTier=BASIC 时，取值等于 CreditsUsed 向下取整）</p>
+                     * @return QuotaUsedBasic <p>当前周期基础能力已用额度（已废弃，当 ServiceTier=BASIC 时，取值等于 CreditsUsed 向下取整）</p>
+                     * 
+                     */
+                    int64_t GetQuotaUsedBasic() const;
+
+                    /**
+                     * 判断参数 QuotaUsedBasic 是否已赋值
+                     * @return QuotaUsedBasic 是否已赋值
+                     * 
+                     */
+                    bool QuotaUsedBasicHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前周期高级能力总额度（已废弃，当 ServiceTier=ADVANCED 时，取值等于 CreditsQuota）</p>
+                     * @return QuotaAdvanced <p>当前周期高级能力总额度（已废弃，当 ServiceTier=ADVANCED 时，取值等于 CreditsQuota）</p>
+                     * 
+                     */
+                    int64_t GetQuotaAdvanced() const;
+
+                    /**
+                     * 判断参数 QuotaAdvanced 是否已赋值
+                     * @return QuotaAdvanced 是否已赋值
+                     * 
+                     */
+                    bool QuotaAdvancedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前周期高级能力已用额度（已废弃，当 ServiceTier=ADVANCED 时，取值等于 CreditsUsed 向下取整）</p>
+                     * @return QuotaUsedAdvanced <p>当前周期高级能力已用额度（已废弃，当 ServiceTier=ADVANCED 时，取值等于 CreditsUsed 向下取整）</p>
+                     * 
+                     */
+                    int64_t GetQuotaUsedAdvanced() const;
+
+                    /**
+                     * 判断参数 QuotaUsedAdvanced 是否已赋值
+                     * @return QuotaUsedAdvanced 是否已赋值
+                     * 
+                     */
+                    bool QuotaUsedAdvancedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -252,7 +280,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * <p>套餐规格。可能取值：</p><ul><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>
+                     * <p>套餐规格</p><p>枚举值：</p><ul><li>BASIC： 包年包月基础版</li><li>ADVANCED： 包年包月高级版</li></ul>
                      */
                     std::string m_serviceTier;
                     bool m_serviceTierHasBeenSet;
@@ -300,34 +328,46 @@ namespace TencentCloud
                     bool m_summarizeConfigHasBeenSet;
 
                     /**
-                     * <p>当前周期基础能力总额度</p>
+                     * <p>当前周期内的额度总量</p>
                      */
-                    int64_t m_quotaBasic;
-                    bool m_quotaBasicHasBeenSet;
+                    double m_creditsQuota;
+                    bool m_creditsQuotaHasBeenSet;
 
                     /**
-                     * <p>当前周期基础能力已用额度</p>
+                     * <p>当前周期内的已使用额度</p>
                      */
-                    int64_t m_quotaUsedBasic;
-                    bool m_quotaUsedBasicHasBeenSet;
-
-                    /**
-                     * <p>当前周期高级能力总额度</p>
-                     */
-                    int64_t m_quotaAdvanced;
-                    bool m_quotaAdvancedHasBeenSet;
-
-                    /**
-                     * <p>当前周期高级能力已用额度</p>
-                     */
-                    int64_t m_quotaUsedAdvanced;
-                    bool m_quotaUsedAdvancedHasBeenSet;
+                    double m_creditsUsed;
+                    bool m_creditsUsedHasBeenSet;
 
                     /**
                      * <p>额度刷新时间</p>
                      */
                     int64_t m_quotaRefreshTime;
                     bool m_quotaRefreshTimeHasBeenSet;
+
+                    /**
+                     * <p>当前周期基础能力总额度（已废弃，当 ServiceTier=BASIC 时，取值等于 CreditsQuota）</p>
+                     */
+                    int64_t m_quotaBasic;
+                    bool m_quotaBasicHasBeenSet;
+
+                    /**
+                     * <p>当前周期基础能力已用额度（已废弃，当 ServiceTier=BASIC 时，取值等于 CreditsUsed 向下取整）</p>
+                     */
+                    int64_t m_quotaUsedBasic;
+                    bool m_quotaUsedBasicHasBeenSet;
+
+                    /**
+                     * <p>当前周期高级能力总额度（已废弃，当 ServiceTier=ADVANCED 时，取值等于 CreditsQuota）</p>
+                     */
+                    int64_t m_quotaAdvanced;
+                    bool m_quotaAdvancedHasBeenSet;
+
+                    /**
+                     * <p>当前周期高级能力已用额度（已废弃，当 ServiceTier=ADVANCED 时，取值等于 CreditsUsed 向下取整）</p>
+                     */
+                    int64_t m_quotaUsedAdvanced;
+                    bool m_quotaUsedAdvancedHasBeenSet;
 
                 };
             }

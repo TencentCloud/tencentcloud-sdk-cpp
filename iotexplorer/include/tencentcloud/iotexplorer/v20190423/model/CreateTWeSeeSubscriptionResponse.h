@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单 ID
-                     * @return OrderId 订单 ID
+                     * 获取<p>订单 ID</p>
+                     * @return OrderId <p>订单 ID</p>
                      * 
                      */
                     std::string GetOrderId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取订单状态
-                     * @return Status 订单状态
+                     * 获取<p>订单状态</p>
+                     * @return Status <p>订单状态</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取资源 ID
-                     * @return ResourceId 资源 ID
+                     * 获取<p>资源 ID</p>
+                     * @return ResourceId <p>资源 ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取原价
-                     * @return OriginalPrice 原价
+                     * 获取<p>原价</p>
+                     * @return OriginalPrice <p>原价</p>
                      * 
                      */
                     std::string GetOriginalPrice() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取折后价
-                     * @return DiscountPrice 折后价
+                     * 获取<p>折后价</p>
+                     * @return DiscountPrice <p>折后价</p>
                      * 
                      */
                     std::string GetDiscountPrice() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool DiscountPriceHasBeenSet() const;
 
                     /**
-                     * 获取币种
-                     * @return Currency 币种
+                     * 获取<p>币种</p>
+                     * @return Currency <p>币种</p>
                      * 
                      */
                     std::string GetCurrency() const;
@@ -130,37 +130,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单 ID
+                     * <p>订单 ID</p>
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 订单状态
+                     * <p>订单状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 资源 ID
+                     * <p>资源 ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 原价
+                     * <p>原价</p>
                      */
                     std::string m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 折后价
+                     * <p>折后价</p>
                      */
                     std::string m_discountPrice;
                     bool m_discountPriceHasBeenSet;
 
                     /**
-                     * 币种
+                     * <p>币种</p>
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;

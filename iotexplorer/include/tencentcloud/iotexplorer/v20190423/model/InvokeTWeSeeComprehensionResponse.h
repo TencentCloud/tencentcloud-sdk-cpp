@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool ComprehensionResultHasBeenSet() const;
 
                     /**
-                     * 获取<p>完成该任务所消耗的基础能力额度</p>
-                     * @return CostBasic <p>完成该任务所消耗的基础能力额度</p>
+                     * 获取<p>完成该任务所产生的视觉理解基础能力后付费用量</p>
+                     * @return CostBasic <p>完成该任务所产生的视觉理解基础能力后付费用量</p>
                      * 
                      */
                     int64_t GetCostBasic() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool CostBasicHasBeenSet() const;
 
                     /**
-                     * 获取<p>完成该任务所消耗的高级能力额度</p>
-                     * @return CostAdvanced <p>完成该任务所消耗的高级能力额度</p>
+                     * 获取<p>完成该任务所产生的视觉理解高级能力后付费用量</p>
+                     * @return CostAdvanced <p>完成该任务所产生的视觉理解高级能力后付费用量</p>
                      * 
                      */
                     int64_t GetCostAdvanced() const;
@@ -113,6 +113,20 @@ namespace TencentCloud
                      * 
                      */
                     bool CostAdvancedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>完成该任务所消耗的视觉理解预付费额度</p>
+                     * @return CostCredits <p>完成该任务所消耗的视觉理解预付费额度</p>
+                     * 
+                     */
+                    double GetCostCredits() const;
+
+                    /**
+                     * 判断参数 CostCredits 是否已赋值
+                     * @return CostCredits 是否已赋值
+                     * 
+                     */
+                    bool CostCreditsHasBeenSet() const;
 
                 private:
 
@@ -135,16 +149,22 @@ namespace TencentCloud
                     bool m_comprehensionResultHasBeenSet;
 
                     /**
-                     * <p>完成该任务所消耗的基础能力额度</p>
+                     * <p>完成该任务所产生的视觉理解基础能力后付费用量</p>
                      */
                     int64_t m_costBasic;
                     bool m_costBasicHasBeenSet;
 
                     /**
-                     * <p>完成该任务所消耗的高级能力额度</p>
+                     * <p>完成该任务所产生的视觉理解高级能力后付费用量</p>
                      */
                     int64_t m_costAdvanced;
                     bool m_costAdvancedHasBeenSet;
+
+                    /**
+                     * <p>完成该任务所消耗的视觉理解预付费额度</p>
+                     */
+                    double m_costCredits;
+                    bool m_costCreditsHasBeenSet;
 
                 };
             }

@@ -21,10 +21,10 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/iotexplorer/v20190423/model/SeeCompHighlightConfig.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeComprehensionConfig.h>
-#include <tencentcloud/iotexplorer/v20190423/model/SeeEventIdFilterConfig.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeCompHighlightConfig.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SeeSummarizeConfig.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeEventIdFilterConfig.h>
 
 
 namespace TencentCloud
@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备名称
-                     * @return DeviceName 设备名称
-                     * 
-                     */
-                    std::string GetDeviceName() const;
-
-                    /**
-                     * 设置设备名称
-                     * @param _deviceName 设备名称
-                     * 
-                     */
-                    void SetDeviceName(const std::string& _deviceName);
-
-                    /**
-                     * 判断参数 DeviceName 是否已赋值
-                     * @return DeviceName 是否已赋值
-                     * 
-                     */
-                    bool DeviceNameHasBeenSet() const;
-
-                    /**
                      * 获取产品 ID
                      * @return ProductId 产品 ID
                      * 
@@ -87,6 +66,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ProductIdHasBeenSet() const;
+
+                    /**
+                     * 获取设备名称
+                     * @return DeviceName 设备名称
+                     * 
+                     */
+                    std::string GetDeviceName() const;
+
+                    /**
+                     * 设置设备名称
+                     * @param _deviceName 设备名称
+                     * 
+                     */
+                    void SetDeviceName(const std::string& _deviceName);
+
+                    /**
+                     * 判断参数 DeviceName 是否已赋值
+                     * @return DeviceName 是否已赋值
+                     * 
+                     */
+                    bool DeviceNameHasBeenSet() const;
 
                     /**
                      * 获取算法类型。可选值：
@@ -118,25 +118,25 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取通道 ID
-                     * @return ChannelId 通道 ID
+                     * 获取视觉理解配置（适用于视频理解、图片理解），不传则不修改
+                     * @return ComprehensionConfig 视觉理解配置（适用于视频理解、图片理解），不传则不修改
                      * 
                      */
-                    uint64_t GetChannelId() const;
+                    SeeComprehensionConfig GetComprehensionConfig() const;
 
                     /**
-                     * 设置通道 ID
-                     * @param _channelId 通道 ID
+                     * 设置视觉理解配置（适用于视频理解、图片理解），不传则不修改
+                     * @param _comprehensionConfig 视觉理解配置（适用于视频理解、图片理解），不传则不修改
                      * 
                      */
-                    void SetChannelId(const uint64_t& _channelId);
+                    void SetComprehensionConfig(const SeeComprehensionConfig& _comprehensionConfig);
 
                     /**
-                     * 判断参数 ChannelId 是否已赋值
-                     * @return ChannelId 是否已赋值
+                     * 判断参数 ComprehensionConfig 是否已赋值
+                     * @return ComprehensionConfig 是否已赋值
                      * 
                      */
-                    bool ChannelIdHasBeenSet() const;
+                    bool ComprehensionConfigHasBeenSet() const;
 
                     /**
                      * 获取视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
@@ -160,46 +160,25 @@ namespace TencentCloud
                     bool CompHighlightConfigHasBeenSet() const;
 
                     /**
-                     * 获取视觉理解配置（适用于视频理解、图片理解），不传则不修改
-                     * @return ComprehensionConfig 视觉理解配置（适用于视频理解、图片理解），不传则不修改
+                     * 获取每日与每周总结配置，不传则不修改
+                     * @return SummarizeConfig 每日与每周总结配置，不传则不修改
                      * 
                      */
-                    SeeComprehensionConfig GetComprehensionConfig() const;
+                    SeeSummarizeConfig GetSummarizeConfig() const;
 
                     /**
-                     * 设置视觉理解配置（适用于视频理解、图片理解），不传则不修改
-                     * @param _comprehensionConfig 视觉理解配置（适用于视频理解、图片理解），不传则不修改
+                     * 设置每日与每周总结配置，不传则不修改
+                     * @param _summarizeConfig 每日与每周总结配置，不传则不修改
                      * 
                      */
-                    void SetComprehensionConfig(const SeeComprehensionConfig& _comprehensionConfig);
+                    void SetSummarizeConfig(const SeeSummarizeConfig& _summarizeConfig);
 
                     /**
-                     * 判断参数 ComprehensionConfig 是否已赋值
-                     * @return ComprehensionConfig 是否已赋值
+                     * 判断参数 SummarizeConfig 是否已赋值
+                     * @return SummarizeConfig 是否已赋值
                      * 
                      */
-                    bool ComprehensionConfigHasBeenSet() const;
-
-                    /**
-                     * 获取功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
-                     * @return Enabled 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
-                     * 
-                     */
-                    bool GetEnabled() const;
-
-                    /**
-                     * 设置功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
-                     * @param _enabled 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
-                     * 
-                     */
-                    void SetEnabled(const bool& _enabled);
-
-                    /**
-                     * 判断参数 Enabled 是否已赋值
-                     * @return Enabled 是否已赋值
-                     * 
-                     */
-                    bool EnabledHasBeenSet() const;
+                    bool SummarizeConfigHasBeenSet() const;
 
                     /**
                      * 获取云存事件 ID 过滤规则配置，不传则不修改
@@ -223,39 +202,60 @@ namespace TencentCloud
                     bool EventIdFilterConfigHasBeenSet() const;
 
                     /**
-                     * 获取每日与每周总结配置，不传则不修改
-                     * @return SummarizeConfig 每日与每周总结配置，不传则不修改
+                     * 获取通道 ID
+                     * @return ChannelId 通道 ID
                      * 
                      */
-                    SeeSummarizeConfig GetSummarizeConfig() const;
+                    uint64_t GetChannelId() const;
 
                     /**
-                     * 设置每日与每周总结配置，不传则不修改
-                     * @param _summarizeConfig 每日与每周总结配置，不传则不修改
+                     * 设置通道 ID
+                     * @param _channelId 通道 ID
                      * 
                      */
-                    void SetSummarizeConfig(const SeeSummarizeConfig& _summarizeConfig);
+                    void SetChannelId(const uint64_t& _channelId);
 
                     /**
-                     * 判断参数 SummarizeConfig 是否已赋值
-                     * @return SummarizeConfig 是否已赋值
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
                      * 
                      */
-                    bool SummarizeConfigHasBeenSet() const;
+                    bool ChannelIdHasBeenSet() const;
+
+                    /**
+                     * 获取功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
+                     * @return Enabled 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
+                     * 
+                     */
+                    bool GetEnabled() const;
+
+                    /**
+                     * 设置功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
+                     * @param _enabled 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
+                     * 
+                     */
+                    void SetEnabled(const bool& _enabled);
+
+                    /**
+                     * 判断参数 Enabled 是否已赋值
+                     * @return Enabled 是否已赋值
+                     * 
+                     */
+                    bool EnabledHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * 设备名称
-                     */
-                    std::string m_deviceName;
-                    bool m_deviceNameHasBeenSet;
 
                     /**
                      * 产品 ID
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
+
+                    /**
+                     * 设备名称
+                     */
+                    std::string m_deviceName;
+                    bool m_deviceNameHasBeenSet;
 
                     /**
                      * 算法类型。可选值：
@@ -266,10 +266,10 @@ namespace TencentCloud
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 通道 ID
+                     * 视觉理解配置（适用于视频理解、图片理解），不传则不修改
                      */
-                    uint64_t m_channelId;
-                    bool m_channelIdHasBeenSet;
+                    SeeComprehensionConfig m_comprehensionConfig;
+                    bool m_comprehensionConfigHasBeenSet;
 
                     /**
                      * 视频语义浓缩配置（适用于视频语义浓缩），不传则不修改
@@ -278,16 +278,10 @@ namespace TencentCloud
                     bool m_compHighlightConfigHasBeenSet;
 
                     /**
-                     * 视觉理解配置（适用于视频理解、图片理解），不传则不修改
+                     * 每日与每周总结配置，不传则不修改
                      */
-                    SeeComprehensionConfig m_comprehensionConfig;
-                    bool m_comprehensionConfigHasBeenSet;
-
-                    /**
-                     * 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
-                     */
-                    bool m_enabled;
-                    bool m_enabledHasBeenSet;
+                    SeeSummarizeConfig m_summarizeConfig;
+                    bool m_summarizeConfigHasBeenSet;
 
                     /**
                      * 云存事件 ID 过滤规则配置，不传则不修改
@@ -296,10 +290,16 @@ namespace TencentCloud
                     bool m_eventIdFilterConfigHasBeenSet;
 
                     /**
-                     * 每日与每周总结配置，不传则不修改
+                     * 通道 ID
                      */
-                    SeeSummarizeConfig m_summarizeConfig;
-                    bool m_summarizeConfigHasBeenSet;
+                    uint64_t m_channelId;
+                    bool m_channelIdHasBeenSet;
+
+                    /**
+                     * 功能开关。`true` 为开启，`false` 为关闭；不传表示不修改
+                     */
+                    bool m_enabled;
+                    bool m_enabledHasBeenSet;
 
                 };
             }

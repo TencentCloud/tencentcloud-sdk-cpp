@@ -23,15 +23,15 @@ using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
 ModifyTWeSeeSubscriptionRequest::ModifyTWeSeeSubscriptionRequest() :
-    m_deviceNameHasBeenSet(false),
     m_productIdHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
-    m_channelIdHasBeenSet(false),
-    m_compHighlightConfigHasBeenSet(false),
     m_comprehensionConfigHasBeenSet(false),
-    m_enabledHasBeenSet(false),
+    m_compHighlightConfigHasBeenSet(false),
+    m_summarizeConfigHasBeenSet(false),
     m_eventIdFilterConfigHasBeenSet(false),
-    m_summarizeConfigHasBeenSet(false)
+    m_channelIdHasBeenSet(false),
+    m_enabledHasBeenSet(false)
 {
 }
 
@@ -42,14 +42,6 @@ string ModifyTWeSeeSubscriptionRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_deviceNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DeviceName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_productIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -58,29 +50,20 @@ string ModifyTWeSeeSubscriptionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_deviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_serviceTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_channelIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ChannelId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_channelId, allocator);
-    }
-
-    if (m_compHighlightConfigHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CompHighlightConfig";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_compHighlightConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_comprehensionConfigHasBeenSet)
@@ -92,21 +75,13 @@ string ModifyTWeSeeSubscriptionRequest::ToJsonString() const
         m_comprehensionConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_enabledHasBeenSet)
+    if (m_compHighlightConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Enabled";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_enabled, allocator);
-    }
-
-    if (m_eventIdFilterConfigHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EventIdFilterConfig";
+        string key = "CompHighlightConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_eventIdFilterConfig.ToJsonObject(d[key.c_str()], allocator);
+        m_compHighlightConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_summarizeConfigHasBeenSet)
@@ -118,6 +93,31 @@ string ModifyTWeSeeSubscriptionRequest::ToJsonString() const
         m_summarizeConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_eventIdFilterConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventIdFilterConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eventIdFilterConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
+    }
+
+    if (m_enabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enabled, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -125,22 +125,6 @@ string ModifyTWeSeeSubscriptionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ModifyTWeSeeSubscriptionRequest::GetDeviceName() const
-{
-    return m_deviceName;
-}
-
-void ModifyTWeSeeSubscriptionRequest::SetDeviceName(const string& _deviceName)
-{
-    m_deviceName = _deviceName;
-    m_deviceNameHasBeenSet = true;
-}
-
-bool ModifyTWeSeeSubscriptionRequest::DeviceNameHasBeenSet() const
-{
-    return m_deviceNameHasBeenSet;
-}
 
 string ModifyTWeSeeSubscriptionRequest::GetProductId() const
 {
@@ -156,6 +140,22 @@ void ModifyTWeSeeSubscriptionRequest::SetProductId(const string& _productId)
 bool ModifyTWeSeeSubscriptionRequest::ProductIdHasBeenSet() const
 {
     return m_productIdHasBeenSet;
+}
+
+string ModifyTWeSeeSubscriptionRequest::GetDeviceName() const
+{
+    return m_deviceName;
+}
+
+void ModifyTWeSeeSubscriptionRequest::SetDeviceName(const string& _deviceName)
+{
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
+}
+
+bool ModifyTWeSeeSubscriptionRequest::DeviceNameHasBeenSet() const
+{
+    return m_deviceNameHasBeenSet;
 }
 
 string ModifyTWeSeeSubscriptionRequest::GetServiceType() const
@@ -174,20 +174,20 @@ bool ModifyTWeSeeSubscriptionRequest::ServiceTypeHasBeenSet() const
     return m_serviceTypeHasBeenSet;
 }
 
-uint64_t ModifyTWeSeeSubscriptionRequest::GetChannelId() const
+SeeComprehensionConfig ModifyTWeSeeSubscriptionRequest::GetComprehensionConfig() const
 {
-    return m_channelId;
+    return m_comprehensionConfig;
 }
 
-void ModifyTWeSeeSubscriptionRequest::SetChannelId(const uint64_t& _channelId)
+void ModifyTWeSeeSubscriptionRequest::SetComprehensionConfig(const SeeComprehensionConfig& _comprehensionConfig)
 {
-    m_channelId = _channelId;
-    m_channelIdHasBeenSet = true;
+    m_comprehensionConfig = _comprehensionConfig;
+    m_comprehensionConfigHasBeenSet = true;
 }
 
-bool ModifyTWeSeeSubscriptionRequest::ChannelIdHasBeenSet() const
+bool ModifyTWeSeeSubscriptionRequest::ComprehensionConfigHasBeenSet() const
 {
-    return m_channelIdHasBeenSet;
+    return m_comprehensionConfigHasBeenSet;
 }
 
 SeeCompHighlightConfig ModifyTWeSeeSubscriptionRequest::GetCompHighlightConfig() const
@@ -206,36 +206,20 @@ bool ModifyTWeSeeSubscriptionRequest::CompHighlightConfigHasBeenSet() const
     return m_compHighlightConfigHasBeenSet;
 }
 
-SeeComprehensionConfig ModifyTWeSeeSubscriptionRequest::GetComprehensionConfig() const
+SeeSummarizeConfig ModifyTWeSeeSubscriptionRequest::GetSummarizeConfig() const
 {
-    return m_comprehensionConfig;
+    return m_summarizeConfig;
 }
 
-void ModifyTWeSeeSubscriptionRequest::SetComprehensionConfig(const SeeComprehensionConfig& _comprehensionConfig)
+void ModifyTWeSeeSubscriptionRequest::SetSummarizeConfig(const SeeSummarizeConfig& _summarizeConfig)
 {
-    m_comprehensionConfig = _comprehensionConfig;
-    m_comprehensionConfigHasBeenSet = true;
+    m_summarizeConfig = _summarizeConfig;
+    m_summarizeConfigHasBeenSet = true;
 }
 
-bool ModifyTWeSeeSubscriptionRequest::ComprehensionConfigHasBeenSet() const
+bool ModifyTWeSeeSubscriptionRequest::SummarizeConfigHasBeenSet() const
 {
-    return m_comprehensionConfigHasBeenSet;
-}
-
-bool ModifyTWeSeeSubscriptionRequest::GetEnabled() const
-{
-    return m_enabled;
-}
-
-void ModifyTWeSeeSubscriptionRequest::SetEnabled(const bool& _enabled)
-{
-    m_enabled = _enabled;
-    m_enabledHasBeenSet = true;
-}
-
-bool ModifyTWeSeeSubscriptionRequest::EnabledHasBeenSet() const
-{
-    return m_enabledHasBeenSet;
+    return m_summarizeConfigHasBeenSet;
 }
 
 SeeEventIdFilterConfig ModifyTWeSeeSubscriptionRequest::GetEventIdFilterConfig() const
@@ -254,20 +238,36 @@ bool ModifyTWeSeeSubscriptionRequest::EventIdFilterConfigHasBeenSet() const
     return m_eventIdFilterConfigHasBeenSet;
 }
 
-SeeSummarizeConfig ModifyTWeSeeSubscriptionRequest::GetSummarizeConfig() const
+uint64_t ModifyTWeSeeSubscriptionRequest::GetChannelId() const
 {
-    return m_summarizeConfig;
+    return m_channelId;
 }
 
-void ModifyTWeSeeSubscriptionRequest::SetSummarizeConfig(const SeeSummarizeConfig& _summarizeConfig)
+void ModifyTWeSeeSubscriptionRequest::SetChannelId(const uint64_t& _channelId)
 {
-    m_summarizeConfig = _summarizeConfig;
-    m_summarizeConfigHasBeenSet = true;
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
 }
 
-bool ModifyTWeSeeSubscriptionRequest::SummarizeConfigHasBeenSet() const
+bool ModifyTWeSeeSubscriptionRequest::ChannelIdHasBeenSet() const
 {
-    return m_summarizeConfigHasBeenSet;
+    return m_channelIdHasBeenSet;
+}
+
+bool ModifyTWeSeeSubscriptionRequest::GetEnabled() const
+{
+    return m_enabled;
+}
+
+void ModifyTWeSeeSubscriptionRequest::SetEnabled(const bool& _enabled)
+{
+    m_enabled = _enabled;
+    m_enabledHasBeenSet = true;
+}
+
+bool ModifyTWeSeeSubscriptionRequest::EnabledHasBeenSet() const
+{
+    return m_enabledHasBeenSet;
 }
 
 

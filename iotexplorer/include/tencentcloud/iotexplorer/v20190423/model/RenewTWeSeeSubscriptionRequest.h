@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品 ID
-                     * @return ProductId 产品 ID
+                     * 获取<p>产品 ID</p>
+                     * @return ProductId <p>产品 ID</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品 ID
-                     * @param _productId 产品 ID
+                     * 设置<p>产品 ID</p>
+                     * @param _productId <p>产品 ID</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取设备名称
-                     * @return DeviceName 设备名称
+                     * 获取<p>设备名称</p>
+                     * @return DeviceName <p>设备名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置设备名称
-                     * @param _deviceName 设备名称
+                     * 设置<p>设备名称</p>
+                     * @param _deviceName <p>设备名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -85,23 +85,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取算法类型。可选值：
-
-- `VID_COMP`：视频理解
-                     * @return ServiceType 算法类型。可选值：
-
-- `VID_COMP`：视频理解
+                     * 获取<p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li></ul>
+                     * @return ServiceType <p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li></ul>
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置算法类型。可选值：
-
-- `VID_COMP`：视频理解
-                     * @param _serviceType 算法类型。可选值：
-
-- `VID_COMP`：视频理解
+                     * 设置<p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li></ul>
+                     * @param _serviceType <p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li></ul>
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -114,15 +106,15 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取续费时长，单位：月，支持 1-60
-                     * @return Period 续费时长，单位：月，支持 1-60
+                     * 获取<p>续费时长，单位：月，支持 1-60</p>
+                     * @return Period <p>续费时长，单位：月，支持 1-60</p>
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置续费时长，单位：月，支持 1-60
-                     * @param _period 续费时长，单位：月，支持 1-60
+                     * 设置<p>续费时长，单位：月，支持 1-60</p>
+                     * @param _period <p>续费时长，单位：月，支持 1-60</p>
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -135,15 +127,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取通道 ID
-                     * @return ChannelId 通道 ID
+                     * 获取<p>通道 ID</p>
+                     * @return ChannelId <p>通道 ID</p>
                      * 
                      */
                     uint64_t GetChannelId() const;
 
                     /**
-                     * 设置通道 ID
-                     * @param _channelId 通道 ID
+                     * 设置<p>通道 ID</p>
+                     * @param _channelId <p>通道 ID</p>
                      * 
                      */
                     void SetChannelId(const uint64_t& _channelId);
@@ -156,15 +148,15 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取自定义订单 ID
-                     * @return CustomOrderId 自定义订单 ID
+                     * 获取<p>自定义订单 ID</p>
+                     * @return CustomOrderId <p>自定义订单 ID</p>
                      * 
                      */
                     std::string GetCustomOrderId() const;
 
                     /**
-                     * 设置自定义订单 ID
-                     * @param _customOrderId 自定义订单 ID
+                     * 设置<p>自定义订单 ID</p>
+                     * @param _customOrderId <p>自定义订单 ID</p>
                      * 
                      */
                     void SetCustomOrderId(const std::string& _customOrderId);
@@ -179,39 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品 ID
+                     * <p>产品 ID</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 设备名称
+                     * <p>设备名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 算法类型。可选值：
-
-- `VID_COMP`：视频理解
+                     * <p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li></ul>
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 续费时长，单位：月，支持 1-60
+                     * <p>续费时长，单位：月，支持 1-60</p>
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 通道 ID
+                     * <p>通道 ID</p>
                      */
                     uint64_t m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 自定义订单 ID
+                     * <p>自定义订单 ID</p>
                      */
                     std::string m_customOrderId;
                     bool m_customOrderIdHasBeenSet;

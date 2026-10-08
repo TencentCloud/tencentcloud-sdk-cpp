@@ -33,11 +33,13 @@ DescribeTWeSeeSubscriptionResponse::DescribeTWeSeeSubscriptionResponse() :
     m_compHighlightConfigHasBeenSet(false),
     m_eventIdFilterConfigHasBeenSet(false),
     m_summarizeConfigHasBeenSet(false),
+    m_creditsQuotaHasBeenSet(false),
+    m_creditsUsedHasBeenSet(false),
+    m_quotaRefreshTimeHasBeenSet(false),
     m_quotaBasicHasBeenSet(false),
     m_quotaUsedBasicHasBeenSet(false),
     m_quotaAdvancedHasBeenSet(false),
-    m_quotaUsedAdvancedHasBeenSet(false),
-    m_quotaRefreshTimeHasBeenSet(false)
+    m_quotaUsedAdvancedHasBeenSet(false)
 {
 }
 
@@ -193,6 +195,36 @@ CoreInternalOutcome DescribeTWeSeeSubscriptionResponse::Deserialize(const string
         m_summarizeConfigHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CreditsQuota") && !rsp["CreditsQuota"].IsNull())
+    {
+        if (!rsp["CreditsQuota"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreditsQuota` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_creditsQuota = rsp["CreditsQuota"].GetDouble();
+        m_creditsQuotaHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CreditsUsed") && !rsp["CreditsUsed"].IsNull())
+    {
+        if (!rsp["CreditsUsed"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreditsUsed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_creditsUsed = rsp["CreditsUsed"].GetDouble();
+        m_creditsUsedHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("QuotaRefreshTime") && !rsp["QuotaRefreshTime"].IsNull())
+    {
+        if (!rsp["QuotaRefreshTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QuotaRefreshTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_quotaRefreshTime = rsp["QuotaRefreshTime"].GetInt64();
+        m_quotaRefreshTimeHasBeenSet = true;
+    }
+
     if (rsp.HasMember("QuotaBasic") && !rsp["QuotaBasic"].IsNull())
     {
         if (!rsp["QuotaBasic"].IsInt64())
@@ -231,16 +263,6 @@ CoreInternalOutcome DescribeTWeSeeSubscriptionResponse::Deserialize(const string
         }
         m_quotaUsedAdvanced = rsp["QuotaUsedAdvanced"].GetInt64();
         m_quotaUsedAdvancedHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("QuotaRefreshTime") && !rsp["QuotaRefreshTime"].IsNull())
-    {
-        if (!rsp["QuotaRefreshTime"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `QuotaRefreshTime` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_quotaRefreshTime = rsp["QuotaRefreshTime"].GetInt64();
-        m_quotaRefreshTimeHasBeenSet = true;
     }
 
 
@@ -329,6 +351,30 @@ string DescribeTWeSeeSubscriptionResponse::ToJsonString() const
         m_summarizeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_creditsQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreditsQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_creditsQuota, allocator);
+    }
+
+    if (m_creditsUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreditsUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_creditsUsed, allocator);
+    }
+
+    if (m_quotaRefreshTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaRefreshTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_quotaRefreshTime, allocator);
+    }
+
     if (m_quotaBasicHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -359,14 +405,6 @@ string DescribeTWeSeeSubscriptionResponse::ToJsonString() const
         string key = "QuotaUsedAdvanced";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quotaUsedAdvanced, allocator);
-    }
-
-    if (m_quotaRefreshTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "QuotaRefreshTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_quotaRefreshTime, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -471,6 +509,36 @@ bool DescribeTWeSeeSubscriptionResponse::SummarizeConfigHasBeenSet() const
     return m_summarizeConfigHasBeenSet;
 }
 
+double DescribeTWeSeeSubscriptionResponse::GetCreditsQuota() const
+{
+    return m_creditsQuota;
+}
+
+bool DescribeTWeSeeSubscriptionResponse::CreditsQuotaHasBeenSet() const
+{
+    return m_creditsQuotaHasBeenSet;
+}
+
+double DescribeTWeSeeSubscriptionResponse::GetCreditsUsed() const
+{
+    return m_creditsUsed;
+}
+
+bool DescribeTWeSeeSubscriptionResponse::CreditsUsedHasBeenSet() const
+{
+    return m_creditsUsedHasBeenSet;
+}
+
+int64_t DescribeTWeSeeSubscriptionResponse::GetQuotaRefreshTime() const
+{
+    return m_quotaRefreshTime;
+}
+
+bool DescribeTWeSeeSubscriptionResponse::QuotaRefreshTimeHasBeenSet() const
+{
+    return m_quotaRefreshTimeHasBeenSet;
+}
+
 int64_t DescribeTWeSeeSubscriptionResponse::GetQuotaBasic() const
 {
     return m_quotaBasic;
@@ -509,16 +577,6 @@ int64_t DescribeTWeSeeSubscriptionResponse::GetQuotaUsedAdvanced() const
 bool DescribeTWeSeeSubscriptionResponse::QuotaUsedAdvancedHasBeenSet() const
 {
     return m_quotaUsedAdvancedHasBeenSet;
-}
-
-int64_t DescribeTWeSeeSubscriptionResponse::GetQuotaRefreshTime() const
-{
-    return m_quotaRefreshTime;
-}
-
-bool DescribeTWeSeeSubscriptionResponse::QuotaRefreshTimeHasBeenSet() const
-{
-    return m_quotaRefreshTimeHasBeenSet;
 }
 
 

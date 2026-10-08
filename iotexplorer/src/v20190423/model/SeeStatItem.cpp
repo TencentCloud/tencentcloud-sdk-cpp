@@ -24,7 +24,8 @@ SeeStatItem::SeeStatItem() :
     m_timeHasBeenSet(false),
     m_countHasBeenSet(false),
     m_costBasicHasBeenSet(false),
-    m_costAdvancedHasBeenSet(false)
+    m_costAdvancedHasBeenSet(false),
+    m_costCreditsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome SeeStatItem::Deserialize(const rapidjson::Value &value)
         m_costAdvancedHasBeenSet = true;
     }
 
+    if (value.HasMember("CostCredits") && !value["CostCredits"].IsNull())
+    {
+        if (!value["CostCredits"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeStatItem.CostCredits` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_costCredits = value["CostCredits"].GetDouble();
+        m_costCreditsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void SeeStatItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CostAdvanced";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_costAdvanced, allocator);
+    }
+
+    if (m_costCreditsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CostCredits";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_costCredits, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void SeeStatItem::SetCostAdvanced(const int64_t& _costAdvanced)
 bool SeeStatItem::CostAdvancedHasBeenSet() const
 {
     return m_costAdvancedHasBeenSet;
+}
+
+double SeeStatItem::GetCostCredits() const
+{
+    return m_costCredits;
+}
+
+void SeeStatItem::SetCostCredits(const double& _costCredits)
+{
+    m_costCredits = _costCredits;
+    m_costCreditsHasBeenSet = true;
+}
+
+bool SeeStatItem::CostCreditsHasBeenSet() const
+{
+    return m_costCreditsHasBeenSet;
 }
 

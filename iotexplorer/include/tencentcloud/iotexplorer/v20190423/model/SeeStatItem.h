@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间
-                     * @return Time 时间
+                     * 获取<p>时间</p>
+                     * @return Time <p>时间</p>
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置时间
-                     * @param _time 时间
+                     * 设置<p>时间</p>
+                     * @param _time <p>时间</p>
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取任务数量
-                     * @return Count 任务数量
+                     * 获取<p>任务数量</p>
+                     * @return Count <p>任务数量</p>
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置任务数量
-                     * @param _count 任务数量
+                     * 设置<p>任务数量</p>
+                     * @param _count <p>任务数量</p>
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取基础能力用量
-                     * @return CostBasic 基础能力用量
+                     * 获取<p>基础能力后付费用量</p>
+                     * @return CostBasic <p>基础能力后付费用量</p>
                      * 
                      */
                     int64_t GetCostBasic() const;
 
                     /**
-                     * 设置基础能力用量
-                     * @param _costBasic 基础能力用量
+                     * 设置<p>基础能力后付费用量</p>
+                     * @param _costBasic <p>基础能力后付费用量</p>
                      * 
                      */
                     void SetCostBasic(const int64_t& _costBasic);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CostBasicHasBeenSet() const;
 
                     /**
-                     * 获取高级能力用量
-                     * @return CostAdvanced 高级能力用量
+                     * 获取<p>高级能力后付费用量</p>
+                     * @return CostAdvanced <p>高级能力后付费用量</p>
                      * 
                      */
                     int64_t GetCostAdvanced() const;
 
                     /**
-                     * 设置高级能力用量
-                     * @param _costAdvanced 高级能力用量
+                     * 设置<p>高级能力后付费用量</p>
+                     * @param _costAdvanced <p>高级能力后付费用量</p>
                      * 
                      */
                     void SetCostAdvanced(const int64_t& _costAdvanced);
@@ -130,31 +130,58 @@ namespace TencentCloud
                      */
                     bool CostAdvancedHasBeenSet() const;
 
+                    /**
+                     * 获取<p>预付费额度用量</p>
+                     * @return CostCredits <p>预付费额度用量</p>
+                     * 
+                     */
+                    double GetCostCredits() const;
+
+                    /**
+                     * 设置<p>预付费额度用量</p>
+                     * @param _costCredits <p>预付费额度用量</p>
+                     * 
+                     */
+                    void SetCostCredits(const double& _costCredits);
+
+                    /**
+                     * 判断参数 CostCredits 是否已赋值
+                     * @return CostCredits 是否已赋值
+                     * 
+                     */
+                    bool CostCreditsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 时间
+                     * <p>时间</p>
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 任务数量
+                     * <p>任务数量</p>
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 基础能力用量
+                     * <p>基础能力后付费用量</p>
                      */
                     int64_t m_costBasic;
                     bool m_costBasicHasBeenSet;
 
                     /**
-                     * 高级能力用量
+                     * <p>高级能力后付费用量</p>
                      */
                     int64_t m_costAdvanced;
                     bool m_costAdvancedHasBeenSet;
+
+                    /**
+                     * <p>预付费额度用量</p>
+                     */
+                    double m_costCredits;
+                    bool m_costCreditsHasBeenSet;
 
                 };
             }

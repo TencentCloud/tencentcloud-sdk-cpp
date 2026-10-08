@@ -34,6 +34,7 @@ SeeTaskInfo::SeeTaskInfo() :
     m_summarizeResultHasBeenSet(false),
     m_costBasicHasBeenSet(false),
     m_costAdvancedHasBeenSet(false),
+    m_costCreditsHasBeenSet(false),
     m_filesHasBeenSet(false),
     m_filesInfoHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -218,6 +219,16 @@ CoreInternalOutcome SeeTaskInfo::Deserialize(const rapidjson::Value &value)
         }
         m_costAdvanced = value["CostAdvanced"].GetInt64();
         m_costAdvancedHasBeenSet = true;
+    }
+
+    if (value.HasMember("CostCredits") && !value["CostCredits"].IsNull())
+    {
+        if (!value["CostCredits"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeTaskInfo.CostCredits` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_costCredits = value["CostCredits"].GetDouble();
+        m_costCreditsHasBeenSet = true;
     }
 
     if (value.HasMember("Files") && !value["Files"].IsNull())
@@ -408,6 +419,14 @@ void SeeTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CostAdvanced";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_costAdvanced, allocator);
+    }
+
+    if (m_costCreditsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CostCredits";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_costCredits, allocator);
     }
 
     if (m_filesHasBeenSet)
@@ -679,6 +698,22 @@ void SeeTaskInfo::SetCostAdvanced(const int64_t& _costAdvanced)
 bool SeeTaskInfo::CostAdvancedHasBeenSet() const
 {
     return m_costAdvancedHasBeenSet;
+}
+
+double SeeTaskInfo::GetCostCredits() const
+{
+    return m_costCredits;
+}
+
+void SeeTaskInfo::SetCostCredits(const double& _costCredits)
+{
+    m_costCredits = _costCredits;
+    m_costCreditsHasBeenSet = true;
+}
+
+bool SeeTaskInfo::CostCreditsHasBeenSet() const
+{
+    return m_costCreditsHasBeenSet;
 }
 
 vector<string> SeeTaskInfo::GetFiles() const

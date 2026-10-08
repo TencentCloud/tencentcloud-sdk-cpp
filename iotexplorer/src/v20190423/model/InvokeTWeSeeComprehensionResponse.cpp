@@ -28,7 +28,8 @@ InvokeTWeSeeComprehensionResponse::InvokeTWeSeeComprehensionResponse() :
     m_statusHasBeenSet(false),
     m_comprehensionResultHasBeenSet(false),
     m_costBasicHasBeenSet(false),
-    m_costAdvancedHasBeenSet(false)
+    m_costAdvancedHasBeenSet(false),
+    m_costCreditsHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome InvokeTWeSeeComprehensionResponse::Deserialize(const string 
         m_costAdvancedHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CostCredits") && !rsp["CostCredits"].IsNull())
+    {
+        if (!rsp["CostCredits"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `CostCredits` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_costCredits = rsp["CostCredits"].GetDouble();
+        m_costCreditsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +183,14 @@ string InvokeTWeSeeComprehensionResponse::ToJsonString() const
         string key = "CostAdvanced";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_costAdvanced, allocator);
+    }
+
+    if (m_costCreditsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CostCredits";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_costCredits, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -234,6 +253,16 @@ int64_t InvokeTWeSeeComprehensionResponse::GetCostAdvanced() const
 bool InvokeTWeSeeComprehensionResponse::CostAdvancedHasBeenSet() const
 {
     return m_costAdvancedHasBeenSet;
+}
+
+double InvokeTWeSeeComprehensionResponse::GetCostCredits() const
+{
+    return m_costCredits;
+}
+
+bool InvokeTWeSeeComprehensionResponse::CostCreditsHasBeenSet() const
+{
+    return m_costCreditsHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品 ID
-                     * @return ProductId 产品 ID
+                     * 获取<p>产品 ID</p>
+                     * @return ProductId <p>产品 ID</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品 ID
-                     * @param _productId 产品 ID
+                     * 设置<p>产品 ID</p>
+                     * @param _productId <p>产品 ID</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取设备名称
-                     * @return DeviceName 设备名称
+                     * 获取<p>设备名称</p>
+                     * @return DeviceName <p>设备名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置设备名称
-                     * @param _deviceName 设备名称
+                     * 设置<p>设备名称</p>
+                     * @param _deviceName <p>设备名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -85,23 +85,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取算法类型。可选值：
-
-- `VID_COMP`：视频理解
-                     * @return ServiceType 算法类型。可选值：
-
-- `VID_COMP`：视频理解
+                     * 获取<p>算法类型</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li></ul>
+                     * @return ServiceType <p>算法类型</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li></ul>
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置算法类型。可选值：
-
-- `VID_COMP`：视频理解
-                     * @param _serviceType 算法类型。可选值：
-
-- `VID_COMP`：视频理解
+                     * 设置<p>算法类型</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li></ul>
+                     * @param _serviceType <p>算法类型</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li></ul>
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -114,23 +106,15 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取套餐规格。可选值：
-
-- `BASIC`：包年包月基础版（适用于视频理解）
-                     * @return ServiceTier 套餐规格。可选值：
-
-- `BASIC`：包年包月基础版（适用于视频理解）
+                     * 获取<p>套餐规格</p><p>枚举值：</p><ul><li>BASIC： 包年包月基础版</li><li>ADVANCED： 包年包月高级版</li></ul>
+                     * @return ServiceTier <p>套餐规格</p><p>枚举值：</p><ul><li>BASIC： 包年包月基础版</li><li>ADVANCED： 包年包月高级版</li></ul>
                      * 
                      */
                     std::string GetServiceTier() const;
 
                     /**
-                     * 设置套餐规格。可选值：
-
-- `BASIC`：包年包月基础版（适用于视频理解）
-                     * @param _serviceTier 套餐规格。可选值：
-
-- `BASIC`：包年包月基础版（适用于视频理解）
+                     * 设置<p>套餐规格</p><p>枚举值：</p><ul><li>BASIC： 包年包月基础版</li><li>ADVANCED： 包年包月高级版</li></ul>
+                     * @param _serviceTier <p>套餐规格</p><p>枚举值：</p><ul><li>BASIC： 包年包月基础版</li><li>ADVANCED： 包年包月高级版</li></ul>
                      * 
                      */
                     void SetServiceTier(const std::string& _serviceTier);
@@ -143,15 +127,15 @@ namespace TencentCloud
                     bool ServiceTierHasBeenSet() const;
 
                     /**
-                     * 获取订阅购买时长，单位：月，支持 1-60
-                     * @return Period 订阅购买时长，单位：月，支持 1-60
+                     * 获取<p>订阅购买时长，单位：月，支持 1-60</p>
+                     * @return Period <p>订阅购买时长，单位：月，支持 1-60</p>
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置订阅购买时长，单位：月，支持 1-60
-                     * @param _period 订阅购买时长，单位：月，支持 1-60
+                     * 设置<p>订阅购买时长，单位：月，支持 1-60</p>
+                     * @param _period <p>订阅购买时长，单位：月，支持 1-60</p>
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -164,15 +148,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取通道 ID
-                     * @return ChannelId 通道 ID
+                     * 获取<p>通道 ID</p>
+                     * @return ChannelId <p>通道 ID</p>
                      * 
                      */
                     uint64_t GetChannelId() const;
 
                     /**
-                     * 设置通道 ID
-                     * @param _channelId 通道 ID
+                     * 设置<p>通道 ID</p>
+                     * @param _channelId <p>通道 ID</p>
                      * 
                      */
                     void SetChannelId(const uint64_t& _channelId);
@@ -185,15 +169,15 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取自定义订单 ID
-                     * @return CustomOrderId 自定义订单 ID
+                     * 获取<p>自定义订单 ID</p>
+                     * @return CustomOrderId <p>自定义订单 ID</p>
                      * 
                      */
                     std::string GetCustomOrderId() const;
 
                     /**
-                     * 设置自定义订单 ID
-                     * @param _customOrderId 自定义订单 ID
+                     * 设置<p>自定义订单 ID</p>
+                     * @param _customOrderId <p>自定义订单 ID</p>
                      * 
                      */
                     void SetCustomOrderId(const std::string& _customOrderId);
@@ -206,27 +190,15 @@ namespace TencentCloud
                     bool CustomOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取续费标识。可选值：
-- `NOTIFY_AND_MANUAL_RENEW`：到期前通知并手动续费（默认）
-- `NOTIFY_AND_AUTO_RENEW`：到期前通知并自动续费
-- `DISABLE_NOTIFY_AND_MANUAL_RENEW`：不通知且手动续费
-                     * @return RenewFlag 续费标识。可选值：
-- `NOTIFY_AND_MANUAL_RENEW`：到期前通知并手动续费（默认）
-- `NOTIFY_AND_AUTO_RENEW`：到期前通知并自动续费
-- `DISABLE_NOTIFY_AND_MANUAL_RENEW`：不通知且手动续费
+                     * 获取<p>续费标识。可选值：</p><ul><li><code>NOTIFY_AND_MANUAL_RENEW</code>：到期前通知并手动续费（默认）</li><li><code>NOTIFY_AND_AUTO_RENEW</code>：到期前通知并自动续费</li><li><code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code>：不通知且手动续费</li></ul>
+                     * @return RenewFlag <p>续费标识。可选值：</p><ul><li><code>NOTIFY_AND_MANUAL_RENEW</code>：到期前通知并手动续费（默认）</li><li><code>NOTIFY_AND_AUTO_RENEW</code>：到期前通知并自动续费</li><li><code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code>：不通知且手动续费</li></ul>
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置续费标识。可选值：
-- `NOTIFY_AND_MANUAL_RENEW`：到期前通知并手动续费（默认）
-- `NOTIFY_AND_AUTO_RENEW`：到期前通知并自动续费
-- `DISABLE_NOTIFY_AND_MANUAL_RENEW`：不通知且手动续费
-                     * @param _renewFlag 续费标识。可选值：
-- `NOTIFY_AND_MANUAL_RENEW`：到期前通知并手动续费（默认）
-- `NOTIFY_AND_AUTO_RENEW`：到期前通知并自动续费
-- `DISABLE_NOTIFY_AND_MANUAL_RENEW`：不通知且手动续费
+                     * 设置<p>续费标识。可选值：</p><ul><li><code>NOTIFY_AND_MANUAL_RENEW</code>：到期前通知并手动续费（默认）</li><li><code>NOTIFY_AND_AUTO_RENEW</code>：到期前通知并自动续费</li><li><code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code>：不通知且手动续费</li></ul>
+                     * @param _renewFlag <p>续费标识。可选值：</p><ul><li><code>NOTIFY_AND_MANUAL_RENEW</code>：到期前通知并手动续费（默认）</li><li><code>NOTIFY_AND_AUTO_RENEW</code>：到期前通知并自动续费</li><li><code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code>：不通知且手动续费</li></ul>
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -241,56 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品 ID
+                     * <p>产品 ID</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 设备名称
+                     * <p>设备名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 算法类型。可选值：
-
-- `VID_COMP`：视频理解
+                     * <p>算法类型</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li></ul>
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 套餐规格。可选值：
-
-- `BASIC`：包年包月基础版（适用于视频理解）
+                     * <p>套餐规格</p><p>枚举值：</p><ul><li>BASIC： 包年包月基础版</li><li>ADVANCED： 包年包月高级版</li></ul>
                      */
                     std::string m_serviceTier;
                     bool m_serviceTierHasBeenSet;
 
                     /**
-                     * 订阅购买时长，单位：月，支持 1-60
+                     * <p>订阅购买时长，单位：月，支持 1-60</p>
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 通道 ID
+                     * <p>通道 ID</p>
                      */
                     uint64_t m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 自定义订单 ID
+                     * <p>自定义订单 ID</p>
                      */
                     std::string m_customOrderId;
                     bool m_customOrderIdHasBeenSet;
 
                     /**
-                     * 续费标识。可选值：
-- `NOTIFY_AND_MANUAL_RENEW`：到期前通知并手动续费（默认）
-- `NOTIFY_AND_AUTO_RENEW`：到期前通知并自动续费
-- `DISABLE_NOTIFY_AND_MANUAL_RENEW`：不通知且手动续费
+                     * <p>续费标识。可选值：</p><ul><li><code>NOTIFY_AND_MANUAL_RENEW</code>：到期前通知并手动续费（默认）</li><li><code>NOTIFY_AND_AUTO_RENEW</code>：到期前通知并自动续费</li><li><code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code>：不通知且手动续费</li></ul>
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;

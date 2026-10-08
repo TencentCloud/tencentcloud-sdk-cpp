@@ -150,6 +150,27 @@ namespace TencentCloud
                     bool WaitResultTimeoutHasBeenSet() const;
 
                     /**
+                     * 获取<p>需额外等待结果的字段列表</p><p>枚举值：</p><ul><li>FaceRecognitionResult： 等待人脸检测结果（仅当 ComprehensionConfig.EnableFaceDetection = true 时有效）</li></ul><p>接口固定会等待视觉理解结果，可选增加等待人脸检测结果</p>
+                     * @return WaitResultFields <p>需额外等待结果的字段列表</p><p>枚举值：</p><ul><li>FaceRecognitionResult： 等待人脸检测结果（仅当 ComprehensionConfig.EnableFaceDetection = true 时有效）</li></ul><p>接口固定会等待视觉理解结果，可选增加等待人脸检测结果</p>
+                     * 
+                     */
+                    std::vector<std::string> GetWaitResultFields() const;
+
+                    /**
+                     * 设置<p>需额外等待结果的字段列表</p><p>枚举值：</p><ul><li>FaceRecognitionResult： 等待人脸检测结果（仅当 ComprehensionConfig.EnableFaceDetection = true 时有效）</li></ul><p>接口固定会等待视觉理解结果，可选增加等待人脸检测结果</p>
+                     * @param _waitResultFields <p>需额外等待结果的字段列表</p><p>枚举值：</p><ul><li>FaceRecognitionResult： 等待人脸检测结果（仅当 ComprehensionConfig.EnableFaceDetection = true 时有效）</li></ul><p>接口固定会等待视觉理解结果，可选增加等待人脸检测结果</p>
+                     * 
+                     */
+                    void SetWaitResultFields(const std::vector<std::string>& _waitResultFields);
+
+                    /**
+                     * 判断参数 WaitResultFields 是否已赋值
+                     * @return WaitResultFields 是否已赋值
+                     * 
+                     */
+                    bool WaitResultFieldsHasBeenSet() const;
+
+                    /**
                      * 获取<p>回调目标 ID</p>
                      * @return CallbackId <p>回调目标 ID</p>
                      * 
@@ -201,6 +222,12 @@ namespace TencentCloud
                      */
                     int64_t m_waitResultTimeout;
                     bool m_waitResultTimeoutHasBeenSet;
+
+                    /**
+                     * <p>需额外等待结果的字段列表</p><p>枚举值：</p><ul><li>FaceRecognitionResult： 等待人脸检测结果（仅当 ComprehensionConfig.EnableFaceDetection = true 时有效）</li></ul><p>接口固定会等待视觉理解结果，可选增加等待人脸检测结果</p>
+                     */
+                    std::vector<std::string> m_waitResultFields;
+                    bool m_waitResultFieldsHasBeenSet;
 
                     /**
                      * <p>回调目标 ID</p>

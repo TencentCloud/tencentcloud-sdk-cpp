@@ -23,10 +23,10 @@ using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
 ListTWeSeeTasksRequest::ListTWeSeeTasksRequest() :
-    m_deviceNameHasBeenSet(false),
-    m_limitHasBeenSet(false),
     m_productIdHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
     m_serviceCategoryHasBeenSet(false),
+    m_limitHasBeenSet(false),
     m_channelIdHasBeenSet(false),
     m_endTimeMsHasBeenSet(false),
     m_fileURLExpireTimeHasBeenSet(false),
@@ -45,22 +45,6 @@ string ListTWeSeeTasksRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_deviceNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DeviceName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
     if (m_productIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -69,12 +53,28 @@ string ListTWeSeeTasksRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_deviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_serviceCategoryHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ServiceCategory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceCategory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
     if (m_channelIdHasBeenSet)
@@ -161,38 +161,6 @@ string ListTWeSeeTasksRequest::ToJsonString() const
 }
 
 
-string ListTWeSeeTasksRequest::GetDeviceName() const
-{
-    return m_deviceName;
-}
-
-void ListTWeSeeTasksRequest::SetDeviceName(const string& _deviceName)
-{
-    m_deviceName = _deviceName;
-    m_deviceNameHasBeenSet = true;
-}
-
-bool ListTWeSeeTasksRequest::DeviceNameHasBeenSet() const
-{
-    return m_deviceNameHasBeenSet;
-}
-
-uint64_t ListTWeSeeTasksRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void ListTWeSeeTasksRequest::SetLimit(const uint64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool ListTWeSeeTasksRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
-
 string ListTWeSeeTasksRequest::GetProductId() const
 {
     return m_productId;
@@ -209,6 +177,22 @@ bool ListTWeSeeTasksRequest::ProductIdHasBeenSet() const
     return m_productIdHasBeenSet;
 }
 
+string ListTWeSeeTasksRequest::GetDeviceName() const
+{
+    return m_deviceName;
+}
+
+void ListTWeSeeTasksRequest::SetDeviceName(const string& _deviceName)
+{
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
+}
+
+bool ListTWeSeeTasksRequest::DeviceNameHasBeenSet() const
+{
+    return m_deviceNameHasBeenSet;
+}
+
 string ListTWeSeeTasksRequest::GetServiceCategory() const
 {
     return m_serviceCategory;
@@ -223,6 +207,22 @@ void ListTWeSeeTasksRequest::SetServiceCategory(const string& _serviceCategory)
 bool ListTWeSeeTasksRequest::ServiceCategoryHasBeenSet() const
 {
     return m_serviceCategoryHasBeenSet;
+}
+
+uint64_t ListTWeSeeTasksRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void ListTWeSeeTasksRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool ListTWeSeeTasksRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 uint64_t ListTWeSeeTasksRequest::GetChannelId() const

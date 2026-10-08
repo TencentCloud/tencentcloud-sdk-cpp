@@ -28,6 +28,7 @@ InvokeTWeSeeComprehensionRequest::InvokeTWeSeeComprehensionRequest() :
     m_metadataHasBeenSet(false),
     m_comprehensionConfigHasBeenSet(false),
     m_waitResultTimeoutHasBeenSet(false),
+    m_waitResultFieldsHasBeenSet(false),
     m_callbackIdHasBeenSet(false)
 {
 }
@@ -79,6 +80,19 @@ string InvokeTWeSeeComprehensionRequest::ToJsonString() const
         string key = "WaitResultTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_waitResultTimeout, allocator);
+    }
+
+    if (m_waitResultFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaitResultFields";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_waitResultFields.begin(); itr != m_waitResultFields.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_callbackIdHasBeenSet)
@@ -175,6 +189,22 @@ void InvokeTWeSeeComprehensionRequest::SetWaitResultTimeout(const int64_t& _wait
 bool InvokeTWeSeeComprehensionRequest::WaitResultTimeoutHasBeenSet() const
 {
     return m_waitResultTimeoutHasBeenSet;
+}
+
+vector<string> InvokeTWeSeeComprehensionRequest::GetWaitResultFields() const
+{
+    return m_waitResultFields;
+}
+
+void InvokeTWeSeeComprehensionRequest::SetWaitResultFields(const vector<string>& _waitResultFields)
+{
+    m_waitResultFields = _waitResultFields;
+    m_waitResultFieldsHasBeenSet = true;
+}
+
+bool InvokeTWeSeeComprehensionRequest::WaitResultFieldsHasBeenSet() const
+{
+    return m_waitResultFieldsHasBeenSet;
 }
 
 string InvokeTWeSeeComprehensionRequest::GetCallbackId() const

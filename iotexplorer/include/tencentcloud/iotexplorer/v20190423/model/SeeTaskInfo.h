@@ -285,15 +285,15 @@ namespace TencentCloud
                     bool SummarizeResultHasBeenSet() const;
 
                     /**
-                     * 获取<p>完成该任务所消耗的基础能力额度</p>
-                     * @return CostBasic <p>完成该任务所消耗的基础能力额度</p>
+                     * 获取<p>完成该任务所产生的视觉理解基础能力后付费用量</p>
+                     * @return CostBasic <p>完成该任务所产生的视觉理解基础能力后付费用量</p>
                      * 
                      */
                     int64_t GetCostBasic() const;
 
                     /**
-                     * 设置<p>完成该任务所消耗的基础能力额度</p>
-                     * @param _costBasic <p>完成该任务所消耗的基础能力额度</p>
+                     * 设置<p>完成该任务所产生的视觉理解基础能力后付费用量</p>
+                     * @param _costBasic <p>完成该任务所产生的视觉理解基础能力后付费用量</p>
                      * 
                      */
                     void SetCostBasic(const int64_t& _costBasic);
@@ -306,15 +306,15 @@ namespace TencentCloud
                     bool CostBasicHasBeenSet() const;
 
                     /**
-                     * 获取<p>完成该任务所消耗的高级能力额度</p>
-                     * @return CostAdvanced <p>完成该任务所消耗的高级能力额度</p>
+                     * 获取<p>完成该任务所产生的视觉理解高级能力后付费用量</p>
+                     * @return CostAdvanced <p>完成该任务所产生的视觉理解高级能力后付费用量</p>
                      * 
                      */
                     int64_t GetCostAdvanced() const;
 
                     /**
-                     * 设置<p>完成该任务所消耗的高级能力额度</p>
-                     * @param _costAdvanced <p>完成该任务所消耗的高级能力额度</p>
+                     * 设置<p>完成该任务所产生的视觉理解高级能力后付费用量</p>
+                     * @param _costAdvanced <p>完成该任务所产生的视觉理解高级能力后付费用量</p>
                      * 
                      */
                     void SetCostAdvanced(const int64_t& _costAdvanced);
@@ -325,6 +325,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CostAdvancedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>完成该任务所消耗的视觉理解预付费额度</p>
+                     * @return CostCredits <p>完成该任务所消耗的视觉理解预付费额度</p>
+                     * 
+                     */
+                    double GetCostCredits() const;
+
+                    /**
+                     * 设置<p>完成该任务所消耗的视觉理解预付费额度</p>
+                     * @param _costCredits <p>完成该任务所消耗的视觉理解预付费额度</p>
+                     * 
+                     */
+                    void SetCostCredits(const double& _costCredits);
+
+                    /**
+                     * 判断参数 CostCredits 是否已赋值
+                     * @return CostCredits 是否已赋值
+                     * 
+                     */
+                    bool CostCreditsHasBeenSet() const;
 
                     /**
                      * 获取<p>输出文件名列表</p>
@@ -521,16 +542,22 @@ namespace TencentCloud
                     bool m_summarizeResultHasBeenSet;
 
                     /**
-                     * <p>完成该任务所消耗的基础能力额度</p>
+                     * <p>完成该任务所产生的视觉理解基础能力后付费用量</p>
                      */
                     int64_t m_costBasic;
                     bool m_costBasicHasBeenSet;
 
                     /**
-                     * <p>完成该任务所消耗的高级能力额度</p>
+                     * <p>完成该任务所产生的视觉理解高级能力后付费用量</p>
                      */
                     int64_t m_costAdvanced;
                     bool m_costAdvancedHasBeenSet;
+
+                    /**
+                     * <p>完成该任务所消耗的视觉理解预付费额度</p>
+                     */
+                    double m_costCredits;
+                    bool m_costCreditsHasBeenSet;
 
                     /**
                      * <p>输出文件名列表</p>
