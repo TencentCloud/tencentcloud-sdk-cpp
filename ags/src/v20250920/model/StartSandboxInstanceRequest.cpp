@@ -25,6 +25,7 @@ using namespace std;
 StartSandboxInstanceRequest::StartSandboxInstanceRequest() :
     m_toolIdHasBeenSet(false),
     m_toolNameHasBeenSet(false),
+    m_sourceInstanceIdHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_mountOptionsHasBeenSet(false),
@@ -55,6 +56,14 @@ string StartSandboxInstanceRequest::ToJsonString() const
         string key = "ToolName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_toolName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeoutHasBeenSet)
@@ -158,6 +167,22 @@ void StartSandboxInstanceRequest::SetToolName(const string& _toolName)
 bool StartSandboxInstanceRequest::ToolNameHasBeenSet() const
 {
     return m_toolNameHasBeenSet;
+}
+
+string StartSandboxInstanceRequest::GetSourceInstanceId() const
+{
+    return m_sourceInstanceId;
+}
+
+void StartSandboxInstanceRequest::SetSourceInstanceId(const string& _sourceInstanceId)
+{
+    m_sourceInstanceId = _sourceInstanceId;
+    m_sourceInstanceIdHasBeenSet = true;
+}
+
+bool StartSandboxInstanceRequest::SourceInstanceIdHasBeenSet() const
+{
+    return m_sourceInstanceIdHasBeenSet;
 }
 
 string StartSandboxInstanceRequest::GetTimeout() const

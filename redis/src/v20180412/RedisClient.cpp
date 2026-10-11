@@ -5890,6 +5890,56 @@ RedisClient::UpgradeInstanceOutcomeCallable RedisClient::UpgradeInstanceCallable
     return prom->get_future();
 }
 
+RedisClient::UpgradeInstanceProductVersionOutcome RedisClient::UpgradeInstanceProductVersion(const UpgradeInstanceProductVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeInstanceProductVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeInstanceProductVersionResponse rsp = UpgradeInstanceProductVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeInstanceProductVersionOutcome(rsp);
+        else
+            return UpgradeInstanceProductVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeInstanceProductVersionOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::UpgradeInstanceProductVersionAsync(const UpgradeInstanceProductVersionRequest& request, const UpgradeInstanceProductVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpgradeInstanceProductVersionRequest&;
+    using Resp = UpgradeInstanceProductVersionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpgradeInstanceProductVersion", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::UpgradeInstanceProductVersionOutcomeCallable RedisClient::UpgradeInstanceProductVersionCallable(const UpgradeInstanceProductVersionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpgradeInstanceProductVersionOutcome>>();
+    UpgradeInstanceProductVersionAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const UpgradeInstanceProductVersionRequest&,
+        UpgradeInstanceProductVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RedisClient::UpgradeInstanceVersionOutcome RedisClient::UpgradeInstanceVersion(const UpgradeInstanceVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "UpgradeInstanceVersion");

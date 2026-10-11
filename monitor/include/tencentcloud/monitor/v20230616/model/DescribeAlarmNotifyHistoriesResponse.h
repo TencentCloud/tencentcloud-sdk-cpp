@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警历史
-                     * @return AlarmNotifyHistoryList 告警历史
+                     * 获取<p>告警历史</p>
+                     * @return AlarmNotifyHistoryList <p>告警历史</p>
                      * 
                      */
                     std::vector<AlarmNotifyHistory> GetAlarmNotifyHistoryList() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool AlarmNotifyHistoryListHasBeenSet() const;
 
                     /**
-                     * 获取分页情况
-                     * @return PageResult 分页情况
+                     * 获取<p>分页情况</p>
+                     * @return PageResult <p>分页情况</p>
                      * 
                      */
                     PageByNoResult GetPageResult() const;
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警历史
+                     * <p>告警历史</p>
                      */
                     std::vector<AlarmNotifyHistory> m_alarmNotifyHistoryList;
                     bool m_alarmNotifyHistoryListHasBeenSet;
 
                     /**
-                     * 分页情况
+                     * <p>分页情况</p>
                      */
                     PageByNoResult m_pageResult;
                     bool m_pageResultHasBeenSet;

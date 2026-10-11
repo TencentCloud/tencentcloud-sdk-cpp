@@ -47,6 +47,8 @@
 #include <tencentcloud/ocr/v20181119/model/DescribeExtractDocAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeMarkEssayAgentJobRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeMarkEssayAgentJobResponse.h>
+#include <tencentcloud/ocr/v20181119/model/DescribeMultimodalDocParseJobRequest.h>
+#include <tencentcloud/ocr/v20181119/model/DescribeMultimodalDocParseJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeQuestionMarkAgentJobRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeQuestionMarkAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DescribeQuestionSplitJobRequest.h>
@@ -143,6 +145,8 @@
 #include <tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RunRerankRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RunRerankResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SealOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/SealOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SmartStructuralOCRRequest.h>
@@ -151,6 +155,8 @@
 #include <tencentcloud/ocr/v20181119/model/SubmitExtractDocAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SubmitMarkEssayAgentJobRequest.h>
 #include <tencentcloud/ocr/v20181119/model/SubmitMarkEssayAgentJobResponse.h>
+#include <tencentcloud/ocr/v20181119/model/SubmitMultimodalDocParseJobRequest.h>
+#include <tencentcloud/ocr/v20181119/model/SubmitMultimodalDocParseJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobRequest.h>
 #include <tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobResponse.h>
 #include <tencentcloud/ocr/v20181119/model/SubmitQuestionSplitJobRequest.h>
@@ -233,6 +239,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMarkEssayAgentJobResponse> DescribeMarkEssayAgentJobOutcome;
                 typedef std::future<DescribeMarkEssayAgentJobOutcome> DescribeMarkEssayAgentJobOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DescribeMarkEssayAgentJobRequest&, DescribeMarkEssayAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMarkEssayAgentJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMultimodalDocParseJobResponse> DescribeMultimodalDocParseJobOutcome;
+                typedef std::future<DescribeMultimodalDocParseJobOutcome> DescribeMultimodalDocParseJobOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::DescribeMultimodalDocParseJobRequest&, DescribeMultimodalDocParseJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultimodalDocParseJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQuestionMarkAgentJobResponse> DescribeQuestionMarkAgentJobOutcome;
                 typedef std::future<DescribeQuestionMarkAgentJobOutcome> DescribeQuestionMarkAgentJobOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DescribeQuestionMarkAgentJobRequest&, DescribeQuestionMarkAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuestionMarkAgentJobAsyncHandler;
@@ -377,6 +386,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RideHailingTransportLicenseOCRResponse> RideHailingTransportLicenseOCROutcome;
                 typedef std::future<RideHailingTransportLicenseOCROutcome> RideHailingTransportLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RideHailingTransportLicenseOCRRequest&, RideHailingTransportLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RideHailingTransportLicenseOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunRerankResponse> RunRerankOutcome;
+                typedef std::future<RunRerankOutcome> RunRerankOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RunRerankRequest&, RunRerankOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunRerankAsyncHandler;
                 typedef Outcome<Core::Error, Model::SealOCRResponse> SealOCROutcome;
                 typedef std::future<SealOCROutcome> SealOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SealOCRRequest&, SealOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> SealOCRAsyncHandler;
@@ -389,6 +401,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitMarkEssayAgentJobResponse> SubmitMarkEssayAgentJobOutcome;
                 typedef std::future<SubmitMarkEssayAgentJobOutcome> SubmitMarkEssayAgentJobOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SubmitMarkEssayAgentJobRequest&, SubmitMarkEssayAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitMarkEssayAgentJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitMultimodalDocParseJobResponse> SubmitMultimodalDocParseJobOutcome;
+                typedef std::future<SubmitMultimodalDocParseJobOutcome> SubmitMultimodalDocParseJobOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::SubmitMultimodalDocParseJobRequest&, SubmitMultimodalDocParseJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitMultimodalDocParseJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitQuestionMarkAgentJobResponse> SubmitQuestionMarkAgentJobOutcome;
                 typedef std::future<SubmitQuestionMarkAgentJobOutcome> SubmitQuestionMarkAgentJobOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::SubmitQuestionMarkAgentJobRequest&, SubmitQuestionMarkAgentJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitQuestionMarkAgentJobAsyncHandler;
@@ -568,6 +583,19 @@ namespace TencentCloud
                 DescribeMarkEssayAgentJobOutcome DescribeMarkEssayAgentJob(const Model::DescribeMarkEssayAgentJobRequest &request);
                 void DescribeMarkEssayAgentJobAsync(const Model::DescribeMarkEssayAgentJobRequest& request, const DescribeMarkEssayAgentJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMarkEssayAgentJobOutcomeCallable DescribeMarkEssayAgentJobCallable(const Model::DescribeMarkEssayAgentJobRequest& request);
+
+                /**
+                 *用于查询异步多模态文档解析任务的执行状态与结果，任务执行成功时返回解析结果包的下载地址，任务执行失败时返回对应错误信息。需要 SubmitMultimodalDocParseJob（创建任务）、DescribeMultimodalDocParseJob（查询任务）两个接口配套使用，计费发生在提交任务后。
+
+创建任务接口文档地址：https://cloud.tencent.com/document/product/1024/953218
+
+默认接口请求频率限制：5 页并发（注：可同时解析5页，且同步和异步接口共享并发资源，支持增购并发）。
+                 * @param req DescribeMultimodalDocParseJobRequest
+                 * @return DescribeMultimodalDocParseJobOutcome
+                 */
+                DescribeMultimodalDocParseJobOutcome DescribeMultimodalDocParseJob(const Model::DescribeMultimodalDocParseJobRequest &request);
+                void DescribeMultimodalDocParseJobAsync(const Model::DescribeMultimodalDocParseJobRequest& request, const DescribeMultimodalDocParseJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMultimodalDocParseJobOutcomeCallable DescribeMultimodalDocParseJobCallable(const Model::DescribeMultimodalDocParseJobRequest& request);
 
                 /**
                  *用于试题批改Agent查询任务。主要面向K12的试题批改产品，支持整卷/单题端到端（试卷切题+题目批改+手写坐标回显）处理，主要聚焦的场景包括试题批改（含手写答案）、试题解析（不含手写答案），其中低年级算式批改效果比线上[数学作业批改](https://cloud.tencent.com/document/product/1004)效果更好。精准输出题目、正误判定、答案对比、错误及知识点等结构化评估结果。
@@ -1536,6 +1564,15 @@ namespace TencentCloud
                 RideHailingTransportLicenseOCROutcomeCallable RideHailingTransportLicenseOCRCallable(const Model::RideHailingTransportLicenseOCRRequest& request);
 
                 /**
+                 *基于知识引擎精调模型技术的 Rerank 模型，支持对多路召回的结果进行重排序，根据查询内容与文档切片内容的相关性，按顺序返回每一条文档内容与查询内容的相关性分数。
+                 * @param req RunRerankRequest
+                 * @return RunRerankOutcome
+                 */
+                RunRerankOutcome RunRerank(const Model::RunRerankRequest &request);
+                void RunRerankAsync(const Model::RunRerankRequest& request, const RunRerankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunRerankOutcomeCallable RunRerankCallable(const Model::RunRerankRequest& request);
+
+                /**
                  *本接口支持各类印章主体内容、印章其他内容及形状识别，支持单图多印章识别，包括发票章、财务章等，适用于公文票据等场景。
 
 默认接口请求频率限制：5次/秒。
@@ -1578,6 +1615,19 @@ namespace TencentCloud
                 SubmitMarkEssayAgentJobOutcomeCallable SubmitMarkEssayAgentJobCallable(const Model::SubmitMarkEssayAgentJobRequest& request);
 
                 /**
+                 *本接口为异步多模态文档解析的任务提交接口，支持解析多种类型的文档文件（PDF、Word、PPT、Excel、Markdown、TXT、图片、WPS），服务端异步执行解析任务，提交后返回任务唯一 ID，可通过「异步多模态文档解析（查询任务）」接口获取最终解析结果。需要 SubmitMultimodalDocParseJob（创建任务）、DescribeMultimodalDocParseJob（查询任务）两个接口配套使用，计费发生在提交任务后。
+
+查询任务接口文档地址：https://cloud.tencent.com/document/product/1024/953219
+
+默认接口请求频率限制：5 页并发（注：可同时解析5页，且同步和异步接口共享并发资源，支持增购并发）。
+                 * @param req SubmitMultimodalDocParseJobRequest
+                 * @return SubmitMultimodalDocParseJobOutcome
+                 */
+                SubmitMultimodalDocParseJobOutcome SubmitMultimodalDocParseJob(const Model::SubmitMultimodalDocParseJobRequest &request);
+                void SubmitMultimodalDocParseJobAsync(const Model::SubmitMultimodalDocParseJobRequest& request, const SubmitMultimodalDocParseJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitMultimodalDocParseJobOutcomeCallable SubmitMultimodalDocParseJobCallable(const Model::SubmitMultimodalDocParseJobRequest& request);
+
+                /**
                  *用于试题批改Agent提交任务。主要面向K12的试题批改产品，支持整卷/单题端到端（试卷切题+题目批改+手写坐标回显）处理，主要聚焦的场景包括试题批改（含手写答案）、试题解析（不含手写答案），其中低年级算式批改效果比线上[数学作业批改](https://cloud.tencent.com/document/product/1004)效果更好。精准输出题目、正误判定、答案对比、错误及知识点等结构化评估结果。
 
 默认接口请求并发限制：10张/分钟。
@@ -1590,6 +1640,8 @@ namespace TencentCloud
 
                 /**
                  *异步试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置，是试卷切题的接口补充。主要解决试卷录题这类多页场景、单题跨页场景。需要 SubmitQuestionSplitOCRJob（提交任务）、DescribeQuestionSplitOCRJob（查询任务）两个接口配套使用，计费发生在提交任务后。
+
+默认接口请求频率限制：5次/秒。
                  * @param req SubmitQuestionSplitJobRequest
                  * @return SubmitQuestionSplitJobOutcome
                  */

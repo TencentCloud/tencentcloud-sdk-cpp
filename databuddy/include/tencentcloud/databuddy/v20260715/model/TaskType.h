@@ -196,7 +196,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Notebook <p>Notebook 类型扩展信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     TaskTypeNotebookExt GetNotebook() const;
 
@@ -205,30 +205,30 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notebook <p>Notebook 类型扩展信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetNotebook(const TaskTypeNotebookExt& _notebook);
 
                     /**
                      * 判断参数 Notebook 是否已赋值
                      * @return Notebook 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool NotebookHasBeenSet() const;
 
                     /**
-                     * 获取<p>任务类型属性列表，不同任务类型所需的 PropertyKey 不同，具体取值请参考 ListWorkflowTaskTypeProperties 接口返回</p>
+                     * 获取<p>任务扩展属性列表，具体填写参考TaskType.TaskPropertyList描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskTypePropertyList <p>任务类型属性列表，不同任务类型所需的 PropertyKey 不同，具体取值请参考 ListWorkflowTaskTypeProperties 接口返回</p>
+                     * @return TaskTypePropertyList <p>任务扩展属性列表，具体填写参考TaskType.TaskPropertyList描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskTypeProperty> GetTaskTypePropertyList() const;
 
                     /**
-                     * 设置<p>任务类型属性列表，不同任务类型所需的 PropertyKey 不同，具体取值请参考 ListWorkflowTaskTypeProperties 接口返回</p>
+                     * 设置<p>任务扩展属性列表，具体填写参考TaskType.TaskPropertyList描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskTypePropertyList <p>任务类型属性列表，不同任务类型所需的 PropertyKey 不同，具体取值请参考 ListWorkflowTaskTypeProperties 接口返回</p>
+                     * @param _taskTypePropertyList <p>任务扩展属性列表，具体填写参考TaskType.TaskPropertyList描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -242,18 +242,18 @@ namespace TencentCloud
                     bool TaskTypePropertyListHasBeenSet() const;
 
                     /**
-                     * 获取<p>运行时属性列表</p>
+                     * 获取<p>运行时属性列表，具体填写参考TaskType.RuntimePropertyList描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuntimePropertyList <p>运行时属性列表</p>
+                     * @return RuntimePropertyList <p>运行时属性列表，具体填写参考TaskType.RuntimePropertyList描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskTypeProperty> GetRuntimePropertyList() const;
 
                     /**
-                     * 设置<p>运行时属性列表</p>
+                     * 设置<p>运行时属性列表，具体填写参考TaskType.RuntimePropertyList描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _runtimePropertyList <p>运行时属性列表</p>
+                     * @param _runtimePropertyList <p>运行时属性列表，具体填写参考TaskType.RuntimePropertyList描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -283,14 +283,14 @@ namespace TencentCloud
                     bool m_notebookHasBeenSet;
 
                     /**
-                     * <p>任务类型属性列表，不同任务类型所需的 PropertyKey 不同，具体取值请参考 ListWorkflowTaskTypeProperties 接口返回</p>
+                     * <p>任务扩展属性列表，具体填写参考TaskType.TaskPropertyList描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskTypeProperty> m_taskTypePropertyList;
                     bool m_taskTypePropertyListHasBeenSet;
 
                     /**
-                     * <p>运行时属性列表</p>
+                     * <p>运行时属性列表，具体填写参考TaskType.RuntimePropertyList描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskTypeProperty> m_runtimePropertyList;

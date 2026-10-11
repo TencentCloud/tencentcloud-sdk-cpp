@@ -690,6 +690,56 @@ IoaClient::DescribeAccountGroupsOutcomeCallable IoaClient::DescribeAccountGroups
     return prom->get_future();
 }
 
+IoaClient::DescribeAccountVirtualGroupsOutcome IoaClient::DescribeAccountVirtualGroups(const DescribeAccountVirtualGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountVirtualGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountVirtualGroupsResponse rsp = DescribeAccountVirtualGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountVirtualGroupsOutcome(rsp);
+        else
+            return DescribeAccountVirtualGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountVirtualGroupsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeAccountVirtualGroupsAsync(const DescribeAccountVirtualGroupsRequest& request, const DescribeAccountVirtualGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAccountVirtualGroupsRequest&;
+    using Resp = DescribeAccountVirtualGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountVirtualGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeAccountVirtualGroupsOutcomeCallable IoaClient::DescribeAccountVirtualGroupsCallable(const DescribeAccountVirtualGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAccountVirtualGroupsOutcome>>();
+    DescribeAccountVirtualGroupsAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeAccountVirtualGroupsRequest&,
+        DescribeAccountVirtualGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::DescribeAggrSoftCategorySoftListOutcome IoaClient::DescribeAggrSoftCategorySoftList(const DescribeAggrSoftCategorySoftListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAggrSoftCategorySoftList");

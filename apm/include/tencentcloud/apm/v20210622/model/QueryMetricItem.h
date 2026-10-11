@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标名
-                     * @return MetricName 指标名
+                     * 获取<p>指标名</p>
+                     * @return MetricName <p>指标名</p>
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置指标名
-                     * @param _metricName 指标名
+                     * 设置<p>指标名</p>
+                     * @param _metricName <p>指标名</p>
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比) 
-                     * @return Compares 同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比) 
+                     * 获取<p>同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比)</p>
+                     * @return Compares <p>同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比)</p>
                      * 
                      */
                     std::vector<std::string> GetCompares() const;
 
                     /**
-                     * 设置同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比) 
-                     * @param _compares 同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比) 
+                     * 设置<p>同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比)</p>
+                     * @param _compares <p>同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比)</p>
                      * 
                      */
                     void SetCompares(const std::vector<std::string>& _compares);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ComparesHasBeenSet() const;
 
                     /**
-                     * 获取同比，已弃用，不建议使用
-                     * @return Compare 同比，已弃用，不建议使用
+                     * 获取<p>同比，已弃用，不建议使用</p>
+                     * @return Compare <p>同比，已弃用，不建议使用</p>
                      * 
                      */
                     std::string GetCompare() const;
 
                     /**
-                     * 设置同比，已弃用，不建议使用
-                     * @param _compare 同比，已弃用，不建议使用
+                     * 设置<p>同比，已弃用，不建议使用</p>
+                     * @param _compare <p>同比，已弃用，不建议使用</p>
                      * 
                      */
                     void SetCompare(const std::string& _compare);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指标名
+                     * <p>指标名</p>
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比) 
+                     * <p>同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比)</p>
                      */
                     std::vector<std::string> m_compares;
                     bool m_comparesHasBeenSet;
 
                     /**
-                     * 同比，已弃用，不建议使用
+                     * <p>同比，已弃用，不建议使用</p>
                      */
                     std::string m_compare;
                     bool m_compareHasBeenSet;

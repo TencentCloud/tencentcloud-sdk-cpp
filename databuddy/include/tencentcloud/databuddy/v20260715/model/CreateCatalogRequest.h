@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool CatalogSourceHasBeenSet() const;
 
+                    /**
+                     * 获取连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。
+                     * @return ConnectionCatalogName 连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。
+                     * 
+                     */
+                    std::string GetConnectionCatalogName() const;
+
+                    /**
+                     * 设置连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。
+                     * @param _connectionCatalogName 连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。
+                     * 
+                     */
+                    void SetConnectionCatalogName(const std::string& _connectionCatalogName);
+
+                    /**
+                     * 判断参数 ConnectionCatalogName 是否已赋值
+                     * @return ConnectionCatalogName 是否已赋值
+                     * 
+                     */
+                    bool ConnectionCatalogNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_catalogSource;
                     bool m_catalogSourceHasBeenSet;
+
+                    /**
+                     * 连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。
+                     */
+                    std::string m_connectionCatalogName;
+                    bool m_connectionCatalogNameHasBeenSet;
 
                 };
             }

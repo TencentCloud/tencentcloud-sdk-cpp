@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私有网络 ID
-                     * @return VpcId 私有网络 ID
+                     * 获取<p>私有网络 ID</p>
+                     * @return VpcId <p>私有网络 ID</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络 ID
-                     * @param _vpcId 私有网络 ID
+                     * 设置<p>私有网络 ID</p>
+                     * @param _vpcId <p>私有网络 ID</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网 ID
-                     * @return SubnetId 子网 ID
+                     * 获取<p>子网 ID</p>
+                     * @return SubnetId <p>子网 ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网 ID
-                     * @param _subnetId 子网 ID
+                     * 设置<p>子网 ID</p>
+                     * @param _subnetId <p>子网 ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取云联网 ID，如 ccn-rahigzjd
-                     * @return CcnId 云联网 ID，如 ccn-rahigzjd
+                     * 获取<p>云联网 ID，如 ccn-rahigzjd</p>
+                     * @return CcnId <p>云联网 ID，如 ccn-rahigzjd</p>
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网 ID，如 ccn-rahigzjd
-                     * @param _ccnId 云联网 ID，如 ccn-rahigzjd
+                     * 设置<p>云联网 ID，如 ccn-rahigzjd</p>
+                     * @param _ccnId <p>云联网 ID，如 ccn-rahigzjd</p>
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私有网络 ID
+                     * <p>私有网络 ID</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网 ID
+                     * <p>子网 ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 云联网 ID，如 ccn-rahigzjd
+                     * <p>云联网 ID，如 ccn-rahigzjd</p>
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;

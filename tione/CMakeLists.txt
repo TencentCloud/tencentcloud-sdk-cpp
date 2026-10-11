@@ -231,6 +231,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CreateTrainingTaskResponse.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceAuthTokenResponse.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceAuthorizationResponse.h
+  include/tencentcloud/tione/v20211111/model/EnableTrainingTaskClsConfigResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceAuthTokenRequest.h
   include/tencentcloud/tione/v20211111/model/CreateTrainingTaskRequest.h
@@ -311,6 +312,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/TrainingTaskDetail.h
   include/tencentcloud/tione/v20211111/model/DescribeExportRequest.h
   include/tencentcloud/tione/v20211111/model/UpdateSubAccountLinuxUserInfoRequest.h
+  include/tencentcloud/tione/v20211111/model/EnableTrainingTaskClsConfigRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/DescribePublicAlgoVersionListRequest.h
   include/tencentcloud/tione/v20211111/model/StorageExtraConf.h
@@ -585,6 +587,7 @@ set(tione_src
   src/v20211111/model/CreateTrainingTaskResponse.cpp
   src/v20211111/model/ModifyModelServiceAuthTokenResponse.cpp
   src/v20211111/model/ModifyModelServiceAuthorizationResponse.cpp
+  src/v20211111/model/EnableTrainingTaskClsConfigResponse.cpp
   src/v20211111/model/DeleteModelServiceRequest.cpp
   src/v20211111/model/DeleteModelServiceAuthTokenRequest.cpp
   src/v20211111/model/CreateTrainingTaskRequest.cpp
@@ -665,6 +668,7 @@ set(tione_src
   src/v20211111/model/TrainingTaskDetail.cpp
   src/v20211111/model/DescribeExportRequest.cpp
   src/v20211111/model/UpdateSubAccountLinuxUserInfoRequest.cpp
+  src/v20211111/model/EnableTrainingTaskClsConfigRequest.cpp
   src/v20211111/model/DescribeNotebookRequest.cpp
   src/v20211111/model/DescribePublicAlgoVersionListRequest.cpp
   src/v20211111/model/StorageExtraConf.cpp

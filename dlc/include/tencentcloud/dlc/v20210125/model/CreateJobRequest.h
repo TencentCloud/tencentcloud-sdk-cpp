@@ -21,7 +21,10 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/Spec.h>
+#include <tencentcloud/dlc/v20210125/model/EngineConfigDependencies.h>
 #include <tencentcloud/dlc/v20210125/model/KVPair.h>
+#include <tencentcloud/dlc/v20210125/model/EntrypointInfo.h>
 
 
 namespace TencentCloud
@@ -296,6 +299,27 @@ namespace TencentCloud
                     bool QueueNameHasBeenSet() const;
 
                     /**
+                     * 获取<p>集群规格配置。RunMode=JOB 时必填（MajorType 对应引擎字段须非空、其余引擎字段须为空）；RunMode=WAREHOUSE 时忽略。</p>
+                     * @return Spec <p>集群规格配置。RunMode=JOB 时必填（MajorType 对应引擎字段须非空、其余引擎字段须为空）；RunMode=WAREHOUSE 时忽略。</p>
+                     * 
+                     */
+                    Spec GetSpec() const;
+
+                    /**
+                     * 设置<p>集群规格配置。RunMode=JOB 时必填（MajorType 对应引擎字段须非空、其余引擎字段须为空）；RunMode=WAREHOUSE 时忽略。</p>
+                     * @param _spec <p>集群规格配置。RunMode=JOB 时必填（MajorType 对应引擎字段须非空、其余引擎字段须为空）；RunMode=WAREHOUSE 时忽略。</p>
+                     * 
+                     */
+                    void SetSpec(const Spec& _spec);
+
+                    /**
+                     * 判断参数 Spec 是否已赋值
+                     * @return Spec 是否已赋值
+                     * 
+                     */
+                    bool SpecHasBeenSet() const;
+
+                    /**
                      * 获取<p>自定义 Spark conf（JSON 字符串，亦接受多行 key=value 文本，归一化为 JSON 存储、出参恒为 JSON），作为 SPARK_CUSTOM 配置通道落库，两种运行模式均生效。</p>
                      * @return CustomProperties <p>自定义 Spark conf（JSON 字符串，亦接受多行 key=value 文本，归一化为 JSON 存储、出参恒为 JSON），作为 SPARK_CUSTOM 配置通道落库，两种运行模式均生效。</p>
                      * 
@@ -317,6 +341,27 @@ namespace TencentCloud
                     bool CustomPropertiesHasBeenSet() const;
 
                     /**
+                     * 获取<p>依赖管理（jars / files / archives / pyFiles）。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>
+                     * @return Dependencies <p>依赖管理（jars / files / archives / pyFiles）。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>
+                     * 
+                     */
+                    EngineConfigDependencies GetDependencies() const;
+
+                    /**
+                     * 设置<p>依赖管理（jars / files / archives / pyFiles）。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>
+                     * @param _dependencies <p>依赖管理（jars / files / archives / pyFiles）。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>
+                     * 
+                     */
+                    void SetDependencies(const EngineConfigDependencies& _dependencies);
+
+                    /**
+                     * 判断参数 Dependencies 是否已赋值
+                     * @return Dependencies 是否已赋值
+                     * 
+                     */
+                    bool DependenciesHasBeenSet() const;
+
+                    /**
                      * 获取<p>环境变量（KEY=VALUE）列表。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>
                      * @return EnvVars <p>环境变量（KEY=VALUE）列表。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>
                      * 
@@ -336,6 +381,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EnvVarsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>入口点配置，必填。SPARK_SQL 时 Statement 必填（≤1MB）；SPARK_BATCH 时 Statement 或 EntryFile 至少其一（EntryFile 须匹配路径前缀白名单）。</p>
+                     * @return Entrypoint <p>入口点配置，必填。SPARK_SQL 时 Statement 必填（≤1MB）；SPARK_BATCH 时 Statement 或 EntryFile 至少其一（EntryFile 须匹配路径前缀白名单）。</p>
+                     * 
+                     */
+                    EntrypointInfo GetEntrypoint() const;
+
+                    /**
+                     * 设置<p>入口点配置，必填。SPARK_SQL 时 Statement 必填（≤1MB）；SPARK_BATCH 时 Statement 或 EntryFile 至少其一（EntryFile 须匹配路径前缀白名单）。</p>
+                     * @param _entrypoint <p>入口点配置，必填。SPARK_SQL 时 Statement 必填（≤1MB）；SPARK_BATCH 时 Statement 或 EntryFile 至少其一（EntryFile 须匹配路径前缀白名单）。</p>
+                     * 
+                     */
+                    void SetEntrypoint(const EntrypointInfo& _entrypoint);
+
+                    /**
+                     * 判断参数 Entrypoint 是否已赋值
+                     * @return Entrypoint 是否已赋值
+                     * 
+                     */
+                    bool EntrypointHasBeenSet() const;
 
                 private:
 
@@ -412,16 +478,34 @@ namespace TencentCloud
                     bool m_queueNameHasBeenSet;
 
                     /**
+                     * <p>集群规格配置。RunMode=JOB 时必填（MajorType 对应引擎字段须非空、其余引擎字段须为空）；RunMode=WAREHOUSE 时忽略。</p>
+                     */
+                    Spec m_spec;
+                    bool m_specHasBeenSet;
+
+                    /**
                      * <p>自定义 Spark conf（JSON 字符串，亦接受多行 key=value 文本，归一化为 JSON 存储、出参恒为 JSON），作为 SPARK_CUSTOM 配置通道落库，两种运行模式均生效。</p>
                      */
                     std::string m_customProperties;
                     bool m_customPropertiesHasBeenSet;
 
                     /**
+                     * <p>依赖管理（jars / files / archives / pyFiles）。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>
+                     */
+                    EngineConfigDependencies m_dependencies;
+                    bool m_dependenciesHasBeenSet;
+
+                    /**
                      * <p>环境变量（KEY=VALUE）列表。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>
                      */
                     std::vector<KVPair> m_envVars;
                     bool m_envVarsHasBeenSet;
+
+                    /**
+                     * <p>入口点配置，必填。SPARK_SQL 时 Statement 必填（≤1MB）；SPARK_BATCH 时 Statement 或 EntryFile 至少其一（EntryFile 须匹配路径前缀白名单）。</p>
+                     */
+                    EntrypointInfo m_entrypoint;
+                    bool m_entrypointHasBeenSet;
 
                 };
             }

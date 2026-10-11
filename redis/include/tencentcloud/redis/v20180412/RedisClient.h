@@ -257,6 +257,8 @@
 #include <tencentcloud/redis/v20180412/model/SwitchProxyResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeInstanceProductVersionRequest.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeInstanceProductVersionResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeProxyVersionRequest.h>
@@ -630,6 +632,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
                 typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeInstanceProductVersionResponse> UpgradeInstanceProductVersionOutcome;
+                typedef std::future<UpgradeInstanceProductVersionOutcome> UpgradeInstanceProductVersionOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceProductVersionRequest&, UpgradeInstanceProductVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceProductVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeInstanceVersionResponse> UpgradeInstanceVersionOutcome;
                 typedef std::future<UpgradeInstanceVersionOutcome> UpgradeInstanceVersionOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceVersionRequest&, UpgradeInstanceVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceVersionAsyncHandler;
@@ -1699,6 +1704,15 @@ namespace TencentCloud
                 UpgradeInstanceOutcome UpgradeInstance(const Model::UpgradeInstanceRequest &request);
                 void UpgradeInstanceAsync(const Model::UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeInstanceOutcomeCallable UpgradeInstanceCallable(const Model::UpgradeInstanceRequest& request);
+
+                /**
+                 *本接口（UpgradeInstanceProductVersion）用于升级实例类型，可从通用 I 型升级到通用 II 型。
+                 * @param req UpgradeInstanceProductVersionRequest
+                 * @return UpgradeInstanceProductVersionOutcome
+                 */
+                UpgradeInstanceProductVersionOutcome UpgradeInstanceProductVersion(const Model::UpgradeInstanceProductVersionRequest &request);
+                void UpgradeInstanceProductVersionAsync(const Model::UpgradeInstanceProductVersionRequest& request, const UpgradeInstanceProductVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeInstanceProductVersionOutcomeCallable UpgradeInstanceProductVersionCallable(const Model::UpgradeInstanceProductVersionRequest& request);
 
                 /**
                  *本接口（UpgradeInstanceVersion）用于将当前实例升级到更高版本，或者将当前标准架构升级至集群架构。

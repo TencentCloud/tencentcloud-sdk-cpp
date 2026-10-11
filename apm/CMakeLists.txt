@@ -32,6 +32,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DescribeApmAllVulCountResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeApmSampleConfigResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h
+  include/tencentcloud/apm/v20210622/model/YAxis.h
   include/tencentcloud/apm/v20210622/model/DescribeTopologyNewResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeOPRAllVulCountResponse.h
   include/tencentcloud/apm/v20210622/model/ModifyApmApplicationConfigResponse.h
@@ -48,6 +49,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DeleteApmSampleConfigResponse.h
   include/tencentcloud/apm/v20210622/model/TopologyEdgeNew.h
   include/tencentcloud/apm/v20210622/model/DescribeApmPrometheusRuleRequest.h
+  include/tencentcloud/apm/v20210622/model/SpanTreeView.h
   include/tencentcloud/apm/v20210622/model/CreateApmPrometheusRuleResponse.h
   include/tencentcloud/apm/v20210622/model/TerminateApmInstanceResponse.h
   include/tencentcloud/apm/v20210622/model/ApmPrometheusRules.h
@@ -62,7 +64,9 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/Line.h
   include/tencentcloud/apm/v20210622/model/ModifyApmAssociationResponse.h
   include/tencentcloud/apm/v20210622/model/APMKVItem.h
+  include/tencentcloud/apm/v20210622/model/ChartData.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListRequest.h
+  include/tencentcloud/apm/v20210622/model/ErrorSpan.h
   include/tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h
@@ -76,19 +80,23 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/QueryMetricItem.h
   include/tencentcloud/apm/v20210622/model/ServiceDetail.h
   include/tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeSpanTreeByIDResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeApmPrometheusRuleResponse.h
   include/tencentcloud/apm/v20210622/model/ServiceRelation.h
+  include/tencentcloud/apm/v20210622/model/TagValues.h
   include/tencentcloud/apm/v20210622/model/ModifyApmSampleConfigResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeApmApplicationConfigRequest.h
+  include/tencentcloud/apm/v20210622/model/TraceOverview.h
   include/tencentcloud/apm/v20210622/model/CreateProfileTaskResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeApmVulnerabilityDetailResponse.h
   include/tencentcloud/apm/v20210622/model/ModifyApmPrometheusRuleResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h
   include/tencentcloud/apm/v20210622/model/ApmTag.h
-  include/tencentcloud/apm/v20210622/model/DescribeRelatedServicesOnTraceRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeApmSQLInjectionDetailRequest.h
   include/tencentcloud/apm/v20210622/model/Filter.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListRequest.h
   include/tencentcloud/apm/v20210622/model/AutoProfilingConfig.h
+  include/tencentcloud/apm/v20210622/model/DescribeSpanTreeByIDRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigResponse.h
   include/tencentcloud/apm/v20210622/model/CreateApmInstanceResponse.h
   include/tencentcloud/apm/v20210622/model/ApmVulnerabilityServiceDetail.h
@@ -117,7 +125,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListResponse.h
   include/tencentcloud/apm/v20210622/model/ApmAssociation.h
   include/tencentcloud/apm/v20210622/model/Resource.h
-  include/tencentcloud/apm/v20210622/model/DescribeApmSQLInjectionDetailRequest.h
+  include/tencentcloud/apm/v20210622/model/DescribeRelatedServicesOnTraceRequest.h
   include/tencentcloud/apm/v20210622/model/Selectors.h
   include/tencentcloud/apm/v20210622/model/ModifyApmServiceResponse.h
   include/tencentcloud/apm/v20210622/model/ModifyApmApplicationConfigRequest.h
@@ -127,6 +135,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/ModifyApmServiceRequest.h
   include/tencentcloud/apm/v20210622/model/SpanReference.h
   include/tencentcloud/apm/v20210622/model/SpanProcess.h
+  include/tencentcloud/apm/v20210622/model/Series.h
   include/tencentcloud/apm/v20210622/model/GeneralFilter.h
   include/tencentcloud/apm/v20210622/model/DescribeOPRAllVulCountRequest.h
   )
@@ -146,6 +155,7 @@ set(apm_src
   src/v20210622/model/DescribeApmAllVulCountResponse.cpp
   src/v20210622/model/DescribeApmSampleConfigResponse.cpp
   src/v20210622/model/DescribeServiceOverviewRequest.cpp
+  src/v20210622/model/YAxis.cpp
   src/v20210622/model/DescribeTopologyNewResponse.cpp
   src/v20210622/model/DescribeOPRAllVulCountResponse.cpp
   src/v20210622/model/ModifyApmApplicationConfigResponse.cpp
@@ -162,6 +172,7 @@ set(apm_src
   src/v20210622/model/DeleteApmSampleConfigResponse.cpp
   src/v20210622/model/TopologyEdgeNew.cpp
   src/v20210622/model/DescribeApmPrometheusRuleRequest.cpp
+  src/v20210622/model/SpanTreeView.cpp
   src/v20210622/model/CreateApmPrometheusRuleResponse.cpp
   src/v20210622/model/TerminateApmInstanceResponse.cpp
   src/v20210622/model/ApmPrometheusRules.cpp
@@ -176,7 +187,9 @@ set(apm_src
   src/v20210622/model/Line.cpp
   src/v20210622/model/ModifyApmAssociationResponse.cpp
   src/v20210622/model/APMKVItem.cpp
+  src/v20210622/model/ChartData.cpp
   src/v20210622/model/DescribeGeneralSpanListRequest.cpp
+  src/v20210622/model/ErrorSpan.cpp
   src/v20210622/model/DescribeApmAgentRequest.cpp
   src/v20210622/model/DescribeMetricRecordsRequest.cpp
   src/v20210622/model/DescribeGeneralMetricDataRequest.cpp
@@ -190,19 +203,23 @@ set(apm_src
   src/v20210622/model/QueryMetricItem.cpp
   src/v20210622/model/ServiceDetail.cpp
   src/v20210622/model/DescribeApmInstancesResponse.cpp
+  src/v20210622/model/DescribeSpanTreeByIDResponse.cpp
   src/v20210622/model/DescribeApmPrometheusRuleResponse.cpp
   src/v20210622/model/ServiceRelation.cpp
+  src/v20210622/model/TagValues.cpp
   src/v20210622/model/ModifyApmSampleConfigResponse.cpp
   src/v20210622/model/DescribeApmApplicationConfigRequest.cpp
+  src/v20210622/model/TraceOverview.cpp
   src/v20210622/model/CreateProfileTaskResponse.cpp
   src/v20210622/model/DescribeApmVulnerabilityDetailResponse.cpp
   src/v20210622/model/ModifyApmPrometheusRuleResponse.cpp
   src/v20210622/model/DescribeMetricRecordsResponse.cpp
   src/v20210622/model/ApmTag.cpp
-  src/v20210622/model/DescribeRelatedServicesOnTraceRequest.cpp
+  src/v20210622/model/DescribeApmSQLInjectionDetailRequest.cpp
   src/v20210622/model/Filter.cpp
   src/v20210622/model/DescribeGeneralOTSpanListRequest.cpp
   src/v20210622/model/AutoProfilingConfig.cpp
+  src/v20210622/model/DescribeSpanTreeByIDRequest.cpp
   src/v20210622/model/DescribeGeneralApmApplicationConfigResponse.cpp
   src/v20210622/model/CreateApmInstanceResponse.cpp
   src/v20210622/model/ApmVulnerabilityServiceDetail.cpp
@@ -231,7 +248,7 @@ set(apm_src
   src/v20210622/model/DescribeGeneralSpanListResponse.cpp
   src/v20210622/model/ApmAssociation.cpp
   src/v20210622/model/Resource.cpp
-  src/v20210622/model/DescribeApmSQLInjectionDetailRequest.cpp
+  src/v20210622/model/DescribeRelatedServicesOnTraceRequest.cpp
   src/v20210622/model/Selectors.cpp
   src/v20210622/model/ModifyApmServiceResponse.cpp
   src/v20210622/model/ModifyApmApplicationConfigRequest.cpp
@@ -241,6 +258,7 @@ set(apm_src
   src/v20210622/model/ModifyApmServiceRequest.cpp
   src/v20210622/model/SpanReference.cpp
   src/v20210622/model/SpanProcess.cpp
+  src/v20210622/model/Series.cpp
   src/v20210622/model/GeneralFilter.cpp
   src/v20210622/model/DescribeOPRAllVulCountRequest.cpp
   )

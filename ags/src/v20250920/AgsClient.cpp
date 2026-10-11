@@ -540,6 +540,56 @@ AgsClient::CreateRegistryRecordOutcomeCallable AgsClient::CreateRegistryRecordCa
     return prom->get_future();
 }
 
+AgsClient::CreateSandboxSnapshotOutcome AgsClient::CreateSandboxSnapshot(const CreateSandboxSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSandboxSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSandboxSnapshotResponse rsp = CreateSandboxSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSandboxSnapshotOutcome(rsp);
+        else
+            return CreateSandboxSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSandboxSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::CreateSandboxSnapshotAsync(const CreateSandboxSnapshotRequest& request, const CreateSandboxSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSandboxSnapshotRequest&;
+    using Resp = CreateSandboxSnapshotResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSandboxSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::CreateSandboxSnapshotOutcomeCallable AgsClient::CreateSandboxSnapshotCallable(const CreateSandboxSnapshotRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSandboxSnapshotOutcome>>();
+    CreateSandboxSnapshotAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const CreateSandboxSnapshotRequest&,
+        CreateSandboxSnapshotOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AgsClient::CreateSandboxToolOutcome AgsClient::CreateSandboxTool(const CreateSandboxToolRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSandboxTool");
@@ -882,6 +932,56 @@ AgsClient::DeleteRegistryRecordOutcomeCallable AgsClient::DeleteRegistryRecordCa
         const AgsClient*,
         const DeleteRegistryRecordRequest&,
         DeleteRegistryRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::DeleteSandboxSnapshotOutcome AgsClient::DeleteSandboxSnapshot(const DeleteSandboxSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSandboxSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSandboxSnapshotResponse rsp = DeleteSandboxSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSandboxSnapshotOutcome(rsp);
+        else
+            return DeleteSandboxSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSandboxSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DeleteSandboxSnapshotAsync(const DeleteSandboxSnapshotRequest& request, const DeleteSandboxSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSandboxSnapshotRequest&;
+    using Resp = DeleteSandboxSnapshotResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSandboxSnapshot", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DeleteSandboxSnapshotOutcomeCallable AgsClient::DeleteSandboxSnapshotCallable(const DeleteSandboxSnapshotRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSandboxSnapshotOutcome>>();
+    DeleteSandboxSnapshotAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DeleteSandboxSnapshotRequest&,
+        DeleteSandboxSnapshotOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1682,6 +1782,56 @@ AgsClient::DescribeSandboxInstanceListOutcomeCallable AgsClient::DescribeSandbox
         const AgsClient*,
         const DescribeSandboxInstanceListRequest&,
         DescribeSandboxInstanceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::DescribeSandboxSnapshotListOutcome AgsClient::DescribeSandboxSnapshotList(const DescribeSandboxSnapshotListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxSnapshotList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxSnapshotListResponse rsp = DescribeSandboxSnapshotListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxSnapshotListOutcome(rsp);
+        else
+            return DescribeSandboxSnapshotListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxSnapshotListOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DescribeSandboxSnapshotListAsync(const DescribeSandboxSnapshotListRequest& request, const DescribeSandboxSnapshotListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxSnapshotListRequest&;
+    using Resp = DescribeSandboxSnapshotListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxSnapshotList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DescribeSandboxSnapshotListOutcomeCallable AgsClient::DescribeSandboxSnapshotListCallable(const DescribeSandboxSnapshotListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxSnapshotListOutcome>>();
+    DescribeSandboxSnapshotListAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DescribeSandboxSnapshotListRequest&,
+        DescribeSandboxSnapshotListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -28,7 +28,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceDetailListResponse.h
   include/tencentcloud/ioa/v20220601/model/ModifyCompanyDirectoryConfigRequest.h
   include/tencentcloud/ioa/v20220601/model/ModifyBusinessResourceRequest.h
-  include/tencentcloud/ioa/v20220601/model/DescribeAggrSoftDeviceListRequest.h
+  include/tencentcloud/ioa/v20220601/model/DescribeAccountVirtualGroupsPageData.h
   include/tencentcloud/ioa/v20220601/model/ComplexRule.h
   include/tencentcloud/ioa/v20220601/model/DescribeDeviceHardwareInfoListResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeResourceGrantedAccountsRequest.h
@@ -40,6 +40,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/I18nString.h
   include/tencentcloud/ioa/v20220601/model/DescribeDevicesResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeAggrSoftDeviceListData.h
+  include/tencentcloud/ioa/v20220601/model/DescribeAccountVirtualGroupsData.h
   include/tencentcloud/ioa/v20220601/model/GrantResourcesByVirtualGroupsRequest.h
   include/tencentcloud/ioa/v20220601/model/UnbindVirtualAccountData.h
   include/tencentcloud/ioa/v20220601/model/DescribeAccountGroupsData.h
@@ -49,10 +50,12 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/DescribeVirtualAccountsData.h
   include/tencentcloud/ioa/v20220601/model/DescribeAggrSoftCategorySoftListRequest.h
   include/tencentcloud/ioa/v20220601/model/DeviceNetworkInfo.h
+  include/tencentcloud/ioa/v20220601/model/DescribeAccountVirtualGroupsRequest.h
   include/tencentcloud/ioa/v20220601/model/CreateDeviceVirtualGroupRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeLocalAccountsData.h
   include/tencentcloud/ioa/v20220601/model/CreateDeviceTaskRequest.h
   include/tencentcloud/ioa/v20220601/model/DeviceDetail.h
+  include/tencentcloud/ioa/v20220601/model/DescribeAggrSoftDeviceListRequest.h
   include/tencentcloud/ioa/v20220601/model/DescribeResourceGrantedVirtualGroupsResponse.h
   include/tencentcloud/ioa/v20220601/model/DescribeSoftCensusListByDeviceRequest.h
   include/tencentcloud/ioa/v20220601/model/GrantedAccountItem.h
@@ -112,6 +115,7 @@ set(ioa_public_header_model
   include/tencentcloud/ioa/v20220601/model/CreateDLPFileDetectTaskData.h
   include/tencentcloud/ioa/v20220601/model/BindVirtualAccountResultData.h
   include/tencentcloud/ioa/v20220601/model/DescribeDLPEdgeNodesRequest.h
+  include/tencentcloud/ioa/v20220601/model/DescribeAccountVirtualGroupsResponse.h
   include/tencentcloud/ioa/v20220601/model/Paging.h
   include/tencentcloud/ioa/v20220601/model/GrantResourcesByAccountsResponse.h
   include/tencentcloud/ioa/v20220601/model/SoftwareInformationData.h
@@ -220,7 +224,7 @@ set(ioa_src
   src/v20220601/model/DescribeDeviceDetailListResponse.cpp
   src/v20220601/model/ModifyCompanyDirectoryConfigRequest.cpp
   src/v20220601/model/ModifyBusinessResourceRequest.cpp
-  src/v20220601/model/DescribeAggrSoftDeviceListRequest.cpp
+  src/v20220601/model/DescribeAccountVirtualGroupsPageData.cpp
   src/v20220601/model/ComplexRule.cpp
   src/v20220601/model/DescribeDeviceHardwareInfoListResponse.cpp
   src/v20220601/model/DescribeResourceGrantedAccountsRequest.cpp
@@ -232,6 +236,7 @@ set(ioa_src
   src/v20220601/model/I18nString.cpp
   src/v20220601/model/DescribeDevicesResponse.cpp
   src/v20220601/model/DescribeAggrSoftDeviceListData.cpp
+  src/v20220601/model/DescribeAccountVirtualGroupsData.cpp
   src/v20220601/model/GrantResourcesByVirtualGroupsRequest.cpp
   src/v20220601/model/UnbindVirtualAccountData.cpp
   src/v20220601/model/DescribeAccountGroupsData.cpp
@@ -241,10 +246,12 @@ set(ioa_src
   src/v20220601/model/DescribeVirtualAccountsData.cpp
   src/v20220601/model/DescribeAggrSoftCategorySoftListRequest.cpp
   src/v20220601/model/DeviceNetworkInfo.cpp
+  src/v20220601/model/DescribeAccountVirtualGroupsRequest.cpp
   src/v20220601/model/CreateDeviceVirtualGroupRequest.cpp
   src/v20220601/model/DescribeLocalAccountsData.cpp
   src/v20220601/model/CreateDeviceTaskRequest.cpp
   src/v20220601/model/DeviceDetail.cpp
+  src/v20220601/model/DescribeAggrSoftDeviceListRequest.cpp
   src/v20220601/model/DescribeResourceGrantedVirtualGroupsResponse.cpp
   src/v20220601/model/DescribeSoftCensusListByDeviceRequest.cpp
   src/v20220601/model/GrantedAccountItem.cpp
@@ -304,6 +311,7 @@ set(ioa_src
   src/v20220601/model/CreateDLPFileDetectTaskData.cpp
   src/v20220601/model/BindVirtualAccountResultData.cpp
   src/v20220601/model/DescribeDLPEdgeNodesRequest.cpp
+  src/v20220601/model/DescribeAccountVirtualGroupsResponse.cpp
   src/v20220601/model/Paging.cpp
   src/v20220601/model/GrantResourcesByAccountsResponse.cpp
   src/v20220601/model/SoftwareInformationData.cpp

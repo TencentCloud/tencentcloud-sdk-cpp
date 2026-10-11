@@ -24,7 +24,9 @@ using namespace std;
 
 ModifyInstanceSSLStatusRequest::ModifyInstanceSSLStatusRequest() :
     m_instanceIdHasBeenSet(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_certificateTypeHasBeenSet(false),
+    m_certificateIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string ModifyInstanceSSLStatusRequest::ToJsonString() const
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enabled, allocator);
+    }
+
+    if (m_certificateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certificateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certificateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void ModifyInstanceSSLStatusRequest::SetEnabled(const bool& _enabled)
 bool ModifyInstanceSSLStatusRequest::EnabledHasBeenSet() const
 {
     return m_enabledHasBeenSet;
+}
+
+string ModifyInstanceSSLStatusRequest::GetCertificateType() const
+{
+    return m_certificateType;
+}
+
+void ModifyInstanceSSLStatusRequest::SetCertificateType(const string& _certificateType)
+{
+    m_certificateType = _certificateType;
+    m_certificateTypeHasBeenSet = true;
+}
+
+bool ModifyInstanceSSLStatusRequest::CertificateTypeHasBeenSet() const
+{
+    return m_certificateTypeHasBeenSet;
+}
+
+string ModifyInstanceSSLStatusRequest::GetCertificateId() const
+{
+    return m_certificateId;
+}
+
+void ModifyInstanceSSLStatusRequest::SetCertificateId(const string& _certificateId)
+{
+    m_certificateId = _certificateId;
+    m_certificateIdHasBeenSet = true;
+}
+
+bool ModifyInstanceSSLStatusRequest::CertificateIdHasBeenSet() const
+{
+    return m_certificateIdHasBeenSet;
 }
 
 

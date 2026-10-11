@@ -30,7 +30,8 @@ Warehouse::Warehouse() :
     m_resourceRefsHasBeenSet(false),
     m_hiveUriHasBeenSet(false),
     m_propertiesHasBeenSet(false),
-    m_hiveCatalogTypeHasBeenSet(false)
+    m_hiveCatalogTypeHasBeenSet(false),
+    m_storageSerialIdHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,16 @@ CoreInternalOutcome Warehouse::Deserialize(const rapidjson::Value &value)
         m_hiveCatalogTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("StorageSerialId") && !value["StorageSerialId"].IsNull())
+    {
+        if (!value["StorageSerialId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Warehouse.StorageSerialId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageSerialId = string(value["StorageSerialId"].GetString());
+        m_storageSerialIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -258,6 +269,14 @@ void Warehouse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "HiveCatalogType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hiveCatalogType, allocator);
+    }
+
+    if (m_storageSerialIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageSerialId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageSerialId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -421,5 +440,21 @@ void Warehouse::SetHiveCatalogType(const uint64_t& _hiveCatalogType)
 bool Warehouse::HiveCatalogTypeHasBeenSet() const
 {
     return m_hiveCatalogTypeHasBeenSet;
+}
+
+string Warehouse::GetStorageSerialId() const
+{
+    return m_storageSerialId;
+}
+
+void Warehouse::SetStorageSerialId(const string& _storageSerialId)
+{
+    m_storageSerialId = _storageSerialId;
+    m_storageSerialIdHasBeenSet = true;
+}
+
+bool Warehouse::StorageSerialIdHasBeenSet() const
+{
+    return m_storageSerialIdHasBeenSet;
 }
 

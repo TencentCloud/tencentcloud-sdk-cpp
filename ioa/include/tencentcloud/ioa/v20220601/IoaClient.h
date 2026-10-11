@@ -49,6 +49,8 @@
 #include <tencentcloud/ioa/v20220601/model/DeleteDeviceVirtualGroupResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeAccountVirtualGroupsRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeAccountVirtualGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAggrSoftCategorySoftListRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAggrSoftCategorySoftListResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAggrSoftDetailRequest.h>
@@ -176,6 +178,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountGroupsResponse> DescribeAccountGroupsOutcome;
                 typedef std::future<DescribeAccountGroupsOutcome> DescribeAccountGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeAccountGroupsRequest&, DescribeAccountGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccountVirtualGroupsResponse> DescribeAccountVirtualGroupsOutcome;
+                typedef std::future<DescribeAccountVirtualGroupsOutcome> DescribeAccountVirtualGroupsOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeAccountVirtualGroupsRequest&, DescribeAccountVirtualGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountVirtualGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAggrSoftCategorySoftListResponse> DescribeAggrSoftCategorySoftListOutcome;
                 typedef std::future<DescribeAggrSoftCategorySoftListOutcome> DescribeAggrSoftCategorySoftListOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeAggrSoftCategorySoftListRequest&, DescribeAggrSoftCategorySoftListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAggrSoftCategorySoftListAsyncHandler;
@@ -406,6 +411,15 @@ namespace TencentCloud
                 DescribeAccountGroupsOutcome DescribeAccountGroups(const Model::DescribeAccountGroupsRequest &request);
                 void DescribeAccountGroupsAsync(const Model::DescribeAccountGroupsRequest& request, const DescribeAccountGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountGroupsOutcomeCallable DescribeAccountGroupsCallable(const Model::DescribeAccountGroupsRequest& request);
+
+                /**
+                 *列表账户虚拟组，支持分页，名称搜索，私有化调用path为：capi/Assets/DescribeAccountVirtualGroups，从7.x版本开始支持
+                 * @param req DescribeAccountVirtualGroupsRequest
+                 * @return DescribeAccountVirtualGroupsOutcome
+                 */
+                DescribeAccountVirtualGroupsOutcome DescribeAccountVirtualGroups(const Model::DescribeAccountVirtualGroupsRequest &request);
+                void DescribeAccountVirtualGroupsAsync(const Model::DescribeAccountVirtualGroupsRequest& request, const DescribeAccountVirtualGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountVirtualGroupsOutcomeCallable DescribeAccountVirtualGroupsCallable(const Model::DescribeAccountVirtualGroupsRequest& request);
 
                 /**
                  *聚合的分类软件列表

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取新增扩容的系统容量
-                     * @return ExpandedCapacity 新增扩容的系统容量
+                     * 获取新增扩容的系统容量(单位 GiB)
+                     * @return ExpandedCapacity 新增扩容的系统容量(单位 GiB)
                      * 
                      */
                     uint64_t GetExpandedCapacity() const;
 
                     /**
-                     * 设置新增扩容的系统容量
-                     * @param _expandedCapacity 新增扩容的系统容量
+                     * 设置新增扩容的系统容量(单位 GiB)
+                     * @param _expandedCapacity 新增扩容的系统容量(单位 GiB)
                      * 
                      */
                     void SetExpandedCapacity(const uint64_t& _expandedCapacity);
@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool ModifyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否是快速扩容,只针对部分model有效
+                     * @return RapidExpansion 是否是快速扩容,只针对部分model有效
+                     * 
+                     */
+                    bool GetRapidExpansion() const;
+
+                    /**
+                     * 设置是否是快速扩容,只针对部分model有效
+                     * @param _rapidExpansion 是否是快速扩容,只针对部分model有效
+                     * 
+                     */
+                    void SetRapidExpansion(const bool& _rapidExpansion);
+
+                    /**
+                     * 判断参数 RapidExpansion 是否已赋值
+                     * @return RapidExpansion 是否已赋值
+                     * 
+                     */
+                    bool RapidExpansionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -114,7 +135,7 @@ namespace TencentCloud
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 新增扩容的系统容量
+                     * 新增扩容的系统容量(单位 GiB)
                      */
                     uint64_t m_expandedCapacity;
                     bool m_expandedCapacityHasBeenSet;
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_modifyType;
                     bool m_modifyTypeHasBeenSet;
+
+                    /**
+                     * 是否是快速扩容,只针对部分model有效
+                     */
+                    bool m_rapidExpansion;
+                    bool m_rapidExpansionHasBeenSet;
 
                 };
             }

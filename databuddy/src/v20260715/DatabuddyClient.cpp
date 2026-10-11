@@ -90,6 +90,106 @@ DatabuddyClient::AddConsoleUsersOutcomeCallable DatabuddyClient::AddConsoleUsers
     return prom->get_future();
 }
 
+DatabuddyClient::AddWorkspaceGroupsOutcome DatabuddyClient::AddWorkspaceGroups(const AddWorkspaceGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddWorkspaceGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddWorkspaceGroupsResponse rsp = AddWorkspaceGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddWorkspaceGroupsOutcome(rsp);
+        else
+            return AddWorkspaceGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return AddWorkspaceGroupsOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::AddWorkspaceGroupsAsync(const AddWorkspaceGroupsRequest& request, const AddWorkspaceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddWorkspaceGroupsRequest&;
+    using Resp = AddWorkspaceGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddWorkspaceGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::AddWorkspaceGroupsOutcomeCallable DatabuddyClient::AddWorkspaceGroupsCallable(const AddWorkspaceGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddWorkspaceGroupsOutcome>>();
+    AddWorkspaceGroupsAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const AddWorkspaceGroupsRequest&,
+        AddWorkspaceGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::AddWorkspaceUsersOutcome DatabuddyClient::AddWorkspaceUsers(const AddWorkspaceUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddWorkspaceUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddWorkspaceUsersResponse rsp = AddWorkspaceUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddWorkspaceUsersOutcome(rsp);
+        else
+            return AddWorkspaceUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return AddWorkspaceUsersOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::AddWorkspaceUsersAsync(const AddWorkspaceUsersRequest& request, const AddWorkspaceUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddWorkspaceUsersRequest&;
+    using Resp = AddWorkspaceUsersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddWorkspaceUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::AddWorkspaceUsersOutcomeCallable DatabuddyClient::AddWorkspaceUsersCallable(const AddWorkspaceUsersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddWorkspaceUsersOutcome>>();
+    AddWorkspaceUsersAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const AddWorkspaceUsersRequest&,
+        AddWorkspaceUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::CreateCatalogOutcome DatabuddyClient::CreateCatalog(const CreateCatalogRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCatalog");
@@ -740,6 +840,56 @@ DatabuddyClient::DeleteSchemaOutcomeCallable DatabuddyClient::DeleteSchemaCallab
     return prom->get_future();
 }
 
+DatabuddyClient::DeleteTableOutcome DatabuddyClient::DeleteTable(const DeleteTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTableResponse rsp = DeleteTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTableOutcome(rsp);
+        else
+            return DeleteTableOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTableOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::DeleteTableAsync(const DeleteTableRequest& request, const DeleteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTableRequest&;
+    using Resp = DeleteTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::DeleteTableOutcomeCallable DatabuddyClient::DeleteTableCallable(const DeleteTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTableOutcome>>();
+    DeleteTableAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const DeleteTableRequest&,
+        DeleteTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::DeleteWorkflowOutcome DatabuddyClient::DeleteWorkflow(const DeleteWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteWorkflow");
@@ -890,6 +1040,56 @@ DatabuddyClient::DeleteWorkspaceRoleOutcomeCallable DatabuddyClient::DeleteWorks
     return prom->get_future();
 }
 
+DatabuddyClient::GetCatalogOutcome DatabuddyClient::GetCatalog(const GetCatalogRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCatalog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCatalogResponse rsp = GetCatalogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCatalogOutcome(rsp);
+        else
+            return GetCatalogOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCatalogOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::GetCatalogAsync(const GetCatalogRequest& request, const GetCatalogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetCatalogRequest&;
+    using Resp = GetCatalogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetCatalog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::GetCatalogOutcomeCallable DatabuddyClient::GetCatalogCallable(const GetCatalogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetCatalogOutcome>>();
+    GetCatalogAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const GetCatalogRequest&,
+        GetCatalogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::GetFileOutcome DatabuddyClient::GetFile(const GetFileRequest &request)
 {
     auto outcome = MakeRequest(request, "GetFile");
@@ -982,6 +1182,156 @@ DatabuddyClient::GetFolderOutcomeCallable DatabuddyClient::GetFolderCallable(con
         const DatabuddyClient*,
         const GetFolderRequest&,
         GetFolderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::GetSchemaOutcome DatabuddyClient::GetSchema(const GetSchemaRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetSchema");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetSchemaResponse rsp = GetSchemaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetSchemaOutcome(rsp);
+        else
+            return GetSchemaOutcome(o.GetError());
+    }
+    else
+    {
+        return GetSchemaOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::GetSchemaAsync(const GetSchemaRequest& request, const GetSchemaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetSchemaRequest&;
+    using Resp = GetSchemaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetSchema", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::GetSchemaOutcomeCallable DatabuddyClient::GetSchemaCallable(const GetSchemaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetSchemaOutcome>>();
+    GetSchemaAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const GetSchemaRequest&,
+        GetSchemaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::GetTableOutcome DatabuddyClient::GetTable(const GetTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTableResponse rsp = GetTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTableOutcome(rsp);
+        else
+            return GetTableOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTableOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::GetTableAsync(const GetTableRequest& request, const GetTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetTableRequest&;
+    using Resp = GetTableResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetTable", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::GetTableOutcomeCallable DatabuddyClient::GetTableCallable(const GetTableRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetTableOutcome>>();
+    GetTableAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const GetTableRequest&,
+        GetTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::GetTablesOutcome DatabuddyClient::GetTables(const GetTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTablesResponse rsp = GetTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTablesOutcome(rsp);
+        else
+            return GetTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTablesOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::GetTablesAsync(const GetTablesRequest& request, const GetTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetTablesRequest&;
+    using Resp = GetTablesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetTables", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::GetTablesOutcomeCallable DatabuddyClient::GetTablesCallable(const GetTablesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetTablesOutcome>>();
+    GetTablesAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const GetTablesRequest&,
+        GetTablesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1232,6 +1582,56 @@ DatabuddyClient::KillWorkflowRunOutcomeCallable DatabuddyClient::KillWorkflowRun
         const DatabuddyClient*,
         const KillWorkflowRunRequest&,
         KillWorkflowRunOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::ListCatalogsOutcome DatabuddyClient::ListCatalogs(const ListCatalogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListCatalogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListCatalogsResponse rsp = ListCatalogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListCatalogsOutcome(rsp);
+        else
+            return ListCatalogsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListCatalogsOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ListCatalogsAsync(const ListCatalogsRequest& request, const ListCatalogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListCatalogsRequest&;
+    using Resp = ListCatalogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListCatalogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ListCatalogsOutcomeCallable DatabuddyClient::ListCatalogsCallable(const ListCatalogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListCatalogsOutcome>>();
+    ListCatalogsAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ListCatalogsRequest&,
+        ListCatalogsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1540,6 +1940,56 @@ DatabuddyClient::ListSchemasOutcomeCallable DatabuddyClient::ListSchemasCallable
     return prom->get_future();
 }
 
+DatabuddyClient::ListTablesOutcome DatabuddyClient::ListTables(const ListTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTablesResponse rsp = ListTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTablesOutcome(rsp);
+        else
+            return ListTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTablesOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ListTablesAsync(const ListTablesRequest& request, const ListTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListTablesRequest&;
+    using Resp = ListTablesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListTables", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ListTablesOutcomeCallable DatabuddyClient::ListTablesCallable(const ListTablesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListTablesOutcome>>();
+    ListTablesAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ListTablesRequest&,
+        ListTablesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::ListWorkflowRunsOutcome DatabuddyClient::ListWorkflowRuns(const ListWorkflowRunsRequest &request)
 {
     auto outcome = MakeRequest(request, "ListWorkflowRuns");
@@ -1690,6 +2140,156 @@ DatabuddyClient::ListWorkflowsOutcomeCallable DatabuddyClient::ListWorkflowsCall
     return prom->get_future();
 }
 
+DatabuddyClient::ListWorkspaceGroupUsersOutcome DatabuddyClient::ListWorkspaceGroupUsers(const ListWorkspaceGroupUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListWorkspaceGroupUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListWorkspaceGroupUsersResponse rsp = ListWorkspaceGroupUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListWorkspaceGroupUsersOutcome(rsp);
+        else
+            return ListWorkspaceGroupUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return ListWorkspaceGroupUsersOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ListWorkspaceGroupUsersAsync(const ListWorkspaceGroupUsersRequest& request, const ListWorkspaceGroupUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListWorkspaceGroupUsersRequest&;
+    using Resp = ListWorkspaceGroupUsersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListWorkspaceGroupUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ListWorkspaceGroupUsersOutcomeCallable DatabuddyClient::ListWorkspaceGroupUsersCallable(const ListWorkspaceGroupUsersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListWorkspaceGroupUsersOutcome>>();
+    ListWorkspaceGroupUsersAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ListWorkspaceGroupUsersRequest&,
+        ListWorkspaceGroupUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::ListWorkspaceGroupsOutcome DatabuddyClient::ListWorkspaceGroups(const ListWorkspaceGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListWorkspaceGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListWorkspaceGroupsResponse rsp = ListWorkspaceGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListWorkspaceGroupsOutcome(rsp);
+        else
+            return ListWorkspaceGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListWorkspaceGroupsOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ListWorkspaceGroupsAsync(const ListWorkspaceGroupsRequest& request, const ListWorkspaceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListWorkspaceGroupsRequest&;
+    using Resp = ListWorkspaceGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListWorkspaceGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ListWorkspaceGroupsOutcomeCallable DatabuddyClient::ListWorkspaceGroupsCallable(const ListWorkspaceGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListWorkspaceGroupsOutcome>>();
+    ListWorkspaceGroupsAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ListWorkspaceGroupsRequest&,
+        ListWorkspaceGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::ListWorkspaceUsersOutcome DatabuddyClient::ListWorkspaceUsers(const ListWorkspaceUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListWorkspaceUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListWorkspaceUsersResponse rsp = ListWorkspaceUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListWorkspaceUsersOutcome(rsp);
+        else
+            return ListWorkspaceUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return ListWorkspaceUsersOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ListWorkspaceUsersAsync(const ListWorkspaceUsersRequest& request, const ListWorkspaceUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListWorkspaceUsersRequest&;
+    using Resp = ListWorkspaceUsersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListWorkspaceUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ListWorkspaceUsersOutcomeCallable DatabuddyClient::ListWorkspaceUsersCallable(const ListWorkspaceUsersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListWorkspaceUsersOutcome>>();
+    ListWorkspaceUsersAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ListWorkspaceUsersRequest&,
+        ListWorkspaceUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::ListWorkspacesOutcome DatabuddyClient::ListWorkspaces(const ListWorkspacesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListWorkspaces");
@@ -1782,6 +2382,56 @@ DatabuddyClient::RemoveConsoleUsersOutcomeCallable DatabuddyClient::RemoveConsol
         const DatabuddyClient*,
         const RemoveConsoleUsersRequest&,
         RemoveConsoleUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::RemoveWorkspaceGroupsOutcome DatabuddyClient::RemoveWorkspaceGroups(const RemoveWorkspaceGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveWorkspaceGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveWorkspaceGroupsResponse rsp = RemoveWorkspaceGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveWorkspaceGroupsOutcome(rsp);
+        else
+            return RemoveWorkspaceGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveWorkspaceGroupsOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::RemoveWorkspaceGroupsAsync(const RemoveWorkspaceGroupsRequest& request, const RemoveWorkspaceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RemoveWorkspaceGroupsRequest&;
+    using Resp = RemoveWorkspaceGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RemoveWorkspaceGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::RemoveWorkspaceGroupsOutcomeCallable DatabuddyClient::RemoveWorkspaceGroupsCallable(const RemoveWorkspaceGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RemoveWorkspaceGroupsOutcome>>();
+    RemoveWorkspaceGroupsAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const RemoveWorkspaceGroupsRequest&,
+        RemoveWorkspaceGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2340,6 +2990,56 @@ DatabuddyClient::UpdateWorkspaceOutcomeCallable DatabuddyClient::UpdateWorkspace
     return prom->get_future();
 }
 
+DatabuddyClient::UpdateWorkspaceGroupsRolesOutcome DatabuddyClient::UpdateWorkspaceGroupsRoles(const UpdateWorkspaceGroupsRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateWorkspaceGroupsRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateWorkspaceGroupsRolesResponse rsp = UpdateWorkspaceGroupsRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateWorkspaceGroupsRolesOutcome(rsp);
+        else
+            return UpdateWorkspaceGroupsRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateWorkspaceGroupsRolesOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::UpdateWorkspaceGroupsRolesAsync(const UpdateWorkspaceGroupsRolesRequest& request, const UpdateWorkspaceGroupsRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateWorkspaceGroupsRolesRequest&;
+    using Resp = UpdateWorkspaceGroupsRolesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateWorkspaceGroupsRoles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::UpdateWorkspaceGroupsRolesOutcomeCallable DatabuddyClient::UpdateWorkspaceGroupsRolesCallable(const UpdateWorkspaceGroupsRolesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateWorkspaceGroupsRolesOutcome>>();
+    UpdateWorkspaceGroupsRolesAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const UpdateWorkspaceGroupsRolesRequest&,
+        UpdateWorkspaceGroupsRolesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::UpdateWorkspaceRoleOutcome DatabuddyClient::UpdateWorkspaceRole(const UpdateWorkspaceRoleRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateWorkspaceRole");
@@ -2382,6 +3082,56 @@ DatabuddyClient::UpdateWorkspaceRoleOutcomeCallable DatabuddyClient::UpdateWorks
         const DatabuddyClient*,
         const UpdateWorkspaceRoleRequest&,
         UpdateWorkspaceRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::UpdateWorkspaceUsersRolesOutcome DatabuddyClient::UpdateWorkspaceUsersRoles(const UpdateWorkspaceUsersRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateWorkspaceUsersRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateWorkspaceUsersRolesResponse rsp = UpdateWorkspaceUsersRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateWorkspaceUsersRolesOutcome(rsp);
+        else
+            return UpdateWorkspaceUsersRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateWorkspaceUsersRolesOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::UpdateWorkspaceUsersRolesAsync(const UpdateWorkspaceUsersRolesRequest& request, const UpdateWorkspaceUsersRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateWorkspaceUsersRolesRequest&;
+    using Resp = UpdateWorkspaceUsersRolesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateWorkspaceUsersRoles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::UpdateWorkspaceUsersRolesOutcomeCallable DatabuddyClient::UpdateWorkspaceUsersRolesCallable(const UpdateWorkspaceUsersRolesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateWorkspaceUsersRolesOutcome>>();
+    UpdateWorkspaceUsersRolesAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const UpdateWorkspaceUsersRolesRequest&,
+        UpdateWorkspaceUsersRolesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

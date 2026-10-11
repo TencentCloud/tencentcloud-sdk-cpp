@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool OutputModeHasBeenSet() const;
 
                     /**
-                     * 获取<p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，必定命中请求中 EnumValues 的某个值。 若 VLM 输出无法匹配任何枚举值，则返回 <strong>UNCERTAIN</strong>。</p>
-                     * @return EnumValue <p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，必定命中请求中 EnumValues 的某个值。 若 VLM 输出无法匹配任何枚举值，则返回 <strong>UNCERTAIN</strong>。</p>
+                     * 获取<p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，取值对应请求中配置的 EnumValues。</p>
+                     * @return EnumValue <p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，取值对应请求中配置的 EnumValues。</p>
                      * 
                      */
                     std::string GetEnumValue() const;
 
                     /**
-                     * 设置<p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，必定命中请求中 EnumValues 的某个值。 若 VLM 输出无法匹配任何枚举值，则返回 <strong>UNCERTAIN</strong>。</p>
-                     * @param _enumValue <p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，必定命中请求中 EnumValues 的某个值。 若 VLM 输出无法匹配任何枚举值，则返回 <strong>UNCERTAIN</strong>。</p>
+                     * 设置<p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，取值对应请求中配置的 EnumValues。</p>
+                     * @param _enumValue <p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，取值对应请求中配置的 EnumValues。</p>
                      * 
                      */
                     void SetEnumValue(const std::string& _enumValue);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EnumValueHasBeenSet() const;
 
                     /**
-                     * 获取<p>文本模式下的推理结果值。当 OutputMode=string 时返回。 若 VLM 无法得出结论，则返回 <strong>UNCERTAIN</strong>。</p>
-                     * @return TextValue <p>文本模式下的推理结果值。当 OutputMode=string 时返回。 若 VLM 无法得出结论，则返回 <strong>UNCERTAIN</strong>。</p>
+                     * 获取<p>文本模式下的推理结果值。当 OutputMode=string 时返回，以文本形式描述推理结论。</p>
+                     * @return TextValue <p>文本模式下的推理结果值。当 OutputMode=string 时返回，以文本形式描述推理结论。</p>
                      * 
                      */
                     std::string GetTextValue() const;
 
                     /**
-                     * 设置<p>文本模式下的推理结果值。当 OutputMode=string 时返回。 若 VLM 无法得出结论，则返回 <strong>UNCERTAIN</strong>。</p>
-                     * @param _textValue <p>文本模式下的推理结果值。当 OutputMode=string 时返回。 若 VLM 无法得出结论，则返回 <strong>UNCERTAIN</strong>。</p>
+                     * 设置<p>文本模式下的推理结果值。当 OutputMode=string 时返回，以文本形式描述推理结论。</p>
+                     * @param _textValue <p>文本模式下的推理结果值。当 OutputMode=string 时返回，以文本形式描述推理结论。</p>
                      * 
                      */
                     void SetTextValue(const std::string& _textValue);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TextValueHasBeenSet() const;
 
                     /**
-                     * 获取<p>VLM 原始输出文本（未经过结构化校验）。</p>
-                     * @return RawOutput <p>VLM 原始输出文本（未经过结构化校验）。</p>
+                     * 获取<p>VLM 原始输出文本（未经过结构化校验）。该字段仅用于调试，生产环境可忽略。</p>
+                     * @return RawOutput <p>VLM 原始输出文本（未经过结构化校验）。该字段仅用于调试，生产环境可忽略。</p>
                      * 
                      */
                     std::string GetRawOutput() const;
 
                     /**
-                     * 设置<p>VLM 原始输出文本（未经过结构化校验）。</p>
-                     * @param _rawOutput <p>VLM 原始输出文本（未经过结构化校验）。</p>
+                     * 设置<p>VLM 原始输出文本（未经过结构化校验）。该字段仅用于调试，生产环境可忽略。</p>
+                     * @param _rawOutput <p>VLM 原始输出文本（未经过结构化校验）。该字段仅用于调试，生产环境可忽略。</p>
                      * 
                      */
                     void SetRawOutput(const std::string& _rawOutput);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool RawOutputHasBeenSet() const;
 
                     /**
-                     * 获取<p>变量替换后的实际 Prompt（脱敏后）。</p>
-                     * @return RenderedPrompt <p>变量替换后的实际 Prompt（脱敏后）。</p>
+                     * 获取<p>变量替换后的用户 Prompt 文本。该字段仅用于调试，生产环境可忽略。</p>
+                     * @return RenderedPrompt <p>变量替换后的用户 Prompt 文本。该字段仅用于调试，生产环境可忽略。</p>
                      * 
                      */
                     std::string GetRenderedPrompt() const;
 
                     /**
-                     * 设置<p>变量替换后的实际 Prompt（脱敏后）。</p>
-                     * @param _renderedPrompt <p>变量替换后的实际 Prompt（脱敏后）。</p>
+                     * 设置<p>变量替换后的用户 Prompt 文本。该字段仅用于调试，生产环境可忽略。</p>
+                     * @param _renderedPrompt <p>变量替换后的用户 Prompt 文本。该字段仅用于调试，生产环境可忽略。</p>
                      * 
                      */
                     void SetRenderedPrompt(const std::string& _renderedPrompt);
@@ -160,25 +160,25 @@ namespace TencentCloud
                     bool m_outputModeHasBeenSet;
 
                     /**
-                     * <p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，必定命中请求中 EnumValues 的某个值。 若 VLM 输出无法匹配任何枚举值，则返回 <strong>UNCERTAIN</strong>。</p>
+                     * <p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，取值对应请求中配置的 EnumValues。</p>
                      */
                     std::string m_enumValue;
                     bool m_enumValueHasBeenSet;
 
                     /**
-                     * <p>文本模式下的推理结果值。当 OutputMode=string 时返回。 若 VLM 无法得出结论，则返回 <strong>UNCERTAIN</strong>。</p>
+                     * <p>文本模式下的推理结果值。当 OutputMode=string 时返回，以文本形式描述推理结论。</p>
                      */
                     std::string m_textValue;
                     bool m_textValueHasBeenSet;
 
                     /**
-                     * <p>VLM 原始输出文本（未经过结构化校验）。</p>
+                     * <p>VLM 原始输出文本（未经过结构化校验）。该字段仅用于调试，生产环境可忽略。</p>
                      */
                     std::string m_rawOutput;
                     bool m_rawOutputHasBeenSet;
 
                     /**
-                     * <p>变量替换后的实际 Prompt（脱敏后）。</p>
+                     * <p>变量替换后的用户 Prompt 文本。该字段仅用于调试，生产环境可忽略。</p>
                      */
                     std::string m_renderedPrompt;
                     bool m_renderedPromptHasBeenSet;

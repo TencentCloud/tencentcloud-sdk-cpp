@@ -42,7 +42,18 @@ ClusterSession::ClusterSession() :
     m_jobManagerMemHasBeenSet(false),
     m_taskManagerCpuHasBeenSet(false),
     m_taskManagerMemHasBeenSet(false),
-    m_jdkVersionHasBeenSet(false)
+    m_jdkVersionHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_serialIdHasBeenSet(false),
+    m_clusterGroupNameHasBeenSet(false),
+    m_totalCpuHasBeenSet(false),
+    m_totalMemHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false),
+    m_workSpaceNameHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_logConfigHasBeenSet(false),
+    m_updateUinHasBeenSet(false)
 {
 }
 
@@ -291,6 +302,126 @@ CoreInternalOutcome ClusterSession::Deserialize(const rapidjson::Value &value)
         m_jdkVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SerialId") && !value["SerialId"].IsNull())
+    {
+        if (!value["SerialId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.SerialId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serialId = string(value["SerialId"].GetString());
+        m_serialIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterGroupName") && !value["ClusterGroupName"].IsNull())
+    {
+        if (!value["ClusterGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.ClusterGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterGroupName = string(value["ClusterGroupName"].GetString());
+        m_clusterGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalCpu") && !value["TotalCpu"].IsNull())
+    {
+        if (!value["TotalCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.TotalCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCpu = value["TotalCpu"].GetDouble();
+        m_totalCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalMem") && !value["TotalMem"].IsNull())
+    {
+        if (!value["TotalMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.TotalMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalMem = value["TotalMem"].GetDouble();
+        m_totalMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkSpaceId") && !value["WorkSpaceId"].IsNull())
+    {
+        if (!value["WorkSpaceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.WorkSpaceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workSpaceId = string(value["WorkSpaceId"].GetString());
+        m_workSpaceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkSpaceName") && !value["WorkSpaceName"].IsNull())
+    {
+        if (!value["WorkSpaceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.WorkSpaceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workSpaceName = string(value["WorkSpaceName"].GetString());
+        m_workSpaceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogConfig") && !value["LogConfig"].IsNull())
+    {
+        if (!value["LogConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.LogConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logConfig = string(value["LogConfig"].GetString());
+        m_logConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateUin") && !value["UpdateUin"].IsNull())
+    {
+        if (!value["UpdateUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterSession.UpdateUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateUin = string(value["UpdateUin"].GetString());
+        m_updateUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -486,6 +617,101 @@ void ClusterSession::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "JdkVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jdkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serialIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SerialId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serialId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCpu, allocator);
+    }
+
+    if (m_totalMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalMem, allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workSpaceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workSpaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_logConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -841,5 +1067,181 @@ void ClusterSession::SetJdkVersion(const string& _jdkVersion)
 bool ClusterSession::JdkVersionHasBeenSet() const
 {
     return m_jdkVersionHasBeenSet;
+}
+
+string ClusterSession::GetDescription() const
+{
+    return m_description;
+}
+
+void ClusterSession::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ClusterSession::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string ClusterSession::GetName() const
+{
+    return m_name;
+}
+
+void ClusterSession::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool ClusterSession::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string ClusterSession::GetSerialId() const
+{
+    return m_serialId;
+}
+
+void ClusterSession::SetSerialId(const string& _serialId)
+{
+    m_serialId = _serialId;
+    m_serialIdHasBeenSet = true;
+}
+
+bool ClusterSession::SerialIdHasBeenSet() const
+{
+    return m_serialIdHasBeenSet;
+}
+
+string ClusterSession::GetClusterGroupName() const
+{
+    return m_clusterGroupName;
+}
+
+void ClusterSession::SetClusterGroupName(const string& _clusterGroupName)
+{
+    m_clusterGroupName = _clusterGroupName;
+    m_clusterGroupNameHasBeenSet = true;
+}
+
+bool ClusterSession::ClusterGroupNameHasBeenSet() const
+{
+    return m_clusterGroupNameHasBeenSet;
+}
+
+double ClusterSession::GetTotalCpu() const
+{
+    return m_totalCpu;
+}
+
+void ClusterSession::SetTotalCpu(const double& _totalCpu)
+{
+    m_totalCpu = _totalCpu;
+    m_totalCpuHasBeenSet = true;
+}
+
+bool ClusterSession::TotalCpuHasBeenSet() const
+{
+    return m_totalCpuHasBeenSet;
+}
+
+double ClusterSession::GetTotalMem() const
+{
+    return m_totalMem;
+}
+
+void ClusterSession::SetTotalMem(const double& _totalMem)
+{
+    m_totalMem = _totalMem;
+    m_totalMemHasBeenSet = true;
+}
+
+bool ClusterSession::TotalMemHasBeenSet() const
+{
+    return m_totalMemHasBeenSet;
+}
+
+string ClusterSession::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void ClusterSession::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool ClusterSession::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
+}
+
+string ClusterSession::GetWorkSpaceName() const
+{
+    return m_workSpaceName;
+}
+
+void ClusterSession::SetWorkSpaceName(const string& _workSpaceName)
+{
+    m_workSpaceName = _workSpaceName;
+    m_workSpaceNameHasBeenSet = true;
+}
+
+bool ClusterSession::WorkSpaceNameHasBeenSet() const
+{
+    return m_workSpaceNameHasBeenSet;
+}
+
+vector<Tag> ClusterSession::GetTags() const
+{
+    return m_tags;
+}
+
+void ClusterSession::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ClusterSession::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string ClusterSession::GetLogConfig() const
+{
+    return m_logConfig;
+}
+
+void ClusterSession::SetLogConfig(const string& _logConfig)
+{
+    m_logConfig = _logConfig;
+    m_logConfigHasBeenSet = true;
+}
+
+bool ClusterSession::LogConfigHasBeenSet() const
+{
+    return m_logConfigHasBeenSet;
+}
+
+string ClusterSession::GetUpdateUin() const
+{
+    return m_updateUin;
+}
+
+void ClusterSession::SetUpdateUin(const string& _updateUin)
+{
+    m_updateUin = _updateUin;
+    m_updateUinHasBeenSet = true;
+}
+
+bool ClusterSession::UpdateUinHasBeenSet() const
+{
+    return m_updateUinHasBeenSet;
 }
 

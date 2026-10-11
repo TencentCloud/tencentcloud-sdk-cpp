@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool WorkspaceIdHasBeenSet() const;
 
                     /**
-                     * 获取角色ID
-                     * @return RoleId 角色ID
+                     * 获取角色ID，可通过 ListWorkspaceRoles 接口获取
+                     * @return RoleId 角色ID，可通过 ListWorkspaceRoles 接口获取
                      * 
                      */
                     std::string GetRoleId() const;
 
                     /**
-                     * 设置角色ID
-                     * @param _roleId 角色ID
+                     * 设置角色ID，可通过 ListWorkspaceRoles 接口获取
+                     * @param _roleId 角色ID，可通过 ListWorkspaceRoles 接口获取
                      * 
                      */
                     void SetRoleId(const std::string& _roleId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_workspaceIdHasBeenSet;
 
                     /**
-                     * 角色ID
+                     * 角色ID，可通过 ListWorkspaceRoles 接口获取
                      */
                     std::string m_roleId;
                     bool m_roleIdHasBeenSet;

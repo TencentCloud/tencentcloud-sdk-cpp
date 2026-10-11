@@ -341,6 +341,48 @@ namespace TencentCloud
                      */
                     bool AggregationCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>状态</p>
+                     * @return Status <p>状态</p>
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置<p>状态</p>
+                     * @param _status <p>状态</p>
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最近检测时间</p>
+                     * @return LastCheckTime <p>最近检测时间</p>
+                     * 
+                     */
+                    std::string GetLastCheckTime() const;
+
+                    /**
+                     * 设置<p>最近检测时间</p>
+                     * @param _lastCheckTime <p>最近检测时间</p>
+                     * 
+                     */
+                    void SetLastCheckTime(const std::string& _lastCheckTime);
+
+                    /**
+                     * 判断参数 LastCheckTime 是否已赋值
+                     * @return LastCheckTime 是否已赋值
+                     * 
+                     */
+                    bool LastCheckTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,6 +468,18 @@ namespace TencentCloud
                      */
                     int64_t m_aggregationCount;
                     bool m_aggregationCountHasBeenSet;
+
+                    /**
+                     * <p>状态</p>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>最近检测时间</p>
+                     */
+                    std::string m_lastCheckTime;
+                    bool m_lastCheckTimeHasBeenSet;
 
                 };
             }

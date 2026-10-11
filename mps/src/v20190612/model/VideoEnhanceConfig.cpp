@@ -33,7 +33,8 @@ VideoEnhanceConfig::VideoEnhanceConfig() :
     m_enhanceSceneTypeHasBeenSet(false),
     m_diffusionEnhanceHasBeenSet(false),
     m_frameRateWithDenHasBeenSet(false),
-    m_aiRestorationHasBeenSet(false)
+    m_aiRestorationHasBeenSet(false),
+    m_diffusionEnhanceV2HasBeenSet(false)
 {
 }
 
@@ -256,6 +257,23 @@ CoreInternalOutcome VideoEnhanceConfig::Deserialize(const rapidjson::Value &valu
         m_aiRestorationHasBeenSet = true;
     }
 
+    if (value.HasMember("DiffusionEnhanceV2") && !value["DiffusionEnhanceV2"].IsNull())
+    {
+        if (!value["DiffusionEnhanceV2"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoEnhanceConfig.DiffusionEnhanceV2` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_diffusionEnhanceV2.Deserialize(value["DiffusionEnhanceV2"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_diffusionEnhanceV2HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -377,6 +395,15 @@ void VideoEnhanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiRestoration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_diffusionEnhanceV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiffusionEnhanceV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_diffusionEnhanceV2.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -588,5 +615,21 @@ void VideoEnhanceConfig::SetAiRestoration(const AiRestorationConfig& _aiRestorat
 bool VideoEnhanceConfig::AiRestorationHasBeenSet() const
 {
     return m_aiRestorationHasBeenSet;
+}
+
+DiffusionEnhanceV2Config VideoEnhanceConfig::GetDiffusionEnhanceV2() const
+{
+    return m_diffusionEnhanceV2;
+}
+
+void VideoEnhanceConfig::SetDiffusionEnhanceV2(const DiffusionEnhanceV2Config& _diffusionEnhanceV2)
+{
+    m_diffusionEnhanceV2 = _diffusionEnhanceV2;
+    m_diffusionEnhanceV2HasBeenSet = true;
+}
+
+bool VideoEnhanceConfig::DiffusionEnhanceV2HasBeenSet() const
+{
+    return m_diffusionEnhanceV2HasBeenSet;
 }
 

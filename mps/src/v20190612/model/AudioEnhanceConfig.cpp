@@ -24,7 +24,8 @@ AudioEnhanceConfig::AudioEnhanceConfig() :
     m_denoiseHasBeenSet(false),
     m_separateHasBeenSet(false),
     m_volumeBalanceHasBeenSet(false),
-    m_beautifyHasBeenSet(false)
+    m_beautifyHasBeenSet(false),
+    m_audioEnhanceEditHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,23 @@ CoreInternalOutcome AudioEnhanceConfig::Deserialize(const rapidjson::Value &valu
         m_beautifyHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioEnhanceEdit") && !value["AudioEnhanceEdit"].IsNull())
+    {
+        if (!value["AudioEnhanceEdit"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioEnhanceConfig.AudioEnhanceEdit` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_audioEnhanceEdit.Deserialize(value["AudioEnhanceEdit"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_audioEnhanceEditHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -142,6 +160,15 @@ void AudioEnhanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_beautify.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_audioEnhanceEditHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioEnhanceEdit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_audioEnhanceEdit.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -209,5 +236,21 @@ void AudioEnhanceConfig::SetBeautify(const AudioBeautifyConfig& _beautify)
 bool AudioEnhanceConfig::BeautifyHasBeenSet() const
 {
     return m_beautifyHasBeenSet;
+}
+
+AudioEnhanceEditConfig AudioEnhanceConfig::GetAudioEnhanceEdit() const
+{
+    return m_audioEnhanceEdit;
+}
+
+void AudioEnhanceConfig::SetAudioEnhanceEdit(const AudioEnhanceEditConfig& _audioEnhanceEdit)
+{
+    m_audioEnhanceEdit = _audioEnhanceEdit;
+    m_audioEnhanceEditHasBeenSet = true;
+}
+
+bool AudioEnhanceConfig::AudioEnhanceEditHasBeenSet() const
+{
+    return m_audioEnhanceEditHasBeenSet;
 }
 

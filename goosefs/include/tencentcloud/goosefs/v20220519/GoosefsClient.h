@@ -37,6 +37,8 @@
 #include <tencentcloud/goosefs/v20220519/model/BuildCustomerClusterResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/CancelLoadTaskRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/CancelLoadTaskResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/CancelPolicyRuleExecuteRecordRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/CancelPolicyRuleExecuteRecordResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateFileSystemRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/goosefs/v20220519/model/CreateFilesetResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateLoadTaskRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateLoadTaskResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/CreatePolicyRuleRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/CreatePolicyRuleResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteCustomerClusterRequest.h>
@@ -53,6 +57,8 @@
 #include <tencentcloud/goosefs/v20220519/model/DeleteFileSystemResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteFilesetRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteFilesetResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DeletePolicyRuleRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DeletePolicyRuleResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeClientNodesRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeClientNodesResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeClusterClientTokenRequest.h>
@@ -73,8 +79,16 @@
 #include <tencentcloud/goosefs/v20220519/model/DescribeFilesetsResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeLoadTaskRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeLoadTaskResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribePolicyRuleRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribePolicyRuleResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribePolicyRuleExecuteRecordRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribePolicyRuleExecuteRecordResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DetachFileSystemBucketRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DetachFileSystemBucketResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DisablePolicyRuleRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DisablePolicyRuleResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/EnablePolicyRuleRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/EnablePolicyRuleResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/ExpandCapacityRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/ExpandCapacityResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/ListLoadTasksRequest.h>
@@ -132,6 +146,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelLoadTaskResponse> CancelLoadTaskOutcome;
                 typedef std::future<CancelLoadTaskOutcome> CancelLoadTaskOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::CancelLoadTaskRequest&, CancelLoadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelLoadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelPolicyRuleExecuteRecordResponse> CancelPolicyRuleExecuteRecordOutcome;
+                typedef std::future<CancelPolicyRuleExecuteRecordOutcome> CancelPolicyRuleExecuteRecordOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::CancelPolicyRuleExecuteRecordRequest&, CancelPolicyRuleExecuteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelPolicyRuleExecuteRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDataRepositoryTaskResponse> CreateDataRepositoryTaskOutcome;
                 typedef std::future<CreateDataRepositoryTaskOutcome> CreateDataRepositoryTaskOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::CreateDataRepositoryTaskRequest&, CreateDataRepositoryTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataRepositoryTaskAsyncHandler;
@@ -144,6 +161,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLoadTaskResponse> CreateLoadTaskOutcome;
                 typedef std::future<CreateLoadTaskOutcome> CreateLoadTaskOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::CreateLoadTaskRequest&, CreateLoadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePolicyRuleResponse> CreatePolicyRuleOutcome;
+                typedef std::future<CreatePolicyRuleOutcome> CreatePolicyRuleOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::CreatePolicyRuleRequest&, CreatePolicyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCrossVpcSubnetSupportForClientNodeResponse> DeleteCrossVpcSubnetSupportForClientNodeOutcome;
                 typedef std::future<DeleteCrossVpcSubnetSupportForClientNodeOutcome> DeleteCrossVpcSubnetSupportForClientNodeOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DeleteCrossVpcSubnetSupportForClientNodeRequest&, DeleteCrossVpcSubnetSupportForClientNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCrossVpcSubnetSupportForClientNodeAsyncHandler;
@@ -156,6 +176,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteFilesetResponse> DeleteFilesetOutcome;
                 typedef std::future<DeleteFilesetOutcome> DeleteFilesetOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DeleteFilesetRequest&, DeleteFilesetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFilesetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePolicyRuleResponse> DeletePolicyRuleOutcome;
+                typedef std::future<DeletePolicyRuleOutcome> DeletePolicyRuleOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DeletePolicyRuleRequest&, DeletePolicyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClientNodesResponse> DescribeClientNodesOutcome;
                 typedef std::future<DescribeClientNodesOutcome> DescribeClientNodesOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DescribeClientNodesRequest&, DescribeClientNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientNodesAsyncHandler;
@@ -186,9 +209,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLoadTaskResponse> DescribeLoadTaskOutcome;
                 typedef std::future<DescribeLoadTaskOutcome> DescribeLoadTaskOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DescribeLoadTaskRequest&, DescribeLoadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePolicyRuleResponse> DescribePolicyRuleOutcome;
+                typedef std::future<DescribePolicyRuleOutcome> DescribePolicyRuleOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DescribePolicyRuleRequest&, DescribePolicyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePolicyRuleExecuteRecordResponse> DescribePolicyRuleExecuteRecordOutcome;
+                typedef std::future<DescribePolicyRuleExecuteRecordOutcome> DescribePolicyRuleExecuteRecordOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DescribePolicyRuleExecuteRecordRequest&, DescribePolicyRuleExecuteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyRuleExecuteRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetachFileSystemBucketResponse> DetachFileSystemBucketOutcome;
                 typedef std::future<DetachFileSystemBucketOutcome> DetachFileSystemBucketOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DetachFileSystemBucketRequest&, DetachFileSystemBucketOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachFileSystemBucketAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisablePolicyRuleResponse> DisablePolicyRuleOutcome;
+                typedef std::future<DisablePolicyRuleOutcome> DisablePolicyRuleOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DisablePolicyRuleRequest&, DisablePolicyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisablePolicyRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnablePolicyRuleResponse> EnablePolicyRuleOutcome;
+                typedef std::future<EnablePolicyRuleOutcome> EnablePolicyRuleOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::EnablePolicyRuleRequest&, EnablePolicyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnablePolicyRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExpandCapacityResponse> ExpandCapacityOutcome;
                 typedef std::future<ExpandCapacityOutcome> ExpandCapacityOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::ExpandCapacityRequest&, ExpandCapacityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExpandCapacityAsyncHandler;
@@ -289,6 +324,15 @@ namespace TencentCloud
                 CancelLoadTaskOutcomeCallable CancelLoadTaskCallable(const Model::CancelLoadTaskRequest& request);
 
                 /**
+                 *取消正在执行的扫描任务，正在扫描的任务取消后没有结果
+                 * @param req CancelPolicyRuleExecuteRecordRequest
+                 * @return CancelPolicyRuleExecuteRecordOutcome
+                 */
+                CancelPolicyRuleExecuteRecordOutcome CancelPolicyRuleExecuteRecord(const Model::CancelPolicyRuleExecuteRecordRequest &request);
+                void CancelPolicyRuleExecuteRecordAsync(const Model::CancelPolicyRuleExecuteRecordRequest& request, const CancelPolicyRuleExecuteRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelPolicyRuleExecuteRecordOutcomeCallable CancelPolicyRuleExecuteRecordCallable(const Model::CancelPolicyRuleExecuteRecordRequest& request);
+
+                /**
                  *创建数据流通任务,包括从将文件系统的数据上传到存储桶下, 以及从存储桶下载到文件系统里。
                  * @param req CreateDataRepositoryTaskRequest
                  * @return CreateDataRepositoryTaskOutcome
@@ -325,6 +369,15 @@ namespace TencentCloud
                 CreateLoadTaskOutcomeCallable CreateLoadTaskCallable(const Model::CreateLoadTaskRequest& request);
 
                 /**
+                 *创建数据洞察任务
+                 * @param req CreatePolicyRuleRequest
+                 * @return CreatePolicyRuleOutcome
+                 */
+                CreatePolicyRuleOutcome CreatePolicyRule(const Model::CreatePolicyRuleRequest &request);
+                void CreatePolicyRuleAsync(const Model::CreatePolicyRuleRequest& request, const CreatePolicyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePolicyRuleOutcomeCallable CreatePolicyRuleCallable(const Model::CreatePolicyRuleRequest& request);
+
+                /**
                  *为客户端节点删除跨vpc子网访问能力
                  * @param req DeleteCrossVpcSubnetSupportForClientNodeRequest
                  * @return DeleteCrossVpcSubnetSupportForClientNodeOutcome
@@ -359,6 +412,15 @@ namespace TencentCloud
                 DeleteFilesetOutcome DeleteFileset(const Model::DeleteFilesetRequest &request);
                 void DeleteFilesetAsync(const Model::DeleteFilesetRequest& request, const DeleteFilesetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFilesetOutcomeCallable DeleteFilesetCallable(const Model::DeleteFilesetRequest& request);
+
+                /**
+                 *删除扫描规则
+                 * @param req DeletePolicyRuleRequest
+                 * @return DeletePolicyRuleOutcome
+                 */
+                DeletePolicyRuleOutcome DeletePolicyRule(const Model::DeletePolicyRuleRequest &request);
+                void DeletePolicyRuleAsync(const Model::DeletePolicyRuleRequest& request, const DeletePolicyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePolicyRuleOutcomeCallable DeletePolicyRuleCallable(const Model::DeletePolicyRuleRequest& request);
 
                 /**
                  *列出集群中所有的客户端节点
@@ -451,6 +513,24 @@ namespace TencentCloud
                 DescribeLoadTaskOutcomeCallable DescribeLoadTaskCallable(const Model::DescribeLoadTaskRequest& request);
 
                 /**
+                 *列出所有的扫描规则
+                 * @param req DescribePolicyRuleRequest
+                 * @return DescribePolicyRuleOutcome
+                 */
+                DescribePolicyRuleOutcome DescribePolicyRule(const Model::DescribePolicyRuleRequest &request);
+                void DescribePolicyRuleAsync(const Model::DescribePolicyRuleRequest& request, const DescribePolicyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePolicyRuleOutcomeCallable DescribePolicyRuleCallable(const Model::DescribePolicyRuleRequest& request);
+
+                /**
+                 *列出指定扫描规则的执行记录
+                 * @param req DescribePolicyRuleExecuteRecordRequest
+                 * @return DescribePolicyRuleExecuteRecordOutcome
+                 */
+                DescribePolicyRuleExecuteRecordOutcome DescribePolicyRuleExecuteRecord(const Model::DescribePolicyRuleExecuteRecordRequest &request);
+                void DescribePolicyRuleExecuteRecordAsync(const Model::DescribePolicyRuleExecuteRecordRequest& request, const DescribePolicyRuleExecuteRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePolicyRuleExecuteRecordOutcomeCallable DescribePolicyRuleExecuteRecordCallable(const Model::DescribePolicyRuleExecuteRecordRequest& request);
+
+                /**
                  *解绑文件系统与Bucket的映射
                  * @param req DetachFileSystemBucketRequest
                  * @return DetachFileSystemBucketOutcome
@@ -458,6 +538,24 @@ namespace TencentCloud
                 DetachFileSystemBucketOutcome DetachFileSystemBucket(const Model::DetachFileSystemBucketRequest &request);
                 void DetachFileSystemBucketAsync(const Model::DetachFileSystemBucketRequest& request, const DetachFileSystemBucketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetachFileSystemBucketOutcomeCallable DetachFileSystemBucketCallable(const Model::DetachFileSystemBucketRequest& request);
+
+                /**
+                 *禁用扫描任务
+                 * @param req DisablePolicyRuleRequest
+                 * @return DisablePolicyRuleOutcome
+                 */
+                DisablePolicyRuleOutcome DisablePolicyRule(const Model::DisablePolicyRuleRequest &request);
+                void DisablePolicyRuleAsync(const Model::DisablePolicyRuleRequest& request, const DisablePolicyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisablePolicyRuleOutcomeCallable DisablePolicyRuleCallable(const Model::DisablePolicyRuleRequest& request);
+
+                /**
+                 *启用扫描任务
+                 * @param req EnablePolicyRuleRequest
+                 * @return EnablePolicyRuleOutcome
+                 */
+                EnablePolicyRuleOutcome EnablePolicyRule(const Model::EnablePolicyRuleRequest &request);
+                void EnablePolicyRuleAsync(const Model::EnablePolicyRuleRequest& request, const EnablePolicyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnablePolicyRuleOutcomeCallable EnablePolicyRuleCallable(const Model::EnablePolicyRuleRequest& request);
 
                 /**
                  *扩展文件系统容量

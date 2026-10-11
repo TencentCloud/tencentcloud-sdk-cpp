@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取组件勾选情况
+                     * 获取<p>组件勾选情况</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Component 组件勾选情况
+                     * @return Component <p>组件勾选情况</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetComponent() const;
 
                     /**
-                     * 设置组件勾选情况
+                     * 设置<p>组件勾选情况</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _component 组件勾选情况
+                     * @param _component <p>组件勾选情况</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 组件勾选情况
+                     * <p>组件勾选情况</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_component;

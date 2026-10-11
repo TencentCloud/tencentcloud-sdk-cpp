@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/JobDetailInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>作业详情，JSON 嵌套在 JobDetail 键下。</p>
+                     * @return JobDetail <p>作业详情，JSON 嵌套在 JobDetail 键下。</p>
+                     * 
+                     */
+                    JobDetailInfo GetJobDetail() const;
+
+                    /**
+                     * 判断参数 JobDetail 是否已赋值
+                     * @return JobDetail 是否已赋值
+                     * 
+                     */
+                    bool JobDetailHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>作业详情，JSON 嵌套在 JobDetail 键下。</p>
+                     */
+                    JobDetailInfo m_jobDetail;
+                    bool m_jobDetailHasBeenSet;
 
                 };
             }

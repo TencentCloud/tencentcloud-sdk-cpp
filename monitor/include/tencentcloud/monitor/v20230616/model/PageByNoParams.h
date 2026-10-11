@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取每个分页的数量是多少
+                     * 获取<p>每个分页的数量是多少</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PerPage 每个分页的数量是多少
+                     * @return PerPage <p>每个分页的数量是多少</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPerPage() const;
 
                     /**
-                     * 设置每个分页的数量是多少
+                     * 设置<p>每个分页的数量是多少</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _perPage 每个分页的数量是多少
+                     * @param _perPage <p>每个分页的数量是多少</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool PerPageHasBeenSet() const;
 
                     /**
-                     * 获取第几个分页，从1开始
+                     * 获取<p>第几个分页，从1开始</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageNo 第几个分页，从1开始
+                     * @return PageNo <p>第几个分页，从1开始</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPageNo() const;
 
                     /**
-                     * 设置第几个分页，从1开始
+                     * 设置<p>第几个分页，从1开始</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pageNo 第几个分页，从1开始
+                     * @param _pageNo <p>第几个分页，从1开始</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 每个分页的数量是多少
+                     * <p>每个分页的数量是多少</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_perPage;
                     bool m_perPageHasBeenSet;
 
                     /**
-                     * 第几个分页，从1开始
+                     * <p>第几个分页，从1开始</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pageNo;

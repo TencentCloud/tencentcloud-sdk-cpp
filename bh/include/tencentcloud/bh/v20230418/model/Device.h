@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产ID
-                     * @return Id 资产ID
+                     * 获取<p>资产ID</p>
+                     * @return Id <p>资产ID</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置资产ID
-                     * @param _id 资产ID
+                     * 设置<p>资产ID</p>
+                     * @param _id <p>资产ID</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID，对应CVM、CDB等实例ID
-                     * @return InstanceId 实例ID，对应CVM、CDB等实例ID
+                     * 获取<p>实例ID，对应CVM、CDB等实例ID</p>
+                     * @return InstanceId <p>实例ID，对应CVM、CDB等实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，对应CVM、CDB等实例ID
-                     * @param _instanceId 实例ID，对应CVM、CDB等实例ID
+                     * 设置<p>实例ID，对应CVM、CDB等实例ID</p>
+                     * @param _instanceId <p>实例ID，对应CVM、CDB等实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取资产名
-                     * @return Name 资产名
+                     * 获取<p>资产名</p>
+                     * @return Name <p>资产名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置资产名
-                     * @param _name 资产名
+                     * 设置<p>资产名</p>
+                     * @param _name <p>资产名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取公网IP
-                     * @return PublicIp 公网IP
+                     * 获取<p>公网IP</p>
+                     * @return PublicIp <p>公网IP</p>
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
-                     * 设置公网IP
-                     * @param _publicIp 公网IP
+                     * 设置<p>公网IP</p>
+                     * @param _publicIp <p>公网IP</p>
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool PublicIpHasBeenSet() const;
 
                     /**
-                     * 获取内网IP
-                     * @return PrivateIp 内网IP
+                     * 获取<p>内网IP</p>
+                     * @return PrivateIp <p>内网IP</p>
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
-                     * 设置内网IP
-                     * @param _privateIp 内网IP
+                     * 设置<p>内网IP</p>
+                     * @param _privateIp <p>内网IP</p>
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool PrivateIpHasBeenSet() const;
 
                     /**
-                     * 获取地域编码
-                     * @return ApCode 地域编码
+                     * 获取<p>地域编码</p>
+                     * @return ApCode <p>地域编码</p>
                      * 
                      */
                     std::string GetApCode() const;
 
                     /**
-                     * 设置地域编码
-                     * @param _apCode 地域编码
+                     * 设置<p>地域编码</p>
+                     * @param _apCode <p>地域编码</p>
                      * 
                      */
                     void SetApCode(const std::string& _apCode);
@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool ApCodeHasBeenSet() const;
 
                     /**
-                     * 获取地域名称
-                     * @return ApName 地域名称
+                     * 获取<p>地域名称</p>
+                     * @return ApName <p>地域名称</p>
                      * 
                      */
                     std::string GetApName() const;
 
                     /**
-                     * 设置地域名称
-                     * @param _apName 地域名称
+                     * 设置<p>地域名称</p>
+                     * @param _apName <p>地域名称</p>
                      * 
                      */
                     void SetApName(const std::string& _apName);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool ApNameHasBeenSet() const;
 
                     /**
-                     * 获取操作系统名称
-                     * @return OsName 操作系统名称
+                     * 获取<p>操作系统名称</p>
+                     * @return OsName <p>操作系统名称</p>
                      * 
                      */
                     std::string GetOsName() const;
 
                     /**
-                     * 设置操作系统名称
-                     * @param _osName 操作系统名称
+                     * 设置<p>操作系统名称</p>
+                     * @param _osName <p>操作系统名称</p>
                      * 
                      */
                     void SetOsName(const std::string& _osName);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool OsNameHasBeenSet() const;
 
                     /**
-                     * 获取资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
-                     * @return Kind 资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 获取<p>资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
+                     * @return Kind <p>资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
                      * 
                      */
                     uint64_t GetKind() const;
 
                     /**
-                     * 设置资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
-                     * @param _kind 资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 设置<p>资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
+                     * @param _kind <p>资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
                      * 
                      */
                     void SetKind(const uint64_t& _kind);
@@ -239,15 +239,15 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
-                     * 获取管理端口
-                     * @return Port 管理端口
+                     * 获取<p>管理端口</p>
+                     * @return Port <p>管理端口</p>
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置管理端口
-                     * @param _port 管理端口
+                     * 设置<p>管理端口</p>
+                     * @param _port <p>管理端口</p>
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -260,15 +260,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取所属资产组列表
-                     * @return GroupSet 所属资产组列表
+                     * 获取<p>所属资产组列表</p>
+                     * @return GroupSet <p>所属资产组列表</p>
                      * 
                      */
                     std::vector<Group> GetGroupSet() const;
 
                     /**
-                     * 设置所属资产组列表
-                     * @param _groupSet 所属资产组列表
+                     * 设置<p>所属资产组列表</p>
+                     * @param _groupSet <p>所属资产组列表</p>
                      * 
                      */
                     void SetGroupSet(const std::vector<Group>& _groupSet);
@@ -281,15 +281,15 @@ namespace TencentCloud
                     bool GroupSetHasBeenSet() const;
 
                     /**
-                     * 获取资产绑定的账号数
-                     * @return AccountCount 资产绑定的账号数
+                     * 获取<p>资产绑定的账号数</p>
+                     * @return AccountCount <p>资产绑定的账号数</p>
                      * 
                      */
                     uint64_t GetAccountCount() const;
 
                     /**
-                     * 设置资产绑定的账号数
-                     * @param _accountCount 资产绑定的账号数
+                     * 设置<p>资产绑定的账号数</p>
+                     * @param _accountCount <p>资产绑定的账号数</p>
                      * 
                      */
                     void SetAccountCount(const uint64_t& _accountCount);
@@ -302,15 +302,15 @@ namespace TencentCloud
                     bool AccountCountHasBeenSet() const;
 
                     /**
-                     * 获取VPC ID
-                     * @return VpcId VPC ID
+                     * 获取<p>VPC ID</p>
+                     * @return VpcId <p>VPC ID</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC ID
-                     * @param _vpcId VPC ID
+                     * 设置<p>VPC ID</p>
+                     * @param _vpcId <p>VPC ID</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -323,15 +323,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
-                     * @return SubnetId 子网ID
+                     * 获取<p>子网ID</p>
+                     * @return SubnetId <p>子网ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID
-                     * @param _subnetId 子网ID
+                     * 设置<p>子网ID</p>
+                     * @param _subnetId <p>子网ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -344,15 +344,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取堡垒机服务信息，注意没有绑定服务时为null
-                     * @return Resource 堡垒机服务信息，注意没有绑定服务时为null
+                     * 获取<p>堡垒机服务信息，注意没有绑定服务时为null</p>
+                     * @return Resource <p>堡垒机服务信息，注意没有绑定服务时为null</p>
                      * 
                      */
                     Resource GetResource() const;
 
                     /**
-                     * 设置堡垒机服务信息，注意没有绑定服务时为null
-                     * @param _resource 堡垒机服务信息，注意没有绑定服务时为null
+                     * 设置<p>堡垒机服务信息，注意没有绑定服务时为null</p>
+                     * @param _resource <p>堡垒机服务信息，注意没有绑定服务时为null</p>
                      * 
                      */
                     void SetResource(const Resource& _resource);
@@ -365,15 +365,15 @@ namespace TencentCloud
                     bool ResourceHasBeenSet() const;
 
                     /**
-                     * 获取资产所属部门
-                     * @return Department 资产所属部门
+                     * 获取<p>资产所属部门</p>
+                     * @return Department <p>资产所属部门</p>
                      * 
                      */
                     Department GetDepartment() const;
 
                     /**
-                     * 设置资产所属部门
-                     * @param _department 资产所属部门
+                     * 设置<p>资产所属部门</p>
+                     * @param _department <p>资产所属部门</p>
                      * 
                      */
                     void SetDepartment(const Department& _department);
@@ -386,15 +386,15 @@ namespace TencentCloud
                     bool DepartmentHasBeenSet() const;
 
                     /**
-                     * 获取数据库资产的多节点
-                     * @return IpPortSet 数据库资产的多节点
+                     * 获取<p>数据库资产的多节点</p>
+                     * @return IpPortSet <p>数据库资产的多节点</p>
                      * 
                      */
                     std::vector<std::string> GetIpPortSet() const;
 
                     /**
-                     * 设置数据库资产的多节点
-                     * @param _ipPortSet 数据库资产的多节点
+                     * 设置<p>数据库资产的多节点</p>
+                     * @param _ipPortSet <p>数据库资产的多节点</p>
                      * 
                      */
                     void SetIpPortSet(const std::vector<std::string>& _ipPortSet);
@@ -407,15 +407,15 @@ namespace TencentCloud
                     bool IpPortSetHasBeenSet() const;
 
                     /**
-                     * 获取网络域Id
-                     * @return DomainId 网络域Id
+                     * 获取<p>网络域Id</p>
+                     * @return DomainId <p>网络域Id</p>
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置网络域Id
-                     * @param _domainId 网络域Id
+                     * 设置<p>网络域Id</p>
+                     * @param _domainId <p>网络域Id</p>
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -428,15 +428,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取网络域名称
-                     * @return DomainName 网络域名称
+                     * 获取<p>网络域名称</p>
+                     * @return DomainName <p>网络域名称</p>
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置网络域名称
-                     * @param _domainName 网络域名称
+                     * 设置<p>网络域名称</p>
+                     * @param _domainName <p>网络域名称</p>
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -449,15 +449,15 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取是否启用SSL，仅支持Redis资产。0：禁用 1：启用
-                     * @return EnableSSL 是否启用SSL，仅支持Redis资产。0：禁用 1：启用
+                     * 获取<p>是否启用SSL，仅支持Redis资产。0：禁用 1：启用</p>
+                     * @return EnableSSL <p>是否启用SSL，仅支持Redis资产。0：禁用 1：启用</p>
                      * 
                      */
                     int64_t GetEnableSSL() const;
 
                     /**
-                     * 设置是否启用SSL，仅支持Redis资产。0：禁用 1：启用
-                     * @param _enableSSL 是否启用SSL，仅支持Redis资产。0：禁用 1：启用
+                     * 设置<p>是否启用SSL，仅支持Redis资产。0：禁用 1：启用</p>
+                     * @param _enableSSL <p>是否启用SSL，仅支持Redis资产。0：禁用 1：启用</p>
                      * 
                      */
                     void SetEnableSSL(const int64_t& _enableSSL);
@@ -470,15 +470,15 @@ namespace TencentCloud
                     bool EnableSSLHasBeenSet() const;
 
                     /**
-                     * 获取已上传的SSL证书名称
-                     * @return SSLCertName 已上传的SSL证书名称
+                     * 获取<p>已上传的SSL证书名称</p>
+                     * @return SSLCertName <p>已上传的SSL证书名称</p>
                      * 
                      */
                     std::string GetSSLCertName() const;
 
                     /**
-                     * 设置已上传的SSL证书名称
-                     * @param _sSLCertName 已上传的SSL证书名称
+                     * 设置<p>已上传的SSL证书名称</p>
+                     * @param _sSLCertName <p>已上传的SSL证书名称</p>
                      * 
                      */
                     void SetSSLCertName(const std::string& _sSLCertName);
@@ -491,15 +491,15 @@ namespace TencentCloud
                     bool SSLCertNameHasBeenSet() const;
 
                     /**
-                     * 获取IOA侧的资源ID
-                     * @return IOAId IOA侧的资源ID
+                     * 获取<p>IOA侧的资源ID</p>
+                     * @return IOAId <p>IOA侧的资源ID</p>
                      * 
                      */
                     int64_t GetIOAId() const;
 
                     /**
-                     * 设置IOA侧的资源ID
-                     * @param _iOAId IOA侧的资源ID
+                     * 设置<p>IOA侧的资源ID</p>
+                     * @param _iOAId <p>IOA侧的资源ID</p>
                      * 
                      */
                     void SetIOAId(const int64_t& _iOAId);
@@ -512,15 +512,15 @@ namespace TencentCloud
                     bool IOAIdHasBeenSet() const;
 
                     /**
-                     * 获取K8S集群托管维度。1-集群，2-命名空间，3-工作负载
-                     * @return ManageDimension K8S集群托管维度。1-集群，2-命名空间，3-工作负载
+                     * 获取<p>K8S集群托管维度。1-集群，2-命名空间，3-工作负载</p>
+                     * @return ManageDimension <p>K8S集群托管维度。1-集群，2-命名空间，3-工作负载</p>
                      * 
                      */
                     uint64_t GetManageDimension() const;
 
                     /**
-                     * 设置K8S集群托管维度。1-集群，2-命名空间，3-工作负载
-                     * @param _manageDimension K8S集群托管维度。1-集群，2-命名空间，3-工作负载
+                     * 设置<p>K8S集群托管维度。1-集群，2-命名空间，3-工作负载</p>
+                     * @param _manageDimension <p>K8S集群托管维度。1-集群，2-命名空间，3-工作负载</p>
                      * 
                      */
                     void SetManageDimension(const uint64_t& _manageDimension);
@@ -533,15 +533,15 @@ namespace TencentCloud
                     bool ManageDimensionHasBeenSet() const;
 
                     /**
-                     * 获取K8S集群托管账号id	
-                     * @return ManageAccountId K8S集群托管账号id	
+                     * 获取<p>K8S集群托管账号id</p>
+                     * @return ManageAccountId <p>K8S集群托管账号id</p>
                      * 
                      */
                     uint64_t GetManageAccountId() const;
 
                     /**
-                     * 设置K8S集群托管账号id	
-                     * @param _manageAccountId K8S集群托管账号id	
+                     * 设置<p>K8S集群托管账号id</p>
+                     * @param _manageAccountId <p>K8S集群托管账号id</p>
                      * 
                      */
                     void SetManageAccountId(const uint64_t& _manageAccountId);
@@ -554,15 +554,15 @@ namespace TencentCloud
                     bool ManageAccountIdHasBeenSet() const;
 
                     /**
-                     * 获取K8S集群命名空间	
-                     * @return Namespace K8S集群命名空间	
+                     * 获取<p>K8S集群命名空间</p>
+                     * @return Namespace <p>K8S集群命名空间</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置K8S集群命名空间	
-                     * @param _namespace K8S集群命名空间	
+                     * 设置<p>K8S集群命名空间</p>
+                     * @param _namespace <p>K8S集群命名空间</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -575,15 +575,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取K8S集群工作负载	
-                     * @return Workload K8S集群工作负载	
+                     * 获取<p>K8S集群工作负载</p>
+                     * @return Workload <p>K8S集群工作负载</p>
                      * 
                      */
                     std::string GetWorkload() const;
 
                     /**
-                     * 设置K8S集群工作负载	
-                     * @param _workload K8S集群工作负载	
+                     * 设置<p>K8S集群工作负载</p>
+                     * @param _workload <p>K8S集群工作负载</p>
                      * 
                      */
                     void SetWorkload(const std::string& _workload);
@@ -596,15 +596,15 @@ namespace TencentCloud
                     bool WorkloadHasBeenSet() const;
 
                     /**
-                     * 获取K8S集群pod已同步数量
-                     * @return SyncPodCount K8S集群pod已同步数量
+                     * 获取<p>K8S集群pod已同步数量</p>
+                     * @return SyncPodCount <p>K8S集群pod已同步数量</p>
                      * 
                      */
                     uint64_t GetSyncPodCount() const;
 
                     /**
-                     * 设置K8S集群pod已同步数量
-                     * @param _syncPodCount K8S集群pod已同步数量
+                     * 设置<p>K8S集群pod已同步数量</p>
+                     * @param _syncPodCount <p>K8S集群pod已同步数量</p>
                      * 
                      */
                     void SetSyncPodCount(const uint64_t& _syncPodCount);
@@ -617,15 +617,15 @@ namespace TencentCloud
                     bool SyncPodCountHasBeenSet() const;
 
                     /**
-                     * 获取K8S集群pod总数量	
-                     * @return TotalPodCount K8S集群pod总数量	
+                     * 获取<p>K8S集群pod总数量</p>
+                     * @return TotalPodCount <p>K8S集群pod总数量</p>
                      * 
                      */
                     uint64_t GetTotalPodCount() const;
 
                     /**
-                     * 设置K8S集群pod总数量	
-                     * @param _totalPodCount K8S集群pod总数量	
+                     * 设置<p>K8S集群pod总数量</p>
+                     * @param _totalPodCount <p>K8S集群pod总数量</p>
                      * 
                      */
                     void SetTotalPodCount(const uint64_t& _totalPodCount);
@@ -638,15 +638,15 @@ namespace TencentCloud
                     bool TotalPodCountHasBeenSet() const;
 
                     /**
-                     * 获取云账号id
-                     * @return CloudAccountId 云账号id
+                     * 获取<p>云账号id</p>
+                     * @return CloudAccountId <p>云账号id</p>
                      * 
                      */
                     uint64_t GetCloudAccountId() const;
 
                     /**
-                     * 设置云账号id
-                     * @param _cloudAccountId 云账号id
+                     * 设置<p>云账号id</p>
+                     * @param _cloudAccountId <p>云账号id</p>
                      * 
                      */
                     void SetCloudAccountId(const uint64_t& _cloudAccountId);
@@ -659,15 +659,15 @@ namespace TencentCloud
                     bool CloudAccountIdHasBeenSet() const;
 
                     /**
-                     * 获取云账号名称
-                     * @return CloudAccountName 云账号名称
+                     * 获取<p>云账号名称</p>
+                     * @return CloudAccountName <p>云账号名称</p>
                      * 
                      */
                     std::string GetCloudAccountName() const;
 
                     /**
-                     * 设置云账号名称
-                     * @param _cloudAccountName 云账号名称
+                     * 设置<p>云账号名称</p>
+                     * @param _cloudAccountName <p>云账号名称</p>
                      * 
                      */
                     void SetCloudAccountName(const std::string& _cloudAccountName);
@@ -680,15 +680,15 @@ namespace TencentCloud
                     bool CloudAccountNameHasBeenSet() const;
 
                     /**
-                     * 获取云厂商类型1-腾讯云，2-阿里云
-                     * @return ProviderType 云厂商类型1-腾讯云，2-阿里云
+                     * 获取<p>云厂商类型1-腾讯云，2-阿里云</p>
+                     * @return ProviderType <p>云厂商类型1-腾讯云，2-阿里云</p>
                      * 
                      */
                     uint64_t GetProviderType() const;
 
                     /**
-                     * 设置云厂商类型1-腾讯云，2-阿里云
-                     * @param _providerType 云厂商类型1-腾讯云，2-阿里云
+                     * 设置<p>云厂商类型1-腾讯云，2-阿里云</p>
+                     * @param _providerType <p>云厂商类型1-腾讯云，2-阿里云</p>
                      * 
                      */
                     void SetProviderType(const uint64_t& _providerType);
@@ -701,15 +701,15 @@ namespace TencentCloud
                     bool ProviderTypeHasBeenSet() const;
 
                     /**
-                     * 获取云厂商名称
-                     * @return ProviderName 云厂商名称
+                     * 获取<p>云厂商名称</p>
+                     * @return ProviderName <p>云厂商名称</p>
                      * 
                      */
                     std::string GetProviderName() const;
 
                     /**
-                     * 设置云厂商名称
-                     * @param _providerName 云厂商名称
+                     * 设置<p>云厂商名称</p>
+                     * @param _providerName <p>云厂商名称</p>
                      * 
                      */
                     void SetProviderName(const std::string& _providerName);
@@ -722,15 +722,15 @@ namespace TencentCloud
                     bool ProviderNameHasBeenSet() const;
 
                     /**
-                     * 获取同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
-                     * @return SyncCloudDeviceStatus 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * 获取<p>同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期</p>
+                     * @return SyncCloudDeviceStatus <p>同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期</p>
                      * 
                      */
                     uint64_t GetSyncCloudDeviceStatus() const;
 
                     /**
-                     * 设置同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
-                     * @param _syncCloudDeviceStatus 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * 设置<p>同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期</p>
+                     * @param _syncCloudDeviceStatus <p>同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期</p>
                      * 
                      */
                     void SetSyncCloudDeviceStatus(const uint64_t& _syncCloudDeviceStatus);
@@ -745,199 +745,199 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资产ID
+                     * <p>资产ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 实例ID，对应CVM、CDB等实例ID
+                     * <p>实例ID，对应CVM、CDB等实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 资产名
+                     * <p>资产名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 公网IP
+                     * <p>公网IP</p>
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
-                     * 内网IP
+                     * <p>内网IP</p>
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;
 
                     /**
-                     * 地域编码
+                     * <p>地域编码</p>
                      */
                     std::string m_apCode;
                     bool m_apCodeHasBeenSet;
 
                     /**
-                     * 地域名称
+                     * <p>地域名称</p>
                      */
                     std::string m_apName;
                     bool m_apNameHasBeenSet;
 
                     /**
-                     * 操作系统名称
+                     * <p>操作系统名称</p>
                      */
                     std::string m_osName;
                     bool m_osNameHasBeenSet;
 
                     /**
-                     * 资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * <p>资产类型 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
                      */
                     uint64_t m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
-                     * 管理端口
+                     * <p>管理端口</p>
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 所属资产组列表
+                     * <p>所属资产组列表</p>
                      */
                     std::vector<Group> m_groupSet;
                     bool m_groupSetHasBeenSet;
 
                     /**
-                     * 资产绑定的账号数
+                     * <p>资产绑定的账号数</p>
                      */
                     uint64_t m_accountCount;
                     bool m_accountCountHasBeenSet;
 
                     /**
-                     * VPC ID
+                     * <p>VPC ID</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * <p>子网ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 堡垒机服务信息，注意没有绑定服务时为null
+                     * <p>堡垒机服务信息，注意没有绑定服务时为null</p>
                      */
                     Resource m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
-                     * 资产所属部门
+                     * <p>资产所属部门</p>
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
 
                     /**
-                     * 数据库资产的多节点
+                     * <p>数据库资产的多节点</p>
                      */
                     std::vector<std::string> m_ipPortSet;
                     bool m_ipPortSetHasBeenSet;
 
                     /**
-                     * 网络域Id
+                     * <p>网络域Id</p>
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 网络域名称
+                     * <p>网络域名称</p>
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 是否启用SSL，仅支持Redis资产。0：禁用 1：启用
+                     * <p>是否启用SSL，仅支持Redis资产。0：禁用 1：启用</p>
                      */
                     int64_t m_enableSSL;
                     bool m_enableSSLHasBeenSet;
 
                     /**
-                     * 已上传的SSL证书名称
+                     * <p>已上传的SSL证书名称</p>
                      */
                     std::string m_sSLCertName;
                     bool m_sSLCertNameHasBeenSet;
 
                     /**
-                     * IOA侧的资源ID
+                     * <p>IOA侧的资源ID</p>
                      */
                     int64_t m_iOAId;
                     bool m_iOAIdHasBeenSet;
 
                     /**
-                     * K8S集群托管维度。1-集群，2-命名空间，3-工作负载
+                     * <p>K8S集群托管维度。1-集群，2-命名空间，3-工作负载</p>
                      */
                     uint64_t m_manageDimension;
                     bool m_manageDimensionHasBeenSet;
 
                     /**
-                     * K8S集群托管账号id	
+                     * <p>K8S集群托管账号id</p>
                      */
                     uint64_t m_manageAccountId;
                     bool m_manageAccountIdHasBeenSet;
 
                     /**
-                     * K8S集群命名空间	
+                     * <p>K8S集群命名空间</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * K8S集群工作负载	
+                     * <p>K8S集群工作负载</p>
                      */
                     std::string m_workload;
                     bool m_workloadHasBeenSet;
 
                     /**
-                     * K8S集群pod已同步数量
+                     * <p>K8S集群pod已同步数量</p>
                      */
                     uint64_t m_syncPodCount;
                     bool m_syncPodCountHasBeenSet;
 
                     /**
-                     * K8S集群pod总数量	
+                     * <p>K8S集群pod总数量</p>
                      */
                     uint64_t m_totalPodCount;
                     bool m_totalPodCountHasBeenSet;
 
                     /**
-                     * 云账号id
+                     * <p>云账号id</p>
                      */
                     uint64_t m_cloudAccountId;
                     bool m_cloudAccountIdHasBeenSet;
 
                     /**
-                     * 云账号名称
+                     * <p>云账号名称</p>
                      */
                     std::string m_cloudAccountName;
                     bool m_cloudAccountNameHasBeenSet;
 
                     /**
-                     * 云厂商类型1-腾讯云，2-阿里云
+                     * <p>云厂商类型1-腾讯云，2-阿里云</p>
                      */
                     uint64_t m_providerType;
                     bool m_providerTypeHasBeenSet;
 
                     /**
-                     * 云厂商名称
+                     * <p>云厂商名称</p>
                      */
                     std::string m_providerName;
                     bool m_providerNameHasBeenSet;
 
                     /**
-                     * 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * <p>同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期</p>
                      */
                     uint64_t m_syncCloudDeviceStatus;
                     bool m_syncCloudDeviceStatusHasBeenSet;

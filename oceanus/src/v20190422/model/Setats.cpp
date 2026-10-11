@@ -40,7 +40,9 @@ Setats::Setats() :
     m_webUITypeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_isolationPolicyVersionHasBeenSet(false)
+    m_isolationPolicyVersionHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_cCNsHasBeenSet(false)
 {
 }
 
@@ -280,6 +282,39 @@ CoreInternalOutcome Setats::Deserialize(const rapidjson::Value &value)
         m_isolationPolicyVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
+    {
+        if (!value["SecurityGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Setats.SecurityGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupIds.push_back((*itr).GetString());
+        }
+        m_securityGroupIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CCNs") && !value["CCNs"].IsNull())
+    {
+        if (!value["CCNs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Setats.CCNs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CCNs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CCN item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cCNs.push_back(item);
+        }
+        m_cCNsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -455,6 +490,34 @@ void Setats::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "IsolationPolicyVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isolationPolicyVersion, allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cCNsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CCNs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cCNs.begin(); itr != m_cCNs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -778,5 +841,37 @@ void Setats::SetIsolationPolicyVersion(const int64_t& _isolationPolicyVersion)
 bool Setats::IsolationPolicyVersionHasBeenSet() const
 {
     return m_isolationPolicyVersionHasBeenSet;
+}
+
+vector<string> Setats::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void Setats::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool Setats::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
+}
+
+vector<CCN> Setats::GetCCNs() const
+{
+    return m_cCNs;
+}
+
+void Setats::SetCCNs(const vector<CCN>& _cCNs)
+{
+    m_cCNs = _cCNs;
+    m_cCNsHasBeenSet = true;
+}
+
+bool Setats::CCNsHasBeenSet() const
+{
+    return m_cCNsHasBeenSet;
 }
 

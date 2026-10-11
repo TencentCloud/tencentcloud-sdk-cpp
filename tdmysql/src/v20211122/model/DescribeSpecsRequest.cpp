@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeSpecsRequest::DescribeSpecsRequest() :
     m_fullReplicationsHasBeenSet(false),
-    m_isExclusiveInstanceHasBeenSet(false)
+    m_isExclusiveInstanceHasBeenSet(false),
+    m_zonesHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string DescribeSpecsRequest::ToJsonString() const
         string key = "IsExclusiveInstance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isExclusiveInstance, allocator);
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -89,6 +103,22 @@ void DescribeSpecsRequest::SetIsExclusiveInstance(const int64_t& _isExclusiveIns
 bool DescribeSpecsRequest::IsExclusiveInstanceHasBeenSet() const
 {
     return m_isExclusiveInstanceHasBeenSet;
+}
+
+vector<string> DescribeSpecsRequest::GetZones() const
+{
+    return m_zones;
+}
+
+void DescribeSpecsRequest::SetZones(const vector<string>& _zones)
+{
+    m_zones = _zones;
+    m_zonesHasBeenSet = true;
+}
+
+bool DescribeSpecsRequest::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
 }
 
 

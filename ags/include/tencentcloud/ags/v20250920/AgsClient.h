@@ -43,6 +43,8 @@
 #include <tencentcloud/ags/v20250920/model/CreateRegistryResponse.h>
 #include <tencentcloud/ags/v20250920/model/CreateRegistryRecordRequest.h>
 #include <tencentcloud/ags/v20250920/model/CreateRegistryRecordResponse.h>
+#include <tencentcloud/ags/v20250920/model/CreateSandboxSnapshotRequest.h>
+#include <tencentcloud/ags/v20250920/model/CreateSandboxSnapshotResponse.h>
 #include <tencentcloud/ags/v20250920/model/CreateSandboxToolRequest.h>
 #include <tencentcloud/ags/v20250920/model/CreateSandboxToolResponse.h>
 #include <tencentcloud/ags/v20250920/model/CreateSessionRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/ags/v20250920/model/DeleteRegistryResponse.h>
 #include <tencentcloud/ags/v20250920/model/DeleteRegistryRecordRequest.h>
 #include <tencentcloud/ags/v20250920/model/DeleteRegistryRecordResponse.h>
+#include <tencentcloud/ags/v20250920/model/DeleteSandboxSnapshotRequest.h>
+#include <tencentcloud/ags/v20250920/model/DeleteSandboxSnapshotResponse.h>
 #include <tencentcloud/ags/v20250920/model/DeleteSandboxToolRequest.h>
 #include <tencentcloud/ags/v20250920/model/DeleteSandboxToolResponse.h>
 #include <tencentcloud/ags/v20250920/model/DeleteSessionRequest.h>
@@ -89,6 +93,8 @@
 #include <tencentcloud/ags/v20250920/model/DescribeRegistryRecordVersionListResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListResponse.h>
+#include <tencentcloud/ags/v20250920/model/DescribeSandboxSnapshotListRequest.h>
+#include <tencentcloud/ags/v20250920/model/DescribeSandboxSnapshotListResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxToolListRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxToolListResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSessionRequest.h>
@@ -175,6 +181,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRegistryRecordResponse> CreateRegistryRecordOutcome;
                 typedef std::future<CreateRegistryRecordOutcome> CreateRegistryRecordOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::CreateRegistryRecordRequest&, CreateRegistryRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRegistryRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSandboxSnapshotResponse> CreateSandboxSnapshotOutcome;
+                typedef std::future<CreateSandboxSnapshotOutcome> CreateSandboxSnapshotOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::CreateSandboxSnapshotRequest&, CreateSandboxSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSandboxSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSandboxToolResponse> CreateSandboxToolOutcome;
                 typedef std::future<CreateSandboxToolOutcome> CreateSandboxToolOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::CreateSandboxToolRequest&, CreateSandboxToolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSandboxToolAsyncHandler;
@@ -196,6 +205,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRegistryRecordResponse> DeleteRegistryRecordOutcome;
                 typedef std::future<DeleteRegistryRecordOutcome> DeleteRegistryRecordOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DeleteRegistryRecordRequest&, DeleteRegistryRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRegistryRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSandboxSnapshotResponse> DeleteSandboxSnapshotOutcome;
+                typedef std::future<DeleteSandboxSnapshotOutcome> DeleteSandboxSnapshotOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::DeleteSandboxSnapshotRequest&, DeleteSandboxSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSandboxSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSandboxToolResponse> DeleteSandboxToolOutcome;
                 typedef std::future<DeleteSandboxToolOutcome> DeleteSandboxToolOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DeleteSandboxToolRequest&, DeleteSandboxToolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSandboxToolAsyncHandler;
@@ -244,6 +256,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSandboxInstanceListResponse> DescribeSandboxInstanceListOutcome;
                 typedef std::future<DescribeSandboxInstanceListOutcome> DescribeSandboxInstanceListOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribeSandboxInstanceListRequest&, DescribeSandboxInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxSnapshotListResponse> DescribeSandboxSnapshotListOutcome;
+                typedef std::future<DescribeSandboxSnapshotListOutcome> DescribeSandboxSnapshotListOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::DescribeSandboxSnapshotListRequest&, DescribeSandboxSnapshotListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxSnapshotListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSandboxToolListResponse> DescribeSandboxToolListOutcome;
                 typedef std::future<DescribeSandboxToolListOutcome> DescribeSandboxToolListOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribeSandboxToolListRequest&, DescribeSandboxToolListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxToolListAsyncHandler;
@@ -404,6 +419,16 @@ namespace TencentCloud
                 CreateRegistryRecordOutcomeCallable CreateRegistryRecordCallable(const Model::CreateRegistryRecordRequest& request);
 
                 /**
+                 *创建沙箱快照
+该接口属于 Runtime Snapshot API ，当前为预览版本（Beta）。接口后续可能发生不兼容变更或被弃用，不保证向后兼容。接入方需关注后续版本及变更说明，并根据需要调整调用代码。
+                 * @param req CreateSandboxSnapshotRequest
+                 * @return CreateSandboxSnapshotOutcome
+                 */
+                CreateSandboxSnapshotOutcome CreateSandboxSnapshot(const Model::CreateSandboxSnapshotRequest &request);
+                void CreateSandboxSnapshotAsync(const Model::CreateSandboxSnapshotRequest& request, const CreateSandboxSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSandboxSnapshotOutcomeCallable CreateSandboxSnapshotCallable(const Model::CreateSandboxSnapshotRequest& request);
+
+                /**
                  *创建沙箱工具
                  * @param req CreateSandboxToolRequest
                  * @return CreateSandboxToolOutcome
@@ -468,6 +493,16 @@ namespace TencentCloud
                 DeleteRegistryRecordOutcome DeleteRegistryRecord(const Model::DeleteRegistryRecordRequest &request);
                 void DeleteRegistryRecordAsync(const Model::DeleteRegistryRecordRequest& request, const DeleteRegistryRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRegistryRecordOutcomeCallable DeleteRegistryRecordCallable(const Model::DeleteRegistryRecordRequest& request);
+
+                /**
+                 *删除沙箱快照
+该接口属于 Runtime Snapshot API ，当前为预览版本（Beta）。接口后续可能发生不兼容变更或被弃用，不保证向后兼容。接入方需关注后续版本及变更说明，并根据需要调整调用代码。
+                 * @param req DeleteSandboxSnapshotRequest
+                 * @return DeleteSandboxSnapshotOutcome
+                 */
+                DeleteSandboxSnapshotOutcome DeleteSandboxSnapshot(const Model::DeleteSandboxSnapshotRequest &request);
+                void DeleteSandboxSnapshotAsync(const Model::DeleteSandboxSnapshotRequest& request, const DeleteSandboxSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSandboxSnapshotOutcomeCallable DeleteSandboxSnapshotCallable(const Model::DeleteSandboxSnapshotRequest& request);
 
                 /**
                  *删除沙箱工具
@@ -615,6 +650,16 @@ namespace TencentCloud
                 DescribeSandboxInstanceListOutcome DescribeSandboxInstanceList(const Model::DescribeSandboxInstanceListRequest &request);
                 void DescribeSandboxInstanceListAsync(const Model::DescribeSandboxInstanceListRequest& request, const DescribeSandboxInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSandboxInstanceListOutcomeCallable DescribeSandboxInstanceListCallable(const Model::DescribeSandboxInstanceListRequest& request);
+
+                /**
+                 *查询沙箱快照
+该接口属于 Runtime Snapshot API ，当前为预览版本（Beta）。接口后续可能发生不兼容变更或被弃用，不保证向后兼容。请关注后续版本及变更说明，并根据需要调整调用代码。
+                 * @param req DescribeSandboxSnapshotListRequest
+                 * @return DescribeSandboxSnapshotListOutcome
+                 */
+                DescribeSandboxSnapshotListOutcome DescribeSandboxSnapshotList(const Model::DescribeSandboxSnapshotListRequest &request);
+                void DescribeSandboxSnapshotListAsync(const Model::DescribeSandboxSnapshotListRequest& request, const DescribeSandboxSnapshotListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxSnapshotListOutcomeCallable DescribeSandboxSnapshotListCallable(const Model::DescribeSandboxSnapshotListRequest& request);
 
                 /**
                  *查询沙箱工具列表

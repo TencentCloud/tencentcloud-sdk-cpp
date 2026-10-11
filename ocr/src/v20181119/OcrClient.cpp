@@ -640,6 +640,56 @@ OcrClient::DescribeMarkEssayAgentJobOutcomeCallable OcrClient::DescribeMarkEssay
     return prom->get_future();
 }
 
+OcrClient::DescribeMultimodalDocParseJobOutcome OcrClient::DescribeMultimodalDocParseJob(const DescribeMultimodalDocParseJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMultimodalDocParseJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMultimodalDocParseJobResponse rsp = DescribeMultimodalDocParseJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMultimodalDocParseJobOutcome(rsp);
+        else
+            return DescribeMultimodalDocParseJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMultimodalDocParseJobOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::DescribeMultimodalDocParseJobAsync(const DescribeMultimodalDocParseJobRequest& request, const DescribeMultimodalDocParseJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMultimodalDocParseJobRequest&;
+    using Resp = DescribeMultimodalDocParseJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMultimodalDocParseJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::DescribeMultimodalDocParseJobOutcomeCallable OcrClient::DescribeMultimodalDocParseJobCallable(const DescribeMultimodalDocParseJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMultimodalDocParseJobOutcome>>();
+    DescribeMultimodalDocParseJobAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const DescribeMultimodalDocParseJobRequest&,
+        DescribeMultimodalDocParseJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::DescribeQuestionMarkAgentJobOutcome OcrClient::DescribeQuestionMarkAgentJob(const DescribeQuestionMarkAgentJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQuestionMarkAgentJob");
@@ -3040,6 +3090,56 @@ OcrClient::RideHailingTransportLicenseOCROutcomeCallable OcrClient::RideHailingT
     return prom->get_future();
 }
 
+OcrClient::RunRerankOutcome OcrClient::RunRerank(const RunRerankRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunRerank");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunRerankResponse rsp = RunRerankResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunRerankOutcome(rsp);
+        else
+            return RunRerankOutcome(o.GetError());
+    }
+    else
+    {
+        return RunRerankOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RunRerankAsync(const RunRerankRequest& request, const RunRerankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RunRerankRequest&;
+    using Resp = RunRerankResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RunRerank", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::RunRerankOutcomeCallable OcrClient::RunRerankCallable(const RunRerankRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RunRerankOutcome>>();
+    RunRerankAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const RunRerankRequest&,
+        RunRerankOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::SealOCROutcome OcrClient::SealOCR(const SealOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "SealOCR");
@@ -3232,6 +3332,56 @@ OcrClient::SubmitMarkEssayAgentJobOutcomeCallable OcrClient::SubmitMarkEssayAgen
         const OcrClient*,
         const SubmitMarkEssayAgentJobRequest&,
         SubmitMarkEssayAgentJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OcrClient::SubmitMultimodalDocParseJobOutcome OcrClient::SubmitMultimodalDocParseJob(const SubmitMultimodalDocParseJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitMultimodalDocParseJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitMultimodalDocParseJobResponse rsp = SubmitMultimodalDocParseJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitMultimodalDocParseJobOutcome(rsp);
+        else
+            return SubmitMultimodalDocParseJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitMultimodalDocParseJobOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::SubmitMultimodalDocParseJobAsync(const SubmitMultimodalDocParseJobRequest& request, const SubmitMultimodalDocParseJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitMultimodalDocParseJobRequest&;
+    using Resp = SubmitMultimodalDocParseJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitMultimodalDocParseJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::SubmitMultimodalDocParseJobOutcomeCallable OcrClient::SubmitMultimodalDocParseJobCallable(const SubmitMultimodalDocParseJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitMultimodalDocParseJobOutcome>>();
+    SubmitMultimodalDocParseJobAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const SubmitMultimodalDocParseJobRequest&,
+        SubmitMultimodalDocParseJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

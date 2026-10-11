@@ -30,7 +30,8 @@ FileConfig::FileConfig() :
     m_widgetsHasBeenSet(false),
     m_outputConfHasBeenSet(false),
     m_sqlSyntaxHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_defaultCatalogSourceHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome FileConfig::Deserialize(const rapidjson::Value &value)
         m_clusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultCatalogSource") && !value["DefaultCatalogSource"].IsNull())
+    {
+        if (!value["DefaultCatalogSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileConfig.DefaultCatalogSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultCatalogSource = string(value["DefaultCatalogSource"].GetString());
+        m_defaultCatalogSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void FileConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultCatalogSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultCatalogSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultCatalogSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void FileConfig::SetClusterId(const string& _clusterId)
 bool FileConfig::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string FileConfig::GetDefaultCatalogSource() const
+{
+    return m_defaultCatalogSource;
+}
+
+void FileConfig::SetDefaultCatalogSource(const string& _defaultCatalogSource)
+{
+    m_defaultCatalogSource = _defaultCatalogSource;
+    m_defaultCatalogSourceHasBeenSet = true;
+}
+
+bool FileConfig::DefaultCatalogSourceHasBeenSet() const
+{
+    return m_defaultCatalogSourceHasBeenSet;
 }
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取监控类型
-                     * @return MonitorType 监控类型
+                     * 获取<p>监控类型</p>
+                     * @return MonitorType <p>监控类型</p>
                      * 
                      */
                     std::string GetMonitorType() const;
 
                     /**
-                     * 设置监控类型
-                     * @param _monitorType 监控类型
+                     * 设置<p>监控类型</p>
+                     * @param _monitorType <p>监控类型</p>
                      * 
                      */
                     void SetMonitorType(const std::string& _monitorType);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool MonitorTypeHasBeenSet() const;
 
                     /**
-                     * 获取起始时间点，unix秒级时间戳
-                     * @return QueryBaseTime 起始时间点，unix秒级时间戳
+                     * 获取<p>起始时间点，unix秒级时间戳</p>
+                     * @return QueryBaseTime <p>起始时间点，unix秒级时间戳</p>
                      * 
                      */
                     int64_t GetQueryBaseTime() const;
 
                     /**
-                     * 设置起始时间点，unix秒级时间戳
-                     * @param _queryBaseTime 起始时间点，unix秒级时间戳
+                     * 设置<p>起始时间点，unix秒级时间戳</p>
+                     * @param _queryBaseTime <p>起始时间点，unix秒级时间戳</p>
                      * 
                      */
                     void SetQueryBaseTime(const int64_t& _queryBaseTime);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool QueryBaseTimeHasBeenSet() const;
 
                     /**
-                     * 获取从 QueryBaseTime 开始，需要查询往前多久的时间，单位秒
-                     * @return QueryBeforeSeconds 从 QueryBaseTime 开始，需要查询往前多久的时间，单位秒
+                     * 获取<p>从 QueryBaseTime 开始，需要查询往前多久的时间，单位秒</p>
+                     * @return QueryBeforeSeconds <p>从 QueryBaseTime 开始，需要查询往前多久的时间，单位秒</p>
                      * 
                      */
                     int64_t GetQueryBeforeSeconds() const;
 
                     /**
-                     * 设置从 QueryBaseTime 开始，需要查询往前多久的时间，单位秒
-                     * @param _queryBeforeSeconds 从 QueryBaseTime 开始，需要查询往前多久的时间，单位秒
+                     * 设置<p>从 QueryBaseTime 开始，需要查询往前多久的时间，单位秒</p>
+                     * @param _queryBeforeSeconds <p>从 QueryBaseTime 开始，需要查询往前多久的时间，单位秒</p>
                      * 
                      */
                     void SetQueryBeforeSeconds(const int64_t& _queryBeforeSeconds);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool QueryBeforeSecondsHasBeenSet() const;
 
                     /**
-                     * 获取分页参数
-                     * @return PageParams 分页参数
+                     * 获取<p>分页参数</p>
+                     * @return PageParams <p>分页参数</p>
                      * 
                      */
                     PageByNoParams GetPageParams() const;
 
                     /**
-                     * 设置分页参数
-                     * @param _pageParams 分页参数
+                     * 设置<p>分页参数</p>
+                     * @param _pageParams <p>分页参数</p>
                      * 
                      */
                     void SetPageParams(const PageByNoParams& _pageParams);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool PageParamsHasBeenSet() const;
 
                     /**
-                     * 获取当监控类型为 MT_QCE 时候需要填写，归属的命名空间
-                     * @return Namespace 当监控类型为 MT_QCE 时候需要填写，归属的命名空间
+                     * 获取<p>当监控类型为 MT_QCE 时候需要填写，归属的命名空间</p>
+                     * @return Namespace <p>当监控类型为 MT_QCE 时候需要填写，归属的命名空间</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置当监控类型为 MT_QCE 时候需要填写，归属的命名空间
-                     * @param _namespace 当监控类型为 MT_QCE 时候需要填写，归属的命名空间
+                     * 设置<p>当监控类型为 MT_QCE 时候需要填写，归属的命名空间</p>
+                     * @param _namespace <p>当监控类型为 MT_QCE 时候需要填写，归属的命名空间</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取当监控类型为 MT_QCE 时候需要填写， 告警策略类型
-                     * @return ModelName 当监控类型为 MT_QCE 时候需要填写， 告警策略类型
+                     * 获取<p>当监控类型为 MT_QCE 时候需要填写， 告警策略类型</p>
+                     * @return ModelName <p>当监控类型为 MT_QCE 时候需要填写， 告警策略类型</p>
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
-                     * 设置当监控类型为 MT_QCE 时候需要填写， 告警策略类型
-                     * @param _modelName 当监控类型为 MT_QCE 时候需要填写， 告警策略类型
+                     * 设置<p>当监控类型为 MT_QCE 时候需要填写， 告警策略类型</p>
+                     * @param _modelName <p>当监控类型为 MT_QCE 时候需要填写， 告警策略类型</p>
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取查询某个策略的通知历史
-                     * @return PolicyId 查询某个策略的通知历史
+                     * 获取<p>查询某个策略的通知历史</p>
+                     * @return PolicyId <p>查询某个策略的通知历史</p>
                      * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
-                     * 设置查询某个策略的通知历史
-                     * @param _policyId 查询某个策略的通知历史
+                     * 设置<p>查询某个策略的通知历史</p>
+                     * @param _policyId <p>查询某个策略的通知历史</p>
                      * 
                      */
                     void SetPolicyId(const std::string& _policyId);
@@ -190,49 +190,76 @@ namespace TencentCloud
                      */
                     bool PolicyIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>详情页展示所需id</p>
+                     * @return NotifyId <p>详情页展示所需id</p>
+                     * 
+                     */
+                    std::string GetNotifyId() const;
+
+                    /**
+                     * 设置<p>详情页展示所需id</p>
+                     * @param _notifyId <p>详情页展示所需id</p>
+                     * 
+                     */
+                    void SetNotifyId(const std::string& _notifyId);
+
+                    /**
+                     * 判断参数 NotifyId 是否已赋值
+                     * @return NotifyId 是否已赋值
+                     * 
+                     */
+                    bool NotifyIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 监控类型
+                     * <p>监控类型</p>
                      */
                     std::string m_monitorType;
                     bool m_monitorTypeHasBeenSet;
 
                     /**
-                     * 起始时间点，unix秒级时间戳
+                     * <p>起始时间点，unix秒级时间戳</p>
                      */
                     int64_t m_queryBaseTime;
                     bool m_queryBaseTimeHasBeenSet;
 
                     /**
-                     * 从 QueryBaseTime 开始，需要查询往前多久的时间，单位秒
+                     * <p>从 QueryBaseTime 开始，需要查询往前多久的时间，单位秒</p>
                      */
                     int64_t m_queryBeforeSeconds;
                     bool m_queryBeforeSecondsHasBeenSet;
 
                     /**
-                     * 分页参数
+                     * <p>分页参数</p>
                      */
                     PageByNoParams m_pageParams;
                     bool m_pageParamsHasBeenSet;
 
                     /**
-                     * 当监控类型为 MT_QCE 时候需要填写，归属的命名空间
+                     * <p>当监控类型为 MT_QCE 时候需要填写，归属的命名空间</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 当监控类型为 MT_QCE 时候需要填写， 告警策略类型
+                     * <p>当监控类型为 MT_QCE 时候需要填写， 告警策略类型</p>
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 查询某个策略的通知历史
+                     * <p>查询某个策略的通知历史</p>
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;
+
+                    /**
+                     * <p>详情页展示所需id</p>
+                     */
+                    std::string m_notifyId;
+                    bool m_notifyIdHasBeenSet;
 
                 };
             }

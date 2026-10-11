@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性名
+                     * 获取<p>属性键名。用于TaskType内的入参时，若不传或为空，该属性项被服务端静默忽略（不报错），等同于该属性未配置。合法 PropertyKey 清单请参考TaskType中描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PropertyKey 属性名
+                     * @return PropertyKey <p>属性键名。用于TaskType内的入参时，若不传或为空，该属性项被服务端静默忽略（不报错），等同于该属性未配置。合法 PropertyKey 清单请参考TaskType中描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPropertyKey() const;
 
                     /**
-                     * 设置属性名
+                     * 设置<p>属性键名。用于TaskType内的入参时，若不传或为空，该属性项被服务端静默忽略（不报错），等同于该属性未配置。合法 PropertyKey 清单请参考TaskType中描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _propertyKey 属性名
+                     * @param _propertyKey <p>属性键名。用于TaskType内的入参时，若不传或为空，该属性项被服务端静默忽略（不报错），等同于该属性未配置。合法 PropertyKey 清单请参考TaskType中描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool PropertyKeyHasBeenSet() const;
 
                     /**
-                     * 获取属性值
+                     * 获取<p>属性值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PropertyValue 属性值
+                     * @return PropertyValue <p>属性值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPropertyValue() const;
 
                     /**
-                     * 设置属性值
+                     * 设置<p>属性值</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _propertyValue 属性值
+                     * @param _propertyValue <p>属性值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 属性名
+                     * <p>属性键名。用于TaskType内的入参时，若不传或为空，该属性项被服务端静默忽略（不报错），等同于该属性未配置。合法 PropertyKey 清单请参考TaskType中描述。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_propertyKey;
                     bool m_propertyKeyHasBeenSet;
 
                     /**
-                     * 属性值
+                     * <p>属性值</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_propertyValue;

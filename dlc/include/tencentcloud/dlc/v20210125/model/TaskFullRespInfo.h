@@ -1673,6 +1673,27 @@ namespace TencentCloud
                      */
                     bool ResourceGroupTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务标签</p><p>参数格式：任意字符串</p>
+                     * @return Tag <p>任务标签</p><p>参数格式：任意字符串</p>
+                     * 
+                     */
+                    std::string GetTag() const;
+
+                    /**
+                     * 设置<p>任务标签</p><p>参数格式：任意字符串</p>
+                     * @param _tag <p>任务标签</p><p>参数格式：任意字符串</p>
+                     * 
+                     */
+                    void SetTag(const std::string& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2134,6 +2155,12 @@ namespace TencentCloud
                      */
                     std::string m_resourceGroupType;
                     bool m_resourceGroupTypeHasBeenSet;
+
+                    /**
+                     * <p>任务标签</p><p>参数格式：任意字符串</p>
+                     */
+                    std::string m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

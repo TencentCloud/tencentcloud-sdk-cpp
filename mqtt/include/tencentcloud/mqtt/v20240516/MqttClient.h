@@ -91,6 +91,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeCaCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeCaCertificatesRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeCaCertificatesResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeClientEventsRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeClientEventsResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeClientListRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeClientListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateRequest.h>
@@ -297,6 +299,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCaCertificatesResponse> DescribeCaCertificatesOutcome;
                 typedef std::future<DescribeCaCertificatesOutcome> DescribeCaCertificatesOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeCaCertificatesRequest&, DescribeCaCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaCertificatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClientEventsResponse> DescribeClientEventsOutcome;
+                typedef std::future<DescribeClientEventsOutcome> DescribeClientEventsOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeClientEventsRequest&, DescribeClientEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClientListResponse> DescribeClientListOutcome;
                 typedef std::future<DescribeClientListOutcome> DescribeClientListOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeClientListRequest&, DescribeClientListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientListAsyncHandler;
@@ -740,6 +745,15 @@ namespace TencentCloud
                 DescribeCaCertificatesOutcome DescribeCaCertificates(const Model::DescribeCaCertificatesRequest &request);
                 void DescribeCaCertificatesAsync(const Model::DescribeCaCertificatesRequest& request, const DescribeCaCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCaCertificatesOutcomeCallable DescribeCaCertificatesCallable(const Model::DescribeCaCertificatesRequest& request);
+
+                /**
+                 *查询轨迹
+                 * @param req DescribeClientEventsRequest
+                 * @return DescribeClientEventsOutcome
+                 */
+                DescribeClientEventsOutcome DescribeClientEvents(const Model::DescribeClientEventsRequest &request);
+                void DescribeClientEventsAsync(const Model::DescribeClientEventsRequest& request, const DescribeClientEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClientEventsOutcomeCallable DescribeClientEventsCallable(const Model::DescribeClientEventsRequest& request);
 
                 /**
                  *查询 MQTT 客户端详情

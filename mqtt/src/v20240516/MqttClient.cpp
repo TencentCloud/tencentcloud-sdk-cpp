@@ -1740,6 +1740,56 @@ MqttClient::DescribeCaCertificatesOutcomeCallable MqttClient::DescribeCaCertific
     return prom->get_future();
 }
 
+MqttClient::DescribeClientEventsOutcome MqttClient::DescribeClientEvents(const DescribeClientEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClientEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClientEventsResponse rsp = DescribeClientEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClientEventsOutcome(rsp);
+        else
+            return DescribeClientEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClientEventsOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeClientEventsAsync(const DescribeClientEventsRequest& request, const DescribeClientEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeClientEventsRequest&;
+    using Resp = DescribeClientEventsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeClientEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MqttClient::DescribeClientEventsOutcomeCallable MqttClient::DescribeClientEventsCallable(const DescribeClientEventsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeClientEventsOutcome>>();
+    DescribeClientEventsAsync(
+    request,
+    [prom](
+        const MqttClient*,
+        const DescribeClientEventsRequest&,
+        DescribeClientEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MqttClient::DescribeClientListOutcome MqttClient::DescribeClientList(const DescribeClientListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClientList");

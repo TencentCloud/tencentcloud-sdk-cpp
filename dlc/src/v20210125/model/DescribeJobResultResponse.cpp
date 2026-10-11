@@ -31,6 +31,7 @@ DescribeJobResultResponse::DescribeJobResultResponse() :
     m_columnsHasBeenSet(false),
     m_totalRowsHasBeenSet(false),
     m_rowsHasBeenSet(false),
+    m_downloadHasBeenSet(false),
     m_truncatedHasBeenSet(false)
 {
 }
@@ -159,6 +160,23 @@ CoreInternalOutcome DescribeJobResultResponse::Deserialize(const string &payload
         m_rowsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Download") && !rsp["Download"].IsNull())
+    {
+        if (!rsp["Download"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Download` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_download.Deserialize(rsp["Download"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_downloadHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Truncated") && !rsp["Truncated"].IsNull())
     {
         if (!rsp["Truncated"].IsBool())
@@ -249,6 +267,15 @@ string DescribeJobResultResponse::ToJsonString() const
         }
     }
 
+    if (m_downloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Download";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_download.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_truncatedHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -337,6 +364,16 @@ vector<ResultRow> DescribeJobResultResponse::GetRows() const
 bool DescribeJobResultResponse::RowsHasBeenSet() const
 {
     return m_rowsHasBeenSet;
+}
+
+DownloadInfo DescribeJobResultResponse::GetDownload() const
+{
+    return m_download;
+}
+
+bool DescribeJobResultResponse::DownloadHasBeenSet() const
+{
+    return m_downloadHasBeenSet;
 }
 
 bool DescribeJobResultResponse::GetTruncated() const

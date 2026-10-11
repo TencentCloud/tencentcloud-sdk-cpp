@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/oceanus/v20190422/model/Property.h>
 #include <tencentcloud/oceanus/v20190422/model/SessionClusterRefItem.h>
+#include <tencentcloud/oceanus/v20190422/model/Tag.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群SerialId
-                     * @return ClusterGroupSerialId 集群SerialId
+                     * 获取<p>集群SerialId</p>
+                     * @return ClusterGroupSerialId <p>集群SerialId</p>
                      * 
                      */
                     std::string GetClusterGroupSerialId() const;
 
                     /**
-                     * 设置集群SerialId
-                     * @param _clusterGroupSerialId 集群SerialId
+                     * 设置<p>集群SerialId</p>
+                     * @param _clusterGroupSerialId <p>集群SerialId</p>
                      * 
                      */
                     void SetClusterGroupSerialId(const std::string& _clusterGroupSerialId);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool ClusterGroupSerialIdHasBeenSet() const;
 
                     /**
-                     * 获取创建者appId
-                     * @return AppId 创建者appId
+                     * 获取<p>创建者appId</p>
+                     * @return AppId <p>创建者appId</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置创建者appId
-                     * @param _appId 创建者appId
+                     * 设置<p>创建者appId</p>
+                     * @param _appId <p>创建者appId</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -91,15 +92,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取创建者主账号
-                     * @return OwnerUin 创建者主账号
+                     * 获取<p>创建者主账号</p>
+                     * @return OwnerUin <p>创建者主账号</p>
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置创建者主账号
-                     * @param _ownerUin 创建者主账号
+                     * 设置<p>创建者主账号</p>
+                     * @param _ownerUin <p>创建者主账号</p>
                      * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
@@ -112,15 +113,15 @@ namespace TencentCloud
                     bool OwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取创建者账号
-                     * @return CreatorUin 创建者账号
+                     * 获取<p>创建者账号</p>
+                     * @return CreatorUin <p>创建者账号</p>
                      * 
                      */
                     std::string GetCreatorUin() const;
 
                     /**
-                     * 设置创建者账号
-                     * @param _creatorUin 创建者账号
+                     * 设置<p>创建者账号</p>
+                     * @param _creatorUin <p>创建者账号</p>
                      * 
                      */
                     void SetCreatorUin(const std::string& _creatorUin);
@@ -133,15 +134,15 @@ namespace TencentCloud
                     bool CreatorUinHasBeenSet() const;
 
                     /**
-                     * 获取区域
-                     * @return Region 区域
+                     * 获取<p>区域</p>
+                     * @return Region <p>区域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置区域
-                     * @param _region 区域
+                     * 设置<p>区域</p>
+                     * @param _region <p>区域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -154,15 +155,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取zone
-                     * @return Zone zone
+                     * 获取<p>zone</p>
+                     * @return Zone <p>zone</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置zone
-                     * @param _zone zone
+                     * 设置<p>zone</p>
+                     * @param _zone <p>zone</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -175,15 +176,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取Session集群状态
-                     * @return Status Session集群状态
+                     * 获取<p>Session集群状态</p>
+                     * @return Status <p>Session集群状态</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置Session集群状态
-                     * @param _status Session集群状态
+                     * 设置<p>Session集群状态</p>
+                     * @param _status <p>Session集群状态</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -196,15 +197,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取Session集群消耗的cu数量
-                     * @return CuNum Session集群消耗的cu数量
+                     * 获取<p>Session集群消耗的cu数量</p>
+                     * @return CuNum <p>Session集群消耗的cu数量</p>
                      * 
                      */
                     double GetCuNum() const;
 
                     /**
-                     * 设置Session集群消耗的cu数量
-                     * @param _cuNum Session集群消耗的cu数量
+                     * 设置<p>Session集群消耗的cu数量</p>
+                     * @param _cuNum <p>Session集群消耗的cu数量</p>
                      * 
                      */
                     void SetCuNum(const double& _cuNum);
@@ -217,15 +218,15 @@ namespace TencentCloud
                     bool CuNumHasBeenSet() const;
 
                     /**
-                     * 获取Session集群的Flink版本
-                     * @return FlinkVersion Session集群的Flink版本
+                     * 获取<p>Session集群的Flink版本</p>
+                     * @return FlinkVersion <p>Session集群的Flink版本</p>
                      * 
                      */
                     std::string GetFlinkVersion() const;
 
                     /**
-                     * 设置Session集群的Flink版本
-                     * @param _flinkVersion Session集群的Flink版本
+                     * 设置<p>Session集群的Flink版本</p>
+                     * @param _flinkVersion <p>Session集群的Flink版本</p>
                      * 
                      */
                     void SetFlinkVersion(const std::string& _flinkVersion);
@@ -238,15 +239,15 @@ namespace TencentCloud
                     bool FlinkVersionHasBeenSet() const;
 
                     /**
-                     * 获取session集群FlinkUi地址
-                     * @return WebUIUrl session集群FlinkUi地址
+                     * 获取<p>session集群FlinkUi地址</p>
+                     * @return WebUIUrl <p>session集群FlinkUi地址</p>
                      * 
                      */
                     std::string GetWebUIUrl() const;
 
                     /**
-                     * 设置session集群FlinkUi地址
-                     * @param _webUIUrl session集群FlinkUi地址
+                     * 设置<p>session集群FlinkUi地址</p>
+                     * @param _webUIUrl <p>session集群FlinkUi地址</p>
                      * 
                      */
                     void SetWebUIUrl(const std::string& _webUIUrl);
@@ -259,18 +260,18 @@ namespace TencentCloud
                     bool WebUIUrlHasBeenSet() const;
 
                     /**
-                     * 获取session集群高级参数
+                     * 获取<p>session集群高级参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Properties session集群高级参数
+                     * @return Properties <p>session集群高级参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Property> GetProperties() const;
 
                     /**
-                     * 设置session集群高级参数
+                     * 设置<p>session集群高级参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _properties session集群高级参数
+                     * @param _properties <p>session集群高级参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -284,18 +285,18 @@ namespace TencentCloud
                     bool PropertiesHasBeenSet() const;
 
                     /**
-                     * 获取引用资源
+                     * 获取<p>引用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceRefs 引用资源
+                     * @return ResourceRefs <p>引用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SessionClusterRefItem> GetResourceRefs() const;
 
                     /**
-                     * 设置引用资源
+                     * 设置<p>引用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceRefs 引用资源
+                     * @param _resourceRefs <p>引用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -309,15 +310,15 @@ namespace TencentCloud
                     bool ResourceRefsHasBeenSet() const;
 
                     /**
-                     * 获取JobManager的规格
-                     * @return JobManagerCuSpec JobManager的规格
+                     * 获取<p>JobManager的规格</p>
+                     * @return JobManagerCuSpec <p>JobManager的规格</p>
                      * 
                      */
                     double GetJobManagerCuSpec() const;
 
                     /**
-                     * 设置JobManager的规格
-                     * @param _jobManagerCuSpec JobManager的规格
+                     * 设置<p>JobManager的规格</p>
+                     * @param _jobManagerCuSpec <p>JobManager的规格</p>
                      * 
                      */
                     void SetJobManagerCuSpec(const double& _jobManagerCuSpec);
@@ -330,15 +331,15 @@ namespace TencentCloud
                     bool JobManagerCuSpecHasBeenSet() const;
 
                     /**
-                     * 获取TaskManager的规格
-                     * @return TaskManagerCuSpec TaskManager的规格
+                     * 获取<p>TaskManager的规格</p>
+                     * @return TaskManagerCuSpec <p>TaskManager的规格</p>
                      * 
                      */
                     double GetTaskManagerCuSpec() const;
 
                     /**
-                     * 设置TaskManager的规格
-                     * @param _taskManagerCuSpec TaskManager的规格
+                     * 设置<p>TaskManager的规格</p>
+                     * @param _taskManagerCuSpec <p>TaskManager的规格</p>
                      * 
                      */
                     void SetTaskManagerCuSpec(const double& _taskManagerCuSpec);
@@ -351,15 +352,15 @@ namespace TencentCloud
                     bool TaskManagerCuSpecHasBeenSet() const;
 
                     /**
-                     * 获取TaskManager启动的数量
-                     * @return TaskManagerNum TaskManager启动的数量
+                     * 获取<p>TaskManager启动的数量</p>
+                     * @return TaskManagerNum <p>TaskManager启动的数量</p>
                      * 
                      */
                     int64_t GetTaskManagerNum() const;
 
                     /**
-                     * 设置TaskManager启动的数量
-                     * @param _taskManagerNum TaskManager启动的数量
+                     * 设置<p>TaskManager启动的数量</p>
+                     * @param _taskManagerNum <p>TaskManager启动的数量</p>
                      * 
                      */
                     void SetTaskManagerNum(const int64_t& _taskManagerNum);
@@ -372,15 +373,15 @@ namespace TencentCloud
                     bool TaskManagerNumHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -393,15 +394,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -414,15 +415,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取JobManagerCpu
-                     * @return JobManagerCpu JobManagerCpu
+                     * 获取<p>JobManagerCpu</p>
+                     * @return JobManagerCpu <p>JobManagerCpu</p>
                      * 
                      */
                     double GetJobManagerCpu() const;
 
                     /**
-                     * 设置JobManagerCpu
-                     * @param _jobManagerCpu JobManagerCpu
+                     * 设置<p>JobManagerCpu</p>
+                     * @param _jobManagerCpu <p>JobManagerCpu</p>
                      * 
                      */
                     void SetJobManagerCpu(const double& _jobManagerCpu);
@@ -435,15 +436,15 @@ namespace TencentCloud
                     bool JobManagerCpuHasBeenSet() const;
 
                     /**
-                     * 获取JobManagerMem
-                     * @return JobManagerMem JobManagerMem
+                     * 获取<p>JobManagerMem</p>
+                     * @return JobManagerMem <p>JobManagerMem</p>
                      * 
                      */
                     double GetJobManagerMem() const;
 
                     /**
-                     * 设置JobManagerMem
-                     * @param _jobManagerMem JobManagerMem
+                     * 设置<p>JobManagerMem</p>
+                     * @param _jobManagerMem <p>JobManagerMem</p>
                      * 
                      */
                     void SetJobManagerMem(const double& _jobManagerMem);
@@ -456,15 +457,15 @@ namespace TencentCloud
                     bool JobManagerMemHasBeenSet() const;
 
                     /**
-                     * 获取TaskManagerCpu
-                     * @return TaskManagerCpu TaskManagerCpu
+                     * 获取<p>TaskManagerCpu</p>
+                     * @return TaskManagerCpu <p>TaskManagerCpu</p>
                      * 
                      */
                     double GetTaskManagerCpu() const;
 
                     /**
-                     * 设置TaskManagerCpu
-                     * @param _taskManagerCpu TaskManagerCpu
+                     * 设置<p>TaskManagerCpu</p>
+                     * @param _taskManagerCpu <p>TaskManagerCpu</p>
                      * 
                      */
                     void SetTaskManagerCpu(const double& _taskManagerCpu);
@@ -477,15 +478,15 @@ namespace TencentCloud
                     bool TaskManagerCpuHasBeenSet() const;
 
                     /**
-                     * 获取TaskManagerMem
-                     * @return TaskManagerMem TaskManagerMem
+                     * 获取<p>TaskManagerMem</p>
+                     * @return TaskManagerMem <p>TaskManagerMem</p>
                      * 
                      */
                     double GetTaskManagerMem() const;
 
                     /**
-                     * 设置TaskManagerMem
-                     * @param _taskManagerMem TaskManagerMem
+                     * 设置<p>TaskManagerMem</p>
+                     * @param _taskManagerMem <p>TaskManagerMem</p>
                      * 
                      */
                     void SetTaskManagerMem(const double& _taskManagerMem);
@@ -498,15 +499,15 @@ namespace TencentCloud
                     bool TaskManagerMemHasBeenSet() const;
 
                     /**
-                     * 获取jdk版本
-                     * @return JdkVersion jdk版本
+                     * 获取<p>jdk版本</p>
+                     * @return JdkVersion <p>jdk版本</p>
                      * 
                      */
                     std::string GetJdkVersion() const;
 
                     /**
-                     * 设置jdk版本
-                     * @param _jdkVersion jdk版本
+                     * 设置<p>jdk版本</p>
+                     * @param _jdkVersion <p>jdk版本</p>
                      * 
                      */
                     void SetJdkVersion(const std::string& _jdkVersion);
@@ -518,141 +519,493 @@ namespace TencentCloud
                      */
                     bool JdkVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>描述</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description <p>描述</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>描述</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description <p>描述</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name <p>名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置<p>名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _name <p>名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>session集群SerialId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SerialId <p>session集群SerialId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSerialId() const;
+
+                    /**
+                     * 设置<p>session集群SerialId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serialId <p>session集群SerialId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSerialId(const std::string& _serialId);
+
+                    /**
+                     * 判断参数 SerialId 是否已赋值
+                     * @return SerialId 是否已赋值
+                     * 
+                     */
+                    bool SerialIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterGroupName <p>集群名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterGroupName() const;
+
+                    /**
+                     * 设置<p>集群名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterGroupName <p>集群名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterGroupName(const std::string& _clusterGroupName);
+
+                    /**
+                     * 判断参数 ClusterGroupName 是否已赋值
+                     * @return ClusterGroupName 是否已赋值
+                     * 
+                     */
+                    bool ClusterGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>cu</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCpu <p>cu</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTotalCpu() const;
+
+                    /**
+                     * 设置<p>cu</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _totalCpu <p>cu</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTotalCpu(const double& _totalCpu);
+
+                    /**
+                     * 判断参数 TotalCpu 是否已赋值
+                     * @return TotalCpu 是否已赋值
+                     * 
+                     */
+                    bool TotalCpuHasBeenSet() const;
+
+                    /**
+                     * 获取<p>使用Mem</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalMem <p>使用Mem</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTotalMem() const;
+
+                    /**
+                     * 设置<p>使用Mem</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _totalMem <p>使用Mem</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTotalMem(const double& _totalMem);
+
+                    /**
+                     * 判断参数 TotalMem 是否已赋值
+                     * @return TotalMem 是否已赋值
+                     * 
+                     */
+                    bool TotalMemHasBeenSet() const;
+
+                    /**
+                     * 获取<p>空间Id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkSpaceId <p>空间Id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWorkSpaceId() const;
+
+                    /**
+                     * 设置<p>空间Id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workSpaceId <p>空间Id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkSpaceId(const std::string& _workSpaceId);
+
+                    /**
+                     * 判断参数 WorkSpaceId 是否已赋值
+                     * @return WorkSpaceId 是否已赋值
+                     * 
+                     */
+                    bool WorkSpaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>空间名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkSpaceName <p>空间名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWorkSpaceName() const;
+
+                    /**
+                     * 设置<p>空间名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workSpaceName <p>空间名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkSpaceName(const std::string& _workSpaceName);
+
+                    /**
+                     * 判断参数 WorkSpaceName 是否已赋值
+                     * @return WorkSpaceName 是否已赋值
+                     * 
+                     */
+                    bool WorkSpaceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标签列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags <p>标签列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置<p>标签列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tags <p>标签列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>采集日志配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogConfig <p>采集日志配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogConfig() const;
+
+                    /**
+                     * 设置<p>采集日志配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logConfig <p>采集日志配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLogConfig(const std::string& _logConfig);
+
+                    /**
+                     * 判断参数 LogConfig 是否已赋值
+                     * @return LogConfig 是否已赋值
+                     * 
+                     */
+                    bool LogConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>更新用户</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateUin <p>更新用户</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUpdateUin() const;
+
+                    /**
+                     * 设置<p>更新用户</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _updateUin <p>更新用户</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpdateUin(const std::string& _updateUin);
+
+                    /**
+                     * 判断参数 UpdateUin 是否已赋值
+                     * @return UpdateUin 是否已赋值
+                     * 
+                     */
+                    bool UpdateUinHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群SerialId
+                     * <p>集群SerialId</p>
                      */
                     std::string m_clusterGroupSerialId;
                     bool m_clusterGroupSerialIdHasBeenSet;
 
                     /**
-                     * 创建者appId
+                     * <p>创建者appId</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 创建者主账号
+                     * <p>创建者主账号</p>
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
-                     * 创建者账号
+                     * <p>创建者账号</p>
                      */
                     std::string m_creatorUin;
                     bool m_creatorUinHasBeenSet;
 
                     /**
-                     * 区域
+                     * <p>区域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * zone
+                     * <p>zone</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * Session集群状态
+                     * <p>Session集群状态</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * Session集群消耗的cu数量
+                     * <p>Session集群消耗的cu数量</p>
                      */
                     double m_cuNum;
                     bool m_cuNumHasBeenSet;
 
                     /**
-                     * Session集群的Flink版本
+                     * <p>Session集群的Flink版本</p>
                      */
                     std::string m_flinkVersion;
                     bool m_flinkVersionHasBeenSet;
 
                     /**
-                     * session集群FlinkUi地址
+                     * <p>session集群FlinkUi地址</p>
                      */
                     std::string m_webUIUrl;
                     bool m_webUIUrlHasBeenSet;
 
                     /**
-                     * session集群高级参数
+                     * <p>session集群高级参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Property> m_properties;
                     bool m_propertiesHasBeenSet;
 
                     /**
-                     * 引用资源
+                     * <p>引用资源</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SessionClusterRefItem> m_resourceRefs;
                     bool m_resourceRefsHasBeenSet;
 
                     /**
-                     * JobManager的规格
+                     * <p>JobManager的规格</p>
                      */
                     double m_jobManagerCuSpec;
                     bool m_jobManagerCuSpecHasBeenSet;
 
                     /**
-                     * TaskManager的规格
+                     * <p>TaskManager的规格</p>
                      */
                     double m_taskManagerCuSpec;
                     bool m_taskManagerCuSpecHasBeenSet;
 
                     /**
-                     * TaskManager启动的数量
+                     * <p>TaskManager启动的数量</p>
                      */
                     int64_t m_taskManagerNum;
                     bool m_taskManagerNumHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * JobManagerCpu
+                     * <p>JobManagerCpu</p>
                      */
                     double m_jobManagerCpu;
                     bool m_jobManagerCpuHasBeenSet;
 
                     /**
-                     * JobManagerMem
+                     * <p>JobManagerMem</p>
                      */
                     double m_jobManagerMem;
                     bool m_jobManagerMemHasBeenSet;
 
                     /**
-                     * TaskManagerCpu
+                     * <p>TaskManagerCpu</p>
                      */
                     double m_taskManagerCpu;
                     bool m_taskManagerCpuHasBeenSet;
 
                     /**
-                     * TaskManagerMem
+                     * <p>TaskManagerMem</p>
                      */
                     double m_taskManagerMem;
                     bool m_taskManagerMemHasBeenSet;
 
                     /**
-                     * jdk版本
+                     * <p>jdk版本</p>
                      */
                     std::string m_jdkVersion;
                     bool m_jdkVersionHasBeenSet;
+
+                    /**
+                     * <p>描述</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * <p>session集群SerialId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serialId;
+                    bool m_serialIdHasBeenSet;
+
+                    /**
+                     * <p>集群名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterGroupName;
+                    bool m_clusterGroupNameHasBeenSet;
+
+                    /**
+                     * <p>cu</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_totalCpu;
+                    bool m_totalCpuHasBeenSet;
+
+                    /**
+                     * <p>使用Mem</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_totalMem;
+                    bool m_totalMemHasBeenSet;
+
+                    /**
+                     * <p>空间Id</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_workSpaceId;
+                    bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * <p>空间名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_workSpaceName;
+                    bool m_workSpaceNameHasBeenSet;
+
+                    /**
+                     * <p>标签列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>采集日志配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logConfig;
+                    bool m_logConfigHasBeenSet;
+
+                    /**
+                     * <p>更新用户</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateUin;
+                    bool m_updateUinHasBeenSet;
 
                 };
             }

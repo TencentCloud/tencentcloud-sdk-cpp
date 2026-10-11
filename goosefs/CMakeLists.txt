@@ -20,10 +20,13 @@ set(goosefs_public_header
 
 set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/DistributedLoadAttrs.h
+  include/tencentcloud/goosefs/v20220519/model/EnablePolicyRuleResponse.h
   include/tencentcloud/goosefs/v20220519/model/LoadTaskAttrs.h
+  include/tencentcloud/goosefs/v20220519/model/EnablePolicyRuleRequest.h
+  include/tencentcloud/goosefs/v20220519/model/CreatePolicyRuleRequest.h
   include/tencentcloud/goosefs/v20220519/model/ChargeAttribute.h
   include/tencentcloud/goosefs/v20220519/model/UpdateFilesetGeneralConfigResponse.h
-  include/tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h
+  include/tencentcloud/goosefs/v20220519/model/AttachFileSystemBucketRequest.h
   include/tencentcloud/goosefs/v20220519/model/DeleteFileSystemRequest.h
   include/tencentcloud/goosefs/v20220519/model/MountPointEntry.h
   include/tencentcloud/goosefs/v20220519/model/DeleteFilesetResponse.h
@@ -37,13 +40,16 @@ set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/ClusterMountAttr.h
   include/tencentcloud/goosefs/v20220519/model/CancelLoadTaskRequest.h
   include/tencentcloud/goosefs/v20220519/model/BatchDeleteClientNodesRequest.h
-  include/tencentcloud/goosefs/v20220519/model/SubnetInfo.h
+  include/tencentcloud/goosefs/v20220519/model/DescribePolicyRuleExecuteRecordResponse.h
+  include/tencentcloud/goosefs/v20220519/model/PolicyRuleOperator.h
   include/tencentcloud/goosefs/v20220519/model/UpdateFilesetResponse.h
   include/tencentcloud/goosefs/v20220519/model/LinuxNodeAttribute.h
+  include/tencentcloud/goosefs/v20220519/model/DeletePolicyRuleRequest.h
   include/tencentcloud/goosefs/v20220519/model/DescribeFileSystemsRequest.h
-  include/tencentcloud/goosefs/v20220519/model/AttachFileSystemBucketRequest.h
+  include/tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h
+  include/tencentcloud/goosefs/v20220519/model/UpdateFilesetRequest.h
   include/tencentcloud/goosefs/v20220519/model/Tag.h
-  include/tencentcloud/goosefs/v20220519/model/MountMultipleStorageFileSystemResponse.h
+  include/tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryBandwidthRequest.h
   include/tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskRequest.h
   include/tencentcloud/goosefs/v20220519/model/MappedBucket.h
   include/tencentcloud/goosefs/v20220519/model/CreateFilesetRequest.h
@@ -52,12 +58,14 @@ set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/MountMultipleStorageFileSystemRequest.h
   include/tencentcloud/goosefs/v20220519/model/DescribeLoadTaskRequest.h
   include/tencentcloud/goosefs/v20220519/model/DescribeFileSystemBucketsRequest.h
-  include/tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusResponse.h
+  include/tencentcloud/goosefs/v20220519/model/CreatePolicyRuleResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DescribePolicyRuleRequest.h
   include/tencentcloud/goosefs/v20220519/model/CreateFileSystemRequest.h
   include/tencentcloud/goosefs/v20220519/model/DescribeLoadTaskResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DisablePolicyRuleRequest.h
   include/tencentcloud/goosefs/v20220519/model/DetachFileSystemBucketRequest.h
-  include/tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryBandwidthRequest.h
-  include/tencentcloud/goosefs/v20220519/model/UpdateFilesetRequest.h
+  include/tencentcloud/goosefs/v20220519/model/MountMultipleStorageFileSystemResponse.h
+  include/tencentcloud/goosefs/v20220519/model/ManifestAttr.h
   include/tencentcloud/goosefs/v20220519/model/DescribeCustomerClusterRequest.h
   include/tencentcloud/goosefs/v20220519/model/DescribeFilesetGeneralConfigResponse.h
   include/tencentcloud/goosefs/v20220519/model/CreateFilesetResponse.h
@@ -68,6 +76,7 @@ set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/BuildClientNodeMountCommandResponse.h
   include/tencentcloud/goosefs/v20220519/model/CreateLoadTaskRequest.h
   include/tencentcloud/goosefs/v20220519/model/LoadTaskCreationAttrs.h
+  include/tencentcloud/goosefs/v20220519/model/CancelPolicyRuleExecuteRecordRequest.h
   include/tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryBandwidthResponse.h
   include/tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryTaskStatusResponse.h
   include/tencentcloud/goosefs/v20220519/model/ExpandCapacityResponse.h
@@ -76,6 +85,9 @@ set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/QueryClientNodeMountCommandRequest.h
   include/tencentcloud/goosefs/v20220519/model/DescribeClusterRoleTokenResponse.h
   include/tencentcloud/goosefs/v20220519/model/GooseFSxBuildElement.h
+  include/tencentcloud/goosefs/v20220519/model/AddCrossVpcSubnetSupportForClientNodeRequest.h
+  include/tencentcloud/goosefs/v20220519/model/SubnetInfo.h
+  include/tencentcloud/goosefs/v20220519/model/CancelPolicyRuleExecuteRecordResponse.h
   include/tencentcloud/goosefs/v20220519/model/CancelLoadTaskResponse.h
   include/tencentcloud/goosefs/v20220519/model/BatchAddClientNodesResponse.h
   include/tencentcloud/goosefs/v20220519/model/QueryClientNodeMountCommandResponse.h
@@ -84,6 +96,7 @@ set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/QueryDataRepositoryBandwidthResponse.h
   include/tencentcloud/goosefs/v20220519/model/QueryDataRepositoryBandwidthRequest.h
   include/tencentcloud/goosefs/v20220519/model/DescribeClientNodesResponse.h
+  include/tencentcloud/goosefs/v20220519/model/ExecutePeriodAttribute.h
   include/tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusRequest.h
   include/tencentcloud/goosefs/v20220519/model/DescribeCustomerClusterResponse.h
   include/tencentcloud/goosefs/v20220519/model/DetachFileSystemBucketResponse.h
@@ -96,33 +109,43 @@ set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/GooseFSxAttribute.h
   include/tencentcloud/goosefs/v20220519/model/DescribeFilesetsRequest.h
   include/tencentcloud/goosefs/v20220519/model/CreateLoadTaskResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DisablePolicyRuleResponse.h
   include/tencentcloud/goosefs/v20220519/model/MetadataLoadAttrs.h
   include/tencentcloud/goosefs/v20220519/model/DescribeFileSystemsResponse.h
   include/tencentcloud/goosefs/v20220519/model/BatchDeleteClientNodesResponse.h
   include/tencentcloud/goosefs/v20220519/model/LoadDataAttrs.h
   include/tencentcloud/goosefs/v20220519/model/QueryCrossVpcSubnetSupportForClientNodeRequest.h
   include/tencentcloud/goosefs/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeRequest.h
+  include/tencentcloud/goosefs/v20220519/model/DeletePolicyRuleResponse.h
   include/tencentcloud/goosefs/v20220519/model/AttachFileSystemBucketResponse.h
   include/tencentcloud/goosefs/v20220519/model/BuildClientNodeMountCommandRequest.h
+  include/tencentcloud/goosefs/v20220519/model/ExecutionPlan.h
   include/tencentcloud/goosefs/v20220519/model/BuildCustomerClusterRequest.h
+  include/tencentcloud/goosefs/v20220519/model/DescribePolicyRuleResponse.h
+  include/tencentcloud/goosefs/v20220519/model/RuleExecuteAttribute.h
+  include/tencentcloud/goosefs/v20220519/model/DescribePolicyRuleExecuteRecordRequest.h
   include/tencentcloud/goosefs/v20220519/model/ClientClusterManagerNodeInfo.h
   include/tencentcloud/goosefs/v20220519/model/UpdateFilesetGeneralConfigRequest.h
   include/tencentcloud/goosefs/v20220519/model/BuildCustomerClusterResponse.h
   include/tencentcloud/goosefs/v20220519/model/DeleteCustomerClusterResponse.h
-  include/tencentcloud/goosefs/v20220519/model/AddCrossVpcSubnetSupportForClientNodeRequest.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusResponse.h
   include/tencentcloud/goosefs/v20220519/model/RoleToken.h
   include/tencentcloud/goosefs/v20220519/model/CustomerClusterAttr.h
   include/tencentcloud/goosefs/v20220519/model/ModifyDataRepositoryTaskStatusRequest.h
+  include/tencentcloud/goosefs/v20220519/model/PolicyRuleTaskAttribute.h
   include/tencentcloud/goosefs/v20220519/model/DeleteCustomerClusterRequest.h
   )
 
 set(goosefs_src
   src/v20220519/GoosefsClient.cpp
   src/v20220519/model/DistributedLoadAttrs.cpp
+  src/v20220519/model/EnablePolicyRuleResponse.cpp
   src/v20220519/model/LoadTaskAttrs.cpp
+  src/v20220519/model/EnablePolicyRuleRequest.cpp
+  src/v20220519/model/CreatePolicyRuleRequest.cpp
   src/v20220519/model/ChargeAttribute.cpp
   src/v20220519/model/UpdateFilesetGeneralConfigResponse.cpp
-  src/v20220519/model/CreateDataRepositoryTaskResponse.cpp
+  src/v20220519/model/AttachFileSystemBucketRequest.cpp
   src/v20220519/model/DeleteFileSystemRequest.cpp
   src/v20220519/model/MountPointEntry.cpp
   src/v20220519/model/DeleteFilesetResponse.cpp
@@ -136,13 +159,16 @@ set(goosefs_src
   src/v20220519/model/ClusterMountAttr.cpp
   src/v20220519/model/CancelLoadTaskRequest.cpp
   src/v20220519/model/BatchDeleteClientNodesRequest.cpp
-  src/v20220519/model/SubnetInfo.cpp
+  src/v20220519/model/DescribePolicyRuleExecuteRecordResponse.cpp
+  src/v20220519/model/PolicyRuleOperator.cpp
   src/v20220519/model/UpdateFilesetResponse.cpp
   src/v20220519/model/LinuxNodeAttribute.cpp
+  src/v20220519/model/DeletePolicyRuleRequest.cpp
   src/v20220519/model/DescribeFileSystemsRequest.cpp
-  src/v20220519/model/AttachFileSystemBucketRequest.cpp
+  src/v20220519/model/CreateDataRepositoryTaskResponse.cpp
+  src/v20220519/model/UpdateFilesetRequest.cpp
   src/v20220519/model/Tag.cpp
-  src/v20220519/model/MountMultipleStorageFileSystemResponse.cpp
+  src/v20220519/model/ModifyDataRepositoryBandwidthRequest.cpp
   src/v20220519/model/CreateDataRepositoryTaskRequest.cpp
   src/v20220519/model/MappedBucket.cpp
   src/v20220519/model/CreateFilesetRequest.cpp
@@ -151,12 +177,14 @@ set(goosefs_src
   src/v20220519/model/MountMultipleStorageFileSystemRequest.cpp
   src/v20220519/model/DescribeLoadTaskRequest.cpp
   src/v20220519/model/DescribeFileSystemBucketsRequest.cpp
-  src/v20220519/model/DescribeDataRepositoryTaskStatusResponse.cpp
+  src/v20220519/model/CreatePolicyRuleResponse.cpp
+  src/v20220519/model/DescribePolicyRuleRequest.cpp
   src/v20220519/model/CreateFileSystemRequest.cpp
   src/v20220519/model/DescribeLoadTaskResponse.cpp
+  src/v20220519/model/DisablePolicyRuleRequest.cpp
   src/v20220519/model/DetachFileSystemBucketRequest.cpp
-  src/v20220519/model/ModifyDataRepositoryBandwidthRequest.cpp
-  src/v20220519/model/UpdateFilesetRequest.cpp
+  src/v20220519/model/MountMultipleStorageFileSystemResponse.cpp
+  src/v20220519/model/ManifestAttr.cpp
   src/v20220519/model/DescribeCustomerClusterRequest.cpp
   src/v20220519/model/DescribeFilesetGeneralConfigResponse.cpp
   src/v20220519/model/CreateFilesetResponse.cpp
@@ -167,6 +195,7 @@ set(goosefs_src
   src/v20220519/model/BuildClientNodeMountCommandResponse.cpp
   src/v20220519/model/CreateLoadTaskRequest.cpp
   src/v20220519/model/LoadTaskCreationAttrs.cpp
+  src/v20220519/model/CancelPolicyRuleExecuteRecordRequest.cpp
   src/v20220519/model/ModifyDataRepositoryBandwidthResponse.cpp
   src/v20220519/model/ModifyDataRepositoryTaskStatusResponse.cpp
   src/v20220519/model/ExpandCapacityResponse.cpp
@@ -175,6 +204,9 @@ set(goosefs_src
   src/v20220519/model/QueryClientNodeMountCommandRequest.cpp
   src/v20220519/model/DescribeClusterRoleTokenResponse.cpp
   src/v20220519/model/GooseFSxBuildElement.cpp
+  src/v20220519/model/AddCrossVpcSubnetSupportForClientNodeRequest.cpp
+  src/v20220519/model/SubnetInfo.cpp
+  src/v20220519/model/CancelPolicyRuleExecuteRecordResponse.cpp
   src/v20220519/model/CancelLoadTaskResponse.cpp
   src/v20220519/model/BatchAddClientNodesResponse.cpp
   src/v20220519/model/QueryClientNodeMountCommandResponse.cpp
@@ -183,6 +215,7 @@ set(goosefs_src
   src/v20220519/model/QueryDataRepositoryBandwidthResponse.cpp
   src/v20220519/model/QueryDataRepositoryBandwidthRequest.cpp
   src/v20220519/model/DescribeClientNodesResponse.cpp
+  src/v20220519/model/ExecutePeriodAttribute.cpp
   src/v20220519/model/DescribeDataRepositoryTaskStatusRequest.cpp
   src/v20220519/model/DescribeCustomerClusterResponse.cpp
   src/v20220519/model/DetachFileSystemBucketResponse.cpp
@@ -195,23 +228,30 @@ set(goosefs_src
   src/v20220519/model/GooseFSxAttribute.cpp
   src/v20220519/model/DescribeFilesetsRequest.cpp
   src/v20220519/model/CreateLoadTaskResponse.cpp
+  src/v20220519/model/DisablePolicyRuleResponse.cpp
   src/v20220519/model/MetadataLoadAttrs.cpp
   src/v20220519/model/DescribeFileSystemsResponse.cpp
   src/v20220519/model/BatchDeleteClientNodesResponse.cpp
   src/v20220519/model/LoadDataAttrs.cpp
   src/v20220519/model/QueryCrossVpcSubnetSupportForClientNodeRequest.cpp
   src/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeRequest.cpp
+  src/v20220519/model/DeletePolicyRuleResponse.cpp
   src/v20220519/model/AttachFileSystemBucketResponse.cpp
   src/v20220519/model/BuildClientNodeMountCommandRequest.cpp
+  src/v20220519/model/ExecutionPlan.cpp
   src/v20220519/model/BuildCustomerClusterRequest.cpp
+  src/v20220519/model/DescribePolicyRuleResponse.cpp
+  src/v20220519/model/RuleExecuteAttribute.cpp
+  src/v20220519/model/DescribePolicyRuleExecuteRecordRequest.cpp
   src/v20220519/model/ClientClusterManagerNodeInfo.cpp
   src/v20220519/model/UpdateFilesetGeneralConfigRequest.cpp
   src/v20220519/model/BuildCustomerClusterResponse.cpp
   src/v20220519/model/DeleteCustomerClusterResponse.cpp
-  src/v20220519/model/AddCrossVpcSubnetSupportForClientNodeRequest.cpp
+  src/v20220519/model/DescribeDataRepositoryTaskStatusResponse.cpp
   src/v20220519/model/RoleToken.cpp
   src/v20220519/model/CustomerClusterAttr.cpp
   src/v20220519/model/ModifyDataRepositoryTaskStatusRequest.cpp
+  src/v20220519/model/PolicyRuleTaskAttribute.cpp
   src/v20220519/model/DeleteCustomerClusterRequest.cpp
   )
 

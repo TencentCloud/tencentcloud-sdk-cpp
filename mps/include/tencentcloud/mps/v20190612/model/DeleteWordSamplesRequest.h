@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关键词，数组长度限制：100 个词。
-                     * @return Keywords 关键词，数组长度限制：100 个词。
+                     * 获取<p>关键词，数组长度限制：100 个词。</p>
+                     * @return Keywords <p>关键词，数组长度限制：100 个词。</p>
                      * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
-                     * 设置关键词，数组长度限制：100 个词。
-                     * @param _keywords 关键词，数组长度限制：100 个词。
+                     * 设置<p>关键词，数组长度限制：100 个词。</p>
+                     * @param _keywords <p>关键词，数组长度限制：100 个词。</p>
                      * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关键词，数组长度限制：100 个词。
+                     * <p>关键词，数组长度限制：100 个词。</p>
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;

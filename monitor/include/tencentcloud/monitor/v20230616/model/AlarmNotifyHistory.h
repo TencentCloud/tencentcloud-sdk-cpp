@@ -27,6 +27,7 @@
 #include <tencentcloud/monitor/v20230616/model/ChannelsReceivers.h>
 #include <tencentcloud/monitor/v20230616/model/NotifyRelatedNotice.h>
 #include <tencentcloud/monitor/v20230616/model/AlarmLable.h>
+#include <tencentcloud/monitor/v20230616/model/ReceiverGroup.h>
 
 
 namespace TencentCloud
@@ -50,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通知的唯一ID
-                     * @return NotifyId 通知的唯一ID
+                     * 获取<p>通知的唯一ID</p>
+                     * @return NotifyId <p>通知的唯一ID</p>
                      * 
                      */
                     std::string GetNotifyId() const;
 
                     /**
-                     * 设置通知的唯一ID
-                     * @param _notifyId 通知的唯一ID
+                     * 设置<p>通知的唯一ID</p>
+                     * @param _notifyId <p>通知的唯一ID</p>
                      * 
                      */
                     void SetNotifyId(const std::string& _notifyId);
@@ -71,15 +72,15 @@ namespace TencentCloud
                     bool NotifyIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略ID
-                     * @return PolicyId 告警策略ID
+                     * 获取<p>告警策略ID</p>
+                     * @return PolicyId <p>告警策略ID</p>
                      * 
                      */
                     std::string GetPolicyId() const;
 
                     /**
-                     * 设置告警策略ID
-                     * @param _policyId 告警策略ID
+                     * 设置<p>告警策略ID</p>
+                     * @param _policyId <p>告警策略ID</p>
                      * 
                      */
                     void SetPolicyId(const std::string& _policyId);
@@ -92,15 +93,15 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取告警周期iD
-                     * @return SessionId 告警周期iD
+                     * 获取<p>告警周期iD</p>
+                     * @return SessionId <p>告警周期iD</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置告警周期iD
-                     * @param _sessionId 告警周期iD
+                     * 设置<p>告警周期iD</p>
+                     * @param _sessionId <p>告警周期iD</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -113,15 +114,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取通知时间 unix秒级时间戳
-                     * @return NotifyTime 通知时间 unix秒级时间戳
+                     * 获取<p>通知时间 unix秒级时间戳</p>
+                     * @return NotifyTime <p>通知时间 unix秒级时间戳</p>
                      * 
                      */
                     int64_t GetNotifyTime() const;
 
                     /**
-                     * 设置通知时间 unix秒级时间戳
-                     * @param _notifyTime 通知时间 unix秒级时间戳
+                     * 设置<p>通知时间 unix秒级时间戳</p>
+                     * @param _notifyTime <p>通知时间 unix秒级时间戳</p>
                      * 
                      */
                     void SetNotifyTime(const int64_t& _notifyTime);
@@ -134,15 +135,15 @@ namespace TencentCloud
                     bool NotifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取触发时间 unix秒级时间戳
-                     * @return TriggerTime 触发时间 unix秒级时间戳
+                     * 获取<p>触发时间 unix秒级时间戳</p>
+                     * @return TriggerTime <p>触发时间 unix秒级时间戳</p>
                      * 
                      */
                     int64_t GetTriggerTime() const;
 
                     /**
-                     * 设置触发时间 unix秒级时间戳
-                     * @param _triggerTime 触发时间 unix秒级时间戳
+                     * 设置<p>触发时间 unix秒级时间戳</p>
+                     * @param _triggerTime <p>触发时间 unix秒级时间戳</p>
                      * 
                      */
                     void SetTriggerTime(const int64_t& _triggerTime);
@@ -155,15 +156,15 @@ namespace TencentCloud
                     bool TriggerTimeHasBeenSet() const;
 
                     /**
-                     * 获取告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别
-                     * @return TriggerLevel 告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别
+                     * 获取<p>告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别</p>
+                     * @return TriggerLevel <p>告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别</p>
                      * 
                      */
                     std::string GetTriggerLevel() const;
 
                     /**
-                     * 设置告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别
-                     * @param _triggerLevel 告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别
+                     * 设置<p>告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别</p>
+                     * @param _triggerLevel <p>告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别</p>
                      * 
                      */
                     void SetTriggerLevel(const std::string& _triggerLevel);
@@ -176,15 +177,15 @@ namespace TencentCloud
                     bool TriggerLevelHasBeenSet() const;
 
                     /**
-                     * 获取告警内容
-                     * @return AlarmContent 告警内容
+                     * 获取<p>告警内容</p>
+                     * @return AlarmContent <p>告警内容</p>
                      * 
                      */
                     std::string GetAlarmContent() const;
 
                     /**
-                     * 设置告警内容
-                     * @param _alarmContent 告警内容
+                     * 设置<p>告警内容</p>
+                     * @param _alarmContent <p>告警内容</p>
                      * 
                      */
                     void SetAlarmContent(const std::string& _alarmContent);
@@ -197,15 +198,15 @@ namespace TencentCloud
                     bool AlarmContentHasBeenSet() const;
 
                     /**
-                     * 获取告警对象
-                     * @return AlarmObject 告警对象
+                     * 获取<p>告警对象</p>
+                     * @return AlarmObject <p>告警对象</p>
                      * 
                      */
                     std::string GetAlarmObject() const;
 
                     /**
-                     * 设置告警对象
-                     * @param _alarmObject 告警对象
+                     * 设置<p>告警对象</p>
+                     * @param _alarmObject <p>告警对象</p>
                      * 
                      */
                     void SetAlarmObject(const std::string& _alarmObject);
@@ -218,18 +219,18 @@ namespace TencentCloud
                     bool AlarmObjectHasBeenSet() const;
 
                     /**
-                     * 获取本次告警通知涉及到的渠道合集
+                     * 获取<p>本次告警通知涉及到的渠道合集</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChannelSet 本次告警通知涉及到的渠道合集
+                     * @return ChannelSet <p>本次告警通知涉及到的渠道合集</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetChannelSet() const;
 
                     /**
-                     * 设置本次告警通知涉及到的渠道合集
+                     * 设置<p>本次告警通知涉及到的渠道合集</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _channelSet 本次告警通知涉及到的渠道合集
+                     * @param _channelSet <p>本次告警通知涉及到的渠道合集</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -243,15 +244,15 @@ namespace TencentCloud
                     bool ChannelSetHasBeenSet() const;
 
                     /**
-                     * 获取渠道的接收人信息
-                     * @return ChannelsReceivers 渠道的接收人信息
+                     * 获取<p>渠道的接收人信息</p>
+                     * @return ChannelsReceivers <p>渠道的接收人信息</p>
                      * 
                      */
                     std::vector<ChannelsReceivers> GetChannelsReceivers() const;
 
                     /**
-                     * 设置渠道的接收人信息
-                     * @param _channelsReceivers 渠道的接收人信息
+                     * 设置<p>渠道的接收人信息</p>
+                     * @param _channelsReceivers <p>渠道的接收人信息</p>
                      * 
                      */
                     void SetChannelsReceivers(const std::vector<ChannelsReceivers>& _channelsReceivers);
@@ -264,15 +265,15 @@ namespace TencentCloud
                     bool ChannelsReceiversHasBeenSet() const;
 
                     /**
-                     * 获取告警策略名称
-                     * @return PolicyName 告警策略名称
+                     * 获取<p>告警策略名称</p>
+                     * @return PolicyName <p>告警策略名称</p>
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置告警策略名称
-                     * @param _policyName 告警策略名称
+                     * 设置<p>告警策略名称</p>
+                     * @param _policyName <p>告警策略名称</p>
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -285,15 +286,15 @@ namespace TencentCloud
                     bool PolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取Prometheus实例ID, 仅当 MT_PROME 时有效
-                     * @return PromeInstanceID Prometheus实例ID, 仅当 MT_PROME 时有效
+                     * 获取<p>Prometheus实例ID, 仅当 MT_PROME 时有效</p>
+                     * @return PromeInstanceID <p>Prometheus实例ID, 仅当 MT_PROME 时有效</p>
                      * 
                      */
                     std::string GetPromeInstanceID() const;
 
                     /**
-                     * 设置Prometheus实例ID, 仅当 MT_PROME 时有效
-                     * @param _promeInstanceID Prometheus实例ID, 仅当 MT_PROME 时有效
+                     * 设置<p>Prometheus实例ID, 仅当 MT_PROME 时有效</p>
+                     * @param _promeInstanceID <p>Prometheus实例ID, 仅当 MT_PROME 时有效</p>
                      * 
                      */
                     void SetPromeInstanceID(const std::string& _promeInstanceID);
@@ -306,15 +307,15 @@ namespace TencentCloud
                     bool PromeInstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取Prometheus实例所在的地域, 仅当 MT_PROME 时有效
-                     * @return PromeInstanceRegion Prometheus实例所在的地域, 仅当 MT_PROME 时有效
+                     * 获取<p>Prometheus实例所在的地域, 仅当 MT_PROME 时有效</p>
+                     * @return PromeInstanceRegion <p>Prometheus实例所在的地域, 仅当 MT_PROME 时有效</p>
                      * 
                      */
                     std::string GetPromeInstanceRegion() const;
 
                     /**
-                     * 设置Prometheus实例所在的地域, 仅当 MT_PROME 时有效
-                     * @param _promeInstanceRegion Prometheus实例所在的地域, 仅当 MT_PROME 时有效
+                     * 设置<p>Prometheus实例所在的地域, 仅当 MT_PROME 时有效</p>
+                     * @param _promeInstanceRegion <p>Prometheus实例所在的地域, 仅当 MT_PROME 时有效</p>
                      * 
                      */
                     void SetPromeInstanceRegion(const std::string& _promeInstanceRegion);
@@ -327,15 +328,15 @@ namespace TencentCloud
                     bool PromeInstanceRegionHasBeenSet() const;
 
                     /**
-                     * 获取通知模板相关的配置信息
-                     * @return Notices 通知模板相关的配置信息
+                     * 获取<p>通知模板相关的配置信息</p>
+                     * @return Notices <p>通知模板相关的配置信息</p>
                      * 
                      */
                     std::vector<NotifyRelatedNotice> GetNotices() const;
 
                     /**
-                     * 设置通知模板相关的配置信息
-                     * @param _notices 通知模板相关的配置信息
+                     * 设置<p>通知模板相关的配置信息</p>
+                     * @param _notices <p>通知模板相关的配置信息</p>
                      * 
                      */
                     void SetNotices(const std::vector<NotifyRelatedNotice>& _notices);
@@ -348,15 +349,15 @@ namespace TencentCloud
                     bool NoticesHasBeenSet() const;
 
                     /**
-                     * 获取告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复
-                     * @return TriggerStatus 告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复
+                     * 获取<p>告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复</p>
+                     * @return TriggerStatus <p>告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复</p>
                      * 
                      */
                     std::string GetTriggerStatus() const;
 
                     /**
-                     * 设置告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复
-                     * @param _triggerStatus 告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复
+                     * 设置<p>告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复</p>
+                     * @param _triggerStatus <p>告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复</p>
                      * 
                      */
                     void SetTriggerStatus(const std::string& _triggerStatus);
@@ -369,15 +370,15 @@ namespace TencentCloud
                     bool TriggerStatusHasBeenSet() const;
 
                     /**
-                     * 获取与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效
-                     * @return PromeConsoleURL 与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效
+                     * 获取<p>与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效</p>
+                     * @return PromeConsoleURL <p>与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效</p>
                      * 
                      */
                     std::string GetPromeConsoleURL() const;
 
                     /**
-                     * 设置与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效
-                     * @param _promeConsoleURL 与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效
+                     * 设置<p>与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效</p>
+                     * @param _promeConsoleURL <p>与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效</p>
                      * 
                      */
                     void SetPromeConsoleURL(const std::string& _promeConsoleURL);
@@ -390,15 +391,15 @@ namespace TencentCloud
                     bool PromeConsoleURLHasBeenSet() const;
 
                     /**
-                     * 获取告警的lable
-                     * @return Labels 告警的lable
+                     * 获取<p>告警的lable</p>
+                     * @return Labels <p>告警的lable</p>
                      * 
                      */
                     std::vector<AlarmLable> GetLabels() const;
 
                     /**
-                     * 设置告警的lable
-                     * @param _labels 告警的lable
+                     * 设置<p>告警的lable</p>
+                     * @param _labels <p>告警的lable</p>
                      * 
                      */
                     void SetLabels(const std::vector<AlarmLable>& _labels);
@@ -410,110 +411,142 @@ namespace TencentCloud
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>该条通知实际执行的接收人/组明细。一条元素对应通知模板里的一条渠道发送规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReceiverGroups <p>该条通知实际执行的接收人/组明细。一条元素对应通知模板里的一条渠道发送规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ReceiverGroup> GetReceiverGroups() const;
+
+                    /**
+                     * 设置<p>该条通知实际执行的接收人/组明细。一条元素对应通知模板里的一条渠道发送规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _receiverGroups <p>该条通知实际执行的接收人/组明细。一条元素对应通知模板里的一条渠道发送规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReceiverGroups(const std::vector<ReceiverGroup>& _receiverGroups);
+
+                    /**
+                     * 判断参数 ReceiverGroups 是否已赋值
+                     * @return ReceiverGroups 是否已赋值
+                     * 
+                     */
+                    bool ReceiverGroupsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 通知的唯一ID
+                     * <p>通知的唯一ID</p>
                      */
                     std::string m_notifyId;
                     bool m_notifyIdHasBeenSet;
 
                     /**
-                     * 告警策略ID
+                     * <p>告警策略ID</p>
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 告警周期iD
+                     * <p>告警周期iD</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 通知时间 unix秒级时间戳
+                     * <p>通知时间 unix秒级时间戳</p>
                      */
                     int64_t m_notifyTime;
                     bool m_notifyTimeHasBeenSet;
 
                     /**
-                     * 触发时间 unix秒级时间戳
+                     * <p>触发时间 unix秒级时间戳</p>
                      */
                     int64_t m_triggerTime;
                     bool m_triggerTimeHasBeenSet;
 
                     /**
-                     * 告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别
+                     * <p>告警级别 None 非分级告警级别; Note 提示级别; Warn 严重级别; Serious 紧急级别</p>
                      */
                     std::string m_triggerLevel;
                     bool m_triggerLevelHasBeenSet;
 
                     /**
-                     * 告警内容
+                     * <p>告警内容</p>
                      */
                     std::string m_alarmContent;
                     bool m_alarmContentHasBeenSet;
 
                     /**
-                     * 告警对象
+                     * <p>告警对象</p>
                      */
                     std::string m_alarmObject;
                     bool m_alarmObjectHasBeenSet;
 
                     /**
-                     * 本次告警通知涉及到的渠道合集
+                     * <p>本次告警通知涉及到的渠道合集</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_channelSet;
                     bool m_channelSetHasBeenSet;
 
                     /**
-                     * 渠道的接收人信息
+                     * <p>渠道的接收人信息</p>
                      */
                     std::vector<ChannelsReceivers> m_channelsReceivers;
                     bool m_channelsReceiversHasBeenSet;
 
                     /**
-                     * 告警策略名称
+                     * <p>告警策略名称</p>
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
 
                     /**
-                     * Prometheus实例ID, 仅当 MT_PROME 时有效
+                     * <p>Prometheus实例ID, 仅当 MT_PROME 时有效</p>
                      */
                     std::string m_promeInstanceID;
                     bool m_promeInstanceIDHasBeenSet;
 
                     /**
-                     * Prometheus实例所在的地域, 仅当 MT_PROME 时有效
+                     * <p>Prometheus实例所在的地域, 仅当 MT_PROME 时有效</p>
                      */
                     std::string m_promeInstanceRegion;
                     bool m_promeInstanceRegionHasBeenSet;
 
                     /**
-                     * 通知模板相关的配置信息
+                     * <p>通知模板相关的配置信息</p>
                      */
                     std::vector<NotifyRelatedNotice> m_notices;
                     bool m_noticesHasBeenSet;
 
                     /**
-                     * 告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复
+                     * <p>告警触发状态  Trigger 告警状态触发; Recovery 告警状态恢复</p>
                      */
                     std::string m_triggerStatus;
                     bool m_triggerStatusHasBeenSet;
 
                     /**
-                     * 与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效
+                     * <p>与当前Prometheus通知历史相关控制台页面地址，仅当 MR_PROME 时有效</p>
                      */
                     std::string m_promeConsoleURL;
                     bool m_promeConsoleURLHasBeenSet;
 
                     /**
-                     * 告警的lable
+                     * <p>告警的lable</p>
                      */
                     std::vector<AlarmLable> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * <p>该条通知实际执行的接收人/组明细。一条元素对应通知模板里的一条渠道发送规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ReceiverGroup> m_receiverGroups;
+                    bool m_receiverGroupsHasBeenSet;
 
                 };
             }

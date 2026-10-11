@@ -3040,6 +3040,56 @@ TioneClient::DescribeWorkspacesOutcomeCallable TioneClient::DescribeWorkspacesCa
     return prom->get_future();
 }
 
+TioneClient::EnableTrainingTaskClsConfigOutcome TioneClient::EnableTrainingTaskClsConfig(const EnableTrainingTaskClsConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableTrainingTaskClsConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableTrainingTaskClsConfigResponse rsp = EnableTrainingTaskClsConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableTrainingTaskClsConfigOutcome(rsp);
+        else
+            return EnableTrainingTaskClsConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableTrainingTaskClsConfigOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::EnableTrainingTaskClsConfigAsync(const EnableTrainingTaskClsConfigRequest& request, const EnableTrainingTaskClsConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnableTrainingTaskClsConfigRequest&;
+    using Resp = EnableTrainingTaskClsConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnableTrainingTaskClsConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::EnableTrainingTaskClsConfigOutcomeCallable TioneClient::EnableTrainingTaskClsConfigCallable(const EnableTrainingTaskClsConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnableTrainingTaskClsConfigOutcome>>();
+    EnableTrainingTaskClsConfigAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const EnableTrainingTaskClsConfigRequest&,
+        EnableTrainingTaskClsConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::ModifyModelServiceOutcome TioneClient::ModifyModelService(const ModifyModelServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyModelService");

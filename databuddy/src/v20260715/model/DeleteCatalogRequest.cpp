@@ -25,7 +25,8 @@ using namespace std;
 DeleteCatalogRequest::DeleteCatalogRequest() :
     m_catalogNameHasBeenSet(false),
     m_workspaceIdHasBeenSet(false),
-    m_connectionIdHasBeenSet(false)
+    m_connectionIdHasBeenSet(false),
+    m_catalogSourceHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DeleteCatalogRequest::ToJsonString() const
         string key = "ConnectionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_connectionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_catalogSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DeleteCatalogRequest::SetConnectionId(const string& _connectionId)
 bool DeleteCatalogRequest::ConnectionIdHasBeenSet() const
 {
     return m_connectionIdHasBeenSet;
+}
+
+string DeleteCatalogRequest::GetCatalogSource() const
+{
+    return m_catalogSource;
+}
+
+void DeleteCatalogRequest::SetCatalogSource(const string& _catalogSource)
+{
+    m_catalogSource = _catalogSource;
+    m_catalogSourceHasBeenSet = true;
+}
+
+bool DeleteCatalogRequest::CatalogSourceHasBeenSet() const
+{
+    return m_catalogSourceHasBeenSet;
 }
 
 

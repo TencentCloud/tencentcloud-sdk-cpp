@@ -92,7 +92,8 @@ TaskFullRespInfo::TaskFullRespInfo() :
     m_shuffleWriteBytesSumHasBeenSet(false),
     m_activeCoreHasBeenSet(false),
     m_queueTimeHasBeenSet(false),
-    m_resourceGroupTypeHasBeenSet(false)
+    m_resourceGroupTypeHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -842,6 +843,16 @@ CoreInternalOutcome TaskFullRespInfo::Deserialize(const rapidjson::Value &value)
         m_resourceGroupTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskFullRespInfo.Tag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tag = string(value["Tag"].GetString());
+        m_tagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1426,6 +1437,14 @@ void TaskFullRespInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ResourceGroupType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceGroupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2581,5 +2600,21 @@ void TaskFullRespInfo::SetResourceGroupType(const string& _resourceGroupType)
 bool TaskFullRespInfo::ResourceGroupTypeHasBeenSet() const
 {
     return m_resourceGroupTypeHasBeenSet;
+}
+
+string TaskFullRespInfo::GetTag() const
+{
+    return m_tag;
+}
+
+void TaskFullRespInfo::SetTag(const string& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool TaskFullRespInfo::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 

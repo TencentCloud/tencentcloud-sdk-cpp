@@ -517,18 +517,18 @@ namespace TencentCloud
                     bool ResourceModeHasBeenSet() const;
 
                     /**
-                     * 获取ZIP 异步创建时透传 Workspace 作业信息；普通同步创建或其他复用该返回结构的接口不设置该字段
+                     * 获取<p>ZIP 异步创建时透传 Workspace 作业信息；普通同步创建或其他复用该返回结构的接口不设置该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AsyncOperation ZIP 异步创建时透传 Workspace 作业信息；普通同步创建或其他复用该返回结构的接口不设置该字段
+                     * @return AsyncOperation <p>ZIP 异步创建时透传 Workspace 作业信息；普通同步创建或其他复用该返回结构的接口不设置该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AsyncOperation GetAsyncOperation() const;
 
                     /**
-                     * 设置ZIP 异步创建时透传 Workspace 作业信息；普通同步创建或其他复用该返回结构的接口不设置该字段
+                     * 设置<p>ZIP 异步创建时透传 Workspace 作业信息；普通同步创建或其他复用该返回结构的接口不设置该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _asyncOperation ZIP 异步创建时透传 Workspace 作业信息；普通同步创建或其他复用该返回结构的接口不设置该字段
+                     * @param _asyncOperation <p>ZIP 异步创建时透传 Workspace 作业信息；普通同步创建或其他复用该返回结构的接口不设置该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -540,6 +540,31 @@ namespace TencentCloud
                      * 
                      */
                     bool AsyncOperationHasBeenSet() const;
+
+                    /**
+                     * 获取<p>脚本版本ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VersionId <p>脚本版本ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVersionId() const;
+
+                    /**
+                     * 设置<p>脚本版本ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _versionId <p>脚本版本ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVersionId(const std::string& _versionId);
+
+                    /**
+                     * 判断参数 VersionId 是否已赋值
+                     * @return VersionId 是否已赋值
+                     * 
+                     */
+                    bool VersionIdHasBeenSet() const;
 
                 private:
 
@@ -675,11 +700,18 @@ namespace TencentCloud
                     bool m_resourceModeHasBeenSet;
 
                     /**
-                     * ZIP 异步创建时透传 Workspace 作业信息；普通同步创建或其他复用该返回结构的接口不设置该字段
+                     * <p>ZIP 异步创建时透传 Workspace 作业信息；普通同步创建或其他复用该返回结构的接口不设置该字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AsyncOperation m_asyncOperation;
                     bool m_asyncOperationHasBeenSet;
+
+                    /**
+                     * <p>脚本版本ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_versionId;
+                    bool m_versionIdHasBeenSet;
 
                 };
             }

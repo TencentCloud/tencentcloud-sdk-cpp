@@ -28,7 +28,8 @@ CreateCatalogRequest::CreateCatalogRequest() :
     m_workspaceIdHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_connectionIdHasBeenSet(false),
-    m_catalogSourceHasBeenSet(false)
+    m_catalogSourceHasBeenSet(false),
+    m_connectionCatalogNameHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateCatalogRequest::ToJsonString() const
         string key = "CatalogSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_catalogSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectionCatalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectionCatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_connectionCatalogName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateCatalogRequest::SetCatalogSource(const string& _catalogSource)
 bool CreateCatalogRequest::CatalogSourceHasBeenSet() const
 {
     return m_catalogSourceHasBeenSet;
+}
+
+string CreateCatalogRequest::GetConnectionCatalogName() const
+{
+    return m_connectionCatalogName;
+}
+
+void CreateCatalogRequest::SetConnectionCatalogName(const string& _connectionCatalogName)
+{
+    m_connectionCatalogName = _connectionCatalogName;
+    m_connectionCatalogNameHasBeenSet = true;
+}
+
+bool CreateCatalogRequest::ConnectionCatalogNameHasBeenSet() const
+{
+    return m_connectionCatalogNameHasBeenSet;
 }
 
 

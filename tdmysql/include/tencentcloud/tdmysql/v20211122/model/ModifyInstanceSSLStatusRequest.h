@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool EnabledHasBeenSet() const;
 
+                    /**
+                     * 获取<p>证书类型</p><p>枚举值：</p><ul><li>Cloud： 云端证书</li><li>Custom： 自定义证书</li></ul>
+                     * @return CertificateType <p>证书类型</p><p>枚举值：</p><ul><li>Cloud： 云端证书</li><li>Custom： 自定义证书</li></ul>
+                     * 
+                     */
+                    std::string GetCertificateType() const;
+
+                    /**
+                     * 设置<p>证书类型</p><p>枚举值：</p><ul><li>Cloud： 云端证书</li><li>Custom： 自定义证书</li></ul>
+                     * @param _certificateType <p>证书类型</p><p>枚举值：</p><ul><li>Cloud： 云端证书</li><li>Custom： 自定义证书</li></ul>
+                     * 
+                     */
+                    void SetCertificateType(const std::string& _certificateType);
+
+                    /**
+                     * 判断参数 CertificateType 是否已赋值
+                     * @return CertificateType 是否已赋值
+                     * 
+                     */
+                    bool CertificateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>腾讯云SSL证书服务的证书ID</p>
+                     * @return CertificateId <p>腾讯云SSL证书服务的证书ID</p>
+                     * 
+                     */
+                    std::string GetCertificateId() const;
+
+                    /**
+                     * 设置<p>腾讯云SSL证书服务的证书ID</p>
+                     * @param _certificateId <p>腾讯云SSL证书服务的证书ID</p>
+                     * 
+                     */
+                    void SetCertificateId(const std::string& _certificateId);
+
+                    /**
+                     * 判断参数 CertificateId 是否已赋值
+                     * @return CertificateId 是否已赋值
+                     * 
+                     */
+                    bool CertificateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
+
+                    /**
+                     * <p>证书类型</p><p>枚举值：</p><ul><li>Cloud： 云端证书</li><li>Custom： 自定义证书</li></ul>
+                     */
+                    std::string m_certificateType;
+                    bool m_certificateTypeHasBeenSet;
+
+                    /**
+                     * <p>腾讯云SSL证书服务的证书ID</p>
+                     */
+                    std::string m_certificateId;
+                    bool m_certificateIdHasBeenSet;
 
                 };
             }

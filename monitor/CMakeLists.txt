@@ -102,6 +102,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/CreateAIWorkbenchAgentResponse.h
   include/tencentcloud/monitor/v20230616/model/DeleteNoticeContentTmplsRequest.h
   include/tencentcloud/monitor/v20230616/model/PageByNoParams.h
+  include/tencentcloud/monitor/v20230616/model/ReceiverGroup.h
   include/tencentcloud/monitor/v20230616/model/CreateDispenseExternalRuleRequest.h
   include/tencentcloud/monitor/v20230616/model/ListAIWorkbenchResourceInstancesRequest.h
   include/tencentcloud/monitor/v20230616/model/ChannelsReceivers.h
@@ -142,6 +143,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/WebhookNoticeTmplMatcher.h
   include/tencentcloud/monitor/v20230616/model/DispenseCondition.h
   include/tencentcloud/monitor/v20230616/model/DescribeAIWorkbenchAgentResponse.h
+  include/tencentcloud/monitor/v20230616/model/ChannelContent.h
   include/tencentcloud/monitor/v20230616/model/ExecutionInfo.h
   include/tencentcloud/monitor/v20230616/model/GetAIWorkbenchArtifactDownloadURLResponse.h
   include/tencentcloud/monitor/v20230616/model/PagerDutyRobotNoticeTmplHeader.h
@@ -794,6 +796,7 @@ set(monitor_src
   src/v20230616/model/CreateAIWorkbenchAgentResponse.cpp
   src/v20230616/model/DeleteNoticeContentTmplsRequest.cpp
   src/v20230616/model/PageByNoParams.cpp
+  src/v20230616/model/ReceiverGroup.cpp
   src/v20230616/model/CreateDispenseExternalRuleRequest.cpp
   src/v20230616/model/ListAIWorkbenchResourceInstancesRequest.cpp
   src/v20230616/model/ChannelsReceivers.cpp
@@ -834,6 +837,7 @@ set(monitor_src
   src/v20230616/model/WebhookNoticeTmplMatcher.cpp
   src/v20230616/model/DispenseCondition.cpp
   src/v20230616/model/DescribeAIWorkbenchAgentResponse.cpp
+  src/v20230616/model/ChannelContent.cpp
   src/v20230616/model/ExecutionInfo.cpp
   src/v20230616/model/GetAIWorkbenchArtifactDownloadURLResponse.cpp
   src/v20230616/model/PagerDutyRobotNoticeTmplHeader.cpp

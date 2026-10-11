@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeJobDetailResponse::DescribeJobDetailResponse()
+DescribeJobDetailResponse::DescribeJobDetailResponse() :
+    m_jobDetailHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DescribeJobDetailResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("JobDetail") && !rsp["JobDetail"].IsNull())
+    {
+        if (!rsp["JobDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jobDetail.Deserialize(rsp["JobDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jobDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DescribeJobDetailResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_jobDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DescribeJobDetailResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+JobDetailInfo DescribeJobDetailResponse::GetJobDetail() const
+{
+    return m_jobDetail;
+}
+
+bool DescribeJobDetailResponse::JobDetailHasBeenSet() const
+{
+    return m_jobDetailHasBeenSet;
+}
 
 

@@ -36,6 +36,7 @@
 #include <tencentcloud/mps/v20190612/model/DiffusionEnhanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/FrameRateWithDenConfig.h>
 #include <tencentcloud/mps/v20190612/model/AiRestorationConfig.h>
+#include <tencentcloud/mps/v20190612/model/DiffusionEnhanceV2Config.h>
 
 
 namespace TencentCloud
@@ -383,6 +384,31 @@ namespace TencentCloud
                      */
                     bool AiRestorationHasBeenSet() const;
 
+                    /**
+                     * 获取<p>大模型增强专业版配置。注意大模型、综合增强、去毛刺三项里最多配置一项。且不可与超分、降噪同时开启。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiffusionEnhanceV2 <p>大模型增强专业版配置。注意大模型、综合增强、去毛刺三项里最多配置一项。且不可与超分、降噪同时开启。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DiffusionEnhanceV2Config GetDiffusionEnhanceV2() const;
+
+                    /**
+                     * 设置<p>大模型增强专业版配置。注意大模型、综合增强、去毛刺三项里最多配置一项。且不可与超分、降噪同时开启。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _diffusionEnhanceV2 <p>大模型增强专业版配置。注意大模型、综合增强、去毛刺三项里最多配置一项。且不可与超分、降噪同时开启。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDiffusionEnhanceV2(const DiffusionEnhanceV2Config& _diffusionEnhanceV2);
+
+                    /**
+                     * 判断参数 DiffusionEnhanceV2 是否已赋值
+                     * @return DiffusionEnhanceV2 是否已赋值
+                     * 
+                     */
+                    bool DiffusionEnhanceV2HasBeenSet() const;
+
                 private:
 
                     /**
@@ -475,6 +501,13 @@ namespace TencentCloud
                      */
                     AiRestorationConfig m_aiRestoration;
                     bool m_aiRestorationHasBeenSet;
+
+                    /**
+                     * <p>大模型增强专业版配置。注意大模型、综合增强、去毛刺三项里最多配置一项。且不可与超分、降噪同时开启。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DiffusionEnhanceV2Config m_diffusionEnhanceV2;
+                    bool m_diffusionEnhanceV2HasBeenSet;
 
                 };
             }

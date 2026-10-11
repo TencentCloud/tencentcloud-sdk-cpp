@@ -529,15 +529,15 @@ namespace TencentCloud
                     bool DryRunHasBeenSet() const;
 
                     /**
-                     * 获取<p>指实例部署模式。</p><ul><li>local：传统架构，默认为 local。</li><li>cdc：独享集群。</li><li>cloud：云原生，当前已暂停售卖。</li></ul>
-                     * @return ProductVersion <p>指实例部署模式。</p><ul><li>local：传统架构，默认为 local。</li><li>cdc：独享集群。</li><li>cloud：云原生，当前已暂停售卖。</li></ul>
+                     * 获取<p>指实例部署类型。</p><p>枚举值：</p><ul><li>local： 通用 I 型。</li><li>localv2： 通用 II 型。</li><li>cdc： 独享集群型。</li><li>cloud： 云原生，当前已暂停售卖。</li></ul>
+                     * @return ProductVersion <p>指实例部署类型。</p><p>枚举值：</p><ul><li>local： 通用 I 型。</li><li>localv2： 通用 II 型。</li><li>cdc： 独享集群型。</li><li>cloud： 云原生，当前已暂停售卖。</li></ul>
                      * 
                      */
                     std::string GetProductVersion() const;
 
                     /**
-                     * 设置<p>指实例部署模式。</p><ul><li>local：传统架构，默认为 local。</li><li>cdc：独享集群。</li><li>cloud：云原生，当前已暂停售卖。</li></ul>
-                     * @param _productVersion <p>指实例部署模式。</p><ul><li>local：传统架构，默认为 local。</li><li>cdc：独享集群。</li><li>cloud：云原生，当前已暂停售卖。</li></ul>
+                     * 设置<p>指实例部署类型。</p><p>枚举值：</p><ul><li>local： 通用 I 型。</li><li>localv2： 通用 II 型。</li><li>cdc： 独享集群型。</li><li>cloud： 云原生，当前已暂停售卖。</li></ul>
+                     * @param _productVersion <p>指实例部署类型。</p><p>枚举值：</p><ul><li>local： 通用 I 型。</li><li>localv2： 通用 II 型。</li><li>cdc： 独享集群型。</li><li>cloud： 云原生，当前已暂停售卖。</li></ul>
                      * 
                      */
                     void SetProductVersion(const std::string& _productVersion);
@@ -837,7 +837,7 @@ namespace TencentCloud
                     bool m_dryRunHasBeenSet;
 
                     /**
-                     * <p>指实例部署模式。</p><ul><li>local：传统架构，默认为 local。</li><li>cdc：独享集群。</li><li>cloud：云原生，当前已暂停售卖。</li></ul>
+                     * <p>指实例部署类型。</p><p>枚举值：</p><ul><li>local： 通用 I 型。</li><li>localv2： 通用 II 型。</li><li>cdc： 独享集群型。</li><li>cloud： 云原生，当前已暂停售卖。</li></ul>
                      */
                     std::string m_productVersion;
                     bool m_productVersionHasBeenSet;

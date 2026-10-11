@@ -23,7 +23,11 @@ using namespace std;
 AutoScalingConfig::AutoScalingConfig() :
     m_rangeMinHasBeenSet(false),
     m_rangeMaxHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_scaleUpEnabledHasBeenSet(false),
+    m_scaleDownEnabledHasBeenSet(false),
+    m_thresholdPercentHasBeenSet(false),
+    m_stepHasBeenSet(false)
 {
 }
 
@@ -62,6 +66,46 @@ CoreInternalOutcome AutoScalingConfig::Deserialize(const rapidjson::Value &value
         m_resourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ScaleUpEnabled") && !value["ScaleUpEnabled"].IsNull())
+    {
+        if (!value["ScaleUpEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScalingConfig.ScaleUpEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleUpEnabled = value["ScaleUpEnabled"].GetBool();
+        m_scaleUpEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScaleDownEnabled") && !value["ScaleDownEnabled"].IsNull())
+    {
+        if (!value["ScaleDownEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScalingConfig.ScaleDownEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaleDownEnabled = value["ScaleDownEnabled"].GetBool();
+        m_scaleDownEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("ThresholdPercent") && !value["ThresholdPercent"].IsNull())
+    {
+        if (!value["ThresholdPercent"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScalingConfig.ThresholdPercent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_thresholdPercent = value["ThresholdPercent"].GetInt64();
+        m_thresholdPercentHasBeenSet = true;
+    }
+
+    if (value.HasMember("Step") && !value["Step"].IsNull())
+    {
+        if (!value["Step"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScalingConfig.Step` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_step = value["Step"].GetDouble();
+        m_stepHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +135,38 @@ void AutoScalingConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scaleUpEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleUpEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scaleUpEnabled, allocator);
+    }
+
+    if (m_scaleDownEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleDownEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scaleDownEnabled, allocator);
+    }
+
+    if (m_thresholdPercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThresholdPercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_thresholdPercent, allocator);
+    }
+
+    if (m_stepHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Step";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_step, allocator);
     }
 
 }
@@ -142,5 +218,69 @@ void AutoScalingConfig::SetResourceType(const string& _resourceType)
 bool AutoScalingConfig::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
+}
+
+bool AutoScalingConfig::GetScaleUpEnabled() const
+{
+    return m_scaleUpEnabled;
+}
+
+void AutoScalingConfig::SetScaleUpEnabled(const bool& _scaleUpEnabled)
+{
+    m_scaleUpEnabled = _scaleUpEnabled;
+    m_scaleUpEnabledHasBeenSet = true;
+}
+
+bool AutoScalingConfig::ScaleUpEnabledHasBeenSet() const
+{
+    return m_scaleUpEnabledHasBeenSet;
+}
+
+bool AutoScalingConfig::GetScaleDownEnabled() const
+{
+    return m_scaleDownEnabled;
+}
+
+void AutoScalingConfig::SetScaleDownEnabled(const bool& _scaleDownEnabled)
+{
+    m_scaleDownEnabled = _scaleDownEnabled;
+    m_scaleDownEnabledHasBeenSet = true;
+}
+
+bool AutoScalingConfig::ScaleDownEnabledHasBeenSet() const
+{
+    return m_scaleDownEnabledHasBeenSet;
+}
+
+int64_t AutoScalingConfig::GetThresholdPercent() const
+{
+    return m_thresholdPercent;
+}
+
+void AutoScalingConfig::SetThresholdPercent(const int64_t& _thresholdPercent)
+{
+    m_thresholdPercent = _thresholdPercent;
+    m_thresholdPercentHasBeenSet = true;
+}
+
+bool AutoScalingConfig::ThresholdPercentHasBeenSet() const
+{
+    return m_thresholdPercentHasBeenSet;
+}
+
+double AutoScalingConfig::GetStep() const
+{
+    return m_step;
+}
+
+void AutoScalingConfig::SetStep(const double& _step)
+{
+    m_step = _step;
+    m_stepHasBeenSet = true;
+}
+
+bool AutoScalingConfig::StepHasBeenSet() const
+{
+    return m_stepHasBeenSet;
 }
 

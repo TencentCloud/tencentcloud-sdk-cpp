@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取<p>实例id</p>
+                     * @return InstanceId <p>实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置<p>实例id</p>
+                     * @param _instanceId <p>实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
-                     * @return ClusterType 集群类型
+                     * 获取<p>集群类型</p>
+                     * @return ClusterType <p>集群类型</p>
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型
-                     * @param _clusterType 集群类型
+                     * 设置<p>集群类型</p>
+                     * @param _clusterType <p>集群类型</p>
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _clusterId <p>集群id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取ServiceMonitors配置
-                     * @return ServiceMonitors ServiceMonitors配置
+                     * 获取<p>ServiceMonitors配置</p>
+                     * @return ServiceMonitors <p>ServiceMonitors配置</p>
                      * 
                      */
                     std::vector<PrometheusConfigItem> GetServiceMonitors() const;
 
                     /**
-                     * 设置ServiceMonitors配置
-                     * @param _serviceMonitors ServiceMonitors配置
+                     * 设置<p>ServiceMonitors配置</p>
+                     * @param _serviceMonitors <p>ServiceMonitors配置</p>
                      * 
                      */
                     void SetServiceMonitors(const std::vector<PrometheusConfigItem>& _serviceMonitors);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool ServiceMonitorsHasBeenSet() const;
 
                     /**
-                     * 获取PodMonitors配置
-                     * @return PodMonitors PodMonitors配置
+                     * 获取<p>PodMonitors配置</p>
+                     * @return PodMonitors <p>PodMonitors配置</p>
                      * 
                      */
                     std::vector<PrometheusConfigItem> GetPodMonitors() const;
 
                     /**
-                     * 设置PodMonitors配置
-                     * @param _podMonitors PodMonitors配置
+                     * 设置<p>PodMonitors配置</p>
+                     * @param _podMonitors <p>PodMonitors配置</p>
                      * 
                      */
                     void SetPodMonitors(const std::vector<PrometheusConfigItem>& _podMonitors);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool PodMonitorsHasBeenSet() const;
 
                     /**
-                     * 获取prometheus原生Job配置
-                     * @return RawJobs prometheus原生Job配置
+                     * 获取<p>prometheus原生Job配置</p>
+                     * @return RawJobs <p>prometheus原生Job配置</p>
                      * 
                      */
                     std::vector<PrometheusConfigItem> GetRawJobs() const;
 
                     /**
-                     * 设置prometheus原生Job配置
-                     * @param _rawJobs prometheus原生Job配置
+                     * 设置<p>prometheus原生Job配置</p>
+                     * @param _rawJobs <p>prometheus原生Job配置</p>
                      * 
                      */
                     void SetRawJobs(const std::vector<PrometheusConfigItem>& _rawJobs);
@@ -170,71 +170,66 @@ namespace TencentCloud
                     bool RawJobsHasBeenSet() const;
 
                     /**
-                     * 获取0: 更新实例组件镜像版本；
-1: 不更新实例组件镜像版本
-                     * @return UpdateImage 0: 更新实例组件镜像版本；
-1: 不更新实例组件镜像版本
-                     * 
+                     * 获取<p>0: 更新实例组件镜像版本；<br>1: 不更新实例组件镜像版本</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @return UpdateImage <p>0: 更新实例组件镜像版本；<br>1: 不更新实例组件镜像版本</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @deprecated
                      */
                     int64_t GetUpdateImage() const;
 
                     /**
-                     * 设置0: 更新实例组件镜像版本；
-1: 不更新实例组件镜像版本
-                     * @param _updateImage 0: 更新实例组件镜像版本；
-1: 不更新实例组件镜像版本
-                     * 
+                     * 设置<p>0: 更新实例组件镜像版本；<br>1: 不更新实例组件镜像版本</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @param _updateImage <p>0: 更新实例组件镜像版本；<br>1: 不更新实例组件镜像版本</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
+                     * @deprecated
                      */
                     void SetUpdateImage(const int64_t& _updateImage);
 
                     /**
                      * 判断参数 UpdateImage 是否已赋值
                      * @return UpdateImage 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UpdateImageHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 实例id
+                     * <p>实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 集群类型
+                     * <p>集群类型</p>
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * ServiceMonitors配置
+                     * <p>ServiceMonitors配置</p>
                      */
                     std::vector<PrometheusConfigItem> m_serviceMonitors;
                     bool m_serviceMonitorsHasBeenSet;
 
                     /**
-                     * PodMonitors配置
+                     * <p>PodMonitors配置</p>
                      */
                     std::vector<PrometheusConfigItem> m_podMonitors;
                     bool m_podMonitorsHasBeenSet;
 
                     /**
-                     * prometheus原生Job配置
+                     * <p>prometheus原生Job配置</p>
                      */
                     std::vector<PrometheusConfigItem> m_rawJobs;
                     bool m_rawJobsHasBeenSet;
 
                     /**
-                     * 0: 更新实例组件镜像版本；
-1: 不更新实例组件镜像版本
+                     * <p>0: 更新实例组件镜像版本；<br>1: 不更新实例组件镜像版本</p><p>取值范围：[0, 1]</p><p>默认值：0</p>
                      */
                     int64_t m_updateImage;
                     bool m_updateImageHasBeenSet;

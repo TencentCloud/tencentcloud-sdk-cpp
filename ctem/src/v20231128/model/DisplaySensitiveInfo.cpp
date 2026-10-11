@@ -28,7 +28,9 @@ DisplaySensitiveInfo::DisplaySensitiveInfo() :
     m_displayToolCommonHasBeenSet(false),
     m_isCloudAssetHasBeenSet(false),
     m_cloudAssetStatusHasBeenSet(false),
-    m_aggregationCountHasBeenSet(false)
+    m_aggregationCountHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_lastCheckTimeHasBeenSet(false)
 {
 }
 
@@ -124,6 +126,26 @@ CoreInternalOutcome DisplaySensitiveInfo::Deserialize(const rapidjson::Value &va
         m_aggregationCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySensitiveInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastCheckTime") && !value["LastCheckTime"].IsNull())
+    {
+        if (!value["LastCheckTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DisplaySensitiveInfo.LastCheckTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastCheckTime = string(value["LastCheckTime"].GetString());
+        m_lastCheckTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +216,22 @@ void DisplaySensitiveInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "AggregationCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aggregationCount, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastCheckTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastCheckTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastCheckTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +363,37 @@ void DisplaySensitiveInfo::SetAggregationCount(const int64_t& _aggregationCount)
 bool DisplaySensitiveInfo::AggregationCountHasBeenSet() const
 {
     return m_aggregationCountHasBeenSet;
+}
+
+string DisplaySensitiveInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void DisplaySensitiveInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DisplaySensitiveInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DisplaySensitiveInfo::GetLastCheckTime() const
+{
+    return m_lastCheckTime;
+}
+
+void DisplaySensitiveInfo::SetLastCheckTime(const string& _lastCheckTime)
+{
+    m_lastCheckTime = _lastCheckTime;
+    m_lastCheckTimeHasBeenSet = true;
+}
+
+bool DisplaySensitiveInfo::LastCheckTimeHasBeenSet() const
+{
+    return m_lastCheckTimeHasBeenSet;
 }
 

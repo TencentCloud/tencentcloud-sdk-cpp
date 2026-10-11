@@ -71,6 +71,8 @@
 #include <tencentcloud/apm/v20210622/model/DescribeRelatedServicesOnTraceResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeSpanTreeByIDRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeSpanTreeByIDResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeTagValuesRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeTagValuesResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeTopologyNewRequest.h>
@@ -179,6 +181,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServiceOverviewResponse> DescribeServiceOverviewOutcome;
                 typedef std::future<DescribeServiceOverviewOutcome> DescribeServiceOverviewOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeServiceOverviewRequest&, DescribeServiceOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSpanTreeByIDResponse> DescribeSpanTreeByIDOutcome;
+                typedef std::future<DescribeSpanTreeByIDOutcome> DescribeSpanTreeByIDOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeSpanTreeByIDRequest&, DescribeSpanTreeByIDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpanTreeByIDAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTagValuesResponse> DescribeTagValuesOutcome;
                 typedef std::future<DescribeTagValuesOutcome> DescribeTagValuesOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeTagValuesRequest&, DescribeTagValuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagValuesAsyncHandler;
@@ -451,6 +456,15 @@ namespace TencentCloud
                 DescribeServiceOverviewOutcome DescribeServiceOverview(const Model::DescribeServiceOverviewRequest &request);
                 void DescribeServiceOverviewAsync(const Model::DescribeServiceOverviewRequest& request, const DescribeServiceOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServiceOverviewOutcomeCallable DescribeServiceOverviewCallable(const Model::DescribeServiceOverviewRequest& request);
+
+                /**
+                 *查询trace详情接口信息
+                 * @param req DescribeSpanTreeByIDRequest
+                 * @return DescribeSpanTreeByIDOutcome
+                 */
+                DescribeSpanTreeByIDOutcome DescribeSpanTreeByID(const Model::DescribeSpanTreeByIDRequest &request);
+                void DescribeSpanTreeByIDAsync(const Model::DescribeSpanTreeByIDRequest& request, const DescribeSpanTreeByIDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSpanTreeByIDOutcomeCallable DescribeSpanTreeByIDCallable(const Model::DescribeSpanTreeByIDRequest& request);
 
                 /**
                  *根据维度名和过滤条件，查询维度数据.

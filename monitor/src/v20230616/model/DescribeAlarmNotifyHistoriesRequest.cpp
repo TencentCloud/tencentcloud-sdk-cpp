@@ -29,7 +29,8 @@ DescribeAlarmNotifyHistoriesRequest::DescribeAlarmNotifyHistoriesRequest() :
     m_pageParamsHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_modelNameHasBeenSet(false),
-    m_policyIdHasBeenSet(false)
+    m_policyIdHasBeenSet(false),
+    m_notifyIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string DescribeAlarmNotifyHistoriesRequest::ToJsonString() const
         string key = "PolicyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_policyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_notifyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void DescribeAlarmNotifyHistoriesRequest::SetPolicyId(const string& _policyId)
 bool DescribeAlarmNotifyHistoriesRequest::PolicyIdHasBeenSet() const
 {
     return m_policyIdHasBeenSet;
+}
+
+string DescribeAlarmNotifyHistoriesRequest::GetNotifyId() const
+{
+    return m_notifyId;
+}
+
+void DescribeAlarmNotifyHistoriesRequest::SetNotifyId(const string& _notifyId)
+{
+    m_notifyId = _notifyId;
+    m_notifyIdHasBeenSet = true;
+}
+
+bool DescribeAlarmNotifyHistoriesRequest::NotifyIdHasBeenSet() const
+{
+    return m_notifyIdHasBeenSet;
 }
 
 

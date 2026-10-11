@@ -40,7 +40,8 @@ FileInfo::FileInfo() :
     m_permissionsHasBeenSet(false),
     m_releaseStatusHasBeenSet(false),
     m_resourceModeHasBeenSet(false),
-    m_asyncOperationHasBeenSet(false)
+    m_asyncOperationHasBeenSet(false),
+    m_versionIdHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,16 @@ CoreInternalOutcome FileInfo::Deserialize(const rapidjson::Value &value)
         m_asyncOperationHasBeenSet = true;
     }
 
+    if (value.HasMember("VersionId") && !value["VersionId"].IsNull())
+    {
+        if (!value["VersionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileInfo.VersionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_versionId = string(value["VersionId"].GetString());
+        m_versionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -438,6 +449,14 @@ void FileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_asyncOperation.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_versionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -761,5 +780,21 @@ void FileInfo::SetAsyncOperation(const AsyncOperation& _asyncOperation)
 bool FileInfo::AsyncOperationHasBeenSet() const
 {
     return m_asyncOperationHasBeenSet;
+}
+
+string FileInfo::GetVersionId() const
+{
+    return m_versionId;
+}
+
+void FileInfo::SetVersionId(const string& _versionId)
+{
+    m_versionId = _versionId;
+    m_versionIdHasBeenSet = true;
+}
+
+bool FileInfo::VersionIdHasBeenSet() const
+{
+    return m_versionIdHasBeenSet;
 }
 

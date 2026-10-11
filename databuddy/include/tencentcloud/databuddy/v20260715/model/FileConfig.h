@@ -293,6 +293,31 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>默认 Catalog 的来源类型，用于区分默认 Catalog 属于哪一套 Catalog 体系，可选。长度上限 32。取值：METALAKE - TC Catalog（元数据湖 Catalog）；SETATS - Setats Catalog。空值/非法值时后端读取兜底为 METALAKE。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultCatalogSource <p>默认 Catalog 的来源类型，用于区分默认 Catalog 属于哪一套 Catalog 体系，可选。长度上限 32。取值：METALAKE - TC Catalog（元数据湖 Catalog）；SETATS - Setats Catalog。空值/非法值时后端读取兜底为 METALAKE。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDefaultCatalogSource() const;
+
+                    /**
+                     * 设置<p>默认 Catalog 的来源类型，用于区分默认 Catalog 属于哪一套 Catalog 体系，可选。长度上限 32。取值：METALAKE - TC Catalog（元数据湖 Catalog）；SETATS - Setats Catalog。空值/非法值时后端读取兜底为 METALAKE。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _defaultCatalogSource <p>默认 Catalog 的来源类型，用于区分默认 Catalog 属于哪一套 Catalog 体系，可选。长度上限 32。取值：METALAKE - TC Catalog（元数据湖 Catalog）；SETATS - Setats Catalog。空值/非法值时后端读取兜底为 METALAKE。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDefaultCatalogSource(const std::string& _defaultCatalogSource);
+
+                    /**
+                     * 判断参数 DefaultCatalogSource 是否已赋值
+                     * @return DefaultCatalogSource 是否已赋值
+                     * 
+                     */
+                    bool DefaultCatalogSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -363,6 +388,13 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * <p>默认 Catalog 的来源类型，用于区分默认 Catalog 属于哪一套 Catalog 体系，可选。长度上限 32。取值：METALAKE - TC Catalog（元数据湖 Catalog）；SETATS - Setats Catalog。空值/非法值时后端读取兜底为 METALAKE。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_defaultCatalogSource;
+                    bool m_defaultCatalogSourceHasBeenSet;
 
                 };
             }

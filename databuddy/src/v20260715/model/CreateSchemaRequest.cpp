@@ -25,9 +25,10 @@ using namespace std;
 CreateSchemaRequest::CreateSchemaRequest() :
     m_catalogNameHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_commentHasBeenSet(false),
     m_workspaceIdHasBeenSet(false),
-    m_connectionIdHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_connectionIdHasBeenSet(false),
+    m_catalogSourceHasBeenSet(false)
 {
 }
 
@@ -54,14 +55,6 @@ string CreateSchemaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_commentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Comment";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_workspaceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -70,12 +63,28 @@ string CreateSchemaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_workspaceId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_commentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_connectionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ConnectionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_connectionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_catalogSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -118,22 +127,6 @@ bool CreateSchemaRequest::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-string CreateSchemaRequest::GetComment() const
-{
-    return m_comment;
-}
-
-void CreateSchemaRequest::SetComment(const string& _comment)
-{
-    m_comment = _comment;
-    m_commentHasBeenSet = true;
-}
-
-bool CreateSchemaRequest::CommentHasBeenSet() const
-{
-    return m_commentHasBeenSet;
-}
-
 string CreateSchemaRequest::GetWorkspaceId() const
 {
     return m_workspaceId;
@@ -150,6 +143,22 @@ bool CreateSchemaRequest::WorkspaceIdHasBeenSet() const
     return m_workspaceIdHasBeenSet;
 }
 
+string CreateSchemaRequest::GetComment() const
+{
+    return m_comment;
+}
+
+void CreateSchemaRequest::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool CreateSchemaRequest::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
+}
+
 string CreateSchemaRequest::GetConnectionId() const
 {
     return m_connectionId;
@@ -164,6 +173,22 @@ void CreateSchemaRequest::SetConnectionId(const string& _connectionId)
 bool CreateSchemaRequest::ConnectionIdHasBeenSet() const
 {
     return m_connectionIdHasBeenSet;
+}
+
+string CreateSchemaRequest::GetCatalogSource() const
+{
+    return m_catalogSource;
+}
+
+void CreateSchemaRequest::SetCatalogSource(const string& _catalogSource)
+{
+    m_catalogSource = _catalogSource;
+    m_catalogSourceHasBeenSet = true;
+}
+
+bool CreateSchemaRequest::CatalogSourceHasBeenSet() const
+{
+    return m_catalogSourceHasBeenSet;
 }
 
 

@@ -38,6 +38,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/DNSConfig.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryRecordListRequest.h
   include/tencentcloud/ags/v20250920/model/CloudRegistry.h
+  include/tencentcloud/ags/v20250920/model/SandboxSnapshot.h
   include/tencentcloud/ags/v20250920/model/UpdateRegistryResponse.h
   include/tencentcloud/ags/v20250920/model/ApproveRegistryRecordResponse.h
   include/tencentcloud/ags/v20250920/model/DeleteSessionRequest.h
@@ -48,6 +49,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/PreviewRegistryRecordResponse.h
   include/tencentcloud/ags/v20250920/model/CreateSessionRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeDeploymentRequest.h
+  include/tencentcloud/ags/v20250920/model/DescribeSandboxSnapshotListRequest.h
   include/tencentcloud/ags/v20250920/model/ResourceConfiguration.h
   include/tencentcloud/ags/v20250920/model/DescribeSessionSpaceResponse.h
   include/tencentcloud/ags/v20250920/model/CreateSandboxToolResponse.h
@@ -61,7 +63,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/UpdateSandboxToolRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeSessionSpacesResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryRecordVersionListResponse.h
-  include/tencentcloud/ags/v20250920/model/StopSandboxInstanceResponse.h
+  include/tencentcloud/ags/v20250920/model/DeleteSandboxSnapshotResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryRecordVersionListRequest.h
   include/tencentcloud/ags/v20250920/model/RejectRegistryRecordRequest.h
   include/tencentcloud/ags/v20250920/model/CreateDeploymentRequest.h
@@ -70,6 +72,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/GetSkillPackageDownloadURLRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeSandboxToolListResponse.h
   include/tencentcloud/ags/v20250920/model/SessionInfo.h
+  include/tencentcloud/ags/v20250920/model/CreateSandboxSnapshotResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeQuotaOverviewResponse.h
   include/tencentcloud/ags/v20250920/model/UpdateSandboxToolResponse.h
   include/tencentcloud/ags/v20250920/model/InlineDataInfo.h
@@ -82,6 +85,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/CreateAPIKeyRequest.h
   include/tencentcloud/ags/v20250920/model/DeleteSandboxToolResponse.h
   include/tencentcloud/ags/v20250920/model/SandboxTool.h
+  include/tencentcloud/ags/v20250920/model/DeleteSandboxSnapshotRequest.h
   include/tencentcloud/ags/v20250920/model/CreateRegistryRecordResponse.h
   include/tencentcloud/ags/v20250920/model/SessionSpaceInfo.h
   include/tencentcloud/ags/v20250920/model/UpdateSandboxInstanceRequest.h
@@ -134,6 +138,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/AccountQuotaOverview.h
   include/tencentcloud/ags/v20250920/model/AgentBucketStorageSource.h
   include/tencentcloud/ags/v20250920/model/CloudRecordLabelMutation.h
+  include/tencentcloud/ags/v20250920/model/DescribeSandboxSnapshotListResponse.h
   include/tencentcloud/ags/v20250920/model/PauseSandboxInstanceResponse.h
   include/tencentcloud/ags/v20250920/model/CosStorageSource.h
   include/tencentcloud/ags/v20250920/model/StartSandboxInstanceRequest.h
@@ -163,7 +168,9 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/DeleteRegistryRecordRequest.h
   include/tencentcloud/ags/v20250920/model/EventPartInfo.h
   include/tencentcloud/ags/v20250920/model/Tag.h
+  include/tencentcloud/ags/v20250920/model/StopSandboxInstanceResponse.h
   include/tencentcloud/ags/v20250920/model/ScalingConfiguration.h
+  include/tencentcloud/ags/v20250920/model/CreateSandboxSnapshotRequest.h
   include/tencentcloud/ags/v20250920/model/AppendEventRequest.h
   include/tencentcloud/ags/v20250920/model/QuotaGroupOverview.h
   include/tencentcloud/ags/v20250920/model/DeleteSessionResponse.h
@@ -205,6 +212,7 @@ set(ags_src
   src/v20250920/model/DNSConfig.cpp
   src/v20250920/model/DescribeRegistryRecordListRequest.cpp
   src/v20250920/model/CloudRegistry.cpp
+  src/v20250920/model/SandboxSnapshot.cpp
   src/v20250920/model/UpdateRegistryResponse.cpp
   src/v20250920/model/ApproveRegistryRecordResponse.cpp
   src/v20250920/model/DeleteSessionRequest.cpp
@@ -215,6 +223,7 @@ set(ags_src
   src/v20250920/model/PreviewRegistryRecordResponse.cpp
   src/v20250920/model/CreateSessionRequest.cpp
   src/v20250920/model/DescribeDeploymentRequest.cpp
+  src/v20250920/model/DescribeSandboxSnapshotListRequest.cpp
   src/v20250920/model/ResourceConfiguration.cpp
   src/v20250920/model/DescribeSessionSpaceResponse.cpp
   src/v20250920/model/CreateSandboxToolResponse.cpp
@@ -228,7 +237,7 @@ set(ags_src
   src/v20250920/model/UpdateSandboxToolRequest.cpp
   src/v20250920/model/DescribeSessionSpacesResponse.cpp
   src/v20250920/model/DescribeRegistryRecordVersionListResponse.cpp
-  src/v20250920/model/StopSandboxInstanceResponse.cpp
+  src/v20250920/model/DeleteSandboxSnapshotResponse.cpp
   src/v20250920/model/DescribeRegistryRecordVersionListRequest.cpp
   src/v20250920/model/RejectRegistryRecordRequest.cpp
   src/v20250920/model/CreateDeploymentRequest.cpp
@@ -237,6 +246,7 @@ set(ags_src
   src/v20250920/model/GetSkillPackageDownloadURLRequest.cpp
   src/v20250920/model/DescribeSandboxToolListResponse.cpp
   src/v20250920/model/SessionInfo.cpp
+  src/v20250920/model/CreateSandboxSnapshotResponse.cpp
   src/v20250920/model/DescribeQuotaOverviewResponse.cpp
   src/v20250920/model/UpdateSandboxToolResponse.cpp
   src/v20250920/model/InlineDataInfo.cpp
@@ -249,6 +259,7 @@ set(ags_src
   src/v20250920/model/CreateAPIKeyRequest.cpp
   src/v20250920/model/DeleteSandboxToolResponse.cpp
   src/v20250920/model/SandboxTool.cpp
+  src/v20250920/model/DeleteSandboxSnapshotRequest.cpp
   src/v20250920/model/CreateRegistryRecordResponse.cpp
   src/v20250920/model/SessionSpaceInfo.cpp
   src/v20250920/model/UpdateSandboxInstanceRequest.cpp
@@ -301,6 +312,7 @@ set(ags_src
   src/v20250920/model/AccountQuotaOverview.cpp
   src/v20250920/model/AgentBucketStorageSource.cpp
   src/v20250920/model/CloudRecordLabelMutation.cpp
+  src/v20250920/model/DescribeSandboxSnapshotListResponse.cpp
   src/v20250920/model/PauseSandboxInstanceResponse.cpp
   src/v20250920/model/CosStorageSource.cpp
   src/v20250920/model/StartSandboxInstanceRequest.cpp
@@ -330,7 +342,9 @@ set(ags_src
   src/v20250920/model/DeleteRegistryRecordRequest.cpp
   src/v20250920/model/EventPartInfo.cpp
   src/v20250920/model/Tag.cpp
+  src/v20250920/model/StopSandboxInstanceResponse.cpp
   src/v20250920/model/ScalingConfiguration.cpp
+  src/v20250920/model/CreateSandboxSnapshotRequest.cpp
   src/v20250920/model/AppendEventRequest.cpp
   src/v20250920/model/QuotaGroupOverview.cpp
   src/v20250920/model/DeleteSessionResponse.cpp

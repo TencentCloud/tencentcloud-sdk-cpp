@@ -28,6 +28,7 @@
 #include <tencentcloud/mps/v20190612/model/AudioSeparateConfig.h>
 #include <tencentcloud/mps/v20190612/model/VolumeBalanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/AudioBeautifyConfig.h>
+#include <tencentcloud/mps/v20190612/model/AudioEnhanceEditConfig.h>
 
 
 namespace TencentCloud
@@ -51,18 +52,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音频降噪配置。
+                     * 获取<p>音频降噪配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Denoise 音频降噪配置。
+                     * @return Denoise <p>音频降噪配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AudioDenoiseConfig GetDenoise() const;
 
                     /**
-                     * 设置音频降噪配置。
+                     * 设置<p>音频降噪配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _denoise 音频降噪配置。
+                     * @param _denoise <p>音频降噪配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,18 +77,18 @@ namespace TencentCloud
                     bool DenoiseHasBeenSet() const;
 
                     /**
-                     * 获取音频分离配置。
+                     * 获取<p>音频分离配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Separate 音频分离配置。
+                     * @return Separate <p>音频分离配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AudioSeparateConfig GetSeparate() const;
 
                     /**
-                     * 设置音频分离配置。
+                     * 设置<p>音频分离配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _separate 音频分离配置。
+                     * @param _separate <p>音频分离配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -101,18 +102,18 @@ namespace TencentCloud
                     bool SeparateHasBeenSet() const;
 
                     /**
-                     * 获取音量均衡配置。
+                     * 获取<p>音量均衡配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VolumeBalance 音量均衡配置。
+                     * @return VolumeBalance <p>音量均衡配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VolumeBalanceConfig GetVolumeBalance() const;
 
                     /**
-                     * 设置音量均衡配置。
+                     * 设置<p>音量均衡配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _volumeBalance 音量均衡配置。
+                     * @param _volumeBalance <p>音量均衡配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -126,18 +127,18 @@ namespace TencentCloud
                     bool VolumeBalanceHasBeenSet() const;
 
                     /**
-                     * 获取音频美化配置。
+                     * 获取<p>音频美化配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Beautify 音频美化配置。
+                     * @return Beautify <p>音频美化配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AudioBeautifyConfig GetBeautify() const;
 
                     /**
-                     * 设置音频美化配置。
+                     * 设置<p>音频美化配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _beautify 音频美化配置。
+                     * @param _beautify <p>音频美化配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,35 +151,67 @@ namespace TencentCloud
                      */
                     bool BeautifyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>音频增强编辑。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AudioEnhanceEdit <p>音频增强编辑。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AudioEnhanceEditConfig GetAudioEnhanceEdit() const;
+
+                    /**
+                     * 设置<p>音频增强编辑。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _audioEnhanceEdit <p>音频增强编辑。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAudioEnhanceEdit(const AudioEnhanceEditConfig& _audioEnhanceEdit);
+
+                    /**
+                     * 判断参数 AudioEnhanceEdit 是否已赋值
+                     * @return AudioEnhanceEdit 是否已赋值
+                     * 
+                     */
+                    bool AudioEnhanceEditHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 音频降噪配置。
+                     * <p>音频降噪配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AudioDenoiseConfig m_denoise;
                     bool m_denoiseHasBeenSet;
 
                     /**
-                     * 音频分离配置。
+                     * <p>音频分离配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AudioSeparateConfig m_separate;
                     bool m_separateHasBeenSet;
 
                     /**
-                     * 音量均衡配置。
+                     * <p>音量均衡配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VolumeBalanceConfig m_volumeBalance;
                     bool m_volumeBalanceHasBeenSet;
 
                     /**
-                     * 音频美化配置。
+                     * <p>音频美化配置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AudioBeautifyConfig m_beautify;
                     bool m_beautifyHasBeenSet;
+
+                    /**
+                     * <p>音频增强编辑。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AudioEnhanceEditConfig m_audioEnhanceEdit;
+                    bool m_audioEnhanceEditHasBeenSet;
 
                 };
             }

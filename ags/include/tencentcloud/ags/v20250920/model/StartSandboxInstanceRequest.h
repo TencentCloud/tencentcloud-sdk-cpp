@@ -88,6 +88,27 @@ namespace TencentCloud
                     bool ToolNameHasBeenSet() const;
 
                     /**
+                     * 获取<p>待克隆的源沙箱 ID</p>
+                     * @return SourceInstanceId <p>待克隆的源沙箱 ID</p>
+                     * 
+                     */
+                    std::string GetSourceInstanceId() const;
+
+                    /**
+                     * 设置<p>待克隆的源沙箱 ID</p>
+                     * @param _sourceInstanceId <p>待克隆的源沙箱 ID</p>
+                     * 
+                     */
+                    void SetSourceInstanceId(const std::string& _sourceInstanceId);
+
+                    /**
+                     * 判断参数 SourceInstanceId 是否已赋值
+                     * @return SourceInstanceId 是否已赋值
+                     * 
+                     */
+                    bool SourceInstanceIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>
                      * @return Timeout <p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>
                      * 
@@ -226,6 +247,12 @@ namespace TencentCloud
                      */
                     std::string m_toolName;
                     bool m_toolNameHasBeenSet;
+
+                    /**
+                     * <p>待克隆的源沙箱 ID</p>
+                     */
+                    std::string m_sourceInstanceId;
+                    bool m_sourceInstanceIdHasBeenSet;
 
                     /**
                      * <p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>

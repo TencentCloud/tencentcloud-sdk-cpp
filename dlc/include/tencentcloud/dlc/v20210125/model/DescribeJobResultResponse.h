@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/ResultColumn.h>
 #include <tencentcloud/dlc/v20210125/model/ResultRow.h>
+#include <tencentcloud/dlc/v20210125/model/DownloadInfo.h>
 
 
 namespace TencentCloud
@@ -144,8 +145,22 @@ namespace TencentCloud
                     bool RowsHasBeenSet() const;
 
                     /**
-                     * 获取<p>本页内容是否因响应大小限制被截断（单元格/行超限，结果集仅 1 行时也可能触发）。行数超过在线展示上限不由本标记表达，以 TotalRows > Total 判断，完整结果通过 Download 获取.</p>
-                     * @return Truncated <p>本页内容是否因响应大小限制被截断（单元格/行超限，结果集仅 1 行时也可能触发）。行数超过在线展示上限不由本标记表达，以 TotalRows > Total 判断，完整结果通过 Download 获取.</p>
+                     * 获取<p>下载链接（结果集可用时按需返回；结果过大无法内联展示时仅返回 Download）。</p>
+                     * @return Download <p>下载链接（结果集可用时按需返回；结果过大无法内联展示时仅返回 Download）。</p>
+                     * 
+                     */
+                    DownloadInfo GetDownload() const;
+
+                    /**
+                     * 判断参数 Download 是否已赋值
+                     * @return Download 是否已赋值
+                     * 
+                     */
+                    bool DownloadHasBeenSet() const;
+
+                    /**
+                     * 获取<p>本页内容是否因响应大小限制被截断（单元格/行超限，结果集仅 1 行时也可能触发）。行数超过在线展示上限不由本标记表达，以 TotalRows &gt; Total 判断，完整结果通过 Download 获取.</p>
+                     * @return Truncated <p>本页内容是否因响应大小限制被截断（单元格/行超限，结果集仅 1 行时也可能触发）。行数超过在线展示上限不由本标记表达，以 TotalRows &gt; Total 判断，完整结果通过 Download 获取.</p>
                      * 
                      */
                     bool GetTruncated() const;
@@ -202,7 +217,13 @@ namespace TencentCloud
                     bool m_rowsHasBeenSet;
 
                     /**
-                     * <p>本页内容是否因响应大小限制被截断（单元格/行超限，结果集仅 1 行时也可能触发）。行数超过在线展示上限不由本标记表达，以 TotalRows > Total 判断，完整结果通过 Download 获取.</p>
+                     * <p>下载链接（结果集可用时按需返回；结果过大无法内联展示时仅返回 Download）。</p>
+                     */
+                    DownloadInfo m_download;
+                    bool m_downloadHasBeenSet;
+
+                    /**
+                     * <p>本页内容是否因响应大小限制被截断（单元格/行超限，结果集仅 1 行时也可能触发）。行数超过在线展示上限不由本标记表达，以 TotalRows &gt; Total 判断，完整结果通过 Download 获取.</p>
                      */
                     bool m_truncated;
                     bool m_truncatedHasBeenSet;

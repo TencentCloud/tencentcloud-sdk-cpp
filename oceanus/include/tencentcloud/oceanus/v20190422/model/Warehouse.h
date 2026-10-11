@@ -294,6 +294,31 @@ namespace TencentCloud
                      */
                     bool HiveCatalogTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>流湖托管通serialId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageSerialId <p>流湖托管通serialId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStorageSerialId() const;
+
+                    /**
+                     * 设置<p>流湖托管通serialId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _storageSerialId <p>流湖托管通serialId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStorageSerialId(const std::string& _storageSerialId);
+
+                    /**
+                     * 判断参数 StorageSerialId 是否已赋值
+                     * @return StorageSerialId 是否已赋值
+                     * 
+                     */
+                    bool StorageSerialIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -364,6 +389,13 @@ namespace TencentCloud
                      */
                     uint64_t m_hiveCatalogType;
                     bool m_hiveCatalogTypeHasBeenSet;
+
+                    /**
+                     * <p>流湖托管通serialId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_storageSerialId;
+                    bool m_storageSerialIdHasBeenSet;
 
                 };
             }

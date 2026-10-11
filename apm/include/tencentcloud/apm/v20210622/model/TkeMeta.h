@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取<p>地域</p>
+                     * @return Region <p>地域</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置<p>地域</p>
+                     * @param _region <p>地域</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterID 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterID <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterID() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterID 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterID <p>集群ID</p>
                      * 
                      */
                     void SetClusterID(const std::string& _clusterID);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ClusterIDHasBeenSet() const;
 
                     /**
-                     * 获取pod name
-                     * @return PodName pod name
+                     * 获取<p>pod name</p>
+                     * @return PodName <p>pod name</p>
                      * 
                      */
                     std::string GetPodName() const;
 
                     /**
-                     * 设置pod name
-                     * @param _podName pod name
+                     * 设置<p>pod name</p>
+                     * @param _podName <p>pod name</p>
                      * 
                      */
                     void SetPodName(const std::string& _podName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PodNameHasBeenSet() const;
 
                     /**
-                     * 获取命名空间
-                     * @return Namespace 命名空间
+                     * 获取<p>命名空间</p>
+                     * @return Namespace <p>命名空间</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置命名空间
-                     * @param _namespace 命名空间
+                     * 设置<p>命名空间</p>
+                     * @param _namespace <p>命名空间</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取工作负载
-                     * @return Deployment 工作负载
+                     * 获取<p>工作负载</p>
+                     * @return Deployment <p>工作负载</p>
                      * 
                      */
                     std::string GetDeployment() const;
 
                     /**
-                     * 设置工作负载
-                     * @param _deployment 工作负载
+                     * 设置<p>工作负载</p>
+                     * @param _deployment <p>工作负载</p>
                      * 
                      */
                     void SetDeployment(const std::string& _deployment);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool DeploymentHasBeenSet() const;
 
                     /**
-                     * 获取pod ip
-                     * @return PodIP pod ip
+                     * 获取<p>pod ip</p>
+                     * @return PodIP <p>pod ip</p>
                      * 
                      */
                     std::string GetPodIP() const;
 
                     /**
-                     * 设置pod ip
-                     * @param _podIP pod ip
+                     * 设置<p>pod ip</p>
+                     * @param _podIP <p>pod ip</p>
                      * 
                      */
                     void SetPodIP(const std::string& _podIP);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool PodIPHasBeenSet() const;
 
                     /**
-                     * 获取node ip
-                     * @return NodeIP node ip
+                     * 获取<p>node ip</p>
+                     * @return NodeIP <p>node ip</p>
                      * 
                      */
                     std::string GetNodeIP() const;
 
                     /**
-                     * 设置node ip
-                     * @param _nodeIP node ip
+                     * 设置<p>node ip</p>
+                     * @param _nodeIP <p>node ip</p>
                      * 
                      */
                     void SetNodeIP(const std::string& _nodeIP);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterID;
                     bool m_clusterIDHasBeenSet;
 
                     /**
-                     * pod name
+                     * <p>pod name</p>
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;
 
                     /**
-                     * 命名空间
+                     * <p>命名空间</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 工作负载
+                     * <p>工作负载</p>
                      */
                     std::string m_deployment;
                     bool m_deploymentHasBeenSet;
 
                     /**
-                     * pod ip
+                     * <p>pod ip</p>
                      */
                     std::string m_podIP;
                     bool m_podIPHasBeenSet;
 
                     /**
-                     * node ip
+                     * <p>node ip</p>
                      */
                     std::string m_nodeIP;
                     bool m_nodeIPHasBeenSet;

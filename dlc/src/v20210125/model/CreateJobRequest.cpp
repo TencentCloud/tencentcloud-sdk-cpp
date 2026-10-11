@@ -35,8 +35,11 @@ CreateJobRequest::CreateJobRequest() :
     m_sysCatalogVersionHasBeenSet(false),
     m_partitionCodeHasBeenSet(false),
     m_queueNameHasBeenSet(false),
+    m_specHasBeenSet(false),
     m_customPropertiesHasBeenSet(false),
-    m_envVarsHasBeenSet(false)
+    m_dependenciesHasBeenSet(false),
+    m_envVarsHasBeenSet(false),
+    m_entrypointHasBeenSet(false)
 {
 }
 
@@ -143,12 +146,30 @@ string CreateJobRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_specHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Spec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spec.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_customPropertiesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CustomProperties";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customProperties.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dependenciesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Dependencies";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dependencies.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_envVarsHasBeenSet)
@@ -164,6 +185,15 @@ string CreateJobRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_entrypointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Entrypoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_entrypoint.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -366,6 +396,22 @@ bool CreateJobRequest::QueueNameHasBeenSet() const
     return m_queueNameHasBeenSet;
 }
 
+Spec CreateJobRequest::GetSpec() const
+{
+    return m_spec;
+}
+
+void CreateJobRequest::SetSpec(const Spec& _spec)
+{
+    m_spec = _spec;
+    m_specHasBeenSet = true;
+}
+
+bool CreateJobRequest::SpecHasBeenSet() const
+{
+    return m_specHasBeenSet;
+}
+
 string CreateJobRequest::GetCustomProperties() const
 {
     return m_customProperties;
@@ -382,6 +428,22 @@ bool CreateJobRequest::CustomPropertiesHasBeenSet() const
     return m_customPropertiesHasBeenSet;
 }
 
+EngineConfigDependencies CreateJobRequest::GetDependencies() const
+{
+    return m_dependencies;
+}
+
+void CreateJobRequest::SetDependencies(const EngineConfigDependencies& _dependencies)
+{
+    m_dependencies = _dependencies;
+    m_dependenciesHasBeenSet = true;
+}
+
+bool CreateJobRequest::DependenciesHasBeenSet() const
+{
+    return m_dependenciesHasBeenSet;
+}
+
 vector<KVPair> CreateJobRequest::GetEnvVars() const
 {
     return m_envVars;
@@ -396,6 +458,22 @@ void CreateJobRequest::SetEnvVars(const vector<KVPair>& _envVars)
 bool CreateJobRequest::EnvVarsHasBeenSet() const
 {
     return m_envVarsHasBeenSet;
+}
+
+EntrypointInfo CreateJobRequest::GetEntrypoint() const
+{
+    return m_entrypoint;
+}
+
+void CreateJobRequest::SetEntrypoint(const EntrypointInfo& _entrypoint)
+{
+    m_entrypoint = _entrypoint;
+    m_entrypointHasBeenSet = true;
+}
+
+bool CreateJobRequest::EntrypointHasBeenSet() const
+{
+    return m_entrypointHasBeenSet;
 }
 
 

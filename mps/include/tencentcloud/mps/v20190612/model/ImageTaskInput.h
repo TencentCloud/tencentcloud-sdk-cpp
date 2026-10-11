@@ -39,6 +39,7 @@
 #include <tencentcloud/mps/v20190612/model/UnderstandImageConfig.h>
 #include <tencentcloud/mps/v20190612/model/ImageQualityConfig.h>
 #include <tencentcloud/mps/v20190612/model/AiComposeConfig.h>
+#include <tencentcloud/mps/v20190612/model/AiDecomposeConfig.h>
 
 
 namespace TencentCloud
@@ -392,6 +393,27 @@ namespace TencentCloud
                      */
                     bool AiComposeConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>图层分离配置。</p>
+                     * @return AiDecomposeConfig <p>图层分离配置。</p>
+                     * 
+                     */
+                    AiDecomposeConfig GetAiDecomposeConfig() const;
+
+                    /**
+                     * 设置<p>图层分离配置。</p>
+                     * @param _aiDecomposeConfig <p>图层分离配置。</p>
+                     * 
+                     */
+                    void SetAiDecomposeConfig(const AiDecomposeConfig& _aiDecomposeConfig);
+
+                    /**
+                     * 判断参数 AiDecomposeConfig 是否已赋值
+                     * @return AiDecomposeConfig 是否已赋值
+                     * 
+                     */
+                    bool AiDecomposeConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -487,6 +509,12 @@ namespace TencentCloud
                      */
                     AiComposeConfig m_aiComposeConfig;
                     bool m_aiComposeConfigHasBeenSet;
+
+                    /**
+                     * <p>图层分离配置。</p>
+                     */
+                    AiDecomposeConfig m_aiDecomposeConfig;
+                    bool m_aiDecomposeConfigHasBeenSet;
 
                 };
             }

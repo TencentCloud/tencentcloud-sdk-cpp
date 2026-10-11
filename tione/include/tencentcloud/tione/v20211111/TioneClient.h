@@ -143,6 +143,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeWorkspacesRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeWorkspacesResponse.h>
+#include <tencentcloud/tione/v20211111/model/EnableTrainingTaskClsConfigRequest.h>
+#include <tencentcloud/tione/v20211111/model/EnableTrainingTaskClsConfigResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServiceAuthTokenRequest.h>
@@ -367,6 +369,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWorkspacesResponse> DescribeWorkspacesOutcome;
                 typedef std::future<DescribeWorkspacesOutcome> DescribeWorkspacesOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeWorkspacesRequest&, DescribeWorkspacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableTrainingTaskClsConfigResponse> EnableTrainingTaskClsConfigOutcome;
+                typedef std::future<EnableTrainingTaskClsConfigOutcome> EnableTrainingTaskClsConfigOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::EnableTrainingTaskClsConfigRequest&, EnableTrainingTaskClsConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTrainingTaskClsConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyModelServiceResponse> ModifyModelServiceOutcome;
                 typedef std::future<ModifyModelServiceOutcome> ModifyModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyModelServiceRequest&, ModifyModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServiceAsyncHandler;
@@ -959,6 +964,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DescribeWorkspacesOutcome DescribeWorkspaces(const Model::DescribeWorkspacesRequest &request);
                 void DescribeWorkspacesAsync(const Model::DescribeWorkspacesRequest& request, const DescribeWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWorkspacesOutcomeCallable DescribeWorkspacesCallable(const Model::DescribeWorkspacesRequest& request);
+
+                /**
+                 *开启CLS日志投递
+                 * @param req EnableTrainingTaskClsConfigRequest
+                 * @return EnableTrainingTaskClsConfigOutcome
+                 */
+                EnableTrainingTaskClsConfigOutcome EnableTrainingTaskClsConfig(const Model::EnableTrainingTaskClsConfigRequest &request);
+                void EnableTrainingTaskClsConfigAsync(const Model::EnableTrainingTaskClsConfigRequest& request, const EnableTrainingTaskClsConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableTrainingTaskClsConfigOutcomeCallable EnableTrainingTaskClsConfigCallable(const Model::EnableTrainingTaskClsConfigRequest& request);
 
                 /**
                  *用于更新模型服务

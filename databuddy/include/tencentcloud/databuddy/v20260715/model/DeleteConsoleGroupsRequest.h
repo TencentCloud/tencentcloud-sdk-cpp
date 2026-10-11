@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>要删除的用户组 ID 列表，单次最多100个</p>
-                     * @return GroupIds <p>要删除的用户组 ID 列表，单次最多100个</p>
+                     * 获取要删除的用户组 ID 列表，单次最多100个；可通过 ListConsoleGroups 接口获取
+                     * @return GroupIds 要删除的用户组 ID 列表，单次最多100个；可通过 ListConsoleGroups 接口获取
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
-                     * 设置<p>要删除的用户组 ID 列表，单次最多100个</p>
-                     * @param _groupIds <p>要删除的用户组 ID 列表，单次最多100个</p>
+                     * 设置要删除的用户组 ID 列表，单次最多100个；可通过 ListConsoleGroups 接口获取
+                     * @param _groupIds 要删除的用户组 ID 列表，单次最多100个；可通过 ListConsoleGroups 接口获取
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>要删除的用户组 ID 列表，单次最多100个</p>
+                     * 要删除的用户组 ID 列表，单次最多100个；可通过 ListConsoleGroups 接口获取
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;

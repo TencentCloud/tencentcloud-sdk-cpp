@@ -37,7 +37,8 @@ AlarmNotifyHistory::AlarmNotifyHistory() :
     m_noticesHasBeenSet(false),
     m_triggerStatusHasBeenSet(false),
     m_promeConsoleURLHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_receiverGroupsHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,26 @@ CoreInternalOutcome AlarmNotifyHistory::Deserialize(const rapidjson::Value &valu
         m_labelsHasBeenSet = true;
     }
 
+    if (value.HasMember("ReceiverGroups") && !value["ReceiverGroups"].IsNull())
+    {
+        if (!value["ReceiverGroups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmNotifyHistory.ReceiverGroups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ReceiverGroups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ReceiverGroup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_receiverGroups.push_back(item);
+        }
+        m_receiverGroupsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +433,21 @@ void AlarmNotifyHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
 
         int i=0;
         for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_receiverGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReceiverGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_receiverGroups.begin(); itr != m_receiverGroups.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -691,5 +727,21 @@ void AlarmNotifyHistory::SetLabels(const vector<AlarmLable>& _labels)
 bool AlarmNotifyHistory::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+vector<ReceiverGroup> AlarmNotifyHistory::GetReceiverGroups() const
+{
+    return m_receiverGroups;
+}
+
+void AlarmNotifyHistory::SetReceiverGroups(const vector<ReceiverGroup>& _receiverGroups)
+{
+    m_receiverGroups = _receiverGroups;
+    m_receiverGroupsHasBeenSet = true;
+}
+
+bool AlarmNotifyHistory::ReceiverGroupsHasBeenSet() const
+{
+    return m_receiverGroupsHasBeenSet;
 }
 

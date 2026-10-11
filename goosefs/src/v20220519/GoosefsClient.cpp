@@ -390,6 +390,56 @@ GoosefsClient::CancelLoadTaskOutcomeCallable GoosefsClient::CancelLoadTaskCallab
     return prom->get_future();
 }
 
+GoosefsClient::CancelPolicyRuleExecuteRecordOutcome GoosefsClient::CancelPolicyRuleExecuteRecord(const CancelPolicyRuleExecuteRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelPolicyRuleExecuteRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelPolicyRuleExecuteRecordResponse rsp = CancelPolicyRuleExecuteRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelPolicyRuleExecuteRecordOutcome(rsp);
+        else
+            return CancelPolicyRuleExecuteRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelPolicyRuleExecuteRecordOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::CancelPolicyRuleExecuteRecordAsync(const CancelPolicyRuleExecuteRecordRequest& request, const CancelPolicyRuleExecuteRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CancelPolicyRuleExecuteRecordRequest&;
+    using Resp = CancelPolicyRuleExecuteRecordResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CancelPolicyRuleExecuteRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::CancelPolicyRuleExecuteRecordOutcomeCallable GoosefsClient::CancelPolicyRuleExecuteRecordCallable(const CancelPolicyRuleExecuteRecordRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CancelPolicyRuleExecuteRecordOutcome>>();
+    CancelPolicyRuleExecuteRecordAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const CancelPolicyRuleExecuteRecordRequest&,
+        CancelPolicyRuleExecuteRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GoosefsClient::CreateDataRepositoryTaskOutcome GoosefsClient::CreateDataRepositoryTask(const CreateDataRepositoryTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDataRepositoryTask");
@@ -590,6 +640,56 @@ GoosefsClient::CreateLoadTaskOutcomeCallable GoosefsClient::CreateLoadTaskCallab
     return prom->get_future();
 }
 
+GoosefsClient::CreatePolicyRuleOutcome GoosefsClient::CreatePolicyRule(const CreatePolicyRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePolicyRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePolicyRuleResponse rsp = CreatePolicyRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePolicyRuleOutcome(rsp);
+        else
+            return CreatePolicyRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePolicyRuleOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::CreatePolicyRuleAsync(const CreatePolicyRuleRequest& request, const CreatePolicyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePolicyRuleRequest&;
+    using Resp = CreatePolicyRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePolicyRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::CreatePolicyRuleOutcomeCallable GoosefsClient::CreatePolicyRuleCallable(const CreatePolicyRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePolicyRuleOutcome>>();
+    CreatePolicyRuleAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const CreatePolicyRuleRequest&,
+        CreatePolicyRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GoosefsClient::DeleteCrossVpcSubnetSupportForClientNodeOutcome GoosefsClient::DeleteCrossVpcSubnetSupportForClientNode(const DeleteCrossVpcSubnetSupportForClientNodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCrossVpcSubnetSupportForClientNode");
@@ -782,6 +882,56 @@ GoosefsClient::DeleteFilesetOutcomeCallable GoosefsClient::DeleteFilesetCallable
         const GoosefsClient*,
         const DeleteFilesetRequest&,
         DeleteFilesetOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::DeletePolicyRuleOutcome GoosefsClient::DeletePolicyRule(const DeletePolicyRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePolicyRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePolicyRuleResponse rsp = DeletePolicyRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePolicyRuleOutcome(rsp);
+        else
+            return DeletePolicyRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePolicyRuleOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DeletePolicyRuleAsync(const DeletePolicyRuleRequest& request, const DeletePolicyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeletePolicyRuleRequest&;
+    using Resp = DeletePolicyRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeletePolicyRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::DeletePolicyRuleOutcomeCallable GoosefsClient::DeletePolicyRuleCallable(const DeletePolicyRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeletePolicyRuleOutcome>>();
+    DeletePolicyRuleAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const DeletePolicyRuleRequest&,
+        DeletePolicyRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1290,6 +1440,106 @@ GoosefsClient::DescribeLoadTaskOutcomeCallable GoosefsClient::DescribeLoadTaskCa
     return prom->get_future();
 }
 
+GoosefsClient::DescribePolicyRuleOutcome GoosefsClient::DescribePolicyRule(const DescribePolicyRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePolicyRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePolicyRuleResponse rsp = DescribePolicyRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePolicyRuleOutcome(rsp);
+        else
+            return DescribePolicyRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePolicyRuleOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribePolicyRuleAsync(const DescribePolicyRuleRequest& request, const DescribePolicyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePolicyRuleRequest&;
+    using Resp = DescribePolicyRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePolicyRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::DescribePolicyRuleOutcomeCallable GoosefsClient::DescribePolicyRuleCallable(const DescribePolicyRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePolicyRuleOutcome>>();
+    DescribePolicyRuleAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const DescribePolicyRuleRequest&,
+        DescribePolicyRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::DescribePolicyRuleExecuteRecordOutcome GoosefsClient::DescribePolicyRuleExecuteRecord(const DescribePolicyRuleExecuteRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePolicyRuleExecuteRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePolicyRuleExecuteRecordResponse rsp = DescribePolicyRuleExecuteRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePolicyRuleExecuteRecordOutcome(rsp);
+        else
+            return DescribePolicyRuleExecuteRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePolicyRuleExecuteRecordOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribePolicyRuleExecuteRecordAsync(const DescribePolicyRuleExecuteRecordRequest& request, const DescribePolicyRuleExecuteRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePolicyRuleExecuteRecordRequest&;
+    using Resp = DescribePolicyRuleExecuteRecordResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePolicyRuleExecuteRecord", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::DescribePolicyRuleExecuteRecordOutcomeCallable GoosefsClient::DescribePolicyRuleExecuteRecordCallable(const DescribePolicyRuleExecuteRecordRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePolicyRuleExecuteRecordOutcome>>();
+    DescribePolicyRuleExecuteRecordAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const DescribePolicyRuleExecuteRecordRequest&,
+        DescribePolicyRuleExecuteRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GoosefsClient::DetachFileSystemBucketOutcome GoosefsClient::DetachFileSystemBucket(const DetachFileSystemBucketRequest &request)
 {
     auto outcome = MakeRequest(request, "DetachFileSystemBucket");
@@ -1332,6 +1582,106 @@ GoosefsClient::DetachFileSystemBucketOutcomeCallable GoosefsClient::DetachFileSy
         const GoosefsClient*,
         const DetachFileSystemBucketRequest&,
         DetachFileSystemBucketOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::DisablePolicyRuleOutcome GoosefsClient::DisablePolicyRule(const DisablePolicyRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisablePolicyRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisablePolicyRuleResponse rsp = DisablePolicyRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisablePolicyRuleOutcome(rsp);
+        else
+            return DisablePolicyRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DisablePolicyRuleOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DisablePolicyRuleAsync(const DisablePolicyRuleRequest& request, const DisablePolicyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DisablePolicyRuleRequest&;
+    using Resp = DisablePolicyRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DisablePolicyRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::DisablePolicyRuleOutcomeCallable GoosefsClient::DisablePolicyRuleCallable(const DisablePolicyRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DisablePolicyRuleOutcome>>();
+    DisablePolicyRuleAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const DisablePolicyRuleRequest&,
+        DisablePolicyRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::EnablePolicyRuleOutcome GoosefsClient::EnablePolicyRule(const EnablePolicyRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnablePolicyRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnablePolicyRuleResponse rsp = EnablePolicyRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnablePolicyRuleOutcome(rsp);
+        else
+            return EnablePolicyRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return EnablePolicyRuleOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::EnablePolicyRuleAsync(const EnablePolicyRuleRequest& request, const EnablePolicyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnablePolicyRuleRequest&;
+    using Resp = EnablePolicyRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnablePolicyRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::EnablePolicyRuleOutcomeCallable GoosefsClient::EnablePolicyRuleCallable(const EnablePolicyRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnablePolicyRuleOutcome>>();
+    EnablePolicyRuleAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const EnablePolicyRuleRequest&,
+        EnablePolicyRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

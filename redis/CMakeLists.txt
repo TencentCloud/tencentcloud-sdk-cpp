@@ -151,6 +151,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/SwitchAccessNewInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/RemoveReplicationGroupResponse.h
   include/tencentcloud/redis/v20180412/model/KillMasterGroupRequest.h
+  include/tencentcloud/redis/v20180412/model/UpgradeInstanceProductVersionResponse.h
   include/tencentcloud/redis/v20180412/model/SwitchAccessNewInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/CloneInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeBackupDownloadRestrictionResponse.h
@@ -246,6 +247,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModifyParamTemplateRequest.h
   include/tencentcloud/redis/v20180412/model/AvailableRegion.h
   include/tencentcloud/redis/v20180412/model/FailedInstance.h
+  include/tencentcloud/redis/v20180412/model/UpgradeInstanceProductVersionRequest.h
   include/tencentcloud/redis/v20180412/model/ReleaseWanAddressRequest.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceRenewInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/CloseSSLResponse.h
@@ -461,6 +463,7 @@ set(redis_src
   src/v20180412/model/SwitchAccessNewInstanceRequest.cpp
   src/v20180412/model/RemoveReplicationGroupResponse.cpp
   src/v20180412/model/KillMasterGroupRequest.cpp
+  src/v20180412/model/UpgradeInstanceProductVersionResponse.cpp
   src/v20180412/model/SwitchAccessNewInstanceResponse.cpp
   src/v20180412/model/CloneInstancesResponse.cpp
   src/v20180412/model/DescribeBackupDownloadRestrictionResponse.cpp
@@ -556,6 +559,7 @@ set(redis_src
   src/v20180412/model/ModifyParamTemplateRequest.cpp
   src/v20180412/model/AvailableRegion.cpp
   src/v20180412/model/FailedInstance.cpp
+  src/v20180412/model/UpgradeInstanceProductVersionRequest.cpp
   src/v20180412/model/ReleaseWanAddressRequest.cpp
   src/v20180412/model/InquiryPriceRenewInstanceRequest.cpp
   src/v20180412/model/CloseSSLResponse.cpp

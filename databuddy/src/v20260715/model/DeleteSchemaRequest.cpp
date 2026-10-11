@@ -26,7 +26,8 @@ DeleteSchemaRequest::DeleteSchemaRequest() :
     m_catalogNameHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
     m_workspaceIdHasBeenSet(false),
-    m_connectionIdHasBeenSet(false)
+    m_connectionIdHasBeenSet(false),
+    m_catalogSourceHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DeleteSchemaRequest::ToJsonString() const
         string key = "ConnectionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_connectionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_catalogSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DeleteSchemaRequest::SetConnectionId(const string& _connectionId)
 bool DeleteSchemaRequest::ConnectionIdHasBeenSet() const
 {
     return m_connectionIdHasBeenSet;
+}
+
+string DeleteSchemaRequest::GetCatalogSource() const
+{
+    return m_catalogSource;
+}
+
+void DeleteSchemaRequest::SetCatalogSource(const string& _catalogSource)
+{
+    m_catalogSource = _catalogSource;
+    m_catalogSourceHasBeenSet = true;
+}
+
+bool DeleteSchemaRequest::CatalogSourceHasBeenSet() const
+{
+    return m_catalogSourceHasBeenSet;
 }
 
 

@@ -27,6 +27,7 @@
 #include <tencentcloud/oceanus/v20190422/model/Warehouse.h>
 #include <tencentcloud/oceanus/v20190422/model/SetatsCvmInfo.h>
 #include <tencentcloud/oceanus/v20190422/model/Tag.h>
+#include <tencentcloud/oceanus/v20190422/model/CCN.h>
 
 
 namespace TencentCloud
@@ -517,6 +518,56 @@ namespace TencentCloud
                      */
                     bool IsolationPolicyVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>安全组信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityGroupIds <p>安全组信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置<p>安全组信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _securityGroupIds <p>安全组信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>网络信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CCNs <p>网络信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<CCN> GetCCNs() const;
+
+                    /**
+                     * 设置<p>网络信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cCNs <p>网络信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCCNs(const std::vector<CCN>& _cCNs);
+
+                    /**
+                     * 判断参数 CCNs 是否已赋值
+                     * @return CCNs 是否已赋值
+                     * 
+                     */
+                    bool CCNsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -650,6 +701,20 @@ namespace TencentCloud
                      */
                     int64_t m_isolationPolicyVersion;
                     bool m_isolationPolicyVersionHasBeenSet;
+
+                    /**
+                     * <p>安全组信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * <p>网络信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CCN> m_cCNs;
+                    bool m_cCNsHasBeenSet;
 
                 };
             }

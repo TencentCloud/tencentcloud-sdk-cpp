@@ -23,7 +23,15 @@ using namespace std;
 ChannelsReceivers::ChannelsReceivers() :
     m_channelNameHasBeenSet(false),
     m_receiversHasBeenSet(false),
-    m_sendStatusHasBeenSet(false)
+    m_sendStatusHasBeenSet(false),
+    m_sendStatusCodeHasBeenSet(false),
+    m_sendTimeHasBeenSet(false),
+    m_subChannelsHasBeenSet(false),
+    m_execDetailHasBeenSet(false),
+    m_realDeliverStatusHasBeenSet(false),
+    m_realDeliverTimeHasBeenSet(false),
+    m_realDeliverErrMsgHasBeenSet(false),
+    m_contentsHasBeenSet(false)
 {
 }
 
@@ -65,6 +73,99 @@ CoreInternalOutcome ChannelsReceivers::Deserialize(const rapidjson::Value &value
         m_sendStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("SendStatusCode") && !value["SendStatusCode"].IsNull())
+    {
+        if (!value["SendStatusCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelsReceivers.SendStatusCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sendStatusCode = string(value["SendStatusCode"].GetString());
+        m_sendStatusCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SendTime") && !value["SendTime"].IsNull())
+    {
+        if (!value["SendTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelsReceivers.SendTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sendTime = value["SendTime"].GetInt64();
+        m_sendTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubChannels") && !value["SubChannels"].IsNull())
+    {
+        if (!value["SubChannels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ChannelsReceivers.SubChannels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubChannels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_subChannels.push_back((*itr).GetString());
+        }
+        m_subChannelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecDetail") && !value["ExecDetail"].IsNull())
+    {
+        if (!value["ExecDetail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelsReceivers.ExecDetail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_execDetail = string(value["ExecDetail"].GetString());
+        m_execDetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealDeliverStatus") && !value["RealDeliverStatus"].IsNull())
+    {
+        if (!value["RealDeliverStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelsReceivers.RealDeliverStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realDeliverStatus = string(value["RealDeliverStatus"].GetString());
+        m_realDeliverStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealDeliverTime") && !value["RealDeliverTime"].IsNull())
+    {
+        if (!value["RealDeliverTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelsReceivers.RealDeliverTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realDeliverTime = string(value["RealDeliverTime"].GetString());
+        m_realDeliverTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealDeliverErrMsg") && !value["RealDeliverErrMsg"].IsNull())
+    {
+        if (!value["RealDeliverErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelsReceivers.RealDeliverErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realDeliverErrMsg = string(value["RealDeliverErrMsg"].GetString());
+        m_realDeliverErrMsgHasBeenSet = true;
+    }
+
+    if (value.HasMember("Contents") && !value["Contents"].IsNull())
+    {
+        if (!value["Contents"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ChannelsReceivers.Contents` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Contents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ChannelContent item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_contents.push_back(item);
+        }
+        m_contentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +200,82 @@ void ChannelsReceivers::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "SendStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sendStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sendStatusCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendStatusCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sendStatusCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sendTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sendTime, allocator);
+    }
+
+    if (m_subChannelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubChannels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_subChannels.begin(); itr != m_subChannels.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_execDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_execDetail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realDeliverStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealDeliverStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realDeliverStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realDeliverTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealDeliverTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realDeliverTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realDeliverErrMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealDeliverErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realDeliverErrMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Contents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_contents.begin(); itr != m_contents.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -150,5 +327,133 @@ void ChannelsReceivers::SetSendStatus(const string& _sendStatus)
 bool ChannelsReceivers::SendStatusHasBeenSet() const
 {
     return m_sendStatusHasBeenSet;
+}
+
+string ChannelsReceivers::GetSendStatusCode() const
+{
+    return m_sendStatusCode;
+}
+
+void ChannelsReceivers::SetSendStatusCode(const string& _sendStatusCode)
+{
+    m_sendStatusCode = _sendStatusCode;
+    m_sendStatusCodeHasBeenSet = true;
+}
+
+bool ChannelsReceivers::SendStatusCodeHasBeenSet() const
+{
+    return m_sendStatusCodeHasBeenSet;
+}
+
+int64_t ChannelsReceivers::GetSendTime() const
+{
+    return m_sendTime;
+}
+
+void ChannelsReceivers::SetSendTime(const int64_t& _sendTime)
+{
+    m_sendTime = _sendTime;
+    m_sendTimeHasBeenSet = true;
+}
+
+bool ChannelsReceivers::SendTimeHasBeenSet() const
+{
+    return m_sendTimeHasBeenSet;
+}
+
+vector<string> ChannelsReceivers::GetSubChannels() const
+{
+    return m_subChannels;
+}
+
+void ChannelsReceivers::SetSubChannels(const vector<string>& _subChannels)
+{
+    m_subChannels = _subChannels;
+    m_subChannelsHasBeenSet = true;
+}
+
+bool ChannelsReceivers::SubChannelsHasBeenSet() const
+{
+    return m_subChannelsHasBeenSet;
+}
+
+string ChannelsReceivers::GetExecDetail() const
+{
+    return m_execDetail;
+}
+
+void ChannelsReceivers::SetExecDetail(const string& _execDetail)
+{
+    m_execDetail = _execDetail;
+    m_execDetailHasBeenSet = true;
+}
+
+bool ChannelsReceivers::ExecDetailHasBeenSet() const
+{
+    return m_execDetailHasBeenSet;
+}
+
+string ChannelsReceivers::GetRealDeliverStatus() const
+{
+    return m_realDeliverStatus;
+}
+
+void ChannelsReceivers::SetRealDeliverStatus(const string& _realDeliverStatus)
+{
+    m_realDeliverStatus = _realDeliverStatus;
+    m_realDeliverStatusHasBeenSet = true;
+}
+
+bool ChannelsReceivers::RealDeliverStatusHasBeenSet() const
+{
+    return m_realDeliverStatusHasBeenSet;
+}
+
+string ChannelsReceivers::GetRealDeliverTime() const
+{
+    return m_realDeliverTime;
+}
+
+void ChannelsReceivers::SetRealDeliverTime(const string& _realDeliverTime)
+{
+    m_realDeliverTime = _realDeliverTime;
+    m_realDeliverTimeHasBeenSet = true;
+}
+
+bool ChannelsReceivers::RealDeliverTimeHasBeenSet() const
+{
+    return m_realDeliverTimeHasBeenSet;
+}
+
+string ChannelsReceivers::GetRealDeliverErrMsg() const
+{
+    return m_realDeliverErrMsg;
+}
+
+void ChannelsReceivers::SetRealDeliverErrMsg(const string& _realDeliverErrMsg)
+{
+    m_realDeliverErrMsg = _realDeliverErrMsg;
+    m_realDeliverErrMsgHasBeenSet = true;
+}
+
+bool ChannelsReceivers::RealDeliverErrMsgHasBeenSet() const
+{
+    return m_realDeliverErrMsgHasBeenSet;
+}
+
+vector<ChannelContent> ChannelsReceivers::GetContents() const
+{
+    return m_contents;
+}
+
+void ChannelsReceivers::SetContents(const vector<ChannelContent>& _contents)
+{
+    m_contents = _contents;
+    m_contentsHasBeenSet = true;
+}
+
+bool ChannelsReceivers::ContentsHasBeenSet() const
+{
+    return m_contentsHasBeenSet;
 }
 
