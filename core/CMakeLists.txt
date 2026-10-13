@@ -20,9 +20,11 @@ set(core_public_header
     include/tencentcloud/core/AbstractClient.h
     include/tencentcloud/core/AbstractModel.h
     include/tencentcloud/core/AsyncCallerContext.h
+    include/tencentcloud/core/CircuitBreaker.h
     include/tencentcloud/core/CommonClient.h
     include/tencentcloud/core/Config.h
     include/tencentcloud/core/Credential.h
+    include/tencentcloud/core/DomainFailoverManager.h
     include/tencentcloud/core/Error.h
     include/tencentcloud/core/Executor.h
     include/tencentcloud/core/NetworkProxy.h
@@ -43,6 +45,7 @@ set(core_public_header_http
 set(core_public_header_profile
     include/tencentcloud/core/profile/ClientProfile.h
     include/tencentcloud/core/profile/HttpProfile.h
+    include/tencentcloud/core/profile/RegionBreakerProfile.h
     )
 
 set(core_public_header_utils
@@ -57,8 +60,10 @@ set(core_src
     src/AbstractClient.cpp
     src/AbstractModel.cpp
     src/AsyncCallerContext.cpp
+    src/CircuitBreaker.cpp
     src/CommonClient.cpp
     src/Credential.cpp
+    src/DomainFailoverManager.cpp
     src/Executor.cpp
     src/NetworkProxy.cpp
     src/Sign.cpp
