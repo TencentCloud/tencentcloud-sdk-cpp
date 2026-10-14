@@ -840,6 +840,56 @@ AgsClient::DeleteDeploymentOutcomeCallable AgsClient::DeleteDeploymentCallable(c
     return prom->get_future();
 }
 
+AgsClient::DeletePreCacheImageOutcome AgsClient::DeletePreCacheImage(const DeletePreCacheImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePreCacheImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePreCacheImageResponse rsp = DeletePreCacheImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePreCacheImageOutcome(rsp);
+        else
+            return DeletePreCacheImageOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePreCacheImageOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DeletePreCacheImageAsync(const DeletePreCacheImageRequest& request, const DeletePreCacheImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeletePreCacheImageRequest&;
+    using Resp = DeletePreCacheImageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeletePreCacheImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DeletePreCacheImageOutcomeCallable AgsClient::DeletePreCacheImageCallable(const DeletePreCacheImageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeletePreCacheImageOutcome>>();
+    DeletePreCacheImageAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DeletePreCacheImageRequest&,
+        DeletePreCacheImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AgsClient::DeleteRegistryOutcome AgsClient::DeleteRegistry(const DeleteRegistryRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRegistry");
@@ -1332,6 +1382,56 @@ AgsClient::DescribeEventsOutcomeCallable AgsClient::DescribeEventsCallable(const
         const AgsClient*,
         const DescribeEventsRequest&,
         DescribeEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::DescribePreCacheImageListOutcome AgsClient::DescribePreCacheImageList(const DescribePreCacheImageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePreCacheImageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePreCacheImageListResponse rsp = DescribePreCacheImageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePreCacheImageListOutcome(rsp);
+        else
+            return DescribePreCacheImageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePreCacheImageListOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DescribePreCacheImageListAsync(const DescribePreCacheImageListRequest& request, const DescribePreCacheImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePreCacheImageListRequest&;
+    using Resp = DescribePreCacheImageListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePreCacheImageList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DescribePreCacheImageListOutcomeCallable AgsClient::DescribePreCacheImageListCallable(const DescribePreCacheImageListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePreCacheImageListOutcome>>();
+    DescribePreCacheImageListAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DescribePreCacheImageListRequest&,
+        DescribePreCacheImageListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -32,6 +32,7 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_orderByTypeHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_ipListHasBeenSet(false),
+    m_nodeIpsHasBeenSet(false),
     m_zoneListHasBeenSet(false),
     m_healthStatusHasBeenSet(false),
     m_vpcIdsHasBeenSet(false),
@@ -135,6 +136,19 @@ string DescribeInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_ipList.begin(); itr != m_ipList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_nodeIpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nodeIps.begin(); itr != m_nodeIps.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -337,6 +351,22 @@ void DescribeInstancesRequest::SetIpList(const vector<string>& _ipList)
 bool DescribeInstancesRequest::IpListHasBeenSet() const
 {
     return m_ipListHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetNodeIps() const
+{
+    return m_nodeIps;
+}
+
+void DescribeInstancesRequest::SetNodeIps(const vector<string>& _nodeIps)
+{
+    m_nodeIps = _nodeIps;
+    m_nodeIpsHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::NodeIpsHasBeenSet() const
+{
+    return m_nodeIpsHasBeenSet;
 }
 
 vector<string> DescribeInstancesRequest::GetZoneList() const

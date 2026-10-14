@@ -413,6 +413,12 @@
 #include <tencentcloud/live/v20180801/model/DescribeScreenshotTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamDayPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamDayPlayInfoListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeStreamPackageIngestStatisticsRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeStreamPackageIngestStatisticsResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeStreamPackageOutputStatisticsRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeStreamPackageOutputStatisticsResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeStreamPackageRemuxStatisticsRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeStreamPackageRemuxStatisticsResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamPushInfoListRequest.h>
@@ -1138,6 +1144,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStreamDayPlayInfoListResponse> DescribeStreamDayPlayInfoListOutcome;
                 typedef std::future<DescribeStreamDayPlayInfoListOutcome> DescribeStreamDayPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeStreamDayPlayInfoListRequest&, DescribeStreamDayPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamDayPlayInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageIngestStatisticsResponse> DescribeStreamPackageIngestStatisticsOutcome;
+                typedef std::future<DescribeStreamPackageIngestStatisticsOutcome> DescribeStreamPackageIngestStatisticsOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeStreamPackageIngestStatisticsRequest&, DescribeStreamPackageIngestStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageIngestStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageOutputStatisticsResponse> DescribeStreamPackageOutputStatisticsOutcome;
+                typedef std::future<DescribeStreamPackageOutputStatisticsOutcome> DescribeStreamPackageOutputStatisticsOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeStreamPackageOutputStatisticsRequest&, DescribeStreamPackageOutputStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageOutputStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamPackageRemuxStatisticsResponse> DescribeStreamPackageRemuxStatisticsOutcome;
+                typedef std::future<DescribeStreamPackageRemuxStatisticsOutcome> DescribeStreamPackageRemuxStatisticsOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeStreamPackageRemuxStatisticsRequest&, DescribeStreamPackageRemuxStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPackageRemuxStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStreamPlayInfoListResponse> DescribeStreamPlayInfoListOutcome;
                 typedef std::future<DescribeStreamPlayInfoListOutcome> DescribeStreamPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeStreamPlayInfoListRequest&, DescribeStreamPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPlayInfoListAsyncHandler;
@@ -3198,6 +3213,33 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeStreamDayPlayInfoListOutcome DescribeStreamDayPlayInfoList(const Model::DescribeStreamDayPlayInfoListRequest &request);
                 void DescribeStreamDayPlayInfoListAsync(const Model::DescribeStreamDayPlayInfoListRequest& request, const DescribeStreamDayPlayInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStreamDayPlayInfoListOutcomeCallable DescribeStreamDayPlayInfoListCallable(const Model::DescribeStreamDayPlayInfoListRequest& request);
+
+                /**
+                 *DescribeStreamPackageIngestStatistics
+                 * @param req DescribeStreamPackageIngestStatisticsRequest
+                 * @return DescribeStreamPackageIngestStatisticsOutcome
+                 */
+                DescribeStreamPackageIngestStatisticsOutcome DescribeStreamPackageIngestStatistics(const Model::DescribeStreamPackageIngestStatisticsRequest &request);
+                void DescribeStreamPackageIngestStatisticsAsync(const Model::DescribeStreamPackageIngestStatisticsRequest& request, const DescribeStreamPackageIngestStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageIngestStatisticsOutcomeCallable DescribeStreamPackageIngestStatisticsCallable(const Model::DescribeStreamPackageIngestStatisticsRequest& request);
+
+                /**
+                 *查询媒体包装输出用量信息
+                 * @param req DescribeStreamPackageOutputStatisticsRequest
+                 * @return DescribeStreamPackageOutputStatisticsOutcome
+                 */
+                DescribeStreamPackageOutputStatisticsOutcome DescribeStreamPackageOutputStatistics(const Model::DescribeStreamPackageOutputStatisticsRequest &request);
+                void DescribeStreamPackageOutputStatisticsAsync(const Model::DescribeStreamPackageOutputStatisticsRequest& request, const DescribeStreamPackageOutputStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageOutputStatisticsOutcomeCallable DescribeStreamPackageOutputStatisticsCallable(const Model::DescribeStreamPackageOutputStatisticsRequest& request);
+
+                /**
+                 *DescribeStreamPackageRemuxStatistics
+                 * @param req DescribeStreamPackageRemuxStatisticsRequest
+                 * @return DescribeStreamPackageRemuxStatisticsOutcome
+                 */
+                DescribeStreamPackageRemuxStatisticsOutcome DescribeStreamPackageRemuxStatistics(const Model::DescribeStreamPackageRemuxStatisticsRequest &request);
+                void DescribeStreamPackageRemuxStatisticsAsync(const Model::DescribeStreamPackageRemuxStatisticsRequest& request, const DescribeStreamPackageRemuxStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamPackageRemuxStatisticsOutcomeCallable DescribeStreamPackageRemuxStatisticsCallable(const Model::DescribeStreamPackageRemuxStatisticsRequest& request);
 
                 /**
                  *该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。

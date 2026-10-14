@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建的Flow信息。
-                     * @return Info 创建的Flow信息。
+                     * 获取<p>创建的Flow信息。</p>
+                     * @return Info <p>创建的Flow信息。</p>
                      * 
                      */
                     DescribeFlow GetInfo() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建的Flow信息。
+                     * <p>创建的Flow信息。</p>
                      */
                     DescribeFlow m_info;
                     bool m_infoHasBeenSet;

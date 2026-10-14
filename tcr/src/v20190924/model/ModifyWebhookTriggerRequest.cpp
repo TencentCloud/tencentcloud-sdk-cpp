@@ -25,7 +25,9 @@ using namespace std;
 ModifyWebhookTriggerRequest::ModifyWebhookTriggerRequest() :
     m_registryIdHasBeenSet(false),
     m_triggerHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_productHasBeenSet(false),
+    m_preheatRegionHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,22 @@ string ModifyWebhookTriggerRequest::ToJsonString() const
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preheatRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreheatRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_preheatRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +133,38 @@ void ModifyWebhookTriggerRequest::SetNamespace(const string& _namespace)
 bool ModifyWebhookTriggerRequest::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+string ModifyWebhookTriggerRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void ModifyWebhookTriggerRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool ModifyWebhookTriggerRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
+}
+
+string ModifyWebhookTriggerRequest::GetPreheatRegion() const
+{
+    return m_preheatRegion;
+}
+
+void ModifyWebhookTriggerRequest::SetPreheatRegion(const string& _preheatRegion)
+{
+    m_preheatRegion = _preheatRegion;
+    m_preheatRegionHasBeenSet = true;
+}
+
+bool ModifyWebhookTriggerRequest::PreheatRegionHasBeenSet() const
+{
+    return m_preheatRegionHasBeenSet;
 }
 
 

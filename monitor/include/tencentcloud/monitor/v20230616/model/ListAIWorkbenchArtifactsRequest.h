@@ -147,6 +147,48 @@ namespace TencentCloud
                      */
                     bool OrderDirectionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>数字分身ID</p>
+                     * @return AgentId <p>数字分身ID</p>
+                     * 
+                     */
+                    std::string GetAgentId() const;
+
+                    /**
+                     * 设置<p>数字分身ID</p>
+                     * @param _agentId <p>数字分身ID</p>
+                     * 
+                     */
+                    void SetAgentId(const std::string& _agentId);
+
+                    /**
+                     * 判断参数 AgentId 是否已赋值
+                     * @return AgentId 是否已赋值
+                     * 
+                     */
+                    bool AgentIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模糊搜索制品信息</p>
+                     * @return NameKeyword <p>模糊搜索制品信息</p>
+                     * 
+                     */
+                    std::string GetNameKeyword() const;
+
+                    /**
+                     * 设置<p>模糊搜索制品信息</p>
+                     * @param _nameKeyword <p>模糊搜索制品信息</p>
+                     * 
+                     */
+                    void SetNameKeyword(const std::string& _nameKeyword);
+
+                    /**
+                     * 判断参数 NameKeyword 是否已赋值
+                     * @return NameKeyword 是否已赋值
+                     * 
+                     */
+                    bool NameKeywordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;
+
+                    /**
+                     * <p>数字分身ID</p>
+                     */
+                    std::string m_agentId;
+                    bool m_agentIdHasBeenSet;
+
+                    /**
+                     * <p>模糊搜索制品信息</p>
+                     */
+                    std::string m_nameKeyword;
+                    bool m_nameKeywordHasBeenSet;
 
                 };
             }

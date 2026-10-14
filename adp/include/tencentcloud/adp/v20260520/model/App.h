@@ -30,8 +30,10 @@
 #include <tencentcloud/adp/v20260520/model/AppSecretInfo.h>
 #include <tencentcloud/adp/v20260520/model/AppShareURLInfo.h>
 #include <tencentcloud/adp/v20260520/model/AppStatusInfo.h>
-#include <tencentcloud/adp/v20260520/model/AppSharedKbInfo.h>
 #include <tencentcloud/adp/v20260520/model/CorpShareConfig.h>
+#include <tencentcloud/adp/v20260520/model/AppSharedKbInfo.h>
+#include <tencentcloud/adp/v20260520/model/PortalShareConfig.h>
+#include <tencentcloud/adp/v20260520/model/FileVolumeMount.h>
 
 
 namespace TencentCloud
@@ -205,27 +207,6 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>应用引用的共享知识库列表</p>
-                     * @return SharedKbList <p>应用引用的共享知识库列表</p>
-                     * 
-                     */
-                    std::vector<AppSharedKbInfo> GetSharedKbList() const;
-
-                    /**
-                     * 设置<p>应用引用的共享知识库列表</p>
-                     * @param _sharedKbList <p>应用引用的共享知识库列表</p>
-                     * 
-                     */
-                    void SetSharedKbList(const std::vector<AppSharedKbInfo>& _sharedKbList);
-
-                    /**
-                     * 判断参数 SharedKbList 是否已赋值
-                     * @return SharedKbList 是否已赋值
-                     * 
-                     */
-                    bool SharedKbListHasBeenSet() const;
-
-                    /**
                      * 获取<p>企业共享配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpShareConfig <p>企业共享配置</p>
@@ -249,6 +230,81 @@ namespace TencentCloud
                      * 
                      */
                     bool CorpShareConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>应用引用的共享知识库列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SharedKbList <p>应用引用的共享知识库列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AppSharedKbInfo> GetSharedKbList() const;
+
+                    /**
+                     * 设置<p>应用引用的共享知识库列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sharedKbList <p>应用引用的共享知识库列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSharedKbList(const std::vector<AppSharedKbInfo>& _sharedKbList);
+
+                    /**
+                     * 判断参数 SharedKbList 是否已赋值
+                     * @return SharedKbList 是否已赋值
+                     * 
+                     */
+                    bool SharedKbListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>portal共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PortalShareConfig <p>portal共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    PortalShareConfig GetPortalShareConfig() const;
+
+                    /**
+                     * 设置<p>portal共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _portalShareConfig <p>portal共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPortalShareConfig(const PortalShareConfig& _portalShareConfig);
+
+                    /**
+                     * 判断参数 PortalShareConfig 是否已赋值
+                     * @return PortalShareConfig 是否已赋值
+                     * 
+                     */
+                    bool PortalShareConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>应用挂载云盘</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileVolumeMountList <p>应用挂载云盘</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FileVolumeMount> GetFileVolumeMountList() const;
+
+                    /**
+                     * 设置<p>应用挂载云盘</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileVolumeMountList <p>应用挂载云盘</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileVolumeMountList(const std::vector<FileVolumeMount>& _fileVolumeMountList);
+
+                    /**
+                     * 判断参数 FileVolumeMountList 是否已赋值
+                     * @return FileVolumeMountList 是否已赋值
+                     * 
+                     */
+                    bool FileVolumeMountListHasBeenSet() const;
 
                 private:
 
@@ -295,17 +351,32 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * <p>应用引用的共享知识库列表</p>
-                     */
-                    std::vector<AppSharedKbInfo> m_sharedKbList;
-                    bool m_sharedKbListHasBeenSet;
-
-                    /**
                      * <p>企业共享配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CorpShareConfig m_corpShareConfig;
                     bool m_corpShareConfigHasBeenSet;
+
+                    /**
+                     * <p>应用引用的共享知识库列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AppSharedKbInfo> m_sharedKbList;
+                    bool m_sharedKbListHasBeenSet;
+
+                    /**
+                     * <p>portal共享配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PortalShareConfig m_portalShareConfig;
+                    bool m_portalShareConfigHasBeenSet;
+
+                    /**
+                     * <p>应用挂载云盘</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FileVolumeMount> m_fileVolumeMountList;
+                    bool m_fileVolumeMountListHasBeenSet;
 
                 };
             }

@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool AudioUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否对注册/更新的音频做质量检测。开启后使用质检专用引擎提取特征，对音频进行多说话人、信噪比、截幅等检查，不合格返回对应错误码；关闭时不做这些检查，沿用常规注册流。默认false</p><p>默认值：false</p>
+                     * @return QualityCheck <p>是否对注册/更新的音频做质量检测。开启后使用质检专用引擎提取特征，对音频进行多说话人、信噪比、截幅等检查，不合格返回对应错误码；关闭时不做这些检查，沿用常规注册流。默认false</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetQualityCheck() const;
+
+                    /**
+                     * 设置<p>是否对注册/更新的音频做质量检测。开启后使用质检专用引擎提取特征，对音频进行多说话人、信噪比、截幅等检查，不合格返回对应错误码；关闭时不做这些检查，沿用常规注册流。默认false</p><p>默认值：false</p>
+                     * @param _qualityCheck <p>是否对注册/更新的音频做质量检测。开启后使用质检专用引擎提取特征，对音频进行多说话人、信噪比、截幅等检查，不合格返回对应错误码；关闭时不做这些检查，沿用常规注册流。默认false</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetQualityCheck(const bool& _qualityCheck);
+
+                    /**
+                     * 判断参数 QualityCheck 是否已赋值
+                     * @return QualityCheck 是否已赋值
+                     * 
+                     */
+                    bool QualityCheckHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_audioUrl;
                     bool m_audioUrlHasBeenSet;
+
+                    /**
+                     * <p>是否对注册/更新的音频做质量检测。开启后使用质检专用引擎提取特征，对音频进行多说话人、信噪比、截幅等检查，不合格返回对应错误码；关闭时不做这些检查，沿用常规注册流。默认false</p><p>默认值：false</p>
+                     */
+                    bool m_qualityCheck;
+                    bool m_qualityCheckHasBeenSet;
 
                 };
             }

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合过滤条件的记录总数。
-                     * @return TotalCount 符合过滤条件的记录总数。
+                     * 获取<p>符合过滤条件的记录总数。</p>
+                     * @return TotalCount <p>符合过滤条件的记录总数。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取工作流信息数组。
-                     * @return WorkflowInfoSet 工作流信息数组。
+                     * 获取<p>工作流信息数组。</p>
+                     * @return WorkflowInfoSet <p>工作流信息数组。</p>
                      * 
                      */
                     std::vector<WorkflowInfo> GetWorkflowInfoSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合过滤条件的记录总数。
+                     * <p>符合过滤条件的记录总数。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 工作流信息数组。
+                     * <p>工作流信息数组。</p>
                      */
                     std::vector<WorkflowInfo> m_workflowInfoSet;
                     bool m_workflowInfoSetHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体传输事件的配置信息列表。
-                     * @return Infos 媒体传输事件的配置信息列表。
+                     * 获取<p>媒体传输事件的配置信息列表。</p>
+                     * @return Infos <p>媒体传输事件的配置信息列表。</p>
                      * 
                      */
                     std::vector<DescribeEvent> GetInfos() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool InfosHasBeenSet() const;
 
                     /**
-                     * 获取当前页数。
-                     * @return PageNum 当前页数。
+                     * 获取<p>当前页数。</p>
+                     * @return PageNum <p>当前页数。</p>
                      * 
                      */
                     int64_t GetPageNum() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取每页大小。
-                     * @return PageSize 每页大小。
+                     * 获取<p>每页大小。</p>
+                     * @return PageSize <p>每页大小。</p>
                      * 
                      */
                     int64_t GetPageSize() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取总数量。
-                     * @return TotalNum 总数量。
+                     * 获取<p>总数量。</p>
+                     * @return TotalNum <p>总数量。</p>
                      * 
                      */
                     int64_t GetTotalNum() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool TotalNumHasBeenSet() const;
 
                     /**
-                     * 获取总页数。
-                     * @return TotalPage 总页数。
+                     * 获取<p>总页数。</p>
+                     * @return TotalPage <p>总页数。</p>
                      * 
                      */
                     int64_t GetTotalPage() const;
@@ -117,31 +117,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体传输事件的配置信息列表。
+                     * <p>媒体传输事件的配置信息列表。</p>
                      */
                     std::vector<DescribeEvent> m_infos;
                     bool m_infosHasBeenSet;
 
                     /**
-                     * 当前页数。
+                     * <p>当前页数。</p>
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 每页大小。
+                     * <p>每页大小。</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 总数量。
+                     * <p>总数量。</p>
                      */
                     int64_t m_totalNum;
                     bool m_totalNumHasBeenSet;
 
                     /**
-                     * 总页数。
+                     * <p>总页数。</p>
                      */
                     int64_t m_totalPage;
                     bool m_totalPageHasBeenSet;

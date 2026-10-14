@@ -23,7 +23,10 @@ using namespace std;
 ModelStatus::ModelStatus() :
     m_concurrencyHasBeenSet(false),
     m_isExclusiveHasBeenSet(false),
-    m_resourceStatusHasBeenSet(false)
+    m_isExperienceSupportedHasBeenSet(false),
+    m_resourceStatusHasBeenSet(false),
+    m_rpmLimitHasBeenSet(false),
+    m_tpmLimitHasBeenSet(false)
 {
 }
 
@@ -52,6 +55,16 @@ CoreInternalOutcome ModelStatus::Deserialize(const rapidjson::Value &value)
         m_isExclusiveHasBeenSet = true;
     }
 
+    if (value.HasMember("IsExperienceSupported") && !value["IsExperienceSupported"].IsNull())
+    {
+        if (!value["IsExperienceSupported"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelStatus.IsExperienceSupported` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isExperienceSupported = value["IsExperienceSupported"].GetBool();
+        m_isExperienceSupportedHasBeenSet = true;
+    }
+
     if (value.HasMember("ResourceStatus") && !value["ResourceStatus"].IsNull())
     {
         if (!value["ResourceStatus"].IsInt64())
@@ -60,6 +73,26 @@ CoreInternalOutcome ModelStatus::Deserialize(const rapidjson::Value &value)
         }
         m_resourceStatus = value["ResourceStatus"].GetInt64();
         m_resourceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("RpmLimit") && !value["RpmLimit"].IsNull())
+    {
+        if (!value["RpmLimit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelStatus.RpmLimit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rpmLimit = string(value["RpmLimit"].GetString());
+        m_rpmLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("TpmLimit") && !value["TpmLimit"].IsNull())
+    {
+        if (!value["TpmLimit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelStatus.TpmLimit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tpmLimit = string(value["TpmLimit"].GetString());
+        m_tpmLimitHasBeenSet = true;
     }
 
 
@@ -85,12 +118,36 @@ void ModelStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_isExclusive, allocator);
     }
 
+    if (m_isExperienceSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExperienceSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isExperienceSupported, allocator);
+    }
+
     if (m_resourceStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceStatus, allocator);
+    }
+
+    if (m_rpmLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RpmLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rpmLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tpmLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TpmLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tpmLimit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -128,6 +185,22 @@ bool ModelStatus::IsExclusiveHasBeenSet() const
     return m_isExclusiveHasBeenSet;
 }
 
+bool ModelStatus::GetIsExperienceSupported() const
+{
+    return m_isExperienceSupported;
+}
+
+void ModelStatus::SetIsExperienceSupported(const bool& _isExperienceSupported)
+{
+    m_isExperienceSupported = _isExperienceSupported;
+    m_isExperienceSupportedHasBeenSet = true;
+}
+
+bool ModelStatus::IsExperienceSupportedHasBeenSet() const
+{
+    return m_isExperienceSupportedHasBeenSet;
+}
+
 int64_t ModelStatus::GetResourceStatus() const
 {
     return m_resourceStatus;
@@ -142,5 +215,37 @@ void ModelStatus::SetResourceStatus(const int64_t& _resourceStatus)
 bool ModelStatus::ResourceStatusHasBeenSet() const
 {
     return m_resourceStatusHasBeenSet;
+}
+
+string ModelStatus::GetRpmLimit() const
+{
+    return m_rpmLimit;
+}
+
+void ModelStatus::SetRpmLimit(const string& _rpmLimit)
+{
+    m_rpmLimit = _rpmLimit;
+    m_rpmLimitHasBeenSet = true;
+}
+
+bool ModelStatus::RpmLimitHasBeenSet() const
+{
+    return m_rpmLimitHasBeenSet;
+}
+
+string ModelStatus::GetTpmLimit() const
+{
+    return m_tpmLimit;
+}
+
+void ModelStatus::SetTpmLimit(const string& _tpmLimit)
+{
+    m_tpmLimit = _tpmLimit;
+    m_tpmLimitHasBeenSet = true;
+}
+
+bool ModelStatus::TpmLimitHasBeenSet() const
+{
+    return m_tpmLimitHasBeenSet;
 }
 

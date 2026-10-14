@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/es/v20180416/model/NodeTypeInfo.h>
 #include <tencentcloud/es/v20180416/model/DiskSizeRange.h>
+#include <tencentcloud/es/v20180416/model/FamilyResourceStat.h>
 #include <tencentcloud/es/v20180416/model/LocalDiskInfo.h>
 #include <tencentcloud/es/v20180416/model/DiskCountRange.h>
 #include <tencentcloud/es/v20180416/model/GpuInfo.h>
@@ -52,15 +53,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规格名称
-                     * @return NodeTypeName 规格名称
+                     * 获取<p>规格名称</p>
+                     * @return NodeTypeName <p>规格名称</p>
                      * 
                      */
                     std::string GetNodeTypeName() const;
 
                     /**
-                     * 设置规格名称
-                     * @param _nodeTypeName 规格名称
+                     * 设置<p>规格名称</p>
+                     * @param _nodeTypeName <p>规格名称</p>
                      * 
                      */
                     void SetNodeTypeName(const std::string& _nodeTypeName);
@@ -73,15 +74,15 @@ namespace TencentCloud
                     bool NodeTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取是否可售
-                     * @return Available 是否可售
+                     * 获取<p>是否可售</p>
+                     * @return Available <p>是否可售</p>
                      * 
                      */
                     bool GetAvailable() const;
 
                     /**
-                     * 设置是否可售
-                     * @param _available 是否可售
+                     * 设置<p>是否可售</p>
+                     * @param _available <p>是否可售</p>
                      * 
                      */
                     void SetAvailable(const bool& _available);
@@ -94,15 +95,15 @@ namespace TencentCloud
                     bool AvailableHasBeenSet() const;
 
                     /**
-                     * 获取规格信息
-                     * @return NodeTypeInfo 规格信息
+                     * 获取<p>规格信息</p>
+                     * @return NodeTypeInfo <p>规格信息</p>
                      * 
                      */
                     NodeTypeInfo GetNodeTypeInfo() const;
 
                     /**
-                     * 设置规格信息
-                     * @param _nodeTypeInfo 规格信息
+                     * 设置<p>规格信息</p>
+                     * @param _nodeTypeInfo <p>规格信息</p>
                      * 
                      */
                     void SetNodeTypeInfo(const NodeTypeInfo& _nodeTypeInfo);
@@ -115,15 +116,15 @@ namespace TencentCloud
                     bool NodeTypeInfoHasBeenSet() const;
 
                     /**
-                     * 获取SSD盘是否可售
-                     * @return SsdAvailable SSD盘是否可售
+                     * 获取<p>SSD盘是否可售</p>
+                     * @return SsdAvailable <p>SSD盘是否可售</p>
                      * 
                      */
                     bool GetSsdAvailable() const;
 
                     /**
-                     * 设置SSD盘是否可售
-                     * @param _ssdAvailable SSD盘是否可售
+                     * 设置<p>SSD盘是否可售</p>
+                     * @param _ssdAvailable <p>SSD盘是否可售</p>
                      * 
                      */
                     void SetSsdAvailable(const bool& _ssdAvailable);
@@ -136,15 +137,15 @@ namespace TencentCloud
                     bool SsdAvailableHasBeenSet() const;
 
                     /**
-                     * 获取SSD磁盘取值范围
-                     * @return SsdDiskSizeRange SSD磁盘取值范围
+                     * 获取<p>SSD磁盘取值范围</p>
+                     * @return SsdDiskSizeRange <p>SSD磁盘取值范围</p>
                      * 
                      */
                     DiskSizeRange GetSsdDiskSizeRange() const;
 
                     /**
-                     * 设置SSD磁盘取值范围
-                     * @param _ssdDiskSizeRange SSD磁盘取值范围
+                     * 设置<p>SSD磁盘取值范围</p>
+                     * @param _ssdDiskSizeRange <p>SSD磁盘取值范围</p>
                      * 
                      */
                     void SetSsdDiskSizeRange(const DiskSizeRange& _ssdDiskSizeRange);
@@ -157,15 +158,40 @@ namespace TencentCloud
                     bool SsdDiskSizeRangeHasBeenSet() const;
 
                     /**
-                     * 获取SATA盘是否可售
-                     * @return SataAvailable SATA盘是否可售
+                     * 获取<p>SSD云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SsdSoldOutDetail <p>SSD云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FamilyResourceStat> GetSsdSoldOutDetail() const;
+
+                    /**
+                     * 设置<p>SSD云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ssdSoldOutDetail <p>SSD云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSsdSoldOutDetail(const std::vector<FamilyResourceStat>& _ssdSoldOutDetail);
+
+                    /**
+                     * 判断参数 SsdSoldOutDetail 是否已赋值
+                     * @return SsdSoldOutDetail 是否已赋值
+                     * 
+                     */
+                    bool SsdSoldOutDetailHasBeenSet() const;
+
+                    /**
+                     * 获取<p>SATA盘是否可售</p>
+                     * @return SataAvailable <p>SATA盘是否可售</p>
                      * 
                      */
                     bool GetSataAvailable() const;
 
                     /**
-                     * 设置SATA盘是否可售
-                     * @param _sataAvailable SATA盘是否可售
+                     * 设置<p>SATA盘是否可售</p>
+                     * @param _sataAvailable <p>SATA盘是否可售</p>
                      * 
                      */
                     void SetSataAvailable(const bool& _sataAvailable);
@@ -178,15 +204,15 @@ namespace TencentCloud
                     bool SataAvailableHasBeenSet() const;
 
                     /**
-                     * 获取SATA磁盘取值范围
-                     * @return SataDiskSizeRange SATA磁盘取值范围
+                     * 获取<p>SATA磁盘取值范围</p>
+                     * @return SataDiskSizeRange <p>SATA磁盘取值范围</p>
                      * 
                      */
                     DiskSizeRange GetSataDiskSizeRange() const;
 
                     /**
-                     * 设置SATA磁盘取值范围
-                     * @param _sataDiskSizeRange SATA磁盘取值范围
+                     * 设置<p>SATA磁盘取值范围</p>
+                     * @param _sataDiskSizeRange <p>SATA磁盘取值范围</p>
                      * 
                      */
                     void SetSataDiskSizeRange(const DiskSizeRange& _sataDiskSizeRange);
@@ -199,15 +225,15 @@ namespace TencentCloud
                     bool SataDiskSizeRangeHasBeenSet() const;
 
                     /**
-                     * 获取SSD机型售罄原因
-                     * @return SsdSoldOutReason SSD机型售罄原因
+                     * 获取<p>SSD机型售罄原因</p>
+                     * @return SsdSoldOutReason <p>SSD机型售罄原因</p>
                      * 
                      */
                     std::string GetSsdSoldOutReason() const;
 
                     /**
-                     * 设置SSD机型售罄原因
-                     * @param _ssdSoldOutReason SSD机型售罄原因
+                     * 设置<p>SSD机型售罄原因</p>
+                     * @param _ssdSoldOutReason <p>SSD机型售罄原因</p>
                      * 
                      */
                     void SetSsdSoldOutReason(const std::string& _ssdSoldOutReason);
@@ -220,15 +246,15 @@ namespace TencentCloud
                     bool SsdSoldOutReasonHasBeenSet() const;
 
                     /**
-                     * 获取SATA机型售罄原因
-                     * @return SataSoldOutReason SATA机型售罄原因
+                     * 获取<p>SATA机型售罄原因</p>
+                     * @return SataSoldOutReason <p>SATA机型售罄原因</p>
                      * 
                      */
                     std::string GetSataSoldOutReason() const;
 
                     /**
-                     * 设置SATA机型售罄原因
-                     * @param _sataSoldOutReason SATA机型售罄原因
+                     * 设置<p>SATA机型售罄原因</p>
+                     * @param _sataSoldOutReason <p>SATA机型售罄原因</p>
                      * 
                      */
                     void SetSataSoldOutReason(const std::string& _sataSoldOutReason);
@@ -241,18 +267,43 @@ namespace TencentCloud
                     bool SataSoldOutReasonHasBeenSet() const;
 
                     /**
-                     * 获取本地盘信息
+                     * 获取<p>高性能云硬盘售罄明细</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LocalDiskInfo 本地盘信息
+                     * @return SataSoldOutDetail <p>高性能云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FamilyResourceStat> GetSataSoldOutDetail() const;
+
+                    /**
+                     * 设置<p>高性能云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sataSoldOutDetail <p>高性能云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSataSoldOutDetail(const std::vector<FamilyResourceStat>& _sataSoldOutDetail);
+
+                    /**
+                     * 判断参数 SataSoldOutDetail 是否已赋值
+                     * @return SataSoldOutDetail 是否已赋值
+                     * 
+                     */
+                    bool SataSoldOutDetailHasBeenSet() const;
+
+                    /**
+                     * 获取<p>本地盘信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalDiskInfo <p>本地盘信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LocalDiskInfo GetLocalDiskInfo() const;
 
                     /**
-                     * 设置本地盘信息
+                     * 设置<p>本地盘信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _localDiskInfo 本地盘信息
+                     * @param _localDiskInfo <p>本地盘信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -266,18 +317,18 @@ namespace TencentCloud
                     bool LocalDiskInfoHasBeenSet() const;
 
                     /**
-                     * 获取云盘块数取值范围
+                     * 获取<p>云盘块数取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskCountRange 云盘块数取值范围
+                     * @return DiskCountRange <p>云盘块数取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiskCountRange GetDiskCountRange() const;
 
                     /**
-                     * 设置云盘块数取值范围
+                     * 设置<p>云盘块数取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskCountRange 云盘块数取值范围
+                     * @param _diskCountRange <p>云盘块数取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -291,18 +342,18 @@ namespace TencentCloud
                     bool DiskCountRangeHasBeenSet() const;
 
                     /**
-                     * 获取增强型SSD是否可用
+                     * 获取<p>增强型SSD是否可用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HSsdAvailable 增强型SSD是否可用
+                     * @return HSsdAvailable <p>增强型SSD是否可用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHSsdAvailable() const;
 
                     /**
-                     * 设置增强型SSD是否可用
+                     * 设置<p>增强型SSD是否可用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hSsdAvailable 增强型SSD是否可用
+                     * @param _hSsdAvailable <p>增强型SSD是否可用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -316,18 +367,18 @@ namespace TencentCloud
                     bool HSsdAvailableHasBeenSet() const;
 
                     /**
-                     * 获取增强型SSD机型售罄原因
+                     * 获取<p>增强型SSD机型售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HSsdSoldOutReason 增强型SSD机型售罄原因
+                     * @return HSsdSoldOutReason <p>增强型SSD机型售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHSsdSoldOutReason() const;
 
                     /**
-                     * 设置增强型SSD机型售罄原因
+                     * 设置<p>增强型SSD机型售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hSsdSoldOutReason 增强型SSD机型售罄原因
+                     * @param _hSsdSoldOutReason <p>增强型SSD机型售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -341,18 +392,43 @@ namespace TencentCloud
                     bool HSsdSoldOutReasonHasBeenSet() const;
 
                     /**
-                     * 获取增强型SSD磁盘取值范围
+                     * 获取<p>增强型SSD售罄明细</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HSsdDiskSizeRange 增强型SSD磁盘取值范围
+                     * @return HSsdSoldOutDetail <p>增强型SSD售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FamilyResourceStat> GetHSsdSoldOutDetail() const;
+
+                    /**
+                     * 设置<p>增强型SSD售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hSsdSoldOutDetail <p>增强型SSD售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHSsdSoldOutDetail(const std::vector<FamilyResourceStat>& _hSsdSoldOutDetail);
+
+                    /**
+                     * 判断参数 HSsdSoldOutDetail 是否已赋值
+                     * @return HSsdSoldOutDetail 是否已赋值
+                     * 
+                     */
+                    bool HSsdSoldOutDetailHasBeenSet() const;
+
+                    /**
+                     * 获取<p>增强型SSD磁盘取值范围</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HSsdDiskSizeRange <p>增强型SSD磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiskSizeRange GetHSsdDiskSizeRange() const;
 
                     /**
-                     * 设置增强型SSD磁盘取值范围
+                     * 设置<p>增强型SSD磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hSsdDiskSizeRange 增强型SSD磁盘取值范围
+                     * @param _hSsdDiskSizeRange <p>增强型SSD磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -366,18 +442,18 @@ namespace TencentCloud
                     bool HSsdDiskSizeRangeHasBeenSet() const;
 
                     /**
-                     * 获取吞吐型云盘是否可用
+                     * 获取<p>吞吐型云盘是否可用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ThroughputAvailable 吞吐型云盘是否可用
+                     * @return ThroughputAvailable <p>吞吐型云盘是否可用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetThroughputAvailable() const;
 
                     /**
-                     * 设置吞吐型云盘是否可用
+                     * 设置<p>吞吐型云盘是否可用</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _throughputAvailable 吞吐型云盘是否可用
+                     * @param _throughputAvailable <p>吞吐型云盘是否可用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -391,18 +467,18 @@ namespace TencentCloud
                     bool ThroughputAvailableHasBeenSet() const;
 
                     /**
-                     * 获取吞吐型云盘售罄原因
+                     * 获取<p>吞吐型云盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ThroughputSoldOutReason 吞吐型云盘售罄原因
+                     * @return ThroughputSoldOutReason <p>吞吐型云盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetThroughputSoldOutReason() const;
 
                     /**
-                     * 设置吞吐型云盘售罄原因
+                     * 设置<p>吞吐型云盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _throughputSoldOutReason 吞吐型云盘售罄原因
+                     * @param _throughputSoldOutReason <p>吞吐型云盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -416,18 +492,43 @@ namespace TencentCloud
                     bool ThroughputSoldOutReasonHasBeenSet() const;
 
                     /**
-                     * 获取吞吐型云盘取值范围
+                     * 获取<p>吞吐型云硬盘售罄</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ThroughputDiskSizeRange 吞吐型云盘取值范围
+                     * @return ThroughputSoldOutDetail <p>吞吐型云硬盘售罄</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FamilyResourceStat> GetThroughputSoldOutDetail() const;
+
+                    /**
+                     * 设置<p>吞吐型云硬盘售罄</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _throughputSoldOutDetail <p>吞吐型云硬盘售罄</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetThroughputSoldOutDetail(const std::vector<FamilyResourceStat>& _throughputSoldOutDetail);
+
+                    /**
+                     * 判断参数 ThroughputSoldOutDetail 是否已赋值
+                     * @return ThroughputSoldOutDetail 是否已赋值
+                     * 
+                     */
+                    bool ThroughputSoldOutDetailHasBeenSet() const;
+
+                    /**
+                     * 获取<p>吞吐型云盘取值范围</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ThroughputDiskSizeRange <p>吞吐型云盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiskSizeRange GetThroughputDiskSizeRange() const;
 
                     /**
-                     * 设置吞吐型云盘取值范围
+                     * 设置<p>吞吐型云盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _throughputDiskSizeRange 吞吐型云盘取值范围
+                     * @param _throughputDiskSizeRange <p>吞吐型云盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -441,18 +542,18 @@ namespace TencentCloud
                     bool ThroughputDiskSizeRangeHasBeenSet() const;
 
                     /**
-                     * 获取BigData盘是否可售
+                     * 获取<p>BigData盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BigDataAvailable BigData盘是否可售
+                     * @return BigDataAvailable <p>BigData盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetBigDataAvailable() const;
 
                     /**
-                     * 设置BigData盘是否可售
+                     * 设置<p>BigData盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bigDataAvailable BigData盘是否可售
+                     * @param _bigDataAvailable <p>BigData盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -466,18 +567,18 @@ namespace TencentCloud
                     bool BigDataAvailableHasBeenSet() const;
 
                     /**
-                     * 获取BigData盘售罄原因
+                     * 获取<p>BigData盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BigDataSoldOutReason BigData盘售罄原因
+                     * @return BigDataSoldOutReason <p>BigData盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBigDataSoldOutReason() const;
 
                     /**
-                     * 设置BigData盘售罄原因
+                     * 设置<p>BigData盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bigDataSoldOutReason BigData盘售罄原因
+                     * @param _bigDataSoldOutReason <p>BigData盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -491,18 +592,43 @@ namespace TencentCloud
                     bool BigDataSoldOutReasonHasBeenSet() const;
 
                     /**
-                     * 获取BigData磁盘取值范围
+                     * 获取<p>大数据型云硬盘售罄明细</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BigDataDiskSizeRange BigData磁盘取值范围
+                     * @return BigDataSoldOutDetail <p>大数据型云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FamilyResourceStat> GetBigDataSoldOutDetail() const;
+
+                    /**
+                     * 设置<p>大数据型云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bigDataSoldOutDetail <p>大数据型云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBigDataSoldOutDetail(const std::vector<FamilyResourceStat>& _bigDataSoldOutDetail);
+
+                    /**
+                     * 判断参数 BigDataSoldOutDetail 是否已赋值
+                     * @return BigDataSoldOutDetail 是否已赋值
+                     * 
+                     */
+                    bool BigDataSoldOutDetailHasBeenSet() const;
+
+                    /**
+                     * 获取<p>BigData磁盘取值范围</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BigDataDiskSizeRange <p>BigData磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiskSizeRange GetBigDataDiskSizeRange() const;
 
                     /**
-                     * 设置BigData磁盘取值范围
+                     * 设置<p>BigData磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bigDataDiskSizeRange BigData磁盘取值范围
+                     * @param _bigDataDiskSizeRange <p>BigData磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -516,18 +642,18 @@ namespace TencentCloud
                     bool BigDataDiskSizeRangeHasBeenSet() const;
 
                     /**
-                     * 获取HighIO盘是否可售
+                     * 获取<p>HighIO盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HighIOAvailable HighIO盘是否可售
+                     * @return HighIOAvailable <p>HighIO盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHighIOAvailable() const;
 
                     /**
-                     * 设置HighIO盘是否可售
+                     * 设置<p>HighIO盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _highIOAvailable HighIO盘是否可售
+                     * @param _highIOAvailable <p>HighIO盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -541,18 +667,18 @@ namespace TencentCloud
                     bool HighIOAvailableHasBeenSet() const;
 
                     /**
-                     * 获取HighIO盘售罄原因
+                     * 获取<p>HighIO盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HighIOSoldOutReason HighIO盘售罄原因
+                     * @return HighIOSoldOutReason <p>HighIO盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHighIOSoldOutReason() const;
 
                     /**
-                     * 设置HighIO盘售罄原因
+                     * 设置<p>HighIO盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _highIOSoldOutReason HighIO盘售罄原因
+                     * @param _highIOSoldOutReason <p>HighIO盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -566,18 +692,43 @@ namespace TencentCloud
                     bool HighIOSoldOutReasonHasBeenSet() const;
 
                     /**
-                     * 获取HighIO磁盘取值范围
+                     * 获取<p>高IO型云硬盘售罄明细</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HighIODiskSizeRange HighIO磁盘取值范围
+                     * @return HighIOSoldOutDetail <p>高IO型云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FamilyResourceStat> GetHighIOSoldOutDetail() const;
+
+                    /**
+                     * 设置<p>高IO型云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _highIOSoldOutDetail <p>高IO型云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHighIOSoldOutDetail(const std::vector<FamilyResourceStat>& _highIOSoldOutDetail);
+
+                    /**
+                     * 判断参数 HighIOSoldOutDetail 是否已赋值
+                     * @return HighIOSoldOutDetail 是否已赋值
+                     * 
+                     */
+                    bool HighIOSoldOutDetailHasBeenSet() const;
+
+                    /**
+                     * 获取<p>HighIO磁盘取值范围</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HighIODiskSizeRange <p>HighIO磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiskSizeRange GetHighIODiskSizeRange() const;
 
                     /**
-                     * 设置HighIO磁盘取值范围
+                     * 设置<p>HighIO磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _highIODiskSizeRange HighIO磁盘取值范围
+                     * @param _highIODiskSizeRange <p>HighIO磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -591,18 +742,18 @@ namespace TencentCloud
                     bool HighIODiskSizeRangeHasBeenSet() const;
 
                     /**
-                     * 获取Bssd盘是否可售
+                     * 获取<p>Bssd盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BssdAvailable Bssd盘是否可售
+                     * @return BssdAvailable <p>Bssd盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetBssdAvailable() const;
 
                     /**
-                     * 设置Bssd盘是否可售
+                     * 设置<p>Bssd盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bssdAvailable Bssd盘是否可售
+                     * @param _bssdAvailable <p>Bssd盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -616,18 +767,18 @@ namespace TencentCloud
                     bool BssdAvailableHasBeenSet() const;
 
                     /**
-                     * 获取Bssd盘售罄原因
+                     * 获取<p>Bssd盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BssdSoldOutReason Bssd盘售罄原因
+                     * @return BssdSoldOutReason <p>Bssd盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBssdSoldOutReason() const;
 
                     /**
-                     * 设置Bssd盘售罄原因
+                     * 设置<p>Bssd盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bssdSoldOutReason Bssd盘售罄原因
+                     * @param _bssdSoldOutReason <p>Bssd盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -641,18 +792,18 @@ namespace TencentCloud
                     bool BssdSoldOutReasonHasBeenSet() const;
 
                     /**
-                     * 获取Bssd盘取值范围
+                     * 获取<p>Bssd盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BssdDiskSizeRange Bssd盘取值范围
+                     * @return BssdDiskSizeRange <p>Bssd盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiskSizeRange GetBssdDiskSizeRange() const;
 
                     /**
-                     * 设置Bssd盘取值范围
+                     * 设置<p>Bssd盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bssdDiskSizeRange Bssd盘取值范围
+                     * @param _bssdDiskSizeRange <p>Bssd盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -666,18 +817,43 @@ namespace TencentCloud
                     bool BssdDiskSizeRangeHasBeenSet() const;
 
                     /**
-                     * 获取GpuInfo
+                     * 获取<p>通用型SSD云硬盘售罄明细</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GpuInfo GpuInfo
+                     * @return BssdSoldOutDetail <p>通用型SSD云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FamilyResourceStat> GetBssdSoldOutDetail() const;
+
+                    /**
+                     * 设置<p>通用型SSD云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bssdSoldOutDetail <p>通用型SSD云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBssdSoldOutDetail(const std::vector<FamilyResourceStat>& _bssdSoldOutDetail);
+
+                    /**
+                     * 判断参数 BssdSoldOutDetail 是否已赋值
+                     * @return BssdSoldOutDetail 是否已赋值
+                     * 
+                     */
+                    bool BssdSoldOutDetailHasBeenSet() const;
+
+                    /**
+                     * 获取<p>GpuInfo</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GpuInfo <p>GpuInfo</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GpuInfo GetGpuInfo() const;
 
                     /**
-                     * 设置GpuInfo
+                     * 设置<p>GpuInfo</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gpuInfo GpuInfo
+                     * @param _gpuInfo <p>GpuInfo</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -693,180 +869,229 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规格名称
+                     * <p>规格名称</p>
                      */
                     std::string m_nodeTypeName;
                     bool m_nodeTypeNameHasBeenSet;
 
                     /**
-                     * 是否可售
+                     * <p>是否可售</p>
                      */
                     bool m_available;
                     bool m_availableHasBeenSet;
 
                     /**
-                     * 规格信息
+                     * <p>规格信息</p>
                      */
                     NodeTypeInfo m_nodeTypeInfo;
                     bool m_nodeTypeInfoHasBeenSet;
 
                     /**
-                     * SSD盘是否可售
+                     * <p>SSD盘是否可售</p>
                      */
                     bool m_ssdAvailable;
                     bool m_ssdAvailableHasBeenSet;
 
                     /**
-                     * SSD磁盘取值范围
+                     * <p>SSD磁盘取值范围</p>
                      */
                     DiskSizeRange m_ssdDiskSizeRange;
                     bool m_ssdDiskSizeRangeHasBeenSet;
 
                     /**
-                     * SATA盘是否可售
+                     * <p>SSD云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FamilyResourceStat> m_ssdSoldOutDetail;
+                    bool m_ssdSoldOutDetailHasBeenSet;
+
+                    /**
+                     * <p>SATA盘是否可售</p>
                      */
                     bool m_sataAvailable;
                     bool m_sataAvailableHasBeenSet;
 
                     /**
-                     * SATA磁盘取值范围
+                     * <p>SATA磁盘取值范围</p>
                      */
                     DiskSizeRange m_sataDiskSizeRange;
                     bool m_sataDiskSizeRangeHasBeenSet;
 
                     /**
-                     * SSD机型售罄原因
+                     * <p>SSD机型售罄原因</p>
                      */
                     std::string m_ssdSoldOutReason;
                     bool m_ssdSoldOutReasonHasBeenSet;
 
                     /**
-                     * SATA机型售罄原因
+                     * <p>SATA机型售罄原因</p>
                      */
                     std::string m_sataSoldOutReason;
                     bool m_sataSoldOutReasonHasBeenSet;
 
                     /**
-                     * 本地盘信息
+                     * <p>高性能云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FamilyResourceStat> m_sataSoldOutDetail;
+                    bool m_sataSoldOutDetailHasBeenSet;
+
+                    /**
+                     * <p>本地盘信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LocalDiskInfo m_localDiskInfo;
                     bool m_localDiskInfoHasBeenSet;
 
                     /**
-                     * 云盘块数取值范围
+                     * <p>云盘块数取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiskCountRange m_diskCountRange;
                     bool m_diskCountRangeHasBeenSet;
 
                     /**
-                     * 增强型SSD是否可用
+                     * <p>增强型SSD是否可用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hSsdAvailable;
                     bool m_hSsdAvailableHasBeenSet;
 
                     /**
-                     * 增强型SSD机型售罄原因
+                     * <p>增强型SSD机型售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hSsdSoldOutReason;
                     bool m_hSsdSoldOutReasonHasBeenSet;
 
                     /**
-                     * 增强型SSD磁盘取值范围
+                     * <p>增强型SSD售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FamilyResourceStat> m_hSsdSoldOutDetail;
+                    bool m_hSsdSoldOutDetailHasBeenSet;
+
+                    /**
+                     * <p>增强型SSD磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiskSizeRange m_hSsdDiskSizeRange;
                     bool m_hSsdDiskSizeRangeHasBeenSet;
 
                     /**
-                     * 吞吐型云盘是否可用
+                     * <p>吞吐型云盘是否可用</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_throughputAvailable;
                     bool m_throughputAvailableHasBeenSet;
 
                     /**
-                     * 吞吐型云盘售罄原因
+                     * <p>吞吐型云盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_throughputSoldOutReason;
                     bool m_throughputSoldOutReasonHasBeenSet;
 
                     /**
-                     * 吞吐型云盘取值范围
+                     * <p>吞吐型云硬盘售罄</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FamilyResourceStat> m_throughputSoldOutDetail;
+                    bool m_throughputSoldOutDetailHasBeenSet;
+
+                    /**
+                     * <p>吞吐型云盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiskSizeRange m_throughputDiskSizeRange;
                     bool m_throughputDiskSizeRangeHasBeenSet;
 
                     /**
-                     * BigData盘是否可售
+                     * <p>BigData盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_bigDataAvailable;
                     bool m_bigDataAvailableHasBeenSet;
 
                     /**
-                     * BigData盘售罄原因
+                     * <p>BigData盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bigDataSoldOutReason;
                     bool m_bigDataSoldOutReasonHasBeenSet;
 
                     /**
-                     * BigData磁盘取值范围
+                     * <p>大数据型云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FamilyResourceStat> m_bigDataSoldOutDetail;
+                    bool m_bigDataSoldOutDetailHasBeenSet;
+
+                    /**
+                     * <p>BigData磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiskSizeRange m_bigDataDiskSizeRange;
                     bool m_bigDataDiskSizeRangeHasBeenSet;
 
                     /**
-                     * HighIO盘是否可售
+                     * <p>HighIO盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_highIOAvailable;
                     bool m_highIOAvailableHasBeenSet;
 
                     /**
-                     * HighIO盘售罄原因
+                     * <p>HighIO盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_highIOSoldOutReason;
                     bool m_highIOSoldOutReasonHasBeenSet;
 
                     /**
-                     * HighIO磁盘取值范围
+                     * <p>高IO型云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FamilyResourceStat> m_highIOSoldOutDetail;
+                    bool m_highIOSoldOutDetailHasBeenSet;
+
+                    /**
+                     * <p>HighIO磁盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiskSizeRange m_highIODiskSizeRange;
                     bool m_highIODiskSizeRangeHasBeenSet;
 
                     /**
-                     * Bssd盘是否可售
+                     * <p>Bssd盘是否可售</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_bssdAvailable;
                     bool m_bssdAvailableHasBeenSet;
 
                     /**
-                     * Bssd盘售罄原因
+                     * <p>Bssd盘售罄原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bssdSoldOutReason;
                     bool m_bssdSoldOutReasonHasBeenSet;
 
                     /**
-                     * Bssd盘取值范围
+                     * <p>Bssd盘取值范围</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiskSizeRange m_bssdDiskSizeRange;
                     bool m_bssdDiskSizeRangeHasBeenSet;
 
                     /**
-                     * GpuInfo
+                     * <p>通用型SSD云硬盘售罄明细</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FamilyResourceStat> m_bssdSoldOutDetail;
+                    bool m_bssdSoldOutDetailHasBeenSet;
+
+                    /**
+                     * <p>GpuInfo</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GpuInfo m_gpuInfo;

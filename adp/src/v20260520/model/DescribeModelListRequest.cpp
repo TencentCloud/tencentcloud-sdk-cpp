@@ -24,11 +24,11 @@ using namespace std;
 
 DescribeModelListRequest::DescribeModelListRequest() :
     m_modelSceneHasBeenSet(false),
-    m_spaceIdHasBeenSet(false),
-    m_queryHasBeenSet(false),
+    m_filterListHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_filterListHasBeenSet(false)
+    m_queryHasBeenSet(false),
+    m_spaceIdHasBeenSet(false)
 {
 }
 
@@ -47,20 +47,19 @@ string DescribeModelListRequest::ToJsonString() const
         d.AddMember(iKey, m_modelScene, allocator);
     }
 
-    if (m_spaceIdHasBeenSet)
+    if (m_filterListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SpaceId";
+        string key = "FilterList";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
-    }
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_queryHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Query";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+        int i=0;
+        for (auto itr = m_filterList.begin(); itr != m_filterList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_pageNumberHasBeenSet)
@@ -79,19 +78,20 @@ string DescribeModelListRequest::ToJsonString() const
         d.AddMember(iKey, m_pageSize, allocator);
     }
 
-    if (m_filterListHasBeenSet)
+    if (m_queryHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FilterList";
+        string key = "Query";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+    }
 
-        int i=0;
-        for (auto itr = m_filterList.begin(); itr != m_filterList.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
+    if (m_spaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -118,36 +118,20 @@ bool DescribeModelListRequest::ModelSceneHasBeenSet() const
     return m_modelSceneHasBeenSet;
 }
 
-string DescribeModelListRequest::GetSpaceId() const
+vector<Filter> DescribeModelListRequest::GetFilterList() const
 {
-    return m_spaceId;
+    return m_filterList;
 }
 
-void DescribeModelListRequest::SetSpaceId(const string& _spaceId)
+void DescribeModelListRequest::SetFilterList(const vector<Filter>& _filterList)
 {
-    m_spaceId = _spaceId;
-    m_spaceIdHasBeenSet = true;
+    m_filterList = _filterList;
+    m_filterListHasBeenSet = true;
 }
 
-bool DescribeModelListRequest::SpaceIdHasBeenSet() const
+bool DescribeModelListRequest::FilterListHasBeenSet() const
 {
-    return m_spaceIdHasBeenSet;
-}
-
-string DescribeModelListRequest::GetQuery() const
-{
-    return m_query;
-}
-
-void DescribeModelListRequest::SetQuery(const string& _query)
-{
-    m_query = _query;
-    m_queryHasBeenSet = true;
-}
-
-bool DescribeModelListRequest::QueryHasBeenSet() const
-{
-    return m_queryHasBeenSet;
+    return m_filterListHasBeenSet;
 }
 
 uint64_t DescribeModelListRequest::GetPageNumber() const
@@ -182,20 +166,36 @@ bool DescribeModelListRequest::PageSizeHasBeenSet() const
     return m_pageSizeHasBeenSet;
 }
 
-vector<Filter> DescribeModelListRequest::GetFilterList() const
+string DescribeModelListRequest::GetQuery() const
 {
-    return m_filterList;
+    return m_query;
 }
 
-void DescribeModelListRequest::SetFilterList(const vector<Filter>& _filterList)
+void DescribeModelListRequest::SetQuery(const string& _query)
 {
-    m_filterList = _filterList;
-    m_filterListHasBeenSet = true;
+    m_query = _query;
+    m_queryHasBeenSet = true;
 }
 
-bool DescribeModelListRequest::FilterListHasBeenSet() const
+bool DescribeModelListRequest::QueryHasBeenSet() const
 {
-    return m_filterListHasBeenSet;
+    return m_queryHasBeenSet;
+}
+
+string DescribeModelListRequest::GetSpaceId() const
+{
+    return m_spaceId;
+}
+
+void DescribeModelListRequest::SetSpaceId(const string& _spaceId)
+{
+    m_spaceId = _spaceId;
+    m_spaceIdHasBeenSet = true;
+}
+
+bool DescribeModelListRequest::SpaceIdHasBeenSet() const
+{
+    return m_spaceIdHasBeenSet;
 }
 
 

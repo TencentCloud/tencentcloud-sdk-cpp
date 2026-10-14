@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模型属性
+                * <p>模型属性（支持工作流类型/AI 通话类型/是否关闭模型参数/是否支持深度思考/是否限时免费/是否默认模型等）</p>
                 */
                 class ModelProperty : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取属性名称
-                     * @return Name 属性名称
+                     * 获取<p>属性名称</p>
+                     * @return Name <p>属性名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置属性名称
-                     * @param _name 属性名称
+                     * 设置<p>属性名称</p>
+                     * @param _name <p>属性名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取属性值
-                     * @return Value 属性值
+                     * 获取<p>属性值</p>
+                     * @return Value <p>属性值</p>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置属性值
-                     * @param _value 属性值
+                     * 设置<p>属性值</p>
+                     * @param _value <p>属性值</p>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 属性名称
+                     * <p>属性名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 属性值
+                     * <p>属性值</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

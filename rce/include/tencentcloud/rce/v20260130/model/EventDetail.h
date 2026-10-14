@@ -48,6 +48,9 @@
 #include <tencentcloud/rce/v20260130/model/ModifyRoleEvent.h>
 #include <tencentcloud/rce/v20260130/model/AddFriendEvent.h>
 #include <tencentcloud/rce/v20260130/model/ModifyGuildEvent.h>
+#include <tencentcloud/rce/v20260130/model/SearchEvent.h>
+#include <tencentcloud/rce/v20260130/model/BookingEvent.h>
+#include <tencentcloud/rce/v20260130/model/AccountSecurityEvent.h>
 
 
 namespace TencentCloud
@@ -574,6 +577,69 @@ namespace TencentCloud
                      */
                     bool ModifyGuildHasBeenSet() const;
 
+                    /**
+                     * 获取<p>搜索</p>
+                     * @return Search <p>搜索</p>
+                     * 
+                     */
+                    SearchEvent GetSearch() const;
+
+                    /**
+                     * 设置<p>搜索</p>
+                     * @param _search <p>搜索</p>
+                     * 
+                     */
+                    void SetSearch(const SearchEvent& _search);
+
+                    /**
+                     * 判断参数 Search 是否已赋值
+                     * @return Search 是否已赋值
+                     * 
+                     */
+                    bool SearchHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预约</p>
+                     * @return Booking <p>预约</p>
+                     * 
+                     */
+                    BookingEvent GetBooking() const;
+
+                    /**
+                     * 设置<p>预约</p>
+                     * @param _booking <p>预约</p>
+                     * 
+                     */
+                    void SetBooking(const BookingEvent& _booking);
+
+                    /**
+                     * 判断参数 Booking 是否已赋值
+                     * @return Booking 是否已赋值
+                     * 
+                     */
+                    bool BookingHasBeenSet() const;
+
+                    /**
+                     * 获取<p>账号安全</p>
+                     * @return AccountSecurity <p>账号安全</p>
+                     * 
+                     */
+                    AccountSecurityEvent GetAccountSecurity() const;
+
+                    /**
+                     * 设置<p>账号安全</p>
+                     * @param _accountSecurity <p>账号安全</p>
+                     * 
+                     */
+                    void SetAccountSecurity(const AccountSecurityEvent& _accountSecurity);
+
+                    /**
+                     * 判断参数 AccountSecurity 是否已赋值
+                     * @return AccountSecurity 是否已赋值
+                     * 
+                     */
+                    bool AccountSecurityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -719,6 +785,24 @@ namespace TencentCloud
                      */
                     ModifyGuildEvent m_modifyGuild;
                     bool m_modifyGuildHasBeenSet;
+
+                    /**
+                     * <p>搜索</p>
+                     */
+                    SearchEvent m_search;
+                    bool m_searchHasBeenSet;
+
+                    /**
+                     * <p>预约</p>
+                     */
+                    BookingEvent m_booking;
+                    bool m_bookingHasBeenSet;
+
+                    /**
+                     * <p>账号安全</p>
+                     */
+                    AccountSecurityEvent m_accountSecurity;
+                    bool m_accountSecurityHasBeenSet;
 
                 };
             }

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ThoughtTokensHasBeenSet() const;
 
                     /**
-                     * 获取<p>输入图片数目。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
-                     * @return InputImageCount <p>输入图片数目。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * 获取<p>输入图片数目。</p><p>仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite) 时取值有效。</p>
+                     * @return InputImageCount <p>输入图片数目。</p><p>仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite) 时取值有效。</p>
                      * 
                      */
                     int64_t GetInputImageCount() const;
 
                     /**
-                     * 设置<p>输入图片数目。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
-                     * @param _inputImageCount <p>输入图片数目。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * 设置<p>输入图片数目。</p><p>仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite) 时取值有效。</p>
+                     * @param _inputImageCount <p>输入图片数目。</p><p>仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite) 时取值有效。</p>
                      * 
                      */
                     void SetInputImageCount(const int64_t& _inputImageCount);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool InputImageCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>输入视频的时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
-                     * @return InputSeconds <p>输入视频的时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * 获取<p>输入视频的时长。</p><p>单位：秒。</p><p> 仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite/1.0-pro/1.5-pro)、Wan(3.0/3.0-prime) 时取值有效。</p>
+                     * @return InputSeconds <p>输入视频的时长。</p><p>单位：秒。</p><p> 仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite/1.0-pro/1.5-pro)、Wan(3.0/3.0-prime) 时取值有效。</p>
                      * 
                      */
                     int64_t GetInputSeconds() const;
 
                     /**
-                     * 设置<p>输入视频的时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
-                     * @param _inputSeconds <p>输入视频的时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * 设置<p>输入视频的时长。</p><p>单位：秒。</p><p> 仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite/1.0-pro/1.5-pro)、Wan(3.0/3.0-prime) 时取值有效。</p>
+                     * @param _inputSeconds <p>输入视频的时长。</p><p>单位：秒。</p><p> 仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite/1.0-pro/1.5-pro)、Wan(3.0/3.0-prime) 时取值有效。</p>
                      * 
                      */
                     void SetInputSeconds(const int64_t& _inputSeconds);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool InputSecondsHasBeenSet() const;
 
                     /**
-                     * 获取<p>输出视频时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
-                     * @return OutputSeconds <p>输出视频时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * 获取<p>输出视频时长。</p><p>单位：秒。</p><p>所有模型版本取值均有效。</p>
+                     * @return OutputSeconds <p>输出视频时长。</p><p>单位：秒。</p><p>所有模型版本取值均有效。</p>
                      * 
                      */
                     int64_t GetOutputSeconds() const;
 
                     /**
-                     * 设置<p>输出视频时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
-                     * @param _outputSeconds <p>输出视频时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * 设置<p>输出视频时长。</p><p>单位：秒。</p><p>所有模型版本取值均有效。</p>
+                     * @param _outputSeconds <p>输出视频时长。</p><p>单位：秒。</p><p>所有模型版本取值均有效。</p>
                      * 
                      */
                     void SetOutputSeconds(const int64_t& _outputSeconds);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool OutputSecondsHasBeenSet() const;
 
                     /**
-                     * 获取<p>输入输出总时长。</p><p>默认值：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
-                     * @return TotalSeconds <p>输入输出总时长。</p><p>默认值：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * 获取<p>输入输出总时长。</p><p>默认值：秒。</p><p> 仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite/1.0-pro/1.5-pro)、Wan(3.0/3.0-prime) 时取值有效。</p>
+                     * @return TotalSeconds <p>输入输出总时长。</p><p>默认值：秒。</p><p> 仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite/1.0-pro/1.5-pro)、Wan(3.0/3.0-prime) 时取值有效。</p>
                      * 
                      */
                     int64_t GetTotalSeconds() const;
 
                     /**
-                     * 设置<p>输入输出总时长。</p><p>默认值：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
-                     * @param _totalSeconds <p>输入输出总时长。</p><p>默认值：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * 设置<p>输入输出总时长。</p><p>默认值：秒。</p><p> 仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite/1.0-pro/1.5-pro)、Wan(3.0/3.0-prime) 时取值有效。</p>
+                     * @param _totalSeconds <p>输入输出总时长。</p><p>默认值：秒。</p><p> 仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite/1.0-pro/1.5-pro)、Wan(3.0/3.0-prime) 时取值有效。</p>
                      * 
                      */
                     void SetTotalSeconds(const int64_t& _totalSeconds);
@@ -187,25 +187,25 @@ namespace TencentCloud
                     bool m_thoughtTokensHasBeenSet;
 
                     /**
-                     * <p>输入图片数目。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * <p>输入图片数目。</p><p>仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite) 时取值有效。</p>
                      */
                     int64_t m_inputImageCount;
                     bool m_inputImageCountHasBeenSet;
 
                     /**
-                     * <p>输入视频的时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * <p>输入视频的时长。</p><p>单位：秒。</p><p> 仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite/1.0-pro/1.5-pro)、Wan(3.0/3.0-prime) 时取值有效。</p>
                      */
                     int64_t m_inputSeconds;
                     bool m_inputSecondsHasBeenSet;
 
                     /**
-                     * <p>输出视频时长。</p><p>单位：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * <p>输出视频时长。</p><p>单位：秒。</p><p>所有模型版本取值均有效。</p>
                      */
                     int64_t m_outputSeconds;
                     bool m_outputSecondsHasBeenSet;
 
                     /**
-                     * <p>输入输出总时长。</p><p>默认值：秒。</p><p>仅使用 Hailuo 的 H3 版本时取值有效。</p>
+                     * <p>输入输出总时长。</p><p>默认值：秒。</p><p> 仅使用 Hailuo(H3/H3-Max)、wand-vega-video(1.0-lite/1.0-pro/1.5-pro)、Wan(3.0/3.0-prime) 时取值有效。</p>
                      */
                     int64_t m_totalSeconds;
                     bool m_totalSecondsHasBeenSet;

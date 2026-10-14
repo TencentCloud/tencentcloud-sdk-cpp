@@ -30,6 +30,7 @@ ModifyAppRequest::ModifyAppRequest() :
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sharedKbIdListHasBeenSet(false),
+    m_fileVolumeMountListHasBeenSet(false),
     m_updateMaskHasBeenSet(false)
 {
 }
@@ -100,6 +101,21 @@ string ModifyAppRequest::ToJsonString() const
         for (auto itr = m_sharedKbIdList.begin(); itr != m_sharedKbIdList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_fileVolumeMountListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileVolumeMountList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fileVolumeMountList.begin(); itr != m_fileVolumeMountList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -230,6 +246,22 @@ void ModifyAppRequest::SetSharedKbIdList(const vector<string>& _sharedKbIdList)
 bool ModifyAppRequest::SharedKbIdListHasBeenSet() const
 {
     return m_sharedKbIdListHasBeenSet;
+}
+
+vector<AppFileVolumeMount> ModifyAppRequest::GetFileVolumeMountList() const
+{
+    return m_fileVolumeMountList;
+}
+
+void ModifyAppRequest::SetFileVolumeMountList(const vector<AppFileVolumeMount>& _fileVolumeMountList)
+{
+    m_fileVolumeMountList = _fileVolumeMountList;
+    m_fileVolumeMountListHasBeenSet = true;
+}
+
+bool ModifyAppRequest::FileVolumeMountListHasBeenSet() const
+{
+    return m_fileVolumeMountListHasBeenSet;
 }
 
 FieldMask ModifyAppRequest::GetUpdateMask() const

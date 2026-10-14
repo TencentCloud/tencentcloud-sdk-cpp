@@ -109,6 +109,27 @@ namespace TencentCloud
                     bool SourceInstanceIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>待启动的沙箱快照 ID</p>
+                     * @return SnapshotId <p>待启动的沙箱快照 ID</p>
+                     * 
+                     */
+                    std::string GetSnapshotId() const;
+
+                    /**
+                     * 设置<p>待启动的沙箱快照 ID</p>
+                     * @param _snapshotId <p>待启动的沙箱快照 ID</p>
+                     * 
+                     */
+                    void SetSnapshotId(const std::string& _snapshotId);
+
+                    /**
+                     * 判断参数 SnapshotId 是否已赋值
+                     * @return SnapshotId 是否已赋值
+                     * 
+                     */
+                    bool SnapshotIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>
                      * @return Timeout <p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>
                      * 
@@ -253,6 +274,12 @@ namespace TencentCloud
                      */
                     std::string m_sourceInstanceId;
                     bool m_sourceInstanceIdHasBeenSet;
+
+                    /**
+                     * <p>待启动的沙箱快照 ID</p>
+                     */
+                    std::string m_snapshotId;
+                    bool m_snapshotIdHasBeenSet;
 
                     /**
                      * <p>超时时间，超过这个时间就自动回收实例。支持格式：5m、300s、1h 等，默认 5m。最小 30s，最大 24h</p>

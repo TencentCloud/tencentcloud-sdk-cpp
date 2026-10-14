@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件类型描述(如"文本文档")
-                     * @return Description 文件类型描述(如"文本文档")
+                     * 获取<p>描述信息</p>
+                     * @return Description <p>描述信息</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置文件类型描述(如"文本文档")
-                     * @param _description 文件类型描述(如"文本文档")
+                     * 设置<p>描述信息</p>
+                     * @param _description <p>描述信息</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取文件类型(如 txt、pdf、jpg, 建议用扩展名)
-                     * @return FileExt 文件类型(如 txt、pdf、jpg, 建议用扩展名)
+                     * 获取<p>文件类型（如 txt、pdf、jpg，建议用扩展名）</p>
+                     * @return FileExt <p>文件类型（如 txt、pdf、jpg，建议用扩展名）</p>
                      * 
                      */
                     std::string GetFileExt() const;
 
                     /**
-                     * 设置文件类型(如 txt、pdf、jpg, 建议用扩展名)
-                     * @param _fileExt 文件类型(如 txt、pdf、jpg, 建议用扩展名)
+                     * 设置<p>文件类型（如 txt、pdf、jpg，建议用扩展名）</p>
+                     * @param _fileExt <p>文件类型（如 txt、pdf、jpg，建议用扩展名）</p>
                      * 
                      */
                     void SetFileExt(const std::string& _fileExt);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool FileExtHasBeenSet() const;
 
                     /**
-                     * 获取文件大小限制(单位: 字节)
-                     * @return MaxSizeBytes 文件大小限制(单位: 字节)
+                     * 获取<p>文件大小限制（单位：字节）</p>
+                     * @return MaxSizeBytes <p>文件大小限制（单位：字节）</p>
                      * 
                      */
                     std::string GetMaxSizeBytes() const;
 
                     /**
-                     * 设置文件大小限制(单位: 字节)
-                     * @param _maxSizeBytes 文件大小限制(单位: 字节)
+                     * 设置<p>文件大小限制（单位：字节）</p>
+                     * @param _maxSizeBytes <p>文件大小限制（单位：字节）</p>
                      * 
                      */
                     void SetMaxSizeBytes(const std::string& _maxSizeBytes);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件类型描述(如"文本文档")
+                     * <p>描述信息</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 文件类型(如 txt、pdf、jpg, 建议用扩展名)
+                     * <p>文件类型（如 txt、pdf、jpg，建议用扩展名）</p>
                      */
                     std::string m_fileExt;
                     bool m_fileExtHasBeenSet;
 
                     /**
-                     * 文件大小限制(单位: 字节)
+                     * <p>文件大小限制（单位：字节）</p>
                      */
                     std::string m_maxSizeBytes;
                     bool m_maxSizeBytesHasBeenSet;

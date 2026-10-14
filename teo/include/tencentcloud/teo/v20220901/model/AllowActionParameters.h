@@ -35,7 +35,12 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Web 安全 Allow 的附加参数
+                * 安全执行动作为放行时的附加参数。
+
+该参数用于指定在命中安全规则并执行放行动作时，系统所采取的附加处置动作。
+不同处置动作由不同且固定的参数组合进行配置，系统将根据所配置的参数组合判定实际生效的处置动作类型。
+在同一次放行执行过程中，仅允许配置并生效一种处置动作，多个处置动作对应的参数组合不可同时出现，否则视为非法配置。为空则采用默认放行处置动作。
+AllowActionParameters 支持以下附加处置动作：<li>默认：当 AllowActionParameters 为空，立即跳过当前安全模块剩余规则，继续匹配后续安全模块。</li><li>延迟放行：对请求增加响应延迟，并继续匹配当前模块的剩余规则。对应参数 MinDelayTime、MaxDelayTime。</li>
                 */
                 class AllowActionParameters : public AbstractModel
                 {

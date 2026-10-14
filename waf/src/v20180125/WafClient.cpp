@@ -2140,6 +2140,106 @@ WafClient::DeleteIpAccessControlV2OutcomeCallable WafClient::DeleteIpAccessContr
     return prom->get_future();
 }
 
+WafClient::DeleteLLMContentRuleOutcome WafClient::DeleteLLMContentRule(const DeleteLLMContentRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLLMContentRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLLMContentRuleResponse rsp = DeleteLLMContentRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLLMContentRuleOutcome(rsp);
+        else
+            return DeleteLLMContentRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLLMContentRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteLLMContentRuleAsync(const DeleteLLMContentRuleRequest& request, const DeleteLLMContentRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLLMContentRuleRequest&;
+    using Resp = DeleteLLMContentRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLLMContentRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DeleteLLMContentRuleOutcomeCallable WafClient::DeleteLLMContentRuleCallable(const DeleteLLMContentRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLLMContentRuleOutcome>>();
+    DeleteLLMContentRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DeleteLLMContentRuleRequest&,
+        DeleteLLMContentRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DeleteLLMKeywordLibraryOutcome WafClient::DeleteLLMKeywordLibrary(const DeleteLLMKeywordLibraryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLLMKeywordLibrary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLLMKeywordLibraryResponse rsp = DeleteLLMKeywordLibraryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLLMKeywordLibraryOutcome(rsp);
+        else
+            return DeleteLLMKeywordLibraryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLLMKeywordLibraryOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteLLMKeywordLibraryAsync(const DeleteLLMKeywordLibraryRequest& request, const DeleteLLMKeywordLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLLMKeywordLibraryRequest&;
+    using Resp = DeleteLLMKeywordLibraryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLLMKeywordLibrary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DeleteLLMKeywordLibraryOutcomeCallable WafClient::DeleteLLMKeywordLibraryCallable(const DeleteLLMKeywordLibraryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLLMKeywordLibraryOutcome>>();
+    DeleteLLMKeywordLibraryAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DeleteLLMKeywordLibraryRequest&,
+        DeleteLLMKeywordLibraryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::DeleteOwaspRuleStatusOutcome WafClient::DeleteOwaspRuleStatus(const DeleteOwaspRuleStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteOwaspRuleStatus");
@@ -4990,6 +5090,56 @@ WafClient::DescribeIpHitItemsOutcomeCallable WafClient::DescribeIpHitItemsCallab
     return prom->get_future();
 }
 
+WafClient::DescribeLLMContentRuleListOutcome WafClient::DescribeLLMContentRuleList(const DescribeLLMContentRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLLMContentRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLLMContentRuleListResponse rsp = DescribeLLMContentRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLLMContentRuleListOutcome(rsp);
+        else
+            return DescribeLLMContentRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLLMContentRuleListOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeLLMContentRuleListAsync(const DescribeLLMContentRuleListRequest& request, const DescribeLLMContentRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLLMContentRuleListRequest&;
+    using Resp = DescribeLLMContentRuleListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLLMContentRuleList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeLLMContentRuleListOutcomeCallable WafClient::DescribeLLMContentRuleListCallable(const DescribeLLMContentRuleListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLLMContentRuleListOutcome>>();
+    DescribeLLMContentRuleListAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeLLMContentRuleListRequest&,
+        DescribeLLMContentRuleListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::DescribeLLMContentSecCheckOutcome WafClient::DescribeLLMContentSecCheck(const DescribeLLMContentSecCheckRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLLMContentSecCheck");
@@ -5032,6 +5182,206 @@ WafClient::DescribeLLMContentSecCheckOutcomeCallable WafClient::DescribeLLMConte
         const WafClient*,
         const DescribeLLMContentSecCheckRequest&,
         DescribeLLMContentSecCheckOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DescribeLLMKeywordLibraryOutcome WafClient::DescribeLLMKeywordLibrary(const DescribeLLMKeywordLibraryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLLMKeywordLibrary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLLMKeywordLibraryResponse rsp = DescribeLLMKeywordLibraryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLLMKeywordLibraryOutcome(rsp);
+        else
+            return DescribeLLMKeywordLibraryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLLMKeywordLibraryOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeLLMKeywordLibraryAsync(const DescribeLLMKeywordLibraryRequest& request, const DescribeLLMKeywordLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLLMKeywordLibraryRequest&;
+    using Resp = DescribeLLMKeywordLibraryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLLMKeywordLibrary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeLLMKeywordLibraryOutcomeCallable WafClient::DescribeLLMKeywordLibraryCallable(const DescribeLLMKeywordLibraryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLLMKeywordLibraryOutcome>>();
+    DescribeLLMKeywordLibraryAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeLLMKeywordLibraryRequest&,
+        DescribeLLMKeywordLibraryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DescribeLLMSdkAccessOutcome WafClient::DescribeLLMSdkAccess(const DescribeLLMSdkAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLLMSdkAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLLMSdkAccessResponse rsp = DescribeLLMSdkAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLLMSdkAccessOutcome(rsp);
+        else
+            return DescribeLLMSdkAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLLMSdkAccessOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeLLMSdkAccessAsync(const DescribeLLMSdkAccessRequest& request, const DescribeLLMSdkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLLMSdkAccessRequest&;
+    using Resp = DescribeLLMSdkAccessResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLLMSdkAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeLLMSdkAccessOutcomeCallable WafClient::DescribeLLMSdkAccessCallable(const DescribeLLMSdkAccessRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLLMSdkAccessOutcome>>();
+    DescribeLLMSdkAccessAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeLLMSdkAccessRequest&,
+        DescribeLLMSdkAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DescribeLLMWafDLPRulesOutcome WafClient::DescribeLLMWafDLPRules(const DescribeLLMWafDLPRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLLMWafDLPRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLLMWafDLPRulesResponse rsp = DescribeLLMWafDLPRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLLMWafDLPRulesOutcome(rsp);
+        else
+            return DescribeLLMWafDLPRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLLMWafDLPRulesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeLLMWafDLPRulesAsync(const DescribeLLMWafDLPRulesRequest& request, const DescribeLLMWafDLPRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLLMWafDLPRulesRequest&;
+    using Resp = DescribeLLMWafDLPRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLLMWafDLPRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeLLMWafDLPRulesOutcomeCallable WafClient::DescribeLLMWafDLPRulesCallable(const DescribeLLMWafDLPRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLLMWafDLPRulesOutcome>>();
+    DescribeLLMWafDLPRulesAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeLLMWafDLPRulesRequest&,
+        DescribeLLMWafDLPRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DescribeLLMWafProtectRulesOutcome WafClient::DescribeLLMWafProtectRules(const DescribeLLMWafProtectRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLLMWafProtectRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLLMWafProtectRulesResponse rsp = DescribeLLMWafProtectRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLLMWafProtectRulesOutcome(rsp);
+        else
+            return DescribeLLMWafProtectRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLLMWafProtectRulesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeLLMWafProtectRulesAsync(const DescribeLLMWafProtectRulesRequest& request, const DescribeLLMWafProtectRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLLMWafProtectRulesRequest&;
+    using Resp = DescribeLLMWafProtectRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLLMWafProtectRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeLLMWafProtectRulesOutcomeCallable WafClient::DescribeLLMWafProtectRulesCallable(const DescribeLLMWafProtectRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLLMWafProtectRulesOutcome>>();
+    DescribeLLMWafProtectRulesAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeLLMWafProtectRulesRequest&,
+        DescribeLLMWafProtectRulesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7032,6 +7382,56 @@ WafClient::EnableRateLimitsV2OutcomeCallable WafClient::EnableRateLimitsV2Callab
         const WafClient*,
         const EnableRateLimitsV2Request&,
         EnableRateLimitsV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ExportLLMKeywordLibOutcome WafClient::ExportLLMKeywordLib(const ExportLLMKeywordLibRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportLLMKeywordLib");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportLLMKeywordLibResponse rsp = ExportLLMKeywordLibResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportLLMKeywordLibOutcome(rsp);
+        else
+            return ExportLLMKeywordLibOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportLLMKeywordLibOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ExportLLMKeywordLibAsync(const ExportLLMKeywordLibRequest& request, const ExportLLMKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExportLLMKeywordLibRequest&;
+    using Resp = ExportLLMKeywordLibResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExportLLMKeywordLib", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ExportLLMKeywordLibOutcomeCallable WafClient::ExportLLMKeywordLibCallable(const ExportLLMKeywordLibRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExportLLMKeywordLibOutcome>>();
+    ExportLLMKeywordLibAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ExportLLMKeywordLibRequest&,
+        ExportLLMKeywordLibOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -9432,6 +9832,306 @@ WafClient::ModifyIpAccessControlOutcomeCallable WafClient::ModifyIpAccessControl
         const WafClient*,
         const ModifyIpAccessControlRequest&,
         ModifyIpAccessControlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ModifyLLMContentRuleOutcome WafClient::ModifyLLMContentRule(const ModifyLLMContentRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLLMContentRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLLMContentRuleResponse rsp = ModifyLLMContentRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLLMContentRuleOutcome(rsp);
+        else
+            return ModifyLLMContentRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLLMContentRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyLLMContentRuleAsync(const ModifyLLMContentRuleRequest& request, const ModifyLLMContentRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLLMContentRuleRequest&;
+    using Resp = ModifyLLMContentRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLLMContentRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyLLMContentRuleOutcomeCallable WafClient::ModifyLLMContentRuleCallable(const ModifyLLMContentRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLLMContentRuleOutcome>>();
+    ModifyLLMContentRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyLLMContentRuleRequest&,
+        ModifyLLMContentRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ModifyLLMContentRuleStatusOutcome WafClient::ModifyLLMContentRuleStatus(const ModifyLLMContentRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLLMContentRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLLMContentRuleStatusResponse rsp = ModifyLLMContentRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLLMContentRuleStatusOutcome(rsp);
+        else
+            return ModifyLLMContentRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLLMContentRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyLLMContentRuleStatusAsync(const ModifyLLMContentRuleStatusRequest& request, const ModifyLLMContentRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLLMContentRuleStatusRequest&;
+    using Resp = ModifyLLMContentRuleStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLLMContentRuleStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyLLMContentRuleStatusOutcomeCallable WafClient::ModifyLLMContentRuleStatusCallable(const ModifyLLMContentRuleStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLLMContentRuleStatusOutcome>>();
+    ModifyLLMContentRuleStatusAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyLLMContentRuleStatusRequest&,
+        ModifyLLMContentRuleStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ModifyLLMKeywordLibraryOutcome WafClient::ModifyLLMKeywordLibrary(const ModifyLLMKeywordLibraryRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLLMKeywordLibrary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLLMKeywordLibraryResponse rsp = ModifyLLMKeywordLibraryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLLMKeywordLibraryOutcome(rsp);
+        else
+            return ModifyLLMKeywordLibraryOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLLMKeywordLibraryOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyLLMKeywordLibraryAsync(const ModifyLLMKeywordLibraryRequest& request, const ModifyLLMKeywordLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLLMKeywordLibraryRequest&;
+    using Resp = ModifyLLMKeywordLibraryResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLLMKeywordLibrary", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyLLMKeywordLibraryOutcomeCallable WafClient::ModifyLLMKeywordLibraryCallable(const ModifyLLMKeywordLibraryRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLLMKeywordLibraryOutcome>>();
+    ModifyLLMKeywordLibraryAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyLLMKeywordLibraryRequest&,
+        ModifyLLMKeywordLibraryOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ModifyLLMStatusOutcome WafClient::ModifyLLMStatus(const ModifyLLMStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLLMStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLLMStatusResponse rsp = ModifyLLMStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLLMStatusOutcome(rsp);
+        else
+            return ModifyLLMStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLLMStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyLLMStatusAsync(const ModifyLLMStatusRequest& request, const ModifyLLMStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLLMStatusRequest&;
+    using Resp = ModifyLLMStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLLMStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyLLMStatusOutcomeCallable WafClient::ModifyLLMStatusCallable(const ModifyLLMStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLLMStatusOutcome>>();
+    ModifyLLMStatusAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyLLMStatusRequest&,
+        ModifyLLMStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ModifyLLMWafDLPRuleOutcome WafClient::ModifyLLMWafDLPRule(const ModifyLLMWafDLPRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLLMWafDLPRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLLMWafDLPRuleResponse rsp = ModifyLLMWafDLPRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLLMWafDLPRuleOutcome(rsp);
+        else
+            return ModifyLLMWafDLPRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLLMWafDLPRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyLLMWafDLPRuleAsync(const ModifyLLMWafDLPRuleRequest& request, const ModifyLLMWafDLPRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLLMWafDLPRuleRequest&;
+    using Resp = ModifyLLMWafDLPRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLLMWafDLPRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyLLMWafDLPRuleOutcomeCallable WafClient::ModifyLLMWafDLPRuleCallable(const ModifyLLMWafDLPRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLLMWafDLPRuleOutcome>>();
+    ModifyLLMWafDLPRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyLLMWafDLPRuleRequest&,
+        ModifyLLMWafDLPRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::ModifyLLMWafProtectRuleOutcome WafClient::ModifyLLMWafProtectRule(const ModifyLLMWafProtectRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLLMWafProtectRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLLMWafProtectRuleResponse rsp = ModifyLLMWafProtectRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLLMWafProtectRuleOutcome(rsp);
+        else
+            return ModifyLLMWafProtectRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLLMWafProtectRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyLLMWafProtectRuleAsync(const ModifyLLMWafProtectRuleRequest& request, const ModifyLLMWafProtectRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyLLMWafProtectRuleRequest&;
+    using Resp = ModifyLLMWafProtectRuleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyLLMWafProtectRule", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::ModifyLLMWafProtectRuleOutcomeCallable WafClient::ModifyLLMWafProtectRuleCallable(const ModifyLLMWafProtectRuleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyLLMWafProtectRuleOutcome>>();
+    ModifyLLMWafProtectRuleAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const ModifyLLMWafProtectRuleRequest&,
+        ModifyLLMWafProtectRuleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

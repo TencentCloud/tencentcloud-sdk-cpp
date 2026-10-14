@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false
-                     * @return ForceRestart 是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false
+                     * 获取<p>是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false</p>
+                     * @return ForceRestart <p>是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false</p>
                      * 
                      */
                     bool GetForceRestart() const;
 
                     /**
-                     * 设置是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false
-                     * @param _forceRestart 是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false
+                     * 设置<p>是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false</p>
+                     * @param _forceRestart <p>是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false</p>
                      * 
                      */
                     void SetForceRestart(const bool& _forceRestart);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ForceRestartHasBeenSet() const;
 
                     /**
-                     * 获取重启模式：0 滚动重启； 1 全量重启
-                     * @return RestartMode 重启模式：0 滚动重启； 1 全量重启
+                     * 获取<p>重启模式：0 滚动重启； 1 全量重启</p>
+                     * @return RestartMode <p>重启模式：0 滚动重启； 1 全量重启</p>
                      * 
                      */
                     int64_t GetRestartMode() const;
 
                     /**
-                     * 设置重启模式：0 滚动重启； 1 全量重启
-                     * @param _restartMode 重启模式：0 滚动重启； 1 全量重启
+                     * 设置<p>重启模式：0 滚动重启； 1 全量重启</p>
+                     * @param _restartMode <p>重启模式：0 滚动重启； 1 全量重启</p>
                      * 
                      */
                     void SetRestartMode(const int64_t& _restartMode);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool RestartModeHasBeenSet() const;
 
                     /**
-                     * 获取重启时选择是否升级内核patch版本
-                     * @return UpgradeKernel 重启时选择是否升级内核patch版本
+                     * 获取<p>重启时选择是否升级内核patch版本</p>
+                     * @return UpgradeKernel <p>重启时选择是否升级内核patch版本</p>
                      * 
                      */
                     bool GetUpgradeKernel() const;
 
                     /**
-                     * 设置重启时选择是否升级内核patch版本
-                     * @param _upgradeKernel 重启时选择是否升级内核patch版本
+                     * 设置<p>重启时选择是否升级内核patch版本</p>
+                     * @param _upgradeKernel <p>重启时选择是否升级内核patch版本</p>
                      * 
                      */
                     void SetUpgradeKernel(const bool& _upgradeKernel);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false
+                     * <p>是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false</p>
                      */
                     bool m_forceRestart;
                     bool m_forceRestartHasBeenSet;
 
                     /**
-                     * 重启模式：0 滚动重启； 1 全量重启
+                     * <p>重启模式：0 滚动重启； 1 全量重启</p>
                      */
                     int64_t m_restartMode;
                     bool m_restartModeHasBeenSet;
 
                     /**
-                     * 重启时选择是否升级内核patch版本
+                     * <p>重启时选择是否升级内核patch版本</p>
                      */
                     bool m_upgradeKernel;
                     bool m_upgradeKernelHasBeenSet;

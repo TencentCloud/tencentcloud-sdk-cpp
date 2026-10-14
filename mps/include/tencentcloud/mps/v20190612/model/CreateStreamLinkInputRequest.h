@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体传输流ID。
-                     * @return FlowId 媒体传输流ID。
+                     * 获取<p>媒体传输流ID。</p>
+                     * @return FlowId <p>媒体传输流ID。</p>
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置媒体传输流ID。
-                     * @param _flowId 媒体传输流ID。
+                     * 设置<p>媒体传输流ID。</p>
+                     * @param _flowId <p>媒体传输流ID。</p>
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取流的输入组。
-                     * @return InputGroup 流的输入组。
+                     * 获取<p>流的输入组。</p>
+                     * @return InputGroup <p>流的输入组。</p>
                      * 
                      */
                     std::vector<CreateInput> GetInputGroup() const;
 
                     /**
-                     * 设置流的输入组。
-                     * @param _inputGroup 流的输入组。
+                     * 设置<p>流的输入组。</p>
+                     * @param _inputGroup <p>流的输入组。</p>
                      * 
                      */
                     void SetInputGroup(const std::vector<CreateInput>& _inputGroup);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体传输流ID。
+                     * <p>媒体传输流ID。</p>
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 流的输入组。
+                     * <p>流的输入组。</p>
                      */
                     std::vector<CreateInput> m_inputGroup;
                     bool m_inputGroupHasBeenSet;

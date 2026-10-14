@@ -30,7 +30,10 @@ ArtifactInfo::ArtifactInfo() :
     m_updatedAtHasBeenSet(false),
     m_agentIdHasBeenSet(false),
     m_skillIdHasBeenSet(false),
-    m_storagePathHasBeenSet(false)
+    m_storagePathHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_sourceNameHasBeenSet(false),
+    m_executionSummaryHasBeenSet(false)
 {
 }
 
@@ -139,6 +142,36 @@ CoreInternalOutcome ArtifactInfo::Deserialize(const rapidjson::Value &value)
         m_storagePathHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    {
+        if (!value["SourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ArtifactInfo.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = string(value["SourceType"].GetString());
+        m_sourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceName") && !value["SourceName"].IsNull())
+    {
+        if (!value["SourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ArtifactInfo.SourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceName = string(value["SourceName"].GetString());
+        m_sourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecutionSummary") && !value["ExecutionSummary"].IsNull())
+    {
+        if (!value["ExecutionSummary"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ArtifactInfo.ExecutionSummary` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executionSummary = string(value["ExecutionSummary"].GetString());
+        m_executionSummaryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +257,30 @@ void ArtifactInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "StoragePath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storagePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executionSummaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionSummary";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executionSummary.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +444,53 @@ void ArtifactInfo::SetStoragePath(const string& _storagePath)
 bool ArtifactInfo::StoragePathHasBeenSet() const
 {
     return m_storagePathHasBeenSet;
+}
+
+string ArtifactInfo::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void ArtifactInfo::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool ArtifactInfo::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
+string ArtifactInfo::GetSourceName() const
+{
+    return m_sourceName;
+}
+
+void ArtifactInfo::SetSourceName(const string& _sourceName)
+{
+    m_sourceName = _sourceName;
+    m_sourceNameHasBeenSet = true;
+}
+
+bool ArtifactInfo::SourceNameHasBeenSet() const
+{
+    return m_sourceNameHasBeenSet;
+}
+
+string ArtifactInfo::GetExecutionSummary() const
+{
+    return m_executionSummary;
+}
+
+void ArtifactInfo::SetExecutionSummary(const string& _executionSummary)
+{
+    m_executionSummary = _executionSummary;
+    m_executionSummaryHasBeenSet = true;
+}
+
+bool ArtifactInfo::ExecutionSummaryHasBeenSet() const
+{
+    return m_executionSummaryHasBeenSet;
 }
 

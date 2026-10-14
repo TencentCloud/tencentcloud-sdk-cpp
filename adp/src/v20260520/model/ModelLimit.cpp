@@ -23,6 +23,8 @@ using namespace std;
 ModelLimit::ModelLimit() :
     m_contextLengthDescriptionHasBeenSet(false),
     m_inputLengthLimitHasBeenSet(false),
+    m_maxInputTokensDescriptionHasBeenSet(false),
+    m_maxOutputTokensDescriptionHasBeenSet(false),
     m_promptLengthLimitHasBeenSet(false)
 {
 }
@@ -50,6 +52,26 @@ CoreInternalOutcome ModelLimit::Deserialize(const rapidjson::Value &value)
         }
         m_inputLengthLimit = value["InputLengthLimit"].GetInt64();
         m_inputLengthLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxInputTokensDescription") && !value["MaxInputTokensDescription"].IsNull())
+    {
+        if (!value["MaxInputTokensDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelLimit.MaxInputTokensDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxInputTokensDescription = string(value["MaxInputTokensDescription"].GetString());
+        m_maxInputTokensDescriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxOutputTokensDescription") && !value["MaxOutputTokensDescription"].IsNull())
+    {
+        if (!value["MaxOutputTokensDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelLimit.MaxOutputTokensDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxOutputTokensDescription = string(value["MaxOutputTokensDescription"].GetString());
+        m_maxOutputTokensDescriptionHasBeenSet = true;
     }
 
     if (value.HasMember("PromptLengthLimit") && !value["PromptLengthLimit"].IsNull())
@@ -83,6 +105,22 @@ void ModelLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "InputLengthLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inputLengthLimit, allocator);
+    }
+
+    if (m_maxInputTokensDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxInputTokensDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maxInputTokensDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxOutputTokensDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxOutputTokensDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_maxOutputTokensDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_promptLengthLimitHasBeenSet)
@@ -126,6 +164,38 @@ void ModelLimit::SetInputLengthLimit(const int64_t& _inputLengthLimit)
 bool ModelLimit::InputLengthLimitHasBeenSet() const
 {
     return m_inputLengthLimitHasBeenSet;
+}
+
+string ModelLimit::GetMaxInputTokensDescription() const
+{
+    return m_maxInputTokensDescription;
+}
+
+void ModelLimit::SetMaxInputTokensDescription(const string& _maxInputTokensDescription)
+{
+    m_maxInputTokensDescription = _maxInputTokensDescription;
+    m_maxInputTokensDescriptionHasBeenSet = true;
+}
+
+bool ModelLimit::MaxInputTokensDescriptionHasBeenSet() const
+{
+    return m_maxInputTokensDescriptionHasBeenSet;
+}
+
+string ModelLimit::GetMaxOutputTokensDescription() const
+{
+    return m_maxOutputTokensDescription;
+}
+
+void ModelLimit::SetMaxOutputTokensDescription(const string& _maxOutputTokensDescription)
+{
+    m_maxOutputTokensDescription = _maxOutputTokensDescription;
+    m_maxOutputTokensDescriptionHasBeenSet = true;
+}
+
+bool ModelLimit::MaxOutputTokensDescriptionHasBeenSet() const
+{
+    return m_maxOutputTokensDescriptionHasBeenSet;
 }
 
 int64_t ModelLimit::GetPromptLengthLimit() const

@@ -23,7 +23,8 @@ using namespace std;
 CkafkaTargetParams::CkafkaTargetParams() :
     m_topicNameHasBeenSet(false),
     m_retryPolicyHasBeenSet(false),
-    m_eventDeliveryFormatHasBeenSet(false)
+    m_eventDeliveryFormatHasBeenSet(false),
+    m_timeFormatHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,16 @@ CoreInternalOutcome CkafkaTargetParams::Deserialize(const rapidjson::Value &valu
         m_eventDeliveryFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeFormat") && !value["TimeFormat"].IsNull())
+    {
+        if (!value["TimeFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CkafkaTargetParams.TimeFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeFormat = string(value["TimeFormat"].GetString());
+        m_timeFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void CkafkaTargetParams::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "EventDeliveryFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_eventDeliveryFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void CkafkaTargetParams::SetEventDeliveryFormat(const string& _eventDeliveryForm
 bool CkafkaTargetParams::EventDeliveryFormatHasBeenSet() const
 {
     return m_eventDeliveryFormatHasBeenSet;
+}
+
+string CkafkaTargetParams::GetTimeFormat() const
+{
+    return m_timeFormat;
+}
+
+void CkafkaTargetParams::SetTimeFormat(const string& _timeFormat)
+{
+    m_timeFormat = _timeFormat;
+    m_timeFormatHasBeenSet = true;
+}
+
+bool CkafkaTargetParams::TimeFormatHasBeenSet() const
+{
+    return m_timeFormatHasBeenSet;
 }
 

@@ -27,8 +27,10 @@ App::App() :
     m_secretInfoHasBeenSet(false),
     m_shareUrlInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_corpShareConfigHasBeenSet(false),
     m_sharedKbListHasBeenSet(false),
-    m_corpShareConfigHasBeenSet(false)
+    m_portalShareConfigHasBeenSet(false),
+    m_fileVolumeMountListHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,23 @@ CoreInternalOutcome App::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("CorpShareConfig") && !value["CorpShareConfig"].IsNull())
+    {
+        if (!value["CorpShareConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `App.CorpShareConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_corpShareConfig.Deserialize(value["CorpShareConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_corpShareConfigHasBeenSet = true;
+    }
+
     if (value.HasMember("SharedKbList") && !value["SharedKbList"].IsNull())
     {
         if (!value["SharedKbList"].IsArray())
@@ -159,21 +178,41 @@ CoreInternalOutcome App::Deserialize(const rapidjson::Value &value)
         m_sharedKbListHasBeenSet = true;
     }
 
-    if (value.HasMember("CorpShareConfig") && !value["CorpShareConfig"].IsNull())
+    if (value.HasMember("PortalShareConfig") && !value["PortalShareConfig"].IsNull())
     {
-        if (!value["CorpShareConfig"].IsObject())
+        if (!value["PortalShareConfig"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `App.CorpShareConfig` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `App.PortalShareConfig` is not object type").SetRequestId(requestId));
         }
 
-        CoreInternalOutcome outcome = m_corpShareConfig.Deserialize(value["CorpShareConfig"]);
+        CoreInternalOutcome outcome = m_portalShareConfig.Deserialize(value["PortalShareConfig"]);
         if (!outcome.IsSuccess())
         {
             outcome.GetError().SetRequestId(requestId);
             return outcome;
         }
 
-        m_corpShareConfigHasBeenSet = true;
+        m_portalShareConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileVolumeMountList") && !value["FileVolumeMountList"].IsNull())
+    {
+        if (!value["FileVolumeMountList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `App.FileVolumeMountList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FileVolumeMountList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FileVolumeMount item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_fileVolumeMountList.push_back(item);
+        }
+        m_fileVolumeMountListHasBeenSet = true;
     }
 
 
@@ -237,6 +276,15 @@ void App::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         m_status.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_corpShareConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorpShareConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_corpShareConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_sharedKbListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -252,13 +300,28 @@ void App::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         }
     }
 
-    if (m_corpShareConfigHasBeenSet)
+    if (m_portalShareConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CorpShareConfig";
+        string key = "PortalShareConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_corpShareConfig.ToJsonObject(value[key.c_str()], allocator);
+        m_portalShareConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fileVolumeMountListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileVolumeMountList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fileVolumeMountList.begin(); itr != m_fileVolumeMountList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -360,6 +423,22 @@ bool App::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
+CorpShareConfig App::GetCorpShareConfig() const
+{
+    return m_corpShareConfig;
+}
+
+void App::SetCorpShareConfig(const CorpShareConfig& _corpShareConfig)
+{
+    m_corpShareConfig = _corpShareConfig;
+    m_corpShareConfigHasBeenSet = true;
+}
+
+bool App::CorpShareConfigHasBeenSet() const
+{
+    return m_corpShareConfigHasBeenSet;
+}
+
 vector<AppSharedKbInfo> App::GetSharedKbList() const
 {
     return m_sharedKbList;
@@ -376,19 +455,35 @@ bool App::SharedKbListHasBeenSet() const
     return m_sharedKbListHasBeenSet;
 }
 
-CorpShareConfig App::GetCorpShareConfig() const
+PortalShareConfig App::GetPortalShareConfig() const
 {
-    return m_corpShareConfig;
+    return m_portalShareConfig;
 }
 
-void App::SetCorpShareConfig(const CorpShareConfig& _corpShareConfig)
+void App::SetPortalShareConfig(const PortalShareConfig& _portalShareConfig)
 {
-    m_corpShareConfig = _corpShareConfig;
-    m_corpShareConfigHasBeenSet = true;
+    m_portalShareConfig = _portalShareConfig;
+    m_portalShareConfigHasBeenSet = true;
 }
 
-bool App::CorpShareConfigHasBeenSet() const
+bool App::PortalShareConfigHasBeenSet() const
 {
-    return m_corpShareConfigHasBeenSet;
+    return m_portalShareConfigHasBeenSet;
+}
+
+vector<FileVolumeMount> App::GetFileVolumeMountList() const
+{
+    return m_fileVolumeMountList;
+}
+
+void App::SetFileVolumeMountList(const vector<FileVolumeMount>& _fileVolumeMountList)
+{
+    m_fileVolumeMountList = _fileVolumeMountList;
+    m_fileVolumeMountListHasBeenSet = true;
+}
+
+bool App::FileVolumeMountListHasBeenSet() const
+{
+    return m_fileVolumeMountListHasBeenSet;
 }
 

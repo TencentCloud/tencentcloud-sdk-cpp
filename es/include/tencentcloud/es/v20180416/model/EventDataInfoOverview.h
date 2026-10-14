@@ -340,6 +340,27 @@ namespace TencentCloud
                      */
                     bool SubEventNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>事件范围</p><p>枚举值：</p><ul><li>0： 实例级</li><li>1： 账号级</li></ul>
+                     * @return EventScope <p>事件范围</p><p>枚举值：</p><ul><li>0： 实例级</li><li>1： 账号级</li></ul>
+                     * 
+                     */
+                    uint64_t GetEventScope() const;
+
+                    /**
+                     * 设置<p>事件范围</p><p>枚举值：</p><ul><li>0： 实例级</li><li>1： 账号级</li></ul>
+                     * @param _eventScope <p>事件范围</p><p>枚举值：</p><ul><li>0： 实例级</li><li>1： 账号级</li></ul>
+                     * 
+                     */
+                    void SetEventScope(const uint64_t& _eventScope);
+
+                    /**
+                     * 判断参数 EventScope 是否已赋值
+                     * @return EventScope 是否已赋值
+                     * 
+                     */
+                    bool EventScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +446,12 @@ namespace TencentCloud
                      */
                     std::string m_subEventName;
                     bool m_subEventNameHasBeenSet;
+
+                    /**
+                     * <p>事件范围</p><p>枚举值：</p><ul><li>0： 实例级</li><li>1： 账号级</li></ul>
+                     */
+                    uint64_t m_eventScope;
+                    bool m_eventScopeHasBeenSet;
 
                 };
             }

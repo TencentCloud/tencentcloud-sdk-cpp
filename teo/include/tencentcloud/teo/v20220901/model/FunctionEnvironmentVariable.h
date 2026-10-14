@@ -91,10 +91,10 @@ namespace TencentCloud
                     /**
                      * 获取变量的类型，取值有：
 <li>string：字符串类型；</li>
-<li>json：json 对象类型。</li>默认值为：string。
+<li>json：json 对象类型。</li><li>secret：密钥类型。</li>默认值为：string。
                      * @return Type 变量的类型，取值有：
 <li>string：字符串类型；</li>
-<li>json：json 对象类型。</li>默认值为：string。
+<li>json：json 对象类型。</li><li>secret：密钥类型。</li>默认值为：string。
                      * 
                      */
                     std::string GetType() const;
@@ -102,10 +102,10 @@ namespace TencentCloud
                     /**
                      * 设置变量的类型，取值有：
 <li>string：字符串类型；</li>
-<li>json：json 对象类型。</li>默认值为：string。
+<li>json：json 对象类型。</li><li>secret：密钥类型。</li>默认值为：string。
                      * @param _type 变量的类型，取值有：
 <li>string：字符串类型；</li>
-<li>json：json 对象类型。</li>默认值为：string。
+<li>json：json 对象类型。</li><li>secret：密钥类型。</li>默认值为：string。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -134,7 +134,7 @@ namespace TencentCloud
                     /**
                      * 变量的类型，取值有：
 <li>string：字符串类型；</li>
-<li>json：json 对象类型。</li>默认值为：string。
+<li>json：json 对象类型。</li><li>secret：密钥类型。</li>默认值为：string。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

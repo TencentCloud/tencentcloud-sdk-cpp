@@ -26,7 +26,8 @@ SkillReferenceSummary::SkillReferenceSummary() :
     m_referenceTypeHasBeenSet(false),
     m_spaceIdHasBeenSet(false),
     m_spaceNameHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+    m_ownerHasBeenSet(false),
+    m_appIdentityHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,23 @@ CoreInternalOutcome SkillReferenceSummary::Deserialize(const rapidjson::Value &v
         m_ownerHasBeenSet = true;
     }
 
+    if (value.HasMember("AppIdentity") && !value["AppIdentity"].IsNull())
+    {
+        if (!value["AppIdentity"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SkillReferenceSummary.AppIdentity` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_appIdentity.Deserialize(value["AppIdentity"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_appIdentityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +166,15 @@ void SkillReferenceSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Owner";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdentityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppIdentity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_appIdentity.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -247,5 +274,21 @@ void SkillReferenceSummary::SetOwner(const string& _owner)
 bool SkillReferenceSummary::OwnerHasBeenSet() const
 {
     return m_ownerHasBeenSet;
+}
+
+AppIdentity SkillReferenceSummary::GetAppIdentity() const
+{
+    return m_appIdentity;
+}
+
+void SkillReferenceSummary::SetAppIdentity(const AppIdentity& _appIdentity)
+{
+    m_appIdentity = _appIdentity;
+    m_appIdentityHasBeenSet = true;
+}
+
+bool SkillReferenceSummary::AppIdentityHasBeenSet() const
+{
+    return m_appIdentityHasBeenSet;
 }
 

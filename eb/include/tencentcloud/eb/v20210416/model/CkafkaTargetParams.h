@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要投递到的ckafka topic
-                     * @return TopicName 要投递到的ckafka topic
+                     * 获取<p>要投递到的ckafka topic</p>
+                     * @return TopicName <p>要投递到的ckafka topic</p>
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置要投递到的ckafka topic
-                     * @param _topicName 要投递到的ckafka topic
+                     * 设置<p>要投递到的ckafka topic</p>
+                     * @param _topicName <p>要投递到的ckafka topic</p>
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取重试策略
-                     * @return RetryPolicy 重试策略
+                     * 获取<p>重试策略</p>
+                     * @return RetryPolicy <p>重试策略</p>
                      * 
                      */
                     RetryPolicy GetRetryPolicy() const;
 
                     /**
-                     * 设置重试策略
-                     * @param _retryPolicy 重试策略
+                     * 设置<p>重试策略</p>
+                     * @param _retryPolicy <p>重试策略</p>
                      * 
                      */
                     void SetRetryPolicy(const RetryPolicy& _retryPolicy);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool RetryPolicyHasBeenSet() const;
 
                     /**
-                     * 获取事件投递kafka时的协议格式；目前只支持两种格式：1.CloudEvent(完整的cloudevent消息协议)2.CloudEventDataKey(cloudevent协议中的data字段内容)
-                     * @return EventDeliveryFormat 事件投递kafka时的协议格式；目前只支持两种格式：1.CloudEvent(完整的cloudevent消息协议)2.CloudEventDataKey(cloudevent协议中的data字段内容)
+                     * 获取<p>事件投递kafka时的协议格式；目前只支持两种格式：1.CloudEvent(完整的cloudevent消息协议)2.CloudEventDataKey(cloudevent协议中的data字段内容)</p>
+                     * @return EventDeliveryFormat <p>事件投递kafka时的协议格式；目前只支持两种格式：1.CloudEvent(完整的cloudevent消息协议)2.CloudEventDataKey(cloudevent协议中的data字段内容)</p>
                      * 
                      */
                     std::string GetEventDeliveryFormat() const;
 
                     /**
-                     * 设置事件投递kafka时的协议格式；目前只支持两种格式：1.CloudEvent(完整的cloudevent消息协议)2.CloudEventDataKey(cloudevent协议中的data字段内容)
-                     * @param _eventDeliveryFormat 事件投递kafka时的协议格式；目前只支持两种格式：1.CloudEvent(完整的cloudevent消息协议)2.CloudEventDataKey(cloudevent协议中的data字段内容)
+                     * 设置<p>事件投递kafka时的协议格式；目前只支持两种格式：1.CloudEvent(完整的cloudevent消息协议)2.CloudEventDataKey(cloudevent协议中的data字段内容)</p>
+                     * @param _eventDeliveryFormat <p>事件投递kafka时的协议格式；目前只支持两种格式：1.CloudEvent(完整的cloudevent消息协议)2.CloudEventDataKey(cloudevent协议中的data字段内容)</p>
                      * 
                      */
                     void SetEventDeliveryFormat(const std::string& _eventDeliveryFormat);
@@ -110,25 +110,52 @@ namespace TencentCloud
                      */
                     bool EventDeliveryFormatHasBeenSet() const;
 
+                    /**
+                     * 获取<p>事件顶层Time参数投递格式</p><p>枚举值：</p><ul><li>RFC3339： 将时间戳转换成 YYYY-MM-DDTHH:mm:ssZ 格式</li></ul>
+                     * @return TimeFormat <p>事件顶层Time参数投递格式</p><p>枚举值：</p><ul><li>RFC3339： 将时间戳转换成 YYYY-MM-DDTHH:mm:ssZ 格式</li></ul>
+                     * 
+                     */
+                    std::string GetTimeFormat() const;
+
+                    /**
+                     * 设置<p>事件顶层Time参数投递格式</p><p>枚举值：</p><ul><li>RFC3339： 将时间戳转换成 YYYY-MM-DDTHH:mm:ssZ 格式</li></ul>
+                     * @param _timeFormat <p>事件顶层Time参数投递格式</p><p>枚举值：</p><ul><li>RFC3339： 将时间戳转换成 YYYY-MM-DDTHH:mm:ssZ 格式</li></ul>
+                     * 
+                     */
+                    void SetTimeFormat(const std::string& _timeFormat);
+
+                    /**
+                     * 判断参数 TimeFormat 是否已赋值
+                     * @return TimeFormat 是否已赋值
+                     * 
+                     */
+                    bool TimeFormatHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 要投递到的ckafka topic
+                     * <p>要投递到的ckafka topic</p>
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 重试策略
+                     * <p>重试策略</p>
                      */
                     RetryPolicy m_retryPolicy;
                     bool m_retryPolicyHasBeenSet;
 
                     /**
-                     * 事件投递kafka时的协议格式；目前只支持两种格式：1.CloudEvent(完整的cloudevent消息协议)2.CloudEventDataKey(cloudevent协议中的data字段内容)
+                     * <p>事件投递kafka时的协议格式；目前只支持两种格式：1.CloudEvent(完整的cloudevent消息协议)2.CloudEventDataKey(cloudevent协议中的data字段内容)</p>
                      */
                     std::string m_eventDeliveryFormat;
                     bool m_eventDeliveryFormatHasBeenSet;
+
+                    /**
+                     * <p>事件顶层Time参数投递格式</p><p>枚举值：</p><ul><li>RFC3339： 将时间戳转换成 YYYY-MM-DDTHH:mm:ssZ 格式</li></ul>
+                     */
+                    std::string m_timeFormat;
+                    bool m_timeFormatHasBeenSet;
 
                 };
             }

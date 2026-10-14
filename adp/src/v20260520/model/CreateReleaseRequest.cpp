@@ -29,7 +29,8 @@ CreateReleaseRequest::CreateReleaseRequest() :
     m_corpShareConfigHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_isDevToReleaseHasBeenSet(false),
-    m_isPublishAsTemplateHasBeenSet(false)
+    m_isPublishAsTemplateHasBeenSet(false),
+    m_portalShareConfigHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,15 @@ string CreateReleaseRequest::ToJsonString() const
         string key = "IsPublishAsTemplate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isPublishAsTemplate, allocator);
+    }
+
+    if (m_portalShareConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortalShareConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_portalShareConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -221,6 +231,22 @@ void CreateReleaseRequest::SetIsPublishAsTemplate(const bool& _isPublishAsTempla
 bool CreateReleaseRequest::IsPublishAsTemplateHasBeenSet() const
 {
     return m_isPublishAsTemplateHasBeenSet;
+}
+
+PortalShareConfig CreateReleaseRequest::GetPortalShareConfig() const
+{
+    return m_portalShareConfig;
+}
+
+void CreateReleaseRequest::SetPortalShareConfig(const PortalShareConfig& _portalShareConfig)
+{
+    m_portalShareConfig = _portalShareConfig;
+    m_portalShareConfigHasBeenSet = true;
+}
+
+bool CreateReleaseRequest::PortalShareConfigHasBeenSet() const
+{
+    return m_portalShareConfigHasBeenSet;
 }
 
 

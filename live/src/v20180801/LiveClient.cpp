@@ -9790,6 +9790,156 @@ LiveClient::DescribeStreamDayPlayInfoListOutcomeCallable LiveClient::DescribeStr
     return prom->get_future();
 }
 
+LiveClient::DescribeStreamPackageIngestStatisticsOutcome LiveClient::DescribeStreamPackageIngestStatistics(const DescribeStreamPackageIngestStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamPackageIngestStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamPackageIngestStatisticsResponse rsp = DescribeStreamPackageIngestStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamPackageIngestStatisticsOutcome(rsp);
+        else
+            return DescribeStreamPackageIngestStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamPackageIngestStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeStreamPackageIngestStatisticsAsync(const DescribeStreamPackageIngestStatisticsRequest& request, const DescribeStreamPackageIngestStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeStreamPackageIngestStatisticsRequest&;
+    using Resp = DescribeStreamPackageIngestStatisticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageIngestStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeStreamPackageIngestStatisticsOutcomeCallable LiveClient::DescribeStreamPackageIngestStatisticsCallable(const DescribeStreamPackageIngestStatisticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageIngestStatisticsOutcome>>();
+    DescribeStreamPackageIngestStatisticsAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeStreamPackageIngestStatisticsRequest&,
+        DescribeStreamPackageIngestStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeStreamPackageOutputStatisticsOutcome LiveClient::DescribeStreamPackageOutputStatistics(const DescribeStreamPackageOutputStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamPackageOutputStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamPackageOutputStatisticsResponse rsp = DescribeStreamPackageOutputStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamPackageOutputStatisticsOutcome(rsp);
+        else
+            return DescribeStreamPackageOutputStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamPackageOutputStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeStreamPackageOutputStatisticsAsync(const DescribeStreamPackageOutputStatisticsRequest& request, const DescribeStreamPackageOutputStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeStreamPackageOutputStatisticsRequest&;
+    using Resp = DescribeStreamPackageOutputStatisticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageOutputStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeStreamPackageOutputStatisticsOutcomeCallable LiveClient::DescribeStreamPackageOutputStatisticsCallable(const DescribeStreamPackageOutputStatisticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageOutputStatisticsOutcome>>();
+    DescribeStreamPackageOutputStatisticsAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeStreamPackageOutputStatisticsRequest&,
+        DescribeStreamPackageOutputStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeStreamPackageRemuxStatisticsOutcome LiveClient::DescribeStreamPackageRemuxStatistics(const DescribeStreamPackageRemuxStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamPackageRemuxStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamPackageRemuxStatisticsResponse rsp = DescribeStreamPackageRemuxStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamPackageRemuxStatisticsOutcome(rsp);
+        else
+            return DescribeStreamPackageRemuxStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamPackageRemuxStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeStreamPackageRemuxStatisticsAsync(const DescribeStreamPackageRemuxStatisticsRequest& request, const DescribeStreamPackageRemuxStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeStreamPackageRemuxStatisticsRequest&;
+    using Resp = DescribeStreamPackageRemuxStatisticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeStreamPackageRemuxStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeStreamPackageRemuxStatisticsOutcomeCallable LiveClient::DescribeStreamPackageRemuxStatisticsCallable(const DescribeStreamPackageRemuxStatisticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeStreamPackageRemuxStatisticsOutcome>>();
+    DescribeStreamPackageRemuxStatisticsAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeStreamPackageRemuxStatisticsRequest&,
+        DescribeStreamPackageRemuxStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::DescribeStreamPlayInfoListOutcome LiveClient::DescribeStreamPlayInfoList(const DescribeStreamPlayInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStreamPlayInfoList");

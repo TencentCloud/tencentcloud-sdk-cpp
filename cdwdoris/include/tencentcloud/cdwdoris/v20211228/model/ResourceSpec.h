@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规格名称，例如“SCH1"
-                     * @return Name 规格名称，例如“SCH1"
+                     * 获取<p>规格名称，例如“SCH1&quot;</p>
+                     * @return Name <p>规格名称，例如“SCH1&quot;</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置规格名称，例如“SCH1"
-                     * @param _name 规格名称，例如“SCH1"
+                     * 设置<p>规格名称，例如“SCH1&quot;</p>
+                     * @param _name <p>规格名称，例如“SCH1&quot;</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取cpu核数
-                     * @return Cpu cpu核数
+                     * 获取<p>cpu核数</p>
+                     * @return Cpu <p>cpu核数</p>
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置cpu核数
-                     * @param _cpu cpu核数
+                     * 设置<p>cpu核数</p>
+                     * @param _cpu <p>cpu核数</p>
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存大小，单位G
-                     * @return Mem 内存大小，单位G
+                     * 获取<p>内存大小，单位G</p>
+                     * @return Mem <p>内存大小，单位G</p>
                      * 
                      */
                     int64_t GetMem() const;
 
                     /**
-                     * 设置内存大小，单位G
-                     * @param _mem 内存大小，单位G
+                     * 设置<p>内存大小，单位G</p>
+                     * @param _mem <p>内存大小，单位G</p>
                      * 
                      */
                     void SetMem(const int64_t& _mem);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool MemHasBeenSet() const;
 
                     /**
-                     * 获取分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO
-                     * @return Type 分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO
+                     * 获取<p>分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO</p>
+                     * @return Type <p>分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO
-                     * @param _type 分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO
+                     * 设置<p>分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO</p>
+                     * @param _type <p>分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取系统盘描述信息
-                     * @return SystemDisk 系统盘描述信息
+                     * 获取<p>系统盘描述信息</p>
+                     * @return SystemDisk <p>系统盘描述信息</p>
                      * 
                      */
                     DiskSpec GetSystemDisk() const;
 
                     /**
-                     * 设置系统盘描述信息
-                     * @param _systemDisk 系统盘描述信息
+                     * 设置<p>系统盘描述信息</p>
+                     * @param _systemDisk <p>系统盘描述信息</p>
                      * 
                      */
                     void SetSystemDisk(const DiskSpec& _systemDisk);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool SystemDiskHasBeenSet() const;
 
                     /**
-                     * 获取数据盘描述信息
-                     * @return DataDisk 数据盘描述信息
+                     * 获取<p>数据盘描述信息</p>
+                     * @return DataDisk <p>数据盘描述信息</p>
                      * 
                      */
                     DiskSpec GetDataDisk() const;
 
                     /**
-                     * 设置数据盘描述信息
-                     * @param _dataDisk 数据盘描述信息
+                     * 设置<p>数据盘描述信息</p>
+                     * @param _dataDisk <p>数据盘描述信息</p>
                      * 
                      */
                     void SetDataDisk(const DiskSpec& _dataDisk);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool DataDiskHasBeenSet() const;
 
                     /**
-                     * 获取最大节点数目限制
-                     * @return MaxNodeSize 最大节点数目限制
+                     * 获取<p>最大节点数目限制</p>
+                     * @return MaxNodeSize <p>最大节点数目限制</p>
                      * 
                      */
                     int64_t GetMaxNodeSize() const;
 
                     /**
-                     * 设置最大节点数目限制
-                     * @param _maxNodeSize 最大节点数目限制
+                     * 设置<p>最大节点数目限制</p>
+                     * @param _maxNodeSize <p>最大节点数目限制</p>
                      * 
                      */
                     void SetMaxNodeSize(const int64_t& _maxNodeSize);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool MaxNodeSizeHasBeenSet() const;
 
                     /**
-                     * 获取是否可用，false代表售罄
-                     * @return Available 是否可用，false代表售罄
+                     * 获取<p>是否可用，false代表售罄</p>
+                     * @return Available <p>是否可用，false代表售罄</p>
                      * 
                      */
                     bool GetAvailable() const;
 
                     /**
-                     * 设置是否可用，false代表售罄
-                     * @param _available 是否可用，false代表售罄
+                     * 设置<p>是否可用，false代表售罄</p>
+                     * @param _available <p>是否可用，false代表售罄</p>
                      * 
                      */
                     void SetAvailable(const bool& _available);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool AvailableHasBeenSet() const;
 
                     /**
-                     * 获取规格描述信息
-                     * @return ComputeSpecDesc 规格描述信息
+                     * 获取<p>规格描述信息</p>
+                     * @return ComputeSpecDesc <p>规格描述信息</p>
                      * 
                      */
                     std::string GetComputeSpecDesc() const;
 
                     /**
-                     * 设置规格描述信息
-                     * @param _computeSpecDesc 规格描述信息
+                     * 设置<p>规格描述信息</p>
+                     * @param _computeSpecDesc <p>规格描述信息</p>
                      * 
                      */
                     void SetComputeSpecDesc(const std::string& _computeSpecDesc);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool ComputeSpecDescHasBeenSet() const;
 
                     /**
-                     * 获取cvm库存
-                     * @return InstanceQuota cvm库存
+                     * 获取<p>cvm库存</p>
+                     * @return InstanceQuota <p>cvm库存</p>
                      * 
                      */
                     int64_t GetInstanceQuota() const;
 
                     /**
-                     * 设置cvm库存
-                     * @param _instanceQuota cvm库存
+                     * 设置<p>cvm库存</p>
+                     * @param _instanceQuota <p>cvm库存</p>
                      * 
                      */
                     void SetInstanceQuota(const int64_t& _instanceQuota);
@@ -257,67 +257,94 @@ namespace TencentCloud
                      */
                     bool InstanceQuotaHasBeenSet() const;
 
+                    /**
+                     * 获取<p>计算组ID自定义后缀。1到8位小写字母、数字或连字符，首尾须为字母或数字；不传则随机生成8位后缀。最终计算组ID格式为实例ID-后缀，同时作为内核计算组名</p>
+                     * @return ComputeGroupSuffix <p>计算组ID自定义后缀。1到8位小写字母、数字或连字符，首尾须为字母或数字；不传则随机生成8位后缀。最终计算组ID格式为实例ID-后缀，同时作为内核计算组名</p>
+                     * 
+                     */
+                    std::string GetComputeGroupSuffix() const;
+
+                    /**
+                     * 设置<p>计算组ID自定义后缀。1到8位小写字母、数字或连字符，首尾须为字母或数字；不传则随机生成8位后缀。最终计算组ID格式为实例ID-后缀，同时作为内核计算组名</p>
+                     * @param _computeGroupSuffix <p>计算组ID自定义后缀。1到8位小写字母、数字或连字符，首尾须为字母或数字；不传则随机生成8位后缀。最终计算组ID格式为实例ID-后缀，同时作为内核计算组名</p>
+                     * 
+                     */
+                    void SetComputeGroupSuffix(const std::string& _computeGroupSuffix);
+
+                    /**
+                     * 判断参数 ComputeGroupSuffix 是否已赋值
+                     * @return ComputeGroupSuffix 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupSuffixHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规格名称，例如“SCH1"
+                     * <p>规格名称，例如“SCH1&quot;</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * cpu核数
+                     * <p>cpu核数</p>
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存大小，单位G
+                     * <p>内存大小，单位G</p>
                      */
                     int64_t m_mem;
                     bool m_memHasBeenSet;
 
                     /**
-                     * 分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO
+                     * <p>分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 系统盘描述信息
+                     * <p>系统盘描述信息</p>
                      */
                     DiskSpec m_systemDisk;
                     bool m_systemDiskHasBeenSet;
 
                     /**
-                     * 数据盘描述信息
+                     * <p>数据盘描述信息</p>
                      */
                     DiskSpec m_dataDisk;
                     bool m_dataDiskHasBeenSet;
 
                     /**
-                     * 最大节点数目限制
+                     * <p>最大节点数目限制</p>
                      */
                     int64_t m_maxNodeSize;
                     bool m_maxNodeSizeHasBeenSet;
 
                     /**
-                     * 是否可用，false代表售罄
+                     * <p>是否可用，false代表售罄</p>
                      */
                     bool m_available;
                     bool m_availableHasBeenSet;
 
                     /**
-                     * 规格描述信息
+                     * <p>规格描述信息</p>
                      */
                     std::string m_computeSpecDesc;
                     bool m_computeSpecDescHasBeenSet;
 
                     /**
-                     * cvm库存
+                     * <p>cvm库存</p>
                      */
                     int64_t m_instanceQuota;
                     bool m_instanceQuotaHasBeenSet;
+
+                    /**
+                     * <p>计算组ID自定义后缀。1到8位小写字母、数字或连字符，首尾须为字母或数字；不传则随机生成8位后缀。最终计算组ID格式为实例ID-后缀，同时作为内核计算组名</p>
+                     */
+                    std::string m_computeGroupSuffix;
+                    bool m_computeGroupSuffixHasBeenSet;
 
                 };
             }

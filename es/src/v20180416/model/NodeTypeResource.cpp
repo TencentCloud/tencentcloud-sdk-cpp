@@ -26,27 +26,34 @@ NodeTypeResource::NodeTypeResource() :
     m_nodeTypeInfoHasBeenSet(false),
     m_ssdAvailableHasBeenSet(false),
     m_ssdDiskSizeRangeHasBeenSet(false),
+    m_ssdSoldOutReasonHasBeenSet(false),
+    m_ssdSoldOutDetailHasBeenSet(false),
     m_sataAvailableHasBeenSet(false),
     m_sataDiskSizeRangeHasBeenSet(false),
-    m_ssdSoldOutReasonHasBeenSet(false),
     m_sataSoldOutReasonHasBeenSet(false),
+    m_sataSoldOutDetailHasBeenSet(false),
     m_localDiskInfoHasBeenSet(false),
     m_diskCountRangeHasBeenSet(false),
     m_hSsdAvailableHasBeenSet(false),
-    m_hSsdSoldOutReasonHasBeenSet(false),
     m_hSsdDiskSizeRangeHasBeenSet(false),
+    m_hSsdSoldOutReasonHasBeenSet(false),
+    m_hSsdSoldOutDetailHasBeenSet(false),
     m_throughputAvailableHasBeenSet(false),
-    m_throughputSoldOutReasonHasBeenSet(false),
     m_throughputDiskSizeRangeHasBeenSet(false),
+    m_throughputSoldOutReasonHasBeenSet(false),
+    m_throughputSoldOutDetailHasBeenSet(false),
     m_bigDataAvailableHasBeenSet(false),
-    m_bigDataSoldOutReasonHasBeenSet(false),
     m_bigDataDiskSizeRangeHasBeenSet(false),
+    m_bigDataSoldOutReasonHasBeenSet(false),
+    m_bigDataSoldOutDetailHasBeenSet(false),
     m_highIOAvailableHasBeenSet(false),
     m_highIOSoldOutReasonHasBeenSet(false),
     m_highIODiskSizeRangeHasBeenSet(false),
+    m_highIOSoldOutDetailHasBeenSet(false),
     m_bssdAvailableHasBeenSet(false),
-    m_bssdSoldOutReasonHasBeenSet(false),
     m_bssdDiskSizeRangeHasBeenSet(false),
+    m_bssdSoldOutReasonHasBeenSet(false),
+    m_bssdSoldOutDetailHasBeenSet(false),
     m_gpuInfoHasBeenSet(false)
 {
 }
@@ -120,6 +127,36 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         m_ssdDiskSizeRangeHasBeenSet = true;
     }
 
+    if (value.HasMember("SsdSoldOutReason") && !value["SsdSoldOutReason"].IsNull())
+    {
+        if (!value["SsdSoldOutReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.SsdSoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ssdSoldOutReason = string(value["SsdSoldOutReason"].GetString());
+        m_ssdSoldOutReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("SsdSoldOutDetail") && !value["SsdSoldOutDetail"].IsNull())
+    {
+        if (!value["SsdSoldOutDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.SsdSoldOutDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SsdSoldOutDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FamilyResourceStat item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ssdSoldOutDetail.push_back(item);
+        }
+        m_ssdSoldOutDetailHasBeenSet = true;
+    }
+
     if (value.HasMember("SataAvailable") && !value["SataAvailable"].IsNull())
     {
         if (!value["SataAvailable"].IsBool())
@@ -147,16 +184,6 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         m_sataDiskSizeRangeHasBeenSet = true;
     }
 
-    if (value.HasMember("SsdSoldOutReason") && !value["SsdSoldOutReason"].IsNull())
-    {
-        if (!value["SsdSoldOutReason"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.SsdSoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ssdSoldOutReason = string(value["SsdSoldOutReason"].GetString());
-        m_ssdSoldOutReasonHasBeenSet = true;
-    }
-
     if (value.HasMember("SataSoldOutReason") && !value["SataSoldOutReason"].IsNull())
     {
         if (!value["SataSoldOutReason"].IsString())
@@ -165,6 +192,26 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         }
         m_sataSoldOutReason = string(value["SataSoldOutReason"].GetString());
         m_sataSoldOutReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("SataSoldOutDetail") && !value["SataSoldOutDetail"].IsNull())
+    {
+        if (!value["SataSoldOutDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.SataSoldOutDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SataSoldOutDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FamilyResourceStat item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sataSoldOutDetail.push_back(item);
+        }
+        m_sataSoldOutDetailHasBeenSet = true;
     }
 
     if (value.HasMember("LocalDiskInfo") && !value["LocalDiskInfo"].IsNull())
@@ -211,16 +258,6 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         m_hSsdAvailableHasBeenSet = true;
     }
 
-    if (value.HasMember("HSsdSoldOutReason") && !value["HSsdSoldOutReason"].IsNull())
-    {
-        if (!value["HSsdSoldOutReason"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.HSsdSoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_hSsdSoldOutReason = string(value["HSsdSoldOutReason"].GetString());
-        m_hSsdSoldOutReasonHasBeenSet = true;
-    }
-
     if (value.HasMember("HSsdDiskSizeRange") && !value["HSsdDiskSizeRange"].IsNull())
     {
         if (!value["HSsdDiskSizeRange"].IsObject())
@@ -238,6 +275,36 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         m_hSsdDiskSizeRangeHasBeenSet = true;
     }
 
+    if (value.HasMember("HSsdSoldOutReason") && !value["HSsdSoldOutReason"].IsNull())
+    {
+        if (!value["HSsdSoldOutReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.HSsdSoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hSsdSoldOutReason = string(value["HSsdSoldOutReason"].GetString());
+        m_hSsdSoldOutReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("HSsdSoldOutDetail") && !value["HSsdSoldOutDetail"].IsNull())
+    {
+        if (!value["HSsdSoldOutDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.HSsdSoldOutDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HSsdSoldOutDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FamilyResourceStat item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_hSsdSoldOutDetail.push_back(item);
+        }
+        m_hSsdSoldOutDetailHasBeenSet = true;
+    }
+
     if (value.HasMember("ThroughputAvailable") && !value["ThroughputAvailable"].IsNull())
     {
         if (!value["ThroughputAvailable"].IsBool())
@@ -246,16 +313,6 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         }
         m_throughputAvailable = value["ThroughputAvailable"].GetBool();
         m_throughputAvailableHasBeenSet = true;
-    }
-
-    if (value.HasMember("ThroughputSoldOutReason") && !value["ThroughputSoldOutReason"].IsNull())
-    {
-        if (!value["ThroughputSoldOutReason"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.ThroughputSoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_throughputSoldOutReason = string(value["ThroughputSoldOutReason"].GetString());
-        m_throughputSoldOutReasonHasBeenSet = true;
     }
 
     if (value.HasMember("ThroughputDiskSizeRange") && !value["ThroughputDiskSizeRange"].IsNull())
@@ -275,6 +332,36 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         m_throughputDiskSizeRangeHasBeenSet = true;
     }
 
+    if (value.HasMember("ThroughputSoldOutReason") && !value["ThroughputSoldOutReason"].IsNull())
+    {
+        if (!value["ThroughputSoldOutReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.ThroughputSoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_throughputSoldOutReason = string(value["ThroughputSoldOutReason"].GetString());
+        m_throughputSoldOutReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("ThroughputSoldOutDetail") && !value["ThroughputSoldOutDetail"].IsNull())
+    {
+        if (!value["ThroughputSoldOutDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.ThroughputSoldOutDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ThroughputSoldOutDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FamilyResourceStat item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_throughputSoldOutDetail.push_back(item);
+        }
+        m_throughputSoldOutDetailHasBeenSet = true;
+    }
+
     if (value.HasMember("BigDataAvailable") && !value["BigDataAvailable"].IsNull())
     {
         if (!value["BigDataAvailable"].IsBool())
@@ -283,16 +370,6 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         }
         m_bigDataAvailable = value["BigDataAvailable"].GetBool();
         m_bigDataAvailableHasBeenSet = true;
-    }
-
-    if (value.HasMember("BigDataSoldOutReason") && !value["BigDataSoldOutReason"].IsNull())
-    {
-        if (!value["BigDataSoldOutReason"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.BigDataSoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_bigDataSoldOutReason = string(value["BigDataSoldOutReason"].GetString());
-        m_bigDataSoldOutReasonHasBeenSet = true;
     }
 
     if (value.HasMember("BigDataDiskSizeRange") && !value["BigDataDiskSizeRange"].IsNull())
@@ -310,6 +387,36 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         }
 
         m_bigDataDiskSizeRangeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BigDataSoldOutReason") && !value["BigDataSoldOutReason"].IsNull())
+    {
+        if (!value["BigDataSoldOutReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.BigDataSoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bigDataSoldOutReason = string(value["BigDataSoldOutReason"].GetString());
+        m_bigDataSoldOutReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("BigDataSoldOutDetail") && !value["BigDataSoldOutDetail"].IsNull())
+    {
+        if (!value["BigDataSoldOutDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.BigDataSoldOutDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BigDataSoldOutDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FamilyResourceStat item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_bigDataSoldOutDetail.push_back(item);
+        }
+        m_bigDataSoldOutDetailHasBeenSet = true;
     }
 
     if (value.HasMember("HighIOAvailable") && !value["HighIOAvailable"].IsNull())
@@ -349,6 +456,26 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         m_highIODiskSizeRangeHasBeenSet = true;
     }
 
+    if (value.HasMember("HighIOSoldOutDetail") && !value["HighIOSoldOutDetail"].IsNull())
+    {
+        if (!value["HighIOSoldOutDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.HighIOSoldOutDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HighIOSoldOutDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FamilyResourceStat item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_highIOSoldOutDetail.push_back(item);
+        }
+        m_highIOSoldOutDetailHasBeenSet = true;
+    }
+
     if (value.HasMember("BssdAvailable") && !value["BssdAvailable"].IsNull())
     {
         if (!value["BssdAvailable"].IsBool())
@@ -357,16 +484,6 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         }
         m_bssdAvailable = value["BssdAvailable"].GetBool();
         m_bssdAvailableHasBeenSet = true;
-    }
-
-    if (value.HasMember("BssdSoldOutReason") && !value["BssdSoldOutReason"].IsNull())
-    {
-        if (!value["BssdSoldOutReason"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.BssdSoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_bssdSoldOutReason = string(value["BssdSoldOutReason"].GetString());
-        m_bssdSoldOutReasonHasBeenSet = true;
     }
 
     if (value.HasMember("BssdDiskSizeRange") && !value["BssdDiskSizeRange"].IsNull())
@@ -384,6 +501,36 @@ CoreInternalOutcome NodeTypeResource::Deserialize(const rapidjson::Value &value)
         }
 
         m_bssdDiskSizeRangeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BssdSoldOutReason") && !value["BssdSoldOutReason"].IsNull())
+    {
+        if (!value["BssdSoldOutReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.BssdSoldOutReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bssdSoldOutReason = string(value["BssdSoldOutReason"].GetString());
+        m_bssdSoldOutReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("BssdSoldOutDetail") && !value["BssdSoldOutDetail"].IsNull())
+    {
+        if (!value["BssdSoldOutDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeTypeResource.BssdSoldOutDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BssdSoldOutDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FamilyResourceStat item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_bssdSoldOutDetail.push_back(item);
+        }
+        m_bssdSoldOutDetailHasBeenSet = true;
     }
 
     if (value.HasMember("GpuInfo") && !value["GpuInfo"].IsNull())
@@ -452,6 +599,29 @@ void NodeTypeResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         m_ssdDiskSizeRange.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_ssdSoldOutReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SsdSoldOutReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ssdSoldOutReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ssdSoldOutDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SsdSoldOutDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ssdSoldOutDetail.begin(); itr != m_ssdSoldOutDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_sataAvailableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -469,20 +639,27 @@ void NodeTypeResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         m_sataDiskSizeRange.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_ssdSoldOutReasonHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SsdSoldOutReason";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ssdSoldOutReason.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_sataSoldOutReasonHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SataSoldOutReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sataSoldOutReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sataSoldOutDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SataSoldOutDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sataSoldOutDetail.begin(); itr != m_sataSoldOutDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_localDiskInfoHasBeenSet)
@@ -511,14 +688,6 @@ void NodeTypeResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, m_hSsdAvailable, allocator);
     }
 
-    if (m_hSsdSoldOutReasonHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HSsdSoldOutReason";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_hSsdSoldOutReason.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_hSsdDiskSizeRangeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -528,20 +697,35 @@ void NodeTypeResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         m_hSsdDiskSizeRange.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_hSsdSoldOutReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HSsdSoldOutReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hSsdSoldOutReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hSsdSoldOutDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HSsdSoldOutDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hSsdSoldOutDetail.begin(); itr != m_hSsdSoldOutDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_throughputAvailableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ThroughputAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_throughputAvailable, allocator);
-    }
-
-    if (m_throughputSoldOutReasonHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ThroughputSoldOutReason";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_throughputSoldOutReason.c_str(), allocator).Move(), allocator);
     }
 
     if (m_throughputDiskSizeRangeHasBeenSet)
@@ -553,12 +737,44 @@ void NodeTypeResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         m_throughputDiskSizeRange.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_throughputSoldOutReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputSoldOutReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_throughputSoldOutReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_throughputSoldOutDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputSoldOutDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_throughputSoldOutDetail.begin(); itr != m_throughputSoldOutDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_bigDataAvailableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BigDataAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bigDataAvailable, allocator);
+    }
+
+    if (m_bigDataDiskSizeRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BigDataDiskSizeRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bigDataDiskSizeRange.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_bigDataSoldOutReasonHasBeenSet)
@@ -569,13 +785,19 @@ void NodeTypeResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_bigDataSoldOutReason.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_bigDataDiskSizeRangeHasBeenSet)
+    if (m_bigDataSoldOutDetailHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BigDataDiskSizeRange";
+        string key = "BigDataSoldOutDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_bigDataDiskSizeRange.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_bigDataSoldOutDetail.begin(); itr != m_bigDataSoldOutDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_highIOAvailableHasBeenSet)
@@ -603,12 +825,36 @@ void NodeTypeResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         m_highIODiskSizeRange.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_highIOSoldOutDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighIOSoldOutDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_highIOSoldOutDetail.begin(); itr != m_highIOSoldOutDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_bssdAvailableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BssdAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bssdAvailable, allocator);
+    }
+
+    if (m_bssdDiskSizeRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BssdDiskSizeRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bssdDiskSizeRange.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_bssdSoldOutReasonHasBeenSet)
@@ -619,13 +865,19 @@ void NodeTypeResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_bssdSoldOutReason.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_bssdDiskSizeRangeHasBeenSet)
+    if (m_bssdSoldOutDetailHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BssdDiskSizeRange";
+        string key = "BssdSoldOutDetail";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_bssdDiskSizeRange.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_bssdSoldOutDetail.begin(); itr != m_bssdSoldOutDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_gpuInfoHasBeenSet)
@@ -720,6 +972,38 @@ bool NodeTypeResource::SsdDiskSizeRangeHasBeenSet() const
     return m_ssdDiskSizeRangeHasBeenSet;
 }
 
+string NodeTypeResource::GetSsdSoldOutReason() const
+{
+    return m_ssdSoldOutReason;
+}
+
+void NodeTypeResource::SetSsdSoldOutReason(const string& _ssdSoldOutReason)
+{
+    m_ssdSoldOutReason = _ssdSoldOutReason;
+    m_ssdSoldOutReasonHasBeenSet = true;
+}
+
+bool NodeTypeResource::SsdSoldOutReasonHasBeenSet() const
+{
+    return m_ssdSoldOutReasonHasBeenSet;
+}
+
+vector<FamilyResourceStat> NodeTypeResource::GetSsdSoldOutDetail() const
+{
+    return m_ssdSoldOutDetail;
+}
+
+void NodeTypeResource::SetSsdSoldOutDetail(const vector<FamilyResourceStat>& _ssdSoldOutDetail)
+{
+    m_ssdSoldOutDetail = _ssdSoldOutDetail;
+    m_ssdSoldOutDetailHasBeenSet = true;
+}
+
+bool NodeTypeResource::SsdSoldOutDetailHasBeenSet() const
+{
+    return m_ssdSoldOutDetailHasBeenSet;
+}
+
 bool NodeTypeResource::GetSataAvailable() const
 {
     return m_sataAvailable;
@@ -752,22 +1036,6 @@ bool NodeTypeResource::SataDiskSizeRangeHasBeenSet() const
     return m_sataDiskSizeRangeHasBeenSet;
 }
 
-string NodeTypeResource::GetSsdSoldOutReason() const
-{
-    return m_ssdSoldOutReason;
-}
-
-void NodeTypeResource::SetSsdSoldOutReason(const string& _ssdSoldOutReason)
-{
-    m_ssdSoldOutReason = _ssdSoldOutReason;
-    m_ssdSoldOutReasonHasBeenSet = true;
-}
-
-bool NodeTypeResource::SsdSoldOutReasonHasBeenSet() const
-{
-    return m_ssdSoldOutReasonHasBeenSet;
-}
-
 string NodeTypeResource::GetSataSoldOutReason() const
 {
     return m_sataSoldOutReason;
@@ -782,6 +1050,22 @@ void NodeTypeResource::SetSataSoldOutReason(const string& _sataSoldOutReason)
 bool NodeTypeResource::SataSoldOutReasonHasBeenSet() const
 {
     return m_sataSoldOutReasonHasBeenSet;
+}
+
+vector<FamilyResourceStat> NodeTypeResource::GetSataSoldOutDetail() const
+{
+    return m_sataSoldOutDetail;
+}
+
+void NodeTypeResource::SetSataSoldOutDetail(const vector<FamilyResourceStat>& _sataSoldOutDetail)
+{
+    m_sataSoldOutDetail = _sataSoldOutDetail;
+    m_sataSoldOutDetailHasBeenSet = true;
+}
+
+bool NodeTypeResource::SataSoldOutDetailHasBeenSet() const
+{
+    return m_sataSoldOutDetailHasBeenSet;
 }
 
 LocalDiskInfo NodeTypeResource::GetLocalDiskInfo() const
@@ -832,6 +1116,22 @@ bool NodeTypeResource::HSsdAvailableHasBeenSet() const
     return m_hSsdAvailableHasBeenSet;
 }
 
+DiskSizeRange NodeTypeResource::GetHSsdDiskSizeRange() const
+{
+    return m_hSsdDiskSizeRange;
+}
+
+void NodeTypeResource::SetHSsdDiskSizeRange(const DiskSizeRange& _hSsdDiskSizeRange)
+{
+    m_hSsdDiskSizeRange = _hSsdDiskSizeRange;
+    m_hSsdDiskSizeRangeHasBeenSet = true;
+}
+
+bool NodeTypeResource::HSsdDiskSizeRangeHasBeenSet() const
+{
+    return m_hSsdDiskSizeRangeHasBeenSet;
+}
+
 string NodeTypeResource::GetHSsdSoldOutReason() const
 {
     return m_hSsdSoldOutReason;
@@ -848,20 +1148,20 @@ bool NodeTypeResource::HSsdSoldOutReasonHasBeenSet() const
     return m_hSsdSoldOutReasonHasBeenSet;
 }
 
-DiskSizeRange NodeTypeResource::GetHSsdDiskSizeRange() const
+vector<FamilyResourceStat> NodeTypeResource::GetHSsdSoldOutDetail() const
 {
-    return m_hSsdDiskSizeRange;
+    return m_hSsdSoldOutDetail;
 }
 
-void NodeTypeResource::SetHSsdDiskSizeRange(const DiskSizeRange& _hSsdDiskSizeRange)
+void NodeTypeResource::SetHSsdSoldOutDetail(const vector<FamilyResourceStat>& _hSsdSoldOutDetail)
 {
-    m_hSsdDiskSizeRange = _hSsdDiskSizeRange;
-    m_hSsdDiskSizeRangeHasBeenSet = true;
+    m_hSsdSoldOutDetail = _hSsdSoldOutDetail;
+    m_hSsdSoldOutDetailHasBeenSet = true;
 }
 
-bool NodeTypeResource::HSsdDiskSizeRangeHasBeenSet() const
+bool NodeTypeResource::HSsdSoldOutDetailHasBeenSet() const
 {
-    return m_hSsdDiskSizeRangeHasBeenSet;
+    return m_hSsdSoldOutDetailHasBeenSet;
 }
 
 bool NodeTypeResource::GetThroughputAvailable() const
@@ -880,6 +1180,22 @@ bool NodeTypeResource::ThroughputAvailableHasBeenSet() const
     return m_throughputAvailableHasBeenSet;
 }
 
+DiskSizeRange NodeTypeResource::GetThroughputDiskSizeRange() const
+{
+    return m_throughputDiskSizeRange;
+}
+
+void NodeTypeResource::SetThroughputDiskSizeRange(const DiskSizeRange& _throughputDiskSizeRange)
+{
+    m_throughputDiskSizeRange = _throughputDiskSizeRange;
+    m_throughputDiskSizeRangeHasBeenSet = true;
+}
+
+bool NodeTypeResource::ThroughputDiskSizeRangeHasBeenSet() const
+{
+    return m_throughputDiskSizeRangeHasBeenSet;
+}
+
 string NodeTypeResource::GetThroughputSoldOutReason() const
 {
     return m_throughputSoldOutReason;
@@ -896,20 +1212,20 @@ bool NodeTypeResource::ThroughputSoldOutReasonHasBeenSet() const
     return m_throughputSoldOutReasonHasBeenSet;
 }
 
-DiskSizeRange NodeTypeResource::GetThroughputDiskSizeRange() const
+vector<FamilyResourceStat> NodeTypeResource::GetThroughputSoldOutDetail() const
 {
-    return m_throughputDiskSizeRange;
+    return m_throughputSoldOutDetail;
 }
 
-void NodeTypeResource::SetThroughputDiskSizeRange(const DiskSizeRange& _throughputDiskSizeRange)
+void NodeTypeResource::SetThroughputSoldOutDetail(const vector<FamilyResourceStat>& _throughputSoldOutDetail)
 {
-    m_throughputDiskSizeRange = _throughputDiskSizeRange;
-    m_throughputDiskSizeRangeHasBeenSet = true;
+    m_throughputSoldOutDetail = _throughputSoldOutDetail;
+    m_throughputSoldOutDetailHasBeenSet = true;
 }
 
-bool NodeTypeResource::ThroughputDiskSizeRangeHasBeenSet() const
+bool NodeTypeResource::ThroughputSoldOutDetailHasBeenSet() const
 {
-    return m_throughputDiskSizeRangeHasBeenSet;
+    return m_throughputSoldOutDetailHasBeenSet;
 }
 
 bool NodeTypeResource::GetBigDataAvailable() const
@@ -928,6 +1244,22 @@ bool NodeTypeResource::BigDataAvailableHasBeenSet() const
     return m_bigDataAvailableHasBeenSet;
 }
 
+DiskSizeRange NodeTypeResource::GetBigDataDiskSizeRange() const
+{
+    return m_bigDataDiskSizeRange;
+}
+
+void NodeTypeResource::SetBigDataDiskSizeRange(const DiskSizeRange& _bigDataDiskSizeRange)
+{
+    m_bigDataDiskSizeRange = _bigDataDiskSizeRange;
+    m_bigDataDiskSizeRangeHasBeenSet = true;
+}
+
+bool NodeTypeResource::BigDataDiskSizeRangeHasBeenSet() const
+{
+    return m_bigDataDiskSizeRangeHasBeenSet;
+}
+
 string NodeTypeResource::GetBigDataSoldOutReason() const
 {
     return m_bigDataSoldOutReason;
@@ -944,20 +1276,20 @@ bool NodeTypeResource::BigDataSoldOutReasonHasBeenSet() const
     return m_bigDataSoldOutReasonHasBeenSet;
 }
 
-DiskSizeRange NodeTypeResource::GetBigDataDiskSizeRange() const
+vector<FamilyResourceStat> NodeTypeResource::GetBigDataSoldOutDetail() const
 {
-    return m_bigDataDiskSizeRange;
+    return m_bigDataSoldOutDetail;
 }
 
-void NodeTypeResource::SetBigDataDiskSizeRange(const DiskSizeRange& _bigDataDiskSizeRange)
+void NodeTypeResource::SetBigDataSoldOutDetail(const vector<FamilyResourceStat>& _bigDataSoldOutDetail)
 {
-    m_bigDataDiskSizeRange = _bigDataDiskSizeRange;
-    m_bigDataDiskSizeRangeHasBeenSet = true;
+    m_bigDataSoldOutDetail = _bigDataSoldOutDetail;
+    m_bigDataSoldOutDetailHasBeenSet = true;
 }
 
-bool NodeTypeResource::BigDataDiskSizeRangeHasBeenSet() const
+bool NodeTypeResource::BigDataSoldOutDetailHasBeenSet() const
 {
-    return m_bigDataDiskSizeRangeHasBeenSet;
+    return m_bigDataSoldOutDetailHasBeenSet;
 }
 
 bool NodeTypeResource::GetHighIOAvailable() const
@@ -1008,6 +1340,22 @@ bool NodeTypeResource::HighIODiskSizeRangeHasBeenSet() const
     return m_highIODiskSizeRangeHasBeenSet;
 }
 
+vector<FamilyResourceStat> NodeTypeResource::GetHighIOSoldOutDetail() const
+{
+    return m_highIOSoldOutDetail;
+}
+
+void NodeTypeResource::SetHighIOSoldOutDetail(const vector<FamilyResourceStat>& _highIOSoldOutDetail)
+{
+    m_highIOSoldOutDetail = _highIOSoldOutDetail;
+    m_highIOSoldOutDetailHasBeenSet = true;
+}
+
+bool NodeTypeResource::HighIOSoldOutDetailHasBeenSet() const
+{
+    return m_highIOSoldOutDetailHasBeenSet;
+}
+
 bool NodeTypeResource::GetBssdAvailable() const
 {
     return m_bssdAvailable;
@@ -1022,6 +1370,22 @@ void NodeTypeResource::SetBssdAvailable(const bool& _bssdAvailable)
 bool NodeTypeResource::BssdAvailableHasBeenSet() const
 {
     return m_bssdAvailableHasBeenSet;
+}
+
+DiskSizeRange NodeTypeResource::GetBssdDiskSizeRange() const
+{
+    return m_bssdDiskSizeRange;
+}
+
+void NodeTypeResource::SetBssdDiskSizeRange(const DiskSizeRange& _bssdDiskSizeRange)
+{
+    m_bssdDiskSizeRange = _bssdDiskSizeRange;
+    m_bssdDiskSizeRangeHasBeenSet = true;
+}
+
+bool NodeTypeResource::BssdDiskSizeRangeHasBeenSet() const
+{
+    return m_bssdDiskSizeRangeHasBeenSet;
 }
 
 string NodeTypeResource::GetBssdSoldOutReason() const
@@ -1040,20 +1404,20 @@ bool NodeTypeResource::BssdSoldOutReasonHasBeenSet() const
     return m_bssdSoldOutReasonHasBeenSet;
 }
 
-DiskSizeRange NodeTypeResource::GetBssdDiskSizeRange() const
+vector<FamilyResourceStat> NodeTypeResource::GetBssdSoldOutDetail() const
 {
-    return m_bssdDiskSizeRange;
+    return m_bssdSoldOutDetail;
 }
 
-void NodeTypeResource::SetBssdDiskSizeRange(const DiskSizeRange& _bssdDiskSizeRange)
+void NodeTypeResource::SetBssdSoldOutDetail(const vector<FamilyResourceStat>& _bssdSoldOutDetail)
 {
-    m_bssdDiskSizeRange = _bssdDiskSizeRange;
-    m_bssdDiskSizeRangeHasBeenSet = true;
+    m_bssdSoldOutDetail = _bssdSoldOutDetail;
+    m_bssdSoldOutDetailHasBeenSet = true;
 }
 
-bool NodeTypeResource::BssdDiskSizeRangeHasBeenSet() const
+bool NodeTypeResource::BssdSoldOutDetailHasBeenSet() const
 {
-    return m_bssdDiskSizeRangeHasBeenSet;
+    return m_bssdSoldOutDetailHasBeenSet;
 }
 
 GpuInfo NodeTypeResource::GetGpuInfo() const

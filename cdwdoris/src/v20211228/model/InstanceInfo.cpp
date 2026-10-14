@@ -83,7 +83,8 @@ InstanceInfo::InstanceInfo() :
     m_slaveInstancesHasBeenSet(false),
     m_syncerIpHasBeenSet(false),
     m_enableSqlConvHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
+    m_timeZoneHasBeenSet(false),
+    m_cacheDiskTypeHasBeenSet(false)
 {
 }
 
@@ -769,6 +770,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_timeZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("CacheDiskType") && !value["CacheDiskType"].IsNull())
+    {
+        if (!value["CacheDiskType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CacheDiskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cacheDiskType = string(value["CacheDiskType"].GetString());
+        m_cacheDiskTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1304,6 +1315,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TimeZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cacheDiskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CacheDiskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cacheDiskType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2315,5 +2334,21 @@ void InstanceInfo::SetTimeZone(const string& _timeZone)
 bool InstanceInfo::TimeZoneHasBeenSet() const
 {
     return m_timeZoneHasBeenSet;
+}
+
+string InstanceInfo::GetCacheDiskType() const
+{
+    return m_cacheDiskType;
+}
+
+void InstanceInfo::SetCacheDiskType(const string& _cacheDiskType)
+{
+    m_cacheDiskType = _cacheDiskType;
+    m_cacheDiskTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::CacheDiskTypeHasBeenSet() const
+{
+    return m_cacheDiskTypeHasBeenSet;
 }
 

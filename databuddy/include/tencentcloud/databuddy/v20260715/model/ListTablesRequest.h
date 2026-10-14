@@ -86,6 +86,27 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
+                     * 获取<p>调用时所在workspace唯一id</p>
+                     * @return WorkspaceId <p>调用时所在workspace唯一id</p>
+                     * 
+                     */
+                    std::string GetWorkspaceId() const;
+
+                    /**
+                     * 设置<p>调用时所在workspace唯一id</p>
+                     * @param _workspaceId <p>调用时所在workspace唯一id</p>
+                     * 
+                     */
+                    void SetWorkspaceId(const std::string& _workspaceId);
+
+                    /**
+                     * 判断参数 WorkspaceId 是否已赋值
+                     * @return WorkspaceId 是否已赋值
+                     * 
+                     */
+                    bool WorkspaceIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>最大结果条数</p>
                      * @return MaxResults <p>最大结果条数</p>
                      * 
@@ -126,27 +147,6 @@ namespace TencentCloud
                      * 
                      */
                     bool PageTokenHasBeenSet() const;
-
-                    /**
-                     * 获取<p>调用时所在workspace唯一id</p>
-                     * @return WorkspaceId <p>调用时所在workspace唯一id</p>
-                     * 
-                     */
-                    std::string GetWorkspaceId() const;
-
-                    /**
-                     * 设置<p>调用时所在workspace唯一id</p>
-                     * @param _workspaceId <p>调用时所在workspace唯一id</p>
-                     * 
-                     */
-                    void SetWorkspaceId(const std::string& _workspaceId);
-
-                    /**
-                     * 判断参数 WorkspaceId 是否已赋值
-                     * @return WorkspaceId 是否已赋值
-                     * 
-                     */
-                    bool WorkspaceIdHasBeenSet() const;
 
                     /**
                      * 获取<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>
@@ -226,6 +226,12 @@ namespace TencentCloud
                     bool m_schemaNameHasBeenSet;
 
                     /**
+                     * <p>调用时所在workspace唯一id</p>
+                     */
+                    std::string m_workspaceId;
+                    bool m_workspaceIdHasBeenSet;
+
+                    /**
                      * <p>最大结果条数</p>
                      */
                     int64_t m_maxResults;
@@ -236,12 +242,6 @@ namespace TencentCloud
                      */
                     std::string m_pageToken;
                     bool m_pageTokenHasBeenSet;
-
-                    /**
-                     * <p>调用时所在workspace唯一id</p>
-                     */
-                    std::string m_workspaceId;
-                    bool m_workspaceIdHasBeenSet;
 
                     /**
                      * <p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>

@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool OwnerUinHasBeenSet() const;
 
+                    /**
+                     * 获取<p>镜像关联超级节点数</p>
+                     * @return SuperNodeHostCount <p>镜像关联超级节点数</p>
+                     * 
+                     */
+                    uint64_t GetSuperNodeHostCount() const;
+
+                    /**
+                     * 设置<p>镜像关联超级节点数</p>
+                     * @param _superNodeHostCount <p>镜像关联超级节点数</p>
+                     * 
+                     */
+                    void SetSuperNodeHostCount(const uint64_t& _superNodeHostCount);
+
+                    /**
+                     * 判断参数 SuperNodeHostCount 是否已赋值
+                     * @return SuperNodeHostCount 是否已赋值
+                     * 
+                     */
+                    bool SuperNodeHostCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
+
+                    /**
+                     * <p>镜像关联超级节点数</p>
+                     */
+                    uint64_t m_superNodeHostCount;
+                    bool m_superNodeHostCountHasBeenSet;
 
                 };
             }

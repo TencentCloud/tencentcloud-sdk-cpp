@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前页数，默认1。
-                     * @return PageNum 当前页数，默认1。
+                     * 获取<p>当前页数，默认1。</p>
+                     * @return PageNum <p>当前页数，默认1。</p>
                      * 
                      */
                     int64_t GetPageNum() const;
 
                     /**
-                     * 设置当前页数，默认1。
-                     * @param _pageNum 当前页数，默认1。
+                     * 设置<p>当前页数，默认1。</p>
+                     * @param _pageNum <p>当前页数，默认1。</p>
                      * 
                      */
                     void SetPageNum(const int64_t& _pageNum);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取每页大小，默认10。
-                     * @return PageSize 每页大小，默认10。
+                     * 获取<p>每页大小，默认10。</p>
+                     * @return PageSize <p>每页大小，默认10。</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页大小，默认10。
-                     * @param _pageSize 每页大小，默认10。
+                     * 设置<p>每页大小，默认10。</p>
+                     * @param _pageSize <p>每页大小，默认10。</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前页数，默认1。
+                     * <p>当前页数，默认1。</p>
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 每页大小，默认10。
+                     * <p>每页大小，默认10。</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

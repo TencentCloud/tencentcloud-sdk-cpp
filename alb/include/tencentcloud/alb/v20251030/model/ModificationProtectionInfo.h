@@ -47,23 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启修改保护。开启后，可防止实例被意外修改或删除。
-- true：开启修改保护
-- false：关闭修改保护
-                     * @return ModificationProtectionEnabled 是否开启修改保护。开启后，可防止实例被意外修改或删除。
-- true：开启修改保护
-- false：关闭修改保护
+                     * 获取<p>是否开启修改保护。开启后，可防止实例被意外修改或删除。</p><ul><li>true：开启修改保护</li><li>false：关闭修改保护</li></ul>
+                     * @return ModificationProtectionEnabled <p>是否开启修改保护。开启后，可防止实例被意外修改或删除。</p><ul><li>true：开启修改保护</li><li>false：关闭修改保护</li></ul>
                      * 
                      */
                     bool GetModificationProtectionEnabled() const;
 
                     /**
-                     * 设置是否开启修改保护。开启后，可防止实例被意外修改或删除。
-- true：开启修改保护
-- false：关闭修改保护
-                     * @param _modificationProtectionEnabled 是否开启修改保护。开启后，可防止实例被意外修改或删除。
-- true：开启修改保护
-- false：关闭修改保护
+                     * 设置<p>是否开启修改保护。开启后，可防止实例被意外修改或删除。</p><ul><li>true：开启修改保护</li><li>false：关闭修改保护</li></ul>
+                     * @param _modificationProtectionEnabled <p>是否开启修改保护。开启后，可防止实例被意外修改或删除。</p><ul><li>true：开启修改保护</li><li>false：关闭修改保护</li></ul>
                      * 
                      */
                     void SetModificationProtectionEnabled(const bool& _modificationProtectionEnabled);
@@ -76,15 +68,15 @@ namespace TencentCloud
                     bool ModificationProtectionEnabledHasBeenSet() const;
 
                     /**
-                     * 获取1238716123
-                     * @return OperatorUin 1238716123
+                     * 获取<p>1238716123</p>
+                     * @return OperatorUin <p>1238716123</p>
                      * 
                      */
                     std::string GetOperatorUin() const;
 
                     /**
-                     * 设置1238716123
-                     * @param _operatorUin 1238716123
+                     * 设置<p>1238716123</p>
+                     * @param _operatorUin <p>1238716123</p>
                      * 
                      */
                     void SetOperatorUin(const std::string& _operatorUin);
@@ -97,19 +89,15 @@ namespace TencentCloud
                     bool OperatorUinHasBeenSet() const;
 
                     /**
-                     * 获取开启修改保护的原因说明。
-长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。
-                     * @return Reason 开启修改保护的原因说明。
-长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。
+                     * 获取<p>开启修改保护的原因说明。<br>长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。</p>
+                     * @return Reason <p>开启修改保护的原因说明。<br>长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。</p>
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
-                     * 设置开启修改保护的原因说明。
-长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。
-                     * @param _reason 开启修改保护的原因说明。
-长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。
+                     * 设置<p>开启修改保护的原因说明。<br>长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。</p>
+                     * @param _reason <p>开启修改保护的原因说明。<br>长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。</p>
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -124,22 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启修改保护。开启后，可防止实例被意外修改或删除。
-- true：开启修改保护
-- false：关闭修改保护
+                     * <p>是否开启修改保护。开启后，可防止实例被意外修改或删除。</p><ul><li>true：开启修改保护</li><li>false：关闭修改保护</li></ul>
                      */
                     bool m_modificationProtectionEnabled;
                     bool m_modificationProtectionEnabledHasBeenSet;
 
                     /**
-                     * 1238716123
+                     * <p>1238716123</p>
                      */
                     std::string m_operatorUin;
                     bool m_operatorUinHasBeenSet;
 
                     /**
-                     * 开启修改保护的原因说明。
-长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。
+                     * <p>开启修改保护的原因说明。<br>长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。</p>
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;

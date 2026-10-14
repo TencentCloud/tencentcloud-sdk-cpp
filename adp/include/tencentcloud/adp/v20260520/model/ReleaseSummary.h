@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/AppShareAccessControl.h>
 #include <tencentcloud/adp/v20260520/model/CorpShareConfig.h>
+#include <tencentcloud/adp/v20260520/model/PortalShareConfig.h>
 
 
 namespace TencentCloud
@@ -224,6 +225,31 @@ namespace TencentCloud
                      */
                     bool CorpShareConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>portal配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PortalShareConfig <p>portal配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    PortalShareConfig GetPortalShareConfig() const;
+
+                    /**
+                     * 设置<p>portal配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _portalShareConfig <p>portal配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPortalShareConfig(const PortalShareConfig& _portalShareConfig);
+
+                    /**
+                     * 判断参数 PortalShareConfig 是否已赋值
+                     * @return PortalShareConfig 是否已赋值
+                     * 
+                     */
+                    bool PortalShareConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -275,6 +301,13 @@ namespace TencentCloud
                      */
                     CorpShareConfig m_corpShareConfig;
                     bool m_corpShareConfigHasBeenSet;
+
+                    /**
+                     * <p>portal配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PortalShareConfig m_portalShareConfig;
+                    bool m_portalShareConfigHasBeenSet;
 
                 };
             }

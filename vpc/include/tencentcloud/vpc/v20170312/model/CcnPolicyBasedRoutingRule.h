@@ -68,48 +68,6 @@ namespace TencentCloud
                     bool PolicyBasedRoutingNextHopIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
-                     * @return InstanceType <p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
-                     * 
-                     */
-                    std::string GetInstanceType() const;
-
-                    /**
-                     * 设置<p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
-                     * @param _instanceType <p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
-                     * 
-                     */
-                    void SetInstanceType(const std::string& _instanceType);
-
-                    /**
-                     * 判断参数 InstanceType 是否已赋值
-                     * @return InstanceType 是否已赋值
-                     * 
-                     */
-                    bool InstanceTypeHasBeenSet() const;
-
-                    /**
-                     * 获取<p>实例ID</p>
-                     * @return InstanceId <p>实例ID</p>
-                     * 
-                     */
-                    std::string GetInstanceId() const;
-
-                    /**
-                     * 设置<p>实例ID</p>
-                     * @param _instanceId <p>实例ID</p>
-                     * 
-                     */
-                    void SetInstanceId(const std::string& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     * 
-                     */
-                    bool InstanceIdHasBeenSet() const;
-
-                    /**
                      * 获取<p>源地址CIDR</p>
                      * @return SourceCidrBlock <p>源地址CIDR</p>
                      * 
@@ -171,6 +129,69 @@ namespace TencentCloud
                      * 
                      */
                     bool PriorityHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
+                     * @return InstanceType <p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置<p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
+                     * @param _instanceType <p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例所在地域</p>
+                     * @return InstanceRegion <p>实例所在地域</p>
+                     * 
+                     */
+                    std::string GetInstanceRegion() const;
+
+                    /**
+                     * 设置<p>实例所在地域</p>
+                     * @param _instanceRegion <p>实例所在地域</p>
+                     * 
+                     */
+                    void SetInstanceRegion(const std::string& _instanceRegion);
+
+                    /**
+                     * 判断参数 InstanceRegion 是否已赋值
+                     * @return InstanceRegion 是否已赋值
+                     * 
+                     */
+                    bool InstanceRegionHasBeenSet() const;
 
                     /**
                      * 获取<p>描述</p>
@@ -265,18 +286,6 @@ namespace TencentCloud
                     bool m_policyBasedRoutingNextHopIdHasBeenSet;
 
                     /**
-                     * <p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
-                     */
-                    std::string m_instanceType;
-                    bool m_instanceTypeHasBeenSet;
-
-                    /**
-                     * <p>实例ID</p>
-                     */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
-
-                    /**
                      * <p>源地址CIDR</p>
                      */
                     std::string m_sourceCidrBlock;
@@ -293,6 +302,24 @@ namespace TencentCloud
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
+
+                    /**
+                     * <p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * <p>实例ID</p>
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>实例所在地域</p>
+                     */
+                    std::string m_instanceRegion;
+                    bool m_instanceRegionHasBeenSet;
 
                     /**
                      * <p>描述</p>

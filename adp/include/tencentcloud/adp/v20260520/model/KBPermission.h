@@ -89,6 +89,27 @@ namespace TencentCloud
                     bool CanEditHasBeenSet() const;
 
                     /**
+                     * 获取<p>能否被共享</p>
+                     * @return CanShare <p>能否被共享</p>
+                     * 
+                     */
+                    bool GetCanShare() const;
+
+                    /**
+                     * 设置<p>能否被共享</p>
+                     * @param _canShare <p>能否被共享</p>
+                     * 
+                     */
+                    void SetCanShare(const bool& _canShare);
+
+                    /**
+                     * 判断参数 CanShare 是否已赋值
+                     * @return CanShare 是否已赋值
+                     * 
+                     */
+                    bool CanShareHasBeenSet() const;
+
+                    /**
                      * 获取<p>是否可查看</p>
                      * @return CanView <p>是否可查看</p>
                      * 
@@ -122,6 +143,12 @@ namespace TencentCloud
                      */
                     bool m_canEdit;
                     bool m_canEditHasBeenSet;
+
+                    /**
+                     * <p>能否被共享</p>
+                     */
+                    bool m_canShare;
+                    bool m_canShareHasBeenSet;
 
                     /**
                      * <p>是否可查看</p>

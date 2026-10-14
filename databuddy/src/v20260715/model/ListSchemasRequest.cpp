@@ -24,9 +24,9 @@ using namespace std;
 
 ListSchemasRequest::ListSchemasRequest() :
     m_catalogNameHasBeenSet(false),
+    m_workspaceIdHasBeenSet(false),
     m_maxResultsHasBeenSet(false),
     m_pageTokenHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false),
     m_fetchOptionHasBeenSet(false),
     m_connectionIdHasBeenSet(false),
     m_catalogSourceHasBeenSet(false)
@@ -48,6 +48,14 @@ string ListSchemasRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workspaceId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_maxResultsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -62,14 +70,6 @@ string ListSchemasRequest::ToJsonString() const
         string key = "PageToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_pageToken.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_workspaceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "WorkspaceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_workspaceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fetchOptionHasBeenSet)
@@ -121,6 +121,22 @@ bool ListSchemasRequest::CatalogNameHasBeenSet() const
     return m_catalogNameHasBeenSet;
 }
 
+string ListSchemasRequest::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void ListSchemasRequest::SetWorkspaceId(const string& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool ListSchemasRequest::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
 int64_t ListSchemasRequest::GetMaxResults() const
 {
     return m_maxResults;
@@ -151,22 +167,6 @@ void ListSchemasRequest::SetPageToken(const string& _pageToken)
 bool ListSchemasRequest::PageTokenHasBeenSet() const
 {
     return m_pageTokenHasBeenSet;
-}
-
-string ListSchemasRequest::GetWorkspaceId() const
-{
-    return m_workspaceId;
-}
-
-void ListSchemasRequest::SetWorkspaceId(const string& _workspaceId)
-{
-    m_workspaceId = _workspaceId;
-    m_workspaceIdHasBeenSet = true;
-}
-
-bool ListSchemasRequest::WorkspaceIdHasBeenSet() const
-{
-    return m_workspaceIdHasBeenSet;
 }
 
 FetchOption ListSchemasRequest::GetFetchOption() const

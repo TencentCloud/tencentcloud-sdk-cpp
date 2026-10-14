@@ -590,6 +590,56 @@ OrganizationClient::AttachPolicyOutcomeCallable OrganizationClient::AttachPolicy
     return prom->get_future();
 }
 
+OrganizationClient::AuditPermissionApplyOrderOutcome OrganizationClient::AuditPermissionApplyOrder(const AuditPermissionApplyOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "AuditPermissionApplyOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AuditPermissionApplyOrderResponse rsp = AuditPermissionApplyOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AuditPermissionApplyOrderOutcome(rsp);
+        else
+            return AuditPermissionApplyOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return AuditPermissionApplyOrderOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::AuditPermissionApplyOrderAsync(const AuditPermissionApplyOrderRequest& request, const AuditPermissionApplyOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AuditPermissionApplyOrderRequest&;
+    using Resp = AuditPermissionApplyOrderResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AuditPermissionApplyOrder", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OrganizationClient::AuditPermissionApplyOrderOutcomeCallable OrganizationClient::AuditPermissionApplyOrderCallable(const AuditPermissionApplyOrderRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AuditPermissionApplyOrderOutcome>>();
+    AuditPermissionApplyOrderAsync(
+    request,
+    [prom](
+        const OrganizationClient*,
+        const AuditPermissionApplyOrderRequest&,
+        AuditPermissionApplyOrderOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OrganizationClient::BindOrganizationMemberAuthAccountOutcome OrganizationClient::BindOrganizationMemberAuthAccount(const BindOrganizationMemberAuthAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "BindOrganizationMemberAuthAccount");

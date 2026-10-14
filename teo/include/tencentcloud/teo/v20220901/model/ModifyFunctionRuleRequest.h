@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点 ID。
-                     * @return ZoneId 站点 ID。
+                     * 获取<p>站点 ID。</p>
+                     * @return ZoneId <p>站点 ID。</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点 ID。
-                     * @param _zoneId 站点 ID。
+                     * 设置<p>站点 ID。</p>
+                     * @param _zoneId <p>站点 ID。</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。
-                     * @return RuleId 规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。
+                     * 获取<p>规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。</p>
+                     * @return RuleId <p>规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。
-                     * @param _ruleId 规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。
+                     * 设置<p>规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。</p>
+                     * @param _ruleId <p>规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取规则条件列表，相同触发规则的不同条件匹配项之间为或关系，不填写保持原有配置。
-                     * @return FunctionRuleConditions 规则条件列表，相同触发规则的不同条件匹配项之间为或关系，不填写保持原有配置。
+                     * 获取<p>规则条件列表，相同触发规则的不同条件匹配项之间为或关系，不填写保持原有配置。</p>
+                     * @return FunctionRuleConditions <p>规则条件列表，相同触发规则的不同条件匹配项之间为或关系，不填写保持原有配置。</p>
                      * 
                      */
                     std::vector<FunctionRuleCondition> GetFunctionRuleConditions() const;
 
                     /**
-                     * 设置规则条件列表，相同触发规则的不同条件匹配项之间为或关系，不填写保持原有配置。
-                     * @param _functionRuleConditions 规则条件列表，相同触发规则的不同条件匹配项之间为或关系，不填写保持原有配置。
+                     * 设置<p>规则条件列表，相同触发规则的不同条件匹配项之间为或关系，不填写保持原有配置。</p>
+                     * @param _functionRuleConditions <p>规则条件列表，相同触发规则的不同条件匹配项之间为或关系，不填写保持原有配置。</p>
                      * 
                      */
                     void SetFunctionRuleConditions(const std::vector<FunctionRuleCondition>& _functionRuleConditions);
@@ -109,31 +109,15 @@ namespace TencentCloud
                     bool FunctionRuleConditionsHasBeenSet() const;
 
                     /**
-                     * 获取函数选择配置类型：
-<li> direct：直接指定执行函数；</li>
-<li> weight：基于权重比选择函数；</li>
-<li> region：基于客户端 IP 的国家/地区选择函数。</li>
-不填时默认为 direct 。
-                     * @return TriggerType 函数选择配置类型：
-<li> direct：直接指定执行函数；</li>
-<li> weight：基于权重比选择函数；</li>
-<li> region：基于客户端 IP 的国家/地区选择函数。</li>
-不填时默认为 direct 。
+                     * 获取<p>函数选择配置类型：</p><li> direct：直接指定执行函数；</li><li> weight：基于权重比选择函数；</li><li> region：基于客户端 IP 的国家/地区选择函数。</li>不填时默认为 direct 。
+                     * @return TriggerType <p>函数选择配置类型：</p><li> direct：直接指定执行函数；</li><li> weight：基于权重比选择函数；</li><li> region：基于客户端 IP 的国家/地区选择函数。</li>不填时默认为 direct 。
                      * 
                      */
                     std::string GetTriggerType() const;
 
                     /**
-                     * 设置函数选择配置类型：
-<li> direct：直接指定执行函数；</li>
-<li> weight：基于权重比选择函数；</li>
-<li> region：基于客户端 IP 的国家/地区选择函数。</li>
-不填时默认为 direct 。
-                     * @param _triggerType 函数选择配置类型：
-<li> direct：直接指定执行函数；</li>
-<li> weight：基于权重比选择函数；</li>
-<li> region：基于客户端 IP 的国家/地区选择函数。</li>
-不填时默认为 direct 。
+                     * 设置<p>函数选择配置类型：</p><li> direct：直接指定执行函数；</li><li> weight：基于权重比选择函数；</li><li> region：基于客户端 IP 的国家/地区选择函数。</li>不填时默认为 direct 。
+                     * @param _triggerType <p>函数选择配置类型：</p><li> direct：直接指定执行函数；</li><li> weight：基于权重比选择函数；</li><li> region：基于客户端 IP 的国家/地区选择函数。</li>不填时默认为 direct 。
                      * 
                      */
                     void SetTriggerType(const std::string& _triggerType);
@@ -146,15 +130,15 @@ namespace TencentCloud
                     bool TriggerTypeHasBeenSet() const;
 
                     /**
-                     * 获取指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。
-                     * @return FunctionId 指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。
+                     * 获取<p>指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。</p>
+                     * @return FunctionId <p>指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。</p>
                      * 
                      */
                     std::string GetFunctionId() const;
 
                     /**
-                     * 设置指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。
-                     * @param _functionId 指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。
+                     * 设置<p>指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。</p>
+                     * @param _functionId <p>指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。</p>
                      * 
                      */
                     void SetFunctionId(const std::string& _functionId);
@@ -167,15 +151,15 @@ namespace TencentCloud
                     bool FunctionIdHasBeenSet() const;
 
                     /**
-                     * 获取基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中至少包含一项 Regions 为 Default 的配置。
-                     * @return RegionMappingSelections 基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中至少包含一项 Regions 为 Default 的配置。
+                     * 获取<p>基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中必须包含一项 Regions 为 Default 的配置，同时还需至少配置一项其他具体的 Region。</p>
+                     * @return RegionMappingSelections <p>基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中必须包含一项 Regions 为 Default 的配置，同时还需至少配置一项其他具体的 Region。</p>
                      * 
                      */
                     std::vector<FunctionRegionSelection> GetRegionMappingSelections() const;
 
                     /**
-                     * 设置基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中至少包含一项 Regions 为 Default 的配置。
-                     * @param _regionMappingSelections 基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中至少包含一项 Regions 为 Default 的配置。
+                     * 设置<p>基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中必须包含一项 Regions 为 Default 的配置，同时还需至少配置一项其他具体的 Region。</p>
+                     * @param _regionMappingSelections <p>基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中必须包含一项 Regions 为 Default 的配置，同时还需至少配置一项其他具体的 Region。</p>
                      * 
                      */
                     void SetRegionMappingSelections(const std::vector<FunctionRegionSelection>& _regionMappingSelections);
@@ -188,15 +172,15 @@ namespace TencentCloud
                     bool RegionMappingSelectionsHasBeenSet() const;
 
                     /**
-                     * 获取基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。
-                     * @return WeightedSelections 基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。
+                     * 获取<p>基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。</p>
+                     * @return WeightedSelections <p>基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。</p>
                      * 
                      */
                     std::vector<FunctionWeightedSelection> GetWeightedSelections() const;
 
                     /**
-                     * 设置基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。
-                     * @param _weightedSelections 基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。
+                     * 设置<p>基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。</p>
+                     * @param _weightedSelections <p>基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。</p>
                      * 
                      */
                     void SetWeightedSelections(const std::vector<FunctionWeightedSelection>& _weightedSelections);
@@ -209,15 +193,15 @@ namespace TencentCloud
                     bool WeightedSelectionsHasBeenSet() const;
 
                     /**
-                     * 获取规则描述，最大支持 60 个字符，不填写保持原有配置。
-                     * @return Remark 规则描述，最大支持 60 个字符，不填写保持原有配置。
+                     * 获取<p>规则描述，最大支持 60 个字符，不填写保持原有配置。</p>
+                     * @return Remark <p>规则描述，最大支持 60 个字符，不填写保持原有配置。</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置规则描述，最大支持 60 个字符，不填写保持原有配置。
-                     * @param _remark 规则描述，最大支持 60 个字符，不填写保持原有配置。
+                     * 设置<p>规则描述，最大支持 60 个字符，不填写保持原有配置。</p>
+                     * @param _remark <p>规则描述，最大支持 60 个字符，不填写保持原有配置。</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -232,53 +216,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 站点 ID。
+                     * <p>站点 ID。</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。
+                     * <p>规则 ID。您可以先通过 DescribeFunctionRules 接口来获取需要修改的规则的 RuleId，然后传入修改后的规则内容，原规则内容会被覆盖式更新。</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 规则条件列表，相同触发规则的不同条件匹配项之间为或关系，不填写保持原有配置。
+                     * <p>规则条件列表，相同触发规则的不同条件匹配项之间为或关系，不填写保持原有配置。</p>
                      */
                     std::vector<FunctionRuleCondition> m_functionRuleConditions;
                     bool m_functionRuleConditionsHasBeenSet;
 
                     /**
-                     * 函数选择配置类型：
-<li> direct：直接指定执行函数；</li>
-<li> weight：基于权重比选择函数；</li>
-<li> region：基于客户端 IP 的国家/地区选择函数。</li>
-不填时默认为 direct 。
+                     * <p>函数选择配置类型：</p><li> direct：直接指定执行函数；</li><li> weight：基于权重比选择函数；</li><li> region：基于客户端 IP 的国家/地区选择函数。</li>不填时默认为 direct 。
                      */
                     std::string m_triggerType;
                     bool m_triggerTypeHasBeenSet;
 
                     /**
-                     * 指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。
+                     * <p>指定执行的函数 ID。当 TriggerType 为 direct 或 TriggerType 不填时生效。</p>
                      */
                     std::string m_functionId;
                     bool m_functionIdHasBeenSet;
 
                     /**
-                     * 基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中至少包含一项 Regions 为 Default 的配置。
+                     * <p>基于客户端 IP 国家/地区的函数选择配置，当 TriggerType 为 region 时生效且 RegionMappingSelections 必填。RegionMappingSelections 中必须包含一项 Regions 为 Default 的配置，同时还需至少配置一项其他具体的 Region。</p>
                      */
                     std::vector<FunctionRegionSelection> m_regionMappingSelections;
                     bool m_regionMappingSelectionsHasBeenSet;
 
                     /**
-                     * 基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。
+                     * <p>基于权重的函数选择配置，当 TriggerType 为 weight 时生效且 WeightedSelections 必填。WeightedSelections 中的所有权重之和需要为100。</p>
                      */
                     std::vector<FunctionWeightedSelection> m_weightedSelections;
                     bool m_weightedSelectionsHasBeenSet;
 
                     /**
-                     * 规则描述，最大支持 60 个字符，不填写保持原有配置。
+                     * <p>规则描述，最大支持 60 个字符，不填写保持原有配置。</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

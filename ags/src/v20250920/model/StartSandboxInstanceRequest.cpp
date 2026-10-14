@@ -26,6 +26,7 @@ StartSandboxInstanceRequest::StartSandboxInstanceRequest() :
     m_toolIdHasBeenSet(false),
     m_toolNameHasBeenSet(false),
     m_sourceInstanceIdHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_mountOptionsHasBeenSet(false),
@@ -64,6 +65,14 @@ string StartSandboxInstanceRequest::ToJsonString() const
         string key = "SourceInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sourceInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapshotIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_snapshotId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_timeoutHasBeenSet)
@@ -183,6 +192,22 @@ void StartSandboxInstanceRequest::SetSourceInstanceId(const string& _sourceInsta
 bool StartSandboxInstanceRequest::SourceInstanceIdHasBeenSet() const
 {
     return m_sourceInstanceIdHasBeenSet;
+}
+
+string StartSandboxInstanceRequest::GetSnapshotId() const
+{
+    return m_snapshotId;
+}
+
+void StartSandboxInstanceRequest::SetSnapshotId(const string& _snapshotId)
+{
+    m_snapshotId = _snapshotId;
+    m_snapshotIdHasBeenSet = true;
+}
+
+bool StartSandboxInstanceRequest::SnapshotIdHasBeenSet() const
+{
+    return m_snapshotIdHasBeenSet;
 }
 
 string StartSandboxInstanceRequest::GetTimeout() const

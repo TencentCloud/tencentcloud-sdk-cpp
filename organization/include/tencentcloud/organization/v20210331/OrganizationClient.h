@@ -45,6 +45,8 @@
 #include <tencentcloud/organization/v20210331/model/AddUserToGroupResponse.h>
 #include <tencentcloud/organization/v20210331/model/AttachPolicyRequest.h>
 #include <tencentcloud/organization/v20210331/model/AttachPolicyResponse.h>
+#include <tencentcloud/organization/v20210331/model/AuditPermissionApplyOrderRequest.h>
+#include <tencentcloud/organization/v20210331/model/AuditPermissionApplyOrderResponse.h>
 #include <tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountRequest.h>
 #include <tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountResponse.h>
 #include <tencentcloud/organization/v20210331/model/BindOrganizationPolicySubAccountRequest.h>
@@ -338,6 +340,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AttachPolicyResponse> AttachPolicyOutcome;
                 typedef std::future<AttachPolicyOutcome> AttachPolicyOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::AttachPolicyRequest&, AttachPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::AuditPermissionApplyOrderResponse> AuditPermissionApplyOrderOutcome;
+                typedef std::future<AuditPermissionApplyOrderOutcome> AuditPermissionApplyOrderOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::AuditPermissionApplyOrderRequest&, AuditPermissionApplyOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuditPermissionApplyOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindOrganizationMemberAuthAccountResponse> BindOrganizationMemberAuthAccountOutcome;
                 typedef std::future<BindOrganizationMemberAuthAccountOutcome> BindOrganizationMemberAuthAccountOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::BindOrganizationMemberAuthAccountRequest&, BindOrganizationMemberAuthAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindOrganizationMemberAuthAccountAsyncHandler;
@@ -808,6 +813,15 @@ namespace TencentCloud
                 AttachPolicyOutcome AttachPolicy(const Model::AttachPolicyRequest &request);
                 void AttachPolicyAsync(const Model::AttachPolicyRequest& request, const AttachPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachPolicyOutcomeCallable AttachPolicyCallable(const Model::AttachPolicyRequest& request);
+
+                /**
+                 *审批用户权限申请
+                 * @param req AuditPermissionApplyOrderRequest
+                 * @return AuditPermissionApplyOrderOutcome
+                 */
+                AuditPermissionApplyOrderOutcome AuditPermissionApplyOrder(const Model::AuditPermissionApplyOrderRequest &request);
+                void AuditPermissionApplyOrderAsync(const Model::AuditPermissionApplyOrderRequest& request, const AuditPermissionApplyOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AuditPermissionApplyOrderOutcomeCallable AuditPermissionApplyOrderCallable(const Model::AuditPermissionApplyOrderRequest& request);
 
                 /**
                  *绑定组织成员和组织管理员子账号的授权关系

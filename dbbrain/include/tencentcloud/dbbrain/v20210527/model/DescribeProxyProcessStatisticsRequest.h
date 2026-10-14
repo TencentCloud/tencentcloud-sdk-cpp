@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID 。
-                     * @return InstanceId 实例 ID 。
+                     * 获取实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @return InstanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID 。
-                     * @param _instanceId 实例 ID 。
+                     * 设置实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
+                     * @param _instanceId 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -149,14 +149,34 @@ namespace TencentCloud
 
                     /**
                      * 获取按照某字段排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
+其中：
+
+- AllConn ：表示总连接数（活跃连接 + 非活跃连接）
+- ActiveConn：表示活跃连接数
+- Ip：表示 IP 地址
                      * @return SortBy 按照某字段排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
+其中：
+
+- AllConn ：表示总连接数（活跃连接 + 非活跃连接）
+- ActiveConn：表示活跃连接数
+- Ip：表示 IP 地址
                      * 
                      */
                     std::string GetSortBy() const;
 
                     /**
                      * 设置按照某字段排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
+其中：
+
+- AllConn ：表示总连接数（活跃连接 + 非活跃连接）
+- ActiveConn：表示活跃连接数
+- Ip：表示 IP 地址
                      * @param _sortBy 按照某字段排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
+其中：
+
+- AllConn ：表示总连接数（活跃连接 + 非活跃连接）
+- ActiveConn：表示活跃连接数
+- Ip：表示 IP 地址
                      * 
                      */
                     void SetSortBy(const std::string& _sortBy);
@@ -170,14 +190,30 @@ namespace TencentCloud
 
                     /**
                      * 获取排序方向。支持值包括："DESC"，"ASC"。
+其中：
+
+- DESC：降序
+- ASC：升序
                      * @return OrderDirection 排序方向。支持值包括："DESC"，"ASC"。
+其中：
+
+- DESC：降序
+- ASC：升序
                      * 
                      */
                     std::string GetOrderDirection() const;
 
                     /**
                      * 设置排序方向。支持值包括："DESC"，"ASC"。
+其中：
+
+- DESC：降序
+- ASC：升序
                      * @param _orderDirection 排序方向。支持值包括："DESC"，"ASC"。
+其中：
+
+- DESC：降序
+- ASC：升序
                      * 
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
@@ -192,7 +228,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID 。
+                     * 实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -223,12 +259,21 @@ namespace TencentCloud
 
                     /**
                      * 按照某字段排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
+其中：
+
+- AllConn ：表示总连接数（活跃连接 + 非活跃连接）
+- ActiveConn：表示活跃连接数
+- Ip：表示 IP 地址
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;
 
                     /**
                      * 排序方向。支持值包括："DESC"，"ASC"。
+其中：
+
+- DESC：降序
+- ASC：升序
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;

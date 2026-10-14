@@ -28,7 +28,8 @@ VoicePrintEnrollRequest::VoicePrintEnrollRequest() :
     m_dataHasBeenSet(false),
     m_speakerNickHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_audioUrlHasBeenSet(false)
+    m_audioUrlHasBeenSet(false),
+    m_qualityCheckHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string VoicePrintEnrollRequest::ToJsonString() const
         string key = "AudioUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_audioUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qualityCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_qualityCheck, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void VoicePrintEnrollRequest::SetAudioUrl(const string& _audioUrl)
 bool VoicePrintEnrollRequest::AudioUrlHasBeenSet() const
 {
     return m_audioUrlHasBeenSet;
+}
+
+bool VoicePrintEnrollRequest::GetQualityCheck() const
+{
+    return m_qualityCheck;
+}
+
+void VoicePrintEnrollRequest::SetQualityCheck(const bool& _qualityCheck)
+{
+    m_qualityCheck = _qualityCheck;
+    m_qualityCheckHasBeenSet = true;
+}
+
+bool VoicePrintEnrollRequest::QualityCheckHasBeenSet() const
+{
+    return m_qualityCheckHasBeenSet;
 }
 
 

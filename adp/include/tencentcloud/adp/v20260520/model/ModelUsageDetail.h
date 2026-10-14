@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool CallTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否默认知识库</p>
-                     * @return IsDefaultKB <p>是否默认知识库</p>
+                     * 获取<p>是否默认知识库，仅ResourceType=5（知识库容量）业务下有意义</p>
+                     * @return IsDefaultKB <p>是否默认知识库，仅ResourceType=5（知识库容量）业务下有意义</p>
                      * 
                      */
                     bool GetIsDefaultKB() const;
 
                     /**
-                     * 设置<p>是否默认知识库</p>
-                     * @param _isDefaultKB <p>是否默认知识库</p>
+                     * 设置<p>是否默认知识库，仅ResourceType=5（知识库容量）业务下有意义</p>
+                     * @param _isDefaultKB <p>是否默认知识库，仅ResourceType=5（知识库容量）业务下有意义</p>
                      * 
                      */
                     void SetIsDefaultKB(const bool& _isDefaultKB);
@@ -161,7 +161,7 @@ namespace TencentCloud
                     bool m_callTypeHasBeenSet;
 
                     /**
-                     * <p>是否默认知识库</p>
+                     * <p>是否默认知识库，仅ResourceType=5（知识库容量）业务下有意义</p>
                      */
                     bool m_isDefaultKB;
                     bool m_isDefaultKBHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模型基本信息
+                * <p>模型基本信息（已弃用，请使用 ModelProfile）</p>
                 */
                 class ModelBasic : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型描述
-                     * @return Description 模型描述
+                     * 获取<p>模型描述</p>
+                     * @return Description <p>模型描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置模型描述
-                     * @param _description 模型描述
+                     * 设置<p>模型描述</p>
+                     * @param _description <p>模型描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取模型图标地址
-                     * @return IconUrl 模型图标地址
+                     * 获取<p>模型图标地址</p>
+                     * @return IconUrl <p>模型图标地址</p>
                      * 
                      */
                     std::string GetIconUrl() const;
 
                     /**
-                     * 设置模型图标地址
-                     * @param _iconUrl 模型图标地址
+                     * 设置<p>模型图标地址</p>
+                     * @param _iconUrl <p>模型图标地址</p>
                      * 
                      */
                     void SetIconUrl(const std::string& _iconUrl);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IconUrlHasBeenSet() const;
 
                     /**
-                     * 获取模型ID
-                     * @return ModelId 模型ID
+                     * 获取<p>模型ID</p>
+                     * @return ModelId <p>模型ID</p>
                      * 
                      */
                     std::string GetModelId() const;
 
                     /**
-                     * 设置模型ID
-                     * @param _modelId 模型ID
+                     * 设置<p>模型ID</p>
+                     * @param _modelId <p>模型ID</p>
                      * 
                      */
                     void SetModelId(const std::string& _modelId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ModelIdHasBeenSet() const;
 
                     /**
-                     * 获取模型类型。1-LLM模型, 2-Rerank模型, 3-Embedding模型, 4-文档解析模型
-                     * @return ModelType 模型类型。1-LLM模型, 2-Rerank模型, 3-Embedding模型, 4-文档解析模型
+                     * 获取<p>模型类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_TYPE_LLM</td><td>1</td><td>LLM模型</td></tr><tr><td>MODEL_TYPE_RERANK</td><td>2</td><td>Rerank模型</td></tr><tr><td>MODEL_TYPE_EMBEDDING</td><td>3</td><td>Embedding模型</td></tr><tr><td>MODEL_TYPE_FILE_PARSE</td><td>4</td><td>文档解析模型</td></tr></table>
+                     * @return ModelType <p>模型类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_TYPE_LLM</td><td>1</td><td>LLM模型</td></tr><tr><td>MODEL_TYPE_RERANK</td><td>2</td><td>Rerank模型</td></tr><tr><td>MODEL_TYPE_EMBEDDING</td><td>3</td><td>Embedding模型</td></tr><tr><td>MODEL_TYPE_FILE_PARSE</td><td>4</td><td>文档解析模型</td></tr></table>
                      * 
                      */
                     int64_t GetModelType() const;
 
                     /**
-                     * 设置模型类型。1-LLM模型, 2-Rerank模型, 3-Embedding模型, 4-文档解析模型
-                     * @param _modelType 模型类型。1-LLM模型, 2-Rerank模型, 3-Embedding模型, 4-文档解析模型
+                     * 设置<p>模型类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_TYPE_LLM</td><td>1</td><td>LLM模型</td></tr><tr><td>MODEL_TYPE_RERANK</td><td>2</td><td>Rerank模型</td></tr><tr><td>MODEL_TYPE_EMBEDDING</td><td>3</td><td>Embedding模型</td></tr><tr><td>MODEL_TYPE_FILE_PARSE</td><td>4</td><td>文档解析模型</td></tr></table>
+                     * @param _modelType <p>模型类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_TYPE_LLM</td><td>1</td><td>LLM模型</td></tr><tr><td>MODEL_TYPE_RERANK</td><td>2</td><td>Rerank模型</td></tr><tr><td>MODEL_TYPE_EMBEDDING</td><td>3</td><td>Embedding模型</td></tr><tr><td>MODEL_TYPE_FILE_PARSE</td><td>4</td><td>文档解析模型</td></tr></table>
                      * 
                      */
                     void SetModelType(const int64_t& _modelType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ModelTypeHasBeenSet() const;
 
                     /**
-                     * 获取模型名称
-                     * @return Name 模型名称
+                     * 获取<p>模型名称</p>
+                     * @return Name <p>模型名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置模型名称
-                     * @param _name 模型名称
+                     * 设置<p>模型名称</p>
+                     * @param _name <p>模型名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -154,31 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型描述
+                     * <p>模型描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 模型图标地址
+                     * <p>模型图标地址</p>
                      */
                     std::string m_iconUrl;
                     bool m_iconUrlHasBeenSet;
 
                     /**
-                     * 模型ID
+                     * <p>模型ID</p>
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;
 
                     /**
-                     * 模型类型。1-LLM模型, 2-Rerank模型, 3-Embedding模型, 4-文档解析模型
+                     * <p>模型类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_TYPE_LLM</td><td>1</td><td>LLM模型</td></tr><tr><td>MODEL_TYPE_RERANK</td><td>2</td><td>Rerank模型</td></tr><tr><td>MODEL_TYPE_EMBEDDING</td><td>3</td><td>Embedding模型</td></tr><tr><td>MODEL_TYPE_FILE_PARSE</td><td>4</td><td>文档解析模型</td></tr></table>
                      */
                     int64_t m_modelType;
                     bool m_modelTypeHasBeenSet;
 
                     /**
-                     * 模型名称
+                     * <p>模型名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

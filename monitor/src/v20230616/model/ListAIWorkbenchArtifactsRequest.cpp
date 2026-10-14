@@ -27,7 +27,9 @@ ListAIWorkbenchArtifactsRequest::ListAIWorkbenchArtifactsRequest() :
     m_pageNoHasBeenSet(false),
     m_sessionIdsHasBeenSet(false),
     m_mimeTypesHasBeenSet(false),
-    m_orderDirectionHasBeenSet(false)
+    m_orderDirectionHasBeenSet(false),
+    m_agentIdHasBeenSet(false),
+    m_nameKeywordHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,22 @@ string ListAIWorkbenchArtifactsRequest::ToJsonString() const
         string key = "OrderDirection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderDirection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_agentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameKeywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameKeyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nameKeyword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -174,6 +192,38 @@ void ListAIWorkbenchArtifactsRequest::SetOrderDirection(const string& _orderDire
 bool ListAIWorkbenchArtifactsRequest::OrderDirectionHasBeenSet() const
 {
     return m_orderDirectionHasBeenSet;
+}
+
+string ListAIWorkbenchArtifactsRequest::GetAgentId() const
+{
+    return m_agentId;
+}
+
+void ListAIWorkbenchArtifactsRequest::SetAgentId(const string& _agentId)
+{
+    m_agentId = _agentId;
+    m_agentIdHasBeenSet = true;
+}
+
+bool ListAIWorkbenchArtifactsRequest::AgentIdHasBeenSet() const
+{
+    return m_agentIdHasBeenSet;
+}
+
+string ListAIWorkbenchArtifactsRequest::GetNameKeyword() const
+{
+    return m_nameKeyword;
+}
+
+void ListAIWorkbenchArtifactsRequest::SetNameKeyword(const string& _nameKeyword)
+{
+    m_nameKeyword = _nameKeyword;
+    m_nameKeywordHasBeenSet = true;
+}
+
+bool ListAIWorkbenchArtifactsRequest::NameKeywordHasBeenSet() const
+{
+    return m_nameKeywordHasBeenSet;
 }
 
 

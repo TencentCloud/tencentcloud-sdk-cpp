@@ -1140,6 +1140,56 @@ AdpClient::CreateWebSocketTokenOutcomeCallable AdpClient::CreateWebSocketTokenCa
     return prom->get_future();
 }
 
+AdpClient::CreateWorkflowRunOutcome AdpClient::CreateWorkflowRun(const CreateWorkflowRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWorkflowRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWorkflowRunResponse rsp = CreateWorkflowRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWorkflowRunOutcome(rsp);
+        else
+            return CreateWorkflowRunOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWorkflowRunOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateWorkflowRunAsync(const CreateWorkflowRunRequest& request, const CreateWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateWorkflowRunRequest&;
+    using Resp = CreateWorkflowRunResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateWorkflowRun", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateWorkflowRunOutcomeCallable AdpClient::CreateWorkflowRunCallable(const CreateWorkflowRunRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateWorkflowRunOutcome>>();
+    CreateWorkflowRunAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateWorkflowRunRequest&,
+        CreateWorkflowRunOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CreateWorkspaceCredentialOutcome AdpClient::CreateWorkspaceCredential(const CreateWorkspaceCredentialRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateWorkspaceCredential");
@@ -3690,6 +3740,106 @@ AdpClient::DescribeMsgRecordListOutcomeCallable AdpClient::DescribeMsgRecordList
     return prom->get_future();
 }
 
+AdpClient::DescribeNodeBatchRunOutcome AdpClient::DescribeNodeBatchRun(const DescribeNodeBatchRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNodeBatchRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNodeBatchRunResponse rsp = DescribeNodeBatchRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNodeBatchRunOutcome(rsp);
+        else
+            return DescribeNodeBatchRunOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNodeBatchRunOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeNodeBatchRunAsync(const DescribeNodeBatchRunRequest& request, const DescribeNodeBatchRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNodeBatchRunRequest&;
+    using Resp = DescribeNodeBatchRunResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNodeBatchRun", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeNodeBatchRunOutcomeCallable AdpClient::DescribeNodeBatchRunCallable(const DescribeNodeBatchRunRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNodeBatchRunOutcome>>();
+    DescribeNodeBatchRunAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeNodeBatchRunRequest&,
+        DescribeNodeBatchRunOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeNodeRunDetailOutcome AdpClient::DescribeNodeRunDetail(const DescribeNodeRunDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNodeRunDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNodeRunDetailResponse rsp = DescribeNodeRunDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNodeRunDetailOutcome(rsp);
+        else
+            return DescribeNodeRunDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNodeRunDetailOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeNodeRunDetailAsync(const DescribeNodeRunDetailRequest& request, const DescribeNodeRunDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeNodeRunDetailRequest&;
+    using Resp = DescribeNodeRunDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeNodeRunDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeNodeRunDetailOutcomeCallable AdpClient::DescribeNodeRunDetailCallable(const DescribeNodeRunDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeNodeRunDetailOutcome>>();
+    DescribeNodeRunDetailAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeNodeRunDetailRequest&,
+        DescribeNodeRunDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DescribePluginOutcome AdpClient::DescribePlugin(const DescribePluginRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePlugin");
@@ -4532,6 +4682,106 @@ AdpClient::DescribeVariableListOutcomeCallable AdpClient::DescribeVariableListCa
         const AdpClient*,
         const DescribeVariableListRequest&,
         DescribeVariableListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeWorkflowRunOutcome AdpClient::DescribeWorkflowRun(const DescribeWorkflowRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkflowRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkflowRunResponse rsp = DescribeWorkflowRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkflowRunOutcome(rsp);
+        else
+            return DescribeWorkflowRunOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkflowRunOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeWorkflowRunAsync(const DescribeWorkflowRunRequest& request, const DescribeWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWorkflowRunRequest&;
+    using Resp = DescribeWorkflowRunResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkflowRun", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeWorkflowRunOutcomeCallable AdpClient::DescribeWorkflowRunCallable(const DescribeWorkflowRunRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWorkflowRunOutcome>>();
+    DescribeWorkflowRunAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeWorkflowRunRequest&,
+        DescribeWorkflowRunOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribeWorkflowRunSummaryListOutcome AdpClient::DescribeWorkflowRunSummaryList(const DescribeWorkflowRunSummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkflowRunSummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkflowRunSummaryListResponse rsp = DescribeWorkflowRunSummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkflowRunSummaryListOutcome(rsp);
+        else
+            return DescribeWorkflowRunSummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkflowRunSummaryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribeWorkflowRunSummaryListAsync(const DescribeWorkflowRunSummaryListRequest& request, const DescribeWorkflowRunSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWorkflowRunSummaryListRequest&;
+    using Resp = DescribeWorkflowRunSummaryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkflowRunSummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribeWorkflowRunSummaryListOutcomeCallable AdpClient::DescribeWorkflowRunSummaryListCallable(const DescribeWorkflowRunSummaryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWorkflowRunSummaryListOutcome>>();
+    DescribeWorkflowRunSummaryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribeWorkflowRunSummaryListRequest&,
+        DescribeWorkflowRunSummaryListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -5840,6 +6090,56 @@ AdpClient::ResumeAppTriggerOutcomeCallable AdpClient::ResumeAppTriggerCallable(c
     return prom->get_future();
 }
 
+AdpClient::ResumeWorkflowRunOutcome AdpClient::ResumeWorkflowRun(const ResumeWorkflowRunRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeWorkflowRun");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeWorkflowRunResponse rsp = ResumeWorkflowRunResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeWorkflowRunOutcome(rsp);
+        else
+            return ResumeWorkflowRunOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeWorkflowRunOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ResumeWorkflowRunAsync(const ResumeWorkflowRunRequest& request, const ResumeWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResumeWorkflowRunRequest&;
+    using Resp = ResumeWorkflowRunResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResumeWorkflowRun", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ResumeWorkflowRunOutcomeCallable AdpClient::ResumeWorkflowRunCallable(const ResumeWorkflowRunRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResumeWorkflowRunOutcome>>();
+    ResumeWorkflowRunAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ResumeWorkflowRunRequest&,
+        ResumeWorkflowRunOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::RetryReleaseOutcome AdpClient::RetryRelease(const RetryReleaseRequest &request)
 {
     auto outcome = MakeRequest(request, "RetryRelease");
@@ -5990,6 +6290,106 @@ AdpClient::RunAppTriggerNowOutcomeCallable AdpClient::RunAppTriggerNowCallable(c
     return prom->get_future();
 }
 
+AdpClient::SaveWorkflowDebugContextOutcome AdpClient::SaveWorkflowDebugContext(const SaveWorkflowDebugContextRequest &request)
+{
+    auto outcome = MakeRequest(request, "SaveWorkflowDebugContext");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SaveWorkflowDebugContextResponse rsp = SaveWorkflowDebugContextResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SaveWorkflowDebugContextOutcome(rsp);
+        else
+            return SaveWorkflowDebugContextOutcome(o.GetError());
+    }
+    else
+    {
+        return SaveWorkflowDebugContextOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::SaveWorkflowDebugContextAsync(const SaveWorkflowDebugContextRequest& request, const SaveWorkflowDebugContextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SaveWorkflowDebugContextRequest&;
+    using Resp = SaveWorkflowDebugContextResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SaveWorkflowDebugContext", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::SaveWorkflowDebugContextOutcomeCallable AdpClient::SaveWorkflowDebugContextCallable(const SaveWorkflowDebugContextRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SaveWorkflowDebugContextOutcome>>();
+    SaveWorkflowDebugContextAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const SaveWorkflowDebugContextRequest&,
+        SaveWorkflowDebugContextOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::SaveWorkflowToolNodeOutputOutcome AdpClient::SaveWorkflowToolNodeOutput(const SaveWorkflowToolNodeOutputRequest &request)
+{
+    auto outcome = MakeRequest(request, "SaveWorkflowToolNodeOutput");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SaveWorkflowToolNodeOutputResponse rsp = SaveWorkflowToolNodeOutputResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SaveWorkflowToolNodeOutputOutcome(rsp);
+        else
+            return SaveWorkflowToolNodeOutputOutcome(o.GetError());
+    }
+    else
+    {
+        return SaveWorkflowToolNodeOutputOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::SaveWorkflowToolNodeOutputAsync(const SaveWorkflowToolNodeOutputRequest& request, const SaveWorkflowToolNodeOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SaveWorkflowToolNodeOutputRequest&;
+    using Resp = SaveWorkflowToolNodeOutputResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SaveWorkflowToolNodeOutput", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::SaveWorkflowToolNodeOutputOutcomeCallable AdpClient::SaveWorkflowToolNodeOutputCallable(const SaveWorkflowToolNodeOutputRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SaveWorkflowToolNodeOutputOutcome>>();
+    SaveWorkflowToolNodeOutputAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const SaveWorkflowToolNodeOutputRequest&,
+        SaveWorkflowToolNodeOutputOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::SearchKnowledgeOutcome AdpClient::SearchKnowledge(const SearchKnowledgeRequest &request)
 {
     auto outcome = MakeRequest(request, "SearchKnowledge");
@@ -6032,6 +6432,56 @@ AdpClient::SearchKnowledgeOutcomeCallable AdpClient::SearchKnowledgeCallable(con
         const AdpClient*,
         const SearchKnowledgeRequest&,
         SearchKnowledgeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::StopWorkflowRunListOutcome AdpClient::StopWorkflowRunList(const StopWorkflowRunListRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopWorkflowRunList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopWorkflowRunListResponse rsp = StopWorkflowRunListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopWorkflowRunListOutcome(rsp);
+        else
+            return StopWorkflowRunListOutcome(o.GetError());
+    }
+    else
+    {
+        return StopWorkflowRunListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::StopWorkflowRunListAsync(const StopWorkflowRunListRequest& request, const StopWorkflowRunListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopWorkflowRunListRequest&;
+    using Resp = StopWorkflowRunListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopWorkflowRunList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::StopWorkflowRunListOutcomeCallable AdpClient::StopWorkflowRunListCallable(const StopWorkflowRunListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopWorkflowRunListOutcome>>();
+    StopWorkflowRunListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const StopWorkflowRunListRequest&,
+        StopWorkflowRunListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

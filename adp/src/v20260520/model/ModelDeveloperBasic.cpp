@@ -21,8 +21,8 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 ModelDeveloperBasic::ModelDeveloperBasic() :
-    m_nameHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+    m_aliasHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome ModelDeveloperBasic::Deserialize(const rapidjson::Value &val
 {
     string requestId = "";
 
-
-    if (value.HasMember("Name") && !value["Name"].IsNull())
-    {
-        if (!value["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ModelDeveloperBasic.Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
-    }
 
     if (value.HasMember("Alias") && !value["Alias"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome ModelDeveloperBasic::Deserialize(const rapidjson::Value &val
         m_aliasHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelDeveloperBasic.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void ModelDeveloperBasic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_aliasHasBeenSet)
     {
@@ -74,24 +66,16 @@ void ModelDeveloperBasic::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string ModelDeveloperBasic::GetName() const
-{
-    return m_name;
-}
-
-void ModelDeveloperBasic::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool ModelDeveloperBasic::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
-}
 
 string ModelDeveloperBasic::GetAlias() const
 {
@@ -107,5 +91,21 @@ void ModelDeveloperBasic::SetAlias(const string& _alias)
 bool ModelDeveloperBasic::AliasHasBeenSet() const
 {
     return m_aliasHasBeenSet;
+}
+
+string ModelDeveloperBasic::GetName() const
+{
+    return m_name;
+}
+
+void ModelDeveloperBasic::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool ModelDeveloperBasic::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 

@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return AppId 应用ID
+                     * 获取<p>应用ID</p>
+                     * @return AppId <p>应用ID</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param _appId 应用ID
+                     * 设置<p>应用ID</p>
+                     * @param _appId <p>应用ID</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式
-                     * @return AppMode 应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式
+                     * 获取<p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>
+                     * @return AppMode <p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>
                      * 
                      */
                     int64_t GetAppMode() const;
 
                     /**
-                     * 设置应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式
-                     * @param _appMode 应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式
+                     * 设置<p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>
+                     * @param _appMode <p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>
                      * 
                      */
                     void SetAppMode(const int64_t& _appMode);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool AppModeHasBeenSet() const;
 
                     /**
-                     * 获取应用头像
-                     * @return Avatar 应用头像
+                     * 获取<p>应用头像</p>
+                     * @return Avatar <p>应用头像</p>
                      * 
                      */
                     std::string GetAvatar() const;
 
                     /**
-                     * 设置应用头像
-                     * @param _avatar 应用头像
+                     * 设置<p>应用头像</p>
+                     * @param _avatar <p>应用头像</p>
                      * 
                      */
                     void SetAvatar(const std::string& _avatar);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool AvatarHasBeenSet() const;
 
                     /**
-                     * 获取应用名称
-                     * @return Name 应用名称
+                     * 获取<p>应用名称</p>
+                     * @return Name <p>应用名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置应用名称
-                     * @param _name 应用名称
+                     * 设置<p>应用名称</p>
+                     * @param _name <p>应用名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -134,18 +134,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取操作信息
+                     * 获取<p>操作信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperationInfo 操作信息
+                     * @return OperationInfo <p>操作信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppOperation GetOperationInfo() const;
 
                     /**
-                     * 设置操作信息
+                     * 设置<p>操作信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operationInfo 操作信息
+                     * @param _operationInfo <p>操作信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -159,18 +159,18 @@ namespace TencentCloud
                     bool OperationInfoHasBeenSet() const;
 
                     /**
-                     * 获取状态信息
+                     * 获取<p>状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态信息
+                     * @return Status <p>状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppStatusInfo GetStatus() const;
 
                     /**
-                     * 设置状态信息
+                     * 设置<p>状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态信息
+                     * @param _status <p>状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -184,18 +184,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取子状态信息
+                     * 获取<p>子状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubStatus 子状态信息
+                     * @return SubStatus <p>子状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppSubStatusInfo GetSubStatus() const;
 
                     /**
-                     * 设置子状态信息
+                     * 设置<p>子状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subStatus 子状态信息
+                     * @param _subStatus <p>子状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -209,15 +209,15 @@ namespace TencentCloud
                     bool SubStatusHasBeenSet() const;
 
                     /**
-                     * 获取资源操作权限
-                     * @return PermissionIdList 资源操作权限
+                     * 获取<p>资源操作权限</p>
+                     * @return PermissionIdList <p>资源操作权限</p>
                      * 
                      */
                     std::vector<std::string> GetPermissionIdList() const;
 
                     /**
-                     * 设置资源操作权限
-                     * @param _permissionIdList 资源操作权限
+                     * 设置<p>资源操作权限</p>
+                     * @param _permissionIdList <p>资源操作权限</p>
                      * 
                      */
                     void SetPermissionIdList(const std::vector<std::string>& _permissionIdList);
@@ -229,58 +229,85 @@ namespace TencentCloud
                      */
                     bool PermissionIdListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>应用描述信息</p>
+                     * @return Description <p>应用描述信息</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>应用描述信息</p>
+                     * @param _description <p>应用描述信息</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式
+                     * <p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>
                      */
                     int64_t m_appMode;
                     bool m_appModeHasBeenSet;
 
                     /**
-                     * 应用头像
+                     * <p>应用头像</p>
                      */
                     std::string m_avatar;
                     bool m_avatarHasBeenSet;
 
                     /**
-                     * 应用名称
+                     * <p>应用名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 操作信息
+                     * <p>操作信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppOperation m_operationInfo;
                     bool m_operationInfoHasBeenSet;
 
                     /**
-                     * 状态信息
+                     * <p>状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppStatusInfo m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 子状态信息
+                     * <p>子状态信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppSubStatusInfo m_subStatus;
                     bool m_subStatusHasBeenSet;
 
                     /**
-                     * 资源操作权限
+                     * <p>资源操作权限</p>
                      */
                     std::vector<std::string> m_permissionIdList;
                     bool m_permissionIdListHasBeenSet;
+
+                    /**
+                     * <p>应用描述信息</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

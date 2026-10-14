@@ -26,7 +26,8 @@ ImageAssociatedAssetCount::ImageAssociatedAssetCount() :
     m_containerCountHasBeenSet(false),
     m_ownerAccountNameHasBeenSet(false),
     m_ownerAppIdHasBeenSet(false),
-    m_ownerUinHasBeenSet(false)
+    m_ownerUinHasBeenSet(false),
+    m_superNodeHostCountHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ImageAssociatedAssetCount::Deserialize(const rapidjson::Valu
         m_ownerUinHasBeenSet = true;
     }
 
+    if (value.HasMember("SuperNodeHostCount") && !value["SuperNodeHostCount"].IsNull())
+    {
+        if (!value["SuperNodeHostCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssociatedAssetCount.SuperNodeHostCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_superNodeHostCount = value["SuperNodeHostCount"].GetUint64();
+        m_superNodeHostCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ImageAssociatedAssetCount::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "OwnerUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ownerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_superNodeHostCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperNodeHostCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_superNodeHostCount, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ImageAssociatedAssetCount::SetOwnerUin(const string& _ownerUin)
 bool ImageAssociatedAssetCount::OwnerUinHasBeenSet() const
 {
     return m_ownerUinHasBeenSet;
+}
+
+uint64_t ImageAssociatedAssetCount::GetSuperNodeHostCount() const
+{
+    return m_superNodeHostCount;
+}
+
+void ImageAssociatedAssetCount::SetSuperNodeHostCount(const uint64_t& _superNodeHostCount)
+{
+    m_superNodeHostCount = _superNodeHostCount;
+    m_superNodeHostCountHasBeenSet = true;
+}
+
+bool ImageAssociatedAssetCount::SuperNodeHostCountHasBeenSet() const
+{
+    return m_superNodeHostCountHasBeenSet;
 }
 

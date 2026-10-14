@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/WarehouseProfileBriefInfo.h>
 #include <tencentcloud/dlc/v20210125/model/KVPair.h>
 
 
@@ -214,6 +215,31 @@ namespace TencentCloud
                      * 
                      */
                     bool QueueNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>规格详情（profile 完整基础信息，describe 与 list 均返回）.</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProfileDetail <p>规格详情（profile 完整基础信息，describe 与 list 均返回）.</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    WarehouseProfileBriefInfo GetProfileDetail() const;
+
+                    /**
+                     * 设置<p>规格详情（profile 完整基础信息，describe 与 list 均返回）.</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _profileDetail <p>规格详情（profile 完整基础信息，describe 与 list 均返回）.</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProfileDetail(const WarehouseProfileBriefInfo& _profileDetail);
+
+                    /**
+                     * 判断参数 ProfileDetail 是否已赋值
+                     * @return ProfileDetail 是否已赋值
+                     * 
+                     */
+                    bool ProfileDetailHasBeenSet() const;
 
                     /**
                      * 获取<p>创建时间（毫秒时间戳）。</p>
@@ -495,6 +521,13 @@ namespace TencentCloud
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
+
+                    /**
+                     * <p>规格详情（profile 完整基础信息，describe 与 list 均返回）.</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WarehouseProfileBriefInfo m_profileDetail;
+                    bool m_profileDetailHasBeenSet;
 
                     /**
                      * <p>创建时间（毫秒时间戳）。</p>

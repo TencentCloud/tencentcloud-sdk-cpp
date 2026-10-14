@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取空间ID
-                     * @return SpaceId 空间ID
+                     * 获取<p>空间ID</p>
+                     * @return SpaceId <p>空间ID</p>
                      * 
                      */
                     std::string GetSpaceId() const;
 
                     /**
-                     * 设置空间ID
-                     * @param _spaceId 空间ID
+                     * 设置<p>空间ID</p>
+                     * @param _spaceId <p>空间ID</p>
                      * 
                      */
                     void SetSpaceId(const std::string& _spaceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SpaceIdHasBeenSet() const;
 
                     /**
-                     * 获取应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式
-                     * @return AppMode 应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式
+                     * 获取<p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>
+                     * @return AppMode <p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>
                      * 
                      */
                     int64_t GetAppMode() const;
 
                     /**
-                     * 设置应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式
-                     * @param _appMode 应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式
+                     * 设置<p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>
+                     * @param _appMode <p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>
                      * 
                      */
                     void SetAppMode(const int64_t& _appMode);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AppModeHasBeenSet() const;
 
                     /**
-                     * 获取应用头像
-                     * @return Avatar 应用头像
+                     * 获取<p>应用头像</p>
+                     * @return Avatar <p>应用头像</p>
                      * 
                      */
                     std::string GetAvatar() const;
 
                     /**
-                     * 设置应用头像
-                     * @param _avatar 应用头像
+                     * 设置<p>应用头像</p>
+                     * @param _avatar <p>应用头像</p>
                      * 
                      */
                     void SetAvatar(const std::string& _avatar);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AvatarHasBeenSet() const;
 
                     /**
-                     * 获取应用描述
-                     * @return Description 应用描述
+                     * 获取<p>应用描述</p>
+                     * @return Description <p>应用描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置应用描述
-                     * @param _description 应用描述
+                     * 设置<p>应用描述</p>
+                     * @param _description <p>应用描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取应用名称
-                     * @return Name 应用名称
+                     * 获取<p>应用名称</p>
+                     * @return Name <p>应用名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置应用名称
-                     * @param _name 应用名称
+                     * 设置<p>应用名称</p>
+                     * @param _name <p>应用名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 空间ID
+                     * <p>空间ID</p>
                      */
                     std::string m_spaceId;
                     bool m_spaceIdHasBeenSet;
 
                     /**
-                     * 应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式
+                     * <p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>
                      */
                     int64_t m_appMode;
                     bool m_appModeHasBeenSet;
 
                     /**
-                     * 应用头像
+                     * <p>应用头像</p>
                      */
                     std::string m_avatar;
                     bool m_avatarHasBeenSet;
 
                     /**
-                     * 应用描述
+                     * <p>应用描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 应用名称
+                     * <p>应用名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

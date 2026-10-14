@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 Id
-                     * @return RegistryId 实例 Id
+                     * 获取<p>实例 Id</p>
+                     * @return RegistryId <p>实例 Id</p>
                      * 
                      */
                     std::string GetRegistryId() const;
 
                     /**
-                     * 设置实例 Id
-                     * @param _registryId 实例 Id
+                     * 设置<p>实例 Id</p>
+                     * @param _registryId <p>实例 Id</p>
                      * 
                      */
                     void SetRegistryId(const std::string& _registryId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
-                     * 获取触发器参数
-                     * @return Trigger 触发器参数
+                     * 获取<p>触发器参数</p>
+                     * @return Trigger <p>触发器参数</p>
                      * 
                      */
                     WebhookTrigger GetTrigger() const;
 
                     /**
-                     * 设置触发器参数
-                     * @param _trigger 触发器参数
+                     * 设置<p>触发器参数</p>
+                     * @param _trigger <p>触发器参数</p>
                      * 
                      */
                     void SetTrigger(const WebhookTrigger& _trigger);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool TriggerHasBeenSet() const;
 
                     /**
-                     * 获取命名空间
-                     * @return Namespace 命名空间
+                     * 获取<p>命名空间</p>
+                     * @return Namespace <p>命名空间</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置命名空间
-                     * @param _namespace 命名空间
+                     * 设置<p>命名空间</p>
+                     * @param _namespace <p>命名空间</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -106,25 +106,79 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>产品名称，非空时创建的 webhook 将被隐藏</p>
+                     * @return Product <p>产品名称，非空时创建的 webhook 将被隐藏</p>
+                     * 
+                     */
+                    std::string GetProduct() const;
+
+                    /**
+                     * 设置<p>产品名称，非空时创建的 webhook 将被隐藏</p>
+                     * @param _product <p>产品名称，非空时创建的 webhook 将被隐藏</p>
+                     * 
+                     */
+                    void SetProduct(const std::string& _product);
+
+                    /**
+                     * 判断参数 Product 是否已赋值
+                     * @return Product 是否已赋值
+                     * 
+                     */
+                    bool ProductHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+                     * @return PreheatRegion <p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+                     * 
+                     */
+                    std::string GetPreheatRegion() const;
+
+                    /**
+                     * 设置<p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+                     * @param _preheatRegion <p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+                     * 
+                     */
+                    void SetPreheatRegion(const std::string& _preheatRegion);
+
+                    /**
+                     * 判断参数 PreheatRegion 是否已赋值
+                     * @return PreheatRegion 是否已赋值
+                     * 
+                     */
+                    bool PreheatRegionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例 Id
+                     * <p>实例 Id</p>
                      */
                     std::string m_registryId;
                     bool m_registryIdHasBeenSet;
 
                     /**
-                     * 触发器参数
+                     * <p>触发器参数</p>
                      */
                     WebhookTrigger m_trigger;
                     bool m_triggerHasBeenSet;
 
                     /**
-                     * 命名空间
+                     * <p>命名空间</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * <p>产品名称，非空时创建的 webhook 将被隐藏</p>
+                     */
+                    std::string m_product;
+                    bool m_productHasBeenSet;
+
+                    /**
+                     * <p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+                     */
+                    std::string m_preheatRegion;
+                    bool m_preheatRegionHasBeenSet;
 
                 };
             }

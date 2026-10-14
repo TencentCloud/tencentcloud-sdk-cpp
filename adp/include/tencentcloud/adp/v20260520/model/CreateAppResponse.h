@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取app_id
-                     * @return AppId app_id
+                     * 获取<p>app_id</p>
+                     * @return AppId <p>app_id</p>
                      * 
                      */
                     std::string GetAppId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * app_id
+                     * <p>app_id</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;

@@ -30,7 +30,8 @@ ResourceSpec::ResourceSpec() :
     m_maxNodeSizeHasBeenSet(false),
     m_availableHasBeenSet(false),
     m_computeSpecDescHasBeenSet(false),
-    m_instanceQuotaHasBeenSet(false)
+    m_instanceQuotaHasBeenSet(false),
+    m_computeGroupSuffixHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome ResourceSpec::Deserialize(const rapidjson::Value &value)
         m_instanceQuotaHasBeenSet = true;
     }
 
+    if (value.HasMember("ComputeGroupSuffix") && !value["ComputeGroupSuffix"].IsNull())
+    {
+        if (!value["ComputeGroupSuffix"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceSpec.ComputeGroupSuffix` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeGroupSuffix = string(value["ComputeGroupSuffix"].GetString());
+        m_computeGroupSuffixHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +251,14 @@ void ResourceSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "InstanceQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceQuota, allocator);
+    }
+
+    if (m_computeGroupSuffixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupSuffix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computeGroupSuffix.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -403,5 +422,21 @@ void ResourceSpec::SetInstanceQuota(const int64_t& _instanceQuota)
 bool ResourceSpec::InstanceQuotaHasBeenSet() const
 {
     return m_instanceQuotaHasBeenSet;
+}
+
+string ResourceSpec::GetComputeGroupSuffix() const
+{
+    return m_computeGroupSuffix;
+}
+
+void ResourceSpec::SetComputeGroupSuffix(const string& _computeGroupSuffix)
+{
+    m_computeGroupSuffix = _computeGroupSuffix;
+    m_computeGroupSuffixHasBeenSet = true;
+}
+
+bool ResourceSpec::ComputeGroupSuffixHasBeenSet() const
+{
+    return m_computeGroupSuffixHasBeenSet;
 }
 

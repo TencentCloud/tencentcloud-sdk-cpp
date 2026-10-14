@@ -106,6 +106,48 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>产品名称，非空时创建的 webhook 将被隐藏</p>
+                     * @return Product <p>产品名称，非空时创建的 webhook 将被隐藏</p>
+                     * 
+                     */
+                    std::string GetProduct() const;
+
+                    /**
+                     * 设置<p>产品名称，非空时创建的 webhook 将被隐藏</p>
+                     * @param _product <p>产品名称，非空时创建的 webhook 将被隐藏</p>
+                     * 
+                     */
+                    void SetProduct(const std::string& _product);
+
+                    /**
+                     * 判断参数 Product 是否已赋值
+                     * @return Product 是否已赋值
+                     * 
+                     */
+                    bool ProductHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+                     * @return PreheatRegion <p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+                     * 
+                     */
+                    std::string GetPreheatRegion() const;
+
+                    /**
+                     * 设置<p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+                     * @param _preheatRegion <p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+                     * 
+                     */
+                    void SetPreheatRegion(const std::string& _preheatRegion);
+
+                    /**
+                     * 判断参数 PreheatRegion 是否已赋值
+                     * @return PreheatRegion 是否已赋值
+                     * 
+                     */
+                    bool PreheatRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +167,18 @@ namespace TencentCloud
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * <p>产品名称，非空时创建的 webhook 将被隐藏</p>
+                     */
+                    std::string m_product;
+                    bool m_productHasBeenSet;
+
+                    /**
+                     * <p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+                     */
+                    std::string m_preheatRegion;
+                    bool m_preheatRegionHasBeenSet;
 
                 };
             }

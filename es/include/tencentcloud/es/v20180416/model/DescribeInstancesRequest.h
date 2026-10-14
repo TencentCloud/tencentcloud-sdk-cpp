@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群实例所属可用区，不传则默认所有可用区
-                     * @return Zone 集群实例所属可用区，不传则默认所有可用区
+                     * 获取<p>集群实例所属可用区，不传则默认所有可用区</p>
+                     * @return Zone <p>集群实例所属可用区，不传则默认所有可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置集群实例所属可用区，不传则默认所有可用区
-                     * @param _zone 集群实例所属可用区，不传则默认所有可用区
+                     * 设置<p>集群实例所属可用区，不传则默认所有可用区</p>
+                     * @param _zone <p>集群实例所属可用区，不传则默认所有可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取集群实例ID列表
-                     * @return InstanceIds 集群实例ID列表
+                     * 获取<p>集群实例ID列表</p>
+                     * @return InstanceIds <p>集群实例ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置集群实例ID列表
-                     * @param _instanceIds 集群实例ID列表
+                     * 设置<p>集群实例ID列表</p>
+                     * @param _instanceIds <p>集群实例ID列表</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取集群实例名称列表
-                     * @return InstanceNames 集群实例名称列表
+                     * 获取<p>集群实例名称列表</p>
+                     * @return InstanceNames <p>集群实例名称列表</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceNames() const;
 
                     /**
-                     * 设置集群实例名称列表
-                     * @param _instanceNames 集群实例名称列表
+                     * 设置<p>集群实例名称列表</p>
+                     * @param _instanceNames <p>集群实例名称列表</p>
                      * 
                      */
                     void SetInstanceNames(const std::vector<std::string>& _instanceNames);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool InstanceNamesHasBeenSet() const;
 
                     /**
-                     * 获取分页起始值, 默认值0
-                     * @return Offset 分页起始值, 默认值0
+                     * 获取<p>分页起始值, 默认值0</p>
+                     * @return Offset <p>分页起始值, 默认值0</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页起始值, 默认值0
-                     * @param _offset 分页起始值, 默认值0
+                     * 设置<p>分页起始值, 默认值0</p>
+                     * @param _offset <p>分页起始值, 默认值0</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页大小，默认值20
-                     * @return Limit 分页大小，默认值20
+                     * 获取<p>分页大小，默认值20</p>
+                     * @return Limit <p>分页大小，默认值20</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小，默认值20
-                     * @param _limit 分页大小，默认值20
+                     * 设置<p>分页大小，默认值20</p>
+                     * @param _limit <p>分页大小，默认值20</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序
-                     * @return OrderByKey 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序
+                     * 获取<p>排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序</p>
+                     * @return OrderByKey <p>排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序</p>
                      * 
                      */
                     uint64_t GetOrderByKey() const;
 
                     /**
-                     * 设置排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序
-                     * @param _orderByKey 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序
+                     * 设置<p>排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序</p>
+                     * @param _orderByKey <p>排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序</p>
                      * 
                      */
                     void SetOrderByKey(const uint64_t& _orderByKey);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool OrderByKeyHasBeenSet() const;
 
                     /**
-                     * 获取排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序
-                     * @return OrderByType 排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序
+                     * 获取<p>排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序</p>
+                     * @return OrderByType <p>排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序</p>
                      * 
                      */
                     uint64_t GetOrderByType() const;
 
                     /**
-                     * 设置排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序
-                     * @param _orderByType 排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序
+                     * 设置<p>排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序</p>
+                     * @param _orderByType <p>排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序</p>
                      * 
                      */
                     void SetOrderByType(const uint64_t& _orderByType);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool OrderByTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点标签信息列表
-                     * @return TagList 节点标签信息列表
+                     * 获取<p>节点标签信息列表</p>
+                     * @return TagList <p>节点标签信息列表</p>
                      * 
                      */
                     std::vector<TagInfo> GetTagList() const;
 
                     /**
-                     * 设置节点标签信息列表
-                     * @param _tagList 节点标签信息列表
+                     * 设置<p>节点标签信息列表</p>
+                     * @param _tagList <p>节点标签信息列表</p>
                      * 
                      */
                     void SetTagList(const std::vector<TagInfo>& _tagList);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取私有网络vip列表
-                     * @return IpList 私有网络vip列表
+                     * 获取<p>私有网络vip列表</p>
+                     * @return IpList <p>私有网络vip列表</p>
                      * 
                      */
                     std::vector<std::string> GetIpList() const;
 
                     /**
-                     * 设置私有网络vip列表
-                     * @param _ipList 私有网络vip列表
+                     * 设置<p>私有网络vip列表</p>
+                     * @param _ipList <p>私有网络vip列表</p>
                      * 
                      */
                     void SetIpList(const std::vector<std::string>& _ipList);
@@ -233,15 +233,36 @@ namespace TencentCloud
                     bool IpListHasBeenSet() const;
 
                     /**
-                     * 获取可用区列表
-                     * @return ZoneList 可用区列表
+                     * 获取<p>集群节点IP列表</p>
+                     * @return NodeIps <p>集群节点IP列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetNodeIps() const;
+
+                    /**
+                     * 设置<p>集群节点IP列表</p>
+                     * @param _nodeIps <p>集群节点IP列表</p>
+                     * 
+                     */
+                    void SetNodeIps(const std::vector<std::string>& _nodeIps);
+
+                    /**
+                     * 判断参数 NodeIps 是否已赋值
+                     * @return NodeIps 是否已赋值
+                     * 
+                     */
+                    bool NodeIpsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>可用区列表</p>
+                     * @return ZoneList <p>可用区列表</p>
                      * 
                      */
                     std::vector<std::string> GetZoneList() const;
 
                     /**
-                     * 设置可用区列表
-                     * @param _zoneList 可用区列表
+                     * 设置<p>可用区列表</p>
+                     * @param _zoneList <p>可用区列表</p>
                      * 
                      */
                     void SetZoneList(const std::vector<std::string>& _zoneList);
@@ -254,15 +275,15 @@ namespace TencentCloud
                     bool ZoneListHasBeenSet() const;
 
                     /**
-                     * 获取健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知
-                     * @return HealthStatus 健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知
+                     * 获取<p>健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知</p>
+                     * @return HealthStatus <p>健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知</p>
                      * 
                      */
                     std::vector<int64_t> GetHealthStatus() const;
 
                     /**
-                     * 设置健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知
-                     * @param _healthStatus 健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知
+                     * 设置<p>健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知</p>
+                     * @param _healthStatus <p>健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知</p>
                      * 
                      */
                     void SetHealthStatus(const std::vector<int64_t>& _healthStatus);
@@ -275,15 +296,15 @@ namespace TencentCloud
                     bool HealthStatusHasBeenSet() const;
 
                     /**
-                     * 获取Vpc列表 筛选项
-                     * @return VpcIds Vpc列表 筛选项
+                     * 获取<p>Vpc列表 筛选项</p>
+                     * @return VpcIds <p>Vpc列表 筛选项</p>
                      * 
                      */
                     std::vector<std::string> GetVpcIds() const;
 
                     /**
-                     * 设置Vpc列表 筛选项
-                     * @param _vpcIds Vpc列表 筛选项
+                     * 设置<p>Vpc列表 筛选项</p>
+                     * @param _vpcIds <p>Vpc列表 筛选项</p>
                      * 
                      */
                     void SetVpcIds(const std::vector<std::string>& _vpcIds);
@@ -296,15 +317,15 @@ namespace TencentCloud
                     bool VpcIdsHasBeenSet() const;
 
                     /**
-                     * 获取cdc集群id
-                     * @return CdcId cdc集群id
+                     * 获取<p>cdc集群id</p>
+                     * @return CdcId <p>cdc集群id</p>
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置cdc集群id
-                     * @param _cdcId cdc集群id
+                     * 设置<p>cdc集群id</p>
+                     * @param _cdcId <p>cdc集群id</p>
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -319,79 +340,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群实例所属可用区，不传则默认所有可用区
+                     * <p>集群实例所属可用区，不传则默认所有可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 集群实例ID列表
+                     * <p>集群实例ID列表</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 集群实例名称列表
+                     * <p>集群实例名称列表</p>
                      */
                     std::vector<std::string> m_instanceNames;
                     bool m_instanceNamesHasBeenSet;
 
                     /**
-                     * 分页起始值, 默认值0
+                     * <p>分页起始值, 默认值0</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页大小，默认值20
+                     * <p>分页大小，默认值20</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序
+                     * <p>排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序</p>
                      */
                     uint64_t m_orderByKey;
                     bool m_orderByKeyHasBeenSet;
 
                     /**
-                     * 排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序
+                     * <p>排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序</p>
                      */
                     uint64_t m_orderByType;
                     bool m_orderByTypeHasBeenSet;
 
                     /**
-                     * 节点标签信息列表
+                     * <p>节点标签信息列表</p>
                      */
                     std::vector<TagInfo> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 私有网络vip列表
+                     * <p>私有网络vip列表</p>
                      */
                     std::vector<std::string> m_ipList;
                     bool m_ipListHasBeenSet;
 
                     /**
-                     * 可用区列表
+                     * <p>集群节点IP列表</p>
+                     */
+                    std::vector<std::string> m_nodeIps;
+                    bool m_nodeIpsHasBeenSet;
+
+                    /**
+                     * <p>可用区列表</p>
                      */
                     std::vector<std::string> m_zoneList;
                     bool m_zoneListHasBeenSet;
 
                     /**
-                     * 健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知
+                     * <p>健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知</p>
                      */
                     std::vector<int64_t> m_healthStatus;
                     bool m_healthStatusHasBeenSet;
 
                     /**
-                     * Vpc列表 筛选项
+                     * <p>Vpc列表 筛选项</p>
                      */
                     std::vector<std::string> m_vpcIds;
                     bool m_vpcIdsHasBeenSet;
 
                     /**
-                     * cdc集群id
+                     * <p>cdc集群id</p>
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;

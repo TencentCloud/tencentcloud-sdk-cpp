@@ -23,7 +23,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DeleteExportRequest::DeleteExportRequest() :
-    m_exportIdHasBeenSet(false)
+    m_exportIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DeleteExportRequest::ToJsonString() const
         string key = "ExportId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_exportId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DeleteExportRequest::SetExportId(const string& _exportId)
 bool DeleteExportRequest::ExportIdHasBeenSet() const
 {
     return m_exportIdHasBeenSet;
+}
+
+string DeleteExportRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DeleteExportRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DeleteExportRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 

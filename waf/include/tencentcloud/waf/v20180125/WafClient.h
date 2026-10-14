@@ -107,6 +107,10 @@
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlV2Request.h>
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlV2Response.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMContentRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMContentRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMKeywordLibraryRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMKeywordLibraryResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspRuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspWhiteRuleRequest.h>
@@ -221,8 +225,18 @@
 #include <tencentcloud/waf/v20180125/model/DescribeIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMContentRuleListRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMContentRuleListResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLLMContentSecCheckRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLLMContentSecCheckResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMKeywordLibraryRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMKeywordLibraryResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMSdkAccessRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMSdkAccessResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafDLPRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafDLPRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafProtectRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafProtectRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLogHistogramRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLogHistogramResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeModuleStatusRequest.h>
@@ -303,6 +317,8 @@
 #include <tencentcloud/waf/v20180125/model/EnableClientMsgResponse.h>
 #include <tencentcloud/waf/v20180125/model/EnableRateLimitsV2Request.h>
 #include <tencentcloud/waf/v20180125/model/EnableRateLimitsV2Response.h>
+#include <tencentcloud/waf/v20180125/model/ExportLLMKeywordLibRequest.h>
+#include <tencentcloud/waf/v20180125/model/ExportLLMKeywordLibResponse.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlRequest.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlResponse.h>
 #include <tencentcloud/waf/v20180125/model/GenerateDealsAndPayNewRequest.h>
@@ -399,6 +415,18 @@
 #include <tencentcloud/waf/v20180125/model/ModifyInstanceRenewFlagResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyIpAccessControlResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMContentRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMContentRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMContentRuleStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMContentRuleStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMKeywordLibraryRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMKeywordLibraryResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafDLPRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafDLPRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafProtectRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafProtectRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyObjectRequest.h>
@@ -615,6 +643,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteIpAccessControlV2Response> DeleteIpAccessControlV2Outcome;
                 typedef std::future<DeleteIpAccessControlV2Outcome> DeleteIpAccessControlV2OutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteIpAccessControlV2Request&, DeleteIpAccessControlV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIpAccessControlV2AsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLLMContentRuleResponse> DeleteLLMContentRuleOutcome;
+                typedef std::future<DeleteLLMContentRuleOutcome> DeleteLLMContentRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteLLMContentRuleRequest&, DeleteLLMContentRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLLMContentRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLLMKeywordLibraryResponse> DeleteLLMKeywordLibraryOutcome;
+                typedef std::future<DeleteLLMKeywordLibraryOutcome> DeleteLLMKeywordLibraryOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteLLMKeywordLibraryRequest&, DeleteLLMKeywordLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLLMKeywordLibraryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOwaspRuleStatusResponse> DeleteOwaspRuleStatusOutcome;
                 typedef std::future<DeleteOwaspRuleStatusOutcome> DeleteOwaspRuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteOwaspRuleStatusRequest&, DeleteOwaspRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOwaspRuleStatusAsyncHandler;
@@ -786,9 +820,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpHitItemsResponse> DescribeIpHitItemsOutcome;
                 typedef std::future<DescribeIpHitItemsOutcome> DescribeIpHitItemsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeIpHitItemsRequest&, DescribeIpHitItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpHitItemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMContentRuleListResponse> DescribeLLMContentRuleListOutcome;
+                typedef std::future<DescribeLLMContentRuleListOutcome> DescribeLLMContentRuleListOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMContentRuleListRequest&, DescribeLLMContentRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMContentRuleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLLMContentSecCheckResponse> DescribeLLMContentSecCheckOutcome;
                 typedef std::future<DescribeLLMContentSecCheckOutcome> DescribeLLMContentSecCheckOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeLLMContentSecCheckRequest&, DescribeLLMContentSecCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMContentSecCheckAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMKeywordLibraryResponse> DescribeLLMKeywordLibraryOutcome;
+                typedef std::future<DescribeLLMKeywordLibraryOutcome> DescribeLLMKeywordLibraryOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMKeywordLibraryRequest&, DescribeLLMKeywordLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMKeywordLibraryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMSdkAccessResponse> DescribeLLMSdkAccessOutcome;
+                typedef std::future<DescribeLLMSdkAccessOutcome> DescribeLLMSdkAccessOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMSdkAccessRequest&, DescribeLLMSdkAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMSdkAccessAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMWafDLPRulesResponse> DescribeLLMWafDLPRulesOutcome;
+                typedef std::future<DescribeLLMWafDLPRulesOutcome> DescribeLLMWafDLPRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMWafDLPRulesRequest&, DescribeLLMWafDLPRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMWafDLPRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMWafProtectRulesResponse> DescribeLLMWafProtectRulesOutcome;
+                typedef std::future<DescribeLLMWafProtectRulesOutcome> DescribeLLMWafProtectRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMWafProtectRulesRequest&, DescribeLLMWafProtectRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMWafProtectRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogHistogramResponse> DescribeLogHistogramOutcome;
                 typedef std::future<DescribeLogHistogramOutcome> DescribeLogHistogramOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeLogHistogramRequest&, DescribeLogHistogramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogHistogramAsyncHandler;
@@ -909,6 +958,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableRateLimitsV2Response> EnableRateLimitsV2Outcome;
                 typedef std::future<EnableRateLimitsV2Outcome> EnableRateLimitsV2OutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::EnableRateLimitsV2Request&, EnableRateLimitsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableRateLimitsV2AsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportLLMKeywordLibResponse> ExportLLMKeywordLibOutcome;
+                typedef std::future<ExportLLMKeywordLibOutcome> ExportLLMKeywordLibOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ExportLLMKeywordLibRequest&, ExportLLMKeywordLibOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportLLMKeywordLibAsyncHandler;
                 typedef Outcome<Core::Error, Model::FreshAntiFakeUrlResponse> FreshAntiFakeUrlOutcome;
                 typedef std::future<FreshAntiFakeUrlOutcome> FreshAntiFakeUrlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::FreshAntiFakeUrlRequest&, FreshAntiFakeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FreshAntiFakeUrlAsyncHandler;
@@ -1053,6 +1105,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIpAccessControlResponse> ModifyIpAccessControlOutcome;
                 typedef std::future<ModifyIpAccessControlOutcome> ModifyIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyIpAccessControlRequest&, ModifyIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpAccessControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMContentRuleResponse> ModifyLLMContentRuleOutcome;
+                typedef std::future<ModifyLLMContentRuleOutcome> ModifyLLMContentRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMContentRuleRequest&, ModifyLLMContentRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMContentRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMContentRuleStatusResponse> ModifyLLMContentRuleStatusOutcome;
+                typedef std::future<ModifyLLMContentRuleStatusOutcome> ModifyLLMContentRuleStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMContentRuleStatusRequest&, ModifyLLMContentRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMContentRuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMKeywordLibraryResponse> ModifyLLMKeywordLibraryOutcome;
+                typedef std::future<ModifyLLMKeywordLibraryOutcome> ModifyLLMKeywordLibraryOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMKeywordLibraryRequest&, ModifyLLMKeywordLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMKeywordLibraryAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMStatusResponse> ModifyLLMStatusOutcome;
+                typedef std::future<ModifyLLMStatusOutcome> ModifyLLMStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMStatusRequest&, ModifyLLMStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMWafDLPRuleResponse> ModifyLLMWafDLPRuleOutcome;
+                typedef std::future<ModifyLLMWafDLPRuleOutcome> ModifyLLMWafDLPRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMWafDLPRuleRequest&, ModifyLLMWafDLPRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMWafDLPRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMWafProtectRuleResponse> ModifyLLMWafProtectRuleOutcome;
+                typedef std::future<ModifyLLMWafProtectRuleOutcome> ModifyLLMWafProtectRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMWafProtectRuleRequest&, ModifyLLMWafProtectRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMWafProtectRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyModuleStatusResponse> ModifyModuleStatusOutcome;
                 typedef std::future<ModifyModuleStatusOutcome> ModifyModuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyModuleStatusRequest&, ModifyModuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleStatusAsyncHandler;
@@ -1547,6 +1617,24 @@ namespace TencentCloud
                 DeleteIpAccessControlV2Outcome DeleteIpAccessControlV2(const Model::DeleteIpAccessControlV2Request &request);
                 void DeleteIpAccessControlV2Async(const Model::DeleteIpAccessControlV2Request& request, const DeleteIpAccessControlV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteIpAccessControlV2OutcomeCallable DeleteIpAccessControlV2Callable(const Model::DeleteIpAccessControlV2Request& request);
+
+                /**
+                 *删除大模型内容防护规则
+                 * @param req DeleteLLMContentRuleRequest
+                 * @return DeleteLLMContentRuleOutcome
+                 */
+                DeleteLLMContentRuleOutcome DeleteLLMContentRule(const Model::DeleteLLMContentRuleRequest &request);
+                void DeleteLLMContentRuleAsync(const Model::DeleteLLMContentRuleRequest& request, const DeleteLLMContentRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLLMContentRuleOutcomeCallable DeleteLLMContentRuleCallable(const Model::DeleteLLMContentRuleRequest& request);
+
+                /**
+                 *删除词库列表
+                 * @param req DeleteLLMKeywordLibraryRequest
+                 * @return DeleteLLMKeywordLibraryOutcome
+                 */
+                DeleteLLMKeywordLibraryOutcome DeleteLLMKeywordLibrary(const Model::DeleteLLMKeywordLibraryRequest &request);
+                void DeleteLLMKeywordLibraryAsync(const Model::DeleteLLMKeywordLibraryRequest& request, const DeleteLLMKeywordLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLLMKeywordLibraryOutcomeCallable DeleteLLMKeywordLibraryCallable(const Model::DeleteLLMKeywordLibraryRequest& request);
 
                 /**
                  *解除门神规则的状态锁
@@ -2062,6 +2150,15 @@ namespace TencentCloud
                 DescribeIpHitItemsOutcomeCallable DescribeIpHitItemsCallable(const Model::DescribeIpHitItemsRequest& request);
 
                 /**
+                 *获取LLM大模型内容防护规则
+                 * @param req DescribeLLMContentRuleListRequest
+                 * @return DescribeLLMContentRuleListOutcome
+                 */
+                DescribeLLMContentRuleListOutcome DescribeLLMContentRuleList(const Model::DescribeLLMContentRuleListRequest &request);
+                void DescribeLLMContentRuleListAsync(const Model::DescribeLLMContentRuleListRequest& request, const DescribeLLMContentRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMContentRuleListOutcomeCallable DescribeLLMContentRuleListCallable(const Model::DescribeLLMContentRuleListRequest& request);
+
+                /**
                  *大模型请求内容和响应内容审核接口
                  * @param req DescribeLLMContentSecCheckRequest
                  * @return DescribeLLMContentSecCheckOutcome
@@ -2069,6 +2166,42 @@ namespace TencentCloud
                 DescribeLLMContentSecCheckOutcome DescribeLLMContentSecCheck(const Model::DescribeLLMContentSecCheckRequest &request);
                 void DescribeLLMContentSecCheckAsync(const Model::DescribeLLMContentSecCheckRequest& request, const DescribeLLMContentSecCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLLMContentSecCheckOutcomeCallable DescribeLLMContentSecCheckCallable(const Model::DescribeLLMContentSecCheckRequest& request);
+
+                /**
+                 *查询关键词列表
+                 * @param req DescribeLLMKeywordLibraryRequest
+                 * @return DescribeLLMKeywordLibraryOutcome
+                 */
+                DescribeLLMKeywordLibraryOutcome DescribeLLMKeywordLibrary(const Model::DescribeLLMKeywordLibraryRequest &request);
+                void DescribeLLMKeywordLibraryAsync(const Model::DescribeLLMKeywordLibraryRequest& request, const DescribeLLMKeywordLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMKeywordLibraryOutcomeCallable DescribeLLMKeywordLibraryCallable(const Model::DescribeLLMKeywordLibraryRequest& request);
+
+                /**
+                 *查询sdk接入配置
+                 * @param req DescribeLLMSdkAccessRequest
+                 * @return DescribeLLMSdkAccessOutcome
+                 */
+                DescribeLLMSdkAccessOutcome DescribeLLMSdkAccess(const Model::DescribeLLMSdkAccessRequest &request);
+                void DescribeLLMSdkAccessAsync(const Model::DescribeLLMSdkAccessRequest& request, const DescribeLLMSdkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMSdkAccessOutcomeCallable DescribeLLMSdkAccessCallable(const Model::DescribeLLMSdkAccessRequest& request);
+
+                /**
+                 *查询 DLP 规则
+                 * @param req DescribeLLMWafDLPRulesRequest
+                 * @return DescribeLLMWafDLPRulesOutcome
+                 */
+                DescribeLLMWafDLPRulesOutcome DescribeLLMWafDLPRules(const Model::DescribeLLMWafDLPRulesRequest &request);
+                void DescribeLLMWafDLPRulesAsync(const Model::DescribeLLMWafDLPRulesRequest& request, const DescribeLLMWafDLPRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMWafDLPRulesOutcomeCallable DescribeLLMWafDLPRulesCallable(const Model::DescribeLLMWafDLPRulesRequest& request);
+
+                /**
+                 *查询 LLM 规则请求
+                 * @param req DescribeLLMWafProtectRulesRequest
+                 * @return DescribeLLMWafProtectRulesOutcome
+                 */
+                DescribeLLMWafProtectRulesOutcome DescribeLLMWafProtectRules(const Model::DescribeLLMWafProtectRulesRequest &request);
+                void DescribeLLMWafProtectRulesAsync(const Model::DescribeLLMWafProtectRulesRequest& request, const DescribeLLMWafProtectRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMWafProtectRulesOutcomeCallable DescribeLLMWafProtectRulesCallable(const Model::DescribeLLMWafProtectRulesRequest& request);
 
                 /**
                  *本接口用于构建日志数量直方图
@@ -2431,6 +2564,15 @@ namespace TencentCloud
                 EnableRateLimitsV2Outcome EnableRateLimitsV2(const Model::EnableRateLimitsV2Request &request);
                 void EnableRateLimitsV2Async(const Model::EnableRateLimitsV2Request& request, const EnableRateLimitsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableRateLimitsV2OutcomeCallable EnableRateLimitsV2Callable(const Model::EnableRateLimitsV2Request& request);
+
+                /**
+                 *导出词库文件
+                 * @param req ExportLLMKeywordLibRequest
+                 * @return ExportLLMKeywordLibOutcome
+                 */
+                ExportLLMKeywordLibOutcome ExportLLMKeywordLib(const Model::ExportLLMKeywordLibRequest &request);
+                void ExportLLMKeywordLibAsync(const Model::ExportLLMKeywordLibRequest& request, const ExportLLMKeywordLibAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportLLMKeywordLibOutcomeCallable ExportLLMKeywordLibCallable(const Model::ExportLLMKeywordLibRequest& request);
 
                 /**
                  *刷新防篡改url
@@ -2866,6 +3008,60 @@ namespace TencentCloud
                 ModifyIpAccessControlOutcome ModifyIpAccessControl(const Model::ModifyIpAccessControlRequest &request);
                 void ModifyIpAccessControlAsync(const Model::ModifyIpAccessControlRequest& request, const ModifyIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIpAccessControlOutcomeCallable ModifyIpAccessControlCallable(const Model::ModifyIpAccessControlRequest& request);
+
+                /**
+                 *更新大模型内容安全规则
+                 * @param req ModifyLLMContentRuleRequest
+                 * @return ModifyLLMContentRuleOutcome
+                 */
+                ModifyLLMContentRuleOutcome ModifyLLMContentRule(const Model::ModifyLLMContentRuleRequest &request);
+                void ModifyLLMContentRuleAsync(const Model::ModifyLLMContentRuleRequest& request, const ModifyLLMContentRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMContentRuleOutcomeCallable ModifyLLMContentRuleCallable(const Model::ModifyLLMContentRuleRequest& request);
+
+                /**
+                 *切换大模型内容防护规则开关
+                 * @param req ModifyLLMContentRuleStatusRequest
+                 * @return ModifyLLMContentRuleStatusOutcome
+                 */
+                ModifyLLMContentRuleStatusOutcome ModifyLLMContentRuleStatus(const Model::ModifyLLMContentRuleStatusRequest &request);
+                void ModifyLLMContentRuleStatusAsync(const Model::ModifyLLMContentRuleStatusRequest& request, const ModifyLLMContentRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMContentRuleStatusOutcomeCallable ModifyLLMContentRuleStatusCallable(const Model::ModifyLLMContentRuleStatusRequest& request);
+
+                /**
+                 *用户修改自定义词库
+                 * @param req ModifyLLMKeywordLibraryRequest
+                 * @return ModifyLLMKeywordLibraryOutcome
+                 */
+                ModifyLLMKeywordLibraryOutcome ModifyLLMKeywordLibrary(const Model::ModifyLLMKeywordLibraryRequest &request);
+                void ModifyLLMKeywordLibraryAsync(const Model::ModifyLLMKeywordLibraryRequest& request, const ModifyLLMKeywordLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMKeywordLibraryOutcomeCallable ModifyLLMKeywordLibraryCallable(const Model::ModifyLLMKeywordLibraryRequest& request);
+
+                /**
+                 *修改大模型防护的模块开关状态，支持总开关及各子模块独立开关的开启/关闭操作。开启前需确保实例已购买大模型防护能力，未购买时开启操作会返回 AuthFailure.ErrCodeNoPurchased 错误。
+                 * @param req ModifyLLMStatusRequest
+                 * @return ModifyLLMStatusOutcome
+                 */
+                ModifyLLMStatusOutcome ModifyLLMStatus(const Model::ModifyLLMStatusRequest &request);
+                void ModifyLLMStatusAsync(const Model::ModifyLLMStatusRequest& request, const ModifyLLMStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMStatusOutcomeCallable ModifyLLMStatusCallable(const Model::ModifyLLMStatusRequest& request);
+
+                /**
+                 *修改llmwaf DLP 规则
+                 * @param req ModifyLLMWafDLPRuleRequest
+                 * @return ModifyLLMWafDLPRuleOutcome
+                 */
+                ModifyLLMWafDLPRuleOutcome ModifyLLMWafDLPRule(const Model::ModifyLLMWafDLPRuleRequest &request);
+                void ModifyLLMWafDLPRuleAsync(const Model::ModifyLLMWafDLPRuleRequest& request, const ModifyLLMWafDLPRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMWafDLPRuleOutcomeCallable ModifyLLMWafDLPRuleCallable(const Model::ModifyLLMWafDLPRuleRequest& request);
+
+                /**
+                 *修改 LLM 规则
+                 * @param req ModifyLLMWafProtectRuleRequest
+                 * @return ModifyLLMWafProtectRuleOutcome
+                 */
+                ModifyLLMWafProtectRuleOutcome ModifyLLMWafProtectRule(const Model::ModifyLLMWafProtectRuleRequest &request);
+                void ModifyLLMWafProtectRuleAsync(const Model::ModifyLLMWafProtectRuleRequest& request, const ModifyLLMWafProtectRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMWafProtectRuleOutcomeCallable ModifyLLMWafProtectRuleCallable(const Model::ModifyLLMWafProtectRuleRequest& request);
 
                 /**
                  *设置某个domain下基础安全模块的开关

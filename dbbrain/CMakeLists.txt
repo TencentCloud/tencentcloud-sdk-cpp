@@ -55,6 +55,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/PostgresSpaceObjectItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksResponse.h
   include/tencentcloud/dbbrain/v20210527/model/AddUserContactResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/IndexDDLInfo.h
   include/tencentcloud/dbbrain/v20210527/model/AuditInstanceInfo.h
   include/tencentcloud/dbbrain/v20210527/model/RedisBigKeyTask.h
   include/tencentcloud/dbbrain/v20210527/model/HealthReportTask.h
@@ -66,6 +67,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/AuditLogFilter.h
   include/tencentcloud/dbbrain/v20210527/model/SlowLogTopSqlItem.h
   include/tencentcloud/dbbrain/v20210527/model/CreateKillTaskResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/AuditProxyLogItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAuditInstanceListResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisSlowLogTopSqlsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBInstancesResponse.h
@@ -86,7 +88,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisSlowLogTopSqlsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/WaiterItem.h
   include/tencentcloud/dbbrain/v20210527/model/AutonomyEventVo.h
-  include/tencentcloud/dbbrain/v20210527/model/RedisPreKeySpaceData.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesResponse.h
   include/tencentcloud/dbbrain/v20210527/model/TaskInfo.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeMongoDBProcessListRequest.h
@@ -105,7 +107,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/TagInfo.h
-  include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/AuditLogQueryFilter.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/ProcessStatistic.h
   include/tencentcloud/dbbrain/v20210527/model/IssueTypeInfo.h
@@ -113,7 +115,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DeadlockResource.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBInstancesRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlsResponse.h
-  include/tencentcloud/dbbrain/v20210527/model/UpdateMonitorSwitchResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/GroupItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyActionRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListRequest.h
   include/tencentcloud/dbbrain/v20210527/model/MetricThreshold.h
@@ -159,6 +161,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/ReceiveUin.h
   include/tencentcloud/dbbrain/v20210527/model/ModifyAuditServiceRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/TableStatistics.h
   include/tencentcloud/dbbrain/v20210527/model/KillMySqlThreadsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSqlFiltersResponse.h
   include/tencentcloud/dbbrain/v20210527/model/MongoDBIndex.h
@@ -193,6 +196,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopCostCommandsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/OpenAuditServiceRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/SchemaSpaceData.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAllUserContactRequest.h
   include/tencentcloud/dbbrain/v20210527/model/MySqlProcess.h
@@ -201,6 +205,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeNoPrimaryKeyTablesRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DeadlockFrame.h
   include/tencentcloud/dbbrain/v20210527/model/AlarmProfileList.h
+  include/tencentcloud/dbbrain/v20210527/model/RedisPreKeySpaceData.h
   include/tencentcloud/dbbrain/v20210527/model/InstanceInfo.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemasRequest.h
   include/tencentcloud/dbbrain/v20210527/model/TemplateInfo.h
@@ -213,10 +218,12 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/CreateSchedulerMailProfileResponse.h
   include/tencentcloud/dbbrain/v20210527/model/RedisCmdInfo.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAlarmTemplateResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeNoPrimaryKeyTablesResponse.h
   include/tencentcloud/dbbrain/v20210527/model/MongoDBTableSpaceItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemaTimeSeriesRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogTopSqlsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendAggregationSlowLogsResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeDatabaseObjectV2Response.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeMailProfileResponse.h
   include/tencentcloud/dbbrain/v20210527/model/CmdCostGroup.h
@@ -251,6 +258,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/TopSqlTpl.h
   include/tencentcloud/dbbrain/v20210527/model/CancelDBAutonomyActionRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DeleteDBDiagReportTasksRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/AuditDBLogItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAlarmTemplateRequest.h
   include/tencentcloud/dbbrain/v20210527/model/VerifyUserAccountResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.h
@@ -261,6 +269,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/CreateMongoDBKillTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisCommandOverviewRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/UpdateMonitorSwitchResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisProcessListResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DeadlockSession.h
   include/tencentcloud/dbbrain/v20210527/model/CreateAuditLogFileRequest.h
@@ -270,7 +279,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeUserSqlAdviceResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusResponse.h
   include/tencentcloud/dbbrain/v20210527/model/SQLFilter.h
-  include/tencentcloud/dbbrain/v20210527/model/GroupItem.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CancelDBAutonomyEventRequest.h
   include/tencentcloud/dbbrain/v20210527/model/MongoDBProcessList.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTableTimeSeriesRequest.h
@@ -289,7 +298,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportContentResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTopSqlsResponse.h
-  include/tencentcloud/dbbrain/v20210527/model/DescribeNoPrimaryKeyTablesResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeDatabaseObjectV2Request.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBPerfTimeSeriesRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAuditLogFilesRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DeleteSqlFiltersRequest.h
@@ -429,6 +438,7 @@ set(dbbrain_src
   src/v20210527/model/PostgresSpaceObjectItem.cpp
   src/v20210527/model/DescribeDBDiagReportTasksResponse.cpp
   src/v20210527/model/AddUserContactResponse.cpp
+  src/v20210527/model/IndexDDLInfo.cpp
   src/v20210527/model/AuditInstanceInfo.cpp
   src/v20210527/model/RedisBigKeyTask.cpp
   src/v20210527/model/HealthReportTask.cpp
@@ -440,6 +450,7 @@ set(dbbrain_src
   src/v20210527/model/AuditLogFilter.cpp
   src/v20210527/model/SlowLogTopSqlItem.cpp
   src/v20210527/model/CreateKillTaskResponse.cpp
+  src/v20210527/model/AuditProxyLogItem.cpp
   src/v20210527/model/DescribeAuditInstanceListResponse.cpp
   src/v20210527/model/DescribeRedisSlowLogTopSqlsResponse.cpp
   src/v20210527/model/DescribeDBInstancesResponse.cpp
@@ -460,7 +471,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeRedisSlowLogTopSqlsRequest.cpp
   src/v20210527/model/WaiterItem.cpp
   src/v20210527/model/AutonomyEventVo.cpp
-  src/v20210527/model/RedisPreKeySpaceData.cpp
+  src/v20210527/model/DescribeDBAuditLogsRequest.cpp
   src/v20210527/model/DescribeTopSpaceTablesResponse.cpp
   src/v20210527/model/TaskInfo.cpp
   src/v20210527/model/DescribeMongoDBProcessListRequest.cpp
@@ -479,7 +490,7 @@ set(dbbrain_src
   src/v20210527/model/ModifyDiagDBInstanceConfRequest.cpp
   src/v20210527/model/DescribeSlowLogsResponse.cpp
   src/v20210527/model/TagInfo.cpp
-  src/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.cpp
+  src/v20210527/model/AuditLogQueryFilter.cpp
   src/v20210527/model/DescribeDBDiagEventsRequest.cpp
   src/v20210527/model/ProcessStatistic.cpp
   src/v20210527/model/IssueTypeInfo.cpp
@@ -487,7 +498,7 @@ set(dbbrain_src
   src/v20210527/model/DeadlockResource.cpp
   src/v20210527/model/DescribeDBInstancesRequest.cpp
   src/v20210527/model/CreateDBDiagReportUrlsResponse.cpp
-  src/v20210527/model/UpdateMonitorSwitchResponse.cpp
+  src/v20210527/model/GroupItem.cpp
   src/v20210527/model/DescribeDBAutonomyActionRequest.cpp
   src/v20210527/model/DescribeRedisTopKeyPrefixListRequest.cpp
   src/v20210527/model/MetricThreshold.cpp
@@ -533,6 +544,7 @@ set(dbbrain_src
   src/v20210527/model/ReceiveUin.cpp
   src/v20210527/model/ModifyAuditServiceRequest.cpp
   src/v20210527/model/DeleteSecurityAuditLogExportTasksResponse.cpp
+  src/v20210527/model/TableStatistics.cpp
   src/v20210527/model/KillMySqlThreadsRequest.cpp
   src/v20210527/model/DescribeSqlFiltersResponse.cpp
   src/v20210527/model/MongoDBIndex.cpp
@@ -567,6 +579,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeTopSpaceTablesRequest.cpp
   src/v20210527/model/DescribeRedisTopCostCommandsResponse.cpp
   src/v20210527/model/OpenAuditServiceRequest.cpp
+  src/v20210527/model/DescribeDBAuditLogsResponse.cpp
   src/v20210527/model/SchemaSpaceData.cpp
   src/v20210527/model/DescribeAllUserContactRequest.cpp
   src/v20210527/model/MySqlProcess.cpp
@@ -575,6 +588,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeNoPrimaryKeyTablesRequest.cpp
   src/v20210527/model/DeadlockFrame.cpp
   src/v20210527/model/AlarmProfileList.cpp
+  src/v20210527/model/RedisPreKeySpaceData.cpp
   src/v20210527/model/InstanceInfo.cpp
   src/v20210527/model/DescribeTopSpaceSchemasRequest.cpp
   src/v20210527/model/TemplateInfo.cpp
@@ -587,10 +601,12 @@ set(dbbrain_src
   src/v20210527/model/CreateSchedulerMailProfileResponse.cpp
   src/v20210527/model/RedisCmdInfo.cpp
   src/v20210527/model/DescribeAlarmTemplateResponse.cpp
+  src/v20210527/model/DescribeNoPrimaryKeyTablesResponse.cpp
   src/v20210527/model/MongoDBTableSpaceItem.cpp
   src/v20210527/model/DescribeTopSpaceSchemaTimeSeriesRequest.cpp
   src/v20210527/model/DescribeDBAuditLogTopSqlsResponse.cpp
   src/v20210527/model/DescribeIndexRecommendAggregationSlowLogsResponse.cpp
+  src/v20210527/model/DescribeDatabaseObjectV2Response.cpp
   src/v20210527/model/DescribeDBDiagEventsResponse.cpp
   src/v20210527/model/DescribeMailProfileResponse.cpp
   src/v20210527/model/CmdCostGroup.cpp
@@ -625,6 +641,7 @@ set(dbbrain_src
   src/v20210527/model/TopSqlTpl.cpp
   src/v20210527/model/CancelDBAutonomyActionRequest.cpp
   src/v20210527/model/DeleteDBDiagReportTasksRequest.cpp
+  src/v20210527/model/AuditDBLogItem.cpp
   src/v20210527/model/DescribeAlarmTemplateRequest.cpp
   src/v20210527/model/VerifyUserAccountResponse.cpp
   src/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.cpp
@@ -635,6 +652,7 @@ set(dbbrain_src
   src/v20210527/model/CreateMongoDBKillTaskResponse.cpp
   src/v20210527/model/DescribeRedisCommandOverviewRequest.cpp
   src/v20210527/model/DescribeAllUserGroupResponse.cpp
+  src/v20210527/model/UpdateMonitorSwitchResponse.cpp
   src/v20210527/model/DescribeRedisProcessListResponse.cpp
   src/v20210527/model/DeadlockSession.cpp
   src/v20210527/model/CreateAuditLogFileRequest.cpp
@@ -644,7 +662,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeUserSqlAdviceResponse.cpp
   src/v20210527/model/DescribeDBSpaceStatusResponse.cpp
   src/v20210527/model/SQLFilter.cpp
-  src/v20210527/model/GroupItem.cpp
+  src/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.cpp
   src/v20210527/model/CancelDBAutonomyEventRequest.cpp
   src/v20210527/model/MongoDBProcessList.cpp
   src/v20210527/model/DescribeTopSpaceTableTimeSeriesRequest.cpp
@@ -663,7 +681,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.cpp
   src/v20210527/model/DescribeDBDiagReportContentResponse.cpp
   src/v20210527/model/DescribeSlowLogTopSqlsResponse.cpp
-  src/v20210527/model/DescribeNoPrimaryKeyTablesResponse.cpp
+  src/v20210527/model/DescribeDatabaseObjectV2Request.cpp
   src/v20210527/model/DescribeDBPerfTimeSeriesRequest.cpp
   src/v20210527/model/DescribeAuditLogFilesRequest.cpp
   src/v20210527/model/DeleteSqlFiltersRequest.cpp

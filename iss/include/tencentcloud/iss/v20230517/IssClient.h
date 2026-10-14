@@ -39,8 +39,16 @@
 #include <tencentcloud/iss/v20230517/model/AddStreamAuthResponse.h>
 #include <tencentcloud/iss/v20230517/model/AddUserDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/AddUserDeviceResponse.h>
+#include <tencentcloud/iss/v20230517/model/BatchAddVideoSnapshotConfigChannelRequest.h>
+#include <tencentcloud/iss/v20230517/model/BatchAddVideoSnapshotConfigChannelResponse.h>
+#include <tencentcloud/iss/v20230517/model/BatchAssignVLPlanChannelsRequest.h>
+#include <tencentcloud/iss/v20230517/model/BatchAssignVLPlanChannelsResponse.h>
 #include <tencentcloud/iss/v20230517/model/BatchDeleteVideoDownloadTaskRequest.h>
 #include <tencentcloud/iss/v20230517/model/BatchDeleteVideoDownloadTaskResponse.h>
+#include <tencentcloud/iss/v20230517/model/BatchGetVLPlanSourceFileURLRequest.h>
+#include <tencentcloud/iss/v20230517/model/BatchGetVLPlanSourceFileURLResponse.h>
+#include <tencentcloud/iss/v20230517/model/BatchGetVideoSnapshotImageUrlRequest.h>
+#include <tencentcloud/iss/v20230517/model/BatchGetVideoSnapshotImageUrlResponse.h>
 #include <tencentcloud/iss/v20230517/model/BatchOperateDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/BatchOperateDeviceResponse.h>
 #include <tencentcloud/iss/v20230517/model/CallISAPIRequest.h>
@@ -57,8 +65,16 @@
 #include <tencentcloud/iss/v20230517/model/ControlRecordResponse.h>
 #include <tencentcloud/iss/v20230517/model/ControlRecordTimelineRequest.h>
 #include <tencentcloud/iss/v20230517/model/ControlRecordTimelineResponse.h>
+#include <tencentcloud/iss/v20230517/model/CreateVLPlanRequest.h>
+#include <tencentcloud/iss/v20230517/model/CreateVLPlanResponse.h>
+#include <tencentcloud/iss/v20230517/model/CreateVLTemplateRequest.h>
+#include <tencentcloud/iss/v20230517/model/CreateVLTemplateResponse.h>
 #include <tencentcloud/iss/v20230517/model/CreateVideoDownloadTaskRequest.h>
 #include <tencentcloud/iss/v20230517/model/CreateVideoDownloadTaskResponse.h>
+#include <tencentcloud/iss/v20230517/model/CreateVideoSnapshotConfigRequest.h>
+#include <tencentcloud/iss/v20230517/model/CreateVideoSnapshotConfigResponse.h>
+#include <tencentcloud/iss/v20230517/model/CreateVideoSnapshotTemplateRequest.h>
+#include <tencentcloud/iss/v20230517/model/CreateVideoSnapshotTemplateResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteDomainRequest.h>
 #include <tencentcloud/iss/v20230517/model/DeleteDomainResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteOrganizationRequest.h>
@@ -77,6 +93,14 @@
 #include <tencentcloud/iss/v20230517/model/DeleteTaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/DeleteUserDeviceRequest.h>
 #include <tencentcloud/iss/v20230517/model/DeleteUserDeviceResponse.h>
+#include <tencentcloud/iss/v20230517/model/DeleteVLPlanRequest.h>
+#include <tencentcloud/iss/v20230517/model/DeleteVLPlanResponse.h>
+#include <tencentcloud/iss/v20230517/model/DeleteVLTemplateRequest.h>
+#include <tencentcloud/iss/v20230517/model/DeleteVLTemplateResponse.h>
+#include <tencentcloud/iss/v20230517/model/DeleteVideoSnapshotConfigRequest.h>
+#include <tencentcloud/iss/v20230517/model/DeleteVideoSnapshotConfigResponse.h>
+#include <tencentcloud/iss/v20230517/model/DeleteVideoSnapshotTemplateRequest.h>
+#include <tencentcloud/iss/v20230517/model/DeleteVideoSnapshotTemplateResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeCNAMERequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeCNAMEResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeDeviceChannelRequest.h>
@@ -117,10 +141,20 @@
 #include <tencentcloud/iss/v20230517/model/DescribeUserDeviceResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeUserDeviceListRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeUserDeviceListResponse.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVLPlanRequest.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVLPlanResponse.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVLPlanResultRequest.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVLPlanResultResponse.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVLTemplateRequest.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVLTemplateResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoBitRateRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoBitRateResponse.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlRequest.h>
 #include <tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlResponse.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVideoSnapshotConfigRequest.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVideoSnapshotConfigResponse.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVideoSnapshotTemplateRequest.h>
+#include <tencentcloud/iss/v20230517/model/DescribeVideoSnapshotTemplateResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListDeviceSnapshotsRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListDeviceSnapshotsResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListDevicesRequest.h>
@@ -149,8 +183,18 @@
 #include <tencentcloud/iss/v20230517/model/ListSubTasksResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListTasksRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListTasksResponse.h>
+#include <tencentcloud/iss/v20230517/model/ListVLPlansRequest.h>
+#include <tencentcloud/iss/v20230517/model/ListVLPlansResponse.h>
+#include <tencentcloud/iss/v20230517/model/ListVLTemplatesRequest.h>
+#include <tencentcloud/iss/v20230517/model/ListVLTemplatesResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListVideoDownloadTaskRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListVideoDownloadTaskResponse.h>
+#include <tencentcloud/iss/v20230517/model/ListVideoSnapshotTemplateRequest.h>
+#include <tencentcloud/iss/v20230517/model/ListVideoSnapshotTemplateResponse.h>
+#include <tencentcloud/iss/v20230517/model/ModifyVLPlanRequest.h>
+#include <tencentcloud/iss/v20230517/model/ModifyVLPlanResponse.h>
+#include <tencentcloud/iss/v20230517/model/ModifyVideoSnapshotConfigRequest.h>
+#include <tencentcloud/iss/v20230517/model/ModifyVideoSnapshotConfigResponse.h>
 #include <tencentcloud/iss/v20230517/model/PlayRecordRequest.h>
 #include <tencentcloud/iss/v20230517/model/PlayRecordResponse.h>
 #include <tencentcloud/iss/v20230517/model/QueryForbidPlayChannelListRequest.h>
@@ -213,9 +257,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddUserDeviceResponse> AddUserDeviceOutcome;
                 typedef std::future<AddUserDeviceOutcome> AddUserDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::AddUserDeviceRequest&, AddUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUserDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchAddVideoSnapshotConfigChannelResponse> BatchAddVideoSnapshotConfigChannelOutcome;
+                typedef std::future<BatchAddVideoSnapshotConfigChannelOutcome> BatchAddVideoSnapshotConfigChannelOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::BatchAddVideoSnapshotConfigChannelRequest&, BatchAddVideoSnapshotConfigChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchAddVideoSnapshotConfigChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchAssignVLPlanChannelsResponse> BatchAssignVLPlanChannelsOutcome;
+                typedef std::future<BatchAssignVLPlanChannelsOutcome> BatchAssignVLPlanChannelsOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::BatchAssignVLPlanChannelsRequest&, BatchAssignVLPlanChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchAssignVLPlanChannelsAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchDeleteVideoDownloadTaskResponse> BatchDeleteVideoDownloadTaskOutcome;
                 typedef std::future<BatchDeleteVideoDownloadTaskOutcome> BatchDeleteVideoDownloadTaskOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::BatchDeleteVideoDownloadTaskRequest&, BatchDeleteVideoDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteVideoDownloadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchGetVLPlanSourceFileURLResponse> BatchGetVLPlanSourceFileURLOutcome;
+                typedef std::future<BatchGetVLPlanSourceFileURLOutcome> BatchGetVLPlanSourceFileURLOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::BatchGetVLPlanSourceFileURLRequest&, BatchGetVLPlanSourceFileURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetVLPlanSourceFileURLAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchGetVideoSnapshotImageUrlResponse> BatchGetVideoSnapshotImageUrlOutcome;
+                typedef std::future<BatchGetVideoSnapshotImageUrlOutcome> BatchGetVideoSnapshotImageUrlOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::BatchGetVideoSnapshotImageUrlRequest&, BatchGetVideoSnapshotImageUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchGetVideoSnapshotImageUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchOperateDeviceResponse> BatchOperateDeviceOutcome;
                 typedef std::future<BatchOperateDeviceOutcome> BatchOperateDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::BatchOperateDeviceRequest&, BatchOperateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchOperateDeviceAsyncHandler;
@@ -240,9 +296,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ControlRecordTimelineResponse> ControlRecordTimelineOutcome;
                 typedef std::future<ControlRecordTimelineOutcome> ControlRecordTimelineOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ControlRecordTimelineRequest&, ControlRecordTimelineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlRecordTimelineAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVLPlanResponse> CreateVLPlanOutcome;
+                typedef std::future<CreateVLPlanOutcome> CreateVLPlanOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::CreateVLPlanRequest&, CreateVLPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVLPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVLTemplateResponse> CreateVLTemplateOutcome;
+                typedef std::future<CreateVLTemplateOutcome> CreateVLTemplateOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::CreateVLTemplateRequest&, CreateVLTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVLTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateVideoDownloadTaskResponse> CreateVideoDownloadTaskOutcome;
                 typedef std::future<CreateVideoDownloadTaskOutcome> CreateVideoDownloadTaskOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::CreateVideoDownloadTaskRequest&, CreateVideoDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoDownloadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVideoSnapshotConfigResponse> CreateVideoSnapshotConfigOutcome;
+                typedef std::future<CreateVideoSnapshotConfigOutcome> CreateVideoSnapshotConfigOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::CreateVideoSnapshotConfigRequest&, CreateVideoSnapshotConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoSnapshotConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVideoSnapshotTemplateResponse> CreateVideoSnapshotTemplateOutcome;
+                typedef std::future<CreateVideoSnapshotTemplateOutcome> CreateVideoSnapshotTemplateOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::CreateVideoSnapshotTemplateRequest&, CreateVideoSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoSnapshotTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDomainResponse> DeleteDomainOutcome;
                 typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DeleteDomainRequest&, DeleteDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
@@ -270,6 +338,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUserDeviceResponse> DeleteUserDeviceOutcome;
                 typedef std::future<DeleteUserDeviceOutcome> DeleteUserDeviceOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DeleteUserDeviceRequest&, DeleteUserDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVLPlanResponse> DeleteVLPlanOutcome;
+                typedef std::future<DeleteVLPlanOutcome> DeleteVLPlanOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DeleteVLPlanRequest&, DeleteVLPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVLPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVLTemplateResponse> DeleteVLTemplateOutcome;
+                typedef std::future<DeleteVLTemplateOutcome> DeleteVLTemplateOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DeleteVLTemplateRequest&, DeleteVLTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVLTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVideoSnapshotConfigResponse> DeleteVideoSnapshotConfigOutcome;
+                typedef std::future<DeleteVideoSnapshotConfigOutcome> DeleteVideoSnapshotConfigOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DeleteVideoSnapshotConfigRequest&, DeleteVideoSnapshotConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVideoSnapshotConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVideoSnapshotTemplateResponse> DeleteVideoSnapshotTemplateOutcome;
+                typedef std::future<DeleteVideoSnapshotTemplateOutcome> DeleteVideoSnapshotTemplateOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DeleteVideoSnapshotTemplateRequest&, DeleteVideoSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVideoSnapshotTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCNAMEResponse> DescribeCNAMEOutcome;
                 typedef std::future<DescribeCNAMEOutcome> DescribeCNAMEOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeCNAMERequest&, DescribeCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCNAMEAsyncHandler;
@@ -330,12 +410,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserDeviceListResponse> DescribeUserDeviceListOutcome;
                 typedef std::future<DescribeUserDeviceListOutcome> DescribeUserDeviceListOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeUserDeviceListRequest&, DescribeUserDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDeviceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVLPlanResponse> DescribeVLPlanOutcome;
+                typedef std::future<DescribeVLPlanOutcome> DescribeVLPlanOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DescribeVLPlanRequest&, DescribeVLPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVLPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVLPlanResultResponse> DescribeVLPlanResultOutcome;
+                typedef std::future<DescribeVLPlanResultOutcome> DescribeVLPlanResultOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DescribeVLPlanResultRequest&, DescribeVLPlanResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVLPlanResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVLTemplateResponse> DescribeVLTemplateOutcome;
+                typedef std::future<DescribeVLTemplateOutcome> DescribeVLTemplateOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DescribeVLTemplateRequest&, DescribeVLTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVLTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVideoBitRateResponse> DescribeVideoBitRateOutcome;
                 typedef std::future<DescribeVideoBitRateOutcome> DescribeVideoBitRateOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeVideoBitRateRequest&, DescribeVideoBitRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoBitRateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVideoDownloadUrlResponse> DescribeVideoDownloadUrlOutcome;
                 typedef std::future<DescribeVideoDownloadUrlOutcome> DescribeVideoDownloadUrlOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::DescribeVideoDownloadUrlRequest&, DescribeVideoDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoDownloadUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoSnapshotConfigResponse> DescribeVideoSnapshotConfigOutcome;
+                typedef std::future<DescribeVideoSnapshotConfigOutcome> DescribeVideoSnapshotConfigOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DescribeVideoSnapshotConfigRequest&, DescribeVideoSnapshotConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoSnapshotConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoSnapshotTemplateResponse> DescribeVideoSnapshotTemplateOutcome;
+                typedef std::future<DescribeVideoSnapshotTemplateOutcome> DescribeVideoSnapshotTemplateOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::DescribeVideoSnapshotTemplateRequest&, DescribeVideoSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoSnapshotTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListDeviceSnapshotsResponse> ListDeviceSnapshotsOutcome;
                 typedef std::future<ListDeviceSnapshotsOutcome> ListDeviceSnapshotsOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListDeviceSnapshotsRequest&, ListDeviceSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDeviceSnapshotsAsyncHandler;
@@ -378,9 +473,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListTasksResponse> ListTasksOutcome;
                 typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListTasksRequest&, ListTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListVLPlansResponse> ListVLPlansOutcome;
+                typedef std::future<ListVLPlansOutcome> ListVLPlansOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ListVLPlansRequest&, ListVLPlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVLPlansAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListVLTemplatesResponse> ListVLTemplatesOutcome;
+                typedef std::future<ListVLTemplatesOutcome> ListVLTemplatesOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ListVLTemplatesRequest&, ListVLTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVLTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListVideoDownloadTaskResponse> ListVideoDownloadTaskOutcome;
                 typedef std::future<ListVideoDownloadTaskOutcome> ListVideoDownloadTaskOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListVideoDownloadTaskRequest&, ListVideoDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVideoDownloadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListVideoSnapshotTemplateResponse> ListVideoSnapshotTemplateOutcome;
+                typedef std::future<ListVideoSnapshotTemplateOutcome> ListVideoSnapshotTemplateOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ListVideoSnapshotTemplateRequest&, ListVideoSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVideoSnapshotTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVLPlanResponse> ModifyVLPlanOutcome;
+                typedef std::future<ModifyVLPlanOutcome> ModifyVLPlanOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ModifyVLPlanRequest&, ModifyVLPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVLPlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVideoSnapshotConfigResponse> ModifyVideoSnapshotConfigOutcome;
+                typedef std::future<ModifyVideoSnapshotConfigOutcome> ModifyVideoSnapshotConfigOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ModifyVideoSnapshotConfigRequest&, ModifyVideoSnapshotConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVideoSnapshotConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::PlayRecordResponse> PlayRecordOutcome;
                 typedef std::future<PlayRecordOutcome> PlayRecordOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::PlayRecordRequest&, PlayRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PlayRecordAsyncHandler;
@@ -496,6 +606,24 @@ namespace TencentCloud
                 AddUserDeviceOutcomeCallable AddUserDeviceCallable(const Model::AddUserDeviceRequest& request);
 
                 /**
+                 *批量添加截图配置的通道
+                 * @param req BatchAddVideoSnapshotConfigChannelRequest
+                 * @return BatchAddVideoSnapshotConfigChannelOutcome
+                 */
+                BatchAddVideoSnapshotConfigChannelOutcome BatchAddVideoSnapshotConfigChannel(const Model::BatchAddVideoSnapshotConfigChannelRequest &request);
+                void BatchAddVideoSnapshotConfigChannelAsync(const Model::BatchAddVideoSnapshotConfigChannelRequest& request, const BatchAddVideoSnapshotConfigChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchAddVideoSnapshotConfigChannelOutcomeCallable BatchAddVideoSnapshotConfigChannelCallable(const Model::BatchAddVideoSnapshotConfigChannelRequest& request);
+
+                /**
+                 *批量关联视觉理解计划通道
+                 * @param req BatchAssignVLPlanChannelsRequest
+                 * @return BatchAssignVLPlanChannelsOutcome
+                 */
+                BatchAssignVLPlanChannelsOutcome BatchAssignVLPlanChannels(const Model::BatchAssignVLPlanChannelsRequest &request);
+                void BatchAssignVLPlanChannelsAsync(const Model::BatchAssignVLPlanChannelsRequest& request, const BatchAssignVLPlanChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchAssignVLPlanChannelsOutcomeCallable BatchAssignVLPlanChannelsCallable(const Model::BatchAssignVLPlanChannelsRequest& request);
+
+                /**
                  *用于批量删除本地录像下载失败的任务
                  * @param req BatchDeleteVideoDownloadTaskRequest
                  * @return BatchDeleteVideoDownloadTaskOutcome
@@ -503,6 +631,24 @@ namespace TencentCloud
                 BatchDeleteVideoDownloadTaskOutcome BatchDeleteVideoDownloadTask(const Model::BatchDeleteVideoDownloadTaskRequest &request);
                 void BatchDeleteVideoDownloadTaskAsync(const Model::BatchDeleteVideoDownloadTaskRequest& request, const BatchDeleteVideoDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchDeleteVideoDownloadTaskOutcomeCallable BatchDeleteVideoDownloadTaskCallable(const Model::BatchDeleteVideoDownloadTaskRequest& request);
+
+                /**
+                 *批量获取视觉理解计划源素材 URL
+                 * @param req BatchGetVLPlanSourceFileURLRequest
+                 * @return BatchGetVLPlanSourceFileURLOutcome
+                 */
+                BatchGetVLPlanSourceFileURLOutcome BatchGetVLPlanSourceFileURL(const Model::BatchGetVLPlanSourceFileURLRequest &request);
+                void BatchGetVLPlanSourceFileURLAsync(const Model::BatchGetVLPlanSourceFileURLRequest& request, const BatchGetVLPlanSourceFileURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchGetVLPlanSourceFileURLOutcomeCallable BatchGetVLPlanSourceFileURLCallable(const Model::BatchGetVLPlanSourceFileURLRequest& request);
+
+                /**
+                 *批量获取截图图片URL
+                 * @param req BatchGetVideoSnapshotImageUrlRequest
+                 * @return BatchGetVideoSnapshotImageUrlOutcome
+                 */
+                BatchGetVideoSnapshotImageUrlOutcome BatchGetVideoSnapshotImageUrl(const Model::BatchGetVideoSnapshotImageUrlRequest &request);
+                void BatchGetVideoSnapshotImageUrlAsync(const Model::BatchGetVideoSnapshotImageUrlRequest& request, const BatchGetVideoSnapshotImageUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchGetVideoSnapshotImageUrlOutcomeCallable BatchGetVideoSnapshotImageUrlCallable(const Model::BatchGetVideoSnapshotImageUrlRequest& request);
 
                 /**
                  *用于批量操作（启用，禁用，删除）设备
@@ -577,6 +723,24 @@ namespace TencentCloud
                 ControlRecordTimelineOutcomeCallable ControlRecordTimelineCallable(const Model::ControlRecordTimelineRequest& request);
 
                 /**
+                 *创建视觉理解计划
+                 * @param req CreateVLPlanRequest
+                 * @return CreateVLPlanOutcome
+                 */
+                CreateVLPlanOutcome CreateVLPlan(const Model::CreateVLPlanRequest &request);
+                void CreateVLPlanAsync(const Model::CreateVLPlanRequest& request, const CreateVLPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVLPlanOutcomeCallable CreateVLPlanCallable(const Model::CreateVLPlanRequest& request);
+
+                /**
+                 *创建视觉理解模板
+                 * @param req CreateVLTemplateRequest
+                 * @return CreateVLTemplateOutcome
+                 */
+                CreateVLTemplateOutcome CreateVLTemplate(const Model::CreateVLTemplateRequest &request);
+                void CreateVLTemplateAsync(const Model::CreateVLTemplateRequest& request, const CreateVLTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVLTemplateOutcomeCallable CreateVLTemplateCallable(const Model::CreateVLTemplateRequest& request);
+
+                /**
                  *创建本地录像下载任务
                  * @param req CreateVideoDownloadTaskRequest
                  * @return CreateVideoDownloadTaskOutcome
@@ -584,6 +748,24 @@ namespace TencentCloud
                 CreateVideoDownloadTaskOutcome CreateVideoDownloadTask(const Model::CreateVideoDownloadTaskRequest &request);
                 void CreateVideoDownloadTaskAsync(const Model::CreateVideoDownloadTaskRequest& request, const CreateVideoDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateVideoDownloadTaskOutcomeCallable CreateVideoDownloadTaskCallable(const Model::CreateVideoDownloadTaskRequest& request);
+
+                /**
+                 *创建截图配置
+                 * @param req CreateVideoSnapshotConfigRequest
+                 * @return CreateVideoSnapshotConfigOutcome
+                 */
+                CreateVideoSnapshotConfigOutcome CreateVideoSnapshotConfig(const Model::CreateVideoSnapshotConfigRequest &request);
+                void CreateVideoSnapshotConfigAsync(const Model::CreateVideoSnapshotConfigRequest& request, const CreateVideoSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVideoSnapshotConfigOutcomeCallable CreateVideoSnapshotConfigCallable(const Model::CreateVideoSnapshotConfigRequest& request);
+
+                /**
+                 *创建截图模板
+                 * @param req CreateVideoSnapshotTemplateRequest
+                 * @return CreateVideoSnapshotTemplateOutcome
+                 */
+                CreateVideoSnapshotTemplateOutcome CreateVideoSnapshotTemplate(const Model::CreateVideoSnapshotTemplateRequest &request);
+                void CreateVideoSnapshotTemplateAsync(const Model::CreateVideoSnapshotTemplateRequest& request, const CreateVideoSnapshotTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVideoSnapshotTemplateOutcomeCallable CreateVideoSnapshotTemplateCallable(const Model::CreateVideoSnapshotTemplateRequest& request);
 
                 /**
                  *用于删除域名。
@@ -665,6 +847,42 @@ namespace TencentCloud
                 DeleteUserDeviceOutcome DeleteUserDevice(const Model::DeleteUserDeviceRequest &request);
                 void DeleteUserDeviceAsync(const Model::DeleteUserDeviceRequest& request, const DeleteUserDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUserDeviceOutcomeCallable DeleteUserDeviceCallable(const Model::DeleteUserDeviceRequest& request);
+
+                /**
+                 *删除视觉理解计划
+                 * @param req DeleteVLPlanRequest
+                 * @return DeleteVLPlanOutcome
+                 */
+                DeleteVLPlanOutcome DeleteVLPlan(const Model::DeleteVLPlanRequest &request);
+                void DeleteVLPlanAsync(const Model::DeleteVLPlanRequest& request, const DeleteVLPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVLPlanOutcomeCallable DeleteVLPlanCallable(const Model::DeleteVLPlanRequest& request);
+
+                /**
+                 *删除视觉理解模板
+                 * @param req DeleteVLTemplateRequest
+                 * @return DeleteVLTemplateOutcome
+                 */
+                DeleteVLTemplateOutcome DeleteVLTemplate(const Model::DeleteVLTemplateRequest &request);
+                void DeleteVLTemplateAsync(const Model::DeleteVLTemplateRequest& request, const DeleteVLTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVLTemplateOutcomeCallable DeleteVLTemplateCallable(const Model::DeleteVLTemplateRequest& request);
+
+                /**
+                 *删除截图配置
+                 * @param req DeleteVideoSnapshotConfigRequest
+                 * @return DeleteVideoSnapshotConfigOutcome
+                 */
+                DeleteVideoSnapshotConfigOutcome DeleteVideoSnapshotConfig(const Model::DeleteVideoSnapshotConfigRequest &request);
+                void DeleteVideoSnapshotConfigAsync(const Model::DeleteVideoSnapshotConfigRequest& request, const DeleteVideoSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVideoSnapshotConfigOutcomeCallable DeleteVideoSnapshotConfigCallable(const Model::DeleteVideoSnapshotConfigRequest& request);
+
+                /**
+                 *删除截图模板
+                 * @param req DeleteVideoSnapshotTemplateRequest
+                 * @return DeleteVideoSnapshotTemplateOutcome
+                 */
+                DeleteVideoSnapshotTemplateOutcome DeleteVideoSnapshotTemplate(const Model::DeleteVideoSnapshotTemplateRequest &request);
+                void DeleteVideoSnapshotTemplateAsync(const Model::DeleteVideoSnapshotTemplateRequest& request, const DeleteVideoSnapshotTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVideoSnapshotTemplateOutcomeCallable DeleteVideoSnapshotTemplateCallable(const Model::DeleteVideoSnapshotTemplateRequest& request);
 
                 /**
                  *用于根据服务节点获取 CNAME 值。
@@ -848,6 +1066,33 @@ namespace TencentCloud
                 DescribeUserDeviceListOutcomeCallable DescribeUserDeviceListCallable(const Model::DescribeUserDeviceListRequest& request);
 
                 /**
+                 *查询视觉理解计划详情
+                 * @param req DescribeVLPlanRequest
+                 * @return DescribeVLPlanOutcome
+                 */
+                DescribeVLPlanOutcome DescribeVLPlan(const Model::DescribeVLPlanRequest &request);
+                void DescribeVLPlanAsync(const Model::DescribeVLPlanRequest& request, const DescribeVLPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVLPlanOutcomeCallable DescribeVLPlanCallable(const Model::DescribeVLPlanRequest& request);
+
+                /**
+                 *查询视觉理解计划结果详情
+                 * @param req DescribeVLPlanResultRequest
+                 * @return DescribeVLPlanResultOutcome
+                 */
+                DescribeVLPlanResultOutcome DescribeVLPlanResult(const Model::DescribeVLPlanResultRequest &request);
+                void DescribeVLPlanResultAsync(const Model::DescribeVLPlanResultRequest& request, const DescribeVLPlanResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVLPlanResultOutcomeCallable DescribeVLPlanResultCallable(const Model::DescribeVLPlanResultRequest& request);
+
+                /**
+                 *查询视觉理解模板详情
+                 * @param req DescribeVLTemplateRequest
+                 * @return DescribeVLTemplateOutcome
+                 */
+                DescribeVLTemplateOutcome DescribeVLTemplate(const Model::DescribeVLTemplateRequest &request);
+                void DescribeVLTemplateAsync(const Model::DescribeVLTemplateRequest& request, const DescribeVLTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVLTemplateOutcomeCallable DescribeVLTemplateCallable(const Model::DescribeVLTemplateRequest& request);
+
+                /**
                  *用于获取视频通道的码率信息
                  * @param req DescribeVideoBitRateRequest
                  * @return DescribeVideoBitRateOutcome
@@ -864,6 +1109,24 @@ namespace TencentCloud
                 DescribeVideoDownloadUrlOutcome DescribeVideoDownloadUrl(const Model::DescribeVideoDownloadUrlRequest &request);
                 void DescribeVideoDownloadUrlAsync(const Model::DescribeVideoDownloadUrlRequest& request, const DescribeVideoDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVideoDownloadUrlOutcomeCallable DescribeVideoDownloadUrlCallable(const Model::DescribeVideoDownloadUrlRequest& request);
+
+                /**
+                 *获取截图配置详情
+                 * @param req DescribeVideoSnapshotConfigRequest
+                 * @return DescribeVideoSnapshotConfigOutcome
+                 */
+                DescribeVideoSnapshotConfigOutcome DescribeVideoSnapshotConfig(const Model::DescribeVideoSnapshotConfigRequest &request);
+                void DescribeVideoSnapshotConfigAsync(const Model::DescribeVideoSnapshotConfigRequest& request, const DescribeVideoSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoSnapshotConfigOutcomeCallable DescribeVideoSnapshotConfigCallable(const Model::DescribeVideoSnapshotConfigRequest& request);
+
+                /**
+                 *获取截图模板详情
+                 * @param req DescribeVideoSnapshotTemplateRequest
+                 * @return DescribeVideoSnapshotTemplateOutcome
+                 */
+                DescribeVideoSnapshotTemplateOutcome DescribeVideoSnapshotTemplate(const Model::DescribeVideoSnapshotTemplateRequest &request);
+                void DescribeVideoSnapshotTemplateAsync(const Model::DescribeVideoSnapshotTemplateRequest& request, const DescribeVideoSnapshotTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoSnapshotTemplateOutcomeCallable DescribeVideoSnapshotTemplateCallable(const Model::DescribeVideoSnapshotTemplateRequest& request);
 
                 /**
                  *获取设备抓拍结果列表
@@ -992,6 +1255,24 @@ namespace TencentCloud
                 ListTasksOutcomeCallable ListTasksCallable(const Model::ListTasksRequest& request);
 
                 /**
+                 *获取视觉理解计划列表
+                 * @param req ListVLPlansRequest
+                 * @return ListVLPlansOutcome
+                 */
+                ListVLPlansOutcome ListVLPlans(const Model::ListVLPlansRequest &request);
+                void ListVLPlansAsync(const Model::ListVLPlansRequest& request, const ListVLPlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListVLPlansOutcomeCallable ListVLPlansCallable(const Model::ListVLPlansRequest& request);
+
+                /**
+                 *获取视觉理解模板列表
+                 * @param req ListVLTemplatesRequest
+                 * @return ListVLTemplatesOutcome
+                 */
+                ListVLTemplatesOutcome ListVLTemplates(const Model::ListVLTemplatesRequest &request);
+                void ListVLTemplatesAsync(const Model::ListVLTemplatesRequest& request, const ListVLTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListVLTemplatesOutcomeCallable ListVLTemplatesCallable(const Model::ListVLTemplatesRequest& request);
+
+                /**
                  *查询本店里录像下载任务列表
                  * @param req ListVideoDownloadTaskRequest
                  * @return ListVideoDownloadTaskOutcome
@@ -999,6 +1280,33 @@ namespace TencentCloud
                 ListVideoDownloadTaskOutcome ListVideoDownloadTask(const Model::ListVideoDownloadTaskRequest &request);
                 void ListVideoDownloadTaskAsync(const Model::ListVideoDownloadTaskRequest& request, const ListVideoDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListVideoDownloadTaskOutcomeCallable ListVideoDownloadTaskCallable(const Model::ListVideoDownloadTaskRequest& request);
+
+                /**
+                 *获取截图模板详情列表
+                 * @param req ListVideoSnapshotTemplateRequest
+                 * @return ListVideoSnapshotTemplateOutcome
+                 */
+                ListVideoSnapshotTemplateOutcome ListVideoSnapshotTemplate(const Model::ListVideoSnapshotTemplateRequest &request);
+                void ListVideoSnapshotTemplateAsync(const Model::ListVideoSnapshotTemplateRequest& request, const ListVideoSnapshotTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListVideoSnapshotTemplateOutcomeCallable ListVideoSnapshotTemplateCallable(const Model::ListVideoSnapshotTemplateRequest& request);
+
+                /**
+                 *修改视觉理解计划
+                 * @param req ModifyVLPlanRequest
+                 * @return ModifyVLPlanOutcome
+                 */
+                ModifyVLPlanOutcome ModifyVLPlan(const Model::ModifyVLPlanRequest &request);
+                void ModifyVLPlanAsync(const Model::ModifyVLPlanRequest& request, const ModifyVLPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVLPlanOutcomeCallable ModifyVLPlanCallable(const Model::ModifyVLPlanRequest& request);
+
+                /**
+                 *更新截图配置
+                 * @param req ModifyVideoSnapshotConfigRequest
+                 * @return ModifyVideoSnapshotConfigOutcome
+                 */
+                ModifyVideoSnapshotConfigOutcome ModifyVideoSnapshotConfig(const Model::ModifyVideoSnapshotConfigRequest &request);
+                void ModifyVideoSnapshotConfigAsync(const Model::ModifyVideoSnapshotConfigRequest& request, const ModifyVideoSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVideoSnapshotConfigOutcomeCallable ModifyVideoSnapshotConfigCallable(const Model::ModifyVideoSnapshotConfigRequest& request);
 
                 /**
                  *用于获取设备本地录像 URL 地址。

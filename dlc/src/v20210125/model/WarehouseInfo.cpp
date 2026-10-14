@@ -29,6 +29,7 @@ WarehouseInfo::WarehouseInfo() :
     m_partitionCodeHasBeenSet(false),
     m_partitionNameHasBeenSet(false),
     m_queueNameHasBeenSet(false),
+    m_profileDetailHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_activeClustersHasBeenSet(false),
@@ -126,6 +127,23 @@ CoreInternalOutcome WarehouseInfo::Deserialize(const rapidjson::Value &value)
         }
         m_queueName = string(value["QueueName"].GetString());
         m_queueNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProfileDetail") && !value["ProfileDetail"].IsNull())
+    {
+        if (!value["ProfileDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WarehouseInfo.ProfileDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_profileDetail.Deserialize(value["ProfileDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_profileDetailHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -317,6 +335,15 @@ void WarehouseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "QueueName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProfileDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_profileDetail.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -543,6 +570,22 @@ void WarehouseInfo::SetQueueName(const string& _queueName)
 bool WarehouseInfo::QueueNameHasBeenSet() const
 {
     return m_queueNameHasBeenSet;
+}
+
+WarehouseProfileBriefInfo WarehouseInfo::GetProfileDetail() const
+{
+    return m_profileDetail;
+}
+
+void WarehouseInfo::SetProfileDetail(const WarehouseProfileBriefInfo& _profileDetail)
+{
+    m_profileDetail = _profileDetail;
+    m_profileDetailHasBeenSet = true;
+}
+
+bool WarehouseInfo::ProfileDetailHasBeenSet() const
+{
+    return m_profileDetailHasBeenSet;
 }
 
 int64_t WarehouseInfo::GetCreateTime() const

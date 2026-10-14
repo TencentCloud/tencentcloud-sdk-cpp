@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模型提供商基本信息
+                * <p>模型提供商基本信息（已弃用，请使用 ModelProviderProfile）</p>
                 */
                 class ModelProviderBasic : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型提供商别名
-                     * @return Alias 模型提供商别名
+                     * 获取<p>模型提供商别名</p>
+                     * @return Alias <p>模型提供商别名</p>
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置模型提供商别名
-                     * @param _alias 模型提供商别名
+                     * 设置<p>模型提供商别名</p>
+                     * @param _alias <p>模型提供商别名</p>
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AliasHasBeenSet() const;
 
                     /**
-                     * 获取模型提供商名称
-                     * @return Name 模型提供商名称
+                     * 获取<p>模型提供商名称</p>
+                     * @return Name <p>模型提供商名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置模型提供商名称
-                     * @param _name 模型提供商名称
+                     * 设置<p>模型提供商名称</p>
+                     * @param _name <p>模型提供商名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取模型提供商类型。1-自有提供商, 2-自定义模型提供商, 3-第三方模型提供商
-                     * @return ProviderType 模型提供商类型。1-自有提供商, 2-自定义模型提供商, 3-第三方模型提供商
+                     * 获取<p>模型提供商类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_PROVIDER_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_PROVIDER_TYPE_SELF</td><td>1</td><td>自有提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_CUSTOM</td><td>2</td><td>自定义模型提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_THIRD</td><td>3</td><td>第三方模型提供商</td></tr></table>
+                     * @return ProviderType <p>模型提供商类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_PROVIDER_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_PROVIDER_TYPE_SELF</td><td>1</td><td>自有提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_CUSTOM</td><td>2</td><td>自定义模型提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_THIRD</td><td>3</td><td>第三方模型提供商</td></tr></table>
                      * 
                      */
                     int64_t GetProviderType() const;
 
                     /**
-                     * 设置模型提供商类型。1-自有提供商, 2-自定义模型提供商, 3-第三方模型提供商
-                     * @param _providerType 模型提供商类型。1-自有提供商, 2-自定义模型提供商, 3-第三方模型提供商
+                     * 设置<p>模型提供商类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_PROVIDER_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_PROVIDER_TYPE_SELF</td><td>1</td><td>自有提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_CUSTOM</td><td>2</td><td>自定义模型提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_THIRD</td><td>3</td><td>第三方模型提供商</td></tr></table>
+                     * @param _providerType <p>模型提供商类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_PROVIDER_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_PROVIDER_TYPE_SELF</td><td>1</td><td>自有提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_CUSTOM</td><td>2</td><td>自定义模型提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_THIRD</td><td>3</td><td>第三方模型提供商</td></tr></table>
                      * 
                      */
                     void SetProviderType(const int64_t& _providerType);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型提供商别名
+                     * <p>模型提供商别名</p>
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
-                     * 模型提供商名称
+                     * <p>模型提供商名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 模型提供商类型。1-自有提供商, 2-自定义模型提供商, 3-第三方模型提供商
+                     * <p>模型提供商类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_PROVIDER_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_PROVIDER_TYPE_SELF</td><td>1</td><td>自有提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_CUSTOM</td><td>2</td><td>自定义模型提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_THIRD</td><td>3</td><td>第三方模型提供商</td></tr></table>
                      */
                     int64_t m_providerType;
                     bool m_providerTypeHasBeenSet;

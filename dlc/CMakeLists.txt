@@ -565,6 +565,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/ModifyJobDefinitionRequest.h
   include/tencentcloud/dlc/v20210125/model/AddDMSPartitionsResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribePostTrainingPresetRequest.h
+  include/tencentcloud/dlc/v20210125/model/WarehouseProfileBriefInfo.h
   include/tencentcloud/dlc/v20210125/model/ListTaskJobLogNameResponse.h
   include/tencentcloud/dlc/v20210125/model/RayClusterHistory.h
   include/tencentcloud/dlc/v20210125/model/ListMlflowServersResponse.h
@@ -1597,6 +1598,7 @@ set(dlc_src
   src/v20210125/model/ModifyJobDefinitionRequest.cpp
   src/v20210125/model/AddDMSPartitionsResponse.cpp
   src/v20210125/model/DescribePostTrainingPresetRequest.cpp
+  src/v20210125/model/WarehouseProfileBriefInfo.cpp
   src/v20210125/model/ListTaskJobLogNameResponse.cpp
   src/v20210125/model/RayClusterHistory.cpp
   src/v20210125/model/ListMlflowServersResponse.cpp

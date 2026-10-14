@@ -22,7 +22,8 @@ using namespace std;
 
 ClawAgentConfig::ClawAgentConfig() :
     m_agentTeamConfigHasBeenSet(false),
-    m_longMemoryConfigHasBeenSet(false)
+    m_longMemoryConfigHasBeenSet(false),
+    m_channelContextTimeoutConfigHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,23 @@ CoreInternalOutcome ClawAgentConfig::Deserialize(const rapidjson::Value &value)
         m_longMemoryConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ChannelContextTimeoutConfig") && !value["ChannelContextTimeoutConfig"].IsNull())
+    {
+        if (!value["ChannelContextTimeoutConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClawAgentConfig.ChannelContextTimeoutConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_channelContextTimeoutConfig.Deserialize(value["ChannelContextTimeoutConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_channelContextTimeoutConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ void ClawAgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_longMemoryConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_channelContextTimeoutConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelContextTimeoutConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_channelContextTimeoutConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +150,21 @@ void ClawAgentConfig::SetLongMemoryConfig(const ClawAgentLongMemoryConfig& _long
 bool ClawAgentConfig::LongMemoryConfigHasBeenSet() const
 {
     return m_longMemoryConfigHasBeenSet;
+}
+
+ClawAgentChannelContextTimeoutConfig ClawAgentConfig::GetChannelContextTimeoutConfig() const
+{
+    return m_channelContextTimeoutConfig;
+}
+
+void ClawAgentConfig::SetChannelContextTimeoutConfig(const ClawAgentChannelContextTimeoutConfig& _channelContextTimeoutConfig)
+{
+    m_channelContextTimeoutConfig = _channelContextTimeoutConfig;
+    m_channelContextTimeoutConfigHasBeenSet = true;
+}
+
+bool ClawAgentConfig::ChannelContextTimeoutConfigHasBeenSet() const
+{
+    return m_channelContextTimeoutConfigHasBeenSet;
 }
 

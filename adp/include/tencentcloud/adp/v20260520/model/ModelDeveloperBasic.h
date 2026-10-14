@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模型作者信息
+                * <p>模型作者基本信息（已弃用）</p>
                 */
                 class ModelDeveloperBasic : public AbstractModel
                 {
@@ -45,6 +45,27 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取<p>作者别名</p>
+                     * @return Alias <p>作者别名</p>
+                     * 
+                     */
+                    std::string GetAlias() const;
+
+                    /**
+                     * 设置<p>作者别名</p>
+                     * @param _alias <p>作者别名</p>
+                     * 
+                     */
+                    void SetAlias(const std::string& _alias);
+
+                    /**
+                     * 判断参数 Alias 是否已赋值
+                     * @return Alias 是否已赋值
+                     * 
+                     */
+                    bool AliasHasBeenSet() const;
 
                     /**
                      * 获取<p>作者标识</p>
@@ -67,40 +88,19 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
-                    /**
-                     * 获取<p>作者显示名称</p>
-                     * @return Alias <p>作者显示名称</p>
-                     * 
-                     */
-                    std::string GetAlias() const;
-
-                    /**
-                     * 设置<p>作者显示名称</p>
-                     * @param _alias <p>作者显示名称</p>
-                     * 
-                     */
-                    void SetAlias(const std::string& _alias);
-
-                    /**
-                     * 判断参数 Alias 是否已赋值
-                     * @return Alias 是否已赋值
-                     * 
-                     */
-                    bool AliasHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * <p>作者别名</p>
+                     */
+                    std::string m_alias;
+                    bool m_aliasHasBeenSet;
 
                     /**
                      * <p>作者标识</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
-
-                    /**
-                     * <p>作者显示名称</p>
-                     */
-                    std::string m_alias;
-                    bool m_aliasHasBeenSet;
 
                 };
             }

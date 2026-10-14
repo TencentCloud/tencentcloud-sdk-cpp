@@ -28,7 +28,8 @@ ReleaseSummary::ReleaseSummary() :
     m_statusDescriptionHasBeenSet(false),
     m_appShareAccessControlHasBeenSet(false),
     m_channelIdListHasBeenSet(false),
-    m_corpShareConfigHasBeenSet(false)
+    m_corpShareConfigHasBeenSet(false),
+    m_portalShareConfigHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,23 @@ CoreInternalOutcome ReleaseSummary::Deserialize(const rapidjson::Value &value)
         m_corpShareConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("PortalShareConfig") && !value["PortalShareConfig"].IsNull())
+    {
+        if (!value["PortalShareConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleaseSummary.PortalShareConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_portalShareConfig.Deserialize(value["PortalShareConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_portalShareConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -210,6 +228,15 @@ void ReleaseSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_corpShareConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_portalShareConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortalShareConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_portalShareConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -341,5 +368,21 @@ void ReleaseSummary::SetCorpShareConfig(const CorpShareConfig& _corpShareConfig)
 bool ReleaseSummary::CorpShareConfigHasBeenSet() const
 {
     return m_corpShareConfigHasBeenSet;
+}
+
+PortalShareConfig ReleaseSummary::GetPortalShareConfig() const
+{
+    return m_portalShareConfig;
+}
+
+void ReleaseSummary::SetPortalShareConfig(const PortalShareConfig& _portalShareConfig)
+{
+    m_portalShareConfig = _portalShareConfig;
+    m_portalShareConfigHasBeenSet = true;
+}
+
+bool ReleaseSummary::PortalShareConfigHasBeenSet() const
+{
+    return m_portalShareConfigHasBeenSet;
 }
 

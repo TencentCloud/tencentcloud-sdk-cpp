@@ -85,6 +85,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAuditLogFilesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogTopSqlsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogTopSqlsResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyActionRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyActionResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyActionsRequest.h>
@@ -109,6 +111,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDatabaseAutonomyStatusRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDatabaseAutonomyStatusResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDatabaseObjectV2Request.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDatabaseObjectV2Response.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDeadLockLogsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDeadLockLogsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDiagDBInstancesRequest.h>
@@ -318,6 +322,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBAuditLogTopSqlsResponse> DescribeDBAuditLogTopSqlsOutcome;
                 typedef std::future<DescribeDBAuditLogTopSqlsOutcome> DescribeDBAuditLogTopSqlsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBAuditLogTopSqlsRequest&, DescribeDBAuditLogTopSqlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBAuditLogTopSqlsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBAuditLogsResponse> DescribeDBAuditLogsOutcome;
+                typedef std::future<DescribeDBAuditLogsOutcome> DescribeDBAuditLogsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDBAuditLogsRequest&, DescribeDBAuditLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBAuditLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBAutonomyActionResponse> DescribeDBAutonomyActionOutcome;
                 typedef std::future<DescribeDBAutonomyActionOutcome> DescribeDBAutonomyActionOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBAutonomyActionRequest&, DescribeDBAutonomyActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBAutonomyActionAsyncHandler;
@@ -354,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatabaseAutonomyStatusResponse> DescribeDatabaseAutonomyStatusOutcome;
                 typedef std::future<DescribeDatabaseAutonomyStatusOutcome> DescribeDatabaseAutonomyStatusOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDatabaseAutonomyStatusRequest&, DescribeDatabaseAutonomyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseAutonomyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatabaseObjectV2Response> DescribeDatabaseObjectV2Outcome;
+                typedef std::future<DescribeDatabaseObjectV2Outcome> DescribeDatabaseObjectV2OutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDatabaseObjectV2Request&, DescribeDatabaseObjectV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseObjectV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeadLockLogsResponse> DescribeDeadLockLogsOutcome;
                 typedef std::future<DescribeDeadLockLogsOutcome> DescribeDeadLockLogsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDeadLockLogsRequest&, DescribeDeadLockLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeadLockLogsAsyncHandler;
@@ -790,6 +800,15 @@ namespace TencentCloud
                 DescribeDBAuditLogTopSqlsOutcomeCallable DescribeDBAuditLogTopSqlsCallable(const Model::DescribeDBAuditLogTopSqlsRequest& request);
 
                 /**
+                 *查询指定实例在时间窗口内的审计日志明细，支持按 SQL 类型、执行耗时、错误码、关键词等多条件过滤。当前仅支持 dcdb、mariadb 产品（cdb、cynosdb 已切至中台）。注意 Filter.MultiSql 与 Filter.ExcludeMultiSql 需以 JSON 字符串形式传递二维数组内容，例如 [["a","b"]] 表示 (a OR b)，服务端会自动解析。
+                 * @param req DescribeDBAuditLogsRequest
+                 * @return DescribeDBAuditLogsOutcome
+                 */
+                DescribeDBAuditLogsOutcome DescribeDBAuditLogs(const Model::DescribeDBAuditLogsRequest &request);
+                void DescribeDBAuditLogsAsync(const Model::DescribeDBAuditLogsRequest& request, const DescribeDBAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBAuditLogsOutcomeCallable DescribeDBAuditLogsCallable(const Model::DescribeDBAuditLogsRequest& request);
+
+                /**
                  *自治中心-查询自治事件任务详情。
                  * @param req DescribeDBAutonomyActionRequest
                  * @return DescribeDBAutonomyActionOutcome
@@ -896,6 +915,15 @@ namespace TencentCloud
                 DescribeDatabaseAutonomyStatusOutcome DescribeDatabaseAutonomyStatus(const Model::DescribeDatabaseAutonomyStatusRequest &request);
                 void DescribeDatabaseAutonomyStatusAsync(const Model::DescribeDatabaseAutonomyStatusRequest& request, const DescribeDatabaseAutonomyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabaseAutonomyStatusOutcomeCallable DescribeDatabaseAutonomyStatusCallable(const Model::DescribeDatabaseAutonomyStatusRequest& request);
+
+                /**
+                 *查询指定 SELECT SQL 在实例上的执行计划，常用于慢 SQL 分析、SQL 优化等场景。仅支持 SELECT 类语句
+                 * @param req DescribeDatabaseObjectV2Request
+                 * @return DescribeDatabaseObjectV2Outcome
+                 */
+                DescribeDatabaseObjectV2Outcome DescribeDatabaseObjectV2(const Model::DescribeDatabaseObjectV2Request &request);
+                void DescribeDatabaseObjectV2Async(const Model::DescribeDatabaseObjectV2Request& request, const DescribeDatabaseObjectV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatabaseObjectV2OutcomeCallable DescribeDatabaseObjectV2Callable(const Model::DescribeDatabaseObjectV2Request& request);
 
                 /**
                  *查询实例的死锁事件列表

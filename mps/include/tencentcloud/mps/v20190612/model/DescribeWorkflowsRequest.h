@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流 ID 过滤条件，数组长度限制：100。
-                     * @return WorkflowIds 工作流 ID 过滤条件，数组长度限制：100。
+                     * 获取<p>工作流 ID 过滤条件，数组长度限制：100。</p>
+                     * @return WorkflowIds <p>工作流 ID 过滤条件，数组长度限制：100。</p>
                      * 
                      */
                     std::vector<int64_t> GetWorkflowIds() const;
 
                     /**
-                     * 设置工作流 ID 过滤条件，数组长度限制：100。
-                     * @param _workflowIds 工作流 ID 过滤条件，数组长度限制：100。
+                     * 设置<p>工作流 ID 过滤条件，数组长度限制：100。</p>
+                     * @param _workflowIds <p>工作流 ID 过滤条件，数组长度限制：100。</p>
                      * 
                      */
                     void SetWorkflowIds(const std::vector<int64_t>& _workflowIds);
@@ -64,27 +64,15 @@ namespace TencentCloud
                     bool WorkflowIdsHasBeenSet() const;
 
                     /**
-                     * 获取工作流状态，取值范围：
-<li>Enabled：已启用，</li>
-<li>Disabled：已禁用。</li>
-不填此参数，则不区分工作流状态。
-                     * @return Status 工作流状态，取值范围：
-<li>Enabled：已启用，</li>
-<li>Disabled：已禁用。</li>
-不填此参数，则不区分工作流状态。
+                     * 获取<p>工作流状态，取值范围：</p><li>Enabled：已启用，</li><li>Disabled：已禁用。</li>不填此参数，则不区分工作流状态。
+                     * @return Status <p>工作流状态，取值范围：</p><li>Enabled：已启用，</li><li>Disabled：已禁用。</li>不填此参数，则不区分工作流状态。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置工作流状态，取值范围：
-<li>Enabled：已启用，</li>
-<li>Disabled：已禁用。</li>
-不填此参数，则不区分工作流状态。
-                     * @param _status 工作流状态，取值范围：
-<li>Enabled：已启用，</li>
-<li>Disabled：已禁用。</li>
-不填此参数，则不区分工作流状态。
+                     * 设置<p>工作流状态，取值范围：</p><li>Enabled：已启用，</li><li>Disabled：已禁用。</li>不填此参数，则不区分工作流状态。
+                     * @param _status <p>工作流状态，取值范围：</p><li>Enabled：已启用，</li><li>Disabled：已禁用。</li>不填此参数，则不区分工作流状态。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -97,15 +85,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，默认值：0。
-                     * @return Offset 分页偏移量，默认值：0。
+                     * 获取<p>分页偏移量，默认值：0。</p>
+                     * @return Offset <p>分页偏移量，默认值：0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，默认值：0。
-                     * @param _offset 分页偏移量，默认值：0。
+                     * 设置<p>分页偏移量，默认值：0。</p>
+                     * @param _offset <p>分页偏移量，默认值：0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -118,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回记录条数，默认值：10，最大值：100。
-                     * @return Limit 返回记录条数，默认值：10，最大值：100。
+                     * 获取<p>返回记录条数，默认值：10，最大值：100。</p>
+                     * @return Limit <p>返回记录条数，默认值：10，最大值：100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回记录条数，默认值：10，最大值：100。
-                     * @param _limit 返回记录条数，默认值：10，最大值：100。
+                     * 设置<p>返回记录条数，默认值：10，最大值：100。</p>
+                     * @param _limit <p>返回记录条数，默认值：10，最大值：100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -141,28 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作流 ID 过滤条件，数组长度限制：100。
+                     * <p>工作流 ID 过滤条件，数组长度限制：100。</p>
                      */
                     std::vector<int64_t> m_workflowIds;
                     bool m_workflowIdsHasBeenSet;
 
                     /**
-                     * 工作流状态，取值范围：
-<li>Enabled：已启用，</li>
-<li>Disabled：已禁用。</li>
-不填此参数，则不区分工作流状态。
+                     * <p>工作流状态，取值范围：</p><li>Enabled：已启用，</li><li>Disabled：已禁用。</li>不填此参数，则不区分工作流状态。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 分页偏移量，默认值：0。
+                     * <p>分页偏移量，默认值：0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回记录条数，默认值：10，最大值：100。
+                     * <p>返回记录条数，默认值：10，最大值：100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

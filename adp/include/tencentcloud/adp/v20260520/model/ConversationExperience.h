@@ -50,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取AI通话配置
+                     * 获取<p>AI通话配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AiCall AI通话配置
+                     * @return AiCall <p>AI通话配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AICallConfig GetAiCall() const;
 
                     /**
-                     * 设置AI通话配置
+                     * 设置<p>AI通话配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aiCall AI通话配置
+                     * @param _aiCall <p>AI通话配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,18 +75,18 @@ namespace TencentCloud
                     bool AiCallHasBeenSet() const;
 
                     /**
-                     * 获取背景图片配置
+                     * 获取<p>背景图片配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BackgroundImage 背景图片配置
+                     * @return BackgroundImage <p>背景图片配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BackgroundImage GetBackgroundImage() const;
 
                     /**
-                     * 设置背景图片配置
+                     * 设置<p>背景图片配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _backgroundImage 背景图片配置
+                     * @param _backgroundImage <p>背景图片配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,15 +100,15 @@ namespace TencentCloud
                     bool BackgroundImageHasBeenSet() const;
 
                     /**
-                     * 获取兜底回复开关
-                     * @return EnableFallbackReply 兜底回复开关
+                     * 获取<p>兜底回复开关</p>
+                     * @return EnableFallbackReply <p>兜底回复开关</p>
                      * 
                      */
                     bool GetEnableFallbackReply() const;
 
                     /**
-                     * 设置兜底回复开关
-                     * @param _enableFallbackReply 兜底回复开关
+                     * 设置<p>兜底回复开关</p>
+                     * @param _enableFallbackReply <p>兜底回复开关</p>
                      * 
                      */
                     void SetEnableFallbackReply(const bool& _enableFallbackReply);
@@ -121,15 +121,15 @@ namespace TencentCloud
                     bool EnableFallbackReplyHasBeenSet() const;
 
                     /**
-                     * 获取是否使用推荐问
-                     * @return EnableRecommended 是否使用推荐问
+                     * 获取<p>是否使用推荐问</p>
+                     * @return EnableRecommended <p>是否使用推荐问</p>
                      * 
                      */
                     bool GetEnableRecommended() const;
 
                     /**
-                     * 设置是否使用推荐问
-                     * @param _enableRecommended 是否使用推荐问
+                     * 设置<p>是否使用推荐问</p>
+                     * @param _enableRecommended <p>是否使用推荐问</p>
                      * 
                      */
                     void SetEnableRecommended(const bool& _enableRecommended);
@@ -142,15 +142,15 @@ namespace TencentCloud
                     bool EnableRecommendedHasBeenSet() const;
 
                     /**
-                     * 获取是否使用联网搜索
-                     * @return EnableWebSearch 是否使用联网搜索
+                     * 获取<p>是否使用联网搜索</p>
+                     * @return EnableWebSearch <p>是否使用联网搜索</p>
                      * 
                      */
                     bool GetEnableWebSearch() const;
 
                     /**
-                     * 设置是否使用联网搜索
-                     * @param _enableWebSearch 是否使用联网搜索
+                     * 设置<p>是否使用联网搜索</p>
+                     * @param _enableWebSearch <p>是否使用联网搜索</p>
                      * 
                      */
                     void SetEnableWebSearch(const bool& _enableWebSearch);
@@ -163,15 +163,15 @@ namespace TencentCloud
                     bool EnableWebSearchHasBeenSet() const;
 
                     /**
-                     * 获取兜底回复语
-                     * @return FallbackReply 兜底回复语
+                     * 获取<p>兜底回复语</p>
+                     * @return FallbackReply <p>兜底回复语</p>
                      * 
                      */
                     std::string GetFallbackReply() const;
 
                     /**
-                     * 设置兜底回复语
-                     * @param _fallbackReply 兜底回复语
+                     * 设置<p>兜底回复语</p>
+                     * @param _fallbackReply <p>兜底回复语</p>
                      * 
                      */
                     void SetFallbackReply(const std::string& _fallbackReply);
@@ -184,18 +184,18 @@ namespace TencentCloud
                     bool FallbackReplyHasBeenSet() const;
 
                     /**
-                     * 获取输入框配置
+                     * 获取<p>输入框配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputBoxConfig 输入框配置
+                     * @return InputBoxConfig <p>输入框配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InputBoxConfig GetInputBoxConfig() const;
 
                     /**
-                     * 设置输入框配置
+                     * 设置<p>输入框配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inputBoxConfig 输入框配置
+                     * @param _inputBoxConfig <p>输入框配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -209,15 +209,15 @@ namespace TencentCloud
                     bool InputBoxConfigHasBeenSet() const;
 
                     /**
-                     * 获取输出方式。枚举值: 1:流式, 2:非流式
-                     * @return Method 输出方式。枚举值: 1:流式, 2:非流式
+                     * 获取<p>输出方式。枚举值: 1:流式, 2:非流式</p>
+                     * @return Method <p>输出方式。枚举值: 1:流式, 2:非流式</p>
                      * 
                      */
                     int64_t GetMethod() const;
 
                     /**
-                     * 设置输出方式。枚举值: 1:流式, 2:非流式
-                     * @param _method 输出方式。枚举值: 1:流式, 2:非流式
+                     * 设置<p>输出方式。枚举值: 1:流式, 2:非流式</p>
+                     * @param _method <p>输出方式。枚举值: 1:流式, 2:非流式</p>
                      * 
                      */
                     void SetMethod(const int64_t& _method);
@@ -230,15 +230,15 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt
-                     * @return RecommendPromptMode 推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt
+                     * 获取<p>推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt</p>
+                     * @return RecommendPromptMode <p>推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt</p>
                      * 
                      */
                     int64_t GetRecommendPromptMode() const;
 
                     /**
-                     * 设置推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt
-                     * @param _recommendPromptMode 推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt
+                     * 设置<p>推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt</p>
+                     * @param _recommendPromptMode <p>推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt</p>
                      * 
                      */
                     void SetRecommendPromptMode(const int64_t& _recommendPromptMode);
@@ -253,58 +253,58 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * AI通话配置
+                     * <p>AI通话配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AICallConfig m_aiCall;
                     bool m_aiCallHasBeenSet;
 
                     /**
-                     * 背景图片配置
+                     * <p>背景图片配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BackgroundImage m_backgroundImage;
                     bool m_backgroundImageHasBeenSet;
 
                     /**
-                     * 兜底回复开关
+                     * <p>兜底回复开关</p>
                      */
                     bool m_enableFallbackReply;
                     bool m_enableFallbackReplyHasBeenSet;
 
                     /**
-                     * 是否使用推荐问
+                     * <p>是否使用推荐问</p>
                      */
                     bool m_enableRecommended;
                     bool m_enableRecommendedHasBeenSet;
 
                     /**
-                     * 是否使用联网搜索
+                     * <p>是否使用联网搜索</p>
                      */
                     bool m_enableWebSearch;
                     bool m_enableWebSearchHasBeenSet;
 
                     /**
-                     * 兜底回复语
+                     * <p>兜底回复语</p>
                      */
                     std::string m_fallbackReply;
                     bool m_fallbackReplyHasBeenSet;
 
                     /**
-                     * 输入框配置
+                     * <p>输入框配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InputBoxConfig m_inputBoxConfig;
                     bool m_inputBoxConfigHasBeenSet;
 
                     /**
-                     * 输出方式。枚举值: 1:流式, 2:非流式
+                     * <p>输出方式。枚举值: 1:流式, 2:非流式</p>
                      */
                     int64_t m_method;
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt
+                     * <p>推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt</p>
                      */
                     int64_t m_recommendPromptMode;
                     bool m_recommendPromptModeHasBeenSet;

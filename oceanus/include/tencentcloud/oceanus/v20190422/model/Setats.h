@@ -568,6 +568,31 @@ namespace TencentCloud
                      */
                     bool CCNsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>挂靠的宿主集群</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterGroupSerialId <p>挂靠的宿主集群</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterGroupSerialId() const;
+
+                    /**
+                     * 设置<p>挂靠的宿主集群</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterGroupSerialId <p>挂靠的宿主集群</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterGroupSerialId(const std::string& _clusterGroupSerialId);
+
+                    /**
+                     * 判断参数 ClusterGroupSerialId 是否已赋值
+                     * @return ClusterGroupSerialId 是否已赋值
+                     * 
+                     */
+                    bool ClusterGroupSerialIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -715,6 +740,13 @@ namespace TencentCloud
                      */
                     std::vector<CCN> m_cCNs;
                     bool m_cCNsHasBeenSet;
+
+                    /**
+                     * <p>挂靠的宿主集群</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterGroupSerialId;
+                    bool m_clusterGroupSerialIdHasBeenSet;
 
                 };
             }

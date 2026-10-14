@@ -44,7 +44,10 @@ EventDetail::EventDetail() :
     m_chatHasBeenSet(false),
     m_modifyRoleHasBeenSet(false),
     m_addFriendHasBeenSet(false),
-    m_modifyGuildHasBeenSet(false)
+    m_modifyGuildHasBeenSet(false),
+    m_searchHasBeenSet(false),
+    m_bookingHasBeenSet(false),
+    m_accountSecurityHasBeenSet(false)
 {
 }
 
@@ -461,6 +464,57 @@ CoreInternalOutcome EventDetail::Deserialize(const rapidjson::Value &value)
         m_modifyGuildHasBeenSet = true;
     }
 
+    if (value.HasMember("Search") && !value["Search"].IsNull())
+    {
+        if (!value["Search"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDetail.Search` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_search.Deserialize(value["Search"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_searchHasBeenSet = true;
+    }
+
+    if (value.HasMember("Booking") && !value["Booking"].IsNull())
+    {
+        if (!value["Booking"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDetail.Booking` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_booking.Deserialize(value["Booking"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_bookingHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccountSecurity") && !value["AccountSecurity"].IsNull())
+    {
+        if (!value["AccountSecurity"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDetail.AccountSecurity` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_accountSecurity.Deserialize(value["AccountSecurity"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_accountSecurityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -682,6 +736,33 @@ void EventDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_modifyGuild.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_searchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Search";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_search.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_bookingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Booking";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_booking.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_accountSecurityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountSecurity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_accountSecurity.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1069,5 +1150,53 @@ void EventDetail::SetModifyGuild(const ModifyGuildEvent& _modifyGuild)
 bool EventDetail::ModifyGuildHasBeenSet() const
 {
     return m_modifyGuildHasBeenSet;
+}
+
+SearchEvent EventDetail::GetSearch() const
+{
+    return m_search;
+}
+
+void EventDetail::SetSearch(const SearchEvent& _search)
+{
+    m_search = _search;
+    m_searchHasBeenSet = true;
+}
+
+bool EventDetail::SearchHasBeenSet() const
+{
+    return m_searchHasBeenSet;
+}
+
+BookingEvent EventDetail::GetBooking() const
+{
+    return m_booking;
+}
+
+void EventDetail::SetBooking(const BookingEvent& _booking)
+{
+    m_booking = _booking;
+    m_bookingHasBeenSet = true;
+}
+
+bool EventDetail::BookingHasBeenSet() const
+{
+    return m_bookingHasBeenSet;
+}
+
+AccountSecurityEvent EventDetail::GetAccountSecurity() const
+{
+    return m_accountSecurity;
+}
+
+void EventDetail::SetAccountSecurity(const AccountSecurityEvent& _accountSecurity)
+{
+    m_accountSecurity = _accountSecurity;
+    m_accountSecurityHasBeenSet = true;
+}
+
+bool EventDetail::AccountSecurityHasBeenSet() const
+{
+    return m_accountSecurityHasBeenSet;
 }
 

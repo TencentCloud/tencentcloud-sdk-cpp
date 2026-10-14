@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Bot 自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BotManagementCustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li>
-                     * @return Id Bot 自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BotManagementCustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li>
+                     * 获取<p>Bot 自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BotManagementCustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li></p>
+                     * @return Id <p>Bot 自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BotManagementCustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li></p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置Bot 自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BotManagementCustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li>
-                     * @param _id Bot 自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BotManagementCustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li>
+                     * 设置<p>Bot 自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BotManagementCustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li></p>
+                     * @param _id <p>Bot 自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BotManagementCustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li></p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取Bot 自定义规则的名称。
-                     * @return Name Bot 自定义规则的名称。
+                     * 获取<p>Bot 自定义规则的名称。</p>
+                     * @return Name <p>Bot 自定义规则的名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Bot 自定义规则的名称。
-                     * @param _name Bot 自定义规则的名称。
+                     * 设置<p>Bot 自定义规则的名称。</p>
+                     * @param _name <p>Bot 自定义规则的名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Bot 自定义规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
-                     * @return Enabled Bot 自定义规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
+                     * 获取<p>Bot 自定义规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li></p>
+                     * @return Enabled <p>Bot 自定义规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li></p>
                      * 
                      */
                     std::string GetEnabled() const;
 
                     /**
-                     * 设置Bot 自定义规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
-                     * @param _enabled Bot 自定义规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
+                     * 设置<p>Bot 自定义规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li></p>
+                     * @param _enabled <p>Bot 自定义规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li></p>
                      * 
                      */
                     void SetEnabled(const std::string& _enabled);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取Bot 自定义规则的优先级，范围是 1 ~ 100，默认为 50。
-                     * @return Priority Bot 自定义规则的优先级，范围是 1 ~ 100，默认为 50。
+                     * 获取<p>Bot 自定义规则的优先级，范围是 1 ~ 100，默认为 50。</p>
+                     * @return Priority <p>Bot 自定义规则的优先级，范围是 1 ~ 100，默认为 50。</p>
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
-                     * 设置Bot 自定义规则的优先级，范围是 1 ~ 100，默认为 50。
-                     * @param _priority Bot 自定义规则的优先级，范围是 1 ~ 100，默认为 50。
+                     * 设置<p>Bot 自定义规则的优先级，范围是 1 ~ 100，默认为 50。</p>
+                     * @param _priority <p>Bot 自定义规则的优先级，范围是 1 ~ 100，默认为 50。</p>
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取Bot 自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。
-                     * @return Condition Bot 自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。
+                     * 获取<p>Bot 自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。</p>
+                     * @return Condition <p>Bot 自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。</p>
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
-                     * 设置Bot 自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。
-                     * @param _condition Bot 自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。
+                     * 设置<p>Bot 自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。</p>
+                     * @param _condition <p>Bot 自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。</p>
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取Bot 自定义规则的处置方式。取值有：<li>Monitor：观察；</li><li>Deny：拦截，其中 DenyActionParameters.Name 支持 Deny 和 ReturnCustomPage；</li><li>Challenge：挑战，其中 ChallengeActionParameters.Name 支持 JSChallenge 和 ManagedChallenge；</li><li>Redirect：重定向至 URL。</li>
-                     * @return Action Bot 自定义规则的处置方式。取值有：<li>Monitor：观察；</li><li>Deny：拦截，其中 DenyActionParameters.Name 支持 Deny 和 ReturnCustomPage；</li><li>Challenge：挑战，其中 ChallengeActionParameters.Name 支持 JSChallenge 和 ManagedChallenge；</li><li>Redirect：重定向至 URL。</li>
+                     * 获取<p>按权重分配的安全执行动作列表。</p>
+                     * @return Action <p>按权重分配的安全执行动作列表。</p>
                      * 
                      */
                     std::vector<SecurityWeightedAction> GetAction() const;
 
                     /**
-                     * 设置Bot 自定义规则的处置方式。取值有：<li>Monitor：观察；</li><li>Deny：拦截，其中 DenyActionParameters.Name 支持 Deny 和 ReturnCustomPage；</li><li>Challenge：挑战，其中 ChallengeActionParameters.Name 支持 JSChallenge 和 ManagedChallenge；</li><li>Redirect：重定向至 URL。</li>
-                     * @param _action Bot 自定义规则的处置方式。取值有：<li>Monitor：观察；</li><li>Deny：拦截，其中 DenyActionParameters.Name 支持 Deny 和 ReturnCustomPage；</li><li>Challenge：挑战，其中 ChallengeActionParameters.Name 支持 JSChallenge 和 ManagedChallenge；</li><li>Redirect：重定向至 URL。</li>
+                     * 设置<p>按权重分配的安全执行动作列表。</p>
+                     * @param _action <p>按权重分配的安全执行动作列表。</p>
                      * 
                      */
                     void SetAction(const std::vector<SecurityWeightedAction>& _action);
@@ -176,37 +176,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Bot 自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BotManagementCustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li>
+                     * <p>Bot 自定义规则的 ID。<br>通过规则 ID 可支持不同的规则配置操作：<br> <li> <b>增加</b>新规则：ID 为空或不指定 ID 参数；</li><li><b>修改</b>已有规则：指定需要更新/修改的规则 ID；</li><li><b>删除</b>已有规则：BotManagementCustomRules 参数中，Rules 列表中未包含的已有规则将被删除。</li></p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * Bot 自定义规则的名称。
+                     * <p>Bot 自定义规则的名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Bot 自定义规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li>
+                     * <p>Bot 自定义规则是否开启。取值有：<li>on：开启；</li><li>off：关闭。</li></p>
                      */
                     std::string m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * Bot 自定义规则的优先级，范围是 1 ~ 100，默认为 50。
+                     * <p>Bot 自定义规则的优先级，范围是 1 ~ 100，默认为 50。</p>
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * Bot 自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。
+                     * <p>Bot 自定义规则的具体内容，需符合表达式语法，详细规范参见产品文档。</p>
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * Bot 自定义规则的处置方式。取值有：<li>Monitor：观察；</li><li>Deny：拦截，其中 DenyActionParameters.Name 支持 Deny 和 ReturnCustomPage；</li><li>Challenge：挑战，其中 ChallengeActionParameters.Name 支持 JSChallenge 和 ManagedChallenge；</li><li>Redirect：重定向至 URL。</li>
+                     * <p>按权重分配的安全执行动作列表。</p>
                      */
                     std::vector<SecurityWeightedAction> m_action;
                     bool m_actionHasBeenSet;

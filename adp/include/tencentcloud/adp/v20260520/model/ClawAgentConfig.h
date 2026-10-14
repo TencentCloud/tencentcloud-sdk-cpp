@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/ClawAgentAgentTeamConfig.h>
 #include <tencentcloud/adp/v20260520/model/ClawAgentLongMemoryConfig.h>
+#include <tencentcloud/adp/v20260520/model/ClawAgentChannelContextTimeoutConfig.h>
 
 
 namespace TencentCloud
@@ -49,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Agent团队协作配置
+                     * 获取<p>Agent团队协作配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AgentTeamConfig Agent团队协作配置
+                     * @return AgentTeamConfig <p>Agent团队协作配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClawAgentAgentTeamConfig GetAgentTeamConfig() const;
 
                     /**
-                     * 设置Agent团队协作配置
+                     * 设置<p>Agent团队协作配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _agentTeamConfig Agent团队协作配置
+                     * @param _agentTeamConfig <p>Agent团队协作配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,18 +75,18 @@ namespace TencentCloud
                     bool AgentTeamConfigHasBeenSet() const;
 
                     /**
-                     * 获取长期记忆配置
+                     * 获取<p>长期记忆配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LongMemoryConfig 长期记忆配置
+                     * @return LongMemoryConfig <p>长期记忆配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClawAgentLongMemoryConfig GetLongMemoryConfig() const;
 
                     /**
-                     * 设置长期记忆配置
+                     * 设置<p>长期记忆配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _longMemoryConfig 长期记忆配置
+                     * @param _longMemoryConfig <p>长期记忆配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,21 +99,53 @@ namespace TencentCloud
                      */
                     bool LongMemoryConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>渠道上下文超时清空配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelContextTimeoutConfig <p>渠道上下文超时清空配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ClawAgentChannelContextTimeoutConfig GetChannelContextTimeoutConfig() const;
+
+                    /**
+                     * 设置<p>渠道上下文超时清空配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _channelContextTimeoutConfig <p>渠道上下文超时清空配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChannelContextTimeoutConfig(const ClawAgentChannelContextTimeoutConfig& _channelContextTimeoutConfig);
+
+                    /**
+                     * 判断参数 ChannelContextTimeoutConfig 是否已赋值
+                     * @return ChannelContextTimeoutConfig 是否已赋值
+                     * 
+                     */
+                    bool ChannelContextTimeoutConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Agent团队协作配置
+                     * <p>Agent团队协作配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClawAgentAgentTeamConfig m_agentTeamConfig;
                     bool m_agentTeamConfigHasBeenSet;
 
                     /**
-                     * 长期记忆配置
+                     * <p>长期记忆配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClawAgentLongMemoryConfig m_longMemoryConfig;
                     bool m_longMemoryConfigHasBeenSet;
+
+                    /**
+                     * <p>渠道上下文超时清空配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ClawAgentChannelContextTimeoutConfig m_channelContextTimeoutConfig;
+                    bool m_channelContextTimeoutConfigHasBeenSet;
 
                 };
             }

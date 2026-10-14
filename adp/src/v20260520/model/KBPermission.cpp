@@ -23,6 +23,7 @@ using namespace std;
 KBPermission::KBPermission() :
     m_canDeleteHasBeenSet(false),
     m_canEditHasBeenSet(false),
+    m_canShareHasBeenSet(false),
     m_canViewHasBeenSet(false)
 {
 }
@@ -50,6 +51,16 @@ CoreInternalOutcome KBPermission::Deserialize(const rapidjson::Value &value)
         }
         m_canEdit = value["CanEdit"].GetBool();
         m_canEditHasBeenSet = true;
+    }
+
+    if (value.HasMember("CanShare") && !value["CanShare"].IsNull())
+    {
+        if (!value["CanShare"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KBPermission.CanShare` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canShare = value["CanShare"].GetBool();
+        m_canShareHasBeenSet = true;
     }
 
     if (value.HasMember("CanView") && !value["CanView"].IsNull())
@@ -83,6 +94,14 @@ void KBPermission::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CanEdit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_canEdit, allocator);
+    }
+
+    if (m_canShareHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanShare";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canShare, allocator);
     }
 
     if (m_canViewHasBeenSet)
@@ -126,6 +145,22 @@ void KBPermission::SetCanEdit(const bool& _canEdit)
 bool KBPermission::CanEditHasBeenSet() const
 {
     return m_canEditHasBeenSet;
+}
+
+bool KBPermission::GetCanShare() const
+{
+    return m_canShare;
+}
+
+void KBPermission::SetCanShare(const bool& _canShare)
+{
+    m_canShare = _canShare;
+    m_canShareHasBeenSet = true;
+}
+
+bool KBPermission::CanShareHasBeenSet() const
+{
+    return m_canShareHasBeenSet;
 }
 
 bool KBPermission::GetCanView() const

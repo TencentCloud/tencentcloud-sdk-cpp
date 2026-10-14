@@ -25,7 +25,9 @@ using namespace std;
 DescribeBackupsRequest::DescribeBackupsRequest() :
     m_instanceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_minStartTimeHasBeenSet(false),
+    m_maxStartTimeHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribeBackupsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_minStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_minStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_maxStartTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribeBackupsRequest::SetLimit(const int64_t& _limit)
 bool DescribeBackupsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeBackupsRequest::GetMinStartTime() const
+{
+    return m_minStartTime;
+}
+
+void DescribeBackupsRequest::SetMinStartTime(const string& _minStartTime)
+{
+    m_minStartTime = _minStartTime;
+    m_minStartTimeHasBeenSet = true;
+}
+
+bool DescribeBackupsRequest::MinStartTimeHasBeenSet() const
+{
+    return m_minStartTimeHasBeenSet;
+}
+
+string DescribeBackupsRequest::GetMaxStartTime() const
+{
+    return m_maxStartTime;
+}
+
+void DescribeBackupsRequest::SetMaxStartTime(const string& _maxStartTime)
+{
+    m_maxStartTime = _maxStartTime;
+    m_maxStartTimeHasBeenSet = true;
+}
+
+bool DescribeBackupsRequest::MaxStartTimeHasBeenSet() const
+{
+    return m_maxStartTimeHasBeenSet;
 }
 
 

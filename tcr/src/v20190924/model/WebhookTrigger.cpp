@@ -29,7 +29,9 @@ WebhookTrigger::WebhookTrigger() :
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false)
+    m_namespaceNameHasBeenSet(false),
+    m_productHasBeenSet(false),
+    m_preheatRegionHasBeenSet(false)
 {
 }
 
@@ -141,6 +143,26 @@ CoreInternalOutcome WebhookTrigger::Deserialize(const rapidjson::Value &value)
         m_namespaceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Product") && !value["Product"].IsNull())
+    {
+        if (!value["Product"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebhookTrigger.Product` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_product = string(value["Product"].GetString());
+        m_productHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreheatRegion") && !value["PreheatRegion"].IsNull())
+    {
+        if (!value["PreheatRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebhookTrigger.PreheatRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preheatRegion = string(value["PreheatRegion"].GetString());
+        m_preheatRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +252,22 @@ void WebhookTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "NamespaceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_namespaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preheatRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreheatRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preheatRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -377,5 +415,37 @@ void WebhookTrigger::SetNamespaceName(const string& _namespaceName)
 bool WebhookTrigger::NamespaceNameHasBeenSet() const
 {
     return m_namespaceNameHasBeenSet;
+}
+
+string WebhookTrigger::GetProduct() const
+{
+    return m_product;
+}
+
+void WebhookTrigger::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool WebhookTrigger::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
+}
+
+string WebhookTrigger::GetPreheatRegion() const
+{
+    return m_preheatRegion;
+}
+
+void WebhookTrigger::SetPreheatRegion(const string& _preheatRegion)
+{
+    m_preheatRegion = _preheatRegion;
+    m_preheatRegionHasBeenSet = true;
+}
+
+bool WebhookTrigger::PreheatRegionHasBeenSet() const
+{
+    return m_preheatRegionHasBeenSet;
 }
 

@@ -28,7 +28,8 @@ AppSummary::AppSummary() :
     m_operationInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_subStatusHasBeenSet(false),
-    m_permissionIdListHasBeenSet(false)
+    m_permissionIdListHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,16 @@ CoreInternalOutcome AppSummary::Deserialize(const rapidjson::Value &value)
         m_permissionIdListHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppSummary.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -218,6 +229,14 @@ void AppSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -349,5 +368,21 @@ void AppSummary::SetPermissionIdList(const vector<string>& _permissionIdList)
 bool AppSummary::PermissionIdListHasBeenSet() const
 {
     return m_permissionIdListHasBeenSet;
+}
+
+string AppSummary::GetDescription() const
+{
+    return m_description;
+}
+
+void AppSummary::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool AppSummary::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

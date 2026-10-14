@@ -296,6 +296,81 @@ namespace TencentCloud
                      */
                     bool StoragePathHasBeenSet() const;
 
+                    /**
+                     * 获取<p>来源类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceType <p>来源类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSourceType() const;
+
+                    /**
+                     * 设置<p>来源类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sourceType <p>来源类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSourceType(const std::string& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     * 
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>来源名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceName <p>来源名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSourceName() const;
+
+                    /**
+                     * 设置<p>来源名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sourceName <p>来源名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSourceName(const std::string& _sourceName);
+
+                    /**
+                     * 判断参数 SourceName 是否已赋值
+                     * @return SourceName 是否已赋值
+                     * 
+                     */
+                    bool SourceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预览摘要</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutionSummary <p>预览摘要</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExecutionSummary() const;
+
+                    /**
+                     * 设置<p>预览摘要</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executionSummary <p>预览摘要</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecutionSummary(const std::string& _executionSummary);
+
+                    /**
+                     * 判断参数 ExecutionSummary 是否已赋值
+                     * @return ExecutionSummary 是否已赋值
+                     * 
+                     */
+                    bool ExecutionSummaryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +442,27 @@ namespace TencentCloud
                      */
                     std::string m_storagePath;
                     bool m_storagePathHasBeenSet;
+
+                    /**
+                     * <p>来源类型</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
+
+                    /**
+                     * <p>来源名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sourceName;
+                    bool m_sourceNameHasBeenSet;
+
+                    /**
+                     * <p>预览摘要</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_executionSummary;
+                    bool m_executionSummaryHasBeenSet;
 
                 };
             }

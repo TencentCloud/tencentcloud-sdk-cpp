@@ -65,46 +65,25 @@ namespace TencentCloud
                     bool ModelSceneHasBeenSet() const;
 
                     /**
-                     * 获取<p>空间ID</p>
-                     * @return SpaceId <p>空间ID</p>
+                     * 获取<p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>
+                     * @return FilterList <p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>
                      * 
                      */
-                    std::string GetSpaceId() const;
+                    std::vector<Filter> GetFilterList() const;
 
                     /**
-                     * 设置<p>空间ID</p>
-                     * @param _spaceId <p>空间ID</p>
+                     * 设置<p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>
+                     * @param _filterList <p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>
                      * 
                      */
-                    void SetSpaceId(const std::string& _spaceId);
+                    void SetFilterList(const std::vector<Filter>& _filterList);
 
                     /**
-                     * 判断参数 SpaceId 是否已赋值
-                     * @return SpaceId 是否已赋值
+                     * 判断参数 FilterList 是否已赋值
+                     * @return FilterList 是否已赋值
                      * 
                      */
-                    bool SpaceIdHasBeenSet() const;
-
-                    /**
-                     * 获取<p>关键词模糊搜索</p>
-                     * @return Query <p>关键词模糊搜索</p>
-                     * 
-                     */
-                    std::string GetQuery() const;
-
-                    /**
-                     * 设置<p>关键词模糊搜索</p>
-                     * @param _query <p>关键词模糊搜索</p>
-                     * 
-                     */
-                    void SetQuery(const std::string& _query);
-
-                    /**
-                     * 判断参数 Query 是否已赋值
-                     * @return Query 是否已赋值
-                     * 
-                     */
-                    bool QueryHasBeenSet() const;
+                    bool FilterListHasBeenSet() const;
 
                     /**
                      * 获取<p>页码。从0开始</p>
@@ -149,25 +128,46 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取<p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>
-                     * @return FilterList <p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>
+                     * 获取<p>关键词模糊搜索</p>
+                     * @return Query <p>关键词模糊搜索</p>
                      * 
                      */
-                    std::vector<Filter> GetFilterList() const;
+                    std::string GetQuery() const;
 
                     /**
-                     * 设置<p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>
-                     * @param _filterList <p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>
+                     * 设置<p>关键词模糊搜索</p>
+                     * @param _query <p>关键词模糊搜索</p>
                      * 
                      */
-                    void SetFilterList(const std::vector<Filter>& _filterList);
+                    void SetQuery(const std::string& _query);
 
                     /**
-                     * 判断参数 FilterList 是否已赋值
-                     * @return FilterList 是否已赋值
+                     * 判断参数 Query 是否已赋值
+                     * @return Query 是否已赋值
                      * 
                      */
-                    bool FilterListHasBeenSet() const;
+                    bool QueryHasBeenSet() const;
+
+                    /**
+                     * 获取<p>空间ID</p>
+                     * @return SpaceId <p>空间ID</p>
+                     * 
+                     */
+                    std::string GetSpaceId() const;
+
+                    /**
+                     * 设置<p>空间ID</p>
+                     * @param _spaceId <p>空间ID</p>
+                     * 
+                     */
+                    void SetSpaceId(const std::string& _spaceId);
+
+                    /**
+                     * 判断参数 SpaceId 是否已赋值
+                     * @return SpaceId 是否已赋值
+                     * 
+                     */
+                    bool SpaceIdHasBeenSet() const;
 
                 private:
 
@@ -178,16 +178,10 @@ namespace TencentCloud
                     bool m_modelSceneHasBeenSet;
 
                     /**
-                     * <p>空间ID</p>
+                     * <p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>
                      */
-                    std::string m_spaceId;
-                    bool m_spaceIdHasBeenSet;
-
-                    /**
-                     * <p>关键词模糊搜索</p>
-                     */
-                    std::string m_query;
-                    bool m_queryHasBeenSet;
+                    std::vector<Filter> m_filterList;
+                    bool m_filterListHasBeenSet;
 
                     /**
                      * <p>页码。从0开始</p>
@@ -202,10 +196,16 @@ namespace TencentCloud
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * <p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>
+                     * <p>关键词模糊搜索</p>
                      */
-                    std::vector<Filter> m_filterList;
-                    bool m_filterListHasBeenSet;
+                    std::string m_query;
+                    bool m_queryHasBeenSet;
+
+                    /**
+                     * <p>空间ID</p>
+                     */
+                    std::string m_spaceId;
+                    bool m_spaceIdHasBeenSet;
 
                 };
             }

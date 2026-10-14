@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取下载任务 ID
-                     * @return DownloadTaskId 下载任务 ID
+                     * 获取<p>下载任务 ID</p>
+                     * @return DownloadTaskId <p>下载任务 ID</p>
                      * 
                      */
                     std::string GetDownloadTaskId() const;
 
                     /**
-                     * 设置下载任务 ID
-                     * @param _downloadTaskId 下载任务 ID
+                     * 设置<p>下载任务 ID</p>
+                     * @param _downloadTaskId <p>下载任务 ID</p>
                      * 
                      */
                     void SetDownloadTaskId(const std::string& _downloadTaskId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DownloadTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取通道 ID
-                     * @return ChannelId 通道 ID
+                     * 获取<p>通道 ID</p>
+                     * @return ChannelId <p>通道 ID</p>
                      * 
                      */
                     std::string GetChannelId() const;
 
                     /**
-                     * 设置通道 ID
-                     * @param _channelId 通道 ID
+                     * 设置<p>通道 ID</p>
+                     * @param _channelId <p>通道 ID</p>
                      * 
                      */
                     void SetChannelId(const std::string& _channelId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取通道名称
-                     * @return ChannelName 通道名称
+                     * 获取<p>通道名称</p>
+                     * @return ChannelName <p>通道名称</p>
                      * 
                      */
                     std::string GetChannelName() const;
 
                     /**
-                     * 设置通道名称
-                     * @param _channelName 通道名称
+                     * 设置<p>通道名称</p>
+                     * @param _channelName <p>通道名称</p>
                      * 
                      */
                     void SetChannelName(const std::string& _channelName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ChannelNameHasBeenSet() const;
 
                     /**
-                     * 获取通道编码
-                     * @return ChannelCode 通道编码
+                     * 获取<p>通道编码</p>
+                     * @return ChannelCode <p>通道编码</p>
                      * 
                      */
                     std::string GetChannelCode() const;
 
                     /**
-                     * 设置通道编码
-                     * @param _channelCode 通道编码
+                     * 设置<p>通道编码</p>
+                     * @param _channelCode <p>通道编码</p>
                      * 
                      */
                     void SetChannelCode(const std::string& _channelCode);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ChannelCodeHasBeenSet() const;
 
                     /**
-                     * 获取设备名称
-                     * @return DeviceName 设备名称
+                     * 获取<p>设备名称</p>
+                     * @return DeviceName <p>设备名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置设备名称
-                     * @param _deviceName 设备名称
+                     * 设置<p>设备名称</p>
+                     * @param _deviceName <p>设备名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取设备编码
-                     * @return DeviceCode 设备编码
+                     * 获取<p>设备编码</p>
+                     * @return DeviceCode <p>设备编码</p>
                      * 
                      */
                     std::string GetDeviceCode() const;
 
                     /**
-                     * 设置设备编码
-                     * @param _deviceCode 设备编码
+                     * 设置<p>设备编码</p>
+                     * @param _deviceCode <p>设备编码</p>
                      * 
                      */
                     void SetDeviceCode(const std::string& _deviceCode);
@@ -173,19 +173,15 @@ namespace TencentCloud
                     bool DeviceCodeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态（0：未执行；1：执行中；2 任务完成；
-3：任务失败）
-                     * @return Status 任务状态（0：未执行；1：执行中；2 任务完成；
-3：任务失败）
+                     * 获取<p>任务状态（0：未执行；1：执行中；2 任务完成；<br>3：任务失败）</p>
+                     * @return Status <p>任务状态（0：未执行；1：执行中；2 任务完成；<br>3：任务失败）</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态（0：未执行；1：执行中；2 任务完成；
-3：任务失败）
-                     * @param _status 任务状态（0：未执行；1：执行中；2 任务完成；
-3：任务失败）
+                     * 设置<p>任务状态（0：未执行；1：执行中；2 任务完成；<br>3：任务失败）</p>
+                     * @param _status <p>任务状态（0：未执行；1：执行中；2 任务完成；<br>3：任务失败）</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -198,15 +194,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取下载录像时间段
-                     * @return VideoTimeSection 下载录像时间段
+                     * 获取<p>下载录像时间段</p>
+                     * @return VideoTimeSection <p>下载录像时间段</p>
                      * 
                      */
                     std::string GetVideoTimeSection() const;
 
                     /**
-                     * 设置下载录像时间段
-                     * @param _videoTimeSection 下载录像时间段
+                     * 设置<p>下载录像时间段</p>
+                     * @param _videoTimeSection <p>下载录像时间段</p>
                      * 
                      */
                     void SetVideoTimeSection(const std::string& _videoTimeSection);
@@ -219,15 +215,15 @@ namespace TencentCloud
                     bool VideoTimeSectionHasBeenSet() const;
 
                     /**
-                     * 获取倍速
-                     * @return Scale 倍速
+                     * 获取<p>倍速</p>
+                     * @return Scale <p>倍速</p>
                      * 
                      */
                     int64_t GetScale() const;
 
                     /**
-                     * 设置倍速
-                     * @param _scale 倍速
+                     * 设置<p>倍速</p>
+                     * @param _scale <p>倍速</p>
                      * 
                      */
                     void SetScale(const int64_t& _scale);
@@ -240,15 +236,15 @@ namespace TencentCloud
                     bool ScaleHasBeenSet() const;
 
                     /**
-                     * 获取下载时长
-                     * @return DownloadTime 下载时长
+                     * 获取<p>下载时长</p><p>单位：秒</p>
+                     * @return DownloadTime <p>下载时长</p><p>单位：秒</p>
                      * 
                      */
                     int64_t GetDownloadTime() const;
 
                     /**
-                     * 设置下载时长
-                     * @param _downloadTime 下载时长
+                     * 设置<p>下载时长</p><p>单位：秒</p>
+                     * @param _downloadTime <p>下载时长</p><p>单位：秒</p>
                      * 
                      */
                     void SetDownloadTime(const int64_t& _downloadTime);
@@ -261,15 +257,15 @@ namespace TencentCloud
                     bool DownloadTimeHasBeenSet() const;
 
                     /**
-                     * 获取录像大小
-                     * @return VideoSize 录像大小
+                     * 获取<p>录像大小</p><p>单位：字节（Byte）</p>
+                     * @return VideoSize <p>录像大小</p><p>单位：字节（Byte）</p>
                      * 
                      */
                     int64_t GetVideoSize() const;
 
                     /**
-                     * 设置录像大小
-                     * @param _videoSize 录像大小
+                     * 设置<p>录像大小</p><p>单位：字节（Byte）</p>
+                     * @param _videoSize <p>录像大小</p><p>单位：字节（Byte）</p>
                      * 
                      */
                     void SetVideoSize(const int64_t& _videoSize);
@@ -282,15 +278,15 @@ namespace TencentCloud
                     bool VideoSizeHasBeenSet() const;
 
                     /**
-                     * 获取任务开始时间
-                     * @return StartTime 任务开始时间
+                     * 获取<p>任务开始时间</p>
+                     * @return StartTime <p>任务开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置任务开始时间
-                     * @param _startTime 任务开始时间
+                     * 设置<p>任务开始时间</p>
+                     * @param _startTime <p>任务开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -303,15 +299,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务结束时间
-                     * @return EndTime 任务结束时间
+                     * 获取<p>任务结束时间</p>
+                     * @return EndTime <p>任务结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置任务结束时间
-                     * @param _endTime 任务结束时间
+                     * 设置<p>任务结束时间</p>
+                     * @param _endTime <p>任务结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -324,15 +320,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取文件下载地址
-                     * @return FileDownloadUrl 文件下载地址
+                     * 获取<p>文件下载地址</p>
+                     * @return FileDownloadUrl <p>文件下载地址</p>
                      * 
                      */
                     std::string GetFileDownloadUrl() const;
 
                     /**
-                     * 设置文件下载地址
-                     * @param _fileDownloadUrl 文件下载地址
+                     * 设置<p>文件下载地址</p>
+                     * @param _fileDownloadUrl <p>文件下载地址</p>
                      * 
                      */
                     void SetFileDownloadUrl(const std::string& _fileDownloadUrl);
@@ -345,15 +341,15 @@ namespace TencentCloud
                     bool FileDownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取失败原因
-                     * @return FailedReason 失败原因
+                     * 获取<p>失败原因</p>
+                     * @return FailedReason <p>失败原因</p>
                      * 
                      */
                     std::string GetFailedReason() const;
 
                     /**
-                     * 设置失败原因
-                     * @param _failedReason 失败原因
+                     * 设置<p>失败原因</p>
+                     * @param _failedReason <p>失败原因</p>
                      * 
                      */
                     void SetFailedReason(const std::string& _failedReason);
@@ -366,15 +362,15 @@ namespace TencentCloud
                     bool FailedReasonHasBeenSet() const;
 
                     /**
-                     * 获取生命周期规则，热存天数
-                     * @return Expire 生命周期规则，热存天数
+                     * 获取<p>生命周期规则，热存天数</p>
+                     * @return Expire <p>生命周期规则，热存天数</p>
                      * 
                      */
                     int64_t GetExpire() const;
 
                     /**
-                     * 设置生命周期规则，热存天数
-                     * @param _expire 生命周期规则，热存天数
+                     * 设置<p>生命周期规则，热存天数</p>
+                     * @param _expire <p>生命周期规则，热存天数</p>
                      * 
                      */
                     void SetExpire(const int64_t& _expire);
@@ -387,15 +383,15 @@ namespace TencentCloud
                     bool ExpireHasBeenSet() const;
 
                     /**
-                     * 获取mp4预览地址
-                     * @return PreviewUrl mp4预览地址
+                     * 获取<p>mp4预览地址</p>
+                     * @return PreviewUrl <p>mp4预览地址</p>
                      * 
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
-                     * 设置mp4预览地址
-                     * @param _previewUrl mp4预览地址
+                     * 设置<p>mp4预览地址</p>
+                     * @param _previewUrl <p>mp4预览地址</p>
                      * 
                      */
                     void SetPreviewUrl(const std::string& _previewUrl);
@@ -410,104 +406,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 下载任务 ID
+                     * <p>下载任务 ID</p>
                      */
                     std::string m_downloadTaskId;
                     bool m_downloadTaskIdHasBeenSet;
 
                     /**
-                     * 通道 ID
+                     * <p>通道 ID</p>
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 通道名称
+                     * <p>通道名称</p>
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;
 
                     /**
-                     * 通道编码
+                     * <p>通道编码</p>
                      */
                     std::string m_channelCode;
                     bool m_channelCodeHasBeenSet;
 
                     /**
-                     * 设备名称
+                     * <p>设备名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 设备编码
+                     * <p>设备编码</p>
                      */
                     std::string m_deviceCode;
                     bool m_deviceCodeHasBeenSet;
 
                     /**
-                     * 任务状态（0：未执行；1：执行中；2 任务完成；
-3：任务失败）
+                     * <p>任务状态（0：未执行；1：执行中；2 任务完成；<br>3：任务失败）</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 下载录像时间段
+                     * <p>下载录像时间段</p>
                      */
                     std::string m_videoTimeSection;
                     bool m_videoTimeSectionHasBeenSet;
 
                     /**
-                     * 倍速
+                     * <p>倍速</p>
                      */
                     int64_t m_scale;
                     bool m_scaleHasBeenSet;
 
                     /**
-                     * 下载时长
+                     * <p>下载时长</p><p>单位：秒</p>
                      */
                     int64_t m_downloadTime;
                     bool m_downloadTimeHasBeenSet;
 
                     /**
-                     * 录像大小
+                     * <p>录像大小</p><p>单位：字节（Byte）</p>
                      */
                     int64_t m_videoSize;
                     bool m_videoSizeHasBeenSet;
 
                     /**
-                     * 任务开始时间
+                     * <p>任务开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 任务结束时间
+                     * <p>任务结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 文件下载地址
+                     * <p>文件下载地址</p>
                      */
                     std::string m_fileDownloadUrl;
                     bool m_fileDownloadUrlHasBeenSet;
 
                     /**
-                     * 失败原因
+                     * <p>失败原因</p>
                      */
                     std::string m_failedReason;
                     bool m_failedReasonHasBeenSet;
 
                     /**
-                     * 生命周期规则，热存天数
+                     * <p>生命周期规则，热存天数</p>
                      */
                     int64_t m_expire;
                     bool m_expireHasBeenSet;
 
                     /**
-                     * mp4预览地址
+                     * <p>mp4预览地址</p>
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;

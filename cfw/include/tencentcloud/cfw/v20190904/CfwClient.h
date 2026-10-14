@@ -243,6 +243,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcFwCcnPolicyWhiteListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcFwGroupSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeVpcFwGroupSwitchResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeVpcFwIpStatRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeVpcFwIpStatResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ExpandCfwVerticalRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ExpandCfwVerticalResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ExportLogsOfflineRequest.h>
@@ -699,6 +701,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVpcFwGroupSwitchResponse> DescribeVpcFwGroupSwitchOutcome;
                 typedef std::future<DescribeVpcFwGroupSwitchOutcome> DescribeVpcFwGroupSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeVpcFwGroupSwitchRequest&, DescribeVpcFwGroupSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcFwGroupSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVpcFwIpStatResponse> DescribeVpcFwIpStatOutcome;
+                typedef std::future<DescribeVpcFwIpStatOutcome> DescribeVpcFwIpStatOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeVpcFwIpStatRequest&, DescribeVpcFwIpStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcFwIpStatAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExpandCfwVerticalResponse> ExpandCfwVerticalOutcome;
                 typedef std::future<ExpandCfwVerticalOutcome> ExpandCfwVerticalOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ExpandCfwVerticalRequest&, ExpandCfwVerticalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExpandCfwVerticalAsyncHandler;
@@ -1861,6 +1866,15 @@ namespace TencentCloud
                 DescribeVpcFwGroupSwitchOutcome DescribeVpcFwGroupSwitch(const Model::DescribeVpcFwGroupSwitchRequest &request);
                 void DescribeVpcFwGroupSwitchAsync(const Model::DescribeVpcFwGroupSwitchRequest& request, const DescribeVpcFwGroupSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVpcFwGroupSwitchOutcomeCallable DescribeVpcFwGroupSwitchCallable(const Model::DescribeVpcFwGroupSwitchRequest& request);
+
+                /**
+                 *查询VPC防火墙下，单IP粒度的流量统计
+                 * @param req DescribeVpcFwIpStatRequest
+                 * @return DescribeVpcFwIpStatOutcome
+                 */
+                DescribeVpcFwIpStatOutcome DescribeVpcFwIpStat(const Model::DescribeVpcFwIpStatRequest &request);
+                void DescribeVpcFwIpStatAsync(const Model::DescribeVpcFwIpStatRequest& request, const DescribeVpcFwIpStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpcFwIpStatOutcomeCallable DescribeVpcFwIpStatCallable(const Model::DescribeVpcFwIpStatRequest& request);
 
                 /**
                  *防火墙垂直扩容

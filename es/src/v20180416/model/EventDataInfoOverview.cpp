@@ -34,7 +34,8 @@ EventDataInfoOverview::EventDataInfoOverview() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_subEventTypeHasBeenSet(false),
-    m_subEventNameHasBeenSet(false)
+    m_subEventNameHasBeenSet(false),
+    m_eventScopeHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome EventDataInfoOverview::Deserialize(const rapidjson::Value &v
         m_subEventNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EventScope") && !value["EventScope"].IsNull())
+    {
+        if (!value["EventScope"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventDataInfoOverview.EventScope` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventScope = value["EventScope"].GetUint64();
+        m_eventScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void EventDataInfoOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "SubEventName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subEventName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_eventScope, allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void EventDataInfoOverview::SetSubEventName(const string& _subEventName)
 bool EventDataInfoOverview::SubEventNameHasBeenSet() const
 {
     return m_subEventNameHasBeenSet;
+}
+
+uint64_t EventDataInfoOverview::GetEventScope() const
+{
+    return m_eventScope;
+}
+
+void EventDataInfoOverview::SetEventScope(const uint64_t& _eventScope)
+{
+    m_eventScope = _eventScope;
+    m_eventScopeHasBeenSet = true;
+}
+
+bool EventDataInfoOverview::EventScopeHasBeenSet() const
+{
+    return m_eventScopeHasBeenSet;
 }
 

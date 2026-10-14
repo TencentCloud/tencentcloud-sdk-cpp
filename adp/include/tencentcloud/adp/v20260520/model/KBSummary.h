@@ -27,6 +27,7 @@
 #include <tencentcloud/adp/v20260520/model/Identity.h>
 #include <tencentcloud/adp/v20260520/model/Operator.h>
 #include <tencentcloud/adp/v20260520/model/KBPermission.h>
+#include <tencentcloud/adp/v20260520/model/KBSpaceShare.h>
 
 
 namespace TencentCloud
@@ -355,6 +356,31 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>知识库空间共享信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpaceShare <p>知识库空间共享信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KBSpaceShare GetSpaceShare() const;
+
+                    /**
+                     * 设置<p>知识库空间共享信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _spaceShare <p>知识库空间共享信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSpaceShare(const KBSpaceShare& _spaceShare);
+
+                    /**
+                     * 判断参数 SpaceShare 是否已赋值
+                     * @return SpaceShare 是否已赋值
+                     * 
+                     */
+                    bool SpaceShareHasBeenSet() const;
+
                 private:
 
                     /**
@@ -443,6 +469,13 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>知识库空间共享信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KBSpaceShare m_spaceShare;
+                    bool m_spaceShareHasBeenSet;
 
                 };
             }

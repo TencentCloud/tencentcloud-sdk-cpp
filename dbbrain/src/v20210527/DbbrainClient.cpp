@@ -1590,6 +1590,56 @@ DbbrainClient::DescribeDBAuditLogTopSqlsOutcomeCallable DbbrainClient::DescribeD
     return prom->get_future();
 }
 
+DbbrainClient::DescribeDBAuditLogsOutcome DbbrainClient::DescribeDBAuditLogs(const DescribeDBAuditLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBAuditLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBAuditLogsResponse rsp = DescribeDBAuditLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBAuditLogsOutcome(rsp);
+        else
+            return DescribeDBAuditLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBAuditLogsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBAuditLogsAsync(const DescribeDBAuditLogsRequest& request, const DescribeDBAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDBAuditLogsRequest&;
+    using Resp = DescribeDBAuditLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDBAuditLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeDBAuditLogsOutcomeCallable DbbrainClient::DescribeDBAuditLogsCallable(const DescribeDBAuditLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDBAuditLogsOutcome>>();
+    DescribeDBAuditLogsAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeDBAuditLogsRequest&,
+        DescribeDBAuditLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeDBAutonomyActionOutcome DbbrainClient::DescribeDBAutonomyAction(const DescribeDBAutonomyActionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBAutonomyAction");
@@ -2182,6 +2232,56 @@ DbbrainClient::DescribeDatabaseAutonomyStatusOutcomeCallable DbbrainClient::Desc
         const DbbrainClient*,
         const DescribeDatabaseAutonomyStatusRequest&,
         DescribeDatabaseAutonomyStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbbrainClient::DescribeDatabaseObjectV2Outcome DbbrainClient::DescribeDatabaseObjectV2(const DescribeDatabaseObjectV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatabaseObjectV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatabaseObjectV2Response rsp = DescribeDatabaseObjectV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatabaseObjectV2Outcome(rsp);
+        else
+            return DescribeDatabaseObjectV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatabaseObjectV2Outcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDatabaseObjectV2Async(const DescribeDatabaseObjectV2Request& request, const DescribeDatabaseObjectV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDatabaseObjectV2Request&;
+    using Resp = DescribeDatabaseObjectV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDatabaseObjectV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeDatabaseObjectV2OutcomeCallable DbbrainClient::DescribeDatabaseObjectV2Callable(const DescribeDatabaseObjectV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDatabaseObjectV2Outcome>>();
+    DescribeDatabaseObjectV2Async(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeDatabaseObjectV2Request&,
+        DescribeDatabaseObjectV2Outcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

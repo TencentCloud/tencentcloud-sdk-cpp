@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体传输事件的配置信息。
-                     * @return Info 媒体传输事件的配置信息。
+                     * 获取<p>媒体传输事件的配置信息。</p>
+                     * @return Info <p>媒体传输事件的配置信息。</p>
                      * 
                      */
                     DescribeEvent GetInfo() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体传输事件的配置信息。
+                     * <p>媒体传输事件的配置信息。</p>
                      */
                     DescribeEvent m_info;
                     bool m_infoHasBeenSet;

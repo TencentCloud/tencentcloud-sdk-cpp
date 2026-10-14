@@ -67,6 +67,8 @@
 #include <tencentcloud/adp/v20260520/model/CreateVariableResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateWebSocketTokenRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateWebSocketTokenResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateWorkflowRunRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateWorkflowRunResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateWorkspaceCredentialRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateWorkspaceCredentialResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteAgentRequest.h>
@@ -169,6 +171,10 @@
 #include <tencentcloud/adp/v20260520/model/DescribeMsgRecordCategoryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeMsgRecordListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeMsgRecordListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeNodeBatchRunRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeNodeBatchRunResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeNodeRunDetailRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeNodeRunDetailResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribePluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribePluginSummaryListRequest.h>
@@ -203,6 +209,10 @@
 #include <tencentcloud/adp/v20260520/model/DescribeVariableResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeVariableListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeVariableListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeWorkflowRunRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeWorkflowRunResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribeWorkflowRunSummaryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribeWorkflowRunSummaryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/ExportQARequest.h>
 #include <tencentcloud/adp/v20260520/model/ExportQAResponse.h>
 #include <tencentcloud/adp/v20260520/model/FavoritePluginRequest.h>
@@ -255,14 +265,22 @@
 #include <tencentcloud/adp/v20260520/model/ResetConversationResponse.h>
 #include <tencentcloud/adp/v20260520/model/ResumeAppTriggerRequest.h>
 #include <tencentcloud/adp/v20260520/model/ResumeAppTriggerResponse.h>
+#include <tencentcloud/adp/v20260520/model/ResumeWorkflowRunRequest.h>
+#include <tencentcloud/adp/v20260520/model/ResumeWorkflowRunResponse.h>
 #include <tencentcloud/adp/v20260520/model/RetryReleaseRequest.h>
 #include <tencentcloud/adp/v20260520/model/RetryReleaseResponse.h>
 #include <tencentcloud/adp/v20260520/model/RollbackReleaseRequest.h>
 #include <tencentcloud/adp/v20260520/model/RollbackReleaseResponse.h>
 #include <tencentcloud/adp/v20260520/model/RunAppTriggerNowRequest.h>
 #include <tencentcloud/adp/v20260520/model/RunAppTriggerNowResponse.h>
+#include <tencentcloud/adp/v20260520/model/SaveWorkflowDebugContextRequest.h>
+#include <tencentcloud/adp/v20260520/model/SaveWorkflowDebugContextResponse.h>
+#include <tencentcloud/adp/v20260520/model/SaveWorkflowToolNodeOutputRequest.h>
+#include <tencentcloud/adp/v20260520/model/SaveWorkflowToolNodeOutputResponse.h>
 #include <tencentcloud/adp/v20260520/model/SearchKnowledgeRequest.h>
 #include <tencentcloud/adp/v20260520/model/SearchKnowledgeResponse.h>
+#include <tencentcloud/adp/v20260520/model/StopWorkflowRunListRequest.h>
+#include <tencentcloud/adp/v20260520/model/StopWorkflowRunListResponse.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoritePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoritePluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoriteSkillRequest.h>
@@ -347,6 +365,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateWebSocketTokenResponse> CreateWebSocketTokenOutcome;
                 typedef std::future<CreateWebSocketTokenOutcome> CreateWebSocketTokenOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateWebSocketTokenRequest&, CreateWebSocketTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWebSocketTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWorkflowRunResponse> CreateWorkflowRunOutcome;
+                typedef std::future<CreateWorkflowRunOutcome> CreateWorkflowRunOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateWorkflowRunRequest&, CreateWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWorkspaceCredentialResponse> CreateWorkspaceCredentialOutcome;
                 typedef std::future<CreateWorkspaceCredentialOutcome> CreateWorkspaceCredentialOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateWorkspaceCredentialRequest&, CreateWorkspaceCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkspaceCredentialAsyncHandler;
@@ -500,6 +521,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMsgRecordListResponse> DescribeMsgRecordListOutcome;
                 typedef std::future<DescribeMsgRecordListOutcome> DescribeMsgRecordListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeMsgRecordListRequest&, DescribeMsgRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMsgRecordListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNodeBatchRunResponse> DescribeNodeBatchRunOutcome;
+                typedef std::future<DescribeNodeBatchRunOutcome> DescribeNodeBatchRunOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeNodeBatchRunRequest&, DescribeNodeBatchRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeBatchRunAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNodeRunDetailResponse> DescribeNodeRunDetailOutcome;
+                typedef std::future<DescribeNodeRunDetailOutcome> DescribeNodeRunDetailOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeNodeRunDetailRequest&, DescribeNodeRunDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeRunDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePluginResponse> DescribePluginOutcome;
                 typedef std::future<DescribePluginOutcome> DescribePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribePluginRequest&, DescribePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginAsyncHandler;
@@ -551,6 +578,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVariableListResponse> DescribeVariableListOutcome;
                 typedef std::future<DescribeVariableListOutcome> DescribeVariableListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeVariableListRequest&, DescribeVariableListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVariableListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkflowRunResponse> DescribeWorkflowRunOutcome;
+                typedef std::future<DescribeWorkflowRunOutcome> DescribeWorkflowRunOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeWorkflowRunRequest&, DescribeWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowRunAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkflowRunSummaryListResponse> DescribeWorkflowRunSummaryListOutcome;
+                typedef std::future<DescribeWorkflowRunSummaryListOutcome> DescribeWorkflowRunSummaryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribeWorkflowRunSummaryListRequest&, DescribeWorkflowRunSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowRunSummaryListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportQAResponse> ExportQAOutcome;
                 typedef std::future<ExportQAOutcome> ExportQAOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ExportQARequest&, ExportQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportQAAsyncHandler;
@@ -629,6 +662,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResumeAppTriggerResponse> ResumeAppTriggerOutcome;
                 typedef std::future<ResumeAppTriggerOutcome> ResumeAppTriggerOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ResumeAppTriggerRequest&, ResumeAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeAppTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeWorkflowRunResponse> ResumeWorkflowRunOutcome;
+                typedef std::future<ResumeWorkflowRunOutcome> ResumeWorkflowRunOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ResumeWorkflowRunRequest&, ResumeWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeWorkflowRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::RetryReleaseResponse> RetryReleaseOutcome;
                 typedef std::future<RetryReleaseOutcome> RetryReleaseOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::RetryReleaseRequest&, RetryReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryReleaseAsyncHandler;
@@ -638,9 +674,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunAppTriggerNowResponse> RunAppTriggerNowOutcome;
                 typedef std::future<RunAppTriggerNowOutcome> RunAppTriggerNowOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::RunAppTriggerNowRequest&, RunAppTriggerNowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunAppTriggerNowAsyncHandler;
+                typedef Outcome<Core::Error, Model::SaveWorkflowDebugContextResponse> SaveWorkflowDebugContextOutcome;
+                typedef std::future<SaveWorkflowDebugContextOutcome> SaveWorkflowDebugContextOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::SaveWorkflowDebugContextRequest&, SaveWorkflowDebugContextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveWorkflowDebugContextAsyncHandler;
+                typedef Outcome<Core::Error, Model::SaveWorkflowToolNodeOutputResponse> SaveWorkflowToolNodeOutputOutcome;
+                typedef std::future<SaveWorkflowToolNodeOutputOutcome> SaveWorkflowToolNodeOutputOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::SaveWorkflowToolNodeOutputRequest&, SaveWorkflowToolNodeOutputOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveWorkflowToolNodeOutputAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchKnowledgeResponse> SearchKnowledgeOutcome;
                 typedef std::future<SearchKnowledgeOutcome> SearchKnowledgeOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::SearchKnowledgeRequest&, SearchKnowledgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchKnowledgeAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopWorkflowRunListResponse> StopWorkflowRunListOutcome;
+                typedef std::future<StopWorkflowRunListOutcome> StopWorkflowRunListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::StopWorkflowRunListRequest&, StopWorkflowRunListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopWorkflowRunListAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnfavoritePluginResponse> UnfavoritePluginOutcome;
                 typedef std::future<UnfavoritePluginOutcome> UnfavoritePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::UnfavoritePluginRequest&, UnfavoritePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfavoritePluginAsyncHandler;
@@ -847,6 +892,16 @@ namespace TencentCloud
                 CreateWebSocketTokenOutcome CreateWebSocketToken(const Model::CreateWebSocketTokenRequest &request);
                 void CreateWebSocketTokenAsync(const Model::CreateWebSocketTokenRequest& request, const CreateWebSocketTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateWebSocketTokenOutcomeCallable CreateWebSocketTokenCallable(const Model::CreateWebSocketTokenRequest& request);
+
+                /**
+                 *本接口用来创建工作流的异步运行实例，创建成功后工作流会在后台异步运行，接口返回工作流运行实例ID（WorkflowRunId）等信息。后面可通过调用DescribeWorkflowRun接口查工作流运行的详情。
+注意：工作流的异步运行是基于应用的，需要先把对应的应用配置成“单工作流模式”，才能创建成功。
+                 * @param req CreateWorkflowRunRequest
+                 * @return CreateWorkflowRunOutcome
+                 */
+                CreateWorkflowRunOutcome CreateWorkflowRun(const Model::CreateWorkflowRunRequest &request);
+                void CreateWorkflowRunAsync(const Model::CreateWorkflowRunRequest& request, const CreateWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWorkflowRunOutcomeCallable CreateWorkflowRunCallable(const Model::CreateWorkflowRunRequest& request);
 
                 /**
                  *创建工作空间凭证
@@ -1308,6 +1363,24 @@ namespace TencentCloud
                 DescribeMsgRecordListOutcomeCallable DescribeMsgRecordListCallable(const Model::DescribeMsgRecordListRequest& request);
 
                 /**
+                 *DescribeNodeBatchRun
+                 * @param req DescribeNodeBatchRunRequest
+                 * @return DescribeNodeBatchRunOutcome
+                 */
+                DescribeNodeBatchRunOutcome DescribeNodeBatchRun(const Model::DescribeNodeBatchRunRequest &request);
+                void DescribeNodeBatchRunAsync(const Model::DescribeNodeBatchRunRequest& request, const DescribeNodeBatchRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNodeBatchRunOutcomeCallable DescribeNodeBatchRunCallable(const Model::DescribeNodeBatchRunRequest& request);
+
+                /**
+                 *查看工作流节点运行详情
+                 * @param req DescribeNodeRunDetailRequest
+                 * @return DescribeNodeRunDetailOutcome
+                 */
+                DescribeNodeRunDetailOutcome DescribeNodeRunDetail(const Model::DescribeNodeRunDetailRequest &request);
+                void DescribeNodeRunDetailAsync(const Model::DescribeNodeRunDetailRequest& request, const DescribeNodeRunDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNodeRunDetailOutcomeCallable DescribeNodeRunDetailCallable(const Model::DescribeNodeRunDetailRequest& request);
+
+                /**
                  *获取插件详情
                  * @param req DescribePluginRequest
                  * @return DescribePluginOutcome
@@ -1459,6 +1532,24 @@ namespace TencentCloud
                 DescribeVariableListOutcome DescribeVariableList(const Model::DescribeVariableListRequest &request);
                 void DescribeVariableListAsync(const Model::DescribeVariableListRequest& request, const DescribeVariableListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVariableListOutcomeCallable DescribeVariableListCallable(const Model::DescribeVariableListRequest& request);
+
+                /**
+                 *查询工作流运行详情
+                 * @param req DescribeWorkflowRunRequest
+                 * @return DescribeWorkflowRunOutcome
+                 */
+                DescribeWorkflowRunOutcome DescribeWorkflowRun(const Model::DescribeWorkflowRunRequest &request);
+                void DescribeWorkflowRunAsync(const Model::DescribeWorkflowRunRequest& request, const DescribeWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkflowRunOutcomeCallable DescribeWorkflowRunCallable(const Model::DescribeWorkflowRunRequest& request);
+
+                /**
+                 *查询工作流运行实例列表
+                 * @param req DescribeWorkflowRunSummaryListRequest
+                 * @return DescribeWorkflowRunSummaryListOutcome
+                 */
+                DescribeWorkflowRunSummaryListOutcome DescribeWorkflowRunSummaryList(const Model::DescribeWorkflowRunSummaryListRequest &request);
+                void DescribeWorkflowRunSummaryListAsync(const Model::DescribeWorkflowRunSummaryListRequest& request, const DescribeWorkflowRunSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkflowRunSummaryListOutcomeCallable DescribeWorkflowRunSummaryListCallable(const Model::DescribeWorkflowRunSummaryListRequest& request);
 
                 /**
                  *异步导出 QA
@@ -1696,6 +1787,15 @@ namespace TencentCloud
                 ResumeAppTriggerOutcomeCallable ResumeAppTriggerCallable(const Model::ResumeAppTriggerRequest& request);
 
                 /**
+                 *继续运行等待输入的工作流异步运行实例
+                 * @param req ResumeWorkflowRunRequest
+                 * @return ResumeWorkflowRunOutcome
+                 */
+                ResumeWorkflowRunOutcome ResumeWorkflowRun(const Model::ResumeWorkflowRunRequest &request);
+                void ResumeWorkflowRunAsync(const Model::ResumeWorkflowRunRequest& request, const ResumeWorkflowRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeWorkflowRunOutcomeCallable ResumeWorkflowRunCallable(const Model::ResumeWorkflowRunRequest& request);
+
+                /**
                  *重试发布(发布暂停之后再次重新发布)
                  * @param req RetryReleaseRequest
                  * @return RetryReleaseOutcome
@@ -1723,6 +1823,24 @@ namespace TencentCloud
                 RunAppTriggerNowOutcomeCallable RunAppTriggerNowCallable(const Model::RunAppTriggerNowRequest& request);
 
                 /**
+                 *SaveWorkflowDebugContext
+                 * @param req SaveWorkflowDebugContextRequest
+                 * @return SaveWorkflowDebugContextOutcome
+                 */
+                SaveWorkflowDebugContextOutcome SaveWorkflowDebugContext(const Model::SaveWorkflowDebugContextRequest &request);
+                void SaveWorkflowDebugContextAsync(const Model::SaveWorkflowDebugContextRequest& request, const SaveWorkflowDebugContextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SaveWorkflowDebugContextOutcomeCallable SaveWorkflowDebugContextCallable(const Model::SaveWorkflowDebugContextRequest& request);
+
+                /**
+                 *SaveWorkflowToolNodeOutput
+                 * @param req SaveWorkflowToolNodeOutputRequest
+                 * @return SaveWorkflowToolNodeOutputOutcome
+                 */
+                SaveWorkflowToolNodeOutputOutcome SaveWorkflowToolNodeOutput(const Model::SaveWorkflowToolNodeOutputRequest &request);
+                void SaveWorkflowToolNodeOutputAsync(const Model::SaveWorkflowToolNodeOutputRequest& request, const SaveWorkflowToolNodeOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SaveWorkflowToolNodeOutputOutcomeCallable SaveWorkflowToolNodeOutputCallable(const Model::SaveWorkflowToolNodeOutputRequest& request);
+
+                /**
                  *知识检索
                  * @param req SearchKnowledgeRequest
                  * @return SearchKnowledgeOutcome
@@ -1730,6 +1848,15 @@ namespace TencentCloud
                 SearchKnowledgeOutcome SearchKnowledge(const Model::SearchKnowledgeRequest &request);
                 void SearchKnowledgeAsync(const Model::SearchKnowledgeRequest& request, const SearchKnowledgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchKnowledgeOutcomeCallable SearchKnowledgeCallable(const Model::SearchKnowledgeRequest& request);
+
+                /**
+                 *批量停止正在进行的工作流运行实例。
+                 * @param req StopWorkflowRunListRequest
+                 * @return StopWorkflowRunListOutcome
+                 */
+                StopWorkflowRunListOutcome StopWorkflowRunList(const Model::StopWorkflowRunListRequest &request);
+                void StopWorkflowRunListAsync(const Model::StopWorkflowRunListRequest& request, const StopWorkflowRunListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopWorkflowRunListOutcomeCallable StopWorkflowRunListCallable(const Model::StopWorkflowRunListRequest& request);
 
                 /**
                  *取消收藏插件

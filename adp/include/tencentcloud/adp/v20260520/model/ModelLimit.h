@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模型限制信息
+                * <p>模型限制信息</p>
                 */
                 class ModelLimit : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型上下文长度展示文案（如 "128K"、"1000K"）
-                     * @return ContextLengthDescription 模型上下文长度展示文案（如 "128K"、"1000K"）
+                     * 获取<p>模型上下文长度展示文案（如 128K、1000K）</p>
+                     * @return ContextLengthDescription <p>模型上下文长度展示文案（如 128K、1000K）</p>
                      * 
                      */
                     std::string GetContextLengthDescription() const;
 
                     /**
-                     * 设置模型上下文长度展示文案（如 "128K"、"1000K"）
-                     * @param _contextLengthDescription 模型上下文长度展示文案（如 "128K"、"1000K"）
+                     * 设置<p>模型上下文长度展示文案（如 128K、1000K）</p>
+                     * @param _contextLengthDescription <p>模型上下文长度展示文案（如 128K、1000K）</p>
                      * 
                      */
                     void SetContextLengthDescription(const std::string& _contextLengthDescription);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ContextLengthDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取模型对话框输入长度字符数限制
-                     * @return InputLengthLimit 模型对话框输入长度字符数限制
+                     * 获取<p>模型对话框输入长度字符数限制</p>
+                     * @return InputLengthLimit <p>模型对话框输入长度字符数限制</p>
                      * 
                      */
                     int64_t GetInputLengthLimit() const;
 
                     /**
-                     * 设置模型对话框输入长度字符数限制
-                     * @param _inputLengthLimit 模型对话框输入长度字符数限制
+                     * 设置<p>模型对话框输入长度字符数限制</p>
+                     * @param _inputLengthLimit <p>模型对话框输入长度字符数限制</p>
                      * 
                      */
                     void SetInputLengthLimit(const int64_t& _inputLengthLimit);
@@ -89,15 +89,57 @@ namespace TencentCloud
                     bool InputLengthLimitHasBeenSet() const;
 
                     /**
-                     * 获取模型提示词长度字符数限制
-                     * @return PromptLengthLimit 模型提示词长度字符数限制
+                     * 获取<p>最大输入 Tokens 展示文案（如 960k，服务端格式化，未配置为空串）</p>
+                     * @return MaxInputTokensDescription <p>最大输入 Tokens 展示文案（如 960k，服务端格式化，未配置为空串）</p>
+                     * 
+                     */
+                    std::string GetMaxInputTokensDescription() const;
+
+                    /**
+                     * 设置<p>最大输入 Tokens 展示文案（如 960k，服务端格式化，未配置为空串）</p>
+                     * @param _maxInputTokensDescription <p>最大输入 Tokens 展示文案（如 960k，服务端格式化，未配置为空串）</p>
+                     * 
+                     */
+                    void SetMaxInputTokensDescription(const std::string& _maxInputTokensDescription);
+
+                    /**
+                     * 判断参数 MaxInputTokensDescription 是否已赋值
+                     * @return MaxInputTokensDescription 是否已赋值
+                     * 
+                     */
+                    bool MaxInputTokensDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最大输出 Tokens 展示文案（如 64k，服务端格式化，未配置为空串）</p>
+                     * @return MaxOutputTokensDescription <p>最大输出 Tokens 展示文案（如 64k，服务端格式化，未配置为空串）</p>
+                     * 
+                     */
+                    std::string GetMaxOutputTokensDescription() const;
+
+                    /**
+                     * 设置<p>最大输出 Tokens 展示文案（如 64k，服务端格式化，未配置为空串）</p>
+                     * @param _maxOutputTokensDescription <p>最大输出 Tokens 展示文案（如 64k，服务端格式化，未配置为空串）</p>
+                     * 
+                     */
+                    void SetMaxOutputTokensDescription(const std::string& _maxOutputTokensDescription);
+
+                    /**
+                     * 判断参数 MaxOutputTokensDescription 是否已赋值
+                     * @return MaxOutputTokensDescription 是否已赋值
+                     * 
+                     */
+                    bool MaxOutputTokensDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型提示词长度字符数限制</p>
+                     * @return PromptLengthLimit <p>模型提示词长度字符数限制</p>
                      * 
                      */
                     int64_t GetPromptLengthLimit() const;
 
                     /**
-                     * 设置模型提示词长度字符数限制
-                     * @param _promptLengthLimit 模型提示词长度字符数限制
+                     * 设置<p>模型提示词长度字符数限制</p>
+                     * @param _promptLengthLimit <p>模型提示词长度字符数限制</p>
                      * 
                      */
                     void SetPromptLengthLimit(const int64_t& _promptLengthLimit);
@@ -112,19 +154,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型上下文长度展示文案（如 "128K"、"1000K"）
+                     * <p>模型上下文长度展示文案（如 128K、1000K）</p>
                      */
                     std::string m_contextLengthDescription;
                     bool m_contextLengthDescriptionHasBeenSet;
 
                     /**
-                     * 模型对话框输入长度字符数限制
+                     * <p>模型对话框输入长度字符数限制</p>
                      */
                     int64_t m_inputLengthLimit;
                     bool m_inputLengthLimitHasBeenSet;
 
                     /**
-                     * 模型提示词长度字符数限制
+                     * <p>最大输入 Tokens 展示文案（如 960k，服务端格式化，未配置为空串）</p>
+                     */
+                    std::string m_maxInputTokensDescription;
+                    bool m_maxInputTokensDescriptionHasBeenSet;
+
+                    /**
+                     * <p>最大输出 Tokens 展示文案（如 64k，服务端格式化，未配置为空串）</p>
+                     */
+                    std::string m_maxOutputTokensDescription;
+                    bool m_maxOutputTokensDescriptionHasBeenSet;
+
+                    /**
+                     * <p>模型提示词长度字符数限制</p>
                      */
                     int64_t m_promptLengthLimit;
                     bool m_promptLengthLimitHasBeenSet;

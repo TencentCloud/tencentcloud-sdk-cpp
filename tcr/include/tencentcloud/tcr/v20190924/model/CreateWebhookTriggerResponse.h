@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新建的触发器
-                     * @return Trigger 新建的触发器
+                     * 获取<p>新建的触发器</p>
+                     * @return Trigger <p>新建的触发器</p>
                      * 
                      */
                     WebhookTrigger GetTrigger() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新建的触发器
+                     * <p>新建的触发器</p>
                      */
                     WebhookTrigger m_trigger;
                     bool m_triggerHasBeenSet;

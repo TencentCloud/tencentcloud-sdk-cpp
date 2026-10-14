@@ -32,7 +32,13 @@ CollectorTarget::CollectorTarget() :
     m_indexAliasHasBeenSet(false),
     m_inputTypeHasBeenSet(false),
     m_inputPathHasBeenSet(false),
-    m_inputsTailFilesHasBeenSet(false)
+    m_inputsTailFilesHasBeenSet(false),
+    m_inputsMultiLineEnabledHasBeenSet(false),
+    m_inputsMultiLineTypeHasBeenSet(false),
+    m_inputsMultiLinePatternHasBeenSet(false),
+    m_inputsMultiLineNegateHasBeenSet(false),
+    m_inputsMultiLineMatchHasBeenSet(false),
+    m_tkeCollectTypeHasBeenSet(false)
 {
 }
 
@@ -178,6 +184,66 @@ CoreInternalOutcome CollectorTarget::Deserialize(const rapidjson::Value &value)
         m_inputsTailFilesHasBeenSet = true;
     }
 
+    if (value.HasMember("InputsMultiLineEnabled") && !value["InputsMultiLineEnabled"].IsNull())
+    {
+        if (!value["InputsMultiLineEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CollectorTarget.InputsMultiLineEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputsMultiLineEnabled = value["InputsMultiLineEnabled"].GetBool();
+        m_inputsMultiLineEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputsMultiLineType") && !value["InputsMultiLineType"].IsNull())
+    {
+        if (!value["InputsMultiLineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CollectorTarget.InputsMultiLineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputsMultiLineType = string(value["InputsMultiLineType"].GetString());
+        m_inputsMultiLineTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputsMultiLinePattern") && !value["InputsMultiLinePattern"].IsNull())
+    {
+        if (!value["InputsMultiLinePattern"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CollectorTarget.InputsMultiLinePattern` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputsMultiLinePattern = string(value["InputsMultiLinePattern"].GetString());
+        m_inputsMultiLinePatternHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputsMultiLineNegate") && !value["InputsMultiLineNegate"].IsNull())
+    {
+        if (!value["InputsMultiLineNegate"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CollectorTarget.InputsMultiLineNegate` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputsMultiLineNegate = value["InputsMultiLineNegate"].GetBool();
+        m_inputsMultiLineNegateHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputsMultiLineMatch") && !value["InputsMultiLineMatch"].IsNull())
+    {
+        if (!value["InputsMultiLineMatch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CollectorTarget.InputsMultiLineMatch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputsMultiLineMatch = string(value["InputsMultiLineMatch"].GetString());
+        m_inputsMultiLineMatchHasBeenSet = true;
+    }
+
+    if (value.HasMember("TkeCollectType") && !value["TkeCollectType"].IsNull())
+    {
+        if (!value["TkeCollectType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CollectorTarget.TkeCollectType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tkeCollectType = string(value["TkeCollectType"].GetString());
+        m_tkeCollectTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +353,54 @@ void CollectorTarget::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "InputsTailFiles";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inputsTailFiles, allocator);
+    }
+
+    if (m_inputsMultiLineEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputsMultiLineEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputsMultiLineEnabled, allocator);
+    }
+
+    if (m_inputsMultiLineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputsMultiLineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputsMultiLineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputsMultiLinePatternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputsMultiLinePattern";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputsMultiLinePattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputsMultiLineNegateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputsMultiLineNegate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputsMultiLineNegate, allocator);
+    }
+
+    if (m_inputsMultiLineMatchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputsMultiLineMatch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputsMultiLineMatch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tkeCollectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TkeCollectType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tkeCollectType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -482,5 +596,101 @@ void CollectorTarget::SetInputsTailFiles(const bool& _inputsTailFiles)
 bool CollectorTarget::InputsTailFilesHasBeenSet() const
 {
     return m_inputsTailFilesHasBeenSet;
+}
+
+bool CollectorTarget::GetInputsMultiLineEnabled() const
+{
+    return m_inputsMultiLineEnabled;
+}
+
+void CollectorTarget::SetInputsMultiLineEnabled(const bool& _inputsMultiLineEnabled)
+{
+    m_inputsMultiLineEnabled = _inputsMultiLineEnabled;
+    m_inputsMultiLineEnabledHasBeenSet = true;
+}
+
+bool CollectorTarget::InputsMultiLineEnabledHasBeenSet() const
+{
+    return m_inputsMultiLineEnabledHasBeenSet;
+}
+
+string CollectorTarget::GetInputsMultiLineType() const
+{
+    return m_inputsMultiLineType;
+}
+
+void CollectorTarget::SetInputsMultiLineType(const string& _inputsMultiLineType)
+{
+    m_inputsMultiLineType = _inputsMultiLineType;
+    m_inputsMultiLineTypeHasBeenSet = true;
+}
+
+bool CollectorTarget::InputsMultiLineTypeHasBeenSet() const
+{
+    return m_inputsMultiLineTypeHasBeenSet;
+}
+
+string CollectorTarget::GetInputsMultiLinePattern() const
+{
+    return m_inputsMultiLinePattern;
+}
+
+void CollectorTarget::SetInputsMultiLinePattern(const string& _inputsMultiLinePattern)
+{
+    m_inputsMultiLinePattern = _inputsMultiLinePattern;
+    m_inputsMultiLinePatternHasBeenSet = true;
+}
+
+bool CollectorTarget::InputsMultiLinePatternHasBeenSet() const
+{
+    return m_inputsMultiLinePatternHasBeenSet;
+}
+
+bool CollectorTarget::GetInputsMultiLineNegate() const
+{
+    return m_inputsMultiLineNegate;
+}
+
+void CollectorTarget::SetInputsMultiLineNegate(const bool& _inputsMultiLineNegate)
+{
+    m_inputsMultiLineNegate = _inputsMultiLineNegate;
+    m_inputsMultiLineNegateHasBeenSet = true;
+}
+
+bool CollectorTarget::InputsMultiLineNegateHasBeenSet() const
+{
+    return m_inputsMultiLineNegateHasBeenSet;
+}
+
+string CollectorTarget::GetInputsMultiLineMatch() const
+{
+    return m_inputsMultiLineMatch;
+}
+
+void CollectorTarget::SetInputsMultiLineMatch(const string& _inputsMultiLineMatch)
+{
+    m_inputsMultiLineMatch = _inputsMultiLineMatch;
+    m_inputsMultiLineMatchHasBeenSet = true;
+}
+
+bool CollectorTarget::InputsMultiLineMatchHasBeenSet() const
+{
+    return m_inputsMultiLineMatchHasBeenSet;
+}
+
+string CollectorTarget::GetTkeCollectType() const
+{
+    return m_tkeCollectType;
+}
+
+void CollectorTarget::SetTkeCollectType(const string& _tkeCollectType)
+{
+    m_tkeCollectType = _tkeCollectType;
+    m_tkeCollectTypeHasBeenSet = true;
+}
+
+bool CollectorTarget::TkeCollectTypeHasBeenSet() const
+{
+    return m_tkeCollectTypeHasBeenSet;
 }
 

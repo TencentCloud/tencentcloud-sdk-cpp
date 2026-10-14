@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体传输事件ID。
-                     * @return EventId 媒体传输事件ID。
+                     * 获取<p>媒体传输事件ID。</p>
+                     * @return EventId <p>媒体传输事件ID。</p>
                      * 
                      */
                     std::string GetEventId() const;
 
                     /**
-                     * 设置媒体传输事件ID。
-                     * @param _eventId 媒体传输事件ID。
+                     * 设置<p>媒体传输事件ID。</p>
+                     * @param _eventId <p>媒体传输事件ID。</p>
                      * 
                      */
                     void SetEventId(const std::string& _eventId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒体传输事件ID。
+                     * <p>媒体传输事件ID。</p>
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;

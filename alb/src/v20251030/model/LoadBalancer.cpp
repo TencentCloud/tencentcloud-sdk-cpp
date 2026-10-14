@@ -21,7 +21,6 @@ using namespace TencentCloud::Alb::V20251030::Model;
 using namespace std;
 
 LoadBalancer::LoadBalancer() :
-    m_accessLogConfigHasBeenSet(false),
     m_addressIpVersionHasBeenSet(false),
     m_addressTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -42,23 +41,6 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("AccessLogConfig") && !value["AccessLogConfig"].IsNull())
-    {
-        if (!value["AccessLogConfig"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `LoadBalancer.AccessLogConfig` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_accessLogConfig.Deserialize(value["AccessLogConfig"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_accessLogConfigHasBeenSet = true;
-    }
 
     if (value.HasMember("AddressIpVersion") && !value["AddressIpVersion"].IsNull())
     {
@@ -238,15 +220,6 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
 void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_accessLogConfigHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AccessLogConfig";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_accessLogConfig.ToJsonObject(value[key.c_str()], allocator);
-    }
-
     if (m_addressIpVersionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -370,22 +343,6 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
 
 }
 
-
-AccessLogConfig LoadBalancer::GetAccessLogConfig() const
-{
-    return m_accessLogConfig;
-}
-
-void LoadBalancer::SetAccessLogConfig(const AccessLogConfig& _accessLogConfig)
-{
-    m_accessLogConfig = _accessLogConfig;
-    m_accessLogConfigHasBeenSet = true;
-}
-
-bool LoadBalancer::AccessLogConfigHasBeenSet() const
-{
-    return m_accessLogConfigHasBeenSet;
-}
 
 string LoadBalancer::GetAddressIpVersion() const
 {

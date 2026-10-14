@@ -35,7 +35,12 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Web安全重定向的附加参数
+                * 安全执行动作为重定向时的附加参数。
+
+该参数用于指定在命中安全规则并执行重定向动作时，系统所采取的附加处置动作。
+不同处置动作由不同且固定的参数组合进行配置，系统将根据所配置的参数组合判定实际生效的处置动作类型。
+在同一次重定向执行过程中，仅允许配置并生效一种处置动作，多个处置动作对应的参数组合不可同时出现，否则视为非法配置。
+RedirectActionParameters 支持以下附加处置动作：<li>重定向：将客户端请求重定向至指的目标 URL 。对应参数 URL。</li>
                 */
                 class RedirectActionParameters : public AbstractModel
                 {

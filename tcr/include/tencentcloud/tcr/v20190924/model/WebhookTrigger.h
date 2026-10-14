@@ -240,6 +240,56 @@ namespace TencentCloud
                      */
                     bool NamespaceNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>触发器所属产品类型：ags 为镜像预热，apparate 为镜像加速，普通 webhook 为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Product <p>触发器所属产品类型：ags 为镜像预热，apparate 为镜像加速，普通 webhook 为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProduct() const;
+
+                    /**
+                     * 设置<p>触发器所属产品类型：ags 为镜像预热，apparate 为镜像加速，普通 webhook 为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _product <p>触发器所属产品类型：ags 为镜像预热，apparate 为镜像加速，普通 webhook 为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProduct(const std::string& _product);
+
+                    /**
+                     * 判断参数 Product 是否已赋值
+                     * @return Product 是否已赋值
+                     * 
+                     */
+                    bool ProductHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PreheatRegion <p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPreheatRegion() const;
+
+                    /**
+                     * 设置<p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _preheatRegion <p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPreheatRegion(const std::string& _preheatRegion);
+
+                    /**
+                     * 判断参数 PreheatRegion 是否已赋值
+                     * @return PreheatRegion 是否已赋值
+                     * 
+                     */
+                    bool PreheatRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -296,6 +346,20 @@ namespace TencentCloud
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
+
+                    /**
+                     * <p>触发器所属产品类型：ags 为镜像预热，apparate 为镜像加速，普通 webhook 为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_product;
+                    bool m_productHasBeenSet;
+
+                    /**
+                     * <p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_preheatRegion;
+                    bool m_preheatRegionHasBeenSet;
 
                 };
             }

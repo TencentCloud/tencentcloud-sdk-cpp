@@ -116,6 +116,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DeleteLogstashInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DiagnoseJobMeta.h
   include/tencentcloud/es/v20180416/model/DescribeEventDataDetailResponse.h
+  include/tencentcloud/es/v20180416/model/SaveAndDeployLogstashPipelineResponse.h
   include/tencentcloud/es/v20180416/model/AutoScaleDiskInfo.h
   include/tencentcloud/es/v20180416/model/CreateServerlessSpaceV2Response.h
   include/tencentcloud/es/v20180416/model/DescribeUpgradeResponse.h
@@ -214,7 +215,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DeleteLogstashPipelinesRequest.h
   include/tencentcloud/es/v20180416/model/DiagnoseResult.h
   include/tencentcloud/es/v20180416/model/RestartKibanaRequest.h
-  include/tencentcloud/es/v20180416/model/SaveAndDeployLogstashPipelineResponse.h
+  include/tencentcloud/es/v20180416/model/FamilyResourceStat.h
   include/tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h
   include/tencentcloud/es/v20180416/model/DescribeAutoBackUpStrategyResponse.h
   include/tencentcloud/es/v20180416/model/DiskCountRange.h
@@ -444,6 +445,7 @@ set(es_src
   src/v20180416/model/DeleteLogstashInstanceResponse.cpp
   src/v20180416/model/DiagnoseJobMeta.cpp
   src/v20180416/model/DescribeEventDataDetailResponse.cpp
+  src/v20180416/model/SaveAndDeployLogstashPipelineResponse.cpp
   src/v20180416/model/AutoScaleDiskInfo.cpp
   src/v20180416/model/CreateServerlessSpaceV2Response.cpp
   src/v20180416/model/DescribeUpgradeResponse.cpp
@@ -542,7 +544,7 @@ set(es_src
   src/v20180416/model/DeleteLogstashPipelinesRequest.cpp
   src/v20180416/model/DiagnoseResult.cpp
   src/v20180416/model/RestartKibanaRequest.cpp
-  src/v20180416/model/SaveAndDeployLogstashPipelineResponse.cpp
+  src/v20180416/model/FamilyResourceStat.cpp
   src/v20180416/model/UpdateDiagnoseSettingsResponse.cpp
   src/v20180416/model/DescribeAutoBackUpStrategyResponse.cpp
   src/v20180416/model/DiskCountRange.cpp

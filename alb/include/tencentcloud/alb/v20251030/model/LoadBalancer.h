@@ -24,7 +24,6 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/alb/v20251030/model/AccessLogConfig.h>
 #include <tencentcloud/alb/v20251030/model/DeletionProtectionConfig.h>
 #include <tencentcloud/alb/v20251030/model/LoadBalancerBillingConfig.h>
 #include <tencentcloud/alb/v20251030/model/LoadBalancerOperationLocksItem.h>
@@ -51,27 +50,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取访问日志配置结构。
-                     * @return AccessLogConfig 访问日志配置结构。
-                     * 
-                     */
-                    AccessLogConfig GetAccessLogConfig() const;
-
-                    /**
-                     * 设置访问日志配置结构。
-                     * @param _accessLogConfig 访问日志配置结构。
-                     * 
-                     */
-                    void SetAccessLogConfig(const AccessLogConfig& _accessLogConfig);
-
-                    /**
-                     * 判断参数 AccessLogConfig 是否已赋值
-                     * @return AccessLogConfig 是否已赋值
-                     * 
-                     */
-                    bool AccessLogConfigHasBeenSet() const;
 
                     /**
                      * 获取IP 地址版本，取值 IPv4 或 IPv6。
@@ -439,12 +417,6 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * 访问日志配置结构。
-                     */
-                    AccessLogConfig m_accessLogConfig;
-                    bool m_accessLogConfigHasBeenSet;
 
                     /**
                      * IP 地址版本，取值 IPv4 或 IPv6。

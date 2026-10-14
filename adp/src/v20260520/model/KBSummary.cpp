@@ -34,7 +34,8 @@ KBSummary::KBSummary() :
     m_permissionHasBeenSet(false),
     m_processingFlagListHasBeenSet(false),
     m_sharedSubTypeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_spaceShareHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,23 @@ CoreInternalOutcome KBSummary::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SpaceShare") && !value["SpaceShare"].IsNull())
+    {
+        if (!value["SpaceShare"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KBSummary.SpaceShare` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_spaceShare.Deserialize(value["SpaceShare"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_spaceShareHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -349,6 +367,15 @@ void KBSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_spaceShareHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceShare";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spaceShare.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -576,5 +603,21 @@ void KBSummary::SetUpdateTime(const string& _updateTime)
 bool KBSummary::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+KBSpaceShare KBSummary::GetSpaceShare() const
+{
+    return m_spaceShare;
+}
+
+void KBSummary::SetSpaceShare(const KBSpaceShare& _spaceShare)
+{
+    m_spaceShare = _spaceShare;
+    m_spaceShareHasBeenSet = true;
+}
+
+bool KBSummary::SpaceShareHasBeenSet() const
+{
+    return m_spaceShareHasBeenSet;
 }
 

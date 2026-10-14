@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/AppIdentity.h>
 
 
 namespace TencentCloud
@@ -172,6 +173,27 @@ namespace TencentCloud
                      */
                     bool OwnerHasBeenSet() const;
 
+                    /**
+                     * 获取<p>应用标识</p>
+                     * @return AppIdentity <p>应用标识</p>
+                     * 
+                     */
+                    AppIdentity GetAppIdentity() const;
+
+                    /**
+                     * 设置<p>应用标识</p>
+                     * @param _appIdentity <p>应用标识</p>
+                     * 
+                     */
+                    void SetAppIdentity(const AppIdentity& _appIdentity);
+
+                    /**
+                     * 判断参数 AppIdentity 是否已赋值
+                     * @return AppIdentity 是否已赋值
+                     * 
+                     */
+                    bool AppIdentityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +231,12 @@ namespace TencentCloud
                      */
                     std::string m_owner;
                     bool m_ownerHasBeenSet;
+
+                    /**
+                     * <p>应用标识</p>
+                     */
+                    AppIdentity m_appIdentity;
+                    bool m_appIdentityHasBeenSet;
 
                 };
             }

@@ -25,13 +25,13 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/ModelBadge.h>
+#include <tencentcloud/adp/v20260520/model/ModelDeveloperBasic.h>
 #include <tencentcloud/adp/v20260520/model/ModelLimit.h>
 #include <tencentcloud/adp/v20260520/model/ModelBasic.h>
 #include <tencentcloud/adp/v20260520/model/ModelParameter.h>
 #include <tencentcloud/adp/v20260520/model/ModelProperty.h>
 #include <tencentcloud/adp/v20260520/model/ModelProviderBasic.h>
 #include <tencentcloud/adp/v20260520/model/ModelStatus.h>
-#include <tencentcloud/adp/v20260520/model/ModelDeveloperBasic.h>
 
 
 namespace TencentCloud
@@ -43,7 +43,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模型完整信息
+                * <p>模型完整信息</p>
                 */
                 class Model : public AbstractModel
                 {
@@ -56,14 +56,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>模型徽章列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return BadgeList <p>模型徽章列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ModelBadge> GetBadgeList() const;
 
                     /**
                      * 设置<p>模型徽章列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _badgeList <p>模型徽章列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBadgeList(const std::vector<ModelBadge>& _badgeList);
@@ -74,6 +78,31 @@ namespace TencentCloud
                      * 
                      */
                     bool BadgeListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型作者信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeveloperInfo <p>模型作者信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ModelDeveloperBasic GetDeveloperInfo() const;
+
+                    /**
+                     * 设置<p>模型作者信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _developerInfo <p>模型作者信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeveloperInfo(const ModelDeveloperBasic& _developerInfo);
+
+                    /**
+                     * 判断参数 DeveloperInfo 是否已赋值
+                     * @return DeveloperInfo 是否已赋值
+                     * 
+                     */
+                    bool DeveloperInfoHasBeenSet() const;
 
                     /**
                      * 获取<p>模型限制信息</p>
@@ -127,14 +156,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>模型超参配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterList <p>模型超参配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ModelParameter> GetParameterList() const;
 
                     /**
                      * 设置<p>模型超参配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parameterList <p>模型超参配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParameterList(const std::vector<ModelParameter>& _parameterList);
@@ -148,14 +181,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>模型属性配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return PropertyList <p>模型属性配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ModelProperty> GetPropertyList() const;
 
                     /**
                      * 设置<p>模型属性配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _propertyList <p>模型属性配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPropertyList(const std::vector<ModelProperty>& _propertyList);
@@ -238,34 +275,21 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
-                    /**
-                     * 获取<p>模型作者信息</p>
-                     * @return DeveloperInfo <p>模型作者信息</p>
-                     * 
-                     */
-                    ModelDeveloperBasic GetDeveloperInfo() const;
-
-                    /**
-                     * 设置<p>模型作者信息</p>
-                     * @param _developerInfo <p>模型作者信息</p>
-                     * 
-                     */
-                    void SetDeveloperInfo(const ModelDeveloperBasic& _developerInfo);
-
-                    /**
-                     * 判断参数 DeveloperInfo 是否已赋值
-                     * @return DeveloperInfo 是否已赋值
-                     * 
-                     */
-                    bool DeveloperInfoHasBeenSet() const;
-
                 private:
 
                     /**
                      * <p>模型徽章列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ModelBadge> m_badgeList;
                     bool m_badgeListHasBeenSet;
+
+                    /**
+                     * <p>模型作者信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ModelDeveloperBasic m_developerInfo;
+                    bool m_developerInfoHasBeenSet;
 
                     /**
                      * <p>模型限制信息</p>
@@ -283,12 +307,14 @@ namespace TencentCloud
 
                     /**
                      * <p>模型超参配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ModelParameter> m_parameterList;
                     bool m_parameterListHasBeenSet;
 
                     /**
                      * <p>模型属性配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ModelProperty> m_propertyList;
                     bool m_propertyListHasBeenSet;
@@ -312,12 +338,6 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagList;
                     bool m_tagListHasBeenSet;
-
-                    /**
-                     * <p>模型作者信息</p>
-                     */
-                    ModelDeveloperBasic m_developerInfo;
-                    bool m_developerInfoHasBeenSet;
 
                 };
             }

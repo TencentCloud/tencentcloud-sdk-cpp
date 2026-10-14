@@ -42,7 +42,8 @@ Setats::Setats() :
     m_remarkHasBeenSet(false),
     m_isolationPolicyVersionHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_cCNsHasBeenSet(false)
+    m_cCNsHasBeenSet(false),
+    m_clusterGroupSerialIdHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,16 @@ CoreInternalOutcome Setats::Deserialize(const rapidjson::Value &value)
         m_cCNsHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterGroupSerialId") && !value["ClusterGroupSerialId"].IsNull())
+    {
+        if (!value["ClusterGroupSerialId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Setats.ClusterGroupSerialId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterGroupSerialId = string(value["ClusterGroupSerialId"].GetString());
+        m_clusterGroupSerialIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -518,6 +529,14 @@ void Setats::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_clusterGroupSerialIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterGroupSerialId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterGroupSerialId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -873,5 +892,21 @@ void Setats::SetCCNs(const vector<CCN>& _cCNs)
 bool Setats::CCNsHasBeenSet() const
 {
     return m_cCNsHasBeenSet;
+}
+
+string Setats::GetClusterGroupSerialId() const
+{
+    return m_clusterGroupSerialId;
+}
+
+void Setats::SetClusterGroupSerialId(const string& _clusterGroupSerialId)
+{
+    m_clusterGroupSerialId = _clusterGroupSerialId;
+    m_clusterGroupSerialIdHasBeenSet = true;
+}
+
+bool Setats::ClusterGroupSerialIdHasBeenSet() const
+{
+    return m_clusterGroupSerialIdHasBeenSet;
 }
 
