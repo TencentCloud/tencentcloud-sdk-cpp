@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取堡垒机资源列表
-                     * @return ResourceSet 堡垒机资源列表
+                     * 获取<p>堡垒机资源列表</p>
+                     * @return ResourceSet <p>堡垒机资源列表</p>
                      * 
                      */
                     std::vector<Resource> GetResourceSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ResourceSetHasBeenSet() const;
 
                     /**
-                     * 获取堡垒机资源数量
-                     * @return TotalCount 堡垒机资源数量
+                     * 获取<p>堡垒机资源数量</p>
+                     * @return TotalCount <p>堡垒机资源数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 堡垒机资源列表
+                     * <p>堡垒机资源列表</p>
                      */
                     std::vector<Resource> m_resourceSet;
                     bool m_resourceSetHasBeenSet;
 
                     /**
-                     * 堡垒机资源数量
+                     * <p>堡垒机资源数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

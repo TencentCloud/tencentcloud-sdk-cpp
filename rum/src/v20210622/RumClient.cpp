@@ -2690,6 +2690,56 @@ RumClient::DescribeFOOMReportListOutcomeCallable RumClient::DescribeFOOMReportLi
     return prom->get_future();
 }
 
+RumClient::DescribeFileCertificateOutcome RumClient::DescribeFileCertificate(const DescribeFileCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFileCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFileCertificateResponse rsp = DescribeFileCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFileCertificateOutcome(rsp);
+        else
+            return DescribeFileCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFileCertificateOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeFileCertificateAsync(const DescribeFileCertificateRequest& request, const DescribeFileCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFileCertificateRequest&;
+    using Resp = DescribeFileCertificateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFileCertificate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RumClient::DescribeFileCertificateOutcomeCallable RumClient::DescribeFileCertificateCallable(const DescribeFileCertificateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFileCertificateOutcome>>();
+    DescribeFileCertificateAsync(
+    request,
+    [prom](
+        const RumClient*,
+        const DescribeFileCertificateRequest&,
+        DescribeFileCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RumClient::DescribeIssuesDistributionOutcome RumClient::DescribeIssuesDistribution(const DescribeIssuesDistributionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeIssuesDistribution");

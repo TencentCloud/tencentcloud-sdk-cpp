@@ -845,6 +845,27 @@ namespace TencentCloud
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>网络配置，JSON 字符串</p>
+                     * @return NetworkConfig <p>网络配置，JSON 字符串</p>
+                     * 
+                     */
+                    std::string GetNetworkConfig() const;
+
+                    /**
+                     * 设置<p>网络配置，JSON 字符串</p>
+                     * @param _networkConfig <p>网络配置，JSON 字符串</p>
+                     * 
+                     */
+                    void SetNetworkConfig(const std::string& _networkConfig);
+
+                    /**
+                     * 判断参数 NetworkConfig 是否已赋值
+                     * @return NetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool NetworkConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1074,6 +1095,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * <p>网络配置，JSON 字符串</p>
+                     */
+                    std::string m_networkConfig;
+                    bool m_networkConfigHasBeenSet;
 
                 };
             }

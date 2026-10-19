@@ -33,7 +33,8 @@ ModifyModelRouterAttributesRequest::ModifyModelRouterAttributesRequest() :
     m_embeddingConfigHasBeenSet(false),
     m_videoConfigHasBeenSet(false),
     m_rerankConfigHasBeenSet(false),
-    m_decisionsConfigHasBeenSet(false)
+    m_decisionsConfigHasBeenSet(false),
+    m_imageConfigHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,15 @@ string ModifyModelRouterAttributesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_decisionsConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_imageConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -320,6 +330,22 @@ void ModifyModelRouterAttributesRequest::SetDecisionsConfig(const DecisionsConfi
 bool ModifyModelRouterAttributesRequest::DecisionsConfigHasBeenSet() const
 {
     return m_decisionsConfigHasBeenSet;
+}
+
+ImageConfig ModifyModelRouterAttributesRequest::GetImageConfig() const
+{
+    return m_imageConfig;
+}
+
+void ModifyModelRouterAttributesRequest::SetImageConfig(const ImageConfig& _imageConfig)
+{
+    m_imageConfig = _imageConfig;
+    m_imageConfigHasBeenSet = true;
+}
+
+bool ModifyModelRouterAttributesRequest::ImageConfigHasBeenSet() const
+{
+    return m_imageConfigHasBeenSet;
 }
 
 

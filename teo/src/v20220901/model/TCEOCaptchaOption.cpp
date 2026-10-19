@@ -21,7 +21,8 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 TCEOCaptchaOption::TCEOCaptchaOption() :
-    m_captchaModeHasBeenSet(false)
+    m_captchaModeHasBeenSet(false),
+    m_mobileCaptchaModeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome TCEOCaptchaOption::Deserialize(const rapidjson::Value &value
         m_captchaModeHasBeenSet = true;
     }
 
+    if (value.HasMember("MobileCaptchaMode") && !value["MobileCaptchaMode"].IsNull())
+    {
+        if (!value["MobileCaptchaMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TCEOCaptchaOption.MobileCaptchaMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mobileCaptchaMode = string(value["MobileCaptchaMode"].GetString());
+        m_mobileCaptchaModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void TCEOCaptchaOption::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CaptchaMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_captchaMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mobileCaptchaModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MobileCaptchaMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mobileCaptchaMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void TCEOCaptchaOption::SetCaptchaMode(const string& _captchaMode)
 bool TCEOCaptchaOption::CaptchaModeHasBeenSet() const
 {
     return m_captchaModeHasBeenSet;
+}
+
+string TCEOCaptchaOption::GetMobileCaptchaMode() const
+{
+    return m_mobileCaptchaMode;
+}
+
+void TCEOCaptchaOption::SetMobileCaptchaMode(const string& _mobileCaptchaMode)
+{
+    m_mobileCaptchaMode = _mobileCaptchaMode;
+    m_mobileCaptchaModeHasBeenSet = true;
+}
+
+bool TCEOCaptchaOption::MobileCaptchaModeHasBeenSet() const
+{
+    return m_mobileCaptchaModeHasBeenSet;
 }
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域码, 如: ap-guangzhou
-                     * @return ApCode 地域码, 如: ap-guangzhou
+                     * 获取<p>地域码, 如: ap-guangzhou</p>
+                     * @return ApCode <p>地域码, 如: ap-guangzhou</p>
                      * 
                      */
                     std::string GetApCode() const;
 
                     /**
-                     * 设置地域码, 如: ap-guangzhou
-                     * @param _apCode 地域码, 如: ap-guangzhou
+                     * 设置<p>地域码, 如: ap-guangzhou</p>
+                     * @param _apCode <p>地域码, 如: ap-guangzhou</p>
                      * 
                      */
                     void SetApCode(const std::string& _apCode);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ApCodeHasBeenSet() const;
 
                     /**
-                     * 获取按照堡垒机开通的 VPC 实例ID查询
-                     * @return VpcId 按照堡垒机开通的 VPC 实例ID查询
+                     * 获取<p>按照堡垒机开通的 VPC 实例ID查询</p>
+                     * @return VpcId <p>按照堡垒机开通的 VPC 实例ID查询</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置按照堡垒机开通的 VPC 实例ID查询
-                     * @param _vpcId 按照堡垒机开通的 VPC 实例ID查询
+                     * 设置<p>按照堡垒机开通的 VPC 实例ID查询</p>
+                     * @param _vpcId <p>按照堡垒机开通的 VPC 实例ID查询</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId
-                     * @return ResourceIds 资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId
+                     * 获取<p>资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId</p>
+                     * @return ResourceIds <p>资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId</p>
                      * 
                      */
                     std::vector<std::string> GetResourceIds() const;
 
                     /**
-                     * 设置资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId
-                     * @param _resourceIds 资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId
+                     * 设置<p>资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId</p>
+                     * @param _resourceIds <p>资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId</p>
                      * 
                      */
                     void SetResourceIds(const std::vector<std::string>& _resourceIds);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取每页条目数量
-                     * @return Limit 每页条目数量
+                     * 获取<p>每页条目数量</p>
+                     * @return Limit <p>每页条目数量</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页条目数量
-                     * @param _limit 每页条目数量
+                     * 设置<p>每页条目数量</p>
+                     * @param _limit <p>每页条目数量</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移位置
-                     * @return Offset 分页偏移位置
+                     * 获取<p>分页偏移位置</p>
+                     * @return Offset <p>分页偏移位置</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移位置
-                     * @param _offset 分页偏移位置
+                     * 设置<p>分页偏移位置</p>
+                     * @param _offset <p>分页偏移位置</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 地域码, 如: ap-guangzhou
+                     * <p>地域码, 如: ap-guangzhou</p>
                      */
                     std::string m_apCode;
                     bool m_apCodeHasBeenSet;
 
                     /**
-                     * 按照堡垒机开通的 VPC 实例ID查询
+                     * <p>按照堡垒机开通的 VPC 实例ID查询</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId
+                     * <p>资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId</p>
                      */
                     std::vector<std::string> m_resourceIds;
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 每页条目数量
+                     * <p>每页条目数量</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移位置
+                     * <p>分页偏移位置</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

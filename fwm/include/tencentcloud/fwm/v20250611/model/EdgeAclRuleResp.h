@@ -730,6 +730,48 @@ namespace TencentCloud
                      */
                     bool DnsParseCntHasBeenSet() const;
 
+                    /**
+                     * 获取命中次数。该规则在所有已下发成员账号下的累计命中次数合计，直接采用云防火墙返回值，不做时间窗口换算；从未命中时为 0
+                     * @return HitCount 命中次数。该规则在所有已下发成员账号下的累计命中次数合计，直接采用云防火墙返回值，不做时间窗口换算；从未命中时为 0
+                     * 
+                     */
+                    int64_t GetHitCount() const;
+
+                    /**
+                     * 设置命中次数。该规则在所有已下发成员账号下的累计命中次数合计，直接采用云防火墙返回值，不做时间窗口换算；从未命中时为 0
+                     * @param _hitCount 命中次数。该规则在所有已下发成员账号下的累计命中次数合计，直接采用云防火墙返回值，不做时间窗口换算；从未命中时为 0
+                     * 
+                     */
+                    void SetHitCount(const int64_t& _hitCount);
+
+                    /**
+                     * 判断参数 HitCount 是否已赋值
+                     * @return HitCount 是否已赋值
+                     * 
+                     */
+                    bool HitCountHasBeenSet() const;
+
+                    /**
+                     * 获取最近命中时间。取该规则在所有已下发成员账号中最新的命中时间；从未命中时为 "-"
+                     * @return LastHitTime 最近命中时间。取该规则在所有已下发成员账号中最新的命中时间；从未命中时为 "-"
+                     * 
+                     */
+                    std::string GetLastHitTime() const;
+
+                    /**
+                     * 设置最近命中时间。取该规则在所有已下发成员账号中最新的命中时间；从未命中时为 "-"
+                     * @param _lastHitTime 最近命中时间。取该规则在所有已下发成员账号中最新的命中时间；从未命中时为 "-"
+                     * 
+                     */
+                    void SetLastHitTime(const std::string& _lastHitTime);
+
+                    /**
+                     * 判断参数 LastHitTime 是否已赋值
+                     * @return LastHitTime 是否已赋值
+                     * 
+                     */
+                    bool LastHitTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -925,6 +967,18 @@ namespace TencentCloud
                      */
                     int64_t m_dnsParseCnt;
                     bool m_dnsParseCntHasBeenSet;
+
+                    /**
+                     * 命中次数。该规则在所有已下发成员账号下的累计命中次数合计，直接采用云防火墙返回值，不做时间窗口换算；从未命中时为 0
+                     */
+                    int64_t m_hitCount;
+                    bool m_hitCountHasBeenSet;
+
+                    /**
+                     * 最近命中时间。取该规则在所有已下发成员账号中最新的命中时间；从未命中时为 "-"
+                     */
+                    std::string m_lastHitTime;
+                    bool m_lastHitTimeHasBeenSet;
 
                 };
             }

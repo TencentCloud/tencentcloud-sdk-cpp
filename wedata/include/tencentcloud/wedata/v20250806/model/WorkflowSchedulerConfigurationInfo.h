@@ -176,15 +176,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时区
-                     * @return ScheduleTimeZone 时区
+                     * 获取<p>时区</p>
+                     * @return ScheduleTimeZone <p>时区</p>
                      * 
                      */
                     std::string GetScheduleTimeZone() const;
 
                     /**
-                     * 设置时区
-                     * @param _scheduleTimeZone 时区
+                     * 设置<p>时区</p>
+                     * @param _scheduleTimeZone <p>时区</p>
                      * 
                      */
                     void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
@@ -197,47 +197,15 @@ namespace TencentCloud
                     bool ScheduleTimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
-                     * @return CycleType 周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * 获取<p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
+                     * @return CycleType <p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
                      * 
                      */
                     std::string GetCycleType() const;
 
                     /**
-                     * 设置周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
-                     * @param _cycleType 周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * 设置<p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
+                     * @param _cycleType <p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
                      * 
                      */
                     void SetCycleType(const std::string& _cycleType);
@@ -250,15 +218,15 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool CycleTypeHasBeenSet() const;
 
                     /**
-                     * 获取自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)
-                     * @return SelfDepend 自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)
+                     * 获取<p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>
+                     * @return SelfDepend <p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>
                      * 
                      */
                     std::string GetSelfDepend() const;
 
                     /**
-                     * 设置自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)
-                     * @param _selfDepend 自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)
+                     * 设置<p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>
+                     * @param _selfDepend <p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>
                      * 
                      */
                     void SetSelfDepend(const std::string& _selfDepend);
@@ -271,15 +239,15 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool SelfDependHasBeenSet() const;
 
                     /**
-                     * 获取生效开始时间
-                     * @return StartTime 生效开始时间
+                     * 获取<p>生效开始时间</p>
+                     * @return StartTime <p>生效开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置生效开始时间
-                     * @param _startTime 生效开始时间
+                     * 设置<p>生效开始时间</p>
+                     * @param _startTime <p>生效开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -292,15 +260,15 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取生效结束时间
-                     * @return EndTime 生效结束时间
+                     * 获取<p>生效结束时间</p>
+                     * @return EndTime <p>生效结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置生效结束时间
-                     * @param _endTime 生效结束时间
+                     * 设置<p>生效结束时间</p>
+                     * @param _endTime <p>生效结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -313,15 +281,15 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取cron表达式
-                     * @return CrontabExpression cron表达式
+                     * 获取<p>cron表达式</p>
+                     * @return CrontabExpression <p>cron表达式</p>
                      * 
                      */
                     std::string GetCrontabExpression() const;
 
                     /**
-                     * 设置cron表达式
-                     * @param _crontabExpression cron表达式
+                     * 设置<p>cron表达式</p>
+                     * @param _crontabExpression <p>cron表达式</p>
                      * 
                      */
                     void SetCrontabExpression(const std::string& _crontabExpression);
@@ -334,15 +302,15 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool CrontabExpressionHasBeenSet() const;
 
                     /**
-                     * 获取工作流依赖，yes or no
-                     * @return DependencyWorkflow 工作流依赖，yes or no
+                     * 获取<p>工作流依赖，yes or no</p>
+                     * @return DependencyWorkflow <p>工作流依赖，yes or no</p>
                      * 
                      */
                     std::string GetDependencyWorkflow() const;
 
                     /**
-                     * 设置工作流依赖，yes or no
-                     * @param _dependencyWorkflow 工作流依赖，yes or no
+                     * 设置<p>工作流依赖，yes or no</p>
+                     * @param _dependencyWorkflow <p>工作流依赖，yes or no</p>
                      * 
                      */
                     void SetDependencyWorkflow(const std::string& _dependencyWorkflow);
@@ -355,15 +323,15 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool DependencyWorkflowHasBeenSet() const;
 
                     /**
-                     * 获取0：不修改 1：将任务的上游依赖配置改为默认值
-                     * @return ModifyCycleValue 0：不修改 1：将任务的上游依赖配置改为默认值
+                     * 获取<p>0：不修改 1：将任务的上游依赖配置改为默认值</p>
+                     * @return ModifyCycleValue <p>0：不修改 1：将任务的上游依赖配置改为默认值</p>
                      * 
                      */
                     std::string GetModifyCycleValue() const;
 
                     /**
-                     * 设置0：不修改 1：将任务的上游依赖配置改为默认值
-                     * @param _modifyCycleValue 0：不修改 1：将任务的上游依赖配置改为默认值
+                     * 设置<p>0：不修改 1：将任务的上游依赖配置改为默认值</p>
+                     * @param _modifyCycleValue <p>0：不修改 1：将任务的上游依赖配置改为默认值</p>
                      * 
                      */
                     void SetModifyCycleValue(const std::string& _modifyCycleValue);
@@ -376,15 +344,15 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool ModifyCycleValueHasBeenSet() const;
 
                     /**
-                     * 获取工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系
-                     * @return ClearLink 工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系
+                     * 获取<p>工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系</p>
+                     * @return ClearLink <p>工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系</p>
                      * 
                      */
                     bool GetClearLink() const;
 
                     /**
-                     * 设置工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系
-                     * @param _clearLink 工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系
+                     * 设置<p>工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系</p>
+                     * @param _clearLink <p>工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系</p>
                      * 
                      */
                     void SetClearLink(const bool& _clearLink);
@@ -397,75 +365,15 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool ClearLinkHasBeenSet() const;
 
                     /**
-                     * 获取ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：
-* CRONTAB
-* DAY
-* HOUR
-* LIST_DAY
-* LIST_HOUR
-* LIST_MINUTE
-* MINUTE
-* MONTH
-* RANGE_DAY
-* RANGE_HOUR
-* RANGE_MINUTE
-* WEEK
-* YEAR
-
-https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo
-                     * @return MainCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：
-* CRONTAB
-* DAY
-* HOUR
-* LIST_DAY
-* LIST_HOUR
-* LIST_MINUTE
-* MINUTE
-* MONTH
-* RANGE_DAY
-* RANGE_HOUR
-* RANGE_MINUTE
-* WEEK
-* YEAR
-
-https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo
+                     * 获取<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：</p><ul><li>CRONTAB</li><li>DAY</li><li>HOUR</li><li>LIST_DAY</li><li>LIST_HOUR</li><li>LIST_MINUTE</li><li>MINUTE</li><li>MONTH</li><li>RANGE_DAY</li><li>RANGE_HOUR</li><li>RANGE_MINUTE</li><li>WEEK</li><li>YEAR</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>
+                     * @return MainCyclicConfig <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：</p><ul><li>CRONTAB</li><li>DAY</li><li>HOUR</li><li>LIST_DAY</li><li>LIST_HOUR</li><li>LIST_MINUTE</li><li>MINUTE</li><li>MONTH</li><li>RANGE_DAY</li><li>RANGE_HOUR</li><li>RANGE_MINUTE</li><li>WEEK</li><li>YEAR</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>
                      * 
                      */
                     std::string GetMainCyclicConfig() const;
 
                     /**
-                     * 设置ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：
-* CRONTAB
-* DAY
-* HOUR
-* LIST_DAY
-* LIST_HOUR
-* LIST_MINUTE
-* MINUTE
-* MONTH
-* RANGE_DAY
-* RANGE_HOUR
-* RANGE_MINUTE
-* WEEK
-* YEAR
-
-https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo
-                     * @param _mainCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：
-* CRONTAB
-* DAY
-* HOUR
-* LIST_DAY
-* LIST_HOUR
-* LIST_MINUTE
-* MINUTE
-* MONTH
-* RANGE_DAY
-* RANGE_HOUR
-* RANGE_MINUTE
-* WEEK
-* YEAR
-
-https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo
+                     * 设置<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：</p><ul><li>CRONTAB</li><li>DAY</li><li>HOUR</li><li>LIST_DAY</li><li>LIST_HOUR</li><li>LIST_MINUTE</li><li>MINUTE</li><li>MONTH</li><li>RANGE_DAY</li><li>RANGE_HOUR</li><li>RANGE_MINUTE</li><li>WEEK</li><li>YEAR</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>
+                     * @param _mainCyclicConfig <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：</p><ul><li>CRONTAB</li><li>DAY</li><li>HOUR</li><li>LIST_DAY</li><li>LIST_HOUR</li><li>LIST_MINUTE</li><li>MINUTE</li><li>MONTH</li><li>RANGE_DAY</li><li>RANGE_HOUR</li><li>RANGE_MINUTE</li><li>WEEK</li><li>YEAR</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>
                      * 
                      */
                     void SetMainCyclicConfig(const std::string& _mainCyclicConfig);
@@ -478,119 +386,15 @@ https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06
                     bool MainCyclicConfigHasBeenSet() const;
 
                     /**
-                     * 获取ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
-取值为：
-* ALL_DAY_OF_YEAR
-* ALL_MONTH_OF_YEAR
-* CURRENT
-* CURRENT_DAY
-* CURRENT_HOUR
-* CURRENT_MINUTE
-* CURRENT_MONTH
-* CURRENT_WEEK
-* CURRENT_YEAR
-* PREVIOUS_BEGIN_OF_MONTH
-* PREVIOUS_DAY
-* PREVIOUS_DAY_LATER_OFFSET_HOUR
-* PREVIOUS_DAY_LATER_OFFSET_MINUTE
-* PREVIOUS_END_OF_MONTH
-* PREVIOUS_FRIDAY
-* PREVIOUS_HOUR
-* PREVIOUS_HOUR_CYCLE
-* PREVIOUS_HOUR_LATER_OFFSET_MINUTE
-* PREVIOUS_MINUTE_CYCLE
-* PREVIOUS_MONTH
-* PREVIOUS_WEEK
-* PREVIOUS_WEEKEND
-* RECENT_DATE
-
-https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo
-                     * @return SubordinateCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
-取值为：
-* ALL_DAY_OF_YEAR
-* ALL_MONTH_OF_YEAR
-* CURRENT
-* CURRENT_DAY
-* CURRENT_HOUR
-* CURRENT_MINUTE
-* CURRENT_MONTH
-* CURRENT_WEEK
-* CURRENT_YEAR
-* PREVIOUS_BEGIN_OF_MONTH
-* PREVIOUS_DAY
-* PREVIOUS_DAY_LATER_OFFSET_HOUR
-* PREVIOUS_DAY_LATER_OFFSET_MINUTE
-* PREVIOUS_END_OF_MONTH
-* PREVIOUS_FRIDAY
-* PREVIOUS_HOUR
-* PREVIOUS_HOUR_CYCLE
-* PREVIOUS_HOUR_LATER_OFFSET_MINUTE
-* PREVIOUS_MINUTE_CYCLE
-* PREVIOUS_MONTH
-* PREVIOUS_WEEK
-* PREVIOUS_WEEKEND
-* RECENT_DATE
-
-https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo
+                     * 获取<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围<br>取值为：</p><ul><li>ALL_DAY_OF_YEAR</li><li>ALL_MONTH_OF_YEAR</li><li>CURRENT</li><li>CURRENT_DAY</li><li>CURRENT_HOUR</li><li>CURRENT_MINUTE</li><li>CURRENT_MONTH</li><li>CURRENT_WEEK</li><li>CURRENT_YEAR</li><li>PREVIOUS_BEGIN_OF_MONTH</li><li>PREVIOUS_DAY</li><li>PREVIOUS_DAY_LATER_OFFSET_HOUR</li><li>PREVIOUS_DAY_LATER_OFFSET_MINUTE</li><li>PREVIOUS_END_OF_MONTH</li><li>PREVIOUS_FRIDAY</li><li>PREVIOUS_HOUR</li><li>PREVIOUS_HOUR_CYCLE</li><li>PREVIOUS_HOUR_LATER_OFFSET_MINUTE</li><li>PREVIOUS_MINUTE_CYCLE</li><li>PREVIOUS_MONTH</li><li>PREVIOUS_WEEK</li><li>PREVIOUS_WEEKEND</li><li>RECENT_DATE</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>
+                     * @return SubordinateCyclicConfig <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围<br>取值为：</p><ul><li>ALL_DAY_OF_YEAR</li><li>ALL_MONTH_OF_YEAR</li><li>CURRENT</li><li>CURRENT_DAY</li><li>CURRENT_HOUR</li><li>CURRENT_MINUTE</li><li>CURRENT_MONTH</li><li>CURRENT_WEEK</li><li>CURRENT_YEAR</li><li>PREVIOUS_BEGIN_OF_MONTH</li><li>PREVIOUS_DAY</li><li>PREVIOUS_DAY_LATER_OFFSET_HOUR</li><li>PREVIOUS_DAY_LATER_OFFSET_MINUTE</li><li>PREVIOUS_END_OF_MONTH</li><li>PREVIOUS_FRIDAY</li><li>PREVIOUS_HOUR</li><li>PREVIOUS_HOUR_CYCLE</li><li>PREVIOUS_HOUR_LATER_OFFSET_MINUTE</li><li>PREVIOUS_MINUTE_CYCLE</li><li>PREVIOUS_MONTH</li><li>PREVIOUS_WEEK</li><li>PREVIOUS_WEEKEND</li><li>RECENT_DATE</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>
                      * 
                      */
                     std::string GetSubordinateCyclicConfig() const;
 
                     /**
-                     * 设置ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
-取值为：
-* ALL_DAY_OF_YEAR
-* ALL_MONTH_OF_YEAR
-* CURRENT
-* CURRENT_DAY
-* CURRENT_HOUR
-* CURRENT_MINUTE
-* CURRENT_MONTH
-* CURRENT_WEEK
-* CURRENT_YEAR
-* PREVIOUS_BEGIN_OF_MONTH
-* PREVIOUS_DAY
-* PREVIOUS_DAY_LATER_OFFSET_HOUR
-* PREVIOUS_DAY_LATER_OFFSET_MINUTE
-* PREVIOUS_END_OF_MONTH
-* PREVIOUS_FRIDAY
-* PREVIOUS_HOUR
-* PREVIOUS_HOUR_CYCLE
-* PREVIOUS_HOUR_LATER_OFFSET_MINUTE
-* PREVIOUS_MINUTE_CYCLE
-* PREVIOUS_MONTH
-* PREVIOUS_WEEK
-* PREVIOUS_WEEKEND
-* RECENT_DATE
-
-https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo
-                     * @param _subordinateCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
-取值为：
-* ALL_DAY_OF_YEAR
-* ALL_MONTH_OF_YEAR
-* CURRENT
-* CURRENT_DAY
-* CURRENT_HOUR
-* CURRENT_MINUTE
-* CURRENT_MONTH
-* CURRENT_WEEK
-* CURRENT_YEAR
-* PREVIOUS_BEGIN_OF_MONTH
-* PREVIOUS_DAY
-* PREVIOUS_DAY_LATER_OFFSET_HOUR
-* PREVIOUS_DAY_LATER_OFFSET_MINUTE
-* PREVIOUS_END_OF_MONTH
-* PREVIOUS_FRIDAY
-* PREVIOUS_HOUR
-* PREVIOUS_HOUR_CYCLE
-* PREVIOUS_HOUR_LATER_OFFSET_MINUTE
-* PREVIOUS_MINUTE_CYCLE
-* PREVIOUS_MONTH
-* PREVIOUS_WEEK
-* PREVIOUS_WEEKEND
-* RECENT_DATE
-
-https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo
+                     * 设置<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围<br>取值为：</p><ul><li>ALL_DAY_OF_YEAR</li><li>ALL_MONTH_OF_YEAR</li><li>CURRENT</li><li>CURRENT_DAY</li><li>CURRENT_HOUR</li><li>CURRENT_MINUTE</li><li>CURRENT_MONTH</li><li>CURRENT_WEEK</li><li>CURRENT_YEAR</li><li>PREVIOUS_BEGIN_OF_MONTH</li><li>PREVIOUS_DAY</li><li>PREVIOUS_DAY_LATER_OFFSET_HOUR</li><li>PREVIOUS_DAY_LATER_OFFSET_MINUTE</li><li>PREVIOUS_END_OF_MONTH</li><li>PREVIOUS_FRIDAY</li><li>PREVIOUS_HOUR</li><li>PREVIOUS_HOUR_CYCLE</li><li>PREVIOUS_HOUR_LATER_OFFSET_MINUTE</li><li>PREVIOUS_MINUTE_CYCLE</li><li>PREVIOUS_MONTH</li><li>PREVIOUS_WEEK</li><li>PREVIOUS_WEEKEND</li><li>RECENT_DATE</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>
+                     * @param _subordinateCyclicConfig <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围<br>取值为：</p><ul><li>ALL_DAY_OF_YEAR</li><li>ALL_MONTH_OF_YEAR</li><li>CURRENT</li><li>CURRENT_DAY</li><li>CURRENT_HOUR</li><li>CURRENT_MINUTE</li><li>CURRENT_MONTH</li><li>CURRENT_WEEK</li><li>CURRENT_YEAR</li><li>PREVIOUS_BEGIN_OF_MONTH</li><li>PREVIOUS_DAY</li><li>PREVIOUS_DAY_LATER_OFFSET_HOUR</li><li>PREVIOUS_DAY_LATER_OFFSET_MINUTE</li><li>PREVIOUS_END_OF_MONTH</li><li>PREVIOUS_FRIDAY</li><li>PREVIOUS_HOUR</li><li>PREVIOUS_HOUR_CYCLE</li><li>PREVIOUS_HOUR_LATER_OFFSET_MINUTE</li><li>PREVIOUS_MINUTE_CYCLE</li><li>PREVIOUS_MONTH</li><li>PREVIOUS_WEEK</li><li>PREVIOUS_WEEKEND</li><li>RECENT_DATE</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>
                      * 
                      */
                     void SetSubordinateCyclicConfig(const std::string& _subordinateCyclicConfig);
@@ -603,15 +407,15 @@ https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06
                     bool SubordinateCyclicConfigHasBeenSet() const;
 
                     /**
-                     * 获取执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入
-                     * @return ExecutionStartTime 执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入
+                     * 获取<p>执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入</p>
+                     * @return ExecutionStartTime <p>执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入</p>
                      * 
                      */
                     std::string GetExecutionStartTime() const;
 
                     /**
-                     * 设置执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入
-                     * @param _executionStartTime 执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入
+                     * 设置<p>执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入</p>
+                     * @param _executionStartTime <p>执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入</p>
                      * 
                      */
                     void SetExecutionStartTime(const std::string& _executionStartTime);
@@ -624,15 +428,15 @@ https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06
                     bool ExecutionStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入
-                     * @return ExecutionEndTime 执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入
+                     * 获取<p>执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入</p>
+                     * @return ExecutionEndTime <p>执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入</p>
                      * 
                      */
                     std::string GetExecutionEndTime() const;
 
                     /**
-                     * 设置执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入
-                     * @param _executionEndTime 执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入
+                     * 设置<p>执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入</p>
+                     * @param _executionEndTime <p>执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入</p>
                      * 
                      */
                     void SetExecutionEndTime(const std::string& _executionEndTime);
@@ -645,15 +449,15 @@ https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06
                     bool ExecutionEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启日历调度 1 开启 0关闭
-                     * @return CalendarOpen 是否开启日历调度 1 开启 0关闭
+                     * 获取<p>是否开启日历调度 1 开启 0关闭</p>
+                     * @return CalendarOpen <p>是否开启日历调度 1 开启 0关闭</p>
                      * 
                      */
                     std::string GetCalendarOpen() const;
 
                     /**
-                     * 设置是否开启日历调度 1 开启 0关闭
-                     * @param _calendarOpen 是否开启日历调度 1 开启 0关闭
+                     * 设置<p>是否开启日历调度 1 开启 0关闭</p>
+                     * @param _calendarOpen <p>是否开启日历调度 1 开启 0关闭</p>
                      * 
                      */
                     void SetCalendarOpen(const std::string& _calendarOpen);
@@ -666,15 +470,15 @@ https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06
                     bool CalendarOpenHasBeenSet() const;
 
                     /**
-                     * 获取日历id
-                     * @return CalendarId 日历id
+                     * 获取<p>日历id</p>
+                     * @return CalendarId <p>日历id</p>
                      * 
                      */
                     std::string GetCalendarId() const;
 
                     /**
-                     * 设置日历id
-                     * @param _calendarId 日历id
+                     * 设置<p>日历id</p>
+                     * @param _calendarId <p>日历id</p>
                      * 
                      */
                     void SetCalendarId(const std::string& _calendarId);
@@ -686,146 +490,124 @@ https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06
                      */
                     bool CalendarIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分钟任务相位偏移</p>
+                     * @return MinuteOffset <p>分钟任务相位偏移</p>
+                     * 
+                     */
+                    uint64_t GetMinuteOffset() const;
+
+                    /**
+                     * 设置<p>分钟任务相位偏移</p>
+                     * @param _minuteOffset <p>分钟任务相位偏移</p>
+                     * 
+                     */
+                    void SetMinuteOffset(const uint64_t& _minuteOffset);
+
+                    /**
+                     * 判断参数 MinuteOffset 是否已赋值
+                     * @return MinuteOffset 是否已赋值
+                     * 
+                     */
+                    bool MinuteOffsetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 时区
+                     * <p>时区</p>
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
 
                     /**
-                     * 周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * <p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
                      */
                     std::string m_cycleType;
                     bool m_cycleTypeHasBeenSet;
 
                     /**
-                     * 自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)
+                     * <p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>
                      */
                     std::string m_selfDepend;
                     bool m_selfDependHasBeenSet;
 
                     /**
-                     * 生效开始时间
+                     * <p>生效开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 生效结束时间
+                     * <p>生效结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * cron表达式
+                     * <p>cron表达式</p>
                      */
                     std::string m_crontabExpression;
                     bool m_crontabExpressionHasBeenSet;
 
                     /**
-                     * 工作流依赖，yes or no
+                     * <p>工作流依赖，yes or no</p>
                      */
                     std::string m_dependencyWorkflow;
                     bool m_dependencyWorkflowHasBeenSet;
 
                     /**
-                     * 0：不修改 1：将任务的上游依赖配置改为默认值
+                     * <p>0：不修改 1：将任务的上游依赖配置改为默认值</p>
                      */
                     std::string m_modifyCycleValue;
                     bool m_modifyCycleValueHasBeenSet;
 
                     /**
-                     * 工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系
+                     * <p>工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系</p>
                      */
                     bool m_clearLink;
                     bool m_clearLinkHasBeenSet;
 
                     /**
-                     * ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：
-* CRONTAB
-* DAY
-* HOUR
-* LIST_DAY
-* LIST_HOUR
-* LIST_MINUTE
-* MINUTE
-* MONTH
-* RANGE_DAY
-* RANGE_HOUR
-* RANGE_MINUTE
-* WEEK
-* YEAR
-
-https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo
+                     * <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：</p><ul><li>CRONTAB</li><li>DAY</li><li>HOUR</li><li>LIST_DAY</li><li>LIST_HOUR</li><li>LIST_MINUTE</li><li>MINUTE</li><li>MONTH</li><li>RANGE_DAY</li><li>RANGE_HOUR</li><li>RANGE_MINUTE</li><li>WEEK</li><li>YEAR</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>
                      */
                     std::string m_mainCyclicConfig;
                     bool m_mainCyclicConfigHasBeenSet;
 
                     /**
-                     * ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
-取值为：
-* ALL_DAY_OF_YEAR
-* ALL_MONTH_OF_YEAR
-* CURRENT
-* CURRENT_DAY
-* CURRENT_HOUR
-* CURRENT_MINUTE
-* CURRENT_MONTH
-* CURRENT_WEEK
-* CURRENT_YEAR
-* PREVIOUS_BEGIN_OF_MONTH
-* PREVIOUS_DAY
-* PREVIOUS_DAY_LATER_OFFSET_HOUR
-* PREVIOUS_DAY_LATER_OFFSET_MINUTE
-* PREVIOUS_END_OF_MONTH
-* PREVIOUS_FRIDAY
-* PREVIOUS_HOUR
-* PREVIOUS_HOUR_CYCLE
-* PREVIOUS_HOUR_LATER_OFFSET_MINUTE
-* PREVIOUS_MINUTE_CYCLE
-* PREVIOUS_MONTH
-* PREVIOUS_WEEK
-* PREVIOUS_WEEKEND
-* RECENT_DATE
-
-https://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo
+                     * <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围<br>取值为：</p><ul><li>ALL_DAY_OF_YEAR</li><li>ALL_MONTH_OF_YEAR</li><li>CURRENT</li><li>CURRENT_DAY</li><li>CURRENT_HOUR</li><li>CURRENT_MINUTE</li><li>CURRENT_MONTH</li><li>CURRENT_WEEK</li><li>CURRENT_YEAR</li><li>PREVIOUS_BEGIN_OF_MONTH</li><li>PREVIOUS_DAY</li><li>PREVIOUS_DAY_LATER_OFFSET_HOUR</li><li>PREVIOUS_DAY_LATER_OFFSET_MINUTE</li><li>PREVIOUS_END_OF_MONTH</li><li>PREVIOUS_FRIDAY</li><li>PREVIOUS_HOUR</li><li>PREVIOUS_HOUR_CYCLE</li><li>PREVIOUS_HOUR_LATER_OFFSET_MINUTE</li><li>PREVIOUS_MINUTE_CYCLE</li><li>PREVIOUS_MONTH</li><li>PREVIOUS_WEEK</li><li>PREVIOUS_WEEKEND</li><li>RECENT_DATE</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>
                      */
                     std::string m_subordinateCyclicConfig;
                     bool m_subordinateCyclicConfigHasBeenSet;
 
                     /**
-                     * 执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入
+                     * <p>执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入</p>
                      */
                     std::string m_executionStartTime;
                     bool m_executionStartTimeHasBeenSet;
 
                     /**
-                     * 执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入
+                     * <p>执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入</p>
                      */
                     std::string m_executionEndTime;
                     bool m_executionEndTimeHasBeenSet;
 
                     /**
-                     * 是否开启日历调度 1 开启 0关闭
+                     * <p>是否开启日历调度 1 开启 0关闭</p>
                      */
                     std::string m_calendarOpen;
                     bool m_calendarOpenHasBeenSet;
 
                     /**
-                     * 日历id
+                     * <p>日历id</p>
                      */
                     std::string m_calendarId;
                     bool m_calendarIdHasBeenSet;
+
+                    /**
+                     * <p>分钟任务相位偏移</p>
+                     */
+                    uint64_t m_minuteOffset;
+                    bool m_minuteOffsetHasBeenSet;
 
                 };
             }

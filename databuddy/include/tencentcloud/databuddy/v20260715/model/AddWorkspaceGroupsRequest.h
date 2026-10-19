@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户组ID，可通过 ListWorkspaceGroups 接口获取
-                     * @return GroupIds 用户组ID，可通过 ListWorkspaceGroups 接口获取
+                     * 获取<p>用户组ID，可通过 ListConsoleGroups 接口获取</p>
+                     * @return GroupIds <p>用户组ID，可通过 ListConsoleGroups 接口获取</p>
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
-                     * 设置用户组ID，可通过 ListWorkspaceGroups 接口获取
-                     * @param _groupIds 用户组ID，可通过 ListWorkspaceGroups 接口获取
+                     * 设置<p>用户组ID，可通过 ListConsoleGroups 接口获取</p>
+                     * @param _groupIds <p>用户组ID，可通过 ListConsoleGroups 接口获取</p>
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取工作空间ID
-                     * @return WorkspaceId 工作空间ID
+                     * 获取<p>工作空间ID</p>
+                     * @return WorkspaceId <p>工作空间ID</p>
                      * 
                      */
                     std::string GetWorkspaceId() const;
 
                     /**
-                     * 设置工作空间ID
-                     * @param _workspaceId 工作空间ID
+                     * 设置<p>工作空间ID</p>
+                     * @param _workspaceId <p>工作空间ID</p>
                      * 
                      */
                     void SetWorkspaceId(const std::string& _workspaceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool WorkspaceIdHasBeenSet() const;
 
                     /**
-                     * 获取角色ID，可通过 ListWorkspaceRoles 接口获取
-                     * @return RoleIds 角色ID，可通过 ListWorkspaceRoles 接口获取
+                     * 获取<p>角色ID，可通过 ListWorkspaceRoles 接口获取</p>
+                     * @return RoleIds <p>角色ID，可通过 ListWorkspaceRoles 接口获取</p>
                      * 
                      */
                     std::vector<std::string> GetRoleIds() const;
 
                     /**
-                     * 设置角色ID，可通过 ListWorkspaceRoles 接口获取
-                     * @param _roleIds 角色ID，可通过 ListWorkspaceRoles 接口获取
+                     * 设置<p>角色ID，可通过 ListWorkspaceRoles 接口获取</p>
+                     * @param _roleIds <p>角色ID，可通过 ListWorkspaceRoles 接口获取</p>
                      * 
                      */
                     void SetRoleIds(const std::vector<std::string>& _roleIds);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户组ID，可通过 ListWorkspaceGroups 接口获取
+                     * <p>用户组ID，可通过 ListConsoleGroups 接口获取</p>
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;
 
                     /**
-                     * 工作空间ID
+                     * <p>工作空间ID</p>
                      */
                     std::string m_workspaceId;
                     bool m_workspaceIdHasBeenSet;
 
                     /**
-                     * 角色ID，可通过 ListWorkspaceRoles 接口获取
+                     * <p>角色ID，可通过 ListWorkspaceRoles 接口获取</p>
                      */
                     std::vector<std::string> m_roleIds;
                     bool m_roleIdsHasBeenSet;

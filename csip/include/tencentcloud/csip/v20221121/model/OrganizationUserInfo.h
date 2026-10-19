@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取成员账号Uin
-                     * @return Uin 成员账号Uin
+                     * 获取<p>成员账号Uin</p>
+                     * @return Uin <p>成员账号Uin</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置成员账号Uin
-                     * @param _uin 成员账号Uin
+                     * 设置<p>成员账号Uin</p>
+                     * @param _uin <p>成员账号Uin</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取成员账号名称
-                     * @return NickName 成员账号名称
+                     * 获取<p>成员账号名称</p>
+                     * @return NickName <p>成员账号名称</p>
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
-                     * 设置成员账号名称
-                     * @param _nickName 成员账号名称
+                     * 设置<p>成员账号名称</p>
+                     * @param _nickName <p>成员账号名称</p>
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NickNameHasBeenSet() const;
 
                     /**
-                     * 获取部门节点名称，账号所属部门
-                     * @return NodeName 部门节点名称，账号所属部门
+                     * 获取<p>部门节点名称，账号所属部门</p>
+                     * @return NodeName <p>部门节点名称，账号所属部门</p>
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
-                     * 设置部门节点名称，账号所属部门
-                     * @param _nodeName 部门节点名称，账号所属部门
+                     * 设置<p>部门节点名称，账号所属部门</p>
+                     * @param _nodeName <p>部门节点名称，账号所属部门</p>
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NodeNameHasBeenSet() const;
 
                     /**
-                     * 获取资产数量
-                     * @return AssetCount 资产数量
+                     * 获取<p>资产数量</p>
+                     * @return AssetCount <p>资产数量</p>
                      * 
                      */
                     int64_t GetAssetCount() const;
 
                     /**
-                     * 设置资产数量
-                     * @param _assetCount 资产数量
+                     * 设置<p>资产数量</p>
+                     * @param _assetCount <p>资产数量</p>
                      * 
                      */
                     void SetAssetCount(const int64_t& _assetCount);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool AssetCountHasBeenSet() const;
 
                     /**
-                     * 获取风险数量
-                     * @return RiskCount 风险数量
+                     * 获取<p>风险数量</p>
+                     * @return RiskCount <p>风险数量</p>
                      * 
                      */
                     int64_t GetRiskCount() const;
 
                     /**
-                     * 设置风险数量
-                     * @param _riskCount 风险数量
+                     * 设置<p>风险数量</p>
+                     * @param _riskCount <p>风险数量</p>
                      * 
                      */
                     void SetRiskCount(const int64_t& _riskCount);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RiskCountHasBeenSet() const;
 
                     /**
-                     * 获取攻击数量
-                     * @return AttackCount 攻击数量
+                     * 获取<p>攻击数量</p>
+                     * @return AttackCount <p>攻击数量</p>
                      * 
                      */
                     int64_t GetAttackCount() const;
 
                     /**
-                     * 设置攻击数量
-                     * @param _attackCount 攻击数量
+                     * 设置<p>攻击数量</p>
+                     * @param _attackCount <p>攻击数量</p>
                      * 
                      */
                     void SetAttackCount(const int64_t& _attackCount);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool AttackCountHasBeenSet() const;
 
                     /**
-                     * 获取Member/Admin/;成员或者管理员
-                     * @return Role Member/Admin/;成员或者管理员
+                     * 获取<p>Member/Admin/;成员或者管理员</p>
+                     * @return Role <p>Member/Admin/;成员或者管理员</p>
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置Member/Admin/;成员或者管理员
-                     * @param _role Member/Admin/;成员或者管理员
+                     * 设置<p>Member/Admin/;成员或者管理员</p>
+                     * @param _role <p>Member/Admin/;成员或者管理员</p>
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取成员账号id
-                     * @return MemberId 成员账号id
+                     * 获取<p>成员账号id</p>
+                     * @return MemberId <p>成员账号id</p>
                      * 
                      */
                     std::string GetMemberId() const;
 
                     /**
-                     * 设置成员账号id
-                     * @param _memberId 成员账号id
+                     * 设置<p>成员账号id</p>
+                     * @param _memberId <p>成员账号id</p>
                      * 
                      */
                     void SetMemberId(const std::string& _memberId);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取成员账号Appid
-                     * @return AppId 成员账号Appid
+                     * 获取<p>成员账号Appid</p>
+                     * @return AppId <p>成员账号Appid</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置成员账号Appid
-                     * @param _appId 成员账号Appid
+                     * 设置<p>成员账号Appid</p>
+                     * @param _appId <p>成员账号Appid</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取账号加入方式,create/invite
-                     * @return JoinType 账号加入方式,create/invite
+                     * 获取<p>账号加入方式,create/invite</p>
+                     * @return JoinType <p>账号加入方式,create/invite</p>
                      * 
                      */
                     std::string GetJoinType() const;
 
                     /**
-                     * 设置账号加入方式,create/invite
-                     * @param _joinType 账号加入方式,create/invite
+                     * 设置<p>账号加入方式,create/invite</p>
+                     * @param _joinType <p>账号加入方式,create/invite</p>
                      * 
                      */
                     void SetJoinType(const std::string& _joinType);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool JoinTypeHasBeenSet() const;
 
                     /**
-                     * 获取空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-                     * @return CFWProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
+                     * 获取<p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
+                     * @return CFWProtect <p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
                      * 
                      */
                     std::string GetCFWProtect() const;
 
                     /**
-                     * 设置空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-                     * @param _cFWProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
+                     * 设置<p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
+                     * @param _cFWProtect <p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
                      * 
                      */
                     void SetCFWProtect(const std::string& _cFWProtect);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool CFWProtectHasBeenSet() const;
 
                     /**
-                     * 获取空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-                     * @return WAFProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
+                     * 获取<p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
+                     * @return WAFProtect <p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
                      * 
                      */
                     std::string GetWAFProtect() const;
 
                     /**
-                     * 设置空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-                     * @param _wAFProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
+                     * 设置<p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
+                     * @param _wAFProtect <p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
                      * 
                      */
                     void SetWAFProtect(const std::string& _wAFProtect);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool WAFProtectHasBeenSet() const;
 
                     /**
-                     * 获取空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-                     * @return CWPProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
+                     * 获取<p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
+                     * @return CWPProtect <p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
                      * 
                      */
                     std::string GetCWPProtect() const;
 
                     /**
-                     * 设置空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
-                     * @param _cWPProtect 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
+                     * 设置<p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
+                     * @param _cWPProtect <p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
                      * 
                      */
                     void SetCWPProtect(const std::string& _cWPProtect);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool CWPProtectHasBeenSet() const;
 
                     /**
-                     * 获取1启用，0未启用
-                     * @return Enable 1启用，0未启用
+                     * 获取<p>1启用，0未启用</p>
+                     * @return Enable <p>1启用，0未启用</p>
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
-                     * 设置1启用，0未启用
-                     * @param _enable 1启用，0未启用
+                     * 设置<p>1启用，0未启用</p>
+                     * @param _enable <p>1启用，0未启用</p>
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取"Free"       //免费版  "Advanced"   //高级版 "Enterprise" //企业版 "Ultimate"   //旗舰版
-                     * @return CSIPProtect "Free"       //免费版  "Advanced"   //高级版 "Enterprise" //企业版 "Ultimate"   //旗舰版
+                     * 获取<p>&quot;Free&quot;       //免费版  &quot;Advanced&quot;   //高级版 &quot;Enterprise&quot; //企业版 &quot;Ultimate&quot;   //旗舰版</p>
+                     * @return CSIPProtect <p>&quot;Free&quot;       //免费版  &quot;Advanced&quot;   //高级版 &quot;Enterprise&quot; //企业版 &quot;Ultimate&quot;   //旗舰版</p>
                      * 
                      */
                     std::string GetCSIPProtect() const;
 
                     /**
-                     * 设置"Free"       //免费版  "Advanced"   //高级版 "Enterprise" //企业版 "Ultimate"   //旗舰版
-                     * @param _cSIPProtect "Free"       //免费版  "Advanced"   //高级版 "Enterprise" //企业版 "Ultimate"   //旗舰版
+                     * 设置<p>&quot;Free&quot;       //免费版  &quot;Advanced&quot;   //高级版 &quot;Enterprise&quot; //企业版 &quot;Ultimate&quot;   //旗舰版</p>
+                     * @param _cSIPProtect <p>&quot;Free&quot;       //免费版  &quot;Advanced&quot;   //高级版 &quot;Enterprise&quot; //企业版 &quot;Ultimate&quot;   //旗舰版</p>
                      * 
                      */
                     void SetCSIPProtect(const std::string& _cSIPProtect);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool CSIPProtectHasBeenSet() const;
 
                     /**
-                     * 获取1为配额消耗者
-                     * @return QuotaConsumer 1为配额消耗者
+                     * 获取<p>1为配额消耗者</p>
+                     * @return QuotaConsumer <p>1为配额消耗者</p>
                      * 
                      */
                     int64_t GetQuotaConsumer() const;
 
                     /**
-                     * 设置1为配额消耗者
-                     * @param _quotaConsumer 1为配额消耗者
+                     * 设置<p>1为配额消耗者</p>
+                     * @param _quotaConsumer <p>1为配额消耗者</p>
                      * 
                      */
                     void SetQuotaConsumer(const int64_t& _quotaConsumer);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool QuotaConsumerHasBeenSet() const;
 
                     /**
-                     * 获取账户类型，0为腾讯云账户，1为AWS账户
-                     * @return CloudType 账户类型，0为腾讯云账户，1为AWS账户
+                     * 获取<p>账户类型，0为腾讯云账户，1为AWS账户</p>
+                     * @return CloudType <p>账户类型，0为腾讯云账户，1为AWS账户</p>
                      * 
                      */
                     int64_t GetCloudType() const;
 
                     /**
-                     * 设置账户类型，0为腾讯云账户，1为AWS账户
-                     * @param _cloudType 账户类型，0为腾讯云账户，1为AWS账户
+                     * 设置<p>账户类型，0为腾讯云账户，1为AWS账户</p>
+                     * @param _cloudType <p>账户类型，0为腾讯云账户，1为AWS账户</p>
                      * 
                      */
                     void SetCloudType(const int64_t& _cloudType);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool CloudTypeHasBeenSet() const;
 
                     /**
-                     * 获取0为缺省值，1为10分钟，2为1小时，3为24小时
-                     * @return SyncFrequency 0为缺省值，1为10分钟，2为1小时，3为24小时
+                     * 获取<p>0为缺省值，1为10分钟，2为1小时，3为24小时</p>
+                     * @return SyncFrequency <p>0为缺省值，1为10分钟，2为1小时，3为24小时</p>
                      * 
                      */
                     int64_t GetSyncFrequency() const;
 
                     /**
-                     * 设置0为缺省值，1为10分钟，2为1小时，3为24小时
-                     * @param _syncFrequency 0为缺省值，1为10分钟，2为1小时，3为24小时
+                     * 设置<p>0为缺省值，1为10分钟，2为1小时，3为24小时</p>
+                     * @param _syncFrequency <p>0为缺省值，1为10分钟，2为1小时，3为24小时</p>
                      * 
                      */
                     void SetSyncFrequency(const int64_t& _syncFrequency);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool SyncFrequencyHasBeenSet() const;
 
                     /**
-                     * 获取多云账户是否过期
-                     * @return IsExpired 多云账户是否过期
+                     * 获取<p>多云账户是否过期</p>
+                     * @return IsExpired <p>多云账户是否过期</p>
                      * 
                      */
                     bool GetIsExpired() const;
 
                     /**
-                     * 设置多云账户是否过期
-                     * @param _isExpired 多云账户是否过期
+                     * 设置<p>多云账户是否过期</p>
+                     * @param _isExpired <p>多云账户是否过期</p>
                      * 
                      */
                     void SetIsExpired(const bool& _isExpired);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool IsExpiredHasBeenSet() const;
 
                     /**
-                     * 获取多云账户 权限列表
-                     * @return PermissionList 多云账户 权限列表
+                     * 获取<p>多云账户 权限列表</p>
+                     * @return PermissionList <p>多云账户 权限列表</p>
                      * 
                      */
                     std::vector<std::string> GetPermissionList() const;
 
                     /**
-                     * 设置多云账户 权限列表
-                     * @param _permissionList 多云账户 权限列表
+                     * 设置<p>多云账户 权限列表</p>
+                     * @param _permissionList <p>多云账户 权限列表</p>
                      * 
                      */
                     void SetPermissionList(const std::vector<std::string>& _permissionList);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool PermissionListHasBeenSet() const;
 
                     /**
-                     * 获取1
-                     * @return AuthType 1
+                     * 获取<p>账户权限类型</p><p>枚举值：</p><ul><li>1： 认证类型-Root账号AKSK</li><li>2： 认证类型-子账号AKSK</li><li>3： 认证类型-角色</li></ul>
+                     * @return AuthType <p>账户权限类型</p><p>枚举值：</p><ul><li>1： 认证类型-Root账号AKSK</li><li>2： 认证类型-子账号AKSK</li><li>3： 认证类型-角色</li></ul>
                      * 
                      */
                     int64_t GetAuthType() const;
 
                     /**
-                     * 设置1
-                     * @param _authType 1
+                     * 设置<p>账户权限类型</p><p>枚举值：</p><ul><li>1： 认证类型-Root账号AKSK</li><li>2： 认证类型-子账号AKSK</li><li>3： 认证类型-角色</li></ul>
+                     * @param _authType <p>账户权限类型</p><p>枚举值：</p><ul><li>1： 认证类型-Root账号AKSK</li><li>2： 认证类型-子账号AKSK</li><li>3： 认证类型-角色</li></ul>
                      * 
                      */
                     void SetAuthType(const int64_t& _authType);
@@ -488,23 +488,15 @@ namespace TencentCloud
                     bool AuthTypeHasBeenSet() const;
 
                     /**
-                     * 获取0 腾讯云集团账户
-1 腾讯云接入账户
-2 非腾讯云
-                     * @return TcMemberType 0 腾讯云集团账户
-1 腾讯云接入账户
-2 非腾讯云
+                     * 获取<p>0 腾讯云集团账户<br>1 腾讯云接入账户<br>2 非腾讯云</p>
+                     * @return TcMemberType <p>0 腾讯云集团账户<br>1 腾讯云接入账户<br>2 非腾讯云</p>
                      * 
                      */
                     int64_t GetTcMemberType() const;
 
                     /**
-                     * 设置0 腾讯云集团账户
-1 腾讯云接入账户
-2 非腾讯云
-                     * @param _tcMemberType 0 腾讯云集团账户
-1 腾讯云接入账户
-2 非腾讯云
+                     * 设置<p>0 腾讯云集团账户<br>1 腾讯云接入账户<br>2 非腾讯云</p>
+                     * @param _tcMemberType <p>0 腾讯云集团账户<br>1 腾讯云接入账户<br>2 非腾讯云</p>
                      * 
                      */
                     void SetTcMemberType(const int64_t& _tcMemberType);
@@ -517,15 +509,15 @@ namespace TencentCloud
                     bool TcMemberTypeHasBeenSet() const;
 
                     /**
-                     * 获取子账号数量
-                     * @return SubUserCount 子账号数量
+                     * 获取<p>子账号数量</p>
+                     * @return SubUserCount <p>子账号数量</p>
                      * 
                      */
                     int64_t GetSubUserCount() const;
 
                     /**
-                     * 设置子账号数量
-                     * @param _subUserCount 子账号数量
+                     * 设置<p>子账号数量</p>
+                     * @param _subUserCount <p>子账号数量</p>
                      * 
                      */
                     void SetSubUserCount(const int64_t& _subUserCount);
@@ -538,15 +530,15 @@ namespace TencentCloud
                     bool SubUserCountHasBeenSet() const;
 
                     /**
-                     * 获取加入方式详细信息
-                     * @return JoinTypeInfo 加入方式详细信息
+                     * 获取<p>加入方式详细信息</p>
+                     * @return JoinTypeInfo <p>加入方式详细信息</p>
                      * 
                      */
                     std::string GetJoinTypeInfo() const;
 
                     /**
-                     * 设置加入方式详细信息
-                     * @param _joinTypeInfo 加入方式详细信息
+                     * 设置<p>加入方式详细信息</p>
+                     * @param _joinTypeInfo <p>加入方式详细信息</p>
                      * 
                      */
                     void SetJoinTypeInfo(const std::string& _joinTypeInfo);
@@ -558,153 +550,205 @@ namespace TencentCloud
                      */
                     bool JoinTypeInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>被共享模块列表</p><p>枚举值：</p><ul><li>AKSK： 云API异常监测</li><li>SDL： 日志分析</li><li>CSPM： 云安全态势管理</li><li>CWP： 主机安全</li><li>COS_AUDIT： COS审计</li><li>IMAGE_SCAN： 容器镜像扫描</li><li>SKILL_SCAN： Skill安全检测</li><li>SKILL_SCAN_POST： Skill安全检测(后付费)</li><li>DSPM： 数据安全态势管理</li></ul><p>默认值：[]</p>
+                     * @return SharedModules <p>被共享模块列表</p><p>枚举值：</p><ul><li>AKSK： 云API异常监测</li><li>SDL： 日志分析</li><li>CSPM： 云安全态势管理</li><li>CWP： 主机安全</li><li>COS_AUDIT： COS审计</li><li>IMAGE_SCAN： 容器镜像扫描</li><li>SKILL_SCAN： Skill安全检测</li><li>SKILL_SCAN_POST： Skill安全检测(后付费)</li><li>DSPM： 数据安全态势管理</li></ul><p>默认值：[]</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSharedModules() const;
+
+                    /**
+                     * 设置<p>被共享模块列表</p><p>枚举值：</p><ul><li>AKSK： 云API异常监测</li><li>SDL： 日志分析</li><li>CSPM： 云安全态势管理</li><li>CWP： 主机安全</li><li>COS_AUDIT： COS审计</li><li>IMAGE_SCAN： 容器镜像扫描</li><li>SKILL_SCAN： Skill安全检测</li><li>SKILL_SCAN_POST： Skill安全检测(后付费)</li><li>DSPM： 数据安全态势管理</li></ul><p>默认值：[]</p>
+                     * @param _sharedModules <p>被共享模块列表</p><p>枚举值：</p><ul><li>AKSK： 云API异常监测</li><li>SDL： 日志分析</li><li>CSPM： 云安全态势管理</li><li>CWP： 主机安全</li><li>COS_AUDIT： COS审计</li><li>IMAGE_SCAN： 容器镜像扫描</li><li>SKILL_SCAN： Skill安全检测</li><li>SKILL_SCAN_POST： Skill安全检测(后付费)</li><li>DSPM： 数据安全态势管理</li></ul><p>默认值：[]</p>
+                     * 
+                     */
+                    void SetSharedModules(const std::vector<std::string>& _sharedModules);
+
+                    /**
+                     * 判断参数 SharedModules 是否已赋值
+                     * @return SharedModules 是否已赋值
+                     * 
+                     */
+                    bool SharedModulesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>安全分</p>
+                     * @return SecurityScore <p>安全分</p>
+                     * 
+                     */
+                    int64_t GetSecurityScore() const;
+
+                    /**
+                     * 设置<p>安全分</p>
+                     * @param _securityScore <p>安全分</p>
+                     * 
+                     */
+                    void SetSecurityScore(const int64_t& _securityScore);
+
+                    /**
+                     * 判断参数 SecurityScore 是否已赋值
+                     * @return SecurityScore 是否已赋值
+                     * 
+                     */
+                    bool SecurityScoreHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 成员账号Uin
+                     * <p>成员账号Uin</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 成员账号名称
+                     * <p>成员账号名称</p>
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
-                     * 部门节点名称，账号所属部门
+                     * <p>部门节点名称，账号所属部门</p>
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
-                     * 资产数量
+                     * <p>资产数量</p>
                      */
                     int64_t m_assetCount;
                     bool m_assetCountHasBeenSet;
 
                     /**
-                     * 风险数量
+                     * <p>风险数量</p>
                      */
                     int64_t m_riskCount;
                     bool m_riskCountHasBeenSet;
 
                     /**
-                     * 攻击数量
+                     * <p>攻击数量</p>
                      */
                     int64_t m_attackCount;
                     bool m_attackCountHasBeenSet;
 
                     /**
-                     * Member/Admin/;成员或者管理员
+                     * <p>Member/Admin/;成员或者管理员</p>
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
 
                     /**
-                     * 成员账号id
+                     * <p>成员账号id</p>
                      */
                     std::string m_memberId;
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * 成员账号Appid
+                     * <p>成员账号Appid</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 账号加入方式,create/invite
+                     * <p>账号加入方式,create/invite</p>
                      */
                     std::string m_joinType;
                     bool m_joinTypeHasBeenSet;
 
                     /**
-                     * 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
+                     * <p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
                      */
                     std::string m_cFWProtect;
                     bool m_cFWProtectHasBeenSet;
 
                     /**
-                     * 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
+                     * <p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
                      */
                     std::string m_wAFProtect;
                     bool m_wAFProtectHasBeenSet;
 
                     /**
-                     * 空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本
+                     * <p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>
                      */
                     std::string m_cWPProtect;
                     bool m_cWPProtectHasBeenSet;
 
                     /**
-                     * 1启用，0未启用
+                     * <p>1启用，0未启用</p>
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * "Free"       //免费版  "Advanced"   //高级版 "Enterprise" //企业版 "Ultimate"   //旗舰版
+                     * <p>&quot;Free&quot;       //免费版  &quot;Advanced&quot;   //高级版 &quot;Enterprise&quot; //企业版 &quot;Ultimate&quot;   //旗舰版</p>
                      */
                     std::string m_cSIPProtect;
                     bool m_cSIPProtectHasBeenSet;
 
                     /**
-                     * 1为配额消耗者
+                     * <p>1为配额消耗者</p>
                      */
                     int64_t m_quotaConsumer;
                     bool m_quotaConsumerHasBeenSet;
 
                     /**
-                     * 账户类型，0为腾讯云账户，1为AWS账户
+                     * <p>账户类型，0为腾讯云账户，1为AWS账户</p>
                      */
                     int64_t m_cloudType;
                     bool m_cloudTypeHasBeenSet;
 
                     /**
-                     * 0为缺省值，1为10分钟，2为1小时，3为24小时
+                     * <p>0为缺省值，1为10分钟，2为1小时，3为24小时</p>
                      */
                     int64_t m_syncFrequency;
                     bool m_syncFrequencyHasBeenSet;
 
                     /**
-                     * 多云账户是否过期
+                     * <p>多云账户是否过期</p>
                      */
                     bool m_isExpired;
                     bool m_isExpiredHasBeenSet;
 
                     /**
-                     * 多云账户 权限列表
+                     * <p>多云账户 权限列表</p>
                      */
                     std::vector<std::string> m_permissionList;
                     bool m_permissionListHasBeenSet;
 
                     /**
-                     * 1
+                     * <p>账户权限类型</p><p>枚举值：</p><ul><li>1： 认证类型-Root账号AKSK</li><li>2： 认证类型-子账号AKSK</li><li>3： 认证类型-角色</li></ul>
                      */
                     int64_t m_authType;
                     bool m_authTypeHasBeenSet;
 
                     /**
-                     * 0 腾讯云集团账户
-1 腾讯云接入账户
-2 非腾讯云
+                     * <p>0 腾讯云集团账户<br>1 腾讯云接入账户<br>2 非腾讯云</p>
                      */
                     int64_t m_tcMemberType;
                     bool m_tcMemberTypeHasBeenSet;
 
                     /**
-                     * 子账号数量
+                     * <p>子账号数量</p>
                      */
                     int64_t m_subUserCount;
                     bool m_subUserCountHasBeenSet;
 
                     /**
-                     * 加入方式详细信息
+                     * <p>加入方式详细信息</p>
                      */
                     std::string m_joinTypeInfo;
                     bool m_joinTypeInfoHasBeenSet;
+
+                    /**
+                     * <p>被共享模块列表</p><p>枚举值：</p><ul><li>AKSK： 云API异常监测</li><li>SDL： 日志分析</li><li>CSPM： 云安全态势管理</li><li>CWP： 主机安全</li><li>COS_AUDIT： COS审计</li><li>IMAGE_SCAN： 容器镜像扫描</li><li>SKILL_SCAN： Skill安全检测</li><li>SKILL_SCAN_POST： Skill安全检测(后付费)</li><li>DSPM： 数据安全态势管理</li></ul><p>默认值：[]</p>
+                     */
+                    std::vector<std::string> m_sharedModules;
+                    bool m_sharedModulesHasBeenSet;
+
+                    /**
+                     * <p>安全分</p>
+                     */
+                    int64_t m_securityScore;
+                    bool m_securityScoreHasBeenSet;
 
                 };
             }

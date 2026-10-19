@@ -46,7 +46,8 @@ CreateNativeNodePoolParam::CreateNativeNodePoolParam() :
     m_machineTypeHasBeenSet(false),
     m_automationServiceHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_customImageHasBeenSet(false)
+    m_customImageHasBeenSet(false),
+    m_runtimeVersionHasBeenSet(false)
 {
 }
 
@@ -399,6 +400,16 @@ CoreInternalOutcome CreateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         m_customImageHasBeenSet = true;
     }
 
+    if (value.HasMember("RuntimeVersion") && !value["RuntimeVersion"].IsNull())
+    {
+        if (!value["RuntimeVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateNativeNodePoolParam.RuntimeVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runtimeVersion = string(value["RuntimeVersion"].GetString());
+        m_runtimeVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -658,6 +669,14 @@ void CreateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "CustomImage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runtimeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runtimeVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1077,5 +1096,21 @@ void CreateNativeNodePoolParam::SetCustomImage(const string& _customImage)
 bool CreateNativeNodePoolParam::CustomImageHasBeenSet() const
 {
     return m_customImageHasBeenSet;
+}
+
+string CreateNativeNodePoolParam::GetRuntimeVersion() const
+{
+    return m_runtimeVersion;
+}
+
+void CreateNativeNodePoolParam::SetRuntimeVersion(const string& _runtimeVersion)
+{
+    m_runtimeVersion = _runtimeVersion;
+    m_runtimeVersionHasBeenSet = true;
+}
+
+bool CreateNativeNodePoolParam::RuntimeVersionHasBeenSet() const
+{
+    return m_runtimeVersionHasBeenSet;
 }
 

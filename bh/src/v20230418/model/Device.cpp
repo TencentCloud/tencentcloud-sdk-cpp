@@ -53,7 +53,10 @@ Device::Device() :
     m_cloudAccountNameHasBeenSet(false),
     m_providerTypeHasBeenSet(false),
     m_providerNameHasBeenSet(false),
-    m_syncCloudDeviceStatusHasBeenSet(false)
+    m_syncCloudDeviceStatusHasBeenSet(false),
+    m_ownerAppIdHasBeenSet(false),
+    m_ownerAccountUinHasBeenSet(false),
+    m_ownerAccountNameHasBeenSet(false)
 {
 }
 
@@ -419,6 +422,36 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_syncCloudDeviceStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("OwnerAppId") && !value["OwnerAppId"].IsNull())
+    {
+        if (!value["OwnerAppId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.OwnerAppId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerAppId = value["OwnerAppId"].GetUint64();
+        m_ownerAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerAccountUin") && !value["OwnerAccountUin"].IsNull())
+    {
+        if (!value["OwnerAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.OwnerAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerAccountUin = string(value["OwnerAccountUin"].GetString());
+        m_ownerAccountUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerAccountName") && !value["OwnerAccountName"].IsNull())
+    {
+        if (!value["OwnerAccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.OwnerAccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerAccountName = string(value["OwnerAccountName"].GetString());
+        m_ownerAccountNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -702,6 +735,30 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "SyncCloudDeviceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_syncCloudDeviceStatus, allocator);
+    }
+
+    if (m_ownerAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ownerAppId, allocator);
+    }
+
+    if (m_ownerAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerAccountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerAccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerAccountName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1233,5 +1290,53 @@ void Device::SetSyncCloudDeviceStatus(const uint64_t& _syncCloudDeviceStatus)
 bool Device::SyncCloudDeviceStatusHasBeenSet() const
 {
     return m_syncCloudDeviceStatusHasBeenSet;
+}
+
+uint64_t Device::GetOwnerAppId() const
+{
+    return m_ownerAppId;
+}
+
+void Device::SetOwnerAppId(const uint64_t& _ownerAppId)
+{
+    m_ownerAppId = _ownerAppId;
+    m_ownerAppIdHasBeenSet = true;
+}
+
+bool Device::OwnerAppIdHasBeenSet() const
+{
+    return m_ownerAppIdHasBeenSet;
+}
+
+string Device::GetOwnerAccountUin() const
+{
+    return m_ownerAccountUin;
+}
+
+void Device::SetOwnerAccountUin(const string& _ownerAccountUin)
+{
+    m_ownerAccountUin = _ownerAccountUin;
+    m_ownerAccountUinHasBeenSet = true;
+}
+
+bool Device::OwnerAccountUinHasBeenSet() const
+{
+    return m_ownerAccountUinHasBeenSet;
+}
+
+string Device::GetOwnerAccountName() const
+{
+    return m_ownerAccountName;
+}
+
+void Device::SetOwnerAccountName(const string& _ownerAccountName)
+{
+    m_ownerAccountName = _ownerAccountName;
+    m_ownerAccountNameHasBeenSet = true;
+}
+
+bool Device::OwnerAccountNameHasBeenSet() const
+{
+    return m_ownerAccountNameHasBeenSet;
 }
 

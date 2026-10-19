@@ -23,8 +23,8 @@ using namespace TencentCloud::Apis::V20240801::Model;
 using namespace std;
 
 DescribeAgentAppServicesRequest::DescribeAgentAppServicesRequest() :
-    m_instanceIDHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_instanceIDHasBeenSet(false),
     m_iDsHasBeenSet(false),
     m_agentAppIDsHasBeenSet(false),
     m_serviceIDsHasBeenSet(false),
@@ -42,20 +42,20 @@ string DescribeAgentAppServicesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_instanceIDHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceID";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_instanceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_iDsHasBeenSet)
@@ -142,22 +142,6 @@ string DescribeAgentAppServicesRequest::ToJsonString() const
 }
 
 
-string DescribeAgentAppServicesRequest::GetInstanceID() const
-{
-    return m_instanceID;
-}
-
-void DescribeAgentAppServicesRequest::SetInstanceID(const string& _instanceID)
-{
-    m_instanceID = _instanceID;
-    m_instanceIDHasBeenSet = true;
-}
-
-bool DescribeAgentAppServicesRequest::InstanceIDHasBeenSet() const
-{
-    return m_instanceIDHasBeenSet;
-}
-
 uint64_t DescribeAgentAppServicesRequest::GetLimit() const
 {
     return m_limit;
@@ -172,6 +156,22 @@ void DescribeAgentAppServicesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeAgentAppServicesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeAgentAppServicesRequest::GetInstanceID() const
+{
+    return m_instanceID;
+}
+
+void DescribeAgentAppServicesRequest::SetInstanceID(const string& _instanceID)
+{
+    m_instanceID = _instanceID;
+    m_instanceIDHasBeenSet = true;
+}
+
+bool DescribeAgentAppServicesRequest::InstanceIDHasBeenSet() const
+{
+    return m_instanceIDHasBeenSet;
 }
 
 vector<string> DescribeAgentAppServicesRequest::GetIDs() const

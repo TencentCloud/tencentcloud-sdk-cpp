@@ -26,6 +26,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/StopProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocReportListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeProjectLimitsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeFileCertificateResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeTawInstancesRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeTokenResponse.h
   include/tencentcloud/rum/v20210622/model/ResumeProjectResponse.h
@@ -38,7 +39,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeErrorRequest.h
   include/tencentcloud/rum/v20210622/model/StopInstanceRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlV2Request.h
-  include/tencentcloud/rum/v20210622/model/ModifyInstanceRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeFileCertificateRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeErrorResponse.h
   include/tencentcloud/rum/v20210622/model/ModifyProjectLimitRequest.h
@@ -132,6 +133,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeRumLogExportV2Response.h
   include/tencentcloud/rum/v20210622/model/ResumeInstanceResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyInstanceRequest.h
   include/tencentcloud/rum/v20210622/model/CreateStarProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsV2Request.h
@@ -225,6 +227,7 @@ set(rum_src
   src/v20210622/model/StopProjectRequest.cpp
   src/v20210622/model/DescribeFOOMMallocReportListRequest.cpp
   src/v20210622/model/DescribeProjectLimitsResponse.cpp
+  src/v20210622/model/DescribeFileCertificateResponse.cpp
   src/v20210622/model/DescribeTawInstancesRequest.cpp
   src/v20210622/model/DescribeTokenResponse.cpp
   src/v20210622/model/ResumeProjectResponse.cpp
@@ -237,7 +240,7 @@ set(rum_src
   src/v20210622/model/DescribeErrorRequest.cpp
   src/v20210622/model/StopInstanceRequest.cpp
   src/v20210622/model/DescribeDataStaticUrlV2Request.cpp
-  src/v20210622/model/ModifyInstanceRequest.cpp
+  src/v20210622/model/DescribeFileCertificateRequest.cpp
   src/v20210622/model/DescribeDataStaticProjectV2Response.cpp
   src/v20210622/model/DescribeErrorResponse.cpp
   src/v20210622/model/ModifyProjectLimitRequest.cpp
@@ -331,6 +334,7 @@ set(rum_src
   src/v20210622/model/DescribeRumLogExportV2Response.cpp
   src/v20210622/model/ResumeInstanceResponse.cpp
   src/v20210622/model/DescribeDataStaticProjectResponse.cpp
+  src/v20210622/model/ModifyInstanceRequest.cpp
   src/v20210622/model/CreateStarProjectRequest.cpp
   src/v20210622/model/DescribeAppSingleCaseListRequest.cpp
   src/v20210622/model/DescribeDataSetUrlStatisticsV2Request.cpp

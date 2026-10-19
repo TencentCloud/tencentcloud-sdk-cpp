@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取<p>排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）</p>
-                     * @return SortBy <p>排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）</p>
+                     * 获取<p>排序字段，支持如下字段类型，create-time（创建时间，默认）</p>
+                     * @return SortBy <p>排序字段，支持如下字段类型，create-time（创建时间，默认）</p>
                      * 
                      */
                     std::string GetSortBy() const;
 
                     /**
-                     * 设置<p>排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）</p>
-                     * @param _sortBy <p>排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）</p>
+                     * 设置<p>排序字段，支持如下字段类型，create-time（创建时间，默认）</p>
+                     * @param _sortBy <p>排序字段，支持如下字段类型，create-time（创建时间，默认）</p>
                      * 
                      */
                     void SetSortBy(const std::string& _sortBy);
@@ -274,7 +274,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * <p>排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）</p>
+                     * <p>排序字段，支持如下字段类型，create-time（创建时间，默认）</p>
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;

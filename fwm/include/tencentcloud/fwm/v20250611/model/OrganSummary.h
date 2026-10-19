@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集团名称
-                     * @return GroupName 集团名称
+                     * 获取<p>集团名称</p>
+                     * @return GroupName <p>集团名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置集团名称
-                     * @param _groupName 集团名称
+                     * 设置<p>集团名称</p>
+                     * @param _groupName <p>集团名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取管理员账号信息
-                     * @return AdminInfo 管理员账号信息
+                     * 获取<p>管理员账号信息</p>
+                     * @return AdminInfo <p>管理员账号信息</p>
                      * 
                      */
                     MemberInfo GetAdminInfo() const;
 
                     /**
-                     * 设置管理员账号信息
-                     * @param _adminInfo 管理员账号信息
+                     * 设置<p>管理员账号信息</p>
+                     * @param _adminInfo <p>管理员账号信息</p>
                      * 
                      */
                     void SetAdminInfo(const MemberInfo& _adminInfo);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool AdminInfoHasBeenSet() const;
 
                     /**
-                     * 获取管理员/委派管理员数量
-                     * @return AdminCount 管理员/委派管理员数量
+                     * 获取<p>管理员/委派管理员数量</p>
+                     * @return AdminCount <p>管理员/委派管理员数量</p>
                      * 
                      */
                     int64_t GetAdminCount() const;
 
                     /**
-                     * 设置管理员/委派管理员数量
-                     * @param _adminCount 管理员/委派管理员数量
+                     * 设置<p>管理员/委派管理员数量</p>
+                     * @param _adminCount <p>管理员/委派管理员数量</p>
                      * 
                      */
                     void SetAdminCount(const int64_t& _adminCount);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AdminCountHasBeenSet() const;
 
                     /**
-                     * 获取已接入成员数
-                     * @return JoinedMemberCount 已接入成员数
+                     * 获取<p>已接入成员数</p>
+                     * @return JoinedMemberCount <p>已接入成员数</p>
                      * 
                      */
                     int64_t GetJoinedMemberCount() const;
 
                     /**
-                     * 设置已接入成员数
-                     * @param _joinedMemberCount 已接入成员数
+                     * 设置<p>已接入成员数</p>
+                     * @param _joinedMemberCount <p>已接入成员数</p>
                      * 
                      */
                     void SetJoinedMemberCount(const int64_t& _joinedMemberCount);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool JoinedMemberCountHasBeenSet() const;
 
                     /**
-                     * 获取接入成员上限（-1表示无上限）
-                     * @return MemberLimit 接入成员上限（-1表示无上限）
+                     * 获取<p>接入成员上限（-1表示无上限）</p>
+                     * @return MemberLimit <p>接入成员上限（-1表示无上限）</p>
                      * 
                      */
                     int64_t GetMemberLimit() const;
 
                     /**
-                     * 设置接入成员上限（-1表示无上限）
-                     * @param _memberLimit 接入成员上限（-1表示无上限）
+                     * 设置<p>接入成员上限（-1表示无上限）</p>
+                     * @param _memberLimit <p>接入成员上限（-1表示无上限）</p>
                      * 
                      */
                     void SetMemberLimit(const int64_t& _memberLimit);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool MemberLimitHasBeenSet() const;
 
                     /**
-                     * 获取接入成员上限显示
-                     * @return MemberLimitDisplay 接入成员上限显示
+                     * 获取<p>接入成员上限显示</p>
+                     * @return MemberLimitDisplay <p>接入成员上限显示</p>
                      * 
                      */
                     std::string GetMemberLimitDisplay() const;
 
                     /**
-                     * 设置接入成员上限显示
-                     * @param _memberLimitDisplay 接入成员上限显示
+                     * 设置<p>接入成员上限显示</p>
+                     * @param _memberLimitDisplay <p>接入成员上限显示</p>
                      * 
                      */
                     void SetMemberLimitDisplay(const std::string& _memberLimitDisplay);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool MemberLimitDisplayHasBeenSet() const;
 
                     /**
-                     * 获取规格共享者数量
-                     * @return CfwSharerCount 规格共享者数量
+                     * 获取<p>规格共享者数量</p>
+                     * @return CfwSharerCount <p>规格共享者数量</p>
                      * 
                      */
                     int64_t GetCfwSharerCount() const;
 
                     /**
-                     * 设置规格共享者数量
-                     * @param _cfwSharerCount 规格共享者数量
+                     * 设置<p>规格共享者数量</p>
+                     * @param _cfwSharerCount <p>规格共享者数量</p>
                      * 
                      */
                     void SetCfwSharerCount(const int64_t& _cfwSharerCount);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool CfwSharerCountHasBeenSet() const;
 
                     /**
-                     * 获取规格使用者数量
-                     * @return CfwUserCount 规格使用者数量
+                     * 获取<p>规格使用者数量</p>
+                     * @return CfwUserCount <p>规格使用者数量</p>
                      * 
                      */
                     int64_t GetCfwUserCount() const;
 
                     /**
-                     * 设置规格使用者数量
-                     * @param _cfwUserCount 规格使用者数量
+                     * 设置<p>规格使用者数量</p>
+                     * @param _cfwUserCount <p>规格使用者数量</p>
                      * 
                      */
                     void SetCfwUserCount(const int64_t& _cfwUserCount);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool CfwUserCountHasBeenSet() const;
 
                     /**
-                     * 获取部门名称列表
-                     * @return Departments 部门名称列表
+                     * 获取<p>部门名称列表</p>
+                     * @return Departments <p>部门名称列表</p>
                      * 
                      */
                     std::vector<std::string> GetDepartments() const;
 
                     /**
-                     * 设置部门名称列表
-                     * @param _departments 部门名称列表
+                     * 设置<p>部门名称列表</p>
+                     * @param _departments <p>部门名称列表</p>
                      * 
                      */
                     void SetDepartments(const std::vector<std::string>& _departments);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool DepartmentsHasBeenSet() const;
 
                     /**
-                     * 获取纳管账号数
-                     * @return ManagedMemberCount 纳管账号数
+                     * 获取<p>纳管账号数</p>
+                     * @return ManagedMemberCount <p>纳管账号数</p>
                      * 
                      */
                     int64_t GetManagedMemberCount() const;
 
                     /**
-                     * 设置纳管账号数
-                     * @param _managedMemberCount 纳管账号数
+                     * 设置<p>纳管账号数</p>
+                     * @param _managedMemberCount <p>纳管账号数</p>
                      * 
                      */
                     void SetManagedMemberCount(const int64_t& _managedMemberCount);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool ManagedMemberCountHasBeenSet() const;
 
                     /**
-                     * 获取纳管产品数
-                     * @return ManagedProductCount 纳管产品数
+                     * 获取<p>纳管产品数</p>
+                     * @return ManagedProductCount <p>纳管产品数</p>
                      * 
                      */
                     int64_t GetManagedProductCount() const;
 
                     /**
-                     * 设置纳管产品数
-                     * @param _managedProductCount 纳管产品数
+                     * 设置<p>纳管产品数</p>
+                     * @param _managedProductCount <p>纳管产品数</p>
                      * 
                      */
                     void SetManagedProductCount(const int64_t& _managedProductCount);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool ManagedProductCountHasBeenSet() const;
 
                     /**
-                     * 获取纳管账号数
-                     * @return CfwManageCount 纳管账号数
+                     * 获取<p>纳管账号数</p>
+                     * @return CfwManageCount <p>纳管账号数</p>
                      * 
                      */
                     int64_t GetCfwManageCount() const;
 
                     /**
-                     * 设置纳管账号数
-                     * @param _cfwManageCount 纳管账号数
+                     * 设置<p>纳管账号数</p>
+                     * @param _cfwManageCount <p>纳管账号数</p>
                      * 
                      */
                     void SetCfwManageCount(const int64_t& _cfwManageCount);
@@ -299,79 +299,106 @@ namespace TencentCloud
                      */
                     bool CfwManageCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>规格共享总配额</p>
+                     * @return FwmShareUserQuota <p>规格共享总配额</p>
+                     * 
+                     */
+                    int64_t GetFwmShareUserQuota() const;
+
+                    /**
+                     * 设置<p>规格共享总配额</p>
+                     * @param _fwmShareUserQuota <p>规格共享总配额</p>
+                     * 
+                     */
+                    void SetFwmShareUserQuota(const int64_t& _fwmShareUserQuota);
+
+                    /**
+                     * 判断参数 FwmShareUserQuota 是否已赋值
+                     * @return FwmShareUserQuota 是否已赋值
+                     * 
+                     */
+                    bool FwmShareUserQuotaHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集团名称
+                     * <p>集团名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 管理员账号信息
+                     * <p>管理员账号信息</p>
                      */
                     MemberInfo m_adminInfo;
                     bool m_adminInfoHasBeenSet;
 
                     /**
-                     * 管理员/委派管理员数量
+                     * <p>管理员/委派管理员数量</p>
                      */
                     int64_t m_adminCount;
                     bool m_adminCountHasBeenSet;
 
                     /**
-                     * 已接入成员数
+                     * <p>已接入成员数</p>
                      */
                     int64_t m_joinedMemberCount;
                     bool m_joinedMemberCountHasBeenSet;
 
                     /**
-                     * 接入成员上限（-1表示无上限）
+                     * <p>接入成员上限（-1表示无上限）</p>
                      */
                     int64_t m_memberLimit;
                     bool m_memberLimitHasBeenSet;
 
                     /**
-                     * 接入成员上限显示
+                     * <p>接入成员上限显示</p>
                      */
                     std::string m_memberLimitDisplay;
                     bool m_memberLimitDisplayHasBeenSet;
 
                     /**
-                     * 规格共享者数量
+                     * <p>规格共享者数量</p>
                      */
                     int64_t m_cfwSharerCount;
                     bool m_cfwSharerCountHasBeenSet;
 
                     /**
-                     * 规格使用者数量
+                     * <p>规格使用者数量</p>
                      */
                     int64_t m_cfwUserCount;
                     bool m_cfwUserCountHasBeenSet;
 
                     /**
-                     * 部门名称列表
+                     * <p>部门名称列表</p>
                      */
                     std::vector<std::string> m_departments;
                     bool m_departmentsHasBeenSet;
 
                     /**
-                     * 纳管账号数
+                     * <p>纳管账号数</p>
                      */
                     int64_t m_managedMemberCount;
                     bool m_managedMemberCountHasBeenSet;
 
                     /**
-                     * 纳管产品数
+                     * <p>纳管产品数</p>
                      */
                     int64_t m_managedProductCount;
                     bool m_managedProductCountHasBeenSet;
 
                     /**
-                     * 纳管账号数
+                     * <p>纳管账号数</p>
                      */
                     int64_t m_cfwManageCount;
                     bool m_cfwManageCountHasBeenSet;
+
+                    /**
+                     * <p>规格共享总配额</p>
+                     */
+                    int64_t m_fwmShareUserQuota;
+                    bool m_fwmShareUserQuotaHasBeenSet;
 
                 };
             }

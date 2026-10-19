@@ -86,6 +86,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20191022/model/ModelArtifacts.h
   include/tencentcloud/tione/v20191022/model/DeleteCodeRepositoryResponse.h
   include/tencentcloud/tione/v20211111/model/CreateModelServiceRequest.h
+  include/tencentcloud/tione/v20211111/model/CreateNotebookImageResponse.h
   include/tencentcloud/tione/v20211111/model/DescribePresetImageListRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeLogsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateVersionsRequest.h
@@ -139,6 +140,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DefaultNginxGatewayCallInfo.h
   include/tencentcloud/tione/v20211111/model/CFSConfig.h
   include/tencentcloud/tione/v20211111/model/DescribeMountInstanceRequest.h
+  include/tencentcloud/tione/v20211111/model/CreateNotebookImageRequest.h
   include/tencentcloud/tione/v20211111/model/StartNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/NumOrPercent.h
   include/tencentcloud/tione/v20211111/model/InferTemplate.h
@@ -442,6 +444,7 @@ set(tione_src
   src/v20191022/model/ModelArtifacts.cpp
   src/v20191022/model/DeleteCodeRepositoryResponse.cpp
   src/v20211111/model/CreateModelServiceRequest.cpp
+  src/v20211111/model/CreateNotebookImageResponse.cpp
   src/v20211111/model/DescribePresetImageListRequest.cpp
   src/v20211111/model/DescribeLogsRequest.cpp
   src/v20211111/model/DescribeModelAccelerateVersionsRequest.cpp
@@ -495,6 +498,7 @@ set(tione_src
   src/v20211111/model/DefaultNginxGatewayCallInfo.cpp
   src/v20211111/model/CFSConfig.cpp
   src/v20211111/model/DescribeMountInstanceRequest.cpp
+  src/v20211111/model/CreateNotebookImageRequest.cpp
   src/v20211111/model/StartNotebookRequest.cpp
   src/v20211111/model/NumOrPercent.cpp
   src/v20211111/model/InferTemplate.cpp

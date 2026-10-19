@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品ID
-                     * @return ProductId 产品ID
+                     * 获取<p>产品ID</p>
+                     * @return ProductId <p>产品ID</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品ID
-                     * @param _productId 产品ID
+                     * 设置<p>产品ID</p>
+                     * @param _productId <p>产品ID</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取设备名称
-                     * @return DeviceName 设备名称
+                     * 获取<p>设备名称</p>
+                     * @return DeviceName <p>设备名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置设备名称
-                     * @param _deviceName 设备名称
+                     * 设置<p>设备名称</p>
+                     * @param _deviceName <p>设备名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取通道ID 非NVR设备则不填 NVR设备则必填 默认为无
-                     * @return ChannelId 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * 获取<p>通道ID 非NVR设备则不填 NVR设备则必填 默认为无</p>
+                     * @return ChannelId <p>通道ID 非NVR设备则不填 NVR设备则必填 默认为无</p>
                      * 
                      */
                     uint64_t GetChannelId() const;
 
                     /**
-                     * 设置通道ID 非NVR设备则不填 NVR设备则必填 默认为无
-                     * @param _channelId 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * 设置<p>通道ID 非NVR设备则不填 NVR设备则必填 默认为无</p>
+                     * @param _channelId <p>通道ID 非NVR设备则不填 NVR设备则必填 默认为无</p>
                      * 
                      */
                     void SetChannelId(const uint64_t& _channelId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取云存用户Id，为空则为默认云存空间。
-                     * @return UserId 云存用户Id，为空则为默认云存空间。
+                     * 获取<p>云存用户Id，为空则为默认云存空间。</p>
+                     * @return UserId <p>云存用户Id，为空则为默认云存空间。</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置云存用户Id，为空则为默认云存空间。
-                     * @param _userId 云存用户Id，为空则为默认云存空间。
+                     * 设置<p>云存用户Id，为空则为默认云存空间。</p>
+                     * @param _userId <p>云存用户Id，为空则为默认云存空间。</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -126,31 +126,58 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>订单id</p>
+                     * @return OrderId <p>订单id</p>
+                     * 
+                     */
+                    std::string GetOrderId() const;
+
+                    /**
+                     * 设置<p>订单id</p>
+                     * @param _orderId <p>订单id</p>
+                     * 
+                     */
+                    void SetOrderId(const std::string& _orderId);
+
+                    /**
+                     * 判断参数 OrderId 是否已赋值
+                     * @return OrderId 是否已赋值
+                     * 
+                     */
+                    bool OrderIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 产品ID
+                     * <p>产品ID</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 设备名称
+                     * <p>设备名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * <p>通道ID 非NVR设备则不填 NVR设备则必填 默认为无</p>
                      */
                     uint64_t m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 云存用户Id，为空则为默认云存空间。
+                     * <p>云存用户Id，为空则为默认云存空间。</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * <p>订单id</p>
+                     */
+                    std::string m_orderId;
+                    bool m_orderIdHasBeenSet;
 
                 };
             }

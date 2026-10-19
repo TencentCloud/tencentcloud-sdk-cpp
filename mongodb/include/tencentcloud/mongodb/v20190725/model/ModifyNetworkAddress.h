@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新IP地址。
-                     * @return NewIPAddress 新IP地址。
+                     * 获取<p>新IP地址。</p>
+                     * @return NewIPAddress <p>新IP地址。</p>
                      * 
                      */
                     std::string GetNewIPAddress() const;
 
                     /**
-                     * 设置新IP地址。
-                     * @param _newIPAddress 新IP地址。
+                     * 设置<p>新IP地址。</p>
+                     * @param _newIPAddress <p>新IP地址。</p>
                      * 
                      */
                     void SetNewIPAddress(const std::string& _newIPAddress);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NewIPAddressHasBeenSet() const;
 
                     /**
-                     * 获取原IP地址。
-                     * @return OldIpAddress 原IP地址。
+                     * 获取<p>原IP地址。</p>
+                     * @return OldIpAddress <p>原IP地址。</p>
                      * 
                      */
                     std::string GetOldIpAddress() const;
 
                     /**
-                     * 设置原IP地址。
-                     * @param _oldIpAddress 原IP地址。
+                     * 设置<p>原IP地址。</p>
+                     * @param _oldIpAddress <p>原IP地址。</p>
                      * 
                      */
                     void SetOldIpAddress(const std::string& _oldIpAddress);
@@ -88,19 +88,46 @@ namespace TencentCloud
                      */
                     bool OldIpAddressHasBeenSet() const;
 
+                    /**
+                     * 获取<p>在副本集时，修改网络需要传此字段，用于标识该ip地址为主节点或者hidden节点</p><p>枚举值：</p><ul><li>PRIMARY： 主节点</li><li>HIDDEN： hidden节点</li></ul>
+                     * @return NodeType <p>在副本集时，修改网络需要传此字段，用于标识该ip地址为主节点或者hidden节点</p><p>枚举值：</p><ul><li>PRIMARY： 主节点</li><li>HIDDEN： hidden节点</li></ul>
+                     * 
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置<p>在副本集时，修改网络需要传此字段，用于标识该ip地址为主节点或者hidden节点</p><p>枚举值：</p><ul><li>PRIMARY： 主节点</li><li>HIDDEN： hidden节点</li></ul>
+                     * @param _nodeType <p>在副本集时，修改网络需要传此字段，用于标识该ip地址为主节点或者hidden节点</p><p>枚举值：</p><ul><li>PRIMARY： 主节点</li><li>HIDDEN： hidden节点</li></ul>
+                     * 
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     * 
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 新IP地址。
+                     * <p>新IP地址。</p>
                      */
                     std::string m_newIPAddress;
                     bool m_newIPAddressHasBeenSet;
 
                     /**
-                     * 原IP地址。
+                     * <p>原IP地址。</p>
                      */
                     std::string m_oldIpAddress;
                     bool m_oldIpAddressHasBeenSet;
+
+                    /**
+                     * <p>在副本集时，修改网络需要传此字段，用于标识该ip地址为主节点或者hidden节点</p><p>枚举值：</p><ul><li>PRIMARY： 主节点</li><li>HIDDEN： hidden节点</li></ul>
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
 
                 };
             }

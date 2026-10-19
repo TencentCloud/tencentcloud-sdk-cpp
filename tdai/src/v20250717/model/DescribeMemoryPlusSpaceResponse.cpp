@@ -38,6 +38,7 @@ DescribeMemoryPlusSpaceResponse::DescribeMemoryPlusSpaceResponse() :
     m_memoryLimitHasBeenSet(false),
     m_creditUsageHasBeenSet(false),
     m_creditLimitHasBeenSet(false),
+    m_compressedHasBeenSet(false),
     m_accessUrlHasBeenSet(false),
     m_wanAccessUrlHasBeenSet(false),
     m_createdAtHasBeenSet(false),
@@ -231,6 +232,16 @@ CoreInternalOutcome DescribeMemoryPlusSpaceResponse::Deserialize(const string &p
         m_creditLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Compressed") && !rsp["Compressed"].IsNull())
+    {
+        if (!rsp["Compressed"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Compressed` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_compressed = rsp["Compressed"].GetBool();
+        m_compressedHasBeenSet = true;
+    }
+
     if (rsp.HasMember("AccessUrl") && !rsp["AccessUrl"].IsNull())
     {
         if (!rsp["AccessUrl"].IsString())
@@ -418,6 +429,14 @@ string DescribeMemoryPlusSpaceResponse::ToJsonString() const
         string key = "CreditLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_creditLimit, allocator);
+    }
+
+    if (m_compressedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compressed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_compressed, allocator);
     }
 
     if (m_accessUrlHasBeenSet)
@@ -618,6 +637,16 @@ double DescribeMemoryPlusSpaceResponse::GetCreditLimit() const
 bool DescribeMemoryPlusSpaceResponse::CreditLimitHasBeenSet() const
 {
     return m_creditLimitHasBeenSet;
+}
+
+bool DescribeMemoryPlusSpaceResponse::GetCompressed() const
+{
+    return m_compressed;
+}
+
+bool DescribeMemoryPlusSpaceResponse::CompressedHasBeenSet() const
+{
+    return m_compressedHasBeenSet;
 }
 
 string DescribeMemoryPlusSpaceResponse::GetAccessUrl() const

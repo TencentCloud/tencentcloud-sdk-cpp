@@ -47,8 +47,6 @@
 #include <tencentcloud/iotexplorer/v20190423/model/BindDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindProductsRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindProductsResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/BindTWeTalkAIBotRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/BindTWeTalkAIBotResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindTWeTalkAgentRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindTWeTalkAgentResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindUserDeviceRequest.h>
@@ -121,8 +119,6 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeSubscriptionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeSubscriptionResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkAIBotRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkAIBotResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkAgentRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkAgentResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTWeTalkProductConfigRequest.h>
@@ -165,8 +161,6 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeePersonResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeTasksByConditionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeSeeTasksByConditionResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkAIBotRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkAIBotResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkAgentRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkAgentResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteTWeTalkProductConfigV2Request.h>
@@ -309,8 +303,6 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeTaskStatisticsRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeSeeTaskStatisticsResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkAIBotRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkAIBotResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkAgentRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkAgentResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTWeTalkAgentBindingRequest.h>
@@ -373,8 +365,6 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetStudioProductListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallActiveStatusRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallActiveStatusResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkAIBotListRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkAIBotListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkActiveRecordListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkActiveRecordListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeTalkActiveStatusRequest.h>
@@ -469,8 +459,6 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeSubscriptionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeSubscriptionRenewFlagRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeSubscriptionRenewFlagResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkAIBotRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkAIBotResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkAgentRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkAgentResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTWeTalkProductConfigRequest.h>
@@ -531,8 +519,6 @@
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindProductsRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindProductsResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/UnbindTWeTalkAIBotRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/UnbindTWeTalkAIBotResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindTWeTalkAgentRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindTWeTalkAgentResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateDeviceTWeCallAuthorizeStatusRequest.h>
@@ -597,9 +583,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindProductsResponse> BindProductsOutcome;
                 typedef std::future<BindProductsOutcome> BindProductsOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BindProductsRequest&, BindProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindProductsAsyncHandler;
-                typedef Outcome<Core::Error, Model::BindTWeTalkAIBotResponse> BindTWeTalkAIBotOutcome;
-                typedef std::future<BindTWeTalkAIBotOutcome> BindTWeTalkAIBotOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::BindTWeTalkAIBotRequest&, BindTWeTalkAIBotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindTWeTalkAIBotAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindTWeTalkAgentResponse> BindTWeTalkAgentOutcome;
                 typedef std::future<BindTWeTalkAgentOutcome> BindTWeTalkAgentOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BindTWeTalkAgentRequest&, BindTWeTalkAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindTWeTalkAgentAsyncHandler;
@@ -708,9 +691,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTWeSeeSubscriptionResponse> CreateTWeSeeSubscriptionOutcome;
                 typedef std::future<CreateTWeSeeSubscriptionOutcome> CreateTWeSeeSubscriptionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeSeeSubscriptionRequest&, CreateTWeSeeSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeSeeSubscriptionAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateTWeTalkAIBotResponse> CreateTWeTalkAIBotOutcome;
-                typedef std::future<CreateTWeTalkAIBotOutcome> CreateTWeTalkAIBotOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeTalkAIBotRequest&, CreateTWeTalkAIBotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeTalkAIBotAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTWeTalkAgentResponse> CreateTWeTalkAgentOutcome;
                 typedef std::future<CreateTWeTalkAgentOutcome> CreateTWeTalkAgentOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTWeTalkAgentRequest&, CreateTWeTalkAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTWeTalkAgentAsyncHandler;
@@ -774,9 +754,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTWeSeeTasksByConditionResponse> DeleteTWeSeeTasksByConditionOutcome;
                 typedef std::future<DeleteTWeSeeTasksByConditionOutcome> DeleteTWeSeeTasksByConditionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteTWeSeeTasksByConditionRequest&, DeleteTWeSeeTasksByConditionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTWeSeeTasksByConditionAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteTWeTalkAIBotResponse> DeleteTWeTalkAIBotOutcome;
-                typedef std::future<DeleteTWeTalkAIBotOutcome> DeleteTWeTalkAIBotOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::DeleteTWeTalkAIBotRequest&, DeleteTWeTalkAIBotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTWeTalkAIBotAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTWeTalkAgentResponse> DeleteTWeTalkAgentOutcome;
                 typedef std::future<DeleteTWeTalkAgentOutcome> DeleteTWeTalkAgentOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteTWeTalkAgentRequest&, DeleteTWeTalkAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTWeTalkAgentAsyncHandler;
@@ -990,9 +967,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTWeSeeTaskStatisticsResponse> DescribeTWeSeeTaskStatisticsOutcome;
                 typedef std::future<DescribeTWeSeeTaskStatisticsOutcome> DescribeTWeSeeTaskStatisticsOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeSeeTaskStatisticsRequest&, DescribeTWeSeeTaskStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeSeeTaskStatisticsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTWeTalkAIBotResponse> DescribeTWeTalkAIBotOutcome;
-                typedef std::future<DescribeTWeTalkAIBotOutcome> DescribeTWeTalkAIBotOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeTalkAIBotRequest&, DescribeTWeTalkAIBotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeTalkAIBotAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTWeTalkAgentResponse> DescribeTWeTalkAgentOutcome;
                 typedef std::future<DescribeTWeTalkAgentOutcome> DescribeTWeTalkAgentOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTWeTalkAgentRequest&, DescribeTWeTalkAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTWeTalkAgentAsyncHandler;
@@ -1086,9 +1060,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTWeCallActiveStatusResponse> GetTWeCallActiveStatusOutcome;
                 typedef std::future<GetTWeCallActiveStatusOutcome> GetTWeCallActiveStatusOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTWeCallActiveStatusRequest&, GetTWeCallActiveStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeCallActiveStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetTWeTalkAIBotListResponse> GetTWeTalkAIBotListOutcome;
-                typedef std::future<GetTWeTalkAIBotListOutcome> GetTWeTalkAIBotListOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::GetTWeTalkAIBotListRequest&, GetTWeTalkAIBotListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeTalkAIBotListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTWeTalkActiveRecordListResponse> GetTWeTalkActiveRecordListOutcome;
                 typedef std::future<GetTWeTalkActiveRecordListOutcome> GetTWeTalkActiveRecordListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTWeTalkActiveRecordListRequest&, GetTWeTalkActiveRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeTalkActiveRecordListAsyncHandler;
@@ -1230,9 +1201,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTWeSeeSubscriptionRenewFlagResponse> ModifyTWeSeeSubscriptionRenewFlagOutcome;
                 typedef std::future<ModifyTWeSeeSubscriptionRenewFlagOutcome> ModifyTWeSeeSubscriptionRenewFlagOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeSeeSubscriptionRenewFlagRequest&, ModifyTWeSeeSubscriptionRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeSeeSubscriptionRenewFlagAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyTWeTalkAIBotResponse> ModifyTWeTalkAIBotOutcome;
-                typedef std::future<ModifyTWeTalkAIBotOutcome> ModifyTWeTalkAIBotOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeTalkAIBotRequest&, ModifyTWeTalkAIBotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeTalkAIBotAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTWeTalkAgentResponse> ModifyTWeTalkAgentOutcome;
                 typedef std::future<ModifyTWeTalkAgentOutcome> ModifyTWeTalkAgentOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTWeTalkAgentRequest&, ModifyTWeTalkAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTWeTalkAgentAsyncHandler;
@@ -1323,9 +1291,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnbindProductsResponse> UnbindProductsOutcome;
                 typedef std::future<UnbindProductsOutcome> UnbindProductsOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UnbindProductsRequest&, UnbindProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindProductsAsyncHandler;
-                typedef Outcome<Core::Error, Model::UnbindTWeTalkAIBotResponse> UnbindTWeTalkAIBotOutcome;
-                typedef std::future<UnbindTWeTalkAIBotOutcome> UnbindTWeTalkAIBotOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::UnbindTWeTalkAIBotRequest&, UnbindTWeTalkAIBotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindTWeTalkAIBotAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindTWeTalkAgentResponse> UnbindTWeTalkAgentOutcome;
                 typedef std::future<UnbindTWeTalkAgentOutcome> UnbindTWeTalkAgentOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UnbindTWeTalkAgentRequest&, UnbindTWeTalkAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindTWeTalkAgentAsyncHandler;
@@ -1457,15 +1422,6 @@ namespace TencentCloud
                 BindProductsOutcome BindProducts(const Model::BindProductsRequest &request);
                 void BindProductsAsync(const Model::BindProductsRequest& request, const BindProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindProductsOutcomeCallable BindProductsCallable(const Model::BindProductsRequest& request);
-
-                /**
-                 *用于绑定一个产品和智能体。
-                 * @param req BindTWeTalkAIBotRequest
-                 * @return BindTWeTalkAIBotOutcome
-                 */
-                BindTWeTalkAIBotOutcome BindTWeTalkAIBot(const Model::BindTWeTalkAIBotRequest &request);
-                void BindTWeTalkAIBotAsync(const Model::BindTWeTalkAIBotRequest& request, const BindTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                BindTWeTalkAIBotOutcomeCallable BindTWeTalkAIBotCallable(const Model::BindTWeTalkAIBotRequest& request);
 
                 /**
                  *绑定智能体到产品或设备
@@ -1830,15 +1786,6 @@ namespace TencentCloud
                 CreateTWeSeeSubscriptionOutcomeCallable CreateTWeSeeSubscriptionCallable(const Model::CreateTWeSeeSubscriptionRequest& request);
 
                 /**
-                 *用于新增TWeTalk智能体。
-                 * @param req CreateTWeTalkAIBotRequest
-                 * @return CreateTWeTalkAIBotOutcome
-                 */
-                CreateTWeTalkAIBotOutcome CreateTWeTalkAIBot(const Model::CreateTWeTalkAIBotRequest &request);
-                void CreateTWeTalkAIBotAsync(const Model::CreateTWeTalkAIBotRequest& request, const CreateTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateTWeTalkAIBotOutcomeCallable CreateTWeTalkAIBotCallable(const Model::CreateTWeTalkAIBotRequest& request);
-
-                /**
                  *新增TWeTalk智能体。
                  * @param req CreateTWeTalkAgentRequest
                  * @return CreateTWeTalkAgentOutcome
@@ -2026,15 +1973,6 @@ namespace TencentCloud
                 DeleteTWeSeeTasksByConditionOutcome DeleteTWeSeeTasksByCondition(const Model::DeleteTWeSeeTasksByConditionRequest &request);
                 void DeleteTWeSeeTasksByConditionAsync(const Model::DeleteTWeSeeTasksByConditionRequest& request, const DeleteTWeSeeTasksByConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTWeSeeTasksByConditionOutcomeCallable DeleteTWeSeeTasksByConditionCallable(const Model::DeleteTWeSeeTasksByConditionRequest& request);
-
-                /**
-                 *用于删除TWeTalk智能体。
-                 * @param req DeleteTWeTalkAIBotRequest
-                 * @return DeleteTWeTalkAIBotOutcome
-                 */
-                DeleteTWeTalkAIBotOutcome DeleteTWeTalkAIBot(const Model::DeleteTWeTalkAIBotRequest &request);
-                void DeleteTWeTalkAIBotAsync(const Model::DeleteTWeTalkAIBotRequest& request, const DeleteTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteTWeTalkAIBotOutcomeCallable DeleteTWeTalkAIBotCallable(const Model::DeleteTWeTalkAIBotRequest& request);
 
                 /**
                  *用于删除TWeTalk智能体
@@ -2676,15 +2614,6 @@ namespace TencentCloud
                 DescribeTWeSeeTaskStatisticsOutcomeCallable DescribeTWeSeeTaskStatisticsCallable(const Model::DescribeTWeSeeTaskStatisticsRequest& request);
 
                 /**
-                 *用于查询TWeTalk智能体详情。
-                 * @param req DescribeTWeTalkAIBotRequest
-                 * @return DescribeTWeTalkAIBotOutcome
-                 */
-                DescribeTWeTalkAIBotOutcome DescribeTWeTalkAIBot(const Model::DescribeTWeTalkAIBotRequest &request);
-                void DescribeTWeTalkAIBotAsync(const Model::DescribeTWeTalkAIBotRequest& request, const DescribeTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTWeTalkAIBotOutcomeCallable DescribeTWeTalkAIBotCallable(const Model::DescribeTWeTalkAIBotRequest& request);
-
-                /**
                  *用户查询TWeTalk智能体详情
                  * @param req DescribeTWeTalkAgentRequest
                  * @return DescribeTWeTalkAgentOutcome
@@ -2964,15 +2893,6 @@ namespace TencentCloud
                 GetTWeCallActiveStatusOutcome GetTWeCallActiveStatus(const Model::GetTWeCallActiveStatusRequest &request);
                 void GetTWeCallActiveStatusAsync(const Model::GetTWeCallActiveStatusRequest& request, const GetTWeCallActiveStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTWeCallActiveStatusOutcomeCallable GetTWeCallActiveStatusCallable(const Model::GetTWeCallActiveStatusRequest& request);
-
-                /**
-                 *用于查询TWeTalk智能体列表。
-                 * @param req GetTWeTalkAIBotListRequest
-                 * @return GetTWeTalkAIBotListOutcome
-                 */
-                GetTWeTalkAIBotListOutcome GetTWeTalkAIBotList(const Model::GetTWeTalkAIBotListRequest &request);
-                void GetTWeTalkAIBotListAsync(const Model::GetTWeTalkAIBotListRequest& request, const GetTWeTalkAIBotListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetTWeTalkAIBotListOutcomeCallable GetTWeTalkAIBotListCallable(const Model::GetTWeTalkAIBotListRequest& request);
 
                 /**
                  *TWeTalk消耗账单明细。
@@ -3398,15 +3318,6 @@ namespace TencentCloud
                 ModifyTWeSeeSubscriptionRenewFlagOutcomeCallable ModifyTWeSeeSubscriptionRenewFlagCallable(const Model::ModifyTWeSeeSubscriptionRenewFlagRequest& request);
 
                 /**
-                 *用于修改TWeTalk智能体。
-                 * @param req ModifyTWeTalkAIBotRequest
-                 * @return ModifyTWeTalkAIBotOutcome
-                 */
-                ModifyTWeTalkAIBotOutcome ModifyTWeTalkAIBot(const Model::ModifyTWeTalkAIBotRequest &request);
-                void ModifyTWeTalkAIBotAsync(const Model::ModifyTWeTalkAIBotRequest& request, const ModifyTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyTWeTalkAIBotOutcomeCallable ModifyTWeTalkAIBotCallable(const Model::ModifyTWeTalkAIBotRequest& request);
-
-                /**
                  *修改TWeTalk智能体
                  * @param req ModifyTWeTalkAgentRequest
                  * @return ModifyTWeTalkAgentOutcome
@@ -3689,15 +3600,6 @@ namespace TencentCloud
                 UnbindProductsOutcome UnbindProducts(const Model::UnbindProductsRequest &request);
                 void UnbindProductsAsync(const Model::UnbindProductsRequest& request, const UnbindProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnbindProductsOutcomeCallable UnbindProductsCallable(const Model::UnbindProductsRequest& request);
-
-                /**
-                 *用于解除一个产品和智能体的绑定。
-                 * @param req UnbindTWeTalkAIBotRequest
-                 * @return UnbindTWeTalkAIBotOutcome
-                 */
-                UnbindTWeTalkAIBotOutcome UnbindTWeTalkAIBot(const Model::UnbindTWeTalkAIBotRequest &request);
-                void UnbindTWeTalkAIBotAsync(const Model::UnbindTWeTalkAIBotRequest& request, const UnbindTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UnbindTWeTalkAIBotOutcomeCallable UnbindTWeTalkAIBotCallable(const Model::UnbindTWeTalkAIBotRequest& request);
 
                 /**
                  *解绑产品或设备上的智能体

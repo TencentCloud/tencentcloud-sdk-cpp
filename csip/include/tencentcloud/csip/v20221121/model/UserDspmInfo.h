@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取APPID
-                     * @return AppID APPID
+                     * 获取<p>APPID</p>
+                     * @return AppID <p>APPID</p>
                      * 
                      */
                     int64_t GetAppID() const;
 
                     /**
-                     * 设置APPID
-                     * @param _appID APPID
+                     * 设置<p>APPID</p>
+                     * @param _appID <p>APPID</p>
                      * 
                      */
                     void SetAppID(const int64_t& _appID);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AppIDHasBeenSet() const;
 
                     /**
-                     * 获取UIN
-                     * @return Uin UIN
+                     * 获取<p>UIN</p>
+                     * @return Uin <p>UIN</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置UIN
-                     * @param _uin UIN
+                     * 设置<p>UIN</p>
+                     * @param _uin <p>UIN</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取账号昵称
-                     * @return NickName 账号昵称
+                     * 获取<p>账号昵称</p>
+                     * @return NickName <p>账号昵称</p>
                      * 
                      */
                     std::string GetNickName() const;
 
                     /**
-                     * 设置账号昵称
-                     * @param _nickName 账号昵称
+                     * 设置<p>账号昵称</p>
+                     * @param _nickName <p>账号昵称</p>
                      * 
                      */
                     void SetNickName(const std::string& _nickName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NickNameHasBeenSet() const;
 
                     /**
-                     * 获取账号下数据库资产数量
-                     * @return AssetNum 账号下数据库资产数量
+                     * 获取<p>账号下数据库资产数量</p>
+                     * @return AssetNum <p>账号下数据库资产数量</p>
                      * 
                      */
                     int64_t GetAssetNum() const;
 
                     /**
-                     * 设置账号下数据库资产数量
-                     * @param _assetNum 账号下数据库资产数量
+                     * 设置<p>账号下数据库资产数量</p>
+                     * @param _assetNum <p>账号下数据库资产数量</p>
                      * 
                      */
                     void SetAssetNum(const int64_t& _assetNum);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool AssetNumHasBeenSet() const;
 
                     /**
-                     * 获取账号下开启安全分析数据库资产数量
-                     * @return UsedAssetNum 账号下开启安全分析数据库资产数量
+                     * 获取<p>账号下开启安全分析数据库资产数量</p>
+                     * @return UsedAssetNum <p>账号下开启安全分析数据库资产数量</p>
                      * 
                      */
                     int64_t GetUsedAssetNum() const;
 
                     /**
-                     * 设置账号下开启安全分析数据库资产数量
-                     * @param _usedAssetNum 账号下开启安全分析数据库资产数量
+                     * 设置<p>账号下开启安全分析数据库资产数量</p>
+                     * @param _usedAssetNum <p>账号下开启安全分析数据库资产数量</p>
                      * 
                      */
                     void SetUsedAssetNum(const int64_t& _usedAssetNum);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UsedAssetNumHasBeenSet() const;
 
                     /**
-                     * 获取是否被共享，1-被共享，2-未被共享
-                     * @return IsShared 是否被共享，1-被共享，2-未被共享
+                     * 获取<p>是否被共享，1-被共享，2-未被共享</p>
+                     * @return IsShared <p>是否被共享，1-被共享，2-未被共享</p>
                      * 
                      */
                     int64_t GetIsShared() const;
 
                     /**
-                     * 设置是否被共享，1-被共享，2-未被共享
-                     * @param _isShared 是否被共享，1-被共享，2-未被共享
+                     * 设置<p>是否被共享，1-被共享，2-未被共享</p>
+                     * @param _isShared <p>是否被共享，1-被共享，2-未被共享</p>
                      * 
                      */
                     void SetIsShared(const int64_t& _isShared);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool IsSharedHasBeenSet() const;
 
                     /**
-                     * 获取是否单独购买，1-单独购买，2-未单独购买
-                     * @return IsSelfBuy 是否单独购买，1-单独购买，2-未单独购买
+                     * 获取<p>是否单独购买，1-单独购买，2-未单独购买</p>
+                     * @return IsSelfBuy <p>是否单独购买，1-单独购买，2-未单独购买</p>
                      * 
                      */
                     int64_t GetIsSelfBuy() const;
 
                     /**
-                     * 设置是否单独购买，1-单独购买，2-未单独购买
-                     * @param _isSelfBuy 是否单独购买，1-单独购买，2-未单独购买
+                     * 设置<p>是否单独购买，1-单独购买，2-未单独购买</p>
+                     * @param _isSelfBuy <p>是否单独购买，1-单独购买，2-未单独购买</p>
                      * 
                      */
                     void SetIsSelfBuy(const int64_t& _isSelfBuy);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool IsSelfBuyHasBeenSet() const;
 
                     /**
-                     * 获取配额来源账号
-                     * @return ShareFromAppID 配额来源账号
+                     * 获取<p>配额来源账号</p>
+                     * @return ShareFromAppID <p>配额来源账号</p>
                      * 
                      */
                     int64_t GetShareFromAppID() const;
 
                     /**
-                     * 设置配额来源账号
-                     * @param _shareFromAppID 配额来源账号
+                     * 设置<p>配额来源账号</p>
+                     * @param _shareFromAppID <p>配额来源账号</p>
                      * 
                      */
                     void SetShareFromAppID(const int64_t& _shareFromAppID);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ShareFromAppIDHasBeenSet() const;
 
                     /**
-                     * 获取云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）
-                     * @return CloudType 云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）
+                     * 获取<p>云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）</p>
+                     * @return CloudType <p>云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）</p>
                      * 
                      */
                     int64_t GetCloudType() const;
 
                     /**
-                     * 设置云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）
-                     * @param _cloudType 云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）
+                     * 设置<p>云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）</p>
+                     * @param _cloudType <p>云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）</p>
                      * 
                      */
                     void SetCloudType(const int64_t& _cloudType);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool CloudTypeHasBeenSet() const;
 
                     /**
-                     * 获取账号是否隔离中
-                     * @return IsIsolating 账号是否隔离中
+                     * 获取<p>账号是否隔离中</p>
+                     * @return IsIsolating <p>账号是否隔离中</p>
                      * 
                      */
                     bool GetIsIsolating() const;
 
                     /**
-                     * 设置账号是否隔离中
-                     * @param _isIsolating 账号是否隔离中
+                     * 设置<p>账号是否隔离中</p>
+                     * @param _isIsolating <p>账号是否隔离中</p>
                      * 
                      */
                     void SetIsIsolating(const bool& _isIsolating);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool IsIsolatingHasBeenSet() const;
 
                     /**
-                     * 获取是否正在数据清理
-                     * @return IsDataCleaning 是否正在数据清理
+                     * 获取<p>是否正在数据清理</p>
+                     * @return IsDataCleaning <p>是否正在数据清理</p>
                      * 
                      */
                     bool GetIsDataCleaning() const;
 
                     /**
-                     * 设置是否正在数据清理
-                     * @param _isDataCleaning 是否正在数据清理
+                     * 设置<p>是否正在数据清理</p>
+                     * @param _isDataCleaning <p>是否正在数据清理</p>
                      * 
                      */
                     void SetIsDataCleaning(const bool& _isDataCleaning);
@@ -277,73 +277,127 @@ namespace TencentCloud
                      */
                     bool IsDataCleaningHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集团账号角色（member-普通成员/admin-管理员/delegatedAdmin-委派管理员），非集团账号为空</p>
+                     * @return Role <p>集团账号角色（member-普通成员/admin-管理员/delegatedAdmin-委派管理员），非集团账号为空</p>
+                     * 
+                     */
+                    std::string GetRole() const;
+
+                    /**
+                     * 设置<p>集团账号角色（member-普通成员/admin-管理员/delegatedAdmin-委派管理员），非集团账号为空</p>
+                     * @param _role <p>集团账号角色（member-普通成员/admin-管理员/delegatedAdmin-委派管理员），非集团账号为空</p>
+                     * 
+                     */
+                    void SetRole(const std::string& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     * 
+                     */
+                    bool RoleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>所属部门名称，未分配部门或非集团账号为空</p>
+                     * @return NodeName <p>所属部门名称，未分配部门或非集团账号为空</p>
+                     * 
+                     */
+                    std::string GetNodeName() const;
+
+                    /**
+                     * 设置<p>所属部门名称，未分配部门或非集团账号为空</p>
+                     * @param _nodeName <p>所属部门名称，未分配部门或非集团账号为空</p>
+                     * 
+                     */
+                    void SetNodeName(const std::string& _nodeName);
+
+                    /**
+                     * 判断参数 NodeName 是否已赋值
+                     * @return NodeName 是否已赋值
+                     * 
+                     */
+                    bool NodeNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * APPID
+                     * <p>APPID</p>
                      */
                     int64_t m_appID;
                     bool m_appIDHasBeenSet;
 
                     /**
-                     * UIN
+                     * <p>UIN</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 账号昵称
+                     * <p>账号昵称</p>
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
-                     * 账号下数据库资产数量
+                     * <p>账号下数据库资产数量</p>
                      */
                     int64_t m_assetNum;
                     bool m_assetNumHasBeenSet;
 
                     /**
-                     * 账号下开启安全分析数据库资产数量
+                     * <p>账号下开启安全分析数据库资产数量</p>
                      */
                     int64_t m_usedAssetNum;
                     bool m_usedAssetNumHasBeenSet;
 
                     /**
-                     * 是否被共享，1-被共享，2-未被共享
+                     * <p>是否被共享，1-被共享，2-未被共享</p>
                      */
                     int64_t m_isShared;
                     bool m_isSharedHasBeenSet;
 
                     /**
-                     * 是否单独购买，1-单独购买，2-未单独购买
+                     * <p>是否单独购买，1-单独购买，2-未单独购买</p>
                      */
                     int64_t m_isSelfBuy;
                     bool m_isSelfBuyHasBeenSet;
 
                     /**
-                     * 配额来源账号
+                     * <p>配额来源账号</p>
                      */
                     int64_t m_shareFromAppID;
                     bool m_shareFromAppIDHasBeenSet;
 
                     /**
-                     * 云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）
+                     * <p>云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）</p>
                      */
                     int64_t m_cloudType;
                     bool m_cloudTypeHasBeenSet;
 
                     /**
-                     * 账号是否隔离中
+                     * <p>账号是否隔离中</p>
                      */
                     bool m_isIsolating;
                     bool m_isIsolatingHasBeenSet;
 
                     /**
-                     * 是否正在数据清理
+                     * <p>是否正在数据清理</p>
                      */
                     bool m_isDataCleaning;
                     bool m_isDataCleaningHasBeenSet;
+
+                    /**
+                     * <p>集团账号角色（member-普通成员/admin-管理员/delegatedAdmin-委派管理员），非集团账号为空</p>
+                     */
+                    std::string m_role;
+                    bool m_roleHasBeenSet;
+
+                    /**
+                     * <p>所属部门名称，未分配部门或非集团账号为空</p>
+                     */
+                    std::string m_nodeName;
+                    bool m_nodeNameHasBeenSet;
 
                 };
             }

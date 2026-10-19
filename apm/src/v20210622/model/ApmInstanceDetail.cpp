@@ -81,7 +81,8 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_disableAiAbilityHasBeenSet(false),
     m_crossAccountStatusHasBeenSet(false),
     m_crossAccountPeerIdHasBeenSet(false),
-    m_tokenDisplayProtectionHasBeenSet(false)
+    m_tokenDisplayProtectionHasBeenSet(false),
+    m_spanStatusConfigHasBeenSet(false)
 {
 }
 
@@ -713,6 +714,23 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_tokenDisplayProtectionHasBeenSet = true;
     }
 
+    if (value.HasMember("SpanStatusConfig") && !value["SpanStatusConfig"].IsNull())
+    {
+        if (!value["SpanStatusConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.SpanStatusConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_spanStatusConfig.Deserialize(value["SpanStatusConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_spanStatusConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1218,6 +1236,15 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TokenDisplayProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tokenDisplayProtection, allocator);
+    }
+
+    if (m_spanStatusConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpanStatusConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spanStatusConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2197,5 +2224,21 @@ void ApmInstanceDetail::SetTokenDisplayProtection(const int64_t& _tokenDisplayPr
 bool ApmInstanceDetail::TokenDisplayProtectionHasBeenSet() const
 {
     return m_tokenDisplayProtectionHasBeenSet;
+}
+
+SpanStatusConfig ApmInstanceDetail::GetSpanStatusConfig() const
+{
+    return m_spanStatusConfig;
+}
+
+void ApmInstanceDetail::SetSpanStatusConfig(const SpanStatusConfig& _spanStatusConfig)
+{
+    m_spanStatusConfig = _spanStatusConfig;
+    m_spanStatusConfigHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::SpanStatusConfigHasBeenSet() const
+{
+    return m_spanStatusConfigHasBeenSet;
 }
 

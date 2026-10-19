@@ -452,6 +452,20 @@ namespace TencentCloud
                      */
                     bool ImagePullTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>
+                     * @return NetworkConfig <p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>
+                     * 
+                     */
+                    std::string GetNetworkConfig() const;
+
+                    /**
+                     * 判断参数 NetworkConfig 是否已赋值
+                     * @return NetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool NetworkConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -627,6 +641,12 @@ namespace TencentCloud
                      */
                     std::string m_imagePullType;
                     bool m_imagePullTypeHasBeenSet;
+
+                    /**
+                     * <p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>
+                     */
+                    std::string m_networkConfig;
+                    bool m_networkConfigHasBeenSet;
 
                 };
             }

@@ -34,7 +34,8 @@ AddDeploymentRequest::AddDeploymentRequest() :
     m_queueHasBeenSet(false),
     m_autoscalingEnabledHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false)
+    m_advancedOptionsHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string AddDeploymentRequest::ToJsonString() const
         string key = "AdvancedOptions";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_advancedOptions.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +348,22 @@ void AddDeploymentRequest::SetAdvancedOptions(const string& _advancedOptions)
 bool AddDeploymentRequest::AdvancedOptionsHasBeenSet() const
 {
     return m_advancedOptionsHasBeenSet;
+}
+
+string AddDeploymentRequest::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+void AddDeploymentRequest::SetNetworkConfig(const string& _networkConfig)
+{
+    m_networkConfig = _networkConfig;
+    m_networkConfigHasBeenSet = true;
+}
+
+bool AddDeploymentRequest::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 
 

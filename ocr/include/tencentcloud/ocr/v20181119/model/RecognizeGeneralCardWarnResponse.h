@@ -45,30 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取卡证类型参数，包含以下范围： 
-General：通用卡证
-IDCard：身份证 
-Passport：护照 
-BankCard：银行卡
-VehicleLicense：行驶证
-DriverLicense：驾驶证
-BizLicense：营业执照 
-HmtResidentPermit：港澳台居住证
-ForeignPermanentResident：外国人永居证
-MainlandPermit：港澳台来往内地通行证
-SocialSecurityCard：社保卡
-                     * @return CardType 卡证类型参数，包含以下范围： 
-General：通用卡证
-IDCard：身份证 
-Passport：护照 
-BankCard：银行卡
-VehicleLicense：行驶证
-DriverLicense：驾驶证
-BizLicense：营业执照 
-HmtResidentPermit：港澳台居住证
-ForeignPermanentResident：外国人永居证
-MainlandPermit：港澳台来往内地通行证
-SocialSecurityCard：社保卡
+                     * 获取<p>卡证类型参数，枚举值：<br>（如入参CardType未填或填入General，返回自动分类的卡证类型，未能分类的其他类型返回General；如入参CardType填入General以外的值，则不进行自动分类、返回相同的值）</p><p>General：其他类型<br>IDCard：身份证<br>Passport：护照<br>BankCard：银行卡<br>VehicleLicense：行驶证<br>DriverLicense：驾驶证<br>BizLicense：营业执照<br>HmtResidentPermit：港澳台居住证<br>ForeignPermanentResident：外国人永居证<br>MainlandPermit：港澳台来往内地通行证<br>SocialSecurityCard：社保卡</p>
+                     * @return CardType <p>卡证类型参数，枚举值：<br>（如入参CardType未填或填入General，返回自动分类的卡证类型，未能分类的其他类型返回General；如入参CardType填入General以外的值，则不进行自动分类、返回相同的值）</p><p>General：其他类型<br>IDCard：身份证<br>Passport：护照<br>BankCard：银行卡<br>VehicleLicense：行驶证<br>DriverLicense：驾驶证<br>BizLicense：营业执照<br>HmtResidentPermit：港澳台居住证<br>ForeignPermanentResident：外国人永居证<br>MainlandPermit：港澳台来往内地通行证<br>SocialSecurityCard：社保卡</p>
                      * 
                      */
                     std::string GetCardType() const;
@@ -81,8 +59,8 @@ SocialSecurityCard：社保卡
                     bool CardTypeHasBeenSet() const;
 
                     /**
-                     * 获取模糊信息
-                     * @return Blur 模糊信息
+                     * 获取<p>模糊信息</p>
+                     * @return Blur <p>模糊信息</p>
                      * 
                      */
                     GeneralCardWarnInfo GetBlur() const;
@@ -95,8 +73,8 @@ SocialSecurityCard：社保卡
                     bool BlurHasBeenSet() const;
 
                     /**
-                     * 获取边框不完整信息
-                     * @return BorderIncomplete 边框不完整信息
+                     * 获取<p>边框不完整信息</p>
+                     * @return BorderIncomplete <p>边框不完整信息</p>
                      * 
                      */
                     GeneralCardWarnInfo GetBorderIncomplete() const;
@@ -109,8 +87,8 @@ SocialSecurityCard：社保卡
                     bool BorderIncompleteHasBeenSet() const;
 
                     /**
-                     * 获取复印件信息
-                     * @return Copy 复印件信息
+                     * 获取<p>复印件信息</p>
+                     * @return Copy <p>复印件信息</p>
                      * 
                      */
                     GeneralCardWarnInfo GetCopy() const;
@@ -123,8 +101,8 @@ SocialSecurityCard：社保卡
                     bool CopyHasBeenSet() const;
 
                     /**
-                     * 获取ps篡改信息
-                     * @return Ps ps篡改信息
+                     * 获取<p>ps篡改信息</p>
+                     * @return Ps <p>ps篡改信息</p>
                      * 
                      */
                     GeneralCardWarnInfo GetPs() const;
@@ -137,8 +115,8 @@ SocialSecurityCard：社保卡
                     bool PsHasBeenSet() const;
 
                     /**
-                     * 获取反光信息
-                     * @return Reflection 反光信息
+                     * 获取<p>反光信息</p>
+                     * @return Reflection <p>反光信息</p>
                      * 
                      */
                     GeneralCardWarnInfo GetReflection() const;
@@ -151,8 +129,8 @@ SocialSecurityCard：社保卡
                     bool ReflectionHasBeenSet() const;
 
                     /**
-                     * 获取翻拍件信息
-                     * @return Reprint 翻拍件信息
+                     * 获取<p>翻拍件信息</p>
+                     * @return Reprint <p>翻拍件信息</p>
                      * 
                      */
                     GeneralCardWarnInfo GetReprint() const;
@@ -165,8 +143,8 @@ SocialSecurityCard：社保卡
                     bool ReprintHasBeenSet() const;
 
                     /**
-                     * 获取是否截图
-                     * @return Screenshot 是否截图
+                     * 获取<p>是否截图</p>
+                     * @return Screenshot <p>是否截图</p>
                      * 
                      */
                     GeneralCardWarnInfo GetScreenshot() const;
@@ -179,8 +157,8 @@ SocialSecurityCard：社保卡
                     bool ScreenshotHasBeenSet() const;
 
                     /**
-                     * 获取是否遮挡
-                     * @return Cover 是否遮挡
+                     * 获取<p>是否遮挡</p>
+                     * @return Cover <p>是否遮挡</p>
                      * 
                      */
                     GeneralCardWarnInfo GetCover() const;
@@ -193,8 +171,8 @@ SocialSecurityCard：社保卡
                     bool CoverHasBeenSet() const;
 
                     /**
-                     * 获取是否重叠
-                     * @return Overlap 是否重叠
+                     * 获取<p>是否重叠</p>
+                     * @return Overlap <p>是否重叠</p>
                      * 
                      */
                     GeneralCardWarnInfo GetOverlap() const;
@@ -207,8 +185,8 @@ SocialSecurityCard：社保卡
                     bool OverlapHasBeenSet() const;
 
                     /**
-                     * 获取是否水印
-                     * @return Watermark 是否水印
+                     * 获取<p>是否水印</p>
+                     * @return Watermark <p>是否水印</p>
                      * 
                      */
                     GeneralCardWarnInfo GetWatermark() const;
@@ -221,8 +199,8 @@ SocialSecurityCard：社保卡
                     bool WatermarkHasBeenSet() const;
 
                     /**
-                     * 获取是否电子证照（目前仅支持电子身份证、电子营业执照识别
-                     * @return Electron 是否电子证照（目前仅支持电子身份证、电子营业执照识别
+                     * 获取<p>是否电子证照（目前仅支持电子身份证、电子营业执照识别</p>
+                     * @return Electron <p>是否电子证照（目前仅支持电子身份证、电子营业执照识别</p>
                      * 
                      */
                     GeneralCardWarnInfo GetElectron() const;
@@ -237,84 +215,73 @@ SocialSecurityCard：社保卡
                 private:
 
                     /**
-                     * 卡证类型参数，包含以下范围： 
-General：通用卡证
-IDCard：身份证 
-Passport：护照 
-BankCard：银行卡
-VehicleLicense：行驶证
-DriverLicense：驾驶证
-BizLicense：营业执照 
-HmtResidentPermit：港澳台居住证
-ForeignPermanentResident：外国人永居证
-MainlandPermit：港澳台来往内地通行证
-SocialSecurityCard：社保卡
+                     * <p>卡证类型参数，枚举值：<br>（如入参CardType未填或填入General，返回自动分类的卡证类型，未能分类的其他类型返回General；如入参CardType填入General以外的值，则不进行自动分类、返回相同的值）</p><p>General：其他类型<br>IDCard：身份证<br>Passport：护照<br>BankCard：银行卡<br>VehicleLicense：行驶证<br>DriverLicense：驾驶证<br>BizLicense：营业执照<br>HmtResidentPermit：港澳台居住证<br>ForeignPermanentResident：外国人永居证<br>MainlandPermit：港澳台来往内地通行证<br>SocialSecurityCard：社保卡</p>
                      */
                     std::string m_cardType;
                     bool m_cardTypeHasBeenSet;
 
                     /**
-                     * 模糊信息
+                     * <p>模糊信息</p>
                      */
                     GeneralCardWarnInfo m_blur;
                     bool m_blurHasBeenSet;
 
                     /**
-                     * 边框不完整信息
+                     * <p>边框不完整信息</p>
                      */
                     GeneralCardWarnInfo m_borderIncomplete;
                     bool m_borderIncompleteHasBeenSet;
 
                     /**
-                     * 复印件信息
+                     * <p>复印件信息</p>
                      */
                     GeneralCardWarnInfo m_copy;
                     bool m_copyHasBeenSet;
 
                     /**
-                     * ps篡改信息
+                     * <p>ps篡改信息</p>
                      */
                     GeneralCardWarnInfo m_ps;
                     bool m_psHasBeenSet;
 
                     /**
-                     * 反光信息
+                     * <p>反光信息</p>
                      */
                     GeneralCardWarnInfo m_reflection;
                     bool m_reflectionHasBeenSet;
 
                     /**
-                     * 翻拍件信息
+                     * <p>翻拍件信息</p>
                      */
                     GeneralCardWarnInfo m_reprint;
                     bool m_reprintHasBeenSet;
 
                     /**
-                     * 是否截图
+                     * <p>是否截图</p>
                      */
                     GeneralCardWarnInfo m_screenshot;
                     bool m_screenshotHasBeenSet;
 
                     /**
-                     * 是否遮挡
+                     * <p>是否遮挡</p>
                      */
                     GeneralCardWarnInfo m_cover;
                     bool m_coverHasBeenSet;
 
                     /**
-                     * 是否重叠
+                     * <p>是否重叠</p>
                      */
                     GeneralCardWarnInfo m_overlap;
                     bool m_overlapHasBeenSet;
 
                     /**
-                     * 是否水印
+                     * <p>是否水印</p>
                      */
                     GeneralCardWarnInfo m_watermark;
                     bool m_watermarkHasBeenSet;
 
                     /**
-                     * 是否电子证照（目前仅支持电子身份证、电子营业执照识别
+                     * <p>是否电子证照（目前仅支持电子身份证、电子营业执照识别</p>
                      */
                     GeneralCardWarnInfo m_electron;
                     bool m_electronHasBeenSet;

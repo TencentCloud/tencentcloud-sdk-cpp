@@ -450,6 +450,20 @@ namespace TencentCloud
                      */
                     bool ResourceConfigIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户网络配置(JSON，跨租户 ENI 等)</p>
+                     * @return NetworkConfig <p>用户网络配置(JSON，跨租户 ENI 等)</p>
+                     * 
+                     */
+                    std::string GetNetworkConfig() const;
+
+                    /**
+                     * 判断参数 NetworkConfig 是否已赋值
+                     * @return NetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool NetworkConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -625,6 +639,12 @@ namespace TencentCloud
                      */
                     std::string m_resourceConfigId;
                     bool m_resourceConfigIdHasBeenSet;
+
+                    /**
+                     * <p>用户网络配置(JSON，跨租户 ENI 等)</p>
+                     */
+                    std::string m_networkConfig;
+                    bool m_networkConfigHasBeenSet;
 
                 };
             }

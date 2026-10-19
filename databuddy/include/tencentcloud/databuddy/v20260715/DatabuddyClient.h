@@ -351,7 +351,7 @@ namespace TencentCloud
 
 
                 /**
-                 *添加控制台用户
+                 *添加控制台用户，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。
                  * @param req AddConsoleUsersRequest
                  * @return AddConsoleUsersOutcome
                  */
@@ -387,7 +387,7 @@ namespace TencentCloud
                 CreateCatalogOutcomeCallable CreateCatalogCallable(const Model::CreateCatalogRequest& request);
 
                 /**
-                 *创建控制台用户组
+                 *创建控制台用户组，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。
                  * @param req CreateConsoleGroupRequest
                  * @return CreateConsoleGroupOutcome
                  */
@@ -439,7 +439,7 @@ namespace TencentCloud
                 CreateWorkflowOutcomeCallable CreateWorkflowCallable(const Model::CreateWorkflowRequest& request);
 
                 /**
-                 *创建工作空间
+                 *创建工作空间，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。
                  * @param req CreateWorkspaceRequest
                  * @return CreateWorkspaceOutcome
                  */
@@ -466,7 +466,7 @@ namespace TencentCloud
                 DeleteCatalogOutcomeCallable DeleteCatalogCallable(const Model::DeleteCatalogRequest& request);
 
                 /**
-                 *删除控制台用户组
+                 *删除控制台用户组，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。
                  * @param req DeleteConsoleGroupsRequest
                  * @return DeleteConsoleGroupsOutcome
                  */
@@ -797,7 +797,7 @@ namespace TencentCloud
                 ListWorkspaceUsersOutcomeCallable ListWorkspaceUsersCallable(const Model::ListWorkspaceUsersRequest& request);
 
                 /**
-                 *查询工作空间列表
+                 *查询工作空间列表，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。
                  * @param req ListWorkspacesRequest
                  * @return ListWorkspacesOutcome
                  */
@@ -806,7 +806,7 @@ namespace TencentCloud
                 ListWorkspacesOutcomeCallable ListWorkspacesCallable(const Model::ListWorkspacesRequest& request);
 
                 /**
-                 *<p>批量移除控制台用户（单次最多10个；前置校验任一不满足整体拒绝；执行阶段单个失败不中断后续删除，成败以 SuccessUins/FailItems 为准）</p>
+                 *<p>批量移除控制台用户（单次最多10个；前置校验任一不满足整体拒绝；执行阶段单个失败不中断后续删除，成败以 SuccessUins/FailItems 为准），该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。</p>
                  * @param req RemoveConsoleUsersRequest
                  * @return RemoveConsoleUsersOutcome
                  */
@@ -870,7 +870,7 @@ namespace TencentCloud
                 UnbindWorkflowBundleOutcomeCallable UnbindWorkflowBundleCallable(const Model::UnbindWorkflowBundleRequest& request);
 
                 /**
-                 *修改控制台用户组
+                 *修改控制台用户组，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。
                  * @param req UpdateConsoleGroupRequest
                  * @return UpdateConsoleGroupOutcome
                  */
@@ -879,7 +879,7 @@ namespace TencentCloud
                 UpdateConsoleGroupOutcomeCallable UpdateConsoleGroupCallable(const Model::UpdateConsoleGroupRequest& request);
 
                 /**
-                 *修改控制台用户角色
+                 *修改控制台用户角色，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。
                  * @param req UpdateConsoleUsersRequest
                  * @return UpdateConsoleUsersOutcome
                  */
@@ -934,7 +934,7 @@ namespace TencentCloud
                 UpdateWorkflowOutcomeCallable UpdateWorkflowCallable(const Model::UpdateWorkflowRequest& request);
 
                 /**
-                 *修改工作空间
+                 *修改工作空间，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。
                  * @param req UpdateWorkspaceRequest
                  * @return UpdateWorkspaceOutcome
                  */

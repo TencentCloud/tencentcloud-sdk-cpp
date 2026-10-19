@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取统一社会信用代码（三合一之前为注册号）
-                     * @return RegNum 统一社会信用代码（三合一之前为注册号）
+                     * 获取<p>统一社会信用代码（三合一之前为注册号）</p>
+                     * @return RegNum <p>统一社会信用代码（三合一之前为注册号）</p>
                      * 
                      */
                     std::string GetRegNum() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool RegNumHasBeenSet() const;
 
                     /**
-                     * 获取公司名称
-                     * @return Name 公司名称
+                     * 获取<p>公司名称</p>
+                     * @return Name <p>公司名称</p>
                      * 
                      */
                     std::string GetName() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取注册资本
-                     * @return Capital 注册资本
+                     * 获取<p>注册资本</p>
+                     * @return Capital <p>注册资本</p>
                      * 
                      */
                     std::string GetCapital() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool CapitalHasBeenSet() const;
 
                     /**
-                     * 获取法定代表人
-                     * @return Person 法定代表人
+                     * 获取<p>法定代表人</p>
+                     * @return Person <p>法定代表人</p>
                      * 
                      */
                     std::string GetPerson() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool PersonHasBeenSet() const;
 
                     /**
-                     * 获取地址
-                     * @return Address 地址
+                     * 获取<p>地址</p>
+                     * @return Address <p>地址</p>
                      * 
                      */
                     std::string GetAddress() const;
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取经营范围
-                     * @return Business 经营范围
+                     * 获取<p>经营范围</p>
+                     * @return Business <p>经营范围</p>
                      * 
                      */
                     std::string GetBusiness() const;
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool BusinessHasBeenSet() const;
 
                     /**
-                     * 获取主体类型
-                     * @return Type 主体类型
+                     * 获取<p>主体类型</p>
+                     * @return Type <p>主体类型</p>
                      * 
                      */
                     std::string GetType() const;
@@ -143,8 +143,8 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取营业期限
-                     * @return Period 营业期限
+                     * 获取<p>营业期限</p>
+                     * @return Period <p>营业期限</p>
                      * 
                      */
                     std::string GetPeriod() const;
@@ -157,8 +157,8 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取组成形式
-                     * @return ComposingForm 组成形式
+                     * 获取<p>组成形式</p>
+                     * @return ComposingForm <p>组成形式</p>
                      * 
                      */
                     std::string GetComposingForm() const;
@@ -171,8 +171,8 @@ namespace TencentCloud
                     bool ComposingFormHasBeenSet() const;
 
                     /**
-                     * 获取成立日期
-                     * @return SetDate 成立日期
+                     * 获取<p>成立日期</p>
+                     * @return SetDate <p>成立日期</p>
                      * 
                      */
                     std::string GetSetDate() const;
@@ -185,12 +185,8 @@ namespace TencentCloud
                     bool SetDateHasBeenSet() const;
 
                     /**
-                     * 获取Code 告警码列表和释义：
--9102 黑白复印件告警
--9104 翻拍件告警
-                     * @return RecognizeWarnCode Code 告警码列表和释义：
--9102 黑白复印件告警
--9104 翻拍件告警
+                     * 获取<p>Code 告警码列表和释义：<br>-9102 黑白复印件告警<br>-9104 翻拍件告警<br>-9108 经营范围识别异常告警（由于文字过小、模糊、反光、遮挡或明显倾斜等情况导致未能正常识别）</p>
+                     * @return RecognizeWarnCode <p>Code 告警码列表和释义：<br>-9102 黑白复印件告警<br>-9104 翻拍件告警<br>-9108 经营范围识别异常告警（由于文字过小、模糊、反光、遮挡或明显倾斜等情况导致未能正常识别）</p>
                      * 
                      */
                     std::vector<int64_t> GetRecognizeWarnCode() const;
@@ -203,12 +199,8 @@ namespace TencentCloud
                     bool RecognizeWarnCodeHasBeenSet() const;
 
                     /**
-                     * 获取告警码说明：
-WARN_COPY_CARD 黑白复印件告警
-WARN_RESHOOT_CARD翻拍件告警
-                     * @return RecognizeWarnMsg 告警码说明：
-WARN_COPY_CARD 黑白复印件告警
-WARN_RESHOOT_CARD翻拍件告警
+                     * 获取<p>告警码说明：<br>WARN_COPY_CARD 黑白复印件告警<br>WARN_RESHOOT_CARD翻拍件告警<br>WARN_EARLY_STOP 经营范围识别异常告警</p>
+                     * @return RecognizeWarnMsg <p>告警码说明：<br>WARN_COPY_CARD 黑白复印件告警<br>WARN_RESHOOT_CARD翻拍件告警<br>WARN_EARLY_STOP 经营范围识别异常告警</p>
                      * 
                      */
                     std::vector<std::string> GetRecognizeWarnMsg() const;
@@ -221,8 +213,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool RecognizeWarnMsgHasBeenSet() const;
 
                     /**
-                     * 获取是否为副本。1为是，-1为不是。
-                     * @return IsDuplication 是否为副本。1为是，-1为不是。
+                     * 获取<p>是否为副本。1为是，-1为不是。</p>
+                     * @return IsDuplication <p>是否为副本。1为是，-1为不是。</p>
                      * 
                      */
                     int64_t GetIsDuplication() const;
@@ -235,8 +227,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool IsDuplicationHasBeenSet() const;
 
                     /**
-                     * 获取登记日期
-                     * @return RegistrationDate 登记日期
+                     * 获取<p>登记日期</p>
+                     * @return RegistrationDate <p>登记日期</p>
                      * 
                      */
                     std::string GetRegistrationDate() const;
@@ -249,12 +241,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool RegistrationDateHasBeenSet() const;
 
                     /**
-                     * 获取 图片旋转角度(角度制)，文本的水平方向为0度；顺时针为正，角度范围是0-360度
-
-
-                     * @return Angle  图片旋转角度(角度制)，文本的水平方向为0度；顺时针为正，角度范围是0-360度
-
-
+                     * 获取<p>图片旋转角度(角度制)，文本的水平方向为0度；顺时针为正，角度范围是0-360度</p>
+                     * @return Angle <p>图片旋转角度(角度制)，文本的水平方向为0度；顺时针为正，角度范围是0-360度</p>
                      * 
                      */
                     double GetAngle() const;
@@ -267,8 +255,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool AngleHasBeenSet() const;
 
                     /**
-                     * 获取是否有国徽。false为没有，true为有。
-                     * @return NationalEmblem 是否有国徽。false为没有，true为有。
+                     * 获取<p>是否有国徽。false为没有，true为有。</p>
+                     * @return NationalEmblem <p>是否有国徽。false为没有，true为有。</p>
                      * 
                      */
                     bool GetNationalEmblem() const;
@@ -281,8 +269,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool NationalEmblemHasBeenSet() const;
 
                     /**
-                     * 获取是否有二维码。false为没有，true为有。
-                     * @return QRCode 是否有二维码。false为没有，true为有。
+                     * 获取<p>是否有二维码。false为没有，true为有。</p>
+                     * @return QRCode <p>是否有二维码。false为没有，true为有。</p>
                      * 
                      */
                     bool GetQRCode() const;
@@ -295,8 +283,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool QRCodeHasBeenSet() const;
 
                     /**
-                     * 获取是否有印章。false为没有，true为有。
-                     * @return Seal 是否有印章。false为没有，true为有。
+                     * 获取<p>是否有印章。false为没有，true为有。</p>
+                     * @return Seal <p>是否有印章。false为没有，true为有。</p>
                      * 
                      */
                     bool GetSeal() const;
@@ -309,8 +297,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool SealHasBeenSet() const;
 
                     /**
-                     * 获取标题
-                     * @return Title 标题
+                     * 获取<p>标题</p>
+                     * @return Title <p>标题</p>
                      * 
                      */
                     std::string GetTitle() const;
@@ -323,8 +311,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取编号
-                     * @return SerialNumber 编号
+                     * 获取<p>编号</p>
+                     * @return SerialNumber <p>编号</p>
                      * 
                      */
                     std::string GetSerialNumber() const;
@@ -337,8 +325,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool SerialNumberHasBeenSet() const;
 
                     /**
-                     * 获取登记机关
-                     * @return RegistrationAuthority 登记机关
+                     * 获取<p>登记机关</p>
+                     * @return RegistrationAuthority <p>登记机关</p>
                      * 
                      */
                     std::string GetRegistrationAuthority() const;
@@ -351,8 +339,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool RegistrationAuthorityHasBeenSet() const;
 
                     /**
-                     * 获取是否是电子营业执照。false为没有，true为有。
-                     * @return Electronic 是否是电子营业执照。false为没有，true为有。
+                     * 获取<p>是否是电子营业执照。false为没有，true为有。</p>
+                     * @return Electronic <p>是否是电子营业执照。false为没有，true为有。</p>
                      * 
                      */
                     bool GetElectronic() const;
@@ -365,8 +353,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool ElectronicHasBeenSet() const;
 
                     /**
-                     * 获取非营业执照的营业类证件识别结果，将以结构化形式呈现。
-                     * @return BusinessCertificate 非营业执照的营业类证件识别结果，将以结构化形式呈现。
+                     * 获取<p>非营业执照的营业类证件识别结果，将以结构化形式呈现。</p>
+                     * @return BusinessCertificate <p>非营业执照的营业类证件识别结果，将以结构化形式呈现。</p>
                      * 
                      */
                     std::vector<BusinessCertificateInfo> GetBusinessCertificate() const;
@@ -379,8 +367,8 @@ WARN_RESHOOT_CARD翻拍件告警
                     bool BusinessCertificateHasBeenSet() const;
 
                     /**
-                     * 获取重要提示字段
-                     * @return Important 重要提示字段
+                     * 获取<p>重要提示字段</p>
+                     * @return Important <p>重要提示字段</p>
                      * 
                      */
                     std::string GetImportant() const;
@@ -395,151 +383,145 @@ WARN_RESHOOT_CARD翻拍件告警
                 private:
 
                     /**
-                     * 统一社会信用代码（三合一之前为注册号）
+                     * <p>统一社会信用代码（三合一之前为注册号）</p>
                      */
                     std::string m_regNum;
                     bool m_regNumHasBeenSet;
 
                     /**
-                     * 公司名称
+                     * <p>公司名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 注册资本
+                     * <p>注册资本</p>
                      */
                     std::string m_capital;
                     bool m_capitalHasBeenSet;
 
                     /**
-                     * 法定代表人
+                     * <p>法定代表人</p>
                      */
                     std::string m_person;
                     bool m_personHasBeenSet;
 
                     /**
-                     * 地址
+                     * <p>地址</p>
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
-                     * 经营范围
+                     * <p>经营范围</p>
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;
 
                     /**
-                     * 主体类型
+                     * <p>主体类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 营业期限
+                     * <p>营业期限</p>
                      */
                     std::string m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 组成形式
+                     * <p>组成形式</p>
                      */
                     std::string m_composingForm;
                     bool m_composingFormHasBeenSet;
 
                     /**
-                     * 成立日期
+                     * <p>成立日期</p>
                      */
                     std::string m_setDate;
                     bool m_setDateHasBeenSet;
 
                     /**
-                     * Code 告警码列表和释义：
--9102 黑白复印件告警
--9104 翻拍件告警
+                     * <p>Code 告警码列表和释义：<br>-9102 黑白复印件告警<br>-9104 翻拍件告警<br>-9108 经营范围识别异常告警（由于文字过小、模糊、反光、遮挡或明显倾斜等情况导致未能正常识别）</p>
                      */
                     std::vector<int64_t> m_recognizeWarnCode;
                     bool m_recognizeWarnCodeHasBeenSet;
 
                     /**
-                     * 告警码说明：
-WARN_COPY_CARD 黑白复印件告警
-WARN_RESHOOT_CARD翻拍件告警
+                     * <p>告警码说明：<br>WARN_COPY_CARD 黑白复印件告警<br>WARN_RESHOOT_CARD翻拍件告警<br>WARN_EARLY_STOP 经营范围识别异常告警</p>
                      */
                     std::vector<std::string> m_recognizeWarnMsg;
                     bool m_recognizeWarnMsgHasBeenSet;
 
                     /**
-                     * 是否为副本。1为是，-1为不是。
+                     * <p>是否为副本。1为是，-1为不是。</p>
                      */
                     int64_t m_isDuplication;
                     bool m_isDuplicationHasBeenSet;
 
                     /**
-                     * 登记日期
+                     * <p>登记日期</p>
                      */
                     std::string m_registrationDate;
                     bool m_registrationDateHasBeenSet;
 
                     /**
-                     *  图片旋转角度(角度制)，文本的水平方向为0度；顺时针为正，角度范围是0-360度
-
-
+                     * <p>图片旋转角度(角度制)，文本的水平方向为0度；顺时针为正，角度范围是0-360度</p>
                      */
                     double m_angle;
                     bool m_angleHasBeenSet;
 
                     /**
-                     * 是否有国徽。false为没有，true为有。
+                     * <p>是否有国徽。false为没有，true为有。</p>
                      */
                     bool m_nationalEmblem;
                     bool m_nationalEmblemHasBeenSet;
 
                     /**
-                     * 是否有二维码。false为没有，true为有。
+                     * <p>是否有二维码。false为没有，true为有。</p>
                      */
                     bool m_qRCode;
                     bool m_qRCodeHasBeenSet;
 
                     /**
-                     * 是否有印章。false为没有，true为有。
+                     * <p>是否有印章。false为没有，true为有。</p>
                      */
                     bool m_seal;
                     bool m_sealHasBeenSet;
 
                     /**
-                     * 标题
+                     * <p>标题</p>
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
-                     * 编号
+                     * <p>编号</p>
                      */
                     std::string m_serialNumber;
                     bool m_serialNumberHasBeenSet;
 
                     /**
-                     * 登记机关
+                     * <p>登记机关</p>
                      */
                     std::string m_registrationAuthority;
                     bool m_registrationAuthorityHasBeenSet;
 
                     /**
-                     * 是否是电子营业执照。false为没有，true为有。
+                     * <p>是否是电子营业执照。false为没有，true为有。</p>
                      */
                     bool m_electronic;
                     bool m_electronicHasBeenSet;
 
                     /**
-                     * 非营业执照的营业类证件识别结果，将以结构化形式呈现。
+                     * <p>非营业执照的营业类证件识别结果，将以结构化形式呈现。</p>
                      */
                     std::vector<BusinessCertificateInfo> m_businessCertificate;
                     bool m_businessCertificateHasBeenSet;
 
                     /**
-                     * 重要提示字段
+                     * <p>重要提示字段</p>
                      */
                     std::string m_important;
                     bool m_importantHasBeenSet;

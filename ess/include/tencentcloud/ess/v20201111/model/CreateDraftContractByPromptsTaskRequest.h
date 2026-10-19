@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
-                     * @return Operator 执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * 获取<p>执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</p>
+                     * @return Operator <p>执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</p>
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
-                     * @param _operator 执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * 设置<p>执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</p>
+                     * @param _operator <p>执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</p>
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取起草要求，范围要求 5-1000 字
-                     * @return Requirement 起草要求，范围要求 5-1000 字
+                     * 获取<p>起草要求，范围要求 5-1000 字</p>
+                     * @return Requirement <p>起草要求，范围要求 5-1000 字</p>
                      * 
                      */
                     std::string GetRequirement() const;
 
                     /**
-                     * 设置起草要求，范围要求 5-1000 字
-                     * @param _requirement 起草要求，范围要求 5-1000 字
+                     * 设置<p>起草要求，范围要求 5-1000 字</p>
+                     * @param _requirement <p>起草要求，范围要求 5-1000 字</p>
                      * 
                      */
                     void SetRequirement(const std::string& _requirement);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool RequirementHasBeenSet() const;
 
                     /**
-                     * 获取参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
-                     * @return ReferenceTemplateId 参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
+                     * 获取<p>参考模板文件资源id（PDF/Word格式），大小不超过1M，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles">上传文件</a>接口来获取。</p>
+                     * @return ReferenceTemplateId <p>参考模板文件资源id（PDF/Word格式），大小不超过1M，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles">上传文件</a>接口来获取。</p>
                      * 
                      */
                     std::string GetReferenceTemplateId() const;
 
                     /**
-                     * 设置参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
-                     * @param _referenceTemplateId 参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
+                     * 设置<p>参考模板文件资源id（PDF/Word格式），大小不超过1M，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles">上传文件</a>接口来获取。</p>
+                     * @param _referenceTemplateId <p>参考模板文件资源id（PDF/Word格式），大小不超过1M，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles">上传文件</a>接口来获取。</p>
                      * 
                      */
                     void SetReferenceTemplateId(const std::string& _referenceTemplateId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ReferenceTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
-                     * @return RequirementFileIds 相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
+                     * 获取<p>相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles">上传文件</a>接口来获取。</p>
+                     * @return RequirementFileIds <p>相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles">上传文件</a>接口来获取。</p>
                      * 
                      */
                     std::vector<std::string> GetRequirementFileIds() const;
 
                     /**
-                     * 设置相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
-                     * @param _requirementFileIds 相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
+                     * 设置<p>相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles">上传文件</a>接口来获取。</p>
+                     * @param _requirementFileIds <p>相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles">上传文件</a>接口来获取。</p>
                      * 
                      */
                     void SetRequirementFileIds(const std::vector<std::string>& _requirementFileIds);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool RequirementFileIdsHasBeenSet() const;
 
                     /**
-                     * 获取起草合同的语言要求（zh，en）默认zh
-                     * @return ContractLanguage 起草合同的语言要求（zh，en）默认zh
+                     * 获取<p>起草合同的语言要求（zh，en）默认zh</p>
+                     * @return ContractLanguage <p>起草合同的语言要求（zh，en）默认zh</p>
                      * 
                      */
                     std::string GetContractLanguage() const;
 
                     /**
-                     * 设置起草合同的语言要求（zh，en）默认zh
-                     * @param _contractLanguage 起草合同的语言要求（zh，en）默认zh
+                     * 设置<p>起草合同的语言要求（zh，en）默认zh</p>
+                     * @param _contractLanguage <p>起草合同的语言要求（zh，en）默认zh</p>
                      * 
                      */
                     void SetContractLanguage(const std::string& _contractLanguage);
@@ -148,37 +148,64 @@ namespace TencentCloud
                      */
                     bool ContractLanguageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>审查任务id，仅支持传入1个，通过<a href="https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchContractReviewTask/">批量创建合同审查任务</a>接口来获取。</p>
+                     * @return ReviewTaskId <p>审查任务id，仅支持传入1个，通过<a href="https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchContractReviewTask/">批量创建合同审查任务</a>接口来获取。</p>
+                     * 
+                     */
+                    std::string GetReviewTaskId() const;
+
+                    /**
+                     * 设置<p>审查任务id，仅支持传入1个，通过<a href="https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchContractReviewTask/">批量创建合同审查任务</a>接口来获取。</p>
+                     * @param _reviewTaskId <p>审查任务id，仅支持传入1个，通过<a href="https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchContractReviewTask/">批量创建合同审查任务</a>接口来获取。</p>
+                     * 
+                     */
+                    void SetReviewTaskId(const std::string& _reviewTaskId);
+
+                    /**
+                     * 判断参数 ReviewTaskId 是否已赋值
+                     * @return ReviewTaskId 是否已赋值
+                     * 
+                     */
+                    bool ReviewTaskIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+                     * <p>执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 起草要求，范围要求 5-1000 字
+                     * <p>起草要求，范围要求 5-1000 字</p>
                      */
                     std::string m_requirement;
                     bool m_requirementHasBeenSet;
 
                     /**
-                     * 参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
+                     * <p>参考模板文件资源id（PDF/Word格式），大小不超过1M，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles">上传文件</a>接口来获取。</p>
                      */
                     std::string m_referenceTemplateId;
                     bool m_referenceTemplateIdHasBeenSet;
 
                     /**
-                     * 相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。
+                     * <p>相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过<a href="https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles">上传文件</a>接口来获取。</p>
                      */
                     std::vector<std::string> m_requirementFileIds;
                     bool m_requirementFileIdsHasBeenSet;
 
                     /**
-                     * 起草合同的语言要求（zh，en）默认zh
+                     * <p>起草合同的语言要求（zh，en）默认zh</p>
                      */
                     std::string m_contractLanguage;
                     bool m_contractLanguageHasBeenSet;
+
+                    /**
+                     * <p>审查任务id，仅支持传入1个，通过<a href="https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchContractReviewTask/">批量创建合同审查任务</a>接口来获取。</p>
+                     */
+                    std::string m_reviewTaskId;
+                    bool m_reviewTaskIdHasBeenSet;
 
                 };
             }

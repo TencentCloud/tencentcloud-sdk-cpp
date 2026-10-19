@@ -51,7 +51,9 @@ EdgeAclRuleResp::EdgeAclRuleResp() :
     m_cityKeyHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_dnsParseCntHasBeenSet(false)
+    m_dnsParseCntHasBeenSet(false),
+    m_hitCountHasBeenSet(false),
+    m_lastHitTimeHasBeenSet(false)
 {
 }
 
@@ -377,6 +379,26 @@ CoreInternalOutcome EdgeAclRuleResp::Deserialize(const rapidjson::Value &value)
         m_dnsParseCntHasBeenSet = true;
     }
 
+    if (value.HasMember("HitCount") && !value["HitCount"].IsNull())
+    {
+        if (!value["HitCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeAclRuleResp.HitCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitCount = value["HitCount"].GetInt64();
+        m_hitCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastHitTime") && !value["LastHitTime"].IsNull())
+    {
+        if (!value["LastHitTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeAclRuleResp.LastHitTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastHitTime = string(value["LastHitTime"].GetString());
+        m_lastHitTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -631,6 +653,22 @@ void EdgeAclRuleResp::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "DnsParseCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dnsParseCnt, allocator);
+    }
+
+    if (m_hitCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hitCount, allocator);
+    }
+
+    if (m_lastHitTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastHitTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastHitTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1130,5 +1168,37 @@ void EdgeAclRuleResp::SetDnsParseCnt(const int64_t& _dnsParseCnt)
 bool EdgeAclRuleResp::DnsParseCntHasBeenSet() const
 {
     return m_dnsParseCntHasBeenSet;
+}
+
+int64_t EdgeAclRuleResp::GetHitCount() const
+{
+    return m_hitCount;
+}
+
+void EdgeAclRuleResp::SetHitCount(const int64_t& _hitCount)
+{
+    m_hitCount = _hitCount;
+    m_hitCountHasBeenSet = true;
+}
+
+bool EdgeAclRuleResp::HitCountHasBeenSet() const
+{
+    return m_hitCountHasBeenSet;
+}
+
+string EdgeAclRuleResp::GetLastHitTime() const
+{
+    return m_lastHitTime;
+}
+
+void EdgeAclRuleResp::SetLastHitTime(const string& _lastHitTime)
+{
+    m_lastHitTime = _lastHitTime;
+    m_lastHitTimeHasBeenSet = true;
+}
+
+bool EdgeAclRuleResp::LastHitTimeHasBeenSet() const
+{
+    return m_lastHitTimeHasBeenSet;
 }
 

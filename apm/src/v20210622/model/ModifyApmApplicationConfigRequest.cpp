@@ -86,7 +86,9 @@ ModifyApmApplicationConfigRequest::ModifyApmApplicationConfigRequest() :
     m_headSamplerTypeHasBeenSet(false),
     m_headSamplerArgHasBeenSet(false),
     m_crossAccountStatusHasBeenSet(false),
-    m_crossAccountPeerIdHasBeenSet(false)
+    m_crossAccountPeerIdHasBeenSet(false),
+    m_enableSpanStatusConfigHasBeenSet(false),
+    m_spanStatusConfigHasBeenSet(false)
 {
 }
 
@@ -623,6 +625,23 @@ string ModifyApmApplicationConfigRequest::ToJsonString() const
         string key = "CrossAccountPeerId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_crossAccountPeerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableSpanStatusConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSpanStatusConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSpanStatusConfig, allocator);
+    }
+
+    if (m_spanStatusConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpanStatusConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spanStatusConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1655,6 +1674,38 @@ void ModifyApmApplicationConfigRequest::SetCrossAccountPeerId(const string& _cro
 bool ModifyApmApplicationConfigRequest::CrossAccountPeerIdHasBeenSet() const
 {
     return m_crossAccountPeerIdHasBeenSet;
+}
+
+bool ModifyApmApplicationConfigRequest::GetEnableSpanStatusConfig() const
+{
+    return m_enableSpanStatusConfig;
+}
+
+void ModifyApmApplicationConfigRequest::SetEnableSpanStatusConfig(const bool& _enableSpanStatusConfig)
+{
+    m_enableSpanStatusConfig = _enableSpanStatusConfig;
+    m_enableSpanStatusConfigHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::EnableSpanStatusConfigHasBeenSet() const
+{
+    return m_enableSpanStatusConfigHasBeenSet;
+}
+
+SpanStatusConfig ModifyApmApplicationConfigRequest::GetSpanStatusConfig() const
+{
+    return m_spanStatusConfig;
+}
+
+void ModifyApmApplicationConfigRequest::SetSpanStatusConfig(const SpanStatusConfig& _spanStatusConfig)
+{
+    m_spanStatusConfig = _spanStatusConfig;
+    m_spanStatusConfigHasBeenSet = true;
+}
+
+bool ModifyApmApplicationConfigRequest::SpanStatusConfigHasBeenSet() const
+{
+    return m_spanStatusConfigHasBeenSet;
 }
 
 

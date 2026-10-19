@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待处理风险个数
-                     * @return UnprocessedRisk 待处理风险个数
+                     * 获取<p>待处理风险个数</p>
+                     * @return UnprocessedRisk <p>待处理风险个数</p>
                      * 
                      */
                     int64_t GetUnprocessedRisk() const;
 
                     /**
-                     * 设置待处理风险个数
-                     * @param _unprocessedRisk 待处理风险个数
+                     * 设置<p>待处理风险个数</p>
+                     * @param _unprocessedRisk <p>待处理风险个数</p>
                      * 
                      */
                     void SetUnprocessedRisk(const int64_t& _unprocessedRisk);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool UnprocessedRiskHasBeenSet() const;
 
                     /**
-                     * 获取配置风险个数
-                     * @return ConfigurationRisk 配置风险个数
+                     * 获取<p>配置风险个数</p>
+                     * @return ConfigurationRisk <p>配置风险个数</p>
                      * @deprecated
                      */
                     int64_t GetConfigurationRisk() const;
 
                     /**
-                     * 设置配置风险个数
-                     * @param _configurationRisk 配置风险个数
+                     * 设置<p>配置风险个数</p>
+                     * @param _configurationRisk <p>配置风险个数</p>
                      * @deprecated
                      */
                     void SetConfigurationRisk(const int64_t& _configurationRisk);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ConfigurationRiskHasBeenSet() const;
 
                     /**
-                     * 获取基线风险个数
-                     * @return BaselineDeviation 基线风险个数
+                     * 获取<p>基线风险个数</p>
+                     * @return BaselineDeviation <p>基线风险个数</p>
                      * @deprecated
                      */
                     int64_t GetBaselineDeviation() const;
 
                     /**
-                     * 设置基线风险个数
-                     * @param _baselineDeviation 基线风险个数
+                     * 设置<p>基线风险个数</p>
+                     * @param _baselineDeviation <p>基线风险个数</p>
                      * @deprecated
                      */
                     void SetBaselineDeviation(const int64_t& _baselineDeviation);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool BaselineDeviationHasBeenSet() const;
 
                     /**
-                     * 获取泄露风险个数
-                     * @return LeakDetection 泄露风险个数
+                     * 获取<p>泄露风险个数</p>
+                     * @return LeakDetection <p>泄露风险个数</p>
                      * @deprecated
                      */
                     int64_t GetLeakDetection() const;
 
                     /**
-                     * 设置泄露风险个数
-                     * @param _leakDetection 泄露风险个数
+                     * 设置<p>泄露风险个数</p>
+                     * @param _leakDetection <p>泄露风险个数</p>
                      * @deprecated
                      */
                     void SetLeakDetection(const int64_t& _leakDetection);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool LeakDetectionHasBeenSet() const;
 
                     /**
-                     * 获取SQL行为异常风险个数
-                     * @return SQLBehaviorAnomaly SQL行为异常风险个数
+                     * 获取<p>SQL行为异常风险个数</p>
+                     * @return SQLBehaviorAnomaly <p>SQL行为异常风险个数</p>
                      * 
                      */
                     int64_t GetSQLBehaviorAnomaly() const;
 
                     /**
-                     * 设置SQL行为异常风险个数
-                     * @param _sQLBehaviorAnomaly SQL行为异常风险个数
+                     * 设置<p>SQL行为异常风险个数</p>
+                     * @param _sQLBehaviorAnomaly <p>SQL行为异常风险个数</p>
                      * 
                      */
                     void SetSQLBehaviorAnomaly(const int64_t& _sQLBehaviorAnomaly);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool SQLBehaviorAnomalyHasBeenSet() const;
 
                     /**
-                     * 获取权限异常风险个数
-                     * @return PermissionAnomaly 权限异常风险个数
+                     * 获取<p>权限异常风险个数</p>
+                     * @return PermissionAnomaly <p>权限异常风险个数</p>
                      * 
                      */
                     int64_t GetPermissionAnomaly() const;
 
                     /**
-                     * 设置权限异常风险个数
-                     * @param _permissionAnomaly 权限异常风险个数
+                     * 设置<p>权限异常风险个数</p>
+                     * @param _permissionAnomaly <p>权限异常风险个数</p>
                      * 
                      */
                     void SetPermissionAnomaly(const int64_t& _permissionAnomaly);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool PermissionAnomalyHasBeenSet() const;
 
                     /**
-                     * 获取登录行为异常风险个数
-                     * @return LoginBehaviorAnomaly 登录行为异常风险个数
+                     * 获取<p>登录行为异常风险个数</p>
+                     * @return LoginBehaviorAnomaly <p>登录行为异常风险个数</p>
                      * 
                      */
                     int64_t GetLoginBehaviorAnomaly() const;
 
                     /**
-                     * 设置登录行为异常风险个数
-                     * @param _loginBehaviorAnomaly 登录行为异常风险个数
+                     * 设置<p>登录行为异常风险个数</p>
+                     * @param _loginBehaviorAnomaly <p>登录行为异常风险个数</p>
                      * 
                      */
                     void SetLoginBehaviorAnomaly(const int64_t& _loginBehaviorAnomaly);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool LoginBehaviorAnomalyHasBeenSet() const;
 
                     /**
-                     * 获取攻击面风险个数
-                     * @return AttackSurfaceRisk 攻击面风险个数
+                     * 获取<p>攻击面风险个数</p>
+                     * @return AttackSurfaceRisk <p>攻击面风险个数</p>
                      * 
                      */
                     int64_t GetAttackSurfaceRisk() const;
 
                     /**
-                     * 设置攻击面风险个数
-                     * @param _attackSurfaceRisk 攻击面风险个数
+                     * 设置<p>攻击面风险个数</p>
+                     * @param _attackSurfaceRisk <p>攻击面风险个数</p>
                      * 
                      */
                     void SetAttackSurfaceRisk(const int64_t& _attackSurfaceRisk);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool AttackSurfaceRiskHasBeenSet() const;
 
                     /**
-                     * 获取账号敏感操作个数
-                     * @return AccountSensitiveOperation 账号敏感操作个数
+                     * 获取<p>账号敏感操作个数</p>
+                     * @return AccountSensitiveOperation <p>账号敏感操作个数</p>
                      * 
                      */
                     int64_t GetAccountSensitiveOperation() const;
 
                     /**
-                     * 设置账号敏感操作个数
-                     * @param _accountSensitiveOperation 账号敏感操作个数
+                     * 设置<p>账号敏感操作个数</p>
+                     * @param _accountSensitiveOperation <p>账号敏感操作个数</p>
                      * 
                      */
                     void SetAccountSensitiveOperation(const int64_t& _accountSensitiveOperation);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool AccountSensitiveOperationHasBeenSet() const;
 
                     /**
-                     * 获取待处理告警个数
-                     * @return UnprocessedAlarm 待处理告警个数
+                     * 获取<p>待处理告警个数</p>
+                     * @return UnprocessedAlarm <p>待处理告警个数</p>
                      * 
                      */
                     int64_t GetUnprocessedAlarm() const;
 
                     /**
-                     * 设置待处理告警个数
-                     * @param _unprocessedAlarm 待处理告警个数
+                     * 设置<p>待处理告警个数</p>
+                     * @param _unprocessedAlarm <p>待处理告警个数</p>
                      * 
                      */
                     void SetUnprocessedAlarm(const int64_t& _unprocessedAlarm);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool UnprocessedAlarmHasBeenSet() const;
 
                     /**
-                     * 获取新增事件告警
-                     * @return NumOfNewAlarmEvent 新增事件告警
+                     * 获取<p>新增事件告警</p>
+                     * @return NumOfNewAlarmEvent <p>新增事件告警</p>
                      * 
                      */
                     int64_t GetNumOfNewAlarmEvent() const;
 
                     /**
-                     * 设置新增事件告警
-                     * @param _numOfNewAlarmEvent 新增事件告警
+                     * 设置<p>新增事件告警</p>
+                     * @param _numOfNewAlarmEvent <p>新增事件告警</p>
                      * 
                      */
                     void SetNumOfNewAlarmEvent(const int64_t& _numOfNewAlarmEvent);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool NumOfNewAlarmEventHasBeenSet() const;
 
                     /**
-                     * 获取新增配置风险
-                     * @return NumOfNewConfigRisk 新增配置风险
+                     * 获取<p>新增配置风险</p>
+                     * @return NumOfNewConfigRisk <p>新增配置风险</p>
                      * 
                      */
                     int64_t GetNumOfNewConfigRisk() const;
 
                     /**
-                     * 设置新增配置风险
-                     * @param _numOfNewConfigRisk 新增配置风险
+                     * 设置<p>新增配置风险</p>
+                     * @param _numOfNewConfigRisk <p>新增配置风险</p>
                      * 
                      */
                     void SetNumOfNewConfigRisk(const int64_t& _numOfNewConfigRisk);
@@ -298,79 +298,133 @@ namespace TencentCloud
                      */
                     bool NumOfNewConfigRiskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>账号风险条数</p>
+                     * @return AccountRisk <p>账号风险条数</p>
+                     * 
+                     */
+                    int64_t GetAccountRisk() const;
+
+                    /**
+                     * 设置<p>账号风险条数</p>
+                     * @param _accountRisk <p>账号风险条数</p>
+                     * 
+                     */
+                    void SetAccountRisk(const int64_t& _accountRisk);
+
+                    /**
+                     * 判断参数 AccountRisk 是否已赋值
+                     * @return AccountRisk 是否已赋值
+                     * 
+                     */
+                    bool AccountRiskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>配置风险条数</p>
+                     * @return ConfigRisk <p>配置风险条数</p>
+                     * 
+                     */
+                    int64_t GetConfigRisk() const;
+
+                    /**
+                     * 设置<p>配置风险条数</p>
+                     * @param _configRisk <p>配置风险条数</p>
+                     * 
+                     */
+                    void SetConfigRisk(const int64_t& _configRisk);
+
+                    /**
+                     * 判断参数 ConfigRisk 是否已赋值
+                     * @return ConfigRisk 是否已赋值
+                     * 
+                     */
+                    bool ConfigRiskHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 待处理风险个数
+                     * <p>待处理风险个数</p>
                      */
                     int64_t m_unprocessedRisk;
                     bool m_unprocessedRiskHasBeenSet;
 
                     /**
-                     * 配置风险个数
+                     * <p>配置风险个数</p>
                      */
                     int64_t m_configurationRisk;
                     bool m_configurationRiskHasBeenSet;
 
                     /**
-                     * 基线风险个数
+                     * <p>基线风险个数</p>
                      */
                     int64_t m_baselineDeviation;
                     bool m_baselineDeviationHasBeenSet;
 
                     /**
-                     * 泄露风险个数
+                     * <p>泄露风险个数</p>
                      */
                     int64_t m_leakDetection;
                     bool m_leakDetectionHasBeenSet;
 
                     /**
-                     * SQL行为异常风险个数
+                     * <p>SQL行为异常风险个数</p>
                      */
                     int64_t m_sQLBehaviorAnomaly;
                     bool m_sQLBehaviorAnomalyHasBeenSet;
 
                     /**
-                     * 权限异常风险个数
+                     * <p>权限异常风险个数</p>
                      */
                     int64_t m_permissionAnomaly;
                     bool m_permissionAnomalyHasBeenSet;
 
                     /**
-                     * 登录行为异常风险个数
+                     * <p>登录行为异常风险个数</p>
                      */
                     int64_t m_loginBehaviorAnomaly;
                     bool m_loginBehaviorAnomalyHasBeenSet;
 
                     /**
-                     * 攻击面风险个数
+                     * <p>攻击面风险个数</p>
                      */
                     int64_t m_attackSurfaceRisk;
                     bool m_attackSurfaceRiskHasBeenSet;
 
                     /**
-                     * 账号敏感操作个数
+                     * <p>账号敏感操作个数</p>
                      */
                     int64_t m_accountSensitiveOperation;
                     bool m_accountSensitiveOperationHasBeenSet;
 
                     /**
-                     * 待处理告警个数
+                     * <p>待处理告警个数</p>
                      */
                     int64_t m_unprocessedAlarm;
                     bool m_unprocessedAlarmHasBeenSet;
 
                     /**
-                     * 新增事件告警
+                     * <p>新增事件告警</p>
                      */
                     int64_t m_numOfNewAlarmEvent;
                     bool m_numOfNewAlarmEventHasBeenSet;
 
                     /**
-                     * 新增配置风险
+                     * <p>新增配置风险</p>
                      */
                     int64_t m_numOfNewConfigRisk;
                     bool m_numOfNewConfigRiskHasBeenSet;
+
+                    /**
+                     * <p>账号风险条数</p>
+                     */
+                    int64_t m_accountRisk;
+                    bool m_accountRiskHasBeenSet;
+
+                    /**
+                     * <p>配置风险条数</p>
+                     */
+                    int64_t m_configRisk;
+                    bool m_configRiskHasBeenSet;
 
                 };
             }

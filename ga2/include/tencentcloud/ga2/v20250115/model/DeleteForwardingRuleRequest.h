@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全球加速实例ID。
-                     * @return GlobalAcceleratorId 全球加速实例ID。
+                     * 获取<p>全球加速实例ID。</p>
+                     * @return GlobalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorId() const;
 
                     /**
-                     * 设置全球加速实例ID。
-                     * @param _globalAcceleratorId 全球加速实例ID。
+                     * 设置<p>全球加速实例ID。</p>
+                     * @param _globalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     void SetGlobalAcceleratorId(const std::string& _globalAcceleratorId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器ID。
-                     * @return ListenerId 监听器ID。
+                     * 获取<p>监听器ID。</p>
+                     * @return ListenerId <p>监听器ID。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器ID。
-                     * @param _listenerId 监听器ID。
+                     * 设置<p>监听器ID。</p>
+                     * @param _listenerId <p>监听器ID。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取策略ID。
-                     * @return ForwardingPolicyId 策略ID。
+                     * 获取<p>七层转发策略ID。</p>
+                     * @return ForwardingPolicyId <p>七层转发策略ID。</p>
                      * 
                      */
                     std::string GetForwardingPolicyId() const;
 
                     /**
-                     * 设置策略ID。
-                     * @param _forwardingPolicyId 策略ID。
+                     * 设置<p>七层转发策略ID。</p>
+                     * @param _forwardingPolicyId <p>七层转发策略ID。</p>
                      * 
                      */
                     void SetForwardingPolicyId(const std::string& _forwardingPolicyId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ForwardingPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取七层转发规则ID。
-                     * @return ForwardingRuleId 七层转发规则ID。
+                     * 获取<p>七层转发规则ID。</p>
+                     * @return ForwardingRuleId <p>七层转发规则ID。</p>
                      * 
                      */
                     std::string GetForwardingRuleId() const;
 
                     /**
-                     * 设置七层转发规则ID。
-                     * @param _forwardingRuleId 七层转发规则ID。
+                     * 设置<p>七层转发规则ID。</p>
+                     * @param _forwardingRuleId <p>七层转发规则ID。</p>
                      * 
                      */
                     void SetForwardingRuleId(const std::string& _forwardingRuleId);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 全球加速实例ID。
+                     * <p>全球加速实例ID。</p>
                      */
                     std::string m_globalAcceleratorId;
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * 监听器ID。
+                     * <p>监听器ID。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 策略ID。
+                     * <p>七层转发策略ID。</p>
                      */
                     std::string m_forwardingPolicyId;
                     bool m_forwardingPolicyIdHasBeenSet;
 
                     /**
-                     * 七层转发规则ID。
+                     * <p>七层转发规则ID。</p>
                      */
                     std::string m_forwardingRuleId;
                     bool m_forwardingRuleIdHasBeenSet;

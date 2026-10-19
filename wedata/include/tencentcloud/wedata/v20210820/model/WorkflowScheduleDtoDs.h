@@ -696,6 +696,31 @@ namespace TencentCloud
                      */
                     bool PrivilegeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分钟任务相位偏移</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MinuteOffset <p>分钟任务相位偏移</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetMinuteOffset() const;
+
+                    /**
+                     * 设置<p>分钟任务相位偏移</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _minuteOffset <p>分钟任务相位偏移</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMinuteOffset(const uint64_t& _minuteOffset);
+
+                    /**
+                     * 判断参数 MinuteOffset 是否已赋值
+                     * @return MinuteOffset 是否已赋值
+                     * 
+                     */
+                    bool MinuteOffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -879,6 +904,13 @@ namespace TencentCloud
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
+
+                    /**
+                     * <p>分钟任务相位偏移</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_minuteOffset;
+                    bool m_minuteOffsetHasBeenSet;
 
                 };
             }

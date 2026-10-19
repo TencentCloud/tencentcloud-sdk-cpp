@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeTrainingModelVersionsRequest::DescribeTrainingModelVersionsRequest() :
     m_trainingModelIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string DescribeTrainingModelVersionsRequest::ToJsonString() const
         string key = "TrainingModelId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_trainingModelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -80,6 +89,22 @@ void DescribeTrainingModelVersionsRequest::SetTrainingModelId(const string& _tra
 bool DescribeTrainingModelVersionsRequest::TrainingModelIdHasBeenSet() const
 {
     return m_trainingModelIdHasBeenSet;
+}
+
+string DescribeTrainingModelVersionsRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeTrainingModelVersionsRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeTrainingModelVersionsRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 vector<Filter> DescribeTrainingModelVersionsRequest::GetFilters() const

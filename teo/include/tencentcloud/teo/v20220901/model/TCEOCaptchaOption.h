@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EdgeOne 人机校验模式，取值有：<li> Invisible：无感验证；</li><li>Adaptive：自适应交互验证。</li>
-                     * @return CaptchaMode EdgeOne 人机校验模式，取值有：<li> Invisible：无感验证；</li><li>Adaptive：自适应交互验证。</li>
+                     * 获取<p>浏览器端 WebView 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Adaptive： 自适应交互验证</li></ul><p>默认值：Invisible</p>
+                     * @return CaptchaMode <p>浏览器端 WebView 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Adaptive： 自适应交互验证</li></ul><p>默认值：Invisible</p>
                      * 
                      */
                     std::string GetCaptchaMode() const;
 
                     /**
-                     * 设置EdgeOne 人机校验模式，取值有：<li> Invisible：无感验证；</li><li>Adaptive：自适应交互验证。</li>
-                     * @param _captchaMode EdgeOne 人机校验模式，取值有：<li> Invisible：无感验证；</li><li>Adaptive：自适应交互验证。</li>
+                     * 设置<p>浏览器端 WebView 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Adaptive： 自适应交互验证</li></ul><p>默认值：Invisible</p>
+                     * @param _captchaMode <p>浏览器端 WebView 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Adaptive： 自适应交互验证</li></ul><p>默认值：Invisible</p>
                      * 
                      */
                     void SetCaptchaMode(const std::string& _captchaMode);
@@ -67,13 +67,40 @@ namespace TencentCloud
                      */
                     bool CaptchaModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>移动端原生 App 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Visible： 交互验证</li></ul><p>默认值：Invisible</p>
+                     * @return MobileCaptchaMode <p>移动端原生 App 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Visible： 交互验证</li></ul><p>默认值：Invisible</p>
+                     * 
+                     */
+                    std::string GetMobileCaptchaMode() const;
+
+                    /**
+                     * 设置<p>移动端原生 App 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Visible： 交互验证</li></ul><p>默认值：Invisible</p>
+                     * @param _mobileCaptchaMode <p>移动端原生 App 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Visible： 交互验证</li></ul><p>默认值：Invisible</p>
+                     * 
+                     */
+                    void SetMobileCaptchaMode(const std::string& _mobileCaptchaMode);
+
+                    /**
+                     * 判断参数 MobileCaptchaMode 是否已赋值
+                     * @return MobileCaptchaMode 是否已赋值
+                     * 
+                     */
+                    bool MobileCaptchaModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * EdgeOne 人机校验模式，取值有：<li> Invisible：无感验证；</li><li>Adaptive：自适应交互验证。</li>
+                     * <p>浏览器端 WebView 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Adaptive： 自适应交互验证</li></ul><p>默认值：Invisible</p>
                      */
                     std::string m_captchaMode;
                     bool m_captchaModeHasBeenSet;
+
+                    /**
+                     * <p>移动端原生 App 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Visible： 交互验证</li></ul><p>默认值：Invisible</p>
+                     */
+                    std::string m_mobileCaptchaMode;
+                    bool m_mobileCaptchaModeHasBeenSet;
 
                 };
             }

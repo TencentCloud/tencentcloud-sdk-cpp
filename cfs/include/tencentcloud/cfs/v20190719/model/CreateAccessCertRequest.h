@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书描述，不超过64字符
-                     * @return CertDesc 证书描述，不超过64字符
+                     * 获取<p>证书描述，不超过64字符</p>
+                     * @return CertDesc <p>证书描述，不超过64字符</p>
                      * 
                      */
                     std::string GetCertDesc() const;
 
                     /**
-                     * 设置证书描述，不超过64字符
-                     * @param _certDesc 证书描述，不超过64字符
+                     * 设置<p>证书描述，不超过64字符</p>
+                     * @param _certDesc <p>证书描述，不超过64字符</p>
                      * 
                      */
                     void SetCertDesc(const std::string& _certDesc);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool CertDescHasBeenSet() const;
 
+                    /**
+                     * 获取<p>凭证类型</p><p>枚举值：</p><ul><li>ssh： 通用系列文件系统凭证</li><li>gss： Turbo系列文件系统凭证</li></ul><p>默认值：ssh</p>
+                     * @return Type <p>凭证类型</p><p>枚举值：</p><ul><li>ssh： 通用系列文件系统凭证</li><li>gss： Turbo系列文件系统凭证</li></ul><p>默认值：ssh</p>
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置<p>凭证类型</p><p>枚举值：</p><ul><li>ssh： 通用系列文件系统凭证</li><li>gss： Turbo系列文件系统凭证</li></ul><p>默认值：ssh</p>
+                     * @param _type <p>凭证类型</p><p>枚举值：</p><ul><li>ssh： 通用系列文件系统凭证</li><li>gss： Turbo系列文件系统凭证</li></ul><p>默认值：ssh</p>
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 证书描述，不超过64字符
+                     * <p>证书描述，不超过64字符</p>
                      */
                     std::string m_certDesc;
                     bool m_certDescHasBeenSet;
+
+                    /**
+                     * <p>凭证类型</p><p>枚举值：</p><ul><li>ssh： 通用系列文件系统凭证</li><li>gss： Turbo系列文件系统凭证</li></ul><p>默认值：ssh</p>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

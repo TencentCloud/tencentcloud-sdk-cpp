@@ -638,6 +638,27 @@ namespace TencentCloud
                     bool LogDeliveryDisableReasonHasBeenSet() const;
 
                     /**
+                     * 获取<p>日志审计禁止开通时的详细说明</p>
+                     * @return LogDeliveryDisableMessage <p>日志审计禁止开通时的详细说明</p>
+                     * 
+                     */
+                    std::string GetLogDeliveryDisableMessage() const;
+
+                    /**
+                     * 设置<p>日志审计禁止开通时的详细说明</p>
+                     * @param _logDeliveryDisableMessage <p>日志审计禁止开通时的详细说明</p>
+                     * 
+                     */
+                    void SetLogDeliveryDisableMessage(const std::string& _logDeliveryDisableMessage);
+
+                    /**
+                     * 判断参数 LogDeliveryDisableMessage 是否已赋值
+                     * @return LogDeliveryDisableMessage 是否已赋值
+                     * 
+                     */
+                    bool LogDeliveryDisableMessageHasBeenSet() const;
+
+                    /**
                      * 获取<p>在线日志的起始时间戳，精确到秒</p>
                      * @return OldestOnlineLogTimestamp <p>在线日志的起始时间戳，精确到秒</p>
                      * 
@@ -834,6 +855,27 @@ namespace TencentCloud
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>数据库版本</p>
+                     * @return DbVersion <p>数据库版本</p>
+                     * 
+                     */
+                    std::string GetDbVersion() const;
+
+                    /**
+                     * 设置<p>数据库版本</p>
+                     * @param _dbVersion <p>数据库版本</p>
+                     * 
+                     */
+                    void SetDbVersion(const std::string& _dbVersion);
+
+                    /**
+                     * 判断参数 DbVersion 是否已赋值
+                     * @return DbVersion 是否已赋值
+                     * 
+                     */
+                    bool DbVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1005,6 +1047,12 @@ namespace TencentCloud
                     bool m_logDeliveryDisableReasonHasBeenSet;
 
                     /**
+                     * <p>日志审计禁止开通时的详细说明</p>
+                     */
+                    std::string m_logDeliveryDisableMessage;
+                    bool m_logDeliveryDisableMessageHasBeenSet;
+
+                    /**
                      * <p>在线日志的起始时间戳，精确到秒</p>
                      */
                     uint64_t m_oldestOnlineLogTimestamp;
@@ -1059,6 +1107,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * <p>数据库版本</p>
+                     */
+                    std::string m_dbVersion;
+                    bool m_dbVersionHasBeenSet;
 
                 };
             }

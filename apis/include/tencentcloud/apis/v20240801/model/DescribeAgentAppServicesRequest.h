@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>实例ID</p>
-                     * @return InstanceID <p>实例ID</p>
-                     * 
-                     */
-                    std::string GetInstanceID() const;
-
-                    /**
-                     * 设置<p>实例ID</p>
-                     * @param _instanceID <p>实例ID</p>
-                     * 
-                     */
-                    void SetInstanceID(const std::string& _instanceID);
-
-                    /**
-                     * 判断参数 InstanceID 是否已赋值
-                     * @return InstanceID 是否已赋值
-                     * 
-                     */
-                    bool InstanceIDHasBeenSet() const;
-
-                    /**
                      * 获取<p>数据量</p>
                      * @return Limit <p>数据量</p>
                      * 
@@ -83,6 +62,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例ID</p>
+                     * @return InstanceID <p>实例ID</p>
+                     * 
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 设置<p>实例ID</p>
+                     * @param _instanceID <p>实例ID</p>
+                     * 
+                     */
+                    void SetInstanceID(const std::string& _instanceID);
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     * 
+                     */
+                    bool InstanceIDHasBeenSet() const;
 
                     /**
                      * 获取<p>IDs</p>
@@ -234,16 +234,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>实例ID</p>
-                     */
-                    std::string m_instanceID;
-                    bool m_instanceIDHasBeenSet;
-
-                    /**
                      * <p>数据量</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>实例ID</p>
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
 
                     /**
                      * <p>IDs</p>

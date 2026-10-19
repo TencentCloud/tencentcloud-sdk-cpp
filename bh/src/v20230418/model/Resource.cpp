@@ -84,7 +84,8 @@ Resource::Resource() :
     m_billingRegionHasBeenSet(false),
     m_billingZoneHasBeenSet(false),
     m_deployCvmCountHasBeenSet(false),
-    m_resourceZoneSetHasBeenSet(false)
+    m_resourceZoneSetHasBeenSet(false),
+    m_orgAccountQuotaHasBeenSet(false)
 {
 }
 
@@ -768,6 +769,16 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_resourceZoneSetHasBeenSet = true;
     }
 
+    if (value.HasMember("OrgAccountQuota") && !value["OrgAccountQuota"].IsNull())
+    {
+        if (!value["OrgAccountQuota"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.OrgAccountQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgAccountQuota = value["OrgAccountQuota"].GetUint64();
+        m_orgAccountQuotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1324,6 +1335,14 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_orgAccountQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgAccountQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_orgAccountQuota, allocator);
     }
 
 }
@@ -2351,5 +2370,21 @@ void Resource::SetResourceZoneSet(const vector<ResourceDeployZone>& _resourceZon
 bool Resource::ResourceZoneSetHasBeenSet() const
 {
     return m_resourceZoneSetHasBeenSet;
+}
+
+uint64_t Resource::GetOrgAccountQuota() const
+{
+    return m_orgAccountQuota;
+}
+
+void Resource::SetOrgAccountQuota(const uint64_t& _orgAccountQuota)
+{
+    m_orgAccountQuota = _orgAccountQuota;
+    m_orgAccountQuotaHasBeenSet = true;
+}
+
+bool Resource::OrgAccountQuotaHasBeenSet() const
+{
+    return m_orgAccountQuotaHasBeenSet;
 }
 

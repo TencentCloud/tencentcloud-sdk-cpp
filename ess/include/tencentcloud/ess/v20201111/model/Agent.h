@@ -49,21 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取<p>CA-API应用编号，用于同平台企业下标识不同的CA-API应用</p>
                      * @return AppId <p>CA-API应用编号，用于同平台企业下标识不同的CA-API应用</p>
-                     * @deprecated
+                     * 
                      */
                     std::string GetAppId() const;
 
                     /**
                      * 设置<p>CA-API应用编号，用于同平台企业下标识不同的CA-API应用</p>
                      * @param _appId <p>CA-API应用编号，用于同平台企业下标识不同的CA-API应用</p>
-                     * @deprecated
+                     * 
                      */
                     void SetAppId(const std::string& _appId);
 
                     /**
                      * 判断参数 AppId 是否已赋值
                      * @return AppId 是否已赋值
-                     * @deprecated
+                     * 
                      */
                     bool AppIdHasBeenSet() const;
 

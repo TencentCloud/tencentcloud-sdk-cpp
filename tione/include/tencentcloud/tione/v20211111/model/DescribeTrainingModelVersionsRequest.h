@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型ID
-                     * @return TrainingModelId 模型ID
+                     * 获取<p>模型ID</p>
+                     * @return TrainingModelId <p>模型ID</p>
                      * 
                      */
                     std::string GetTrainingModelId() const;
 
                     /**
-                     * 设置模型ID
-                     * @param _trainingModelId 模型ID
+                     * 设置<p>模型ID</p>
+                     * @param _trainingModelId <p>模型ID</p>
                      * 
                      */
                     void SetTrainingModelId(const std::string& _trainingModelId);
@@ -65,47 +65,36 @@ namespace TencentCloud
                     bool TrainingModelIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-Filter.Name: 枚举值:
-    TrainingModelVersionId (模型版本ID)
-    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)
-    ModelFormat（模型格式）其值Filter.Values支持：
-TORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML
-    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2
-Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询
-每次请求的Filters的上限为10，Filter.Values的上限为100
-                     * @return Filters 过滤条件
-Filter.Name: 枚举值:
-    TrainingModelVersionId (模型版本ID)
-    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)
-    ModelFormat（模型格式）其值Filter.Values支持：
-TORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML
-    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2
-Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询
-每次请求的Filters的上限为10，Filter.Values的上限为100
+                     * 获取<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * @return TiProjectId <p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * 
+                     */
+                    std::string GetTiProjectId() const;
+
+                    /**
+                     * 设置<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * @param _tiProjectId <p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * 
+                     */
+                    void SetTiProjectId(const std::string& _tiProjectId);
+
+                    /**
+                     * 判断参数 TiProjectId 是否已赋值
+                     * @return TiProjectId 是否已赋值
+                     * 
+                     */
+                    bool TiProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>过滤条件<br>Filter.Name: 枚举值:<br>    TrainingModelVersionId (模型版本ID)<br>    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)<br>    ModelFormat（模型格式）其值Filter.Values支持：<br>TORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML<br>    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2<br>Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询<br>每次请求的Filters的上限为10，Filter.Values的上限为100</p>
+                     * @return Filters <p>过滤条件<br>Filter.Name: 枚举值:<br>    TrainingModelVersionId (模型版本ID)<br>    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)<br>    ModelFormat（模型格式）其值Filter.Values支持：<br>TORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML<br>    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2<br>Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询<br>每次请求的Filters的上限为10，Filter.Values的上限为100</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件
-Filter.Name: 枚举值:
-    TrainingModelVersionId (模型版本ID)
-    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)
-    ModelFormat（模型格式）其值Filter.Values支持：
-TORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML
-    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2
-Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询
-每次请求的Filters的上限为10，Filter.Values的上限为100
-                     * @param _filters 过滤条件
-Filter.Name: 枚举值:
-    TrainingModelVersionId (模型版本ID)
-    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)
-    ModelFormat（模型格式）其值Filter.Values支持：
-TORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML
-    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2
-Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询
-每次请求的Filters的上限为10，Filter.Values的上限为100
+                     * 设置<p>过滤条件<br>Filter.Name: 枚举值:<br>    TrainingModelVersionId (模型版本ID)<br>    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)<br>    ModelFormat（模型格式）其值Filter.Values支持：<br>TORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML<br>    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2<br>Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询<br>每次请求的Filters的上限为10，Filter.Values的上限为100</p>
+                     * @param _filters <p>过滤条件<br>Filter.Name: 枚举值:<br>    TrainingModelVersionId (模型版本ID)<br>    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)<br>    ModelFormat（模型格式）其值Filter.Values支持：<br>TORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML<br>    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2<br>Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询<br>每次请求的Filters的上限为10，Filter.Values的上限为100</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -120,21 +109,19 @@ Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询
                 private:
 
                     /**
-                     * 模型ID
+                     * <p>模型ID</p>
                      */
                     std::string m_trainingModelId;
                     bool m_trainingModelIdHasBeenSet;
 
                     /**
-                     * 过滤条件
-Filter.Name: 枚举值:
-    TrainingModelVersionId (模型版本ID)
-    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)
-    ModelFormat（模型格式）其值Filter.Values支持：
-TORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML
-    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2
-Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询
-每次请求的Filters的上限为10，Filter.Values的上限为100
+                     * <p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     */
+                    std::string m_tiProjectId;
+                    bool m_tiProjectIdHasBeenSet;
+
+                    /**
+                     * <p>过滤条件<br>Filter.Name: 枚举值:<br>    TrainingModelVersionId (模型版本ID)<br>    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)<br>    ModelFormat（模型格式）其值Filter.Values支持：<br>TORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML<br>    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2<br>Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询<br>每次请求的Filters的上限为10，Filter.Values的上限为100</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

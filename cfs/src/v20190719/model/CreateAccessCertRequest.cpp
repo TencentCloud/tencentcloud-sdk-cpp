@@ -23,7 +23,8 @@ using namespace TencentCloud::Cfs::V20190719::Model;
 using namespace std;
 
 CreateAccessCertRequest::CreateAccessCertRequest() :
-    m_certDescHasBeenSet(false)
+    m_certDescHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CreateAccessCertRequest::ToJsonString() const
         string key = "CertDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_certDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CreateAccessCertRequest::SetCertDesc(const string& _certDesc)
 bool CreateAccessCertRequest::CertDescHasBeenSet() const
 {
     return m_certDescHasBeenSet;
+}
+
+string CreateAccessCertRequest::GetType() const
+{
+    return m_type;
+}
+
+void CreateAccessCertRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CreateAccessCertRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

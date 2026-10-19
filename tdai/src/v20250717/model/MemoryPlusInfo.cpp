@@ -30,6 +30,7 @@ MemoryPlusInfo::MemoryPlusInfo() :
     m_autoRenewHasBeenSet(false),
     m_memoryUsageHasBeenSet(false),
     m_creditUsageHasBeenSet(false),
+    m_compressedHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
@@ -132,6 +133,16 @@ CoreInternalOutcome MemoryPlusInfo::Deserialize(const rapidjson::Value &value)
         }
         m_creditUsage = value["CreditUsage"].GetDouble();
         m_creditUsageHasBeenSet = true;
+    }
+
+    if (value.HasMember("Compressed") && !value["Compressed"].IsNull())
+    {
+        if (!value["Compressed"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemoryPlusInfo.Compressed` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_compressed = value["Compressed"].GetBool();
+        m_compressedHasBeenSet = true;
     }
 
     if (value.HasMember("ResourceTags") && !value["ResourceTags"].IsNull())
@@ -281,6 +292,14 @@ void MemoryPlusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CreditUsage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_creditUsage, allocator);
+    }
+
+    if (m_compressedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compressed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_compressed, allocator);
     }
 
     if (m_resourceTagsHasBeenSet)
@@ -483,6 +502,22 @@ void MemoryPlusInfo::SetCreditUsage(const double& _creditUsage)
 bool MemoryPlusInfo::CreditUsageHasBeenSet() const
 {
     return m_creditUsageHasBeenSet;
+}
+
+bool MemoryPlusInfo::GetCompressed() const
+{
+    return m_compressed;
+}
+
+void MemoryPlusInfo::SetCompressed(const bool& _compressed)
+{
+    m_compressed = _compressed;
+    m_compressedHasBeenSet = true;
+}
+
+bool MemoryPlusInfo::CompressedHasBeenSet() const
+{
+    return m_compressedHasBeenSet;
 }
 
 vector<ResourceTag> MemoryPlusInfo::GetResourceTags() const

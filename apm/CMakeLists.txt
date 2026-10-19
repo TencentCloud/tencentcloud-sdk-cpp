@@ -37,6 +37,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DescribeOPRAllVulCountResponse.h
   include/tencentcloud/apm/v20210622/model/ModifyApmApplicationConfigResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeApmServiceMetricResponse.h
+  include/tencentcloud/apm/v20210622/model/SpanStatusConfig.h
   include/tencentcloud/apm/v20210622/model/ModifyApmAssociationRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeApmApplicationConfigResponse.h
@@ -61,10 +62,11 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/ApmServiceMetric.h
   include/tencentcloud/apm/v20210622/model/ApmAppConfig.h
   include/tencentcloud/apm/v20210622/model/CreateApmSampleConfigResponse.h
+  include/tencentcloud/apm/v20210622/model/ChartData.h
   include/tencentcloud/apm/v20210622/model/Line.h
   include/tencentcloud/apm/v20210622/model/ModifyApmAssociationResponse.h
   include/tencentcloud/apm/v20210622/model/APMKVItem.h
-  include/tencentcloud/apm/v20210622/model/ChartData.h
+  include/tencentcloud/apm/v20210622/model/ErrorSpanConf.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListRequest.h
   include/tencentcloud/apm/v20210622/model/ErrorSpan.h
   include/tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h
@@ -160,6 +162,7 @@ set(apm_src
   src/v20210622/model/DescribeOPRAllVulCountResponse.cpp
   src/v20210622/model/ModifyApmApplicationConfigResponse.cpp
   src/v20210622/model/DescribeApmServiceMetricResponse.cpp
+  src/v20210622/model/SpanStatusConfig.cpp
   src/v20210622/model/ModifyApmAssociationRequest.cpp
   src/v20210622/model/DescribeGeneralOTSpanListResponse.cpp
   src/v20210622/model/DescribeApmApplicationConfigResponse.cpp
@@ -184,10 +187,11 @@ set(apm_src
   src/v20210622/model/ApmServiceMetric.cpp
   src/v20210622/model/ApmAppConfig.cpp
   src/v20210622/model/CreateApmSampleConfigResponse.cpp
+  src/v20210622/model/ChartData.cpp
   src/v20210622/model/Line.cpp
   src/v20210622/model/ModifyApmAssociationResponse.cpp
   src/v20210622/model/APMKVItem.cpp
-  src/v20210622/model/ChartData.cpp
+  src/v20210622/model/ErrorSpanConf.cpp
   src/v20210622/model/DescribeGeneralSpanListRequest.cpp
   src/v20210622/model/ErrorSpan.cpp
   src/v20210622/model/DescribeApmAgentRequest.cpp

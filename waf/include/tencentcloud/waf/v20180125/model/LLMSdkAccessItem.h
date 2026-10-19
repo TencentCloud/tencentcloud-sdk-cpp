@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取<p>SDK接入来源，tokenhub 表示通过 TokenHub 创建，空字符串表示通过控制台创建</p>
-                     * @return SdkSource <p>SDK接入来源，tokenhub 表示通过 TokenHub 创建，空字符串表示通过控制台创建</p>
+                     * 获取<p>SDK接入来源，可不填</p>
+                     * @return SdkSource <p>SDK接入来源，可不填</p>
                      * 
                      */
                     std::string GetSdkSource() const;
 
                     /**
-                     * 设置<p>SDK接入来源，tokenhub 表示通过 TokenHub 创建，空字符串表示通过控制台创建</p>
-                     * @param _sdkSource <p>SDK接入来源，tokenhub 表示通过 TokenHub 创建，空字符串表示通过控制台创建</p>
+                     * 设置<p>SDK接入来源，可不填</p>
+                     * @param _sdkSource <p>SDK接入来源，可不填</p>
                      * 
                      */
                     void SetSdkSource(const std::string& _sdkSource);
@@ -404,6 +404,27 @@ namespace TencentCloud
                     bool IntentStatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>恶意URL检测开关</p>
+                     * @return UrlDetectStatus <p>恶意URL检测开关</p>
+                     * 
+                     */
+                    bool GetUrlDetectStatus() const;
+
+                    /**
+                     * 设置<p>恶意URL检测开关</p>
+                     * @param _urlDetectStatus <p>恶意URL检测开关</p>
+                     * 
+                     */
+                    void SetUrlDetectStatus(const bool& _urlDetectStatus);
+
+                    /**
+                     * 判断参数 UrlDetectStatus 是否已赋值
+                     * @return UrlDetectStatus 是否已赋值
+                     * 
+                     */
+                    bool UrlDetectStatusHasBeenSet() const;
+
+                    /**
                      * 获取<p>生效规则数量</p>
                      * @return EffectiveRules <p>生效规则数量</p>
                      * 
@@ -445,7 +466,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * <p>SDK接入来源，tokenhub 表示通过 TokenHub 创建，空字符串表示通过控制台创建</p>
+                     * <p>SDK接入来源，可不填</p>
                      */
                     std::string m_sdkSource;
                     bool m_sdkSourceHasBeenSet;
@@ -527,6 +548,12 @@ namespace TencentCloud
                      */
                     bool m_intentStatus;
                     bool m_intentStatusHasBeenSet;
+
+                    /**
+                     * <p>恶意URL检测开关</p>
+                     */
+                    bool m_urlDetectStatus;
+                    bool m_urlDetectStatusHasBeenSet;
 
                     /**
                      * <p>生效规则数量</p>

@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型加速任务ID
+                     * 获取<p>模型加速任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelAccTaskId 模型加速任务ID
+                     * @return ModelAccTaskId <p>模型加速任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool ModelAccTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取异步任务ID
+                     * 获取<p>异步任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AsyncTaskId 异步任务ID
+                     * @return AsyncTaskId <p>异步任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,14 +78,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型加速任务ID
+                     * <p>模型加速任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelAccTaskId;
                     bool m_modelAccTaskIdHasBeenSet;
 
                     /**
-                     * 异步任务ID
+                     * <p>异步任务ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asyncTaskId;

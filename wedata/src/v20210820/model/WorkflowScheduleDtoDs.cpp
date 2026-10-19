@@ -46,7 +46,8 @@ WorkflowScheduleDtoDs::WorkflowScheduleDtoDs() :
     m_calendarNameHasBeenSet(false),
     m_calendarIdHasBeenSet(false),
     m_scheduleTimeZoneHasBeenSet(false),
-    m_privilegeHasBeenSet(false)
+    m_privilegeHasBeenSet(false),
+    m_minuteOffsetHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,16 @@ CoreInternalOutcome WorkflowScheduleDtoDs::Deserialize(const rapidjson::Value &v
         m_privilegeHasBeenSet = true;
     }
 
+    if (value.HasMember("MinuteOffset") && !value["MinuteOffset"].IsNull())
+    {
+        if (!value["MinuteOffset"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowScheduleDtoDs.MinuteOffset` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minuteOffset = value["MinuteOffset"].GetUint64();
+        m_minuteOffsetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -528,6 +539,14 @@ void WorkflowScheduleDtoDs::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Privilege";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_minuteOffsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinuteOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minuteOffset, allocator);
     }
 
 }
@@ -947,5 +966,21 @@ void WorkflowScheduleDtoDs::SetPrivilege(const string& _privilege)
 bool WorkflowScheduleDtoDs::PrivilegeHasBeenSet() const
 {
     return m_privilegeHasBeenSet;
+}
+
+uint64_t WorkflowScheduleDtoDs::GetMinuteOffset() const
+{
+    return m_minuteOffset;
+}
+
+void WorkflowScheduleDtoDs::SetMinuteOffset(const uint64_t& _minuteOffset)
+{
+    m_minuteOffset = _minuteOffset;
+    m_minuteOffsetHasBeenSet = true;
+}
+
+bool WorkflowScheduleDtoDs::MinuteOffsetHasBeenSet() const
+{
+    return m_minuteOffsetHasBeenSet;
 }
 

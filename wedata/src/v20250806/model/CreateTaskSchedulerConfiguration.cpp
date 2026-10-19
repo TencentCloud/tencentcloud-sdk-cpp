@@ -51,7 +51,8 @@ CreateTaskSchedulerConfiguration::CreateTaskSchedulerConfiguration() :
     m_executionTTLMinuteHasBeenSet(false),
     m_waitExecutionTotalTTLMinuteHasBeenSet(false),
     m_dependencyTriggerPolicyHasBeenSet(false),
-    m_allowDownstreamDependencyHasBeenSet(false)
+    m_allowDownstreamDependencyHasBeenSet(false),
+    m_minuteOffsetHasBeenSet(false)
 {
 }
 
@@ -420,6 +421,16 @@ CoreInternalOutcome CreateTaskSchedulerConfiguration::Deserialize(const rapidjso
         m_allowDownstreamDependencyHasBeenSet = true;
     }
 
+    if (value.HasMember("MinuteOffset") && !value["MinuteOffset"].IsNull())
+    {
+        if (!value["MinuteOffset"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateTaskSchedulerConfiguration.MinuteOffset` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minuteOffset = value["MinuteOffset"].GetUint64();
+        m_minuteOffsetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -708,6 +719,14 @@ void CreateTaskSchedulerConfiguration::ToJsonObject(rapidjson::Value &value, rap
         string key = "AllowDownstreamDependency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allowDownstreamDependency, allocator);
+    }
+
+    if (m_minuteOffsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinuteOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minuteOffset, allocator);
     }
 
 }
@@ -1207,5 +1226,21 @@ void CreateTaskSchedulerConfiguration::SetAllowDownstreamDependency(const int64_
 bool CreateTaskSchedulerConfiguration::AllowDownstreamDependencyHasBeenSet() const
 {
     return m_allowDownstreamDependencyHasBeenSet;
+}
+
+uint64_t CreateTaskSchedulerConfiguration::GetMinuteOffset() const
+{
+    return m_minuteOffset;
+}
+
+void CreateTaskSchedulerConfiguration::SetMinuteOffset(const uint64_t& _minuteOffset)
+{
+    m_minuteOffset = _minuteOffset;
+    m_minuteOffsetHasBeenSet = true;
+}
+
+bool CreateTaskSchedulerConfiguration::MinuteOffsetHasBeenSet() const
+{
+    return m_minuteOffsetHasBeenSet;
 }
 

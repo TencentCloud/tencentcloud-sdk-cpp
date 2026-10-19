@@ -340,6 +340,56 @@ FwmClient::CreateNatAclRuleGroupOutcomeCallable FwmClient::CreateNatAclRuleGroup
     return prom->get_future();
 }
 
+FwmClient::CreateRuleGroupOutcome FwmClient::CreateRuleGroup(const CreateRuleGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRuleGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRuleGroupResponse rsp = CreateRuleGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRuleGroupOutcome(rsp);
+        else
+            return CreateRuleGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRuleGroupOutcome(outcome.GetError());
+    }
+}
+
+void FwmClient::CreateRuleGroupAsync(const CreateRuleGroupRequest& request, const CreateRuleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRuleGroupRequest&;
+    using Resp = CreateRuleGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRuleGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FwmClient::CreateRuleGroupOutcomeCallable FwmClient::CreateRuleGroupCallable(const CreateRuleGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRuleGroupOutcome>>();
+    CreateRuleGroupAsync(
+    request,
+    [prom](
+        const FwmClient*,
+        const CreateRuleGroupRequest&,
+        CreateRuleGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 FwmClient::CreateSecurityGroupRuleOutcome FwmClient::CreateSecurityGroupRule(const CreateSecurityGroupRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSecurityGroupRule");

@@ -4690,6 +4690,56 @@ CfwClient::DescribeOfflineExportTemporaryCredentialsOutcomeCallable CfwClient::D
     return prom->get_future();
 }
 
+CfwClient::DescribeOverviewResourceQuotaOutcome CfwClient::DescribeOverviewResourceQuota(const DescribeOverviewResourceQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewResourceQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewResourceQuotaResponse rsp = DescribeOverviewResourceQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewResourceQuotaOutcome(rsp);
+        else
+            return DescribeOverviewResourceQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewResourceQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeOverviewResourceQuotaAsync(const DescribeOverviewResourceQuotaRequest& request, const DescribeOverviewResourceQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeOverviewResourceQuotaRequest&;
+    using Resp = DescribeOverviewResourceQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeOverviewResourceQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfwClient::DescribeOverviewResourceQuotaOutcomeCallable CfwClient::DescribeOverviewResourceQuotaCallable(const DescribeOverviewResourceQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeOverviewResourceQuotaOutcome>>();
+    DescribeOverviewResourceQuotaAsync(
+    request,
+    [prom](
+        const CfwClient*,
+        const DescribeOverviewResourceQuotaRequest&,
+        DescribeOverviewResourceQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfwClient::DescribeResourceGroupOutcome CfwClient::DescribeResourceGroup(const DescribeResourceGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourceGroup");

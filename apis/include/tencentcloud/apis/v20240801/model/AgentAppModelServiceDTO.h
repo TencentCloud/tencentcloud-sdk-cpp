@@ -72,84 +72,84 @@ namespace TencentCloud
                     /**
                      * 获取是否开启流量控制
                      * @return InvokeLimitConfigStatus 是否开启流量控制
-                     * 
+                     * @deprecated
                      */
                     bool GetInvokeLimitConfigStatus() const;
 
                     /**
                      * 设置是否开启流量控制
                      * @param _invokeLimitConfigStatus 是否开启流量控制
-                     * 
+                     * @deprecated
                      */
                     void SetInvokeLimitConfigStatus(const bool& _invokeLimitConfigStatus);
 
                     /**
                      * 判断参数 InvokeLimitConfigStatus 是否已赋值
                      * @return InvokeLimitConfigStatus 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InvokeLimitConfigStatusHasBeenSet() const;
 
                     /**
                      * 获取流量控制
                      * @return InvokeLimitConfig 流量控制
-                     * 
+                     * @deprecated
                      */
                     InvokeLimitConfigDTO GetInvokeLimitConfig() const;
 
                     /**
                      * 设置流量控制
                      * @param _invokeLimitConfig 流量控制
-                     * 
+                     * @deprecated
                      */
                     void SetInvokeLimitConfig(const InvokeLimitConfigDTO& _invokeLimitConfig);
 
                     /**
                      * 判断参数 InvokeLimitConfig 是否已赋值
                      * @return InvokeLimitConfig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InvokeLimitConfigHasBeenSet() const;
 
                     /**
                      * 获取是否开启token控制
                      * @return TokenLimitStatus 是否开启token控制
-                     * 
+                     * @deprecated
                      */
                     bool GetTokenLimitStatus() const;
 
                     /**
                      * 设置是否开启token控制
                      * @param _tokenLimitStatus 是否开启token控制
-                     * 
+                     * @deprecated
                      */
                     void SetTokenLimitStatus(const bool& _tokenLimitStatus);
 
                     /**
                      * 判断参数 TokenLimitStatus 是否已赋值
                      * @return TokenLimitStatus 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TokenLimitStatusHasBeenSet() const;
 
                     /**
                      * 获取token控制
                      * @return TokenLimitConfig token控制
-                     * 
+                     * @deprecated
                      */
                     TokenLimitConfigDTO GetTokenLimitConfig() const;
 
                     /**
                      * 设置token控制
                      * @param _tokenLimitConfig token控制
-                     * 
+                     * @deprecated
                      */
                     void SetTokenLimitConfig(const TokenLimitConfigDTO& _tokenLimitConfig);
 
                     /**
                      * 判断参数 TokenLimitConfig 是否已赋值
                      * @return TokenLimitConfig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TokenLimitConfigHasBeenSet() const;
 

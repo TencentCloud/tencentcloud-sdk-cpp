@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Fwm::V20250611::Model;
 using namespace std;
 
-CreateNatAclRuleResponse::CreateNatAclRuleResponse()
+CreateNatAclRuleResponse::CreateNatAclRuleResponse() :
+    m_ruleIdsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome CreateNatAclRuleResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("RuleIds") && !rsp["RuleIds"].IsNull())
+    {
+        if (!rsp["RuleIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RuleIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ruleIds.push_back((*itr).GetString());
+        }
+        m_ruleIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +84,19 @@ string CreateNatAclRuleResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_ruleIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ruleIds.begin(); itr != m_ruleIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string CreateNatAclRuleResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> CreateNatAclRuleResponse::GetRuleIds() const
+{
+    return m_ruleIds;
+}
+
+bool CreateNatAclRuleResponse::RuleIdsHasBeenSet() const
+{
+    return m_ruleIdsHasBeenSet;
+}
 
 

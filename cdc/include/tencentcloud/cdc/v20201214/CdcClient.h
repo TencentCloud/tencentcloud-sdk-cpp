@@ -57,6 +57,8 @@
 #include <tencentcloud/cdc/v20201214/model/DescribeDedicatedClustersResponse.h>
 #include <tencentcloud/cdc/v20201214/model/DescribeDedicatedSupportedZonesRequest.h>
 #include <tencentcloud/cdc/v20201214/model/DescribeDedicatedSupportedZonesResponse.h>
+#include <tencentcloud/cdc/v20201214/model/DescribeEdgeHostVmRequest.h>
+#include <tencentcloud/cdc/v20201214/model/DescribeEdgeHostVmResponse.h>
 #include <tencentcloud/cdc/v20201214/model/DescribeSitesRequest.h>
 #include <tencentcloud/cdc/v20201214/model/DescribeSitesResponse.h>
 #include <tencentcloud/cdc/v20201214/model/DescribeSitesDetailRequest.h>
@@ -134,6 +136,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDedicatedSupportedZonesResponse> DescribeDedicatedSupportedZonesOutcome;
                 typedef std::future<DescribeDedicatedSupportedZonesOutcome> DescribeDedicatedSupportedZonesOutcomeCallable;
                 typedef std::function<void(const CdcClient*, const Model::DescribeDedicatedSupportedZonesRequest&, DescribeDedicatedSupportedZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedSupportedZonesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdgeHostVmResponse> DescribeEdgeHostVmOutcome;
+                typedef std::future<DescribeEdgeHostVmOutcome> DescribeEdgeHostVmOutcomeCallable;
+                typedef std::function<void(const CdcClient*, const Model::DescribeEdgeHostVmRequest&, DescribeEdgeHostVmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeHostVmAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSitesResponse> DescribeSitesOutcome;
                 typedef std::future<DescribeSitesOutcome> DescribeSitesOutcomeCallable;
                 typedef std::function<void(const CdcClient*, const Model::DescribeSitesRequest&, DescribeSitesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSitesAsyncHandler;
@@ -307,6 +312,15 @@ namespace TencentCloud
                 DescribeDedicatedSupportedZonesOutcome DescribeDedicatedSupportedZones(const Model::DescribeDedicatedSupportedZonesRequest &request);
                 void DescribeDedicatedSupportedZonesAsync(const Model::DescribeDedicatedSupportedZonesRequest& request, const DescribeDedicatedSupportedZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDedicatedSupportedZonesOutcomeCallable DescribeDedicatedSupportedZonesCallable(const Model::DescribeDedicatedSupportedZonesRequest& request);
+
+                /**
+                 *查询专属集群宿主机上的虚机信息
+                 * @param req DescribeEdgeHostVmRequest
+                 * @return DescribeEdgeHostVmOutcome
+                 */
+                DescribeEdgeHostVmOutcome DescribeEdgeHostVm(const Model::DescribeEdgeHostVmRequest &request);
+                void DescribeEdgeHostVmAsync(const Model::DescribeEdgeHostVmRequest& request, const DescribeEdgeHostVmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdgeHostVmOutcomeCallable DescribeEdgeHostVmCallable(const Model::DescribeEdgeHostVmRequest& request);
 
                 /**
                  *查询站点列表

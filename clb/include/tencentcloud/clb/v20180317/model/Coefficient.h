@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool OutputVideoSecondCoefficientHasBeenSet() const;
 
+                    /**
+                     * 获取<p>输出图片系数</p>
+                     * @return OutputImageCoefficient <p>输出图片系数</p>
+                     * 
+                     */
+                    double GetOutputImageCoefficient() const;
+
+                    /**
+                     * 设置<p>输出图片系数</p>
+                     * @param _outputImageCoefficient <p>输出图片系数</p>
+                     * 
+                     */
+                    void SetOutputImageCoefficient(const double& _outputImageCoefficient);
+
+                    /**
+                     * 判断参数 OutputImageCoefficient 是否已赋值
+                     * @return OutputImageCoefficient 是否已赋值
+                     * 
+                     */
+                    bool OutputImageCoefficientHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     double m_outputVideoSecondCoefficient;
                     bool m_outputVideoSecondCoefficientHasBeenSet;
+
+                    /**
+                     * <p>输出图片系数</p>
+                     */
+                    double m_outputImageCoefficient;
+                    bool m_outputImageCoefficientHasBeenSet;
 
                 };
             }

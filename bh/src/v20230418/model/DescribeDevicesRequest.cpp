@@ -39,7 +39,8 @@ DescribeDevicesRequest::DescribeDevicesRequest() :
     m_providerTypeSetHasBeenSet(false),
     m_cloudDeviceStatusSetHasBeenSet(false),
     m_tagFiltersHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_ownerAppIdsHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,19 @@ string DescribeDevicesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ownerAppIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerAppIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ownerAppIds.begin(); itr != m_ownerAppIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
@@ -518,6 +532,22 @@ void DescribeDevicesRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeDevicesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<uint64_t> DescribeDevicesRequest::GetOwnerAppIds() const
+{
+    return m_ownerAppIds;
+}
+
+void DescribeDevicesRequest::SetOwnerAppIds(const vector<uint64_t>& _ownerAppIds)
+{
+    m_ownerAppIds = _ownerAppIds;
+    m_ownerAppIdsHasBeenSet = true;
+}
+
+bool DescribeDevicesRequest::OwnerAppIdsHasBeenSet() const
+{
+    return m_ownerAppIdsHasBeenSet;
 }
 
 

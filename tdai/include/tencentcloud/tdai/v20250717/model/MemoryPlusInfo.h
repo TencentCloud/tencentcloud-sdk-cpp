@@ -237,6 +237,27 @@ namespace TencentCloud
                     bool CreditUsageHasBeenSet() const;
 
                     /**
+                     * 获取<p>是否开启压缩</p>
+                     * @return Compressed <p>是否开启压缩</p>
+                     * 
+                     */
+                    bool GetCompressed() const;
+
+                    /**
+                     * 设置<p>是否开启压缩</p>
+                     * @param _compressed <p>是否开启压缩</p>
+                     * 
+                     */
+                    void SetCompressed(const bool& _compressed);
+
+                    /**
+                     * 判断参数 Compressed 是否已赋值
+                     * @return Compressed 是否已赋值
+                     * 
+                     */
+                    bool CompressedHasBeenSet() const;
+
+                    /**
                      * 获取<p>资源标签</p>
                      * @return ResourceTags <p>资源标签</p>
                      * 
@@ -417,6 +438,12 @@ namespace TencentCloud
                      */
                     double m_creditUsage;
                     bool m_creditUsageHasBeenSet;
+
+                    /**
+                     * <p>是否开启压缩</p>
+                     */
+                    bool m_compressed;
+                    bool m_compressedHasBeenSet;
 
                     /**
                      * <p>资源标签</p>

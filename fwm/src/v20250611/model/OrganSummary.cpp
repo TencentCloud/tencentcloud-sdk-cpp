@@ -32,7 +32,8 @@ OrganSummary::OrganSummary() :
     m_departmentsHasBeenSet(false),
     m_managedMemberCountHasBeenSet(false),
     m_managedProductCountHasBeenSet(false),
-    m_cfwManageCountHasBeenSet(false)
+    m_cfwManageCountHasBeenSet(false),
+    m_fwmShareUserQuotaHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome OrganSummary::Deserialize(const rapidjson::Value &value)
         m_cfwManageCountHasBeenSet = true;
     }
 
+    if (value.HasMember("FwmShareUserQuota") && !value["FwmShareUserQuota"].IsNull())
+    {
+        if (!value["FwmShareUserQuota"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganSummary.FwmShareUserQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fwmShareUserQuota = value["FwmShareUserQuota"].GetInt64();
+        m_fwmShareUserQuotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +289,14 @@ void OrganSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CfwManageCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cfwManageCount, allocator);
+    }
+
+    if (m_fwmShareUserQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwmShareUserQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fwmShareUserQuota, allocator);
     }
 
 }
@@ -473,5 +492,21 @@ void OrganSummary::SetCfwManageCount(const int64_t& _cfwManageCount)
 bool OrganSummary::CfwManageCountHasBeenSet() const
 {
     return m_cfwManageCountHasBeenSet;
+}
+
+int64_t OrganSummary::GetFwmShareUserQuota() const
+{
+    return m_fwmShareUserQuota;
+}
+
+void OrganSummary::SetFwmShareUserQuota(const int64_t& _fwmShareUserQuota)
+{
+    m_fwmShareUserQuota = _fwmShareUserQuota;
+    m_fwmShareUserQuotaHasBeenSet = true;
+}
+
+bool OrganSummary::FwmShareUserQuotaHasBeenSet() const
+{
+    return m_fwmShareUserQuotaHasBeenSet;
 }
 

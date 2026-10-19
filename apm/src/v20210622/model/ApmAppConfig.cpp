@@ -88,7 +88,9 @@ ApmAppConfig::ApmAppConfig() :
     m_headSamplerTypeHasBeenSet(false),
     m_headSamplerArgHasBeenSet(false),
     m_crossAccountStatusHasBeenSet(false),
-    m_crossAccountPeerIdHasBeenSet(false)
+    m_crossAccountPeerIdHasBeenSet(false),
+    m_spanStatusConfigHasBeenSet(false),
+    m_enableSpanStatusConfigHasBeenSet(false)
 {
 }
 
@@ -811,6 +813,33 @@ CoreInternalOutcome ApmAppConfig::Deserialize(const rapidjson::Value &value)
         m_crossAccountPeerIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SpanStatusConfig") && !value["SpanStatusConfig"].IsNull())
+    {
+        if (!value["SpanStatusConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmAppConfig.SpanStatusConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_spanStatusConfig.Deserialize(value["SpanStatusConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_spanStatusConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableSpanStatusConfig") && !value["EnableSpanStatusConfig"].IsNull())
+    {
+        if (!value["EnableSpanStatusConfig"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmAppConfig.EnableSpanStatusConfig` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableSpanStatusConfig = value["EnableSpanStatusConfig"].GetBool();
+        m_enableSpanStatusConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1376,6 +1405,23 @@ void ApmAppConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CrossAccountPeerId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_crossAccountPeerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_spanStatusConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpanStatusConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spanStatusConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_enableSpanStatusConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSpanStatusConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableSpanStatusConfig, allocator);
     }
 
 }
@@ -2467,5 +2513,37 @@ void ApmAppConfig::SetCrossAccountPeerId(const string& _crossAccountPeerId)
 bool ApmAppConfig::CrossAccountPeerIdHasBeenSet() const
 {
     return m_crossAccountPeerIdHasBeenSet;
+}
+
+SpanStatusConfig ApmAppConfig::GetSpanStatusConfig() const
+{
+    return m_spanStatusConfig;
+}
+
+void ApmAppConfig::SetSpanStatusConfig(const SpanStatusConfig& _spanStatusConfig)
+{
+    m_spanStatusConfig = _spanStatusConfig;
+    m_spanStatusConfigHasBeenSet = true;
+}
+
+bool ApmAppConfig::SpanStatusConfigHasBeenSet() const
+{
+    return m_spanStatusConfigHasBeenSet;
+}
+
+bool ApmAppConfig::GetEnableSpanStatusConfig() const
+{
+    return m_enableSpanStatusConfig;
+}
+
+void ApmAppConfig::SetEnableSpanStatusConfig(const bool& _enableSpanStatusConfig)
+{
+    m_enableSpanStatusConfig = _enableSpanStatusConfig;
+    m_enableSpanStatusConfigHasBeenSet = true;
+}
+
+bool ApmAppConfig::EnableSpanStatusConfigHasBeenSet() const
+{
+    return m_enableSpanStatusConfigHasBeenSet;
 }
 

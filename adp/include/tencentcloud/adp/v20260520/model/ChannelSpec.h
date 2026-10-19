@@ -390,6 +390,56 @@ namespace TencentCloud
                      */
                     bool WecomRobotHasBeenSet() const;
 
+                    /**
+                     * 获取<p>共享群聊会话</p><p>false不共享群聊会话; true共享群聊会话</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShareGroupConversation <p>共享群聊会话</p><p>false不共享群聊会话; true共享群聊会话</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetShareGroupConversation() const;
+
+                    /**
+                     * 设置<p>共享群聊会话</p><p>false不共享群聊会话; true共享群聊会话</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shareGroupConversation <p>共享群聊会话</p><p>false不共享群聊会话; true共享群聊会话</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShareGroupConversation(const bool& _shareGroupConversation);
+
+                    /**
+                     * 判断参数 ShareGroupConversation 是否已赋值
+                     * @return ShareGroupConversation 是否已赋值
+                     * 
+                     */
+                    bool ShareGroupConversationHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否调试态</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDebug <p>是否调试态</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsDebug() const;
+
+                    /**
+                     * 设置<p>是否调试态</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isDebug <p>是否调试态</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsDebug(const bool& _isDebug);
+
+                    /**
+                     * 判断参数 IsDebug 是否已赋值
+                     * @return IsDebug 是否已赋值
+                     * 
+                     */
+                    bool IsDebugHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +535,20 @@ namespace TencentCloud
                      */
                     WecomRobotChannelConfig m_wecomRobot;
                     bool m_wecomRobotHasBeenSet;
+
+                    /**
+                     * <p>共享群聊会话</p><p>false不共享群聊会话; true共享群聊会话</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_shareGroupConversation;
+                    bool m_shareGroupConversationHasBeenSet;
+
+                    /**
+                     * <p>是否调试态</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDebug;
+                    bool m_isDebugHasBeenSet;
 
                 };
             }

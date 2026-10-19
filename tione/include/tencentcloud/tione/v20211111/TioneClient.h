@@ -39,6 +39,8 @@
 #include <tencentcloud/tione/v20211111/model/CreateMountLimitResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateNotebookRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateNotebookResponse.h>
+#include <tencentcloud/tione/v20211111/model/CreateNotebookImageRequest.h>
+#include <tencentcloud/tione/v20211111/model/CreateNotebookImageResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingModelRequest.h>
@@ -213,6 +215,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNotebookResponse> CreateNotebookOutcome;
                 typedef std::future<CreateNotebookOutcome> CreateNotebookOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateNotebookRequest&, CreateNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNotebookImageResponse> CreateNotebookImageOutcome;
+                typedef std::future<CreateNotebookImageOutcome> CreateNotebookImageOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::CreateNotebookImageRequest&, CreateNotebookImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePresignedNotebookUrlResponse> CreatePresignedNotebookUrlOutcome;
                 typedef std::future<CreatePresignedNotebookUrlOutcome> CreatePresignedNotebookUrlOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreatePresignedNotebookUrlRequest&, CreatePresignedNotebookUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePresignedNotebookUrlAsyncHandler;
@@ -494,6 +499,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 CreateNotebookOutcome CreateNotebook(const Model::CreateNotebookRequest &request);
                 void CreateNotebookAsync(const Model::CreateNotebookRequest& request, const CreateNotebookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNotebookOutcomeCallable CreateNotebookCallable(const Model::CreateNotebookRequest& request);
+
+                /**
+                 *保存镜像
+                 * @param req CreateNotebookImageRequest
+                 * @return CreateNotebookImageOutcome
+                 */
+                CreateNotebookImageOutcome CreateNotebookImage(const Model::CreateNotebookImageRequest &request);
+                void CreateNotebookImageAsync(const Model::CreateNotebookImageRequest& request, const CreateNotebookImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNotebookImageOutcomeCallable CreateNotebookImageCallable(const Model::CreateNotebookImageRequest& request);
 
                 /**
                  *生成Notebook访问链接

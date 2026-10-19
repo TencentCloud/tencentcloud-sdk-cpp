@@ -49,7 +49,8 @@ StartRayClusterResponse::StartRayClusterResponse() :
     m_priorityHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_stopTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -357,6 +358,16 @@ CoreInternalOutcome StartRayClusterResponse::Deserialize(const string &payload)
         m_tagsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NetworkConfig") && !rsp["NetworkConfig"].IsNull())
+    {
+        if (!rsp["NetworkConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkConfig = string(rsp["NetworkConfig"].GetString());
+        m_networkConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -580,6 +591,14 @@ string StartRayClusterResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -852,6 +871,16 @@ vector<Tag> StartRayClusterResponse::GetTags() const
 bool StartRayClusterResponse::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string StartRayClusterResponse::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+bool StartRayClusterResponse::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 
 

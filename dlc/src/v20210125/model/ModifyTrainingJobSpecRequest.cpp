@@ -47,7 +47,8 @@ ModifyTrainingJobSpecRequest::ModifyTrainingJobSpecRequest() :
     m_datasetsHasBeenSet(false),
     m_checkpointHasBeenSet(false),
     m_resumeTrainingHasBeenSet(false),
-    m_tuningParamsHasBeenSet(false)
+    m_tuningParamsHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -273,6 +274,14 @@ string ModifyTrainingJobSpecRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tuningParams.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -681,6 +690,22 @@ void ModifyTrainingJobSpecRequest::SetTuningParams(const TrainingTuningParams& _
 bool ModifyTrainingJobSpecRequest::TuningParamsHasBeenSet() const
 {
     return m_tuningParamsHasBeenSet;
+}
+
+string ModifyTrainingJobSpecRequest::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+void ModifyTrainingJobSpecRequest::SetNetworkConfig(const string& _networkConfig)
+{
+    m_networkConfig = _networkConfig;
+    m_networkConfigHasBeenSet = true;
+}
+
+bool ModifyTrainingJobSpecRequest::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 
 

@@ -27,7 +27,8 @@ Coefficient::Coefficient() :
     m_outputCoefficientHasBeenSet(false),
     m_inputImageCoefficientHasBeenSet(false),
     m_inputVideoSecondCoefficientHasBeenSet(false),
-    m_outputVideoSecondCoefficientHasBeenSet(false)
+    m_outputVideoSecondCoefficientHasBeenSet(false),
+    m_outputImageCoefficientHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome Coefficient::Deserialize(const rapidjson::Value &value)
         m_outputVideoSecondCoefficientHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputImageCoefficient") && !value["OutputImageCoefficient"].IsNull())
+    {
+        if (!value["OutputImageCoefficient"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Coefficient.OutputImageCoefficient` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputImageCoefficient = value["OutputImageCoefficient"].GetDouble();
+        m_outputImageCoefficientHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void Coefficient::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "OutputVideoSecondCoefficient";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputVideoSecondCoefficient, allocator);
+    }
+
+    if (m_outputImageCoefficientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputImageCoefficient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_outputImageCoefficient, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void Coefficient::SetOutputVideoSecondCoefficient(const double& _outputVideoSeco
 bool Coefficient::OutputVideoSecondCoefficientHasBeenSet() const
 {
     return m_outputVideoSecondCoefficientHasBeenSet;
+}
+
+double Coefficient::GetOutputImageCoefficient() const
+{
+    return m_outputImageCoefficient;
+}
+
+void Coefficient::SetOutputImageCoefficient(const double& _outputImageCoefficient)
+{
+    m_outputImageCoefficient = _outputImageCoefficient;
+    m_outputImageCoefficientHasBeenSet = true;
+}
+
+bool Coefficient::OutputImageCoefficientHasBeenSet() const
+{
+    return m_outputImageCoefficientHasBeenSet;
 }
 

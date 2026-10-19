@@ -44,7 +44,8 @@ CreateInferenceServiceRequest::CreateInferenceServiceRequest() :
     m_advancedOptionsHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_isCustomHasBeenSet(false),
-    m_runtimeEnvHasBeenSet(false)
+    m_runtimeEnvHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -241,6 +242,14 @@ string CreateInferenceServiceRequest::ToJsonString() const
         string key = "RuntimeEnv";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_runtimeEnv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -601,6 +610,22 @@ void CreateInferenceServiceRequest::SetRuntimeEnv(const string& _runtimeEnv)
 bool CreateInferenceServiceRequest::RuntimeEnvHasBeenSet() const
 {
     return m_runtimeEnvHasBeenSet;
+}
+
+string CreateInferenceServiceRequest::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+void CreateInferenceServiceRequest::SetNetworkConfig(const string& _networkConfig)
+{
+    m_networkConfig = _networkConfig;
+    m_networkConfigHasBeenSet = true;
+}
+
+bool CreateInferenceServiceRequest::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 
 

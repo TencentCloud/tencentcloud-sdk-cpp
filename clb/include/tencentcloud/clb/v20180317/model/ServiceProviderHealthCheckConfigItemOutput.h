@@ -201,6 +201,27 @@ namespace TencentCloud
                      */
                     bool HealthCheckMethodHasBeenSet() const;
 
+                    /**
+                     * 获取<p>健康检查超时时间</p><p>单位：秒</p><p>默认值：15</p>
+                     * @return HealthCheckTimeout <p>健康检查超时时间</p><p>单位：秒</p><p>默认值：15</p>
+                     * 
+                     */
+                    uint64_t GetHealthCheckTimeout() const;
+
+                    /**
+                     * 设置<p>健康检查超时时间</p><p>单位：秒</p><p>默认值：15</p>
+                     * @param _healthCheckTimeout <p>健康检查超时时间</p><p>单位：秒</p><p>默认值：15</p>
+                     * 
+                     */
+                    void SetHealthCheckTimeout(const uint64_t& _healthCheckTimeout);
+
+                    /**
+                     * 判断参数 HealthCheckTimeout 是否已赋值
+                     * @return HealthCheckTimeout 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +267,12 @@ namespace TencentCloud
                      */
                     std::string m_healthCheckMethod;
                     bool m_healthCheckMethodHasBeenSet;
+
+                    /**
+                     * <p>健康检查超时时间</p><p>单位：秒</p><p>默认值：15</p>
+                     */
+                    uint64_t m_healthCheckTimeout;
+                    bool m_healthCheckTimeoutHasBeenSet;
 
                 };
             }

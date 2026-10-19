@@ -56,7 +56,10 @@ TrainingJobSpec::TrainingJobSpec() :
     m_checkpointHasBeenSet(false),
     m_tuningParamsHasBeenSet(false),
     m_resumeTrainingHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false)
+    m_advancedOptionsHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false),
+    m_subAccountNameHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -466,6 +469,36 @@ CoreInternalOutcome TrainingJobSpec::Deserialize(const rapidjson::Value &value)
         m_advancedOptionsHasBeenSet = true;
     }
 
+    if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
+    {
+        if (!value["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingJobSpec.SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(value["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountName") && !value["SubAccountName"].IsNull())
+    {
+        if (!value["SubAccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingJobSpec.SubAccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountName = string(value["SubAccountName"].GetString());
+        m_subAccountNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkConfig") && !value["NetworkConfig"].IsNull())
+    {
+        if (!value["NetworkConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingJobSpec.NetworkConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkConfig = string(value["NetworkConfig"].GetString());
+        m_networkConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -776,6 +809,30 @@ void TrainingJobSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AdvancedOptions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_advancedOptions.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1355,5 +1412,53 @@ void TrainingJobSpec::SetAdvancedOptions(const string& _advancedOptions)
 bool TrainingJobSpec::AdvancedOptionsHasBeenSet() const
 {
     return m_advancedOptionsHasBeenSet;
+}
+
+string TrainingJobSpec::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+void TrainingJobSpec::SetSubAccountUin(const string& _subAccountUin)
+{
+    m_subAccountUin = _subAccountUin;
+    m_subAccountUinHasBeenSet = true;
+}
+
+bool TrainingJobSpec::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
+}
+
+string TrainingJobSpec::GetSubAccountName() const
+{
+    return m_subAccountName;
+}
+
+void TrainingJobSpec::SetSubAccountName(const string& _subAccountName)
+{
+    m_subAccountName = _subAccountName;
+    m_subAccountNameHasBeenSet = true;
+}
+
+bool TrainingJobSpec::SubAccountNameHasBeenSet() const
+{
+    return m_subAccountNameHasBeenSet;
+}
+
+string TrainingJobSpec::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+void TrainingJobSpec::SetNetworkConfig(const string& _networkConfig)
+{
+    m_networkConfig = _networkConfig;
+    m_networkConfigHasBeenSet = true;
+}
+
+bool TrainingJobSpec::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 

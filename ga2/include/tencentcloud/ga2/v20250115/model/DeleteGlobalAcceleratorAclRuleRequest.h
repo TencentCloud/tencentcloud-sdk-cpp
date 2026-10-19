@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全球加速实例ID。
-                     * @return GlobalAcceleratorId 全球加速实例ID。
+                     * 获取<p>全球加速实例ID。</p>
+                     * @return GlobalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorId() const;
 
                     /**
-                     * 设置全球加速实例ID。
-                     * @param _globalAcceleratorId 全球加速实例ID。
+                     * 设置<p>全球加速实例ID。</p>
+                     * @param _globalAcceleratorId <p>全球加速实例ID。</p>
                      * 
                      */
                     void SetGlobalAcceleratorId(const std::string& _globalAcceleratorId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorIdHasBeenSet() const;
 
                     /**
-                     * 获取安全策略ID
-                     * @return GlobalAcceleratorAclPolicyId 安全策略ID
+                     * 获取<p>访问控制策略ID</p>
+                     * @return GlobalAcceleratorAclPolicyId <p>访问控制策略ID</p>
                      * 
                      */
                     std::string GetGlobalAcceleratorAclPolicyId() const;
 
                     /**
-                     * 设置安全策略ID
-                     * @param _globalAcceleratorAclPolicyId 安全策略ID
+                     * 设置<p>访问控制策略ID</p>
+                     * @param _globalAcceleratorAclPolicyId <p>访问控制策略ID</p>
                      * 
                      */
                     void SetGlobalAcceleratorAclPolicyId(const std::string& _globalAcceleratorAclPolicyId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool GlobalAcceleratorAclPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取Acl规则ID。
-                     * @return GlobalAcceleratorAclRuleIds Acl规则ID。
+                     * 获取<p>访问规则ID</p>
+                     * @return GlobalAcceleratorAclRuleIds <p>访问规则ID</p>
                      * 
                      */
                     std::vector<std::string> GetGlobalAcceleratorAclRuleIds() const;
 
                     /**
-                     * 设置Acl规则ID。
-                     * @param _globalAcceleratorAclRuleIds Acl规则ID。
+                     * 设置<p>访问规则ID</p>
+                     * @param _globalAcceleratorAclRuleIds <p>访问规则ID</p>
                      * 
                      */
                     void SetGlobalAcceleratorAclRuleIds(const std::vector<std::string>& _globalAcceleratorAclRuleIds);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 全球加速实例ID。
+                     * <p>全球加速实例ID。</p>
                      */
                     std::string m_globalAcceleratorId;
                     bool m_globalAcceleratorIdHasBeenSet;
 
                     /**
-                     * 安全策略ID
+                     * <p>访问控制策略ID</p>
                      */
                     std::string m_globalAcceleratorAclPolicyId;
                     bool m_globalAcceleratorAclPolicyIdHasBeenSet;
 
                     /**
-                     * Acl规则ID。
+                     * <p>访问规则ID</p>
                      */
                     std::vector<std::string> m_globalAcceleratorAclRuleIds;
                     bool m_globalAcceleratorAclRuleIdsHasBeenSet;

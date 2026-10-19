@@ -44,7 +44,8 @@ CreateJobSpecRequest::CreateJobSpecRequest() :
     m_clusterIdHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_dispatchStrategyHasBeenSet(false)
+    m_dispatchStrategyHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,14 @@ string CreateJobSpecRequest::ToJsonString() const
         string key = "DispatchStrategy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dispatchStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -596,6 +605,22 @@ void CreateJobSpecRequest::SetDispatchStrategy(const string& _dispatchStrategy)
 bool CreateJobSpecRequest::DispatchStrategyHasBeenSet() const
 {
     return m_dispatchStrategyHasBeenSet;
+}
+
+string CreateJobSpecRequest::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+void CreateJobSpecRequest::SetNetworkConfig(const string& _networkConfig)
+{
+    m_networkConfig = _networkConfig;
+    m_networkConfigHasBeenSet = true;
+}
+
+bool CreateJobSpecRequest::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 
 

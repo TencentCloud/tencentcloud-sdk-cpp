@@ -33,7 +33,8 @@ ProxyGroupRwInfo::ProxyGroupRwInfo() :
     m_accessModeHasBeenSet(false),
     m_apNodeAsRoNodeHasBeenSet(false),
     m_apQueryToOtherNodeHasBeenSet(false),
-    m_loadBalanceModeHasBeenSet(false)
+    m_loadBalanceModeHasBeenSet(false),
+    m_transAllSplitHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome ProxyGroupRwInfo::Deserialize(const rapidjson::Value &value)
         m_loadBalanceModeHasBeenSet = true;
     }
 
+    if (value.HasMember("TransAllSplit") && !value["TransAllSplit"].IsNull())
+    {
+        if (!value["TransAllSplit"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyGroupRwInfo.TransAllSplit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_transAllSplit = value["TransAllSplit"].GetBool();
+        m_transAllSplitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +309,14 @@ void ProxyGroupRwInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "LoadBalanceMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_loadBalanceMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transAllSplitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransAllSplit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_transAllSplit, allocator);
     }
 
 }
@@ -509,5 +528,21 @@ void ProxyGroupRwInfo::SetLoadBalanceMode(const string& _loadBalanceMode)
 bool ProxyGroupRwInfo::LoadBalanceModeHasBeenSet() const
 {
     return m_loadBalanceModeHasBeenSet;
+}
+
+bool ProxyGroupRwInfo::GetTransAllSplit() const
+{
+    return m_transAllSplit;
+}
+
+void ProxyGroupRwInfo::SetTransAllSplit(const bool& _transAllSplit)
+{
+    m_transAllSplit = _transAllSplit;
+    m_transAllSplitHasBeenSet = true;
+}
+
+bool ProxyGroupRwInfo::TransAllSplitHasBeenSet() const
+{
+    return m_transAllSplitHasBeenSet;
 }
 

@@ -41,7 +41,8 @@ CreateProxyEndPointRequest::CreateProxyEndPointRequest() :
     m_transSplitHasBeenSet(false),
     m_accessModeHasBeenSet(false),
     m_instanceWeightsHasBeenSet(false),
-    m_loadBalanceModeHasBeenSet(false)
+    m_loadBalanceModeHasBeenSet(false),
+    m_transAllSplitHasBeenSet(false)
 {
 }
 
@@ -214,6 +215,14 @@ string CreateProxyEndPointRequest::ToJsonString() const
         string key = "LoadBalanceMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_loadBalanceMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transAllSplitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransAllSplit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transAllSplit, allocator);
     }
 
 
@@ -526,6 +535,22 @@ void CreateProxyEndPointRequest::SetLoadBalanceMode(const string& _loadBalanceMo
 bool CreateProxyEndPointRequest::LoadBalanceModeHasBeenSet() const
 {
     return m_loadBalanceModeHasBeenSet;
+}
+
+bool CreateProxyEndPointRequest::GetTransAllSplit() const
+{
+    return m_transAllSplit;
+}
+
+void CreateProxyEndPointRequest::SetTransAllSplit(const bool& _transAllSplit)
+{
+    m_transAllSplit = _transAllSplit;
+    m_transAllSplitHasBeenSet = true;
+}
+
+bool CreateProxyEndPointRequest::TransAllSplitHasBeenSet() const
+{
+    return m_transAllSplitHasBeenSet;
 }
 
 

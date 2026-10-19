@@ -25,6 +25,7 @@ using namespace std;
 CreateTrainingModelRequest::CreateTrainingModelRequest() :
     m_importMethodHasBeenSet(false),
     m_reasoningEnvironmentSourceHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_trainingModelNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_trainingJobNameHasBeenSet(false),
@@ -73,6 +74,14 @@ string CreateTrainingModelRequest::ToJsonString() const
         string key = "ReasoningEnvironmentSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_reasoningEnvironmentSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_trainingModelNameHasBeenSet)
@@ -315,6 +324,22 @@ void CreateTrainingModelRequest::SetReasoningEnvironmentSource(const string& _re
 bool CreateTrainingModelRequest::ReasoningEnvironmentSourceHasBeenSet() const
 {
     return m_reasoningEnvironmentSourceHasBeenSet;
+}
+
+string CreateTrainingModelRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void CreateTrainingModelRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool CreateTrainingModelRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 string CreateTrainingModelRequest::GetTrainingModelName() const

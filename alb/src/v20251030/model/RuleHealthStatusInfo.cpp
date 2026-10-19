@@ -23,7 +23,8 @@ using namespace std;
 RuleHealthStatusInfo::RuleHealthStatusInfo() :
     m_isDefaultRuleHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_targetGroupHealthInfosHasBeenSet(false)
+    m_targetGroupHealthInfosHasBeenSet(false),
+    m_priorityHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome RuleHealthStatusInfo::Deserialize(const rapidjson::Value &va
         m_targetGroupHealthInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("Priority") && !value["Priority"].IsNull())
+    {
+        if (!value["Priority"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleHealthStatusInfo.Priority` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_priority = value["Priority"].GetInt64();
+        m_priorityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void RuleHealthStatusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_priorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Priority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_priority, allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void RuleHealthStatusInfo::SetTargetGroupHealthInfos(const vector<TargetGroupHea
 bool RuleHealthStatusInfo::TargetGroupHealthInfosHasBeenSet() const
 {
     return m_targetGroupHealthInfosHasBeenSet;
+}
+
+int64_t RuleHealthStatusInfo::GetPriority() const
+{
+    return m_priority;
+}
+
+void RuleHealthStatusInfo::SetPriority(const int64_t& _priority)
+{
+    m_priority = _priority;
+    m_priorityHasBeenSet = true;
+}
+
+bool RuleHealthStatusInfo::PriorityHasBeenSet() const
+{
+    return m_priorityHasBeenSet;
 }
 

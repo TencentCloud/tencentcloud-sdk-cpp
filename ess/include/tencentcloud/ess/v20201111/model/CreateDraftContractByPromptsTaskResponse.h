@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起草任务id
+                     * 获取<p>起草任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 起草任务id
+                     * @return TaskId <p>起草任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起草任务id
+                     * <p>起草任务id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;

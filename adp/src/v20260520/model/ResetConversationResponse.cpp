@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
-ResetConversationResponse::ResetConversationResponse()
+ResetConversationResponse::ResetConversationResponse() :
+    m_resetTimeHasBeenSet(false),
+    m_resetThroughRecordIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome ResetConversationResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("ResetTime") && !rsp["ResetTime"].IsNull())
+    {
+        if (!rsp["ResetTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResetTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resetTime = string(rsp["ResetTime"].GetString());
+        m_resetTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResetThroughRecordId") && !rsp["ResetThroughRecordId"].IsNull())
+    {
+        if (!rsp["ResetThroughRecordId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResetThroughRecordId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resetThroughRecordId = string(rsp["ResetThroughRecordId"].GetString());
+        m_resetThroughRecordIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string ResetConversationResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_resetTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResetTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resetTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resetThroughRecordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResetThroughRecordId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resetThroughRecordId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string ResetConversationResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ResetConversationResponse::GetResetTime() const
+{
+    return m_resetTime;
+}
+
+bool ResetConversationResponse::ResetTimeHasBeenSet() const
+{
+    return m_resetTimeHasBeenSet;
+}
+
+string ResetConversationResponse::GetResetThroughRecordId() const
+{
+    return m_resetThroughRecordId;
+}
+
+bool ResetConversationResponse::ResetThroughRecordIdHasBeenSet() const
+{
+    return m_resetThroughRecordIdHasBeenSet;
+}
 
 

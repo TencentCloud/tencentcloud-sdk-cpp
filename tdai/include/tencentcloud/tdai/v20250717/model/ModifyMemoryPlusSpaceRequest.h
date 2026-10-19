@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启压缩</p>
+                     * @return Compressed <p>是否开启压缩</p>
+                     * 
+                     */
+                    bool GetCompressed() const;
+
+                    /**
+                     * 设置<p>是否开启压缩</p>
+                     * @param _compressed <p>是否开启压缩</p>
+                     * 
+                     */
+                    void SetCompressed(const bool& _compressed);
+
+                    /**
+                     * 判断参数 Compressed 是否已赋值
+                     * @return Compressed 是否已赋值
+                     * 
+                     */
+                    bool CompressedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>是否开启压缩</p>
+                     */
+                    bool m_compressed;
+                    bool m_compressedHasBeenSet;
 
                 };
             }

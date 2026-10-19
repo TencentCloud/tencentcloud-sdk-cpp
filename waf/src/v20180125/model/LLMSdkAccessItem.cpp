@@ -38,6 +38,7 @@ LLMSdkAccessItem::LLMSdkAccessItem() :
     m_dLPStatusHasBeenSet(false),
     m_skillsStatusHasBeenSet(false),
     m_intentStatusHasBeenSet(false),
+    m_urlDetectStatusHasBeenSet(false),
     m_effectiveRulesHasBeenSet(false)
 {
 }
@@ -217,6 +218,16 @@ CoreInternalOutcome LLMSdkAccessItem::Deserialize(const rapidjson::Value &value)
         m_intentStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("UrlDetectStatus") && !value["UrlDetectStatus"].IsNull())
+    {
+        if (!value["UrlDetectStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LLMSdkAccessItem.UrlDetectStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_urlDetectStatus = value["UrlDetectStatus"].GetBool();
+        m_urlDetectStatusHasBeenSet = true;
+    }
+
     if (value.HasMember("EffectiveRules") && !value["EffectiveRules"].IsNull())
     {
         if (!value["EffectiveRules"].IsInt64())
@@ -368,6 +379,14 @@ void LLMSdkAccessItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IntentStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_intentStatus, allocator);
+    }
+
+    if (m_urlDetectStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlDetectStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_urlDetectStatus, allocator);
     }
 
     if (m_effectiveRulesHasBeenSet)
@@ -651,6 +670,22 @@ void LLMSdkAccessItem::SetIntentStatus(const bool& _intentStatus)
 bool LLMSdkAccessItem::IntentStatusHasBeenSet() const
 {
     return m_intentStatusHasBeenSet;
+}
+
+bool LLMSdkAccessItem::GetUrlDetectStatus() const
+{
+    return m_urlDetectStatus;
+}
+
+void LLMSdkAccessItem::SetUrlDetectStatus(const bool& _urlDetectStatus)
+{
+    m_urlDetectStatus = _urlDetectStatus;
+    m_urlDetectStatusHasBeenSet = true;
+}
+
+bool LLMSdkAccessItem::UrlDetectStatusHasBeenSet() const
+{
+    return m_urlDetectStatusHasBeenSet;
 }
 
 int64_t LLMSdkAccessItem::GetEffectiveRules() const

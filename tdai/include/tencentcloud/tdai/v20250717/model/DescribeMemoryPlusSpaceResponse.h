@@ -241,6 +241,20 @@ namespace TencentCloud
                     bool CreditLimitHasBeenSet() const;
 
                     /**
+                     * 获取<p>是否开启压缩</p>
+                     * @return Compressed <p>是否开启压缩</p>
+                     * 
+                     */
+                    bool GetCompressed() const;
+
+                    /**
+                     * 判断参数 Compressed 是否已赋值
+                     * @return Compressed 是否已赋值
+                     * 
+                     */
+                    bool CompressedHasBeenSet() const;
+
+                    /**
                      * 获取<p>Memory 实例的内网访问地址。</p>
                      * @return AccessUrl <p>Memory 实例的内网访问地址。</p>
                      * 
@@ -409,6 +423,12 @@ namespace TencentCloud
                      */
                     double m_creditLimit;
                     bool m_creditLimitHasBeenSet;
+
+                    /**
+                     * <p>是否开启压缩</p>
+                     */
+                    bool m_compressed;
+                    bool m_compressedHasBeenSet;
 
                     /**
                      * <p>Memory 实例的内网访问地址。</p>

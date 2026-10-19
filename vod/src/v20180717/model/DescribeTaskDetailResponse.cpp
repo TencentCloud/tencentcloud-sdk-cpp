@@ -70,7 +70,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_designVoiceAsyncTaskHasBeenSet(false),
     m_cloneVoiceAsyncTaskHasBeenSet(false),
     m_textToSpeechAsyncTaskHasBeenSet(false),
-    m_videoDubbingAsyncTaskHasBeenSet(false)
+    m_videoDubbingAsyncTaskHasBeenSet(false),
+    m_videoDepthEstimationTaskHasBeenSet(false)
 {
 }
 
@@ -872,6 +873,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_videoDubbingAsyncTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VideoDepthEstimationTask") && !rsp["VideoDepthEstimationTask"].IsNull())
+    {
+        if (!rsp["VideoDepthEstimationTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoDepthEstimationTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoDepthEstimationTask.Deserialize(rsp["VideoDepthEstimationTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoDepthEstimationTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1298,6 +1316,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoDubbingAsyncTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_videoDepthEstimationTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoDepthEstimationTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoDepthEstimationTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1780,6 +1807,16 @@ VideoDubbingAsyncTask DescribeTaskDetailResponse::GetVideoDubbingAsyncTask() con
 bool DescribeTaskDetailResponse::VideoDubbingAsyncTaskHasBeenSet() const
 {
     return m_videoDubbingAsyncTaskHasBeenSet;
+}
+
+VideoDepthEstimationTask DescribeTaskDetailResponse::GetVideoDepthEstimationTask() const
+{
+    return m_videoDepthEstimationTask;
+}
+
+bool DescribeTaskDetailResponse::VideoDepthEstimationTaskHasBeenSet() const
+{
+    return m_videoDepthEstimationTaskHasBeenSet;
 }
 
 

@@ -27,6 +27,7 @@
 #include <tencentcloud/clb/v20180317/model/VideoConfig.h>
 #include <tencentcloud/clb/v20180317/model/RerankConfig.h>
 #include <tencentcloud/clb/v20180317/model/DecisionsConfig.h>
+#include <tencentcloud/clb/v20180317/model/ImageConfig.h>
 
 
 namespace TencentCloud
@@ -279,6 +280,27 @@ namespace TencentCloud
                      */
                     bool DecisionsConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Images 生图配置</p>
+                     * @return ImageConfig <p>Images 生图配置</p>
+                     * 
+                     */
+                    ImageConfig GetImageConfig() const;
+
+                    /**
+                     * 设置<p>Images 生图配置</p>
+                     * @param _imageConfig <p>Images 生图配置</p>
+                     * 
+                     */
+                    void SetImageConfig(const ImageConfig& _imageConfig);
+
+                    /**
+                     * 判断参数 ImageConfig 是否已赋值
+                     * @return ImageConfig 是否已赋值
+                     * 
+                     */
+                    bool ImageConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +368,12 @@ namespace TencentCloud
                      */
                     DecisionsConfig m_decisionsConfig;
                     bool m_decisionsConfigHasBeenSet;
+
+                    /**
+                     * <p>Images 生图配置</p>
+                     */
+                    ImageConfig m_imageConfig;
+                    bool m_imageConfigHasBeenSet;
 
                 };
             }

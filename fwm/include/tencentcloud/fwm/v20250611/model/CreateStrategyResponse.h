@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>策略Id列表</p>
+                     * @return StrategyIds <p>策略Id列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetStrategyIds() const;
+
+                    /**
+                     * 判断参数 StrategyIds 是否已赋值
+                     * @return StrategyIds 是否已赋值
+                     * 
+                     */
+                    bool StrategyIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>策略Id列表</p>
+                     */
+                    std::vector<std::string> m_strategyIds;
+                    bool m_strategyIdsHasBeenSet;
 
                 };
             }

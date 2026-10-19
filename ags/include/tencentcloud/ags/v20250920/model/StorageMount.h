@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ags/v20250920/model/StorageSource.h>
+#include <tencentcloud/ags/v20250920/model/VolumeRef.h>
+#include <tencentcloud/ags/v20250920/model/VolumeTemplateRef.h>
 
 
 namespace TencentCloud
@@ -135,6 +137,56 @@ namespace TencentCloud
                      */
                     bool ReadOnlyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Volume的引用</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Volume <p>Volume的引用</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    VolumeRef GetVolume() const;
+
+                    /**
+                     * 设置<p>Volume的引用</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _volume <p>Volume的引用</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVolume(const VolumeRef& _volume);
+
+                    /**
+                     * 判断参数 Volume 是否已赋值
+                     * @return Volume 是否已赋值
+                     * 
+                     */
+                    bool VolumeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>VolumeTemplate 的引用以及派生规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VolumeTemplate <p>VolumeTemplate 的引用以及派生规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    VolumeTemplateRef GetVolumeTemplate() const;
+
+                    /**
+                     * 设置<p>VolumeTemplate 的引用以及派生规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _volumeTemplate <p>VolumeTemplate 的引用以及派生规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVolumeTemplate(const VolumeTemplateRef& _volumeTemplate);
+
+                    /**
+                     * 判断参数 VolumeTemplate 是否已赋值
+                     * @return VolumeTemplate 是否已赋值
+                     * 
+                     */
+                    bool VolumeTemplateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +213,20 @@ namespace TencentCloud
                      */
                     bool m_readOnly;
                     bool m_readOnlyHasBeenSet;
+
+                    /**
+                     * <p>Volume的引用</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VolumeRef m_volume;
+                    bool m_volumeHasBeenSet;
+
+                    /**
+                     * <p>VolumeTemplate 的引用以及派生规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VolumeTemplateRef m_volumeTemplate;
+                    bool m_volumeTemplateHasBeenSet;
 
                 };
             }

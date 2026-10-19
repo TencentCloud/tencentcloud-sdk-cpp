@@ -310,7 +310,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeLimitConfigStatus <p>流量控制状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     bool GetInvokeLimitConfigStatus() const;
 
@@ -319,14 +319,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invokeLimitConfigStatus <p>流量控制状态</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetInvokeLimitConfigStatus(const bool& _invokeLimitConfigStatus);
 
                     /**
                      * 判断参数 InvokeLimitConfigStatus 是否已赋值
                      * @return InvokeLimitConfigStatus 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InvokeLimitConfigStatusHasBeenSet() const;
 
@@ -335,7 +335,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeLimitConfig <p>流量控制配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     InvokeLimitConfigDTO GetInvokeLimitConfig() const;
 
@@ -344,14 +344,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invokeLimitConfig <p>流量控制配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetInvokeLimitConfig(const InvokeLimitConfigDTO& _invokeLimitConfig);
 
                     /**
                      * 判断参数 InvokeLimitConfig 是否已赋值
                      * @return InvokeLimitConfig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InvokeLimitConfigHasBeenSet() const;
 

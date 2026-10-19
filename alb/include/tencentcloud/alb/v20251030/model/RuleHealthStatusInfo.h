@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否为默认转发规则。
-                     * @return IsDefaultRule 是否为默认转发规则。
+                     * 获取<p>是否为默认转发规则。</p>
+                     * @return IsDefaultRule <p>是否为默认转发规则。</p>
                      * 
                      */
                     std::string GetIsDefaultRule() const;
 
                     /**
-                     * 设置是否为默认转发规则。
-                     * @param _isDefaultRule 是否为默认转发规则。
+                     * 设置<p>是否为默认转发规则。</p>
+                     * @param _isDefaultRule <p>是否为默认转发规则。</p>
                      * 
                      */
                     void SetIsDefaultRule(const std::string& _isDefaultRule);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IsDefaultRuleHasBeenSet() const;
 
                     /**
-                     * 获取转发规则 ID，格式为 rule- 后接 8 位字母数字。
-                     * @return RuleId 转发规则 ID，格式为 rule- 后接 8 位字母数字。
+                     * 获取<p>转发规则 ID，格式为 rule- 后接 8 位字母数字。</p>
+                     * @return RuleId <p>转发规则 ID，格式为 rule- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置转发规则 ID，格式为 rule- 后接 8 位字母数字。
-                     * @param _ruleId 转发规则 ID，格式为 rule- 后接 8 位字母数字。
+                     * 设置<p>转发规则 ID，格式为 rule- 后接 8 位字母数字。</p>
+                     * @param _ruleId <p>转发规则 ID，格式为 rule- 后接 8 位字母数字。</p>
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取目标组健康状态。
-                     * @return TargetGroupHealthInfos 目标组健康状态。
+                     * 获取<p>目标组健康状态。</p>
+                     * @return TargetGroupHealthInfos <p>目标组健康状态。</p>
                      * 
                      */
                     std::vector<TargetGroupHealthInfo> GetTargetGroupHealthInfos() const;
 
                     /**
-                     * 设置目标组健康状态。
-                     * @param _targetGroupHealthInfos 目标组健康状态。
+                     * 设置<p>目标组健康状态。</p>
+                     * @param _targetGroupHealthInfos <p>目标组健康状态。</p>
                      * 
                      */
                     void SetTargetGroupHealthInfos(const std::vector<TargetGroupHealthInfo>& _targetGroupHealthInfos);
@@ -110,25 +110,52 @@ namespace TencentCloud
                      */
                     bool TargetGroupHealthInfosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>优先级，值越小优先级越高，取值范围：1~10000。</p>
+                     * @return Priority <p>优先级，值越小优先级越高，取值范围：1~10000。</p>
+                     * 
+                     */
+                    int64_t GetPriority() const;
+
+                    /**
+                     * 设置<p>优先级，值越小优先级越高，取值范围：1~10000。</p>
+                     * @param _priority <p>优先级，值越小优先级越高，取值范围：1~10000。</p>
+                     * 
+                     */
+                    void SetPriority(const int64_t& _priority);
+
+                    /**
+                     * 判断参数 Priority 是否已赋值
+                     * @return Priority 是否已赋值
+                     * 
+                     */
+                    bool PriorityHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 是否为默认转发规则。
+                     * <p>是否为默认转发规则。</p>
                      */
                     std::string m_isDefaultRule;
                     bool m_isDefaultRuleHasBeenSet;
 
                     /**
-                     * 转发规则 ID，格式为 rule- 后接 8 位字母数字。
+                     * <p>转发规则 ID，格式为 rule- 后接 8 位字母数字。</p>
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 目标组健康状态。
+                     * <p>目标组健康状态。</p>
                      */
                     std::vector<TargetGroupHealthInfo> m_targetGroupHealthInfos;
                     bool m_targetGroupHealthInfosHasBeenSet;
+
+                    /**
+                     * <p>优先级，值越小优先级越高，取值范围：1~10000。</p>
+                     */
+                    int64_t m_priority;
+                    bool m_priorityHasBeenSet;
 
                 };
             }

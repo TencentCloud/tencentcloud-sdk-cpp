@@ -46,7 +46,8 @@ AgentInstance::AgentInstance() :
     m_productNameHasBeenSet(false),
     m_capabilitiesHasBeenSet(false),
     m_deploymentFreeHasBeenSet(false),
-    m_agentMemHasBeenSet(false)
+    m_agentMemHasBeenSet(false),
+    m_memInstanceIdHasBeenSet(false)
 {
 }
 
@@ -365,6 +366,16 @@ CoreInternalOutcome AgentInstance::Deserialize(const rapidjson::Value &value)
         m_agentMemHasBeenSet = true;
     }
 
+    if (value.HasMember("MemInstanceId") && !value["MemInstanceId"].IsNull())
+    {
+        if (!value["MemInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentInstance.MemInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_memInstanceId = string(value["MemInstanceId"].GetString());
+        m_memInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -610,6 +621,14 @@ void AgentInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agentMem.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_memInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_memInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1029,5 +1048,21 @@ void AgentInstance::SetAgentMem(const AgentMemInfo& _agentMem)
 bool AgentInstance::AgentMemHasBeenSet() const
 {
     return m_agentMemHasBeenSet;
+}
+
+string AgentInstance::GetMemInstanceId() const
+{
+    return m_memInstanceId;
+}
+
+void AgentInstance::SetMemInstanceId(const string& _memInstanceId)
+{
+    m_memInstanceId = _memInstanceId;
+    m_memInstanceIdHasBeenSet = true;
+}
+
+bool AgentInstance::MemInstanceIdHasBeenSet() const
+{
+    return m_memInstanceIdHasBeenSet;
 }
 

@@ -368,6 +368,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DeleteLoadBalancerListenersResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeIdleLoadBalancersRequest.h
   include/tencentcloud/clb/v20180317/model/TestModelInputModalitiesRequest.h
+  include/tencentcloud/clb/v20180317/model/ImageConfig.h
   include/tencentcloud/clb/v20180317/model/DeleteKeysRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeLBListenersResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeQuotaResponse.h
@@ -845,6 +846,7 @@ set(clb_src
   src/v20180317/model/DeleteLoadBalancerListenersResponse.cpp
   src/v20180317/model/DescribeIdleLoadBalancersRequest.cpp
   src/v20180317/model/TestModelInputModalitiesRequest.cpp
+  src/v20180317/model/ImageConfig.cpp
   src/v20180317/model/DeleteKeysRequest.cpp
   src/v20180317/model/DescribeLBListenersResponse.cpp
   src/v20180317/model/DescribeQuotaResponse.cpp

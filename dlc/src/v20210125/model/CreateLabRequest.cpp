@@ -44,7 +44,8 @@ CreateLabRequest::CreateLabRequest() :
     m_persistentWorkDirHasBeenSet(false),
     m_enableTokenHasBeenSet(false),
     m_imagePullTypeHasBeenSet(false),
-    m_labImagePullTypeHasBeenSet(false)
+    m_labImagePullTypeHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -242,6 +243,14 @@ string CreateLabRequest::ToJsonString() const
         string key = "LabImagePullType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_labImagePullType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -602,6 +611,22 @@ void CreateLabRequest::SetLabImagePullType(const string& _labImagePullType)
 bool CreateLabRequest::LabImagePullTypeHasBeenSet() const
 {
     return m_labImagePullTypeHasBeenSet;
+}
+
+string CreateLabRequest::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+void CreateLabRequest::SetNetworkConfig(const string& _networkConfig)
+{
+    m_networkConfig = _networkConfig;
+    m_networkConfigHasBeenSet = true;
+}
+
+bool CreateLabRequest::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 
 

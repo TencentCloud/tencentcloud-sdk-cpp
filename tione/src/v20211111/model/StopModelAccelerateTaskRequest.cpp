@@ -23,7 +23,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 StopModelAccelerateTaskRequest::StopModelAccelerateTaskRequest() :
-    m_modelAccTaskIdHasBeenSet(false)
+    m_modelAccTaskIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string StopModelAccelerateTaskRequest::ToJsonString() const
         string key = "ModelAccTaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modelAccTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void StopModelAccelerateTaskRequest::SetModelAccTaskId(const string& _modelAccTa
 bool StopModelAccelerateTaskRequest::ModelAccTaskIdHasBeenSet() const
 {
     return m_modelAccTaskIdHasBeenSet;
+}
+
+string StopModelAccelerateTaskRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void StopModelAccelerateTaskRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool StopModelAccelerateTaskRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 

@@ -31,7 +31,9 @@ UserDspmInfo::UserDspmInfo() :
     m_shareFromAppIDHasBeenSet(false),
     m_cloudTypeHasBeenSet(false),
     m_isIsolatingHasBeenSet(false),
-    m_isDataCleaningHasBeenSet(false)
+    m_isDataCleaningHasBeenSet(false),
+    m_roleHasBeenSet(false),
+    m_nodeNameHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome UserDspmInfo::Deserialize(const rapidjson::Value &value)
         m_isDataCleaningHasBeenSet = true;
     }
 
+    if (value.HasMember("Role") && !value["Role"].IsNull())
+    {
+        if (!value["Role"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDspmInfo.Role` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_role = string(value["Role"].GetString());
+        m_roleHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeName") && !value["NodeName"].IsNull())
+    {
+        if (!value["NodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDspmInfo.NodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeName = string(value["NodeName"].GetString());
+        m_nodeNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void UserDspmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsDataCleaning";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDataCleaning, allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void UserDspmInfo::SetIsDataCleaning(const bool& _isDataCleaning)
 bool UserDspmInfo::IsDataCleaningHasBeenSet() const
 {
     return m_isDataCleaningHasBeenSet;
+}
+
+string UserDspmInfo::GetRole() const
+{
+    return m_role;
+}
+
+void UserDspmInfo::SetRole(const string& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool UserDspmInfo::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
+}
+
+string UserDspmInfo::GetNodeName() const
+{
+    return m_nodeName;
+}
+
+void UserDspmInfo::SetNodeName(const string& _nodeName)
+{
+    m_nodeName = _nodeName;
+    m_nodeNameHasBeenSet = true;
+}
+
+bool UserDspmInfo::NodeNameHasBeenSet() const
+{
+    return m_nodeNameHasBeenSet;
 }
 

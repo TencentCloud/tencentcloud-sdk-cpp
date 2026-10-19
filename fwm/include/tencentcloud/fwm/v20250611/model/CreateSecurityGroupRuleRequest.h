@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则组Id
-                     * @return GroupId 规则组Id
+                     * 获取<p>规则组Id</p>
+                     * @return GroupId <p>规则组Id</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置规则组Id
-                     * @param _groupId 规则组Id
+                     * 设置<p>规则组Id</p>
+                     * @param _groupId <p>规则组Id</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取规则列表
-                     * @return Rules 规则列表
+                     * 获取<p>规则列表</p>
+                     * @return Rules <p>规则列表</p>
                      * 
                      */
                     std::vector<SecurityGroupRule> GetRules() const;
 
                     /**
-                     * 设置规则列表
-                     * @param _rules 规则列表
+                     * 设置<p>规则列表</p>
+                     * @param _rules <p>规则列表</p>
                      * 
                      */
                     void SetRules(const std::vector<SecurityGroupRule>& _rules);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则组Id
+                     * <p>规则组Id</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 规则列表
+                     * <p>规则列表</p>
                      */
                     std::vector<SecurityGroupRule> m_rules;
                     bool m_rulesHasBeenSet;

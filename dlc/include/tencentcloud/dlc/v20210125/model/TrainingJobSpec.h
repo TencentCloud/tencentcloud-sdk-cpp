@@ -883,6 +883,69 @@ namespace TencentCloud
                      */
                     bool AdvancedOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>创建人子账号 UIN（实际提交者）</p>
+                     * @return SubAccountUin <p>创建人子账号 UIN（实际提交者）</p>
+                     * 
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 设置<p>创建人子账号 UIN（实际提交者）</p>
+                     * @param _subAccountUin <p>创建人子账号 UIN（实际提交者）</p>
+                     * 
+                     */
+                    void SetSubAccountUin(const std::string& _subAccountUin);
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建人子账号名称（CAM 解析，解析失败为 null）</p>
+                     * @return SubAccountName <p>创建人子账号名称（CAM 解析，解析失败为 null）</p>
+                     * 
+                     */
+                    std::string GetSubAccountName() const;
+
+                    /**
+                     * 设置<p>创建人子账号名称（CAM 解析，解析失败为 null）</p>
+                     * @param _subAccountName <p>创建人子账号名称（CAM 解析，解析失败为 null）</p>
+                     * 
+                     */
+                    void SetSubAccountName(const std::string& _subAccountName);
+
+                    /**
+                     * 判断参数 SubAccountName 是否已赋值
+                     * @return SubAccountName 是否已赋值
+                     * 
+                     */
+                    bool SubAccountNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户网络配置(JSON，跨租户 ENI 等)</p>
+                     * @return NetworkConfig <p>用户网络配置(JSON，跨租户 ENI 等)</p>
+                     * 
+                     */
+                    std::string GetNetworkConfig() const;
+
+                    /**
+                     * 设置<p>用户网络配置(JSON，跨租户 ENI 等)</p>
+                     * @param _networkConfig <p>用户网络配置(JSON，跨租户 ENI 等)</p>
+                     * 
+                     */
+                    void SetNetworkConfig(const std::string& _networkConfig);
+
+                    /**
+                     * 判断参数 NetworkConfig 是否已赋值
+                     * @return NetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool NetworkConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1119,6 +1182,24 @@ namespace TencentCloud
                      */
                     std::string m_advancedOptions;
                     bool m_advancedOptionsHasBeenSet;
+
+                    /**
+                     * <p>创建人子账号 UIN（实际提交者）</p>
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * <p>创建人子账号名称（CAM 解析，解析失败为 null）</p>
+                     */
+                    std::string m_subAccountName;
+                    bool m_subAccountNameHasBeenSet;
+
+                    /**
+                     * <p>用户网络配置(JSON，跨租户 ENI 等)</p>
+                     */
+                    std::string m_networkConfig;
+                    bool m_networkConfigHasBeenSet;
 
                 };
             }

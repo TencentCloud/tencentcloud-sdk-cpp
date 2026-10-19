@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取添加结果
-                     * @return Data 添加结果
+                     * 获取<p>添加结果</p>
+                     * @return Data <p>添加结果</p>
                      * 
                      */
                     PlatformStatusRsp GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 添加结果
+                     * <p>添加结果</p>
                      */
                     PlatformStatusRsp m_data;
                     bool m_dataHasBeenSet;

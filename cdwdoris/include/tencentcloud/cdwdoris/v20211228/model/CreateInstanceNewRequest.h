@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool CacheDataDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取<p>磁盘加密</p>
-                     * @return DiskEncrypt <p>磁盘加密</p>
+                     * 获取<p>磁盘加密</p><p>默认为0不加密，1表示加密</p>
+                     * @return DiskEncrypt <p>磁盘加密</p><p>默认为0不加密，1表示加密</p>
                      * 
                      */
                     int64_t GetDiskEncrypt() const;
 
                     /**
-                     * 设置<p>磁盘加密</p>
-                     * @param _diskEncrypt <p>磁盘加密</p>
+                     * 设置<p>磁盘加密</p><p>默认为0不加密，1表示加密</p>
+                     * @param _diskEncrypt <p>磁盘加密</p><p>默认为0不加密，1表示加密</p>
                      * 
                      */
                     void SetDiskEncrypt(const int64_t& _diskEncrypt);
@@ -610,7 +610,7 @@ namespace TencentCloud
                     bool m_cacheDataDiskSizeHasBeenSet;
 
                     /**
-                     * <p>磁盘加密</p>
+                     * <p>磁盘加密</p><p>默认为0不加密，1表示加密</p>
                      */
                     int64_t m_diskEncrypt;
                     bool m_diskEncryptHasBeenSet;

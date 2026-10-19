@@ -23,7 +23,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DescribeTrainingModelVersionRequest::DescribeTrainingModelVersionRequest() :
-    m_trainingModelVersionIdHasBeenSet(false)
+    m_trainingModelVersionIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeTrainingModelVersionRequest::ToJsonString() const
         string key = "TrainingModelVersionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_trainingModelVersionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeTrainingModelVersionRequest::SetTrainingModelVersionId(const string
 bool DescribeTrainingModelVersionRequest::TrainingModelVersionIdHasBeenSet() const
 {
     return m_trainingModelVersionIdHasBeenSet;
+}
+
+string DescribeTrainingModelVersionRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeTrainingModelVersionRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeTrainingModelVersionRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 

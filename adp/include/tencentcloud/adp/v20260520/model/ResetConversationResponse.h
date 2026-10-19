@@ -43,7 +43,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>重置时间，单位为ms</p>
+                     * @return ResetTime <p>重置时间，单位为ms</p>
+                     * 
+                     */
+                    std::string GetResetTime() const;
+
+                    /**
+                     * 判断参数 ResetTime 是否已赋值
+                     * @return ResetTime 是否已赋值
+                     * 
+                     */
+                    bool ResetTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>重置前的最后一条记录的recordId</p>
+                     * @return ResetThroughRecordId <p>重置前的最后一条记录的recordId</p>
+                     * 
+                     */
+                    std::string GetResetThroughRecordId() const;
+
+                    /**
+                     * 判断参数 ResetThroughRecordId 是否已赋值
+                     * @return ResetThroughRecordId 是否已赋值
+                     * 
+                     */
+                    bool ResetThroughRecordIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>重置时间，单位为ms</p>
+                     */
+                    std::string m_resetTime;
+                    bool m_resetTimeHasBeenSet;
+
+                    /**
+                     * <p>重置前的最后一条记录的recordId</p>
+                     */
+                    std::string m_resetThroughRecordId;
+                    bool m_resetThroughRecordIdHasBeenSet;
 
                 };
             }

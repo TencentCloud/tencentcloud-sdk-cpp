@@ -60,7 +60,8 @@ LabResponse::LabResponse() :
     m_tagsHasBeenSet(false),
     m_persistentWorkDirHasBeenSet(false),
     m_enableTokenHasBeenSet(false),
-    m_tokenHasBeenSet(false)
+    m_tokenHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -496,6 +497,16 @@ CoreInternalOutcome LabResponse::Deserialize(const rapidjson::Value &value)
         m_tokenHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkConfig") && !value["NetworkConfig"].IsNull())
+    {
+        if (!value["NetworkConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LabResponse.NetworkConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkConfig = string(value["NetworkConfig"].GetString());
+        m_networkConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -836,6 +847,14 @@ void LabResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Token";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1479,5 +1498,21 @@ void LabResponse::SetToken(const string& _token)
 bool LabResponse::TokenHasBeenSet() const
 {
     return m_tokenHasBeenSet;
+}
+
+string LabResponse::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+void LabResponse::SetNetworkConfig(const string& _networkConfig)
+{
+    m_networkConfig = _networkConfig;
+    m_networkConfigHasBeenSet = true;
+}
+
+bool LabResponse::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 

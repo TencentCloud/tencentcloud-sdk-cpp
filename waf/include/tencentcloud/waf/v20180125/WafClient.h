@@ -43,6 +43,8 @@
 #include <tencentcloud/waf/v20180125/model/AddCustomWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddDomainWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddDomainWhiteRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/AddLLMSdkAccessRequest.h>
+#include <tencentcloud/waf/v20180125/model/AddLLMSdkAccessResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddSpartaProtectionRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddSpartaProtectionResponse.h>
 #include <tencentcloud/waf/v20180125/model/BatchOperateUserSignatureRulesRequest.h>
@@ -133,6 +135,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAccessHistogramResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAccessIndexRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAccessIndexResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAfterPayInstancesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAfterPayInstancesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiFakeRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiFakeRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesRequest.h>
@@ -547,6 +551,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddDomainWhiteRuleResponse> AddDomainWhiteRuleOutcome;
                 typedef std::future<AddDomainWhiteRuleOutcome> AddDomainWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddDomainWhiteRuleRequest&, AddDomainWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDomainWhiteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddLLMSdkAccessResponse> AddLLMSdkAccessOutcome;
+                typedef std::future<AddLLMSdkAccessOutcome> AddLLMSdkAccessOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::AddLLMSdkAccessRequest&, AddLLMSdkAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddLLMSdkAccessAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddSpartaProtectionResponse> AddSpartaProtectionOutcome;
                 typedef std::future<AddSpartaProtectionOutcome> AddSpartaProtectionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddSpartaProtectionRequest&, AddSpartaProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSpartaProtectionAsyncHandler;
@@ -682,6 +689,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccessIndexResponse> DescribeAccessIndexOutcome;
                 typedef std::future<DescribeAccessIndexOutcome> DescribeAccessIndexOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAccessIndexRequest&, DescribeAccessIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessIndexAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAfterPayInstancesResponse> DescribeAfterPayInstancesOutcome;
+                typedef std::future<DescribeAfterPayInstancesOutcome> DescribeAfterPayInstancesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeAfterPayInstancesRequest&, DescribeAfterPayInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAfterPayInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAntiFakeRulesResponse> DescribeAntiFakeRulesOutcome;
                 typedef std::future<DescribeAntiFakeRulesOutcome> DescribeAntiFakeRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAntiFakeRulesRequest&, DescribeAntiFakeRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAntiFakeRulesAsyncHandler;
@@ -1331,6 +1341,15 @@ namespace TencentCloud
                 AddDomainWhiteRuleOutcomeCallable AddDomainWhiteRuleCallable(const Model::AddDomainWhiteRuleRequest& request);
 
                 /**
+                 *llmwaf-sdk新增接入配置接口
+                 * @param req AddLLMSdkAccessRequest
+                 * @return AddLLMSdkAccessOutcome
+                 */
+                AddLLMSdkAccessOutcome AddLLMSdkAccess(const Model::AddLLMSdkAccessRequest &request);
+                void AddLLMSdkAccessAsync(const Model::AddLLMSdkAccessRequest& request, const AddLLMSdkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddLLMSdkAccessOutcomeCallable AddLLMSdkAccessCallable(const Model::AddLLMSdkAccessRequest& request);
+
+                /**
                  *添加SaaS型WAF防护域名
                  * @param req AddSpartaProtectionRequest
                  * @return AddSpartaProtectionOutcome
@@ -1734,6 +1753,15 @@ namespace TencentCloud
                 DescribeAccessIndexOutcome DescribeAccessIndex(const Model::DescribeAccessIndexRequest &request);
                 void DescribeAccessIndexAsync(const Model::DescribeAccessIndexRequest& request, const DescribeAccessIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccessIndexOutcomeCallable DescribeAccessIndexCallable(const Model::DescribeAccessIndexRequest& request);
+
+                /**
+                 *查询后付费实例列表（仅 Edition=llm-sdk-waf）。请求参数与 DescribeInstances 一致；仅返回 tb_instance_conf 基础数据，不含套餐/标签等扩展信息。
+                 * @param req DescribeAfterPayInstancesRequest
+                 * @return DescribeAfterPayInstancesOutcome
+                 */
+                DescribeAfterPayInstancesOutcome DescribeAfterPayInstances(const Model::DescribeAfterPayInstancesRequest &request);
+                void DescribeAfterPayInstancesAsync(const Model::DescribeAfterPayInstancesRequest& request, const DescribeAfterPayInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAfterPayInstancesOutcomeCallable DescribeAfterPayInstancesCallable(const Model::DescribeAfterPayInstancesRequest& request);
 
                 /**
                  *获取防篡改url

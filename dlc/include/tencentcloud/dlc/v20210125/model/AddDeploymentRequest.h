@@ -294,6 +294,27 @@ namespace TencentCloud
                      */
                     bool AdvancedOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>NetworkConfig</p>
+                     * @return NetworkConfig <p>NetworkConfig</p>
+                     * 
+                     */
+                    std::string GetNetworkConfig() const;
+
+                    /**
+                     * 设置<p>NetworkConfig</p>
+                     * @param _networkConfig <p>NetworkConfig</p>
+                     * 
+                     */
+                    void SetNetworkConfig(const std::string& _networkConfig);
+
+                    /**
+                     * 判断参数 NetworkConfig 是否已赋值
+                     * @return NetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool NetworkConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +388,12 @@ namespace TencentCloud
                      */
                     std::string m_advancedOptions;
                     bool m_advancedOptionsHasBeenSet;
+
+                    /**
+                     * <p>NetworkConfig</p>
+                     */
+                    std::string m_networkConfig;
+                    bool m_networkConfigHasBeenSet;
 
                 };
             }

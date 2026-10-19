@@ -27,7 +27,8 @@ ServiceProviderHealthCheckConfigItemOutput::ServiceProviderHealthCheckConfigItem
     m_healthCheckMaxTokensHasBeenSet(false),
     m_healthCheckProtocolHasBeenSet(false),
     m_healthCheckPathHasBeenSet(false),
-    m_healthCheckMethodHasBeenSet(false)
+    m_healthCheckMethodHasBeenSet(false),
+    m_healthCheckTimeoutHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome ServiceProviderHealthCheckConfigItemOutput::Deserialize(cons
         m_healthCheckMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthCheckTimeout") && !value["HealthCheckTimeout"].IsNull())
+    {
+        if (!value["HealthCheckTimeout"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceProviderHealthCheckConfigItemOutput.HealthCheckTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthCheckTimeout = value["HealthCheckTimeout"].GetUint64();
+        m_healthCheckTimeoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void ServiceProviderHealthCheckConfigItemOutput::ToJsonObject(rapidjson::Value &
         string key = "HealthCheckMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_healthCheckMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_healthCheckTimeout, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void ServiceProviderHealthCheckConfigItemOutput::SetHealthCheckMethod(const stri
 bool ServiceProviderHealthCheckConfigItemOutput::HealthCheckMethodHasBeenSet() const
 {
     return m_healthCheckMethodHasBeenSet;
+}
+
+uint64_t ServiceProviderHealthCheckConfigItemOutput::GetHealthCheckTimeout() const
+{
+    return m_healthCheckTimeout;
+}
+
+void ServiceProviderHealthCheckConfigItemOutput::SetHealthCheckTimeout(const uint64_t& _healthCheckTimeout)
+{
+    m_healthCheckTimeout = _healthCheckTimeout;
+    m_healthCheckTimeoutHasBeenSet = true;
+}
+
+bool ServiceProviderHealthCheckConfigItemOutput::HealthCheckTimeoutHasBeenSet() const
+{
+    return m_healthCheckTimeoutHasBeenSet;
 }
 

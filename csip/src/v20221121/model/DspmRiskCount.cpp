@@ -32,7 +32,9 @@ DspmRiskCount::DspmRiskCount() :
     m_accountSensitiveOperationHasBeenSet(false),
     m_unprocessedAlarmHasBeenSet(false),
     m_numOfNewAlarmEventHasBeenSet(false),
-    m_numOfNewConfigRiskHasBeenSet(false)
+    m_numOfNewConfigRiskHasBeenSet(false),
+    m_accountRiskHasBeenSet(false),
+    m_configRiskHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome DspmRiskCount::Deserialize(const rapidjson::Value &value)
         m_numOfNewConfigRiskHasBeenSet = true;
     }
 
+    if (value.HasMember("AccountRisk") && !value["AccountRisk"].IsNull())
+    {
+        if (!value["AccountRisk"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmRiskCount.AccountRisk` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountRisk = value["AccountRisk"].GetInt64();
+        m_accountRiskHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigRisk") && !value["ConfigRisk"].IsNull())
+    {
+        if (!value["ConfigRisk"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmRiskCount.ConfigRisk` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_configRisk = value["ConfigRisk"].GetInt64();
+        m_configRiskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void DspmRiskCount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "NumOfNewConfigRisk";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_numOfNewConfigRisk, allocator);
+    }
+
+    if (m_accountRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountRisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accountRisk, allocator);
+    }
+
+    if (m_configRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigRisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_configRisk, allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void DspmRiskCount::SetNumOfNewConfigRisk(const int64_t& _numOfNewConfigRisk)
 bool DspmRiskCount::NumOfNewConfigRiskHasBeenSet() const
 {
     return m_numOfNewConfigRiskHasBeenSet;
+}
+
+int64_t DspmRiskCount::GetAccountRisk() const
+{
+    return m_accountRisk;
+}
+
+void DspmRiskCount::SetAccountRisk(const int64_t& _accountRisk)
+{
+    m_accountRisk = _accountRisk;
+    m_accountRiskHasBeenSet = true;
+}
+
+bool DspmRiskCount::AccountRiskHasBeenSet() const
+{
+    return m_accountRiskHasBeenSet;
+}
+
+int64_t DspmRiskCount::GetConfigRisk() const
+{
+    return m_configRisk;
+}
+
+void DspmRiskCount::SetConfigRisk(const int64_t& _configRisk)
+{
+    m_configRisk = _configRisk;
+    m_configRiskHasBeenSet = true;
+}
+
+bool DspmRiskCount::ConfigRiskHasBeenSet() const
+{
+    return m_configRiskHasBeenSet;
 }
 

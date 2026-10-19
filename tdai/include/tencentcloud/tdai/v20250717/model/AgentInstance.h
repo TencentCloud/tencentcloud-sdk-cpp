@@ -597,6 +597,27 @@ namespace TencentCloud
                      */
                     bool AgentMemHasBeenSet() const;
 
+                    /**
+                     * 获取<p>关联的 memory（AGM）实例ID（仅免部署实例有值）</p>
+                     * @return MemInstanceId <p>关联的 memory（AGM）实例ID（仅免部署实例有值）</p>
+                     * 
+                     */
+                    std::string GetMemInstanceId() const;
+
+                    /**
+                     * 设置<p>关联的 memory（AGM）实例ID（仅免部署实例有值）</p>
+                     * @param _memInstanceId <p>关联的 memory（AGM）实例ID（仅免部署实例有值）</p>
+                     * 
+                     */
+                    void SetMemInstanceId(const std::string& _memInstanceId);
+
+                    /**
+                     * 判断参数 MemInstanceId 是否已赋值
+                     * @return MemInstanceId 是否已赋值
+                     * 
+                     */
+                    bool MemInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -754,6 +775,12 @@ namespace TencentCloud
                      */
                     AgentMemInfo m_agentMem;
                     bool m_agentMemHasBeenSet;
+
+                    /**
+                     * <p>关联的 memory（AGM）实例ID（仅免部署实例有值）</p>
+                     */
+                    std::string m_memInstanceId;
+                    bool m_memInstanceIdHasBeenSet;
 
                 };
             }

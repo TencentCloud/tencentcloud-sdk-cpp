@@ -29,7 +29,8 @@ CustomConfiguration::CustomConfiguration() :
     m_portsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_probeHasBeenSet(false),
-    m_dNSConfigHasBeenSet(false)
+    m_dNSConfigHasBeenSet(false),
+    m_securityContextHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,23 @@ CoreInternalOutcome CustomConfiguration::Deserialize(const rapidjson::Value &val
         m_dNSConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityContext") && !value["SecurityContext"].IsNull())
+    {
+        if (!value["SecurityContext"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomConfiguration.SecurityContext` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_securityContext.Deserialize(value["SecurityContext"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_securityContextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +297,15 @@ void CustomConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dNSConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_securityContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securityContext.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -426,5 +453,21 @@ void CustomConfiguration::SetDNSConfig(const DNSConfig& _dNSConfig)
 bool CustomConfiguration::DNSConfigHasBeenSet() const
 {
     return m_dNSConfigHasBeenSet;
+}
+
+SecurityContext CustomConfiguration::GetSecurityContext() const
+{
+    return m_securityContext;
+}
+
+void CustomConfiguration::SetSecurityContext(const SecurityContext& _securityContext)
+{
+    m_securityContext = _securityContext;
+    m_securityContextHasBeenSet = true;
+}
+
+bool CustomConfiguration::SecurityContextHasBeenSet() const
+{
+    return m_securityContextHasBeenSet;
 }
 

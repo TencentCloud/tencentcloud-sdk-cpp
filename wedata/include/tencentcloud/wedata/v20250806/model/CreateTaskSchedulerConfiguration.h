@@ -702,6 +702,27 @@ namespace TencentCloud
                      */
                     bool AllowDownstreamDependencyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分钟任务相位偏移</p>
+                     * @return MinuteOffset <p>分钟任务相位偏移</p>
+                     * 
+                     */
+                    uint64_t GetMinuteOffset() const;
+
+                    /**
+                     * 设置<p>分钟任务相位偏移</p>
+                     * @param _minuteOffset <p>分钟任务相位偏移</p>
+                     * 
+                     */
+                    void SetMinuteOffset(const uint64_t& _minuteOffset);
+
+                    /**
+                     * 判断参数 MinuteOffset 是否已赋值
+                     * @return MinuteOffset 是否已赋值
+                     * 
+                     */
+                    bool MinuteOffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -889,6 +910,12 @@ namespace TencentCloud
                      */
                     int64_t m_allowDownstreamDependency;
                     bool m_allowDownstreamDependencyHasBeenSet;
+
+                    /**
+                     * <p>分钟任务相位偏移</p>
+                     */
+                    uint64_t m_minuteOffset;
+                    bool m_minuteOffsetHasBeenSet;
 
                 };
             }

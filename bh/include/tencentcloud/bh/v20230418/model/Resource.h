@@ -1392,6 +1392,27 @@ namespace TencentCloud
                      */
                     bool ResourceZoneSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>多账号额度</p>
+                     * @return OrgAccountQuota <p>多账号额度</p>
+                     * 
+                     */
+                    uint64_t GetOrgAccountQuota() const;
+
+                    /**
+                     * 设置<p>多账号额度</p>
+                     * @param _orgAccountQuota <p>多账号额度</p>
+                     * 
+                     */
+                    void SetOrgAccountQuota(const uint64_t& _orgAccountQuota);
+
+                    /**
+                     * 判断参数 OrgAccountQuota 是否已赋值
+                     * @return OrgAccountQuota 是否已赋值
+                     * 
+                     */
+                    bool OrgAccountQuotaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1777,6 +1798,12 @@ namespace TencentCloud
                      */
                     std::vector<ResourceDeployZone> m_resourceZoneSet;
                     bool m_resourceZoneSetHasBeenSet;
+
+                    /**
+                     * <p>多账号额度</p>
+                     */
+                    uint64_t m_orgAccountQuota;
+                    bool m_orgAccountQuotaHasBeenSet;
 
                 };
             }

@@ -640,56 +640,6 @@ IotexplorerClient::BindProductsOutcomeCallable IotexplorerClient::BindProductsCa
     return prom->get_future();
 }
 
-IotexplorerClient::BindTWeTalkAIBotOutcome IotexplorerClient::BindTWeTalkAIBot(const BindTWeTalkAIBotRequest &request)
-{
-    auto outcome = MakeRequest(request, "BindTWeTalkAIBot");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        BindTWeTalkAIBotResponse rsp = BindTWeTalkAIBotResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return BindTWeTalkAIBotOutcome(rsp);
-        else
-            return BindTWeTalkAIBotOutcome(o.GetError());
-    }
-    else
-    {
-        return BindTWeTalkAIBotOutcome(outcome.GetError());
-    }
-}
-
-void IotexplorerClient::BindTWeTalkAIBotAsync(const BindTWeTalkAIBotRequest& request, const BindTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const BindTWeTalkAIBotRequest&;
-    using Resp = BindTWeTalkAIBotResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "BindTWeTalkAIBot", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-IotexplorerClient::BindTWeTalkAIBotOutcomeCallable IotexplorerClient::BindTWeTalkAIBotCallable(const BindTWeTalkAIBotRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<BindTWeTalkAIBotOutcome>>();
-    BindTWeTalkAIBotAsync(
-    request,
-    [prom](
-        const IotexplorerClient*,
-        const BindTWeTalkAIBotRequest&,
-        BindTWeTalkAIBotOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 IotexplorerClient::BindTWeTalkAgentOutcome IotexplorerClient::BindTWeTalkAgent(const BindTWeTalkAgentRequest &request)
 {
     auto outcome = MakeRequest(request, "BindTWeTalkAgent");
@@ -2490,56 +2440,6 @@ IotexplorerClient::CreateTWeSeeSubscriptionOutcomeCallable IotexplorerClient::Cr
     return prom->get_future();
 }
 
-IotexplorerClient::CreateTWeTalkAIBotOutcome IotexplorerClient::CreateTWeTalkAIBot(const CreateTWeTalkAIBotRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateTWeTalkAIBot");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateTWeTalkAIBotResponse rsp = CreateTWeTalkAIBotResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateTWeTalkAIBotOutcome(rsp);
-        else
-            return CreateTWeTalkAIBotOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateTWeTalkAIBotOutcome(outcome.GetError());
-    }
-}
-
-void IotexplorerClient::CreateTWeTalkAIBotAsync(const CreateTWeTalkAIBotRequest& request, const CreateTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const CreateTWeTalkAIBotRequest&;
-    using Resp = CreateTWeTalkAIBotResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "CreateTWeTalkAIBot", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-IotexplorerClient::CreateTWeTalkAIBotOutcomeCallable IotexplorerClient::CreateTWeTalkAIBotCallable(const CreateTWeTalkAIBotRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<CreateTWeTalkAIBotOutcome>>();
-    CreateTWeTalkAIBotAsync(
-    request,
-    [prom](
-        const IotexplorerClient*,
-        const CreateTWeTalkAIBotRequest&,
-        CreateTWeTalkAIBotOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 IotexplorerClient::CreateTWeTalkAgentOutcome IotexplorerClient::CreateTWeTalkAgent(const CreateTWeTalkAgentRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTWeTalkAgent");
@@ -3582,56 +3482,6 @@ IotexplorerClient::DeleteTWeSeeTasksByConditionOutcomeCallable IotexplorerClient
         const IotexplorerClient*,
         const DeleteTWeSeeTasksByConditionRequest&,
         DeleteTWeSeeTasksByConditionOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-IotexplorerClient::DeleteTWeTalkAIBotOutcome IotexplorerClient::DeleteTWeTalkAIBot(const DeleteTWeTalkAIBotRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteTWeTalkAIBot");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteTWeTalkAIBotResponse rsp = DeleteTWeTalkAIBotResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteTWeTalkAIBotOutcome(rsp);
-        else
-            return DeleteTWeTalkAIBotOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteTWeTalkAIBotOutcome(outcome.GetError());
-    }
-}
-
-void IotexplorerClient::DeleteTWeTalkAIBotAsync(const DeleteTWeTalkAIBotRequest& request, const DeleteTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DeleteTWeTalkAIBotRequest&;
-    using Resp = DeleteTWeTalkAIBotResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DeleteTWeTalkAIBot", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-IotexplorerClient::DeleteTWeTalkAIBotOutcomeCallable IotexplorerClient::DeleteTWeTalkAIBotCallable(const DeleteTWeTalkAIBotRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DeleteTWeTalkAIBotOutcome>>();
-    DeleteTWeTalkAIBotAsync(
-    request,
-    [prom](
-        const IotexplorerClient*,
-        const DeleteTWeTalkAIBotRequest&,
-        DeleteTWeTalkAIBotOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -7190,56 +7040,6 @@ IotexplorerClient::DescribeTWeSeeTaskStatisticsOutcomeCallable IotexplorerClient
     return prom->get_future();
 }
 
-IotexplorerClient::DescribeTWeTalkAIBotOutcome IotexplorerClient::DescribeTWeTalkAIBot(const DescribeTWeTalkAIBotRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeTWeTalkAIBot");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeTWeTalkAIBotResponse rsp = DescribeTWeTalkAIBotResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeTWeTalkAIBotOutcome(rsp);
-        else
-            return DescribeTWeTalkAIBotOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeTWeTalkAIBotOutcome(outcome.GetError());
-    }
-}
-
-void IotexplorerClient::DescribeTWeTalkAIBotAsync(const DescribeTWeTalkAIBotRequest& request, const DescribeTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeTWeTalkAIBotRequest&;
-    using Resp = DescribeTWeTalkAIBotResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeTWeTalkAIBot", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-IotexplorerClient::DescribeTWeTalkAIBotOutcomeCallable IotexplorerClient::DescribeTWeTalkAIBotCallable(const DescribeTWeTalkAIBotRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeTWeTalkAIBotOutcome>>();
-    DescribeTWeTalkAIBotAsync(
-    request,
-    [prom](
-        const IotexplorerClient*,
-        const DescribeTWeTalkAIBotRequest&,
-        DescribeTWeTalkAIBotOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 IotexplorerClient::DescribeTWeTalkAgentOutcome IotexplorerClient::DescribeTWeTalkAgent(const DescribeTWeTalkAgentRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTWeTalkAgent");
@@ -8782,56 +8582,6 @@ IotexplorerClient::GetTWeCallActiveStatusOutcomeCallable IotexplorerClient::GetT
         const IotexplorerClient*,
         const GetTWeCallActiveStatusRequest&,
         GetTWeCallActiveStatusOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-IotexplorerClient::GetTWeTalkAIBotListOutcome IotexplorerClient::GetTWeTalkAIBotList(const GetTWeTalkAIBotListRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetTWeTalkAIBotList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetTWeTalkAIBotListResponse rsp = GetTWeTalkAIBotListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetTWeTalkAIBotListOutcome(rsp);
-        else
-            return GetTWeTalkAIBotListOutcome(o.GetError());
-    }
-    else
-    {
-        return GetTWeTalkAIBotListOutcome(outcome.GetError());
-    }
-}
-
-void IotexplorerClient::GetTWeTalkAIBotListAsync(const GetTWeTalkAIBotListRequest& request, const GetTWeTalkAIBotListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const GetTWeTalkAIBotListRequest&;
-    using Resp = GetTWeTalkAIBotListResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "GetTWeTalkAIBotList", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-IotexplorerClient::GetTWeTalkAIBotListOutcomeCallable IotexplorerClient::GetTWeTalkAIBotListCallable(const GetTWeTalkAIBotListRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<GetTWeTalkAIBotListOutcome>>();
-    GetTWeTalkAIBotListAsync(
-    request,
-    [prom](
-        const IotexplorerClient*,
-        const GetTWeTalkAIBotListRequest&,
-        GetTWeTalkAIBotListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -11190,56 +10940,6 @@ IotexplorerClient::ModifyTWeSeeSubscriptionRenewFlagOutcomeCallable IotexplorerC
     return prom->get_future();
 }
 
-IotexplorerClient::ModifyTWeTalkAIBotOutcome IotexplorerClient::ModifyTWeTalkAIBot(const ModifyTWeTalkAIBotRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyTWeTalkAIBot");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyTWeTalkAIBotResponse rsp = ModifyTWeTalkAIBotResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyTWeTalkAIBotOutcome(rsp);
-        else
-            return ModifyTWeTalkAIBotOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyTWeTalkAIBotOutcome(outcome.GetError());
-    }
-}
-
-void IotexplorerClient::ModifyTWeTalkAIBotAsync(const ModifyTWeTalkAIBotRequest& request, const ModifyTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const ModifyTWeTalkAIBotRequest&;
-    using Resp = ModifyTWeTalkAIBotResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "ModifyTWeTalkAIBot", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-IotexplorerClient::ModifyTWeTalkAIBotOutcomeCallable IotexplorerClient::ModifyTWeTalkAIBotCallable(const ModifyTWeTalkAIBotRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<ModifyTWeTalkAIBotOutcome>>();
-    ModifyTWeTalkAIBotAsync(
-    request,
-    [prom](
-        const IotexplorerClient*,
-        const ModifyTWeTalkAIBotRequest&,
-        ModifyTWeTalkAIBotOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 IotexplorerClient::ModifyTWeTalkAgentOutcome IotexplorerClient::ModifyTWeTalkAgent(const ModifyTWeTalkAgentRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTWeTalkAgent");
@@ -12732,56 +12432,6 @@ IotexplorerClient::UnbindProductsOutcomeCallable IotexplorerClient::UnbindProduc
         const IotexplorerClient*,
         const UnbindProductsRequest&,
         UnbindProductsOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
-IotexplorerClient::UnbindTWeTalkAIBotOutcome IotexplorerClient::UnbindTWeTalkAIBot(const UnbindTWeTalkAIBotRequest &request)
-{
-    auto outcome = MakeRequest(request, "UnbindTWeTalkAIBot");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        UnbindTWeTalkAIBotResponse rsp = UnbindTWeTalkAIBotResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return UnbindTWeTalkAIBotOutcome(rsp);
-        else
-            return UnbindTWeTalkAIBotOutcome(o.GetError());
-    }
-    else
-    {
-        return UnbindTWeTalkAIBotOutcome(outcome.GetError());
-    }
-}
-
-void IotexplorerClient::UnbindTWeTalkAIBotAsync(const UnbindTWeTalkAIBotRequest& request, const UnbindTWeTalkAIBotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const UnbindTWeTalkAIBotRequest&;
-    using Resp = UnbindTWeTalkAIBotResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "UnbindTWeTalkAIBot", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-IotexplorerClient::UnbindTWeTalkAIBotOutcomeCallable IotexplorerClient::UnbindTWeTalkAIBotCallable(const UnbindTWeTalkAIBotRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<UnbindTWeTalkAIBotOutcome>>();
-    UnbindTWeTalkAIBotAsync(
-    request,
-    [prom](
-        const IotexplorerClient*,
-        const UnbindTWeTalkAIBotRequest&,
-        UnbindTWeTalkAIBotOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

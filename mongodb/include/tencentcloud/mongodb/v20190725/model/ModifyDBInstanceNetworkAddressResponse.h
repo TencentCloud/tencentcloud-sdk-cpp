@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改网络异步流程任务ID。
-                     * @return FlowId 修改网络异步流程任务ID。
+                     * 获取<p>修改网络异步流程任务ID。</p>
+                     * @return FlowId <p>修改网络异步流程任务ID。</p>
                      * 
                      */
                     uint64_t GetFlowId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 修改网络异步流程任务ID。
+                     * <p>修改网络异步流程任务ID。</p>
                      */
                     uint64_t m_flowId;
                     bool m_flowIdHasBeenSet;

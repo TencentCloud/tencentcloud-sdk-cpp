@@ -71,6 +71,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeBackupDetailResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupDownloadRestrictionRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupDownloadRestrictionResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeBackupEncryptConfigRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeBackupEncryptConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBandwidthRangeRequest.h>
@@ -195,6 +197,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyAutoBackupConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyBackupDownloadRestrictionRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyBackupDownloadRestrictionResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyBackupEncryptRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyBackupEncryptResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyConnectionConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyConnectionConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsRequest.h>
@@ -353,6 +357,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupDownloadRestrictionResponse> DescribeBackupDownloadRestrictionOutcome;
                 typedef std::future<DescribeBackupDownloadRestrictionOutcome> DescribeBackupDownloadRestrictionOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeBackupDownloadRestrictionRequest&, DescribeBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDownloadRestrictionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupEncryptConfigResponse> DescribeBackupEncryptConfigOutcome;
+                typedef std::future<DescribeBackupEncryptConfigOutcome> DescribeBackupEncryptConfigOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeBackupEncryptConfigRequest&, DescribeBackupEncryptConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupEncryptConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupUrlResponse> DescribeBackupUrlOutcome;
                 typedef std::future<DescribeBackupUrlOutcome> DescribeBackupUrlOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeBackupUrlRequest&, DescribeBackupUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupUrlAsyncHandler;
@@ -539,6 +546,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupDownloadRestrictionResponse> ModifyBackupDownloadRestrictionOutcome;
                 typedef std::future<ModifyBackupDownloadRestrictionOutcome> ModifyBackupDownloadRestrictionOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyBackupDownloadRestrictionRequest&, ModifyBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupDownloadRestrictionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBackupEncryptResponse> ModifyBackupEncryptOutcome;
+                typedef std::future<ModifyBackupEncryptOutcome> ModifyBackupEncryptOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyBackupEncryptRequest&, ModifyBackupEncryptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupEncryptAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConnectionConfigResponse> ModifyConnectionConfigOutcome;
                 typedef std::future<ModifyConnectionConfigOutcome> ModifyConnectionConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyConnectionConfigRequest&, ModifyConnectionConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConnectionConfigAsyncHandler;
@@ -865,6 +875,15 @@ namespace TencentCloud
                 DescribeBackupDownloadRestrictionOutcome DescribeBackupDownloadRestriction(const Model::DescribeBackupDownloadRestrictionRequest &request);
                 void DescribeBackupDownloadRestrictionAsync(const Model::DescribeBackupDownloadRestrictionRequest& request, const DescribeBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupDownloadRestrictionOutcomeCallable DescribeBackupDownloadRestrictionCallable(const Model::DescribeBackupDownloadRestrictionRequest& request);
+
+                /**
+                 *本接口（DescribeBackupEncryptConfig）用于查询实例 备份加密相关信息，包括开启状态、加密密钥等。
+                 * @param req DescribeBackupEncryptConfigRequest
+                 * @return DescribeBackupEncryptConfigOutcome
+                 */
+                DescribeBackupEncryptConfigOutcome DescribeBackupEncryptConfig(const Model::DescribeBackupEncryptConfigRequest &request);
+                void DescribeBackupEncryptConfigAsync(const Model::DescribeBackupEncryptConfigRequest& request, const DescribeBackupEncryptConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupEncryptConfigOutcomeCallable DescribeBackupEncryptConfigCallable(const Model::DescribeBackupEncryptConfigRequest& request);
 
                 /**
                  *本接口（DescribeBackupUrl）用于查询备份 Rdb 文件的下载地址。
@@ -1425,6 +1444,15 @@ namespace TencentCloud
                 ModifyBackupDownloadRestrictionOutcome ModifyBackupDownloadRestriction(const Model::ModifyBackupDownloadRestrictionRequest &request);
                 void ModifyBackupDownloadRestrictionAsync(const Model::ModifyBackupDownloadRestrictionRequest& request, const ModifyBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBackupDownloadRestrictionOutcomeCallable ModifyBackupDownloadRestrictionCallable(const Model::ModifyBackupDownloadRestrictionRequest& request);
+
+                /**
+                 *本接口（ModifyBackupEncrypt）用于开启 /关闭备份加密，修改备份密钥功能。
+                 * @param req ModifyBackupEncryptRequest
+                 * @return ModifyBackupEncryptOutcome
+                 */
+                ModifyBackupEncryptOutcome ModifyBackupEncrypt(const Model::ModifyBackupEncryptRequest &request);
+                void ModifyBackupEncryptAsync(const Model::ModifyBackupEncryptRequest& request, const ModifyBackupEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBackupEncryptOutcomeCallable ModifyBackupEncryptCallable(const Model::ModifyBackupEncryptRequest& request);
 
                 /**
                  *本接口（ModifyConnectionConfig）用于修改实例的连接配置，包括带宽和最大连接数。

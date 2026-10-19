@@ -129,6 +129,8 @@
 #include <tencentcloud/rum/v20210622/model/DescribeFOOMProblemListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeFOOMReportListRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeFOOMReportListResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeFileCertificateRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeFileCertificateResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeIssuesDistributionRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeIssuesDistributionResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeIssuesListRequest.h>
@@ -376,6 +378,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFOOMReportListResponse> DescribeFOOMReportListOutcome;
                 typedef std::future<DescribeFOOMReportListOutcome> DescribeFOOMReportListOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeFOOMReportListRequest&, DescribeFOOMReportListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFOOMReportListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFileCertificateResponse> DescribeFileCertificateOutcome;
+                typedef std::future<DescribeFileCertificateOutcome> DescribeFileCertificateOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeFileCertificateRequest&, DescribeFileCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIssuesDistributionResponse> DescribeIssuesDistributionOutcome;
                 typedef std::future<DescribeIssuesDistributionOutcome> DescribeIssuesDistributionOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeIssuesDistributionRequest&, DescribeIssuesDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIssuesDistributionAsyncHandler;
@@ -968,6 +973,15 @@ namespace TencentCloud
                 DescribeFOOMReportListOutcome DescribeFOOMReportList(const Model::DescribeFOOMReportListRequest &request);
                 void DescribeFOOMReportListAsync(const Model::DescribeFOOMReportListRequest& request, const DescribeFOOMReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFOOMReportListOutcomeCallable DescribeFOOMReportListCallable(const Model::DescribeFOOMReportListRequest& request);
+
+                /**
+                 *获取COS存储的临时密钥，具体到ProjectId
+                 * @param req DescribeFileCertificateRequest
+                 * @return DescribeFileCertificateOutcome
+                 */
+                DescribeFileCertificateOutcome DescribeFileCertificate(const Model::DescribeFileCertificateRequest &request);
+                void DescribeFileCertificateAsync(const Model::DescribeFileCertificateRequest& request, const DescribeFileCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFileCertificateOutcomeCallable DescribeFileCertificateCallable(const Model::DescribeFileCertificateRequest& request);
 
                 /**
                  *获取问题分布数据

@@ -575,14 +575,18 @@ namespace TencentCloud
 
                     /**
                      * 获取<p>域名解析的IP统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DnsParseCount <p>域名解析的IP统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SgDnsParseCount GetDnsParseCount() const;
 
                     /**
                      * 设置<p>域名解析的IP统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dnsParseCount <p>域名解析的IP统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDnsParseCount(const SgDnsParseCount& _dnsParseCount);
@@ -815,6 +819,7 @@ namespace TencentCloud
 
                     /**
                      * <p>域名解析的IP统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SgDnsParseCount m_dnsParseCount;
                     bool m_dnsParseCountHasBeenSet;

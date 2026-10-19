@@ -27,7 +27,8 @@ CreateDraftContractByPromptsTaskRequest::CreateDraftContractByPromptsTaskRequest
     m_requirementHasBeenSet(false),
     m_referenceTemplateIdHasBeenSet(false),
     m_requirementFileIdsHasBeenSet(false),
-    m_contractLanguageHasBeenSet(false)
+    m_contractLanguageHasBeenSet(false),
+    m_reviewTaskIdHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string CreateDraftContractByPromptsTaskRequest::ToJsonString() const
         string key = "ContractLanguage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_contractLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reviewTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_reviewTaskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -170,6 +179,22 @@ void CreateDraftContractByPromptsTaskRequest::SetContractLanguage(const string& 
 bool CreateDraftContractByPromptsTaskRequest::ContractLanguageHasBeenSet() const
 {
     return m_contractLanguageHasBeenSet;
+}
+
+string CreateDraftContractByPromptsTaskRequest::GetReviewTaskId() const
+{
+    return m_reviewTaskId;
+}
+
+void CreateDraftContractByPromptsTaskRequest::SetReviewTaskId(const string& _reviewTaskId)
+{
+    m_reviewTaskId = _reviewTaskId;
+    m_reviewTaskIdHasBeenSet = true;
+}
+
+bool CreateDraftContractByPromptsTaskRequest::ReviewTaskIdHasBeenSet() const
+{
+    return m_reviewTaskIdHasBeenSet;
 }
 
 

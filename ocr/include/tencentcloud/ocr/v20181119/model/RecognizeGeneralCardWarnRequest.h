@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片链接
-                     * @return ImageUrl 图片链接
+                     * 获取<p>图片链接</p>
+                     * @return ImageUrl <p>图片链接</p>
                      * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
-                     * 设置图片链接
-                     * @param _imageUrl 图片链接
+                     * 设置<p>图片链接</p>
+                     * @param _imageUrl <p>图片链接</p>
                      * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取图片base64
-                     * @return ImageBase64 图片base64
+                     * 获取<p>图片base64</p>
+                     * @return ImageBase64 <p>图片base64</p>
                      * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置图片base64
-                     * @param _imageBase64 图片base64
+                     * 设置<p>图片base64</p>
+                     * @param _imageBase64 <p>图片base64</p>
                      * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
@@ -85,59 +85,15 @@ namespace TencentCloud
                     bool ImageBase64HasBeenSet() const;
 
                     /**
-                     * 获取卡证类型参数，包含以下范围：  
-General：通用卡证
-IDCard：身份证 
-Passport：护照 
-BankCard：银行卡
-VehicleLicense：行驶证
-DriverLicense：驾驶证
-BizLicense：营业执照 
-HmtResidentPermit：港澳台居住证
-ForeignPermanentResident：外国人永居证
-MainlandPermit：港澳台来往内地通行证
-SocialSecurityCard：社保卡
-                     * @return CardType 卡证类型参数，包含以下范围：  
-General：通用卡证
-IDCard：身份证 
-Passport：护照 
-BankCard：银行卡
-VehicleLicense：行驶证
-DriverLicense：驾驶证
-BizLicense：营业执照 
-HmtResidentPermit：港澳台居住证
-ForeignPermanentResident：外国人永居证
-MainlandPermit：港澳台来往内地通行证
-SocialSecurityCard：社保卡
+                     * 获取<p>卡证类型参数，选填，不填则默认为General，枚举值：<br>（如输入图片的卡证类型明确，建议填入，可降低请求耗时）</p><p>General：系统自动分类/其他类型<br>IDCard：身份证<br>Passport：护照<br>BankCard：银行卡<br>VehicleLicense：行驶证<br>DriverLicense：驾驶证<br>BizLicense：营业执照<br>HmtResidentPermit：港澳台居住证<br>ForeignPermanentResident：外国人永居证<br>MainlandPermit：港澳台来往内地通行证<br>SocialSecurityCard：社保卡</p>
+                     * @return CardType <p>卡证类型参数，选填，不填则默认为General，枚举值：<br>（如输入图片的卡证类型明确，建议填入，可降低请求耗时）</p><p>General：系统自动分类/其他类型<br>IDCard：身份证<br>Passport：护照<br>BankCard：银行卡<br>VehicleLicense：行驶证<br>DriverLicense：驾驶证<br>BizLicense：营业执照<br>HmtResidentPermit：港澳台居住证<br>ForeignPermanentResident：外国人永居证<br>MainlandPermit：港澳台来往内地通行证<br>SocialSecurityCard：社保卡</p>
                      * 
                      */
                     std::string GetCardType() const;
 
                     /**
-                     * 设置卡证类型参数，包含以下范围：  
-General：通用卡证
-IDCard：身份证 
-Passport：护照 
-BankCard：银行卡
-VehicleLicense：行驶证
-DriverLicense：驾驶证
-BizLicense：营业执照 
-HmtResidentPermit：港澳台居住证
-ForeignPermanentResident：外国人永居证
-MainlandPermit：港澳台来往内地通行证
-SocialSecurityCard：社保卡
-                     * @param _cardType 卡证类型参数，包含以下范围：  
-General：通用卡证
-IDCard：身份证 
-Passport：护照 
-BankCard：银行卡
-VehicleLicense：行驶证
-DriverLicense：驾驶证
-BizLicense：营业执照 
-HmtResidentPermit：港澳台居住证
-ForeignPermanentResident：外国人永居证
-MainlandPermit：港澳台来往内地通行证
-SocialSecurityCard：社保卡
+                     * 设置<p>卡证类型参数，选填，不填则默认为General，枚举值：<br>（如输入图片的卡证类型明确，建议填入，可降低请求耗时）</p><p>General：系统自动分类/其他类型<br>IDCard：身份证<br>Passport：护照<br>BankCard：银行卡<br>VehicleLicense：行驶证<br>DriverLicense：驾驶证<br>BizLicense：营业执照<br>HmtResidentPermit：港澳台居住证<br>ForeignPermanentResident：外国人永居证<br>MainlandPermit：港澳台来往内地通行证<br>SocialSecurityCard：社保卡</p>
+                     * @param _cardType <p>卡证类型参数，选填，不填则默认为General，枚举值：<br>（如输入图片的卡证类型明确，建议填入，可降低请求耗时）</p><p>General：系统自动分类/其他类型<br>IDCard：身份证<br>Passport：护照<br>BankCard：银行卡<br>VehicleLicense：行驶证<br>DriverLicense：驾驶证<br>BizLicense：营业执照<br>HmtResidentPermit：港澳台居住证<br>ForeignPermanentResident：外国人永居证<br>MainlandPermit：港澳台来往内地通行证<br>SocialSecurityCard：社保卡</p>
                      * 
                      */
                     void SetCardType(const std::string& _cardType);
@@ -150,15 +106,15 @@ SocialSecurityCard：社保卡
                     bool CardTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。
-                     * @return IsPdf 是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。
+                     * 获取<p>是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。</p>
+                     * @return IsPdf <p>是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。</p>
                      * 
                      */
                     bool GetIsPdf() const;
 
                     /**
-                     * 设置是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。
-                     * @param _isPdf 是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。
+                     * 设置<p>是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。</p>
+                     * @param _isPdf <p>是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。</p>
                      * 
                      */
                     void SetIsPdf(const bool& _isPdf);
@@ -171,15 +127,15 @@ SocialSecurityCard：社保卡
                     bool IsPdfHasBeenSet() const;
 
                     /**
-                     * 获取需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
-                     * @return PdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     * 获取<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。</p>
+                     * @return PdfPageNumber <p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。</p>
                      * 
                      */
                     uint64_t GetPdfPageNumber() const;
 
                     /**
-                     * 设置需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
-                     * @param _pdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     * 设置<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。</p>
+                     * @param _pdfPageNumber <p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。</p>
                      * 
                      */
                     void SetPdfPageNumber(const uint64_t& _pdfPageNumber);
@@ -194,42 +150,31 @@ SocialSecurityCard：社保卡
                 private:
 
                     /**
-                     * 图片链接
+                     * <p>图片链接</p>
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 图片base64
+                     * <p>图片base64</p>
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
 
                     /**
-                     * 卡证类型参数，包含以下范围：  
-General：通用卡证
-IDCard：身份证 
-Passport：护照 
-BankCard：银行卡
-VehicleLicense：行驶证
-DriverLicense：驾驶证
-BizLicense：营业执照 
-HmtResidentPermit：港澳台居住证
-ForeignPermanentResident：外国人永居证
-MainlandPermit：港澳台来往内地通行证
-SocialSecurityCard：社保卡
+                     * <p>卡证类型参数，选填，不填则默认为General，枚举值：<br>（如输入图片的卡证类型明确，建议填入，可降低请求耗时）</p><p>General：系统自动分类/其他类型<br>IDCard：身份证<br>Passport：护照<br>BankCard：银行卡<br>VehicleLicense：行驶证<br>DriverLicense：驾驶证<br>BizLicense：营业执照<br>HmtResidentPermit：港澳台居住证<br>ForeignPermanentResident：外国人永居证<br>MainlandPermit：港澳台来往内地通行证<br>SocialSecurityCard：社保卡</p>
                      */
                     std::string m_cardType;
                     bool m_cardTypeHasBeenSet;
 
                     /**
-                     * 是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。
+                     * <p>是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。</p>
                      */
                     bool m_isPdf;
                     bool m_isPdfHasBeenSet;
 
                     /**
-                     * 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     * <p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。</p>
                      */
                     uint64_t m_pdfPageNumber;
                     bool m_pdfPageNumberHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产总数
-                     * @return TotalCount 资产总数
+                     * 获取<p>资产总数</p>
+                     * @return TotalCount <p>资产总数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取资产信息列表
-                     * @return DeviceSet 资产信息列表
+                     * 获取<p>资产信息列表</p>
+                     * @return DeviceSet <p>资产信息列表</p>
                      * 
                      */
                     std::vector<Device> GetDeviceSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资产总数
+                     * <p>资产总数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 资产信息列表
+                     * <p>资产信息列表</p>
                      */
                     std::vector<Device> m_deviceSet;
                     bool m_deviceSetHasBeenSet;

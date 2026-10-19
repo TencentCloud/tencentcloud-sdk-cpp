@@ -32,7 +32,8 @@ WorkflowSchedulerConfiguration::WorkflowSchedulerConfiguration() :
     m_crontabExpressionHasBeenSet(false),
     m_calendarOpenHasBeenSet(false),
     m_calendarNameHasBeenSet(false),
-    m_calendarIdHasBeenSet(false)
+    m_calendarIdHasBeenSet(false),
+    m_minuteOffsetHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome WorkflowSchedulerConfiguration::Deserialize(const rapidjson:
         m_calendarIdHasBeenSet = true;
     }
 
+    if (value.HasMember("MinuteOffset") && !value["MinuteOffset"].IsNull())
+    {
+        if (!value["MinuteOffset"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowSchedulerConfiguration.MinuteOffset` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minuteOffset = value["MinuteOffset"].GetUint64();
+        m_minuteOffsetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void WorkflowSchedulerConfiguration::ToJsonObject(rapidjson::Value &value, rapid
         string key = "CalendarId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_calendarId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_minuteOffsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinuteOffset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minuteOffset, allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void WorkflowSchedulerConfiguration::SetCalendarId(const string& _calendarId)
 bool WorkflowSchedulerConfiguration::CalendarIdHasBeenSet() const
 {
     return m_calendarIdHasBeenSet;
+}
+
+uint64_t WorkflowSchedulerConfiguration::GetMinuteOffset() const
+{
+    return m_minuteOffset;
+}
+
+void WorkflowSchedulerConfiguration::SetMinuteOffset(const uint64_t& _minuteOffset)
+{
+    m_minuteOffset = _minuteOffset;
+    m_minuteOffsetHasBeenSet = true;
+}
+
+bool WorkflowSchedulerConfiguration::MinuteOffsetHasBeenSet() const
+{
+    return m_minuteOffsetHasBeenSet;
 }
 

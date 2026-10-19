@@ -44,7 +44,9 @@ OrganizationUserInfo::OrganizationUserInfo() :
     m_authTypeHasBeenSet(false),
     m_tcMemberTypeHasBeenSet(false),
     m_subUserCountHasBeenSet(false),
-    m_joinTypeInfoHasBeenSet(false)
+    m_joinTypeInfoHasBeenSet(false),
+    m_sharedModulesHasBeenSet(false),
+    m_securityScoreHasBeenSet(false)
 {
 }
 
@@ -296,6 +298,29 @@ CoreInternalOutcome OrganizationUserInfo::Deserialize(const rapidjson::Value &va
         m_joinTypeInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("SharedModules") && !value["SharedModules"].IsNull())
+    {
+        if (!value["SharedModules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OrganizationUserInfo.SharedModules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SharedModules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sharedModules.push_back((*itr).GetString());
+        }
+        m_sharedModulesHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityScore") && !value["SecurityScore"].IsNull())
+    {
+        if (!value["SecurityScore"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationUserInfo.SecurityScore` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityScore = value["SecurityScore"].GetInt64();
+        m_securityScoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -498,6 +523,27 @@ void OrganizationUserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "JoinTypeInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_joinTypeInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sharedModulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SharedModules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sharedModules.begin(); itr != m_sharedModules.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_securityScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_securityScore, allocator);
     }
 
 }
@@ -885,5 +931,37 @@ void OrganizationUserInfo::SetJoinTypeInfo(const string& _joinTypeInfo)
 bool OrganizationUserInfo::JoinTypeInfoHasBeenSet() const
 {
     return m_joinTypeInfoHasBeenSet;
+}
+
+vector<string> OrganizationUserInfo::GetSharedModules() const
+{
+    return m_sharedModules;
+}
+
+void OrganizationUserInfo::SetSharedModules(const vector<string>& _sharedModules)
+{
+    m_sharedModules = _sharedModules;
+    m_sharedModulesHasBeenSet = true;
+}
+
+bool OrganizationUserInfo::SharedModulesHasBeenSet() const
+{
+    return m_sharedModulesHasBeenSet;
+}
+
+int64_t OrganizationUserInfo::GetSecurityScore() const
+{
+    return m_securityScore;
+}
+
+void OrganizationUserInfo::SetSecurityScore(const int64_t& _securityScore)
+{
+    m_securityScore = _securityScore;
+    m_securityScoreHasBeenSet = true;
+}
+
+bool OrganizationUserInfo::SecurityScoreHasBeenSet() const
+{
+    return m_securityScoreHasBeenSet;
 }
 

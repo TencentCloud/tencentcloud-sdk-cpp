@@ -37,7 +37,8 @@ UpdateRayClusterRequest::UpdateRayClusterRequest() :
     m_catalogHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_priorityHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,14 @@ string UpdateRayClusterRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -421,6 +430,22 @@ void UpdateRayClusterRequest::SetTags(const vector<Tag>& _tags)
 bool UpdateRayClusterRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string UpdateRayClusterRequest::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+void UpdateRayClusterRequest::SetNetworkConfig(const string& _networkConfig)
+{
+    m_networkConfig = _networkConfig;
+    m_networkConfigHasBeenSet = true;
+}
+
+bool UpdateRayClusterRequest::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 
 

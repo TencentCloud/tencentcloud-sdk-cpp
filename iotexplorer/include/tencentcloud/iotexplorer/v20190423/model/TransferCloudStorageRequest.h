@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品ID
-                     * @return ProductId 产品ID
+                     * 获取<p>产品ID</p>
+                     * @return ProductId <p>产品ID</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品ID
-                     * @param _productId 产品ID
+                     * 设置<p>产品ID</p>
+                     * @param _productId <p>产品ID</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取已开通云存的设备名称
-                     * @return DeviceName 已开通云存的设备名称
+                     * 获取<p>已开通云存的设备名称</p>
+                     * @return DeviceName <p>已开通云存的设备名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置已开通云存的设备名称
-                     * @param _deviceName 已开通云存的设备名称
+                     * 设置<p>已开通云存的设备名称</p>
+                     * @param _deviceName <p>已开通云存的设备名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取未开通云存的设备名称
-                     * @return ToDeviceName 未开通云存的设备名称
+                     * 获取<p>未开通云存的设备名称</p>
+                     * @return ToDeviceName <p>未开通云存的设备名称</p>
                      * 
                      */
                     std::string GetToDeviceName() const;
 
                     /**
-                     * 设置未开通云存的设备名称
-                     * @param _toDeviceName 未开通云存的设备名称
+                     * 设置<p>未开通云存的设备名称</p>
+                     * @param _toDeviceName <p>未开通云存的设备名称</p>
                      * 
                      */
                     void SetToDeviceName(const std::string& _toDeviceName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ToDeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取未开通云存的设备产品ID
-                     * @return ToProductId 未开通云存的设备产品ID
+                     * 获取<p>未开通云存的设备产品ID</p>
+                     * @return ToProductId <p>未开通云存的设备产品ID</p>
                      * 
                      */
                     std::string GetToProductId() const;
 
                     /**
-                     * 设置未开通云存的设备产品ID
-                     * @param _toProductId 未开通云存的设备产品ID
+                     * 设置<p>未开通云存的设备产品ID</p>
+                     * @param _toProductId <p>未开通云存的设备产品ID</p>
                      * 
                      */
                     void SetToProductId(const std::string& _toProductId);
@@ -126,31 +126,85 @@ namespace TencentCloud
                      */
                     bool ToProductIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>已开通云存的通道id</p>
+                     * @return ChannelId <p>已开通云存的通道id</p>
+                     * 
+                     */
+                    uint64_t GetChannelId() const;
+
+                    /**
+                     * 设置<p>已开通云存的通道id</p>
+                     * @param _channelId <p>已开通云存的通道id</p>
+                     * 
+                     */
+                    void SetChannelId(const uint64_t& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     * 
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>未开通云存的通道id</p>
+                     * @return ToChannelId <p>未开通云存的通道id</p>
+                     * 
+                     */
+                    uint64_t GetToChannelId() const;
+
+                    /**
+                     * 设置<p>未开通云存的通道id</p>
+                     * @param _toChannelId <p>未开通云存的通道id</p>
+                     * 
+                     */
+                    void SetToChannelId(const uint64_t& _toChannelId);
+
+                    /**
+                     * 判断参数 ToChannelId 是否已赋值
+                     * @return ToChannelId 是否已赋值
+                     * 
+                     */
+                    bool ToChannelIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 产品ID
+                     * <p>产品ID</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 已开通云存的设备名称
+                     * <p>已开通云存的设备名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 未开通云存的设备名称
+                     * <p>未开通云存的设备名称</p>
                      */
                     std::string m_toDeviceName;
                     bool m_toDeviceNameHasBeenSet;
 
                     /**
-                     * 未开通云存的设备产品ID
+                     * <p>未开通云存的设备产品ID</p>
                      */
                     std::string m_toProductId;
                     bool m_toProductIdHasBeenSet;
+
+                    /**
+                     * <p>已开通云存的通道id</p>
+                     */
+                    uint64_t m_channelId;
+                    bool m_channelIdHasBeenSet;
+
+                    /**
+                     * <p>未开通云存的通道id</p>
+                     */
+                    uint64_t m_toChannelId;
+                    bool m_toChannelIdHasBeenSet;
 
                 };
             }

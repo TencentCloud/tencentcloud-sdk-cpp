@@ -43,7 +43,9 @@ VpcAclRuleResp::VpcAclRuleResp() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_dnsParseCntHasBeenSet(false),
-    m_fwGroupNameHasBeenSet(false)
+    m_fwGroupNameHasBeenSet(false),
+    m_hitCountHasBeenSet(false),
+    m_lastHitTimeHasBeenSet(false)
 {
 }
 
@@ -289,6 +291,26 @@ CoreInternalOutcome VpcAclRuleResp::Deserialize(const rapidjson::Value &value)
         m_fwGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("HitCount") && !value["HitCount"].IsNull())
+    {
+        if (!value["HitCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcAclRuleResp.HitCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitCount = value["HitCount"].GetInt64();
+        m_hitCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastHitTime") && !value["LastHitTime"].IsNull())
+    {
+        if (!value["LastHitTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcAclRuleResp.LastHitTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastHitTime = string(value["LastHitTime"].GetString());
+        m_lastHitTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -479,6 +501,22 @@ void VpcAclRuleResp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FwGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fwGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hitCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hitCount, allocator);
+    }
+
+    if (m_lastHitTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastHitTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastHitTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -850,5 +888,37 @@ void VpcAclRuleResp::SetFwGroupName(const string& _fwGroupName)
 bool VpcAclRuleResp::FwGroupNameHasBeenSet() const
 {
     return m_fwGroupNameHasBeenSet;
+}
+
+int64_t VpcAclRuleResp::GetHitCount() const
+{
+    return m_hitCount;
+}
+
+void VpcAclRuleResp::SetHitCount(const int64_t& _hitCount)
+{
+    m_hitCount = _hitCount;
+    m_hitCountHasBeenSet = true;
+}
+
+bool VpcAclRuleResp::HitCountHasBeenSet() const
+{
+    return m_hitCountHasBeenSet;
+}
+
+string VpcAclRuleResp::GetLastHitTime() const
+{
+    return m_lastHitTime;
+}
+
+void VpcAclRuleResp::SetLastHitTime(const string& _lastHitTime)
+{
+    m_lastHitTime = _lastHitTime;
+    m_lastHitTimeHasBeenSet = true;
+}
+
+bool VpcAclRuleResp::LastHitTimeHasBeenSet() const
+{
+    return m_lastHitTimeHasBeenSet;
 }
 

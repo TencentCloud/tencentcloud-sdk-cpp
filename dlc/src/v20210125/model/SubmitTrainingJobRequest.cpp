@@ -47,7 +47,8 @@ SubmitTrainingJobRequest::SubmitTrainingJobRequest() :
     m_kindHasBeenSet(false),
     m_mlFlowConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_outputModelNameHasBeenSet(false)
+    m_outputModelNameHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -273,6 +274,14 @@ string SubmitTrainingJobRequest::ToJsonString() const
         string key = "OutputModelName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_outputModelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -681,6 +690,22 @@ void SubmitTrainingJobRequest::SetOutputModelName(const string& _outputModelName
 bool SubmitTrainingJobRequest::OutputModelNameHasBeenSet() const
 {
     return m_outputModelNameHasBeenSet;
+}
+
+string SubmitTrainingJobRequest::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+void SubmitTrainingJobRequest::SetNetworkConfig(const string& _networkConfig)
+{
+    m_networkConfig = _networkConfig;
+    m_networkConfigHasBeenSet = true;
+}
+
+bool SubmitTrainingJobRequest::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 
 

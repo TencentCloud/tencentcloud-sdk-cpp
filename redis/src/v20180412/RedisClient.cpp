@@ -1240,6 +1240,56 @@ RedisClient::DescribeBackupDownloadRestrictionOutcomeCallable RedisClient::Descr
     return prom->get_future();
 }
 
+RedisClient::DescribeBackupEncryptConfigOutcome RedisClient::DescribeBackupEncryptConfig(const DescribeBackupEncryptConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupEncryptConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupEncryptConfigResponse rsp = DescribeBackupEncryptConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupEncryptConfigOutcome(rsp);
+        else
+            return DescribeBackupEncryptConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupEncryptConfigOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeBackupEncryptConfigAsync(const DescribeBackupEncryptConfigRequest& request, const DescribeBackupEncryptConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBackupEncryptConfigRequest&;
+    using Resp = DescribeBackupEncryptConfigResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupEncryptConfig", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::DescribeBackupEncryptConfigOutcomeCallable RedisClient::DescribeBackupEncryptConfigCallable(const DescribeBackupEncryptConfigRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBackupEncryptConfigOutcome>>();
+    DescribeBackupEncryptConfigAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const DescribeBackupEncryptConfigRequest&,
+        DescribeBackupEncryptConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 RedisClient::DescribeBackupUrlOutcome RedisClient::DescribeBackupUrl(const DescribeBackupUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupUrl");
@@ -4332,6 +4382,56 @@ RedisClient::ModifyBackupDownloadRestrictionOutcomeCallable RedisClient::ModifyB
         const RedisClient*,
         const ModifyBackupDownloadRestrictionRequest&,
         ModifyBackupDownloadRestrictionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+RedisClient::ModifyBackupEncryptOutcome RedisClient::ModifyBackupEncrypt(const ModifyBackupEncryptRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupEncrypt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupEncryptResponse rsp = ModifyBackupEncryptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupEncryptOutcome(rsp);
+        else
+            return ModifyBackupEncryptOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupEncryptOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyBackupEncryptAsync(const ModifyBackupEncryptRequest& request, const ModifyBackupEncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBackupEncryptRequest&;
+    using Resp = ModifyBackupEncryptResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupEncrypt", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+RedisClient::ModifyBackupEncryptOutcomeCallable RedisClient::ModifyBackupEncryptCallable(const ModifyBackupEncryptRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBackupEncryptOutcome>>();
+    ModifyBackupEncryptAsync(
+    request,
+    [prom](
+        const RedisClient*,
+        const ModifyBackupEncryptRequest&,
+        ModifyBackupEncryptOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

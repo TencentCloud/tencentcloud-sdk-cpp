@@ -209,6 +209,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeOfflineExportTaskResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeOfflineExportTemporaryCredentialsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeOfflineExportTemporaryCredentialsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeOverviewResourceQuotaRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeOverviewResourceQuotaResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupNewRequest.h>
@@ -650,6 +652,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOfflineExportTemporaryCredentialsResponse> DescribeOfflineExportTemporaryCredentialsOutcome;
                 typedef std::future<DescribeOfflineExportTemporaryCredentialsOutcome> DescribeOfflineExportTemporaryCredentialsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeOfflineExportTemporaryCredentialsRequest&, DescribeOfflineExportTemporaryCredentialsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineExportTemporaryCredentialsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOverviewResourceQuotaResponse> DescribeOverviewResourceQuotaOutcome;
+                typedef std::future<DescribeOverviewResourceQuotaOutcome> DescribeOverviewResourceQuotaOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeOverviewResourceQuotaRequest&, DescribeOverviewResourceQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewResourceQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceGroupResponse> DescribeResourceGroupOutcome;
                 typedef std::future<DescribeResourceGroupOutcome> DescribeResourceGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeResourceGroupRequest&, DescribeResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGroupAsyncHandler;
@@ -1713,6 +1718,15 @@ namespace TencentCloud
                 DescribeOfflineExportTemporaryCredentialsOutcome DescribeOfflineExportTemporaryCredentials(const Model::DescribeOfflineExportTemporaryCredentialsRequest &request);
                 void DescribeOfflineExportTemporaryCredentialsAsync(const Model::DescribeOfflineExportTemporaryCredentialsRequest& request, const DescribeOfflineExportTemporaryCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOfflineExportTemporaryCredentialsOutcomeCallable DescribeOfflineExportTemporaryCredentialsCallable(const Model::DescribeOfflineExportTemporaryCredentialsRequest& request);
+
+                /**
+                 *查询云防火墙概览页资源与配额详情信息，返回带宽配额、实例与规则配额、日志存储信息及相关能力标识。
+                 * @param req DescribeOverviewResourceQuotaRequest
+                 * @return DescribeOverviewResourceQuotaOutcome
+                 */
+                DescribeOverviewResourceQuotaOutcome DescribeOverviewResourceQuota(const Model::DescribeOverviewResourceQuotaRequest &request);
+                void DescribeOverviewResourceQuotaAsync(const Model::DescribeOverviewResourceQuotaRequest& request, const DescribeOverviewResourceQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOverviewResourceQuotaOutcomeCallable DescribeOverviewResourceQuotaCallable(const Model::DescribeOverviewResourceQuotaRequest& request);
 
                 /**
                  *DescribeResourceGroup资产中心资产树信息

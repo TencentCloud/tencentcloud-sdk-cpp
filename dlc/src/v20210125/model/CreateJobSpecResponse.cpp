@@ -60,7 +60,8 @@ CreateJobSpecResponse::CreateJobSpecResponse() :
     m_dispatchStrategyHasBeenSet(false),
     m_submissionTargetHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_networkConfigHasBeenSet(false)
 {
 }
 
@@ -478,6 +479,16 @@ CoreInternalOutcome CreateJobSpecResponse::Deserialize(const string &payload)
         m_clusterNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NetworkConfig") && !rsp["NetworkConfig"].IsNull())
+    {
+        if (!rsp["NetworkConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkConfig = string(rsp["NetworkConfig"].GetString());
+        m_networkConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -789,6 +800,14 @@ string CreateJobSpecResponse::ToJsonString() const
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1171,6 +1190,16 @@ string CreateJobSpecResponse::GetClusterName() const
 bool CreateJobSpecResponse::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string CreateJobSpecResponse::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+bool CreateJobSpecResponse::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
 }
 
 

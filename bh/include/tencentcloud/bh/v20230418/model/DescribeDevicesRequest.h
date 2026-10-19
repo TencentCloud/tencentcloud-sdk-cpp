@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资产ID集合
-                     * @return IdSet 资产ID集合
+                     * 获取<p>资产ID集合</p>
+                     * @return IdSet <p>资产ID集合</p>
                      * 
                      */
                     std::vector<uint64_t> GetIdSet() const;
 
                     /**
-                     * 设置资产ID集合
-                     * @param _idSet 资产ID集合
+                     * 设置<p>资产ID集合</p>
+                     * @param _idSet <p>资产ID集合</p>
                      * 
                      */
                     void SetIdSet(const std::vector<uint64_t>& _idSet);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool IdSetHasBeenSet() const;
 
                     /**
-                     * 获取资产名或资产IP，模糊查询
-                     * @return Name 资产名或资产IP，模糊查询
+                     * 获取<p>资产名或资产IP，模糊查询</p>
+                     * @return Name <p>资产名或资产IP，模糊查询</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置资产名或资产IP，模糊查询
-                     * @param _name 资产名或资产IP，模糊查询
+                     * 设置<p>资产名或资产IP，模糊查询</p>
+                     * @param _name <p>资产名或资产IP，模糊查询</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取暂未使用
-                     * @return Ip 暂未使用
+                     * 获取<p>暂未使用</p>
+                     * @return Ip <p>暂未使用</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置暂未使用
-                     * @param _ip 暂未使用
+                     * 设置<p>暂未使用</p>
+                     * @param _ip <p>暂未使用</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取地域码集合
-                     * @return ApCodeSet 地域码集合
+                     * 获取<p>地域码集合</p>
+                     * @return ApCodeSet <p>地域码集合</p>
                      * 
                      */
                     std::vector<std::string> GetApCodeSet() const;
 
                     /**
-                     * 设置地域码集合
-                     * @param _apCodeSet 地域码集合
+                     * 设置<p>地域码集合</p>
+                     * @param _apCodeSet <p>地域码集合</p>
                      * 
                      */
                     void SetApCodeSet(const std::vector<std::string>& _apCodeSet);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool ApCodeSetHasBeenSet() const;
 
                     /**
-                     * 获取操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
-                     * @return Kind 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 获取<p>操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
+                     * @return Kind <p>操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
                      * 
                      */
                     uint64_t GetKind() const;
 
                     /**
-                     * 设置操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
-                     * @param _kind 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 设置<p>操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
+                     * @param _kind <p>操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
                      * 
                      */
                     void SetKind(const uint64_t& _kind);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移位置，默认值为0
-                     * @return Offset 分页偏移位置，默认值为0
+                     * 获取<p>分页偏移位置，默认值为0</p>
+                     * @return Offset <p>分页偏移位置，默认值为0</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移位置，默认值为0
-                     * @param _offset 分页偏移位置，默认值为0
+                     * 设置<p>分页偏移位置，默认值为0</p>
+                     * @param _offset <p>分页偏移位置，默认值为0</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页条目数量，默认20
-                     * @return Limit 每页条目数量，默认20
+                     * 获取<p>每页条目数量</p><p>取值范围：[0, 500]</p><p>默认值：20</p>
+                     * @return Limit <p>每页条目数量</p><p>取值范围：[0, 500]</p><p>默认值：20</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页条目数量，默认20
-                     * @param _limit 每页条目数量，默认20
+                     * 设置<p>每页条目数量</p><p>取值范围：[0, 500]</p><p>默认值：20</p>
+                     * @param _limit <p>每页条目数量</p><p>取值范围：[0, 500]</p><p>默认值：20</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取有该资产访问权限的用户ID集合
-                     * @return AuthorizedUserIdSet 有该资产访问权限的用户ID集合
+                     * 获取<p>有该资产访问权限的用户ID集合</p>
+                     * @return AuthorizedUserIdSet <p>有该资产访问权限的用户ID集合</p>
                      * 
                      */
                     std::vector<uint64_t> GetAuthorizedUserIdSet() const;
 
                     /**
-                     * 设置有该资产访问权限的用户ID集合
-                     * @param _authorizedUserIdSet 有该资产访问权限的用户ID集合
+                     * 设置<p>有该资产访问权限的用户ID集合</p>
+                     * @param _authorizedUserIdSet <p>有该资产访问权限的用户ID集合</p>
                      * 
                      */
                     void SetAuthorizedUserIdSet(const std::vector<uint64_t>& _authorizedUserIdSet);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool AuthorizedUserIdSetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，资产绑定的堡垒机服务ID集合
-                     * @return ResourceIdSet 过滤条件，资产绑定的堡垒机服务ID集合
+                     * 获取<p>过滤条件，资产绑定的堡垒机服务ID集合</p>
+                     * @return ResourceIdSet <p>过滤条件，资产绑定的堡垒机服务ID集合</p>
                      * 
                      */
                     std::vector<std::string> GetResourceIdSet() const;
 
                     /**
-                     * 设置过滤条件，资产绑定的堡垒机服务ID集合
-                     * @param _resourceIdSet 过滤条件，资产绑定的堡垒机服务ID集合
+                     * 设置<p>过滤条件，资产绑定的堡垒机服务ID集合</p>
+                     * @param _resourceIdSet <p>过滤条件，资产绑定的堡垒机服务ID集合</p>
                      * 
                      */
                     void SetResourceIdSet(const std::vector<std::string>& _resourceIdSet);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool ResourceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
-                     * @return KindSet 可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 获取<p>可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
+                     * @return KindSet <p>可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
                      * 
                      */
                     std::vector<uint64_t> GetKindSet() const;
 
                     /**
-                     * 设置可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
-                     * @param _kindSet 可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * 设置<p>可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
+                     * @param _kindSet <p>可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
                      * 
                      */
                     void SetKindSet(const std::vector<uint64_t>& _kindSet);
@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool KindSetHasBeenSet() const;
 
                     /**
-                     * 获取资产是否包含托管账号。1，包含；0，不包含
-                     * @return ManagedAccount 资产是否包含托管账号。1，包含；0，不包含
+                     * 获取<p>资产是否包含托管账号。1，包含；0，不包含</p>
+                     * @return ManagedAccount <p>资产是否包含托管账号。1，包含；0，不包含</p>
                      * 
                      */
                     std::string GetManagedAccount() const;
 
                     /**
-                     * 设置资产是否包含托管账号。1，包含；0，不包含
-                     * @param _managedAccount 资产是否包含托管账号。1，包含；0，不包含
+                     * 设置<p>资产是否包含托管账号。1，包含；0，不包含</p>
+                     * @param _managedAccount <p>资产是否包含托管账号。1，包含；0，不包含</p>
                      * 
                      */
                     void SetManagedAccount(const std::string& _managedAccount);
@@ -276,15 +276,15 @@ namespace TencentCloud
                     bool ManagedAccountHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，可按照部门ID进行过滤
-                     * @return DepartmentId 过滤条件，可按照部门ID进行过滤
+                     * 获取<p>过滤条件，可按照部门ID进行过滤</p>
+                     * @return DepartmentId <p>过滤条件，可按照部门ID进行过滤</p>
                      * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
-                     * 设置过滤条件，可按照部门ID进行过滤
-                     * @param _departmentId 过滤条件，可按照部门ID进行过滤
+                     * 设置<p>过滤条件，可按照部门ID进行过滤</p>
+                     * @param _departmentId <p>过滤条件，可按照部门ID进行过滤</p>
                      * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
@@ -297,15 +297,15 @@ namespace TencentCloud
                     bool DepartmentIdHasBeenSet() const;
 
                     /**
-                     * 获取资产所属云账号id
-                     * @return AccountIdSet 资产所属云账号id
+                     * 获取<p>资产所属云账号id</p>
+                     * @return AccountIdSet <p>资产所属云账号id</p>
                      * 
                      */
                     std::vector<uint64_t> GetAccountIdSet() const;
 
                     /**
-                     * 设置资产所属云账号id
-                     * @param _accountIdSet 资产所属云账号id
+                     * 设置<p>资产所属云账号id</p>
+                     * @param _accountIdSet <p>资产所属云账号id</p>
                      * 
                      */
                     void SetAccountIdSet(const std::vector<uint64_t>& _accountIdSet);
@@ -318,15 +318,15 @@ namespace TencentCloud
                     bool AccountIdSetHasBeenSet() const;
 
                     /**
-                     * 获取云厂商类型，1-腾讯云，2-阿里云
-                     * @return ProviderTypeSet 云厂商类型，1-腾讯云，2-阿里云
+                     * 获取<p>云厂商类型，1-腾讯云，2-阿里云</p>
+                     * @return ProviderTypeSet <p>云厂商类型，1-腾讯云，2-阿里云</p>
                      * 
                      */
                     std::vector<uint64_t> GetProviderTypeSet() const;
 
                     /**
-                     * 设置云厂商类型，1-腾讯云，2-阿里云
-                     * @param _providerTypeSet 云厂商类型，1-腾讯云，2-阿里云
+                     * 设置<p>云厂商类型，1-腾讯云，2-阿里云</p>
+                     * @param _providerTypeSet <p>云厂商类型，1-腾讯云，2-阿里云</p>
                      * 
                      */
                     void SetProviderTypeSet(const std::vector<uint64_t>& _providerTypeSet);
@@ -339,15 +339,15 @@ namespace TencentCloud
                     bool ProviderTypeSetHasBeenSet() const;
 
                     /**
-                     * 获取同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
-                     * @return CloudDeviceStatusSet 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * 获取<p>同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期</p>
+                     * @return CloudDeviceStatusSet <p>同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期</p>
                      * 
                      */
                     std::vector<uint64_t> GetCloudDeviceStatusSet() const;
 
                     /**
-                     * 设置同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
-                     * @param _cloudDeviceStatusSet 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * 设置<p>同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期</p>
+                     * @param _cloudDeviceStatusSet <p>同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期</p>
                      * 
                      */
                     void SetCloudDeviceStatusSet(const std::vector<uint64_t>& _cloudDeviceStatusSet);
@@ -360,15 +360,15 @@ namespace TencentCloud
                     bool CloudDeviceStatusSetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系
-                     * @return TagFilters 过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系
+                     * 获取<p>过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系</p>
+                     * @return TagFilters <p>过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系</p>
                      * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
-                     * 设置过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系
-                     * @param _tagFilters 过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系
+                     * 设置<p>过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系</p>
+                     * @param _tagFilters <p>过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系</p>
                      * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
@@ -381,19 +381,15 @@ namespace TencentCloud
                     bool TagFiltersHasBeenSet() const;
 
                     /**
-                     * 获取过滤数组。支持的Name：
-BindingStatus 绑定状态
-                     * @return Filters 过滤数组。支持的Name：
-BindingStatus 绑定状态
+                     * 获取<p>过滤数组。支持的Name：<br>BindingStatus 绑定状态</p>
+                     * @return Filters <p>过滤数组。支持的Name：<br>BindingStatus 绑定状态</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤数组。支持的Name：
-BindingStatus 绑定状态
-                     * @param _filters 过滤数组。支持的Name：
-BindingStatus 绑定状态
+                     * 设置<p>过滤数组。支持的Name：<br>BindingStatus 绑定状态</p>
+                     * @param _filters <p>过滤数组。支持的Name：<br>BindingStatus 绑定状态</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -405,110 +401,136 @@ BindingStatus 绑定状态
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>所属成员 AppId</p>
+                     * @return OwnerAppIds <p>所属成员 AppId</p>
+                     * 
+                     */
+                    std::vector<uint64_t> GetOwnerAppIds() const;
+
+                    /**
+                     * 设置<p>所属成员 AppId</p>
+                     * @param _ownerAppIds <p>所属成员 AppId</p>
+                     * 
+                     */
+                    void SetOwnerAppIds(const std::vector<uint64_t>& _ownerAppIds);
+
+                    /**
+                     * 判断参数 OwnerAppIds 是否已赋值
+                     * @return OwnerAppIds 是否已赋值
+                     * 
+                     */
+                    bool OwnerAppIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资产ID集合
+                     * <p>资产ID集合</p>
                      */
                     std::vector<uint64_t> m_idSet;
                     bool m_idSetHasBeenSet;
 
                     /**
-                     * 资产名或资产IP，模糊查询
+                     * <p>资产名或资产IP，模糊查询</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 暂未使用
+                     * <p>暂未使用</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 地域码集合
+                     * <p>地域码集合</p>
                      */
                     std::vector<std::string> m_apCodeSet;
                     bool m_apCodeSetHasBeenSet;
 
                     /**
-                     * 操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * <p>操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
                      */
                     uint64_t m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
-                     * 分页偏移位置，默认值为0
+                     * <p>分页偏移位置，默认值为0</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页条目数量，默认20
+                     * <p>每页条目数量</p><p>取值范围：[0, 500]</p><p>默认值：20</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 有该资产访问权限的用户ID集合
+                     * <p>有该资产访问权限的用户ID集合</p>
                      */
                     std::vector<uint64_t> m_authorizedUserIdSet;
                     bool m_authorizedUserIdSetHasBeenSet;
 
                     /**
-                     * 过滤条件，资产绑定的堡垒机服务ID集合
+                     * <p>过滤条件，资产绑定的堡垒机服务ID集合</p>
                      */
                     std::vector<std::string> m_resourceIdSet;
                     bool m_resourceIdSetHasBeenSet;
 
                     /**
-                     * 可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer
+                     * <p>可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>
                      */
                     std::vector<uint64_t> m_kindSet;
                     bool m_kindSetHasBeenSet;
 
                     /**
-                     * 资产是否包含托管账号。1，包含；0，不包含
+                     * <p>资产是否包含托管账号。1，包含；0，不包含</p>
                      */
                     std::string m_managedAccount;
                     bool m_managedAccountHasBeenSet;
 
                     /**
-                     * 过滤条件，可按照部门ID进行过滤
+                     * <p>过滤条件，可按照部门ID进行过滤</p>
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
 
                     /**
-                     * 资产所属云账号id
+                     * <p>资产所属云账号id</p>
                      */
                     std::vector<uint64_t> m_accountIdSet;
                     bool m_accountIdSetHasBeenSet;
 
                     /**
-                     * 云厂商类型，1-腾讯云，2-阿里云
+                     * <p>云厂商类型，1-腾讯云，2-阿里云</p>
                      */
                     std::vector<uint64_t> m_providerTypeSet;
                     bool m_providerTypeSetHasBeenSet;
 
                     /**
-                     * 同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期
+                     * <p>同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期</p>
                      */
                     std::vector<uint64_t> m_cloudDeviceStatusSet;
                     bool m_cloudDeviceStatusSetHasBeenSet;
 
                     /**
-                     * 过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系
+                     * <p>过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系</p>
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
 
                     /**
-                     * 过滤数组。支持的Name：
-BindingStatus 绑定状态
+                     * <p>过滤数组。支持的Name：<br>BindingStatus 绑定状态</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * <p>所属成员 AppId</p>
+                     */
+                    std::vector<uint64_t> m_ownerAppIds;
+                    bool m_ownerAppIdsHasBeenSet;
 
                 };
             }

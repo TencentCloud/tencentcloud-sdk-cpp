@@ -23,6 +23,7 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DescribePlatformImagesRequest::DescribePlatformImagesRequest() :
+    m_tiProjectIdHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
@@ -35,6 +36,14 @@ string DescribePlatformImagesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_filtersHasBeenSet)
     {
@@ -74,6 +83,22 @@ string DescribePlatformImagesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribePlatformImagesRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribePlatformImagesRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribePlatformImagesRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
+}
 
 vector<Filter> DescribePlatformImagesRequest::GetFilters() const
 {

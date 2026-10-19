@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/apm/v20210622/model/ApmTag.h>
+#include <tencentcloud/apm/v20210622/model/SpanStatusConfig.h>
 
 
 namespace TencentCloud
@@ -1328,6 +1329,27 @@ namespace TencentCloud
                      */
                     bool TokenDisplayProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义 Span 状态配置</p>
+                     * @return SpanStatusConfig <p>自定义 Span 状态配置</p>
+                     * 
+                     */
+                    SpanStatusConfig GetSpanStatusConfig() const;
+
+                    /**
+                     * 设置<p>自定义 Span 状态配置</p>
+                     * @param _spanStatusConfig <p>自定义 Span 状态配置</p>
+                     * 
+                     */
+                    void SetSpanStatusConfig(const SpanStatusConfig& _spanStatusConfig);
+
+                    /**
+                     * 判断参数 SpanStatusConfig 是否已赋值
+                     * @return SpanStatusConfig 是否已赋值
+                     * 
+                     */
+                    bool SpanStatusConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1695,6 +1717,12 @@ namespace TencentCloud
                      */
                     int64_t m_tokenDisplayProtection;
                     bool m_tokenDisplayProtectionHasBeenSet;
+
+                    /**
+                     * <p>自定义 Span 状态配置</p>
+                     */
+                    SpanStatusConfig m_spanStatusConfig;
+                    bool m_spanStatusConfigHasBeenSet;
 
                 };
             }

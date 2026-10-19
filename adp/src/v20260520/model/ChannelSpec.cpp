@@ -34,7 +34,9 @@ ChannelSpec::ChannelSpec() :
     m_wechatClawBotHasBeenSet(false),
     m_wechatCustomerServiceHasBeenSet(false),
     m_wecomAppHasBeenSet(false),
-    m_wecomRobotHasBeenSet(false)
+    m_wecomRobotHasBeenSet(false),
+    m_shareGroupConversationHasBeenSet(false),
+    m_isDebugHasBeenSet(false)
 {
 }
 
@@ -253,6 +255,26 @@ CoreInternalOutcome ChannelSpec::Deserialize(const rapidjson::Value &value)
         m_wecomRobotHasBeenSet = true;
     }
 
+    if (value.HasMember("ShareGroupConversation") && !value["ShareGroupConversation"].IsNull())
+    {
+        if (!value["ShareGroupConversation"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelSpec.ShareGroupConversation` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_shareGroupConversation = value["ShareGroupConversation"].GetBool();
+        m_shareGroupConversationHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDebug") && !value["IsDebug"].IsNull())
+    {
+        if (!value["IsDebug"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelSpec.IsDebug` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDebug = value["IsDebug"].GetBool();
+        m_isDebugHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -380,6 +402,22 @@ void ChannelSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_wecomRobot.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_shareGroupConversationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareGroupConversation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shareGroupConversation, allocator);
+    }
+
+    if (m_isDebugHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDebug";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDebug, allocator);
     }
 
 }
@@ -607,5 +645,37 @@ void ChannelSpec::SetWecomRobot(const WecomRobotChannelConfig& _wecomRobot)
 bool ChannelSpec::WecomRobotHasBeenSet() const
 {
     return m_wecomRobotHasBeenSet;
+}
+
+bool ChannelSpec::GetShareGroupConversation() const
+{
+    return m_shareGroupConversation;
+}
+
+void ChannelSpec::SetShareGroupConversation(const bool& _shareGroupConversation)
+{
+    m_shareGroupConversation = _shareGroupConversation;
+    m_shareGroupConversationHasBeenSet = true;
+}
+
+bool ChannelSpec::ShareGroupConversationHasBeenSet() const
+{
+    return m_shareGroupConversationHasBeenSet;
+}
+
+bool ChannelSpec::GetIsDebug() const
+{
+    return m_isDebug;
+}
+
+void ChannelSpec::SetIsDebug(const bool& _isDebug)
+{
+    m_isDebug = _isDebug;
+    m_isDebugHasBeenSet = true;
+}
+
+bool ChannelSpec::IsDebugHasBeenSet() const
+{
+    return m_isDebugHasBeenSet;
 }
 

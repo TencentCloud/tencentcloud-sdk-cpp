@@ -421,6 +421,27 @@ namespace TencentCloud
                      */
                     bool LoadBalanceModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启事务全拆分。在一个事务中将事务写前和写后的读拆分到不同的实例上去执行。</p>
+                     * @return TransAllSplit <p>是否开启事务全拆分。在一个事务中将事务写前和写后的读拆分到不同的实例上去执行。</p>
+                     * 
+                     */
+                    bool GetTransAllSplit() const;
+
+                    /**
+                     * 设置<p>是否开启事务全拆分。在一个事务中将事务写前和写后的读拆分到不同的实例上去执行。</p>
+                     * @param _transAllSplit <p>是否开启事务全拆分。在一个事务中将事务写前和写后的读拆分到不同的实例上去执行。</p>
+                     * 
+                     */
+                    void SetTransAllSplit(const bool& _transAllSplit);
+
+                    /**
+                     * 判断参数 TransAllSplit 是否已赋值
+                     * @return TransAllSplit 是否已赋值
+                     * 
+                     */
+                    bool TransAllSplitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -530,6 +551,12 @@ namespace TencentCloud
                      */
                     std::string m_loadBalanceMode;
                     bool m_loadBalanceModeHasBeenSet;
+
+                    /**
+                     * <p>是否开启事务全拆分。在一个事务中将事务写前和写后的读拆分到不同的实例上去执行。</p>
+                     */
+                    bool m_transAllSplit;
+                    bool m_transAllSplitHasBeenSet;
 
                 };
             }

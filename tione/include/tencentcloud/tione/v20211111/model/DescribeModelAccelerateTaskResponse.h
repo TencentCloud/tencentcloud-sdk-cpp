@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型加速任务详情
+                     * 获取<p>模型加速任务详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelAccelerateTask 模型加速任务详情
+                     * @return ModelAccelerateTask <p>模型加速任务详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool ModelAccelerateTaskHasBeenSet() const;
 
                     /**
-                     * 获取模型加速时长，单位s
+                     * 获取<p>模型加速时长，单位s</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelAccRuntimeInSecond 模型加速时长，单位s
+                     * @return ModelAccRuntimeInSecond <p>模型加速时长，单位s</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool ModelAccRuntimeInSecondHasBeenSet() const;
 
                     /**
-                     * 获取模型加速任务开始时间
+                     * 获取<p>模型加速任务开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelAccStartTime 模型加速任务开始时间
+                     * @return ModelAccStartTime <p>模型加速任务开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,9 +93,9 @@ namespace TencentCloud
                     bool ModelAccStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取模型加速任务结束时间
+                     * 获取<p>模型加速任务结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelAccEndTime 模型加速任务结束时间
+                     * @return ModelAccEndTime <p>模型加速任务结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -111,28 +111,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型加速任务详情
+                     * <p>模型加速任务详情</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModelAccelerateTask m_modelAccelerateTask;
                     bool m_modelAccelerateTaskHasBeenSet;
 
                     /**
-                     * 模型加速时长，单位s
+                     * <p>模型加速时长，单位s</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_modelAccRuntimeInSecond;
                     bool m_modelAccRuntimeInSecondHasBeenSet;
 
                     /**
-                     * 模型加速任务开始时间
+                     * <p>模型加速任务开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelAccStartTime;
                     bool m_modelAccStartTimeHasBeenSet;
 
                     /**
-                     * 模型加速任务结束时间
+                     * <p>模型加速任务结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelAccEndTime;

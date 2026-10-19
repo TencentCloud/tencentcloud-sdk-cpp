@@ -601,6 +601,27 @@ namespace TencentCloud
                      */
                     bool CustomImageHasBeenSet() const;
 
+                    /**
+                     * 获取原生节点池 containerd 运行时纯版本号，例如 1.7.28 或 1.7.28-tke.3。未指定或为空时使用原有 GPE 默认版本。仅对新建节点生效。
+                     * @return RuntimeVersion 原生节点池 containerd 运行时纯版本号，例如 1.7.28 或 1.7.28-tke.3。未指定或为空时使用原有 GPE 默认版本。仅对新建节点生效。
+                     * 
+                     */
+                    std::string GetRuntimeVersion() const;
+
+                    /**
+                     * 设置原生节点池 containerd 运行时纯版本号，例如 1.7.28 或 1.7.28-tke.3。未指定或为空时使用原有 GPE 默认版本。仅对新建节点生效。
+                     * @param _runtimeVersion 原生节点池 containerd 运行时纯版本号，例如 1.7.28 或 1.7.28-tke.3。未指定或为空时使用原有 GPE 默认版本。仅对新建节点生效。
+                     * 
+                     */
+                    void SetRuntimeVersion(const std::string& _runtimeVersion);
+
+                    /**
+                     * 判断参数 RuntimeVersion 是否已赋值
+                     * @return RuntimeVersion 是否已赋值
+                     * 
+                     */
+                    bool RuntimeVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -758,6 +779,12 @@ namespace TencentCloud
                      */
                     std::string m_customImage;
                     bool m_customImageHasBeenSet;
+
+                    /**
+                     * 原生节点池 containerd 运行时纯版本号，例如 1.7.28 或 1.7.28-tke.3。未指定或为空时使用原有 GPE 默认版本。仅对新建节点生效。
+                     */
+                    std::string m_runtimeVersion;
+                    bool m_runtimeVersionHasBeenSet;
 
                 };
             }

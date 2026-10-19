@@ -72,7 +72,8 @@ ModifyApmInstanceRequest::ModifyApmInstanceRequest() :
     m_disableAiAbilityHasBeenSet(false),
     m_crossAccountStatusHasBeenSet(false),
     m_crossAccountPeerIdHasBeenSet(false),
-    m_tokenDisplayProtectionHasBeenSet(false)
+    m_tokenDisplayProtectionHasBeenSet(false),
+    m_spanStatusConfigHasBeenSet(false)
 {
 }
 
@@ -493,6 +494,15 @@ string ModifyApmInstanceRequest::ToJsonString() const
         string key = "TokenDisplayProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tokenDisplayProtection, allocator);
+    }
+
+    if (m_spanStatusConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpanStatusConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spanStatusConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1301,6 +1311,22 @@ void ModifyApmInstanceRequest::SetTokenDisplayProtection(const int64_t& _tokenDi
 bool ModifyApmInstanceRequest::TokenDisplayProtectionHasBeenSet() const
 {
     return m_tokenDisplayProtectionHasBeenSet;
+}
+
+SpanStatusConfig ModifyApmInstanceRequest::GetSpanStatusConfig() const
+{
+    return m_spanStatusConfig;
+}
+
+void ModifyApmInstanceRequest::SetSpanStatusConfig(const SpanStatusConfig& _spanStatusConfig)
+{
+    m_spanStatusConfig = _spanStatusConfig;
+    m_spanStatusConfigHasBeenSet = true;
+}
+
+bool ModifyApmInstanceRequest::SpanStatusConfigHasBeenSet() const
+{
+    return m_spanStatusConfigHasBeenSet;
 }
 
 

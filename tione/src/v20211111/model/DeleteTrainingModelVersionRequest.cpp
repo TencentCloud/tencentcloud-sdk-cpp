@@ -24,6 +24,7 @@ using namespace std;
 
 DeleteTrainingModelVersionRequest::DeleteTrainingModelVersionRequest() :
     m_trainingModelVersionIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_enableDeleteCosHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string DeleteTrainingModelVersionRequest::ToJsonString() const
         string key = "TrainingModelVersionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_trainingModelVersionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_enableDeleteCosHasBeenSet)
@@ -73,6 +82,22 @@ void DeleteTrainingModelVersionRequest::SetTrainingModelVersionId(const string& 
 bool DeleteTrainingModelVersionRequest::TrainingModelVersionIdHasBeenSet() const
 {
     return m_trainingModelVersionIdHasBeenSet;
+}
+
+string DeleteTrainingModelVersionRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DeleteTrainingModelVersionRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DeleteTrainingModelVersionRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 bool DeleteTrainingModelVersionRequest::GetEnableDeleteCos() const

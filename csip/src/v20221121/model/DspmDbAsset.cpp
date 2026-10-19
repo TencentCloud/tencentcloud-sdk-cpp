@@ -49,6 +49,7 @@ DspmDbAsset::DspmDbAsset() :
     m_securityAnalyseStatusHasBeenSet(false),
     m_totalAuditLogsHasBeenSet(false),
     m_logDeliveryDisableReasonHasBeenSet(false),
+    m_logDeliveryDisableMessageHasBeenSet(false),
     m_oldestOnlineLogTimestampHasBeenSet(false),
     m_newestOnlineLogTimestampHasBeenSet(false),
     m_operationErrorMsgHasBeenSet(false),
@@ -57,7 +58,8 @@ DspmDbAsset::DspmDbAsset() :
     m_clusterTypeHasBeenSet(false),
     m_identifyScanSupportedHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_dbVersionHasBeenSet(false)
 {
 }
 
@@ -370,6 +372,16 @@ CoreInternalOutcome DspmDbAsset::Deserialize(const rapidjson::Value &value)
         m_logDeliveryDisableReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("LogDeliveryDisableMessage") && !value["LogDeliveryDisableMessage"].IsNull())
+    {
+        if (!value["LogDeliveryDisableMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmDbAsset.LogDeliveryDisableMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logDeliveryDisableMessage = string(value["LogDeliveryDisableMessage"].GetString());
+        m_logDeliveryDisableMessageHasBeenSet = true;
+    }
+
     if (value.HasMember("OldestOnlineLogTimestamp") && !value["OldestOnlineLogTimestamp"].IsNull())
     {
         if (!value["OldestOnlineLogTimestamp"].IsUint64())
@@ -458,6 +470,16 @@ CoreInternalOutcome DspmDbAsset::Deserialize(const rapidjson::Value &value)
         }
         m_clusterName = string(value["ClusterName"].GetString());
         m_clusterNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DbVersion") && !value["DbVersion"].IsNull())
+    {
+        if (!value["DbVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspmDbAsset.DbVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbVersion = string(value["DbVersion"].GetString());
+        m_dbVersionHasBeenSet = true;
     }
 
 
@@ -700,6 +722,14 @@ void DspmDbAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_logDeliveryDisableReason.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_logDeliveryDisableMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogDeliveryDisableMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logDeliveryDisableMessage.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_oldestOnlineLogTimestampHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -770,6 +800,14 @@ void DspmDbAsset::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1223,6 +1261,22 @@ bool DspmDbAsset::LogDeliveryDisableReasonHasBeenSet() const
     return m_logDeliveryDisableReasonHasBeenSet;
 }
 
+string DspmDbAsset::GetLogDeliveryDisableMessage() const
+{
+    return m_logDeliveryDisableMessage;
+}
+
+void DspmDbAsset::SetLogDeliveryDisableMessage(const string& _logDeliveryDisableMessage)
+{
+    m_logDeliveryDisableMessage = _logDeliveryDisableMessage;
+    m_logDeliveryDisableMessageHasBeenSet = true;
+}
+
+bool DspmDbAsset::LogDeliveryDisableMessageHasBeenSet() const
+{
+    return m_logDeliveryDisableMessageHasBeenSet;
+}
+
 uint64_t DspmDbAsset::GetOldestOnlineLogTimestamp() const
 {
     return m_oldestOnlineLogTimestamp;
@@ -1365,5 +1419,21 @@ void DspmDbAsset::SetClusterName(const string& _clusterName)
 bool DspmDbAsset::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+string DspmDbAsset::GetDbVersion() const
+{
+    return m_dbVersion;
+}
+
+void DspmDbAsset::SetDbVersion(const string& _dbVersion)
+{
+    m_dbVersion = _dbVersion;
+    m_dbVersionHasBeenSet = true;
+}
+
+bool DspmDbAsset::DbVersionHasBeenSet() const
+{
+    return m_dbVersionHasBeenSet;
 }
 

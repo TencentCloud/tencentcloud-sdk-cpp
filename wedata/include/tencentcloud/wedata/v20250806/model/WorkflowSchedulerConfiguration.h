@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时区
+                     * 获取<p>时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduleTimeZone 时区
+                     * @return ScheduleTimeZone <p>时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheduleTimeZone() const;
 
                     /**
-                     * 设置时区
+                     * 设置<p>时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduleTimeZone 时区
+                     * @param _scheduleTimeZone <p>时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,50 +72,18 @@ namespace TencentCloud
                     bool ScheduleTimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * 获取<p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CycleType 周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * @return CycleType <p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCycleType() const;
 
                     /**
-                     * 设置周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * 设置<p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cycleType 周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * @param _cycleType <p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -129,18 +97,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool CycleTypeHasBeenSet() const;
 
                     /**
-                     * 获取自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)
+                     * 获取<p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SelfDepend 自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)
+                     * @return SelfDepend <p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSelfDepend() const;
 
                     /**
-                     * 设置自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)
+                     * 设置<p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _selfDepend 自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)
+                     * @param _selfDepend <p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -154,18 +122,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool SelfDependHasBeenSet() const;
 
                     /**
-                     * 获取生效开始时间
+                     * 获取<p>生效开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 生效开始时间
+                     * @return StartTime <p>生效开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置生效开始时间
+                     * 设置<p>生效开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime 生效开始时间
+                     * @param _startTime <p>生效开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -179,18 +147,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取生效结束时间
+                     * 获取<p>生效结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 生效结束时间
+                     * @return EndTime <p>生效结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置生效结束时间
+                     * 设置<p>生效结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endTime 生效结束时间
+                     * @param _endTime <p>生效结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -204,18 +172,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取工作流依赖，yes or no
+                     * 获取<p>工作流依赖，yes or no</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DependencyWorkflow 工作流依赖，yes or no
+                     * @return DependencyWorkflow <p>工作流依赖，yes or no</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDependencyWorkflow() const;
 
                     /**
-                     * 设置工作流依赖，yes or no
+                     * 设置<p>工作流依赖，yes or no</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dependencyWorkflow 工作流依赖，yes or no
+                     * @param _dependencyWorkflow <p>工作流依赖，yes or no</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -229,18 +197,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool DependencyWorkflowHasBeenSet() const;
 
                     /**
-                     * 获取执行时间左闭区间，示例：00:00
+                     * 获取<p>执行时间左闭区间，示例：00:00</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecutionStartTime 执行时间左闭区间，示例：00:00
+                     * @return ExecutionStartTime <p>执行时间左闭区间，示例：00:00</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutionStartTime() const;
 
                     /**
-                     * 设置执行时间左闭区间，示例：00:00
+                     * 设置<p>执行时间左闭区间，示例：00:00</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _executionStartTime 执行时间左闭区间，示例：00:00
+                     * @param _executionStartTime <p>执行时间左闭区间，示例：00:00</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -254,18 +222,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool ExecutionStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取执行时间右闭区间，示例：23:59
+                     * 获取<p>执行时间右闭区间，示例：23:59</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecutionEndTime 执行时间右闭区间，示例：23:59
+                     * @return ExecutionEndTime <p>执行时间右闭区间，示例：23:59</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutionEndTime() const;
 
                     /**
-                     * 设置执行时间右闭区间，示例：23:59
+                     * 设置<p>执行时间右闭区间，示例：23:59</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _executionEndTime 执行时间右闭区间，示例：23:59
+                     * @param _executionEndTime <p>执行时间右闭区间，示例：23:59</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -279,18 +247,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool ExecutionEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取cron表达式
+                     * 获取<p>cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CrontabExpression cron表达式
+                     * @return CrontabExpression <p>cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCrontabExpression() const;
 
                     /**
-                     * 设置cron表达式
+                     * 设置<p>cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _crontabExpression cron表达式
+                     * @param _crontabExpression <p>cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -304,18 +272,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool CrontabExpressionHasBeenSet() const;
 
                     /**
-                     * 获取是否开启日历调度 1 开启 0关闭
+                     * 获取<p>是否开启日历调度 1 开启 0关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CalendarOpen 是否开启日历调度 1 开启 0关闭
+                     * @return CalendarOpen <p>是否开启日历调度 1 开启 0关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCalendarOpen() const;
 
                     /**
-                     * 设置是否开启日历调度 1 开启 0关闭
+                     * 设置<p>是否开启日历调度 1 开启 0关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _calendarOpen 是否开启日历调度 1 开启 0关闭
+                     * @param _calendarOpen <p>是否开启日历调度 1 开启 0关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -329,18 +297,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool CalendarOpenHasBeenSet() const;
 
                     /**
-                     * 获取日历名称
+                     * 获取<p>日历名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CalendarName 日历名称
+                     * @return CalendarName <p>日历名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCalendarName() const;
 
                     /**
-                     * 设置日历名称
+                     * 设置<p>日历名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _calendarName 日历名称
+                     * @param _calendarName <p>日历名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -354,18 +322,18 @@ CRONTAB_CYCLE: crontab表达式类型
                     bool CalendarNameHasBeenSet() const;
 
                     /**
-                     * 获取日历id
+                     * 获取<p>日历id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CalendarId 日历id
+                     * @return CalendarId <p>日历id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCalendarId() const;
 
                     /**
-                     * 设置日历id
+                     * 设置<p>日历id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _calendarId 日历id
+                     * @param _calendarId <p>日历id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -378,99 +346,123 @@ CRONTAB_CYCLE: crontab表达式类型
                      */
                     bool CalendarIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分钟任务相位偏移</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MinuteOffset <p>分钟任务相位偏移</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetMinuteOffset() const;
+
+                    /**
+                     * 设置<p>分钟任务相位偏移</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _minuteOffset <p>分钟任务相位偏移</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMinuteOffset(const uint64_t& _minuteOffset);
+
+                    /**
+                     * 判断参数 MinuteOffset 是否已赋值
+                     * @return MinuteOffset 是否已赋值
+                     * 
+                     */
+                    bool MinuteOffsetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 时区
+                     * <p>时区</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
 
                     /**
-                     * 周期类型：支持的类型为
-ONEOFF_CYCLE: 一次性
-YEAR_CYCLE: 年
-MONTH_CYCLE: 月
-WEEK_CYCLE: 周
-DAY_CYCLE: 天
-HOUR_CYCLE: 小时
-MINUTE_CYCLE: 分钟
-CRONTAB_CYCLE: crontab表达式类型
+                     * <p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cycleType;
                     bool m_cycleTypeHasBeenSet;
 
                     /**
-                     * 自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)
+                     * <p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_selfDepend;
                     bool m_selfDependHasBeenSet;
 
                     /**
-                     * 生效开始时间
+                     * <p>生效开始时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 生效结束时间
+                     * <p>生效结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 工作流依赖，yes or no
+                     * <p>工作流依赖，yes or no</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dependencyWorkflow;
                     bool m_dependencyWorkflowHasBeenSet;
 
                     /**
-                     * 执行时间左闭区间，示例：00:00
+                     * <p>执行时间左闭区间，示例：00:00</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executionStartTime;
                     bool m_executionStartTimeHasBeenSet;
 
                     /**
-                     * 执行时间右闭区间，示例：23:59
+                     * <p>执行时间右闭区间，示例：23:59</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executionEndTime;
                     bool m_executionEndTimeHasBeenSet;
 
                     /**
-                     * cron表达式
+                     * <p>cron表达式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_crontabExpression;
                     bool m_crontabExpressionHasBeenSet;
 
                     /**
-                     * 是否开启日历调度 1 开启 0关闭
+                     * <p>是否开启日历调度 1 开启 0关闭</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_calendarOpen;
                     bool m_calendarOpenHasBeenSet;
 
                     /**
-                     * 日历名称
+                     * <p>日历名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_calendarName;
                     bool m_calendarNameHasBeenSet;
 
                     /**
-                     * 日历id
+                     * <p>日历id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_calendarId;
                     bool m_calendarIdHasBeenSet;
+
+                    /**
+                     * <p>分钟任务相位偏移</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_minuteOffset;
+                    bool m_minuteOffsetHasBeenSet;
 
                 };
             }

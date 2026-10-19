@@ -890,6 +890,56 @@ CdcClient::DescribeDedicatedSupportedZonesOutcomeCallable CdcClient::DescribeDed
     return prom->get_future();
 }
 
+CdcClient::DescribeEdgeHostVmOutcome CdcClient::DescribeEdgeHostVm(const DescribeEdgeHostVmRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeHostVm");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeHostVmResponse rsp = DescribeEdgeHostVmResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeHostVmOutcome(rsp);
+        else
+            return DescribeEdgeHostVmOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeHostVmOutcome(outcome.GetError());
+    }
+}
+
+void CdcClient::DescribeEdgeHostVmAsync(const DescribeEdgeHostVmRequest& request, const DescribeEdgeHostVmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEdgeHostVmRequest&;
+    using Resp = DescribeEdgeHostVmResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEdgeHostVm", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdcClient::DescribeEdgeHostVmOutcomeCallable CdcClient::DescribeEdgeHostVmCallable(const DescribeEdgeHostVmRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEdgeHostVmOutcome>>();
+    DescribeEdgeHostVmAsync(
+    request,
+    [prom](
+        const CdcClient*,
+        const DescribeEdgeHostVmRequest&,
+        DescribeEdgeHostVmOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CdcClient::DescribeSitesOutcome CdcClient::DescribeSites(const DescribeSitesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSites");

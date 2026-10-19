@@ -29,6 +29,7 @@
 #include <tencentcloud/ags/v20250920/model/ResourceConfiguration.h>
 #include <tencentcloud/ags/v20250920/model/ProbeConfiguration.h>
 #include <tencentcloud/ags/v20250920/model/DNSConfig.h>
+#include <tencentcloud/ags/v20250920/model/SecurityContext.h>
 
 
 namespace TencentCloud
@@ -261,6 +262,27 @@ namespace TencentCloud
                      */
                     bool DNSConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>沙箱安全上下文</p>
+                     * @return SecurityContext <p>沙箱安全上下文</p>
+                     * 
+                     */
+                    SecurityContext GetSecurityContext() const;
+
+                    /**
+                     * 设置<p>沙箱安全上下文</p>
+                     * @param _securityContext <p>沙箱安全上下文</p>
+                     * 
+                     */
+                    void SetSecurityContext(const SecurityContext& _securityContext);
+
+                    /**
+                     * 判断参数 SecurityContext 是否已赋值
+                     * @return SecurityContext 是否已赋值
+                     * 
+                     */
+                    bool SecurityContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -322,6 +344,12 @@ namespace TencentCloud
                      */
                     DNSConfig m_dNSConfig;
                     bool m_dNSConfigHasBeenSet;
+
+                    /**
+                     * <p>沙箱安全上下文</p>
+                     */
+                    SecurityContext m_securityContext;
+                    bool m_securityContextHasBeenSet;
 
                 };
             }

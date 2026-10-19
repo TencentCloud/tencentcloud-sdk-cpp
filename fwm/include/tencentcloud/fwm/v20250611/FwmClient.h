@@ -35,6 +35,8 @@
 #include <tencentcloud/fwm/v20250611/model/CreateNatAclRuleResponse.h>
 #include <tencentcloud/fwm/v20250611/model/CreateNatAclRuleGroupRequest.h>
 #include <tencentcloud/fwm/v20250611/model/CreateNatAclRuleGroupResponse.h>
+#include <tencentcloud/fwm/v20250611/model/CreateRuleGroupRequest.h>
+#include <tencentcloud/fwm/v20250611/model/CreateRuleGroupResponse.h>
 #include <tencentcloud/fwm/v20250611/model/CreateSecurityGroupRuleRequest.h>
 #include <tencentcloud/fwm/v20250611/model/CreateSecurityGroupRuleResponse.h>
 #include <tencentcloud/fwm/v20250611/model/CreateSecurityGroupRuleGroupRequest.h>
@@ -143,6 +145,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNatAclRuleGroupResponse> CreateNatAclRuleGroupOutcome;
                 typedef std::future<CreateNatAclRuleGroupOutcome> CreateNatAclRuleGroupOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::CreateNatAclRuleGroupRequest&, CreateNatAclRuleGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNatAclRuleGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRuleGroupResponse> CreateRuleGroupOutcome;
+                typedef std::future<CreateRuleGroupOutcome> CreateRuleGroupOutcomeCallable;
+                typedef std::function<void(const FwmClient*, const Model::CreateRuleGroupRequest&, CreateRuleGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSecurityGroupRuleResponse> CreateSecurityGroupRuleOutcome;
                 typedef std::future<CreateSecurityGroupRuleOutcome> CreateSecurityGroupRuleOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::CreateSecurityGroupRuleRequest&, CreateSecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityGroupRuleAsyncHandler;
@@ -313,6 +318,15 @@ namespace TencentCloud
                 CreateNatAclRuleGroupOutcome CreateNatAclRuleGroup(const Model::CreateNatAclRuleGroupRequest &request);
                 void CreateNatAclRuleGroupAsync(const Model::CreateNatAclRuleGroupRequest& request, const CreateNatAclRuleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNatAclRuleGroupOutcomeCallable CreateNatAclRuleGroupCallable(const Model::CreateNatAclRuleGroupRequest& request);
+
+                /**
+                 *创建一个不含规则的规则组，归属产品由 Product 指定。规则组是四类防火墙产品共用的资源，落库于 fwm_rule_group 并以 product 字段区分归属；规则需另行通过 CreateSecurityGroupRule / CreateVpcAclRule / CreateNatAclRule / CreateEdgeAclRule 追加。规则组的查询/修改/删除已由 DescribeRuleGroup / DescribeRuleGroups / ModifyRuleGroup / DeleteRuleGroup 统一承载，本接口补齐创建侧，供 Terraform 等需要「建组」与「建规则」分离的资源模型使用。返回新规则组 ID（fwmrg- 前缀），初始 RuleCount 为 0。注意：创建空规则组同样计入规则组配额，且三墙（VPC/NAT/Edge）受预付费写门禁约束，企业安全组不受该门禁约束。
+                 * @param req CreateRuleGroupRequest
+                 * @return CreateRuleGroupOutcome
+                 */
+                CreateRuleGroupOutcome CreateRuleGroup(const Model::CreateRuleGroupRequest &request);
+                void CreateRuleGroupAsync(const Model::CreateRuleGroupRequest& request, const CreateRuleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRuleGroupOutcomeCallable CreateRuleGroupCallable(const Model::CreateRuleGroupRequest& request);
 
                 /**
                  *规则组编辑时添加规则（规则组管理）

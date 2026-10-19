@@ -34,6 +34,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/CloudRecord.h
   include/tencentcloud/ags/v20250920/model/DescribeDeploymentResponse.h
   include/tencentcloud/ags/v20250920/model/RejectRegistryRecordResponse.h
+  include/tencentcloud/ags/v20250920/model/SecurityContext.h
   include/tencentcloud/ags/v20250920/model/CloudTag.h
   include/tencentcloud/ags/v20250920/model/DNSConfig.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryRecordListRequest.h
@@ -69,6 +70,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/RejectRegistryRecordRequest.h
   include/tencentcloud/ags/v20250920/model/CreateDeploymentRequest.h
   include/tencentcloud/ags/v20250920/model/CfsStorageSource.h
+  include/tencentcloud/ags/v20250920/model/VolumeTemplateRef.h
   include/tencentcloud/ags/v20250920/model/StopSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/GetSkillPackageDownloadURLRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeSandboxToolListResponse.h
@@ -115,6 +117,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/CreateAPIKeyResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeSessionRequest.h
   include/tencentcloud/ags/v20250920/model/AcquireDeploymentTokenRequest.h
+  include/tencentcloud/ags/v20250920/model/VolumeRef.h
   include/tencentcloud/ags/v20250920/model/DescribeEventsResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeDeploymentListResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryResponse.h
@@ -150,6 +153,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/CancelRegistryRecordResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeSessionSpacesRequest.h
   include/tencentcloud/ags/v20250920/model/SandboxInstance.h
+  include/tencentcloud/ags/v20250920/model/Capabilities.h
   include/tencentcloud/ags/v20250920/model/WAAConfiguration.h
   include/tencentcloud/ags/v20250920/model/StorageMount.h
   include/tencentcloud/ags/v20250920/model/ComputerConfiguration.h
@@ -213,6 +217,7 @@ set(ags_src
   src/v20250920/model/CloudRecord.cpp
   src/v20250920/model/DescribeDeploymentResponse.cpp
   src/v20250920/model/RejectRegistryRecordResponse.cpp
+  src/v20250920/model/SecurityContext.cpp
   src/v20250920/model/CloudTag.cpp
   src/v20250920/model/DNSConfig.cpp
   src/v20250920/model/DescribeRegistryRecordListRequest.cpp
@@ -248,6 +253,7 @@ set(ags_src
   src/v20250920/model/RejectRegistryRecordRequest.cpp
   src/v20250920/model/CreateDeploymentRequest.cpp
   src/v20250920/model/CfsStorageSource.cpp
+  src/v20250920/model/VolumeTemplateRef.cpp
   src/v20250920/model/StopSandboxInstanceRequest.cpp
   src/v20250920/model/GetSkillPackageDownloadURLRequest.cpp
   src/v20250920/model/DescribeSandboxToolListResponse.cpp
@@ -294,6 +300,7 @@ set(ags_src
   src/v20250920/model/CreateAPIKeyResponse.cpp
   src/v20250920/model/DescribeSessionRequest.cpp
   src/v20250920/model/AcquireDeploymentTokenRequest.cpp
+  src/v20250920/model/VolumeRef.cpp
   src/v20250920/model/DescribeEventsResponse.cpp
   src/v20250920/model/DescribeDeploymentListResponse.cpp
   src/v20250920/model/DescribeRegistryResponse.cpp
@@ -329,6 +336,7 @@ set(ags_src
   src/v20250920/model/CancelRegistryRecordResponse.cpp
   src/v20250920/model/DescribeSessionSpacesRequest.cpp
   src/v20250920/model/SandboxInstance.cpp
+  src/v20250920/model/Capabilities.cpp
   src/v20250920/model/WAAConfiguration.cpp
   src/v20250920/model/StorageMount.cpp
   src/v20250920/model/ComputerConfiguration.cpp

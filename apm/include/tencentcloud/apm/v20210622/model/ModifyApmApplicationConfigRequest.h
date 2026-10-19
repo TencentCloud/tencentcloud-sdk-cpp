@@ -25,6 +25,7 @@
 #include <tencentcloud/apm/v20210622/model/AgentOperationConfigView.h>
 #include <tencentcloud/apm/v20210622/model/ApmTag.h>
 #include <tencentcloud/apm/v20210622/model/AutoProfilingConfig.h>
+#include <tencentcloud/apm/v20210622/model/SpanStatusConfig.h>
 
 
 namespace TencentCloud
@@ -1390,6 +1391,48 @@ namespace TencentCloud
                      */
                     bool CrossAccountPeerIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>应用级自定义 Span 状态开关</p>
+                     * @return EnableSpanStatusConfig <p>应用级自定义 Span 状态开关</p>
+                     * 
+                     */
+                    bool GetEnableSpanStatusConfig() const;
+
+                    /**
+                     * 设置<p>应用级自定义 Span 状态开关</p>
+                     * @param _enableSpanStatusConfig <p>应用级自定义 Span 状态开关</p>
+                     * 
+                     */
+                    void SetEnableSpanStatusConfig(const bool& _enableSpanStatusConfig);
+
+                    /**
+                     * 判断参数 EnableSpanStatusConfig 是否已赋值
+                     * @return EnableSpanStatusConfig 是否已赋值
+                     * 
+                     */
+                    bool EnableSpanStatusConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义 Span 状态配置</p>
+                     * @return SpanStatusConfig <p>自定义 Span 状态配置</p>
+                     * 
+                     */
+                    SpanStatusConfig GetSpanStatusConfig() const;
+
+                    /**
+                     * 设置<p>自定义 Span 状态配置</p>
+                     * @param _spanStatusConfig <p>自定义 Span 状态配置</p>
+                     * 
+                     */
+                    void SetSpanStatusConfig(const SpanStatusConfig& _spanStatusConfig);
+
+                    /**
+                     * 判断参数 SpanStatusConfig 是否已赋值
+                     * @return SpanStatusConfig 是否已赋值
+                     * 
+                     */
+                    bool SpanStatusConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1775,6 +1818,18 @@ namespace TencentCloud
                      */
                     std::string m_crossAccountPeerId;
                     bool m_crossAccountPeerIdHasBeenSet;
+
+                    /**
+                     * <p>应用级自定义 Span 状态开关</p>
+                     */
+                    bool m_enableSpanStatusConfig;
+                    bool m_enableSpanStatusConfigHasBeenSet;
+
+                    /**
+                     * <p>自定义 Span 状态配置</p>
+                     */
+                    SpanStatusConfig m_spanStatusConfig;
+                    bool m_spanStatusConfigHasBeenSet;
 
                 };
             }

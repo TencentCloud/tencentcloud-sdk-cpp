@@ -24,7 +24,9 @@ StorageMount::StorageMount() :
     m_nameHasBeenSet(false),
     m_storageSourceHasBeenSet(false),
     m_mountPathHasBeenSet(false),
-    m_readOnlyHasBeenSet(false)
+    m_readOnlyHasBeenSet(false),
+    m_volumeHasBeenSet(false),
+    m_volumeTemplateHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,40 @@ CoreInternalOutcome StorageMount::Deserialize(const rapidjson::Value &value)
         m_readOnlyHasBeenSet = true;
     }
 
+    if (value.HasMember("Volume") && !value["Volume"].IsNull())
+    {
+        if (!value["Volume"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageMount.Volume` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_volume.Deserialize(value["Volume"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_volumeHasBeenSet = true;
+    }
+
+    if (value.HasMember("VolumeTemplate") && !value["VolumeTemplate"].IsNull())
+    {
+        if (!value["VolumeTemplate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageMount.VolumeTemplate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_volumeTemplate.Deserialize(value["VolumeTemplate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_volumeTemplateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +154,24 @@ void StorageMount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ReadOnly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_readOnly, allocator);
+    }
+
+    if (m_volumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Volume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_volume.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_volumeTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_volumeTemplate.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -185,5 +239,37 @@ void StorageMount::SetReadOnly(const bool& _readOnly)
 bool StorageMount::ReadOnlyHasBeenSet() const
 {
     return m_readOnlyHasBeenSet;
+}
+
+VolumeRef StorageMount::GetVolume() const
+{
+    return m_volume;
+}
+
+void StorageMount::SetVolume(const VolumeRef& _volume)
+{
+    m_volume = _volume;
+    m_volumeHasBeenSet = true;
+}
+
+bool StorageMount::VolumeHasBeenSet() const
+{
+    return m_volumeHasBeenSet;
+}
+
+VolumeTemplateRef StorageMount::GetVolumeTemplate() const
+{
+    return m_volumeTemplate;
+}
+
+void StorageMount::SetVolumeTemplate(const VolumeTemplateRef& _volumeTemplate)
+{
+    m_volumeTemplate = _volumeTemplate;
+    m_volumeTemplateHasBeenSet = true;
+}
+
+bool StorageMount::VolumeTemplateHasBeenSet() const
+{
+    return m_volumeTemplateHasBeenSet;
 }
 

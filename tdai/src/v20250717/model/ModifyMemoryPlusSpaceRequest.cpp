@@ -25,7 +25,8 @@ using namespace std;
 ModifyMemoryPlusSpaceRequest::ModifyMemoryPlusSpaceRequest() :
     m_spaceIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_compressedHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyMemoryPlusSpaceRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compressedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compressed";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_compressed, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyMemoryPlusSpaceRequest::SetDescription(const string& _description)
 bool ModifyMemoryPlusSpaceRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+bool ModifyMemoryPlusSpaceRequest::GetCompressed() const
+{
+    return m_compressed;
+}
+
+void ModifyMemoryPlusSpaceRequest::SetCompressed(const bool& _compressed)
+{
+    m_compressed = _compressed;
+    m_compressedHasBeenSet = true;
+}
+
+bool ModifyMemoryPlusSpaceRequest::CompressedHasBeenSet() const
+{
+    return m_compressedHasBeenSet;
 }
 
 

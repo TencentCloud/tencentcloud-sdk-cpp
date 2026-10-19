@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取凭证唯一标识
-                     * @return CertId 凭证唯一标识
+                     * 获取<p>凭证唯一标识</p>
+                     * @return CertId <p>凭证唯一标识</p>
                      * 
                      */
                     std::string GetCertId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 凭证唯一标识
+                     * <p>凭证唯一标识</p>
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;

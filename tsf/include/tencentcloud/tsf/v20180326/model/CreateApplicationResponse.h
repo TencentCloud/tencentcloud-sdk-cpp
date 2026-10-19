@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return Result 应用ID
+                     * 获取<p>应用ID</p>
+                     * @return Result <p>应用ID</p>
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

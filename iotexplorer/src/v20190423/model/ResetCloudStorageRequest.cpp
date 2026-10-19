@@ -26,7 +26,8 @@ ResetCloudStorageRequest::ResetCloudStorageRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_channelIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_orderIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ResetCloudStorageRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ResetCloudStorageRequest::SetUserId(const string& _userId)
 bool ResetCloudStorageRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string ResetCloudStorageRequest::GetOrderId() const
+{
+    return m_orderId;
+}
+
+void ResetCloudStorageRequest::SetOrderId(const string& _orderId)
+{
+    m_orderId = _orderId;
+    m_orderIdHasBeenSet = true;
+}
+
+bool ResetCloudStorageRequest::OrderIdHasBeenSet() const
+{
+    return m_orderIdHasBeenSet;
 }
 
 

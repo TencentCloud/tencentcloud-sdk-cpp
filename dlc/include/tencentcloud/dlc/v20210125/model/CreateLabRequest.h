@@ -506,6 +506,27 @@ namespace TencentCloud
                      */
                     bool LabImagePullTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>
+                     * @return NetworkConfig <p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>
+                     * 
+                     */
+                    std::string GetNetworkConfig() const;
+
+                    /**
+                     * 设置<p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>
+                     * @param _networkConfig <p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>
+                     * 
+                     */
+                    void SetNetworkConfig(const std::string& _networkConfig);
+
+                    /**
+                     * 判断参数 NetworkConfig 是否已赋值
+                     * @return NetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool NetworkConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -639,6 +660,12 @@ namespace TencentCloud
                      */
                     std::string m_labImagePullType;
                     bool m_labImagePullTypeHasBeenSet;
+
+                    /**
+                     * <p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>
+                     */
+                    std::string m_networkConfig;
+                    bool m_networkConfigHasBeenSet;
 
                 };
             }

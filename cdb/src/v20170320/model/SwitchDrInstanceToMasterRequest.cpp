@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
 SwitchDrInstanceToMasterRequest::SwitchDrInstanceToMasterRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_ignoreSyncDelayHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string SwitchDrInstanceToMasterRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ignoreSyncDelayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreSyncDelay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ignoreSyncDelay, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void SwitchDrInstanceToMasterRequest::SetInstanceId(const string& _instanceId)
 bool SwitchDrInstanceToMasterRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+int64_t SwitchDrInstanceToMasterRequest::GetIgnoreSyncDelay() const
+{
+    return m_ignoreSyncDelay;
+}
+
+void SwitchDrInstanceToMasterRequest::SetIgnoreSyncDelay(const int64_t& _ignoreSyncDelay)
+{
+    m_ignoreSyncDelay = _ignoreSyncDelay;
+    m_ignoreSyncDelayHasBeenSet = true;
+}
+
+bool SwitchDrInstanceToMasterRequest::IgnoreSyncDelayHasBeenSet() const
+{
+    return m_ignoreSyncDelayHasBeenSet;
 }
 
 

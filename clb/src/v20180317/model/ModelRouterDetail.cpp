@@ -50,7 +50,8 @@ ModelRouterDetail::ModelRouterDetail() :
     m_loadBalancerIdHasBeenSet(false),
     m_videoConfigHasBeenSet(false),
     m_rerankConfigHasBeenSet(false),
-    m_decisionsConfigHasBeenSet(false)
+    m_decisionsConfigHasBeenSet(false),
+    m_imageConfigHasBeenSet(false)
 {
 }
 
@@ -448,6 +449,23 @@ CoreInternalOutcome ModelRouterDetail::Deserialize(const rapidjson::Value &value
         m_decisionsConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageConfig") && !value["ImageConfig"].IsNull())
+    {
+        if (!value["ImageConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.ImageConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageConfig.Deserialize(value["ImageConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -727,6 +745,15 @@ void ModelRouterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_decisionsConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1210,5 +1237,21 @@ void ModelRouterDetail::SetDecisionsConfig(const DecisionsConfig& _decisionsConf
 bool ModelRouterDetail::DecisionsConfigHasBeenSet() const
 {
     return m_decisionsConfigHasBeenSet;
+}
+
+ImageConfig ModelRouterDetail::GetImageConfig() const
+{
+    return m_imageConfig;
+}
+
+void ModelRouterDetail::SetImageConfig(const ImageConfig& _imageConfig)
+{
+    m_imageConfig = _imageConfig;
+    m_imageConfigHasBeenSet = true;
+}
+
+bool ModelRouterDetail::ImageConfigHasBeenSet() const
+{
+    return m_imageConfigHasBeenSet;
 }
 

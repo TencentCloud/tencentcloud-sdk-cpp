@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启服务注册治理
-                     * @return EnableGovernance 是否开启服务注册治理
+                     * 获取<p>是否开启服务注册治理</p><p>枚举值：</p><ul><li>true： 使用Consul或者北极星服务注册治理</li><li>false： 不使用服务注册治理</li></ul>
+                     * @return EnableGovernance <p>是否开启服务注册治理</p><p>枚举值：</p><ul><li>true： 使用Consul或者北极星服务注册治理</li><li>false： 不使用服务注册治理</li></ul>
                      * 
                      */
                     bool GetEnableGovernance() const;
 
                     /**
-                     * 设置是否开启服务注册治理
-                     * @param _enableGovernance 是否开启服务注册治理
+                     * 设置<p>是否开启服务注册治理</p><p>枚举值：</p><ul><li>true： 使用Consul或者北极星服务注册治理</li><li>false： 不使用服务注册治理</li></ul>
+                     * @param _enableGovernance <p>是否开启服务注册治理</p><p>枚举值：</p><ul><li>true： 使用Consul或者北极星服务注册治理</li><li>false： 不使用服务注册治理</li></ul>
                      * 
                      */
                     void SetEnableGovernance(const bool& _enableGovernance);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool EnableGovernanceHasBeenSet() const;
 
                     /**
-                     * 获取服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
-                     * @return GovernanceType 服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
+                     * 获取<p>服务治理类型</p><p>枚举值：</p><ul><li>SHARE： 使用Consul注册中心</li><li>EXCLUSIVE： 使用北极星注册中心</li></ul>
+                     * @return GovernanceType <p>服务治理类型</p><p>枚举值：</p><ul><li>SHARE： 使用Consul注册中心</li><li>EXCLUSIVE： 使用北极星注册中心</li></ul>
                      * 
                      */
                     std::string GetGovernanceType() const;
 
                     /**
-                     * 设置服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
-                     * @param _governanceType 服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
+                     * 设置<p>服务治理类型</p><p>枚举值：</p><ul><li>SHARE： 使用Consul注册中心</li><li>EXCLUSIVE： 使用北极星注册中心</li></ul>
+                     * @param _governanceType <p>服务治理类型</p><p>枚举值：</p><ul><li>SHARE： 使用Consul注册中心</li><li>EXCLUSIVE： 使用北极星注册中心</li></ul>
                      * 
                      */
                     void SetGovernanceType(const std::string& _governanceType);
@@ -90,18 +90,18 @@ namespace TencentCloud
                     bool GovernanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取独享实例列表
+                     * 获取<p>北极星实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExclusiveInstances 独享实例列表
+                     * @return ExclusiveInstances <p>北极星实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ExclusiveInstance> GetExclusiveInstances() const;
 
                     /**
-                     * 设置独享实例列表
+                     * 设置<p>北极星实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _exclusiveInstances 独享实例列表
+                     * @param _exclusiveInstances <p>北极星实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -117,19 +117,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启服务注册治理
+                     * <p>是否开启服务注册治理</p><p>枚举值：</p><ul><li>true： 使用Consul或者北极星服务注册治理</li><li>false： 不使用服务注册治理</li></ul>
                      */
                     bool m_enableGovernance;
                     bool m_enableGovernanceHasBeenSet;
 
                     /**
-                     * 服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）
+                     * <p>服务治理类型</p><p>枚举值：</p><ul><li>SHARE： 使用Consul注册中心</li><li>EXCLUSIVE： 使用北极星注册中心</li></ul>
                      */
                     std::string m_governanceType;
                     bool m_governanceTypeHasBeenSet;
 
                     /**
-                     * 独享实例列表
+                     * <p>北极星实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ExclusiveInstance> m_exclusiveInstances;

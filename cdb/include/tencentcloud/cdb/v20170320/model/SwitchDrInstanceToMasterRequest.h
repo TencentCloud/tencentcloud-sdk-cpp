@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取灾备实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @return InstanceId 灾备实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 获取<p>灾备实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>
+                     * @return InstanceId <p>灾备实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置灾备实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param _instanceId 灾备实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 设置<p>灾备实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>
+                     * @param _instanceId <p>灾备实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>忽略同步延迟的阈值，不填默认为0表示完全等待追平</p><p>取值范围：[0, 104857600]</p><p>默认值：0</p>
+                     * @return IgnoreSyncDelay <p>忽略同步延迟的阈值，不填默认为0表示完全等待追平</p><p>取值范围：[0, 104857600]</p><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetIgnoreSyncDelay() const;
+
+                    /**
+                     * 设置<p>忽略同步延迟的阈值，不填默认为0表示完全等待追平</p><p>取值范围：[0, 104857600]</p><p>默认值：0</p>
+                     * @param _ignoreSyncDelay <p>忽略同步延迟的阈值，不填默认为0表示完全等待追平</p><p>取值范围：[0, 104857600]</p><p>默认值：0</p>
+                     * 
+                     */
+                    void SetIgnoreSyncDelay(const int64_t& _ignoreSyncDelay);
+
+                    /**
+                     * 判断参数 IgnoreSyncDelay 是否已赋值
+                     * @return IgnoreSyncDelay 是否已赋值
+                     * 
+                     */
+                    bool IgnoreSyncDelayHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 灾备实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * <p>灾备实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>忽略同步延迟的阈值，不填默认为0表示完全等待追平</p><p>取值范围：[0, 104857600]</p><p>默认值：0</p>
+                     */
+                    int64_t m_ignoreSyncDelay;
+                    bool m_ignoreSyncDelayHasBeenSet;
 
                 };
             }

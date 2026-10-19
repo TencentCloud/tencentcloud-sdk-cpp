@@ -440,6 +440,56 @@ TioneClient::CreateNotebookOutcomeCallable TioneClient::CreateNotebookCallable(c
     return prom->get_future();
 }
 
+TioneClient::CreateNotebookImageOutcome TioneClient::CreateNotebookImage(const CreateNotebookImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNotebookImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNotebookImageResponse rsp = CreateNotebookImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNotebookImageOutcome(rsp);
+        else
+            return CreateNotebookImageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNotebookImageOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::CreateNotebookImageAsync(const CreateNotebookImageRequest& request, const CreateNotebookImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateNotebookImageRequest&;
+    using Resp = CreateNotebookImageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateNotebookImage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::CreateNotebookImageOutcomeCallable TioneClient::CreateNotebookImageCallable(const CreateNotebookImageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateNotebookImageOutcome>>();
+    CreateNotebookImageAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const CreateNotebookImageRequest&,
+        CreateNotebookImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::CreatePresignedNotebookUrlOutcome TioneClient::CreatePresignedNotebookUrl(const CreatePresignedNotebookUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePresignedNotebookUrl");

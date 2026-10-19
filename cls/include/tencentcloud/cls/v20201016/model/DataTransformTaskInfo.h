@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据加工任务名称
-                     * @return Name 数据加工任务名称
+                     * 获取<p>数据加工任务名称</p>
+                     * @return Name <p>数据加工任务名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置数据加工任务名称
-                     * @param _name 数据加工任务名称
+                     * 设置<p>数据加工任务名称</p>
+                     * @param _name <p>数据加工任务名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取数据加工任务id
-                     * @return TaskId 数据加工任务id
+                     * 获取<p>数据加工任务id</p>
+                     * @return TaskId <p>数据加工任务id</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置数据加工任务id
-                     * @param _taskId 数据加工任务id
+                     * 设置<p>数据加工任务id</p>
+                     * @param _taskId <p>数据加工任务id</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务启用状态，默认为1，正常开启,  2关闭
-                     * @return EnableFlag 任务启用状态，默认为1，正常开启,  2关闭
+                     * 获取<p>任务启用状态，默认为1，正常开启,  2关闭</p>
+                     * @return EnableFlag <p>任务启用状态，默认为1，正常开启,  2关闭</p>
                      * 
                      */
                     int64_t GetEnableFlag() const;
 
                     /**
-                     * 设置任务启用状态，默认为1，正常开启,  2关闭
-                     * @param _enableFlag 任务启用状态，默认为1，正常开启,  2关闭
+                     * 设置<p>任务启用状态，默认为1，正常开启,  2关闭</p>
+                     * @param _enableFlag <p>任务启用状态，默认为1，正常开启,  2关闭</p>
                      * 
                      */
                     void SetEnableFlag(const int64_t& _enableFlag);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool EnableFlagHasBeenSet() const;
 
                     /**
-                     * 获取加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
-                     * @return Type 加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
+                     * 获取<p>加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)</p>
+                     * @return Type <p>加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)</p>
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
-                     * @param _type 加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
+                     * 设置<p>加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)</p>
+                     * @param _type <p>加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)</p>
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -134,15 +134,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取源日志主题
-                     * @return SrcTopicId 源日志主题
+                     * 获取<p>源日志主题ID,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题的ID值相同.</p>
+                     * @return SrcTopicId <p>源日志主题ID,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题的ID值相同.</p>
                      * 
                      */
                     std::string GetSrcTopicId() const;
 
                     /**
-                     * 设置源日志主题
-                     * @param _srcTopicId 源日志主题
+                     * 设置<p>源日志主题ID,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题的ID值相同.</p>
+                     * @param _srcTopicId <p>源日志主题ID,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题的ID值相同.</p>
                      * 
                      */
                     void SetSrcTopicId(const std::string& _srcTopicId);
@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool SrcTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取当前加工任务状态（1准备中/2运行中/3停止中/4已停止）
-                     * @return Status 当前加工任务状态（1准备中/2运行中/3停止中/4已停止）
+                     * 获取<p>当前加工任务状态（1准备中/2运行中/3停止中/4已停止）</p>
+                     * @return Status <p>当前加工任务状态（1准备中/2运行中/3停止中/4已停止）</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置当前加工任务状态（1准备中/2运行中/3停止中/4已停止）
-                     * @param _status 当前加工任务状态（1准备中/2运行中/3停止中/4已停止）
+                     * 设置<p>当前加工任务状态（1准备中/2运行中/3停止中/4已停止）</p>
+                     * @param _status <p>当前加工任务状态（1准备中/2运行中/3停止中/4已停止）</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -176,19 +176,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-时间格式：yyyy-MM-dd HH:mm:ss
-                     * @return CreateTime 创建时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * 获取<p>创建时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
+                     * @return CreateTime <p>创建时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-时间格式：yyyy-MM-dd HH:mm:ss
-                     * @param _createTime 创建时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * 设置<p>创建时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
+                     * @param _createTime <p>创建时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -201,19 +197,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最近修改时间
-时间格式：yyyy-MM-dd HH:mm:ss
-                     * @return UpdateTime 最近修改时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * 获取<p>最近修改时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
+                     * @return UpdateTime <p>最近修改时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置最近修改时间
-时间格式：yyyy-MM-dd HH:mm:ss
-                     * @param _updateTime 最近修改时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * 设置<p>最近修改时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
+                     * @param _updateTime <p>最近修改时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -226,19 +218,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后启用时间，如果需要重建集群，修改该时间
-时间格式：yyyy-MM-dd HH:mm:ss
-                     * @return LastEnableTime 最后启用时间，如果需要重建集群，修改该时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * 获取<p>最后启用时间，如果需要重建集群，修改该时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
+                     * @return LastEnableTime <p>最后启用时间，如果需要重建集群，修改该时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     std::string GetLastEnableTime() const;
 
                     /**
-                     * 设置最后启用时间，如果需要重建集群，修改该时间
-时间格式：yyyy-MM-dd HH:mm:ss
-                     * @param _lastEnableTime 最后启用时间，如果需要重建集群，修改该时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * 设置<p>最后启用时间，如果需要重建集群，修改该时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
+                     * @param _lastEnableTime <p>最后启用时间，如果需要重建集群，修改该时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     void SetLastEnableTime(const std::string& _lastEnableTime);
@@ -251,15 +239,15 @@ namespace TencentCloud
                     bool LastEnableTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志主题名称
-                     * @return SrcTopicName 日志主题名称
+                     * 获取<p>源日志主题名称,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题名称的值相同.</p>
+                     * @return SrcTopicName <p>源日志主题名称,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题名称的值相同.</p>
                      * 
                      */
                     std::string GetSrcTopicName() const;
 
                     /**
-                     * 设置日志主题名称
-                     * @param _srcTopicName 日志主题名称
+                     * 设置<p>源日志主题名称,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题名称的值相同.</p>
+                     * @param _srcTopicName <p>源日志主题名称,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题名称的值相同.</p>
                      * 
                      */
                     void SetSrcTopicName(const std::string& _srcTopicName);
@@ -272,15 +260,15 @@ namespace TencentCloud
                     bool SrcTopicNameHasBeenSet() const;
 
                     /**
-                     * 获取日志集id
-                     * @return LogsetId 日志集id
+                     * 获取<p>日志集id</p>
+                     * @return LogsetId <p>日志集id</p>
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置日志集id
-                     * @param _logsetId 日志集id
+                     * 设置<p>日志集id</p>
+                     * @param _logsetId <p>日志集id</p>
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -293,15 +281,15 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取加工任务目的topic_id以及别名
-                     * @return DstResources 加工任务目的topic_id以及别名
+                     * 获取<p>加工任务目的topic_id以及别名</p>
+                     * @return DstResources <p>加工任务目的topic_id以及别名</p>
                      * 
                      */
                     std::vector<DataTransformResouceInfo> GetDstResources() const;
 
                     /**
-                     * 设置加工任务目的topic_id以及别名
-                     * @param _dstResources 加工任务目的topic_id以及别名
+                     * 设置<p>加工任务目的topic_id以及别名</p>
+                     * @param _dstResources <p>加工任务目的topic_id以及别名</p>
                      * 
                      */
                     void SetDstResources(const std::vector<DataTransformResouceInfo>& _dstResources);
@@ -314,15 +302,15 @@ namespace TencentCloud
                     bool DstResourcesHasBeenSet() const;
 
                     /**
-                     * 获取加工逻辑函数。
-                     * @return EtlContent 加工逻辑函数。
+                     * 获取<p>加工逻辑函数。</p>
+                     * @return EtlContent <p>加工逻辑函数。</p>
                      * 
                      */
                     std::string GetEtlContent() const;
 
                     /**
-                     * 设置加工逻辑函数。
-                     * @param _etlContent 加工逻辑函数。
+                     * 设置<p>加工逻辑函数。</p>
+                     * @param _etlContent <p>加工逻辑函数。</p>
                      * 
                      */
                     void SetEtlContent(const std::string& _etlContent);
@@ -335,15 +323,15 @@ namespace TencentCloud
                     bool EtlContentHasBeenSet() const;
 
                     /**
-                     * 获取兜底topic_id
-                     * @return BackupTopicID 兜底topic_id
+                     * 获取<p>兜底topic_id</p>
+                     * @return BackupTopicID <p>兜底topic_id</p>
                      * 
                      */
                     std::string GetBackupTopicID() const;
 
                     /**
-                     * 设置兜底topic_id
-                     * @param _backupTopicID 兜底topic_id
+                     * 设置<p>兜底topic_id</p>
+                     * @param _backupTopicID <p>兜底topic_id</p>
                      * 
                      */
                     void SetBackupTopicID(const std::string& _backupTopicID);
@@ -356,15 +344,15 @@ namespace TencentCloud
                     bool BackupTopicIDHasBeenSet() const;
 
                     /**
-                     * 获取超限之后是否丢弃日志数据
-                     * @return BackupGiveUpData 超限之后是否丢弃日志数据
+                     * 获取<p>超限之后是否丢弃日志数据</p>
+                     * @return BackupGiveUpData <p>超限之后是否丢弃日志数据</p>
                      * 
                      */
                     bool GetBackupGiveUpData() const;
 
                     /**
-                     * 设置超限之后是否丢弃日志数据
-                     * @param _backupGiveUpData 超限之后是否丢弃日志数据
+                     * 设置<p>超限之后是否丢弃日志数据</p>
+                     * @param _backupGiveUpData <p>超限之后是否丢弃日志数据</p>
                      * 
                      */
                     void SetBackupGiveUpData(const bool& _backupGiveUpData);
@@ -377,15 +365,15 @@ namespace TencentCloud
                     bool BackupGiveUpDataHasBeenSet() const;
 
                     /**
-                     * 获取是否开启投递服务日志。 1关闭,2开启
-                     * @return HasServicesLog 是否开启投递服务日志。 1关闭,2开启
+                     * 获取<p>是否开启投递服务日志。 1关闭,2开启</p>
+                     * @return HasServicesLog <p>是否开启投递服务日志。 1关闭,2开启</p>
                      * 
                      */
                     uint64_t GetHasServicesLog() const;
 
                     /**
-                     * 设置是否开启投递服务日志。 1关闭,2开启
-                     * @param _hasServicesLog 是否开启投递服务日志。 1关闭,2开启
+                     * 设置<p>是否开启投递服务日志。 1关闭,2开启</p>
+                     * @param _hasServicesLog <p>是否开启投递服务日志。 1关闭,2开启</p>
                      * 
                      */
                     void SetHasServicesLog(const uint64_t& _hasServicesLog);
@@ -398,15 +386,15 @@ namespace TencentCloud
                     bool HasServicesLogHasBeenSet() const;
 
                     /**
-                     * 获取任务目标日志主题数量
-                     * @return TaskDstCount 任务目标日志主题数量
+                     * 获取<p>任务目标日志主题数量</p>
+                     * @return TaskDstCount <p>任务目标日志主题数量</p>
                      * 
                      */
                     uint64_t GetTaskDstCount() const;
 
                     /**
-                     * 设置任务目标日志主题数量
-                     * @param _taskDstCount 任务目标日志主题数量
+                     * 设置<p>任务目标日志主题数量</p>
+                     * @param _taskDstCount <p>任务目标日志主题数量</p>
                      * 
                      */
                     void SetTaskDstCount(const uint64_t& _taskDstCount);
@@ -419,15 +407,15 @@ namespace TencentCloud
                     bool TaskDstCountHasBeenSet() const;
 
                     /**
-                     * 获取数据加工类型。0：标准加工任务；1：前置加工任务。
-                     * @return DataTransformType 数据加工类型。0：标准加工任务；1：前置加工任务。
+                     * 获取<p>数据加工类型。0：标准加工任务；1：前置加工任务。当该值=1时, 源日志主题和目标日志主题的名称和ID相同.</p><p>枚举值：</p><ul><li>1： 前置加工任务</li><li>0： 标准加工任务</li></ul>
+                     * @return DataTransformType <p>数据加工类型。0：标准加工任务；1：前置加工任务。当该值=1时, 源日志主题和目标日志主题的名称和ID相同.</p><p>枚举值：</p><ul><li>1： 前置加工任务</li><li>0： 标准加工任务</li></ul>
                      * 
                      */
                     uint64_t GetDataTransformType() const;
 
                     /**
-                     * 设置数据加工类型。0：标准加工任务；1：前置加工任务。
-                     * @param _dataTransformType 数据加工类型。0：标准加工任务；1：前置加工任务。
+                     * 设置<p>数据加工类型。0：标准加工任务；1：前置加工任务。当该值=1时, 源日志主题和目标日志主题的名称和ID相同.</p><p>枚举值：</p><ul><li>1： 前置加工任务</li><li>0： 标准加工任务</li></ul>
+                     * @param _dataTransformType <p>数据加工类型。0：标准加工任务；1：前置加工任务。当该值=1时, 源日志主题和目标日志主题的名称和ID相同.</p><p>枚举值：</p><ul><li>1： 前置加工任务</li><li>0： 标准加工任务</li></ul>
                      * 
                      */
                     void SetDataTransformType(const uint64_t& _dataTransformType);
@@ -440,15 +428,15 @@ namespace TencentCloud
                     bool DataTransformTypeHasBeenSet() const;
 
                     /**
-                     * 获取保留失败日志状态。 1:不保留，2:保留
-                     * @return KeepFailureLog 保留失败日志状态。 1:不保留，2:保留
+                     * 获取<p>保留失败日志状态。 1:不保留，2:保留</p>
+                     * @return KeepFailureLog <p>保留失败日志状态。 1:不保留，2:保留</p>
                      * 
                      */
                     uint64_t GetKeepFailureLog() const;
 
                     /**
-                     * 设置保留失败日志状态。 1:不保留，2:保留
-                     * @param _keepFailureLog 保留失败日志状态。 1:不保留，2:保留
+                     * 设置<p>保留失败日志状态。 1:不保留，2:保留</p>
+                     * @param _keepFailureLog <p>保留失败日志状态。 1:不保留，2:保留</p>
                      * 
                      */
                     void SetKeepFailureLog(const uint64_t& _keepFailureLog);
@@ -461,15 +449,15 @@ namespace TencentCloud
                     bool KeepFailureLogHasBeenSet() const;
 
                     /**
-                     * 获取失败日志的字段名称
-                     * @return FailureLogKey 失败日志的字段名称
+                     * 获取<p>失败日志的字段名称</p>
+                     * @return FailureLogKey <p>失败日志的字段名称</p>
                      * 
                      */
                     std::string GetFailureLogKey() const;
 
                     /**
-                     * 设置失败日志的字段名称
-                     * @param _failureLogKey 失败日志的字段名称
+                     * 设置<p>失败日志的字段名称</p>
+                     * @param _failureLogKey <p>失败日志的字段名称</p>
                      * 
                      */
                     void SetFailureLogKey(const std::string& _failureLogKey);
@@ -482,19 +470,15 @@ namespace TencentCloud
                     bool FailureLogKeyHasBeenSet() const;
 
                     /**
-                     * 获取指定加工数据的开始时间，秒级时间戳。
-- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
-                     * @return ProcessFromTimestamp 指定加工数据的开始时间，秒级时间戳。
-- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     * 获取<p>指定加工数据的开始时间，秒级时间戳。</p><ul><li>日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。</li></ul>
+                     * @return ProcessFromTimestamp <p>指定加工数据的开始时间，秒级时间戳。</p><ul><li>日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。</li></ul>
                      * 
                      */
                     uint64_t GetProcessFromTimestamp() const;
 
                     /**
-                     * 设置指定加工数据的开始时间，秒级时间戳。
-- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
-                     * @param _processFromTimestamp 指定加工数据的开始时间，秒级时间戳。
-- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     * 设置<p>指定加工数据的开始时间，秒级时间戳。</p><ul><li>日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。</li></ul>
+                     * @param _processFromTimestamp <p>指定加工数据的开始时间，秒级时间戳。</p><ul><li>日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。</li></ul>
                      * 
                      */
                     void SetProcessFromTimestamp(const uint64_t& _processFromTimestamp);
@@ -507,23 +491,15 @@ namespace TencentCloud
                     bool ProcessFromTimestampHasBeenSet() const;
 
                     /**
-                     * 获取指定加工数据的结束时间，秒级时间戳。
-1. 不可指定未来的时间
-2. 不填则表示持续执行
-                     * @return ProcessToTimestamp 指定加工数据的结束时间，秒级时间戳。
-1. 不可指定未来的时间
-2. 不填则表示持续执行
+                     * 获取<p>指定加工数据的结束时间，秒级时间戳。</p><ol><li>不可指定未来的时间</li><li>不填则表示持续执行</li></ol>
+                     * @return ProcessToTimestamp <p>指定加工数据的结束时间，秒级时间戳。</p><ol><li>不可指定未来的时间</li><li>不填则表示持续执行</li></ol>
                      * 
                      */
                     uint64_t GetProcessToTimestamp() const;
 
                     /**
-                     * 设置指定加工数据的结束时间，秒级时间戳。
-1. 不可指定未来的时间
-2. 不填则表示持续执行
-                     * @param _processToTimestamp 指定加工数据的结束时间，秒级时间戳。
-1. 不可指定未来的时间
-2. 不填则表示持续执行
+                     * 设置<p>指定加工数据的结束时间，秒级时间戳。</p><ol><li>不可指定未来的时间</li><li>不填则表示持续执行</li></ol>
+                     * @param _processToTimestamp <p>指定加工数据的结束时间，秒级时间戳。</p><ol><li>不可指定未来的时间</li><li>不填则表示持续执行</li></ol>
                      * 
                      */
                     void SetProcessToTimestamp(const uint64_t& _processToTimestamp);
@@ -536,15 +512,15 @@ namespace TencentCloud
                     bool ProcessToTimestampHasBeenSet() const;
 
                     /**
-                     * 获取sql数据源信息
-                     * @return DataTransformSqlDataSources sql数据源信息
+                     * 获取<p>sql数据源信息</p>
+                     * @return DataTransformSqlDataSources <p>sql数据源信息</p>
                      * 
                      */
                     std::vector<DataTransformSqlDataSource> GetDataTransformSqlDataSources() const;
 
                     /**
-                     * 设置sql数据源信息
-                     * @param _dataTransformSqlDataSources sql数据源信息
+                     * 设置<p>sql数据源信息</p>
+                     * @param _dataTransformSqlDataSources <p>sql数据源信息</p>
                      * 
                      */
                     void SetDataTransformSqlDataSources(const std::vector<DataTransformSqlDataSource>& _dataTransformSqlDataSources);
@@ -557,15 +533,15 @@ namespace TencentCloud
                     bool DataTransformSqlDataSourcesHasBeenSet() const;
 
                     /**
-                     * 获取环境变量
-                     * @return EnvInfos 环境变量
+                     * 获取<p>环境变量</p>
+                     * @return EnvInfos <p>环境变量</p>
                      * 
                      */
                     std::vector<EnvInfo> GetEnvInfos() const;
 
                     /**
-                     * 设置环境变量
-                     * @param _envInfos 环境变量
+                     * 设置<p>环境变量</p>
+                     * @param _envInfos <p>环境变量</p>
                      * 
                      */
                     void SetEnvInfos(const std::vector<EnvInfo>& _envInfos);
@@ -580,151 +556,145 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据加工任务名称
+                     * <p>数据加工任务名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 数据加工任务id
+                     * <p>数据加工任务id</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务启用状态，默认为1，正常开启,  2关闭
+                     * <p>任务启用状态，默认为1，正常开启,  2关闭</p>
                      */
                     int64_t m_enableFlag;
                     bool m_enableFlagHasBeenSet;
 
                     /**
-                     * 加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)
+                     * <p>加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)</p>
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 源日志主题
+                     * <p>源日志主题ID,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题的ID值相同.</p>
                      */
                     std::string m_srcTopicId;
                     bool m_srcTopicIdHasBeenSet;
 
                     /**
-                     * 当前加工任务状态（1准备中/2运行中/3停止中/4已停止）
+                     * <p>当前加工任务状态（1准备中/2运行中/3停止中/4已停止）</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * <p>创建时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 最近修改时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * <p>最近修改时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 最后启用时间，如果需要重建集群，修改该时间
-时间格式：yyyy-MM-dd HH:mm:ss
+                     * <p>最后启用时间，如果需要重建集群，修改该时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>
                      */
                     std::string m_lastEnableTime;
                     bool m_lastEnableTimeHasBeenSet;
 
                     /**
-                     * 日志主题名称
+                     * <p>源日志主题名称,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题名称的值相同.</p>
                      */
                     std::string m_srcTopicName;
                     bool m_srcTopicNameHasBeenSet;
 
                     /**
-                     * 日志集id
+                     * <p>日志集id</p>
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * 加工任务目的topic_id以及别名
+                     * <p>加工任务目的topic_id以及别名</p>
                      */
                     std::vector<DataTransformResouceInfo> m_dstResources;
                     bool m_dstResourcesHasBeenSet;
 
                     /**
-                     * 加工逻辑函数。
+                     * <p>加工逻辑函数。</p>
                      */
                     std::string m_etlContent;
                     bool m_etlContentHasBeenSet;
 
                     /**
-                     * 兜底topic_id
+                     * <p>兜底topic_id</p>
                      */
                     std::string m_backupTopicID;
                     bool m_backupTopicIDHasBeenSet;
 
                     /**
-                     * 超限之后是否丢弃日志数据
+                     * <p>超限之后是否丢弃日志数据</p>
                      */
                     bool m_backupGiveUpData;
                     bool m_backupGiveUpDataHasBeenSet;
 
                     /**
-                     * 是否开启投递服务日志。 1关闭,2开启
+                     * <p>是否开启投递服务日志。 1关闭,2开启</p>
                      */
                     uint64_t m_hasServicesLog;
                     bool m_hasServicesLogHasBeenSet;
 
                     /**
-                     * 任务目标日志主题数量
+                     * <p>任务目标日志主题数量</p>
                      */
                     uint64_t m_taskDstCount;
                     bool m_taskDstCountHasBeenSet;
 
                     /**
-                     * 数据加工类型。0：标准加工任务；1：前置加工任务。
+                     * <p>数据加工类型。0：标准加工任务；1：前置加工任务。当该值=1时, 源日志主题和目标日志主题的名称和ID相同.</p><p>枚举值：</p><ul><li>1： 前置加工任务</li><li>0： 标准加工任务</li></ul>
                      */
                     uint64_t m_dataTransformType;
                     bool m_dataTransformTypeHasBeenSet;
 
                     /**
-                     * 保留失败日志状态。 1:不保留，2:保留
+                     * <p>保留失败日志状态。 1:不保留，2:保留</p>
                      */
                     uint64_t m_keepFailureLog;
                     bool m_keepFailureLogHasBeenSet;
 
                     /**
-                     * 失败日志的字段名称
+                     * <p>失败日志的字段名称</p>
                      */
                     std::string m_failureLogKey;
                     bool m_failureLogKeyHasBeenSet;
 
                     /**
-                     * 指定加工数据的开始时间，秒级时间戳。
-- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。
+                     * <p>指定加工数据的开始时间，秒级时间戳。</p><ul><li>日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。</li></ul>
                      */
                     uint64_t m_processFromTimestamp;
                     bool m_processFromTimestampHasBeenSet;
 
                     /**
-                     * 指定加工数据的结束时间，秒级时间戳。
-1. 不可指定未来的时间
-2. 不填则表示持续执行
+                     * <p>指定加工数据的结束时间，秒级时间戳。</p><ol><li>不可指定未来的时间</li><li>不填则表示持续执行</li></ol>
                      */
                     uint64_t m_processToTimestamp;
                     bool m_processToTimestampHasBeenSet;
 
                     /**
-                     * sql数据源信息
+                     * <p>sql数据源信息</p>
                      */
                     std::vector<DataTransformSqlDataSource> m_dataTransformSqlDataSources;
                     bool m_dataTransformSqlDataSourcesHasBeenSet;
 
                     /**
-                     * 环境变量
+                     * <p>环境变量</p>
                      */
                     std::vector<EnvInfo> m_envInfos;
                     bool m_envInfosHasBeenSet;

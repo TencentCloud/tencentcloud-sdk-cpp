@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool VideoUrlHasBeenSet() const;
 
                     /**
-                     * 获取<p>产品信息</p>
-                     * @return Product <p>产品信息</p>
+                     * 获取<p>产品信息。除深度提取外，其他模式必填</p>
+                     * @return Product <p>产品信息。除深度提取外，其他模式必填</p>
                      * 
                      */
                     CloneViralProduct GetProduct() const;
 
                     /**
-                     * 设置<p>产品信息</p>
-                     * @param _product <p>产品信息</p>
+                     * 设置<p>产品信息。除深度提取外，其他模式必填</p>
+                     * @param _product <p>产品信息。除深度提取外，其他模式必填</p>
                      * 
                      */
                     void SetProduct(const CloneViralProduct& _product);
@@ -182,7 +182,7 @@ namespace TencentCloud
                     bool m_videoUrlHasBeenSet;
 
                     /**
-                     * <p>产品信息</p>
+                     * <p>产品信息。除深度提取外，其他模式必填</p>
                      */
                     CloneViralProduct m_product;
                     bool m_productHasBeenSet;

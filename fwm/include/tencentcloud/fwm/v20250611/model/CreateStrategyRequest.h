@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品类型
-                     * @return Product 产品类型
+                     * 获取<p>产品类型</p>
+                     * @return Product <p>产品类型</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置产品类型
-                     * @param _product 产品类型
+                     * 设置<p>产品类型</p>
+                     * @param _product <p>产品类型</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取下发账号
-                     * @return ReceiveAccount 下发账号
+                     * 获取<p>下发账号</p>
+                     * @return ReceiveAccount <p>下发账号</p>
                      * 
                      */
                     std::vector<std::string> GetReceiveAccount() const;
 
                     /**
-                     * 设置下发账号
-                     * @param _receiveAccount 下发账号
+                     * 设置<p>下发账号</p>
+                     * @param _receiveAccount <p>下发账号</p>
                      * 
                      */
                     void SetReceiveAccount(const std::vector<std::string>& _receiveAccount);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ReceiveAccountHasBeenSet() const;
 
                     /**
-                     * 获取前区规则组
-                     * @return PreStrategy 前区规则组
+                     * 获取<p>前区规则组</p>
+                     * @return PreStrategy <p>前区规则组</p>
                      * 
                      */
                     std::vector<StrategyReq> GetPreStrategy() const;
 
                     /**
-                     * 设置前区规则组
-                     * @param _preStrategy 前区规则组
+                     * 设置<p>前区规则组</p>
+                     * @param _preStrategy <p>前区规则组</p>
                      * 
                      */
                     void SetPreStrategy(const std::vector<StrategyReq>& _preStrategy);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PreStrategyHasBeenSet() const;
 
                     /**
-                     * 获取后区规则组
-                     * @return PostStrategy 后区规则组
+                     * 获取<p>后区规则组</p>
+                     * @return PostStrategy <p>后区规则组</p>
                      * 
                      */
                     std::vector<StrategyReq> GetPostStrategy() const;
 
                     /**
-                     * 设置后区规则组
-                     * @param _postStrategy 后区规则组
+                     * 设置<p>后区规则组</p>
+                     * @param _postStrategy <p>后区规则组</p>
                      * 
                      */
                     void SetPostStrategy(const std::vector<StrategyReq>& _postStrategy);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool PostStrategyHasBeenSet() const;
 
                     /**
-                     * 获取下发账号组
-                     * @return ReceiveGroup 下发账号组
+                     * 获取<p>下发账号组</p>
+                     * @return ReceiveGroup <p>下发账号组</p>
                      * 
                      */
                     std::vector<std::string> GetReceiveGroup() const;
 
                     /**
-                     * 设置下发账号组
-                     * @param _receiveGroup 下发账号组
+                     * 设置<p>下发账号组</p>
+                     * @param _receiveGroup <p>下发账号组</p>
                      * 
                      */
                     void SetReceiveGroup(const std::vector<std::string>& _receiveGroup);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品类型
+                     * <p>产品类型</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 下发账号
+                     * <p>下发账号</p>
                      */
                     std::vector<std::string> m_receiveAccount;
                     bool m_receiveAccountHasBeenSet;
 
                     /**
-                     * 前区规则组
+                     * <p>前区规则组</p>
                      */
                     std::vector<StrategyReq> m_preStrategy;
                     bool m_preStrategyHasBeenSet;
 
                     /**
-                     * 后区规则组
+                     * <p>后区规则组</p>
                      */
                     std::vector<StrategyReq> m_postStrategy;
                     bool m_postStrategyHasBeenSet;
 
                     /**
-                     * 下发账号组
+                     * <p>下发账号组</p>
                      */
                     std::vector<std::string> m_receiveGroup;
                     bool m_receiveGroupHasBeenSet;

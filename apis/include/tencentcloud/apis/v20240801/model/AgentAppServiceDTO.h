@@ -71,42 +71,42 @@ namespace TencentCloud
                     /**
                      * 获取<p>是否限流</p>
                      * @return InvokeLimitConfigStatus <p>是否限流</p>
-                     * 
+                     * @deprecated
                      */
                     bool GetInvokeLimitConfigStatus() const;
 
                     /**
                      * 设置<p>是否限流</p>
                      * @param _invokeLimitConfigStatus <p>是否限流</p>
-                     * 
+                     * @deprecated
                      */
                     void SetInvokeLimitConfigStatus(const bool& _invokeLimitConfigStatus);
 
                     /**
                      * 判断参数 InvokeLimitConfigStatus 是否已赋值
                      * @return InvokeLimitConfigStatus 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InvokeLimitConfigStatusHasBeenSet() const;
 
                     /**
                      * 获取<p>限流配置</p>
                      * @return InvokeLimitConfig <p>限流配置</p>
-                     * 
+                     * @deprecated
                      */
                     InvokeLimitConfigDTO GetInvokeLimitConfig() const;
 
                     /**
                      * 设置<p>限流配置</p>
                      * @param _invokeLimitConfig <p>限流配置</p>
-                     * 
+                     * @deprecated
                      */
                     void SetInvokeLimitConfig(const InvokeLimitConfigDTO& _invokeLimitConfig);
 
                     /**
                      * 判断参数 InvokeLimitConfig 是否已赋值
                      * @return InvokeLimitConfig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InvokeLimitConfigHasBeenSet() const;
 

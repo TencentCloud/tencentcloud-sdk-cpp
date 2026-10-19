@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型等级。flagship（默认）、standard</p>
-                     * @return ModelTier <p>模型等级。flagship（默认）、standard</p>
+                     * 获取<p>模式。flagship（高级版，默认）、standard（标准版）、depthcrafter(深度提取)</p>
+                     * @return ModelTier <p>模式。flagship（高级版，默认）、standard（标准版）、depthcrafter(深度提取)</p>
                      * 
                      */
                     std::string GetModelTier() const;
 
                     /**
-                     * 设置<p>模型等级。flagship（默认）、standard</p>
-                     * @param _modelTier <p>模型等级。flagship（默认）、standard</p>
+                     * 设置<p>模式。flagship（高级版，默认）、standard（标准版）、depthcrafter(深度提取)</p>
+                     * @param _modelTier <p>模式。flagship（高级版，默认）、standard（标准版）、depthcrafter(深度提取)</p>
                      * 
                      */
                     void SetModelTier(const std::string& _modelTier);
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * <p>模型等级。flagship（默认）、standard</p>
+                     * <p>模式。flagship（高级版，默认）、standard（标准版）、depthcrafter(深度提取)</p>
                      */
                     std::string m_modelTier;
                     bool m_modelTierHasBeenSet;

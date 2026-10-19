@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型加速任务ID
-                     * @return ModelAccTaskId 模型加速任务ID
+                     * 获取<p>模型加速任务ID</p>
+                     * @return ModelAccTaskId <p>模型加速任务ID</p>
                      * 
                      */
                     std::string GetModelAccTaskId() const;
 
                     /**
-                     * 设置模型加速任务ID
-                     * @param _modelAccTaskId 模型加速任务ID
+                     * 设置<p>模型加速任务ID</p>
+                     * @param _modelAccTaskId <p>模型加速任务ID</p>
                      * 
                      */
                     void SetModelAccTaskId(const std::string& _modelAccTaskId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool ModelAccTaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * @return TiProjectId <p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * 
+                     */
+                    std::string GetTiProjectId() const;
+
+                    /**
+                     * 设置<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * @param _tiProjectId <p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * 
+                     */
+                    void SetTiProjectId(const std::string& _tiProjectId);
+
+                    /**
+                     * 判断参数 TiProjectId 是否已赋值
+                     * @return TiProjectId 是否已赋值
+                     * 
+                     */
+                    bool TiProjectIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模型加速任务ID
+                     * <p>模型加速任务ID</p>
                      */
                     std::string m_modelAccTaskId;
                     bool m_modelAccTaskIdHasBeenSet;
+
+                    /**
+                     * <p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     */
+                    std::string m_tiProjectId;
+                    bool m_tiProjectIdHasBeenSet;
 
                 };
             }

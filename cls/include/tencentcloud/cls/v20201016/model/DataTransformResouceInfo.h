@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ExternalIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>topic名称</p>
-                     * @return TopicName <p>topic名称</p>
+                     * 获取<p>目标日志主题的名称,当DataTransformType=1(前置加工任务)时, 该值和源日志主题名称的值相同.</p>
+                     * @return TopicName <p>目标日志主题的名称,当DataTransformType=1(前置加工任务)时, 该值和源日志主题名称的值相同.</p>
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置<p>topic名称</p>
-                     * @param _topicName <p>topic名称</p>
+                     * 设置<p>目标日志主题的名称,当DataTransformType=1(前置加工任务)时, 该值和源日志主题名称的值相同.</p>
+                     * @param _topicName <p>目标日志主题的名称,当DataTransformType=1(前置加工任务)时, 该值和源日志主题名称的值相同.</p>
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -226,7 +226,7 @@ namespace TencentCloud
                     bool m_externalIdHasBeenSet;
 
                     /**
-                     * <p>topic名称</p>
+                     * <p>目标日志主题的名称,当DataTransformType=1(前置加工任务)时, 该值和源日志主题名称的值相同.</p>
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

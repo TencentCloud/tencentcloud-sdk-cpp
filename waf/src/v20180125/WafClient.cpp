@@ -540,6 +540,56 @@ WafClient::AddDomainWhiteRuleOutcomeCallable WafClient::AddDomainWhiteRuleCallab
     return prom->get_future();
 }
 
+WafClient::AddLLMSdkAccessOutcome WafClient::AddLLMSdkAccess(const AddLLMSdkAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddLLMSdkAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddLLMSdkAccessResponse rsp = AddLLMSdkAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddLLMSdkAccessOutcome(rsp);
+        else
+            return AddLLMSdkAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return AddLLMSdkAccessOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::AddLLMSdkAccessAsync(const AddLLMSdkAccessRequest& request, const AddLLMSdkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddLLMSdkAccessRequest&;
+    using Resp = AddLLMSdkAccessResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddLLMSdkAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::AddLLMSdkAccessOutcomeCallable WafClient::AddLLMSdkAccessCallable(const AddLLMSdkAccessRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddLLMSdkAccessOutcome>>();
+    AddLLMSdkAccessAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const AddLLMSdkAccessRequest&,
+        AddLLMSdkAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::AddSpartaProtectionOutcome WafClient::AddSpartaProtection(const AddSpartaProtectionRequest &request)
 {
     auto outcome = MakeRequest(request, "AddSpartaProtection");
@@ -2782,6 +2832,56 @@ WafClient::DescribeAccessIndexOutcomeCallable WafClient::DescribeAccessIndexCall
         const WafClient*,
         const DescribeAccessIndexRequest&,
         DescribeAccessIndexOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WafClient::DescribeAfterPayInstancesOutcome WafClient::DescribeAfterPayInstances(const DescribeAfterPayInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAfterPayInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAfterPayInstancesResponse rsp = DescribeAfterPayInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAfterPayInstancesOutcome(rsp);
+        else
+            return DescribeAfterPayInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAfterPayInstancesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeAfterPayInstancesAsync(const DescribeAfterPayInstancesRequest& request, const DescribeAfterPayInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAfterPayInstancesRequest&;
+    using Resp = DescribeAfterPayInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAfterPayInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DescribeAfterPayInstancesOutcomeCallable WafClient::DescribeAfterPayInstancesCallable(const DescribeAfterPayInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAfterPayInstancesOutcome>>();
+    DescribeAfterPayInstancesAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DescribeAfterPayInstancesRequest&,
+        DescribeAfterPayInstancesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

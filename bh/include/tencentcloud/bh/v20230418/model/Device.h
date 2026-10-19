@@ -742,6 +742,69 @@ namespace TencentCloud
                      */
                     bool SyncCloudDeviceStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>所属账号 AppId</p>
+                     * @return OwnerAppId <p>所属账号 AppId</p>
+                     * 
+                     */
+                    uint64_t GetOwnerAppId() const;
+
+                    /**
+                     * 设置<p>所属账号 AppId</p>
+                     * @param _ownerAppId <p>所属账号 AppId</p>
+                     * 
+                     */
+                    void SetOwnerAppId(const uint64_t& _ownerAppId);
+
+                    /**
+                     * 判断参数 OwnerAppId 是否已赋值
+                     * @return OwnerAppId 是否已赋值
+                     * 
+                     */
+                    bool OwnerAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>所属账号 UIN</p>
+                     * @return OwnerAccountUin <p>所属账号 UIN</p>
+                     * 
+                     */
+                    std::string GetOwnerAccountUin() const;
+
+                    /**
+                     * 设置<p>所属账号 UIN</p>
+                     * @param _ownerAccountUin <p>所属账号 UIN</p>
+                     * 
+                     */
+                    void SetOwnerAccountUin(const std::string& _ownerAccountUin);
+
+                    /**
+                     * 判断参数 OwnerAccountUin 是否已赋值
+                     * @return OwnerAccountUin 是否已赋值
+                     * 
+                     */
+                    bool OwnerAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>所属账号展示名</p>
+                     * @return OwnerAccountName <p>所属账号展示名</p>
+                     * 
+                     */
+                    std::string GetOwnerAccountName() const;
+
+                    /**
+                     * 设置<p>所属账号展示名</p>
+                     * @param _ownerAccountName <p>所属账号展示名</p>
+                     * 
+                     */
+                    void SetOwnerAccountName(const std::string& _ownerAccountName);
+
+                    /**
+                     * 判断参数 OwnerAccountName 是否已赋值
+                     * @return OwnerAccountName 是否已赋值
+                     * 
+                     */
+                    bool OwnerAccountNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -941,6 +1004,24 @@ namespace TencentCloud
                      */
                     uint64_t m_syncCloudDeviceStatus;
                     bool m_syncCloudDeviceStatusHasBeenSet;
+
+                    /**
+                     * <p>所属账号 AppId</p>
+                     */
+                    uint64_t m_ownerAppId;
+                    bool m_ownerAppIdHasBeenSet;
+
+                    /**
+                     * <p>所属账号 UIN</p>
+                     */
+                    std::string m_ownerAccountUin;
+                    bool m_ownerAccountUinHasBeenSet;
+
+                    /**
+                     * <p>所属账号展示名</p>
+                     */
+                    std::string m_ownerAccountName;
+                    bool m_ownerAccountNameHasBeenSet;
 
                 };
             }

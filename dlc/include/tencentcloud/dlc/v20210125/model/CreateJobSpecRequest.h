@@ -505,6 +505,27 @@ namespace TencentCloud
                      */
                     bool DispatchStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户自定义网络配置JSON</p>
+                     * @return NetworkConfig <p>用户自定义网络配置JSON</p>
+                     * 
+                     */
+                    std::string GetNetworkConfig() const;
+
+                    /**
+                     * 设置<p>用户自定义网络配置JSON</p>
+                     * @param _networkConfig <p>用户自定义网络配置JSON</p>
+                     * 
+                     */
+                    void SetNetworkConfig(const std::string& _networkConfig);
+
+                    /**
+                     * 判断参数 NetworkConfig 是否已赋值
+                     * @return NetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool NetworkConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -638,6 +659,12 @@ namespace TencentCloud
                      */
                     std::string m_dispatchStrategy;
                     bool m_dispatchStrategyHasBeenSet;
+
+                    /**
+                     * <p>用户自定义网络配置JSON</p>
+                     */
+                    std::string m_networkConfig;
+                    bool m_networkConfigHasBeenSet;
 
                 };
             }
