@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题名称
-                     * @return Topic 主题名称
+                     * 获取<p>主题名称</p>
+                     * @return Topic <p>主题名称</p>
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题名称
-                     * @param _topic 主题名称
+                     * 设置<p>主题名称</p>
+                     * @param _topic <p>主题名称</p>
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -90,31 +90,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取主题类型
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
-                     * @return TopicType 主题类型
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
+                     * 获取<p>主题类型<br>NORMAL:普通消息,<br>FIFO:顺序消息,<br>DELAY:延时消息,<br>TRANSACTION:事务消息</p>
+                     * @return TopicType <p>主题类型<br>NORMAL:普通消息,<br>FIFO:顺序消息,<br>DELAY:延时消息,<br>TRANSACTION:事务消息</p>
                      * 
                      */
                     std::string GetTopicType() const;
 
                     /**
-                     * 设置主题类型
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
-                     * @param _topicType 主题类型
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
+                     * 设置<p>主题类型<br>NORMAL:普通消息,<br>FIFO:顺序消息,<br>DELAY:延时消息,<br>TRANSACTION:事务消息</p>
+                     * @param _topicType <p>主题类型<br>NORMAL:普通消息,<br>FIFO:顺序消息,<br>DELAY:延时消息,<br>TRANSACTION:事务消息</p>
                      * 
                      */
                     void SetTopicType(const std::string& _topicType);
@@ -127,15 +111,15 @@ TRANSACTION:事务消息
                     bool TopicTypeHasBeenSet() const;
 
                     /**
-                     * 获取队列数量
-                     * @return QueueNum 队列数量
+                     * 获取<p>队列数量</p>
+                     * @return QueueNum <p>队列数量</p>
                      * 
                      */
                     int64_t GetQueueNum() const;
 
                     /**
-                     * 设置队列数量
-                     * @param _queueNum 队列数量
+                     * 设置<p>队列数量</p>
+                     * @param _queueNum <p>队列数量</p>
                      * 
                      */
                     void SetQueueNum(const int64_t& _queueNum);
@@ -148,15 +132,15 @@ TRANSACTION:事务消息
                     bool QueueNumHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
-                     * @return Remark 备注信息
+                     * 获取<p>备注信息</p>
+                     * @return Remark <p>备注信息</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息
-                     * @param _remark 备注信息
+                     * 设置<p>备注信息</p>
+                     * @param _remark <p>备注信息</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -169,18 +153,18 @@ TRANSACTION:事务消息
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取4.x的集群id
+                     * 获取<p>4.x的集群id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterIdV4 4.x的集群id
+                     * @return ClusterIdV4 <p>4.x的集群id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterIdV4() const;
 
                     /**
-                     * 设置4.x的集群id
+                     * 设置<p>4.x的集群id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterIdV4 4.x的集群id
+                     * @param _clusterIdV4 <p>4.x的集群id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -194,18 +178,18 @@ TRANSACTION:事务消息
                     bool ClusterIdV4HasBeenSet() const;
 
                     /**
-                     * 获取4.x的命名空间
+                     * 获取<p>4.x的命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NamespaceV4 4.x的命名空间
+                     * @return NamespaceV4 <p>4.x的命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespaceV4() const;
 
                     /**
-                     * 设置4.x的命名空间
+                     * 设置<p>4.x的命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _namespaceV4 4.x的命名空间
+                     * @param _namespaceV4 <p>4.x的命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -219,18 +203,18 @@ TRANSACTION:事务消息
                     bool NamespaceV4HasBeenSet() const;
 
                     /**
-                     * 获取4.x的主题名称
+                     * 获取<p>4.x的主题名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicV4 4.x的主题名称
+                     * @return TopicV4 <p>4.x的主题名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicV4() const;
 
                     /**
-                     * 设置4.x的主题名称
+                     * 设置<p>4.x的主题名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topicV4 4.x的主题名称
+                     * @param _topicV4 <p>4.x的主题名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -244,18 +228,18 @@ TRANSACTION:事务消息
                     bool TopicV4HasBeenSet() const;
 
                     /**
-                     * 获取4.x的完整命名空间
+                     * 获取<p>4.x的完整命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FullNamespaceV4 4.x的完整命名空间
+                     * @return FullNamespaceV4 <p>4.x的完整命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFullNamespaceV4() const;
 
                     /**
-                     * 设置4.x的完整命名空间
+                     * 设置<p>4.x的完整命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fullNamespaceV4 4.x的完整命名空间
+                     * @param _fullNamespaceV4 <p>4.x的完整命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -269,15 +253,15 @@ TRANSACTION:事务消息
                     bool FullNamespaceV4HasBeenSet() const;
 
                     /**
-                     * 获取消息保留时长
-                     * @return MsgTTL 消息保留时长
+                     * 获取<p>消息保留时长</p>
+                     * @return MsgTTL <p>消息保留时长</p>
                      * 
                      */
                     int64_t GetMsgTTL() const;
 
                     /**
-                     * 设置消息保留时长
-                     * @param _msgTTL 消息保留时长
+                     * 设置<p>消息保留时长</p>
+                     * @param _msgTTL <p>消息保留时长</p>
                      * 
                      */
                     void SetMsgTTL(const int64_t& _msgTTL);
@@ -290,15 +274,15 @@ TRANSACTION:事务消息
                     bool MsgTTLHasBeenSet() const;
 
                     /**
-                     * 获取绑定的标签列表
-                     * @return TagList 绑定的标签列表
+                     * 获取<p>绑定的标签列表</p>
+                     * @return TagList <p>绑定的标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTagList() const;
 
                     /**
-                     * 设置绑定的标签列表
-                     * @param _tagList 绑定的标签列表
+                     * 设置<p>绑定的标签列表</p>
+                     * @param _tagList <p>绑定的标签列表</p>
                      * 
                      */
                     void SetTagList(const std::vector<Tag>& _tagList);
@@ -310,81 +294,141 @@ TRANSACTION:事务消息
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>LITE 类型 Topic 专用：是否开启自动过期删除</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoExpireDelete <p>LITE 类型 Topic 专用：是否开启自动过期删除</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAutoExpireDelete() const;
+
+                    /**
+                     * 设置<p>LITE 类型 Topic 专用：是否开启自动过期删除</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoExpireDelete <p>LITE 类型 Topic 专用：是否开启自动过期删除</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoExpireDelete(const bool& _autoExpireDelete);
+
+                    /**
+                     * 判断参数 AutoExpireDelete 是否已赋值
+                     * @return AutoExpireDelete 是否已赋值
+                     * 
+                     */
+                    bool AutoExpireDeleteHasBeenSet() const;
+
+                    /**
+                     * 获取<p>LITE 类型 Topic 专用：自动过期时间</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoExpireTime <p>LITE 类型 Topic 专用：自动过期时间</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAutoExpireTime() const;
+
+                    /**
+                     * 设置<p>LITE 类型 Topic 专用：自动过期时间</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoExpireTime <p>LITE 类型 Topic 专用：自动过期时间</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoExpireTime(const uint64_t& _autoExpireTime);
+
+                    /**
+                     * 判断参数 AutoExpireTime 是否已赋值
+                     * @return AutoExpireTime 是否已赋值
+                     * 
+                     */
+                    bool AutoExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题名称
+                     * <p>主题名称</p>
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 主题类型
-NORMAL:普通消息,
-FIFO:顺序消息,
-DELAY:延时消息,
-TRANSACTION:事务消息
+                     * <p>主题类型<br>NORMAL:普通消息,<br>FIFO:顺序消息,<br>DELAY:延时消息,<br>TRANSACTION:事务消息</p>
                      */
                     std::string m_topicType;
                     bool m_topicTypeHasBeenSet;
 
                     /**
-                     * 队列数量
+                     * <p>队列数量</p>
                      */
                     int64_t m_queueNum;
                     bool m_queueNumHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * <p>备注信息</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 4.x的集群id
+                     * <p>4.x的集群id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterIdV4;
                     bool m_clusterIdV4HasBeenSet;
 
                     /**
-                     * 4.x的命名空间
+                     * <p>4.x的命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceV4;
                     bool m_namespaceV4HasBeenSet;
 
                     /**
-                     * 4.x的主题名称
+                     * <p>4.x的主题名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicV4;
                     bool m_topicV4HasBeenSet;
 
                     /**
-                     * 4.x的完整命名空间
+                     * <p>4.x的完整命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fullNamespaceV4;
                     bool m_fullNamespaceV4HasBeenSet;
 
                     /**
-                     * 消息保留时长
+                     * <p>消息保留时长</p>
                      */
                     int64_t m_msgTTL;
                     bool m_msgTTLHasBeenSet;
 
                     /**
-                     * 绑定的标签列表
+                     * <p>绑定的标签列表</p>
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * <p>LITE 类型 Topic 专用：是否开启自动过期删除</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_autoExpireDelete;
+                    bool m_autoExpireDeleteHasBeenSet;
+
+                    /**
+                     * <p>LITE 类型 Topic 专用：自动过期时间</p><p>单位：分钟</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_autoExpireTime;
+                    bool m_autoExpireTimeHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ DescribeEDRRuleListRequest::DescribeEDRRuleListRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_byHasBeenSet(false)
+    m_byHasBeenSet(false),
+    m_fileOperationRulesHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,15 @@ string DescribeEDRRuleListRequest::ToJsonString() const
         string key = "By";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileOperationRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileOperationRules";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileOperationRules.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -201,6 +211,22 @@ void DescribeEDRRuleListRequest::SetBy(const string& _by)
 bool DescribeEDRRuleListRequest::ByHasBeenSet() const
 {
     return m_byHasBeenSet;
+}
+
+RuleContentFileOperation DescribeEDRRuleListRequest::GetFileOperationRules() const
+{
+    return m_fileOperationRules;
+}
+
+void DescribeEDRRuleListRequest::SetFileOperationRules(const RuleContentFileOperation& _fileOperationRules)
+{
+    m_fileOperationRules = _fileOperationRules;
+    m_fileOperationRulesHasBeenSet = true;
+}
+
+bool DescribeEDRRuleListRequest::FileOperationRulesHasBeenSet() const
+{
+    return m_fileOperationRulesHasBeenSet;
 }
 
 

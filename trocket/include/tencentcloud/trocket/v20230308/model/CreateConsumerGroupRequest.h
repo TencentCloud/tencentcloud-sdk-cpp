@@ -233,6 +233,27 @@ namespace TencentCloud
                      */
                     bool LiteTopicHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义死信 Topic</p><p>非必选，死信消息默认投递到系统死信 Topic</p>
+                     * @return DeadLetterTargetTopic <p>自定义死信 Topic</p><p>非必选，死信消息默认投递到系统死信 Topic</p>
+                     * 
+                     */
+                    std::string GetDeadLetterTargetTopic() const;
+
+                    /**
+                     * 设置<p>自定义死信 Topic</p><p>非必选，死信消息默认投递到系统死信 Topic</p>
+                     * @param _deadLetterTargetTopic <p>自定义死信 Topic</p><p>非必选，死信消息默认投递到系统死信 Topic</p>
+                     * 
+                     */
+                    void SetDeadLetterTargetTopic(const std::string& _deadLetterTargetTopic);
+
+                    /**
+                     * 判断参数 DeadLetterTargetTopic 是否已赋值
+                     * @return DeadLetterTargetTopic 是否已赋值
+                     * 
+                     */
+                    bool DeadLetterTargetTopicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +309,12 @@ namespace TencentCloud
                      */
                     std::string m_liteTopic;
                     bool m_liteTopicHasBeenSet;
+
+                    /**
+                     * <p>自定义死信 Topic</p><p>非必选，死信消息默认投递到系统死信 Topic</p>
+                     */
+                    std::string m_deadLetterTargetTopic;
+                    bool m_deadLetterTargetTopicHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@ using namespace std;
 
 ModifyNotebookTagsRequest::ModifyNotebookTagsRequest() :
     m_idHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string ModifyNotebookTagsRequest::ToJsonString() const
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -80,6 +89,22 @@ void ModifyNotebookTagsRequest::SetId(const string& _id)
 bool ModifyNotebookTagsRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string ModifyNotebookTagsRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void ModifyNotebookTagsRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool ModifyNotebookTagsRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 vector<Tag> ModifyNotebookTagsRequest::GetTags() const

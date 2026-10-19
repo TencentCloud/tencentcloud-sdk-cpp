@@ -21,7 +21,8 @@ using namespace TencentCloud::Iss::V20230517::Model;
 using namespace std;
 
 PlayRecordData::PlayRecordData() :
-    m_flvHasBeenSet(false)
+    m_flvHasBeenSet(false),
+    m_fMp4HasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome PlayRecordData::Deserialize(const rapidjson::Value &value)
         m_flvHasBeenSet = true;
     }
 
+    if (value.HasMember("FMp4") && !value["FMp4"].IsNull())
+    {
+        if (!value["FMp4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlayRecordData.FMp4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fMp4 = string(value["FMp4"].GetString());
+        m_fMp4HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void PlayRecordData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Flv";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fMp4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FMp4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fMp4.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void PlayRecordData::SetFlv(const string& _flv)
 bool PlayRecordData::FlvHasBeenSet() const
 {
     return m_flvHasBeenSet;
+}
+
+string PlayRecordData::GetFMp4() const
+{
+    return m_fMp4;
+}
+
+void PlayRecordData::SetFMp4(const string& _fMp4)
+{
+    m_fMp4 = _fMp4;
+    m_fMp4HasBeenSet = true;
+}
+
+bool PlayRecordData::FMp4HasBeenSet() const
+{
+    return m_fMp4HasBeenSet;
 }
 

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据ID
-                     * @return Id 数据ID
+                     * 获取<p>数据ID</p>
+                     * @return Id <p>数据ID</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置数据ID
-                     * @param _id 数据ID
+                     * 设置<p>数据ID</p>
+                     * @param _id <p>数据ID</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取主机安全ID
-                     * @return Uuid 主机安全ID
+                     * 获取<p>主机安全ID</p>
+                     * @return Uuid <p>主机安全ID</p>
                      * 
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置主机安全ID
-                     * @param _uuid 主机安全ID
+                     * 设置<p>主机安全ID</p>
+                     * @param _uuid <p>主机安全ID</p>
                      * 
                      */
                     void SetUuid(const std::string& _uuid);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取主机ID
-                     * @return Quuid 主机ID
+                     * 获取<p>主机ID</p>
+                     * @return Quuid <p>主机ID</p>
                      * 
                      */
                     std::string GetQuuid() const;
 
                     /**
-                     * 设置主机ID
-                     * @param _quuid 主机ID
+                     * 设置<p>主机ID</p>
+                     * @param _quuid <p>主机ID</p>
                      * 
                      */
                     void SetQuuid(const std::string& _quuid);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool QuuidHasBeenSet() const;
 
                     /**
-                     * 获取主机内网IP
-                     * @return HostIp 主机内网IP
+                     * 获取<p>主机内网IP</p>
+                     * @return HostIp <p>主机内网IP</p>
                      * 
                      */
                     std::string GetHostIp() const;
 
                     /**
-                     * 设置主机内网IP
-                     * @param _hostIp 主机内网IP
+                     * 设置<p>主机内网IP</p>
+                     * @param _hostIp <p>主机内网IP</p>
                      * 
                      */
                     void SetHostIp(const std::string& _hostIp);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool HostIpHasBeenSet() const;
 
                     /**
-                     * 获取执行用户名
-                     * @return User 执行用户名
+                     * 获取<p>执行用户名</p>
+                     * @return User <p>执行用户名</p>
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置执行用户名
-                     * @param _user 执行用户名
+                     * 设置<p>执行用户名</p>
+                     * @param _user <p>执行用户名</p>
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool UserHasBeenSet() const;
 
                     /**
-                     * 获取平台类型
-                     * @return Platform 平台类型
+                     * 获取<p>平台类型</p>
+                     * @return Platform <p>平台类型</p>
                      * 
                      */
                     uint64_t GetPlatform() const;
 
                     /**
-                     * 设置平台类型
-                     * @param _platform 平台类型
+                     * 设置<p>平台类型</p>
+                     * @param _platform <p>平台类型</p>
                      * 
                      */
                     void SetPlatform(const uint64_t& _platform);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取执行命令
-                     * @return BashCmd 执行命令
+                     * 获取<p>执行命令</p>
+                     * @return BashCmd <p>执行命令</p>
                      * 
                      */
                     std::string GetBashCmd() const;
 
                     /**
-                     * 设置执行命令
-                     * @param _bashCmd 执行命令
+                     * 设置<p>执行命令</p>
+                     * @param _bashCmd <p>执行命令</p>
                      * 
                      */
                     void SetBashCmd(const std::string& _bashCmd);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool BashCmdHasBeenSet() const;
 
                     /**
-                     * 获取规则ID
-                     * @return RuleId 规则ID
+                     * 获取<p>规则ID</p>
+                     * @return RuleId <p>规则ID</p>
                      * 
                      */
                     uint64_t GetRuleId() const;
 
                     /**
-                     * 设置规则ID
-                     * @param _ruleId 规则ID
+                     * 设置<p>规则ID</p>
+                     * @param _ruleId <p>规则ID</p>
                      * 
                      */
                     void SetRuleId(const uint64_t& _ruleId);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
-                     * @return RuleName 规则名称
+                     * 获取<p>规则名称</p>
+                     * @return RuleName <p>规则名称</p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param _ruleName 规则名称
+                     * 设置<p>规则名称</p>
+                     * @param _ruleName <p>规则名称</p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取规则等级：1-高 2-中 3-低
-                     * @return RuleLevel 规则等级：1-高 2-中 3-低
+                     * 获取<p>规则等级：1-高 2-中 3-低</p>
+                     * @return RuleLevel <p>规则等级：1-高 2-中 3-低</p>
                      * 
                      */
                     uint64_t GetRuleLevel() const;
 
                     /**
-                     * 设置规则等级：1-高 2-中 3-低
-                     * @param _ruleLevel 规则等级：1-高 2-中 3-低
+                     * 设置<p>规则等级：1-高 2-中 3-低</p>
+                     * @param _ruleLevel <p>规则等级：1-高 2-中 3-低</p>
                      * 
                      */
                     void SetRuleLevel(const uint64_t& _ruleLevel);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool RuleLevelHasBeenSet() const;
 
                     /**
-                     * 获取处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略
-                     * @return Status 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略
+                     * 获取<p>处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略</p>
+                     * @return Status <p>处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略</p>
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略
-                     * @param _status 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略
+                     * 设置<p>处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略</p>
+                     * @param _status <p>处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略</p>
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取发生时间
-                     * @return CreateTime 发生时间
+                     * 获取<p>发生时间</p>
+                     * @return CreateTime <p>发生时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置发生时间
-                     * @param _createTime 发生时间
+                     * 设置<p>发生时间</p>
+                     * @param _createTime <p>发生时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取主机名
-                     * @return MachineName 主机名
+                     * 获取<p>主机名</p>
+                     * @return MachineName <p>主机名</p>
                      * 
                      */
                     std::string GetMachineName() const;
 
                     /**
-                     * 设置主机名
-                     * @param _machineName 主机名
+                     * 设置<p>主机名</p>
+                     * @param _machineName <p>主机名</p>
                      * 
                      */
                     void SetMachineName(const std::string& _machineName);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool MachineNameHasBeenSet() const;
 
                     /**
-                     * 获取0: bash日志 1: 实时监控(雷霆版)
-                     * @return DetectBy 0: bash日志 1: 实时监控(雷霆版)
+                     * 获取<p>0: bash日志 1: 实时监控(雷霆版)</p>
+                     * @return DetectBy <p>0: bash日志 1: 实时监控(雷霆版)</p>
                      * 
                      */
                     uint64_t GetDetectBy() const;
 
                     /**
-                     * 设置0: bash日志 1: 实时监控(雷霆版)
-                     * @param _detectBy 0: bash日志 1: 实时监控(雷霆版)
+                     * 设置<p>0: bash日志 1: 实时监控(雷霆版)</p>
+                     * @param _detectBy <p>0: bash日志 1: 实时监控(雷霆版)</p>
                      * 
                      */
                     void SetDetectBy(const uint64_t& _detectBy);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool DetectByHasBeenSet() const;
 
                     /**
-                     * 获取进程id
-                     * @return Pid 进程id
+                     * 获取<p>进程id</p>
+                     * @return Pid <p>进程id</p>
                      * 
                      */
                     std::string GetPid() const;
 
                     /**
-                     * 设置进程id
-                     * @param _pid 进程id
+                     * 设置<p>进程id</p>
+                     * @param _pid <p>进程id</p>
                      * 
                      */
                     void SetPid(const std::string& _pid);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool PidHasBeenSet() const;
 
                     /**
-                     * 获取进程名称
-                     * @return Exe 进程名称
+                     * 获取<p>进程名称</p>
+                     * @return Exe <p>进程名称</p>
                      * 
                      */
                     std::string GetExe() const;
 
                     /**
-                     * 设置进程名称
-                     * @param _exe 进程名称
+                     * 设置<p>进程名称</p>
+                     * @param _exe <p>进程名称</p>
                      * 
                      */
                     void SetExe(const std::string& _exe);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool ExeHasBeenSet() const;
 
                     /**
-                     * 获取处理时间
-                     * @return ModifyTime 处理时间
+                     * 获取<p>处理时间</p>
+                     * @return ModifyTime <p>处理时间</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置处理时间
-                     * @param _modifyTime 处理时间
+                     * 设置<p>处理时间</p>
+                     * @param _modifyTime <p>处理时间</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取规则类别  0=系统规则，1=用户规则
-                     * @return RuleCategory 规则类别  0=系统规则，1=用户规则
+                     * 获取<p>规则类别  0=系统规则，1=用户规则</p>
+                     * @return RuleCategory <p>规则类别  0=系统规则，1=用户规则</p>
                      * 
                      */
                     uint64_t GetRuleCategory() const;
 
                     /**
-                     * 设置规则类别  0=系统规则，1=用户规则
-                     * @param _ruleCategory 规则类别  0=系统规则，1=用户规则
+                     * 设置<p>规则类别  0=系统规则，1=用户规则</p>
+                     * @param _ruleCategory <p>规则类别  0=系统规则，1=用户规则</p>
                      * 
                      */
                     void SetRuleCategory(const uint64_t& _ruleCategory);
@@ -426,15 +426,15 @@ namespace TencentCloud
                     bool RuleCategoryHasBeenSet() const;
 
                     /**
-                     * 获取转义后的正则表达式
-                     * @return RegexBashCmd 转义后的正则表达式
+                     * 获取<p>转义后的正则表达式</p>
+                     * @return RegexBashCmd <p>转义后的正则表达式</p>
                      * 
                      */
                     std::string GetRegexBashCmd() const;
 
                     /**
-                     * 设置转义后的正则表达式
-                     * @param _regexBashCmd 转义后的正则表达式
+                     * 设置<p>转义后的正则表达式</p>
+                     * @param _regexBashCmd <p>转义后的正则表达式</p>
                      * 
                      */
                     void SetRegexBashCmd(const std::string& _regexBashCmd);
@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool RegexBashCmdHasBeenSet() const;
 
                     /**
-                     * 获取转义后的正则表达式
-                     * @return RegexExe 转义后的正则表达式
+                     * 获取<p>转义后的正则表达式</p>
+                     * @return RegexExe <p>转义后的正则表达式</p>
                      * 
                      */
                     std::string GetRegexExe() const;
 
                     /**
-                     * 设置转义后的正则表达式
-                     * @param _regexExe 转义后的正则表达式
+                     * 设置<p>转义后的正则表达式</p>
+                     * @param _regexExe <p>转义后的正则表达式</p>
                      * 
                      */
                     void SetRegexExe(const std::string& _regexExe);
@@ -468,15 +468,15 @@ namespace TencentCloud
                     bool RegexExeHasBeenSet() const;
 
                     /**
-                     * 获取0:普通 1:专业版 2:旗舰版
-                     * @return MachineType 0:普通 1:专业版 2:旗舰版
+                     * 获取<p>0:普通 1:专业版 2:旗舰版</p>
+                     * @return MachineType <p>0:普通 1:专业版 2:旗舰版</p>
                      * 
                      */
                     int64_t GetMachineType() const;
 
                     /**
-                     * 设置0:普通 1:专业版 2:旗舰版
-                     * @param _machineType 0:普通 1:专业版 2:旗舰版
+                     * 设置<p>0:普通 1:专业版 2:旗舰版</p>
+                     * @param _machineType <p>0:普通 1:专业版 2:旗舰版</p>
                      * 
                      */
                     void SetMachineType(const int64_t& _machineType);
@@ -489,15 +489,15 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取机器额外信息
-                     * @return MachineExtraInfo 机器额外信息
+                     * 获取<p>机器额外信息</p>
+                     * @return MachineExtraInfo <p>机器额外信息</p>
                      * 
                      */
                     MachineExtraInfo GetMachineExtraInfo() const;
 
                     /**
-                     * 设置机器额外信息
-                     * @param _machineExtraInfo 机器额外信息
+                     * 设置<p>机器额外信息</p>
+                     * @param _machineExtraInfo <p>机器额外信息</p>
                      * 
                      */
                     void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
@@ -509,139 +509,220 @@ namespace TencentCloud
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>告警次数：同一聚合维度当天的告警命中次数，老数据为空</p>
+                     * @return EventCount <p>告警次数：同一聚合维度当天的告警命中次数，老数据为空</p>
+                     * 
+                     */
+                    uint64_t GetEventCount() const;
+
+                    /**
+                     * 设置<p>告警次数：同一聚合维度当天的告警命中次数，老数据为空</p>
+                     * @param _eventCount <p>告警次数：同一聚合维度当天的告警命中次数，老数据为空</p>
+                     * 
+                     */
+                    void SetEventCount(const uint64_t& _eventCount);
+
+                    /**
+                     * 判断参数 EventCount 是否已赋值
+                     * @return EventCount 是否已赋值
+                     * 
+                     */
+                    bool EventCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>首次发现时间（格式 yyyy-MM-dd HH:mm:ss）</p>
+                     * @return FirstDetectTime <p>首次发现时间（格式 yyyy-MM-dd HH:mm:ss）</p>
+                     * 
+                     */
+                    std::string GetFirstDetectTime() const;
+
+                    /**
+                     * 设置<p>首次发现时间（格式 yyyy-MM-dd HH:mm:ss）</p>
+                     * @param _firstDetectTime <p>首次发现时间（格式 yyyy-MM-dd HH:mm:ss）</p>
+                     * 
+                     */
+                    void SetFirstDetectTime(const std::string& _firstDetectTime);
+
+                    /**
+                     * 判断参数 FirstDetectTime 是否已赋值
+                     * @return FirstDetectTime 是否已赋值
+                     * 
+                     */
+                    bool FirstDetectTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最近发现时间（格式 yyyy-MM-dd HH:mm:ss）</p>
+                     * @return LatestDetectTime <p>最近发现时间（格式 yyyy-MM-dd HH:mm:ss）</p>
+                     * 
+                     */
+                    std::string GetLatestDetectTime() const;
+
+                    /**
+                     * 设置<p>最近发现时间（格式 yyyy-MM-dd HH:mm:ss）</p>
+                     * @param _latestDetectTime <p>最近发现时间（格式 yyyy-MM-dd HH:mm:ss）</p>
+                     * 
+                     */
+                    void SetLatestDetectTime(const std::string& _latestDetectTime);
+
+                    /**
+                     * 判断参数 LatestDetectTime 是否已赋值
+                     * @return LatestDetectTime 是否已赋值
+                     * 
+                     */
+                    bool LatestDetectTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数据ID
+                     * <p>数据ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 主机安全ID
+                     * <p>主机安全ID</p>
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 主机ID
+                     * <p>主机ID</p>
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
 
                     /**
-                     * 主机内网IP
+                     * <p>主机内网IP</p>
                      */
                     std::string m_hostIp;
                     bool m_hostIpHasBeenSet;
 
                     /**
-                     * 执行用户名
+                     * <p>执行用户名</p>
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
-                     * 平台类型
+                     * <p>平台类型</p>
                      */
                     uint64_t m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 执行命令
+                     * <p>执行命令</p>
                      */
                     std::string m_bashCmd;
                     bool m_bashCmdHasBeenSet;
 
                     /**
-                     * 规则ID
+                     * <p>规则ID</p>
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * 规则名称
+                     * <p>规则名称</p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 规则等级：1-高 2-中 3-低
+                     * <p>规则等级：1-高 2-中 3-低</p>
                      */
                     uint64_t m_ruleLevel;
                     bool m_ruleLevelHasBeenSet;
 
                     /**
-                     * 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略
+                     * <p>处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略</p>
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 发生时间
+                     * <p>发生时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 主机名
+                     * <p>主机名</p>
                      */
                     std::string m_machineName;
                     bool m_machineNameHasBeenSet;
 
                     /**
-                     * 0: bash日志 1: 实时监控(雷霆版)
+                     * <p>0: bash日志 1: 实时监控(雷霆版)</p>
                      */
                     uint64_t m_detectBy;
                     bool m_detectByHasBeenSet;
 
                     /**
-                     * 进程id
+                     * <p>进程id</p>
                      */
                     std::string m_pid;
                     bool m_pidHasBeenSet;
 
                     /**
-                     * 进程名称
+                     * <p>进程名称</p>
                      */
                     std::string m_exe;
                     bool m_exeHasBeenSet;
 
                     /**
-                     * 处理时间
+                     * <p>处理时间</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 规则类别  0=系统规则，1=用户规则
+                     * <p>规则类别  0=系统规则，1=用户规则</p>
                      */
                     uint64_t m_ruleCategory;
                     bool m_ruleCategoryHasBeenSet;
 
                     /**
-                     * 转义后的正则表达式
+                     * <p>转义后的正则表达式</p>
                      */
                     std::string m_regexBashCmd;
                     bool m_regexBashCmdHasBeenSet;
 
                     /**
-                     * 转义后的正则表达式
+                     * <p>转义后的正则表达式</p>
                      */
                     std::string m_regexExe;
                     bool m_regexExeHasBeenSet;
 
                     /**
-                     * 0:普通 1:专业版 2:旗舰版
+                     * <p>0:普通 1:专业版 2:旗舰版</p>
                      */
                     int64_t m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 机器额外信息
+                     * <p>机器额外信息</p>
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * <p>告警次数：同一聚合维度当天的告警命中次数，老数据为空</p>
+                     */
+                    uint64_t m_eventCount;
+                    bool m_eventCountHasBeenSet;
+
+                    /**
+                     * <p>首次发现时间（格式 yyyy-MM-dd HH:mm:ss）</p>
+                     */
+                    std::string m_firstDetectTime;
+                    bool m_firstDetectTimeHasBeenSet;
+
+                    /**
+                     * <p>最近发现时间（格式 yyyy-MM-dd HH:mm:ss）</p>
+                     */
+                    std::string m_latestDetectTime;
+                    bool m_latestDetectTimeHasBeenSet;
 
                 };
             }

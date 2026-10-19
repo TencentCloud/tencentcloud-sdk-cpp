@@ -33,7 +33,8 @@ Options::Options() :
     m_autoRetryTimeRangeMinutesHasBeenSet(false),
     m_startPositionHasBeenSet(false),
     m_filterBeginCommitHasBeenSet(false),
-    m_filterCheckpointHasBeenSet(false)
+    m_filterCheckpointHasBeenSet(false),
+    m_skipDdlOnErrorHasBeenSet(false)
 {
 }
 
@@ -206,6 +207,23 @@ CoreInternalOutcome Options::Deserialize(const rapidjson::Value &value)
         m_filterCheckpointHasBeenSet = true;
     }
 
+    if (value.HasMember("SkipDdlOnError") && !value["SkipDdlOnError"].IsNull())
+    {
+        if (!value["SkipDdlOnError"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Options.SkipDdlOnError` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_skipDdlOnError.Deserialize(value["SkipDdlOnError"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_skipDdlOnErrorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -330,6 +348,15 @@ void Options::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "FilterCheckpoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_filterCheckpoint, allocator);
+    }
+
+    if (m_skipDdlOnErrorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipDdlOnError";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_skipDdlOnError.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -541,5 +568,21 @@ void Options::SetFilterCheckpoint(const bool& _filterCheckpoint)
 bool Options::FilterCheckpointHasBeenSet() const
 {
     return m_filterCheckpointHasBeenSet;
+}
+
+SkipDdlOnError Options::GetSkipDdlOnError() const
+{
+    return m_skipDdlOnError;
+}
+
+void Options::SetSkipDdlOnError(const SkipDdlOnError& _skipDdlOnError)
+{
+    m_skipDdlOnError = _skipDdlOnError;
+    m_skipDdlOnErrorHasBeenSet = true;
+}
+
+bool Options::SkipDdlOnErrorHasBeenSet() const
+{
+    return m_skipDdlOnErrorHasBeenSet;
 }
 

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取进程
-                     * @return Process 进程
+                     * 获取<p>进程</p>
+                     * @return Process <p>进程</p>
                      * 
                      */
                     CommandLine GetProcess() const;
 
                     /**
-                     * 设置进程
-                     * @param _process 进程
+                     * 设置<p>进程</p>
+                     * @param _process <p>进程</p>
                      * 
                      */
                     void SetProcess(const CommandLine& _process);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ProcessHasBeenSet() const;
 
                     /**
-                     * 获取父进程
-                     * @return PProcess 父进程
+                     * 获取<p>父进程</p>
+                     * @return PProcess <p>父进程</p>
                      * 
                      */
                     CommandLine GetPProcess() const;
 
                     /**
-                     * 设置父进程
-                     * @param _pProcess 父进程
+                     * 设置<p>父进程</p>
+                     * @param _pProcess <p>父进程</p>
                      * 
                      */
                     void SetPProcess(const CommandLine& _pProcess);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool PProcessHasBeenSet() const;
 
                     /**
-                     * 获取祖先进程
-                     * @return AProcess 祖先进程
+                     * 获取<p>祖先进程</p>
+                     * @return AProcess <p>祖先进程</p>
                      * 
                      */
                     CommandLine GetAProcess() const;
 
                     /**
-                     * 设置祖先进程
-                     * @param _aProcess 祖先进程
+                     * 设置<p>祖先进程</p>
+                     * @param _aProcess <p>祖先进程</p>
                      * 
                      */
                     void SetAProcess(const CommandLine& _aProcess);
@@ -110,25 +110,79 @@ namespace TencentCloud
                      */
                     bool AProcessHasBeenSet() const;
 
+                    /**
+                     * 获取<p>目标文件路径（匹配类型=文件操作时有效）</p>
+                     * @return FilePath <p>目标文件路径（匹配类型=文件操作时有效）</p>
+                     * 
+                     */
+                    std::string GetFilePath() const;
+
+                    /**
+                     * 设置<p>目标文件路径（匹配类型=文件操作时有效）</p>
+                     * @param _filePath <p>目标文件路径（匹配类型=文件操作时有效）</p>
+                     * 
+                     */
+                    void SetFilePath(const std::string& _filePath);
+
+                    /**
+                     * 判断参数 FilePath 是否已赋值
+                     * @return FilePath 是否已赋值
+                     * 
+                     */
+                    bool FilePathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>动作列表（匹配类型=文件操作时有效，多选为或关系）：read-读 write-写 rename-重命名 delete-删除 truncate-清空内容</p>
+                     * @return FileActions <p>动作列表（匹配类型=文件操作时有效，多选为或关系）：read-读 write-写 rename-重命名 delete-删除 truncate-清空内容</p>
+                     * 
+                     */
+                    std::vector<std::string> GetFileActions() const;
+
+                    /**
+                     * 设置<p>动作列表（匹配类型=文件操作时有效，多选为或关系）：read-读 write-写 rename-重命名 delete-删除 truncate-清空内容</p>
+                     * @param _fileActions <p>动作列表（匹配类型=文件操作时有效，多选为或关系）：read-读 write-写 rename-重命名 delete-删除 truncate-清空内容</p>
+                     * 
+                     */
+                    void SetFileActions(const std::vector<std::string>& _fileActions);
+
+                    /**
+                     * 判断参数 FileActions 是否已赋值
+                     * @return FileActions 是否已赋值
+                     * 
+                     */
+                    bool FileActionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 进程
+                     * <p>进程</p>
                      */
                     CommandLine m_process;
                     bool m_processHasBeenSet;
 
                     /**
-                     * 父进程
+                     * <p>父进程</p>
                      */
                     CommandLine m_pProcess;
                     bool m_pProcessHasBeenSet;
 
                     /**
-                     * 祖先进程
+                     * <p>祖先进程</p>
                      */
                     CommandLine m_aProcess;
                     bool m_aProcessHasBeenSet;
+
+                    /**
+                     * <p>目标文件路径（匹配类型=文件操作时有效）</p>
+                     */
+                    std::string m_filePath;
+                    bool m_filePathHasBeenSet;
+
+                    /**
+                     * <p>动作列表（匹配类型=文件操作时有效，多选为或关系）：read-读 write-写 rename-重命名 delete-删除 truncate-清空内容</p>
+                     */
+                    std::vector<std::string> m_fileActions;
+                    bool m_fileActionsHasBeenSet;
 
                 };
             }

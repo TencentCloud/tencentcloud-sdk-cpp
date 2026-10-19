@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消息ID
-                     * @return MsgId 消息ID
+                     * 获取<p>消息ID</p>
+                     * @return MsgId <p>消息ID</p>
                      * 
                      */
                     std::string GetMsgId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 消息ID
+                     * <p>消息ID</p>
                      */
                     std::string m_msgId;
                     bool m_msgIdHasBeenSet;

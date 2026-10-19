@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取录像播放地址
-                     * @return Flv 录像播放地址
+                     * 获取<p>flv录像播放地址</p>
+                     * @return Flv <p>flv录像播放地址</p>
                      * 
                      */
                     std::string GetFlv() const;
 
                     /**
-                     * 设置录像播放地址
-                     * @param _flv 录像播放地址
+                     * 设置<p>flv录像播放地址</p>
+                     * @param _flv <p>flv录像播放地址</p>
                      * 
                      */
                     void SetFlv(const std::string& _flv);
@@ -67,13 +67,40 @@ namespace TencentCloud
                      */
                     bool FlvHasBeenSet() const;
 
+                    /**
+                     * 获取<p>fmp4录像播放地址</p>
+                     * @return FMp4 <p>fmp4录像播放地址</p>
+                     * 
+                     */
+                    std::string GetFMp4() const;
+
+                    /**
+                     * 设置<p>fmp4录像播放地址</p>
+                     * @param _fMp4 <p>fmp4录像播放地址</p>
+                     * 
+                     */
+                    void SetFMp4(const std::string& _fMp4);
+
+                    /**
+                     * 判断参数 FMp4 是否已赋值
+                     * @return FMp4 是否已赋值
+                     * 
+                     */
+                    bool FMp4HasBeenSet() const;
+
                 private:
 
                     /**
-                     * 录像播放地址
+                     * <p>flv录像播放地址</p>
                      */
                     std::string m_flv;
                     bool m_flvHasBeenSet;
+
+                    /**
+                     * <p>fmp4录像播放地址</p>
+                     */
+                    std::string m_fMp4;
+                    bool m_fMp4HasBeenSet;
 
                 };
             }

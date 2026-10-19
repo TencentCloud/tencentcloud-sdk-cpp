@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeEventsRequest::DescribeEventsRequest() :
     m_serviceHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
@@ -48,6 +49,14 @@ string DescribeEventsRequest::ToJsonString() const
         string key = "Service";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_service.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceIdHasBeenSet)
@@ -143,6 +152,22 @@ void DescribeEventsRequest::SetService(const string& _service)
 bool DescribeEventsRequest::ServiceHasBeenSet() const
 {
     return m_serviceHasBeenSet;
+}
+
+string DescribeEventsRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeEventsRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeEventsRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 string DescribeEventsRequest::GetServiceId() const

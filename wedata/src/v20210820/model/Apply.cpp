@@ -41,7 +41,8 @@ Apply::Apply() :
     m_applyIdHasBeenSet(false),
     m_metadataHasBeenSet(false),
     m_createTimestampHasBeenSet(false),
-    m_approveTimestampHasBeenSet(false)
+    m_approveTimestampHasBeenSet(false),
+    m_approveCodeHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome Apply::Deserialize(const rapidjson::Value &value)
         m_approveTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproveCode") && !value["ApproveCode"].IsNull())
+    {
+        if (!value["ApproveCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Apply.ApproveCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approveCode = string(value["ApproveCode"].GetString());
+        m_approveCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void Apply::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ApproveTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_approveTimestamp, allocator);
+    }
+
+    if (m_approveCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproveCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approveCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -772,5 +791,21 @@ void Apply::SetApproveTimestamp(const uint64_t& _approveTimestamp)
 bool Apply::ApproveTimestampHasBeenSet() const
 {
     return m_approveTimestampHasBeenSet;
+}
+
+string Apply::GetApproveCode() const
+{
+    return m_approveCode;
+}
+
+void Apply::SetApproveCode(const string& _approveCode)
+{
+    m_approveCode = _approveCode;
+    m_approveCodeHasBeenSet = true;
+}
+
+bool Apply::ApproveCodeHasBeenSet() const
+{
+    return m_approveCodeHasBeenSet;
 }
 

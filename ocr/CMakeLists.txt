@@ -206,6 +206,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/DetailInformationOfAirTicketTupleList.h
   include/tencentcloud/ocr/v20181119/model/TextVehicleFront.h
   include/tencentcloud/ocr/v20181119/model/AdvertiseTextDetection.h
+  include/tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/PermanentResidencePermitInfo.h
   include/tencentcloud/ocr/v20181119/model/EraseHandwrittenImageOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ElectronicTrainTicket.h
@@ -272,7 +273,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/GeneralEfficientOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/MLIDPassportOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/CropEnhanceImageOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/AnswerElement.h
   include/tencentcloud/ocr/v20181119/model/MedicalInvoice.h
   include/tencentcloud/ocr/v20181119/model/SealOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRResponse.h
@@ -528,6 +529,7 @@ set(ocr_src
   src/v20181119/model/DetailInformationOfAirTicketTupleList.cpp
   src/v20181119/model/TextVehicleFront.cpp
   src/v20181119/model/AdvertiseTextDetection.cpp
+  src/v20181119/model/VerifyOfdVatInvoiceOCRResponse.cpp
   src/v20181119/model/PermanentResidencePermitInfo.cpp
   src/v20181119/model/EraseHandwrittenImageOCRResponse.cpp
   src/v20181119/model/ElectronicTrainTicket.cpp
@@ -594,7 +596,7 @@ set(ocr_src
   src/v20181119/model/GeneralEfficientOCRResponse.cpp
   src/v20181119/model/MLIDPassportOCRResponse.cpp
   src/v20181119/model/CropEnhanceImageOCRRequest.cpp
-  src/v20181119/model/VerifyOfdVatInvoiceOCRResponse.cpp
+  src/v20181119/model/AnswerElement.cpp
   src/v20181119/model/MedicalInvoice.cpp
   src/v20181119/model/SealOCRRequest.cpp
   src/v20181119/model/RecognizeTableAccurateOCRResponse.cpp

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/Polygon.h>
 #include <tencentcloud/ocr/v20181119/model/ResultList.h>
+#include <tencentcloud/ocr/v20181119/model/AnswerElement.h>
 
 
 namespace TencentCloud
@@ -178,6 +179,27 @@ namespace TencentCloud
                      */
                     bool PageIndexHasBeenSet() const;
 
+                    /**
+                     * 获取<p>批改时答案的额外数据</p>
+                     * @return AnswerElement <p>批改时答案的额外数据</p>
+                     * 
+                     */
+                    AnswerElement GetAnswerElement() const;
+
+                    /**
+                     * 设置<p>批改时答案的额外数据</p>
+                     * @param _answerElement <p>批改时答案的额外数据</p>
+                     * 
+                     */
+                    void SetAnswerElement(const AnswerElement& _answerElement);
+
+                    /**
+                     * 判断参数 AnswerElement 是否已赋值
+                     * @return AnswerElement 是否已赋值
+                     * 
+                     */
+                    bool AnswerElementHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +238,12 @@ namespace TencentCloud
                      */
                     int64_t m_pageIndex;
                     bool m_pageIndexHasBeenSet;
+
+                    /**
+                     * <p>批改时答案的额外数据</p>
+                     */
+                    AnswerElement m_answerElement;
+                    bool m_answerElementHasBeenSet;
 
                 };
             }

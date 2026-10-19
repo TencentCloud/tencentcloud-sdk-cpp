@@ -37,7 +37,8 @@ DescribeCSCPayInfoResponse::DescribeCSCPayInfoResponse() :
     m_uinHasBeenSet(false),
     m_nickNameHasBeenSet(false),
     m_newUserHasBeenSet(false),
-    m_quotaListHasBeenSet(false)
+    m_quotaListHasBeenSet(false),
+    m_quotaUsedErrorHasBeenSet(false)
 {
 }
 
@@ -225,6 +226,16 @@ CoreInternalOutcome DescribeCSCPayInfoResponse::Deserialize(const string &payloa
         m_quotaListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("QuotaUsedError") && !rsp["QuotaUsedError"].IsNull())
+    {
+        if (!rsp["QuotaUsedError"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QuotaUsedError` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_quotaUsedError = string(rsp["QuotaUsedError"].GetString());
+        m_quotaUsedErrorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -352,6 +363,14 @@ string DescribeCSCPayInfoResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_quotaUsedErrorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaUsedError";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quotaUsedError.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -504,6 +523,16 @@ vector<OrderQuotaInfo> DescribeCSCPayInfoResponse::GetQuotaList() const
 bool DescribeCSCPayInfoResponse::QuotaListHasBeenSet() const
 {
     return m_quotaListHasBeenSet;
+}
+
+string DescribeCSCPayInfoResponse::GetQuotaUsedError() const
+{
+    return m_quotaUsedError;
+}
+
+bool DescribeCSCPayInfoResponse::QuotaUsedErrorHasBeenSet() const
+{
+    return m_quotaUsedErrorHasBeenSet;
 }
 
 

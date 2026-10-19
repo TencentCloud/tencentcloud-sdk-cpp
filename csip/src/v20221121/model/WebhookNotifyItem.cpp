@@ -24,7 +24,8 @@ WebhookNotifyItem::WebhookNotifyItem() :
     m_moduleHasBeenSet(false),
     m_subModuleHasBeenSet(false),
     m_levelsHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,19 @@ CoreInternalOutcome WebhookNotifyItem::Deserialize(const rapidjson::Value &value
         m_itemsHasBeenSet = true;
     }
 
+    if (value.HasMember("Options") && !value["Options"].IsNull())
+    {
+        if (!value["Options"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WebhookNotifyItem.Options` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Options"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_options.push_back((*itr).GetString());
+        }
+        m_optionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -123,6 +137,19 @@ void WebhookNotifyItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_items.begin(); itr != m_items.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_optionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Options";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_options.begin(); itr != m_options.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -193,5 +220,21 @@ void WebhookNotifyItem::SetItems(const vector<string>& _items)
 bool WebhookNotifyItem::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+vector<string> WebhookNotifyItem::GetOptions() const
+{
+    return m_options;
+}
+
+void WebhookNotifyItem::SetOptions(const vector<string>& _options)
+{
+    m_options = _options;
+    m_optionsHasBeenSet = true;
+}
+
+bool WebhookNotifyItem::OptionsHasBeenSet() const
+{
+    return m_optionsHasBeenSet;
 }
 

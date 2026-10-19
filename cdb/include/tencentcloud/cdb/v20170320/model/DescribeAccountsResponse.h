@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合查询条件的账号数量。
-                     * @return TotalCount 符合查询条件的账号数量。
+                     * 获取<p>符合查询条件的账号数量。</p>
+                     * @return TotalCount <p>符合查询条件的账号数量。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取符合查询条件的账号详细信息。
-                     * @return Items 符合查询条件的账号详细信息。
+                     * 获取<p>符合查询条件的账号详细信息。</p>
+                     * @return Items <p>符合查询条件的账号详细信息。</p>
                      * 
                      */
                     std::vector<AccountInfo> GetItems() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ItemsHasBeenSet() const;
 
                     /**
-                     * 获取用户可设置实例最大连接数。
-                     * @return MaxUserConnections 用户可设置实例最大连接数。
+                     * 获取<p>用户可设置实例最大连接数。</p>
+                     * @return MaxUserConnections <p>用户可设置实例最大连接数。</p>
                      * 
                      */
                     int64_t GetMaxUserConnections() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合查询条件的账号数量。
+                     * <p>符合查询条件的账号数量。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 符合查询条件的账号详细信息。
+                     * <p>符合查询条件的账号详细信息。</p>
                      */
                     std::vector<AccountInfo> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
-                     * 用户可设置实例最大连接数。
+                     * <p>用户可设置实例最大连接数。</p>
                      */
                     int64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;

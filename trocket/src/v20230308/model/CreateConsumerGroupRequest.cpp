@@ -31,7 +31,8 @@ CreateConsumerGroupRequest::CreateConsumerGroupRequest() :
     m_remarkHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_retryPolicyHasBeenSet(false),
-    m_liteTopicHasBeenSet(false)
+    m_liteTopicHasBeenSet(false),
+    m_deadLetterTargetTopicHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,14 @@ string CreateConsumerGroupRequest::ToJsonString() const
         string key = "LiteTopic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_liteTopic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deadLetterTargetTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeadLetterTargetTopic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deadLetterTargetTopic.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -272,6 +281,22 @@ void CreateConsumerGroupRequest::SetLiteTopic(const string& _liteTopic)
 bool CreateConsumerGroupRequest::LiteTopicHasBeenSet() const
 {
     return m_liteTopicHasBeenSet;
+}
+
+string CreateConsumerGroupRequest::GetDeadLetterTargetTopic() const
+{
+    return m_deadLetterTargetTopic;
+}
+
+void CreateConsumerGroupRequest::SetDeadLetterTargetTopic(const string& _deadLetterTargetTopic)
+{
+    m_deadLetterTargetTopic = _deadLetterTargetTopic;
+    m_deadLetterTargetTopicHasBeenSet = true;
+}
+
+bool CreateConsumerGroupRequest::DeadLetterTargetTopicHasBeenSet() const
+{
+    return m_deadLetterTargetTopicHasBeenSet;
 }
 
 

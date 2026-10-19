@@ -28,7 +28,10 @@ ResultList::ResultList() :
     m_answerHasBeenSet(false),
     m_parseHasBeenSet(false),
     m_coordHasBeenSet(false),
-    m_coordPageIndexHasBeenSet(false)
+    m_coordPageIndexHasBeenSet(false),
+    m_rightAnswerHasBeenSet(false),
+    m_subjectHasBeenSet(false),
+    m_knowledgePointsHasBeenSet(false)
 {
 }
 
@@ -190,6 +193,39 @@ CoreInternalOutcome ResultList::Deserialize(const rapidjson::Value &value)
         m_coordPageIndexHasBeenSet = true;
     }
 
+    if (value.HasMember("RightAnswer") && !value["RightAnswer"].IsNull())
+    {
+        if (!value["RightAnswer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultList.RightAnswer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rightAnswer = string(value["RightAnswer"].GetString());
+        m_rightAnswerHasBeenSet = true;
+    }
+
+    if (value.HasMember("Subject") && !value["Subject"].IsNull())
+    {
+        if (!value["Subject"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultList.Subject` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subject = string(value["Subject"].GetString());
+        m_subjectHasBeenSet = true;
+    }
+
+    if (value.HasMember("KnowledgePoints") && !value["KnowledgePoints"].IsNull())
+    {
+        if (!value["KnowledgePoints"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResultList.KnowledgePoints` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KnowledgePoints"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_knowledgePoints.push_back((*itr).GetString());
+        }
+        m_knowledgePointsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -312,6 +348,35 @@ void ResultList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_coordPageIndex.begin(); itr != m_coordPageIndex.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_rightAnswerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RightAnswer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rightAnswer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Subject";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_knowledgePointsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgePoints";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_knowledgePoints.begin(); itr != m_knowledgePoints.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -444,5 +509,53 @@ void ResultList::SetCoordPageIndex(const vector<int64_t>& _coordPageIndex)
 bool ResultList::CoordPageIndexHasBeenSet() const
 {
     return m_coordPageIndexHasBeenSet;
+}
+
+string ResultList::GetRightAnswer() const
+{
+    return m_rightAnswer;
+}
+
+void ResultList::SetRightAnswer(const string& _rightAnswer)
+{
+    m_rightAnswer = _rightAnswer;
+    m_rightAnswerHasBeenSet = true;
+}
+
+bool ResultList::RightAnswerHasBeenSet() const
+{
+    return m_rightAnswerHasBeenSet;
+}
+
+string ResultList::GetSubject() const
+{
+    return m_subject;
+}
+
+void ResultList::SetSubject(const string& _subject)
+{
+    m_subject = _subject;
+    m_subjectHasBeenSet = true;
+}
+
+bool ResultList::SubjectHasBeenSet() const
+{
+    return m_subjectHasBeenSet;
+}
+
+vector<string> ResultList::GetKnowledgePoints() const
+{
+    return m_knowledgePoints;
+}
+
+void ResultList::SetKnowledgePoints(const vector<string>& _knowledgePoints)
+{
+    m_knowledgePoints = _knowledgePoints;
+    m_knowledgePointsHasBeenSet = true;
+}
+
+bool ResultList::KnowledgePointsHasBeenSet() const
+{
+    return m_knowledgePointsHasBeenSet;
 }
 

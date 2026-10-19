@@ -26,7 +26,8 @@ ExportEDRRulesRequest::ExportEDRRulesRequest() :
     m_memberIdHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_byHasBeenSet(false)
+    m_byHasBeenSet(false),
+    m_fileOperationRulesHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,15 @@ string ExportEDRRulesRequest::ToJsonString() const
         string key = "By";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileOperationRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileOperationRules";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileOperationRules.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -151,6 +161,22 @@ void ExportEDRRulesRequest::SetBy(const string& _by)
 bool ExportEDRRulesRequest::ByHasBeenSet() const
 {
     return m_byHasBeenSet;
+}
+
+RuleContentFileOperation ExportEDRRulesRequest::GetFileOperationRules() const
+{
+    return m_fileOperationRules;
+}
+
+void ExportEDRRulesRequest::SetFileOperationRules(const RuleContentFileOperation& _fileOperationRules)
+{
+    m_fileOperationRules = _fileOperationRules;
+    m_fileOperationRulesHasBeenSet = true;
+}
+
+bool ExportEDRRulesRequest::FileOperationRulesHasBeenSet() const
+{
+    return m_fileOperationRulesHasBeenSet;
 }
 
 

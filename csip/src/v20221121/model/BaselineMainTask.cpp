@@ -34,7 +34,8 @@ BaselineMainTask::BaselineMainTask() :
     m_solutionHasBeenSet(false),
     m_scanSuccessCountHasBeenSet(false),
     m_scanFailedCountHasBeenSet(false),
-    m_scanTotalCountHasBeenSet(false)
+    m_scanTotalCountHasBeenSet(false),
+    m_policyListHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,26 @@ CoreInternalOutcome BaselineMainTask::Deserialize(const rapidjson::Value &value)
         m_scanTotalCountHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyList") && !value["PolicyList"].IsNull())
+    {
+        if (!value["PolicyList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BaselineMainTask.PolicyList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PolicyList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BaselinePolicyBrief item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_policyList.push_back(item);
+        }
+        m_policyListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +321,21 @@ void BaselineMainTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ScanTotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scanTotalCount, allocator);
+    }
+
+    if (m_policyListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_policyList.begin(); itr != m_policyList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -527,5 +563,21 @@ void BaselineMainTask::SetScanTotalCount(const uint64_t& _scanTotalCount)
 bool BaselineMainTask::ScanTotalCountHasBeenSet() const
 {
     return m_scanTotalCountHasBeenSet;
+}
+
+vector<BaselinePolicyBrief> BaselineMainTask::GetPolicyList() const
+{
+    return m_policyList;
+}
+
+void BaselineMainTask::SetPolicyList(const vector<BaselinePolicyBrief>& _policyList)
+{
+    m_policyList = _policyList;
+    m_policyListHasBeenSet = true;
+}
+
+bool BaselineMainTask::PolicyListHasBeenSet() const
+{
+    return m_policyListHasBeenSet;
 }
 

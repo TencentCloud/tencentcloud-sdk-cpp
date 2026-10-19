@@ -45,7 +45,8 @@ RenewWorkflowSchedulerInfoDsRequest::RenewWorkflowSchedulerInfoDsRequest() :
     m_scheduleTimeZoneHasBeenSet(false),
     m_clearLinkHasBeenSet(false),
     m_mainCyclicConfigHasBeenSet(false),
-    m_subordinateCyclicConfigHasBeenSet(false)
+    m_subordinateCyclicConfigHasBeenSet(false),
+    m_minuteOffsetHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,14 @@ string RenewWorkflowSchedulerInfoDsRequest::ToJsonString() const
         string key = "SubordinateCyclicConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subordinateCyclicConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_minuteOffsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinuteOffset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_minuteOffset, allocator);
     }
 
 
@@ -614,6 +623,22 @@ void RenewWorkflowSchedulerInfoDsRequest::SetSubordinateCyclicConfig(const strin
 bool RenewWorkflowSchedulerInfoDsRequest::SubordinateCyclicConfigHasBeenSet() const
 {
     return m_subordinateCyclicConfigHasBeenSet;
+}
+
+uint64_t RenewWorkflowSchedulerInfoDsRequest::GetMinuteOffset() const
+{
+    return m_minuteOffset;
+}
+
+void RenewWorkflowSchedulerInfoDsRequest::SetMinuteOffset(const uint64_t& _minuteOffset)
+{
+    m_minuteOffset = _minuteOffset;
+    m_minuteOffsetHasBeenSet = true;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::MinuteOffsetHasBeenSet() const
+{
+    return m_minuteOffsetHasBeenSet;
 }
 
 

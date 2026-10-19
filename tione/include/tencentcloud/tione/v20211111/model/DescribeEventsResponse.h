@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件的列表
+                     * 获取<p>事件的列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Events 事件的列表
+                     * @return Events <p>事件的列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool EventsHasBeenSet() const;
 
                     /**
-                     * 获取此次查询的事件的个数
+                     * 获取<p>此次查询的事件的个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 此次查询的事件的个数
+                     * @return TotalCount <p>此次查询的事件的个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件的列表
+                     * <p>事件的列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Event> m_events;
                     bool m_eventsHasBeenSet;
 
                     /**
-                     * 此次查询的事件的个数
+                     * <p>此次查询的事件的个数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;

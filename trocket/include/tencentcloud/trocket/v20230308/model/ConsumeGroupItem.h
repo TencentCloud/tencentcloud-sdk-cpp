@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取消费组名称
-                     * @return ConsumerGroup 消费组名称
+                     * 获取<p>消费组名称</p>
+                     * @return ConsumerGroup <p>消费组名称</p>
                      * 
                      */
                     std::string GetConsumerGroup() const;
 
                     /**
-                     * 设置消费组名称
-                     * @param _consumerGroup 消费组名称
+                     * 设置<p>消费组名称</p>
+                     * @param _consumerGroup <p>消费组名称</p>
                      * 
                      */
                     void SetConsumerGroup(const std::string& _consumerGroup);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ConsumerGroupHasBeenSet() const;
 
                     /**
-                     * 获取是否开启消费
-                     * @return ConsumeEnable 是否开启消费
+                     * 获取<p>是否开启消费</p>
+                     * @return ConsumeEnable <p>是否开启消费</p>
                      * 
                      */
                     bool GetConsumeEnable() const;
 
                     /**
-                     * 设置是否开启消费
-                     * @param _consumeEnable 是否开启消费
+                     * 设置<p>是否开启消费</p>
+                     * @param _consumeEnable <p>是否开启消费</p>
                      * 
                      */
                     void SetConsumeEnable(const bool& _consumeEnable);
@@ -112,19 +112,15 @@ namespace TencentCloud
                     bool ConsumeEnableHasBeenSet() const;
 
                     /**
-                     * 获取顺序投递：true
-并发投递：false
-                     * @return ConsumeMessageOrderly 顺序投递：true
-并发投递：false
+                     * 获取<p>顺序投递：true<br>并发投递：false</p>
+                     * @return ConsumeMessageOrderly <p>顺序投递：true<br>并发投递：false</p>
                      * 
                      */
                     bool GetConsumeMessageOrderly() const;
 
                     /**
-                     * 设置顺序投递：true
-并发投递：false
-                     * @param _consumeMessageOrderly 顺序投递：true
-并发投递：false
+                     * 设置<p>顺序投递：true<br>并发投递：false</p>
+                     * @param _consumeMessageOrderly <p>顺序投递：true<br>并发投递：false</p>
                      * 
                      */
                     void SetConsumeMessageOrderly(const bool& _consumeMessageOrderly);
@@ -137,15 +133,15 @@ namespace TencentCloud
                     bool ConsumeMessageOrderlyHasBeenSet() const;
 
                     /**
-                     * 获取最大重试次数
-                     * @return MaxRetryTimes 最大重试次数
+                     * 获取<p>最大重试次数</p>
+                     * @return MaxRetryTimes <p>最大重试次数</p>
                      * 
                      */
                     int64_t GetMaxRetryTimes() const;
 
                     /**
-                     * 设置最大重试次数
-                     * @param _maxRetryTimes 最大重试次数
+                     * 设置<p>最大重试次数</p>
+                     * @param _maxRetryTimes <p>最大重试次数</p>
                      * 
                      */
                     void SetMaxRetryTimes(const int64_t& _maxRetryTimes);
@@ -158,15 +154,15 @@ namespace TencentCloud
                     bool MaxRetryTimesHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -179,18 +175,18 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取4.x的集群ID
+                     * 获取<p>4.x的集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterIdV4 4.x的集群ID
+                     * @return ClusterIdV4 <p>4.x的集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterIdV4() const;
 
                     /**
-                     * 设置4.x的集群ID
+                     * 设置<p>4.x的集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterIdV4 4.x的集群ID
+                     * @param _clusterIdV4 <p>4.x的集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -204,18 +200,18 @@ namespace TencentCloud
                     bool ClusterIdV4HasBeenSet() const;
 
                     /**
-                     * 获取4.x的命名空间
+                     * 获取<p>4.x的命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NamespaceV4 4.x的命名空间
+                     * @return NamespaceV4 <p>4.x的命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespaceV4() const;
 
                     /**
-                     * 设置4.x的命名空间
+                     * 设置<p>4.x的命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _namespaceV4 4.x的命名空间
+                     * @param _namespaceV4 <p>4.x的命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -229,18 +225,18 @@ namespace TencentCloud
                     bool NamespaceV4HasBeenSet() const;
 
                     /**
-                     * 获取4.x的消费组名称
+                     * 获取<p>4.x的消费组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConsumerGroupV4 4.x的消费组名称
+                     * @return ConsumerGroupV4 <p>4.x的消费组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConsumerGroupV4() const;
 
                     /**
-                     * 设置4.x的消费组名称
+                     * 设置<p>4.x的消费组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _consumerGroupV4 4.x的消费组名称
+                     * @param _consumerGroupV4 <p>4.x的消费组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -254,18 +250,18 @@ namespace TencentCloud
                     bool ConsumerGroupV4HasBeenSet() const;
 
                     /**
-                     * 获取4.x的完整命名空间
+                     * 获取<p>4.x的完整命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FullNamespaceV4 4.x的完整命名空间
+                     * @return FullNamespaceV4 <p>4.x的完整命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFullNamespaceV4() const;
 
                     /**
-                     * 设置4.x的完整命名空间
+                     * 设置<p>4.x的完整命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fullNamespaceV4 4.x的完整命名空间
+                     * @param _fullNamespaceV4 <p>4.x的完整命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -279,15 +275,15 @@ namespace TencentCloud
                     bool FullNamespaceV4HasBeenSet() const;
 
                     /**
-                     * 获取订阅的主题个数
-                     * @return SubscribeTopicNum 订阅的主题个数
+                     * 获取<p>订阅的主题个数</p>
+                     * @return SubscribeTopicNum <p>订阅的主题个数</p>
                      * 
                      */
                     int64_t GetSubscribeTopicNum() const;
 
                     /**
-                     * 设置订阅的主题个数
-                     * @param _subscribeTopicNum 订阅的主题个数
+                     * 设置<p>订阅的主题个数</p>
+                     * @param _subscribeTopicNum <p>订阅的主题个数</p>
                      * 
                      */
                     void SetSubscribeTopicNum(const int64_t& _subscribeTopicNum);
@@ -300,18 +296,18 @@ namespace TencentCloud
                     bool SubscribeTopicNumHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间
+                     * @return CreateTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间
+                     * @param _createTime <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -325,15 +321,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取绑定的标签列表
-                     * @return TagList 绑定的标签列表
+                     * 获取<p>绑定的标签列表</p>
+                     * @return TagList <p>绑定的标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTagList() const;
 
                     /**
-                     * 设置绑定的标签列表
-                     * @param _tagList 绑定的标签列表
+                     * 设置<p>绑定的标签列表</p>
+                     * @param _tagList <p>绑定的标签列表</p>
                      * 
                      */
                     void SetTagList(const std::vector<Tag>& _tagList);
@@ -346,15 +342,15 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取重试策略
-                     * @return RetryPolicy 重试策略
+                     * 获取<p>重试策略</p>
+                     * @return RetryPolicy <p>重试策略</p>
                      * 
                      */
                     RetryPolicy GetRetryPolicy() const;
 
                     /**
-                     * 设置重试策略
-                     * @param _retryPolicy 重试策略
+                     * 设置<p>重试策略</p>
+                     * @param _retryPolicy <p>重试策略</p>
                      * 
                      */
                     void SetRetryPolicy(const RetryPolicy& _retryPolicy);
@@ -366,97 +362,150 @@ namespace TencentCloud
                      */
                     bool RetryPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>消费模式，枚举值如下：</p><ul><li>CLUSTERING：集群/广播消费</li><li>LITE：LiteTopic 消费</li></ul>
+                     * @return ConsumeModel <p>消费模式，枚举值如下：</p><ul><li>CLUSTERING：集群/广播消费</li><li>LITE：LiteTopic 消费</li></ul>
+                     * 
+                     */
+                    std::string GetConsumeModel() const;
+
+                    /**
+                     * 设置<p>消费模式，枚举值如下：</p><ul><li>CLUSTERING：集群/广播消费</li><li>LITE：LiteTopic 消费</li></ul>
+                     * @param _consumeModel <p>消费模式，枚举值如下：</p><ul><li>CLUSTERING：集群/广播消费</li><li>LITE：LiteTopic 消费</li></ul>
+                     * 
+                     */
+                    void SetConsumeModel(const std::string& _consumeModel);
+
+                    /**
+                     * 判断参数 ConsumeModel 是否已赋值
+                     * @return ConsumeModel 是否已赋值
+                     * 
+                     */
+                    bool ConsumeModelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义的死信Topic名称</p>
+                     * @return DeadLetterTargetTopic <p>自定义的死信Topic名称</p>
+                     * 
+                     */
+                    std::string GetDeadLetterTargetTopic() const;
+
+                    /**
+                     * 设置<p>自定义的死信Topic名称</p>
+                     * @param _deadLetterTargetTopic <p>自定义的死信Topic名称</p>
+                     * 
+                     */
+                    void SetDeadLetterTargetTopic(const std::string& _deadLetterTargetTopic);
+
+                    /**
+                     * 判断参数 DeadLetterTargetTopic 是否已赋值
+                     * @return DeadLetterTargetTopic 是否已赋值
+                     * 
+                     */
+                    bool DeadLetterTargetTopicHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 消费组名称
+                     * <p>消费组名称</p>
                      */
                     std::string m_consumerGroup;
                     bool m_consumerGroupHasBeenSet;
 
                     /**
-                     * 是否开启消费
+                     * <p>是否开启消费</p>
                      */
                     bool m_consumeEnable;
                     bool m_consumeEnableHasBeenSet;
 
                     /**
-                     * 顺序投递：true
-并发投递：false
+                     * <p>顺序投递：true<br>并发投递：false</p>
                      */
                     bool m_consumeMessageOrderly;
                     bool m_consumeMessageOrderlyHasBeenSet;
 
                     /**
-                     * 最大重试次数
+                     * <p>最大重试次数</p>
                      */
                     int64_t m_maxRetryTimes;
                     bool m_maxRetryTimesHasBeenSet;
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 4.x的集群ID
+                     * <p>4.x的集群ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterIdV4;
                     bool m_clusterIdV4HasBeenSet;
 
                     /**
-                     * 4.x的命名空间
+                     * <p>4.x的命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceV4;
                     bool m_namespaceV4HasBeenSet;
 
                     /**
-                     * 4.x的消费组名称
+                     * <p>4.x的消费组名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_consumerGroupV4;
                     bool m_consumerGroupV4HasBeenSet;
 
                     /**
-                     * 4.x的完整命名空间
+                     * <p>4.x的完整命名空间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fullNamespaceV4;
                     bool m_fullNamespaceV4HasBeenSet;
 
                     /**
-                     * 订阅的主题个数
+                     * <p>订阅的主题个数</p>
                      */
                     int64_t m_subscribeTopicNum;
                     bool m_subscribeTopicNumHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 绑定的标签列表
+                     * <p>绑定的标签列表</p>
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 重试策略
+                     * <p>重试策略</p>
                      */
                     RetryPolicy m_retryPolicy;
                     bool m_retryPolicyHasBeenSet;
+
+                    /**
+                     * <p>消费模式，枚举值如下：</p><ul><li>CLUSTERING：集群/广播消费</li><li>LITE：LiteTopic 消费</li></ul>
+                     */
+                    std::string m_consumeModel;
+                    bool m_consumeModelHasBeenSet;
+
+                    /**
+                     * <p>自定义的死信Topic名称</p>
+                     */
+                    std::string m_deadLetterTargetTopic;
+                    bool m_deadLetterTargetTopicHasBeenSet;
 
                 };
             }

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取消息内容
-                     * @return MsgBody 消息内容
+                     * 获取<p>消息内容</p>
+                     * @return MsgBody <p>消息内容</p>
                      * 
                      */
                     std::string GetMsgBody() const;
 
                     /**
-                     * 设置消息内容
-                     * @param _msgBody 消息内容
+                     * 设置<p>消息内容</p>
+                     * @param _msgBody <p>消息内容</p>
                      * 
                      */
                     void SetMsgBody(const std::string& _msgBody);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MsgBodyHasBeenSet() const;
 
                     /**
-                     * 获取消息Key
-                     * @return MsgKey 消息Key
+                     * 获取<p>消息Key</p>
+                     * @return MsgKey <p>消息Key</p>
                      * 
                      */
                     std::string GetMsgKey() const;
 
                     /**
-                     * 设置消息Key
-                     * @param _msgKey 消息Key
+                     * 设置<p>消息Key</p>
+                     * @param _msgKey <p>消息Key</p>
                      * 
                      */
                     void SetMsgKey(const std::string& _msgKey);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool MsgKeyHasBeenSet() const;
 
                     /**
-                     * 获取消息Tag
-                     * @return MsgTag 消息Tag
+                     * 获取<p>消息Tag</p>
+                     * @return MsgTag <p>消息Tag</p>
                      * 
                      */
                     std::string GetMsgTag() const;
 
                     /**
-                     * 设置消息Tag
-                     * @param _msgTag 消息Tag
+                     * 设置<p>消息Tag</p>
+                     * @param _msgTag <p>消息Tag</p>
                      * 
                      */
                     void SetMsgTag(const std::string& _msgTag);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool MsgTagHasBeenSet() const;
 
                     /**
-                     * 获取轻量主题
-                     * @return LiteTopic 轻量主题
+                     * 获取<p>轻量主题</p>
+                     * @return LiteTopic <p>轻量主题</p>
                      * 
                      */
                     std::string GetLiteTopic() const;
 
                     /**
-                     * 设置轻量主题
-                     * @param _liteTopic 轻量主题
+                     * 设置<p>轻量主题</p>
+                     * @param _liteTopic <p>轻量主题</p>
                      * 
                      */
                     void SetLiteTopic(const std::string& _liteTopic);
@@ -167,6 +167,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LiteTopicHasBeenSet() const;
+
+                    /**
+                     * 获取<p>指定队列优先级</p>
+                     * @return Priority <p>指定队列优先级</p>
+                     * 
+                     */
+                    int64_t GetPriority() const;
+
+                    /**
+                     * 设置<p>指定队列优先级</p>
+                     * @param _priority <p>指定队列优先级</p>
+                     * 
+                     */
+                    void SetPriority(const int64_t& _priority);
+
+                    /**
+                     * 判断参数 Priority 是否已赋值
+                     * @return Priority 是否已赋值
+                     * 
+                     */
+                    bool PriorityHasBeenSet() const;
 
                 private:
 
@@ -183,28 +204,34 @@ namespace TencentCloud
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 消息内容
+                     * <p>消息内容</p>
                      */
                     std::string m_msgBody;
                     bool m_msgBodyHasBeenSet;
 
                     /**
-                     * 消息Key
+                     * <p>消息Key</p>
                      */
                     std::string m_msgKey;
                     bool m_msgKeyHasBeenSet;
 
                     /**
-                     * 消息Tag
+                     * <p>消息Tag</p>
                      */
                     std::string m_msgTag;
                     bool m_msgTagHasBeenSet;
 
                     /**
-                     * 轻量主题
+                     * <p>轻量主题</p>
                      */
                     std::string m_liteTopic;
                     bool m_liteTopicHasBeenSet;
+
+                    /**
+                     * <p>指定队列优先级</p>
+                     */
+                    int64_t m_priority;
+                    bool m_priorityHasBeenSet;
 
                 };
             }

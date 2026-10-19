@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 获取<p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>
+                     * @return InstanceId <p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
-                     * @param _instanceId 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * 设置<p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>
+                     * @param _instanceId <p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取记录偏移量，默认值为0。
-                     * @return Offset 记录偏移量，默认值为0。
+                     * 获取<p>记录偏移量，默认值为0。</p>
+                     * @return Offset <p>记录偏移量，默认值为0。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置记录偏移量，默认值为0。
-                     * @param _offset 记录偏移量，默认值为0。
+                     * 设置<p>记录偏移量，默认值为0。</p>
+                     * @param _offset <p>记录偏移量，默认值为0。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取单次请求返回的数量，默认值为20，最小值为1，最大值为100。
-                     * @return Limit 单次请求返回的数量，默认值为20，最小值为1，最大值为100。
+                     * 获取<p>单次请求返回的数量，默认值为20，最小值为1，最大值为100。</p>
+                     * @return Limit <p>单次请求返回的数量，默认值为20，最小值为1，最大值为100。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次请求返回的数量，默认值为20，最小值为1，最大值为100。
-                     * @param _limit 单次请求返回的数量，默认值为20，最小值为1，最大值为100。
+                     * 设置<p>单次请求返回的数量，默认值为20，最小值为1，最大值为100。</p>
+                     * @param _limit <p>单次请求返回的数量，默认值为20，最小值为1，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取匹配账号名的正则表达式，规则同 MySQL 官网。
-                     * @return AccountRegexp 匹配账号名的正则表达式，规则同 MySQL 官网。
+                     * 获取<p>匹配账号名的正则表达式，规则同 MySQL 官网。</p>
+                     * @return AccountRegexp <p>匹配账号名的正则表达式，规则同 MySQL 官网。</p>
                      * 
                      */
                     std::string GetAccountRegexp() const;
 
                     /**
-                     * 设置匹配账号名的正则表达式，规则同 MySQL 官网。
-                     * @param _accountRegexp 匹配账号名的正则表达式，规则同 MySQL 官网。
+                     * 设置<p>匹配账号名的正则表达式，规则同 MySQL 官网。</p>
+                     * @param _accountRegexp <p>匹配账号名的正则表达式，规则同 MySQL 官网。</p>
                      * 
                      */
                     void SetAccountRegexp(const std::string& _accountRegexp);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool AccountRegexpHasBeenSet() const;
 
                     /**
-                     * 获取默认无排序，支持：ASC、DESC、asc、desc
-                     * @return SortBy 默认无排序，支持：ASC、DESC、asc、desc
+                     * 获取<p>默认无排序，支持：ASC、DESC、asc、desc</p>
+                     * @return SortBy <p>默认无排序，支持：ASC、DESC、asc、desc</p>
                      * 
                      */
                     std::string GetSortBy() const;
 
                     /**
-                     * 设置默认无排序，支持：ASC、DESC、asc、desc
-                     * @param _sortBy 默认无排序，支持：ASC、DESC、asc、desc
+                     * 设置<p>默认无排序，支持：ASC、DESC、asc、desc</p>
+                     * @param _sortBy <p>默认无排序，支持：ASC、DESC、asc、desc</p>
                      * 
                      */
                     void SetSortBy(const std::string& _sortBy);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SortByHasBeenSet() const;
 
                     /**
-                     * 获取待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)
-                     * @return OrderBy 待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)
+                     * 获取<p>待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)</p>
+                     * @return OrderBy <p>待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)
-                     * @param _orderBy 待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)
+                     * 设置<p>待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)</p>
+                     * @param _orderBy <p>待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网
-                     * @return HostRegexp 匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网
+                     * 获取<p>匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网</p>
+                     * @return HostRegexp <p>匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网</p>
                      * 
                      */
                     std::string GetHostRegexp() const;
 
                     /**
-                     * 设置匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网
-                     * @param _hostRegexp 匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网
+                     * 设置<p>匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网</p>
+                     * @param _hostRegexp <p>匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网</p>
                      * 
                      */
                     void SetHostRegexp(const std::string& _hostRegexp);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * <p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 记录偏移量，默认值为0。
+                     * <p>记录偏移量，默认值为0。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 单次请求返回的数量，默认值为20，最小值为1，最大值为100。
+                     * <p>单次请求返回的数量，默认值为20，最小值为1，最大值为100。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 匹配账号名的正则表达式，规则同 MySQL 官网。
+                     * <p>匹配账号名的正则表达式，规则同 MySQL 官网。</p>
                      */
                     std::string m_accountRegexp;
                     bool m_accountRegexpHasBeenSet;
 
                     /**
-                     * 默认无排序，支持：ASC、DESC、asc、desc
+                     * <p>默认无排序，支持：ASC、DESC、asc、desc</p>
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;
 
                     /**
-                     * 待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)
+                     * <p>待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网
+                     * <p>匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网</p>
                      */
                     std::string m_hostRegexp;
                     bool m_hostRegexpHasBeenSet;

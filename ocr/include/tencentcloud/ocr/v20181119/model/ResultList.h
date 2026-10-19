@@ -240,6 +240,69 @@ namespace TencentCloud
                      */
                     bool CoordPageIndexHasBeenSet() const;
 
+                    /**
+                     * 获取<p>返回正确答案内容</p>
+                     * @return RightAnswer <p>返回正确答案内容</p>
+                     * 
+                     */
+                    std::string GetRightAnswer() const;
+
+                    /**
+                     * 设置<p>返回正确答案内容</p>
+                     * @param _rightAnswer <p>返回正确答案内容</p>
+                     * 
+                     */
+                    void SetRightAnswer(const std::string& _rightAnswer);
+
+                    /**
+                     * 判断参数 RightAnswer 是否已赋值
+                     * @return RightAnswer 是否已赋值
+                     * 
+                     */
+                    bool RightAnswerHasBeenSet() const;
+
+                    /**
+                     * 获取<p>学科（如语文、数学、英语）</p>
+                     * @return Subject <p>学科（如语文、数学、英语）</p>
+                     * 
+                     */
+                    std::string GetSubject() const;
+
+                    /**
+                     * 设置<p>学科（如语文、数学、英语）</p>
+                     * @param _subject <p>学科（如语文、数学、英语）</p>
+                     * 
+                     */
+                    void SetSubject(const std::string& _subject);
+
+                    /**
+                     * 判断参数 Subject 是否已赋值
+                     * @return Subject 是否已赋值
+                     * 
+                     */
+                    bool SubjectHasBeenSet() const;
+
+                    /**
+                     * 获取<p>返回题目的知识点内容</p>
+                     * @return KnowledgePoints <p>返回题目的知识点内容</p>
+                     * 
+                     */
+                    std::vector<std::string> GetKnowledgePoints() const;
+
+                    /**
+                     * 设置<p>返回题目的知识点内容</p>
+                     * @param _knowledgePoints <p>返回题目的知识点内容</p>
+                     * 
+                     */
+                    void SetKnowledgePoints(const std::vector<std::string>& _knowledgePoints);
+
+                    /**
+                     * 判断参数 KnowledgePoints 是否已赋值
+                     * @return KnowledgePoints 是否已赋值
+                     * 
+                     */
+                    bool KnowledgePointsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -295,6 +358,24 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_coordPageIndex;
                     bool m_coordPageIndexHasBeenSet;
+
+                    /**
+                     * <p>返回正确答案内容</p>
+                     */
+                    std::string m_rightAnswer;
+                    bool m_rightAnswerHasBeenSet;
+
+                    /**
+                     * <p>学科（如语文、数学、英语）</p>
+                     */
+                    std::string m_subject;
+                    bool m_subjectHasBeenSet;
+
+                    /**
+                     * <p>返回题目的知识点内容</p>
+                     */
+                    std::vector<std::string> m_knowledgePoints;
+                    bool m_knowledgePointsHasBeenSet;
 
                 };
             }

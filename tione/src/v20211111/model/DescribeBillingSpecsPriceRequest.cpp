@@ -23,7 +23,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DescribeBillingSpecsPriceRequest::DescribeBillingSpecsPriceRequest() :
-    m_specsParamHasBeenSet(false)
+    m_specsParamHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeBillingSpecsPriceRequest::ToJsonString() const
         }
     }
 
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -71,6 +80,22 @@ void DescribeBillingSpecsPriceRequest::SetSpecsParam(const vector<SpecUnit>& _sp
 bool DescribeBillingSpecsPriceRequest::SpecsParamHasBeenSet() const
 {
     return m_specsParamHasBeenSet;
+}
+
+string DescribeBillingSpecsPriceRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeBillingSpecsPriceRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeBillingSpecsPriceRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 

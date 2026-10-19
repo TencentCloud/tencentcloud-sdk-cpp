@@ -36,7 +36,8 @@ DescribeConsumerGroupResponse::DescribeConsumerGroupResponse() :
     m_messageModelHasBeenSet(false),
     m_retryPolicyHasBeenSet(false),
     m_consumeModelHasBeenSet(false),
-    m_liteTopicHasBeenSet(false)
+    m_liteTopicHasBeenSet(false),
+    m_deadLetterTargetTopicHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,16 @@ CoreInternalOutcome DescribeConsumerGroupResponse::Deserialize(const string &pay
         m_liteTopicHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeadLetterTargetTopic") && !rsp["DeadLetterTargetTopic"].IsNull())
+    {
+        if (!rsp["DeadLetterTargetTopic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeadLetterTargetTopic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadLetterTargetTopic = string(rsp["DeadLetterTargetTopic"].GetString());
+        m_deadLetterTargetTopicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -324,6 +335,14 @@ string DescribeConsumerGroupResponse::ToJsonString() const
         string key = "LiteTopic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_liteTopic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deadLetterTargetTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeadLetterTargetTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deadLetterTargetTopic.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -466,6 +485,16 @@ string DescribeConsumerGroupResponse::GetLiteTopic() const
 bool DescribeConsumerGroupResponse::LiteTopicHasBeenSet() const
 {
     return m_liteTopicHasBeenSet;
+}
+
+string DescribeConsumerGroupResponse::GetDeadLetterTargetTopic() const
+{
+    return m_deadLetterTargetTopic;
+}
+
+bool DescribeConsumerGroupResponse::DeadLetterTargetTopicHasBeenSet() const
+{
+    return m_deadLetterTargetTopicHasBeenSet;
 }
 
 

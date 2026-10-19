@@ -24,6 +24,7 @@ using namespace std;
 
 ModifyModelServiceAuthorizationRequest::ModifyModelServiceAuthorizationRequest() :
     m_serviceGroupIdHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_authorizationEnableHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string ModifyModelServiceAuthorizationRequest::ToJsonString() const
         string key = "ServiceGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authorizationEnableHasBeenSet)
@@ -73,6 +82,22 @@ void ModifyModelServiceAuthorizationRequest::SetServiceGroupId(const string& _se
 bool ModifyModelServiceAuthorizationRequest::ServiceGroupIdHasBeenSet() const
 {
     return m_serviceGroupIdHasBeenSet;
+}
+
+string ModifyModelServiceAuthorizationRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void ModifyModelServiceAuthorizationRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool ModifyModelServiceAuthorizationRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 bool ModifyModelServiceAuthorizationRequest::GetAuthorizationEnable() const

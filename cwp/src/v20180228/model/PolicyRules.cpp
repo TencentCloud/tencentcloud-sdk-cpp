@@ -23,7 +23,9 @@ using namespace std;
 PolicyRules::PolicyRules() :
     m_processHasBeenSet(false),
     m_pProcessHasBeenSet(false),
-    m_aProcessHasBeenSet(false)
+    m_aProcessHasBeenSet(false),
+    m_filePathHasBeenSet(false),
+    m_fileActionsHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,29 @@ CoreInternalOutcome PolicyRules::Deserialize(const rapidjson::Value &value)
         m_aProcessHasBeenSet = true;
     }
 
+    if (value.HasMember("FilePath") && !value["FilePath"].IsNull())
+    {
+        if (!value["FilePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PolicyRules.FilePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_filePath = string(value["FilePath"].GetString());
+        m_filePathHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileActions") && !value["FileActions"].IsNull())
+    {
+        if (!value["FileActions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PolicyRules.FileActions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FileActions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_fileActions.push_back((*itr).GetString());
+        }
+        m_fileActionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +140,27 @@ void PolicyRules::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aProcess.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_filePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileActionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileActions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_fileActions.begin(); itr != m_fileActions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -166,5 +212,37 @@ void PolicyRules::SetAProcess(const CommandLine& _aProcess)
 bool PolicyRules::AProcessHasBeenSet() const
 {
     return m_aProcessHasBeenSet;
+}
+
+string PolicyRules::GetFilePath() const
+{
+    return m_filePath;
+}
+
+void PolicyRules::SetFilePath(const string& _filePath)
+{
+    m_filePath = _filePath;
+    m_filePathHasBeenSet = true;
+}
+
+bool PolicyRules::FilePathHasBeenSet() const
+{
+    return m_filePathHasBeenSet;
+}
+
+vector<string> PolicyRules::GetFileActions() const
+{
+    return m_fileActions;
+}
+
+void PolicyRules::SetFileActions(const vector<string>& _fileActions)
+{
+    m_fileActions = _fileActions;
+    m_fileActionsHasBeenSet = true;
+}
+
+bool PolicyRules::FileActionsHasBeenSet() const
+{
+    return m_fileActionsHasBeenSet;
 }
 

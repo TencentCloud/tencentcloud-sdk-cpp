@@ -96,6 +96,106 @@ namespace TencentCloud
                      */
                     bool EnUSHasBeenSet() const;
 
+                    /**
+                     * 获取<p>中文主题</p><p>入参限制：长度限制100字符以内，仅允许：{{.VerificationCode}}、{{.Usage}}、{{.Email}}、{{.ExpireMinutes}}、{{.ConfirmationURL}}，未知变量拒绝</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubjectZhCN <p>中文主题</p><p>入参限制：长度限制100字符以内，仅允许：{{.VerificationCode}}、{{.Usage}}、{{.Email}}、{{.ExpireMinutes}}、{{.ConfirmationURL}}，未知变量拒绝</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubjectZhCN() const;
+
+                    /**
+                     * 设置<p>中文主题</p><p>入参限制：长度限制100字符以内，仅允许：{{.VerificationCode}}、{{.Usage}}、{{.Email}}、{{.ExpireMinutes}}、{{.ConfirmationURL}}，未知变量拒绝</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subjectZhCN <p>中文主题</p><p>入参限制：长度限制100字符以内，仅允许：{{.VerificationCode}}、{{.Usage}}、{{.Email}}、{{.ExpireMinutes}}、{{.ConfirmationURL}}，未知变量拒绝</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubjectZhCN(const std::string& _subjectZhCN);
+
+                    /**
+                     * 判断参数 SubjectZhCN 是否已赋值
+                     * @return SubjectZhCN 是否已赋值
+                     * 
+                     */
+                    bool SubjectZhCNHasBeenSet() const;
+
+                    /**
+                     * 获取<p>英文主题</p><p>入参限制：长度限制100字符以内，仅允许：{{.VerificationCode}}、{{.Usage}}、{{.Email}}、{{.ExpireMinutes}}、{{.ConfirmationURL}}，未知变量拒绝</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubjectEnUS <p>英文主题</p><p>入参限制：长度限制100字符以内，仅允许：{{.VerificationCode}}、{{.Usage}}、{{.Email}}、{{.ExpireMinutes}}、{{.ConfirmationURL}}，未知变量拒绝</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubjectEnUS() const;
+
+                    /**
+                     * 设置<p>英文主题</p><p>入参限制：长度限制100字符以内，仅允许：{{.VerificationCode}}、{{.Usage}}、{{.Email}}、{{.ExpireMinutes}}、{{.ConfirmationURL}}，未知变量拒绝</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subjectEnUS <p>英文主题</p><p>入参限制：长度限制100字符以内，仅允许：{{.VerificationCode}}、{{.Usage}}、{{.Email}}、{{.ExpireMinutes}}、{{.ConfirmationURL}}，未知变量拒绝</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubjectEnUS(const std::string& _subjectEnUS);
+
+                    /**
+                     * 判断参数 SubjectEnUS 是否已赋值
+                     * @return SubjectEnUS 是否已赋值
+                     * 
+                     */
+                    bool SubjectEnUSHasBeenSet() const;
+
+                    /**
+                     * 获取<p>中文发件人</p><p>入参限制：长度限制50字符以内，静态纯文本，不支持变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SenderNameZhCN <p>中文发件人</p><p>入参限制：长度限制50字符以内，静态纯文本，不支持变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSenderNameZhCN() const;
+
+                    /**
+                     * 设置<p>中文发件人</p><p>入参限制：长度限制50字符以内，静态纯文本，不支持变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _senderNameZhCN <p>中文发件人</p><p>入参限制：长度限制50字符以内，静态纯文本，不支持变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSenderNameZhCN(const std::string& _senderNameZhCN);
+
+                    /**
+                     * 判断参数 SenderNameZhCN 是否已赋值
+                     * @return SenderNameZhCN 是否已赋值
+                     * 
+                     */
+                    bool SenderNameZhCNHasBeenSet() const;
+
+                    /**
+                     * 获取<p>英文发件人</p><p>默认值：长度限制50字符以内，静态纯文本，不支持变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SenderNameEnUS <p>英文发件人</p><p>默认值：长度限制50字符以内，静态纯文本，不支持变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSenderNameEnUS() const;
+
+                    /**
+                     * 设置<p>英文发件人</p><p>默认值：长度限制50字符以内，静态纯文本，不支持变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _senderNameEnUS <p>英文发件人</p><p>默认值：长度限制50字符以内，静态纯文本，不支持变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSenderNameEnUS(const std::string& _senderNameEnUS);
+
+                    /**
+                     * 判断参数 SenderNameEnUS 是否已赋值
+                     * @return SenderNameEnUS 是否已赋值
+                     * 
+                     */
+                    bool SenderNameEnUSHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +211,34 @@ namespace TencentCloud
                      */
                     std::string m_enUS;
                     bool m_enUSHasBeenSet;
+
+                    /**
+                     * <p>中文主题</p><p>入参限制：长度限制100字符以内，仅允许：{{.VerificationCode}}、{{.Usage}}、{{.Email}}、{{.ExpireMinutes}}、{{.ConfirmationURL}}，未知变量拒绝</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subjectZhCN;
+                    bool m_subjectZhCNHasBeenSet;
+
+                    /**
+                     * <p>英文主题</p><p>入参限制：长度限制100字符以内，仅允许：{{.VerificationCode}}、{{.Usage}}、{{.Email}}、{{.ExpireMinutes}}、{{.ConfirmationURL}}，未知变量拒绝</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subjectEnUS;
+                    bool m_subjectEnUSHasBeenSet;
+
+                    /**
+                     * <p>中文发件人</p><p>入参限制：长度限制50字符以内，静态纯文本，不支持变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_senderNameZhCN;
+                    bool m_senderNameZhCNHasBeenSet;
+
+                    /**
+                     * <p>英文发件人</p><p>默认值：长度限制50字符以内，静态纯文本，不支持变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_senderNameEnUS;
+                    bool m_senderNameEnUSHasBeenSet;
 
                 };
             }

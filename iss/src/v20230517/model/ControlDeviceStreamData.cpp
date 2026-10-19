@@ -23,7 +23,8 @@ using namespace std;
 ControlDeviceStreamData::ControlDeviceStreamData() :
     m_flvHasBeenSet(false),
     m_hlsHasBeenSet(false),
-    m_rtmpHasBeenSet(false)
+    m_rtmpHasBeenSet(false),
+    m_fMp4HasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ControlDeviceStreamData::Deserialize(const rapidjson::Value 
         m_rtmpHasBeenSet = true;
     }
 
+    if (value.HasMember("FMp4") && !value["FMp4"].IsNull())
+    {
+        if (!value["FMp4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ControlDeviceStreamData.FMp4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fMp4 = string(value["FMp4"].GetString());
+        m_fMp4HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ControlDeviceStreamData::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Rtmp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rtmp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fMp4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FMp4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fMp4.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ControlDeviceStreamData::SetRtmp(const string& _rtmp)
 bool ControlDeviceStreamData::RtmpHasBeenSet() const
 {
     return m_rtmpHasBeenSet;
+}
+
+string ControlDeviceStreamData::GetFMp4() const
+{
+    return m_fMp4;
+}
+
+void ControlDeviceStreamData::SetFMp4(const string& _fMp4)
+{
+    m_fMp4 = _fMp4;
+    m_fMp4HasBeenSet = true;
+}
+
+bool ControlDeviceStreamData::FMp4HasBeenSet() const
+{
+    return m_fMp4HasBeenSet;
 }
 

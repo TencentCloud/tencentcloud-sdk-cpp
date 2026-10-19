@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行结果
-                     * @return Data 执行结果
+                     * 获取<p>执行结果</p>
+                     * @return Data <p>执行结果</p>
                      * 
                      */
                     bool GetData() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行结果
+                     * <p>执行结果</p>
                      */
                     bool m_data;
                     bool m_dataHasBeenSet;

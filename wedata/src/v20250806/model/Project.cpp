@@ -29,6 +29,7 @@ Project::Project() :
     m_creatorUinHasBeenSet(false),
     m_projectOwnerUinHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_displayStatusHasBeenSet(false),
     m_projectModelHasBeenSet(false),
     m_workspaceExtHasBeenSet(false)
 {
@@ -117,6 +118,16 @@ CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
         }
         m_status = value["Status"].GetUint64();
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DisplayStatus") && !value["DisplayStatus"].IsNull())
+    {
+        if (!value["DisplayStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.DisplayStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_displayStatus = string(value["DisplayStatus"].GetString());
+        m_displayStatusHasBeenSet = true;
     }
 
     if (value.HasMember("ProjectModel") && !value["ProjectModel"].IsNull())
@@ -218,6 +229,14 @@ void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_displayStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectModelHasBeenSet)
@@ -372,6 +391,22 @@ void Project::SetStatus(const uint64_t& _status)
 bool Project::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string Project::GetDisplayStatus() const
+{
+    return m_displayStatus;
+}
+
+void Project::SetDisplayStatus(const string& _displayStatus)
+{
+    m_displayStatus = _displayStatus;
+    m_displayStatusHasBeenSet = true;
+}
+
+bool Project::DisplayStatusHasBeenSet() const
+{
+    return m_displayStatusHasBeenSet;
 }
 
 string Project::GetProjectModel() const

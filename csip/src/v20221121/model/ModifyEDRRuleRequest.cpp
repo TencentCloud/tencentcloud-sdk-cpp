@@ -54,7 +54,8 @@ ModifyEDRRuleRequest::ModifyEDRRuleRequest() :
     m_clusterIDsWithAppIdHasBeenSet(false),
     m_excludeClusterIDsWithAppIdHasBeenSet(false),
     m_imageIDsWithAppIdHasBeenSet(false),
-    m_conditionMatchesHasBeenSet(false)
+    m_conditionMatchesHasBeenSet(false),
+    m_fileOperationRulesHasBeenSet(false)
 {
 }
 
@@ -414,6 +415,15 @@ string ModifyEDRRuleRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_fileOperationRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileOperationRules";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileOperationRules.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -934,6 +944,22 @@ void ModifyEDRRuleRequest::SetConditionMatches(const vector<ConditionMatch>& _co
 bool ModifyEDRRuleRequest::ConditionMatchesHasBeenSet() const
 {
     return m_conditionMatchesHasBeenSet;
+}
+
+RuleContentFileOperation ModifyEDRRuleRequest::GetFileOperationRules() const
+{
+    return m_fileOperationRules;
+}
+
+void ModifyEDRRuleRequest::SetFileOperationRules(const RuleContentFileOperation& _fileOperationRules)
+{
+    m_fileOperationRules = _fileOperationRules;
+    m_fileOperationRulesHasBeenSet = true;
+}
+
+bool ModifyEDRRuleRequest::FileOperationRulesHasBeenSet() const
+{
+    return m_fileOperationRulesHasBeenSet;
 }
 
 

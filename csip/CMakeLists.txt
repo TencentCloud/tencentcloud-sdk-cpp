@@ -144,6 +144,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribePortScanTaskCountResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteImageRegistryTimedScanTaskConfigRequest.h
   include/tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskRequest.h
+  include/tencentcloud/csip/v20221121/model/BaselinePolicyBrief.h
   include/tencentcloud/csip/v20221121/model/ModifyEDRRuleStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeBanStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDynamicAssetsResponse.h
@@ -1546,6 +1547,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/CreateAssetFilterViewResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVulScanPeriodicRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeSubUserInfoResponse.h
+  include/tencentcloud/csip/v20221121/model/RuleContentFileOperation.h
   include/tencentcloud/csip/v20221121/model/DescribeDomainAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeNICAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmRiskStrategyRequest.h
@@ -2214,6 +2216,7 @@ set(csip_src
   src/v20221121/model/DescribePortScanTaskCountResponse.cpp
   src/v20221121/model/DeleteImageRegistryTimedScanTaskConfigRequest.cpp
   src/v20221121/model/CreateRiskCenterScanTaskRequest.cpp
+  src/v20221121/model/BaselinePolicyBrief.cpp
   src/v20221121/model/ModifyEDRRuleStatusResponse.cpp
   src/v20221121/model/DescribeBanStatusResponse.cpp
   src/v20221121/model/DescribeDynamicAssetsResponse.cpp
@@ -3616,6 +3619,7 @@ set(csip_src
   src/v20221121/model/CreateAssetFilterViewResponse.cpp
   src/v20221121/model/DescribeVulScanPeriodicRequest.cpp
   src/v20221121/model/DescribeSubUserInfoResponse.cpp
+  src/v20221121/model/RuleContentFileOperation.cpp
   src/v20221121/model/DescribeDomainAssetsResponse.cpp
   src/v20221121/model/DescribeNICAssetsResponse.cpp
   src/v20221121/model/DeleteDspmRiskStrategyRequest.cpp

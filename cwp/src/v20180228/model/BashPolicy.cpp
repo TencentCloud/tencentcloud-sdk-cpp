@@ -37,7 +37,8 @@ BashPolicy::BashPolicy() :
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_uuidsHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_matchTypeHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,16 @@ CoreInternalOutcome BashPolicy::Deserialize(const rapidjson::Value &value)
         m_rulesHasBeenSet = true;
     }
 
+    if (value.HasMember("MatchType") && !value["MatchType"].IsNull())
+    {
+        if (!value["MatchType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashPolicy.MatchType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchType = value["MatchType"].GetUint64();
+        m_matchTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -381,6 +392,14 @@ void BashPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rules.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_matchTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_matchType, allocator);
     }
 
 }
@@ -656,5 +675,21 @@ void BashPolicy::SetRules(const PolicyRules& _rules)
 bool BashPolicy::RulesHasBeenSet() const
 {
     return m_rulesHasBeenSet;
+}
+
+uint64_t BashPolicy::GetMatchType() const
+{
+    return m_matchType;
+}
+
+void BashPolicy::SetMatchType(const uint64_t& _matchType)
+{
+    m_matchType = _matchType;
+    m_matchTypeHasBeenSet = true;
+}
+
+bool BashPolicy::MatchTypeHasBeenSet() const
+{
+    return m_matchTypeHasBeenSet;
 }
 

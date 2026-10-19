@@ -28,6 +28,7 @@
 #include <tencentcloud/dts/v20211206/model/ConsistencyOption.h>
 #include <tencentcloud/dts/v20211206/model/KeyValuePairOption.h>
 #include <tencentcloud/dts/v20211206/model/RateLimit.h>
+#include <tencentcloud/dts/v20211206/model/SkipDdlOnError.h>
 
 
 namespace TencentCloud
@@ -243,6 +244,27 @@ namespace TencentCloud
                      */
                     bool RateLimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>跳过报错的DDL策略</p>
+                     * @return SkipDdlOnError <p>跳过报错的DDL策略</p>
+                     * 
+                     */
+                    SkipDdlOnError GetSkipDdlOnError() const;
+
+                    /**
+                     * 设置<p>跳过报错的DDL策略</p>
+                     * @param _skipDdlOnError <p>跳过报错的DDL策略</p>
+                     * 
+                     */
+                    void SetSkipDdlOnError(const SkipDdlOnError& _skipDdlOnError);
+
+                    /**
+                     * 判断参数 SkipDdlOnError 是否已赋值
+                     * @return SkipDdlOnError 是否已赋值
+                     * 
+                     */
+                    bool SkipDdlOnErrorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -299,6 +321,12 @@ namespace TencentCloud
                      */
                     RateLimit m_rateLimit;
                     bool m_rateLimitHasBeenSet;
+
+                    /**
+                     * <p>跳过报错的DDL策略</p>
+                     */
+                    SkipDdlOnError m_skipDdlOnError;
+                    bool m_skipDdlOnErrorHasBeenSet;
 
                 };
             }

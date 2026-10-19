@@ -24,7 +24,8 @@ TemplateOverrides::TemplateOverrides() :
     m_instanceFamiliesHasBeenSet(false),
     m_gpuCountPerNodeHasBeenSet(false),
     m_enableMixedGpuCountHasBeenSet(false),
-    m_enableMultiZoneHasBeenSet(false)
+    m_enableMultiZoneHasBeenSet(false),
+    m_enableJobLoadAutoscalingHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome TemplateOverrides::Deserialize(const rapidjson::Value &value
         m_enableMultiZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableJobLoadAutoscaling") && !value["EnableJobLoadAutoscaling"].IsNull())
+    {
+        if (!value["EnableJobLoadAutoscaling"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateOverrides.EnableJobLoadAutoscaling` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableJobLoadAutoscaling = value["EnableJobLoadAutoscaling"].GetBool();
+        m_enableJobLoadAutoscalingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void TemplateOverrides::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "EnableMultiZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableMultiZone, allocator);
+    }
+
+    if (m_enableJobLoadAutoscalingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableJobLoadAutoscaling";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableJobLoadAutoscaling, allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void TemplateOverrides::SetEnableMultiZone(const bool& _enableMultiZone)
 bool TemplateOverrides::EnableMultiZoneHasBeenSet() const
 {
     return m_enableMultiZoneHasBeenSet;
+}
+
+bool TemplateOverrides::GetEnableJobLoadAutoscaling() const
+{
+    return m_enableJobLoadAutoscaling;
+}
+
+void TemplateOverrides::SetEnableJobLoadAutoscaling(const bool& _enableJobLoadAutoscaling)
+{
+    m_enableJobLoadAutoscaling = _enableJobLoadAutoscaling;
+    m_enableJobLoadAutoscalingHasBeenSet = true;
+}
+
+bool TemplateOverrides::EnableJobLoadAutoscalingHasBeenSet() const
+{
+    return m_enableJobLoadAutoscalingHasBeenSet;
 }
 

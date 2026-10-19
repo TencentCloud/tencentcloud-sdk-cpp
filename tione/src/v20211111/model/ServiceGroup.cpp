@@ -48,7 +48,8 @@ ServiceGroup::ServiceGroup() :
     m_gatewayLogConfigHasBeenSet(false),
     m_gatewayConfigHasBeenSet(false),
     m_changerHasBeenSet(false),
-    m_changerNameHasBeenSet(false)
+    m_changerNameHasBeenSet(false),
+    m_smartRouterHasBeenSet(false)
 {
 }
 
@@ -381,6 +382,23 @@ CoreInternalOutcome ServiceGroup::Deserialize(const rapidjson::Value &value)
         m_changerNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SmartRouter") && !value["SmartRouter"].IsNull())
+    {
+        if (!value["SmartRouter"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.SmartRouter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_smartRouter.Deserialize(value["SmartRouter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_smartRouterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -633,6 +651,15 @@ void ServiceGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ChangerName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_changerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_smartRouterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartRouter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartRouter.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1084,5 +1111,21 @@ void ServiceGroup::SetChangerName(const string& _changerName)
 bool ServiceGroup::ChangerNameHasBeenSet() const
 {
     return m_changerNameHasBeenSet;
+}
+
+SmartRouter ServiceGroup::GetSmartRouter() const
+{
+    return m_smartRouter;
+}
+
+void ServiceGroup::SetSmartRouter(const SmartRouter& _smartRouter)
+{
+    m_smartRouter = _smartRouter;
+    m_smartRouterHasBeenSet = true;
+}
+
+bool ServiceGroup::SmartRouterHasBeenSet() const
+{
+    return m_smartRouterHasBeenSet;
 }
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取flv 流地址
-                     * @return Flv flv 流地址
+                     * 获取<p>flv 流地址</p>
+                     * @return Flv <p>flv 流地址</p>
                      * 
                      */
                     std::string GetFlv() const;
 
                     /**
-                     * 设置flv 流地址
-                     * @param _flv flv 流地址
+                     * 设置<p>flv 流地址</p>
+                     * @param _flv <p>flv 流地址</p>
                      * 
                      */
                     void SetFlv(const std::string& _flv);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FlvHasBeenSet() const;
 
                     /**
-                     * 获取hls 流地址
-                     * @return Hls hls 流地址
+                     * 获取<p>hls 流地址</p>
+                     * @return Hls <p>hls 流地址</p>
                      * 
                      */
                     std::string GetHls() const;
 
                     /**
-                     * 设置hls 流地址
-                     * @param _hls hls 流地址
+                     * 设置<p>hls 流地址</p>
+                     * @param _hls <p>hls 流地址</p>
                      * 
                      */
                     void SetHls(const std::string& _hls);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool HlsHasBeenSet() const;
 
                     /**
-                     * 获取rtmp 流地址
-                     * @return Rtmp rtmp 流地址
+                     * 获取<p>rtmp 流地址</p>
+                     * @return Rtmp <p>rtmp 流地址</p>
                      * 
                      */
                     std::string GetRtmp() const;
 
                     /**
-                     * 设置rtmp 流地址
-                     * @param _rtmp rtmp 流地址
+                     * 设置<p>rtmp 流地址</p>
+                     * @param _rtmp <p>rtmp 流地址</p>
                      * 
                      */
                     void SetRtmp(const std::string& _rtmp);
@@ -109,25 +109,52 @@ namespace TencentCloud
                      */
                     bool RtmpHasBeenSet() const;
 
+                    /**
+                     * 获取<p>fmp4地址</p>
+                     * @return FMp4 <p>fmp4地址</p>
+                     * 
+                     */
+                    std::string GetFMp4() const;
+
+                    /**
+                     * 设置<p>fmp4地址</p>
+                     * @param _fMp4 <p>fmp4地址</p>
+                     * 
+                     */
+                    void SetFMp4(const std::string& _fMp4);
+
+                    /**
+                     * 判断参数 FMp4 是否已赋值
+                     * @return FMp4 是否已赋值
+                     * 
+                     */
+                    bool FMp4HasBeenSet() const;
+
                 private:
 
                     /**
-                     * flv 流地址
+                     * <p>flv 流地址</p>
                      */
                     std::string m_flv;
                     bool m_flvHasBeenSet;
 
                     /**
-                     * hls 流地址
+                     * <p>hls 流地址</p>
                      */
                     std::string m_hls;
                     bool m_hlsHasBeenSet;
 
                     /**
-                     * rtmp 流地址
+                     * <p>rtmp 流地址</p>
                      */
                     std::string m_rtmp;
                     bool m_rtmpHasBeenSet;
+
+                    /**
+                     * <p>fmp4地址</p>
+                     */
+                    std::string m_fMp4;
+                    bool m_fMp4HasBeenSet;
 
                 };
             }

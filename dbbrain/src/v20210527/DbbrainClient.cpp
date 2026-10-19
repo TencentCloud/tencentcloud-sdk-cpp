@@ -1540,6 +1540,56 @@ DbbrainClient::DescribeAuditLogFilesOutcomeCallable DbbrainClient::DescribeAudit
     return prom->get_future();
 }
 
+DbbrainClient::DescribeBlockingLogsOutcome DbbrainClient::DescribeBlockingLogs(const DescribeBlockingLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlockingLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlockingLogsResponse rsp = DescribeBlockingLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlockingLogsOutcome(rsp);
+        else
+            return DescribeBlockingLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlockingLogsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeBlockingLogsAsync(const DescribeBlockingLogsRequest& request, const DescribeBlockingLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBlockingLogsRequest&;
+    using Resp = DescribeBlockingLogsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlockingLogs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeBlockingLogsOutcomeCallable DbbrainClient::DescribeBlockingLogsCallable(const DescribeBlockingLogsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBlockingLogsOutcome>>();
+    DescribeBlockingLogsAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeBlockingLogsRequest&,
+        DescribeBlockingLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeDBAuditLogTopSqlsOutcome DbbrainClient::DescribeDBAuditLogTopSqls(const DescribeDBAuditLogTopSqlsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBAuditLogTopSqls");

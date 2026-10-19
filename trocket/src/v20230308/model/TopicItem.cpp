@@ -31,7 +31,9 @@ TopicItem::TopicItem() :
     m_topicV4HasBeenSet(false),
     m_fullNamespaceV4HasBeenSet(false),
     m_msgTTLHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_autoExpireDeleteHasBeenSet(false),
+    m_autoExpireTimeHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,26 @@ CoreInternalOutcome TopicItem::Deserialize(const rapidjson::Value &value)
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoExpireDelete") && !value["AutoExpireDelete"].IsNull())
+    {
+        if (!value["AutoExpireDelete"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicItem.AutoExpireDelete` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoExpireDelete = value["AutoExpireDelete"].GetBool();
+        m_autoExpireDeleteHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoExpireTime") && !value["AutoExpireTime"].IsNull())
+    {
+        if (!value["AutoExpireTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicItem.AutoExpireTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoExpireTime = value["AutoExpireTime"].GetUint64();
+        m_autoExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +282,22 @@ void TopicItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoExpireDeleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpireDelete";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoExpireDelete, allocator);
+    }
+
+    if (m_autoExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoExpireTime, allocator);
     }
 
 }
@@ -439,5 +477,37 @@ void TopicItem::SetTagList(const vector<Tag>& _tagList)
 bool TopicItem::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+bool TopicItem::GetAutoExpireDelete() const
+{
+    return m_autoExpireDelete;
+}
+
+void TopicItem::SetAutoExpireDelete(const bool& _autoExpireDelete)
+{
+    m_autoExpireDelete = _autoExpireDelete;
+    m_autoExpireDeleteHasBeenSet = true;
+}
+
+bool TopicItem::AutoExpireDeleteHasBeenSet() const
+{
+    return m_autoExpireDeleteHasBeenSet;
+}
+
+uint64_t TopicItem::GetAutoExpireTime() const
+{
+    return m_autoExpireTime;
+}
+
+void TopicItem::SetAutoExpireTime(const uint64_t& _autoExpireTime)
+{
+    m_autoExpireTime = _autoExpireTime;
+    m_autoExpireTimeHasBeenSet = true;
+}
+
+bool TopicItem::AutoExpireTimeHasBeenSet() const
+{
+    return m_autoExpireTimeHasBeenSet;
 }
 

@@ -48,7 +48,20 @@ BashEventsInfoNew::BashEventsInfoNew() :
     m_pidHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
     m_detectByHasBeenSet(false),
-    m_bashCmdDecodedHasBeenSet(false)
+    m_bashCmdDecodedHasBeenSet(false),
+    m_eventCountHasBeenSet(false),
+    m_firstDetectTimeHasBeenSet(false),
+    m_latestDetectTimeHasBeenSet(false),
+    m_fileProcessMd5HasBeenSet(false),
+    m_fileActionHasBeenSet(false),
+    m_filePathHasBeenSet(false),
+    m_fileMd5HasBeenSet(false),
+    m_fileNameHasBeenSet(false),
+    m_fileSizeHasBeenSet(false),
+    m_fileModifyTimeHasBeenSet(false),
+    m_filePermissionHasBeenSet(false),
+    m_fileAccessTimeHasBeenSet(false),
+    m_bashTypeHasBeenSet(false)
 {
 }
 
@@ -343,6 +356,136 @@ CoreInternalOutcome BashEventsInfoNew::Deserialize(const rapidjson::Value &value
         m_bashCmdDecodedHasBeenSet = true;
     }
 
+    if (value.HasMember("EventCount") && !value["EventCount"].IsNull())
+    {
+        if (!value["EventCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.EventCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventCount = value["EventCount"].GetUint64();
+        m_eventCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("FirstDetectTime") && !value["FirstDetectTime"].IsNull())
+    {
+        if (!value["FirstDetectTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.FirstDetectTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstDetectTime = string(value["FirstDetectTime"].GetString());
+        m_firstDetectTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestDetectTime") && !value["LatestDetectTime"].IsNull())
+    {
+        if (!value["LatestDetectTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.LatestDetectTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestDetectTime = string(value["LatestDetectTime"].GetString());
+        m_latestDetectTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileProcessMd5") && !value["FileProcessMd5"].IsNull())
+    {
+        if (!value["FileProcessMd5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.FileProcessMd5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileProcessMd5 = string(value["FileProcessMd5"].GetString());
+        m_fileProcessMd5HasBeenSet = true;
+    }
+
+    if (value.HasMember("FileAction") && !value["FileAction"].IsNull())
+    {
+        if (!value["FileAction"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.FileAction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileAction = string(value["FileAction"].GetString());
+        m_fileActionHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilePath") && !value["FilePath"].IsNull())
+    {
+        if (!value["FilePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.FilePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_filePath = string(value["FilePath"].GetString());
+        m_filePathHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileMd5") && !value["FileMd5"].IsNull())
+    {
+        if (!value["FileMd5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.FileMd5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileMd5 = string(value["FileMd5"].GetString());
+        m_fileMd5HasBeenSet = true;
+    }
+
+    if (value.HasMember("FileName") && !value["FileName"].IsNull())
+    {
+        if (!value["FileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.FileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileName = string(value["FileName"].GetString());
+        m_fileNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileSize") && !value["FileSize"].IsNull())
+    {
+        if (!value["FileSize"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.FileSize` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSize = string(value["FileSize"].GetString());
+        m_fileSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileModifyTime") && !value["FileModifyTime"].IsNull())
+    {
+        if (!value["FileModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.FileModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileModifyTime = string(value["FileModifyTime"].GetString());
+        m_fileModifyTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilePermission") && !value["FilePermission"].IsNull())
+    {
+        if (!value["FilePermission"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.FilePermission` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_filePermission = string(value["FilePermission"].GetString());
+        m_filePermissionHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileAccessTime") && !value["FileAccessTime"].IsNull())
+    {
+        if (!value["FileAccessTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.FileAccessTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileAccessTime = string(value["FileAccessTime"].GetString());
+        m_fileAccessTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BashType") && !value["BashType"].IsNull())
+    {
+        if (!value["BashType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfoNew.BashType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bashType = string(value["BashType"].GetString());
+        m_bashTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -582,6 +725,110 @@ void BashEventsInfoNew::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "BashCmdDecoded";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bashCmdDecoded.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_eventCount, allocator);
+    }
+
+    if (m_firstDetectTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstDetectTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstDetectTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestDetectTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestDetectTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestDetectTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileProcessMd5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileProcessMd5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileProcessMd5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileMd5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileMd5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileMd5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSize.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileModifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileModifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filePermissionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilePermission";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filePermission.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileAccessTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileAccessTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileAccessTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bashTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BashType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bashType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1033,5 +1280,213 @@ void BashEventsInfoNew::SetBashCmdDecoded(const string& _bashCmdDecoded)
 bool BashEventsInfoNew::BashCmdDecodedHasBeenSet() const
 {
     return m_bashCmdDecodedHasBeenSet;
+}
+
+uint64_t BashEventsInfoNew::GetEventCount() const
+{
+    return m_eventCount;
+}
+
+void BashEventsInfoNew::SetEventCount(const uint64_t& _eventCount)
+{
+    m_eventCount = _eventCount;
+    m_eventCountHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::EventCountHasBeenSet() const
+{
+    return m_eventCountHasBeenSet;
+}
+
+string BashEventsInfoNew::GetFirstDetectTime() const
+{
+    return m_firstDetectTime;
+}
+
+void BashEventsInfoNew::SetFirstDetectTime(const string& _firstDetectTime)
+{
+    m_firstDetectTime = _firstDetectTime;
+    m_firstDetectTimeHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::FirstDetectTimeHasBeenSet() const
+{
+    return m_firstDetectTimeHasBeenSet;
+}
+
+string BashEventsInfoNew::GetLatestDetectTime() const
+{
+    return m_latestDetectTime;
+}
+
+void BashEventsInfoNew::SetLatestDetectTime(const string& _latestDetectTime)
+{
+    m_latestDetectTime = _latestDetectTime;
+    m_latestDetectTimeHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::LatestDetectTimeHasBeenSet() const
+{
+    return m_latestDetectTimeHasBeenSet;
+}
+
+string BashEventsInfoNew::GetFileProcessMd5() const
+{
+    return m_fileProcessMd5;
+}
+
+void BashEventsInfoNew::SetFileProcessMd5(const string& _fileProcessMd5)
+{
+    m_fileProcessMd5 = _fileProcessMd5;
+    m_fileProcessMd5HasBeenSet = true;
+}
+
+bool BashEventsInfoNew::FileProcessMd5HasBeenSet() const
+{
+    return m_fileProcessMd5HasBeenSet;
+}
+
+string BashEventsInfoNew::GetFileAction() const
+{
+    return m_fileAction;
+}
+
+void BashEventsInfoNew::SetFileAction(const string& _fileAction)
+{
+    m_fileAction = _fileAction;
+    m_fileActionHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::FileActionHasBeenSet() const
+{
+    return m_fileActionHasBeenSet;
+}
+
+string BashEventsInfoNew::GetFilePath() const
+{
+    return m_filePath;
+}
+
+void BashEventsInfoNew::SetFilePath(const string& _filePath)
+{
+    m_filePath = _filePath;
+    m_filePathHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::FilePathHasBeenSet() const
+{
+    return m_filePathHasBeenSet;
+}
+
+string BashEventsInfoNew::GetFileMd5() const
+{
+    return m_fileMd5;
+}
+
+void BashEventsInfoNew::SetFileMd5(const string& _fileMd5)
+{
+    m_fileMd5 = _fileMd5;
+    m_fileMd5HasBeenSet = true;
+}
+
+bool BashEventsInfoNew::FileMd5HasBeenSet() const
+{
+    return m_fileMd5HasBeenSet;
+}
+
+string BashEventsInfoNew::GetFileName() const
+{
+    return m_fileName;
+}
+
+void BashEventsInfoNew::SetFileName(const string& _fileName)
+{
+    m_fileName = _fileName;
+    m_fileNameHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
+}
+
+string BashEventsInfoNew::GetFileSize() const
+{
+    return m_fileSize;
+}
+
+void BashEventsInfoNew::SetFileSize(const string& _fileSize)
+{
+    m_fileSize = _fileSize;
+    m_fileSizeHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::FileSizeHasBeenSet() const
+{
+    return m_fileSizeHasBeenSet;
+}
+
+string BashEventsInfoNew::GetFileModifyTime() const
+{
+    return m_fileModifyTime;
+}
+
+void BashEventsInfoNew::SetFileModifyTime(const string& _fileModifyTime)
+{
+    m_fileModifyTime = _fileModifyTime;
+    m_fileModifyTimeHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::FileModifyTimeHasBeenSet() const
+{
+    return m_fileModifyTimeHasBeenSet;
+}
+
+string BashEventsInfoNew::GetFilePermission() const
+{
+    return m_filePermission;
+}
+
+void BashEventsInfoNew::SetFilePermission(const string& _filePermission)
+{
+    m_filePermission = _filePermission;
+    m_filePermissionHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::FilePermissionHasBeenSet() const
+{
+    return m_filePermissionHasBeenSet;
+}
+
+string BashEventsInfoNew::GetFileAccessTime() const
+{
+    return m_fileAccessTime;
+}
+
+void BashEventsInfoNew::SetFileAccessTime(const string& _fileAccessTime)
+{
+    m_fileAccessTime = _fileAccessTime;
+    m_fileAccessTimeHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::FileAccessTimeHasBeenSet() const
+{
+    return m_fileAccessTimeHasBeenSet;
+}
+
+string BashEventsInfoNew::GetBashType() const
+{
+    return m_bashType;
+}
+
+void BashEventsInfoNew::SetBashType(const string& _bashType)
+{
+    m_bashType = _bashType;
+    m_bashTypeHasBeenSet = true;
+}
+
+bool BashEventsInfoNew::BashTypeHasBeenSet() const
+{
+    return m_bashTypeHasBeenSet;
 }
 

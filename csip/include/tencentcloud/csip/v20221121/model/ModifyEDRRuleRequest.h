@@ -28,6 +28,7 @@
 #include <tencentcloud/csip/v20221121/model/ClusterIDWithAppIdItem.h>
 #include <tencentcloud/csip/v20221121/model/ImageIDWithAppIdItem.h>
 #include <tencentcloud/csip/v20221121/model/ConditionMatch.h>
+#include <tencentcloud/csip/v20221121/model/RuleContentFileOperation.h>
 
 
 namespace TencentCloud
@@ -721,6 +722,27 @@ namespace TencentCloud
                      */
                     bool ConditionMatchesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>
+                     * @return FileOperationRules <p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>
+                     * 
+                     */
+                    RuleContentFileOperation GetFileOperationRules() const;
+
+                    /**
+                     * 设置<p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>
+                     * @param _fileOperationRules <p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>
+                     * 
+                     */
+                    void SetFileOperationRules(const RuleContentFileOperation& _fileOperationRules);
+
+                    /**
+                     * 判断参数 FileOperationRules 是否已赋值
+                     * @return FileOperationRules 是否已赋值
+                     * 
+                     */
+                    bool FileOperationRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -914,6 +936,12 @@ namespace TencentCloud
                      */
                     std::vector<ConditionMatch> m_conditionMatches;
                     bool m_conditionMatchesHasBeenSet;
+
+                    /**
+                     * <p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>
+                     */
+                    RuleContentFileOperation m_fileOperationRules;
+                    bool m_fileOperationRulesHasBeenSet;
 
                 };
             }

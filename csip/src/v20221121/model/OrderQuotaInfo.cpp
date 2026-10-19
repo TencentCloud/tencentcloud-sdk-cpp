@@ -23,7 +23,8 @@ using namespace std;
 OrderQuotaInfo::OrderQuotaInfo() :
     m_quotaKeyHasBeenSet(false),
     m_quotaNumHasBeenSet(false),
-    m_quotaUsedHasBeenSet(false)
+    m_quotaUsedHasBeenSet(false),
+    m_quotaGrantedHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome OrderQuotaInfo::Deserialize(const rapidjson::Value &value)
         m_quotaUsedHasBeenSet = true;
     }
 
+    if (value.HasMember("QuotaGranted") && !value["QuotaGranted"].IsNull())
+    {
+        if (!value["QuotaGranted"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrderQuotaInfo.QuotaGranted` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_quotaGranted = value["QuotaGranted"].GetInt64();
+        m_quotaGrantedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void OrderQuotaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "QuotaUsed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quotaUsed, allocator);
+    }
+
+    if (m_quotaGrantedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuotaGranted";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_quotaGranted, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void OrderQuotaInfo::SetQuotaUsed(const int64_t& _quotaUsed)
 bool OrderQuotaInfo::QuotaUsedHasBeenSet() const
 {
     return m_quotaUsedHasBeenSet;
+}
+
+int64_t OrderQuotaInfo::GetQuotaGranted() const
+{
+    return m_quotaGranted;
+}
+
+void OrderQuotaInfo::SetQuotaGranted(const int64_t& _quotaGranted)
+{
+    m_quotaGranted = _quotaGranted;
+    m_quotaGrantedHasBeenSet = true;
+}
+
+bool OrderQuotaInfo::QuotaGrantedHasBeenSet() const
+{
+    return m_quotaGrantedHasBeenSet;
 }
 

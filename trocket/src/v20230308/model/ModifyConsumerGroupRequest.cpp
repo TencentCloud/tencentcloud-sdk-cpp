@@ -29,7 +29,8 @@ ModifyConsumerGroupRequest::ModifyConsumerGroupRequest() :
     m_consumerGroupHasBeenSet(false),
     m_maxRetryTimesHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
+    m_retryPolicyHasBeenSet(false),
+    m_deadLetterTargetTopicHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string ModifyConsumerGroupRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_retryPolicy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_deadLetterTargetTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeadLetterTargetTopic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deadLetterTargetTopic.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void ModifyConsumerGroupRequest::SetRetryPolicy(const RetryPolicy& _retryPolicy)
 bool ModifyConsumerGroupRequest::RetryPolicyHasBeenSet() const
 {
     return m_retryPolicyHasBeenSet;
+}
+
+string ModifyConsumerGroupRequest::GetDeadLetterTargetTopic() const
+{
+    return m_deadLetterTargetTopic;
+}
+
+void ModifyConsumerGroupRequest::SetDeadLetterTargetTopic(const string& _deadLetterTargetTopic)
+{
+    m_deadLetterTargetTopic = _deadLetterTargetTopic;
+    m_deadLetterTargetTopicHasBeenSet = true;
+}
+
+bool ModifyConsumerGroupRequest::DeadLetterTargetTopicHasBeenSet() const
+{
+    return m_deadLetterTargetTopicHasBeenSet;
 }
 
 

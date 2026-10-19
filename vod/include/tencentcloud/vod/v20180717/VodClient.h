@@ -501,6 +501,8 @@
 #include <tencentcloud/vod/v20180717/model/UpdateVoiceResponse.h>
 #include <tencentcloud/vod/v20180717/model/VerifyDomainRecordRequest.h>
 #include <tencentcloud/vod/v20180717/model/VerifyDomainRecordResponse.h>
+#include <tencentcloud/vod/v20180717/model/VideoDepthEstimationRequest.h>
+#include <tencentcloud/vod/v20180717/model/VideoDepthEstimationResponse.h>
 #include <tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishRequest.h>
 #include <tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishResponse.h>
 
@@ -1234,6 +1236,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VerifyDomainRecordResponse> VerifyDomainRecordOutcome;
                 typedef std::future<VerifyDomainRecordOutcome> VerifyDomainRecordOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::VerifyDomainRecordRequest&, VerifyDomainRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDomainRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::VideoDepthEstimationResponse> VideoDepthEstimationOutcome;
+                typedef std::future<VideoDepthEstimationOutcome> VideoDepthEstimationOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::VideoDepthEstimationRequest&, VideoDepthEstimationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VideoDepthEstimationAsyncHandler;
                 typedef Outcome<Core::Error, Model::WeChatMiniProgramPublishResponse> WeChatMiniProgramPublishOutcome;
                 typedef std::future<WeChatMiniProgramPublishOutcome> WeChatMiniProgramPublishOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::WeChatMiniProgramPublishRequest&, WeChatMiniProgramPublishOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WeChatMiniProgramPublishAsyncHandler;
@@ -3756,6 +3761,15 @@ namespace TencentCloud
                 VerifyDomainRecordOutcome VerifyDomainRecord(const Model::VerifyDomainRecordRequest &request);
                 void VerifyDomainRecordAsync(const Model::VerifyDomainRecordRequest& request, const VerifyDomainRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VerifyDomainRecordOutcomeCallable VerifyDomainRecordCallable(const Model::VerifyDomainRecordRequest& request);
+
+                /**
+                 *视频深度估计接口。输入视频，输出灰度深度视频，白色为近、黑色为远。深度值为单视频内归一化的相对深度。输出存储由 OutputConfig 控制，默认临时存储 7 天后过期。任务提交成功后返回任务 ID，可通过 DescribeTaskDetail 查询结果
+                 * @param req VideoDepthEstimationRequest
+                 * @return VideoDepthEstimationOutcome
+                 */
+                VideoDepthEstimationOutcome VideoDepthEstimation(const Model::VideoDepthEstimationRequest &request);
+                void VideoDepthEstimationAsync(const Model::VideoDepthEstimationRequest& request, const VideoDepthEstimationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VideoDepthEstimationOutcomeCallable VideoDepthEstimationCallable(const Model::VideoDepthEstimationRequest& request);
 
                 /**
                  *将点播视频发布到微信小程序，供微信小程序播放器播放。

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目Id
-                     * @return ProjectId 项目Id
+                     * 获取<p>项目Id</p>
+                     * @return ProjectId <p>项目Id</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目Id
-                     * @param _projectId 项目Id
+                     * 设置<p>项目Id</p>
+                     * @param _projectId <p>项目Id</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取<p>任务ID</p>
+                     * @return TaskId <p>任务ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
+                     * 设置<p>任务ID</p>
+                     * @param _taskId <p>任务ID</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟
-                     * @return DelayTime 执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟
+                     * 获取<p>执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟</p>
+                     * @return DelayTime <p>执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟</p>
                      * 
                      */
                     int64_t GetDelayTime() const;
 
                     /**
-                     * 设置执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟
-                     * @param _delayTime 执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟
+                     * 设置<p>执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟</p>
+                     * @param _delayTime <p>执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟</p>
                      * 
                      */
                     void SetDelayTime(const int64_t& _delayTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取启动时间：该字段已废弃，无需填写
-                     * @return StartupTime 启动时间：该字段已废弃，无需填写
+                     * 获取<p>启动时间：该字段已废弃，无需填写</p>
+                     * @return StartupTime <p>启动时间：该字段已废弃，无需填写</p>
                      * 
                      */
                     int64_t GetStartupTime() const;
 
                     /**
-                     * 设置启动时间：该字段已废弃，无需填写
-                     * @param _startupTime 启动时间：该字段已废弃，无需填写
+                     * 设置<p>启动时间：该字段已废弃，无需填写</p>
+                     * @param _startupTime <p>启动时间：该字段已废弃，无需填写</p>
                      * 
                      */
                     void SetStartupTime(const int64_t& _startupTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StartupTimeHasBeenSet() const;
 
                     /**
-                     * 获取自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值
-                     * @return SelfDepend 自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值
+                     * 获取<p>自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值</p>
+                     * @return SelfDepend <p>自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值</p>
                      * 
                      */
                     int64_t GetSelfDepend() const;
 
                     /**
-                     * 设置自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值
-                     * @param _selfDepend 自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值
+                     * 设置<p>自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值</p>
+                     * @param _selfDepend <p>自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值</p>
                      * 
                      */
                     void SetSelfDepend(const int64_t& _selfDepend);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool SelfDependHasBeenSet() const;
 
                     /**
-                     * 获取生效开始时间，格式 yyyy-MM-dd HH:mm:ss
-                     * @return StartTime 生效开始时间，格式 yyyy-MM-dd HH:mm:ss
+                     * 获取<p>生效开始时间，格式 yyyy-MM-dd HH:mm:ss</p>
+                     * @return StartTime <p>生效开始时间，格式 yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置生效开始时间，格式 yyyy-MM-dd HH:mm:ss
-                     * @param _startTime 生效开始时间，格式 yyyy-MM-dd HH:mm:ss
+                     * 设置<p>生效开始时间，格式 yyyy-MM-dd HH:mm:ss</p>
+                     * @param _startTime <p>生效开始时间，格式 yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取生效结束时间，格式 yyyy-MM-dd HH:mm:ss
-                     * @return EndTime 生效结束时间，格式 yyyy-MM-dd HH:mm:ss
+                     * 获取<p>生效结束时间，格式 yyyy-MM-dd HH:mm:ss</p>
+                     * @return EndTime <p>生效结束时间，格式 yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置生效结束时间，格式 yyyy-MM-dd HH:mm:ss
-                     * @param _endTime 生效结束时间，格式 yyyy-MM-dd HH:mm:ss
+                     * 设置<p>生效结束时间，格式 yyyy-MM-dd HH:mm:ss</p>
+                     * @param _endTime <p>生效结束时间，格式 yyyy-MM-dd HH:mm:ss</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。
-                     * @return TaskAction 调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。
+                     * 获取<p>调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。</p>
+                     * @return TaskAction <p>调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。</p>
                      * 
                      */
                     std::string GetTaskAction() const;
 
                     /**
-                     * 设置调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。
-                     * @param _taskAction 调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。
+                     * 设置<p>调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。</p>
+                     * @param _taskAction <p>调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。</p>
                      * 
                      */
                     void SetTaskAction(const std::string& _taskAction);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool TaskActionHasBeenSet() const;
 
                     /**
-                     * 获取周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离
-                     * @return CycleType 周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离
+                     * 获取<p>周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离</p>
+                     * @return CycleType <p>周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离</p>
                      * 
                      */
                     int64_t GetCycleType() const;
 
                     /**
-                     * 设置周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离
-                     * @param _cycleType 周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离
+                     * 设置<p>周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离</p>
+                     * @param _cycleType <p>周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离</p>
                      * 
                      */
                     void SetCycleType(const int64_t& _cycleType);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool CycleTypeHasBeenSet() const;
 
                     /**
-                     * 获取小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。
-                     * @return CycleStep 小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。
+                     * 获取<p>小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。</p>
+                     * @return CycleStep <p>小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。</p>
                      * 
                      */
                     int64_t GetCycleStep() const;
 
                     /**
-                     * 设置小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。
-                     * @param _cycleStep 小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。
+                     * 设置<p>小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。</p>
+                     * @param _cycleStep <p>小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。</p>
                      * 
                      */
                     void SetCycleStep(const int64_t& _cycleStep);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool CycleStepHasBeenSet() const;
 
                     /**
-                     * 获取cron表达式  周期类型为crontab调度才需要
-                     * @return CrontabExpression cron表达式  周期类型为crontab调度才需要
+                     * 获取<p>cron表达式  周期类型为crontab调度才需要</p>
+                     * @return CrontabExpression <p>cron表达式  周期类型为crontab调度才需要</p>
                      * 
                      */
                     std::string GetCrontabExpression() const;
 
                     /**
-                     * 设置cron表达式  周期类型为crontab调度才需要
-                     * @param _crontabExpression cron表达式  周期类型为crontab调度才需要
+                     * 设置<p>cron表达式  周期类型为crontab调度才需要</p>
+                     * @param _crontabExpression <p>cron表达式  周期类型为crontab调度才需要</p>
                      * 
                      */
                     void SetCrontabExpression(const std::string& _crontabExpression);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool CrontabExpressionHasBeenSet() const;
 
                     /**
-                     * 获取执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效
-                     * @return ExecutionStartTime 执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效
+                     * 获取<p>执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>
+                     * @return ExecutionStartTime <p>执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>
                      * 
                      */
                     std::string GetExecutionStartTime() const;
 
                     /**
-                     * 设置执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效
-                     * @param _executionStartTime 执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效
+                     * 设置<p>执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>
+                     * @param _executionStartTime <p>执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>
                      * 
                      */
                     void SetExecutionStartTime(const std::string& _executionStartTime);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool ExecutionStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效
-                     * @return ExecutionEndTime 执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效
+                     * 获取<p>执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>
+                     * @return ExecutionEndTime <p>执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>
                      * 
                      */
                     std::string GetExecutionEndTime() const;
 
                     /**
-                     * 设置执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效
-                     * @param _executionEndTime 执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效
+                     * 设置<p>执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>
+                     * @param _executionEndTime <p>执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>
                      * 
                      */
                     void SetExecutionEndTime(const std::string& _executionEndTime);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool ExecutionEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务名，该字段废弃，请勿使用该字段重命名任务
-                     * @return TaskName 任务名，该字段废弃，请勿使用该字段重命名任务
+                     * 获取<p>任务名，该字段废弃，请勿使用该字段重命名任务</p>
+                     * @return TaskName <p>任务名，该字段废弃，请勿使用该字段重命名任务</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名，该字段废弃，请勿使用该字段重命名任务
-                     * @param _taskName 任务名，该字段废弃，请勿使用该字段重命名任务
+                     * 设置<p>任务名，该字段废弃，请勿使用该字段重命名任务</p>
+                     * @param _taskName <p>任务名，该字段废弃，请勿使用该字段重命名任务</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取失败重试间隔,单位分钟，创建任务的时候已经给了默认值
-                     * @return RetryWait 失败重试间隔,单位分钟，创建任务的时候已经给了默认值
+                     * 获取<p>失败重试间隔,单位分钟，创建任务的时候已经给了默认值</p>
+                     * @return RetryWait <p>失败重试间隔,单位分钟，创建任务的时候已经给了默认值</p>
                      * 
                      */
                     int64_t GetRetryWait() const;
 
                     /**
-                     * 设置失败重试间隔,单位分钟，创建任务的时候已经给了默认值
-                     * @param _retryWait 失败重试间隔,单位分钟，创建任务的时候已经给了默认值
+                     * 设置<p>失败重试间隔,单位分钟，创建任务的时候已经给了默认值</p>
+                     * @param _retryWait <p>失败重试间隔,单位分钟，创建任务的时候已经给了默认值</p>
                      * 
                      */
                     void SetRetryWait(const int64_t& _retryWait);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool RetryWaitHasBeenSet() const;
 
                     /**
-                     * 获取失败重试次数，创建任务的时候已经给了默认值
-                     * @return TryLimit 失败重试次数，创建任务的时候已经给了默认值
+                     * 获取<p>失败重试次数，创建任务的时候已经给了默认值</p>
+                     * @return TryLimit <p>失败重试次数，创建任务的时候已经给了默认值</p>
                      * 
                      */
                     int64_t GetTryLimit() const;
 
                     /**
-                     * 设置失败重试次数，创建任务的时候已经给了默认值
-                     * @param _tryLimit 失败重试次数，创建任务的时候已经给了默认值
+                     * 设置<p>失败重试次数，创建任务的时候已经给了默认值</p>
+                     * @param _tryLimit <p>失败重试次数，创建任务的时候已经给了默认值</p>
                      * 
                      */
                     void SetTryLimit(const int64_t& _tryLimit);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool TryLimitHasBeenSet() const;
 
                     /**
-                     * 获取是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值
-                     * @return Retriable 是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值
+                     * 获取<p>是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值</p>
+                     * @return Retriable <p>是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值</p>
                      * 
                      */
                     int64_t GetRetriable() const;
 
                     /**
-                     * 设置是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值
-                     * @param _retriable 是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值
+                     * 设置<p>是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值</p>
+                     * @param _retriable <p>是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值</p>
                      * 
                      */
                     void SetRetriable(const int64_t& _retriable);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool RetriableHasBeenSet() const;
 
                     /**
-                     * 获取运行优先级，4高 5中 6低；暂不支持其他值
-                     * @return RunPriority 运行优先级，4高 5中 6低；暂不支持其他值
+                     * 获取<p>运行优先级，4高 5中 6低；暂不支持其他值</p>
+                     * @return RunPriority <p>运行优先级，4高 5中 6低；暂不支持其他值</p>
                      * 
                      */
                     int64_t GetRunPriority() const;
 
                     /**
-                     * 设置运行优先级，4高 5中 6低；暂不支持其他值
-                     * @param _runPriority 运行优先级，4高 5中 6低；暂不支持其他值
+                     * 设置<p>运行优先级，4高 5中 6低；暂不支持其他值</p>
+                     * @param _runPriority <p>运行优先级，4高 5中 6低；暂不支持其他值</p>
                      * 
                      */
                     void SetRunPriority(const int64_t& _runPriority);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool RunPriorityHasBeenSet() const;
 
                     /**
-                     * 获取任务的扩展配置
-                     * @return TaskExt 任务的扩展配置
+                     * 获取<p>任务的扩展配置</p>
+                     * @return TaskExt <p>任务的扩展配置</p>
                      * 
                      */
                     std::vector<TaskExtInfo> GetTaskExt() const;
 
                     /**
-                     * 设置任务的扩展配置
-                     * @param _taskExt 任务的扩展配置
+                     * 设置<p>任务的扩展配置</p>
+                     * @param _taskExt <p>任务的扩展配置</p>
                      * 
                      */
                     void SetTaskExt(const std::vector<TaskExtInfo>& _taskExt);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool TaskExtHasBeenSet() const;
 
                     /**
-                     * 获取执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器
-                     * @return ResourceGroup 执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器
+                     * 获取<p>执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器</p>
+                     * @return ResourceGroup <p>执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器</p>
                      * 
                      */
                     std::string GetResourceGroup() const;
 
                     /**
-                     * 设置执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器
-                     * @param _resourceGroup 执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器
+                     * 设置<p>执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器</p>
+                     * @param _resourceGroup <p>执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器</p>
                      * 
                      */
                     void SetResourceGroup(const std::string& _resourceGroup);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool ResourceGroupHasBeenSet() const;
 
                     /**
-                     * 获取资源池队列名称
-                     * @return YarnQueue 资源池队列名称
+                     * 获取<p>资源池队列名称</p>
+                     * @return YarnQueue <p>资源池队列名称</p>
                      * 
                      */
                     std::string GetYarnQueue() const;
 
                     /**
-                     * 设置资源池队列名称
-                     * @param _yarnQueue 资源池队列名称
+                     * 设置<p>资源池队列名称</p>
+                     * @param _yarnQueue <p>资源池队列名称</p>
                      * 
                      */
                     void SetYarnQueue(const std::string& _yarnQueue);
@@ -488,15 +488,15 @@ namespace TencentCloud
                     bool YarnQueueHasBeenSet() const;
 
                     /**
-                     * 获取资源组下具体执行机，any 表示可以跑在任意一台。
-                     * @return BrokerIp 资源组下具体执行机，any 表示可以跑在任意一台。
+                     * 获取<p>资源组下具体执行机，any 表示可以跑在任意一台。</p>
+                     * @return BrokerIp <p>资源组下具体执行机，any 表示可以跑在任意一台。</p>
                      * 
                      */
                     std::string GetBrokerIp() const;
 
                     /**
-                     * 设置资源组下具体执行机，any 表示可以跑在任意一台。
-                     * @param _brokerIp 资源组下具体执行机，any 表示可以跑在任意一台。
+                     * 设置<p>资源组下具体执行机，any 表示可以跑在任意一台。</p>
+                     * @param _brokerIp <p>资源组下具体执行机，any 表示可以跑在任意一台。</p>
                      * 
                      */
                     void SetBrokerIp(const std::string& _brokerIp);
@@ -509,15 +509,15 @@ namespace TencentCloud
                     bool BrokerIpHasBeenSet() const;
 
                     /**
-                     * 获取责任人，多个责任人请用分号隔开
-                     * @return InCharge 责任人，多个责任人请用分号隔开
+                     * 获取<p>责任人，多个责任人请用分号隔开</p>
+                     * @return InCharge <p>责任人，多个责任人请用分号隔开</p>
                      * 
                      */
                     std::string GetInCharge() const;
 
                     /**
-                     * 设置责任人，多个责任人请用分号隔开
-                     * @param _inCharge 责任人，多个责任人请用分号隔开
+                     * 设置<p>责任人，多个责任人请用分号隔开</p>
+                     * @param _inCharge <p>责任人，多个责任人请用分号隔开</p>
                      * 
                      */
                     void SetInCharge(const std::string& _inCharge);
@@ -530,15 +530,15 @@ namespace TencentCloud
                     bool InChargeHasBeenSet() const;
 
                     /**
-                     * 获取任务备注
-                     * @return Notes 任务备注
+                     * 获取<p>任务备注</p>
+                     * @return Notes <p>任务备注</p>
                      * 
                      */
                     std::string GetNotes() const;
 
                     /**
-                     * 设置任务备注
-                     * @param _notes 任务备注
+                     * 设置<p>任务备注</p>
+                     * @param _notes <p>任务备注</p>
                      * 
                      */
                     void SetNotes(const std::string& _notes);
@@ -551,15 +551,15 @@ namespace TencentCloud
                     bool NotesHasBeenSet() const;
 
                     /**
-                     * 获取任务参数
-                     * @return TaskParamInfos 任务参数
+                     * 获取<p>任务参数</p>
+                     * @return TaskParamInfos <p>任务参数</p>
                      * 
                      */
                     std::vector<ParamInfo> GetTaskParamInfos() const;
 
                     /**
-                     * 设置任务参数
-                     * @param _taskParamInfos 任务参数
+                     * 设置<p>任务参数</p>
+                     * @param _taskParamInfos <p>任务参数</p>
                      * 
                      */
                     void SetTaskParamInfos(const std::vector<ParamInfo>& _taskParamInfos);
@@ -572,15 +572,15 @@ namespace TencentCloud
                     bool TaskParamInfosHasBeenSet() const;
 
                     /**
-                     * 获取源数据源Id
-                     * @return SourceServer 源数据源Id
+                     * 获取<p>源数据源Id</p>
+                     * @return SourceServer <p>源数据源Id</p>
                      * 
                      */
                     std::string GetSourceServer() const;
 
                     /**
-                     * 设置源数据源Id
-                     * @param _sourceServer 源数据源Id
+                     * 设置<p>源数据源Id</p>
+                     * @param _sourceServer <p>源数据源Id</p>
                      * 
                      */
                     void SetSourceServer(const std::string& _sourceServer);
@@ -593,15 +593,15 @@ namespace TencentCloud
                     bool SourceServerHasBeenSet() const;
 
                     /**
-                     * 获取目标数据源Id
-                     * @return TargetServer 目标数据源Id
+                     * 获取<p>目标数据源Id</p>
+                     * @return TargetServer <p>目标数据源Id</p>
                      * 
                      */
                     std::string GetTargetServer() const;
 
                     /**
-                     * 设置目标数据源Id
-                     * @param _targetServer 目标数据源Id
+                     * 设置<p>目标数据源Id</p>
+                     * @param _targetServer <p>目标数据源Id</p>
                      * 
                      */
                     void SetTargetServer(const std::string& _targetServer);
@@ -614,15 +614,15 @@ namespace TencentCloud
                     bool TargetServerHasBeenSet() const;
 
                     /**
-                     * 获取是否支持工作流依赖 yes / no 默认 no
-                     * @return DependencyWorkflow 是否支持工作流依赖 yes / no 默认 no
+                     * 获取<p>是否支持工作流依赖 yes / no 默认 no</p>
+                     * @return DependencyWorkflow <p>是否支持工作流依赖 yes / no 默认 no</p>
                      * 
                      */
                     std::string GetDependencyWorkflow() const;
 
                     /**
-                     * 设置是否支持工作流依赖 yes / no 默认 no
-                     * @param _dependencyWorkflow 是否支持工作流依赖 yes / no 默认 no
+                     * 设置<p>是否支持工作流依赖 yes / no 默认 no</p>
+                     * @param _dependencyWorkflow <p>是否支持工作流依赖 yes / no 默认 no</p>
                      * 
                      */
                     void SetDependencyWorkflow(const std::string& _dependencyWorkflow);
@@ -635,15 +635,15 @@ namespace TencentCloud
                     bool DependencyWorkflowHasBeenSet() const;
 
                     /**
-                     * 获取依赖配置,仅可修改上游任务实例配置方法
-                     * @return DependencyConfigDTOs 依赖配置,仅可修改上游任务实例配置方法
+                     * 获取<p>依赖配置,仅可修改上游任务实例配置方法</p>
+                     * @return DependencyConfigDTOs <p>依赖配置,仅可修改上游任务实例配置方法</p>
                      * 
                      */
                     std::vector<DependencyConfig> GetDependencyConfigDTOs() const;
 
                     /**
-                     * 设置依赖配置,仅可修改上游任务实例配置方法
-                     * @param _dependencyConfigDTOs 依赖配置,仅可修改上游任务实例配置方法
+                     * 设置<p>依赖配置,仅可修改上游任务实例配置方法</p>
+                     * @param _dependencyConfigDTOs <p>依赖配置,仅可修改上游任务实例配置方法</p>
                      * 
                      */
                     void SetDependencyConfigDTOs(const std::vector<DependencyConfig>& _dependencyConfigDTOs);
@@ -656,15 +656,15 @@ namespace TencentCloud
                     bool DependencyConfigDTOsHasBeenSet() const;
 
                     /**
-                     * 获取运行耗时超时时间分钟数
-                     * @return ExecutionTTL 运行耗时超时时间分钟数
+                     * 获取<p>运行耗时超时时间分钟数</p>
+                     * @return ExecutionTTL <p>运行耗时超时时间分钟数</p>
                      * 
                      */
                     int64_t GetExecutionTTL() const;
 
                     /**
-                     * 设置运行耗时超时时间分钟数
-                     * @param _executionTTL 运行耗时超时时间分钟数
+                     * 设置<p>运行耗时超时时间分钟数</p>
+                     * @param _executionTTL <p>运行耗时超时时间分钟数</p>
                      * 
                      */
                     void SetExecutionTTL(const int64_t& _executionTTL);
@@ -677,15 +677,15 @@ namespace TencentCloud
                     bool ExecutionTTLHasBeenSet() const;
 
                     /**
-                     * 获取脚本是否改变
-                     * @return ScriptChange 脚本是否改变
+                     * 获取<p>脚本是否改变</p>
+                     * @return ScriptChange <p>脚本是否改变</p>
                      * 
                      */
                     bool GetScriptChange() const;
 
                     /**
-                     * 设置脚本是否改变
-                     * @param _scriptChange 脚本是否改变
+                     * 设置<p>脚本是否改变</p>
+                     * @param _scriptChange <p>脚本是否改变</p>
                      * 
                      */
                     void SetScriptChange(const bool& _scriptChange);
@@ -698,15 +698,15 @@ namespace TencentCloud
                     bool ScriptChangeHasBeenSet() const;
 
                     /**
-                     * 获取任务时区，仅支持整数时区配置
-                     * @return ScheduleTimeZone 任务时区，仅支持整数时区配置
+                     * 获取<p>任务时区，仅支持整数时区配置</p>
+                     * @return ScheduleTimeZone <p>任务时区，仅支持整数时区配置</p>
                      * 
                      */
                     std::string GetScheduleTimeZone() const;
 
                     /**
-                     * 设置任务时区，仅支持整数时区配置
-                     * @param _scheduleTimeZone 任务时区，仅支持整数时区配置
+                     * 设置<p>任务时区，仅支持整数时区配置</p>
+                     * @param _scheduleTimeZone <p>任务时区，仅支持整数时区配置</p>
                      * 
                      */
                     void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
@@ -719,15 +719,15 @@ namespace TencentCloud
                     bool ScheduleTimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取0 正常调度 1 空跑调度；暂不支持其他值
-                     * @return ScheduleRunType 0 正常调度 1 空跑调度；暂不支持其他值
+                     * 获取<p>0 正常调度 1 空跑调度；暂不支持其他值</p>
+                     * @return ScheduleRunType <p>0 正常调度 1 空跑调度；暂不支持其他值</p>
                      * 
                      */
                     uint64_t GetScheduleRunType() const;
 
                     /**
-                     * 设置0 正常调度 1 空跑调度；暂不支持其他值
-                     * @param _scheduleRunType 0 正常调度 1 空跑调度；暂不支持其他值
+                     * 设置<p>0 正常调度 1 空跑调度；暂不支持其他值</p>
+                     * @param _scheduleRunType <p>0 正常调度 1 空跑调度；暂不支持其他值</p>
                      * 
                      */
                     void SetScheduleRunType(const uint64_t& _scheduleRunType);
@@ -740,15 +740,15 @@ namespace TencentCloud
                     bool ScheduleRunTypeHasBeenSet() const;
 
                     /**
-                     * 获取0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值
-                     * @return ConcurrentStrategy 0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值
+                     * 获取<p>0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值</p>
+                     * @return ConcurrentStrategy <p>0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值</p>
                      * 
                      */
                     uint64_t GetConcurrentStrategy() const;
 
                     /**
-                     * 设置0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值
-                     * @param _concurrentStrategy 0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值
+                     * 设置<p>0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值</p>
+                     * @param _concurrentStrategy <p>0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值</p>
                      * 
                      */
                     void SetConcurrentStrategy(const uint64_t& _concurrentStrategy);
@@ -761,15 +761,15 @@ namespace TencentCloud
                     bool ConcurrentStrategyHasBeenSet() const;
 
                     /**
-                     * 获取shell任务发布事件
-                     * @return RegisterDsEventPublisherRequest shell任务发布事件
+                     * 获取<p>shell任务发布事件</p>
+                     * @return RegisterDsEventPublisherRequest <p>shell任务发布事件</p>
                      * 
                      */
                     RegisterDsEventPublisherReq GetRegisterDsEventPublisherRequest() const;
 
                     /**
-                     * 设置shell任务发布事件
-                     * @param _registerDsEventPublisherRequest shell任务发布事件
+                     * 设置<p>shell任务发布事件</p>
+                     * @param _registerDsEventPublisherRequest <p>shell任务发布事件</p>
                      * 
                      */
                     void SetRegisterDsEventPublisherRequest(const RegisterDsEventPublisherReq& _registerDsEventPublisherRequest);
@@ -782,15 +782,15 @@ namespace TencentCloud
                     bool RegisterDsEventPublisherRequestHasBeenSet() const;
 
                     /**
-                     * 获取base64编码后脚本内容
-                     * @return Content base64编码后脚本内容
+                     * 获取<p>base64编码后脚本内容</p>
+                     * @return Content <p>base64编码后脚本内容</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置base64编码后脚本内容
-                     * @param _content base64编码后脚本内容
+                     * 设置<p>base64编码后脚本内容</p>
+                     * @param _content <p>base64编码后脚本内容</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -802,223 +802,250 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分钟任务相位偏移</p>
+                     * @return MinuteOffset <p>分钟任务相位偏移</p>
+                     * 
+                     */
+                    uint64_t GetMinuteOffset() const;
+
+                    /**
+                     * 设置<p>分钟任务相位偏移</p>
+                     * @param _minuteOffset <p>分钟任务相位偏移</p>
+                     * 
+                     */
+                    void SetMinuteOffset(const uint64_t& _minuteOffset);
+
+                    /**
+                     * 判断参数 MinuteOffset 是否已赋值
+                     * @return MinuteOffset 是否已赋值
+                     * 
+                     */
+                    bool MinuteOffsetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目Id
+                     * <p>项目Id</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务ID
+                     * <p>任务ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟
+                     * <p>执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟</p>
                      */
                     int64_t m_delayTime;
                     bool m_delayTimeHasBeenSet;
 
                     /**
-                     * 启动时间：该字段已废弃，无需填写
+                     * <p>启动时间：该字段已废弃，无需填写</p>
                      */
                     int64_t m_startupTime;
                     bool m_startupTimeHasBeenSet;
 
                     /**
-                     * 自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值
+                     * <p>自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值</p>
                      */
                     int64_t m_selfDepend;
                     bool m_selfDependHasBeenSet;
 
                     /**
-                     * 生效开始时间，格式 yyyy-MM-dd HH:mm:ss
+                     * <p>生效开始时间，格式 yyyy-MM-dd HH:mm:ss</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 生效结束时间，格式 yyyy-MM-dd HH:mm:ss
+                     * <p>生效结束时间，格式 yyyy-MM-dd HH:mm:ss</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。
+                     * <p>调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。</p>
                      */
                     std::string m_taskAction;
                     bool m_taskActionHasBeenSet;
 
                     /**
-                     * 周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离
+                     * <p>周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离</p>
                      */
                     int64_t m_cycleType;
                     bool m_cycleTypeHasBeenSet;
 
                     /**
-                     * 小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。
+                     * <p>小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。</p>
                      */
                     int64_t m_cycleStep;
                     bool m_cycleStepHasBeenSet;
 
                     /**
-                     * cron表达式  周期类型为crontab调度才需要
+                     * <p>cron表达式  周期类型为crontab调度才需要</p>
                      */
                     std::string m_crontabExpression;
                     bool m_crontabExpressionHasBeenSet;
 
                     /**
-                     * 执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效
+                     * <p>执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>
                      */
                     std::string m_executionStartTime;
                     bool m_executionStartTimeHasBeenSet;
 
                     /**
-                     * 执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效
+                     * <p>执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>
                      */
                     std::string m_executionEndTime;
                     bool m_executionEndTimeHasBeenSet;
 
                     /**
-                     * 任务名，该字段废弃，请勿使用该字段重命名任务
+                     * <p>任务名，该字段废弃，请勿使用该字段重命名任务</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 失败重试间隔,单位分钟，创建任务的时候已经给了默认值
+                     * <p>失败重试间隔,单位分钟，创建任务的时候已经给了默认值</p>
                      */
                     int64_t m_retryWait;
                     bool m_retryWaitHasBeenSet;
 
                     /**
-                     * 失败重试次数，创建任务的时候已经给了默认值
+                     * <p>失败重试次数，创建任务的时候已经给了默认值</p>
                      */
                     int64_t m_tryLimit;
                     bool m_tryLimitHasBeenSet;
 
                     /**
-                     * 是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值
+                     * <p>是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值</p>
                      */
                     int64_t m_retriable;
                     bool m_retriableHasBeenSet;
 
                     /**
-                     * 运行优先级，4高 5中 6低；暂不支持其他值
+                     * <p>运行优先级，4高 5中 6低；暂不支持其他值</p>
                      */
                     int64_t m_runPriority;
                     bool m_runPriorityHasBeenSet;
 
                     /**
-                     * 任务的扩展配置
+                     * <p>任务的扩展配置</p>
                      */
                     std::vector<TaskExtInfo> m_taskExt;
                     bool m_taskExtHasBeenSet;
 
                     /**
-                     * 执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器
+                     * <p>执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器</p>
                      */
                     std::string m_resourceGroup;
                     bool m_resourceGroupHasBeenSet;
 
                     /**
-                     * 资源池队列名称
+                     * <p>资源池队列名称</p>
                      */
                     std::string m_yarnQueue;
                     bool m_yarnQueueHasBeenSet;
 
                     /**
-                     * 资源组下具体执行机，any 表示可以跑在任意一台。
+                     * <p>资源组下具体执行机，any 表示可以跑在任意一台。</p>
                      */
                     std::string m_brokerIp;
                     bool m_brokerIpHasBeenSet;
 
                     /**
-                     * 责任人，多个责任人请用分号隔开
+                     * <p>责任人，多个责任人请用分号隔开</p>
                      */
                     std::string m_inCharge;
                     bool m_inChargeHasBeenSet;
 
                     /**
-                     * 任务备注
+                     * <p>任务备注</p>
                      */
                     std::string m_notes;
                     bool m_notesHasBeenSet;
 
                     /**
-                     * 任务参数
+                     * <p>任务参数</p>
                      */
                     std::vector<ParamInfo> m_taskParamInfos;
                     bool m_taskParamInfosHasBeenSet;
 
                     /**
-                     * 源数据源Id
+                     * <p>源数据源Id</p>
                      */
                     std::string m_sourceServer;
                     bool m_sourceServerHasBeenSet;
 
                     /**
-                     * 目标数据源Id
+                     * <p>目标数据源Id</p>
                      */
                     std::string m_targetServer;
                     bool m_targetServerHasBeenSet;
 
                     /**
-                     * 是否支持工作流依赖 yes / no 默认 no
+                     * <p>是否支持工作流依赖 yes / no 默认 no</p>
                      */
                     std::string m_dependencyWorkflow;
                     bool m_dependencyWorkflowHasBeenSet;
 
                     /**
-                     * 依赖配置,仅可修改上游任务实例配置方法
+                     * <p>依赖配置,仅可修改上游任务实例配置方法</p>
                      */
                     std::vector<DependencyConfig> m_dependencyConfigDTOs;
                     bool m_dependencyConfigDTOsHasBeenSet;
 
                     /**
-                     * 运行耗时超时时间分钟数
+                     * <p>运行耗时超时时间分钟数</p>
                      */
                     int64_t m_executionTTL;
                     bool m_executionTTLHasBeenSet;
 
                     /**
-                     * 脚本是否改变
+                     * <p>脚本是否改变</p>
                      */
                     bool m_scriptChange;
                     bool m_scriptChangeHasBeenSet;
 
                     /**
-                     * 任务时区，仅支持整数时区配置
+                     * <p>任务时区，仅支持整数时区配置</p>
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
 
                     /**
-                     * 0 正常调度 1 空跑调度；暂不支持其他值
+                     * <p>0 正常调度 1 空跑调度；暂不支持其他值</p>
                      */
                     uint64_t m_scheduleRunType;
                     bool m_scheduleRunTypeHasBeenSet;
 
                     /**
-                     * 0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值
+                     * <p>0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值</p>
                      */
                     uint64_t m_concurrentStrategy;
                     bool m_concurrentStrategyHasBeenSet;
 
                     /**
-                     * shell任务发布事件
+                     * <p>shell任务发布事件</p>
                      */
                     RegisterDsEventPublisherReq m_registerDsEventPublisherRequest;
                     bool m_registerDsEventPublisherRequestHasBeenSet;
 
                     /**
-                     * base64编码后脚本内容
+                     * <p>base64编码后脚本内容</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * <p>分钟任务相位偏移</p>
+                     */
+                    uint64_t m_minuteOffset;
+                    bool m_minuteOffsetHasBeenSet;
 
                 };
             }

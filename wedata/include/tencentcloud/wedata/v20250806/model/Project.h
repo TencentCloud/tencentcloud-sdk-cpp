@@ -244,6 +244,27 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>项目状态枚举：ENABLED 正常、UNABLED 已禁用、ENABLING 启用中、UNABLING 禁用中、REMOVING 删除中、DELETED 已删除</p>
+                     * @return DisplayStatus <p>项目状态枚举：ENABLED 正常、UNABLED 已禁用、ENABLING 启用中、UNABLING 禁用中、REMOVING 删除中、DELETED 已删除</p>
+                     * 
+                     */
+                    std::string GetDisplayStatus() const;
+
+                    /**
+                     * 设置<p>项目状态枚举：ENABLED 正常、UNABLED 已禁用、ENABLING 启用中、UNABLING 禁用中、REMOVING 删除中、DELETED 已删除</p>
+                     * @param _displayStatus <p>项目状态枚举：ENABLED 正常、UNABLED 已禁用、ENABLING 启用中、UNABLING 禁用中、REMOVING 删除中、DELETED 已删除</p>
+                     * 
+                     */
+                    void SetDisplayStatus(const std::string& _displayStatus);
+
+                    /**
+                     * 判断参数 DisplayStatus 是否已赋值
+                     * @return DisplayStatus 是否已赋值
+                     * 
+                     */
+                    bool DisplayStatusHasBeenSet() const;
+
+                    /**
                      * 获取<p>项目模式，SIMPLE：简单模式 STANDARD：标准模式</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectModel <p>项目模式，SIMPLE：简单模式 STANDARD：标准模式</p>
@@ -345,6 +366,12 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>项目状态枚举：ENABLED 正常、UNABLED 已禁用、ENABLING 启用中、UNABLING 禁用中、REMOVING 删除中、DELETED 已删除</p>
+                     */
+                    std::string m_displayStatus;
+                    bool m_displayStatusHasBeenSet;
 
                     /**
                      * <p>项目模式，SIMPLE：简单模式 STANDARD：标准模式</p>

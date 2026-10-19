@@ -57,7 +57,8 @@ EDRRule::EDRRule() :
     m_clusterIDsHasBeenSet(false),
     m_excludeClusterIDsHasBeenSet(false),
     m_conditionMatchesHasBeenSet(false),
-    m_tagItemsHasBeenSet(false)
+    m_tagItemsHasBeenSet(false),
+    m_fileOperationRulesHasBeenSet(false)
 {
 }
 
@@ -512,6 +513,23 @@ CoreInternalOutcome EDRRule::Deserialize(const rapidjson::Value &value)
         m_tagItemsHasBeenSet = true;
     }
 
+    if (value.HasMember("FileOperationRules") && !value["FileOperationRules"].IsNull())
+    {
+        if (!value["FileOperationRules"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EDRRule.FileOperationRules` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fileOperationRules.Deserialize(value["FileOperationRules"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fileOperationRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -899,6 +917,15 @@ void EDRRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_fileOperationRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileOperationRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileOperationRules.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1494,5 +1521,21 @@ void EDRRule::SetTagItems(const vector<EDRRuleTagItem>& _tagItems)
 bool EDRRule::TagItemsHasBeenSet() const
 {
     return m_tagItemsHasBeenSet;
+}
+
+RuleContentFileOperation EDRRule::GetFileOperationRules() const
+{
+    return m_fileOperationRules;
+}
+
+void EDRRule::SetFileOperationRules(const RuleContentFileOperation& _fileOperationRules)
+{
+    m_fileOperationRules = _fileOperationRules;
+    m_fileOperationRulesHasBeenSet = true;
+}
+
+bool EDRRule::FileOperationRulesHasBeenSet() const
+{
+    return m_fileOperationRulesHasBeenSet;
 }
 

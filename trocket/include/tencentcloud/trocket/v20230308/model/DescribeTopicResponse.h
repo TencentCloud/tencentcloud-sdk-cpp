@@ -87,6 +87,20 @@ namespace TencentCloud
                     bool TopicTypeHasBeenSet() const;
 
                     /**
+                     * 获取<p>队列数量</p>
+                     * @return QueueNum <p>队列数量</p>
+                     * 
+                     */
+                    int64_t GetQueueNum() const;
+
+                    /**
+                     * 判断参数 QueueNum 是否已赋值
+                     * @return QueueNum 是否已赋值
+                     * 
+                     */
+                    bool QueueNumHasBeenSet() const;
+
+                    /**
                      * 获取<p>备注</p>
                      * @return Remark <p>备注</p>
                      * 
@@ -217,6 +231,12 @@ namespace TencentCloud
                      */
                     std::string m_topicType;
                     bool m_topicTypeHasBeenSet;
+
+                    /**
+                     * <p>队列数量</p>
+                     */
+                    int64_t m_queueNum;
+                    bool m_queueNumHasBeenSet;
 
                     /**
                      * <p>备注</p>

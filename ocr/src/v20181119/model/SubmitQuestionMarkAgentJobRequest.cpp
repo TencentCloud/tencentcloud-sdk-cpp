@@ -33,7 +33,8 @@ SubmitQuestionMarkAgentJobRequest::SubmitQuestionMarkAgentJobRequest() :
     m_imageBase64ListHasBeenSet(false),
     m_imageUrlListHasBeenSet(false),
     m_assistMarkTypeHasBeenSet(false),
-    m_answerAssistMapHasBeenSet(false)
+    m_answerAssistMapHasBeenSet(false),
+    m_enableImageCropHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string SubmitQuestionMarkAgentJobRequest::ToJsonString() const
         string key = "AnswerAssistMap";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_answerAssistMap.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableImageCropHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableImageCrop";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableImageCrop, allocator);
     }
 
 
@@ -324,6 +333,22 @@ void SubmitQuestionMarkAgentJobRequest::SetAnswerAssistMap(const string& _answer
 bool SubmitQuestionMarkAgentJobRequest::AnswerAssistMapHasBeenSet() const
 {
     return m_answerAssistMapHasBeenSet;
+}
+
+bool SubmitQuestionMarkAgentJobRequest::GetEnableImageCrop() const
+{
+    return m_enableImageCrop;
+}
+
+void SubmitQuestionMarkAgentJobRequest::SetEnableImageCrop(const bool& _enableImageCrop)
+{
+    m_enableImageCrop = _enableImageCrop;
+    m_enableImageCropHasBeenSet = true;
+}
+
+bool SubmitQuestionMarkAgentJobRequest::EnableImageCropHasBeenSet() const
+{
+    return m_enableImageCropHasBeenSet;
 }
 
 

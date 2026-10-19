@@ -147,6 +147,48 @@ namespace TencentCloud
                      */
                     bool QueryDelayMessageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否为重试消息</p>
+                     * @return QueryRetryMessage <p>是否为重试消息</p>
+                     * 
+                     */
+                    bool GetQueryRetryMessage() const;
+
+                    /**
+                     * 设置<p>是否为重试消息</p>
+                     * @param _queryRetryMessage <p>是否为重试消息</p>
+                     * 
+                     */
+                    void SetQueryRetryMessage(const bool& _queryRetryMessage);
+
+                    /**
+                     * 判断参数 QueryRetryMessage 是否已赋值
+                     * @return QueryRetryMessage 是否已赋值
+                     * 
+                     */
+                    bool QueryRetryMessageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>查询重试消息时，需要指定具体的消费组名称</p>
+                     * @return GroupId <p>查询重试消息时，需要指定具体的消费组名称</p>
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置<p>查询重试消息时，需要指定具体的消费组名称</p>
+                     * @param _groupId <p>查询重试消息时，需要指定具体的消费组名称</p>
+                     * 
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     bool m_queryDelayMessage;
                     bool m_queryDelayMessageHasBeenSet;
+
+                    /**
+                     * <p>是否为重试消息</p>
+                     */
+                    bool m_queryRetryMessage;
+                    bool m_queryRetryMessageHasBeenSet;
+
+                    /**
+                     * <p>查询重试消息时，需要指定具体的消费组名称</p>
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

@@ -11990,6 +11990,56 @@ VodClient::VerifyDomainRecordOutcomeCallable VodClient::VerifyDomainRecordCallab
     return prom->get_future();
 }
 
+VodClient::VideoDepthEstimationOutcome VodClient::VideoDepthEstimation(const VideoDepthEstimationRequest &request)
+{
+    auto outcome = MakeRequest(request, "VideoDepthEstimation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VideoDepthEstimationResponse rsp = VideoDepthEstimationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VideoDepthEstimationOutcome(rsp);
+        else
+            return VideoDepthEstimationOutcome(o.GetError());
+    }
+    else
+    {
+        return VideoDepthEstimationOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::VideoDepthEstimationAsync(const VideoDepthEstimationRequest& request, const VideoDepthEstimationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VideoDepthEstimationRequest&;
+    using Resp = VideoDepthEstimationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "VideoDepthEstimation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::VideoDepthEstimationOutcomeCallable VodClient::VideoDepthEstimationCallable(const VideoDepthEstimationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<VideoDepthEstimationOutcome>>();
+    VideoDepthEstimationAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const VideoDepthEstimationRequest&,
+        VideoDepthEstimationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::WeChatMiniProgramPublishOutcome VodClient::WeChatMiniProgramPublish(const WeChatMiniProgramPublishRequest &request)
 {
     auto outcome = MakeRequest(request, "WeChatMiniProgramPublish");

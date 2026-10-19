@@ -34,7 +34,9 @@ ConsumeGroupItem::ConsumeGroupItem() :
     m_subscribeTopicNumHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_tagListHasBeenSet(false),
-    m_retryPolicyHasBeenSet(false)
+    m_retryPolicyHasBeenSet(false),
+    m_consumeModelHasBeenSet(false),
+    m_deadLetterTargetTopicHasBeenSet(false)
 {
 }
 
@@ -200,6 +202,26 @@ CoreInternalOutcome ConsumeGroupItem::Deserialize(const rapidjson::Value &value)
         m_retryPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("ConsumeModel") && !value["ConsumeModel"].IsNull())
+    {
+        if (!value["ConsumeModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumeGroupItem.ConsumeModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumeModel = string(value["ConsumeModel"].GetString());
+        m_consumeModelHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeadLetterTargetTopic") && !value["DeadLetterTargetTopic"].IsNull())
+    {
+        if (!value["DeadLetterTargetTopic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumeGroupItem.DeadLetterTargetTopic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadLetterTargetTopic = string(value["DeadLetterTargetTopic"].GetString());
+        m_deadLetterTargetTopicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -325,6 +347,22 @@ void ConsumeGroupItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_retryPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_consumeModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumeModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumeModel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deadLetterTargetTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeadLetterTargetTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deadLetterTargetTopic.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -552,5 +590,37 @@ void ConsumeGroupItem::SetRetryPolicy(const RetryPolicy& _retryPolicy)
 bool ConsumeGroupItem::RetryPolicyHasBeenSet() const
 {
     return m_retryPolicyHasBeenSet;
+}
+
+string ConsumeGroupItem::GetConsumeModel() const
+{
+    return m_consumeModel;
+}
+
+void ConsumeGroupItem::SetConsumeModel(const string& _consumeModel)
+{
+    m_consumeModel = _consumeModel;
+    m_consumeModelHasBeenSet = true;
+}
+
+bool ConsumeGroupItem::ConsumeModelHasBeenSet() const
+{
+    return m_consumeModelHasBeenSet;
+}
+
+string ConsumeGroupItem::GetDeadLetterTargetTopic() const
+{
+    return m_deadLetterTargetTopic;
+}
+
+void ConsumeGroupItem::SetDeadLetterTargetTopic(const string& _deadLetterTargetTopic)
+{
+    m_deadLetterTargetTopic = _deadLetterTargetTopic;
+    m_deadLetterTargetTopicHasBeenSet = true;
+}
+
+bool ConsumeGroupItem::DeadLetterTargetTopicHasBeenSet() const
+{
+    return m_deadLetterTargetTopicHasBeenSet;
 }
 

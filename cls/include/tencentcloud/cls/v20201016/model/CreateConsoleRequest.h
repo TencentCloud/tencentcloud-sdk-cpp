@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool DomainPrefixHasBeenSet() const;
 
                     /**
-                     * 获取<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>
-                     * @return Accounts <p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>
+                     * 获取<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
+                     * @return Accounts <p>用户账号信息</p><p>“账号密码鉴权”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
                      * 
                      */
                     std::vector<ConsoleAccount> GetAccounts() const;
 
                     /**
-                     * 设置<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>
-                     * @param _accounts <p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>
+                     * 设置<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
+                     * @param _accounts <p>用户账号信息</p><p>“账号密码鉴权”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
                      * 
                      */
                     void SetAccounts(const std::vector<ConsoleAccount>& _accounts);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool AccountsHasBeenSet() const;
 
                     /**
-                     * 获取<p>匿名登录账号信息</p><p>“匿名登录”登录方式必传</p>
-                     * @return AnonymousLogin <p>匿名登录账号信息</p><p>“匿名登录”登录方式必传</p>
+                     * 获取<p>匿名登录账号信息</p><p>“匿名登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
+                     * @return AnonymousLogin <p>匿名登录账号信息</p><p>“匿名登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
                      * 
                      */
                     AnonymousLoginInfo GetAnonymousLogin() const;
 
                     /**
-                     * 设置<p>匿名登录账号信息</p><p>“匿名登录”登录方式必传</p>
-                     * @param _anonymousLogin <p>匿名登录账号信息</p><p>“匿名登录”登录方式必传</p>
+                     * 设置<p>匿名登录账号信息</p><p>“匿名登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
+                     * @param _anonymousLogin <p>匿名登录账号信息</p><p>“匿名登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
                      * 
                      */
                     void SetAnonymousLogin(const AnonymousLoginInfo& _anonymousLogin);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>Auth角色信息</p><p>“第三方认证登录”登录方式必传</p>
-                     * @return AuthRoles <p>Auth角色信息</p><p>“第三方认证登录”登录方式必传</p>
+                     * 获取<p>Auth角色信息</p><p>“第三方认证登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
+                     * @return AuthRoles <p>Auth角色信息</p><p>“第三方认证登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
                      * 
                      */
                     std::vector<AuthRoleInfo> GetAuthRoles() const;
 
                     /**
-                     * 设置<p>Auth角色信息</p><p>“第三方认证登录”登录方式必传</p>
-                     * @param _authRoles <p>Auth角色信息</p><p>“第三方认证登录”登录方式必传</p>
+                     * 设置<p>Auth角色信息</p><p>“第三方认证登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
+                     * @param _authRoles <p>Auth角色信息</p><p>“第三方认证登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
                      * 
                      */
                     void SetAuthRoles(const std::vector<AuthRoleInfo>& _authRoles);
@@ -383,13 +383,13 @@ namespace TencentCloud
                     bool m_domainPrefixHasBeenSet;
 
                     /**
-                     * <p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>
+                     * <p>用户账号信息</p><p>“账号密码鉴权”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
                      */
                     std::vector<ConsoleAccount> m_accounts;
                     bool m_accountsHasBeenSet;
 
                     /**
-                     * <p>匿名登录账号信息</p><p>“匿名登录”登录方式必传</p>
+                     * <p>匿名登录账号信息</p><p>“匿名登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
                      */
                     AnonymousLoginInfo m_anonymousLogin;
                     bool m_anonymousLoginHasBeenSet;
@@ -419,7 +419,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * <p>Auth角色信息</p><p>“第三方认证登录”登录方式必传</p>
+                     * <p>Auth角色信息</p><p>“第三方认证登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>
                      */
                     std::vector<AuthRoleInfo> m_authRoles;
                     bool m_authRolesHasBeenSet;

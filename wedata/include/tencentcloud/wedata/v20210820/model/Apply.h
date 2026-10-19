@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取申请人id
-                     * @return ApplicantId 申请人id
+                     * 获取<p>申请人id</p>
+                     * @return ApplicantId <p>申请人id</p>
                      * 
                      */
                     std::string GetApplicantId() const;
 
                     /**
-                     * 设置申请人id
-                     * @param _applicantId 申请人id
+                     * 设置<p>申请人id</p>
+                     * @param _applicantId <p>申请人id</p>
                      * 
                      */
                     void SetApplicantId(const std::string& _applicantId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ApplicantIdHasBeenSet() const;
 
                     /**
-                     * 获取申请人名称
-                     * @return ApplicantName 申请人名称
+                     * 获取<p>申请人名称</p>
+                     * @return ApplicantName <p>申请人名称</p>
                      * 
                      */
                     std::string GetApplicantName() const;
 
                     /**
-                     * 设置申请人名称
-                     * @param _applicantName 申请人名称
+                     * 设置<p>申请人名称</p>
+                     * @param _applicantName <p>申请人名称</p>
                      * 
                      */
                     void SetApplicantName(const std::string& _applicantName);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool ApplicantNameHasBeenSet() const;
 
                     /**
-                     * 获取审批备注
+                     * 获取<p>审批备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Remark 审批备注
+                     * @return Remark <p>审批备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置审批备注
+                     * 设置<p>审批备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _remark 审批备注
+                     * @param _remark <p>审批备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取审批分类key
-                     * @return ApproveClassification 审批分类key
+                     * 获取<p>审批分类key</p>
+                     * @return ApproveClassification <p>审批分类key</p>
                      * 
                      */
                     std::string GetApproveClassification() const;
 
                     /**
-                     * 设置审批分类key
-                     * @param _approveClassification 审批分类key
+                     * 设置<p>审批分类key</p>
+                     * @param _approveClassification <p>审批分类key</p>
                      * 
                      */
                     void SetApproveClassification(const std::string& _approveClassification);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool ApproveClassificationHasBeenSet() const;
 
                     /**
-                     * 获取审批单id
-                     * @return ApproveId 审批单id
+                     * 获取<p>审批单id</p>
+                     * @return ApproveId <p>审批单id</p>
                      * 
                      */
                     std::string GetApproveId() const;
 
                     /**
-                     * 设置审批单id
-                     * @param _approveId 审批单id
+                     * 设置<p>审批单id</p>
+                     * @param _approveId <p>审批单id</p>
                      * 
                      */
                     void SetApproveId(const std::string& _approveId);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool ApproveIdHasBeenSet() const;
 
                     /**
-                     * 获取审批类型key
-                     * @return ApproveType 审批类型key
+                     * 获取<p>审批类型key</p>
+                     * @return ApproveType <p>审批类型key</p>
                      * 
                      */
                     std::string GetApproveType() const;
 
                     /**
-                     * 设置审批类型key
-                     * @param _approveType 审批类型key
+                     * 设置<p>审批类型key</p>
+                     * @param _approveType <p>审批类型key</p>
                      * 
                      */
                     void SetApproveType(const std::string& _approveType);
@@ -177,18 +177,18 @@ namespace TencentCloud
                     bool ApproveTypeHasBeenSet() const;
 
                     /**
-                     * 获取申请原因
+                     * 获取<p>申请原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Reason 申请原因
+                     * @return Reason <p>申请原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
-                     * 设置申请原因
+                     * 设置<p>申请原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _reason 申请原因
+                     * @param _reason <p>申请原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -202,15 +202,15 @@ namespace TencentCloud
                     bool ReasonHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -223,18 +223,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取审批时间
+                     * 获取<p>审批时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproveTime 审批时间
+                     * @return ApproveTime <p>审批时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproveTime() const;
 
                     /**
-                     * 设置审批时间
+                     * 设置<p>审批时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _approveTime 审批时间
+                     * @param _approveTime <p>审批时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,15 +248,15 @@ namespace TencentCloud
                     bool ApproveTimeHasBeenSet() const;
 
                     /**
-                     * 获取审批分类名称
-                     * @return ApproveClassificationName 审批分类名称
+                     * 获取<p>审批分类名称</p>
+                     * @return ApproveClassificationName <p>审批分类名称</p>
                      * 
                      */
                     std::string GetApproveClassificationName() const;
 
                     /**
-                     * 设置审批分类名称
-                     * @param _approveClassificationName 审批分类名称
+                     * 设置<p>审批分类名称</p>
+                     * @param _approveClassificationName <p>审批分类名称</p>
                      * 
                      */
                     void SetApproveClassificationName(const std::string& _approveClassificationName);
@@ -269,15 +269,15 @@ namespace TencentCloud
                     bool ApproveClassificationNameHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取<p>状态</p>
+                     * @return Status <p>状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置<p>状态</p>
+                     * @param _status <p>状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -290,15 +290,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取审批类型名称
-                     * @return ApproveTypeName 审批类型名称
+                     * 获取<p>审批类型名称</p>
+                     * @return ApproveTypeName <p>审批类型名称</p>
                      * 
                      */
                     std::string GetApproveTypeName() const;
 
                     /**
-                     * 设置审批类型名称
-                     * @param _approveTypeName 审批类型名称
+                     * 设置<p>审批类型名称</p>
+                     * @param _approveTypeName <p>审批类型名称</p>
                      * 
                      */
                     void SetApproveTypeName(const std::string& _approveTypeName);
@@ -311,15 +311,15 @@ namespace TencentCloud
                     bool ApproveTypeNameHasBeenSet() const;
 
                     /**
-                     * 获取审批异常或者失败信息
-                     * @return ErrorMessage 审批异常或者失败信息
+                     * 获取<p>审批异常或者失败信息</p>
+                     * @return ErrorMessage <p>审批异常或者失败信息</p>
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
-                     * 设置审批异常或者失败信息
-                     * @param _errorMessage 审批异常或者失败信息
+                     * 设置<p>审批异常或者失败信息</p>
+                     * @param _errorMessage <p>审批异常或者失败信息</p>
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -332,18 +332,18 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取申请名称
+                     * 获取<p>申请名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApplyName 申请名称
+                     * @return ApplyName <p>申请名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplyName() const;
 
                     /**
-                     * 设置申请名称
+                     * 设置<p>申请名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _applyName 申请名称
+                     * @param _applyName <p>申请名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -357,18 +357,18 @@ namespace TencentCloud
                     bool ApplyNameHasBeenSet() const;
 
                     /**
-                     * 获取审批人id
+                     * 获取<p>审批人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproverId 审批人id
+                     * @return ApproverId <p>审批人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproverId() const;
 
                     /**
-                     * 设置审批人id
+                     * 设置<p>审批人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _approverId 审批人id
+                     * @param _approverId <p>审批人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -382,18 +382,18 @@ namespace TencentCloud
                     bool ApproverIdHasBeenSet() const;
 
                     /**
-                     * 获取审批人名称
+                     * 获取<p>审批人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproverName 审批人名称
+                     * @return ApproverName <p>审批人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproverName() const;
 
                     /**
-                     * 设置审批人名称
+                     * 设置<p>审批人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _approverName 审批人名称
+                     * @param _approverName <p>审批人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -407,18 +407,18 @@ namespace TencentCloud
                     bool ApproverNameHasBeenSet() const;
 
                     /**
-                     * 获取审批所属项目
+                     * 获取<p>审批所属项目</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproveProjectName 审批所属项目
+                     * @return ApproveProjectName <p>审批所属项目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproveProjectName() const;
 
                     /**
-                     * 设置审批所属项目
+                     * 设置<p>审批所属项目</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _approveProjectName 审批所属项目
+                     * @param _approveProjectName <p>审批所属项目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -432,18 +432,18 @@ namespace TencentCloud
                     bool ApproveProjectNameHasBeenSet() const;
 
                     /**
-                     * 获取审批id
+                     * 获取<p>审批id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApplyId 审批id
+                     * @return ApplyId <p>审批id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplyId() const;
 
                     /**
-                     * 设置审批id
+                     * 设置<p>审批id</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _applyId 审批id
+                     * @param _applyId <p>审批id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -457,18 +457,18 @@ namespace TencentCloud
                     bool ApplyIdHasBeenSet() const;
 
                     /**
-                     * 获取扩展字段
+                     * 获取<p>扩展字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Metadata 扩展字段
+                     * @return Metadata <p>扩展字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetadata() const;
 
                     /**
-                     * 设置扩展字段
+                     * 设置<p>扩展字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metadata 扩展字段
+                     * @param _metadata <p>扩展字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -482,18 +482,18 @@ namespace TencentCloud
                     bool MetadataHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
+                     * 获取<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTimestamp 创建时间
+                     * @return CreateTimestamp <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTimestamp() const;
 
                     /**
-                     * 设置创建时间
+                     * 设置<p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTimestamp 创建时间
+                     * @param _createTimestamp <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -507,18 +507,18 @@ namespace TencentCloud
                     bool CreateTimestampHasBeenSet() const;
 
                     /**
-                     * 获取审批时间
+                     * 获取<p>审批时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApproveTimestamp 审批时间
+                     * @return ApproveTimestamp <p>审批时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetApproveTimestamp() const;
 
                     /**
-                     * 设置审批时间
+                     * 设置<p>审批时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _approveTimestamp 审批时间
+                     * @param _approveTimestamp <p>审批时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -531,144 +531,171 @@ namespace TencentCloud
                      */
                     bool ApproveTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取<p>审批扩展码</p>
+                     * @return ApproveCode <p>审批扩展码</p>
+                     * 
+                     */
+                    std::string GetApproveCode() const;
+
+                    /**
+                     * 设置<p>审批扩展码</p>
+                     * @param _approveCode <p>审批扩展码</p>
+                     * 
+                     */
+                    void SetApproveCode(const std::string& _approveCode);
+
+                    /**
+                     * 判断参数 ApproveCode 是否已赋值
+                     * @return ApproveCode 是否已赋值
+                     * 
+                     */
+                    bool ApproveCodeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 申请人id
+                     * <p>申请人id</p>
                      */
                     std::string m_applicantId;
                     bool m_applicantIdHasBeenSet;
 
                     /**
-                     * 申请人名称
+                     * <p>申请人名称</p>
                      */
                     std::string m_applicantName;
                     bool m_applicantNameHasBeenSet;
 
                     /**
-                     * 审批备注
+                     * <p>审批备注</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 审批分类key
+                     * <p>审批分类key</p>
                      */
                     std::string m_approveClassification;
                     bool m_approveClassificationHasBeenSet;
 
                     /**
-                     * 审批单id
+                     * <p>审批单id</p>
                      */
                     std::string m_approveId;
                     bool m_approveIdHasBeenSet;
 
                     /**
-                     * 审批类型key
+                     * <p>审批类型key</p>
                      */
                     std::string m_approveType;
                     bool m_approveTypeHasBeenSet;
 
                     /**
-                     * 申请原因
+                     * <p>申请原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 审批时间
+                     * <p>审批时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveTime;
                     bool m_approveTimeHasBeenSet;
 
                     /**
-                     * 审批分类名称
+                     * <p>审批分类名称</p>
                      */
                     std::string m_approveClassificationName;
                     bool m_approveClassificationNameHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 审批类型名称
+                     * <p>审批类型名称</p>
                      */
                     std::string m_approveTypeName;
                     bool m_approveTypeNameHasBeenSet;
 
                     /**
-                     * 审批异常或者失败信息
+                     * <p>审批异常或者失败信息</p>
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 申请名称
+                     * <p>申请名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applyName;
                     bool m_applyNameHasBeenSet;
 
                     /**
-                     * 审批人id
+                     * <p>审批人id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approverId;
                     bool m_approverIdHasBeenSet;
 
                     /**
-                     * 审批人名称
+                     * <p>审批人名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approverName;
                     bool m_approverNameHasBeenSet;
 
                     /**
-                     * 审批所属项目
+                     * <p>审批所属项目</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approveProjectName;
                     bool m_approveProjectNameHasBeenSet;
 
                     /**
-                     * 审批id
+                     * <p>审批id</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applyId;
                     bool m_applyIdHasBeenSet;
 
                     /**
-                     * 扩展字段
+                     * <p>扩展字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metadata;
                     bool m_metadataHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTimestamp;
                     bool m_createTimestampHasBeenSet;
 
                     /**
-                     * 审批时间
+                     * <p>审批时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_approveTimestamp;
                     bool m_approveTimestampHasBeenSet;
+
+                    /**
+                     * <p>审批扩展码</p>
+                     */
+                    std::string m_approveCode;
+                    bool m_approveCodeHasBeenSet;
 
                 };
             }

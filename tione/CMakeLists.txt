@@ -154,6 +154,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/UpdateMountLimitRequest.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServiceRequest.h
   include/tencentcloud/tione/v20211111/model/ChatCompletionRequest.h
+  include/tencentcloud/tione/v20211111/model/SmartRouter.h
   include/tencentcloud/tione/v20211111/model/CreateMountLimitResponse.h
   include/tencentcloud/tione/v20211111/model/TrainingTaskSetItem.h
   include/tencentcloud/tione/v20211111/model/ModifyNotebookRequest.h
@@ -239,6 +240,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CreateTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/Message.h
   include/tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlRequest.h
+  include/tencentcloud/tione/v20211111/model/StorageExtraConf.h
   include/tencentcloud/tione/v20211111/model/ModifyNotebookResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeBuildInImagesResponse.h
@@ -255,6 +257,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/SpecPrice.h
   include/tencentcloud/tione/v20211111/model/CreateExportRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsResponse.h
+  include/tencentcloud/tione/v20211111/model/SmartRouterResourceSpec.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingTaskResponse.h
   include/tencentcloud/tione/v20211111/model/CreateMountLimitRequest.h
   include/tencentcloud/tione/v20211111/model/HostPath.h
@@ -317,7 +320,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/EnableTrainingTaskClsConfigRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/DescribePublicAlgoVersionListRequest.h
-  include/tencentcloud/tione/v20211111/model/StorageExtraConf.h
+  include/tencentcloud/tione/v20211111/model/SmartRouterResourceConfig.h
   include/tencentcloud/tione/v20211111/model/HealthProbe.h
   include/tencentcloud/tione/v20211111/model/LocalDisk.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodUrlRequest.h
@@ -361,6 +364,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DeleteMountLimitResponse.h
   include/tencentcloud/tione/v20211111/model/PlatformImageInfo.h
   include/tencentcloud/tione/v20211111/model/DescribePlatformImagesRequest.h
+  include/tencentcloud/tione/v20211111/model/SmartRouterComponent.h
   include/tencentcloud/tione/v20211111/model/Probe.h
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/MetricData.h
@@ -512,6 +516,7 @@ set(tione_src
   src/v20211111/model/UpdateMountLimitRequest.cpp
   src/v20211111/model/ModifyModelServiceRequest.cpp
   src/v20211111/model/ChatCompletionRequest.cpp
+  src/v20211111/model/SmartRouter.cpp
   src/v20211111/model/CreateMountLimitResponse.cpp
   src/v20211111/model/TrainingTaskSetItem.cpp
   src/v20211111/model/ModifyNotebookRequest.cpp
@@ -597,6 +602,7 @@ set(tione_src
   src/v20211111/model/CreateTrainingTaskRequest.cpp
   src/v20211111/model/Message.cpp
   src/v20211111/model/CreatePresignedNotebookUrlRequest.cpp
+  src/v20211111/model/StorageExtraConf.cpp
   src/v20211111/model/ModifyNotebookResponse.cpp
   src/v20211111/model/DescribeModelServiceResponse.cpp
   src/v20211111/model/DescribeBuildInImagesResponse.cpp
@@ -613,6 +619,7 @@ set(tione_src
   src/v20211111/model/SpecPrice.cpp
   src/v20211111/model/CreateExportRequest.cpp
   src/v20211111/model/DescribeBillingSpecsResponse.cpp
+  src/v20211111/model/SmartRouterResourceSpec.cpp
   src/v20211111/model/DeleteTrainingTaskResponse.cpp
   src/v20211111/model/CreateMountLimitRequest.cpp
   src/v20211111/model/HostPath.cpp
@@ -675,7 +682,7 @@ set(tione_src
   src/v20211111/model/EnableTrainingTaskClsConfigRequest.cpp
   src/v20211111/model/DescribeNotebookRequest.cpp
   src/v20211111/model/DescribePublicAlgoVersionListRequest.cpp
-  src/v20211111/model/StorageExtraConf.cpp
+  src/v20211111/model/SmartRouterResourceConfig.cpp
   src/v20211111/model/HealthProbe.cpp
   src/v20211111/model/LocalDisk.cpp
   src/v20211111/model/DescribeTrainingTaskPodUrlRequest.cpp
@@ -719,6 +726,7 @@ set(tione_src
   src/v20211111/model/DeleteMountLimitResponse.cpp
   src/v20211111/model/PlatformImageInfo.cpp
   src/v20211111/model/DescribePlatformImagesRequest.cpp
+  src/v20211111/model/SmartRouterComponent.cpp
   src/v20211111/model/Probe.cpp
   src/v20211111/model/DeleteModelServiceResponse.cpp
   src/v20211111/model/MetricData.cpp

@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据
+                     * 获取<p>数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 数据
+                     * @return Data <p>数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据
+                     * <p>数据</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BatchResultDs m_data;

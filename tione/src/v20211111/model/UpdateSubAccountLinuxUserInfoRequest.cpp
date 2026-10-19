@@ -23,6 +23,7 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 UpdateSubAccountLinuxUserInfoRequest::UpdateSubAccountLinuxUserInfoRequest() :
+    m_tiProjectIdHasBeenSet(false),
     m_subAccountListHasBeenSet(false)
 {
 }
@@ -33,6 +34,14 @@ string UpdateSubAccountLinuxUserInfoRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_subAccountListHasBeenSet)
     {
@@ -56,6 +65,22 @@ string UpdateSubAccountLinuxUserInfoRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string UpdateSubAccountLinuxUserInfoRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void UpdateSubAccountLinuxUserInfoRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool UpdateSubAccountLinuxUserInfoRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
+}
 
 vector<SubAccountInfo> UpdateSubAccountLinuxUserInfoRequest::GetSubAccountList() const
 {

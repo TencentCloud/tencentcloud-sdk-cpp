@@ -29,7 +29,8 @@ LicenseStatusItem::LicenseStatusItem() :
     m_usedNumHasBeenSet(false),
     m_remainNumHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_orderTypeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome LicenseStatusItem::Deserialize(const rapidjson::Value &value
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("OrderType") && !value["OrderType"].IsNull())
+    {
+        if (!value["OrderType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicenseStatusItem.OrderType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orderType = string(value["OrderType"].GetString());
+        m_orderTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void LicenseStatusItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void LicenseStatusItem::SetEndTime(const string& _endTime)
 bool LicenseStatusItem::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string LicenseStatusItem::GetOrderType() const
+{
+    return m_orderType;
+}
+
+void LicenseStatusItem::SetOrderType(const string& _orderType)
+{
+    m_orderType = _orderType;
+    m_orderTypeHasBeenSet = true;
+}
+
+bool LicenseStatusItem::OrderTypeHasBeenSet() const
+{
+    return m_orderTypeHasBeenSet;
 }
 

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/adp/v20260520/model/CallMCPToolRequest.h>
+#include <tencentcloud/adp/v20260520/model/CallMCPToolResponse.h>
 #include <tencentcloud/adp/v20260520/model/CheckLabelRequest.h>
 #include <tencentcloud/adp/v20260520/model/CheckLabelResponse.h>
 #include <tencentcloud/adp/v20260520/model/CopyAgentFromAppRequest.h>
@@ -259,6 +261,8 @@
 #include <tencentcloud/adp/v20260520/model/ModifyVariableResponse.h>
 #include <tencentcloud/adp/v20260520/model/PauseAppTriggerRequest.h>
 #include <tencentcloud/adp/v20260520/model/PauseAppTriggerResponse.h>
+#include <tencentcloud/adp/v20260520/model/ReadMCPResourceRequest.h>
+#include <tencentcloud/adp/v20260520/model/ReadMCPResourceResponse.h>
 #include <tencentcloud/adp/v20260520/model/ReleaseSkillRequest.h>
 #include <tencentcloud/adp/v20260520/model/ReleaseSkillResponse.h>
 #include <tencentcloud/adp/v20260520/model/ResetConversationRequest.h>
@@ -299,6 +303,9 @@ namespace TencentCloud
                 AdpClient(const Credential &credential, const std::string &region);
                 AdpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CallMCPToolResponse> CallMCPToolOutcome;
+                typedef std::future<CallMCPToolOutcome> CallMCPToolOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CallMCPToolRequest&, CallMCPToolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallMCPToolAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckLabelResponse> CheckLabelOutcome;
                 typedef std::future<CheckLabelOutcome> CheckLabelOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CheckLabelRequest&, CheckLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckLabelAsyncHandler;
@@ -653,6 +660,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PauseAppTriggerResponse> PauseAppTriggerOutcome;
                 typedef std::future<PauseAppTriggerOutcome> PauseAppTriggerOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::PauseAppTriggerRequest&, PauseAppTriggerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseAppTriggerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReadMCPResourceResponse> ReadMCPResourceOutcome;
+                typedef std::future<ReadMCPResourceOutcome> ReadMCPResourceOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ReadMCPResourceRequest&, ReadMCPResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReadMCPResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseSkillResponse> ReleaseSkillOutcome;
                 typedef std::future<ReleaseSkillOutcome> ReleaseSkillOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ReleaseSkillRequest&, ReleaseSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseSkillAsyncHandler;
@@ -694,6 +704,15 @@ namespace TencentCloud
                 typedef std::function<void(const AdpClient*, const Model::UnfavoriteSkillRequest&, UnfavoriteSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfavoriteSkillAsyncHandler;
 
 
+
+                /**
+                 *用户在 MCP App iframe 内触发的工具调用
+                 * @param req CallMCPToolRequest
+                 * @return CallMCPToolOutcome
+                 */
+                CallMCPToolOutcome CallMCPTool(const Model::CallMCPToolRequest &request);
+                void CallMCPToolAsync(const Model::CallMCPToolRequest& request, const CallMCPToolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CallMCPToolOutcomeCallable CallMCPToolCallable(const Model::CallMCPToolRequest& request);
 
                 /**
                  *校验标签
@@ -1757,6 +1776,15 @@ namespace TencentCloud
                 PauseAppTriggerOutcome PauseAppTrigger(const Model::PauseAppTriggerRequest &request);
                 void PauseAppTriggerAsync(const Model::PauseAppTriggerRequest& request, const PauseAppTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PauseAppTriggerOutcomeCallable PauseAppTriggerCallable(const Model::PauseAppTriggerRequest& request);
+
+                /**
+                 *读取 MCP UI 资源（HTML），供前端 iframe 加载 MCP App 界面
+                 * @param req ReadMCPResourceRequest
+                 * @return ReadMCPResourceOutcome
+                 */
+                ReadMCPResourceOutcome ReadMCPResource(const Model::ReadMCPResourceRequest &request);
+                void ReadMCPResourceAsync(const Model::ReadMCPResourceRequest& request, const ReadMCPResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReadMCPResourceOutcomeCallable ReadMCPResourceCallable(const Model::ReadMCPResourceRequest& request);
 
                 /**
                  *上架skill

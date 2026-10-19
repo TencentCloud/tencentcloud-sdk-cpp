@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用配置项
-                     * @return ApmApplicationConfigView 应用配置项
+                     * 获取<p>应用配置项</p>
+                     * @return ApmApplicationConfigView <p>应用配置项</p>
                      * 
                      */
                     ApmApplicationConfigView GetApmApplicationConfigView() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用配置项
+                     * <p>应用配置项</p>
                      */
                     ApmApplicationConfigView m_apmApplicationConfigView;
                     bool m_apmApplicationConfigViewHasBeenSet;

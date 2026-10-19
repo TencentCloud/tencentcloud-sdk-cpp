@@ -25,7 +25,9 @@ using namespace std;
 CreateNotebookImageRequest::CreateNotebookImageRequest() :
     m_imageInfoHasBeenSet(false),
     m_notebookIdHasBeenSet(false),
-    m_kernelsHasBeenSet(false)
+    m_tiProjectIdHasBeenSet(false),
+    m_kernelsHasBeenSet(false),
+    m_registerToImageCenterHasBeenSet(false)
 {
 }
 
@@ -53,6 +55,14 @@ string CreateNotebookImageRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_notebookId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_kernelsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -64,6 +74,14 @@ string CreateNotebookImageRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_registerToImageCenterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegisterToImageCenter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_registerToImageCenter, allocator);
     }
 
 
@@ -106,6 +124,22 @@ bool CreateNotebookImageRequest::NotebookIdHasBeenSet() const
     return m_notebookIdHasBeenSet;
 }
 
+string CreateNotebookImageRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void CreateNotebookImageRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool CreateNotebookImageRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
+}
+
 vector<string> CreateNotebookImageRequest::GetKernels() const
 {
     return m_kernels;
@@ -120,6 +154,22 @@ void CreateNotebookImageRequest::SetKernels(const vector<string>& _kernels)
 bool CreateNotebookImageRequest::KernelsHasBeenSet() const
 {
     return m_kernelsHasBeenSet;
+}
+
+bool CreateNotebookImageRequest::GetRegisterToImageCenter() const
+{
+    return m_registerToImageCenter;
+}
+
+void CreateNotebookImageRequest::SetRegisterToImageCenter(const bool& _registerToImageCenter)
+{
+    m_registerToImageCenter = _registerToImageCenter;
+    m_registerToImageCenterHasBeenSet = true;
+}
+
+bool CreateNotebookImageRequest::RegisterToImageCenterHasBeenSet() const
+{
+    return m_registerToImageCenterHasBeenSet;
 }
 
 

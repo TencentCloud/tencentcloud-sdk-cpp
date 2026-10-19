@@ -28,7 +28,8 @@ DescribeQuestionMarkAgentJobResponse::DescribeQuestionMarkAgentJobResponse() :
     m_errorMessageHasBeenSet(false),
     m_jobStatusHasBeenSet(false),
     m_angleHasBeenSet(false),
-    m_markInfosHasBeenSet(false)
+    m_markInfosHasBeenSet(false),
+    m_questionInfoHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,26 @@ CoreInternalOutcome DescribeQuestionMarkAgentJobResponse::Deserialize(const stri
         m_markInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("QuestionInfo") && !rsp["QuestionInfo"].IsNull())
+    {
+        if (!rsp["QuestionInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `QuestionInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["QuestionInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            QuestionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_questionInfo.push_back(item);
+        }
+        m_questionInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -177,6 +198,21 @@ string DescribeQuestionMarkAgentJobResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_markInfos.begin(); itr != m_markInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_questionInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuestionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_questionInfo.begin(); itr != m_questionInfo.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -243,6 +279,16 @@ vector<MarkInfo> DescribeQuestionMarkAgentJobResponse::GetMarkInfos() const
 bool DescribeQuestionMarkAgentJobResponse::MarkInfosHasBeenSet() const
 {
     return m_markInfosHasBeenSet;
+}
+
+vector<QuestionInfo> DescribeQuestionMarkAgentJobResponse::GetQuestionInfo() const
+{
+    return m_questionInfo;
+}
+
+bool DescribeQuestionMarkAgentJobResponse::QuestionInfoHasBeenSet() const
+{
+    return m_questionInfoHasBeenSet;
 }
 
 

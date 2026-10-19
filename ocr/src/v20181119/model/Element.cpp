@@ -26,7 +26,8 @@ Element::Element() :
     m_groupTypeHasBeenSet(false),
     m_resultListHasBeenSet(false),
     m_indexHasBeenSet(false),
-    m_pageIndexHasBeenSet(false)
+    m_pageIndexHasBeenSet(false),
+    m_answerElementHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,23 @@ CoreInternalOutcome Element::Deserialize(const rapidjson::Value &value)
         m_pageIndexHasBeenSet = true;
     }
 
+    if (value.HasMember("AnswerElement") && !value["AnswerElement"].IsNull())
+    {
+        if (!value["AnswerElement"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Element.AnswerElement` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_answerElement.Deserialize(value["AnswerElement"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_answerElementHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -173,6 +191,15 @@ void Element::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "PageIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pageIndex, allocator);
+    }
+
+    if (m_answerElementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnswerElement";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_answerElement.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -272,5 +299,21 @@ void Element::SetPageIndex(const int64_t& _pageIndex)
 bool Element::PageIndexHasBeenSet() const
 {
     return m_pageIndexHasBeenSet;
+}
+
+AnswerElement Element::GetAnswerElement() const
+{
+    return m_answerElement;
+}
+
+void Element::SetAnswerElement(const AnswerElement& _answerElement)
+{
+    m_answerElement = _answerElement;
+    m_answerElementHasBeenSet = true;
+}
+
+bool Element::AnswerElementHasBeenSet() const
+{
+    return m_answerElementHasBeenSet;
 }
 

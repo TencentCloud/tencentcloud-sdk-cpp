@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道 ID（从查询通道DescribeDeviceChannel接口中获取）
-                     * @return ChannelId 通道 ID（从查询通道DescribeDeviceChannel接口中获取）
+                     * 获取<p>通道 ID（从查询通道DescribeDeviceChannel接口中获取）</p>
+                     * @return ChannelId <p>通道 ID（从查询通道DescribeDeviceChannel接口中获取）</p>
                      * 
                      */
                     std::string GetChannelId() const;
 
                     /**
-                     * 设置通道 ID（从查询通道DescribeDeviceChannel接口中获取）
-                     * @param _channelId 通道 ID（从查询通道DescribeDeviceChannel接口中获取）
+                     * 设置<p>通道 ID（从查询通道DescribeDeviceChannel接口中获取）</p>
+                     * @param _channelId <p>通道 ID（从查询通道DescribeDeviceChannel接口中获取）</p>
                      * 
                      */
                     void SetChannelId(const std::string& _channelId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取起始时间
-                     * @return Start 起始时间
+                     * 获取<p>起始时间</p>
+                     * @return Start <p>起始时间</p>
                      * 
                      */
                     int64_t GetStart() const;
 
                     /**
-                     * 设置起始时间
-                     * @param _start 起始时间
+                     * 设置<p>起始时间</p>
+                     * @param _start <p>起始时间</p>
                      * 
                      */
                     void SetStart(const int64_t& _start);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartHasBeenSet() const;
 
                     /**
-                     * 获取 结束时间
-                     * @return End  结束时间
+                     * 获取<p>结束时间</p>
+                     * @return End <p>结束时间</p>
                      * 
                      */
                     int64_t GetEnd() const;
 
                     /**
-                     * 设置 结束时间
-                     * @param _end  结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _end <p>结束时间</p>
                      * 
                      */
                     void SetEnd(const int64_t& _end);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndHasBeenSet() const;
 
                     /**
-                     * 获取流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））
-                     * @return StreamType 流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））
+                     * 获取<p>流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））</p>
+                     * @return StreamType <p>流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））</p>
                      * 
                      */
                     int64_t GetStreamType() const;
 
                     /**
-                     * 设置流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））
-                     * @param _streamType 流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））
+                     * 设置<p>流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））</p>
+                     * @param _streamType <p>流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））</p>
                      * 
                      */
                     void SetStreamType(const int64_t& _streamType);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StreamTypeHasBeenSet() const;
 
                     /**
-                     * 获取分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））
-                     * @return Resolution 分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））
+                     * 获取<p>分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））</p>
+                     * @return Resolution <p>分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））</p>
                      * 
                      */
                     std::string GetResolution() const;
 
                     /**
-                     * 设置分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））
-                     * @param _resolution 分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））
+                     * 设置<p>分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））</p>
+                     * @param _resolution <p>分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））</p>
                      * 
                      */
                     void SetResolution(const std::string& _resolution);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取是否内网
-                     * @return IsInternal 是否内网
+                     * 获取<p>是否内网</p>
+                     * @return IsInternal <p>是否内网</p>
                      * 
                      */
                     bool GetIsInternal() const;
 
                     /**
-                     * 设置是否内网
-                     * @param _isInternal 是否内网
+                     * 设置<p>是否内网</p>
+                     * @param _isInternal <p>是否内网</p>
                      * 
                      */
                     void SetIsInternal(const bool& _isInternal);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道 ID（从查询通道DescribeDeviceChannel接口中获取）
+                     * <p>通道 ID（从查询通道DescribeDeviceChannel接口中获取）</p>
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 起始时间
+                     * <p>起始时间</p>
                      */
                     int64_t m_start;
                     bool m_startHasBeenSet;
 
                     /**
-                     *  结束时间
+                     * <p>结束时间</p>
                      */
                     int64_t m_end;
                     bool m_endHasBeenSet;
 
                     /**
-                     * 流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））
+                     * <p>流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））</p>
                      */
                     int64_t m_streamType;
                     bool m_streamTypeHasBeenSet;
 
                     /**
-                     * 分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））
+                     * <p>分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））</p>
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 是否内网
+                     * <p>是否内网</p>
                      */
                     bool m_isInternal;
                     bool m_isInternalHasBeenSet;

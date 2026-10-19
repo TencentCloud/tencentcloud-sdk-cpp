@@ -31,6 +31,7 @@ ModifyNotebookRequest::ModifyNotebookRequest() :
     m_directInternetAccessHasBeenSet(false),
     m_rootAccessHasBeenSet(false),
     m_logEnableHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_resourceGroupIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
@@ -122,6 +123,14 @@ string ModifyNotebookRequest::ToJsonString() const
         string key = "LogEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_logEnable, allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceGroupIdHasBeenSet)
@@ -432,6 +441,22 @@ void ModifyNotebookRequest::SetLogEnable(const bool& _logEnable)
 bool ModifyNotebookRequest::LogEnableHasBeenSet() const
 {
     return m_logEnableHasBeenSet;
+}
+
+string ModifyNotebookRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void ModifyNotebookRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool ModifyNotebookRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 string ModifyNotebookRequest::GetResourceGroupId() const

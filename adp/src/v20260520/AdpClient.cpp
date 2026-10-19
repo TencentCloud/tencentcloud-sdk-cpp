@@ -40,6 +40,56 @@ AdpClient::AdpClient(const Credential &credential, const string &region, const C
 }
 
 
+AdpClient::CallMCPToolOutcome AdpClient::CallMCPTool(const CallMCPToolRequest &request)
+{
+    auto outcome = MakeRequest(request, "CallMCPTool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CallMCPToolResponse rsp = CallMCPToolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CallMCPToolOutcome(rsp);
+        else
+            return CallMCPToolOutcome(o.GetError());
+    }
+    else
+    {
+        return CallMCPToolOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CallMCPToolAsync(const CallMCPToolRequest& request, const CallMCPToolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CallMCPToolRequest&;
+    using Resp = CallMCPToolResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CallMCPTool", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CallMCPToolOutcomeCallable AdpClient::CallMCPToolCallable(const CallMCPToolRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CallMCPToolOutcome>>();
+    CallMCPToolAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CallMCPToolRequest&,
+        CallMCPToolOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CheckLabelOutcome AdpClient::CheckLabel(const CheckLabelRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckLabel");
@@ -5932,6 +5982,56 @@ AdpClient::PauseAppTriggerOutcomeCallable AdpClient::PauseAppTriggerCallable(con
         const AdpClient*,
         const PauseAppTriggerRequest&,
         PauseAppTriggerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ReadMCPResourceOutcome AdpClient::ReadMCPResource(const ReadMCPResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReadMCPResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReadMCPResourceResponse rsp = ReadMCPResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReadMCPResourceOutcome(rsp);
+        else
+            return ReadMCPResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return ReadMCPResourceOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ReadMCPResourceAsync(const ReadMCPResourceRequest& request, const ReadMCPResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ReadMCPResourceRequest&;
+    using Resp = ReadMCPResourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ReadMCPResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ReadMCPResourceOutcomeCallable AdpClient::ReadMCPResourceCallable(const ReadMCPResourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ReadMCPResourceOutcome>>();
+    ReadMCPResourceAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ReadMCPResourceRequest&,
+        ReadMCPResourceOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

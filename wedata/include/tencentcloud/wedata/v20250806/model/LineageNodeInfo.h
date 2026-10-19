@@ -140,6 +140,56 @@ namespace TencentCloud
                      */
                     bool UpStreamCountHasBeenSet() const;
 
+                    /**
+                     * 获取查询字段名（本次请求携带的字段名，用于聚合）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceColumnName 查询字段名（本次请求携带的字段名，用于聚合）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSourceColumnName() const;
+
+                    /**
+                     * 设置查询字段名（本次请求携带的字段名，用于聚合）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sourceColumnName 查询字段名（本次请求携带的字段名，用于聚合）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSourceColumnName(const std::string& _sourceColumnName);
+
+                    /**
+                     * 判断参数 SourceColumnName 是否已赋值
+                     * @return SourceColumnName 是否已赋值
+                     * 
+                     */
+                    bool SourceColumnNameHasBeenSet() const;
+
+                    /**
+                     * 获取当前结果字段名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColumnName 当前结果字段名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetColumnName() const;
+
+                    /**
+                     * 设置当前结果字段名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _columnName 当前结果字段名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetColumnName(const std::string& _columnName);
+
+                    /**
+                     * 判断参数 ColumnName 是否已赋值
+                     * @return ColumnName 是否已赋值
+                     * 
+                     */
+                    bool ColumnNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +217,20 @@ namespace TencentCloud
                      */
                     int64_t m_upStreamCount;
                     bool m_upStreamCountHasBeenSet;
+
+                    /**
+                     * 查询字段名（本次请求携带的字段名，用于聚合）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sourceColumnName;
+                    bool m_sourceColumnNameHasBeenSet;
+
+                    /**
+                     * 当前结果字段名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_columnName;
+                    bool m_columnNameHasBeenSet;
 
                 };
             }

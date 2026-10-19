@@ -97,7 +97,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/GetOpsWorkflowRequest.h
   include/tencentcloud/wedata/v20250806/model/ListTaskVersionsResponse.h
   include/tencentcloud/wedata/v20250806/model/ProjectBrief.h
-  include/tencentcloud/wedata/v20250806/model/UpdateOpsTriggerTasksOwnerResponse.h
+  include/tencentcloud/wedata/v20250806/model/ResourceTag.h
   include/tencentcloud/wedata/v20250806/model/RevokeDataSourceAuthorizationResponse.h
   include/tencentcloud/wedata/v20250806/model/TaskCode.h
   include/tencentcloud/wedata/v20250806/model/BriefTask.h
@@ -364,6 +364,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/UpdateTaskResponse.h
   include/tencentcloud/wedata/v20250806/model/ResourceFolder.h
   include/tencentcloud/wedata/v20250806/model/UpdateDataSourceRequest.h
+  include/tencentcloud/wedata/v20250806/model/UpdateOpsTriggerTasksOwnerResponse.h
   include/tencentcloud/wedata/v20250806/model/QualityRuleGroupsTableVO.h
   include/tencentcloud/wedata/v20250806/model/AssociateResourceGroupToProjectRequest.h
   include/tencentcloud/wedata/v20250806/model/ResultColumnInfo.h
@@ -1758,7 +1759,7 @@ set(wedata_src
   src/v20250806/model/GetOpsWorkflowRequest.cpp
   src/v20250806/model/ListTaskVersionsResponse.cpp
   src/v20250806/model/ProjectBrief.cpp
-  src/v20250806/model/UpdateOpsTriggerTasksOwnerResponse.cpp
+  src/v20250806/model/ResourceTag.cpp
   src/v20250806/model/RevokeDataSourceAuthorizationResponse.cpp
   src/v20250806/model/TaskCode.cpp
   src/v20250806/model/BriefTask.cpp
@@ -2025,6 +2026,7 @@ set(wedata_src
   src/v20250806/model/UpdateTaskResponse.cpp
   src/v20250806/model/ResourceFolder.cpp
   src/v20250806/model/UpdateDataSourceRequest.cpp
+  src/v20250806/model/UpdateOpsTriggerTasksOwnerResponse.cpp
   src/v20250806/model/QualityRuleGroupsTableVO.cpp
   src/v20250806/model/AssociateResourceGroupToProjectRequest.cpp
   src/v20250806/model/ResultColumnInfo.cpp

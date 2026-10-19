@@ -41,7 +41,9 @@ NatFwSwitchDetailS::NatFwSwitchDetailS() :
     m_attachInsHasBeenSet(false),
     m_endpointsHasBeenSet(false),
     m_progressHasBeenSet(false),
-    m_checkResultHasBeenSet(false)
+    m_checkResultHasBeenSet(false),
+    m_forbidModeHasBeenSet(false),
+    m_forbidCodeHasBeenSet(false)
 {
 }
 
@@ -287,6 +289,26 @@ CoreInternalOutcome NatFwSwitchDetailS::Deserialize(const rapidjson::Value &valu
         m_checkResultHasBeenSet = true;
     }
 
+    if (value.HasMember("ForbidMode") && !value["ForbidMode"].IsNull())
+    {
+        if (!value["ForbidMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatFwSwitchDetailS.ForbidMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidMode = value["ForbidMode"].GetInt64();
+        m_forbidModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForbidCode") && !value["ForbidCode"].IsNull())
+    {
+        if (!value["ForbidCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatFwSwitchDetailS.ForbidCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidCode = string(value["ForbidCode"].GetString());
+        m_forbidCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -475,6 +497,22 @@ void NatFwSwitchDetailS::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_checkResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_forbidModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidMode, allocator);
+    }
+
+    if (m_forbidCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forbidCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -814,5 +852,37 @@ void NatFwSwitchDetailS::SetCheckResult(const ClusterFwPreAccessCheckResult& _ch
 bool NatFwSwitchDetailS::CheckResultHasBeenSet() const
 {
     return m_checkResultHasBeenSet;
+}
+
+int64_t NatFwSwitchDetailS::GetForbidMode() const
+{
+    return m_forbidMode;
+}
+
+void NatFwSwitchDetailS::SetForbidMode(const int64_t& _forbidMode)
+{
+    m_forbidMode = _forbidMode;
+    m_forbidModeHasBeenSet = true;
+}
+
+bool NatFwSwitchDetailS::ForbidModeHasBeenSet() const
+{
+    return m_forbidModeHasBeenSet;
+}
+
+string NatFwSwitchDetailS::GetForbidCode() const
+{
+    return m_forbidCode;
+}
+
+void NatFwSwitchDetailS::SetForbidCode(const string& _forbidCode)
+{
+    m_forbidCode = _forbidCode;
+    m_forbidCodeHasBeenSet = true;
+}
+
+bool NatFwSwitchDetailS::ForbidCodeHasBeenSet() const
+{
+    return m_forbidCodeHasBeenSet;
 }
 

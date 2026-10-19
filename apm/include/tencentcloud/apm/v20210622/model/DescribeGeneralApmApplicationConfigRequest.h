@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用名
-                     * @return ServiceName 应用名
+                     * 获取<p>应用名</p>
+                     * @return ServiceName <p>应用名</p>
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置应用名
-                     * @param _serviceName 应用名
+                     * 设置<p>应用名</p>
+                     * @param _serviceName <p>应用名</p>
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取业务系统ID
-                     * @return InstanceId 业务系统ID
+                     * 获取<p>业务系统ID</p>
+                     * @return InstanceId <p>业务系统ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置业务系统ID
-                     * @param _instanceId 业务系统ID
+                     * 设置<p>业务系统ID</p>
+                     * @param _instanceId <p>业务系统ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用名
+                     * <p>应用名</p>
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * 业务系统ID
+                     * <p>业务系统ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

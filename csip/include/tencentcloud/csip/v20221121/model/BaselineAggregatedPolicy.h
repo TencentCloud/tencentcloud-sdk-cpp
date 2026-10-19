@@ -321,6 +321,27 @@ namespace TencentCloud
                      */
                     bool ScannedHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义策略情况下策略的appid</p>
+                     * @return AppID <p>自定义策略情况下策略的appid</p>
+                     * 
+                     */
+                    uint64_t GetAppID() const;
+
+                    /**
+                     * 设置<p>自定义策略情况下策略的appid</p>
+                     * @param _appID <p>自定义策略情况下策略的appid</p>
+                     * 
+                     */
+                    void SetAppID(const uint64_t& _appID);
+
+                    /**
+                     * 判断参数 AppID 是否已赋值
+                     * @return AppID 是否已赋值
+                     * 
+                     */
+                    bool AppIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,6 +421,12 @@ namespace TencentCloud
                      */
                     bool m_scanned;
                     bool m_scannedHasBeenSet;
+
+                    /**
+                     * <p>自定义策略情况下策略的appid</p>
+                     */
+                    uint64_t m_appID;
+                    bool m_appIDHasBeenSet;
 
                 };
             }

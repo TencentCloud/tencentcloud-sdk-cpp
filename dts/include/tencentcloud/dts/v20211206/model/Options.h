@@ -28,6 +28,7 @@
 #include <tencentcloud/dts/v20211206/model/DdlOption.h>
 #include <tencentcloud/dts/v20211206/model/KafkaOption.h>
 #include <tencentcloud/dts/v20211206/model/RateLimitOption.h>
+#include <tencentcloud/dts/v20211206/model/SkipDdlOnError.h>
 
 
 namespace TencentCloud
@@ -331,6 +332,27 @@ namespace TencentCloud
                      */
                     bool FilterCheckpointHasBeenSet() const;
 
+                    /**
+                     * 获取<p>跳过报错的DDL策略</p>
+                     * @return SkipDdlOnError <p>跳过报错的DDL策略</p>
+                     * 
+                     */
+                    SkipDdlOnError GetSkipDdlOnError() const;
+
+                    /**
+                     * 设置<p>跳过报错的DDL策略</p>
+                     * @param _skipDdlOnError <p>跳过报错的DDL策略</p>
+                     * 
+                     */
+                    void SetSkipDdlOnError(const SkipDdlOnError& _skipDdlOnError);
+
+                    /**
+                     * 判断参数 SkipDdlOnError 是否已赋值
+                     * @return SkipDdlOnError 是否已赋值
+                     * 
+                     */
+                    bool SkipDdlOnErrorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -412,6 +434,12 @@ namespace TencentCloud
                      */
                     bool m_filterCheckpoint;
                     bool m_filterCheckpointHasBeenSet;
+
+                    /**
+                     * <p>跳过报错的DDL策略</p>
+                     */
+                    SkipDdlOnError m_skipDdlOnError;
+                    bool m_skipDdlOnErrorHasBeenSet;
 
                 };
             }

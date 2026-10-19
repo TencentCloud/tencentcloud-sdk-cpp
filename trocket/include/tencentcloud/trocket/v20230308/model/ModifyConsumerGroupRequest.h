@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启消费
-                     * @return ConsumeEnable 是否开启消费
+                     * 获取<p>是否开启消费</p>
+                     * @return ConsumeEnable <p>是否开启消费</p>
                      * 
                      */
                     bool GetConsumeEnable() const;
 
                     /**
-                     * 设置是否开启消费
-                     * @param _consumeEnable 是否开启消费
+                     * 设置<p>是否开启消费</p>
+                     * @param _consumeEnable <p>是否开启消费</p>
                      * 
                      */
                     void SetConsumeEnable(const bool& _consumeEnable);
@@ -86,19 +86,15 @@ namespace TencentCloud
                     bool ConsumeEnableHasBeenSet() const;
 
                     /**
-                     * 获取顺序投递：true
-并发投递：false
-                     * @return ConsumeMessageOrderly 顺序投递：true
-并发投递：false
+                     * 获取<p>顺序投递：true<br>并发投递：false</p>
+                     * @return ConsumeMessageOrderly <p>顺序投递：true<br>并发投递：false</p>
                      * 
                      */
                     bool GetConsumeMessageOrderly() const;
 
                     /**
-                     * 设置顺序投递：true
-并发投递：false
-                     * @param _consumeMessageOrderly 顺序投递：true
-并发投递：false
+                     * 设置<p>顺序投递：true<br>并发投递：false</p>
+                     * @param _consumeMessageOrderly <p>顺序投递：true<br>并发投递：false</p>
                      * 
                      */
                     void SetConsumeMessageOrderly(const bool& _consumeMessageOrderly);
@@ -132,15 +128,15 @@ namespace TencentCloud
                     bool ConsumerGroupHasBeenSet() const;
 
                     /**
-                     * 获取最大重试次数，取值范围0～1000
-                     * @return MaxRetryTimes 最大重试次数，取值范围0～1000
+                     * 获取<p>最大重试次数，取值范围0～1000</p>
+                     * @return MaxRetryTimes <p>最大重试次数，取值范围0～1000</p>
                      * 
                      */
                     int64_t GetMaxRetryTimes() const;
 
                     /**
-                     * 设置最大重试次数，取值范围0～1000
-                     * @param _maxRetryTimes 最大重试次数，取值范围0～1000
+                     * 设置<p>最大重试次数，取值范围0～1000</p>
+                     * @param _maxRetryTimes <p>最大重试次数，取值范围0～1000</p>
                      * 
                      */
                     void SetMaxRetryTimes(const int64_t& _maxRetryTimes);
@@ -153,15 +149,15 @@ namespace TencentCloud
                     bool MaxRetryTimesHasBeenSet() const;
 
                     /**
-                     * 获取备注信息，最多 128 个字符
-                     * @return Remark 备注信息，最多 128 个字符
+                     * 获取<p>备注信息，最多 128 个字符</p>
+                     * @return Remark <p>备注信息，最多 128 个字符</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息，最多 128 个字符
-                     * @param _remark 备注信息，最多 128 个字符
+                     * 设置<p>备注信息，最多 128 个字符</p>
+                     * @param _remark <p>备注信息，最多 128 个字符</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -174,15 +170,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取重试策略
-                     * @return RetryPolicy 重试策略
+                     * 获取<p>重试策略</p>
+                     * @return RetryPolicy <p>重试策略</p>
                      * 
                      */
                     RetryPolicy GetRetryPolicy() const;
 
                     /**
-                     * 设置重试策略
-                     * @param _retryPolicy 重试策略
+                     * 设置<p>重试策略</p>
+                     * @param _retryPolicy <p>重试策略</p>
                      * 
                      */
                     void SetRetryPolicy(const RetryPolicy& _retryPolicy);
@@ -194,6 +190,27 @@ namespace TencentCloud
                      */
                     bool RetryPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义死信Topic</p>
+                     * @return DeadLetterTargetTopic <p>自定义死信Topic</p>
+                     * 
+                     */
+                    std::string GetDeadLetterTargetTopic() const;
+
+                    /**
+                     * 设置<p>自定义死信Topic</p>
+                     * @param _deadLetterTargetTopic <p>自定义死信Topic</p>
+                     * 
+                     */
+                    void SetDeadLetterTargetTopic(const std::string& _deadLetterTargetTopic);
+
+                    /**
+                     * 判断参数 DeadLetterTargetTopic 是否已赋值
+                     * @return DeadLetterTargetTopic 是否已赋值
+                     * 
+                     */
+                    bool DeadLetterTargetTopicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -203,14 +220,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 是否开启消费
+                     * <p>是否开启消费</p>
                      */
                     bool m_consumeEnable;
                     bool m_consumeEnableHasBeenSet;
 
                     /**
-                     * 顺序投递：true
-并发投递：false
+                     * <p>顺序投递：true<br>并发投递：false</p>
                      */
                     bool m_consumeMessageOrderly;
                     bool m_consumeMessageOrderlyHasBeenSet;
@@ -222,22 +238,28 @@ namespace TencentCloud
                     bool m_consumerGroupHasBeenSet;
 
                     /**
-                     * 最大重试次数，取值范围0～1000
+                     * <p>最大重试次数，取值范围0～1000</p>
                      */
                     int64_t m_maxRetryTimes;
                     bool m_maxRetryTimesHasBeenSet;
 
                     /**
-                     * 备注信息，最多 128 个字符
+                     * <p>备注信息，最多 128 个字符</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 重试策略
+                     * <p>重试策略</p>
                      */
                     RetryPolicy m_retryPolicy;
                     bool m_retryPolicyHasBeenSet;
+
+                    /**
+                     * <p>自定义死信Topic</p>
+                     */
+                    std::string m_deadLetterTargetTopic;
+                    bool m_deadLetterTargetTopicHasBeenSet;
 
                 };
             }

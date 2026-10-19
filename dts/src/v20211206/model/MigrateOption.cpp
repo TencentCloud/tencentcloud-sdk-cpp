@@ -29,7 +29,8 @@ MigrateOption::MigrateOption() :
     m_isDstReadOnlyHasBeenSet(false),
     m_extraAttrHasBeenSet(false),
     m_migrateWayHasBeenSet(false),
-    m_rateLimitHasBeenSet(false)
+    m_rateLimitHasBeenSet(false),
+    m_skipDdlOnErrorHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,23 @@ CoreInternalOutcome MigrateOption::Deserialize(const rapidjson::Value &value)
         m_rateLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("SkipDdlOnError") && !value["SkipDdlOnError"].IsNull())
+    {
+        if (!value["SkipDdlOnError"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MigrateOption.SkipDdlOnError` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_skipDdlOnError.Deserialize(value["SkipDdlOnError"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_skipDdlOnErrorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -246,6 +264,15 @@ void MigrateOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rateLimit.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_skipDdlOnErrorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipDdlOnError";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_skipDdlOnError.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -393,5 +420,21 @@ void MigrateOption::SetRateLimit(const RateLimit& _rateLimit)
 bool MigrateOption::RateLimitHasBeenSet() const
 {
     return m_rateLimitHasBeenSet;
+}
+
+SkipDdlOnError MigrateOption::GetSkipDdlOnError() const
+{
+    return m_skipDdlOnError;
+}
+
+void MigrateOption::SetSkipDdlOnError(const SkipDdlOnError& _skipDdlOnError)
+{
+    m_skipDdlOnError = _skipDdlOnError;
+    m_skipDdlOnErrorHasBeenSet = true;
+}
+
+bool MigrateOption::SkipDdlOnErrorHasBeenSet() const
+{
+    return m_skipDdlOnErrorHasBeenSet;
 }
 

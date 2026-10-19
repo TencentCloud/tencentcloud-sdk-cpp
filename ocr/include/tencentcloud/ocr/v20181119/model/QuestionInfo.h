@@ -198,6 +198,27 @@ namespace TencentCloud
                      */
                     bool ImageBase64HasBeenSet() const;
 
+                    /**
+                     * 获取<p>预处理后的图片URL,如果开启了图像切边矫正，后续的坐标都是基于当前图片返回的坐标</p>
+                     * @return ReturnImageUrl <p>预处理后的图片URL,如果开启了图像切边矫正，后续的坐标都是基于当前图片返回的坐标</p>
+                     * 
+                     */
+                    std::string GetReturnImageUrl() const;
+
+                    /**
+                     * 设置<p>预处理后的图片URL,如果开启了图像切边矫正，后续的坐标都是基于当前图片返回的坐标</p>
+                     * @param _returnImageUrl <p>预处理后的图片URL,如果开启了图像切边矫正，后续的坐标都是基于当前图片返回的坐标</p>
+                     * 
+                     */
+                    void SetReturnImageUrl(const std::string& _returnImageUrl);
+
+                    /**
+                     * 判断参数 ReturnImageUrl 是否已赋值
+                     * @return ReturnImageUrl 是否已赋值
+                     * 
+                     */
+                    bool ReturnImageUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +263,12 @@ namespace TencentCloud
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
+
+                    /**
+                     * <p>预处理后的图片URL,如果开启了图像切边矫正，后续的坐标都是基于当前图片返回的坐标</p>
+                     */
+                    std::string m_returnImageUrl;
+                    bool m_returnImageUrlHasBeenSet;
 
                 };
             }

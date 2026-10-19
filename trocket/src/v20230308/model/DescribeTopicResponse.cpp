@@ -27,6 +27,7 @@ DescribeTopicResponse::DescribeTopicResponse() :
     m_instanceIdHasBeenSet(false),
     m_topicHasBeenSet(false),
     m_topicTypeHasBeenSet(false),
+    m_queueNumHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
@@ -100,6 +101,16 @@ CoreInternalOutcome DescribeTopicResponse::Deserialize(const string &payload)
         }
         m_topicType = string(rsp["TopicType"].GetString());
         m_topicTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("QueueNum") && !rsp["QueueNum"].IsNull())
+    {
+        if (!rsp["QueueNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueNum = rsp["QueueNum"].GetInt64();
+        m_queueNumHasBeenSet = true;
     }
 
     if (rsp.HasMember("Remark") && !rsp["Remark"].IsNull())
@@ -226,6 +237,14 @@ string DescribeTopicResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_topicType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_queueNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_queueNum, allocator);
+    }
+
     if (m_remarkHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -337,6 +356,16 @@ string DescribeTopicResponse::GetTopicType() const
 bool DescribeTopicResponse::TopicTypeHasBeenSet() const
 {
     return m_topicTypeHasBeenSet;
+}
+
+int64_t DescribeTopicResponse::GetQueueNum() const
+{
+    return m_queueNum;
+}
+
+bool DescribeTopicResponse::QueueNumHasBeenSet() const
+{
+    return m_queueNumHasBeenSet;
 }
 
 string DescribeTopicResponse::GetRemark() const

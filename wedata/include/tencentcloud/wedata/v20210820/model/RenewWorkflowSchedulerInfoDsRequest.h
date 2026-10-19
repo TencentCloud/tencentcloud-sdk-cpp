@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流ID
-                     * @return WorkflowId 工作流ID
+                     * 获取<p>工作流ID</p>
+                     * @return WorkflowId <p>工作流ID</p>
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置工作流ID
-                     * @param _workflowId 工作流ID
+                     * 设置<p>工作流ID</p>
+                     * @param _workflowId <p>工作流ID</p>
                      * 
                      */
                     void SetWorkflowId(const std::string& _workflowId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间
-                     * @return DelayTime 延迟时间
+                     * 获取<p>延迟时间</p>
+                     * @return DelayTime <p>延迟时间</p>
                      * 
                      */
                     uint64_t GetDelayTime() const;
 
                     /**
-                     * 设置延迟时间
-                     * @param _delayTime 延迟时间
+                     * 设置<p>延迟时间</p>
+                     * @param _delayTime <p>延迟时间</p>
                      * 
                      */
                     void SetDelayTime(const uint64_t& _delayTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取启动时间
-                     * @return StartupTime 启动时间
+                     * 获取<p>启动时间</p>
+                     * @return StartupTime <p>启动时间</p>
                      * 
                      */
                     uint64_t GetStartupTime() const;
 
                     /**
-                     * 设置启动时间
-                     * @param _startupTime 启动时间
+                     * 设置<p>启动时间</p>
+                     * @param _startupTime <p>启动时间</p>
                      * 
                      */
                     void SetStartupTime(const uint64_t& _startupTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StartupTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务依赖
-                     * @return SelfDepend 任务依赖
+                     * 获取<p>任务依赖</p>
+                     * @return SelfDepend <p>任务依赖</p>
                      * 
                      */
                     std::string GetSelfDepend() const;
 
                     /**
-                     * 设置任务依赖
-                     * @param _selfDepend 任务依赖
+                     * 设置<p>任务依赖</p>
+                     * @param _selfDepend <p>任务依赖</p>
                      * 
                      */
                     void SetSelfDepend(const std::string& _selfDepend);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SelfDependHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取指定运行时间
-                     * @return TaskAction 指定运行时间
+                     * 获取<p>指定运行时间</p>
+                     * @return TaskAction <p>指定运行时间</p>
                      * 
                      */
                     std::string GetTaskAction() const;
 
                     /**
-                     * 设置指定运行时间
-                     * @param _taskAction 指定运行时间
+                     * 设置<p>指定运行时间</p>
+                     * @param _taskAction <p>指定运行时间</p>
                      * 
                      */
                     void SetTaskAction(const std::string& _taskAction);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool TaskActionHasBeenSet() const;
 
                     /**
-                     * 获取调度周期时间单位
-                     * @return CycleType 调度周期时间单位
+                     * 获取<p>调度周期时间单位</p>
+                     * @return CycleType <p>调度周期时间单位</p>
                      * 
                      */
                     std::string GetCycleType() const;
 
                     /**
-                     * 设置调度周期时间单位
-                     * @param _cycleType 调度周期时间单位
+                     * 设置<p>调度周期时间单位</p>
+                     * @param _cycleType <p>调度周期时间单位</p>
                      * 
                      */
                     void SetCycleType(const std::string& _cycleType);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool CycleTypeHasBeenSet() const;
 
                     /**
-                     * 获取调度周期
-                     * @return CycleStep 调度周期
+                     * 获取<p>调度周期</p>
+                     * @return CycleStep <p>调度周期</p>
                      * 
                      */
                     int64_t GetCycleStep() const;
 
                     /**
-                     * 设置调度周期
-                     * @param _cycleStep 调度周期
+                     * 设置<p>调度周期</p>
+                     * @param _cycleStep <p>调度周期</p>
                      * 
                      */
                     void SetCycleStep(const int64_t& _cycleStep);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool CycleStepHasBeenSet() const;
 
                     /**
-                     * 获取执行时间左闭区间
-                     * @return ExecutionStartTime 执行时间左闭区间
+                     * 获取<p>执行时间左闭区间</p>
+                     * @return ExecutionStartTime <p>执行时间左闭区间</p>
                      * 
                      */
                     std::string GetExecutionStartTime() const;
 
                     /**
-                     * 设置执行时间左闭区间
-                     * @param _executionStartTime 执行时间左闭区间
+                     * 设置<p>执行时间左闭区间</p>
+                     * @param _executionStartTime <p>执行时间左闭区间</p>
                      * 
                      */
                     void SetExecutionStartTime(const std::string& _executionStartTime);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool ExecutionStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取执行时间右闭区间
-                     * @return ExecutionEndTime 执行时间右闭区间
+                     * 获取<p>执行时间右闭区间</p>
+                     * @return ExecutionEndTime <p>执行时间右闭区间</p>
                      * 
                      */
                     std::string GetExecutionEndTime() const;
 
                     /**
-                     * 设置执行时间右闭区间
-                     * @param _executionEndTime 执行时间右闭区间
+                     * 设置<p>执行时间右闭区间</p>
+                     * @param _executionEndTime <p>执行时间右闭区间</p>
                      * 
                      */
                     void SetExecutionEndTime(const std::string& _executionEndTime);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool ExecutionEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1
-                     * @return InstanceInitStrategy 任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1
+                     * 获取<p>任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1</p>
+                     * @return InstanceInitStrategy <p>任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1</p>
                      * 
                      */
                     std::string GetInstanceInitStrategy() const;
 
                     /**
-                     * 设置任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1
-                     * @param _instanceInitStrategy 任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1
+                     * 设置<p>任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1</p>
+                     * @param _instanceInitStrategy <p>任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1</p>
                      * 
                      */
                     void SetInstanceInitStrategy(const std::string& _instanceInitStrategy);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool InstanceInitStrategyHasBeenSet() const;
 
                     /**
-                     * 获取工作流依赖，yes or no
-                     * @return DependencyWorkflow 工作流依赖，yes or no
+                     * 获取<p>工作流依赖，yes or no</p>
+                     * @return DependencyWorkflow <p>工作流依赖，yes or no</p>
                      * 
                      */
                     std::string GetDependencyWorkflow() const;
 
                     /**
-                     * 设置工作流依赖，yes or no
-                     * @param _dependencyWorkflow 工作流依赖，yes or no
+                     * 设置<p>工作流依赖，yes or no</p>
+                     * @param _dependencyWorkflow <p>工作流依赖，yes or no</p>
                      * 
                      */
                     void SetDependencyWorkflow(const std::string& _dependencyWorkflow);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool DependencyWorkflowHasBeenSet() const;
 
                     /**
-                     * 获取CrontabExpression
-                     * @return CrontabExpression CrontabExpression
+                     * 获取<p>CrontabExpression</p>
+                     * @return CrontabExpression <p>CrontabExpression</p>
                      * 
                      */
                     std::string GetCrontabExpression() const;
 
                     /**
-                     * 设置CrontabExpression
-                     * @param _crontabExpression CrontabExpression
+                     * 设置<p>CrontabExpression</p>
+                     * @param _crontabExpression <p>CrontabExpression</p>
                      * 
                      */
                     void SetCrontabExpression(const std::string& _crontabExpression);
@@ -358,19 +358,15 @@ namespace TencentCloud
                     bool CrontabExpressionHasBeenSet() const;
 
                     /**
-                     * 获取0：不修改
-1：将任务的上游依赖配置改为默认值 
-                     * @return ModifyCycleValue 0：不修改
-1：将任务的上游依赖配置改为默认值 
+                     * 获取<p>0：不修改<br>1：将任务的上游依赖配置改为默认值</p>
+                     * @return ModifyCycleValue <p>0：不修改<br>1：将任务的上游依赖配置改为默认值</p>
                      * 
                      */
                     std::string GetModifyCycleValue() const;
 
                     /**
-                     * 设置0：不修改
-1：将任务的上游依赖配置改为默认值 
-                     * @param _modifyCycleValue 0：不修改
-1：将任务的上游依赖配置改为默认值 
+                     * 设置<p>0：不修改<br>1：将任务的上游依赖配置改为默认值</p>
+                     * @param _modifyCycleValue <p>0：不修改<br>1：将任务的上游依赖配置改为默认值</p>
                      * 
                      */
                     void SetModifyCycleValue(const std::string& _modifyCycleValue);
@@ -383,15 +379,15 @@ namespace TencentCloud
                     bool ModifyCycleValueHasBeenSet() const;
 
                     /**
-                     * 获取是否开启日历调度 1 开启 0关闭
-                     * @return CalendarOpen 是否开启日历调度 1 开启 0关闭
+                     * 获取<p>是否开启日历调度 1 开启 0关闭</p>
+                     * @return CalendarOpen <p>是否开启日历调度 1 开启 0关闭</p>
                      * 
                      */
                     std::string GetCalendarOpen() const;
 
                     /**
-                     * 设置是否开启日历调度 1 开启 0关闭
-                     * @param _calendarOpen 是否开启日历调度 1 开启 0关闭
+                     * 设置<p>是否开启日历调度 1 开启 0关闭</p>
+                     * @param _calendarOpen <p>是否开启日历调度 1 开启 0关闭</p>
                      * 
                      */
                     void SetCalendarOpen(const std::string& _calendarOpen);
@@ -404,15 +400,15 @@ namespace TencentCloud
                     bool CalendarOpenHasBeenSet() const;
 
                     /**
-                     * 获取日历名称
-                     * @return CalendarName 日历名称
+                     * 获取<p>日历名称</p>
+                     * @return CalendarName <p>日历名称</p>
                      * 
                      */
                     std::string GetCalendarName() const;
 
                     /**
-                     * 设置日历名称
-                     * @param _calendarName 日历名称
+                     * 设置<p>日历名称</p>
+                     * @param _calendarName <p>日历名称</p>
                      * 
                      */
                     void SetCalendarName(const std::string& _calendarName);
@@ -425,15 +421,15 @@ namespace TencentCloud
                     bool CalendarNameHasBeenSet() const;
 
                     /**
-                     * 获取日历id
-                     * @return CalendarId 日历id
+                     * 获取<p>日历id</p>
+                     * @return CalendarId <p>日历id</p>
                      * 
                      */
                     std::string GetCalendarId() const;
 
                     /**
-                     * 设置日历id
-                     * @param _calendarId 日历id
+                     * 设置<p>日历id</p>
+                     * @param _calendarId <p>日历id</p>
                      * 
                      */
                     void SetCalendarId(const std::string& _calendarId);
@@ -446,15 +442,15 @@ namespace TencentCloud
                     bool CalendarIdHasBeenSet() const;
 
                     /**
-                     * 获取时区
-                     * @return ScheduleTimeZone 时区
+                     * 获取<p>时区</p>
+                     * @return ScheduleTimeZone <p>时区</p>
                      * 
                      */
                     std::string GetScheduleTimeZone() const;
 
                     /**
-                     * 设置时区
-                     * @param _scheduleTimeZone 时区
+                     * 设置<p>时区</p>
+                     * @param _scheduleTimeZone <p>时区</p>
                      * 
                      */
                     void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
@@ -467,15 +463,15 @@ namespace TencentCloud
                     bool ScheduleTimeZoneHasBeenSet() const;
 
                     /**
-                     * 获取是否自动清理不支持的任务链接
-                     * @return ClearLink 是否自动清理不支持的任务链接
+                     * 获取<p>是否自动清理不支持的任务链接</p>
+                     * @return ClearLink <p>是否自动清理不支持的任务链接</p>
                      * 
                      */
                     bool GetClearLink() const;
 
                     /**
-                     * 设置是否自动清理不支持的任务链接
-                     * @param _clearLink 是否自动清理不支持的任务链接
+                     * 设置<p>是否自动清理不支持的任务链接</p>
+                     * @param _clearLink <p>是否自动清理不支持的任务链接</p>
                      * 
                      */
                     void SetClearLink(const bool& _clearLink);
@@ -488,15 +484,15 @@ namespace TencentCloud
                     bool ClearLinkHasBeenSet() const;
 
                     /**
-                     * 获取ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度
-                     * @return MainCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度
+                     * 获取<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度</p>
+                     * @return MainCyclicConfig <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度</p>
                      * 
                      */
                     std::string GetMainCyclicConfig() const;
 
                     /**
-                     * 设置ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度
-                     * @param _mainCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度
+                     * 设置<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度</p>
+                     * @param _mainCyclicConfig <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度</p>
                      * 
                      */
                     void SetMainCyclicConfig(const std::string& _mainCyclicConfig);
@@ -509,15 +505,15 @@ namespace TencentCloud
                     bool MainCyclicConfigHasBeenSet() const;
 
                     /**
-                     * 获取ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
-                     * @return SubordinateCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
+                     * 获取<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围</p>
+                     * @return SubordinateCyclicConfig <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围</p>
                      * 
                      */
                     std::string GetSubordinateCyclicConfig() const;
 
                     /**
-                     * 设置ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
-                     * @param _subordinateCyclicConfig ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
+                     * 设置<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围</p>
+                     * @param _subordinateCyclicConfig <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围</p>
                      * 
                      */
                     void SetSubordinateCyclicConfig(const std::string& _subordinateCyclicConfig);
@@ -529,146 +525,172 @@ namespace TencentCloud
                      */
                     bool SubordinateCyclicConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分钟任务相位偏移</p>
+                     * @return MinuteOffset <p>分钟任务相位偏移</p>
+                     * 
+                     */
+                    uint64_t GetMinuteOffset() const;
+
+                    /**
+                     * 设置<p>分钟任务相位偏移</p>
+                     * @param _minuteOffset <p>分钟任务相位偏移</p>
+                     * 
+                     */
+                    void SetMinuteOffset(const uint64_t& _minuteOffset);
+
+                    /**
+                     * 判断参数 MinuteOffset 是否已赋值
+                     * @return MinuteOffset 是否已赋值
+                     * 
+                     */
+                    bool MinuteOffsetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 工作流ID
+                     * <p>工作流ID</p>
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 延迟时间
+                     * <p>延迟时间</p>
                      */
                     uint64_t m_delayTime;
                     bool m_delayTimeHasBeenSet;
 
                     /**
-                     * 启动时间
+                     * <p>启动时间</p>
                      */
                     uint64_t m_startupTime;
                     bool m_startupTimeHasBeenSet;
 
                     /**
-                     * 任务依赖
+                     * <p>任务依赖</p>
                      */
                     std::string m_selfDepend;
                     bool m_selfDependHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 指定运行时间
+                     * <p>指定运行时间</p>
                      */
                     std::string m_taskAction;
                     bool m_taskActionHasBeenSet;
 
                     /**
-                     * 调度周期时间单位
+                     * <p>调度周期时间单位</p>
                      */
                     std::string m_cycleType;
                     bool m_cycleTypeHasBeenSet;
 
                     /**
-                     * 调度周期
+                     * <p>调度周期</p>
                      */
                     int64_t m_cycleStep;
                     bool m_cycleStepHasBeenSet;
 
                     /**
-                     * 执行时间左闭区间
+                     * <p>执行时间左闭区间</p>
                      */
                     std::string m_executionStartTime;
                     bool m_executionStartTimeHasBeenSet;
 
                     /**
-                     * 执行时间右闭区间
+                     * <p>执行时间右闭区间</p>
                      */
                     std::string m_executionEndTime;
                     bool m_executionEndTimeHasBeenSet;
 
                     /**
-                     * 任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1
+                     * <p>任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1</p>
                      */
                     std::string m_instanceInitStrategy;
                     bool m_instanceInitStrategyHasBeenSet;
 
                     /**
-                     * 工作流依赖，yes or no
+                     * <p>工作流依赖，yes or no</p>
                      */
                     std::string m_dependencyWorkflow;
                     bool m_dependencyWorkflowHasBeenSet;
 
                     /**
-                     * CrontabExpression
+                     * <p>CrontabExpression</p>
                      */
                     std::string m_crontabExpression;
                     bool m_crontabExpressionHasBeenSet;
 
                     /**
-                     * 0：不修改
-1：将任务的上游依赖配置改为默认值 
+                     * <p>0：不修改<br>1：将任务的上游依赖配置改为默认值</p>
                      */
                     std::string m_modifyCycleValue;
                     bool m_modifyCycleValueHasBeenSet;
 
                     /**
-                     * 是否开启日历调度 1 开启 0关闭
+                     * <p>是否开启日历调度 1 开启 0关闭</p>
                      */
                     std::string m_calendarOpen;
                     bool m_calendarOpenHasBeenSet;
 
                     /**
-                     * 日历名称
+                     * <p>日历名称</p>
                      */
                     std::string m_calendarName;
                     bool m_calendarNameHasBeenSet;
 
                     /**
-                     * 日历id
+                     * <p>日历id</p>
                      */
                     std::string m_calendarId;
                     bool m_calendarIdHasBeenSet;
 
                     /**
-                     * 时区
+                     * <p>时区</p>
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
 
                     /**
-                     * 是否自动清理不支持的任务链接
+                     * <p>是否自动清理不支持的任务链接</p>
                      */
                     bool m_clearLink;
                     bool m_clearLinkHasBeenSet;
 
                     /**
-                     * ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度
+                     * <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度</p>
                      */
                     std::string m_mainCyclicConfig;
                     bool m_mainCyclicConfigHasBeenSet;
 
                     /**
-                     * ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围
+                     * <p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围</p>
                      */
                     std::string m_subordinateCyclicConfig;
                     bool m_subordinateCyclicConfigHasBeenSet;
+
+                    /**
+                     * <p>分钟任务相位偏移</p>
+                     */
+                    uint64_t m_minuteOffset;
+                    bool m_minuteOffsetHasBeenSet;
 
                 };
             }

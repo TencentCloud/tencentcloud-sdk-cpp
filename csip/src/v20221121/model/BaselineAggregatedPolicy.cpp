@@ -33,7 +33,8 @@ BaselineAggregatedPolicy::BaselineAggregatedPolicy() :
     m_categoryStatisticHasBeenSet(false),
     m_policyTypeHasBeenSet(false),
     m_checkAssetTypeHasBeenSet(false),
-    m_scannedHasBeenSet(false)
+    m_scannedHasBeenSet(false),
+    m_appIDHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,16 @@ CoreInternalOutcome BaselineAggregatedPolicy::Deserialize(const rapidjson::Value
         m_scannedHasBeenSet = true;
     }
 
+    if (value.HasMember("AppID") && !value["AppID"].IsNull())
+    {
+        if (!value["AppID"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaselineAggregatedPolicy.AppID` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appID = value["AppID"].GetUint64();
+        m_appIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -323,6 +334,14 @@ void BaselineAggregatedPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "Scanned";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scanned, allocator);
+    }
+
+    if (m_appIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appID, allocator);
     }
 
 }
@@ -534,5 +553,21 @@ void BaselineAggregatedPolicy::SetScanned(const bool& _scanned)
 bool BaselineAggregatedPolicy::ScannedHasBeenSet() const
 {
     return m_scannedHasBeenSet;
+}
+
+uint64_t BaselineAggregatedPolicy::GetAppID() const
+{
+    return m_appID;
+}
+
+void BaselineAggregatedPolicy::SetAppID(const uint64_t& _appID)
+{
+    m_appID = _appID;
+    m_appIDHasBeenSet = true;
+}
+
+bool BaselineAggregatedPolicy::AppIDHasBeenSet() const
+{
+    return m_appIDHasBeenSet;
 }
 

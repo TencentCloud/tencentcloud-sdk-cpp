@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/csip/v20221121/model/BaselinePolicyBrief.h>
 
 
 namespace TencentCloud
@@ -340,6 +341,27 @@ namespace TencentCloud
                      */
                     bool ScanTotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>检测的策略列表</p>
+                     * @return PolicyList <p>检测的策略列表</p>
+                     * 
+                     */
+                    std::vector<BaselinePolicyBrief> GetPolicyList() const;
+
+                    /**
+                     * 设置<p>检测的策略列表</p>
+                     * @param _policyList <p>检测的策略列表</p>
+                     * 
+                     */
+                    void SetPolicyList(const std::vector<BaselinePolicyBrief>& _policyList);
+
+                    /**
+                     * 判断参数 PolicyList 是否已赋值
+                     * @return PolicyList 是否已赋值
+                     * 
+                     */
+                    bool PolicyListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +447,12 @@ namespace TencentCloud
                      */
                     uint64_t m_scanTotalCount;
                     bool m_scanTotalCountHasBeenSet;
+
+                    /**
+                     * <p>检测的策略列表</p>
+                     */
+                    std::vector<BaselinePolicyBrief> m_policyList;
+                    bool m_policyListHasBeenSet;
 
                 };
             }

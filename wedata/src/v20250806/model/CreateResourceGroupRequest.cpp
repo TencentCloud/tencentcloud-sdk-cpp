@@ -31,7 +31,8 @@ CreateResourceGroupRequest::CreateResourceGroupRequest() :
     m_subNetHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
     m_associatedProjectIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,21 @@ string CreateResourceGroupRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -265,6 +281,22 @@ void CreateResourceGroupRequest::SetDescription(const string& _description)
 bool CreateResourceGroupRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+vector<ResourceTag> CreateResourceGroupRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateResourceGroupRequest::SetTags(const vector<ResourceTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateResourceGroupRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

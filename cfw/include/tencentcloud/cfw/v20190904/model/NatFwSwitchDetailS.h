@@ -498,6 +498,48 @@ namespace TencentCloud
                      */
                     bool CheckResultHasBeenSet() const;
 
+                    /**
+                     * 获取<p>NAT 集群防火墙开关的可用模式</p><p>枚举值：</p><ul><li>0： 开关无额外限制</li><li>1： 自动接入不可用</li><li>2： 手动接入不可用</li><li>3： 开关不可用，开关不被允许任何操作</li></ul><p>默认值：0</p>
+                     * @return ForbidMode <p>NAT 集群防火墙开关的可用模式</p><p>枚举值：</p><ul><li>0： 开关无额外限制</li><li>1： 自动接入不可用</li><li>2： 手动接入不可用</li><li>3： 开关不可用，开关不被允许任何操作</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetForbidMode() const;
+
+                    /**
+                     * 设置<p>NAT 集群防火墙开关的可用模式</p><p>枚举值：</p><ul><li>0： 开关无额外限制</li><li>1： 自动接入不可用</li><li>2： 手动接入不可用</li><li>3： 开关不可用，开关不被允许任何操作</li></ul><p>默认值：0</p>
+                     * @param _forbidMode <p>NAT 集群防火墙开关的可用模式</p><p>枚举值：</p><ul><li>0： 开关无额外限制</li><li>1： 自动接入不可用</li><li>2： 手动接入不可用</li><li>3： 开关不可用，开关不被允许任何操作</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetForbidMode(const int64_t& _forbidMode);
+
+                    /**
+                     * 判断参数 ForbidMode 是否已赋值
+                     * @return ForbidMode 是否已赋值
+                     * 
+                     */
+                    bool ForbidModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>开关被限制使用的原因。格式为原因码或 原因码:关联资源ID，按第一个 : 拆分</p><p>枚举值：</p><ul><li>SAME_VPC_OCCUPIED:{NatInsId}： CCN 内同一 VPC 开启一个 NAT 防火墙开关即可。本开关与 NAT 网关 {NatInsId} 状态同步，请通过该网关操作</li><li>SAME_VPC_DUPLICATE:{NatInsId}： CCN 内同一 VPC 开启一个 NAT 防火墙开关即可，请通过 NAT 网关 {NatInsId} 开启</li><li>CCN_HAS_AUTO_MODE:{NatInsId}： 该云联网下的 NAT 网关 {NatInsId} 已使用自动接入。请先关闭该防火墙或改为手动接入后，再操作本开关</li><li>VPCFW_MODE_INCOMPATIBLE:{防火墙组ID}： 该云联网下的 VPC 防火墙 {FwGroupId} 为主备模式且非自定义开关，与 NAT 集群防火墙不兼容。请先将其调整为自定义开关模式或关闭</li><li>POLICY_ROUTE_UNSUPPORTED： 云联网未开通策略路由，暂不支持自动接入。请提交工单联系云联网开通，或使用手动接入</li><li>AUTO_MODE_EXCLUSIVE:{NatInsId}： 该云联网下的 NAT 网关 {NatInsId} 已开启防火墙。自动接入要求该云联网下没有其他 NAT 防火墙，请改用手动接入</li></ul>
+                     * @return ForbidCode <p>开关被限制使用的原因。格式为原因码或 原因码:关联资源ID，按第一个 : 拆分</p><p>枚举值：</p><ul><li>SAME_VPC_OCCUPIED:{NatInsId}： CCN 内同一 VPC 开启一个 NAT 防火墙开关即可。本开关与 NAT 网关 {NatInsId} 状态同步，请通过该网关操作</li><li>SAME_VPC_DUPLICATE:{NatInsId}： CCN 内同一 VPC 开启一个 NAT 防火墙开关即可，请通过 NAT 网关 {NatInsId} 开启</li><li>CCN_HAS_AUTO_MODE:{NatInsId}： 该云联网下的 NAT 网关 {NatInsId} 已使用自动接入。请先关闭该防火墙或改为手动接入后，再操作本开关</li><li>VPCFW_MODE_INCOMPATIBLE:{防火墙组ID}： 该云联网下的 VPC 防火墙 {FwGroupId} 为主备模式且非自定义开关，与 NAT 集群防火墙不兼容。请先将其调整为自定义开关模式或关闭</li><li>POLICY_ROUTE_UNSUPPORTED： 云联网未开通策略路由，暂不支持自动接入。请提交工单联系云联网开通，或使用手动接入</li><li>AUTO_MODE_EXCLUSIVE:{NatInsId}： 该云联网下的 NAT 网关 {NatInsId} 已开启防火墙。自动接入要求该云联网下没有其他 NAT 防火墙，请改用手动接入</li></ul>
+                     * 
+                     */
+                    std::string GetForbidCode() const;
+
+                    /**
+                     * 设置<p>开关被限制使用的原因。格式为原因码或 原因码:关联资源ID，按第一个 : 拆分</p><p>枚举值：</p><ul><li>SAME_VPC_OCCUPIED:{NatInsId}： CCN 内同一 VPC 开启一个 NAT 防火墙开关即可。本开关与 NAT 网关 {NatInsId} 状态同步，请通过该网关操作</li><li>SAME_VPC_DUPLICATE:{NatInsId}： CCN 内同一 VPC 开启一个 NAT 防火墙开关即可，请通过 NAT 网关 {NatInsId} 开启</li><li>CCN_HAS_AUTO_MODE:{NatInsId}： 该云联网下的 NAT 网关 {NatInsId} 已使用自动接入。请先关闭该防火墙或改为手动接入后，再操作本开关</li><li>VPCFW_MODE_INCOMPATIBLE:{防火墙组ID}： 该云联网下的 VPC 防火墙 {FwGroupId} 为主备模式且非自定义开关，与 NAT 集群防火墙不兼容。请先将其调整为自定义开关模式或关闭</li><li>POLICY_ROUTE_UNSUPPORTED： 云联网未开通策略路由，暂不支持自动接入。请提交工单联系云联网开通，或使用手动接入</li><li>AUTO_MODE_EXCLUSIVE:{NatInsId}： 该云联网下的 NAT 网关 {NatInsId} 已开启防火墙。自动接入要求该云联网下没有其他 NAT 防火墙，请改用手动接入</li></ul>
+                     * @param _forbidCode <p>开关被限制使用的原因。格式为原因码或 原因码:关联资源ID，按第一个 : 拆分</p><p>枚举值：</p><ul><li>SAME_VPC_OCCUPIED:{NatInsId}： CCN 内同一 VPC 开启一个 NAT 防火墙开关即可。本开关与 NAT 网关 {NatInsId} 状态同步，请通过该网关操作</li><li>SAME_VPC_DUPLICATE:{NatInsId}： CCN 内同一 VPC 开启一个 NAT 防火墙开关即可，请通过 NAT 网关 {NatInsId} 开启</li><li>CCN_HAS_AUTO_MODE:{NatInsId}： 该云联网下的 NAT 网关 {NatInsId} 已使用自动接入。请先关闭该防火墙或改为手动接入后，再操作本开关</li><li>VPCFW_MODE_INCOMPATIBLE:{防火墙组ID}： 该云联网下的 VPC 防火墙 {FwGroupId} 为主备模式且非自定义开关，与 NAT 集群防火墙不兼容。请先将其调整为自定义开关模式或关闭</li><li>POLICY_ROUTE_UNSUPPORTED： 云联网未开通策略路由，暂不支持自动接入。请提交工单联系云联网开通，或使用手动接入</li><li>AUTO_MODE_EXCLUSIVE:{NatInsId}： 该云联网下的 NAT 网关 {NatInsId} 已开启防火墙。自动接入要求该云联网下没有其他 NAT 防火墙，请改用手动接入</li></ul>
+                     * 
+                     */
+                    void SetForbidCode(const std::string& _forbidCode);
+
+                    /**
+                     * 判断参数 ForbidCode 是否已赋值
+                     * @return ForbidCode 是否已赋值
+                     * 
+                     */
+                    bool ForbidCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -627,6 +669,18 @@ namespace TencentCloud
                      */
                     ClusterFwPreAccessCheckResult m_checkResult;
                     bool m_checkResultHasBeenSet;
+
+                    /**
+                     * <p>NAT 集群防火墙开关的可用模式</p><p>枚举值：</p><ul><li>0： 开关无额外限制</li><li>1： 自动接入不可用</li><li>2： 手动接入不可用</li><li>3： 开关不可用，开关不被允许任何操作</li></ul><p>默认值：0</p>
+                     */
+                    int64_t m_forbidMode;
+                    bool m_forbidModeHasBeenSet;
+
+                    /**
+                     * <p>开关被限制使用的原因。格式为原因码或 原因码:关联资源ID，按第一个 : 拆分</p><p>枚举值：</p><ul><li>SAME_VPC_OCCUPIED:{NatInsId}： CCN 内同一 VPC 开启一个 NAT 防火墙开关即可。本开关与 NAT 网关 {NatInsId} 状态同步，请通过该网关操作</li><li>SAME_VPC_DUPLICATE:{NatInsId}： CCN 内同一 VPC 开启一个 NAT 防火墙开关即可，请通过 NAT 网关 {NatInsId} 开启</li><li>CCN_HAS_AUTO_MODE:{NatInsId}： 该云联网下的 NAT 网关 {NatInsId} 已使用自动接入。请先关闭该防火墙或改为手动接入后，再操作本开关</li><li>VPCFW_MODE_INCOMPATIBLE:{防火墙组ID}： 该云联网下的 VPC 防火墙 {FwGroupId} 为主备模式且非自定义开关，与 NAT 集群防火墙不兼容。请先将其调整为自定义开关模式或关闭</li><li>POLICY_ROUTE_UNSUPPORTED： 云联网未开通策略路由，暂不支持自动接入。请提交工单联系云联网开通，或使用手动接入</li><li>AUTO_MODE_EXCLUSIVE:{NatInsId}： 该云联网下的 NAT 网关 {NatInsId} 已开启防火墙。自动接入要求该云联网下没有其他 NAT 防火墙，请改用手动接入</li></ul>
+                     */
+                    std::string m_forbidCode;
+                    bool m_forbidCodeHasBeenSet;
 
                 };
             }

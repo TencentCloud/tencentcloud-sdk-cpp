@@ -42,7 +42,10 @@ BashEventNew::BashEventNew() :
     m_regexBashCmdHasBeenSet(false),
     m_regexExeHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_eventCountHasBeenSet(false),
+    m_firstDetectTimeHasBeenSet(false),
+    m_latestDetectTimeHasBeenSet(false)
 {
 }
 
@@ -278,6 +281,36 @@ CoreInternalOutcome BashEventNew::Deserialize(const rapidjson::Value &value)
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("EventCount") && !value["EventCount"].IsNull())
+    {
+        if (!value["EventCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventNew.EventCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventCount = value["EventCount"].GetUint64();
+        m_eventCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("FirstDetectTime") && !value["FirstDetectTime"].IsNull())
+    {
+        if (!value["FirstDetectTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventNew.FirstDetectTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstDetectTime = string(value["FirstDetectTime"].GetString());
+        m_firstDetectTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestDetectTime") && !value["LatestDetectTime"].IsNull())
+    {
+        if (!value["LatestDetectTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventNew.LatestDetectTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestDetectTime = string(value["LatestDetectTime"].GetString());
+        m_latestDetectTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +493,30 @@ void BashEventNew::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_eventCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_eventCount, allocator);
+    }
+
+    if (m_firstDetectTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstDetectTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstDetectTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestDetectTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestDetectTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestDetectTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -815,5 +872,53 @@ void BashEventNew::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo
 bool BashEventNew::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+uint64_t BashEventNew::GetEventCount() const
+{
+    return m_eventCount;
+}
+
+void BashEventNew::SetEventCount(const uint64_t& _eventCount)
+{
+    m_eventCount = _eventCount;
+    m_eventCountHasBeenSet = true;
+}
+
+bool BashEventNew::EventCountHasBeenSet() const
+{
+    return m_eventCountHasBeenSet;
+}
+
+string BashEventNew::GetFirstDetectTime() const
+{
+    return m_firstDetectTime;
+}
+
+void BashEventNew::SetFirstDetectTime(const string& _firstDetectTime)
+{
+    m_firstDetectTime = _firstDetectTime;
+    m_firstDetectTimeHasBeenSet = true;
+}
+
+bool BashEventNew::FirstDetectTimeHasBeenSet() const
+{
+    return m_firstDetectTimeHasBeenSet;
+}
+
+string BashEventNew::GetLatestDetectTime() const
+{
+    return m_latestDetectTime;
+}
+
+void BashEventNew::SetLatestDetectTime(const string& _latestDetectTime)
+{
+    m_latestDetectTime = _latestDetectTime;
+    m_latestDetectTimeHasBeenSet = true;
+}
+
+bool BashEventNew::LatestDetectTimeHasBeenSet() const
+{
+    return m_latestDetectTimeHasBeenSet;
 }
 

@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取<p>工作流ID，精确匹配。非必填，单值</p>
-                     * @return WorkflowId <p>工作流ID，精确匹配。非必填，单值</p>
+                     * 获取<p>工作流ID，精确匹配。非必填，单值</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1835/138002">ListWorkflows</a> 返回值 <code>Data</code></p>
+                     * @return WorkflowId <p>工作流ID，精确匹配。非必填，单值</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1835/138002">ListWorkflows</a> 返回值 <code>Data</code></p>
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置<p>工作流ID，精确匹配。非必填，单值</p>
-                     * @param _workflowId <p>工作流ID，精确匹配。非必填，单值</p>
+                     * 设置<p>工作流ID，精确匹配。非必填，单值</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1835/138002">ListWorkflows</a> 返回值 <code>Data</code></p>
+                     * @param _workflowId <p>工作流ID，精确匹配。非必填，单值</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1835/138002">ListWorkflows</a> 返回值 <code>Data</code></p>
                      * 
                      */
                     void SetWorkflowId(const std::string& _workflowId);
@@ -337,7 +337,7 @@ namespace TencentCloud
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * <p>工作流ID，精确匹配。非必填，单值</p>
+                     * <p>工作流ID，精确匹配。非必填，单值</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/1835/138002">ListWorkflows</a> 返回值 <code>Data</code></p>
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;

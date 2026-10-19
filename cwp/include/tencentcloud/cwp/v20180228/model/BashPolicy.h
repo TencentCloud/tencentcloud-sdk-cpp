@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略名称
-                     * @return Name 策略名称
+                     * 获取<p>策略名称</p>
+                     * @return Name <p>策略名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置策略名称
-                     * @param _name 策略名称
+                     * 设置<p>策略名称</p>
+                     * @param _name <p>策略名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取1:有效 0:无效
-                     * @return Enable 1:有效 0:无效
+                     * 获取<p>1:有效 0:无效</p>
+                     * @return Enable <p>1:有效 0:无效</p>
                      * 
                      */
                     int64_t GetEnable() const;
 
                     /**
-                     * 设置1:有效 0:无效
-                     * @param _enable 1:有效 0:无效
+                     * 设置<p>1:有效 0:无效</p>
+                     * @param _enable <p>1:有效 0:无效</p>
                      * 
                      */
                     void SetEnable(const int64_t& _enable);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取0:黑名单 1:白名单
-                     * @return White 0:黑名单 1:白名单
+                     * 获取<p>0:黑名单 1:白名单</p>
+                     * @return White <p>0:黑名单 1:白名单</p>
                      * 
                      */
                     int64_t GetWhite() const;
 
                     /**
-                     * 设置0:黑名单 1:白名单
-                     * @param _white 0:黑名单 1:白名单
+                     * 设置<p>0:黑名单 1:白名单</p>
+                     * @param _white <p>0:黑名单 1:白名单</p>
                      * 
                      */
                     void SetWhite(const int64_t& _white);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool WhiteHasBeenSet() const;
 
                     /**
-                     * 获取0:告警 1:白名单 2:拦截
-                     * @return BashAction 0:告警 1:白名单 2:拦截
+                     * 获取<p>0:告警 1:白名单 2:拦截</p>
+                     * @return BashAction <p>0:告警 1:白名单 2:拦截</p>
                      * 
                      */
                     int64_t GetBashAction() const;
 
                     /**
-                     * 设置0:告警 1:白名单 2:拦截
-                     * @param _bashAction 0:告警 1:白名单 2:拦截
+                     * 设置<p>0:告警 1:白名单 2:拦截</p>
+                     * @param _bashAction <p>0:告警 1:白名单 2:拦截</p>
                      * 
                      */
                     void SetBashAction(const int64_t& _bashAction);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool BashActionHasBeenSet() const;
 
                     /**
-                     * 获取正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine
-                     * @return Rule 正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine
+                     * 获取<p>正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine</p>
+                     * @return Rule <p>正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine</p>
                      * 
                      */
                     std::string GetRule() const;
 
                     /**
-                     * 设置正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine
-                     * @param _rule 正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine
+                     * 设置<p>正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine</p>
+                     * @param _rule <p>正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine</p>
                      * 
                      */
                     void SetRule(const std::string& _rule);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool RuleHasBeenSet() const;
 
                     /**
-                     * 获取危险等级(0:无，1: 高危 2:中危 3: 低危)
-                     * @return Level 危险等级(0:无，1: 高危 2:中危 3: 低危)
+                     * 获取<p>危险等级(0:无，1: 高危 2:中危 3: 低危)</p>
+                     * @return Level <p>危险等级(0:无，1: 高危 2:中危 3: 低危)</p>
                      * 
                      */
                     int64_t GetLevel() const;
 
                     /**
-                     * 设置危险等级(0:无，1: 高危 2:中危 3: 低危)
-                     * @param _level 危险等级(0:无，1: 高危 2:中危 3: 低危)
+                     * 设置<p>危险等级(0:无，1: 高危 2:中危 3: 低危)</p>
+                     * @param _level <p>危险等级(0:无，1: 高危 2:中危 3: 低危)</p>
                      * 
                      */
                     void SetLevel(const int64_t& _level);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取生效范围（0:一组quuid 1:所有专业版(包含旗舰版) 2:所有旗舰版 3:所有主机）
-                     * @return Scope 生效范围（0:一组quuid 1:所有专业版(包含旗舰版) 2:所有旗舰版 3:所有主机）
+                     * 获取<p>生效范围（0:一组quuid 1:所有专业版(包含旗舰版) 2:所有旗舰版 3:所有主机）</p>
+                     * @return Scope <p>生效范围（0:一组quuid 1:所有专业版(包含旗舰版) 2:所有旗舰版 3:所有主机）</p>
                      * 
                      */
                     int64_t GetScope() const;
 
                     /**
-                     * 设置生效范围（0:一组quuid 1:所有专业版(包含旗舰版) 2:所有旗舰版 3:所有主机）
-                     * @param _scope 生效范围（0:一组quuid 1:所有专业版(包含旗舰版) 2:所有旗舰版 3:所有主机）
+                     * 设置<p>生效范围（0:一组quuid 1:所有专业版(包含旗舰版) 2:所有旗舰版 3:所有主机）</p>
+                     * @param _scope <p>生效范围（0:一组quuid 1:所有专业版(包含旗舰版) 2:所有旗舰版 3:所有主机）</p>
                      * 
                      */
                     void SetScope(const int64_t& _scope);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取策略ID
-                     * @return Id 策略ID
+                     * 获取<p>策略ID</p>
+                     * @return Id <p>策略ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置策略ID
-                     * @param _id 策略ID
+                     * 设置<p>策略ID</p>
+                     * @param _id <p>策略ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取策略描述
-                     * @return Descript 策略描述
+                     * 获取<p>策略描述</p>
+                     * @return Descript <p>策略描述</p>
                      * 
                      */
                     std::string GetDescript() const;
 
                     /**
-                     * 设置策略描述
-                     * @param _descript 策略描述
+                     * 设置<p>策略描述</p>
+                     * @param _descript <p>策略描述</p>
                      * 
                      */
                     void SetDescript(const std::string& _descript);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool DescriptHasBeenSet() const;
 
                     /**
-                     * 获取事件列表点击“加入白名单”时,需要传EventId 事件的id
-                     * @return EventId 事件列表点击“加入白名单”时,需要传EventId 事件的id
+                     * 获取<p>事件列表点击“加入白名单”时,需要传EventId 事件的id</p>
+                     * @return EventId <p>事件列表点击“加入白名单”时,需要传EventId 事件的id</p>
                      * 
                      */
                     int64_t GetEventId() const;
 
                     /**
-                     * 设置事件列表点击“加入白名单”时,需要传EventId 事件的id
-                     * @param _eventId 事件列表点击“加入白名单”时,需要传EventId 事件的id
+                     * 设置<p>事件列表点击“加入白名单”时,需要传EventId 事件的id</p>
+                     * @param _eventId <p>事件列表点击“加入白名单”时,需要传EventId 事件的id</p>
                      * 
                      */
                     void SetEventId(const int64_t& _eventId);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取是否处理旧事件为白名单 0=不处理 1=处理
-                     * @return DealOldEvents 是否处理旧事件为白名单 0=不处理 1=处理
+                     * 获取<p>是否处理旧事件为白名单 0=不处理 1=处理</p>
+                     * @return DealOldEvents <p>是否处理旧事件为白名单 0=不处理 1=处理</p>
                      * 
                      */
                     int64_t GetDealOldEvents() const;
 
                     /**
-                     * 设置是否处理旧事件为白名单 0=不处理 1=处理
-                     * @param _dealOldEvents 是否处理旧事件为白名单 0=不处理 1=处理
+                     * 设置<p>是否处理旧事件为白名单 0=不处理 1=处理</p>
+                     * @param _dealOldEvents <p>是否处理旧事件为白名单 0=不处理 1=处理</p>
                      * 
                      */
                     void SetDealOldEvents(const int64_t& _dealOldEvents);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool DealOldEventsHasBeenSet() const;
 
                     /**
-                     * 获取生效主机的QUUID集合
-                     * @return Quuids 生效主机的QUUID集合
+                     * 获取<p>生效主机的QUUID集合</p>
+                     * @return Quuids <p>生效主机的QUUID集合</p>
                      * 
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
-                     * 设置生效主机的QUUID集合
-                     * @param _quuids 生效主机的QUUID集合
+                     * 设置<p>生效主机的QUUID集合</p>
+                     * @param _quuids <p>生效主机的QUUID集合</p>
                      * 
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool QuuidsHasBeenSet() const;
 
                     /**
-                     * 获取策略类型，0:系统  1:用户
-                     * @return Category 策略类型，0:系统  1:用户
+                     * 获取<p>策略类型，0:系统  1:用户</p>
+                     * @return Category <p>策略类型，0:系统  1:用户</p>
                      * 
                      */
                     int64_t GetCategory() const;
 
                     /**
-                     * 设置策略类型，0:系统  1:用户
-                     * @param _category 策略类型，0:系统  1:用户
+                     * 设置<p>策略类型，0:系统  1:用户</p>
+                     * @param _category <p>策略类型，0:系统  1:用户</p>
                      * 
                      */
                     void SetCategory(const int64_t& _category);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool CategoryHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改时间
-                     * @return ModifyTime 修改时间
+                     * 获取<p>修改时间</p>
+                     * @return ModifyTime <p>修改时间</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置修改时间
-                     * @param _modifyTime 修改时间
+                     * 设置<p>修改时间</p>
+                     * @param _modifyTime <p>修改时间</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取老版本兼容可能会用到
-                     * @return Uuids 老版本兼容可能会用到
+                     * 获取<p>老版本兼容可能会用到</p>
+                     * @return Uuids <p>老版本兼容可能会用到</p>
                      * 
                      */
                     std::vector<std::string> GetUuids() const;
 
                     /**
-                     * 设置老版本兼容可能会用到
-                     * @param _uuids 老版本兼容可能会用到
+                     * 设置<p>老版本兼容可能会用到</p>
+                     * @param _uuids <p>老版本兼容可能会用到</p>
                      * 
                      */
                     void SetUuids(const std::vector<std::string>& _uuids);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool UuidsHasBeenSet() const;
 
                     /**
-                     * 获取规则表达式
-                     * @return Rules 规则表达式
+                     * 获取<p>规则表达式</p>
+                     * @return Rules <p>规则表达式</p>
                      * 
                      */
                     PolicyRules GetRules() const;
 
                     /**
-                     * 设置规则表达式
-                     * @param _rules 规则表达式
+                     * 设置<p>规则表达式</p>
+                     * @param _rules <p>规则表达式</p>
                      * 
                      */
                     void SetRules(const PolicyRules& _rules);
@@ -404,109 +404,136 @@ namespace TencentCloud
                      */
                     bool RulesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>匹配类型：0-命令行（默认） 1-文件操作</p>
+                     * @return MatchType <p>匹配类型：0-命令行（默认） 1-文件操作</p>
+                     * 
+                     */
+                    uint64_t GetMatchType() const;
+
+                    /**
+                     * 设置<p>匹配类型：0-命令行（默认） 1-文件操作</p>
+                     * @param _matchType <p>匹配类型：0-命令行（默认） 1-文件操作</p>
+                     * 
+                     */
+                    void SetMatchType(const uint64_t& _matchType);
+
+                    /**
+                     * 判断参数 MatchType 是否已赋值
+                     * @return MatchType 是否已赋值
+                     * 
+                     */
+                    bool MatchTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 策略名称
+                     * <p>策略名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 1:有效 0:无效
+                     * <p>1:有效 0:无效</p>
                      */
                     int64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 0:黑名单 1:白名单
+                     * <p>0:黑名单 1:白名单</p>
                      */
                     int64_t m_white;
                     bool m_whiteHasBeenSet;
 
                     /**
-                     * 0:告警 1:白名单 2:拦截
+                     * <p>0:告警 1:白名单 2:拦截</p>
                      */
                     int64_t m_bashAction;
                     bool m_bashActionHasBeenSet;
 
                     /**
-                     * 正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine
+                     * <p>正则表达式 base64 加密,该字段废弃,如果写入则自动替换为Rules.Process.CmdLine</p>
                      */
                     std::string m_rule;
                     bool m_ruleHasBeenSet;
 
                     /**
-                     * 危险等级(0:无，1: 高危 2:中危 3: 低危)
+                     * <p>危险等级(0:无，1: 高危 2:中危 3: 低危)</p>
                      */
                     int64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 生效范围（0:一组quuid 1:所有专业版(包含旗舰版) 2:所有旗舰版 3:所有主机）
+                     * <p>生效范围（0:一组quuid 1:所有专业版(包含旗舰版) 2:所有旗舰版 3:所有主机）</p>
                      */
                     int64_t m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 策略ID
+                     * <p>策略ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 策略描述
+                     * <p>策略描述</p>
                      */
                     std::string m_descript;
                     bool m_descriptHasBeenSet;
 
                     /**
-                     * 事件列表点击“加入白名单”时,需要传EventId 事件的id
+                     * <p>事件列表点击“加入白名单”时,需要传EventId 事件的id</p>
                      */
                     int64_t m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 是否处理旧事件为白名单 0=不处理 1=处理
+                     * <p>是否处理旧事件为白名单 0=不处理 1=处理</p>
                      */
                     int64_t m_dealOldEvents;
                     bool m_dealOldEventsHasBeenSet;
 
                     /**
-                     * 生效主机的QUUID集合
+                     * <p>生效主机的QUUID集合</p>
                      */
                     std::vector<std::string> m_quuids;
                     bool m_quuidsHasBeenSet;
 
                     /**
-                     * 策略类型，0:系统  1:用户
+                     * <p>策略类型，0:系统  1:用户</p>
                      */
                     int64_t m_category;
                     bool m_categoryHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 修改时间
+                     * <p>修改时间</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 老版本兼容可能会用到
+                     * <p>老版本兼容可能会用到</p>
                      */
                     std::vector<std::string> m_uuids;
                     bool m_uuidsHasBeenSet;
 
                     /**
-                     * 规则表达式
+                     * <p>规则表达式</p>
                      */
                     PolicyRules m_rules;
                     bool m_rulesHasBeenSet;
+
+                    /**
+                     * <p>匹配类型：0-命令行（默认） 1-文件操作</p>
+                     */
+                    uint64_t m_matchType;
+                    bool m_matchTypeHasBeenSet;
 
                 };
             }

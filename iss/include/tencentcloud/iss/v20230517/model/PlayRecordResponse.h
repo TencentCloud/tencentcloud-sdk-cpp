@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回结果
-                     * @return Data 返回结果
+                     * 获取<p>返回结果</p>
+                     * @return Data <p>返回结果</p>
                      * 
                      */
                     PlayRecordData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回结果
+                     * <p>返回结果</p>
                      */
                     PlayRecordData m_data;
                     bool m_dataHasBeenSet;

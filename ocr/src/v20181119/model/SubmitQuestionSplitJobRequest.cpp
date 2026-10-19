@@ -25,7 +25,8 @@ using namespace std;
 SubmitQuestionSplitJobRequest::SubmitQuestionSplitJobRequest() :
     m_imageUrlListHasBeenSet(false),
     m_imageBase64ListHasBeenSet(false),
-    m_modelTypeHasBeenSet(false)
+    m_modelTypeHasBeenSet(false),
+    m_enableImageCropHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string SubmitQuestionSplitJobRequest::ToJsonString() const
         string key = "ModelType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modelType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableImageCropHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableImageCrop";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableImageCrop, allocator);
     }
 
 
@@ -124,6 +133,22 @@ void SubmitQuestionSplitJobRequest::SetModelType(const string& _modelType)
 bool SubmitQuestionSplitJobRequest::ModelTypeHasBeenSet() const
 {
     return m_modelTypeHasBeenSet;
+}
+
+bool SubmitQuestionSplitJobRequest::GetEnableImageCrop() const
+{
+    return m_enableImageCrop;
+}
+
+void SubmitQuestionSplitJobRequest::SetEnableImageCrop(const bool& _enableImageCrop)
+{
+    m_enableImageCrop = _enableImageCrop;
+    m_enableImageCropHasBeenSet = true;
+}
+
+bool SubmitQuestionSplitJobRequest::EnableImageCropHasBeenSet() const
+{
+    return m_enableImageCropHasBeenSet;
 }
 
 

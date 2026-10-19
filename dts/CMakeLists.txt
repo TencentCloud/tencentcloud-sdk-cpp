@@ -200,6 +200,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/DescribeConsumerGroupsResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrateRateLimitRequest.h
   include/tencentcloud/dts/v20211206/model/CompareTableItem.h
+  include/tencentcloud/dts/v20211206/model/SkipDdlOnError.h
   include/tencentcloud/dts/v20211206/model/DescribeSyncCompareReportResponse.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrateGtidCompareReportResponse.h
   include/tencentcloud/dts/v20211206/model/ConfigureSyncJobResponse.h
@@ -522,6 +523,7 @@ set(dts_src
   src/v20211206/model/DescribeConsumerGroupsResponse.cpp
   src/v20211206/model/ModifyMigrateRateLimitRequest.cpp
   src/v20211206/model/CompareTableItem.cpp
+  src/v20211206/model/SkipDdlOnError.cpp
   src/v20211206/model/DescribeSyncCompareReportResponse.cpp
   src/v20211206/model/DescribeMigrateGtidCompareReportResponse.cpp
   src/v20211206/model/ConfigureSyncJobResponse.cpp

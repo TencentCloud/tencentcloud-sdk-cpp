@@ -25,6 +25,7 @@ using namespace std;
 EnableTrainingTaskClsConfigRequest::EnableTrainingTaskClsConfigRequest() :
     m_taskIdHasBeenSet(false),
     m_logEnableHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_logConfigHasBeenSet(false)
 {
 }
@@ -50,6 +51,14 @@ string EnableTrainingTaskClsConfigRequest::ToJsonString() const
         string key = "LogEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_logEnable, allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_logConfigHasBeenSet)
@@ -99,6 +108,22 @@ void EnableTrainingTaskClsConfigRequest::SetLogEnable(const bool& _logEnable)
 bool EnableTrainingTaskClsConfigRequest::LogEnableHasBeenSet() const
 {
     return m_logEnableHasBeenSet;
+}
+
+string EnableTrainingTaskClsConfigRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void EnableTrainingTaskClsConfigRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool EnableTrainingTaskClsConfigRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 LogConfig EnableTrainingTaskClsConfigRequest::GetLogConfig() const

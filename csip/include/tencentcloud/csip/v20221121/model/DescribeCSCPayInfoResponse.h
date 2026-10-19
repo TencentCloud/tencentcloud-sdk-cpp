@@ -240,6 +240,20 @@ namespace TencentCloud
                      */
                     bool QuotaListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>配额用量查询失败提示。仅请求参数 NeedQuotaUsed 为 true 时可能非空：此时订单信息仍正常返回，QuotaList 中的 QuotaUsed 恒为 0；查询正常或未请求用量时为空字符串</p>
+                     * @return QuotaUsedError <p>配额用量查询失败提示。仅请求参数 NeedQuotaUsed 为 true 时可能非空：此时订单信息仍正常返回，QuotaList 中的 QuotaUsed 恒为 0；查询正常或未请求用量时为空字符串</p>
+                     * 
+                     */
+                    std::string GetQuotaUsedError() const;
+
+                    /**
+                     * 判断参数 QuotaUsedError 是否已赋值
+                     * @return QuotaUsedError 是否已赋值
+                     * 
+                     */
+                    bool QuotaUsedErrorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -325,6 +339,12 @@ namespace TencentCloud
                      */
                     std::vector<OrderQuotaInfo> m_quotaList;
                     bool m_quotaListHasBeenSet;
+
+                    /**
+                     * <p>配额用量查询失败提示。仅请求参数 NeedQuotaUsed 为 true 时可能非空：此时订单信息仍正常返回，QuotaList 中的 QuotaUsed 恒为 0；查询正常或未请求用量时为空字符串</p>
+                     */
+                    std::string m_quotaUsedError;
+                    bool m_quotaUsedErrorHasBeenSet;
 
                 };
             }

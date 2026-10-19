@@ -29,6 +29,7 @@
 #include <tencentcloud/tione/v20211111/model/AuthToken.h>
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
 #include <tencentcloud/tione/v20211111/model/GatewayConfig.h>
+#include <tencentcloud/tione/v20211111/model/SmartRouter.h>
 
 
 namespace TencentCloud
@@ -687,6 +688,31 @@ namespace TencentCloud
                      */
                     bool ChangerNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>智能路由（SmartRouter）配置与运行时状态。未开启时该字段为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SmartRouter <p>智能路由（SmartRouter）配置与运行时状态。未开启时该字段为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SmartRouter GetSmartRouter() const;
+
+                    /**
+                     * 设置<p>智能路由（SmartRouter）配置与运行时状态。未开启时该字段为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _smartRouter <p>智能路由（SmartRouter）配置与运行时状态。未开启时该字段为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSmartRouter(const SmartRouter& _smartRouter);
+
+                    /**
+                     * 判断参数 SmartRouter 是否已赋值
+                     * @return SmartRouter 是否已赋值
+                     * 
+                     */
+                    bool SmartRouterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -868,6 +894,13 @@ namespace TencentCloud
                      */
                     std::string m_changerName;
                     bool m_changerNameHasBeenSet;
+
+                    /**
+                     * <p>智能路由（SmartRouter）配置与运行时状态。未开启时该字段为空</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SmartRouter m_smartRouter;
+                    bool m_smartRouterHasBeenSet;
 
                 };
             }

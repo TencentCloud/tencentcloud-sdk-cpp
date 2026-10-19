@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像信息
-                     * @return ImageInfo 镜像信息
+                     * 获取<p>镜像信息</p>
+                     * @return ImageInfo <p>镜像信息</p>
                      * 
                      */
                     ImageInfo GetImageInfo() const;
 
                     /**
-                     * 设置镜像信息
-                     * @param _imageInfo 镜像信息
+                     * 设置<p>镜像信息</p>
+                     * @param _imageInfo <p>镜像信息</p>
                      * 
                      */
                     void SetImageInfo(const ImageInfo& _imageInfo);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ImageInfoHasBeenSet() const;
 
                     /**
-                     * 获取notebook id
-                     * @return NotebookId notebook id
+                     * 获取<p>notebook id</p>
+                     * @return NotebookId <p>notebook id</p>
                      * 
                      */
                     std::string GetNotebookId() const;
 
                     /**
-                     * 设置notebook id
-                     * @param _notebookId notebook id
+                     * 设置<p>notebook id</p>
+                     * @param _notebookId <p>notebook id</p>
                      * 
                      */
                     void SetNotebookId(const std::string& _notebookId);
@@ -86,15 +86,36 @@ namespace TencentCloud
                     bool NotebookIdHasBeenSet() const;
 
                     /**
-                     * 获取要保存的kernel数组
-                     * @return Kernels 要保存的kernel数组
+                     * 获取<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * @return TiProjectId <p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * 
+                     */
+                    std::string GetTiProjectId() const;
+
+                    /**
+                     * 设置<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * @param _tiProjectId <p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     * 
+                     */
+                    void SetTiProjectId(const std::string& _tiProjectId);
+
+                    /**
+                     * 判断参数 TiProjectId 是否已赋值
+                     * @return TiProjectId 是否已赋值
+                     * 
+                     */
+                    bool TiProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>要保存的kernel数组</p>
+                     * @return Kernels <p>要保存的kernel数组</p>
                      * 
                      */
                     std::vector<std::string> GetKernels() const;
 
                     /**
-                     * 设置要保存的kernel数组
-                     * @param _kernels 要保存的kernel数组
+                     * 设置<p>要保存的kernel数组</p>
+                     * @param _kernels <p>要保存的kernel数组</p>
                      * 
                      */
                     void SetKernels(const std::vector<std::string>& _kernels);
@@ -106,25 +127,58 @@ namespace TencentCloud
                      */
                     bool KernelsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否保存到镜像中心</p>
+                     * @return RegisterToImageCenter <p>是否保存到镜像中心</p>
+                     * 
+                     */
+                    bool GetRegisterToImageCenter() const;
+
+                    /**
+                     * 设置<p>是否保存到镜像中心</p>
+                     * @param _registerToImageCenter <p>是否保存到镜像中心</p>
+                     * 
+                     */
+                    void SetRegisterToImageCenter(const bool& _registerToImageCenter);
+
+                    /**
+                     * 判断参数 RegisterToImageCenter 是否已赋值
+                     * @return RegisterToImageCenter 是否已赋值
+                     * 
+                     */
+                    bool RegisterToImageCenterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 镜像信息
+                     * <p>镜像信息</p>
                      */
                     ImageInfo m_imageInfo;
                     bool m_imageInfoHasBeenSet;
 
                     /**
-                     * notebook id
+                     * <p>notebook id</p>
                      */
                     std::string m_notebookId;
                     bool m_notebookIdHasBeenSet;
 
                     /**
-                     * 要保存的kernel数组
+                     * <p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>
+                     */
+                    std::string m_tiProjectId;
+                    bool m_tiProjectIdHasBeenSet;
+
+                    /**
+                     * <p>要保存的kernel数组</p>
                      */
                     std::vector<std::string> m_kernels;
                     bool m_kernelsHasBeenSet;
+
+                    /**
+                     * <p>是否保存到镜像中心</p>
+                     */
+                    bool m_registerToImageCenter;
+                    bool m_registerToImageCenterHasBeenSet;
 
                 };
             }

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20250806/model/ResourceType.h>
+#include <tencentcloud/wedata/v20250806/model/ResourceTag.h>
 
 
 namespace TencentCloud
@@ -44,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。
-                     * @return Name 资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。
+                     * 获取<p>资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。</p>
+                     * @return Name <p>资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。
-                     * @param _name 资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。
+                     * 设置<p>资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。</p>
+                     * @param _name <p>资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +66,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取开通的资源组信息
-                     * @return Type 开通的资源组信息
+                     * 获取<p>开通的资源组信息</p>
+                     * @return Type <p>开通的资源组信息</p>
                      * 
                      */
                     ResourceType GetType() const;
 
                     /**
-                     * 设置开通的资源组信息
-                     * @param _type 开通的资源组信息
+                     * 设置<p>开通的资源组信息</p>
+                     * @param _type <p>开通的资源组信息</p>
                      * 
                      */
                     void SetType(const ResourceType& _type);
@@ -86,15 +87,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费
-                     * @return AutoRenewEnabled 是否自动续费
+                     * 获取<p>是否自动续费</p>
+                     * @return AutoRenewEnabled <p>是否自动续费</p>
                      * 
                      */
                     bool GetAutoRenewEnabled() const;
 
                     /**
-                     * 设置是否自动续费
-                     * @param _autoRenewEnabled 是否自动续费
+                     * 设置<p>是否自动续费</p>
+                     * @param _autoRenewEnabled <p>是否自动续费</p>
                      * 
                      */
                     void SetAutoRenewEnabled(const bool& _autoRenewEnabled);
@@ -107,15 +108,15 @@ namespace TencentCloud
                     bool AutoRenewEnabledHasBeenSet() const;
 
                     /**
-                     * 获取购买时长，单位月
-                     * @return PurchasePeriod 购买时长，单位月
+                     * 获取<p>购买时长，单位月</p>
+                     * @return PurchasePeriod <p>购买时长，单位月</p>
                      * 
                      */
                     int64_t GetPurchasePeriod() const;
 
                     /**
-                     * 设置购买时长，单位月
-                     * @param _purchasePeriod 购买时长，单位月
+                     * 设置<p>购买时长，单位月</p>
+                     * @param _purchasePeriod <p>购买时长，单位月</p>
                      * 
                      */
                     void SetPurchasePeriod(const int64_t& _purchasePeriod);
@@ -128,15 +129,15 @@ namespace TencentCloud
                     bool PurchasePeriodHasBeenSet() const;
 
                     /**
-                     * 获取vpcId
-                     * @return VpcId vpcId
+                     * 获取<p>vpcId</p>
+                     * @return VpcId <p>vpcId</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置vpcId
-                     * @param _vpcId vpcId
+                     * 设置<p>vpcId</p>
+                     * @param _vpcId <p>vpcId</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -149,15 +150,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网
-                     * @return SubNet 子网
+                     * 获取<p>子网</p>
+                     * @return SubNet <p>子网</p>
                      * 
                      */
                     std::string GetSubNet() const;
 
                     /**
-                     * 设置子网
-                     * @param _subNet 子网
+                     * 设置<p>子网</p>
+                     * @param _subNet <p>子网</p>
                      * 
                      */
                     void SetSubNet(const std::string& _subNet);
@@ -170,15 +171,15 @@ namespace TencentCloud
                     bool SubNetHasBeenSet() const;
 
                     /**
-                     * 获取资源购买地域
-                     * @return ResourceRegion 资源购买地域
+                     * 获取<p>资源购买地域</p>
+                     * @return ResourceRegion <p>资源购买地域</p>
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
-                     * 设置资源购买地域
-                     * @param _resourceRegion 资源购买地域
+                     * 设置<p>资源购买地域</p>
+                     * @param _resourceRegion <p>资源购买地域</p>
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -191,15 +192,15 @@ namespace TencentCloud
                     bool ResourceRegionHasBeenSet() const;
 
                     /**
-                     * 获取关联项目空间项目id
-                     * @return AssociatedProjectId 关联项目空间项目id
+                     * 获取<p>关联项目空间项目id</p>
+                     * @return AssociatedProjectId <p>关联项目空间项目id</p>
                      * 
                      */
                     std::string GetAssociatedProjectId() const;
 
                     /**
-                     * 设置关联项目空间项目id
-                     * @param _associatedProjectId 关联项目空间项目id
+                     * 设置<p>关联项目空间项目id</p>
+                     * @param _associatedProjectId <p>关联项目空间项目id</p>
                      * 
                      */
                     void SetAssociatedProjectId(const std::string& _associatedProjectId);
@@ -212,15 +213,15 @@ namespace TencentCloud
                     bool AssociatedProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取资源组描述
-                     * @return Description 资源组描述
+                     * 获取<p>资源组描述</p>
+                     * @return Description <p>资源组描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置资源组描述
-                     * @param _description 资源组描述
+                     * 设置<p>资源组描述</p>
+                     * @param _description <p>资源组描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -232,61 +233,88 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标签值</p>
+                     * @return Tags <p>标签值</p>
+                     * 
+                     */
+                    std::vector<ResourceTag> GetTags() const;
+
+                    /**
+                     * 设置<p>标签值</p>
+                     * @param _tags <p>标签值</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<ResourceTag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。
+                     * <p>资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 开通的资源组信息
+                     * <p>开通的资源组信息</p>
                      */
                     ResourceType m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 是否自动续费
+                     * <p>是否自动续费</p>
                      */
                     bool m_autoRenewEnabled;
                     bool m_autoRenewEnabledHasBeenSet;
 
                     /**
-                     * 购买时长，单位月
+                     * <p>购买时长，单位月</p>
                      */
                     int64_t m_purchasePeriod;
                     bool m_purchasePeriodHasBeenSet;
 
                     /**
-                     * vpcId
+                     * <p>vpcId</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网
+                     * <p>子网</p>
                      */
                     std::string m_subNet;
                     bool m_subNetHasBeenSet;
 
                     /**
-                     * 资源购买地域
+                     * <p>资源购买地域</p>
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;
 
                     /**
-                     * 关联项目空间项目id
+                     * <p>关联项目空间项目id</p>
                      */
                     std::string m_associatedProjectId;
                     bool m_associatedProjectIdHasBeenSet;
 
                     /**
-                     * 资源组描述
+                     * <p>资源组描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>标签值</p>
+                     */
+                    std::vector<ResourceTag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

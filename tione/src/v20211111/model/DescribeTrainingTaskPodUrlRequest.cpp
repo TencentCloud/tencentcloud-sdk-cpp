@@ -23,7 +23,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DescribeTrainingTaskPodUrlRequest::DescribeTrainingTaskPodUrlRequest() :
-    m_podNameHasBeenSet(false)
+    m_podNameHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeTrainingTaskPodUrlRequest::ToJsonString() const
         string key = "PodName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_podName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeTrainingTaskPodUrlRequest::SetPodName(const string& _podName)
 bool DescribeTrainingTaskPodUrlRequest::PodNameHasBeenSet() const
 {
     return m_podNameHasBeenSet;
+}
+
+string DescribeTrainingTaskPodUrlRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void DescribeTrainingTaskPodUrlRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool DescribeTrainingTaskPodUrlRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 

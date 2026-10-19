@@ -27,7 +27,9 @@ DescribeMessageTraceRequest::DescribeMessageTraceRequest() :
     m_topicHasBeenSet(false),
     m_msgIdHasBeenSet(false),
     m_queryDeadLetterMessageHasBeenSet(false),
-    m_queryDelayMessageHasBeenSet(false)
+    m_queryDelayMessageHasBeenSet(false),
+    m_queryRetryMessageHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string DescribeMessageTraceRequest::ToJsonString() const
         string key = "QueryDelayMessage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_queryDelayMessage, allocator);
+    }
+
+    if (m_queryRetryMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryRetryMessage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryRetryMessage, allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +182,38 @@ void DescribeMessageTraceRequest::SetQueryDelayMessage(const bool& _queryDelayMe
 bool DescribeMessageTraceRequest::QueryDelayMessageHasBeenSet() const
 {
     return m_queryDelayMessageHasBeenSet;
+}
+
+bool DescribeMessageTraceRequest::GetQueryRetryMessage() const
+{
+    return m_queryRetryMessage;
+}
+
+void DescribeMessageTraceRequest::SetQueryRetryMessage(const bool& _queryRetryMessage)
+{
+    m_queryRetryMessage = _queryRetryMessage;
+    m_queryRetryMessageHasBeenSet = true;
+}
+
+bool DescribeMessageTraceRequest::QueryRetryMessageHasBeenSet() const
+{
+    return m_queryRetryMessageHasBeenSet;
+}
+
+string DescribeMessageTraceRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void DescribeMessageTraceRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool DescribeMessageTraceRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

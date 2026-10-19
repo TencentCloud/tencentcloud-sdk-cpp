@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool ModelTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启切边、弯曲矫正、方向矫正，开启则批改之前先做图片前处理，图片url地址返回在查询接口的QuestionInfo-&gt; ReturnImageUr中l,默认为false不开启</p>
+                     * @return EnableImageCrop <p>是否开启切边、弯曲矫正、方向矫正，开启则批改之前先做图片前处理，图片url地址返回在查询接口的QuestionInfo-&gt; ReturnImageUr中l,默认为false不开启</p>
+                     * 
+                     */
+                    bool GetEnableImageCrop() const;
+
+                    /**
+                     * 设置<p>是否开启切边、弯曲矫正、方向矫正，开启则批改之前先做图片前处理，图片url地址返回在查询接口的QuestionInfo-&gt; ReturnImageUr中l,默认为false不开启</p>
+                     * @param _enableImageCrop <p>是否开启切边、弯曲矫正、方向矫正，开启则批改之前先做图片前处理，图片url地址返回在查询接口的QuestionInfo-&gt; ReturnImageUr中l,默认为false不开启</p>
+                     * 
+                     */
+                    void SetEnableImageCrop(const bool& _enableImageCrop);
+
+                    /**
+                     * 判断参数 EnableImageCrop 是否已赋值
+                     * @return EnableImageCrop 是否已赋值
+                     * 
+                     */
+                    bool EnableImageCropHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_modelType;
                     bool m_modelTypeHasBeenSet;
+
+                    /**
+                     * <p>是否开启切边、弯曲矫正、方向矫正，开启则批改之前先做图片前处理，图片url地址返回在查询接口的QuestionInfo-&gt; ReturnImageUr中l,默认为false不开启</p>
+                     */
+                    bool m_enableImageCrop;
+                    bool m_enableImageCropHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ ConsoleAccount::ConsoleAccount() :
     m_passwordHasBeenSet(false),
     m_secretIdHasBeenSet(false),
     m_secretKeyHasBeenSet(false),
-    m_emailHasBeenSet(false)
+    m_emailHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ConsoleAccount::Deserialize(const rapidjson::Value &value)
         m_emailHasBeenSet = true;
     }
 
+    if (value.HasMember("RoleArn") && !value["RoleArn"].IsNull())
+    {
+        if (!value["RoleArn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsoleAccount.RoleArn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleArn = string(value["RoleArn"].GetString());
+        m_roleArnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ConsoleAccount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Email";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_email.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleArnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleArn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleArn.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ConsoleAccount::SetEmail(const string& _email)
 bool ConsoleAccount::EmailHasBeenSet() const
 {
     return m_emailHasBeenSet;
+}
+
+string ConsoleAccount::GetRoleArn() const
+{
+    return m_roleArn;
+}
+
+void ConsoleAccount::SetRoleArn(const string& _roleArn)
+{
+    m_roleArn = _roleArn;
+    m_roleArnHasBeenSet = true;
+}
+
+bool ConsoleAccount::RoleArnHasBeenSet() const
+{
+    return m_roleArnHasBeenSet;
 }
 

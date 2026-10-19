@@ -27,7 +27,8 @@ QuestionInfo::QuestionInfo() :
     m_resultListHasBeenSet(false),
     m_orgHeightHasBeenSet(false),
     m_orgWidthHasBeenSet(false),
-    m_imageBase64HasBeenSet(false)
+    m_imageBase64HasBeenSet(false),
+    m_returnImageUrlHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome QuestionInfo::Deserialize(const rapidjson::Value &value)
         m_imageBase64HasBeenSet = true;
     }
 
+    if (value.HasMember("ReturnImageUrl") && !value["ReturnImageUrl"].IsNull())
+    {
+        if (!value["ReturnImageUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QuestionInfo.ReturnImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_returnImageUrl = string(value["ReturnImageUrl"].GetString());
+        m_returnImageUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void QuestionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ImageBase64";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_returnImageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReturnImageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_returnImageUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void QuestionInfo::SetImageBase64(const string& _imageBase64)
 bool QuestionInfo::ImageBase64HasBeenSet() const
 {
     return m_imageBase64HasBeenSet;
+}
+
+string QuestionInfo::GetReturnImageUrl() const
+{
+    return m_returnImageUrl;
+}
+
+void QuestionInfo::SetReturnImageUrl(const string& _returnImageUrl)
+{
+    m_returnImageUrl = _returnImageUrl;
+    m_returnImageUrlHasBeenSet = true;
+}
+
+bool QuestionInfo::ReturnImageUrlHasBeenSet() const
+{
+    return m_returnImageUrlHasBeenSet;
 }
 

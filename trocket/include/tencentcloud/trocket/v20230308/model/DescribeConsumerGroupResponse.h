@@ -226,6 +226,20 @@ namespace TencentCloud
                      */
                     bool LiteTopicHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义死信Topic</p>
+                     * @return DeadLetterTargetTopic <p>自定义死信Topic</p>
+                     * 
+                     */
+                    std::string GetDeadLetterTargetTopic() const;
+
+                    /**
+                     * 判断参数 DeadLetterTargetTopic 是否已赋值
+                     * @return DeadLetterTargetTopic 是否已赋值
+                     * 
+                     */
+                    bool DeadLetterTargetTopicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -305,6 +319,12 @@ namespace TencentCloud
                      */
                     std::string m_liteTopic;
                     bool m_liteTopicHasBeenSet;
+
+                    /**
+                     * <p>自定义死信Topic</p>
+                     */
+                    std::string m_deadLetterTargetTopic;
+                    bool m_deadLetterTargetTopicHasBeenSet;
 
                 };
             }

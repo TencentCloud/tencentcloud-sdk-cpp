@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyServiceGroupWeightsRequest::ModifyServiceGroupWeightsRequest() :
     m_serviceGroupIdHasBeenSet(false),
-    m_weightsHasBeenSet(false)
+    m_weightsHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string ModifyServiceGroupWeightsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -96,6 +105,22 @@ void ModifyServiceGroupWeightsRequest::SetWeights(const vector<WeightEntry>& _we
 bool ModifyServiceGroupWeightsRequest::WeightsHasBeenSet() const
 {
     return m_weightsHasBeenSet;
+}
+
+string ModifyServiceGroupWeightsRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void ModifyServiceGroupWeightsRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool ModifyServiceGroupWeightsRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 

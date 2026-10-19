@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool ItemsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可选项</p>
+                     * @return Options <p>可选项</p>
+                     * 
+                     */
+                    std::vector<std::string> GetOptions() const;
+
+                    /**
+                     * 设置<p>可选项</p>
+                     * @param _options <p>可选项</p>
+                     * 
+                     */
+                    void SetOptions(const std::vector<std::string>& _options);
+
+                    /**
+                     * 判断参数 Options 是否已赋值
+                     * @return Options 是否已赋值
+                     * 
+                     */
+                    bool OptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * <p>可选项</p>
+                     */
+                    std::vector<std::string> m_options;
+                    bool m_optionsHasBeenSet;
 
                 };
             }

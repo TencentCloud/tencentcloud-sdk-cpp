@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>订单类型</p><p>枚举值：</p><ul><li>PURCHASED： 正式订单</li><li>TRIAL： 试用订单</li></ul>
+                     * @return OrderType <p>订单类型</p><p>枚举值：</p><ul><li>PURCHASED： 正式订单</li><li>TRIAL： 试用订单</li></ul>
+                     * 
+                     */
+                    std::string GetOrderType() const;
+
+                    /**
+                     * 设置<p>订单类型</p><p>枚举值：</p><ul><li>PURCHASED： 正式订单</li><li>TRIAL： 试用订单</li></ul>
+                     * @param _orderType <p>订单类型</p><p>枚举值：</p><ul><li>PURCHASED： 正式订单</li><li>TRIAL： 试用订单</li></ul>
+                     * 
+                     */
+                    void SetOrderType(const std::string& _orderType);
+
+                    /**
+                     * 判断参数 OrderType 是否已赋值
+                     * @return OrderType 是否已赋值
+                     * 
+                     */
+                    bool OrderTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * <p>订单类型</p><p>枚举值：</p><ul><li>PURCHASED： 正式订单</li><li>TRIAL： 试用订单</li></ul>
+                     */
+                    std::string m_orderType;
+                    bool m_orderTypeHasBeenSet;
 
                 };
             }

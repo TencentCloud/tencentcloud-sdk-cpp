@@ -86,39 +86,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取主题类型，枚举值如下：
-
-- NORMAL: 普通消息
-- FIFO: 顺序消息
-- DELAY: 延时消息
-- TRANSACTION: 事务消息
-- LITE: 轻量消息
-                     * @return TopicType 主题类型，枚举值如下：
-
-- NORMAL: 普通消息
-- FIFO: 顺序消息
-- DELAY: 延时消息
-- TRANSACTION: 事务消息
-- LITE: 轻量消息
+                     * 获取<p>主题类型</p><p>枚举值：</p><ul><li>NORMAL： 普通消息</li><li>FIFO： 顺序消息</li><li>DELAY： 延迟消息</li><li>TRANSACTION： 事务消息</li><li>LITE： 轻量消息</li><li>PRIORITY： 优先级消息</li></ul>
+                     * @return TopicType <p>主题类型</p><p>枚举值：</p><ul><li>NORMAL： 普通消息</li><li>FIFO： 顺序消息</li><li>DELAY： 延迟消息</li><li>TRANSACTION： 事务消息</li><li>LITE： 轻量消息</li><li>PRIORITY： 优先级消息</li></ul>
                      * 
                      */
                     std::string GetTopicType() const;
 
                     /**
-                     * 设置主题类型，枚举值如下：
-
-- NORMAL: 普通消息
-- FIFO: 顺序消息
-- DELAY: 延时消息
-- TRANSACTION: 事务消息
-- LITE: 轻量消息
-                     * @param _topicType 主题类型，枚举值如下：
-
-- NORMAL: 普通消息
-- FIFO: 顺序消息
-- DELAY: 延时消息
-- TRANSACTION: 事务消息
-- LITE: 轻量消息
+                     * 设置<p>主题类型</p><p>枚举值：</p><ul><li>NORMAL： 普通消息</li><li>FIFO： 顺序消息</li><li>DELAY： 延迟消息</li><li>TRANSACTION： 事务消息</li><li>LITE： 轻量消息</li><li>PRIORITY： 优先级消息</li></ul>
+                     * @param _topicType <p>主题类型</p><p>枚举值：</p><ul><li>NORMAL： 普通消息</li><li>FIFO： 顺序消息</li><li>DELAY： 延迟消息</li><li>TRANSACTION： 事务消息</li><li>LITE： 轻量消息</li><li>PRIORITY： 优先级消息</li></ul>
                      * 
                      */
                     void SetTopicType(const std::string& _topicType);
@@ -131,15 +107,15 @@ namespace TencentCloud
                     bool TopicTypeHasBeenSet() const;
 
                     /**
-                     * 获取队列数量，取值范围3～16
-                     * @return QueueNum 队列数量，取值范围3～16
+                     * 获取<p>队列数量，取值范围3～16</p>
+                     * @return QueueNum <p>队列数量，取值范围3～16</p>
                      * 
                      */
                     int64_t GetQueueNum() const;
 
                     /**
-                     * 设置队列数量，取值范围3～16
-                     * @param _queueNum 队列数量，取值范围3～16
+                     * 设置<p>队列数量，取值范围3～16</p>
+                     * @param _queueNum <p>队列数量，取值范围3～16</p>
                      * 
                      */
                     void SetQueueNum(const int64_t& _queueNum);
@@ -152,15 +128,15 @@ namespace TencentCloud
                     bool QueueNumHasBeenSet() const;
 
                     /**
-                     * 获取备注信息，最多 128 个字符
-                     * @return Remark 备注信息，最多 128 个字符
+                     * 获取<p>备注信息，最多 128 个字符</p>
+                     * @return Remark <p>备注信息，最多 128 个字符</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息，最多 128 个字符
-                     * @param _remark 备注信息，最多 128 个字符
+                     * 设置<p>备注信息，最多 128 个字符</p>
+                     * @param _remark <p>备注信息，最多 128 个字符</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -173,15 +149,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取消息保留时长（单位：小时）
-                     * @return MsgTTL 消息保留时长（单位：小时）
+                     * 获取<p>消息保留时长（单位：小时）</p>
+                     * @return MsgTTL <p>消息保留时长（单位：小时）</p>
                      * 
                      */
                     int64_t GetMsgTTL() const;
 
                     /**
-                     * 设置消息保留时长（单位：小时）
-                     * @param _msgTTL 消息保留时长（单位：小时）
+                     * 设置<p>消息保留时长（单位：小时）</p>
+                     * @param _msgTTL <p>消息保留时长（单位：小时）</p>
                      * 
                      */
                     void SetMsgTTL(const int64_t& _msgTTL);
@@ -194,15 +170,15 @@ namespace TencentCloud
                     bool MsgTTLHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return TagList 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return TagList <p>标签列表</p>
                      * 
                      */
                     std::vector<Tag> GetTagList() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tagList 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _tagList <p>标签列表</p>
                      * 
                      */
                     void SetTagList(const std::vector<Tag>& _tagList);
@@ -215,15 +191,15 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取是否过期自动删除（仅针对轻量主题类型）
-                     * @return AutoExpireDelete 是否过期自动删除（仅针对轻量主题类型）
+                     * 获取<p>是否过期自动删除（仅针对轻量主题类型）</p>
+                     * @return AutoExpireDelete <p>是否过期自动删除（仅针对轻量主题类型）</p>
                      * 
                      */
                     bool GetAutoExpireDelete() const;
 
                     /**
-                     * 设置是否过期自动删除（仅针对轻量主题类型）
-                     * @param _autoExpireDelete 是否过期自动删除（仅针对轻量主题类型）
+                     * 设置<p>是否过期自动删除（仅针对轻量主题类型）</p>
+                     * @param _autoExpireDelete <p>是否过期自动删除（仅针对轻量主题类型）</p>
                      * 
                      */
                     void SetAutoExpireDelete(const bool& _autoExpireDelete);
@@ -236,15 +212,15 @@ namespace TencentCloud
                     bool AutoExpireDeleteHasBeenSet() const;
 
                     /**
-                     * 获取过期时间，单位：秒（仅针对轻量主题类型）
-                     * @return AutoExpireTime 过期时间，单位：秒（仅针对轻量主题类型）
+                     * 获取<p>过期时间，单位：秒（仅针对轻量主题类型）</p>
+                     * @return AutoExpireTime <p>过期时间，单位：秒（仅针对轻量主题类型）</p>
                      * 
                      */
                     int64_t GetAutoExpireTime() const;
 
                     /**
-                     * 设置过期时间，单位：秒（仅针对轻量主题类型）
-                     * @param _autoExpireTime 过期时间，单位：秒（仅针对轻量主题类型）
+                     * 设置<p>过期时间，单位：秒（仅针对轻量主题类型）</p>
+                     * @param _autoExpireTime <p>过期时间，单位：秒（仅针对轻量主题类型）</p>
                      * 
                      */
                     void SetAutoExpireTime(const int64_t& _autoExpireTime);
@@ -271,49 +247,43 @@ namespace TencentCloud
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 主题类型，枚举值如下：
-
-- NORMAL: 普通消息
-- FIFO: 顺序消息
-- DELAY: 延时消息
-- TRANSACTION: 事务消息
-- LITE: 轻量消息
+                     * <p>主题类型</p><p>枚举值：</p><ul><li>NORMAL： 普通消息</li><li>FIFO： 顺序消息</li><li>DELAY： 延迟消息</li><li>TRANSACTION： 事务消息</li><li>LITE： 轻量消息</li><li>PRIORITY： 优先级消息</li></ul>
                      */
                     std::string m_topicType;
                     bool m_topicTypeHasBeenSet;
 
                     /**
-                     * 队列数量，取值范围3～16
+                     * <p>队列数量，取值范围3～16</p>
                      */
                     int64_t m_queueNum;
                     bool m_queueNumHasBeenSet;
 
                     /**
-                     * 备注信息，最多 128 个字符
+                     * <p>备注信息，最多 128 个字符</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 消息保留时长（单位：小时）
+                     * <p>消息保留时长（单位：小时）</p>
                      */
                     int64_t m_msgTTL;
                     bool m_msgTTLHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 是否过期自动删除（仅针对轻量主题类型）
+                     * <p>是否过期自动删除（仅针对轻量主题类型）</p>
                      */
                     bool m_autoExpireDelete;
                     bool m_autoExpireDeleteHasBeenSet;
 
                     /**
-                     * 过期时间，单位：秒（仅针对轻量主题类型）
+                     * <p>过期时间，单位：秒（仅针对轻量主题类型）</p>
                      */
                     int64_t m_autoExpireTime;
                     bool m_autoExpireTimeHasBeenSet;

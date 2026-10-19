@@ -24,7 +24,9 @@ LineageNodeInfo::LineageNodeInfo() :
     m_resourceHasBeenSet(false),
     m_relationHasBeenSet(false),
     m_downStreamCountHasBeenSet(false),
-    m_upStreamCountHasBeenSet(false)
+    m_upStreamCountHasBeenSet(false),
+    m_sourceColumnNameHasBeenSet(false),
+    m_columnNameHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,26 @@ CoreInternalOutcome LineageNodeInfo::Deserialize(const rapidjson::Value &value)
         m_upStreamCountHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceColumnName") && !value["SourceColumnName"].IsNull())
+    {
+        if (!value["SourceColumnName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LineageNodeInfo.SourceColumnName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceColumnName = string(value["SourceColumnName"].GetString());
+        m_sourceColumnNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ColumnName") && !value["ColumnName"].IsNull())
+    {
+        if (!value["ColumnName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LineageNodeInfo.ColumnName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_columnName = string(value["ColumnName"].GetString());
+        m_columnNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +148,22 @@ void LineageNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "UpStreamCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_upStreamCount, allocator);
+    }
+
+    if (m_sourceColumnNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceColumnName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceColumnName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_columnNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColumnName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_columnName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -193,5 +231,37 @@ void LineageNodeInfo::SetUpStreamCount(const int64_t& _upStreamCount)
 bool LineageNodeInfo::UpStreamCountHasBeenSet() const
 {
     return m_upStreamCountHasBeenSet;
+}
+
+string LineageNodeInfo::GetSourceColumnName() const
+{
+    return m_sourceColumnName;
+}
+
+void LineageNodeInfo::SetSourceColumnName(const string& _sourceColumnName)
+{
+    m_sourceColumnName = _sourceColumnName;
+    m_sourceColumnNameHasBeenSet = true;
+}
+
+bool LineageNodeInfo::SourceColumnNameHasBeenSet() const
+{
+    return m_sourceColumnNameHasBeenSet;
+}
+
+string LineageNodeInfo::GetColumnName() const
+{
+    return m_columnName;
+}
+
+void LineageNodeInfo::SetColumnName(const string& _columnName)
+{
+    m_columnName = _columnName;
+    m_columnNameHasBeenSet = true;
+}
+
+bool LineageNodeInfo::ColumnNameHasBeenSet() const
+{
+    return m_columnNameHasBeenSet;
 }
 

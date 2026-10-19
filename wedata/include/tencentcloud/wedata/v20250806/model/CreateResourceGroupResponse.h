@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启成功
-                     * @return Data 是否开启成功
+                     * 获取<p>是否开启成功</p>
+                     * @return Data <p>是否开启成功</p>
                      * 
                      */
                     ResourceResult GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启成功
+                     * <p>是否开启成功</p>
                      */
                     ResourceResult m_data;
                     bool m_dataHasBeenSet;

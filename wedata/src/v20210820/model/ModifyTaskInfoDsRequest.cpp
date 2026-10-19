@@ -58,7 +58,8 @@ ModifyTaskInfoDsRequest::ModifyTaskInfoDsRequest() :
     m_scheduleRunTypeHasBeenSet(false),
     m_concurrentStrategyHasBeenSet(false),
     m_registerDsEventPublisherRequestHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_minuteOffsetHasBeenSet(false)
 {
 }
 
@@ -377,6 +378,14 @@ string ModifyTaskInfoDsRequest::ToJsonString() const
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_minuteOffsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinuteOffset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_minuteOffset, allocator);
     }
 
 
@@ -961,6 +970,22 @@ void ModifyTaskInfoDsRequest::SetContent(const string& _content)
 bool ModifyTaskInfoDsRequest::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+uint64_t ModifyTaskInfoDsRequest::GetMinuteOffset() const
+{
+    return m_minuteOffset;
+}
+
+void ModifyTaskInfoDsRequest::SetMinuteOffset(const uint64_t& _minuteOffset)
+{
+    m_minuteOffset = _minuteOffset;
+    m_minuteOffsetHasBeenSet = true;
+}
+
+bool ModifyTaskInfoDsRequest::MinuteOffsetHasBeenSet() const
+{
+    return m_minuteOffsetHasBeenSet;
 }
 
 
