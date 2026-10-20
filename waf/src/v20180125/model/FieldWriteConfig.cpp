@@ -24,7 +24,10 @@ FieldWriteConfig::FieldWriteConfig() :
     m_enableHeadersHasBeenSet(false),
     m_enableBodyHasBeenSet(false),
     m_enableBotHasBeenSet(false),
-    m_enableResponseHasBeenSet(false)
+    m_enableResponseHasBeenSet(false),
+    m_enableResponseHeadersHasBeenSet(false),
+    m_enableResponseLengthHasBeenSet(false),
+    m_enableResponseStatusLineHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,36 @@ CoreInternalOutcome FieldWriteConfig::Deserialize(const rapidjson::Value &value)
         m_enableResponseHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableResponseHeaders") && !value["EnableResponseHeaders"].IsNull())
+    {
+        if (!value["EnableResponseHeaders"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FieldWriteConfig.EnableResponseHeaders` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableResponseHeaders = value["EnableResponseHeaders"].GetInt64();
+        m_enableResponseHeadersHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableResponseLength") && !value["EnableResponseLength"].IsNull())
+    {
+        if (!value["EnableResponseLength"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FieldWriteConfig.EnableResponseLength` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableResponseLength = value["EnableResponseLength"].GetInt64();
+        m_enableResponseLengthHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableResponseStatusLine") && !value["EnableResponseStatusLine"].IsNull())
+    {
+        if (!value["EnableResponseStatusLine"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FieldWriteConfig.EnableResponseStatusLine` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableResponseStatusLine = value["EnableResponseStatusLine"].GetInt64();
+        m_enableResponseStatusLineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +143,30 @@ void FieldWriteConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "EnableResponse";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableResponse, allocator);
+    }
+
+    if (m_enableResponseHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableResponseHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableResponseHeaders, allocator);
+    }
+
+    if (m_enableResponseLengthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableResponseLength";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableResponseLength, allocator);
+    }
+
+    if (m_enableResponseStatusLineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableResponseStatusLine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableResponseStatusLine, allocator);
     }
 
 }
@@ -177,5 +234,53 @@ void FieldWriteConfig::SetEnableResponse(const int64_t& _enableResponse)
 bool FieldWriteConfig::EnableResponseHasBeenSet() const
 {
     return m_enableResponseHasBeenSet;
+}
+
+int64_t FieldWriteConfig::GetEnableResponseHeaders() const
+{
+    return m_enableResponseHeaders;
+}
+
+void FieldWriteConfig::SetEnableResponseHeaders(const int64_t& _enableResponseHeaders)
+{
+    m_enableResponseHeaders = _enableResponseHeaders;
+    m_enableResponseHeadersHasBeenSet = true;
+}
+
+bool FieldWriteConfig::EnableResponseHeadersHasBeenSet() const
+{
+    return m_enableResponseHeadersHasBeenSet;
+}
+
+int64_t FieldWriteConfig::GetEnableResponseLength() const
+{
+    return m_enableResponseLength;
+}
+
+void FieldWriteConfig::SetEnableResponseLength(const int64_t& _enableResponseLength)
+{
+    m_enableResponseLength = _enableResponseLength;
+    m_enableResponseLengthHasBeenSet = true;
+}
+
+bool FieldWriteConfig::EnableResponseLengthHasBeenSet() const
+{
+    return m_enableResponseLengthHasBeenSet;
+}
+
+int64_t FieldWriteConfig::GetEnableResponseStatusLine() const
+{
+    return m_enableResponseStatusLine;
+}
+
+void FieldWriteConfig::SetEnableResponseStatusLine(const int64_t& _enableResponseStatusLine)
+{
+    m_enableResponseStatusLine = _enableResponseStatusLine;
+    m_enableResponseStatusLineHasBeenSet = true;
+}
+
+bool FieldWriteConfig::EnableResponseStatusLineHasBeenSet() const
+{
+    return m_enableResponseStatusLineHasBeenSet;
 }
 

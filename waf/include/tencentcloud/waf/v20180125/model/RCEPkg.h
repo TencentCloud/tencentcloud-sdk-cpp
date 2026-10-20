@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取状态，0表示关闭，1表示开启
+                     * @return Status 状态，0表示关闭，1表示开启
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置状态，0表示关闭，1表示开启
+                     * @param _status 状态，0表示关闭，1表示开启
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool UsedNumHasBeenSet() const;
 
                     /**
-                     * 获取续费标志
-                     * @return RenewFlag 续费标志
+                     * 获取续费标识，0表示手动续费，1表示自动续费，2表示到期不续
+                     * @return RenewFlag 续费标识，0表示手动续费，1表示自动续费，2表示到期不续
                      * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
-                     * 设置续费标志
-                     * @param _renewFlag 续费标志
+                     * 设置续费标识，0表示手动续费，1表示自动续费，2表示到期不续
+                     * @param _renewFlag 续费标识，0表示手动续费，1表示自动续费，2表示到期不续
                      * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
@@ -235,6 +235,48 @@ namespace TencentCloud
                      */
                     bool BillingItemHasBeenSet() const;
 
+                    /**
+                     * 获取弹性开关。0表示关闭，1表示开启。没有弹性资源时为0
+                     * @return ElasticMode 弹性开关。0表示关闭，1表示开启。没有弹性资源时为0
+                     * 
+                     */
+                    int64_t GetElasticMode() const;
+
+                    /**
+                     * 设置弹性开关。0表示关闭，1表示开启。没有弹性资源时为0
+                     * @param _elasticMode 弹性开关。0表示关闭，1表示开启。没有弹性资源时为0
+                     * 
+                     */
+                    void SetElasticMode(const int64_t& _elasticMode);
+
+                    /**
+                     * 判断参数 ElasticMode 是否已赋值
+                     * @return ElasticMode 是否已赋值
+                     * 
+                     */
+                    bool ElasticModeHasBeenSet() const;
+
+                    /**
+                     * 获取弹性QPS上限，单位QPS。合法区间为10000到300000。开关关闭时仍保留上次设置的上限
+                     * @return ElasticBilling 弹性QPS上限，单位QPS。合法区间为10000到300000。开关关闭时仍保留上次设置的上限
+                     * 
+                     */
+                    int64_t GetElasticBilling() const;
+
+                    /**
+                     * 设置弹性QPS上限，单位QPS。合法区间为10000到300000。开关关闭时仍保留上次设置的上限
+                     * @param _elasticBilling 弹性QPS上限，单位QPS。合法区间为10000到300000。开关关闭时仍保留上次设置的上限
+                     * 
+                     */
+                    void SetElasticBilling(const int64_t& _elasticBilling);
+
+                    /**
+                     * 判断参数 ElasticBilling 是否已赋值
+                     * @return ElasticBilling 是否已赋值
+                     * 
+                     */
+                    bool ElasticBillingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -244,7 +286,7 @@ namespace TencentCloud
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 状态
+                     * 状态，0表示关闭，1表示开启
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -280,7 +322,7 @@ namespace TencentCloud
                     bool m_usedNumHasBeenSet;
 
                     /**
-                     * 续费标志
+                     * 续费标识，0表示手动续费，1表示自动续费，2表示到期不续
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
@@ -290,6 +332,18 @@ namespace TencentCloud
                      */
                     std::string m_billingItem;
                     bool m_billingItemHasBeenSet;
+
+                    /**
+                     * 弹性开关。0表示关闭，1表示开启。没有弹性资源时为0
+                     */
+                    int64_t m_elasticMode;
+                    bool m_elasticModeHasBeenSet;
+
+                    /**
+                     * 弹性QPS上限，单位QPS。合法区间为10000到300000。开关关闭时仍保留上次设置的上限
+                     */
+                    int64_t m_elasticBilling;
+                    bool m_elasticBillingHasBeenSet;
 
                 };
             }

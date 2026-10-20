@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取clb域名详情
-                     * @return DomainsClbPartInfo clb域名详情
+                     * 获取<p>clb域名详情</p>
+                     * @return DomainsClbPartInfo <p>clb域名详情</p>
                      * 
                      */
                     ClbDomainsInfo GetDomainsClbPartInfo() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * clb域名详情
+                     * <p>clb域名详情</p>
                      */
                     ClbDomainsInfo m_domainsClbPartInfo;
                     bool m_domainsClbPartInfoHasBeenSet;

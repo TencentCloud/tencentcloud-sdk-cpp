@@ -23,8 +23,9 @@ using namespace TencentCloud::Databuddy::V20260715::Model;
 using namespace std;
 
 StopComputeRequest::StopComputeRequest() :
-    m_resourceIdHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_workspaceIdHasBeenSet(false),
+    m_computeResourceIdHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -35,20 +36,28 @@ string StopComputeRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_resourceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_workspaceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WorkspaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workspaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_computeResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -58,22 +67,6 @@ string StopComputeRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string StopComputeRequest::GetResourceId() const
-{
-    return m_resourceId;
-}
-
-void StopComputeRequest::SetResourceId(const string& _resourceId)
-{
-    m_resourceId = _resourceId;
-    m_resourceIdHasBeenSet = true;
-}
-
-bool StopComputeRequest::ResourceIdHasBeenSet() const
-{
-    return m_resourceIdHasBeenSet;
-}
 
 string StopComputeRequest::GetWorkspaceId() const
 {
@@ -89,6 +82,38 @@ void StopComputeRequest::SetWorkspaceId(const string& _workspaceId)
 bool StopComputeRequest::WorkspaceIdHasBeenSet() const
 {
     return m_workspaceIdHasBeenSet;
+}
+
+string StopComputeRequest::GetComputeResourceId() const
+{
+    return m_computeResourceId;
+}
+
+void StopComputeRequest::SetComputeResourceId(const string& _computeResourceId)
+{
+    m_computeResourceId = _computeResourceId;
+    m_computeResourceIdHasBeenSet = true;
+}
+
+bool StopComputeRequest::ComputeResourceIdHasBeenSet() const
+{
+    return m_computeResourceIdHasBeenSet;
+}
+
+string StopComputeRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void StopComputeRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool StopComputeRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 

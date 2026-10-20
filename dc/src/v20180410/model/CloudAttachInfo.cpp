@@ -45,7 +45,13 @@ CloudAttachInfo::CloudAttachInfo() :
     m_idcPointTypeHasBeenSet(false),
     m_bIapLinkProtectedHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
-    m_vlanRangeHasBeenSet(false)
+    m_vlanRangeHasBeenSet(false),
+    m_repealStatusHasBeenSet(false),
+    m_planRepealTimeHasBeenSet(false),
+    m_renewFlagHasBeenSet(false),
+    m_accessPointIdHasBeenSet(false),
+    m_accessPointNameHasBeenSet(false),
+    m_billStairBandwidthHasBeenSet(false)
 {
 }
 
@@ -304,6 +310,66 @@ CoreInternalOutcome CloudAttachInfo::Deserialize(const rapidjson::Value &value)
         m_vlanRangeHasBeenSet = true;
     }
 
+    if (value.HasMember("RepealStatus") && !value["RepealStatus"].IsNull())
+    {
+        if (!value["RepealStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.RepealStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repealStatus = string(value["RepealStatus"].GetString());
+        m_repealStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("PlanRepealTime") && !value["PlanRepealTime"].IsNull())
+    {
+        if (!value["PlanRepealTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.PlanRepealTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_planRepealTime = string(value["PlanRepealTime"].GetString());
+        m_planRepealTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
+    {
+        if (!value["RenewFlag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.RenewFlag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = string(value["RenewFlag"].GetString());
+        m_renewFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessPointId") && !value["AccessPointId"].IsNull())
+    {
+        if (!value["AccessPointId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.AccessPointId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPointId = string(value["AccessPointId"].GetString());
+        m_accessPointIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessPointName") && !value["AccessPointName"].IsNull())
+    {
+        if (!value["AccessPointName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.AccessPointName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPointName = string(value["AccessPointName"].GetString());
+        m_accessPointNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("BillStairBandwidth") && !value["BillStairBandwidth"].IsNull())
+    {
+        if (!value["BillStairBandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.BillStairBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_billStairBandwidth = value["BillStairBandwidth"].GetUint64();
+        m_billStairBandwidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +575,54 @@ void CloudAttachInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "VlanRange";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vlanRange.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repealStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepealStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repealStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_planRepealTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlanRepealTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_planRepealTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessPointIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPointId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessPointId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessPointNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPointName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessPointName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billStairBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillStairBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_billStairBandwidth, allocator);
     }
 
 }
@@ -912,5 +1026,101 @@ void CloudAttachInfo::SetVlanRange(const string& _vlanRange)
 bool CloudAttachInfo::VlanRangeHasBeenSet() const
 {
     return m_vlanRangeHasBeenSet;
+}
+
+string CloudAttachInfo::GetRepealStatus() const
+{
+    return m_repealStatus;
+}
+
+void CloudAttachInfo::SetRepealStatus(const string& _repealStatus)
+{
+    m_repealStatus = _repealStatus;
+    m_repealStatusHasBeenSet = true;
+}
+
+bool CloudAttachInfo::RepealStatusHasBeenSet() const
+{
+    return m_repealStatusHasBeenSet;
+}
+
+string CloudAttachInfo::GetPlanRepealTime() const
+{
+    return m_planRepealTime;
+}
+
+void CloudAttachInfo::SetPlanRepealTime(const string& _planRepealTime)
+{
+    m_planRepealTime = _planRepealTime;
+    m_planRepealTimeHasBeenSet = true;
+}
+
+bool CloudAttachInfo::PlanRepealTimeHasBeenSet() const
+{
+    return m_planRepealTimeHasBeenSet;
+}
+
+string CloudAttachInfo::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void CloudAttachInfo::SetRenewFlag(const string& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool CloudAttachInfo::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
+}
+
+string CloudAttachInfo::GetAccessPointId() const
+{
+    return m_accessPointId;
+}
+
+void CloudAttachInfo::SetAccessPointId(const string& _accessPointId)
+{
+    m_accessPointId = _accessPointId;
+    m_accessPointIdHasBeenSet = true;
+}
+
+bool CloudAttachInfo::AccessPointIdHasBeenSet() const
+{
+    return m_accessPointIdHasBeenSet;
+}
+
+string CloudAttachInfo::GetAccessPointName() const
+{
+    return m_accessPointName;
+}
+
+void CloudAttachInfo::SetAccessPointName(const string& _accessPointName)
+{
+    m_accessPointName = _accessPointName;
+    m_accessPointNameHasBeenSet = true;
+}
+
+bool CloudAttachInfo::AccessPointNameHasBeenSet() const
+{
+    return m_accessPointNameHasBeenSet;
+}
+
+uint64_t CloudAttachInfo::GetBillStairBandwidth() const
+{
+    return m_billStairBandwidth;
+}
+
+void CloudAttachInfo::SetBillStairBandwidth(const uint64_t& _billStairBandwidth)
+{
+    m_billStairBandwidth = _billStairBandwidth;
+    m_billStairBandwidthHasBeenSet = true;
+}
+
+bool CloudAttachInfo::BillStairBandwidthHasBeenSet() const
+{
+    return m_billStairBandwidthHasBeenSet;
 }
 

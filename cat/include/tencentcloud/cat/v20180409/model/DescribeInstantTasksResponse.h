@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务
+                     * 获取<p>任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tasks 任务
+                     * @return Tasks <p>任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool TasksHasBeenSet() const;
 
                     /**
-                     * 获取总数
-                     * @return Total 总数
+                     * 获取<p>总数</p>
+                     * @return Total <p>总数</p>
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -77,14 +77,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务
+                     * <p>任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SingleInstantTask> m_tasks;
                     bool m_tasksHasBeenSet;
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

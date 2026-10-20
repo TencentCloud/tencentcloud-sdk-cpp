@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool QuestionCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>废弃字段</p>
-                     * @return OriginalImageUrl <p>废弃字段</p>
+                     * 获取<p>【废弃字段】</p>
+                     * @return OriginalImageUrl <p>【废弃字段】</p>
                      * 
                      */
                     std::string GetOriginalImageUrl() const;
@@ -121,7 +121,7 @@ namespace TencentCloud
                     bool m_questionCountHasBeenSet;
 
                     /**
-                     * <p>废弃字段</p>
+                     * <p>【废弃字段】</p>
                      */
                     std::string m_originalImageUrl;
                     bool m_originalImageUrlHasBeenSet;

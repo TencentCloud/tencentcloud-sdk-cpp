@@ -135,6 +135,27 @@ namespace TencentCloud
                      */
                     bool LevelsHasBeenSet() const;
 
+                    /**
+                     * 获取Toolcall工具参数名，支持多层路径(如apiData.operate_op)，仅tool_args信息类型使用
+                     * @return Name Toolcall工具参数名，支持多层路径(如apiData.operate_op)，仅tool_args信息类型使用
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置Toolcall工具参数名，支持多层路径(如apiData.operate_op)，仅tool_args信息类型使用
+                     * @param _name Toolcall工具参数名，支持多层路径(如apiData.operate_op)，仅tool_args信息类型使用
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +182,12 @@ namespace TencentCloud
                      */
                     std::vector<ValueLevel> m_levels;
                     bool m_levelsHasBeenSet;
+
+                    /**
+                     * Toolcall工具参数名，支持多层路径(如apiData.operate_op)，仅tool_args信息类型使用
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

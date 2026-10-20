@@ -48,6 +48,7 @@ DomainsPartInfo::DomainsPartInfo() :
     m_upstreamSchemeHasBeenSet(false),
     m_clsHasBeenSet(false),
     m_cnameHasBeenSet(false),
+    m_dnssecCnameHasBeenSet(false),
     m_isKeepAliveHasBeenSet(false),
     m_activeCheckHasBeenSet(false),
     m_tLSVersionHasBeenSet(false),
@@ -371,6 +372,16 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         }
         m_cname = string(value["Cname"].GetString());
         m_cnameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DnssecCname") && !value["DnssecCname"].IsNull())
+    {
+        if (!value["DnssecCname"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.DnssecCname` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dnssecCname = string(value["DnssecCname"].GetString());
+        m_dnssecCnameHasBeenSet = true;
     }
 
     if (value.HasMember("IsKeepAlive") && !value["IsKeepAlive"].IsNull())
@@ -978,6 +989,14 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Cname";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cname.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dnssecCnameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnssecCname";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dnssecCname.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isKeepAliveHasBeenSet)
@@ -1719,6 +1738,22 @@ void DomainsPartInfo::SetCname(const string& _cname)
 bool DomainsPartInfo::CnameHasBeenSet() const
 {
     return m_cnameHasBeenSet;
+}
+
+string DomainsPartInfo::GetDnssecCname() const
+{
+    return m_dnssecCname;
+}
+
+void DomainsPartInfo::SetDnssecCname(const string& _dnssecCname)
+{
+    m_dnssecCname = _dnssecCname;
+    m_dnssecCnameHasBeenSet = true;
+}
+
+bool DomainsPartInfo::DnssecCnameHasBeenSet() const
+{
+    return m_dnssecCnameHasBeenSet;
 }
 
 uint64_t DomainsPartInfo::GetIsKeepAlive() const

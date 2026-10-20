@@ -32,6 +32,7 @@ LoadBalancerPackageNew::LoadBalancerPackageNew() :
     m_zoneHasBeenSet(false),
     m_numericalVpcIdHasBeenSet(false),
     m_loadBalancerTypeHasBeenSet(false),
+    m_apRegionHasBeenSet(false),
     m_loadBalancerDomainHasBeenSet(false),
     m_memberAppIdHasBeenSet(false),
     m_memberUinHasBeenSet(false),
@@ -153,6 +154,19 @@ CoreInternalOutcome LoadBalancerPackageNew::Deserialize(const rapidjson::Value &
         }
         m_loadBalancerType = string(value["LoadBalancerType"].GetString());
         m_loadBalancerTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApRegion") && !value["ApRegion"].IsNull())
+    {
+        if (!value["ApRegion"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerPackageNew.ApRegion` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApRegion"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_apRegion.push_back((*itr).GetString());
+        }
+        m_apRegionHasBeenSet = true;
     }
 
     if (value.HasMember("LoadBalancerDomain") && !value["LoadBalancerDomain"].IsNull())
@@ -298,6 +312,19 @@ void LoadBalancerPackageNew::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "LoadBalancerType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_loadBalancerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_apRegion.begin(); itr != m_apRegion.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_loadBalancerDomainHasBeenSet)
@@ -517,6 +544,22 @@ void LoadBalancerPackageNew::SetLoadBalancerType(const string& _loadBalancerType
 bool LoadBalancerPackageNew::LoadBalancerTypeHasBeenSet() const
 {
     return m_loadBalancerTypeHasBeenSet;
+}
+
+vector<string> LoadBalancerPackageNew::GetApRegion() const
+{
+    return m_apRegion;
+}
+
+void LoadBalancerPackageNew::SetApRegion(const vector<string>& _apRegion)
+{
+    m_apRegion = _apRegion;
+    m_apRegionHasBeenSet = true;
+}
+
+bool LoadBalancerPackageNew::ApRegionHasBeenSet() const
+{
+    return m_apRegionHasBeenSet;
 }
 
 string LoadBalancerPackageNew::GetLoadBalancerDomain() const

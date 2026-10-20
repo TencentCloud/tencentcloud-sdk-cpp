@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool MaxBotQPSHasBeenSet() const;
 
                     /**
-                     * 获取续费标志
-                     * @return RenewFlag 续费标志
+                     * 获取续费标识，0表示手动续费，1表示自动续费，2表示到期不续
+                     * @return RenewFlag 续费标识，0表示手动续费，1表示自动续费，2表示到期不续
                      * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
-                     * 设置续费标志
-                     * @param _renewFlag 续费标志
+                     * 设置续费标识，0表示手动续费，1表示自动续费，2表示到期不续
+                     * @param _renewFlag 续费标识，0表示手动续费，1表示自动续费，2表示到期不续
                      * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_maxBotQPSHasBeenSet;
 
                     /**
-                     * 续费标志
+                     * 续费标识，0表示手动续费，1表示自动续费，2表示到期不续
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;

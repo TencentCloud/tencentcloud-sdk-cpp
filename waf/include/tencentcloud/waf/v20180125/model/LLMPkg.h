@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取<p>状态</p>
-                     * @return Status <p>状态</p>
+                     * 获取状态，0表示关闭，1表示开启
+                     * @return Status 状态，0表示关闭，1表示开启
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置<p>状态</p>
-                     * @param _status <p>状态</p>
+                     * 设置状态，0表示关闭，1表示开启
+                     * @param _status 状态，0表示关闭，1表示开启
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * <p>状态</p>
+                     * 状态，0表示关闭，1表示开启
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

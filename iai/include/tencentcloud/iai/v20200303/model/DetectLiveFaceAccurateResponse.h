@@ -44,14 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取活体打分。
-- 取值范围 [0,100]。
-- 根据活体分数对应的阈值区间来判断是否为翻拍。
-- 目前阈值可分为[5,10,40,70,90]，其中推荐阈值为40。
-                     * @return Score 活体打分。
-- 取值范围 [0,100]。
-- 根据活体分数对应的阈值区间来判断是否为翻拍。
-- 目前阈值可分为[5,10,40,70,90]，其中推荐阈值为40。
+                     * 获取<p>活体真实度打分。</p><ul><li>取值范围 [0,100]。</li><li>根据活体分数对应的阈值区间来判断是否为翻拍。</li><li>目前阈值可分为[5,10,40,70,90]，其中推荐阈值为40。</li><li>分数值越高越接近真人，翻拍风险越低。</li></ul>
+                     * @return Score <p>活体真实度打分。</p><ul><li>取值范围 [0,100]。</li><li>根据活体分数对应的阈值区间来判断是否为翻拍。</li><li>目前阈值可分为[5,10,40,70,90]，其中推荐阈值为40。</li><li>分数值越高越接近真人，翻拍风险越低。</li></ul>
                      * 
                      */
                     double GetScore() const;
@@ -64,8 +58,8 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取人脸识别所用的算法模型版本。
-                     * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     * 获取<p>人脸识别所用的算法模型版本。</p>
+                     * @return FaceModelVersion <p>人脸识别所用的算法模型版本。</p>
                      * 
                      */
                     std::string GetFaceModelVersion() const;
@@ -80,16 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 活体打分。
-- 取值范围 [0,100]。
-- 根据活体分数对应的阈值区间来判断是否为翻拍。
-- 目前阈值可分为[5,10,40,70,90]，其中推荐阈值为40。
+                     * <p>活体真实度打分。</p><ul><li>取值范围 [0,100]。</li><li>根据活体分数对应的阈值区间来判断是否为翻拍。</li><li>目前阈值可分为[5,10,40,70,90]，其中推荐阈值为40。</li><li>分数值越高越接近真人，翻拍风险越低。</li></ul>
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 人脸识别所用的算法模型版本。
+                     * <p>人脸识别所用的算法模型版本。</p>
                      */
                     std::string m_faceModelVersion;
                     bool m_faceModelVersionHasBeenSet;

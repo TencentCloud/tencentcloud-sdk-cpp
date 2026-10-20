@@ -45,6 +45,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/CalculateBackupSaveSecExpiresResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CancelClusterServerlessScalePlanRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CancelClusterServerlessScalePlanResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CancelTaskRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CancelTaskResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CheckCreateLibraDBInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CheckCreateLibraDBInstanceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CheckTransferClusterZoneRequest.h>
@@ -263,6 +265,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxyNodesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxySpecsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProxySpecsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeProxyZoneStocksRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeProxyZoneStocksResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRedoLogListByVaultRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRedoLogListByVaultResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeRedoLogsRequest.h>
@@ -554,6 +558,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelClusterServerlessScalePlanResponse> CancelClusterServerlessScalePlanOutcome;
                 typedef std::future<CancelClusterServerlessScalePlanOutcome> CancelClusterServerlessScalePlanOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CancelClusterServerlessScalePlanRequest&, CancelClusterServerlessScalePlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelClusterServerlessScalePlanAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelTaskResponse> CancelTaskOutcome;
+                typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckCreateLibraDBInstanceResponse> CheckCreateLibraDBInstanceOutcome;
                 typedef std::future<CheckCreateLibraDBInstanceOutcome> CheckCreateLibraDBInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CheckCreateLibraDBInstanceRequest&, CheckCreateLibraDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCreateLibraDBInstanceAsyncHandler;
@@ -881,6 +888,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProxySpecsResponse> DescribeProxySpecsOutcome;
                 typedef std::future<DescribeProxySpecsOutcome> DescribeProxySpecsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeProxySpecsRequest&, DescribeProxySpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySpecsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProxyZoneStocksResponse> DescribeProxyZoneStocksOutcome;
+                typedef std::future<DescribeProxyZoneStocksOutcome> DescribeProxyZoneStocksOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeProxyZoneStocksRequest&, DescribeProxyZoneStocksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxyZoneStocksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRedoLogListByVaultResponse> DescribeRedoLogListByVaultOutcome;
                 typedef std::future<DescribeRedoLogListByVaultOutcome> DescribeRedoLogListByVaultOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeRedoLogListByVaultRequest&, DescribeRedoLogListByVaultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedoLogListByVaultAsyncHandler;
@@ -1348,6 +1358,15 @@ namespace TencentCloud
                 CancelClusterServerlessScalePlanOutcome CancelClusterServerlessScalePlan(const Model::CancelClusterServerlessScalePlanRequest &request);
                 void CancelClusterServerlessScalePlanAsync(const Model::CancelClusterServerlessScalePlanRequest& request, const CancelClusterServerlessScalePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelClusterServerlessScalePlanOutcomeCallable CancelClusterServerlessScalePlanCallable(const Model::CancelClusterServerlessScalePlanRequest& request);
+
+                /**
+                 *取消等待执行的任务
+                 * @param req CancelTaskRequest
+                 * @return CancelTaskOutcome
+                 */
+                CancelTaskOutcome CancelTask(const Model::CancelTaskRequest &request);
+                void CancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelTaskOutcomeCallable CancelTaskCallable(const Model::CancelTaskRequest& request);
 
                 /**
                  *本接口（CheckCreateLibraDBInstance）用于校验集群是否可以添加只读分析引擎实例
@@ -2329,6 +2348,15 @@ namespace TencentCloud
                 DescribeProxySpecsOutcome DescribeProxySpecs(const Model::DescribeProxySpecsRequest &request);
                 void DescribeProxySpecsAsync(const Model::DescribeProxySpecsRequest& request, const DescribeProxySpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProxySpecsOutcomeCallable DescribeProxySpecsCallable(const Model::DescribeProxySpecsRequest& request);
+
+                /**
+                 *该接口(DescribeProxyZoneStocks)查询数据库代理地域库存
+                 * @param req DescribeProxyZoneStocksRequest
+                 * @return DescribeProxyZoneStocksOutcome
+                 */
+                DescribeProxyZoneStocksOutcome DescribeProxyZoneStocks(const Model::DescribeProxyZoneStocksRequest &request);
+                void DescribeProxyZoneStocksAsync(const Model::DescribeProxyZoneStocksRequest& request, const DescribeProxyZoneStocksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProxyZoneStocksOutcomeCallable DescribeProxyZoneStocksCallable(const Model::DescribeProxyZoneStocksRequest& request);
 
                 /**
                  *查询RedoLog备份

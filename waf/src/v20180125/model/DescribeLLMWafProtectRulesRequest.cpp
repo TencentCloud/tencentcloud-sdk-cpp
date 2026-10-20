@@ -25,7 +25,8 @@ using namespace std;
 DescribeLLMWafProtectRulesRequest::DescribeLLMWafProtectRulesRequest() :
     m_serviceIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_ruleTypeHasBeenSet(false)
+    m_ruleTypeHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeLLMWafProtectRulesRequest::ToJsonString() const
         string key = "RuleType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeLLMWafProtectRulesRequest::SetRuleType(const string& _ruleType)
 bool DescribeLLMWafProtectRulesRequest::RuleTypeHasBeenSet() const
 {
     return m_ruleTypeHasBeenSet;
+}
+
+string DescribeLLMWafProtectRulesRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void DescribeLLMWafProtectRulesRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DescribeLLMWafProtectRulesRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 

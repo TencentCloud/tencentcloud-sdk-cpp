@@ -30,7 +30,8 @@ CreateCasInput::CreateCasInput() :
     m_arRegionHasBeenSet(false),
     m_idcPointTypeHasBeenSet(false),
     m_bIapLinkProtectedHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false)
+    m_serviceTypeHasBeenSet(false),
+    m_accessPointIdHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome CreateCasInput::Deserialize(const rapidjson::Value &value)
         m_serviceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessPointId") && !value["AccessPointId"].IsNull())
+    {
+        if (!value["AccessPointId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateCasInput.AccessPointId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPointId = string(value["AccessPointId"].GetString());
+        m_accessPointIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void CreateCasInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ServiceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessPointIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPointId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessPointId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void CreateCasInput::SetServiceType(const string& _serviceType)
 bool CreateCasInput::ServiceTypeHasBeenSet() const
 {
     return m_serviceTypeHasBeenSet;
+}
+
+string CreateCasInput::GetAccessPointId() const
+{
+    return m_accessPointId;
+}
+
+void CreateCasInput::SetAccessPointId(const string& _accessPointId)
+{
+    m_accessPointId = _accessPointId;
+    m_accessPointIdHasBeenSet = true;
+}
+
+bool CreateCasInput::AccessPointIdHasBeenSet() const
+{
+    return m_accessPointIdHasBeenSet;
 }
 

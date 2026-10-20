@@ -64,10 +64,13 @@ InstanceInfo::InstanceInfo() :
     m_freeDelayFlagHasBeenSet(false),
     m_last3MaxQPSHasBeenSet(false),
     m_last3MaxBandwidthHasBeenSet(false),
+    m_last7MaxMiniBandwidthHasBeenSet(false),
+    m_miniBandwidthStandardHasBeenSet(false),
     m_majorEventsProPkgHasBeenSet(false),
     m_basicFlagHasBeenSet(false),
     m_networkConfigHasBeenSet(false),
     m_rCEPkgHasBeenSet(false),
+    m_rCEExtendPkgHasBeenSet(false),
     m_exceedPolicyHasBeenSet(false),
     m_lLMPkgHasBeenSet(false),
     m_elasticResourceIdHasBeenSet(false),
@@ -586,6 +589,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_last3MaxBandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("Last7MaxMiniBandwidth") && !value["Last7MaxMiniBandwidth"].IsNull())
+    {
+        if (!value["Last7MaxMiniBandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.Last7MaxMiniBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_last7MaxMiniBandwidth = value["Last7MaxMiniBandwidth"].GetUint64();
+        m_last7MaxMiniBandwidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("MiniBandwidthStandard") && !value["MiniBandwidthStandard"].IsNull())
+    {
+        if (!value["MiniBandwidthStandard"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MiniBandwidthStandard` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_miniBandwidthStandard = value["MiniBandwidthStandard"].GetUint64();
+        m_miniBandwidthStandardHasBeenSet = true;
+    }
+
     if (value.HasMember("MajorEventsProPkg") && !value["MajorEventsProPkg"].IsNull())
     {
         if (!value["MajorEventsProPkg"].IsObject())
@@ -645,6 +668,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         }
 
         m_rCEPkgHasBeenSet = true;
+    }
+
+    if (value.HasMember("RCEExtendPkg") && !value["RCEExtendPkg"].IsNull())
+    {
+        if (!value["RCEExtendPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.RCEExtendPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rCEExtendPkg.Deserialize(value["RCEExtendPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rCEExtendPkgHasBeenSet = true;
     }
 
     if (value.HasMember("ExceedPolicy") && !value["ExceedPolicy"].IsNull())
@@ -1153,6 +1193,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, m_last3MaxBandwidth, allocator);
     }
 
+    if (m_last7MaxMiniBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Last7MaxMiniBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_last7MaxMiniBandwidth, allocator);
+    }
+
+    if (m_miniBandwidthStandardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MiniBandwidthStandard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_miniBandwidthStandard, allocator);
+    }
+
     if (m_majorEventsProPkgHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1186,6 +1242,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rCEPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rCEExtendPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RCEExtendPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rCEExtendPkg.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_exceedPolicyHasBeenSet)
@@ -1971,6 +2036,38 @@ bool InstanceInfo::Last3MaxBandwidthHasBeenSet() const
     return m_last3MaxBandwidthHasBeenSet;
 }
 
+uint64_t InstanceInfo::GetLast7MaxMiniBandwidth() const
+{
+    return m_last7MaxMiniBandwidth;
+}
+
+void InstanceInfo::SetLast7MaxMiniBandwidth(const uint64_t& _last7MaxMiniBandwidth)
+{
+    m_last7MaxMiniBandwidth = _last7MaxMiniBandwidth;
+    m_last7MaxMiniBandwidthHasBeenSet = true;
+}
+
+bool InstanceInfo::Last7MaxMiniBandwidthHasBeenSet() const
+{
+    return m_last7MaxMiniBandwidthHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetMiniBandwidthStandard() const
+{
+    return m_miniBandwidthStandard;
+}
+
+void InstanceInfo::SetMiniBandwidthStandard(const uint64_t& _miniBandwidthStandard)
+{
+    m_miniBandwidthStandard = _miniBandwidthStandard;
+    m_miniBandwidthStandardHasBeenSet = true;
+}
+
+bool InstanceInfo::MiniBandwidthStandardHasBeenSet() const
+{
+    return m_miniBandwidthStandardHasBeenSet;
+}
+
 MajorEventsProPkg InstanceInfo::GetMajorEventsProPkg() const
 {
     return m_majorEventsProPkg;
@@ -2033,6 +2130,22 @@ void InstanceInfo::SetRCEPkg(const RCEPkg& _rCEPkg)
 bool InstanceInfo::RCEPkgHasBeenSet() const
 {
     return m_rCEPkgHasBeenSet;
+}
+
+RCEExtendPkg InstanceInfo::GetRCEExtendPkg() const
+{
+    return m_rCEExtendPkg;
+}
+
+void InstanceInfo::SetRCEExtendPkg(const RCEExtendPkg& _rCEExtendPkg)
+{
+    m_rCEExtendPkg = _rCEExtendPkg;
+    m_rCEExtendPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::RCEExtendPkgHasBeenSet() const
+{
+    return m_rCEExtendPkgHasBeenSet;
 }
 
 int64_t InstanceInfo::GetExceedPolicy() const

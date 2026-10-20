@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数量
-                     * @return Limit 数量
+                     * 获取<p>数量</p>
+                     * @return Limit <p>数量</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置数量
-                     * @param _limit 数量
+                     * 设置<p>数量</p>
+                     * @param _limit <p>数量</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取起始位置
-                     * @return Offset 起始位置
+                     * 获取<p>起始位置</p>
+                     * @return Offset <p>起始位置</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置起始位置
-                     * @param _offset 起始位置
+                     * 设置<p>起始位置</p>
+                     * @param _offset <p>起始位置</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数量
+                     * <p>数量</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 起始位置
+                     * <p>起始位置</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

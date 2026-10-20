@@ -46,9 +46,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取树状节点列表，总共两级
+                     * 获取<p>树状节点列表，总共两级</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeList 树状节点列表，总共两级
+                     * @return NodeList <p>树状节点列表，总共两级</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,9 +62,9 @@ namespace TencentCloud
                     bool NodeListHasBeenSet() const;
 
                     /**
-                     * 获取省份或国家列表
+                     * 获取<p>省份或国家列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DistrictList 省份或国家列表
+                     * @return DistrictList <p>省份或国家列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -78,9 +78,9 @@ namespace TencentCloud
                     bool DistrictListHasBeenSet() const;
 
                     /**
-                     * 获取运营商列表
+                     * 获取<p>运营商列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NetServiceList 运营商列表
+                     * @return NetServiceList <p>运营商列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -96,21 +96,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 树状节点列表，总共两级
+                     * <p>树状节点列表，总共两级</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeTree> m_nodeList;
                     bool m_nodeListHasBeenSet;
 
                     /**
-                     * 省份或国家列表
+                     * <p>省份或国家列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DistinctOrNetServiceInfo> m_districtList;
                     bool m_districtListHasBeenSet;
 
                     /**
-                     * 运营商列表
+                     * <p>运营商列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DistinctOrNetServiceInfo> m_netServiceList;

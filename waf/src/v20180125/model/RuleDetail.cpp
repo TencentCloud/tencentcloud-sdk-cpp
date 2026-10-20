@@ -28,7 +28,8 @@ RuleDetail::RuleDetail() :
     m_actionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_desensitizeSampleHasBeenSet(false),
-    m_directionHasBeenSet(false)
+    m_directionHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome RuleDetail::Deserialize(const rapidjson::Value &value)
         m_directionHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleDetail.UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = value["UpdateTime"].GetUint64();
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void RuleDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Direction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_direction, allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateTime, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void RuleDetail::SetDirection(const uint64_t& _direction)
 bool RuleDetail::DirectionHasBeenSet() const
 {
     return m_directionHasBeenSet;
+}
+
+uint64_t RuleDetail::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void RuleDetail::SetUpdateTime(const uint64_t& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool RuleDetail::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

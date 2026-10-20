@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡LD的ID
-                     * @return LoadBalancerId 负载均衡LD的ID
+                     * 获取<p>负载均衡LD的ID</p>
+                     * @return LoadBalancerId <p>负载均衡LD的ID</p>
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡LD的ID
-                     * @param _loadBalancerId 负载均衡LD的ID
+                     * 设置<p>负载均衡LD的ID</p>
+                     * @param _loadBalancerId <p>负载均衡LD的ID</p>
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡LD的名称
-                     * @return LoadBalancerName 负载均衡LD的名称
+                     * 获取<p>负载均衡LD的名称</p>
+                     * @return LoadBalancerName <p>负载均衡LD的名称</p>
                      * 
                      */
                     std::string GetLoadBalancerName() const;
 
                     /**
-                     * 设置负载均衡LD的名称
-                     * @param _loadBalancerName 负载均衡LD的名称
+                     * 设置<p>负载均衡LD的名称</p>
+                     * @param _loadBalancerName <p>负载均衡LD的名称</p>
                      * 
                      */
                     void SetLoadBalancerName(const std::string& _loadBalancerName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器的ID
-                     * @return ListenerId 负载均衡监听器的ID
+                     * 获取<p>负载均衡监听器的ID</p>
+                     * @return ListenerId <p>负载均衡监听器的ID</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置负载均衡监听器的ID
-                     * @param _listenerId 负载均衡监听器的ID
+                     * 设置<p>负载均衡监听器的ID</p>
+                     * @param _listenerId <p>负载均衡监听器的ID</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器的名称
-                     * @return ListenerName 负载均衡监听器的名称
+                     * 获取<p>负载均衡监听器的名称</p>
+                     * @return ListenerName <p>负载均衡监听器的名称</p>
                      * 
                      */
                     std::string GetListenerName() const;
 
                     /**
-                     * 设置负载均衡监听器的名称
-                     * @param _listenerName 负载均衡监听器的名称
+                     * 设置<p>负载均衡监听器的名称</p>
+                     * @param _listenerName <p>负载均衡监听器的名称</p>
                      * 
                      */
                     void SetListenerName(const std::string& _listenerName);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ListenerNameHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的端口
-                     * @return Vport 负载均衡实例的端口
+                     * 获取<p>负载均衡实例的端口</p>
+                     * @return Vport <p>负载均衡实例的端口</p>
                      * 
                      */
                     uint64_t GetVport() const;
 
                     /**
-                     * 设置负载均衡实例的端口
-                     * @param _vport 负载均衡实例的端口
+                     * 设置<p>负载均衡实例的端口</p>
+                     * @param _vport <p>负载均衡实例的端口</p>
                      * 
                      */
                     void SetVport(const uint64_t& _vport);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡LD的地域
-                     * @return Region 负载均衡LD的地域
+                     * 获取<p>负载均衡LD的地域<br>与 ApRegion 表达同一含义、格式不同。本字段为地域缩写；入参与 ApRegion 同时传入时以 ApRegion 为准</p>
+                     * @return Region <p>负载均衡LD的地域<br>与 ApRegion 表达同一含义、格式不同。本字段为地域缩写；入参与 ApRegion 同时传入时以 ApRegion 为准</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置负载均衡LD的地域
-                     * @param _region 负载均衡LD的地域
+                     * 设置<p>负载均衡LD的地域<br>与 ApRegion 表达同一含义、格式不同。本字段为地域缩写；入参与 ApRegion 同时传入时以 ApRegion 为准</p>
+                     * @param _region <p>负载均衡LD的地域<br>与 ApRegion 表达同一含义、格式不同。本字段为地域缩写；入参与 ApRegion 同时传入时以 ApRegion 为准</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取监听器协议，http、https
-                     * @return Protocol 监听器协议，http、https
+                     * 获取<p>监听器协议，http、https</p>
+                     * @return Protocol <p>监听器协议，http、https</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置监听器协议，http、https
-                     * @param _protocol 监听器协议，http、https
+                     * 设置<p>监听器协议，http、https</p>
+                     * @param _protocol <p>监听器协议，http、https</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡监听器所在的zone
-                     * @return Zone 负载均衡监听器所在的zone
+                     * 获取<p>负载均衡监听器所在的zone</p>
+                     * @return Zone <p>负载均衡监听器所在的zone</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置负载均衡监听器所在的zone
-                     * @param _zone 负载均衡监听器所在的zone
+                     * 设置<p>负载均衡监听器所在的zone</p>
+                     * @param _zone <p>负载均衡监听器所在的zone</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -215,15 +215,36 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的IP。域名化CLB VIP可填空。
-                     * @return Vip 负载均衡实例的IP。域名化CLB VIP可填空。
+                     * 获取<p>负载均衡实例所在地域，腾讯云标准地域格式<br>参数格式：形如 ap-guangzhou<br>与 Region 表达同一含义、格式不同。监听器恒为单地域，数组长度恒为 0 或 1<br>入参可选；与 Region 同时传入时以本字段为准；取值不在枚举范围内时返回 UnsupportedRegion<br>出参在可识别时填充，无法识别时为空数组<br>枚举值：<br>ap-guangzhou：广州<br>ap-shanghai：上海<br>ap-beijing：北京<br>ap-chengdu：成都<br>ap-chongqing：重庆<br>ap-hongkong：中国香港<br>ap-nanjing：南京<br>ap-tianjin：天津<br>ap-shenzhen：深圳<br>ap-qingyuan：清远<br>ap-guangzhou-open：广州Open<br>ap-shenzhen-fsi：深圳金融<br>ap-beijing-fsi：北京金融<br>ap-shanghai-fsi：上海金融<br>ap-hangzhou-ec：杭州<br>ap-fuzhou-ec：福州<br>ap-jinan-ec：济南<br>ap-wuhan-ec：武汉<br>ap-changsha-ec：长沙<br>ap-hefei-ec：合肥<br>ap-shenyang-ec：沈阳<br>ap-xian-ec：西安<br>ap-xibei-ec：西北<br>ap-shijiazhuang-ec：石家庄<br>ap-zhengzhou-ec：郑州<br>ap-qingyuan-xinan：清远信安<br>ap-shanghai-adc：上海ADC<br>ap-shanghai-wxp-ops：上海无线城市运营<br>ap-singapore：新加坡<br>ap-seoul：首尔<br>ap-tokyo：东京<br>ap-osaka：大阪<br>ap-mumbai：孟买<br>ap-bangkok：曼谷<br>ap-jakarta：雅加达<br>ap-taipei：台北<br>ap-johorbahru：柔佛巴鲁<br>eu-frankfurt：法兰克福<br>eu-moscow：莫斯科<br>na-ashburn：弗吉尼亚<br>na-siliconvalley：硅谷<br>na-toronto：多伦多<br>sa-saopaulo：圣保罗<br>me-saudi-arabia：沙特阿拉伯</p>
+                     * @return ApRegion <p>负载均衡实例所在地域，腾讯云标准地域格式<br>参数格式：形如 ap-guangzhou<br>与 Region 表达同一含义、格式不同。监听器恒为单地域，数组长度恒为 0 或 1<br>入参可选；与 Region 同时传入时以本字段为准；取值不在枚举范围内时返回 UnsupportedRegion<br>出参在可识别时填充，无法识别时为空数组<br>枚举值：<br>ap-guangzhou：广州<br>ap-shanghai：上海<br>ap-beijing：北京<br>ap-chengdu：成都<br>ap-chongqing：重庆<br>ap-hongkong：中国香港<br>ap-nanjing：南京<br>ap-tianjin：天津<br>ap-shenzhen：深圳<br>ap-qingyuan：清远<br>ap-guangzhou-open：广州Open<br>ap-shenzhen-fsi：深圳金融<br>ap-beijing-fsi：北京金融<br>ap-shanghai-fsi：上海金融<br>ap-hangzhou-ec：杭州<br>ap-fuzhou-ec：福州<br>ap-jinan-ec：济南<br>ap-wuhan-ec：武汉<br>ap-changsha-ec：长沙<br>ap-hefei-ec：合肥<br>ap-shenyang-ec：沈阳<br>ap-xian-ec：西安<br>ap-xibei-ec：西北<br>ap-shijiazhuang-ec：石家庄<br>ap-zhengzhou-ec：郑州<br>ap-qingyuan-xinan：清远信安<br>ap-shanghai-adc：上海ADC<br>ap-shanghai-wxp-ops：上海无线城市运营<br>ap-singapore：新加坡<br>ap-seoul：首尔<br>ap-tokyo：东京<br>ap-osaka：大阪<br>ap-mumbai：孟买<br>ap-bangkok：曼谷<br>ap-jakarta：雅加达<br>ap-taipei：台北<br>ap-johorbahru：柔佛巴鲁<br>eu-frankfurt：法兰克福<br>eu-moscow：莫斯科<br>na-ashburn：弗吉尼亚<br>na-siliconvalley：硅谷<br>na-toronto：多伦多<br>sa-saopaulo：圣保罗<br>me-saudi-arabia：沙特阿拉伯</p>
+                     * 
+                     */
+                    std::vector<std::string> GetApRegion() const;
+
+                    /**
+                     * 设置<p>负载均衡实例所在地域，腾讯云标准地域格式<br>参数格式：形如 ap-guangzhou<br>与 Region 表达同一含义、格式不同。监听器恒为单地域，数组长度恒为 0 或 1<br>入参可选；与 Region 同时传入时以本字段为准；取值不在枚举范围内时返回 UnsupportedRegion<br>出参在可识别时填充，无法识别时为空数组<br>枚举值：<br>ap-guangzhou：广州<br>ap-shanghai：上海<br>ap-beijing：北京<br>ap-chengdu：成都<br>ap-chongqing：重庆<br>ap-hongkong：中国香港<br>ap-nanjing：南京<br>ap-tianjin：天津<br>ap-shenzhen：深圳<br>ap-qingyuan：清远<br>ap-guangzhou-open：广州Open<br>ap-shenzhen-fsi：深圳金融<br>ap-beijing-fsi：北京金融<br>ap-shanghai-fsi：上海金融<br>ap-hangzhou-ec：杭州<br>ap-fuzhou-ec：福州<br>ap-jinan-ec：济南<br>ap-wuhan-ec：武汉<br>ap-changsha-ec：长沙<br>ap-hefei-ec：合肥<br>ap-shenyang-ec：沈阳<br>ap-xian-ec：西安<br>ap-xibei-ec：西北<br>ap-shijiazhuang-ec：石家庄<br>ap-zhengzhou-ec：郑州<br>ap-qingyuan-xinan：清远信安<br>ap-shanghai-adc：上海ADC<br>ap-shanghai-wxp-ops：上海无线城市运营<br>ap-singapore：新加坡<br>ap-seoul：首尔<br>ap-tokyo：东京<br>ap-osaka：大阪<br>ap-mumbai：孟买<br>ap-bangkok：曼谷<br>ap-jakarta：雅加达<br>ap-taipei：台北<br>ap-johorbahru：柔佛巴鲁<br>eu-frankfurt：法兰克福<br>eu-moscow：莫斯科<br>na-ashburn：弗吉尼亚<br>na-siliconvalley：硅谷<br>na-toronto：多伦多<br>sa-saopaulo：圣保罗<br>me-saudi-arabia：沙特阿拉伯</p>
+                     * @param _apRegion <p>负载均衡实例所在地域，腾讯云标准地域格式<br>参数格式：形如 ap-guangzhou<br>与 Region 表达同一含义、格式不同。监听器恒为单地域，数组长度恒为 0 或 1<br>入参可选；与 Region 同时传入时以本字段为准；取值不在枚举范围内时返回 UnsupportedRegion<br>出参在可识别时填充，无法识别时为空数组<br>枚举值：<br>ap-guangzhou：广州<br>ap-shanghai：上海<br>ap-beijing：北京<br>ap-chengdu：成都<br>ap-chongqing：重庆<br>ap-hongkong：中国香港<br>ap-nanjing：南京<br>ap-tianjin：天津<br>ap-shenzhen：深圳<br>ap-qingyuan：清远<br>ap-guangzhou-open：广州Open<br>ap-shenzhen-fsi：深圳金融<br>ap-beijing-fsi：北京金融<br>ap-shanghai-fsi：上海金融<br>ap-hangzhou-ec：杭州<br>ap-fuzhou-ec：福州<br>ap-jinan-ec：济南<br>ap-wuhan-ec：武汉<br>ap-changsha-ec：长沙<br>ap-hefei-ec：合肥<br>ap-shenyang-ec：沈阳<br>ap-xian-ec：西安<br>ap-xibei-ec：西北<br>ap-shijiazhuang-ec：石家庄<br>ap-zhengzhou-ec：郑州<br>ap-qingyuan-xinan：清远信安<br>ap-shanghai-adc：上海ADC<br>ap-shanghai-wxp-ops：上海无线城市运营<br>ap-singapore：新加坡<br>ap-seoul：首尔<br>ap-tokyo：东京<br>ap-osaka：大阪<br>ap-mumbai：孟买<br>ap-bangkok：曼谷<br>ap-jakarta：雅加达<br>ap-taipei：台北<br>ap-johorbahru：柔佛巴鲁<br>eu-frankfurt：法兰克福<br>eu-moscow：莫斯科<br>na-ashburn：弗吉尼亚<br>na-siliconvalley：硅谷<br>na-toronto：多伦多<br>sa-saopaulo：圣保罗<br>me-saudi-arabia：沙特阿拉伯</p>
+                     * 
+                     */
+                    void SetApRegion(const std::vector<std::string>& _apRegion);
+
+                    /**
+                     * 判断参数 ApRegion 是否已赋值
+                     * @return ApRegion 是否已赋值
+                     * 
+                     */
+                    bool ApRegionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>负载均衡实例的IP。域名化CLB VIP可填空。</p>
+                     * @return Vip <p>负载均衡实例的IP。域名化CLB VIP可填空。</p>
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置负载均衡实例的IP。域名化CLB VIP可填空。
-                     * @param _vip 负载均衡实例的IP。域名化CLB VIP可填空。
+                     * 设置<p>负载均衡实例的IP。域名化CLB VIP可填空。</p>
+                     * @param _vip <p>负载均衡实例的IP。域名化CLB VIP可填空。</p>
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -236,15 +257,15 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡的VPCID，公网为-1，内网按实际填写
-                     * @return NumericalVpcId 负载均衡的VPCID，公网为-1，内网按实际填写
+                     * 获取<p>负载均衡的VPCID，公网为-1，内网按实际填写</p>
+                     * @return NumericalVpcId <p>负载均衡的VPCID，公网为-1，内网按实际填写</p>
                      * 
                      */
                     int64_t GetNumericalVpcId() const;
 
                     /**
-                     * 设置负载均衡的VPCID，公网为-1，内网按实际填写
-                     * @param _numericalVpcId 负载均衡的VPCID，公网为-1，内网按实际填写
+                     * 设置<p>负载均衡的VPCID，公网为-1，内网按实际填写</p>
+                     * @param _numericalVpcId <p>负载均衡的VPCID，公网为-1，内网按实际填写</p>
                      * 
                      */
                     void SetNumericalVpcId(const int64_t& _numericalVpcId);
@@ -257,15 +278,15 @@ namespace TencentCloud
                     bool NumericalVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网
-                     * @return LoadBalancerType 负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网
+                     * 获取<p>负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网</p>
+                     * @return LoadBalancerType <p>负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网</p>
                      * 
                      */
                     std::string GetLoadBalancerType() const;
 
                     /**
-                     * 设置负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网
-                     * @param _loadBalancerType 负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网
+                     * 设置<p>负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网</p>
+                     * @param _loadBalancerType <p>负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网</p>
                      * 
                      */
                     void SetLoadBalancerType(const std::string& _loadBalancerType);
@@ -278,15 +299,15 @@ namespace TencentCloud
                     bool LoadBalancerTypeHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡的域名
-                     * @return LoadBalancerDomain 负载均衡的域名
+                     * 获取<p>负载均衡的域名</p>
+                     * @return LoadBalancerDomain <p>负载均衡的域名</p>
                      * 
                      */
                     std::string GetLoadBalancerDomain() const;
 
                     /**
-                     * 设置负载均衡的域名
-                     * @param _loadBalancerDomain 负载均衡的域名
+                     * 设置<p>负载均衡的域名</p>
+                     * @param _loadBalancerDomain <p>负载均衡的域名</p>
                      * 
                      */
                     void SetLoadBalancerDomain(const std::string& _loadBalancerDomain);
@@ -299,15 +320,15 @@ namespace TencentCloud
                     bool LoadBalancerDomainHasBeenSet() const;
 
                     /**
-                     * 获取监听器所属成员id
-                     * @return MemberAppId 监听器所属成员id
+                     * 获取<p>监听器所属成员id</p>
+                     * @return MemberAppId <p>监听器所属成员id</p>
                      * 
                      */
                     uint64_t GetMemberAppId() const;
 
                     /**
-                     * 设置监听器所属成员id
-                     * @param _memberAppId 监听器所属成员id
+                     * 设置<p>监听器所属成员id</p>
+                     * @param _memberAppId <p>监听器所属成员id</p>
                      * 
                      */
                     void SetMemberAppId(const uint64_t& _memberAppId);
@@ -320,15 +341,15 @@ namespace TencentCloud
                     bool MemberAppIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器所属成员的uin
-                     * @return MemberUin 监听器所属成员的uin
+                     * 获取<p>监听器所属成员的uin</p>
+                     * @return MemberUin <p>监听器所属成员的uin</p>
                      * 
                      */
                     std::string GetMemberUin() const;
 
                     /**
-                     * 设置监听器所属成员的uin
-                     * @param _memberUin 监听器所属成员的uin
+                     * 设置<p>监听器所属成员的uin</p>
+                     * @param _memberUin <p>监听器所属成员的uin</p>
                      * 
                      */
                     void SetMemberUin(const std::string& _memberUin);
@@ -343,85 +364,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 负载均衡LD的ID
+                     * <p>负载均衡LD的ID</p>
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 负载均衡LD的名称
+                     * <p>负载均衡LD的名称</p>
                      */
                     std::string m_loadBalancerName;
                     bool m_loadBalancerNameHasBeenSet;
 
                     /**
-                     * 负载均衡监听器的ID
+                     * <p>负载均衡监听器的ID</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 负载均衡监听器的名称
+                     * <p>负载均衡监听器的名称</p>
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
 
                     /**
-                     * 负载均衡实例的端口
+                     * <p>负载均衡实例的端口</p>
                      */
                     uint64_t m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 负载均衡LD的地域
+                     * <p>负载均衡LD的地域<br>与 ApRegion 表达同一含义、格式不同。本字段为地域缩写；入参与 ApRegion 同时传入时以 ApRegion 为准</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 监听器协议，http、https
+                     * <p>监听器协议，http、https</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 负载均衡监听器所在的zone
+                     * <p>负载均衡监听器所在的zone</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 负载均衡实例的IP。域名化CLB VIP可填空。
+                     * <p>负载均衡实例所在地域，腾讯云标准地域格式<br>参数格式：形如 ap-guangzhou<br>与 Region 表达同一含义、格式不同。监听器恒为单地域，数组长度恒为 0 或 1<br>入参可选；与 Region 同时传入时以本字段为准；取值不在枚举范围内时返回 UnsupportedRegion<br>出参在可识别时填充，无法识别时为空数组<br>枚举值：<br>ap-guangzhou：广州<br>ap-shanghai：上海<br>ap-beijing：北京<br>ap-chengdu：成都<br>ap-chongqing：重庆<br>ap-hongkong：中国香港<br>ap-nanjing：南京<br>ap-tianjin：天津<br>ap-shenzhen：深圳<br>ap-qingyuan：清远<br>ap-guangzhou-open：广州Open<br>ap-shenzhen-fsi：深圳金融<br>ap-beijing-fsi：北京金融<br>ap-shanghai-fsi：上海金融<br>ap-hangzhou-ec：杭州<br>ap-fuzhou-ec：福州<br>ap-jinan-ec：济南<br>ap-wuhan-ec：武汉<br>ap-changsha-ec：长沙<br>ap-hefei-ec：合肥<br>ap-shenyang-ec：沈阳<br>ap-xian-ec：西安<br>ap-xibei-ec：西北<br>ap-shijiazhuang-ec：石家庄<br>ap-zhengzhou-ec：郑州<br>ap-qingyuan-xinan：清远信安<br>ap-shanghai-adc：上海ADC<br>ap-shanghai-wxp-ops：上海无线城市运营<br>ap-singapore：新加坡<br>ap-seoul：首尔<br>ap-tokyo：东京<br>ap-osaka：大阪<br>ap-mumbai：孟买<br>ap-bangkok：曼谷<br>ap-jakarta：雅加达<br>ap-taipei：台北<br>ap-johorbahru：柔佛巴鲁<br>eu-frankfurt：法兰克福<br>eu-moscow：莫斯科<br>na-ashburn：弗吉尼亚<br>na-siliconvalley：硅谷<br>na-toronto：多伦多<br>sa-saopaulo：圣保罗<br>me-saudi-arabia：沙特阿拉伯</p>
+                     */
+                    std::vector<std::string> m_apRegion;
+                    bool m_apRegionHasBeenSet;
+
+                    /**
+                     * <p>负载均衡实例的IP。域名化CLB VIP可填空。</p>
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 负载均衡的VPCID，公网为-1，内网按实际填写
+                     * <p>负载均衡的VPCID，公网为-1，内网按实际填写</p>
                      */
                     int64_t m_numericalVpcId;
                     bool m_numericalVpcIdHasBeenSet;
 
                     /**
-                     * 负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网
+                     * <p>负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网</p>
                      */
                     std::string m_loadBalancerType;
                     bool m_loadBalancerTypeHasBeenSet;
 
                     /**
-                     * 负载均衡的域名
+                     * <p>负载均衡的域名</p>
                      */
                     std::string m_loadBalancerDomain;
                     bool m_loadBalancerDomainHasBeenSet;
 
                     /**
-                     * 监听器所属成员id
+                     * <p>监听器所属成员id</p>
                      */
                     uint64_t m_memberAppId;
                     bool m_memberAppIdHasBeenSet;
 
                     /**
-                     * 监听器所属成员的uin
+                     * <p>监听器所属成员的uin</p>
                      */
                     std::string m_memberUin;
                     bool m_memberUinHasBeenSet;

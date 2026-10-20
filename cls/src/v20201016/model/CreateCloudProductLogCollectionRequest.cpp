@@ -33,7 +33,8 @@ CreateCloudProductLogCollectionRequest::CreateCloudProductLogCollectionRequest()
     m_extendHasBeenSet(false),
     m_logsetIdHasBeenSet(false),
     m_topicIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_topicConfigHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,15 @@ string CreateCloudProductLogCollectionRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_topicConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_topicConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -321,6 +331,22 @@ void CreateCloudProductLogCollectionRequest::SetTags(const vector<Tag>& _tags)
 bool CreateCloudProductLogCollectionRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+CloudProductTopicConfig CreateCloudProductLogCollectionRequest::GetTopicConfig() const
+{
+    return m_topicConfig;
+}
+
+void CreateCloudProductLogCollectionRequest::SetTopicConfig(const CloudProductTopicConfig& _topicConfig)
+{
+    m_topicConfig = _topicConfig;
+    m_topicConfigHasBeenSet = true;
+}
+
+bool CreateCloudProductLogCollectionRequest::TopicConfigHasBeenSet() const
+{
+    return m_topicConfigHasBeenSet;
 }
 
 

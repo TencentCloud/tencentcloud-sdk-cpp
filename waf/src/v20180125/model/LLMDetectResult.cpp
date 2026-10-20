@@ -29,10 +29,12 @@ LLMDetectResult::LLMDetectResult() :
     m_ruleNameHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_payloadHasBeenSet(false),
+    m_desensitizationHasBeenSet(false),
     m_imageResultHasBeenSet(false),
     m_msgIDHasBeenSet(false),
     m_toolCallResultHasBeenSet(false),
-    m_intentDetectResultHasBeenSet(false)
+    m_intentDetectResultHasBeenSet(false),
+    m_urlDetectResultHasBeenSet(false)
 {
 }
 
@@ -151,6 +153,16 @@ CoreInternalOutcome LLMDetectResult::Deserialize(const rapidjson::Value &value)
         m_payloadHasBeenSet = true;
     }
 
+    if (value.HasMember("Desensitization") && !value["Desensitization"].IsNull())
+    {
+        if (!value["Desensitization"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LLMDetectResult.Desensitization` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_desensitization = string(value["Desensitization"].GetString());
+        m_desensitizationHasBeenSet = true;
+    }
+
     if (value.HasMember("ImageResult") && !value["ImageResult"].IsNull())
     {
         if (!value["ImageResult"].IsArray())
@@ -213,6 +225,23 @@ CoreInternalOutcome LLMDetectResult::Deserialize(const rapidjson::Value &value)
         }
 
         m_intentDetectResultHasBeenSet = true;
+    }
+
+    if (value.HasMember("UrlDetectResult") && !value["UrlDetectResult"].IsNull())
+    {
+        if (!value["UrlDetectResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LLMDetectResult.UrlDetectResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_urlDetectResult.Deserialize(value["UrlDetectResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_urlDetectResultHasBeenSet = true;
     }
 
 
@@ -306,6 +335,14 @@ void LLMDetectResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_payload.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_desensitizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Desensitization";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_desensitization.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_imageResultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -345,6 +382,15 @@ void LLMDetectResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_intentDetectResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_urlDetectResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlDetectResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_urlDetectResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -478,6 +524,22 @@ bool LLMDetectResult::PayloadHasBeenSet() const
     return m_payloadHasBeenSet;
 }
 
+string LLMDetectResult::GetDesensitization() const
+{
+    return m_desensitization;
+}
+
+void LLMDetectResult::SetDesensitization(const string& _desensitization)
+{
+    m_desensitization = _desensitization;
+    m_desensitizationHasBeenSet = true;
+}
+
+bool LLMDetectResult::DesensitizationHasBeenSet() const
+{
+    return m_desensitizationHasBeenSet;
+}
+
 vector<ImageResult> LLMDetectResult::GetImageResult() const
 {
     return m_imageResult;
@@ -540,5 +602,21 @@ void LLMDetectResult::SetIntentDetectResult(const IntentDetectResult& _intentDet
 bool LLMDetectResult::IntentDetectResultHasBeenSet() const
 {
     return m_intentDetectResultHasBeenSet;
+}
+
+UrlDetectResult LLMDetectResult::GetUrlDetectResult() const
+{
+    return m_urlDetectResult;
+}
+
+void LLMDetectResult::SetUrlDetectResult(const UrlDetectResult& _urlDetectResult)
+{
+    m_urlDetectResult = _urlDetectResult;
+    m_urlDetectResultHasBeenSet = true;
+}
+
+bool LLMDetectResult::UrlDetectResultHasBeenSet() const
+{
+    return m_urlDetectResultHasBeenSet;
 }
 

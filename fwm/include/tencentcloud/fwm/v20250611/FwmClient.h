@@ -75,6 +75,8 @@
 #include <tencentcloud/fwm/v20250611/model/DescribeRiskCategoryStatsResponse.h>
 #include <tencentcloud/fwm/v20250611/model/DescribeRiskListRequest.h>
 #include <tencentcloud/fwm/v20250611/model/DescribeRiskListResponse.h>
+#include <tencentcloud/fwm/v20250611/model/DescribeRuleGroupsRequest.h>
+#include <tencentcloud/fwm/v20250611/model/DescribeRuleGroupsResponse.h>
 #include <tencentcloud/fwm/v20250611/model/DescribeSecurityGroupRuleRequest.h>
 #include <tencentcloud/fwm/v20250611/model/DescribeSecurityGroupRuleResponse.h>
 #include <tencentcloud/fwm/v20250611/model/DescribeSecurityGroupRulesRequest.h>
@@ -205,6 +207,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRiskListResponse> DescribeRiskListOutcome;
                 typedef std::future<DescribeRiskListOutcome> DescribeRiskListOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::DescribeRiskListRequest&, DescribeRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleGroupsResponse> DescribeRuleGroupsOutcome;
+                typedef std::future<DescribeRuleGroupsOutcome> DescribeRuleGroupsOutcomeCallable;
+                typedef std::function<void(const FwmClient*, const Model::DescribeRuleGroupsRequest&, DescribeRuleGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityGroupRuleResponse> DescribeSecurityGroupRuleOutcome;
                 typedef std::future<DescribeSecurityGroupRuleOutcome> DescribeSecurityGroupRuleOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::DescribeSecurityGroupRuleRequest&, DescribeSecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityGroupRuleAsyncHandler;
@@ -498,6 +503,15 @@ namespace TencentCloud
                 DescribeRiskListOutcome DescribeRiskList(const Model::DescribeRiskListRequest &request);
                 void DescribeRiskListAsync(const Model::DescribeRiskListRequest& request, const DescribeRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRiskListOutcomeCallable DescribeRiskListCallable(const Model::DescribeRiskListRequest& request);
+
+                /**
+                 *查询规则组列表
+                 * @param req DescribeRuleGroupsRequest
+                 * @return DescribeRuleGroupsOutcome
+                 */
+                DescribeRuleGroupsOutcome DescribeRuleGroups(const Model::DescribeRuleGroupsRequest &request);
+                void DescribeRuleGroupsAsync(const Model::DescribeRuleGroupsRequest& request, const DescribeRuleGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleGroupsOutcomeCallable DescribeRuleGroupsCallable(const Model::DescribeRuleGroupsRequest& request);
 
                 /**
                  *查询规则详情（规则组管理）

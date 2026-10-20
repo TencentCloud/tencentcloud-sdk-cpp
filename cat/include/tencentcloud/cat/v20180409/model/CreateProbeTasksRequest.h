@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量任务名-地址
-                     * @return BatchTasks 批量任务名-地址
+                     * 获取<p>批量任务名-地址</p>
+                     * @return BatchTasks <p>批量任务名-地址</p>
                      * 
                      */
                     std::vector<ProbeTaskBasicConfiguration> GetBatchTasks() const;
 
                     /**
-                     * 设置批量任务名-地址
-                     * @param _batchTasks 批量任务名-地址
+                     * 设置<p>批量任务名-地址</p>
+                     * @param _batchTasks <p>批量任务名-地址</p>
                      * 
                      */
                     void SetBatchTasks(const std::vector<ProbeTaskBasicConfiguration>& _batchTasks);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool BatchTasksHasBeenSet() const;
 
                     /**
-                     * 获取任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois
-                     * @return TaskType 任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois
+                     * 获取<p>任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois</p>
+                     * @return TaskType <p>任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois</p>
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois
-                     * @param _taskType 任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois
+                     * 设置<p>任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois</p>
+                     * @param _taskType <p>任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois</p>
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取拨测节点，如10001，具体拨测地域运营商对应的拨测点编号可联系云拨测确认。
-                     * @return Nodes 拨测节点，如10001，具体拨测地域运营商对应的拨测点编号可联系云拨测确认。
+                     * 获取<p>拨测节点，如10001，具体拨测地域运营商对应的拨测点编号可联系云拨测确认。</p>
+                     * @return Nodes <p>拨测节点，如10001，具体拨测地域运营商对应的拨测点编号可联系云拨测确认。</p>
                      * 
                      */
                     std::vector<std::string> GetNodes() const;
 
                     /**
-                     * 设置拨测节点，如10001，具体拨测地域运营商对应的拨测点编号可联系云拨测确认。
-                     * @param _nodes 拨测节点，如10001，具体拨测地域运营商对应的拨测点编号可联系云拨测确认。
+                     * 设置<p>拨测节点，如10001，具体拨测地域运营商对应的拨测点编号可联系云拨测确认。</p>
+                     * @param _nodes <p>拨测节点，如10001，具体拨测地域运营商对应的拨测点编号可联系云拨测确认。</p>
                      * 
                      */
                     void SetNodes(const std::vector<std::string>& _nodes);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取拨测间隔，单位为分钟
-                     * @return Interval 拨测间隔，单位为分钟
+                     * 获取<p>拨测间隔，单位为分钟</p>
+                     * @return Interval <p>拨测间隔，单位为分钟</p>
                      * 
                      */
                     int64_t GetInterval() const;
 
                     /**
-                     * 设置拨测间隔，单位为分钟
-                     * @param _interval 拨测间隔，单位为分钟
+                     * 设置<p>拨测间隔，单位为分钟</p>
+                     * @param _interval <p>拨测间隔，单位为分钟</p>
                      * 
                      */
                     void SetInterval(const int64_t& _interval);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。
-                     * @return Parameters 拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。
+                     * 获取<p>拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。</p>
+                     * @return Parameters <p>拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。</p>
                      * 
                      */
                     std::string GetParameters() const;
 
                     /**
-                     * 设置拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。
-                     * @param _parameters 拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。
+                     * 设置<p>拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。</p>
+                     * @param _parameters <p>拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。</p>
                      * 
                      */
                     void SetParameters(const std::string& _parameters);
@@ -150,23 +150,15 @@ namespace TencentCloud
                     bool ParametersHasBeenSet() const;
 
                     /**
-                     * 获取任务分类
-<li>1 = PC</li>
-<li> 2 = Mobile </li>
-                     * @return TaskCategory 任务分类
-<li>1 = PC</li>
-<li> 2 = Mobile </li>
+                     * 获取<p>任务分类</p><li>1 = PC</li><li> 2 = Mobile </li>
+                     * @return TaskCategory <p>任务分类</p><li>1 = PC</li><li> 2 = Mobile </li>
                      * 
                      */
                     int64_t GetTaskCategory() const;
 
                     /**
-                     * 设置任务分类
-<li>1 = PC</li>
-<li> 2 = Mobile </li>
-                     * @param _taskCategory 任务分类
-<li>1 = PC</li>
-<li> 2 = Mobile </li>
+                     * 设置<p>任务分类</p><li>1 = PC</li><li> 2 = Mobile </li>
+                     * @param _taskCategory <p>任务分类</p><li>1 = PC</li><li> 2 = Mobile </li>
                      * 
                      */
                     void SetTaskCategory(const int64_t& _taskCategory);
@@ -179,15 +171,15 @@ namespace TencentCloud
                     bool TaskCategoryHasBeenSet() const;
 
                     /**
-                     * 获取定时任务cron表达式
-                     * @return Cron 定时任务cron表达式
+                     * 获取<p>定时任务cron表达式</p>
+                     * @return Cron <p>定时任务cron表达式</p>
                      * 
                      */
                     std::string GetCron() const;
 
                     /**
-                     * 设置定时任务cron表达式
-                     * @param _cron 定时任务cron表达式
+                     * 设置<p>定时任务cron表达式</p>
+                     * @param _cron <p>定时任务cron表达式</p>
                      * 
                      */
                     void SetCron(const std::string& _cron);
@@ -200,15 +192,15 @@ namespace TencentCloud
                     bool CronHasBeenSet() const;
 
                     /**
-                     * 获取资源标签值
-                     * @return Tag 资源标签值
+                     * 获取<p>资源标签值</p>
+                     * @return Tag <p>资源标签值</p>
                      * 
                      */
                     std::vector<Tag> GetTag() const;
 
                     /**
-                     * 设置资源标签值
-                     * @param _tag 资源标签值
+                     * 设置<p>资源标签值</p>
+                     * @param _tag <p>资源标签值</p>
                      * 
                      */
                     void SetTag(const std::vector<Tag>& _tag);
@@ -221,15 +213,15 @@ namespace TencentCloud
                     bool TagHasBeenSet() const;
 
                     /**
-                     * 获取测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
-                     * @return ProbeType 测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
+                     * 获取<p>测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。</p>
+                     * @return ProbeType <p>测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。</p>
                      * 
                      */
                     uint64_t GetProbeType() const;
 
                     /**
-                     * 设置测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
-                     * @param _probeType 测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
+                     * 设置<p>测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。</p>
+                     * @param _probeType <p>测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。</p>
                      * 
                      */
                     void SetProbeType(const uint64_t& _probeType);
@@ -242,15 +234,15 @@ namespace TencentCloud
                     bool ProbeTypeHasBeenSet() const;
 
                     /**
-                     * 获取插件类型，如CDN，详情参考云拨测官方文档。
-                     * @return PluginSource 插件类型，如CDN，详情参考云拨测官方文档。
+                     * 获取<p>插件类型，如CDN，详情参考云拨测官方文档。</p>
+                     * @return PluginSource <p>插件类型，如CDN，详情参考云拨测官方文档。</p>
                      * 
                      */
                     std::string GetPluginSource() const;
 
                     /**
-                     * 设置插件类型，如CDN，详情参考云拨测官方文档。
-                     * @param _pluginSource 插件类型，如CDN，详情参考云拨测官方文档。
+                     * 设置<p>插件类型，如CDN，详情参考云拨测官方文档。</p>
+                     * @param _pluginSource <p>插件类型，如CDN，详情参考云拨测官方文档。</p>
                      * 
                      */
                     void SetPluginSource(const std::string& _pluginSource);
@@ -263,15 +255,15 @@ namespace TencentCloud
                     bool PluginSourceHasBeenSet() const;
 
                     /**
-                     * 获取客户端ID
-                     * @return ClientNum 客户端ID
+                     * 获取<p>客户端ID</p>
+                     * @return ClientNum <p>客户端ID</p>
                      * 
                      */
                     std::string GetClientNum() const;
 
                     /**
-                     * 设置客户端ID
-                     * @param _clientNum 客户端ID
+                     * 设置<p>客户端ID</p>
+                     * @param _clientNum <p>客户端ID</p>
                      * 
                      */
                     void SetClientNum(const std::string& _clientNum);
@@ -284,15 +276,15 @@ namespace TencentCloud
                     bool ClientNumHasBeenSet() const;
 
                     /**
-                     * 获取拨测点IP类型：0-不限制IP类型，1-IPv4，2-IPv6
-                     * @return NodeIpType 拨测点IP类型：0-不限制IP类型，1-IPv4，2-IPv6
+                     * 获取<p>拨测点IP类型：0-不限制IP类型，1-IPv4，2-IPv6</p>
+                     * @return NodeIpType <p>拨测点IP类型：0-不限制IP类型，1-IPv4，2-IPv6</p>
                      * 
                      */
                     int64_t GetNodeIpType() const;
 
                     /**
-                     * 设置拨测点IP类型：0-不限制IP类型，1-IPv4，2-IPv6
-                     * @param _nodeIpType 拨测点IP类型：0-不限制IP类型，1-IPv4，2-IPv6
+                     * 设置<p>拨测点IP类型：0-不限制IP类型，1-IPv4，2-IPv6</p>
+                     * @param _nodeIpType <p>拨测点IP类型：0-不限制IP类型，1-IPv4，2-IPv6</p>
                      * 
                      */
                     void SetNodeIpType(const int64_t& _nodeIpType);
@@ -305,15 +297,15 @@ namespace TencentCloud
                     bool NodeIpTypeHasBeenSet() const;
 
                     /**
-                     * 获取供应商子账户同步标志
-                     * @return SubSyncFlag 供应商子账户同步标志
+                     * 获取<p>供应商子账户同步标志</p>
+                     * @return SubSyncFlag <p>供应商子账户同步标志</p>
                      * 
                      */
                     int64_t GetSubSyncFlag() const;
 
                     /**
-                     * 设置供应商子账户同步标志
-                     * @param _subSyncFlag 供应商子账户同步标志
+                     * 设置<p>供应商子账户同步标志</p>
+                     * @param _subSyncFlag <p>供应商子账户同步标志</p>
                      * 
                      */
                     void SetSubSyncFlag(const int64_t& _subSyncFlag);
@@ -326,15 +318,15 @@ namespace TencentCloud
                     bool SubSyncFlagHasBeenSet() const;
 
                     /**
-                     * 获取创建者名称
-                     * @return RtxName 创建者名称
+                     * 获取<p>创建者名称</p>
+                     * @return RtxName <p>创建者名称</p>
                      * 
                      */
                     std::string GetRtxName() const;
 
                     /**
-                     * 设置创建者名称
-                     * @param _rtxName 创建者名称
+                     * 设置<p>创建者名称</p>
+                     * @param _rtxName <p>创建者名称</p>
                      * 
                      */
                     void SetRtxName(const std::string& _rtxName);
@@ -349,87 +341,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量任务名-地址
+                     * <p>批量任务名-地址</p>
                      */
                     std::vector<ProbeTaskBasicConfiguration> m_batchTasks;
                     bool m_batchTasksHasBeenSet;
 
                     /**
-                     * 任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois
+                     * <p>任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois</p>
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 拨测节点，如10001，具体拨测地域运营商对应的拨测点编号可联系云拨测确认。
+                     * <p>拨测节点，如10001，具体拨测地域运营商对应的拨测点编号可联系云拨测确认。</p>
                      */
                     std::vector<std::string> m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 拨测间隔，单位为分钟
+                     * <p>拨测间隔，单位为分钟</p>
                      */
                     int64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。
+                     * <p>拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。</p>
                      */
                     std::string m_parameters;
                     bool m_parametersHasBeenSet;
 
                     /**
-                     * 任务分类
-<li>1 = PC</li>
-<li> 2 = Mobile </li>
+                     * <p>任务分类</p><li>1 = PC</li><li> 2 = Mobile </li>
                      */
                     int64_t m_taskCategory;
                     bool m_taskCategoryHasBeenSet;
 
                     /**
-                     * 定时任务cron表达式
+                     * <p>定时任务cron表达式</p>
                      */
                     std::string m_cron;
                     bool m_cronHasBeenSet;
 
                     /**
-                     * 资源标签值
+                     * <p>资源标签值</p>
                      */
                     std::vector<Tag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
-                     * 测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
+                     * <p>测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。</p>
                      */
                     uint64_t m_probeType;
                     bool m_probeTypeHasBeenSet;
 
                     /**
-                     * 插件类型，如CDN，详情参考云拨测官方文档。
+                     * <p>插件类型，如CDN，详情参考云拨测官方文档。</p>
                      */
                     std::string m_pluginSource;
                     bool m_pluginSourceHasBeenSet;
 
                     /**
-                     * 客户端ID
+                     * <p>客户端ID</p>
                      */
                     std::string m_clientNum;
                     bool m_clientNumHasBeenSet;
 
                     /**
-                     * 拨测点IP类型：0-不限制IP类型，1-IPv4，2-IPv6
+                     * <p>拨测点IP类型：0-不限制IP类型，1-IPv4，2-IPv6</p>
                      */
                     int64_t m_nodeIpType;
                     bool m_nodeIpTypeHasBeenSet;
 
                     /**
-                     * 供应商子账户同步标志
+                     * <p>供应商子账户同步标志</p>
                      */
                     int64_t m_subSyncFlag;
                     bool m_subSyncFlagHasBeenSet;
 
                     /**
-                     * 创建者名称
+                     * <p>创建者名称</p>
                      */
                     std::string m_rtxName;
                     bool m_rtxNameHasBeenSet;

@@ -316,6 +316,56 @@ namespace TencentCloud
                      */
                     bool ClientIPHasBeenSet() const;
 
+                    /**
+                     * 获取多轮历史用户输入，按时间旧到新排列，仅用于提示词注入检测
+入参限制：最多10条，超出保留最新10条；History + Content 拼接后不超过6K字符，超限从最早History开始丢弃
+                     * @return History 多轮历史用户输入，按时间旧到新排列，仅用于提示词注入检测
+入参限制：最多10条，超出保留最新10条；History + Content 拼接后不超过6K字符，超限从最早History开始丢弃
+                     * 
+                     */
+                    std::vector<std::string> GetHistory() const;
+
+                    /**
+                     * 设置多轮历史用户输入，按时间旧到新排列，仅用于提示词注入检测
+入参限制：最多10条，超出保留最新10条；History + Content 拼接后不超过6K字符，超限从最早History开始丢弃
+                     * @param _history 多轮历史用户输入，按时间旧到新排列，仅用于提示词注入检测
+入参限制：最多10条，超出保留最新10条；History + Content 拼接后不超过6K字符，超限从最早History开始丢弃
+                     * 
+                     */
+                    void SetHistory(const std::vector<std::string>& _history);
+
+                    /**
+                     * 判断参数 History 是否已赋值
+                     * @return History 是否已赋值
+                     * 
+                     */
+                    bool HistoryHasBeenSet() const;
+
+                    /**
+                     * 获取待检测的URL列表，用于恶意URL检测
+入参限制：最多50个，单个URL长度不超过2048字符，超出截断
+                     * @return Urls 待检测的URL列表，用于恶意URL检测
+入参限制：最多50个，单个URL长度不超过2048字符，超出截断
+                     * 
+                     */
+                    std::vector<std::string> GetUrls() const;
+
+                    /**
+                     * 设置待检测的URL列表，用于恶意URL检测
+入参限制：最多50个，单个URL长度不超过2048字符，超出截断
+                     * @param _urls 待检测的URL列表，用于恶意URL检测
+入参限制：最多50个，单个URL长度不超过2048字符，超出截断
+                     * 
+                     */
+                    void SetUrls(const std::vector<std::string>& _urls);
+
+                    /**
+                     * 判断参数 Urls 是否已赋值
+                     * @return Urls 是否已赋值
+                     * 
+                     */
+                    bool UrlsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +445,20 @@ namespace TencentCloud
                      */
                     std::string m_clientIP;
                     bool m_clientIPHasBeenSet;
+
+                    /**
+                     * 多轮历史用户输入，按时间旧到新排列，仅用于提示词注入检测
+入参限制：最多10条，超出保留最新10条；History + Content 拼接后不超过6K字符，超限从最早History开始丢弃
+                     */
+                    std::vector<std::string> m_history;
+                    bool m_historyHasBeenSet;
+
+                    /**
+                     * 待检测的URL列表，用于恶意URL检测
+入参限制：最多50个，单个URL长度不超过2048字符，超出截断
+                     */
+                    std::vector<std::string> m_urls;
+                    bool m_urlsHasBeenSet;
 
                 };
             }

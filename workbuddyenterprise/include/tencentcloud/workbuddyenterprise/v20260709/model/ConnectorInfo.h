@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool ServiceUrlHasBeenSet() const;
 
                     /**
-                     * 获取授权方式列表：NONE / ONEID / OAUTH2_IDP
-                     * @return AuthModes 授权方式列表：NONE / ONEID / OAUTH2_IDP
+                     * 获取授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY
+                     * @return AuthModes 授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY
                      * 
                      */
                     std::vector<std::string> GetAuthModes() const;
 
                     /**
-                     * 设置授权方式列表：NONE / ONEID / OAUTH2_IDP
-                     * @param _authModes 授权方式列表：NONE / ONEID / OAUTH2_IDP
+                     * 设置授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY
+                     * @param _authModes 授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY
                      * 
                      */
                     void SetAuthModes(const std::vector<std::string>& _authModes);
@@ -382,6 +382,27 @@ namespace TencentCloud
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。
+                     * @return VpcConfigId VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。
+                     * 
+                     */
+                    std::string GetVpcConfigId() const;
+
+                    /**
+                     * 设置VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。
+                     * @param _vpcConfigId VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。
+                     * 
+                     */
+                    void SetVpcConfigId(const std::string& _vpcConfigId);
+
+                    /**
+                     * 判断参数 VpcConfigId 是否已赋值
+                     * @return VpcConfigId 是否已赋值
+                     * 
+                     */
+                    bool VpcConfigIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -445,7 +466,7 @@ namespace TencentCloud
                     bool m_serviceUrlHasBeenSet;
 
                     /**
-                     * 授权方式列表：NONE / ONEID / OAUTH2_IDP
+                     * 授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY
                      */
                     std::vector<std::string> m_authModes;
                     bool m_authModesHasBeenSet;
@@ -479,6 +500,12 @@ namespace TencentCloud
                      */
                     std::string m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
+
+                    /**
+                     * VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。
+                     */
+                    std::string m_vpcConfigId;
+                    bool m_vpcConfigIdHasBeenSet;
 
                 };
             }

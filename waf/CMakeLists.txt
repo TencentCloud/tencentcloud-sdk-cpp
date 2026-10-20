@@ -224,6 +224,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/AddAntiFakeUrlResponse.h
   include/tencentcloud/waf/v20180125/model/SearchAttackLogResponse.h
   include/tencentcloud/waf/v20180125/model/ModifySpartaProtectionModeResponse.h
+  include/tencentcloud/waf/v20180125/model/UrlDetectResult.h
   include/tencentcloud/waf/v20180125/model/DescribeAfterPayInstancesResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsResponse.h
   include/tencentcloud/waf/v20180125/model/SwitchElasticModeResponse.h
@@ -360,6 +361,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyProtectGroupRequest.h
   include/tencentcloud/waf/v20180125/model/DestroyPostCKafkaFlowRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeHistogramResponse.h
+  include/tencentcloud/waf/v20180125/model/RCEExtendPkg.h
   include/tencentcloud/waf/v20180125/model/DeleteSpartaProtectionResponse.h
   include/tencentcloud/waf/v20180125/model/ClbObject.h
   include/tencentcloud/waf/v20180125/model/CreateOwaspWhiteRuleRequest.h
@@ -701,6 +703,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/TokenVerifyRule.h
   include/tencentcloud/waf/v20180125/model/BotTopItem.h
   include/tencentcloud/waf/v20180125/model/DescribeRuleLimitRequest.h
+  include/tencentcloud/waf/v20180125/model/UrlHitInfo.h
   include/tencentcloud/waf/v20180125/model/LimitMethod.h
   include/tencentcloud/waf/v20180125/model/ModifyDomainsCLSStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h
@@ -938,6 +941,7 @@ set(waf_src
   src/v20180125/model/AddAntiFakeUrlResponse.cpp
   src/v20180125/model/SearchAttackLogResponse.cpp
   src/v20180125/model/ModifySpartaProtectionModeResponse.cpp
+  src/v20180125/model/UrlDetectResult.cpp
   src/v20180125/model/DescribeAfterPayInstancesResponse.cpp
   src/v20180125/model/DescribeUserCdcClbWafRegionsResponse.cpp
   src/v20180125/model/SwitchElasticModeResponse.cpp
@@ -1074,6 +1078,7 @@ set(waf_src
   src/v20180125/model/ModifyProtectGroupRequest.cpp
   src/v20180125/model/DestroyPostCKafkaFlowRequest.cpp
   src/v20180125/model/DescribeHistogramResponse.cpp
+  src/v20180125/model/RCEExtendPkg.cpp
   src/v20180125/model/DeleteSpartaProtectionResponse.cpp
   src/v20180125/model/ClbObject.cpp
   src/v20180125/model/CreateOwaspWhiteRuleRequest.cpp
@@ -1415,6 +1420,7 @@ set(waf_src
   src/v20180125/model/TokenVerifyRule.cpp
   src/v20180125/model/BotTopItem.cpp
   src/v20180125/model/DescribeRuleLimitRequest.cpp
+  src/v20180125/model/UrlHitInfo.cpp
   src/v20180125/model/LimitMethod.cpp
   src/v20180125/model/ModifyDomainsCLSStatusRequest.cpp
   src/v20180125/model/DeleteAccessExportRequest.cpp

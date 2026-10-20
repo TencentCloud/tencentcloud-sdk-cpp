@@ -30,6 +30,7 @@ CreateNotebookRequest::CreateNotebookRequest() :
     m_rootAccessHasBeenSet(false),
     m_autoStoppingHasBeenSet(false),
     m_directInternetAccessHasBeenSet(false),
+    m_tiProjectIdHasBeenSet(false),
     m_resourceGroupIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
@@ -113,6 +114,14 @@ string CreateNotebookRequest::ToJsonString() const
         string key = "DirectInternetAccess";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_directInternetAccess, allocator);
+    }
+
+    if (m_tiProjectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TiProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tiProjectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceGroupIdHasBeenSet)
@@ -401,6 +410,22 @@ void CreateNotebookRequest::SetDirectInternetAccess(const bool& _directInternetA
 bool CreateNotebookRequest::DirectInternetAccessHasBeenSet() const
 {
     return m_directInternetAccessHasBeenSet;
+}
+
+string CreateNotebookRequest::GetTiProjectId() const
+{
+    return m_tiProjectId;
+}
+
+void CreateNotebookRequest::SetTiProjectId(const string& _tiProjectId)
+{
+    m_tiProjectId = _tiProjectId;
+    m_tiProjectIdHasBeenSet = true;
+}
+
+bool CreateNotebookRequest::TiProjectIdHasBeenSet() const
+{
+    return m_tiProjectIdHasBeenSet;
 }
 
 string CreateNotebookRequest::GetResourceGroupId() const

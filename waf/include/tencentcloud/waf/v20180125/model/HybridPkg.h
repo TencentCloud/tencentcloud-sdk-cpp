@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取状态，0表示关闭，1表示开启
+                     * @return Status 状态，0表示关闭，1表示开启
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置状态，0表示关闭，1表示开启
+                     * @param _status 状态，0表示关闭，1表示开启
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool UsedNumHasBeenSet() const;
 
                     /**
-                     * 获取续费标志
-                     * @return RenewFlag 续费标志
+                     * 获取续费标识，0表示手动续费，1表示自动续费，2表示到期不续
+                     * @return RenewFlag 续费标识，0表示手动续费，1表示自动续费，2表示到期不续
                      * 
                      */
                     uint64_t GetRenewFlag() const;
 
                     /**
-                     * 设置续费标志
-                     * @param _renewFlag 续费标志
+                     * 设置续费标识，0表示手动续费，1表示自动续费，2表示到期不续
+                     * @param _renewFlag 续费标识，0表示手动续费，1表示自动续费，2表示到期不续
                      * 
                      */
                     void SetRenewFlag(const uint64_t& _renewFlag);
@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool RenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取可接入弹性节点数。仅 Edition 为 clb-waf 的实例有混合云接入节点；弹性关闭或不满足版本、已购混合云节点条件时为 0；满足时为 1 + floor(弹性计费 QPS 上限 / 5000)，不含已购买节点数
+                     * @return ElasticNodeNum 可接入弹性节点数。仅 Edition 为 clb-waf 的实例有混合云接入节点；弹性关闭或不满足版本、已购混合云节点条件时为 0；满足时为 1 + floor(弹性计费 QPS 上限 / 5000)，不含已购买节点数
+                     * 
+                     */
+                    int64_t GetElasticNodeNum() const;
+
+                    /**
+                     * 设置可接入弹性节点数。仅 Edition 为 clb-waf 的实例有混合云接入节点；弹性关闭或不满足版本、已购混合云节点条件时为 0；满足时为 1 + floor(弹性计费 QPS 上限 / 5000)，不含已购买节点数
+                     * @param _elasticNodeNum 可接入弹性节点数。仅 Edition 为 clb-waf 的实例有混合云接入节点；弹性关闭或不满足版本、已购混合云节点条件时为 0；满足时为 1 + floor(弹性计费 QPS 上限 / 5000)，不含已购买节点数
+                     * 
+                     */
+                    void SetElasticNodeNum(const int64_t& _elasticNodeNum);
+
+                    /**
+                     * 判断参数 ElasticNodeNum 是否已赋值
+                     * @return ElasticNodeNum 是否已赋值
+                     * 
+                     */
+                    bool ElasticNodeNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -223,7 +244,7 @@ namespace TencentCloud
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 状态
+                     * 状态，0表示关闭，1表示开启
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -259,10 +280,16 @@ namespace TencentCloud
                     bool m_usedNumHasBeenSet;
 
                     /**
-                     * 续费标志
+                     * 续费标识，0表示手动续费，1表示自动续费，2表示到期不续
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 可接入弹性节点数。仅 Edition 为 clb-waf 的实例有混合云接入节点；弹性关闭或不满足版本、已购混合云节点条件时为 0；满足时为 1 + floor(弹性计费 QPS 上限 / 5000)，不含已购买节点数
+                     */
+                    int64_t m_elasticNodeNum;
+                    bool m_elasticNodeNumHasBeenSet;
 
                 };
             }

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取敏捷上云实例id
-                     * @return InstanceId 敏捷上云实例id
+                     * 获取<p>敏捷上云实例id</p>
+                     * @return InstanceId <p>敏捷上云实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置敏捷上云实例id
-                     * @param _instanceId 敏捷上云实例id
+                     * 设置<p>敏捷上云实例id</p>
+                     * @param _instanceId <p>敏捷上云实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取敏捷上云名称
-                     * @return Name 敏捷上云名称
+                     * 获取<p>敏捷上云名称</p>
+                     * @return Name <p>敏捷上云名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置敏捷上云名称
-                     * @param _name 敏捷上云名称
+                     * 设置<p>敏捷上云名称</p>
+                     * @param _name <p>敏捷上云名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取合作伙伴的AppId
-                     * @return IapId 合作伙伴的AppId
+                     * 获取<p>合作伙伴的AppId</p>
+                     * @return IapId <p>合作伙伴的AppId</p>
                      * 
                      */
                     std::string GetIapId() const;
 
                     /**
-                     * 设置合作伙伴的AppId
-                     * @param _iapId 合作伙伴的AppId
+                     * 设置<p>合作伙伴的AppId</p>
+                     * @param _iapId <p>合作伙伴的AppId</p>
                      * 
                      */
                     void SetIapId(const std::string& _iapId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IapIdHasBeenSet() const;
 
                     /**
-                     * 获取需要接入敏捷上云的IDC的地址
-                     * @return IdcAddress 需要接入敏捷上云的IDC的地址
+                     * 获取<p>需要接入敏捷上云的IDC的地址</p>
+                     * @return IdcAddress <p>需要接入敏捷上云的IDC的地址</p>
                      * 
                      */
                     std::string GetIdcAddress() const;
 
                     /**
-                     * 设置需要接入敏捷上云的IDC的地址
-                     * @param _idcAddress 需要接入敏捷上云的IDC的地址
+                     * 设置<p>需要接入敏捷上云的IDC的地址</p>
+                     * @param _idcAddress <p>需要接入敏捷上云的IDC的地址</p>
                      * 
                      */
                     void SetIdcAddress(const std::string& _idcAddress);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool IdcAddressHasBeenSet() const;
 
                     /**
-                     * 获取需要接入敏捷上云的IDC的互联网服务提供商类型
-                     * @return IdcType 需要接入敏捷上云的IDC的互联网服务提供商类型
+                     * 获取<p>需要接入敏捷上云的IDC的互联网服务提供商类型</p>
+                     * @return IdcType <p>需要接入敏捷上云的IDC的互联网服务提供商类型</p>
                      * 
                      */
                     std::string GetIdcType() const;
 
                     /**
-                     * 设置需要接入敏捷上云的IDC的互联网服务提供商类型
-                     * @param _idcType 需要接入敏捷上云的IDC的互联网服务提供商类型
+                     * 设置<p>需要接入敏捷上云的IDC的互联网服务提供商类型</p>
+                     * @param _idcType <p>需要接入敏捷上云的IDC的互联网服务提供商类型</p>
                      * 
                      */
                     void SetIdcType(const std::string& _idcType);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool IdcTypeHasBeenSet() const;
 
                     /**
-                     * 获取敏捷上云的带宽，单位为MB
-                     * @return Bandwidth 敏捷上云的带宽，单位为MB
+                     * 获取<p>敏捷上云的带宽，单位为MB</p>
+                     * @return Bandwidth <p>敏捷上云的带宽，单位为MB</p>
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
-                     * 设置敏捷上云的带宽，单位为MB
-                     * @param _bandwidth 敏捷上云的带宽，单位为MB
+                     * 设置<p>敏捷上云的带宽，单位为MB</p>
+                     * @param _bandwidth <p>敏捷上云的带宽，单位为MB</p>
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取联系电话
-                     * @return Telephone 联系电话
+                     * 获取<p>联系电话</p>
+                     * @return Telephone <p>联系电话</p>
                      * 
                      */
                     std::string GetTelephone() const;
 
                     /**
-                     * 设置联系电话
-                     * @param _telephone 联系电话
+                     * 设置<p>联系电话</p>
+                     * @param _telephone <p>联系电话</p>
                      * 
                      */
                     void SetTelephone(const std::string& _telephone);
@@ -194,43 +194,15 @@ namespace TencentCloud
                     bool TelephoneHasBeenSet() const;
 
                     /**
-                     * 获取敏捷上云的状态
-available：就绪状态
-applying：申请，待审核状态
-pendingpay：代付款状态
-building：建设中状态
-confirming：待确认状态
-isolate: 隔离状态
-stoped：终止状态
-                     * @return Status 敏捷上云的状态
-available：就绪状态
-applying：申请，待审核状态
-pendingpay：代付款状态
-building：建设中状态
-confirming：待确认状态
-isolate: 隔离状态
-stoped：终止状态
+                     * 获取<p>敏捷上云的状态<br>available：就绪状态<br>applying：申请，待审核状态<br>pendingpay：代付款状态<br>building：建设中状态<br>confirming：待确认状态<br>isolate: 隔离状态<br>stoped：终止状态</p>
+                     * @return Status <p>敏捷上云的状态<br>available：就绪状态<br>applying：申请，待审核状态<br>pendingpay：代付款状态<br>building：建设中状态<br>confirming：待确认状态<br>isolate: 隔离状态<br>stoped：终止状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置敏捷上云的状态
-available：就绪状态
-applying：申请，待审核状态
-pendingpay：代付款状态
-building：建设中状态
-confirming：待确认状态
-isolate: 隔离状态
-stoped：终止状态
-                     * @param _status 敏捷上云的状态
-available：就绪状态
-applying：申请，待审核状态
-pendingpay：代付款状态
-building：建设中状态
-confirming：待确认状态
-isolate: 隔离状态
-stoped：终止状态
+                     * 设置<p>敏捷上云的状态<br>available：就绪状态<br>applying：申请，待审核状态<br>pendingpay：代付款状态<br>building：建设中状态<br>confirming：待确认状态<br>isolate: 隔离状态<br>stoped：终止状态</p>
+                     * @param _status <p>敏捷上云的状态<br>available：就绪状态<br>applying：申请，待审核状态<br>pendingpay：代付款状态<br>building：建设中状态<br>confirming：待确认状态<br>isolate: 隔离状态<br>stoped：终止状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -243,15 +215,15 @@ stoped：终止状态
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取敏捷上云申请的时间
-                     * @return ApplyTime 敏捷上云申请的时间
+                     * 获取<p>敏捷上云申请的时间</p>
+                     * @return ApplyTime <p>敏捷上云申请的时间</p>
                      * 
                      */
                     std::string GetApplyTime() const;
 
                     /**
-                     * 设置敏捷上云申请的时间
-                     * @param _applyTime 敏捷上云申请的时间
+                     * 设置<p>敏捷上云申请的时间</p>
+                     * @param _applyTime <p>敏捷上云申请的时间</p>
                      * 
                      */
                     void SetApplyTime(const std::string& _applyTime);
@@ -264,15 +236,15 @@ stoped：终止状态
                     bool ApplyTimeHasBeenSet() const;
 
                     /**
-                     * 获取敏捷上云建设完成的时间
-                     * @return ReadyTime 敏捷上云建设完成的时间
+                     * 获取<p>敏捷上云建设完成的时间</p>
+                     * @return ReadyTime <p>敏捷上云建设完成的时间</p>
                      * 
                      */
                     std::string GetReadyTime() const;
 
                     /**
-                     * 设置敏捷上云建设完成的时间
-                     * @param _readyTime 敏捷上云建设完成的时间
+                     * 设置<p>敏捷上云建设完成的时间</p>
+                     * @param _readyTime <p>敏捷上云建设完成的时间</p>
                      * 
                      */
                     void SetReadyTime(const std::string& _readyTime);
@@ -285,15 +257,15 @@ stoped：终止状态
                     bool ReadyTimeHasBeenSet() const;
 
                     /**
-                     * 获取敏捷上云过期时间
-                     * @return ExpireTime 敏捷上云过期时间
+                     * 获取<p>敏捷上云过期时间</p>
+                     * @return ExpireTime <p>敏捷上云过期时间</p>
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置敏捷上云过期时间
-                     * @param _expireTime 敏捷上云过期时间
+                     * 设置<p>敏捷上云过期时间</p>
+                     * @param _expireTime <p>敏捷上云过期时间</p>
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -306,15 +278,15 @@ stoped：终止状态
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
-                     * @return Remarks 备注信息
+                     * 获取<p>备注信息</p>
+                     * @return Remarks <p>备注信息</p>
                      * 
                      */
                     std::string GetRemarks() const;
 
                     /**
-                     * 设置备注信息
-                     * @param _remarks 备注信息
+                     * 设置<p>备注信息</p>
+                     * @param _remarks <p>备注信息</p>
                      * 
                      */
                     void SetRemarks(const std::string& _remarks);
@@ -327,23 +299,15 @@ stoped：终止状态
                     bool RemarksHasBeenSet() const;
 
                     /**
-                     * 获取敏捷上云的地域状态。
-same-region：同地域
-cross-region：跨地域
-                     * @return RegionStatus 敏捷上云的地域状态。
-same-region：同地域
-cross-region：跨地域
+                     * 获取<p>敏捷上云的地域状态。<br>same-region：同地域<br>cross-region：跨地域</p>
+                     * @return RegionStatus <p>敏捷上云的地域状态。<br>same-region：同地域<br>cross-region：跨地域</p>
                      * 
                      */
                     std::string GetRegionStatus() const;
 
                     /**
-                     * 设置敏捷上云的地域状态。
-same-region：同地域
-cross-region：跨地域
-                     * @param _regionStatus 敏捷上云的地域状态。
-same-region：同地域
-cross-region：跨地域
+                     * 设置<p>敏捷上云的地域状态。<br>same-region：同地域<br>cross-region：跨地域</p>
+                     * @param _regionStatus <p>敏捷上云的地域状态。<br>same-region：同地域<br>cross-region：跨地域</p>
                      * 
                      */
                     void SetRegionStatus(const std::string& _regionStatus);
@@ -356,15 +320,15 @@ cross-region：跨地域
                     bool RegionStatusHasBeenSet() const;
 
                     /**
-                     * 获取用户的AppId
-                     * @return AppId 用户的AppId
+                     * 获取<p>用户的AppId</p>
+                     * @return AppId <p>用户的AppId</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置用户的AppId
-                     * @param _appId 用户的AppId
+                     * 设置<p>用户的AppId</p>
+                     * @param _appId <p>用户的AppId</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -377,15 +341,15 @@ cross-region：跨地域
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取用户的Uin
-                     * @return Uin 用户的Uin
+                     * 获取<p>用户的Uin</p>
+                     * @return Uin <p>用户的Uin</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置用户的Uin
-                     * @param _uin 用户的Uin
+                     * 设置<p>用户的Uin</p>
+                     * @param _uin <p>用户的Uin</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -398,15 +362,15 @@ cross-region：跨地域
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取用户注册名称
-                     * @return CustomerAuthName 用户注册名称
+                     * 获取<p>用户注册名称</p>
+                     * @return CustomerAuthName <p>用户注册名称</p>
                      * 
                      */
                     std::string GetCustomerAuthName() const;
 
                     /**
-                     * 设置用户注册名称
-                     * @param _customerAuthName 用户注册名称
+                     * 设置<p>用户注册名称</p>
+                     * @param _customerAuthName <p>用户注册名称</p>
                      * 
                      */
                     void SetCustomerAuthName(const std::string& _customerAuthName);
@@ -419,15 +383,15 @@ cross-region：跨地域
                     bool CustomerAuthNameHasBeenSet() const;
 
                     /**
-                     * 获取物理专线实例ID
-                     * @return DirectConnectId 物理专线实例ID
+                     * 获取<p>物理专线实例ID</p>
+                     * @return DirectConnectId <p>物理专线实例ID</p>
                      * 
                      */
                     std::string GetDirectConnectId() const;
 
                     /**
-                     * 设置物理专线实例ID
-                     * @param _directConnectId 物理专线实例ID
+                     * 设置<p>物理专线实例ID</p>
+                     * @param _directConnectId <p>物理专线实例ID</p>
                      * 
                      */
                     void SetDirectConnectId(const std::string& _directConnectId);
@@ -440,15 +404,15 @@ cross-region：跨地域
                     bool DirectConnectIdHasBeenSet() const;
 
                     /**
-                     * 获取敏捷上云是否支持创建高速上云专线网关
-                     * @return CloudAttachServiceGatewaysSupport 敏捷上云是否支持创建高速上云专线网关
+                     * 获取<p>敏捷上云是否支持创建高速上云专线网关</p>
+                     * @return CloudAttachServiceGatewaysSupport <p>敏捷上云是否支持创建高速上云专线网关</p>
                      * 
                      */
                     bool GetCloudAttachServiceGatewaysSupport() const;
 
                     /**
-                     * 设置敏捷上云是否支持创建高速上云专线网关
-                     * @param _cloudAttachServiceGatewaysSupport 敏捷上云是否支持创建高速上云专线网关
+                     * 设置<p>敏捷上云是否支持创建高速上云专线网关</p>
+                     * @param _cloudAttachServiceGatewaysSupport <p>敏捷上云是否支持创建高速上云专线网关</p>
                      * 
                      */
                     void SetCloudAttachServiceGatewaysSupport(const bool& _cloudAttachServiceGatewaysSupport);
@@ -461,15 +425,15 @@ cross-region：跨地域
                     bool CloudAttachServiceGatewaysSupportHasBeenSet() const;
 
                     /**
-                     * 获取敏捷上云服务是否处于升降配中
-                     * @return BUpdateBandwidth 敏捷上云服务是否处于升降配中
+                     * 获取<p>敏捷上云服务是否处于升降配中</p>
+                     * @return BUpdateBandwidth <p>敏捷上云服务是否处于升降配中</p>
                      * 
                      */
                     bool GetBUpdateBandwidth() const;
 
                     /**
-                     * 设置敏捷上云服务是否处于升降配中
-                     * @param _bUpdateBandwidth 敏捷上云服务是否处于升降配中
+                     * 设置<p>敏捷上云服务是否处于升降配中</p>
+                     * @param _bUpdateBandwidth <p>敏捷上云服务是否处于升降配中</p>
                      * 
                      */
                     void SetBUpdateBandwidth(const bool& _bUpdateBandwidth);
@@ -482,15 +446,15 @@ cross-region：跨地域
                     bool BUpdateBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取接入地域
-                     * @return ArRegion 接入地域
+                     * 获取<p>接入地域</p>
+                     * @return ArRegion <p>接入地域</p>
                      * 
                      */
                     std::string GetArRegion() const;
 
                     /**
-                     * 设置接入地域
-                     * @param _arRegion 接入地域
+                     * 设置<p>接入地域</p>
+                     * @param _arRegion <p>接入地域</p>
                      * 
                      */
                     void SetArRegion(const std::string& _arRegion);
@@ -503,15 +467,15 @@ cross-region：跨地域
                     bool ArRegionHasBeenSet() const;
 
                     /**
-                     * 获取运营商代码
-                     * @return IapCode 运营商代码
+                     * 获取<p>运营商代码</p>
+                     * @return IapCode <p>运营商代码</p>
                      * 
                      */
                     std::string GetIapCode() const;
 
                     /**
-                     * 设置运营商代码
-                     * @param _iapCode 运营商代码
+                     * 设置<p>运营商代码</p>
+                     * @param _iapCode <p>运营商代码</p>
                      * 
                      */
                     void SetIapCode(const std::string& _iapCode);
@@ -524,15 +488,15 @@ cross-region：跨地域
                     bool IapCodeHasBeenSet() const;
 
                     /**
-                     * 获取IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
-                     * @return IdcPointType IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * 获取<p>IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方</p>
+                     * @return IdcPointType <p>IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方</p>
                      * 
                      */
                     std::string GetIdcPointType() const;
 
                     /**
-                     * 设置IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
-                     * @param _idcPointType IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * 设置<p>IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方</p>
+                     * @param _idcPointType <p>IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方</p>
                      * 
                      */
                     void SetIdcPointType(const std::string& _idcPointType);
@@ -545,15 +509,15 @@ cross-region：跨地域
                     bool IdcPointTypeHasBeenSet() const;
 
                     /**
-                     * 获取运营商链路是否有保护
-                     * @return BIapLinkProtected 运营商链路是否有保护
+                     * 获取<p>运营商链路是否有保护</p>
+                     * @return BIapLinkProtected <p>运营商链路是否有保护</p>
                      * 
                      */
                     bool GetBIapLinkProtected() const;
 
                     /**
-                     * 设置运营商链路是否有保护
-                     * @param _bIapLinkProtected 运营商链路是否有保护
+                     * 设置<p>运营商链路是否有保护</p>
+                     * @param _bIapLinkProtected <p>运营商链路是否有保护</p>
                      * 
                      */
                     void SetBIapLinkProtected(const bool& _bIapLinkProtected);
@@ -566,15 +530,15 @@ cross-region：跨地域
                     bool BIapLinkProtectedHasBeenSet() const;
 
                     /**
-                     * 获取服务类型：SHARE-共享型，EXCLUSIVE-独占型
-                     * @return ServiceType 服务类型：SHARE-共享型，EXCLUSIVE-独占型
+                     * 获取<p>服务类型：SHARE-共享型，EXCLUSIVE-独占型</p>
+                     * @return ServiceType <p>服务类型：SHARE-共享型，EXCLUSIVE-独占型</p>
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置服务类型：SHARE-共享型，EXCLUSIVE-独占型
-                     * @param _serviceType 服务类型：SHARE-共享型，EXCLUSIVE-独占型
+                     * 设置<p>服务类型：SHARE-共享型，EXCLUSIVE-独占型</p>
+                     * @param _serviceType <p>服务类型：SHARE-共享型，EXCLUSIVE-独占型</p>
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -587,15 +551,15 @@ cross-region：跨地域
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取VLAN范围
-                     * @return VlanRange VLAN范围
+                     * 获取<p>VLAN范围</p>
+                     * @return VlanRange <p>VLAN范围</p>
                      * 
                      */
                     std::string GetVlanRange() const;
 
                     /**
-                     * 设置VLAN范围
-                     * @param _vlanRange VLAN范围
+                     * 设置<p>VLAN范围</p>
+                     * @param _vlanRange <p>VLAN范围</p>
                      * 
                      */
                     void SetVlanRange(const std::string& _vlanRange);
@@ -607,166 +571,319 @@ cross-region：跨地域
                      */
                     bool VlanRangeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>裁撤状态</p><p>枚举值：</p><ul><li>APPLYING： 申请裁撤</li><li>EXECUTING： 裁撤执行中</li><li>FAILED： 裁撤失败</li></ul>
+                     * @return RepealStatus <p>裁撤状态</p><p>枚举值：</p><ul><li>APPLYING： 申请裁撤</li><li>EXECUTING： 裁撤执行中</li><li>FAILED： 裁撤失败</li></ul>
+                     * 
+                     */
+                    std::string GetRepealStatus() const;
+
+                    /**
+                     * 设置<p>裁撤状态</p><p>枚举值：</p><ul><li>APPLYING： 申请裁撤</li><li>EXECUTING： 裁撤执行中</li><li>FAILED： 裁撤失败</li></ul>
+                     * @param _repealStatus <p>裁撤状态</p><p>枚举值：</p><ul><li>APPLYING： 申请裁撤</li><li>EXECUTING： 裁撤执行中</li><li>FAILED： 裁撤失败</li></ul>
+                     * 
+                     */
+                    void SetRepealStatus(const std::string& _repealStatus);
+
+                    /**
+                     * 判断参数 RepealStatus 是否已赋值
+                     * @return RepealStatus 是否已赋值
+                     * 
+                     */
+                    bool RepealStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>计划裁撤时间</p>
+                     * @return PlanRepealTime <p>计划裁撤时间</p>
+                     * 
+                     */
+                    std::string GetPlanRepealTime() const;
+
+                    /**
+                     * 设置<p>计划裁撤时间</p>
+                     * @param _planRepealTime <p>计划裁撤时间</p>
+                     * 
+                     */
+                    void SetPlanRepealTime(const std::string& _planRepealTime);
+
+                    /**
+                     * 判断参数 PlanRepealTime 是否已赋值
+                     * @return PlanRepealTime 是否已赋值
+                     * 
+                     */
+                    bool PlanRepealTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>续费标记</p><p>枚举值：</p><ul><li>MANUAL_RENEW： 手动续费</li><li>AUTO_RENEW： 自动续费</li><li>NO_RENEW： 到期不续</li></ul>
+                     * @return RenewFlag <p>续费标记</p><p>枚举值：</p><ul><li>MANUAL_RENEW： 手动续费</li><li>AUTO_RENEW： 自动续费</li><li>NO_RENEW： 到期不续</li></ul>
+                     * 
+                     */
+                    std::string GetRenewFlag() const;
+
+                    /**
+                     * 设置<p>续费标记</p><p>枚举值：</p><ul><li>MANUAL_RENEW： 手动续费</li><li>AUTO_RENEW： 自动续费</li><li>NO_RENEW： 到期不续</li></ul>
+                     * @param _renewFlag <p>续费标记</p><p>枚举值：</p><ul><li>MANUAL_RENEW： 手动续费</li><li>AUTO_RENEW： 自动续费</li><li>NO_RENEW： 到期不续</li></ul>
+                     * 
+                     */
+                    void SetRenewFlag(const std::string& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     * 
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取<p>接入点ID</p>
+                     * @return AccessPointId <p>接入点ID</p>
+                     * 
+                     */
+                    std::string GetAccessPointId() const;
+
+                    /**
+                     * 设置<p>接入点ID</p>
+                     * @param _accessPointId <p>接入点ID</p>
+                     * 
+                     */
+                    void SetAccessPointId(const std::string& _accessPointId);
+
+                    /**
+                     * 判断参数 AccessPointId 是否已赋值
+                     * @return AccessPointId 是否已赋值
+                     * 
+                     */
+                    bool AccessPointIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>接入点名称</p>
+                     * @return AccessPointName <p>接入点名称</p>
+                     * 
+                     */
+                    std::string GetAccessPointName() const;
+
+                    /**
+                     * 设置<p>接入点名称</p>
+                     * @param _accessPointName <p>接入点名称</p>
+                     * 
+                     */
+                    void SetAccessPointName(const std::string& _accessPointName);
+
+                    /**
+                     * 判断参数 AccessPointName 是否已赋值
+                     * @return AccessPointName 是否已赋值
+                     * 
+                     */
+                    bool AccessPointNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>计费阶梯带宽(Mbps)</p>
+                     * @return BillStairBandwidth <p>计费阶梯带宽(Mbps)</p>
+                     * 
+                     */
+                    uint64_t GetBillStairBandwidth() const;
+
+                    /**
+                     * 设置<p>计费阶梯带宽(Mbps)</p>
+                     * @param _billStairBandwidth <p>计费阶梯带宽(Mbps)</p>
+                     * 
+                     */
+                    void SetBillStairBandwidth(const uint64_t& _billStairBandwidth);
+
+                    /**
+                     * 判断参数 BillStairBandwidth 是否已赋值
+                     * @return BillStairBandwidth 是否已赋值
+                     * 
+                     */
+                    bool BillStairBandwidthHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 敏捷上云实例id
+                     * <p>敏捷上云实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 敏捷上云名称
+                     * <p>敏捷上云名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 合作伙伴的AppId
+                     * <p>合作伙伴的AppId</p>
                      */
                     std::string m_iapId;
                     bool m_iapIdHasBeenSet;
 
                     /**
-                     * 需要接入敏捷上云的IDC的地址
+                     * <p>需要接入敏捷上云的IDC的地址</p>
                      */
                     std::string m_idcAddress;
                     bool m_idcAddressHasBeenSet;
 
                     /**
-                     * 需要接入敏捷上云的IDC的互联网服务提供商类型
+                     * <p>需要接入敏捷上云的IDC的互联网服务提供商类型</p>
                      */
                     std::string m_idcType;
                     bool m_idcTypeHasBeenSet;
 
                     /**
-                     * 敏捷上云的带宽，单位为MB
+                     * <p>敏捷上云的带宽，单位为MB</p>
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 联系电话
+                     * <p>联系电话</p>
                      */
                     std::string m_telephone;
                     bool m_telephoneHasBeenSet;
 
                     /**
-                     * 敏捷上云的状态
-available：就绪状态
-applying：申请，待审核状态
-pendingpay：代付款状态
-building：建设中状态
-confirming：待确认状态
-isolate: 隔离状态
-stoped：终止状态
+                     * <p>敏捷上云的状态<br>available：就绪状态<br>applying：申请，待审核状态<br>pendingpay：代付款状态<br>building：建设中状态<br>confirming：待确认状态<br>isolate: 隔离状态<br>stoped：终止状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 敏捷上云申请的时间
+                     * <p>敏捷上云申请的时间</p>
                      */
                     std::string m_applyTime;
                     bool m_applyTimeHasBeenSet;
 
                     /**
-                     * 敏捷上云建设完成的时间
+                     * <p>敏捷上云建设完成的时间</p>
                      */
                     std::string m_readyTime;
                     bool m_readyTimeHasBeenSet;
 
                     /**
-                     * 敏捷上云过期时间
+                     * <p>敏捷上云过期时间</p>
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * <p>备注信息</p>
                      */
                     std::string m_remarks;
                     bool m_remarksHasBeenSet;
 
                     /**
-                     * 敏捷上云的地域状态。
-same-region：同地域
-cross-region：跨地域
+                     * <p>敏捷上云的地域状态。<br>same-region：同地域<br>cross-region：跨地域</p>
                      */
                     std::string m_regionStatus;
                     bool m_regionStatusHasBeenSet;
 
                     /**
-                     * 用户的AppId
+                     * <p>用户的AppId</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 用户的Uin
+                     * <p>用户的Uin</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 用户注册名称
+                     * <p>用户注册名称</p>
                      */
                     std::string m_customerAuthName;
                     bool m_customerAuthNameHasBeenSet;
 
                     /**
-                     * 物理专线实例ID
+                     * <p>物理专线实例ID</p>
                      */
                     std::string m_directConnectId;
                     bool m_directConnectIdHasBeenSet;
 
                     /**
-                     * 敏捷上云是否支持创建高速上云专线网关
+                     * <p>敏捷上云是否支持创建高速上云专线网关</p>
                      */
                     bool m_cloudAttachServiceGatewaysSupport;
                     bool m_cloudAttachServiceGatewaysSupportHasBeenSet;
 
                     /**
-                     * 敏捷上云服务是否处于升降配中
+                     * <p>敏捷上云服务是否处于升降配中</p>
                      */
                     bool m_bUpdateBandwidth;
                     bool m_bUpdateBandwidthHasBeenSet;
 
                     /**
-                     * 接入地域
+                     * <p>接入地域</p>
                      */
                     std::string m_arRegion;
                     bool m_arRegionHasBeenSet;
 
                     /**
-                     * 运营商代码
+                     * <p>运营商代码</p>
                      */
                     std::string m_iapCode;
                     bool m_iapCodeHasBeenSet;
 
                     /**
-                     * IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方
+                     * <p>IDC侧类型。枚举值：CLOUD-云，ISP-运营商，OTHER-第三方</p>
                      */
                     std::string m_idcPointType;
                     bool m_idcPointTypeHasBeenSet;
 
                     /**
-                     * 运营商链路是否有保护
+                     * <p>运营商链路是否有保护</p>
                      */
                     bool m_bIapLinkProtected;
                     bool m_bIapLinkProtectedHasBeenSet;
 
                     /**
-                     * 服务类型：SHARE-共享型，EXCLUSIVE-独占型
+                     * <p>服务类型：SHARE-共享型，EXCLUSIVE-独占型</p>
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * VLAN范围
+                     * <p>VLAN范围</p>
                      */
                     std::string m_vlanRange;
                     bool m_vlanRangeHasBeenSet;
+
+                    /**
+                     * <p>裁撤状态</p><p>枚举值：</p><ul><li>APPLYING： 申请裁撤</li><li>EXECUTING： 裁撤执行中</li><li>FAILED： 裁撤失败</li></ul>
+                     */
+                    std::string m_repealStatus;
+                    bool m_repealStatusHasBeenSet;
+
+                    /**
+                     * <p>计划裁撤时间</p>
+                     */
+                    std::string m_planRepealTime;
+                    bool m_planRepealTimeHasBeenSet;
+
+                    /**
+                     * <p>续费标记</p><p>枚举值：</p><ul><li>MANUAL_RENEW： 手动续费</li><li>AUTO_RENEW： 自动续费</li><li>NO_RENEW： 到期不续</li></ul>
+                     */
+                    std::string m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * <p>接入点ID</p>
+                     */
+                    std::string m_accessPointId;
+                    bool m_accessPointIdHasBeenSet;
+
+                    /**
+                     * <p>接入点名称</p>
+                     */
+                    std::string m_accessPointName;
+                    bool m_accessPointNameHasBeenSet;
+
+                    /**
+                     * <p>计费阶梯带宽(Mbps)</p>
+                     */
+                    uint64_t m_billStairBandwidth;
+                    bool m_billStairBandwidthHasBeenSet;
 
                 };
             }

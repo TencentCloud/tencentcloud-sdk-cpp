@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务 ID，如task-n1wchki8
-                     * @return TaskIds 任务 ID，如task-n1wchki8
+                     * 获取<p>任务 ID，如task-n1wchki8</p>
+                     * @return TaskIds <p>任务 ID，如task-n1wchki8</p>
                      * 
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
-                     * 设置任务 ID，如task-n1wchki8
-                     * @param _taskIds 任务 ID，如task-n1wchki8
+                     * 设置<p>任务 ID，如task-n1wchki8</p>
+                     * @param _taskIds <p>任务 ID，如task-n1wchki8</p>
                      * 
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TaskIdsHasBeenSet() const;
 
                     /**
-                     * 获取拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。
-                     * @return Nodes 拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。
+                     * 获取<p>拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。</p>
+                     * @return Nodes <p>拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。</p>
                      * 
                      */
                     std::vector<std::string> GetNodes() const;
 
                     /**
-                     * 设置拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。
-                     * @param _nodes 拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。
+                     * 设置<p>拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。</p>
+                     * @param _nodes <p>拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。</p>
                      * 
                      */
                     void SetNodes(const std::vector<std::string>& _nodes);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取拨测间隔，如30，单位为分钟。
-                     * @return Interval 拨测间隔，如30，单位为分钟。
+                     * 获取<p>拨测间隔，如30，单位为分钟。</p>
+                     * @return Interval <p>拨测间隔，如30，单位为分钟。</p>
                      * 
                      */
                     int64_t GetInterval() const;
 
                     /**
-                     * 设置拨测间隔，如30，单位为分钟。
-                     * @param _interval 拨测间隔，如30，单位为分钟。
+                     * 设置<p>拨测间隔，如30，单位为分钟。</p>
+                     * @param _interval <p>拨测间隔，如30，单位为分钟。</p>
                      * 
                      */
                     void SetInterval(const int64_t& _interval);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取拨测参数，详细参数配置可参考云拨测官网文档。
-                     * @return Parameters 拨测参数，详细参数配置可参考云拨测官网文档。
+                     * 获取<p>拨测参数，详细参数配置可参考云拨测官网文档。</p>
+                     * @return Parameters <p>拨测参数，详细参数配置可参考云拨测官网文档。</p>
                      * 
                      */
                     std::string GetParameters() const;
 
                     /**
-                     * 设置拨测参数，详细参数配置可参考云拨测官网文档。
-                     * @param _parameters 拨测参数，详细参数配置可参考云拨测官网文档。
+                     * 设置<p>拨测参数，详细参数配置可参考云拨测官网文档。</p>
+                     * @param _parameters <p>拨测参数，详细参数配置可参考云拨测官网文档。</p>
                      * 
                      */
                     void SetParameters(const std::string& _parameters);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool ParametersHasBeenSet() const;
 
                     /**
-                     * 获取定时任务cron表达式
-                     * @return Cron 定时任务cron表达式
+                     * 获取<p>定时任务cron表达式</p>
+                     * @return Cron <p>定时任务cron表达式</p>
                      * 
                      */
                     std::string GetCron() const;
 
                     /**
-                     * 设置定时任务cron表达式
-                     * @param _cron 定时任务cron表达式
+                     * 设置<p>定时任务cron表达式</p>
+                     * @param _cron <p>定时任务cron表达式</p>
                      * 
                      */
                     void SetCron(const std::string& _cron);
@@ -149,19 +149,15 @@ namespace TencentCloud
                     bool CronHasBeenSet() const;
 
                     /**
-                     * 获取预付费套餐id
-需要与taskId对应
-                     * @return ResourceIDs 预付费套餐id
-需要与taskId对应
+                     * 获取<p>预付费套餐id<br>需要与taskId对应</p>
+                     * @return ResourceIDs <p>预付费套餐id<br>需要与taskId对应</p>
                      * 
                      */
                     std::vector<std::string> GetResourceIDs() const;
 
                     /**
-                     * 设置预付费套餐id
-需要与taskId对应
-                     * @param _resourceIDs 预付费套餐id
-需要与taskId对应
+                     * 设置<p>预付费套餐id<br>需要与taskId对应</p>
+                     * @param _resourceIDs <p>预付费套餐id<br>需要与taskId对应</p>
                      * 
                      */
                     void SetResourceIDs(const std::vector<std::string>& _resourceIDs);
@@ -174,15 +170,15 @@ namespace TencentCloud
                     bool ResourceIDsHasBeenSet() const;
 
                     /**
-                     * 获取拨测节点的IP类型，0-不限，1-IPv4，2-IPv6
-                     * @return NodeIpType 拨测节点的IP类型，0-不限，1-IPv4，2-IPv6
+                     * 获取<p>拨测节点的IP类型，0-不限，1-IPv4，2-IPv6</p>
+                     * @return NodeIpType <p>拨测节点的IP类型，0-不限，1-IPv4，2-IPv6</p>
                      * 
                      */
                     int64_t GetNodeIpType() const;
 
                     /**
-                     * 设置拨测节点的IP类型，0-不限，1-IPv4，2-IPv6
-                     * @param _nodeIpType 拨测节点的IP类型，0-不限，1-IPv4，2-IPv6
+                     * 设置<p>拨测节点的IP类型，0-不限，1-IPv4，2-IPv6</p>
+                     * @param _nodeIpType <p>拨测节点的IP类型，0-不限，1-IPv4，2-IPv6</p>
                      * 
                      */
                     void SetNodeIpType(const int64_t& _nodeIpType);
@@ -195,15 +191,15 @@ namespace TencentCloud
                     bool NodeIpTypeHasBeenSet() const;
 
                     /**
-                     * 获取批量任务名-地址
-                     * @return BatchTasks 批量任务名-地址
+                     * 获取<p>批量任务名-地址</p>
+                     * @return BatchTasks <p>批量任务名-地址</p>
                      * 
                      */
                     std::vector<ProbeTaskBasicConfiguration> GetBatchTasks() const;
 
                     /**
-                     * 设置批量任务名-地址
-                     * @param _batchTasks 批量任务名-地址
+                     * 设置<p>批量任务名-地址</p>
+                     * @param _batchTasks <p>批量任务名-地址</p>
                      * 
                      */
                     void SetBatchTasks(const std::vector<ProbeTaskBasicConfiguration>& _batchTasks);
@@ -218,50 +214,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务 ID，如task-n1wchki8
+                     * <p>任务 ID，如task-n1wchki8</p>
                      */
                     std::vector<std::string> m_taskIds;
                     bool m_taskIdsHasBeenSet;
 
                     /**
-                     * 拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。
+                     * <p>拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。</p>
                      */
                     std::vector<std::string> m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 拨测间隔，如30，单位为分钟。
+                     * <p>拨测间隔，如30，单位为分钟。</p>
                      */
                     int64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 拨测参数，详细参数配置可参考云拨测官网文档。
+                     * <p>拨测参数，详细参数配置可参考云拨测官网文档。</p>
                      */
                     std::string m_parameters;
                     bool m_parametersHasBeenSet;
 
                     /**
-                     * 定时任务cron表达式
+                     * <p>定时任务cron表达式</p>
                      */
                     std::string m_cron;
                     bool m_cronHasBeenSet;
 
                     /**
-                     * 预付费套餐id
-需要与taskId对应
+                     * <p>预付费套餐id<br>需要与taskId对应</p>
                      */
                     std::vector<std::string> m_resourceIDs;
                     bool m_resourceIDsHasBeenSet;
 
                     /**
-                     * 拨测节点的IP类型，0-不限，1-IPv4，2-IPv6
+                     * <p>拨测节点的IP类型，0-不限，1-IPv4，2-IPv6</p>
                      */
                     int64_t m_nodeIpType;
                     bool m_nodeIpTypeHasBeenSet;
 
                     /**
-                     * 批量任务名-地址
+                     * <p>批量任务名-地址</p>
                      */
                     std::vector<ProbeTaskBasicConfiguration> m_batchTasks;
                     bool m_batchTasksHasBeenSet;

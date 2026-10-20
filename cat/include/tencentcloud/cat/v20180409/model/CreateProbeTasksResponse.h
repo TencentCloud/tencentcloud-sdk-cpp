@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID列表
-                     * @return TaskIDs 任务ID列表
+                     * 获取<p>任务ID列表</p>
+                     * @return TaskIDs <p>任务ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetTaskIDs() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID列表
+                     * <p>任务ID列表</p>
                      */
                     std::vector<std::string> m_taskIDs;
                     bool m_taskIDsHasBeenSet;

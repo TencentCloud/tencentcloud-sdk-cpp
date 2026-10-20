@@ -25,7 +25,8 @@ using namespace std;
 CreateAgentApplicationRequest::CreateAgentApplicationRequest() :
     m_applicationNameHasBeenSet(false),
     m_accessTypeHasBeenSet(false),
-    m_logsetIdHasBeenSet(false)
+    m_logsetIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,21 @@ string CreateAgentApplicationRequest::ToJsonString() const
         string key = "LogsetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logsetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +130,22 @@ void CreateAgentApplicationRequest::SetLogsetId(const string& _logsetId)
 bool CreateAgentApplicationRequest::LogsetIdHasBeenSet() const
 {
     return m_logsetIdHasBeenSet;
+}
+
+vector<Tag> CreateAgentApplicationRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateAgentApplicationRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateAgentApplicationRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

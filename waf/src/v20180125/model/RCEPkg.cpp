@@ -29,7 +29,9 @@ RCEPkg::RCEPkg() :
     m_inquireNumHasBeenSet(false),
     m_usedNumHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
-    m_billingItemHasBeenSet(false)
+    m_billingItemHasBeenSet(false),
+    m_elasticModeHasBeenSet(false),
+    m_elasticBillingHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome RCEPkg::Deserialize(const rapidjson::Value &value)
         m_billingItemHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticMode") && !value["ElasticMode"].IsNull())
+    {
+        if (!value["ElasticMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RCEPkg.ElasticMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticMode = value["ElasticMode"].GetInt64();
+        m_elasticModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticBilling") && !value["ElasticBilling"].IsNull())
+    {
+        if (!value["ElasticBilling"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RCEPkg.ElasticBilling` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticBilling = value["ElasticBilling"].GetInt64();
+        m_elasticBillingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void RCEPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "BillingItem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_billingItem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_elasticModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticMode, allocator);
+    }
+
+    if (m_elasticBillingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticBilling";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticBilling, allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void RCEPkg::SetBillingItem(const string& _billingItem)
 bool RCEPkg::BillingItemHasBeenSet() const
 {
     return m_billingItemHasBeenSet;
+}
+
+int64_t RCEPkg::GetElasticMode() const
+{
+    return m_elasticMode;
+}
+
+void RCEPkg::SetElasticMode(const int64_t& _elasticMode)
+{
+    m_elasticMode = _elasticMode;
+    m_elasticModeHasBeenSet = true;
+}
+
+bool RCEPkg::ElasticModeHasBeenSet() const
+{
+    return m_elasticModeHasBeenSet;
+}
+
+int64_t RCEPkg::GetElasticBilling() const
+{
+    return m_elasticBilling;
+}
+
+void RCEPkg::SetElasticBilling(const int64_t& _elasticBilling)
+{
+    m_elasticBilling = _elasticBilling;
+    m_elasticBillingHasBeenSet = true;
+}
+
+bool RCEPkg::ElasticBillingHasBeenSet() const
+{
+    return m_elasticBillingHasBeenSet;
 }
 

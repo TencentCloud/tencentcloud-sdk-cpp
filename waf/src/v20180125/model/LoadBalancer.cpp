@@ -29,6 +29,7 @@ LoadBalancer::LoadBalancer() :
     m_regionHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_zoneHasBeenSet(false),
+    m_apRegionHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_numericalVpcIdHasBeenSet(false),
     m_loadBalancerTypeHasBeenSet(false),
@@ -121,6 +122,19 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         }
         m_zone = string(value["Zone"].GetString());
         m_zoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApRegion") && !value["ApRegion"].IsNull())
+    {
+        if (!value["ApRegion"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.ApRegion` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApRegion"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_apRegion.push_back((*itr).GetString());
+        }
+        m_apRegionHasBeenSet = true;
     }
 
     if (value.HasMember("Vip") && !value["Vip"].IsNull())
@@ -252,6 +266,19 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_apRegion.begin(); itr != m_apRegion.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_vipHasBeenSet)
@@ -431,6 +458,22 @@ void LoadBalancer::SetZone(const string& _zone)
 bool LoadBalancer::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+vector<string> LoadBalancer::GetApRegion() const
+{
+    return m_apRegion;
+}
+
+void LoadBalancer::SetApRegion(const vector<string>& _apRegion)
+{
+    m_apRegion = _apRegion;
+    m_apRegionHasBeenSet = true;
+}
+
+bool LoadBalancer::ApRegionHasBeenSet() const
+{
+    return m_apRegionHasBeenSet;
 }
 
 string LoadBalancer::GetVip() const

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取标签值序列化后的字符串
-                     * @return TagValueSet 标签值序列化后的字符串
+                     * 获取<p>标签值序列化后的字符串</p>
+                     * @return TagValueSet <p>标签值序列化后的字符串</p>
                      * 
                      */
                     std::string GetTagValueSet() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 标签值序列化后的字符串
+                     * <p>标签值序列化后的字符串</p>
                      */
                     std::string m_tagValueSet;
                     bool m_tagValueSetHasBeenSet;

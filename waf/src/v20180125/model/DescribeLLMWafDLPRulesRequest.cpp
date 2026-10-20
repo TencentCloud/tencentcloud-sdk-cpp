@@ -24,7 +24,10 @@ using namespace std;
 
 DescribeLLMWafDLPRulesRequest::DescribeLLMWafDLPRulesRequest() :
     m_serviceIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_byHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -49,6 +52,30 @@ string DescribeLLMWafDLPRulesRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_byHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "By";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +116,54 @@ void DescribeLLMWafDLPRulesRequest::SetInstanceId(const string& _instanceId)
 bool DescribeLLMWafDLPRulesRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string DescribeLLMWafDLPRulesRequest::GetBy() const
+{
+    return m_by;
+}
+
+void DescribeLLMWafDLPRulesRequest::SetBy(const string& _by)
+{
+    m_by = _by;
+    m_byHasBeenSet = true;
+}
+
+bool DescribeLLMWafDLPRulesRequest::ByHasBeenSet() const
+{
+    return m_byHasBeenSet;
+}
+
+string DescribeLLMWafDLPRulesRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeLLMWafDLPRulesRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeLLMWafDLPRulesRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+string DescribeLLMWafDLPRulesRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void DescribeLLMWafDLPRulesRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DescribeLLMWafDLPRulesRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 

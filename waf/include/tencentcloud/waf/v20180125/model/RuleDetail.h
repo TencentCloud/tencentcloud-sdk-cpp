@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool DirectionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>规则修改时间（秒级时间戳）：租户对该规则的最近一次修改时间，从未修改则为0</p>
+                     * @return UpdateTime <p>规则修改时间（秒级时间戳）：租户对该规则的最近一次修改时间，从未修改则为0</p>
+                     * 
+                     */
+                    uint64_t GetUpdateTime() const;
+
+                    /**
+                     * 设置<p>规则修改时间（秒级时间戳）：租户对该规则的最近一次修改时间，从未修改则为0</p>
+                     * @param _updateTime <p>规则修改时间（秒级时间戳）：租户对该规则的最近一次修改时间，从未修改则为0</p>
+                     * 
+                     */
+                    void SetUpdateTime(const uint64_t& _updateTime);
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;
+
+                    /**
+                     * <p>规则修改时间（秒级时间戳）：租户对该规则的最近一次修改时间，从未修改则为0</p>
+                     */
+                    uint64_t m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

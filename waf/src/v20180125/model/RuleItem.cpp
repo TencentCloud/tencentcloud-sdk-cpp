@@ -24,7 +24,8 @@ RuleItem::RuleItem() :
     m_keyHasBeenSet(false),
     m_opHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_levelsHasBeenSet(false)
+    m_levelsHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,16 @@ CoreInternalOutcome RuleItem::Deserialize(const rapidjson::Value &value)
         m_levelsHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleItem.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -135,6 +146,14 @@ void RuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -202,5 +221,21 @@ void RuleItem::SetLevels(const vector<ValueLevel>& _levels)
 bool RuleItem::LevelsHasBeenSet() const
 {
     return m_levelsHasBeenSet;
+}
+
+string RuleItem::GetName() const
+{
+    return m_name;
+}
+
+void RuleItem::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool RuleItem::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 

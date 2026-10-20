@@ -256,6 +256,27 @@ namespace TencentCloud
                      */
                     bool ServiceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>接入点ID</p>
+                     * @return AccessPointId <p>接入点ID</p>
+                     * 
+                     */
+                    std::string GetAccessPointId() const;
+
+                    /**
+                     * 设置<p>接入点ID</p>
+                     * @param _accessPointId <p>接入点ID</p>
+                     * 
+                     */
+                    void SetAccessPointId(const std::string& _accessPointId);
+
+                    /**
+                     * 判断参数 AccessPointId 是否已赋值
+                     * @return AccessPointId 是否已赋值
+                     * 
+                     */
+                    bool AccessPointIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +338,12 @@ namespace TencentCloud
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
+
+                    /**
+                     * <p>接入点ID</p>
+                     */
+                    std::string m_accessPointId;
+                    bool m_accessPointIdHasBeenSet;
 
                 };
             }

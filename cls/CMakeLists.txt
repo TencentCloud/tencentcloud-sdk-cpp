@@ -78,7 +78,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteExportResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeDashboardSubscribesRequest.h
   include/tencentcloud/cls/v20201016/model/PartitionInfo.h
-  include/tencentcloud/cls/v20201016/model/CreateNoticeContentResponse.h
+  include/tencentcloud/cls/v20201016/model/CreateEsRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/OpenClsServiceResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeResourceGraphProductIngestTaskListRequest.h
   include/tencentcloud/cls/v20201016/model/ModifyAlarmRequest.h
@@ -171,6 +171,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/ModifyRecordingRuleYamlTaskResponse.h
   include/tencentcloud/cls/v20201016/model/CreateMachineGroupRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeExportsResponse.h
+  include/tencentcloud/cls/v20201016/model/CloudProductTopicConfig.h
   include/tencentcloud/cls/v20201016/model/DeliverConfig.h
   include/tencentcloud/cls/v20201016/model/CsvInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeCloudProductLogTasksRequest.h
@@ -369,7 +370,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/Choice.h
   include/tencentcloud/cls/v20201016/model/RetryResourceGraphResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteMetricConfigRequest.h
-  include/tencentcloud/cls/v20201016/model/CreateEsRechargeRequest.h
+  include/tencentcloud/cls/v20201016/model/CreateNoticeContentResponse.h
   include/tencentcloud/cls/v20201016/model/ConsumerGroup.h
   include/tencentcloud/cls/v20201016/model/ConsoleSharingConfig.h
   include/tencentcloud/cls/v20201016/model/DlcFailTableInfo.h
@@ -753,7 +754,7 @@ set(cls_src
   src/v20201016/model/DeleteExportResponse.cpp
   src/v20201016/model/DescribeDashboardSubscribesRequest.cpp
   src/v20201016/model/PartitionInfo.cpp
-  src/v20201016/model/CreateNoticeContentResponse.cpp
+  src/v20201016/model/CreateEsRechargeRequest.cpp
   src/v20201016/model/OpenClsServiceResponse.cpp
   src/v20201016/model/DescribeResourceGraphProductIngestTaskListRequest.cpp
   src/v20201016/model/ModifyAlarmRequest.cpp
@@ -846,6 +847,7 @@ set(cls_src
   src/v20201016/model/ModifyRecordingRuleYamlTaskResponse.cpp
   src/v20201016/model/CreateMachineGroupRequest.cpp
   src/v20201016/model/DescribeExportsResponse.cpp
+  src/v20201016/model/CloudProductTopicConfig.cpp
   src/v20201016/model/DeliverConfig.cpp
   src/v20201016/model/CsvInfo.cpp
   src/v20201016/model/DescribeCloudProductLogTasksRequest.cpp
@@ -1044,7 +1046,7 @@ set(cls_src
   src/v20201016/model/Choice.cpp
   src/v20201016/model/RetryResourceGraphResponse.cpp
   src/v20201016/model/DeleteMetricConfigRequest.cpp
-  src/v20201016/model/CreateEsRechargeRequest.cpp
+  src/v20201016/model/CreateNoticeContentResponse.cpp
   src/v20201016/model/ConsumerGroup.cpp
   src/v20201016/model/ConsoleSharingConfig.cpp
   src/v20201016/model/DlcFailTableInfo.cpp

@@ -590,6 +590,56 @@ CynosdbClient::CancelClusterServerlessScalePlanOutcomeCallable CynosdbClient::Ca
     return prom->get_future();
 }
 
+CynosdbClient::CancelTaskOutcome CynosdbClient::CancelTask(const CancelTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelTaskResponse rsp = CancelTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelTaskOutcome(rsp);
+        else
+            return CancelTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelTaskOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CancelTaskAsync(const CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CancelTaskRequest&;
+    using Resp = CancelTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CancelTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::CancelTaskOutcomeCallable CynosdbClient::CancelTaskCallable(const CancelTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CancelTaskOutcome>>();
+    CancelTaskAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CancelTaskRequest&,
+        CancelTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::CheckCreateLibraDBInstanceOutcome CynosdbClient::CheckCreateLibraDBInstance(const CheckCreateLibraDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckCreateLibraDBInstance");
@@ -6032,6 +6082,56 @@ CynosdbClient::DescribeProxySpecsOutcomeCallable CynosdbClient::DescribeProxySpe
         const CynosdbClient*,
         const DescribeProxySpecsRequest&,
         DescribeProxySpecsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::DescribeProxyZoneStocksOutcome CynosdbClient::DescribeProxyZoneStocks(const DescribeProxyZoneStocksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProxyZoneStocks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProxyZoneStocksResponse rsp = DescribeProxyZoneStocksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProxyZoneStocksOutcome(rsp);
+        else
+            return DescribeProxyZoneStocksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProxyZoneStocksOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeProxyZoneStocksAsync(const DescribeProxyZoneStocksRequest& request, const DescribeProxyZoneStocksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeProxyZoneStocksRequest&;
+    using Resp = DescribeProxyZoneStocksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeProxyZoneStocks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeProxyZoneStocksOutcomeCallable CynosdbClient::DescribeProxyZoneStocksCallable(const DescribeProxyZoneStocksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeProxyZoneStocksOutcome>>();
+    DescribeProxyZoneStocksAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeProxyZoneStocksRequest&,
+        DescribeProxyZoneStocksOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/Tag.h>
+#include <tencentcloud/cls/v20201016/model/CloudProductTopicConfig.h>
 
 
 namespace TencentCloud
@@ -274,6 +275,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志主题信息。当创建云产品投递任务并传递TopicName时，会创建具备这些属性的日志主题。</p>
+                     * @return TopicConfig <p>日志主题信息。当创建云产品投递任务并传递TopicName时，会创建具备这些属性的日志主题。</p>
+                     * 
+                     */
+                    CloudProductTopicConfig GetTopicConfig() const;
+
+                    /**
+                     * 设置<p>日志主题信息。当创建云产品投递任务并传递TopicName时，会创建具备这些属性的日志主题。</p>
+                     * @param _topicConfig <p>日志主题信息。当创建云产品投递任务并传递TopicName时，会创建具备这些属性的日志主题。</p>
+                     * 
+                     */
+                    void SetTopicConfig(const CloudProductTopicConfig& _topicConfig);
+
+                    /**
+                     * 判断参数 TopicConfig 是否已赋值
+                     * @return TopicConfig 是否已赋值
+                     * 
+                     */
+                    bool TopicConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +363,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>日志主题信息。当创建云产品投递任务并传递TopicName时，会创建具备这些属性的日志主题。</p>
+                     */
+                    CloudProductTopicConfig m_topicConfig;
+                    bool m_topicConfigHasBeenSet;
 
                 };
             }

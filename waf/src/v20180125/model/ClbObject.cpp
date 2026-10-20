@@ -38,6 +38,7 @@ ClbObject::ClbObject() :
     m_postCKafkaStatusHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_regionHasBeenSet(false),
+    m_apRegionHasBeenSet(false),
     m_proxyHasBeenSet(false),
     m_ipHeadersHasBeenSet(false),
     m_botStatusHasBeenSet(false),
@@ -239,6 +240,19 @@ CoreInternalOutcome ClbObject::Deserialize(const rapidjson::Value &value)
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApRegion") && !value["ApRegion"].IsNull())
+    {
+        if (!value["ApRegion"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClbObject.ApRegion` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApRegion"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_apRegion.push_back((*itr).GetString());
+        }
+        m_apRegionHasBeenSet = true;
     }
 
     if (value.HasMember("Proxy") && !value["Proxy"].IsNull())
@@ -580,6 +594,19 @@ void ClbObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_apRegion.begin(); itr != m_apRegion.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_proxyHasBeenSet)
@@ -1002,6 +1029,22 @@ void ClbObject::SetRegion(const string& _region)
 bool ClbObject::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+vector<string> ClbObject::GetApRegion() const
+{
+    return m_apRegion;
+}
+
+void ClbObject::SetApRegion(const vector<string>& _apRegion)
+{
+    m_apRegion = _apRegion;
+    m_apRegionHasBeenSet = true;
+}
+
+bool ClbObject::ApRegionHasBeenSet() const
+{
+    return m_apRegionHasBeenSet;
 }
 
 uint64_t ClbObject::GetProxy() const

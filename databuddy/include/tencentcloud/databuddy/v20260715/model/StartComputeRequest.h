@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取计算资源 ID
-                     * @return ResourceId 计算资源 ID
-                     * 
-                     */
-                    std::string GetResourceId() const;
-
-                    /**
-                     * 设置计算资源 ID
-                     * @param _resourceId 计算资源 ID
-                     * 
-                     */
-                    void SetResourceId(const std::string& _resourceId);
-
-                    /**
-                     * 判断参数 ResourceId 是否已赋值
-                     * @return ResourceId 是否已赋值
-                     * 
-                     */
-                    bool ResourceIdHasBeenSet() const;
-
-                    /**
                      * 获取工作空间 ID
                      * @return WorkspaceId 工作空间 ID
                      * 
@@ -84,19 +63,67 @@ namespace TencentCloud
                      */
                     bool WorkspaceIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）。替代已废弃的 ResourceId；过渡期 ComputeResourceId 与 ResourceId 至少传一个，同时传时必须一致
+                     * @return ComputeResourceId 计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）。替代已废弃的 ResourceId；过渡期 ComputeResourceId 与 ResourceId 至少传一个，同时传时必须一致
+                     * 
+                     */
+                    std::string GetComputeResourceId() const;
 
                     /**
-                     * 计算资源 ID
+                     * 设置计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）。替代已废弃的 ResourceId；过渡期 ComputeResourceId 与 ResourceId 至少传一个，同时传时必须一致
+                     * @param _computeResourceId 计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）。替代已废弃的 ResourceId；过渡期 ComputeResourceId 与 ResourceId 至少传一个，同时传时必须一致
+                     * 
                      */
-                    std::string m_resourceId;
-                    bool m_resourceIdHasBeenSet;
+                    void SetComputeResourceId(const std::string& _computeResourceId);
+
+                    /**
+                     * 判断参数 ComputeResourceId 是否已赋值
+                     * @return ComputeResourceId 是否已赋值
+                     * 
+                     */
+                    bool ComputeResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取[已废弃，请使用 ComputeResourceId] 计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）
+                     * @return ResourceId [已废弃，请使用 ComputeResourceId] 计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置[已废弃，请使用 ComputeResourceId] 计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）
+                     * @param _resourceId [已废弃，请使用 ComputeResourceId] 计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 工作空间 ID
                      */
                     std::string m_workspaceId;
                     bool m_workspaceIdHasBeenSet;
+
+                    /**
+                     * 计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）。替代已废弃的 ResourceId；过渡期 ComputeResourceId 与 ResourceId 至少传一个，同时传时必须一致
+                     */
+                    std::string m_computeResourceId;
+                    bool m_computeResourceIdHasBeenSet;
+
+                    /**
+                     * [已废弃，请使用 ComputeResourceId] 计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

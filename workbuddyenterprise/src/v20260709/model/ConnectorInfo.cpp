@@ -36,7 +36,8 @@ ConnectorInfo::ConnectorInfo() :
     m_statusHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_modifiedTimeHasBeenSet(false)
+    m_modifiedTimeHasBeenSet(false),
+    m_vpcConfigIdHasBeenSet(false)
 {
 }
 
@@ -208,6 +209,16 @@ CoreInternalOutcome ConnectorInfo::Deserialize(const rapidjson::Value &value)
         m_modifiedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcConfigId") && !value["VpcConfigId"].IsNull())
+    {
+        if (!value["VpcConfigId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConnectorInfo.VpcConfigId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcConfigId = string(value["VpcConfigId"].GetString());
+        m_vpcConfigIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +357,14 @@ void ConnectorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ModifiedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifiedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcConfigIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcConfigId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcConfigId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -605,5 +624,21 @@ void ConnectorInfo::SetModifiedTime(const string& _modifiedTime)
 bool ConnectorInfo::ModifiedTimeHasBeenSet() const
 {
     return m_modifiedTimeHasBeenSet;
+}
+
+string ConnectorInfo::GetVpcConfigId() const
+{
+    return m_vpcConfigId;
+}
+
+void ConnectorInfo::SetVpcConfigId(const string& _vpcConfigId)
+{
+    m_vpcConfigId = _vpcConfigId;
+    m_vpcConfigIdHasBeenSet = true;
+}
+
+bool ConnectorInfo::VpcConfigIdHasBeenSet() const
+{
+    return m_vpcConfigIdHasBeenSet;
 }
 

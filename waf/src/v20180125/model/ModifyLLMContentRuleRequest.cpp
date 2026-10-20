@@ -42,7 +42,8 @@ ModifyLLMContentRuleRequest::ModifyLLMContentRuleRequest() :
     m_modalTypeHasBeenSet(false),
     m_categoryHasBeenSet(false),
     m_domainsHasBeenSet(false),
-    m_appliedModulesHasBeenSet(false)
+    m_appliedModulesHasBeenSet(false),
+    m_riskLevelHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,14 @@ string ModifyLLMContentRuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_riskLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_riskLevel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -568,6 +577,22 @@ void ModifyLLMContentRuleRequest::SetAppliedModules(const vector<uint64_t>& _app
 bool ModifyLLMContentRuleRequest::AppliedModulesHasBeenSet() const
 {
     return m_appliedModulesHasBeenSet;
+}
+
+string ModifyLLMContentRuleRequest::GetRiskLevel() const
+{
+    return m_riskLevel;
+}
+
+void ModifyLLMContentRuleRequest::SetRiskLevel(const string& _riskLevel)
+{
+    m_riskLevel = _riskLevel;
+    m_riskLevelHasBeenSet = true;
+}
+
+bool ModifyLLMContentRuleRequest::RiskLevelHasBeenSet() const
+{
+    return m_riskLevelHasBeenSet;
 }
 
 

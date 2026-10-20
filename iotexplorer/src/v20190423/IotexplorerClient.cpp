@@ -11490,6 +11490,106 @@ IotexplorerClient::PublishRRPCMessageOutcomeCallable IotexplorerClient::PublishR
     return prom->get_future();
 }
 
+IotexplorerClient::PurchaseImagePackageOutcome IotexplorerClient::PurchaseImagePackage(const PurchaseImagePackageRequest &request)
+{
+    auto outcome = MakeRequest(request, "PurchaseImagePackage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PurchaseImagePackageResponse rsp = PurchaseImagePackageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PurchaseImagePackageOutcome(rsp);
+        else
+            return PurchaseImagePackageOutcome(o.GetError());
+    }
+    else
+    {
+        return PurchaseImagePackageOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::PurchaseImagePackageAsync(const PurchaseImagePackageRequest& request, const PurchaseImagePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PurchaseImagePackageRequest&;
+    using Resp = PurchaseImagePackageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PurchaseImagePackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::PurchaseImagePackageOutcomeCallable IotexplorerClient::PurchaseImagePackageCallable(const PurchaseImagePackageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PurchaseImagePackageOutcome>>();
+    PurchaseImagePackageAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const PurchaseImagePackageRequest&,
+        PurchaseImagePackageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::PurchaseVideoPackageOutcome IotexplorerClient::PurchaseVideoPackage(const PurchaseVideoPackageRequest &request)
+{
+    auto outcome = MakeRequest(request, "PurchaseVideoPackage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PurchaseVideoPackageResponse rsp = PurchaseVideoPackageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PurchaseVideoPackageOutcome(rsp);
+        else
+            return PurchaseVideoPackageOutcome(o.GetError());
+    }
+    else
+    {
+        return PurchaseVideoPackageOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::PurchaseVideoPackageAsync(const PurchaseVideoPackageRequest& request, const PurchaseVideoPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const PurchaseVideoPackageRequest&;
+    using Resp = PurchaseVideoPackageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "PurchaseVideoPackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::PurchaseVideoPackageOutcomeCallable IotexplorerClient::PurchaseVideoPackageCallable(const PurchaseVideoPackageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<PurchaseVideoPackageOutcome>>();
+    PurchaseVideoPackageAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const PurchaseVideoPackageRequest&,
+        PurchaseVideoPackageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::ReleaseStudioProductOutcome IotexplorerClient::ReleaseStudioProduct(const ReleaseStudioProductRequest &request)
 {
     auto outcome = MakeRequest(request, "ReleaseStudioProduct");
@@ -12182,6 +12282,106 @@ IotexplorerClient::ShareDeviceToUserOutcomeCallable IotexplorerClient::ShareDevi
         const IotexplorerClient*,
         const ShareDeviceToUserRequest&,
         ShareDeviceToUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::StartPackageUsageReportOutcome IotexplorerClient::StartPackageUsageReport(const StartPackageUsageReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartPackageUsageReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartPackageUsageReportResponse rsp = StartPackageUsageReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartPackageUsageReportOutcome(rsp);
+        else
+            return StartPackageUsageReportOutcome(o.GetError());
+    }
+    else
+    {
+        return StartPackageUsageReportOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::StartPackageUsageReportAsync(const StartPackageUsageReportRequest& request, const StartPackageUsageReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StartPackageUsageReportRequest&;
+    using Resp = StartPackageUsageReportResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StartPackageUsageReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::StartPackageUsageReportOutcomeCallable IotexplorerClient::StartPackageUsageReportCallable(const StartPackageUsageReportRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StartPackageUsageReportOutcome>>();
+    StartPackageUsageReportAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const StartPackageUsageReportRequest&,
+        StartPackageUsageReportOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::StopPackageUsageReportOutcome IotexplorerClient::StopPackageUsageReport(const StopPackageUsageReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopPackageUsageReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopPackageUsageReportResponse rsp = StopPackageUsageReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopPackageUsageReportOutcome(rsp);
+        else
+            return StopPackageUsageReportOutcome(o.GetError());
+    }
+    else
+    {
+        return StopPackageUsageReportOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::StopPackageUsageReportAsync(const StopPackageUsageReportRequest& request, const StopPackageUsageReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopPackageUsageReportRequest&;
+    using Resp = StopPackageUsageReportResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopPackageUsageReport", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::StopPackageUsageReportOutcomeCallable IotexplorerClient::StopPackageUsageReportCallable(const StopPackageUsageReportRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopPackageUsageReportOutcome>>();
+    StopPackageUsageReportAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const StopPackageUsageReportRequest&,
+        StopPackageUsageReportOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -199,67 +199,88 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
+                     * 获取<p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 恢复中</li><li>offlining： 下线中</li><li>offlined： 已下线</li></ul>
+                     * @return Status <p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 恢复中</li><li>offlining： 下线中</li><li>offlined： 已下线</li></ul>
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置<p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 恢复中</li><li>offlining： 下线中</li><li>offlined： 已下线</li></ul>
+                     * @param _status <p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 恢复中</li><li>offlining： 下线中</li><li>offlined： 已下线</li></ul>
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
                      * 获取<p>实例状态</p>
                      * @return InstanceStatus <p>实例状态</p>
-                     * 
+                     * @deprecated
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
                      * 设置<p>实例状态</p>
                      * @param _instanceStatus <p>实例状态</p>
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
 
                     /**
                      * 判断参数 InstanceStatus 是否已赋值
                      * @return InstanceStatus 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>实例状态中文描述</p>
+                     * @return StatusDesc <p>实例状态中文描述</p>
+                     * 
+                     */
+                    std::string GetStatusDesc() const;
+
+                    /**
+                     * 设置<p>实例状态中文描述</p>
+                     * @param _statusDesc <p>实例状态中文描述</p>
+                     * 
+                     */
+                    void SetStatusDesc(const std::string& _statusDesc);
+
+                    /**
+                     * 判断参数 StatusDesc 是否已赋值
+                     * @return StatusDesc 是否已赋值
+                     * 
+                     */
+                    bool StatusDescHasBeenSet() const;
+
+                    /**
                      * 获取<p>实例状态描述</p>
                      * @return InstanceStatusDesc <p>实例状态描述</p>
-                     * 
+                     * @deprecated
                      */
                     std::string GetInstanceStatusDesc() const;
 
                     /**
                      * 设置<p>实例状态描述</p>
                      * @param _instanceStatusDesc <p>实例状态描述</p>
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceStatusDesc(const std::string& _instanceStatusDesc);
 
                     /**
                      * 判断参数 InstanceStatusDesc 是否已赋值
                      * @return InstanceStatusDesc 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceStatusDescHasBeenSet() const;
-
-                    /**
-                     * 获取<p>cpu核数</p>
-                     * @return InstanceCpu <p>cpu核数</p>
-                     * @deprecated
-                     */
-                    int64_t GetInstanceCpu() const;
-
-                    /**
-                     * 设置<p>cpu核数</p>
-                     * @param _instanceCpu <p>cpu核数</p>
-                     * @deprecated
-                     */
-                    void SetInstanceCpu(const int64_t& _instanceCpu);
-
-                    /**
-                     * 判断参数 InstanceCpu 是否已赋值
-                     * @return InstanceCpu 是否已赋值
-                     * @deprecated
-                     */
-                    bool InstanceCpuHasBeenSet() const;
 
                     /**
                      * 获取<p>Cpu</p><p>单位：核</p>
@@ -281,6 +302,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取<p>cpu核数</p>
+                     * @return InstanceCpu <p>cpu核数</p>
+                     * @deprecated
+                     */
+                    int64_t GetInstanceCpu() const;
+
+                    /**
+                     * 设置<p>cpu核数</p>
+                     * @param _instanceCpu <p>cpu核数</p>
+                     * @deprecated
+                     */
+                    void SetInstanceCpu(const int64_t& _instanceCpu);
+
+                    /**
+                     * 判断参数 InstanceCpu 是否已赋值
+                     * @return InstanceCpu 是否已赋值
+                     * @deprecated
+                     */
+                    bool InstanceCpuHasBeenSet() const;
 
                     /**
                      * 获取<p>serverless实例cpu下限</p><p>单位：核</p>
@@ -348,21 +390,21 @@ namespace TencentCloud
                     /**
                      * 获取<p>内存</p>
                      * @return InstanceMemory <p>内存</p>
-                     * 
+                     * @deprecated
                      */
                     int64_t GetInstanceMemory() const;
 
                     /**
                      * 设置<p>内存</p>
                      * @param _instanceMemory <p>内存</p>
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceMemory(const int64_t& _instanceMemory);
 
                     /**
                      * 判断参数 InstanceMemory 是否已赋值
                      * @return InstanceMemory 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceMemoryHasBeenSet() const;
 
@@ -493,23 +535,44 @@ namespace TencentCloud
                     bool InstanceTasksHasBeenSet() const;
 
                     /**
+                     * 获取<p>实例机器类型</p><p>枚举值：</p><ul><li>common： 通用型</li><li>exclusive： 独享型</li></ul>
+                     * @return DeviceType <p>实例机器类型</p><p>枚举值：</p><ul><li>common： 通用型</li><li>exclusive： 独享型</li></ul>
+                     * 
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置<p>实例机器类型</p><p>枚举值：</p><ul><li>common： 通用型</li><li>exclusive： 独享型</li></ul>
+                     * @param _deviceType <p>实例机器类型</p><p>枚举值：</p><ul><li>common： 通用型</li><li>exclusive： 独享型</li></ul>
+                     * 
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     * 
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
+                    /**
                      * 获取<p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
                      * @return InstanceDeviceType <p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
-                     * 
+                     * @deprecated
                      */
                     std::string GetInstanceDeviceType() const;
 
                     /**
                      * 设置<p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
                      * @param _instanceDeviceType <p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceDeviceType(const std::string& _instanceDeviceType);
 
                     /**
                      * 判断参数 InstanceDeviceType 是否已赋值
                      * @return InstanceDeviceType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceDeviceTypeHasBeenSet() const;
 
@@ -701,48 +764,6 @@ namespace TencentCloud
                      * 
                      */
                     bool PhysicalZoneHasBeenSet() const;
-
-                    /**
-                     * 获取<p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 恢复中</li><li>offlining： 下线中</li><li>offlined： 已下线</li></ul>
-                     * @return Status <p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 恢复中</li><li>offlining： 下线中</li><li>offlined： 已下线</li></ul>
-                     * 
-                     */
-                    std::string GetStatus() const;
-
-                    /**
-                     * 设置<p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 恢复中</li><li>offlining： 下线中</li><li>offlined： 已下线</li></ul>
-                     * @param _status <p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 恢复中</li><li>offlining： 下线中</li><li>offlined： 已下线</li></ul>
-                     * 
-                     */
-                    void SetStatus(const std::string& _status);
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     * 
-                     */
-                    bool StatusHasBeenSet() const;
-
-                    /**
-                     * 获取<p>实例状态中文描述</p>
-                     * @return StatusDesc <p>实例状态中文描述</p>
-                     * 
-                     */
-                    std::string GetStatusDesc() const;
-
-                    /**
-                     * 设置<p>实例状态中文描述</p>
-                     * @param _statusDesc <p>实例状态中文描述</p>
-                     * 
-                     */
-                    void SetStatusDesc(const std::string& _statusDesc);
-
-                    /**
-                     * 判断参数 StatusDesc 是否已赋值
-                     * @return StatusDesc 是否已赋值
-                     * 
-                     */
-                    bool StatusDescHasBeenSet() const;
 
                     /**
                      * 获取<p>数据库类型</p>
@@ -1337,27 +1358,6 @@ namespace TencentCloud
                     bool InstanceAbilityHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例机器类型</p><p>枚举值：</p><ul><li>common： 通用型</li><li>exclusive： 独享型</li></ul>
-                     * @return DeviceType <p>实例机器类型</p><p>枚举值：</p><ul><li>common： 通用型</li><li>exclusive： 独享型</li></ul>
-                     * 
-                     */
-                    std::string GetDeviceType() const;
-
-                    /**
-                     * 设置<p>实例机器类型</p><p>枚举值：</p><ul><li>common： 通用型</li><li>exclusive： 独享型</li></ul>
-                     * @param _deviceType <p>实例机器类型</p><p>枚举值：</p><ul><li>common： 通用型</li><li>exclusive： 独享型</li></ul>
-                     * 
-                     */
-                    void SetDeviceType(const std::string& _deviceType);
-
-                    /**
-                     * 判断参数 DeviceType 是否已赋值
-                     * @return DeviceType 是否已赋值
-                     * 
-                     */
-                    bool DeviceTypeHasBeenSet() const;
-
-                    /**
                      * 获取<p>全球数据库唯一标识</p>
                      * @return GdnId <p>全球数据库唯一标识</p>
                      * 
@@ -1423,10 +1423,22 @@ namespace TencentCloud
                     bool m_instanceTypeHasBeenSet;
 
                     /**
+                     * <p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 恢复中</li><li>offlining： 下线中</li><li>offlined： 已下线</li></ul>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
                      * <p>实例状态</p>
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
+
+                    /**
+                     * <p>实例状态中文描述</p>
+                     */
+                    std::string m_statusDesc;
+                    bool m_statusDescHasBeenSet;
 
                     /**
                      * <p>实例状态描述</p>
@@ -1435,16 +1447,16 @@ namespace TencentCloud
                     bool m_instanceStatusDescHasBeenSet;
 
                     /**
-                     * <p>cpu核数</p>
-                     */
-                    int64_t m_instanceCpu;
-                    bool m_instanceCpuHasBeenSet;
-
-                    /**
                      * <p>Cpu</p><p>单位：核</p>
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
+
+                    /**
+                     * <p>cpu核数</p>
+                     */
+                    int64_t m_instanceCpu;
+                    bool m_instanceCpuHasBeenSet;
 
                     /**
                      * <p>serverless实例cpu下限</p><p>单位：核</p>
@@ -1507,6 +1519,12 @@ namespace TencentCloud
                     bool m_instanceTasksHasBeenSet;
 
                     /**
+                     * <p>实例机器类型</p><p>枚举值：</p><ul><li>common： 通用型</li><li>exclusive： 独享型</li></ul>
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
+
+                    /**
                      * <p>实例机器类型</p><ol><li>common，通用型。</li><li>exclusive，独享型。</li></ol>
                      */
                     std::string m_instanceDeviceType;
@@ -1565,18 +1583,6 @@ namespace TencentCloud
                      */
                     std::string m_physicalZone;
                     bool m_physicalZoneHasBeenSet;
-
-                    /**
-                     * <p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 恢复中</li><li>offlining： 下线中</li><li>offlined： 已下线</li></ul>
-                     */
-                    std::string m_status;
-                    bool m_statusHasBeenSet;
-
-                    /**
-                     * <p>实例状态中文描述</p>
-                     */
-                    std::string m_statusDesc;
-                    bool m_statusDescHasBeenSet;
 
                     /**
                      * <p>数据库类型</p>
@@ -1746,12 +1752,6 @@ namespace TencentCloud
                      */
                     InstanceAbility m_instanceAbility;
                     bool m_instanceAbilityHasBeenSet;
-
-                    /**
-                     * <p>实例机器类型</p><p>枚举值：</p><ul><li>common： 通用型</li><li>exclusive： 独享型</li></ul>
-                     */
-                    std::string m_deviceType;
-                    bool m_deviceTypeHasBeenSet;
 
                     /**
                      * <p>全球数据库唯一标识</p>

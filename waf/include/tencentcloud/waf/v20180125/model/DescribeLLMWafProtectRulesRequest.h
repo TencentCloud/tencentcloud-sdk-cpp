@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>服务ID</p>
-                     * @return ServiceId <p>服务ID</p>
+                     * 获取<p>SDK 模式传 ServiceId（与 Domain 二选一）</p>
+                     * @return ServiceId <p>SDK 模式传 ServiceId（与 Domain 二选一）</p>
                      * 
                      */
                     std::string GetServiceId() const;
 
                     /**
-                     * 设置<p>服务ID</p>
-                     * @param _serviceId <p>服务ID</p>
+                     * 设置<p>SDK 模式传 ServiceId（与 Domain 二选一）</p>
+                     * @param _serviceId <p>SDK 模式传 ServiceId（与 Domain 二选一）</p>
                      * 
                      */
                     void SetServiceId(const std::string& _serviceId);
@@ -105,10 +105,31 @@ namespace TencentCloud
                      */
                     bool RuleTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>域名模式传 Domain（与 ServiceId 二选一）</p>
+                     * @return Domain <p>域名模式传 Domain（与 ServiceId 二选一）</p>
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置<p>域名模式传 Domain（与 ServiceId 二选一）</p>
+                     * @param _domain <p>域名模式传 Domain（与 ServiceId 二选一）</p>
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>服务ID</p>
+                     * <p>SDK 模式传 ServiceId（与 Domain 二选一）</p>
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_ruleType;
                     bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * <p>域名模式传 Domain（与 ServiceId 二选一）</p>
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

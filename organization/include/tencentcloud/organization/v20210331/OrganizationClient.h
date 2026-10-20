@@ -81,6 +81,8 @@
 #include <tencentcloud/organization/v20210331/model/CreateRoleAssignmentResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateRoleConfigurationRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateRoleConfigurationResponse.h>
+#include <tencentcloud/organization/v20210331/model/CreateRoleConfigurationApplyScopeRequest.h>
+#include <tencentcloud/organization/v20210331/model/CreateRoleConfigurationApplyScopeResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateSCIMCredentialRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateSCIMCredentialResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateUserRequest.h>
@@ -111,6 +113,8 @@
 #include <tencentcloud/organization/v20210331/model/DeleteRoleAssignmentResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteRoleConfigurationRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteRoleConfigurationResponse.h>
+#include <tencentcloud/organization/v20210331/model/DeleteRoleConfigurationApplyScopeRequest.h>
+#include <tencentcloud/organization/v20210331/model/DeleteRoleConfigurationApplyScopeResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteSCIMCredentialRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteSCIMCredentialResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitRequest.h>
@@ -217,6 +221,8 @@
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationServiceRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationServiceResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListPermissionApplyOrdersRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListPermissionApplyOrdersResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListPermissionPoliciesInRoleConfigurationRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListPermissionPoliciesInRoleConfigurationResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListPoliciesRequest.h>
@@ -225,6 +231,8 @@
 #include <tencentcloud/organization/v20210331/model/ListPoliciesForTargetResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListRoleAssignmentsRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListRoleAssignmentsResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListRoleConfigurationApplyScopesRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListRoleConfigurationApplyScopesResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListRoleConfigurationProvisioningsRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListRoleConfigurationProvisioningsResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListRoleConfigurationsRequest.h>
@@ -394,6 +402,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRoleConfigurationResponse> CreateRoleConfigurationOutcome;
                 typedef std::future<CreateRoleConfigurationOutcome> CreateRoleConfigurationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreateRoleConfigurationRequest&, CreateRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoleConfigurationApplyScopeResponse> CreateRoleConfigurationApplyScopeOutcome;
+                typedef std::future<CreateRoleConfigurationApplyScopeOutcome> CreateRoleConfigurationApplyScopeOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CreateRoleConfigurationApplyScopeRequest&, CreateRoleConfigurationApplyScopeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleConfigurationApplyScopeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSCIMCredentialResponse> CreateSCIMCredentialOutcome;
                 typedef std::future<CreateSCIMCredentialOutcome> CreateSCIMCredentialOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreateSCIMCredentialRequest&, CreateSCIMCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSCIMCredentialAsyncHandler;
@@ -439,6 +450,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRoleConfigurationResponse> DeleteRoleConfigurationOutcome;
                 typedef std::future<DeleteRoleConfigurationOutcome> DeleteRoleConfigurationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteRoleConfigurationRequest&, DeleteRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoleConfigurationApplyScopeResponse> DeleteRoleConfigurationApplyScopeOutcome;
+                typedef std::future<DeleteRoleConfigurationApplyScopeOutcome> DeleteRoleConfigurationApplyScopeOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DeleteRoleConfigurationApplyScopeRequest&, DeleteRoleConfigurationApplyScopeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleConfigurationApplyScopeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSCIMCredentialResponse> DeleteSCIMCredentialOutcome;
                 typedef std::future<DeleteSCIMCredentialOutcome> DeleteSCIMCredentialOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteSCIMCredentialRequest&, DeleteSCIMCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSCIMCredentialAsyncHandler;
@@ -598,6 +612,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListOrganizationServiceResponse> ListOrganizationServiceOutcome;
                 typedef std::future<ListOrganizationServiceOutcome> ListOrganizationServiceOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListOrganizationServiceRequest&, ListOrganizationServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListPermissionApplyOrdersResponse> ListPermissionApplyOrdersOutcome;
+                typedef std::future<ListPermissionApplyOrdersOutcome> ListPermissionApplyOrdersOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListPermissionApplyOrdersRequest&, ListPermissionApplyOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPermissionApplyOrdersAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListPermissionPoliciesInRoleConfigurationResponse> ListPermissionPoliciesInRoleConfigurationOutcome;
                 typedef std::future<ListPermissionPoliciesInRoleConfigurationOutcome> ListPermissionPoliciesInRoleConfigurationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListPermissionPoliciesInRoleConfigurationRequest&, ListPermissionPoliciesInRoleConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPermissionPoliciesInRoleConfigurationAsyncHandler;
@@ -610,6 +627,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListRoleAssignmentsResponse> ListRoleAssignmentsOutcome;
                 typedef std::future<ListRoleAssignmentsOutcome> ListRoleAssignmentsOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListRoleAssignmentsRequest&, ListRoleAssignmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRoleAssignmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListRoleConfigurationApplyScopesResponse> ListRoleConfigurationApplyScopesOutcome;
+                typedef std::future<ListRoleConfigurationApplyScopesOutcome> ListRoleConfigurationApplyScopesOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListRoleConfigurationApplyScopesRequest&, ListRoleConfigurationApplyScopesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRoleConfigurationApplyScopesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListRoleConfigurationProvisioningsResponse> ListRoleConfigurationProvisioningsOutcome;
                 typedef std::future<ListRoleConfigurationProvisioningsOutcome> ListRoleConfigurationProvisioningsOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListRoleConfigurationProvisioningsRequest&, ListRoleConfigurationProvisioningsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListRoleConfigurationProvisioningsAsyncHandler;
@@ -977,6 +997,15 @@ namespace TencentCloud
                 CreateRoleConfigurationOutcomeCallable CreateRoleConfigurationCallable(const Model::CreateRoleConfigurationRequest& request);
 
                 /**
+                 *创建权限申请范围，支持批量upsert
+                 * @param req CreateRoleConfigurationApplyScopeRequest
+                 * @return CreateRoleConfigurationApplyScopeOutcome
+                 */
+                CreateRoleConfigurationApplyScopeOutcome CreateRoleConfigurationApplyScope(const Model::CreateRoleConfigurationApplyScopeRequest &request);
+                void CreateRoleConfigurationApplyScopeAsync(const Model::CreateRoleConfigurationApplyScopeRequest& request, const CreateRoleConfigurationApplyScopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoleConfigurationApplyScopeOutcomeCallable CreateRoleConfigurationApplyScopeCallable(const Model::CreateRoleConfigurationApplyScopeRequest& request);
+
+                /**
                  *创建SCIM密钥
                  * @param req CreateSCIMCredentialRequest
                  * @return CreateSCIMCredentialOutcome
@@ -1110,6 +1139,15 @@ namespace TencentCloud
                 DeleteRoleConfigurationOutcome DeleteRoleConfiguration(const Model::DeleteRoleConfigurationRequest &request);
                 void DeleteRoleConfigurationAsync(const Model::DeleteRoleConfigurationRequest& request, const DeleteRoleConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRoleConfigurationOutcomeCallable DeleteRoleConfigurationCallable(const Model::DeleteRoleConfigurationRequest& request);
+
+                /**
+                 *删除权限申请范围
+                 * @param req DeleteRoleConfigurationApplyScopeRequest
+                 * @return DeleteRoleConfigurationApplyScopeOutcome
+                 */
+                DeleteRoleConfigurationApplyScopeOutcome DeleteRoleConfigurationApplyScope(const Model::DeleteRoleConfigurationApplyScopeRequest &request);
+                void DeleteRoleConfigurationApplyScopeAsync(const Model::DeleteRoleConfigurationApplyScopeRequest& request, const DeleteRoleConfigurationApplyScopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoleConfigurationApplyScopeOutcomeCallable DeleteRoleConfigurationApplyScopeCallable(const Model::DeleteRoleConfigurationApplyScopeRequest& request);
 
                 /**
                  *删除SCIM密钥
@@ -1589,6 +1627,15 @@ namespace TencentCloud
                 ListOrganizationServiceOutcomeCallable ListOrganizationServiceCallable(const Model::ListOrganizationServiceRequest& request);
 
                 /**
+                 *管理员审批列表
+                 * @param req ListPermissionApplyOrdersRequest
+                 * @return ListPermissionApplyOrdersOutcome
+                 */
+                ListPermissionApplyOrdersOutcome ListPermissionApplyOrders(const Model::ListPermissionApplyOrdersRequest &request);
+                void ListPermissionApplyOrdersAsync(const Model::ListPermissionApplyOrdersRequest& request, const ListPermissionApplyOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListPermissionApplyOrdersOutcomeCallable ListPermissionApplyOrdersCallable(const Model::ListPermissionApplyOrdersRequest& request);
+
+                /**
                  *获取权限配置中的策略列表
                  * @param req ListPermissionPoliciesInRoleConfigurationRequest
                  * @return ListPermissionPoliciesInRoleConfigurationOutcome
@@ -1623,6 +1670,15 @@ namespace TencentCloud
                 ListRoleAssignmentsOutcome ListRoleAssignments(const Model::ListRoleAssignmentsRequest &request);
                 void ListRoleAssignmentsAsync(const Model::ListRoleAssignmentsRequest& request, const ListRoleAssignmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListRoleAssignmentsOutcomeCallable ListRoleAssignmentsCallable(const Model::ListRoleAssignmentsRequest& request);
+
+                /**
+                 *权限申请范围列表
+                 * @param req ListRoleConfigurationApplyScopesRequest
+                 * @return ListRoleConfigurationApplyScopesOutcome
+                 */
+                ListRoleConfigurationApplyScopesOutcome ListRoleConfigurationApplyScopes(const Model::ListRoleConfigurationApplyScopesRequest &request);
+                void ListRoleConfigurationApplyScopesAsync(const Model::ListRoleConfigurationApplyScopesRequest& request, const ListRoleConfigurationApplyScopesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListRoleConfigurationApplyScopesOutcomeCallable ListRoleConfigurationApplyScopesCallable(const Model::ListRoleConfigurationApplyScopesRequest& request);
 
                 /**
                  *查询权限配置部署列表

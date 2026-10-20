@@ -617,6 +617,27 @@ namespace TencentCloud
                     bool CnameHasBeenSet() const;
 
                     /**
+                     * 获取<p>DNSSEC CNAME 地址。客户开启 DNSSEC CNAME 校验后，将业务域名 CNAME 到该地址即可接入。开关关闭、非 SaaS CNAME 接入或无法映射时为空字符串。<br>默认值：&quot;&quot;</p>
+                     * @return DnssecCname <p>DNSSEC CNAME 地址。客户开启 DNSSEC CNAME 校验后，将业务域名 CNAME 到该地址即可接入。开关关闭、非 SaaS CNAME 接入或无法映射时为空字符串。<br>默认值：&quot;&quot;</p>
+                     * 
+                     */
+                    std::string GetDnssecCname() const;
+
+                    /**
+                     * 设置<p>DNSSEC CNAME 地址。客户开启 DNSSEC CNAME 校验后，将业务域名 CNAME 到该地址即可接入。开关关闭、非 SaaS CNAME 接入或无法映射时为空字符串。<br>默认值：&quot;&quot;</p>
+                     * @param _dnssecCname <p>DNSSEC CNAME 地址。客户开启 DNSSEC CNAME 校验后，将业务域名 CNAME 到该地址即可接入。开关关闭、非 SaaS CNAME 接入或无法映射时为空字符串。<br>默认值：&quot;&quot;</p>
+                     * 
+                     */
+                    void SetDnssecCname(const std::string& _dnssecCname);
+
+                    /**
+                     * 判断参数 DnssecCname 是否已赋值
+                     * @return DnssecCname 是否已赋值
+                     * 
+                     */
+                    bool DnssecCnameHasBeenSet() const;
+
+                    /**
                      * 获取<p>是否开启长连接。<br>0： 短连接<br>1： 长连接</p>
                      * @return IsKeepAlive <p>是否开启长连接。<br>0： 短连接<br>1： 长连接</p>
                      * 
@@ -1493,6 +1514,12 @@ namespace TencentCloud
                      */
                     std::string m_cname;
                     bool m_cnameHasBeenSet;
+
+                    /**
+                     * <p>DNSSEC CNAME 地址。客户开启 DNSSEC CNAME 校验后，将业务域名 CNAME 到该地址即可接入。开关关闭、非 SaaS CNAME 接入或无法映射时为空字符串。<br>默认值：&quot;&quot;</p>
+                     */
+                    std::string m_dnssecCname;
+                    bool m_dnssecCnameHasBeenSet;
 
                     /**
                      * <p>是否开启长连接。<br>0： 短连接<br>1： 长连接</p>

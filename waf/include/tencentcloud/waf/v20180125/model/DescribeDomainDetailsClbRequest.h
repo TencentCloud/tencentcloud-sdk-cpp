@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
+                     * 获取<p>域名</p>
+                     * @return Domain <p>域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-                     * @param _domain 域名
+                     * 设置<p>域名</p>
+                     * @param _domain <p>域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名id
-                     * @return DomainId 域名id
+                     * 获取<p>域名id</p>
+                     * @return DomainId <p>域名id</p>
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置域名id
-                     * @param _domainId 域名id
+                     * 设置<p>域名id</p>
+                     * @param _domainId <p>域名id</p>
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取<p>实例id</p>
+                     * @return InstanceId <p>实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置<p>实例id</p>
+                     * @param _instanceId <p>实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名
+                     * <p>域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名id
+                     * <p>域名id</p>
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 实例id
+                     * <p>实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

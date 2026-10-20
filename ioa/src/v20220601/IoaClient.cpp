@@ -590,6 +590,106 @@ IoaClient::DeleteAccountGroupResourcesOutcomeCallable IoaClient::DeleteAccountGr
     return prom->get_future();
 }
 
+IoaClient::DeleteDeliveryServerOutcome IoaClient::DeleteDeliveryServer(const DeleteDeliveryServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeliveryServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeliveryServerResponse rsp = DeleteDeliveryServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeliveryServerOutcome(rsp);
+        else
+            return DeleteDeliveryServerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeliveryServerOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DeleteDeliveryServerAsync(const DeleteDeliveryServerRequest& request, const DeleteDeliveryServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDeliveryServerRequest&;
+    using Resp = DeleteDeliveryServerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeliveryServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DeleteDeliveryServerOutcomeCallable IoaClient::DeleteDeliveryServerCallable(const DeleteDeliveryServerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDeliveryServerOutcome>>();
+    DeleteDeliveryServerAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DeleteDeliveryServerRequest&,
+        DeleteDeliveryServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::DeleteDeliveryStrategyOutcome IoaClient::DeleteDeliveryStrategy(const DeleteDeliveryStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeliveryStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeliveryStrategyResponse rsp = DeleteDeliveryStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeliveryStrategyOutcome(rsp);
+        else
+            return DeleteDeliveryStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeliveryStrategyOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DeleteDeliveryStrategyAsync(const DeleteDeliveryStrategyRequest& request, const DeleteDeliveryStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteDeliveryStrategyRequest&;
+    using Resp = DeleteDeliveryStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteDeliveryStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DeleteDeliveryStrategyOutcomeCallable IoaClient::DeleteDeliveryStrategyCallable(const DeleteDeliveryStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteDeliveryStrategyOutcome>>();
+    DeleteDeliveryStrategyAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DeleteDeliveryStrategyRequest&,
+        DeleteDeliveryStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::DeleteDeviceVirtualGroupOutcome IoaClient::DeleteDeviceVirtualGroup(const DeleteDeviceVirtualGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDeviceVirtualGroup");
@@ -1190,6 +1290,106 @@ IoaClient::DescribeDLPFileDetectTaskResultOutcomeCallable IoaClient::DescribeDLP
     return prom->get_future();
 }
 
+IoaClient::DescribeDeliveryServerOutcome IoaClient::DescribeDeliveryServer(const DescribeDeliveryServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeliveryServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeliveryServerResponse rsp = DescribeDeliveryServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeliveryServerOutcome(rsp);
+        else
+            return DescribeDeliveryServerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeliveryServerOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDeliveryServerAsync(const DescribeDeliveryServerRequest& request, const DescribeDeliveryServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeliveryServerRequest&;
+    using Resp = DescribeDeliveryServerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeliveryServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeDeliveryServerOutcomeCallable IoaClient::DescribeDeliveryServerCallable(const DescribeDeliveryServerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeliveryServerOutcome>>();
+    DescribeDeliveryServerAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDeliveryServerRequest&,
+        DescribeDeliveryServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::DescribeDeliveryStrategyOutcome IoaClient::DescribeDeliveryStrategy(const DescribeDeliveryStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeliveryStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeliveryStrategyResponse rsp = DescribeDeliveryStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeliveryStrategyOutcome(rsp);
+        else
+            return DescribeDeliveryStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeliveryStrategyOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeDeliveryStrategyAsync(const DescribeDeliveryStrategyRequest& request, const DescribeDeliveryStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeliveryStrategyRequest&;
+    using Resp = DescribeDeliveryStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeliveryStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribeDeliveryStrategyOutcomeCallable IoaClient::DescribeDeliveryStrategyCallable(const DescribeDeliveryStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeliveryStrategyOutcome>>();
+    DescribeDeliveryStrategyAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribeDeliveryStrategyRequest&,
+        DescribeDeliveryStrategyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IoaClient::DescribeDeviceChildGroupsOutcome IoaClient::DescribeDeviceChildGroups(const DescribeDeviceChildGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDeviceChildGroups");
@@ -1682,6 +1882,56 @@ IoaClient::DescribeProfileFieldsMenuOutcomeCallable IoaClient::DescribeProfileFi
         const IoaClient*,
         const DescribeProfileFieldsMenuRequest&,
         DescribeProfileFieldsMenuOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::DescribePublicEncryptKeyOutcome IoaClient::DescribePublicEncryptKey(const DescribePublicEncryptKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicEncryptKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicEncryptKeyResponse rsp = DescribePublicEncryptKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicEncryptKeyOutcome(rsp);
+        else
+            return DescribePublicEncryptKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicEncryptKeyOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribePublicEncryptKeyAsync(const DescribePublicEncryptKeyRequest& request, const DescribePublicEncryptKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePublicEncryptKeyRequest&;
+    using Resp = DescribePublicEncryptKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePublicEncryptKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::DescribePublicEncryptKeyOutcomeCallable IoaClient::DescribePublicEncryptKeyCallable(const DescribePublicEncryptKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePublicEncryptKeyOutcome>>();
+    DescribePublicEncryptKeyAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const DescribePublicEncryptKeyRequest&,
+        DescribePublicEncryptKeyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2432,6 +2682,106 @@ IoaClient::ModifyCompanyDirectoryConfigOutcomeCallable IoaClient::ModifyCompanyD
         const IoaClient*,
         const ModifyCompanyDirectoryConfigRequest&,
         ModifyCompanyDirectoryConfigOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::ModifyDeliveryServerOutcome IoaClient::ModifyDeliveryServer(const ModifyDeliveryServerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeliveryServer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeliveryServerResponse rsp = ModifyDeliveryServerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeliveryServerOutcome(rsp);
+        else
+            return ModifyDeliveryServerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeliveryServerOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::ModifyDeliveryServerAsync(const ModifyDeliveryServerRequest& request, const ModifyDeliveryServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDeliveryServerRequest&;
+    using Resp = ModifyDeliveryServerResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeliveryServer", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::ModifyDeliveryServerOutcomeCallable IoaClient::ModifyDeliveryServerCallable(const ModifyDeliveryServerRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDeliveryServerOutcome>>();
+    ModifyDeliveryServerAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const ModifyDeliveryServerRequest&,
+        ModifyDeliveryServerOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IoaClient::ModifyDeliveryStrategyOutcome IoaClient::ModifyDeliveryStrategy(const ModifyDeliveryStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeliveryStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeliveryStrategyResponse rsp = ModifyDeliveryStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeliveryStrategyOutcome(rsp);
+        else
+            return ModifyDeliveryStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeliveryStrategyOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::ModifyDeliveryStrategyAsync(const ModifyDeliveryStrategyRequest& request, const ModifyDeliveryStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDeliveryStrategyRequest&;
+    using Resp = ModifyDeliveryStrategyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDeliveryStrategy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IoaClient::ModifyDeliveryStrategyOutcomeCallable IoaClient::ModifyDeliveryStrategyCallable(const ModifyDeliveryStrategyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDeliveryStrategyOutcome>>();
+    ModifyDeliveryStrategyAsync(
+    request,
+    [prom](
+        const IoaClient*,
+        const ModifyDeliveryStrategyRequest&,
+        ModifyDeliveryStrategyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

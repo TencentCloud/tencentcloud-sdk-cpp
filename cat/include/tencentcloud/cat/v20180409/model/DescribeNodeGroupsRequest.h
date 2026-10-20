@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点类型。0: 全部 1: IDC 2: LastMile 3: Mobile，不填默认为0
-                     * @return NodeType 节点类型。0: 全部 1: IDC 2: LastMile 3: Mobile，不填默认为0
+                     * 获取<p>节点类型。0: 全部 1: IDC 2: LastMile 3: Mobile，不填默认为0</p>
+                     * @return NodeType <p>节点类型。0: 全部 1: IDC 2: LastMile 3: Mobile，不填默认为0</p>
                      * 
                      */
                     std::vector<int64_t> GetNodeType() const;
 
                     /**
-                     * 设置节点类型。0: 全部 1: IDC 2: LastMile 3: Mobile，不填默认为0
-                     * @param _nodeType 节点类型。0: 全部 1: IDC 2: LastMile 3: Mobile，不填默认为0
+                     * 设置<p>节点类型。0: 全部 1: IDC 2: LastMile 3: Mobile，不填默认为0</p>
+                     * @param _nodeType <p>节点类型。0: 全部 1: IDC 2: LastMile 3: Mobile，不填默认为0</p>
                      * 
                      */
                     void SetNodeType(const std::vector<int64_t>& _nodeType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点分类。0: 全部 1: PC 2：Mobile，不填默认为0。PC分类包括IDC和LM节点类型，Mobile分类包括Mobile节点类型。与NodeType参数取交集。
-                     * @return TaskCategory 节点分类。0: 全部 1: PC 2：Mobile，不填默认为0。PC分类包括IDC和LM节点类型，Mobile分类包括Mobile节点类型。与NodeType参数取交集。
+                     * 获取<p>节点分类。0: 全部 1: PC 2：Mobile，不填默认为0。PC分类包括IDC和LM节点类型，Mobile分类包括Mobile节点类型。与NodeType参数取交集。</p>
+                     * @return TaskCategory <p>节点分类。0: 全部 1: PC 2：Mobile，不填默认为0。PC分类包括IDC和LM节点类型，Mobile分类包括Mobile节点类型。与NodeType参数取交集。</p>
                      * 
                      */
                     int64_t GetTaskCategory() const;
 
                     /**
-                     * 设置节点分类。0: 全部 1: PC 2：Mobile，不填默认为0。PC分类包括IDC和LM节点类型，Mobile分类包括Mobile节点类型。与NodeType参数取交集。
-                     * @param _taskCategory 节点分类。0: 全部 1: PC 2：Mobile，不填默认为0。PC分类包括IDC和LM节点类型，Mobile分类包括Mobile节点类型。与NodeType参数取交集。
+                     * 设置<p>节点分类。0: 全部 1: PC 2：Mobile，不填默认为0。PC分类包括IDC和LM节点类型，Mobile分类包括Mobile节点类型。与NodeType参数取交集。</p>
+                     * @param _taskCategory <p>节点分类。0: 全部 1: PC 2：Mobile，不填默认为0。PC分类包括IDC和LM节点类型，Mobile分类包括Mobile节点类型。与NodeType参数取交集。</p>
                      * 
                      */
                     void SetTaskCategory(const int64_t& _taskCategory);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TaskCategoryHasBeenSet() const;
 
                     /**
-                     * 获取IP类型。0: 全部 1: IPv4 2: IPv6，不填默认为0
-                     * @return IPType IP类型。0: 全部 1: IPv4 2: IPv6，不填默认为0
+                     * 获取<p>IP类型。0: 全部 1: IPv4 2: IPv6，不填默认为0</p>
+                     * @return IPType <p>IP类型。0: 全部 1: IPv4 2: IPv6，不填默认为0</p>
                      * 
                      */
                     int64_t GetIPType() const;
 
                     /**
-                     * 设置IP类型。0: 全部 1: IPv4 2: IPv6，不填默认为0
-                     * @param _iPType IP类型。0: 全部 1: IPv4 2: IPv6，不填默认为0
+                     * 设置<p>IP类型。0: 全部 1: IPv4 2: IPv6，不填默认为0</p>
+                     * @param _iPType <p>IP类型。0: 全部 1: IPv4 2: IPv6，不填默认为0</p>
                      * 
                      */
                     void SetIPType(const int64_t& _iPType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IPTypeHasBeenSet() const;
 
                     /**
-                     * 获取拨测点描述关键词。
-                     * @return Name 拨测点描述关键词。
+                     * 获取<p>拨测点描述关键词。</p>
+                     * @return Name <p>拨测点描述关键词。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置拨测点描述关键词。
-                     * @param _name 拨测点描述关键词。
+                     * 设置<p>拨测点描述关键词。</p>
+                     * @param _name <p>拨测点描述关键词。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取地域ID。0: 精选拨测点 1: 国内 2: 港澳台 3: 亚太 4: 欧洲与美洲 5: 非洲与大洋洲，不填默认为0
-                     * @return RegionID 地域ID。0: 精选拨测点 1: 国内 2: 港澳台 3: 亚太 4: 欧洲与美洲 5: 非洲与大洋洲，不填默认为0
+                     * 获取<p>地域ID。0: 精选拨测点 1: 国内 2: 港澳台 3: 亚太 4: 欧洲与美洲 5: 非洲与大洋洲，不填默认为0</p>
+                     * @return RegionID <p>地域ID。0: 精选拨测点 1: 国内 2: 港澳台 3: 亚太 4: 欧洲与美洲 5: 非洲与大洋洲，不填默认为0</p>
                      * 
                      */
                     int64_t GetRegionID() const;
 
                     /**
-                     * 设置地域ID。0: 精选拨测点 1: 国内 2: 港澳台 3: 亚太 4: 欧洲与美洲 5: 非洲与大洋洲，不填默认为0
-                     * @param _regionID 地域ID。0: 精选拨测点 1: 国内 2: 港澳台 3: 亚太 4: 欧洲与美洲 5: 非洲与大洋洲，不填默认为0
+                     * 设置<p>地域ID。0: 精选拨测点 1: 国内 2: 港澳台 3: 亚太 4: 欧洲与美洲 5: 非洲与大洋洲，不填默认为0</p>
+                     * @param _regionID <p>地域ID。0: 精选拨测点 1: 国内 2: 港澳台 3: 亚太 4: 欧洲与美洲 5: 非洲与大洋洲，不填默认为0</p>
                      * 
                      */
                     void SetRegionID(const int64_t& _regionID);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool RegionIDHasBeenSet() const;
 
                     /**
-                     * 获取省份或国家ID。0表示全部，不填默认为0
-                     * @return DistrictID 省份或国家ID。0表示全部，不填默认为0
+                     * 获取<p>省份或国家ID。0表示全部，不填默认为0</p>
+                     * @return DistrictID <p>省份或国家ID。0表示全部，不填默认为0</p>
                      * 
                      */
                     int64_t GetDistrictID() const;
 
                     /**
-                     * 设置省份或国家ID。0表示全部，不填默认为0
-                     * @param _districtID 省份或国家ID。0表示全部，不填默认为0
+                     * 设置<p>省份或国家ID。0表示全部，不填默认为0</p>
+                     * @param _districtID <p>省份或国家ID。0表示全部，不填默认为0</p>
                      * 
                      */
                     void SetDistrictID(const int64_t& _districtID);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool DistrictIDHasBeenSet() const;
 
                     /**
-                     * 获取运营商ID。0: 全部 1: 中国电信 2: 中国联通 3: 中国移动 99: 其他，不填默认为0
-                     * @return NetServiceID 运营商ID。0: 全部 1: 中国电信 2: 中国联通 3: 中国移动 99: 其他，不填默认为0
+                     * 获取<p>运营商ID。0: 全部 1: 中国电信 2: 中国联通 3: 中国移动 99: 其他，不填默认为0</p>
+                     * @return NetServiceID <p>运营商ID。0: 全部 1: 中国电信 2: 中国联通 3: 中国移动 99: 其他，不填默认为0</p>
                      * 
                      */
                     int64_t GetNetServiceID() const;
 
                     /**
-                     * 设置运营商ID。0: 全部 1: 中国电信 2: 中国联通 3: 中国移动 99: 其他，不填默认为0
-                     * @param _netServiceID 运营商ID。0: 全部 1: 中国电信 2: 中国联通 3: 中国移动 99: 其他，不填默认为0
+                     * 设置<p>运营商ID。0: 全部 1: 中国电信 2: 中国联通 3: 中国移动 99: 其他，不填默认为0</p>
+                     * @param _netServiceID <p>运营商ID。0: 全部 1: 中国电信 2: 中国联通 3: 中国移动 99: 其他，不填默认为0</p>
                      * 
                      */
                     void SetNetServiceID(const int64_t& _netServiceID);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool NetServiceIDHasBeenSet() const;
 
                     /**
-                     * 获取节点组类型。0: 高级拨测点组 1: 可用性节点 2: 我的拨测点组，不填默认为0
-                     * @return NodeGroupType 节点组类型。0: 高级拨测点组 1: 可用性节点 2: 我的拨测点组，不填默认为0
+                     * 获取<p>节点组类型。0: 高级拨测点组 1: 可用性节点 2: 我的拨测点组，不填默认为0</p>
+                     * @return NodeGroupType <p>节点组类型。0: 高级拨测点组 1: 可用性节点 2: 我的拨测点组，不填默认为0</p>
                      * 
                      */
                     int64_t GetNodeGroupType() const;
 
                     /**
-                     * 设置节点组类型。0: 高级拨测点组 1: 可用性节点 2: 我的拨测点组，不填默认为0
-                     * @param _nodeGroupType 节点组类型。0: 高级拨测点组 1: 可用性节点 2: 我的拨测点组，不填默认为0
+                     * 设置<p>节点组类型。0: 高级拨测点组 1: 可用性节点 2: 我的拨测点组，不填默认为0</p>
+                     * @param _nodeGroupType <p>节点组类型。0: 高级拨测点组 1: 可用性节点 2: 我的拨测点组，不填默认为0</p>
                      * 
                      */
                     void SetNodeGroupType(const int64_t& _nodeGroupType);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool NodeGroupTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois，不填默认为0，不对任务类型做过滤
-                     * @return TaskType 任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois，不填默认为0，不对任务类型做过滤
+                     * 获取<p>任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois，不填默认为0，不对任务类型做过滤</p>
+                     * @return TaskType <p>任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois，不填默认为0，不对任务类型做过滤</p>
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois，不填默认为0，不对任务类型做过滤
-                     * @param _taskType 任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois，不填默认为0，不对任务类型做过滤
+                     * 设置<p>任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois，不填默认为0，不对任务类型做过滤</p>
+                     * @param _taskType <p>任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois，不填默认为0，不对任务类型做过滤</p>
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
-                     * @return ProbeType 测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
+                     * 获取<p>测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。</p>
+                     * @return ProbeType <p>测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。</p>
                      * 
                      */
                     uint64_t GetProbeType() const;
 
                     /**
-                     * 设置测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
-                     * @param _probeType 测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
+                     * 设置<p>测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。</p>
+                     * @param _probeType <p>测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。</p>
                      * 
                      */
                     void SetProbeType(const uint64_t& _probeType);
@@ -255,61 +255,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点类型。0: 全部 1: IDC 2: LastMile 3: Mobile，不填默认为0
+                     * <p>节点类型。0: 全部 1: IDC 2: LastMile 3: Mobile，不填默认为0</p>
                      */
                     std::vector<int64_t> m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 节点分类。0: 全部 1: PC 2：Mobile，不填默认为0。PC分类包括IDC和LM节点类型，Mobile分类包括Mobile节点类型。与NodeType参数取交集。
+                     * <p>节点分类。0: 全部 1: PC 2：Mobile，不填默认为0。PC分类包括IDC和LM节点类型，Mobile分类包括Mobile节点类型。与NodeType参数取交集。</p>
                      */
                     int64_t m_taskCategory;
                     bool m_taskCategoryHasBeenSet;
 
                     /**
-                     * IP类型。0: 全部 1: IPv4 2: IPv6，不填默认为0
+                     * <p>IP类型。0: 全部 1: IPv4 2: IPv6，不填默认为0</p>
                      */
                     int64_t m_iPType;
                     bool m_iPTypeHasBeenSet;
 
                     /**
-                     * 拨测点描述关键词。
+                     * <p>拨测点描述关键词。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 地域ID。0: 精选拨测点 1: 国内 2: 港澳台 3: 亚太 4: 欧洲与美洲 5: 非洲与大洋洲，不填默认为0
+                     * <p>地域ID。0: 精选拨测点 1: 国内 2: 港澳台 3: 亚太 4: 欧洲与美洲 5: 非洲与大洋洲，不填默认为0</p>
                      */
                     int64_t m_regionID;
                     bool m_regionIDHasBeenSet;
 
                     /**
-                     * 省份或国家ID。0表示全部，不填默认为0
+                     * <p>省份或国家ID。0表示全部，不填默认为0</p>
                      */
                     int64_t m_districtID;
                     bool m_districtIDHasBeenSet;
 
                     /**
-                     * 运营商ID。0: 全部 1: 中国电信 2: 中国联通 3: 中国移动 99: 其他，不填默认为0
+                     * <p>运营商ID。0: 全部 1: 中国电信 2: 中国联通 3: 中国移动 99: 其他，不填默认为0</p>
                      */
                     int64_t m_netServiceID;
                     bool m_netServiceIDHasBeenSet;
 
                     /**
-                     * 节点组类型。0: 高级拨测点组 1: 可用性节点 2: 我的拨测点组，不填默认为0
+                     * <p>节点组类型。0: 高级拨测点组 1: 可用性节点 2: 我的拨测点组，不填默认为0</p>
                      */
                     int64_t m_nodeGroupType;
                     bool m_nodeGroupTypeHasBeenSet;
 
                     /**
-                     * 任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois，不填默认为0，不对任务类型做过滤
+                     * <p>任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois，不填默认为0，不对任务类型做过滤</p>
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。
+                     * <p>测试类型，包含定时测试与即时测试。0-定时拨测，其它表示即时拨测。</p>
                      */
                     uint64_t m_probeType;
                     bool m_probeTypeHasBeenSet;

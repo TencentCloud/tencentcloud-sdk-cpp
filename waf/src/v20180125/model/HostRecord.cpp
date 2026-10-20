@@ -34,6 +34,7 @@ HostRecord::HostRecord() :
     m_editionHasBeenSet(false),
     m_flowModeHasBeenSet(false),
     m_clsStatusHasBeenSet(false),
+    m_apRegionHasBeenSet(false),
     m_levelHasBeenSet(false),
     m_cdcClustersHasBeenSet(false),
     m_albTypeHasBeenSet(false),
@@ -187,6 +188,19 @@ CoreInternalOutcome HostRecord::Deserialize(const rapidjson::Value &value)
         }
         m_clsStatus = value["ClsStatus"].GetUint64();
         m_clsStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApRegion") && !value["ApRegion"].IsNull())
+    {
+        if (!value["ApRegion"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HostRecord.ApRegion` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApRegion"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_apRegion.push_back((*itr).GetString());
+        }
+        m_apRegionHasBeenSet = true;
     }
 
     if (value.HasMember("Level") && !value["Level"].IsNull())
@@ -381,6 +395,19 @@ void HostRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ClsStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clsStatus, allocator);
+    }
+
+    if (m_apRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_apRegion.begin(); itr != m_apRegion.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_levelHasBeenSet)
@@ -658,6 +685,22 @@ void HostRecord::SetClsStatus(const uint64_t& _clsStatus)
 bool HostRecord::ClsStatusHasBeenSet() const
 {
     return m_clsStatusHasBeenSet;
+}
+
+vector<string> HostRecord::GetApRegion() const
+{
+    return m_apRegion;
+}
+
+void HostRecord::SetApRegion(const vector<string>& _apRegion)
+{
+    m_apRegion = _apRegion;
+    m_apRegionHasBeenSet = true;
+}
+
+bool HostRecord::ApRegionHasBeenSet() const
+{
+    return m_apRegionHasBeenSet;
 }
 
 uint64_t HostRecord::GetLevel() const

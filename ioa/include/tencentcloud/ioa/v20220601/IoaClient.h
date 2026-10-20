@@ -45,6 +45,10 @@
 #include <tencentcloud/ioa/v20220601/model/DeleteAccountGroupResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DeleteAccountGroupResourcesRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DeleteAccountGroupResourcesResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DeleteDeliveryServerRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DeleteDeliveryServerResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DeleteDeliveryStrategyRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DeleteDeliveryStrategyResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DeleteDeviceVirtualGroupRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DeleteDeviceVirtualGroupResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsRequest.h>
@@ -69,6 +73,10 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectResultResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectTaskResultRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDLPFileDetectTaskResultResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeliveryServerRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeliveryServerResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeliveryStrategyRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeDeliveryStrategyResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceChildGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceChildGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDeviceDetailListRequest.h>
@@ -89,6 +97,8 @@
 #include <tencentcloud/ioa/v20220601/model/DescribeLocalAccountsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeProfileFieldsMenuRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeProfileFieldsMenuResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribePublicEncryptKeyRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribePublicEncryptKeyResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeResourceGrantedAccountGroupsRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeResourceGrantedAccountGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeResourceGrantedAccountsRequest.h>
@@ -119,6 +129,10 @@
 #include <tencentcloud/ioa/v20220601/model/ModifyBusinessResourceResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyCompanyDirectoryConfigRequest.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyCompanyDirectoryConfigResponse.h>
+#include <tencentcloud/ioa/v20220601/model/ModifyDeliveryServerRequest.h>
+#include <tencentcloud/ioa/v20220601/model/ModifyDeliveryServerResponse.h>
+#include <tencentcloud/ioa/v20220601/model/ModifyDeliveryStrategyRequest.h>
+#include <tencentcloud/ioa/v20220601/model/ModifyDeliveryStrategyResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyDeviceTrustStatusRequest.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyDeviceTrustStatusResponse.h>
 #include <tencentcloud/ioa/v20220601/model/ModifyVirtualDeviceGroupsRequest.h>
@@ -172,6 +186,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAccountGroupResourcesResponse> DeleteAccountGroupResourcesOutcome;
                 typedef std::future<DeleteAccountGroupResourcesOutcome> DeleteAccountGroupResourcesOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DeleteAccountGroupResourcesRequest&, DeleteAccountGroupResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountGroupResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDeliveryServerResponse> DeleteDeliveryServerOutcome;
+                typedef std::future<DeleteDeliveryServerOutcome> DeleteDeliveryServerOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DeleteDeliveryServerRequest&, DeleteDeliveryServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeliveryServerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDeliveryStrategyResponse> DeleteDeliveryStrategyOutcome;
+                typedef std::future<DeleteDeliveryStrategyOutcome> DeleteDeliveryStrategyOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DeleteDeliveryStrategyRequest&, DeleteDeliveryStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeliveryStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeviceVirtualGroupResponse> DeleteDeviceVirtualGroupOutcome;
                 typedef std::future<DeleteDeviceVirtualGroupOutcome> DeleteDeviceVirtualGroupOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DeleteDeviceVirtualGroupRequest&, DeleteDeviceVirtualGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceVirtualGroupAsyncHandler;
@@ -208,6 +228,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDLPFileDetectTaskResultResponse> DescribeDLPFileDetectTaskResultOutcome;
                 typedef std::future<DescribeDLPFileDetectTaskResultOutcome> DescribeDLPFileDetectTaskResultOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDLPFileDetectTaskResultRequest&, DescribeDLPFileDetectTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDLPFileDetectTaskResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeliveryServerResponse> DescribeDeliveryServerOutcome;
+                typedef std::future<DescribeDeliveryServerOutcome> DescribeDeliveryServerOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeDeliveryServerRequest&, DescribeDeliveryServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeliveryServerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeliveryStrategyResponse> DescribeDeliveryStrategyOutcome;
+                typedef std::future<DescribeDeliveryStrategyOutcome> DescribeDeliveryStrategyOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeDeliveryStrategyRequest&, DescribeDeliveryStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeliveryStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceChildGroupsResponse> DescribeDeviceChildGroupsOutcome;
                 typedef std::future<DescribeDeviceChildGroupsOutcome> DescribeDeviceChildGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDeviceChildGroupsRequest&, DescribeDeviceChildGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceChildGroupsAsyncHandler;
@@ -238,6 +264,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProfileFieldsMenuResponse> DescribeProfileFieldsMenuOutcome;
                 typedef std::future<DescribeProfileFieldsMenuOutcome> DescribeProfileFieldsMenuOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeProfileFieldsMenuRequest&, DescribeProfileFieldsMenuOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProfileFieldsMenuAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePublicEncryptKeyResponse> DescribePublicEncryptKeyOutcome;
+                typedef std::future<DescribePublicEncryptKeyOutcome> DescribePublicEncryptKeyOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribePublicEncryptKeyRequest&, DescribePublicEncryptKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicEncryptKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceGrantedAccountGroupsResponse> DescribeResourceGrantedAccountGroupsOutcome;
                 typedef std::future<DescribeResourceGrantedAccountGroupsOutcome> DescribeResourceGrantedAccountGroupsOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeResourceGrantedAccountGroupsRequest&, DescribeResourceGrantedAccountGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGrantedAccountGroupsAsyncHandler;
@@ -283,6 +312,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCompanyDirectoryConfigResponse> ModifyCompanyDirectoryConfigOutcome;
                 typedef std::future<ModifyCompanyDirectoryConfigOutcome> ModifyCompanyDirectoryConfigOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::ModifyCompanyDirectoryConfigRequest&, ModifyCompanyDirectoryConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCompanyDirectoryConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDeliveryServerResponse> ModifyDeliveryServerOutcome;
+                typedef std::future<ModifyDeliveryServerOutcome> ModifyDeliveryServerOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::ModifyDeliveryServerRequest&, ModifyDeliveryServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeliveryServerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDeliveryStrategyResponse> ModifyDeliveryStrategyOutcome;
+                typedef std::future<ModifyDeliveryStrategyOutcome> ModifyDeliveryStrategyOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::ModifyDeliveryStrategyRequest&, ModifyDeliveryStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeliveryStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDeviceTrustStatusResponse> ModifyDeviceTrustStatusOutcome;
                 typedef std::future<ModifyDeviceTrustStatusOutcome> ModifyDeviceTrustStatusOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::ModifyDeviceTrustStatusRequest&, ModifyDeviceTrustStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceTrustStatusAsyncHandler;
@@ -395,6 +430,24 @@ namespace TencentCloud
                 DeleteAccountGroupResourcesOutcomeCallable DeleteAccountGroupResourcesCallable(const Model::DeleteAccountGroupResourcesRequest& request);
 
                 /**
+                 *删除转发服务器，私有化调用path为：capi/LogCenter/DeliveryLog/DeleteDeliveryServer
+                 * @param req DeleteDeliveryServerRequest
+                 * @return DeleteDeliveryServerOutcome
+                 */
+                DeleteDeliveryServerOutcome DeleteDeliveryServer(const Model::DeleteDeliveryServerRequest &request);
+                void DeleteDeliveryServerAsync(const Model::DeleteDeliveryServerRequest& request, const DeleteDeliveryServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDeliveryServerOutcomeCallable DeleteDeliveryServerCallable(const Model::DeleteDeliveryServerRequest& request);
+
+                /**
+                 *删除转发策略，私有化调用path为：capi/LogCenter/DeliveryLog/DeleteDeliveryStrategy
+                 * @param req DeleteDeliveryStrategyRequest
+                 * @return DeleteDeliveryStrategyOutcome
+                 */
+                DeleteDeliveryStrategyOutcome DeleteDeliveryStrategy(const Model::DeleteDeliveryStrategyRequest &request);
+                void DeleteDeliveryStrategyAsync(const Model::DeleteDeliveryStrategyRequest& request, const DeleteDeliveryStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDeliveryStrategyOutcomeCallable DeleteDeliveryStrategyCallable(const Model::DeleteDeliveryStrategyRequest& request);
+
+                /**
                  *删除终端自定义分组，私有化调用path为：/capi/Assets/Device/DeleteDeviceVirtualGroup
                  * @param req DeleteDeviceVirtualGroupRequest
                  * @return DeleteDeviceVirtualGroupOutcome
@@ -503,6 +556,24 @@ namespace TencentCloud
                 DescribeDLPFileDetectTaskResultOutcomeCallable DescribeDLPFileDetectTaskResultCallable(const Model::DescribeDLPFileDetectTaskResultRequest& request);
 
                 /**
+                 *转发服务器详情，私有化调用path为：capi/LogCenter/DescribeDeliveryServer
+                 * @param req DescribeDeliveryServerRequest
+                 * @return DescribeDeliveryServerOutcome
+                 */
+                DescribeDeliveryServerOutcome DescribeDeliveryServer(const Model::DescribeDeliveryServerRequest &request);
+                void DescribeDeliveryServerAsync(const Model::DescribeDeliveryServerRequest& request, const DescribeDeliveryServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeliveryServerOutcomeCallable DescribeDeliveryServerCallable(const Model::DescribeDeliveryServerRequest& request);
+
+                /**
+                 *转发策略详情，私有化调用path为：capi/LogCenter/DeliveryLog/DescribeDeliveryStrategy
+                 * @param req DescribeDeliveryStrategyRequest
+                 * @return DescribeDeliveryStrategyOutcome
+                 */
+                DescribeDeliveryStrategyOutcome DescribeDeliveryStrategy(const Model::DescribeDeliveryStrategyRequest &request);
+                void DescribeDeliveryStrategyAsync(const Model::DescribeDeliveryStrategyRequest& request, const DescribeDeliveryStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeliveryStrategyOutcomeCallable DescribeDeliveryStrategyCallable(const Model::DescribeDeliveryStrategyRequest& request);
+
+                /**
                  *查询设备组子分组详情，私有化调用path为：capi/Assets/Device/DescribeDeviceChildGroups
                  * @param req DescribeDeviceChildGroupsRequest
                  * @return DescribeDeviceChildGroupsOutcome
@@ -593,6 +664,15 @@ namespace TencentCloud
                 DescribeProfileFieldsMenuOutcome DescribeProfileFieldsMenu(const Model::DescribeProfileFieldsMenuRequest &request);
                 void DescribeProfileFieldsMenuAsync(const Model::DescribeProfileFieldsMenuRequest& request, const DescribeProfileFieldsMenuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProfileFieldsMenuOutcomeCallable DescribeProfileFieldsMenuCallable(const Model::DescribeProfileFieldsMenuRequest& request);
+
+                /**
+                 *获取用于RSA加密的公钥，对敏感数据进行加密传输。
+                 * @param req DescribePublicEncryptKeyRequest
+                 * @return DescribePublicEncryptKeyOutcome
+                 */
+                DescribePublicEncryptKeyOutcome DescribePublicEncryptKey(const Model::DescribePublicEncryptKeyRequest &request);
+                void DescribePublicEncryptKeyAsync(const Model::DescribePublicEncryptKeyRequest& request, const DescribePublicEncryptKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicEncryptKeyOutcomeCallable DescribePublicEncryptKeyCallable(const Model::DescribePublicEncryptKeyRequest& request);
 
                 /**
                  *列表账户组直接关联的资源，私有化调用path为：capi/NGN/DescribeResourceGrantedAccounts
@@ -728,6 +808,24 @@ namespace TencentCloud
                 ModifyCompanyDirectoryConfigOutcome ModifyCompanyDirectoryConfig(const Model::ModifyCompanyDirectoryConfigRequest &request);
                 void ModifyCompanyDirectoryConfigAsync(const Model::ModifyCompanyDirectoryConfigRequest& request, const ModifyCompanyDirectoryConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCompanyDirectoryConfigOutcomeCallable ModifyCompanyDirectoryConfigCallable(const Model::ModifyCompanyDirectoryConfigRequest& request);
+
+                /**
+                 *创建或编辑日志转发服务器，私有化调用path为：capi/LogCenter/DeliveryLog/ModifyDeliveryServer
+                 * @param req ModifyDeliveryServerRequest
+                 * @return ModifyDeliveryServerOutcome
+                 */
+                ModifyDeliveryServerOutcome ModifyDeliveryServer(const Model::ModifyDeliveryServerRequest &request);
+                void ModifyDeliveryServerAsync(const Model::ModifyDeliveryServerRequest& request, const ModifyDeliveryServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDeliveryServerOutcomeCallable ModifyDeliveryServerCallable(const Model::ModifyDeliveryServerRequest& request);
+
+                /**
+                 *创建或编辑日志转发策略，私有化调用path为：capi/LogCenter/DeliveryLog/ModifyDeliveryStrategy
+                 * @param req ModifyDeliveryStrategyRequest
+                 * @return ModifyDeliveryStrategyOutcome
+                 */
+                ModifyDeliveryStrategyOutcome ModifyDeliveryStrategy(const Model::ModifyDeliveryStrategyRequest &request);
+                void ModifyDeliveryStrategyAsync(const Model::ModifyDeliveryStrategyRequest& request, const ModifyDeliveryStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDeliveryStrategyOutcomeCallable ModifyDeliveryStrategyCallable(const Model::ModifyDeliveryStrategyRequest& request);
 
                 /**
                  *给接入设备加黑加白,私有化调用path为：capi/NGN/ModifyDeviceTrustStatus

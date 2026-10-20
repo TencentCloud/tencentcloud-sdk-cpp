@@ -35,7 +35,9 @@ DescribeLLMContentSecCheckRequest::DescribeLLMContentSecCheckRequest() :
     m_toolArgsHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_intentContentHasBeenSet(false),
-    m_clientIPHasBeenSet(false)
+    m_clientIPHasBeenSet(false),
+    m_historyHasBeenSet(false),
+    m_urlsHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,32 @@ string DescribeLLMContentSecCheckRequest::ToJsonString() const
         string key = "ClientIP";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_historyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "History";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_history.begin(); itr != m_history.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_urlsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Urls";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_urls.begin(); itr != m_urls.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -365,6 +393,38 @@ void DescribeLLMContentSecCheckRequest::SetClientIP(const string& _clientIP)
 bool DescribeLLMContentSecCheckRequest::ClientIPHasBeenSet() const
 {
     return m_clientIPHasBeenSet;
+}
+
+vector<string> DescribeLLMContentSecCheckRequest::GetHistory() const
+{
+    return m_history;
+}
+
+void DescribeLLMContentSecCheckRequest::SetHistory(const vector<string>& _history)
+{
+    m_history = _history;
+    m_historyHasBeenSet = true;
+}
+
+bool DescribeLLMContentSecCheckRequest::HistoryHasBeenSet() const
+{
+    return m_historyHasBeenSet;
+}
+
+vector<string> DescribeLLMContentSecCheckRequest::GetUrls() const
+{
+    return m_urls;
+}
+
+void DescribeLLMContentSecCheckRequest::SetUrls(const vector<string>& _urls)
+{
+    m_urls = _urls;
+    m_urlsHasBeenSet = true;
+}
+
+bool DescribeLLMContentSecCheckRequest::UrlsHasBeenSet() const
+{
+    return m_urlsHasBeenSet;
 }
 
 

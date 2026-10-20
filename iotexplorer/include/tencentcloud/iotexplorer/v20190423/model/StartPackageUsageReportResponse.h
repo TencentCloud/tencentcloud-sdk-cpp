@@ -1,0 +1,74 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_STARTPACKAGEUSAGEREPORTRESPONSE_H_
+#define TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_STARTPACKAGEUSAGEREPORTRESPONSE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Iotexplorer
+    {
+        namespace V20190423
+        {
+            namespace Model
+            {
+                /**
+                * StartPackageUsageReport返回参数结构体
+                */
+                class StartPackageUsageReportResponse : public AbstractModel
+                {
+                public:
+                    StartPackageUsageReportResponse();
+                    ~StartPackageUsageReportResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取<p>启停后状态（0 停用 / 1 启用）</p>
+                     * @return Status <p>启停后状态（0 停用 / 1 启用）</p>
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>启停后状态（0 停用 / 1 启用）</p>
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_STARTPACKAGEUSAGEREPORTRESPONSE_H_

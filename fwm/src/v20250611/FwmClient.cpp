@@ -1340,6 +1340,56 @@ FwmClient::DescribeRiskListOutcomeCallable FwmClient::DescribeRiskListCallable(c
     return prom->get_future();
 }
 
+FwmClient::DescribeRuleGroupsOutcome FwmClient::DescribeRuleGroups(const DescribeRuleGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRuleGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRuleGroupsResponse rsp = DescribeRuleGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRuleGroupsOutcome(rsp);
+        else
+            return DescribeRuleGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRuleGroupsOutcome(outcome.GetError());
+    }
+}
+
+void FwmClient::DescribeRuleGroupsAsync(const DescribeRuleGroupsRequest& request, const DescribeRuleGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRuleGroupsRequest&;
+    using Resp = DescribeRuleGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRuleGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FwmClient::DescribeRuleGroupsOutcomeCallable FwmClient::DescribeRuleGroupsCallable(const DescribeRuleGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRuleGroupsOutcome>>();
+    DescribeRuleGroupsAsync(
+    request,
+    [prom](
+        const FwmClient*,
+        const DescribeRuleGroupsRequest&,
+        DescribeRuleGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 FwmClient::DescribeSecurityGroupRuleOutcome FwmClient::DescribeSecurityGroupRule(const DescribeSecurityGroupRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityGroupRule");

@@ -1012,15 +1012,15 @@ namespace TencentCloud
                     bool GmSSLIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源</p>
-                     * @return UpstreamPolicy <p>回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源</p>
+                     * 获取<p>回源策略。<br>枚举值：<br>0：负载均衡回源（默认值）<br>1：分流回源<br>2：五元组精准回源，每个服务端口通过 UpstreamIps 单独配置回源 IP。仅高级版及以上可用，且仅支持 IP 回源</p>
+                     * @return UpstreamPolicy <p>回源策略。<br>枚举值：<br>0：负载均衡回源（默认值）<br>1：分流回源<br>2：五元组精准回源，每个服务端口通过 UpstreamIps 单独配置回源 IP。仅高级版及以上可用，且仅支持 IP 回源</p>
                      * 
                      */
                     int64_t GetUpstreamPolicy() const;
 
                     /**
-                     * 设置<p>回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源</p>
-                     * @param _upstreamPolicy <p>回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源</p>
+                     * 设置<p>回源策略。<br>枚举值：<br>0：负载均衡回源（默认值）<br>1：分流回源<br>2：五元组精准回源，每个服务端口通过 UpstreamIps 单独配置回源 IP。仅高级版及以上可用，且仅支持 IP 回源</p>
+                     * @param _upstreamPolicy <p>回源策略。<br>枚举值：<br>0：负载均衡回源（默认值）<br>1：分流回源<br>2：五元组精准回源，每个服务端口通过 UpstreamIps 单独配置回源 IP。仅高级版及以上可用，且仅支持 IP 回源</p>
                      * 
                      */
                     void SetUpstreamPolicy(const int64_t& _upstreamPolicy);
@@ -1395,7 +1395,7 @@ namespace TencentCloud
                     bool m_gmSSLIdHasBeenSet;
 
                     /**
-                     * <p>回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源</p>
+                     * <p>回源策略。<br>枚举值：<br>0：负载均衡回源（默认值）<br>1：分流回源<br>2：五元组精准回源，每个服务端口通过 UpstreamIps 单独配置回源 IP。仅高级版及以上可用，且仅支持 IP 回源</p>
                      */
                     int64_t m_upstreamPolicy;
                     bool m_upstreamPolicyHasBeenSet;

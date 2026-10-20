@@ -28,10 +28,12 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_instanceIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_instanceStatusHasBeenSet(false),
+    m_statusDescHasBeenSet(false),
     m_instanceStatusDescHasBeenSet(false),
-    m_instanceCpuHasBeenSet(false),
     m_cpuHasBeenSet(false),
+    m_instanceCpuHasBeenSet(false),
     m_minCpuHasBeenSet(false),
     m_maxCpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
@@ -42,6 +44,7 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_maintainDurationHasBeenSet(false),
     m_maintainWeekDaysHasBeenSet(false),
     m_instanceTasksHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false),
     m_instanceDeviceTypeHasBeenSet(false),
     m_instanceStorageTypeHasBeenSet(false),
     m_dbModeHasBeenSet(false),
@@ -52,8 +55,6 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_regionHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_physicalZoneHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusDescHasBeenSet(false),
     m_dbTypeHasBeenSet(false),
     m_dbVersionHasBeenSet(false),
     m_storageHasBeenSet(false),
@@ -82,7 +83,6 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_isFreezeHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_instanceAbilityHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false),
     m_gdnIdHasBeenSet(false)
 {
 }
@@ -162,6 +162,16 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
     if (value.HasMember("InstanceStatus") && !value["InstanceStatus"].IsNull())
     {
         if (!value["InstanceStatus"].IsString())
@@ -170,6 +180,16 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         }
         m_instanceStatus = string(value["InstanceStatus"].GetString());
         m_instanceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("StatusDesc") && !value["StatusDesc"].IsNull())
+    {
+        if (!value["StatusDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusDesc = string(value["StatusDesc"].GetString());
+        m_statusDescHasBeenSet = true;
     }
 
     if (value.HasMember("InstanceStatusDesc") && !value["InstanceStatusDesc"].IsNull())
@@ -182,16 +202,6 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_instanceStatusDescHasBeenSet = true;
     }
 
-    if (value.HasMember("InstanceCpu") && !value["InstanceCpu"].IsNull())
-    {
-        if (!value["InstanceCpu"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceCpu` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_instanceCpu = value["InstanceCpu"].GetInt64();
-        m_instanceCpuHasBeenSet = true;
-    }
-
     if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
     {
         if (!value["Cpu"].IsInt64())
@@ -200,6 +210,16 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         }
         m_cpu = value["Cpu"].GetInt64();
         m_cpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceCpu") && !value["InstanceCpu"].IsNull())
+    {
+        if (!value["InstanceCpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceCpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceCpu = value["InstanceCpu"].GetInt64();
+        m_instanceCpuHasBeenSet = true;
     }
 
     if (value.HasMember("MinCpu") && !value["MinCpu"].IsNull())
@@ -315,6 +335,16 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_instanceTasksHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceType") && !value["DeviceType"].IsNull())
+    {
+        if (!value["DeviceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceType = string(value["DeviceType"].GetString());
+        m_deviceTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("InstanceDeviceType") && !value["InstanceDeviceType"].IsNull())
     {
         if (!value["InstanceDeviceType"].IsString())
@@ -423,26 +453,6 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         }
         m_physicalZone = string(value["PhysicalZone"].GetString());
         m_physicalZoneHasBeenSet = true;
-    }
-
-    if (value.HasMember("Status") && !value["Status"].IsNull())
-    {
-        if (!value["Status"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = string(value["Status"].GetString());
-        m_statusHasBeenSet = true;
-    }
-
-    if (value.HasMember("StatusDesc") && !value["StatusDesc"].IsNull())
-    {
-        if (!value["StatusDesc"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.StatusDesc` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_statusDesc = string(value["StatusDesc"].GetString());
-        m_statusDescHasBeenSet = true;
     }
 
     if (value.HasMember("DbType") && !value["DbType"].IsNull())
@@ -762,16 +772,6 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_instanceAbilityHasBeenSet = true;
     }
 
-    if (value.HasMember("DeviceType") && !value["DeviceType"].IsNull())
-    {
-        if (!value["DeviceType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_deviceType = string(value["DeviceType"].GetString());
-        m_deviceTypeHasBeenSet = true;
-    }
-
     if (value.HasMember("GdnId") && !value["GdnId"].IsNull())
     {
         if (!value["GdnId"].IsString())
@@ -845,12 +845,28 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_instanceStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceStatusDescHasBeenSet)
@@ -861,20 +877,20 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_instanceStatusDesc.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_instanceCpuHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceCpu";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_instanceCpu, allocator);
-    }
-
     if (m_cpuHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_instanceCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceCpu, allocator);
     }
 
     if (m_minCpuHasBeenSet)
@@ -969,6 +985,14 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         }
     }
 
+    if (m_deviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_instanceDeviceTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1053,22 +1077,6 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "PhysicalZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_physicalZone.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_statusDescHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StatusDesc";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_statusDesc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dbTypeHasBeenSet)
@@ -1317,14 +1325,6 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         m_instanceAbility.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_deviceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DeviceType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_gdnIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -1448,6 +1448,22 @@ bool ClusterInstanceDetail::InstanceTypeHasBeenSet() const
     return m_instanceTypeHasBeenSet;
 }
 
+string ClusterInstanceDetail::GetStatus() const
+{
+    return m_status;
+}
+
+void ClusterInstanceDetail::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
 string ClusterInstanceDetail::GetInstanceStatus() const
 {
     return m_instanceStatus;
@@ -1462,6 +1478,22 @@ void ClusterInstanceDetail::SetInstanceStatus(const string& _instanceStatus)
 bool ClusterInstanceDetail::InstanceStatusHasBeenSet() const
 {
     return m_instanceStatusHasBeenSet;
+}
+
+string ClusterInstanceDetail::GetStatusDesc() const
+{
+    return m_statusDesc;
+}
+
+void ClusterInstanceDetail::SetStatusDesc(const string& _statusDesc)
+{
+    m_statusDesc = _statusDesc;
+    m_statusDescHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::StatusDescHasBeenSet() const
+{
+    return m_statusDescHasBeenSet;
 }
 
 string ClusterInstanceDetail::GetInstanceStatusDesc() const
@@ -1480,22 +1512,6 @@ bool ClusterInstanceDetail::InstanceStatusDescHasBeenSet() const
     return m_instanceStatusDescHasBeenSet;
 }
 
-int64_t ClusterInstanceDetail::GetInstanceCpu() const
-{
-    return m_instanceCpu;
-}
-
-void ClusterInstanceDetail::SetInstanceCpu(const int64_t& _instanceCpu)
-{
-    m_instanceCpu = _instanceCpu;
-    m_instanceCpuHasBeenSet = true;
-}
-
-bool ClusterInstanceDetail::InstanceCpuHasBeenSet() const
-{
-    return m_instanceCpuHasBeenSet;
-}
-
 int64_t ClusterInstanceDetail::GetCpu() const
 {
     return m_cpu;
@@ -1510,6 +1526,22 @@ void ClusterInstanceDetail::SetCpu(const int64_t& _cpu)
 bool ClusterInstanceDetail::CpuHasBeenSet() const
 {
     return m_cpuHasBeenSet;
+}
+
+int64_t ClusterInstanceDetail::GetInstanceCpu() const
+{
+    return m_instanceCpu;
+}
+
+void ClusterInstanceDetail::SetInstanceCpu(const int64_t& _instanceCpu)
+{
+    m_instanceCpu = _instanceCpu;
+    m_instanceCpuHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::InstanceCpuHasBeenSet() const
+{
+    return m_instanceCpuHasBeenSet;
 }
 
 double ClusterInstanceDetail::GetMinCpu() const
@@ -1672,6 +1704,22 @@ bool ClusterInstanceDetail::InstanceTasksHasBeenSet() const
     return m_instanceTasksHasBeenSet;
 }
 
+string ClusterInstanceDetail::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void ClusterInstanceDetail::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
+}
+
 string ClusterInstanceDetail::GetInstanceDeviceType() const
 {
     return m_instanceDeviceType;
@@ -1830,38 +1878,6 @@ void ClusterInstanceDetail::SetPhysicalZone(const string& _physicalZone)
 bool ClusterInstanceDetail::PhysicalZoneHasBeenSet() const
 {
     return m_physicalZoneHasBeenSet;
-}
-
-string ClusterInstanceDetail::GetStatus() const
-{
-    return m_status;
-}
-
-void ClusterInstanceDetail::SetStatus(const string& _status)
-{
-    m_status = _status;
-    m_statusHasBeenSet = true;
-}
-
-bool ClusterInstanceDetail::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
-string ClusterInstanceDetail::GetStatusDesc() const
-{
-    return m_statusDesc;
-}
-
-void ClusterInstanceDetail::SetStatusDesc(const string& _statusDesc)
-{
-    m_statusDesc = _statusDesc;
-    m_statusDescHasBeenSet = true;
-}
-
-bool ClusterInstanceDetail::StatusDescHasBeenSet() const
-{
-    return m_statusDescHasBeenSet;
 }
 
 string ClusterInstanceDetail::GetDbType() const
@@ -2310,22 +2326,6 @@ void ClusterInstanceDetail::SetInstanceAbility(const InstanceAbility& _instanceA
 bool ClusterInstanceDetail::InstanceAbilityHasBeenSet() const
 {
     return m_instanceAbilityHasBeenSet;
-}
-
-string ClusterInstanceDetail::GetDeviceType() const
-{
-    return m_deviceType;
-}
-
-void ClusterInstanceDetail::SetDeviceType(const string& _deviceType)
-{
-    m_deviceType = _deviceType;
-    m_deviceTypeHasBeenSet = true;
-}
-
-bool ClusterInstanceDetail::DeviceTypeHasBeenSet() const
-{
-    return m_deviceTypeHasBeenSet;
 }
 
 string ClusterInstanceDetail::GetGdnId() const

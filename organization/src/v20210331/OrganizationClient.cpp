@@ -1490,6 +1490,56 @@ OrganizationClient::CreateRoleConfigurationOutcomeCallable OrganizationClient::C
     return prom->get_future();
 }
 
+OrganizationClient::CreateRoleConfigurationApplyScopeOutcome OrganizationClient::CreateRoleConfigurationApplyScope(const CreateRoleConfigurationApplyScopeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRoleConfigurationApplyScope");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoleConfigurationApplyScopeResponse rsp = CreateRoleConfigurationApplyScopeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoleConfigurationApplyScopeOutcome(rsp);
+        else
+            return CreateRoleConfigurationApplyScopeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoleConfigurationApplyScopeOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::CreateRoleConfigurationApplyScopeAsync(const CreateRoleConfigurationApplyScopeRequest& request, const CreateRoleConfigurationApplyScopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRoleConfigurationApplyScopeRequest&;
+    using Resp = CreateRoleConfigurationApplyScopeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRoleConfigurationApplyScope", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OrganizationClient::CreateRoleConfigurationApplyScopeOutcomeCallable OrganizationClient::CreateRoleConfigurationApplyScopeCallable(const CreateRoleConfigurationApplyScopeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRoleConfigurationApplyScopeOutcome>>();
+    CreateRoleConfigurationApplyScopeAsync(
+    request,
+    [prom](
+        const OrganizationClient*,
+        const CreateRoleConfigurationApplyScopeRequest&,
+        CreateRoleConfigurationApplyScopeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OrganizationClient::CreateSCIMCredentialOutcome OrganizationClient::CreateSCIMCredential(const CreateSCIMCredentialRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSCIMCredential");
@@ -2232,6 +2282,56 @@ OrganizationClient::DeleteRoleConfigurationOutcomeCallable OrganizationClient::D
         const OrganizationClient*,
         const DeleteRoleConfigurationRequest&,
         DeleteRoleConfigurationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OrganizationClient::DeleteRoleConfigurationApplyScopeOutcome OrganizationClient::DeleteRoleConfigurationApplyScope(const DeleteRoleConfigurationApplyScopeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoleConfigurationApplyScope");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoleConfigurationApplyScopeResponse rsp = DeleteRoleConfigurationApplyScopeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoleConfigurationApplyScopeOutcome(rsp);
+        else
+            return DeleteRoleConfigurationApplyScopeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoleConfigurationApplyScopeOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DeleteRoleConfigurationApplyScopeAsync(const DeleteRoleConfigurationApplyScopeRequest& request, const DeleteRoleConfigurationApplyScopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteRoleConfigurationApplyScopeRequest&;
+    using Resp = DeleteRoleConfigurationApplyScopeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteRoleConfigurationApplyScope", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OrganizationClient::DeleteRoleConfigurationApplyScopeOutcomeCallable OrganizationClient::DeleteRoleConfigurationApplyScopeCallable(const DeleteRoleConfigurationApplyScopeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteRoleConfigurationApplyScopeOutcome>>();
+    DeleteRoleConfigurationApplyScopeAsync(
+    request,
+    [prom](
+        const OrganizationClient*,
+        const DeleteRoleConfigurationApplyScopeRequest&,
+        DeleteRoleConfigurationApplyScopeOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4890,6 +4990,56 @@ OrganizationClient::ListOrganizationServiceOutcomeCallable OrganizationClient::L
     return prom->get_future();
 }
 
+OrganizationClient::ListPermissionApplyOrdersOutcome OrganizationClient::ListPermissionApplyOrders(const ListPermissionApplyOrdersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListPermissionApplyOrders");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListPermissionApplyOrdersResponse rsp = ListPermissionApplyOrdersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListPermissionApplyOrdersOutcome(rsp);
+        else
+            return ListPermissionApplyOrdersOutcome(o.GetError());
+    }
+    else
+    {
+        return ListPermissionApplyOrdersOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::ListPermissionApplyOrdersAsync(const ListPermissionApplyOrdersRequest& request, const ListPermissionApplyOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListPermissionApplyOrdersRequest&;
+    using Resp = ListPermissionApplyOrdersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListPermissionApplyOrders", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OrganizationClient::ListPermissionApplyOrdersOutcomeCallable OrganizationClient::ListPermissionApplyOrdersCallable(const ListPermissionApplyOrdersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListPermissionApplyOrdersOutcome>>();
+    ListPermissionApplyOrdersAsync(
+    request,
+    [prom](
+        const OrganizationClient*,
+        const ListPermissionApplyOrdersRequest&,
+        ListPermissionApplyOrdersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OrganizationClient::ListPermissionPoliciesInRoleConfigurationOutcome OrganizationClient::ListPermissionPoliciesInRoleConfiguration(const ListPermissionPoliciesInRoleConfigurationRequest &request)
 {
     auto outcome = MakeRequest(request, "ListPermissionPoliciesInRoleConfiguration");
@@ -5082,6 +5232,56 @@ OrganizationClient::ListRoleAssignmentsOutcomeCallable OrganizationClient::ListR
         const OrganizationClient*,
         const ListRoleAssignmentsRequest&,
         ListRoleAssignmentsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OrganizationClient::ListRoleConfigurationApplyScopesOutcome OrganizationClient::ListRoleConfigurationApplyScopes(const ListRoleConfigurationApplyScopesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListRoleConfigurationApplyScopes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListRoleConfigurationApplyScopesResponse rsp = ListRoleConfigurationApplyScopesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListRoleConfigurationApplyScopesOutcome(rsp);
+        else
+            return ListRoleConfigurationApplyScopesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListRoleConfigurationApplyScopesOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::ListRoleConfigurationApplyScopesAsync(const ListRoleConfigurationApplyScopesRequest& request, const ListRoleConfigurationApplyScopesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListRoleConfigurationApplyScopesRequest&;
+    using Resp = ListRoleConfigurationApplyScopesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListRoleConfigurationApplyScopes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OrganizationClient::ListRoleConfigurationApplyScopesOutcomeCallable OrganizationClient::ListRoleConfigurationApplyScopesCallable(const ListRoleConfigurationApplyScopesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListRoleConfigurationApplyScopesOutcome>>();
+    ListRoleConfigurationApplyScopesAsync(
+    request,
+    [prom](
+        const OrganizationClient*,
+        const ListRoleConfigurationApplyScopesRequest&,
+        ListRoleConfigurationApplyScopesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

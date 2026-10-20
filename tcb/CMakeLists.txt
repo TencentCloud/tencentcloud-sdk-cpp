@@ -104,6 +104,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateCustomLoginKeyResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyClientRequest.h
   include/tencentcloud/tcb/v20180608/model/DeletePlatformHTTPServiceRouteResponse.h
+  include/tencentcloud/tcb/v20180608/model/ModifyAIModelStatusRequest.h
   include/tencentcloud/tcb/v20180608/model/FunctionEipConfig.h
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeManagedAIModelListResponse.h
@@ -121,6 +122,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudAppVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h
+  include/tencentcloud/tcb/v20180608/model/ModifyAIModelStatusResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvPlanRequest.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceRuleCondition.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudAppVersionListResponse.h
@@ -148,7 +150,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ExecutePGSqlResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreditsUsageRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeMySQLClusterDetailRequest.h
-  include/tencentcloud/tcb/v20180608/model/ModifyEnvExtraRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribePlatformCreditsUsageRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeBillingInfoResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h
@@ -250,6 +252,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/MessageLocalized.h
   include/tencentcloud/tcb/v20180608/model/UpdateFunctionConfigurationRequest.h
   include/tencentcloud/tcb/v20180608/model/VerifyPlatformHTTPServiceRouteResponse.h
+  include/tencentcloud/tcb/v20180608/model/AIModelStatus.h
   include/tencentcloud/tcb/v20180608/model/UpdateAIModelRequest.h
   include/tencentcloud/tcb/v20180608/model/DailyUsageList.h
   include/tencentcloud/tcb/v20180608/model/RenewEnvRequest.h
@@ -370,7 +373,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeEnvPlansRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeBaasPackageListResponse.h
   include/tencentcloud/tcb/v20180608/model/Provider.h
-  include/tencentcloud/tcb/v20180608/model/DescribePlatformCreditsUsageRequest.h
+  include/tencentcloud/tcb/v20180608/model/ModifyEnvExtraRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudAppFilter.h
   include/tencentcloud/tcb/v20180608/model/User.h
   include/tencentcloud/tcb/v20180608/model/Variable.h
@@ -504,6 +507,7 @@ set(tcb_src
   src/v20180608/model/CreateCustomLoginKeyResponse.cpp
   src/v20180608/model/ModifyClientRequest.cpp
   src/v20180608/model/DeletePlatformHTTPServiceRouteResponse.cpp
+  src/v20180608/model/ModifyAIModelStatusRequest.cpp
   src/v20180608/model/FunctionEipConfig.cpp
   src/v20180608/model/CheckTcbServiceRequest.cpp
   src/v20180608/model/DescribeManagedAIModelListResponse.cpp
@@ -521,6 +525,7 @@ set(tcb_src
   src/v20180608/model/CheckTcbServiceResponse.cpp
   src/v20180608/model/DeleteCloudAppVersionResponse.cpp
   src/v20180608/model/DescribeCloudBaseRunServerVersionRequest.cpp
+  src/v20180608/model/ModifyAIModelStatusResponse.cpp
   src/v20180608/model/ModifyEnvPlanRequest.cpp
   src/v20180608/model/HTTPServiceRuleCondition.cpp
   src/v20180608/model/DescribeCloudAppVersionListResponse.cpp
@@ -548,7 +553,7 @@ set(tcb_src
   src/v20180608/model/ExecutePGSqlResponse.cpp
   src/v20180608/model/DescribeCreditsUsageRequest.cpp
   src/v20180608/model/DescribeMySQLClusterDetailRequest.cpp
-  src/v20180608/model/ModifyEnvExtraRequest.cpp
+  src/v20180608/model/DescribePlatformCreditsUsageRequest.cpp
   src/v20180608/model/CreateStaticStoreRequest.cpp
   src/v20180608/model/DescribeBillingInfoResponse.cpp
   src/v20180608/model/DescribeEnvsRequest.cpp
@@ -650,6 +655,7 @@ set(tcb_src
   src/v20180608/model/MessageLocalized.cpp
   src/v20180608/model/UpdateFunctionConfigurationRequest.cpp
   src/v20180608/model/VerifyPlatformHTTPServiceRouteResponse.cpp
+  src/v20180608/model/AIModelStatus.cpp
   src/v20180608/model/UpdateAIModelRequest.cpp
   src/v20180608/model/DailyUsageList.cpp
   src/v20180608/model/RenewEnvRequest.cpp
@@ -770,7 +776,7 @@ set(tcb_src
   src/v20180608/model/DescribeEnvPlansRequest.cpp
   src/v20180608/model/DescribeBaasPackageListResponse.cpp
   src/v20180608/model/Provider.cpp
-  src/v20180608/model/DescribePlatformCreditsUsageRequest.cpp
+  src/v20180608/model/ModifyEnvExtraRequest.cpp
   src/v20180608/model/CloudAppFilter.cpp
   src/v20180608/model/User.cpp
   src/v20180608/model/Variable.cpp

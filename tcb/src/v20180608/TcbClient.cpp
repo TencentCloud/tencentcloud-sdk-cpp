@@ -4590,6 +4590,56 @@ TcbClient::ListTablesOutcomeCallable TcbClient::ListTablesCallable(const ListTab
     return prom->get_future();
 }
 
+TcbClient::ModifyAIModelStatusOutcome TcbClient::ModifyAIModelStatus(const ModifyAIModelStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAIModelStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAIModelStatusResponse rsp = ModifyAIModelStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAIModelStatusOutcome(rsp);
+        else
+            return ModifyAIModelStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAIModelStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyAIModelStatusAsync(const ModifyAIModelStatusRequest& request, const ModifyAIModelStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAIModelStatusRequest&;
+    using Resp = ModifyAIModelStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAIModelStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ModifyAIModelStatusOutcomeCallable TcbClient::ModifyAIModelStatusCallable(const ModifyAIModelStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAIModelStatusOutcome>>();
+    ModifyAIModelStatusAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyAIModelStatusRequest&,
+        ModifyAIModelStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ModifyClientOutcome TcbClient::ModifyClient(const ModifyClientRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClient");

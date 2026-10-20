@@ -481,6 +481,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/PublishMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishRRPCMessageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishRRPCMessageResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PurchaseImagePackageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PurchaseImagePackageResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PurchaseVideoPackageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PurchaseVideoPackageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/RemoveUserByRoomIdFromTRTCRequest.h>
@@ -509,6 +513,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ShareDeviceToUserRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ShareDeviceToUserResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/StartPackageUsageReportRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/StartPackageUsageReportResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/StopPackageUsageReportRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/StopPackageUsageReportResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TerminateTWeSeeSubscriptionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TerminateTWeSeeSubscriptionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TransferCloudStorageRequest.h>
@@ -1234,6 +1242,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PublishRRPCMessageResponse> PublishRRPCMessageOutcome;
                 typedef std::future<PublishRRPCMessageOutcome> PublishRRPCMessageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::PublishRRPCMessageRequest&, PublishRRPCMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishRRPCMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::PurchaseImagePackageResponse> PurchaseImagePackageOutcome;
+                typedef std::future<PurchaseImagePackageOutcome> PurchaseImagePackageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::PurchaseImagePackageRequest&, PurchaseImagePackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseImagePackageAsyncHandler;
+                typedef Outcome<Core::Error, Model::PurchaseVideoPackageResponse> PurchaseVideoPackageOutcome;
+                typedef std::future<PurchaseVideoPackageOutcome> PurchaseVideoPackageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::PurchaseVideoPackageRequest&, PurchaseVideoPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseVideoPackageAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseStudioProductResponse> ReleaseStudioProductOutcome;
                 typedef std::future<ReleaseStudioProductOutcome> ReleaseStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ReleaseStudioProductRequest&, ReleaseStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseStudioProductAsyncHandler;
@@ -1276,6 +1290,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ShareDeviceToUserResponse> ShareDeviceToUserOutcome;
                 typedef std::future<ShareDeviceToUserOutcome> ShareDeviceToUserOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ShareDeviceToUserRequest&, ShareDeviceToUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ShareDeviceToUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartPackageUsageReportResponse> StartPackageUsageReportOutcome;
+                typedef std::future<StartPackageUsageReportOutcome> StartPackageUsageReportOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::StartPackageUsageReportRequest&, StartPackageUsageReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartPackageUsageReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopPackageUsageReportResponse> StopPackageUsageReportOutcome;
+                typedef std::future<StopPackageUsageReportOutcome> StopPackageUsageReportOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::StopPackageUsageReportRequest&, StopPackageUsageReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopPackageUsageReportAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateTWeSeeSubscriptionResponse> TerminateTWeSeeSubscriptionOutcome;
                 typedef std::future<TerminateTWeSeeSubscriptionOutcome> TerminateTWeSeeSubscriptionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::TerminateTWeSeeSubscriptionRequest&, TerminateTWeSeeSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateTWeSeeSubscriptionAsyncHandler;
@@ -3421,6 +3441,24 @@ namespace TencentCloud
                 PublishRRPCMessageOutcomeCallable PublishRRPCMessageCallable(const Model::PublishRRPCMessageRequest& request);
 
                 /**
+                 *新购图片云存资源包
+                 * @param req PurchaseImagePackageRequest
+                 * @return PurchaseImagePackageOutcome
+                 */
+                PurchaseImagePackageOutcome PurchaseImagePackage(const Model::PurchaseImagePackageRequest &request);
+                void PurchaseImagePackageAsync(const Model::PurchaseImagePackageRequest& request, const PurchaseImagePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PurchaseImagePackageOutcomeCallable PurchaseImagePackageCallable(const Model::PurchaseImagePackageRequest& request);
+
+                /**
+                 *新购视频云存资源包
+                 * @param req PurchaseVideoPackageRequest
+                 * @return PurchaseVideoPackageOutcome
+                 */
+                PurchaseVideoPackageOutcome PurchaseVideoPackage(const Model::PurchaseVideoPackageRequest &request);
+                void PurchaseVideoPackageAsync(const Model::PurchaseVideoPackageRequest& request, const PurchaseVideoPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PurchaseVideoPackageOutcomeCallable PurchaseVideoPackageCallable(const Model::PurchaseVideoPackageRequest& request);
+
+                /**
                  *产品开发完成并测试通过后，通过发布产品将产品设置为发布状态
                  * @param req ReleaseStudioProductRequest
                  * @return ReleaseStudioProductOutcome
@@ -3555,6 +3593,24 @@ namespace TencentCloud
                 ShareDeviceToUserOutcome ShareDeviceToUser(const Model::ShareDeviceToUserRequest &request);
                 void ShareDeviceToUserAsync(const Model::ShareDeviceToUserRequest& request, const ShareDeviceToUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ShareDeviceToUserOutcomeCallable ShareDeviceToUserCallable(const Model::ShareDeviceToUserRequest& request);
+
+                /**
+                 *启用套餐用量上报
+                 * @param req StartPackageUsageReportRequest
+                 * @return StartPackageUsageReportOutcome
+                 */
+                StartPackageUsageReportOutcome StartPackageUsageReport(const Model::StartPackageUsageReportRequest &request);
+                void StartPackageUsageReportAsync(const Model::StartPackageUsageReportRequest& request, const StartPackageUsageReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartPackageUsageReportOutcomeCallable StartPackageUsageReportCallable(const Model::StartPackageUsageReportRequest& request);
+
+                /**
+                 *停用套餐用量上报
+                 * @param req StopPackageUsageReportRequest
+                 * @return StopPackageUsageReportOutcome
+                 */
+                StopPackageUsageReportOutcome StopPackageUsageReport(const Model::StopPackageUsageReportRequest &request);
+                void StopPackageUsageReportAsync(const Model::StopPackageUsageReportRequest& request, const StopPackageUsageReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopPackageUsageReportOutcomeCallable StopPackageUsageReportCallable(const Model::StopPackageUsageReportRequest& request);
 
                 /**
                  *退订 TWeSee 预付费订阅

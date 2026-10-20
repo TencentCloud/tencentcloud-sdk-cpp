@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务 ID  列表
-                     * @return TaskIDs 任务 ID  列表
+                     * 获取<p>任务 ID  列表</p>
+                     * @return TaskIDs <p>任务 ID  列表</p>
                      * 
                      */
                     std::vector<std::string> GetTaskIDs() const;
 
                     /**
-                     * 设置任务 ID  列表
-                     * @param _taskIDs 任务 ID  列表
+                     * 设置<p>任务 ID  列表</p>
+                     * @param _taskIDs <p>任务 ID  列表</p>
                      * 
                      */
                     void SetTaskIDs(const std::vector<std::string>& _taskIDs);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TaskIDsHasBeenSet() const;
 
                     /**
-                     * 获取任务名
-                     * @return TaskName 任务名
+                     * 获取<p>任务名</p>
+                     * @return TaskName <p>任务名</p>
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名
-                     * @param _taskName 任务名
+                     * 设置<p>任务名</p>
+                     * @param _taskName <p>任务名</p>
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取拨测目标
-                     * @return TargetAddress 拨测目标
+                     * 获取<p>拨测目标</p>
+                     * @return TargetAddress <p>拨测目标</p>
                      * 
                      */
                     std::string GetTargetAddress() const;
 
                     /**
-                     * 设置拨测目标
-                     * @param _targetAddress 拨测目标
+                     * 设置<p>拨测目标</p>
+                     * @param _targetAddress <p>拨测目标</p>
                      * 
                      */
                     void SetTargetAddress(const std::string& _targetAddress);
@@ -107,55 +107,15 @@ namespace TencentCloud
                     bool TargetAddressHasBeenSet() const;
 
                     /**
-                     * 获取任务状态列表
-<li>1 = 创建中</li>
-<li> 2 = 运行中 </li>
-<li> 3 = 运行异常 </li>
-<li> 4 = 暂停中 </li>
-<li> 5 = 暂停异常 </li>
-<li> 6 = 任务暂停 </li>
-<li> 7 = 任务删除中 </li>
-<li> 8 = 任务删除异常 </li>
-<li> 9 = 任务删除</li>
-<li> 10 = 定时任务暂停中 </li>
-                     * @return TaskStatus 任务状态列表
-<li>1 = 创建中</li>
-<li> 2 = 运行中 </li>
-<li> 3 = 运行异常 </li>
-<li> 4 = 暂停中 </li>
-<li> 5 = 暂停异常 </li>
-<li> 6 = 任务暂停 </li>
-<li> 7 = 任务删除中 </li>
-<li> 8 = 任务删除异常 </li>
-<li> 9 = 任务删除</li>
-<li> 10 = 定时任务暂停中 </li>
+                     * 获取<p>任务状态列表</p><li>1 = 创建中</li><li> 2 = 运行中 </li><li> 3 = 运行异常 </li><li> 4 = 暂停中 </li><li> 5 = 暂停异常 </li><li> 6 = 任务暂停 </li><li> 7 = 任务删除中 </li><li> 8 = 任务删除异常 </li><li> 9 = 任务删除</li><li> 10 = 定时任务暂停中 </li>
+                     * @return TaskStatus <p>任务状态列表</p><li>1 = 创建中</li><li> 2 = 运行中 </li><li> 3 = 运行异常 </li><li> 4 = 暂停中 </li><li> 5 = 暂停异常 </li><li> 6 = 任务暂停 </li><li> 7 = 任务删除中 </li><li> 8 = 任务删除异常 </li><li> 9 = 任务删除</li><li> 10 = 定时任务暂停中 </li>
                      * 
                      */
                     std::vector<int64_t> GetTaskStatus() const;
 
                     /**
-                     * 设置任务状态列表
-<li>1 = 创建中</li>
-<li> 2 = 运行中 </li>
-<li> 3 = 运行异常 </li>
-<li> 4 = 暂停中 </li>
-<li> 5 = 暂停异常 </li>
-<li> 6 = 任务暂停 </li>
-<li> 7 = 任务删除中 </li>
-<li> 8 = 任务删除异常 </li>
-<li> 9 = 任务删除</li>
-<li> 10 = 定时任务暂停中 </li>
-                     * @param _taskStatus 任务状态列表
-<li>1 = 创建中</li>
-<li> 2 = 运行中 </li>
-<li> 3 = 运行异常 </li>
-<li> 4 = 暂停中 </li>
-<li> 5 = 暂停异常 </li>
-<li> 6 = 任务暂停 </li>
-<li> 7 = 任务删除中 </li>
-<li> 8 = 任务删除异常 </li>
-<li> 9 = 任务删除</li>
-<li> 10 = 定时任务暂停中 </li>
+                     * 设置<p>任务状态列表</p><li>1 = 创建中</li><li> 2 = 运行中 </li><li> 3 = 运行异常 </li><li> 4 = 暂停中 </li><li> 5 = 暂停异常 </li><li> 6 = 任务暂停 </li><li> 7 = 任务删除中 </li><li> 8 = 任务删除异常 </li><li> 9 = 任务删除</li><li> 10 = 定时任务暂停中 </li>
+                     * @param _taskStatus <p>任务状态列表</p><li>1 = 创建中</li><li> 2 = 运行中 </li><li> 3 = 运行异常 </li><li> 4 = 暂停中 </li><li> 5 = 暂停异常 </li><li> 6 = 任务暂停 </li><li> 7 = 任务删除中 </li><li> 8 = 任务删除异常 </li><li> 9 = 任务删除</li><li> 10 = 定时任务暂停中 </li>
                      * 
                      */
                     void SetTaskStatus(const std::vector<int64_t>& _taskStatus);
@@ -168,15 +128,15 @@ namespace TencentCloud
                     bool TaskStatusHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0
-                     * @return Offset 偏移量，默认为0
+                     * 获取<p>偏移量，默认为0</p>
+                     * @return Offset <p>偏移量，默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0
-                     * @param _offset 偏移量，默认为0
+                     * 设置<p>偏移量，默认为0</p>
+                     * @param _offset <p>偏移量，默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -189,15 +149,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100
-                     * @return Limit 返回数量，默认为20，最大值为100
+                     * 获取<p>返回数量，默认为20，最大值为100</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100
-                     * @param _limit 返回数量，默认为20，最大值为100
+                     * 设置<p>返回数量，默认为20，最大值为100</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -210,23 +170,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取付费模式
-<li>1 = 试用版本</li>
-<li> 2 = 付费版本 </li>
-                     * @return PayMode 付费模式
-<li>1 = 试用版本</li>
-<li> 2 = 付费版本 </li>
+                     * 获取<p>付费模式</p><li>1 = 试用版本</li><li> 2 = 付费版本 </li>
+                     * @return PayMode <p>付费模式</p><li>1 = 试用版本</li><li> 2 = 付费版本 </li>
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置付费模式
-<li>1 = 试用版本</li>
-<li> 2 = 付费版本 </li>
-                     * @param _payMode 付费模式
-<li>1 = 试用版本</li>
-<li> 2 = 付费版本 </li>
+                     * 设置<p>付费模式</p><li>1 = 试用版本</li><li> 2 = 付费版本 </li>
+                     * @param _payMode <p>付费模式</p><li>1 = 试用版本</li><li> 2 = 付费版本 </li>
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -239,23 +191,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取订单状态
-<li>1 = 正常</li>
-<li> 2 = 欠费 </li>
-                     * @return OrderState 订单状态
-<li>1 = 正常</li>
-<li> 2 = 欠费 </li>
+                     * 获取<p>订单状态</p><li>1 = 正常</li><li> 2 = 欠费 </li>
+                     * @return OrderState <p>订单状态</p><li>1 = 正常</li><li> 2 = 欠费 </li>
                      * 
                      */
                     int64_t GetOrderState() const;
 
                     /**
-                     * 设置订单状态
-<li>1 = 正常</li>
-<li> 2 = 欠费 </li>
-                     * @param _orderState 订单状态
-<li>1 = 正常</li>
-<li> 2 = 欠费 </li>
+                     * 设置<p>订单状态</p><li>1 = 正常</li><li> 2 = 欠费 </li>
+                     * @param _orderState <p>订单状态</p><li>1 = 正常</li><li> 2 = 欠费 </li>
                      * 
                      */
                     void SetOrderState(const int64_t& _orderState);
@@ -268,47 +212,15 @@ namespace TencentCloud
                     bool OrderStateHasBeenSet() const;
 
                     /**
-                     * 获取拨测类型
-<li>1 = 页面浏览</li>
-<li> 2 =文件上传 </li>
-<li> 3 = 文件下载</li>
-<li> 4 = 端口性能 </li>
-<li> 5 = 网络质量 </li>
-<li> 6 =流媒体 </li>
-
-即使拨测只支持页面浏览，网络质量，文件下载
-                     * @return TaskType 拨测类型
-<li>1 = 页面浏览</li>
-<li> 2 =文件上传 </li>
-<li> 3 = 文件下载</li>
-<li> 4 = 端口性能 </li>
-<li> 5 = 网络质量 </li>
-<li> 6 =流媒体 </li>
-
-即使拨测只支持页面浏览，网络质量，文件下载
+                     * 获取<p>拨测类型</p><li>1 = 页面浏览</li><li> 2 =文件上传 </li><li> 3 = 文件下载</li><li> 4 = 端口性能 </li><li> 5 = 网络质量 </li><li> 6 =流媒体 </li><p>即使拨测只支持页面浏览，网络质量，文件下载</p>
+                     * @return TaskType <p>拨测类型</p><li>1 = 页面浏览</li><li> 2 =文件上传 </li><li> 3 = 文件下载</li><li> 4 = 端口性能 </li><li> 5 = 网络质量 </li><li> 6 =流媒体 </li><p>即使拨测只支持页面浏览，网络质量，文件下载</p>
                      * 
                      */
                     std::vector<int64_t> GetTaskType() const;
 
                     /**
-                     * 设置拨测类型
-<li>1 = 页面浏览</li>
-<li> 2 =文件上传 </li>
-<li> 3 = 文件下载</li>
-<li> 4 = 端口性能 </li>
-<li> 5 = 网络质量 </li>
-<li> 6 =流媒体 </li>
-
-即使拨测只支持页面浏览，网络质量，文件下载
-                     * @param _taskType 拨测类型
-<li>1 = 页面浏览</li>
-<li> 2 =文件上传 </li>
-<li> 3 = 文件下载</li>
-<li> 4 = 端口性能 </li>
-<li> 5 = 网络质量 </li>
-<li> 6 =流媒体 </li>
-
-即使拨测只支持页面浏览，网络质量，文件下载
+                     * 设置<p>拨测类型</p><li>1 = 页面浏览</li><li> 2 =文件上传 </li><li> 3 = 文件下载</li><li> 4 = 端口性能 </li><li> 5 = 网络质量 </li><li> 6 =流媒体 </li><p>即使拨测只支持页面浏览，网络质量，文件下载</p>
+                     * @param _taskType <p>拨测类型</p><li>1 = 页面浏览</li><li> 2 =文件上传 </li><li> 3 = 文件下载</li><li> 4 = 端口性能 </li><li> 5 = 网络质量 </li><li> 6 =流媒体 </li><p>即使拨测只支持页面浏览，网络质量，文件下载</p>
                      * 
                      */
                     void SetTaskType(const std::vector<int64_t>& _taskType);
@@ -321,15 +233,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点类型
-                     * @return TaskCategory 节点类型
+                     * 获取<p>节点类型</p>
+                     * @return TaskCategory <p>节点类型</p>
                      * 
                      */
                     std::vector<int64_t> GetTaskCategory() const;
 
                     /**
-                     * 设置节点类型
-                     * @param _taskCategory 节点类型
+                     * 设置<p>节点类型</p>
+                     * @param _taskCategory <p>节点类型</p>
                      * 
                      */
                     void SetTaskCategory(const std::vector<int64_t>& _taskCategory);
@@ -342,15 +254,15 @@ namespace TencentCloud
                     bool TaskCategoryHasBeenSet() const;
 
                     /**
-                     * 获取排序的列
-                     * @return OrderBy 排序的列
+                     * 获取<p>排序的列</p>
+                     * @return OrderBy <p>排序的列</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序的列
-                     * @param _orderBy 排序的列
+                     * 设置<p>排序的列</p>
+                     * @param _orderBy <p>排序的列</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -363,15 +275,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取是否正序
-                     * @return Ascend 是否正序
+                     * 获取<p>是否正序</p>
+                     * @return Ascend <p>是否正序</p>
                      * 
                      */
                     bool GetAscend() const;
 
                     /**
-                     * 设置是否正序
-                     * @param _ascend 是否正序
+                     * 设置<p>是否正序</p>
+                     * @param _ascend <p>是否正序</p>
                      * 
                      */
                     void SetAscend(const bool& _ascend);
@@ -384,15 +296,15 @@ namespace TencentCloud
                     bool AscendHasBeenSet() const;
 
                     /**
-                     * 获取资源标签值
-                     * @return TagFilters 资源标签值
+                     * 获取<p>资源标签值</p>
+                     * @return TagFilters <p>资源标签值</p>
                      * 
                      */
                     std::vector<KeyValuePair> GetTagFilters() const;
 
                     /**
-                     * 设置资源标签值
-                     * @param _tagFilters 资源标签值
+                     * 设置<p>资源标签值</p>
+                     * @param _tagFilters <p>资源标签值</p>
                      * 
                      */
                     void SetTagFilters(const std::vector<KeyValuePair>& _tagFilters);
@@ -407,101 +319,79 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务 ID  列表
+                     * <p>任务 ID  列表</p>
                      */
                     std::vector<std::string> m_taskIDs;
                     bool m_taskIDsHasBeenSet;
 
                     /**
-                     * 任务名
+                     * <p>任务名</p>
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 拨测目标
+                     * <p>拨测目标</p>
                      */
                     std::string m_targetAddress;
                     bool m_targetAddressHasBeenSet;
 
                     /**
-                     * 任务状态列表
-<li>1 = 创建中</li>
-<li> 2 = 运行中 </li>
-<li> 3 = 运行异常 </li>
-<li> 4 = 暂停中 </li>
-<li> 5 = 暂停异常 </li>
-<li> 6 = 任务暂停 </li>
-<li> 7 = 任务删除中 </li>
-<li> 8 = 任务删除异常 </li>
-<li> 9 = 任务删除</li>
-<li> 10 = 定时任务暂停中 </li>
+                     * <p>任务状态列表</p><li>1 = 创建中</li><li> 2 = 运行中 </li><li> 3 = 运行异常 </li><li> 4 = 暂停中 </li><li> 5 = 暂停异常 </li><li> 6 = 任务暂停 </li><li> 7 = 任务删除中 </li><li> 8 = 任务删除异常 </li><li> 9 = 任务删除</li><li> 10 = 定时任务暂停中 </li>
                      */
                     std::vector<int64_t> m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0
+                     * <p>偏移量，默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100
+                     * <p>返回数量，默认为20，最大值为100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 付费模式
-<li>1 = 试用版本</li>
-<li> 2 = 付费版本 </li>
+                     * <p>付费模式</p><li>1 = 试用版本</li><li> 2 = 付费版本 </li>
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 订单状态
-<li>1 = 正常</li>
-<li> 2 = 欠费 </li>
+                     * <p>订单状态</p><li>1 = 正常</li><li> 2 = 欠费 </li>
                      */
                     int64_t m_orderState;
                     bool m_orderStateHasBeenSet;
 
                     /**
-                     * 拨测类型
-<li>1 = 页面浏览</li>
-<li> 2 =文件上传 </li>
-<li> 3 = 文件下载</li>
-<li> 4 = 端口性能 </li>
-<li> 5 = 网络质量 </li>
-<li> 6 =流媒体 </li>
-
-即使拨测只支持页面浏览，网络质量，文件下载
+                     * <p>拨测类型</p><li>1 = 页面浏览</li><li> 2 =文件上传 </li><li> 3 = 文件下载</li><li> 4 = 端口性能 </li><li> 5 = 网络质量 </li><li> 6 =流媒体 </li><p>即使拨测只支持页面浏览，网络质量，文件下载</p>
                      */
                     std::vector<int64_t> m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 节点类型
+                     * <p>节点类型</p>
                      */
                     std::vector<int64_t> m_taskCategory;
                     bool m_taskCategoryHasBeenSet;
 
                     /**
-                     * 排序的列
+                     * <p>排序的列</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 是否正序
+                     * <p>是否正序</p>
                      */
                     bool m_ascend;
                     bool m_ascendHasBeenSet;
 
                     /**
-                     * 资源标签值
+                     * <p>资源标签值</p>
                      */
                     std::vector<KeyValuePair> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;

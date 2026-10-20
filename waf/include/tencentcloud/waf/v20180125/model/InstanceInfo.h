@@ -37,6 +37,7 @@
 #include <tencentcloud/waf/v20180125/model/MajorEventsProPkg.h>
 #include <tencentcloud/waf/v20180125/model/NetworkConfig.h>
 #include <tencentcloud/waf/v20180125/model/RCEPkg.h>
+#include <tencentcloud/waf/v20180125/model/RCEExtendPkg.h>
 #include <tencentcloud/waf/v20180125/model/LLMPkg.h>
 #include <tencentcloud/waf/v20180125/model/LLMMonPkg.h>
 #include <tencentcloud/waf/v20180125/model/BotSecurityPkg.h>
@@ -150,15 +151,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取<p>付费模式</p>
-                     * @return PayMode <p>付费模式</p>
+                     * 获取付费模式，0表示后付费（按量计费），1表示预付费（包年包月）
+                     * @return PayMode 付费模式，0表示后付费（按量计费），1表示预付费（包年包月）
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
-                     * 设置<p>付费模式</p>
-                     * @param _payMode <p>付费模式</p>
+                     * 设置付费模式，0表示后付费（按量计费），1表示预付费（包年包月）
+                     * @param _payMode 付费模式，0表示后付费（按量计费），1表示预付费（包年包月）
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -633,15 +634,15 @@ namespace TencentCloud
                     bool QpsStandardHasBeenSet() const;
 
                     /**
-                     * 获取<p>购买的带宽规格</p>
-                     * @return BandwidthStandard <p>购买的带宽规格</p>
+                     * 获取购买的带宽规格上限，单位：Mbps
+                     * @return BandwidthStandard 购买的带宽规格上限，单位：Mbps
                      * 
                      */
                     uint64_t GetBandwidthStandard() const;
 
                     /**
-                     * 设置<p>购买的带宽规格</p>
-                     * @param _bandwidthStandard <p>购买的带宽规格</p>
+                     * 设置购买的带宽规格上限，单位：Mbps
+                     * @param _bandwidthStandard 购买的带宽规格上限，单位：Mbps
                      * 
                      */
                     void SetBandwidthStandard(const uint64_t& _bandwidthStandard);
@@ -654,15 +655,15 @@ namespace TencentCloud
                     bool BandwidthStandardHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例状态</p>
-                     * @return Status <p>实例状态</p>
+                     * 获取实例状态，0表示正常，1表示正常使用，2表示隔离期，3表示已销毁
+                     * @return Status 实例状态，0表示正常，1表示正常使用，2表示隔离期，3表示已销毁
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置<p>实例状态</p>
-                     * @param _status <p>实例状态</p>
+                     * 设置实例状态，0表示正常，1表示正常使用，2表示隔离期，3表示已销毁
+                     * @param _status 实例状态，0表示正常，1表示正常使用，2表示隔离期，3表示已销毁
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -780,15 +781,15 @@ namespace TencentCloud
                     bool ApiPkgHasBeenSet() const;
 
                     /**
-                     * 获取<p>小程序安全加速包</p>
-                     * @return MiniPkg <p>小程序安全加速包</p>
+                     * 获取<p>小程序安全防护包</p>
+                     * @return MiniPkg <p>小程序安全防护包</p>
                      * 
                      */
                     MiniPkg GetMiniPkg() const;
 
                     /**
-                     * 设置<p>小程序安全加速包</p>
-                     * @param _miniPkg <p>小程序安全加速包</p>
+                     * 设置<p>小程序安全防护包</p>
+                     * @param _miniPkg <p>小程序安全防护包</p>
                      * 
                      */
                     void SetMiniPkg(const MiniPkg& _miniPkg);
@@ -906,15 +907,15 @@ namespace TencentCloud
                     bool BillingItemHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例延期释放标识</p>
-                     * @return FreeDelayFlag <p>实例延期释放标识</p>
+                     * 获取实例延期释放标识，0表示不延期，1表示延期释放
+                     * @return FreeDelayFlag 实例延期释放标识，0表示不延期，1表示延期释放
                      * 
                      */
                     uint64_t GetFreeDelayFlag() const;
 
                     /**
-                     * 设置<p>实例延期释放标识</p>
-                     * @param _freeDelayFlag <p>实例延期释放标识</p>
+                     * 设置实例延期释放标识，0表示不延期，1表示延期释放
+                     * @param _freeDelayFlag 实例延期释放标识，0表示不延期，1表示延期释放
                      * 
                      */
                     void SetFreeDelayFlag(const uint64_t& _freeDelayFlag);
@@ -967,6 +968,48 @@ namespace TencentCloud
                      * 
                      */
                     bool Last3MaxBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>
+                     * @return Last7MaxMiniBandwidth <p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>
+                     * 
+                     */
+                    uint64_t GetLast7MaxMiniBandwidth() const;
+
+                    /**
+                     * 设置<p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>
+                     * @param _last7MaxMiniBandwidth <p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>
+                     * 
+                     */
+                    void SetLast7MaxMiniBandwidth(const uint64_t& _last7MaxMiniBandwidth);
+
+                    /**
+                     * 判断参数 Last7MaxMiniBandwidth 是否已赋值
+                     * @return Last7MaxMiniBandwidth 是否已赋值
+                     * 
+                     */
+                    bool Last7MaxMiniBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>
+                     * @return MiniBandwidthStandard <p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>
+                     * 
+                     */
+                    uint64_t GetMiniBandwidthStandard() const;
+
+                    /**
+                     * 设置<p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>
+                     * @param _miniBandwidthStandard <p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>
+                     * 
+                     */
+                    void SetMiniBandwidthStandard(const uint64_t& _miniBandwidthStandard);
+
+                    /**
+                     * 判断参数 MiniBandwidthStandard 是否已赋值
+                     * @return MiniBandwidthStandard 是否已赋值
+                     * 
+                     */
+                    bool MiniBandwidthStandardHasBeenSet() const;
 
                     /**
                      * 获取<p>重保增强包</p>
@@ -1051,6 +1094,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RCEPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>RCE QPS扩展包</p>
+                     * @return RCEExtendPkg <p>RCE QPS扩展包</p>
+                     * 
+                     */
+                    RCEExtendPkg GetRCEExtendPkg() const;
+
+                    /**
+                     * 设置<p>RCE QPS扩展包</p>
+                     * @param _rCEExtendPkg <p>RCE QPS扩展包</p>
+                     * 
+                     */
+                    void SetRCEExtendPkg(const RCEExtendPkg& _rCEExtendPkg);
+
+                    /**
+                     * 判断参数 RCEExtendPkg 是否已赋值
+                     * @return RCEExtendPkg 是否已赋值
+                     * 
+                     */
+                    bool RCEExtendPkgHasBeenSet() const;
 
                     /**
                      * 获取<p>超量策略。0：超量沙箱<br>1：超量限流</p>
@@ -1289,7 +1353,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * <p>付费模式</p>
+                     * 付费模式，0表示后付费（按量计费），1表示预付费（包年包月）
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
@@ -1427,13 +1491,13 @@ namespace TencentCloud
                     bool m_qpsStandardHasBeenSet;
 
                     /**
-                     * <p>购买的带宽规格</p>
+                     * 购买的带宽规格上限，单位：Mbps
                      */
                     uint64_t m_bandwidthStandard;
                     bool m_bandwidthStandardHasBeenSet;
 
                     /**
-                     * <p>实例状态</p>
+                     * 实例状态，0表示正常，1表示正常使用，2表示隔离期，3表示已销毁
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -1469,7 +1533,7 @@ namespace TencentCloud
                     bool m_apiPkgHasBeenSet;
 
                     /**
-                     * <p>小程序安全加速包</p>
+                     * <p>小程序安全防护包</p>
                      */
                     MiniPkg m_miniPkg;
                     bool m_miniPkgHasBeenSet;
@@ -1505,7 +1569,7 @@ namespace TencentCloud
                     bool m_billingItemHasBeenSet;
 
                     /**
-                     * <p>实例延期释放标识</p>
+                     * 实例延期释放标识，0表示不延期，1表示延期释放
                      */
                     uint64_t m_freeDelayFlag;
                     bool m_freeDelayFlagHasBeenSet;
@@ -1521,6 +1585,18 @@ namespace TencentCloud
                      */
                     uint64_t m_last3MaxBandwidth;
                     bool m_last3MaxBandwidthHasBeenSet;
+
+                    /**
+                     * <p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>
+                     */
+                    uint64_t m_last7MaxMiniBandwidth;
+                    bool m_last7MaxMiniBandwidthHasBeenSet;
+
+                    /**
+                     * <p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>
+                     */
+                    uint64_t m_miniBandwidthStandard;
+                    bool m_miniBandwidthStandardHasBeenSet;
 
                     /**
                      * <p>重保增强包</p>
@@ -1545,6 +1621,12 @@ namespace TencentCloud
                      */
                     RCEPkg m_rCEPkg;
                     bool m_rCEPkgHasBeenSet;
+
+                    /**
+                     * <p>RCE QPS扩展包</p>
+                     */
+                    RCEExtendPkg m_rCEExtendPkg;
+                    bool m_rCEExtendPkgHasBeenSet;
 
                     /**
                      * <p>超量策略。0：超量沙箱<br>1：超量限流</p>

@@ -39,6 +39,8 @@ DomainInfo::DomainInfo() :
     m_loadBalancerSetHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_stateHasBeenSet(false),
+    m_apRegionHasBeenSet(false),
+    m_dnssecCnameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_ipv6StatusHasBeenSet(false),
@@ -275,6 +277,29 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         }
         m_state = value["State"].GetInt64();
         m_stateHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApRegion") && !value["ApRegion"].IsNull())
+    {
+        if (!value["ApRegion"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.ApRegion` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ApRegion"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_apRegion.push_back((*itr).GetString());
+        }
+        m_apRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DnssecCname") && !value["DnssecCname"].IsNull())
+    {
+        if (!value["DnssecCname"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.DnssecCname` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dnssecCname = string(value["DnssecCname"].GetString());
+        m_dnssecCnameHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -709,6 +734,27 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
+    }
+
+    if (m_apRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_apRegion.begin(); itr != m_apRegion.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_dnssecCnameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnssecCname";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dnssecCname.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -1214,6 +1260,38 @@ void DomainInfo::SetState(const int64_t& _state)
 bool DomainInfo::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+vector<string> DomainInfo::GetApRegion() const
+{
+    return m_apRegion;
+}
+
+void DomainInfo::SetApRegion(const vector<string>& _apRegion)
+{
+    m_apRegion = _apRegion;
+    m_apRegionHasBeenSet = true;
+}
+
+bool DomainInfo::ApRegionHasBeenSet() const
+{
+    return m_apRegionHasBeenSet;
+}
+
+string DomainInfo::GetDnssecCname() const
+{
+    return m_dnssecCname;
+}
+
+void DomainInfo::SetDnssecCname(const string& _dnssecCname)
+{
+    m_dnssecCname = _dnssecCname;
+    m_dnssecCnameHasBeenSet = true;
+}
+
+bool DomainInfo::DnssecCnameHasBeenSet() const
+{
+    return m_dnssecCnameHasBeenSet;
 }
 
 string DomainInfo::GetCreateTime() const

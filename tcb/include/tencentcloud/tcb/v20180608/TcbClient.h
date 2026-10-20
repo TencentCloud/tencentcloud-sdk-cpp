@@ -205,6 +205,8 @@
 #include <tencentcloud/tcb/v20180608/model/ListPGUserMigrationsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ListTablesRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ListTablesResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyAIModelStatusRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyAIModelStatusResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyClientRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyClientResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyClsTopicRequest.h>
@@ -560,6 +562,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListTablesResponse> ListTablesOutcome;
                 typedef std::future<ListTablesOutcome> ListTablesOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ListTablesRequest&, ListTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAIModelStatusResponse> ModifyAIModelStatusOutcome;
+                typedef std::future<ModifyAIModelStatusOutcome> ModifyAIModelStatusOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyAIModelStatusRequest&, ModifyAIModelStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAIModelStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClientResponse> ModifyClientOutcome;
                 typedef std::future<ModifyClientOutcome> ModifyClientOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyClientRequest&, ModifyClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClientAsyncHandler;
@@ -1625,6 +1630,15 @@ namespace TencentCloud
                 ListTablesOutcome ListTables(const Model::ListTablesRequest &request);
                 void ListTablesAsync(const Model::ListTablesRequest& request, const ListTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTablesOutcomeCallable ListTablesCallable(const Model::ListTablesRequest& request);
+
+                /**
+                 *启停AI模型，只支持内置分组 cloudbase 和 hunyuan-image
+                 * @param req ModifyAIModelStatusRequest
+                 * @return ModifyAIModelStatusOutcome
+                 */
+                ModifyAIModelStatusOutcome ModifyAIModelStatus(const Model::ModifyAIModelStatusRequest &request);
+                void ModifyAIModelStatusAsync(const Model::ModifyAIModelStatusRequest& request, const ModifyAIModelStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAIModelStatusOutcomeCallable ModifyAIModelStatusCallable(const Model::ModifyAIModelStatusRequest& request);
 
                 /**
                  *修改客户端配置。采用增量更新策略，仅更新请求中传入的非空字段，未传入的字段保持原值不变。支持修改客户端基本信息（名称、图标、描述、主页地址）、安全域名、允许的 Scope 列表、Token 有效期、会话控制策略及启用状态等配置。

@@ -130,6 +130,69 @@ namespace TencentCloud
                      */
                     bool EnableResponseHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否投递 response_headers（响应头，完整键值对，原样投递不做过滤/脱敏，超过2KB截断）。1:开启 0/不填:不开启。与 EnableResponse（响应体）完全独立，互不影响。</p>
+                     * @return EnableResponseHeaders <p>是否投递 response_headers（响应头，完整键值对，原样投递不做过滤/脱敏，超过2KB截断）。1:开启 0/不填:不开启。与 EnableResponse（响应体）完全独立，互不影响。</p>
+                     * 
+                     */
+                    int64_t GetEnableResponseHeaders() const;
+
+                    /**
+                     * 设置<p>是否投递 response_headers（响应头，完整键值对，原样投递不做过滤/脱敏，超过2KB截断）。1:开启 0/不填:不开启。与 EnableResponse（响应体）完全独立，互不影响。</p>
+                     * @param _enableResponseHeaders <p>是否投递 response_headers（响应头，完整键值对，原样投递不做过滤/脱敏，超过2KB截断）。1:开启 0/不填:不开启。与 EnableResponse（响应体）完全独立，互不影响。</p>
+                     * 
+                     */
+                    void SetEnableResponseHeaders(const int64_t& _enableResponseHeaders);
+
+                    /**
+                     * 判断参数 EnableResponseHeaders 是否已赋值
+                     * @return EnableResponseHeaders 是否已赋值
+                     * 
+                     */
+                    bool EnableResponseHeadersHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否投递 response_length（响应包长度，单位字节）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。</p>
+                     * @return EnableResponseLength <p>是否投递 response_length（响应包长度，单位字节）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。</p>
+                     * 
+                     */
+                    int64_t GetEnableResponseLength() const;
+
+                    /**
+                     * 设置<p>是否投递 response_length（响应包长度，单位字节）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。</p>
+                     * @param _enableResponseLength <p>是否投递 response_length（响应包长度，单位字节）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。</p>
+                     * 
+                     */
+                    void SetEnableResponseLength(const int64_t& _enableResponseLength);
+
+                    /**
+                     * 判断参数 EnableResponseLength 是否已赋值
+                     * @return EnableResponseLength 是否已赋值
+                     * 
+                     */
+                    bool EnableResponseLengthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否投递 response_status_line（客户端可见 HTTP 状态行，如 HTTP/1.1 200 OK，超过1KB截断）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。拦截/未回源时也会有值，记录的是 WAF 返回给客户端的状态行。</p>
+                     * @return EnableResponseStatusLine <p>是否投递 response_status_line（客户端可见 HTTP 状态行，如 HTTP/1.1 200 OK，超过1KB截断）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。拦截/未回源时也会有值，记录的是 WAF 返回给客户端的状态行。</p>
+                     * 
+                     */
+                    int64_t GetEnableResponseStatusLine() const;
+
+                    /**
+                     * 设置<p>是否投递 response_status_line（客户端可见 HTTP 状态行，如 HTTP/1.1 200 OK，超过1KB截断）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。拦截/未回源时也会有值，记录的是 WAF 返回给客户端的状态行。</p>
+                     * @param _enableResponseStatusLine <p>是否投递 response_status_line（客户端可见 HTTP 状态行，如 HTTP/1.1 200 OK，超过1KB截断）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。拦截/未回源时也会有值，记录的是 WAF 返回给客户端的状态行。</p>
+                     * 
+                     */
+                    void SetEnableResponseStatusLine(const int64_t& _enableResponseStatusLine);
+
+                    /**
+                     * 判断参数 EnableResponseStatusLine 是否已赋值
+                     * @return EnableResponseStatusLine 是否已赋值
+                     * 
+                     */
+                    bool EnableResponseStatusLineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +218,24 @@ namespace TencentCloud
                      */
                     int64_t m_enableResponse;
                     bool m_enableResponseHasBeenSet;
+
+                    /**
+                     * <p>是否投递 response_headers（响应头，完整键值对，原样投递不做过滤/脱敏，超过2KB截断）。1:开启 0/不填:不开启。与 EnableResponse（响应体）完全独立，互不影响。</p>
+                     */
+                    int64_t m_enableResponseHeaders;
+                    bool m_enableResponseHeadersHasBeenSet;
+
+                    /**
+                     * <p>是否投递 response_length（响应包长度，单位字节）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。</p>
+                     */
+                    int64_t m_enableResponseLength;
+                    bool m_enableResponseLengthHasBeenSet;
+
+                    /**
+                     * <p>是否投递 response_status_line（客户端可见 HTTP 状态行，如 HTTP/1.1 200 OK，超过1KB截断）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。拦截/未回源时也会有值，记录的是 WAF 返回给客户端的状态行。</p>
+                     */
+                    int64_t m_enableResponseStatusLine;
+                    bool m_enableResponseStatusLineHasBeenSet;
 
                 };
             }

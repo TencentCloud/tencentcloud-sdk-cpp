@@ -28,7 +28,8 @@ HybridPkg::HybridPkg() :
     m_endTimeHasBeenSet(false),
     m_inquireNumHasBeenSet(false),
     m_usedNumHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_elasticNodeNumHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome HybridPkg::Deserialize(const rapidjson::Value &value)
         m_renewFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticNodeNum") && !value["ElasticNodeNum"].IsNull())
+    {
+        if (!value["ElasticNodeNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HybridPkg.ElasticNodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticNodeNum = value["ElasticNodeNum"].GetInt64();
+        m_elasticNodeNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void HybridPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_elasticNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticNodeNum, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void HybridPkg::SetRenewFlag(const uint64_t& _renewFlag)
 bool HybridPkg::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+int64_t HybridPkg::GetElasticNodeNum() const
+{
+    return m_elasticNodeNum;
+}
+
+void HybridPkg::SetElasticNodeNum(const int64_t& _elasticNodeNum)
+{
+    m_elasticNodeNum = _elasticNodeNum;
+    m_elasticNodeNumHasBeenSet = true;
+}
+
+bool HybridPkg::ElasticNodeNumHasBeenSet() const
+{
+    return m_elasticNodeNumHasBeenSet;
 }
 

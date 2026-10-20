@@ -30,6 +30,7 @@
 #include <tencentcloud/waf/v20180125/model/ImageResult.h>
 #include <tencentcloud/waf/v20180125/model/ToolCallResult.h>
 #include <tencentcloud/waf/v20180125/model/IntentDetectResult.h>
+#include <tencentcloud/waf/v20180125/model/UrlDetectResult.h>
 
 
 namespace TencentCloud
@@ -221,6 +222,27 @@ namespace TencentCloud
                     bool PayloadHasBeenSet() const;
 
                     /**
+                     * 获取<p>脱敏后的内容。Action为mask时返回；如果未生成脱敏证据，则返回原文。</p>
+                     * @return Desensitization <p>脱敏后的内容。Action为mask时返回；如果未生成脱敏证据，则返回原文。</p>
+                     * 
+                     */
+                    std::string GetDesensitization() const;
+
+                    /**
+                     * 设置<p>脱敏后的内容。Action为mask时返回；如果未生成脱敏证据，则返回原文。</p>
+                     * @param _desensitization <p>脱敏后的内容。Action为mask时返回；如果未生成脱敏证据，则返回原文。</p>
+                     * 
+                     */
+                    void SetDesensitization(const std::string& _desensitization);
+
+                    /**
+                     * 判断参数 Desensitization 是否已赋值
+                     * @return Desensitization 是否已赋值
+                     * 
+                     */
+                    bool DesensitizationHasBeenSet() const;
+
+                    /**
                      * 获取<p>图片检测结果</p>
                      * @return ImageResult <p>图片检测结果</p>
                      * 
@@ -304,6 +326,27 @@ namespace TencentCloud
                      */
                     bool IntentDetectResultHasBeenSet() const;
 
+                    /**
+                     * 获取<p>恶意URL检测结果</p>
+                     * @return UrlDetectResult <p>恶意URL检测结果</p>
+                     * 
+                     */
+                    UrlDetectResult GetUrlDetectResult() const;
+
+                    /**
+                     * 设置<p>恶意URL检测结果</p>
+                     * @param _urlDetectResult <p>恶意URL检测结果</p>
+                     * 
+                     */
+                    void SetUrlDetectResult(const UrlDetectResult& _urlDetectResult);
+
+                    /**
+                     * 判断参数 UrlDetectResult 是否已赋值
+                     * @return UrlDetectResult 是否已赋值
+                     * 
+                     */
+                    bool UrlDetectResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +398,12 @@ namespace TencentCloud
                     bool m_payloadHasBeenSet;
 
                     /**
+                     * <p>脱敏后的内容。Action为mask时返回；如果未生成脱敏证据，则返回原文。</p>
+                     */
+                    std::string m_desensitization;
+                    bool m_desensitizationHasBeenSet;
+
+                    /**
                      * <p>图片检测结果</p>
                      */
                     std::vector<ImageResult> m_imageResult;
@@ -377,6 +426,12 @@ namespace TencentCloud
                      */
                     IntentDetectResult m_intentDetectResult;
                     bool m_intentDetectResultHasBeenSet;
+
+                    /**
+                     * <p>恶意URL检测结果</p>
+                     */
+                    UrlDetectResult m_urlDetectResult;
+                    bool m_urlDetectResultHasBeenSet;
 
                 };
             }

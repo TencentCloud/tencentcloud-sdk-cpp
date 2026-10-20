@@ -26,6 +26,24 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/LLMPkg.h>
 #include <tencentcloud/waf/v20180125/model/LLMTokenUsage.h>
+#include <tencentcloud/waf/v20180125/model/QPSPackageNew.h>
+#include <tencentcloud/waf/v20180125/model/DomainPackageNew.h>
+#include <tencentcloud/waf/v20180125/model/FraudPkg.h>
+#include <tencentcloud/waf/v20180125/model/BotPkg.h>
+#include <tencentcloud/waf/v20180125/model/BotQPS.h>
+#include <tencentcloud/waf/v20180125/model/MajorEventsPkg.h>
+#include <tencentcloud/waf/v20180125/model/HybridPkg.h>
+#include <tencentcloud/waf/v20180125/model/ApiPkg.h>
+#include <tencentcloud/waf/v20180125/model/MiniPkg.h>
+#include <tencentcloud/waf/v20180125/model/MiniExtendPkg.h>
+#include <tencentcloud/waf/v20180125/model/MajorEventsProPkg.h>
+#include <tencentcloud/waf/v20180125/model/NetworkConfig.h>
+#include <tencentcloud/waf/v20180125/model/RCEPkg.h>
+#include <tencentcloud/waf/v20180125/model/LLMMonPkg.h>
+#include <tencentcloud/waf/v20180125/model/BotSecurityPkg.h>
+#include <tencentcloud/waf/v20180125/model/BotMonitorPkg.h>
+#include <tencentcloud/waf/v20180125/model/DedicatedIPPkg.h>
+#include <tencentcloud/waf/v20180125/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -37,7 +55,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 后付费实例（Edition=llm-sdk-waf）的基础信息，仅包含 tb_instance_conf 基础字段
+                * 后付费实例详情，结构与 DescribeInstances 的 InstanceInfo 保持一致，全量返回实例字段（含各类套餐包信息），并额外填充 LLMTokenUsage；基础安全实例另返回 DomainCount、ExpertRuleCount、CustomRuleCount 实时统计
                 */
                 class AfterPayInstanceInfo : public AbstractModel
                 {
@@ -531,6 +549,846 @@ namespace TencentCloud
                      */
                     bool LLMTokenUsageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>弹性计费开关。<br>0：关闭<br>1：开启</p>
+                     * @return Mode <p>弹性计费开关。<br>0：关闭<br>1：开启</p>
+                     * 
+                     */
+                    uint64_t GetMode() const;
+
+                    /**
+                     * 设置<p>弹性计费开关。<br>0：关闭<br>1：开启</p>
+                     * @param _mode <p>弹性计费开关。<br>0：关闭<br>1：开启</p>
+                     * 
+                     */
+                    void SetMode(const uint64_t& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>已配置域名个数。</p><p>按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回实时去重后的接入域名数，统计范围覆盖SaaS接入域名、云原生防护对象（含默认虚拟域名）与四层REIP接入域名，同一域名多条接入记录只计一次。</p>
+                     * @return DomainCount <p>已配置域名个数。</p><p>按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回实时去重后的接入域名数，统计范围覆盖SaaS接入域名、云原生防护对象（含默认虚拟域名）与四层REIP接入域名，同一域名多条接入记录只计一次。</p>
+                     * 
+                     */
+                    uint64_t GetDomainCount() const;
+
+                    /**
+                     * 设置<p>已配置域名个数。</p><p>按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回实时去重后的接入域名数，统计范围覆盖SaaS接入域名、云原生防护对象（含默认虚拟域名）与四层REIP接入域名，同一域名多条接入记录只计一次。</p>
+                     * @param _domainCount <p>已配置域名个数。</p><p>按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回实时去重后的接入域名数，统计范围覆盖SaaS接入域名、云原生防护对象（含默认虚拟域名）与四层REIP接入域名，同一域名多条接入记录只计一次。</p>
+                     * 
+                     */
+                    void SetDomainCount(const uint64_t& _domainCount);
+
+                    /**
+                     * 判断参数 DomainCount 是否已赋值
+                     * @return DomainCount 是否已赋值
+                     * 
+                     */
+                    bool DomainCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>已配置主域名个数。</p><p>按接入域名归属的主域名去重统计；未接入任何域名时为0。</p>
+                     * @return MainDomainCount <p>已配置主域名个数。</p><p>按接入域名归属的主域名去重统计；未接入任何域名时为0。</p>
+                     * 
+                     */
+                    uint64_t GetMainDomainCount() const;
+
+                    /**
+                     * 设置<p>已配置主域名个数。</p><p>按接入域名归属的主域名去重统计；未接入任何域名时为0。</p>
+                     * @param _mainDomainCount <p>已配置主域名个数。</p><p>按接入域名归属的主域名去重统计；未接入任何域名时为0。</p>
+                     * 
+                     */
+                    void SetMainDomainCount(const uint64_t& _mainDomainCount);
+
+                    /**
+                     * 判断参数 MainDomainCount 是否已赋值
+                     * @return MainDomainCount 是否已赋值
+                     * 
+                     */
+                    bool MainDomainCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例当前实时开启的专家规则数量。统计口径：接入一个防护对象（域名）即默认计1个专家规则，即等于该实例的实时接入域名数DomainCount；未接入任何对象时为0。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值ExpertUsage可能存在差异。</p>
+                     * @return ExpertRuleCount <p>实例当前实时开启的专家规则数量。统计口径：接入一个防护对象（域名）即默认计1个专家规则，即等于该实例的实时接入域名数DomainCount；未接入任何对象时为0。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值ExpertUsage可能存在差异。</p>
+                     * 
+                     */
+                    uint64_t GetExpertRuleCount() const;
+
+                    /**
+                     * 设置<p>实例当前实时开启的专家规则数量。统计口径：接入一个防护对象（域名）即默认计1个专家规则，即等于该实例的实时接入域名数DomainCount；未接入任何对象时为0。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值ExpertUsage可能存在差异。</p>
+                     * @param _expertRuleCount <p>实例当前实时开启的专家规则数量。统计口径：接入一个防护对象（域名）即默认计1个专家规则，即等于该实例的实时接入域名数DomainCount；未接入任何对象时为0。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值ExpertUsage可能存在差异。</p>
+                     * 
+                     */
+                    void SetExpertRuleCount(const uint64_t& _expertRuleCount);
+
+                    /**
+                     * 判断参数 ExpertRuleCount 是否已赋值
+                     * @return ExpertRuleCount 是否已赋值
+                     * 
+                     */
+                    bool ExpertRuleCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例下所有接入域名的实时自定义规则条数之和。统计范围包含自定义策略、规则白名单、IP封禁、自定义CC、紧急CC、地域封禁、防信息泄露、防篡改、IP黑白名单等模块；同一条批量规则命中该实例下N个域名时计N条。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照且不做多实例平分，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值CustomUsage可能存在差异。</p>
+                     * @return CustomRuleCount <p>实例下所有接入域名的实时自定义规则条数之和。统计范围包含自定义策略、规则白名单、IP封禁、自定义CC、紧急CC、地域封禁、防信息泄露、防篡改、IP黑白名单等模块；同一条批量规则命中该实例下N个域名时计N条。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照且不做多实例平分，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值CustomUsage可能存在差异。</p>
+                     * 
+                     */
+                    uint64_t GetCustomRuleCount() const;
+
+                    /**
+                     * 设置<p>实例下所有接入域名的实时自定义规则条数之和。统计范围包含自定义策略、规则白名单、IP封禁、自定义CC、紧急CC、地域封禁、防信息泄露、防篡改、IP黑白名单等模块；同一条批量规则命中该实例下N个域名时计N条。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照且不做多实例平分，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值CustomUsage可能存在差异。</p>
+                     * @param _customRuleCount <p>实例下所有接入域名的实时自定义规则条数之和。统计范围包含自定义策略、规则白名单、IP封禁、自定义CC、紧急CC、地域封禁、防信息泄露、防篡改、IP黑白名单等模块；同一条批量规则命中该实例下N个域名时计N条。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照且不做多实例平分，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值CustomUsage可能存在差异。</p>
+                     * 
+                     */
+                    void SetCustomRuleCount(const uint64_t& _customRuleCount);
+
+                    /**
+                     * 判断参数 CustomRuleCount 是否已赋值
+                     * @return CustomRuleCount 是否已赋值
+                     * 
+                     */
+                    bool CustomRuleCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例30天内QPS峰值</p>
+                     * @return MaxQPS <p>实例30天内QPS峰值</p>
+                     * 
+                     */
+                    uint64_t GetMaxQPS() const;
+
+                    /**
+                     * 设置<p>实例30天内QPS峰值</p>
+                     * @param _maxQPS <p>实例30天内QPS峰值</p>
+                     * 
+                     */
+                    void SetMaxQPS(const uint64_t& _maxQPS);
+
+                    /**
+                     * 判断参数 MaxQPS 是否已赋值
+                     * @return MaxQPS 是否已赋值
+                     * 
+                     */
+                    bool MaxQPSHasBeenSet() const;
+
+                    /**
+                     * 获取<p>qps扩展包信息</p>
+                     * @return QPS <p>qps扩展包信息</p>
+                     * 
+                     */
+                    QPSPackageNew GetQPS() const;
+
+                    /**
+                     * 设置<p>qps扩展包信息</p>
+                     * @param _qPS <p>qps扩展包信息</p>
+                     * 
+                     */
+                    void SetQPS(const QPSPackageNew& _qPS);
+
+                    /**
+                     * 判断参数 QPS 是否已赋值
+                     * @return QPS 是否已赋值
+                     * 
+                     */
+                    bool QPSHasBeenSet() const;
+
+                    /**
+                     * 获取<p>域名扩展包信息</p>
+                     * @return DomainPkg <p>域名扩展包信息</p>
+                     * 
+                     */
+                    DomainPackageNew GetDomainPkg() const;
+
+                    /**
+                     * 设置<p>域名扩展包信息</p>
+                     * @param _domainPkg <p>域名扩展包信息</p>
+                     * 
+                     */
+                    void SetDomainPkg(const DomainPackageNew& _domainPkg);
+
+                    /**
+                     * 判断参数 DomainPkg 是否已赋值
+                     * @return DomainPkg 是否已赋值
+                     * 
+                     */
+                    bool DomainPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>业务安全包</p>
+                     * @return FraudPkg <p>业务安全包</p>
+                     * 
+                     */
+                    FraudPkg GetFraudPkg() const;
+
+                    /**
+                     * 设置<p>业务安全包</p>
+                     * @param _fraudPkg <p>业务安全包</p>
+                     * 
+                     */
+                    void SetFraudPkg(const FraudPkg& _fraudPkg);
+
+                    /**
+                     * 判断参数 FraudPkg 是否已赋值
+                     * @return FraudPkg 是否已赋值
+                     * 
+                     */
+                    bool FraudPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Bot资源包</p>
+                     * @return BotPkg <p>Bot资源包</p>
+                     * 
+                     */
+                    BotPkg GetBotPkg() const;
+
+                    /**
+                     * 设置<p>Bot资源包</p>
+                     * @param _botPkg <p>Bot资源包</p>
+                     * 
+                     */
+                    void SetBotPkg(const BotPkg& _botPkg);
+
+                    /**
+                     * 判断参数 BotPkg 是否已赋值
+                     * @return BotPkg 是否已赋值
+                     * 
+                     */
+                    bool BotPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>bot的qps详情</p>
+                     * @return BotQPS <p>bot的qps详情</p>
+                     * 
+                     */
+                    BotQPS GetBotQPS() const;
+
+                    /**
+                     * 设置<p>bot的qps详情</p>
+                     * @param _botQPS <p>bot的qps详情</p>
+                     * 
+                     */
+                    void SetBotQPS(const BotQPS& _botQPS);
+
+                    /**
+                     * 判断参数 BotQPS 是否已赋值
+                     * @return BotQPS 是否已赋值
+                     * 
+                     */
+                    bool BotQPSHasBeenSet() const;
+
+                    /**
+                     * 获取<p>带宽峰值，单位为B/s(字节每秒)</p>
+                     * @return MaxBandwidth <p>带宽峰值，单位为B/s(字节每秒)</p>
+                     * 
+                     */
+                    uint64_t GetMaxBandwidth() const;
+
+                    /**
+                     * 设置<p>带宽峰值，单位为B/s(字节每秒)</p>
+                     * @param _maxBandwidth <p>带宽峰值，单位为B/s(字节每秒)</p>
+                     * 
+                     */
+                    void SetMaxBandwidth(const uint64_t& _maxBandwidth);
+
+                    /**
+                     * 判断参数 MaxBandwidth 是否已赋值
+                     * @return MaxBandwidth 是否已赋值
+                     * 
+                     */
+                    bool MaxBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>购买的qps规格</p>
+                     * @return QpsStandard <p>购买的qps规格</p>
+                     * 
+                     */
+                    uint64_t GetQpsStandard() const;
+
+                    /**
+                     * 设置<p>购买的qps规格</p>
+                     * @param _qpsStandard <p>购买的qps规格</p>
+                     * 
+                     */
+                    void SetQpsStandard(const uint64_t& _qpsStandard);
+
+                    /**
+                     * 判断参数 QpsStandard 是否已赋值
+                     * @return QpsStandard 是否已赋值
+                     * 
+                     */
+                    bool QpsStandardHasBeenSet() const;
+
+                    /**
+                     * 获取<p>购买的带宽规格</p>
+                     * @return BandwidthStandard <p>购买的带宽规格</p>
+                     * 
+                     */
+                    uint64_t GetBandwidthStandard() const;
+
+                    /**
+                     * 设置<p>购买的带宽规格</p>
+                     * @param _bandwidthStandard <p>购买的带宽规格</p>
+                     * 
+                     */
+                    void SetBandwidthStandard(const uint64_t& _bandwidthStandard);
+
+                    /**
+                     * 判断参数 BandwidthStandard 是否已赋值
+                     * @return BandwidthStandard 是否已赋值
+                     * 
+                     */
+                    bool BandwidthStandardHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例状态</p>
+                     * @return Status <p>实例状态</p>
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置<p>实例状态</p>
+                     * @param _status <p>实例状态</p>
+                     * 
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例沙箱qps值</p>
+                     * @return SandboxQps <p>实例沙箱qps值</p>
+                     * 
+                     */
+                    uint64_t GetSandboxQps() const;
+
+                    /**
+                     * 设置<p>实例沙箱qps值</p>
+                     * @param _sandboxQps <p>实例沙箱qps值</p>
+                     * 
+                     */
+                    void SetSandboxQps(const uint64_t& _sandboxQps);
+
+                    /**
+                     * 判断参数 SandboxQps 是否已赋值
+                     * @return SandboxQps 是否已赋值
+                     * 
+                     */
+                    bool SandboxQpsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>重保包</p>
+                     * @return MajorEventsPkg <p>重保包</p>
+                     * 
+                     */
+                    MajorEventsPkg GetMajorEventsPkg() const;
+
+                    /**
+                     * 设置<p>重保包</p>
+                     * @param _majorEventsPkg <p>重保包</p>
+                     * 
+                     */
+                    void SetMajorEventsPkg(const MajorEventsPkg& _majorEventsPkg);
+
+                    /**
+                     * 判断参数 MajorEventsPkg 是否已赋值
+                     * @return MajorEventsPkg 是否已赋值
+                     * 
+                     */
+                    bool MajorEventsPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>混合云子节点包</p>
+                     * @return HybridPkg <p>混合云子节点包</p>
+                     * 
+                     */
+                    HybridPkg GetHybridPkg() const;
+
+                    /**
+                     * 设置<p>混合云子节点包</p>
+                     * @param _hybridPkg <p>混合云子节点包</p>
+                     * 
+                     */
+                    void SetHybridPkg(const HybridPkg& _hybridPkg);
+
+                    /**
+                     * 判断参数 HybridPkg 是否已赋值
+                     * @return HybridPkg 是否已赋值
+                     * 
+                     */
+                    bool HybridPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>API安全资源包</p>
+                     * @return ApiPkg <p>API安全资源包</p>
+                     * 
+                     */
+                    ApiPkg GetApiPkg() const;
+
+                    /**
+                     * 设置<p>API安全资源包</p>
+                     * @param _apiPkg <p>API安全资源包</p>
+                     * 
+                     */
+                    void SetApiPkg(const ApiPkg& _apiPkg);
+
+                    /**
+                     * 判断参数 ApiPkg 是否已赋值
+                     * @return ApiPkg 是否已赋值
+                     * 
+                     */
+                    bool ApiPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>小程序安全加速包</p>
+                     * @return MiniPkg <p>小程序安全加速包</p>
+                     * 
+                     */
+                    MiniPkg GetMiniPkg() const;
+
+                    /**
+                     * 设置<p>小程序安全加速包</p>
+                     * @param _miniPkg <p>小程序安全加速包</p>
+                     * 
+                     */
+                    void SetMiniPkg(const MiniPkg& _miniPkg);
+
+                    /**
+                     * 判断参数 MiniPkg 是否已赋值
+                     * @return MiniPkg 是否已赋值
+                     * 
+                     */
+                    bool MiniPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>小程序qps规格</p>
+                     * @return MiniQpsStandard <p>小程序qps规格</p>
+                     * 
+                     */
+                    uint64_t GetMiniQpsStandard() const;
+
+                    /**
+                     * 设置<p>小程序qps规格</p>
+                     * @param _miniQpsStandard <p>小程序qps规格</p>
+                     * 
+                     */
+                    void SetMiniQpsStandard(const uint64_t& _miniQpsStandard);
+
+                    /**
+                     * 判断参数 MiniQpsStandard 是否已赋值
+                     * @return MiniQpsStandard 是否已赋值
+                     * 
+                     */
+                    bool MiniQpsStandardHasBeenSet() const;
+
+                    /**
+                     * 获取<p>小程序qps峰值</p>
+                     * @return MiniMaxQPS <p>小程序qps峰值</p>
+                     * 
+                     */
+                    uint64_t GetMiniMaxQPS() const;
+
+                    /**
+                     * 设置<p>小程序qps峰值</p>
+                     * @param _miniMaxQPS <p>小程序qps峰值</p>
+                     * 
+                     */
+                    void SetMiniMaxQPS(const uint64_t& _miniMaxQPS);
+
+                    /**
+                     * 判断参数 MiniMaxQPS 是否已赋值
+                     * @return MiniMaxQPS 是否已赋值
+                     * 
+                     */
+                    bool MiniMaxQPSHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最近一次超量时间</p>
+                     * @return LastQpsExceedTime <p>最近一次超量时间</p>
+                     * 
+                     */
+                    std::string GetLastQpsExceedTime() const;
+
+                    /**
+                     * 设置<p>最近一次超量时间</p>
+                     * @param _lastQpsExceedTime <p>最近一次超量时间</p>
+                     * 
+                     */
+                    void SetLastQpsExceedTime(const std::string& _lastQpsExceedTime);
+
+                    /**
+                     * 判断参数 LastQpsExceedTime 是否已赋值
+                     * @return LastQpsExceedTime 是否已赋值
+                     * 
+                     */
+                    bool LastQpsExceedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>小程序安全接入ID数量扩张包</p>
+                     * @return MiniExtendPkg <p>小程序安全接入ID数量扩张包</p>
+                     * 
+                     */
+                    MiniExtendPkg GetMiniExtendPkg() const;
+
+                    /**
+                     * 设置<p>小程序安全接入ID数量扩张包</p>
+                     * @param _miniExtendPkg <p>小程序安全接入ID数量扩张包</p>
+                     * 
+                     */
+                    void SetMiniExtendPkg(const MiniExtendPkg& _miniExtendPkg);
+
+                    /**
+                     * 判断参数 MiniExtendPkg 是否已赋值
+                     * @return MiniExtendPkg 是否已赋值
+                     * 
+                     */
+                    bool MiniExtendPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最近3天最大qps</p>
+                     * @return Last3MaxQPS <p>最近3天最大qps</p>
+                     * 
+                     */
+                    uint64_t GetLast3MaxQPS() const;
+
+                    /**
+                     * 设置<p>最近3天最大qps</p>
+                     * @param _last3MaxQPS <p>最近3天最大qps</p>
+                     * 
+                     */
+                    void SetLast3MaxQPS(const uint64_t& _last3MaxQPS);
+
+                    /**
+                     * 判断参数 Last3MaxQPS 是否已赋值
+                     * @return Last3MaxQPS 是否已赋值
+                     * 
+                     */
+                    bool Last3MaxQPSHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最近3天最大带宽</p>
+                     * @return Last3MaxBandwidth <p>最近3天最大带宽</p>
+                     * 
+                     */
+                    uint64_t GetLast3MaxBandwidth() const;
+
+                    /**
+                     * 设置<p>最近3天最大带宽</p>
+                     * @param _last3MaxBandwidth <p>最近3天最大带宽</p>
+                     * 
+                     */
+                    void SetLast3MaxBandwidth(const uint64_t& _last3MaxBandwidth);
+
+                    /**
+                     * 判断参数 Last3MaxBandwidth 是否已赋值
+                     * @return Last3MaxBandwidth 是否已赋值
+                     * 
+                     */
+                    bool Last3MaxBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>
+                     * @return Last7MaxMiniBandwidth <p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>
+                     * 
+                     */
+                    uint64_t GetLast7MaxMiniBandwidth() const;
+
+                    /**
+                     * 设置<p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>
+                     * @param _last7MaxMiniBandwidth <p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>
+                     * 
+                     */
+                    void SetLast7MaxMiniBandwidth(const uint64_t& _last7MaxMiniBandwidth);
+
+                    /**
+                     * 判断参数 Last7MaxMiniBandwidth 是否已赋值
+                     * @return Last7MaxMiniBandwidth 是否已赋值
+                     * 
+                     */
+                    bool Last7MaxMiniBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>
+                     * @return MiniBandwidthStandard <p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>
+                     * 
+                     */
+                    uint64_t GetMiniBandwidthStandard() const;
+
+                    /**
+                     * 设置<p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>
+                     * @param _miniBandwidthStandard <p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>
+                     * 
+                     */
+                    void SetMiniBandwidthStandard(const uint64_t& _miniBandwidthStandard);
+
+                    /**
+                     * 判断参数 MiniBandwidthStandard 是否已赋值
+                     * @return MiniBandwidthStandard 是否已赋值
+                     * 
+                     */
+                    bool MiniBandwidthStandardHasBeenSet() const;
+
+                    /**
+                     * 获取<p>重保增强包</p>
+                     * @return MajorEventsProPkg <p>重保增强包</p>
+                     * 
+                     */
+                    MajorEventsProPkg GetMajorEventsProPkg() const;
+
+                    /**
+                     * 设置<p>重保增强包</p>
+                     * @param _majorEventsProPkg <p>重保增强包</p>
+                     * 
+                     */
+                    void SetMajorEventsProPkg(const MajorEventsProPkg& _majorEventsProPkg);
+
+                    /**
+                     * 判断参数 MajorEventsProPkg 是否已赋值
+                     * @return MajorEventsProPkg 是否已赋值
+                     * 
+                     */
+                    bool MajorEventsProPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例的网络配置</p>
+                     * @return NetworkConfig <p>实例的网络配置</p>
+                     * 
+                     */
+                    NetworkConfig GetNetworkConfig() const;
+
+                    /**
+                     * 设置<p>实例的网络配置</p>
+                     * @param _networkConfig <p>实例的网络配置</p>
+                     * 
+                     */
+                    void SetNetworkConfig(const NetworkConfig& _networkConfig);
+
+                    /**
+                     * 判断参数 NetworkConfig 是否已赋值
+                     * @return NetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool NetworkConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>RCE设备安全信息包</p>
+                     * @return RCEPkg <p>RCE设备安全信息包</p>
+                     * 
+                     */
+                    RCEPkg GetRCEPkg() const;
+
+                    /**
+                     * 设置<p>RCE设备安全信息包</p>
+                     * @param _rCEPkg <p>RCE设备安全信息包</p>
+                     * 
+                     */
+                    void SetRCEPkg(const RCEPkg& _rCEPkg);
+
+                    /**
+                     * 判断参数 RCEPkg 是否已赋值
+                     * @return RCEPkg 是否已赋值
+                     * 
+                     */
+                    bool RCEPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>超量策略。0：超量沙箱<br>1：超量限流</p>
+                     * @return ExceedPolicy <p>超量策略。0：超量沙箱<br>1：超量限流</p>
+                     * 
+                     */
+                    int64_t GetExceedPolicy() const;
+
+                    /**
+                     * 设置<p>超量策略。0：超量沙箱<br>1：超量限流</p>
+                     * @param _exceedPolicy <p>超量策略。0：超量沙箱<br>1：超量限流</p>
+                     * 
+                     */
+                    void SetExceedPolicy(const int64_t& _exceedPolicy);
+
+                    /**
+                     * 判断参数 ExceedPolicy 是否已赋值
+                     * @return ExceedPolicy 是否已赋值
+                     * 
+                     */
+                    bool ExceedPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>弹性资源Id</p>
+                     * @return ElasticResourceId <p>弹性资源Id</p>
+                     * 
+                     */
+                    std::string GetElasticResourceId() const;
+
+                    /**
+                     * 设置<p>弹性资源Id</p>
+                     * @param _elasticResourceId <p>弹性资源Id</p>
+                     * 
+                     */
+                    void SetElasticResourceId(const std::string& _elasticResourceId);
+
+                    /**
+                     * 判断参数 ElasticResourceId 是否已赋值
+                     * @return ElasticResourceId 是否已赋值
+                     * 
+                     */
+                    bool ElasticResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预付费大模型安全信息包</p>
+                     * @return LLMMonPkg <p>预付费大模型安全信息包</p>
+                     * 
+                     */
+                    LLMMonPkg GetLLMMonPkg() const;
+
+                    /**
+                     * 设置<p>预付费大模型安全信息包</p>
+                     * @param _lLMMonPkg <p>预付费大模型安全信息包</p>
+                     * 
+                     */
+                    void SetLLMMonPkg(const LLMMonPkg& _lLMMonPkg);
+
+                    /**
+                     * 判断参数 LLMMonPkg 是否已赋值
+                     * @return LLMMonPkg 是否已赋值
+                     * 
+                     */
+                    bool LLMMonPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>地域id</p>
+                     * @return RegionId <p>地域id</p>
+                     * 
+                     */
+                    uint64_t GetRegionId() const;
+
+                    /**
+                     * 设置<p>地域id</p>
+                     * @param _regionId <p>地域id</p>
+                     * 
+                     */
+                    void SetRegionId(const uint64_t& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     * 
+                     */
+                    bool RegionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>BOT安全护航信息</p>
+                     * @return BotSecurityPkg <p>BOT安全护航信息</p>
+                     * 
+                     */
+                    BotSecurityPkg GetBotSecurityPkg() const;
+
+                    /**
+                     * 设置<p>BOT安全护航信息</p>
+                     * @param _botSecurityPkg <p>BOT安全护航信息</p>
+                     * 
+                     */
+                    void SetBotSecurityPkg(const BotSecurityPkg& _botSecurityPkg);
+
+                    /**
+                     * 判断参数 BotSecurityPkg 是否已赋值
+                     * @return BotSecurityPkg 是否已赋值
+                     * 
+                     */
+                    bool BotSecurityPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>BOT安全监测资源信息</p>
+                     * @return BotMonitorPkg <p>BOT安全监测资源信息</p>
+                     * 
+                     */
+                    BotMonitorPkg GetBotMonitorPkg() const;
+
+                    /**
+                     * 设置<p>BOT安全监测资源信息</p>
+                     * @param _botMonitorPkg <p>BOT安全监测资源信息</p>
+                     * 
+                     */
+                    void SetBotMonitorPkg(const BotMonitorPkg& _botMonitorPkg);
+
+                    /**
+                     * 判断参数 BotMonitorPkg 是否已赋值
+                     * @return BotMonitorPkg 是否已赋值
+                     * 
+                     */
+                    bool BotMonitorPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>独享ip资源信息</p>
+                     * @return DedicatedIPPkg <p>独享ip资源信息</p>
+                     * 
+                     */
+                    DedicatedIPPkg GetDedicatedIPPkg() const;
+
+                    /**
+                     * 设置<p>独享ip资源信息</p>
+                     * @param _dedicatedIPPkg <p>独享ip资源信息</p>
+                     * 
+                     */
+                    void SetDedicatedIPPkg(const DedicatedIPPkg& _dedicatedIPPkg);
+
+                    /**
+                     * 判断参数 DedicatedIPPkg 是否已赋值
+                     * @return DedicatedIPPkg 是否已赋值
+                     * 
+                     */
+                    bool DedicatedIPPkgHasBeenSet() const;
+
+                    /**
+                     * 获取<p>已经配置独享ip的数量</p>
+                     * @return DedicatedIPCount <p>已经配置独享ip的数量</p>
+                     * 
+                     */
+                    int64_t GetDedicatedIPCount() const;
+
+                    /**
+                     * 设置<p>已经配置独享ip的数量</p>
+                     * @param _dedicatedIPCount <p>已经配置独享ip的数量</p>
+                     * 
+                     */
+                    void SetDedicatedIPCount(const int64_t& _dedicatedIPCount);
+
+                    /**
+                     * 判断参数 DedicatedIPCount 是否已赋值
+                     * @return DedicatedIPCount 是否已赋值
+                     * 
+                     */
+                    bool DedicatedIPCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标签结构体</p>
+                     * @return TagInfos <p>标签结构体</p>
+                     * 
+                     */
+                    std::vector<TagInfo> GetTagInfos() const;
+
+                    /**
+                     * 设置<p>标签结构体</p>
+                     * @param _tagInfos <p>标签结构体</p>
+                     * 
+                     */
+                    void SetTagInfos(const std::vector<TagInfo>& _tagInfos);
+
+                    /**
+                     * 判断参数 TagInfos 是否已赋值
+                     * @return TagInfos 是否已赋值
+                     * 
+                     */
+                    bool TagInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -670,6 +1528,246 @@ namespace TencentCloud
                      */
                     LLMTokenUsage m_lLMTokenUsage;
                     bool m_lLMTokenUsageHasBeenSet;
+
+                    /**
+                     * <p>弹性计费开关。<br>0：关闭<br>1：开启</p>
+                     */
+                    uint64_t m_mode;
+                    bool m_modeHasBeenSet;
+
+                    /**
+                     * <p>已配置域名个数。</p><p>按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回实时去重后的接入域名数，统计范围覆盖SaaS接入域名、云原生防护对象（含默认虚拟域名）与四层REIP接入域名，同一域名多条接入记录只计一次。</p>
+                     */
+                    uint64_t m_domainCount;
+                    bool m_domainCountHasBeenSet;
+
+                    /**
+                     * <p>已配置主域名个数。</p><p>按接入域名归属的主域名去重统计；未接入任何域名时为0。</p>
+                     */
+                    uint64_t m_mainDomainCount;
+                    bool m_mainDomainCountHasBeenSet;
+
+                    /**
+                     * <p>实例当前实时开启的专家规则数量。统计口径：接入一个防护对象（域名）即默认计1个专家规则，即等于该实例的实时接入域名数DomainCount；未接入任何对象时为0。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值ExpertUsage可能存在差异。</p>
+                     */
+                    uint64_t m_expertRuleCount;
+                    bool m_expertRuleCountHasBeenSet;
+
+                    /**
+                     * <p>实例下所有接入域名的实时自定义规则条数之和。统计范围包含自定义策略、规则白名单、IP封禁、自定义CC、紧急CC、地域封禁、防信息泄露、防篡改、IP黑白名单等模块；同一条批量规则命中该实例下N个域名时计N条。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照且不做多实例平分，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值CustomUsage可能存在差异。</p>
+                     */
+                    uint64_t m_customRuleCount;
+                    bool m_customRuleCountHasBeenSet;
+
+                    /**
+                     * <p>实例30天内QPS峰值</p>
+                     */
+                    uint64_t m_maxQPS;
+                    bool m_maxQPSHasBeenSet;
+
+                    /**
+                     * <p>qps扩展包信息</p>
+                     */
+                    QPSPackageNew m_qPS;
+                    bool m_qPSHasBeenSet;
+
+                    /**
+                     * <p>域名扩展包信息</p>
+                     */
+                    DomainPackageNew m_domainPkg;
+                    bool m_domainPkgHasBeenSet;
+
+                    /**
+                     * <p>业务安全包</p>
+                     */
+                    FraudPkg m_fraudPkg;
+                    bool m_fraudPkgHasBeenSet;
+
+                    /**
+                     * <p>Bot资源包</p>
+                     */
+                    BotPkg m_botPkg;
+                    bool m_botPkgHasBeenSet;
+
+                    /**
+                     * <p>bot的qps详情</p>
+                     */
+                    BotQPS m_botQPS;
+                    bool m_botQPSHasBeenSet;
+
+                    /**
+                     * <p>带宽峰值，单位为B/s(字节每秒)</p>
+                     */
+                    uint64_t m_maxBandwidth;
+                    bool m_maxBandwidthHasBeenSet;
+
+                    /**
+                     * <p>购买的qps规格</p>
+                     */
+                    uint64_t m_qpsStandard;
+                    bool m_qpsStandardHasBeenSet;
+
+                    /**
+                     * <p>购买的带宽规格</p>
+                     */
+                    uint64_t m_bandwidthStandard;
+                    bool m_bandwidthStandardHasBeenSet;
+
+                    /**
+                     * <p>实例状态</p>
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>实例沙箱qps值</p>
+                     */
+                    uint64_t m_sandboxQps;
+                    bool m_sandboxQpsHasBeenSet;
+
+                    /**
+                     * <p>重保包</p>
+                     */
+                    MajorEventsPkg m_majorEventsPkg;
+                    bool m_majorEventsPkgHasBeenSet;
+
+                    /**
+                     * <p>混合云子节点包</p>
+                     */
+                    HybridPkg m_hybridPkg;
+                    bool m_hybridPkgHasBeenSet;
+
+                    /**
+                     * <p>API安全资源包</p>
+                     */
+                    ApiPkg m_apiPkg;
+                    bool m_apiPkgHasBeenSet;
+
+                    /**
+                     * <p>小程序安全加速包</p>
+                     */
+                    MiniPkg m_miniPkg;
+                    bool m_miniPkgHasBeenSet;
+
+                    /**
+                     * <p>小程序qps规格</p>
+                     */
+                    uint64_t m_miniQpsStandard;
+                    bool m_miniQpsStandardHasBeenSet;
+
+                    /**
+                     * <p>小程序qps峰值</p>
+                     */
+                    uint64_t m_miniMaxQPS;
+                    bool m_miniMaxQPSHasBeenSet;
+
+                    /**
+                     * <p>最近一次超量时间</p>
+                     */
+                    std::string m_lastQpsExceedTime;
+                    bool m_lastQpsExceedTimeHasBeenSet;
+
+                    /**
+                     * <p>小程序安全接入ID数量扩张包</p>
+                     */
+                    MiniExtendPkg m_miniExtendPkg;
+                    bool m_miniExtendPkgHasBeenSet;
+
+                    /**
+                     * <p>最近3天最大qps</p>
+                     */
+                    uint64_t m_last3MaxQPS;
+                    bool m_last3MaxQPSHasBeenSet;
+
+                    /**
+                     * <p>最近3天最大带宽</p>
+                     */
+                    uint64_t m_last3MaxBandwidth;
+                    bool m_last3MaxBandwidthHasBeenSet;
+
+                    /**
+                     * <p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>
+                     */
+                    uint64_t m_last7MaxMiniBandwidth;
+                    bool m_last7MaxMiniBandwidthHasBeenSet;
+
+                    /**
+                     * <p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>
+                     */
+                    uint64_t m_miniBandwidthStandard;
+                    bool m_miniBandwidthStandardHasBeenSet;
+
+                    /**
+                     * <p>重保增强包</p>
+                     */
+                    MajorEventsProPkg m_majorEventsProPkg;
+                    bool m_majorEventsProPkgHasBeenSet;
+
+                    /**
+                     * <p>实例的网络配置</p>
+                     */
+                    NetworkConfig m_networkConfig;
+                    bool m_networkConfigHasBeenSet;
+
+                    /**
+                     * <p>RCE设备安全信息包</p>
+                     */
+                    RCEPkg m_rCEPkg;
+                    bool m_rCEPkgHasBeenSet;
+
+                    /**
+                     * <p>超量策略。0：超量沙箱<br>1：超量限流</p>
+                     */
+                    int64_t m_exceedPolicy;
+                    bool m_exceedPolicyHasBeenSet;
+
+                    /**
+                     * <p>弹性资源Id</p>
+                     */
+                    std::string m_elasticResourceId;
+                    bool m_elasticResourceIdHasBeenSet;
+
+                    /**
+                     * <p>预付费大模型安全信息包</p>
+                     */
+                    LLMMonPkg m_lLMMonPkg;
+                    bool m_lLMMonPkgHasBeenSet;
+
+                    /**
+                     * <p>地域id</p>
+                     */
+                    uint64_t m_regionId;
+                    bool m_regionIdHasBeenSet;
+
+                    /**
+                     * <p>BOT安全护航信息</p>
+                     */
+                    BotSecurityPkg m_botSecurityPkg;
+                    bool m_botSecurityPkgHasBeenSet;
+
+                    /**
+                     * <p>BOT安全监测资源信息</p>
+                     */
+                    BotMonitorPkg m_botMonitorPkg;
+                    bool m_botMonitorPkgHasBeenSet;
+
+                    /**
+                     * <p>独享ip资源信息</p>
+                     */
+                    DedicatedIPPkg m_dedicatedIPPkg;
+                    bool m_dedicatedIPPkgHasBeenSet;
+
+                    /**
+                     * <p>已经配置独享ip的数量</p>
+                     */
+                    int64_t m_dedicatedIPCount;
+                    bool m_dedicatedIPCountHasBeenSet;
+
+                    /**
+                     * <p>标签结构体</p>
+                     */
+                    std::vector<TagInfo> m_tagInfos;
+                    bool m_tagInfosHasBeenSet;
 
                 };
             }
