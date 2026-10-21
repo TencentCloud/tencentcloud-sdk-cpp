@@ -37,7 +37,8 @@ CreateRealtimeLogDeliveryTaskRequest::CreateRealtimeLogDeliveryTaskRequest() :
     m_logFormatHasBeenSet(false),
     m_cLSHasBeenSet(false),
     m_customEndpointHasBeenSet(false),
-    m_s3HasBeenSet(false)
+    m_s3HasBeenSet(false),
+    m_aWSS3HasBeenSet(false)
 {
 }
 
@@ -201,6 +202,15 @@ string CreateRealtimeLogDeliveryTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_s3.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aWSS3HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AWSS3";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aWSS3.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -449,6 +459,22 @@ void CreateRealtimeLogDeliveryTaskRequest::SetS3(const S3& _s3)
 bool CreateRealtimeLogDeliveryTaskRequest::S3HasBeenSet() const
 {
     return m_s3HasBeenSet;
+}
+
+AWSS3 CreateRealtimeLogDeliveryTaskRequest::GetAWSS3() const
+{
+    return m_aWSS3;
+}
+
+void CreateRealtimeLogDeliveryTaskRequest::SetAWSS3(const AWSS3& _aWSS3)
+{
+    m_aWSS3 = _aWSS3;
+    m_aWSS3HasBeenSet = true;
+}
+
+bool CreateRealtimeLogDeliveryTaskRequest::AWSS3HasBeenSet() const
+{
+    return m_aWSS3HasBeenSet;
 }
 
 

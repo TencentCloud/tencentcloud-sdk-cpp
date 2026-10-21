@@ -46,7 +46,9 @@ GetServiceStatusResponse::GetServiceStatusResponse() :
     m_qpsTotalLimitHasBeenSet(false),
     m_regionsQpsHasBeenSet(false),
     m_resourceZoneHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false)
+    m_resourceRegionHasBeenSet(false),
+    m_multiAccountLimitHasBeenSet(false),
+    m_multiAccountUsedCountHasBeenSet(false)
 {
 }
 
@@ -344,6 +346,26 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_resourceRegionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MultiAccountLimit") && !rsp["MultiAccountLimit"].IsNull())
+    {
+        if (!rsp["MultiAccountLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MultiAccountLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_multiAccountLimit = rsp["MultiAccountLimit"].GetUint64();
+        m_multiAccountLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MultiAccountUsedCount") && !rsp["MultiAccountUsedCount"].IsNull())
+    {
+        if (!rsp["MultiAccountUsedCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MultiAccountUsedCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_multiAccountUsedCount = rsp["MultiAccountUsedCount"].GetUint64();
+        m_multiAccountUsedCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -557,6 +579,22 @@ string GetServiceStatusResponse::ToJsonString() const
         string key = "ResourceRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceRegion, allocator);
+    }
+
+    if (m_multiAccountLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiAccountLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_multiAccountLimit, allocator);
+    }
+
+    if (m_multiAccountUsedCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiAccountUsedCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_multiAccountUsedCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -799,6 +837,26 @@ uint64_t GetServiceStatusResponse::GetResourceRegion() const
 bool GetServiceStatusResponse::ResourceRegionHasBeenSet() const
 {
     return m_resourceRegionHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetMultiAccountLimit() const
+{
+    return m_multiAccountLimit;
+}
+
+bool GetServiceStatusResponse::MultiAccountLimitHasBeenSet() const
+{
+    return m_multiAccountLimitHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetMultiAccountUsedCount() const
+{
+    return m_multiAccountUsedCount;
+}
+
+bool GetServiceStatusResponse::MultiAccountUsedCountHasBeenSet() const
+{
+    return m_multiAccountUsedCountHasBeenSet;
 }
 
 

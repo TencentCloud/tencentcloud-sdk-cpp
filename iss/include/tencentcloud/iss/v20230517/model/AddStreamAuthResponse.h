@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设置推拉流鉴权返回数据
-                     * @return Data 设置推拉流鉴权返回数据
+                     * 获取<p>设置推拉流鉴权返回数据</p>
+                     * @return Data <p>设置推拉流鉴权返回数据</p>
                      * 
                      */
                     AddStreamAuthData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设置推拉流鉴权返回数据
+                     * <p>设置推拉流鉴权返回数据</p>
                      */
                     AddStreamAuthData m_data;
                     bool m_dataHasBeenSet;

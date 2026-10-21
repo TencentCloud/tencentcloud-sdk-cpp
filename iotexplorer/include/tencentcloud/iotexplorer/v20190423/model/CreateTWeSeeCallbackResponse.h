@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回调目标 ID
-                     * @return CallbackId 回调目标 ID
+                     * 获取<p>回调目标 ID</p>
+                     * @return CallbackId <p>回调目标 ID</p>
                      * 
                      */
                     std::string GetCallbackId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回调目标 ID
+                     * <p>回调目标 ID</p>
                      */
                     std::string m_callbackId;
                     bool m_callbackIdHasBeenSet;

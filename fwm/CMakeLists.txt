@@ -26,11 +26,13 @@ set(fwm_public_header_model
   include/tencentcloud/fwm/v20250611/model/DescribeStrategiesRequest.h
   include/tencentcloud/fwm/v20250611/model/IgnorePolicyRiskResponse.h
   include/tencentcloud/fwm/v20250611/model/DescribeRiskListResponse.h
+  include/tencentcloud/fwm/v20250611/model/DeleteAccountGroupRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribeNatAclRulesRequest.h
   include/tencentcloud/fwm/v20250611/model/ModifyStrategyRequest.h
   include/tencentcloud/fwm/v20250611/model/DeleteStrategyRequest.h
   include/tencentcloud/fwm/v20250611/model/ModifyRuleGroupRequest.h
   include/tencentcloud/fwm/v20250611/model/ModifyEdgeAclRuleSequenceResponse.h
+  include/tencentcloud/fwm/v20250611/model/DescribeAccountGroupsRequest.h
   include/tencentcloud/fwm/v20250611/model/ModifySecurityGroupRuleRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribeVpcAclRulesRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribePolicyRiskAccountProductStatsResponse.h
@@ -39,24 +41,28 @@ set(fwm_public_header_model
   include/tencentcloud/fwm/v20250611/model/DescribeStrategyResponse.h
   include/tencentcloud/fwm/v20250611/model/DescribeEdgeAclRulesRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribeStrategiesResponse.h
+  include/tencentcloud/fwm/v20250611/model/DeleteAccountGroupResponse.h
   include/tencentcloud/fwm/v20250611/model/DescribeStrategyAccountsRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribeStrategyDispatchStatusRequest.h
-  include/tencentcloud/fwm/v20250611/model/ModifyEdgeAclRuleSequenceRequest.h
+  include/tencentcloud/fwm/v20250611/model/DeleteStrategyResponse.h
   include/tencentcloud/fwm/v20250611/model/SecurityGroupRule.h
   include/tencentcloud/fwm/v20250611/model/DeleteSecurityGroupRuleResponse.h
   include/tencentcloud/fwm/v20250611/model/CreateRuleGroupRequest.h
+  include/tencentcloud/fwm/v20250611/model/SequenceIndex.h
   include/tencentcloud/fwm/v20250611/model/DescribeNatAclRulesResponse.h
+  include/tencentcloud/fwm/v20250611/model/CreateAccountGroupRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribeSecurityGroupRuleRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribeStrategyRequest.h
   include/tencentcloud/fwm/v20250611/model/DeleteNatAclRuleResponse.h
   include/tencentcloud/fwm/v20250611/model/SgDnsParseCount.h
   include/tencentcloud/fwm/v20250611/model/ModifyStrategySequenceResponse.h
-  include/tencentcloud/fwm/v20250611/model/SequenceIndex.h
+  include/tencentcloud/fwm/v20250611/model/ModifyCfwShareRoleResponse.h
   include/tencentcloud/fwm/v20250611/model/DescribeOrganSummaryResponse.h
   include/tencentcloud/fwm/v20250611/model/DeleteVpcAclRuleRequest.h
-  include/tencentcloud/fwm/v20250611/model/DeleteStrategyResponse.h
+  include/tencentcloud/fwm/v20250611/model/ModifyEdgeAclRuleSequenceRequest.h
   include/tencentcloud/fwm/v20250611/model/StrategyResp.h
   include/tencentcloud/fwm/v20250611/model/RuleGroupResp.h
+  include/tencentcloud/fwm/v20250611/model/ModifyAccountGroupRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribeOrganMembersResponse.h
   include/tencentcloud/fwm/v20250611/model/ModifyEdgeAclRuleRequest.h
   include/tencentcloud/fwm/v20250611/model/ModifyNatAclRuleSequenceResponse.h
@@ -67,13 +73,16 @@ set(fwm_public_header_model
   include/tencentcloud/fwm/v20250611/model/ModifyVpcAclRuleResponse.h
   include/tencentcloud/fwm/v20250611/model/NatAclRuleResp.h
   include/tencentcloud/fwm/v20250611/model/CreateStrategyRequest.h
+  include/tencentcloud/fwm/v20250611/model/ModifyMemberGroupResponse.h
   include/tencentcloud/fwm/v20250611/model/VpcAclRule.h
   include/tencentcloud/fwm/v20250611/model/CommonFilter.h
   include/tencentcloud/fwm/v20250611/model/ModifyVpcAclRuleSequenceResponse.h
   include/tencentcloud/fwm/v20250611/model/DeleteRuleGroupResponse.h
+  include/tencentcloud/fwm/v20250611/model/ModifyCfwManagedRequest.h
   include/tencentcloud/fwm/v20250611/model/CancelIgnorePolicyRiskRequest.h
   include/tencentcloud/fwm/v20250611/model/DeleteVpcAclRuleResponse.h
   include/tencentcloud/fwm/v20250611/model/CreateSecurityGroupRuleGroupResponse.h
+  include/tencentcloud/fwm/v20250611/model/ModifyMemberGroupRequest.h
   include/tencentcloud/fwm/v20250611/model/ServiceTemplateSpecification.h
   include/tencentcloud/fwm/v20250611/model/ModifyVpcAclRuleSequenceRequest.h
   include/tencentcloud/fwm/v20250611/model/ModifyNatAclRuleRequest.h
@@ -83,13 +92,16 @@ set(fwm_public_header_model
   include/tencentcloud/fwm/v20250611/model/DispatchStrategyResponse.h
   include/tencentcloud/fwm/v20250611/model/DescribeRiskListRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribeSecurityGroupRuleResponse.h
+  include/tencentcloud/fwm/v20250611/model/ModifyCfwShareRoleRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribeRiskCategoryStatsResponse.h
   include/tencentcloud/fwm/v20250611/model/MemberInfo.h
+  include/tencentcloud/fwm/v20250611/model/ModifyAccountGroupResponse.h
   include/tencentcloud/fwm/v20250611/model/DescribePolicyRiskAccountProductStatsRequest.h
   include/tencentcloud/fwm/v20250611/model/CreateEdgeAclRuleResponse.h
   include/tencentcloud/fwm/v20250611/model/CreateStrategyResponse.h
   include/tencentcloud/fwm/v20250611/model/AccountGroupInfo.h
   include/tencentcloud/fwm/v20250611/model/DescribeStrategyDispatchStatusResponse.h
+  include/tencentcloud/fwm/v20250611/model/ModifyNatAclRuleResponse.h
   include/tencentcloud/fwm/v20250611/model/ModifyStrategyResponse.h
   include/tencentcloud/fwm/v20250611/model/CreateVpcAclRuleResponse.h
   include/tencentcloud/fwm/v20250611/model/DescribeRuleGroupsResponse.h
@@ -100,6 +112,8 @@ set(fwm_public_header_model
   include/tencentcloud/fwm/v20250611/model/CreateVpcAclRuleGroupRequest.h
   include/tencentcloud/fwm/v20250611/model/ModifyVpcAclRuleRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribeEdgeAclRulesResponse.h
+  include/tencentcloud/fwm/v20250611/model/DescribeAccountGroupsResponse.h
+  include/tencentcloud/fwm/v20250611/model/ModifyCfwManagedResponse.h
   include/tencentcloud/fwm/v20250611/model/ModifyNatAclRuleSequenceRequest.h
   include/tencentcloud/fwm/v20250611/model/DescribeStrategyAccountsResponse.h
   include/tencentcloud/fwm/v20250611/model/DescribeSecurityGroupRulesResponse.h
@@ -112,7 +126,7 @@ set(fwm_public_header_model
   include/tencentcloud/fwm/v20250611/model/DeleteNatAclRuleRequest.h
   include/tencentcloud/fwm/v20250611/model/CreateRuleGroupResponse.h
   include/tencentcloud/fwm/v20250611/model/ModifyEdgeAclRuleResponse.h
-  include/tencentcloud/fwm/v20250611/model/IgnorePolicyRiskRequest.h
+  include/tencentcloud/fwm/v20250611/model/Account.h
   include/tencentcloud/fwm/v20250611/model/VpcAclRuleResp.h
   include/tencentcloud/fwm/v20250611/model/SecurityGroupRiskPolicy.h
   include/tencentcloud/fwm/v20250611/model/SecGroupRuleResp.h
@@ -124,6 +138,7 @@ set(fwm_public_header_model
   include/tencentcloud/fwm/v20250611/model/DescribeRuleGroupsRequest.h
   include/tencentcloud/fwm/v20250611/model/CreateSecurityGroupRuleGroupRequest.h
   include/tencentcloud/fwm/v20250611/model/CreateNatAclRuleResponse.h
+  include/tencentcloud/fwm/v20250611/model/IgnorePolicyRiskRequest.h
   include/tencentcloud/fwm/v20250611/model/CreateAnalyzePolicyTaskResponse.h
   include/tencentcloud/fwm/v20250611/model/PolicyRisk.h
   include/tencentcloud/fwm/v20250611/model/DeleteSecurityGroupRuleRequest.h
@@ -132,11 +147,11 @@ set(fwm_public_header_model
   include/tencentcloud/fwm/v20250611/model/AccountProductDetailStats.h
   include/tencentcloud/fwm/v20250611/model/AccountStatsGroup.h
   include/tencentcloud/fwm/v20250611/model/CreateSecurityGroupRuleRequest.h
-  include/tencentcloud/fwm/v20250611/model/ModifyNatAclRuleResponse.h
+  include/tencentcloud/fwm/v20250611/model/CreateAccountGroupResponse.h
   include/tencentcloud/fwm/v20250611/model/RiskCategoryItem.h
-  include/tencentcloud/fwm/v20250611/model/Account.h
   include/tencentcloud/fwm/v20250611/model/CancelIgnorePolicyRiskResponse.h
   include/tencentcloud/fwm/v20250611/model/ReceiveAccount.h
+  include/tencentcloud/fwm/v20250611/model/AccountGroup.h
   include/tencentcloud/fwm/v20250611/model/EdgeAclRuleInfo.h
   include/tencentcloud/fwm/v20250611/model/DeleteRuleGroupRequest.h
   include/tencentcloud/fwm/v20250611/model/CreateEdgeAclRuleGroupRequest.h
@@ -152,11 +167,13 @@ set(fwm_src
   src/v20250611/model/DescribeStrategiesRequest.cpp
   src/v20250611/model/IgnorePolicyRiskResponse.cpp
   src/v20250611/model/DescribeRiskListResponse.cpp
+  src/v20250611/model/DeleteAccountGroupRequest.cpp
   src/v20250611/model/DescribeNatAclRulesRequest.cpp
   src/v20250611/model/ModifyStrategyRequest.cpp
   src/v20250611/model/DeleteStrategyRequest.cpp
   src/v20250611/model/ModifyRuleGroupRequest.cpp
   src/v20250611/model/ModifyEdgeAclRuleSequenceResponse.cpp
+  src/v20250611/model/DescribeAccountGroupsRequest.cpp
   src/v20250611/model/ModifySecurityGroupRuleRequest.cpp
   src/v20250611/model/DescribeVpcAclRulesRequest.cpp
   src/v20250611/model/DescribePolicyRiskAccountProductStatsResponse.cpp
@@ -165,24 +182,28 @@ set(fwm_src
   src/v20250611/model/DescribeStrategyResponse.cpp
   src/v20250611/model/DescribeEdgeAclRulesRequest.cpp
   src/v20250611/model/DescribeStrategiesResponse.cpp
+  src/v20250611/model/DeleteAccountGroupResponse.cpp
   src/v20250611/model/DescribeStrategyAccountsRequest.cpp
   src/v20250611/model/DescribeStrategyDispatchStatusRequest.cpp
-  src/v20250611/model/ModifyEdgeAclRuleSequenceRequest.cpp
+  src/v20250611/model/DeleteStrategyResponse.cpp
   src/v20250611/model/SecurityGroupRule.cpp
   src/v20250611/model/DeleteSecurityGroupRuleResponse.cpp
   src/v20250611/model/CreateRuleGroupRequest.cpp
+  src/v20250611/model/SequenceIndex.cpp
   src/v20250611/model/DescribeNatAclRulesResponse.cpp
+  src/v20250611/model/CreateAccountGroupRequest.cpp
   src/v20250611/model/DescribeSecurityGroupRuleRequest.cpp
   src/v20250611/model/DescribeStrategyRequest.cpp
   src/v20250611/model/DeleteNatAclRuleResponse.cpp
   src/v20250611/model/SgDnsParseCount.cpp
   src/v20250611/model/ModifyStrategySequenceResponse.cpp
-  src/v20250611/model/SequenceIndex.cpp
+  src/v20250611/model/ModifyCfwShareRoleResponse.cpp
   src/v20250611/model/DescribeOrganSummaryResponse.cpp
   src/v20250611/model/DeleteVpcAclRuleRequest.cpp
-  src/v20250611/model/DeleteStrategyResponse.cpp
+  src/v20250611/model/ModifyEdgeAclRuleSequenceRequest.cpp
   src/v20250611/model/StrategyResp.cpp
   src/v20250611/model/RuleGroupResp.cpp
+  src/v20250611/model/ModifyAccountGroupRequest.cpp
   src/v20250611/model/DescribeOrganMembersResponse.cpp
   src/v20250611/model/ModifyEdgeAclRuleRequest.cpp
   src/v20250611/model/ModifyNatAclRuleSequenceResponse.cpp
@@ -193,13 +214,16 @@ set(fwm_src
   src/v20250611/model/ModifyVpcAclRuleResponse.cpp
   src/v20250611/model/NatAclRuleResp.cpp
   src/v20250611/model/CreateStrategyRequest.cpp
+  src/v20250611/model/ModifyMemberGroupResponse.cpp
   src/v20250611/model/VpcAclRule.cpp
   src/v20250611/model/CommonFilter.cpp
   src/v20250611/model/ModifyVpcAclRuleSequenceResponse.cpp
   src/v20250611/model/DeleteRuleGroupResponse.cpp
+  src/v20250611/model/ModifyCfwManagedRequest.cpp
   src/v20250611/model/CancelIgnorePolicyRiskRequest.cpp
   src/v20250611/model/DeleteVpcAclRuleResponse.cpp
   src/v20250611/model/CreateSecurityGroupRuleGroupResponse.cpp
+  src/v20250611/model/ModifyMemberGroupRequest.cpp
   src/v20250611/model/ServiceTemplateSpecification.cpp
   src/v20250611/model/ModifyVpcAclRuleSequenceRequest.cpp
   src/v20250611/model/ModifyNatAclRuleRequest.cpp
@@ -209,13 +233,16 @@ set(fwm_src
   src/v20250611/model/DispatchStrategyResponse.cpp
   src/v20250611/model/DescribeRiskListRequest.cpp
   src/v20250611/model/DescribeSecurityGroupRuleResponse.cpp
+  src/v20250611/model/ModifyCfwShareRoleRequest.cpp
   src/v20250611/model/DescribeRiskCategoryStatsResponse.cpp
   src/v20250611/model/MemberInfo.cpp
+  src/v20250611/model/ModifyAccountGroupResponse.cpp
   src/v20250611/model/DescribePolicyRiskAccountProductStatsRequest.cpp
   src/v20250611/model/CreateEdgeAclRuleResponse.cpp
   src/v20250611/model/CreateStrategyResponse.cpp
   src/v20250611/model/AccountGroupInfo.cpp
   src/v20250611/model/DescribeStrategyDispatchStatusResponse.cpp
+  src/v20250611/model/ModifyNatAclRuleResponse.cpp
   src/v20250611/model/ModifyStrategyResponse.cpp
   src/v20250611/model/CreateVpcAclRuleResponse.cpp
   src/v20250611/model/DescribeRuleGroupsResponse.cpp
@@ -226,6 +253,8 @@ set(fwm_src
   src/v20250611/model/CreateVpcAclRuleGroupRequest.cpp
   src/v20250611/model/ModifyVpcAclRuleRequest.cpp
   src/v20250611/model/DescribeEdgeAclRulesResponse.cpp
+  src/v20250611/model/DescribeAccountGroupsResponse.cpp
+  src/v20250611/model/ModifyCfwManagedResponse.cpp
   src/v20250611/model/ModifyNatAclRuleSequenceRequest.cpp
   src/v20250611/model/DescribeStrategyAccountsResponse.cpp
   src/v20250611/model/DescribeSecurityGroupRulesResponse.cpp
@@ -238,7 +267,7 @@ set(fwm_src
   src/v20250611/model/DeleteNatAclRuleRequest.cpp
   src/v20250611/model/CreateRuleGroupResponse.cpp
   src/v20250611/model/ModifyEdgeAclRuleResponse.cpp
-  src/v20250611/model/IgnorePolicyRiskRequest.cpp
+  src/v20250611/model/Account.cpp
   src/v20250611/model/VpcAclRuleResp.cpp
   src/v20250611/model/SecurityGroupRiskPolicy.cpp
   src/v20250611/model/SecGroupRuleResp.cpp
@@ -250,6 +279,7 @@ set(fwm_src
   src/v20250611/model/DescribeRuleGroupsRequest.cpp
   src/v20250611/model/CreateSecurityGroupRuleGroupRequest.cpp
   src/v20250611/model/CreateNatAclRuleResponse.cpp
+  src/v20250611/model/IgnorePolicyRiskRequest.cpp
   src/v20250611/model/CreateAnalyzePolicyTaskResponse.cpp
   src/v20250611/model/PolicyRisk.cpp
   src/v20250611/model/DeleteSecurityGroupRuleRequest.cpp
@@ -258,11 +288,11 @@ set(fwm_src
   src/v20250611/model/AccountProductDetailStats.cpp
   src/v20250611/model/AccountStatsGroup.cpp
   src/v20250611/model/CreateSecurityGroupRuleRequest.cpp
-  src/v20250611/model/ModifyNatAclRuleResponse.cpp
+  src/v20250611/model/CreateAccountGroupResponse.cpp
   src/v20250611/model/RiskCategoryItem.cpp
-  src/v20250611/model/Account.cpp
   src/v20250611/model/CancelIgnorePolicyRiskResponse.cpp
   src/v20250611/model/ReceiveAccount.cpp
+  src/v20250611/model/AccountGroup.cpp
   src/v20250611/model/EdgeAclRuleInfo.cpp
   src/v20250611/model/DeleteRuleGroupRequest.cpp
   src/v20250611/model/CreateEdgeAclRuleGroupRequest.cpp

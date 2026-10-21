@@ -22,10 +22,11 @@ using namespace std;
 
 SeeCallbackInfo::SeeCallbackInfo() :
     m_callbackIdHasBeenSet(false),
-    m_callbackTokenHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false),
+    m_callbackTokenHasBeenSet(false),
+    m_callbackCKafkaHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
 }
@@ -45,14 +46,14 @@ CoreInternalOutcome SeeCallbackInfo::Deserialize(const rapidjson::Value &value)
         m_callbackIdHasBeenSet = true;
     }
 
-    if (value.HasMember("CallbackToken") && !value["CallbackToken"].IsNull())
+    if (value.HasMember("Type") && !value["Type"].IsNull())
     {
-        if (!value["CallbackToken"].IsString())
+        if (!value["Type"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `SeeCallbackInfo.CallbackToken` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SeeCallbackInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_callbackToken = string(value["CallbackToken"].GetString());
-        m_callbackTokenHasBeenSet = true;
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
     }
 
     if (value.HasMember("CallbackUrl") && !value["CallbackUrl"].IsNull())
@@ -65,6 +66,33 @@ CoreInternalOutcome SeeCallbackInfo::Deserialize(const rapidjson::Value &value)
         m_callbackUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("CallbackToken") && !value["CallbackToken"].IsNull())
+    {
+        if (!value["CallbackToken"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeCallbackInfo.CallbackToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackToken = string(value["CallbackToken"].GetString());
+        m_callbackTokenHasBeenSet = true;
+    }
+
+    if (value.HasMember("CallbackCKafka") && !value["CallbackCKafka"].IsNull())
+    {
+        if (!value["CallbackCKafka"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeeCallbackInfo.CallbackCKafka` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_callbackCKafka.Deserialize(value["CallbackCKafka"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_callbackCKafkaHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsInt64())
@@ -73,16 +101,6 @@ CoreInternalOutcome SeeCallbackInfo::Deserialize(const rapidjson::Value &value)
         }
         m_createTime = value["CreateTime"].GetInt64();
         m_createTimeHasBeenSet = true;
-    }
-
-    if (value.HasMember("Type") && !value["Type"].IsNull())
-    {
-        if (!value["Type"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SeeCallbackInfo.Type` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_type = string(value["Type"].GetString());
-        m_typeHasBeenSet = true;
     }
 
     if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
@@ -110,12 +128,12 @@ void SeeCallbackInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_callbackId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_callbackTokenHasBeenSet)
+    if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CallbackToken";
+        string key = "Type";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_callbackToken.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_callbackUrlHasBeenSet)
@@ -126,20 +144,29 @@ void SeeCallbackInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_callbackTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callbackToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackCKafkaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackCKafka";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_callbackCKafka.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
-    }
-
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
     if (m_updateTimeHasBeenSet)
@@ -169,20 +196,20 @@ bool SeeCallbackInfo::CallbackIdHasBeenSet() const
     return m_callbackIdHasBeenSet;
 }
 
-string SeeCallbackInfo::GetCallbackToken() const
+string SeeCallbackInfo::GetType() const
 {
-    return m_callbackToken;
+    return m_type;
 }
 
-void SeeCallbackInfo::SetCallbackToken(const string& _callbackToken)
+void SeeCallbackInfo::SetType(const string& _type)
 {
-    m_callbackToken = _callbackToken;
-    m_callbackTokenHasBeenSet = true;
+    m_type = _type;
+    m_typeHasBeenSet = true;
 }
 
-bool SeeCallbackInfo::CallbackTokenHasBeenSet() const
+bool SeeCallbackInfo::TypeHasBeenSet() const
 {
-    return m_callbackTokenHasBeenSet;
+    return m_typeHasBeenSet;
 }
 
 string SeeCallbackInfo::GetCallbackUrl() const
@@ -201,6 +228,38 @@ bool SeeCallbackInfo::CallbackUrlHasBeenSet() const
     return m_callbackUrlHasBeenSet;
 }
 
+string SeeCallbackInfo::GetCallbackToken() const
+{
+    return m_callbackToken;
+}
+
+void SeeCallbackInfo::SetCallbackToken(const string& _callbackToken)
+{
+    m_callbackToken = _callbackToken;
+    m_callbackTokenHasBeenSet = true;
+}
+
+bool SeeCallbackInfo::CallbackTokenHasBeenSet() const
+{
+    return m_callbackTokenHasBeenSet;
+}
+
+SeeCallbackCKafkaConfig SeeCallbackInfo::GetCallbackCKafka() const
+{
+    return m_callbackCKafka;
+}
+
+void SeeCallbackInfo::SetCallbackCKafka(const SeeCallbackCKafkaConfig& _callbackCKafka)
+{
+    m_callbackCKafka = _callbackCKafka;
+    m_callbackCKafkaHasBeenSet = true;
+}
+
+bool SeeCallbackInfo::CallbackCKafkaHasBeenSet() const
+{
+    return m_callbackCKafkaHasBeenSet;
+}
+
 int64_t SeeCallbackInfo::GetCreateTime() const
 {
     return m_createTime;
@@ -215,22 +274,6 @@ void SeeCallbackInfo::SetCreateTime(const int64_t& _createTime)
 bool SeeCallbackInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
-}
-
-string SeeCallbackInfo::GetType() const
-{
-    return m_type;
-}
-
-void SeeCallbackInfo::SetType(const string& _type)
-{
-    m_type = _type;
-    m_typeHasBeenSet = true;
-}
-
-bool SeeCallbackInfo::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
 }
 
 int64_t SeeCallbackInfo::GetUpdateTime() const

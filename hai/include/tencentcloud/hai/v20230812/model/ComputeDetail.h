@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool PostpaidEnableHasBeenSet() const;
 
+                    /**
+                     * 获取<p>该算力套餐支持的计费模式列表：POSTPAID_BY_HOUR（按量）、PREPAID（包年包月）、SPOT（竞价）</p>
+                     * @return SupportedChargeTypes <p>该算力套餐支持的计费模式列表：POSTPAID_BY_HOUR（按量）、PREPAID（包年包月）、SPOT（竞价）</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSupportedChargeTypes() const;
+
+                    /**
+                     * 设置<p>该算力套餐支持的计费模式列表：POSTPAID_BY_HOUR（按量）、PREPAID（包年包月）、SPOT（竞价）</p>
+                     * @param _supportedChargeTypes <p>该算力套餐支持的计费模式列表：POSTPAID_BY_HOUR（按量）、PREPAID（包年包月）、SPOT（竞价）</p>
+                     * 
+                     */
+                    void SetSupportedChargeTypes(const std::vector<std::string>& _supportedChargeTypes);
+
+                    /**
+                     * 判断参数 SupportedChargeTypes 是否已赋值
+                     * @return SupportedChargeTypes 是否已赋值
+                     * 
+                     */
+                    bool SupportedChargeTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     bool m_postpaidEnable;
                     bool m_postpaidEnableHasBeenSet;
+
+                    /**
+                     * <p>该算力套餐支持的计费模式列表：POSTPAID_BY_HOUR（按量）、PREPAID（包年包月）、SPOT（竞价）</p>
+                     */
+                    std::vector<std::string> m_supportedChargeTypes;
+                    bool m_supportedChargeTypesHasBeenSet;
 
                 };
             }

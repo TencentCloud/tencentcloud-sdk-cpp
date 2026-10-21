@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeCallbackCKafkaConfig.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回调目标 ID
-                     * @return CallbackId 回调目标 ID
+                     * 获取<p>回调目标 ID</p>
+                     * @return CallbackId <p>回调目标 ID</p>
                      * 
                      */
                     std::string GetCallbackId() const;
 
                     /**
-                     * 设置回调目标 ID
-                     * @param _callbackId 回调目标 ID
+                     * 设置<p>回调目标 ID</p>
+                     * @param _callbackId <p>回调目标 ID</p>
                      * 
                      */
                     void SetCallbackId(const std::string& _callbackId);
@@ -68,78 +69,15 @@ namespace TencentCloud
                     bool CallbackIdHasBeenSet() const;
 
                     /**
-                     * 获取回调签名 token
-                     * @return CallbackToken 回调签名 token
-                     * 
-                     */
-                    std::string GetCallbackToken() const;
-
-                    /**
-                     * 设置回调签名 token
-                     * @param _callbackToken 回调签名 token
-                     * 
-                     */
-                    void SetCallbackToken(const std::string& _callbackToken);
-
-                    /**
-                     * 判断参数 CallbackToken 是否已赋值
-                     * @return CallbackToken 是否已赋值
-                     * 
-                     */
-                    bool CallbackTokenHasBeenSet() const;
-
-                    /**
-                     * 获取回调 URL
-                     * @return CallbackUrl 回调 URL
-                     * 
-                     */
-                    std::string GetCallbackUrl() const;
-
-                    /**
-                     * 设置回调 URL
-                     * @param _callbackUrl 回调 URL
-                     * 
-                     */
-                    void SetCallbackUrl(const std::string& _callbackUrl);
-
-                    /**
-                     * 判断参数 CallbackUrl 是否已赋值
-                     * @return CallbackUrl 是否已赋值
-                     * 
-                     */
-                    bool CallbackUrlHasBeenSet() const;
-
-                    /**
-                     * 获取创建时间（秒级时间戳）
-                     * @return CreateTime 创建时间（秒级时间戳）
-                     * 
-                     */
-                    int64_t GetCreateTime() const;
-
-                    /**
-                     * 设置创建时间（秒级时间戳）
-                     * @param _createTime 创建时间（秒级时间戳）
-                     * 
-                     */
-                    void SetCreateTime(const int64_t& _createTime);
-
-                    /**
-                     * 判断参数 CreateTime 是否已赋值
-                     * @return CreateTime 是否已赋值
-                     * 
-                     */
-                    bool CreateTimeHasBeenSet() const;
-
-                    /**
-                     * 获取回调类型
-                     * @return Type 回调类型
+                     * 获取<p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
+                     * @return Type <p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置回调类型
-                     * @param _type 回调类型
+                     * 设置<p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
+                     * @param _type <p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -152,15 +90,99 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间（秒级时间戳）
-                     * @return UpdateTime 更新时间（秒级时间戳）
+                     * 获取<p>回调 URL</p>
+                     * @return CallbackUrl <p>回调 URL</p>
+                     * 
+                     */
+                    std::string GetCallbackUrl() const;
+
+                    /**
+                     * 设置<p>回调 URL</p>
+                     * @param _callbackUrl <p>回调 URL</p>
+                     * 
+                     */
+                    void SetCallbackUrl(const std::string& _callbackUrl);
+
+                    /**
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
+                     * 
+                     */
+                    bool CallbackUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>回调签名 token</p>
+                     * @return CallbackToken <p>回调签名 token</p>
+                     * 
+                     */
+                    std::string GetCallbackToken() const;
+
+                    /**
+                     * 设置<p>回调签名 token</p>
+                     * @param _callbackToken <p>回调签名 token</p>
+                     * 
+                     */
+                    void SetCallbackToken(const std::string& _callbackToken);
+
+                    /**
+                     * 判断参数 CallbackToken 是否已赋值
+                     * @return CallbackToken 是否已赋值
+                     * 
+                     */
+                    bool CallbackTokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>回调 CKafka 配置</p>
+                     * @return CallbackCKafka <p>回调 CKafka 配置</p>
+                     * 
+                     */
+                    SeeCallbackCKafkaConfig GetCallbackCKafka() const;
+
+                    /**
+                     * 设置<p>回调 CKafka 配置</p>
+                     * @param _callbackCKafka <p>回调 CKafka 配置</p>
+                     * 
+                     */
+                    void SetCallbackCKafka(const SeeCallbackCKafkaConfig& _callbackCKafka);
+
+                    /**
+                     * 判断参数 CallbackCKafka 是否已赋值
+                     * @return CallbackCKafka 是否已赋值
+                     * 
+                     */
+                    bool CallbackCKafkaHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建时间（秒级时间戳）</p>
+                     * @return CreateTime <p>创建时间（秒级时间戳）</p>
+                     * 
+                     */
+                    int64_t GetCreateTime() const;
+
+                    /**
+                     * 设置<p>创建时间（秒级时间戳）</p>
+                     * @param _createTime <p>创建时间（秒级时间戳）</p>
+                     * 
+                     */
+                    void SetCreateTime(const int64_t& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>更新时间（秒级时间戳）</p>
+                     * @return UpdateTime <p>更新时间（秒级时间戳）</p>
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间（秒级时间戳）
-                     * @param _updateTime 更新时间（秒级时间戳）
+                     * 设置<p>更新时间（秒级时间戳）</p>
+                     * @param _updateTime <p>更新时间（秒级时间戳）</p>
                      * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -175,37 +197,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回调目标 ID
+                     * <p>回调目标 ID</p>
                      */
                     std::string m_callbackId;
                     bool m_callbackIdHasBeenSet;
 
                     /**
-                     * 回调签名 token
-                     */
-                    std::string m_callbackToken;
-                    bool m_callbackTokenHasBeenSet;
-
-                    /**
-                     * 回调 URL
-                     */
-                    std::string m_callbackUrl;
-                    bool m_callbackUrlHasBeenSet;
-
-                    /**
-                     * 创建时间（秒级时间戳）
-                     */
-                    int64_t m_createTime;
-                    bool m_createTimeHasBeenSet;
-
-                    /**
-                     * 回调类型
+                     * <p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 更新时间（秒级时间戳）
+                     * <p>回调 URL</p>
+                     */
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * <p>回调签名 token</p>
+                     */
+                    std::string m_callbackToken;
+                    bool m_callbackTokenHasBeenSet;
+
+                    /**
+                     * <p>回调 CKafka 配置</p>
+                     */
+                    SeeCallbackCKafkaConfig m_callbackCKafka;
+                    bool m_callbackCKafkaHasBeenSet;
+
+                    /**
+                     * <p>创建时间（秒级时间戳）</p>
+                     */
+                    int64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>更新时间（秒级时间戳）</p>
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeCallbackCKafkaConfig.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回调类型。可选值：\n- `http` HTTP 回调
-                     * @return Type 回调类型。可选值：\n- `http` HTTP 回调
+                     * 获取<p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
+                     * @return Type <p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置回调类型。可选值：\n- `http` HTTP 回调
-                     * @param _type 回调类型。可选值：\n- `http` HTTP 回调
+                     * 设置<p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
+                     * @param _type <p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口
-                     * @return CallbackUrl 回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口
+                     * 获取<p>回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口</p>
+                     * @return CallbackUrl <p>回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口</p>
                      * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口
-                     * @param _callbackUrl 回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口
+                     * 设置<p>回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口</p>
+                     * @param _callbackUrl <p>回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口</p>
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取回调签名 Token。最大长度 128
-                     * @return CallbackToken 回调签名 Token。最大长度 128
+                     * 获取<p>回调签名 Token。最大长度 128</p>
+                     * @return CallbackToken <p>回调签名 Token。最大长度 128</p>
                      * 
                      */
                     std::string GetCallbackToken() const;
 
                     /**
-                     * 设置回调签名 Token。最大长度 128
-                     * @param _callbackToken 回调签名 Token。最大长度 128
+                     * 设置<p>回调签名 Token。最大长度 128</p>
+                     * @param _callbackToken <p>回调签名 Token。最大长度 128</p>
                      * 
                      */
                     void SetCallbackToken(const std::string& _callbackToken);
@@ -105,25 +106,79 @@ namespace TencentCloud
                      */
                     bool CallbackTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>回调 CKafka 配置</p>
+                     * @return CallbackCKafka <p>回调 CKafka 配置</p>
+                     * 
+                     */
+                    SeeCallbackCKafkaConfig GetCallbackCKafka() const;
+
+                    /**
+                     * 设置<p>回调 CKafka 配置</p>
+                     * @param _callbackCKafka <p>回调 CKafka 配置</p>
+                     * 
+                     */
+                    void SetCallbackCKafka(const SeeCallbackCKafkaConfig& _callbackCKafka);
+
+                    /**
+                     * 判断参数 CallbackCKafka 是否已赋值
+                     * @return CallbackCKafka 是否已赋值
+                     * 
+                     */
+                    bool CallbackCKafkaHasBeenSet() const;
+
+                    /**
+                     * 获取<p>要创建回调目标的产品 ID</p>
+                     * @return ProductId <p>要创建回调目标的产品 ID</p>
+                     * 
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置<p>要创建回调目标的产品 ID</p>
+                     * @param _productId <p>要创建回调目标的产品 ID</p>
+                     * 
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     * 
+                     */
+                    bool ProductIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 回调类型。可选值：\n- `http` HTTP 回调
+                     * <p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口
+                     * <p>回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口</p>
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 回调签名 Token。最大长度 128
+                     * <p>回调签名 Token。最大长度 128</p>
                      */
                     std::string m_callbackToken;
                     bool m_callbackTokenHasBeenSet;
+
+                    /**
+                     * <p>回调 CKafka 配置</p>
+                     */
+                    SeeCallbackCKafkaConfig m_callbackCKafka;
+                    bool m_callbackCKafkaHasBeenSet;
+
+                    /**
+                     * <p>要创建回调目标的产品 ID</p>
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
 
                 };
             }

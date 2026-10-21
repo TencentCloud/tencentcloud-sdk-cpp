@@ -37,6 +37,7 @@ RealtimeLogDeliveryTask::RealtimeLogDeliveryTask() :
     m_cLSHasBeenSet(false),
     m_customEndpointHasBeenSet(false),
     m_s3HasBeenSet(false),
+    m_aWSS3HasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -271,6 +272,23 @@ CoreInternalOutcome RealtimeLogDeliveryTask::Deserialize(const rapidjson::Value 
         m_s3HasBeenSet = true;
     }
 
+    if (value.HasMember("AWSS3") && !value["AWSS3"].IsNull())
+    {
+        if (!value["AWSS3"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RealtimeLogDeliveryTask.AWSS3` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aWSS3.Deserialize(value["AWSS3"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aWSS3HasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -459,6 +477,15 @@ void RealtimeLogDeliveryTask::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_s3.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aWSS3HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AWSS3";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aWSS3.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -734,6 +761,22 @@ void RealtimeLogDeliveryTask::SetS3(const S3& _s3)
 bool RealtimeLogDeliveryTask::S3HasBeenSet() const
 {
     return m_s3HasBeenSet;
+}
+
+AWSS3 RealtimeLogDeliveryTask::GetAWSS3() const
+{
+    return m_aWSS3;
+}
+
+void RealtimeLogDeliveryTask::SetAWSS3(const AWSS3& _aWSS3)
+{
+    m_aWSS3 = _aWSS3;
+    m_aWSS3HasBeenSet = true;
+}
+
+bool RealtimeLogDeliveryTask::AWSS3HasBeenSet() const
+{
+    return m_aWSS3HasBeenSet;
 }
 
 string RealtimeLogDeliveryTask::GetCreateTime() const

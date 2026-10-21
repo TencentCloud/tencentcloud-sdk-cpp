@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/fwm/v20250611/model/CancelIgnorePolicyRiskRequest.h>
 #include <tencentcloud/fwm/v20250611/model/CancelIgnorePolicyRiskResponse.h>
+#include <tencentcloud/fwm/v20250611/model/CreateAccountGroupRequest.h>
+#include <tencentcloud/fwm/v20250611/model/CreateAccountGroupResponse.h>
 #include <tencentcloud/fwm/v20250611/model/CreateAnalyzePolicyTaskRequest.h>
 #include <tencentcloud/fwm/v20250611/model/CreateAnalyzePolicyTaskResponse.h>
 #include <tencentcloud/fwm/v20250611/model/CreateEdgeAclRuleRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/fwm/v20250611/model/CreateVpcAclRuleResponse.h>
 #include <tencentcloud/fwm/v20250611/model/CreateVpcAclRuleGroupRequest.h>
 #include <tencentcloud/fwm/v20250611/model/CreateVpcAclRuleGroupResponse.h>
+#include <tencentcloud/fwm/v20250611/model/DeleteAccountGroupRequest.h>
+#include <tencentcloud/fwm/v20250611/model/DeleteAccountGroupResponse.h>
 #include <tencentcloud/fwm/v20250611/model/DeleteEdgeAclRuleRequest.h>
 #include <tencentcloud/fwm/v20250611/model/DeleteEdgeAclRuleResponse.h>
 #include <tencentcloud/fwm/v20250611/model/DeleteNatAclRuleRequest.h>
@@ -59,6 +63,8 @@
 #include <tencentcloud/fwm/v20250611/model/DeleteStrategyResponse.h>
 #include <tencentcloud/fwm/v20250611/model/DeleteVpcAclRuleRequest.h>
 #include <tencentcloud/fwm/v20250611/model/DeleteVpcAclRuleResponse.h>
+#include <tencentcloud/fwm/v20250611/model/DescribeAccountGroupsRequest.h>
+#include <tencentcloud/fwm/v20250611/model/DescribeAccountGroupsResponse.h>
 #include <tencentcloud/fwm/v20250611/model/DescribeEdgeAclRulesRequest.h>
 #include <tencentcloud/fwm/v20250611/model/DescribeEdgeAclRulesResponse.h>
 #include <tencentcloud/fwm/v20250611/model/DescribeNatAclRulesRequest.h>
@@ -95,10 +101,18 @@
 #include <tencentcloud/fwm/v20250611/model/DispatchStrategyResponse.h>
 #include <tencentcloud/fwm/v20250611/model/IgnorePolicyRiskRequest.h>
 #include <tencentcloud/fwm/v20250611/model/IgnorePolicyRiskResponse.h>
+#include <tencentcloud/fwm/v20250611/model/ModifyAccountGroupRequest.h>
+#include <tencentcloud/fwm/v20250611/model/ModifyAccountGroupResponse.h>
+#include <tencentcloud/fwm/v20250611/model/ModifyCfwManagedRequest.h>
+#include <tencentcloud/fwm/v20250611/model/ModifyCfwManagedResponse.h>
+#include <tencentcloud/fwm/v20250611/model/ModifyCfwShareRoleRequest.h>
+#include <tencentcloud/fwm/v20250611/model/ModifyCfwShareRoleResponse.h>
 #include <tencentcloud/fwm/v20250611/model/ModifyEdgeAclRuleRequest.h>
 #include <tencentcloud/fwm/v20250611/model/ModifyEdgeAclRuleResponse.h>
 #include <tencentcloud/fwm/v20250611/model/ModifyEdgeAclRuleSequenceRequest.h>
 #include <tencentcloud/fwm/v20250611/model/ModifyEdgeAclRuleSequenceResponse.h>
+#include <tencentcloud/fwm/v20250611/model/ModifyMemberGroupRequest.h>
+#include <tencentcloud/fwm/v20250611/model/ModifyMemberGroupResponse.h>
 #include <tencentcloud/fwm/v20250611/model/ModifyNatAclRuleRequest.h>
 #include <tencentcloud/fwm/v20250611/model/ModifyNatAclRuleResponse.h>
 #include <tencentcloud/fwm/v20250611/model/ModifyNatAclRuleSequenceRequest.h>
@@ -132,6 +146,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelIgnorePolicyRiskResponse> CancelIgnorePolicyRiskOutcome;
                 typedef std::future<CancelIgnorePolicyRiskOutcome> CancelIgnorePolicyRiskOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::CancelIgnorePolicyRiskRequest&, CancelIgnorePolicyRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelIgnorePolicyRiskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAccountGroupResponse> CreateAccountGroupOutcome;
+                typedef std::future<CreateAccountGroupOutcome> CreateAccountGroupOutcomeCallable;
+                typedef std::function<void(const FwmClient*, const Model::CreateAccountGroupRequest&, CreateAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAnalyzePolicyTaskResponse> CreateAnalyzePolicyTaskOutcome;
                 typedef std::future<CreateAnalyzePolicyTaskOutcome> CreateAnalyzePolicyTaskOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::CreateAnalyzePolicyTaskRequest&, CreateAnalyzePolicyTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAnalyzePolicyTaskAsyncHandler;
@@ -165,6 +182,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateVpcAclRuleGroupResponse> CreateVpcAclRuleGroupOutcome;
                 typedef std::future<CreateVpcAclRuleGroupOutcome> CreateVpcAclRuleGroupOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::CreateVpcAclRuleGroupRequest&, CreateVpcAclRuleGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcAclRuleGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAccountGroupResponse> DeleteAccountGroupOutcome;
+                typedef std::future<DeleteAccountGroupOutcome> DeleteAccountGroupOutcomeCallable;
+                typedef std::function<void(const FwmClient*, const Model::DeleteAccountGroupRequest&, DeleteAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteEdgeAclRuleResponse> DeleteEdgeAclRuleOutcome;
                 typedef std::future<DeleteEdgeAclRuleOutcome> DeleteEdgeAclRuleOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::DeleteEdgeAclRuleRequest&, DeleteEdgeAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEdgeAclRuleAsyncHandler;
@@ -183,6 +203,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteVpcAclRuleResponse> DeleteVpcAclRuleOutcome;
                 typedef std::future<DeleteVpcAclRuleOutcome> DeleteVpcAclRuleOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::DeleteVpcAclRuleRequest&, DeleteVpcAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcAclRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccountGroupsResponse> DescribeAccountGroupsOutcome;
+                typedef std::future<DescribeAccountGroupsOutcome> DescribeAccountGroupsOutcomeCallable;
+                typedef std::function<void(const FwmClient*, const Model::DescribeAccountGroupsRequest&, DescribeAccountGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEdgeAclRulesResponse> DescribeEdgeAclRulesOutcome;
                 typedef std::future<DescribeEdgeAclRulesOutcome> DescribeEdgeAclRulesOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::DescribeEdgeAclRulesRequest&, DescribeEdgeAclRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeAclRulesAsyncHandler;
@@ -237,12 +260,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::IgnorePolicyRiskResponse> IgnorePolicyRiskOutcome;
                 typedef std::future<IgnorePolicyRiskOutcome> IgnorePolicyRiskOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::IgnorePolicyRiskRequest&, IgnorePolicyRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IgnorePolicyRiskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAccountGroupResponse> ModifyAccountGroupOutcome;
+                typedef std::future<ModifyAccountGroupOutcome> ModifyAccountGroupOutcomeCallable;
+                typedef std::function<void(const FwmClient*, const Model::ModifyAccountGroupRequest&, ModifyAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCfwManagedResponse> ModifyCfwManagedOutcome;
+                typedef std::future<ModifyCfwManagedOutcome> ModifyCfwManagedOutcomeCallable;
+                typedef std::function<void(const FwmClient*, const Model::ModifyCfwManagedRequest&, ModifyCfwManagedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCfwManagedAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCfwShareRoleResponse> ModifyCfwShareRoleOutcome;
+                typedef std::future<ModifyCfwShareRoleOutcome> ModifyCfwShareRoleOutcomeCallable;
+                typedef std::function<void(const FwmClient*, const Model::ModifyCfwShareRoleRequest&, ModifyCfwShareRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCfwShareRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEdgeAclRuleResponse> ModifyEdgeAclRuleOutcome;
                 typedef std::future<ModifyEdgeAclRuleOutcome> ModifyEdgeAclRuleOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::ModifyEdgeAclRuleRequest&, ModifyEdgeAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdgeAclRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEdgeAclRuleSequenceResponse> ModifyEdgeAclRuleSequenceOutcome;
                 typedef std::future<ModifyEdgeAclRuleSequenceOutcome> ModifyEdgeAclRuleSequenceOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::ModifyEdgeAclRuleSequenceRequest&, ModifyEdgeAclRuleSequenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEdgeAclRuleSequenceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMemberGroupResponse> ModifyMemberGroupOutcome;
+                typedef std::future<ModifyMemberGroupOutcome> ModifyMemberGroupOutcomeCallable;
+                typedef std::function<void(const FwmClient*, const Model::ModifyMemberGroupRequest&, ModifyMemberGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMemberGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNatAclRuleResponse> ModifyNatAclRuleOutcome;
                 typedef std::future<ModifyNatAclRuleOutcome> ModifyNatAclRuleOutcomeCallable;
                 typedef std::function<void(const FwmClient*, const Model::ModifyNatAclRuleRequest&, ModifyNatAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatAclRuleAsyncHandler;
@@ -278,6 +313,15 @@ namespace TencentCloud
                 CancelIgnorePolicyRiskOutcome CancelIgnorePolicyRisk(const Model::CancelIgnorePolicyRiskRequest &request);
                 void CancelIgnorePolicyRiskAsync(const Model::CancelIgnorePolicyRiskRequest& request, const CancelIgnorePolicyRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelIgnorePolicyRiskOutcomeCallable CancelIgnorePolicyRiskCallable(const Model::CancelIgnorePolicyRiskRequest& request);
+
+                /**
+                 *创建账户组
+                 * @param req CreateAccountGroupRequest
+                 * @return CreateAccountGroupOutcome
+                 */
+                CreateAccountGroupOutcome CreateAccountGroup(const Model::CreateAccountGroupRequest &request);
+                void CreateAccountGroupAsync(const Model::CreateAccountGroupRequest& request, const CreateAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAccountGroupOutcomeCallable CreateAccountGroupCallable(const Model::CreateAccountGroupRequest& request);
 
                 /**
                  *创建策略风险分析任务
@@ -379,6 +423,15 @@ namespace TencentCloud
                 CreateVpcAclRuleGroupOutcomeCallable CreateVpcAclRuleGroupCallable(const Model::CreateVpcAclRuleGroupRequest& request);
 
                 /**
+                 *删除账户组，账户组下有成员时不可删除
+                 * @param req DeleteAccountGroupRequest
+                 * @return DeleteAccountGroupOutcome
+                 */
+                DeleteAccountGroupOutcome DeleteAccountGroup(const Model::DeleteAccountGroupRequest &request);
+                void DeleteAccountGroupAsync(const Model::DeleteAccountGroupRequest& request, const DeleteAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAccountGroupOutcomeCallable DeleteAccountGroupCallable(const Model::DeleteAccountGroupRequest& request);
+
+                /**
                  *批量删除互联网边界ACL规则。支持一次删除多条规则。
                  * @param req DeleteEdgeAclRuleRequest
                  * @return DeleteEdgeAclRuleOutcome
@@ -431,6 +484,15 @@ namespace TencentCloud
                 DeleteVpcAclRuleOutcome DeleteVpcAclRule(const Model::DeleteVpcAclRuleRequest &request);
                 void DeleteVpcAclRuleAsync(const Model::DeleteVpcAclRuleRequest& request, const DeleteVpcAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteVpcAclRuleOutcomeCallable DeleteVpcAclRuleCallable(const Model::DeleteVpcAclRuleRequest& request);
+
+                /**
+                 *获取账户组列表，支持分页和关键词搜索
+                 * @param req DescribeAccountGroupsRequest
+                 * @return DescribeAccountGroupsOutcome
+                 */
+                DescribeAccountGroupsOutcome DescribeAccountGroups(const Model::DescribeAccountGroupsRequest &request);
+                void DescribeAccountGroupsAsync(const Model::DescribeAccountGroupsRequest& request, const DescribeAccountGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountGroupsOutcomeCallable DescribeAccountGroupsCallable(const Model::DescribeAccountGroupsRequest& request);
 
                 /**
                  *查询指定规则组下的互联网边界ACL规则列表。支持分页和多种过滤条件。
@@ -595,6 +657,33 @@ namespace TencentCloud
                 IgnorePolicyRiskOutcomeCallable IgnorePolicyRiskCallable(const Model::IgnorePolicyRiskRequest& request);
 
                 /**
+                 *修改账户组名称
+                 * @param req ModifyAccountGroupRequest
+                 * @return ModifyAccountGroupOutcome
+                 */
+                ModifyAccountGroupOutcome ModifyAccountGroup(const Model::ModifyAccountGroupRequest &request);
+                void ModifyAccountGroupAsync(const Model::ModifyAccountGroupRequest& request, const ModifyAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAccountGroupOutcomeCallable ModifyAccountGroupCallable(const Model::ModifyAccountGroupRequest& request);
+
+                /**
+                 *设置成员账号的云防火墙纳管状态
+                 * @param req ModifyCfwManagedRequest
+                 * @return ModifyCfwManagedOutcome
+                 */
+                ModifyCfwManagedOutcome ModifyCfwManaged(const Model::ModifyCfwManagedRequest &request);
+                void ModifyCfwManagedAsync(const Model::ModifyCfwManagedRequest& request, const ModifyCfwManagedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCfwManagedOutcomeCallable ModifyCfwManagedCallable(const Model::ModifyCfwManagedRequest& request);
+
+                /**
+                 *设置集团成员的云防火墙共享角色（sharer/user/none）。共享者全集团唯一；共享者→使用者禁止直接变更，需先将角色改为 none；设为使用者时必须指定共享者 SharerAppId。仅管理员可操作。
+                 * @param req ModifyCfwShareRoleRequest
+                 * @return ModifyCfwShareRoleOutcome
+                 */
+                ModifyCfwShareRoleOutcome ModifyCfwShareRole(const Model::ModifyCfwShareRoleRequest &request);
+                void ModifyCfwShareRoleAsync(const Model::ModifyCfwShareRoleRequest& request, const ModifyCfwShareRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCfwShareRoleOutcomeCallable ModifyCfwShareRoleCallable(const Model::ModifyCfwShareRoleRequest& request);
+
+                /**
                  *修改互联网边界ACL规则。Rule 参数中必须包含 RuleId 用于指定要修改的规则。
                  * @param req ModifyEdgeAclRuleRequest
                  * @return ModifyEdgeAclRuleOutcome
@@ -611,6 +700,15 @@ namespace TencentCloud
                 ModifyEdgeAclRuleSequenceOutcome ModifyEdgeAclRuleSequence(const Model::ModifyEdgeAclRuleSequenceRequest &request);
                 void ModifyEdgeAclRuleSequenceAsync(const Model::ModifyEdgeAclRuleSequenceRequest& request, const ModifyEdgeAclRuleSequenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEdgeAclRuleSequenceOutcomeCallable ModifyEdgeAclRuleSequenceCallable(const Model::ModifyEdgeAclRuleSequenceRequest& request);
+
+                /**
+                 *设置成员所属账户组，GroupId为空字符串表示移出账户组
+                 * @param req ModifyMemberGroupRequest
+                 * @return ModifyMemberGroupOutcome
+                 */
+                ModifyMemberGroupOutcome ModifyMemberGroup(const Model::ModifyMemberGroupRequest &request);
+                void ModifyMemberGroupAsync(const Model::ModifyMemberGroupRequest& request, const ModifyMemberGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMemberGroupOutcomeCallable ModifyMemberGroupCallable(const Model::ModifyMemberGroupRequest& request);
 
                 /**
                  *修改NAT ACL规则

@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ConsistencyTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
-                     * @return ConsistencyTimeOut <p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
+                     * 获取<p>一致性超时时间。取值范围：0~1000000（毫秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
+                     * @return ConsistencyTimeOut <p>一致性超时时间。取值范围：0~1000000（毫秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
                      * 
                      */
                     std::string GetConsistencyTimeOut() const;
 
                     /**
-                     * 设置<p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
-                     * @param _consistencyTimeOut <p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
+                     * 设置<p>一致性超时时间。取值范围：0~1000000（毫秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
+                     * @param _consistencyTimeOut <p>一致性超时时间。取值范围：0~1000000（毫秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
                      * 
                      */
                     void SetConsistencyTimeOut(const std::string& _consistencyTimeOut);
@@ -463,7 +463,7 @@ namespace TencentCloud
                     bool m_consistencyTypeHasBeenSet;
 
                     /**
-                     * <p>一致性超时时间。<br>取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
+                     * <p>一致性超时时间。取值范围：0~1000000（毫秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。</p>
                      */
                     std::string m_consistencyTimeOut;
                     bool m_consistencyTimeOutHasBeenSet;

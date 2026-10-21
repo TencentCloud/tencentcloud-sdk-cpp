@@ -24,9 +24,10 @@ using namespace std;
 
 ModifyTWeSeeCallbackRequest::ModifyTWeSeeCallbackRequest() :
     m_callbackIdHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_callbackTokenHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_callbackTokenHasBeenSet(false),
+    m_callbackCKafkaHasBeenSet(false)
 {
 }
 
@@ -45,14 +46,6 @@ string ModifyTWeSeeCallbackRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_callbackId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_callbackUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CallbackUrl";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -61,12 +54,29 @@ string ModifyTWeSeeCallbackRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_callbackTokenHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CallbackToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackCKafkaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackCKafka";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_callbackCKafka.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -93,22 +103,6 @@ bool ModifyTWeSeeCallbackRequest::CallbackIdHasBeenSet() const
     return m_callbackIdHasBeenSet;
 }
 
-string ModifyTWeSeeCallbackRequest::GetCallbackUrl() const
-{
-    return m_callbackUrl;
-}
-
-void ModifyTWeSeeCallbackRequest::SetCallbackUrl(const string& _callbackUrl)
-{
-    m_callbackUrl = _callbackUrl;
-    m_callbackUrlHasBeenSet = true;
-}
-
-bool ModifyTWeSeeCallbackRequest::CallbackUrlHasBeenSet() const
-{
-    return m_callbackUrlHasBeenSet;
-}
-
 string ModifyTWeSeeCallbackRequest::GetType() const
 {
     return m_type;
@@ -125,6 +119,22 @@ bool ModifyTWeSeeCallbackRequest::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
+string ModifyTWeSeeCallbackRequest::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void ModifyTWeSeeCallbackRequest::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool ModifyTWeSeeCallbackRequest::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
+}
+
 string ModifyTWeSeeCallbackRequest::GetCallbackToken() const
 {
     return m_callbackToken;
@@ -139,6 +149,22 @@ void ModifyTWeSeeCallbackRequest::SetCallbackToken(const string& _callbackToken)
 bool ModifyTWeSeeCallbackRequest::CallbackTokenHasBeenSet() const
 {
     return m_callbackTokenHasBeenSet;
+}
+
+SeeCallbackCKafkaConfig ModifyTWeSeeCallbackRequest::GetCallbackCKafka() const
+{
+    return m_callbackCKafka;
+}
+
+void ModifyTWeSeeCallbackRequest::SetCallbackCKafka(const SeeCallbackCKafkaConfig& _callbackCKafka)
+{
+    m_callbackCKafka = _callbackCKafka;
+    m_callbackCKafkaHasBeenSet = true;
+}
+
+bool ModifyTWeSeeCallbackRequest::CallbackCKafkaHasBeenSet() const
+{
+    return m_callbackCKafkaHasBeenSet;
 }
 
 

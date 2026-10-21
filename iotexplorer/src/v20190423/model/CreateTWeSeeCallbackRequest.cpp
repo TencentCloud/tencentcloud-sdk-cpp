@@ -25,7 +25,9 @@ using namespace std;
 CreateTWeSeeCallbackRequest::CreateTWeSeeCallbackRequest() :
     m_typeHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
-    m_callbackTokenHasBeenSet(false)
+    m_callbackTokenHasBeenSet(false),
+    m_callbackCKafkaHasBeenSet(false),
+    m_productIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,23 @@ string CreateTWeSeeCallbackRequest::ToJsonString() const
         string key = "CallbackToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackCKafkaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackCKafka";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_callbackCKafka.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +133,38 @@ void CreateTWeSeeCallbackRequest::SetCallbackToken(const string& _callbackToken)
 bool CreateTWeSeeCallbackRequest::CallbackTokenHasBeenSet() const
 {
     return m_callbackTokenHasBeenSet;
+}
+
+SeeCallbackCKafkaConfig CreateTWeSeeCallbackRequest::GetCallbackCKafka() const
+{
+    return m_callbackCKafka;
+}
+
+void CreateTWeSeeCallbackRequest::SetCallbackCKafka(const SeeCallbackCKafkaConfig& _callbackCKafka)
+{
+    m_callbackCKafka = _callbackCKafka;
+    m_callbackCKafkaHasBeenSet = true;
+}
+
+bool CreateTWeSeeCallbackRequest::CallbackCKafkaHasBeenSet() const
+{
+    return m_callbackCKafkaHasBeenSet;
+}
+
+string CreateTWeSeeCallbackRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void CreateTWeSeeCallbackRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool CreateTWeSeeCallbackRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
 }
 
 

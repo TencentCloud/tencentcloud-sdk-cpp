@@ -26,6 +26,8 @@ CreateUserGroupRequest::CreateUserGroupRequest() :
     m_modelRouterIdHasBeenSet(false),
     m_userGroupNameHasBeenSet(false),
     m_budgetIdHasBeenSet(false),
+    m_promptIdHasBeenSet(false),
+    m_promptVersionHasBeenSet(false),
     m_intentRoutersHasBeenSet(false),
     m_keyIdsHasBeenSet(false),
     m_modelsHasBeenSet(false),
@@ -62,6 +64,22 @@ string CreateUserGroupRequest::ToJsonString() const
         string key = "BudgetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_budgetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_promptIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_promptId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_promptVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_promptVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_intentRoutersHasBeenSet)
@@ -172,6 +190,38 @@ void CreateUserGroupRequest::SetBudgetId(const string& _budgetId)
 bool CreateUserGroupRequest::BudgetIdHasBeenSet() const
 {
     return m_budgetIdHasBeenSet;
+}
+
+string CreateUserGroupRequest::GetPromptId() const
+{
+    return m_promptId;
+}
+
+void CreateUserGroupRequest::SetPromptId(const string& _promptId)
+{
+    m_promptId = _promptId;
+    m_promptIdHasBeenSet = true;
+}
+
+bool CreateUserGroupRequest::PromptIdHasBeenSet() const
+{
+    return m_promptIdHasBeenSet;
+}
+
+string CreateUserGroupRequest::GetPromptVersion() const
+{
+    return m_promptVersion;
+}
+
+void CreateUserGroupRequest::SetPromptVersion(const string& _promptVersion)
+{
+    m_promptVersion = _promptVersion;
+    m_promptVersionHasBeenSet = true;
+}
+
+bool CreateUserGroupRequest::PromptVersionHasBeenSet() const
+{
+    return m_promptVersionHasBeenSet;
 }
 
 vector<string> CreateUserGroupRequest::GetIntentRouters() const

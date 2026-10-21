@@ -27,7 +27,9 @@ SwitchDBInstanceMasterSlaveRequest::SwitchDBInstanceMasterSlaveRequest() :
     m_dstSlaveHasBeenSet(false),
     m_forceSwitchHasBeenSet(false),
     m_waitSwitchHasBeenSet(false),
-    m_dstNodeIdHasBeenSet(false)
+    m_dstNodeIdHasBeenSet(false),
+    m_syncTimeoutHasBeenSet(false),
+    m_syncDistanceHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string SwitchDBInstanceMasterSlaveRequest::ToJsonString() const
         string key = "DstNodeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dstNodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_syncTimeout, allocator);
+    }
+
+    if (m_syncDistanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncDistance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_syncDistance.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +182,38 @@ void SwitchDBInstanceMasterSlaveRequest::SetDstNodeId(const string& _dstNodeId)
 bool SwitchDBInstanceMasterSlaveRequest::DstNodeIdHasBeenSet() const
 {
     return m_dstNodeIdHasBeenSet;
+}
+
+int64_t SwitchDBInstanceMasterSlaveRequest::GetSyncTimeout() const
+{
+    return m_syncTimeout;
+}
+
+void SwitchDBInstanceMasterSlaveRequest::SetSyncTimeout(const int64_t& _syncTimeout)
+{
+    m_syncTimeout = _syncTimeout;
+    m_syncTimeoutHasBeenSet = true;
+}
+
+bool SwitchDBInstanceMasterSlaveRequest::SyncTimeoutHasBeenSet() const
+{
+    return m_syncTimeoutHasBeenSet;
+}
+
+string SwitchDBInstanceMasterSlaveRequest::GetSyncDistance() const
+{
+    return m_syncDistance;
+}
+
+void SwitchDBInstanceMasterSlaveRequest::SetSyncDistance(const string& _syncDistance)
+{
+    m_syncDistance = _syncDistance;
+    m_syncDistanceHasBeenSet = true;
+}
+
+bool SwitchDBInstanceMasterSlaveRequest::SyncDistanceHasBeenSet() const
+{
+    return m_syncDistanceHasBeenSet;
 }
 
 

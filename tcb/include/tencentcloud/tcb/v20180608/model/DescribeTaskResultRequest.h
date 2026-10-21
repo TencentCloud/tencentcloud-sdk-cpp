@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>云开发环境ID</p>
-                     * @return EnvId <p>云开发环境ID</p>
+                     * 获取<p>云开发环境 ID。查询 PGDump 任务时，所有状态均须提供且与任务环境一致，用于验证调用方环境归属。环境隔离或销毁后，仍可在归档保留期内查询历史任务及下载文件。</p>
+                     * @return EnvId <p>云开发环境 ID。查询 PGDump 任务时，所有状态均须提供且与任务环境一致，用于验证调用方环境归属。环境隔离或销毁后，仍可在归档保留期内查询历史任务及下载文件。</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置<p>云开发环境ID</p>
-                     * @param _envId <p>云开发环境ID</p>
+                     * 设置<p>云开发环境 ID。查询 PGDump 任务时，所有状态均须提供且与任务环境一致，用于验证调用方环境归属。环境隔离或销毁后，仍可在归档保留期内查询历史任务及下载文件。</p>
+                     * @param _envId <p>云开发环境 ID。查询 PGDump 任务时，所有状态均须提供且与任务环境一致，用于验证调用方环境归属。环境隔离或销毁后，仍可在归档保留期内查询历史任务及下载文件。</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>云开发环境ID</p>
+                     * <p>云开发环境 ID。查询 PGDump 任务时，所有状态均须提供且与任务环境一致，用于验证调用方环境归属。环境隔离或销毁后，仍可在归档保留期内查询历史任务及下载文件。</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;

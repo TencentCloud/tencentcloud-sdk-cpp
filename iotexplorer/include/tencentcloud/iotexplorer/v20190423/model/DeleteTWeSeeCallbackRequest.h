@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回调目标 ID，格式为 `callback-` + 8 位小写字母数字
-                     * @return CallbackId 回调目标 ID，格式为 `callback-` + 8 位小写字母数字
+                     * 获取<p>回调目标 ID</p>
+                     * @return CallbackId <p>回调目标 ID</p>
                      * 
                      */
                     std::string GetCallbackId() const;
 
                     /**
-                     * 设置回调目标 ID，格式为 `callback-` + 8 位小写字母数字
-                     * @param _callbackId 回调目标 ID，格式为 `callback-` + 8 位小写字母数字
+                     * 设置<p>回调目标 ID</p>
+                     * @param _callbackId <p>回调目标 ID</p>
                      * 
                      */
                     void SetCallbackId(const std::string& _callbackId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回调目标 ID，格式为 `callback-` + 8 位小写字母数字
+                     * <p>回调目标 ID</p>
                      */
                     std::string m_callbackId;
                     bool m_callbackIdHasBeenSet;

@@ -90,6 +90,56 @@ FwmClient::CancelIgnorePolicyRiskOutcomeCallable FwmClient::CancelIgnorePolicyRi
     return prom->get_future();
 }
 
+FwmClient::CreateAccountGroupOutcome FwmClient::CreateAccountGroup(const CreateAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccountGroupResponse rsp = CreateAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccountGroupOutcome(rsp);
+        else
+            return CreateAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void FwmClient::CreateAccountGroupAsync(const CreateAccountGroupRequest& request, const CreateAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAccountGroupRequest&;
+    using Resp = CreateAccountGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FwmClient::CreateAccountGroupOutcomeCallable FwmClient::CreateAccountGroupCallable(const CreateAccountGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAccountGroupOutcome>>();
+    CreateAccountGroupAsync(
+    request,
+    [prom](
+        const FwmClient*,
+        const CreateAccountGroupRequest&,
+        CreateAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 FwmClient::CreateAnalyzePolicyTaskOutcome FwmClient::CreateAnalyzePolicyTask(const CreateAnalyzePolicyTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAnalyzePolicyTask");
@@ -640,6 +690,56 @@ FwmClient::CreateVpcAclRuleGroupOutcomeCallable FwmClient::CreateVpcAclRuleGroup
     return prom->get_future();
 }
 
+FwmClient::DeleteAccountGroupOutcome FwmClient::DeleteAccountGroup(const DeleteAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccountGroupResponse rsp = DeleteAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccountGroupOutcome(rsp);
+        else
+            return DeleteAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void FwmClient::DeleteAccountGroupAsync(const DeleteAccountGroupRequest& request, const DeleteAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAccountGroupRequest&;
+    using Resp = DeleteAccountGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FwmClient::DeleteAccountGroupOutcomeCallable FwmClient::DeleteAccountGroupCallable(const DeleteAccountGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAccountGroupOutcome>>();
+    DeleteAccountGroupAsync(
+    request,
+    [prom](
+        const FwmClient*,
+        const DeleteAccountGroupRequest&,
+        DeleteAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 FwmClient::DeleteEdgeAclRuleOutcome FwmClient::DeleteEdgeAclRule(const DeleteEdgeAclRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteEdgeAclRule");
@@ -932,6 +1032,56 @@ FwmClient::DeleteVpcAclRuleOutcomeCallable FwmClient::DeleteVpcAclRuleCallable(c
         const FwmClient*,
         const DeleteVpcAclRuleRequest&,
         DeleteVpcAclRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+FwmClient::DescribeAccountGroupsOutcome FwmClient::DescribeAccountGroups(const DescribeAccountGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountGroupsResponse rsp = DescribeAccountGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountGroupsOutcome(rsp);
+        else
+            return DescribeAccountGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountGroupsOutcome(outcome.GetError());
+    }
+}
+
+void FwmClient::DescribeAccountGroupsAsync(const DescribeAccountGroupsRequest& request, const DescribeAccountGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAccountGroupsRequest&;
+    using Resp = DescribeAccountGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccountGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FwmClient::DescribeAccountGroupsOutcomeCallable FwmClient::DescribeAccountGroupsCallable(const DescribeAccountGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAccountGroupsOutcome>>();
+    DescribeAccountGroupsAsync(
+    request,
+    [prom](
+        const FwmClient*,
+        const DescribeAccountGroupsRequest&,
+        DescribeAccountGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1840,6 +1990,156 @@ FwmClient::IgnorePolicyRiskOutcomeCallable FwmClient::IgnorePolicyRiskCallable(c
     return prom->get_future();
 }
 
+FwmClient::ModifyAccountGroupOutcome FwmClient::ModifyAccountGroup(const ModifyAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccountGroupResponse rsp = ModifyAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccountGroupOutcome(rsp);
+        else
+            return ModifyAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void FwmClient::ModifyAccountGroupAsync(const ModifyAccountGroupRequest& request, const ModifyAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAccountGroupRequest&;
+    using Resp = ModifyAccountGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAccountGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FwmClient::ModifyAccountGroupOutcomeCallable FwmClient::ModifyAccountGroupCallable(const ModifyAccountGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAccountGroupOutcome>>();
+    ModifyAccountGroupAsync(
+    request,
+    [prom](
+        const FwmClient*,
+        const ModifyAccountGroupRequest&,
+        ModifyAccountGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+FwmClient::ModifyCfwManagedOutcome FwmClient::ModifyCfwManaged(const ModifyCfwManagedRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCfwManaged");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCfwManagedResponse rsp = ModifyCfwManagedResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCfwManagedOutcome(rsp);
+        else
+            return ModifyCfwManagedOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCfwManagedOutcome(outcome.GetError());
+    }
+}
+
+void FwmClient::ModifyCfwManagedAsync(const ModifyCfwManagedRequest& request, const ModifyCfwManagedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCfwManagedRequest&;
+    using Resp = ModifyCfwManagedResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCfwManaged", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FwmClient::ModifyCfwManagedOutcomeCallable FwmClient::ModifyCfwManagedCallable(const ModifyCfwManagedRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCfwManagedOutcome>>();
+    ModifyCfwManagedAsync(
+    request,
+    [prom](
+        const FwmClient*,
+        const ModifyCfwManagedRequest&,
+        ModifyCfwManagedOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+FwmClient::ModifyCfwShareRoleOutcome FwmClient::ModifyCfwShareRole(const ModifyCfwShareRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCfwShareRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCfwShareRoleResponse rsp = ModifyCfwShareRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCfwShareRoleOutcome(rsp);
+        else
+            return ModifyCfwShareRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCfwShareRoleOutcome(outcome.GetError());
+    }
+}
+
+void FwmClient::ModifyCfwShareRoleAsync(const ModifyCfwShareRoleRequest& request, const ModifyCfwShareRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCfwShareRoleRequest&;
+    using Resp = ModifyCfwShareRoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCfwShareRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FwmClient::ModifyCfwShareRoleOutcomeCallable FwmClient::ModifyCfwShareRoleCallable(const ModifyCfwShareRoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCfwShareRoleOutcome>>();
+    ModifyCfwShareRoleAsync(
+    request,
+    [prom](
+        const FwmClient*,
+        const ModifyCfwShareRoleRequest&,
+        ModifyCfwShareRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 FwmClient::ModifyEdgeAclRuleOutcome FwmClient::ModifyEdgeAclRule(const ModifyEdgeAclRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEdgeAclRule");
@@ -1932,6 +2232,56 @@ FwmClient::ModifyEdgeAclRuleSequenceOutcomeCallable FwmClient::ModifyEdgeAclRule
         const FwmClient*,
         const ModifyEdgeAclRuleSequenceRequest&,
         ModifyEdgeAclRuleSequenceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+FwmClient::ModifyMemberGroupOutcome FwmClient::ModifyMemberGroup(const ModifyMemberGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMemberGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMemberGroupResponse rsp = ModifyMemberGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMemberGroupOutcome(rsp);
+        else
+            return ModifyMemberGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMemberGroupOutcome(outcome.GetError());
+    }
+}
+
+void FwmClient::ModifyMemberGroupAsync(const ModifyMemberGroupRequest& request, const ModifyMemberGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyMemberGroupRequest&;
+    using Resp = ModifyMemberGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyMemberGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FwmClient::ModifyMemberGroupOutcomeCallable FwmClient::ModifyMemberGroupCallable(const ModifyMemberGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyMemberGroupOutcome>>();
+    ModifyMemberGroupAsync(
+    request,
+    [prom](
+        const FwmClient*,
+        const ModifyMemberGroupRequest&,
+        ModifyMemberGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

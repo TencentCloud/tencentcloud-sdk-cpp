@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取<p>value</p><p>当前仅支持传空字符串&quot;&quot;</p>
-                     * @return Value <p>value</p><p>当前仅支持传空字符串&quot;&quot;</p>
+                     * 获取<p>value值</p><p>枚举值：</p><ul><li>&#39;&#39;： &#39;&#39;</li></ul>
+                     * @return Value <p>value值</p><p>枚举值：</p><ul><li>&#39;&#39;： &#39;&#39;</li></ul>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置<p>value</p><p>当前仅支持传空字符串&quot;&quot;</p>
-                     * @param _value <p>value</p><p>当前仅支持传空字符串&quot;&quot;</p>
+                     * 设置<p>value值</p><p>枚举值：</p><ul><li>&#39;&#39;： &#39;&#39;</li></ul>
+                     * @param _value <p>value值</p><p>枚举值：</p><ul><li>&#39;&#39;： &#39;&#39;</li></ul>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_keyHasBeenSet;
 
                     /**
-                     * <p>value</p><p>当前仅支持传空字符串&quot;&quot;</p>
+                     * <p>value值</p><p>枚举值：</p><ul><li>&#39;&#39;： &#39;&#39;</li></ul>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

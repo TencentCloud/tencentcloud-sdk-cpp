@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool WeChatOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5</p>
-                     * @return PhoneNumber <p>手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5</p>
+                     * 获取<p>手机号码（注：不需要带国家代码 例如：15xxxxxxxxx）。可以传入原文、MD5或SHA256</p>
+                     * @return PhoneNumber <p>手机号码（注：不需要带国家代码 例如：15xxxxxxxxx）。可以传入原文、MD5或SHA256</p>
                      * 
                      */
                     std::string GetPhoneNumber() const;
 
                     /**
-                     * 设置<p>手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5</p>
-                     * @param _phoneNumber <p>手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5</p>
+                     * 设置<p>手机号码（注：不需要带国家代码 例如：15xxxxxxxxx）。可以传入原文、MD5或SHA256</p>
+                     * @param _phoneNumber <p>手机号码（注：不需要带国家代码 例如：15xxxxxxxxx）。可以传入原文、MD5或SHA256</p>
                      * 
                      */
                     void SetPhoneNumber(const std::string& _phoneNumber);
@@ -292,7 +292,7 @@ namespace TencentCloud
                     bool m_weChatOpenIdHasBeenSet;
 
                     /**
-                     * <p>手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5</p>
+                     * <p>手机号码（注：不需要带国家代码 例如：15xxxxxxxxx）。可以传入原文、MD5或SHA256</p>
                      */
                     std::string m_phoneNumber;
                     bool m_phoneNumberHasBeenSet;

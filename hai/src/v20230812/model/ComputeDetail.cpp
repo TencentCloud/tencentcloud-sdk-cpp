@@ -29,7 +29,8 @@ ComputeDetail::ComputeDetail() :
     m_cPUHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_prepaidEnableHasBeenSet(false),
-    m_postpaidEnableHasBeenSet(false)
+    m_postpaidEnableHasBeenSet(false),
+    m_supportedChargeTypesHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,19 @@ CoreInternalOutcome ComputeDetail::Deserialize(const rapidjson::Value &value)
         m_postpaidEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportedChargeTypes") && !value["SupportedChargeTypes"].IsNull())
+    {
+        if (!value["SupportedChargeTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ComputeDetail.SupportedChargeTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SupportedChargeTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_supportedChargeTypes.push_back((*itr).GetString());
+        }
+        m_supportedChargeTypesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +219,19 @@ void ComputeDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "PostpaidEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_postpaidEnable, allocator);
+    }
+
+    if (m_supportedChargeTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportedChargeTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_supportedChargeTypes.begin(); itr != m_supportedChargeTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -352,5 +379,21 @@ void ComputeDetail::SetPostpaidEnable(const bool& _postpaidEnable)
 bool ComputeDetail::PostpaidEnableHasBeenSet() const
 {
     return m_postpaidEnableHasBeenSet;
+}
+
+vector<string> ComputeDetail::GetSupportedChargeTypes() const
+{
+    return m_supportedChargeTypes;
+}
+
+void ComputeDetail::SetSupportedChargeTypes(const vector<string>& _supportedChargeTypes)
+{
+    m_supportedChargeTypes = _supportedChargeTypes;
+    m_supportedChargeTypesHasBeenSet = true;
+}
+
+bool ComputeDetail::SupportedChargeTypesHasBeenSet() const
+{
+    return m_supportedChargeTypesHasBeenSet;
 }
 

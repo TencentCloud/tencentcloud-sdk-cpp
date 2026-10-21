@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/CustomKmsInfo.h>
+#include <tencentcloud/cls/v20201016/model/TopicExtendInfo.h>
 
 
 namespace TencentCloud
@@ -320,6 +321,27 @@ namespace TencentCloud
                      */
                     bool TopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>主题扩展信息</p>
+                     * @return Extends <p>主题扩展信息</p>
+                     * 
+                     */
+                    TopicExtendInfo GetExtends() const;
+
+                    /**
+                     * 设置<p>主题扩展信息</p>
+                     * @param _extends <p>主题扩展信息</p>
+                     * 
+                     */
+                    void SetExtends(const TopicExtendInfo& _extends);
+
+                    /**
+                     * 判断参数 Extends 是否已赋值
+                     * @return Extends 是否已赋值
+                     * 
+                     */
+                    bool ExtendsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +421,12 @@ namespace TencentCloud
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
+
+                    /**
+                     * <p>主题扩展信息</p>
+                     */
+                    TopicExtendInfo m_extends;
+                    bool m_extendsHasBeenSet;
 
                 };
             }

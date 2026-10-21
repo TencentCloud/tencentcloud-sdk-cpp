@@ -49,7 +49,8 @@ CreateCloudInstanceRequest::CreateCloudInstanceRequest() :
     m_enableEmrProxyHasBeenSet(false),
     m_logStoreIDHasBeenSet(false),
     m_airflowDagSourceHasBeenSet(false),
-    m_airflowGitCredentialHasBeenSet(false)
+    m_airflowGitCredentialHasBeenSet(false),
+    m_sgIdsHasBeenSet(false)
 {
 }
 
@@ -312,6 +313,19 @@ string CreateCloudInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_airflowGitCredential.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sgIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SgIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sgIds.begin(); itr != m_sgIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -752,6 +766,22 @@ void CreateCloudInstanceRequest::SetAirflowGitCredential(const AirflowGitCredent
 bool CreateCloudInstanceRequest::AirflowGitCredentialHasBeenSet() const
 {
     return m_airflowGitCredentialHasBeenSet;
+}
+
+vector<string> CreateCloudInstanceRequest::GetSgIds() const
+{
+    return m_sgIds;
+}
+
+void CreateCloudInstanceRequest::SetSgIds(const vector<string>& _sgIds)
+{
+    m_sgIds = _sgIds;
+    m_sgIdsHasBeenSet = true;
+}
+
+bool CreateCloudInstanceRequest::SgIdsHasBeenSet() const
+{
+    return m_sgIdsHasBeenSet;
 }
 
 

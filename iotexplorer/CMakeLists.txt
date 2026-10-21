@@ -150,6 +150,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeePersonResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/TalkAgentInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyTWeSeeCallbackResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/SeeCallbackCKafkaConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeRecognitionTaskWithFileResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SeeCallbackInfo.h
@@ -822,6 +823,7 @@ set(iotexplorer_src
   src/v20190423/model/ModifyTWeSeePersonResponse.cpp
   src/v20190423/model/TalkAgentInfo.cpp
   src/v20190423/model/ModifyTWeSeeCallbackResponse.cpp
+  src/v20190423/model/SeeCallbackCKafkaConfig.cpp
   src/v20190423/model/DescribeDeviceDataHistoryResponse.cpp
   src/v20190423/model/CreateTWeSeeRecognitionTaskWithFileResponse.cpp
   src/v20190423/model/SeeCallbackInfo.cpp

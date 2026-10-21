@@ -619,6 +619,27 @@ namespace TencentCloud
                      */
                     bool AirflowGitCredentialHasBeenSet() const;
 
+                    /**
+                     * 获取<p>多安全组绑定</p>
+                     * @return SgIds <p>多安全组绑定</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSgIds() const;
+
+                    /**
+                     * 设置<p>多安全组绑定</p>
+                     * @param _sgIds <p>多安全组绑定</p>
+                     * 
+                     */
+                    void SetSgIds(const std::vector<std::string>& _sgIds);
+
+                    /**
+                     * 判断参数 SgIds 是否已赋值
+                     * @return SgIds 是否已赋值
+                     * 
+                     */
+                    bool SgIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -782,6 +803,12 @@ namespace TencentCloud
                      */
                     AirflowGitCredentialInput m_airflowGitCredential;
                     bool m_airflowGitCredentialHasBeenSet;
+
+                    /**
+                     * <p>多安全组绑定</p>
+                     */
+                    std::vector<std::string> m_sgIds;
+                    bool m_sgIdsHasBeenSet;
 
                 };
             }

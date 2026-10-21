@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态码，取值为 301、302、303、307、308 之一。
-                     * @return StatusCode 状态码，取值为 301、302、303、307、308 之一。
+                     * 获取<p>状态码，取值为 301、302、303、307、308 之一。</p>
+                     * @return StatusCode <p>状态码，取值为 301、302、303、307、308 之一。</p>
                      * 
                      */
                     int64_t GetStatusCode() const;
 
                     /**
-                     * 设置状态码，取值为 301、302、303、307、308 之一。
-                     * @param _statusCode 状态码，取值为 301、302、303、307、308 之一。
+                     * 设置<p>状态码，取值为 301、302、303、307、308 之一。</p>
+                     * @param _statusCode <p>状态码，取值为 301、302、303、307、308 之一。</p>
                      * 
                      */
                     void SetStatusCode(const int64_t& _statusCode);
@@ -71,27 +71,15 @@ namespace TencentCloud
                     bool StatusCodeHasBeenSet() const;
 
                     /**
-                     * 获取目标请求协议，取值有：
-<li>http：目标请求协议 HTTP；</li>
-<li>https：目标请求协议 HTTPS；</li>
-<li>follow：跟随请求。</li>
-                     * @return Protocol 目标请求协议，取值有：
-<li>http：目标请求协议 HTTP；</li>
-<li>https：目标请求协议 HTTPS；</li>
-<li>follow：跟随请求。</li>
+                     * 获取<p>目标请求协议。</p><p>枚举值：</p><ul><li>http： 目标请求协议为 HTTP。</li><li>https： 目标请求协议为 HTTPS。</li><li>follow： 跟随请求。</li></ul>
+                     * @return Protocol <p>目标请求协议。</p><p>枚举值：</p><ul><li>http： 目标请求协议为 HTTP。</li><li>https： 目标请求协议为 HTTPS。</li><li>follow： 跟随请求。</li></ul>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置目标请求协议，取值有：
-<li>http：目标请求协议 HTTP；</li>
-<li>https：目标请求协议 HTTPS；</li>
-<li>follow：跟随请求。</li>
-                     * @param _protocol 目标请求协议，取值有：
-<li>http：目标请求协议 HTTP；</li>
-<li>https：目标请求协议 HTTPS；</li>
-<li>follow：跟随请求。</li>
+                     * 设置<p>目标请求协议。</p><p>枚举值：</p><ul><li>http： 目标请求协议为 HTTP。</li><li>https： 目标请求协议为 HTTPS。</li><li>follow： 跟随请求。</li></ul>
+                     * @param _protocol <p>目标请求协议。</p><p>枚举值：</p><ul><li>http： 目标请求协议为 HTTP。</li><li>https： 目标请求协议为 HTTPS。</li><li>follow： 跟随请求。</li></ul>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -104,18 +92,18 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取目标 HostName 。
+                     * 获取<p>目标 HostName。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HostName 目标 HostName 。
+                     * @return HostName <p>目标 HostName。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HostName GetHostName() const;
 
                     /**
-                     * 设置目标 HostName 。
+                     * 设置<p>目标 HostName。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hostName 目标 HostName 。
+                     * @param _hostName <p>目标 HostName。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -129,18 +117,18 @@ namespace TencentCloud
                     bool HostNameHasBeenSet() const;
 
                     /**
-                     * 获取目标路径。
+                     * 获取<p>目标路径。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return URLPath 目标路径。
+                     * @return URLPath <p>目标路径。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     URLPath GetURLPath() const;
 
                     /**
-                     * 设置目标路径。
+                     * 设置<p>目标路径。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _uRLPath 目标路径。
+                     * @param _uRLPath <p>目标路径。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -154,18 +142,18 @@ namespace TencentCloud
                     bool URLPathHasBeenSet() const;
 
                     /**
-                     * 获取携带查询参数。
+                     * 获取<p>携带查询参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QueryString 携带查询参数。
+                     * @return QueryString <p>携带查询参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AccessURLRedirectQueryString GetQueryString() const;
 
                     /**
-                     * 设置携带查询参数。
+                     * 设置<p>携带查询参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _queryString 携带查询参数。
+                     * @param _queryString <p>携带查询参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -181,36 +169,33 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态码，取值为 301、302、303、307、308 之一。
+                     * <p>状态码，取值为 301、302、303、307、308 之一。</p>
                      */
                     int64_t m_statusCode;
                     bool m_statusCodeHasBeenSet;
 
                     /**
-                     * 目标请求协议，取值有：
-<li>http：目标请求协议 HTTP；</li>
-<li>https：目标请求协议 HTTPS；</li>
-<li>follow：跟随请求。</li>
+                     * <p>目标请求协议。</p><p>枚举值：</p><ul><li>http： 目标请求协议为 HTTP。</li><li>https： 目标请求协议为 HTTPS。</li><li>follow： 跟随请求。</li></ul>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 目标 HostName 。
+                     * <p>目标 HostName。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HostName m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
-                     * 目标路径。
+                     * <p>目标路径。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     URLPath m_uRLPath;
                     bool m_uRLPathHasBeenSet;
 
                     /**
-                     * 携带查询参数。
+                     * <p>携带查询参数。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AccessURLRedirectQueryString m_queryString;

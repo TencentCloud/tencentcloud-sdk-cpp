@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/SeeCallbackCKafkaConfig.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回调目标 ID，格式为 `callback-` + 8 位小写字母数字
-                     * @return CallbackId 回调目标 ID，格式为 `callback-` + 8 位小写字母数字
+                     * 获取<p>回调目标 ID</p>
+                     * @return CallbackId <p>回调目标 ID</p>
                      * 
                      */
                     std::string GetCallbackId() const;
 
                     /**
-                     * 设置回调目标 ID，格式为 `callback-` + 8 位小写字母数字
-                     * @param _callbackId 回调目标 ID，格式为 `callback-` + 8 位小写字母数字
+                     * 设置<p>回调目标 ID</p>
+                     * @param _callbackId <p>回调目标 ID</p>
                      * 
                      */
                     void SetCallbackId(const std::string& _callbackId);
@@ -64,36 +65,15 @@ namespace TencentCloud
                     bool CallbackIdHasBeenSet() const;
 
                     /**
-                     * 获取回调 URL，需要可访问并通过 Echo 校验
-                     * @return CallbackUrl 回调 URL，需要可访问并通过 Echo 校验
-                     * 
-                     */
-                    std::string GetCallbackUrl() const;
-
-                    /**
-                     * 设置回调 URL，需要可访问并通过 Echo 校验
-                     * @param _callbackUrl 回调 URL，需要可访问并通过 Echo 校验
-                     * 
-                     */
-                    void SetCallbackUrl(const std::string& _callbackUrl);
-
-                    /**
-                     * 判断参数 CallbackUrl 是否已赋值
-                     * @return CallbackUrl 是否已赋值
-                     * 
-                     */
-                    bool CallbackUrlHasBeenSet() const;
-
-                    /**
-                     * 获取回调类型。当前仅支持：`http`
-                     * @return Type 回调类型。当前仅支持：`http`
+                     * 获取<p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
+                     * @return Type <p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置回调类型。当前仅支持：`http`
-                     * @param _type 回调类型。当前仅支持：`http`
+                     * 设置<p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
+                     * @param _type <p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -106,15 +86,36 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取回调签名 token，最大长度 128
-                     * @return CallbackToken 回调签名 token，最大长度 128
+                     * 获取<p>回调 URL，需要可访问并通过 Echo 校验</p>
+                     * @return CallbackUrl <p>回调 URL，需要可访问并通过 Echo 校验</p>
+                     * 
+                     */
+                    std::string GetCallbackUrl() const;
+
+                    /**
+                     * 设置<p>回调 URL，需要可访问并通过 Echo 校验</p>
+                     * @param _callbackUrl <p>回调 URL，需要可访问并通过 Echo 校验</p>
+                     * 
+                     */
+                    void SetCallbackUrl(const std::string& _callbackUrl);
+
+                    /**
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
+                     * 
+                     */
+                    bool CallbackUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>回调签名 token，最大长度 128</p>
+                     * @return CallbackToken <p>回调签名 token，最大长度 128</p>
                      * 
                      */
                     std::string GetCallbackToken() const;
 
                     /**
-                     * 设置回调签名 token，最大长度 128
-                     * @param _callbackToken 回调签名 token，最大长度 128
+                     * 设置<p>回调签名 token，最大长度 128</p>
+                     * @param _callbackToken <p>回调签名 token，最大长度 128</p>
                      * 
                      */
                     void SetCallbackToken(const std::string& _callbackToken);
@@ -126,31 +127,58 @@ namespace TencentCloud
                      */
                     bool CallbackTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>回调 CKafka 配置</p>
+                     * @return CallbackCKafka <p>回调 CKafka 配置</p>
+                     * 
+                     */
+                    SeeCallbackCKafkaConfig GetCallbackCKafka() const;
+
+                    /**
+                     * 设置<p>回调 CKafka 配置</p>
+                     * @param _callbackCKafka <p>回调 CKafka 配置</p>
+                     * 
+                     */
+                    void SetCallbackCKafka(const SeeCallbackCKafkaConfig& _callbackCKafka);
+
+                    /**
+                     * 判断参数 CallbackCKafka 是否已赋值
+                     * @return CallbackCKafka 是否已赋值
+                     * 
+                     */
+                    bool CallbackCKafkaHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 回调目标 ID，格式为 `callback-` + 8 位小写字母数字
+                     * <p>回调目标 ID</p>
                      */
                     std::string m_callbackId;
                     bool m_callbackIdHasBeenSet;
 
                     /**
-                     * 回调 URL，需要可访问并通过 Echo 校验
-                     */
-                    std::string m_callbackUrl;
-                    bool m_callbackUrlHasBeenSet;
-
-                    /**
-                     * 回调类型。当前仅支持：`http`
+                     * <p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 回调签名 token，最大长度 128
+                     * <p>回调 URL，需要可访问并通过 Echo 校验</p>
+                     */
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * <p>回调签名 token，最大长度 128</p>
                      */
                     std::string m_callbackToken;
                     bool m_callbackTokenHasBeenSet;
+
+                    /**
+                     * <p>回调 CKafka 配置</p>
+                     */
+                    SeeCallbackCKafkaConfig m_callbackCKafka;
+                    bool m_callbackCKafkaHasBeenSet;
 
                 };
             }

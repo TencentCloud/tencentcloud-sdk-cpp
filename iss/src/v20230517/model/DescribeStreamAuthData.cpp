@@ -28,7 +28,8 @@ DescribeStreamAuthData::DescribeStreamAuthData() :
     m_pushStateHasBeenSet(false),
     m_pushSecretHasBeenSet(false),
     m_pushExpiredHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_excludePushDomainIdsHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,19 @@ CoreInternalOutcome DescribeStreamAuthData::Deserialize(const rapidjson::Value &
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ExcludePushDomainIds") && !value["ExcludePushDomainIds"].IsNull())
+    {
+        if (!value["ExcludePushDomainIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeStreamAuthData.ExcludePushDomainIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExcludePushDomainIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_excludePushDomainIds.push_back((*itr).GetString());
+        }
+        m_excludePushDomainIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +200,19 @@ void DescribeStreamAuthData::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_excludePushDomainIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludePushDomainIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludePushDomainIds.begin(); itr != m_excludePushDomainIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -317,5 +344,21 @@ void DescribeStreamAuthData::SetAppId(const int64_t& _appId)
 bool DescribeStreamAuthData::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+vector<string> DescribeStreamAuthData::GetExcludePushDomainIds() const
+{
+    return m_excludePushDomainIds;
+}
+
+void DescribeStreamAuthData::SetExcludePushDomainIds(const vector<string>& _excludePushDomainIds)
+{
+    m_excludePushDomainIds = _excludePushDomainIds;
+    m_excludePushDomainIdsHasBeenSet = true;
+}
+
+bool DescribeStreamAuthData::ExcludePushDomainIdsHasBeenSet() const
+{
+    return m_excludePushDomainIdsHasBeenSet;
 }
 

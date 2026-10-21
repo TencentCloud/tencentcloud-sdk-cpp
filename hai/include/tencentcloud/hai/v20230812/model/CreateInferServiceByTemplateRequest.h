@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool ReplicasHasBeenSet() const;
 
                     /**
-                     * 获取<p>付费方式，POSTPAID_BY_HOUR按量后付费</p>
-                     * @return ServiceChargeType <p>付费方式，POSTPAID_BY_HOUR按量后付费</p>
+                     * 获取<p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>
+                     * @return ServiceChargeType <p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>
                      * 
                      */
                     std::string GetServiceChargeType() const;
 
                     /**
-                     * 设置<p>付费方式，POSTPAID_BY_HOUR按量后付费</p>
-                     * @param _serviceChargeType <p>付费方式，POSTPAID_BY_HOUR按量后付费</p>
+                     * 设置<p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>
+                     * @param _serviceChargeType <p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>
                      * 
                      */
                     void SetServiceChargeType(const std::string& _serviceChargeType);
@@ -234,7 +234,7 @@ namespace TencentCloud
                     bool m_replicasHasBeenSet;
 
                     /**
-                     * <p>付费方式，POSTPAID_BY_HOUR按量后付费</p>
+                     * <p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>
                      */
                     std::string m_serviceChargeType;
                     bool m_serviceChargeTypeHasBeenSet;

@@ -29,7 +29,8 @@ AddStreamAuthRequest::AddStreamAuthRequest() :
     m_pullExpiredHasBeenSet(false),
     m_pushStateHasBeenSet(false),
     m_pushSecretHasBeenSet(false),
-    m_pushExpiredHasBeenSet(false)
+    m_pushExpiredHasBeenSet(false),
+    m_excludePushDomainIdsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,19 @@ string AddStreamAuthRequest::ToJsonString() const
         string key = "PushExpired";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pushExpired, allocator);
+    }
+
+    if (m_excludePushDomainIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludePushDomainIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludePushDomainIds.begin(); itr != m_excludePushDomainIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -214,6 +228,22 @@ void AddStreamAuthRequest::SetPushExpired(const int64_t& _pushExpired)
 bool AddStreamAuthRequest::PushExpiredHasBeenSet() const
 {
     return m_pushExpiredHasBeenSet;
+}
+
+vector<string> AddStreamAuthRequest::GetExcludePushDomainIds() const
+{
+    return m_excludePushDomainIds;
+}
+
+void AddStreamAuthRequest::SetExcludePushDomainIds(const vector<string>& _excludePushDomainIds)
+{
+    m_excludePushDomainIds = _excludePushDomainIds;
+    m_excludePushDomainIdsHasBeenSet = true;
+}
+
+bool AddStreamAuthRequest::ExcludePushDomainIdsHasBeenSet() const
+{
+    return m_excludePushDomainIdsHasBeenSet;
 }
 
 

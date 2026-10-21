@@ -33,7 +33,8 @@ CloudProductTopicConfig::CloudProductTopicConfig() :
     m_isSourceFromHasBeenSet(false),
     m_isWebTrackingHasBeenSet(false),
     m_customKmsInfoHasBeenSet(false),
-    m_topicIdHasBeenSet(false)
+    m_topicIdHasBeenSet(false),
+    m_extendsHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,23 @@ CoreInternalOutcome CloudProductTopicConfig::Deserialize(const rapidjson::Value 
         m_topicIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Extends") && !value["Extends"].IsNull())
+    {
+        if (!value["Extends"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudProductTopicConfig.Extends` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extends.Deserialize(value["Extends"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extendsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +307,15 @@ void CloudProductTopicConfig::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "TopicId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extendsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extends";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extends.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -500,5 +527,21 @@ void CloudProductTopicConfig::SetTopicId(const string& _topicId)
 bool CloudProductTopicConfig::TopicIdHasBeenSet() const
 {
     return m_topicIdHasBeenSet;
+}
+
+TopicExtendInfo CloudProductTopicConfig::GetExtends() const
+{
+    return m_extends;
+}
+
+void CloudProductTopicConfig::SetExtends(const TopicExtendInfo& _extends)
+{
+    m_extends = _extends;
+    m_extendsHasBeenSet = true;
+}
+
+bool CloudProductTopicConfig::ExtendsHasBeenSet() const
+{
+    return m_extendsHasBeenSet;
 }
 
