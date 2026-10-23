@@ -25,7 +25,10 @@ using namespace std;
 VerifyGeneralCardWarnRequest::VerifyGeneralCardWarnRequest() :
     m_cardTypeHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_imageBase64HasBeenSet(false)
+    m_imageBase64HasBeenSet(false),
+    m_reasoningPromptHasBeenSet(false),
+    m_reasoningConfigHasBeenSet(false),
+    m_ignoreWatermarkCategoriesHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,36 @@ string VerifyGeneralCardWarnRequest::ToJsonString() const
         string key = "ImageBase64";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasoningPromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReasoningPrompt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_reasoningPrompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasoningConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReasoningConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reasoningConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ignoreWatermarkCategoriesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreWatermarkCategories";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ignoreWatermarkCategories.begin(); itr != m_ignoreWatermarkCategories.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -114,6 +147,54 @@ void VerifyGeneralCardWarnRequest::SetImageBase64(const string& _imageBase64)
 bool VerifyGeneralCardWarnRequest::ImageBase64HasBeenSet() const
 {
     return m_imageBase64HasBeenSet;
+}
+
+string VerifyGeneralCardWarnRequest::GetReasoningPrompt() const
+{
+    return m_reasoningPrompt;
+}
+
+void VerifyGeneralCardWarnRequest::SetReasoningPrompt(const string& _reasoningPrompt)
+{
+    m_reasoningPrompt = _reasoningPrompt;
+    m_reasoningPromptHasBeenSet = true;
+}
+
+bool VerifyGeneralCardWarnRequest::ReasoningPromptHasBeenSet() const
+{
+    return m_reasoningPromptHasBeenSet;
+}
+
+ReasoningConfig VerifyGeneralCardWarnRequest::GetReasoningConfig() const
+{
+    return m_reasoningConfig;
+}
+
+void VerifyGeneralCardWarnRequest::SetReasoningConfig(const ReasoningConfig& _reasoningConfig)
+{
+    m_reasoningConfig = _reasoningConfig;
+    m_reasoningConfigHasBeenSet = true;
+}
+
+bool VerifyGeneralCardWarnRequest::ReasoningConfigHasBeenSet() const
+{
+    return m_reasoningConfigHasBeenSet;
+}
+
+vector<string> VerifyGeneralCardWarnRequest::GetIgnoreWatermarkCategories() const
+{
+    return m_ignoreWatermarkCategories;
+}
+
+void VerifyGeneralCardWarnRequest::SetIgnoreWatermarkCategories(const vector<string>& _ignoreWatermarkCategories)
+{
+    m_ignoreWatermarkCategories = _ignoreWatermarkCategories;
+    m_ignoreWatermarkCategoriesHasBeenSet = true;
+}
+
+bool VerifyGeneralCardWarnRequest::IgnoreWatermarkCategoriesHasBeenSet() const
+{
+    return m_ignoreWatermarkCategoriesHasBeenSet;
 }
 
 

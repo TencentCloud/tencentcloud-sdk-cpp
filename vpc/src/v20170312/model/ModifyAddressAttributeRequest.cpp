@@ -25,7 +25,8 @@ using namespace std;
 ModifyAddressAttributeRequest::ModifyAddressAttributeRequest() :
     m_addressIdHasBeenSet(false),
     m_addressNameHasBeenSet(false),
-    m_eipDirectConnectionHasBeenSet(false)
+    m_eipDirectConnectionHasBeenSet(false),
+    m_eipVisibleOnEniHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyAddressAttributeRequest::ToJsonString() const
         string key = "EipDirectConnection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_eipDirectConnection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eipVisibleOnEniHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipVisibleOnEni";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_eipVisibleOnEni, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyAddressAttributeRequest::SetEipDirectConnection(const string& _eipDir
 bool ModifyAddressAttributeRequest::EipDirectConnectionHasBeenSet() const
 {
     return m_eipDirectConnectionHasBeenSet;
+}
+
+bool ModifyAddressAttributeRequest::GetEipVisibleOnEni() const
+{
+    return m_eipVisibleOnEni;
+}
+
+void ModifyAddressAttributeRequest::SetEipVisibleOnEni(const bool& _eipVisibleOnEni)
+{
+    m_eipVisibleOnEni = _eipVisibleOnEni;
+    m_eipVisibleOnEniHasBeenSet = true;
+}
+
+bool ModifyAddressAttributeRequest::EipVisibleOnEniHasBeenSet() const
+{
+    return m_eipVisibleOnEniHasBeenSet;
 }
 
 

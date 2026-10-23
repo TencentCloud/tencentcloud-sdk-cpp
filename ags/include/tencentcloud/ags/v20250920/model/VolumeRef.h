@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId
+                     * 获取<p>Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VolumeName Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId
+                     * @return VolumeName <p>Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVolumeName() const;
 
                     /**
-                     * 设置Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId
+                     * 设置<p>Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _volumeName Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId
+                     * @param _volumeName <p>Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool VolumeNameHasBeenSet() const;
 
                     /**
-                     * 获取稳定 Volume ID，格式 vol-xxxxxxxx
+                     * 获取<p>稳定 Volume ID，格式 vol-xxxxxxxx</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VolumeId 稳定 Volume ID，格式 vol-xxxxxxxx
+                     * @return VolumeId <p>稳定 Volume ID，格式 vol-xxxxxxxx</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVolumeId() const;
 
                     /**
-                     * 设置稳定 Volume ID，格式 vol-xxxxxxxx
+                     * 设置<p>稳定 Volume ID，格式 vol-xxxxxxxx</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _volumeId 稳定 Volume ID，格式 vol-xxxxxxxx
+                     * @param _volumeId <p>稳定 Volume ID，格式 vol-xxxxxxxx</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -99,14 +99,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId
+                     * <p>Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_volumeName;
                     bool m_volumeNameHasBeenSet;
 
                     /**
-                     * 稳定 Volume ID，格式 vol-xxxxxxxx
+                     * <p>稳定 Volume ID，格式 vol-xxxxxxxx</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_volumeId;

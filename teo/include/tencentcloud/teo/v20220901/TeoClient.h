@@ -271,6 +271,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeLogAnalysisDetailResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeLogAnalysisDownloadTasksRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeLogAnalysisDownloadTasksResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeLogAnalysisStatisticsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeLogAnalysisStatisticsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeMultiPathGatewayLineRequest.h>
@@ -883,6 +885,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogAnalysisDownloadTasksResponse> DescribeLogAnalysisDownloadTasksOutcome;
                 typedef std::future<DescribeLogAnalysisDownloadTasksOutcome> DescribeLogAnalysisDownloadTasksOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeLogAnalysisDownloadTasksRequest&, DescribeLogAnalysisDownloadTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogAnalysisDownloadTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogAnalysisStatisticsResponse> DescribeLogAnalysisStatisticsOutcome;
+                typedef std::future<DescribeLogAnalysisStatisticsOutcome> DescribeLogAnalysisStatisticsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeLogAnalysisStatisticsRequest&, DescribeLogAnalysisStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogAnalysisStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMultiPathGatewayResponse> DescribeMultiPathGatewayOutcome;
                 typedef std::future<DescribeMultiPathGatewayOutcome> DescribeMultiPathGatewayOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeMultiPathGatewayRequest&, DescribeMultiPathGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMultiPathGatewayAsyncHandler;
@@ -2408,6 +2413,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeLogAnalysisDownloadTasksOutcome DescribeLogAnalysisDownloadTasks(const Model::DescribeLogAnalysisDownloadTasksRequest &request);
                 void DescribeLogAnalysisDownloadTasksAsync(const Model::DescribeLogAnalysisDownloadTasksRequest& request, const DescribeLogAnalysisDownloadTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogAnalysisDownloadTasksOutcomeCallable DescribeLogAnalysisDownloadTasksCallable(const Model::DescribeLogAnalysisDownloadTasksRequest& request);
+
+                /**
+                 *本接口用于日志分析统计结果查询。用户在检索语句后追加 SQL 聚合语句（[检索条件] | [SQL语句]），后端执行聚合并返回列式统计结果（列定义 + 数据行）。
+                 * @param req DescribeLogAnalysisStatisticsRequest
+                 * @return DescribeLogAnalysisStatisticsOutcome
+                 */
+                DescribeLogAnalysisStatisticsOutcome DescribeLogAnalysisStatistics(const Model::DescribeLogAnalysisStatisticsRequest &request);
+                void DescribeLogAnalysisStatisticsAsync(const Model::DescribeLogAnalysisStatisticsRequest& request, const DescribeLogAnalysisStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogAnalysisStatisticsOutcomeCallable DescribeLogAnalysisStatisticsCallable(const Model::DescribeLogAnalysisStatisticsRequest& request);
 
                 /**
                  *通过本接口查询多通道安全加速网关详情。如名称、网关 ID、IP、端口、类型等。

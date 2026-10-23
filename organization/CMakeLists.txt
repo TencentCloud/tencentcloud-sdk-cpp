@@ -219,6 +219,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/DescribeShareAreasRequest.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationMemberAuthAccountsResponse.h
   include/tencentcloud/organization/v20210331/model/DeleteShareUnitNodeRequest.h
+  include/tencentcloud/organization/v20210331/model/UpdateOrganizationMemberRequest.h
   include/tencentcloud/organization/v20210331/model/RoleAssignmentInfo.h
   include/tencentcloud/organization/v20210331/model/OrgNode.h
   include/tencentcloud/organization/v20210331/model/DeleteShareUnitNodeResponse.h
@@ -337,7 +338,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/AddPermissionPolicyToRoleConfigurationResponse.h
   include/tencentcloud/organization/v20210331/model/ListOrganizationServiceRequest.h
   include/tencentcloud/organization/v20210331/model/CreateRoleConfigurationRequest.h
-  include/tencentcloud/organization/v20210331/model/UpdateOrganizationMemberRequest.h
+  include/tencentcloud/organization/v20210331/model/FailedAccount.h
   include/tencentcloud/organization/v20210331/model/CreateOrganizationMembersPolicyResponse.h
   include/tencentcloud/organization/v20210331/model/GetRoleConfigurationRequest.h
   include/tencentcloud/organization/v20210331/model/AddUserToGroupRequest.h
@@ -605,6 +606,7 @@ set(organization_src
   src/v20210331/model/DescribeShareAreasRequest.cpp
   src/v20210331/model/DescribeOrganizationMemberAuthAccountsResponse.cpp
   src/v20210331/model/DeleteShareUnitNodeRequest.cpp
+  src/v20210331/model/UpdateOrganizationMemberRequest.cpp
   src/v20210331/model/RoleAssignmentInfo.cpp
   src/v20210331/model/OrgNode.cpp
   src/v20210331/model/DeleteShareUnitNodeResponse.cpp
@@ -723,7 +725,7 @@ set(organization_src
   src/v20210331/model/AddPermissionPolicyToRoleConfigurationResponse.cpp
   src/v20210331/model/ListOrganizationServiceRequest.cpp
   src/v20210331/model/CreateRoleConfigurationRequest.cpp
-  src/v20210331/model/UpdateOrganizationMemberRequest.cpp
+  src/v20210331/model/FailedAccount.cpp
   src/v20210331/model/CreateOrganizationMembersPolicyResponse.cpp
   src/v20210331/model/GetRoleConfigurationRequest.cpp
   src/v20210331/model/AddUserToGroupRequest.cpp

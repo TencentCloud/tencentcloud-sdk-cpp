@@ -50,7 +50,9 @@ NativeNodeInfo::NativeNodeInfo() :
     m_osImageHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_isMigratedHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -406,6 +408,26 @@ CoreInternalOutcome NativeNodeInfo::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsMigrated") && !value["IsMigrated"].IsNull())
+    {
+        if (!value["IsMigrated"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeNodeInfo.IsMigrated` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isMigrated = value["IsMigrated"].GetBool();
+        m_isMigratedHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceId") && !value["ResourceId"].IsNull())
+    {
+        if (!value["ResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeNodeInfo.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceId = string(value["ResourceId"].GetString());
+        m_resourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -678,6 +700,22 @@ void NativeNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isMigratedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsMigrated";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isMigrated, allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1161,5 +1199,37 @@ void NativeNodeInfo::SetTags(const vector<Tag>& _tags)
 bool NativeNodeInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool NativeNodeInfo::GetIsMigrated() const
+{
+    return m_isMigrated;
+}
+
+void NativeNodeInfo::SetIsMigrated(const bool& _isMigrated)
+{
+    m_isMigrated = _isMigrated;
+    m_isMigratedHasBeenSet = true;
+}
+
+bool NativeNodeInfo::IsMigratedHasBeenSet() const
+{
+    return m_isMigratedHasBeenSet;
+}
+
+string NativeNodeInfo::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void NativeNodeInfo::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool NativeNodeInfo::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 

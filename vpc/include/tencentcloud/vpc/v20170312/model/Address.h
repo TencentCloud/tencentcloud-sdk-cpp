@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取`EIP`的`ID`，是`EIP`的唯一标识。
-                     * @return AddressId `EIP`的`ID`，是`EIP`的唯一标识。
+                     * 获取<p><code>EIP</code>的<code>ID</code>，是<code>EIP</code>的唯一标识。</p>
+                     * @return AddressId <p><code>EIP</code>的<code>ID</code>，是<code>EIP</code>的唯一标识。</p>
                      * 
                      */
                     std::string GetAddressId() const;
 
                     /**
-                     * 设置`EIP`的`ID`，是`EIP`的唯一标识。
-                     * @param _addressId `EIP`的`ID`，是`EIP`的唯一标识。
+                     * 设置<p><code>EIP</code>的<code>ID</code>，是<code>EIP</code>的唯一标识。</p>
+                     * @param _addressId <p><code>EIP</code>的<code>ID</code>，是<code>EIP</code>的唯一标识。</p>
                      * 
                      */
                     void SetAddressId(const std::string& _addressId);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool AddressIdHasBeenSet() const;
 
                     /**
-                     * 获取`EIP`名称。
-                     * @return AddressName `EIP`名称。
+                     * 获取<p><code>EIP</code>名称。</p>
+                     * @return AddressName <p><code>EIP</code>名称。</p>
                      * 
                      */
                     std::string GetAddressName() const;
 
                     /**
-                     * 设置`EIP`名称。
-                     * @param _addressName `EIP`名称。
+                     * 设置<p><code>EIP</code>名称。</p>
+                     * @param _addressName <p><code>EIP</code>名称。</p>
                      * 
                      */
                     void SetAddressName(const std::string& _addressName);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool AddressNameHasBeenSet() const;
 
                     /**
-                     * 获取`EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)
-                     * @return AddressStatus `EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)
+                     * 获取<p><code>EIP</code>状态，包含&#39;CREATING&#39;(创建中),&#39;BINDING&#39;(绑定中),&#39;BIND&#39;(已绑定),&#39;UNBINDING&#39;(解绑中),&#39;UNBIND&#39;(已解绑),&#39;OFFLINING&#39;(释放中),&#39;BIND_ENI&#39;(绑定悬空弹性网卡)</p>
+                     * @return AddressStatus <p><code>EIP</code>状态，包含&#39;CREATING&#39;(创建中),&#39;BINDING&#39;(绑定中),&#39;BIND&#39;(已绑定),&#39;UNBINDING&#39;(解绑中),&#39;UNBIND&#39;(已解绑),&#39;OFFLINING&#39;(释放中),&#39;BIND_ENI&#39;(绑定悬空弹性网卡)</p>
                      * 
                      */
                     std::string GetAddressStatus() const;
 
                     /**
-                     * 设置`EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)
-                     * @param _addressStatus `EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)
+                     * 设置<p><code>EIP</code>状态，包含&#39;CREATING&#39;(创建中),&#39;BINDING&#39;(绑定中),&#39;BIND&#39;(已绑定),&#39;UNBINDING&#39;(解绑中),&#39;UNBIND&#39;(已解绑),&#39;OFFLINING&#39;(释放中),&#39;BIND_ENI&#39;(绑定悬空弹性网卡)</p>
+                     * @param _addressStatus <p><code>EIP</code>状态，包含&#39;CREATING&#39;(创建中),&#39;BINDING&#39;(绑定中),&#39;BIND&#39;(已绑定),&#39;UNBINDING&#39;(解绑中),&#39;UNBIND&#39;(已解绑),&#39;OFFLINING&#39;(释放中),&#39;BIND_ENI&#39;(绑定悬空弹性网卡)</p>
                      * 
                      */
                     void SetAddressStatus(const std::string& _addressStatus);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool AddressStatusHasBeenSet() const;
 
                     /**
-                     * 获取外网IP地址
-                     * @return AddressIp 外网IP地址
+                     * 获取<p>外网IP地址</p>
+                     * @return AddressIp <p>外网IP地址</p>
                      * 
                      */
                     std::string GetAddressIp() const;
 
                     /**
-                     * 设置外网IP地址
-                     * @param _addressIp 外网IP地址
+                     * 设置<p>外网IP地址</p>
+                     * @param _addressIp <p>外网IP地址</p>
                      * 
                      */
                     void SetAddressIp(const std::string& _addressIp);
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool AddressIpHasBeenSet() const;
 
                     /**
-                     * 获取绑定的资源实例`ID`。可能是一个`CVM`，`NAT`。
-                     * @return InstanceId 绑定的资源实例`ID`。可能是一个`CVM`，`NAT`。
+                     * 获取<p>绑定的资源实例<code>ID</code>。可能是一个<code>CVM</code>，<code>NAT</code>。</p>
+                     * @return InstanceId <p>绑定的资源实例<code>ID</code>。可能是一个<code>CVM</code>，<code>NAT</code>。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置绑定的资源实例`ID`。可能是一个`CVM`，`NAT`。
-                     * @param _instanceId 绑定的资源实例`ID`。可能是一个`CVM`，`NAT`。
+                     * 设置<p>绑定的资源实例<code>ID</code>。可能是一个<code>CVM</code>，<code>NAT</code>。</p>
+                     * @param _instanceId <p>绑定的资源实例<code>ID</code>。可能是一个<code>CVM</code>，<code>NAT</code>。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @return CreatedTime 创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 获取<p>创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>
+                     * @return CreatedTime <p>创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-                     * @param _createdTime 创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * 设置<p>创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>
+                     * @param _createdTime <p>创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -175,15 +175,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取绑定的弹性网卡ID，null表示没有绑定弹性网卡。
-                     * @return NetworkInterfaceId 绑定的弹性网卡ID，null表示没有绑定弹性网卡。
+                     * 获取<p>绑定的弹性网卡ID，null表示没有绑定弹性网卡。</p>
+                     * @return NetworkInterfaceId <p>绑定的弹性网卡ID，null表示没有绑定弹性网卡。</p>
                      * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
-                     * 设置绑定的弹性网卡ID，null表示没有绑定弹性网卡。
-                     * @param _networkInterfaceId 绑定的弹性网卡ID，null表示没有绑定弹性网卡。
+                     * 设置<p>绑定的弹性网卡ID，null表示没有绑定弹性网卡。</p>
+                     * @param _networkInterfaceId <p>绑定的弹性网卡ID，null表示没有绑定弹性网卡。</p>
                      * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定的资源内网ip，null表示没有绑定资源内网ip。
-                     * @return PrivateAddressIp 绑定的资源内网ip，null表示没有绑定资源内网ip。
+                     * 获取<p>绑定的资源内网ip，null表示没有绑定资源内网ip。</p>
+                     * @return PrivateAddressIp <p>绑定的资源内网ip，null表示没有绑定资源内网ip。</p>
                      * 
                      */
                     std::string GetPrivateAddressIp() const;
 
                     /**
-                     * 设置绑定的资源内网ip，null表示没有绑定资源内网ip。
-                     * @param _privateAddressIp 绑定的资源内网ip，null表示没有绑定资源内网ip。
+                     * 设置<p>绑定的资源内网ip，null表示没有绑定资源内网ip。</p>
+                     * @param _privateAddressIp <p>绑定的资源内网ip，null表示没有绑定资源内网ip。</p>
                      * 
                      */
                     void SetPrivateAddressIp(const std::string& _privateAddressIp);
@@ -217,15 +217,15 @@ namespace TencentCloud
                     bool PrivateAddressIpHasBeenSet() const;
 
                     /**
-                     * 获取资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态
-                     * @return IsArrears 资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态
+                     * 获取<p>资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态</p>
+                     * @return IsArrears <p>资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态</p>
                      * 
                      */
                     bool GetIsArrears() const;
 
                     /**
-                     * 设置资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态
-                     * @param _isArrears 资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态
+                     * 设置<p>资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态</p>
+                     * @param _isArrears <p>资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态</p>
                      * 
                      */
                     void SetIsArrears(const bool& _isArrears);
@@ -238,15 +238,15 @@ namespace TencentCloud
                     bool IsArrearsHasBeenSet() const;
 
                     /**
-                     * 获取资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态
-                     * @return IsBlocked 资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态
+                     * 获取<p>资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态</p>
+                     * @return IsBlocked <p>资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态</p>
                      * 
                      */
                     bool GetIsBlocked() const;
 
                     /**
-                     * 设置资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态
-                     * @param _isBlocked 资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态
+                     * 设置<p>资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态</p>
+                     * @param _isBlocked <p>资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态</p>
                      * 
                      */
                     void SetIsBlocked(const bool& _isBlocked);
@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool IsBlockedHasBeenSet() const;
 
                     /**
-                     * 获取eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式
-                     * @return IsEipDirectConnection eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式
+                     * 获取<p>eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式</p>
+                     * @return IsEipDirectConnection <p>eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式</p>
                      * 
                      */
                     bool GetIsEipDirectConnection() const;
 
                     /**
-                     * 设置eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式
-                     * @param _isEipDirectConnection eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式
+                     * 设置<p>eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式</p>
+                     * @param _isEipDirectConnection <p>eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式</p>
                      * 
                      */
                     void SetIsEipDirectConnection(const bool& _isEipDirectConnection);
@@ -280,15 +280,15 @@ namespace TencentCloud
                     bool IsEipDirectConnectionHasBeenSet() const;
 
                     /**
-                     * 获取EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：`CalcIP` 表示设备 IP，`WanIP` 表示普通公网 IP，`EIP` 表示弹性公网 IP，`AnycastEIP` 表示加速 EIP，`AntiDDoSEIP`表示高防EIP。
-                     * @return AddressType EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：`CalcIP` 表示设备 IP，`WanIP` 表示普通公网 IP，`EIP` 表示弹性公网 IP，`AnycastEIP` 表示加速 EIP，`AntiDDoSEIP`表示高防EIP。
+                     * 获取<p>EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：<code>CalcIP</code> 表示设备 IP，<code>WanIP</code> 表示普通公网 IP，<code>EIP</code> 表示弹性公网 IP，<code>AnycastEIP</code> 表示加速 EIP，<code>AntiDDoSEIP</code>表示高防EIP。</p>
+                     * @return AddressType <p>EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：<code>CalcIP</code> 表示设备 IP，<code>WanIP</code> 表示普通公网 IP，<code>EIP</code> 表示弹性公网 IP，<code>AnycastEIP</code> 表示加速 EIP，<code>AntiDDoSEIP</code>表示高防EIP。</p>
                      * 
                      */
                     std::string GetAddressType() const;
 
                     /**
-                     * 设置EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：`CalcIP` 表示设备 IP，`WanIP` 表示普通公网 IP，`EIP` 表示弹性公网 IP，`AnycastEIP` 表示加速 EIP，`AntiDDoSEIP`表示高防EIP。
-                     * @param _addressType EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：`CalcIP` 表示设备 IP，`WanIP` 表示普通公网 IP，`EIP` 表示弹性公网 IP，`AnycastEIP` 表示加速 EIP，`AntiDDoSEIP`表示高防EIP。
+                     * 设置<p>EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：<code>CalcIP</code> 表示设备 IP，<code>WanIP</code> 表示普通公网 IP，<code>EIP</code> 表示弹性公网 IP，<code>AnycastEIP</code> 表示加速 EIP，<code>AntiDDoSEIP</code>表示高防EIP。</p>
+                     * @param _addressType <p>EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：<code>CalcIP</code> 表示设备 IP，<code>WanIP</code> 表示普通公网 IP，<code>EIP</code> 表示弹性公网 IP，<code>AnycastEIP</code> 表示加速 EIP，<code>AntiDDoSEIP</code>表示高防EIP。</p>
                      * 
                      */
                     void SetAddressType(const std::string& _addressType);
@@ -301,15 +301,15 @@ namespace TencentCloud
                     bool AddressTypeHasBeenSet() const;
 
                     /**
-                     * 获取eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放
-                     * @return CascadeRelease eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放
+                     * 获取<p>eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放</p>
+                     * @return CascadeRelease <p>eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放</p>
                      * 
                      */
                     bool GetCascadeRelease() const;
 
                     /**
-                     * 设置eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放
-                     * @param _cascadeRelease eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放
+                     * 设置<p>eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放</p>
+                     * @param _cascadeRelease <p>eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放</p>
                      * 
                      */
                     void SetCascadeRelease(const bool& _cascadeRelease);
@@ -322,15 +322,15 @@ namespace TencentCloud
                     bool CascadeReleaseHasBeenSet() const;
 
                     /**
-                     * 获取EIP ALG开启的协议类型。
-                     * @return EipAlgType EIP ALG开启的协议类型。
+                     * 获取<p>EIP ALG开启的协议类型。</p>
+                     * @return EipAlgType <p>EIP ALG开启的协议类型。</p>
                      * 
                      */
                     AlgType GetEipAlgType() const;
 
                     /**
-                     * 设置EIP ALG开启的协议类型。
-                     * @param _eipAlgType EIP ALG开启的协议类型。
+                     * 设置<p>EIP ALG开启的协议类型。</p>
+                     * @param _eipAlgType <p>EIP ALG开启的协议类型。</p>
                      * 
                      */
                     void SetEipAlgType(const AlgType& _eipAlgType);
@@ -343,15 +343,15 @@ namespace TencentCloud
                     bool EipAlgTypeHasBeenSet() const;
 
                     /**
-                     * 获取弹性公网IP的运营商信息，当前可能返回值包括"CMCC"(移动),"CTCC"(电信),"CUCC"(联通),"BGP"(常规BGP)。
-                     * @return InternetServiceProvider 弹性公网IP的运营商信息，当前可能返回值包括"CMCC"(移动),"CTCC"(电信),"CUCC"(联通),"BGP"(常规BGP)。
+                     * 获取<p>弹性公网IP的运营商信息，当前可能返回值包括&quot;CMCC&quot;(移动),&quot;CTCC&quot;(电信),&quot;CUCC&quot;(联通),&quot;BGP&quot;(常规BGP)。</p>
+                     * @return InternetServiceProvider <p>弹性公网IP的运营商信息，当前可能返回值包括&quot;CMCC&quot;(移动),&quot;CTCC&quot;(电信),&quot;CUCC&quot;(联通),&quot;BGP&quot;(常规BGP)。</p>
                      * 
                      */
                     std::string GetInternetServiceProvider() const;
 
                     /**
-                     * 设置弹性公网IP的运营商信息，当前可能返回值包括"CMCC"(移动),"CTCC"(电信),"CUCC"(联通),"BGP"(常规BGP)。
-                     * @param _internetServiceProvider 弹性公网IP的运营商信息，当前可能返回值包括"CMCC"(移动),"CTCC"(电信),"CUCC"(联通),"BGP"(常规BGP)。
+                     * 设置<p>弹性公网IP的运营商信息，当前可能返回值包括&quot;CMCC&quot;(移动),&quot;CTCC&quot;(电信),&quot;CUCC&quot;(联通),&quot;BGP&quot;(常规BGP)。</p>
+                     * @param _internetServiceProvider <p>弹性公网IP的运营商信息，当前可能返回值包括&quot;CMCC&quot;(移动),&quot;CTCC&quot;(电信),&quot;CUCC&quot;(联通),&quot;BGP&quot;(常规BGP)。</p>
                      * 
                      */
                     void SetInternetServiceProvider(const std::string& _internetServiceProvider);
@@ -364,23 +364,15 @@ namespace TencentCloud
                     bool InternetServiceProviderHasBeenSet() const;
 
                     /**
-                     * 获取是否本地带宽EIP，可选值：
-<li>true：本地带宽EIP</li>
-<li>false：非本地带宽EIP</li>
-                     * @return LocalBgp 是否本地带宽EIP，可选值：
-<li>true：本地带宽EIP</li>
-<li>false：非本地带宽EIP</li>
+                     * 获取<p>是否本地带宽EIP，可选值：</p><li>true：本地带宽EIP</li><li>false：非本地带宽EIP</li>
+                     * @return LocalBgp <p>是否本地带宽EIP，可选值：</p><li>true：本地带宽EIP</li><li>false：非本地带宽EIP</li>
                      * 
                      */
                     bool GetLocalBgp() const;
 
                     /**
-                     * 设置是否本地带宽EIP，可选值：
-<li>true：本地带宽EIP</li>
-<li>false：非本地带宽EIP</li>
-                     * @param _localBgp 是否本地带宽EIP，可选值：
-<li>true：本地带宽EIP</li>
-<li>false：非本地带宽EIP</li>
+                     * 设置<p>是否本地带宽EIP，可选值：</p><li>true：本地带宽EIP</li><li>false：非本地带宽EIP</li>
+                     * @param _localBgp <p>是否本地带宽EIP，可选值：</p><li>true：本地带宽EIP</li><li>false：非本地带宽EIP</li>
                      * 
                      */
                     void SetLocalBgp(const bool& _localBgp);
@@ -393,18 +385,18 @@ namespace TencentCloud
                     bool LocalBgpHasBeenSet() const;
 
                     /**
-                     * 获取弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。
+                     * 获取<p>弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Bandwidth 弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。
+                     * @return Bandwidth <p>弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
-                     * 设置弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。
+                     * 设置<p>弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bandwidth 弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。
+                     * @param _bandwidth <p>弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -418,58 +410,18 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。
+                     * 获取<p>弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。<br>注意：此字段可能返回 null，表示取不到有效值。<br>包括：</p><li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li><p style="padding-left: 30px;">表示包月带宽预付费。</p><li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li><p style="padding-left: 30px;">表示按小时流量后付费。</p><li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li><p style="padding-left: 30px;">表示按小时带宽后付费。</p><li><strong>BANDWIDTH_PACKAGE</strong></li><p style="padding-left: 30px;">表示共享带宽包。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-包括：
-<li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li>
-<p style="padding-left: 30px;">表示包月带宽预付费。</p>
-<li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li>
-<p style="padding-left: 30px;">表示按小时流量后付费。</p>
-<li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li>
-<p style="padding-left: 30px;">表示按小时带宽后付费。</p>
-<li><strong>BANDWIDTH_PACKAGE</strong></li>
-<p style="padding-left: 30px;">表示共享带宽包。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InternetChargeType 弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。
-注意：此字段可能返回 null，表示取不到有效值。
-包括：
-<li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li>
-<p style="padding-left: 30px;">表示包月带宽预付费。</p>
-<li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li>
-<p style="padding-left: 30px;">表示按小时流量后付费。</p>
-<li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li>
-<p style="padding-left: 30px;">表示按小时带宽后付费。</p>
-<li><strong>BANDWIDTH_PACKAGE</strong></li>
-<p style="padding-left: 30px;">表示共享带宽包。</p>
+                     * @return InternetChargeType <p>弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。<br>注意：此字段可能返回 null，表示取不到有效值。<br>包括：</p><li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li><p style="padding-left: 30px;">表示包月带宽预付费。</p><li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li><p style="padding-left: 30px;">表示按小时流量后付费。</p><li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li><p style="padding-left: 30px;">表示按小时带宽后付费。</p><li><strong>BANDWIDTH_PACKAGE</strong></li><p style="padding-left: 30px;">表示共享带宽包。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
-                     * 设置弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。
+                     * 设置<p>弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。<br>注意：此字段可能返回 null，表示取不到有效值。<br>包括：</p><li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li><p style="padding-left: 30px;">表示包月带宽预付费。</p><li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li><p style="padding-left: 30px;">表示按小时流量后付费。</p><li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li><p style="padding-left: 30px;">表示按小时带宽后付费。</p><li><strong>BANDWIDTH_PACKAGE</strong></li><p style="padding-left: 30px;">表示共享带宽包。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-包括：
-<li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li>
-<p style="padding-left: 30px;">表示包月带宽预付费。</p>
-<li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li>
-<p style="padding-left: 30px;">表示按小时流量后付费。</p>
-<li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li>
-<p style="padding-left: 30px;">表示按小时带宽后付费。</p>
-<li><strong>BANDWIDTH_PACKAGE</strong></li>
-<p style="padding-left: 30px;">表示共享带宽包。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _internetChargeType 弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。
-注意：此字段可能返回 null，表示取不到有效值。
-包括：
-<li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li>
-<p style="padding-left: 30px;">表示包月带宽预付费。</p>
-<li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li>
-<p style="padding-left: 30px;">表示按小时流量后付费。</p>
-<li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li>
-<p style="padding-left: 30px;">表示按小时带宽后付费。</p>
-<li><strong>BANDWIDTH_PACKAGE</strong></li>
-<p style="padding-left: 30px;">表示共享带宽包。</p>
+                     * @param _internetChargeType <p>弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。<br>注意：此字段可能返回 null，表示取不到有效值。<br>包括：</p><li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li><p style="padding-left: 30px;">表示包月带宽预付费。</p><li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li><p style="padding-left: 30px;">表示按小时流量后付费。</p><li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li><p style="padding-left: 30px;">表示按小时带宽后付费。</p><li><strong>BANDWIDTH_PACKAGE</strong></li><p style="padding-left: 30px;">表示共享带宽包。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -483,15 +435,15 @@ namespace TencentCloud
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取弹性公网IP关联的标签列表。
-                     * @return TagSet 弹性公网IP关联的标签列表。
+                     * 获取<p>弹性公网IP关联的标签列表。</p>
+                     * @return TagSet <p>弹性公网IP关联的标签列表。</p>
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
-                     * 设置弹性公网IP关联的标签列表。
-                     * @param _tagSet 弹性公网IP关联的标签列表。
+                     * 设置<p>弹性公网IP关联的标签列表。</p>
+                     * @param _tagSet <p>弹性公网IP关联的标签列表。</p>
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -504,22 +456,18 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取预付费包月带宽IP到期时间。
-时间格式：YYYY-MM-DDThh:mm:ssZ
+                     * 获取<p>预付费包月带宽IP到期时间。<br>时间格式：YYYY-MM-DDThh:mm:ssZ</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeadlineDate 预付费包月带宽IP到期时间。
-时间格式：YYYY-MM-DDThh:mm:ssZ
+                     * @return DeadlineDate <p>预付费包月带宽IP到期时间。<br>时间格式：YYYY-MM-DDThh:mm:ssZ</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeadlineDate() const;
 
                     /**
-                     * 设置预付费包月带宽IP到期时间。
-时间格式：YYYY-MM-DDThh:mm:ssZ
+                     * 设置<p>预付费包月带宽IP到期时间。<br>时间格式：YYYY-MM-DDThh:mm:ssZ</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deadlineDate 预付费包月带宽IP到期时间。
-时间格式：YYYY-MM-DDThh:mm:ssZ
+                     * @param _deadlineDate <p>预付费包月带宽IP到期时间。<br>时间格式：YYYY-MM-DDThh:mm:ssZ</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -533,50 +481,18 @@ namespace TencentCloud
                     bool DeadlineDateHasBeenSet() const;
 
                     /**
-                     * 获取EIP绑定的实例类型。可选值：
-<li>CVM：云服务器</li>
-<li>NAT：NAT 网关</li>
-<li>HAVIP：高可用虚拟IP</li>
-<li>ENI：弹性网卡</li>
-<li>CLB：内网CLB</li>
-<li>DHCPIP：弹性内网IP</li>
-
-
+                     * 获取<p>EIP绑定的实例类型。可选值：</p><li>CVM：云服务器</li><li>NAT：NAT 网关</li><li>HAVIP：高可用虚拟IP</li><li>ENI：弹性网卡</li><li>CLB：内网CLB</li><li>DHCPIP：弹性内网IP</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceType EIP绑定的实例类型。可选值：
-<li>CVM：云服务器</li>
-<li>NAT：NAT 网关</li>
-<li>HAVIP：高可用虚拟IP</li>
-<li>ENI：弹性网卡</li>
-<li>CLB：内网CLB</li>
-<li>DHCPIP：弹性内网IP</li>
-
-
+                     * @return InstanceType <p>EIP绑定的实例类型。可选值：</p><li>CVM：云服务器</li><li>NAT：NAT 网关</li><li>HAVIP：高可用虚拟IP</li><li>ENI：弹性网卡</li><li>CLB：内网CLB</li><li>DHCPIP：弹性内网IP</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置EIP绑定的实例类型。可选值：
-<li>CVM：云服务器</li>
-<li>NAT：NAT 网关</li>
-<li>HAVIP：高可用虚拟IP</li>
-<li>ENI：弹性网卡</li>
-<li>CLB：内网CLB</li>
-<li>DHCPIP：弹性内网IP</li>
-
-
+                     * 设置<p>EIP绑定的实例类型。可选值：</p><li>CVM：云服务器</li><li>NAT：NAT 网关</li><li>HAVIP：高可用虚拟IP</li><li>ENI：弹性网卡</li><li>CLB：内网CLB</li><li>DHCPIP：弹性内网IP</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceType EIP绑定的实例类型。可选值：
-<li>CVM：云服务器</li>
-<li>NAT：NAT 网关</li>
-<li>HAVIP：高可用虚拟IP</li>
-<li>ENI：弹性网卡</li>
-<li>CLB：内网CLB</li>
-<li>DHCPIP：弹性内网IP</li>
-
-
+                     * @param _instanceType <p>EIP绑定的实例类型。可选值：</p><li>CVM：云服务器</li><li>NAT：NAT 网关</li><li>HAVIP：高可用虚拟IP</li><li>ENI：弹性网卡</li><li>CLB：内网CLB</li><li>DHCPIP：弹性内网IP</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -590,18 +506,18 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取静态单线IP网络出口
+                     * 获取<p>静态单线IP网络出口</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Egress 静态单线IP网络出口
+                     * @return Egress <p>静态单线IP网络出口</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEgress() const;
 
                     /**
-                     * 设置静态单线IP网络出口
+                     * 设置<p>静态单线IP网络出口</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _egress 静态单线IP网络出口
+                     * @param _egress <p>静态单线IP网络出口</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -615,15 +531,15 @@ namespace TencentCloud
                     bool EgressHasBeenSet() const;
 
                     /**
-                     * 获取高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.
-                     * @return AntiDDoSPackageId 高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.
+                     * 获取<p>高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.</p>
+                     * @return AntiDDoSPackageId <p>高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.</p>
                      * 
                      */
                     std::string GetAntiDDoSPackageId() const;
 
                     /**
-                     * 设置高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.
-                     * @param _antiDDoSPackageId 高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.
+                     * 设置<p>高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.</p>
+                     * @param _antiDDoSPackageId <p>高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.</p>
                      * 
                      */
                     void SetAntiDDoSPackageId(const std::string& _antiDDoSPackageId);
@@ -636,23 +552,15 @@ namespace TencentCloud
                     bool AntiDDoSPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:
-<li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
-
-                     * @return RenewFlag 当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:
-<li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
-
+                     * 获取<p>当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:</p><li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
+                     * @return RenewFlag <p>当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:</p><li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:
-<li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
-
-                     * @param _renewFlag 当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:
-<li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
-
+                     * 设置<p>当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:</p><li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
+                     * @param _renewFlag <p>当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:</p><li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -665,18 +573,18 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空
+                     * 获取<p>当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BandwidthPackageId 当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空
+                     * @return BandwidthPackageId <p>当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
-                     * 设置当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空
+                     * 设置<p>当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bandwidthPackageId 当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空
+                     * @param _bandwidthPackageId <p>当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -690,15 +598,15 @@ namespace TencentCloud
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取传统弹性公网IPv6所属vpc唯一ID
-                     * @return UnVpcId 传统弹性公网IPv6所属vpc唯一ID
+                     * 获取<p>传统弹性公网IPv6所属vpc唯一ID</p>
+                     * @return UnVpcId <p>传统弹性公网IPv6所属vpc唯一ID</p>
                      * 
                      */
                     std::string GetUnVpcId() const;
 
                     /**
-                     * 设置传统弹性公网IPv6所属vpc唯一ID
-                     * @param _unVpcId 传统弹性公网IPv6所属vpc唯一ID
+                     * 设置<p>传统弹性公网IPv6所属vpc唯一ID</p>
+                     * @param _unVpcId <p>传统弹性公网IPv6所属vpc唯一ID</p>
                      * 
                      */
                     void SetUnVpcId(const std::string& _unVpcId);
@@ -711,15 +619,15 @@ namespace TencentCloud
                     bool UnVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取CDC唯一ID
-                     * @return DedicatedClusterId CDC唯一ID
+                     * 获取<p>CDC唯一ID</p>
+                     * @return DedicatedClusterId <p>CDC唯一ID</p>
                      * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
-                     * 设置CDC唯一ID
-                     * @param _dedicatedClusterId CDC唯一ID
+                     * 设置<p>CDC唯一ID</p>
+                     * @param _dedicatedClusterId <p>CDC唯一ID</p>
                      * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
@@ -731,198 +639,202 @@ namespace TencentCloud
                      */
                     bool DedicatedClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>eip是否在网卡上可见。true表示支持，false表示不支持</p>
+                     * @return EipVisibleOnEni <p>eip是否在网卡上可见。true表示支持，false表示不支持</p>
+                     * 
+                     */
+                    bool GetEipVisibleOnEni() const;
+
+                    /**
+                     * 设置<p>eip是否在网卡上可见。true表示支持，false表示不支持</p>
+                     * @param _eipVisibleOnEni <p>eip是否在网卡上可见。true表示支持，false表示不支持</p>
+                     * 
+                     */
+                    void SetEipVisibleOnEni(const bool& _eipVisibleOnEni);
+
+                    /**
+                     * 判断参数 EipVisibleOnEni 是否已赋值
+                     * @return EipVisibleOnEni 是否已赋值
+                     * 
+                     */
+                    bool EipVisibleOnEniHasBeenSet() const;
+
                 private:
 
                     /**
-                     * `EIP`的`ID`，是`EIP`的唯一标识。
+                     * <p><code>EIP</code>的<code>ID</code>，是<code>EIP</code>的唯一标识。</p>
                      */
                     std::string m_addressId;
                     bool m_addressIdHasBeenSet;
 
                     /**
-                     * `EIP`名称。
+                     * <p><code>EIP</code>名称。</p>
                      */
                     std::string m_addressName;
                     bool m_addressNameHasBeenSet;
 
                     /**
-                     * `EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)
+                     * <p><code>EIP</code>状态，包含&#39;CREATING&#39;(创建中),&#39;BINDING&#39;(绑定中),&#39;BIND&#39;(已绑定),&#39;UNBINDING&#39;(解绑中),&#39;UNBIND&#39;(已解绑),&#39;OFFLINING&#39;(释放中),&#39;BIND_ENI&#39;(绑定悬空弹性网卡)</p>
                      */
                     std::string m_addressStatus;
                     bool m_addressStatusHasBeenSet;
 
                     /**
-                     * 外网IP地址
+                     * <p>外网IP地址</p>
                      */
                     std::string m_addressIp;
                     bool m_addressIpHasBeenSet;
 
                     /**
-                     * 绑定的资源实例`ID`。可能是一个`CVM`，`NAT`。
+                     * <p>绑定的资源实例<code>ID</code>。可能是一个<code>CVM</code>，<code>NAT</code>。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+                     * <p>创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 绑定的弹性网卡ID，null表示没有绑定弹性网卡。
+                     * <p>绑定的弹性网卡ID，null表示没有绑定弹性网卡。</p>
                      */
                     std::string m_networkInterfaceId;
                     bool m_networkInterfaceIdHasBeenSet;
 
                     /**
-                     * 绑定的资源内网ip，null表示没有绑定资源内网ip。
+                     * <p>绑定的资源内网ip，null表示没有绑定资源内网ip。</p>
                      */
                     std::string m_privateAddressIp;
                     bool m_privateAddressIpHasBeenSet;
 
                     /**
-                     * 资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态
+                     * <p>资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态</p>
                      */
                     bool m_isArrears;
                     bool m_isArrearsHasBeenSet;
 
                     /**
-                     * 资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态
+                     * <p>资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态</p>
                      */
                     bool m_isBlocked;
                     bool m_isBlockedHasBeenSet;
 
                     /**
-                     * eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式
+                     * <p>eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式</p>
                      */
                     bool m_isEipDirectConnection;
                     bool m_isEipDirectConnectionHasBeenSet;
 
                     /**
-                     * EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：`CalcIP` 表示设备 IP，`WanIP` 表示普通公网 IP，`EIP` 表示弹性公网 IP，`AnycastEIP` 表示加速 EIP，`AntiDDoSEIP`表示高防EIP。
+                     * <p>EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：<code>CalcIP</code> 表示设备 IP，<code>WanIP</code> 表示普通公网 IP，<code>EIP</code> 表示弹性公网 IP，<code>AnycastEIP</code> 表示加速 EIP，<code>AntiDDoSEIP</code>表示高防EIP。</p>
                      */
                     std::string m_addressType;
                     bool m_addressTypeHasBeenSet;
 
                     /**
-                     * eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放
+                     * <p>eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放</p>
                      */
                     bool m_cascadeRelease;
                     bool m_cascadeReleaseHasBeenSet;
 
                     /**
-                     * EIP ALG开启的协议类型。
+                     * <p>EIP ALG开启的协议类型。</p>
                      */
                     AlgType m_eipAlgType;
                     bool m_eipAlgTypeHasBeenSet;
 
                     /**
-                     * 弹性公网IP的运营商信息，当前可能返回值包括"CMCC"(移动),"CTCC"(电信),"CUCC"(联通),"BGP"(常规BGP)。
+                     * <p>弹性公网IP的运营商信息，当前可能返回值包括&quot;CMCC&quot;(移动),&quot;CTCC&quot;(电信),&quot;CUCC&quot;(联通),&quot;BGP&quot;(常规BGP)。</p>
                      */
                     std::string m_internetServiceProvider;
                     bool m_internetServiceProviderHasBeenSet;
 
                     /**
-                     * 是否本地带宽EIP，可选值：
-<li>true：本地带宽EIP</li>
-<li>false：非本地带宽EIP</li>
+                     * <p>是否本地带宽EIP，可选值：</p><li>true：本地带宽EIP</li><li>false：非本地带宽EIP</li>
                      */
                     bool m_localBgp;
                     bool m_localBgpHasBeenSet;
 
                     /**
-                     * 弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。
+                     * <p>弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。
-注意：此字段可能返回 null，表示取不到有效值。
-包括：
-<li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li>
-<p style="padding-left: 30px;">表示包月带宽预付费。</p>
-<li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li>
-<p style="padding-left: 30px;">表示按小时流量后付费。</p>
-<li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li>
-<p style="padding-left: 30px;">表示按小时带宽后付费。</p>
-<li><strong>BANDWIDTH_PACKAGE</strong></li>
-<p style="padding-left: 30px;">表示共享带宽包。</p>
+                     * <p>弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。<br>注意：此字段可能返回 null，表示取不到有效值。<br>包括：</p><li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li><p style="padding-left: 30px;">表示包月带宽预付费。</p><li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li><p style="padding-left: 30px;">表示按小时流量后付费。</p><li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li><p style="padding-left: 30px;">表示按小时带宽后付费。</p><li><strong>BANDWIDTH_PACKAGE</strong></li><p style="padding-left: 30px;">表示共享带宽包。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_internetChargeType;
                     bool m_internetChargeTypeHasBeenSet;
 
                     /**
-                     * 弹性公网IP关联的标签列表。
+                     * <p>弹性公网IP关联的标签列表。</p>
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 预付费包月带宽IP到期时间。
-时间格式：YYYY-MM-DDThh:mm:ssZ
+                     * <p>预付费包月带宽IP到期时间。<br>时间格式：YYYY-MM-DDThh:mm:ssZ</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deadlineDate;
                     bool m_deadlineDateHasBeenSet;
 
                     /**
-                     * EIP绑定的实例类型。可选值：
-<li>CVM：云服务器</li>
-<li>NAT：NAT 网关</li>
-<li>HAVIP：高可用虚拟IP</li>
-<li>ENI：弹性网卡</li>
-<li>CLB：内网CLB</li>
-<li>DHCPIP：弹性内网IP</li>
-
-
+                     * <p>EIP绑定的实例类型。可选值：</p><li>CVM：云服务器</li><li>NAT：NAT 网关</li><li>HAVIP：高可用虚拟IP</li><li>ENI：弹性网卡</li><li>CLB：内网CLB</li><li>DHCPIP：弹性内网IP</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 静态单线IP网络出口
+                     * <p>静态单线IP网络出口</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;
 
                     /**
-                     * 高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.
+                     * <p>高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.</p>
                      */
                     std::string m_antiDDoSPackageId;
                     bool m_antiDDoSPackageIdHasBeenSet;
 
                     /**
-                     * 当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:
-<li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
-
+                     * <p>当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:</p><li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空
+                     * <p>当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bandwidthPackageId;
                     bool m_bandwidthPackageIdHasBeenSet;
 
                     /**
-                     * 传统弹性公网IPv6所属vpc唯一ID
+                     * <p>传统弹性公网IPv6所属vpc唯一ID</p>
                      */
                     std::string m_unVpcId;
                     bool m_unVpcIdHasBeenSet;
 
                     /**
-                     * CDC唯一ID
+                     * <p>CDC唯一ID</p>
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
+                     * <p>eip是否在网卡上可见。true表示支持，false表示不支持</p>
+                     */
+                    bool m_eipVisibleOnEni;
+                    bool m_eipVisibleOnEniHasBeenSet;
 
                 };
             }

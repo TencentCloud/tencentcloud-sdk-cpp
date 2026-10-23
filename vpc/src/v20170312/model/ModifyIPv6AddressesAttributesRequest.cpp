@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyIPv6AddressesAttributesRequest::ModifyIPv6AddressesAttributesRequest() :
     m_iPv6AddressIdsHasBeenSet(false),
-    m_iPv6AddressNameHasBeenSet(false)
+    m_iPv6AddressNameHasBeenSet(false),
+    m_eipVisibleOnEniHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string ModifyIPv6AddressesAttributesRequest::ToJsonString() const
         string key = "IPv6AddressName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_iPv6AddressName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eipVisibleOnEniHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipVisibleOnEni";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_eipVisibleOnEni, allocator);
     }
 
 
@@ -94,6 +103,22 @@ void ModifyIPv6AddressesAttributesRequest::SetIPv6AddressName(const string& _iPv
 bool ModifyIPv6AddressesAttributesRequest::IPv6AddressNameHasBeenSet() const
 {
     return m_iPv6AddressNameHasBeenSet;
+}
+
+bool ModifyIPv6AddressesAttributesRequest::GetEipVisibleOnEni() const
+{
+    return m_eipVisibleOnEni;
+}
+
+void ModifyIPv6AddressesAttributesRequest::SetEipVisibleOnEni(const bool& _eipVisibleOnEni)
+{
+    m_eipVisibleOnEni = _eipVisibleOnEni;
+    m_eipVisibleOnEniHasBeenSet = true;
+}
+
+bool ModifyIPv6AddressesAttributesRequest::EipVisibleOnEniHasBeenSet() const
+{
+    return m_eipVisibleOnEniHasBeenSet;
 }
 
 

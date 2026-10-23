@@ -59,7 +59,9 @@ ClusterListItem::ClusterListItem() :
     m_accessFailedMessageHasBeenSet(false),
     m_regionNameHasBeenSet(false),
     m_regionNameEnHasBeenSet(false),
-    m_unboundUltimateNodeCountHasBeenSet(false)
+    m_unboundUltimateNodeCountHasBeenSet(false),
+    m_tagItemsHasBeenSet(false),
+    m_tagModifyInfoHasBeenSet(false)
 {
 }
 
@@ -468,6 +470,43 @@ CoreInternalOutcome ClusterListItem::Deserialize(const rapidjson::Value &value)
         m_unboundUltimateNodeCountHasBeenSet = true;
     }
 
+    if (value.HasMember("TagItems") && !value["TagItems"].IsNull())
+    {
+        if (!value["TagItems"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterListItem.TagItems` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MiniTagItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagItems.push_back(item);
+        }
+        m_tagItemsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagModifyInfo") && !value["TagModifyInfo"].IsNull())
+    {
+        if (!value["TagModifyInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterListItem.TagModifyInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tagModifyInfo.Deserialize(value["TagModifyInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tagModifyInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -792,6 +831,30 @@ void ClusterListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "UnboundUltimateNodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unboundUltimateNodeCount, allocator);
+    }
+
+    if (m_tagItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagItems.begin(); itr != m_tagItems.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagModifyInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagModifyInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tagModifyInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1419,5 +1482,37 @@ void ClusterListItem::SetUnboundUltimateNodeCount(const uint64_t& _unboundUltima
 bool ClusterListItem::UnboundUltimateNodeCountHasBeenSet() const
 {
     return m_unboundUltimateNodeCountHasBeenSet;
+}
+
+vector<MiniTagItem> ClusterListItem::GetTagItems() const
+{
+    return m_tagItems;
+}
+
+void ClusterListItem::SetTagItems(const vector<MiniTagItem>& _tagItems)
+{
+    m_tagItems = _tagItems;
+    m_tagItemsHasBeenSet = true;
+}
+
+bool ClusterListItem::TagItemsHasBeenSet() const
+{
+    return m_tagItemsHasBeenSet;
+}
+
+AssetTagModifyAssetItem ClusterListItem::GetTagModifyInfo() const
+{
+    return m_tagModifyInfo;
+}
+
+void ClusterListItem::SetTagModifyInfo(const AssetTagModifyAssetItem& _tagModifyInfo)
+{
+    m_tagModifyInfo = _tagModifyInfo;
+    m_tagModifyInfoHasBeenSet = true;
+}
+
+bool ClusterListItem::TagModifyInfoHasBeenSet() const
+{
+    return m_tagModifyInfoHasBeenSet;
 }
 

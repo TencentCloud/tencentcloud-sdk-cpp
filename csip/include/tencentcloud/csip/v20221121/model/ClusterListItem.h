@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/AssetTag.h>
+#include <tencentcloud/csip/v20221121/model/MiniTagItem.h>
+#include <tencentcloud/csip/v20221121/model/AssetTagModifyAssetItem.h>
 
 
 namespace TencentCloud
@@ -426,15 +428,15 @@ namespace TencentCloud
                     bool DefendCoresCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>审计日志开关<br>(0:关闭 1:开启 2:开启失败 3:关闭失败)</p>
-                     * @return AuditLogSwitchStatus <p>审计日志开关<br>(0:关闭 1:开启 2:开启失败 3:关闭失败)</p>
+                     * 获取<p>审计日志状态<br>0：已关闭<br>1：已开启<br>2：开启失败（失败原因见 AuditLogFailedInfo）<br>3：关闭失败（失败原因见 AuditLogFailedInfo）<br>4：开启中<br>5：关闭中<br>6：不支持（当前集群类型不支持读取审计状态，如边缘集群）<br>7：未知（集群未接入或接入异常，无法判断审计状态）</p><p>枚举值：</p><ul><li>0： 已关闭</li><li>1： 已开启</li><li>2： 开启失败</li><li>3： 关闭失败</li><li>4： 开启中</li><li>5： 关闭中</li><li>6： 不支持</li><li>7： 未知</li></ul>
+                     * @return AuditLogSwitchStatus <p>审计日志状态<br>0：已关闭<br>1：已开启<br>2：开启失败（失败原因见 AuditLogFailedInfo）<br>3：关闭失败（失败原因见 AuditLogFailedInfo）<br>4：开启中<br>5：关闭中<br>6：不支持（当前集群类型不支持读取审计状态，如边缘集群）<br>7：未知（集群未接入或接入异常，无法判断审计状态）</p><p>枚举值：</p><ul><li>0： 已关闭</li><li>1： 已开启</li><li>2： 开启失败</li><li>3： 关闭失败</li><li>4： 开启中</li><li>5： 关闭中</li><li>6： 不支持</li><li>7： 未知</li></ul>
                      * 
                      */
                     int64_t GetAuditLogSwitchStatus() const;
 
                     /**
-                     * 设置<p>审计日志开关<br>(0:关闭 1:开启 2:开启失败 3:关闭失败)</p>
-                     * @param _auditLogSwitchStatus <p>审计日志开关<br>(0:关闭 1:开启 2:开启失败 3:关闭失败)</p>
+                     * 设置<p>审计日志状态<br>0：已关闭<br>1：已开启<br>2：开启失败（失败原因见 AuditLogFailedInfo）<br>3：关闭失败（失败原因见 AuditLogFailedInfo）<br>4：开启中<br>5：关闭中<br>6：不支持（当前集群类型不支持读取审计状态，如边缘集群）<br>7：未知（集群未接入或接入异常，无法判断审计状态）</p><p>枚举值：</p><ul><li>0： 已关闭</li><li>1： 已开启</li><li>2： 开启失败</li><li>3： 关闭失败</li><li>4： 开启中</li><li>5： 关闭中</li><li>6： 不支持</li><li>7： 未知</li></ul>
+                     * @param _auditLogSwitchStatus <p>审计日志状态<br>0：已关闭<br>1：已开启<br>2：开启失败（失败原因见 AuditLogFailedInfo）<br>3：关闭失败（失败原因见 AuditLogFailedInfo）<br>4：开启中<br>5：关闭中<br>6：不支持（当前集群类型不支持读取审计状态，如边缘集群）<br>7：未知（集群未接入或接入异常，无法判断审计状态）</p><p>枚举值：</p><ul><li>0： 已关闭</li><li>1： 已开启</li><li>2： 开启失败</li><li>3： 关闭失败</li><li>4： 开启中</li><li>5： 关闭中</li><li>6： 不支持</li><li>7： 未知</li></ul>
                      * 
                      */
                     void SetAuditLogSwitchStatus(const int64_t& _auditLogSwitchStatus);
@@ -866,6 +868,48 @@ namespace TencentCloud
                      */
                     bool UnboundUltimateNodeCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资产标签列表</p>
+                     * @return TagItems <p>资产标签列表</p>
+                     * 
+                     */
+                    std::vector<MiniTagItem> GetTagItems() const;
+
+                    /**
+                     * 设置<p>资产标签列表</p>
+                     * @param _tagItems <p>资产标签列表</p>
+                     * 
+                     */
+                    void SetTagItems(const std::vector<MiniTagItem>& _tagItems);
+
+                    /**
+                     * 判断参数 TagItems 是否已赋值
+                     * @return TagItems 是否已赋值
+                     * 
+                     */
+                    bool TagItemsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标签修改信息</p>
+                     * @return TagModifyInfo <p>标签修改信息</p>
+                     * 
+                     */
+                    AssetTagModifyAssetItem GetTagModifyInfo() const;
+
+                    /**
+                     * 设置<p>标签修改信息</p>
+                     * @param _tagModifyInfo <p>标签修改信息</p>
+                     * 
+                     */
+                    void SetTagModifyInfo(const AssetTagModifyAssetItem& _tagModifyInfo);
+
+                    /**
+                     * 判断参数 TagModifyInfo 是否已赋值
+                     * @return TagModifyInfo 是否已赋值
+                     * 
+                     */
+                    bool TagModifyInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -977,7 +1021,7 @@ namespace TencentCloud
                     bool m_defendCoresCountHasBeenSet;
 
                     /**
-                     * <p>审计日志开关<br>(0:关闭 1:开启 2:开启失败 3:关闭失败)</p>
+                     * <p>审计日志状态<br>0：已关闭<br>1：已开启<br>2：开启失败（失败原因见 AuditLogFailedInfo）<br>3：关闭失败（失败原因见 AuditLogFailedInfo）<br>4：开启中<br>5：关闭中<br>6：不支持（当前集群类型不支持读取审计状态，如边缘集群）<br>7：未知（集群未接入或接入异常，无法判断审计状态）</p><p>枚举值：</p><ul><li>0： 已关闭</li><li>1： 已开启</li><li>2： 开启失败</li><li>3： 关闭失败</li><li>4： 开启中</li><li>5： 关闭中</li><li>6： 不支持</li><li>7： 未知</li></ul>
                      */
                     int64_t m_auditLogSwitchStatus;
                     bool m_auditLogSwitchStatusHasBeenSet;
@@ -1101,6 +1145,18 @@ namespace TencentCloud
                      */
                     uint64_t m_unboundUltimateNodeCount;
                     bool m_unboundUltimateNodeCountHasBeenSet;
+
+                    /**
+                     * <p>资产标签列表</p>
+                     */
+                    std::vector<MiniTagItem> m_tagItems;
+                    bool m_tagItemsHasBeenSet;
+
+                    /**
+                     * <p>标签修改信息</p>
+                     */
+                    AssetTagModifyAssetItem m_tagModifyInfo;
+                    bool m_tagModifyInfoHasBeenSet;
 
                 };
             }

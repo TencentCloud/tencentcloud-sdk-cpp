@@ -27,7 +27,12 @@ ModifyModelAttributesRequest::ModifyModelAttributesRequest() :
     m_serviceProviderNameHasBeenSet(false),
     m_apiBasesHasBeenSet(false),
     m_apiBaseHasBeenSet(false),
-    m_endpointPathHasBeenSet(false)
+    m_endpointPathHasBeenSet(false),
+    m_modelProviderHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_cMRPrivateNetworkTunnelIdHasBeenSet(false),
+    m_hostHeaderHasBeenSet(false),
+    m_verifySSLHasBeenSet(false)
 {
 }
 
@@ -83,6 +88,46 @@ string ModifyModelAttributesRequest::ToJsonString() const
         string key = "EndpointPath";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endpointPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelProviderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelProvider";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelProvider.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cMRPrivateNetworkTunnelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CMRPrivateNetworkTunnelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cMRPrivateNetworkTunnelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostHeaderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostHeader";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hostHeader.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verifySSLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifySSL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_verifySSL, allocator);
     }
 
 
@@ -171,6 +216,86 @@ void ModifyModelAttributesRequest::SetEndpointPath(const string& _endpointPath)
 bool ModifyModelAttributesRequest::EndpointPathHasBeenSet() const
 {
     return m_endpointPathHasBeenSet;
+}
+
+string ModifyModelAttributesRequest::GetModelProvider() const
+{
+    return m_modelProvider;
+}
+
+void ModifyModelAttributesRequest::SetModelProvider(const string& _modelProvider)
+{
+    m_modelProvider = _modelProvider;
+    m_modelProviderHasBeenSet = true;
+}
+
+bool ModifyModelAttributesRequest::ModelProviderHasBeenSet() const
+{
+    return m_modelProviderHasBeenSet;
+}
+
+string ModifyModelAttributesRequest::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void ModifyModelAttributesRequest::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool ModifyModelAttributesRequest::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
+}
+
+string ModifyModelAttributesRequest::GetCMRPrivateNetworkTunnelId() const
+{
+    return m_cMRPrivateNetworkTunnelId;
+}
+
+void ModifyModelAttributesRequest::SetCMRPrivateNetworkTunnelId(const string& _cMRPrivateNetworkTunnelId)
+{
+    m_cMRPrivateNetworkTunnelId = _cMRPrivateNetworkTunnelId;
+    m_cMRPrivateNetworkTunnelIdHasBeenSet = true;
+}
+
+bool ModifyModelAttributesRequest::CMRPrivateNetworkTunnelIdHasBeenSet() const
+{
+    return m_cMRPrivateNetworkTunnelIdHasBeenSet;
+}
+
+string ModifyModelAttributesRequest::GetHostHeader() const
+{
+    return m_hostHeader;
+}
+
+void ModifyModelAttributesRequest::SetHostHeader(const string& _hostHeader)
+{
+    m_hostHeader = _hostHeader;
+    m_hostHeaderHasBeenSet = true;
+}
+
+bool ModifyModelAttributesRequest::HostHeaderHasBeenSet() const
+{
+    return m_hostHeaderHasBeenSet;
+}
+
+bool ModifyModelAttributesRequest::GetVerifySSL() const
+{
+    return m_verifySSL;
+}
+
+void ModifyModelAttributesRequest::SetVerifySSL(const bool& _verifySSL)
+{
+    m_verifySSL = _verifySSL;
+    m_verifySSLHasBeenSet = true;
+}
+
+bool ModifyModelAttributesRequest::VerifySSLHasBeenSet() const
+{
+    return m_verifySSLHasBeenSet;
 }
 
 

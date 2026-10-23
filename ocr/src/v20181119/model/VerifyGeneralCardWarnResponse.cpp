@@ -37,7 +37,9 @@ VerifyGeneralCardWarnResponse::VerifyGeneralCardWarnResponse() :
     m_overlapHasBeenSet(false),
     m_electronHasBeenSet(false),
     m_textWatermarkHasBeenSet(false),
-    m_watermarkContentHasBeenSet(false)
+    m_watermarkContentHasBeenSet(false),
+    m_reasoningResultHasBeenSet(false),
+    m_isKeyFieldTamperHasBeenSet(false)
 {
 }
 
@@ -306,6 +308,33 @@ CoreInternalOutcome VerifyGeneralCardWarnResponse::Deserialize(const string &pay
         m_watermarkContentHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ReasoningResult") && !rsp["ReasoningResult"].IsNull())
+    {
+        if (!rsp["ReasoningResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReasoningResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_reasoningResult.Deserialize(rsp["ReasoningResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_reasoningResultHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsKeyFieldTamper") && !rsp["IsKeyFieldTamper"].IsNull())
+    {
+        if (!rsp["IsKeyFieldTamper"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsKeyFieldTamper` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isKeyFieldTamper = string(rsp["IsKeyFieldTamper"].GetString());
+        m_isKeyFieldTamperHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -439,6 +468,23 @@ string VerifyGeneralCardWarnResponse::ToJsonString() const
         string key = "WatermarkContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_watermarkContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasoningResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReasoningResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reasoningResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isKeyFieldTamperHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsKeyFieldTamper";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isKeyFieldTamper.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -591,6 +637,26 @@ string VerifyGeneralCardWarnResponse::GetWatermarkContent() const
 bool VerifyGeneralCardWarnResponse::WatermarkContentHasBeenSet() const
 {
     return m_watermarkContentHasBeenSet;
+}
+
+ReasoningResult VerifyGeneralCardWarnResponse::GetReasoningResult() const
+{
+    return m_reasoningResult;
+}
+
+bool VerifyGeneralCardWarnResponse::ReasoningResultHasBeenSet() const
+{
+    return m_reasoningResultHasBeenSet;
+}
+
+string VerifyGeneralCardWarnResponse::GetIsKeyFieldTamper() const
+{
+    return m_isKeyFieldTamper;
+}
+
+bool VerifyGeneralCardWarnResponse::IsKeyFieldTamperHasBeenSet() const
+{
+    return m_isKeyFieldTamperHasBeenSet;
 }
 
 

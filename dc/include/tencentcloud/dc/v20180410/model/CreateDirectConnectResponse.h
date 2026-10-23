@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取物理专线的ID。
-                     * @return DirectConnectIdSet 物理专线的ID。
+                     * 获取<p>物理专线的ID。</p>
+                     * @return DirectConnectIdSet <p>物理专线的ID。</p>
                      * 
                      */
                     std::vector<std::string> GetDirectConnectIdSet() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 物理专线的ID。
+                     * <p>物理专线的ID。</p>
                      */
                     std::vector<std::string> m_directConnectIdSet;
                     bool m_directConnectIdSetHasBeenSet;

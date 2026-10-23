@@ -1190,6 +1190,56 @@ TcbClient::CreateUserOutcomeCallable TcbClient::CreateUserCallable(const CreateU
     return prom->get_future();
 }
 
+TcbClient::CreateUserKeyOutcome TcbClient::CreateUserKey(const CreateUserKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserKeyResponse rsp = CreateUserKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserKeyOutcome(rsp);
+        else
+            return CreateUserKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserKeyOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::CreateUserKeyAsync(const CreateUserKeyRequest& request, const CreateUserKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateUserKeyRequest&;
+    using Resp = CreateUserKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateUserKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::CreateUserKeyOutcomeCallable TcbClient::CreateUserKeyCallable(const CreateUserKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateUserKeyOutcome>>();
+    CreateUserKeyAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const CreateUserKeyRequest&,
+        CreateUserKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DeleteAIModelOutcome TcbClient::DeleteAIModel(const DeleteAIModelRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAIModel");
@@ -1682,6 +1732,56 @@ TcbClient::DeleteTableOutcomeCallable TcbClient::DeleteTableCallable(const Delet
         const TcbClient*,
         const DeleteTableRequest&,
         DeleteTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::DeleteUserKeyOutcome TcbClient::DeleteUserKey(const DeleteUserKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserKeyResponse rsp = DeleteUserKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserKeyOutcome(rsp);
+        else
+            return DeleteUserKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserKeyOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DeleteUserKeyAsync(const DeleteUserKeyRequest& request, const DeleteUserKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteUserKeyRequest&;
+    using Resp = DeleteUserKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DeleteUserKeyOutcomeCallable TcbClient::DeleteUserKeyCallable(const DeleteUserKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteUserKeyOutcome>>();
+    DeleteUserKeyAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DeleteUserKeyRequest&,
+        DeleteUserKeyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4390,6 +4490,56 @@ TcbClient::GetFunctionOutcomeCallable TcbClient::GetFunctionCallable(const GetFu
     return prom->get_future();
 }
 
+TcbClient::GetOneUserKeyOutcome TcbClient::GetOneUserKey(const GetOneUserKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetOneUserKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetOneUserKeyResponse rsp = GetOneUserKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetOneUserKeyOutcome(rsp);
+        else
+            return GetOneUserKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return GetOneUserKeyOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::GetOneUserKeyAsync(const GetOneUserKeyRequest& request, const GetOneUserKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetOneUserKeyRequest&;
+    using Resp = GetOneUserKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetOneUserKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::GetOneUserKeyOutcomeCallable TcbClient::GetOneUserKeyCallable(const GetOneUserKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetOneUserKeyOutcome>>();
+    GetOneUserKeyAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const GetOneUserKeyRequest&,
+        GetOneUserKeyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::GetProvidersOutcome TcbClient::GetProviders(const GetProvidersRequest &request)
 {
     auto outcome = MakeRequest(request, "GetProviders");
@@ -4432,6 +4582,56 @@ TcbClient::GetProvidersOutcomeCallable TcbClient::GetProvidersCallable(const Get
         const TcbClient*,
         const GetProvidersRequest&,
         GetProvidersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::GetUserKeyListOutcome TcbClient::GetUserKeyList(const GetUserKeyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetUserKeyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetUserKeyListResponse rsp = GetUserKeyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetUserKeyListOutcome(rsp);
+        else
+            return GetUserKeyListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetUserKeyListOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::GetUserKeyListAsync(const GetUserKeyListRequest& request, const GetUserKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetUserKeyListRequest&;
+    using Resp = GetUserKeyListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetUserKeyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::GetUserKeyListOutcomeCallable TcbClient::GetUserKeyListCallable(const GetUserKeyListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetUserKeyListOutcome>>();
+    GetUserKeyListAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const GetUserKeyListRequest&,
+        GetUserKeyListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6182,6 +6382,56 @@ TcbClient::UpdateTableOutcomeCallable TcbClient::UpdateTableCallable(const Updat
         const TcbClient*,
         const UpdateTableRequest&,
         UpdateTableOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::UpdateUserKeyOutcome TcbClient::UpdateUserKey(const UpdateUserKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateUserKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateUserKeyResponse rsp = UpdateUserKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateUserKeyOutcome(rsp);
+        else
+            return UpdateUserKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateUserKeyOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::UpdateUserKeyAsync(const UpdateUserKeyRequest& request, const UpdateUserKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateUserKeyRequest&;
+    using Resp = UpdateUserKeyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateUserKey", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::UpdateUserKeyOutcomeCallable TcbClient::UpdateUserKeyCallable(const UpdateUserKeyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateUserKeyOutcome>>();
+    UpdateUserKeyAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const UpdateUserKeyRequest&,
+        UpdateUserKeyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

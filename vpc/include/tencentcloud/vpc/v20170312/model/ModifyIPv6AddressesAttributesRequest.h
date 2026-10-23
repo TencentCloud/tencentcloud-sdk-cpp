@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性公网IPv6唯一ID列表。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressIds。
-                     * @return IPv6AddressIds 弹性公网IPv6唯一ID列表。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressIds。
+                     * 获取<p>弹性公网IPv6唯一ID列表。可以使用<a href="https://cloud.tencent.com/document/api/215/113677">DescribeIPv6Addresses</a>接口获取IPv6AddressIds。</p>
+                     * @return IPv6AddressIds <p>弹性公网IPv6唯一ID列表。可以使用<a href="https://cloud.tencent.com/document/api/215/113677">DescribeIPv6Addresses</a>接口获取IPv6AddressIds。</p>
                      * 
                      */
                     std::vector<std::string> GetIPv6AddressIds() const;
 
                     /**
-                     * 设置弹性公网IPv6唯一ID列表。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressIds。
-                     * @param _iPv6AddressIds 弹性公网IPv6唯一ID列表。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressIds。
+                     * 设置<p>弹性公网IPv6唯一ID列表。可以使用<a href="https://cloud.tencent.com/document/api/215/113677">DescribeIPv6Addresses</a>接口获取IPv6AddressIds。</p>
+                     * @param _iPv6AddressIds <p>弹性公网IPv6唯一ID列表。可以使用<a href="https://cloud.tencent.com/document/api/215/113677">DescribeIPv6Addresses</a>接口获取IPv6AddressIds。</p>
                      * 
                      */
                     void SetIPv6AddressIds(const std::vector<std::string>& _iPv6AddressIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool IPv6AddressIdsHasBeenSet() const;
 
                     /**
-                     * 获取弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符"-"和下划线"_"，不能包含空格。
-                     * @return IPv6AddressName 弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符"-"和下划线"_"，不能包含空格。
+                     * 获取<p>弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符&quot;-&quot;和下划线&quot;_&quot;，不能包含空格。</p>
+                     * @return IPv6AddressName <p>弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符&quot;-&quot;和下划线&quot;_&quot;，不能包含空格。</p>
                      * 
                      */
                     std::string GetIPv6AddressName() const;
 
                     /**
-                     * 设置弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符"-"和下划线"_"，不能包含空格。
-                     * @param _iPv6AddressName 弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符"-"和下划线"_"，不能包含空格。
+                     * 设置<p>弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符&quot;-&quot;和下划线&quot;_&quot;，不能包含空格。</p>
+                     * @param _iPv6AddressName <p>弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符&quot;-&quot;和下划线&quot;_&quot;，不能包含空格。</p>
                      * 
                      */
                     void SetIPv6AddressName(const std::string& _iPv6AddressName);
@@ -84,19 +84,46 @@ namespace TencentCloud
                      */
                     bool IPv6AddressNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启弹性公网IPv6地址网卡可见</p>
+                     * @return EipVisibleOnEni <p>是否开启弹性公网IPv6地址网卡可见</p>
+                     * 
+                     */
+                    bool GetEipVisibleOnEni() const;
+
+                    /**
+                     * 设置<p>是否开启弹性公网IPv6地址网卡可见</p>
+                     * @param _eipVisibleOnEni <p>是否开启弹性公网IPv6地址网卡可见</p>
+                     * 
+                     */
+                    void SetEipVisibleOnEni(const bool& _eipVisibleOnEni);
+
+                    /**
+                     * 判断参数 EipVisibleOnEni 是否已赋值
+                     * @return EipVisibleOnEni 是否已赋值
+                     * 
+                     */
+                    bool EipVisibleOnEniHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 弹性公网IPv6唯一ID列表。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressIds。
+                     * <p>弹性公网IPv6唯一ID列表。可以使用<a href="https://cloud.tencent.com/document/api/215/113677">DescribeIPv6Addresses</a>接口获取IPv6AddressIds。</p>
                      */
                     std::vector<std::string> m_iPv6AddressIds;
                     bool m_iPv6AddressIdsHasBeenSet;
 
                     /**
-                     * 弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符"-"和下划线"_"，不能包含空格。
+                     * <p>弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符&quot;-&quot;和下划线&quot;_&quot;，不能包含空格。</p>
                      */
                     std::string m_iPv6AddressName;
                     bool m_iPv6AddressNameHasBeenSet;
+
+                    /**
+                     * <p>是否开启弹性公网IPv6地址网卡可见</p>
+                     */
+                    bool m_eipVisibleOnEni;
+                    bool m_eipVisibleOnEniHasBeenSet;
 
                 };
             }

@@ -67,6 +67,27 @@ namespace TencentCloud
                      */
                     bool EnabledHasBeenSet() const;
 
+                    /**
+                     * 获取<p>会话粘性的超时时间（秒），取值范围 1–86400。创建时默认为 1800；修改时若不设置该字段，则保留原有值。</p><p>取值范围：[1, 86400]</p><p>单位：秒</p><p>默认值：1800</p>
+                     * @return TimeoutSeconds <p>会话粘性的超时时间（秒），取值范围 1–86400。创建时默认为 1800；修改时若不设置该字段，则保留原有值。</p><p>取值范围：[1, 86400]</p><p>单位：秒</p><p>默认值：1800</p>
+                     * 
+                     */
+                    uint64_t GetTimeoutSeconds() const;
+
+                    /**
+                     * 设置<p>会话粘性的超时时间（秒），取值范围 1–86400。创建时默认为 1800；修改时若不设置该字段，则保留原有值。</p><p>取值范围：[1, 86400]</p><p>单位：秒</p><p>默认值：1800</p>
+                     * @param _timeoutSeconds <p>会话粘性的超时时间（秒），取值范围 1–86400。创建时默认为 1800；修改时若不设置该字段，则保留原有值。</p><p>取值范围：[1, 86400]</p><p>单位：秒</p><p>默认值：1800</p>
+                     * 
+                     */
+                    void SetTimeoutSeconds(const uint64_t& _timeoutSeconds);
+
+                    /**
+                     * 判断参数 TimeoutSeconds 是否已赋值
+                     * @return TimeoutSeconds 是否已赋值
+                     * 
+                     */
+                    bool TimeoutSecondsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +95,12 @@ namespace TencentCloud
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
+
+                    /**
+                     * <p>会话粘性的超时时间（秒），取值范围 1–86400。创建时默认为 1800；修改时若不设置该字段，则保留原有值。</p><p>取值范围：[1, 86400]</p><p>单位：秒</p><p>默认值：1800</p>
+                     */
+                    uint64_t m_timeoutSeconds;
+                    bool m_timeoutSecondsHasBeenSet;
 
                 };
             }

@@ -21,7 +21,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 StickyConfig::StickyConfig() :
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_timeoutSecondsHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome StickyConfig::Deserialize(const rapidjson::Value &value)
         m_enabledHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeoutSeconds") && !value["TimeoutSeconds"].IsNull())
+    {
+        if (!value["TimeoutSeconds"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StickyConfig.TimeoutSeconds` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeoutSeconds = value["TimeoutSeconds"].GetUint64();
+        m_timeoutSecondsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void StickyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabled, allocator);
+    }
+
+    if (m_timeoutSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeoutSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeoutSeconds, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void StickyConfig::SetEnabled(const bool& _enabled)
 bool StickyConfig::EnabledHasBeenSet() const
 {
     return m_enabledHasBeenSet;
+}
+
+uint64_t StickyConfig::GetTimeoutSeconds() const
+{
+    return m_timeoutSeconds;
+}
+
+void StickyConfig::SetTimeoutSeconds(const uint64_t& _timeoutSeconds)
+{
+    m_timeoutSeconds = _timeoutSeconds;
+    m_timeoutSecondsHasBeenSet = true;
+}
+
+bool StickyConfig::TimeoutSecondsHasBeenSet() const
+{
+    return m_timeoutSecondsHasBeenSet;
 }
 

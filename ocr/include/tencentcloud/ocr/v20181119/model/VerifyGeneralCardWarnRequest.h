@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/ReasoningConfig.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,69 @@ namespace TencentCloud
                      */
                     bool ImageBase64HasBeenSet() const;
 
+                    /**
+                     * 获取<p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–3000 字符</p>
+                     * @return ReasoningPrompt <p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–3000 字符</p>
+                     * 
+                     */
+                    std::string GetReasoningPrompt() const;
+
+                    /**
+                     * 设置<p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–3000 字符</p>
+                     * @param _reasoningPrompt <p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–3000 字符</p>
+                     * 
+                     */
+                    void SetReasoningPrompt(const std::string& _reasoningPrompt);
+
+                    /**
+                     * 判断参数 ReasoningPrompt 是否已赋值
+                     * @return ReasoningPrompt 是否已赋值
+                     * 
+                     */
+                    bool ReasoningPromptHasBeenSet() const;
+
+                    /**
+                     * 获取<p>推理输出配置。当 ReasoningPrompt 传入时建议同步传入，未传入时使用默认配置（OutputMode=enum, EnumValues=[&quot;true&quot;,&quot;false&quot;], EnableImageInput=true）。</p>
+                     * @return ReasoningConfig <p>推理输出配置。当 ReasoningPrompt 传入时建议同步传入，未传入时使用默认配置（OutputMode=enum, EnumValues=[&quot;true&quot;,&quot;false&quot;], EnableImageInput=true）。</p>
+                     * 
+                     */
+                    ReasoningConfig GetReasoningConfig() const;
+
+                    /**
+                     * 设置<p>推理输出配置。当 ReasoningPrompt 传入时建议同步传入，未传入时使用默认配置（OutputMode=enum, EnumValues=[&quot;true&quot;,&quot;false&quot;], EnableImageInput=true）。</p>
+                     * @param _reasoningConfig <p>推理输出配置。当 ReasoningPrompt 传入时建议同步传入，未传入时使用默认配置（OutputMode=enum, EnumValues=[&quot;true&quot;,&quot;false&quot;], EnableImageInput=true）。</p>
+                     * 
+                     */
+                    void SetReasoningConfig(const ReasoningConfig& _reasoningConfig);
+
+                    /**
+                     * 判断参数 ReasoningConfig 是否已赋值
+                     * @return ReasoningConfig 是否已赋值
+                     * 
+                     */
+                    bool ReasoningConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>水印提示排除类型，选择出参“水印提示”排除掉的水印类型，不传的话即代表任意水印都会提示。 PhoneCam：手机相机水印  WatermarkCam：水印相机水印</p>
+                     * @return IgnoreWatermarkCategories <p>水印提示排除类型，选择出参“水印提示”排除掉的水印类型，不传的话即代表任意水印都会提示。 PhoneCam：手机相机水印  WatermarkCam：水印相机水印</p>
+                     * 
+                     */
+                    std::vector<std::string> GetIgnoreWatermarkCategories() const;
+
+                    /**
+                     * 设置<p>水印提示排除类型，选择出参“水印提示”排除掉的水印类型，不传的话即代表任意水印都会提示。 PhoneCam：手机相机水印  WatermarkCam：水印相机水印</p>
+                     * @param _ignoreWatermarkCategories <p>水印提示排除类型，选择出参“水印提示”排除掉的水印类型，不传的话即代表任意水印都会提示。 PhoneCam：手机相机水印  WatermarkCam：水印相机水印</p>
+                     * 
+                     */
+                    void SetIgnoreWatermarkCategories(const std::vector<std::string>& _ignoreWatermarkCategories);
+
+                    /**
+                     * 判断参数 IgnoreWatermarkCategories 是否已赋值
+                     * @return IgnoreWatermarkCategories 是否已赋值
+                     * 
+                     */
+                    bool IgnoreWatermarkCategoriesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +188,24 @@ namespace TencentCloud
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
+
+                    /**
+                     * <p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–3000 字符</p>
+                     */
+                    std::string m_reasoningPrompt;
+                    bool m_reasoningPromptHasBeenSet;
+
+                    /**
+                     * <p>推理输出配置。当 ReasoningPrompt 传入时建议同步传入，未传入时使用默认配置（OutputMode=enum, EnumValues=[&quot;true&quot;,&quot;false&quot;], EnableImageInput=true）。</p>
+                     */
+                    ReasoningConfig m_reasoningConfig;
+                    bool m_reasoningConfigHasBeenSet;
+
+                    /**
+                     * <p>水印提示排除类型，选择出参“水印提示”排除掉的水印类型，不传的话即代表任意水印都会提示。 PhoneCam：手机相机水印  WatermarkCam：水印相机水印</p>
+                     */
+                    std::vector<std::string> m_ignoreWatermarkCategories;
+                    bool m_ignoreWatermarkCategoriesHasBeenSet;
 
                 };
             }

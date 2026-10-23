@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取空间 ID
-                     * @return ZoneId 空间 ID
+                     * 获取<p>空间 ID</p>
+                     * @return ZoneId <p>空间 ID</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置空间 ID
-                     * @param _zoneId 空间 ID
+                     * 设置<p>空间 ID</p>
+                     * @param _zoneId <p>空间 ID</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取权限配置 ID
-                     * @return RoleConfigurationId 权限配置 ID
+                     * 获取<p>权限配置 ID</p>
+                     * @return RoleConfigurationId <p>权限配置 ID</p>
                      * 
                      */
                     std::string GetRoleConfigurationId() const;
 
                     /**
-                     * 设置权限配置 ID
-                     * @param _roleConfigurationId 权限配置 ID
+                     * 设置<p>权限配置 ID</p>
+                     * @param _roleConfigurationId <p>权限配置 ID</p>
                      * 
                      */
                     void SetRoleConfigurationId(const std::string& _roleConfigurationId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RoleConfigurationIdHasBeenSet() const;
 
                     /**
-                     * 获取新的权限配置描述。  长度：最大 1024 个字符。
-                     * @return NewDescription 新的权限配置描述。  长度：最大 1024 个字符。
+                     * 获取<p>新的权限配置描述。  长度：最大 1024 个字符。</p>
+                     * @return NewDescription <p>新的权限配置描述。  长度：最大 1024 个字符。</p>
                      * 
                      */
                     std::string GetNewDescription() const;
 
                     /**
-                     * 设置新的权限配置描述。  长度：最大 1024 个字符。
-                     * @param _newDescription 新的权限配置描述。  长度：最大 1024 个字符。
+                     * 设置<p>新的权限配置描述。  长度：最大 1024 个字符。</p>
+                     * @param _newDescription <p>新的权限配置描述。  长度：最大 1024 个字符。</p>
                      * 
                      */
                     void SetNewDescription(const std::string& _newDescription);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool NewDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
-                     * @return NewSessionDuration 新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
+                     * 获取<p>新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。</p>
+                     * @return NewSessionDuration <p>新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。</p>
                      * 
                      */
                     int64_t GetNewSessionDuration() const;
 
                     /**
-                     * 设置新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
-                     * @param _newSessionDuration 新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
+                     * 设置<p>新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。</p>
+                     * @param _newSessionDuration <p>新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。</p>
                      * 
                      */
                     void SetNewSessionDuration(const int64_t& _newSessionDuration);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool NewSessionDurationHasBeenSet() const;
 
                     /**
-                     * 获取新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
-                     * @return NewRelayState 新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
+                     * 获取<p>新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。</p>
+                     * @return NewRelayState <p>新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。</p>
                      * 
                      */
                     std::string GetNewRelayState() const;
 
                     /**
-                     * 设置新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
-                     * @param _newRelayState 新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
+                     * 设置<p>新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。</p>
+                     * @param _newRelayState <p>新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。</p>
                      * 
                      */
                     void SetNewRelayState(const std::string& _newRelayState);
@@ -147,37 +147,64 @@ namespace TencentCloud
                      */
                     bool NewRelayStateHasBeenSet() const;
 
+                    /**
+                     * 获取<p>true=保存并应用（立即下发）；false/缺省=仅保存</p>
+                     * @return IsApply <p>true=保存并应用（立即下发）；false/缺省=仅保存</p>
+                     * 
+                     */
+                    bool GetIsApply() const;
+
+                    /**
+                     * 设置<p>true=保存并应用（立即下发）；false/缺省=仅保存</p>
+                     * @param _isApply <p>true=保存并应用（立即下发）；false/缺省=仅保存</p>
+                     * 
+                     */
+                    void SetIsApply(const bool& _isApply);
+
+                    /**
+                     * 判断参数 IsApply 是否已赋值
+                     * @return IsApply 是否已赋值
+                     * 
+                     */
+                    bool IsApplyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 空间 ID
+                     * <p>空间 ID</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 权限配置 ID
+                     * <p>权限配置 ID</p>
                      */
                     std::string m_roleConfigurationId;
                     bool m_roleConfigurationIdHasBeenSet;
 
                     /**
-                     * 新的权限配置描述。  长度：最大 1024 个字符。
+                     * <p>新的权限配置描述。  长度：最大 1024 个字符。</p>
                      */
                     std::string m_newDescription;
                     bool m_newDescriptionHasBeenSet;
 
                     /**
-                     * 新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。
+                     * <p>新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。</p>
                      */
                     int64_t m_newSessionDuration;
                     bool m_newSessionDurationHasBeenSet;
 
                     /**
-                     * 新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。
+                     * <p>新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。</p>
                      */
                     std::string m_newRelayState;
                     bool m_newRelayStateHasBeenSet;
+
+                    /**
+                     * <p>true=保存并应用（立即下发）；false/缺省=仅保存</p>
+                     */
+                    bool m_isApply;
+                    bool m_isApplyHasBeenSet;
 
                 };
             }

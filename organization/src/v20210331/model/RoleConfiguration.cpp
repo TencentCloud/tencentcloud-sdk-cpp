@@ -28,7 +28,11 @@ RoleConfiguration::RoleConfiguration() :
     m_relayStateHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_isSelectedHasBeenSet(false)
+    m_isSelectedHasBeenSet(false),
+    m_applyStatusHasBeenSet(false),
+    m_appliedSessionDurationHasBeenSet(false),
+    m_sessionDurationUpdateTimeHasBeenSet(false),
+    m_failedAccountsHasBeenSet(false)
 {
 }
 
@@ -117,6 +121,56 @@ CoreInternalOutcome RoleConfiguration::Deserialize(const rapidjson::Value &value
         m_isSelectedHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplyStatus") && !value["ApplyStatus"].IsNull())
+    {
+        if (!value["ApplyStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoleConfiguration.ApplyStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applyStatus = string(value["ApplyStatus"].GetString());
+        m_applyStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppliedSessionDuration") && !value["AppliedSessionDuration"].IsNull())
+    {
+        if (!value["AppliedSessionDuration"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoleConfiguration.AppliedSessionDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appliedSessionDuration = value["AppliedSessionDuration"].GetUint64();
+        m_appliedSessionDurationHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionDurationUpdateTime") && !value["SessionDurationUpdateTime"].IsNull())
+    {
+        if (!value["SessionDurationUpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoleConfiguration.SessionDurationUpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionDurationUpdateTime = string(value["SessionDurationUpdateTime"].GetString());
+        m_sessionDurationUpdateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailedAccounts") && !value["FailedAccounts"].IsNull())
+    {
+        if (!value["FailedAccounts"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RoleConfiguration.FailedAccounts` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FailedAccounts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FailedAccount item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_failedAccounts.push_back(item);
+        }
+        m_failedAccountsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +240,45 @@ void RoleConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IsSelected";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSelected, allocator);
+    }
+
+    if (m_applyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applyStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appliedSessionDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppliedSessionDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appliedSessionDuration, allocator);
+    }
+
+    if (m_sessionDurationUpdateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionDurationUpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionDurationUpdateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failedAccountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedAccounts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_failedAccounts.begin(); itr != m_failedAccounts.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -317,5 +410,69 @@ void RoleConfiguration::SetIsSelected(const bool& _isSelected)
 bool RoleConfiguration::IsSelectedHasBeenSet() const
 {
     return m_isSelectedHasBeenSet;
+}
+
+string RoleConfiguration::GetApplyStatus() const
+{
+    return m_applyStatus;
+}
+
+void RoleConfiguration::SetApplyStatus(const string& _applyStatus)
+{
+    m_applyStatus = _applyStatus;
+    m_applyStatusHasBeenSet = true;
+}
+
+bool RoleConfiguration::ApplyStatusHasBeenSet() const
+{
+    return m_applyStatusHasBeenSet;
+}
+
+uint64_t RoleConfiguration::GetAppliedSessionDuration() const
+{
+    return m_appliedSessionDuration;
+}
+
+void RoleConfiguration::SetAppliedSessionDuration(const uint64_t& _appliedSessionDuration)
+{
+    m_appliedSessionDuration = _appliedSessionDuration;
+    m_appliedSessionDurationHasBeenSet = true;
+}
+
+bool RoleConfiguration::AppliedSessionDurationHasBeenSet() const
+{
+    return m_appliedSessionDurationHasBeenSet;
+}
+
+string RoleConfiguration::GetSessionDurationUpdateTime() const
+{
+    return m_sessionDurationUpdateTime;
+}
+
+void RoleConfiguration::SetSessionDurationUpdateTime(const string& _sessionDurationUpdateTime)
+{
+    m_sessionDurationUpdateTime = _sessionDurationUpdateTime;
+    m_sessionDurationUpdateTimeHasBeenSet = true;
+}
+
+bool RoleConfiguration::SessionDurationUpdateTimeHasBeenSet() const
+{
+    return m_sessionDurationUpdateTimeHasBeenSet;
+}
+
+vector<FailedAccount> RoleConfiguration::GetFailedAccounts() const
+{
+    return m_failedAccounts;
+}
+
+void RoleConfiguration::SetFailedAccounts(const vector<FailedAccount>& _failedAccounts)
+{
+    m_failedAccounts = _failedAccounts;
+    m_failedAccountsHasBeenSet = true;
+}
+
+bool RoleConfiguration::FailedAccountsHasBeenSet() const
+{
+    return m_failedAccountsHasBeenSet;
 }
 

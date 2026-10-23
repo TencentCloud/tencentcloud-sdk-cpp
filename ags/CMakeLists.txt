@@ -148,6 +148,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/CloudRecordLabelMutation.h
   include/tencentcloud/ags/v20250920/model/DescribeSandboxSnapshotListResponse.h
   include/tencentcloud/ags/v20250920/model/PauseSandboxInstanceResponse.h
+  include/tencentcloud/ags/v20250920/model/DescribeSandboxInstancesRequest.h
   include/tencentcloud/ags/v20250920/model/CosStorageSource.h
   include/tencentcloud/ags/v20250920/model/StartSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/CancelRegistryRecordResponse.h
@@ -190,6 +191,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/EventContentInfo.h
   include/tencentcloud/ags/v20250920/model/PortConfiguration.h
   include/tencentcloud/ags/v20250920/model/Filter.h
+  include/tencentcloud/ags/v20250920/model/DescribeSandboxInstancesResponse.h
   include/tencentcloud/ags/v20250920/model/CreateRegistryRequest.h
   include/tencentcloud/ags/v20250920/model/ModifyDeploymentResponse.h
   include/tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskRequest.h
@@ -331,6 +333,7 @@ set(ags_src
   src/v20250920/model/CloudRecordLabelMutation.cpp
   src/v20250920/model/DescribeSandboxSnapshotListResponse.cpp
   src/v20250920/model/PauseSandboxInstanceResponse.cpp
+  src/v20250920/model/DescribeSandboxInstancesRequest.cpp
   src/v20250920/model/CosStorageSource.cpp
   src/v20250920/model/StartSandboxInstanceRequest.cpp
   src/v20250920/model/CancelRegistryRecordResponse.cpp
@@ -373,6 +376,7 @@ set(ags_src
   src/v20250920/model/EventContentInfo.cpp
   src/v20250920/model/PortConfiguration.cpp
   src/v20250920/model/Filter.cpp
+  src/v20250920/model/DescribeSandboxInstancesResponse.cpp
   src/v20250920/model/CreateRegistryRequest.cpp
   src/v20250920/model/ModifyDeploymentResponse.cpp
   src/v20250920/model/CreatePreCacheImageTaskRequest.cpp

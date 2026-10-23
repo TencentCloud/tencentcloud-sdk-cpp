@@ -27,7 +27,8 @@ UpdateRoleConfigurationRequest::UpdateRoleConfigurationRequest() :
     m_roleConfigurationIdHasBeenSet(false),
     m_newDescriptionHasBeenSet(false),
     m_newSessionDurationHasBeenSet(false),
-    m_newRelayStateHasBeenSet(false)
+    m_newRelayStateHasBeenSet(false),
+    m_isApplyHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string UpdateRoleConfigurationRequest::ToJsonString() const
         string key = "NewRelayState";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_newRelayState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isApplyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsApply";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isApply, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void UpdateRoleConfigurationRequest::SetNewRelayState(const string& _newRelaySta
 bool UpdateRoleConfigurationRequest::NewRelayStateHasBeenSet() const
 {
     return m_newRelayStateHasBeenSet;
+}
+
+bool UpdateRoleConfigurationRequest::GetIsApply() const
+{
+    return m_isApply;
+}
+
+void UpdateRoleConfigurationRequest::SetIsApply(const bool& _isApply)
+{
+    m_isApply = _isApply;
+    m_isApplyHasBeenSet = true;
+}
+
+bool UpdateRoleConfigurationRequest::IsApplyHasBeenSet() const
+{
+    return m_isApplyHasBeenSet;
 }
 
 

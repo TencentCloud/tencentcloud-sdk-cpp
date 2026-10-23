@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
-                     * @return JobId 迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+                     * 获取<p>迁移任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
+                     * @return JobId <p>迁移任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
-                     * @param _jobId 迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+                     * 设置<p>迁移任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
+                     * @param _jobId <p>迁移任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取迁移任务全量导出线程数、有效值为 1-16
-                     * @return DumpThread 迁移任务全量导出线程数、有效值为 1-16
+                     * 获取<p>迁移任务全量导出线程数、有效值为 1-16</p>
+                     * @return DumpThread <p>迁移任务全量导出线程数、有效值为 1-16</p>
                      * 
                      */
                     int64_t GetDumpThread() const;
 
                     /**
-                     * 设置迁移任务全量导出线程数、有效值为 1-16
-                     * @param _dumpThread 迁移任务全量导出线程数、有效值为 1-16
+                     * 设置<p>迁移任务全量导出线程数、有效值为 1-16</p>
+                     * @param _dumpThread <p>迁移任务全量导出线程数、有效值为 1-16</p>
                      * 
                      */
                     void SetDumpThread(const int64_t& _dumpThread);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DumpThreadHasBeenSet() const;
 
                     /**
-                     * 获取迁移全量导出的 Rps 限制、需要大于 0
-                     * @return DumpRps 迁移全量导出的 Rps 限制、需要大于 0
+                     * 获取<p>迁移全量导出的 Rps 限制、需要大于 0</p>
+                     * @return DumpRps <p>迁移全量导出的 Rps 限制、需要大于 0</p>
                      * 
                      */
                     int64_t GetDumpRps() const;
 
                     /**
-                     * 设置迁移全量导出的 Rps 限制、需要大于 0
-                     * @param _dumpRps 迁移全量导出的 Rps 限制、需要大于 0
+                     * 设置<p>迁移全量导出的 Rps 限制、需要大于 0</p>
+                     * @param _dumpRps <p>迁移全量导出的 Rps 限制、需要大于 0</p>
                      * 
                      */
                     void SetDumpRps(const int64_t& _dumpRps);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DumpRpsHasBeenSet() const;
 
                     /**
-                     * 获取迁移任务全量导入线程数、有效值为 1-16
-                     * @return LoadThread 迁移任务全量导入线程数、有效值为 1-16
+                     * 获取<p>迁移任务全量导入线程数、有效值为 1-16</p>
+                     * @return LoadThread <p>迁移任务全量导入线程数、有效值为 1-16</p>
                      * 
                      */
                     int64_t GetLoadThread() const;
 
                     /**
-                     * 设置迁移任务全量导入线程数、有效值为 1-16
-                     * @param _loadThread 迁移任务全量导入线程数、有效值为 1-16
+                     * 设置<p>迁移任务全量导入线程数、有效值为 1-16</p>
+                     * @param _loadThread <p>迁移任务全量导入线程数、有效值为 1-16</p>
                      * 
                      */
                     void SetLoadThread(const int64_t& _loadThread);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LoadThreadHasBeenSet() const;
 
                     /**
-                     * 获取迁移任务增量导入线程数、有效值为 1-128
-                     * @return SinkerThread 迁移任务增量导入线程数、有效值为 1-128
+                     * 获取<p>迁移任务增量导入线程数、有效值为 1-128</p>
+                     * @return SinkerThread <p>迁移任务增量导入线程数、有效值为 1-128</p>
                      * 
                      */
                     int64_t GetSinkerThread() const;
 
                     /**
-                     * 设置迁移任务增量导入线程数、有效值为 1-128
-                     * @param _sinkerThread 迁移任务增量导入线程数、有效值为 1-128
+                     * 设置<p>迁移任务增量导入线程数、有效值为 1-128</p>
+                     * @param _sinkerThread <p>迁移任务增量导入线程数、有效值为 1-128</p>
                      * 
                      */
                     void SetSinkerThread(const int64_t& _sinkerThread);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool SinkerThreadHasBeenSet() const;
 
                     /**
-                     * 获取全量导入Rps限制
-                     * @return LoadRps 全量导入Rps限制
+                     * 获取<p>全量导入Rps限制</p>
+                     * @return LoadRps <p>全量导入Rps限制</p>
                      * 
                      */
                     int64_t GetLoadRps() const;
 
                     /**
-                     * 设置全量导入Rps限制
-                     * @param _loadRps 全量导入Rps限制
+                     * 设置<p>全量导入Rps限制</p>
+                     * @param _loadRps <p>全量导入Rps限制</p>
                      * 
                      */
                     void SetLoadRps(const int64_t& _loadRps);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
+                     * <p>迁移任务 Id，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 迁移任务全量导出线程数、有效值为 1-16
+                     * <p>迁移任务全量导出线程数、有效值为 1-16</p>
                      */
                     int64_t m_dumpThread;
                     bool m_dumpThreadHasBeenSet;
 
                     /**
-                     * 迁移全量导出的 Rps 限制、需要大于 0
+                     * <p>迁移全量导出的 Rps 限制、需要大于 0</p>
                      */
                     int64_t m_dumpRps;
                     bool m_dumpRpsHasBeenSet;
 
                     /**
-                     * 迁移任务全量导入线程数、有效值为 1-16
+                     * <p>迁移任务全量导入线程数、有效值为 1-16</p>
                      */
                     int64_t m_loadThread;
                     bool m_loadThreadHasBeenSet;
 
                     /**
-                     * 迁移任务增量导入线程数、有效值为 1-128
+                     * <p>迁移任务增量导入线程数、有效值为 1-128</p>
                      */
                     int64_t m_sinkerThread;
                     bool m_sinkerThreadHasBeenSet;
 
                     /**
-                     * 全量导入Rps限制
+                     * <p>全量导入Rps限制</p>
                      */
                     int64_t m_loadRps;
                     bool m_loadRpsHasBeenSet;

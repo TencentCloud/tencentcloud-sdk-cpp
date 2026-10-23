@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool InputModalitiesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>新的上游模型名称</p>
+                     * @return NewModelName <p>新的上游模型名称</p>
+                     * 
+                     */
+                    std::string GetNewModelName() const;
+
+                    /**
+                     * 设置<p>新的上游模型名称</p>
+                     * @param _newModelName <p>新的上游模型名称</p>
+                     * 
+                     */
+                    void SetNewModelName(const std::string& _newModelName);
+
+                    /**
+                     * 判断参数 NewModelName 是否已赋值
+                     * @return NewModelName 是否已赋值
+                     * 
+                     */
+                    bool NewModelNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>新的对外模型名称</p>
+                     * @return NewModelAlias <p>新的对外模型名称</p>
+                     * 
+                     */
+                    std::string GetNewModelAlias() const;
+
+                    /**
+                     * 设置<p>新的对外模型名称</p>
+                     * @param _newModelAlias <p>新的对外模型名称</p>
+                     * 
+                     */
+                    void SetNewModelAlias(const std::string& _newModelAlias);
+
+                    /**
+                     * 判断参数 NewModelAlias 是否已赋值
+                     * @return NewModelAlias 是否已赋值
+                     * 
+                     */
+                    bool NewModelAliasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_inputModalities;
                     bool m_inputModalitiesHasBeenSet;
+
+                    /**
+                     * <p>新的上游模型名称</p>
+                     */
+                    std::string m_newModelName;
+                    bool m_newModelNameHasBeenSet;
+
+                    /**
+                     * <p>新的对外模型名称</p>
+                     */
+                    std::string m_newModelAlias;
+                    bool m_newModelAliasHasBeenSet;
 
                 };
             }

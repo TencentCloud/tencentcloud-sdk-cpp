@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/organization/v20210331/model/FailedAccount.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取权限配置配置ID。
-                     * @return RoleConfigurationId 权限配置配置ID。
+                     * 获取<p>权限配置配置ID。</p>
+                     * @return RoleConfigurationId <p>权限配置配置ID。</p>
                      * 
                      */
                     std::string GetRoleConfigurationId() const;
 
                     /**
-                     * 设置权限配置配置ID。
-                     * @param _roleConfigurationId 权限配置配置ID。
+                     * 设置<p>权限配置配置ID。</p>
+                     * @param _roleConfigurationId <p>权限配置配置ID。</p>
                      * 
                      */
                     void SetRoleConfigurationId(const std::string& _roleConfigurationId);
@@ -68,15 +69,15 @@ namespace TencentCloud
                     bool RoleConfigurationIdHasBeenSet() const;
 
                     /**
-                     * 获取权限配置配名称。
-                     * @return RoleConfigurationName 权限配置配名称。
+                     * 获取<p>权限配置配名称。</p>
+                     * @return RoleConfigurationName <p>权限配置配名称。</p>
                      * 
                      */
                     std::string GetRoleConfigurationName() const;
 
                     /**
-                     * 设置权限配置配名称。
-                     * @param _roleConfigurationName 权限配置配名称。
+                     * 设置<p>权限配置配名称。</p>
+                     * @param _roleConfigurationName <p>权限配置配名称。</p>
                      * 
                      */
                     void SetRoleConfigurationName(const std::string& _roleConfigurationName);
@@ -89,15 +90,15 @@ namespace TencentCloud
                     bool RoleConfigurationNameHasBeenSet() const;
 
                     /**
-                     * 获取权限配置的描述。
-                     * @return Description 权限配置的描述。
+                     * 获取<p>权限配置的描述。</p>
+                     * @return Description <p>权限配置的描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置权限配置的描述。
-                     * @param _description 权限配置的描述。
+                     * 设置<p>权限配置的描述。</p>
+                     * @param _description <p>权限配置的描述。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -110,19 +111,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。
-单位：秒。
-                     * @return SessionDuration 会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。
-单位：秒。
+                     * 获取<p>会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。<br>单位：秒。</p>
+                     * @return SessionDuration <p>会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。<br>单位：秒。</p>
                      * 
                      */
                     int64_t GetSessionDuration() const;
 
                     /**
-                     * 设置会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。
-单位：秒。
-                     * @param _sessionDuration 会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。
-单位：秒。
+                     * 设置<p>会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。<br>单位：秒。</p>
+                     * @param _sessionDuration <p>会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。<br>单位：秒。</p>
                      * 
                      */
                     void SetSessionDuration(const int64_t& _sessionDuration);
@@ -135,15 +132,15 @@ namespace TencentCloud
                     bool SessionDurationHasBeenSet() const;
 
                     /**
-                     * 获取初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。
-                     * @return RelayState 初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。
+                     * 获取<p>初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。</p>
+                     * @return RelayState <p>初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。</p>
                      * 
                      */
                     std::string GetRelayState() const;
 
                     /**
-                     * 设置初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。
-                     * @param _relayState 初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。
+                     * 设置<p>初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。</p>
+                     * @param _relayState <p>初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。</p>
                      * 
                      */
                     void SetRelayState(const std::string& _relayState);
@@ -156,15 +153,15 @@ namespace TencentCloud
                     bool RelayStateHasBeenSet() const;
 
                     /**
-                     * 获取权限配置的创建时间。
-                     * @return CreateTime 权限配置的创建时间。
+                     * 获取<p>权限配置的创建时间。</p>
+                     * @return CreateTime <p>权限配置的创建时间。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置权限配置的创建时间。
-                     * @param _createTime 权限配置的创建时间。
+                     * 设置<p>权限配置的创建时间。</p>
+                     * @param _createTime <p>权限配置的创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -177,15 +174,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取权限配置的更新时间。
-                     * @return UpdateTime 权限配置的更新时间。
+                     * 获取<p>权限配置的更新时间。</p>
+                     * @return UpdateTime <p>权限配置的更新时间。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置权限配置的更新时间。
-                     * @param _updateTime 权限配置的更新时间。
+                     * 设置<p>权限配置的更新时间。</p>
+                     * @param _updateTime <p>权限配置的更新时间。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -198,15 +195,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。
-                     * @return IsSelected 如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。
+                     * 获取<p>如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。</p>
+                     * @return IsSelected <p>如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。</p>
                      * 
                      */
                     bool GetIsSelected() const;
 
                     /**
-                     * 设置如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。
-                     * @param _isSelected 如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。
+                     * 设置<p>如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。</p>
+                     * @param _isSelected <p>如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。</p>
                      * 
                      */
                     void SetIsSelected(const bool& _isSelected);
@@ -218,56 +215,163 @@ namespace TencentCloud
                      */
                     bool IsSelectedHasBeenSet() const;
 
+                    /**
+                     * 获取<p>会话时长应用状态</p><p>枚举值：</p><ul><li>Success： 全部账号应用成功</li><li>Failed： 存在失败账号</li><li>Applying： 任务在途</li><li>Unknown： 已部署账号超查询上限</li></ul>
+                     * @return ApplyStatus <p>会话时长应用状态</p><p>枚举值：</p><ul><li>Success： 全部账号应用成功</li><li>Failed： 存在失败账号</li><li>Applying： 任务在途</li><li>Unknown： 已部署账号超查询上限</li></ul>
+                     * 
+                     */
+                    std::string GetApplyStatus() const;
+
+                    /**
+                     * 设置<p>会话时长应用状态</p><p>枚举值：</p><ul><li>Success： 全部账号应用成功</li><li>Failed： 存在失败账号</li><li>Applying： 任务在途</li><li>Unknown： 已部署账号超查询上限</li></ul>
+                     * @param _applyStatus <p>会话时长应用状态</p><p>枚举值：</p><ul><li>Success： 全部账号应用成功</li><li>Failed： 存在失败账号</li><li>Applying： 任务在途</li><li>Unknown： 已部署账号超查询上限</li></ul>
+                     * 
+                     */
+                    void SetApplyStatus(const std::string& _applyStatus);
+
+                    /**
+                     * 判断参数 ApplyStatus 是否已赋值
+                     * @return ApplyStatus 是否已赋值
+                     * 
+                     */
+                    bool ApplyStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前已真实下发到 CAM 的会话时长</p><p>取值范围：[900, 43200]</p><p>单位：秒</p>
+                     * @return AppliedSessionDuration <p>当前已真实下发到 CAM 的会话时长</p><p>取值范围：[900, 43200]</p><p>单位：秒</p>
+                     * 
+                     */
+                    uint64_t GetAppliedSessionDuration() const;
+
+                    /**
+                     * 设置<p>当前已真实下发到 CAM 的会话时长</p><p>取值范围：[900, 43200]</p><p>单位：秒</p>
+                     * @param _appliedSessionDuration <p>当前已真实下发到 CAM 的会话时长</p><p>取值范围：[900, 43200]</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetAppliedSessionDuration(const uint64_t& _appliedSessionDuration);
+
+                    /**
+                     * 判断参数 AppliedSessionDuration 是否已赋值
+                     * @return AppliedSessionDuration 是否已赋值
+                     * 
+                     */
+                    bool AppliedSessionDurationHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最近一次成功下发时间</p><p>参数格式： YYYY-MM-DD hh:mm:ss</p>
+                     * @return SessionDurationUpdateTime <p>最近一次成功下发时间</p><p>参数格式： YYYY-MM-DD hh:mm:ss</p>
+                     * 
+                     */
+                    std::string GetSessionDurationUpdateTime() const;
+
+                    /**
+                     * 设置<p>最近一次成功下发时间</p><p>参数格式： YYYY-MM-DD hh:mm:ss</p>
+                     * @param _sessionDurationUpdateTime <p>最近一次成功下发时间</p><p>参数格式： YYYY-MM-DD hh:mm:ss</p>
+                     * 
+                     */
+                    void SetSessionDurationUpdateTime(const std::string& _sessionDurationUpdateTime);
+
+                    /**
+                     * 判断参数 SessionDurationUpdateTime 是否已赋值
+                     * @return SessionDurationUpdateTime 是否已赋值
+                     * 
+                     */
+                    bool SessionDurationUpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>未成功应用的账号明细</p><p>仅 Failed 态返回</p>
+                     * @return FailedAccounts <p>未成功应用的账号明细</p><p>仅 Failed 态返回</p>
+                     * 
+                     */
+                    std::vector<FailedAccount> GetFailedAccounts() const;
+
+                    /**
+                     * 设置<p>未成功应用的账号明细</p><p>仅 Failed 态返回</p>
+                     * @param _failedAccounts <p>未成功应用的账号明细</p><p>仅 Failed 态返回</p>
+                     * 
+                     */
+                    void SetFailedAccounts(const std::vector<FailedAccount>& _failedAccounts);
+
+                    /**
+                     * 判断参数 FailedAccounts 是否已赋值
+                     * @return FailedAccounts 是否已赋值
+                     * 
+                     */
+                    bool FailedAccountsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 权限配置配置ID。
+                     * <p>权限配置配置ID。</p>
                      */
                     std::string m_roleConfigurationId;
                     bool m_roleConfigurationIdHasBeenSet;
 
                     /**
-                     * 权限配置配名称。
+                     * <p>权限配置配名称。</p>
                      */
                     std::string m_roleConfigurationName;
                     bool m_roleConfigurationNameHasBeenSet;
 
                     /**
-                     * 权限配置的描述。
+                     * <p>权限配置的描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。
-单位：秒。
+                     * <p>会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。<br>单位：秒。</p>
                      */
                     int64_t m_sessionDuration;
                     bool m_sessionDurationHasBeenSet;
 
                     /**
-                     * 初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。
+                     * <p>初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。</p>
                      */
                     std::string m_relayState;
                     bool m_relayStateHasBeenSet;
 
                     /**
-                     * 权限配置的创建时间。
+                     * <p>权限配置的创建时间。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 权限配置的更新时间。
+                     * <p>权限配置的更新时间。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。
+                     * <p>如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。</p>
                      */
                     bool m_isSelected;
                     bool m_isSelectedHasBeenSet;
+
+                    /**
+                     * <p>会话时长应用状态</p><p>枚举值：</p><ul><li>Success： 全部账号应用成功</li><li>Failed： 存在失败账号</li><li>Applying： 任务在途</li><li>Unknown： 已部署账号超查询上限</li></ul>
+                     */
+                    std::string m_applyStatus;
+                    bool m_applyStatusHasBeenSet;
+
+                    /**
+                     * <p>当前已真实下发到 CAM 的会话时长</p><p>取值范围：[900, 43200]</p><p>单位：秒</p>
+                     */
+                    uint64_t m_appliedSessionDuration;
+                    bool m_appliedSessionDurationHasBeenSet;
+
+                    /**
+                     * <p>最近一次成功下发时间</p><p>参数格式： YYYY-MM-DD hh:mm:ss</p>
+                     */
+                    std::string m_sessionDurationUpdateTime;
+                    bool m_sessionDurationUpdateTimeHasBeenSet;
+
+                    /**
+                     * <p>未成功应用的账号明细</p><p>仅 Failed 态返回</p>
+                     */
+                    std::vector<FailedAccount> m_failedAccounts;
+                    bool m_failedAccountsHasBeenSet;
 
                 };
             }

@@ -236,6 +236,27 @@ namespace TencentCloud
                      */
                     bool UserDataHasBeenSet() const;
 
+                    /**
+                     * 获取<p>合同名称 </p><p>入参限制：如果替换解除协议的签署人中有本企业PIN 码签署人类型，则此字段必填</p>
+                     * @return FlowName <p>合同名称 </p><p>入参限制：如果替换解除协议的签署人中有本企业PIN 码签署人类型，则此字段必填</p>
+                     * 
+                     */
+                    std::string GetFlowName() const;
+
+                    /**
+                     * 设置<p>合同名称 </p><p>入参限制：如果替换解除协议的签署人中有本企业PIN 码签署人类型，则此字段必填</p>
+                     * @param _flowName <p>合同名称 </p><p>入参限制：如果替换解除协议的签署人中有本企业PIN 码签署人类型，则此字段必填</p>
+                     * 
+                     */
+                    void SetFlowName(const std::string& _flowName);
+
+                    /**
+                     * 判断参数 FlowName 是否已赋值
+                     * @return FlowName 是否已赋值
+                     * 
+                     */
+                    bool FlowNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +312,12 @@ namespace TencentCloud
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
+
+                    /**
+                     * <p>合同名称 </p><p>入参限制：如果替换解除协议的签署人中有本企业PIN 码签署人类型，则此字段必填</p>
+                     */
+                    std::string m_flowName;
+                    bool m_flowNameHasBeenSet;
 
                 };
             }

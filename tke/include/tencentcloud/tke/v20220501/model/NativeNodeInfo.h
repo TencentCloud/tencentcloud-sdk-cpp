@@ -733,6 +733,48 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否是迁移的节点</p><p>默认值：false</p>
+                     * @return IsMigrated <p>是否是迁移的节点</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetIsMigrated() const;
+
+                    /**
+                     * 设置<p>是否是迁移的节点</p><p>默认值：false</p>
+                     * @param _isMigrated <p>是否是迁移的节点</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetIsMigrated(const bool& _isMigrated);
+
+                    /**
+                     * 判断参数 IsMigrated 是否已赋值
+                     * @return IsMigrated 是否已赋值
+                     * 
+                     */
+                    bool IsMigratedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源 ID</p>
+                     * @return ResourceId <p>资源 ID</p>
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置<p>资源 ID</p>
+                     * @param _resourceId <p>资源 ID</p>
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -927,6 +969,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>是否是迁移的节点</p><p>默认值：false</p>
+                     */
+                    bool m_isMigrated;
+                    bool m_isMigratedHasBeenSet;
+
+                    /**
+                     * <p>资源 ID</p>
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

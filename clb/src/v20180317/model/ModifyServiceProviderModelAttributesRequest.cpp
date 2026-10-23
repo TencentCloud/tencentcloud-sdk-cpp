@@ -25,7 +25,9 @@ using namespace std;
 ModifyServiceProviderModelAttributesRequest::ModifyServiceProviderModelAttributesRequest() :
     m_serviceProviderIdHasBeenSet(false),
     m_modelNameHasBeenSet(false),
-    m_inputModalitiesHasBeenSet(false)
+    m_inputModalitiesHasBeenSet(false),
+    m_newModelNameHasBeenSet(false),
+    m_newModelAliasHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,22 @@ string ModifyServiceProviderModelAttributesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_newModelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewModelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_newModelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newModelAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewModelAlias";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_newModelAlias.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +137,38 @@ void ModifyServiceProviderModelAttributesRequest::SetInputModalities(const vecto
 bool ModifyServiceProviderModelAttributesRequest::InputModalitiesHasBeenSet() const
 {
     return m_inputModalitiesHasBeenSet;
+}
+
+string ModifyServiceProviderModelAttributesRequest::GetNewModelName() const
+{
+    return m_newModelName;
+}
+
+void ModifyServiceProviderModelAttributesRequest::SetNewModelName(const string& _newModelName)
+{
+    m_newModelName = _newModelName;
+    m_newModelNameHasBeenSet = true;
+}
+
+bool ModifyServiceProviderModelAttributesRequest::NewModelNameHasBeenSet() const
+{
+    return m_newModelNameHasBeenSet;
+}
+
+string ModifyServiceProviderModelAttributesRequest::GetNewModelAlias() const
+{
+    return m_newModelAlias;
+}
+
+void ModifyServiceProviderModelAttributesRequest::SetNewModelAlias(const string& _newModelAlias)
+{
+    m_newModelAlias = _newModelAlias;
+    m_newModelAliasHasBeenSet = true;
+}
+
+bool ModifyServiceProviderModelAttributesRequest::NewModelAliasHasBeenSet() const
+{
+    return m_newModelAliasHasBeenSet;
 }
 
 

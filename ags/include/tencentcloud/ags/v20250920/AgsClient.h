@@ -97,6 +97,8 @@
 #include <tencentcloud/ags/v20250920/model/DescribeRegistryRecordVersionListResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxInstanceListResponse.h>
+#include <tencentcloud/ags/v20250920/model/DescribeSandboxInstancesRequest.h>
+#include <tencentcloud/ags/v20250920/model/DescribeSandboxInstancesResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxSnapshotListRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxSnapshotListResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeSandboxToolListRequest.h>
@@ -266,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSandboxInstanceListResponse> DescribeSandboxInstanceListOutcome;
                 typedef std::future<DescribeSandboxInstanceListOutcome> DescribeSandboxInstanceListOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribeSandboxInstanceListRequest&, DescribeSandboxInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSandboxInstancesResponse> DescribeSandboxInstancesOutcome;
+                typedef std::future<DescribeSandboxInstancesOutcome> DescribeSandboxInstancesOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::DescribeSandboxInstancesRequest&, DescribeSandboxInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSandboxSnapshotListResponse> DescribeSandboxSnapshotListOutcome;
                 typedef std::future<DescribeSandboxSnapshotListOutcome> DescribeSandboxSnapshotListOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribeSandboxSnapshotListRequest&, DescribeSandboxSnapshotListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSandboxSnapshotListAsyncHandler;
@@ -678,6 +683,15 @@ namespace TencentCloud
                 DescribeSandboxInstanceListOutcome DescribeSandboxInstanceList(const Model::DescribeSandboxInstanceListRequest &request);
                 void DescribeSandboxInstanceListAsync(const Model::DescribeSandboxInstanceListRequest& request, const DescribeSandboxInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSandboxInstanceListOutcomeCallable DescribeSandboxInstanceListCallable(const Model::DescribeSandboxInstanceListRequest& request);
+
+                /**
+                 *查询沙箱实例
+                 * @param req DescribeSandboxInstancesRequest
+                 * @return DescribeSandboxInstancesOutcome
+                 */
+                DescribeSandboxInstancesOutcome DescribeSandboxInstances(const Model::DescribeSandboxInstancesRequest &request);
+                void DescribeSandboxInstancesAsync(const Model::DescribeSandboxInstancesRequest& request, const DescribeSandboxInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSandboxInstancesOutcomeCallable DescribeSandboxInstancesCallable(const Model::DescribeSandboxInstancesRequest& request);
 
                 /**
                  *查询沙箱快照

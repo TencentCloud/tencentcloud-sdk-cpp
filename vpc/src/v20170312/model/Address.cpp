@@ -47,7 +47,8 @@ Address::Address() :
     m_renewFlagHasBeenSet(false),
     m_bandwidthPackageIdHasBeenSet(false),
     m_unVpcIdHasBeenSet(false),
-    m_dedicatedClusterIdHasBeenSet(false)
+    m_dedicatedClusterIdHasBeenSet(false),
+    m_eipVisibleOnEniHasBeenSet(false)
 {
 }
 
@@ -343,6 +344,16 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
         m_dedicatedClusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EipVisibleOnEni") && !value["EipVisibleOnEni"].IsNull())
+    {
+        if (!value["EipVisibleOnEni"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Address.EipVisibleOnEni` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_eipVisibleOnEni = value["EipVisibleOnEni"].GetBool();
+        m_eipVisibleOnEniHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -572,6 +583,14 @@ void Address::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "DedicatedClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eipVisibleOnEniHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipVisibleOnEni";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_eipVisibleOnEni, allocator);
     }
 
 }
@@ -1007,5 +1026,21 @@ void Address::SetDedicatedClusterId(const string& _dedicatedClusterId)
 bool Address::DedicatedClusterIdHasBeenSet() const
 {
     return m_dedicatedClusterIdHasBeenSet;
+}
+
+bool Address::GetEipVisibleOnEni() const
+{
+    return m_eipVisibleOnEni;
+}
+
+void Address::SetEipVisibleOnEni(const bool& _eipVisibleOnEni)
+{
+    m_eipVisibleOnEni = _eipVisibleOnEni;
+    m_eipVisibleOnEniHasBeenSet = true;
+}
+
+bool Address::EipVisibleOnEniHasBeenSet() const
+{
+    return m_eipVisibleOnEniHasBeenSet;
 }
 

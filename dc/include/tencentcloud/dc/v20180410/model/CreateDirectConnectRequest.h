@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取物理专线的名称。
-                     * @return DirectConnectName 物理专线的名称。
+                     * 获取<p>物理专线的名称。</p>
+                     * @return DirectConnectName <p>物理专线的名称。</p>
                      * 
                      */
                     std::string GetDirectConnectName() const;
 
                     /**
-                     * 设置物理专线的名称。
-                     * @param _directConnectName 物理专线的名称。
+                     * 设置<p>物理专线的名称。</p>
+                     * @param _directConnectName <p>物理专线的名称。</p>
                      * 
                      */
                     void SetDirectConnectName(const std::string& _directConnectName);
@@ -65,19 +65,15 @@ namespace TencentCloud
                     bool DirectConnectNameHasBeenSet() const;
 
                     /**
-                     * 获取物理专线所在的接入点。
-您可以通过调用[DescribeAccessPoints](https://cloud.tencent.com/document/product/216/34827)接口获取接入点ID。
-                     * @return AccessPointId 物理专线所在的接入点。
-您可以通过调用[DescribeAccessPoints](https://cloud.tencent.com/document/product/216/34827)接口获取接入点ID。
+                     * 获取<p>物理专线所在的接入点。<br>您可以通过调用<a href="https://cloud.tencent.com/document/product/216/34827">DescribeAccessPoints</a>接口获取接入点ID。</p>
+                     * @return AccessPointId <p>物理专线所在的接入点。<br>您可以通过调用<a href="https://cloud.tencent.com/document/product/216/34827">DescribeAccessPoints</a>接口获取接入点ID。</p>
                      * 
                      */
                     std::string GetAccessPointId() const;
 
                     /**
-                     * 设置物理专线所在的接入点。
-您可以通过调用[DescribeAccessPoints](https://cloud.tencent.com/document/product/216/34827)接口获取接入点ID。
-                     * @param _accessPointId 物理专线所在的接入点。
-您可以通过调用[DescribeAccessPoints](https://cloud.tencent.com/document/product/216/34827)接口获取接入点ID。
+                     * 设置<p>物理专线所在的接入点。<br>您可以通过调用<a href="https://cloud.tencent.com/document/product/216/34827">DescribeAccessPoints</a>接口获取接入点ID。</p>
+                     * @param _accessPointId <p>物理专线所在的接入点。<br>您可以通过调用<a href="https://cloud.tencent.com/document/product/216/34827">DescribeAccessPoints</a>接口获取接入点ID。</p>
                      * 
                      */
                     void SetAccessPointId(const std::string& _accessPointId);
@@ -90,39 +86,15 @@ namespace TencentCloud
                     bool AccessPointIdHasBeenSet() const;
 
                     /**
-                     * 获取提供接入物理专线的运营商。
-ChinaTelecom：中国电信； 
-ChinaMobile：中国移动；
-ChinaUnicom：中国联通；
- In-houseWiring：楼内线；
-ChinaOther：中国其他；
- InternationalOperator：境外其他。
-                     * @return LineOperator 提供接入物理专线的运营商。
-ChinaTelecom：中国电信； 
-ChinaMobile：中国移动；
-ChinaUnicom：中国联通；
- In-houseWiring：楼内线；
-ChinaOther：中国其他；
- InternationalOperator：境外其他。
+                     * 获取<p>提供接入物理专线的运营商。<br>ChinaTelecom：中国电信；<br>ChinaMobile：中国移动；<br>ChinaUnicom：中国联通；<br> In-houseWiring：楼内线；<br>ChinaOther：中国其他；<br> InternationalOperator：境外其他。</p>
+                     * @return LineOperator <p>提供接入物理专线的运营商。<br>ChinaTelecom：中国电信；<br>ChinaMobile：中国移动；<br>ChinaUnicom：中国联通；<br> In-houseWiring：楼内线；<br>ChinaOther：中国其他；<br> InternationalOperator：境外其他。</p>
                      * 
                      */
                     std::string GetLineOperator() const;
 
                     /**
-                     * 设置提供接入物理专线的运营商。
-ChinaTelecom：中国电信； 
-ChinaMobile：中国移动；
-ChinaUnicom：中国联通；
- In-houseWiring：楼内线；
-ChinaOther：中国其他；
- InternationalOperator：境外其他。
-                     * @param _lineOperator 提供接入物理专线的运营商。
-ChinaTelecom：中国电信； 
-ChinaMobile：中国移动；
-ChinaUnicom：中国联通；
- In-houseWiring：楼内线；
-ChinaOther：中国其他；
- InternationalOperator：境外其他。
+                     * 设置<p>提供接入物理专线的运营商。<br>ChinaTelecom：中国电信；<br>ChinaMobile：中国移动；<br>ChinaUnicom：中国联通；<br> In-houseWiring：楼内线；<br>ChinaOther：中国其他；<br> InternationalOperator：境外其他。</p>
+                     * @param _lineOperator <p>提供接入物理专线的运营商。<br>ChinaTelecom：中国电信；<br>ChinaMobile：中国移动；<br>ChinaUnicom：中国联通；<br> In-houseWiring：楼内线；<br>ChinaOther：中国其他；<br> InternationalOperator：境外其他。</p>
                      * 
                      */
                     void SetLineOperator(const std::string& _lineOperator);
@@ -135,35 +107,15 @@ ChinaOther：中国其他；
                     bool LineOperatorHasBeenSet() const;
 
                     /**
-                     * 获取物理专线接入端口类型，取值：
-100Base-T：百兆电口；
-1000Base-T（默认值）：千兆电口；
-1000Base-LX：千兆单模光口（10千米）；
-10GBase-T：万兆电口；
-10GBase-LR（默认值）：万兆单模光口（10千米）。
-                     * @return PortType 物理专线接入端口类型，取值：
-100Base-T：百兆电口；
-1000Base-T（默认值）：千兆电口；
-1000Base-LX：千兆单模光口（10千米）；
-10GBase-T：万兆电口；
-10GBase-LR（默认值）：万兆单模光口（10千米）。
+                     * 获取<p>物理专线接入端口类型，取值：<br>100Base-T：百兆电口；<br>1000Base-T（默认值）：千兆电口；<br>1000Base-LX：千兆单模光口（10千米）；<br>10GBase-T：万兆电口；<br>10GBase-LR（默认值）：万兆单模光口（10千米）。</p>
+                     * @return PortType <p>物理专线接入端口类型，取值：<br>100Base-T：百兆电口；<br>1000Base-T（默认值）：千兆电口；<br>1000Base-LX：千兆单模光口（10千米）；<br>10GBase-T：万兆电口；<br>10GBase-LR（默认值）：万兆单模光口（10千米）。</p>
                      * 
                      */
                     std::string GetPortType() const;
 
                     /**
-                     * 设置物理专线接入端口类型，取值：
-100Base-T：百兆电口；
-1000Base-T（默认值）：千兆电口；
-1000Base-LX：千兆单模光口（10千米）；
-10GBase-T：万兆电口；
-10GBase-LR（默认值）：万兆单模光口（10千米）。
-                     * @param _portType 物理专线接入端口类型，取值：
-100Base-T：百兆电口；
-1000Base-T（默认值）：千兆电口；
-1000Base-LX：千兆单模光口（10千米）；
-10GBase-T：万兆电口；
-10GBase-LR（默认值）：万兆单模光口（10千米）。
+                     * 设置<p>物理专线接入端口类型，取值：<br>100Base-T：百兆电口；<br>1000Base-T（默认值）：千兆电口；<br>1000Base-LX：千兆单模光口（10千米）；<br>10GBase-T：万兆电口；<br>10GBase-LR（默认值）：万兆单模光口（10千米）。</p>
+                     * @param _portType <p>物理专线接入端口类型，取值：<br>100Base-T：百兆电口；<br>1000Base-T（默认值）：千兆电口；<br>1000Base-LX：千兆单模光口（10千米）；<br>10GBase-T：万兆电口；<br>10GBase-LR（默认值）：万兆单模光口（10千米）。</p>
                      * 
                      */
                     void SetPortType(const std::string& _portType);
@@ -176,15 +128,15 @@ ChinaOther：中国其他；
                     bool PortTypeHasBeenSet() const;
 
                     /**
-                     * 获取运营商或者服务商为物理专线提供的电路编码。
-                     * @return CircuitCode 运营商或者服务商为物理专线提供的电路编码。
+                     * 获取<p>运营商或者服务商为物理专线提供的电路编码。</p>
+                     * @return CircuitCode <p>运营商或者服务商为物理专线提供的电路编码。</p>
                      * 
                      */
                     std::string GetCircuitCode() const;
 
                     /**
-                     * 设置运营商或者服务商为物理专线提供的电路编码。
-                     * @param _circuitCode 运营商或者服务商为物理专线提供的电路编码。
+                     * 设置<p>运营商或者服务商为物理专线提供的电路编码。</p>
+                     * @param _circuitCode <p>运营商或者服务商为物理专线提供的电路编码。</p>
                      * 
                      */
                     void SetCircuitCode(const std::string& _circuitCode);
@@ -197,15 +149,15 @@ ChinaOther：中国其他；
                     bool CircuitCodeHasBeenSet() const;
 
                     /**
-                     * 获取本地数据中心的地理位置。
-                     * @return Location 本地数据中心的地理位置。
+                     * 获取<p>本地数据中心的地理位置。</p>
+                     * @return Location <p>本地数据中心的地理位置。</p>
                      * 
                      */
                     std::string GetLocation() const;
 
                     /**
-                     * 设置本地数据中心的地理位置。
-                     * @param _location 本地数据中心的地理位置。
+                     * 设置<p>本地数据中心的地理位置。</p>
+                     * @param _location <p>本地数据中心的地理位置。</p>
                      * 
                      */
                     void SetLocation(const std::string& _location);
@@ -218,15 +170,15 @@ ChinaOther：中国其他；
                     bool LocationHasBeenSet() const;
 
                     /**
-                     * 获取物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。
-                     * @return Bandwidth 物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。
+                     * 获取<p>物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。</p>
+                     * @return Bandwidth <p>物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。</p>
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。
-                     * @param _bandwidth 物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。
+                     * 设置<p>物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。</p>
+                     * @param _bandwidth <p>物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。</p>
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -239,15 +191,15 @@ ChinaOther：中国其他；
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取冗余物理专线的ID。
-                     * @return RedundantDirectConnectId 冗余物理专线的ID。
+                     * 获取<p>冗余物理专线的ID。</p>
+                     * @return RedundantDirectConnectId <p>冗余物理专线的ID。</p>
                      * 
                      */
                     std::string GetRedundantDirectConnectId() const;
 
                     /**
-                     * 设置冗余物理专线的ID。
-                     * @param _redundantDirectConnectId 冗余物理专线的ID。
+                     * 设置<p>冗余物理专线的ID。</p>
+                     * @param _redundantDirectConnectId <p>冗余物理专线的ID。</p>
                      * 
                      */
                     void SetRedundantDirectConnectId(const std::string& _redundantDirectConnectId);
@@ -260,15 +212,15 @@ ChinaOther：中国其他；
                     bool RedundantDirectConnectIdHasBeenSet() const;
 
                     /**
-                     * 获取物理专线调试VLAN。默认开启VLAN，自动分配VLAN。
-                     * @return Vlan 物理专线调试VLAN。默认开启VLAN，自动分配VLAN。
+                     * 获取<p>物理专线调试VLAN。默认开启VLAN，自动分配VLAN。</p>
+                     * @return Vlan <p>物理专线调试VLAN。默认开启VLAN，自动分配VLAN。</p>
                      * 
                      */
                     int64_t GetVlan() const;
 
                     /**
-                     * 设置物理专线调试VLAN。默认开启VLAN，自动分配VLAN。
-                     * @param _vlan 物理专线调试VLAN。默认开启VLAN，自动分配VLAN。
+                     * 设置<p>物理专线调试VLAN。默认开启VLAN，自动分配VLAN。</p>
+                     * @param _vlan <p>物理专线调试VLAN。默认开启VLAN，自动分配VLAN。</p>
                      * 
                      */
                     void SetVlan(const int64_t& _vlan);
@@ -281,15 +233,15 @@ ChinaOther：中国其他；
                     bool VlanHasBeenSet() const;
 
                     /**
-                     * 获取物理专线调试腾讯侧互联 IP。默认自动分配。
-                     * @return TencentAddress 物理专线调试腾讯侧互联 IP。默认自动分配。
+                     * 获取<p>物理专线调试腾讯侧互联 IP。默认自动分配。</p>
+                     * @return TencentAddress <p>物理专线调试腾讯侧互联 IP。默认自动分配。</p>
                      * 
                      */
                     std::string GetTencentAddress() const;
 
                     /**
-                     * 设置物理专线调试腾讯侧互联 IP。默认自动分配。
-                     * @param _tencentAddress 物理专线调试腾讯侧互联 IP。默认自动分配。
+                     * 设置<p>物理专线调试腾讯侧互联 IP。默认自动分配。</p>
+                     * @param _tencentAddress <p>物理专线调试腾讯侧互联 IP。默认自动分配。</p>
                      * 
                      */
                     void SetTencentAddress(const std::string& _tencentAddress);
@@ -302,15 +254,15 @@ ChinaOther：中国其他；
                     bool TencentAddressHasBeenSet() const;
 
                     /**
-                     * 获取物理专线调试用户侧互联 IP。默认自动分配。
-                     * @return CustomerAddress 物理专线调试用户侧互联 IP。默认自动分配。
+                     * 获取<p>物理专线调试用户侧互联 IP。默认自动分配。</p>
+                     * @return CustomerAddress <p>物理专线调试用户侧互联 IP。默认自动分配。</p>
                      * 
                      */
                     std::string GetCustomerAddress() const;
 
                     /**
-                     * 设置物理专线调试用户侧互联 IP。默认自动分配。
-                     * @param _customerAddress 物理专线调试用户侧互联 IP。默认自动分配。
+                     * 设置<p>物理专线调试用户侧互联 IP。默认自动分配。</p>
+                     * @param _customerAddress <p>物理专线调试用户侧互联 IP。默认自动分配。</p>
                      * 
                      */
                     void SetCustomerAddress(const std::string& _customerAddress);
@@ -323,15 +275,15 @@ ChinaOther：中国其他；
                     bool CustomerAddressHasBeenSet() const;
 
                     /**
-                     * 获取物理专线申请者姓名。默认从账户体系获取。
-                     * @return CustomerName 物理专线申请者姓名。默认从账户体系获取。
+                     * 获取<p>物理专线申请者姓名。默认从账户体系获取。</p>
+                     * @return CustomerName <p>物理专线申请者姓名。默认从账户体系获取。</p>
                      * 
                      */
                     std::string GetCustomerName() const;
 
                     /**
-                     * 设置物理专线申请者姓名。默认从账户体系获取。
-                     * @param _customerName 物理专线申请者姓名。默认从账户体系获取。
+                     * 设置<p>物理专线申请者姓名。默认从账户体系获取。</p>
+                     * @param _customerName <p>物理专线申请者姓名。默认从账户体系获取。</p>
                      * 
                      */
                     void SetCustomerName(const std::string& _customerName);
@@ -344,15 +296,15 @@ ChinaOther：中国其他；
                     bool CustomerNameHasBeenSet() const;
 
                     /**
-                     * 获取物理专线申请者联系邮箱。默认从账户体系获取。
-                     * @return CustomerContactMail 物理专线申请者联系邮箱。默认从账户体系获取。
+                     * 获取<p>物理专线申请者联系邮箱。默认从账户体系获取。</p>
+                     * @return CustomerContactMail <p>物理专线申请者联系邮箱。默认从账户体系获取。</p>
                      * 
                      */
                     std::string GetCustomerContactMail() const;
 
                     /**
-                     * 设置物理专线申请者联系邮箱。默认从账户体系获取。
-                     * @param _customerContactMail 物理专线申请者联系邮箱。默认从账户体系获取。
+                     * 设置<p>物理专线申请者联系邮箱。默认从账户体系获取。</p>
+                     * @param _customerContactMail <p>物理专线申请者联系邮箱。默认从账户体系获取。</p>
                      * 
                      */
                     void SetCustomerContactMail(const std::string& _customerContactMail);
@@ -365,15 +317,15 @@ ChinaOther：中国其他；
                     bool CustomerContactMailHasBeenSet() const;
 
                     /**
-                     * 获取物理专线申请者联系号码。默认从账户体系获取。
-                     * @return CustomerContactNumber 物理专线申请者联系号码。默认从账户体系获取。
+                     * 获取<p>物理专线申请者联系号码。默认从账户体系获取。</p>
+                     * @return CustomerContactNumber <p>物理专线申请者联系号码。默认从账户体系获取。</p>
                      * 
                      */
                     std::string GetCustomerContactNumber() const;
 
                     /**
-                     * 设置物理专线申请者联系号码。默认从账户体系获取。
-                     * @param _customerContactNumber 物理专线申请者联系号码。默认从账户体系获取。
+                     * 设置<p>物理专线申请者联系号码。默认从账户体系获取。</p>
+                     * @param _customerContactNumber <p>物理专线申请者联系号码。默认从账户体系获取。</p>
                      * 
                      */
                     void SetCustomerContactNumber(const std::string& _customerContactNumber);
@@ -386,15 +338,15 @@ ChinaOther：中国其他；
                     bool CustomerContactNumberHasBeenSet() const;
 
                     /**
-                     * 获取报障联系人。
-                     * @return FaultReportContactPerson 报障联系人。
+                     * 获取<p>报障联系人。</p>
+                     * @return FaultReportContactPerson <p>报障联系人。</p>
                      * 
                      */
                     std::string GetFaultReportContactPerson() const;
 
                     /**
-                     * 设置报障联系人。
-                     * @param _faultReportContactPerson 报障联系人。
+                     * 设置<p>报障联系人。</p>
+                     * @param _faultReportContactPerson <p>报障联系人。</p>
                      * 
                      */
                     void SetFaultReportContactPerson(const std::string& _faultReportContactPerson);
@@ -407,15 +359,15 @@ ChinaOther：中国其他；
                     bool FaultReportContactPersonHasBeenSet() const;
 
                     /**
-                     * 获取报障联系电话。
-                     * @return FaultReportContactNumber 报障联系电话。
+                     * 获取<p>报障联系电话。</p>
+                     * @return FaultReportContactNumber <p>报障联系电话。</p>
                      * 
                      */
                     std::string GetFaultReportContactNumber() const;
 
                     /**
-                     * 设置报障联系电话。
-                     * @param _faultReportContactNumber 报障联系电话。
+                     * 设置<p>报障联系电话。</p>
+                     * @param _faultReportContactNumber <p>报障联系电话。</p>
                      * 
                      */
                     void SetFaultReportContactNumber(const std::string& _faultReportContactNumber);
@@ -428,15 +380,15 @@ ChinaOther：中国其他；
                     bool FaultReportContactNumberHasBeenSet() const;
 
                     /**
-                     * 获取报障联系邮箱。
-                     * @return FaultReportContactEmail 报障联系邮箱。
+                     * 获取<p>报障联系邮箱。</p>
+                     * @return FaultReportContactEmail <p>报障联系邮箱。</p>
                      * 
                      */
                     std::string GetFaultReportContactEmail() const;
 
                     /**
-                     * 设置报障联系邮箱。
-                     * @param _faultReportContactEmail 报障联系邮箱。
+                     * 设置<p>报障联系邮箱。</p>
+                     * @param _faultReportContactEmail <p>报障联系邮箱。</p>
                      * 
                      */
                     void SetFaultReportContactEmail(const std::string& _faultReportContactEmail);
@@ -449,15 +401,15 @@ ChinaOther：中国其他；
                     bool FaultReportContactEmailHasBeenSet() const;
 
                     /**
-                     * 获取物理专线申请者是否签署了用户使用协议。默认已签署。
-                     * @return SignLaw 物理专线申请者是否签署了用户使用协议。默认已签署。
+                     * 获取<p>物理专线申请者是否签署了用户使用协议。默认已签署。</p>
+                     * @return SignLaw <p>物理专线申请者是否签署了用户使用协议。默认已签署。</p>
                      * 
                      */
                     bool GetSignLaw() const;
 
                     /**
-                     * 设置物理专线申请者是否签署了用户使用协议。默认已签署。
-                     * @param _signLaw 物理专线申请者是否签署了用户使用协议。默认已签署。
+                     * 设置<p>物理专线申请者是否签署了用户使用协议。默认已签署。</p>
+                     * @param _signLaw <p>物理专线申请者是否签署了用户使用协议。默认已签署。</p>
                      * 
                      */
                     void SetSignLaw(const bool& _signLaw);
@@ -470,15 +422,15 @@ ChinaOther：中国其他；
                     bool SignLawHasBeenSet() const;
 
                     /**
-                     * 获取标签键值对
-                     * @return Tags 标签键值对
+                     * 获取<p>标签键值对</p>
+                     * @return Tags <p>标签键值对</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签键值对
-                     * @param _tags 标签键值对
+                     * 设置<p>标签键值对</p>
+                     * @param _tags <p>标签键值对</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -491,15 +443,15 @@ ChinaOther：中国其他；
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取是否MACsec需求
-                     * @return IsMacSec 是否MACsec需求
+                     * 获取<p>是否MACsec需求</p>
+                     * @return IsMacSec <p>是否MACsec需求</p>
                      * 
                      */
                     bool GetIsMacSec() const;
 
                     /**
-                     * 设置是否MACsec需求
-                     * @param _isMacSec 是否MACsec需求
+                     * 设置<p>是否MACsec需求</p>
+                     * @param _isMacSec <p>是否MACsec需求</p>
                      * 
                      */
                     void SetIsMacSec(const bool& _isMacSec);
@@ -514,133 +466,121 @@ ChinaOther：中国其他；
                 private:
 
                     /**
-                     * 物理专线的名称。
+                     * <p>物理专线的名称。</p>
                      */
                     std::string m_directConnectName;
                     bool m_directConnectNameHasBeenSet;
 
                     /**
-                     * 物理专线所在的接入点。
-您可以通过调用[DescribeAccessPoints](https://cloud.tencent.com/document/product/216/34827)接口获取接入点ID。
+                     * <p>物理专线所在的接入点。<br>您可以通过调用<a href="https://cloud.tencent.com/document/product/216/34827">DescribeAccessPoints</a>接口获取接入点ID。</p>
                      */
                     std::string m_accessPointId;
                     bool m_accessPointIdHasBeenSet;
 
                     /**
-                     * 提供接入物理专线的运营商。
-ChinaTelecom：中国电信； 
-ChinaMobile：中国移动；
-ChinaUnicom：中国联通；
- In-houseWiring：楼内线；
-ChinaOther：中国其他；
- InternationalOperator：境外其他。
+                     * <p>提供接入物理专线的运营商。<br>ChinaTelecom：中国电信；<br>ChinaMobile：中国移动；<br>ChinaUnicom：中国联通；<br> In-houseWiring：楼内线；<br>ChinaOther：中国其他；<br> InternationalOperator：境外其他。</p>
                      */
                     std::string m_lineOperator;
                     bool m_lineOperatorHasBeenSet;
 
                     /**
-                     * 物理专线接入端口类型，取值：
-100Base-T：百兆电口；
-1000Base-T（默认值）：千兆电口；
-1000Base-LX：千兆单模光口（10千米）；
-10GBase-T：万兆电口；
-10GBase-LR（默认值）：万兆单模光口（10千米）。
+                     * <p>物理专线接入端口类型，取值：<br>100Base-T：百兆电口；<br>1000Base-T（默认值）：千兆电口；<br>1000Base-LX：千兆单模光口（10千米）；<br>10GBase-T：万兆电口；<br>10GBase-LR（默认值）：万兆单模光口（10千米）。</p>
                      */
                     std::string m_portType;
                     bool m_portTypeHasBeenSet;
 
                     /**
-                     * 运营商或者服务商为物理专线提供的电路编码。
+                     * <p>运营商或者服务商为物理专线提供的电路编码。</p>
                      */
                     std::string m_circuitCode;
                     bool m_circuitCodeHasBeenSet;
 
                     /**
-                     * 本地数据中心的地理位置。
+                     * <p>本地数据中心的地理位置。</p>
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
 
                     /**
-                     * 物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。
+                     * <p>物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。</p>
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 冗余物理专线的ID。
+                     * <p>冗余物理专线的ID。</p>
                      */
                     std::string m_redundantDirectConnectId;
                     bool m_redundantDirectConnectIdHasBeenSet;
 
                     /**
-                     * 物理专线调试VLAN。默认开启VLAN，自动分配VLAN。
+                     * <p>物理专线调试VLAN。默认开启VLAN，自动分配VLAN。</p>
                      */
                     int64_t m_vlan;
                     bool m_vlanHasBeenSet;
 
                     /**
-                     * 物理专线调试腾讯侧互联 IP。默认自动分配。
+                     * <p>物理专线调试腾讯侧互联 IP。默认自动分配。</p>
                      */
                     std::string m_tencentAddress;
                     bool m_tencentAddressHasBeenSet;
 
                     /**
-                     * 物理专线调试用户侧互联 IP。默认自动分配。
+                     * <p>物理专线调试用户侧互联 IP。默认自动分配。</p>
                      */
                     std::string m_customerAddress;
                     bool m_customerAddressHasBeenSet;
 
                     /**
-                     * 物理专线申请者姓名。默认从账户体系获取。
+                     * <p>物理专线申请者姓名。默认从账户体系获取。</p>
                      */
                     std::string m_customerName;
                     bool m_customerNameHasBeenSet;
 
                     /**
-                     * 物理专线申请者联系邮箱。默认从账户体系获取。
+                     * <p>物理专线申请者联系邮箱。默认从账户体系获取。</p>
                      */
                     std::string m_customerContactMail;
                     bool m_customerContactMailHasBeenSet;
 
                     /**
-                     * 物理专线申请者联系号码。默认从账户体系获取。
+                     * <p>物理专线申请者联系号码。默认从账户体系获取。</p>
                      */
                     std::string m_customerContactNumber;
                     bool m_customerContactNumberHasBeenSet;
 
                     /**
-                     * 报障联系人。
+                     * <p>报障联系人。</p>
                      */
                     std::string m_faultReportContactPerson;
                     bool m_faultReportContactPersonHasBeenSet;
 
                     /**
-                     * 报障联系电话。
+                     * <p>报障联系电话。</p>
                      */
                     std::string m_faultReportContactNumber;
                     bool m_faultReportContactNumberHasBeenSet;
 
                     /**
-                     * 报障联系邮箱。
+                     * <p>报障联系邮箱。</p>
                      */
                     std::string m_faultReportContactEmail;
                     bool m_faultReportContactEmailHasBeenSet;
 
                     /**
-                     * 物理专线申请者是否签署了用户使用协议。默认已签署。
+                     * <p>物理专线申请者是否签署了用户使用协议。默认已签署。</p>
                      */
                     bool m_signLaw;
                     bool m_signLawHasBeenSet;
 
                     /**
-                     * 标签键值对
+                     * <p>标签键值对</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 是否MACsec需求
+                     * <p>是否MACsec需求</p>
                      */
                     bool m_isMacSec;
                     bool m_isMacSecHasBeenSet;

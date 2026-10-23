@@ -148,6 +148,111 @@ namespace TencentCloud
                      */
                     bool EndpointPathHasBeenSet() const;
 
+                    /**
+                     * 获取<p>所属厂商</p>
+                     * @return ModelProvider <p>所属厂商</p>
+                     * 
+                     */
+                    std::string GetModelProvider() const;
+
+                    /**
+                     * 设置<p>所属厂商</p>
+                     * @param _modelProvider <p>所属厂商</p>
+                     * 
+                     */
+                    void SetModelProvider(const std::string& _modelProvider);
+
+                    /**
+                     * 判断参数 ModelProvider 是否已赋值
+                     * @return ModelProvider 是否已赋值
+                     * 
+                     */
+                    bool ModelProviderHasBeenSet() const;
+
+                    /**
+                     * 获取<p>协议</p>
+                     * @return Protocol <p>协议</p>
+                     * 
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置<p>协议</p>
+                     * @param _protocol <p>协议</p>
+                     * 
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     * 
+                     */
+                    bool ProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取<p>所使用的CMR 私网管道 ID</p>
+                     * @return CMRPrivateNetworkTunnelId <p>所使用的CMR 私网管道 ID</p>
+                     * 
+                     */
+                    std::string GetCMRPrivateNetworkTunnelId() const;
+
+                    /**
+                     * 设置<p>所使用的CMR 私网管道 ID</p>
+                     * @param _cMRPrivateNetworkTunnelId <p>所使用的CMR 私网管道 ID</p>
+                     * 
+                     */
+                    void SetCMRPrivateNetworkTunnelId(const std::string& _cMRPrivateNetworkTunnelId);
+
+                    /**
+                     * 判断参数 CMRPrivateNetworkTunnelId 是否已赋值
+                     * @return CMRPrivateNetworkTunnelId 是否已赋值
+                     * 
+                     */
+                    bool CMRPrivateNetworkTunnelIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>携带的Host Header</p>
+                     * @return HostHeader <p>携带的Host Header</p>
+                     * 
+                     */
+                    std::string GetHostHeader() const;
+
+                    /**
+                     * 设置<p>携带的Host Header</p>
+                     * @param _hostHeader <p>携带的Host Header</p>
+                     * 
+                     */
+                    void SetHostHeader(const std::string& _hostHeader);
+
+                    /**
+                     * 判断参数 HostHeader 是否已赋值
+                     * @return HostHeader 是否已赋值
+                     * 
+                     */
+                    bool HostHeaderHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否需要进行ssl校验</p>
+                     * @return VerifySSL <p>是否需要进行ssl校验</p>
+                     * 
+                     */
+                    bool GetVerifySSL() const;
+
+                    /**
+                     * 设置<p>是否需要进行ssl校验</p>
+                     * @param _verifySSL <p>是否需要进行ssl校验</p>
+                     * 
+                     */
+                    void SetVerifySSL(const bool& _verifySSL);
+
+                    /**
+                     * 判断参数 VerifySSL 是否已赋值
+                     * @return VerifySSL 是否已赋值
+                     * 
+                     */
+                    bool VerifySSLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +284,36 @@ namespace TencentCloud
                      */
                     std::string m_endpointPath;
                     bool m_endpointPathHasBeenSet;
+
+                    /**
+                     * <p>所属厂商</p>
+                     */
+                    std::string m_modelProvider;
+                    bool m_modelProviderHasBeenSet;
+
+                    /**
+                     * <p>协议</p>
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
+
+                    /**
+                     * <p>所使用的CMR 私网管道 ID</p>
+                     */
+                    std::string m_cMRPrivateNetworkTunnelId;
+                    bool m_cMRPrivateNetworkTunnelIdHasBeenSet;
+
+                    /**
+                     * <p>携带的Host Header</p>
+                     */
+                    std::string m_hostHeader;
+                    bool m_hostHeaderHasBeenSet;
+
+                    /**
+                     * <p>是否需要进行ssl校验</p>
+                     */
+                    bool m_verifySSL;
+                    bool m_verifySSLHasBeenSet;
 
                 };
             }

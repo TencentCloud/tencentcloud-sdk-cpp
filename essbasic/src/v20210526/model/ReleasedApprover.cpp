@@ -33,7 +33,8 @@ ReleasedApprover::ReleasedApprover() :
     m_openIdHasBeenSet(false),
     m_approverSignComponentTypeHasBeenSet(false),
     m_approverSignRoleHasBeenSet(false),
-    m_approverSignSealIdHasBeenSet(false)
+    m_approverSignSealIdHasBeenSet(false),
+    m_pinCodeHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome ReleasedApprover::Deserialize(const rapidjson::Value &value)
         m_approverSignSealIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PinCode") && !value["PinCode"].IsNull())
+    {
+        if (!value["PinCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleasedApprover.PinCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pinCode = string(value["PinCode"].GetString());
+        m_pinCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void ReleasedApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ApproverSignSealId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverSignSealId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pinCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PinCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pinCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void ReleasedApprover::SetApproverSignSealId(const string& _approverSignSealId)
 bool ReleasedApprover::ApproverSignSealIdHasBeenSet() const
 {
     return m_approverSignSealIdHasBeenSet;
+}
+
+string ReleasedApprover::GetPinCode() const
+{
+    return m_pinCode;
+}
+
+void ReleasedApprover::SetPinCode(const string& _pinCode)
+{
+    m_pinCode = _pinCode;
+    m_pinCodeHasBeenSet = true;
+}
+
+bool ReleasedApprover::PinCodeHasBeenSet() const
+{
+    return m_pinCodeHasBeenSet;
 }
 

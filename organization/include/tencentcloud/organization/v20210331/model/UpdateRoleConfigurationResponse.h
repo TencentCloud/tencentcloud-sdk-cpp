@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取权限配置详情
-                     * @return RoleConfigurationInfo 权限配置详情
+                     * 获取<p>权限配置详情</p>
+                     * @return RoleConfigurationInfo <p>权限配置详情</p>
                      * 
                      */
                     RoleConfiguration GetRoleConfigurationInfo() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 权限配置详情
+                     * <p>权限配置详情</p>
                      */
                     RoleConfiguration m_roleConfigurationInfo;
                     bool m_roleConfigurationInfoHasBeenSet;

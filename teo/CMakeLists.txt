@@ -229,6 +229,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyL4ProxyRulesRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeRulesSettingRequest.h
   include/tencentcloud/teo/v20220901/model/EntityStatus.h
+  include/tencentcloud/teo/v20220901/model/StatisticsRecord.h
   include/tencentcloud/teo/v20220901/model/SmartRoutingParameters.h
   include/tencentcloud/teo/v20220901/model/DisableOriginACLResponse.h
   include/tencentcloud/teo/v20220901/model/CreateFunctionRuleResponse.h
@@ -313,6 +314,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CustomizedHeader.h
   include/tencentcloud/teo/v20220901/model/ModifyDDoSProtectionResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeFunctionsRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeLogAnalysisStatisticsResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyDnsRecordsStatusRequest.h
   include/tencentcloud/teo/v20220901/model/ManagedRuleAutoUpdate.h
   include/tencentcloud/teo/v20220901/model/CustomRule.h
@@ -593,6 +595,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DeleteFunctionRulesRequest.h
   include/tencentcloud/teo/v20220901/model/CreateInferenceDomainRequest.h
   include/tencentcloud/teo/v20220901/model/NoCache.h
+  include/tencentcloud/teo/v20220901/model/DescribeLogAnalysisStatisticsRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyFunctionRequest.h
   include/tencentcloud/teo/v20220901/model/ManagedRuleGroup.h
   include/tencentcloud/teo/v20220901/model/DummyParseZoneFullConfigResponse.h
@@ -1145,6 +1148,7 @@ set(teo_src
   src/v20220901/model/ModifyL4ProxyRulesRequest.cpp
   src/v20220901/model/DescribeRulesSettingRequest.cpp
   src/v20220901/model/EntityStatus.cpp
+  src/v20220901/model/StatisticsRecord.cpp
   src/v20220901/model/SmartRoutingParameters.cpp
   src/v20220901/model/DisableOriginACLResponse.cpp
   src/v20220901/model/CreateFunctionRuleResponse.cpp
@@ -1229,6 +1233,7 @@ set(teo_src
   src/v20220901/model/CustomizedHeader.cpp
   src/v20220901/model/ModifyDDoSProtectionResponse.cpp
   src/v20220901/model/DescribeFunctionsRequest.cpp
+  src/v20220901/model/DescribeLogAnalysisStatisticsResponse.cpp
   src/v20220901/model/ModifyDnsRecordsStatusRequest.cpp
   src/v20220901/model/ManagedRuleAutoUpdate.cpp
   src/v20220901/model/CustomRule.cpp
@@ -1509,6 +1514,7 @@ set(teo_src
   src/v20220901/model/DeleteFunctionRulesRequest.cpp
   src/v20220901/model/CreateInferenceDomainRequest.cpp
   src/v20220901/model/NoCache.cpp
+  src/v20220901/model/DescribeLogAnalysisStatisticsRequest.cpp
   src/v20220901/model/ModifyFunctionRequest.cpp
   src/v20220901/model/ManagedRuleGroup.cpp
   src/v20220901/model/DummyParseZoneFullConfigResponse.cpp

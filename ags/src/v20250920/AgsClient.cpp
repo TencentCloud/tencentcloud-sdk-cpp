@@ -1890,6 +1890,56 @@ AgsClient::DescribeSandboxInstanceListOutcomeCallable AgsClient::DescribeSandbox
     return prom->get_future();
 }
 
+AgsClient::DescribeSandboxInstancesOutcome AgsClient::DescribeSandboxInstances(const DescribeSandboxInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSandboxInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSandboxInstancesResponse rsp = DescribeSandboxInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSandboxInstancesOutcome(rsp);
+        else
+            return DescribeSandboxInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSandboxInstancesOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DescribeSandboxInstancesAsync(const DescribeSandboxInstancesRequest& request, const DescribeSandboxInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSandboxInstancesRequest&;
+    using Resp = DescribeSandboxInstancesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSandboxInstances", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DescribeSandboxInstancesOutcomeCallable AgsClient::DescribeSandboxInstancesCallable(const DescribeSandboxInstancesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSandboxInstancesOutcome>>();
+    DescribeSandboxInstancesAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DescribeSandboxInstancesRequest&,
+        DescribeSandboxInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AgsClient::DescribeSandboxSnapshotListOutcome AgsClient::DescribeSandboxSnapshotList(const DescribeSandboxSnapshotListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSandboxSnapshotList");

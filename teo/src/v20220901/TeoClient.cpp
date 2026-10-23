@@ -6240,6 +6240,56 @@ TeoClient::DescribeLogAnalysisDownloadTasksOutcomeCallable TeoClient::DescribeLo
     return prom->get_future();
 }
 
+TeoClient::DescribeLogAnalysisStatisticsOutcome TeoClient::DescribeLogAnalysisStatistics(const DescribeLogAnalysisStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogAnalysisStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogAnalysisStatisticsResponse rsp = DescribeLogAnalysisStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogAnalysisStatisticsOutcome(rsp);
+        else
+            return DescribeLogAnalysisStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogAnalysisStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeLogAnalysisStatisticsAsync(const DescribeLogAnalysisStatisticsRequest& request, const DescribeLogAnalysisStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeLogAnalysisStatisticsRequest&;
+    using Resp = DescribeLogAnalysisStatisticsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeLogAnalysisStatistics", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeLogAnalysisStatisticsOutcomeCallable TeoClient::DescribeLogAnalysisStatisticsCallable(const DescribeLogAnalysisStatisticsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeLogAnalysisStatisticsOutcome>>();
+    DescribeLogAnalysisStatisticsAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeLogAnalysisStatisticsRequest&,
+        DescribeLogAnalysisStatisticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::DescribeMultiPathGatewayOutcome TeoClient::DescribeMultiPathGateway(const DescribeMultiPathGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMultiPathGateway");

@@ -47,7 +47,8 @@ ApproverInfo::ApproverInfo() :
     m_signEndpointsHasBeenSet(false),
     m_registerInfoHasBeenSet(false),
     m_notSaveContactHasBeenSet(false),
-    m_approverEmailHasBeenSet(false)
+    m_approverEmailHasBeenSet(false),
+    m_pinCodeHasBeenSet(false)
 {
 }
 
@@ -382,6 +383,16 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_approverEmailHasBeenSet = true;
     }
 
+    if (value.HasMember("PinCode") && !value["PinCode"].IsNull())
+    {
+        if (!value["PinCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.PinCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pinCode = string(value["PinCode"].GetString());
+        m_pinCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -646,6 +657,14 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ApproverEmail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverEmail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pinCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PinCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pinCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1081,5 +1100,21 @@ void ApproverInfo::SetApproverEmail(const string& _approverEmail)
 bool ApproverInfo::ApproverEmailHasBeenSet() const
 {
     return m_approverEmailHasBeenSet;
+}
+
+string ApproverInfo::GetPinCode() const
+{
+    return m_pinCode;
+}
+
+void ApproverInfo::SetPinCode(const string& _pinCode)
+{
+    m_pinCode = _pinCode;
+    m_pinCodeHasBeenSet = true;
+}
+
+bool ApproverInfo::PinCodeHasBeenSet() const
+{
+    return m_pinCodeHasBeenSet;
 }
 

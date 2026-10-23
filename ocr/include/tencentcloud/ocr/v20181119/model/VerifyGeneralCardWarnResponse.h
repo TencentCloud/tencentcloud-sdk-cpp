@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralCardWarnInfo.h>
+#include <tencentcloud/ocr/v20181119/model/ReasoningResult.h>
 
 
 namespace TencentCloud
@@ -240,6 +241,34 @@ namespace TencentCloud
                      */
                     bool WatermarkContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>VLM 推理结果。仅当请求中传入 ReasoningPrompt 时返回，否则不返回此字段。</p>
+                     * @return ReasoningResult <p>VLM 推理结果。仅当请求中传入 ReasoningPrompt 时返回，否则不返回此字段。</p>
+                     * 
+                     */
+                    ReasoningResult GetReasoningResult() const;
+
+                    /**
+                     * 判断参数 ReasoningResult 是否已赋值
+                     * @return ReasoningResult 是否已赋值
+                     * 
+                     */
+                    bool ReasoningResultHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否关键字段被篡改（用于排除卡证背景等非字段区域篡改），目前支持的卡证类型：行驶证、驾驶证。<br>枚举值：<br>是<br>否<br>暂不支持</p>
+                     * @return IsKeyFieldTamper <p>是否关键字段被篡改（用于排除卡证背景等非字段区域篡改），目前支持的卡证类型：行驶证、驾驶证。<br>枚举值：<br>是<br>否<br>暂不支持</p>
+                     * 
+                     */
+                    std::string GetIsKeyFieldTamper() const;
+
+                    /**
+                     * 判断参数 IsKeyFieldTamper 是否已赋值
+                     * @return IsKeyFieldTamper 是否已赋值
+                     * 
+                     */
+                    bool IsKeyFieldTamperHasBeenSet() const;
+
                 private:
 
                     /**
@@ -325,6 +354,18 @@ namespace TencentCloud
                      */
                     std::string m_watermarkContent;
                     bool m_watermarkContentHasBeenSet;
+
+                    /**
+                     * <p>VLM 推理结果。仅当请求中传入 ReasoningPrompt 时返回，否则不返回此字段。</p>
+                     */
+                    ReasoningResult m_reasoningResult;
+                    bool m_reasoningResultHasBeenSet;
+
+                    /**
+                     * <p>是否关键字段被篡改（用于排除卡证背景等非字段区域篡改），目前支持的卡证类型：行驶证、驾驶证。<br>枚举值：<br>是<br>否<br>暂不支持</p>
+                     */
+                    std::string m_isKeyFieldTamper;
+                    bool m_isKeyFieldTamperHasBeenSet;
 
                 };
             }

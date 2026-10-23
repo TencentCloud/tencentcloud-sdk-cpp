@@ -31,7 +31,8 @@ ChannelCreateReleaseFlowRequest::ChannelCreateReleaseFlowRequest() :
     m_organizationHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_deadlineHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_flowNameHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,14 @@ string ChannelCreateReleaseFlowRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -275,6 +284,22 @@ void ChannelCreateReleaseFlowRequest::SetUserData(const string& _userData)
 bool ChannelCreateReleaseFlowRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+string ChannelCreateReleaseFlowRequest::GetFlowName() const
+{
+    return m_flowName;
+}
+
+void ChannelCreateReleaseFlowRequest::SetFlowName(const string& _flowName)
+{
+    m_flowName = _flowName;
+    m_flowNameHasBeenSet = true;
+}
+
+bool ChannelCreateReleaseFlowRequest::FlowNameHasBeenSet() const
+{
+    return m_flowNameHasBeenSet;
 }
 
 

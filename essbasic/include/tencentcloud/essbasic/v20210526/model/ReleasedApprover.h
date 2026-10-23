@@ -78,15 +78,15 @@ namespace TencentCloud
                     bool ApproverNumberHasBeenSet() const;
 
                     /**
-                     * 获取<p>指定签署人类型，目前支持<ul><li> <strong>ORGANIZATION</strong>：企业(默认值)</li><li> <strong>ENTERPRISESERVER</strong>：企业“授权签”</li></ul></p>
-                     * @return ApproverType <p>指定签署人类型，目前支持<ul><li> <strong>ORGANIZATION</strong>：企业(默认值)</li><li> <strong>ENTERPRISESERVER</strong>：企业“授权签”</li></ul></p>
+                     * 获取<p>在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:  <ul>          <li> <strong>ORGANIZATION</strong> :企业/企业员工（企业签署方或模板发起时的企业“授权签”）</li>         <li> <strong>ENTERPRISESERVER</strong> :本方企业“授权签”</li> <li> <strong>ORGANIZATION_PIN_CODE_SIGN</strong> :本方企业 PIN 码授权，注：<code>使用前需先完成员工PIN码授权</code></li>          </ul></p>
+                     * @return ApproverType <p>在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:  <ul>          <li> <strong>ORGANIZATION</strong> :企业/企业员工（企业签署方或模板发起时的企业“授权签”）</li>         <li> <strong>ENTERPRISESERVER</strong> :本方企业“授权签”</li> <li> <strong>ORGANIZATION_PIN_CODE_SIGN</strong> :本方企业 PIN 码授权，注：<code>使用前需先完成员工PIN码授权</code></li>          </ul></p>
                      * 
                      */
                     std::string GetApproverType() const;
 
                     /**
-                     * 设置<p>指定签署人类型，目前支持<ul><li> <strong>ORGANIZATION</strong>：企业(默认值)</li><li> <strong>ENTERPRISESERVER</strong>：企业“授权签”</li></ul></p>
-                     * @param _approverType <p>指定签署人类型，目前支持<ul><li> <strong>ORGANIZATION</strong>：企业(默认值)</li><li> <strong>ENTERPRISESERVER</strong>：企业“授权签”</li></ul></p>
+                     * 设置<p>在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:  <ul>          <li> <strong>ORGANIZATION</strong> :企业/企业员工（企业签署方或模板发起时的企业“授权签”）</li>         <li> <strong>ENTERPRISESERVER</strong> :本方企业“授权签”</li> <li> <strong>ORGANIZATION_PIN_CODE_SIGN</strong> :本方企业 PIN 码授权，注：<code>使用前需先完成员工PIN码授权</code></li>          </ul></p>
+                     * @param _approverType <p>在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:  <ul>          <li> <strong>ORGANIZATION</strong> :企业/企业员工（企业签署方或模板发起时的企业“授权签”）</li>         <li> <strong>ENTERPRISESERVER</strong> :本方企业“授权签”</li> <li> <strong>ORGANIZATION_PIN_CODE_SIGN</strong> :本方企业 PIN 码授权，注：<code>使用前需先完成员工PIN码授权</code></li>          </ul></p>
                      * 
                      */
                     void SetApproverType(const std::string& _approverType);
@@ -329,6 +329,27 @@ namespace TencentCloud
                      */
                     bool ApproverSignSealIdHasBeenSet() const;
 
+                    /**
+                     * 获取<h2>PinCode计算规则</h2>  <p>当使用 PIN 码授权签进行身份验证时，需要按以下规则生成 <code>PinCode</code>。</p>  <h3 id="计算公式">计算公式</h3>  <pre><code class="language-text">PinCode = HMAC_SHA256(SHA256(PIN 码)，合同名称) </code></pre>  <p>示例： PinCode = HMAC_SHA256(SHA256("v0ZIwH8lRDLsWRHJWJT7PR05FoXdl4S2")，"给张三的入职合同")</p>  <table> <thead> <tr> <th>参数</th> <th>说明</th> </tr> </thead>  <tbody> <tr> <td><strong>PIN 码</strong></td> <td>本方企业员工PIN 码</td> </tr>  <tr> <td><strong>合同名称</strong></td> <td>签署流程名称，即FlowName，<font color="#FF0000">需去除合同名称前后空格后再进行计算</font></td> </tr>   </tbody> </table>
+                     * @return PinCode <h2>PinCode计算规则</h2>  <p>当使用 PIN 码授权签进行身份验证时，需要按以下规则生成 <code>PinCode</code>。</p>  <h3 id="计算公式">计算公式</h3>  <pre><code class="language-text">PinCode = HMAC_SHA256(SHA256(PIN 码)，合同名称) </code></pre>  <p>示例： PinCode = HMAC_SHA256(SHA256("v0ZIwH8lRDLsWRHJWJT7PR05FoXdl4S2")，"给张三的入职合同")</p>  <table> <thead> <tr> <th>参数</th> <th>说明</th> </tr> </thead>  <tbody> <tr> <td><strong>PIN 码</strong></td> <td>本方企业员工PIN 码</td> </tr>  <tr> <td><strong>合同名称</strong></td> <td>签署流程名称，即FlowName，<font color="#FF0000">需去除合同名称前后空格后再进行计算</font></td> </tr>   </tbody> </table>
+                     * 
+                     */
+                    std::string GetPinCode() const;
+
+                    /**
+                     * 设置<h2>PinCode计算规则</h2>  <p>当使用 PIN 码授权签进行身份验证时，需要按以下规则生成 <code>PinCode</code>。</p>  <h3 id="计算公式">计算公式</h3>  <pre><code class="language-text">PinCode = HMAC_SHA256(SHA256(PIN 码)，合同名称) </code></pre>  <p>示例： PinCode = HMAC_SHA256(SHA256("v0ZIwH8lRDLsWRHJWJT7PR05FoXdl4S2")，"给张三的入职合同")</p>  <table> <thead> <tr> <th>参数</th> <th>说明</th> </tr> </thead>  <tbody> <tr> <td><strong>PIN 码</strong></td> <td>本方企业员工PIN 码</td> </tr>  <tr> <td><strong>合同名称</strong></td> <td>签署流程名称，即FlowName，<font color="#FF0000">需去除合同名称前后空格后再进行计算</font></td> </tr>   </tbody> </table>
+                     * @param _pinCode <h2>PinCode计算规则</h2>  <p>当使用 PIN 码授权签进行身份验证时，需要按以下规则生成 <code>PinCode</code>。</p>  <h3 id="计算公式">计算公式</h3>  <pre><code class="language-text">PinCode = HMAC_SHA256(SHA256(PIN 码)，合同名称) </code></pre>  <p>示例： PinCode = HMAC_SHA256(SHA256("v0ZIwH8lRDLsWRHJWJT7PR05FoXdl4S2")，"给张三的入职合同")</p>  <table> <thead> <tr> <th>参数</th> <th>说明</th> </tr> </thead>  <tbody> <tr> <td><strong>PIN 码</strong></td> <td>本方企业员工PIN 码</td> </tr>  <tr> <td><strong>合同名称</strong></td> <td>签署流程名称，即FlowName，<font color="#FF0000">需去除合同名称前后空格后再进行计算</font></td> </tr>   </tbody> </table>
+                     * 
+                     */
+                    void SetPinCode(const std::string& _pinCode);
+
+                    /**
+                     * 判断参数 PinCode 是否已赋值
+                     * @return PinCode 是否已赋值
+                     * 
+                     */
+                    bool PinCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -338,7 +359,7 @@ namespace TencentCloud
                     bool m_approverNumberHasBeenSet;
 
                     /**
-                     * <p>指定签署人类型，目前支持<ul><li> <strong>ORGANIZATION</strong>：企业(默认值)</li><li> <strong>ENTERPRISESERVER</strong>：企业“授权签”</li></ul></p>
+                     * <p>在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:  <ul>          <li> <strong>ORGANIZATION</strong> :企业/企业员工（企业签署方或模板发起时的企业“授权签”）</li>         <li> <strong>ENTERPRISESERVER</strong> :本方企业“授权签”</li> <li> <strong>ORGANIZATION_PIN_CODE_SIGN</strong> :本方企业 PIN 码授权，注：<code>使用前需先完成员工PIN码授权</code></li>          </ul></p>
                      */
                     std::string m_approverType;
                     bool m_approverTypeHasBeenSet;
@@ -408,6 +429,12 @@ namespace TencentCloud
                      */
                     std::string m_approverSignSealId;
                     bool m_approverSignSealIdHasBeenSet;
+
+                    /**
+                     * <h2>PinCode计算规则</h2>  <p>当使用 PIN 码授权签进行身份验证时，需要按以下规则生成 <code>PinCode</code>。</p>  <h3 id="计算公式">计算公式</h3>  <pre><code class="language-text">PinCode = HMAC_SHA256(SHA256(PIN 码)，合同名称) </code></pre>  <p>示例： PinCode = HMAC_SHA256(SHA256("v0ZIwH8lRDLsWRHJWJT7PR05FoXdl4S2")，"给张三的入职合同")</p>  <table> <thead> <tr> <th>参数</th> <th>说明</th> </tr> </thead>  <tbody> <tr> <td><strong>PIN 码</strong></td> <td>本方企业员工PIN 码</td> </tr>  <tr> <td><strong>合同名称</strong></td> <td>签署流程名称，即FlowName，<font color="#FF0000">需去除合同名称前后空格后再进行计算</font></td> </tr>   </tbody> </table>
+                     */
+                    std::string m_pinCode;
+                    bool m_pinCodeHasBeenSet;
 
                 };
             }
