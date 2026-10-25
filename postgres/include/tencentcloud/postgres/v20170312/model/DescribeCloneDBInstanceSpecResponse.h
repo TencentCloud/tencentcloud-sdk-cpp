@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可购买的最小规格码。
-                     * @return MinSpecCode 可购买的最小规格码。
+                     * 获取<p>可购买的最小规格码。</p>
+                     * @return MinSpecCode <p>可购买的最小规格码。</p>
                      * 
                      */
                     std::string GetMinSpecCode() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool MinSpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取可购买的最小磁盘容量，单位GB。
-                     * @return MinStorage 可购买的最小磁盘容量，单位GB。
+                     * 获取<p>可购买的最小磁盘容量，单位GB。</p>
+                     * @return MinStorage <p>可购买的最小磁盘容量，单位GB。</p>
                      * 
                      */
                     int64_t GetMinStorage() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可购买的最小规格码。
+                     * <p>可购买的最小规格码。</p>
                      */
                     std::string m_minSpecCode;
                     bool m_minSpecCodeHasBeenSet;
 
                     /**
-                     * 可购买的最小磁盘容量，单位GB。
+                     * <p>可购买的最小磁盘容量，单位GB。</p>
                      */
                     int64_t m_minStorage;
                     bool m_minStorageHasBeenSet;

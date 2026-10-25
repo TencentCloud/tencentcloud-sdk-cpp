@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * MongoDB 产品表级（集合级）空间对象项，描述单个集合的空间使用统计信息。
+                * MongoDB 产品集合级空间对象项，包含顶层标识字段与嵌套 Collection 明细。
                 */
                 class MongoDBTableSpaceItem : public AbstractModel
                 {
@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>应用 Id（AppId）。</p>
+                     * 获取应用 Id（AppId）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppId <p>应用 Id（AppId）。</p>
+                     * @return AppId 应用 Id（AppId）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置<p>应用 Id（AppId）。</p>
+                     * 设置应用 Id（AppId）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appId <p>应用 Id（AppId）。</p>
+                     * @param _appId 应用 Id（AppId）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例 Id。</p>
+                     * 获取实例 Id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId <p>实例 Id。</p>
+                     * @return InstanceId 实例 Id。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置<p>实例 Id。</p>
+                     * 设置实例 Id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId <p>实例 Id。</p>
+                     * @param _instanceId 实例 Id。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>数据库名。</p>
+                     * 获取数据库名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Db <p>数据库名。</p>
+                     * @return Db 数据库名。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDb() const;
 
                     /**
-                     * 设置<p>数据库名。</p>
+                     * 设置数据库名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _db <p>数据库名。</p>
+                     * @param _db 数据库名。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool DbHasBeenSet() const;
 
                     /**
-                     * 获取<p>数据采集时间戳（毫秒）。</p>
+                     * 获取数据采集时间戳（毫秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Timestamp <p>数据采集时间戳（毫秒）。</p>
+                     * @return Timestamp 数据采集时间戳（毫秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
-                     * 设置<p>数据采集时间戳（毫秒）。</p>
+                     * 设置数据采集时间戳（毫秒）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timestamp <p>数据采集时间戳（毫秒）。</p>
+                     * @param _timestamp 数据采集时间戳（毫秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool TimestampHasBeenSet() const;
 
                     /**
-                     * 获取<p>磁盘占用大小（字节）。</p>
+                     * 获取磁盘占用大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SizeOnDisk <p>磁盘占用大小（字节）。</p>
+                     * @return SizeOnDisk 磁盘占用大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSizeOnDisk() const;
 
                     /**
-                     * 设置<p>磁盘占用大小（字节）。</p>
+                     * 设置磁盘占用大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sizeOnDisk <p>磁盘占用大小（字节）。</p>
+                     * @param _sizeOnDisk 磁盘占用大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool SizeOnDiskHasBeenSet() const;
 
                     /**
-                     * 获取<p>集合级空间使用明细。</p>
+                     * 获取集合级空间使用明细。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Collection <p>集合级空间使用明细。</p>
+                     * @return Collection 集合级空间使用明细。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MongoCollectionDetail GetCollection() const;
 
                     /**
-                     * 设置<p>集合级空间使用明细。</p>
+                     * 设置集合级空间使用明细。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _collection <p>集合级空间使用明细。</p>
+                     * @param _collection 集合级空间使用明细。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -200,42 +200,42 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>应用 Id（AppId）。</p>
+                     * 应用 Id（AppId）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * <p>实例 Id。</p>
+                     * 实例 Id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * <p>数据库名。</p>
+                     * 数据库名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_db;
                     bool m_dbHasBeenSet;
 
                     /**
-                     * <p>数据采集时间戳（毫秒）。</p>
+                     * 数据采集时间戳（毫秒）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
-                     * <p>磁盘占用大小（字节）。</p>
+                     * 磁盘占用大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sizeOnDisk;
                     bool m_sizeOnDiskHasBeenSet;
 
                     /**
-                     * <p>集合级空间使用明细。</p>
+                     * 集合级空间使用明细。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MongoCollectionDetail m_collection;

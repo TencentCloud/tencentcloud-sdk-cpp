@@ -24,6 +24,7 @@ MysqlSpaceObjectItem::MysqlSpaceObjectItem() :
     m_tableSchemaHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_engineHasBeenSet(false),
+    m_tableStatusHasBeenSet(false),
     m_tableRowsHasBeenSet(false),
     m_totalLengthHasBeenSet(false),
     m_dataLengthHasBeenSet(false),
@@ -67,6 +68,16 @@ CoreInternalOutcome MysqlSpaceObjectItem::Deserialize(const rapidjson::Value &va
         }
         m_engine = string(value["Engine"].GetString());
         m_engineHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableStatus") && !value["TableStatus"].IsNull())
+    {
+        if (!value["TableStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MysqlSpaceObjectItem.TableStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableStatus = value["TableStatus"].GetInt64();
+        m_tableStatusHasBeenSet = true;
     }
 
     if (value.HasMember("TableRows") && !value["TableRows"].IsNull())
@@ -168,6 +179,14 @@ void MysqlSpaceObjectItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Engine";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_engine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tableStatus, allocator);
     }
 
     if (m_tableRowsHasBeenSet)
@@ -275,6 +294,22 @@ void MysqlSpaceObjectItem::SetEngine(const string& _engine)
 bool MysqlSpaceObjectItem::EngineHasBeenSet() const
 {
     return m_engineHasBeenSet;
+}
+
+int64_t MysqlSpaceObjectItem::GetTableStatus() const
+{
+    return m_tableStatus;
+}
+
+void MysqlSpaceObjectItem::SetTableStatus(const int64_t& _tableStatus)
+{
+    m_tableStatus = _tableStatus;
+    m_tableStatusHasBeenSet = true;
+}
+
+bool MysqlSpaceObjectItem::TableStatusHasBeenSet() const
+{
+    return m_tableStatusHasBeenSet;
 }
 
 int64_t MysqlSpaceObjectItem::GetTableRows() const

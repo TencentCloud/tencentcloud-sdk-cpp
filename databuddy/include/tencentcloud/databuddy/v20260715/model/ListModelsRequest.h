@@ -1,0 +1,216 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_DATABUDDY_V20260715_MODEL_LISTMODELSREQUEST_H_
+#define TENCENTCLOUD_DATABUDDY_V20260715_MODEL_LISTMODELSREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/databuddy/v20260715/model/FetchOption.h>
+
+
+namespace TencentCloud
+{
+    namespace Databuddy
+    {
+        namespace V20260715
+        {
+            namespace Model
+            {
+                /**
+                * ListModels请求参数结构体
+                */
+                class ListModelsRequest : public AbstractModel
+                {
+                public:
+                    ListModelsRequest();
+                    ~ListModelsRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取<p>数据目录名称</p>
+                     * @return CatalogName <p>数据目录名称</p>
+                     * 
+                     */
+                    std::string GetCatalogName() const;
+
+                    /**
+                     * 设置<p>数据目录名称</p>
+                     * @param _catalogName <p>数据目录名称</p>
+                     * 
+                     */
+                    void SetCatalogName(const std::string& _catalogName);
+
+                    /**
+                     * 判断参数 CatalogName 是否已赋值
+                     * @return CatalogName 是否已赋值
+                     * 
+                     */
+                    bool CatalogNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>schema名称</p>
+                     * @return SchemaName <p>schema名称</p>
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置<p>schema名称</p>
+                     * @param _schemaName <p>schema名称</p>
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最大结果条数，默认10，取值1~10000</p>
+                     * @return MaxResults <p>最大结果条数，默认10，取值1~10000</p>
+                     * 
+                     */
+                    int64_t GetMaxResults() const;
+
+                    /**
+                     * 设置<p>最大结果条数，默认10，取值1~10000</p>
+                     * @param _maxResults <p>最大结果条数，默认10，取值1~10000</p>
+                     * 
+                     */
+                    void SetMaxResults(const int64_t& _maxResults);
+
+                    /**
+                     * 判断参数 MaxResults 是否已赋值
+                     * @return MaxResults 是否已赋值
+                     * 
+                     */
+                    bool MaxResultsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>调用时所在workspace唯一id</p>
+                     * @return WorkspaceId <p>调用时所在workspace唯一id</p>
+                     * 
+                     */
+                    std::string GetWorkspaceId() const;
+
+                    /**
+                     * 设置<p>调用时所在workspace唯一id</p>
+                     * @param _workspaceId <p>调用时所在workspace唯一id</p>
+                     * 
+                     */
+                    void SetWorkspaceId(const std::string& _workspaceId);
+
+                    /**
+                     * 判断参数 WorkspaceId 是否已赋值
+                     * @return WorkspaceId 是否已赋值
+                     * 
+                     */
+                    bool WorkspaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分页信息</p>
+                     * @return PageToken <p>分页信息</p>
+                     * 
+                     */
+                    std::string GetPageToken() const;
+
+                    /**
+                     * 设置<p>分页信息</p>
+                     * @param _pageToken <p>分页信息</p>
+                     * 
+                     */
+                    void SetPageToken(const std::string& _pageToken);
+
+                    /**
+                     * 判断参数 PageToken 是否已赋值
+                     * @return PageToken 是否已赋值
+                     * 
+                     */
+                    bool PageTokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>
+                     * @return FetchOption <p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>
+                     * 
+                     */
+                    FetchOption GetFetchOption() const;
+
+                    /**
+                     * 设置<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>
+                     * @param _fetchOption <p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>
+                     * 
+                     */
+                    void SetFetchOption(const FetchOption& _fetchOption);
+
+                    /**
+                     * 判断参数 FetchOption 是否已赋值
+                     * @return FetchOption 是否已赋值
+                     * 
+                     */
+                    bool FetchOptionHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>数据目录名称</p>
+                     */
+                    std::string m_catalogName;
+                    bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * <p>schema名称</p>
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * <p>最大结果条数，默认10，取值1~10000</p>
+                     */
+                    int64_t m_maxResults;
+                    bool m_maxResultsHasBeenSet;
+
+                    /**
+                     * <p>调用时所在workspace唯一id</p>
+                     */
+                    std::string m_workspaceId;
+                    bool m_workspaceIdHasBeenSet;
+
+                    /**
+                     * <p>分页信息</p>
+                     */
+                    std::string m_pageToken;
+                    bool m_pageTokenHasBeenSet;
+
+                    /**
+                     * <p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>
+                     */
+                    FetchOption m_fetchOption;
+                    bool m_fetchOptionHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_DATABUDDY_V20260715_MODEL_LISTMODELSREQUEST_H_

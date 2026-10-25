@@ -22,7 +22,8 @@ using namespace std;
 
 AigcVideoSceneInfo::AigcVideoSceneInfo() :
     m_typeHasBeenSet(false),
-    m_productShowcaseConfigHasBeenSet(false)
+    m_productShowcaseConfigHasBeenSet(false),
+    m_characterSceneConfigHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,23 @@ CoreInternalOutcome AigcVideoSceneInfo::Deserialize(const rapidjson::Value &valu
         m_productShowcaseConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("CharacterSceneConfig") && !value["CharacterSceneConfig"].IsNull())
+    {
+        if (!value["CharacterSceneConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoSceneInfo.CharacterSceneConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_characterSceneConfig.Deserialize(value["CharacterSceneConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_characterSceneConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +98,15 @@ void AigcVideoSceneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_productShowcaseConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_characterSceneConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CharacterSceneConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_characterSceneConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +142,21 @@ void AigcVideoSceneInfo::SetProductShowcaseConfig(const ProductShowcaseConfig& _
 bool AigcVideoSceneInfo::ProductShowcaseConfigHasBeenSet() const
 {
     return m_productShowcaseConfigHasBeenSet;
+}
+
+CharacterSceneConfig AigcVideoSceneInfo::GetCharacterSceneConfig() const
+{
+    return m_characterSceneConfig;
+}
+
+void AigcVideoSceneInfo::SetCharacterSceneConfig(const CharacterSceneConfig& _characterSceneConfig)
+{
+    m_characterSceneConfig = _characterSceneConfig;
+    m_characterSceneConfigHasBeenSet = true;
+}
+
+bool AigcVideoSceneInfo::CharacterSceneConfigHasBeenSet() const
+{
+    return m_characterSceneConfigHasBeenSet;
 }
 

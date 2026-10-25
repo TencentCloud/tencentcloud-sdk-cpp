@@ -42,7 +42,18 @@ ProductEntry::ProductEntry() :
     m_deviceCountHasBeenSet(false),
     m_rateHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_isInterconnectionHasBeenSet(false)
+    m_isInterconnectionHasBeenSet(false),
+    m_uinHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_privateCANameHasBeenSet(false),
+    m_isPrivateCAHasBeenSet(false),
+    m_certNameHasBeenSet(false),
+    m_certSNHasBeenSet(false),
+    m_issuerNameHasBeenSet(false),
+    m_subjectHasBeenSet(false),
+    m_effectiveTimeHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_certTextHasBeenSet(false)
 {
 }
 
@@ -271,6 +282,116 @@ CoreInternalOutcome ProductEntry::Deserialize(const rapidjson::Value &value)
         m_isInterconnectionHasBeenSet = true;
     }
 
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetInt64();
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PrivateCAName") && !value["PrivateCAName"].IsNull())
+    {
+        if (!value["PrivateCAName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.PrivateCAName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privateCAName = string(value["PrivateCAName"].GetString());
+        m_privateCANameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsPrivateCA") && !value["IsPrivateCA"].IsNull())
+    {
+        if (!value["IsPrivateCA"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.IsPrivateCA` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPrivateCA = value["IsPrivateCA"].GetBool();
+        m_isPrivateCAHasBeenSet = true;
+    }
+
+    if (value.HasMember("CertName") && !value["CertName"].IsNull())
+    {
+        if (!value["CertName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.CertName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certName = string(value["CertName"].GetString());
+        m_certNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CertSN") && !value["CertSN"].IsNull())
+    {
+        if (!value["CertSN"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.CertSN` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certSN = string(value["CertSN"].GetString());
+        m_certSNHasBeenSet = true;
+    }
+
+    if (value.HasMember("IssuerName") && !value["IssuerName"].IsNull())
+    {
+        if (!value["IssuerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.IssuerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issuerName = string(value["IssuerName"].GetString());
+        m_issuerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Subject") && !value["Subject"].IsNull())
+    {
+        if (!value["Subject"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.Subject` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subject = string(value["Subject"].GetString());
+        m_subjectHasBeenSet = true;
+    }
+
+    if (value.HasMember("EffectiveTime") && !value["EffectiveTime"].IsNull())
+    {
+        if (!value["EffectiveTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.EffectiveTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_effectiveTime = value["EffectiveTime"].GetInt64();
+        m_effectiveTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpireTime") && !value["ExpireTime"].IsNull())
+    {
+        if (!value["ExpireTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.ExpireTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = value["ExpireTime"].GetInt64();
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CertText") && !value["CertText"].IsNull())
+    {
+        if (!value["CertText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.CertText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certText = string(value["CertText"].GetString());
+        m_certTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +573,94 @@ void ProductEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsInterconnection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isInterconnection, allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_privateCANameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateCAName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privateCAName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPrivateCAHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPrivateCA";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPrivateCA, allocator);
+    }
+
+    if (m_certNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certSNHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertSN";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certSN.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_issuerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IssuerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issuerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Subject";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_effectiveTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EffectiveTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_effectiveTime, allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_certTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certText.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -807,5 +1016,181 @@ void ProductEntry::SetIsInterconnection(const int64_t& _isInterconnection)
 bool ProductEntry::IsInterconnectionHasBeenSet() const
 {
     return m_isInterconnectionHasBeenSet;
+}
+
+string ProductEntry::GetUin() const
+{
+    return m_uin;
+}
+
+void ProductEntry::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool ProductEntry::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
+
+int64_t ProductEntry::GetAppId() const
+{
+    return m_appId;
+}
+
+void ProductEntry::SetAppId(const int64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool ProductEntry::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string ProductEntry::GetPrivateCAName() const
+{
+    return m_privateCAName;
+}
+
+void ProductEntry::SetPrivateCAName(const string& _privateCAName)
+{
+    m_privateCAName = _privateCAName;
+    m_privateCANameHasBeenSet = true;
+}
+
+bool ProductEntry::PrivateCANameHasBeenSet() const
+{
+    return m_privateCANameHasBeenSet;
+}
+
+bool ProductEntry::GetIsPrivateCA() const
+{
+    return m_isPrivateCA;
+}
+
+void ProductEntry::SetIsPrivateCA(const bool& _isPrivateCA)
+{
+    m_isPrivateCA = _isPrivateCA;
+    m_isPrivateCAHasBeenSet = true;
+}
+
+bool ProductEntry::IsPrivateCAHasBeenSet() const
+{
+    return m_isPrivateCAHasBeenSet;
+}
+
+string ProductEntry::GetCertName() const
+{
+    return m_certName;
+}
+
+void ProductEntry::SetCertName(const string& _certName)
+{
+    m_certName = _certName;
+    m_certNameHasBeenSet = true;
+}
+
+bool ProductEntry::CertNameHasBeenSet() const
+{
+    return m_certNameHasBeenSet;
+}
+
+string ProductEntry::GetCertSN() const
+{
+    return m_certSN;
+}
+
+void ProductEntry::SetCertSN(const string& _certSN)
+{
+    m_certSN = _certSN;
+    m_certSNHasBeenSet = true;
+}
+
+bool ProductEntry::CertSNHasBeenSet() const
+{
+    return m_certSNHasBeenSet;
+}
+
+string ProductEntry::GetIssuerName() const
+{
+    return m_issuerName;
+}
+
+void ProductEntry::SetIssuerName(const string& _issuerName)
+{
+    m_issuerName = _issuerName;
+    m_issuerNameHasBeenSet = true;
+}
+
+bool ProductEntry::IssuerNameHasBeenSet() const
+{
+    return m_issuerNameHasBeenSet;
+}
+
+string ProductEntry::GetSubject() const
+{
+    return m_subject;
+}
+
+void ProductEntry::SetSubject(const string& _subject)
+{
+    m_subject = _subject;
+    m_subjectHasBeenSet = true;
+}
+
+bool ProductEntry::SubjectHasBeenSet() const
+{
+    return m_subjectHasBeenSet;
+}
+
+int64_t ProductEntry::GetEffectiveTime() const
+{
+    return m_effectiveTime;
+}
+
+void ProductEntry::SetEffectiveTime(const int64_t& _effectiveTime)
+{
+    m_effectiveTime = _effectiveTime;
+    m_effectiveTimeHasBeenSet = true;
+}
+
+bool ProductEntry::EffectiveTimeHasBeenSet() const
+{
+    return m_effectiveTimeHasBeenSet;
+}
+
+int64_t ProductEntry::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void ProductEntry::SetExpireTime(const int64_t& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool ProductEntry::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string ProductEntry::GetCertText() const
+{
+    return m_certText;
+}
+
+void ProductEntry::SetCertText(const string& _certText)
+{
+    m_certText = _certText;
+    m_certTextHasBeenSet = true;
+}
+
+bool ProductEntry::CertTextHasBeenSet() const
+{
+    return m_certTextHasBeenSet;
 }
 

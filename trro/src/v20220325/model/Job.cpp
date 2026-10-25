@@ -29,7 +29,8 @@ Job::Job() :
     m_inputPathHasBeenSet(false),
     m_totalNumberHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_finishTimeHasBeenSet(false)
+    m_finishTimeHasBeenSet(false),
+    m_taskStatusCountHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
         m_finishTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskStatusCount") && !value["TaskStatusCount"].IsNull())
+    {
+        if (!value["TaskStatusCount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.TaskStatusCount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskStatusCount = string(value["TaskStatusCount"].GetString());
+        m_taskStatusCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void Job::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "FinishTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskStatusCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskStatusCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskStatusCount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void Job::SetFinishTime(const string& _finishTime)
 bool Job::FinishTimeHasBeenSet() const
 {
     return m_finishTimeHasBeenSet;
+}
+
+string Job::GetTaskStatusCount() const
+{
+    return m_taskStatusCount;
+}
+
+void Job::SetTaskStatusCount(const string& _taskStatusCount)
+{
+    m_taskStatusCount = _taskStatusCount;
+    m_taskStatusCountHasBeenSet = true;
+}
+
+bool Job::TaskStatusCountHasBeenSet() const
+{
+    return m_taskStatusCountHasBeenSet;
 }
 

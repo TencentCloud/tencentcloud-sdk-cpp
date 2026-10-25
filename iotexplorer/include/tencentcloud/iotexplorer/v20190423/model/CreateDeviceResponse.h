@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备参数描述。
-                     * @return Data 设备参数描述。
+                     * 获取<p>设备参数描述。</p>
+                     * @return Data <p>设备参数描述。</p>
                      * 
                      */
                     DeviceData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备参数描述。
+                     * <p>设备参数描述。</p>
                      */
                     DeviceData m_data;
                     bool m_dataHasBeenSet;

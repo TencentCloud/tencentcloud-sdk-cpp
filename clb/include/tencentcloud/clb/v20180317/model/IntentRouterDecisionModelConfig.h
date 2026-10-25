@@ -67,6 +67,27 @@ namespace TencentCloud
                      */
                     bool EnabledHasBeenSet() const;
 
+                    /**
+                     * 获取<p>选定的分类决策模型名，不传递表示随机选用。</p>
+                     * @return ModelName <p>选定的分类决策模型名，不传递表示随机选用。</p>
+                     * 
+                     */
+                    std::string GetModelName() const;
+
+                    /**
+                     * 设置<p>选定的分类决策模型名，不传递表示随机选用。</p>
+                     * @param _modelName <p>选定的分类决策模型名，不传递表示随机选用。</p>
+                     * 
+                     */
+                    void SetModelName(const std::string& _modelName);
+
+                    /**
+                     * 判断参数 ModelName 是否已赋值
+                     * @return ModelName 是否已赋值
+                     * 
+                     */
+                    bool ModelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +95,12 @@ namespace TencentCloud
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
+
+                    /**
+                     * <p>选定的分类决策模型名，不传递表示随机选用。</p>
+                     */
+                    std::string m_modelName;
+                    bool m_modelNameHasBeenSet;
 
                 };
             }

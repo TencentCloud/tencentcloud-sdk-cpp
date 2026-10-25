@@ -190,6 +190,56 @@ SsmClient::CreateSecretOutcomeCallable SsmClient::CreateSecretCallable(const Cre
     return prom->get_future();
 }
 
+SsmClient::CreateServiceOutcome SsmClient::CreateService(const CreateServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateServiceResponse rsp = CreateServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateServiceOutcome(rsp);
+        else
+            return CreateServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateServiceOutcome(outcome.GetError());
+    }
+}
+
+void SsmClient::CreateServiceAsync(const CreateServiceRequest& request, const CreateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateServiceRequest&;
+    using Resp = CreateServiceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateService", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SsmClient::CreateServiceOutcomeCallable SsmClient::CreateServiceCallable(const CreateServiceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateServiceOutcome>>();
+    CreateServiceAsync(
+    request,
+    [prom](
+        const SsmClient*,
+        const CreateServiceRequest&,
+        CreateServiceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 SsmClient::DeleteSecretOutcome SsmClient::DeleteSecret(const DeleteSecretRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSecret");

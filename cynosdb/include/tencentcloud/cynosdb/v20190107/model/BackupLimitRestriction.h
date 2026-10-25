@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取限制下载的vpc设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LimitVpcs 限制下载的vpc设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BackupLimitVpcItem> GetLimitVpcs() const;
 
                     /**
                      * 设置限制下载的vpc设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _limitVpcs 限制下载的vpc设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLimitVpcs(const std::vector<BackupLimitVpcItem>& _limitVpcs);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取限制下载的ip设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LimitIps 限制下载的ip设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLimitIps() const;
 
                     /**
                      * 设置限制下载的ip设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _limitIps 限制下载的ip设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLimitIps(const std::vector<std::string>& _limitIps);
@@ -182,14 +174,12 @@ namespace TencentCloud
 
                     /**
                      * 限制下载的vpc设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BackupLimitVpcItem> m_limitVpcs;
                     bool m_limitVpcsHasBeenSet;
 
                     /**
                      * 限制下载的ip设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_limitIps;
                     bool m_limitIpsHasBeenSet;

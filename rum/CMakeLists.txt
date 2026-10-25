@@ -19,403 +19,829 @@ set(rum_public_header
   )
 
 set(rum_public_header_model
-  include/tencentcloud/rum/v20210622/model/DescribeDataFetchProjectRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeScoresResponse.h
-  include/tencentcloud/rum/v20210622/model/DeleteProjectRequest.h
-  include/tencentcloud/rum/v20210622/model/StopProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocReportListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeProjectLimitsResponse.h
+  include/tencentcloud/rum/v20210622/model/ExplorationExceptionStack.h
   include/tencentcloud/rum/v20210622/model/DescribeFileCertificateResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeTawInstancesRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeTokenResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeSessionListRequest.h
   include/tencentcloud/rum/v20210622/model/ResumeProjectResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeIssuesStatisticsTrendRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogListResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeAppMetricsDataRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlInfoResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeTokenRequest.h
-  include/tencentcloud/rum/v20210622/model/StopProjectResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeErrorRequest.h
-  include/tencentcloud/rum/v20210622/model/StopInstanceRequest.h
+  include/tencentcloud/rum/v20210622/model/DeleteFieldTransformRuleResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeFileCertificateRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectV2Response.h
-  include/tencentcloud/rum/v20210622/model/DescribeErrorResponse.h
-  include/tencentcloud/rum/v20210622/model/ModifyProjectLimitRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeFOOMProblemDetailRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeAppMetricsDataResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseDetailListResponse.h
-  include/tencentcloud/rum/v20210622/model/DeleteWhitelistResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocReportListResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribePvListResponse.h
-  include/tencentcloud/rum/v20210622/model/RumUvInfo.h
-  include/tencentcloud/rum/v20210622/model/DescribeScoresRequest.h
-  include/tencentcloud/rum/v20210622/model/ScoreInfoV2.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataReportCountRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeIssuesListRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeIssuesDistributionRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeFOOMProblemDetailResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataStaticResourceV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeReleaseFilesRequest.h
-  include/tencentcloud/rum/v20210622/model/CreateReleaseFileRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogDetailsV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeScoresV2Response.h
+  include/tencentcloud/rum/v20210622/model/DialTrendPoint.h
+  include/tencentcloud/rum/v20210622/model/DeleteTDEMFunnelResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeExceptionReportListRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeReplayMetaResponse.h
   include/tencentcloud/rum/v20210622/model/Tag.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlV2Response.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlRequest.h
-  include/tencentcloud/rum/v20210622/model/ModifyInstanceResponse.h
-  include/tencentcloud/rum/v20210622/model/DeleteStarProjectRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeWhitelistsRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeApplicationExitReportDetailRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeUvListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelDetailResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueCrashLogDownloadURLRequest.h
+  include/tencentcloud/rum/v20210622/model/CreateTDEMFieldTransformRuleResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueTrendResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataReportCountV2Request.h
-  include/tencentcloud/rum/v20210622/model/CompareCondition.h
-  include/tencentcloud/rum/v20210622/model/ModifyProjectRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageV2Response.h
-  include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemFeatureAccountsResponse.h
+  include/tencentcloud/rum/v20210622/model/UploadMiniProgramSourceRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocProblemDetailResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeUvListResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeTopIssuesResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeTawAreasResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeApplicationExitReportListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMEventSearchRequest.h
+  include/tencentcloud/rum/v20210622/model/StopProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogTotalV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlV2Response.h
-  include/tencentcloud/rum/v20210622/model/DeleteInstanceResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemListResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseListResponse.h
-  include/tencentcloud/rum/v20210622/model/ResumeInstanceRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageRequest.h
-  include/tencentcloud/rum/v20210622/model/DeleteReleaseFileRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogListResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeScoresV2Request.h
-  include/tencentcloud/rum/v20210622/model/RumProject.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsV2Response.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlResponse.h
-  include/tencentcloud/rum/v20210622/model/CreateStarProjectResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSSEDistributionResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMMetricSummaryRequest.h
+  include/tencentcloud/rum/v20210622/model/ResumeInstanceRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeMiniProgramReplayPacksRequest.h
+  include/tencentcloud/rum/v20210622/model/DialTargetIpGeo.h
   include/tencentcloud/rum/v20210622/model/DeleteProjectResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeScoresV2Response.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListV2Response.h
-  include/tencentcloud/rum/v20210622/model/DescribeFOOMProblemListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribePerformanceMetricsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMEventRankResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlV2Request.h
   include/tencentcloud/rum/v20210622/model/ReleaseFile.h
   include/tencentcloud/rum/v20210622/model/ModifyProjectLimitResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocProblemListResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataBridgeUrlV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeFOOMProblemListResponse.h
-  include/tencentcloud/rum/v20210622/model/Kafka.h
-  include/tencentcloud/rum/v20210622/model/ProjectLimit.h
-  include/tencentcloud/rum/v20210622/model/DescribeWhitelistsResponse.h
+  include/tencentcloud/rum/v20210622/model/ResumeProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListResponse.h
+  include/tencentcloud/rum/v20210622/model/DeleteTDEMApplicationResponse.h
   include/tencentcloud/rum/v20210622/model/CreateWhitelistRequest.h
   include/tencentcloud/rum/v20210622/model/StopInstanceResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlInfoRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeProjectLimitsRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsV2Response.h
-  include/tencentcloud/rum/v20210622/model/RumPvInfo.h
-  include/tencentcloud/rum/v20210622/model/RumAreaInfo.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageV2Response.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportV2Response.h
-  include/tencentcloud/rum/v20210622/model/ResumeInstanceResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectResponse.h
-  include/tencentcloud/rum/v20210622/model/ModifyInstanceRequest.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMSampleConfigRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMMetricTrendRequest.h
+  include/tencentcloud/rum/v20210622/model/ModifyProjectRequest.h
+  include/tencentcloud/rum/v20210622/model/MetricTrendPoint.h
   include/tencentcloud/rum/v20210622/model/CreateStarProjectRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeReleaseFileSignRequest.h
-  include/tencentcloud/rum/v20210622/model/DeleteWhitelistRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlInfoResponse.h
+  include/tencentcloud/rum/v20210622/model/RumProject.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocProblemListRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeExceptionDetailResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeExceptionReportListResponse.h
-  include/tencentcloud/rum/v20210622/model/DeleteReleaseFileResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlV2Request.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelStepSessionListResponse.h
+  include/tencentcloud/rum/v20210622/model/UsageDetailRow.h
+  include/tencentcloud/rum/v20210622/model/DescribeScoresResponse.h
+  include/tencentcloud/rum/v20210622/model/EventRankPoint.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMMetricDistributionResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMOverviewScoresRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeSymbolArtifactsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMRelatedEventsResponse.h
+  include/tencentcloud/rum/v20210622/model/ExceptionBucket.h
+  include/tencentcloud/rum/v20210622/model/DeleteTDEMBusinessSystemRequest.h
+  include/tencentcloud/rum/v20210622/model/FieldTransformRuleItem.h
+  include/tencentcloud/rum/v20210622/model/DescribeReplayDetailsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeStruggleDistributionRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeSymbolArtifactUploadCredentialResponse.h
+  include/tencentcloud/rum/v20210622/model/DeleteInstanceRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeFieldValuesResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMFieldTransformRuleRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMUsageDetailResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlInfoRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeFOOMReportListResponse.h
+  include/tencentcloud/rum/v20210622/model/CreateFieldTransformRuleResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyFieldTransformRuleRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeFieldTransformRulesRequest.h
+  include/tencentcloud/rum/v20210622/model/DeleteTDEMFunnelRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeAppDimensionMetricsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSSEDimensionsResponse.h
+  include/tencentcloud/rum/v20210622/model/CreateTDEMFunnelRequest.h
+  include/tencentcloud/rum/v20210622/model/TDEMSSEDistributionBin.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogRequest.h
+  include/tencentcloud/rum/v20210622/model/ModifyProjectResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSSETrendResponse.h
+  include/tencentcloud/rum/v20210622/model/MetricTrendBatchItem.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMBusinessSystemResponse.h
+  include/tencentcloud/rum/v20210622/model/ExplorationEventItem.h
+  include/tencentcloud/rum/v20210622/model/DescribeFOOMProblemListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribePvListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialOverviewResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsV2Request.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMFunnelResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataStaticResourceV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueAffectedUsersResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssuesRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataFetchProjectRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataResponse.h
+  include/tencentcloud/rum/v20210622/model/RumAreaInfo.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportV2Request.h
+  include/tencentcloud/rum/v20210622/model/ModifyInstanceRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeAppMetricsDataResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseDetailListResponse.h
+  include/tencentcloud/rum/v20210622/model/ResumeTDEMApplicationResponse.h
+  include/tencentcloud/rum/v20210622/model/ResumeTDEMApplicationRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialDimensionsRequest.h
+  include/tencentcloud/rum/v20210622/model/RumUvInfo.h
+  include/tencentcloud/rum/v20210622/model/DescribeScoresRequest.h
+  include/tencentcloud/rum/v20210622/model/EventFrame.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssuesListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssuesDistributionRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelTrendResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMBusinessSystemsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSSEPercentileResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataStaticResourceV2Request.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialExecutionDetailResponse.h
+  include/tencentcloud/rum/v20210622/model/UploadSymbolArtifactResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMMetricDistributionRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlRequest.h
+  include/tencentcloud/rum/v20210622/model/ModifyIssueStatusRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeWhitelistsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeUvListRequest.h
+  include/tencentcloud/rum/v20210622/model/CreateFieldTransformRuleRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeReplayMetaRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsV2Response.h
+  include/tencentcloud/rum/v20210622/model/SymbolicatedView.h
+  include/tencentcloud/rum/v20210622/model/DescribeFOOMReportListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeApplicationExitReportListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSSEDistributionRequest.h
+  include/tencentcloud/rum/v20210622/model/ModifyProjectLimitRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeFieldTransformRulesResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMEventDetailRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemListResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseListResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribePerformanceMetricsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataBridgeUrlV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeUserJourneySanKeyResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeProjectLimitsRequest.h
+  include/tencentcloud/rum/v20210622/model/CreateStarProjectResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueTrendRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSampleRateRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocProblemListResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueBreadcrumbsRequest.h
+  include/tencentcloud/rum/v20210622/model/CreateTDEMApplicationRequest.h
+  include/tencentcloud/rum/v20210622/model/ModifyInstanceResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMSampleConfigResponse.h
+  include/tencentcloud/rum/v20210622/model/DeleteTDEMBusinessSystemResponse.h
+  include/tencentcloud/rum/v20210622/model/ResumeInstanceResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTawAreasResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseListRequest.h
+  include/tencentcloud/rum/v20210622/model/DeleteTDEMDialTaskRequest.h
+  include/tencentcloud/rum/v20210622/model/DeleteWhitelistRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFieldTransformRulesRequest.h
+  include/tencentcloud/rum/v20210622/model/DeleteMiniProgramReplayPackResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMBusinessSystemRequest.h
+  include/tencentcloud/rum/v20210622/model/StopTDEMApplicationResponse.h
+  include/tencentcloud/rum/v20210622/model/ApplicationItem.h
+  include/tencentcloud/rum/v20210622/model/DescribeTawInstancesRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemAccountDetailRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataBridgeUrlV2Response.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeTawAreasRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlV2Response.h
-  include/tencentcloud/rum/v20210622/model/Filter.h
-  include/tencentcloud/rum/v20210622/model/DeleteStarProjectResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogDetailsV2Response.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h
-  include/tencentcloud/rum/v20210622/model/DeleteInstanceRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeIssuesListResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataStaticResourceResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeReleaseFileSignResponse.h
+  include/tencentcloud/rum/v20210622/model/TDEMSSEPercentilePoint.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMUsageSummaryResponse.h
+  include/tencentcloud/rum/v20210622/model/FloatNameValue.h
+  include/tencentcloud/rum/v20210622/model/OverviewScoreItem.h
+  include/tencentcloud/rum/v20210622/model/IntKeyValue.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelDimensionsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeFOOMProblemDetailResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogTotalV2Response.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlInfoRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlInfoResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeFOOMReportListResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeReleaseFilesResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyIssueStatusResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeWhitelistsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeIssuesDistributionResponse.h
   include/tencentcloud/rum/v20210622/model/CreateWhitelistResponse.h
   include/tencentcloud/rum/v20210622/model/ScoreInfo.h
+  include/tencentcloud/rum/v20210622/model/AppOverviewScore.h
   include/tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeSampleRateResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTawAreasRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMApplicationsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseDetailListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelListRequest.h
+  include/tencentcloud/rum/v20210622/model/StopProjectResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeApplicationExitReportListResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMEventSearchSummaryResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialTasksResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssuesStatisticsTrendResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueAffectedUsersRequest.h
+  include/tencentcloud/rum/v20210622/model/CreateTDEMFieldTransformRuleRequest.h
+  include/tencentcloud/rum/v20210622/model/Whitelist.h
+  include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemAccountDetailResponse.h
+  include/tencentcloud/rum/v20210622/model/EventSearchSeriesPoint.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMEventRankRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMMetricTrendResponse.h
+  include/tencentcloud/rum/v20210622/model/DeleteStarProjectResponse.h
+  include/tencentcloud/rum/v20210622/model/EventStack.h
+  include/tencentcloud/rum/v20210622/model/DialTask.h
+  include/tencentcloud/rum/v20210622/model/DescribeTokenResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssuesStatisticsTrendRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlInfoResponse.h
+  include/tencentcloud/rum/v20210622/model/StopInstanceRequest.h
+  include/tencentcloud/rum/v20210622/model/StopTDEMApplicationRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeFileCertificateRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeErrorResponse.h
+  include/tencentcloud/rum/v20210622/model/DialDimensionItem.h
+  include/tencentcloud/rum/v20210622/model/DescribeFOOMProblemDetailRequest.h
+  include/tencentcloud/rum/v20210622/model/DeleteWhitelistResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeSymbolArtifactUploadCredentialRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMBusinessSystemsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelReportResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeMiniProgramReplayPackRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataReportCountRequest.h
+  include/tencentcloud/rum/v20210622/model/FloatKeyValue.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyFieldTransformRuleResponse.h
+  include/tencentcloud/rum/v20210622/model/CreateReleaseFileRequest.h
+  include/tencentcloud/rum/v20210622/model/MetricQueryItem.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlV2Response.h
+  include/tencentcloud/rum/v20210622/model/CreateTDEMDialTaskResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeFieldValuesRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeExceptionDetailResponse.h
+  include/tencentcloud/rum/v20210622/model/CompareCondition.h
+  include/tencentcloud/rum/v20210622/model/CreateTDEMBusinessSystemResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTopIssuesResponse.h
+  include/tencentcloud/rum/v20210622/model/FunnelStepInput.h
+  include/tencentcloud/rum/v20210622/model/DeleteReleaseFileRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsRequest.h
+  include/tencentcloud/rum/v20210622/model/ModifyMiniProgramReplayPackRequest.h
+  include/tencentcloud/rum/v20210622/model/PreviewTDEMFunnelReportResponse.h
+  include/tencentcloud/rum/v20210622/model/ProjectLimit.h
+  include/tencentcloud/rum/v20210622/model/DeleteFieldTransformRuleRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlInfoRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelListResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsV2Response.h
+  include/tencentcloud/rum/v20210622/model/ExceptionDistribution.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelReportRequest.h
+  include/tencentcloud/rum/v20210622/model/EventRankItem.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSSEPercentileRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueEventDetailRequest.h
+  include/tencentcloud/rum/v20210622/model/TDEMSSETrendSeries.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMSampleRateRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSessionReplayTimelineRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlInfoResponse.h
+  include/tencentcloud/rum/v20210622/model/RumPvInfo.h
+  include/tencentcloud/rum/v20210622/model/DescribeExceptionReportListResponse.h
+  include/tencentcloud/rum/v20210622/model/CreateTDEMBusinessSystemRequest.h
+  include/tencentcloud/rum/v20210622/model/CreateTDEMDialTaskRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSampleRateResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListV2Request.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSSESummaryRequest.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMDialTaskRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeReplayDataRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialOverviewRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMApplicationRequest.h
+  include/tencentcloud/rum/v20210622/model/ModifySampleRateResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelStepSessionListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeReleaseFilesResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyMiniProgramReplayPackResponse.h
+  include/tencentcloud/rum/v20210622/model/DeleteMiniProgramReplayPackRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectV2Request.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMUsageDetailRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeProjectsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeAppDimensionMetricsResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsV2Response.h
-  include/tencentcloud/rum/v20210622/model/ResumeProjectRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseDetailListRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeExceptionDetailRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeProjectsResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMFunnelRequest.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMApplicationResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataReportCountV2Response.h
-  include/tencentcloud/rum/v20210622/model/ModifyProjectResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialTrendRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataReportCountResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeApplicationExitReportListResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemAccountDetailResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeIssuesStatisticsTrendResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocReportListResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMEventSearchSummaryRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialExecutionListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogListRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticResourceRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeTawInstancesResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeApplicationExitReportDetailResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribePvListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSessionReplayTimelineResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMRelatedEventsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlInfoRequest.h
   include/tencentcloud/rum/v20210622/model/CreateReleaseFileResponse.h
+  include/tencentcloud/rum/v20210622/model/BusinessSystemItem.h
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchProjectResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeFOOMReportListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogDetailsV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemFeatureAccountsRequest.h
-  include/tencentcloud/rum/v20210622/model/Whitelist.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemListRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataStaticResourceV2Response.h
+  include/tencentcloud/rum/v20210622/model/EventView.h
   include/tencentcloud/rum/v20210622/model/DescribeTopIssuesRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsResponse.h
-  include/tencentcloud/rum/v20210622/model/Filters.h
   include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogV2Request.h
   include/tencentcloud/rum/v20210622/model/DescribeAppDimensionMetricsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocProblemDetailRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSSEDimensionsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelTrendRequest.h
+  include/tencentcloud/rum/v20210622/model/StringKeyValue.h
+  include/tencentcloud/rum/v20210622/model/TDEMSSEDimensionRow.h
+  include/tencentcloud/rum/v20210622/model/DeleteProjectRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialTrendResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueBreadcrumbsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeErrorRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeUserJourneySanKeyRequest.h
+  include/tencentcloud/rum/v20210622/model/DeleteSymbolArtifactRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssuesListResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeSymbolArtifactsRequest.h
+  include/tencentcloud/rum/v20210622/model/CreateTDEMFunnelResponse.h
+  include/tencentcloud/rum/v20210622/model/ScoreInfoV2.h
+  include/tencentcloud/rum/v20210622/model/UsageTimePoint.h
+  include/tencentcloud/rum/v20210622/model/DialProbe.h
+  include/tencentcloud/rum/v20210622/model/UploadSymbolArtifactRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeReleaseFilesRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeExceptionReportListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialDimensionsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssuesResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMUsageSummaryRequest.h
+  include/tencentcloud/rum/v20210622/model/DeleteStarProjectRequest.h
+  include/tencentcloud/rum/v20210622/model/DeleteTDEMApplicationRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeApplicationExitReportDetailRequest.h
+  include/tencentcloud/rum/v20210622/model/PreviewTDEMFunnelReportRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeStruggleDistributionResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeLagANRProblemFeatureAccountsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeUvListResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlV2Request.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelDimensionsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSampleConfigResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialExecutionDetailRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueEventDetailResponse.h
+  include/tencentcloud/rum/v20210622/model/DeleteInstanceResponse.h
+  include/tencentcloud/rum/v20210622/model/MetricDistributionItem.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMEventDetailResponse.h
+  include/tencentcloud/rum/v20210622/model/CreateTDEMApplicationResponse.h
+  include/tencentcloud/rum/v20210622/model/UploadMiniProgramSourceResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeScoresV2Request.h
+  include/tencentcloud/rum/v20210622/model/TDEMSSETrendPoint.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialTasksRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSSETrendRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMDialExecutionListResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListV2Response.h
+  include/tencentcloud/rum/v20210622/model/DeleteTDEMFieldTransformRuleRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeFOOMProblemListResponse.h
+  include/tencentcloud/rum/v20210622/model/Kafka.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSampleConfigRequest.h
+  include/tencentcloud/rum/v20210622/model/ExceptionDimensionRow.h
+  include/tencentcloud/rum/v20210622/model/DescribeReplayDetailsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataPerformancePageV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMApplicationsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMSSESummaryResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeReleaseFileSignRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeSampleRateRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeSessionListResponse.h
+  include/tencentcloud/rum/v20210622/model/DeleteReleaseFileResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueCrashLogDownloadURLResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeReleaseFileSignResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMOverviewScoresResponse.h
+  include/tencentcloud/rum/v20210622/model/Filter.h
+  include/tencentcloud/rum/v20210622/model/DialExecution.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMFieldTransformRuleResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMSampleRateResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataStaticResourceResponse.h
+  include/tencentcloud/rum/v20210622/model/DeleteTDEMFieldTransformRuleResponse.h
+  include/tencentcloud/rum/v20210622/model/MetricDistributionBatchItem.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeReplayDataResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelDetailRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueDetailRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMEventSearchResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsV2Response.h
+  include/tencentcloud/rum/v20210622/model/DescribeExceptionDetailRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlV2Request.h
+  include/tencentcloud/rum/v20210622/model/DescribeProjectsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeMiniProgramReplayPacksResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsRequest.h
+  include/tencentcloud/rum/v20210622/model/MetricSummaryBatchItem.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMFieldTransformRulesResponse.h
+  include/tencentcloud/rum/v20210622/model/DeleteSymbolArtifactResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogV2Response.h
+  include/tencentcloud/rum/v20210622/model/ModifyTDEMDialTaskResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeApplicationExitReportDetailResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueEventsResponse.h
+  include/tencentcloud/rum/v20210622/model/ModifySampleRateRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueEventsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeTDEMMetricSummaryResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeMiniProgramReplayPackResponse.h
+  include/tencentcloud/rum/v20210622/model/Filters.h
+  include/tencentcloud/rum/v20210622/model/DescribeIssueDetailResponse.h
+  include/tencentcloud/rum/v20210622/model/DeleteTDEMDialTaskResponse.h
   include/tencentcloud/rum/v20210622/model/RumInstanceInfo.h
   )
 
 set(rum_src
   src/v20210622/RumClient.cpp
-  src/v20210622/model/DescribeDataFetchProjectRequest.cpp
-  src/v20210622/model/DescribeDataResponse.cpp
-  src/v20210622/model/DescribeScoresResponse.cpp
-  src/v20210622/model/DeleteProjectRequest.cpp
-  src/v20210622/model/StopProjectRequest.cpp
   src/v20210622/model/DescribeFOOMMallocReportListRequest.cpp
   src/v20210622/model/DescribeProjectLimitsResponse.cpp
+  src/v20210622/model/ExplorationExceptionStack.cpp
   src/v20210622/model/DescribeFileCertificateResponse.cpp
-  src/v20210622/model/DescribeTawInstancesRequest.cpp
-  src/v20210622/model/DescribeTokenResponse.cpp
+  src/v20210622/model/DescribeSessionListRequest.cpp
   src/v20210622/model/ResumeProjectResponse.cpp
-  src/v20210622/model/DescribeIssuesStatisticsTrendRequest.cpp
+  src/v20210622/model/DescribeRumLogListResponse.cpp
   src/v20210622/model/DescribeAppMetricsDataRequest.cpp
-  src/v20210622/model/DescribeDataPvUrlInfoResponse.cpp
   src/v20210622/model/DescribeTokenRequest.cpp
-  src/v20210622/model/StopProjectResponse.cpp
-  src/v20210622/model/DescribeDataFetchUrlResponse.cpp
-  src/v20210622/model/DescribeErrorRequest.cpp
-  src/v20210622/model/StopInstanceRequest.cpp
+  src/v20210622/model/DeleteFieldTransformRuleResponse.cpp
   src/v20210622/model/DescribeDataStaticUrlV2Request.cpp
-  src/v20210622/model/DescribeFileCertificateRequest.cpp
-  src/v20210622/model/DescribeDataStaticProjectV2Response.cpp
-  src/v20210622/model/DescribeErrorResponse.cpp
-  src/v20210622/model/ModifyProjectLimitRequest.cpp
-  src/v20210622/model/DescribeFOOMProblemDetailRequest.cpp
-  src/v20210622/model/DescribeAppMetricsDataResponse.cpp
-  src/v20210622/model/DescribeAppSingleCaseDetailListResponse.cpp
-  src/v20210622/model/DeleteWhitelistResponse.cpp
-  src/v20210622/model/DescribeFOOMMallocReportListResponse.cpp
+  src/v20210622/model/DescribeRumLogExportV2Response.cpp
   src/v20210622/model/DescribePvListResponse.cpp
-  src/v20210622/model/RumUvInfo.cpp
-  src/v20210622/model/DescribeScoresRequest.cpp
-  src/v20210622/model/ScoreInfoV2.cpp
-  src/v20210622/model/DescribeDataReportCountRequest.cpp
-  src/v20210622/model/DescribeIssuesListRequest.cpp
-  src/v20210622/model/DescribeIssuesDistributionRequest.cpp
-  src/v20210622/model/DescribeFOOMProblemDetailResponse.cpp
-  src/v20210622/model/DescribeDataStaticResourceV2Request.cpp
-  src/v20210622/model/DescribeReleaseFilesRequest.cpp
-  src/v20210622/model/CreateReleaseFileRequest.cpp
+  src/v20210622/model/DescribeRumLogDetailsV2Response.cpp
+  src/v20210622/model/DescribeScoresV2Response.cpp
+  src/v20210622/model/DialTrendPoint.cpp
+  src/v20210622/model/DeleteTDEMFunnelResponse.cpp
   src/v20210622/model/DescribeDataCustomUrlRequest.cpp
-  src/v20210622/model/DescribeExceptionReportListRequest.cpp
-  src/v20210622/model/DescribeDataStaticUrlV2Response.cpp
+  src/v20210622/model/DescribeReplayMetaResponse.cpp
   src/v20210622/model/Tag.cpp
   src/v20210622/model/DescribeDataPvUrlStatisticsV2Request.cpp
   src/v20210622/model/DescribeDataFetchUrlV2Response.cpp
-  src/v20210622/model/DescribeRumGroupLogResponse.cpp
-  src/v20210622/model/DescribeDataStaticUrlRequest.cpp
-  src/v20210622/model/ModifyInstanceResponse.cpp
-  src/v20210622/model/DeleteStarProjectRequest.cpp
-  src/v20210622/model/DescribeWhitelistsRequest.cpp
-  src/v20210622/model/DescribeApplicationExitReportDetailRequest.cpp
-  src/v20210622/model/DescribeUvListRequest.cpp
+  src/v20210622/model/DescribeTDEMFunnelDetailResponse.cpp
+  src/v20210622/model/DescribeIssueCrashLogDownloadURLRequest.cpp
+  src/v20210622/model/CreateTDEMFieldTransformRuleResponse.cpp
+  src/v20210622/model/DescribeIssueTrendResponse.cpp
   src/v20210622/model/DescribeDataReportCountV2Request.cpp
-  src/v20210622/model/CompareCondition.cpp
-  src/v20210622/model/ModifyProjectRequest.cpp
-  src/v20210622/model/DescribeDataPerformancePageV2Response.cpp
-  src/v20210622/model/DescribeLagANRProblemFeatureAccountsResponse.cpp
+  src/v20210622/model/UploadMiniProgramSourceRequest.cpp
   src/v20210622/model/DescribeFOOMMallocProblemDetailResponse.cpp
-  src/v20210622/model/DescribeUvListResponse.cpp
-  src/v20210622/model/DescribeDataRequest.cpp
-  src/v20210622/model/DescribeDataEventUrlV2Request.cpp
-  src/v20210622/model/DescribeTopIssuesResponse.cpp
-  src/v20210622/model/DescribeTawAreasResponse.cpp
-  src/v20210622/model/DescribeApplicationExitReportListRequest.cpp
+  src/v20210622/model/DescribeTDEMEventSearchRequest.cpp
+  src/v20210622/model/StopProjectRequest.cpp
   src/v20210622/model/DescribeRumLogTotalV2Request.cpp
-  src/v20210622/model/DescribeDataEventUrlV2Response.cpp
-  src/v20210622/model/DeleteInstanceResponse.cpp
   src/v20210622/model/DescribeDataWebVitalsPageV2Request.cpp
-  src/v20210622/model/DescribeLagANRProblemListResponse.cpp
-  src/v20210622/model/DescribeAppSingleCaseListResponse.cpp
-  src/v20210622/model/ResumeInstanceRequest.cpp
   src/v20210622/model/DescribeDataPerformancePageRequest.cpp
-  src/v20210622/model/DeleteReleaseFileRequest.cpp
-  src/v20210622/model/DescribeRumLogListResponse.cpp
-  src/v20210622/model/DescribeScoresV2Request.cpp
-  src/v20210622/model/RumProject.cpp
-  src/v20210622/model/DescribeDataFetchUrlRequest.cpp
-  src/v20210622/model/DescribeRumLogExportRequest.cpp
-  src/v20210622/model/DescribeDataLogUrlStatisticsResponse.cpp
-  src/v20210622/model/DescribeRumLogExportV2Request.cpp
-  src/v20210622/model/DescribeDataLogUrlStatisticsV2Response.cpp
-  src/v20210622/model/DescribeDataCustomUrlResponse.cpp
-  src/v20210622/model/CreateStarProjectResponse.cpp
+  src/v20210622/model/DescribeTDEMSSEDistributionResponse.cpp
+  src/v20210622/model/DescribeTDEMMetricSummaryRequest.cpp
+  src/v20210622/model/ResumeInstanceRequest.cpp
+  src/v20210622/model/DescribeMiniProgramReplayPacksRequest.cpp
+  src/v20210622/model/DialTargetIpGeo.cpp
   src/v20210622/model/DeleteProjectResponse.cpp
-  src/v20210622/model/DescribeScoresV2Response.cpp
-  src/v20210622/model/DescribeDataPvUrlStatisticsRequest.cpp
-  src/v20210622/model/DescribeRumStatsLogListV2Response.cpp
-  src/v20210622/model/DescribeFOOMProblemListRequest.cpp
+  src/v20210622/model/DescribePerformanceMetricsRequest.cpp
+  src/v20210622/model/DescribeTDEMEventRankResponse.cpp
+  src/v20210622/model/DescribeDataCustomUrlV2Request.cpp
   src/v20210622/model/ReleaseFile.cpp
   src/v20210622/model/ModifyProjectLimitResponse.cpp
-  src/v20210622/model/DescribeRumLogExportsResponse.cpp
-  src/v20210622/model/DescribeDataStaticProjectRequest.cpp
-  src/v20210622/model/DescribeRumStatsLogListRequest.cpp
-  src/v20210622/model/DescribeFOOMMallocProblemListResponse.cpp
   src/v20210622/model/DescribeDataBridgeUrlV2Request.cpp
-  src/v20210622/model/DescribeFOOMProblemListResponse.cpp
-  src/v20210622/model/Kafka.cpp
-  src/v20210622/model/ProjectLimit.cpp
-  src/v20210622/model/DescribeWhitelistsResponse.cpp
+  src/v20210622/model/ResumeProjectRequest.cpp
   src/v20210622/model/DescribeRumStatsLogListResponse.cpp
+  src/v20210622/model/DeleteTDEMApplicationResponse.cpp
   src/v20210622/model/CreateWhitelistRequest.cpp
   src/v20210622/model/StopInstanceResponse.cpp
-  src/v20210622/model/DescribeDataPvUrlStatisticsResponse.cpp
-  src/v20210622/model/DescribeDataLogUrlInfoRequest.cpp
-  src/v20210622/model/DescribeProjectLimitsRequest.cpp
-  src/v20210622/model/DescribeDataPvUrlStatisticsV2Response.cpp
-  src/v20210622/model/RumPvInfo.cpp
-  src/v20210622/model/RumAreaInfo.cpp
-  src/v20210622/model/DescribeDataSetUrlStatisticsRequest.cpp
-  src/v20210622/model/DescribeDataWebVitalsPageV2Response.cpp
-  src/v20210622/model/DescribeRumLogExportV2Response.cpp
-  src/v20210622/model/ResumeInstanceResponse.cpp
-  src/v20210622/model/DescribeDataStaticProjectResponse.cpp
-  src/v20210622/model/ModifyInstanceRequest.cpp
+  src/v20210622/model/ModifyTDEMSampleConfigRequest.cpp
+  src/v20210622/model/DescribeTDEMMetricTrendRequest.cpp
+  src/v20210622/model/ModifyProjectRequest.cpp
+  src/v20210622/model/MetricTrendPoint.cpp
   src/v20210622/model/CreateStarProjectRequest.cpp
-  src/v20210622/model/DescribeAppSingleCaseListRequest.cpp
   src/v20210622/model/DescribeDataSetUrlStatisticsV2Request.cpp
   src/v20210622/model/DescribeRumLogExportsV2Request.cpp
-  src/v20210622/model/DescribeReleaseFileSignRequest.cpp
-  src/v20210622/model/DeleteWhitelistRequest.cpp
-  src/v20210622/model/DescribeDataLogUrlInfoResponse.cpp
+  src/v20210622/model/RumProject.cpp
   src/v20210622/model/DescribeFOOMMallocProblemListRequest.cpp
-  src/v20210622/model/DescribeExceptionDetailResponse.cpp
-  src/v20210622/model/DescribeExceptionReportListResponse.cpp
-  src/v20210622/model/DeleteReleaseFileResponse.cpp
-  src/v20210622/model/DescribeDataCustomUrlV2Request.cpp
+  src/v20210622/model/DescribeTDEMFunnelStepSessionListResponse.cpp
+  src/v20210622/model/UsageDetailRow.cpp
+  src/v20210622/model/DescribeScoresResponse.cpp
+  src/v20210622/model/EventRankPoint.cpp
+  src/v20210622/model/DescribeTDEMMetricDistributionResponse.cpp
+  src/v20210622/model/DescribeTDEMOverviewScoresRequest.cpp
+  src/v20210622/model/DescribeSymbolArtifactsResponse.cpp
+  src/v20210622/model/DescribeTDEMRelatedEventsResponse.cpp
+  src/v20210622/model/ExceptionBucket.cpp
+  src/v20210622/model/DeleteTDEMBusinessSystemRequest.cpp
+  src/v20210622/model/FieldTransformRuleItem.cpp
+  src/v20210622/model/DescribeReplayDetailsRequest.cpp
+  src/v20210622/model/DescribeStruggleDistributionRequest.cpp
+  src/v20210622/model/DescribeSymbolArtifactUploadCredentialResponse.cpp
+  src/v20210622/model/DeleteInstanceRequest.cpp
+  src/v20210622/model/DescribeFieldValuesResponse.cpp
+  src/v20210622/model/ModifyTDEMFieldTransformRuleRequest.cpp
+  src/v20210622/model/DescribeDataWebVitalsPageRequest.cpp
+  src/v20210622/model/DescribeTDEMUsageDetailResponse.cpp
+  src/v20210622/model/DescribeDataFetchUrlInfoRequest.cpp
+  src/v20210622/model/DescribeFOOMReportListResponse.cpp
+  src/v20210622/model/CreateFieldTransformRuleResponse.cpp
+  src/v20210622/model/ModifyFieldTransformRuleRequest.cpp
+  src/v20210622/model/DescribeFieldTransformRulesRequest.cpp
+  src/v20210622/model/DeleteTDEMFunnelRequest.cpp
+  src/v20210622/model/DescribeAppDimensionMetricsResponse.cpp
+  src/v20210622/model/DescribeTDEMSSEDimensionsResponse.cpp
+  src/v20210622/model/CreateTDEMFunnelRequest.cpp
+  src/v20210622/model/TDEMSSEDistributionBin.cpp
+  src/v20210622/model/DescribeRumGroupLogRequest.cpp
+  src/v20210622/model/ModifyProjectResponse.cpp
+  src/v20210622/model/DescribeTDEMSSETrendResponse.cpp
+  src/v20210622/model/MetricTrendBatchItem.cpp
+  src/v20210622/model/ModifyTDEMBusinessSystemResponse.cpp
+  src/v20210622/model/ExplorationEventItem.cpp
+  src/v20210622/model/DescribeFOOMProblemListRequest.cpp
+  src/v20210622/model/DescribePvListRequest.cpp
+  src/v20210622/model/DescribeTDEMDialOverviewResponse.cpp
+  src/v20210622/model/DescribeDataLogUrlStatisticsV2Request.cpp
+  src/v20210622/model/ModifyTDEMFunnelResponse.cpp
+  src/v20210622/model/DescribeDataStaticResourceV2Response.cpp
+  src/v20210622/model/DescribeIssueAffectedUsersResponse.cpp
+  src/v20210622/model/DescribeIssuesRequest.cpp
+  src/v20210622/model/DescribeDataFetchProjectRequest.cpp
+  src/v20210622/model/DescribeDataResponse.cpp
+  src/v20210622/model/RumAreaInfo.cpp
+  src/v20210622/model/DescribeRumLogExportV2Request.cpp
+  src/v20210622/model/ModifyInstanceRequest.cpp
+  src/v20210622/model/DescribeAppMetricsDataResponse.cpp
+  src/v20210622/model/DescribeAppSingleCaseDetailListResponse.cpp
+  src/v20210622/model/ResumeTDEMApplicationResponse.cpp
+  src/v20210622/model/ResumeTDEMApplicationRequest.cpp
+  src/v20210622/model/DescribeTDEMDialDimensionsRequest.cpp
+  src/v20210622/model/RumUvInfo.cpp
+  src/v20210622/model/DescribeScoresRequest.cpp
+  src/v20210622/model/EventFrame.cpp
+  src/v20210622/model/DescribeIssuesListRequest.cpp
+  src/v20210622/model/DescribeIssuesDistributionRequest.cpp
+  src/v20210622/model/DescribeTDEMFunnelTrendResponse.cpp
+  src/v20210622/model/DescribeTDEMBusinessSystemsResponse.cpp
+  src/v20210622/model/DescribeTDEMSSEPercentileResponse.cpp
+  src/v20210622/model/DescribeDataStaticResourceV2Request.cpp
+  src/v20210622/model/DescribeTDEMDialExecutionDetailResponse.cpp
+  src/v20210622/model/UploadSymbolArtifactResponse.cpp
+  src/v20210622/model/DescribeTDEMMetricDistributionRequest.cpp
+  src/v20210622/model/DescribeDataStaticUrlRequest.cpp
+  src/v20210622/model/ModifyIssueStatusRequest.cpp
+  src/v20210622/model/DescribeWhitelistsRequest.cpp
+  src/v20210622/model/DescribeUvListRequest.cpp
+  src/v20210622/model/CreateFieldTransformRuleRequest.cpp
+  src/v20210622/model/DescribeReplayMetaRequest.cpp
+  src/v20210622/model/DescribeRumLogExportsV2Response.cpp
+  src/v20210622/model/SymbolicatedView.cpp
+  src/v20210622/model/DescribeFOOMReportListRequest.cpp
+  src/v20210622/model/DescribeApplicationExitReportListRequest.cpp
+  src/v20210622/model/DescribeTDEMSSEDistributionRequest.cpp
+  src/v20210622/model/ModifyProjectLimitRequest.cpp
+  src/v20210622/model/DescribeFieldTransformRulesResponse.cpp
+  src/v20210622/model/DescribeTDEMEventDetailRequest.cpp
+  src/v20210622/model/DescribeLagANRProblemListResponse.cpp
+  src/v20210622/model/DescribeAppSingleCaseListResponse.cpp
+  src/v20210622/model/DescribePerformanceMetricsResponse.cpp
+  src/v20210622/model/DescribeDataBridgeUrlV2Response.cpp
+  src/v20210622/model/DescribeUserJourneySanKeyResponse.cpp
+  src/v20210622/model/DescribeDataFetchUrlRequest.cpp
+  src/v20210622/model/DescribeProjectLimitsRequest.cpp
+  src/v20210622/model/CreateStarProjectResponse.cpp
+  src/v20210622/model/DescribeLagANRProblemListRequest.cpp
+  src/v20210622/model/DescribeIssueTrendRequest.cpp
+  src/v20210622/model/DescribeRumLogExportsResponse.cpp
+  src/v20210622/model/DescribeTDEMSampleRateRequest.cpp
+  src/v20210622/model/DescribeFOOMMallocProblemListResponse.cpp
+  src/v20210622/model/DescribeIssueBreadcrumbsRequest.cpp
+  src/v20210622/model/CreateTDEMApplicationRequest.cpp
+  src/v20210622/model/ModifyInstanceResponse.cpp
+  src/v20210622/model/ModifyTDEMSampleConfigResponse.cpp
+  src/v20210622/model/DeleteTDEMBusinessSystemResponse.cpp
+  src/v20210622/model/ResumeInstanceResponse.cpp
+  src/v20210622/model/DescribeTawAreasResponse.cpp
+  src/v20210622/model/DescribeAppSingleCaseListRequest.cpp
+  src/v20210622/model/DeleteTDEMDialTaskRequest.cpp
+  src/v20210622/model/DeleteWhitelistRequest.cpp
+  src/v20210622/model/DescribeTDEMFieldTransformRulesRequest.cpp
+  src/v20210622/model/DeleteMiniProgramReplayPackResponse.cpp
+  src/v20210622/model/ModifyTDEMBusinessSystemRequest.cpp
+  src/v20210622/model/StopTDEMApplicationResponse.cpp
+  src/v20210622/model/ApplicationItem.cpp
+  src/v20210622/model/DescribeTawInstancesRequest.cpp
   src/v20210622/model/DescribeDataLogUrlStatisticsRequest.cpp
   src/v20210622/model/DescribeLagANRProblemAccountDetailRequest.cpp
-  src/v20210622/model/DescribeDataBridgeUrlV2Response.cpp
-  src/v20210622/model/DescribeRumStatsLogListV2Request.cpp
-  src/v20210622/model/DescribeTawAreasRequest.cpp
-  src/v20210622/model/DescribeDataCustomUrlV2Response.cpp
-  src/v20210622/model/Filter.cpp
-  src/v20210622/model/DeleteStarProjectResponse.cpp
-  src/v20210622/model/DescribeRumLogDetailsV2Response.cpp
-  src/v20210622/model/DescribeDataPerformancePageResponse.cpp
-  src/v20210622/model/DeleteInstanceRequest.cpp
-  src/v20210622/model/DescribeIssuesListResponse.cpp
-  src/v20210622/model/DescribeDataStaticResourceResponse.cpp
-  src/v20210622/model/DescribeDataEventUrlResponse.cpp
-  src/v20210622/model/DescribeReleaseFileSignResponse.cpp
+  src/v20210622/model/TDEMSSEPercentilePoint.cpp
+  src/v20210622/model/DescribeTDEMUsageSummaryResponse.cpp
+  src/v20210622/model/FloatNameValue.cpp
+  src/v20210622/model/OverviewScoreItem.cpp
+  src/v20210622/model/IntKeyValue.cpp
+  src/v20210622/model/DescribeTDEMFunnelDimensionsRequest.cpp
+  src/v20210622/model/DescribeFOOMProblemDetailResponse.cpp
   src/v20210622/model/DescribeRumLogTotalV2Response.cpp
-  src/v20210622/model/DescribeDataWebVitalsPageRequest.cpp
-  src/v20210622/model/DescribeDataFetchUrlInfoRequest.cpp
   src/v20210622/model/DescribeDataFetchUrlInfoResponse.cpp
-  src/v20210622/model/DescribeFOOMReportListResponse.cpp
-  src/v20210622/model/DescribeReleaseFilesResponse.cpp
-  src/v20210622/model/DescribeDataStaticUrlResponse.cpp
+  src/v20210622/model/ModifyIssueStatusResponse.cpp
+  src/v20210622/model/DescribeWhitelistsResponse.cpp
   src/v20210622/model/DescribeIssuesDistributionResponse.cpp
   src/v20210622/model/CreateWhitelistResponse.cpp
   src/v20210622/model/ScoreInfo.cpp
+  src/v20210622/model/AppOverviewScore.cpp
   src/v20210622/model/DescribeDataWebVitalsPageResponse.cpp
+  src/v20210622/model/DescribeSampleRateResponse.cpp
+  src/v20210622/model/DescribeTawAreasRequest.cpp
+  src/v20210622/model/DescribeTDEMApplicationsResponse.cpp
+  src/v20210622/model/DescribeAppSingleCaseDetailListRequest.cpp
+  src/v20210622/model/DescribeTDEMFunnelListRequest.cpp
+  src/v20210622/model/StopProjectResponse.cpp
+  src/v20210622/model/DescribeApplicationExitReportListResponse.cpp
+  src/v20210622/model/DescribeTDEMEventSearchSummaryResponse.cpp
+  src/v20210622/model/DescribeRumLogExportResponse.cpp
+  src/v20210622/model/DescribeTDEMDialTasksResponse.cpp
+  src/v20210622/model/DescribeIssuesStatisticsTrendResponse.cpp
+  src/v20210622/model/DescribeIssueAffectedUsersRequest.cpp
+  src/v20210622/model/CreateTDEMFieldTransformRuleRequest.cpp
+  src/v20210622/model/Whitelist.cpp
+  src/v20210622/model/DescribeLagANRProblemAccountDetailResponse.cpp
+  src/v20210622/model/EventSearchSeriesPoint.cpp
+  src/v20210622/model/DescribeTDEMEventRankRequest.cpp
+  src/v20210622/model/DescribeTDEMMetricTrendResponse.cpp
+  src/v20210622/model/DeleteStarProjectResponse.cpp
+  src/v20210622/model/EventStack.cpp
+  src/v20210622/model/DialTask.cpp
+  src/v20210622/model/DescribeTokenResponse.cpp
+  src/v20210622/model/DescribeIssuesStatisticsTrendRequest.cpp
+  src/v20210622/model/DescribeDataPvUrlInfoResponse.cpp
+  src/v20210622/model/StopInstanceRequest.cpp
+  src/v20210622/model/StopTDEMApplicationRequest.cpp
+  src/v20210622/model/DescribeFileCertificateRequest.cpp
+  src/v20210622/model/DescribeErrorResponse.cpp
+  src/v20210622/model/DialDimensionItem.cpp
+  src/v20210622/model/DescribeFOOMProblemDetailRequest.cpp
+  src/v20210622/model/DeleteWhitelistResponse.cpp
+  src/v20210622/model/DescribeSymbolArtifactUploadCredentialRequest.cpp
+  src/v20210622/model/DescribeTDEMBusinessSystemsRequest.cpp
+  src/v20210622/model/DescribeTDEMFunnelReportResponse.cpp
+  src/v20210622/model/DescribeMiniProgramReplayPackRequest.cpp
+  src/v20210622/model/DescribeDataReportCountRequest.cpp
+  src/v20210622/model/FloatKeyValue.cpp
+  src/v20210622/model/DescribeDataPerformancePageResponse.cpp
+  src/v20210622/model/ModifyFieldTransformRuleResponse.cpp
+  src/v20210622/model/CreateReleaseFileRequest.cpp
+  src/v20210622/model/MetricQueryItem.cpp
+  src/v20210622/model/DescribeDataStaticUrlV2Response.cpp
+  src/v20210622/model/CreateTDEMDialTaskResponse.cpp
+  src/v20210622/model/DescribeFieldValuesRequest.cpp
+  src/v20210622/model/DescribeExceptionDetailResponse.cpp
+  src/v20210622/model/CompareCondition.cpp
+  src/v20210622/model/CreateTDEMBusinessSystemResponse.cpp
+  src/v20210622/model/DescribeTopIssuesResponse.cpp
+  src/v20210622/model/FunnelStepInput.cpp
+  src/v20210622/model/DeleteReleaseFileRequest.cpp
+  src/v20210622/model/DescribeDataLogUrlStatisticsResponse.cpp
+  src/v20210622/model/DescribeDataPvUrlStatisticsRequest.cpp
+  src/v20210622/model/ModifyMiniProgramReplayPackRequest.cpp
+  src/v20210622/model/PreviewTDEMFunnelReportResponse.cpp
+  src/v20210622/model/ProjectLimit.cpp
+  src/v20210622/model/DeleteFieldTransformRuleRequest.cpp
+  src/v20210622/model/DescribeDataPvUrlStatisticsResponse.cpp
+  src/v20210622/model/DescribeDataLogUrlInfoRequest.cpp
+  src/v20210622/model/DescribeTDEMFunnelListResponse.cpp
+  src/v20210622/model/DescribeDataPvUrlStatisticsV2Response.cpp
+  src/v20210622/model/ExceptionDistribution.cpp
+  src/v20210622/model/DescribeTDEMFunnelReportRequest.cpp
+  src/v20210622/model/EventRankItem.cpp
+  src/v20210622/model/DescribeTDEMSSEPercentileRequest.cpp
+  src/v20210622/model/DescribeIssueEventDetailRequest.cpp
+  src/v20210622/model/TDEMSSETrendSeries.cpp
+  src/v20210622/model/ModifyTDEMSampleRateRequest.cpp
+  src/v20210622/model/DescribeTDEMSessionReplayTimelineRequest.cpp
+  src/v20210622/model/DescribeDataLogUrlInfoResponse.cpp
+  src/v20210622/model/RumPvInfo.cpp
+  src/v20210622/model/DescribeExceptionReportListResponse.cpp
+  src/v20210622/model/CreateTDEMBusinessSystemRequest.cpp
+  src/v20210622/model/CreateTDEMDialTaskRequest.cpp
+  src/v20210622/model/DescribeTDEMSampleRateResponse.cpp
+  src/v20210622/model/DescribeRumStatsLogListV2Request.cpp
+  src/v20210622/model/DescribeTDEMSSESummaryRequest.cpp
+  src/v20210622/model/ModifyTDEMDialTaskRequest.cpp
+  src/v20210622/model/DescribeDataCustomUrlV2Response.cpp
+  src/v20210622/model/DescribeReplayDataRequest.cpp
+  src/v20210622/model/DescribeTDEMDialOverviewRequest.cpp
+  src/v20210622/model/DescribeDataEventUrlResponse.cpp
+  src/v20210622/model/ModifyTDEMApplicationRequest.cpp
+  src/v20210622/model/ModifySampleRateResponse.cpp
+  src/v20210622/model/DescribeTDEMFunnelStepSessionListRequest.cpp
+  src/v20210622/model/DescribeReleaseFilesResponse.cpp
+  src/v20210622/model/ModifyMiniProgramReplayPackResponse.cpp
+  src/v20210622/model/DeleteMiniProgramReplayPackRequest.cpp
   src/v20210622/model/DescribeDataStaticProjectV2Request.cpp
+  src/v20210622/model/DescribeTDEMUsageDetailRequest.cpp
   src/v20210622/model/DescribeProjectsRequest.cpp
   src/v20210622/model/DescribeDataEventUrlRequest.cpp
-  src/v20210622/model/DescribeAppDimensionMetricsResponse.cpp
-  src/v20210622/model/DescribeDataSetUrlStatisticsV2Response.cpp
-  src/v20210622/model/ResumeProjectRequest.cpp
-  src/v20210622/model/DescribeAppSingleCaseDetailListRequest.cpp
-  src/v20210622/model/DescribeRumGroupLogRequest.cpp
-  src/v20210622/model/DescribeExceptionDetailRequest.cpp
-  src/v20210622/model/DescribeDataFetchUrlV2Request.cpp
-  src/v20210622/model/DescribeProjectsResponse.cpp
+  src/v20210622/model/ModifyTDEMFunnelRequest.cpp
+  src/v20210622/model/ModifyTDEMApplicationResponse.cpp
   src/v20210622/model/DescribeDataReportCountV2Response.cpp
-  src/v20210622/model/ModifyProjectResponse.cpp
+  src/v20210622/model/DescribeTDEMDialTrendRequest.cpp
   src/v20210622/model/DescribeDataReportCountResponse.cpp
-  src/v20210622/model/DescribeApplicationExitReportListResponse.cpp
-  src/v20210622/model/DescribeLagANRProblemAccountDetailResponse.cpp
-  src/v20210622/model/DescribeRumLogExportResponse.cpp
-  src/v20210622/model/DescribeRumLogExportsRequest.cpp
-  src/v20210622/model/DescribeIssuesStatisticsTrendResponse.cpp
-  src/v20210622/model/DescribeRumLogExportsV2Response.cpp
+  src/v20210622/model/DescribeFOOMMallocReportListResponse.cpp
+  src/v20210622/model/DescribeTDEMEventSearchSummaryRequest.cpp
+  src/v20210622/model/DescribeTDEMDialExecutionListRequest.cpp
   src/v20210622/model/DescribeRumLogListRequest.cpp
-  src/v20210622/model/DescribeRumGroupLogV2Response.cpp
   src/v20210622/model/DescribeDataPerformancePageV2Request.cpp
   src/v20210622/model/DescribeDataStaticResourceRequest.cpp
   src/v20210622/model/DescribeTawInstancesResponse.cpp
-  src/v20210622/model/DescribeApplicationExitReportDetailResponse.cpp
-  src/v20210622/model/DescribePvListRequest.cpp
+  src/v20210622/model/DescribeTDEMSessionReplayTimelineResponse.cpp
+  src/v20210622/model/DescribeTDEMRelatedEventsRequest.cpp
   src/v20210622/model/DescribeDataPvUrlInfoRequest.cpp
   src/v20210622/model/CreateReleaseFileResponse.cpp
+  src/v20210622/model/BusinessSystemItem.cpp
   src/v20210622/model/DescribeDataFetchProjectResponse.cpp
-  src/v20210622/model/DescribeFOOMReportListRequest.cpp
   src/v20210622/model/DescribeRumLogDetailsV2Request.cpp
   src/v20210622/model/DescribeLagANRProblemFeatureAccountsRequest.cpp
-  src/v20210622/model/Whitelist.cpp
-  src/v20210622/model/DescribeDataLogUrlStatisticsV2Request.cpp
-  src/v20210622/model/DescribeLagANRProblemListRequest.cpp
-  src/v20210622/model/DescribeDataStaticResourceV2Response.cpp
+  src/v20210622/model/EventView.cpp
   src/v20210622/model/DescribeTopIssuesRequest.cpp
-  src/v20210622/model/DescribeDataSetUrlStatisticsResponse.cpp
-  src/v20210622/model/Filters.cpp
   src/v20210622/model/DescribeRumGroupLogV2Request.cpp
   src/v20210622/model/DescribeAppDimensionMetricsRequest.cpp
   src/v20210622/model/DescribeFOOMMallocProblemDetailRequest.cpp
+  src/v20210622/model/DescribeTDEMSSEDimensionsRequest.cpp
+  src/v20210622/model/DescribeTDEMFunnelTrendRequest.cpp
+  src/v20210622/model/StringKeyValue.cpp
+  src/v20210622/model/TDEMSSEDimensionRow.cpp
+  src/v20210622/model/DeleteProjectRequest.cpp
+  src/v20210622/model/DescribeTDEMDialTrendResponse.cpp
+  src/v20210622/model/DescribeIssueBreadcrumbsResponse.cpp
+  src/v20210622/model/DescribeDataFetchUrlResponse.cpp
+  src/v20210622/model/DescribeErrorRequest.cpp
+  src/v20210622/model/DescribeUserJourneySanKeyRequest.cpp
+  src/v20210622/model/DeleteSymbolArtifactRequest.cpp
+  src/v20210622/model/DescribeDataStaticProjectV2Response.cpp
+  src/v20210622/model/DescribeIssuesListResponse.cpp
+  src/v20210622/model/DescribeSymbolArtifactsRequest.cpp
+  src/v20210622/model/CreateTDEMFunnelResponse.cpp
+  src/v20210622/model/ScoreInfoV2.cpp
+  src/v20210622/model/UsageTimePoint.cpp
+  src/v20210622/model/DialProbe.cpp
+  src/v20210622/model/UploadSymbolArtifactRequest.cpp
+  src/v20210622/model/DescribeReleaseFilesRequest.cpp
+  src/v20210622/model/DescribeExceptionReportListRequest.cpp
+  src/v20210622/model/DescribeTDEMDialDimensionsResponse.cpp
+  src/v20210622/model/DescribeRumGroupLogResponse.cpp
+  src/v20210622/model/DescribeIssuesResponse.cpp
+  src/v20210622/model/DescribeTDEMUsageSummaryRequest.cpp
+  src/v20210622/model/DeleteStarProjectRequest.cpp
+  src/v20210622/model/DeleteTDEMApplicationRequest.cpp
+  src/v20210622/model/DescribeApplicationExitReportDetailRequest.cpp
+  src/v20210622/model/PreviewTDEMFunnelReportRequest.cpp
+  src/v20210622/model/DescribeStruggleDistributionResponse.cpp
+  src/v20210622/model/DescribeLagANRProblemFeatureAccountsResponse.cpp
+  src/v20210622/model/DescribeUvListResponse.cpp
+  src/v20210622/model/DescribeDataRequest.cpp
+  src/v20210622/model/DescribeDataEventUrlV2Request.cpp
+  src/v20210622/model/DescribeTDEMFunnelDimensionsResponse.cpp
+  src/v20210622/model/DescribeTDEMSampleConfigResponse.cpp
+  src/v20210622/model/DescribeTDEMDialExecutionDetailRequest.cpp
+  src/v20210622/model/DescribeDataEventUrlV2Response.cpp
+  src/v20210622/model/DescribeIssueEventDetailResponse.cpp
+  src/v20210622/model/DeleteInstanceResponse.cpp
+  src/v20210622/model/MetricDistributionItem.cpp
+  src/v20210622/model/DescribeTDEMEventDetailResponse.cpp
+  src/v20210622/model/CreateTDEMApplicationResponse.cpp
+  src/v20210622/model/UploadMiniProgramSourceResponse.cpp
+  src/v20210622/model/DescribeScoresV2Request.cpp
+  src/v20210622/model/TDEMSSETrendPoint.cpp
+  src/v20210622/model/DescribeRumLogExportRequest.cpp
+  src/v20210622/model/DescribeDataLogUrlStatisticsV2Response.cpp
+  src/v20210622/model/DescribeDataCustomUrlResponse.cpp
+  src/v20210622/model/DescribeTDEMDialTasksRequest.cpp
+  src/v20210622/model/DescribeTDEMSSETrendRequest.cpp
+  src/v20210622/model/DescribeTDEMDialExecutionListResponse.cpp
+  src/v20210622/model/DescribeRumStatsLogListV2Response.cpp
+  src/v20210622/model/DeleteTDEMFieldTransformRuleRequest.cpp
+  src/v20210622/model/DescribeDataStaticProjectRequest.cpp
+  src/v20210622/model/DescribeRumStatsLogListRequest.cpp
+  src/v20210622/model/DescribeFOOMProblemListResponse.cpp
+  src/v20210622/model/Kafka.cpp
+  src/v20210622/model/DescribeTDEMSampleConfigRequest.cpp
+  src/v20210622/model/ExceptionDimensionRow.cpp
+  src/v20210622/model/DescribeReplayDetailsResponse.cpp
+  src/v20210622/model/DescribeDataSetUrlStatisticsRequest.cpp
+  src/v20210622/model/DescribeDataWebVitalsPageV2Response.cpp
+  src/v20210622/model/DescribeDataStaticProjectResponse.cpp
+  src/v20210622/model/DescribeDataPerformancePageV2Response.cpp
+  src/v20210622/model/DescribeTDEMApplicationsRequest.cpp
+  src/v20210622/model/DescribeTDEMSSESummaryResponse.cpp
+  src/v20210622/model/DescribeReleaseFileSignRequest.cpp
+  src/v20210622/model/DescribeSampleRateRequest.cpp
+  src/v20210622/model/DescribeSessionListResponse.cpp
+  src/v20210622/model/DeleteReleaseFileResponse.cpp
+  src/v20210622/model/DescribeIssueCrashLogDownloadURLResponse.cpp
+  src/v20210622/model/DescribeReleaseFileSignResponse.cpp
+  src/v20210622/model/DescribeTDEMOverviewScoresResponse.cpp
+  src/v20210622/model/Filter.cpp
+  src/v20210622/model/DialExecution.cpp
+  src/v20210622/model/ModifyTDEMFieldTransformRuleResponse.cpp
+  src/v20210622/model/ModifyTDEMSampleRateResponse.cpp
+  src/v20210622/model/DescribeDataStaticResourceResponse.cpp
+  src/v20210622/model/DeleteTDEMFieldTransformRuleResponse.cpp
+  src/v20210622/model/MetricDistributionBatchItem.cpp
+  src/v20210622/model/DescribeDataStaticUrlResponse.cpp
+  src/v20210622/model/DescribeReplayDataResponse.cpp
+  src/v20210622/model/DescribeTDEMFunnelDetailRequest.cpp
+  src/v20210622/model/DescribeIssueDetailRequest.cpp
+  src/v20210622/model/DescribeTDEMEventSearchResponse.cpp
+  src/v20210622/model/DescribeDataSetUrlStatisticsV2Response.cpp
+  src/v20210622/model/DescribeExceptionDetailRequest.cpp
+  src/v20210622/model/DescribeDataFetchUrlV2Request.cpp
+  src/v20210622/model/DescribeProjectsResponse.cpp
+  src/v20210622/model/DescribeDataSetUrlStatisticsResponse.cpp
+  src/v20210622/model/DescribeMiniProgramReplayPacksResponse.cpp
+  src/v20210622/model/DescribeRumLogExportsRequest.cpp
+  src/v20210622/model/MetricSummaryBatchItem.cpp
+  src/v20210622/model/DescribeTDEMFieldTransformRulesResponse.cpp
+  src/v20210622/model/DeleteSymbolArtifactResponse.cpp
+  src/v20210622/model/DescribeRumGroupLogV2Response.cpp
+  src/v20210622/model/ModifyTDEMDialTaskResponse.cpp
+  src/v20210622/model/DescribeApplicationExitReportDetailResponse.cpp
+  src/v20210622/model/DescribeIssueEventsResponse.cpp
+  src/v20210622/model/ModifySampleRateRequest.cpp
+  src/v20210622/model/DescribeIssueEventsRequest.cpp
+  src/v20210622/model/DescribeTDEMMetricSummaryResponse.cpp
+  src/v20210622/model/DescribeMiniProgramReplayPackResponse.cpp
+  src/v20210622/model/Filters.cpp
+  src/v20210622/model/DescribeIssueDetailResponse.cpp
+  src/v20210622/model/DeleteTDEMDialTaskResponse.cpp
   src/v20210622/model/RumInstanceInfo.cpp
   )
 

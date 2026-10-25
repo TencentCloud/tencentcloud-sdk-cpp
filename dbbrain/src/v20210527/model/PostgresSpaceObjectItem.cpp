@@ -24,6 +24,7 @@ PostgresSpaceObjectItem::PostgresSpaceObjectItem() :
     m_tableCatalogHasBeenSet(false),
     m_tableSchemaHasBeenSet(false),
     m_tableNameHasBeenSet(false),
+    m_tableStatusHasBeenSet(false),
     m_relationSizeHasBeenSet(false),
     m_tableSizeHasBeenSet(false),
     m_indexSizeHasBeenSet(false),
@@ -66,6 +67,16 @@ CoreInternalOutcome PostgresSpaceObjectItem::Deserialize(const rapidjson::Value 
         }
         m_tableName = string(value["TableName"].GetString());
         m_tableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableStatus") && !value["TableStatus"].IsNull())
+    {
+        if (!value["TableStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgresSpaceObjectItem.TableStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableStatus = value["TableStatus"].GetInt64();
+        m_tableStatusHasBeenSet = true;
     }
 
     if (value.HasMember("RelationSize") && !value["RelationSize"].IsNull())
@@ -157,6 +168,14 @@ void PostgresSpaceObjectItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tableStatus, allocator);
     }
 
     if (m_relationSizeHasBeenSet)
@@ -256,6 +275,22 @@ void PostgresSpaceObjectItem::SetTableName(const string& _tableName)
 bool PostgresSpaceObjectItem::TableNameHasBeenSet() const
 {
     return m_tableNameHasBeenSet;
+}
+
+int64_t PostgresSpaceObjectItem::GetTableStatus() const
+{
+    return m_tableStatus;
+}
+
+void PostgresSpaceObjectItem::SetTableStatus(const int64_t& _tableStatus)
+{
+    m_tableStatus = _tableStatus;
+    m_tableStatusHasBeenSet = true;
+}
+
+bool PostgresSpaceObjectItem::TableStatusHasBeenSet() const
+{
+    return m_tableStatusHasBeenSet;
 }
 
 double PostgresSpaceObjectItem::GetRelationSize() const

@@ -28,6 +28,7 @@
 #include <tencentcloud/clb/v20180317/model/RerankConfig.h>
 #include <tencentcloud/clb/v20180317/model/DecisionsConfig.h>
 #include <tencentcloud/clb/v20180317/model/ImageConfig.h>
+#include <tencentcloud/clb/v20180317/model/RedirectConfig.h>
 
 
 namespace TencentCloud
@@ -301,6 +302,69 @@ namespace TencentCloud
                      */
                     bool ImageConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例重定向配置</p>
+                     * @return RedirectConfig <p>实例重定向配置</p>
+                     * 
+                     */
+                    RedirectConfig GetRedirectConfig() const;
+
+                    /**
+                     * 设置<p>实例重定向配置</p>
+                     * @param _redirectConfig <p>实例重定向配置</p>
+                     * 
+                     */
+                    void SetRedirectConfig(const RedirectConfig& _redirectConfig);
+
+                    /**
+                     * 判断参数 RedirectConfig 是否已赋值
+                     * @return RedirectConfig 是否已赋值
+                     * 
+                     */
+                    bool RedirectConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>网络协议</p>
+                     * @return Schema <p>网络协议</p>
+                     * 
+                     */
+                    std::string GetSchema() const;
+
+                    /**
+                     * 设置<p>网络协议</p>
+                     * @param _schema <p>网络协议</p>
+                     * 
+                     */
+                    void SetSchema(const std::string& _schema);
+
+                    /**
+                     * 判断参数 Schema 是否已赋值
+                     * @return Schema 是否已赋值
+                     * 
+                     */
+                    bool SchemaHasBeenSet() const;
+
+                    /**
+                     * 获取<p>监听端口</p><p>取值范围：[1, 65535]</p>
+                     * @return Port <p>监听端口</p><p>取值范围：[1, 65535]</p>
+                     * 
+                     */
+                    uint64_t GetPort() const;
+
+                    /**
+                     * 设置<p>监听端口</p><p>取值范围：[1, 65535]</p>
+                     * @param _port <p>监听端口</p><p>取值范围：[1, 65535]</p>
+                     * 
+                     */
+                    void SetPort(const uint64_t& _port);
+
+                    /**
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
+                     * 
+                     */
+                    bool PortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -374,6 +438,24 @@ namespace TencentCloud
                      */
                     ImageConfig m_imageConfig;
                     bool m_imageConfigHasBeenSet;
+
+                    /**
+                     * <p>实例重定向配置</p>
+                     */
+                    RedirectConfig m_redirectConfig;
+                    bool m_redirectConfigHasBeenSet;
+
+                    /**
+                     * <p>网络协议</p>
+                     */
+                    std::string m_schema;
+                    bool m_schemaHasBeenSet;
+
+                    /**
+                     * <p>监听端口</p><p>取值范围：[1, 65535]</p>
+                     */
+                    uint64_t m_port;
+                    bool m_portHasBeenSet;
 
                 };
             }

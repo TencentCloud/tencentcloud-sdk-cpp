@@ -23,20 +23,48 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/rum/v20210622/model/CreateFieldTransformRuleRequest.h>
+#include <tencentcloud/rum/v20210622/model/CreateFieldTransformRuleResponse.h>
 #include <tencentcloud/rum/v20210622/model/CreateReleaseFileRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateReleaseFileResponse.h>
 #include <tencentcloud/rum/v20210622/model/CreateStarProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateStarProjectResponse.h>
+#include <tencentcloud/rum/v20210622/model/CreateTDEMApplicationRequest.h>
+#include <tencentcloud/rum/v20210622/model/CreateTDEMApplicationResponse.h>
+#include <tencentcloud/rum/v20210622/model/CreateTDEMBusinessSystemRequest.h>
+#include <tencentcloud/rum/v20210622/model/CreateTDEMBusinessSystemResponse.h>
+#include <tencentcloud/rum/v20210622/model/CreateTDEMDialTaskRequest.h>
+#include <tencentcloud/rum/v20210622/model/CreateTDEMDialTaskResponse.h>
+#include <tencentcloud/rum/v20210622/model/CreateTDEMFieldTransformRuleRequest.h>
+#include <tencentcloud/rum/v20210622/model/CreateTDEMFieldTransformRuleResponse.h>
+#include <tencentcloud/rum/v20210622/model/CreateTDEMFunnelRequest.h>
+#include <tencentcloud/rum/v20210622/model/CreateTDEMFunnelResponse.h>
 #include <tencentcloud/rum/v20210622/model/CreateWhitelistRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateWhitelistResponse.h>
+#include <tencentcloud/rum/v20210622/model/DeleteFieldTransformRuleRequest.h>
+#include <tencentcloud/rum/v20210622/model/DeleteFieldTransformRuleResponse.h>
 #include <tencentcloud/rum/v20210622/model/DeleteInstanceRequest.h>
 #include <tencentcloud/rum/v20210622/model/DeleteInstanceResponse.h>
+#include <tencentcloud/rum/v20210622/model/DeleteMiniProgramReplayPackRequest.h>
+#include <tencentcloud/rum/v20210622/model/DeleteMiniProgramReplayPackResponse.h>
 #include <tencentcloud/rum/v20210622/model/DeleteProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/DeleteProjectResponse.h>
 #include <tencentcloud/rum/v20210622/model/DeleteReleaseFileRequest.h>
 #include <tencentcloud/rum/v20210622/model/DeleteReleaseFileResponse.h>
 #include <tencentcloud/rum/v20210622/model/DeleteStarProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/DeleteStarProjectResponse.h>
+#include <tencentcloud/rum/v20210622/model/DeleteSymbolArtifactRequest.h>
+#include <tencentcloud/rum/v20210622/model/DeleteSymbolArtifactResponse.h>
+#include <tencentcloud/rum/v20210622/model/DeleteTDEMApplicationRequest.h>
+#include <tencentcloud/rum/v20210622/model/DeleteTDEMApplicationResponse.h>
+#include <tencentcloud/rum/v20210622/model/DeleteTDEMBusinessSystemRequest.h>
+#include <tencentcloud/rum/v20210622/model/DeleteTDEMBusinessSystemResponse.h>
+#include <tencentcloud/rum/v20210622/model/DeleteTDEMDialTaskRequest.h>
+#include <tencentcloud/rum/v20210622/model/DeleteTDEMDialTaskResponse.h>
+#include <tencentcloud/rum/v20210622/model/DeleteTDEMFieldTransformRuleRequest.h>
+#include <tencentcloud/rum/v20210622/model/DeleteTDEMFieldTransformRuleResponse.h>
+#include <tencentcloud/rum/v20210622/model/DeleteTDEMFunnelRequest.h>
+#include <tencentcloud/rum/v20210622/model/DeleteTDEMFunnelResponse.h>
 #include <tencentcloud/rum/v20210622/model/DeleteWhitelistRequest.h>
 #include <tencentcloud/rum/v20210622/model/DeleteWhitelistResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeAppDimensionMetricsRequest.h>
@@ -129,8 +157,28 @@
 #include <tencentcloud/rum/v20210622/model/DescribeFOOMProblemListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeFOOMReportListRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeFOOMReportListResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeFieldTransformRulesRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeFieldTransformRulesResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeFieldValuesRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeFieldValuesResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeFileCertificateRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeFileCertificateResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueAffectedUsersRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueAffectedUsersResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueBreadcrumbsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueBreadcrumbsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueCrashLogDownloadURLRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueCrashLogDownloadURLResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueDetailRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueDetailResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueEventDetailRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueEventDetailResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueEventsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueEventsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueTrendRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssueTrendResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssuesRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeIssuesResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeIssuesDistributionRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeIssuesDistributionResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeIssuesListRequest.h>
@@ -143,6 +191,12 @@
 #include <tencentcloud/rum/v20210622/model/DescribeLagANRProblemFeatureAccountsResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeLagANRProblemListRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeLagANRProblemListResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeMiniProgramReplayPackRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeMiniProgramReplayPackResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeMiniProgramReplayPacksRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeMiniProgramReplayPacksResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribePerformanceMetricsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribePerformanceMetricsResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectLimitsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectLimitsResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectsRequest.h>
@@ -153,6 +207,12 @@
 #include <tencentcloud/rum/v20210622/model/DescribeReleaseFileSignResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeReleaseFilesRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeReleaseFilesResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeReplayDataRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeReplayDataResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeReplayDetailsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeReplayDetailsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeReplayMetaRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeReplayMetaResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumGroupLogRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumGroupLogResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumGroupLogV2Request.h>
@@ -175,10 +235,88 @@
 #include <tencentcloud/rum/v20210622/model/DescribeRumStatsLogListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumStatsLogListV2Request.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumStatsLogListV2Response.h>
+#include <tencentcloud/rum/v20210622/model/DescribeSampleRateRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeSampleRateResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeScoresRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeScoresResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeScoresV2Request.h>
 #include <tencentcloud/rum/v20210622/model/DescribeScoresV2Response.h>
+#include <tencentcloud/rum/v20210622/model/DescribeSessionListRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeSessionListResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeStruggleDistributionRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeStruggleDistributionResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeSymbolArtifactUploadCredentialRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeSymbolArtifactUploadCredentialResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeSymbolArtifactsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeSymbolArtifactsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMApplicationsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMApplicationsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMBusinessSystemsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMBusinessSystemsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialDimensionsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialDimensionsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialExecutionDetailRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialExecutionDetailResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialExecutionListRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialExecutionListResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialOverviewRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialOverviewResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialTasksRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialTasksResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialTrendRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMDialTrendResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMEventDetailRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMEventDetailResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMEventRankRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMEventRankResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMEventSearchRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMEventSearchResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMEventSearchSummaryRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMEventSearchSummaryResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFieldTransformRulesRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFieldTransformRulesResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelDetailRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelDetailResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelDimensionsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelDimensionsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelListRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelListResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelReportRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelReportResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelStepSessionListRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelStepSessionListResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelTrendRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMFunnelTrendResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMMetricDistributionRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMMetricDistributionResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMMetricSummaryRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMMetricSummaryResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMMetricTrendRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMMetricTrendResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMOverviewScoresRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMOverviewScoresResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMRelatedEventsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMRelatedEventsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSSEDimensionsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSSEDimensionsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSSEDistributionRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSSEDistributionResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSSEPercentileRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSSEPercentileResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSSESummaryRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSSESummaryResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSSETrendRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSSETrendResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSampleConfigRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSampleConfigResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSampleRateRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSampleRateResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSessionReplayTimelineRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMSessionReplayTimelineResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMUsageDetailRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMUsageDetailResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMUsageSummaryRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeTDEMUsageSummaryResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeTawAreasRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeTawAreasResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeTawInstancesRequest.h>
@@ -187,24 +325,58 @@
 #include <tencentcloud/rum/v20210622/model/DescribeTokenResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeTopIssuesRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeTopIssuesResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeUserJourneySanKeyRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeUserJourneySanKeyResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeUvListRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeUvListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeWhitelistsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeWhitelistsResponse.h>
+#include <tencentcloud/rum/v20210622/model/ModifyFieldTransformRuleRequest.h>
+#include <tencentcloud/rum/v20210622/model/ModifyFieldTransformRuleResponse.h>
 #include <tencentcloud/rum/v20210622/model/ModifyInstanceRequest.h>
 #include <tencentcloud/rum/v20210622/model/ModifyInstanceResponse.h>
+#include <tencentcloud/rum/v20210622/model/ModifyIssueStatusRequest.h>
+#include <tencentcloud/rum/v20210622/model/ModifyIssueStatusResponse.h>
+#include <tencentcloud/rum/v20210622/model/ModifyMiniProgramReplayPackRequest.h>
+#include <tencentcloud/rum/v20210622/model/ModifyMiniProgramReplayPackResponse.h>
 #include <tencentcloud/rum/v20210622/model/ModifyProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/ModifyProjectResponse.h>
 #include <tencentcloud/rum/v20210622/model/ModifyProjectLimitRequest.h>
 #include <tencentcloud/rum/v20210622/model/ModifyProjectLimitResponse.h>
+#include <tencentcloud/rum/v20210622/model/ModifySampleRateRequest.h>
+#include <tencentcloud/rum/v20210622/model/ModifySampleRateResponse.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMApplicationRequest.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMApplicationResponse.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMBusinessSystemRequest.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMBusinessSystemResponse.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMDialTaskRequest.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMDialTaskResponse.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMFieldTransformRuleRequest.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMFieldTransformRuleResponse.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMFunnelRequest.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMFunnelResponse.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMSampleConfigRequest.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMSampleConfigResponse.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMSampleRateRequest.h>
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMSampleRateResponse.h>
+#include <tencentcloud/rum/v20210622/model/PreviewTDEMFunnelReportRequest.h>
+#include <tencentcloud/rum/v20210622/model/PreviewTDEMFunnelReportResponse.h>
 #include <tencentcloud/rum/v20210622/model/ResumeInstanceRequest.h>
 #include <tencentcloud/rum/v20210622/model/ResumeInstanceResponse.h>
 #include <tencentcloud/rum/v20210622/model/ResumeProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/ResumeProjectResponse.h>
+#include <tencentcloud/rum/v20210622/model/ResumeTDEMApplicationRequest.h>
+#include <tencentcloud/rum/v20210622/model/ResumeTDEMApplicationResponse.h>
 #include <tencentcloud/rum/v20210622/model/StopInstanceRequest.h>
 #include <tencentcloud/rum/v20210622/model/StopInstanceResponse.h>
 #include <tencentcloud/rum/v20210622/model/StopProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/StopProjectResponse.h>
+#include <tencentcloud/rum/v20210622/model/StopTDEMApplicationRequest.h>
+#include <tencentcloud/rum/v20210622/model/StopTDEMApplicationResponse.h>
+#include <tencentcloud/rum/v20210622/model/UploadMiniProgramSourceRequest.h>
+#include <tencentcloud/rum/v20210622/model/UploadMiniProgramSourceResponse.h>
+#include <tencentcloud/rum/v20210622/model/UploadSymbolArtifactRequest.h>
+#include <tencentcloud/rum/v20210622/model/UploadSymbolArtifactResponse.h>
 
 
 namespace TencentCloud
@@ -219,18 +391,42 @@ namespace TencentCloud
                 RumClient(const Credential &credential, const std::string &region);
                 RumClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateFieldTransformRuleResponse> CreateFieldTransformRuleOutcome;
+                typedef std::future<CreateFieldTransformRuleOutcome> CreateFieldTransformRuleOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::CreateFieldTransformRuleRequest&, CreateFieldTransformRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFieldTransformRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateReleaseFileResponse> CreateReleaseFileOutcome;
                 typedef std::future<CreateReleaseFileOutcome> CreateReleaseFileOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateReleaseFileRequest&, CreateReleaseFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReleaseFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateStarProjectResponse> CreateStarProjectOutcome;
                 typedef std::future<CreateStarProjectOutcome> CreateStarProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateStarProjectRequest&, CreateStarProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStarProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTDEMApplicationResponse> CreateTDEMApplicationOutcome;
+                typedef std::future<CreateTDEMApplicationOutcome> CreateTDEMApplicationOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::CreateTDEMApplicationRequest&, CreateTDEMApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTDEMApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTDEMBusinessSystemResponse> CreateTDEMBusinessSystemOutcome;
+                typedef std::future<CreateTDEMBusinessSystemOutcome> CreateTDEMBusinessSystemOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::CreateTDEMBusinessSystemRequest&, CreateTDEMBusinessSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTDEMBusinessSystemAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTDEMDialTaskResponse> CreateTDEMDialTaskOutcome;
+                typedef std::future<CreateTDEMDialTaskOutcome> CreateTDEMDialTaskOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::CreateTDEMDialTaskRequest&, CreateTDEMDialTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTDEMDialTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTDEMFieldTransformRuleResponse> CreateTDEMFieldTransformRuleOutcome;
+                typedef std::future<CreateTDEMFieldTransformRuleOutcome> CreateTDEMFieldTransformRuleOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::CreateTDEMFieldTransformRuleRequest&, CreateTDEMFieldTransformRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTDEMFieldTransformRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTDEMFunnelResponse> CreateTDEMFunnelOutcome;
+                typedef std::future<CreateTDEMFunnelOutcome> CreateTDEMFunnelOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::CreateTDEMFunnelRequest&, CreateTDEMFunnelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTDEMFunnelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWhitelistResponse> CreateWhitelistOutcome;
                 typedef std::future<CreateWhitelistOutcome> CreateWhitelistOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateWhitelistRequest&, CreateWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFieldTransformRuleResponse> DeleteFieldTransformRuleOutcome;
+                typedef std::future<DeleteFieldTransformRuleOutcome> DeleteFieldTransformRuleOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DeleteFieldTransformRuleRequest&, DeleteFieldTransformRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFieldTransformRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
                 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteMiniProgramReplayPackResponse> DeleteMiniProgramReplayPackOutcome;
+                typedef std::future<DeleteMiniProgramReplayPackOutcome> DeleteMiniProgramReplayPackOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DeleteMiniProgramReplayPackRequest&, DeleteMiniProgramReplayPackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMiniProgramReplayPackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteProjectResponse> DeleteProjectOutcome;
                 typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DeleteProjectRequest&, DeleteProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
@@ -240,6 +436,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteStarProjectResponse> DeleteStarProjectOutcome;
                 typedef std::future<DeleteStarProjectOutcome> DeleteStarProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DeleteStarProjectRequest&, DeleteStarProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStarProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSymbolArtifactResponse> DeleteSymbolArtifactOutcome;
+                typedef std::future<DeleteSymbolArtifactOutcome> DeleteSymbolArtifactOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DeleteSymbolArtifactRequest&, DeleteSymbolArtifactOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSymbolArtifactAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTDEMApplicationResponse> DeleteTDEMApplicationOutcome;
+                typedef std::future<DeleteTDEMApplicationOutcome> DeleteTDEMApplicationOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DeleteTDEMApplicationRequest&, DeleteTDEMApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTDEMApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTDEMBusinessSystemResponse> DeleteTDEMBusinessSystemOutcome;
+                typedef std::future<DeleteTDEMBusinessSystemOutcome> DeleteTDEMBusinessSystemOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DeleteTDEMBusinessSystemRequest&, DeleteTDEMBusinessSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTDEMBusinessSystemAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTDEMDialTaskResponse> DeleteTDEMDialTaskOutcome;
+                typedef std::future<DeleteTDEMDialTaskOutcome> DeleteTDEMDialTaskOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DeleteTDEMDialTaskRequest&, DeleteTDEMDialTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTDEMDialTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTDEMFieldTransformRuleResponse> DeleteTDEMFieldTransformRuleOutcome;
+                typedef std::future<DeleteTDEMFieldTransformRuleOutcome> DeleteTDEMFieldTransformRuleOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DeleteTDEMFieldTransformRuleRequest&, DeleteTDEMFieldTransformRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTDEMFieldTransformRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTDEMFunnelResponse> DeleteTDEMFunnelOutcome;
+                typedef std::future<DeleteTDEMFunnelOutcome> DeleteTDEMFunnelOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DeleteTDEMFunnelRequest&, DeleteTDEMFunnelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTDEMFunnelAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWhitelistResponse> DeleteWhitelistOutcome;
                 typedef std::future<DeleteWhitelistOutcome> DeleteWhitelistOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DeleteWhitelistRequest&, DeleteWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWhitelistAsyncHandler;
@@ -378,9 +592,39 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFOOMReportListResponse> DescribeFOOMReportListOutcome;
                 typedef std::future<DescribeFOOMReportListOutcome> DescribeFOOMReportListOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeFOOMReportListRequest&, DescribeFOOMReportListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFOOMReportListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFieldTransformRulesResponse> DescribeFieldTransformRulesOutcome;
+                typedef std::future<DescribeFieldTransformRulesOutcome> DescribeFieldTransformRulesOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeFieldTransformRulesRequest&, DescribeFieldTransformRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFieldTransformRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFieldValuesResponse> DescribeFieldValuesOutcome;
+                typedef std::future<DescribeFieldValuesOutcome> DescribeFieldValuesOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeFieldValuesRequest&, DescribeFieldValuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFieldValuesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFileCertificateResponse> DescribeFileCertificateOutcome;
                 typedef std::future<DescribeFileCertificateOutcome> DescribeFileCertificateOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeFileCertificateRequest&, DescribeFileCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIssueAffectedUsersResponse> DescribeIssueAffectedUsersOutcome;
+                typedef std::future<DescribeIssueAffectedUsersOutcome> DescribeIssueAffectedUsersOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeIssueAffectedUsersRequest&, DescribeIssueAffectedUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIssueAffectedUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIssueBreadcrumbsResponse> DescribeIssueBreadcrumbsOutcome;
+                typedef std::future<DescribeIssueBreadcrumbsOutcome> DescribeIssueBreadcrumbsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeIssueBreadcrumbsRequest&, DescribeIssueBreadcrumbsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIssueBreadcrumbsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIssueCrashLogDownloadURLResponse> DescribeIssueCrashLogDownloadURLOutcome;
+                typedef std::future<DescribeIssueCrashLogDownloadURLOutcome> DescribeIssueCrashLogDownloadURLOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeIssueCrashLogDownloadURLRequest&, DescribeIssueCrashLogDownloadURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIssueCrashLogDownloadURLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIssueDetailResponse> DescribeIssueDetailOutcome;
+                typedef std::future<DescribeIssueDetailOutcome> DescribeIssueDetailOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeIssueDetailRequest&, DescribeIssueDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIssueDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIssueEventDetailResponse> DescribeIssueEventDetailOutcome;
+                typedef std::future<DescribeIssueEventDetailOutcome> DescribeIssueEventDetailOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeIssueEventDetailRequest&, DescribeIssueEventDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIssueEventDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIssueEventsResponse> DescribeIssueEventsOutcome;
+                typedef std::future<DescribeIssueEventsOutcome> DescribeIssueEventsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeIssueEventsRequest&, DescribeIssueEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIssueEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIssueTrendResponse> DescribeIssueTrendOutcome;
+                typedef std::future<DescribeIssueTrendOutcome> DescribeIssueTrendOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeIssueTrendRequest&, DescribeIssueTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIssueTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIssuesResponse> DescribeIssuesOutcome;
+                typedef std::future<DescribeIssuesOutcome> DescribeIssuesOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeIssuesRequest&, DescribeIssuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIssuesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIssuesDistributionResponse> DescribeIssuesDistributionOutcome;
                 typedef std::future<DescribeIssuesDistributionOutcome> DescribeIssuesDistributionOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeIssuesDistributionRequest&, DescribeIssuesDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIssuesDistributionAsyncHandler;
@@ -399,6 +643,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLagANRProblemListResponse> DescribeLagANRProblemListOutcome;
                 typedef std::future<DescribeLagANRProblemListOutcome> DescribeLagANRProblemListOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeLagANRProblemListRequest&, DescribeLagANRProblemListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLagANRProblemListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMiniProgramReplayPackResponse> DescribeMiniProgramReplayPackOutcome;
+                typedef std::future<DescribeMiniProgramReplayPackOutcome> DescribeMiniProgramReplayPackOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeMiniProgramReplayPackRequest&, DescribeMiniProgramReplayPackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMiniProgramReplayPackAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMiniProgramReplayPacksResponse> DescribeMiniProgramReplayPacksOutcome;
+                typedef std::future<DescribeMiniProgramReplayPacksOutcome> DescribeMiniProgramReplayPacksOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeMiniProgramReplayPacksRequest&, DescribeMiniProgramReplayPacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMiniProgramReplayPacksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePerformanceMetricsResponse> DescribePerformanceMetricsOutcome;
+                typedef std::future<DescribePerformanceMetricsOutcome> DescribePerformanceMetricsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribePerformanceMetricsRequest&, DescribePerformanceMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePerformanceMetricsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectLimitsResponse> DescribeProjectLimitsOutcome;
                 typedef std::future<DescribeProjectLimitsOutcome> DescribeProjectLimitsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeProjectLimitsRequest&, DescribeProjectLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectLimitsAsyncHandler;
@@ -414,6 +667,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReleaseFilesResponse> DescribeReleaseFilesOutcome;
                 typedef std::future<DescribeReleaseFilesOutcome> DescribeReleaseFilesOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeReleaseFilesRequest&, DescribeReleaseFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReleaseFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReplayDataResponse> DescribeReplayDataOutcome;
+                typedef std::future<DescribeReplayDataOutcome> DescribeReplayDataOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeReplayDataRequest&, DescribeReplayDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplayDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReplayDetailsResponse> DescribeReplayDetailsOutcome;
+                typedef std::future<DescribeReplayDetailsOutcome> DescribeReplayDetailsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeReplayDetailsRequest&, DescribeReplayDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplayDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReplayMetaResponse> DescribeReplayMetaOutcome;
+                typedef std::future<DescribeReplayMetaOutcome> DescribeReplayMetaOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeReplayMetaRequest&, DescribeReplayMetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplayMetaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRumGroupLogResponse> DescribeRumGroupLogOutcome;
                 typedef std::future<DescribeRumGroupLogOutcome> DescribeRumGroupLogOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeRumGroupLogRequest&, DescribeRumGroupLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRumGroupLogAsyncHandler;
@@ -447,12 +709,129 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRumStatsLogListV2Response> DescribeRumStatsLogListV2Outcome;
                 typedef std::future<DescribeRumStatsLogListV2Outcome> DescribeRumStatsLogListV2OutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeRumStatsLogListV2Request&, DescribeRumStatsLogListV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRumStatsLogListV2AsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSampleRateResponse> DescribeSampleRateOutcome;
+                typedef std::future<DescribeSampleRateOutcome> DescribeSampleRateOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeSampleRateRequest&, DescribeSampleRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSampleRateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScoresResponse> DescribeScoresOutcome;
                 typedef std::future<DescribeScoresOutcome> DescribeScoresOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeScoresRequest&, DescribeScoresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScoresAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScoresV2Response> DescribeScoresV2Outcome;
                 typedef std::future<DescribeScoresV2Outcome> DescribeScoresV2OutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeScoresV2Request&, DescribeScoresV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScoresV2AsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSessionListResponse> DescribeSessionListOutcome;
+                typedef std::future<DescribeSessionListOutcome> DescribeSessionListOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeSessionListRequest&, DescribeSessionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStruggleDistributionResponse> DescribeStruggleDistributionOutcome;
+                typedef std::future<DescribeStruggleDistributionOutcome> DescribeStruggleDistributionOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeStruggleDistributionRequest&, DescribeStruggleDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStruggleDistributionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSymbolArtifactUploadCredentialResponse> DescribeSymbolArtifactUploadCredentialOutcome;
+                typedef std::future<DescribeSymbolArtifactUploadCredentialOutcome> DescribeSymbolArtifactUploadCredentialOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeSymbolArtifactUploadCredentialRequest&, DescribeSymbolArtifactUploadCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSymbolArtifactUploadCredentialAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSymbolArtifactsResponse> DescribeSymbolArtifactsOutcome;
+                typedef std::future<DescribeSymbolArtifactsOutcome> DescribeSymbolArtifactsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeSymbolArtifactsRequest&, DescribeSymbolArtifactsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSymbolArtifactsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMApplicationsResponse> DescribeTDEMApplicationsOutcome;
+                typedef std::future<DescribeTDEMApplicationsOutcome> DescribeTDEMApplicationsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMApplicationsRequest&, DescribeTDEMApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMApplicationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMBusinessSystemsResponse> DescribeTDEMBusinessSystemsOutcome;
+                typedef std::future<DescribeTDEMBusinessSystemsOutcome> DescribeTDEMBusinessSystemsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMBusinessSystemsRequest&, DescribeTDEMBusinessSystemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMBusinessSystemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMDialDimensionsResponse> DescribeTDEMDialDimensionsOutcome;
+                typedef std::future<DescribeTDEMDialDimensionsOutcome> DescribeTDEMDialDimensionsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMDialDimensionsRequest&, DescribeTDEMDialDimensionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMDialDimensionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMDialExecutionDetailResponse> DescribeTDEMDialExecutionDetailOutcome;
+                typedef std::future<DescribeTDEMDialExecutionDetailOutcome> DescribeTDEMDialExecutionDetailOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMDialExecutionDetailRequest&, DescribeTDEMDialExecutionDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMDialExecutionDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMDialExecutionListResponse> DescribeTDEMDialExecutionListOutcome;
+                typedef std::future<DescribeTDEMDialExecutionListOutcome> DescribeTDEMDialExecutionListOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMDialExecutionListRequest&, DescribeTDEMDialExecutionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMDialExecutionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMDialOverviewResponse> DescribeTDEMDialOverviewOutcome;
+                typedef std::future<DescribeTDEMDialOverviewOutcome> DescribeTDEMDialOverviewOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMDialOverviewRequest&, DescribeTDEMDialOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMDialOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMDialTasksResponse> DescribeTDEMDialTasksOutcome;
+                typedef std::future<DescribeTDEMDialTasksOutcome> DescribeTDEMDialTasksOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMDialTasksRequest&, DescribeTDEMDialTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMDialTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMDialTrendResponse> DescribeTDEMDialTrendOutcome;
+                typedef std::future<DescribeTDEMDialTrendOutcome> DescribeTDEMDialTrendOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMDialTrendRequest&, DescribeTDEMDialTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMDialTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMEventDetailResponse> DescribeTDEMEventDetailOutcome;
+                typedef std::future<DescribeTDEMEventDetailOutcome> DescribeTDEMEventDetailOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMEventDetailRequest&, DescribeTDEMEventDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMEventDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMEventRankResponse> DescribeTDEMEventRankOutcome;
+                typedef std::future<DescribeTDEMEventRankOutcome> DescribeTDEMEventRankOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMEventRankRequest&, DescribeTDEMEventRankOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMEventRankAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMEventSearchResponse> DescribeTDEMEventSearchOutcome;
+                typedef std::future<DescribeTDEMEventSearchOutcome> DescribeTDEMEventSearchOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMEventSearchRequest&, DescribeTDEMEventSearchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMEventSearchAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMEventSearchSummaryResponse> DescribeTDEMEventSearchSummaryOutcome;
+                typedef std::future<DescribeTDEMEventSearchSummaryOutcome> DescribeTDEMEventSearchSummaryOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMEventSearchSummaryRequest&, DescribeTDEMEventSearchSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMEventSearchSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMFieldTransformRulesResponse> DescribeTDEMFieldTransformRulesOutcome;
+                typedef std::future<DescribeTDEMFieldTransformRulesOutcome> DescribeTDEMFieldTransformRulesOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMFieldTransformRulesRequest&, DescribeTDEMFieldTransformRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMFieldTransformRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMFunnelDetailResponse> DescribeTDEMFunnelDetailOutcome;
+                typedef std::future<DescribeTDEMFunnelDetailOutcome> DescribeTDEMFunnelDetailOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMFunnelDetailRequest&, DescribeTDEMFunnelDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMFunnelDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMFunnelDimensionsResponse> DescribeTDEMFunnelDimensionsOutcome;
+                typedef std::future<DescribeTDEMFunnelDimensionsOutcome> DescribeTDEMFunnelDimensionsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMFunnelDimensionsRequest&, DescribeTDEMFunnelDimensionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMFunnelDimensionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMFunnelListResponse> DescribeTDEMFunnelListOutcome;
+                typedef std::future<DescribeTDEMFunnelListOutcome> DescribeTDEMFunnelListOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMFunnelListRequest&, DescribeTDEMFunnelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMFunnelListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMFunnelReportResponse> DescribeTDEMFunnelReportOutcome;
+                typedef std::future<DescribeTDEMFunnelReportOutcome> DescribeTDEMFunnelReportOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMFunnelReportRequest&, DescribeTDEMFunnelReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMFunnelReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMFunnelStepSessionListResponse> DescribeTDEMFunnelStepSessionListOutcome;
+                typedef std::future<DescribeTDEMFunnelStepSessionListOutcome> DescribeTDEMFunnelStepSessionListOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMFunnelStepSessionListRequest&, DescribeTDEMFunnelStepSessionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMFunnelStepSessionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMFunnelTrendResponse> DescribeTDEMFunnelTrendOutcome;
+                typedef std::future<DescribeTDEMFunnelTrendOutcome> DescribeTDEMFunnelTrendOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMFunnelTrendRequest&, DescribeTDEMFunnelTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMFunnelTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMMetricDistributionResponse> DescribeTDEMMetricDistributionOutcome;
+                typedef std::future<DescribeTDEMMetricDistributionOutcome> DescribeTDEMMetricDistributionOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMMetricDistributionRequest&, DescribeTDEMMetricDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMMetricDistributionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMMetricSummaryResponse> DescribeTDEMMetricSummaryOutcome;
+                typedef std::future<DescribeTDEMMetricSummaryOutcome> DescribeTDEMMetricSummaryOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMMetricSummaryRequest&, DescribeTDEMMetricSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMMetricSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMMetricTrendResponse> DescribeTDEMMetricTrendOutcome;
+                typedef std::future<DescribeTDEMMetricTrendOutcome> DescribeTDEMMetricTrendOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMMetricTrendRequest&, DescribeTDEMMetricTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMMetricTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMOverviewScoresResponse> DescribeTDEMOverviewScoresOutcome;
+                typedef std::future<DescribeTDEMOverviewScoresOutcome> DescribeTDEMOverviewScoresOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMOverviewScoresRequest&, DescribeTDEMOverviewScoresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMOverviewScoresAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMRelatedEventsResponse> DescribeTDEMRelatedEventsOutcome;
+                typedef std::future<DescribeTDEMRelatedEventsOutcome> DescribeTDEMRelatedEventsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMRelatedEventsRequest&, DescribeTDEMRelatedEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMRelatedEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMSSEDimensionsResponse> DescribeTDEMSSEDimensionsOutcome;
+                typedef std::future<DescribeTDEMSSEDimensionsOutcome> DescribeTDEMSSEDimensionsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMSSEDimensionsRequest&, DescribeTDEMSSEDimensionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMSSEDimensionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMSSEDistributionResponse> DescribeTDEMSSEDistributionOutcome;
+                typedef std::future<DescribeTDEMSSEDistributionOutcome> DescribeTDEMSSEDistributionOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMSSEDistributionRequest&, DescribeTDEMSSEDistributionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMSSEDistributionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMSSEPercentileResponse> DescribeTDEMSSEPercentileOutcome;
+                typedef std::future<DescribeTDEMSSEPercentileOutcome> DescribeTDEMSSEPercentileOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMSSEPercentileRequest&, DescribeTDEMSSEPercentileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMSSEPercentileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMSSESummaryResponse> DescribeTDEMSSESummaryOutcome;
+                typedef std::future<DescribeTDEMSSESummaryOutcome> DescribeTDEMSSESummaryOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMSSESummaryRequest&, DescribeTDEMSSESummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMSSESummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMSSETrendResponse> DescribeTDEMSSETrendOutcome;
+                typedef std::future<DescribeTDEMSSETrendOutcome> DescribeTDEMSSETrendOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMSSETrendRequest&, DescribeTDEMSSETrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMSSETrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMSampleConfigResponse> DescribeTDEMSampleConfigOutcome;
+                typedef std::future<DescribeTDEMSampleConfigOutcome> DescribeTDEMSampleConfigOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMSampleConfigRequest&, DescribeTDEMSampleConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMSampleConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMSampleRateResponse> DescribeTDEMSampleRateOutcome;
+                typedef std::future<DescribeTDEMSampleRateOutcome> DescribeTDEMSampleRateOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMSampleRateRequest&, DescribeTDEMSampleRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMSampleRateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMSessionReplayTimelineResponse> DescribeTDEMSessionReplayTimelineOutcome;
+                typedef std::future<DescribeTDEMSessionReplayTimelineOutcome> DescribeTDEMSessionReplayTimelineOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMSessionReplayTimelineRequest&, DescribeTDEMSessionReplayTimelineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMSessionReplayTimelineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMUsageDetailResponse> DescribeTDEMUsageDetailOutcome;
+                typedef std::future<DescribeTDEMUsageDetailOutcome> DescribeTDEMUsageDetailOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMUsageDetailRequest&, DescribeTDEMUsageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMUsageDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTDEMUsageSummaryResponse> DescribeTDEMUsageSummaryOutcome;
+                typedef std::future<DescribeTDEMUsageSummaryOutcome> DescribeTDEMUsageSummaryOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeTDEMUsageSummaryRequest&, DescribeTDEMUsageSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTDEMUsageSummaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTawAreasResponse> DescribeTawAreasOutcome;
                 typedef std::future<DescribeTawAreasOutcome> DescribeTawAreasOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeTawAreasRequest&, DescribeTawAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTawAreasAsyncHandler;
@@ -465,35 +844,95 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopIssuesResponse> DescribeTopIssuesOutcome;
                 typedef std::future<DescribeTopIssuesOutcome> DescribeTopIssuesOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeTopIssuesRequest&, DescribeTopIssuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopIssuesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserJourneySanKeyResponse> DescribeUserJourneySanKeyOutcome;
+                typedef std::future<DescribeUserJourneySanKeyOutcome> DescribeUserJourneySanKeyOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeUserJourneySanKeyRequest&, DescribeUserJourneySanKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserJourneySanKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUvListResponse> DescribeUvListOutcome;
                 typedef std::future<DescribeUvListOutcome> DescribeUvListOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeUvListRequest&, DescribeUvListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUvListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWhitelistsResponse> DescribeWhitelistsOutcome;
                 typedef std::future<DescribeWhitelistsOutcome> DescribeWhitelistsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeWhitelistsRequest&, DescribeWhitelistsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhitelistsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyFieldTransformRuleResponse> ModifyFieldTransformRuleOutcome;
+                typedef std::future<ModifyFieldTransformRuleOutcome> ModifyFieldTransformRuleOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ModifyFieldTransformRuleRequest&, ModifyFieldTransformRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFieldTransformRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
                 typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyIssueStatusResponse> ModifyIssueStatusOutcome;
+                typedef std::future<ModifyIssueStatusOutcome> ModifyIssueStatusOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ModifyIssueStatusRequest&, ModifyIssueStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIssueStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMiniProgramReplayPackResponse> ModifyMiniProgramReplayPackOutcome;
+                typedef std::future<ModifyMiniProgramReplayPackOutcome> ModifyMiniProgramReplayPackOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ModifyMiniProgramReplayPackRequest&, ModifyMiniProgramReplayPackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMiniProgramReplayPackAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProjectResponse> ModifyProjectOutcome;
                 typedef std::future<ModifyProjectOutcome> ModifyProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::ModifyProjectRequest&, ModifyProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProjectLimitResponse> ModifyProjectLimitOutcome;
                 typedef std::future<ModifyProjectLimitOutcome> ModifyProjectLimitOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::ModifyProjectLimitRequest&, ModifyProjectLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProjectLimitAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySampleRateResponse> ModifySampleRateOutcome;
+                typedef std::future<ModifySampleRateOutcome> ModifySampleRateOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ModifySampleRateRequest&, ModifySampleRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySampleRateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTDEMApplicationResponse> ModifyTDEMApplicationOutcome;
+                typedef std::future<ModifyTDEMApplicationOutcome> ModifyTDEMApplicationOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ModifyTDEMApplicationRequest&, ModifyTDEMApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTDEMApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTDEMBusinessSystemResponse> ModifyTDEMBusinessSystemOutcome;
+                typedef std::future<ModifyTDEMBusinessSystemOutcome> ModifyTDEMBusinessSystemOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ModifyTDEMBusinessSystemRequest&, ModifyTDEMBusinessSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTDEMBusinessSystemAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTDEMDialTaskResponse> ModifyTDEMDialTaskOutcome;
+                typedef std::future<ModifyTDEMDialTaskOutcome> ModifyTDEMDialTaskOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ModifyTDEMDialTaskRequest&, ModifyTDEMDialTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTDEMDialTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTDEMFieldTransformRuleResponse> ModifyTDEMFieldTransformRuleOutcome;
+                typedef std::future<ModifyTDEMFieldTransformRuleOutcome> ModifyTDEMFieldTransformRuleOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ModifyTDEMFieldTransformRuleRequest&, ModifyTDEMFieldTransformRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTDEMFieldTransformRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTDEMFunnelResponse> ModifyTDEMFunnelOutcome;
+                typedef std::future<ModifyTDEMFunnelOutcome> ModifyTDEMFunnelOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ModifyTDEMFunnelRequest&, ModifyTDEMFunnelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTDEMFunnelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTDEMSampleConfigResponse> ModifyTDEMSampleConfigOutcome;
+                typedef std::future<ModifyTDEMSampleConfigOutcome> ModifyTDEMSampleConfigOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ModifyTDEMSampleConfigRequest&, ModifyTDEMSampleConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTDEMSampleConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTDEMSampleRateResponse> ModifyTDEMSampleRateOutcome;
+                typedef std::future<ModifyTDEMSampleRateOutcome> ModifyTDEMSampleRateOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ModifyTDEMSampleRateRequest&, ModifyTDEMSampleRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTDEMSampleRateAsyncHandler;
+                typedef Outcome<Core::Error, Model::PreviewTDEMFunnelReportResponse> PreviewTDEMFunnelReportOutcome;
+                typedef std::future<PreviewTDEMFunnelReportOutcome> PreviewTDEMFunnelReportOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::PreviewTDEMFunnelReportRequest&, PreviewTDEMFunnelReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PreviewTDEMFunnelReportAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumeInstanceResponse> ResumeInstanceOutcome;
                 typedef std::future<ResumeInstanceOutcome> ResumeInstanceOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::ResumeInstanceRequest&, ResumeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumeProjectResponse> ResumeProjectOutcome;
                 typedef std::future<ResumeProjectOutcome> ResumeProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::ResumeProjectRequest&, ResumeProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeTDEMApplicationResponse> ResumeTDEMApplicationOutcome;
+                typedef std::future<ResumeTDEMApplicationOutcome> ResumeTDEMApplicationOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::ResumeTDEMApplicationRequest&, ResumeTDEMApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeTDEMApplicationAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopInstanceResponse> StopInstanceOutcome;
                 typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::StopInstanceRequest&, StopInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopProjectResponse> StopProjectOutcome;
                 typedef std::future<StopProjectOutcome> StopProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::StopProjectRequest&, StopProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopTDEMApplicationResponse> StopTDEMApplicationOutcome;
+                typedef std::future<StopTDEMApplicationOutcome> StopTDEMApplicationOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::StopTDEMApplicationRequest&, StopTDEMApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTDEMApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadMiniProgramSourceResponse> UploadMiniProgramSourceOutcome;
+                typedef std::future<UploadMiniProgramSourceOutcome> UploadMiniProgramSourceOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::UploadMiniProgramSourceRequest&, UploadMiniProgramSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadMiniProgramSourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadSymbolArtifactResponse> UploadSymbolArtifactOutcome;
+                typedef std::future<UploadSymbolArtifactOutcome> UploadSymbolArtifactOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::UploadSymbolArtifactRequest&, UploadSymbolArtifactOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadSymbolArtifactAsyncHandler;
 
 
+
+                /**
+                 *创建字段配置规则
+                 * @param req CreateFieldTransformRuleRequest
+                 * @return CreateFieldTransformRuleOutcome
+                 */
+                CreateFieldTransformRuleOutcome CreateFieldTransformRule(const Model::CreateFieldTransformRuleRequest &request);
+                void CreateFieldTransformRuleAsync(const Model::CreateFieldTransformRuleRequest& request, const CreateFieldTransformRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFieldTransformRuleOutcomeCallable CreateFieldTransformRuleCallable(const Model::CreateFieldTransformRuleRequest& request);
 
                 /**
                  *创建对应项目的文件记录
@@ -514,6 +953,51 @@ namespace TencentCloud
                 CreateStarProjectOutcomeCallable CreateStarProjectCallable(const Model::CreateStarProjectRequest& request);
 
                 /**
+                 *在指定业务系统下创建应用。
+                 * @param req CreateTDEMApplicationRequest
+                 * @return CreateTDEMApplicationOutcome
+                 */
+                CreateTDEMApplicationOutcome CreateTDEMApplication(const Model::CreateTDEMApplicationRequest &request);
+                void CreateTDEMApplicationAsync(const Model::CreateTDEMApplicationRequest& request, const CreateTDEMApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTDEMApplicationOutcomeCallable CreateTDEMApplicationCallable(const Model::CreateTDEMApplicationRequest& request);
+
+                /**
+                 *创建业务系统。InstanceId 由后端生成，格式 rum-<12 位随机字母数字>。重名返回 InvalidParameterValue。
+                 * @param req CreateTDEMBusinessSystemRequest
+                 * @return CreateTDEMBusinessSystemOutcome
+                 */
+                CreateTDEMBusinessSystemOutcome CreateTDEMBusinessSystem(const Model::CreateTDEMBusinessSystemRequest &request);
+                void CreateTDEMBusinessSystemAsync(const Model::CreateTDEMBusinessSystemRequest& request, const CreateTDEMBusinessSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTDEMBusinessSystemOutcomeCallable CreateTDEMBusinessSystemCallable(const Model::CreateTDEMBusinessSystemRequest& request);
+
+                /**
+                 *创建一条移动拨测任务。同一应用处于 active 的任务最多 50 条。四项启动范围都为空时不限制启动；填写多项时必须同时满足，同一项多个值命中任意一个即可。
+                 * @param req CreateTDEMDialTaskRequest
+                 * @return CreateTDEMDialTaskOutcome
+                 */
+                CreateTDEMDialTaskOutcome CreateTDEMDialTask(const Model::CreateTDEMDialTaskRequest &request);
+                void CreateTDEMDialTaskAsync(const Model::CreateTDEMDialTaskRequest& request, const CreateTDEMDialTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTDEMDialTaskOutcomeCallable CreateTDEMDialTaskCallable(const Model::CreateTDEMDialTaskRequest& request);
+
+                /**
+                 *为应用创建字段值替换规则，单应用上限 50 条。替代已废弃的 CreateFieldTransformRule；AppId 为 string。
+                 * @param req CreateTDEMFieldTransformRuleRequest
+                 * @return CreateTDEMFieldTransformRuleOutcome
+                 */
+                CreateTDEMFieldTransformRuleOutcome CreateTDEMFieldTransformRule(const Model::CreateTDEMFieldTransformRuleRequest &request);
+                void CreateTDEMFieldTransformRuleAsync(const Model::CreateTDEMFieldTransformRuleRequest& request, const CreateTDEMFieldTransformRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTDEMFieldTransformRuleOutcomeCallable CreateTDEMFieldTransformRuleCallable(const Model::CreateTDEMFieldTransformRuleRequest& request);
+
+                /**
+                 *创建漏斗
+                 * @param req CreateTDEMFunnelRequest
+                 * @return CreateTDEMFunnelOutcome
+                 */
+                CreateTDEMFunnelOutcome CreateTDEMFunnel(const Model::CreateTDEMFunnelRequest &request);
+                void CreateTDEMFunnelAsync(const Model::CreateTDEMFunnelRequest& request, const CreateTDEMFunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTDEMFunnelOutcomeCallable CreateTDEMFunnelCallable(const Model::CreateTDEMFunnelRequest& request);
+
+                /**
                  *创建白名单
                  * @param req CreateWhitelistRequest
                  * @return CreateWhitelistOutcome
@@ -523,6 +1007,15 @@ namespace TencentCloud
                 CreateWhitelistOutcomeCallable CreateWhitelistCallable(const Model::CreateWhitelistRequest& request);
 
                 /**
+                 *删除字段配置规则
+                 * @param req DeleteFieldTransformRuleRequest
+                 * @return DeleteFieldTransformRuleOutcome
+                 */
+                DeleteFieldTransformRuleOutcome DeleteFieldTransformRule(const Model::DeleteFieldTransformRuleRequest &request);
+                void DeleteFieldTransformRuleAsync(const Model::DeleteFieldTransformRuleRequest& request, const DeleteFieldTransformRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFieldTransformRuleOutcomeCallable DeleteFieldTransformRuleCallable(const Model::DeleteFieldTransformRuleRequest& request);
+
+                /**
                  *删除实例，谨慎操作，不可恢复
                  * @param req DeleteInstanceRequest
                  * @return DeleteInstanceOutcome
@@ -530,6 +1023,15 @@ namespace TencentCloud
                 DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
                 void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
+
+                /**
+                 *删除回放包元数据，并尽力删除COS上回放包与源码zip。不存在返回ResourceNotFound。
+                 * @param req DeleteMiniProgramReplayPackRequest
+                 * @return DeleteMiniProgramReplayPackOutcome
+                 */
+                DeleteMiniProgramReplayPackOutcome DeleteMiniProgramReplayPack(const Model::DeleteMiniProgramReplayPackRequest &request);
+                void DeleteMiniProgramReplayPackAsync(const Model::DeleteMiniProgramReplayPackRequest& request, const DeleteMiniProgramReplayPackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteMiniProgramReplayPackOutcomeCallable DeleteMiniProgramReplayPackCallable(const Model::DeleteMiniProgramReplayPackRequest& request);
 
                 /**
                  *删除给定的 rum 的项目
@@ -557,6 +1059,60 @@ namespace TencentCloud
                 DeleteStarProjectOutcome DeleteStarProject(const Model::DeleteStarProjectRequest &request);
                 void DeleteStarProjectAsync(const Model::DeleteStarProjectRequest& request, const DeleteStarProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteStarProjectOutcomeCallable DeleteStarProjectCallable(const Model::DeleteStarProjectRequest& request);
+
+                /**
+                 *删除指定的符号制品。
+                 * @param req DeleteSymbolArtifactRequest
+                 * @return DeleteSymbolArtifactOutcome
+                 */
+                DeleteSymbolArtifactOutcome DeleteSymbolArtifact(const Model::DeleteSymbolArtifactRequest &request);
+                void DeleteSymbolArtifactAsync(const Model::DeleteSymbolArtifactRequest& request, const DeleteSymbolArtifactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSymbolArtifactOutcomeCallable DeleteSymbolArtifactCallable(const Model::DeleteSymbolArtifactRequest& request);
+
+                /**
+                 *逻辑删除应用，ProjectKey 即刻失效。
+                 * @param req DeleteTDEMApplicationRequest
+                 * @return DeleteTDEMApplicationOutcome
+                 */
+                DeleteTDEMApplicationOutcome DeleteTDEMApplication(const Model::DeleteTDEMApplicationRequest &request);
+                void DeleteTDEMApplicationAsync(const Model::DeleteTDEMApplicationRequest& request, const DeleteTDEMApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTDEMApplicationOutcomeCallable DeleteTDEMApplicationCallable(const Model::DeleteTDEMApplicationRequest& request);
+
+                /**
+                 *删除业务系统。名下存在未删除应用时返回 ResourceInUse。
+                 * @param req DeleteTDEMBusinessSystemRequest
+                 * @return DeleteTDEMBusinessSystemOutcome
+                 */
+                DeleteTDEMBusinessSystemOutcome DeleteTDEMBusinessSystem(const Model::DeleteTDEMBusinessSystemRequest &request);
+                void DeleteTDEMBusinessSystemAsync(const Model::DeleteTDEMBusinessSystemRequest& request, const DeleteTDEMBusinessSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTDEMBusinessSystemOutcomeCallable DeleteTDEMBusinessSystemCallable(const Model::DeleteTDEMBusinessSystemRequest& request);
+
+                /**
+                 *将拨测任务标记为已删除。已删除的任务再次删除视为成功。不物理删除任务行，也不删除历史拨测结果。
+                 * @param req DeleteTDEMDialTaskRequest
+                 * @return DeleteTDEMDialTaskOutcome
+                 */
+                DeleteTDEMDialTaskOutcome DeleteTDEMDialTask(const Model::DeleteTDEMDialTaskRequest &request);
+                void DeleteTDEMDialTaskAsync(const Model::DeleteTDEMDialTaskRequest& request, const DeleteTDEMDialTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTDEMDialTaskOutcomeCallable DeleteTDEMDialTaskCallable(const Model::DeleteTDEMDialTaskRequest& request);
+
+                /**
+                 *按规则 Id 删除字段值替换规则。替代已废弃的 DeleteFieldTransformRule；AppId 为 string。
+                 * @param req DeleteTDEMFieldTransformRuleRequest
+                 * @return DeleteTDEMFieldTransformRuleOutcome
+                 */
+                DeleteTDEMFieldTransformRuleOutcome DeleteTDEMFieldTransformRule(const Model::DeleteTDEMFieldTransformRuleRequest &request);
+                void DeleteTDEMFieldTransformRuleAsync(const Model::DeleteTDEMFieldTransformRuleRequest& request, const DeleteTDEMFieldTransformRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTDEMFieldTransformRuleOutcomeCallable DeleteTDEMFieldTransformRuleCallable(const Model::DeleteTDEMFieldTransformRuleRequest& request);
+
+                /**
+                 *删除漏斗
+                 * @param req DeleteTDEMFunnelRequest
+                 * @return DeleteTDEMFunnelOutcome
+                 */
+                DeleteTDEMFunnelOutcome DeleteTDEMFunnel(const Model::DeleteTDEMFunnelRequest &request);
+                void DeleteTDEMFunnelAsync(const Model::DeleteTDEMFunnelRequest& request, const DeleteTDEMFunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTDEMFunnelOutcomeCallable DeleteTDEMFunnelCallable(const Model::DeleteTDEMFunnelRequest& request);
 
                 /**
                  *删除白名单
@@ -975,6 +1531,24 @@ namespace TencentCloud
                 DescribeFOOMReportListOutcomeCallable DescribeFOOMReportListCallable(const Model::DescribeFOOMReportListRequest& request);
 
                 /**
+                 *获取字段配置规则
+                 * @param req DescribeFieldTransformRulesRequest
+                 * @return DescribeFieldTransformRulesOutcome
+                 */
+                DescribeFieldTransformRulesOutcome DescribeFieldTransformRules(const Model::DescribeFieldTransformRulesRequest &request);
+                void DescribeFieldTransformRulesAsync(const Model::DescribeFieldTransformRulesRequest& request, const DescribeFieldTransformRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFieldTransformRulesOutcomeCallable DescribeFieldTransformRulesCallable(const Model::DescribeFieldTransformRulesRequest& request);
+
+                /**
+                 *获取TDEM字段值列表
+                 * @param req DescribeFieldValuesRequest
+                 * @return DescribeFieldValuesOutcome
+                 */
+                DescribeFieldValuesOutcome DescribeFieldValues(const Model::DescribeFieldValuesRequest &request);
+                void DescribeFieldValuesAsync(const Model::DescribeFieldValuesRequest& request, const DescribeFieldValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFieldValuesOutcomeCallable DescribeFieldValuesCallable(const Model::DescribeFieldValuesRequest& request);
+
+                /**
                  *获取COS存储的临时密钥，具体到ProjectId
                  * @param req DescribeFileCertificateRequest
                  * @return DescribeFileCertificateOutcome
@@ -982,6 +1556,78 @@ namespace TencentCloud
                 DescribeFileCertificateOutcome DescribeFileCertificate(const Model::DescribeFileCertificateRequest &request);
                 void DescribeFileCertificateAsync(const Model::DescribeFileCertificateRequest& request, const DescribeFileCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFileCertificateOutcomeCallable DescribeFileCertificateCallable(const Model::DescribeFileCertificateRequest& request);
+
+                /**
+                 *按用户维度聚合某问题的受影响用户清单，服务端分页。AppId 与 IssueId 必填；AppVersion / StartTime / EndTime / Keyword 用于收窄范围，同时作用于清单与 Total，因此 Total 为当前条件下去重后的用户数， 条件全空时等于问题详情的影响用户数。OrderKey / OrderBy 只改变行序、不改变结果集合；排序一律由服务端执行， 并保留 uid 作为次级键以保证翻页不重不漏。接口只读。
+                 * @param req DescribeIssueAffectedUsersRequest
+                 * @return DescribeIssueAffectedUsersOutcome
+                 */
+                DescribeIssueAffectedUsersOutcome DescribeIssueAffectedUsers(const Model::DescribeIssueAffectedUsersRequest &request);
+                void DescribeIssueAffectedUsersAsync(const Model::DescribeIssueAffectedUsersRequest& request, const DescribeIssueAffectedUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIssueAffectedUsersOutcomeCallable DescribeIssueAffectedUsersCallable(const Model::DescribeIssueAffectedUsersRequest& request);
+
+                /**
+                 *获取指定 Issue 当前事件或最新事件之前的 Breadcrumbs 面包屑序列
+                 * @param req DescribeIssueBreadcrumbsRequest
+                 * @return DescribeIssueBreadcrumbsOutcome
+                 */
+                DescribeIssueBreadcrumbsOutcome DescribeIssueBreadcrumbs(const Model::DescribeIssueBreadcrumbsRequest &request);
+                void DescribeIssueBreadcrumbsAsync(const Model::DescribeIssueBreadcrumbsRequest& request, const DescribeIssueBreadcrumbsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIssueBreadcrumbsOutcomeCallable DescribeIssueBreadcrumbsCallable(const Model::DescribeIssueBreadcrumbsRequest& request);
+
+                /**
+                 *获取日志下载链接
+                 * @param req DescribeIssueCrashLogDownloadURLRequest
+                 * @return DescribeIssueCrashLogDownloadURLOutcome
+                 */
+                DescribeIssueCrashLogDownloadURLOutcome DescribeIssueCrashLogDownloadURL(const Model::DescribeIssueCrashLogDownloadURLRequest &request);
+                void DescribeIssueCrashLogDownloadURLAsync(const Model::DescribeIssueCrashLogDownloadURLRequest& request, const DescribeIssueCrashLogDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIssueCrashLogDownloadURLOutcomeCallable DescribeIssueCrashLogDownloadURLCallable(const Model::DescribeIssueCrashLogDownloadURLRequest& request);
+
+                /**
+                 *获取指定 Issue 的摘要信息以及默认选中的最新事件详情
+                 * @param req DescribeIssueDetailRequest
+                 * @return DescribeIssueDetailOutcome
+                 */
+                DescribeIssueDetailOutcome DescribeIssueDetail(const Model::DescribeIssueDetailRequest &request);
+                void DescribeIssueDetailAsync(const Model::DescribeIssueDetailRequest& request, const DescribeIssueDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIssueDetailOutcomeCallable DescribeIssueDetailCallable(const Model::DescribeIssueDetailRequest& request);
+
+                /**
+                 *获取指定 Issue 下单个事件的完整详情，包括栈信息、上下文和符号化状态等字段
+                 * @param req DescribeIssueEventDetailRequest
+                 * @return DescribeIssueEventDetailOutcome
+                 */
+                DescribeIssueEventDetailOutcome DescribeIssueEventDetail(const Model::DescribeIssueEventDetailRequest &request);
+                void DescribeIssueEventDetailAsync(const Model::DescribeIssueEventDetailRequest& request, const DescribeIssueEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIssueEventDetailOutcomeCallable DescribeIssueEventDetailCallable(const Model::DescribeIssueEventDetailRequest& request);
+
+                /**
+                 *根据条件获取指定 Issue 的错误事件列表，支持按时间范围、关键字和扩展过滤器查询，返回分页事件数据
+                 * @param req DescribeIssueEventsRequest
+                 * @return DescribeIssueEventsOutcome
+                 */
+                DescribeIssueEventsOutcome DescribeIssueEvents(const Model::DescribeIssueEventsRequest &request);
+                void DescribeIssueEventsAsync(const Model::DescribeIssueEventsRequest& request, const DescribeIssueEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIssueEventsOutcomeCallable DescribeIssueEventsCallable(const Model::DescribeIssueEventsRequest& request);
+
+                /**
+                 *获取指定 Issue 在给定时间范围内的趋势分桶统计数据
+                 * @param req DescribeIssueTrendRequest
+                 * @return DescribeIssueTrendOutcome
+                 */
+                DescribeIssueTrendOutcome DescribeIssueTrend(const Model::DescribeIssueTrendRequest &request);
+                void DescribeIssueTrendAsync(const Model::DescribeIssueTrendRequest& request, const DescribeIssueTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIssueTrendOutcomeCallable DescribeIssueTrendCallable(const Model::DescribeIssueTrendRequest& request);
+
+                /**
+                 *根据筛选条件分页查询 Issue 列表，支持环境、Issue 类型、状态、关键字、扩展过滤器和排序条件
+                 * @param req DescribeIssuesRequest
+                 * @return DescribeIssuesOutcome
+                 */
+                DescribeIssuesOutcome DescribeIssues(const Model::DescribeIssuesRequest &request);
+                void DescribeIssuesAsync(const Model::DescribeIssuesRequest& request, const DescribeIssuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIssuesOutcomeCallable DescribeIssuesCallable(const Model::DescribeIssuesRequest& request);
 
                 /**
                  *获取问题分布数据
@@ -1038,6 +1684,33 @@ namespace TencentCloud
                 DescribeLagANRProblemListOutcomeCallable DescribeLagANRProblemListCallable(const Model::DescribeLagANRProblemListRequest& request);
 
                 /**
+                 *按AppId+BundleHash取已编译回放包正文。成功含Pack（tmpl/css/js/manifest/hash），不返回WXML/WXSS源码。不存在返回ResourceNotFound。
+                 * @param req DescribeMiniProgramReplayPackRequest
+                 * @return DescribeMiniProgramReplayPackOutcome
+                 */
+                DescribeMiniProgramReplayPackOutcome DescribeMiniProgramReplayPack(const Model::DescribeMiniProgramReplayPackRequest &request);
+                void DescribeMiniProgramReplayPackAsync(const Model::DescribeMiniProgramReplayPackRequest& request, const DescribeMiniProgramReplayPackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMiniProgramReplayPackOutcomeCallable DescribeMiniProgramReplayPackCallable(const Model::DescribeMiniProgramReplayPackRequest& request);
+
+                /**
+                 *按AppId列出回放包元数据，不含Pack正文。可按Status过滤。Limit默认20、最大100。
+                 * @param req DescribeMiniProgramReplayPacksRequest
+                 * @return DescribeMiniProgramReplayPacksOutcome
+                 */
+                DescribeMiniProgramReplayPacksOutcome DescribeMiniProgramReplayPacks(const Model::DescribeMiniProgramReplayPacksRequest &request);
+                void DescribeMiniProgramReplayPacksAsync(const Model::DescribeMiniProgramReplayPacksRequest& request, const DescribeMiniProgramReplayPacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMiniProgramReplayPacksOutcomeCallable DescribeMiniProgramReplayPacksCallable(const Model::DescribeMiniProgramReplayPacksRequest& request);
+
+                /**
+                 *获取TDEM性能指标数据
+                 * @param req DescribePerformanceMetricsRequest
+                 * @return DescribePerformanceMetricsOutcome
+                 */
+                DescribePerformanceMetricsOutcome DescribePerformanceMetrics(const Model::DescribePerformanceMetricsRequest &request);
+                void DescribePerformanceMetricsAsync(const Model::DescribePerformanceMetricsRequest& request, const DescribePerformanceMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePerformanceMetricsOutcomeCallable DescribePerformanceMetricsCallable(const Model::DescribePerformanceMetricsRequest& request);
+
+                /**
                  *获取应用上报抽样信息
                  * @param req DescribeProjectLimitsRequest
                  * @return DescribeProjectLimitsOutcome
@@ -1081,6 +1754,33 @@ namespace TencentCloud
                 DescribeReleaseFilesOutcome DescribeReleaseFiles(const Model::DescribeReleaseFilesRequest &request);
                 void DescribeReleaseFilesAsync(const Model::DescribeReleaseFilesRequest& request, const DescribeReleaseFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReleaseFilesOutcomeCallable DescribeReleaseFilesCallable(const Model::DescribeReleaseFilesRequest& request);
+
+                /**
+                 *从对象存储读取录屏帧数据
+                 * @param req DescribeReplayDataRequest
+                 * @return DescribeReplayDataOutcome
+                 */
+                DescribeReplayDataOutcome DescribeReplayData(const Model::DescribeReplayDataRequest &request);
+                void DescribeReplayDataAsync(const Model::DescribeReplayDataRequest& request, const DescribeReplayDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReplayDataOutcomeCallable DescribeReplayDataCallable(const Model::DescribeReplayDataRequest& request);
+
+                /**
+                 *获取回放日志
+                 * @param req DescribeReplayDetailsRequest
+                 * @return DescribeReplayDetailsOutcome
+                 */
+                DescribeReplayDetailsOutcome DescribeReplayDetails(const Model::DescribeReplayDetailsRequest &request);
+                void DescribeReplayDetailsAsync(const Model::DescribeReplayDetailsRequest& request, const DescribeReplayDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReplayDetailsOutcomeCallable DescribeReplayDetailsCallable(const Model::DescribeReplayDetailsRequest& request);
+
+                /**
+                 *获取回放元数据
+                 * @param req DescribeReplayMetaRequest
+                 * @return DescribeReplayMetaOutcome
+                 */
+                DescribeReplayMetaOutcome DescribeReplayMeta(const Model::DescribeReplayMetaRequest &request);
+                void DescribeReplayMetaAsync(const Model::DescribeReplayMetaRequest& request, const DescribeReplayMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReplayMetaOutcomeCallable DescribeReplayMetaCallable(const Model::DescribeReplayMetaRequest& request);
 
                 /**
                  *获取项目下的日志聚合信息
@@ -1182,6 +1882,15 @@ namespace TencentCloud
                 DescribeRumStatsLogListV2OutcomeCallable DescribeRumStatsLogListV2Callable(const Model::DescribeRumStatsLogListV2Request& request);
 
                 /**
+                 *获取应用的采样率
+                 * @param req DescribeSampleRateRequest
+                 * @return DescribeSampleRateOutcome
+                 */
+                DescribeSampleRateOutcome DescribeSampleRate(const Model::DescribeSampleRateRequest &request);
+                void DescribeSampleRateAsync(const Model::DescribeSampleRateRequest& request, const DescribeSampleRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSampleRateOutcomeCallable DescribeSampleRateCallable(const Model::DescribeSampleRateRequest& request);
+
+                /**
                  *获取首页分数列表
                  * @param req DescribeScoresRequest
                  * @return DescribeScoresOutcome
@@ -1198,6 +1907,348 @@ namespace TencentCloud
                 DescribeScoresV2Outcome DescribeScoresV2(const Model::DescribeScoresV2Request &request);
                 void DescribeScoresV2Async(const Model::DescribeScoresV2Request& request, const DescribeScoresV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScoresV2OutcomeCallable DescribeScoresV2Callable(const Model::DescribeScoresV2Request& request);
+
+                /**
+                 *查询会话列表
+                 * @param req DescribeSessionListRequest
+                 * @return DescribeSessionListOutcome
+                 */
+                DescribeSessionListOutcome DescribeSessionList(const Model::DescribeSessionListRequest &request);
+                void DescribeSessionListAsync(const Model::DescribeSessionListRequest& request, const DescribeSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSessionListOutcomeCallable DescribeSessionListCallable(const Model::DescribeSessionListRequest& request);
+
+                /**
+                 *获取挣扎事件分布数据
+                 * @param req DescribeStruggleDistributionRequest
+                 * @return DescribeStruggleDistributionOutcome
+                 */
+                DescribeStruggleDistributionOutcome DescribeStruggleDistribution(const Model::DescribeStruggleDistributionRequest &request);
+                void DescribeStruggleDistributionAsync(const Model::DescribeStruggleDistributionRequest& request, const DescribeStruggleDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStruggleDistributionOutcomeCallable DescribeStruggleDistributionCallable(const Model::DescribeStruggleDistributionRequest& request);
+
+                /**
+                 *获取符号制品上传临时凭证。
+                 * @param req DescribeSymbolArtifactUploadCredentialRequest
+                 * @return DescribeSymbolArtifactUploadCredentialOutcome
+                 */
+                DescribeSymbolArtifactUploadCredentialOutcome DescribeSymbolArtifactUploadCredential(const Model::DescribeSymbolArtifactUploadCredentialRequest &request);
+                void DescribeSymbolArtifactUploadCredentialAsync(const Model::DescribeSymbolArtifactUploadCredentialRequest& request, const DescribeSymbolArtifactUploadCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSymbolArtifactUploadCredentialOutcomeCallable DescribeSymbolArtifactUploadCredentialCallable(const Model::DescribeSymbolArtifactUploadCredentialRequest& request);
+
+                /**
+                 *分页查询指定类型的符号制品。
+                 * @param req DescribeSymbolArtifactsRequest
+                 * @return DescribeSymbolArtifactsOutcome
+                 */
+                DescribeSymbolArtifactsOutcome DescribeSymbolArtifacts(const Model::DescribeSymbolArtifactsRequest &request);
+                void DescribeSymbolArtifactsAsync(const Model::DescribeSymbolArtifactsRequest& request, const DescribeSymbolArtifactsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSymbolArtifactsOutcomeCallable DescribeSymbolArtifactsCallable(const Model::DescribeSymbolArtifactsRequest& request);
+
+                /**
+                 *查询应用列表，默认仅当前用户名下有权限的应用；可按业务系统 InstanceId 筛选。
+                 * @param req DescribeTDEMApplicationsRequest
+                 * @return DescribeTDEMApplicationsOutcome
+                 */
+                DescribeTDEMApplicationsOutcome DescribeTDEMApplications(const Model::DescribeTDEMApplicationsRequest &request);
+                void DescribeTDEMApplicationsAsync(const Model::DescribeTDEMApplicationsRequest& request, const DescribeTDEMApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMApplicationsOutcomeCallable DescribeTDEMApplicationsCallable(const Model::DescribeTDEMApplicationsRequest& request);
+
+                /**
+                 *查询当前用户名下业务系统列表（超管返回全部）。分页 Offset/Limit，默认 Limit=20 上限 100。
+                 * @param req DescribeTDEMBusinessSystemsRequest
+                 * @return DescribeTDEMBusinessSystemsOutcome
+                 */
+                DescribeTDEMBusinessSystemsOutcome DescribeTDEMBusinessSystems(const Model::DescribeTDEMBusinessSystemsRequest &request);
+                void DescribeTDEMBusinessSystemsAsync(const Model::DescribeTDEMBusinessSystemsRequest& request, const DescribeTDEMBusinessSystemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMBusinessSystemsOutcomeCallable DescribeTDEMBusinessSystemsCallable(const Model::DescribeTDEMBusinessSystemsRequest& request);
+
+                /**
+                 *按一个维度拆分拨测指标。Dimension 取值说明：platform、app_version、device、net_type、operator、region、country、target_ip。target_region 不是合法值。region 对应客户端省份，country 对应国家。
+                 * @param req DescribeTDEMDialDimensionsRequest
+                 * @return DescribeTDEMDialDimensionsOutcome
+                 */
+                DescribeTDEMDialDimensionsOutcome DescribeTDEMDialDimensions(const Model::DescribeTDEMDialDimensionsRequest &request);
+                void DescribeTDEMDialDimensionsAsync(const Model::DescribeTDEMDialDimensionsRequest& request, const DescribeTDEMDialDimensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMDialDimensionsOutcomeCallable DescribeTDEMDialDimensionsCallable(const Model::DescribeTDEMDialDimensionsRequest& request);
+
+                /**
+                 *返回一个拨测批次的探测结果和路由追踪。Probes 的 Region、Operator 是目标 IP 归属。逐跳归属同时写在 Probes.MTR.Hops 和顶层 MTR.Hops。
+                 * @param req DescribeTDEMDialExecutionDetailRequest
+                 * @return DescribeTDEMDialExecutionDetailOutcome
+                 */
+                DescribeTDEMDialExecutionDetailOutcome DescribeTDEMDialExecutionDetail(const Model::DescribeTDEMDialExecutionDetailRequest &request);
+                void DescribeTDEMDialExecutionDetailAsync(const Model::DescribeTDEMDialExecutionDetailRequest& request, const DescribeTDEMDialExecutionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMDialExecutionDetailOutcomeCallable DescribeTDEMDialExecutionDetailCallable(const Model::DescribeTDEMDialExecutionDetailRequest& request);
+
+                /**
+                 *按批次返回拨测执行记录，一批次一行。TargetIps 是目标地址，TargetIpGeo 是这些地址的地区和运营商。行上的 Region 和 Operator 仍是客户端地区和运营商。
+                 * @param req DescribeTDEMDialExecutionListRequest
+                 * @return DescribeTDEMDialExecutionListOutcome
+                 */
+                DescribeTDEMDialExecutionListOutcome DescribeTDEMDialExecutionList(const Model::DescribeTDEMDialExecutionListRequest &request);
+                void DescribeTDEMDialExecutionListAsync(const Model::DescribeTDEMDialExecutionListRequest& request, const DescribeTDEMDialExecutionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMDialExecutionListOutcomeCallable DescribeTDEMDialExecutionListCallable(const Model::DescribeTDEMDialExecutionListRequest& request);
+
+                /**
+                 *按时间窗汇总拨测批次。一次多 IP 探测计为 1 个批次。
+                 * @param req DescribeTDEMDialOverviewRequest
+                 * @return DescribeTDEMDialOverviewOutcome
+                 */
+                DescribeTDEMDialOverviewOutcome DescribeTDEMDialOverview(const Model::DescribeTDEMDialOverviewRequest &request);
+                void DescribeTDEMDialOverviewAsync(const Model::DescribeTDEMDialOverviewRequest& request, const DescribeTDEMDialOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMDialOverviewOutcomeCallable DescribeTDEMDialOverviewCallable(const Model::DescribeTDEMDialOverviewRequest& request);
+
+                /**
+                 *查询应用下未删除的拨测任务，包含启动范围。
+                 * @param req DescribeTDEMDialTasksRequest
+                 * @return DescribeTDEMDialTasksOutcome
+                 */
+                DescribeTDEMDialTasksOutcome DescribeTDEMDialTasks(const Model::DescribeTDEMDialTasksRequest &request);
+                void DescribeTDEMDialTasksAsync(const Model::DescribeTDEMDialTasksRequest& request, const DescribeTDEMDialTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMDialTasksOutcomeCallable DescribeTDEMDialTasksCallable(const Model::DescribeTDEMDialTasksRequest& request);
+
+                /**
+                 *按小时或天返回拨测趋势。Granularity 不传时按小时。
+                 * @param req DescribeTDEMDialTrendRequest
+                 * @return DescribeTDEMDialTrendOutcome
+                 */
+                DescribeTDEMDialTrendOutcome DescribeTDEMDialTrend(const Model::DescribeTDEMDialTrendRequest &request);
+                void DescribeTDEMDialTrendAsync(const Model::DescribeTDEMDialTrendRequest& request, const DescribeTDEMDialTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMDialTrendOutcomeCallable DescribeTDEMDialTrendCallable(const Model::DescribeTDEMDialTrendRequest& request);
+
+                /**
+                 *按 AppId+EventId 查询事件详情，含主表字段与可选符号化结果。Date 推荐传以命中分区；或用 StartDate+EndDate（<=2 天）。越权与不存在统一 ResourceNotFound。
+                 * @param req DescribeTDEMEventDetailRequest
+                 * @return DescribeTDEMEventDetailOutcome
+                 */
+                DescribeTDEMEventDetailOutcome DescribeTDEMEventDetail(const Model::DescribeTDEMEventDetailRequest &request);
+                void DescribeTDEMEventDetailAsync(const Model::DescribeTDEMEventDetailRequest& request, const DescribeTDEMEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMEventDetailOutcomeCallable DescribeTDEMEventDetailCallable(const Model::DescribeTDEMEventDetailRequest& request);
+
+                /**
+                 *错误指纹或 API/资源 URL（含按访问页、状态、标签）排行。读 tdem_events，不走主分析立方 GroupBy。Kind：error/api/resource/api_page/resource_page/api_status/api_status_top/resource_status/tag。 Kind=exception_dimension返回当前普通维度或标签值的同批完整分类计数；展开不另行取数。
+                 * @param req DescribeTDEMEventRankRequest
+                 * @return DescribeTDEMEventRankOutcome
+                 */
+                DescribeTDEMEventRankOutcome DescribeTDEMEventRank(const Model::DescribeTDEMEventRankRequest &request);
+                void DescribeTDEMEventRankAsync(const Model::DescribeTDEMEventRankRequest& request, const DescribeTDEMEventRankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMEventRankOutcomeCallable DescribeTDEMEventRankCallable(const Model::DescribeTDEMEventRankRequest& request);
+
+                /**
+                 *数据探索事件明细分页。会话分类不得调用本接口（Category 禁止 session）。时间单位 Unix 毫秒。
+                 * @param req DescribeTDEMEventSearchRequest
+                 * @return DescribeTDEMEventSearchOutcome
+                 */
+                DescribeTDEMEventSearchOutcome DescribeTDEMEventSearch(const Model::DescribeTDEMEventSearchRequest &request);
+                void DescribeTDEMEventSearchAsync(const Model::DescribeTDEMEventSearchRequest& request, const DescribeTDEMEventSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMEventSearchOutcomeCallable DescribeTDEMEventSearchCallable(const Model::DescribeTDEMEventSearchRequest& request);
+
+                /**
+                 *同一筛选下的分类计数、访问用户、业务用户、窗口合计与分桶趋势。Category 可含 session。空窗返回 0 与空 Series。
+                 * @param req DescribeTDEMEventSearchSummaryRequest
+                 * @return DescribeTDEMEventSearchSummaryOutcome
+                 */
+                DescribeTDEMEventSearchSummaryOutcome DescribeTDEMEventSearchSummary(const Model::DescribeTDEMEventSearchSummaryRequest &request);
+                void DescribeTDEMEventSearchSummaryAsync(const Model::DescribeTDEMEventSearchSummaryRequest& request, const DescribeTDEMEventSearchSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMEventSearchSummaryOutcomeCallable DescribeTDEMEventSearchSummaryCallable(const Model::DescribeTDEMEventSearchSummaryRequest& request);
+
+                /**
+                 *查询应用下字段值替换规则列表。替代已废弃的 DescribeFieldTransformRules；AppId 为 string。
+                 * @param req DescribeTDEMFieldTransformRulesRequest
+                 * @return DescribeTDEMFieldTransformRulesOutcome
+                 */
+                DescribeTDEMFieldTransformRulesOutcome DescribeTDEMFieldTransformRules(const Model::DescribeTDEMFieldTransformRulesRequest &request);
+                void DescribeTDEMFieldTransformRulesAsync(const Model::DescribeTDEMFieldTransformRulesRequest& request, const DescribeTDEMFieldTransformRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMFieldTransformRulesOutcomeCallable DescribeTDEMFieldTransformRulesCallable(const Model::DescribeTDEMFieldTransformRulesRequest& request);
+
+                /**
+                 *获取漏斗详情
+                 * @param req DescribeTDEMFunnelDetailRequest
+                 * @return DescribeTDEMFunnelDetailOutcome
+                 */
+                DescribeTDEMFunnelDetailOutcome DescribeTDEMFunnelDetail(const Model::DescribeTDEMFunnelDetailRequest &request);
+                void DescribeTDEMFunnelDetailAsync(const Model::DescribeTDEMFunnelDetailRequest& request, const DescribeTDEMFunnelDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMFunnelDetailOutcomeCallable DescribeTDEMFunnelDetailCallable(const Model::DescribeTDEMFunnelDetailRequest& request);
+
+                /**
+                 *获取漏斗分析报告维度数据
+                 * @param req DescribeTDEMFunnelDimensionsRequest
+                 * @return DescribeTDEMFunnelDimensionsOutcome
+                 */
+                DescribeTDEMFunnelDimensionsOutcome DescribeTDEMFunnelDimensions(const Model::DescribeTDEMFunnelDimensionsRequest &request);
+                void DescribeTDEMFunnelDimensionsAsync(const Model::DescribeTDEMFunnelDimensionsRequest& request, const DescribeTDEMFunnelDimensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMFunnelDimensionsOutcomeCallable DescribeTDEMFunnelDimensionsCallable(const Model::DescribeTDEMFunnelDimensionsRequest& request);
+
+                /**
+                 *获取漏斗列表
+                 * @param req DescribeTDEMFunnelListRequest
+                 * @return DescribeTDEMFunnelListOutcome
+                 */
+                DescribeTDEMFunnelListOutcome DescribeTDEMFunnelList(const Model::DescribeTDEMFunnelListRequest &request);
+                void DescribeTDEMFunnelListAsync(const Model::DescribeTDEMFunnelListRequest& request, const DescribeTDEMFunnelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMFunnelListOutcomeCallable DescribeTDEMFunnelListCallable(const Model::DescribeTDEMFunnelListRequest& request);
+
+                /**
+                 *获取漏斗报告
+                 * @param req DescribeTDEMFunnelReportRequest
+                 * @return DescribeTDEMFunnelReportOutcome
+                 */
+                DescribeTDEMFunnelReportOutcome DescribeTDEMFunnelReport(const Model::DescribeTDEMFunnelReportRequest &request);
+                void DescribeTDEMFunnelReportAsync(const Model::DescribeTDEMFunnelReportRequest& request, const DescribeTDEMFunnelReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMFunnelReportOutcomeCallable DescribeTDEMFunnelReportCallable(const Model::DescribeTDEMFunnelReportRequest& request);
+
+                /**
+                 *获取漏斗步骤会话
+                 * @param req DescribeTDEMFunnelStepSessionListRequest
+                 * @return DescribeTDEMFunnelStepSessionListOutcome
+                 */
+                DescribeTDEMFunnelStepSessionListOutcome DescribeTDEMFunnelStepSessionList(const Model::DescribeTDEMFunnelStepSessionListRequest &request);
+                void DescribeTDEMFunnelStepSessionListAsync(const Model::DescribeTDEMFunnelStepSessionListRequest& request, const DescribeTDEMFunnelStepSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMFunnelStepSessionListOutcomeCallable DescribeTDEMFunnelStepSessionListCallable(const Model::DescribeTDEMFunnelStepSessionListRequest& request);
+
+                /**
+                 *获取漏斗趋势
+                 * @param req DescribeTDEMFunnelTrendRequest
+                 * @return DescribeTDEMFunnelTrendOutcome
+                 */
+                DescribeTDEMFunnelTrendOutcome DescribeTDEMFunnelTrend(const Model::DescribeTDEMFunnelTrendRequest &request);
+                void DescribeTDEMFunnelTrendAsync(const Model::DescribeTDEMFunnelTrendRequest& request, const DescribeTDEMFunnelTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMFunnelTrendOutcomeCallable DescribeTDEMFunnelTrendCallable(const Model::DescribeTDEMFunnelTrendRequest& request);
+
+                /**
+                 *按单维度 GroupBy 查询分析指标分布。读 tdem_metric_agg。
+                 * @param req DescribeTDEMMetricDistributionRequest
+                 * @return DescribeTDEMMetricDistributionOutcome
+                 */
+                DescribeTDEMMetricDistributionOutcome DescribeTDEMMetricDistribution(const Model::DescribeTDEMMetricDistributionRequest &request);
+                void DescribeTDEMMetricDistributionAsync(const Model::DescribeTDEMMetricDistributionRequest& request, const DescribeTDEMMetricDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMMetricDistributionOutcomeCallable DescribeTDEMMetricDistributionCallable(const Model::DescribeTDEMMetricDistributionRequest& request);
+
+                /**
+                 *查询指定应用与时间窗内的分析指标区间合计。单查返回 Metrics；传 Queries 时返回 Results。读 tdem_metric_agg。
+                 * @param req DescribeTDEMMetricSummaryRequest
+                 * @return DescribeTDEMMetricSummaryOutcome
+                 */
+                DescribeTDEMMetricSummaryOutcome DescribeTDEMMetricSummary(const Model::DescribeTDEMMetricSummaryRequest &request);
+                void DescribeTDEMMetricSummaryAsync(const Model::DescribeTDEMMetricSummaryRequest& request, const DescribeTDEMMetricSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMMetricSummaryOutcomeCallable DescribeTDEMMetricSummaryCallable(const Model::DescribeTDEMMetricSummaryRequest& request);
+
+                /**
+                 *查询分析指标时序。可传 CompareStartTime/CompareEndTime 做对比窗（仅批量）。读 tdem_metric_agg。
+                 * @param req DescribeTDEMMetricTrendRequest
+                 * @return DescribeTDEMMetricTrendOutcome
+                 */
+                DescribeTDEMMetricTrendOutcome DescribeTDEMMetricTrend(const Model::DescribeTDEMMetricTrendRequest &request);
+                void DescribeTDEMMetricTrendAsync(const Model::DescribeTDEMMetricTrendRequest& request, const DescribeTDEMMetricTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMMetricTrendOutcomeCallable DescribeTDEMMetricTrendCallable(const Model::DescribeTDEMMetricTrendRequest& request);
+
+                /**
+                 *客户端总览列表批量评分。按应用列表一次返回各计分项单项分与加权总分。AppIds 1-200；不归属当前用户的应用不出现在响应中。
+                 * @param req DescribeTDEMOverviewScoresRequest
+                 * @return DescribeTDEMOverviewScoresOutcome
+                 */
+                DescribeTDEMOverviewScoresOutcome DescribeTDEMOverviewScores(const Model::DescribeTDEMOverviewScoresRequest &request);
+                void DescribeTDEMOverviewScoresAsync(const Model::DescribeTDEMOverviewScoresRequest& request, const DescribeTDEMOverviewScoresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMOverviewScoresOutcomeCallable DescribeTDEMOverviewScoresCallable(const Model::DescribeTDEMOverviewScoresRequest& request);
+
+                /**
+                 *会话时间线 / 页面子事件 / 错误前轨迹。Mode：timeline / page / breadcrumb。Limit 默认 200，上限 200。
+                 * @param req DescribeTDEMRelatedEventsRequest
+                 * @return DescribeTDEMRelatedEventsOutcome
+                 */
+                DescribeTDEMRelatedEventsOutcome DescribeTDEMRelatedEvents(const Model::DescribeTDEMRelatedEventsRequest &request);
+                void DescribeTDEMRelatedEventsAsync(const Model::DescribeTDEMRelatedEventsRequest& request, const DescribeTDEMRelatedEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMRelatedEventsOutcomeCallable DescribeTDEMRelatedEventsCallable(const Model::DescribeTDEMRelatedEventsRequest& request);
+
+                /**
+                 *按一个维度返回大模型对话次数和当前指标值，按指标值降序，最多 200 行。region 由 country 与 province 拼接。
+                 * @param req DescribeTDEMSSEDimensionsRequest
+                 * @return DescribeTDEMSSEDimensionsOutcome
+                 */
+                DescribeTDEMSSEDimensionsOutcome DescribeTDEMSSEDimensions(const Model::DescribeTDEMSSEDimensionsRequest &request);
+                void DescribeTDEMSSEDimensionsAsync(const Model::DescribeTDEMSSEDimensionsRequest& request, const DescribeTDEMSSEDimensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMSSEDimensionsOutcomeCallable DescribeTDEMSSEDimensionsCallable(const Model::DescribeTDEMSSEDimensionsRequest& request);
+
+                /**
+                 *返回吞吐率、首次消息时延或流畅度的分档分布。档位左闭右开，最后一档有限区间右端闭合，超出右端的样本进入溢出档。错误率与卡死率返回 InvalidParameter。
+                 * @param req DescribeTDEMSSEDistributionRequest
+                 * @return DescribeTDEMSSEDistributionOutcome
+                 */
+                DescribeTDEMSSEDistributionOutcome DescribeTDEMSSEDistribution(const Model::DescribeTDEMSSEDistributionRequest &request);
+                void DescribeTDEMSSEDistributionAsync(const Model::DescribeTDEMSSEDistributionRequest& request, const DescribeTDEMSSEDistributionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMSSEDistributionOutcomeCallable DescribeTDEMSSEDistributionCallable(const Model::DescribeTDEMSSEDistributionRequest& request);
+
+                /**
+                 *返回吞吐率、首次消息时延或流畅度在整个时间窗及各时间桶上的平均值和 P50、P75、P95、P99。错误率与卡死率返回 InvalidParameter。
+                 * @param req DescribeTDEMSSEPercentileRequest
+                 * @return DescribeTDEMSSEPercentileOutcome
+                 */
+                DescribeTDEMSSEPercentileOutcome DescribeTDEMSSEPercentile(const Model::DescribeTDEMSSEPercentileRequest &request);
+                void DescribeTDEMSSEPercentileAsync(const Model::DescribeTDEMSSEPercentileRequest& request, const DescribeTDEMSSEPercentileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMSSEPercentileOutcomeCallable DescribeTDEMSSEPercentileCallable(const Model::DescribeTDEMSSEPercentileRequest& request);
+
+                /**
+                 *查询指定应用与时间窗内的大模型对话汇总，包含对话次数、token 总数、吞吐率、首次消息时延、错误率、卡死率和流畅度。只读 tdem.tdem_events 中 event_type 为 sse_call 的事件。
+                 * @param req DescribeTDEMSSESummaryRequest
+                 * @return DescribeTDEMSSESummaryOutcome
+                 */
+                DescribeTDEMSSESummaryOutcome DescribeTDEMSSESummary(const Model::DescribeTDEMSSESummaryRequest &request);
+                void DescribeTDEMSSESummaryAsync(const Model::DescribeTDEMSSESummaryRequest& request, const DescribeTDEMSSESummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMSSESummaryOutcomeCallable DescribeTDEMSSESummaryCallable(const Model::DescribeTDEMSSESummaryRequest& request);
+
+                /**
+                 *按时间桶返回大模型对话趋势。overall 填充 Points，其他维度按整个窗口的指标值从高到低取 TopN 并填充 Series。
+                 * @param req DescribeTDEMSSETrendRequest
+                 * @return DescribeTDEMSSETrendOutcome
+                 */
+                DescribeTDEMSSETrendOutcome DescribeTDEMSSETrend(const Model::DescribeTDEMSSETrendRequest &request);
+                void DescribeTDEMSSETrendAsync(const Model::DescribeTDEMSSETrendRequest& request, const DescribeTDEMSSETrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMSSETrendOutcomeCallable DescribeTDEMSSETrendCallable(const Model::DescribeTDEMSSETrendRequest& request);
+
+                /**
+                 *读取当前生效的 Web 规则化采样文档。ProjectId 必填且 > 0。无行则返回内置缺省（Event.Enabled=true、Types 空、Replay 关闭且体验率 0），不自动插库。SnapshotId 无快照为 0。query handler 做 PascalCase ↔ 存储 snake_case 映射。非 Web 应用不得走本接口，继续 DescribeSampleRate。
+                 * @param req DescribeTDEMSampleConfigRequest
+                 * @return DescribeTDEMSampleConfigOutcome
+                 */
+                DescribeTDEMSampleConfigOutcome DescribeTDEMSampleConfig(const Model::DescribeTDEMSampleConfigRequest &request);
+                void DescribeTDEMSampleConfigAsync(const Model::DescribeTDEMSampleConfigRequest& request, const DescribeTDEMSampleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMSampleConfigOutcomeCallable DescribeTDEMSampleConfigCallable(const Model::DescribeTDEMSampleConfigRequest& request);
+
+                /**
+                 *查询单个应用的采集采样率与会话回放采样率。替代已废弃的 DescribeSampleRate；AppId 为 string。
+                 * @param req DescribeTDEMSampleRateRequest
+                 * @return DescribeTDEMSampleRateOutcome
+                 */
+                DescribeTDEMSampleRateOutcome DescribeTDEMSampleRate(const Model::DescribeTDEMSampleRateRequest &request);
+                void DescribeTDEMSampleRateAsync(const Model::DescribeTDEMSampleRateRequest& request, const DescribeTDEMSampleRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMSampleRateOutcomeCallable DescribeTDEMSampleRateCallable(const Model::DescribeTDEMSampleRateRequest& request);
+
+                /**
+                 *获取回放时间线数据
+                 * @param req DescribeTDEMSessionReplayTimelineRequest
+                 * @return DescribeTDEMSessionReplayTimelineOutcome
+                 */
+                DescribeTDEMSessionReplayTimelineOutcome DescribeTDEMSessionReplayTimeline(const Model::DescribeTDEMSessionReplayTimelineRequest &request);
+                void DescribeTDEMSessionReplayTimelineAsync(const Model::DescribeTDEMSessionReplayTimelineRequest& request, const DescribeTDEMSessionReplayTimelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMSessionReplayTimelineOutcomeCallable DescribeTDEMSessionReplayTimelineCallable(const Model::DescribeTDEMSessionReplayTimelineRequest& request);
+
+                /**
+                 *按业务系统/应用查询用量明细（含行趋势、端类型、删除/停用标记）。Keyword 匹配业务系统名、应用名或应用 ID。
+                 * @param req DescribeTDEMUsageDetailRequest
+                 * @return DescribeTDEMUsageDetailOutcome
+                 */
+                DescribeTDEMUsageDetailOutcome DescribeTDEMUsageDetail(const Model::DescribeTDEMUsageDetailRequest &request);
+                void DescribeTDEMUsageDetailAsync(const Model::DescribeTDEMUsageDetailRequest& request, const DescribeTDEMUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMUsageDetailOutcomeCallable DescribeTDEMUsageDetailCallable(const Model::DescribeTDEMUsageDetailRequest& request);
+
+                /**
+                 *查询当前使用者名下（超管为全部）上报总量与趋势。时间 StartTime/EndTime 为 YYYY-MM-DD HH:00:00 小时对齐。不要求请求体带 AppId。
+                 * @param req DescribeTDEMUsageSummaryRequest
+                 * @return DescribeTDEMUsageSummaryOutcome
+                 */
+                DescribeTDEMUsageSummaryOutcome DescribeTDEMUsageSummary(const Model::DescribeTDEMUsageSummaryRequest &request);
+                void DescribeTDEMUsageSummaryAsync(const Model::DescribeTDEMUsageSummaryRequest& request, const DescribeTDEMUsageSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTDEMUsageSummaryOutcomeCallable DescribeTDEMUsageSummaryCallable(const Model::DescribeTDEMUsageSummaryRequest& request);
 
                 /**
                  *查询片区信息
@@ -1236,6 +2287,15 @@ namespace TencentCloud
                 DescribeTopIssuesOutcomeCallable DescribeTopIssuesCallable(const Model::DescribeTopIssuesRequest& request);
 
                 /**
+                 *获取用户旅程数据
+                 * @param req DescribeUserJourneySanKeyRequest
+                 * @return DescribeUserJourneySanKeyOutcome
+                 */
+                DescribeUserJourneySanKeyOutcome DescribeUserJourneySanKey(const Model::DescribeUserJourneySanKeyRequest &request);
+                void DescribeUserJourneySanKeyAsync(const Model::DescribeUserJourneySanKeyRequest& request, const DescribeUserJourneySanKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserJourneySanKeyOutcomeCallable DescribeUserJourneySanKeyCallable(const Model::DescribeUserJourneySanKeyRequest& request);
+
+                /**
                  *获取项目下的UV列表
                  * @param req DescribeUvListRequest
                  * @return DescribeUvListOutcome
@@ -1254,6 +2314,15 @@ namespace TencentCloud
                 DescribeWhitelistsOutcomeCallable DescribeWhitelistsCallable(const Model::DescribeWhitelistsRequest& request);
 
                 /**
+                 *修改字段配置规则
+                 * @param req ModifyFieldTransformRuleRequest
+                 * @return ModifyFieldTransformRuleOutcome
+                 */
+                ModifyFieldTransformRuleOutcome ModifyFieldTransformRule(const Model::ModifyFieldTransformRuleRequest &request);
+                void ModifyFieldTransformRuleAsync(const Model::ModifyFieldTransformRuleRequest& request, const ModifyFieldTransformRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFieldTransformRuleOutcomeCallable ModifyFieldTransformRuleCallable(const Model::ModifyFieldTransformRuleRequest& request);
+
+                /**
                  *修改 RUM 业务系统
                  * @param req ModifyInstanceRequest
                  * @return ModifyInstanceOutcome
@@ -1261,6 +2330,24 @@ namespace TencentCloud
                 ModifyInstanceOutcome ModifyInstance(const Model::ModifyInstanceRequest &request);
                 void ModifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
+
+                /**
+                 *更新 Issue 状态，支持 resolve、ignore、reopen 等状态流转动作
+                 * @param req ModifyIssueStatusRequest
+                 * @return ModifyIssueStatusOutcome
+                 */
+                ModifyIssueStatusOutcome ModifyIssueStatus(const Model::ModifyIssueStatusRequest &request);
+                void ModifyIssueStatusAsync(const Model::ModifyIssueStatusRequest& request, const ModifyIssueStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyIssueStatusOutcomeCallable ModifyIssueStatusCallable(const Model::ModifyIssueStatusRequest& request);
+
+                /**
+                 *更新回放包元数据，仅支持改Release，不重编译。换源码请再调UploadMiniProgramSource。
+                 * @param req ModifyMiniProgramReplayPackRequest
+                 * @return ModifyMiniProgramReplayPackOutcome
+                 */
+                ModifyMiniProgramReplayPackOutcome ModifyMiniProgramReplayPack(const Model::ModifyMiniProgramReplayPackRequest &request);
+                void ModifyMiniProgramReplayPackAsync(const Model::ModifyMiniProgramReplayPackRequest& request, const ModifyMiniProgramReplayPackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMiniProgramReplayPackOutcomeCallable ModifyMiniProgramReplayPackCallable(const Model::ModifyMiniProgramReplayPackRequest& request);
 
                 /**
                  *修改 RUM 应用信息
@@ -1281,6 +2368,87 @@ namespace TencentCloud
                 ModifyProjectLimitOutcomeCallable ModifyProjectLimitCallable(const Model::ModifyProjectLimitRequest& request);
 
                 /**
+                 *配置tdem采样率
+                 * @param req ModifySampleRateRequest
+                 * @return ModifySampleRateOutcome
+                 */
+                ModifySampleRateOutcome ModifySampleRate(const Model::ModifySampleRateRequest &request);
+                void ModifySampleRateAsync(const Model::ModifySampleRateRequest& request, const ModifySampleRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySampleRateOutcomeCallable ModifySampleRateCallable(const Model::ModifySampleRateRequest& request);
+
+                /**
+                 *修改应用，仅传需修改字段。AppId 必填。
+                 * @param req ModifyTDEMApplicationRequest
+                 * @return ModifyTDEMApplicationOutcome
+                 */
+                ModifyTDEMApplicationOutcome ModifyTDEMApplication(const Model::ModifyTDEMApplicationRequest &request);
+                void ModifyTDEMApplicationAsync(const Model::ModifyTDEMApplicationRequest& request, const ModifyTDEMApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTDEMApplicationOutcomeCallable ModifyTDEMApplicationCallable(const Model::ModifyTDEMApplicationRequest& request);
+
+                /**
+                 *修改业务系统名称或描述。越权 UnauthorizedOperation；不存在或已删除 ResourceNotFound。
+                 * @param req ModifyTDEMBusinessSystemRequest
+                 * @return ModifyTDEMBusinessSystemOutcome
+                 */
+                ModifyTDEMBusinessSystemOutcome ModifyTDEMBusinessSystem(const Model::ModifyTDEMBusinessSystemRequest &request);
+                void ModifyTDEMBusinessSystemAsync(const Model::ModifyTDEMBusinessSystemRequest& request, const ModifyTDEMBusinessSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTDEMBusinessSystemOutcomeCallable ModifyTDEMBusinessSystemCallable(const Model::ModifyTDEMBusinessSystemRequest& request);
+
+                /**
+                 *修改拨测任务。未出现在请求中的字段保持原值。启动范围传空字符串表示清空该项。Type 和 ExecutionTime 创建后不可修改。暂停和恢复通过 Status 完成，不提供单独的状态接口。
+                 * @param req ModifyTDEMDialTaskRequest
+                 * @return ModifyTDEMDialTaskOutcome
+                 */
+                ModifyTDEMDialTaskOutcome ModifyTDEMDialTask(const Model::ModifyTDEMDialTaskRequest &request);
+                void ModifyTDEMDialTaskAsync(const Model::ModifyTDEMDialTaskRequest& request, const ModifyTDEMDialTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTDEMDialTaskOutcomeCallable ModifyTDEMDialTaskCallable(const Model::ModifyTDEMDialTaskRequest& request);
+
+                /**
+                 *按规则 Id 修改字段值替换规则。替代已废弃的 ModifyFieldTransformRule；AppId 为 string。
+                 * @param req ModifyTDEMFieldTransformRuleRequest
+                 * @return ModifyTDEMFieldTransformRuleOutcome
+                 */
+                ModifyTDEMFieldTransformRuleOutcome ModifyTDEMFieldTransformRule(const Model::ModifyTDEMFieldTransformRuleRequest &request);
+                void ModifyTDEMFieldTransformRuleAsync(const Model::ModifyTDEMFieldTransformRuleRequest& request, const ModifyTDEMFieldTransformRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTDEMFieldTransformRuleOutcomeCallable ModifyTDEMFieldTransformRuleCallable(const Model::ModifyTDEMFieldTransformRuleRequest& request);
+
+                /**
+                 *修改漏斗
+                 * @param req ModifyTDEMFunnelRequest
+                 * @return ModifyTDEMFunnelOutcome
+                 */
+                ModifyTDEMFunnelOutcome ModifyTDEMFunnel(const Model::ModifyTDEMFunnelRequest &request);
+                void ModifyTDEMFunnelAsync(const Model::ModifyTDEMFunnelRequest& request, const ModifyTDEMFunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTDEMFunnelOutcomeCallable ModifyTDEMFunnelCallable(const Model::ModifyTDEMFunnelRequest& request);
+
+                /**
+                 *整页保存 Web 规则化采样文档：校验 → INSERT 快照 → UPSERT 当前行 → 刷新 Redis 下发缓存。不写 tdem_sample_rate。采样率 0–100、最多两位小数；规则 Conditions 不可为空；Types 含非闭集 key 返回 InvalidParameter。校验失败不写库。无 Restore/Import/Export/Diff。
+                 * @param req ModifyTDEMSampleConfigRequest
+                 * @return ModifyTDEMSampleConfigOutcome
+                 */
+                ModifyTDEMSampleConfigOutcome ModifyTDEMSampleConfig(const Model::ModifyTDEMSampleConfigRequest &request);
+                void ModifyTDEMSampleConfigAsync(const Model::ModifyTDEMSampleConfigRequest& request, const ModifyTDEMSampleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTDEMSampleConfigOutcomeCallable ModifyTDEMSampleConfigCallable(const Model::ModifyTDEMSampleConfigRequest& request);
+
+                /**
+                 *设置或更新应用采集采样率；ReplaySampleRate 可选。替代已废弃的 ModifySampleRate；AppId 为 string。
+                 * @param req ModifyTDEMSampleRateRequest
+                 * @return ModifyTDEMSampleRateOutcome
+                 */
+                ModifyTDEMSampleRateOutcome ModifyTDEMSampleRate(const Model::ModifyTDEMSampleRateRequest &request);
+                void ModifyTDEMSampleRateAsync(const Model::ModifyTDEMSampleRateRequest& request, const ModifyTDEMSampleRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTDEMSampleRateOutcomeCallable ModifyTDEMSampleRateCallable(const Model::ModifyTDEMSampleRateRequest& request);
+
+                /**
+                 *根据步骤配置直接生成漏斗预览报告（不保存漏斗，不需要FunnelId）
+                 * @param req PreviewTDEMFunnelReportRequest
+                 * @return PreviewTDEMFunnelReportOutcome
+                 */
+                PreviewTDEMFunnelReportOutcome PreviewTDEMFunnelReport(const Model::PreviewTDEMFunnelReportRequest &request);
+                void PreviewTDEMFunnelReportAsync(const Model::PreviewTDEMFunnelReportRequest& request, const PreviewTDEMFunnelReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PreviewTDEMFunnelReportOutcomeCallable PreviewTDEMFunnelReportCallable(const Model::PreviewTDEMFunnelReportRequest& request);
+
+                /**
                  *恢复 RUM 业务系统，恢复后，用户可以正常使用和上报数据
                  * @param req ResumeInstanceRequest
                  * @return ResumeInstanceOutcome
@@ -1299,6 +2467,15 @@ namespace TencentCloud
                 ResumeProjectOutcomeCallable ResumeProjectCallable(const Model::ResumeProjectRequest& request);
 
                 /**
+                 *恢复已停止的应用，Status 变为 2。
+                 * @param req ResumeTDEMApplicationRequest
+                 * @return ResumeTDEMApplicationOutcome
+                 */
+                ResumeTDEMApplicationOutcome ResumeTDEMApplication(const Model::ResumeTDEMApplicationRequest &request);
+                void ResumeTDEMApplicationAsync(const Model::ResumeTDEMApplicationRequest& request, const ResumeTDEMApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeTDEMApplicationOutcomeCallable ResumeTDEMApplicationCallable(const Model::ResumeTDEMApplicationRequest& request);
+
+                /**
                  *停止实例
                  * @param req StopInstanceRequest
                  * @return StopInstanceOutcome
@@ -1315,6 +2492,33 @@ namespace TencentCloud
                 StopProjectOutcome StopProject(const Model::StopProjectRequest &request);
                 void StopProjectAsync(const Model::StopProjectRequest& request, const StopProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopProjectOutcomeCallable StopProjectCallable(const Model::StopProjectRequest& request);
+
+                /**
+                 *停止应用采集，Status 变为 6。
+                 * @param req StopTDEMApplicationRequest
+                 * @return StopTDEMApplicationOutcome
+                 */
+                StopTDEMApplicationOutcome StopTDEMApplication(const Model::StopTDEMApplicationRequest &request);
+                void StopTDEMApplicationAsync(const Model::StopTDEMApplicationRequest& request, const StopTDEMApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopTDEMApplicationOutcomeCallable StopTDEMApplicationCallable(const Model::StopTDEMApplicationRequest& request);
+
+                /**
+                 *上传微信小程序源码zip并同步编译回放包。控制台传FileBase64；zip需含app.json，跳过node_modules。同AppId+BundleHash且已ready则幂等。
+                 * @param req UploadMiniProgramSourceRequest
+                 * @return UploadMiniProgramSourceOutcome
+                 */
+                UploadMiniProgramSourceOutcome UploadMiniProgramSource(const Model::UploadMiniProgramSourceRequest &request);
+                void UploadMiniProgramSourceAsync(const Model::UploadMiniProgramSourceRequest& request, const UploadMiniProgramSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadMiniProgramSourceOutcomeCallable UploadMiniProgramSourceCallable(const Model::UploadMiniProgramSourceRequest& request);
+
+                /**
+                 *登记已上传的符号制品。请先获取上传凭证并将文件上传到 COS。
+                 * @param req UploadSymbolArtifactRequest
+                 * @return UploadSymbolArtifactOutcome
+                 */
+                UploadSymbolArtifactOutcome UploadSymbolArtifact(const Model::UploadSymbolArtifactRequest &request);
+                void UploadSymbolArtifactAsync(const Model::UploadSymbolArtifactRequest& request, const UploadSymbolArtifactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadSymbolArtifactOutcomeCallable UploadSymbolArtifactCallable(const Model::UploadSymbolArtifactRequest& request);
 
             };
         }

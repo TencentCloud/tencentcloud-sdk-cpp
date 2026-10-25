@@ -51,7 +51,8 @@ ModelRouterDetail::ModelRouterDetail() :
     m_videoConfigHasBeenSet(false),
     m_rerankConfigHasBeenSet(false),
     m_decisionsConfigHasBeenSet(false),
-    m_imageConfigHasBeenSet(false)
+    m_imageConfigHasBeenSet(false),
+    m_redirectConfigHasBeenSet(false)
 {
 }
 
@@ -466,6 +467,23 @@ CoreInternalOutcome ModelRouterDetail::Deserialize(const rapidjson::Value &value
         m_imageConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("RedirectConfig") && !value["RedirectConfig"].IsNull())
+    {
+        if (!value["RedirectConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelRouterDetail.RedirectConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_redirectConfig.Deserialize(value["RedirectConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_redirectConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -754,6 +772,15 @@ void ModelRouterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_redirectConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedirectConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_redirectConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1253,5 +1280,21 @@ void ModelRouterDetail::SetImageConfig(const ImageConfig& _imageConfig)
 bool ModelRouterDetail::ImageConfigHasBeenSet() const
 {
     return m_imageConfigHasBeenSet;
+}
+
+RedirectConfig ModelRouterDetail::GetRedirectConfig() const
+{
+    return m_redirectConfig;
+}
+
+void ModelRouterDetail::SetRedirectConfig(const RedirectConfig& _redirectConfig)
+{
+    m_redirectConfig = _redirectConfig;
+    m_redirectConfigHasBeenSet = true;
+}
+
+bool ModelRouterDetail::RedirectConfigHasBeenSet() const
+{
+    return m_redirectConfigHasBeenSet;
 }
 

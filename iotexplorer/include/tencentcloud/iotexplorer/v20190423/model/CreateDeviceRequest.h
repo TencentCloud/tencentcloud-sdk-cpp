@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品ID。
-                     * @return ProductId 产品ID。
+                     * 获取<p>产品ID。</p>
+                     * @return ProductId <p>产品ID。</p>
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品ID。
-                     * @param _productId 产品ID。
+                     * 设置<p>产品ID。</p>
+                     * @param _productId <p>产品ID。</p>
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。
-                     * @return DeviceName 设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。
+                     * 获取<p>设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。</p>
+                     * @return DeviceName <p>设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。
-                     * @param _deviceName 设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。
+                     * 设置<p>设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。</p>
+                     * @param _deviceName <p>设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取LoRaWAN 设备地址
-                     * @return DevAddr LoRaWAN 设备地址
+                     * 获取<p>LoRaWAN 设备地址</p>
+                     * @return DevAddr <p>LoRaWAN 设备地址</p>
                      * 
                      */
                     std::string GetDevAddr() const;
 
                     /**
-                     * 设置LoRaWAN 设备地址
-                     * @param _devAddr LoRaWAN 设备地址
+                     * 设置<p>LoRaWAN 设备地址</p>
+                     * @param _devAddr <p>LoRaWAN 设备地址</p>
                      * 
                      */
                     void SetDevAddr(const std::string& _devAddr);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DevAddrHasBeenSet() const;
 
                     /**
-                     * 获取LoRaWAN 应用密钥
-                     * @return AppKey LoRaWAN 应用密钥
+                     * 获取<p>LoRaWAN 应用密钥</p>
+                     * @return AppKey <p>LoRaWAN 应用密钥</p>
                      * 
                      */
                     std::string GetAppKey() const;
 
                     /**
-                     * 设置LoRaWAN 应用密钥
-                     * @param _appKey LoRaWAN 应用密钥
+                     * 设置<p>LoRaWAN 应用密钥</p>
+                     * @param _appKey <p>LoRaWAN 应用密钥</p>
                      * 
                      */
                     void SetAppKey(const std::string& _appKey);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool AppKeyHasBeenSet() const;
 
                     /**
-                     * 获取LoRaWAN 设备唯一标识
-                     * @return DevEUI LoRaWAN 设备唯一标识
+                     * 获取<p>LoRaWAN 设备唯一标识</p>
+                     * @return DevEUI <p>LoRaWAN 设备唯一标识</p>
                      * 
                      */
                     std::string GetDevEUI() const;
 
                     /**
-                     * 设置LoRaWAN 设备唯一标识
-                     * @param _devEUI LoRaWAN 设备唯一标识
+                     * 设置<p>LoRaWAN 设备唯一标识</p>
+                     * @param _devEUI <p>LoRaWAN 设备唯一标识</p>
                      * 
                      */
                     void SetDevEUI(const std::string& _devEUI);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool DevEUIHasBeenSet() const;
 
                     /**
-                     * 获取LoRaWAN 应用会话密钥
-                     * @return AppSKey LoRaWAN 应用会话密钥
+                     * 获取<p>LoRaWAN 应用会话密钥</p>
+                     * @return AppSKey <p>LoRaWAN 应用会话密钥</p>
                      * 
                      */
                     std::string GetAppSKey() const;
 
                     /**
-                     * 设置LoRaWAN 应用会话密钥
-                     * @param _appSKey LoRaWAN 应用会话密钥
+                     * 设置<p>LoRaWAN 应用会话密钥</p>
+                     * @param _appSKey <p>LoRaWAN 应用会话密钥</p>
                      * 
                      */
                     void SetAppSKey(const std::string& _appSKey);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool AppSKeyHasBeenSet() const;
 
                     /**
-                     * 获取LoRaWAN 网络会话密钥
-                     * @return NwkSKey LoRaWAN 网络会话密钥
+                     * 获取<p>LoRaWAN 网络会话密钥</p>
+                     * @return NwkSKey <p>LoRaWAN 网络会话密钥</p>
                      * 
                      */
                     std::string GetNwkSKey() const;
 
                     /**
-                     * 设置LoRaWAN 网络会话密钥
-                     * @param _nwkSKey LoRaWAN 网络会话密钥
+                     * 设置<p>LoRaWAN 网络会话密钥</p>
+                     * @param _nwkSKey <p>LoRaWAN 网络会话密钥</p>
                      * 
                      */
                     void SetNwkSKey(const std::string& _nwkSKey);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool NwkSKeyHasBeenSet() const;
 
                     /**
-                     * 获取手动指定设备的PSK密钥
-                     * @return DefinedPsk 手动指定设备的PSK密钥
+                     * 获取<p>手动指定设备的PSK密钥</p>
+                     * @return DefinedPsk <p>手动指定设备的PSK密钥</p>
                      * 
                      */
                     std::string GetDefinedPsk() const;
 
                     /**
-                     * 设置手动指定设备的PSK密钥
-                     * @param _definedPsk 手动指定设备的PSK密钥
+                     * 设置<p>手动指定设备的PSK密钥</p>
+                     * @param _definedPsk <p>手动指定设备的PSK密钥</p>
                      * 
                      */
                     void SetDefinedPsk(const std::string& _definedPsk);
@@ -210,55 +210,82 @@ namespace TencentCloud
                      */
                     bool DefinedPskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>设备证书。第三方CA证书认证的产品下必填；腾讯云CA证书产品传入会报错；非证书认证产品传入会被忽略</p>
+                     * @return TlsCrt <p>设备证书。第三方CA证书认证的产品下必填；腾讯云CA证书产品传入会报错；非证书认证产品传入会被忽略</p>
+                     * 
+                     */
+                    std::string GetTlsCrt() const;
+
+                    /**
+                     * 设置<p>设备证书。第三方CA证书认证的产品下必填；腾讯云CA证书产品传入会报错；非证书认证产品传入会被忽略</p>
+                     * @param _tlsCrt <p>设备证书。第三方CA证书认证的产品下必填；腾讯云CA证书产品传入会报错；非证书认证产品传入会被忽略</p>
+                     * 
+                     */
+                    void SetTlsCrt(const std::string& _tlsCrt);
+
+                    /**
+                     * 判断参数 TlsCrt 是否已赋值
+                     * @return TlsCrt 是否已赋值
+                     * 
+                     */
+                    bool TlsCrtHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 产品ID。
+                     * <p>产品ID。</p>
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。
+                     * <p>设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * LoRaWAN 设备地址
+                     * <p>LoRaWAN 设备地址</p>
                      */
                     std::string m_devAddr;
                     bool m_devAddrHasBeenSet;
 
                     /**
-                     * LoRaWAN 应用密钥
+                     * <p>LoRaWAN 应用密钥</p>
                      */
                     std::string m_appKey;
                     bool m_appKeyHasBeenSet;
 
                     /**
-                     * LoRaWAN 设备唯一标识
+                     * <p>LoRaWAN 设备唯一标识</p>
                      */
                     std::string m_devEUI;
                     bool m_devEUIHasBeenSet;
 
                     /**
-                     * LoRaWAN 应用会话密钥
+                     * <p>LoRaWAN 应用会话密钥</p>
                      */
                     std::string m_appSKey;
                     bool m_appSKeyHasBeenSet;
 
                     /**
-                     * LoRaWAN 网络会话密钥
+                     * <p>LoRaWAN 网络会话密钥</p>
                      */
                     std::string m_nwkSKey;
                     bool m_nwkSKeyHasBeenSet;
 
                     /**
-                     * 手动指定设备的PSK密钥
+                     * <p>手动指定设备的PSK密钥</p>
                      */
                     std::string m_definedPsk;
                     bool m_definedPskHasBeenSet;
+
+                    /**
+                     * <p>设备证书。第三方CA证书认证的产品下必填；腾讯云CA证书产品传入会报错；非证书认证产品传入会被忽略</p>
+                     */
+                    std::string m_tlsCrt;
+                    bool m_tlsCrtHasBeenSet;
 
                 };
             }

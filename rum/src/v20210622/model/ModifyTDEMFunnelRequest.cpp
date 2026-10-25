@@ -1,0 +1,226 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/rum/v20210622/model/ModifyTDEMFunnelRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Rum::V20210622::Model;
+using namespace std;
+
+ModifyTDEMFunnelRequest::ModifyTDEMFunnelRequest() :
+    m_appIdHasBeenSet(false),
+    m_funnelIdHasBeenSet(false),
+    m_funnelNameHasBeenSet(false),
+    m_stepsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_sourceHasBeenSet(false)
+{
+}
+
+string ModifyTDEMFunnelRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_funnelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FunnelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_funnelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_funnelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FunnelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_funnelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stepsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Steps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_steps.begin(); itr != m_steps.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string ModifyTDEMFunnelRequest::GetAppId() const
+{
+    return m_appId;
+}
+
+void ModifyTDEMFunnelRequest::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool ModifyTDEMFunnelRequest::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string ModifyTDEMFunnelRequest::GetFunnelId() const
+{
+    return m_funnelId;
+}
+
+void ModifyTDEMFunnelRequest::SetFunnelId(const string& _funnelId)
+{
+    m_funnelId = _funnelId;
+    m_funnelIdHasBeenSet = true;
+}
+
+bool ModifyTDEMFunnelRequest::FunnelIdHasBeenSet() const
+{
+    return m_funnelIdHasBeenSet;
+}
+
+string ModifyTDEMFunnelRequest::GetFunnelName() const
+{
+    return m_funnelName;
+}
+
+void ModifyTDEMFunnelRequest::SetFunnelName(const string& _funnelName)
+{
+    m_funnelName = _funnelName;
+    m_funnelNameHasBeenSet = true;
+}
+
+bool ModifyTDEMFunnelRequest::FunnelNameHasBeenSet() const
+{
+    return m_funnelNameHasBeenSet;
+}
+
+vector<FunnelStepInput> ModifyTDEMFunnelRequest::GetSteps() const
+{
+    return m_steps;
+}
+
+void ModifyTDEMFunnelRequest::SetSteps(const vector<FunnelStepInput>& _steps)
+{
+    m_steps = _steps;
+    m_stepsHasBeenSet = true;
+}
+
+bool ModifyTDEMFunnelRequest::StepsHasBeenSet() const
+{
+    return m_stepsHasBeenSet;
+}
+
+string ModifyTDEMFunnelRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void ModifyTDEMFunnelRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ModifyTDEMFunnelRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string ModifyTDEMFunnelRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void ModifyTDEMFunnelRequest::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ModifyTDEMFunnelRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string ModifyTDEMFunnelRequest::GetSource() const
+{
+    return m_source;
+}
+
+void ModifyTDEMFunnelRequest::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool ModifyTDEMFunnelRequest::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
+}
+
+

@@ -21,7 +21,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 IntentRouterDecisionModelConfig::IntentRouterDecisionModelConfig() :
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_modelNameHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome IntentRouterDecisionModelConfig::Deserialize(const rapidjson
         m_enabledHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelName") && !value["ModelName"].IsNull())
+    {
+        if (!value["ModelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntentRouterDecisionModelConfig.ModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelName = string(value["ModelName"].GetString());
+        m_modelNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void IntentRouterDecisionModelConfig::ToJsonObject(rapidjson::Value &value, rapi
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabled, allocator);
+    }
+
+    if (m_modelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void IntentRouterDecisionModelConfig::SetEnabled(const bool& _enabled)
 bool IntentRouterDecisionModelConfig::EnabledHasBeenSet() const
 {
     return m_enabledHasBeenSet;
+}
+
+string IntentRouterDecisionModelConfig::GetModelName() const
+{
+    return m_modelName;
+}
+
+void IntentRouterDecisionModelConfig::SetModelName(const string& _modelName)
+{
+    m_modelName = _modelName;
+    m_modelNameHasBeenSet = true;
+}
+
+bool IntentRouterDecisionModelConfig::ModelNameHasBeenSet() const
+{
+    return m_modelNameHasBeenSet;
 }
 

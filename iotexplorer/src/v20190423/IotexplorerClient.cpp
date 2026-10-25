@@ -1890,6 +1890,56 @@ IotexplorerClient::CreatePositionSpaceOutcomeCallable IotexplorerClient::CreateP
     return prom->get_future();
 }
 
+IotexplorerClient::CreatePrivateCAOutcome IotexplorerClient::CreatePrivateCA(const CreatePrivateCARequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrivateCA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrivateCAResponse rsp = CreatePrivateCAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrivateCAOutcome(rsp);
+        else
+            return CreatePrivateCAOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrivateCAOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreatePrivateCAAsync(const CreatePrivateCARequest& request, const CreatePrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePrivateCARequest&;
+    using Resp = CreatePrivateCAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePrivateCA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::CreatePrivateCAOutcomeCallable IotexplorerClient::CreatePrivateCACallable(const CreatePrivateCARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePrivateCAOutcome>>();
+    CreatePrivateCAAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const CreatePrivateCARequest&,
+        CreatePrivateCAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::CreateProjectOutcome IotexplorerClient::CreateProject(const CreateProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateProject");
@@ -3182,6 +3232,106 @@ IotexplorerClient::DeletePositionSpaceOutcomeCallable IotexplorerClient::DeleteP
         const IotexplorerClient*,
         const DeletePositionSpaceRequest&,
         DeletePositionSpaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DeletePrivateCAOutcome IotexplorerClient::DeletePrivateCA(const DeletePrivateCARequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrivateCA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrivateCAResponse rsp = DeletePrivateCAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrivateCAOutcome(rsp);
+        else
+            return DeletePrivateCAOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrivateCAOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeletePrivateCAAsync(const DeletePrivateCARequest& request, const DeletePrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeletePrivateCARequest&;
+    using Resp = DeletePrivateCAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeletePrivateCA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DeletePrivateCAOutcomeCallable IotexplorerClient::DeletePrivateCACallable(const DeletePrivateCARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeletePrivateCAOutcome>>();
+    DeletePrivateCAAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DeletePrivateCARequest&,
+        DeletePrivateCAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DeleteProductPrivateCAOutcome IotexplorerClient::DeleteProductPrivateCA(const DeleteProductPrivateCARequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteProductPrivateCA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteProductPrivateCAResponse rsp = DeleteProductPrivateCAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteProductPrivateCAOutcome(rsp);
+        else
+            return DeleteProductPrivateCAOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteProductPrivateCAOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteProductPrivateCAAsync(const DeleteProductPrivateCARequest& request, const DeleteProductPrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteProductPrivateCARequest&;
+    using Resp = DeleteProductPrivateCAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteProductPrivateCA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DeleteProductPrivateCAOutcomeCallable IotexplorerClient::DeleteProductPrivateCACallable(const DeleteProductPrivateCARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteProductPrivateCAOutcome>>();
+    DeleteProductPrivateCAAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DeleteProductPrivateCARequest&,
+        DeleteProductPrivateCAOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6232,6 +6382,206 @@ IotexplorerClient::DescribePositionFenceListOutcomeCallable IotexplorerClient::D
         const IotexplorerClient*,
         const DescribePositionFenceListRequest&,
         DescribePositionFenceListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DescribePrivateCAOutcome IotexplorerClient::DescribePrivateCA(const DescribePrivateCARequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivateCA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivateCAResponse rsp = DescribePrivateCAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivateCAOutcome(rsp);
+        else
+            return DescribePrivateCAOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivateCAOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribePrivateCAAsync(const DescribePrivateCARequest& request, const DescribePrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePrivateCARequest&;
+    using Resp = DescribePrivateCAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePrivateCA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribePrivateCAOutcomeCallable IotexplorerClient::DescribePrivateCACallable(const DescribePrivateCARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePrivateCAOutcome>>();
+    DescribePrivateCAAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribePrivateCARequest&,
+        DescribePrivateCAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DescribePrivateCABindedProductsOutcome IotexplorerClient::DescribePrivateCABindedProducts(const DescribePrivateCABindedProductsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivateCABindedProducts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivateCABindedProductsResponse rsp = DescribePrivateCABindedProductsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivateCABindedProductsOutcome(rsp);
+        else
+            return DescribePrivateCABindedProductsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivateCABindedProductsOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribePrivateCABindedProductsAsync(const DescribePrivateCABindedProductsRequest& request, const DescribePrivateCABindedProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePrivateCABindedProductsRequest&;
+    using Resp = DescribePrivateCABindedProductsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePrivateCABindedProducts", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribePrivateCABindedProductsOutcomeCallable IotexplorerClient::DescribePrivateCABindedProductsCallable(const DescribePrivateCABindedProductsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePrivateCABindedProductsOutcome>>();
+    DescribePrivateCABindedProductsAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribePrivateCABindedProductsRequest&,
+        DescribePrivateCABindedProductsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DescribePrivateCAsOutcome IotexplorerClient::DescribePrivateCAs(const DescribePrivateCAsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivateCAs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivateCAsResponse rsp = DescribePrivateCAsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivateCAsOutcome(rsp);
+        else
+            return DescribePrivateCAsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivateCAsOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribePrivateCAsAsync(const DescribePrivateCAsRequest& request, const DescribePrivateCAsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePrivateCAsRequest&;
+    using Resp = DescribePrivateCAsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePrivateCAs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribePrivateCAsOutcomeCallable IotexplorerClient::DescribePrivateCAsCallable(const DescribePrivateCAsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePrivateCAsOutcome>>();
+    DescribePrivateCAsAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribePrivateCAsRequest&,
+        DescribePrivateCAsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::DescribeProductCAOutcome IotexplorerClient::DescribeProductCA(const DescribeProductCARequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProductCA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProductCAResponse rsp = DescribeProductCAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProductCAOutcome(rsp);
+        else
+            return DescribeProductCAOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProductCAOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeProductCAAsync(const DescribeProductCARequest& request, const DescribeProductCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeProductCARequest&;
+    using Resp = DescribeProductCAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeProductCA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeProductCAOutcomeCallable IotexplorerClient::DescribeProductCACallable(const DescribeProductCARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeProductCAOutcome>>();
+    DescribeProductCAAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeProductCARequest&,
+        DescribeProductCAOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -12932,6 +13282,106 @@ IotexplorerClient::UpdateOtaTaskStatusOutcomeCallable IotexplorerClient::UpdateO
         const IotexplorerClient*,
         const UpdateOtaTaskStatusRequest&,
         UpdateOtaTaskStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::UpdatePrivateCAOutcome IotexplorerClient::UpdatePrivateCA(const UpdatePrivateCARequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePrivateCA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePrivateCAResponse rsp = UpdatePrivateCAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePrivateCAOutcome(rsp);
+        else
+            return UpdatePrivateCAOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePrivateCAOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::UpdatePrivateCAAsync(const UpdatePrivateCARequest& request, const UpdatePrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdatePrivateCARequest&;
+    using Resp = UpdatePrivateCAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdatePrivateCA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::UpdatePrivateCAOutcomeCallable IotexplorerClient::UpdatePrivateCACallable(const UpdatePrivateCARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdatePrivateCAOutcome>>();
+    UpdatePrivateCAAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const UpdatePrivateCARequest&,
+        UpdatePrivateCAOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+IotexplorerClient::UpdateProductPrivateCAOutcome IotexplorerClient::UpdateProductPrivateCA(const UpdateProductPrivateCARequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateProductPrivateCA");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateProductPrivateCAResponse rsp = UpdateProductPrivateCAResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateProductPrivateCAOutcome(rsp);
+        else
+            return UpdateProductPrivateCAOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateProductPrivateCAOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::UpdateProductPrivateCAAsync(const UpdateProductPrivateCARequest& request, const UpdateProductPrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateProductPrivateCARequest&;
+    using Resp = UpdateProductPrivateCAResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateProductPrivateCA", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::UpdateProductPrivateCAOutcomeCallable IotexplorerClient::UpdateProductPrivateCACallable(const UpdateProductPrivateCARequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateProductPrivateCAOutcome>>();
+    UpdateProductPrivateCAAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const UpdateProductPrivateCARequest&,
+        UpdateProductPrivateCAOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

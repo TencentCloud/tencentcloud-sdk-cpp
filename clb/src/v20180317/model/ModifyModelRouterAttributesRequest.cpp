@@ -34,7 +34,10 @@ ModifyModelRouterAttributesRequest::ModifyModelRouterAttributesRequest() :
     m_videoConfigHasBeenSet(false),
     m_rerankConfigHasBeenSet(false),
     m_decisionsConfigHasBeenSet(false),
-    m_imageConfigHasBeenSet(false)
+    m_imageConfigHasBeenSet(false),
+    m_redirectConfigHasBeenSet(false),
+    m_schemaHasBeenSet(false),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -146,6 +149,31 @@ string ModifyModelRouterAttributesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_redirectConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedirectConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_redirectConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_schemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Schema";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_port, allocator);
     }
 
 
@@ -346,6 +374,54 @@ void ModifyModelRouterAttributesRequest::SetImageConfig(const ImageConfig& _imag
 bool ModifyModelRouterAttributesRequest::ImageConfigHasBeenSet() const
 {
     return m_imageConfigHasBeenSet;
+}
+
+RedirectConfig ModifyModelRouterAttributesRequest::GetRedirectConfig() const
+{
+    return m_redirectConfig;
+}
+
+void ModifyModelRouterAttributesRequest::SetRedirectConfig(const RedirectConfig& _redirectConfig)
+{
+    m_redirectConfig = _redirectConfig;
+    m_redirectConfigHasBeenSet = true;
+}
+
+bool ModifyModelRouterAttributesRequest::RedirectConfigHasBeenSet() const
+{
+    return m_redirectConfigHasBeenSet;
+}
+
+string ModifyModelRouterAttributesRequest::GetSchema() const
+{
+    return m_schema;
+}
+
+void ModifyModelRouterAttributesRequest::SetSchema(const string& _schema)
+{
+    m_schema = _schema;
+    m_schemaHasBeenSet = true;
+}
+
+bool ModifyModelRouterAttributesRequest::SchemaHasBeenSet() const
+{
+    return m_schemaHasBeenSet;
+}
+
+uint64_t ModifyModelRouterAttributesRequest::GetPort() const
+{
+    return m_port;
+}
+
+void ModifyModelRouterAttributesRequest::SetPort(const uint64_t& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool ModifyModelRouterAttributesRequest::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
 }
 
 

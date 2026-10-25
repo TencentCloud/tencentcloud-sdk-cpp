@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取特征表主键字段列表
-                     * @return PrimaryKeys 特征表主键字段列表
+                     * 获取<p>特征表主键字段列表</p>
+                     * @return PrimaryKeys <p>特征表主键字段列表</p>
                      * 
                      */
                     std::vector<std::string> GetPrimaryKeys() const;
 
                     /**
-                     * 设置特征表主键字段列表
-                     * @param _primaryKeys 特征表主键字段列表
+                     * 设置<p>特征表主键字段列表</p>
+                     * @param _primaryKeys <p>特征表主键字段列表</p>
                      * 
                      */
                     void SetPrimaryKeys(const std::vector<std::string>& _primaryKeys);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PrimaryKeysHasBeenSet() const;
 
                     /**
-                     * 获取特征表时间戳字段名称
-                     * @return TimestampField 特征表时间戳字段名称
+                     * 获取<p>特征表时间戳字段名称</p>
+                     * @return TimestampField <p>特征表时间戳字段名称</p>
                      * 
                      */
                     std::string GetTimestampField() const;
 
                     /**
-                     * 设置特征表时间戳字段名称
-                     * @param _timestampField 特征表时间戳字段名称
+                     * 设置<p>特征表时间戳字段名称</p>
+                     * @param _timestampField <p>特征表时间戳字段名称</p>
                      * 
                      */
                     void SetTimestampField(const std::string& _timestampField);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TimestampFieldHasBeenSet() const;
 
                     /**
-                     * 获取在线特征表对应的来源表名称（离线表）
-                     * @return SourceTableName 在线特征表对应的来源表名称（离线表）
+                     * 获取<p>在线特征表对应的来源表名称（离线表）</p>
+                     * @return SourceTableName <p>在线特征表对应的来源表名称（离线表）</p>
                      * 
                      */
                     std::string GetSourceTableName() const;
 
                     /**
-                     * 设置在线特征表对应的来源表名称（离线表）
-                     * @param _sourceTableName 在线特征表对应的来源表名称（离线表）
+                     * 设置<p>在线特征表对应的来源表名称（离线表）</p>
+                     * @param _sourceTableName <p>在线特征表对应的来源表名称（离线表）</p>
                      * 
                      */
                     void SetSourceTableName(const std::string& _sourceTableName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool SourceTableNameHasBeenSet() const;
 
                     /**
-                     * 获取在线特征表关联的工作流ID
-                     * @return WorkflowId 在线特征表关联的工作流ID
+                     * 获取<p>在线特征表关联的工作流ID</p>
+                     * @return WorkflowId <p>在线特征表关联的工作流ID</p>
                      * 
                      */
                     std::string GetWorkflowId() const;
 
                     /**
-                     * 设置在线特征表关联的工作流ID
-                     * @param _workflowId 在线特征表关联的工作流ID
+                     * 设置<p>在线特征表关联的工作流ID</p>
+                     * @param _workflowId <p>在线特征表关联的工作流ID</p>
                      * 
                      */
                     void SetWorkflowId(const std::string& _workflowId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取离线特征表对应生成的在线特征表名称
-                     * @return OnlineTableName 离线特征表对应生成的在线特征表名称
+                     * 获取<p>离线特征表对应生成的在线特征表名称</p>
+                     * @return OnlineTableName <p>离线特征表对应生成的在线特征表名称</p>
                      * 
                      */
                     std::string GetOnlineTableName() const;
 
                     /**
-                     * 设置离线特征表对应生成的在线特征表名称
-                     * @param _onlineTableName 离线特征表对应生成的在线特征表名称
+                     * 设置<p>离线特征表对应生成的在线特征表名称</p>
+                     * @param _onlineTableName <p>离线特征表对应生成的在线特征表名称</p>
                      * 
                      */
                     void SetOnlineTableName(const std::string& _onlineTableName);
@@ -151,37 +151,91 @@ namespace TencentCloud
                      */
                     bool OnlineTableNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>离线特征表对应生成的在线特征表类型，取值：TENCENT_POSTGRESQL | REDIS），缺省 TENCENT_POSTGRESQL</p>
+                     * @return OnlineTableType <p>离线特征表对应生成的在线特征表类型，取值：TENCENT_POSTGRESQL | REDIS），缺省 TENCENT_POSTGRESQL</p>
+                     * 
+                     */
+                    std::string GetOnlineTableType() const;
+
+                    /**
+                     * 设置<p>离线特征表对应生成的在线特征表类型，取值：TENCENT_POSTGRESQL | REDIS），缺省 TENCENT_POSTGRESQL</p>
+                     * @param _onlineTableType <p>离线特征表对应生成的在线特征表类型，取值：TENCENT_POSTGRESQL | REDIS），缺省 TENCENT_POSTGRESQL</p>
+                     * 
+                     */
+                    void SetOnlineTableType(const std::string& _onlineTableType);
+
+                    /**
+                     * 判断参数 OnlineTableType 是否已赋值
+                     * @return OnlineTableType 是否已赋值
+                     * 
+                     */
+                    bool OnlineTableTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>离线特征表对应生成的在线特征表ConnectionId</p>
+                     * @return ConnectionId <p>离线特征表对应生成的在线特征表ConnectionId</p>
+                     * 
+                     */
+                    std::string GetConnectionId() const;
+
+                    /**
+                     * 设置<p>离线特征表对应生成的在线特征表ConnectionId</p>
+                     * @param _connectionId <p>离线特征表对应生成的在线特征表ConnectionId</p>
+                     * 
+                     */
+                    void SetConnectionId(const std::string& _connectionId);
+
+                    /**
+                     * 判断参数 ConnectionId 是否已赋值
+                     * @return ConnectionId 是否已赋值
+                     * 
+                     */
+                    bool ConnectionIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 特征表主键字段列表
+                     * <p>特征表主键字段列表</p>
                      */
                     std::vector<std::string> m_primaryKeys;
                     bool m_primaryKeysHasBeenSet;
 
                     /**
-                     * 特征表时间戳字段名称
+                     * <p>特征表时间戳字段名称</p>
                      */
                     std::string m_timestampField;
                     bool m_timestampFieldHasBeenSet;
 
                     /**
-                     * 在线特征表对应的来源表名称（离线表）
+                     * <p>在线特征表对应的来源表名称（离线表）</p>
                      */
                     std::string m_sourceTableName;
                     bool m_sourceTableNameHasBeenSet;
 
                     /**
-                     * 在线特征表关联的工作流ID
+                     * <p>在线特征表关联的工作流ID</p>
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * 离线特征表对应生成的在线特征表名称
+                     * <p>离线特征表对应生成的在线特征表名称</p>
                      */
                     std::string m_onlineTableName;
                     bool m_onlineTableNameHasBeenSet;
+
+                    /**
+                     * <p>离线特征表对应生成的在线特征表类型，取值：TENCENT_POSTGRESQL | REDIS），缺省 TENCENT_POSTGRESQL</p>
+                     */
+                    std::string m_onlineTableType;
+                    bool m_onlineTableTypeHasBeenSet;
+
+                    /**
+                     * <p>离线特征表对应生成的在线特征表ConnectionId</p>
+                     */
+                    std::string m_connectionId;
+                    bool m_connectionIdHasBeenSet;
 
                 };
             }

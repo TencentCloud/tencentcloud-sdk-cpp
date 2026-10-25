@@ -29,6 +29,8 @@
 #include <tencentcloud/ssm/v20190923/model/CreateSSHKeyPairSecretResponse.h>
 #include <tencentcloud/ssm/v20190923/model/CreateSecretRequest.h>
 #include <tencentcloud/ssm/v20190923/model/CreateSecretResponse.h>
+#include <tencentcloud/ssm/v20190923/model/CreateServiceRequest.h>
+#include <tencentcloud/ssm/v20190923/model/CreateServiceResponse.h>
 #include <tencentcloud/ssm/v20190923/model/DeleteSecretRequest.h>
 #include <tencentcloud/ssm/v20190923/model/DeleteSecretResponse.h>
 #include <tencentcloud/ssm/v20190923/model/DeleteSecretVersionRequest.h>
@@ -94,6 +96,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSecretResponse> CreateSecretOutcome;
                 typedef std::future<CreateSecretOutcome> CreateSecretOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::CreateSecretRequest&, CreateSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecretAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateServiceResponse> CreateServiceOutcome;
+                typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
+                typedef std::function<void(const SsmClient*, const Model::CreateServiceRequest&, CreateServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSecretResponse> DeleteSecretOutcome;
                 typedef std::future<DeleteSecretOutcome> DeleteSecretOutcomeCallable;
                 typedef std::function<void(const SsmClient*, const Model::DeleteSecretRequest&, DeleteSecretOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecretAsyncHandler;
@@ -186,6 +191,15 @@ namespace TencentCloud
                 CreateSecretOutcome CreateSecret(const Model::CreateSecretRequest &request);
                 void CreateSecretAsync(const Model::CreateSecretRequest& request, const CreateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSecretOutcomeCallable CreateSecretCallable(const Model::CreateSecretRequest& request);
+
+                /**
+                 *开通 ssm 服务接口
+                 * @param req CreateServiceRequest
+                 * @return CreateServiceOutcome
+                 */
+                CreateServiceOutcome CreateService(const Model::CreateServiceRequest &request);
+                void CreateServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateServiceOutcomeCallable CreateServiceCallable(const Model::CreateServiceRequest& request);
 
                 /**
                  *删除指定的凭据信息，可以通过RecoveryWindowInDays参数设置立即删除或者计划删除。对于计划删除的凭据，在删除日期到达之前状态为 PendingDelete，并可以通过RestoreSecret 进行恢复，超出指定删除日期之后会被彻底删除。您必须先通过 DisableSecret 停用凭据后才可以进行（计划）删除操作。

@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取schema信息
+                     * 获取<p>schema信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data schema信息
+                     * @return Data <p>schema信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * schema信息
+                     * <p>schema信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreateSchemaRsp m_data;

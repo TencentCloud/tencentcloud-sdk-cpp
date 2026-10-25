@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/ProductShowcaseConfig.h>
+#include <tencentcloud/vod/v20180717/model/CharacterSceneConfig.h>
 
 
 namespace TencentCloud
@@ -48,19 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取AI生视频场景类型，可选值：
-- product_showcase： 产品360度展示。
-                     * @return Type AI生视频场景类型，可选值：
-- product_showcase： 产品360度展示。
+                     * 获取<p>AIGC 生视频场景类型。</p><p>枚举值：</p><ul><li>product_showcase：  产品360度展示。</li><li>character_scene： 角色场景。</li></ul>
+                     * @return Type <p>AIGC 生视频场景类型。</p><p>枚举值：</p><ul><li>product_showcase：  产品360度展示。</li><li>character_scene： 角色场景。</li></ul>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置AI生视频场景类型，可选值：
-- product_showcase： 产品360度展示。
-                     * @param _type AI生视频场景类型，可选值：
-- product_showcase： 产品360度展示。
+                     * 设置<p>AIGC 生视频场景类型。</p><p>枚举值：</p><ul><li>product_showcase：  产品360度展示。</li><li>character_scene： 角色场景。</li></ul>
+                     * @param _type <p>AIGC 生视频场景类型。</p><p>枚举值：</p><ul><li>product_showcase：  产品360度展示。</li><li>character_scene： 角色场景。</li></ul>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -73,15 +70,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取产品展示参数
-                     * @return ProductShowcaseConfig 产品展示参数
+                     * 获取<p>产品展示参数配置。</p>
+                     * @return ProductShowcaseConfig <p>产品展示参数配置。</p>
                      * 
                      */
                     ProductShowcaseConfig GetProductShowcaseConfig() const;
 
                     /**
-                     * 设置产品展示参数
-                     * @param _productShowcaseConfig 产品展示参数
+                     * 设置<p>产品展示参数配置。</p>
+                     * @param _productShowcaseConfig <p>产品展示参数配置。</p>
                      * 
                      */
                     void SetProductShowcaseConfig(const ProductShowcaseConfig& _productShowcaseConfig);
@@ -93,20 +90,46 @@ namespace TencentCloud
                      */
                     bool ProductShowcaseConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>角色场景参数配置。</p>
+                     * @return CharacterSceneConfig <p>角色场景参数配置。</p>
+                     * 
+                     */
+                    CharacterSceneConfig GetCharacterSceneConfig() const;
+
+                    /**
+                     * 设置<p>角色场景参数配置。</p>
+                     * @param _characterSceneConfig <p>角色场景参数配置。</p>
+                     * 
+                     */
+                    void SetCharacterSceneConfig(const CharacterSceneConfig& _characterSceneConfig);
+
+                    /**
+                     * 判断参数 CharacterSceneConfig 是否已赋值
+                     * @return CharacterSceneConfig 是否已赋值
+                     * 
+                     */
+                    bool CharacterSceneConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * AI生视频场景类型，可选值：
-- product_showcase： 产品360度展示。
+                     * <p>AIGC 生视频场景类型。</p><p>枚举值：</p><ul><li>product_showcase：  产品360度展示。</li><li>character_scene： 角色场景。</li></ul>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 产品展示参数
+                     * <p>产品展示参数配置。</p>
                      */
                     ProductShowcaseConfig m_productShowcaseConfig;
                     bool m_productShowcaseConfigHasBeenSet;
+
+                    /**
+                     * <p>角色场景参数配置。</p>
+                     */
+                    CharacterSceneConfig m_characterSceneConfig;
+                    bool m_characterSceneConfigHasBeenSet;
 
                 };
             }

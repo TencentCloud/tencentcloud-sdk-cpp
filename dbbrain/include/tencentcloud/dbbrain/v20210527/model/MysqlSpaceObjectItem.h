@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * MySQL 系列产品空间对象项。库级查询时不包含 TableName/Engine 字段；表级查询时包含全部字段。
+                * MySQL 系列产品空间对象项（单表明细）。
                 */
                 class MysqlSpaceObjectItem : public AbstractModel
                 {
@@ -120,6 +120,31 @@ namespace TencentCloud
                      * 
                      */
                     bool EngineHasBeenSet() const;
+
+                    /**
+                     * 获取<p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableStatus <p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTableStatus() const;
+
+                    /**
+                     * 设置<p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableStatus <p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableStatus(const int64_t& _tableStatus);
+
+                    /**
+                     * 判断参数 TableStatus 是否已赋值
+                     * @return TableStatus 是否已赋值
+                     * 
+                     */
+                    bool TableStatusHasBeenSet() const;
 
                     /**
                      * 获取<p>行数。</p>
@@ -318,6 +343,13 @@ namespace TencentCloud
                      */
                     std::string m_engine;
                     bool m_engineHasBeenSet;
+
+                    /**
+                     * <p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tableStatus;
+                    bool m_tableStatusHasBeenSet;
 
                     /**
                      * <p>行数。</p>

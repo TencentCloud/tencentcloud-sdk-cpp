@@ -36,6 +36,7 @@
 #include <tencentcloud/clb/v20180317/model/RerankConfig.h>
 #include <tencentcloud/clb/v20180317/model/DecisionsConfig.h>
 #include <tencentcloud/clb/v20180317/model/ImageConfig.h>
+#include <tencentcloud/clb/v20180317/model/RedirectConfig.h>
 
 
 namespace TencentCloud
@@ -733,6 +734,27 @@ namespace TencentCloud
                      */
                     bool ImageConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例重定向配置</p>
+                     * @return RedirectConfig <p>实例重定向配置</p>
+                     * 
+                     */
+                    RedirectConfig GetRedirectConfig() const;
+
+                    /**
+                     * 设置<p>实例重定向配置</p>
+                     * @param _redirectConfig <p>实例重定向配置</p>
+                     * 
+                     */
+                    void SetRedirectConfig(const RedirectConfig& _redirectConfig);
+
+                    /**
+                     * 判断参数 RedirectConfig 是否已赋值
+                     * @return RedirectConfig 是否已赋值
+                     * 
+                     */
+                    bool RedirectConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -926,6 +948,12 @@ namespace TencentCloud
                      */
                     ImageConfig m_imageConfig;
                     bool m_imageConfigHasBeenSet;
+
+                    /**
+                     * <p>实例重定向配置</p>
+                     */
+                    RedirectConfig m_redirectConfig;
+                    bool m_redirectConfigHasBeenSet;
 
                 };
             }

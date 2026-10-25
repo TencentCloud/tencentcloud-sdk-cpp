@@ -26,7 +26,8 @@ SceneAigcVideoOutputConfig::SceneAigcVideoOutputConfig() :
     m_classIdHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_aspectRatioHasBeenSet(false),
-    m_durationHasBeenSet(false)
+    m_durationHasBeenSet(false),
+    m_resolutionHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome SceneAigcVideoOutputConfig::Deserialize(const rapidjson::Val
         m_durationHasBeenSet = true;
     }
 
+    if (value.HasMember("Resolution") && !value["Resolution"].IsNull())
+    {
+        if (!value["Resolution"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SceneAigcVideoOutputConfig.Resolution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resolution = string(value["Resolution"].GetString());
+        m_resolutionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void SceneAigcVideoOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_resolutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Resolution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void SceneAigcVideoOutputConfig::SetDuration(const double& _duration)
 bool SceneAigcVideoOutputConfig::DurationHasBeenSet() const
 {
     return m_durationHasBeenSet;
+}
+
+string SceneAigcVideoOutputConfig::GetResolution() const
+{
+    return m_resolution;
+}
+
+void SceneAigcVideoOutputConfig::SetResolution(const string& _resolution)
+{
+    m_resolution = _resolution;
+    m_resolutionHasBeenSet = true;
+}
+
+bool SceneAigcVideoOutputConfig::ResolutionHasBeenSet() const
+{
+    return m_resolutionHasBeenSet;
 }
 

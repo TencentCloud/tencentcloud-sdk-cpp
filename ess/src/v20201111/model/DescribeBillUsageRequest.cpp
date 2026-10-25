@@ -26,7 +26,8 @@ DescribeBillUsageRequest::DescribeBillUsageRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_quotaTypeHasBeenSet(false),
-    m_displaySubEnterpriseHasBeenSet(false)
+    m_displaySubEnterpriseHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,15 @@ string DescribeBillUsageRequest::ToJsonString() const
         string key = "DisplaySubEnterprise";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_displaySubEnterprise, allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -139,6 +149,22 @@ void DescribeBillUsageRequest::SetDisplaySubEnterprise(const bool& _displaySubEn
 bool DescribeBillUsageRequest::DisplaySubEnterpriseHasBeenSet() const
 {
     return m_displaySubEnterpriseHasBeenSet;
+}
+
+UserInfo DescribeBillUsageRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void DescribeBillUsageRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool DescribeBillUsageRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

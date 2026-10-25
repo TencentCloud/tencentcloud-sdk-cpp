@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool IncludeContentHasBeenSet() const;
 
                     /**
-                     * 获取<p>文件版本 ID。来源：ListFileVersions 接口返回的 VersionId。不传则读取最新版本</p>
-                     * @return VersionId <p>文件版本 ID。来源：ListFileVersions 接口返回的 VersionId。不传则读取最新版本</p>
+                     * 获取<p>文件版本 ID。来源：ListCodeFileVersions 接口返回的 VersionId。不传则读取最新版本</p>
+                     * @return VersionId <p>文件版本 ID。来源：ListCodeFileVersions 接口返回的 VersionId。不传则读取最新版本</p>
                      * 
                      */
                     std::string GetVersionId() const;
 
                     /**
-                     * 设置<p>文件版本 ID。来源：ListFileVersions 接口返回的 VersionId。不传则读取最新版本</p>
-                     * @param _versionId <p>文件版本 ID。来源：ListFileVersions 接口返回的 VersionId。不传则读取最新版本</p>
+                     * 设置<p>文件版本 ID。来源：ListCodeFileVersions 接口返回的 VersionId。不传则读取最新版本</p>
+                     * @param _versionId <p>文件版本 ID。来源：ListCodeFileVersions 接口返回的 VersionId。不传则读取最新版本</p>
                      * 
                      */
                     void SetVersionId(const std::string& _versionId);
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_includeContentHasBeenSet;
 
                     /**
-                     * <p>文件版本 ID。来源：ListFileVersions 接口返回的 VersionId。不传则读取最新版本</p>
+                     * <p>文件版本 ID。来源：ListCodeFileVersions 接口返回的 VersionId。不传则读取最新版本</p>
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;

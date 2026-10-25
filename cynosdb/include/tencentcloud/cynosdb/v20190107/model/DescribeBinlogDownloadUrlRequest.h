@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取Binlog文件ID
-                     * @return BinlogId Binlog文件ID
+                     * 获取<p>Binlog文件ID</p>
+                     * @return BinlogId <p>Binlog文件ID</p>
                      * 
                      */
                     int64_t GetBinlogId() const;
 
                     /**
-                     * 设置Binlog文件ID
-                     * @param _binlogId Binlog文件ID
+                     * 设置<p>Binlog文件ID</p>
+                     * @param _binlogId <p>Binlog文件ID</p>
                      * 
                      */
                     void SetBinlogId(const int64_t& _binlogId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool BinlogIdHasBeenSet() const;
 
                     /**
-                     * 获取备份下载来源限制条件
-                     * @return DownloadRestriction 备份下载来源限制条件
+                     * 获取<p>备份下载来源限制条件</p>
+                     * @return DownloadRestriction <p>备份下载来源限制条件</p>
                      * 
                      */
                     BackupLimitRestriction GetDownloadRestriction() const;
 
                     /**
-                     * 设置备份下载来源限制条件
-                     * @param _downloadRestriction 备份下载来源限制条件
+                     * 设置<p>备份下载来源限制条件</p>
+                     * @param _downloadRestriction <p>备份下载来源限制条件</p>
                      * 
                      */
                     void SetDownloadRestriction(const BackupLimitRestriction& _downloadRestriction);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * Binlog文件ID
+                     * <p>Binlog文件ID</p>
                      */
                     int64_t m_binlogId;
                     bool m_binlogIdHasBeenSet;
 
                     /**
-                     * 备份下载来源限制条件
+                     * <p>备份下载来源限制条件</p>
                      */
                     BackupLimitRestriction m_downloadRestriction;
                     bool m_downloadRestrictionHasBeenSet;

@@ -67,6 +67,48 @@ namespace TencentCloud
                      */
                     bool ModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>标注档位</p>
+                     * @return Edition <p>标注档位</p>
+                     * 
+                     */
+                    std::string GetEdition() const;
+
+                    /**
+                     * 设置<p>标注档位</p>
+                     * @param _edition <p>标注档位</p>
+                     * 
+                     */
+                    void SetEdition(const std::string& _edition);
+
+                    /**
+                     * 判断参数 Edition 是否已赋值
+                     * @return Edition 是否已赋值
+                     * 
+                     */
+                    bool EditionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>通用扩展参数，json格式字符串</p>
+                     * @return ExtraParams <p>通用扩展参数，json格式字符串</p>
+                     * 
+                     */
+                    std::string GetExtraParams() const;
+
+                    /**
+                     * 设置<p>通用扩展参数，json格式字符串</p>
+                     * @param _extraParams <p>通用扩展参数，json格式字符串</p>
+                     * 
+                     */
+                    void SetExtraParams(const std::string& _extraParams);
+
+                    /**
+                     * 判断参数 ExtraParams 是否已赋值
+                     * @return ExtraParams 是否已赋值
+                     * 
+                     */
+                    bool ExtraParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +116,18 @@ namespace TencentCloud
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
+
+                    /**
+                     * <p>标注档位</p>
+                     */
+                    std::string m_edition;
+                    bool m_editionHasBeenSet;
+
+                    /**
+                     * <p>通用扩展参数，json格式字符串</p>
+                     */
+                    std::string m_extraParams;
+                    bool m_extraParamsHasBeenSet;
 
                 };
             }

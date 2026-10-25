@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建catalog响应
+                     * 获取<p>创建catalog响应</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 创建catalog响应
+                     * @return Data <p>创建catalog响应</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建catalog响应
+                     * <p>创建catalog响应</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreateCatalogRsp m_data;

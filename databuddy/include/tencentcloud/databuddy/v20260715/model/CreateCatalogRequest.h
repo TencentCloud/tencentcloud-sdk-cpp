@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取catalog名称
-                     * @return Name catalog名称
+                     * 获取<p>catalog名称</p>
+                     * @return Name <p>catalog名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置catalog名称
-                     * @param _name catalog名称
+                     * 设置<p>catalog名称</p>
+                     * @param _name <p>catalog名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取catalog类型, 可选值TABLE、MODEL、VOLUME
-                     * @return Type catalog类型, 可选值TABLE、MODEL、VOLUME
+                     * 获取<p>catalog类型, 可选值TABLE、MODEL、VOLUME</p>
+                     * @return Type <p>catalog类型, 可选值TABLE、MODEL、VOLUME</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置catalog类型, 可选值TABLE、MODEL、VOLUME
-                     * @param _type catalog类型, 可选值TABLE、MODEL、VOLUME
+                     * 设置<p>catalog类型, 可选值TABLE、MODEL、VOLUME</p>
+                     * @param _type <p>catalog类型, 可选值TABLE、MODEL、VOLUME</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取工作空间唯一id
-                     * @return WorkspaceId 工作空间唯一id
+                     * 获取<p>工作空间唯一id</p>
+                     * @return WorkspaceId <p>工作空间唯一id</p>
                      * 
                      */
                     std::string GetWorkspaceId() const;
 
                     /**
-                     * 设置工作空间唯一id
-                     * @param _workspaceId 工作空间唯一id
+                     * 设置<p>工作空间唯一id</p>
+                     * @param _workspaceId <p>工作空间唯一id</p>
                      * 
                      */
                     void SetWorkspaceId(const std::string& _workspaceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool WorkspaceIdHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Comment 描述
+                     * 获取<p>描述</p>
+                     * @return Comment <p>描述</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置描述
-                     * @param _comment 描述
+                     * 设置<p>描述</p>
+                     * @param _comment <p>描述</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取connection 的 ID
-                     * @return ConnectionId connection 的 ID
+                     * 获取<p>connection 的 ID，通过ListConnections接口获取</p>
+                     * @return ConnectionId <p>connection 的 ID，通过ListConnections接口获取</p>
                      * 
                      */
                     std::string GetConnectionId() const;
 
                     /**
-                     * 设置connection 的 ID
-                     * @param _connectionId connection 的 ID
+                     * 设置<p>connection 的 ID，通过ListConnections接口获取</p>
+                     * @param _connectionId <p>connection 的 ID，通过ListConnections接口获取</p>
                      * 
                      */
                     void SetConnectionId(const std::string& _connectionId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ConnectionIdHasBeenSet() const;
 
                     /**
-                     * 获取数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理
-                     * @return CatalogSource 数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理
+                     * 获取<p>数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理</p>
+                     * @return CatalogSource <p>数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理</p>
                      * 
                      */
                     std::string GetCatalogSource() const;
 
                     /**
-                     * 设置数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理
-                     * @param _catalogSource 数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理
+                     * 设置<p>数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理</p>
+                     * @param _catalogSource <p>数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理</p>
                      * 
                      */
                     void SetCatalogSource(const std::string& _catalogSource);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool CatalogSourceHasBeenSet() const;
 
                     /**
-                     * 获取连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。
-                     * @return ConnectionCatalogName 连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。
+                     * 获取<p>连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。</p>
+                     * @return ConnectionCatalogName <p>连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。</p>
                      * 
                      */
                     std::string GetConnectionCatalogName() const;
 
                     /**
-                     * 设置连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。
-                     * @param _connectionCatalogName 连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。
+                     * 设置<p>连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。</p>
+                     * @param _connectionCatalogName <p>连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。</p>
                      * 
                      */
                     void SetConnectionCatalogName(const std::string& _connectionCatalogName);
@@ -192,43 +192,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * catalog名称
+                     * <p>catalog名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * catalog类型, 可选值TABLE、MODEL、VOLUME
+                     * <p>catalog类型, 可选值TABLE、MODEL、VOLUME</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 工作空间唯一id
+                     * <p>工作空间唯一id</p>
                      */
                     std::string m_workspaceId;
                     bool m_workspaceIdHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * connection 的 ID
+                     * <p>connection 的 ID，通过ListConnections接口获取</p>
                      */
                     std::string m_connectionId;
                     bool m_connectionIdHasBeenSet;
 
                     /**
-                     * 数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理
+                     * <p>数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理</p>
                      */
                     std::string m_catalogSource;
                     bool m_catalogSourceHasBeenSet;
 
                     /**
-                     * 连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。
+                     * <p>连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。</p>
                      */
                     std::string m_connectionCatalogName;
                     bool m_connectionCatalogNameHasBeenSet;

@@ -845,6 +845,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/UserDefineConfigureInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/TerrorismConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/ExtractTraceWatermarkTaskInput.h
+  include/tencentcloud/vod/v20180717/model/DescribeAigcUsageDataResponse.h
   include/tencentcloud/vod/v20180717/model/AiReviewPoliticalAsrTaskOutput.h
   include/tencentcloud/vod/v20180717/model/KnowledgeAnalysisResult.h
   include/tencentcloud/vod/v20180717/model/ModifyClassRequest.h
@@ -1134,7 +1135,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/MediaAiAnalysisFrameTagItem.h
   include/tencentcloud/vod/v20180717/model/DeleteKnowledgeBaseRequest.h
   include/tencentcloud/vod/v20180717/model/QualityInspectItem.h
-  include/tencentcloud/vod/v20180717/model/DescribeAigcUsageDataResponse.h
+  include/tencentcloud/vod/v20180717/model/CharacterSceneConfig.h
   include/tencentcloud/vod/v20180717/model/DescribeCLSPushTargetsResponse.h
   include/tencentcloud/vod/v20180717/model/PullUploadTask.h
   include/tencentcloud/vod/v20180717/model/DescribeImageProcessingTemplatesResponse.h
@@ -2028,6 +2029,7 @@ set(vod_src
   src/v20180717/model/UserDefineConfigureInfoForUpdate.cpp
   src/v20180717/model/TerrorismConfigureInfo.cpp
   src/v20180717/model/ExtractTraceWatermarkTaskInput.cpp
+  src/v20180717/model/DescribeAigcUsageDataResponse.cpp
   src/v20180717/model/AiReviewPoliticalAsrTaskOutput.cpp
   src/v20180717/model/KnowledgeAnalysisResult.cpp
   src/v20180717/model/ModifyClassRequest.cpp
@@ -2317,7 +2319,7 @@ set(vod_src
   src/v20180717/model/MediaAiAnalysisFrameTagItem.cpp
   src/v20180717/model/DeleteKnowledgeBaseRequest.cpp
   src/v20180717/model/QualityInspectItem.cpp
-  src/v20180717/model/DescribeAigcUsageDataResponse.cpp
+  src/v20180717/model/CharacterSceneConfig.cpp
   src/v20180717/model/DescribeCLSPushTargetsResponse.cpp
   src/v20180717/model/PullUploadTask.cpp
   src/v20180717/model/DescribeImageProcessingTemplatesResponse.cpp

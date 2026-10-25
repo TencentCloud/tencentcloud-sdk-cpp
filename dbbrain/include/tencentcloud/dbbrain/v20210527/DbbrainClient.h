@@ -83,8 +83,12 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAuditInstanceListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAuditLogFilesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAuditLogFilesResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeBlockingLockTreeRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeBlockingLockTreeResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeBlockingLogsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeBlockingLogsResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeBlockingTrendRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeBlockingTrendResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogTopSqlsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogTopSqlsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBAuditLogsRequest.h>
@@ -181,6 +185,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSqlFiltersResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSqlTemplateRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSqlTemplateResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeTableSpaceDataV2Request.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeTableSpaceDataV2Response.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemaTimeSeriesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemaTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemasRequest.h>
@@ -321,9 +327,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditLogFilesResponse> DescribeAuditLogFilesOutcome;
                 typedef std::future<DescribeAuditLogFilesOutcome> DescribeAuditLogFilesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeAuditLogFilesRequest&, DescribeAuditLogFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBlockingLockTreeResponse> DescribeBlockingLockTreeOutcome;
+                typedef std::future<DescribeBlockingLockTreeOutcome> DescribeBlockingLockTreeOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeBlockingLockTreeRequest&, DescribeBlockingLockTreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockingLockTreeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBlockingLogsResponse> DescribeBlockingLogsOutcome;
                 typedef std::future<DescribeBlockingLogsOutcome> DescribeBlockingLogsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeBlockingLogsRequest&, DescribeBlockingLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockingLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBlockingTrendResponse> DescribeBlockingTrendOutcome;
+                typedef std::future<DescribeBlockingTrendOutcome> DescribeBlockingTrendOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeBlockingTrendRequest&, DescribeBlockingTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockingTrendAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBAuditLogTopSqlsResponse> DescribeDBAuditLogTopSqlsOutcome;
                 typedef std::future<DescribeDBAuditLogTopSqlsOutcome> DescribeDBAuditLogTopSqlsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBAuditLogTopSqlsRequest&, DescribeDBAuditLogTopSqlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBAuditLogTopSqlsAsyncHandler;
@@ -468,6 +480,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSqlTemplateResponse> DescribeSqlTemplateOutcome;
                 typedef std::future<DescribeSqlTemplateOutcome> DescribeSqlTemplateOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSqlTemplateRequest&, DescribeSqlTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTableSpaceDataV2Response> DescribeTableSpaceDataV2Outcome;
+                typedef std::future<DescribeTableSpaceDataV2Outcome> DescribeTableSpaceDataV2OutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeTableSpaceDataV2Request&, DescribeTableSpaceDataV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableSpaceDataV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopSpaceSchemaTimeSeriesResponse> DescribeTopSpaceSchemaTimeSeriesOutcome;
                 typedef std::future<DescribeTopSpaceSchemaTimeSeriesOutcome> DescribeTopSpaceSchemaTimeSeriesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceSchemaTimeSeriesRequest&, DescribeTopSpaceSchemaTimeSeriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceSchemaTimeSeriesAsyncHandler;
@@ -796,6 +811,15 @@ namespace TencentCloud
                 DescribeAuditLogFilesOutcomeCallable DescribeAuditLogFilesCallable(const Model::DescribeAuditLogFilesRequest& request);
 
                 /**
+                 *根据指定快照 token 查询该快照时刻的完整阻塞树（多层嵌套，根节点为头 blocker，支持多叉/多层展开）。支持两种定位方式，任选其一：(1) 优先 MonitorLoop（精确，lock monitor 一次扫描快照的唯一标识），可从 DescribeBlockingTimeRange / DescribeBlockingLogs / DescribeBlockingTrend 返回获取；(2) 兑底 BlockingTime（近似，任意阻塞时间点），后端会在该时间点±1分钟范围内找到最接近的 MonitorLoop 再下钻其阻塞树。当 MonitorLoop 不为空时优先采用；为空时回退使用 BlockingTime；两者都为空则返回参数错误。一个 MonitorLoop 可包含多棵独立阻塞树（若该快照内存在多组互不相干的阻塞链路）。对标 dbaas-pfs 的 DescribeLockTree。
+                 * @param req DescribeBlockingLockTreeRequest
+                 * @return DescribeBlockingLockTreeOutcome
+                 */
+                DescribeBlockingLockTreeOutcome DescribeBlockingLockTree(const Model::DescribeBlockingLockTreeRequest &request);
+                void DescribeBlockingLockTreeAsync(const Model::DescribeBlockingLockTreeRequest& request, const DescribeBlockingLockTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlockingLockTreeOutcomeCallable DescribeBlockingLockTreeCallable(const Model::DescribeBlockingLockTreeRequest& request);
+
+                /**
                  *查询指定实例在时间窗口内的阻塞日志扁平明细列表，不建阻塞树。每一条Item对应一次blocked_process_report（一条blocker→blocked边）在某一次monitorLoop内被lock monitor捕获的瞬时数据。支持按ReportTime / DurationMs / BlockedWaitTimeMs / BlockingWaitTimeMs升降序排序，并支持根因、数据库名、头SQL / 被阻塞SQL MD5、会话ID、登录名、客户端主机 / 应用、被阻塞锁模式、等待时长范围过滤与分页。适合普通表格展示与二次过滤；若需查看某个采集点的完整链路拓扑，请透传返回的MonitorLoop调用DescribeBlockingLockTree。注意：同一blocker→blocked会话对跨monitorLoop连续采集场景下会产生多条明细行，若需统计发生多少次阻塞请按(BlockingSessionId, BlockedSessionId, BlockedWaitResource)自行去重。时间字段按服务端时区UTC+8解析，建议单次查询跨度≤7天。
                  * @param req DescribeBlockingLogsRequest
                  * @return DescribeBlockingLogsOutcome
@@ -803,6 +827,15 @@ namespace TencentCloud
                 DescribeBlockingLogsOutcome DescribeBlockingLogs(const Model::DescribeBlockingLogsRequest &request);
                 void DescribeBlockingLogsAsync(const Model::DescribeBlockingLogsRequest& request, const DescribeBlockingLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBlockingLogsOutcomeCallable DescribeBlockingLogsCallable(const Model::DescribeBlockingLogsRequest& request);
+
+                /**
+                 *查询指定实例在时间窗口内按时间粒度聚合的阻塞计数时序，用于前端绘制阻塞趋势图。返回每个粒度 bucket 的 (StartTime, EndTime, LockCount, MonitorLoopCount)，实际聚合区间为前闭后开 [StartTime, EndTime)。为稠密时序：时间窗口内每个粒度 bucket 都返回一个点，无数据的 bucket 补零（LockCount=0, MonitorLoopCount=0），前端可直接绘制连续趋势图。粒度自动按时间跨度 deltaMs = EndTime - StartTime 决定（右开上界判定）：deltaMs≤5min→SECONDS(1s)，deltaMs≤1h→MINUTES(1min)，deltaMs≤3h→FIVE_MINUTES(5min)，deltaMs≤6h→TEN_MINUTES(10min)，deltaMs≤12h→FIFTEEN_MINUTES(15min)，deltaMs≤24h→THIRTY_MINUTES(30min)，deltaMs>24h→HOUR(1h)。底层走 Druid timeseries 原生聚合，服务端完成聚合，适合高频前端刷新。
+                 * @param req DescribeBlockingTrendRequest
+                 * @return DescribeBlockingTrendOutcome
+                 */
+                DescribeBlockingTrendOutcome DescribeBlockingTrend(const Model::DescribeBlockingTrendRequest &request);
+                void DescribeBlockingTrendAsync(const Model::DescribeBlockingTrendRequest& request, const DescribeBlockingTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlockingTrendOutcomeCallable DescribeBlockingTrendCallable(const Model::DescribeBlockingTrendRequest& request);
 
                 /**
                  *按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。
@@ -1235,6 +1268,15 @@ namespace TencentCloud
                 DescribeSqlTemplateOutcome DescribeSqlTemplate(const Model::DescribeSqlTemplateRequest &request);
                 void DescribeSqlTemplateAsync(const Model::DescribeSqlTemplateRequest& request, const DescribeSqlTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSqlTemplateOutcomeCallable DescribeSqlTemplateCallable(const Model::DescribeSqlTemplateRequest& request);
+
+                /**
+                 *表空间数据查询（融合接口，多产品统一入口）。按入参 TableSchema + TableName（PG 系额外需 TableCatalog）定位单张表/集合，返回该表的空间使用明细。支持产品：mysql（云数据库 MySQL）、cynosdb（TDSQL-C MySQL 版）、mongodb（云数据库 MongoDB）、postgres（云数据库 PostgreSQL）、sqlserver（SQL Server）、dcdb（TDSQL MySQL 版）、tdsql（TDSQL）、mariadb（云数据库 MariaDB）。返回值按产品隔离：MySQL 系列返回 MysqlTableSpaceData；PostgreSQL 返回 PostgresTableSpaceData；MongoDB 返回 MongodbTableSpaceData（含集合明细列表 SpaceSchemas 和外层 Timestamp）；SQL Server 返回 SqlServerTableSpaceData。注意：只读实例（CDB RO / RO 组 / CynosDB RO / TDSQL-C 集群 RO）不支持空间分析，调用将直接报错。
+                 * @param req DescribeTableSpaceDataV2Request
+                 * @return DescribeTableSpaceDataV2Outcome
+                 */
+                DescribeTableSpaceDataV2Outcome DescribeTableSpaceDataV2(const Model::DescribeTableSpaceDataV2Request &request);
+                void DescribeTableSpaceDataV2Async(const Model::DescribeTableSpaceDataV2Request& request, const DescribeTableSpaceDataV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableSpaceDataV2OutcomeCallable DescribeTableSpaceDataV2Callable(const Model::DescribeTableSpaceDataV2Request& request);
 
                 /**
                  *获取实例占用空间最大的前几个库在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。

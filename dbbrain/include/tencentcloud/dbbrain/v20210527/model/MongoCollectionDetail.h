@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>集合命名空间，格式为 db.collection。</p>
+                     * 获取集合命名空间，格式为 db.collection。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CollStats <p>集合命名空间，格式为 db.collection。</p>
+                     * @return CollStats 集合命名空间，格式为 db.collection。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCollStats() const;
 
                     /**
-                     * 设置<p>集合命名空间，格式为 db.collection。</p>
+                     * 设置集合命名空间，格式为 db.collection。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _collStats <p>集合命名空间，格式为 db.collection。</p>
+                     * @param _collStats 集合命名空间，格式为 db.collection。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool CollStatsHasBeenSet() const;
 
                     /**
-                     * 获取<p>集合逻辑大小（字节，未压缩）。</p>
+                     * 获取集合逻辑大小（字节，未压缩）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CollectionSize <p>集合逻辑大小（字节，未压缩）。</p>
+                     * @return CollectionSize 集合逻辑大小（字节，未压缩）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCollectionSize() const;
 
                     /**
-                     * 设置<p>集合逻辑大小（字节，未压缩）。</p>
+                     * 设置集合逻辑大小（字节，未压缩）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _collectionSize <p>集合逻辑大小（字节，未压缩）。</p>
+                     * @param _collectionSize 集合逻辑大小（字节，未压缩）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool CollectionSizeHasBeenSet() const;
 
                     /**
-                     * 获取<p>集合已分配但未使用的空间（字节）。</p>
+                     * 获取集合已分配但未使用的空间（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataFree <p>集合已分配但未使用的空间（字节）。</p>
+                     * @return DataFree 集合已分配但未使用的空间（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataFree() const;
 
                     /**
-                     * 设置<p>集合已分配但未使用的空间（字节）。</p>
+                     * 设置集合已分配但未使用的空间（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataFree <p>集合已分配但未使用的空间（字节）。</p>
+                     * @param _dataFree 集合已分配但未使用的空间（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool DataFreeHasBeenSet() const;
 
                     /**
-                     * 获取<p>空间利用率（百分比字符串）。</p>
+                     * 获取空间利用率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SpaceRatio <p>空间利用率（百分比字符串）。</p>
+                     * @return SpaceRatio 空间利用率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpaceRatio() const;
 
                     /**
-                     * 设置<p>空间利用率（百分比字符串）。</p>
+                     * 设置空间利用率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _spaceRatio <p>空间利用率（百分比字符串）。</p>
+                     * @param _spaceRatio 空间利用率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool SpaceRatioHasBeenSet() const;
 
                     /**
-                     * 获取<p>碎片率（百分比字符串）。</p>
+                     * 获取碎片率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FragRatio <p>碎片率（百分比字符串）。</p>
+                     * @return FragRatio 碎片率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFragRatio() const;
 
                     /**
-                     * 设置<p>碎片率（百分比字符串）。</p>
+                     * 设置碎片率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fragRatio <p>碎片率（百分比字符串）。</p>
+                     * @param _fragRatio 碎片率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool FragRatioHasBeenSet() const;
 
                     /**
-                     * 获取<p>集合数据大小（字节）。</p>
+                     * 获取集合数据大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Size <p>集合数据大小（字节）。</p>
+                     * @return Size 集合数据大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSize() const;
 
                     /**
-                     * 设置<p>集合数据大小（字节）。</p>
+                     * 设置集合数据大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _size <p>集合数据大小（字节）。</p>
+                     * @param _size 集合数据大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取<p>所有索引占用大小（字节）。</p>
+                     * 获取所有索引占用大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalIndexSize <p>所有索引占用大小（字节）。</p>
+                     * @return TotalIndexSize 所有索引占用大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalIndexSize() const;
 
                     /**
-                     * 设置<p>所有索引占用大小（字节）。</p>
+                     * 设置所有索引占用大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _totalIndexSize <p>所有索引占用大小（字节）。</p>
+                     * @param _totalIndexSize 所有索引占用大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool TotalIndexSizeHasBeenSet() const;
 
                     /**
-                     * 获取<p>平均文档大小（字节）。</p>
+                     * 获取平均文档大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AvgObjSize <p>平均文档大小（字节）。</p>
+                     * @return AvgObjSize 平均文档大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAvgObjSize() const;
 
                     /**
-                     * 设置<p>平均文档大小（字节）。</p>
+                     * 设置平均文档大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _avgObjSize <p>平均文档大小（字节）。</p>
+                     * @param _avgObjSize 平均文档大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool AvgObjSizeHasBeenSet() const;
 
                     /**
-                     * 获取<p>集合实际占用存储大小（字节，压缩后）。</p>
+                     * 获取集合实际占用存储大小（字节，压缩后）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StorageSize <p>集合实际占用存储大小（字节，压缩后）。</p>
+                     * @return StorageSize 集合实际占用存储大小（字节，压缩后）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStorageSize() const;
 
                     /**
-                     * 设置<p>集合实际占用存储大小（字节，压缩后）。</p>
+                     * 设置集合实际占用存储大小（字节，压缩后）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _storageSize <p>集合实际占用存储大小（字节，压缩后）。</p>
+                     * @param _storageSize 集合实际占用存储大小（字节，压缩后）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool StorageSizeHasBeenSet() const;
 
                     /**
-                     * 获取<p>文档数量。</p>
+                     * 获取文档数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Count <p>文档数量。</p>
+                     * @return Count 文档数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置<p>文档数量。</p>
+                     * 设置文档数量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _count <p>文档数量。</p>
+                     * @param _count 文档数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,18 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取<p>压缩率（百分比字符串）。</p>
+                     * 获取压缩率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CompressionRatio <p>压缩率（百分比字符串）。</p>
+                     * @return CompressionRatio 压缩率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompressionRatio() const;
 
                     /**
-                     * 设置<p>压缩率（百分比字符串）。</p>
+                     * 设置压缩率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _compressionRatio <p>压缩率（百分比字符串）。</p>
+                     * @param _compressionRatio 压缩率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool CompressionRatioHasBeenSet() const;
 
                     /**
-                     * 获取<p>可复用文件空间（字节）。</p>
+                     * 获取可复用文件空间（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileReuseBytes <p>可复用文件空间（字节）。</p>
+                     * @return FileReuseBytes 可复用文件空间（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileReuseBytes() const;
 
                     /**
-                     * 设置<p>可复用文件空间（字节）。</p>
+                     * 设置可复用文件空间（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileReuseBytes <p>可复用文件空间（字节）。</p>
+                     * @param _fileReuseBytes 可复用文件空间（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -349,84 +349,84 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>集合命名空间，格式为 db.collection。</p>
+                     * 集合命名空间，格式为 db.collection。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_collStats;
                     bool m_collStatsHasBeenSet;
 
                     /**
-                     * <p>集合逻辑大小（字节，未压缩）。</p>
+                     * 集合逻辑大小（字节，未压缩）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_collectionSize;
                     bool m_collectionSizeHasBeenSet;
 
                     /**
-                     * <p>集合已分配但未使用的空间（字节）。</p>
+                     * 集合已分配但未使用的空间（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataFree;
                     bool m_dataFreeHasBeenSet;
 
                     /**
-                     * <p>空间利用率（百分比字符串）。</p>
+                     * 空间利用率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spaceRatio;
                     bool m_spaceRatioHasBeenSet;
 
                     /**
-                     * <p>碎片率（百分比字符串）。</p>
+                     * 碎片率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fragRatio;
                     bool m_fragRatioHasBeenSet;
 
                     /**
-                     * <p>集合数据大小（字节）。</p>
+                     * 集合数据大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * <p>所有索引占用大小（字节）。</p>
+                     * 所有索引占用大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalIndexSize;
                     bool m_totalIndexSizeHasBeenSet;
 
                     /**
-                     * <p>平均文档大小（字节）。</p>
+                     * 平均文档大小（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_avgObjSize;
                     bool m_avgObjSizeHasBeenSet;
 
                     /**
-                     * <p>集合实际占用存储大小（字节，压缩后）。</p>
+                     * 集合实际占用存储大小（字节，压缩后）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storageSize;
                     bool m_storageSizeHasBeenSet;
 
                     /**
-                     * <p>文档数量。</p>
+                     * 文档数量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * <p>压缩率（百分比字符串）。</p>
+                     * 压缩率（百分比字符串）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_compressionRatio;
                     bool m_compressionRatioHasBeenSet;
 
                     /**
-                     * <p>可复用文件空间（字节）。</p>
+                     * 可复用文件空间（字节）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileReuseBytes;

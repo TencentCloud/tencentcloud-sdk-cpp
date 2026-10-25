@@ -1540,6 +1540,56 @@ DbbrainClient::DescribeAuditLogFilesOutcomeCallable DbbrainClient::DescribeAudit
     return prom->get_future();
 }
 
+DbbrainClient::DescribeBlockingLockTreeOutcome DbbrainClient::DescribeBlockingLockTree(const DescribeBlockingLockTreeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlockingLockTree");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlockingLockTreeResponse rsp = DescribeBlockingLockTreeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlockingLockTreeOutcome(rsp);
+        else
+            return DescribeBlockingLockTreeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlockingLockTreeOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeBlockingLockTreeAsync(const DescribeBlockingLockTreeRequest& request, const DescribeBlockingLockTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBlockingLockTreeRequest&;
+    using Resp = DescribeBlockingLockTreeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlockingLockTree", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeBlockingLockTreeOutcomeCallable DbbrainClient::DescribeBlockingLockTreeCallable(const DescribeBlockingLockTreeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBlockingLockTreeOutcome>>();
+    DescribeBlockingLockTreeAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeBlockingLockTreeRequest&,
+        DescribeBlockingLockTreeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeBlockingLogsOutcome DbbrainClient::DescribeBlockingLogs(const DescribeBlockingLogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBlockingLogs");
@@ -1582,6 +1632,56 @@ DbbrainClient::DescribeBlockingLogsOutcomeCallable DbbrainClient::DescribeBlocki
         const DbbrainClient*,
         const DescribeBlockingLogsRequest&,
         DescribeBlockingLogsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbbrainClient::DescribeBlockingTrendOutcome DbbrainClient::DescribeBlockingTrend(const DescribeBlockingTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlockingTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlockingTrendResponse rsp = DescribeBlockingTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlockingTrendOutcome(rsp);
+        else
+            return DescribeBlockingTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlockingTrendOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeBlockingTrendAsync(const DescribeBlockingTrendRequest& request, const DescribeBlockingTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBlockingTrendRequest&;
+    using Resp = DescribeBlockingTrendResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBlockingTrend", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeBlockingTrendOutcomeCallable DbbrainClient::DescribeBlockingTrendCallable(const DescribeBlockingTrendRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBlockingTrendOutcome>>();
+    DescribeBlockingTrendAsync(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeBlockingTrendRequest&,
+        DescribeBlockingTrendOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3982,6 +4082,56 @@ DbbrainClient::DescribeSqlTemplateOutcomeCallable DbbrainClient::DescribeSqlTemp
         const DbbrainClient*,
         const DescribeSqlTemplateRequest&,
         DescribeSqlTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbbrainClient::DescribeTableSpaceDataV2Outcome DbbrainClient::DescribeTableSpaceDataV2(const DescribeTableSpaceDataV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTableSpaceDataV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTableSpaceDataV2Response rsp = DescribeTableSpaceDataV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTableSpaceDataV2Outcome(rsp);
+        else
+            return DescribeTableSpaceDataV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTableSpaceDataV2Outcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeTableSpaceDataV2Async(const DescribeTableSpaceDataV2Request& request, const DescribeTableSpaceDataV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTableSpaceDataV2Request&;
+    using Resp = DescribeTableSpaceDataV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTableSpaceDataV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeTableSpaceDataV2OutcomeCallable DbbrainClient::DescribeTableSpaceDataV2Callable(const DescribeTableSpaceDataV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTableSpaceDataV2Outcome>>();
+    DescribeTableSpaceDataV2Async(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeTableSpaceDataV2Request&,
+        DescribeTableSpaceDataV2Outcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -37,7 +37,8 @@ ConnectorInfo::ConnectorInfo() :
     m_creatorIdHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_modifiedTimeHasBeenSet(false),
-    m_vpcConfigIdHasBeenSet(false)
+    m_vpcConfigIdHasBeenSet(false),
+    m_displayNameHasBeenSet(false)
 {
 }
 
@@ -219,6 +220,16 @@ CoreInternalOutcome ConnectorInfo::Deserialize(const rapidjson::Value &value)
         m_vpcConfigIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DisplayName") && !value["DisplayName"].IsNull())
+    {
+        if (!value["DisplayName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConnectorInfo.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_displayName = string(value["DisplayName"].GetString());
+        m_displayNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +376,14 @@ void ConnectorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "VpcConfigId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vpcConfigId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_displayNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -640,5 +659,21 @@ void ConnectorInfo::SetVpcConfigId(const string& _vpcConfigId)
 bool ConnectorInfo::VpcConfigIdHasBeenSet() const
 {
     return m_vpcConfigIdHasBeenSet;
+}
+
+string ConnectorInfo::GetDisplayName() const
+{
+    return m_displayName;
+}
+
+void ConnectorInfo::SetDisplayName(const string& _displayName)
+{
+    m_displayName = _displayName;
+    m_displayNameHasBeenSet = true;
+}
+
+bool ConnectorInfo::DisplayNameHasBeenSet() const
+{
+    return m_displayNameHasBeenSet;
 }
 

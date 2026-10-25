@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品描述
-                     * @return Product 产品描述
+                     * 获取<p>产品描述</p>
+                     * @return Product <p>产品描述</p>
                      * 
                      */
                     ProductEntry GetProduct() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品描述
+                     * <p>产品描述</p>
                      */
                     ProductEntry m_product;
                     bool m_productHasBeenSet;

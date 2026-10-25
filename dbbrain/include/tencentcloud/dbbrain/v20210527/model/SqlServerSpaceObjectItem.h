@@ -1,0 +1,345 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_DBBRAIN_V20210527_MODEL_SQLSERVERSPACEOBJECTITEM_H_
+#define TENCENTCLOUD_DBBRAIN_V20210527_MODEL_SQLSERVERSPACEOBJECTITEM_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Dbbrain
+    {
+        namespace V20210527
+        {
+            namespace Model
+            {
+                /**
+                * SQL Server 产品空间对象项（单表明细）。字段命名与 MySQL 同构（TableSchema/TableName/Engine/TableRows/TotalLength/DataLength/IndexLength/DataFree，单位 MB），无 FragRatio / PhysicalFileSize。
+                */
+                class SqlServerSpaceObjectItem : public AbstractModel
+                {
+                public:
+                    SqlServerSpaceObjectItem();
+                    ~SqlServerSpaceObjectItem() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取<p>数据库名。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableSchema <p>数据库名。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableSchema() const;
+
+                    /**
+                     * 设置<p>数据库名。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableSchema <p>数据库名。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableSchema(const std::string& _tableSchema);
+
+                    /**
+                     * 判断参数 TableSchema 是否已赋值
+                     * @return TableSchema 是否已赋值
+                     * 
+                     */
+                    bool TableSchemaHasBeenSet() const;
+
+                    /**
+                     * 获取<p>表名（库内限定名 schema.table，如 dbo.users）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableName <p>表名（库内限定名 schema.table，如 dbo.users）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableName() const;
+
+                    /**
+                     * 设置<p>表名（库内限定名 schema.table，如 dbo.users）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableName <p>表名（库内限定名 schema.table，如 dbo.users）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableName(const std::string& _tableName);
+
+                    /**
+                     * 判断参数 TableName 是否已赋值
+                     * @return TableName 是否已赋值
+                     * 
+                     */
+                    bool TableNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>存储引擎标识，固定为 SqlServer。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Engine <p>存储引擎标识，固定为 SqlServer。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngine() const;
+
+                    /**
+                     * 设置<p>存储引擎标识，固定为 SqlServer。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engine <p>存储引擎标识，固定为 SqlServer。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngine(const std::string& _engine);
+
+                    /**
+                     * 判断参数 Engine 是否已赋值
+                     * @return Engine 是否已赋值
+                     * 
+                     */
+                    bool EngineHasBeenSet() const;
+
+                    /**
+                     * 获取<p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableStatus <p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTableStatus() const;
+
+                    /**
+                     * 设置<p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableStatus <p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableStatus(const int64_t& _tableStatus);
+
+                    /**
+                     * 判断参数 TableStatus 是否已赋值
+                     * @return TableStatus 是否已赋值
+                     * 
+                     */
+                    bool TableStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>行数。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableRows <p>行数。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTableRows() const;
+
+                    /**
+                     * 设置<p>行数。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableRows <p>行数。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableRows(const int64_t& _tableRows);
+
+                    /**
+                     * 判断参数 TableRows 是否已赋值
+                     * @return TableRows 是否已赋值
+                     * 
+                     */
+                    bool TableRowsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>总使用空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalLength <p>总使用空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTotalLength() const;
+
+                    /**
+                     * 设置<p>总使用空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _totalLength <p>总使用空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTotalLength(const double& _totalLength);
+
+                    /**
+                     * 判断参数 TotalLength 是否已赋值
+                     * @return TotalLength 是否已赋值
+                     * 
+                     */
+                    bool TotalLengthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>数据空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataLength <p>数据空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetDataLength() const;
+
+                    /**
+                     * 设置<p>数据空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataLength <p>数据空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataLength(const double& _dataLength);
+
+                    /**
+                     * 判断参数 DataLength 是否已赋值
+                     * @return DataLength 是否已赋值
+                     * 
+                     */
+                    bool DataLengthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>索引空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexLength <p>索引空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetIndexLength() const;
+
+                    /**
+                     * 设置<p>索引空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _indexLength <p>索引空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIndexLength(const double& _indexLength);
+
+                    /**
+                     * 判断参数 IndexLength 是否已赋值
+                     * @return IndexLength 是否已赋值
+                     * 
+                     */
+                    bool IndexLengthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>碎片空间（MB），对应保留空洞 reserved-used。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataFree <p>碎片空间（MB），对应保留空洞 reserved-used。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetDataFree() const;
+
+                    /**
+                     * 设置<p>碎片空间（MB），对应保留空洞 reserved-used。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataFree <p>碎片空间（MB），对应保留空洞 reserved-used。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataFree(const double& _dataFree);
+
+                    /**
+                     * 判断参数 DataFree 是否已赋值
+                     * @return DataFree 是否已赋值
+                     * 
+                     */
+                    bool DataFreeHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>数据库名。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableSchema;
+                    bool m_tableSchemaHasBeenSet;
+
+                    /**
+                     * <p>表名（库内限定名 schema.table，如 dbo.users）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableName;
+                    bool m_tableNameHasBeenSet;
+
+                    /**
+                     * <p>存储引擎标识，固定为 SqlServer。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engine;
+                    bool m_engineHasBeenSet;
+
+                    /**
+                     * <p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tableStatus;
+                    bool m_tableStatusHasBeenSet;
+
+                    /**
+                     * <p>行数。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tableRows;
+                    bool m_tableRowsHasBeenSet;
+
+                    /**
+                     * <p>总使用空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_totalLength;
+                    bool m_totalLengthHasBeenSet;
+
+                    /**
+                     * <p>数据空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_dataLength;
+                    bool m_dataLengthHasBeenSet;
+
+                    /**
+                     * <p>索引空间（MB）。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_indexLength;
+                    bool m_indexLengthHasBeenSet;
+
+                    /**
+                     * <p>碎片空间（MB），对应保留空洞 reserved-used。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_dataFree;
+                    bool m_dataFreeHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_DBBRAIN_V20210527_MODEL_SQLSERVERSPACEOBJECTITEM_H_

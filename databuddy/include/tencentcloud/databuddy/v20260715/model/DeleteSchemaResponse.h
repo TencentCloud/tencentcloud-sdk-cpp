@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作结果
+                     * 获取<p>操作结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 操作结果
+                     * @return Data <p>操作结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作结果
+                     * <p>操作结果</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DeleteSchemaRsp m_data;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据目录名
-                     * @return CatalogName 数据目录名
+                     * 获取<p>数据目录名</p>
+                     * @return CatalogName <p>数据目录名</p>
                      * 
                      */
                     std::string GetCatalogName() const;
 
                     /**
-                     * 设置数据目录名
-                     * @param _catalogName 数据目录名
+                     * 设置<p>数据目录名</p>
+                     * @param _catalogName <p>数据目录名</p>
                      * 
                      */
                     void SetCatalogName(const std::string& _catalogName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CatalogNameHasBeenSet() const;
 
                     /**
-                     * 获取数据库名
-                     * @return SchemaName 数据库名
+                     * 获取<p>数据库名</p>
+                     * @return SchemaName <p>数据库名</p>
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置数据库名
-                     * @param _schemaName 数据库名
+                     * 设置<p>数据库名</p>
+                     * @param _schemaName <p>数据库名</p>
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SchemaNameHasBeenSet() const;
 
                     /**
-                     * 获取调用时所在workspace唯一id
-                     * @return WorkspaceId 调用时所在workspace唯一id
+                     * 获取<p>调用时所在workspace唯一id</p>
+                     * @return WorkspaceId <p>调用时所在workspace唯一id</p>
                      * 
                      */
                     std::string GetWorkspaceId() const;
 
                     /**
-                     * 设置调用时所在workspace唯一id
-                     * @param _workspaceId 调用时所在workspace唯一id
+                     * 设置<p>调用时所在workspace唯一id</p>
+                     * @param _workspaceId <p>调用时所在workspace唯一id</p>
                      * 
                      */
                     void SetWorkspaceId(const std::string& _workspaceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool WorkspaceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误
-                     * @return ConnectionId 数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误
+                     * 获取<p>数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误。通过ListConnections接口获取</p>
+                     * @return ConnectionId <p>数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误。通过ListConnections接口获取</p>
                      * 
                      */
                     std::string GetConnectionId() const;
 
                     /**
-                     * 设置数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误
-                     * @param _connectionId 数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误
+                     * 设置<p>数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误。通过ListConnections接口获取</p>
+                     * @param _connectionId <p>数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误。通过ListConnections接口获取</p>
                      * 
                      */
                     void SetConnectionId(const std::string& _connectionId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ConnectionIdHasBeenSet() const;
 
                     /**
-                     * 获取数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。
-                     * @return CatalogSource 数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。
+                     * 获取<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>
+                     * @return CatalogSource <p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>
                      * 
                      */
                     std::string GetCatalogSource() const;
 
                     /**
-                     * 设置数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。
-                     * @param _catalogSource 数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。
+                     * 设置<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>
+                     * @param _catalogSource <p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>
                      * 
                      */
                     void SetCatalogSource(const std::string& _catalogSource);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据目录名
+                     * <p>数据目录名</p>
                      */
                     std::string m_catalogName;
                     bool m_catalogNameHasBeenSet;
 
                     /**
-                     * 数据库名
+                     * <p>数据库名</p>
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
-                     * 调用时所在workspace唯一id
+                     * <p>调用时所在workspace唯一id</p>
                      */
                     std::string m_workspaceId;
                     bool m_workspaceIdHasBeenSet;
 
                     /**
-                     * 数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误
+                     * <p>数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误。通过ListConnections接口获取</p>
                      */
                     std::string m_connectionId;
                     bool m_connectionIdHasBeenSet;
 
                     /**
-                     * 数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。
+                     * <p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>
                      */
                     std::string m_catalogSource;
                     bool m_catalogSourceHasBeenSet;

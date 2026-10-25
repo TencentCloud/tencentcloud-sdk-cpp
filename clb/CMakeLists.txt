@@ -43,6 +43,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/AssociatedModelRouterItem.h
   include/tencentcloud/clb/v20180317/model/DescribeTargetGroupInstanceStatusResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBByInstanceIdResponse.h
+  include/tencentcloud/clb/v20180317/model/RedirectConfig.h
   include/tencentcloud/clb/v20180317/model/DeleteModelResponse.h
   include/tencentcloud/clb/v20180317/model/CreateBYOKNetworkResponse.h
   include/tencentcloud/clb/v20180317/model/ModifyServiceProviderModelAttributesResponse.h
@@ -521,6 +522,7 @@ set(clb_src
   src/v20180317/model/AssociatedModelRouterItem.cpp
   src/v20180317/model/DescribeTargetGroupInstanceStatusResponse.cpp
   src/v20180317/model/DescribeClassicalLBByInstanceIdResponse.cpp
+  src/v20180317/model/RedirectConfig.cpp
   src/v20180317/model/DeleteModelResponse.cpp
   src/v20180317/model/CreateBYOKNetworkResponse.cpp
   src/v20180317/model/ModifyServiceProviderModelAttributesResponse.cpp

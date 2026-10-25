@@ -97,6 +97,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreatePositionFenceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreatePositionSpaceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreatePositionSpaceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreatePrivateCARequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreatePrivateCAResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductRequest.h>
@@ -149,6 +151,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DeletePositionFenceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeletePositionSpaceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeletePositionSpaceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeletePrivateCARequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeletePrivateCAResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteProductPrivateCARequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteProductPrivateCAResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteStudioProductRequest.h>
@@ -271,6 +277,14 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePackageConsumeTasksResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePrivateCARequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePrivateCAResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePrivateCABindedProductsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePrivateCABindedProductsResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePrivateCAsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePrivateCAsResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeProductCARequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeProductCAResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProductCloudStorageAIServiceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProductCloudStorageAIServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProductDynamicRegisterRequest.h>
@@ -539,6 +553,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateOtaModuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateOtaTaskStatusRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateOtaTaskStatusResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdatePrivateCARequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdatePrivateCAResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateProductPrivateCARequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateProductPrivateCAResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UploadFirmwareRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UploadFirmwareResponse.h>
 
@@ -666,6 +684,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePositionSpaceResponse> CreatePositionSpaceOutcome;
                 typedef std::future<CreatePositionSpaceOutcome> CreatePositionSpaceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreatePositionSpaceRequest&, CreatePositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePositionSpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePrivateCAResponse> CreatePrivateCAOutcome;
+                typedef std::future<CreatePrivateCAOutcome> CreatePrivateCAOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreatePrivateCARequest&, CreatePrivateCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrivateCAAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
@@ -744,6 +765,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePositionSpaceResponse> DeletePositionSpaceOutcome;
                 typedef std::future<DeletePositionSpaceOutcome> DeletePositionSpaceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeletePositionSpaceRequest&, DeletePositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePositionSpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePrivateCAResponse> DeletePrivateCAOutcome;
+                typedef std::future<DeletePrivateCAOutcome> DeletePrivateCAOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeletePrivateCARequest&, DeletePrivateCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrivateCAAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProductPrivateCAResponse> DeleteProductPrivateCAOutcome;
+                typedef std::future<DeleteProductPrivateCAOutcome> DeleteProductPrivateCAOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteProductPrivateCARequest&, DeleteProductPrivateCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProductPrivateCAAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteProjectResponse> DeleteProjectOutcome;
                 typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteProjectRequest&, DeleteProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
@@ -927,6 +954,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePositionFenceListResponse> DescribePositionFenceListOutcome;
                 typedef std::future<DescribePositionFenceListOutcome> DescribePositionFenceListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribePositionFenceListRequest&, DescribePositionFenceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePositionFenceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrivateCAResponse> DescribePrivateCAOutcome;
+                typedef std::future<DescribePrivateCAOutcome> DescribePrivateCAOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribePrivateCARequest&, DescribePrivateCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrivateCAAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrivateCABindedProductsResponse> DescribePrivateCABindedProductsOutcome;
+                typedef std::future<DescribePrivateCABindedProductsOutcome> DescribePrivateCABindedProductsOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribePrivateCABindedProductsRequest&, DescribePrivateCABindedProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrivateCABindedProductsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrivateCAsResponse> DescribePrivateCAsOutcome;
+                typedef std::future<DescribePrivateCAsOutcome> DescribePrivateCAsOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribePrivateCAsRequest&, DescribePrivateCAsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrivateCAsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProductCAResponse> DescribeProductCAOutcome;
+                typedef std::future<DescribeProductCAOutcome> DescribeProductCAOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeProductCARequest&, DescribeProductCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductCAAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProductCloudStorageAIServiceResponse> DescribeProductCloudStorageAIServiceOutcome;
                 typedef std::future<DescribeProductCloudStorageAIServiceOutcome> DescribeProductCloudStorageAIServiceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeProductCloudStorageAIServiceRequest&, DescribeProductCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductCloudStorageAIServiceAsyncHandler;
@@ -1329,6 +1368,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateOtaTaskStatusResponse> UpdateOtaTaskStatusOutcome;
                 typedef std::future<UpdateOtaTaskStatusOutcome> UpdateOtaTaskStatusOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UpdateOtaTaskStatusRequest&, UpdateOtaTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOtaTaskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdatePrivateCAResponse> UpdatePrivateCAOutcome;
+                typedef std::future<UpdatePrivateCAOutcome> UpdatePrivateCAOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::UpdatePrivateCARequest&, UpdatePrivateCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrivateCAAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateProductPrivateCAResponse> UpdateProductPrivateCAOutcome;
+                typedef std::future<UpdateProductPrivateCAOutcome> UpdateProductPrivateCAOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::UpdateProductPrivateCARequest&, UpdateProductPrivateCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProductPrivateCAAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadFirmwareResponse> UploadFirmwareOutcome;
                 typedef std::future<UploadFirmwareOutcome> UploadFirmwareOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
@@ -1707,6 +1752,15 @@ namespace TencentCloud
                 CreatePositionSpaceOutcomeCallable CreatePositionSpaceCallable(const Model::CreatePositionSpaceRequest& request);
 
                 /**
+                 *创建私有CA证书
+                 * @param req CreatePrivateCARequest
+                 * @return CreatePrivateCAOutcome
+                 */
+                CreatePrivateCAOutcome CreatePrivateCA(const Model::CreatePrivateCARequest &request);
+                void CreatePrivateCAAsync(const Model::CreatePrivateCARequest& request, const CreatePrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrivateCAOutcomeCallable CreatePrivateCACallable(const Model::CreatePrivateCARequest& request);
+
+                /**
                  *为用户提供新建项目的能力，用于集中管理产品和应用。
                  * @param req CreateProjectRequest
                  * @return CreateProjectOutcome
@@ -1939,6 +1993,24 @@ namespace TencentCloud
                 DeletePositionSpaceOutcome DeletePositionSpace(const Model::DeletePositionSpaceRequest &request);
                 void DeletePositionSpaceAsync(const Model::DeletePositionSpaceRequest& request, const DeletePositionSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePositionSpaceOutcomeCallable DeletePositionSpaceCallable(const Model::DeletePositionSpaceRequest& request);
+
+                /**
+                 *删除私有CA证书
+                 * @param req DeletePrivateCARequest
+                 * @return DeletePrivateCAOutcome
+                 */
+                DeletePrivateCAOutcome DeletePrivateCA(const Model::DeletePrivateCARequest &request);
+                void DeletePrivateCAAsync(const Model::DeletePrivateCARequest& request, const DeletePrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePrivateCAOutcomeCallable DeletePrivateCACallable(const Model::DeletePrivateCARequest& request);
+
+                /**
+                 *删除产品绑定的CA证书
+                 * @param req DeleteProductPrivateCARequest
+                 * @return DeleteProductPrivateCAOutcome
+                 */
+                DeleteProductPrivateCAOutcome DeleteProductPrivateCA(const Model::DeleteProductPrivateCARequest &request);
+                void DeleteProductPrivateCAAsync(const Model::DeleteProductPrivateCARequest& request, const DeleteProductPrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProductPrivateCAOutcomeCallable DeleteProductPrivateCACallable(const Model::DeleteProductPrivateCARequest& request);
 
                 /**
                  *提供删除某个项目的能力。
@@ -2488,6 +2560,42 @@ namespace TencentCloud
                 DescribePositionFenceListOutcome DescribePositionFenceList(const Model::DescribePositionFenceListRequest &request);
                 void DescribePositionFenceListAsync(const Model::DescribePositionFenceListRequest& request, const DescribePositionFenceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePositionFenceListOutcomeCallable DescribePositionFenceListCallable(const Model::DescribePositionFenceListRequest& request);
+
+                /**
+                 *查询私有化CA信息
+                 * @param req DescribePrivateCARequest
+                 * @return DescribePrivateCAOutcome
+                 */
+                DescribePrivateCAOutcome DescribePrivateCA(const Model::DescribePrivateCARequest &request);
+                void DescribePrivateCAAsync(const Model::DescribePrivateCARequest& request, const DescribePrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrivateCAOutcomeCallable DescribePrivateCACallable(const Model::DescribePrivateCARequest& request);
+
+                /**
+                 *查询私有CA绑定的产品列表
+                 * @param req DescribePrivateCABindedProductsRequest
+                 * @return DescribePrivateCABindedProductsOutcome
+                 */
+                DescribePrivateCABindedProductsOutcome DescribePrivateCABindedProducts(const Model::DescribePrivateCABindedProductsRequest &request);
+                void DescribePrivateCABindedProductsAsync(const Model::DescribePrivateCABindedProductsRequest& request, const DescribePrivateCABindedProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrivateCABindedProductsOutcomeCallable DescribePrivateCABindedProductsCallable(const Model::DescribePrivateCABindedProductsRequest& request);
+
+                /**
+                 *查询私有CA证书列表
+                 * @param req DescribePrivateCAsRequest
+                 * @return DescribePrivateCAsOutcome
+                 */
+                DescribePrivateCAsOutcome DescribePrivateCAs(const Model::DescribePrivateCAsRequest &request);
+                void DescribePrivateCAsAsync(const Model::DescribePrivateCAsRequest& request, const DescribePrivateCAsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrivateCAsOutcomeCallable DescribePrivateCAsCallable(const Model::DescribePrivateCAsRequest& request);
+
+                /**
+                 *查询产品绑定的CA证书
+                 * @param req DescribeProductCARequest
+                 * @return DescribeProductCAOutcome
+                 */
+                DescribeProductCAOutcome DescribeProductCA(const Model::DescribeProductCARequest &request);
+                void DescribeProductCAAsync(const Model::DescribeProductCARequest& request, const DescribeProductCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductCAOutcomeCallable DescribeProductCACallable(const Model::DescribeProductCARequest& request);
 
                 /**
                  *查询指定产品的云存 AI 服务开通状态
@@ -3710,6 +3818,24 @@ namespace TencentCloud
                 UpdateOtaTaskStatusOutcome UpdateOtaTaskStatus(const Model::UpdateOtaTaskStatusRequest &request);
                 void UpdateOtaTaskStatusAsync(const Model::UpdateOtaTaskStatusRequest& request, const UpdateOtaTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateOtaTaskStatusOutcomeCallable UpdateOtaTaskStatusCallable(const Model::UpdateOtaTaskStatusRequest& request);
+
+                /**
+                 *更新私有CA证书
+                 * @param req UpdatePrivateCARequest
+                 * @return UpdatePrivateCAOutcome
+                 */
+                UpdatePrivateCAOutcome UpdatePrivateCA(const Model::UpdatePrivateCARequest &request);
+                void UpdatePrivateCAAsync(const Model::UpdatePrivateCARequest& request, const UpdatePrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdatePrivateCAOutcomeCallable UpdatePrivateCACallable(const Model::UpdatePrivateCARequest& request);
+
+                /**
+                 *更新产品的私有CA
+                 * @param req UpdateProductPrivateCARequest
+                 * @return UpdateProductPrivateCAOutcome
+                 */
+                UpdateProductPrivateCAOutcome UpdateProductPrivateCA(const Model::UpdateProductPrivateCARequest &request);
+                void UpdateProductPrivateCAAsync(const Model::UpdateProductPrivateCARequest& request, const UpdateProductPrivateCAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateProductPrivateCAOutcomeCallable UpdateProductPrivateCACallable(const Model::UpdateProductPrivateCARequest& request);
 
                 /**
                  *本接口（UploadFirmware）用于创建设备固件版本信息，在平台用于固件版本升级、固件资源下发等。

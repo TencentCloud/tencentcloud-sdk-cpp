@@ -30,7 +30,8 @@ CreateDeviceRequest::CreateDeviceRequest() :
     m_devEUIHasBeenSet(false),
     m_appSKeyHasBeenSet(false),
     m_nwkSKeyHasBeenSet(false),
-    m_definedPskHasBeenSet(false)
+    m_definedPskHasBeenSet(false),
+    m_tlsCrtHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CreateDeviceRequest::ToJsonString() const
         string key = "DefinedPsk";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_definedPsk.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tlsCrtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TlsCrt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tlsCrt.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void CreateDeviceRequest::SetDefinedPsk(const string& _definedPsk)
 bool CreateDeviceRequest::DefinedPskHasBeenSet() const
 {
     return m_definedPskHasBeenSet;
+}
+
+string CreateDeviceRequest::GetTlsCrt() const
+{
+    return m_tlsCrt;
+}
+
+void CreateDeviceRequest::SetTlsCrt(const string& _tlsCrt)
+{
+    m_tlsCrt = _tlsCrt;
+    m_tlsCrtHasBeenSet = true;
+}
+
+bool CreateDeviceRequest::TlsCrtHasBeenSet() const
+{
+    return m_tlsCrtHasBeenSet;
 }
 
 

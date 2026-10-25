@@ -32,7 +32,8 @@ CreateStudioProductRequest::CreateStudioProductRequest() :
     m_productDescHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_rateHasBeenSet(false),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_privateCANameHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string CreateStudioProductRequest::ToJsonString() const
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_period.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privateCANameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateCAName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_privateCAName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void CreateStudioProductRequest::SetPeriod(const string& _period)
 bool CreateStudioProductRequest::PeriodHasBeenSet() const
 {
     return m_periodHasBeenSet;
+}
+
+string CreateStudioProductRequest::GetPrivateCAName() const
+{
+    return m_privateCAName;
+}
+
+void CreateStudioProductRequest::SetPrivateCAName(const string& _privateCAName)
+{
+    m_privateCAName = _privateCAName;
+    m_privateCANameHasBeenSet = true;
+}
+
+bool CreateStudioProductRequest::PrivateCANameHasBeenSet() const
+{
+    return m_privateCANameHasBeenSet;
 }
 
 

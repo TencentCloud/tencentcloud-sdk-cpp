@@ -25,7 +25,9 @@ FeatureTableDetail::FeatureTableDetail() :
     m_timestampFieldHasBeenSet(false),
     m_sourceTableNameHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
-    m_onlineTableNameHasBeenSet(false)
+    m_onlineTableNameHasBeenSet(false),
+    m_onlineTableTypeHasBeenSet(false),
+    m_connectionIdHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,26 @@ CoreInternalOutcome FeatureTableDetail::Deserialize(const rapidjson::Value &valu
         m_onlineTableNameHasBeenSet = true;
     }
 
+    if (value.HasMember("OnlineTableType") && !value["OnlineTableType"].IsNull())
+    {
+        if (!value["OnlineTableType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FeatureTableDetail.OnlineTableType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_onlineTableType = string(value["OnlineTableType"].GetString());
+        m_onlineTableTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConnectionId") && !value["ConnectionId"].IsNull())
+    {
+        if (!value["ConnectionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FeatureTableDetail.ConnectionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_connectionId = string(value["ConnectionId"].GetString());
+        m_connectionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +159,22 @@ void FeatureTableDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "OnlineTableName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_onlineTableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_onlineTableTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlineTableType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_onlineTableType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connectionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +258,37 @@ void FeatureTableDetail::SetOnlineTableName(const string& _onlineTableName)
 bool FeatureTableDetail::OnlineTableNameHasBeenSet() const
 {
     return m_onlineTableNameHasBeenSet;
+}
+
+string FeatureTableDetail::GetOnlineTableType() const
+{
+    return m_onlineTableType;
+}
+
+void FeatureTableDetail::SetOnlineTableType(const string& _onlineTableType)
+{
+    m_onlineTableType = _onlineTableType;
+    m_onlineTableTypeHasBeenSet = true;
+}
+
+bool FeatureTableDetail::OnlineTableTypeHasBeenSet() const
+{
+    return m_onlineTableTypeHasBeenSet;
+}
+
+string FeatureTableDetail::GetConnectionId() const
+{
+    return m_connectionId;
+}
+
+void FeatureTableDetail::SetConnectionId(const string& _connectionId)
+{
+    m_connectionId = _connectionId;
+    m_connectionIdHasBeenSet = true;
+}
+
+bool FeatureTableDetail::ConnectionIdHasBeenSet() const
+{
+    return m_connectionIdHasBeenSet;
 }
 

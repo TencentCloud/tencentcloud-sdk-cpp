@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取连接器 ID
-                     * @return ConnectorId 连接器 ID
+                     * 获取<p>连接器 ID</p>
+                     * @return ConnectorId <p>连接器 ID</p>
                      * 
                      */
                     std::string GetConnectorId() const;
 
                     /**
-                     * 设置连接器 ID
-                     * @param _connectorId 连接器 ID
+                     * 设置<p>连接器 ID</p>
+                     * @param _connectorId <p>连接器 ID</p>
                      * 
                      */
                     void SetConnectorId(const std::string& _connectorId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ConnectorIdHasBeenSet() const;
 
                     /**
-                     * 获取连接器短标识（终身不变，跨版本稳定）
-                     * @return ConnectorSlug 连接器短标识（终身不变，跨版本稳定）
+                     * 获取<p>连接器短标识（终身不变，跨版本稳定）</p>
+                     * @return ConnectorSlug <p>连接器短标识（终身不变，跨版本稳定）</p>
                      * 
                      */
                     std::string GetConnectorSlug() const;
 
                     /**
-                     * 设置连接器短标识（终身不变，跨版本稳定）
-                     * @param _connectorSlug 连接器短标识（终身不变，跨版本稳定）
+                     * 设置<p>连接器短标识（终身不变，跨版本稳定）</p>
+                     * @param _connectorSlug <p>连接器短标识（终身不变，跨版本稳定）</p>
                      * 
                      */
                     void SetConnectorSlug(const std::string& _connectorSlug);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ConnectorSlugHasBeenSet() const;
 
                     /**
-                     * 获取版本级连接器密钥
-                     * @return ConnectorKey 版本级连接器密钥
+                     * 获取<p>版本级连接器密钥</p>
+                     * @return ConnectorKey <p>版本级连接器密钥</p>
                      * 
                      */
                     std::string GetConnectorKey() const;
 
                     /**
-                     * 设置版本级连接器密钥
-                     * @param _connectorKey 版本级连接器密钥
+                     * 设置<p>版本级连接器密钥</p>
+                     * @param _connectorKey <p>版本级连接器密钥</p>
                      * 
                      */
                     void SetConnectorKey(const std::string& _connectorKey);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ConnectorKeyHasBeenSet() const;
 
                     /**
-                     * 获取连接器名称
-                     * @return Name 连接器名称
+                     * 获取<p>连接器名称</p>
+                     * @return Name <p>连接器名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置连接器名称
-                     * @param _name 连接器名称
+                     * 设置<p>连接器名称</p>
+                     * @param _name <p>连接器名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取连接器描述
-                     * @return Description 连接器描述
+                     * 获取<p>连接器描述</p>
+                     * @return Description <p>连接器描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置连接器描述
-                     * @param _description 连接器描述
+                     * 设置<p>连接器描述</p>
+                     * @param _description <p>连接器描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取头像 URL
-                     * @return AvatarUrl 头像 URL
+                     * 获取<p>头像 URL</p>
+                     * @return AvatarUrl <p>头像 URL</p>
                      * 
                      */
                     std::string GetAvatarUrl() const;
 
                     /**
-                     * 设置头像 URL
-                     * @param _avatarUrl 头像 URL
+                     * 设置<p>头像 URL</p>
+                     * @param _avatarUrl <p>头像 URL</p>
                      * 
                      */
                     void SetAvatarUrl(const std::string& _avatarUrl);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool AvatarUrlHasBeenSet() const;
 
                     /**
-                     * 获取连接器来源：ENTERPRISE_AGENT / ASSISTANT
-                     * @return Source 连接器来源：ENTERPRISE_AGENT / ASSISTANT
+                     * 获取<p>连接器来源：ENTERPRISE_AGENT / ASSISTANT</p>
+                     * @return Source <p>连接器来源：ENTERPRISE_AGENT / ASSISTANT</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置连接器来源：ENTERPRISE_AGENT / ASSISTANT
-                     * @param _source 连接器来源：ENTERPRISE_AGENT / ASSISTANT
+                     * 设置<p>连接器来源：ENTERPRISE_AGENT / ASSISTANT</p>
+                     * @param _source <p>连接器来源：ENTERPRISE_AGENT / ASSISTANT</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取归属企业 ID
-                     * @return EnterpriseId 归属企业 ID
+                     * 获取<p>归属企业 ID</p>
+                     * @return EnterpriseId <p>归属企业 ID</p>
                      * 
                      */
                     std::string GetEnterpriseId() const;
 
                     /**
-                     * 设置归属企业 ID
-                     * @param _enterpriseId 归属企业 ID
+                     * 设置<p>归属企业 ID</p>
+                     * @param _enterpriseId <p>归属企业 ID</p>
                      * 
                      */
                     void SetEnterpriseId(const std::string& _enterpriseId);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool EnterpriseIdHasBeenSet() const;
 
                     /**
-                     * 获取连接器类型：MCP_SERVER / A2A / API_SERVICE
-                     * @return Type 连接器类型：MCP_SERVER / A2A / API_SERVICE
+                     * 获取<p>连接器类型：MCP_SERVER / A2A / API_SERVICE</p>
+                     * @return Type <p>连接器类型：MCP_SERVER / A2A / API_SERVICE</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置连接器类型：MCP_SERVER / A2A / API_SERVICE
-                     * @param _type 连接器类型：MCP_SERVER / A2A / API_SERVICE
+                     * 设置<p>连接器类型：MCP_SERVER / A2A / API_SERVICE</p>
+                     * @param _type <p>连接器类型：MCP_SERVER / A2A / API_SERVICE</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取上游服务地址
-                     * @return ServiceUrl 上游服务地址
+                     * 获取<p>上游服务地址</p>
+                     * @return ServiceUrl <p>上游服务地址</p>
                      * 
                      */
                     std::string GetServiceUrl() const;
 
                     /**
-                     * 设置上游服务地址
-                     * @param _serviceUrl 上游服务地址
+                     * 设置<p>上游服务地址</p>
+                     * @param _serviceUrl <p>上游服务地址</p>
                      * 
                      */
                     void SetServiceUrl(const std::string& _serviceUrl);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool ServiceUrlHasBeenSet() const;
 
                     /**
-                     * 获取授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY
-                     * @return AuthModes 授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY
+                     * 获取<p>授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY / DYNAMIC_API_KEY。DYNAMIC_API_KEY 表示按每轮请求提供的动态字段，通过 HeaderMappings 注入出站 HTTP Header。</p>
+                     * @return AuthModes <p>授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY / DYNAMIC_API_KEY。DYNAMIC_API_KEY 表示按每轮请求提供的动态字段，通过 HeaderMappings 注入出站 HTTP Header。</p>
                      * 
                      */
                     std::vector<std::string> GetAuthModes() const;
 
                     /**
-                     * 设置授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY
-                     * @param _authModes 授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY
+                     * 设置<p>授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY / DYNAMIC_API_KEY。DYNAMIC_API_KEY 表示按每轮请求提供的动态字段，通过 HeaderMappings 注入出站 HTTP Header。</p>
+                     * @param _authModes <p>授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY / DYNAMIC_API_KEY。DYNAMIC_API_KEY 表示按每轮请求提供的动态字段，通过 HeaderMappings 注入出站 HTTP Header。</p>
                      * 
                      */
                     void SetAuthModes(const std::vector<std::string>& _authModes);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool AuthModesHasBeenSet() const;
 
                     /**
-                     * 获取最新版本号
-                     * @return LatestVersionNo 最新版本号
+                     * 获取<p>最新版本号</p>
+                     * @return LatestVersionNo <p>最新版本号</p>
                      * 
                      */
                     int64_t GetLatestVersionNo() const;
 
                     /**
-                     * 设置最新版本号
-                     * @param _latestVersionNo 最新版本号
+                     * 设置<p>最新版本号</p>
+                     * @param _latestVersionNo <p>最新版本号</p>
                      * 
                      */
                     void SetLatestVersionNo(const int64_t& _latestVersionNo);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool LatestVersionNoHasBeenSet() const;
 
                     /**
-                     * 获取连接器状态：ACTIVE / DISABLED
-                     * @return Status 连接器状态：ACTIVE / DISABLED
+                     * 获取<p>连接器状态：ACTIVE / DISABLED</p>
+                     * @return Status <p>连接器状态：ACTIVE / DISABLED</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置连接器状态：ACTIVE / DISABLED
-                     * @param _status 连接器状态：ACTIVE / DISABLED
+                     * 设置<p>连接器状态：ACTIVE / DISABLED</p>
+                     * @param _status <p>连接器状态：ACTIVE / DISABLED</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建人 ID
-                     * @return CreatorId 创建人 ID
+                     * 获取<p>创建人 ID</p>
+                     * @return CreatorId <p>创建人 ID</p>
                      * 
                      */
                     std::string GetCreatorId() const;
 
                     /**
-                     * 设置创建人 ID
-                     * @param _creatorId 创建人 ID
+                     * 设置<p>创建人 ID</p>
+                     * @param _creatorId <p>创建人 ID</p>
                      * 
                      */
                     void SetCreatorId(const std::string& _creatorId);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool CreatorIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间（ISO8601，UTC）
-                     * @return CreatedTime 创建时间（ISO8601，UTC）
+                     * 获取<p>创建时间（ISO8601，UTC）</p>
+                     * @return CreatedTime <p>创建时间（ISO8601，UTC）</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间（ISO8601，UTC）
-                     * @param _createdTime 创建时间（ISO8601，UTC）
+                     * 设置<p>创建时间（ISO8601，UTC）</p>
+                     * @param _createdTime <p>创建时间（ISO8601，UTC）</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取最后修改时间（ISO8601，UTC）
-                     * @return ModifiedTime 最后修改时间（ISO8601，UTC）
+                     * 获取<p>最后修改时间（ISO8601，UTC）</p>
+                     * @return ModifiedTime <p>最后修改时间（ISO8601，UTC）</p>
                      * 
                      */
                     std::string GetModifiedTime() const;
 
                     /**
-                     * 设置最后修改时间（ISO8601，UTC）
-                     * @param _modifiedTime 最后修改时间（ISO8601，UTC）
+                     * 设置<p>最后修改时间（ISO8601，UTC）</p>
+                     * @param _modifiedTime <p>最后修改时间（ISO8601，UTC）</p>
                      * 
                      */
                     void SetModifiedTime(const std::string& _modifiedTime);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool ModifiedTimeHasBeenSet() const;
 
                     /**
-                     * 获取VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。
-                     * @return VpcConfigId VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。
+                     * 获取<p>VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。</p>
+                     * @return VpcConfigId <p>VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。</p>
                      * 
                      */
                     std::string GetVpcConfigId() const;
 
                     /**
-                     * 设置VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。
-                     * @param _vpcConfigId VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。
+                     * 设置<p>VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。</p>
+                     * @param _vpcConfigId <p>VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。</p>
                      * 
                      */
                     void SetVpcConfigId(const std::string& _vpcConfigId);
@@ -403,109 +403,141 @@ namespace TencentCloud
                      */
                     bool VpcConfigIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>展示名：console 老连接器目录（DescribeConsoleConnectorList）下发，取 registry data.display_name，老数据缺失时回落 Name；云上目录无独立展示名，省略不返回。Name 是存储名/选型回写键（含 scope 前缀），不承担展示职责。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisplayName <p>展示名：console 老连接器目录（DescribeConsoleConnectorList）下发，取 registry data.display_name，老数据缺失时回落 Name；云上目录无独立展示名，省略不返回。Name 是存储名/选型回写键（含 scope 前缀），不承担展示职责。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDisplayName() const;
+
+                    /**
+                     * 设置<p>展示名：console 老连接器目录（DescribeConsoleConnectorList）下发，取 registry data.display_name，老数据缺失时回落 Name；云上目录无独立展示名，省略不返回。Name 是存储名/选型回写键（含 scope 前缀），不承担展示职责。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _displayName <p>展示名：console 老连接器目录（DescribeConsoleConnectorList）下发，取 registry data.display_name，老数据缺失时回落 Name；云上目录无独立展示名，省略不返回。Name 是存储名/选型回写键（含 scope 前缀），不承担展示职责。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDisplayName(const std::string& _displayName);
+
+                    /**
+                     * 判断参数 DisplayName 是否已赋值
+                     * @return DisplayName 是否已赋值
+                     * 
+                     */
+                    bool DisplayNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 连接器 ID
+                     * <p>连接器 ID</p>
                      */
                     std::string m_connectorId;
                     bool m_connectorIdHasBeenSet;
 
                     /**
-                     * 连接器短标识（终身不变，跨版本稳定）
+                     * <p>连接器短标识（终身不变，跨版本稳定）</p>
                      */
                     std::string m_connectorSlug;
                     bool m_connectorSlugHasBeenSet;
 
                     /**
-                     * 版本级连接器密钥
+                     * <p>版本级连接器密钥</p>
                      */
                     std::string m_connectorKey;
                     bool m_connectorKeyHasBeenSet;
 
                     /**
-                     * 连接器名称
+                     * <p>连接器名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 连接器描述
+                     * <p>连接器描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 头像 URL
+                     * <p>头像 URL</p>
                      */
                     std::string m_avatarUrl;
                     bool m_avatarUrlHasBeenSet;
 
                     /**
-                     * 连接器来源：ENTERPRISE_AGENT / ASSISTANT
+                     * <p>连接器来源：ENTERPRISE_AGENT / ASSISTANT</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 归属企业 ID
+                     * <p>归属企业 ID</p>
                      */
                     std::string m_enterpriseId;
                     bool m_enterpriseIdHasBeenSet;
 
                     /**
-                     * 连接器类型：MCP_SERVER / A2A / API_SERVICE
+                     * <p>连接器类型：MCP_SERVER / A2A / API_SERVICE</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 上游服务地址
+                     * <p>上游服务地址</p>
                      */
                     std::string m_serviceUrl;
                     bool m_serviceUrlHasBeenSet;
 
                     /**
-                     * 授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY
+                     * <p>授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY / DYNAMIC_API_KEY。DYNAMIC_API_KEY 表示按每轮请求提供的动态字段，通过 HeaderMappings 注入出站 HTTP Header。</p>
                      */
                     std::vector<std::string> m_authModes;
                     bool m_authModesHasBeenSet;
 
                     /**
-                     * 最新版本号
+                     * <p>最新版本号</p>
                      */
                     int64_t m_latestVersionNo;
                     bool m_latestVersionNoHasBeenSet;
 
                     /**
-                     * 连接器状态：ACTIVE / DISABLED
+                     * <p>连接器状态：ACTIVE / DISABLED</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建人 ID
+                     * <p>创建人 ID</p>
                      */
                     std::string m_creatorId;
                     bool m_creatorIdHasBeenSet;
 
                     /**
-                     * 创建时间（ISO8601，UTC）
+                     * <p>创建时间（ISO8601，UTC）</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 最后修改时间（ISO8601，UTC）
+                     * <p>最后修改时间（ISO8601，UTC）</p>
                      */
                     std::string m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
 
                     /**
-                     * VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。
+                     * <p>VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。</p>
                      */
                     std::string m_vpcConfigId;
                     bool m_vpcConfigIdHasBeenSet;
+
+                    /**
+                     * <p>展示名：console 老连接器目录（DescribeConsoleConnectorList）下发，取 registry data.display_name，老数据缺失时回落 Name；云上目录无独立展示名，省略不返回。Name 是存储名/选型回写键（含 scope 前缀），不承担展示职责。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_displayName;
+                    bool m_displayNameHasBeenSet;
 
                 };
             }

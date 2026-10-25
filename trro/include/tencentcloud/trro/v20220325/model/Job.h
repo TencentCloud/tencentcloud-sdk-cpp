@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool FinishTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务下各状态处理项的数量分布，JSON 格式字符串</p>
+                     * @return TaskStatusCount <p>任务下各状态处理项的数量分布，JSON 格式字符串</p>
+                     * 
+                     */
+                    std::string GetTaskStatusCount() const;
+
+                    /**
+                     * 设置<p>任务下各状态处理项的数量分布，JSON 格式字符串</p>
+                     * @param _taskStatusCount <p>任务下各状态处理项的数量分布，JSON 格式字符串</p>
+                     * 
+                     */
+                    void SetTaskStatusCount(const std::string& _taskStatusCount);
+
+                    /**
+                     * 判断参数 TaskStatusCount 是否已赋值
+                     * @return TaskStatusCount 是否已赋值
+                     * 
+                     */
+                    bool TaskStatusCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
+
+                    /**
+                     * <p>任务下各状态处理项的数量分布，JSON 格式字符串</p>
+                     */
+                    std::string m_taskStatusCount;
+                    bool m_taskStatusCountHasBeenSet;
 
                 };
             }
