@@ -52,7 +52,9 @@ ModifyCloudNativeAPIGatewayLLMModelServiceRequest::ModifyCloudNativeAPIGatewayLL
     m_keyRotationPeriodDaysHasBeenSet(false),
     m_externalInstanceIdHasBeenSet(false),
     m_customProviderNameHasBeenSet(false),
-    m_loadBalanceConfigHasBeenSet(false)
+    m_loadBalanceConfigHasBeenSet(false),
+    m_lengthLimitConfigHasBeenSet(false),
+    m_smartBalanceHasBeenSet(false)
 {
 }
 
@@ -324,6 +326,24 @@ string ModifyCloudNativeAPIGatewayLLMModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_loadBalanceConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_lengthLimitConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LengthLimitConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lengthLimitConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_smartBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartBalance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartBalance.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -812,6 +832,38 @@ void ModifyCloudNativeAPIGatewayLLMModelServiceRequest::SetLoadBalanceConfig(con
 bool ModifyCloudNativeAPIGatewayLLMModelServiceRequest::LoadBalanceConfigHasBeenSet() const
 {
     return m_loadBalanceConfigHasBeenSet;
+}
+
+AIGWLengthLimitConfig ModifyCloudNativeAPIGatewayLLMModelServiceRequest::GetLengthLimitConfig() const
+{
+    return m_lengthLimitConfig;
+}
+
+void ModifyCloudNativeAPIGatewayLLMModelServiceRequest::SetLengthLimitConfig(const AIGWLengthLimitConfig& _lengthLimitConfig)
+{
+    m_lengthLimitConfig = _lengthLimitConfig;
+    m_lengthLimitConfigHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayLLMModelServiceRequest::LengthLimitConfigHasBeenSet() const
+{
+    return m_lengthLimitConfigHasBeenSet;
+}
+
+AIGWSmartBalanceConfig ModifyCloudNativeAPIGatewayLLMModelServiceRequest::GetSmartBalance() const
+{
+    return m_smartBalance;
+}
+
+void ModifyCloudNativeAPIGatewayLLMModelServiceRequest::SetSmartBalance(const AIGWSmartBalanceConfig& _smartBalance)
+{
+    m_smartBalance = _smartBalance;
+    m_smartBalanceHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayLLMModelServiceRequest::SmartBalanceHasBeenSet() const
+{
+    return m_smartBalanceHasBeenSet;
 }
 
 

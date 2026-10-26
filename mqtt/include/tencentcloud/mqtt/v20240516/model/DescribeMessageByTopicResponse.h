@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消息列表
-                     * @return Data 消息列表
+                     * 获取<p>消息列表</p>
+                     * @return Data <p>消息列表</p>
                      * 
                      */
                     std::vector<MQTTMessage> GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 消息列表
+                     * <p>消息列表</p>
                      */
                     std::vector<MQTTMessage> m_data;
                     bool m_dataHasBeenSet;

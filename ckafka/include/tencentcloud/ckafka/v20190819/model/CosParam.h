@@ -214,6 +214,48 @@ namespace TencentCloud
                      */
                     bool DirectoryTimeFormatHasBeenSet() const;
 
+                    /**
+                     * 获取<p>时间时区, 默认 UTC+08:00</p><p>参数格式：UTC+08:00</p>
+                     * @return Timezone <p>时间时区, 默认 UTC+08:00</p><p>参数格式：UTC+08:00</p>
+                     * 
+                     */
+                    std::string GetTimezone() const;
+
+                    /**
+                     * 设置<p>时间时区, 默认 UTC+08:00</p><p>参数格式：UTC+08:00</p>
+                     * @param _timezone <p>时间时区, 默认 UTC+08:00</p><p>参数格式：UTC+08:00</p>
+                     * 
+                     */
+                    void SetTimezone(const std::string& _timezone);
+
+                    /**
+                     * 判断参数 Timezone 是否已赋值
+                     * @return Timezone 是否已赋值
+                     * 
+                     */
+                    bool TimezoneHasBeenSet() const;
+
+                    /**
+                     * 获取<p>源数据解析格式</p><p>枚举值：</p><ul><li>JSON： JSON格式</li><li>Debezium： Debezium格式</li></ul>
+                     * @return SourceDataFormat <p>源数据解析格式</p><p>枚举值：</p><ul><li>JSON： JSON格式</li><li>Debezium： Debezium格式</li></ul>
+                     * 
+                     */
+                    std::string GetSourceDataFormat() const;
+
+                    /**
+                     * 设置<p>源数据解析格式</p><p>枚举值：</p><ul><li>JSON： JSON格式</li><li>Debezium： Debezium格式</li></ul>
+                     * @param _sourceDataFormat <p>源数据解析格式</p><p>枚举值：</p><ul><li>JSON： JSON格式</li><li>Debezium： Debezium格式</li></ul>
+                     * 
+                     */
+                    void SetSourceDataFormat(const std::string& _sourceDataFormat);
+
+                    /**
+                     * 判断参数 SourceDataFormat 是否已赋值
+                     * @return SourceDataFormat 是否已赋值
+                     * 
+                     */
+                    bool SourceDataFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +305,18 @@ namespace TencentCloud
                      */
                     std::string m_directoryTimeFormat;
                     bool m_directoryTimeFormatHasBeenSet;
+
+                    /**
+                     * <p>时间时区, 默认 UTC+08:00</p><p>参数格式：UTC+08:00</p>
+                     */
+                    std::string m_timezone;
+                    bool m_timezoneHasBeenSet;
+
+                    /**
+                     * <p>源数据解析格式</p><p>枚举值：</p><ul><li>JSON： JSON格式</li><li>Debezium： Debezium格式</li></ul>
+                     */
+                    std::string m_sourceDataFormat;
+                    bool m_sourceDataFormatHasBeenSet;
 
                 };
             }

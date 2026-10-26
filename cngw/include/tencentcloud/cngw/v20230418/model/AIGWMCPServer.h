@@ -28,6 +28,8 @@
 #include <tencentcloud/cngw/v20230418/model/AIGWMCPSessionConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWHealthCheckSetting.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWLogConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWMCPServerParamRewriteConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWGatewayVerifyConfig.h>
 
 
 namespace TencentCloud
@@ -524,6 +526,48 @@ namespace TencentCloud
                      */
                     bool LogConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务级参数重写规则</p>
+                     * @return ParamRewriteConfig <p>服务级参数重写规则</p>
+                     * 
+                     */
+                    AIGWMCPServerParamRewriteConfig GetParamRewriteConfig() const;
+
+                    /**
+                     * 设置<p>服务级参数重写规则</p>
+                     * @param _paramRewriteConfig <p>服务级参数重写规则</p>
+                     * 
+                     */
+                    void SetParamRewriteConfig(const AIGWMCPServerParamRewriteConfig& _paramRewriteConfig);
+
+                    /**
+                     * 判断参数 ParamRewriteConfig 是否已赋值
+                     * @return ParamRewriteConfig 是否已赋值
+                     * 
+                     */
+                    bool ParamRewriteConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>网关验签配置</p>
+                     * @return GatewayVerifyConfig <p>网关验签配置</p>
+                     * 
+                     */
+                    AIGWGatewayVerifyConfig GetGatewayVerifyConfig() const;
+
+                    /**
+                     * 设置<p>网关验签配置</p>
+                     * @param _gatewayVerifyConfig <p>网关验签配置</p>
+                     * 
+                     */
+                    void SetGatewayVerifyConfig(const AIGWGatewayVerifyConfig& _gatewayVerifyConfig);
+
+                    /**
+                     * 判断参数 GatewayVerifyConfig 是否已赋值
+                     * @return GatewayVerifyConfig 是否已赋值
+                     * 
+                     */
+                    bool GatewayVerifyConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -660,6 +704,18 @@ namespace TencentCloud
                      */
                     AIGWLogConfig m_logConfig;
                     bool m_logConfigHasBeenSet;
+
+                    /**
+                     * <p>服务级参数重写规则</p>
+                     */
+                    AIGWMCPServerParamRewriteConfig m_paramRewriteConfig;
+                    bool m_paramRewriteConfigHasBeenSet;
+
+                    /**
+                     * <p>网关验签配置</p>
+                     */
+                    AIGWGatewayVerifyConfig m_gatewayVerifyConfig;
+                    bool m_gatewayVerifyConfigHasBeenSet;
 
                 };
             }

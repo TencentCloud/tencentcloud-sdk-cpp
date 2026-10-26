@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id
-                     * @return Resource Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id
+                     * 获取<p>Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id</p>
+                     * @return Resource <p>Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id</p>
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
-                     * 设置Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id
-                     * @param _resource Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id
+                     * 设置<p>Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id</p>
+                     * @param _resource <p>Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id</p>
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceHasBeenSet() const;
 
                     /**
-                     * 获取是否为自建集群
-                     * @return SelfBuilt 是否为自建集群
+                     * 获取<p>是否为自建集群</p>
+                     * @return SelfBuilt <p>是否为自建集群</p>
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
-                     * 设置是否为自建集群
-                     * @param _selfBuilt 是否为自建集群
+                     * 设置<p>是否为自建集群</p>
+                     * @param _selfBuilt <p>是否为自建集群</p>
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool SelfBuiltHasBeenSet() const;
 
                     /**
-                     * 获取是否更新到关联的Dip任务
+                     * 获取<p>是否更新到关联的Dip任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsUpdate 是否更新到关联的Dip任务
+                     * @return IsUpdate <p>是否更新到关联的Dip任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUpdate() const;
 
                     /**
-                     * 设置是否更新到关联的Dip任务
+                     * 设置<p>是否更新到关联的Dip任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isUpdate 是否更新到关联的Dip任务
+                     * @param _isUpdate <p>是否更新到关联的Dip任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool IsUpdateHasBeenSet() const;
 
                     /**
-                     * 获取Kafka连接的broker地址, NetworkType=PUBLIC公网时必填
-                     * @return BrokerAddress Kafka连接的broker地址, NetworkType=PUBLIC公网时必填
+                     * 获取<p>Kafka连接的broker地址, NetworkType=PUBLIC公网时必填</p>
+                     * @return BrokerAddress <p>Kafka连接的broker地址, NetworkType=PUBLIC公网时必填</p>
                      * 
                      */
                     std::string GetBrokerAddress() const;
 
                     /**
-                     * 设置Kafka连接的broker地址, NetworkType=PUBLIC公网时必填
-                     * @param _brokerAddress Kafka连接的broker地址, NetworkType=PUBLIC公网时必填
+                     * 设置<p>Kafka连接的broker地址, NetworkType=PUBLIC公网时必填</p>
+                     * @param _brokerAddress <p>Kafka连接的broker地址, NetworkType=PUBLIC公网时必填</p>
                      * 
                      */
                     void SetBrokerAddress(const std::string& _brokerAddress);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool BrokerAddressHasBeenSet() const;
 
                     /**
-                     * 获取CKafka连接源的实例资源地域, 跨地域时必填
-                     * @return Region CKafka连接源的实例资源地域, 跨地域时必填
+                     * 获取<p>CKafka连接源的实例资源地域, 跨地域时必填</p>
+                     * @return Region <p>CKafka连接源的实例资源地域, 跨地域时必填</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置CKafka连接源的实例资源地域, 跨地域时必填
-                     * @param _region CKafka连接源的实例资源地域, 跨地域时必填
+                     * 设置<p>CKafka连接源的实例资源地域, 跨地域时必填</p>
+                     * @param _region <p>CKafka连接源的实例资源地域, 跨地域时必填</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取网络类型：PUBLIC公网；VPC
-                     * @return NetworkType 网络类型：PUBLIC公网；VPC
+                     * 获取<p>网络类型：PUBLIC公网；VPC</p>
+                     * @return NetworkType <p>网络类型：PUBLIC公网；VPC</p>
                      * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置网络类型：PUBLIC公网；VPC
-                     * @param _networkType 网络类型：PUBLIC公网；VPC
+                     * 设置<p>网络类型：PUBLIC公网；VPC</p>
+                     * @param _networkType <p>网络类型：PUBLIC公网；VPC</p>
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -177,15 +177,15 @@ namespace TencentCloud
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取vpcId，NetworkType=VPC时必传
-                     * @return UniqVpcId vpcId，NetworkType=VPC时必传
+                     * 获取<p>vpcId，NetworkType=VPC时必传</p>
+                     * @return UniqVpcId <p>vpcId，NetworkType=VPC时必传</p>
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
-                     * 设置vpcId，NetworkType=VPC时必传
-                     * @param _uniqVpcId vpcId，NetworkType=VPC时必传
+                     * 设置<p>vpcId，NetworkType=VPC时必传</p>
+                     * @param _uniqVpcId <p>vpcId，NetworkType=VPC时必传</p>
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -198,15 +198,15 @@ namespace TencentCloud
                     bool UniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取vip，NetworkType=VPC时必传
-                     * @return ServiceVip vip，NetworkType=VPC时必传
+                     * 获取<p>vip，NetworkType=VPC时必传</p>
+                     * @return ServiceVip <p>vip，NetworkType=VPC时必传</p>
                      * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
-                     * 设置vip，NetworkType=VPC时必传
-                     * @param _serviceVip vip，NetworkType=VPC时必传
+                     * 设置<p>vip，NetworkType=VPC时必传</p>
+                     * @param _serviceVip <p>vip，NetworkType=VPC时必传</p>
                      * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
@@ -219,15 +219,15 @@ namespace TencentCloud
                     bool ServiceVipHasBeenSet() const;
 
                     /**
-                     * 获取端口，NetworkType=VPC时必传
-                     * @return Port 端口，NetworkType=VPC时必传
+                     * 获取<p>端口，NetworkType=VPC时必传</p>
+                     * @return Port <p>端口，NetworkType=VPC时必传</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置端口，NetworkType=VPC时必传
-                     * @param _port 端口，NetworkType=VPC时必传
+                     * 设置<p>端口，NetworkType=VPC时必传</p>
+                     * @param _port <p>端口，NetworkType=VPC时必传</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -240,15 +240,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取跨云同步下需要客户传递唯一Id标志一组资源
-                     * @return CrossNetResourceUniqueId 跨云同步下需要客户传递唯一Id标志一组资源
+                     * 获取<p>跨云同步下需要客户传递唯一Id标志一组资源</p>
+                     * @return CrossNetResourceUniqueId <p>跨云同步下需要客户传递唯一Id标志一组资源</p>
                      * 
                      */
                     std::string GetCrossNetResourceUniqueId() const;
 
                     /**
-                     * 设置跨云同步下需要客户传递唯一Id标志一组资源
-                     * @param _crossNetResourceUniqueId 跨云同步下需要客户传递唯一Id标志一组资源
+                     * 设置<p>跨云同步下需要客户传递唯一Id标志一组资源</p>
+                     * @param _crossNetResourceUniqueId <p>跨云同步下需要客户传递唯一Id标志一组资源</p>
                      * 
                      */
                     void SetCrossNetResourceUniqueId(const std::string& _crossNetResourceUniqueId);
@@ -261,15 +261,15 @@ namespace TencentCloud
                     bool CrossNetResourceUniqueIdHasBeenSet() const;
 
                     /**
-                     * 获取跨云子网ID
-                     * @return CrossNetVpcSubNetId 跨云子网ID
+                     * 获取<p>跨云子网ID</p>
+                     * @return CrossNetVpcSubNetId <p>跨云子网ID</p>
                      * 
                      */
                     std::string GetCrossNetVpcSubNetId() const;
 
                     /**
-                     * 设置跨云子网ID
-                     * @param _crossNetVpcSubNetId 跨云子网ID
+                     * 设置<p>跨云子网ID</p>
+                     * @param _crossNetVpcSubNetId <p>跨云子网ID</p>
                      * 
                      */
                     void SetCrossNetVpcSubNetId(const std::string& _crossNetVpcSubNetId);
@@ -281,74 +281,101 @@ namespace TencentCloud
                      */
                     bool CrossNetVpcSubNetIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户输入原始broker接入点地址</p>
+                     * @return OriginalBrokerAddresses <p>用户输入原始broker接入点地址</p>
+                     * 
+                     */
+                    std::string GetOriginalBrokerAddresses() const;
+
+                    /**
+                     * 设置<p>用户输入原始broker接入点地址</p>
+                     * @param _originalBrokerAddresses <p>用户输入原始broker接入点地址</p>
+                     * 
+                     */
+                    void SetOriginalBrokerAddresses(const std::string& _originalBrokerAddresses);
+
+                    /**
+                     * 判断参数 OriginalBrokerAddresses 是否已赋值
+                     * @return OriginalBrokerAddresses 是否已赋值
+                     * 
+                     */
+                    bool OriginalBrokerAddressesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id
+                     * <p>Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id</p>
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
-                     * 是否为自建集群
+                     * <p>是否为自建集群</p>
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;
 
                     /**
-                     * 是否更新到关联的Dip任务
+                     * <p>是否更新到关联的Dip任务</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUpdate;
                     bool m_isUpdateHasBeenSet;
 
                     /**
-                     * Kafka连接的broker地址, NetworkType=PUBLIC公网时必填
+                     * <p>Kafka连接的broker地址, NetworkType=PUBLIC公网时必填</p>
                      */
                     std::string m_brokerAddress;
                     bool m_brokerAddressHasBeenSet;
 
                     /**
-                     * CKafka连接源的实例资源地域, 跨地域时必填
+                     * <p>CKafka连接源的实例资源地域, 跨地域时必填</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 网络类型：PUBLIC公网；VPC
+                     * <p>网络类型：PUBLIC公网；VPC</p>
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * vpcId，NetworkType=VPC时必传
+                     * <p>vpcId，NetworkType=VPC时必传</p>
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
-                     * vip，NetworkType=VPC时必传
+                     * <p>vip，NetworkType=VPC时必传</p>
                      */
                     std::string m_serviceVip;
                     bool m_serviceVipHasBeenSet;
 
                     /**
-                     * 端口，NetworkType=VPC时必传
+                     * <p>端口，NetworkType=VPC时必传</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 跨云同步下需要客户传递唯一Id标志一组资源
+                     * <p>跨云同步下需要客户传递唯一Id标志一组资源</p>
                      */
                     std::string m_crossNetResourceUniqueId;
                     bool m_crossNetResourceUniqueIdHasBeenSet;
 
                     /**
-                     * 跨云子网ID
+                     * <p>跨云子网ID</p>
                      */
                     std::string m_crossNetVpcSubNetId;
                     bool m_crossNetVpcSubNetIdHasBeenSet;
+
+                    /**
+                     * <p>用户输入原始broker接入点地址</p>
+                     */
+                    std::string m_originalBrokerAddresses;
+                    bool m_originalBrokerAddressesHasBeenSet;
 
                 };
             }

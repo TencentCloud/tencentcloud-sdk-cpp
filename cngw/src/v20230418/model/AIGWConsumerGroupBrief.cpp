@@ -22,7 +22,8 @@ using namespace std;
 
 AIGWConsumerGroupBrief::AIGWConsumerGroupBrief() :
     m_nameHasBeenSet(false),
-    m_consumerGroupIdHasBeenSet(false)
+    m_consumerGroupIdHasBeenSet(false),
+    m_consumerGroupPathHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome AIGWConsumerGroupBrief::Deserialize(const rapidjson::Value &
         m_consumerGroupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ConsumerGroupPath") && !value["ConsumerGroupPath"].IsNull())
+    {
+        if (!value["ConsumerGroupPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWConsumerGroupBrief.ConsumerGroupPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerGroupPath = string(value["ConsumerGroupPath"].GetString());
+        m_consumerGroupPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void AIGWConsumerGroupBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "ConsumerGroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_consumerGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumerGroupPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerGroupPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumerGroupPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void AIGWConsumerGroupBrief::SetConsumerGroupId(const string& _consumerGroupId)
 bool AIGWConsumerGroupBrief::ConsumerGroupIdHasBeenSet() const
 {
     return m_consumerGroupIdHasBeenSet;
+}
+
+string AIGWConsumerGroupBrief::GetConsumerGroupPath() const
+{
+    return m_consumerGroupPath;
+}
+
+void AIGWConsumerGroupBrief::SetConsumerGroupPath(const string& _consumerGroupPath)
+{
+    m_consumerGroupPath = _consumerGroupPath;
+    m_consumerGroupPathHasBeenSet = true;
+}
+
+bool AIGWConsumerGroupBrief::ConsumerGroupPathHasBeenSet() const
+{
+    return m_consumerGroupPathHasBeenSet;
 }
 

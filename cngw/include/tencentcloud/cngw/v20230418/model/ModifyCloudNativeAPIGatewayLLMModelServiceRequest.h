@@ -27,6 +27,7 @@
 #include <tencentcloud/cngw/v20230418/model/AIGWModelRewriteRule.h>
 #include <tencentcloud/cngw/v20230418/model/KeyValue.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWLoadBalanceConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWSmartBalanceConfig.h>
 
 
 namespace TencentCloud
@@ -678,6 +679,27 @@ namespace TencentCloud
                      */
                     bool LoadBalanceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>智能负载均衡配置</p>
+                     * @return SmartBalance <p>智能负载均衡配置</p>
+                     * 
+                     */
+                    AIGWSmartBalanceConfig GetSmartBalance() const;
+
+                    /**
+                     * 设置<p>智能负载均衡配置</p>
+                     * @param _smartBalance <p>智能负载均衡配置</p>
+                     * 
+                     */
+                    void SetSmartBalance(const AIGWSmartBalanceConfig& _smartBalance);
+
+                    /**
+                     * 判断参数 SmartBalance 是否已赋值
+                     * @return SmartBalance 是否已赋值
+                     * 
+                     */
+                    bool SmartBalanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -859,6 +881,12 @@ namespace TencentCloud
                      */
                     AIGWLoadBalanceConfig m_loadBalanceConfig;
                     bool m_loadBalanceConfigHasBeenSet;
+
+                    /**
+                     * <p>智能负载均衡配置</p>
+                     */
+                    AIGWSmartBalanceConfig m_smartBalance;
+                    bool m_smartBalanceHasBeenSet;
 
                 };
             }

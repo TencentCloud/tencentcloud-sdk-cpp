@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Privatedns::V20201028::Model;
 using namespace std;
 
-DescribeExtendEndpointListResponse::DescribeExtendEndpointListResponse()
+DescribeExtendEndpointListResponse::DescribeExtendEndpointListResponse() :
+    m_totalCountHasBeenSet(false),
+    m_outboundEndpointSetHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeExtendEndpointListResponse::Deserialize(const string
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OutboundEndpointSet") && !rsp["OutboundEndpointSet"].IsNull())
+    {
+        if (!rsp["OutboundEndpointSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OutboundEndpointSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["OutboundEndpointSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OutboundEndpoint item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_outboundEndpointSet.push_back(item);
+        }
+        m_outboundEndpointSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeExtendEndpointListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_outboundEndpointSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutboundEndpointSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_outboundEndpointSet.begin(); itr != m_outboundEndpointSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeExtendEndpointListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeExtendEndpointListResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeExtendEndpointListResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<OutboundEndpoint> DescribeExtendEndpointListResponse::GetOutboundEndpointSet() const
+{
+    return m_outboundEndpointSet;
+}
+
+bool DescribeExtendEndpointListResponse::OutboundEndpointSetHasBeenSet() const
+{
+    return m_outboundEndpointSetHasBeenSet;
+}
 
 

@@ -42,7 +42,9 @@ AIGWMCPServer::AIGWMCPServer() :
     m_conflictStrategyHasBeenSet(false),
     m_marketStatusHasBeenSet(false),
     m_preserveHostHasBeenSet(false),
-    m_logConfigHasBeenSet(false)
+    m_logConfigHasBeenSet(false),
+    m_paramRewriteConfigHasBeenSet(false),
+    m_gatewayVerifyConfigHasBeenSet(false)
 {
 }
 
@@ -299,6 +301,40 @@ CoreInternalOutcome AIGWMCPServer::Deserialize(const rapidjson::Value &value)
         m_logConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ParamRewriteConfig") && !value["ParamRewriteConfig"].IsNull())
+    {
+        if (!value["ParamRewriteConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWMCPServer.ParamRewriteConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_paramRewriteConfig.Deserialize(value["ParamRewriteConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_paramRewriteConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("GatewayVerifyConfig") && !value["GatewayVerifyConfig"].IsNull())
+    {
+        if (!value["GatewayVerifyConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWMCPServer.GatewayVerifyConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gatewayVerifyConfig.Deserialize(value["GatewayVerifyConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gatewayVerifyConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -484,6 +520,24 @@ void AIGWMCPServer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_paramRewriteConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamRewriteConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_paramRewriteConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_gatewayVerifyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayVerifyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gatewayVerifyConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -839,5 +893,37 @@ void AIGWMCPServer::SetLogConfig(const AIGWLogConfig& _logConfig)
 bool AIGWMCPServer::LogConfigHasBeenSet() const
 {
     return m_logConfigHasBeenSet;
+}
+
+AIGWMCPServerParamRewriteConfig AIGWMCPServer::GetParamRewriteConfig() const
+{
+    return m_paramRewriteConfig;
+}
+
+void AIGWMCPServer::SetParamRewriteConfig(const AIGWMCPServerParamRewriteConfig& _paramRewriteConfig)
+{
+    m_paramRewriteConfig = _paramRewriteConfig;
+    m_paramRewriteConfigHasBeenSet = true;
+}
+
+bool AIGWMCPServer::ParamRewriteConfigHasBeenSet() const
+{
+    return m_paramRewriteConfigHasBeenSet;
+}
+
+AIGWGatewayVerifyConfig AIGWMCPServer::GetGatewayVerifyConfig() const
+{
+    return m_gatewayVerifyConfig;
+}
+
+void AIGWMCPServer::SetGatewayVerifyConfig(const AIGWGatewayVerifyConfig& _gatewayVerifyConfig)
+{
+    m_gatewayVerifyConfig = _gatewayVerifyConfig;
+    m_gatewayVerifyConfigHasBeenSet = true;
+}
+
+bool AIGWMCPServer::GatewayVerifyConfigHasBeenSet() const
+{
+    return m_gatewayVerifyConfigHasBeenSet;
 }
 

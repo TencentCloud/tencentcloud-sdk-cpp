@@ -45,7 +45,13 @@ CloudNativeAPIGatewayLLMModelAPI::CloudNativeAPIGatewayLLMModelAPI() :
     m_maxDocumentsConfigHasBeenSet(false),
     m_sensitiveWordRouteHasBeenSet(false),
     m_consumerGroupModelScopesHasBeenSet(false),
-    m_consumerInheritModelScopeHasBeenSet(false)
+    m_consumerInheritModelScopeHasBeenSet(false),
+    m_consumerDirectModelScopesHasBeenSet(false),
+    m_secretKeyModelScopesHasBeenSet(false),
+    m_priorityScheduleConfigHasBeenSet(false),
+    m_playgroundAvailableHasBeenSet(false),
+    m_modelNameRouteHasBeenSet(false),
+    m_standardModelNameHasBeenSet(false)
 {
 }
 
@@ -397,6 +403,100 @@ CoreInternalOutcome CloudNativeAPIGatewayLLMModelAPI::Deserialize(const rapidjso
         m_consumerInheritModelScopeHasBeenSet = true;
     }
 
+    if (value.HasMember("ConsumerDirectModelScopes") && !value["ConsumerDirectModelScopes"].IsNull())
+    {
+        if (!value["ConsumerDirectModelScopes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.ConsumerDirectModelScopes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConsumerDirectModelScopes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AIGWAuthModelScopeItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_consumerDirectModelScopes.push_back(item);
+        }
+        m_consumerDirectModelScopesHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretKeyModelScopes") && !value["SecretKeyModelScopes"].IsNull())
+    {
+        if (!value["SecretKeyModelScopes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.SecretKeyModelScopes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecretKeyModelScopes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AIGWAuthModelScopeItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_secretKeyModelScopes.push_back(item);
+        }
+        m_secretKeyModelScopesHasBeenSet = true;
+    }
+
+    if (value.HasMember("PriorityScheduleConfig") && !value["PriorityScheduleConfig"].IsNull())
+    {
+        if (!value["PriorityScheduleConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.PriorityScheduleConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_priorityScheduleConfig.Deserialize(value["PriorityScheduleConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_priorityScheduleConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("PlaygroundAvailable") && !value["PlaygroundAvailable"].IsNull())
+    {
+        if (!value["PlaygroundAvailable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.PlaygroundAvailable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_playgroundAvailable = value["PlaygroundAvailable"].GetBool();
+        m_playgroundAvailableHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModelNameRoute") && !value["ModelNameRoute"].IsNull())
+    {
+        if (!value["ModelNameRoute"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.ModelNameRoute` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_modelNameRoute.Deserialize(value["ModelNameRoute"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_modelNameRouteHasBeenSet = true;
+    }
+
+    if (value.HasMember("StandardModelName") && !value["StandardModelName"].IsNull())
+    {
+        if (!value["StandardModelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelAPI.StandardModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_standardModelName = string(value["StandardModelName"].GetString());
+        m_standardModelNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -632,6 +732,70 @@ void CloudNativeAPIGatewayLLMModelAPI::ToJsonObject(rapidjson::Value &value, rap
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_consumerInheritModelScope.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_consumerDirectModelScopesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerDirectModelScopes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_consumerDirectModelScopes.begin(); itr != m_consumerDirectModelScopes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_secretKeyModelScopesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretKeyModelScopes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_secretKeyModelScopes.begin(); itr != m_secretKeyModelScopes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_priorityScheduleConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PriorityScheduleConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_priorityScheduleConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_playgroundAvailableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlaygroundAvailable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_playgroundAvailable, allocator);
+    }
+
+    if (m_modelNameRouteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelNameRoute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modelNameRoute.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_standardModelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_standardModelName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1035,5 +1199,101 @@ void CloudNativeAPIGatewayLLMModelAPI::SetConsumerInheritModelScope(const AIGWCo
 bool CloudNativeAPIGatewayLLMModelAPI::ConsumerInheritModelScopeHasBeenSet() const
 {
     return m_consumerInheritModelScopeHasBeenSet;
+}
+
+vector<AIGWAuthModelScopeItem> CloudNativeAPIGatewayLLMModelAPI::GetConsumerDirectModelScopes() const
+{
+    return m_consumerDirectModelScopes;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetConsumerDirectModelScopes(const vector<AIGWAuthModelScopeItem>& _consumerDirectModelScopes)
+{
+    m_consumerDirectModelScopes = _consumerDirectModelScopes;
+    m_consumerDirectModelScopesHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::ConsumerDirectModelScopesHasBeenSet() const
+{
+    return m_consumerDirectModelScopesHasBeenSet;
+}
+
+vector<AIGWAuthModelScopeItem> CloudNativeAPIGatewayLLMModelAPI::GetSecretKeyModelScopes() const
+{
+    return m_secretKeyModelScopes;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetSecretKeyModelScopes(const vector<AIGWAuthModelScopeItem>& _secretKeyModelScopes)
+{
+    m_secretKeyModelScopes = _secretKeyModelScopes;
+    m_secretKeyModelScopesHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::SecretKeyModelScopesHasBeenSet() const
+{
+    return m_secretKeyModelScopesHasBeenSet;
+}
+
+AIGWPriorityScheduleConfig CloudNativeAPIGatewayLLMModelAPI::GetPriorityScheduleConfig() const
+{
+    return m_priorityScheduleConfig;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetPriorityScheduleConfig(const AIGWPriorityScheduleConfig& _priorityScheduleConfig)
+{
+    m_priorityScheduleConfig = _priorityScheduleConfig;
+    m_priorityScheduleConfigHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::PriorityScheduleConfigHasBeenSet() const
+{
+    return m_priorityScheduleConfigHasBeenSet;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::GetPlaygroundAvailable() const
+{
+    return m_playgroundAvailable;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetPlaygroundAvailable(const bool& _playgroundAvailable)
+{
+    m_playgroundAvailable = _playgroundAvailable;
+    m_playgroundAvailableHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::PlaygroundAvailableHasBeenSet() const
+{
+    return m_playgroundAvailableHasBeenSet;
+}
+
+AIGWModelNameRoute CloudNativeAPIGatewayLLMModelAPI::GetModelNameRoute() const
+{
+    return m_modelNameRoute;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetModelNameRoute(const AIGWModelNameRoute& _modelNameRoute)
+{
+    m_modelNameRoute = _modelNameRoute;
+    m_modelNameRouteHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::ModelNameRouteHasBeenSet() const
+{
+    return m_modelNameRouteHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelAPI::GetStandardModelName() const
+{
+    return m_standardModelName;
+}
+
+void CloudNativeAPIGatewayLLMModelAPI::SetStandardModelName(const string& _standardModelName)
+{
+    m_standardModelName = _standardModelName;
+    m_standardModelNameHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelAPI::StandardModelNameHasBeenSet() const
+{
+    return m_standardModelNameHasBeenSet;
 }
 

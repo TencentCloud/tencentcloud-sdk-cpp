@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>是否开启敏感词路由</p>
-                     * @return Enabled <p>是否开启敏感词路由</p>
+                     * 获取<p>是否开启</p>
+                     * @return Enabled <p>是否开启</p>
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置<p>是否开启敏感词路由</p>
-                     * @param _enabled <p>是否开启敏感词路由</p>
+                     * 设置<p>是否开启</p>
+                     * @param _enabled <p>是否开启</p>
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取<p>目标模型服务列表</p>
-                     * @return ModelServiceRefs <p>目标模型服务列表</p>
+                     * 获取<p>命中敏感词后的候选模型服务 ID 列表。Enabled=true 时必填，成员不得为空或重复；数量受网关模型服务绑定配额限制。</p>
+                     * @return ModelServiceRefs <p>命中敏感词后的候选模型服务 ID 列表。Enabled=true 时必填，成员不得为空或重复；数量受网关模型服务绑定配额限制。</p>
                      * 
                      */
                     std::vector<std::string> GetModelServiceRefs() const;
 
                     /**
-                     * 设置<p>目标模型服务列表</p>
-                     * @param _modelServiceRefs <p>目标模型服务列表</p>
+                     * 设置<p>命中敏感词后的候选模型服务 ID 列表。Enabled=true 时必填，成员不得为空或重复；数量受网关模型服务绑定配额限制。</p>
+                     * @param _modelServiceRefs <p>命中敏感词后的候选模型服务 ID 列表。Enabled=true 时必填，成员不得为空或重复；数量受网关模型服务绑定配额限制。</p>
                      * 
                      */
                     void SetModelServiceRefs(const std::vector<std::string>& _modelServiceRefs);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool ModelServiceRefsHasBeenSet() const;
 
                     /**
-                     * 获取<p>目标模型服务名，查询的时候会填充</p>
-                     * @return ModelServiceNames <p>目标模型服务名，查询的时候会填充</p>
+                     * 获取<p>与 ModelServiceRefs 一一对应的模型服务名称列表，仅由查询接口返回；不作为请求路由配置。</p>
+                     * @return ModelServiceNames <p>与 ModelServiceRefs 一一对应的模型服务名称列表，仅由查询接口返回；不作为请求路由配置。</p>
                      * 
                      */
                     std::vector<std::string> GetModelServiceNames() const;
 
                     /**
-                     * 设置<p>目标模型服务名，查询的时候会填充</p>
-                     * @param _modelServiceNames <p>目标模型服务名，查询的时候会填充</p>
+                     * 设置<p>与 ModelServiceRefs 一一对应的模型服务名称列表，仅由查询接口返回；不作为请求路由配置。</p>
+                     * @param _modelServiceNames <p>与 ModelServiceRefs 一一对应的模型服务名称列表，仅由查询接口返回；不作为请求路由配置。</p>
                      * 
                      */
                     void SetModelServiceNames(const std::vector<std::string>& _modelServiceNames);
@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool WeightedConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型名称路由权重</p>
-                     * @return ModelNameConfig <p>模型名称路由权重</p>
+                     * 获取<p>按请求模型名称匹配目标模型服务的路由配置，在 SelectedTypes=[ModelName] 时使用。</p>
+                     * @return ModelNameConfig <p>按请求模型名称匹配目标模型服务的路由配置，在 SelectedTypes=[ModelName] 时使用。</p>
                      * 
                      */
                     std::vector<CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy> GetModelNameConfig() const;
 
                     /**
-                     * 设置<p>模型名称路由权重</p>
-                     * @param _modelNameConfig <p>模型名称路由权重</p>
+                     * 设置<p>按请求模型名称匹配目标模型服务的路由配置，在 SelectedTypes=[ModelName] 时使用。</p>
+                     * @param _modelNameConfig <p>按请求模型名称匹配目标模型服务的路由配置，在 SelectedTypes=[ModelName] 时使用。</p>
                      * 
                      */
                     void SetModelNameConfig(const std::vector<CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy>& _modelNameConfig);
@@ -174,22 +174,43 @@ namespace TencentCloud
                      */
                     bool ModelNameConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>敏感词路由单模型直选时的标准模型名称。仅在 Enabled=true、SelectedTypes 为空且 ModelServiceRefs 只有一个模型服务时可设置；使用 Weighted 或 ModelName 策略时应在相应配置条目中填写。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * @return StandardModelName <p>敏感词路由单模型直选时的标准模型名称。仅在 Enabled=true、SelectedTypes 为空且 ModelServiceRefs 只有一个模型服务时可设置；使用 Weighted 或 ModelName 策略时应在相应配置条目中填写。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * 
+                     */
+                    std::string GetStandardModelName() const;
+
+                    /**
+                     * 设置<p>敏感词路由单模型直选时的标准模型名称。仅在 Enabled=true、SelectedTypes 为空且 ModelServiceRefs 只有一个模型服务时可设置；使用 Weighted 或 ModelName 策略时应在相应配置条目中填写。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * @param _standardModelName <p>敏感词路由单模型直选时的标准模型名称。仅在 Enabled=true、SelectedTypes 为空且 ModelServiceRefs 只有一个模型服务时可设置；使用 Weighted 或 ModelName 策略时应在相应配置条目中填写。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * 
+                     */
+                    void SetStandardModelName(const std::string& _standardModelName);
+
+                    /**
+                     * 判断参数 StandardModelName 是否已赋值
+                     * @return StandardModelName 是否已赋值
+                     * 
+                     */
+                    bool StandardModelNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>是否开启敏感词路由</p>
+                     * <p>是否开启</p>
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * <p>目标模型服务列表</p>
+                     * <p>命中敏感词后的候选模型服务 ID 列表。Enabled=true 时必填，成员不得为空或重复；数量受网关模型服务绑定配额限制。</p>
                      */
                     std::vector<std::string> m_modelServiceRefs;
                     bool m_modelServiceRefsHasBeenSet;
 
                     /**
-                     * <p>目标模型服务名，查询的时候会填充</p>
+                     * <p>与 ModelServiceRefs 一一对应的模型服务名称列表，仅由查询接口返回；不作为请求路由配置。</p>
                      */
                     std::vector<std::string> m_modelServiceNames;
                     bool m_modelServiceNamesHasBeenSet;
@@ -207,10 +228,16 @@ namespace TencentCloud
                     bool m_weightedConfigHasBeenSet;
 
                     /**
-                     * <p>模型名称路由权重</p>
+                     * <p>按请求模型名称匹配目标模型服务的路由配置，在 SelectedTypes=[ModelName] 时使用。</p>
                      */
                     std::vector<CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy> m_modelNameConfig;
                     bool m_modelNameConfigHasBeenSet;
+
+                    /**
+                     * <p>敏感词路由单模型直选时的标准模型名称。仅在 Enabled=true、SelectedTypes 为空且 ModelServiceRefs 只有一个模型服务时可设置；使用 Weighted 或 ModelName 策略时应在相应配置条目中填写。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     */
+                    std::string m_standardModelName;
+                    bool m_standardModelNameHasBeenSet;
 
                 };
             }

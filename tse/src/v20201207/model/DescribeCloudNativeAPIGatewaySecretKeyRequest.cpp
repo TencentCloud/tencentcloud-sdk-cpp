@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeCloudNativeAPIGatewaySecretKeyRequest::DescribeCloudNativeAPIGatewaySecretKeyRequest() :
     m_gatewayIdHasBeenSet(false),
-    m_secretKeyIdHasBeenSet(false)
+    m_secretKeyIdHasBeenSet(false),
+    m_includeCreationInfoHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeCloudNativeAPIGatewaySecretKeyRequest::ToJsonString() const
         string key = "SecretKeyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_secretKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_includeCreationInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeCreationInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includeCreationInfo, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeCloudNativeAPIGatewaySecretKeyRequest::SetSecretKeyId(const string&
 bool DescribeCloudNativeAPIGatewaySecretKeyRequest::SecretKeyIdHasBeenSet() const
 {
     return m_secretKeyIdHasBeenSet;
+}
+
+bool DescribeCloudNativeAPIGatewaySecretKeyRequest::GetIncludeCreationInfo() const
+{
+    return m_includeCreationInfo;
+}
+
+void DescribeCloudNativeAPIGatewaySecretKeyRequest::SetIncludeCreationInfo(const bool& _includeCreationInfo)
+{
+    m_includeCreationInfo = _includeCreationInfo;
+    m_includeCreationInfoHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewaySecretKeyRequest::IncludeCreationInfoHasBeenSet() const
+{
+    return m_includeCreationInfoHasBeenSet;
 }
 
 

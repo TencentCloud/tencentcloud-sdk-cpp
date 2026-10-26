@@ -24,7 +24,8 @@ using namespace TencentCloud::Dbdc::V20201029::Model;
 using namespace std;
 
 DescribeDBCustomTaskStatusResponse::DescribeDBCustomTaskStatusResponse() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_resourceStatusSetHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome DescribeDBCustomTaskStatusResponse::Deserialize(const string
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResourceStatusSet") && !rsp["ResourceStatusSet"].IsNull())
+    {
+        if (!rsp["ResourceStatusSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResourceStatusSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ResourceStatusSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TaskResourceStatus item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceStatusSet.push_back(item);
+        }
+        m_resourceStatusSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ string DescribeDBCustomTaskStatusResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceStatusSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceStatusSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceStatusSet.begin(); itr != m_resourceStatusSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +146,16 @@ string DescribeDBCustomTaskStatusResponse::GetStatus() const
 bool DescribeDBCustomTaskStatusResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<TaskResourceStatus> DescribeDBCustomTaskStatusResponse::GetResourceStatusSet() const
+{
+    return m_resourceStatusSet;
+}
+
+bool DescribeDBCustomTaskStatusResponse::ResourceStatusSetHasBeenSet() const
+{
+    return m_resourceStatusSetHasBeenSet;
 }
 
 

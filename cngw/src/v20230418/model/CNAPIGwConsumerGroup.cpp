@@ -30,7 +30,8 @@ CNAPIGwConsumerGroup::CNAPIGwConsumerGroup() :
     m_bindCountHasBeenSet(false),
     m_syncStatusHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
-    m_syncedVersionHasBeenSet(false)
+    m_syncedVersionHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome CNAPIGwConsumerGroup::Deserialize(const rapidjson::Value &va
         m_syncedVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ExternalId") && !value["ExternalId"].IsNull())
+    {
+        if (!value["ExternalId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumerGroup.ExternalId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalId = string(value["ExternalId"].GetString());
+        m_externalIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void CNAPIGwConsumerGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "SyncedVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_syncedVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void CNAPIGwConsumerGroup::SetSyncedVersion(const string& _syncedVersion)
 bool CNAPIGwConsumerGroup::SyncedVersionHasBeenSet() const
 {
     return m_syncedVersionHasBeenSet;
+}
+
+string CNAPIGwConsumerGroup::GetExternalId() const
+{
+    return m_externalId;
+}
+
+void CNAPIGwConsumerGroup::SetExternalId(const string& _externalId)
+{
+    m_externalId = _externalId;
+    m_externalIdHasBeenSet = true;
+}
+
+bool CNAPIGwConsumerGroup::ExternalIdHasBeenSet() const
+{
+    return m_externalIdHasBeenSet;
 }
 

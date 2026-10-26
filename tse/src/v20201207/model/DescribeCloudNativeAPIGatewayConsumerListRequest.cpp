@@ -27,7 +27,11 @@ DescribeCloudNativeAPIGatewayConsumerListRequest::DescribeCloudNativeAPIGatewayC
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_originHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_syncSourceIdHasBeenSet(false),
+    m_withoutSyncSourceHasBeenSet(false)
 {
 }
 
@@ -76,6 +80,38 @@ string DescribeCloudNativeAPIGatewayConsumerListRequest::ToJsonString() const
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Origin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_origin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncSourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncSourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_syncSourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_withoutSyncSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WithoutSyncSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_withoutSyncSource, allocator);
     }
 
 
@@ -164,6 +200,70 @@ void DescribeCloudNativeAPIGatewayConsumerListRequest::SetResourceId(const strin
 bool DescribeCloudNativeAPIGatewayConsumerListRequest::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayConsumerListRequest::GetOrigin() const
+{
+    return m_origin;
+}
+
+void DescribeCloudNativeAPIGatewayConsumerListRequest::SetOrigin(const string& _origin)
+{
+    m_origin = _origin;
+    m_originHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayConsumerListRequest::OriginHasBeenSet() const
+{
+    return m_originHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayConsumerListRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeCloudNativeAPIGatewayConsumerListRequest::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayConsumerListRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayConsumerListRequest::GetSyncSourceId() const
+{
+    return m_syncSourceId;
+}
+
+void DescribeCloudNativeAPIGatewayConsumerListRequest::SetSyncSourceId(const string& _syncSourceId)
+{
+    m_syncSourceId = _syncSourceId;
+    m_syncSourceIdHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayConsumerListRequest::SyncSourceIdHasBeenSet() const
+{
+    return m_syncSourceIdHasBeenSet;
+}
+
+bool DescribeCloudNativeAPIGatewayConsumerListRequest::GetWithoutSyncSource() const
+{
+    return m_withoutSyncSource;
+}
+
+void DescribeCloudNativeAPIGatewayConsumerListRequest::SetWithoutSyncSource(const bool& _withoutSyncSource)
+{
+    m_withoutSyncSource = _withoutSyncSource;
+    m_withoutSyncSourceHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayConsumerListRequest::WithoutSyncSourceHasBeenSet() const
+{
+    return m_withoutSyncSourceHasBeenSet;
 }
 
 

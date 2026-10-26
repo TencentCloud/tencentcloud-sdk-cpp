@@ -250,6 +250,27 @@ namespace TencentCloud
                      */
                     bool RecommendPromptModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>新消息中断正在进行的消息</p>
+                     * @return EnableNewMessageInterrupt <p>新消息中断正在进行的消息</p>
+                     * 
+                     */
+                    bool GetEnableNewMessageInterrupt() const;
+
+                    /**
+                     * 设置<p>新消息中断正在进行的消息</p>
+                     * @param _enableNewMessageInterrupt <p>新消息中断正在进行的消息</p>
+                     * 
+                     */
+                    void SetEnableNewMessageInterrupt(const bool& _enableNewMessageInterrupt);
+
+                    /**
+                     * 判断参数 EnableNewMessageInterrupt 是否已赋值
+                     * @return EnableNewMessageInterrupt 是否已赋值
+                     * 
+                     */
+                    bool EnableNewMessageInterruptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +329,12 @@ namespace TencentCloud
                      */
                     int64_t m_recommendPromptMode;
                     bool m_recommendPromptModeHasBeenSet;
+
+                    /**
+                     * <p>新消息中断正在进行的消息</p>
+                     */
+                    bool m_enableNewMessageInterrupt;
+                    bool m_enableNewMessageInterruptHasBeenSet;
 
                 };
             }

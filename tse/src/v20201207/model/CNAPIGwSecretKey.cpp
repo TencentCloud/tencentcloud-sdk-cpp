@@ -21,33 +21,38 @@ using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
 CNAPIGwSecretKey::CNAPIGwSecretKey() :
-    m_secretKeyIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_secretTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_generateTypeHasBeenSet(false),
-    m_secretValueHasBeenSet(false),
-    m_kmsKeyNameHasBeenSet(false),
-    m_kmsKeyVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+    m_bindCountHasBeenSet(false),
     m_canBindHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false),
-    m_bindCountHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_generateTypeHasBeenSet(false),
     m_jWTCredentialConfigHasBeenSet(false),
+    m_kmsKeyNameHasBeenSet(false),
+    m_kmsKeyVersionHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_oAuthCredentialConfigHasBeenSet(false),
     m_oIDCCredentialConfigHasBeenSet(false),
     m_providerHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_secretKeyIdHasBeenSet(false),
+    m_secretTypeHasBeenSet(false),
+    m_secretValueHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_syncStatusHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false),
+    m_syncedVersionHasBeenSet(false),
     m_aKSKCredentialConfigHasBeenSet(false),
     m_cAMCredentialConfigHasBeenSet(false),
     m_bearerTokenCredentialConfigHasBeenSet(false),
     m_basicCredentialConfigHasBeenSet(false),
     m_customHeaderCredentialConfigHasBeenSet(false),
     m_queryParamCredentialConfigHasBeenSet(false),
-    m_syncStatusHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_syncedVersionHasBeenSet(false)
+    m_boundModelSecretKeysHasBeenSet(false),
+    m_boundConsumerSecretKeysHasBeenSet(false),
+    m_credentialGenerateTypeHasBeenSet(false),
+    m_creationSourceHasBeenSet(false),
+    m_batchIdHasBeenSet(false)
 {
 }
 
@@ -56,94 +61,14 @@ CoreInternalOutcome CNAPIGwSecretKey::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("SecretKeyId") && !value["SecretKeyId"].IsNull())
+    if (value.HasMember("BindCount") && !value["BindCount"].IsNull())
     {
-        if (!value["SecretKeyId"].IsString())
+        if (!value["BindCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SecretKeyId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.BindCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_secretKeyId = string(value["SecretKeyId"].GetString());
-        m_secretKeyIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("Name") && !value["Name"].IsNull())
-    {
-        if (!value["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
-    }
-
-    if (value.HasMember("SecretType") && !value["SecretType"].IsNull())
-    {
-        if (!value["SecretType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SecretType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_secretType = string(value["SecretType"].GetString());
-        m_secretTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("Status") && !value["Status"].IsNull())
-    {
-        if (!value["Status"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.Status` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = string(value["Status"].GetString());
-        m_statusHasBeenSet = true;
-    }
-
-    if (value.HasMember("GenerateType") && !value["GenerateType"].IsNull())
-    {
-        if (!value["GenerateType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.GenerateType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_generateType = string(value["GenerateType"].GetString());
-        m_generateTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("SecretValue") && !value["SecretValue"].IsNull())
-    {
-        if (!value["SecretValue"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SecretValue` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_secretValue = string(value["SecretValue"].GetString());
-        m_secretValueHasBeenSet = true;
-    }
-
-    if (value.HasMember("KmsKeyName") && !value["KmsKeyName"].IsNull())
-    {
-        if (!value["KmsKeyName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.KmsKeyName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_kmsKeyName = string(value["KmsKeyName"].GetString());
-        m_kmsKeyNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("KmsKeyVersion") && !value["KmsKeyVersion"].IsNull())
-    {
-        if (!value["KmsKeyVersion"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.KmsKeyVersion` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_kmsKeyVersion = string(value["KmsKeyVersion"].GetString());
-        m_kmsKeyVersionHasBeenSet = true;
-    }
-
-    if (value.HasMember("Description") && !value["Description"].IsNull())
-    {
-        if (!value["Description"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.Description` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_description = string(value["Description"].GetString());
-        m_descriptionHasBeenSet = true;
+        m_bindCount = value["BindCount"].GetUint64();
+        m_bindCountHasBeenSet = true;
     }
 
     if (value.HasMember("CanBind") && !value["CanBind"].IsNull())
@@ -166,34 +91,24 @@ CoreInternalOutcome CNAPIGwSecretKey::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    if (value.HasMember("Description") && !value["Description"].IsNull())
     {
-        if (!value["ModifyTime"].IsString())
+        if (!value["Description"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.Description` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_modifyTime = string(value["ModifyTime"].GetString());
-        m_modifyTimeHasBeenSet = true;
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
     }
 
-    if (value.HasMember("BindCount") && !value["BindCount"].IsNull())
+    if (value.HasMember("GenerateType") && !value["GenerateType"].IsNull())
     {
-        if (!value["BindCount"].IsUint64())
+        if (!value["GenerateType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.BindCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.GenerateType` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_bindCount = value["BindCount"].GetUint64();
-        m_bindCountHasBeenSet = true;
-    }
-
-    if (value.HasMember("ResourceType") && !value["ResourceType"].IsNull())
-    {
-        if (!value["ResourceType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_resourceType = string(value["ResourceType"].GetString());
-        m_resourceTypeHasBeenSet = true;
+        m_generateType = string(value["GenerateType"].GetString());
+        m_generateTypeHasBeenSet = true;
     }
 
     if (value.HasMember("JWTCredentialConfig") && !value["JWTCredentialConfig"].IsNull())
@@ -211,6 +126,46 @@ CoreInternalOutcome CNAPIGwSecretKey::Deserialize(const rapidjson::Value &value)
         }
 
         m_jWTCredentialConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("KmsKeyName") && !value["KmsKeyName"].IsNull())
+    {
+        if (!value["KmsKeyName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.KmsKeyName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsKeyName = string(value["KmsKeyName"].GetString());
+        m_kmsKeyNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("KmsKeyVersion") && !value["KmsKeyVersion"].IsNull())
+    {
+        if (!value["KmsKeyVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.KmsKeyVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsKeyVersion = string(value["KmsKeyVersion"].GetString());
+        m_kmsKeyVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
     }
 
     if (value.HasMember("OAuthCredentialConfig") && !value["OAuthCredentialConfig"].IsNull())
@@ -255,6 +210,86 @@ CoreInternalOutcome CNAPIGwSecretKey::Deserialize(const rapidjson::Value &value)
         }
         m_provider = string(value["Provider"].GetString());
         m_providerHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceType") && !value["ResourceType"].IsNull())
+    {
+        if (!value["ResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceType = string(value["ResourceType"].GetString());
+        m_resourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretKeyId") && !value["SecretKeyId"].IsNull())
+    {
+        if (!value["SecretKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SecretKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretKeyId = string(value["SecretKeyId"].GetString());
+        m_secretKeyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretType") && !value["SecretType"].IsNull())
+    {
+        if (!value["SecretType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SecretType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretType = string(value["SecretType"].GetString());
+        m_secretTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretValue") && !value["SecretValue"].IsNull())
+    {
+        if (!value["SecretValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SecretValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretValue = string(value["SecretValue"].GetString());
+        m_secretValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncStatus") && !value["SyncStatus"].IsNull())
+    {
+        if (!value["SyncStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SyncStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncStatus = string(value["SyncStatus"].GetString());
+        m_syncStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    {
+        if (!value["SourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceType = string(value["SourceType"].GetString());
+        m_sourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncedVersion") && !value["SyncedVersion"].IsNull())
+    {
+        if (!value["SyncedVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SyncedVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncedVersion = string(value["SyncedVersion"].GetString());
+        m_syncedVersionHasBeenSet = true;
     }
 
     if (value.HasMember("AKSKCredentialConfig") && !value["AKSKCredentialConfig"].IsNull())
@@ -359,34 +394,74 @@ CoreInternalOutcome CNAPIGwSecretKey::Deserialize(const rapidjson::Value &value)
         m_queryParamCredentialConfigHasBeenSet = true;
     }
 
-    if (value.HasMember("SyncStatus") && !value["SyncStatus"].IsNull())
+    if (value.HasMember("BoundModelSecretKeys") && !value["BoundModelSecretKeys"].IsNull())
     {
-        if (!value["SyncStatus"].IsString())
+        if (!value["BoundModelSecretKeys"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.BoundModelSecretKeys` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BoundModelSecretKeys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SyncStatus` IsString=false incorrectly").SetRequestId(requestId));
+            AIGWSimpleSecretKey item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_boundModelSecretKeys.push_back(item);
         }
-        m_syncStatus = string(value["SyncStatus"].GetString());
-        m_syncStatusHasBeenSet = true;
+        m_boundModelSecretKeysHasBeenSet = true;
     }
 
-    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    if (value.HasMember("BoundConsumerSecretKeys") && !value["BoundConsumerSecretKeys"].IsNull())
     {
-        if (!value["SourceType"].IsString())
+        if (!value["BoundConsumerSecretKeys"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.BoundConsumerSecretKeys` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BoundConsumerSecretKeys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SourceType` IsString=false incorrectly").SetRequestId(requestId));
+            AIGWSimpleSecretKey item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_boundConsumerSecretKeys.push_back(item);
         }
-        m_sourceType = string(value["SourceType"].GetString());
-        m_sourceTypeHasBeenSet = true;
+        m_boundConsumerSecretKeysHasBeenSet = true;
     }
 
-    if (value.HasMember("SyncedVersion") && !value["SyncedVersion"].IsNull())
+    if (value.HasMember("CredentialGenerateType") && !value["CredentialGenerateType"].IsNull())
     {
-        if (!value["SyncedVersion"].IsString())
+        if (!value["CredentialGenerateType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.SyncedVersion` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.CredentialGenerateType` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_syncedVersion = string(value["SyncedVersion"].GetString());
-        m_syncedVersionHasBeenSet = true;
+        m_credentialGenerateType = string(value["CredentialGenerateType"].GetString());
+        m_credentialGenerateTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreationSource") && !value["CreationSource"].IsNull())
+    {
+        if (!value["CreationSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.CreationSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creationSource = string(value["CreationSource"].GetString());
+        m_creationSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("BatchId") && !value["BatchId"].IsNull())
+    {
+        if (!value["BatchId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.BatchId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_batchId = string(value["BatchId"].GetString());
+        m_batchIdHasBeenSet = true;
     }
 
 
@@ -396,76 +471,12 @@ CoreInternalOutcome CNAPIGwSecretKey::Deserialize(const rapidjson::Value &value)
 void CNAPIGwSecretKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_secretKeyIdHasBeenSet)
+    if (m_bindCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SecretKeyId";
+        string key = "BindCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_secretKeyId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_secretTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SecretType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_secretType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_generateTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GenerateType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_generateType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_secretValueHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SecretValue";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_secretValue.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_kmsKeyNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "KmsKeyName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_kmsKeyName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_kmsKeyVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "KmsKeyVersion";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_kmsKeyVersion.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_descriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Description";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_bindCount, allocator);
     }
 
     if (m_canBindHasBeenSet)
@@ -484,28 +495,20 @@ void CNAPIGwSecretKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_modifyTimeHasBeenSet)
+    if (m_descriptionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ModifyTime";
+        string key = "Description";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_bindCountHasBeenSet)
+    if (m_generateTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BindCount";
+        string key = "GenerateType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_bindCount, allocator);
-    }
-
-    if (m_resourceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_generateType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jWTCredentialConfigHasBeenSet)
@@ -515,6 +518,38 @@ void CNAPIGwSecretKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_jWTCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_kmsKeyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKeyName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKeyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kmsKeyVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKeyVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsKeyVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_oAuthCredentialConfigHasBeenSet)
@@ -541,6 +576,70 @@ void CNAPIGwSecretKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Provider";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_provider.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncedVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncedVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncedVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aKSKCredentialConfigHasBeenSet)
@@ -597,175 +696,77 @@ void CNAPIGwSecretKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         m_queryParamCredentialConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_syncStatusHasBeenSet)
+    if (m_boundModelSecretKeysHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SyncStatus";
+        string key = "BoundModelSecretKeys";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_syncStatus.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_boundModelSecretKeys.begin(); itr != m_boundModelSecretKeys.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
-    if (m_sourceTypeHasBeenSet)
+    if (m_boundConsumerSecretKeysHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceType";
+        string key = "BoundConsumerSecretKeys";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_boundConsumerSecretKeys.begin(); itr != m_boundConsumerSecretKeys.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
-    if (m_syncedVersionHasBeenSet)
+    if (m_credentialGenerateTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SyncedVersion";
+        string key = "CredentialGenerateType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_syncedVersion.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_credentialGenerateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreationSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creationSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_batchIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
     }
 
 }
 
 
-string CNAPIGwSecretKey::GetSecretKeyId() const
+uint64_t CNAPIGwSecretKey::GetBindCount() const
 {
-    return m_secretKeyId;
+    return m_bindCount;
 }
 
-void CNAPIGwSecretKey::SetSecretKeyId(const string& _secretKeyId)
+void CNAPIGwSecretKey::SetBindCount(const uint64_t& _bindCount)
 {
-    m_secretKeyId = _secretKeyId;
-    m_secretKeyIdHasBeenSet = true;
+    m_bindCount = _bindCount;
+    m_bindCountHasBeenSet = true;
 }
 
-bool CNAPIGwSecretKey::SecretKeyIdHasBeenSet() const
+bool CNAPIGwSecretKey::BindCountHasBeenSet() const
 {
-    return m_secretKeyIdHasBeenSet;
-}
-
-string CNAPIGwSecretKey::GetName() const
-{
-    return m_name;
-}
-
-void CNAPIGwSecretKey::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool CNAPIGwSecretKey::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
-}
-
-string CNAPIGwSecretKey::GetSecretType() const
-{
-    return m_secretType;
-}
-
-void CNAPIGwSecretKey::SetSecretType(const string& _secretType)
-{
-    m_secretType = _secretType;
-    m_secretTypeHasBeenSet = true;
-}
-
-bool CNAPIGwSecretKey::SecretTypeHasBeenSet() const
-{
-    return m_secretTypeHasBeenSet;
-}
-
-string CNAPIGwSecretKey::GetStatus() const
-{
-    return m_status;
-}
-
-void CNAPIGwSecretKey::SetStatus(const string& _status)
-{
-    m_status = _status;
-    m_statusHasBeenSet = true;
-}
-
-bool CNAPIGwSecretKey::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
-string CNAPIGwSecretKey::GetGenerateType() const
-{
-    return m_generateType;
-}
-
-void CNAPIGwSecretKey::SetGenerateType(const string& _generateType)
-{
-    m_generateType = _generateType;
-    m_generateTypeHasBeenSet = true;
-}
-
-bool CNAPIGwSecretKey::GenerateTypeHasBeenSet() const
-{
-    return m_generateTypeHasBeenSet;
-}
-
-string CNAPIGwSecretKey::GetSecretValue() const
-{
-    return m_secretValue;
-}
-
-void CNAPIGwSecretKey::SetSecretValue(const string& _secretValue)
-{
-    m_secretValue = _secretValue;
-    m_secretValueHasBeenSet = true;
-}
-
-bool CNAPIGwSecretKey::SecretValueHasBeenSet() const
-{
-    return m_secretValueHasBeenSet;
-}
-
-string CNAPIGwSecretKey::GetKmsKeyName() const
-{
-    return m_kmsKeyName;
-}
-
-void CNAPIGwSecretKey::SetKmsKeyName(const string& _kmsKeyName)
-{
-    m_kmsKeyName = _kmsKeyName;
-    m_kmsKeyNameHasBeenSet = true;
-}
-
-bool CNAPIGwSecretKey::KmsKeyNameHasBeenSet() const
-{
-    return m_kmsKeyNameHasBeenSet;
-}
-
-string CNAPIGwSecretKey::GetKmsKeyVersion() const
-{
-    return m_kmsKeyVersion;
-}
-
-void CNAPIGwSecretKey::SetKmsKeyVersion(const string& _kmsKeyVersion)
-{
-    m_kmsKeyVersion = _kmsKeyVersion;
-    m_kmsKeyVersionHasBeenSet = true;
-}
-
-bool CNAPIGwSecretKey::KmsKeyVersionHasBeenSet() const
-{
-    return m_kmsKeyVersionHasBeenSet;
-}
-
-string CNAPIGwSecretKey::GetDescription() const
-{
-    return m_description;
-}
-
-void CNAPIGwSecretKey::SetDescription(const string& _description)
-{
-    m_description = _description;
-    m_descriptionHasBeenSet = true;
-}
-
-bool CNAPIGwSecretKey::DescriptionHasBeenSet() const
-{
-    return m_descriptionHasBeenSet;
+    return m_bindCountHasBeenSet;
 }
 
 bool CNAPIGwSecretKey::GetCanBind() const
@@ -800,52 +801,36 @@ bool CNAPIGwSecretKey::CreateTimeHasBeenSet() const
     return m_createTimeHasBeenSet;
 }
 
-string CNAPIGwSecretKey::GetModifyTime() const
+string CNAPIGwSecretKey::GetDescription() const
 {
-    return m_modifyTime;
+    return m_description;
 }
 
-void CNAPIGwSecretKey::SetModifyTime(const string& _modifyTime)
+void CNAPIGwSecretKey::SetDescription(const string& _description)
 {
-    m_modifyTime = _modifyTime;
-    m_modifyTimeHasBeenSet = true;
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
 }
 
-bool CNAPIGwSecretKey::ModifyTimeHasBeenSet() const
+bool CNAPIGwSecretKey::DescriptionHasBeenSet() const
 {
-    return m_modifyTimeHasBeenSet;
+    return m_descriptionHasBeenSet;
 }
 
-uint64_t CNAPIGwSecretKey::GetBindCount() const
+string CNAPIGwSecretKey::GetGenerateType() const
 {
-    return m_bindCount;
+    return m_generateType;
 }
 
-void CNAPIGwSecretKey::SetBindCount(const uint64_t& _bindCount)
+void CNAPIGwSecretKey::SetGenerateType(const string& _generateType)
 {
-    m_bindCount = _bindCount;
-    m_bindCountHasBeenSet = true;
+    m_generateType = _generateType;
+    m_generateTypeHasBeenSet = true;
 }
 
-bool CNAPIGwSecretKey::BindCountHasBeenSet() const
+bool CNAPIGwSecretKey::GenerateTypeHasBeenSet() const
 {
-    return m_bindCountHasBeenSet;
-}
-
-string CNAPIGwSecretKey::GetResourceType() const
-{
-    return m_resourceType;
-}
-
-void CNAPIGwSecretKey::SetResourceType(const string& _resourceType)
-{
-    m_resourceType = _resourceType;
-    m_resourceTypeHasBeenSet = true;
-}
-
-bool CNAPIGwSecretKey::ResourceTypeHasBeenSet() const
-{
-    return m_resourceTypeHasBeenSet;
+    return m_generateTypeHasBeenSet;
 }
 
 AIGWJWTCredentialConfig CNAPIGwSecretKey::GetJWTCredentialConfig() const
@@ -862,6 +847,70 @@ void CNAPIGwSecretKey::SetJWTCredentialConfig(const AIGWJWTCredentialConfig& _jW
 bool CNAPIGwSecretKey::JWTCredentialConfigHasBeenSet() const
 {
     return m_jWTCredentialConfigHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetKmsKeyName() const
+{
+    return m_kmsKeyName;
+}
+
+void CNAPIGwSecretKey::SetKmsKeyName(const string& _kmsKeyName)
+{
+    m_kmsKeyName = _kmsKeyName;
+    m_kmsKeyNameHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::KmsKeyNameHasBeenSet() const
+{
+    return m_kmsKeyNameHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetKmsKeyVersion() const
+{
+    return m_kmsKeyVersion;
+}
+
+void CNAPIGwSecretKey::SetKmsKeyVersion(const string& _kmsKeyVersion)
+{
+    m_kmsKeyVersion = _kmsKeyVersion;
+    m_kmsKeyVersionHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::KmsKeyVersionHasBeenSet() const
+{
+    return m_kmsKeyVersionHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void CNAPIGwSecretKey::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetName() const
+{
+    return m_name;
+}
+
+void CNAPIGwSecretKey::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 AIGWOAuthCredentialConfig CNAPIGwSecretKey::GetOAuthCredentialConfig() const
@@ -910,6 +959,134 @@ void CNAPIGwSecretKey::SetProvider(const string& _provider)
 bool CNAPIGwSecretKey::ProviderHasBeenSet() const
 {
     return m_providerHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void CNAPIGwSecretKey::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetSecretKeyId() const
+{
+    return m_secretKeyId;
+}
+
+void CNAPIGwSecretKey::SetSecretKeyId(const string& _secretKeyId)
+{
+    m_secretKeyId = _secretKeyId;
+    m_secretKeyIdHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::SecretKeyIdHasBeenSet() const
+{
+    return m_secretKeyIdHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetSecretType() const
+{
+    return m_secretType;
+}
+
+void CNAPIGwSecretKey::SetSecretType(const string& _secretType)
+{
+    m_secretType = _secretType;
+    m_secretTypeHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::SecretTypeHasBeenSet() const
+{
+    return m_secretTypeHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetSecretValue() const
+{
+    return m_secretValue;
+}
+
+void CNAPIGwSecretKey::SetSecretValue(const string& _secretValue)
+{
+    m_secretValue = _secretValue;
+    m_secretValueHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::SecretValueHasBeenSet() const
+{
+    return m_secretValueHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetStatus() const
+{
+    return m_status;
+}
+
+void CNAPIGwSecretKey::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetSyncStatus() const
+{
+    return m_syncStatus;
+}
+
+void CNAPIGwSecretKey::SetSyncStatus(const string& _syncStatus)
+{
+    m_syncStatus = _syncStatus;
+    m_syncStatusHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::SyncStatusHasBeenSet() const
+{
+    return m_syncStatusHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void CNAPIGwSecretKey::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetSyncedVersion() const
+{
+    return m_syncedVersion;
+}
+
+void CNAPIGwSecretKey::SetSyncedVersion(const string& _syncedVersion)
+{
+    m_syncedVersion = _syncedVersion;
+    m_syncedVersionHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::SyncedVersionHasBeenSet() const
+{
+    return m_syncedVersionHasBeenSet;
 }
 
 AIGWAKSKCredentialConfig CNAPIGwSecretKey::GetAKSKCredentialConfig() const
@@ -1008,51 +1185,83 @@ bool CNAPIGwSecretKey::QueryParamCredentialConfigHasBeenSet() const
     return m_queryParamCredentialConfigHasBeenSet;
 }
 
-string CNAPIGwSecretKey::GetSyncStatus() const
+vector<AIGWSimpleSecretKey> CNAPIGwSecretKey::GetBoundModelSecretKeys() const
 {
-    return m_syncStatus;
+    return m_boundModelSecretKeys;
 }
 
-void CNAPIGwSecretKey::SetSyncStatus(const string& _syncStatus)
+void CNAPIGwSecretKey::SetBoundModelSecretKeys(const vector<AIGWSimpleSecretKey>& _boundModelSecretKeys)
 {
-    m_syncStatus = _syncStatus;
-    m_syncStatusHasBeenSet = true;
+    m_boundModelSecretKeys = _boundModelSecretKeys;
+    m_boundModelSecretKeysHasBeenSet = true;
 }
 
-bool CNAPIGwSecretKey::SyncStatusHasBeenSet() const
+bool CNAPIGwSecretKey::BoundModelSecretKeysHasBeenSet() const
 {
-    return m_syncStatusHasBeenSet;
+    return m_boundModelSecretKeysHasBeenSet;
 }
 
-string CNAPIGwSecretKey::GetSourceType() const
+vector<AIGWSimpleSecretKey> CNAPIGwSecretKey::GetBoundConsumerSecretKeys() const
 {
-    return m_sourceType;
+    return m_boundConsumerSecretKeys;
 }
 
-void CNAPIGwSecretKey::SetSourceType(const string& _sourceType)
+void CNAPIGwSecretKey::SetBoundConsumerSecretKeys(const vector<AIGWSimpleSecretKey>& _boundConsumerSecretKeys)
 {
-    m_sourceType = _sourceType;
-    m_sourceTypeHasBeenSet = true;
+    m_boundConsumerSecretKeys = _boundConsumerSecretKeys;
+    m_boundConsumerSecretKeysHasBeenSet = true;
 }
 
-bool CNAPIGwSecretKey::SourceTypeHasBeenSet() const
+bool CNAPIGwSecretKey::BoundConsumerSecretKeysHasBeenSet() const
 {
-    return m_sourceTypeHasBeenSet;
+    return m_boundConsumerSecretKeysHasBeenSet;
 }
 
-string CNAPIGwSecretKey::GetSyncedVersion() const
+string CNAPIGwSecretKey::GetCredentialGenerateType() const
 {
-    return m_syncedVersion;
+    return m_credentialGenerateType;
 }
 
-void CNAPIGwSecretKey::SetSyncedVersion(const string& _syncedVersion)
+void CNAPIGwSecretKey::SetCredentialGenerateType(const string& _credentialGenerateType)
 {
-    m_syncedVersion = _syncedVersion;
-    m_syncedVersionHasBeenSet = true;
+    m_credentialGenerateType = _credentialGenerateType;
+    m_credentialGenerateTypeHasBeenSet = true;
 }
 
-bool CNAPIGwSecretKey::SyncedVersionHasBeenSet() const
+bool CNAPIGwSecretKey::CredentialGenerateTypeHasBeenSet() const
 {
-    return m_syncedVersionHasBeenSet;
+    return m_credentialGenerateTypeHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetCreationSource() const
+{
+    return m_creationSource;
+}
+
+void CNAPIGwSecretKey::SetCreationSource(const string& _creationSource)
+{
+    m_creationSource = _creationSource;
+    m_creationSourceHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::CreationSourceHasBeenSet() const
+{
+    return m_creationSourceHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetBatchId() const
+{
+    return m_batchId;
+}
+
+void CNAPIGwSecretKey::SetBatchId(const string& _batchId)
+{
+    m_batchId = _batchId;
+    m_batchIdHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::BatchIdHasBeenSet() const
+{
+    return m_batchIdHasBeenSet;
 }
 

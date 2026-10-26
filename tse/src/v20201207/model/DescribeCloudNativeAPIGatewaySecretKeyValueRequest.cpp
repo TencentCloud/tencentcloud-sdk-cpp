@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeCloudNativeAPIGatewaySecretKeyValueRequest::DescribeCloudNativeAPIGatewaySecretKeyValueRequest() :
     m_gatewayIdHasBeenSet(false),
-    m_secretKeyIdHasBeenSet(false)
+    m_secretKeyIdHasBeenSet(false),
+    m_secretValueTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeCloudNativeAPIGatewaySecretKeyValueRequest::ToJsonString() const
         string key = "SecretKeyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_secretKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretValueTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretValueType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretValueType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeCloudNativeAPIGatewaySecretKeyValueRequest::SetSecretKeyId(const st
 bool DescribeCloudNativeAPIGatewaySecretKeyValueRequest::SecretKeyIdHasBeenSet() const
 {
     return m_secretKeyIdHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewaySecretKeyValueRequest::GetSecretValueType() const
+{
+    return m_secretValueType;
+}
+
+void DescribeCloudNativeAPIGatewaySecretKeyValueRequest::SetSecretValueType(const string& _secretValueType)
+{
+    m_secretValueType = _secretValueType;
+    m_secretValueTypeHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewaySecretKeyValueRequest::SecretValueTypeHasBeenSet() const
+{
+    return m_secretValueTypeHasBeenSet;
 }
 
 

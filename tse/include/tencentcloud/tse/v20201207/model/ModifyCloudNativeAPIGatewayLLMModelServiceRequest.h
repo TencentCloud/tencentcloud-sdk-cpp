@@ -27,6 +27,8 @@
 #include <tencentcloud/tse/v20201207/model/AIGWModelRewriteRule.h>
 #include <tencentcloud/tse/v20201207/model/KeyValue.h>
 #include <tencentcloud/tse/v20201207/model/AIGWLoadBalanceConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWLengthLimitConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWSmartBalanceConfig.h>
 
 
 namespace TencentCloud
@@ -678,6 +680,48 @@ namespace TencentCloud
                      */
                     bool LoadBalanceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>内容长度限制配置</p>
+                     * @return LengthLimitConfig <p>内容长度限制配置</p>
+                     * 
+                     */
+                    AIGWLengthLimitConfig GetLengthLimitConfig() const;
+
+                    /**
+                     * 设置<p>内容长度限制配置</p>
+                     * @param _lengthLimitConfig <p>内容长度限制配置</p>
+                     * 
+                     */
+                    void SetLengthLimitConfig(const AIGWLengthLimitConfig& _lengthLimitConfig);
+
+                    /**
+                     * 判断参数 LengthLimitConfig 是否已赋值
+                     * @return LengthLimitConfig 是否已赋值
+                     * 
+                     */
+                    bool LengthLimitConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>智能负载均衡配置</p>
+                     * @return SmartBalance <p>智能负载均衡配置</p>
+                     * 
+                     */
+                    AIGWSmartBalanceConfig GetSmartBalance() const;
+
+                    /**
+                     * 设置<p>智能负载均衡配置</p>
+                     * @param _smartBalance <p>智能负载均衡配置</p>
+                     * 
+                     */
+                    void SetSmartBalance(const AIGWSmartBalanceConfig& _smartBalance);
+
+                    /**
+                     * 判断参数 SmartBalance 是否已赋值
+                     * @return SmartBalance 是否已赋值
+                     * 
+                     */
+                    bool SmartBalanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -859,6 +903,18 @@ namespace TencentCloud
                      */
                     AIGWLoadBalanceConfig m_loadBalanceConfig;
                     bool m_loadBalanceConfigHasBeenSet;
+
+                    /**
+                     * <p>内容长度限制配置</p>
+                     */
+                    AIGWLengthLimitConfig m_lengthLimitConfig;
+                    bool m_lengthLimitConfigHasBeenSet;
+
+                    /**
+                     * <p>智能负载均衡配置</p>
+                     */
+                    AIGWSmartBalanceConfig m_smartBalance;
+                    bool m_smartBalanceHasBeenSet;
 
                 };
             }

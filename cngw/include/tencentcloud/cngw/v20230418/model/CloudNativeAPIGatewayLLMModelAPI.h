@@ -36,6 +36,8 @@
 #include <tencentcloud/cngw/v20230418/model/AIGWSensitiveWordRoute.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWAuthModelScopeItem.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWConsumerModelScope.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWPriorityScheduleConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWModelNameRoute.h>
 
 
 namespace TencentCloud
@@ -583,6 +585,132 @@ namespace TencentCloud
                      */
                     bool ConsumerInheritModelScopeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>消费者模型范围</p>
+                     * @return ConsumerDirectModelScopes <p>消费者模型范围</p>
+                     * 
+                     */
+                    std::vector<AIGWAuthModelScopeItem> GetConsumerDirectModelScopes() const;
+
+                    /**
+                     * 设置<p>消费者模型范围</p>
+                     * @param _consumerDirectModelScopes <p>消费者模型范围</p>
+                     * 
+                     */
+                    void SetConsumerDirectModelScopes(const std::vector<AIGWAuthModelScopeItem>& _consumerDirectModelScopes);
+
+                    /**
+                     * 判断参数 ConsumerDirectModelScopes 是否已赋值
+                     * @return ConsumerDirectModelScopes 是否已赋值
+                     * 
+                     */
+                    bool ConsumerDirectModelScopesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消费者密钥模型范围</p>
+                     * @return SecretKeyModelScopes <p>消费者密钥模型范围</p>
+                     * 
+                     */
+                    std::vector<AIGWAuthModelScopeItem> GetSecretKeyModelScopes() const;
+
+                    /**
+                     * 设置<p>消费者密钥模型范围</p>
+                     * @param _secretKeyModelScopes <p>消费者密钥模型范围</p>
+                     * 
+                     */
+                    void SetSecretKeyModelScopes(const std::vector<AIGWAuthModelScopeItem>& _secretKeyModelScopes);
+
+                    /**
+                     * 判断参数 SecretKeyModelScopes 是否已赋值
+                     * @return SecretKeyModelScopes 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyModelScopesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>请求优先级配置</p>
+                     * @return PriorityScheduleConfig <p>请求优先级配置</p>
+                     * 
+                     */
+                    AIGWPriorityScheduleConfig GetPriorityScheduleConfig() const;
+
+                    /**
+                     * 设置<p>请求优先级配置</p>
+                     * @param _priorityScheduleConfig <p>请求优先级配置</p>
+                     * 
+                     */
+                    void SetPriorityScheduleConfig(const AIGWPriorityScheduleConfig& _priorityScheduleConfig);
+
+                    /**
+                     * 判断参数 PriorityScheduleConfig 是否已赋值
+                     * @return PriorityScheduleConfig 是否已赋值
+                     * 
+                     */
+                    bool PriorityScheduleConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型API是否支持Playground调试</p>
+                     * @return PlaygroundAvailable <p>模型API是否支持Playground调试</p>
+                     * 
+                     */
+                    bool GetPlaygroundAvailable() const;
+
+                    /**
+                     * 设置<p>模型API是否支持Playground调试</p>
+                     * @param _playgroundAvailable <p>模型API是否支持Playground调试</p>
+                     * 
+                     */
+                    void SetPlaygroundAvailable(const bool& _playgroundAvailable);
+
+                    /**
+                     * 判断参数 PlaygroundAvailable 是否已赋值
+                     * @return PlaygroundAvailable 是否已赋值
+                     * 
+                     */
+                    bool PlaygroundAvailableHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型 API 当前配置的入口模型名路由规则，根据请求体顶层 model 字段匹配 ModelNames 中的名称或别名；未配置时不启用该入口路由规则。</p>
+                     * @return ModelNameRoute <p>模型 API 当前配置的入口模型名路由规则，根据请求体顶层 model 字段匹配 ModelNames 中的名称或别名；未配置时不启用该入口路由规则。</p>
+                     * 
+                     */
+                    AIGWModelNameRoute GetModelNameRoute() const;
+
+                    /**
+                     * 设置<p>模型 API 当前配置的入口模型名路由规则，根据请求体顶层 model 字段匹配 ModelNames 中的名称或别名；未配置时不启用该入口路由规则。</p>
+                     * @param _modelNameRoute <p>模型 API 当前配置的入口模型名路由规则，根据请求体顶层 model 字段匹配 ModelNames 中的名称或别名；未配置时不启用该入口路由规则。</p>
+                     * 
+                     */
+                    void SetModelNameRoute(const AIGWModelNameRoute& _modelNameRoute);
+
+                    /**
+                     * 判断参数 ModelNameRoute 是否已赋值
+                     * @return ModelNameRoute 是否已赋值
+                     * 
+                     */
+                    bool ModelNameRouteHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单模型 API 当前配置的顶层标准模型名称，仅适用于其关联的 TIONE 模型服务；为空表示未配置。多模型场景的标准模型名称在各路由或降级条目中返回。</p>
+                     * @return StandardModelName <p>单模型 API 当前配置的顶层标准模型名称，仅适用于其关联的 TIONE 模型服务；为空表示未配置。多模型场景的标准模型名称在各路由或降级条目中返回。</p>
+                     * 
+                     */
+                    std::string GetStandardModelName() const;
+
+                    /**
+                     * 设置<p>单模型 API 当前配置的顶层标准模型名称，仅适用于其关联的 TIONE 模型服务；为空表示未配置。多模型场景的标准模型名称在各路由或降级条目中返回。</p>
+                     * @param _standardModelName <p>单模型 API 当前配置的顶层标准模型名称，仅适用于其关联的 TIONE 模型服务；为空表示未配置。多模型场景的标准模型名称在各路由或降级条目中返回。</p>
+                     * 
+                     */
+                    void SetStandardModelName(const std::string& _standardModelName);
+
+                    /**
+                     * 判断参数 StandardModelName 是否已赋值
+                     * @return StandardModelName 是否已赋值
+                     * 
+                     */
+                    bool StandardModelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -734,6 +862,42 @@ namespace TencentCloud
                      */
                     AIGWConsumerModelScope m_consumerInheritModelScope;
                     bool m_consumerInheritModelScopeHasBeenSet;
+
+                    /**
+                     * <p>消费者模型范围</p>
+                     */
+                    std::vector<AIGWAuthModelScopeItem> m_consumerDirectModelScopes;
+                    bool m_consumerDirectModelScopesHasBeenSet;
+
+                    /**
+                     * <p>消费者密钥模型范围</p>
+                     */
+                    std::vector<AIGWAuthModelScopeItem> m_secretKeyModelScopes;
+                    bool m_secretKeyModelScopesHasBeenSet;
+
+                    /**
+                     * <p>请求优先级配置</p>
+                     */
+                    AIGWPriorityScheduleConfig m_priorityScheduleConfig;
+                    bool m_priorityScheduleConfigHasBeenSet;
+
+                    /**
+                     * <p>模型API是否支持Playground调试</p>
+                     */
+                    bool m_playgroundAvailable;
+                    bool m_playgroundAvailableHasBeenSet;
+
+                    /**
+                     * <p>模型 API 当前配置的入口模型名路由规则，根据请求体顶层 model 字段匹配 ModelNames 中的名称或别名；未配置时不启用该入口路由规则。</p>
+                     */
+                    AIGWModelNameRoute m_modelNameRoute;
+                    bool m_modelNameRouteHasBeenSet;
+
+                    /**
+                     * <p>单模型 API 当前配置的顶层标准模型名称，仅适用于其关联的 TIONE 模型服务；为空表示未配置。多模型场景的标准模型名称在各路由或降级条目中返回。</p>
+                     */
+                    std::string m_standardModelName;
+                    bool m_standardModelNameHasBeenSet;
 
                 };
             }

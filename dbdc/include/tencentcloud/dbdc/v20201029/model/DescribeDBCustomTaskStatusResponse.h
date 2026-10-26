@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dbdc/v20201029/model/TaskResourceStatus.h>
 
 
 namespace TencentCloud
@@ -57,6 +58,20 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务所操作的每个资源的执行结果</p>
+                     * @return ResourceStatusSet <p>任务所操作的每个资源的执行结果</p>
+                     * 
+                     */
+                    std::vector<TaskResourceStatus> GetResourceStatusSet() const;
+
+                    /**
+                     * 判断参数 ResourceStatusSet 是否已赋值
+                     * @return ResourceStatusSet 是否已赋值
+                     * 
+                     */
+                    bool ResourceStatusSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +79,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>任务所操作的每个资源的执行结果</p>
+                     */
+                    std::vector<TaskResourceStatus> m_resourceStatusSet;
+                    bool m_resourceStatusSetHasBeenSet;
 
                 };
             }

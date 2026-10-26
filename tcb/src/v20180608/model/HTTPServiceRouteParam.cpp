@@ -24,6 +24,7 @@ HTTPServiceRouteParam::HTTPServiceRouteParam() :
     m_pathHasBeenSet(false),
     m_upstreamResourceTypeHasBeenSet(false),
     m_upstreamResourceNameHasBeenSet(false),
+    m_upstreamResourceVersionHasBeenSet(false),
     m_pathRewriteHasBeenSet(false),
     m_enableSafeDomainHasBeenSet(false),
     m_enableAuthHasBeenSet(false),
@@ -67,6 +68,16 @@ CoreInternalOutcome HTTPServiceRouteParam::Deserialize(const rapidjson::Value &v
         }
         m_upstreamResourceName = string(value["UpstreamResourceName"].GetString());
         m_upstreamResourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpstreamResourceVersion") && !value["UpstreamResourceVersion"].IsNull())
+    {
+        if (!value["UpstreamResourceVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPServiceRouteParam.UpstreamResourceVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_upstreamResourceVersion = string(value["UpstreamResourceVersion"].GetString());
+        m_upstreamResourceVersionHasBeenSet = true;
     }
 
     if (value.HasMember("PathRewrite") && !value["PathRewrite"].IsNull())
@@ -191,6 +202,14 @@ void HTTPServiceRouteParam::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_upstreamResourceName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_upstreamResourceVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamResourceVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_upstreamResourceVersion.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_pathRewriteHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -299,6 +318,22 @@ void HTTPServiceRouteParam::SetUpstreamResourceName(const string& _upstreamResou
 bool HTTPServiceRouteParam::UpstreamResourceNameHasBeenSet() const
 {
     return m_upstreamResourceNameHasBeenSet;
+}
+
+string HTTPServiceRouteParam::GetUpstreamResourceVersion() const
+{
+    return m_upstreamResourceVersion;
+}
+
+void HTTPServiceRouteParam::SetUpstreamResourceVersion(const string& _upstreamResourceVersion)
+{
+    m_upstreamResourceVersion = _upstreamResourceVersion;
+    m_upstreamResourceVersionHasBeenSet = true;
+}
+
+bool HTTPServiceRouteParam::UpstreamResourceVersionHasBeenSet() const
+{
+    return m_upstreamResourceVersionHasBeenSet;
 }
 
 HTTPServicePathRewrite HTTPServiceRouteParam::GetPathRewrite() const

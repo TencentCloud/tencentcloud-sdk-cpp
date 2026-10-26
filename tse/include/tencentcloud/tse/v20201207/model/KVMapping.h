@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取key
-                     * @return Key key
+                     * 获取键值映射的键
+                     * @return Key 键值映射的键
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置key
-                     * @param _key key
+                     * 设置键值映射的键
+                     * @param _key 键值映射的键
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取value
-                     * @return Value value
+                     * 获取键值映射的值
+                     * @return Value 键值映射的值
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置value
-                     * @param _value value
+                     * 设置键值映射的值
+                     * @param _value 键值映射的值
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * key
+                     * 键值映射的键
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * value
+                     * 键值映射的值
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

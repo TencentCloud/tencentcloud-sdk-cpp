@@ -38,7 +38,8 @@ ModifyVulScanPeriodicRequest::ModifyVulScanPeriodicRequest() :
     m_allowSyncHasBeenSet(false),
     m_enableSyncHasBeenSet(false),
     m_syncToHasBeenSet(false),
-    m_tagIdsHasBeenSet(false)
+    m_tagIdsHasBeenSet(false),
+    m_preferCloudSourceHasBeenSet(false)
 {
 }
 
@@ -210,6 +211,14 @@ string ModifyVulScanPeriodicRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_preferCloudSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreferCloudSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_preferCloudSource, allocator);
     }
 
 
@@ -474,6 +483,22 @@ void ModifyVulScanPeriodicRequest::SetTagIds(const vector<uint64_t>& _tagIds)
 bool ModifyVulScanPeriodicRequest::TagIdsHasBeenSet() const
 {
     return m_tagIdsHasBeenSet;
+}
+
+bool ModifyVulScanPeriodicRequest::GetPreferCloudSource() const
+{
+    return m_preferCloudSource;
+}
+
+void ModifyVulScanPeriodicRequest::SetPreferCloudSource(const bool& _preferCloudSource)
+{
+    m_preferCloudSource = _preferCloudSource;
+    m_preferCloudSourceHasBeenSet = true;
+}
+
+bool ModifyVulScanPeriodicRequest::PreferCloudSourceHasBeenSet() const
+{
+    return m_preferCloudSourceHasBeenSet;
 }
 
 

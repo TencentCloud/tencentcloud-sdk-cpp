@@ -28,7 +28,9 @@ CosParam::CosParam() :
     m_aggregateIntervalHasBeenSet(false),
     m_formatOutputTypeHasBeenSet(false),
     m_objectKeyPrefixHasBeenSet(false),
-    m_directoryTimeFormatHasBeenSet(false)
+    m_directoryTimeFormatHasBeenSet(false),
+    m_timezoneHasBeenSet(false),
+    m_sourceDataFormatHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome CosParam::Deserialize(const rapidjson::Value &value)
         m_directoryTimeFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("Timezone") && !value["Timezone"].IsNull())
+    {
+        if (!value["Timezone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosParam.Timezone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timezone = string(value["Timezone"].GetString());
+        m_timezoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceDataFormat") && !value["SourceDataFormat"].IsNull())
+    {
+        if (!value["SourceDataFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosParam.SourceDataFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceDataFormat = string(value["SourceDataFormat"].GetString());
+        m_sourceDataFormatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void CosParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DirectoryTimeFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_directoryTimeFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timezoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timezone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timezone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceDataFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceDataFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceDataFormat.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void CosParam::SetDirectoryTimeFormat(const string& _directoryTimeFormat)
 bool CosParam::DirectoryTimeFormatHasBeenSet() const
 {
     return m_directoryTimeFormatHasBeenSet;
+}
+
+string CosParam::GetTimezone() const
+{
+    return m_timezone;
+}
+
+void CosParam::SetTimezone(const string& _timezone)
+{
+    m_timezone = _timezone;
+    m_timezoneHasBeenSet = true;
+}
+
+bool CosParam::TimezoneHasBeenSet() const
+{
+    return m_timezoneHasBeenSet;
+}
+
+string CosParam::GetSourceDataFormat() const
+{
+    return m_sourceDataFormat;
+}
+
+void CosParam::SetSourceDataFormat(const string& _sourceDataFormat)
+{
+    m_sourceDataFormat = _sourceDataFormat;
+    m_sourceDataFormatHasBeenSet = true;
+}
+
+bool CosParam::SourceDataFormatHasBeenSet() const
+{
+    return m_sourceDataFormatHasBeenSet;
 }
 

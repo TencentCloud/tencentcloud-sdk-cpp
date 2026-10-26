@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>
-                     * @return ExceedAction <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>
+                     * 获取<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>
+                     * @return ExceedAction <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>
                      * 
                      */
                     std::string GetExceedAction() const;
 
                     /**
-                     * 设置<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>
-                     * @param _exceedAction <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>
+                     * 设置<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>
+                     * @param _exceedAction <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>
                      * 
                      */
                     void SetExceedAction(const std::string& _exceedAction);
@@ -318,6 +318,262 @@ namespace TencentCloud
                      * 
                      */
                     bool CacheHitStatHasBeenSet() const;
+
+                    /**
+                     * 获取<p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>
+                     * @return ExceedPercentage <p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>
+                     * 
+                     */
+                    uint64_t GetExceedPercentage() const;
+
+                    /**
+                     * 设置<p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>
+                     * @param _exceedPercentage <p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>
+                     * 
+                     */
+                    void SetExceedPercentage(const uint64_t& _exceedPercentage);
+
+                    /**
+                     * 判断参数 ExceedPercentage 是否已赋值
+                     * @return ExceedPercentage 是否已赋值
+                     * 
+                     */
+                    bool ExceedPercentageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>
+                     * @return SetExceedPercentage <p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>
+                     * 
+                     */
+                    bool GetSetExceedPercentage() const;
+
+                    /**
+                     * 设置<p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>
+                     * @param _setExceedPercentage <p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>
+                     * 
+                     */
+                    void SetSetExceedPercentage(const bool& _setExceedPercentage);
+
+                    /**
+                     * 判断参数 SetExceedPercentage 是否已赋值
+                     * @return SetExceedPercentage 是否已赋值
+                     * 
+                     */
+                    bool SetExceedPercentageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Consumer粒度某资源对象的配额范围，支持：全部模型服务（all）、指定模型服务（specified）</p><p>枚举值：</p><ul><li>All： 全部</li><li>Specified： 指定</li></ul><p>默认值：All</p>
+                     * @return Scope <p>Consumer粒度某资源对象的配额范围，支持：全部模型服务（all）、指定模型服务（specified）</p><p>枚举值：</p><ul><li>All： 全部</li><li>Specified： 指定</li></ul><p>默认值：All</p>
+                     * 
+                     */
+                    std::string GetScope() const;
+
+                    /**
+                     * 设置<p>Consumer粒度某资源对象的配额范围，支持：全部模型服务（all）、指定模型服务（specified）</p><p>枚举值：</p><ul><li>All： 全部</li><li>Specified： 指定</li></ul><p>默认值：All</p>
+                     * @param _scope <p>Consumer粒度某资源对象的配额范围，支持：全部模型服务（all）、指定模型服务（specified）</p><p>枚举值：</p><ul><li>All： 全部</li><li>Specified： 指定</li></ul><p>默认值：All</p>
+                     * 
+                     */
+                    void SetScope(const std::string& _scope);
+
+                    /**
+                     * 判断参数 Scope 是否已赋值
+                     * @return Scope 是否已赋值
+                     * 
+                     */
+                    bool ScopeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Consumer粒度配额的资源类型，如“模型服务”</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li></ul><p>默认值：ModelService</p>
+                     * @return SubResourceType <p>Consumer粒度配额的资源类型，如“模型服务”</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li></ul><p>默认值：ModelService</p>
+                     * 
+                     */
+                    std::string GetSubResourceType() const;
+
+                    /**
+                     * 设置<p>Consumer粒度配额的资源类型，如“模型服务”</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li></ul><p>默认值：ModelService</p>
+                     * @param _subResourceType <p>Consumer粒度配额的资源类型，如“模型服务”</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li></ul><p>默认值：ModelService</p>
+                     * 
+                     */
+                    void SetSubResourceType(const std::string& _subResourceType);
+
+                    /**
+                     * 判断参数 SubResourceType 是否已赋值
+                     * @return SubResourceType 是否已赋值
+                     * 
+                     */
+                    bool SubResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Consumer粒度配额若支持指定子资源配额，则该项为子资源配额个数</p>
+                     * @return SubResourceCount <p>Consumer粒度配额若支持指定子资源配额，则该项为子资源配额个数</p>
+                     * 
+                     */
+                    int64_t GetSubResourceCount() const;
+
+                    /**
+                     * 设置<p>Consumer粒度配额若支持指定子资源配额，则该项为子资源配额个数</p>
+                     * @param _subResourceCount <p>Consumer粒度配额若支持指定子资源配额，则该项为子资源配额个数</p>
+                     * 
+                     */
+                    void SetSubResourceCount(const int64_t& _subResourceCount);
+
+                    /**
+                     * 判断参数 SubResourceCount 是否已赋值
+                     * @return SubResourceCount 是否已赋值
+                     * 
+                     */
+                    bool SubResourceCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>
+                     * @return ConsumerGroupPath <p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>
+                     * 
+                     */
+                    std::string GetConsumerGroupPath() const;
+
+                    /**
+                     * 设置<p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>
+                     * @param _consumerGroupPath <p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>
+                     * 
+                     */
+                    void SetConsumerGroupPath(const std::string& _consumerGroupPath);
+
+                    /**
+                     * 判断参数 ConsumerGroupPath 是否已赋值
+                     * @return ConsumerGroupPath 是否已赋值
+                     * 
+                     */
+                    bool ConsumerGroupPathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>
+                     * @return ConsumerGroupActive <p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>
+                     * 
+                     */
+                    bool GetConsumerGroupActive() const;
+
+                    /**
+                     * 设置<p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>
+                     * @param _consumerGroupActive <p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>
+                     * 
+                     */
+                    void SetConsumerGroupActive(const bool& _consumerGroupActive);
+
+                    /**
+                     * 判断参数 ConsumerGroupActive 是否已赋值
+                     * @return ConsumerGroupActive 是否已赋值
+                     * 
+                     */
+                    bool ConsumerGroupActiveHasBeenSet() const;
+
+                    /**
+                     * 获取<p>兼容用量字段。Cost 为向下取整的整数元；TotalToken 单位为 token；RequestCount 单位为次。精确显示优先使用 UsedExact。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * @return Used <p>兼容用量字段。Cost 为向下取整的整数元；TotalToken 单位为 token；RequestCount 单位为次。精确显示优先使用 UsedExact。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * 
+                     */
+                    int64_t GetUsed() const;
+
+                    /**
+                     * 设置<p>兼容用量字段。Cost 为向下取整的整数元；TotalToken 单位为 token；RequestCount 单位为次。精确显示优先使用 UsedExact。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * @param _used <p>兼容用量字段。Cost 为向下取整的整数元；TotalToken 单位为 token；RequestCount 单位为次。精确显示优先使用 UsedExact。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * 
+                     */
+                    void SetUsed(const int64_t& _used);
+
+                    /**
+                     * 判断参数 Used 是否已赋值
+                     * @return Used 是否已赋值
+                     * 
+                     */
+                    bool UsedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UsedExact <p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetUsedExact() const;
+
+                    /**
+                     * 设置<p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _usedExact <p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUsedExact(const double& _usedExact);
+
+                    /**
+                     * 判断参数 UsedExact 是否已赋值
+                     * @return UsedExact 是否已赋值
+                     * 
+                     */
+                    bool UsedExactHasBeenSet() const;
+
+                    /**
+                     * 获取<p>使用率</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * @return UsageRate <p>使用率</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * 
+                     */
+                    double GetUsageRate() const;
+
+                    /**
+                     * 设置<p>使用率</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * @param _usageRate <p>使用率</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * 
+                     */
+                    void SetUsageRate(const double& _usageRate);
+
+                    /**
+                     * 判断参数 UsageRate 是否已赋值
+                     * @return UsageRate 是否已赋值
+                     * 
+                     */
+                    bool UsageRateHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预警级别</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Warning： 预警</li><li>NearLimit： 临近超限</li><li>Exceeded： 超限</li></ul> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * @return AlarmLevel <p>预警级别</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Warning： 预警</li><li>NearLimit： 临近超限</li><li>Exceeded： 超限</li></ul> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * 
+                     */
+                    std::string GetAlarmLevel() const;
+
+                    /**
+                     * 设置<p>预警级别</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Warning： 预警</li><li>NearLimit： 临近超限</li><li>Exceeded： 超限</li></ul> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * @param _alarmLevel <p>预警级别</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Warning： 预警</li><li>NearLimit： 临近超限</li><li>Exceeded： 超限</li></ul> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     * 
+                     */
+                    void SetAlarmLevel(const std::string& _alarmLevel);
+
+                    /**
+                     * 判断参数 AlarmLevel 是否已赋值
+                     * @return AlarmLevel 是否已赋值
+                     * 
+                     */
+                    bool AlarmLevelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关联消费者密钥数量。ConsumerGroup 规则固定为 0。</p>
+                     * @return SecretKeyCount <p>关联消费者密钥数量。ConsumerGroup 规则固定为 0。</p>
+                     * 
+                     */
+                    int64_t GetSecretKeyCount() const;
+
+                    /**
+                     * 设置<p>关联消费者密钥数量。ConsumerGroup 规则固定为 0。</p>
+                     * @param _secretKeyCount <p>关联消费者密钥数量。ConsumerGroup 规则固定为 0。</p>
+                     * 
+                     */
+                    void SetSecretKeyCount(const int64_t& _secretKeyCount);
+
+                    /**
+                     * 判断参数 SecretKeyCount 是否已赋值
+                     * @return SecretKeyCount 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyCountHasBeenSet() const;
 
                 private:
 
@@ -388,7 +644,7 @@ namespace TencentCloud
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>
+                     * <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>
                      */
                     std::string m_exceedAction;
                     bool m_exceedActionHasBeenSet;
@@ -398,6 +654,79 @@ namespace TencentCloud
                      */
                     std::string m_cacheHitStat;
                     bool m_cacheHitStatHasBeenSet;
+
+                    /**
+                     * <p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>
+                     */
+                    uint64_t m_exceedPercentage;
+                    bool m_exceedPercentageHasBeenSet;
+
+                    /**
+                     * <p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>
+                     */
+                    bool m_setExceedPercentage;
+                    bool m_setExceedPercentageHasBeenSet;
+
+                    /**
+                     * <p>Consumer粒度某资源对象的配额范围，支持：全部模型服务（all）、指定模型服务（specified）</p><p>枚举值：</p><ul><li>All： 全部</li><li>Specified： 指定</li></ul><p>默认值：All</p>
+                     */
+                    std::string m_scope;
+                    bool m_scopeHasBeenSet;
+
+                    /**
+                     * <p>Consumer粒度配额的资源类型，如“模型服务”</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li></ul><p>默认值：ModelService</p>
+                     */
+                    std::string m_subResourceType;
+                    bool m_subResourceTypeHasBeenSet;
+
+                    /**
+                     * <p>Consumer粒度配额若支持指定子资源配额，则该项为子资源配额个数</p>
+                     */
+                    int64_t m_subResourceCount;
+                    bool m_subResourceCountHasBeenSet;
+
+                    /**
+                     * <p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>
+                     */
+                    std::string m_consumerGroupPath;
+                    bool m_consumerGroupPathHasBeenSet;
+
+                    /**
+                     * <p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>
+                     */
+                    bool m_consumerGroupActive;
+                    bool m_consumerGroupActiveHasBeenSet;
+
+                    /**
+                     * <p>兼容用量字段。Cost 为向下取整的整数元；TotalToken 单位为 token；RequestCount 单位为次。精确显示优先使用 UsedExact。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     */
+                    int64_t m_used;
+                    bool m_usedHasBeenSet;
+
+                    /**
+                     * <p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_usedExact;
+                    bool m_usedExactHasBeenSet;
+
+                    /**
+                     * <p>使用率</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     */
+                    double m_usageRate;
+                    bool m_usageRateHasBeenSet;
+
+                    /**
+                     * <p>预警级别</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Warning： 预警</li><li>NearLimit： 临近超限</li><li>Exceeded： 超限</li></ul> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。
+                     */
+                    std::string m_alarmLevel;
+                    bool m_alarmLevelHasBeenSet;
+
+                    /**
+                     * <p>关联消费者密钥数量。ConsumerGroup 规则固定为 0。</p>
+                     */
+                    int64_t m_secretKeyCount;
+                    bool m_secretKeyCountHasBeenSet;
 
                 };
             }

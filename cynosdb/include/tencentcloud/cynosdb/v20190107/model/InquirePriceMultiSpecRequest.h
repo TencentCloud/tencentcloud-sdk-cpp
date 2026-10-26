@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区,每个地域提供最佳实践
-                     * @return Zone 可用区,每个地域提供最佳实践
+                     * 获取<p>可用区,每个地域提供最佳实践</p>
+                     * @return Zone <p>可用区,每个地域提供最佳实践</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区,每个地域提供最佳实践
-                     * @param _zone 可用区,每个地域提供最佳实践
+                     * 设置<p>可用区,每个地域提供最佳实践</p>
+                     * @param _zone <p>可用区,每个地域提供最佳实践</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS
-                     * @return InstancePayMode 实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS
+                     * 获取<p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>
+                     * @return InstancePayMode <p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>
                      * 
                      */
                     std::string GetInstancePayMode() const;
 
                     /**
-                     * 设置实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS
-                     * @param _instancePayMode 实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS
+                     * 设置<p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>
+                     * @param _instancePayMode <p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>
                      * 
                      */
                     void SetInstancePayMode(const std::string& _instancePayMode);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool InstancePayModeHasBeenSet() const;
 
                     /**
-                     * 获取存储购买类型，可选值为：PREPAID, POSTPAID
-                     * @return StoragePayMode 存储购买类型，可选值为：PREPAID, POSTPAID
+                     * 获取<p>存储购买类型，可选值为：PREPAID, POSTPAID</p>
+                     * @return StoragePayMode <p>存储购买类型，可选值为：PREPAID, POSTPAID</p>
                      * 
                      */
                     std::string GetStoragePayMode() const;
 
                     /**
-                     * 设置存储购买类型，可选值为：PREPAID, POSTPAID
-                     * @param _storagePayMode 存储购买类型，可选值为：PREPAID, POSTPAID
+                     * 设置<p>存储购买类型，可选值为：PREPAID, POSTPAID</p>
+                     * @param _storagePayMode <p>存储购买类型，可选值为：PREPAID, POSTPAID</p>
                      * 
                      */
                     void SetStoragePayMode(const std::string& _storagePayMode);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool StoragePayModeHasBeenSet() const;
 
                     /**
-                     * 获取商品规格
-                     * @return GoodsSpecs 商品规格
+                     * 获取<p>商品规格</p>
+                     * @return GoodsSpecs <p>商品规格</p>
                      * 
                      */
                     std::vector<GoodsSpec> GetGoodsSpecs() const;
 
                     /**
-                     * 设置商品规格
-                     * @param _goodsSpecs 商品规格
+                     * 设置<p>商品规格</p>
+                     * @param _goodsSpecs <p>商品规格</p>
                      * 
                      */
                     void SetGoodsSpecs(const std::vector<GoodsSpec>& _goodsSpecs);
@@ -130,25 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可用区,每个地域提供最佳实践
+                     * <p>可用区,每个地域提供最佳实践</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS
+                     * <p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>
                      */
                     std::string m_instancePayMode;
                     bool m_instancePayModeHasBeenSet;
 
                     /**
-                     * 存储购买类型，可选值为：PREPAID, POSTPAID
+                     * <p>存储购买类型，可选值为：PREPAID, POSTPAID</p>
                      */
                     std::string m_storagePayMode;
                     bool m_storagePayModeHasBeenSet;
 
                     /**
-                     * 商品规格
+                     * <p>商品规格</p>
                      */
                     std::vector<GoodsSpec> m_goodsSpecs;
                     bool m_goodsSpecsHasBeenSet;

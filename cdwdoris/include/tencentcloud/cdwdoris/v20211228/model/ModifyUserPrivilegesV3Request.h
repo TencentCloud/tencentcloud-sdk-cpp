@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return InstanceId 集群id
+                     * 获取<p>集群id</p>
+                     * @return InstanceId <p>集群id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _instanceId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _instanceId <p>集群id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return UserName 用户名
+                     * 获取<p>用户名</p>
+                     * @return UserName <p>用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名
-                     * @param _userName 用户名
+                     * 设置<p>用户名</p>
+                     * @param _userName <p>用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取用户权限
-                     * @return UserPrivileges 用户权限
+                     * 获取<p>用户权限</p>
+                     * @return UserPrivileges <p>用户权限</p>
                      * 
                      */
                     UpdateUserPrivileges GetUserPrivileges() const;
 
                     /**
-                     * 设置用户权限
-                     * @param _userPrivileges 用户权限
+                     * 设置<p>用户权限</p>
+                     * @param _userPrivileges <p>用户权限</p>
                      * 
                      */
                     void SetUserPrivileges(const UpdateUserPrivileges& _userPrivileges);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool UserPrivilegesHasBeenSet() const;
 
                     /**
-                     * 获取用户链接来自的 IP	
-                     * @return WhiteHost 用户链接来自的 IP	
+                     * 获取<p>用户链接来自的 IP</p>
+                     * @return WhiteHost <p>用户链接来自的 IP</p>
                      * 
                      */
                     std::string GetWhiteHost() const;
 
                     /**
-                     * 设置用户链接来自的 IP	
-                     * @param _whiteHost 用户链接来自的 IP	
+                     * 设置<p>用户链接来自的 IP</p>
+                     * @param _whiteHost <p>用户链接来自的 IP</p>
                      * 
                      */
                     void SetWhiteHost(const std::string& _whiteHost);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool WhiteHostHasBeenSet() const;
 
                     /**
-                     * 获取更新类型，默认0，1为更新绑定计算组，2为更新默认计算组
-                     * @return UpdateType 更新类型，默认0，1为更新绑定计算组，2为更新默认计算组
+                     * 获取<p>更新类型，默认0，1为更新绑定计算组，2为更新默认计算组，4 为 GrantPrivileges, RevokePrivileges 接口专用批量授权</p><p>枚举值：</p><ul><li>0： 默认</li><li>1： 更新绑定计算组</li><li>2： 更新默认计算组</li><li>4： GrantPrivileges, RevokePrivileges 接口专用批量授权</li></ul>
+                     * @return UpdateType <p>更新类型，默认0，1为更新绑定计算组，2为更新默认计算组，4 为 GrantPrivileges, RevokePrivileges 接口专用批量授权</p><p>枚举值：</p><ul><li>0： 默认</li><li>1： 更新绑定计算组</li><li>2： 更新默认计算组</li><li>4： GrantPrivileges, RevokePrivileges 接口专用批量授权</li></ul>
                      * 
                      */
                     int64_t GetUpdateType() const;
 
                     /**
-                     * 设置更新类型，默认0，1为更新绑定计算组，2为更新默认计算组
-                     * @param _updateType 更新类型，默认0，1为更新绑定计算组，2为更新默认计算组
+                     * 设置<p>更新类型，默认0，1为更新绑定计算组，2为更新默认计算组，4 为 GrantPrivileges, RevokePrivileges 接口专用批量授权</p><p>枚举值：</p><ul><li>0： 默认</li><li>1： 更新绑定计算组</li><li>2： 更新默认计算组</li><li>4： GrantPrivileges, RevokePrivileges 接口专用批量授权</li></ul>
+                     * @param _updateType <p>更新类型，默认0，1为更新绑定计算组，2为更新默认计算组，4 为 GrantPrivileges, RevokePrivileges 接口专用批量授权</p><p>枚举值：</p><ul><li>0： 默认</li><li>1： 更新绑定计算组</li><li>2： 更新默认计算组</li><li>4： GrantPrivileges, RevokePrivileges 接口专用批量授权</li></ul>
                      * 
                      */
                     void SetUpdateType(const int64_t& _updateType);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool UpdateTypeHasBeenSet() const;
 
                     /**
-                     * 获取需绑定计算组列表
-                     * @return UpdateComputeGroups 需绑定计算组列表
+                     * 获取<p>需绑定计算组列表</p>
+                     * @return UpdateComputeGroups <p>需绑定计算组列表</p>
                      * 
                      */
                     std::vector<std::string> GetUpdateComputeGroups() const;
 
                     /**
-                     * 设置需绑定计算组列表
-                     * @param _updateComputeGroups 需绑定计算组列表
+                     * 设置<p>需绑定计算组列表</p>
+                     * @param _updateComputeGroups <p>需绑定计算组列表</p>
                      * 
                      */
                     void SetUpdateComputeGroups(const std::vector<std::string>& _updateComputeGroups);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool UpdateComputeGroupsHasBeenSet() const;
 
                     /**
-                     * 获取默认计算组
-                     * @return DefaultComputeGroup 默认计算组
+                     * 获取<p>默认计算组</p>
+                     * @return DefaultComputeGroup <p>默认计算组</p>
                      * 
                      */
                     std::string GetDefaultComputeGroup() const;
 
                     /**
-                     * 设置默认计算组
-                     * @param _defaultComputeGroup 默认计算组
+                     * 设置<p>默认计算组</p>
+                     * @param _defaultComputeGroup <p>默认计算组</p>
                      * 
                      */
                     void SetDefaultComputeGroup(const std::string& _defaultComputeGroup);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool DefaultComputeGroupHasBeenSet() const;
 
                     /**
-                     * 获取0: 灵活场景 1: 固定场景
-                     * @return ComputeGroupType 0: 灵活场景 1: 固定场景
+                     * 获取<p>0: 灵活场景 1: 固定场景</p>
+                     * @return ComputeGroupType <p>0: 灵活场景 1: 固定场景</p>
                      * 
                      */
                     int64_t GetComputeGroupType() const;
 
                     /**
-                     * 设置0: 灵活场景 1: 固定场景
-                     * @param _computeGroupType 0: 灵活场景 1: 固定场景
+                     * 设置<p>0: 灵活场景 1: 固定场景</p>
+                     * @param _computeGroupType <p>0: 灵活场景 1: 固定场景</p>
                      * 
                      */
                     void SetComputeGroupType(const int64_t& _computeGroupType);
@@ -211,55 +211,109 @@ namespace TencentCloud
                      */
                     bool ComputeGroupTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>本次新增授权的库表，仅 UpdateType=4 时生效</p>
+                     * @return GrantPrivileges <p>本次新增授权的库表，仅 UpdateType=4 时生效</p>
+                     * 
+                     */
+                    UpdateUserPrivileges GetGrantPrivileges() const;
+
+                    /**
+                     * 设置<p>本次新增授权的库表，仅 UpdateType=4 时生效</p>
+                     * @param _grantPrivileges <p>本次新增授权的库表，仅 UpdateType=4 时生效</p>
+                     * 
+                     */
+                    void SetGrantPrivileges(const UpdateUserPrivileges& _grantPrivileges);
+
+                    /**
+                     * 判断参数 GrantPrivileges 是否已赋值
+                     * @return GrantPrivileges 是否已赋值
+                     * 
+                     */
+                    bool GrantPrivilegesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>本次取消授权的库表，仅 UpdateType=4 时生效</p>
+                     * @return RevokePrivileges <p>本次取消授权的库表，仅 UpdateType=4 时生效</p>
+                     * 
+                     */
+                    UpdateUserPrivileges GetRevokePrivileges() const;
+
+                    /**
+                     * 设置<p>本次取消授权的库表，仅 UpdateType=4 时生效</p>
+                     * @param _revokePrivileges <p>本次取消授权的库表，仅 UpdateType=4 时生效</p>
+                     * 
+                     */
+                    void SetRevokePrivileges(const UpdateUserPrivileges& _revokePrivileges);
+
+                    /**
+                     * 判断参数 RevokePrivileges 是否已赋值
+                     * @return RevokePrivileges 是否已赋值
+                     * 
+                     */
+                    bool RevokePrivilegesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 用户权限
+                     * <p>用户权限</p>
                      */
                     UpdateUserPrivileges m_userPrivileges;
                     bool m_userPrivilegesHasBeenSet;
 
                     /**
-                     * 用户链接来自的 IP	
+                     * <p>用户链接来自的 IP</p>
                      */
                     std::string m_whiteHost;
                     bool m_whiteHostHasBeenSet;
 
                     /**
-                     * 更新类型，默认0，1为更新绑定计算组，2为更新默认计算组
+                     * <p>更新类型，默认0，1为更新绑定计算组，2为更新默认计算组，4 为 GrantPrivileges, RevokePrivileges 接口专用批量授权</p><p>枚举值：</p><ul><li>0： 默认</li><li>1： 更新绑定计算组</li><li>2： 更新默认计算组</li><li>4： GrantPrivileges, RevokePrivileges 接口专用批量授权</li></ul>
                      */
                     int64_t m_updateType;
                     bool m_updateTypeHasBeenSet;
 
                     /**
-                     * 需绑定计算组列表
+                     * <p>需绑定计算组列表</p>
                      */
                     std::vector<std::string> m_updateComputeGroups;
                     bool m_updateComputeGroupsHasBeenSet;
 
                     /**
-                     * 默认计算组
+                     * <p>默认计算组</p>
                      */
                     std::string m_defaultComputeGroup;
                     bool m_defaultComputeGroupHasBeenSet;
 
                     /**
-                     * 0: 灵活场景 1: 固定场景
+                     * <p>0: 灵活场景 1: 固定场景</p>
                      */
                     int64_t m_computeGroupType;
                     bool m_computeGroupTypeHasBeenSet;
+
+                    /**
+                     * <p>本次新增授权的库表，仅 UpdateType=4 时生效</p>
+                     */
+                    UpdateUserPrivileges m_grantPrivileges;
+                    bool m_grantPrivilegesHasBeenSet;
+
+                    /**
+                     * <p>本次取消授权的库表，仅 UpdateType=4 时生效</p>
+                     */
+                    UpdateUserPrivileges m_revokePrivileges;
+                    bool m_revokePrivilegesHasBeenSet;
 
                 };
             }

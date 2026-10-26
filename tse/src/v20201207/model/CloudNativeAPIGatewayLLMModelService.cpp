@@ -63,7 +63,9 @@ CloudNativeAPIGatewayLLMModelService::CloudNativeAPIGatewayLLMModelService() :
     m_syncedVersionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_enableHealthCheckHasBeenSet(false),
-    m_healthCheckHasBeenSet(false)
+    m_healthCheckHasBeenSet(false),
+    m_lengthLimitConfigHasBeenSet(false),
+    m_smartBalanceHasBeenSet(false)
 {
 }
 
@@ -560,6 +562,40 @@ CoreInternalOutcome CloudNativeAPIGatewayLLMModelService::Deserialize(const rapi
         m_healthCheckHasBeenSet = true;
     }
 
+    if (value.HasMember("LengthLimitConfig") && !value["LengthLimitConfig"].IsNull())
+    {
+        if (!value["LengthLimitConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.LengthLimitConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lengthLimitConfig.Deserialize(value["LengthLimitConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lengthLimitConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("SmartBalance") && !value["SmartBalance"].IsNull())
+    {
+        if (!value["SmartBalance"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelService.SmartBalance` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_smartBalance.Deserialize(value["SmartBalance"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_smartBalanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -933,6 +969,24 @@ void CloudNativeAPIGatewayLLMModelService::ToJsonObject(rapidjson::Value &value,
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_healthCheck.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_lengthLimitConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LengthLimitConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lengthLimitConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_smartBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartBalance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartBalance.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1624,5 +1678,37 @@ void CloudNativeAPIGatewayLLMModelService::SetHealthCheck(const AIGWLLMHealthChe
 bool CloudNativeAPIGatewayLLMModelService::HealthCheckHasBeenSet() const
 {
     return m_healthCheckHasBeenSet;
+}
+
+AIGWLengthLimitConfig CloudNativeAPIGatewayLLMModelService::GetLengthLimitConfig() const
+{
+    return m_lengthLimitConfig;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetLengthLimitConfig(const AIGWLengthLimitConfig& _lengthLimitConfig)
+{
+    m_lengthLimitConfig = _lengthLimitConfig;
+    m_lengthLimitConfigHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::LengthLimitConfigHasBeenSet() const
+{
+    return m_lengthLimitConfigHasBeenSet;
+}
+
+AIGWSmartBalanceConfig CloudNativeAPIGatewayLLMModelService::GetSmartBalance() const
+{
+    return m_smartBalance;
+}
+
+void CloudNativeAPIGatewayLLMModelService::SetSmartBalance(const AIGWSmartBalanceConfig& _smartBalance)
+{
+    m_smartBalance = _smartBalance;
+    m_smartBalanceHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelService::SmartBalanceHasBeenSet() const
+{
+    return m_smartBalanceHasBeenSet;
 }
 

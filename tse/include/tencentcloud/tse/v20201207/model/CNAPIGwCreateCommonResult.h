@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否成功
-                     * @return Success 是否成功
-                     * 
-                     */
-                    bool GetSuccess() const;
-
-                    /**
-                     * 设置是否成功
-                     * @param _success 是否成功
-                     * 
-                     */
-                    void SetSuccess(const bool& _success);
-
-                    /**
-                     * 判断参数 Success 是否已赋值
-                     * @return Success 是否已赋值
-                     * 
-                     */
-                    bool SuccessHasBeenSet() const;
-
-                    /**
                      * 获取对应的id 值
                      * @return ID 对应的id 值
                      * 
@@ -88,19 +67,40 @@ namespace TencentCloud
                      */
                     bool IDHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取是否成功
+                     * @return Success 是否成功
+                     * 
+                     */
+                    bool GetSuccess() const;
 
                     /**
-                     * 是否成功
+                     * 设置是否成功
+                     * @param _success 是否成功
+                     * 
                      */
-                    bool m_success;
-                    bool m_successHasBeenSet;
+                    void SetSuccess(const bool& _success);
+
+                    /**
+                     * 判断参数 Success 是否已赋值
+                     * @return Success 是否已赋值
+                     * 
+                     */
+                    bool SuccessHasBeenSet() const;
+
+                private:
 
                     /**
                      * 对应的id 值
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
+
+                    /**
+                     * 是否成功
+                     */
+                    bool m_success;
+                    bool m_successHasBeenSet;
 
                 };
             }

@@ -36,7 +36,8 @@ DescribeMessageDetailsResponse::DescribeMessageDetailsResponse() :
     m_messageExpiryIntervalHasBeenSet(false),
     m_responseTopicHasBeenSet(false),
     m_correlationDataHasBeenSet(false),
-    m_subscriptionIdentifierHasBeenSet(false)
+    m_subscriptionIdentifierHasBeenSet(false),
+    m_retainHasBeenSet(false)
 {
 }
 
@@ -214,6 +215,16 @@ CoreInternalOutcome DescribeMessageDetailsResponse::Deserialize(const string &pa
         m_subscriptionIdentifierHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Retain") && !rsp["Retain"].IsNull())
+    {
+        if (!rsp["Retain"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Retain` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_retain = rsp["Retain"].GetBool();
+        m_retainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -333,6 +344,14 @@ string DescribeMessageDetailsResponse::ToJsonString() const
         string key = "SubscriptionIdentifier";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subscriptionIdentifier.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Retain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retain, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -475,6 +494,16 @@ string DescribeMessageDetailsResponse::GetSubscriptionIdentifier() const
 bool DescribeMessageDetailsResponse::SubscriptionIdentifierHasBeenSet() const
 {
     return m_subscriptionIdentifierHasBeenSet;
+}
+
+bool DescribeMessageDetailsResponse::GetRetain() const
+{
+    return m_retain;
+}
+
+bool DescribeMessageDetailsResponse::RetainHasBeenSet() const
+{
+    return m_retainHasBeenSet;
 }
 
 

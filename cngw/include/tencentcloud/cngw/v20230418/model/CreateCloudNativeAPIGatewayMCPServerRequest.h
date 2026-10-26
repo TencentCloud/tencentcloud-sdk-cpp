@@ -25,6 +25,7 @@
 #include <tencentcloud/cngw/v20230418/model/AIGWMCPSessionConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWHealthCheckSetting.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWLogConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWMCPServerParamRewriteConfig.h>
 
 
 namespace TencentCloud
@@ -361,6 +362,27 @@ namespace TencentCloud
                      */
                     bool LogConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>服务级参数改写规则</p>
+                     * @return ParamRewriteConfig <p>服务级参数改写规则</p>
+                     * 
+                     */
+                    AIGWMCPServerParamRewriteConfig GetParamRewriteConfig() const;
+
+                    /**
+                     * 设置<p>服务级参数改写规则</p>
+                     * @param _paramRewriteConfig <p>服务级参数改写规则</p>
+                     * 
+                     */
+                    void SetParamRewriteConfig(const AIGWMCPServerParamRewriteConfig& _paramRewriteConfig);
+
+                    /**
+                     * 判断参数 ParamRewriteConfig 是否已赋值
+                     * @return ParamRewriteConfig 是否已赋值
+                     * 
+                     */
+                    bool ParamRewriteConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +474,12 @@ namespace TencentCloud
                      */
                     AIGWLogConfig m_logConfig;
                     bool m_logConfigHasBeenSet;
+
+                    /**
+                     * <p>服务级参数改写规则</p>
+                     */
+                    AIGWMCPServerParamRewriteConfig m_paramRewriteConfig;
+                    bool m_paramRewriteConfigHasBeenSet;
 
                 };
             }

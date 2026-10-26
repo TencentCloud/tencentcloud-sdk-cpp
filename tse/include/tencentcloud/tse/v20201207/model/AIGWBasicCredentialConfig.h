@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>用户名</p>
-                     * @return Username <p>用户名</p>
-                     * 
-                     */
-                    std::string GetUsername() const;
-
-                    /**
-                     * 设置<p>用户名</p>
-                     * @param _username <p>用户名</p>
-                     * 
-                     */
-                    void SetUsername(const std::string& _username);
-
-                    /**
-                     * 判断参数 Username 是否已赋值
-                     * @return Username 是否已赋值
-                     * 
-                     */
-                    bool UsernameHasBeenSet() const;
-
-                    /**
                      * 获取<p>密码</p>
                      * @return Password <p>密码</p>
                      * 
@@ -88,19 +67,40 @@ namespace TencentCloud
                      */
                     bool PasswordHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取<p>用户名</p>
+                     * @return Username <p>用户名</p>
+                     * 
+                     */
+                    std::string GetUsername() const;
 
                     /**
-                     * <p>用户名</p>
+                     * 设置<p>用户名</p>
+                     * @param _username <p>用户名</p>
+                     * 
                      */
-                    std::string m_username;
-                    bool m_usernameHasBeenSet;
+                    void SetUsername(const std::string& _username);
+
+                    /**
+                     * 判断参数 Username 是否已赋值
+                     * @return Username 是否已赋值
+                     * 
+                     */
+                    bool UsernameHasBeenSet() const;
+
+                private:
 
                     /**
                      * <p>密码</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
+
+                    /**
+                     * <p>用户名</p>
+                     */
+                    std::string m_username;
+                    bool m_usernameHasBeenSet;
 
                 };
             }

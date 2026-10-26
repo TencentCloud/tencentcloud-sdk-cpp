@@ -88,6 +88,69 @@ namespace TencentCloud
                      */
                     bool ModelServiceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>意图ID</p>
+                     * @return IntentId <p>意图ID</p>
+                     * 
+                     */
+                    std::string GetIntentId() const;
+
+                    /**
+                     * 设置<p>意图ID</p>
+                     * @param _intentId <p>意图ID</p>
+                     * 
+                     */
+                    void SetIntentId(const std::string& _intentId);
+
+                    /**
+                     * 判断参数 IntentId 是否已赋值
+                     * @return IntentId 是否已赋值
+                     * 
+                     */
+                    bool IntentIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>意图名称</p>
+                     * @return IntentName <p>意图名称</p>
+                     * 
+                     */
+                    std::string GetIntentName() const;
+
+                    /**
+                     * 设置<p>意图名称</p>
+                     * @param _intentName <p>意图名称</p>
+                     * 
+                     */
+                    void SetIntentName(const std::string& _intentName);
+
+                    /**
+                     * 判断参数 IntentName 是否已赋值
+                     * @return IntentName 是否已赋值
+                     * 
+                     */
+                    bool IntentNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前意图路由规则中目标 ModelServiceId 对应的标准模型名称；为空表示未配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * @return StandardModelName <p>当前意图路由规则中目标 ModelServiceId 对应的标准模型名称；为空表示未配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * 
+                     */
+                    std::string GetStandardModelName() const;
+
+                    /**
+                     * 设置<p>当前意图路由规则中目标 ModelServiceId 对应的标准模型名称；为空表示未配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * @param _standardModelName <p>当前意图路由规则中目标 ModelServiceId 对应的标准模型名称；为空表示未配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * 
+                     */
+                    void SetStandardModelName(const std::string& _standardModelName);
+
+                    /**
+                     * 判断参数 StandardModelName 是否已赋值
+                     * @return StandardModelName 是否已赋值
+                     * 
+                     */
+                    bool StandardModelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +164,24 @@ namespace TencentCloud
                      */
                     std::string m_modelServiceId;
                     bool m_modelServiceIdHasBeenSet;
+
+                    /**
+                     * <p>意图ID</p>
+                     */
+                    std::string m_intentId;
+                    bool m_intentIdHasBeenSet;
+
+                    /**
+                     * <p>意图名称</p>
+                     */
+                    std::string m_intentName;
+                    bool m_intentNameHasBeenSet;
+
+                    /**
+                     * <p>当前意图路由规则中目标 ModelServiceId 对应的标准模型名称；为空表示未配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     */
+                    std::string m_standardModelName;
+                    bool m_standardModelNameHasBeenSet;
 
                 };
             }

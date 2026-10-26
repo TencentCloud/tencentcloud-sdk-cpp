@@ -23,7 +23,11 @@ using namespace std;
 DataDisk::DataDisk() :
     m_diskTypeHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
-    m_diskNameHasBeenSet(false)
+    m_diskNameHasBeenSet(false),
+    m_encryptHasBeenSet(false),
+    m_diskIdHasBeenSet(false),
+    m_snapshotIdHasBeenSet(false),
+    m_clientDiskKeyHasBeenSet(false)
 {
 }
 
@@ -62,6 +66,46 @@ CoreInternalOutcome DataDisk::Deserialize(const rapidjson::Value &value)
         m_diskNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Encrypt") && !value["Encrypt"].IsNull())
+    {
+        if (!value["Encrypt"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataDisk.Encrypt` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_encrypt = value["Encrypt"].GetBool();
+        m_encryptHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskId") && !value["DiskId"].IsNull())
+    {
+        if (!value["DiskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataDisk.DiskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskId = string(value["DiskId"].GetString());
+        m_diskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SnapshotId") && !value["SnapshotId"].IsNull())
+    {
+        if (!value["SnapshotId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataDisk.SnapshotId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshotId = string(value["SnapshotId"].GetString());
+        m_snapshotIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClientDiskKey") && !value["ClientDiskKey"].IsNull())
+    {
+        if (!value["ClientDiskKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataDisk.ClientDiskKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientDiskKey = string(value["ClientDiskKey"].GetString());
+        m_clientDiskKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +135,38 @@ void DataDisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DiskName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_diskName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encrypt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encrypt, allocator);
+    }
+
+    if (m_diskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapshotIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshotId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientDiskKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientDiskKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientDiskKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +218,69 @@ void DataDisk::SetDiskName(const string& _diskName)
 bool DataDisk::DiskNameHasBeenSet() const
 {
     return m_diskNameHasBeenSet;
+}
+
+bool DataDisk::GetEncrypt() const
+{
+    return m_encrypt;
+}
+
+void DataDisk::SetEncrypt(const bool& _encrypt)
+{
+    m_encrypt = _encrypt;
+    m_encryptHasBeenSet = true;
+}
+
+bool DataDisk::EncryptHasBeenSet() const
+{
+    return m_encryptHasBeenSet;
+}
+
+string DataDisk::GetDiskId() const
+{
+    return m_diskId;
+}
+
+void DataDisk::SetDiskId(const string& _diskId)
+{
+    m_diskId = _diskId;
+    m_diskIdHasBeenSet = true;
+}
+
+bool DataDisk::DiskIdHasBeenSet() const
+{
+    return m_diskIdHasBeenSet;
+}
+
+string DataDisk::GetSnapshotId() const
+{
+    return m_snapshotId;
+}
+
+void DataDisk::SetSnapshotId(const string& _snapshotId)
+{
+    m_snapshotId = _snapshotId;
+    m_snapshotIdHasBeenSet = true;
+}
+
+bool DataDisk::SnapshotIdHasBeenSet() const
+{
+    return m_snapshotIdHasBeenSet;
+}
+
+string DataDisk::GetClientDiskKey() const
+{
+    return m_clientDiskKey;
+}
+
+void DataDisk::SetClientDiskKey(const string& _clientDiskKey)
+{
+    m_clientDiskKey = _clientDiskKey;
+    m_clientDiskKeyHasBeenSet = true;
+}
+
+bool DataDisk::ClientDiskKeyHasBeenSet() const
+{
+    return m_clientDiskKeyHasBeenSet;
 }
 

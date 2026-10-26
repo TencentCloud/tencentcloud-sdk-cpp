@@ -23,11 +23,13 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cngw/v20230418/model/CloudNativeAPIGatewayLLMModelServiceRoute.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWKVMatch.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWModelNameRoute.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWCrossServiceFallbackConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWTagFilter.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWLogConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWRerankMaxDocumentsConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWSensitiveWordRoute.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWPriorityScheduleConfig.h>
 
 
 namespace TencentCloud
@@ -218,6 +220,27 @@ namespace TencentCloud
                     bool MatchHeadersHasBeenSet() const;
 
                     /**
+                     * 获取<p>按请求体顶层 model 字段匹配模型 API 的全量最终态配置。要保留现值必须提交完整对象；省略或 null 表示清空。</p>
+                     * @return ModelNameRoute <p>按请求体顶层 model 字段匹配模型 API 的全量最终态配置。要保留现值必须提交完整对象；省略或 null 表示清空。</p>
+                     * 
+                     */
+                    AIGWModelNameRoute GetModelNameRoute() const;
+
+                    /**
+                     * 设置<p>按请求体顶层 model 字段匹配模型 API 的全量最终态配置。要保留现值必须提交完整对象；省略或 null 表示清空。</p>
+                     * @param _modelNameRoute <p>按请求体顶层 model 字段匹配模型 API 的全量最终态配置。要保留现值必须提交完整对象；省略或 null 表示清空。</p>
+                     * 
+                     */
+                    void SetModelNameRoute(const AIGWModelNameRoute& _modelNameRoute);
+
+                    /**
+                     * 判断参数 ModelNameRoute 是否已赋值
+                     * @return ModelNameRoute 是否已赋值
+                     * 
+                     */
+                    bool ModelNameRouteHasBeenSet() const;
+
+                    /**
                      * 获取<p>是否启用跨服务 Fallback。</p>
                      * @return EnableCrossServiceFallback <p>是否启用跨服务 Fallback。</p>
                      * 
@@ -343,6 +366,48 @@ namespace TencentCloud
                      */
                     bool SensitiveWordRouteHasBeenSet() const;
 
+                    /**
+                     * 获取<p>请求优先级配置</p>
+                     * @return PriorityScheduleConfig <p>请求优先级配置</p>
+                     * 
+                     */
+                    AIGWPriorityScheduleConfig GetPriorityScheduleConfig() const;
+
+                    /**
+                     * 设置<p>请求优先级配置</p>
+                     * @param _priorityScheduleConfig <p>请求优先级配置</p>
+                     * 
+                     */
+                    void SetPriorityScheduleConfig(const AIGWPriorityScheduleConfig& _priorityScheduleConfig);
+
+                    /**
+                     * 判断参数 PriorityScheduleConfig 是否已赋值
+                     * @return PriorityScheduleConfig 是否已赋值
+                     * 
+                     */
+                    bool PriorityScheduleConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单模型 API 的顶层标准模型名称。不传保留原值，传空字符串清空，传非空字符串设置新值；仅单模型场景可设置。已配置顶层标准模型名时，需先清空该字段再切换多模型路由。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * @return StandardModelName <p>单模型 API 的顶层标准模型名称。不传保留原值，传空字符串清空，传非空字符串设置新值；仅单模型场景可设置。已配置顶层标准模型名时，需先清空该字段再切换多模型路由。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * 
+                     */
+                    std::string GetStandardModelName() const;
+
+                    /**
+                     * 设置<p>单模型 API 的顶层标准模型名称。不传保留原值，传空字符串清空，传非空字符串设置新值；仅单模型场景可设置。已配置顶层标准模型名时，需先清空该字段再切换多模型路由。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * @param _standardModelName <p>单模型 API 的顶层标准模型名称。不传保留原值，传空字符串清空，传非空字符串设置新值；仅单模型场景可设置。已配置顶层标准模型名时，需先清空该字段再切换多模型路由。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * 
+                     */
+                    void SetStandardModelName(const std::string& _standardModelName);
+
+                    /**
+                     * 判断参数 StandardModelName 是否已赋值
+                     * @return StandardModelName 是否已赋值
+                     * 
+                     */
+                    bool StandardModelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,6 +459,12 @@ namespace TencentCloud
                     bool m_matchHeadersHasBeenSet;
 
                     /**
+                     * <p>按请求体顶层 model 字段匹配模型 API 的全量最终态配置。要保留现值必须提交完整对象；省略或 null 表示清空。</p>
+                     */
+                    AIGWModelNameRoute m_modelNameRoute;
+                    bool m_modelNameRouteHasBeenSet;
+
+                    /**
                      * <p>是否启用跨服务 Fallback。</p>
                      */
                     bool m_enableCrossServiceFallback;
@@ -428,6 +499,18 @@ namespace TencentCloud
                      */
                     AIGWSensitiveWordRoute m_sensitiveWordRoute;
                     bool m_sensitiveWordRouteHasBeenSet;
+
+                    /**
+                     * <p>请求优先级配置</p>
+                     */
+                    AIGWPriorityScheduleConfig m_priorityScheduleConfig;
+                    bool m_priorityScheduleConfigHasBeenSet;
+
+                    /**
+                     * <p>单模型 API 的顶层标准模型名称。不传保留原值，传空字符串清空，传非空字符串设置新值；仅单模型场景可设置。已配置顶层标准模型名时，需先清空该字段再切换多模型路由。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     */
+                    std::string m_standardModelName;
+                    bool m_standardModelNameHasBeenSet;
 
                 };
             }

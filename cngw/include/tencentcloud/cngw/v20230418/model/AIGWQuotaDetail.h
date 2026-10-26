@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWQuotaSubItem.h>
 
 
 namespace TencentCloud
@@ -299,15 +300,15 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>
-                     * @return ExceedAction <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>
+                     * 获取<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>
+                     * @return ExceedAction <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>
                      * 
                      */
                     std::string GetExceedAction() const;
 
                     /**
-                     * 设置<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>
-                     * @param _exceedAction <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>
+                     * 设置<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>
+                     * @param _exceedAction <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>
                      * 
                      */
                     void SetExceedAction(const std::string& _exceedAction);
@@ -390,6 +391,136 @@ namespace TencentCloud
                      */
                     bool CacheHitStatHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>
+                     * @return SetExceedPercentage <p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>
+                     * 
+                     */
+                    bool GetSetExceedPercentage() const;
+
+                    /**
+                     * 设置<p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>
+                     * @param _setExceedPercentage <p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>
+                     * 
+                     */
+                    void SetSetExceedPercentage(const bool& _setExceedPercentage);
+
+                    /**
+                     * 判断参数 SetExceedPercentage 是否已赋值
+                     * @return SetExceedPercentage 是否已赋值
+                     * 
+                     */
+                    bool SetExceedPercentageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>
+                     * @return ExceedPercentage <p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>
+                     * 
+                     */
+                    uint64_t GetExceedPercentage() const;
+
+                    /**
+                     * 设置<p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>
+                     * @param _exceedPercentage <p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>
+                     * 
+                     */
+                    void SetExceedPercentage(const uint64_t& _exceedPercentage);
+
+                    /**
+                     * 判断参数 ExceedPercentage 是否已赋值
+                     * @return ExceedPercentage 是否已赋值
+                     * 
+                     */
+                    bool ExceedPercentageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UsedExact <p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetUsedExact() const;
+
+                    /**
+                     * 设置<p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _usedExact <p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUsedExact(const double& _usedExact);
+
+                    /**
+                     * 判断参数 UsedExact 是否已赋值
+                     * @return UsedExact 是否已赋值
+                     * 
+                     */
+                    bool UsedExactHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>
+                     * @return ConsumerGroupPath <p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>
+                     * 
+                     */
+                    std::string GetConsumerGroupPath() const;
+
+                    /**
+                     * 设置<p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>
+                     * @param _consumerGroupPath <p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>
+                     * 
+                     */
+                    void SetConsumerGroupPath(const std::string& _consumerGroupPath);
+
+                    /**
+                     * 判断参数 ConsumerGroupPath 是否已赋值
+                     * @return ConsumerGroupPath 是否已赋值
+                     * 
+                     */
+                    bool ConsumerGroupPathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>
+                     * @return ConsumerGroupActive <p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>
+                     * 
+                     */
+                    bool GetConsumerGroupActive() const;
+
+                    /**
+                     * 设置<p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>
+                     * @param _consumerGroupActive <p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>
+                     * 
+                     */
+                    void SetConsumerGroupActive(const bool& _consumerGroupActive);
+
+                    /**
+                     * 判断参数 ConsumerGroupActive 是否已赋值
+                     * @return ConsumerGroupActive 是否已赋值
+                     * 
+                     */
+                    bool ConsumerGroupActiveHasBeenSet() const;
+
+                    /**
+                     * 获取<p>配额规则中，某资源对象的指定子资源配额信息。如资源对象“模型服务”的“指定模型服务”的配额信息。</p>
+                     * @return SubResources <p>配额规则中，某资源对象的指定子资源配额信息。如资源对象“模型服务”的“指定模型服务”的配额信息。</p>
+                     * 
+                     */
+                    std::vector<AIGWQuotaSubItem> GetSubResources() const;
+
+                    /**
+                     * 设置<p>配额规则中，某资源对象的指定子资源配额信息。如资源对象“模型服务”的“指定模型服务”的配额信息。</p>
+                     * @param _subResources <p>配额规则中，某资源对象的指定子资源配额信息。如资源对象“模型服务”的“指定模型服务”的配额信息。</p>
+                     * 
+                     */
+                    void SetSubResources(const std::vector<AIGWQuotaSubItem>& _subResources);
+
+                    /**
+                     * 判断参数 SubResources 是否已赋值
+                     * @return SubResources 是否已赋值
+                     * 
+                     */
+                    bool SubResourcesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -465,7 +596,7 @@ namespace TencentCloud
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>
+                     * <p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>
                      */
                     std::string m_exceedAction;
                     bool m_exceedActionHasBeenSet;
@@ -489,6 +620,43 @@ namespace TencentCloud
                      */
                     std::string m_cacheHitStat;
                     bool m_cacheHitStatHasBeenSet;
+
+                    /**
+                     * <p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>
+                     */
+                    bool m_setExceedPercentage;
+                    bool m_setExceedPercentageHasBeenSet;
+
+                    /**
+                     * <p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>
+                     */
+                    uint64_t m_exceedPercentage;
+                    bool m_exceedPercentageHasBeenSet;
+
+                    /**
+                     * <p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_usedExact;
+                    bool m_usedExactHasBeenSet;
+
+                    /**
+                     * <p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>
+                     */
+                    std::string m_consumerGroupPath;
+                    bool m_consumerGroupPathHasBeenSet;
+
+                    /**
+                     * <p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>
+                     */
+                    bool m_consumerGroupActive;
+                    bool m_consumerGroupActiveHasBeenSet;
+
+                    /**
+                     * <p>配额规则中，某资源对象的指定子资源配额信息。如资源对象“模型服务”的“指定模型服务”的配额信息。</p>
+                     */
+                    std::vector<AIGWQuotaSubItem> m_subResources;
+                    bool m_subResourcesHasBeenSet;
 
                 };
             }

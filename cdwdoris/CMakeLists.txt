@@ -80,6 +80,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeSqlApisRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/ModifySecurityGroupsRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/SkippedPrivilegeItem.h
   include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/UpdateCoolDownRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/CoolDownPolicyInfo.h
@@ -249,6 +250,7 @@ set(cdwdoris_src
   src/v20211228/model/CreateInstanceNewResponse.cpp
   src/v20211228/model/DescribeSqlApisRequest.cpp
   src/v20211228/model/ModifySecurityGroupsRequest.cpp
+  src/v20211228/model/SkippedPrivilegeItem.cpp
   src/v20211228/model/CreateInstanceNewRequest.cpp
   src/v20211228/model/UpdateCoolDownRequest.cpp
   src/v20211228/model/CoolDownPolicyInfo.cpp

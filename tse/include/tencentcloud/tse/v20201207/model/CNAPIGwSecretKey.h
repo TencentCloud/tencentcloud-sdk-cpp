@@ -33,6 +33,7 @@
 #include <tencentcloud/tse/v20201207/model/AIGWBasicCredentialConfig.h>
 #include <tencentcloud/tse/v20201207/model/AIGWCustomHeaderCredentialConfig.h>
 #include <tencentcloud/tse/v20201207/model/AIGWQueryParamCredentialConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWSimpleSecretKey.h>
 
 
 namespace TencentCloud
@@ -56,88 +57,96 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>密钥id</p>
-                     * @return SecretKeyId <p>密钥id</p>
+                     * 获取<p>绑定数</p>
+                     * @return BindCount <p>绑定数</p>
                      * 
                      */
-                    std::string GetSecretKeyId() const;
+                    uint64_t GetBindCount() const;
 
                     /**
-                     * 设置<p>密钥id</p>
-                     * @param _secretKeyId <p>密钥id</p>
+                     * 设置<p>绑定数</p>
+                     * @param _bindCount <p>绑定数</p>
                      * 
                      */
-                    void SetSecretKeyId(const std::string& _secretKeyId);
+                    void SetBindCount(const uint64_t& _bindCount);
 
                     /**
-                     * 判断参数 SecretKeyId 是否已赋值
-                     * @return SecretKeyId 是否已赋值
+                     * 判断参数 BindCount 是否已赋值
+                     * @return BindCount 是否已赋值
                      * 
                      */
-                    bool SecretKeyIdHasBeenSet() const;
+                    bool BindCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>密钥名字</p>
-                     * @return Name <p>密钥名字</p>
+                     * 获取<p>是否可以绑定</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CanBind <p>是否可以绑定</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetName() const;
+                    bool GetCanBind() const;
 
                     /**
-                     * 设置<p>密钥名字</p>
-                     * @param _name <p>密钥名字</p>
+                     * 设置<p>是否可以绑定</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _canBind <p>是否可以绑定</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetName(const std::string& _name);
+                    void SetCanBind(const bool& _canBind);
 
                     /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
+                     * 判断参数 CanBind 是否已赋值
+                     * @return CanBind 是否已赋值
                      * 
                      */
-                    bool NameHasBeenSet() const;
+                    bool CanBindHasBeenSet() const;
 
                     /**
-                     * 获取<p>密钥协议类型。</p>
-                     * @return SecretType <p>密钥协议类型。</p>
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
-                    std::string GetSecretType() const;
+                    std::string GetCreateTime() const;
 
                     /**
-                     * 设置<p>密钥协议类型。</p>
-                     * @param _secretType <p>密钥协议类型。</p>
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
-                    void SetSecretType(const std::string& _secretType);
+                    void SetCreateTime(const std::string& _createTime);
 
                     /**
-                     * 判断参数 SecretType 是否已赋值
-                     * @return SecretType 是否已赋值
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
                      * 
                      */
-                    bool SecretTypeHasBeenSet() const;
+                    bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
-                     * @return Status <p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
+                     * 获取<p>描述</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description <p>描述</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetStatus() const;
+                    std::string GetDescription() const;
 
                     /**
-                     * 设置<p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
-                     * @param _status <p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
+                     * 设置<p>描述</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description <p>描述</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetStatus(const std::string& _status);
+                    void SetDescription(const std::string& _description);
 
                     /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
                      * 
                      */
-                    bool StatusHasBeenSet() const;
+                    bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取<p>密钥生成方式。</p><p>枚举值：</p><ul><li>System： 系统自动生成</li><li>Custom： 用户自定义</li><li>KMS： 使用 KMS 密钥</li></ul>
@@ -161,25 +170,25 @@ namespace TencentCloud
                     bool GenerateTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>密钥明文</p>
-                     * @return SecretValue <p>密钥明文</p>
+                     * 获取<p>JWT凭证配置</p>
+                     * @return JWTCredentialConfig <p>JWT凭证配置</p>
                      * 
                      */
-                    std::string GetSecretValue() const;
+                    AIGWJWTCredentialConfig GetJWTCredentialConfig() const;
 
                     /**
-                     * 设置<p>密钥明文</p>
-                     * @param _secretValue <p>密钥明文</p>
+                     * 设置<p>JWT凭证配置</p>
+                     * @param _jWTCredentialConfig <p>JWT凭证配置</p>
                      * 
                      */
-                    void SetSecretValue(const std::string& _secretValue);
+                    void SetJWTCredentialConfig(const AIGWJWTCredentialConfig& _jWTCredentialConfig);
 
                     /**
-                     * 判断参数 SecretValue 是否已赋值
-                     * @return SecretValue 是否已赋值
+                     * 判断参数 JWTCredentialConfig 是否已赋值
+                     * @return JWTCredentialConfig 是否已赋值
                      * 
                      */
-                    bool SecretValueHasBeenSet() const;
+                    bool JWTCredentialConfigHasBeenSet() const;
 
                     /**
                      * 获取<p>KMS凭证名字</p>
@@ -232,77 +241,6 @@ namespace TencentCloud
                     bool KmsKeyVersionHasBeenSet() const;
 
                     /**
-                     * 获取<p>描述</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description <p>描述</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetDescription() const;
-
-                    /**
-                     * 设置<p>描述</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description <p>描述</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetDescription(const std::string& _description);
-
-                    /**
-                     * 判断参数 Description 是否已赋值
-                     * @return Description 是否已赋值
-                     * 
-                     */
-                    bool DescriptionHasBeenSet() const;
-
-                    /**
-                     * 获取<p>是否可以绑定</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CanBind <p>是否可以绑定</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    bool GetCanBind() const;
-
-                    /**
-                     * 设置<p>是否可以绑定</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _canBind <p>是否可以绑定</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCanBind(const bool& _canBind);
-
-                    /**
-                     * 判断参数 CanBind 是否已赋值
-                     * @return CanBind 是否已赋值
-                     * 
-                     */
-                    bool CanBindHasBeenSet() const;
-
-                    /**
-                     * 获取<p>创建时间</p>
-                     * @return CreateTime <p>创建时间</p>
-                     * 
-                     */
-                    std::string GetCreateTime() const;
-
-                    /**
-                     * 设置<p>创建时间</p>
-                     * @param _createTime <p>创建时间</p>
-                     * 
-                     */
-                    void SetCreateTime(const std::string& _createTime);
-
-                    /**
-                     * 判断参数 CreateTime 是否已赋值
-                     * @return CreateTime 是否已赋值
-                     * 
-                     */
-                    bool CreateTimeHasBeenSet() const;
-
-                    /**
                      * 获取<p>修改时间</p>
                      * @return ModifyTime <p>修改时间</p>
                      * 
@@ -324,78 +262,36 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>绑定数</p>
-                     * @return BindCount <p>绑定数</p>
+                     * 获取<p>密钥名字</p>
+                     * @return Name <p>密钥名字</p>
                      * 
                      */
-                    uint64_t GetBindCount() const;
+                    std::string GetName() const;
 
                     /**
-                     * 设置<p>绑定数</p>
-                     * @param _bindCount <p>绑定数</p>
+                     * 设置<p>密钥名字</p>
+                     * @param _name <p>密钥名字</p>
                      * 
                      */
-                    void SetBindCount(const uint64_t& _bindCount);
+                    void SetName(const std::string& _name);
 
                     /**
-                     * 判断参数 BindCount 是否已赋值
-                     * @return BindCount 是否已赋值
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
                      * 
                      */
-                    bool BindCountHasBeenSet() const;
+                    bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
-                     * @return ResourceType <p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
-                     * 
-                     */
-                    std::string GetResourceType() const;
-
-                    /**
-                     * 设置<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
-                     * @param _resourceType <p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
-                     * 
-                     */
-                    void SetResourceType(const std::string& _resourceType);
-
-                    /**
-                     * 判断参数 ResourceType 是否已赋值
-                     * @return ResourceType 是否已赋值
-                     * 
-                     */
-                    bool ResourceTypeHasBeenSet() const;
-
-                    /**
-                     * 获取<p>JWT凭证配置</p>
-                     * @return JWTCredentialConfig <p>JWT凭证配置</p>
-                     * 
-                     */
-                    AIGWJWTCredentialConfig GetJWTCredentialConfig() const;
-
-                    /**
-                     * 设置<p>JWT凭证配置</p>
-                     * @param _jWTCredentialConfig <p>JWT凭证配置</p>
-                     * 
-                     */
-                    void SetJWTCredentialConfig(const AIGWJWTCredentialConfig& _jWTCredentialConfig);
-
-                    /**
-                     * 判断参数 JWTCredentialConfig 是否已赋值
-                     * @return JWTCredentialConfig 是否已赋值
-                     * 
-                     */
-                    bool JWTCredentialConfigHasBeenSet() const;
-
-                    /**
-                     * 获取<p>OAuth凭证配置</p>
-                     * @return OAuthCredentialConfig <p>OAuth凭证配置</p>
+                     * 获取<p>OAuth2凭证配置</p>
+                     * @return OAuthCredentialConfig <p>OAuth2凭证配置</p>
                      * 
                      */
                     AIGWOAuthCredentialConfig GetOAuthCredentialConfig() const;
 
                     /**
-                     * 设置<p>OAuth凭证配置</p>
-                     * @param _oAuthCredentialConfig <p>OAuth凭证配置</p>
+                     * 设置<p>OAuth2凭证配置</p>
+                     * @param _oAuthCredentialConfig <p>OAuth2凭证配置</p>
                      * 
                      */
                     void SetOAuthCredentialConfig(const AIGWOAuthCredentialConfig& _oAuthCredentialConfig);
@@ -429,15 +325,15 @@ namespace TencentCloud
                     bool OIDCCredentialConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>
-                     * @return Provider <p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>
+                     * 获取<p>Agent 密钥类型</p>
+                     * @return Provider <p>Agent 密钥类型</p>
                      * 
                      */
                     std::string GetProvider() const;
 
                     /**
-                     * 设置<p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>
-                     * @param _provider <p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>
+                     * 设置<p>Agent 密钥类型</p>
+                     * @param _provider <p>Agent 密钥类型</p>
                      * 
                      */
                     void SetProvider(const std::string& _provider);
@@ -448,6 +344,174 @@ namespace TencentCloud
                      * 
                      */
                     bool ProviderHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
+                     * @return ResourceType <p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
+                     * 
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置<p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
+                     * @param _resourceType <p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
+                     * 
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密钥id</p>
+                     * @return SecretKeyId <p>密钥id</p>
+                     * 
+                     */
+                    std::string GetSecretKeyId() const;
+
+                    /**
+                     * 设置<p>密钥id</p>
+                     * @param _secretKeyId <p>密钥id</p>
+                     * 
+                     */
+                    void SetSecretKeyId(const std::string& _secretKeyId);
+
+                    /**
+                     * 判断参数 SecretKeyId 是否已赋值
+                     * @return SecretKeyId 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密钥协议类型。</p>
+                     * @return SecretType <p>密钥协议类型。</p>
+                     * 
+                     */
+                    std::string GetSecretType() const;
+
+                    /**
+                     * 设置<p>密钥协议类型。</p>
+                     * @param _secretType <p>密钥协议类型。</p>
+                     * 
+                     */
+                    void SetSecretType(const std::string& _secretType);
+
+                    /**
+                     * 判断参数 SecretType 是否已赋值
+                     * @return SecretType 是否已赋值
+                     * 
+                     */
+                    bool SecretTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密钥明文</p>
+                     * @return SecretValue <p>密钥明文</p>
+                     * 
+                     */
+                    std::string GetSecretValue() const;
+
+                    /**
+                     * 设置<p>密钥明文</p>
+                     * @param _secretValue <p>密钥明文</p>
+                     * 
+                     */
+                    void SetSecretValue(const std::string& _secretValue);
+
+                    /**
+                     * 判断参数 SecretValue 是否已赋值
+                     * @return SecretValue 是否已赋值
+                     * 
+                     */
+                    bool SecretValueHasBeenSet() const;
+
+                    /**
+                     * 获取<p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
+                     * @return Status <p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置<p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
+                     * @param _status <p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * @return SyncStatus <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * 
+                     */
+                    std::string GetSyncStatus() const;
+
+                    /**
+                     * 设置<p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * @param _syncStatus <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     * 
+                     */
+                    void SetSyncStatus(const std::string& _syncStatus);
+
+                    /**
+                     * 判断参数 SyncStatus 是否已赋值
+                     * @return SyncStatus 是否已赋值
+                     * 
+                     */
+                    bool SyncStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>
+                     * @return SourceType <p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>
+                     * 
+                     */
+                    std::string GetSourceType() const;
+
+                    /**
+                     * 设置<p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>
+                     * @param _sourceType <p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>
+                     * 
+                     */
+                    void SetSourceType(const std::string& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     * 
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>同步版本</p>
+                     * @return SyncedVersion <p>同步版本</p>
+                     * 
+                     */
+                    std::string GetSyncedVersion() const;
+
+                    /**
+                     * 设置<p>同步版本</p>
+                     * @param _syncedVersion <p>同步版本</p>
+                     * 
+                     */
+                    void SetSyncedVersion(const std::string& _syncedVersion);
+
+                    /**
+                     * 判断参数 SyncedVersion 是否已赋值
+                     * @return SyncedVersion 是否已赋值
+                     * 
+                     */
+                    bool SyncedVersionHasBeenSet() const;
 
                     /**
                      * 获取<p>AK/SK凭证配置</p>
@@ -576,93 +640,137 @@ namespace TencentCloud
                     bool QueryParamCredentialConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>同步状态</p>
-                     * @return SyncStatus <p>同步状态</p>
+                     * 获取<p>该消费者密钥绑定的模型密钥列表</p>
+                     * @return BoundModelSecretKeys <p>该消费者密钥绑定的模型密钥列表</p>
                      * 
                      */
-                    std::string GetSyncStatus() const;
+                    std::vector<AIGWSimpleSecretKey> GetBoundModelSecretKeys() const;
 
                     /**
-                     * 设置<p>同步状态</p>
-                     * @param _syncStatus <p>同步状态</p>
+                     * 设置<p>该消费者密钥绑定的模型密钥列表</p>
+                     * @param _boundModelSecretKeys <p>该消费者密钥绑定的模型密钥列表</p>
                      * 
                      */
-                    void SetSyncStatus(const std::string& _syncStatus);
+                    void SetBoundModelSecretKeys(const std::vector<AIGWSimpleSecretKey>& _boundModelSecretKeys);
 
                     /**
-                     * 判断参数 SyncStatus 是否已赋值
-                     * @return SyncStatus 是否已赋值
+                     * 判断参数 BoundModelSecretKeys 是否已赋值
+                     * @return BoundModelSecretKeys 是否已赋值
                      * 
                      */
-                    bool SyncStatusHasBeenSet() const;
+                    bool BoundModelSecretKeysHasBeenSet() const;
 
                     /**
-                     * 获取<p>来源类型</p>
-                     * @return SourceType <p>来源类型</p>
+                     * 获取<p>绑定了该模型密钥的消费者密钥列表</p>
+                     * @return BoundConsumerSecretKeys <p>绑定了该模型密钥的消费者密钥列表</p>
                      * 
                      */
-                    std::string GetSourceType() const;
+                    std::vector<AIGWSimpleSecretKey> GetBoundConsumerSecretKeys() const;
 
                     /**
-                     * 设置<p>来源类型</p>
-                     * @param _sourceType <p>来源类型</p>
+                     * 设置<p>绑定了该模型密钥的消费者密钥列表</p>
+                     * @param _boundConsumerSecretKeys <p>绑定了该模型密钥的消费者密钥列表</p>
                      * 
                      */
-                    void SetSourceType(const std::string& _sourceType);
+                    void SetBoundConsumerSecretKeys(const std::vector<AIGWSimpleSecretKey>& _boundConsumerSecretKeys);
 
                     /**
-                     * 判断参数 SourceType 是否已赋值
-                     * @return SourceType 是否已赋值
+                     * 判断参数 BoundConsumerSecretKeys 是否已赋值
+                     * @return BoundConsumerSecretKeys 是否已赋值
                      * 
                      */
-                    bool SourceTypeHasBeenSet() const;
+                    bool BoundConsumerSecretKeysHasBeenSet() const;
 
                     /**
-                     * 获取<p>已同步版本</p>
-                     * @return SyncedVersion <p>已同步版本</p>
+                     * 获取<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。凭证内容生成方式：System 自动生成、Custom 自定义、KMS。旧 GenerateType=AutoWithConsumer 映射为 System；其他值保持原 GenerateType，未知值由前端显示“未知”。不改写原 GenerateType。</p>
+                     * @return CredentialGenerateType <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。凭证内容生成方式：System 自动生成、Custom 自定义、KMS。旧 GenerateType=AutoWithConsumer 映射为 System；其他值保持原 GenerateType，未知值由前端显示“未知”。不改写原 GenerateType。</p>
                      * 
                      */
-                    std::string GetSyncedVersion() const;
+                    std::string GetCredentialGenerateType() const;
 
                     /**
-                     * 设置<p>已同步版本</p>
-                     * @param _syncedVersion <p>已同步版本</p>
+                     * 设置<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。凭证内容生成方式：System 自动生成、Custom 自定义、KMS。旧 GenerateType=AutoWithConsumer 映射为 System；其他值保持原 GenerateType，未知值由前端显示“未知”。不改写原 GenerateType。</p>
+                     * @param _credentialGenerateType <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。凭证内容生成方式：System 自动生成、Custom 自定义、KMS。旧 GenerateType=AutoWithConsumer 映射为 System；其他值保持原 GenerateType，未知值由前端显示“未知”。不改写原 GenerateType。</p>
                      * 
                      */
-                    void SetSyncedVersion(const std::string& _syncedVersion);
+                    void SetCredentialGenerateType(const std::string& _credentialGenerateType);
 
                     /**
-                     * 判断参数 SyncedVersion 是否已赋值
-                     * @return SyncedVersion 是否已赋值
+                     * 判断参数 CredentialGenerateType 是否已赋值
+                     * @return CredentialGenerateType 是否已赋值
                      * 
                      */
-                    bool SyncedVersionHasBeenSet() const;
+                    bool CredentialGenerateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。创建来源：Manual 手动新建、AutoWithConsumer 随消费者自动新建、Batch 批量新建。按持久化 BatchId 和原 GenerateType 判定，不按名称前缀猜测。</p>
+                     * @return CreationSource <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。创建来源：Manual 手动新建、AutoWithConsumer 随消费者自动新建、Batch 批量新建。按持久化 BatchId 和原 GenerateType 判定，不按名称前缀猜测。</p>
+                     * 
+                     */
+                    std::string GetCreationSource() const;
+
+                    /**
+                     * 设置<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。创建来源：Manual 手动新建、AutoWithConsumer 随消费者自动新建、Batch 批量新建。按持久化 BatchId 和原 GenerateType 判定，不按名称前缀猜测。</p>
+                     * @param _creationSource <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。创建来源：Manual 手动新建、AutoWithConsumer 随消费者自动新建、Batch 批量新建。按持久化 BatchId 和原 GenerateType 判定，不按名称前缀猜测。</p>
+                     * 
+                     */
+                    void SetCreationSource(const std::string& _creationSource);
+
+                    /**
+                     * 判断参数 CreationSource 是否已赋值
+                     * @return CreationSource 是否已赋值
+                     * 
+                     */
+                    bool CreationSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。批量创建填原批次 ID，非批量为空字符串。来源关联随密钥保留，不因批次结果过期而消失；此字段不表示批次结果或明文仍可读取。</p>
+                     * @return BatchId <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。批量创建填原批次 ID，非批量为空字符串。来源关联随密钥保留，不因批次结果过期而消失；此字段不表示批次结果或明文仍可读取。</p>
+                     * 
+                     */
+                    std::string GetBatchId() const;
+
+                    /**
+                     * 设置<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。批量创建填原批次 ID，非批量为空字符串。来源关联随密钥保留，不因批次结果过期而消失；此字段不表示批次结果或明文仍可读取。</p>
+                     * @param _batchId <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。批量创建填原批次 ID，非批量为空字符串。来源关联随密钥保留，不因批次结果过期而消失；此字段不表示批次结果或明文仍可读取。</p>
+                     * 
+                     */
+                    void SetBatchId(const std::string& _batchId);
+
+                    /**
+                     * 判断参数 BatchId 是否已赋值
+                     * @return BatchId 是否已赋值
+                     * 
+                     */
+                    bool BatchIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * <p>密钥id</p>
+                     * <p>绑定数</p>
                      */
-                    std::string m_secretKeyId;
-                    bool m_secretKeyIdHasBeenSet;
+                    uint64_t m_bindCount;
+                    bool m_bindCountHasBeenSet;
 
                     /**
-                     * <p>密钥名字</p>
+                     * <p>是否可以绑定</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
+                    bool m_canBind;
+                    bool m_canBindHasBeenSet;
 
                     /**
-                     * <p>密钥协议类型。</p>
+                     * <p>创建时间</p>
                      */
-                    std::string m_secretType;
-                    bool m_secretTypeHasBeenSet;
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                     /**
-                     * <p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
+                     * <p>描述</p>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_status;
-                    bool m_statusHasBeenSet;
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                     /**
                      * <p>密钥生成方式。</p><p>枚举值：</p><ul><li>System： 系统自动生成</li><li>Custom： 用户自定义</li><li>KMS： 使用 KMS 密钥</li></ul>
@@ -671,10 +779,10 @@ namespace TencentCloud
                     bool m_generateTypeHasBeenSet;
 
                     /**
-                     * <p>密钥明文</p>
+                     * <p>JWT凭证配置</p>
                      */
-                    std::string m_secretValue;
-                    bool m_secretValueHasBeenSet;
+                    AIGWJWTCredentialConfig m_jWTCredentialConfig;
+                    bool m_jWTCredentialConfigHasBeenSet;
 
                     /**
                      * <p>KMS凭证名字</p>
@@ -691,51 +799,19 @@ namespace TencentCloud
                     bool m_kmsKeyVersionHasBeenSet;
 
                     /**
-                     * <p>描述</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_description;
-                    bool m_descriptionHasBeenSet;
-
-                    /**
-                     * <p>是否可以绑定</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    bool m_canBind;
-                    bool m_canBindHasBeenSet;
-
-                    /**
-                     * <p>创建时间</p>
-                     */
-                    std::string m_createTime;
-                    bool m_createTimeHasBeenSet;
-
-                    /**
                      * <p>修改时间</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * <p>绑定数</p>
+                     * <p>密钥名字</p>
                      */
-                    uint64_t m_bindCount;
-                    bool m_bindCountHasBeenSet;
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                     /**
-                     * <p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
-                     */
-                    std::string m_resourceType;
-                    bool m_resourceTypeHasBeenSet;
-
-                    /**
-                     * <p>JWT凭证配置</p>
-                     */
-                    AIGWJWTCredentialConfig m_jWTCredentialConfig;
-                    bool m_jWTCredentialConfigHasBeenSet;
-
-                    /**
-                     * <p>OAuth凭证配置</p>
+                     * <p>OAuth2凭证配置</p>
                      */
                     AIGWOAuthCredentialConfig m_oAuthCredentialConfig;
                     bool m_oAuthCredentialConfigHasBeenSet;
@@ -747,10 +823,58 @@ namespace TencentCloud
                     bool m_oIDCCredentialConfigHasBeenSet;
 
                     /**
-                     * <p>secret key provider方</p><p>枚举值：</p><ul><li>Dify： Dify</li></ul>
+                     * <p>Agent 密钥类型</p>
                      */
                     std::string m_provider;
                     bool m_providerHasBeenSet;
+
+                    /**
+                     * <p>密钥归属资源类型。</p><p>枚举值：</p><ul><li>Consumer： 消费者</li><li>ModelService： 模型服务</li></ul>
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * <p>密钥id</p>
+                     */
+                    std::string m_secretKeyId;
+                    bool m_secretKeyIdHasBeenSet;
+
+                    /**
+                     * <p>密钥协议类型。</p>
+                     */
+                    std::string m_secretType;
+                    bool m_secretTypeHasBeenSet;
+
+                    /**
+                     * <p>密钥明文</p>
+                     */
+                    std::string m_secretValue;
+                    bool m_secretValueHasBeenSet;
+
+                    /**
+                     * <p>状态。</p><p>枚举值：</p><ul><li>Enable： 启用</li><li>Disable： 禁用</li></ul>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>同步状态</p><p>枚举值：</p><ul><li>Fail： 失败</li><li>Success： 成功</li></ul>
+                     */
+                    std::string m_syncStatus;
+                    bool m_syncStatusHasBeenSet;
+
+                    /**
+                     * <p>资源类型</p><p>枚举值：</p><ul><li>Public： 公共</li><li>Private： 私有</li><li>SourceDeleted： 资源删除</li></ul>
+                     */
+                    std::string m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
+
+                    /**
+                     * <p>同步版本</p>
+                     */
+                    std::string m_syncedVersion;
+                    bool m_syncedVersionHasBeenSet;
 
                     /**
                      * <p>AK/SK凭证配置</p>
@@ -789,22 +913,34 @@ namespace TencentCloud
                     bool m_queryParamCredentialConfigHasBeenSet;
 
                     /**
-                     * <p>同步状态</p>
+                     * <p>该消费者密钥绑定的模型密钥列表</p>
                      */
-                    std::string m_syncStatus;
-                    bool m_syncStatusHasBeenSet;
+                    std::vector<AIGWSimpleSecretKey> m_boundModelSecretKeys;
+                    bool m_boundModelSecretKeysHasBeenSet;
 
                     /**
-                     * <p>来源类型</p>
+                     * <p>绑定了该模型密钥的消费者密钥列表</p>
                      */
-                    std::string m_sourceType;
-                    bool m_sourceTypeHasBeenSet;
+                    std::vector<AIGWSimpleSecretKey> m_boundConsumerSecretKeys;
+                    bool m_boundConsumerSecretKeysHasBeenSet;
 
                     /**
-                     * <p>已同步版本</p>
+                     * <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。凭证内容生成方式：System 自动生成、Custom 自定义、KMS。旧 GenerateType=AutoWithConsumer 映射为 System；其他值保持原 GenerateType，未知值由前端显示“未知”。不改写原 GenerateType。</p>
                      */
-                    std::string m_syncedVersion;
-                    bool m_syncedVersionHasBeenSet;
+                    std::string m_credentialGenerateType;
+                    bool m_credentialGenerateTypeHasBeenSet;
+
+                    /**
+                     * <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。创建来源：Manual 手动新建、AutoWithConsumer 随消费者自动新建、Batch 批量新建。按持久化 BatchId 和原 GenerateType 判定，不按名称前缀猜测。</p>
+                     */
+                    std::string m_creationSource;
+                    bool m_creationSourceHasBeenSet;
+
+                    /**
+                     * <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。批量创建填原批次 ID，非批量为空字符串。来源关联随密钥保留，不因批次结果过期而消失；此字段不表示批次结果或明文仍可读取。</p>
+                     */
+                    std::string m_batchId;
+                    bool m_batchIdHasBeenSet;
 
                 };
             }

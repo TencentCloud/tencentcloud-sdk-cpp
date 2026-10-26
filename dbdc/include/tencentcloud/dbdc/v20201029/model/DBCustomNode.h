@@ -695,6 +695,27 @@ namespace TencentCloud
                      */
                     bool LatestRunningTaskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>节点所属的业务类型</p><p>枚举值：</p><ul><li>sqlserver： 腾讯云 SQL Server 数据库实例 Custom 形态的节点</li></ul>
+                     * @return BusinessType <p>节点所属的业务类型</p><p>枚举值：</p><ul><li>sqlserver： 腾讯云 SQL Server 数据库实例 Custom 形态的节点</li></ul>
+                     * 
+                     */
+                    std::string GetBusinessType() const;
+
+                    /**
+                     * 设置<p>节点所属的业务类型</p><p>枚举值：</p><ul><li>sqlserver： 腾讯云 SQL Server 数据库实例 Custom 形态的节点</li></ul>
+                     * @param _businessType <p>节点所属的业务类型</p><p>枚举值：</p><ul><li>sqlserver： 腾讯云 SQL Server 数据库实例 Custom 形态的节点</li></ul>
+                     * 
+                     */
+                    void SetBusinessType(const std::string& _businessType);
+
+                    /**
+                     * 判断参数 BusinessType 是否已赋值
+                     * @return BusinessType 是否已赋值
+                     * 
+                     */
+                    bool BusinessTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -880,6 +901,12 @@ namespace TencentCloud
                      */
                     std::string m_latestRunningTaskType;
                     bool m_latestRunningTaskTypeHasBeenSet;
+
+                    /**
+                     * <p>节点所属的业务类型</p><p>枚举值：</p><ul><li>sqlserver： 腾讯云 SQL Server 数据库实例 Custom 形态的节点</li></ul>
+                     */
+                    std::string m_businessType;
+                    bool m_businessTypeHasBeenSet;
 
                 };
             }

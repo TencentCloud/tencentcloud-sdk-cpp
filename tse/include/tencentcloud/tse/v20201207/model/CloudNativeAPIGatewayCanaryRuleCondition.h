@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool DelimiterHasBeenSet() const;
 
                     /**
-                     * 获取全局配置 Id
-                     * @return GlobalConfigId 全局配置 Id
+                     * 获取网关全局配置 Id
+                     * @return GlobalConfigId 网关全局配置 Id
                      * 
                      */
                     std::string GetGlobalConfigId() const;
 
                     /**
-                     * 设置全局配置 Id
-                     * @param _globalConfigId 全局配置 Id
+                     * 设置网关全局配置 Id
+                     * @param _globalConfigId 网关全局配置 Id
                      * 
                      */
                     void SetGlobalConfigId(const std::string& _globalConfigId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool GlobalConfigIdHasBeenSet() const;
 
                     /**
-                     * 获取全局配置名称
-                     * @return GlobalConfigName 全局配置名称
+                     * 获取网关全局配置名称
+                     * @return GlobalConfigName 网关全局配置名称
                      * 
                      */
                     std::string GetGlobalConfigName() const;
 
                     /**
-                     * 设置全局配置名称
-                     * @param _globalConfigName 全局配置名称
+                     * 设置网关全局配置名称
+                     * @param _globalConfigName 网关全局配置名称
                      * 
                      */
                     void SetGlobalConfigName(const std::string& _globalConfigName);
@@ -226,13 +226,13 @@ namespace TencentCloud
                     bool m_delimiterHasBeenSet;
 
                     /**
-                     * 全局配置 Id
+                     * 网关全局配置 Id
                      */
                     std::string m_globalConfigId;
                     bool m_globalConfigIdHasBeenSet;
 
                     /**
-                     * 全局配置名称
+                     * 网关全局配置名称
                      */
                     std::string m_globalConfigName;
                     bool m_globalConfigNameHasBeenSet;

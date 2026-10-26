@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>前缀缓存感知路由模型服务候选列表</p>
-                     * @return Candidates <p>前缀缓存感知路由模型服务候选列表</p>
+                     * 获取<p>前缀缓存感知路由模型服务列表</p>
+                     * @return Candidates <p>前缀缓存感知路由模型服务列表</p>
                      * 
                      */
                     std::vector<AIGWCacheAwareRouteCandidate> GetCandidates() const;
 
                     /**
-                     * 设置<p>前缀缓存感知路由模型服务候选列表</p>
-                     * @param _candidates <p>前缀缓存感知路由模型服务候选列表</p>
+                     * 设置<p>前缀缓存感知路由模型服务列表</p>
+                     * @param _candidates <p>前缀缓存感知路由模型服务列表</p>
                      * 
                      */
                     void SetCandidates(const std::vector<AIGWCacheAwareRouteCandidate>& _candidates);
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>前缀缓存感知路由模型服务候选列表</p>
+                     * <p>前缀缓存感知路由模型服务列表</p>
                      */
                     std::vector<AIGWCacheAwareRouteCandidate> m_candidates;
                     bool m_candidatesHasBeenSet;

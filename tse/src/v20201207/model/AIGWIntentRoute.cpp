@@ -24,7 +24,9 @@ AIGWIntentRoute::AIGWIntentRoute() :
     m_intentModelServiceIdHasBeenSet(false),
     m_confidenceThresholdHasBeenSet(false),
     m_defaultModelServiceIdHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_defaultStandardModelNameHasBeenSet(false),
+    m_intentStandardModelNameHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,26 @@ CoreInternalOutcome AIGWIntentRoute::Deserialize(const rapidjson::Value &value)
         m_rulesHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultStandardModelName") && !value["DefaultStandardModelName"].IsNull())
+    {
+        if (!value["DefaultStandardModelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWIntentRoute.DefaultStandardModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultStandardModelName = string(value["DefaultStandardModelName"].GetString());
+        m_defaultStandardModelNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntentStandardModelName") && !value["IntentStandardModelName"].IsNull())
+    {
+        if (!value["IntentStandardModelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWIntentRoute.IntentStandardModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_intentStandardModelName = string(value["IntentStandardModelName"].GetString());
+        m_intentStandardModelNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +149,22 @@ void AIGWIntentRoute::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_defaultStandardModelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultStandardModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultStandardModelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intentStandardModelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentStandardModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_intentStandardModelName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -194,5 +232,37 @@ void AIGWIntentRoute::SetRules(const vector<AIGWIntentRouteRule>& _rules)
 bool AIGWIntentRoute::RulesHasBeenSet() const
 {
     return m_rulesHasBeenSet;
+}
+
+string AIGWIntentRoute::GetDefaultStandardModelName() const
+{
+    return m_defaultStandardModelName;
+}
+
+void AIGWIntentRoute::SetDefaultStandardModelName(const string& _defaultStandardModelName)
+{
+    m_defaultStandardModelName = _defaultStandardModelName;
+    m_defaultStandardModelNameHasBeenSet = true;
+}
+
+bool AIGWIntentRoute::DefaultStandardModelNameHasBeenSet() const
+{
+    return m_defaultStandardModelNameHasBeenSet;
+}
+
+string AIGWIntentRoute::GetIntentStandardModelName() const
+{
+    return m_intentStandardModelName;
+}
+
+void AIGWIntentRoute::SetIntentStandardModelName(const string& _intentStandardModelName)
+{
+    m_intentStandardModelName = _intentStandardModelName;
+    m_intentStandardModelNameHasBeenSet = true;
+}
+
+bool AIGWIntentRoute::IntentStandardModelNameHasBeenSet() const
+{
+    return m_intentStandardModelNameHasBeenSet;
 }
 

@@ -681,6 +681,69 @@ namespace TencentCloud
                      */
                     bool BoundConsumerSecretKeysHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。凭证内容生成方式：System 自动生成、Custom 自定义、KMS。旧 GenerateType=AutoWithConsumer 映射为 System；其他值保持原 GenerateType，未知值由前端显示“未知”。不改写原 GenerateType。</p>
+                     * @return CredentialGenerateType <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。凭证内容生成方式：System 自动生成、Custom 自定义、KMS。旧 GenerateType=AutoWithConsumer 映射为 System；其他值保持原 GenerateType，未知值由前端显示“未知”。不改写原 GenerateType。</p>
+                     * 
+                     */
+                    std::string GetCredentialGenerateType() const;
+
+                    /**
+                     * 设置<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。凭证内容生成方式：System 自动生成、Custom 自定义、KMS。旧 GenerateType=AutoWithConsumer 映射为 System；其他值保持原 GenerateType，未知值由前端显示“未知”。不改写原 GenerateType。</p>
+                     * @param _credentialGenerateType <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。凭证内容生成方式：System 自动生成、Custom 自定义、KMS。旧 GenerateType=AutoWithConsumer 映射为 System；其他值保持原 GenerateType，未知值由前端显示“未知”。不改写原 GenerateType。</p>
+                     * 
+                     */
+                    void SetCredentialGenerateType(const std::string& _credentialGenerateType);
+
+                    /**
+                     * 判断参数 CredentialGenerateType 是否已赋值
+                     * @return CredentialGenerateType 是否已赋值
+                     * 
+                     */
+                    bool CredentialGenerateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。创建来源：Manual 手动新建、AutoWithConsumer 随消费者自动新建、Batch 批量新建。按持久化 BatchId 和原 GenerateType 判定，不按名称前缀猜测。</p>
+                     * @return CreationSource <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。创建来源：Manual 手动新建、AutoWithConsumer 随消费者自动新建、Batch 批量新建。按持久化 BatchId 和原 GenerateType 判定，不按名称前缀猜测。</p>
+                     * 
+                     */
+                    std::string GetCreationSource() const;
+
+                    /**
+                     * 设置<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。创建来源：Manual 手动新建、AutoWithConsumer 随消费者自动新建、Batch 批量新建。按持久化 BatchId 和原 GenerateType 判定，不按名称前缀猜测。</p>
+                     * @param _creationSource <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。创建来源：Manual 手动新建、AutoWithConsumer 随消费者自动新建、Batch 批量新建。按持久化 BatchId 和原 GenerateType 判定，不按名称前缀猜测。</p>
+                     * 
+                     */
+                    void SetCreationSource(const std::string& _creationSource);
+
+                    /**
+                     * 判断参数 CreationSource 是否已赋值
+                     * @return CreationSource 是否已赋值
+                     * 
+                     */
+                    bool CreationSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。批量创建填原批次 ID，非批量为空字符串。来源关联随密钥保留，不因批次结果过期而消失；此字段不表示批次结果或明文仍可读取。</p>
+                     * @return BatchId <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。批量创建填原批次 ID，非批量为空字符串。来源关联随密钥保留，不因批次结果过期而消失；此字段不表示批次结果或明文仍可读取。</p>
+                     * 
+                     */
+                    std::string GetBatchId() const;
+
+                    /**
+                     * 设置<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。批量创建填原批次 ID，非批量为空字符串。来源关联随密钥保留，不因批次结果过期而消失；此字段不表示批次结果或明文仍可读取。</p>
+                     * @param _batchId <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。批量创建填原批次 ID，非批量为空字符串。来源关联随密钥保留，不因批次结果过期而消失；此字段不表示批次结果或明文仍可读取。</p>
+                     * 
+                     */
+                    void SetBatchId(const std::string& _batchId);
+
+                    /**
+                     * 判断参数 BatchId 是否已赋值
+                     * @return BatchId 是否已赋值
+                     * 
+                     */
+                    bool BatchIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -860,6 +923,24 @@ namespace TencentCloud
                      */
                     std::vector<AIGWSimpleSecretKey> m_boundConsumerSecretKeys;
                     bool m_boundConsumerSecretKeysHasBeenSet;
+
+                    /**
+                     * <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。凭证内容生成方式：System 自动生成、Custom 自定义、KMS。旧 GenerateType=AutoWithConsumer 映射为 System；其他值保持原 GenerateType，未知值由前端显示“未知”。不改写原 GenerateType。</p>
+                     */
+                    std::string m_credentialGenerateType;
+                    bool m_credentialGenerateTypeHasBeenSet;
+
+                    /**
+                     * <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。创建来源：Manual 手动新建、AutoWithConsumer 随消费者自动新建、Batch 批量新建。按持久化 BatchId 和原 GenerateType 判定，不按名称前缀猜测。</p>
+                     */
+                    std::string m_creationSource;
+                    bool m_creationSourceHasBeenSet;
+
+                    /**
+                     * <p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。批量创建填原批次 ID，非批量为空字符串。来源关联随密钥保留，不因批次结果过期而消失；此字段不表示批次结果或明文仍可读取。</p>
+                     */
+                    std::string m_batchId;
+                    bool m_batchIdHasBeenSet;
 
                 };
             }

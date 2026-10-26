@@ -23,7 +23,8 @@ using namespace std;
 CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy::CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy() :
     m_modelServiceIdHasBeenSet(false),
     m_matchModelNameHasBeenSet(false),
-    m_rewriteModelNameHasBeenSet(false)
+    m_rewriteModelNameHasBeenSet(false),
+    m_standardModelNameHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy::
         m_rewriteModelNameHasBeenSet = true;
     }
 
+    if (value.HasMember("StandardModelName") && !value["StandardModelName"].IsNull())
+    {
+        if (!value["StandardModelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy.StandardModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_standardModelName = string(value["StandardModelName"].GetString());
+        m_standardModelNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy::ToJsonObject(ra
         string key = "RewriteModelName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rewriteModelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_standardModelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_standardModelName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy::SetRewriteModel
 bool CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy::RewriteModelNameHasBeenSet() const
 {
     return m_rewriteModelNameHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy::GetStandardModelName() const
+{
+    return m_standardModelName;
+}
+
+void CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy::SetStandardModelName(const string& _standardModelName)
+{
+    m_standardModelName = _standardModelName;
+    m_standardModelNameHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelServiceRouteModelNameStrategy::StandardModelNameHasBeenSet() const
+{
+    return m_standardModelNameHasBeenSet;
 }
 

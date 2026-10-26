@@ -126,6 +126,48 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * @return OperationSource <p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * 
+                     */
+                    std::string GetOperationSource() const;
+
+                    /**
+                     * 设置<p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * @param _operationSource <p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * 
+                     */
+                    void SetOperationSource(const std::string& _operationSource);
+
+                    /**
+                     * 判断参数 OperationSource 是否已赋值
+                     * @return OperationSource 是否已赋值
+                     * 
+                     */
+                    bool OperationSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>仅 CustomOrganization 使用。1–32 个当前网关自定义父部门 UUID，完整保留多父关系；省略时挂自定义根，空数组非法。不得使用同步部门或未归属组。Legacy 不使用此字段。</p>
+                     * @return ParentConsumerGroupIds <p>仅 CustomOrganization 使用。1–32 个当前网关自定义父部门 UUID，完整保留多父关系；省略时挂自定义根，空数组非法。不得使用同步部门或未归属组。Legacy 不使用此字段。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetParentConsumerGroupIds() const;
+
+                    /**
+                     * 设置<p>仅 CustomOrganization 使用。1–32 个当前网关自定义父部门 UUID，完整保留多父关系；省略时挂自定义根，空数组非法。不得使用同步部门或未归属组。Legacy 不使用此字段。</p>
+                     * @param _parentConsumerGroupIds <p>仅 CustomOrganization 使用。1–32 个当前网关自定义父部门 UUID，完整保留多父关系；省略时挂自定义根，空数组非法。不得使用同步部门或未归属组。Legacy 不使用此字段。</p>
+                     * 
+                     */
+                    void SetParentConsumerGroupIds(const std::vector<std::string>& _parentConsumerGroupIds);
+
+                    /**
+                     * 判断参数 ParentConsumerGroupIds 是否已赋值
+                     * @return ParentConsumerGroupIds 是否已赋值
+                     * 
+                     */
+                    bool ParentConsumerGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     */
+                    std::string m_operationSource;
+                    bool m_operationSourceHasBeenSet;
+
+                    /**
+                     * <p>仅 CustomOrganization 使用。1–32 个当前网关自定义父部门 UUID，完整保留多父关系；省略时挂自定义根，空数组非法。不得使用同步部门或未归属组。Legacy 不使用此字段。</p>
+                     */
+                    std::vector<std::string> m_parentConsumerGroupIds;
+                    bool m_parentConsumerGroupIdsHasBeenSet;
 
                 };
             }

@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ConsumerGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * @return OperationSource <p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * 
+                     */
+                    std::string GetOperationSource() const;
+
+                    /**
+                     * 设置<p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * @param _operationSource <p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * 
+                     */
+                    void SetOperationSource(const std::string& _operationSource);
+
+                    /**
+                     * 判断参数 OperationSource 是否已赋值
+                     * @return OperationSource 是否已赋值
+                     * 
+                     */
+                    bool OperationSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_consumerGroupId;
                     bool m_consumerGroupIdHasBeenSet;
+
+                    /**
+                     * <p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     */
+                    std::string m_operationSource;
+                    bool m_operationSourceHasBeenSet;
 
                 };
             }

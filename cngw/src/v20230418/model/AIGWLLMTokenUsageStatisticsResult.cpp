@@ -27,7 +27,9 @@ AIGWLLMTokenUsageStatisticsResult::AIGWLLMTokenUsageStatisticsResult() :
     m_totalCachedReadInputTokensHasBeenSet(false),
     m_totalCostHasBeenSet(false),
     m_currencyHasBeenSet(false),
-    m_topConsumersHasBeenSet(false)
+    m_topConsumersHasBeenSet(false),
+    m_totalTokensHasBeenSet(false),
+    m_orgAttributionIncompleteHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,26 @@ CoreInternalOutcome AIGWLLMTokenUsageStatisticsResult::Deserialize(const rapidjs
         m_topConsumersHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalTokens") && !value["TotalTokens"].IsNull())
+    {
+        if (!value["TotalTokens"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWLLMTokenUsageStatisticsResult.TotalTokens` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalTokens = value["TotalTokens"].GetInt64();
+        m_totalTokensHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrgAttributionIncomplete") && !value["OrgAttributionIncomplete"].IsNull())
+    {
+        if (!value["OrgAttributionIncomplete"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWLLMTokenUsageStatisticsResult.OrgAttributionIncomplete` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgAttributionIncomplete = value["OrgAttributionIncomplete"].GetBool();
+        m_orgAttributionIncompleteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +206,22 @@ void AIGWLLMTokenUsageStatisticsResult::ToJsonObject(rapidjson::Value &value, ra
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_totalTokensHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalTokens";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalTokens, allocator);
+    }
+
+    if (m_orgAttributionIncompleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgAttributionIncomplete";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_orgAttributionIncomplete, allocator);
     }
 
 }
@@ -299,5 +337,37 @@ void AIGWLLMTokenUsageStatisticsResult::SetTopConsumers(const vector<AIGWTopCons
 bool AIGWLLMTokenUsageStatisticsResult::TopConsumersHasBeenSet() const
 {
     return m_topConsumersHasBeenSet;
+}
+
+int64_t AIGWLLMTokenUsageStatisticsResult::GetTotalTokens() const
+{
+    return m_totalTokens;
+}
+
+void AIGWLLMTokenUsageStatisticsResult::SetTotalTokens(const int64_t& _totalTokens)
+{
+    m_totalTokens = _totalTokens;
+    m_totalTokensHasBeenSet = true;
+}
+
+bool AIGWLLMTokenUsageStatisticsResult::TotalTokensHasBeenSet() const
+{
+    return m_totalTokensHasBeenSet;
+}
+
+bool AIGWLLMTokenUsageStatisticsResult::GetOrgAttributionIncomplete() const
+{
+    return m_orgAttributionIncomplete;
+}
+
+void AIGWLLMTokenUsageStatisticsResult::SetOrgAttributionIncomplete(const bool& _orgAttributionIncomplete)
+{
+    m_orgAttributionIncomplete = _orgAttributionIncomplete;
+    m_orgAttributionIncompleteHasBeenSet = true;
+}
+
+bool AIGWLLMTokenUsageStatisticsResult::OrgAttributionIncompleteHasBeenSet() const
+{
+    return m_orgAttributionIncompleteHasBeenSet;
 }
 

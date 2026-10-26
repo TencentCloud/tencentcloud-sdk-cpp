@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>Token用量明细返回结果列表</p>
-                     * @return DataList <p>Token用量明细返回结果列表</p>
+                     * 获取<p>网关版本不低于 3.9.8 且 Dimension=ConsumerGroup 时，未指定节点筛选则列出 Kong CP 当前目录的全部真实节点，包含同步、自定义、禁用及保留中的软删节点，排除合成展示节点。按当前名称、节点 UUID 升序，先分页节点再查询历史指标；无调用节点仍返回，Token 与请求数补零。节点指标包含历史下属，同一请求可计入多个组行，不能逐行相加作为网关总量。</p>
+                     * @return DataList <p>网关版本不低于 3.9.8 且 Dimension=ConsumerGroup 时，未指定节点筛选则列出 Kong CP 当前目录的全部真实节点，包含同步、自定义、禁用及保留中的软删节点，排除合成展示节点。按当前名称、节点 UUID 升序，先分页节点再查询历史指标；无调用节点仍返回，Token 与请求数补零。节点指标包含历史下属，同一请求可计入多个组行，不能逐行相加作为网关总量。</p>
                      * 
                      */
                     std::vector<AIGWLLMTokenUsageItem> GetDataList() const;
 
                     /**
-                     * 设置<p>Token用量明细返回结果列表</p>
-                     * @param _dataList <p>Token用量明细返回结果列表</p>
+                     * 设置<p>网关版本不低于 3.9.8 且 Dimension=ConsumerGroup 时，未指定节点筛选则列出 Kong CP 当前目录的全部真实节点，包含同步、自定义、禁用及保留中的软删节点，排除合成展示节点。按当前名称、节点 UUID 升序，先分页节点再查询历史指标；无调用节点仍返回，Token 与请求数补零。节点指标包含历史下属，同一请求可计入多个组行，不能逐行相加作为网关总量。</p>
+                     * @param _dataList <p>网关版本不低于 3.9.8 且 Dimension=ConsumerGroup 时，未指定节点筛选则列出 Kong CP 当前目录的全部真实节点，包含同步、自定义、禁用及保留中的软删节点，排除合成展示节点。按当前名称、节点 UUID 升序，先分页节点再查询历史指标；无调用节点仍返回，Token 与请求数补零。节点指标包含历史下属，同一请求可计入多个组行，不能逐行相加作为网关总量。</p>
                      * 
                      */
                     void SetDataList(const std::vector<AIGWLLMTokenUsageItem>& _dataList);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DataListHasBeenSet() const;
 
                     /**
-                     * 获取<p>结果总数</p>
-                     * @return TotalCount <p>结果总数</p>
+                     * 获取<p>筛选后的结果总数。新版 ConsumerGroup 查询为候选节点总数，包含无调用节点，不受 Limit / Offset 影响。</p>
+                     * @return TotalCount <p>筛选后的结果总数。新版 ConsumerGroup 查询为候选节点总数，包含无调用节点，不受 Limit / Offset 影响。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
-                     * 设置<p>结果总数</p>
-                     * @param _totalCount <p>结果总数</p>
+                     * 设置<p>筛选后的结果总数。新版 ConsumerGroup 查询为候选节点总数，包含无调用节点，不受 Limit / Offset 影响。</p>
+                     * @param _totalCount <p>筛选后的结果总数。新版 ConsumerGroup 查询为候选节点总数，包含无调用节点，不受 Limit / Offset 影响。</p>
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -89,19 +89,51 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrgAttributionIncomplete <p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetOrgAttributionIncomplete() const;
+
+                    /**
+                     * 设置<p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _orgAttributionIncomplete <p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOrgAttributionIncomplete(const bool& _orgAttributionIncomplete);
+
+                    /**
+                     * 判断参数 OrgAttributionIncomplete 是否已赋值
+                     * @return OrgAttributionIncomplete 是否已赋值
+                     * 
+                     */
+                    bool OrgAttributionIncompleteHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>Token用量明细返回结果列表</p>
+                     * <p>网关版本不低于 3.9.8 且 Dimension=ConsumerGroup 时，未指定节点筛选则列出 Kong CP 当前目录的全部真实节点，包含同步、自定义、禁用及保留中的软删节点，排除合成展示节点。按当前名称、节点 UUID 升序，先分页节点再查询历史指标；无调用节点仍返回，Token 与请求数补零。节点指标包含历史下属，同一请求可计入多个组行，不能逐行相加作为网关总量。</p>
                      */
                     std::vector<AIGWLLMTokenUsageItem> m_dataList;
                     bool m_dataListHasBeenSet;
 
                     /**
-                     * <p>结果总数</p>
+                     * <p>筛选后的结果总数。新版 ConsumerGroup 查询为候选节点总数，包含无调用节点，不受 Limit / Offset 影响。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * <p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_orgAttributionIncomplete;
+                    bool m_orgAttributionIncompleteHasBeenSet;
 
                 };
             }

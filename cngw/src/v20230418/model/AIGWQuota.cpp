@@ -33,7 +33,19 @@ AIGWQuota::AIGWQuota() :
     m_modifyTimeHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_exceedActionHasBeenSet(false),
-    m_cacheHitStatHasBeenSet(false)
+    m_cacheHitStatHasBeenSet(false),
+    m_exceedPercentageHasBeenSet(false),
+    m_setExceedPercentageHasBeenSet(false),
+    m_scopeHasBeenSet(false),
+    m_subResourceTypeHasBeenSet(false),
+    m_subResourceCountHasBeenSet(false),
+    m_consumerGroupPathHasBeenSet(false),
+    m_consumerGroupActiveHasBeenSet(false),
+    m_usedHasBeenSet(false),
+    m_usedExactHasBeenSet(false),
+    m_usageRateHasBeenSet(false),
+    m_alarmLevelHasBeenSet(false),
+    m_secretKeyCountHasBeenSet(false)
 {
 }
 
@@ -172,6 +184,126 @@ CoreInternalOutcome AIGWQuota::Deserialize(const rapidjson::Value &value)
         m_cacheHitStatHasBeenSet = true;
     }
 
+    if (value.HasMember("ExceedPercentage") && !value["ExceedPercentage"].IsNull())
+    {
+        if (!value["ExceedPercentage"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.ExceedPercentage` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_exceedPercentage = value["ExceedPercentage"].GetUint64();
+        m_exceedPercentageHasBeenSet = true;
+    }
+
+    if (value.HasMember("SetExceedPercentage") && !value["SetExceedPercentage"].IsNull())
+    {
+        if (!value["SetExceedPercentage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.SetExceedPercentage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_setExceedPercentage = value["SetExceedPercentage"].GetBool();
+        m_setExceedPercentageHasBeenSet = true;
+    }
+
+    if (value.HasMember("Scope") && !value["Scope"].IsNull())
+    {
+        if (!value["Scope"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.Scope` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scope = string(value["Scope"].GetString());
+        m_scopeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubResourceType") && !value["SubResourceType"].IsNull())
+    {
+        if (!value["SubResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.SubResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subResourceType = string(value["SubResourceType"].GetString());
+        m_subResourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubResourceCount") && !value["SubResourceCount"].IsNull())
+    {
+        if (!value["SubResourceCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.SubResourceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subResourceCount = value["SubResourceCount"].GetInt64();
+        m_subResourceCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumerGroupPath") && !value["ConsumerGroupPath"].IsNull())
+    {
+        if (!value["ConsumerGroupPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.ConsumerGroupPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerGroupPath = string(value["ConsumerGroupPath"].GetString());
+        m_consumerGroupPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumerGroupActive") && !value["ConsumerGroupActive"].IsNull())
+    {
+        if (!value["ConsumerGroupActive"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.ConsumerGroupActive` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerGroupActive = value["ConsumerGroupActive"].GetBool();
+        m_consumerGroupActiveHasBeenSet = true;
+    }
+
+    if (value.HasMember("Used") && !value["Used"].IsNull())
+    {
+        if (!value["Used"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.Used` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_used = value["Used"].GetInt64();
+        m_usedHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsedExact") && !value["UsedExact"].IsNull())
+    {
+        if (!value["UsedExact"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.UsedExact` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedExact = value["UsedExact"].GetDouble();
+        m_usedExactHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsageRate") && !value["UsageRate"].IsNull())
+    {
+        if (!value["UsageRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.UsageRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_usageRate = value["UsageRate"].GetDouble();
+        m_usageRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmLevel") && !value["AlarmLevel"].IsNull())
+    {
+        if (!value["AlarmLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.AlarmLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmLevel = string(value["AlarmLevel"].GetString());
+        m_alarmLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretKeyCount") && !value["SecretKeyCount"].IsNull())
+    {
+        if (!value["SecretKeyCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuota.SecretKeyCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretKeyCount = value["SecretKeyCount"].GetInt64();
+        m_secretKeyCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +413,102 @@ void AIGWQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CacheHitStat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cacheHitStat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exceedPercentageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExceedPercentage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exceedPercentage, allocator);
+    }
+
+    if (m_setExceedPercentageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetExceedPercentage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_setExceedPercentage, allocator);
+    }
+
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scope.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subResourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subResourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subResourceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubResourceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subResourceCount, allocator);
+    }
+
+    if (m_consumerGroupPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerGroupPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumerGroupPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumerGroupActiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerGroupActive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consumerGroupActive, allocator);
+    }
+
+    if (m_usedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Used";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_used, allocator);
+    }
+
+    if (m_usedExactHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedExact";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedExact, allocator);
+    }
+
+    if (m_usageRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsageRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usageRate, allocator);
+    }
+
+    if (m_alarmLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretKeyCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretKeyCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_secretKeyCount, allocator);
     }
 
 }
@@ -492,5 +720,197 @@ void AIGWQuota::SetCacheHitStat(const string& _cacheHitStat)
 bool AIGWQuota::CacheHitStatHasBeenSet() const
 {
     return m_cacheHitStatHasBeenSet;
+}
+
+uint64_t AIGWQuota::GetExceedPercentage() const
+{
+    return m_exceedPercentage;
+}
+
+void AIGWQuota::SetExceedPercentage(const uint64_t& _exceedPercentage)
+{
+    m_exceedPercentage = _exceedPercentage;
+    m_exceedPercentageHasBeenSet = true;
+}
+
+bool AIGWQuota::ExceedPercentageHasBeenSet() const
+{
+    return m_exceedPercentageHasBeenSet;
+}
+
+bool AIGWQuota::GetSetExceedPercentage() const
+{
+    return m_setExceedPercentage;
+}
+
+void AIGWQuota::SetSetExceedPercentage(const bool& _setExceedPercentage)
+{
+    m_setExceedPercentage = _setExceedPercentage;
+    m_setExceedPercentageHasBeenSet = true;
+}
+
+bool AIGWQuota::SetExceedPercentageHasBeenSet() const
+{
+    return m_setExceedPercentageHasBeenSet;
+}
+
+string AIGWQuota::GetScope() const
+{
+    return m_scope;
+}
+
+void AIGWQuota::SetScope(const string& _scope)
+{
+    m_scope = _scope;
+    m_scopeHasBeenSet = true;
+}
+
+bool AIGWQuota::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
+string AIGWQuota::GetSubResourceType() const
+{
+    return m_subResourceType;
+}
+
+void AIGWQuota::SetSubResourceType(const string& _subResourceType)
+{
+    m_subResourceType = _subResourceType;
+    m_subResourceTypeHasBeenSet = true;
+}
+
+bool AIGWQuota::SubResourceTypeHasBeenSet() const
+{
+    return m_subResourceTypeHasBeenSet;
+}
+
+int64_t AIGWQuota::GetSubResourceCount() const
+{
+    return m_subResourceCount;
+}
+
+void AIGWQuota::SetSubResourceCount(const int64_t& _subResourceCount)
+{
+    m_subResourceCount = _subResourceCount;
+    m_subResourceCountHasBeenSet = true;
+}
+
+bool AIGWQuota::SubResourceCountHasBeenSet() const
+{
+    return m_subResourceCountHasBeenSet;
+}
+
+string AIGWQuota::GetConsumerGroupPath() const
+{
+    return m_consumerGroupPath;
+}
+
+void AIGWQuota::SetConsumerGroupPath(const string& _consumerGroupPath)
+{
+    m_consumerGroupPath = _consumerGroupPath;
+    m_consumerGroupPathHasBeenSet = true;
+}
+
+bool AIGWQuota::ConsumerGroupPathHasBeenSet() const
+{
+    return m_consumerGroupPathHasBeenSet;
+}
+
+bool AIGWQuota::GetConsumerGroupActive() const
+{
+    return m_consumerGroupActive;
+}
+
+void AIGWQuota::SetConsumerGroupActive(const bool& _consumerGroupActive)
+{
+    m_consumerGroupActive = _consumerGroupActive;
+    m_consumerGroupActiveHasBeenSet = true;
+}
+
+bool AIGWQuota::ConsumerGroupActiveHasBeenSet() const
+{
+    return m_consumerGroupActiveHasBeenSet;
+}
+
+int64_t AIGWQuota::GetUsed() const
+{
+    return m_used;
+}
+
+void AIGWQuota::SetUsed(const int64_t& _used)
+{
+    m_used = _used;
+    m_usedHasBeenSet = true;
+}
+
+bool AIGWQuota::UsedHasBeenSet() const
+{
+    return m_usedHasBeenSet;
+}
+
+double AIGWQuota::GetUsedExact() const
+{
+    return m_usedExact;
+}
+
+void AIGWQuota::SetUsedExact(const double& _usedExact)
+{
+    m_usedExact = _usedExact;
+    m_usedExactHasBeenSet = true;
+}
+
+bool AIGWQuota::UsedExactHasBeenSet() const
+{
+    return m_usedExactHasBeenSet;
+}
+
+double AIGWQuota::GetUsageRate() const
+{
+    return m_usageRate;
+}
+
+void AIGWQuota::SetUsageRate(const double& _usageRate)
+{
+    m_usageRate = _usageRate;
+    m_usageRateHasBeenSet = true;
+}
+
+bool AIGWQuota::UsageRateHasBeenSet() const
+{
+    return m_usageRateHasBeenSet;
+}
+
+string AIGWQuota::GetAlarmLevel() const
+{
+    return m_alarmLevel;
+}
+
+void AIGWQuota::SetAlarmLevel(const string& _alarmLevel)
+{
+    m_alarmLevel = _alarmLevel;
+    m_alarmLevelHasBeenSet = true;
+}
+
+bool AIGWQuota::AlarmLevelHasBeenSet() const
+{
+    return m_alarmLevelHasBeenSet;
+}
+
+int64_t AIGWQuota::GetSecretKeyCount() const
+{
+    return m_secretKeyCount;
+}
+
+void AIGWQuota::SetSecretKeyCount(const int64_t& _secretKeyCount)
+{
+    m_secretKeyCount = _secretKeyCount;
+    m_secretKeyCountHasBeenSet = true;
+}
+
+bool AIGWQuota::SecretKeyCountHasBeenSet() const
+{
+    return m_secretKeyCountHasBeenSet;
 }
 

@@ -31,7 +31,8 @@ KafkaConnectParam::KafkaConnectParam() :
     m_serviceVipHasBeenSet(false),
     m_portHasBeenSet(false),
     m_crossNetResourceUniqueIdHasBeenSet(false),
-    m_crossNetVpcSubNetIdHasBeenSet(false)
+    m_crossNetVpcSubNetIdHasBeenSet(false),
+    m_originalBrokerAddressesHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome KafkaConnectParam::Deserialize(const rapidjson::Value &value
         m_crossNetVpcSubNetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginalBrokerAddresses") && !value["OriginalBrokerAddresses"].IsNull())
+    {
+        if (!value["OriginalBrokerAddresses"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaConnectParam.OriginalBrokerAddresses` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originalBrokerAddresses = string(value["OriginalBrokerAddresses"].GetString());
+        m_originalBrokerAddressesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void KafkaConnectParam::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CrossNetVpcSubNetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_crossNetVpcSubNetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalBrokerAddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalBrokerAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originalBrokerAddresses.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void KafkaConnectParam::SetCrossNetVpcSubNetId(const string& _crossNetVpcSubNetI
 bool KafkaConnectParam::CrossNetVpcSubNetIdHasBeenSet() const
 {
     return m_crossNetVpcSubNetIdHasBeenSet;
+}
+
+string KafkaConnectParam::GetOriginalBrokerAddresses() const
+{
+    return m_originalBrokerAddresses;
+}
+
+void KafkaConnectParam::SetOriginalBrokerAddresses(const string& _originalBrokerAddresses)
+{
+    m_originalBrokerAddresses = _originalBrokerAddresses;
+    m_originalBrokerAddressesHasBeenSet = true;
+}
+
+bool KafkaConnectParam::OriginalBrokerAddressesHasBeenSet() const
+{
+    return m_originalBrokerAddressesHasBeenSet;
 }
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取灰度规则列表
-                     * @return Result 灰度规则列表
+                     * 获取<p>灰度规则列表</p>
+                     * @return Result <p>灰度规则列表</p>
                      * 
                      */
                     CloudAPIGatewayCanaryRuleList GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 灰度规则列表
+                     * <p>灰度规则列表</p>
                      */
                     CloudAPIGatewayCanaryRuleList m_result;
                     bool m_resultHasBeenSet;

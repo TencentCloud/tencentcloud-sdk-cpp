@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源集群Id
-                     * @return ClusterId 源集群Id
+                     * 获取<p>源集群Id</p>
+                     * @return ClusterId <p>源集群Id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置源集群Id
-                     * @param _clusterId 源集群Id
+                     * 设置<p>源集群Id</p>
+                     * @param _clusterId <p>源集群Id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取目标可用区
-                     * @return DstZone 目标可用区
+                     * 获取<p>目标可用区</p>
+                     * @return DstZone <p>目标可用区</p>
                      * 
                      */
                     std::string GetDstZone() const;
 
                     /**
-                     * 设置目标可用区
-                     * @param _dstZone 目标可用区
+                     * 设置<p>目标可用区</p>
+                     * @param _dstZone <p>目标可用区</p>
                      * 
                      */
                     void SetDstZone(const std::string& _dstZone);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DstZoneHasBeenSet() const;
 
                     /**
-                     * 获取跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)
-                     * @return MaxLag 跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)
+                     * 获取<p>跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)</p>
+                     * @return MaxLag <p>跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)</p>
                      * 
                      */
                     int64_t GetMaxLag() const;
 
                     /**
-                     * 设置跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)
-                     * @param _maxLag 跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)
+                     * 设置<p>跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)</p>
+                     * @param _maxLag <p>跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)</p>
                      * 
                      */
                     void SetMaxLag(const int64_t& _maxLag);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool MaxLagHasBeenSet() const;
 
                     /**
-                     * 获取Immediate:立即执行，InMaintain:时间窗口执行
-                     * @return TransferType Immediate:立即执行，InMaintain:时间窗口执行
+                     * 获取<p>Immediate:立即执行，InMaintain:时间窗口执行</p>
+                     * @return TransferType <p>Immediate:立即执行，InMaintain:时间窗口执行</p>
                      * 
                      */
                     std::string GetTransferType() const;
 
                     /**
-                     * 设置Immediate:立即执行，InMaintain:时间窗口执行
-                     * @param _transferType Immediate:立即执行，InMaintain:时间窗口执行
+                     * 设置<p>Immediate:立即执行，InMaintain:时间窗口执行</p>
+                     * @param _transferType <p>Immediate:立即执行，InMaintain:时间窗口执行</p>
                      * 
                      */
                     void SetTransferType(const std::string& _transferType);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TransferTypeHasBeenSet() const;
 
                     /**
-                     * 获取多可用区备区
-                     * @return DstSlaveZone 多可用区备区
+                     * 获取<p>多可用区备区</p>
+                     * @return DstSlaveZone <p>多可用区备区</p>
                      * 
                      */
                     std::string GetDstSlaveZone() const;
 
                     /**
-                     * 设置多可用区备区
-                     * @param _dstSlaveZone 多可用区备区
+                     * 设置<p>多可用区备区</p>
+                     * @param _dstSlaveZone <p>多可用区备区</p>
                      * 
                      */
                     void SetDstSlaveZone(const std::string& _dstSlaveZone);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool DstSlaveZoneHasBeenSet() const;
 
                     /**
-                     * 获取proxy迁移的目标可用区信息
-                     * @return ProxyZones proxy迁移的目标可用区信息
+                     * 获取<p>proxy迁移的目标可用区信息</p>
+                     * @return ProxyZones <p>proxy迁移的目标可用区信息</p>
                      * 
                      */
                     std::vector<ProxyZone> GetProxyZones() const;
 
                     /**
-                     * 设置proxy迁移的目标可用区信息
-                     * @param _proxyZones proxy迁移的目标可用区信息
+                     * 设置<p>proxy迁移的目标可用区信息</p>
+                     * @param _proxyZones <p>proxy迁移的目标可用区信息</p>
                      * 
                      */
                     void SetProxyZones(const std::vector<ProxyZone>& _proxyZones);
@@ -172,37 +172,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源集群Id
+                     * <p>源集群Id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 目标可用区
+                     * <p>目标可用区</p>
                      */
                     std::string m_dstZone;
                     bool m_dstZoneHasBeenSet;
 
                     /**
-                     * 跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)
+                     * <p>跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)</p>
                      */
                     int64_t m_maxLag;
                     bool m_maxLagHasBeenSet;
 
                     /**
-                     * Immediate:立即执行，InMaintain:时间窗口执行
+                     * <p>Immediate:立即执行，InMaintain:时间窗口执行</p>
                      */
                     std::string m_transferType;
                     bool m_transferTypeHasBeenSet;
 
                     /**
-                     * 多可用区备区
+                     * <p>多可用区备区</p>
                      */
                     std::string m_dstSlaveZone;
                     bool m_dstSlaveZoneHasBeenSet;
 
                     /**
-                     * proxy迁移的目标可用区信息
+                     * <p>proxy迁移的目标可用区信息</p>
                      */
                     std::vector<ProxyZone> m_proxyZones;
                     bool m_proxyZonesHasBeenSet;

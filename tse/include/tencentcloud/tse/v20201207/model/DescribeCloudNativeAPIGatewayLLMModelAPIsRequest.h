@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool UseToBindHasBeenSet() const;
 
                     /**
-                     * 获取<p>消费者ID</p>
-                     * @return ConsumerId <p>消费者ID</p>
+                     * 获取<p>消费者 ID（以 consumer- 开头）。</p>
+                     * @return ConsumerId <p>消费者 ID（以 consumer- 开头）。</p>
                      * 
                      */
                     std::string GetConsumerId() const;
 
                     /**
-                     * 设置<p>消费者ID</p>
-                     * @param _consumerId <p>消费者ID</p>
+                     * 设置<p>消费者 ID（以 consumer- 开头）。</p>
+                     * @param _consumerId <p>消费者 ID（以 consumer- 开头）。</p>
                      * 
                      */
                     void SetConsumerId(const std::string& _consumerId);
@@ -210,6 +210,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ConsumerIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>密钥ID</p>
+                     * @return SecretKeyId <p>密钥ID</p>
+                     * 
+                     */
+                    std::string GetSecretKeyId() const;
+
+                    /**
+                     * 设置<p>密钥ID</p>
+                     * @param _secretKeyId <p>密钥ID</p>
+                     * 
+                     */
+                    void SetSecretKeyId(const std::string& _secretKeyId);
+
+                    /**
+                     * 判断参数 SecretKeyId 是否已赋值
+                     * @return SecretKeyId 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyIdHasBeenSet() const;
 
                 private:
 
@@ -256,10 +277,16 @@ namespace TencentCloud
                     bool m_useToBindHasBeenSet;
 
                     /**
-                     * <p>消费者ID</p>
+                     * <p>消费者 ID（以 consumer- 开头）。</p>
                      */
                     std::string m_consumerId;
                     bool m_consumerIdHasBeenSet;
+
+                    /**
+                     * <p>密钥ID</p>
+                     */
+                    std::string m_secretKeyId;
+                    bool m_secretKeyIdHasBeenSet;
 
                 };
             }

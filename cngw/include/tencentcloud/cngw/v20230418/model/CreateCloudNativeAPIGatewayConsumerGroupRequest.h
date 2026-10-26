@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>消费者组名称，最长 60 字符。同一网关下唯一。</p>
-                     * @return Name <p>消费者组名称，最长 60 字符。同一网关下唯一。</p>
+                     * 获取<p>消费者组名称，最长 60 字符。同一网关下唯一。</p><p>CustomOrganization 时非空、最大 255 字符；Legacy 原规则不变。</p>
+                     * @return Name <p>消费者组名称，最长 60 字符。同一网关下唯一。</p><p>CustomOrganization 时非空、最大 255 字符；Legacy 原规则不变。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>消费者组名称，最长 60 字符。同一网关下唯一。</p>
-                     * @param _name <p>消费者组名称，最长 60 字符。同一网关下唯一。</p>
+                     * 设置<p>消费者组名称，最长 60 字符。同一网关下唯一。</p><p>CustomOrganization 时非空、最大 255 字符；Legacy 原规则不变。</p>
+                     * @param _name <p>消费者组名称，最长 60 字符。同一网关下唯一。</p><p>CustomOrganization 时非空、最大 255 字符；Legacy 原规则不变。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
-                     * @return Status <p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
+                     * 获取<p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul><p>CustomOrganization 时传 Active 或 Disabled；保持 Status 必填。Legacy 原 Enable/Disable 不变。</p>
+                     * @return Status <p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul><p>CustomOrganization 时传 Active 或 Disabled；保持 Status 必填。Legacy 原 Enable/Disable 不变。</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置<p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
-                     * @param _status <p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
+                     * 设置<p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul><p>CustomOrganization 时传 Active 或 Disabled；保持 Status 必填。Legacy 原 Enable/Disable 不变。</p>
+                     * @param _status <p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul><p>CustomOrganization 时传 Active 或 Disabled；保持 Status 必填。Legacy 原 Enable/Disable 不变。</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>消费者组描述。最长 200 字符。</p>
-                     * @return Description <p>消费者组描述。最长 200 字符。</p>
+                     * 获取<p>消费者组描述。最长 200 字符。</p><p>CustomOrganization 时最大 500 字符；Legacy 原规则不变。</p>
+                     * @return Description <p>消费者组描述。最长 200 字符。</p><p>CustomOrganization 时最大 500 字符；Legacy 原规则不变。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置<p>消费者组描述。最长 200 字符。</p>
-                     * @param _description <p>消费者组描述。最长 200 字符。</p>
+                     * 设置<p>消费者组描述。最长 200 字符。</p><p>CustomOrganization 时最大 500 字符；Legacy 原规则不变。</p>
+                     * @param _description <p>消费者组描述。最长 200 字符。</p><p>CustomOrganization 时最大 500 字符；Legacy 原规则不变。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -126,6 +126,48 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * @return OperationSource <p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * 
+                     */
+                    std::string GetOperationSource() const;
+
+                    /**
+                     * 设置<p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * @param _operationSource <p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     * 
+                     */
+                    void SetOperationSource(const std::string& _operationSource);
+
+                    /**
+                     * 判断参数 OperationSource 是否已赋值
+                     * @return OperationSource 是否已赋值
+                     * 
+                     */
+                    bool OperationSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>仅 CustomOrganization 使用。1–32 个当前网关自定义父部门 UUID，完整保留多父关系；省略时挂自定义根，空数组非法。不得使用同步部门或未归属组。Legacy 不使用此字段。</p>
+                     * @return ParentConsumerGroupIds <p>仅 CustomOrganization 使用。1–32 个当前网关自定义父部门 UUID，完整保留多父关系；省略时挂自定义根，空数组非法。不得使用同步部门或未归属组。Legacy 不使用此字段。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetParentConsumerGroupIds() const;
+
+                    /**
+                     * 设置<p>仅 CustomOrganization 使用。1–32 个当前网关自定义父部门 UUID，完整保留多父关系；省略时挂自定义根，空数组非法。不得使用同步部门或未归属组。Legacy 不使用此字段。</p>
+                     * @param _parentConsumerGroupIds <p>仅 CustomOrganization 使用。1–32 个当前网关自定义父部门 UUID，完整保留多父关系；省略时挂自定义根，空数组非法。不得使用同步部门或未归属组。Legacy 不使用此字段。</p>
+                     * 
+                     */
+                    void SetParentConsumerGroupIds(const std::vector<std::string>& _parentConsumerGroupIds);
+
+                    /**
+                     * 判断参数 ParentConsumerGroupIds 是否已赋值
+                     * @return ParentConsumerGroupIds 是否已赋值
+                     * 
+                     */
+                    bool ParentConsumerGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,22 +177,34 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * <p>消费者组名称，最长 60 字符。同一网关下唯一。</p>
+                     * <p>消费者组名称，最长 60 字符。同一网关下唯一。</p><p>CustomOrganization 时非空、最大 255 字符；Legacy 原规则不变。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>
+                     * <p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul><p>CustomOrganization 时传 Active 或 Disabled；保持 Status 必填。Legacy 原 Enable/Disable 不变。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * <p>消费者组描述。最长 200 字符。</p>
+                     * <p>消费者组描述。最长 200 字符。</p><p>CustomOrganization 时最大 500 字符；Legacy 原规则不变。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>
+                     */
+                    std::string m_operationSource;
+                    bool m_operationSourceHasBeenSet;
+
+                    /**
+                     * <p>仅 CustomOrganization 使用。1–32 个当前网关自定义父部门 UUID，完整保留多父关系；省略时挂自定义根，空数组非法。不得使用同步部门或未归属组。Legacy 不使用此字段。</p>
+                     */
+                    std::vector<std::string> m_parentConsumerGroupIds;
+                    bool m_parentConsumerGroupIdsHasBeenSet;
 
                 };
             }

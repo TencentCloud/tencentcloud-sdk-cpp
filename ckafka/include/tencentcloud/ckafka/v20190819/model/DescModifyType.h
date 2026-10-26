@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取变配类型
-                     * @return ModifyType 变配类型
+                     * 获取<p>变配类型</p>
+                     * @return ModifyType <p>变配类型</p>
                      * 
                      */
                     int64_t GetModifyType() const;
 
                     /**
-                     * 设置变配类型
-                     * @param _modifyType 变配类型
+                     * 设置<p>变配类型</p>
+                     * @param _modifyType <p>变配类型</p>
                      * 
                      */
                     void SetModifyType(const int64_t& _modifyType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ModifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否迁移标志
-                     * @return MigrateFlag 是否迁移标志
+                     * 获取<p>是否迁移标志</p>
+                     * @return MigrateFlag <p>是否迁移标志</p>
                      * 
                      */
                     bool GetMigrateFlag() const;
 
                     /**
-                     * 设置是否迁移标志
-                     * @param _migrateFlag 是否迁移标志
+                     * 设置<p>是否迁移标志</p>
+                     * @param _migrateFlag <p>是否迁移标志</p>
                      * 
                      */
                     void SetMigrateFlag(const bool& _migrateFlag);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 变配类型
+                     * <p>变配类型</p>
                      */
                     int64_t m_modifyType;
                     bool m_modifyTypeHasBeenSet;
 
                     /**
-                     * 是否迁移标志
+                     * <p>是否迁移标志</p>
                      */
                     bool m_migrateFlag;
                     bool m_migrateFlagHasBeenSet;

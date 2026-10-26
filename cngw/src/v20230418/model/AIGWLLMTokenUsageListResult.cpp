@@ -22,7 +22,8 @@ using namespace std;
 
 AIGWLLMTokenUsageListResult::AIGWLLMTokenUsageListResult() :
     m_dataListHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_orgAttributionIncompleteHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome AIGWLLMTokenUsageListResult::Deserialize(const rapidjson::Va
         m_totalCountHasBeenSet = true;
     }
 
+    if (value.HasMember("OrgAttributionIncomplete") && !value["OrgAttributionIncomplete"].IsNull())
+    {
+        if (!value["OrgAttributionIncomplete"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWLLMTokenUsageListResult.OrgAttributionIncomplete` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgAttributionIncomplete = value["OrgAttributionIncomplete"].GetBool();
+        m_orgAttributionIncompleteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void AIGWLLMTokenUsageListResult::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_orgAttributionIncompleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgAttributionIncomplete";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_orgAttributionIncomplete, allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void AIGWLLMTokenUsageListResult::SetTotalCount(const int64_t& _totalCount)
 bool AIGWLLMTokenUsageListResult::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+bool AIGWLLMTokenUsageListResult::GetOrgAttributionIncomplete() const
+{
+    return m_orgAttributionIncomplete;
+}
+
+void AIGWLLMTokenUsageListResult::SetOrgAttributionIncomplete(const bool& _orgAttributionIncomplete)
+{
+    m_orgAttributionIncomplete = _orgAttributionIncomplete;
+    m_orgAttributionIncompleteHasBeenSet = true;
+}
+
+bool AIGWLLMTokenUsageListResult::OrgAttributionIncompleteHasBeenSet() const
+{
+    return m_orgAttributionIncompleteHasBeenSet;
 }
 

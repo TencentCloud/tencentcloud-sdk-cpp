@@ -50,7 +50,8 @@ DBCustomNode::DBCustomNode() :
     m_eniIPHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_disasterRecoverGroupIdHasBeenSet(false),
-    m_latestRunningTaskTypeHasBeenSet(false)
+    m_latestRunningTaskTypeHasBeenSet(false),
+    m_businessTypeHasBeenSet(false)
 {
 }
 
@@ -389,6 +390,16 @@ CoreInternalOutcome DBCustomNode::Deserialize(const rapidjson::Value &value)
         m_latestRunningTaskTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("BusinessType") && !value["BusinessType"].IsNull())
+    {
+        if (!value["BusinessType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBCustomNode.BusinessType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessType = string(value["BusinessType"].GetString());
+        m_businessTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -654,6 +665,14 @@ void DBCustomNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LatestRunningTaskType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestRunningTaskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1137,5 +1156,21 @@ void DBCustomNode::SetLatestRunningTaskType(const string& _latestRunningTaskType
 bool DBCustomNode::LatestRunningTaskTypeHasBeenSet() const
 {
     return m_latestRunningTaskTypeHasBeenSet;
+}
+
+string DBCustomNode::GetBusinessType() const
+{
+    return m_businessType;
+}
+
+void DBCustomNode::SetBusinessType(const string& _businessType)
+{
+    m_businessType = _businessType;
+    m_businessTypeHasBeenSet = true;
+}
+
+bool DBCustomNode::BusinessTypeHasBeenSet() const
+{
+    return m_businessTypeHasBeenSet;
 }
 

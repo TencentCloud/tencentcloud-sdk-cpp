@@ -30,7 +30,8 @@ DescribeCloudNativeAPIGatewaySecretKeyListRequest::DescribeCloudNativeAPIGateway
     m_keywordHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_useToBindHasBeenSet(false)
+    m_useToBindHasBeenSet(false),
+    m_includeCreationInfoHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string DescribeCloudNativeAPIGatewaySecretKeyListRequest::ToJsonString() const
         string key = "UseToBind";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_useToBind, allocator);
+    }
+
+    if (m_includeCreationInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeCreationInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includeCreationInfo, allocator);
     }
 
 
@@ -246,6 +255,22 @@ void DescribeCloudNativeAPIGatewaySecretKeyListRequest::SetUseToBind(const bool&
 bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::UseToBindHasBeenSet() const
 {
     return m_useToBindHasBeenSet;
+}
+
+bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::GetIncludeCreationInfo() const
+{
+    return m_includeCreationInfo;
+}
+
+void DescribeCloudNativeAPIGatewaySecretKeyListRequest::SetIncludeCreationInfo(const bool& _includeCreationInfo)
+{
+    m_includeCreationInfo = _includeCreationInfo;
+    m_includeCreationInfoHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewaySecretKeyListRequest::IncludeCreationInfoHasBeenSet() const
+{
+    return m_includeCreationInfoHasBeenSet;
 }
 
 

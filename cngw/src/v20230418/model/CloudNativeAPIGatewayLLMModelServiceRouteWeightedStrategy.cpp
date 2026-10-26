@@ -22,7 +22,8 @@ using namespace std;
 
 CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy::CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy() :
     m_modelServiceIdHasBeenSet(false),
-    m_weightHasBeenSet(false)
+    m_weightHasBeenSet(false),
+    m_standardModelNameHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy::D
         m_weightHasBeenSet = true;
     }
 
+    if (value.HasMember("StandardModelName") && !value["StandardModelName"].IsNull())
+    {
+        if (!value["StandardModelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy.StandardModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_standardModelName = string(value["StandardModelName"].GetString());
+        m_standardModelNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy::ToJsonObject(rap
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_standardModelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_standardModelName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy::SetWeight(const 
 bool CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy::WeightHasBeenSet() const
 {
     return m_weightHasBeenSet;
+}
+
+string CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy::GetStandardModelName() const
+{
+    return m_standardModelName;
+}
+
+void CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy::SetStandardModelName(const string& _standardModelName)
+{
+    m_standardModelName = _standardModelName;
+    m_standardModelNameHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayLLMModelServiceRouteWeightedStrategy::StandardModelNameHasBeenSet() const
+{
+    return m_standardModelNameHasBeenSet;
 }
 

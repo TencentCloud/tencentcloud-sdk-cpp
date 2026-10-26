@@ -97,7 +97,11 @@ InstanceOpsDto::InstanceOpsDto() :
     m_proxyTaskIdHasBeenSet(false),
     m_workflowRunNameHasBeenSet(false),
     m_proxyTaskTypeHasBeenSet(false),
-    m_privilegeHasBeenSet(false)
+    m_privilegeHasBeenSet(false),
+    m_triggerSourceHasBeenSet(false),
+    m_parentSpTaskIdHasBeenSet(false),
+    m_parentSpInstanceNameHasBeenSet(false),
+    m_parentSpInstanceDataTimeHasBeenSet(false)
 {
 }
 
@@ -940,6 +944,46 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_privilegeHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerSource") && !value["TriggerSource"].IsNull())
+    {
+        if (!value["TriggerSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.TriggerSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerSource = string(value["TriggerSource"].GetString());
+        m_triggerSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentSpTaskId") && !value["ParentSpTaskId"].IsNull())
+    {
+        if (!value["ParentSpTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.ParentSpTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentSpTaskId = string(value["ParentSpTaskId"].GetString());
+        m_parentSpTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentSpInstanceName") && !value["ParentSpInstanceName"].IsNull())
+    {
+        if (!value["ParentSpInstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.ParentSpInstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentSpInstanceName = string(value["ParentSpInstanceName"].GetString());
+        m_parentSpInstanceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentSpInstanceDataTime") && !value["ParentSpInstanceDataTime"].IsNull())
+    {
+        if (!value["ParentSpInstanceDataTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.ParentSpInstanceDataTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentSpInstanceDataTime = string(value["ParentSpInstanceDataTime"].GetString());
+        m_parentSpInstanceDataTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1596,6 +1640,38 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Privilege";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentSpTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentSpTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentSpTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentSpInstanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentSpInstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentSpInstanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentSpInstanceDataTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentSpInstanceDataTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentSpInstanceDataTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2831,5 +2907,69 @@ void InstanceOpsDto::SetPrivilege(const string& _privilege)
 bool InstanceOpsDto::PrivilegeHasBeenSet() const
 {
     return m_privilegeHasBeenSet;
+}
+
+string InstanceOpsDto::GetTriggerSource() const
+{
+    return m_triggerSource;
+}
+
+void InstanceOpsDto::SetTriggerSource(const string& _triggerSource)
+{
+    m_triggerSource = _triggerSource;
+    m_triggerSourceHasBeenSet = true;
+}
+
+bool InstanceOpsDto::TriggerSourceHasBeenSet() const
+{
+    return m_triggerSourceHasBeenSet;
+}
+
+string InstanceOpsDto::GetParentSpTaskId() const
+{
+    return m_parentSpTaskId;
+}
+
+void InstanceOpsDto::SetParentSpTaskId(const string& _parentSpTaskId)
+{
+    m_parentSpTaskId = _parentSpTaskId;
+    m_parentSpTaskIdHasBeenSet = true;
+}
+
+bool InstanceOpsDto::ParentSpTaskIdHasBeenSet() const
+{
+    return m_parentSpTaskIdHasBeenSet;
+}
+
+string InstanceOpsDto::GetParentSpInstanceName() const
+{
+    return m_parentSpInstanceName;
+}
+
+void InstanceOpsDto::SetParentSpInstanceName(const string& _parentSpInstanceName)
+{
+    m_parentSpInstanceName = _parentSpInstanceName;
+    m_parentSpInstanceNameHasBeenSet = true;
+}
+
+bool InstanceOpsDto::ParentSpInstanceNameHasBeenSet() const
+{
+    return m_parentSpInstanceNameHasBeenSet;
+}
+
+string InstanceOpsDto::GetParentSpInstanceDataTime() const
+{
+    return m_parentSpInstanceDataTime;
+}
+
+void InstanceOpsDto::SetParentSpInstanceDataTime(const string& _parentSpInstanceDataTime)
+{
+    m_parentSpInstanceDataTime = _parentSpInstanceDataTime;
+    m_parentSpInstanceDataTimeHasBeenSet = true;
+}
+
+bool InstanceOpsDto::ParentSpInstanceDataTimeHasBeenSet() const
+{
+    return m_parentSpInstanceDataTimeHasBeenSet;
 }
 

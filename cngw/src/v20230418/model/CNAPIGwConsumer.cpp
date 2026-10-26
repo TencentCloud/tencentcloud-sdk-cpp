@@ -30,7 +30,13 @@ CNAPIGwConsumer::CNAPIGwConsumer() :
     m_consumerGroupsHasBeenSet(false),
     m_syncStatusHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
-    m_syncedVersionHasBeenSet(false)
+    m_syncedVersionHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
+    m_userNameHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_originHasBeenSet(false),
+    m_syncSourceIdHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
 }
 
@@ -149,6 +155,66 @@ CoreInternalOutcome CNAPIGwConsumer::Deserialize(const rapidjson::Value &value)
         m_syncedVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("DisplayName") && !value["DisplayName"].IsNull())
+    {
+        if (!value["DisplayName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumer.DisplayName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_displayName = string(value["DisplayName"].GetString());
+        m_displayNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserName") && !value["UserName"].IsNull())
+    {
+        if (!value["UserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumer.UserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userName = string(value["UserName"].GetString());
+        m_userNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumer.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Origin") && !value["Origin"].IsNull())
+    {
+        if (!value["Origin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumer.Origin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_origin = string(value["Origin"].GetString());
+        m_originHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncSourceId") && !value["SyncSourceId"].IsNull())
+    {
+        if (!value["SyncSourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumer.SyncSourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncSourceId = string(value["SyncSourceId"].GetString());
+        m_syncSourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExternalId") && !value["ExternalId"].IsNull())
+    {
+        if (!value["ExternalId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwConsumer.ExternalId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalId = string(value["ExternalId"].GetString());
+        m_externalIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +307,54 @@ void CNAPIGwConsumer::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "SyncedVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_syncedVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_displayNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Origin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_origin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncSourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncSourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncSourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +518,101 @@ void CNAPIGwConsumer::SetSyncedVersion(const string& _syncedVersion)
 bool CNAPIGwConsumer::SyncedVersionHasBeenSet() const
 {
     return m_syncedVersionHasBeenSet;
+}
+
+string CNAPIGwConsumer::GetDisplayName() const
+{
+    return m_displayName;
+}
+
+void CNAPIGwConsumer::SetDisplayName(const string& _displayName)
+{
+    m_displayName = _displayName;
+    m_displayNameHasBeenSet = true;
+}
+
+bool CNAPIGwConsumer::DisplayNameHasBeenSet() const
+{
+    return m_displayNameHasBeenSet;
+}
+
+string CNAPIGwConsumer::GetUserName() const
+{
+    return m_userName;
+}
+
+void CNAPIGwConsumer::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool CNAPIGwConsumer::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
+}
+
+string CNAPIGwConsumer::GetStatus() const
+{
+    return m_status;
+}
+
+void CNAPIGwConsumer::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CNAPIGwConsumer::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string CNAPIGwConsumer::GetOrigin() const
+{
+    return m_origin;
+}
+
+void CNAPIGwConsumer::SetOrigin(const string& _origin)
+{
+    m_origin = _origin;
+    m_originHasBeenSet = true;
+}
+
+bool CNAPIGwConsumer::OriginHasBeenSet() const
+{
+    return m_originHasBeenSet;
+}
+
+string CNAPIGwConsumer::GetSyncSourceId() const
+{
+    return m_syncSourceId;
+}
+
+void CNAPIGwConsumer::SetSyncSourceId(const string& _syncSourceId)
+{
+    m_syncSourceId = _syncSourceId;
+    m_syncSourceIdHasBeenSet = true;
+}
+
+bool CNAPIGwConsumer::SyncSourceIdHasBeenSet() const
+{
+    return m_syncSourceIdHasBeenSet;
+}
+
+string CNAPIGwConsumer::GetExternalId() const
+{
+    return m_externalId;
+}
+
+void CNAPIGwConsumer::SetExternalId(const string& _externalId)
+{
+    m_externalId = _externalId;
+    m_externalIdHasBeenSet = true;
+}
+
+bool CNAPIGwConsumer::ExternalIdHasBeenSet() const
+{
+    return m_externalIdHasBeenSet;
 }
 

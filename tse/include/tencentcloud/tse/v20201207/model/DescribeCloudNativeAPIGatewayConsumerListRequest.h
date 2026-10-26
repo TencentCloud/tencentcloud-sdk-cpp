@@ -147,6 +147,90 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>消费者来源筛选：manual / sync（小写），与现有控制面校验一致。</p>
+                     * @return Origin <p>消费者来源筛选：manual / sync（小写），与现有控制面校验一致。</p>
+                     * 
+                     */
+                    std::string GetOrigin() const;
+
+                    /**
+                     * 设置<p>消费者来源筛选：manual / sync（小写），与现有控制面校验一致。</p>
+                     * @param _origin <p>消费者来源筛选：manual / sync（小写），与现有控制面校验一致。</p>
+                     * 
+                     */
+                    void SetOrigin(const std::string& _origin);
+
+                    /**
+                     * 判断参数 Origin 是否已赋值
+                     * @return Origin 是否已赋值
+                     * 
+                     */
+                    bool OriginHasBeenSet() const;
+
+                    /**
+                     * 获取<p>目录消费者状态筛选：active / disabled / soft_deleted（小写）。</p>
+                     * @return Status <p>目录消费者状态筛选：active / disabled / soft_deleted（小写）。</p>
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置<p>目录消费者状态筛选：active / disabled / soft_deleted（小写）。</p>
+                     * @param _status <p>目录消费者状态筛选：active / disabled / soft_deleted（小写）。</p>
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>仅查询指定同步源产生的消费者。</p>
+                     * @return SyncSourceId <p>仅查询指定同步源产生的消费者。</p>
+                     * 
+                     */
+                    std::string GetSyncSourceId() const;
+
+                    /**
+                     * 设置<p>仅查询指定同步源产生的消费者。</p>
+                     * @param _syncSourceId <p>仅查询指定同步源产生的消费者。</p>
+                     * 
+                     */
+                    void SetSyncSourceId(const std::string& _syncSourceId);
+
+                    /**
+                     * 判断参数 SyncSourceId 是否已赋值
+                     * @return SyncSourceId 是否已赋值
+                     * 
+                     */
+                    bool SyncSourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>仅查询不属于外部同步源的消费者；不能与 SyncSourceId 同时设置。</p>
+                     * @return WithoutSyncSource <p>仅查询不属于外部同步源的消费者；不能与 SyncSourceId 同时设置。</p>
+                     * 
+                     */
+                    bool GetWithoutSyncSource() const;
+
+                    /**
+                     * 设置<p>仅查询不属于外部同步源的消费者；不能与 SyncSourceId 同时设置。</p>
+                     * @param _withoutSyncSource <p>仅查询不属于外部同步源的消费者；不能与 SyncSourceId 同时设置。</p>
+                     * 
+                     */
+                    void SetWithoutSyncSource(const bool& _withoutSyncSource);
+
+                    /**
+                     * 判断参数 WithoutSyncSource 是否已赋值
+                     * @return WithoutSyncSource 是否已赋值
+                     * 
+                     */
+                    bool WithoutSyncSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +262,30 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * <p>消费者来源筛选：manual / sync（小写），与现有控制面校验一致。</p>
+                     */
+                    std::string m_origin;
+                    bool m_originHasBeenSet;
+
+                    /**
+                     * <p>目录消费者状态筛选：active / disabled / soft_deleted（小写）。</p>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>仅查询指定同步源产生的消费者。</p>
+                     */
+                    std::string m_syncSourceId;
+                    bool m_syncSourceIdHasBeenSet;
+
+                    /**
+                     * <p>仅查询不属于外部同步源的消费者；不能与 SyncSourceId 同时设置。</p>
+                     */
+                    bool m_withoutSyncSource;
+                    bool m_withoutSyncSourceHasBeenSet;
 
                 };
             }

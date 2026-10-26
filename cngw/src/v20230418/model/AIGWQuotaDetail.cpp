@@ -36,7 +36,13 @@ AIGWQuotaDetail::AIGWQuotaDetail() :
     m_exceedActionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_cacheHitStatHasBeenSet(false)
+    m_cacheHitStatHasBeenSet(false),
+    m_setExceedPercentageHasBeenSet(false),
+    m_exceedPercentageHasBeenSet(false),
+    m_usedExactHasBeenSet(false),
+    m_consumerGroupPathHasBeenSet(false),
+    m_consumerGroupActiveHasBeenSet(false),
+    m_subResourcesHasBeenSet(false)
 {
 }
 
@@ -205,6 +211,76 @@ CoreInternalOutcome AIGWQuotaDetail::Deserialize(const rapidjson::Value &value)
         m_cacheHitStatHasBeenSet = true;
     }
 
+    if (value.HasMember("SetExceedPercentage") && !value["SetExceedPercentage"].IsNull())
+    {
+        if (!value["SetExceedPercentage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuotaDetail.SetExceedPercentage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_setExceedPercentage = value["SetExceedPercentage"].GetBool();
+        m_setExceedPercentageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExceedPercentage") && !value["ExceedPercentage"].IsNull())
+    {
+        if (!value["ExceedPercentage"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuotaDetail.ExceedPercentage` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_exceedPercentage = value["ExceedPercentage"].GetUint64();
+        m_exceedPercentageHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsedExact") && !value["UsedExact"].IsNull())
+    {
+        if (!value["UsedExact"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuotaDetail.UsedExact` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedExact = value["UsedExact"].GetDouble();
+        m_usedExactHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumerGroupPath") && !value["ConsumerGroupPath"].IsNull())
+    {
+        if (!value["ConsumerGroupPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuotaDetail.ConsumerGroupPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerGroupPath = string(value["ConsumerGroupPath"].GetString());
+        m_consumerGroupPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumerGroupActive") && !value["ConsumerGroupActive"].IsNull())
+    {
+        if (!value["ConsumerGroupActive"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWQuotaDetail.ConsumerGroupActive` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumerGroupActive = value["ConsumerGroupActive"].GetBool();
+        m_consumerGroupActiveHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubResources") && !value["SubResources"].IsNull())
+    {
+        if (!value["SubResources"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AIGWQuotaDetail.SubResources` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubResources"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AIGWQuotaSubItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_subResources.push_back(item);
+        }
+        m_subResourcesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +414,61 @@ void AIGWQuotaDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CacheHitStat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cacheHitStat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_setExceedPercentageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetExceedPercentage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_setExceedPercentage, allocator);
+    }
+
+    if (m_exceedPercentageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExceedPercentage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exceedPercentage, allocator);
+    }
+
+    if (m_usedExactHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedExact";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedExact, allocator);
+    }
+
+    if (m_consumerGroupPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerGroupPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consumerGroupPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumerGroupActiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumerGroupActive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consumerGroupActive, allocator);
+    }
+
+    if (m_subResourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubResources";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subResources.begin(); itr != m_subResources.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -597,5 +728,101 @@ void AIGWQuotaDetail::SetCacheHitStat(const string& _cacheHitStat)
 bool AIGWQuotaDetail::CacheHitStatHasBeenSet() const
 {
     return m_cacheHitStatHasBeenSet;
+}
+
+bool AIGWQuotaDetail::GetSetExceedPercentage() const
+{
+    return m_setExceedPercentage;
+}
+
+void AIGWQuotaDetail::SetSetExceedPercentage(const bool& _setExceedPercentage)
+{
+    m_setExceedPercentage = _setExceedPercentage;
+    m_setExceedPercentageHasBeenSet = true;
+}
+
+bool AIGWQuotaDetail::SetExceedPercentageHasBeenSet() const
+{
+    return m_setExceedPercentageHasBeenSet;
+}
+
+uint64_t AIGWQuotaDetail::GetExceedPercentage() const
+{
+    return m_exceedPercentage;
+}
+
+void AIGWQuotaDetail::SetExceedPercentage(const uint64_t& _exceedPercentage)
+{
+    m_exceedPercentage = _exceedPercentage;
+    m_exceedPercentageHasBeenSet = true;
+}
+
+bool AIGWQuotaDetail::ExceedPercentageHasBeenSet() const
+{
+    return m_exceedPercentageHasBeenSet;
+}
+
+double AIGWQuotaDetail::GetUsedExact() const
+{
+    return m_usedExact;
+}
+
+void AIGWQuotaDetail::SetUsedExact(const double& _usedExact)
+{
+    m_usedExact = _usedExact;
+    m_usedExactHasBeenSet = true;
+}
+
+bool AIGWQuotaDetail::UsedExactHasBeenSet() const
+{
+    return m_usedExactHasBeenSet;
+}
+
+string AIGWQuotaDetail::GetConsumerGroupPath() const
+{
+    return m_consumerGroupPath;
+}
+
+void AIGWQuotaDetail::SetConsumerGroupPath(const string& _consumerGroupPath)
+{
+    m_consumerGroupPath = _consumerGroupPath;
+    m_consumerGroupPathHasBeenSet = true;
+}
+
+bool AIGWQuotaDetail::ConsumerGroupPathHasBeenSet() const
+{
+    return m_consumerGroupPathHasBeenSet;
+}
+
+bool AIGWQuotaDetail::GetConsumerGroupActive() const
+{
+    return m_consumerGroupActive;
+}
+
+void AIGWQuotaDetail::SetConsumerGroupActive(const bool& _consumerGroupActive)
+{
+    m_consumerGroupActive = _consumerGroupActive;
+    m_consumerGroupActiveHasBeenSet = true;
+}
+
+bool AIGWQuotaDetail::ConsumerGroupActiveHasBeenSet() const
+{
+    return m_consumerGroupActiveHasBeenSet;
+}
+
+vector<AIGWQuotaSubItem> AIGWQuotaDetail::GetSubResources() const
+{
+    return m_subResources;
+}
+
+void AIGWQuotaDetail::SetSubResources(const vector<AIGWQuotaSubItem>& _subResources)
+{
+    m_subResources = _subResources;
+    m_subResourcesHasBeenSet = true;
+}
+
+bool AIGWQuotaDetail::SubResourcesHasBeenSet() const
+{
+    return m_subResourcesHasBeenSet;
 }
 

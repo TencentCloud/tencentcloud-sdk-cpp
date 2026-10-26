@@ -23,6 +23,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomDisasterRecoverGroupQuotaRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterDetailResponse.h
   include/tencentcloud/dbdc/v20201029/model/DestroyDBCustomClusterRequest.h
+  include/tencentcloud/dbdc/v20201029/model/TaskResourceStatus.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterResourcesRequest.h
   include/tencentcloud/dbdc/v20201029/model/ModifyInstanceNameRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeConfigResponse.h
@@ -143,6 +144,7 @@ set(dbdc_src
   src/v20201029/model/DescribeDBCustomDisasterRecoverGroupQuotaRequest.cpp
   src/v20201029/model/DescribeDBCustomClusterDetailResponse.cpp
   src/v20201029/model/DestroyDBCustomClusterRequest.cpp
+  src/v20201029/model/TaskResourceStatus.cpp
   src/v20201029/model/DescribeDBCustomClusterResourcesRequest.cpp
   src/v20201029/model/ModifyInstanceNameRequest.cpp
   src/v20201029/model/DescribeDBCustomClusterNodeConfigResponse.cpp

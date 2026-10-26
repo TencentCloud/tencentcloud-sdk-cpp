@@ -29,7 +29,8 @@ ConversationExperience::ConversationExperience() :
     m_fallbackReplyHasBeenSet(false),
     m_inputBoxConfigHasBeenSet(false),
     m_methodHasBeenSet(false),
-    m_recommendPromptModeHasBeenSet(false)
+    m_recommendPromptModeHasBeenSet(false),
+    m_enableNewMessageInterruptHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome ConversationExperience::Deserialize(const rapidjson::Value &
         m_recommendPromptModeHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableNewMessageInterrupt") && !value["EnableNewMessageInterrupt"].IsNull())
+    {
+        if (!value["EnableNewMessageInterrupt"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConversationExperience.EnableNewMessageInterrupt` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableNewMessageInterrupt = value["EnableNewMessageInterrupt"].GetBool();
+        m_enableNewMessageInterruptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -229,6 +240,14 @@ void ConversationExperience::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "RecommendPromptMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recommendPromptMode, allocator);
+    }
+
+    if (m_enableNewMessageInterruptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableNewMessageInterrupt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableNewMessageInterrupt, allocator);
     }
 
 }
@@ -376,5 +395,21 @@ void ConversationExperience::SetRecommendPromptMode(const int64_t& _recommendPro
 bool ConversationExperience::RecommendPromptModeHasBeenSet() const
 {
     return m_recommendPromptModeHasBeenSet;
+}
+
+bool ConversationExperience::GetEnableNewMessageInterrupt() const
+{
+    return m_enableNewMessageInterrupt;
+}
+
+void ConversationExperience::SetEnableNewMessageInterrupt(const bool& _enableNewMessageInterrupt)
+{
+    m_enableNewMessageInterrupt = _enableNewMessageInterrupt;
+    m_enableNewMessageInterruptHasBeenSet = true;
+}
+
+bool ConversationExperience::EnableNewMessageInterruptHasBeenSet() const
+{
+    return m_enableNewMessageInterruptHasBeenSet;
 }
 

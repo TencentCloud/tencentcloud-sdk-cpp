@@ -1796,8 +1796,7 @@ namespace TencentCloud
                 ReleaseSkillOutcomeCallable ReleaseSkillCallable(const Model::ReleaseSkillRequest& request);
 
                 /**
-                 *重置会话
-注意：当前Claw模式应用会话不支持重置
+                 *该接口用于重置会话上下文。会话上下文重置后，对话处理中不会携带重置前的历史对话内容
                  * @param req ResetConversationRequest
                  * @return ResetConversationOutcome
                  */

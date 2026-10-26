@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/privatedns/v20201028/model/OutboundEndpoint.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>终端节点总数</p>
+                     * @return TotalCount <p>终端节点总数</p>
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>终端节点列表</p>
+                     * @return OutboundEndpointSet <p>终端节点列表</p>
+                     * 
+                     */
+                    std::vector<OutboundEndpoint> GetOutboundEndpointSet() const;
+
+                    /**
+                     * 判断参数 OutboundEndpointSet 是否已赋值
+                     * @return OutboundEndpointSet 是否已赋值
+                     * 
+                     */
+                    bool OutboundEndpointSetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>终端节点总数</p>
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * <p>终端节点列表</p>
+                     */
+                    std::vector<OutboundEndpoint> m_outboundEndpointSet;
+                    bool m_outboundEndpointSetHasBeenSet;
 
                 };
             }

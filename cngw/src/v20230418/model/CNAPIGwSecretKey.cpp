@@ -49,7 +49,10 @@ CNAPIGwSecretKey::CNAPIGwSecretKey() :
     m_customHeaderCredentialConfigHasBeenSet(false),
     m_queryParamCredentialConfigHasBeenSet(false),
     m_boundModelSecretKeysHasBeenSet(false),
-    m_boundConsumerSecretKeysHasBeenSet(false)
+    m_boundConsumerSecretKeysHasBeenSet(false),
+    m_credentialGenerateTypeHasBeenSet(false),
+    m_creationSourceHasBeenSet(false),
+    m_batchIdHasBeenSet(false)
 {
 }
 
@@ -431,6 +434,36 @@ CoreInternalOutcome CNAPIGwSecretKey::Deserialize(const rapidjson::Value &value)
         m_boundConsumerSecretKeysHasBeenSet = true;
     }
 
+    if (value.HasMember("CredentialGenerateType") && !value["CredentialGenerateType"].IsNull())
+    {
+        if (!value["CredentialGenerateType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.CredentialGenerateType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_credentialGenerateType = string(value["CredentialGenerateType"].GetString());
+        m_credentialGenerateTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreationSource") && !value["CreationSource"].IsNull())
+    {
+        if (!value["CreationSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.CreationSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creationSource = string(value["CreationSource"].GetString());
+        m_creationSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("BatchId") && !value["BatchId"].IsNull())
+    {
+        if (!value["BatchId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CNAPIGwSecretKey.BatchId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_batchId = string(value["BatchId"].GetString());
+        m_batchIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -691,6 +724,30 @@ void CNAPIGwSecretKey::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_credentialGenerateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CredentialGenerateType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_credentialGenerateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreationSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creationSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_batchIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1158,5 +1215,53 @@ void CNAPIGwSecretKey::SetBoundConsumerSecretKeys(const vector<AIGWSimpleSecretK
 bool CNAPIGwSecretKey::BoundConsumerSecretKeysHasBeenSet() const
 {
     return m_boundConsumerSecretKeysHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetCredentialGenerateType() const
+{
+    return m_credentialGenerateType;
+}
+
+void CNAPIGwSecretKey::SetCredentialGenerateType(const string& _credentialGenerateType)
+{
+    m_credentialGenerateType = _credentialGenerateType;
+    m_credentialGenerateTypeHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::CredentialGenerateTypeHasBeenSet() const
+{
+    return m_credentialGenerateTypeHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetCreationSource() const
+{
+    return m_creationSource;
+}
+
+void CNAPIGwSecretKey::SetCreationSource(const string& _creationSource)
+{
+    m_creationSource = _creationSource;
+    m_creationSourceHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::CreationSourceHasBeenSet() const
+{
+    return m_creationSourceHasBeenSet;
+}
+
+string CNAPIGwSecretKey::GetBatchId() const
+{
+    return m_batchId;
+}
+
+void CNAPIGwSecretKey::SetBatchId(const string& _batchId)
+{
+    m_batchId = _batchId;
+    m_batchIdHasBeenSet = true;
+}
+
+bool CNAPIGwSecretKey::BatchIdHasBeenSet() const
+{
+    return m_batchIdHasBeenSet;
 }
 

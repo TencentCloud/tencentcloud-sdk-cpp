@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>资源 ID</p>
-                     * @return Id <p>资源 ID</p>
+                     * 获取资源 ID
+                     * @return Id 资源 ID
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置<p>资源 ID</p>
-                     * @param _id <p>资源 ID</p>
+                     * 设置资源 ID
+                     * @param _id 资源 ID
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取<p>失败原因（succeeded=false 时填充）</p>
-                     * @return Reason <p>失败原因（succeeded=false 时填充）</p>
+                     * 获取失败原因（succeeded=false 时填充）
+                     * @return Reason 失败原因（succeeded=false 时填充）
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
-                     * 设置<p>失败原因（succeeded=false 时填充）</p>
-                     * @param _reason <p>失败原因（succeeded=false 时填充）</p>
+                     * 设置失败原因（succeeded=false 时填充）
+                     * @param _reason 失败原因（succeeded=false 时填充）
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ReasonHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否成功</p>
-                     * @return Succeeded <p>是否成功</p>
+                     * 获取是否成功
+                     * @return Succeeded 是否成功
                      * 
                      */
                     bool GetSucceeded() const;
 
                     /**
-                     * 设置<p>是否成功</p>
-                     * @param _succeeded <p>是否成功</p>
+                     * 设置是否成功
+                     * @param _succeeded 是否成功
                      * 
                      */
                     void SetSucceeded(const bool& _succeeded);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>资源 ID</p>
+                     * 资源 ID
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * <p>失败原因（succeeded=false 时填充）</p>
+                     * 失败原因（succeeded=false 时填充）
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
-                     * <p>是否成功</p>
+                     * 是否成功
                      */
                     bool m_succeeded;
                     bool m_succeededHasBeenSet;

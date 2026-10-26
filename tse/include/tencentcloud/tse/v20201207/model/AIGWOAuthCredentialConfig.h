@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool ClientSecretHasBeenSet() const;
 
+                    /**
+                     * 获取<p>OAuth2 授权回调地址</p>
+                     * @return RedirectURIs <p>OAuth2 授权回调地址</p>
+                     * 
+                     */
+                    std::string GetRedirectURIs() const;
+
+                    /**
+                     * 设置<p>OAuth2 授权回调地址</p>
+                     * @param _redirectURIs <p>OAuth2 授权回调地址</p>
+                     * 
+                     */
+                    void SetRedirectURIs(const std::string& _redirectURIs);
+
+                    /**
+                     * 判断参数 RedirectURIs 是否已赋值
+                     * @return RedirectURIs 是否已赋值
+                     * 
+                     */
+                    bool RedirectURIsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_clientSecret;
                     bool m_clientSecretHasBeenSet;
+
+                    /**
+                     * <p>OAuth2 授权回调地址</p>
+                     */
+                    std::string m_redirectURIs;
+                    bool m_redirectURIsHasBeenSet;
 
                 };
             }

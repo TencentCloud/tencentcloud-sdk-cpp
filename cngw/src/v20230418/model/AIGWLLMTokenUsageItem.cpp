@@ -32,7 +32,8 @@ AIGWLLMTokenUsageItem::AIGWLLMTokenUsageItem() :
     m_totalTokensHasBeenSet(false),
     m_requestCountHasBeenSet(false),
     m_costHasBeenSet(false),
-    m_currencyHasBeenSet(false)
+    m_currencyHasBeenSet(false),
+    m_dimensionListHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,26 @@ CoreInternalOutcome AIGWLLMTokenUsageItem::Deserialize(const rapidjson::Value &v
         m_currencyHasBeenSet = true;
     }
 
+    if (value.HasMember("DimensionList") && !value["DimensionList"].IsNull())
+    {
+        if (!value["DimensionList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AIGWLLMTokenUsageItem.DimensionList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DimensionList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AIGWLLMResourceDimension item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dimensionList.push_back(item);
+        }
+        m_dimensionListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +300,21 @@ void AIGWLLMTokenUsageItem::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Currency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_currency.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dimensionListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DimensionList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dimensionList.begin(); itr != m_dimensionList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -474,5 +510,21 @@ void AIGWLLMTokenUsageItem::SetCurrency(const string& _currency)
 bool AIGWLLMTokenUsageItem::CurrencyHasBeenSet() const
 {
     return m_currencyHasBeenSet;
+}
+
+vector<AIGWLLMResourceDimension> AIGWLLMTokenUsageItem::GetDimensionList() const
+{
+    return m_dimensionList;
+}
+
+void AIGWLLMTokenUsageItem::SetDimensionList(const vector<AIGWLLMResourceDimension>& _dimensionList)
+{
+    m_dimensionList = _dimensionList;
+    m_dimensionListHasBeenSet = true;
+}
+
+bool AIGWLLMTokenUsageItem::DimensionListHasBeenSet() const
+{
+    return m_dimensionListHasBeenSet;
 }
 

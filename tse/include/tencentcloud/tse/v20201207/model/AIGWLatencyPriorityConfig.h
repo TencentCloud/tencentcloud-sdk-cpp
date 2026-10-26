@@ -110,6 +110,48 @@ namespace TencentCloud
                      */
                     bool RouteModeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>网络延迟探测间隔</p><p>单位：毫秒</p>
+                     * @return ProbeIntervalMs <p>网络延迟探测间隔</p><p>单位：毫秒</p>
+                     * 
+                     */
+                    int64_t GetProbeIntervalMs() const;
+
+                    /**
+                     * 设置<p>网络延迟探测间隔</p><p>单位：毫秒</p>
+                     * @param _probeIntervalMs <p>网络延迟探测间隔</p><p>单位：毫秒</p>
+                     * 
+                     */
+                    void SetProbeIntervalMs(const int64_t& _probeIntervalMs);
+
+                    /**
+                     * 判断参数 ProbeIntervalMs 是否已赋值
+                     * @return ProbeIntervalMs 是否已赋值
+                     * 
+                     */
+                    bool ProbeIntervalMsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>网络延迟探测超时时间</p><p>单位：毫秒</p>
+                     * @return ProbeTimeoutMs <p>网络延迟探测超时时间</p><p>单位：毫秒</p>
+                     * 
+                     */
+                    int64_t GetProbeTimeoutMs() const;
+
+                    /**
+                     * 设置<p>网络延迟探测超时时间</p><p>单位：毫秒</p>
+                     * @param _probeTimeoutMs <p>网络延迟探测超时时间</p><p>单位：毫秒</p>
+                     * 
+                     */
+                    void SetProbeTimeoutMs(const int64_t& _probeTimeoutMs);
+
+                    /**
+                     * 判断参数 ProbeTimeoutMs 是否已赋值
+                     * @return ProbeTimeoutMs 是否已赋值
+                     * 
+                     */
+                    bool ProbeTimeoutMsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +171,18 @@ namespace TencentCloud
                      */
                     std::string m_routeMode;
                     bool m_routeModeHasBeenSet;
+
+                    /**
+                     * <p>网络延迟探测间隔</p><p>单位：毫秒</p>
+                     */
+                    int64_t m_probeIntervalMs;
+                    bool m_probeIntervalMsHasBeenSet;
+
+                    /**
+                     * <p>网络延迟探测超时时间</p><p>单位：毫秒</p>
+                     */
+                    int64_t m_probeTimeoutMs;
+                    bool m_probeTimeoutMsHasBeenSet;
 
                 };
             }

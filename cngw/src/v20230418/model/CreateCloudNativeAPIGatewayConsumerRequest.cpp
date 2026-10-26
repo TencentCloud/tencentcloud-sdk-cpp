@@ -26,7 +26,11 @@ CreateCloudNativeAPIGatewayConsumerRequest::CreateCloudNativeAPIGatewayConsumerR
     m_gatewayIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_priorityHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_operationSourceHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_secretBindTypeHasBeenSet(false),
+    m_autoSecretKeyHasBeenSet(false)
 {
 }
 
@@ -67,6 +71,39 @@ string CreateCloudNativeAPIGatewayConsumerRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretBindTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretBindType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretBindType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoSecretKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSecretKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_autoSecretKey.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -139,6 +176,70 @@ void CreateCloudNativeAPIGatewayConsumerRequest::SetDescription(const string& _d
 bool CreateCloudNativeAPIGatewayConsumerRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayConsumerRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void CreateCloudNativeAPIGatewayConsumerRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayConsumerRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayConsumerRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void CreateCloudNativeAPIGatewayConsumerRequest::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayConsumerRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayConsumerRequest::GetSecretBindType() const
+{
+    return m_secretBindType;
+}
+
+void CreateCloudNativeAPIGatewayConsumerRequest::SetSecretBindType(const string& _secretBindType)
+{
+    m_secretBindType = _secretBindType;
+    m_secretBindTypeHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayConsumerRequest::SecretBindTypeHasBeenSet() const
+{
+    return m_secretBindTypeHasBeenSet;
+}
+
+AutoSecretKey CreateCloudNativeAPIGatewayConsumerRequest::GetAutoSecretKey() const
+{
+    return m_autoSecretKey;
+}
+
+void CreateCloudNativeAPIGatewayConsumerRequest::SetAutoSecretKey(const AutoSecretKey& _autoSecretKey)
+{
+    m_autoSecretKey = _autoSecretKey;
+    m_autoSecretKeyHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayConsumerRequest::AutoSecretKeyHasBeenSet() const
+{
+    return m_autoSecretKeyHasBeenSet;
 }
 
 

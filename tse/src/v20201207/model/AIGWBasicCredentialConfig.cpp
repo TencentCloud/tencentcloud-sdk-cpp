@@ -21,8 +21,8 @@ using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
 AIGWBasicCredentialConfig::AIGWBasicCredentialConfig() :
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_usernameHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome AIGWBasicCredentialConfig::Deserialize(const rapidjson::Valu
 {
     string requestId = "";
 
-
-    if (value.HasMember("Username") && !value["Username"].IsNull())
-    {
-        if (!value["Username"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AIGWBasicCredentialConfig.Username` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_username = string(value["Username"].GetString());
-        m_usernameHasBeenSet = true;
-    }
 
     if (value.HasMember("Password") && !value["Password"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome AIGWBasicCredentialConfig::Deserialize(const rapidjson::Valu
         m_passwordHasBeenSet = true;
     }
 
+    if (value.HasMember("Username") && !value["Username"].IsNull())
+    {
+        if (!value["Username"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWBasicCredentialConfig.Username` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_username = string(value["Username"].GetString());
+        m_usernameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void AIGWBasicCredentialConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_usernameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Username";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_passwordHasBeenSet)
     {
@@ -74,24 +66,16 @@ void AIGWBasicCredentialConfig::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_usernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Username";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string AIGWBasicCredentialConfig::GetUsername() const
-{
-    return m_username;
-}
-
-void AIGWBasicCredentialConfig::SetUsername(const string& _username)
-{
-    m_username = _username;
-    m_usernameHasBeenSet = true;
-}
-
-bool AIGWBasicCredentialConfig::UsernameHasBeenSet() const
-{
-    return m_usernameHasBeenSet;
-}
 
 string AIGWBasicCredentialConfig::GetPassword() const
 {
@@ -107,5 +91,21 @@ void AIGWBasicCredentialConfig::SetPassword(const string& _password)
 bool AIGWBasicCredentialConfig::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+string AIGWBasicCredentialConfig::GetUsername() const
+{
+    return m_username;
+}
+
+void AIGWBasicCredentialConfig::SetUsername(const string& _username)
+{
+    m_username = _username;
+    m_usernameHasBeenSet = true;
+}
+
+bool AIGWBasicCredentialConfig::UsernameHasBeenSet() const
+{
+    return m_usernameHasBeenSet;
 }
 

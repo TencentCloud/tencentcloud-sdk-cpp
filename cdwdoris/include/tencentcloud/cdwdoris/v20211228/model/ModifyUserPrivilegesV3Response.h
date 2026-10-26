@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdwdoris/v20211228/model/SkippedPrivilegeItem.h>
 
 
 namespace TencentCloud
@@ -44,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取错误信息，为空就是没有错误
-                     * @return ErrorMsg 错误信息，为空就是没有错误
+                     * 获取<p>错误信息，为空就是没有错误</p>
+                     * @return ErrorMsg <p>错误信息，为空就是没有错误</p>
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -58,8 +59,8 @@ namespace TencentCloud
                     bool ErrorMsgHasBeenSet() const;
 
                     /**
-                     * 获取集群id
-                     * @return InstanceId 集群id
+                     * 获取<p>集群id</p>
+                     * @return InstanceId <p>集群id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -71,19 +72,39 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>因库/表已删除而被跳过的目标；ErrorMsg 为空时不代表失败，前端需弹窗提示</p>
+                     * @return SkippedItems <p>因库/表已删除而被跳过的目标；ErrorMsg 为空时不代表失败，前端需弹窗提示</p>
+                     * 
+                     */
+                    SkippedPrivilegeItem GetSkippedItems() const;
+
+                    /**
+                     * 判断参数 SkippedItems 是否已赋值
+                     * @return SkippedItems 是否已赋值
+                     * 
+                     */
+                    bool SkippedItemsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 错误信息，为空就是没有错误
+                     * <p>错误信息，为空就是没有错误</p>
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>因库/表已删除而被跳过的目标；ErrorMsg 为空时不代表失败，前端需弹窗提示</p>
+                     */
+                    SkippedPrivilegeItem m_skippedItems;
+                    bool m_skippedItemsHasBeenSet;
 
                 };
             }

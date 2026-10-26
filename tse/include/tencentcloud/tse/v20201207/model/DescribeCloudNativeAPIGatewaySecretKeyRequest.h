@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool SecretKeyIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可选 Boolean，默认 false。仅传 true 且返回记录 ResourceType=Consumer 时，额外返回 CredentialGenerateType、CreationSource、BatchId；省略或 false 时不返回这三个字段，原字段和返回结构保持不变。此参数只控制展示字段，不控制 Filters 是否生效。</p>
+                     * @return IncludeCreationInfo <p>可选 Boolean，默认 false。仅传 true 且返回记录 ResourceType=Consumer 时，额外返回 CredentialGenerateType、CreationSource、BatchId；省略或 false 时不返回这三个字段，原字段和返回结构保持不变。此参数只控制展示字段，不控制 Filters 是否生效。</p>
+                     * 
+                     */
+                    bool GetIncludeCreationInfo() const;
+
+                    /**
+                     * 设置<p>可选 Boolean，默认 false。仅传 true 且返回记录 ResourceType=Consumer 时，额外返回 CredentialGenerateType、CreationSource、BatchId；省略或 false 时不返回这三个字段，原字段和返回结构保持不变。此参数只控制展示字段，不控制 Filters 是否生效。</p>
+                     * @param _includeCreationInfo <p>可选 Boolean，默认 false。仅传 true 且返回记录 ResourceType=Consumer 时，额外返回 CredentialGenerateType、CreationSource、BatchId；省略或 false 时不返回这三个字段，原字段和返回结构保持不变。此参数只控制展示字段，不控制 Filters 是否生效。</p>
+                     * 
+                     */
+                    void SetIncludeCreationInfo(const bool& _includeCreationInfo);
+
+                    /**
+                     * 判断参数 IncludeCreationInfo 是否已赋值
+                     * @return IncludeCreationInfo 是否已赋值
+                     * 
+                     */
+                    bool IncludeCreationInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_secretKeyId;
                     bool m_secretKeyIdHasBeenSet;
+
+                    /**
+                     * <p>可选 Boolean，默认 false。仅传 true 且返回记录 ResourceType=Consumer 时，额外返回 CredentialGenerateType、CreationSource、BatchId；省略或 false 时不返回这三个字段，原字段和返回结构保持不变。此参数只控制展示字段，不控制 Filters 是否生效。</p>
+                     */
+                    bool m_includeCreationInfo;
+                    bool m_includeCreationInfoHasBeenSet;
 
                 };
             }

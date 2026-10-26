@@ -38,7 +38,10 @@ CreateCloudNativeAPIGatewayLLMModelAPIRequest::CreateCloudNativeAPIGatewayLLMMod
     m_tagFilterHasBeenSet(false),
     m_logConfigHasBeenSet(false),
     m_maxDocumentsConfigHasBeenSet(false),
-    m_sensitiveWordRouteHasBeenSet(false)
+    m_sensitiveWordRouteHasBeenSet(false),
+    m_priorityScheduleConfigHasBeenSet(false),
+    m_modelNameRouteHasBeenSet(false),
+    m_standardModelNameHasBeenSet(false)
 {
 }
 
@@ -200,6 +203,32 @@ string CreateCloudNativeAPIGatewayLLMModelAPIRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sensitiveWordRoute.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_priorityScheduleConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PriorityScheduleConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_priorityScheduleConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_modelNameRouteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelNameRoute";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modelNameRoute.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_standardModelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardModelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_standardModelName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -464,6 +493,54 @@ void CreateCloudNativeAPIGatewayLLMModelAPIRequest::SetSensitiveWordRoute(const 
 bool CreateCloudNativeAPIGatewayLLMModelAPIRequest::SensitiveWordRouteHasBeenSet() const
 {
     return m_sensitiveWordRouteHasBeenSet;
+}
+
+AIGWPriorityScheduleConfig CreateCloudNativeAPIGatewayLLMModelAPIRequest::GetPriorityScheduleConfig() const
+{
+    return m_priorityScheduleConfig;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelAPIRequest::SetPriorityScheduleConfig(const AIGWPriorityScheduleConfig& _priorityScheduleConfig)
+{
+    m_priorityScheduleConfig = _priorityScheduleConfig;
+    m_priorityScheduleConfigHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelAPIRequest::PriorityScheduleConfigHasBeenSet() const
+{
+    return m_priorityScheduleConfigHasBeenSet;
+}
+
+AIGWModelNameRoute CreateCloudNativeAPIGatewayLLMModelAPIRequest::GetModelNameRoute() const
+{
+    return m_modelNameRoute;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelAPIRequest::SetModelNameRoute(const AIGWModelNameRoute& _modelNameRoute)
+{
+    m_modelNameRoute = _modelNameRoute;
+    m_modelNameRouteHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelAPIRequest::ModelNameRouteHasBeenSet() const
+{
+    return m_modelNameRouteHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayLLMModelAPIRequest::GetStandardModelName() const
+{
+    return m_standardModelName;
+}
+
+void CreateCloudNativeAPIGatewayLLMModelAPIRequest::SetStandardModelName(const string& _standardModelName)
+{
+    m_standardModelName = _standardModelName;
+    m_standardModelNameHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayLLMModelAPIRequest::StandardModelNameHasBeenSet() const
+{
+    return m_standardModelNameHasBeenSet;
 }
 
 

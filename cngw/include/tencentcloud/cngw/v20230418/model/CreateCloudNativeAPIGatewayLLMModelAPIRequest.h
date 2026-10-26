@@ -29,6 +29,8 @@
 #include <tencentcloud/cngw/v20230418/model/AIGWLogConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWRerankMaxDocumentsConfig.h>
 #include <tencentcloud/cngw/v20230418/model/AIGWSensitiveWordRoute.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWPriorityScheduleConfig.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWModelNameRoute.h>
 
 
 namespace TencentCloud
@@ -386,6 +388,69 @@ namespace TencentCloud
                      */
                     bool SensitiveWordRouteHasBeenSet() const;
 
+                    /**
+                     * 获取<p>请求优先级调度配置</p>
+                     * @return PriorityScheduleConfig <p>请求优先级调度配置</p>
+                     * 
+                     */
+                    AIGWPriorityScheduleConfig GetPriorityScheduleConfig() const;
+
+                    /**
+                     * 设置<p>请求优先级调度配置</p>
+                     * @param _priorityScheduleConfig <p>请求优先级调度配置</p>
+                     * 
+                     */
+                    void SetPriorityScheduleConfig(const AIGWPriorityScheduleConfig& _priorityScheduleConfig);
+
+                    /**
+                     * 判断参数 PriorityScheduleConfig 是否已赋值
+                     * @return PriorityScheduleConfig 是否已赋值
+                     * 
+                     */
+                    bool PriorityScheduleConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>按请求体顶层 model 字段选择模型 API 的入口路由配置。传入对象即启用，ModelNames 须为非空列表；不传表示不启用。仅用于 Chat 场景下受支持的 POST 路由：openai 协议的 /v1/chat/completions、/v1/responses，或 anthropic 协议的 /v1/messages。公有云要求网关版本不低于 3.9.8，TCS 要求不低于 3.9.6。</p>
+                     * @return ModelNameRoute <p>按请求体顶层 model 字段选择模型 API 的入口路由配置。传入对象即启用，ModelNames 须为非空列表；不传表示不启用。仅用于 Chat 场景下受支持的 POST 路由：openai 协议的 /v1/chat/completions、/v1/responses，或 anthropic 协议的 /v1/messages。公有云要求网关版本不低于 3.9.8，TCS 要求不低于 3.9.6。</p>
+                     * 
+                     */
+                    AIGWModelNameRoute GetModelNameRoute() const;
+
+                    /**
+                     * 设置<p>按请求体顶层 model 字段选择模型 API 的入口路由配置。传入对象即启用，ModelNames 须为非空列表；不传表示不启用。仅用于 Chat 场景下受支持的 POST 路由：openai 协议的 /v1/chat/completions、/v1/responses，或 anthropic 协议的 /v1/messages。公有云要求网关版本不低于 3.9.8，TCS 要求不低于 3.9.6。</p>
+                     * @param _modelNameRoute <p>按请求体顶层 model 字段选择模型 API 的入口路由配置。传入对象即启用，ModelNames 须为非空列表；不传表示不启用。仅用于 Chat 场景下受支持的 POST 路由：openai 协议的 /v1/chat/completions、/v1/responses，或 anthropic 协议的 /v1/messages。公有云要求网关版本不低于 3.9.8，TCS 要求不低于 3.9.6。</p>
+                     * 
+                     */
+                    void SetModelNameRoute(const AIGWModelNameRoute& _modelNameRoute);
+
+                    /**
+                     * 判断参数 ModelNameRoute 是否已赋值
+                     * @return ModelNameRoute 是否已赋值
+                     * 
+                     */
+                    bool ModelNameRouteHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单模型 API 的顶层标准模型名称。仅当 ListModelServiceId 包含一个模型服务且未配置 ModelServiceRoute 时可设置；多模型场景应在对应路由或降级条目中配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * @return StandardModelName <p>单模型 API 的顶层标准模型名称。仅当 ListModelServiceId 包含一个模型服务且未配置 ModelServiceRoute 时可设置；多模型场景应在对应路由或降级条目中配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * 
+                     */
+                    std::string GetStandardModelName() const;
+
+                    /**
+                     * 设置<p>单模型 API 的顶层标准模型名称。仅当 ListModelServiceId 包含一个模型服务且未配置 ModelServiceRoute 时可设置；多模型场景应在对应路由或降级条目中配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * @param _standardModelName <p>单模型 API 的顶层标准模型名称。仅当 ListModelServiceId 包含一个模型服务且未配置 ModelServiceRoute 时可设置；多模型场景应在对应路由或降级条目中配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * 
+                     */
+                    void SetStandardModelName(const std::string& _standardModelName);
+
+                    /**
+                     * 判断参数 StandardModelName 是否已赋值
+                     * @return StandardModelName 是否已赋值
+                     * 
+                     */
+                    bool StandardModelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -483,6 +548,24 @@ namespace TencentCloud
                      */
                     AIGWSensitiveWordRoute m_sensitiveWordRoute;
                     bool m_sensitiveWordRouteHasBeenSet;
+
+                    /**
+                     * <p>请求优先级调度配置</p>
+                     */
+                    AIGWPriorityScheduleConfig m_priorityScheduleConfig;
+                    bool m_priorityScheduleConfigHasBeenSet;
+
+                    /**
+                     * <p>按请求体顶层 model 字段选择模型 API 的入口路由配置。传入对象即启用，ModelNames 须为非空列表；不传表示不启用。仅用于 Chat 场景下受支持的 POST 路由：openai 协议的 /v1/chat/completions、/v1/responses，或 anthropic 协议的 /v1/messages。公有云要求网关版本不低于 3.9.8，TCS 要求不低于 3.9.6。</p>
+                     */
+                    AIGWModelNameRoute m_modelNameRoute;
+                    bool m_modelNameRouteHasBeenSet;
+
+                    /**
+                     * <p>单模型 API 的顶层标准模型名称。仅当 ListModelServiceId 包含一个模型服务且未配置 ModelServiceRoute 时可设置；多模型场景应在对应路由或降级条目中配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     */
+                    std::string m_standardModelName;
+                    bool m_standardModelNameHasBeenSet;
 
                 };
             }

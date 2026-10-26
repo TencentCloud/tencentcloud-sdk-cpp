@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool SecretKeyIdHasBeenSet() const;
 
+                    /**
+                     * 获取指定从 AKSK 或 CAM 成对凭证中返回哪一半。取值：AccessKey（AKSK 返回 AccessKeyId，CAM 返回 SecretId）、SecretKey（AKSK 返回 SecretAccessKey，CAM 返回 SecretKey）。不传则保持原行为，仅返回 AccessKeyId 或 SecretId。
+                     * @return SecretValueType 指定从 AKSK 或 CAM 成对凭证中返回哪一半。取值：AccessKey（AKSK 返回 AccessKeyId，CAM 返回 SecretId）、SecretKey（AKSK 返回 SecretAccessKey，CAM 返回 SecretKey）。不传则保持原行为，仅返回 AccessKeyId 或 SecretId。
+                     * 
+                     */
+                    std::string GetSecretValueType() const;
+
+                    /**
+                     * 设置指定从 AKSK 或 CAM 成对凭证中返回哪一半。取值：AccessKey（AKSK 返回 AccessKeyId，CAM 返回 SecretId）、SecretKey（AKSK 返回 SecretAccessKey，CAM 返回 SecretKey）。不传则保持原行为，仅返回 AccessKeyId 或 SecretId。
+                     * @param _secretValueType 指定从 AKSK 或 CAM 成对凭证中返回哪一半。取值：AccessKey（AKSK 返回 AccessKeyId，CAM 返回 SecretId）、SecretKey（AKSK 返回 SecretAccessKey，CAM 返回 SecretKey）。不传则保持原行为，仅返回 AccessKeyId 或 SecretId。
+                     * 
+                     */
+                    void SetSecretValueType(const std::string& _secretValueType);
+
+                    /**
+                     * 判断参数 SecretValueType 是否已赋值
+                     * @return SecretValueType 是否已赋值
+                     * 
+                     */
+                    bool SecretValueTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_secretKeyId;
                     bool m_secretKeyIdHasBeenSet;
+
+                    /**
+                     * 指定从 AKSK 或 CAM 成对凭证中返回哪一半。取值：AccessKey（AKSK 返回 AccessKeyId，CAM 返回 SecretId）、SecretKey（AKSK 返回 SecretAccessKey，CAM 返回 SecretKey）。不传则保持原行为，仅返回 AccessKeyId 或 SecretId。
+                     */
+                    std::string m_secretValueType;
+                    bool m_secretValueTypeHasBeenSet;
 
                 };
             }

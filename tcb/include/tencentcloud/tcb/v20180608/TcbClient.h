@@ -69,8 +69,6 @@
 #include <tencentcloud/tcb/v20180608/model/CreateTableResponse.h>
 #include <tencentcloud/tcb/v20180608/model/CreateUserRequest.h>
 #include <tencentcloud/tcb/v20180608/model/CreateUserResponse.h>
-#include <tencentcloud/tcb/v20180608/model/CreateUserKeyRequest.h>
-#include <tencentcloud/tcb/v20180608/model/CreateUserKeyResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteAIModelRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteAIModelResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteApiKeyRequest.h>
@@ -91,8 +89,6 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteProviderResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteTableRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteTableResponse.h>
-#include <tencentcloud/tcb/v20180608/model/DeleteUserKeyRequest.h>
-#include <tencentcloud/tcb/v20180608/model/DeleteUserKeyResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteUsersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteUsersResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAIModelsRequest.h>
@@ -201,12 +197,8 @@
 #include <tencentcloud/tcb/v20180608/model/ExecutePGSqlResponse.h>
 #include <tencentcloud/tcb/v20180608/model/GetFunctionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/GetFunctionResponse.h>
-#include <tencentcloud/tcb/v20180608/model/GetOneUserKeyRequest.h>
-#include <tencentcloud/tcb/v20180608/model/GetOneUserKeyResponse.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersRequest.h>
 #include <tencentcloud/tcb/v20180608/model/GetProvidersResponse.h>
-#include <tencentcloud/tcb/v20180608/model/GetUserKeyListRequest.h>
-#include <tencentcloud/tcb/v20180608/model/GetUserKeyListResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ListFunctionsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ListFunctionsResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ListPGUserMigrationsRequest.h>
@@ -277,8 +269,6 @@
 #include <tencentcloud/tcb/v20180608/model/UpdateFunctionConfigurationResponse.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateTableRequest.h>
 #include <tencentcloud/tcb/v20180608/model/UpdateTableResponse.h>
-#include <tencentcloud/tcb/v20180608/model/UpdateUserKeyRequest.h>
-#include <tencentcloud/tcb/v20180608/model/UpdateUserKeyResponse.h>
 #include <tencentcloud/tcb/v20180608/model/UpgradePGInstanceToDedicatedRequest.h>
 #include <tencentcloud/tcb/v20180608/model/UpgradePGInstanceToDedicatedResponse.h>
 #include <tencentcloud/tcb/v20180608/model/VerifyHTTPServiceRouteRequest.h>
@@ -368,9 +358,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
                 typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateUserKeyResponse> CreateUserKeyOutcome;
-                typedef std::future<CreateUserKeyOutcome> CreateUserKeyOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::CreateUserKeyRequest&, CreateUserKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAIModelResponse> DeleteAIModelOutcome;
                 typedef std::future<DeleteAIModelOutcome> DeleteAIModelOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteAIModelRequest&, DeleteAIModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAIModelAsyncHandler;
@@ -401,9 +388,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTableResponse> DeleteTableOutcome;
                 typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteTableRequest&, DeleteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTableAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteUserKeyResponse> DeleteUserKeyOutcome;
-                typedef std::future<DeleteUserKeyOutcome> DeleteUserKeyOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::DeleteUserKeyRequest&, DeleteUserKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUsersResponse> DeleteUsersOutcome;
                 typedef std::future<DeleteUsersOutcome> DeleteUsersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteUsersRequest&, DeleteUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersAsyncHandler;
@@ -566,15 +550,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetFunctionResponse> GetFunctionOutcome;
                 typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::GetFunctionRequest&, GetFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetOneUserKeyResponse> GetOneUserKeyOutcome;
-                typedef std::future<GetOneUserKeyOutcome> GetOneUserKeyOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::GetOneUserKeyRequest&, GetOneUserKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOneUserKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetProvidersResponse> GetProvidersOutcome;
                 typedef std::future<GetProvidersOutcome> GetProvidersOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::GetProvidersRequest&, GetProvidersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetProvidersAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetUserKeyListResponse> GetUserKeyListOutcome;
-                typedef std::future<GetUserKeyListOutcome> GetUserKeyListOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::GetUserKeyListRequest&, GetUserKeyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUserKeyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListFunctionsResponse> ListFunctionsOutcome;
                 typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ListFunctionsRequest&, ListFunctionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListFunctionsAsyncHandler;
@@ -680,9 +658,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateTableResponse> UpdateTableOutcome;
                 typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::UpdateTableRequest&, UpdateTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTableAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpdateUserKeyResponse> UpdateUserKeyOutcome;
-                typedef std::future<UpdateUserKeyOutcome> UpdateUserKeyOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::UpdateUserKeyRequest&, UpdateUserKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradePGInstanceToDedicatedResponse> UpgradePGInstanceToDedicatedOutcome;
                 typedef std::future<UpgradePGInstanceToDedicatedOutcome> UpgradePGInstanceToDedicatedOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::UpgradePGInstanceToDedicatedRequest&, UpgradePGInstanceToDedicatedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradePGInstanceToDedicatedAsyncHandler;
@@ -954,15 +929,6 @@ namespace TencentCloud
                 CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
 
                 /**
-                 *用户创建集成
-                 * @param req CreateUserKeyRequest
-                 * @return CreateUserKeyOutcome
-                 */
-                CreateUserKeyOutcome CreateUserKey(const Model::CreateUserKeyRequest &request);
-                void CreateUserKeyAsync(const Model::CreateUserKeyRequest& request, const CreateUserKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateUserKeyOutcomeCallable CreateUserKeyCallable(const Model::CreateUserKeyRequest& request);
-
-                /**
                  *删除 AI 模型配置分组，支持批量删除。内置分组无法删除。分组删除后，该分组下的所有模型配置将同步移除，针对该分组模型的请求将会失败，请在删除前确认业务侧已停止对该分组的调用。
 
 注意：
@@ -1065,15 +1031,6 @@ namespace TencentCloud
                 DeleteTableOutcome DeleteTable(const Model::DeleteTableRequest &request);
                 void DeleteTableAsync(const Model::DeleteTableRequest& request, const DeleteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTableOutcomeCallable DeleteTableCallable(const Model::DeleteTableRequest& request);
-
-                /**
-                 *用户删除集成
-                 * @param req DeleteUserKeyRequest
-                 * @return DeleteUserKeyOutcome
-                 */
-                DeleteUserKeyOutcome DeleteUserKey(const Model::DeleteUserKeyRequest &request);
-                void DeleteUserKeyAsync(const Model::DeleteUserKeyRequest& request, const DeleteUserKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteUserKeyOutcomeCallable DeleteUserKeyCallable(const Model::DeleteUserKeyRequest& request);
 
                 /**
                  *删除tcb用户
@@ -1637,15 +1594,6 @@ namespace TencentCloud
                 GetFunctionOutcomeCallable GetFunctionCallable(const Model::GetFunctionRequest& request);
 
                 /**
-                 *用户获取集成详情
-                 * @param req GetOneUserKeyRequest
-                 * @return GetOneUserKeyOutcome
-                 */
-                GetOneUserKeyOutcome GetOneUserKey(const Model::GetOneUserKeyRequest &request);
-                void GetOneUserKeyAsync(const Model::GetOneUserKeyRequest& request, const GetOneUserKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetOneUserKeyOutcomeCallable GetOneUserKeyCallable(const Model::GetOneUserKeyRequest& request);
-
-                /**
                  *查询指定云开发环境下的身份认证源列表。返回该环境已配置的所有身份认证源信息，包括第三方登录（OAuth、OIDC、SAML）、微信小程序登录、自定义登录和邮箱登录等。返回结果包含认证源基本信息、关联应用、配置状态及启用情况。若自定义登录或邮箱登录的身份源尚未创建，接口会自动追加一个默认关闭状态的身份源记录。
                  * @param req GetProvidersRequest
                  * @return GetProvidersOutcome
@@ -1653,15 +1601,6 @@ namespace TencentCloud
                 GetProvidersOutcome GetProviders(const Model::GetProvidersRequest &request);
                 void GetProvidersAsync(const Model::GetProvidersRequest& request, const GetProvidersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetProvidersOutcomeCallable GetProvidersCallable(const Model::GetProvidersRequest& request);
-
-                /**
-                 *用户获取集成列表
-                 * @param req GetUserKeyListRequest
-                 * @return GetUserKeyListOutcome
-                 */
-                GetUserKeyListOutcome GetUserKeyList(const Model::GetUserKeyListRequest &request);
-                void GetUserKeyListAsync(const Model::GetUserKeyListRequest& request, const GetUserKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetUserKeyListOutcomeCallable GetUserKeyListCallable(const Model::GetUserKeyListRequest& request);
 
                 /**
                  *该接口根据传入的查询参数返回相关函数信息。
@@ -2017,15 +1956,6 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 UpdateTableOutcome UpdateTable(const Model::UpdateTableRequest &request);
                 void UpdateTableAsync(const Model::UpdateTableRequest& request, const UpdateTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateTableOutcomeCallable UpdateTableCallable(const Model::UpdateTableRequest& request);
-
-                /**
-                 *用户更新集成信息
-                 * @param req UpdateUserKeyRequest
-                 * @return UpdateUserKeyOutcome
-                 */
-                UpdateUserKeyOutcome UpdateUserKey(const Model::UpdateUserKeyRequest &request);
-                void UpdateUserKeyAsync(const Model::UpdateUserKeyRequest& request, const UpdateUserKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpdateUserKeyOutcomeCallable UpdateUserKeyCallable(const Model::UpdateUserKeyRequest& request);
 
                 /**
                  *本接口（UpgradePGInstanceToDedicated）用于共享PG升级独享PG。

@@ -265,6 +265,132 @@ namespace TencentCloud
                      */
                     bool SyncedVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>消费者展示名称；目录同步对象可与登录名不同。</p>
+                     * @return DisplayName <p>消费者展示名称；目录同步对象可与登录名不同。</p>
+                     * 
+                     */
+                    std::string GetDisplayName() const;
+
+                    /**
+                     * 设置<p>消费者展示名称；目录同步对象可与登录名不同。</p>
+                     * @param _displayName <p>消费者展示名称；目录同步对象可与登录名不同。</p>
+                     * 
+                     */
+                    void SetDisplayName(const std::string& _displayName);
+
+                    /**
+                     * 判断参数 DisplayName 是否已赋值
+                     * @return DisplayName 是否已赋值
+                     * 
+                     */
+                    bool DisplayNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消费者登录名称。</p>
+                     * @return UserName <p>消费者登录名称。</p>
+                     * 
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置<p>消费者登录名称。</p>
+                     * @param _userName <p>消费者登录名称。</p>
+                     * 
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     * 
+                     */
+                    bool UserNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>目录消费者状态：active / disabled / soft_deleted。保留存量接口原始值，不转换为 AIGW 枚举。</p>
+                     * @return Status <p>目录消费者状态：active / disabled / soft_deleted。保留存量接口原始值，不转换为 AIGW 枚举。</p>
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置<p>目录消费者状态：active / disabled / soft_deleted。保留存量接口原始值，不转换为 AIGW 枚举。</p>
+                     * @param _status <p>目录消费者状态：active / disabled / soft_deleted。保留存量接口原始值，不转换为 AIGW 枚举。</p>
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消费者来源：manual / sync；保留目录隔离和同步对象只读规则。</p>
+                     * @return Origin <p>消费者来源：manual / sync；保留目录隔离和同步对象只读规则。</p>
+                     * 
+                     */
+                    std::string GetOrigin() const;
+
+                    /**
+                     * 设置<p>消费者来源：manual / sync；保留目录隔离和同步对象只读规则。</p>
+                     * @param _origin <p>消费者来源：manual / sync；保留目录隔离和同步对象只读规则。</p>
+                     * 
+                     */
+                    void SetOrigin(const std::string& _origin);
+
+                    /**
+                     * 判断参数 Origin 是否已赋值
+                     * @return Origin 是否已赋值
+                     * 
+                     */
+                    bool OriginHasBeenSet() const;
+
+                    /**
+                     * 获取<p>产生该消费者的同步源 ID；手工消费者可为空。</p>
+                     * @return SyncSourceId <p>产生该消费者的同步源 ID；手工消费者可为空。</p>
+                     * 
+                     */
+                    std::string GetSyncSourceId() const;
+
+                    /**
+                     * 设置<p>产生该消费者的同步源 ID；手工消费者可为空。</p>
+                     * @param _syncSourceId <p>产生该消费者的同步源 ID；手工消费者可为空。</p>
+                     * 
+                     */
+                    void SetSyncSourceId(const std::string& _syncSourceId);
+
+                    /**
+                     * 判断参数 SyncSourceId 是否已赋值
+                     * @return SyncSourceId 是否已赋值
+                     * 
+                     */
+                    bool SyncSourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>对象在外部目录中的稳定标识；手工消费者可为空。</p>
+                     * @return ExternalId <p>对象在外部目录中的稳定标识；手工消费者可为空。</p>
+                     * 
+                     */
+                    std::string GetExternalId() const;
+
+                    /**
+                     * 设置<p>对象在外部目录中的稳定标识；手工消费者可为空。</p>
+                     * @param _externalId <p>对象在外部目录中的稳定标识；手工消费者可为空。</p>
+                     * 
+                     */
+                    void SetExternalId(const std::string& _externalId);
+
+                    /**
+                     * 判断参数 ExternalId 是否已赋值
+                     * @return ExternalId 是否已赋值
+                     * 
+                     */
+                    bool ExternalIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -328,6 +454,42 @@ namespace TencentCloud
                      */
                     std::string m_syncedVersion;
                     bool m_syncedVersionHasBeenSet;
+
+                    /**
+                     * <p>消费者展示名称；目录同步对象可与登录名不同。</p>
+                     */
+                    std::string m_displayName;
+                    bool m_displayNameHasBeenSet;
+
+                    /**
+                     * <p>消费者登录名称。</p>
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
+
+                    /**
+                     * <p>目录消费者状态：active / disabled / soft_deleted。保留存量接口原始值，不转换为 AIGW 枚举。</p>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>消费者来源：manual / sync；保留目录隔离和同步对象只读规则。</p>
+                     */
+                    std::string m_origin;
+                    bool m_originHasBeenSet;
+
+                    /**
+                     * <p>产生该消费者的同步源 ID；手工消费者可为空。</p>
+                     */
+                    std::string m_syncSourceId;
+                    bool m_syncSourceIdHasBeenSet;
+
+                    /**
+                     * <p>对象在外部目录中的稳定标识；手工消费者可为空。</p>
+                     */
+                    std::string m_externalId;
+                    bool m_externalIdHasBeenSet;
 
                 };
             }

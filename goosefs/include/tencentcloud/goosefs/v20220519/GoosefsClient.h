@@ -69,6 +69,8 @@
 #include <tencentcloud/goosefs/v20220519/model/DescribeCustomerClusterResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTasksRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTasksResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeFileSystemBucketsRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeFileSystemBucketsResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeFileSystemsRequest.h>
@@ -194,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataRepositoryTaskStatusResponse> DescribeDataRepositoryTaskStatusOutcome;
                 typedef std::future<DescribeDataRepositoryTaskStatusOutcome> DescribeDataRepositoryTaskStatusOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DescribeDataRepositoryTaskStatusRequest&, DescribeDataRepositoryTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataRepositoryTaskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataRepositoryTasksResponse> DescribeDataRepositoryTasksOutcome;
+                typedef std::future<DescribeDataRepositoryTasksOutcome> DescribeDataRepositoryTasksOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DescribeDataRepositoryTasksRequest&, DescribeDataRepositoryTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataRepositoryTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFileSystemBucketsResponse> DescribeFileSystemBucketsOutcome;
                 typedef std::future<DescribeFileSystemBucketsOutcome> DescribeFileSystemBucketsOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DescribeFileSystemBucketsRequest&, DescribeFileSystemBucketsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileSystemBucketsAsyncHandler;
@@ -466,6 +471,15 @@ namespace TencentCloud
                 DescribeDataRepositoryTaskStatusOutcome DescribeDataRepositoryTaskStatus(const Model::DescribeDataRepositoryTaskStatusRequest &request);
                 void DescribeDataRepositoryTaskStatusAsync(const Model::DescribeDataRepositoryTaskStatusRequest& request, const DescribeDataRepositoryTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataRepositoryTaskStatusOutcomeCallable DescribeDataRepositoryTaskStatusCallable(const Model::DescribeDataRepositoryTaskStatusRequest& request);
+
+                /**
+                 *列出所有的数据流通任务
+                 * @param req DescribeDataRepositoryTasksRequest
+                 * @return DescribeDataRepositoryTasksOutcome
+                 */
+                DescribeDataRepositoryTasksOutcome DescribeDataRepositoryTasks(const Model::DescribeDataRepositoryTasksRequest &request);
+                void DescribeDataRepositoryTasksAsync(const Model::DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataRepositoryTasksOutcomeCallable DescribeDataRepositoryTasksCallable(const Model::DescribeDataRepositoryTasksRequest& request);
 
                 /**
                  *罗列文件系统关联的Bucket映射

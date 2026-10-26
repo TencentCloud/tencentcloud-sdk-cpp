@@ -158,15 +158,15 @@ namespace TencentCloud
                     bool LatencyPriorityConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>缓存感知路由配置（前缀缓存）</p>
-                     * @return CacheAwareRouteConfig <p>缓存感知路由配置（前缀缓存）</p>
+                     * 获取<p>前缀缓存感知路由</p>
+                     * @return CacheAwareRouteConfig <p>前缀缓存感知路由</p>
                      * 
                      */
                     AIGWCacheAwareRouteConfig GetCacheAwareRouteConfig() const;
 
                     /**
-                     * 设置<p>缓存感知路由配置（前缀缓存）</p>
-                     * @param _cacheAwareRouteConfig <p>缓存感知路由配置（前缀缓存）</p>
+                     * 设置<p>前缀缓存感知路由</p>
+                     * @param _cacheAwareRouteConfig <p>前缀缓存感知路由</p>
                      * 
                      */
                     void SetCacheAwareRouteConfig(const AIGWCacheAwareRouteConfig& _cacheAwareRouteConfig);
@@ -179,15 +179,15 @@ namespace TencentCloud
                     bool CacheAwareRouteConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>token 长度路由</p>
-                     * @return TokenLengthRouteConfig <p>token 长度路由</p>
+                     * 获取<p>按请求 Token 长度选择模型服务的路由配置。</p>
+                     * @return TokenLengthRouteConfig <p>按请求 Token 长度选择模型服务的路由配置。</p>
                      * 
                      */
                     AIGWTokenLengthRoute GetTokenLengthRouteConfig() const;
 
                     /**
-                     * 设置<p>token 长度路由</p>
-                     * @param _tokenLengthRouteConfig <p>token 长度路由</p>
+                     * 设置<p>按请求 Token 长度选择模型服务的路由配置。</p>
+                     * @param _tokenLengthRouteConfig <p>按请求 Token 长度选择模型服务的路由配置。</p>
                      * 
                      */
                     void SetTokenLengthRouteConfig(const AIGWTokenLengthRoute& _tokenLengthRouteConfig);
@@ -232,13 +232,13 @@ namespace TencentCloud
                     bool m_latencyPriorityConfigHasBeenSet;
 
                     /**
-                     * <p>缓存感知路由配置（前缀缓存）</p>
+                     * <p>前缀缓存感知路由</p>
                      */
                     AIGWCacheAwareRouteConfig m_cacheAwareRouteConfig;
                     bool m_cacheAwareRouteConfigHasBeenSet;
 
                     /**
-                     * <p>token 长度路由</p>
+                     * <p>按请求 Token 长度选择模型服务的路由配置。</p>
                      */
                     AIGWTokenLengthRoute m_tokenLengthRouteConfig;
                     bool m_tokenLengthRouteConfigHasBeenSet;

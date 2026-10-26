@@ -26,7 +26,8 @@ DescribeMessageByTopicRequest::DescribeMessageByTopicRequest() :
     m_instanceIdHasBeenSet(false),
     m_topicHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_maxNumberHasBeenSet(false)
+    m_maxNumberHasBeenSet(false),
+    m_filterExpressionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeMessageByTopicRequest::ToJsonString() const
         string key = "MaxNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxNumber, allocator);
+    }
+
+    if (m_filterExpressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterExpression";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_filterExpression.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeMessageByTopicRequest::SetMaxNumber(const int64_t& _maxNumber)
 bool DescribeMessageByTopicRequest::MaxNumberHasBeenSet() const
 {
     return m_maxNumberHasBeenSet;
+}
+
+string DescribeMessageByTopicRequest::GetFilterExpression() const
+{
+    return m_filterExpression;
+}
+
+void DescribeMessageByTopicRequest::SetFilterExpression(const string& _filterExpression)
+{
+    m_filterExpression = _filterExpression;
+    m_filterExpressionHasBeenSet = true;
+}
+
+bool DescribeMessageByTopicRequest::FilterExpressionHasBeenSet() const
+{
+    return m_filterExpressionHasBeenSet;
 }
 
 

@@ -43,23 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板名称。
-长度上限：255字节。
-仅支持中文、英文、数字、_、-。
-                     * @return TemplateName 模板名称。
-长度上限：255字节。
-仅支持中文、英文、数字、_、-。
+                     * 获取<p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>
+                     * @return TemplateName <p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名称。
-长度上限：255字节。
-仅支持中文、英文、数字、_、-。
-                     * @param _templateName 模板名称。
-长度上限：255字节。
-仅支持中文、英文、数字、_、-。
+                     * 设置<p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>
+                     * @param _templateName <p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -72,15 +64,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取Cos 应用 ID。
-                     * @return CosAppId Cos 应用 ID。
+                     * 获取<p>Cos 应用 ID。</p>
+                     * @return CosAppId <p>Cos 应用 ID。</p>
                      * 
                      */
                     int64_t GetCosAppId() const;
 
                     /**
-                     * 设置Cos 应用 ID。
-                     * @param _cosAppId Cos 应用 ID。
+                     * 设置<p>Cos 应用 ID。</p>
+                     * @param _cosAppId <p>Cos 应用 ID。</p>
                      * 
                      */
                     void SetCosAppId(const int64_t& _cosAppId);
@@ -93,19 +85,15 @@ namespace TencentCloud
                     bool CosAppIdHasBeenSet() const;
 
                     /**
-                     * 获取Cos Bucket名称。
-注：CosBucket参数值不能包含-[appid] 部分。
-                     * @return CosBucket Cos Bucket名称。
-注：CosBucket参数值不能包含-[appid] 部分。
+                     * 获取<p>Cos Bucket名称。<br>注：CosBucket参数值不能包含-[appid] 部分。</p>
+                     * @return CosBucket <p>Cos Bucket名称。<br>注：CosBucket参数值不能包含-[appid] 部分。</p>
                      * 
                      */
                     std::string GetCosBucket() const;
 
                     /**
-                     * 设置Cos Bucket名称。
-注：CosBucket参数值不能包含-[appid] 部分。
-                     * @param _cosBucket Cos Bucket名称。
-注：CosBucket参数值不能包含-[appid] 部分。
+                     * 设置<p>Cos Bucket名称。<br>注：CosBucket参数值不能包含-[appid] 部分。</p>
+                     * @param _cosBucket <p>Cos Bucket名称。<br>注：CosBucket参数值不能包含-[appid] 部分。</p>
                      * 
                      */
                     void SetCosBucket(const std::string& _cosBucket);
@@ -118,15 +106,15 @@ namespace TencentCloud
                     bool CosBucketHasBeenSet() const;
 
                     /**
-                     * 获取Cos地区。
-                     * @return CosRegion Cos地区。
+                     * 获取<p>Cos地区。</p>
+                     * @return CosRegion <p>Cos地区。</p>
                      * 
                      */
                     std::string GetCosRegion() const;
 
                     /**
-                     * 设置Cos地区。
-                     * @param _cosRegion Cos地区。
+                     * 设置<p>Cos地区。</p>
+                     * @param _cosRegion <p>Cos地区。</p>
                      * 
                      */
                     void SetCosRegion(const std::string& _cosRegion);
@@ -139,23 +127,15 @@ namespace TencentCloud
                     bool CosRegionHasBeenSet() const;
 
                     /**
-                     * 获取描述信息。
-长度上限：1024字节。
-仅支持中文、英文、数字、_、-。
-                     * @return Description 描述信息。
-长度上限：1024字节。
-仅支持中文、英文、数字、_、-。
+                     * 获取<p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>
+                     * @return Description <p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述信息。
-长度上限：1024字节。
-仅支持中文、英文、数字、_、-。
-                     * @param _description 描述信息。
-长度上限：1024字节。
-仅支持中文、英文、数字、_、-。
+                     * 设置<p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>
+                     * @param _description <p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -168,19 +148,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取截图间隔，单位s，默认10s。
-范围： 2s ~ 300s。
-                     * @return SnapshotInterval 截图间隔，单位s，默认10s。
-范围： 2s ~ 300s。
+                     * 获取<p>截图间隔，单位s，默认10s。<br>范围： 2s ~ 300s。</p>
+                     * @return SnapshotInterval <p>截图间隔，单位s，默认10s。<br>范围： 2s ~ 300s。</p>
                      * 
                      */
                     int64_t GetSnapshotInterval() const;
 
                     /**
-                     * 设置截图间隔，单位s，默认10s。
-范围： 2s ~ 300s。
-                     * @param _snapshotInterval 截图间隔，单位s，默认10s。
-范围： 2s ~ 300s。
+                     * 设置<p>截图间隔，单位s，默认10s。<br>范围： 2s ~ 300s。</p>
+                     * @param _snapshotInterval <p>截图间隔，单位s，默认10s。<br>范围： 2s ~ 300s。</p>
                      * 
                      */
                     void SetSnapshotInterval(const int64_t& _snapshotInterval);
@@ -193,19 +169,15 @@ namespace TencentCloud
                     bool SnapshotIntervalHasBeenSet() const;
 
                     /**
-                     * 获取截图宽度。默认：0（原始宽）。
-范围：0-3000 。
-                     * @return Width 截图宽度。默认：0（原始宽）。
-范围：0-3000 。
+                     * 获取<p>截图宽度。默认：0（原始宽）。<br>范围：0-3000 。</p>
+                     * @return Width <p>截图宽度。默认：0（原始宽）。<br>范围：0-3000 。</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置截图宽度。默认：0（原始宽）。
-范围：0-3000 。
-                     * @param _width 截图宽度。默认：0（原始宽）。
-范围：0-3000 。
+                     * 设置<p>截图宽度。默认：0（原始宽）。<br>范围：0-3000 。</p>
+                     * @param _width <p>截图宽度。默认：0（原始宽）。<br>范围：0-3000 。</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -218,19 +190,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取截图高度。默认：0（原始高）。
-范围：0-2000 。
-                     * @return Height 截图高度。默认：0（原始高）。
-范围：0-2000 。
+                     * 获取<p>截图高度。默认：0（原始高）。<br>范围：0-2000 。</p>
+                     * @return Height <p>截图高度。默认：0（原始高）。<br>范围：0-2000 。</p>
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置截图高度。默认：0（原始高）。
-范围：0-2000 。
-                     * @param _height 截图高度。默认：0（原始高）。
-范围：0-2000 。
+                     * 设置<p>截图高度。默认：0（原始高）。<br>范围：0-2000 。</p>
+                     * @param _height <p>截图高度。默认：0（原始高）。<br>范围：0-2000 。</p>
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -243,15 +211,15 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取是否开启鉴黄，0：不开启，1：开启。默认：0。
-                     * @return PornFlag 是否开启鉴黄，0：不开启，1：开启。默认：0。
+                     * 获取<p>是否开启鉴黄，0：不开启，1：开启。默认：0。</p>
+                     * @return PornFlag <p>是否开启鉴黄，0：不开启，1：开启。默认：0。</p>
                      * 
                      */
                     int64_t GetPornFlag() const;
 
                     /**
-                     * 设置是否开启鉴黄，0：不开启，1：开启。默认：0。
-                     * @param _pornFlag 是否开启鉴黄，0：不开启，1：开启。默认：0。
+                     * 设置<p>是否开启鉴黄，0：不开启，1：开启。默认：0。</p>
+                     * @param _pornFlag <p>是否开启鉴黄，0：不开启，1：开启。默认：0。</p>
                      * 
                      */
                     void SetPornFlag(const int64_t& _pornFlag);
@@ -264,27 +232,15 @@ namespace TencentCloud
                     bool PornFlagHasBeenSet() const;
 
                     /**
-                     * 获取Cos Bucket文件夹前缀。
-如不传，实际按默认值
-/{Year}-{Month}-{Day}
-生效
-                     * @return CosPrefix Cos Bucket文件夹前缀。
-如不传，实际按默认值
-/{Year}-{Month}-{Day}
-生效
+                     * 获取<p>Cos Bucket文件夹前缀。<br>如不传，实际按默认值<br>/{Year}-{Month}-{Day}<br>生效</p>
+                     * @return CosPrefix <p>Cos Bucket文件夹前缀。<br>如不传，实际按默认值<br>/{Year}-{Month}-{Day}<br>生效</p>
                      * 
                      */
                     std::string GetCosPrefix() const;
 
                     /**
-                     * 设置Cos Bucket文件夹前缀。
-如不传，实际按默认值
-/{Year}-{Month}-{Day}
-生效
-                     * @param _cosPrefix Cos Bucket文件夹前缀。
-如不传，实际按默认值
-/{Year}-{Month}-{Day}
-生效
+                     * 设置<p>Cos Bucket文件夹前缀。<br>如不传，实际按默认值<br>/{Year}-{Month}-{Day}<br>生效</p>
+                     * @param _cosPrefix <p>Cos Bucket文件夹前缀。<br>如不传，实际按默认值<br>/{Year}-{Month}-{Day}<br>生效</p>
                      * 
                      */
                     void SetCosPrefix(const std::string& _cosPrefix);
@@ -297,27 +253,15 @@ namespace TencentCloud
                     bool CosPrefixHasBeenSet() const;
 
                     /**
-                     * 获取Cos 文件名称。
-如不传，实际按默认值
-{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}
-生效
-                     * @return CosFileName Cos 文件名称。
-如不传，实际按默认值
-{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}
-生效
+                     * 获取<p>Cos 文件名称。<br>如不传，实际按默认值<br>{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}<br>生效</p>
+                     * @return CosFileName <p>Cos 文件名称。<br>如不传，实际按默认值<br>{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}<br>生效</p>
                      * 
                      */
                     std::string GetCosFileName() const;
 
                     /**
-                     * 设置Cos 文件名称。
-如不传，实际按默认值
-{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}
-生效
-                     * @param _cosFileName Cos 文件名称。
-如不传，实际按默认值
-{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}
-生效
+                     * 设置<p>Cos 文件名称。<br>如不传，实际按默认值<br>{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}<br>生效</p>
+                     * @param _cosFileName <p>Cos 文件名称。<br>如不传，实际按默认值<br>{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}<br>生效</p>
                      * 
                      */
                     void SetCosFileName(const std::string& _cosFileName);
@@ -332,81 +276,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板名称。
-长度上限：255字节。
-仅支持中文、英文、数字、_、-。
+                     * <p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * Cos 应用 ID。
+                     * <p>Cos 应用 ID。</p>
                      */
                     int64_t m_cosAppId;
                     bool m_cosAppIdHasBeenSet;
 
                     /**
-                     * Cos Bucket名称。
-注：CosBucket参数值不能包含-[appid] 部分。
+                     * <p>Cos Bucket名称。<br>注：CosBucket参数值不能包含-[appid] 部分。</p>
                      */
                     std::string m_cosBucket;
                     bool m_cosBucketHasBeenSet;
 
                     /**
-                     * Cos地区。
+                     * <p>Cos地区。</p>
                      */
                     std::string m_cosRegion;
                     bool m_cosRegionHasBeenSet;
 
                     /**
-                     * 描述信息。
-长度上限：1024字节。
-仅支持中文、英文、数字、_、-。
+                     * <p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 截图间隔，单位s，默认10s。
-范围： 2s ~ 300s。
+                     * <p>截图间隔，单位s，默认10s。<br>范围： 2s ~ 300s。</p>
                      */
                     int64_t m_snapshotInterval;
                     bool m_snapshotIntervalHasBeenSet;
 
                     /**
-                     * 截图宽度。默认：0（原始宽）。
-范围：0-3000 。
+                     * <p>截图宽度。默认：0（原始宽）。<br>范围：0-3000 。</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 截图高度。默认：0（原始高）。
-范围：0-2000 。
+                     * <p>截图高度。默认：0（原始高）。<br>范围：0-2000 。</p>
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 是否开启鉴黄，0：不开启，1：开启。默认：0。
+                     * <p>是否开启鉴黄，0：不开启，1：开启。默认：0。</p>
                      */
                     int64_t m_pornFlag;
                     bool m_pornFlagHasBeenSet;
 
                     /**
-                     * Cos Bucket文件夹前缀。
-如不传，实际按默认值
-/{Year}-{Month}-{Day}
-生效
+                     * <p>Cos Bucket文件夹前缀。<br>如不传，实际按默认值<br>/{Year}-{Month}-{Day}<br>生效</p>
                      */
                     std::string m_cosPrefix;
                     bool m_cosPrefixHasBeenSet;
 
                     /**
-                     * Cos 文件名称。
-如不传，实际按默认值
-{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}
-生效
+                     * <p>Cos 文件名称。<br>如不传，实际按默认值<br>{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}<br>生效</p>
                      */
                     std::string m_cosFileName;
                     bool m_cosFileNameHasBeenSet;

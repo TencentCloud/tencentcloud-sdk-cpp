@@ -25,6 +25,7 @@ HTTPServiceRoute::HTTPServiceRoute() :
     m_pathRewriteHasBeenSet(false),
     m_upstreamResourceTypeHasBeenSet(false),
     m_upstreamResourceNameHasBeenSet(false),
+    m_upstreamResourceVersionHasBeenSet(false),
     m_enableSafeDomainHasBeenSet(false),
     m_enableAuthHasBeenSet(false),
     m_enablePathTransmissionHasBeenSet(false),
@@ -86,6 +87,16 @@ CoreInternalOutcome HTTPServiceRoute::Deserialize(const rapidjson::Value &value)
         }
         m_upstreamResourceName = string(value["UpstreamResourceName"].GetString());
         m_upstreamResourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpstreamResourceVersion") && !value["UpstreamResourceVersion"].IsNull())
+    {
+        if (!value["UpstreamResourceVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPServiceRoute.UpstreamResourceVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_upstreamResourceVersion = string(value["UpstreamResourceVersion"].GetString());
+        m_upstreamResourceVersionHasBeenSet = true;
     }
 
     if (value.HasMember("EnableSafeDomain") && !value["EnableSafeDomain"].IsNull())
@@ -222,6 +233,14 @@ void HTTPServiceRoute::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_upstreamResourceName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_upstreamResourceVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamResourceVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_upstreamResourceVersion.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_enableSafeDomainHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -353,6 +372,22 @@ void HTTPServiceRoute::SetUpstreamResourceName(const string& _upstreamResourceNa
 bool HTTPServiceRoute::UpstreamResourceNameHasBeenSet() const
 {
     return m_upstreamResourceNameHasBeenSet;
+}
+
+string HTTPServiceRoute::GetUpstreamResourceVersion() const
+{
+    return m_upstreamResourceVersion;
+}
+
+void HTTPServiceRoute::SetUpstreamResourceVersion(const string& _upstreamResourceVersion)
+{
+    m_upstreamResourceVersion = _upstreamResourceVersion;
+    m_upstreamResourceVersionHasBeenSet = true;
+}
+
+bool HTTPServiceRoute::UpstreamResourceVersionHasBeenSet() const
+{
+    return m_upstreamResourceVersionHasBeenSet;
 }
 
 bool HTTPServiceRoute::GetEnableSafeDomain() const

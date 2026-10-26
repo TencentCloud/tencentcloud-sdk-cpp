@@ -22,7 +22,8 @@ using namespace std;
 
 AIGWOAuthCredentialConfig::AIGWOAuthCredentialConfig() :
     m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false)
+    m_clientSecretHasBeenSet(false),
+    m_redirectURIsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome AIGWOAuthCredentialConfig::Deserialize(const rapidjson::Valu
         m_clientSecretHasBeenSet = true;
     }
 
+    if (value.HasMember("RedirectURIs") && !value["RedirectURIs"].IsNull())
+    {
+        if (!value["RedirectURIs"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWOAuthCredentialConfig.RedirectURIs` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_redirectURIs = string(value["RedirectURIs"].GetString());
+        m_redirectURIsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void AIGWOAuthCredentialConfig::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "ClientSecret";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clientSecret.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_redirectURIsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedirectURIs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_redirectURIs.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void AIGWOAuthCredentialConfig::SetClientSecret(const string& _clientSecret)
 bool AIGWOAuthCredentialConfig::ClientSecretHasBeenSet() const
 {
     return m_clientSecretHasBeenSet;
+}
+
+string AIGWOAuthCredentialConfig::GetRedirectURIs() const
+{
+    return m_redirectURIs;
+}
+
+void AIGWOAuthCredentialConfig::SetRedirectURIs(const string& _redirectURIs)
+{
+    m_redirectURIs = _redirectURIs;
+    m_redirectURIsHasBeenSet = true;
+}
+
+bool AIGWOAuthCredentialConfig::RedirectURIsHasBeenSet() const
+{
+    return m_redirectURIsHasBeenSet;
 }
 

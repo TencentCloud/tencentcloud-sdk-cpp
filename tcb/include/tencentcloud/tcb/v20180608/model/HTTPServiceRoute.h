@@ -92,15 +92,15 @@ namespace TencentCloud
                     bool PathRewriteHasBeenSet() const;
 
                     /**
-                     * 获取<p>上游服务类型。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse</p>
-                     * @return UpstreamResourceType <p>上游服务类型。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse</p>
+                     * 获取<p>上游资源类型</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： WEB云函数</li><li>STORAGE： 云存储</li></ul>
+                     * @return UpstreamResourceType <p>上游资源类型</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： WEB云函数</li><li>STORAGE： 云存储</li></ul>
                      * 
                      */
                     std::string GetUpstreamResourceType() const;
 
                     /**
-                     * 设置<p>上游服务类型。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse</p>
-                     * @param _upstreamResourceType <p>上游服务类型。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse</p>
+                     * 设置<p>上游资源类型</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： WEB云函数</li><li>STORAGE： 云存储</li></ul>
+                     * @param _upstreamResourceType <p>上游资源类型</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： WEB云函数</li><li>STORAGE： 云存储</li></ul>
                      * 
                      */
                     void SetUpstreamResourceType(const std::string& _upstreamResourceType);
@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool UpstreamResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>上游服务名</p>
-                     * @return UpstreamResourceName <p>上游服务名</p>
+                     * 获取<p>上游资源名</p>
+                     * @return UpstreamResourceName <p>上游资源名</p>
                      * 
                      */
                     std::string GetUpstreamResourceName() const;
 
                     /**
-                     * 设置<p>上游服务名</p>
-                     * @param _upstreamResourceName <p>上游服务名</p>
+                     * 设置<p>上游资源名</p>
+                     * @param _upstreamResourceName <p>上游资源名</p>
                      * 
                      */
                     void SetUpstreamResourceName(const std::string& _upstreamResourceName);
@@ -132,6 +132,27 @@ namespace TencentCloud
                      * 
                      */
                     bool UpstreamResourceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>上游资源版本。仅支持云函数，可填具体的版本，$DEFAULT:请求转发到资源，流量比例由资源控制；$LATEST: 请求转发到最新版本；为空默认是$DEFAULT</p>
+                     * @return UpstreamResourceVersion <p>上游资源版本。仅支持云函数，可填具体的版本，$DEFAULT:请求转发到资源，流量比例由资源控制；$LATEST: 请求转发到最新版本；为空默认是$DEFAULT</p>
+                     * 
+                     */
+                    std::string GetUpstreamResourceVersion() const;
+
+                    /**
+                     * 设置<p>上游资源版本。仅支持云函数，可填具体的版本，$DEFAULT:请求转发到资源，流量比例由资源控制；$LATEST: 请求转发到最新版本；为空默认是$DEFAULT</p>
+                     * @param _upstreamResourceVersion <p>上游资源版本。仅支持云函数，可填具体的版本，$DEFAULT:请求转发到资源，流量比例由资源控制；$LATEST: 请求转发到最新版本；为空默认是$DEFAULT</p>
+                     * 
+                     */
+                    void SetUpstreamResourceVersion(const std::string& _upstreamResourceVersion);
+
+                    /**
+                     * 判断参数 UpstreamResourceVersion 是否已赋值
+                     * @return UpstreamResourceVersion 是否已赋值
+                     * 
+                     */
+                    bool UpstreamResourceVersionHasBeenSet() const;
 
                     /**
                      * 获取<p>是否开启安全域名</p>
@@ -316,16 +337,22 @@ namespace TencentCloud
                     bool m_pathRewriteHasBeenSet;
 
                     /**
-                     * <p>上游服务类型。SCF: 云函数，CBR: 云托管，STATIC_STORE: 静态托管，WEB_SCF: WEB云函数，LH: Lighthouse</p>
+                     * <p>上游资源类型</p><p>枚举值：</p><ul><li>SCF： 云函数</li><li>CBR： 云托管</li><li>STATIC_STORE： 静态托管</li><li>WEB_SCF： WEB云函数</li><li>STORAGE： 云存储</li></ul>
                      */
                     std::string m_upstreamResourceType;
                     bool m_upstreamResourceTypeHasBeenSet;
 
                     /**
-                     * <p>上游服务名</p>
+                     * <p>上游资源名</p>
                      */
                     std::string m_upstreamResourceName;
                     bool m_upstreamResourceNameHasBeenSet;
+
+                    /**
+                     * <p>上游资源版本。仅支持云函数，可填具体的版本，$DEFAULT:请求转发到资源，流量比例由资源控制；$LATEST: 请求转发到最新版本；为空默认是$DEFAULT</p>
+                     */
+                    std::string m_upstreamResourceVersion;
+                    bool m_upstreamResourceVersionHasBeenSet;
 
                     /**
                      * <p>是否开启安全域名</p>

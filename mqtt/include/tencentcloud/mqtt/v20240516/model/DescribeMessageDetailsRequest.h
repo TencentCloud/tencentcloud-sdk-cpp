@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 获取<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @return InstanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 设置<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @param _instanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取消息ID
-                     * @return MessageId 消息ID
+                     * 获取<p>消息ID</p>
+                     * @return MessageId <p>消息ID</p>
                      * 
                      */
                     std::string GetMessageId() const;
 
                     /**
-                     * 设置消息ID
-                     * @param _messageId 消息ID
+                     * 设置<p>消息ID</p>
+                     * @param _messageId <p>消息ID</p>
                      * 
                      */
                     void SetMessageId(const std::string& _messageId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MessageIdHasBeenSet() const;
 
                     /**
-                     * 获取订阅表达式
-                     * @return Subscription 订阅表达式
+                     * 获取<p>订阅表达式</p>
+                     * @return Subscription <p>订阅表达式</p>
                      * 
                      */
                     std::string GetSubscription() const;
 
                     /**
-                     * 设置订阅表达式
-                     * @param _subscription 订阅表达式
+                     * 设置<p>订阅表达式</p>
+                     * @param _subscription <p>订阅表达式</p>
                      * 
                      */
                     void SetSubscription(const std::string& _subscription);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 消息ID
+                     * <p>消息ID</p>
                      */
                     std::string m_messageId;
                     bool m_messageIdHasBeenSet;
 
                     /**
-                     * 订阅表达式
+                     * <p>订阅表达式</p>
                      */
                     std::string m_subscription;
                     bool m_subscriptionHasBeenSet;

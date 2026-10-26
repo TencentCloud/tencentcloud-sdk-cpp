@@ -29,6 +29,8 @@
 #include <tencentcloud/tse/v20201207/model/AIGWLogConfig.h>
 #include <tencentcloud/tse/v20201207/model/AIGWRerankMaxDocumentsConfig.h>
 #include <tencentcloud/tse/v20201207/model/AIGWSensitiveWordRoute.h>
+#include <tencentcloud/tse/v20201207/model/AIGWPriorityScheduleConfig.h>
+#include <tencentcloud/tse/v20201207/model/AIGWModelNameRoute.h>
 
 
 namespace TencentCloud
@@ -72,15 +74,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>AI 网关 LLM 模型 API 的唯一标识名称，格式规则：2-50 字符，支持中英文大小写、数字及分隔符（“-”、“_”)，不能以数字和分隔符开头，不能以分隔符结尾。</p>
-                     * @return Name <p>AI 网关 LLM 模型 API 的唯一标识名称，格式规则：2-50 字符，支持中英文大小写、数字及分隔符（“-”、“_”)，不能以数字和分隔符开头，不能以分隔符结尾。</p>
+                     * 获取<p>模型 API 名称，最长 60 字符。同一网关下唯一。</p>
+                     * @return Name <p>模型 API 名称，最长 60 字符。同一网关下唯一。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>AI 网关 LLM 模型 API 的唯一标识名称，格式规则：2-50 字符，支持中英文大小写、数字及分隔符（“-”、“_”)，不能以数字和分隔符开头，不能以分隔符结尾。</p>
-                     * @param _name <p>AI 网关 LLM 模型 API 的唯一标识名称，格式规则：2-50 字符，支持中英文大小写、数字及分隔符（“-”、“_”)，不能以数字和分隔符开头，不能以分隔符结尾。</p>
+                     * 设置<p>模型 API 名称，最长 60 字符。同一网关下唯一。</p>
+                     * @param _name <p>模型 API 名称，最长 60 字符。同一网关下唯一。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -93,15 +95,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取<p>选择业务场景,  选项：Chat（聊天）。</p>
-                     * @return SceneType <p>选择业务场景,  选项：Chat（聊天）。</p>
+                     * 获取<p>业务场景。</p><p>枚举值：</p><ul><li>Chat：聊天</li><li>Image：图像（需要网关版本 ≥ 3.9.3）</li></ul>
+                     * @return SceneType <p>业务场景。</p><p>枚举值：</p><ul><li>Chat：聊天</li><li>Image：图像（需要网关版本 ≥ 3.9.3）</li></ul>
                      * 
                      */
                     std::string GetSceneType() const;
 
                     /**
-                     * 设置<p>选择业务场景,  选项：Chat（聊天）。</p>
-                     * @param _sceneType <p>选择业务场景,  选项：Chat（聊天）。</p>
+                     * 设置<p>业务场景。</p><p>枚举值：</p><ul><li>Chat：聊天</li><li>Image：图像（需要网关版本 ≥ 3.9.3）</li></ul>
+                     * @param _sceneType <p>业务场景。</p><p>枚举值：</p><ul><li>Chat：聊天</li><li>Image：图像（需要网关版本 ≥ 3.9.3）</li></ul>
                      * 
                      */
                     void SetSceneType(const std::string& _sceneType);
@@ -114,15 +116,15 @@ namespace TencentCloud
                     bool SceneTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>业务场景对应的请求协议，选项：OpenAI（目前只支持 OpenAI）。</p>
-                     * @return RequestProtocol <p>业务场景对应的请求协议，选项：OpenAI（目前只支持 OpenAI）。</p>
+                     * 获取<p>请求协议（小写）。当前仅支持：</p><ul><li>openai</li></ul>
+                     * @return RequestProtocol <p>请求协议（小写）。当前仅支持：</p><ul><li>openai</li></ul>
                      * 
                      */
                     std::string GetRequestProtocol() const;
 
                     /**
-                     * 设置<p>业务场景对应的请求协议，选项：OpenAI（目前只支持 OpenAI）。</p>
-                     * @param _requestProtocol <p>业务场景对应的请求协议，选项：OpenAI（目前只支持 OpenAI）。</p>
+                     * 设置<p>请求协议（小写）。当前仅支持：</p><ul><li>openai</li></ul>
+                     * @param _requestProtocol <p>请求协议（小写）。当前仅支持：</p><ul><li>openai</li></ul>
                      * 
                      */
                     void SetRequestProtocol(const std::string& _requestProtocol);
@@ -135,15 +137,15 @@ namespace TencentCloud
                     bool RequestProtocolHasBeenSet() const;
 
                     /**
-                     * 获取<p>初始化关联的模型服务列表。</p>
-                     * @return ListModelServiceId <p>初始化关联的模型服务列表。</p>
+                     * 获取<p>关联的模型服务 ID 列表，长度 1-10。</p><p>注：字段名建议改为 ModelServiceIds，当前保留用于兼容。</p>
+                     * @return ListModelServiceId <p>关联的模型服务 ID 列表，长度 1-10。</p><p>注：字段名建议改为 ModelServiceIds，当前保留用于兼容。</p>
                      * 
                      */
                     std::vector<std::string> GetListModelServiceId() const;
 
                     /**
-                     * 设置<p>初始化关联的模型服务列表。</p>
-                     * @param _listModelServiceId <p>初始化关联的模型服务列表。</p>
+                     * 设置<p>关联的模型服务 ID 列表，长度 1-10。</p><p>注：字段名建议改为 ModelServiceIds，当前保留用于兼容。</p>
+                     * @param _listModelServiceId <p>关联的模型服务 ID 列表，长度 1-10。</p><p>注：字段名建议改为 ModelServiceIds，当前保留用于兼容。</p>
                      * 
                      */
                     void SetListModelServiceId(const std::vector<std::string>& _listModelServiceId);
@@ -156,15 +158,15 @@ namespace TencentCloud
                     bool ListModelServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>路由列表</p>
-                     * @return RouteList <p>路由列表</p>
+                     * 获取<p>路由列表，至少 1 条。每条包含 Methods/Paths/Hosts 等 Kong 路由属性。</p>
+                     * @return RouteList <p>路由列表，至少 1 条。每条包含 Methods/Paths/Hosts 等 Kong 路由属性。</p>
                      * 
                      */
                     std::vector<DefaultKongRoute> GetRouteList() const;
 
                     /**
-                     * 设置<p>路由列表</p>
-                     * @param _routeList <p>路由列表</p>
+                     * 设置<p>路由列表，至少 1 条。每条包含 Methods/Paths/Hosts 等 Kong 路由属性。</p>
+                     * @param _routeList <p>路由列表，至少 1 条。每条包含 Methods/Paths/Hosts 等 Kong 路由属性。</p>
                      * 
                      */
                     void SetRouteList(const std::vector<DefaultKongRoute>& _routeList);
@@ -177,15 +179,15 @@ namespace TencentCloud
                     bool RouteListHasBeenSet() const;
 
                     /**
-                     * 获取<p>为API设置统一的前缀，格式：以/开头，支持字母、数字、短横线。</p>
-                     * @return BasePath <p>为API设置统一的前缀，格式：以/开头，支持字母、数字、短横线。</p>
+                     * 获取<p>统一前缀路径（可选）。例如 /v1/openai。</p>
+                     * @return BasePath <p>统一前缀路径（可选）。例如 /v1/openai。</p>
                      * 
                      */
                     std::string GetBasePath() const;
 
                     /**
-                     * 设置<p>为API设置统一的前缀，格式：以/开头，支持字母、数字、短横线。</p>
-                     * @param _basePath <p>为API设置统一的前缀，格式：以/开头，支持字母、数字、短横线。</p>
+                     * 设置<p>统一前缀路径（可选）。例如 /v1/openai。</p>
+                     * @param _basePath <p>统一前缀路径（可选）。例如 /v1/openai。</p>
                      * 
                      */
                     void SetBasePath(const std::string& _basePath);
@@ -198,15 +200,15 @@ namespace TencentCloud
                     bool BasePathHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型 API 的相关描述。</p>
-                     * @return Description <p>模型 API 的相关描述。</p>
+                     * 获取<p>模型 API 描述。最长 200 字符。</p>
+                     * @return Description <p>模型 API 描述。最长 200 字符。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置<p>模型 API 的相关描述。</p>
-                     * @param _description <p>模型 API 的相关描述。</p>
+                     * 设置<p>模型 API 描述。最长 200 字符。</p>
+                     * @param _description <p>模型 API 描述。最长 200 字符。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -219,15 +221,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型服务路由策略（是指如何路由到模型服务）</p>
-                     * @return ModelServiceRoute <p>模型服务路由策略（是指如何路由到模型服务）</p>
+                     * 获取<p>多模型服务路由策略。ListModelServiceId 多于 1 项时必填。</p>
+                     * @return ModelServiceRoute <p>多模型服务路由策略。ListModelServiceId 多于 1 项时必填。</p>
                      * 
                      */
                     CloudNativeAPIGatewayLLMModelServiceRoute GetModelServiceRoute() const;
 
                     /**
-                     * 设置<p>模型服务路由策略（是指如何路由到模型服务）</p>
-                     * @param _modelServiceRoute <p>模型服务路由策略（是指如何路由到模型服务）</p>
+                     * 设置<p>多模型服务路由策略。ListModelServiceId 多于 1 项时必填。</p>
+                     * @param _modelServiceRoute <p>多模型服务路由策略。ListModelServiceId 多于 1 项时必填。</p>
                      * 
                      */
                     void SetModelServiceRoute(const CloudNativeAPIGatewayLLMModelServiceRoute& _modelServiceRoute);
@@ -240,15 +242,15 @@ namespace TencentCloud
                     bool ModelServiceRouteHasBeenSet() const;
 
                     /**
-                     * 获取<p>路由 Header 匹配规则</p>
-                     * @return MatchHeaders <p>路由 Header 匹配规则</p>
+                     * 获取<p>Header 路由匹配规则。当前仅支持 Operator=exact。</p>
+                     * @return MatchHeaders <p>Header 路由匹配规则。当前仅支持 Operator=exact。</p>
                      * 
                      */
                     std::vector<AIGWKVMatch> GetMatchHeaders() const;
 
                     /**
-                     * 设置<p>路由 Header 匹配规则</p>
-                     * @param _matchHeaders <p>路由 Header 匹配规则</p>
+                     * 设置<p>Header 路由匹配规则。当前仅支持 Operator=exact。</p>
+                     * @param _matchHeaders <p>Header 路由匹配规则。当前仅支持 Operator=exact。</p>
                      * 
                      */
                     void SetMatchHeaders(const std::vector<AIGWKVMatch>& _matchHeaders);
@@ -261,15 +263,15 @@ namespace TencentCloud
                     bool MatchHeadersHasBeenSet() const;
 
                     /**
-                     * 获取<p>跨服务 fallback 开关</p>
-                     * @return EnableCrossServiceFallback <p>跨服务 fallback 开关</p>
+                     * 获取<p>是否启用跨服务 Fallback。开启后需提供 CrossServiceFallbackConfig。</p>
+                     * @return EnableCrossServiceFallback <p>是否启用跨服务 Fallback。开启后需提供 CrossServiceFallbackConfig。</p>
                      * 
                      */
                     bool GetEnableCrossServiceFallback() const;
 
                     /**
-                     * 设置<p>跨服务 fallback 开关</p>
-                     * @param _enableCrossServiceFallback <p>跨服务 fallback 开关</p>
+                     * 设置<p>是否启用跨服务 Fallback。开启后需提供 CrossServiceFallbackConfig。</p>
+                     * @param _enableCrossServiceFallback <p>是否启用跨服务 Fallback。开启后需提供 CrossServiceFallbackConfig。</p>
                      * 
                      */
                     void SetEnableCrossServiceFallback(const bool& _enableCrossServiceFallback);
@@ -282,15 +284,15 @@ namespace TencentCloud
                     bool EnableCrossServiceFallbackHasBeenSet() const;
 
                     /**
-                     * 获取<p>跨服务 fallback 配置</p>
-                     * @return CrossServiceFallbackConfig <p>跨服务 fallback 配置</p>
+                     * 获取<p>跨服务 Fallback 配置。EnableCrossServiceFallback=true 时必填。</p>
+                     * @return CrossServiceFallbackConfig <p>跨服务 Fallback 配置。EnableCrossServiceFallback=true 时必填。</p>
                      * 
                      */
                     AIGWCrossServiceFallbackConfig GetCrossServiceFallbackConfig() const;
 
                     /**
-                     * 设置<p>跨服务 fallback 配置</p>
-                     * @param _crossServiceFallbackConfig <p>跨服务 fallback 配置</p>
+                     * 设置<p>跨服务 Fallback 配置。EnableCrossServiceFallback=true 时必填。</p>
+                     * @param _crossServiceFallbackConfig <p>跨服务 Fallback 配置。EnableCrossServiceFallback=true 时必填。</p>
                      * 
                      */
                     void SetCrossServiceFallbackConfig(const AIGWCrossServiceFallbackConfig& _crossServiceFallbackConfig);
@@ -303,15 +305,15 @@ namespace TencentCloud
                     bool CrossServiceFallbackConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>标签</p>
-                     * @return TagFilter <p>标签</p>
+                     * 获取<p>标签过滤策略。需要网关版本 ≥ 3.9.4。</p>
+                     * @return TagFilter <p>标签过滤策略。需要网关版本 ≥ 3.9.4。</p>
                      * 
                      */
                     AIGWTagFilter GetTagFilter() const;
 
                     /**
-                     * 设置<p>标签</p>
-                     * @param _tagFilter <p>标签</p>
+                     * 设置<p>标签过滤策略。需要网关版本 ≥ 3.9.4。</p>
+                     * @param _tagFilter <p>标签过滤策略。需要网关版本 ≥ 3.9.4。</p>
                      * 
                      */
                     void SetTagFilter(const AIGWTagFilter& _tagFilter);
@@ -324,15 +326,15 @@ namespace TencentCloud
                     bool TagFilterHasBeenSet() const;
 
                     /**
-                     * 获取<p>模型 API 日志配置。未传时使用默认日志配置。</p>
-                     * @return LogConfig <p>模型 API 日志配置。未传时使用默认日志配置。</p>
+                     * 获取<p>日志输出配置（请求/响应 payload 落 LLM Log）。需要网关版本 ≥ 3.9.4。</p>
+                     * @return LogConfig <p>日志输出配置（请求/响应 payload 落 LLM Log）。需要网关版本 ≥ 3.9.4。</p>
                      * 
                      */
                     AIGWLogConfig GetLogConfig() const;
 
                     /**
-                     * 设置<p>模型 API 日志配置。未传时使用默认日志配置。</p>
-                     * @param _logConfig <p>模型 API 日志配置。未传时使用默认日志配置。</p>
+                     * 设置<p>日志输出配置（请求/响应 payload 落 LLM Log）。需要网关版本 ≥ 3.9.4。</p>
+                     * @param _logConfig <p>日志输出配置（请求/响应 payload 落 LLM Log）。需要网关版本 ≥ 3.9.4。</p>
                      * 
                      */
                     void SetLogConfig(const AIGWLogConfig& _logConfig);
@@ -345,15 +347,15 @@ namespace TencentCloud
                     bool LogConfigHasBeenSet() const;
 
                     /**
-                     * 获取<p>Rerank场景最大文档数限制</p>
-                     * @return MaxDocumentsConfig <p>Rerank场景最大文档数限制</p>
+                     * 获取<p>Rerank场景最大文档数高级配置</p>
+                     * @return MaxDocumentsConfig <p>Rerank场景最大文档数高级配置</p>
                      * 
                      */
                     AIGWRerankMaxDocumentsConfig GetMaxDocumentsConfig() const;
 
                     /**
-                     * 设置<p>Rerank场景最大文档数限制</p>
-                     * @param _maxDocumentsConfig <p>Rerank场景最大文档数限制</p>
+                     * 设置<p>Rerank场景最大文档数高级配置</p>
+                     * @param _maxDocumentsConfig <p>Rerank场景最大文档数高级配置</p>
                      * 
                      */
                     void SetMaxDocumentsConfig(const AIGWRerankMaxDocumentsConfig& _maxDocumentsConfig);
@@ -386,6 +388,69 @@ namespace TencentCloud
                      */
                     bool SensitiveWordRouteHasBeenSet() const;
 
+                    /**
+                     * 获取<p>请求优先级调度配置</p>
+                     * @return PriorityScheduleConfig <p>请求优先级调度配置</p>
+                     * 
+                     */
+                    AIGWPriorityScheduleConfig GetPriorityScheduleConfig() const;
+
+                    /**
+                     * 设置<p>请求优先级调度配置</p>
+                     * @param _priorityScheduleConfig <p>请求优先级调度配置</p>
+                     * 
+                     */
+                    void SetPriorityScheduleConfig(const AIGWPriorityScheduleConfig& _priorityScheduleConfig);
+
+                    /**
+                     * 判断参数 PriorityScheduleConfig 是否已赋值
+                     * @return PriorityScheduleConfig 是否已赋值
+                     * 
+                     */
+                    bool PriorityScheduleConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>按请求体顶层 model 字段选择模型 API 的入口路由配置。传入对象即启用，ModelNames 须为非空列表；不传表示不启用。仅用于 Chat 场景下受支持的 POST 路由：openai 协议的 /v1/chat/completions、/v1/responses，或 anthropic 协议的 /v1/messages。公有云要求网关版本不低于 3.9.8，TCS 要求不低于 3.9.6。</p>
+                     * @return ModelNameRoute <p>按请求体顶层 model 字段选择模型 API 的入口路由配置。传入对象即启用，ModelNames 须为非空列表；不传表示不启用。仅用于 Chat 场景下受支持的 POST 路由：openai 协议的 /v1/chat/completions、/v1/responses，或 anthropic 协议的 /v1/messages。公有云要求网关版本不低于 3.9.8，TCS 要求不低于 3.9.6。</p>
+                     * 
+                     */
+                    AIGWModelNameRoute GetModelNameRoute() const;
+
+                    /**
+                     * 设置<p>按请求体顶层 model 字段选择模型 API 的入口路由配置。传入对象即启用，ModelNames 须为非空列表；不传表示不启用。仅用于 Chat 场景下受支持的 POST 路由：openai 协议的 /v1/chat/completions、/v1/responses，或 anthropic 协议的 /v1/messages。公有云要求网关版本不低于 3.9.8，TCS 要求不低于 3.9.6。</p>
+                     * @param _modelNameRoute <p>按请求体顶层 model 字段选择模型 API 的入口路由配置。传入对象即启用，ModelNames 须为非空列表；不传表示不启用。仅用于 Chat 场景下受支持的 POST 路由：openai 协议的 /v1/chat/completions、/v1/responses，或 anthropic 协议的 /v1/messages。公有云要求网关版本不低于 3.9.8，TCS 要求不低于 3.9.6。</p>
+                     * 
+                     */
+                    void SetModelNameRoute(const AIGWModelNameRoute& _modelNameRoute);
+
+                    /**
+                     * 判断参数 ModelNameRoute 是否已赋值
+                     * @return ModelNameRoute 是否已赋值
+                     * 
+                     */
+                    bool ModelNameRouteHasBeenSet() const;
+
+                    /**
+                     * 获取<p>单模型 API 的顶层标准模型名称。仅当 ListModelServiceId 包含一个模型服务且未配置 ModelServiceRoute 时可设置；多模型场景应在对应路由或降级条目中配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * @return StandardModelName <p>单模型 API 的顶层标准模型名称。仅当 ListModelServiceId 包含一个模型服务且未配置 ModelServiceRoute 时可设置；多模型场景应在对应路由或降级条目中配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * 
+                     */
+                    std::string GetStandardModelName() const;
+
+                    /**
+                     * 设置<p>单模型 API 的顶层标准模型名称。仅当 ListModelServiceId 包含一个模型服务且未配置 ModelServiceRoute 时可设置；多模型场景应在对应路由或降级条目中配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * @param _standardModelName <p>单模型 API 的顶层标准模型名称。仅当 ListModelServiceId 包含一个模型服务且未配置 ModelServiceRoute 时可设置；多模型场景应在对应路由或降级条目中配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     * 
+                     */
+                    void SetStandardModelName(const std::string& _standardModelName);
+
+                    /**
+                     * 判断参数 StandardModelName 是否已赋值
+                     * @return StandardModelName 是否已赋值
+                     * 
+                     */
+                    bool StandardModelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,85 +460,85 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * <p>AI 网关 LLM 模型 API 的唯一标识名称，格式规则：2-50 字符，支持中英文大小写、数字及分隔符（“-”、“_”)，不能以数字和分隔符开头，不能以分隔符结尾。</p>
+                     * <p>模型 API 名称，最长 60 字符。同一网关下唯一。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * <p>选择业务场景,  选项：Chat（聊天）。</p>
+                     * <p>业务场景。</p><p>枚举值：</p><ul><li>Chat：聊天</li><li>Image：图像（需要网关版本 ≥ 3.9.3）</li></ul>
                      */
                     std::string m_sceneType;
                     bool m_sceneTypeHasBeenSet;
 
                     /**
-                     * <p>业务场景对应的请求协议，选项：OpenAI（目前只支持 OpenAI）。</p>
+                     * <p>请求协议（小写）。当前仅支持：</p><ul><li>openai</li></ul>
                      */
                     std::string m_requestProtocol;
                     bool m_requestProtocolHasBeenSet;
 
                     /**
-                     * <p>初始化关联的模型服务列表。</p>
+                     * <p>关联的模型服务 ID 列表，长度 1-10。</p><p>注：字段名建议改为 ModelServiceIds，当前保留用于兼容。</p>
                      */
                     std::vector<std::string> m_listModelServiceId;
                     bool m_listModelServiceIdHasBeenSet;
 
                     /**
-                     * <p>路由列表</p>
+                     * <p>路由列表，至少 1 条。每条包含 Methods/Paths/Hosts 等 Kong 路由属性。</p>
                      */
                     std::vector<DefaultKongRoute> m_routeList;
                     bool m_routeListHasBeenSet;
 
                     /**
-                     * <p>为API设置统一的前缀，格式：以/开头，支持字母、数字、短横线。</p>
+                     * <p>统一前缀路径（可选）。例如 /v1/openai。</p>
                      */
                     std::string m_basePath;
                     bool m_basePathHasBeenSet;
 
                     /**
-                     * <p>模型 API 的相关描述。</p>
+                     * <p>模型 API 描述。最长 200 字符。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * <p>模型服务路由策略（是指如何路由到模型服务）</p>
+                     * <p>多模型服务路由策略。ListModelServiceId 多于 1 项时必填。</p>
                      */
                     CloudNativeAPIGatewayLLMModelServiceRoute m_modelServiceRoute;
                     bool m_modelServiceRouteHasBeenSet;
 
                     /**
-                     * <p>路由 Header 匹配规则</p>
+                     * <p>Header 路由匹配规则。当前仅支持 Operator=exact。</p>
                      */
                     std::vector<AIGWKVMatch> m_matchHeaders;
                     bool m_matchHeadersHasBeenSet;
 
                     /**
-                     * <p>跨服务 fallback 开关</p>
+                     * <p>是否启用跨服务 Fallback。开启后需提供 CrossServiceFallbackConfig。</p>
                      */
                     bool m_enableCrossServiceFallback;
                     bool m_enableCrossServiceFallbackHasBeenSet;
 
                     /**
-                     * <p>跨服务 fallback 配置</p>
+                     * <p>跨服务 Fallback 配置。EnableCrossServiceFallback=true 时必填。</p>
                      */
                     AIGWCrossServiceFallbackConfig m_crossServiceFallbackConfig;
                     bool m_crossServiceFallbackConfigHasBeenSet;
 
                     /**
-                     * <p>标签</p>
+                     * <p>标签过滤策略。需要网关版本 ≥ 3.9.4。</p>
                      */
                     AIGWTagFilter m_tagFilter;
                     bool m_tagFilterHasBeenSet;
 
                     /**
-                     * <p>模型 API 日志配置。未传时使用默认日志配置。</p>
+                     * <p>日志输出配置（请求/响应 payload 落 LLM Log）。需要网关版本 ≥ 3.9.4。</p>
                      */
                     AIGWLogConfig m_logConfig;
                     bool m_logConfigHasBeenSet;
 
                     /**
-                     * <p>Rerank场景最大文档数限制</p>
+                     * <p>Rerank场景最大文档数高级配置</p>
                      */
                     AIGWRerankMaxDocumentsConfig m_maxDocumentsConfig;
                     bool m_maxDocumentsConfigHasBeenSet;
@@ -483,6 +548,24 @@ namespace TencentCloud
                      */
                     AIGWSensitiveWordRoute m_sensitiveWordRoute;
                     bool m_sensitiveWordRouteHasBeenSet;
+
+                    /**
+                     * <p>请求优先级调度配置</p>
+                     */
+                    AIGWPriorityScheduleConfig m_priorityScheduleConfig;
+                    bool m_priorityScheduleConfigHasBeenSet;
+
+                    /**
+                     * <p>按请求体顶层 model 字段选择模型 API 的入口路由配置。传入对象即启用，ModelNames 须为非空列表；不传表示不启用。仅用于 Chat 场景下受支持的 POST 路由：openai 协议的 /v1/chat/completions、/v1/responses，或 anthropic 协议的 /v1/messages。公有云要求网关版本不低于 3.9.8，TCS 要求不低于 3.9.6。</p>
+                     */
+                    AIGWModelNameRoute m_modelNameRoute;
+                    bool m_modelNameRouteHasBeenSet;
+
+                    /**
+                     * <p>单模型 API 的顶层标准模型名称。仅当 ListModelServiceId 包含一个模型服务且未配置 ModelServiceRoute 时可设置；多模型场景应在对应路由或降级条目中配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>
+                     */
+                    std::string m_standardModelName;
+                    bool m_standardModelNameHasBeenSet;
 
                 };
             }

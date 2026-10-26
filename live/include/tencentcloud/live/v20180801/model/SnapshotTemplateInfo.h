@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板 ID。
-                     * @return TemplateId 模板 ID。
+                     * 获取<p>模板 ID。</p>
+                     * @return TemplateId <p>模板 ID。</p>
                      * 
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模板 ID。
-                     * @param _templateId 模板 ID。
+                     * 设置<p>模板 ID。</p>
+                     * @param _templateId <p>模板 ID。</p>
                      * 
                      */
                     void SetTemplateId(const int64_t& _templateId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模板名称。
-                     * @return TemplateName 模板名称。
+                     * 获取<p>模板名称。</p>
+                     * @return TemplateName <p>模板名称。</p>
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名称。
-                     * @param _templateName 模板名称。
+                     * 设置<p>模板名称。</p>
+                     * @param _templateName <p>模板名称。</p>
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取截图时间间隔，5-300秒。
-                     * @return SnapshotInterval 截图时间间隔，5-300秒。
+                     * 获取<p>截图时间间隔，5-300秒。</p>
+                     * @return SnapshotInterval <p>截图时间间隔，5-300秒。</p>
                      * 
                      */
                     int64_t GetSnapshotInterval() const;
 
                     /**
-                     * 设置截图时间间隔，5-300秒。
-                     * @param _snapshotInterval 截图时间间隔，5-300秒。
+                     * 设置<p>截图时间间隔，5-300秒。</p>
+                     * @param _snapshotInterval <p>截图时间间隔，5-300秒。</p>
                      * 
                      */
                     void SetSnapshotInterval(const int64_t& _snapshotInterval);
@@ -110,19 +110,15 @@ namespace TencentCloud
                     bool SnapshotIntervalHasBeenSet() const;
 
                     /**
-                     * 获取截图宽度，范围：0-3000。 
-0：原始宽度并适配原始比例。
-                     * @return Width 截图宽度，范围：0-3000。 
-0：原始宽度并适配原始比例。
+                     * 获取<p>截图宽度，范围：0-3000。<br>0：原始宽度并适配原始比例。</p>
+                     * @return Width <p>截图宽度，范围：0-3000。<br>0：原始宽度并适配原始比例。</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置截图宽度，范围：0-3000。 
-0：原始宽度并适配原始比例。
-                     * @param _width 截图宽度，范围：0-3000。 
-0：原始宽度并适配原始比例。
+                     * 设置<p>截图宽度，范围：0-3000。<br>0：原始宽度并适配原始比例。</p>
+                     * @param _width <p>截图宽度，范围：0-3000。<br>0：原始宽度并适配原始比例。</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -135,19 +131,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取截图高度，范围：0-2000。
-0：原始高度并适配原始比例。
-                     * @return Height 截图高度，范围：0-2000。
-0：原始高度并适配原始比例。
+                     * 获取<p>截图高度，范围：0-2000。<br>0：原始高度并适配原始比例。</p>
+                     * @return Height <p>截图高度，范围：0-2000。<br>0：原始高度并适配原始比例。</p>
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置截图高度，范围：0-2000。
-0：原始高度并适配原始比例。
-                     * @param _height 截图高度，范围：0-2000。
-0：原始高度并适配原始比例。
+                     * 设置<p>截图高度，范围：0-2000。<br>0：原始高度并适配原始比例。</p>
+                     * @param _height <p>截图高度，范围：0-2000。<br>0：原始高度并适配原始比例。</p>
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -160,15 +152,15 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取是否开启鉴黄，0：不开启，1：开启。
-                     * @return PornFlag 是否开启鉴黄，0：不开启，1：开启。
+                     * 获取<p>是否开启鉴黄，0：不开启，1：开启。</p>
+                     * @return PornFlag <p>是否开启鉴黄，0：不开启，1：开启。</p>
                      * 
                      */
                     int64_t GetPornFlag() const;
 
                     /**
-                     * 设置是否开启鉴黄，0：不开启，1：开启。
-                     * @param _pornFlag 是否开启鉴黄，0：不开启，1：开启。
+                     * 设置<p>是否开启鉴黄，0：不开启，1：开启。</p>
+                     * @param _pornFlag <p>是否开启鉴黄，0：不开启，1：开启。</p>
                      * 
                      */
                     void SetPornFlag(const int64_t& _pornFlag);
@@ -181,15 +173,15 @@ namespace TencentCloud
                     bool PornFlagHasBeenSet() const;
 
                     /**
-                     * 获取Cos 应用 ID。
-                     * @return CosAppId Cos 应用 ID。
+                     * 获取<p>Cos 应用 ID。</p>
+                     * @return CosAppId <p>Cos 应用 ID。</p>
                      * 
                      */
                     int64_t GetCosAppId() const;
 
                     /**
-                     * 设置Cos 应用 ID。
-                     * @param _cosAppId Cos 应用 ID。
+                     * 设置<p>Cos 应用 ID。</p>
+                     * @param _cosAppId <p>Cos 应用 ID。</p>
                      * 
                      */
                     void SetCosAppId(const int64_t& _cosAppId);
@@ -202,15 +194,15 @@ namespace TencentCloud
                     bool CosAppIdHasBeenSet() const;
 
                     /**
-                     * 获取Cos Bucket名称。
-                     * @return CosBucket Cos Bucket名称。
+                     * 获取<p>Cos Bucket名称。</p>
+                     * @return CosBucket <p>Cos Bucket名称。</p>
                      * 
                      */
                     std::string GetCosBucket() const;
 
                     /**
-                     * 设置Cos Bucket名称。
-                     * @param _cosBucket Cos Bucket名称。
+                     * 设置<p>Cos Bucket名称。</p>
+                     * @param _cosBucket <p>Cos Bucket名称。</p>
                      * 
                      */
                     void SetCosBucket(const std::string& _cosBucket);
@@ -223,15 +215,15 @@ namespace TencentCloud
                     bool CosBucketHasBeenSet() const;
 
                     /**
-                     * 获取Cos 地域。
-                     * @return CosRegion Cos 地域。
+                     * 获取<p>Cos 地域。</p>
+                     * @return CosRegion <p>Cos 地域。</p>
                      * 
                      */
                     std::string GetCosRegion() const;
 
                     /**
-                     * 设置Cos 地域。
-                     * @param _cosRegion Cos 地域。
+                     * 设置<p>Cos 地域。</p>
+                     * @param _cosRegion <p>Cos 地域。</p>
                      * 
                      */
                     void SetCosRegion(const std::string& _cosRegion);
@@ -244,15 +236,15 @@ namespace TencentCloud
                     bool CosRegionHasBeenSet() const;
 
                     /**
-                     * 获取模板描述。
-                     * @return Description 模板描述。
+                     * 获取<p>模板描述。</p>
+                     * @return Description <p>模板描述。</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置模板描述。
-                     * @param _description 模板描述。
+                     * 设置<p>模板描述。</p>
+                     * @param _description <p>模板描述。</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -265,18 +257,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取Cos Bucket文件夹前缀。
+                     * 获取<p>Cos Bucket文件夹前缀。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosPrefix Cos Bucket文件夹前缀。
+                     * @return CosPrefix <p>Cos Bucket文件夹前缀。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosPrefix() const;
 
                     /**
-                     * 设置Cos Bucket文件夹前缀。
+                     * 设置<p>Cos Bucket文件夹前缀。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cosPrefix Cos Bucket文件夹前缀。
+                     * @param _cosPrefix <p>Cos Bucket文件夹前缀。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -290,18 +282,18 @@ namespace TencentCloud
                     bool CosPrefixHasBeenSet() const;
 
                     /**
-                     * 获取Cos 文件名称。
+                     * 获取<p>Cos 文件名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosFileName Cos 文件名称。
+                     * @return CosFileName <p>Cos 文件名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosFileName() const;
 
                     /**
-                     * 设置Cos 文件名称。
+                     * 设置<p>Cos 文件名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cosFileName Cos 文件名称。
+                     * @param _cosFileName <p>Cos 文件名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -314,83 +306,135 @@ namespace TencentCloud
                      */
                     bool CosFileNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>第三方存储时账号的SecretId</p>
+                     * @return CosSecretId <p>第三方存储时账号的SecretId</p>
+                     * 
+                     */
+                    std::string GetCosSecretId() const;
+
+                    /**
+                     * 设置<p>第三方存储时账号的SecretId</p>
+                     * @param _cosSecretId <p>第三方存储时账号的SecretId</p>
+                     * 
+                     */
+                    void SetCosSecretId(const std::string& _cosSecretId);
+
+                    /**
+                     * 判断参数 CosSecretId 是否已赋值
+                     * @return CosSecretId 是否已赋值
+                     * 
+                     */
+                    bool CosSecretIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>第三方存储时，账号的SecretKey</p><p>当查询时，该值返回为<code>******</code></p>
+                     * @return CosSecretKey <p>第三方存储时，账号的SecretKey</p><p>当查询时，该值返回为<code>******</code></p>
+                     * 
+                     */
+                    std::string GetCosSecretKey() const;
+
+                    /**
+                     * 设置<p>第三方存储时，账号的SecretKey</p><p>当查询时，该值返回为<code>******</code></p>
+                     * @param _cosSecretKey <p>第三方存储时，账号的SecretKey</p><p>当查询时，该值返回为<code>******</code></p>
+                     * 
+                     */
+                    void SetCosSecretKey(const std::string& _cosSecretKey);
+
+                    /**
+                     * 判断参数 CosSecretKey 是否已赋值
+                     * @return CosSecretKey 是否已赋值
+                     * 
+                     */
+                    bool CosSecretKeyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 模板 ID。
+                     * <p>模板 ID。</p>
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 模板名称。
+                     * <p>模板名称。</p>
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 截图时间间隔，5-300秒。
+                     * <p>截图时间间隔，5-300秒。</p>
                      */
                     int64_t m_snapshotInterval;
                     bool m_snapshotIntervalHasBeenSet;
 
                     /**
-                     * 截图宽度，范围：0-3000。 
-0：原始宽度并适配原始比例。
+                     * <p>截图宽度，范围：0-3000。<br>0：原始宽度并适配原始比例。</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 截图高度，范围：0-2000。
-0：原始高度并适配原始比例。
+                     * <p>截图高度，范围：0-2000。<br>0：原始高度并适配原始比例。</p>
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 是否开启鉴黄，0：不开启，1：开启。
+                     * <p>是否开启鉴黄，0：不开启，1：开启。</p>
                      */
                     int64_t m_pornFlag;
                     bool m_pornFlagHasBeenSet;
 
                     /**
-                     * Cos 应用 ID。
+                     * <p>Cos 应用 ID。</p>
                      */
                     int64_t m_cosAppId;
                     bool m_cosAppIdHasBeenSet;
 
                     /**
-                     * Cos Bucket名称。
+                     * <p>Cos Bucket名称。</p>
                      */
                     std::string m_cosBucket;
                     bool m_cosBucketHasBeenSet;
 
                     /**
-                     * Cos 地域。
+                     * <p>Cos 地域。</p>
                      */
                     std::string m_cosRegion;
                     bool m_cosRegionHasBeenSet;
 
                     /**
-                     * 模板描述。
+                     * <p>模板描述。</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * Cos Bucket文件夹前缀。
+                     * <p>Cos Bucket文件夹前缀。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosPrefix;
                     bool m_cosPrefixHasBeenSet;
 
                     /**
-                     * Cos 文件名称。
+                     * <p>Cos 文件名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosFileName;
                     bool m_cosFileNameHasBeenSet;
+
+                    /**
+                     * <p>第三方存储时账号的SecretId</p>
+                     */
+                    std::string m_cosSecretId;
+                    bool m_cosSecretIdHasBeenSet;
+
+                    /**
+                     * <p>第三方存储时，账号的SecretKey</p><p>当查询时，该值返回为<code>******</code></p>
+                     */
+                    std::string m_cosSecretKey;
+                    bool m_cosSecretKeyHasBeenSet;
 
                 };
             }

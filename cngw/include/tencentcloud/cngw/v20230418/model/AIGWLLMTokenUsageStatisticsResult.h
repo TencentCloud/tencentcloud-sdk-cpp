@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool CurrencyHasBeenSet() const;
 
                     /**
-                     * 获取<p>查询时间范围内成本最高的消费者</p>
-                     * @return TopConsumers <p>查询时间范围内成本最高的消费者</p>
+                     * 获取<p>未传 Dimension 时返回原消费者排行；传入 Dimension 时为 []。ConsumerGroup 汇总不逐组拆分。</p>
+                     * @return TopConsumers <p>未传 Dimension 时返回原消费者排行；传入 Dimension 时为 []。ConsumerGroup 汇总不逐组拆分。</p>
                      * 
                      */
                     std::vector<AIGWTopConsumersItem> GetTopConsumers() const;
 
                     /**
-                     * 设置<p>查询时间范围内成本最高的消费者</p>
-                     * @param _topConsumers <p>查询时间范围内成本最高的消费者</p>
+                     * 设置<p>未传 Dimension 时返回原消费者排行；传入 Dimension 时为 []。ConsumerGroup 汇总不逐组拆分。</p>
+                     * @param _topConsumers <p>未传 Dimension 时返回原消费者排行；传入 Dimension 时为 []。ConsumerGroup 汇总不逐组拆分。</p>
                      * 
                      */
                     void SetTopConsumers(const std::vector<AIGWTopConsumersItem>& _topConsumers);
@@ -193,6 +193,52 @@ namespace TencentCloud
                      * 
                      */
                     bool TopConsumersHasBeenSet() const;
+
+                    /**
+                     * 获取<p>查询时间范围内原始 total_tokens 累计</p>
+                     * @return TotalTokens <p>查询时间范围内原始 total_tokens 累计</p>
+                     * 
+                     */
+                    int64_t GetTotalTokens() const;
+
+                    /**
+                     * 设置<p>查询时间范围内原始 total_tokens 累计</p>
+                     * @param _totalTokens <p>查询时间范围内原始 total_tokens 累计</p>
+                     * 
+                     */
+                    void SetTotalTokens(const int64_t& _totalTokens);
+
+                    /**
+                     * 判断参数 TotalTokens 是否已赋值
+                     * @return TotalTokens 是否已赋值
+                     * 
+                     */
+                    bool TotalTokensHasBeenSet() const;
+
+                    /**
+                     * 获取<p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrgAttributionIncomplete <p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetOrgAttributionIncomplete() const;
+
+                    /**
+                     * 设置<p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _orgAttributionIncomplete <p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOrgAttributionIncomplete(const bool& _orgAttributionIncomplete);
+
+                    /**
+                     * 判断参数 OrgAttributionIncomplete 是否已赋值
+                     * @return OrgAttributionIncomplete 是否已赋值
+                     * 
+                     */
+                    bool OrgAttributionIncompleteHasBeenSet() const;
 
                 private:
 
@@ -233,10 +279,23 @@ namespace TencentCloud
                     bool m_currencyHasBeenSet;
 
                     /**
-                     * <p>查询时间范围内成本最高的消费者</p>
+                     * <p>未传 Dimension 时返回原消费者排行；传入 Dimension 时为 []。ConsumerGroup 汇总不逐组拆分。</p>
                      */
                     std::vector<AIGWTopConsumersItem> m_topConsumers;
                     bool m_topConsumersHasBeenSet;
+
+                    /**
+                     * <p>查询时间范围内原始 total_tokens 累计</p>
+                     */
+                    int64_t m_totalTokens;
+                    bool m_totalTokensHasBeenSet;
+
+                    /**
+                     * <p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_orgAttributionIncomplete;
+                    bool m_orgAttributionIncompleteHasBeenSet;
 
                 };
             }

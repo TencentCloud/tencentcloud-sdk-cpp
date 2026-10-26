@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页偏移量，从0开始
-                     * @return Offset 分页偏移量，从0开始
+                     * 获取<p>分页偏移量，从0开始</p>
+                     * @return Offset <p>分页偏移量，从0开始</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，从0开始
-                     * @param _offset 分页偏移量，从0开始
+                     * 设置<p>分页偏移量，从0开始</p>
+                     * @param _offset <p>分页偏移量，从0开始</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页限制数目， 最大100，默认20
-                     * @return Limit 分页限制数目， 最大100，默认20
+                     * 获取<p>分页限制数目， 最大100，默认20</p>
+                     * @return Limit <p>分页限制数目， 最大100，默认20</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页限制数目， 最大100，默认20
-                     * @param _limit 分页限制数目， 最大100，默认20
+                     * 设置<p>分页限制数目， 最大100，默认20</p>
+                     * @param _limit <p>分页限制数目， 最大100，默认20</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数，支持EndpointName,EndpointId
-                     * @return Filters 过滤参数，支持EndpointName,EndpointId
+                     * 获取<p>过滤参数，支持EndpointName,EndpointId</p>
+                     * @return Filters <p>过滤参数，支持EndpointName,EndpointId</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤参数，支持EndpointName,EndpointId
-                     * @param _filters 过滤参数，支持EndpointName,EndpointId
+                     * 设置<p>过滤参数，支持EndpointName,EndpointId</p>
+                     * @param _filters <p>过滤参数，支持EndpointName,EndpointId</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页偏移量，从0开始
+                     * <p>分页偏移量，从0开始</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页限制数目， 最大100，默认20
+                     * <p>分页限制数目， 最大100，默认20</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤参数，支持EndpointName,EndpointId
+                     * <p>过滤参数，支持EndpointName,EndpointId</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -27,7 +27,10 @@ DescribeCloudNativeAPIGatewayCanaryRulesRequest::DescribeCloudNativeAPIGatewayCa
     m_serviceIdHasBeenSet(false),
     m_ruleTypeHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderTypeHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -76,6 +79,37 @@ string DescribeCloudNativeAPIGatewayCanaryRulesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +198,54 @@ void DescribeCloudNativeAPIGatewayCanaryRulesRequest::SetOffset(const int64_t& _
 bool DescribeCloudNativeAPIGatewayCanaryRulesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayCanaryRulesRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeCloudNativeAPIGatewayCanaryRulesRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayCanaryRulesRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayCanaryRulesRequest::GetOrderType() const
+{
+    return m_orderType;
+}
+
+void DescribeCloudNativeAPIGatewayCanaryRulesRequest::SetOrderType(const string& _orderType)
+{
+    m_orderType = _orderType;
+    m_orderTypeHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayCanaryRulesRequest::OrderTypeHasBeenSet() const
+{
+    return m_orderTypeHasBeenSet;
+}
+
+vector<ListFilter> DescribeCloudNativeAPIGatewayCanaryRulesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeCloudNativeAPIGatewayCanaryRulesRequest::SetFilters(const vector<ListFilter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayCanaryRulesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

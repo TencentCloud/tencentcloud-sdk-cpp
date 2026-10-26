@@ -57,6 +57,52 @@ namespace TencentCloud
                      */
                     bool FlowIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>订单ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BigDealIds <p>订单ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetBigDealIds() const;
+
+                    /**
+                     * 判断参数 BigDealIds 是否已赋值
+                     * @return BigDealIds 是否已赋值
+                     * 
+                     */
+                    bool BigDealIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>订单名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DealNames <p>订单名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetDealNames() const;
+
+                    /**
+                     * 判断参数 DealNames 是否已赋值
+                     * @return DealNames 是否已赋值
+                     * 
+                     */
+                    bool DealNamesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>交易ID</p>
+                     * @return TranId <p>交易ID</p>
+                     * 
+                     */
+                    std::string GetTranId() const;
+
+                    /**
+                     * 判断参数 TranId 是否已赋值
+                     * @return TranId 是否已赋值
+                     * 
+                     */
+                    bool TranIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +110,26 @@ namespace TencentCloud
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
+
+                    /**
+                     * <p>订单ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_bigDealIds;
+                    bool m_bigDealIdsHasBeenSet;
+
+                    /**
+                     * <p>订单名称</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_dealNames;
+                    bool m_dealNamesHasBeenSet;
+
+                    /**
+                     * <p>交易ID</p>
+                     */
+                    std::string m_tranId;
+                    bool m_tranIdHasBeenSet;
 
                 };
             }

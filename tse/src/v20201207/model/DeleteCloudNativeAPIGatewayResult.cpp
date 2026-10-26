@@ -22,7 +22,8 @@ using namespace std;
 
 DeleteCloudNativeAPIGatewayResult::DeleteCloudNativeAPIGatewayResult() :
     m_gatewayIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome DeleteCloudNativeAPIGatewayResult::Deserialize(const rapidjs
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskId") && !value["TaskId"].IsNull())
+    {
+        if (!value["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeleteCloudNativeAPIGatewayResult.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(value["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void DeleteCloudNativeAPIGatewayResult::ToJsonObject(rapidjson::Value &value, ra
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void DeleteCloudNativeAPIGatewayResult::SetStatus(const string& _status)
 bool DeleteCloudNativeAPIGatewayResult::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DeleteCloudNativeAPIGatewayResult::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void DeleteCloudNativeAPIGatewayResult::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool DeleteCloudNativeAPIGatewayResult::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 

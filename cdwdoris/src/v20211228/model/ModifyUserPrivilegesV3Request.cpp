@@ -30,7 +30,9 @@ ModifyUserPrivilegesV3Request::ModifyUserPrivilegesV3Request() :
     m_updateTypeHasBeenSet(false),
     m_updateComputeGroupsHasBeenSet(false),
     m_defaultComputeGroupHasBeenSet(false),
-    m_computeGroupTypeHasBeenSet(false)
+    m_computeGroupTypeHasBeenSet(false),
+    m_grantPrivilegesHasBeenSet(false),
+    m_revokePrivilegesHasBeenSet(false)
 {
 }
 
@@ -109,6 +111,24 @@ string ModifyUserPrivilegesV3Request::ToJsonString() const
         string key = "ComputeGroupType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_computeGroupType, allocator);
+    }
+
+    if (m_grantPrivilegesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GrantPrivileges";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_grantPrivileges.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_revokePrivilegesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RevokePrivileges";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_revokePrivileges.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -245,6 +265,38 @@ void ModifyUserPrivilegesV3Request::SetComputeGroupType(const int64_t& _computeG
 bool ModifyUserPrivilegesV3Request::ComputeGroupTypeHasBeenSet() const
 {
     return m_computeGroupTypeHasBeenSet;
+}
+
+UpdateUserPrivileges ModifyUserPrivilegesV3Request::GetGrantPrivileges() const
+{
+    return m_grantPrivileges;
+}
+
+void ModifyUserPrivilegesV3Request::SetGrantPrivileges(const UpdateUserPrivileges& _grantPrivileges)
+{
+    m_grantPrivileges = _grantPrivileges;
+    m_grantPrivilegesHasBeenSet = true;
+}
+
+bool ModifyUserPrivilegesV3Request::GrantPrivilegesHasBeenSet() const
+{
+    return m_grantPrivilegesHasBeenSet;
+}
+
+UpdateUserPrivileges ModifyUserPrivilegesV3Request::GetRevokePrivileges() const
+{
+    return m_revokePrivileges;
+}
+
+void ModifyUserPrivilegesV3Request::SetRevokePrivileges(const UpdateUserPrivileges& _revokePrivileges)
+{
+    m_revokePrivileges = _revokePrivileges;
+    m_revokePrivilegesHasBeenSet = true;
+}
+
+bool ModifyUserPrivilegesV3Request::RevokePrivilegesHasBeenSet() const
+{
+    return m_revokePrivilegesHasBeenSet;
 }
 
 

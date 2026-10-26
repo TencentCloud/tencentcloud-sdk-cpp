@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteCloudNativeAPIGatewayConsumerGroupRequest::DeleteCloudNativeAPIGatewayConsumerGroupRequest() :
     m_gatewayIdHasBeenSet(false),
-    m_consumerGroupIdHasBeenSet(false)
+    m_consumerGroupIdHasBeenSet(false),
+    m_operationSourceHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteCloudNativeAPIGatewayConsumerGroupRequest::ToJsonString() const
         string key = "ConsumerGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_consumerGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteCloudNativeAPIGatewayConsumerGroupRequest::SetConsumerGroupId(const s
 bool DeleteCloudNativeAPIGatewayConsumerGroupRequest::ConsumerGroupIdHasBeenSet() const
 {
     return m_consumerGroupIdHasBeenSet;
+}
+
+string DeleteCloudNativeAPIGatewayConsumerGroupRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void DeleteCloudNativeAPIGatewayConsumerGroupRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool DeleteCloudNativeAPIGatewayConsumerGroupRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
 }
 
 

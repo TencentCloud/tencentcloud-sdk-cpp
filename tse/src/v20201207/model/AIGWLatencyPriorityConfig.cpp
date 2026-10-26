@@ -23,7 +23,9 @@ using namespace std;
 AIGWLatencyPriorityConfig::AIGWLatencyPriorityConfig() :
     m_rulesHasBeenSet(false),
     m_latencyMetricHasBeenSet(false),
-    m_routeModeHasBeenSet(false)
+    m_routeModeHasBeenSet(false),
+    m_probeIntervalMsHasBeenSet(false),
+    m_probeTimeoutMsHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome AIGWLatencyPriorityConfig::Deserialize(const rapidjson::Valu
         m_routeModeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProbeIntervalMs") && !value["ProbeIntervalMs"].IsNull())
+    {
+        if (!value["ProbeIntervalMs"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWLatencyPriorityConfig.ProbeIntervalMs` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_probeIntervalMs = value["ProbeIntervalMs"].GetInt64();
+        m_probeIntervalMsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProbeTimeoutMs") && !value["ProbeTimeoutMs"].IsNull())
+    {
+        if (!value["ProbeTimeoutMs"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWLatencyPriorityConfig.ProbeTimeoutMs` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_probeTimeoutMs = value["ProbeTimeoutMs"].GetInt64();
+        m_probeTimeoutMsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +130,22 @@ void AIGWLatencyPriorityConfig::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "RouteMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_routeMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_probeIntervalMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProbeIntervalMs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_probeIntervalMs, allocator);
+    }
+
+    if (m_probeTimeoutMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProbeTimeoutMs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_probeTimeoutMs, allocator);
     }
 
 }
@@ -159,5 +197,37 @@ void AIGWLatencyPriorityConfig::SetRouteMode(const string& _routeMode)
 bool AIGWLatencyPriorityConfig::RouteModeHasBeenSet() const
 {
     return m_routeModeHasBeenSet;
+}
+
+int64_t AIGWLatencyPriorityConfig::GetProbeIntervalMs() const
+{
+    return m_probeIntervalMs;
+}
+
+void AIGWLatencyPriorityConfig::SetProbeIntervalMs(const int64_t& _probeIntervalMs)
+{
+    m_probeIntervalMs = _probeIntervalMs;
+    m_probeIntervalMsHasBeenSet = true;
+}
+
+bool AIGWLatencyPriorityConfig::ProbeIntervalMsHasBeenSet() const
+{
+    return m_probeIntervalMsHasBeenSet;
+}
+
+int64_t AIGWLatencyPriorityConfig::GetProbeTimeoutMs() const
+{
+    return m_probeTimeoutMs;
+}
+
+void AIGWLatencyPriorityConfig::SetProbeTimeoutMs(const int64_t& _probeTimeoutMs)
+{
+    m_probeTimeoutMs = _probeTimeoutMs;
+    m_probeTimeoutMsHasBeenSet = true;
+}
+
+bool AIGWLatencyPriorityConfig::ProbeTimeoutMsHasBeenSet() const
+{
+    return m_probeTimeoutMsHasBeenSet;
 }
 

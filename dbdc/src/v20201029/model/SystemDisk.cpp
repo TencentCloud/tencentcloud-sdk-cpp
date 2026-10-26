@@ -22,7 +22,8 @@ using namespace std;
 
 SystemDisk::SystemDisk() :
     m_diskTypeHasBeenSet(false),
-    m_diskSizeHasBeenSet(false)
+    m_diskSizeHasBeenSet(false),
+    m_diskIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome SystemDisk::Deserialize(const rapidjson::Value &value)
         m_diskSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskId") && !value["DiskId"].IsNull())
+    {
+        if (!value["DiskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SystemDisk.DiskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskId = string(value["DiskId"].GetString());
+        m_diskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void SystemDisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_diskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void SystemDisk::SetDiskSize(const int64_t& _diskSize)
 bool SystemDisk::DiskSizeHasBeenSet() const
 {
     return m_diskSizeHasBeenSet;
+}
+
+string SystemDisk::GetDiskId() const
+{
+    return m_diskId;
+}
+
+void SystemDisk::SetDiskId(const string& _diskId)
+{
+    m_diskId = _diskId;
+    m_diskIdHasBeenSet = true;
+}
+
+bool SystemDisk::DiskIdHasBeenSet() const
+{
+    return m_diskIdHasBeenSet;
 }
 

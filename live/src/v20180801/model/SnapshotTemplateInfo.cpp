@@ -32,7 +32,9 @@ SnapshotTemplateInfo::SnapshotTemplateInfo() :
     m_cosRegionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_cosPrefixHasBeenSet(false),
-    m_cosFileNameHasBeenSet(false)
+    m_cosFileNameHasBeenSet(false),
+    m_cosSecretIdHasBeenSet(false),
+    m_cosSecretKeyHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome SnapshotTemplateInfo::Deserialize(const rapidjson::Value &va
         m_cosFileNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CosSecretId") && !value["CosSecretId"].IsNull())
+    {
+        if (!value["CosSecretId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.CosSecretId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosSecretId = string(value["CosSecretId"].GetString());
+        m_cosSecretIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosSecretKey") && !value["CosSecretKey"].IsNull())
+    {
+        if (!value["CosSecretKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SnapshotTemplateInfo.CosSecretKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosSecretKey = string(value["CosSecretKey"].GetString());
+        m_cosSecretKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void SnapshotTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "CosFileName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cosFileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosSecretIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosSecretId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosSecretId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosSecretKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosSecretKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosSecretKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void SnapshotTemplateInfo::SetCosFileName(const string& _cosFileName)
 bool SnapshotTemplateInfo::CosFileNameHasBeenSet() const
 {
     return m_cosFileNameHasBeenSet;
+}
+
+string SnapshotTemplateInfo::GetCosSecretId() const
+{
+    return m_cosSecretId;
+}
+
+void SnapshotTemplateInfo::SetCosSecretId(const string& _cosSecretId)
+{
+    m_cosSecretId = _cosSecretId;
+    m_cosSecretIdHasBeenSet = true;
+}
+
+bool SnapshotTemplateInfo::CosSecretIdHasBeenSet() const
+{
+    return m_cosSecretIdHasBeenSet;
+}
+
+string SnapshotTemplateInfo::GetCosSecretKey() const
+{
+    return m_cosSecretKey;
+}
+
+void SnapshotTemplateInfo::SetCosSecretKey(const string& _cosSecretKey)
+{
+    m_cosSecretKey = _cosSecretKey;
+    m_cosSecretKeyHasBeenSet = true;
+}
+
+bool SnapshotTemplateInfo::CosSecretKeyHasBeenSet() const
+{
+    return m_cosSecretKeyHasBeenSet;
 }
 

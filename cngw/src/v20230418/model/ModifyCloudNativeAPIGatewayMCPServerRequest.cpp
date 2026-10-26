@@ -35,7 +35,8 @@ ModifyCloudNativeAPIGatewayMCPServerRequest::ModifyCloudNativeAPIGatewayMCPServe
     m_enableHealthCheckHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_preserveHostHasBeenSet(false),
-    m_logConfigHasBeenSet(false)
+    m_logConfigHasBeenSet(false),
+    m_paramRewriteConfigHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,15 @@ string ModifyCloudNativeAPIGatewayMCPServerRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_paramRewriteConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamRewriteConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_paramRewriteConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -368,6 +378,22 @@ void ModifyCloudNativeAPIGatewayMCPServerRequest::SetLogConfig(const AIGWLogConf
 bool ModifyCloudNativeAPIGatewayMCPServerRequest::LogConfigHasBeenSet() const
 {
     return m_logConfigHasBeenSet;
+}
+
+AIGWMCPServerParamRewriteConfig ModifyCloudNativeAPIGatewayMCPServerRequest::GetParamRewriteConfig() const
+{
+    return m_paramRewriteConfig;
+}
+
+void ModifyCloudNativeAPIGatewayMCPServerRequest::SetParamRewriteConfig(const AIGWMCPServerParamRewriteConfig& _paramRewriteConfig)
+{
+    m_paramRewriteConfig = _paramRewriteConfig;
+    m_paramRewriteConfigHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayMCPServerRequest::ParamRewriteConfigHasBeenSet() const
+{
+    return m_paramRewriteConfigHasBeenSet;
 }
 
 

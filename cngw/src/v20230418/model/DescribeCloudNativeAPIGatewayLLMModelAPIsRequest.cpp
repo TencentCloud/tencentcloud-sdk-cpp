@@ -30,7 +30,8 @@ DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::DescribeCloudNativeAPIGatewayL
     m_keywordHasBeenSet(false),
     m_consumerGroupIdHasBeenSet(false),
     m_useToBindHasBeenSet(false),
-    m_consumerIdHasBeenSet(false)
+    m_consumerIdHasBeenSet(false),
+    m_secretKeyIdHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::ToJsonString() const
         string key = "ConsumerId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_consumerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_secretKeyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -246,6 +255,22 @@ void DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::SetConsumerId(const strin
 bool DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::ConsumerIdHasBeenSet() const
 {
     return m_consumerIdHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::GetSecretKeyId() const
+{
+    return m_secretKeyId;
+}
+
+void DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::SetSecretKeyId(const string& _secretKeyId)
+{
+    m_secretKeyId = _secretKeyId;
+    m_secretKeyIdHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayLLMModelAPIsRequest::SecretKeyIdHasBeenSet() const
+{
+    return m_secretKeyIdHasBeenSet;
 }
 
 

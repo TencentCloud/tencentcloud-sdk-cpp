@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>是否开启最大文档数限制</p><p>枚举值：</p><ul><li>true： 开启最大文档数限制</li><li>false： 关闭最大文档数限制</li></ul>
-                     * @return EnableMaxDocuments <p>是否开启最大文档数限制</p><p>枚举值：</p><ul><li>true： 开启最大文档数限制</li><li>false： 关闭最大文档数限制</li></ul>
+                     * 获取<p>启用最大文档数限制</p>
+                     * @return EnableMaxDocuments <p>启用最大文档数限制</p>
                      * 
                      */
                     bool GetEnableMaxDocuments() const;
 
                     /**
-                     * 设置<p>是否开启最大文档数限制</p><p>枚举值：</p><ul><li>true： 开启最大文档数限制</li><li>false： 关闭最大文档数限制</li></ul>
-                     * @param _enableMaxDocuments <p>是否开启最大文档数限制</p><p>枚举值：</p><ul><li>true： 开启最大文档数限制</li><li>false： 关闭最大文档数限制</li></ul>
+                     * 设置<p>启用最大文档数限制</p>
+                     * @param _enableMaxDocuments <p>启用最大文档数限制</p>
                      * 
                      */
                     void SetEnableMaxDocuments(const bool& _enableMaxDocuments);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool EnableMaxDocumentsHasBeenSet() const;
 
                     /**
-                     * 获取<p>最大文档数限制</p><p>取值范围：[1, 5000]</p>
-                     * @return MaxDocumentValue <p>最大文档数限制</p><p>取值范围：[1, 5000]</p>
+                     * 获取<p>Rerank场景最大文档数限制</p>
+                     * @return MaxDocumentValue <p>Rerank场景最大文档数限制</p>
                      * 
                      */
                     int64_t GetMaxDocumentValue() const;
 
                     /**
-                     * 设置<p>最大文档数限制</p><p>取值范围：[1, 5000]</p>
-                     * @param _maxDocumentValue <p>最大文档数限制</p><p>取值范围：[1, 5000]</p>
+                     * 设置<p>Rerank场景最大文档数限制</p>
+                     * @param _maxDocumentValue <p>Rerank场景最大文档数限制</p>
                      * 
                      */
                     void SetMaxDocumentValue(const int64_t& _maxDocumentValue);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>是否开启最大文档数限制</p><p>枚举值：</p><ul><li>true： 开启最大文档数限制</li><li>false： 关闭最大文档数限制</li></ul>
+                     * <p>启用最大文档数限制</p>
                      */
                     bool m_enableMaxDocuments;
                     bool m_enableMaxDocumentsHasBeenSet;
 
                     /**
-                     * <p>最大文档数限制</p><p>取值范围：[1, 5000]</p>
+                     * <p>Rerank场景最大文档数限制</p>
                      */
                     int64_t m_maxDocumentValue;
                     bool m_maxDocumentValueHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关 id。
-                     * @return GatewayId 网关 id。
+                     * 获取<p>网关 id。</p>
+                     * @return GatewayId <p>网关 id。</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置网关 id。
-                     * @param _gatewayId 网关 id。
+                     * 设置<p>网关 id。</p>
+                     * @param _gatewayId <p>网关 id。</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -211,10 +211,31 @@ namespace TencentCloud
                      */
                     bool ConsumerIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>密钥ID</p>
+                     * @return SecretKeyId <p>密钥ID</p>
+                     * 
+                     */
+                    std::string GetSecretKeyId() const;
+
+                    /**
+                     * 设置<p>密钥ID</p>
+                     * @param _secretKeyId <p>密钥ID</p>
+                     * 
+                     */
+                    void SetSecretKeyId(const std::string& _secretKeyId);
+
+                    /**
+                     * 判断参数 SecretKeyId 是否已赋值
+                     * @return SecretKeyId 是否已赋值
+                     * 
+                     */
+                    bool SecretKeyIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 网关 id。
+                     * <p>网关 id。</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
@@ -260,6 +281,12 @@ namespace TencentCloud
                      */
                     std::string m_consumerId;
                     bool m_consumerIdHasBeenSet;
+
+                    /**
+                     * <p>密钥ID</p>
+                     */
+                    std::string m_secretKeyId;
+                    bool m_secretKeyIdHasBeenSet;
 
                 };
             }

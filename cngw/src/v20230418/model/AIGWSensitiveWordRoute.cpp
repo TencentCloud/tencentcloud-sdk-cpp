@@ -26,7 +26,8 @@ AIGWSensitiveWordRoute::AIGWSensitiveWordRoute() :
     m_modelServiceNamesHasBeenSet(false),
     m_selectedTypesHasBeenSet(false),
     m_weightedConfigHasBeenSet(false),
-    m_modelNameConfigHasBeenSet(false)
+    m_modelNameConfigHasBeenSet(false),
+    m_standardModelNameHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,16 @@ CoreInternalOutcome AIGWSensitiveWordRoute::Deserialize(const rapidjson::Value &
         m_modelNameConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("StandardModelName") && !value["StandardModelName"].IsNull())
+    {
+        if (!value["StandardModelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIGWSensitiveWordRoute.StandardModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_standardModelName = string(value["StandardModelName"].GetString());
+        m_standardModelNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -206,6 +217,14 @@ void AIGWSensitiveWordRoute::ToJsonObject(rapidjson::Value &value, rapidjson::Do
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_standardModelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandardModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_standardModelName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -305,5 +324,21 @@ void AIGWSensitiveWordRoute::SetModelNameConfig(const vector<CloudNativeAPIGatew
 bool AIGWSensitiveWordRoute::ModelNameConfigHasBeenSet() const
 {
     return m_modelNameConfigHasBeenSet;
+}
+
+string AIGWSensitiveWordRoute::GetStandardModelName() const
+{
+    return m_standardModelName;
+}
+
+void AIGWSensitiveWordRoute::SetStandardModelName(const string& _standardModelName)
+{
+    m_standardModelName = _standardModelName;
+    m_standardModelNameHasBeenSet = true;
+}
+
+bool AIGWSensitiveWordRoute::StandardModelNameHasBeenSet() const
+{
+    return m_standardModelNameHasBeenSet;
 }
 

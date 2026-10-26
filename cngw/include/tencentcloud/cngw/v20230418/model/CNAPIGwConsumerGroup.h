@@ -260,6 +260,27 @@ namespace TencentCloud
                      */
                     bool SyncedVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>只读保留的组织部门外部标识，仅 SoftDeleted 对象返回；用于后续删除检查，不在基础信息页面展示。</p>
+                     * @return ExternalId <p>只读保留的组织部门外部标识，仅 SoftDeleted 对象返回；用于后续删除检查，不在基础信息页面展示。</p>
+                     * 
+                     */
+                    std::string GetExternalId() const;
+
+                    /**
+                     * 设置<p>只读保留的组织部门外部标识，仅 SoftDeleted 对象返回；用于后续删除检查，不在基础信息页面展示。</p>
+                     * @param _externalId <p>只读保留的组织部门外部标识，仅 SoftDeleted 对象返回；用于后续删除检查，不在基础信息页面展示。</p>
+                     * 
+                     */
+                    void SetExternalId(const std::string& _externalId);
+
+                    /**
+                     * 判断参数 ExternalId 是否已赋值
+                     * @return ExternalId 是否已赋值
+                     * 
+                     */
+                    bool ExternalIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -322,6 +343,12 @@ namespace TencentCloud
                      */
                     std::string m_syncedVersion;
                     bool m_syncedVersionHasBeenSet;
+
+                    /**
+                     * <p>只读保留的组织部门外部标识，仅 SoftDeleted 对象返回；用于后续删除检查，不在基础信息页面展示。</p>
+                     */
+                    std::string m_externalId;
+                    bool m_externalIdHasBeenSet;
 
                 };
             }

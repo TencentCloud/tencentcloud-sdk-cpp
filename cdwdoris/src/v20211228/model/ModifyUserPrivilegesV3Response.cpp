@@ -25,7 +25,8 @@ using namespace std;
 
 ModifyUserPrivilegesV3Response::ModifyUserPrivilegesV3Response() :
     m_errorMsgHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_skippedItemsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,23 @@ CoreInternalOutcome ModifyUserPrivilegesV3Response::Deserialize(const string &pa
         m_instanceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SkippedItems") && !rsp["SkippedItems"].IsNull())
+    {
+        if (!rsp["SkippedItems"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SkippedItems` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_skippedItems.Deserialize(rsp["SkippedItems"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_skippedItemsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ string ModifyUserPrivilegesV3Response::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_skippedItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkippedItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_skippedItems.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +166,16 @@ string ModifyUserPrivilegesV3Response::GetInstanceId() const
 bool ModifyUserPrivilegesV3Response::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+SkippedPrivilegeItem ModifyUserPrivilegesV3Response::GetSkippedItems() const
+{
+    return m_skippedItems;
+}
+
+bool ModifyUserPrivilegesV3Response::SkippedItemsHasBeenSet() const
+{
+    return m_skippedItemsHasBeenSet;
 }
 
 

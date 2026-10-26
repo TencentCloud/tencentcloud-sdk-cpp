@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云原生网关ID。
-                     * @return GatewayId 云原生网关ID。
+                     * 获取<p>云原生网关ID。</p>
+                     * @return GatewayId <p>云原生网关ID。</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置云原生网关ID。
-                     * @param _gatewayId 云原生网关ID。
+                     * 设置<p>云原生网关ID。</p>
+                     * @param _gatewayId <p>云原生网关ID。</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取云原生网关状态。
-                     * @return Status 云原生网关状态。
+                     * 获取<p>云原生网关状态。</p>
+                     * @return Status <p>云原生网关状态。</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置云原生网关状态。
-                     * @param _status 云原生网关状态。
+                     * 设置<p>云原生网关状态。</p>
+                     * @param _status <p>云原生网关状态。</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -88,19 +88,46 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务ID</p>
+                     * @return TaskId <p>任务ID</p>
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置<p>任务ID</p>
+                     * @param _taskId <p>任务ID</p>
+                     * 
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云原生网关ID。
+                     * <p>云原生网关ID。</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 云原生网关状态。
+                     * <p>云原生网关状态。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>任务ID</p>
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

@@ -1960,6 +1960,106 @@ namespace TencentCloud
                      */
                     bool PrivilegeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>触发记录来源 (仅嵌套工作流触发场景有值, 取值以 SUB_PROCESS_ 开头时表示由嵌套工作流生成运行记录触发</p><p>枚举值：</p><ul><li>SUB_PROCESS_MAKEUP： 补录</li><li>SUB_PROCESS_TRIGGER： 调度触发</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerSource <p>触发记录来源 (仅嵌套工作流触发场景有值, 取值以 SUB_PROCESS_ 开头时表示由嵌套工作流生成运行记录触发</p><p>枚举值：</p><ul><li>SUB_PROCESS_MAKEUP： 补录</li><li>SUB_PROCESS_TRIGGER： 调度触发</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTriggerSource() const;
+
+                    /**
+                     * 设置<p>触发记录来源 (仅嵌套工作流触发场景有值, 取值以 SUB_PROCESS_ 开头时表示由嵌套工作流生成运行记录触发</p><p>枚举值：</p><ul><li>SUB_PROCESS_MAKEUP： 补录</li><li>SUB_PROCESS_TRIGGER： 调度触发</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _triggerSource <p>触发记录来源 (仅嵌套工作流触发场景有值, 取值以 SUB_PROCESS_ 开头时表示由嵌套工作流生成运行记录触发</p><p>枚举值：</p><ul><li>SUB_PROCESS_MAKEUP： 补录</li><li>SUB_PROCESS_TRIGGER： 调度触发</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTriggerSource(const std::string& _triggerSource);
+
+                    /**
+                     * 判断参数 TriggerSource 是否已赋值
+                     * @return TriggerSource 是否已赋值
+                     * 
+                     */
+                    bool TriggerSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>父 嵌套工作流任务 ID (仅触发记录来源为嵌套工作流时有值)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParentSpTaskId <p>父 嵌套工作流任务 ID (仅触发记录来源为嵌套工作流时有值)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetParentSpTaskId() const;
+
+                    /**
+                     * 设置<p>父 嵌套工作流任务 ID (仅触发记录来源为嵌套工作流时有值)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _parentSpTaskId <p>父 嵌套工作流任务 ID (仅触发记录来源为嵌套工作流时有值)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParentSpTaskId(const std::string& _parentSpTaskId);
+
+                    /**
+                     * 判断参数 ParentSpTaskId 是否已赋值
+                     * @return ParentSpTaskId 是否已赋值
+                     * 
+                     */
+                    bool ParentSpTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>父嵌套工作流实例名称 (仅触发记录来源为嵌套工作流时有值)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParentSpInstanceName <p>父嵌套工作流实例名称 (仅触发记录来源为嵌套工作流时有值)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetParentSpInstanceName() const;
+
+                    /**
+                     * 设置<p>父嵌套工作流实例名称 (仅触发记录来源为嵌套工作流时有值)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _parentSpInstanceName <p>父嵌套工作流实例名称 (仅触发记录来源为嵌套工作流时有值)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParentSpInstanceName(const std::string& _parentSpInstanceName);
+
+                    /**
+                     * 判断参数 ParentSpInstanceName 是否已赋值
+                     * @return ParentSpInstanceName 是否已赋值
+                     * 
+                     */
+                    bool ParentSpInstanceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>父嵌套工作流实例数据时间 (仅触发记录来源为嵌套工作流时有值)</p><p>参数格式：2026-10-12 00:00:00</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParentSpInstanceDataTime <p>父嵌套工作流实例数据时间 (仅触发记录来源为嵌套工作流时有值)</p><p>参数格式：2026-10-12 00:00:00</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetParentSpInstanceDataTime() const;
+
+                    /**
+                     * 设置<p>父嵌套工作流实例数据时间 (仅触发记录来源为嵌套工作流时有值)</p><p>参数格式：2026-10-12 00:00:00</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _parentSpInstanceDataTime <p>父嵌套工作流实例数据时间 (仅触发记录来源为嵌套工作流时有值)</p><p>参数格式：2026-10-12 00:00:00</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParentSpInstanceDataTime(const std::string& _parentSpInstanceDataTime);
+
+                    /**
+                     * 判断参数 ParentSpInstanceDataTime 是否已赋值
+                     * @return ParentSpInstanceDataTime 是否已赋值
+                     * 
+                     */
+                    bool ParentSpInstanceDataTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2496,6 +2596,34 @@ namespace TencentCloud
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
+
+                    /**
+                     * <p>触发记录来源 (仅嵌套工作流触发场景有值, 取值以 SUB_PROCESS_ 开头时表示由嵌套工作流生成运行记录触发</p><p>枚举值：</p><ul><li>SUB_PROCESS_MAKEUP： 补录</li><li>SUB_PROCESS_TRIGGER： 调度触发</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_triggerSource;
+                    bool m_triggerSourceHasBeenSet;
+
+                    /**
+                     * <p>父 嵌套工作流任务 ID (仅触发记录来源为嵌套工作流时有值)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_parentSpTaskId;
+                    bool m_parentSpTaskIdHasBeenSet;
+
+                    /**
+                     * <p>父嵌套工作流实例名称 (仅触发记录来源为嵌套工作流时有值)</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_parentSpInstanceName;
+                    bool m_parentSpInstanceNameHasBeenSet;
+
+                    /**
+                     * <p>父嵌套工作流实例数据时间 (仅触发记录来源为嵌套工作流时有值)</p><p>参数格式：2026-10-12 00:00:00</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_parentSpInstanceDataTime;
+                    bool m_parentSpInstanceDataTimeHasBeenSet;
 
                 };
             }

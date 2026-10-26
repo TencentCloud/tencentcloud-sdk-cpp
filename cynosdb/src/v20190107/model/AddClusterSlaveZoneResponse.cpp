@@ -24,7 +24,10 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 AddClusterSlaveZoneResponse::AddClusterSlaveZoneResponse() :
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_bigDealIdsHasBeenSet(false),
+    m_dealNamesHasBeenSet(false),
+    m_tranIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +75,42 @@ CoreInternalOutcome AddClusterSlaveZoneResponse::Deserialize(const string &paylo
         m_flowIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BigDealIds") && !rsp["BigDealIds"].IsNull())
+    {
+        if (!rsp["BigDealIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BigDealIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["BigDealIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_bigDealIds.push_back((*itr).GetString());
+        }
+        m_bigDealIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DealNames") && !rsp["DealNames"].IsNull())
+    {
+        if (!rsp["DealNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DealNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DealNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_dealNames.push_back((*itr).GetString());
+        }
+        m_dealNamesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TranId") && !rsp["TranId"].IsNull())
+    {
+        if (!rsp["TranId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tranId = string(rsp["TranId"].GetString());
+        m_tranIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +127,40 @@ string AddClusterSlaveZoneResponse::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowId, allocator);
+    }
+
+    if (m_bigDealIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BigDealIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_bigDealIds.begin(); itr != m_bigDealIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_dealNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dealNames.begin(); itr != m_dealNames.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tranIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TranId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tranId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +183,36 @@ int64_t AddClusterSlaveZoneResponse::GetFlowId() const
 bool AddClusterSlaveZoneResponse::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+vector<string> AddClusterSlaveZoneResponse::GetBigDealIds() const
+{
+    return m_bigDealIds;
+}
+
+bool AddClusterSlaveZoneResponse::BigDealIdsHasBeenSet() const
+{
+    return m_bigDealIdsHasBeenSet;
+}
+
+vector<string> AddClusterSlaveZoneResponse::GetDealNames() const
+{
+    return m_dealNames;
+}
+
+bool AddClusterSlaveZoneResponse::DealNamesHasBeenSet() const
+{
+    return m_dealNamesHasBeenSet;
+}
+
+string AddClusterSlaveZoneResponse::GetTranId() const
+{
+    return m_tranId;
+}
+
+bool AddClusterSlaveZoneResponse::TranIdHasBeenSet() const
+{
+    return m_tranIdHasBeenSet;
 }
 
 

@@ -26,7 +26,9 @@ CreateCloudNativeAPIGatewayConsumerGroupRequest::CreateCloudNativeAPIGatewayCons
     m_gatewayIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_operationSourceHasBeenSet(false),
+    m_parentConsumerGroupIdsHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,27 @@ string CreateCloudNativeAPIGatewayConsumerGroupRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentConsumerGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentConsumerGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_parentConsumerGroupIds.begin(); itr != m_parentConsumerGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -139,6 +162,38 @@ void CreateCloudNativeAPIGatewayConsumerGroupRequest::SetDescription(const strin
 bool CreateCloudNativeAPIGatewayConsumerGroupRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayConsumerGroupRequest::GetOperationSource() const
+{
+    return m_operationSource;
+}
+
+void CreateCloudNativeAPIGatewayConsumerGroupRequest::SetOperationSource(const string& _operationSource)
+{
+    m_operationSource = _operationSource;
+    m_operationSourceHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayConsumerGroupRequest::OperationSourceHasBeenSet() const
+{
+    return m_operationSourceHasBeenSet;
+}
+
+vector<string> CreateCloudNativeAPIGatewayConsumerGroupRequest::GetParentConsumerGroupIds() const
+{
+    return m_parentConsumerGroupIds;
+}
+
+void CreateCloudNativeAPIGatewayConsumerGroupRequest::SetParentConsumerGroupIds(const vector<string>& _parentConsumerGroupIds)
+{
+    m_parentConsumerGroupIds = _parentConsumerGroupIds;
+    m_parentConsumerGroupIdsHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayConsumerGroupRequest::ParentConsumerGroupIdsHasBeenSet() const
+{
+    return m_parentConsumerGroupIdsHasBeenSet;
 }
 
 

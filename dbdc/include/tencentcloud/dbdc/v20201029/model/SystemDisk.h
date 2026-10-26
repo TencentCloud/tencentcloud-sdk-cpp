@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool DiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>磁盘ID</p>
+                     * @return DiskId <p>磁盘ID</p>
+                     * 
+                     */
+                    std::string GetDiskId() const;
+
+                    /**
+                     * 设置<p>磁盘ID</p>
+                     * @param _diskId <p>磁盘ID</p>
+                     * 
+                     */
+                    void SetDiskId(const std::string& _diskId);
+
+                    /**
+                     * 判断参数 DiskId 是否已赋值
+                     * @return DiskId 是否已赋值
+                     * 
+                     */
+                    bool DiskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * <p>磁盘ID</p>
+                     */
+                    std::string m_diskId;
+                    bool m_diskIdHasBeenSet;
 
                 };
             }

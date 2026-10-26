@@ -1190,6 +1190,56 @@ GoosefsClient::DescribeDataRepositoryTaskStatusOutcomeCallable GoosefsClient::De
     return prom->get_future();
 }
 
+GoosefsClient::DescribeDataRepositoryTasksOutcome GoosefsClient::DescribeDataRepositoryTasks(const DescribeDataRepositoryTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataRepositoryTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataRepositoryTasksResponse rsp = DescribeDataRepositoryTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataRepositoryTasksOutcome(rsp);
+        else
+            return DescribeDataRepositoryTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataRepositoryTasksOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribeDataRepositoryTasksAsync(const DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDataRepositoryTasksRequest&;
+    using Resp = DescribeDataRepositoryTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDataRepositoryTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::DescribeDataRepositoryTasksOutcomeCallable GoosefsClient::DescribeDataRepositoryTasksCallable(const DescribeDataRepositoryTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDataRepositoryTasksOutcome>>();
+    DescribeDataRepositoryTasksAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const DescribeDataRepositoryTasksRequest&,
+        DescribeDataRepositoryTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GoosefsClient::DescribeFileSystemBucketsOutcome GoosefsClient::DescribeFileSystemBuckets(const DescribeFileSystemBucketsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFileSystemBuckets");

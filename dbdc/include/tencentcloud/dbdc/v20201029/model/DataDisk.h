@@ -109,6 +109,90 @@ namespace TencentCloud
                      */
                     bool DiskNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>数据盘是否加密</p><p>枚举值：</p><ul><li>false： 不加密</li><li>true： 加密</li></ul>
+                     * @return Encrypt <p>数据盘是否加密</p><p>枚举值：</p><ul><li>false： 不加密</li><li>true： 加密</li></ul>
+                     * 
+                     */
+                    bool GetEncrypt() const;
+
+                    /**
+                     * 设置<p>数据盘是否加密</p><p>枚举值：</p><ul><li>false： 不加密</li><li>true： 加密</li></ul>
+                     * @param _encrypt <p>数据盘是否加密</p><p>枚举值：</p><ul><li>false： 不加密</li><li>true： 加密</li></ul>
+                     * 
+                     */
+                    void SetEncrypt(const bool& _encrypt);
+
+                    /**
+                     * 判断参数 Encrypt 是否已赋值
+                     * @return Encrypt 是否已赋值
+                     * 
+                     */
+                    bool EncryptHasBeenSet() const;
+
+                    /**
+                     * 获取<p>磁盘ID</p><p>入参限制：该参数目前仅用于 DescribeDBCustomNodes 等查询类接口的返回参数，不可用于 CreateDBCustomNodes 等写接口的入参。</p>
+                     * @return DiskId <p>磁盘ID</p><p>入参限制：该参数目前仅用于 DescribeDBCustomNodes 等查询类接口的返回参数，不可用于 CreateDBCustomNodes 等写接口的入参。</p>
+                     * 
+                     */
+                    std::string GetDiskId() const;
+
+                    /**
+                     * 设置<p>磁盘ID</p><p>入参限制：该参数目前仅用于 DescribeDBCustomNodes 等查询类接口的返回参数，不可用于 CreateDBCustomNodes 等写接口的入参。</p>
+                     * @param _diskId <p>磁盘ID</p><p>入参限制：该参数目前仅用于 DescribeDBCustomNodes 等查询类接口的返回参数，不可用于 CreateDBCustomNodes 等写接口的入参。</p>
+                     * 
+                     */
+                    void SetDiskId(const std::string& _diskId);
+
+                    /**
+                     * 判断参数 DiskId 是否已赋值
+                     * @return DiskId 是否已赋值
+                     * 
+                     */
+                    bool DiskIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>数据盘快照ID</p><p>入参限制：选择的数据盘快照大小需小于数据盘大小</p>
+                     * @return SnapshotId <p>数据盘快照ID</p><p>入参限制：选择的数据盘快照大小需小于数据盘大小</p>
+                     * 
+                     */
+                    std::string GetSnapshotId() const;
+
+                    /**
+                     * 设置<p>数据盘快照ID</p><p>入参限制：选择的数据盘快照大小需小于数据盘大小</p>
+                     * @param _snapshotId <p>数据盘快照ID</p><p>入参限制：选择的数据盘快照大小需小于数据盘大小</p>
+                     * 
+                     */
+                    void SetSnapshotId(const std::string& _snapshotId);
+
+                    /**
+                     * 判断参数 SnapshotId 是否已赋值
+                     * @return SnapshotId 是否已赋值
+                     * 
+                     */
+                    bool SnapshotIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义的数据盘标识（如 data / log / backup）</p>
+                     * @return ClientDiskKey <p>自定义的数据盘标识（如 data / log / backup）</p>
+                     * 
+                     */
+                    std::string GetClientDiskKey() const;
+
+                    /**
+                     * 设置<p>自定义的数据盘标识（如 data / log / backup）</p>
+                     * @param _clientDiskKey <p>自定义的数据盘标识（如 data / log / backup）</p>
+                     * 
+                     */
+                    void SetClientDiskKey(const std::string& _clientDiskKey);
+
+                    /**
+                     * 判断参数 ClientDiskKey 是否已赋值
+                     * @return ClientDiskKey 是否已赋值
+                     * 
+                     */
+                    bool ClientDiskKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +212,30 @@ namespace TencentCloud
                      */
                     std::string m_diskName;
                     bool m_diskNameHasBeenSet;
+
+                    /**
+                     * <p>数据盘是否加密</p><p>枚举值：</p><ul><li>false： 不加密</li><li>true： 加密</li></ul>
+                     */
+                    bool m_encrypt;
+                    bool m_encryptHasBeenSet;
+
+                    /**
+                     * <p>磁盘ID</p><p>入参限制：该参数目前仅用于 DescribeDBCustomNodes 等查询类接口的返回参数，不可用于 CreateDBCustomNodes 等写接口的入参。</p>
+                     */
+                    std::string m_diskId;
+                    bool m_diskIdHasBeenSet;
+
+                    /**
+                     * <p>数据盘快照ID</p><p>入参限制：选择的数据盘快照大小需小于数据盘大小</p>
+                     */
+                    std::string m_snapshotId;
+                    bool m_snapshotIdHasBeenSet;
+
+                    /**
+                     * <p>自定义的数据盘标识（如 data / log / backup）</p>
+                     */
+                    std::string m_clientDiskKey;
+                    bool m_clientDiskKeyHasBeenSet;
 
                 };
             }
