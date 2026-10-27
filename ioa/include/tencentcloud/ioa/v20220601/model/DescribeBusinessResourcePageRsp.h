@@ -24,8 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ioa/v20220601/model/DescribeBusinessResourceData.h>
 #include <tencentcloud/ioa/v20220601/model/Paging.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeBusinessResourceData.h>
 
 
 namespace TencentCloud
@@ -47,31 +47,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取业务资源列表数据对象集合
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Items 业务资源列表数据对象集合
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<DescribeBusinessResourceData> GetItems() const;
-
-                    /**
-                     * 设置业务资源列表数据对象集合
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _items 业务资源列表数据对象集合
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetItems(const std::vector<DescribeBusinessResourceData>& _items);
-
-                    /**
-                     * 判断参数 Items 是否已赋值
-                     * @return Items 是否已赋值
-                     * 
-                     */
-                    bool ItemsHasBeenSet() const;
 
                     /**
                      * 获取分页公共对象
@@ -98,14 +73,32 @@ namespace TencentCloud
                      */
                     bool PageHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取业务资源列表数据对象集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Items 业务资源列表数据对象集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DescribeBusinessResourceData> GetItems() const;
 
                     /**
-                     * 业务资源列表数据对象集合
+                     * 设置业务资源列表数据对象集合
 注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _items 业务资源列表数据对象集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
                      */
-                    std::vector<DescribeBusinessResourceData> m_items;
-                    bool m_itemsHasBeenSet;
+                    void SetItems(const std::vector<DescribeBusinessResourceData>& _items);
+
+                    /**
+                     * 判断参数 Items 是否已赋值
+                     * @return Items 是否已赋值
+                     * 
+                     */
+                    bool ItemsHasBeenSet() const;
+
+                private:
 
                     /**
                      * 分页公共对象
@@ -113,6 +106,13 @@ namespace TencentCloud
                      */
                     Paging m_page;
                     bool m_pageHasBeenSet;
+
+                    /**
+                     * 业务资源列表数据对象集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DescribeBusinessResourceData> m_items;
+                    bool m_itemsHasBeenSet;
 
                 };
             }

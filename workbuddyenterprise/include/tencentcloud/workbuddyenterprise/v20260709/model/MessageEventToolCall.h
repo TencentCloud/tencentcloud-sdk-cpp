@@ -246,6 +246,132 @@ namespace TencentCloud
                      */
                     bool StartedAtHasBeenSet() const;
 
+                    /**
+                     * 获取本次调用对应的业务专家 ID。
+                     * @return ExpertId 本次调用对应的业务专家 ID。
+                     * 
+                     */
+                    std::string GetExpertId() const;
+
+                    /**
+                     * 设置本次调用对应的业务专家 ID。
+                     * @param _expertId 本次调用对应的业务专家 ID。
+                     * 
+                     */
+                    void SetExpertId(const std::string& _expertId);
+
+                    /**
+                     * 判断参数 ExpertId 是否已赋值
+                     * @return ExpertId 是否已赋值
+                     * 
+                     */
+                    bool ExpertIdHasBeenSet() const;
+
+                    /**
+                     * 获取本次调用对应的专家名称。
+                     * @return ExpertName 本次调用对应的专家名称。
+                     * 
+                     */
+                    std::string GetExpertName() const;
+
+                    /**
+                     * 设置本次调用对应的专家名称。
+                     * @param _expertName 本次调用对应的专家名称。
+                     * 
+                     */
+                    void SetExpertName(const std::string& _expertName);
+
+                    /**
+                     * 判断参数 ExpertName 是否已赋值
+                     * @return ExpertName 是否已赋值
+                     * 
+                     */
+                    bool ExpertNameHasBeenSet() const;
+
+                    /**
+                     * 获取执行时解析到的专家资源版本。
+                     * @return ExpertVersion 执行时解析到的专家资源版本。
+                     * 
+                     */
+                    std::string GetExpertVersion() const;
+
+                    /**
+                     * 设置执行时解析到的专家资源版本。
+                     * @param _expertVersion 执行时解析到的专家资源版本。
+                     * 
+                     */
+                    void SetExpertVersion(const std::string& _expertVersion);
+
+                    /**
+                     * 判断参数 ExpertVersion 是否已赋值
+                     * @return ExpertVersion 是否已赋值
+                     * 
+                     */
+                    bool ExpertVersionHasBeenSet() const;
+
+                    /**
+                     * 获取CBC 子代理执行实例 ID，可用于查询该次专家调用的消息事件。
+                     * @return SubAgentId CBC 子代理执行实例 ID，可用于查询该次专家调用的消息事件。
+                     * 
+                     */
+                    std::string GetSubAgentId() const;
+
+                    /**
+                     * 设置CBC 子代理执行实例 ID，可用于查询该次专家调用的消息事件。
+                     * @param _subAgentId CBC 子代理执行实例 ID，可用于查询该次专家调用的消息事件。
+                     * 
+                     */
+                    void SetSubAgentId(const std::string& _subAgentId);
+
+                    /**
+                     * 判断参数 SubAgentId 是否已赋值
+                     * @return SubAgentId 是否已赋值
+                     * 
+                     */
+                    bool SubAgentIdHasBeenSet() const;
+
+                    /**
+                     * 获取CBC 子代理定义名称。
+                     * @return SubAgentName CBC 子代理定义名称。
+                     * 
+                     */
+                    std::string GetSubAgentName() const;
+
+                    /**
+                     * 设置CBC 子代理定义名称。
+                     * @param _subAgentName CBC 子代理定义名称。
+                     * 
+                     */
+                    void SetSubAgentName(const std::string& _subAgentName);
+
+                    /**
+                     * 判断参数 SubAgentName 是否已赋值
+                     * @return SubAgentName 是否已赋值
+                     * 
+                     */
+                    bool SubAgentNameHasBeenSet() const;
+
+                    /**
+                     * 获取父会话中触发本次子代理执行的工具调用 ID。
+                     * @return ParentToolCallId 父会话中触发本次子代理执行的工具调用 ID。
+                     * 
+                     */
+                    std::string GetParentToolCallId() const;
+
+                    /**
+                     * 设置父会话中触发本次子代理执行的工具调用 ID。
+                     * @param _parentToolCallId 父会话中触发本次子代理执行的工具调用 ID。
+                     * 
+                     */
+                    void SetParentToolCallId(const std::string& _parentToolCallId);
+
+                    /**
+                     * 判断参数 ParentToolCallId 是否已赋值
+                     * @return ParentToolCallId 是否已赋值
+                     * 
+                     */
+                    bool ParentToolCallIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +429,42 @@ namespace TencentCloud
                      */
                     std::string m_startedAt;
                     bool m_startedAtHasBeenSet;
+
+                    /**
+                     * 本次调用对应的业务专家 ID。
+                     */
+                    std::string m_expertId;
+                    bool m_expertIdHasBeenSet;
+
+                    /**
+                     * 本次调用对应的专家名称。
+                     */
+                    std::string m_expertName;
+                    bool m_expertNameHasBeenSet;
+
+                    /**
+                     * 执行时解析到的专家资源版本。
+                     */
+                    std::string m_expertVersion;
+                    bool m_expertVersionHasBeenSet;
+
+                    /**
+                     * CBC 子代理执行实例 ID，可用于查询该次专家调用的消息事件。
+                     */
+                    std::string m_subAgentId;
+                    bool m_subAgentIdHasBeenSet;
+
+                    /**
+                     * CBC 子代理定义名称。
+                     */
+                    std::string m_subAgentName;
+                    bool m_subAgentNameHasBeenSet;
+
+                    /**
+                     * 父会话中触发本次子代理执行的工具调用 ID。
+                     */
+                    std::string m_parentToolCallId;
+                    bool m_parentToolCallIdHasBeenSet;
 
                 };
             }

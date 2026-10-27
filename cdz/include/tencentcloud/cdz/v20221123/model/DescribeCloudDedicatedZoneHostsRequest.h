@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专属可用区ID 
-                     * @return CloudDedicatedZoneID 专属可用区ID 
+                     * 获取<p>专属可用区ID</p>
+                     * @return CloudDedicatedZoneID <p>专属可用区ID</p>
                      * 
                      */
                     std::string GetCloudDedicatedZoneID() const;
 
                     /**
-                     * 设置专属可用区ID 
-                     * @param _cloudDedicatedZoneID 专属可用区ID 
+                     * 设置<p>专属可用区ID</p>
+                     * @param _cloudDedicatedZoneID <p>专属可用区ID</p>
                      * 
                      */
                     void SetCloudDedicatedZoneID(const std::string& _cloudDedicatedZoneID);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CloudDedicatedZoneIDHasBeenSet() const;
 
                     /**
-                     * 获取一个或多个Host面的CVM实例信息。最大支持查询100台Host。
-                     * @return HostUuids 一个或多个Host面的CVM实例信息。最大支持查询100台Host。
+                     * 获取<p>一个或多个Host面的CVM实例信息。最大支持查询100台Host。</p>
+                     * @return HostUuids <p>一个或多个Host面的CVM实例信息。最大支持查询100台Host。</p>
                      * 
                      */
                     std::vector<std::string> GetHostUuids() const;
 
                     /**
-                     * 设置一个或多个Host面的CVM实例信息。最大支持查询100台Host。
-                     * @param _hostUuids 一个或多个Host面的CVM实例信息。最大支持查询100台Host。
+                     * 设置<p>一个或多个Host面的CVM实例信息。最大支持查询100台Host。</p>
+                     * @param _hostUuids <p>一个或多个Host面的CVM实例信息。最大支持查询100台Host。</p>
                      * 
                      */
                     void SetHostUuids(const std::vector<std::string>& _hostUuids);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool HostUuidsHasBeenSet() const;
 
                     /**
-                     * 获取查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。
-                     * @return InstanceIds 查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。
+                     * 获取<p>查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。</p>
+                     * @return InstanceIds <p>查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。
-                     * @param _instanceIds 查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。
+                     * 设置<p>查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。</p>
+                     * @param _instanceIds <p>查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。</p>
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。
-                     * @return Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。
+                     * 获取<p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>
+                     * @return Offset <p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。
-                     * @param _offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。
+                     * 设置<p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>
+                     * @param _offset <p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。
-                     * @return Limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。
+                     * 获取<p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。
-                     * @param _limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。
+                     * 设置<p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 专属可用区ID 
+                     * <p>专属可用区ID</p>
                      */
                     std::string m_cloudDedicatedZoneID;
                     bool m_cloudDedicatedZoneIDHasBeenSet;
 
                     /**
-                     * 一个或多个Host面的CVM实例信息。最大支持查询100台Host。
+                     * <p>一个或多个Host面的CVM实例信息。最大支持查询100台Host。</p>
                      */
                     std::vector<std::string> m_hostUuids;
                     bool m_hostUuidsHasBeenSet;
 
                     /**
-                     * 查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。
+                     * <p>查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。</p>
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。
+                     * <p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。
+                     * <p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

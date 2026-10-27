@@ -248,6 +248,31 @@ namespace TencentCloud
                     bool A2AVersionHasBeenSet() const;
 
                     /**
+                     * 获取子 Agent 的最新版本名，返回版本存储名（default / test-N / prod-N），非 V1/V2 展示名。取值规则：有正式版本（prod）时取最新 prod，否则取最新 test，再否则取 default。仅企业 Agent 来源返回（其 A2AVersion 恒为 default）；其他来源或查询失败时不返回。注意：不代表 A2A 调用时实际执行的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestVersionName 子 Agent 的最新版本名，返回版本存储名（default / test-N / prod-N），非 V1/V2 展示名。取值规则：有正式版本（prod）时取最新 prod，否则取最新 test，再否则取 default。仅企业 Agent 来源返回（其 A2AVersion 恒为 default）；其他来源或查询失败时不返回。注意：不代表 A2A 调用时实际执行的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLatestVersionName() const;
+
+                    /**
+                     * 设置子 Agent 的最新版本名，返回版本存储名（default / test-N / prod-N），非 V1/V2 展示名。取值规则：有正式版本（prod）时取最新 prod，否则取最新 test，再否则取 default。仅企业 Agent 来源返回（其 A2AVersion 恒为 default）；其他来源或查询失败时不返回。注意：不代表 A2A 调用时实际执行的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _latestVersionName 子 Agent 的最新版本名，返回版本存储名（default / test-N / prod-N），非 V1/V2 展示名。取值规则：有正式版本（prod）时取最新 prod，否则取最新 test，再否则取 default。仅企业 Agent 来源返回（其 A2AVersion 恒为 default）；其他来源或查询失败时不返回。注意：不代表 A2A 调用时实际执行的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLatestVersionName(const std::string& _latestVersionName);
+
+                    /**
+                     * 判断参数 LatestVersionName 是否已赋值
+                     * @return LatestVersionName 是否已赋值
+                     * 
+                     */
+                    bool LatestVersionNameHasBeenSet() const;
+
+                    /**
                      * 获取A2A card skills 集合
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return A2ASkillSet A2A card skills 集合
@@ -329,6 +354,13 @@ namespace TencentCloud
                      */
                     std::string m_a2AVersion;
                     bool m_a2AVersionHasBeenSet;
+
+                    /**
+                     * 子 Agent 的最新版本名，返回版本存储名（default / test-N / prod-N），非 V1/V2 展示名。取值规则：有正式版本（prod）时取最新 prod，否则取最新 test，再否则取 default。仅企业 Agent 来源返回（其 A2AVersion 恒为 default）；其他来源或查询失败时不返回。注意：不代表 A2A 调用时实际执行的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_latestVersionName;
+                    bool m_latestVersionNameHasBeenSet;
 
                     /**
                      * A2A card skills 集合

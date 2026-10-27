@@ -218,6 +218,106 @@ namespace TencentCloud
                     bool SupportsImagesHasBeenSet() const;
 
                     /**
+                     * 获取模型是否支持思考。仅用于展示；能否配置思考强度以 ThinkingLevels 和 CanDisableThinking 为准
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportsThinking 模型是否支持思考。仅用于展示；能否配置思考强度以 ThinkingLevels 和 CanDisableThinking 为准
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSupportsThinking() const;
+
+                    /**
+                     * 设置模型是否支持思考。仅用于展示；能否配置思考强度以 ThinkingLevels 和 CanDisableThinking 为准
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _supportsThinking 模型是否支持思考。仅用于展示；能否配置思考强度以 ThinkingLevels 和 CanDisableThinking 为准
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSupportsThinking(const bool& _supportsThinking);
+
+                    /**
+                     * 判断参数 SupportsThinking 是否已赋值
+                     * @return SupportsThinking 是否已赋值
+                     * 
+                     */
+                    bool SupportsThinkingHasBeenSet() const;
+
+                    /**
+                     * 获取可选的思考强度，取值：MINIMAL、LOW、MEDIUM、HIGH、XHIGH、MAX，数组顺序即展示顺序。不包含「关闭」，空数组表示不支持调整强度。在 Agent 版本 Manifest 中配置 thinking.level 时使用对应的小写值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ThinkingLevels 可选的思考强度，取值：MINIMAL、LOW、MEDIUM、HIGH、XHIGH、MAX，数组顺序即展示顺序。不包含「关闭」，空数组表示不支持调整强度。在 Agent 版本 Manifest 中配置 thinking.level 时使用对应的小写值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetThinkingLevels() const;
+
+                    /**
+                     * 设置可选的思考强度，取值：MINIMAL、LOW、MEDIUM、HIGH、XHIGH、MAX，数组顺序即展示顺序。不包含「关闭」，空数组表示不支持调整强度。在 Agent 版本 Manifest 中配置 thinking.level 时使用对应的小写值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _thinkingLevels 可选的思考强度，取值：MINIMAL、LOW、MEDIUM、HIGH、XHIGH、MAX，数组顺序即展示顺序。不包含「关闭」，空数组表示不支持调整强度。在 Agent 版本 Manifest 中配置 thinking.level 时使用对应的小写值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetThinkingLevels(const std::vector<std::string>& _thinkingLevels);
+
+                    /**
+                     * 判断参数 ThinkingLevels 是否已赋值
+                     * @return ThinkingLevels 是否已赋值
+                     * 
+                     */
+                    bool ThinkingLevelsHasBeenSet() const;
+
+                    /**
+                     * 获取模型默认的思考强度，取值同 ThinkingLevels；空字符串表示未声明。Agent 版本 Manifest 未配置 thinking 时按模型默认档位运行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultThinkingLevel 模型默认的思考强度，取值同 ThinkingLevels；空字符串表示未声明。Agent 版本 Manifest 未配置 thinking 时按模型默认档位运行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDefaultThinkingLevel() const;
+
+                    /**
+                     * 设置模型默认的思考强度，取值同 ThinkingLevels；空字符串表示未声明。Agent 版本 Manifest 未配置 thinking 时按模型默认档位运行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _defaultThinkingLevel 模型默认的思考强度，取值同 ThinkingLevels；空字符串表示未声明。Agent 版本 Manifest 未配置 thinking 时按模型默认档位运行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDefaultThinkingLevel(const std::string& _defaultThinkingLevel);
+
+                    /**
+                     * 判断参数 DefaultThinkingLevel 是否已赋值
+                     * @return DefaultThinkingLevel 是否已赋值
+                     * 
+                     */
+                    bool DefaultThinkingLevelHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持关闭思考。为 true 时，可在 Agent 版本 Manifest 中配置 thinking.level 为 disabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CanDisableThinking 是否支持关闭思考。为 true 时，可在 Agent 版本 Manifest 中配置 thinking.level 为 disabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetCanDisableThinking() const;
+
+                    /**
+                     * 设置是否支持关闭思考。为 true 时，可在 Agent 版本 Manifest 中配置 thinking.level 为 disabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _canDisableThinking 是否支持关闭思考。为 true 时，可在 Agent 版本 Manifest 中配置 thinking.level 为 disabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCanDisableThinking(const bool& _canDisableThinking);
+
+                    /**
+                     * 判断参数 CanDisableThinking 是否已赋值
+                     * @return CanDisableThinking 是否已赋值
+                     * 
+                     */
+                    bool CanDisableThinkingHasBeenSet() const;
+
+                    /**
                      * 获取模型中文描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DescriptionZh 模型中文描述
@@ -441,6 +541,34 @@ namespace TencentCloud
                      */
                     bool m_supportsImages;
                     bool m_supportsImagesHasBeenSet;
+
+                    /**
+                     * 模型是否支持思考。仅用于展示；能否配置思考强度以 ThinkingLevels 和 CanDisableThinking 为准
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_supportsThinking;
+                    bool m_supportsThinkingHasBeenSet;
+
+                    /**
+                     * 可选的思考强度，取值：MINIMAL、LOW、MEDIUM、HIGH、XHIGH、MAX，数组顺序即展示顺序。不包含「关闭」，空数组表示不支持调整强度。在 Agent 版本 Manifest 中配置 thinking.level 时使用对应的小写值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_thinkingLevels;
+                    bool m_thinkingLevelsHasBeenSet;
+
+                    /**
+                     * 模型默认的思考强度，取值同 ThinkingLevels；空字符串表示未声明。Agent 版本 Manifest 未配置 thinking 时按模型默认档位运行
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_defaultThinkingLevel;
+                    bool m_defaultThinkingLevelHasBeenSet;
+
+                    /**
+                     * 是否支持关闭思考。为 true 时，可在 Agent 版本 Manifest 中配置 thinking.level 为 disabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_canDisableThinking;
+                    bool m_canDisableThinkingHasBeenSet;
 
                     /**
                      * 模型中文描述

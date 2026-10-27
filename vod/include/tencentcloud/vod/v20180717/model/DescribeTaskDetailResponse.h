@@ -64,6 +64,8 @@
 #include <tencentcloud/vod/v20180717/model/TextToSpeechAsyncTask.h>
 #include <tencentcloud/vod/v20180717/model/VideoDubbingAsyncTask.h>
 #include <tencentcloud/vod/v20180717/model/VideoDepthEstimationTask.h>
+#include <tencentcloud/vod/v20180717/model/DNATask.h>
+#include <tencentcloud/vod/v20180717/model/SearchMediaBySemanticsAsync.h>
 
 
 namespace TencentCloud
@@ -802,6 +804,34 @@ namespace TencentCloud
                      */
                     bool VideoDepthEstimationTaskHasBeenSet() const;
 
+                    /**
+                     * 获取<p>DNA查重任务，仅当TaskType为CreateDnaTask，该字段有值。</p>
+                     * @return DNATask <p>DNA查重任务，仅当TaskType为CreateDnaTask，该字段有值。</p>
+                     * 
+                     */
+                    DNATask GetDNATask() const;
+
+                    /**
+                     * 判断参数 DNATask 是否已赋值
+                     * @return DNATask 是否已赋值
+                     * 
+                     */
+                    bool DNATaskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>异步按语义搜索媒体任务，仅当TaskType为SearchMediaBySemanticsAsync，该字段有值。</p>
+                     * @return SearchMediaBySemanticsAsync <p>异步按语义搜索媒体任务，仅当TaskType为SearchMediaBySemanticsAsync，该字段有值。</p>
+                     * 
+                     */
+                    SearchMediaBySemanticsAsync GetSearchMediaBySemanticsAsync() const;
+
+                    /**
+                     * 判断参数 SearchMediaBySemanticsAsync 是否已赋值
+                     * @return SearchMediaBySemanticsAsync 是否已赋值
+                     * 
+                     */
+                    bool SearchMediaBySemanticsAsyncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1113,6 +1143,18 @@ namespace TencentCloud
                      */
                     VideoDepthEstimationTask m_videoDepthEstimationTask;
                     bool m_videoDepthEstimationTaskHasBeenSet;
+
+                    /**
+                     * <p>DNA查重任务，仅当TaskType为CreateDnaTask，该字段有值。</p>
+                     */
+                    DNATask m_dNATask;
+                    bool m_dNATaskHasBeenSet;
+
+                    /**
+                     * <p>异步按语义搜索媒体任务，仅当TaskType为SearchMediaBySemanticsAsync，该字段有值。</p>
+                     */
+                    SearchMediaBySemanticsAsync m_searchMediaBySemanticsAsync;
+                    bool m_searchMediaBySemanticsAsyncHasBeenSet;
 
                 };
             }

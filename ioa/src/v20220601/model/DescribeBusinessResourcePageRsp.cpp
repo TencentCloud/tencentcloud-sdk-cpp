@@ -21,8 +21,8 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 DescribeBusinessResourcePageRsp::DescribeBusinessResourcePageRsp() :
-    m_itemsHasBeenSet(false),
-    m_pageHasBeenSet(false)
+    m_pageHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
@@ -30,6 +30,23 @@ CoreInternalOutcome DescribeBusinessResourcePageRsp::Deserialize(const rapidjson
 {
     string requestId = "";
 
+
+    if (value.HasMember("Page") && !value["Page"].IsNull())
+    {
+        if (!value["Page"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourcePageRsp.Page` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_page.Deserialize(value["Page"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_pageHasBeenSet = true;
+    }
 
     if (value.HasMember("Items") && !value["Items"].IsNull())
     {
@@ -51,29 +68,21 @@ CoreInternalOutcome DescribeBusinessResourcePageRsp::Deserialize(const rapidjson
         m_itemsHasBeenSet = true;
     }
 
-    if (value.HasMember("Page") && !value["Page"].IsNull())
-    {
-        if (!value["Page"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `DescribeBusinessResourcePageRsp.Page` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_page.Deserialize(value["Page"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_pageHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void DescribeBusinessResourcePageRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_page.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     if (m_itemsHasBeenSet)
     {
@@ -90,33 +99,8 @@ void DescribeBusinessResourcePageRsp::ToJsonObject(rapidjson::Value &value, rapi
         }
     }
 
-    if (m_pageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Page";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_page.ToJsonObject(value[key.c_str()], allocator);
-    }
-
 }
 
-
-vector<DescribeBusinessResourceData> DescribeBusinessResourcePageRsp::GetItems() const
-{
-    return m_items;
-}
-
-void DescribeBusinessResourcePageRsp::SetItems(const vector<DescribeBusinessResourceData>& _items)
-{
-    m_items = _items;
-    m_itemsHasBeenSet = true;
-}
-
-bool DescribeBusinessResourcePageRsp::ItemsHasBeenSet() const
-{
-    return m_itemsHasBeenSet;
-}
 
 Paging DescribeBusinessResourcePageRsp::GetPage() const
 {
@@ -132,5 +116,21 @@ void DescribeBusinessResourcePageRsp::SetPage(const Paging& _page)
 bool DescribeBusinessResourcePageRsp::PageHasBeenSet() const
 {
     return m_pageHasBeenSet;
+}
+
+vector<DescribeBusinessResourceData> DescribeBusinessResourcePageRsp::GetItems() const
+{
+    return m_items;
+}
+
+void DescribeBusinessResourcePageRsp::SetItems(const vector<DescribeBusinessResourceData>& _items)
+{
+    m_items = _items;
+    m_itemsHasBeenSet = true;
+}
+
+bool DescribeBusinessResourcePageRsp::ItemsHasBeenSet() const
+{
+    return m_itemsHasBeenSet;
 }
 

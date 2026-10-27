@@ -28,6 +28,10 @@ BuiltinModel::BuiltinModel() :
     m_maxInputTokensHasBeenSet(false),
     m_supportsToolCallHasBeenSet(false),
     m_supportsImagesHasBeenSet(false),
+    m_supportsThinkingHasBeenSet(false),
+    m_thinkingLevelsHasBeenSet(false),
+    m_defaultThinkingLevelHasBeenSet(false),
+    m_canDisableThinkingHasBeenSet(false),
     m_descriptionZhHasBeenSet(false),
     m_descriptionEnHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -111,6 +115,49 @@ CoreInternalOutcome BuiltinModel::Deserialize(const rapidjson::Value &value)
         }
         m_supportsImages = value["SupportsImages"].GetBool();
         m_supportsImagesHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportsThinking") && !value["SupportsThinking"].IsNull())
+    {
+        if (!value["SupportsThinking"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BuiltinModel.SupportsThinking` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportsThinking = value["SupportsThinking"].GetBool();
+        m_supportsThinkingHasBeenSet = true;
+    }
+
+    if (value.HasMember("ThinkingLevels") && !value["ThinkingLevels"].IsNull())
+    {
+        if (!value["ThinkingLevels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BuiltinModel.ThinkingLevels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ThinkingLevels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_thinkingLevels.push_back((*itr).GetString());
+        }
+        m_thinkingLevelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultThinkingLevel") && !value["DefaultThinkingLevel"].IsNull())
+    {
+        if (!value["DefaultThinkingLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BuiltinModel.DefaultThinkingLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultThinkingLevel = string(value["DefaultThinkingLevel"].GetString());
+        m_defaultThinkingLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("CanDisableThinking") && !value["CanDisableThinking"].IsNull())
+    {
+        if (!value["CanDisableThinking"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BuiltinModel.CanDisableThinking` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canDisableThinking = value["CanDisableThinking"].GetBool();
+        m_canDisableThinkingHasBeenSet = true;
     }
 
     if (value.HasMember("DescriptionZh") && !value["DescriptionZh"].IsNull())
@@ -250,6 +297,43 @@ void BuiltinModel::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SupportsImages";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportsImages, allocator);
+    }
+
+    if (m_supportsThinkingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportsThinking";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportsThinking, allocator);
+    }
+
+    if (m_thinkingLevelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThinkingLevels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_thinkingLevels.begin(); itr != m_thinkingLevels.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_defaultThinkingLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultThinkingLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultThinkingLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_canDisableThinkingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanDisableThinking";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canDisableThinking, allocator);
     }
 
     if (m_descriptionZhHasBeenSet)
@@ -431,6 +515,70 @@ void BuiltinModel::SetSupportsImages(const bool& _supportsImages)
 bool BuiltinModel::SupportsImagesHasBeenSet() const
 {
     return m_supportsImagesHasBeenSet;
+}
+
+bool BuiltinModel::GetSupportsThinking() const
+{
+    return m_supportsThinking;
+}
+
+void BuiltinModel::SetSupportsThinking(const bool& _supportsThinking)
+{
+    m_supportsThinking = _supportsThinking;
+    m_supportsThinkingHasBeenSet = true;
+}
+
+bool BuiltinModel::SupportsThinkingHasBeenSet() const
+{
+    return m_supportsThinkingHasBeenSet;
+}
+
+vector<string> BuiltinModel::GetThinkingLevels() const
+{
+    return m_thinkingLevels;
+}
+
+void BuiltinModel::SetThinkingLevels(const vector<string>& _thinkingLevels)
+{
+    m_thinkingLevels = _thinkingLevels;
+    m_thinkingLevelsHasBeenSet = true;
+}
+
+bool BuiltinModel::ThinkingLevelsHasBeenSet() const
+{
+    return m_thinkingLevelsHasBeenSet;
+}
+
+string BuiltinModel::GetDefaultThinkingLevel() const
+{
+    return m_defaultThinkingLevel;
+}
+
+void BuiltinModel::SetDefaultThinkingLevel(const string& _defaultThinkingLevel)
+{
+    m_defaultThinkingLevel = _defaultThinkingLevel;
+    m_defaultThinkingLevelHasBeenSet = true;
+}
+
+bool BuiltinModel::DefaultThinkingLevelHasBeenSet() const
+{
+    return m_defaultThinkingLevelHasBeenSet;
+}
+
+bool BuiltinModel::GetCanDisableThinking() const
+{
+    return m_canDisableThinking;
+}
+
+void BuiltinModel::SetCanDisableThinking(const bool& _canDisableThinking)
+{
+    m_canDisableThinking = _canDisableThinking;
+    m_canDisableThinkingHasBeenSet = true;
+}
+
+bool BuiltinModel::CanDisableThinkingHasBeenSet() const
+{
+    return m_canDisableThinkingHasBeenSet;
 }
 
 string BuiltinModel::GetDescriptionZh() const

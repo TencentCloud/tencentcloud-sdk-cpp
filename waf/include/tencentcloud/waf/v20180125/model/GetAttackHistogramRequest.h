@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询的域名，所有域名使用all
-                     * @return Domain 查询的域名，所有域名使用all
+                     * 获取<p>查询的域名，所有域名使用all</p>
+                     * @return Domain <p>查询的域名，所有域名使用all</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置查询的域名，所有域名使用all
-                     * @param _domain 查询的域名，所有域名使用all
+                     * 设置<p>查询的域名，所有域名使用all</p>
+                     * @param _domain <p>查询的域名，所有域名使用all</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取查询起始时间
-                     * @return StartTime 查询起始时间
+                     * 获取<p>查询起始时间</p>
+                     * @return StartTime <p>查询起始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询起始时间
-                     * @param _startTime 查询起始时间
+                     * 设置<p>查询起始时间</p>
+                     * @param _startTime <p>查询起始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间
-                     * @return EndTime 查询结束时间
+                     * 获取<p>查询结束时间</p>
+                     * @return EndTime <p>查询结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间
-                     * @param _endTime 查询结束时间
+                     * 设置<p>查询结束时间</p>
+                     * @param _endTime <p>查询结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取Lucene语法
-                     * @return QueryString Lucene语法
+                     * 获取<p>Lucene语法</p>
+                     * @return QueryString <p>Lucene语法</p>
                      * 
                      */
                     std::string GetQueryString() const;
 
                     /**
-                     * 设置Lucene语法
-                     * @param _queryString Lucene语法
+                     * 设置<p>Lucene语法</p>
+                     * @param _queryString <p>Lucene语法</p>
                      * 
                      */
                     void SetQueryString(const std::string& _queryString);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询的域名，所有域名使用all
+                     * <p>查询的域名，所有域名使用all</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 查询起始时间
+                     * <p>查询起始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间
+                     * <p>查询结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * Lucene语法
+                     * <p>Lucene语法</p>
                      */
                     std::string m_queryString;
                     bool m_queryStringHasBeenSet;

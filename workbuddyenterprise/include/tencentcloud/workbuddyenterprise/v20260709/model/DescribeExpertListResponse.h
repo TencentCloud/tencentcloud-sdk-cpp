@@ -89,6 +89,20 @@ namespace TencentCloud
                      */
                     bool CountsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Agent 可绑定的专家数量上限，当前默认值为 5。</p>
+                     * @return MaxBindings <p>Agent 可绑定的专家数量上限，当前默认值为 5。</p>
+                     * 
+                     */
+                    int64_t GetMaxBindings() const;
+
+                    /**
+                     * 判断参数 MaxBindings 是否已赋值
+                     * @return MaxBindings 是否已赋值
+                     * 
+                     */
+                    bool MaxBindingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -109,6 +123,12 @@ namespace TencentCloud
                      */
                     ExpertCounts m_counts;
                     bool m_countsHasBeenSet;
+
+                    /**
+                     * <p>Agent 可绑定的专家数量上限，当前默认值为 5。</p>
+                     */
+                    int64_t m_maxBindings;
+                    bool m_maxBindingsHasBeenSet;
 
                 };
             }

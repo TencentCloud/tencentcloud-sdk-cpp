@@ -27,6 +27,8 @@
 #include <tencentcloud/ctem/v20231128/model/CreateAppResponse.h>
 #include <tencentcloud/ctem/v20231128/model/CreateAssetRequest.h>
 #include <tencentcloud/ctem/v20231128/model/CreateAssetResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateCheckRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateCheckResponse.h>
 #include <tencentcloud/ctem/v20231128/model/CreateCustomerRequest.h>
 #include <tencentcloud/ctem/v20231128/model/CreateCustomerResponse.h>
 #include <tencentcloud/ctem/v20231128/model/CreateDomainRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/ctem/v20231128/model/CreateManageResponse.h>
 #include <tencentcloud/ctem/v20231128/model/CreatePortRequest.h>
 #include <tencentcloud/ctem/v20231128/model/CreatePortResponse.h>
+#include <tencentcloud/ctem/v20231128/model/CreateScanRequest.h>
+#include <tencentcloud/ctem/v20231128/model/CreateScanResponse.h>
 #include <tencentcloud/ctem/v20231128/model/CreateSeedsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/CreateSeedsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/CreateSubDomainRequest.h>
@@ -81,6 +85,8 @@
 #include <tencentcloud/ctem/v20231128/model/DescribeAppsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeAssetsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeAssetsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeBannerAssetDataRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeBannerAssetDataResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeConfigsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeConfigsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeCustomersRequest.h>
@@ -103,6 +109,8 @@
 #include <tencentcloud/ctem/v20231128/model/DescribeGithubsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeHttpsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeHttpsResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeIntelligencesRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribeIntelligencesResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeJobRecordDetailsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeJobRecordDetailsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeJobRecordsRequest.h>
@@ -117,6 +125,8 @@
 #include <tencentcloud/ctem/v20231128/model/DescribeManagesResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeNetDisksRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeNetDisksResponse.h>
+#include <tencentcloud/ctem/v20231128/model/DescribePocAssetDataRequest.h>
+#include <tencentcloud/ctem/v20231128/model/DescribePocAssetDataResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribePortsRequest.h>
 #include <tencentcloud/ctem/v20231128/model/DescribePortsResponse.h>
 #include <tencentcloud/ctem/v20231128/model/DescribeSeedsRequest.h>
@@ -165,6 +175,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAssetResponse> CreateAssetOutcome;
                 typedef std::future<CreateAssetOutcome> CreateAssetOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::CreateAssetRequest&, CreateAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCheckResponse> CreateCheckOutcome;
+                typedef std::future<CreateCheckOutcome> CreateCheckOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateCheckRequest&, CreateCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCheckAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustomerResponse> CreateCustomerOutcome;
                 typedef std::future<CreateCustomerOutcome> CreateCustomerOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::CreateCustomerRequest&, CreateCustomerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomerAsyncHandler;
@@ -186,6 +199,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePortResponse> CreatePortOutcome;
                 typedef std::future<CreatePortOutcome> CreatePortOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::CreatePortRequest&, CreatePortOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePortAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateScanResponse> CreateScanOutcome;
+                typedef std::future<CreateScanOutcome> CreateScanOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::CreateScanRequest&, CreateScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScanAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSeedsResponse> CreateSeedsOutcome;
                 typedef std::future<CreateSeedsOutcome> CreateSeedsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::CreateSeedsRequest&, CreateSeedsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSeedsAsyncHandler;
@@ -246,6 +262,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssetsResponse> DescribeAssetsOutcome;
                 typedef std::future<DescribeAssetsOutcome> DescribeAssetsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeAssetsRequest&, DescribeAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBannerAssetDataResponse> DescribeBannerAssetDataOutcome;
+                typedef std::future<DescribeBannerAssetDataOutcome> DescribeBannerAssetDataOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeBannerAssetDataRequest&, DescribeBannerAssetDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBannerAssetDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConfigsResponse> DescribeConfigsOutcome;
                 typedef std::future<DescribeConfigsOutcome> DescribeConfigsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeConfigsRequest&, DescribeConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigsAsyncHandler;
@@ -279,6 +298,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHttpsResponse> DescribeHttpsOutcome;
                 typedef std::future<DescribeHttpsOutcome> DescribeHttpsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeHttpsRequest&, DescribeHttpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHttpsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIntelligencesResponse> DescribeIntelligencesOutcome;
+                typedef std::future<DescribeIntelligencesOutcome> DescribeIntelligencesOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribeIntelligencesRequest&, DescribeIntelligencesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntelligencesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobRecordDetailsResponse> DescribeJobRecordDetailsOutcome;
                 typedef std::future<DescribeJobRecordDetailsOutcome> DescribeJobRecordDetailsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeJobRecordDetailsRequest&, DescribeJobRecordDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobRecordDetailsAsyncHandler;
@@ -300,6 +322,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNetDisksResponse> DescribeNetDisksOutcome;
                 typedef std::future<DescribeNetDisksOutcome> DescribeNetDisksOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribeNetDisksRequest&, DescribeNetDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePocAssetDataResponse> DescribePocAssetDataOutcome;
+                typedef std::future<DescribePocAssetDataOutcome> DescribePocAssetDataOutcomeCallable;
+                typedef std::function<void(const CtemClient*, const Model::DescribePocAssetDataRequest&, DescribePocAssetDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePocAssetDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePortsResponse> DescribePortsOutcome;
                 typedef std::future<DescribePortsOutcome> DescribePortsOutcomeCallable;
                 typedef std::function<void(const CtemClient*, const Model::DescribePortsRequest&, DescribePortsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortsAsyncHandler;
@@ -364,6 +389,15 @@ namespace TencentCloud
                 CreateAssetOutcomeCallable CreateAssetCallable(const Model::CreateAssetRequest& request);
 
                 /**
+                 *检查修复状况
+                 * @param req CreateCheckRequest
+                 * @return CreateCheckOutcome
+                 */
+                CreateCheckOutcome CreateCheck(const Model::CreateCheckRequest &request);
+                void CreateCheckAsync(const Model::CreateCheckRequest& request, const CreateCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCheckOutcomeCallable CreateCheckCallable(const Model::CreateCheckRequest& request);
+
+                /**
                  *创建企业
                  * @param req CreateCustomerRequest
                  * @return CreateCustomerOutcome
@@ -425,6 +459,15 @@ namespace TencentCloud
                 CreatePortOutcome CreatePort(const Model::CreatePortRequest &request);
                 void CreatePortAsync(const Model::CreatePortRequest& request, const CreatePortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePortOutcomeCallable CreatePortCallable(const Model::CreatePortRequest& request);
+
+                /**
+                 *扫描巡检
+                 * @param req CreateScanRequest
+                 * @return CreateScanOutcome
+                 */
+                CreateScanOutcome CreateScan(const Model::CreateScanRequest &request);
+                void CreateScanAsync(const Model::CreateScanRequest& request, const CreateScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateScanOutcomeCallable CreateScanCallable(const Model::CreateScanRequest& request);
 
                 /**
                  *创建种子
@@ -607,6 +650,15 @@ namespace TencentCloud
                 DescribeAssetsOutcomeCallable DescribeAssetsCallable(const Model::DescribeAssetsRequest& request);
 
                 /**
+                 *相关资产
+                 * @param req DescribeBannerAssetDataRequest
+                 * @return DescribeBannerAssetDataOutcome
+                 */
+                DescribeBannerAssetDataOutcome DescribeBannerAssetData(const Model::DescribeBannerAssetDataRequest &request);
+                void DescribeBannerAssetDataAsync(const Model::DescribeBannerAssetDataRequest& request, const DescribeBannerAssetDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBannerAssetDataOutcomeCallable DescribeBannerAssetDataCallable(const Model::DescribeBannerAssetDataRequest& request);
+
+                /**
                  *查看目录爆破数据
                  * @param req DescribeConfigsRequest
                  * @return DescribeConfigsOutcome
@@ -706,6 +758,15 @@ namespace TencentCloud
                 DescribeHttpsOutcomeCallable DescribeHttpsCallable(const Model::DescribeHttpsRequest& request);
 
                 /**
+                 *查询情报列表
+                 * @param req DescribeIntelligencesRequest
+                 * @return DescribeIntelligencesOutcome
+                 */
+                DescribeIntelligencesOutcome DescribeIntelligences(const Model::DescribeIntelligencesRequest &request);
+                void DescribeIntelligencesAsync(const Model::DescribeIntelligencesRequest& request, const DescribeIntelligencesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIntelligencesOutcomeCallable DescribeIntelligencesCallable(const Model::DescribeIntelligencesRequest& request);
+
+                /**
                  *查看链路详情
                  * @param req DescribeJobRecordDetailsRequest
                  * @return DescribeJobRecordDetailsOutcome
@@ -767,6 +828,15 @@ namespace TencentCloud
                 DescribeNetDisksOutcome DescribeNetDisks(const Model::DescribeNetDisksRequest &request);
                 void DescribeNetDisksAsync(const Model::DescribeNetDisksRequest& request, const DescribeNetDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNetDisksOutcomeCallable DescribeNetDisksCallable(const Model::DescribeNetDisksRequest& request);
+
+                /**
+                 *实际受影响资产
+                 * @param req DescribePocAssetDataRequest
+                 * @return DescribePocAssetDataOutcome
+                 */
+                DescribePocAssetDataOutcome DescribePocAssetData(const Model::DescribePocAssetDataRequest &request);
+                void DescribePocAssetDataAsync(const Model::DescribePocAssetDataRequest& request, const DescribePocAssetDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePocAssetDataOutcomeCallable DescribePocAssetDataCallable(const Model::DescribePocAssetDataRequest& request);
 
                 /**
                  *查看端口数据

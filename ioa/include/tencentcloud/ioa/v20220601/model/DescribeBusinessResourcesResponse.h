@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务资源分页返回对象
+                     * 获取<p>业务资源分页返回对象</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 业务资源分页返回对象
+                     * @return Data <p>业务资源分页返回对象</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务资源分页返回对象
+                     * <p>业务资源分页返回对象</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeBusinessResourcePageRsp m_data;

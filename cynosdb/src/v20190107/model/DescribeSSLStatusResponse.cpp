@@ -25,7 +25,9 @@ using namespace std;
 
 DescribeSSLStatusResponse::DescribeSSLStatusResponse() :
     m_isOpenSSLHasBeenSet(false),
-    m_downloadUrlHasBeenSet(false)
+    m_downloadUrlHasBeenSet(false),
+    m_certTypeHasBeenSet(false),
+    m_certDetailHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,33 @@ CoreInternalOutcome DescribeSSLStatusResponse::Deserialize(const string &payload
         m_downloadUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CertType") && !rsp["CertType"].IsNull())
+    {
+        if (!rsp["CertType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certType = string(rsp["CertType"].GetString());
+        m_certTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CertDetail") && !rsp["CertDetail"].IsNull())
+    {
+        if (!rsp["CertDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_certDetail.Deserialize(rsp["CertDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_certDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +136,23 @@ string DescribeSSLStatusResponse::ToJsonString() const
         string key = "DownloadUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_certDetail.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +185,26 @@ string DescribeSSLStatusResponse::GetDownloadUrl() const
 bool DescribeSSLStatusResponse::DownloadUrlHasBeenSet() const
 {
     return m_downloadUrlHasBeenSet;
+}
+
+string DescribeSSLStatusResponse::GetCertType() const
+{
+    return m_certType;
+}
+
+bool DescribeSSLStatusResponse::CertTypeHasBeenSet() const
+{
+    return m_certTypeHasBeenSet;
+}
+
+CertDetail DescribeSSLStatusResponse::GetCertDetail() const
+{
+    return m_certDetail;
+}
+
+bool DescribeSSLStatusResponse::CertDetailHasBeenSet() const
+{
+    return m_certDetailHasBeenSet;
 }
 
 

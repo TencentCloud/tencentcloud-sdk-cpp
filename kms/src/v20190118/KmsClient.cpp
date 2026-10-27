@@ -440,6 +440,56 @@ KmsClient::CreateKeyOutcomeCallable KmsClient::CreateKeyCallable(const CreateKey
     return prom->get_future();
 }
 
+KmsClient::CreateKmsInstanceOutcome KmsClient::CreateKmsInstance(const CreateKmsInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateKmsInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateKmsInstanceResponse rsp = CreateKmsInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateKmsInstanceOutcome(rsp);
+        else
+            return CreateKmsInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateKmsInstanceOutcome(outcome.GetError());
+    }
+}
+
+void KmsClient::CreateKmsInstanceAsync(const CreateKmsInstanceRequest& request, const CreateKmsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateKmsInstanceRequest&;
+    using Resp = CreateKmsInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateKmsInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+KmsClient::CreateKmsInstanceOutcomeCallable KmsClient::CreateKmsInstanceCallable(const CreateKmsInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateKmsInstanceOutcome>>();
+    CreateKmsInstanceAsync(
+    request,
+    [prom](
+        const KmsClient*,
+        const CreateKmsInstanceRequest&,
+        CreateKmsInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 KmsClient::CreateWhiteBoxKeyOutcome KmsClient::CreateWhiteBoxKey(const CreateWhiteBoxKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateWhiteBoxKey");

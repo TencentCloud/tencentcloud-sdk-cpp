@@ -82,12 +82,12 @@ bool ModifyAccelerateAreasRequest::GlobalAcceleratorIdHasBeenSet() const
     return m_globalAcceleratorIdHasBeenSet;
 }
 
-vector<AcceleratorAreas> ModifyAccelerateAreasRequest::GetAcceleratorAreas() const
+vector<ModifyAccelerateAreasInfo> ModifyAccelerateAreasRequest::GetAcceleratorAreas() const
 {
     return m_acceleratorAreas;
 }
 
-void ModifyAccelerateAreasRequest::SetAcceleratorAreas(const vector<AcceleratorAreas>& _acceleratorAreas)
+void ModifyAccelerateAreasRequest::SetAcceleratorAreas(const vector<ModifyAccelerateAreasInfo>& _acceleratorAreas)
 {
     m_acceleratorAreas = _acceleratorAreas;
     m_acceleratorAreasHasBeenSet = true;

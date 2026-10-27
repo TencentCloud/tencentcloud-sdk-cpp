@@ -24,7 +24,9 @@ using namespace std;
 
 OpenSSLRequest::OpenSSLRequest() :
     m_clusterIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_certTypeHasBeenSet(false),
+    m_certIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string OpenSSLRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void OpenSSLRequest::SetInstanceId(const string& _instanceId)
 bool OpenSSLRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string OpenSSLRequest::GetCertType() const
+{
+    return m_certType;
+}
+
+void OpenSSLRequest::SetCertType(const string& _certType)
+{
+    m_certType = _certType;
+    m_certTypeHasBeenSet = true;
+}
+
+bool OpenSSLRequest::CertTypeHasBeenSet() const
+{
+    return m_certTypeHasBeenSet;
+}
+
+string OpenSSLRequest::GetCertId() const
+{
+    return m_certId;
+}
+
+void OpenSSLRequest::SetCertId(const string& _certId)
+{
+    m_certId = _certId;
+    m_certIdHasBeenSet = true;
+}
+
+bool OpenSSLRequest::CertIdHasBeenSet() const
+{
+    return m_certIdHasBeenSet;
 }
 
 

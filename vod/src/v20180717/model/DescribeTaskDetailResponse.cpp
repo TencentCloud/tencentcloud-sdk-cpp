@@ -71,7 +71,9 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_cloneVoiceAsyncTaskHasBeenSet(false),
     m_textToSpeechAsyncTaskHasBeenSet(false),
     m_videoDubbingAsyncTaskHasBeenSet(false),
-    m_videoDepthEstimationTaskHasBeenSet(false)
+    m_videoDepthEstimationTaskHasBeenSet(false),
+    m_dNATaskHasBeenSet(false),
+    m_searchMediaBySemanticsAsyncHasBeenSet(false)
 {
 }
 
@@ -890,6 +892,40 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_videoDepthEstimationTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DNATask") && !rsp["DNATask"].IsNull())
+    {
+        if (!rsp["DNATask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DNATask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dNATask.Deserialize(rsp["DNATask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dNATaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SearchMediaBySemanticsAsync") && !rsp["SearchMediaBySemanticsAsync"].IsNull())
+    {
+        if (!rsp["SearchMediaBySemanticsAsync"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchMediaBySemanticsAsync` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_searchMediaBySemanticsAsync.Deserialize(rsp["SearchMediaBySemanticsAsync"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_searchMediaBySemanticsAsyncHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1325,6 +1361,24 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoDepthEstimationTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dNATaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNATask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dNATask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_searchMediaBySemanticsAsyncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchMediaBySemanticsAsync";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_searchMediaBySemanticsAsync.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1817,6 +1871,26 @@ VideoDepthEstimationTask DescribeTaskDetailResponse::GetVideoDepthEstimationTask
 bool DescribeTaskDetailResponse::VideoDepthEstimationTaskHasBeenSet() const
 {
     return m_videoDepthEstimationTaskHasBeenSet;
+}
+
+DNATask DescribeTaskDetailResponse::GetDNATask() const
+{
+    return m_dNATask;
+}
+
+bool DescribeTaskDetailResponse::DNATaskHasBeenSet() const
+{
+    return m_dNATaskHasBeenSet;
+}
+
+SearchMediaBySemanticsAsync DescribeTaskDetailResponse::GetSearchMediaBySemanticsAsync() const
+{
+    return m_searchMediaBySemanticsAsync;
+}
+
+bool DescribeTaskDetailResponse::SearchMediaBySemanticsAsyncHasBeenSet() const
+{
+    return m_searchMediaBySemanticsAsyncHasBeenSet;
 }
 
 

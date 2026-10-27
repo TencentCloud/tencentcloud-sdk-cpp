@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/CertDetail.h>
 
 
 namespace TencentCloud
@@ -44,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取yes-开启，no-关闭
-                     * @return IsOpenSSL yes-开启，no-关闭
+                     * 获取<p>yes-开启，no-关闭</p>
+                     * @return IsOpenSSL <p>yes-开启，no-关闭</p>
                      * 
                      */
                     std::string GetIsOpenSSL() const;
@@ -58,8 +59,8 @@ namespace TencentCloud
                     bool IsOpenSSLHasBeenSet() const;
 
                     /**
-                     * 获取证书下载地址
-                     * @return DownloadUrl 证书下载地址
+                     * 获取<p>证书下载地址</p>
+                     * @return DownloadUrl <p>证书下载地址</p>
                      * 
                      */
                     std::string GetDownloadUrl() const;
@@ -71,19 +72,59 @@ namespace TencentCloud
                      */
                     bool DownloadUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>证书类型</p><p>枚举值：</p><ul><li>platform： 云端证书</li><li>custom： 自定义证书</li></ul>
+                     * @return CertType <p>证书类型</p><p>枚举值：</p><ul><li>platform： 云端证书</li><li>custom： 自定义证书</li></ul>
+                     * 
+                     */
+                    std::string GetCertType() const;
+
+                    /**
+                     * 判断参数 CertType 是否已赋值
+                     * @return CertType 是否已赋值
+                     * 
+                     */
+                    bool CertTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>自定义证书详情，仅 CertType=custom 时有值。</p>
+                     * @return CertDetail <p>自定义证书详情，仅 CertType=custom 时有值。</p>
+                     * 
+                     */
+                    CertDetail GetCertDetail() const;
+
+                    /**
+                     * 判断参数 CertDetail 是否已赋值
+                     * @return CertDetail 是否已赋值
+                     * 
+                     */
+                    bool CertDetailHasBeenSet() const;
+
                 private:
 
                     /**
-                     * yes-开启，no-关闭
+                     * <p>yes-开启，no-关闭</p>
                      */
                     std::string m_isOpenSSL;
                     bool m_isOpenSSLHasBeenSet;
 
                     /**
-                     * 证书下载地址
+                     * <p>证书下载地址</p>
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
+
+                    /**
+                     * <p>证书类型</p><p>枚举值：</p><ul><li>platform： 云端证书</li><li>custom： 自定义证书</li></ul>
+                     */
+                    std::string m_certType;
+                    bool m_certTypeHasBeenSet;
+
+                    /**
+                     * <p>自定义证书详情，仅 CertType=custom 时有值。</p>
+                     */
+                    CertDetail m_certDetail;
+                    bool m_certDetailHasBeenSet;
 
                 };
             }

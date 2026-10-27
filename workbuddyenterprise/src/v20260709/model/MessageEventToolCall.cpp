@@ -28,7 +28,13 @@ MessageEventToolCall::MessageEventToolCall() :
     m_outputHasBeenSet(false),
     m_endedAtHasBeenSet(false),
     m_durationMsHasBeenSet(false),
-    m_startedAtHasBeenSet(false)
+    m_startedAtHasBeenSet(false),
+    m_expertIdHasBeenSet(false),
+    m_expertNameHasBeenSet(false),
+    m_expertVersionHasBeenSet(false),
+    m_subAgentIdHasBeenSet(false),
+    m_subAgentNameHasBeenSet(false),
+    m_parentToolCallIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +123,66 @@ CoreInternalOutcome MessageEventToolCall::Deserialize(const rapidjson::Value &va
         m_startedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("ExpertId") && !value["ExpertId"].IsNull())
+    {
+        if (!value["ExpertId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageEventToolCall.ExpertId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expertId = string(value["ExpertId"].GetString());
+        m_expertIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpertName") && !value["ExpertName"].IsNull())
+    {
+        if (!value["ExpertName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageEventToolCall.ExpertName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expertName = string(value["ExpertName"].GetString());
+        m_expertNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpertVersion") && !value["ExpertVersion"].IsNull())
+    {
+        if (!value["ExpertVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageEventToolCall.ExpertVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expertVersion = string(value["ExpertVersion"].GetString());
+        m_expertVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAgentId") && !value["SubAgentId"].IsNull())
+    {
+        if (!value["SubAgentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageEventToolCall.SubAgentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAgentId = string(value["SubAgentId"].GetString());
+        m_subAgentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAgentName") && !value["SubAgentName"].IsNull())
+    {
+        if (!value["SubAgentName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageEventToolCall.SubAgentName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAgentName = string(value["SubAgentName"].GetString());
+        m_subAgentNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentToolCallId") && !value["ParentToolCallId"].IsNull())
+    {
+        if (!value["ParentToolCallId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageEventToolCall.ParentToolCallId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentToolCallId = string(value["ParentToolCallId"].GetString());
+        m_parentToolCallIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +252,54 @@ void MessageEventToolCall::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "StartedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_startedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expertIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpertId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expertId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expertNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpertName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expertName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expertVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpertVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expertVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAgentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAgentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAgentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAgentNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAgentName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAgentName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentToolCallIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentToolCallId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentToolCallId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +431,101 @@ void MessageEventToolCall::SetStartedAt(const string& _startedAt)
 bool MessageEventToolCall::StartedAtHasBeenSet() const
 {
     return m_startedAtHasBeenSet;
+}
+
+string MessageEventToolCall::GetExpertId() const
+{
+    return m_expertId;
+}
+
+void MessageEventToolCall::SetExpertId(const string& _expertId)
+{
+    m_expertId = _expertId;
+    m_expertIdHasBeenSet = true;
+}
+
+bool MessageEventToolCall::ExpertIdHasBeenSet() const
+{
+    return m_expertIdHasBeenSet;
+}
+
+string MessageEventToolCall::GetExpertName() const
+{
+    return m_expertName;
+}
+
+void MessageEventToolCall::SetExpertName(const string& _expertName)
+{
+    m_expertName = _expertName;
+    m_expertNameHasBeenSet = true;
+}
+
+bool MessageEventToolCall::ExpertNameHasBeenSet() const
+{
+    return m_expertNameHasBeenSet;
+}
+
+string MessageEventToolCall::GetExpertVersion() const
+{
+    return m_expertVersion;
+}
+
+void MessageEventToolCall::SetExpertVersion(const string& _expertVersion)
+{
+    m_expertVersion = _expertVersion;
+    m_expertVersionHasBeenSet = true;
+}
+
+bool MessageEventToolCall::ExpertVersionHasBeenSet() const
+{
+    return m_expertVersionHasBeenSet;
+}
+
+string MessageEventToolCall::GetSubAgentId() const
+{
+    return m_subAgentId;
+}
+
+void MessageEventToolCall::SetSubAgentId(const string& _subAgentId)
+{
+    m_subAgentId = _subAgentId;
+    m_subAgentIdHasBeenSet = true;
+}
+
+bool MessageEventToolCall::SubAgentIdHasBeenSet() const
+{
+    return m_subAgentIdHasBeenSet;
+}
+
+string MessageEventToolCall::GetSubAgentName() const
+{
+    return m_subAgentName;
+}
+
+void MessageEventToolCall::SetSubAgentName(const string& _subAgentName)
+{
+    m_subAgentName = _subAgentName;
+    m_subAgentNameHasBeenSet = true;
+}
+
+bool MessageEventToolCall::SubAgentNameHasBeenSet() const
+{
+    return m_subAgentNameHasBeenSet;
+}
+
+string MessageEventToolCall::GetParentToolCallId() const
+{
+    return m_parentToolCallId;
+}
+
+void MessageEventToolCall::SetParentToolCallId(const string& _parentToolCallId)
+{
+    m_parentToolCallId = _parentToolCallId;
+    m_parentToolCallIdHasBeenSet = true;
+}
+
+bool MessageEventToolCall::ParentToolCallIdHasBeenSet() const
+{
+    return m_parentToolCallIdHasBeenSet;
 }
 

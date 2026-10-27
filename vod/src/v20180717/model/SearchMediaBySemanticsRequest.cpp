@@ -25,6 +25,8 @@ using namespace std;
 SearchMediaBySemanticsRequest::SearchMediaBySemanticsRequest() :
     m_subAppIdHasBeenSet(false),
     m_textHasBeenSet(false),
+    m_fileIdHasBeenSet(false),
+    m_urlHasBeenSet(false),
     m_knowledgeBaseIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_categoriesHasBeenSet(false),
@@ -55,6 +57,22 @@ string SearchMediaBySemanticsRequest::ToJsonString() const
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
     if (m_knowledgeBaseIdHasBeenSet)
@@ -163,6 +181,38 @@ void SearchMediaBySemanticsRequest::SetText(const string& _text)
 bool SearchMediaBySemanticsRequest::TextHasBeenSet() const
 {
     return m_textHasBeenSet;
+}
+
+string SearchMediaBySemanticsRequest::GetFileId() const
+{
+    return m_fileId;
+}
+
+void SearchMediaBySemanticsRequest::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool SearchMediaBySemanticsRequest::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
+}
+
+string SearchMediaBySemanticsRequest::GetUrl() const
+{
+    return m_url;
+}
+
+void SearchMediaBySemanticsRequest::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool SearchMediaBySemanticsRequest::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 
 string SearchMediaBySemanticsRequest::GetKnowledgeBaseId() const

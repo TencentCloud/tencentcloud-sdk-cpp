@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取
+                     * @return SubAgentId 
+                     * 
+                     */
+                    std::string GetSubAgentId() const;
+
+                    /**
+                     * 设置
+                     * @param _subAgentId 
+                     * 
+                     */
+                    void SetSubAgentId(const std::string& _subAgentId);
+
+                    /**
+                     * 判断参数 SubAgentId 是否已赋值
+                     * @return SubAgentId 是否已赋值
+                     * 
+                     */
+                    bool SubAgentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 
+                     */
+                    std::string m_subAgentId;
+                    bool m_subAgentIdHasBeenSet;
 
                 };
             }

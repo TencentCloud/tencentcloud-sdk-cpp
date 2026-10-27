@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ga2/v20250115/model/AcceleratorAreas.h>
+#include <tencentcloud/ga2/v20250115/model/CreateAcceleratorAreasInfo.h>
 
 
 namespace TencentCloud
@@ -69,14 +69,14 @@ namespace TencentCloud
                      * @return AcceleratorAreas <p>加速地域信息。一次最多创建10组加速地域。</p>
                      * 
                      */
-                    std::vector<AcceleratorAreas> GetAcceleratorAreas() const;
+                    std::vector<CreateAcceleratorAreasInfo> GetAcceleratorAreas() const;
 
                     /**
                      * 设置<p>加速地域信息。一次最多创建10组加速地域。</p>
                      * @param _acceleratorAreas <p>加速地域信息。一次最多创建10组加速地域。</p>
                      * 
                      */
-                    void SetAcceleratorAreas(const std::vector<AcceleratorAreas>& _acceleratorAreas);
+                    void SetAcceleratorAreas(const std::vector<CreateAcceleratorAreasInfo>& _acceleratorAreas);
 
                     /**
                      * 判断参数 AcceleratorAreas 是否已赋值
@@ -96,7 +96,7 @@ namespace TencentCloud
                     /**
                      * <p>加速地域信息。一次最多创建10组加速地域。</p>
                      */
-                    std::vector<AcceleratorAreas> m_acceleratorAreas;
+                    std::vector<CreateAcceleratorAreasInfo> m_acceleratorAreas;
                     bool m_acceleratorAreasHasBeenSet;
 
                 };

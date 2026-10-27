@@ -95,6 +95,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ModifyDefaultStorageRegionRequest.h
   include/tencentcloud/vod/v20180717/model/ModifyEventConfigResponse.h
   include/tencentcloud/vod/v20180717/model/DeleteLLMComprehendTemplateRequest.h
+  include/tencentcloud/vod/v20180717/model/DNATask.h
   include/tencentcloud/vod/v20180717/model/AigcHunyuan3DOutputConfig.h
   include/tencentcloud/vod/v20180717/model/QualityInspectTaskOutput.h
   include/tencentcloud/vod/v20180717/model/QualityEnhanceTaskInput.h
@@ -775,6 +776,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/TrtcRecordInfo.h
   include/tencentcloud/vod/v20180717/model/AiTryOnConfig.h
   include/tencentcloud/vod/v20180717/model/DescribeReviewDetailsRequest.h
+  include/tencentcloud/vod/v20180717/model/SearchMediaBySemanticsAsync.h
   include/tencentcloud/vod/v20180717/model/ModifySubAppIdInfoResponse.h
   include/tencentcloud/vod/v20180717/model/AiReviewProhibitedAsrTaskInput.h
   include/tencentcloud/vod/v20180717/model/DeleteCLSTopicRequest.h
@@ -919,6 +921,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/InspectMediaQualityRequest.h
   include/tencentcloud/vod/v20180717/model/MPSSmartEraseTemplate.h
   include/tencentcloud/vod/v20180717/model/TransitionOperation.h
+  include/tencentcloud/vod/v20180717/model/DNATaskOutput.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskHeadTailResultInput.h
   include/tencentcloud/vod/v20180717/model/WatermarkConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskFrameTagInput.h
@@ -977,6 +980,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/CreateCLSLogsetRequest.h
   include/tencentcloud/vod/v20180717/model/ExtractTraceWatermarkRequest.h
   include/tencentcloud/vod/v20180717/model/FaceRecognitionTask.h
+  include/tencentcloud/vod/v20180717/model/LLMComprehendDNA.h
   include/tencentcloud/vod/v20180717/model/DeleteVoiceRequest.h
   include/tencentcloud/vod/v20180717/model/DeleteAigcApiTokenResponse.h
   include/tencentcloud/vod/v20180717/model/ReviewAudioVideoTask.h
@@ -1279,6 +1283,7 @@ set(vod_src
   src/v20180717/model/ModifyDefaultStorageRegionRequest.cpp
   src/v20180717/model/ModifyEventConfigResponse.cpp
   src/v20180717/model/DeleteLLMComprehendTemplateRequest.cpp
+  src/v20180717/model/DNATask.cpp
   src/v20180717/model/AigcHunyuan3DOutputConfig.cpp
   src/v20180717/model/QualityInspectTaskOutput.cpp
   src/v20180717/model/QualityEnhanceTaskInput.cpp
@@ -1959,6 +1964,7 @@ set(vod_src
   src/v20180717/model/TrtcRecordInfo.cpp
   src/v20180717/model/AiTryOnConfig.cpp
   src/v20180717/model/DescribeReviewDetailsRequest.cpp
+  src/v20180717/model/SearchMediaBySemanticsAsync.cpp
   src/v20180717/model/ModifySubAppIdInfoResponse.cpp
   src/v20180717/model/AiReviewProhibitedAsrTaskInput.cpp
   src/v20180717/model/DeleteCLSTopicRequest.cpp
@@ -2103,6 +2109,7 @@ set(vod_src
   src/v20180717/model/InspectMediaQualityRequest.cpp
   src/v20180717/model/MPSSmartEraseTemplate.cpp
   src/v20180717/model/TransitionOperation.cpp
+  src/v20180717/model/DNATaskOutput.cpp
   src/v20180717/model/AiRecognitionTaskHeadTailResultInput.cpp
   src/v20180717/model/WatermarkConfigureInfo.cpp
   src/v20180717/model/AiAnalysisTaskFrameTagInput.cpp
@@ -2161,6 +2168,7 @@ set(vod_src
   src/v20180717/model/CreateCLSLogsetRequest.cpp
   src/v20180717/model/ExtractTraceWatermarkRequest.cpp
   src/v20180717/model/FaceRecognitionTask.cpp
+  src/v20180717/model/LLMComprehendDNA.cpp
   src/v20180717/model/DeleteVoiceRequest.cpp
   src/v20180717/model/DeleteAigcApiTokenResponse.cpp
   src/v20180717/model/ReviewAudioVideoTask.cpp

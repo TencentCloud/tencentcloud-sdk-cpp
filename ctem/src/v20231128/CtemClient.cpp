@@ -140,6 +140,56 @@ CtemClient::CreateAssetOutcomeCallable CtemClient::CreateAssetCallable(const Cre
     return prom->get_future();
 }
 
+CtemClient::CreateCheckOutcome CtemClient::CreateCheck(const CreateCheckRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCheck");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCheckResponse rsp = CreateCheckResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCheckOutcome(rsp);
+        else
+            return CreateCheckOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCheckOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateCheckAsync(const CreateCheckRequest& request, const CreateCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCheckRequest&;
+    using Resp = CreateCheckResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCheck", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateCheckOutcomeCallable CtemClient::CreateCheckCallable(const CreateCheckRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCheckOutcome>>();
+    CreateCheckAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateCheckRequest&,
+        CreateCheckOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CtemClient::CreateCustomerOutcome CtemClient::CreateCustomer(const CreateCustomerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustomer");
@@ -482,6 +532,56 @@ CtemClient::CreatePortOutcomeCallable CtemClient::CreatePortCallable(const Creat
         const CtemClient*,
         const CreatePortRequest&,
         CreatePortOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::CreateScanOutcome CtemClient::CreateScan(const CreateScanRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateScan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScanResponse rsp = CreateScanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScanOutcome(rsp);
+        else
+            return CreateScanOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScanOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::CreateScanAsync(const CreateScanRequest& request, const CreateScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateScanRequest&;
+    using Resp = CreateScanResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateScan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::CreateScanOutcomeCallable CtemClient::CreateScanCallable(const CreateScanRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateScanOutcome>>();
+    CreateScanAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const CreateScanRequest&,
+        CreateScanOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1490,6 +1590,56 @@ CtemClient::DescribeAssetsOutcomeCallable CtemClient::DescribeAssetsCallable(con
     return prom->get_future();
 }
 
+CtemClient::DescribeBannerAssetDataOutcome CtemClient::DescribeBannerAssetData(const DescribeBannerAssetDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBannerAssetData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBannerAssetDataResponse rsp = DescribeBannerAssetDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBannerAssetDataOutcome(rsp);
+        else
+            return DescribeBannerAssetDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBannerAssetDataOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeBannerAssetDataAsync(const DescribeBannerAssetDataRequest& request, const DescribeBannerAssetDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBannerAssetDataRequest&;
+    using Resp = DescribeBannerAssetDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBannerAssetData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DescribeBannerAssetDataOutcomeCallable CtemClient::DescribeBannerAssetDataCallable(const DescribeBannerAssetDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBannerAssetDataOutcome>>();
+    DescribeBannerAssetDataAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DescribeBannerAssetDataRequest&,
+        DescribeBannerAssetDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CtemClient::DescribeConfigsOutcome CtemClient::DescribeConfigs(const DescribeConfigsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeConfigs");
@@ -2040,6 +2190,56 @@ CtemClient::DescribeHttpsOutcomeCallable CtemClient::DescribeHttpsCallable(const
     return prom->get_future();
 }
 
+CtemClient::DescribeIntelligencesOutcome CtemClient::DescribeIntelligences(const DescribeIntelligencesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIntelligences");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIntelligencesResponse rsp = DescribeIntelligencesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIntelligencesOutcome(rsp);
+        else
+            return DescribeIntelligencesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIntelligencesOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribeIntelligencesAsync(const DescribeIntelligencesRequest& request, const DescribeIntelligencesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeIntelligencesRequest&;
+    using Resp = DescribeIntelligencesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeIntelligences", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DescribeIntelligencesOutcomeCallable CtemClient::DescribeIntelligencesCallable(const DescribeIntelligencesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeIntelligencesOutcome>>();
+    DescribeIntelligencesAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DescribeIntelligencesRequest&,
+        DescribeIntelligencesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CtemClient::DescribeJobRecordDetailsOutcome CtemClient::DescribeJobRecordDetails(const DescribeJobRecordDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeJobRecordDetails");
@@ -2382,6 +2582,56 @@ CtemClient::DescribeNetDisksOutcomeCallable CtemClient::DescribeNetDisksCallable
         const CtemClient*,
         const DescribeNetDisksRequest&,
         DescribeNetDisksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CtemClient::DescribePocAssetDataOutcome CtemClient::DescribePocAssetData(const DescribePocAssetDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePocAssetData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePocAssetDataResponse rsp = DescribePocAssetDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePocAssetDataOutcome(rsp);
+        else
+            return DescribePocAssetDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePocAssetDataOutcome(outcome.GetError());
+    }
+}
+
+void CtemClient::DescribePocAssetDataAsync(const DescribePocAssetDataRequest& request, const DescribePocAssetDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePocAssetDataRequest&;
+    using Resp = DescribePocAssetDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePocAssetData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CtemClient::DescribePocAssetDataOutcomeCallable CtemClient::DescribePocAssetDataCallable(const DescribePocAssetDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePocAssetDataOutcome>>();
+    DescribePocAssetDataAsync(
+    request,
+    [prom](
+        const CtemClient*,
+        const DescribePocAssetDataRequest&,
+        DescribePocAssetDataOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

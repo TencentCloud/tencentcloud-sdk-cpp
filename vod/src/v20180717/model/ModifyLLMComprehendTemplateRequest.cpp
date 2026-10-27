@@ -30,7 +30,8 @@ ModifyLLMComprehendTemplateRequest::ModifyLLMComprehendTemplateRequest() :
     m_modelHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_asrHasBeenSet(false),
-    m_faceRecognitionHasBeenSet(false)
+    m_faceRecognitionHasBeenSet(false),
+    m_dNAHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,15 @@ string ModifyLLMComprehendTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_faceRecognition.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dNAHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNA";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dNA.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -242,6 +252,22 @@ void ModifyLLMComprehendTemplateRequest::SetFaceRecognition(const LLMComprehendF
 bool ModifyLLMComprehendTemplateRequest::FaceRecognitionHasBeenSet() const
 {
     return m_faceRecognitionHasBeenSet;
+}
+
+LLMComprehendDNA ModifyLLMComprehendTemplateRequest::GetDNA() const
+{
+    return m_dNA;
+}
+
+void ModifyLLMComprehendTemplateRequest::SetDNA(const LLMComprehendDNA& _dNA)
+{
+    m_dNA = _dNA;
+    m_dNAHasBeenSet = true;
+}
+
+bool ModifyLLMComprehendTemplateRequest::DNAHasBeenSet() const
+{
+    return m_dNAHasBeenSet;
 }
 
 

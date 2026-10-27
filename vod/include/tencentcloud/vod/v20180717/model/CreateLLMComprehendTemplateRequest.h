@@ -24,6 +24,7 @@
 #include <tencentcloud/vod/v20180717/model/LLMComprehendSummary.h>
 #include <tencentcloud/vod/v20180717/model/LLMComprehendAsr.h>
 #include <tencentcloud/vod/v20180717/model/LLMComprehendFaceRecognition.h>
+#include <tencentcloud/vod/v20180717/model/LLMComprehendDNA.h>
 
 
 namespace TencentCloud
@@ -192,6 +193,27 @@ namespace TencentCloud
                      */
                     bool FaceRecognitionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>DNA解析配置</p>
+                     * @return DNA <p>DNA解析配置</p>
+                     * 
+                     */
+                    LLMComprehendDNA GetDNA() const;
+
+                    /**
+                     * 设置<p>DNA解析配置</p>
+                     * @param _dNA <p>DNA解析配置</p>
+                     * 
+                     */
+                    void SetDNA(const LLMComprehendDNA& _dNA);
+
+                    /**
+                     * 判断参数 DNA 是否已赋值
+                     * @return DNA 是否已赋值
+                     * 
+                     */
+                    bool DNAHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +257,12 @@ namespace TencentCloud
                      */
                     LLMComprehendFaceRecognition m_faceRecognition;
                     bool m_faceRecognitionHasBeenSet;
+
+                    /**
+                     * <p>DNA解析配置</p>
+                     */
+                    LLMComprehendDNA m_dNA;
+                    bool m_dNAHasBeenSet;
 
                 };
             }

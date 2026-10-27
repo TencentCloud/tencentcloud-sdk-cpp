@@ -25,7 +25,9 @@ using namespace std;
 CreateKnowledgeBaseRequest::CreateKnowledgeBaseRequest() :
     m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_indexTypeHasBeenSet(false),
+    m_mediaTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string CreateKnowledgeBaseRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_indexType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mediaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mediaType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void CreateKnowledgeBaseRequest::SetDescription(const string& _description)
 bool CreateKnowledgeBaseRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CreateKnowledgeBaseRequest::GetIndexType() const
+{
+    return m_indexType;
+}
+
+void CreateKnowledgeBaseRequest::SetIndexType(const string& _indexType)
+{
+    m_indexType = _indexType;
+    m_indexTypeHasBeenSet = true;
+}
+
+bool CreateKnowledgeBaseRequest::IndexTypeHasBeenSet() const
+{
+    return m_indexTypeHasBeenSet;
+}
+
+string CreateKnowledgeBaseRequest::GetMediaType() const
+{
+    return m_mediaType;
+}
+
+void CreateKnowledgeBaseRequest::SetMediaType(const string& _mediaType)
+{
+    m_mediaType = _mediaType;
+    m_mediaTypeHasBeenSet = true;
+}
+
+bool CreateKnowledgeBaseRequest::MediaTypeHasBeenSet() const
+{
+    return m_mediaTypeHasBeenSet;
 }
 
 

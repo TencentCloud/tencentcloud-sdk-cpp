@@ -30,6 +30,7 @@
 #include <tencentcloud/tcb/v20180608/model/CloudAppTrigger.h>
 #include <tencentcloud/tcb/v20180608/model/CloudAppLinkService.h>
 #include <tencentcloud/tcb/v20180608/model/CloudAppRoute.h>
+#include <tencentcloud/tcb/v20180608/model/BuildRunner.h>
 
 
 namespace TencentCloud
@@ -94,15 +95,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>部署类型</p>
-                     * @return DeployType <p>部署类型</p>
+                     * 获取<p>部署类型</p><p>枚举值：</p><ul><li>statis-hosting： 静态托管应用</li><li>custom： 自定义流水线</li></ul>
+                     * @return DeployType <p>部署类型</p><p>枚举值：</p><ul><li>statis-hosting： 静态托管应用</li><li>custom： 自定义流水线</li></ul>
                      * 
                      */
                     std::string GetDeployType() const;
 
                     /**
-                     * 设置<p>部署类型</p>
-                     * @param _deployType <p>部署类型</p>
+                     * 设置<p>部署类型</p><p>枚举值：</p><ul><li>statis-hosting： 静态托管应用</li><li>custom： 自定义流水线</li></ul>
+                     * @param _deployType <p>部署类型</p><p>枚举值：</p><ul><li>statis-hosting： 静态托管应用</li><li>custom： 自定义流水线</li></ul>
                      * 
                      */
                     void SetDeployType(const std::string& _deployType);
@@ -450,6 +451,27 @@ namespace TencentCloud
                      */
                     bool PostDeployCommandHasBeenSet() const;
 
+                    /**
+                     * 获取<p>流水线运行配置</p>
+                     * @return Runner <p>流水线运行配置</p>
+                     * 
+                     */
+                    BuildRunner GetRunner() const;
+
+                    /**
+                     * 设置<p>流水线运行配置</p>
+                     * @param _runner <p>流水线运行配置</p>
+                     * 
+                     */
+                    void SetRunner(const BuildRunner& _runner);
+
+                    /**
+                     * 判断参数 Runner 是否已赋值
+                     * @return Runner 是否已赋值
+                     * 
+                     */
+                    bool RunnerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -465,7 +487,7 @@ namespace TencentCloud
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * <p>部署类型</p>
+                     * <p>部署类型</p><p>枚举值：</p><ul><li>statis-hosting： 静态托管应用</li><li>custom： 自定义流水线</li></ul>
                      */
                     std::string m_deployType;
                     bool m_deployTypeHasBeenSet;
@@ -565,6 +587,12 @@ namespace TencentCloud
                      */
                     std::string m_postDeployCommand;
                     bool m_postDeployCommandHasBeenSet;
+
+                    /**
+                     * <p>流水线运行配置</p>
+                     */
+                    BuildRunner m_runner;
+                    bool m_runnerHasBeenSet;
 
                 };
             }

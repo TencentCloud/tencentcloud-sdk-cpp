@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool CompressHasBeenSet() const;
 
+                    /**
+                     * 获取<p>CKAFKA路由信息</p>
+                     * @return CkafkaRoute <p>CKAFKA路由信息</p>
+                     * 
+                     */
+                    std::string GetCkafkaRoute() const;
+
+                    /**
+                     * 设置<p>CKAFKA路由信息</p>
+                     * @param _ckafkaRoute <p>CKAFKA路由信息</p>
+                     * 
+                     */
+                    void SetCkafkaRoute(const std::string& _ckafkaRoute);
+
+                    /**
+                     * 判断参数 CkafkaRoute 是否已赋值
+                     * @return CkafkaRoute 是否已赋值
+                     * 
+                     */
+                    bool CkafkaRouteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     uint64_t m_compress;
                     bool m_compressHasBeenSet;
+
+                    /**
+                     * <p>CKAFKA路由信息</p>
+                     */
+                    std::string m_ckafkaRoute;
+                    bool m_ckafkaRouteHasBeenSet;
 
                 };
             }

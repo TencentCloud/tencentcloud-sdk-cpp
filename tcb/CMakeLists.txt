@@ -176,6 +176,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteUsersRequest.h
   include/tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h
+  include/tencentcloud/tcb/v20180608/model/BuildRunner.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceCachePurgeTask.h
   include/tencentcloud/tcb/v20180608/model/PreviewPGUserMigrationsResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateMySQLRequest.h
@@ -579,6 +580,7 @@ set(tcb_src
   src/v20180608/model/DescribeCreateMySQLResultResponse.cpp
   src/v20180608/model/DeleteUsersRequest.cpp
   src/v20180608/model/SearchClsLogResponse.cpp
+  src/v20180608/model/BuildRunner.cpp
   src/v20180608/model/HTTPServiceCachePurgeTask.cpp
   src/v20180608/model/PreviewPGUserMigrationsResponse.cpp
   src/v20180608/model/CreateMySQLRequest.cpp

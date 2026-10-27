@@ -27,7 +27,8 @@ DescribeMessageEventListRequest::DescribeMessageEventListRequest() :
     m_agentIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_subAgentIdHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string DescribeMessageEventListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_subAgentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAgentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subAgentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +180,22 @@ void DescribeMessageEventListRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeMessageEventListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeMessageEventListRequest::GetSubAgentId() const
+{
+    return m_subAgentId;
+}
+
+void DescribeMessageEventListRequest::SetSubAgentId(const string& _subAgentId)
+{
+    m_subAgentId = _subAgentId;
+    m_subAgentIdHasBeenSet = true;
+}
+
+bool DescribeMessageEventListRequest::SubAgentIdHasBeenSet() const
+{
+    return m_subAgentIdHasBeenSet;
 }
 
 

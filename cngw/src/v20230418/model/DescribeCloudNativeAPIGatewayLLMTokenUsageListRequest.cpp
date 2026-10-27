@@ -26,6 +26,7 @@ DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest::DescribeCloudNativeAPIGat
     m_gatewayIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_dimensionHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false)
@@ -61,6 +62,14 @@ string DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest::ToJsonString() con
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_dimensionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Dimension";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dimension.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -148,6 +157,22 @@ void DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest::SetEndTime(const int
 bool DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest::GetDimension() const
+{
+    return m_dimension;
+}
+
+void DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest::SetDimension(const string& _dimension)
+{
+    m_dimension = _dimension;
+    m_dimensionHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest::DimensionHasBeenSet() const
+{
+    return m_dimensionHasBeenSet;
 }
 
 vector<Filter> DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest::GetFilters() const

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>转绘视频风格，如动漫、赛博朋克、水墨等</p>
-                     * @return Style <p>转绘视频风格，如动漫、赛博朋克、水墨等</p>
+                     * 获取<p>转绘视频风格，如动漫、赛博朋克、水墨等</p><p>默认值：动漫风</p>
+                     * @return Style <p>转绘视频风格，如动漫、赛博朋克、水墨等</p><p>默认值：动漫风</p>
                      * 
                      */
                     std::string GetStyle() const;
 
                     /**
-                     * 设置<p>转绘视频风格，如动漫、赛博朋克、水墨等</p>
-                     * @param _style <p>转绘视频风格，如动漫、赛博朋克、水墨等</p>
+                     * 设置<p>转绘视频风格，如动漫、赛博朋克、水墨等</p><p>默认值：动漫风</p>
+                     * @param _style <p>转绘视频风格，如动漫、赛博朋克、水墨等</p><p>默认值：动漫风</p>
                      * 
                      */
                     void SetStyle(const std::string& _style);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>转绘视频风格，如动漫、赛博朋克、水墨等</p>
+                     * <p>转绘视频风格，如动漫、赛博朋克、水墨等</p><p>默认值：动漫风</p>
                      */
                     std::string m_style;
                     bool m_styleHasBeenSet;

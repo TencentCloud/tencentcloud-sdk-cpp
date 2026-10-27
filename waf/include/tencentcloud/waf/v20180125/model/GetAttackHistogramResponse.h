@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取统计详情
-                     * @return Data 统计详情
+                     * 获取<p>统计详情</p>
+                     * @return Data <p>统计详情</p>
                      * 
                      */
                     std::vector<LogHistogramInfo> GetData() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取时间段大小
-                     * @return Period 时间段大小
+                     * 获取<p>时间段大小</p><p>单位：秒</p>
+                     * @return Period <p>时间段大小</p><p>单位：秒</p>
                      * 
                      */
                     uint64_t GetPeriod() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取统计的条目数
-                     * @return TotalCount 统计的条目数
+                     * 获取<p>统计的条目数</p>
+                     * @return TotalCount <p>统计的条目数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 统计详情
+                     * <p>统计详情</p>
                      */
                     std::vector<LogHistogramInfo> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 时间段大小
+                     * <p>时间段大小</p><p>单位：秒</p>
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 统计的条目数
+                     * <p>统计的条目数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

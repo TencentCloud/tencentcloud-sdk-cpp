@@ -24,6 +24,8 @@ KnowledgeBaseInfo::KnowledgeBaseInfo() :
     m_knowledgeBaseIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_indexTypeHasBeenSet(false),
+    m_mediaTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false)
 {
@@ -62,6 +64,26 @@ CoreInternalOutcome KnowledgeBaseInfo::Deserialize(const rapidjson::Value &value
         }
         m_description = string(value["Description"].GetString());
         m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IndexType") && !value["IndexType"].IsNull())
+    {
+        if (!value["IndexType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBaseInfo.IndexType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexType = string(value["IndexType"].GetString());
+        m_indexTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MediaType") && !value["MediaType"].IsNull())
+    {
+        if (!value["MediaType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeBaseInfo.MediaType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mediaType = string(value["MediaType"].GetString());
+        m_mediaTypeHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -113,6 +135,22 @@ void KnowledgeBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mediaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mediaType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -180,6 +218,38 @@ void KnowledgeBaseInfo::SetDescription(const string& _description)
 bool KnowledgeBaseInfo::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string KnowledgeBaseInfo::GetIndexType() const
+{
+    return m_indexType;
+}
+
+void KnowledgeBaseInfo::SetIndexType(const string& _indexType)
+{
+    m_indexType = _indexType;
+    m_indexTypeHasBeenSet = true;
+}
+
+bool KnowledgeBaseInfo::IndexTypeHasBeenSet() const
+{
+    return m_indexTypeHasBeenSet;
+}
+
+string KnowledgeBaseInfo::GetMediaType() const
+{
+    return m_mediaType;
+}
+
+void KnowledgeBaseInfo::SetMediaType(const string& _mediaType)
+{
+    m_mediaType = _mediaType;
+    m_mediaTypeHasBeenSet = true;
+}
+
+bool KnowledgeBaseInfo::MediaTypeHasBeenSet() const
+{
+    return m_mediaTypeHasBeenSet;
 }
 
 string KnowledgeBaseInfo::GetStatus() const

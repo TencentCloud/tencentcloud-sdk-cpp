@@ -60,7 +60,7 @@ set(ga2_public_header_model
   include/tencentcloud/ga2/v20250115/model/EndpointConfigurations.h
   include/tencentcloud/ga2/v20250115/model/PortRanges.h
   include/tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorAclPolicyResponse.h
-  include/tencentcloud/ga2/v20250115/model/ModifyAccessLogStatusRequest.h
+  include/tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorAclRuleResponse.h
   include/tencentcloud/ga2/v20250115/model/DeleteListenerRequest.h
   include/tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorAclPolicyRequest.h
   include/tencentcloud/ga2/v20250115/model/DescribeForwardingRuleRequest.h
@@ -73,7 +73,6 @@ set(ga2_public_header_model
   include/tencentcloud/ga2/v20250115/model/CreateEndpointGroupRequest.h
   include/tencentcloud/ga2/v20250115/model/CreateEndpointGroupResponse.h
   include/tencentcloud/ga2/v20250115/model/DeleteGlobalAcceleratorResponse.h
-  include/tencentcloud/ga2/v20250115/model/CreateGlobalAcceleratorAclRuleResponse.h
   include/tencentcloud/ga2/v20250115/model/DescribeAccelerateRegionsResponse.h
   include/tencentcloud/ga2/v20250115/model/ForwardingRuleSet.h
   include/tencentcloud/ga2/v20250115/model/CreateForwardingRuleResponse.h
@@ -97,6 +96,7 @@ set(ga2_public_header_model
   include/tencentcloud/ga2/v20250115/model/DeleteForwardingPolicyRequest.h
   include/tencentcloud/ga2/v20250115/model/CreateListenerRequest.h
   include/tencentcloud/ga2/v20250115/model/DescribeTaskResultRequest.h
+  include/tencentcloud/ga2/v20250115/model/ModifyAccelerateAreasInfo.h
   include/tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorRequest.h
   include/tencentcloud/ga2/v20250115/model/Filter.h
   include/tencentcloud/ga2/v20250115/model/DescribeAccelerateRegionsRequest.h
@@ -108,6 +108,7 @@ set(ga2_public_header_model
   include/tencentcloud/ga2/v20250115/model/DeleteForwardingPolicyResponse.h
   include/tencentcloud/ga2/v20250115/model/ModifyEndpointGroupResponse.h
   include/tencentcloud/ga2/v20250115/model/ListenerSet.h
+  include/tencentcloud/ga2/v20250115/model/ModifyAccessLogStatusRequest.h
   include/tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorAclRulesResponse.h
   include/tencentcloud/ga2/v20250115/model/GlobalAcceleratorAccessLog.h
   include/tencentcloud/ga2/v20250115/model/ModifyAccessLogStatusResponse.h
@@ -116,6 +117,7 @@ set(ga2_public_header_model
   include/tencentcloud/ga2/v20250115/model/DescribeCrossBorderSettlementResponse.h
   include/tencentcloud/ga2/v20250115/model/DeleteAccelerateAreasRequest.h
   include/tencentcloud/ga2/v20250115/model/ModifyGlobalAcceleratorAccessLogResponse.h
+  include/tencentcloud/ga2/v20250115/model/CreateAcceleratorAreasInfo.h
   include/tencentcloud/ga2/v20250115/model/DeleteAccelerateAreasResponse.h
   include/tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorAclPoliciesRequest.h
   include/tencentcloud/ga2/v20250115/model/DescribeGlobalAcceleratorAclPoliciesResponse.h
@@ -175,7 +177,7 @@ set(ga2_src
   src/v20250115/model/EndpointConfigurations.cpp
   src/v20250115/model/PortRanges.cpp
   src/v20250115/model/ModifyGlobalAcceleratorAclPolicyResponse.cpp
-  src/v20250115/model/ModifyAccessLogStatusRequest.cpp
+  src/v20250115/model/CreateGlobalAcceleratorAclRuleResponse.cpp
   src/v20250115/model/DeleteListenerRequest.cpp
   src/v20250115/model/CreateGlobalAcceleratorAclPolicyRequest.cpp
   src/v20250115/model/DescribeForwardingRuleRequest.cpp
@@ -188,7 +190,6 @@ set(ga2_src
   src/v20250115/model/CreateEndpointGroupRequest.cpp
   src/v20250115/model/CreateEndpointGroupResponse.cpp
   src/v20250115/model/DeleteGlobalAcceleratorResponse.cpp
-  src/v20250115/model/CreateGlobalAcceleratorAclRuleResponse.cpp
   src/v20250115/model/DescribeAccelerateRegionsResponse.cpp
   src/v20250115/model/ForwardingRuleSet.cpp
   src/v20250115/model/CreateForwardingRuleResponse.cpp
@@ -212,6 +213,7 @@ set(ga2_src
   src/v20250115/model/DeleteForwardingPolicyRequest.cpp
   src/v20250115/model/CreateListenerRequest.cpp
   src/v20250115/model/DescribeTaskResultRequest.cpp
+  src/v20250115/model/ModifyAccelerateAreasInfo.cpp
   src/v20250115/model/ModifyGlobalAcceleratorRequest.cpp
   src/v20250115/model/Filter.cpp
   src/v20250115/model/DescribeAccelerateRegionsRequest.cpp
@@ -223,6 +225,7 @@ set(ga2_src
   src/v20250115/model/DeleteForwardingPolicyResponse.cpp
   src/v20250115/model/ModifyEndpointGroupResponse.cpp
   src/v20250115/model/ListenerSet.cpp
+  src/v20250115/model/ModifyAccessLogStatusRequest.cpp
   src/v20250115/model/DescribeGlobalAcceleratorAclRulesResponse.cpp
   src/v20250115/model/GlobalAcceleratorAccessLog.cpp
   src/v20250115/model/ModifyAccessLogStatusResponse.cpp
@@ -231,6 +234,7 @@ set(ga2_src
   src/v20250115/model/DescribeCrossBorderSettlementResponse.cpp
   src/v20250115/model/DeleteAccelerateAreasRequest.cpp
   src/v20250115/model/ModifyGlobalAcceleratorAccessLogResponse.cpp
+  src/v20250115/model/CreateAcceleratorAreasInfo.cpp
   src/v20250115/model/DeleteAccelerateAreasResponse.cpp
   src/v20250115/model/DescribeGlobalAcceleratorAclPoliciesRequest.cpp
   src/v20250115/model/DescribeGlobalAcceleratorAclPoliciesResponse.cpp

@@ -1,0 +1,134 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CVD_V20201104_MODEL_DESCRIBEINSTANCEFETCHMSGRESPONSE_H_
+#define TENCENTCLOUD_CVD_V20201104_MODEL_DESCRIBEINSTANCEFETCHMSGRESPONSE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Cvd
+    {
+        namespace V20201104
+        {
+            namespace Model
+            {
+                /**
+                * DescribeInstanceFetchMsg返回参数结构体
+                */
+                class DescribeInstanceFetchMsgResponse : public AbstractModel
+                {
+                public:
+                    DescribeInstanceFetchMsgResponse();
+                    ~DescribeInstanceFetchMsgResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取桌面登录ticket状态描述
+                     * @return FetchStatusTicket 桌面登录ticket状态描述
+                     * 
+                     */
+                    std::string GetFetchStatusTicket() const;
+
+                    /**
+                     * 判断参数 FetchStatusTicket 是否已赋值
+                     * @return FetchStatusTicket 是否已赋值
+                     * 
+                     */
+                    bool FetchStatusTicketHasBeenSet() const;
+
+                    /**
+                     * 获取桌面登录ticket描述
+                     * @return FetchTicket 桌面登录ticket描述
+                     * 
+                     */
+                    std::string GetFetchTicket() const;
+
+                    /**
+                     * 判断参数 FetchTicket 是否已赋值
+                     * @return FetchTicket 是否已赋值
+                     * 
+                     */
+                    bool FetchTicketHasBeenSet() const;
+
+                    /**
+                     * 获取桌面登录launch url
+                     * @return FetchUrl 桌面登录launch url
+                     * 
+                     */
+                    std::string GetFetchUrl() const;
+
+                    /**
+                     * 判断参数 FetchUrl 是否已赋值
+                     * @return FetchUrl 是否已赋值
+                     * 
+                     */
+                    bool FetchUrlHasBeenSet() const;
+
+                    /**
+                     * 获取桌面传输协议
+                     * @return ProtocolVersion 桌面传输协议
+                     * 
+                     */
+                    std::string GetProtocolVersion() const;
+
+                    /**
+                     * 判断参数 ProtocolVersion 是否已赋值
+                     * @return ProtocolVersion 是否已赋值
+                     * 
+                     */
+                    bool ProtocolVersionHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 桌面登录ticket状态描述
+                     */
+                    std::string m_fetchStatusTicket;
+                    bool m_fetchStatusTicketHasBeenSet;
+
+                    /**
+                     * 桌面登录ticket描述
+                     */
+                    std::string m_fetchTicket;
+                    bool m_fetchTicketHasBeenSet;
+
+                    /**
+                     * 桌面登录launch url
+                     */
+                    std::string m_fetchUrl;
+                    bool m_fetchUrlHasBeenSet;
+
+                    /**
+                     * 桌面传输协议
+                     */
+                    std::string m_protocolVersion;
+                    bool m_protocolVersionHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CVD_V20201104_MODEL_DESCRIBEINSTANCEFETCHMSGRESPONSE_H_

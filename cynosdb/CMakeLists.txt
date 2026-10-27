@@ -254,6 +254,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/StopCLSDeliveryResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateAuditLogFileResponse.h
   include/tencentcloud/cynosdb/v20190107/model/PauseServerlessResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/CertDetail.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ProxyZoneStockInfo.h
   include/tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesResponse.h
@@ -929,6 +930,7 @@ set(cynosdb_src
   src/v20190107/model/StopCLSDeliveryResponse.cpp
   src/v20190107/model/CreateAuditLogFileResponse.cpp
   src/v20190107/model/PauseServerlessResponse.cpp
+  src/v20190107/model/CertDetail.cpp
   src/v20190107/model/DescribeInstanceDetailResponse.cpp
   src/v20190107/model/ProxyZoneStockInfo.cpp
   src/v20190107/model/GrantAccountPrivilegesResponse.cpp

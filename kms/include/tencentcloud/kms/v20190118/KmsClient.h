@@ -39,6 +39,8 @@
 #include <tencentcloud/kms/v20190118/model/CancelKeyDeletionResponse.h>
 #include <tencentcloud/kms/v20190118/model/CreateKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/CreateKeyResponse.h>
+#include <tencentcloud/kms/v20190118/model/CreateKmsInstanceRequest.h>
+#include <tencentcloud/kms/v20190118/model/CreateKmsInstanceResponse.h>
 #include <tencentcloud/kms/v20190118/model/CreateWhiteBoxKeyRequest.h>
 #include <tencentcloud/kms/v20190118/model/CreateWhiteBoxKeyResponse.h>
 #include <tencentcloud/kms/v20190118/model/DecryptRequest.h>
@@ -199,6 +201,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateKeyResponse> CreateKeyOutcome;
                 typedef std::future<CreateKeyOutcome> CreateKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::CreateKeyRequest&, CreateKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateKmsInstanceResponse> CreateKmsInstanceOutcome;
+                typedef std::future<CreateKmsInstanceOutcome> CreateKmsInstanceOutcomeCallable;
+                typedef std::function<void(const KmsClient*, const Model::CreateKmsInstanceRequest&, CreateKmsInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKmsInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWhiteBoxKeyResponse> CreateWhiteBoxKeyOutcome;
                 typedef std::future<CreateWhiteBoxKeyOutcome> CreateWhiteBoxKeyOutcomeCallable;
                 typedef std::function<void(const KmsClient*, const Model::CreateWhiteBoxKeyRequest&, CreateWhiteBoxKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWhiteBoxKeyAsyncHandler;
@@ -456,6 +461,15 @@ namespace TencentCloud
                 CreateKeyOutcome CreateKey(const Model::CreateKeyRequest &request);
                 void CreateKeyAsync(const Model::CreateKeyRequest& request, const CreateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateKeyOutcomeCallable CreateKeyCallable(const Model::CreateKeyRequest& request);
+
+                /**
+                 *购买开通KMS服务
+                 * @param req CreateKmsInstanceRequest
+                 * @return CreateKmsInstanceOutcome
+                 */
+                CreateKmsInstanceOutcome CreateKmsInstance(const Model::CreateKmsInstanceRequest &request);
+                void CreateKmsInstanceAsync(const Model::CreateKmsInstanceRequest& request, const CreateKmsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateKmsInstanceOutcomeCallable CreateKmsInstanceCallable(const Model::CreateKmsInstanceRequest& request);
 
                 /**
                  *创建白盒密钥。 密钥个数的上限为 50。

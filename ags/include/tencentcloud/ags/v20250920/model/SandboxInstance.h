@@ -39,7 +39,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 沙箱实例结构体
+                * 沙箱实例结构体信息
                 */
                 class SandboxInstance : public AbstractModel
                 {

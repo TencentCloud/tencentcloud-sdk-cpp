@@ -254,6 +254,20 @@ namespace TencentCloud
                      */
                     bool TagIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>优先使用腾讯云软件源</p>
+                     * @return PreferCloudSource <p>优先使用腾讯云软件源</p>
+                     * 
+                     */
+                    bool GetPreferCloudSource() const;
+
+                    /**
+                     * 判断参数 PreferCloudSource 是否已赋值
+                     * @return PreferCloudSource 是否已赋值
+                     * 
+                     */
+                    bool PreferCloudSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -345,6 +359,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_tagIds;
                     bool m_tagIdsHasBeenSet;
+
+                    /**
+                     * <p>优先使用腾讯云软件源</p>
+                     */
+                    bool m_preferCloudSource;
+                    bool m_preferCloudSourceHasBeenSet;
 
                 };
             }

@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>知识库的索引类型</p><p>枚举值：</p><ul><li>Semantic： 语义索引</li><li>DNA： DNA 索引</li></ul><p>默认值：Semantic</p>
+                     * @return IndexType <p>知识库的索引类型</p><p>枚举值：</p><ul><li>Semantic： 语义索引</li><li>DNA： DNA 索引</li></ul><p>默认值：Semantic</p>
+                     * 
+                     */
+                    std::string GetIndexType() const;
+
+                    /**
+                     * 设置<p>知识库的索引类型</p><p>枚举值：</p><ul><li>Semantic： 语义索引</li><li>DNA： DNA 索引</li></ul><p>默认值：Semantic</p>
+                     * @param _indexType <p>知识库的索引类型</p><p>枚举值：</p><ul><li>Semantic： 语义索引</li><li>DNA： DNA 索引</li></ul><p>默认值：Semantic</p>
+                     * 
+                     */
+                    void SetIndexType(const std::string& _indexType);
+
+                    /**
+                     * 判断参数 IndexType 是否已赋值
+                     * @return IndexType 是否已赋值
+                     * 
+                     */
+                    bool IndexTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>允许入库的媒体类型</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li></ul><p>默认值：Video</p>
+                     * @return MediaType <p>允许入库的媒体类型</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li></ul><p>默认值：Video</p>
+                     * 
+                     */
+                    std::string GetMediaType() const;
+
+                    /**
+                     * 设置<p>允许入库的媒体类型</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li></ul><p>默认值：Video</p>
+                     * @param _mediaType <p>允许入库的媒体类型</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li></ul><p>默认值：Video</p>
+                     * 
+                     */
+                    void SetMediaType(const std::string& _mediaType);
+
+                    /**
+                     * 判断参数 MediaType 是否已赋值
+                     * @return MediaType 是否已赋值
+                     * 
+                     */
+                    bool MediaTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>知识库的索引类型</p><p>枚举值：</p><ul><li>Semantic： 语义索引</li><li>DNA： DNA 索引</li></ul><p>默认值：Semantic</p>
+                     */
+                    std::string m_indexType;
+                    bool m_indexTypeHasBeenSet;
+
+                    /**
+                     * <p>允许入库的媒体类型</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li></ul><p>默认值：Video</p>
+                     */
+                    std::string m_mediaType;
+                    bool m_mediaTypeHasBeenSet;
 
                 };
             }

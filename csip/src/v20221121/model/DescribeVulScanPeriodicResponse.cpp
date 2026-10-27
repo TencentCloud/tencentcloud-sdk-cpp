@@ -38,7 +38,8 @@ DescribeVulScanPeriodicResponse::DescribeVulScanPeriodicResponse() :
     m_allowSyncHasBeenSet(false),
     m_enableSyncHasBeenSet(false),
     m_adminInfoHasBeenSet(false),
-    m_tagIdsHasBeenSet(false)
+    m_tagIdsHasBeenSet(false),
+    m_preferCloudSourceHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome DescribeVulScanPeriodicResponse::Deserialize(const string &p
         m_tagIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PreferCloudSource") && !rsp["PreferCloudSource"].IsNull())
+    {
+        if (!rsp["PreferCloudSource"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreferCloudSource` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_preferCloudSource = rsp["PreferCloudSource"].GetBool();
+        m_preferCloudSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -402,6 +413,14 @@ string DescribeVulScanPeriodicResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_preferCloudSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreferCloudSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_preferCloudSource, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -564,6 +583,16 @@ vector<uint64_t> DescribeVulScanPeriodicResponse::GetTagIds() const
 bool DescribeVulScanPeriodicResponse::TagIdsHasBeenSet() const
 {
     return m_tagIdsHasBeenSet;
+}
+
+bool DescribeVulScanPeriodicResponse::GetPreferCloudSource() const
+{
+    return m_preferCloudSource;
+}
+
+bool DescribeVulScanPeriodicResponse::PreferCloudSourceHasBeenSet() const
+{
+    return m_preferCloudSourceHasBeenSet;
 }
 
 

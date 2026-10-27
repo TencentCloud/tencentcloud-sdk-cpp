@@ -29,6 +29,7 @@ ExternalAgentInfo::ExternalAgentInfo() :
     m_boundHasBeenSet(false),
     m_iconUrlHasBeenSet(false),
     m_a2AVersionHasBeenSet(false),
+    m_latestVersionNameHasBeenSet(false),
     m_a2ASkillSetHasBeenSet(false)
 {
 }
@@ -116,6 +117,16 @@ CoreInternalOutcome ExternalAgentInfo::Deserialize(const rapidjson::Value &value
         }
         m_a2AVersion = string(value["A2AVersion"].GetString());
         m_a2AVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestVersionName") && !value["LatestVersionName"].IsNull())
+    {
+        if (!value["LatestVersionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExternalAgentInfo.LatestVersionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestVersionName = string(value["LatestVersionName"].GetString());
+        m_latestVersionNameHasBeenSet = true;
     }
 
     if (value.HasMember("A2ASkillSet") && !value["A2ASkillSet"].IsNull())
@@ -207,6 +218,14 @@ void ExternalAgentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "A2AVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_a2AVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestVersionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestVersionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestVersionName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_a2ASkillSetHasBeenSet)
@@ -353,6 +372,22 @@ void ExternalAgentInfo::SetA2AVersion(const string& _a2AVersion)
 bool ExternalAgentInfo::A2AVersionHasBeenSet() const
 {
     return m_a2AVersionHasBeenSet;
+}
+
+string ExternalAgentInfo::GetLatestVersionName() const
+{
+    return m_latestVersionName;
+}
+
+void ExternalAgentInfo::SetLatestVersionName(const string& _latestVersionName)
+{
+    m_latestVersionName = _latestVersionName;
+    m_latestVersionNameHasBeenSet = true;
+}
+
+bool ExternalAgentInfo::LatestVersionNameHasBeenSet() const
+{
+    return m_latestVersionNameHasBeenSet;
 }
 
 vector<A2ASkillItem> ExternalAgentInfo::GetA2ASkillSet() const

@@ -1,0 +1,108 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CVD_V20201104_MODEL_RENEWINSTANCESREQUEST_H_
+#define TENCENTCLOUD_CVD_V20201104_MODEL_RENEWINSTANCESREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cvd/v20201104/model/ChargePrepaid.h>
+
+
+namespace TencentCloud
+{
+    namespace Cvd
+    {
+        namespace V20201104
+        {
+            namespace Model
+            {
+                /**
+                * RenewInstances请求参数结构体
+                */
+                class RenewInstancesRequest : public AbstractModel
+                {
+                public:
+                    RenewInstancesRequest();
+                    ~RenewInstancesRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取一个或多个待操作的实例ID。每次请求批量实例的上限为50。
+                     * @return InstanceIds 一个或多个待操作的实例ID。每次请求批量实例的上限为50。
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 设置一个或多个待操作的实例ID。每次请求批量实例的上限为50。
+                     * @param _instanceIds 一个或多个待操作的实例ID。每次请求批量实例的上限为50。
+                     * 
+                     */
+                    void SetInstanceIds(const std::vector<std::string>& _instanceIds);
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。
+                     * @return ChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。
+                     * 
+                     */
+                    ChargePrepaid GetChargePrepaid() const;
+
+                    /**
+                     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。
+                     * @param _chargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。
+                     * 
+                     */
+                    void SetChargePrepaid(const ChargePrepaid& _chargePrepaid);
+
+                    /**
+                     * 判断参数 ChargePrepaid 是否已赋值
+                     * @return ChargePrepaid 是否已赋值
+                     * 
+                     */
+                    bool ChargePrepaidHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 一个或多个待操作的实例ID。每次请求批量实例的上限为50。
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。
+                     */
+                    ChargePrepaid m_chargePrepaid;
+                    bool m_chargePrepaidHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CVD_V20201104_MODEL_RENEWINSTANCESREQUEST_H_

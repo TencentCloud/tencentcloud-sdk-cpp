@@ -3641,6 +3641,7 @@ namespace TencentCloud
 
                 /**
                  *使用自然语言对媒体进行语义搜索。
+仅支持文搜视频、文搜图、图搜图，图搜视频请使用SearchMediaBySemanticsAsync.
                  * @param req SearchMediaBySemanticsRequest
                  * @return SearchMediaBySemanticsOutcome
                  */

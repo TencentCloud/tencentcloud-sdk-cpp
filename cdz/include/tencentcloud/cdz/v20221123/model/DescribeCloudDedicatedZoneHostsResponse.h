@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回Host和Host上部署的实例信息之间的关系
-                     * @return CloudDedicatedZoneHostsInfoSet 返回Host和Host上部署的实例信息之间的关系
+                     * 获取<p>返回Host和Host上部署的实例信息之间的关系</p>
+                     * @return CloudDedicatedZoneHostsInfoSet <p>返回Host和Host上部署的实例信息之间的关系</p>
                      * 
                      */
                     std::vector<CloudDedicatedZoneHostsInfo> GetCloudDedicatedZoneHostsInfoSet() const;
@@ -58,13 +58,33 @@ namespace TencentCloud
                      */
                     bool CloudDedicatedZoneHostsInfoSetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>母机总数</p>
+                     * @return TotalCount <p>母机总数</p>
+                     * 
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 返回Host和Host上部署的实例信息之间的关系
+                     * <p>返回Host和Host上部署的实例信息之间的关系</p>
                      */
                     std::vector<CloudDedicatedZoneHostsInfo> m_cloudDedicatedZoneHostsInfoSet;
                     bool m_cloudDedicatedZoneHostsInfoSetHasBeenSet;
+
+                    /**
+                     * <p>母机总数</p>
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

@@ -23,12 +23,12 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 DescribeBusinessResourcesRequest::DescribeBusinessResourcesRequest() :
+    m_conditionHasBeenSet(false),
     m_areaIdHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
     m_keywordsHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_conditionHasBeenSet(false),
     m_accessTypeHasBeenSet(false),
     m_frontAddrHasBeenSet(false)
 {
@@ -40,6 +40,15 @@ string DescribeBusinessResourcesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_conditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Condition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_condition.ToJsonObject(d[key.c_str()], allocator);
+    }
 
     if (m_areaIdHasBeenSet)
     {
@@ -57,14 +66,6 @@ string DescribeBusinessResourcesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_serviceName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_startTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StartTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_keywordsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -73,21 +74,20 @@ string DescribeBusinessResourcesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_keywords.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_endTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_conditionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Condition";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_condition.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_accessTypeHasBeenSet)
@@ -113,6 +113,22 @@ string DescribeBusinessResourcesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+Condition DescribeBusinessResourcesRequest::GetCondition() const
+{
+    return m_condition;
+}
+
+void DescribeBusinessResourcesRequest::SetCondition(const Condition& _condition)
+{
+    m_condition = _condition;
+    m_conditionHasBeenSet = true;
+}
+
+bool DescribeBusinessResourcesRequest::ConditionHasBeenSet() const
+{
+    return m_conditionHasBeenSet;
+}
 
 int64_t DescribeBusinessResourcesRequest::GetAreaId() const
 {
@@ -146,22 +162,6 @@ bool DescribeBusinessResourcesRequest::ServiceNameHasBeenSet() const
     return m_serviceNameHasBeenSet;
 }
 
-string DescribeBusinessResourcesRequest::GetStartTime() const
-{
-    return m_startTime;
-}
-
-void DescribeBusinessResourcesRequest::SetStartTime(const string& _startTime)
-{
-    m_startTime = _startTime;
-    m_startTimeHasBeenSet = true;
-}
-
-bool DescribeBusinessResourcesRequest::StartTimeHasBeenSet() const
-{
-    return m_startTimeHasBeenSet;
-}
-
 string DescribeBusinessResourcesRequest::GetKeywords() const
 {
     return m_keywords;
@@ -178,6 +178,22 @@ bool DescribeBusinessResourcesRequest::KeywordsHasBeenSet() const
     return m_keywordsHasBeenSet;
 }
 
+string DescribeBusinessResourcesRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeBusinessResourcesRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeBusinessResourcesRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
 string DescribeBusinessResourcesRequest::GetEndTime() const
 {
     return m_endTime;
@@ -192,22 +208,6 @@ void DescribeBusinessResourcesRequest::SetEndTime(const string& _endTime)
 bool DescribeBusinessResourcesRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
-}
-
-Condition DescribeBusinessResourcesRequest::GetCondition() const
-{
-    return m_condition;
-}
-
-void DescribeBusinessResourcesRequest::SetCondition(const Condition& _condition)
-{
-    m_condition = _condition;
-    m_conditionHasBeenSet = true;
-}
-
-bool DescribeBusinessResourcesRequest::ConditionHasBeenSet() const
-{
-    return m_conditionHasBeenSet;
 }
 
 string DescribeBusinessResourcesRequest::GetAccessType() const

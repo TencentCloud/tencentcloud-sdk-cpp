@@ -29,6 +29,7 @@ LLMComprehendTemplateItem::LLMComprehendTemplateItem() :
     m_summaryHasBeenSet(false),
     m_asrHasBeenSet(false),
     m_faceRecognitionHasBeenSet(false),
+    m_dNAHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -140,6 +141,23 @@ CoreInternalOutcome LLMComprehendTemplateItem::Deserialize(const rapidjson::Valu
         m_faceRecognitionHasBeenSet = true;
     }
 
+    if (value.HasMember("DNA") && !value["DNA"].IsNull())
+    {
+        if (!value["DNA"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LLMComprehendTemplateItem.DNA` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dNA.Deserialize(value["DNA"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dNAHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -232,6 +250,15 @@ void LLMComprehendTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_faceRecognition.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dNAHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DNA";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dNA.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -379,6 +406,22 @@ void LLMComprehendTemplateItem::SetFaceRecognition(const LLMComprehendFaceRecogn
 bool LLMComprehendTemplateItem::FaceRecognitionHasBeenSet() const
 {
     return m_faceRecognitionHasBeenSet;
+}
+
+LLMComprehendDNA LLMComprehendTemplateItem::GetDNA() const
+{
+    return m_dNA;
+}
+
+void LLMComprehendTemplateItem::SetDNA(const LLMComprehendDNA& _dNA)
+{
+    m_dNA = _dNA;
+    m_dNAHasBeenSet = true;
+}
+
+bool LLMComprehendTemplateItem::DNAHasBeenSet() const
+{
+    return m_dNAHasBeenSet;
 }
 
 string LLMComprehendTemplateItem::GetCreateTime() const

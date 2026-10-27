@@ -1,0 +1,160 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/cvd/v20201104/model/AssociateSecurityGroupResponse.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Cvd::V20201104::Model;
+using namespace std;
+
+AssociateSecurityGroupResponse::AssociateSecurityGroupResponse() :
+    m_successSetHasBeenSet(false),
+    m_failureSetHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome AssociateSecurityGroupResponse::Deserialize(const string &payload)
+{
+    rapidjson::Document d;
+    d.Parse(payload.c_str());
+    if (d.HasParseError() || !d.IsObject())
+    {
+        return CoreInternalOutcome(Core::Error("response not json format"));
+    }
+    if (!d.HasMember("Response") || !d["Response"].IsObject())
+    {
+        return CoreInternalOutcome(Core::Error("response `Response` is null or not object"));
+    }
+    rapidjson::Value &rsp = d["Response"];
+    if (!rsp.HasMember("RequestId") || !rsp["RequestId"].IsString())
+    {
+        return CoreInternalOutcome(Core::Error("response `Response.RequestId` is null or not string"));
+    }
+    string requestId(rsp["RequestId"].GetString());
+    SetRequestId(requestId);
+
+    if (rsp.HasMember("Error"))
+    {
+        if (!rsp["Error"].IsObject() ||
+            !rsp["Error"].HasMember("Code") || !rsp["Error"]["Code"].IsString() ||
+            !rsp["Error"].HasMember("Message") || !rsp["Error"]["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Response.Error` format error").SetRequestId(requestId));
+        }
+        string errorCode(rsp["Error"]["Code"].GetString());
+        string errorMsg(rsp["Error"]["Message"].GetString());
+        return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
+    }
+
+
+    if (rsp.HasMember("SuccessSet") && !rsp["SuccessSet"].IsNull())
+    {
+        if (!rsp["SuccessSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SuccessSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SuccessSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_successSet.push_back((*itr).GetString());
+        }
+        m_successSetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FailureSet") && !rsp["FailureSet"].IsNull())
+    {
+        if (!rsp["FailureSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FailureSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FailureSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_failureSet.push_back((*itr).GetString());
+        }
+        m_failureSetHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+string AssociateSecurityGroupResponse::ToJsonString() const
+{
+    rapidjson::Document value;
+    value.SetObject();
+    rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_successSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_successSet.begin(); itr != m_successSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_failureSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailureSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_failureSet.begin(); itr != m_failureSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    rapidjson::Value iKey(rapidjson::kStringType);
+    string key = "RequestId";
+    iKey.SetString(key.c_str(), allocator);
+    value.AddMember(iKey, rapidjson::Value().SetString(GetRequestId().c_str(), allocator), allocator);
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    value.Accept(writer);
+    return buffer.GetString();
+}
+
+
+vector<string> AssociateSecurityGroupResponse::GetSuccessSet() const
+{
+    return m_successSet;
+}
+
+bool AssociateSecurityGroupResponse::SuccessSetHasBeenSet() const
+{
+    return m_successSetHasBeenSet;
+}
+
+vector<string> AssociateSecurityGroupResponse::GetFailureSet() const
+{
+    return m_failureSet;
+}
+
+bool AssociateSecurityGroupResponse::FailureSetHasBeenSet() const
+{
+    return m_failureSetHasBeenSet;
+}
+
+

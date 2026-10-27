@@ -44,136 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源模块Id
-                     * @return AreaId 资源模块Id
-                     * 
-                     */
-                    int64_t GetAreaId() const;
-
-                    /**
-                     * 设置资源模块Id
-                     * @param _areaId 资源模块Id
-                     * 
-                     */
-                    void SetAreaId(const int64_t& _areaId);
-
-                    /**
-                     * 判断参数 AreaId 是否已赋值
-                     * @return AreaId 是否已赋值
-                     * 
-                     */
-                    bool AreaIdHasBeenSet() const;
-
-                    /**
-                     * 获取搜索的业务资源名称
-                     * @return ServiceName 搜索的业务资源名称
-                     * 
-                     */
-                    std::string GetServiceName() const;
-
-                    /**
-                     * 设置搜索的业务资源名称
-                     * @param _serviceName 搜索的业务资源名称
-                     * 
-                     */
-                    void SetServiceName(const std::string& _serviceName);
-
-                    /**
-                     * 判断参数 ServiceName 是否已赋值
-                     * @return ServiceName 是否已赋值
-                     * 
-                     */
-                    bool ServiceNameHasBeenSet() const;
-
-                    /**
-                     * 获取获取业务资源列表的开始时间，时间格式：2006-01-02
-                     * @return StartTime 获取业务资源列表的开始时间，时间格式：2006-01-02
-                     * 
-                     */
-                    std::string GetStartTime() const;
-
-                    /**
-                     * 设置获取业务资源列表的开始时间，时间格式：2006-01-02
-                     * @param _startTime 获取业务资源列表的开始时间，时间格式：2006-01-02
-                     * 
-                     */
-                    void SetStartTime(const std::string& _startTime);
-
-                    /**
-                     * 判断参数 StartTime 是否已赋值
-                     * @return StartTime 是否已赋值
-                     * 
-                     */
-                    bool StartTimeHasBeenSet() const;
-
-                    /**
-                     * 获取搜索关键字
-                     * @return Keywords 搜索关键字
-                     * 
-                     */
-                    std::string GetKeywords() const;
-
-                    /**
-                     * 设置搜索关键字
-                     * @param _keywords 搜索关键字
-                     * 
-                     */
-                    void SetKeywords(const std::string& _keywords);
-
-                    /**
-                     * 判断参数 Keywords 是否已赋值
-                     * @return Keywords 是否已赋值
-                     * 
-                     */
-                    bool KeywordsHasBeenSet() const;
-
-                    /**
-                     * 获取获取业务资源列表的结束时间，时间格式：2006-01-02
-                     * @return EndTime 获取业务资源列表的结束时间，时间格式：2006-01-02
-                     * 
-                     */
-                    std::string GetEndTime() const;
-
-                    /**
-                     * 设置获取业务资源列表的结束时间，时间格式：2006-01-02
-                     * @param _endTime 获取业务资源列表的结束时间，时间格式：2006-01-02
-                     * 
-                     */
-                    void SetEndTime(const std::string& _endTime);
-
-                    /**
-                     * 判断参数 EndTime 是否已赋值
-                     * @return EndTime 是否已赋值
-                     * 
-                     */
-                    bool EndTimeHasBeenSet() const;
-
-                    /**
-                     * 获取滤条件、分页参数。分页内容不传，默认获取第1页，10条数据
-排序条件
-<li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li>
-<li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li>
-<li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>
-                     * @return Condition 滤条件、分页参数。分页内容不传，默认获取第1页，10条数据
-排序条件
-<li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li>
-<li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li>
-<li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>
+                     * 获取<p>滤条件、分页参数。分页内容不传，默认获取第1页，10条数据<br>排序条件</p><li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li><li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li><li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>
+                     * @return Condition <p>滤条件、分页参数。分页内容不传，默认获取第1页，10条数据<br>排序条件</p><li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li><li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li><li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>
                      * 
                      */
                     Condition GetCondition() const;
 
                     /**
-                     * 设置滤条件、分页参数。分页内容不传，默认获取第1页，10条数据
-排序条件
-<li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li>
-<li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li>
-<li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>
-                     * @param _condition 滤条件、分页参数。分页内容不传，默认获取第1页，10条数据
-排序条件
-<li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li>
-<li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li>
-<li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>
+                     * 设置<p>滤条件、分页参数。分页内容不传，默认获取第1页，10条数据<br>排序条件</p><li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li><li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li><li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>
+                     * @param _condition <p>滤条件、分页参数。分页内容不传，默认获取第1页，10条数据<br>排序条件</p><li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li><li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li><li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>
                      * 
                      */
                     void SetCondition(const Condition& _condition);
@@ -186,15 +65,120 @@ namespace TencentCloud
                     bool ConditionHasBeenSet() const;
 
                     /**
-                     * 获取资源类型
-                     * @return AccessType 资源类型
+                     * 获取<p>资源模块Id</p>
+                     * @return AreaId <p>资源模块Id</p>
+                     * 
+                     */
+                    int64_t GetAreaId() const;
+
+                    /**
+                     * 设置<p>资源模块Id</p>
+                     * @param _areaId <p>资源模块Id</p>
+                     * 
+                     */
+                    void SetAreaId(const int64_t& _areaId);
+
+                    /**
+                     * 判断参数 AreaId 是否已赋值
+                     * @return AreaId 是否已赋值
+                     * 
+                     */
+                    bool AreaIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>服务名称</p>
+                     * @return ServiceName <p>服务名称</p>
+                     * 
+                     */
+                    std::string GetServiceName() const;
+
+                    /**
+                     * 设置<p>服务名称</p>
+                     * @param _serviceName <p>服务名称</p>
+                     * 
+                     */
+                    void SetServiceName(const std::string& _serviceName);
+
+                    /**
+                     * 判断参数 ServiceName 是否已赋值
+                     * @return ServiceName 是否已赋值
+                     * 
+                     */
+                    bool ServiceNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>搜索关键字</p>
+                     * @return Keywords <p>搜索关键字</p>
+                     * 
+                     */
+                    std::string GetKeywords() const;
+
+                    /**
+                     * 设置<p>搜索关键字</p>
+                     * @param _keywords <p>搜索关键字</p>
+                     * 
+                     */
+                    void SetKeywords(const std::string& _keywords);
+
+                    /**
+                     * 判断参数 Keywords 是否已赋值
+                     * @return Keywords 是否已赋值
+                     * 
+                     */
+                    bool KeywordsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>获取业务资源列表的开始时间，时间格式：2006-01-02</p>
+                     * @return StartTime <p>获取业务资源列表的开始时间，时间格式：2006-01-02</p>
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置<p>获取业务资源列表的开始时间，时间格式：2006-01-02</p>
+                     * @param _startTime <p>获取业务资源列表的开始时间，时间格式：2006-01-02</p>
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>获取业务资源列表的结束时间，时间格式：2006-01-02</p>
+                     * @return EndTime <p>获取业务资源列表的结束时间，时间格式：2006-01-02</p>
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置<p>获取业务资源列表的结束时间，时间格式：2006-01-02</p>
+                     * @param _endTime <p>获取业务资源列表的结束时间，时间格式：2006-01-02</p>
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源类型</p>
+                     * @return AccessType <p>资源类型</p>
                      * 
                      */
                     std::string GetAccessType() const;
 
                     /**
-                     * 设置资源类型
-                     * @param _accessType 资源类型
+                     * 设置<p>资源类型</p>
+                     * @param _accessType <p>资源类型</p>
                      * 
                      */
                     void SetAccessType(const std::string& _accessType);
@@ -207,15 +191,15 @@ namespace TencentCloud
                     bool AccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取web资源前端地址
-                     * @return FrontAddr web资源前端地址
+                     * 获取<p>web资源前端地址</p>
+                     * @return FrontAddr <p>web资源前端地址</p>
                      * 
                      */
                     std::string GetFrontAddr() const;
 
                     /**
-                     * 设置web资源前端地址
-                     * @param _frontAddr web资源前端地址
+                     * 设置<p>web资源前端地址</p>
+                     * @param _frontAddr <p>web资源前端地址</p>
                      * 
                      */
                     void SetFrontAddr(const std::string& _frontAddr);
@@ -230,53 +214,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源模块Id
-                     */
-                    int64_t m_areaId;
-                    bool m_areaIdHasBeenSet;
-
-                    /**
-                     * 搜索的业务资源名称
-                     */
-                    std::string m_serviceName;
-                    bool m_serviceNameHasBeenSet;
-
-                    /**
-                     * 获取业务资源列表的开始时间，时间格式：2006-01-02
-                     */
-                    std::string m_startTime;
-                    bool m_startTimeHasBeenSet;
-
-                    /**
-                     * 搜索关键字
-                     */
-                    std::string m_keywords;
-                    bool m_keywordsHasBeenSet;
-
-                    /**
-                     * 获取业务资源列表的结束时间，时间格式：2006-01-02
-                     */
-                    std::string m_endTime;
-                    bool m_endTimeHasBeenSet;
-
-                    /**
-                     * 滤条件、分页参数。分页内容不传，默认获取第1页，10条数据
-排序条件
-<li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li>
-<li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li>
-<li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>
+                     * <p>滤条件、分页参数。分页内容不传，默认获取第1页，10条数据<br>排序条件</p><li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li><li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li><li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>
                      */
                     Condition m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
-                     * 资源类型
+                     * <p>资源模块Id</p>
+                     */
+                    int64_t m_areaId;
+                    bool m_areaIdHasBeenSet;
+
+                    /**
+                     * <p>服务名称</p>
+                     */
+                    std::string m_serviceName;
+                    bool m_serviceNameHasBeenSet;
+
+                    /**
+                     * <p>搜索关键字</p>
+                     */
+                    std::string m_keywords;
+                    bool m_keywordsHasBeenSet;
+
+                    /**
+                     * <p>获取业务资源列表的开始时间，时间格式：2006-01-02</p>
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * <p>获取业务资源列表的结束时间，时间格式：2006-01-02</p>
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * <p>资源类型</p>
                      */
                     std::string m_accessType;
                     bool m_accessTypeHasBeenSet;
 
                     /**
-                     * web资源前端地址
+                     * <p>web资源前端地址</p>
                      */
                     std::string m_frontAddr;
                     bool m_frontAddrHasBeenSet;

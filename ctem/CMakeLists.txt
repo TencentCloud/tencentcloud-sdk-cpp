@@ -19,6 +19,7 @@ set(ctem_public_header
   )
 
 set(ctem_public_header_model
+  include/tencentcloud/ctem/v20231128/model/DescribeBannerAssetDataRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeFakeWechatOfficialsResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateEnterpriseResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateAssetResponse.h
@@ -45,12 +46,14 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/CreateJobRecordResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeCustomersResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeDomainsResponse.h
+  include/tencentcloud/ctem/v20231128/model/CreateSubDomainResponse.h
   include/tencentcloud/ctem/v20231128/model/DisplayDarkWeb.h
   include/tencentcloud/ctem/v20231128/model/ModifySeedStatusResponse.h
   include/tencentcloud/ctem/v20231128/model/DeleteEnterprisesResponse.h
+  include/tencentcloud/ctem/v20231128/model/CreateCheckResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateSeedsRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribePortsResponse.h
-  include/tencentcloud/ctem/v20231128/model/DeleteWechatAppletsRequest.h
+  include/tencentcloud/ctem/v20231128/model/CreateSuspiciousAssetResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeSensitiveInfosResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeConfigsResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateAppResponse.h
@@ -70,7 +73,8 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DescribeSubDomainsRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayFakeWebsite.h
   include/tencentcloud/ctem/v20231128/model/DescribeVulsResponse.h
-  include/tencentcloud/ctem/v20231128/model/CreateSuspiciousAssetResponse.h
+  include/tencentcloud/ctem/v20231128/model/DescribePocAssetDataResponse.h
+  include/tencentcloud/ctem/v20231128/model/DescribeGithubsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeLeakageEmailsResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateHttpRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeAssetsResponse.h
@@ -82,19 +86,22 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DisplaySensitiveInfo.h
   include/tencentcloud/ctem/v20231128/model/ModifyLabelResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeEnterprisesRequest.h
-  include/tencentcloud/ctem/v20231128/model/DescribeLeakageCodesRequest.h
+  include/tencentcloud/ctem/v20231128/model/DescribeIntelligencesRequest.h
+  include/tencentcloud/ctem/v20231128/model/DescribeConfigsRequest.h
+  include/tencentcloud/ctem/v20231128/model/IntelligenceResult.h
   include/tencentcloud/ctem/v20231128/model/DeleteHttpsRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayFakeMiniProgram.h
   include/tencentcloud/ctem/v20231128/model/DisplayFakeWechatOfficial.h
   include/tencentcloud/ctem/v20231128/model/CreateAppRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayHttp.h
   include/tencentcloud/ctem/v20231128/model/CreateDomainResponse.h
+  include/tencentcloud/ctem/v20231128/model/DescribeLeakageDatasResponse.h
   include/tencentcloud/ctem/v20231128/model/DeleteWechatOfficialAccountsRequest.h
   include/tencentcloud/ctem/v20231128/model/DeleteSeedsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribePortsRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayWechatApplet.h
   include/tencentcloud/ctem/v20231128/model/DescribeGithubsRequest.h
-  include/tencentcloud/ctem/v20231128/model/DescribeConfigsRequest.h
+  include/tencentcloud/ctem/v20231128/model/DescribeLeakageCodesRequest.h
   include/tencentcloud/ctem/v20231128/model/DeleteSeedsRequest.h
   include/tencentcloud/ctem/v20231128/model/CreateHttpResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeSeedsRequest.h
@@ -102,6 +109,7 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/CreateSubDomainRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeWechatOfficialAccountsRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayFakeApp.h
+  include/tencentcloud/ctem/v20231128/model/DescribeIntelligencesResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeDarkWebsRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeHttpsRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeEnterprisesResponse.h
@@ -120,6 +128,7 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/CreatePortRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeSuspiciousAssetsRequest.h
   include/tencentcloud/ctem/v20231128/model/IgnoreDataResponse.h
+  include/tencentcloud/ctem/v20231128/model/CreateScanRequest.h
   include/tencentcloud/ctem/v20231128/model/CreateWechatAppletResponse.h
   include/tencentcloud/ctem/v20231128/model/Filter.h
   include/tencentcloud/ctem/v20231128/model/DisplayVul.h
@@ -127,7 +136,6 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DescribeFakeAppsResponse.h
   include/tencentcloud/ctem/v20231128/model/DisplayWeakPassword.h
   include/tencentcloud/ctem/v20231128/model/DescribeLeakageEmailsRequest.h
-  include/tencentcloud/ctem/v20231128/model/DescribeGithubsResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateCustomerResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateWechatOfficialAccountRequest.h
   include/tencentcloud/ctem/v20231128/model/ScanPriorityDisplay.h
@@ -138,32 +146,35 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DescribeWeakPasswordsRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayPort.h
   include/tencentcloud/ctem/v20231128/model/StopJobRecordResponse.h
-  include/tencentcloud/ctem/v20231128/model/CreateManageResponse.h
+  include/tencentcloud/ctem/v20231128/model/DescribeJobRecordsRequest.h
+  include/tencentcloud/ctem/v20231128/model/Equity.h
   include/tencentcloud/ctem/v20231128/model/DescribeFakeMiniProgramsRequest.h
   include/tencentcloud/ctem/v20231128/model/CreateManageRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayJobRecord.h
   include/tencentcloud/ctem/v20231128/model/ModifySeedStatusRequest.h
-  include/tencentcloud/ctem/v20231128/model/Equity.h
+  include/tencentcloud/ctem/v20231128/model/DescribePocAssetDataRequest.h
   include/tencentcloud/ctem/v20231128/model/CreateCustomerRequest.h
   include/tencentcloud/ctem/v20231128/model/DeleteEnterprisesRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeLeakageDatasRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeJobRecordDetailsResponse.h
   include/tencentcloud/ctem/v20231128/model/DeleteSubDomainsRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeVulsRequest.h
+  include/tencentcloud/ctem/v20231128/model/DescribeBannerAssetDataResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateWechatOfficialAccountResponse.h
   include/tencentcloud/ctem/v20231128/model/DisplayGithub.h
   include/tencentcloud/ctem/v20231128/model/DisplayApiSec.h
-  include/tencentcloud/ctem/v20231128/model/CreateSubDomainResponse.h
+  include/tencentcloud/ctem/v20231128/model/CreateScanResponse.h
   include/tencentcloud/ctem/v20231128/model/DisplayToolCommon.h
   include/tencentcloud/ctem/v20231128/model/DeleteAppsResponse.h
   include/tencentcloud/ctem/v20231128/model/Customer.h
   include/tencentcloud/ctem/v20231128/model/DisplayManage.h
   include/tencentcloud/ctem/v20231128/model/DisplayDomain.h
+  include/tencentcloud/ctem/v20231128/model/CreateCheckRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeFakeMiniProgramsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeSubDomainsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeHttpsResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeWechatOfficialAccountsResponse.h
-  include/tencentcloud/ctem/v20231128/model/DescribeLeakageDatasResponse.h
+  include/tencentcloud/ctem/v20231128/model/DeleteWechatAppletsRequest.h
   include/tencentcloud/ctem/v20231128/model/DeleteWechatAppletsResponse.h
   include/tencentcloud/ctem/v20231128/model/CreateSuspiciousAssetRequest.h
   include/tencentcloud/ctem/v20231128/model/DescribeAppsResponse.h
@@ -171,7 +182,7 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DescribeFakeWechatOfficialsRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplaySuspiciousAsset.h
   include/tencentcloud/ctem/v20231128/model/DescribeApiSecsRequest.h
-  include/tencentcloud/ctem/v20231128/model/DescribeJobRecordsRequest.h
+  include/tencentcloud/ctem/v20231128/model/CreateManageResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeLeakageCodesResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeDomainsRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplaySeed.h
@@ -182,6 +193,7 @@ set(ctem_public_header_model
 
 set(ctem_src
   src/v20231128/CtemClient.cpp
+  src/v20231128/model/DescribeBannerAssetDataRequest.cpp
   src/v20231128/model/DescribeFakeWechatOfficialsResponse.cpp
   src/v20231128/model/CreateEnterpriseResponse.cpp
   src/v20231128/model/CreateAssetResponse.cpp
@@ -208,12 +220,14 @@ set(ctem_src
   src/v20231128/model/CreateJobRecordResponse.cpp
   src/v20231128/model/DescribeCustomersResponse.cpp
   src/v20231128/model/DescribeDomainsResponse.cpp
+  src/v20231128/model/CreateSubDomainResponse.cpp
   src/v20231128/model/DisplayDarkWeb.cpp
   src/v20231128/model/ModifySeedStatusResponse.cpp
   src/v20231128/model/DeleteEnterprisesResponse.cpp
+  src/v20231128/model/CreateCheckResponse.cpp
   src/v20231128/model/CreateSeedsRequest.cpp
   src/v20231128/model/DescribePortsResponse.cpp
-  src/v20231128/model/DeleteWechatAppletsRequest.cpp
+  src/v20231128/model/CreateSuspiciousAssetResponse.cpp
   src/v20231128/model/DescribeSensitiveInfosResponse.cpp
   src/v20231128/model/DescribeConfigsResponse.cpp
   src/v20231128/model/CreateAppResponse.cpp
@@ -233,7 +247,8 @@ set(ctem_src
   src/v20231128/model/DescribeSubDomainsRequest.cpp
   src/v20231128/model/DisplayFakeWebsite.cpp
   src/v20231128/model/DescribeVulsResponse.cpp
-  src/v20231128/model/CreateSuspiciousAssetResponse.cpp
+  src/v20231128/model/DescribePocAssetDataResponse.cpp
+  src/v20231128/model/DescribeGithubsResponse.cpp
   src/v20231128/model/DescribeLeakageEmailsResponse.cpp
   src/v20231128/model/CreateHttpRequest.cpp
   src/v20231128/model/DescribeAssetsResponse.cpp
@@ -245,19 +260,22 @@ set(ctem_src
   src/v20231128/model/DisplaySensitiveInfo.cpp
   src/v20231128/model/ModifyLabelResponse.cpp
   src/v20231128/model/DescribeEnterprisesRequest.cpp
-  src/v20231128/model/DescribeLeakageCodesRequest.cpp
+  src/v20231128/model/DescribeIntelligencesRequest.cpp
+  src/v20231128/model/DescribeConfigsRequest.cpp
+  src/v20231128/model/IntelligenceResult.cpp
   src/v20231128/model/DeleteHttpsRequest.cpp
   src/v20231128/model/DisplayFakeMiniProgram.cpp
   src/v20231128/model/DisplayFakeWechatOfficial.cpp
   src/v20231128/model/CreateAppRequest.cpp
   src/v20231128/model/DisplayHttp.cpp
   src/v20231128/model/CreateDomainResponse.cpp
+  src/v20231128/model/DescribeLeakageDatasResponse.cpp
   src/v20231128/model/DeleteWechatOfficialAccountsRequest.cpp
   src/v20231128/model/DeleteSeedsResponse.cpp
   src/v20231128/model/DescribePortsRequest.cpp
   src/v20231128/model/DisplayWechatApplet.cpp
   src/v20231128/model/DescribeGithubsRequest.cpp
-  src/v20231128/model/DescribeConfigsRequest.cpp
+  src/v20231128/model/DescribeLeakageCodesRequest.cpp
   src/v20231128/model/DeleteSeedsRequest.cpp
   src/v20231128/model/CreateHttpResponse.cpp
   src/v20231128/model/DescribeSeedsRequest.cpp
@@ -265,6 +283,7 @@ set(ctem_src
   src/v20231128/model/CreateSubDomainRequest.cpp
   src/v20231128/model/DescribeWechatOfficialAccountsRequest.cpp
   src/v20231128/model/DisplayFakeApp.cpp
+  src/v20231128/model/DescribeIntelligencesResponse.cpp
   src/v20231128/model/DescribeDarkWebsRequest.cpp
   src/v20231128/model/DescribeHttpsRequest.cpp
   src/v20231128/model/DescribeEnterprisesResponse.cpp
@@ -283,6 +302,7 @@ set(ctem_src
   src/v20231128/model/CreatePortRequest.cpp
   src/v20231128/model/DescribeSuspiciousAssetsRequest.cpp
   src/v20231128/model/IgnoreDataResponse.cpp
+  src/v20231128/model/CreateScanRequest.cpp
   src/v20231128/model/CreateWechatAppletResponse.cpp
   src/v20231128/model/Filter.cpp
   src/v20231128/model/DisplayVul.cpp
@@ -290,7 +310,6 @@ set(ctem_src
   src/v20231128/model/DescribeFakeAppsResponse.cpp
   src/v20231128/model/DisplayWeakPassword.cpp
   src/v20231128/model/DescribeLeakageEmailsRequest.cpp
-  src/v20231128/model/DescribeGithubsResponse.cpp
   src/v20231128/model/CreateCustomerResponse.cpp
   src/v20231128/model/CreateWechatOfficialAccountRequest.cpp
   src/v20231128/model/ScanPriorityDisplay.cpp
@@ -301,32 +320,35 @@ set(ctem_src
   src/v20231128/model/DescribeWeakPasswordsRequest.cpp
   src/v20231128/model/DisplayPort.cpp
   src/v20231128/model/StopJobRecordResponse.cpp
-  src/v20231128/model/CreateManageResponse.cpp
+  src/v20231128/model/DescribeJobRecordsRequest.cpp
+  src/v20231128/model/Equity.cpp
   src/v20231128/model/DescribeFakeMiniProgramsRequest.cpp
   src/v20231128/model/CreateManageRequest.cpp
   src/v20231128/model/DisplayJobRecord.cpp
   src/v20231128/model/ModifySeedStatusRequest.cpp
-  src/v20231128/model/Equity.cpp
+  src/v20231128/model/DescribePocAssetDataRequest.cpp
   src/v20231128/model/CreateCustomerRequest.cpp
   src/v20231128/model/DeleteEnterprisesRequest.cpp
   src/v20231128/model/DescribeLeakageDatasRequest.cpp
   src/v20231128/model/DescribeJobRecordDetailsResponse.cpp
   src/v20231128/model/DeleteSubDomainsRequest.cpp
   src/v20231128/model/DescribeVulsRequest.cpp
+  src/v20231128/model/DescribeBannerAssetDataResponse.cpp
   src/v20231128/model/CreateWechatOfficialAccountResponse.cpp
   src/v20231128/model/DisplayGithub.cpp
   src/v20231128/model/DisplayApiSec.cpp
-  src/v20231128/model/CreateSubDomainResponse.cpp
+  src/v20231128/model/CreateScanResponse.cpp
   src/v20231128/model/DisplayToolCommon.cpp
   src/v20231128/model/DeleteAppsResponse.cpp
   src/v20231128/model/Customer.cpp
   src/v20231128/model/DisplayManage.cpp
   src/v20231128/model/DisplayDomain.cpp
+  src/v20231128/model/CreateCheckRequest.cpp
   src/v20231128/model/DescribeFakeMiniProgramsResponse.cpp
   src/v20231128/model/DescribeSubDomainsResponse.cpp
   src/v20231128/model/DescribeHttpsResponse.cpp
   src/v20231128/model/DescribeWechatOfficialAccountsResponse.cpp
-  src/v20231128/model/DescribeLeakageDatasResponse.cpp
+  src/v20231128/model/DeleteWechatAppletsRequest.cpp
   src/v20231128/model/DeleteWechatAppletsResponse.cpp
   src/v20231128/model/CreateSuspiciousAssetRequest.cpp
   src/v20231128/model/DescribeAppsResponse.cpp
@@ -334,7 +356,7 @@ set(ctem_src
   src/v20231128/model/DescribeFakeWechatOfficialsRequest.cpp
   src/v20231128/model/DisplaySuspiciousAsset.cpp
   src/v20231128/model/DescribeApiSecsRequest.cpp
-  src/v20231128/model/DescribeJobRecordsRequest.cpp
+  src/v20231128/model/CreateManageResponse.cpp
   src/v20231128/model/DescribeLeakageCodesResponse.cpp
   src/v20231128/model/DescribeDomainsRequest.cpp
   src/v20231128/model/DisplaySeed.cpp

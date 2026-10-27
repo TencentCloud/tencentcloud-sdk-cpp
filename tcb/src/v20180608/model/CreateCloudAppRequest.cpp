@@ -41,7 +41,8 @@ CreateCloudAppRequest::CreateCloudAppRequest() :
     m_promoteTypeHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_preDeployCommandHasBeenSet(false),
-    m_postDeployCommandHasBeenSet(false)
+    m_postDeployCommandHasBeenSet(false),
+    m_runnerHasBeenSet(false)
 {
 }
 
@@ -241,6 +242,15 @@ string CreateCloudAppRequest::ToJsonString() const
         string key = "PostDeployCommand";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_postDeployCommand.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runnerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Runner";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_runner.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -553,6 +563,22 @@ void CreateCloudAppRequest::SetPostDeployCommand(const string& _postDeployComman
 bool CreateCloudAppRequest::PostDeployCommandHasBeenSet() const
 {
     return m_postDeployCommandHasBeenSet;
+}
+
+BuildRunner CreateCloudAppRequest::GetRunner() const
+{
+    return m_runner;
+}
+
+void CreateCloudAppRequest::SetRunner(const BuildRunner& _runner)
+{
+    m_runner = _runner;
+    m_runnerHasBeenSet = true;
+}
+
+bool CreateCloudAppRequest::RunnerHasBeenSet() const
+{
+    return m_runnerHasBeenSet;
 }
 
 

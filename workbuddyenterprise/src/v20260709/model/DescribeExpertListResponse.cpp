@@ -26,7 +26,8 @@ using namespace std;
 DescribeExpertListResponse::DescribeExpertListResponse() :
     m_totalCountHasBeenSet(false),
     m_expertSetHasBeenSet(false),
-    m_countsHasBeenSet(false)
+    m_countsHasBeenSet(false),
+    m_maxBindingsHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,16 @@ CoreInternalOutcome DescribeExpertListResponse::Deserialize(const string &payloa
         m_countsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaxBindings") && !rsp["MaxBindings"].IsNull())
+    {
+        if (!rsp["MaxBindings"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxBindings` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxBindings = rsp["MaxBindings"].GetInt64();
+        m_maxBindingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +164,14 @@ string DescribeExpertListResponse::ToJsonString() const
         m_counts.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_maxBindingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxBindings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxBindings, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -193,6 +212,16 @@ ExpertCounts DescribeExpertListResponse::GetCounts() const
 bool DescribeExpertListResponse::CountsHasBeenSet() const
 {
     return m_countsHasBeenSet;
+}
+
+int64_t DescribeExpertListResponse::GetMaxBindings() const
+{
+    return m_maxBindings;
+}
+
+bool DescribeExpertListResponse::MaxBindingsHasBeenSet() const
+{
+    return m_maxBindingsHasBeenSet;
 }
 
 

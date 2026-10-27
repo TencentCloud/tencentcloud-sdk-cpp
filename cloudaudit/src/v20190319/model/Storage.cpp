@@ -27,7 +27,8 @@ Storage::Storage() :
     m_storagePrefixHasBeenSet(false),
     m_storageAccountIdHasBeenSet(false),
     m_storageAppIdHasBeenSet(false),
-    m_compressHasBeenSet(false)
+    m_compressHasBeenSet(false),
+    m_ckafkaRouteHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome Storage::Deserialize(const rapidjson::Value &value)
         m_compressHasBeenSet = true;
     }
 
+    if (value.HasMember("CkafkaRoute") && !value["CkafkaRoute"].IsNull())
+    {
+        if (!value["CkafkaRoute"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Storage.CkafkaRoute` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ckafkaRoute = string(value["CkafkaRoute"].GetString());
+        m_ckafkaRouteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void Storage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Compress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_compress, allocator);
+    }
+
+    if (m_ckafkaRouteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CkafkaRoute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ckafkaRoute.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void Storage::SetCompress(const uint64_t& _compress)
 bool Storage::CompressHasBeenSet() const
 {
     return m_compressHasBeenSet;
+}
+
+string Storage::GetCkafkaRoute() const
+{
+    return m_ckafkaRoute;
+}
+
+void Storage::SetCkafkaRoute(const string& _ckafkaRoute)
+{
+    m_ckafkaRoute = _ckafkaRoute;
+    m_ckafkaRouteHasBeenSet = true;
+}
+
+bool Storage::CkafkaRouteHasBeenSet() const
+{
+    return m_ckafkaRouteHasBeenSet;
 }
 

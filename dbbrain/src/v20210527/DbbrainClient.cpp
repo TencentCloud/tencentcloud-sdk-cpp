@@ -4240,6 +4240,56 @@ DbbrainClient::DescribeTopSpaceSchemasOutcomeCallable DbbrainClient::DescribeTop
     return prom->get_future();
 }
 
+DbbrainClient::DescribeTopSpaceSchemasV2Outcome DbbrainClient::DescribeTopSpaceSchemasV2(const DescribeTopSpaceSchemasV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopSpaceSchemasV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopSpaceSchemasV2Response rsp = DescribeTopSpaceSchemasV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopSpaceSchemasV2Outcome(rsp);
+        else
+            return DescribeTopSpaceSchemasV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopSpaceSchemasV2Outcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeTopSpaceSchemasV2Async(const DescribeTopSpaceSchemasV2Request& request, const DescribeTopSpaceSchemasV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTopSpaceSchemasV2Request&;
+    using Resp = DescribeTopSpaceSchemasV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTopSpaceSchemasV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeTopSpaceSchemasV2OutcomeCallable DbbrainClient::DescribeTopSpaceSchemasV2Callable(const DescribeTopSpaceSchemasV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTopSpaceSchemasV2Outcome>>();
+    DescribeTopSpaceSchemasV2Async(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeTopSpaceSchemasV2Request&,
+        DescribeTopSpaceSchemasV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeTopSpaceTableTimeSeriesOutcome DbbrainClient::DescribeTopSpaceTableTimeSeries(const DescribeTopSpaceTableTimeSeriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopSpaceTableTimeSeries");

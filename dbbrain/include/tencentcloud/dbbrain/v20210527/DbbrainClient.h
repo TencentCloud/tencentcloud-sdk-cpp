@@ -191,6 +191,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemaTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemasRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemasResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemasV2Request.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemasV2Response.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTableTimeSeriesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTableTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesRequest.h>
@@ -489,6 +491,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopSpaceSchemasResponse> DescribeTopSpaceSchemasOutcome;
                 typedef std::future<DescribeTopSpaceSchemasOutcome> DescribeTopSpaceSchemasOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceSchemasRequest&, DescribeTopSpaceSchemasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceSchemasAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopSpaceSchemasV2Response> DescribeTopSpaceSchemasV2Outcome;
+                typedef std::future<DescribeTopSpaceSchemasV2Outcome> DescribeTopSpaceSchemasV2OutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceSchemasV2Request&, DescribeTopSpaceSchemasV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceSchemasV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopSpaceTableTimeSeriesResponse> DescribeTopSpaceTableTimeSeriesOutcome;
                 typedef std::future<DescribeTopSpaceTableTimeSeriesOutcome> DescribeTopSpaceTableTimeSeriesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceTableTimeSeriesRequest&, DescribeTopSpaceTableTimeSeriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceTableTimeSeriesAsyncHandler;
@@ -1295,6 +1300,15 @@ namespace TencentCloud
                 DescribeTopSpaceSchemasOutcome DescribeTopSpaceSchemas(const Model::DescribeTopSpaceSchemasRequest &request);
                 void DescribeTopSpaceSchemasAsync(const Model::DescribeTopSpaceSchemasRequest& request, const DescribeTopSpaceSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopSpaceSchemasOutcomeCallable DescribeTopSpaceSchemasCallable(const Model::DescribeTopSpaceSchemasRequest& request);
+
+                /**
+                 *库级空间 Top 对象查询（融合接口，多产品统一入口），按 SortBy 指定的排序字段返回实例内空间占用 Top N 的数据库。支持产品：mysql（云数据库 MySQL）、cynosdb（TDSQL-C MySQL 版）、mongodb（云数据库 MongoDB）、postgres（云数据库 PostgreSQL）、dcdb（TDSQL MySQL 版）、tdsql（TDSQL）、mariadb（云数据库 MariaDB）。返回值根据产品类型返回对应字段：MySQL 系列返回 MysqlObjects（库级返回项中不包含 TableName/Engine 字段），PostgreSQL 返回 PostgresObjects（PG 的 relation/bloat 字段与 MySQL 语义不同），MongoDB 返回 MongodbObjects。
+                 * @param req DescribeTopSpaceSchemasV2Request
+                 * @return DescribeTopSpaceSchemasV2Outcome
+                 */
+                DescribeTopSpaceSchemasV2Outcome DescribeTopSpaceSchemasV2(const Model::DescribeTopSpaceSchemasV2Request &request);
+                void DescribeTopSpaceSchemasV2Async(const Model::DescribeTopSpaceSchemasV2Request& request, const DescribeTopSpaceSchemasV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopSpaceSchemasV2OutcomeCallable DescribeTopSpaceSchemasV2Callable(const Model::DescribeTopSpaceSchemasV2Request& request);
 
                 /**
                  *获取实例占用空间最大的前几张表在指定时间段内的每日由DBbrain定时采集的空间数据，默认返回按大小排序。

@@ -30,7 +30,17 @@ CreateBusinessResourceRequest::CreateBusinessResourceRequest() :
     m_servicePortHasBeenSet(false),
     m_levelsHasBeenSet(false),
     m_serviceAddressHasBeenSet(false),
-    m_directConnHasBeenSet(false)
+    m_directConnHasBeenSet(false),
+    m_connectivityCheckSwitchHasBeenSet(false),
+    m_connectivityCheckIntervalHasBeenSet(false),
+    m_connectivityCheckIntervalUnitHasBeenSet(false),
+    m_serviceNetworkHasBeenSet(false),
+    m_wireGuardTunnelHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_uRLAuditStateHasBeenSet(false),
+    m_uRLAuditIdHasBeenSet(false),
+    m_uRLPathHasBeenSet(false),
+    m_sSLCertIdHasBeenSet(false)
 {
 }
 
@@ -103,6 +113,86 @@ string CreateBusinessResourceRequest::ToJsonString() const
         string key = "DirectConn";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_directConn, allocator);
+    }
+
+    if (m_connectivityCheckSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectivityCheckSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_connectivityCheckSwitch, allocator);
+    }
+
+    if (m_connectivityCheckIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectivityCheckInterval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_connectivityCheckInterval, allocator);
+    }
+
+    if (m_connectivityCheckIntervalUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectivityCheckIntervalUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_connectivityCheckIntervalUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceNetworkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceNetwork";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_serviceNetwork, allocator);
+    }
+
+    if (m_wireGuardTunnelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WireGuardTunnel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_wireGuardTunnel, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uRLAuditStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "URLAuditState";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_uRLAuditState, allocator);
+    }
+
+    if (m_uRLAuditIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "URLAuditId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uRLAuditId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uRLPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "URLPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uRLPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sSLCertIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLCertId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sSLCertId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +329,166 @@ void CreateBusinessResourceRequest::SetDirectConn(const int64_t& _directConn)
 bool CreateBusinessResourceRequest::DirectConnHasBeenSet() const
 {
     return m_directConnHasBeenSet;
+}
+
+int64_t CreateBusinessResourceRequest::GetConnectivityCheckSwitch() const
+{
+    return m_connectivityCheckSwitch;
+}
+
+void CreateBusinessResourceRequest::SetConnectivityCheckSwitch(const int64_t& _connectivityCheckSwitch)
+{
+    m_connectivityCheckSwitch = _connectivityCheckSwitch;
+    m_connectivityCheckSwitchHasBeenSet = true;
+}
+
+bool CreateBusinessResourceRequest::ConnectivityCheckSwitchHasBeenSet() const
+{
+    return m_connectivityCheckSwitchHasBeenSet;
+}
+
+int64_t CreateBusinessResourceRequest::GetConnectivityCheckInterval() const
+{
+    return m_connectivityCheckInterval;
+}
+
+void CreateBusinessResourceRequest::SetConnectivityCheckInterval(const int64_t& _connectivityCheckInterval)
+{
+    m_connectivityCheckInterval = _connectivityCheckInterval;
+    m_connectivityCheckIntervalHasBeenSet = true;
+}
+
+bool CreateBusinessResourceRequest::ConnectivityCheckIntervalHasBeenSet() const
+{
+    return m_connectivityCheckIntervalHasBeenSet;
+}
+
+string CreateBusinessResourceRequest::GetConnectivityCheckIntervalUnit() const
+{
+    return m_connectivityCheckIntervalUnit;
+}
+
+void CreateBusinessResourceRequest::SetConnectivityCheckIntervalUnit(const string& _connectivityCheckIntervalUnit)
+{
+    m_connectivityCheckIntervalUnit = _connectivityCheckIntervalUnit;
+    m_connectivityCheckIntervalUnitHasBeenSet = true;
+}
+
+bool CreateBusinessResourceRequest::ConnectivityCheckIntervalUnitHasBeenSet() const
+{
+    return m_connectivityCheckIntervalUnitHasBeenSet;
+}
+
+int64_t CreateBusinessResourceRequest::GetServiceNetwork() const
+{
+    return m_serviceNetwork;
+}
+
+void CreateBusinessResourceRequest::SetServiceNetwork(const int64_t& _serviceNetwork)
+{
+    m_serviceNetwork = _serviceNetwork;
+    m_serviceNetworkHasBeenSet = true;
+}
+
+bool CreateBusinessResourceRequest::ServiceNetworkHasBeenSet() const
+{
+    return m_serviceNetworkHasBeenSet;
+}
+
+int64_t CreateBusinessResourceRequest::GetWireGuardTunnel() const
+{
+    return m_wireGuardTunnel;
+}
+
+void CreateBusinessResourceRequest::SetWireGuardTunnel(const int64_t& _wireGuardTunnel)
+{
+    m_wireGuardTunnel = _wireGuardTunnel;
+    m_wireGuardTunnelHasBeenSet = true;
+}
+
+bool CreateBusinessResourceRequest::WireGuardTunnelHasBeenSet() const
+{
+    return m_wireGuardTunnelHasBeenSet;
+}
+
+string CreateBusinessResourceRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateBusinessResourceRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateBusinessResourceRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+int64_t CreateBusinessResourceRequest::GetURLAuditState() const
+{
+    return m_uRLAuditState;
+}
+
+void CreateBusinessResourceRequest::SetURLAuditState(const int64_t& _uRLAuditState)
+{
+    m_uRLAuditState = _uRLAuditState;
+    m_uRLAuditStateHasBeenSet = true;
+}
+
+bool CreateBusinessResourceRequest::URLAuditStateHasBeenSet() const
+{
+    return m_uRLAuditStateHasBeenSet;
+}
+
+string CreateBusinessResourceRequest::GetURLAuditId() const
+{
+    return m_uRLAuditId;
+}
+
+void CreateBusinessResourceRequest::SetURLAuditId(const string& _uRLAuditId)
+{
+    m_uRLAuditId = _uRLAuditId;
+    m_uRLAuditIdHasBeenSet = true;
+}
+
+bool CreateBusinessResourceRequest::URLAuditIdHasBeenSet() const
+{
+    return m_uRLAuditIdHasBeenSet;
+}
+
+string CreateBusinessResourceRequest::GetURLPath() const
+{
+    return m_uRLPath;
+}
+
+void CreateBusinessResourceRequest::SetURLPath(const string& _uRLPath)
+{
+    m_uRLPath = _uRLPath;
+    m_uRLPathHasBeenSet = true;
+}
+
+bool CreateBusinessResourceRequest::URLPathHasBeenSet() const
+{
+    return m_uRLPathHasBeenSet;
+}
+
+string CreateBusinessResourceRequest::GetSSLCertId() const
+{
+    return m_sSLCertId;
+}
+
+void CreateBusinessResourceRequest::SetSSLCertId(const string& _sSLCertId)
+{
+    m_sSLCertId = _sSLCertId;
+    m_sSLCertIdHasBeenSet = true;
+}
+
+bool CreateBusinessResourceRequest::SSLCertIdHasBeenSet() const
+{
+    return m_sSLCertIdHasBeenSet;
 }
 
 
