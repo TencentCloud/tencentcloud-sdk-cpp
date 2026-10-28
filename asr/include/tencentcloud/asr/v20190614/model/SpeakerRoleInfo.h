@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音频url地址，建议不超过30秒，最大45秒
-                     * @return RoleAudioUrl 音频url地址，建议不超过30秒，最大45秒
+                     * 获取<p>音频url地址，建议不超过30秒，最大45秒</p>
+                     * @return RoleAudioUrl <p>音频url地址，建议不超过30秒，最大45秒</p>
                      * 
                      */
                     std::string GetRoleAudioUrl() const;
 
                     /**
-                     * 设置音频url地址，建议不超过30秒，最大45秒
-                     * @param _roleAudioUrl 音频url地址，建议不超过30秒，最大45秒
+                     * 设置<p>音频url地址，建议不超过30秒，最大45秒</p>
+                     * @param _roleAudioUrl <p>音频url地址，建议不超过30秒，最大45秒</p>
                      * 
                      */
                     void SetRoleAudioUrl(const std::string& _roleAudioUrl);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RoleAudioUrlHasBeenSet() const;
 
                     /**
-                     * 获取不超过30字节
-                     * @return RoleName 不超过30字节
+                     * 获取<p>不超过30字节</p>
+                     * @return RoleName <p>不超过30字节</p>
                      * 
                      */
                     std::string GetRoleName() const;
 
                     /**
-                     * 设置不超过30字节
-                     * @param _roleName 不超过30字节
+                     * 设置<p>不超过30字节</p>
+                     * @param _roleName <p>不超过30字节</p>
                      * 
                      */
                     void SetRoleName(const std::string& _roleName);
@@ -88,19 +88,73 @@ namespace TencentCloud
                      */
                     bool RoleNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>声纹 ID（V2 版本使用），注意：</p><ul><li>传入未注册或不属于本 AppId 的声纹 ID，该 ID 会被跳过（不报错，相当于没有传入这个说话人信息）</li></ul>
+                     * @return VoicePrintId <p>声纹 ID（V2 版本使用），注意：</p><ul><li>传入未注册或不属于本 AppId 的声纹 ID，该 ID 会被跳过（不报错，相当于没有传入这个说话人信息）</li></ul>
+                     * 
+                     */
+                    std::string GetVoicePrintId() const;
+
+                    /**
+                     * 设置<p>声纹 ID（V2 版本使用），注意：</p><ul><li>传入未注册或不属于本 AppId 的声纹 ID，该 ID 会被跳过（不报错，相当于没有传入这个说话人信息）</li></ul>
+                     * @param _voicePrintId <p>声纹 ID（V2 版本使用），注意：</p><ul><li>传入未注册或不属于本 AppId 的声纹 ID，该 ID 会被跳过（不报错，相当于没有传入这个说话人信息）</li></ul>
+                     * 
+                     */
+                    void SetVoicePrintId(const std::string& _voicePrintId);
+
+                    /**
+                     * 判断参数 VoicePrintId 是否已赋值
+                     * @return VoicePrintId 是否已赋值
+                     * 
+                     */
+                    bool VoicePrintIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>角色昵称（V2 版本使用），注意：</p><ul><li>传空字符串或者不传入则使用声纹注册时指定的角色名</li><li>否则将覆盖声纹注册时指定的角色名</li><li>角色名不超过 30 字节，仅支持字母、数字、下划线和中文。</li><li>这里指定的角色名只影响本次识别，不影响声纹库中注册的角色名</li></ul>
+                     * @return SpeakerNick <p>角色昵称（V2 版本使用），注意：</p><ul><li>传空字符串或者不传入则使用声纹注册时指定的角色名</li><li>否则将覆盖声纹注册时指定的角色名</li><li>角色名不超过 30 字节，仅支持字母、数字、下划线和中文。</li><li>这里指定的角色名只影响本次识别，不影响声纹库中注册的角色名</li></ul>
+                     * 
+                     */
+                    std::string GetSpeakerNick() const;
+
+                    /**
+                     * 设置<p>角色昵称（V2 版本使用），注意：</p><ul><li>传空字符串或者不传入则使用声纹注册时指定的角色名</li><li>否则将覆盖声纹注册时指定的角色名</li><li>角色名不超过 30 字节，仅支持字母、数字、下划线和中文。</li><li>这里指定的角色名只影响本次识别，不影响声纹库中注册的角色名</li></ul>
+                     * @param _speakerNick <p>角色昵称（V2 版本使用），注意：</p><ul><li>传空字符串或者不传入则使用声纹注册时指定的角色名</li><li>否则将覆盖声纹注册时指定的角色名</li><li>角色名不超过 30 字节，仅支持字母、数字、下划线和中文。</li><li>这里指定的角色名只影响本次识别，不影响声纹库中注册的角色名</li></ul>
+                     * 
+                     */
+                    void SetSpeakerNick(const std::string& _speakerNick);
+
+                    /**
+                     * 判断参数 SpeakerNick 是否已赋值
+                     * @return SpeakerNick 是否已赋值
+                     * 
+                     */
+                    bool SpeakerNickHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 音频url地址，建议不超过30秒，最大45秒
+                     * <p>音频url地址，建议不超过30秒，最大45秒</p>
                      */
                     std::string m_roleAudioUrl;
                     bool m_roleAudioUrlHasBeenSet;
 
                     /**
-                     * 不超过30字节
+                     * <p>不超过30字节</p>
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
+
+                    /**
+                     * <p>声纹 ID（V2 版本使用），注意：</p><ul><li>传入未注册或不属于本 AppId 的声纹 ID，该 ID 会被跳过（不报错，相当于没有传入这个说话人信息）</li></ul>
+                     */
+                    std::string m_voicePrintId;
+                    bool m_voicePrintIdHasBeenSet;
+
+                    /**
+                     * <p>角色昵称（V2 版本使用），注意：</p><ul><li>传空字符串或者不传入则使用声纹注册时指定的角色名</li><li>否则将覆盖声纹注册时指定的角色名</li><li>角色名不超过 30 字节，仅支持字母、数字、下划线和中文。</li><li>这里指定的角色名只影响本次识别，不影响声纹库中注册的角色名</li></ul>
+                     */
+                    std::string m_speakerNick;
+                    bool m_speakerNickHasBeenSet;
 
                 };
             }

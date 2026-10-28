@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取要搜索的字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 要搜索的字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置要搜索的字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 要搜索的字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取目标值列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 目标值列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置目标值列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _values 目标值列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 要搜索的字段
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 目标值列表
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

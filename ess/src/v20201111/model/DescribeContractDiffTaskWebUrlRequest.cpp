@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeContractDiffTaskWebUrlRequest::DescribeContractDiffTaskWebUrlRequest() :
     m_operatorHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_formatConfigsHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,15 @@ string DescribeContractDiffTaskWebUrlRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formatConfigsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FormatConfigs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_formatConfigs.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -90,6 +100,22 @@ void DescribeContractDiffTaskWebUrlRequest::SetTaskId(const string& _taskId)
 bool DescribeContractDiffTaskWebUrlRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+FormatConfigs DescribeContractDiffTaskWebUrlRequest::GetFormatConfigs() const
+{
+    return m_formatConfigs;
+}
+
+void DescribeContractDiffTaskWebUrlRequest::SetFormatConfigs(const FormatConfigs& _formatConfigs)
+{
+    m_formatConfigs = _formatConfigs;
+    m_formatConfigsHasBeenSet = true;
+}
+
+bool DescribeContractDiffTaskWebUrlRequest::FormatConfigsHasBeenSet() const
+{
+    return m_formatConfigsHasBeenSet;
 }
 
 

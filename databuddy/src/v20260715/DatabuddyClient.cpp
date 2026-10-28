@@ -3540,6 +3540,56 @@ DatabuddyClient::RemoveWorkspaceGroupsOutcomeCallable DatabuddyClient::RemoveWor
     return prom->get_future();
 }
 
+DatabuddyClient::RemoveWorkspaceUsersOutcome DatabuddyClient::RemoveWorkspaceUsers(const RemoveWorkspaceUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveWorkspaceUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveWorkspaceUsersResponse rsp = RemoveWorkspaceUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveWorkspaceUsersOutcome(rsp);
+        else
+            return RemoveWorkspaceUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveWorkspaceUsersOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::RemoveWorkspaceUsersAsync(const RemoveWorkspaceUsersRequest& request, const RemoveWorkspaceUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RemoveWorkspaceUsersRequest&;
+    using Resp = RemoveWorkspaceUsersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RemoveWorkspaceUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::RemoveWorkspaceUsersOutcomeCallable DatabuddyClient::RemoveWorkspaceUsersCallable(const RemoveWorkspaceUsersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RemoveWorkspaceUsersOutcome>>();
+    RemoveWorkspaceUsersAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const RemoveWorkspaceUsersRequest&,
+        RemoveWorkspaceUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::RerunWorkflowRunOutcome DatabuddyClient::RerunWorkflowRun(const RerunWorkflowRunRequest &request)
 {
     auto outcome = MakeRequest(request, "RerunWorkflowRun");
@@ -4690,6 +4740,56 @@ DatabuddyClient::UpdateWorkspaceGroupsRolesOutcomeCallable DatabuddyClient::Upda
     return prom->get_future();
 }
 
+DatabuddyClient::UpdateWorkspaceGroupsTagsOutcome DatabuddyClient::UpdateWorkspaceGroupsTags(const UpdateWorkspaceGroupsTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateWorkspaceGroupsTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateWorkspaceGroupsTagsResponse rsp = UpdateWorkspaceGroupsTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateWorkspaceGroupsTagsOutcome(rsp);
+        else
+            return UpdateWorkspaceGroupsTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateWorkspaceGroupsTagsOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::UpdateWorkspaceGroupsTagsAsync(const UpdateWorkspaceGroupsTagsRequest& request, const UpdateWorkspaceGroupsTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateWorkspaceGroupsTagsRequest&;
+    using Resp = UpdateWorkspaceGroupsTagsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateWorkspaceGroupsTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::UpdateWorkspaceGroupsTagsOutcomeCallable DatabuddyClient::UpdateWorkspaceGroupsTagsCallable(const UpdateWorkspaceGroupsTagsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateWorkspaceGroupsTagsOutcome>>();
+    UpdateWorkspaceGroupsTagsAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const UpdateWorkspaceGroupsTagsRequest&,
+        UpdateWorkspaceGroupsTagsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::UpdateWorkspaceRoleOutcome DatabuddyClient::UpdateWorkspaceRole(const UpdateWorkspaceRoleRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateWorkspaceRole");
@@ -4782,6 +4882,56 @@ DatabuddyClient::UpdateWorkspaceUsersRolesOutcomeCallable DatabuddyClient::Updat
         const DatabuddyClient*,
         const UpdateWorkspaceUsersRolesRequest&,
         UpdateWorkspaceUsersRolesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::UpdateWorkspaceUsersTagsOutcome DatabuddyClient::UpdateWorkspaceUsersTags(const UpdateWorkspaceUsersTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateWorkspaceUsersTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateWorkspaceUsersTagsResponse rsp = UpdateWorkspaceUsersTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateWorkspaceUsersTagsOutcome(rsp);
+        else
+            return UpdateWorkspaceUsersTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateWorkspaceUsersTagsOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::UpdateWorkspaceUsersTagsAsync(const UpdateWorkspaceUsersTagsRequest& request, const UpdateWorkspaceUsersTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateWorkspaceUsersTagsRequest&;
+    using Resp = UpdateWorkspaceUsersTagsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateWorkspaceUsersTags", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::UpdateWorkspaceUsersTagsOutcomeCallable DatabuddyClient::UpdateWorkspaceUsersTagsCallable(const UpdateWorkspaceUsersTagsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateWorkspaceUsersTagsOutcome>>();
+    UpdateWorkspaceUsersTagsAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const UpdateWorkspaceUsersTagsRequest&,
+        UpdateWorkspaceUsersTagsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

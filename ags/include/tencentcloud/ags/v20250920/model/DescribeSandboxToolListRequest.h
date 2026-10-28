@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
+                     * 获取过滤条件。支持 access-policy-id 按关联的访问策略 ID 反向查询；其他过滤条件沿用沙箱工具列表接口约定。
+                     * @return Filters 过滤条件。支持 access-policy-id 按关联的访问策略 ID 反向查询；其他过滤条件沿用沙箱工具列表接口约定。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件
-                     * @param _filters 过滤条件
+                     * 设置过滤条件。支持 access-policy-id 按关联的访问策略 ID 反向查询；其他过滤条件沿用沙箱工具列表接口约定。
+                     * @param _filters 过滤条件。支持 access-policy-id 按关联的访问策略 ID 反向查询；其他过滤条件沿用沙箱工具列表接口约定。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤条件
+                     * 过滤条件。支持 access-policy-id 按关联的访问策略 ID 反向查询；其他过滤条件沿用沙箱工具列表接口约定。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

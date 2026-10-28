@@ -49,6 +49,8 @@
 #include <tencentcloud/goosefs/v20220519/model/CreateLoadTaskResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/CreatePolicyRuleRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/CreatePolicyRuleResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/CreateUserQuotaRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/CreateUserQuotaResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteCrossVpcSubnetSupportForClientNodeResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DeleteCustomerClusterRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/goosefs/v20220519/model/DeleteFilesetResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DeletePolicyRuleRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DeletePolicyRuleResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DeleteUserQuotaRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DeleteUserQuotaResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeClientNodesRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeClientNodesResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribeClusterClientTokenRequest.h>
@@ -85,6 +89,8 @@
 #include <tencentcloud/goosefs/v20220519/model/DescribePolicyRuleResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribePolicyRuleExecuteRecordRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DescribePolicyRuleExecuteRecordResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeUserQuotaRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeUserQuotaResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DetachFileSystemBucketRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/DetachFileSystemBucketResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/DisablePolicyRuleRequest.h>
@@ -113,6 +119,8 @@
 #include <tencentcloud/goosefs/v20220519/model/UpdateFilesetGeneralConfigResponse.h>
 #include <tencentcloud/goosefs/v20220519/model/UpdateLoadTaskPriorityRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/UpdateLoadTaskPriorityResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/UpdateUserQuotaRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/UpdateUserQuotaResponse.h>
 
 
 namespace TencentCloud
@@ -166,6 +174,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePolicyRuleResponse> CreatePolicyRuleOutcome;
                 typedef std::future<CreatePolicyRuleOutcome> CreatePolicyRuleOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::CreatePolicyRuleRequest&, CreatePolicyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserQuotaResponse> CreateUserQuotaOutcome;
+                typedef std::future<CreateUserQuotaOutcome> CreateUserQuotaOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::CreateUserQuotaRequest&, CreateUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCrossVpcSubnetSupportForClientNodeResponse> DeleteCrossVpcSubnetSupportForClientNodeOutcome;
                 typedef std::future<DeleteCrossVpcSubnetSupportForClientNodeOutcome> DeleteCrossVpcSubnetSupportForClientNodeOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DeleteCrossVpcSubnetSupportForClientNodeRequest&, DeleteCrossVpcSubnetSupportForClientNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCrossVpcSubnetSupportForClientNodeAsyncHandler;
@@ -181,6 +192,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePolicyRuleResponse> DeletePolicyRuleOutcome;
                 typedef std::future<DeletePolicyRuleOutcome> DeletePolicyRuleOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DeletePolicyRuleRequest&, DeletePolicyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUserQuotaResponse> DeleteUserQuotaOutcome;
+                typedef std::future<DeleteUserQuotaOutcome> DeleteUserQuotaOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DeleteUserQuotaRequest&, DeleteUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClientNodesResponse> DescribeClientNodesOutcome;
                 typedef std::future<DescribeClientNodesOutcome> DescribeClientNodesOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DescribeClientNodesRequest&, DescribeClientNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientNodesAsyncHandler;
@@ -220,6 +234,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePolicyRuleExecuteRecordResponse> DescribePolicyRuleExecuteRecordOutcome;
                 typedef std::future<DescribePolicyRuleExecuteRecordOutcome> DescribePolicyRuleExecuteRecordOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DescribePolicyRuleExecuteRecordRequest&, DescribePolicyRuleExecuteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyRuleExecuteRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserQuotaResponse> DescribeUserQuotaOutcome;
+                typedef std::future<DescribeUserQuotaOutcome> DescribeUserQuotaOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DescribeUserQuotaRequest&, DescribeUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetachFileSystemBucketResponse> DetachFileSystemBucketOutcome;
                 typedef std::future<DetachFileSystemBucketOutcome> DetachFileSystemBucketOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::DetachFileSystemBucketRequest&, DetachFileSystemBucketOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachFileSystemBucketAsyncHandler;
@@ -262,6 +279,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateLoadTaskPriorityResponse> UpdateLoadTaskPriorityOutcome;
                 typedef std::future<UpdateLoadTaskPriorityOutcome> UpdateLoadTaskPriorityOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::UpdateLoadTaskPriorityRequest&, UpdateLoadTaskPriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLoadTaskPriorityAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateUserQuotaResponse> UpdateUserQuotaOutcome;
+                typedef std::future<UpdateUserQuotaOutcome> UpdateUserQuotaOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::UpdateUserQuotaRequest&, UpdateUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateUserQuotaAsyncHandler;
 
 
 
@@ -383,6 +403,15 @@ namespace TencentCloud
                 CreatePolicyRuleOutcomeCallable CreatePolicyRuleCallable(const Model::CreatePolicyRuleRequest& request);
 
                 /**
+                 *创建用户配额
+                 * @param req CreateUserQuotaRequest
+                 * @return CreateUserQuotaOutcome
+                 */
+                CreateUserQuotaOutcome CreateUserQuota(const Model::CreateUserQuotaRequest &request);
+                void CreateUserQuotaAsync(const Model::CreateUserQuotaRequest& request, const CreateUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserQuotaOutcomeCallable CreateUserQuotaCallable(const Model::CreateUserQuotaRequest& request);
+
+                /**
                  *为客户端节点删除跨vpc子网访问能力
                  * @param req DeleteCrossVpcSubnetSupportForClientNodeRequest
                  * @return DeleteCrossVpcSubnetSupportForClientNodeOutcome
@@ -426,6 +455,15 @@ namespace TencentCloud
                 DeletePolicyRuleOutcome DeletePolicyRule(const Model::DeletePolicyRuleRequest &request);
                 void DeletePolicyRuleAsync(const Model::DeletePolicyRuleRequest& request, const DeletePolicyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePolicyRuleOutcomeCallable DeletePolicyRuleCallable(const Model::DeletePolicyRuleRequest& request);
+
+                /**
+                 *删除用户配额
+                 * @param req DeleteUserQuotaRequest
+                 * @return DeleteUserQuotaOutcome
+                 */
+                DeleteUserQuotaOutcome DeleteUserQuota(const Model::DeleteUserQuotaRequest &request);
+                void DeleteUserQuotaAsync(const Model::DeleteUserQuotaRequest& request, const DeleteUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserQuotaOutcomeCallable DeleteUserQuotaCallable(const Model::DeleteUserQuotaRequest& request);
 
                 /**
                  *列出集群中所有的客户端节点
@@ -543,6 +581,15 @@ namespace TencentCloud
                 DescribePolicyRuleExecuteRecordOutcome DescribePolicyRuleExecuteRecord(const Model::DescribePolicyRuleExecuteRecordRequest &request);
                 void DescribePolicyRuleExecuteRecordAsync(const Model::DescribePolicyRuleExecuteRecordRequest& request, const DescribePolicyRuleExecuteRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePolicyRuleExecuteRecordOutcomeCallable DescribePolicyRuleExecuteRecordCallable(const Model::DescribePolicyRuleExecuteRecordRequest& request);
+
+                /**
+                 *查询用户配额
+                 * @param req DescribeUserQuotaRequest
+                 * @return DescribeUserQuotaOutcome
+                 */
+                DescribeUserQuotaOutcome DescribeUserQuota(const Model::DescribeUserQuotaRequest &request);
+                void DescribeUserQuotaAsync(const Model::DescribeUserQuotaRequest& request, const DescribeUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserQuotaOutcomeCallable DescribeUserQuotaCallable(const Model::DescribeUserQuotaRequest& request);
 
                 /**
                  *解绑文件系统与Bucket的映射
@@ -669,6 +716,15 @@ namespace TencentCloud
                 UpdateLoadTaskPriorityOutcome UpdateLoadTaskPriority(const Model::UpdateLoadTaskPriorityRequest &request);
                 void UpdateLoadTaskPriorityAsync(const Model::UpdateLoadTaskPriorityRequest& request, const UpdateLoadTaskPriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateLoadTaskPriorityOutcomeCallable UpdateLoadTaskPriorityCallable(const Model::UpdateLoadTaskPriorityRequest& request);
+
+                /**
+                 *修改用户配额
+                 * @param req UpdateUserQuotaRequest
+                 * @return UpdateUserQuotaOutcome
+                 */
+                UpdateUserQuotaOutcome UpdateUserQuota(const Model::UpdateUserQuotaRequest &request);
+                void UpdateUserQuotaAsync(const Model::UpdateUserQuotaRequest& request, const UpdateUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateUserQuotaOutcomeCallable UpdateUserQuotaCallable(const Model::UpdateUserQuotaRequest& request);
 
             };
         }

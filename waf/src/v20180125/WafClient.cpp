@@ -2290,6 +2290,56 @@ WafClient::DeleteLLMKeywordLibraryOutcomeCallable WafClient::DeleteLLMKeywordLib
     return prom->get_future();
 }
 
+WafClient::DeleteLLMSdkAccessOutcome WafClient::DeleteLLMSdkAccess(const DeleteLLMSdkAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLLMSdkAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLLMSdkAccessResponse rsp = DeleteLLMSdkAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLLMSdkAccessOutcome(rsp);
+        else
+            return DeleteLLMSdkAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLLMSdkAccessOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteLLMSdkAccessAsync(const DeleteLLMSdkAccessRequest& request, const DeleteLLMSdkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteLLMSdkAccessRequest&;
+    using Resp = DeleteLLMSdkAccessResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteLLMSdkAccess", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WafClient::DeleteLLMSdkAccessOutcomeCallable WafClient::DeleteLLMSdkAccessCallable(const DeleteLLMSdkAccessRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteLLMSdkAccessOutcome>>();
+    DeleteLLMSdkAccessAsync(
+    request,
+    [prom](
+        const WafClient*,
+        const DeleteLLMSdkAccessRequest&,
+        DeleteLLMSdkAccessOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WafClient::DeleteOwaspRuleStatusOutcome WafClient::DeleteOwaspRuleStatus(const DeleteOwaspRuleStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteOwaspRuleStatus");

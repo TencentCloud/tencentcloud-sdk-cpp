@@ -101,14 +101,26 @@
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeSecurityGroupsResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTypeRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTypeResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodesDisasterRecoverGroupRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodesDisasterRecoverGroupResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyInstanceNameRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/ModifyInstanceNameResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/RebootDBCustomNodesRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/RebootDBCustomNodesResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/RemoveNodesFromDBCustomClusterRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/RemoveNodesFromDBCustomClusterResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/RenewDBCustomNodeRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/RenewDBCustomNodeResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/ResetDBCustomNodeRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/ResetDBCustomNodeResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/ResizeDBCustomNodeDiskRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/ResizeDBCustomNodeDiskResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/StartDBCustomNodesRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/StartDBCustomNodesResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/StopDBCustomNodesRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/StopDBCustomNodesResponse.h>
 
 
 namespace TencentCloud
@@ -240,18 +252,36 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBCustomNodeTagsResponse> ModifyDBCustomNodeTagsOutcome;
                 typedef std::future<ModifyDBCustomNodeTagsOutcome> ModifyDBCustomNodeTagsOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomNodeTagsRequest&, ModifyDBCustomNodeTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomNodeTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBCustomNodeTypeResponse> ModifyDBCustomNodeTypeOutcome;
+                typedef std::future<ModifyDBCustomNodeTypeOutcome> ModifyDBCustomNodeTypeOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomNodeTypeRequest&, ModifyDBCustomNodeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomNodeTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBCustomNodesDisasterRecoverGroupResponse> ModifyDBCustomNodesDisasterRecoverGroupOutcome;
                 typedef std::future<ModifyDBCustomNodesDisasterRecoverGroupOutcome> ModifyDBCustomNodesDisasterRecoverGroupOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyDBCustomNodesDisasterRecoverGroupRequest&, ModifyDBCustomNodesDisasterRecoverGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBCustomNodesDisasterRecoverGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceNameResponse> ModifyInstanceNameOutcome;
                 typedef std::future<ModifyInstanceNameOutcome> ModifyInstanceNameOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::ModifyInstanceNameRequest&, ModifyInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::RebootDBCustomNodesResponse> RebootDBCustomNodesOutcome;
+                typedef std::future<RebootDBCustomNodesOutcome> RebootDBCustomNodesOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::RebootDBCustomNodesRequest&, RebootDBCustomNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootDBCustomNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveNodesFromDBCustomClusterResponse> RemoveNodesFromDBCustomClusterOutcome;
                 typedef std::future<RemoveNodesFromDBCustomClusterOutcome> RemoveNodesFromDBCustomClusterOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::RemoveNodesFromDBCustomClusterRequest&, RemoveNodesFromDBCustomClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveNodesFromDBCustomClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewDBCustomNodeResponse> RenewDBCustomNodeOutcome;
                 typedef std::future<RenewDBCustomNodeOutcome> RenewDBCustomNodeOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::RenewDBCustomNodeRequest&, RenewDBCustomNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDBCustomNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetDBCustomNodeResponse> ResetDBCustomNodeOutcome;
+                typedef std::future<ResetDBCustomNodeOutcome> ResetDBCustomNodeOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::ResetDBCustomNodeRequest&, ResetDBCustomNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDBCustomNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResizeDBCustomNodeDiskResponse> ResizeDBCustomNodeDiskOutcome;
+                typedef std::future<ResizeDBCustomNodeDiskOutcome> ResizeDBCustomNodeDiskOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::ResizeDBCustomNodeDiskRequest&, ResizeDBCustomNodeDiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeDBCustomNodeDiskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartDBCustomNodesResponse> StartDBCustomNodesOutcome;
+                typedef std::future<StartDBCustomNodesOutcome> StartDBCustomNodesOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::StartDBCustomNodesRequest&, StartDBCustomNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartDBCustomNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopDBCustomNodesResponse> StopDBCustomNodesOutcome;
+                typedef std::future<StopDBCustomNodesOutcome> StopDBCustomNodesOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::StopDBCustomNodesRequest&, StopDBCustomNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopDBCustomNodesAsyncHandler;
 
 
 
@@ -607,6 +637,16 @@ namespace TencentCloud
                 ModifyDBCustomNodeTagsOutcomeCallable ModifyDBCustomNodeTagsCallable(const Model::ModifyDBCustomNodeTagsRequest& request);
 
                 /**
+                 *该接口（ModifyDBCustomNodeType）用于修改 DB Custom 节点配置。
+修改节点配置过程中会重启节点。
+                 * @param req ModifyDBCustomNodeTypeRequest
+                 * @return ModifyDBCustomNodeTypeOutcome
+                 */
+                ModifyDBCustomNodeTypeOutcome ModifyDBCustomNodeType(const Model::ModifyDBCustomNodeTypeRequest &request);
+                void ModifyDBCustomNodeTypeAsync(const Model::ModifyDBCustomNodeTypeRequest& request, const ModifyDBCustomNodeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBCustomNodeTypeOutcomeCallable ModifyDBCustomNodeTypeCallable(const Model::ModifyDBCustomNodeTypeRequest& request);
+
+                /**
                  *该接口（ModifyDBCustomNodesDisasterRecoverGroup）用于修改 DB Custom 节点的置放群组。
                  * @param req ModifyDBCustomNodesDisasterRecoverGroupRequest
                  * @return ModifyDBCustomNodesDisasterRecoverGroupOutcome
@@ -625,6 +665,15 @@ namespace TencentCloud
                 ModifyInstanceNameOutcomeCallable ModifyInstanceNameCallable(const Model::ModifyInstanceNameRequest& request);
 
                 /**
+                 *该接口（RebootDBCustomNodes）用于重启 DB Custom 节点。
+                 * @param req RebootDBCustomNodesRequest
+                 * @return RebootDBCustomNodesOutcome
+                 */
+                RebootDBCustomNodesOutcome RebootDBCustomNodes(const Model::RebootDBCustomNodesRequest &request);
+                void RebootDBCustomNodesAsync(const Model::RebootDBCustomNodesRequest& request, const RebootDBCustomNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RebootDBCustomNodesOutcomeCallable RebootDBCustomNodesCallable(const Model::RebootDBCustomNodesRequest& request);
+
+                /**
                  *该接口（RemoveNodesFromDBCustomCluster）用于从 DB Custom 集群移出节点。
                  * @param req RemoveNodesFromDBCustomClusterRequest
                  * @return RemoveNodesFromDBCustomClusterOutcome
@@ -641,6 +690,42 @@ namespace TencentCloud
                 RenewDBCustomNodeOutcome RenewDBCustomNode(const Model::RenewDBCustomNodeRequest &request);
                 void RenewDBCustomNodeAsync(const Model::RenewDBCustomNodeRequest& request, const RenewDBCustomNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewDBCustomNodeOutcomeCallable RenewDBCustomNodeCallable(const Model::RenewDBCustomNodeRequest& request);
+
+                /**
+                 *该接口（ResetDBCustomNode）用于重装 DB Custom 节点的操作系统。
+                 * @param req ResetDBCustomNodeRequest
+                 * @return ResetDBCustomNodeOutcome
+                 */
+                ResetDBCustomNodeOutcome ResetDBCustomNode(const Model::ResetDBCustomNodeRequest &request);
+                void ResetDBCustomNodeAsync(const Model::ResetDBCustomNodeRequest& request, const ResetDBCustomNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetDBCustomNodeOutcomeCallable ResetDBCustomNodeCallable(const Model::ResetDBCustomNodeRequest& request);
+
+                /**
+                 *该接口（ResizeDBCustomNodeDisk）用于调整 DB Custom 节点磁盘容量。
+                 * @param req ResizeDBCustomNodeDiskRequest
+                 * @return ResizeDBCustomNodeDiskOutcome
+                 */
+                ResizeDBCustomNodeDiskOutcome ResizeDBCustomNodeDisk(const Model::ResizeDBCustomNodeDiskRequest &request);
+                void ResizeDBCustomNodeDiskAsync(const Model::ResizeDBCustomNodeDiskRequest& request, const ResizeDBCustomNodeDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResizeDBCustomNodeDiskOutcomeCallable ResizeDBCustomNodeDiskCallable(const Model::ResizeDBCustomNodeDiskRequest& request);
+
+                /**
+                 *该接口（StartDBCustomNodes）用于开机 DB Custom 节点。
+                 * @param req StartDBCustomNodesRequest
+                 * @return StartDBCustomNodesOutcome
+                 */
+                StartDBCustomNodesOutcome StartDBCustomNodes(const Model::StartDBCustomNodesRequest &request);
+                void StartDBCustomNodesAsync(const Model::StartDBCustomNodesRequest& request, const StartDBCustomNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartDBCustomNodesOutcomeCallable StartDBCustomNodesCallable(const Model::StartDBCustomNodesRequest& request);
+
+                /**
+                 *该接口（StopDBCustomNodes）用于关机 DB Custom 节点。
+                 * @param req StopDBCustomNodesRequest
+                 * @return StopDBCustomNodesOutcome
+                 */
+                StopDBCustomNodesOutcome StopDBCustomNodes(const Model::StopDBCustomNodesRequest &request);
+                void StopDBCustomNodesAsync(const Model::StopDBCustomNodesRequest& request, const StopDBCustomNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopDBCustomNodesOutcomeCallable StopDBCustomNodesCallable(const Model::StopDBCustomNodesRequest& request);
 
             };
         }

@@ -23,9 +23,11 @@ using namespace TencentCloud::Ctem::V20231128::Model;
 using namespace std;
 
 DescribeIntelligencesRequest::DescribeIntelligencesRequest() :
+    m_customerIdHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_isActualHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,14 @@ string DescribeIntelligencesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_customerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomerId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_customerId, allocator);
+    }
 
     if (m_filtersHasBeenSet)
     {
@@ -67,6 +77,14 @@ string DescribeIntelligencesRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
+    if (m_isActualHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsActual";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isActual, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -74,6 +92,22 @@ string DescribeIntelligencesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeIntelligencesRequest::GetCustomerId() const
+{
+    return m_customerId;
+}
+
+void DescribeIntelligencesRequest::SetCustomerId(const int64_t& _customerId)
+{
+    m_customerId = _customerId;
+    m_customerIdHasBeenSet = true;
+}
+
+bool DescribeIntelligencesRequest::CustomerIdHasBeenSet() const
+{
+    return m_customerIdHasBeenSet;
+}
 
 vector<Filter> DescribeIntelligencesRequest::GetFilters() const
 {
@@ -121,6 +155,22 @@ void DescribeIntelligencesRequest::SetOffset(const uint64_t& _offset)
 bool DescribeIntelligencesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+bool DescribeIntelligencesRequest::GetIsActual() const
+{
+    return m_isActual;
+}
+
+void DescribeIntelligencesRequest::SetIsActual(const bool& _isActual)
+{
+    m_isActual = _isActual;
+    m_isActualHasBeenSet = true;
+}
+
+bool DescribeIntelligencesRequest::IsActualHasBeenSet() const
+{
+    return m_isActualHasBeenSet;
 }
 
 

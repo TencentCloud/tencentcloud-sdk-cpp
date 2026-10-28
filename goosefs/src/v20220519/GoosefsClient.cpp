@@ -690,6 +690,56 @@ GoosefsClient::CreatePolicyRuleOutcomeCallable GoosefsClient::CreatePolicyRuleCa
     return prom->get_future();
 }
 
+GoosefsClient::CreateUserQuotaOutcome GoosefsClient::CreateUserQuota(const CreateUserQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserQuotaResponse rsp = CreateUserQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserQuotaOutcome(rsp);
+        else
+            return CreateUserQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserQuotaOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::CreateUserQuotaAsync(const CreateUserQuotaRequest& request, const CreateUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateUserQuotaRequest&;
+    using Resp = CreateUserQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateUserQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::CreateUserQuotaOutcomeCallable GoosefsClient::CreateUserQuotaCallable(const CreateUserQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateUserQuotaOutcome>>();
+    CreateUserQuotaAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const CreateUserQuotaRequest&,
+        CreateUserQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GoosefsClient::DeleteCrossVpcSubnetSupportForClientNodeOutcome GoosefsClient::DeleteCrossVpcSubnetSupportForClientNode(const DeleteCrossVpcSubnetSupportForClientNodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCrossVpcSubnetSupportForClientNode");
@@ -932,6 +982,56 @@ GoosefsClient::DeletePolicyRuleOutcomeCallable GoosefsClient::DeletePolicyRuleCa
         const GoosefsClient*,
         const DeletePolicyRuleRequest&,
         DeletePolicyRuleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::DeleteUserQuotaOutcome GoosefsClient::DeleteUserQuota(const DeleteUserQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserQuotaResponse rsp = DeleteUserQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserQuotaOutcome(rsp);
+        else
+            return DeleteUserQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserQuotaOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DeleteUserQuotaAsync(const DeleteUserQuotaRequest& request, const DeleteUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteUserQuotaRequest&;
+    using Resp = DeleteUserQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteUserQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::DeleteUserQuotaOutcomeCallable GoosefsClient::DeleteUserQuotaCallable(const DeleteUserQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteUserQuotaOutcome>>();
+    DeleteUserQuotaAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const DeleteUserQuotaRequest&,
+        DeleteUserQuotaOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1582,6 +1682,56 @@ GoosefsClient::DescribePolicyRuleExecuteRecordOutcomeCallable GoosefsClient::Des
         const GoosefsClient*,
         const DescribePolicyRuleExecuteRecordRequest&,
         DescribePolicyRuleExecuteRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::DescribeUserQuotaOutcome GoosefsClient::DescribeUserQuota(const DescribeUserQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserQuotaResponse rsp = DescribeUserQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserQuotaOutcome(rsp);
+        else
+            return DescribeUserQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserQuotaOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribeUserQuotaAsync(const DescribeUserQuotaRequest& request, const DescribeUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserQuotaRequest&;
+    using Resp = DescribeUserQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::DescribeUserQuotaOutcomeCallable GoosefsClient::DescribeUserQuotaCallable(const DescribeUserQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserQuotaOutcome>>();
+    DescribeUserQuotaAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const DescribeUserQuotaRequest&,
+        DescribeUserQuotaOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2282,6 +2432,56 @@ GoosefsClient::UpdateLoadTaskPriorityOutcomeCallable GoosefsClient::UpdateLoadTa
         const GoosefsClient*,
         const UpdateLoadTaskPriorityRequest&,
         UpdateLoadTaskPriorityOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GoosefsClient::UpdateUserQuotaOutcome GoosefsClient::UpdateUserQuota(const UpdateUserQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateUserQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateUserQuotaResponse rsp = UpdateUserQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateUserQuotaOutcome(rsp);
+        else
+            return UpdateUserQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateUserQuotaOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::UpdateUserQuotaAsync(const UpdateUserQuotaRequest& request, const UpdateUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateUserQuotaRequest&;
+    using Resp = UpdateUserQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateUserQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GoosefsClient::UpdateUserQuotaOutcomeCallable GoosefsClient::UpdateUserQuotaCallable(const UpdateUserQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateUserQuotaOutcome>>();
+    UpdateUserQuotaAsync(
+    request,
+    [prom](
+        const GoosefsClient*,
+        const UpdateUserQuotaRequest&,
+        UpdateUserQuotaOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

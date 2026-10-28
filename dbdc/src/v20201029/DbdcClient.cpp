@@ -1990,6 +1990,56 @@ DbdcClient::ModifyDBCustomNodeTagsOutcomeCallable DbdcClient::ModifyDBCustomNode
     return prom->get_future();
 }
 
+DbdcClient::ModifyDBCustomNodeTypeOutcome DbdcClient::ModifyDBCustomNodeType(const ModifyDBCustomNodeTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBCustomNodeType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBCustomNodeTypeResponse rsp = ModifyDBCustomNodeTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBCustomNodeTypeOutcome(rsp);
+        else
+            return ModifyDBCustomNodeTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBCustomNodeTypeOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::ModifyDBCustomNodeTypeAsync(const ModifyDBCustomNodeTypeRequest& request, const ModifyDBCustomNodeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDBCustomNodeTypeRequest&;
+    using Resp = ModifyDBCustomNodeTypeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBCustomNodeType", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::ModifyDBCustomNodeTypeOutcomeCallable DbdcClient::ModifyDBCustomNodeTypeCallable(const ModifyDBCustomNodeTypeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDBCustomNodeTypeOutcome>>();
+    ModifyDBCustomNodeTypeAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const ModifyDBCustomNodeTypeRequest&,
+        ModifyDBCustomNodeTypeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbdcClient::ModifyDBCustomNodesDisasterRecoverGroupOutcome DbdcClient::ModifyDBCustomNodesDisasterRecoverGroup(const ModifyDBCustomNodesDisasterRecoverGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBCustomNodesDisasterRecoverGroup");
@@ -2090,6 +2140,56 @@ DbdcClient::ModifyInstanceNameOutcomeCallable DbdcClient::ModifyInstanceNameCall
     return prom->get_future();
 }
 
+DbdcClient::RebootDBCustomNodesOutcome DbdcClient::RebootDBCustomNodes(const RebootDBCustomNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RebootDBCustomNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RebootDBCustomNodesResponse rsp = RebootDBCustomNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RebootDBCustomNodesOutcome(rsp);
+        else
+            return RebootDBCustomNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return RebootDBCustomNodesOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::RebootDBCustomNodesAsync(const RebootDBCustomNodesRequest& request, const RebootDBCustomNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RebootDBCustomNodesRequest&;
+    using Resp = RebootDBCustomNodesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RebootDBCustomNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::RebootDBCustomNodesOutcomeCallable DbdcClient::RebootDBCustomNodesCallable(const RebootDBCustomNodesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RebootDBCustomNodesOutcome>>();
+    RebootDBCustomNodesAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const RebootDBCustomNodesRequest&,
+        RebootDBCustomNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbdcClient::RemoveNodesFromDBCustomClusterOutcome DbdcClient::RemoveNodesFromDBCustomCluster(const RemoveNodesFromDBCustomClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveNodesFromDBCustomCluster");
@@ -2182,6 +2282,206 @@ DbdcClient::RenewDBCustomNodeOutcomeCallable DbdcClient::RenewDBCustomNodeCallab
         const DbdcClient*,
         const RenewDBCustomNodeRequest&,
         RenewDBCustomNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::ResetDBCustomNodeOutcome DbdcClient::ResetDBCustomNode(const ResetDBCustomNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetDBCustomNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetDBCustomNodeResponse rsp = ResetDBCustomNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetDBCustomNodeOutcome(rsp);
+        else
+            return ResetDBCustomNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetDBCustomNodeOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::ResetDBCustomNodeAsync(const ResetDBCustomNodeRequest& request, const ResetDBCustomNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResetDBCustomNodeRequest&;
+    using Resp = ResetDBCustomNodeResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResetDBCustomNode", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::ResetDBCustomNodeOutcomeCallable DbdcClient::ResetDBCustomNodeCallable(const ResetDBCustomNodeRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResetDBCustomNodeOutcome>>();
+    ResetDBCustomNodeAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const ResetDBCustomNodeRequest&,
+        ResetDBCustomNodeOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::ResizeDBCustomNodeDiskOutcome DbdcClient::ResizeDBCustomNodeDisk(const ResizeDBCustomNodeDiskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResizeDBCustomNodeDisk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResizeDBCustomNodeDiskResponse rsp = ResizeDBCustomNodeDiskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResizeDBCustomNodeDiskOutcome(rsp);
+        else
+            return ResizeDBCustomNodeDiskOutcome(o.GetError());
+    }
+    else
+    {
+        return ResizeDBCustomNodeDiskOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::ResizeDBCustomNodeDiskAsync(const ResizeDBCustomNodeDiskRequest& request, const ResizeDBCustomNodeDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResizeDBCustomNodeDiskRequest&;
+    using Resp = ResizeDBCustomNodeDiskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResizeDBCustomNodeDisk", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::ResizeDBCustomNodeDiskOutcomeCallable DbdcClient::ResizeDBCustomNodeDiskCallable(const ResizeDBCustomNodeDiskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResizeDBCustomNodeDiskOutcome>>();
+    ResizeDBCustomNodeDiskAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const ResizeDBCustomNodeDiskRequest&,
+        ResizeDBCustomNodeDiskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::StartDBCustomNodesOutcome DbdcClient::StartDBCustomNodes(const StartDBCustomNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartDBCustomNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartDBCustomNodesResponse rsp = StartDBCustomNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartDBCustomNodesOutcome(rsp);
+        else
+            return StartDBCustomNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return StartDBCustomNodesOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::StartDBCustomNodesAsync(const StartDBCustomNodesRequest& request, const StartDBCustomNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StartDBCustomNodesRequest&;
+    using Resp = StartDBCustomNodesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StartDBCustomNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::StartDBCustomNodesOutcomeCallable DbdcClient::StartDBCustomNodesCallable(const StartDBCustomNodesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StartDBCustomNodesOutcome>>();
+    StartDBCustomNodesAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const StartDBCustomNodesRequest&,
+        StartDBCustomNodesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbdcClient::StopDBCustomNodesOutcome DbdcClient::StopDBCustomNodes(const StopDBCustomNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopDBCustomNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopDBCustomNodesResponse rsp = StopDBCustomNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopDBCustomNodesOutcome(rsp);
+        else
+            return StopDBCustomNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return StopDBCustomNodesOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::StopDBCustomNodesAsync(const StopDBCustomNodesRequest& request, const StopDBCustomNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopDBCustomNodesRequest&;
+    using Resp = StopDBCustomNodesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopDBCustomNodes", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbdcClient::StopDBCustomNodesOutcomeCallable DbdcClient::StopDBCustomNodesCallable(const StopDBCustomNodesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopDBCustomNodesOutcome>>();
+    StopDBCustomNodesAsync(
+    request,
+    [prom](
+        const DbdcClient*,
+        const StopDBCustomNodesRequest&,
+        StopDBCustomNodesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

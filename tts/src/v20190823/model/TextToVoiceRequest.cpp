@@ -37,7 +37,8 @@ TextToVoiceRequest::TextToVoiceRequest() :
     m_enableSubtitleHasBeenSet(false),
     m_segmentRateHasBeenSet(false),
     m_emotionCategoryHasBeenSet(false),
-    m_emotionIntensityHasBeenSet(false)
+    m_emotionIntensityHasBeenSet(false),
+    m_enableLatexHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,14 @@ string TextToVoiceRequest::ToJsonString() const
         string key = "EmotionIntensity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_emotionIntensity, allocator);
+    }
+
+    if (m_enableLatexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableLatex";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableLatex, allocator);
     }
 
 
@@ -414,6 +423,22 @@ void TextToVoiceRequest::SetEmotionIntensity(const int64_t& _emotionIntensity)
 bool TextToVoiceRequest::EmotionIntensityHasBeenSet() const
 {
     return m_emotionIntensityHasBeenSet;
+}
+
+bool TextToVoiceRequest::GetEnableLatex() const
+{
+    return m_enableLatex;
+}
+
+void TextToVoiceRequest::SetEnableLatex(const bool& _enableLatex)
+{
+    m_enableLatex = _enableLatex;
+    m_enableLatexHasBeenSet = true;
+}
+
+bool TextToVoiceRequest::EnableLatexHasBeenSet() const
+{
+    return m_enableLatexHasBeenSet;
 }
 
 

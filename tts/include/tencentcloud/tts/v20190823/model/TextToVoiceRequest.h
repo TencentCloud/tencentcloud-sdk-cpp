@@ -357,6 +357,27 @@ namespace TencentCloud
                      */
                     bool EmotionIntensityHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启LaTeX文本朗读功能，默认为false。<br>注：</p><ul><li>该参数适用于K12教育场景，启用后，会增加一定的时延</li><li>仅支持中文文本中使用LaTeX公式</li><li>仅支持部分超自然大模型2.0音色，详情见<a href="https://cloud.tencent.com/document/product/1073/92668">音色列表</a>。</li><li>公式使用需添加定界符，支持 $...$、$$...$$<br>例：同学们看这道题，$1 + 2 = 3$，这是最基础的加法。</li></ul>
+                     * @return EnableLatex <p>是否开启LaTeX文本朗读功能，默认为false。<br>注：</p><ul><li>该参数适用于K12教育场景，启用后，会增加一定的时延</li><li>仅支持中文文本中使用LaTeX公式</li><li>仅支持部分超自然大模型2.0音色，详情见<a href="https://cloud.tencent.com/document/product/1073/92668">音色列表</a>。</li><li>公式使用需添加定界符，支持 $...$、$$...$$<br>例：同学们看这道题，$1 + 2 = 3$，这是最基础的加法。</li></ul>
+                     * 
+                     */
+                    bool GetEnableLatex() const;
+
+                    /**
+                     * 设置<p>是否开启LaTeX文本朗读功能，默认为false。<br>注：</p><ul><li>该参数适用于K12教育场景，启用后，会增加一定的时延</li><li>仅支持中文文本中使用LaTeX公式</li><li>仅支持部分超自然大模型2.0音色，详情见<a href="https://cloud.tencent.com/document/product/1073/92668">音色列表</a>。</li><li>公式使用需添加定界符，支持 $...$、$$...$$<br>例：同学们看这道题，$1 + 2 = 3$，这是最基础的加法。</li></ul>
+                     * @param _enableLatex <p>是否开启LaTeX文本朗读功能，默认为false。<br>注：</p><ul><li>该参数适用于K12教育场景，启用后，会增加一定的时延</li><li>仅支持中文文本中使用LaTeX公式</li><li>仅支持部分超自然大模型2.0音色，详情见<a href="https://cloud.tencent.com/document/product/1073/92668">音色列表</a>。</li><li>公式使用需添加定界符，支持 $...$、$$...$$<br>例：同学们看这道题，$1 + 2 = 3$，这是最基础的加法。</li></ul>
+                     * 
+                     */
+                    void SetEnableLatex(const bool& _enableLatex);
+
+                    /**
+                     * 判断参数 EnableLatex 是否已赋值
+                     * @return EnableLatex 是否已赋值
+                     * 
+                     */
+                    bool EnableLatexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -448,6 +469,12 @@ namespace TencentCloud
                      */
                     int64_t m_emotionIntensity;
                     bool m_emotionIntensityHasBeenSet;
+
+                    /**
+                     * <p>是否开启LaTeX文本朗读功能，默认为false。<br>注：</p><ul><li>该参数适用于K12教育场景，启用后，会增加一定的时延</li><li>仅支持中文文本中使用LaTeX公式</li><li>仅支持部分超自然大模型2.0音色，详情见<a href="https://cloud.tencent.com/document/product/1073/92668">音色列表</a>。</li><li>公式使用需添加定界符，支持 $...$、$$...$$<br>例：同学们看这道题，$1 + 2 = 3$，这是最基础的加法。</li></ul>
+                     */
+                    bool m_enableLatex;
+                    bool m_enableLatexHasBeenSet;
 
                 };
             }

@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同对比嵌入式web页面链接，有效期：5分钟
-链接仅能使用一次
-                     * @return WebUrl 合同对比嵌入式web页面链接，有效期：5分钟
-链接仅能使用一次
+                     * 获取<p>合同对比嵌入式web页面链接，有效期：5分钟<br>链接仅能使用一次</p>
+                     * @return WebUrl <p>合同对比嵌入式web页面链接，有效期：5分钟<br>链接仅能使用一次</p>
                      * 
                      */
                     std::string GetWebUrl() const;
@@ -62,8 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同对比嵌入式web页面链接，有效期：5分钟
-链接仅能使用一次
+                     * <p>合同对比嵌入式web页面链接，有效期：5分钟<br>链接仅能使用一次</p>
                      */
                     std::string m_webUrl;
                     bool m_webUrlHasBeenSet;

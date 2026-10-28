@@ -30,10 +30,13 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/DescribeInstancesResponse.h
   include/tencentcloud/dbdc/v20201029/model/DeleteDBCustomDisasterRecoverGroupsResponse.h
   include/tencentcloud/dbdc/v20201029/model/SystemDisk.h
+  include/tencentcloud/dbdc/v20201029/model/ResizeDBCustomNodeDiskResponse.h
+  include/tencentcloud/dbdc/v20201029/model/StartDBCustomNodesResponse.h
   include/tencentcloud/dbdc/v20201029/model/DBCustomNodeTypeInfo.h
   include/tencentcloud/dbdc/v20201029/model/ModifyInstanceNameResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodeConfigRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomDisasterRecoverGroupQuotaResponse.h
+  include/tencentcloud/dbdc/v20201029/model/StopDBCustomNodesResponse.h
   include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeAttributesResponse.h
   include/tencentcloud/dbdc/v20201029/model/CreateDBCustomClusterResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesRequest.h
@@ -42,6 +45,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/DBCustomClusterNodeResource.h
   include/tencentcloud/dbdc/v20201029/model/CreateDBCustomClusterRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstanceListResponse.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTypeRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomDisasterRecoverGroupsRequest.h
   include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeSecurityGroupsResponse.h
   include/tencentcloud/dbdc/v20201029/model/Label.h
@@ -60,6 +64,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterTagsRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomTaskStatusResponse.h
   include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsRequest.h
+  include/tencentcloud/dbdc/v20201029/model/StopDBCustomNodesRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetailResponse.h
   include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomClusterNodeConfigResponse.h
   include/tencentcloud/dbdc/v20201029/model/CreateDBCustomDisasterRecoverGroupRequest.h
@@ -74,7 +79,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/CheckRoleAuthorizedRequest.h
   include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodesDisasterRecoverGroupRequest.h
   include/tencentcloud/dbdc/v20201029/model/CreateDBCustomNodesRequest.h
-  include/tencentcloud/dbdc/v20201029/model/RenewDBCustomNodeResponse.h
+  include/tencentcloud/dbdc/v20201029/model/RebootDBCustomNodesRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomImagesResponse.h
   include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTagsResponse.h
   include/tencentcloud/dbdc/v20201029/model/InstanceExpand.h
@@ -106,10 +111,15 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/Filter.h
   include/tencentcloud/dbdc/v20201029/model/IsolateDBCustomNodeResponse.h
   include/tencentcloud/dbdc/v20201029/model/DBCustomClusterNodeConfig.h
+  include/tencentcloud/dbdc/v20201029/model/ResizeDBCustomNodeDiskRequest.h
   include/tencentcloud/dbdc/v20201029/model/MetaResource.h
   include/tencentcloud/dbdc/v20201029/model/DBCustomNode.h
   include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomDisasterRecoverGroupAttributeRequest.h
+  include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeTypeResponse.h
+  include/tencentcloud/dbdc/v20201029/model/ResetDBCustomNodeRequest.h
+  include/tencentcloud/dbdc/v20201029/model/RenewDBCustomNodeResponse.h
   include/tencentcloud/dbdc/v20201029/model/DBCustomClusterNode.h
+  include/tencentcloud/dbdc/v20201029/model/StartDBCustomNodesRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeSecurityGroupsResponse.h
   include/tencentcloud/dbdc/v20201029/model/DestroyDBCustomNodeResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomTaskStatusRequest.h
@@ -121,6 +131,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/CreateDBCustomDisasterRecoverGroupResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBInstancesResponse.h
   include/tencentcloud/dbdc/v20201029/model/CreateDBCustomNodesResponse.h
+  include/tencentcloud/dbdc/v20201029/model/RebootDBCustomNodesResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomNodeSecurityGroupsRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBCustomClusterNodesResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetailRequest.h
@@ -136,6 +147,7 @@ set(dbdc_public_header_model
   include/tencentcloud/dbdc/v20201029/model/ModifyDBCustomNodeSecurityGroupsRequest.h
   include/tencentcloud/dbdc/v20201029/model/PolicyRule.h
   include/tencentcloud/dbdc/v20201029/model/InstanceDetail.h
+  include/tencentcloud/dbdc/v20201029/model/ResetDBCustomNodeResponse.h
   )
 
 set(dbdc_src
@@ -151,10 +163,13 @@ set(dbdc_src
   src/v20201029/model/DescribeInstancesResponse.cpp
   src/v20201029/model/DeleteDBCustomDisasterRecoverGroupsResponse.cpp
   src/v20201029/model/SystemDisk.cpp
+  src/v20201029/model/ResizeDBCustomNodeDiskResponse.cpp
+  src/v20201029/model/StartDBCustomNodesResponse.cpp
   src/v20201029/model/DBCustomNodeTypeInfo.cpp
   src/v20201029/model/ModifyInstanceNameResponse.cpp
   src/v20201029/model/DescribeDBCustomClusterNodeConfigRequest.cpp
   src/v20201029/model/DescribeDBCustomDisasterRecoverGroupQuotaResponse.cpp
+  src/v20201029/model/StopDBCustomNodesResponse.cpp
   src/v20201029/model/ModifyDBCustomNodeAttributesResponse.cpp
   src/v20201029/model/CreateDBCustomClusterResponse.cpp
   src/v20201029/model/DescribeDBCustomImagesRequest.cpp
@@ -163,6 +178,7 @@ set(dbdc_src
   src/v20201029/model/DBCustomClusterNodeResource.cpp
   src/v20201029/model/CreateDBCustomClusterRequest.cpp
   src/v20201029/model/DescribeInstanceListResponse.cpp
+  src/v20201029/model/ModifyDBCustomNodeTypeRequest.cpp
   src/v20201029/model/DescribeDBCustomDisasterRecoverGroupsRequest.cpp
   src/v20201029/model/ModifyDBCustomNodeSecurityGroupsResponse.cpp
   src/v20201029/model/Label.cpp
@@ -181,6 +197,7 @@ set(dbdc_src
   src/v20201029/model/ModifyDBCustomClusterTagsRequest.cpp
   src/v20201029/model/DescribeDBCustomTaskStatusResponse.cpp
   src/v20201029/model/ModifyDBCustomNodeTagsRequest.cpp
+  src/v20201029/model/StopDBCustomNodesRequest.cpp
   src/v20201029/model/DescribeInstanceDetailResponse.cpp
   src/v20201029/model/ModifyDBCustomClusterNodeConfigResponse.cpp
   src/v20201029/model/CreateDBCustomDisasterRecoverGroupRequest.cpp
@@ -195,7 +212,7 @@ set(dbdc_src
   src/v20201029/model/CheckRoleAuthorizedRequest.cpp
   src/v20201029/model/ModifyDBCustomNodesDisasterRecoverGroupRequest.cpp
   src/v20201029/model/CreateDBCustomNodesRequest.cpp
-  src/v20201029/model/RenewDBCustomNodeResponse.cpp
+  src/v20201029/model/RebootDBCustomNodesRequest.cpp
   src/v20201029/model/DescribeDBCustomImagesResponse.cpp
   src/v20201029/model/ModifyDBCustomNodeTagsResponse.cpp
   src/v20201029/model/InstanceExpand.cpp
@@ -227,10 +244,15 @@ set(dbdc_src
   src/v20201029/model/Filter.cpp
   src/v20201029/model/IsolateDBCustomNodeResponse.cpp
   src/v20201029/model/DBCustomClusterNodeConfig.cpp
+  src/v20201029/model/ResizeDBCustomNodeDiskRequest.cpp
   src/v20201029/model/MetaResource.cpp
   src/v20201029/model/DBCustomNode.cpp
   src/v20201029/model/ModifyDBCustomDisasterRecoverGroupAttributeRequest.cpp
+  src/v20201029/model/ModifyDBCustomNodeTypeResponse.cpp
+  src/v20201029/model/ResetDBCustomNodeRequest.cpp
+  src/v20201029/model/RenewDBCustomNodeResponse.cpp
   src/v20201029/model/DBCustomClusterNode.cpp
+  src/v20201029/model/StartDBCustomNodesRequest.cpp
   src/v20201029/model/DescribeDBCustomNodeSecurityGroupsResponse.cpp
   src/v20201029/model/DestroyDBCustomNodeResponse.cpp
   src/v20201029/model/DescribeDBCustomTaskStatusRequest.cpp
@@ -242,6 +264,7 @@ set(dbdc_src
   src/v20201029/model/CreateDBCustomDisasterRecoverGroupResponse.cpp
   src/v20201029/model/DescribeDBInstancesResponse.cpp
   src/v20201029/model/CreateDBCustomNodesResponse.cpp
+  src/v20201029/model/RebootDBCustomNodesResponse.cpp
   src/v20201029/model/DescribeDBCustomNodeSecurityGroupsRequest.cpp
   src/v20201029/model/DescribeDBCustomClusterNodesResponse.cpp
   src/v20201029/model/DescribeInstanceDetailRequest.cpp
@@ -257,6 +280,7 @@ set(dbdc_src
   src/v20201029/model/ModifyDBCustomNodeSecurityGroupsRequest.cpp
   src/v20201029/model/PolicyRule.cpp
   src/v20201029/model/InstanceDetail.cpp
+  src/v20201029/model/ResetDBCustomNodeResponse.cpp
   )
 
 set(dbdc_include

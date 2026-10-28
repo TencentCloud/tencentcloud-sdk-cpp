@@ -113,6 +113,8 @@
 #include <tencentcloud/waf/v20180125/model/DeleteLLMContentRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteLLMKeywordLibraryRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteLLMKeywordLibraryResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMSdkAccessRequest.h>
+#include <tencentcloud/waf/v20180125/model/DeleteLLMSdkAccessResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspRuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteOwaspWhiteRuleRequest.h>
@@ -656,6 +658,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteLLMKeywordLibraryResponse> DeleteLLMKeywordLibraryOutcome;
                 typedef std::future<DeleteLLMKeywordLibraryOutcome> DeleteLLMKeywordLibraryOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteLLMKeywordLibraryRequest&, DeleteLLMKeywordLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLLMKeywordLibraryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLLMSdkAccessResponse> DeleteLLMSdkAccessOutcome;
+                typedef std::future<DeleteLLMSdkAccessOutcome> DeleteLLMSdkAccessOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteLLMSdkAccessRequest&, DeleteLLMSdkAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLLMSdkAccessAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteOwaspRuleStatusResponse> DeleteOwaspRuleStatusOutcome;
                 typedef std::future<DeleteOwaspRuleStatusOutcome> DeleteOwaspRuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteOwaspRuleStatusRequest&, DeleteOwaspRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOwaspRuleStatusAsyncHandler;
@@ -1654,6 +1659,15 @@ namespace TencentCloud
                 DeleteLLMKeywordLibraryOutcome DeleteLLMKeywordLibrary(const Model::DeleteLLMKeywordLibraryRequest &request);
                 void DeleteLLMKeywordLibraryAsync(const Model::DeleteLLMKeywordLibraryRequest& request, const DeleteLLMKeywordLibraryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteLLMKeywordLibraryOutcomeCallable DeleteLLMKeywordLibraryCallable(const Model::DeleteLLMKeywordLibraryRequest& request);
+
+                /**
+                 *llmwaf-sdk删除接入配置接口
+                 * @param req DeleteLLMSdkAccessRequest
+                 * @return DeleteLLMSdkAccessOutcome
+                 */
+                DeleteLLMSdkAccessOutcome DeleteLLMSdkAccess(const Model::DeleteLLMSdkAccessRequest &request);
+                void DeleteLLMSdkAccessAsync(const Model::DeleteLLMSdkAccessRequest& request, const DeleteLLMSdkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLLMSdkAccessOutcomeCallable DeleteLLMSdkAccessCallable(const Model::DeleteLLMSdkAccessRequest& request);
 
                 /**
                  *解除门神规则的状态锁

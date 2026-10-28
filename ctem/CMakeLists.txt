@@ -94,6 +94,7 @@ set(ctem_public_header_model
   include/tencentcloud/ctem/v20231128/model/DisplayFakeWechatOfficial.h
   include/tencentcloud/ctem/v20231128/model/CreateAppRequest.h
   include/tencentcloud/ctem/v20231128/model/DisplayHttp.h
+  include/tencentcloud/ctem/v20231128/model/IntelligenceDesc.h
   include/tencentcloud/ctem/v20231128/model/CreateDomainResponse.h
   include/tencentcloud/ctem/v20231128/model/DescribeLeakageDatasResponse.h
   include/tencentcloud/ctem/v20231128/model/DeleteWechatOfficialAccountsRequest.h
@@ -268,6 +269,7 @@ set(ctem_src
   src/v20231128/model/DisplayFakeWechatOfficial.cpp
   src/v20231128/model/CreateAppRequest.cpp
   src/v20231128/model/DisplayHttp.cpp
+  src/v20231128/model/IntelligenceDesc.cpp
   src/v20231128/model/CreateDomainResponse.cpp
   src/v20231128/model/DescribeLeakageDatasResponse.cpp
   src/v20231128/model/DeleteWechatOfficialAccountsRequest.cpp

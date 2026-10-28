@@ -22,7 +22,9 @@ using namespace std;
 
 SpeakerRoleInfo::SpeakerRoleInfo() :
     m_roleAudioUrlHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
+    m_roleNameHasBeenSet(false),
+    m_voicePrintIdHasBeenSet(false),
+    m_speakerNickHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome SpeakerRoleInfo::Deserialize(const rapidjson::Value &value)
         m_roleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("VoicePrintId") && !value["VoicePrintId"].IsNull())
+    {
+        if (!value["VoicePrintId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpeakerRoleInfo.VoicePrintId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voicePrintId = string(value["VoicePrintId"].GetString());
+        m_voicePrintIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpeakerNick") && !value["SpeakerNick"].IsNull())
+    {
+        if (!value["SpeakerNick"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpeakerRoleInfo.SpeakerNick` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_speakerNick = string(value["SpeakerNick"].GetString());
+        m_speakerNickHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void SpeakerRoleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RoleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_roleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voicePrintIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoicePrintId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voicePrintId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_speakerNickHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerNick";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_speakerNick.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void SpeakerRoleInfo::SetRoleName(const string& _roleName)
 bool SpeakerRoleInfo::RoleNameHasBeenSet() const
 {
     return m_roleNameHasBeenSet;
+}
+
+string SpeakerRoleInfo::GetVoicePrintId() const
+{
+    return m_voicePrintId;
+}
+
+void SpeakerRoleInfo::SetVoicePrintId(const string& _voicePrintId)
+{
+    m_voicePrintId = _voicePrintId;
+    m_voicePrintIdHasBeenSet = true;
+}
+
+bool SpeakerRoleInfo::VoicePrintIdHasBeenSet() const
+{
+    return m_voicePrintIdHasBeenSet;
+}
+
+string SpeakerRoleInfo::GetSpeakerNick() const
+{
+    return m_speakerNick;
+}
+
+void SpeakerRoleInfo::SetSpeakerNick(const string& _speakerNick)
+{
+    m_speakerNick = _speakerNick;
+    m_speakerNickHasBeenSet = true;
+}
+
+bool SpeakerRoleInfo::SpeakerNickHasBeenSet() const
+{
+    return m_speakerNickHasBeenSet;
 }
 

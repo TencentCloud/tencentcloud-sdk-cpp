@@ -163,6 +163,8 @@
 #include <tencentcloud/databuddy/v20260715/model/RemoveConsoleUsersResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/RemoveWorkspaceGroupsRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/RemoveWorkspaceGroupsResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/RemoveWorkspaceUsersRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/RemoveWorkspaceUsersResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/RerunWorkflowRunRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/RerunWorkflowRunResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/RunWorkflowRequest.h>
@@ -209,10 +211,14 @@
 #include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceGroupsRolesRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceGroupsRolesResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceGroupsTagsRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceGroupsTagsResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceRoleRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceRoleResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceUsersRolesRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceUsersRolesResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceUsersTagsRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/UpdateWorkspaceUsersTagsResponse.h>
 
 
 namespace TencentCloud
@@ -437,6 +443,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveWorkspaceGroupsResponse> RemoveWorkspaceGroupsOutcome;
                 typedef std::future<RemoveWorkspaceGroupsOutcome> RemoveWorkspaceGroupsOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::RemoveWorkspaceGroupsRequest&, RemoveWorkspaceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveWorkspaceGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveWorkspaceUsersResponse> RemoveWorkspaceUsersOutcome;
+                typedef std::future<RemoveWorkspaceUsersOutcome> RemoveWorkspaceUsersOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::RemoveWorkspaceUsersRequest&, RemoveWorkspaceUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveWorkspaceUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::RerunWorkflowRunResponse> RerunWorkflowRunOutcome;
                 typedef std::future<RerunWorkflowRunOutcome> RerunWorkflowRunOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::RerunWorkflowRunRequest&, RerunWorkflowRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RerunWorkflowRunAsyncHandler;
@@ -506,12 +515,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateWorkspaceGroupsRolesResponse> UpdateWorkspaceGroupsRolesOutcome;
                 typedef std::future<UpdateWorkspaceGroupsRolesOutcome> UpdateWorkspaceGroupsRolesOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::UpdateWorkspaceGroupsRolesRequest&, UpdateWorkspaceGroupsRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkspaceGroupsRolesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateWorkspaceGroupsTagsResponse> UpdateWorkspaceGroupsTagsOutcome;
+                typedef std::future<UpdateWorkspaceGroupsTagsOutcome> UpdateWorkspaceGroupsTagsOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::UpdateWorkspaceGroupsTagsRequest&, UpdateWorkspaceGroupsTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkspaceGroupsTagsAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateWorkspaceRoleResponse> UpdateWorkspaceRoleOutcome;
                 typedef std::future<UpdateWorkspaceRoleOutcome> UpdateWorkspaceRoleOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::UpdateWorkspaceRoleRequest&, UpdateWorkspaceRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkspaceRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateWorkspaceUsersRolesResponse> UpdateWorkspaceUsersRolesOutcome;
                 typedef std::future<UpdateWorkspaceUsersRolesOutcome> UpdateWorkspaceUsersRolesOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::UpdateWorkspaceUsersRolesRequest&, UpdateWorkspaceUsersRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkspaceUsersRolesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateWorkspaceUsersTagsResponse> UpdateWorkspaceUsersTagsOutcome;
+                typedef std::future<UpdateWorkspaceUsersTagsOutcome> UpdateWorkspaceUsersTagsOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::UpdateWorkspaceUsersTagsRequest&, UpdateWorkspaceUsersTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkspaceUsersTagsAsyncHandler;
 
 
 
@@ -1195,6 +1210,15 @@ namespace TencentCloud
                 RemoveWorkspaceGroupsOutcomeCallable RemoveWorkspaceGroupsCallable(const Model::RemoveWorkspaceGroupsRequest& request);
 
                 /**
+                 *<p>批量移除工作空间用户（单次最多10个；单个 UIN 失败不影响其他 UIN 移除，成败以 SuccessUins/FailItems 为准）</p>
+                 * @param req RemoveWorkspaceUsersRequest
+                 * @return RemoveWorkspaceUsersOutcome
+                 */
+                RemoveWorkspaceUsersOutcome RemoveWorkspaceUsers(const Model::RemoveWorkspaceUsersRequest &request);
+                void RemoveWorkspaceUsersAsync(const Model::RemoveWorkspaceUsersRequest& request, const RemoveWorkspaceUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveWorkspaceUsersOutcomeCallable RemoveWorkspaceUsersCallable(const Model::RemoveWorkspaceUsersRequest& request);
+
+                /**
                  *重跑工作流
                  * @param req RerunWorkflowRunRequest
                  * @return RerunWorkflowRunOutcome
@@ -1443,6 +1467,15 @@ namespace TencentCloud
                 UpdateWorkspaceGroupsRolesOutcomeCallable UpdateWorkspaceGroupsRolesCallable(const Model::UpdateWorkspaceGroupsRolesRequest& request);
 
                 /**
+                 *修改工作空间用户组标签
+                 * @param req UpdateWorkspaceGroupsTagsRequest
+                 * @return UpdateWorkspaceGroupsTagsOutcome
+                 */
+                UpdateWorkspaceGroupsTagsOutcome UpdateWorkspaceGroupsTags(const Model::UpdateWorkspaceGroupsTagsRequest &request);
+                void UpdateWorkspaceGroupsTagsAsync(const Model::UpdateWorkspaceGroupsTagsRequest& request, const UpdateWorkspaceGroupsTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateWorkspaceGroupsTagsOutcomeCallable UpdateWorkspaceGroupsTagsCallable(const Model::UpdateWorkspaceGroupsTagsRequest& request);
+
+                /**
                  *更新工作空间角色
                  * @param req UpdateWorkspaceRoleRequest
                  * @return UpdateWorkspaceRoleOutcome
@@ -1459,6 +1492,20 @@ namespace TencentCloud
                 UpdateWorkspaceUsersRolesOutcome UpdateWorkspaceUsersRoles(const Model::UpdateWorkspaceUsersRolesRequest &request);
                 void UpdateWorkspaceUsersRolesAsync(const Model::UpdateWorkspaceUsersRolesRequest& request, const UpdateWorkspaceUsersRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateWorkspaceUsersRolesOutcomeCallable UpdateWorkspaceUsersRolesCallable(const Model::UpdateWorkspaceUsersRolesRequest& request);
+
+                /**
+                 *修改工作空间用户标签
+本接口为整体覆盖式修改：每次调用以请求中的 Tags 为准，替换指定用户的全部直绑标签，而非增量追加。
+1、传入 Tags（含 TagId/TagValueId）：替换为该批标签
+2、不传 Tags 或传入空数组（"Tags": []）：将清除 UserUins 中所有用户的全部直绑标签，且操作不可逆，请谨慎调用
+3、多个用户将共享同一批 Tags；仅修改单个用户时，UserUins 请只传该用户
+4、仅清除用户直绑（Source=1）的标签，用户从用户组继承的标签（Source=2）不受影响
+                 * @param req UpdateWorkspaceUsersTagsRequest
+                 * @return UpdateWorkspaceUsersTagsOutcome
+                 */
+                UpdateWorkspaceUsersTagsOutcome UpdateWorkspaceUsersTags(const Model::UpdateWorkspaceUsersTagsRequest &request);
+                void UpdateWorkspaceUsersTagsAsync(const Model::UpdateWorkspaceUsersTagsRequest& request, const UpdateWorkspaceUsersTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateWorkspaceUsersTagsOutcomeCallable UpdateWorkspaceUsersTagsCallable(const Model::UpdateWorkspaceUsersTagsRequest& request);
 
             };
         }

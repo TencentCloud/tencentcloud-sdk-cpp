@@ -44,6 +44,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<p>企业ID</p>
+                     * @return CustomerId <p>企业ID</p>
+                     * 
+                     */
+                    int64_t GetCustomerId() const;
+
+                    /**
+                     * 设置<p>企业ID</p>
+                     * @param _customerId <p>企业ID</p>
+                     * 
+                     */
+                    void SetCustomerId(const int64_t& _customerId);
+
+                    /**
+                     * 判断参数 CustomerId 是否已赋值
+                     * @return CustomerId 是否已赋值
+                     * 
+                     */
+                    bool CustomerIdHasBeenSet() const;
+
+                    /**
                      * 获取查询数组
                      * @return Filters 查询数组
                      * 
@@ -106,7 +127,34 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否筛选有效情报</p>
+                     * @return IsActual <p>是否筛选有效情报</p>
+                     * 
+                     */
+                    bool GetIsActual() const;
+
+                    /**
+                     * 设置<p>是否筛选有效情报</p>
+                     * @param _isActual <p>是否筛选有效情报</p>
+                     * 
+                     */
+                    void SetIsActual(const bool& _isActual);
+
+                    /**
+                     * 判断参数 IsActual 是否已赋值
+                     * @return IsActual 是否已赋值
+                     * 
+                     */
+                    bool IsActualHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>企业ID</p>
+                     */
+                    int64_t m_customerId;
+                    bool m_customerIdHasBeenSet;
 
                     /**
                      * 查询数组
@@ -125,6 +173,12 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>是否筛选有效情报</p>
+                     */
+                    bool m_isActual;
+                    bool m_isActualHasBeenSet;
 
                 };
             }

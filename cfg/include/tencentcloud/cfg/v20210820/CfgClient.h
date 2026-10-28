@@ -35,6 +35,8 @@
 #include <tencentcloud/cfg/v20210820/model/DescribeActionFieldConfigListResponse.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeActionLibraryListRequest.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeActionLibraryListResponse.h>
+#include <tencentcloud/cfg/v20210820/model/DescribeInstanceAgentListRequest.h>
+#include <tencentcloud/cfg/v20210820/model/DescribeInstanceAgentListResponse.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeObjectTypeListRequest.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeObjectTypeListResponse.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeTaskRequest.h>
@@ -53,10 +55,14 @@
 #include <tencentcloud/cfg/v20210820/model/ExecuteTaskResponse.h>
 #include <tencentcloud/cfg/v20210820/model/ExecuteTaskInstanceRequest.h>
 #include <tencentcloud/cfg/v20210820/model/ExecuteTaskInstanceResponse.h>
+#include <tencentcloud/cfg/v20210820/model/InstallAgentOpenApiRequest.h>
+#include <tencentcloud/cfg/v20210820/model/InstallAgentOpenApiResponse.h>
 #include <tencentcloud/cfg/v20210820/model/ModifyTaskRunStatusRequest.h>
 #include <tencentcloud/cfg/v20210820/model/ModifyTaskRunStatusResponse.h>
 #include <tencentcloud/cfg/v20210820/model/TriggerPolicyRequest.h>
 #include <tencentcloud/cfg/v20210820/model/TriggerPolicyResponse.h>
+#include <tencentcloud/cfg/v20210820/model/UninstallAgentOpenApiRequest.h>
+#include <tencentcloud/cfg/v20210820/model/UninstallAgentOpenApiResponse.h>
 
 
 namespace TencentCloud
@@ -89,6 +95,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeActionLibraryListResponse> DescribeActionLibraryListOutcome;
                 typedef std::future<DescribeActionLibraryListOutcome> DescribeActionLibraryListOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::DescribeActionLibraryListRequest&, DescribeActionLibraryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActionLibraryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceAgentListResponse> DescribeInstanceAgentListOutcome;
+                typedef std::future<DescribeInstanceAgentListOutcome> DescribeInstanceAgentListOutcomeCallable;
+                typedef std::function<void(const CfgClient*, const Model::DescribeInstanceAgentListRequest&, DescribeInstanceAgentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAgentListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeObjectTypeListResponse> DescribeObjectTypeListOutcome;
                 typedef std::future<DescribeObjectTypeListOutcome> DescribeObjectTypeListOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::DescribeObjectTypeListRequest&, DescribeObjectTypeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeObjectTypeListAsyncHandler;
@@ -116,12 +125,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExecuteTaskInstanceResponse> ExecuteTaskInstanceOutcome;
                 typedef std::future<ExecuteTaskInstanceOutcome> ExecuteTaskInstanceOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::ExecuteTaskInstanceRequest&, ExecuteTaskInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteTaskInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstallAgentOpenApiResponse> InstallAgentOpenApiOutcome;
+                typedef std::future<InstallAgentOpenApiOutcome> InstallAgentOpenApiOutcomeCallable;
+                typedef std::function<void(const CfgClient*, const Model::InstallAgentOpenApiRequest&, InstallAgentOpenApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallAgentOpenApiAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTaskRunStatusResponse> ModifyTaskRunStatusOutcome;
                 typedef std::future<ModifyTaskRunStatusOutcome> ModifyTaskRunStatusOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::ModifyTaskRunStatusRequest&, ModifyTaskRunStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskRunStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::TriggerPolicyResponse> TriggerPolicyOutcome;
                 typedef std::future<TriggerPolicyOutcome> TriggerPolicyOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::TriggerPolicyRequest&, TriggerPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::UninstallAgentOpenApiResponse> UninstallAgentOpenApiOutcome;
+                typedef std::future<UninstallAgentOpenApiOutcome> UninstallAgentOpenApiOutcomeCallable;
+                typedef std::function<void(const CfgClient*, const Model::UninstallAgentOpenApiRequest&, UninstallAgentOpenApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallAgentOpenApiAsyncHandler;
 
 
 
@@ -178,6 +193,15 @@ namespace TencentCloud
                 DescribeActionLibraryListOutcome DescribeActionLibraryList(const Model::DescribeActionLibraryListRequest &request);
                 void DescribeActionLibraryListAsync(const Model::DescribeActionLibraryListRequest& request, const DescribeActionLibraryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeActionLibraryListOutcomeCallable DescribeActionLibraryListCallable(const Model::DescribeActionLibraryListRequest& request);
+
+                /**
+                 *查询探针列表，换为OTeam探针版本
+                 * @param req DescribeInstanceAgentListRequest
+                 * @return DescribeInstanceAgentListOutcome
+                 */
+                DescribeInstanceAgentListOutcome DescribeInstanceAgentList(const Model::DescribeInstanceAgentListRequest &request);
+                void DescribeInstanceAgentListAsync(const Model::DescribeInstanceAgentListRequest& request, const DescribeInstanceAgentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceAgentListOutcomeCallable DescribeInstanceAgentListCallable(const Model::DescribeInstanceAgentListRequest& request);
 
                 /**
                  *查询对象类型列表
@@ -261,6 +285,15 @@ namespace TencentCloud
                 ExecuteTaskInstanceOutcomeCallable ExecuteTaskInstanceCallable(const Model::ExecuteTaskInstanceRequest& request);
 
                 /**
+                 *安装探针接口
+                 * @param req InstallAgentOpenApiRequest
+                 * @return InstallAgentOpenApiOutcome
+                 */
+                InstallAgentOpenApiOutcome InstallAgentOpenApi(const Model::InstallAgentOpenApiRequest &request);
+                void InstallAgentOpenApiAsync(const Model::InstallAgentOpenApiRequest& request, const InstallAgentOpenApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstallAgentOpenApiOutcomeCallable InstallAgentOpenApiCallable(const Model::InstallAgentOpenApiRequest& request);
+
+                /**
                  *修改任务运行状态
                  * @param req ModifyTaskRunStatusRequest
                  * @return ModifyTaskRunStatusOutcome
@@ -277,6 +310,15 @@ namespace TencentCloud
                 TriggerPolicyOutcome TriggerPolicy(const Model::TriggerPolicyRequest &request);
                 void TriggerPolicyAsync(const Model::TriggerPolicyRequest& request, const TriggerPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TriggerPolicyOutcomeCallable TriggerPolicyCallable(const Model::TriggerPolicyRequest& request);
+
+                /**
+                 *卸载探针
+                 * @param req UninstallAgentOpenApiRequest
+                 * @return UninstallAgentOpenApiOutcome
+                 */
+                UninstallAgentOpenApiOutcome UninstallAgentOpenApi(const Model::UninstallAgentOpenApiRequest &request);
+                void UninstallAgentOpenApiAsync(const Model::UninstallAgentOpenApiRequest& request, const UninstallAgentOpenApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UninstallAgentOpenApiOutcomeCallable UninstallAgentOpenApiCallable(const Model::UninstallAgentOpenApiRequest& request);
 
             };
         }

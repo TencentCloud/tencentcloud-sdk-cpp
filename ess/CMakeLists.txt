@@ -115,6 +115,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h
   include/tencentcloud/ess/v20201111/model/ReferenceExcerpt.h
   include/tencentcloud/ess/v20201111/model/DescribePersonCertificateRequest.h
+  include/tencentcloud/ess/v20201111/model/FormatConfigs.h
   include/tencentcloud/ess/v20201111/model/ComparisonDetail.h
   include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationAuthorizationUrlResponse.h
   include/tencentcloud/ess/v20201111/model/ModifyPartnerAutoSignAuthUrlResponse.h
@@ -583,6 +584,7 @@ set(ess_src
   src/v20201111/model/DescribeFlowTemplatesResponse.cpp
   src/v20201111/model/ReferenceExcerpt.cpp
   src/v20201111/model/DescribePersonCertificateRequest.cpp
+  src/v20201111/model/FormatConfigs.cpp
   src/v20201111/model/ComparisonDetail.cpp
   src/v20201111/model/CreateBatchOrganizationAuthorizationUrlResponse.cpp
   src/v20201111/model/ModifyPartnerAutoSignAuthUrlResponse.cpp

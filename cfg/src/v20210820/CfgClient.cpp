@@ -340,6 +340,56 @@ CfgClient::DescribeActionLibraryListOutcomeCallable CfgClient::DescribeActionLib
     return prom->get_future();
 }
 
+CfgClient::DescribeInstanceAgentListOutcome CfgClient::DescribeInstanceAgentList(const DescribeInstanceAgentListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceAgentList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceAgentListResponse rsp = DescribeInstanceAgentListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceAgentListOutcome(rsp);
+        else
+            return DescribeInstanceAgentListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceAgentListOutcome(outcome.GetError());
+    }
+}
+
+void CfgClient::DescribeInstanceAgentListAsync(const DescribeInstanceAgentListRequest& request, const DescribeInstanceAgentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstanceAgentListRequest&;
+    using Resp = DescribeInstanceAgentListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceAgentList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfgClient::DescribeInstanceAgentListOutcomeCallable CfgClient::DescribeInstanceAgentListCallable(const DescribeInstanceAgentListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstanceAgentListOutcome>>();
+    DescribeInstanceAgentListAsync(
+    request,
+    [prom](
+        const CfgClient*,
+        const DescribeInstanceAgentListRequest&,
+        DescribeInstanceAgentListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfgClient::DescribeObjectTypeListOutcome CfgClient::DescribeObjectTypeList(const DescribeObjectTypeListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeObjectTypeList");
@@ -790,6 +840,56 @@ CfgClient::ExecuteTaskInstanceOutcomeCallable CfgClient::ExecuteTaskInstanceCall
     return prom->get_future();
 }
 
+CfgClient::InstallAgentOpenApiOutcome CfgClient::InstallAgentOpenApi(const InstallAgentOpenApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstallAgentOpenApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstallAgentOpenApiResponse rsp = InstallAgentOpenApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstallAgentOpenApiOutcome(rsp);
+        else
+            return InstallAgentOpenApiOutcome(o.GetError());
+    }
+    else
+    {
+        return InstallAgentOpenApiOutcome(outcome.GetError());
+    }
+}
+
+void CfgClient::InstallAgentOpenApiAsync(const InstallAgentOpenApiRequest& request, const InstallAgentOpenApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InstallAgentOpenApiRequest&;
+    using Resp = InstallAgentOpenApiResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InstallAgentOpenApi", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfgClient::InstallAgentOpenApiOutcomeCallable CfgClient::InstallAgentOpenApiCallable(const InstallAgentOpenApiRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InstallAgentOpenApiOutcome>>();
+    InstallAgentOpenApiAsync(
+    request,
+    [prom](
+        const CfgClient*,
+        const InstallAgentOpenApiRequest&,
+        InstallAgentOpenApiOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfgClient::ModifyTaskRunStatusOutcome CfgClient::ModifyTaskRunStatus(const ModifyTaskRunStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTaskRunStatus");
@@ -882,6 +982,56 @@ CfgClient::TriggerPolicyOutcomeCallable CfgClient::TriggerPolicyCallable(const T
         const CfgClient*,
         const TriggerPolicyRequest&,
         TriggerPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfgClient::UninstallAgentOpenApiOutcome CfgClient::UninstallAgentOpenApi(const UninstallAgentOpenApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "UninstallAgentOpenApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UninstallAgentOpenApiResponse rsp = UninstallAgentOpenApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UninstallAgentOpenApiOutcome(rsp);
+        else
+            return UninstallAgentOpenApiOutcome(o.GetError());
+    }
+    else
+    {
+        return UninstallAgentOpenApiOutcome(outcome.GetError());
+    }
+}
+
+void CfgClient::UninstallAgentOpenApiAsync(const UninstallAgentOpenApiRequest& request, const UninstallAgentOpenApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UninstallAgentOpenApiRequest&;
+    using Resp = UninstallAgentOpenApiResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UninstallAgentOpenApi", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfgClient::UninstallAgentOpenApiOutcomeCallable CfgClient::UninstallAgentOpenApiCallable(const UninstallAgentOpenApiRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UninstallAgentOpenApiOutcome>>();
+    UninstallAgentOpenApiAsync(
+    request,
+    [prom](
+        const CfgClient*,
+        const UninstallAgentOpenApiRequest&,
+        UninstallAgentOpenApiOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
