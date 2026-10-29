@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/asr/v20190614/model/SentenceDetail.h>
+#include <tencentcloud/asr/v20190614/model/LlmResult.h>
 
 
 namespace TencentCloud
@@ -202,6 +203,27 @@ namespace TencentCloud
                      */
                     bool AudioDurationHasBeenSet() const;
 
+                    /**
+                     * 获取大模型后处理结果
+                     * @return LlmResults 大模型后处理结果
+                     * 
+                     */
+                    std::vector<LlmResult> GetLlmResults() const;
+
+                    /**
+                     * 设置大模型后处理结果
+                     * @param _llmResults 大模型后处理结果
+                     * 
+                     */
+                    void SetLlmResults(const std::vector<LlmResult>& _llmResults);
+
+                    /**
+                     * 判断参数 LlmResults 是否已赋值
+                     * @return LlmResults 是否已赋值
+                     * 
+                     */
+                    bool LlmResultsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +269,12 @@ namespace TencentCloud
                      */
                     double m_audioDuration;
                     bool m_audioDurationHasBeenSet;
+
+                    /**
+                     * 大模型后处理结果
+                     */
+                    std::vector<LlmResult> m_llmResults;
+                    bool m_llmResultsHasBeenSet;
 
                 };
             }

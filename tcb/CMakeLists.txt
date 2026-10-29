@@ -159,6 +159,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeResourcePermissionResult.h
   include/tencentcloud/tcb/v20180608/model/ResetPGAccountPasswordResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateCustomLoginKeyRequest.h
+  include/tencentcloud/tcb/v20180608/model/EnablePGDocumentExtResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeBillingInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceRouteQPSPolicy.h
@@ -366,6 +367,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ListFunctionsRequest.h
   include/tencentcloud/tcb/v20180608/model/VerifyHTTPServiceRouteRequest.h
   include/tencentcloud/tcb/v20180608/model/MigrationSummary.h
+  include/tencentcloud/tcb/v20180608/model/EnablePGDocumentExtRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteFunctionResponse.h
   include/tencentcloud/tcb/v20180608/model/DestroyEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DestroyEnvResponse.h
@@ -563,6 +565,7 @@ set(tcb_src
   src/v20180608/model/DescribeResourcePermissionResult.cpp
   src/v20180608/model/ResetPGAccountPasswordResponse.cpp
   src/v20180608/model/CreateCustomLoginKeyRequest.cpp
+  src/v20180608/model/EnablePGDocumentExtResponse.cpp
   src/v20180608/model/DescribeCreateMySQLResultRequest.cpp
   src/v20180608/model/DescribeBillingInfoRequest.cpp
   src/v20180608/model/HTTPServiceRouteQPSPolicy.cpp
@@ -770,6 +773,7 @@ set(tcb_src
   src/v20180608/model/ListFunctionsRequest.cpp
   src/v20180608/model/VerifyHTTPServiceRouteRequest.cpp
   src/v20180608/model/MigrationSummary.cpp
+  src/v20180608/model/EnablePGDocumentExtRequest.cpp
   src/v20180608/model/DeleteFunctionResponse.cpp
   src/v20180608/model/DestroyEnvRequest.cpp
   src/v20180608/model/DestroyEnvResponse.cpp

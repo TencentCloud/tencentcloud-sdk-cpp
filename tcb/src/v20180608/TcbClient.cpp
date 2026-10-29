@@ -4290,6 +4290,56 @@ TcbClient::DownloadFunctionOutcomeCallable TcbClient::DownloadFunctionCallable(c
     return prom->get_future();
 }
 
+TcbClient::EnablePGDocumentExtOutcome TcbClient::EnablePGDocumentExt(const EnablePGDocumentExtRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnablePGDocumentExt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnablePGDocumentExtResponse rsp = EnablePGDocumentExtResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnablePGDocumentExtOutcome(rsp);
+        else
+            return EnablePGDocumentExtOutcome(o.GetError());
+    }
+    else
+    {
+        return EnablePGDocumentExtOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::EnablePGDocumentExtAsync(const EnablePGDocumentExtRequest& request, const EnablePGDocumentExtAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const EnablePGDocumentExtRequest&;
+    using Resp = EnablePGDocumentExtResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "EnablePGDocumentExt", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::EnablePGDocumentExtOutcomeCallable TcbClient::EnablePGDocumentExtCallable(const EnablePGDocumentExtRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<EnablePGDocumentExtOutcome>>();
+    EnablePGDocumentExtAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const EnablePGDocumentExtRequest&,
+        EnablePGDocumentExtOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::ExecutePGSqlOutcome TcbClient::ExecutePGSql(const ExecutePGSqlRequest &request)
 {
     auto outcome = MakeRequest(request, "ExecutePGSql");

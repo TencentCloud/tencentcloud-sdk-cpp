@@ -27,7 +27,8 @@ TaskStatus::TaskStatus() :
     m_resultHasBeenSet(false),
     m_errorMsgHasBeenSet(false),
     m_resultDetailHasBeenSet(false),
-    m_audioDurationHasBeenSet(false)
+    m_audioDurationHasBeenSet(false),
+    m_llmResultsHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,26 @@ CoreInternalOutcome TaskStatus::Deserialize(const rapidjson::Value &value)
         m_audioDurationHasBeenSet = true;
     }
 
+    if (value.HasMember("LlmResults") && !value["LlmResults"].IsNull())
+    {
+        if (!value["LlmResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskStatus.LlmResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LlmResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LlmResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_llmResults.push_back(item);
+        }
+        m_llmResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +205,21 @@ void TaskStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AudioDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioDuration, allocator);
+    }
+
+    if (m_llmResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LlmResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_llmResults.begin(); itr != m_llmResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -299,5 +335,21 @@ void TaskStatus::SetAudioDuration(const double& _audioDuration)
 bool TaskStatus::AudioDurationHasBeenSet() const
 {
     return m_audioDurationHasBeenSet;
+}
+
+vector<LlmResult> TaskStatus::GetLlmResults() const
+{
+    return m_llmResults;
+}
+
+void TaskStatus::SetLlmResults(const vector<LlmResult>& _llmResults)
+{
+    m_llmResults = _llmResults;
+    m_llmResultsHasBeenSet = true;
+}
+
+bool TaskStatus::LlmResultsHasBeenSet() const
+{
+    return m_llmResultsHasBeenSet;
 }
 

@@ -57,6 +57,7 @@ set(asr_public_header_model
   include/tencentcloud/asr/v20190614/model/VoicePrintCountData.h
   include/tencentcloud/asr/v20190614/model/VoicePrintUpdateRequest.h
   include/tencentcloud/asr/v20190614/model/SpeakerRoleInfo.h
+  include/tencentcloud/asr/v20190614/model/LlmResult.h
   include/tencentcloud/asr/v20190614/model/DeleteAsrVocabRequest.h
   include/tencentcloud/asr/v20190614/model/UpdateAsrVocabRequest.h
   include/tencentcloud/asr/v20190614/model/CreateAsrVocabResponse.h
@@ -151,6 +152,7 @@ set(asr_src
   src/v20190614/model/VoicePrintCountData.cpp
   src/v20190614/model/VoicePrintUpdateRequest.cpp
   src/v20190614/model/SpeakerRoleInfo.cpp
+  src/v20190614/model/LlmResult.cpp
   src/v20190614/model/DeleteAsrVocabRequest.cpp
   src/v20190614/model/UpdateAsrVocabRequest.cpp
   src/v20190614/model/CreateAsrVocabResponse.cpp

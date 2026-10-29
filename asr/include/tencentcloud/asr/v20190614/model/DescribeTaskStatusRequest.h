@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。
-**注意：TaskId有效期为24小时，超过24小时的TaskId请不要再查询。**
-                     * @return TaskId 从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。
-**注意：TaskId有效期为24小时，超过24小时的TaskId请不要再查询。**
+                     * 获取<p>从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。<br><strong>注意：TaskId有效期为24小时，超过24小时的TaskId请不要再查询。</strong></p>
+                     * @return TaskId <p>从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。<br><strong>注意：TaskId有效期为24小时，超过24小时的TaskId请不要再查询。</strong></p>
                      * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。
-**注意：TaskId有效期为24小时，超过24小时的TaskId请不要再查询。**
-                     * @param _taskId 从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。
-**注意：TaskId有效期为24小时，超过24小时的TaskId请不要再查询。**
+                     * 设置<p>从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。<br><strong>注意：TaskId有效期为24小时，超过24小时的TaskId请不要再查询。</strong></p>
+                     * @param _taskId <p>从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。<br><strong>注意：TaskId有效期为24小时，超过24小时的TaskId请不要再查询。</strong></p>
                      * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
@@ -70,8 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。
-**注意：TaskId有效期为24小时，超过24小时的TaskId请不要再查询。**
+                     * <p>从CreateRecTask接口获取的TaskId，用于获取任务状态与结果。<br><strong>注意：TaskId有效期为24小时，超过24小时的TaskId请不要再查询。</strong></p>
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;

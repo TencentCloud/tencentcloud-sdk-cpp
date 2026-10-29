@@ -193,6 +193,8 @@
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DownloadFunctionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DownloadFunctionResponse.h>
+#include <tencentcloud/tcb/v20180608/model/EnablePGDocumentExtRequest.h>
+#include <tencentcloud/tcb/v20180608/model/EnablePGDocumentExtResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ExecutePGSqlRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ExecutePGSqlResponse.h>
 #include <tencentcloud/tcb/v20180608/model/GetFunctionRequest.h>
@@ -544,6 +546,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadFunctionResponse> DownloadFunctionOutcome;
                 typedef std::future<DownloadFunctionOutcome> DownloadFunctionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DownloadFunctionRequest&, DownloadFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnablePGDocumentExtResponse> EnablePGDocumentExtOutcome;
+                typedef std::future<EnablePGDocumentExtOutcome> EnablePGDocumentExtOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::EnablePGDocumentExtRequest&, EnablePGDocumentExtOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnablePGDocumentExtAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExecutePGSqlResponse> ExecutePGSqlOutcome;
                 typedef std::future<ExecutePGSqlOutcome> ExecutePGSqlOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ExecutePGSqlRequest&, ExecutePGSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecutePGSqlAsyncHandler;
@@ -1574,6 +1579,16 @@ namespace TencentCloud
                 DownloadFunctionOutcome DownloadFunction(const Model::DownloadFunctionRequest &request);
                 void DownloadFunctionAsync(const Model::DownloadFunctionRequest& request, const DownloadFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadFunctionOutcomeCallable DownloadFunctionCallable(const Model::DownloadFunctionRequest& request);
+
+                /**
+                 *当前环境下开启 Postgresql 数据库文档插件能力，开启后会在指定  EnvId 的 PostgreSQL 实例下自动生成  pgdoc schema 以提供文档能力，不会额外产生费用，可以云开发控制或云 API 开启使用。
+当前支持地域已环境开通时所在地域为准。
+                 * @param req EnablePGDocumentExtRequest
+                 * @return EnablePGDocumentExtOutcome
+                 */
+                EnablePGDocumentExtOutcome EnablePGDocumentExt(const Model::EnablePGDocumentExtRequest &request);
+                void EnablePGDocumentExtAsync(const Model::EnablePGDocumentExtRequest& request, const EnablePGDocumentExtAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnablePGDocumentExtOutcomeCallable EnablePGDocumentExtCallable(const Model::EnablePGDocumentExtRequest& request);
 
                 /**
                  *在Postgres数据库上执行SQL
