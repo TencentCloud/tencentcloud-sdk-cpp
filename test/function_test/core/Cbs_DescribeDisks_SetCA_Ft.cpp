@@ -157,7 +157,7 @@
          TencentCloud::ShutdownAPI();
      }
 
-     TEST(cbs, DescribeDisks_UseWrongCaPath)
+     TEST(cbs, DescribeDisks_UseWrongCaInfoAndPath)
      {
          TencentCloud::InitAPI();
 
@@ -170,6 +170,7 @@
          HttpProfile httpProfile = HttpProfile();
          httpProfile.SetEndpoint("cbs.ap-guangzhou.tencentcloudapi.com");
          httpProfile.SetReqTimeout(5);
+         httpProfile.SetCaInfo("/tmp/nodata.txt");
          httpProfile.SetCaPath("/tmp/nodir/");
 
          ClientProfile clientProfile = ClientProfile(httpProfile);
