@@ -19,6 +19,11 @@ namespace
 {
     TEST(cvm, DescribeInstances_UseValidResolveIp)
     {
+        const string resolve_ip = CUtils::GetEnv("TENCENTCLOUD_TEST_RESOLVE_IP");
+        if (resolve_ip.empty()) {
+            GTEST_SKIP() << "TENCENTCLOUD_TEST_RESOLVE_IP is not configured";
+        }
+
         TencentCloud::InitAPI();
 
         string secretId = CUtils::GetEnv("TENCENTCLOUD_SECRET_ID");
@@ -28,7 +33,7 @@ namespace
         HttpProfile httpProfile = HttpProfile();
         httpProfile.SetEndpoint("cvm.ap-guangzhou.tencentcloudapi.com");
         httpProfile.SetReqTimeout(10);
-        httpProfile.SetResolveIp("106.55.122.199");
+        httpProfile.SetResolveIp(resolve_ip);
 
         ClientProfile clientProfile = ClientProfile(httpProfile);
 
@@ -48,6 +53,11 @@ namespace
 
     TEST(cvm, DescribeInstances_UseInvalidResolveIp)
     {
+        const string invalid_resolve_ip = CUtils::GetEnv("TENCENTCLOUD_TEST_INVALID_RESOLVE_IP");
+        if (invalid_resolve_ip.empty()) {
+            GTEST_SKIP() << "TENCENTCLOUD_TEST_INVALID_RESOLVE_IP is not configured";
+        }
+
         TencentCloud::InitAPI();
 
         string secretId = CUtils::GetEnv("TENCENTCLOUD_SECRET_ID");
@@ -57,7 +67,7 @@ namespace
         HttpProfile httpProfile = HttpProfile();
         httpProfile.SetEndpoint("cvm.ap-guangzhou.tencentcloudapi.com");
         httpProfile.SetReqTimeout(5);
-        httpProfile.SetResolveIp("192.168.1.1");
+        httpProfile.SetResolveIp(invalid_resolve_ip);
 
         ClientProfile clientProfile = ClientProfile(httpProfile);
 
@@ -105,13 +115,13 @@ namespace
     TEST(cvm, ResolveIp_ParameterPassing)
     {
         HttpProfile httpProfile;
-        string testIp = "106.55.122.199";
-        httpProfile.SetResolveIp(testIp);
+        const string test_ip = "resolve-ip-parameter-test";
+        httpProfile.SetResolveIp(test_ip);
 
-        EXPECT_EQ(httpProfile.GetResolveIp(), testIp);
+        EXPECT_EQ(httpProfile.GetResolveIp(), test_ip);
 
         ClientProfile clientProfile(httpProfile);
-        EXPECT_EQ(clientProfile.GetHttpProfile().GetResolveIp(), testIp);
+        EXPECT_EQ(clientProfile.GetHttpProfile().GetResolveIp(), test_ip);
 
         httpProfile.SetResolveIp("");
         EXPECT_TRUE(httpProfile.GetResolveIp().empty());
