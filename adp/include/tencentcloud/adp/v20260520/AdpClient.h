@@ -57,6 +57,8 @@
 #include <tencentcloud/adp/v20260520/model/CreateQAListResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateReleaseRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateReleaseResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreateSSETokenRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreateSSETokenResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateSimilarQuestionRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateSimilarQuestionResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateSkillRequest.h>
@@ -354,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateReleaseResponse> CreateReleaseOutcome;
                 typedef std::future<CreateReleaseOutcome> CreateReleaseOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateReleaseRequest&, CreateReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReleaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSSETokenResponse> CreateSSETokenOutcome;
+                typedef std::future<CreateSSETokenOutcome> CreateSSETokenOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreateSSETokenRequest&, CreateSSETokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSSETokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSimilarQuestionResponse> CreateSimilarQuestionOutcome;
                 typedef std::future<CreateSimilarQuestionOutcome> CreateSimilarQuestionOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateSimilarQuestionRequest&, CreateSimilarQuestionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSimilarQuestionAsyncHandler;
@@ -857,6 +862,15 @@ namespace TencentCloud
                 CreateReleaseOutcome CreateRelease(const Model::CreateReleaseRequest &request);
                 void CreateReleaseAsync(const Model::CreateReleaseRequest& request, const CreateReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateReleaseOutcomeCallable CreateReleaseCallable(const Model::CreateReleaseRequest& request);
+
+                /**
+                 *创建 SSE Token
+                 * @param req CreateSSETokenRequest
+                 * @return CreateSSETokenOutcome
+                 */
+                CreateSSETokenOutcome CreateSSEToken(const Model::CreateSSETokenRequest &request);
+                void CreateSSETokenAsync(const Model::CreateSSETokenRequest& request, const CreateSSETokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSSETokenOutcomeCallable CreateSSETokenCallable(const Model::CreateSSETokenRequest& request);
 
                 /**
                  *创建相似问生成任务

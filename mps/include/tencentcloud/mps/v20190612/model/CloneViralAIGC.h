@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool ModelTierHasBeenSet() const;
 
+                    /**
+                     * 获取<p>深度估计结果是否含音频， 默认不含</p>
+                     * @return DepthWithAudio <p>深度估计结果是否含音频， 默认不含</p>
+                     * 
+                     */
+                    bool GetDepthWithAudio() const;
+
+                    /**
+                     * 设置<p>深度估计结果是否含音频， 默认不含</p>
+                     * @param _depthWithAudio <p>深度估计结果是否含音频， 默认不含</p>
+                     * 
+                     */
+                    void SetDepthWithAudio(const bool& _depthWithAudio);
+
+                    /**
+                     * 判断参数 DepthWithAudio 是否已赋值
+                     * @return DepthWithAudio 是否已赋值
+                     * 
+                     */
+                    bool DepthWithAudioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_modelTier;
                     bool m_modelTierHasBeenSet;
+
+                    /**
+                     * <p>深度估计结果是否含音频， 默认不含</p>
+                     */
+                    bool m_depthWithAudio;
+                    bool m_depthWithAudioHasBeenSet;
 
                 };
             }

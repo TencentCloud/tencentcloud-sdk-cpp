@@ -22,7 +22,8 @@ using namespace std;
 
 CoefficientTierCondition::CoefficientTierCondition() :
     m_inputTokensAboveHasBeenSet(false),
-    m_resolutionHasBeenSet(false)
+    m_resolutionHasBeenSet(false),
+    m_hasInputVideoHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome CoefficientTierCondition::Deserialize(const rapidjson::Value
         m_resolutionHasBeenSet = true;
     }
 
+    if (value.HasMember("HasInputVideo") && !value["HasInputVideo"].IsNull())
+    {
+        if (!value["HasInputVideo"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CoefficientTierCondition.HasInputVideo` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasInputVideo = value["HasInputVideo"].GetBool();
+        m_hasInputVideoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void CoefficientTierCondition::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "Resolution";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hasInputVideoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasInputVideo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasInputVideo, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void CoefficientTierCondition::SetResolution(const string& _resolution)
 bool CoefficientTierCondition::ResolutionHasBeenSet() const
 {
     return m_resolutionHasBeenSet;
+}
+
+bool CoefficientTierCondition::GetHasInputVideo() const
+{
+    return m_hasInputVideo;
+}
+
+void CoefficientTierCondition::SetHasInputVideo(const bool& _hasInputVideo)
+{
+    m_hasInputVideo = _hasInputVideo;
+    m_hasInputVideoHasBeenSet = true;
+}
+
+bool CoefficientTierCondition::HasInputVideoHasBeenSet() const
+{
+    return m_hasInputVideoHasBeenSet;
 }
 

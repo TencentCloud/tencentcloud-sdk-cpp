@@ -27,7 +27,8 @@ ModifyServiceProviderModelAttributesRequest::ModifyServiceProviderModelAttribute
     m_modelNameHasBeenSet(false),
     m_inputModalitiesHasBeenSet(false),
     m_newModelNameHasBeenSet(false),
-    m_newModelAliasHasBeenSet(false)
+    m_newModelAliasHasBeenSet(false),
+    m_upstreamRolloutHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,15 @@ string ModifyServiceProviderModelAttributesRequest::ToJsonString() const
         string key = "NewModelAlias";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_newModelAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upstreamRolloutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamRollout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_upstreamRollout.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -169,6 +179,22 @@ void ModifyServiceProviderModelAttributesRequest::SetNewModelAlias(const string&
 bool ModifyServiceProviderModelAttributesRequest::NewModelAliasHasBeenSet() const
 {
     return m_newModelAliasHasBeenSet;
+}
+
+UpstreamRolloutOperation ModifyServiceProviderModelAttributesRequest::GetUpstreamRollout() const
+{
+    return m_upstreamRollout;
+}
+
+void ModifyServiceProviderModelAttributesRequest::SetUpstreamRollout(const UpstreamRolloutOperation& _upstreamRollout)
+{
+    m_upstreamRollout = _upstreamRollout;
+    m_upstreamRolloutHasBeenSet = true;
+}
+
+bool ModifyServiceProviderModelAttributesRequest::UpstreamRolloutHasBeenSet() const
+{
+    return m_upstreamRolloutHasBeenSet;
 }
 
 

@@ -74,7 +74,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/CreatePluginRequest.h
   include/tencentcloud/adp/v20260520/model/ThinkModel.h
   include/tencentcloud/adp/v20260520/model/DeleteAgentResponse.h
-  include/tencentcloud/adp/v20260520/model/ModifyConversationResponse.h
+  include/tencentcloud/adp/v20260520/model/CreateSSETokenRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeWorkflowRunSummaryListRequest.h
   include/tencentcloud/adp/v20260520/model/RetryReleaseRequest.h
   include/tencentcloud/adp/v20260520/model/AppConfig.h
@@ -198,6 +198,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/WorkflowRunMetadata.h
   include/tencentcloud/adp/v20260520/model/KBModelConfig.h
   include/tencentcloud/adp/v20260520/model/AgentPlugin.h
+  include/tencentcloud/adp/v20260520/model/ModifyConversationResponse.h
   include/tencentcloud/adp/v20260520/model/SimilarQuestionModifySpec.h
   include/tencentcloud/adp/v20260520/model/SearchBilling.h
   include/tencentcloud/adp/v20260520/model/DeleteQAListResponse.h
@@ -591,6 +592,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/AppTriggerParamBinding.h
   include/tencentcloud/adp/v20260520/model/PluginConfig.h
   include/tencentcloud/adp/v20260520/model/RerankConfig.h
+  include/tencentcloud/adp/v20260520/model/CreateSSETokenResponse.h
   include/tencentcloud/adp/v20260520/model/ConcurrencyLimitDetail.h
   include/tencentcloud/adp/v20260520/model/CreateMsgRecordCategoryRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeAppStatisticsOverviewResponse.h
@@ -677,7 +679,7 @@ set(adp_src
   src/v20260520/model/CreatePluginRequest.cpp
   src/v20260520/model/ThinkModel.cpp
   src/v20260520/model/DeleteAgentResponse.cpp
-  src/v20260520/model/ModifyConversationResponse.cpp
+  src/v20260520/model/CreateSSETokenRequest.cpp
   src/v20260520/model/DescribeWorkflowRunSummaryListRequest.cpp
   src/v20260520/model/RetryReleaseRequest.cpp
   src/v20260520/model/AppConfig.cpp
@@ -801,6 +803,7 @@ set(adp_src
   src/v20260520/model/WorkflowRunMetadata.cpp
   src/v20260520/model/KBModelConfig.cpp
   src/v20260520/model/AgentPlugin.cpp
+  src/v20260520/model/ModifyConversationResponse.cpp
   src/v20260520/model/SimilarQuestionModifySpec.cpp
   src/v20260520/model/SearchBilling.cpp
   src/v20260520/model/DeleteQAListResponse.cpp
@@ -1194,6 +1197,7 @@ set(adp_src
   src/v20260520/model/AppTriggerParamBinding.cpp
   src/v20260520/model/PluginConfig.cpp
   src/v20260520/model/RerankConfig.cpp
+  src/v20260520/model/CreateSSETokenResponse.cpp
   src/v20260520/model/ConcurrencyLimitDetail.cpp
   src/v20260520/model/CreateMsgRecordCategoryRequest.cpp
   src/v20260520/model/DescribeAppStatisticsOverviewResponse.cpp

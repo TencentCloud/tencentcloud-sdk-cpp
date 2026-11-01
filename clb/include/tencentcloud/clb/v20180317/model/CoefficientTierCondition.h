@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool ResolutionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否有视频输入</p>
+                     * @return HasInputVideo <p>是否有视频输入</p>
+                     * 
+                     */
+                    bool GetHasInputVideo() const;
+
+                    /**
+                     * 设置<p>是否有视频输入</p>
+                     * @param _hasInputVideo <p>是否有视频输入</p>
+                     * 
+                     */
+                    void SetHasInputVideo(const bool& _hasInputVideo);
+
+                    /**
+                     * 判断参数 HasInputVideo 是否已赋值
+                     * @return HasInputVideo 是否已赋值
+                     * 
+                     */
+                    bool HasInputVideoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
+
+                    /**
+                     * <p>是否有视频输入</p>
+                     */
+                    bool m_hasInputVideo;
+                    bool m_hasInputVideoHasBeenSet;
 
                 };
             }

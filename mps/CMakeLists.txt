@@ -916,6 +916,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AsrHotWordsConfigure.h
   include/tencentcloud/mps/v20190612/model/ImageAreaBoxInfo.h
   include/tencentcloud/mps/v20190612/model/DocToVideoBackgroundInfo.h
+  include/tencentcloud/mps/v20190612/model/CloneViralReference.h
   include/tencentcloud/mps/v20190612/model/LiveStreamAiReviewResultItem.h
   include/tencentcloud/mps/v20190612/model/DescribeVideoSearchTaskDetailRequest.h
   include/tencentcloud/mps/v20190612/model/CreateInputRTPSettings.h
@@ -2051,6 +2052,7 @@ set(mps_src
   src/v20190612/model/AsrHotWordsConfigure.cpp
   src/v20190612/model/ImageAreaBoxInfo.cpp
   src/v20190612/model/DocToVideoBackgroundInfo.cpp
+  src/v20190612/model/CloneViralReference.cpp
   src/v20190612/model/LiveStreamAiReviewResultItem.cpp
   src/v20190612/model/DescribeVideoSearchTaskDetailRequest.cpp
   src/v20190612/model/CreateInputRTPSettings.cpp

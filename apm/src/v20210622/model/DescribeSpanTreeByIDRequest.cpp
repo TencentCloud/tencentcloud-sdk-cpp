@@ -31,7 +31,8 @@ DescribeSpanTreeByIDRequest::DescribeSpanTreeByIDRequest() :
     m_entrySpanSelectedHasBeenSet(false),
     m_focusSpanIdHasBeenSet(false),
     m_filterViewTagKeyListHasBeenSet(false),
-    m_enableResourceLinkHasBeenSet(false)
+    m_enableResourceLinkHasBeenSet(false),
+    m_filterTagKeysHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,19 @@ string DescribeSpanTreeByIDRequest::ToJsonString() const
         string key = "EnableResourceLink";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableResourceLink, allocator);
+    }
+
+    if (m_filterTagKeysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterTagKeys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_filterTagKeys.begin(); itr != m_filterTagKeys.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -276,6 +290,22 @@ void DescribeSpanTreeByIDRequest::SetEnableResourceLink(const bool& _enableResou
 bool DescribeSpanTreeByIDRequest::EnableResourceLinkHasBeenSet() const
 {
     return m_enableResourceLinkHasBeenSet;
+}
+
+vector<string> DescribeSpanTreeByIDRequest::GetFilterTagKeys() const
+{
+    return m_filterTagKeys;
+}
+
+void DescribeSpanTreeByIDRequest::SetFilterTagKeys(const vector<string>& _filterTagKeys)
+{
+    m_filterTagKeys = _filterTagKeys;
+    m_filterTagKeysHasBeenSet = true;
+}
+
+bool DescribeSpanTreeByIDRequest::FilterTagKeysHasBeenSet() const
+{
+    return m_filterTagKeysHasBeenSet;
 }
 
 

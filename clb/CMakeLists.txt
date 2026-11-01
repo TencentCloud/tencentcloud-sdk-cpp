@@ -283,6 +283,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/RegisterTargetGroupInstancesResponse.h
   include/tencentcloud/clb/v20180317/model/ClassicalTargetInfo.h
   include/tencentcloud/clb/v20180317/model/ZoneInfo.h
+  include/tencentcloud/clb/v20180317/model/UpstreamRolloutOperation.h
   include/tencentcloud/clb/v20180317/model/InquiryPriceCreateLoadBalancerRequest.h
   include/tencentcloud/clb/v20180317/model/ChatCompletionsResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeClassicalLBTargetsRequest.h
@@ -762,6 +763,7 @@ set(clb_src
   src/v20180317/model/RegisterTargetGroupInstancesResponse.cpp
   src/v20180317/model/ClassicalTargetInfo.cpp
   src/v20180317/model/ZoneInfo.cpp
+  src/v20180317/model/UpstreamRolloutOperation.cpp
   src/v20180317/model/InquiryPriceCreateLoadBalancerRequest.cpp
   src/v20180317/model/ChatCompletionsResponse.cpp
   src/v20180317/model/DescribeClassicalLBTargetsRequest.cpp

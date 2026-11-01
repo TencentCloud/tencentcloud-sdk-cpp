@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool BodyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>人物图片</p>
+                     * @return Images <p>人物图片</p>
+                     * 
+                     */
+                    std::vector<std::string> GetImages() const;
+
+                    /**
+                     * 设置<p>人物图片</p>
+                     * @param _images <p>人物图片</p>
+                     * 
+                     */
+                    void SetImages(const std::vector<std::string>& _images);
+
+                    /**
+                     * 判断参数 Images 是否已赋值
+                     * @return Images 是否已赋值
+                     * 
+                     */
+                    bool ImagesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_bodyType;
                     bool m_bodyTypeHasBeenSet;
+
+                    /**
+                     * <p>人物图片</p>
+                     */
+                    std::vector<std::string> m_images;
+                    bool m_imagesHasBeenSet;
 
                 };
             }

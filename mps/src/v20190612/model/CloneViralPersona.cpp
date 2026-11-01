@@ -24,7 +24,8 @@ CloneViralPersona::CloneViralPersona() :
     m_genderHasBeenSet(false),
     m_ageHasBeenSet(false),
     m_ethnicityHasBeenSet(false),
-    m_bodyTypeHasBeenSet(false)
+    m_bodyTypeHasBeenSet(false),
+    m_imagesHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,19 @@ CoreInternalOutcome CloneViralPersona::Deserialize(const rapidjson::Value &value
         m_bodyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Images") && !value["Images"].IsNull())
+    {
+        if (!value["Images"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloneViralPersona.Images` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Images"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_images.push_back((*itr).GetString());
+        }
+        m_imagesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +124,19 @@ void CloneViralPersona::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "BodyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bodyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Images";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_images.begin(); itr != m_images.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -177,5 +204,21 @@ void CloneViralPersona::SetBodyType(const string& _bodyType)
 bool CloneViralPersona::BodyTypeHasBeenSet() const
 {
     return m_bodyTypeHasBeenSet;
+}
+
+vector<string> CloneViralPersona::GetImages() const
+{
+    return m_images;
+}
+
+void CloneViralPersona::SetImages(const vector<string>& _images)
+{
+    m_images = _images;
+    m_imagesHasBeenSet = true;
+}
+
+bool CloneViralPersona::ImagesHasBeenSet() const
+{
+    return m_imagesHasBeenSet;
 }
 

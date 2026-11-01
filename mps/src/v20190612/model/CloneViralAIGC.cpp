@@ -24,7 +24,8 @@ CloneViralAIGC::CloneViralAIGC() :
     m_durationHasBeenSet(false),
     m_aspectRatioHasBeenSet(false),
     m_resolutionHasBeenSet(false),
-    m_modelTierHasBeenSet(false)
+    m_modelTierHasBeenSet(false),
+    m_depthWithAudioHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome CloneViralAIGC::Deserialize(const rapidjson::Value &value)
         m_modelTierHasBeenSet = true;
     }
 
+    if (value.HasMember("DepthWithAudio") && !value["DepthWithAudio"].IsNull())
+    {
+        if (!value["DepthWithAudio"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloneViralAIGC.DepthWithAudio` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_depthWithAudio = value["DepthWithAudio"].GetBool();
+        m_depthWithAudioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void CloneViralAIGC::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ModelTier";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modelTier.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_depthWithAudioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DepthWithAudio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_depthWithAudio, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void CloneViralAIGC::SetModelTier(const string& _modelTier)
 bool CloneViralAIGC::ModelTierHasBeenSet() const
 {
     return m_modelTierHasBeenSet;
+}
+
+bool CloneViralAIGC::GetDepthWithAudio() const
+{
+    return m_depthWithAudio;
+}
+
+void CloneViralAIGC::SetDepthWithAudio(const bool& _depthWithAudio)
+{
+    m_depthWithAudio = _depthWithAudio;
+    m_depthWithAudioHasBeenSet = true;
+}
+
+bool CloneViralAIGC::DepthWithAudioHasBeenSet() const
+{
+    return m_depthWithAudioHasBeenSet;
 }
 

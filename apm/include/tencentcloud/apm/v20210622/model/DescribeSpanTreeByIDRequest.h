@@ -232,6 +232,27 @@ namespace TencentCloud
                      */
                     bool EnableResourceLinkHasBeenSet() const;
 
+                    /**
+                     * 获取<p>字符串数组，tagstag里面的key</p>
+                     * @return FilterTagKeys <p>字符串数组，tagstag里面的key</p>
+                     * 
+                     */
+                    std::vector<std::string> GetFilterTagKeys() const;
+
+                    /**
+                     * 设置<p>字符串数组，tagstag里面的key</p>
+                     * @param _filterTagKeys <p>字符串数组，tagstag里面的key</p>
+                     * 
+                     */
+                    void SetFilterTagKeys(const std::vector<std::string>& _filterTagKeys);
+
+                    /**
+                     * 判断参数 FilterTagKeys 是否已赋值
+                     * @return FilterTagKeys 是否已赋值
+                     * 
+                     */
+                    bool FilterTagKeysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +308,12 @@ namespace TencentCloud
                      */
                     bool m_enableResourceLink;
                     bool m_enableResourceLinkHasBeenSet;
+
+                    /**
+                     * <p>字符串数组，tagstag里面的key</p>
+                     */
+                    std::vector<std::string> m_filterTagKeys;
+                    bool m_filterTagKeysHasBeenSet;
 
                 };
             }

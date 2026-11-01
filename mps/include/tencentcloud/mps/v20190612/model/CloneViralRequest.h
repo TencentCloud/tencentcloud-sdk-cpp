@@ -26,6 +26,7 @@
 #include <tencentcloud/mps/v20190612/model/CloneViralContent.h>
 #include <tencentcloud/mps/v20190612/model/CloneViralPersona.h>
 #include <tencentcloud/mps/v20190612/model/CloneViralOutputOption.h>
+#include <tencentcloud/mps/v20190612/model/CloneViralReference.h>
 
 
 namespace TencentCloud
@@ -67,6 +68,27 @@ namespace TencentCloud
                      * 
                      */
                     bool VideoUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>处理类型</p><p>枚举值：</p><ul><li>script ： 脚本级爆款复刻</li><li>motion： 动作级爆款复刻</li><li>depth： 深度估计</li></ul>
+                     * @return Mode <p>处理类型</p><p>枚举值：</p><ul><li>script ： 脚本级爆款复刻</li><li>motion： 动作级爆款复刻</li><li>depth： 深度估计</li></ul>
+                     * 
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置<p>处理类型</p><p>枚举值：</p><ul><li>script ： 脚本级爆款复刻</li><li>motion： 动作级爆款复刻</li><li>depth： 深度估计</li></ul>
+                     * @param _mode <p>处理类型</p><p>枚举值：</p><ul><li>script ： 脚本级爆款复刻</li><li>motion： 动作级爆款复刻</li><li>depth： 深度估计</li></ul>
+                     * 
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
 
                     /**
                      * 获取<p>产品信息。除深度提取外，其他模式必填</p>
@@ -173,6 +195,27 @@ namespace TencentCloud
                      */
                     bool OutputHasBeenSet() const;
 
+                    /**
+                     * 获取<p>其他参考素材（如背景、服装）</p>
+                     * @return Reference <p>其他参考素材（如背景、服装）</p>
+                     * 
+                     */
+                    CloneViralReference GetReference() const;
+
+                    /**
+                     * 设置<p>其他参考素材（如背景、服装）</p>
+                     * @param _reference <p>其他参考素材（如背景、服装）</p>
+                     * 
+                     */
+                    void SetReference(const CloneViralReference& _reference);
+
+                    /**
+                     * 判断参数 Reference 是否已赋值
+                     * @return Reference 是否已赋值
+                     * 
+                     */
+                    bool ReferenceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,6 +223,12 @@ namespace TencentCloud
                      */
                     std::string m_videoUrl;
                     bool m_videoUrlHasBeenSet;
+
+                    /**
+                     * <p>处理类型</p><p>枚举值：</p><ul><li>script ： 脚本级爆款复刻</li><li>motion： 动作级爆款复刻</li><li>depth： 深度估计</li></ul>
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
 
                     /**
                      * <p>产品信息。除深度提取外，其他模式必填</p>
@@ -210,6 +259,12 @@ namespace TencentCloud
                      */
                     CloneViralOutputOption m_output;
                     bool m_outputHasBeenSet;
+
+                    /**
+                     * <p>其他参考素材（如背景、服装）</p>
+                     */
+                    CloneViralReference m_reference;
+                    bool m_referenceHasBeenSet;
 
                 };
             }

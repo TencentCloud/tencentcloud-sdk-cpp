@@ -890,6 +890,56 @@ AdpClient::CreateReleaseOutcomeCallable AdpClient::CreateReleaseCallable(const C
     return prom->get_future();
 }
 
+AdpClient::CreateSSETokenOutcome AdpClient::CreateSSEToken(const CreateSSETokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSSEToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSSETokenResponse rsp = CreateSSETokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSSETokenOutcome(rsp);
+        else
+            return CreateSSETokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSSETokenOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreateSSETokenAsync(const CreateSSETokenRequest& request, const CreateSSETokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateSSETokenRequest&;
+    using Resp = CreateSSETokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateSSEToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreateSSETokenOutcomeCallable AdpClient::CreateSSETokenCallable(const CreateSSETokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateSSETokenOutcome>>();
+    CreateSSETokenAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreateSSETokenRequest&,
+        CreateSSETokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CreateSimilarQuestionOutcome AdpClient::CreateSimilarQuestion(const CreateSimilarQuestionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSimilarQuestion");

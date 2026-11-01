@@ -24,11 +24,13 @@ using namespace std;
 
 CloneViralRequest::CloneViralRequest() :
     m_videoUrlHasBeenSet(false),
+    m_modeHasBeenSet(false),
     m_productHasBeenSet(false),
     m_aIGCParamHasBeenSet(false),
     m_contentParamHasBeenSet(false),
     m_personaHasBeenSet(false),
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_referenceHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,14 @@ string CloneViralRequest::ToJsonString() const
         string key = "VideoUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_videoUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productHasBeenSet)
@@ -92,6 +102,15 @@ string CloneViralRequest::ToJsonString() const
         m_output.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_referenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Reference";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reference.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -114,6 +133,22 @@ void CloneViralRequest::SetVideoUrl(const string& _videoUrl)
 bool CloneViralRequest::VideoUrlHasBeenSet() const
 {
     return m_videoUrlHasBeenSet;
+}
+
+string CloneViralRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void CloneViralRequest::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool CloneViralRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 
 CloneViralProduct CloneViralRequest::GetProduct() const
@@ -194,6 +229,22 @@ void CloneViralRequest::SetOutput(const CloneViralOutputOption& _output)
 bool CloneViralRequest::OutputHasBeenSet() const
 {
     return m_outputHasBeenSet;
+}
+
+CloneViralReference CloneViralRequest::GetReference() const
+{
+    return m_reference;
+}
+
+void CloneViralRequest::SetReference(const CloneViralReference& _reference)
+{
+    m_reference = _reference;
+    m_referenceHasBeenSet = true;
+}
+
+bool CloneViralRequest::ReferenceHasBeenSet() const
+{
+    return m_referenceHasBeenSet;
 }
 
 
