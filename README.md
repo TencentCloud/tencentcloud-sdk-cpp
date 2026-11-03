@@ -361,6 +361,8 @@ sudo make install
 
 - TENCENTCLOUD_SECRET_ID: API 密钥 SecretId
 - TENCENTCLOUD_SECRET_KEY: API 密钥 SecretKey
+- TENCENTCLOUD_TEST_RESOLVE_IP: ResolveIp 功能测试使用的有效 IP 地址，未配置时跳过对应用例
+- TENCENTCLOUD_TEST_INVALID_RESOLVE_IP: ResolveIp 功能测试使用的无效 IP 地址，未配置时跳过对应用例
 
 ## 测试
 执行以下脚本
