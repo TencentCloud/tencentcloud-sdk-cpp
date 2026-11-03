@@ -24,7 +24,10 @@ AiAnalysisTaskReelOutput::AiAnalysisTaskReelOutput() :
     m_videoPathHasBeenSet(false),
     m_videoPathsHasBeenSet(false),
     m_scriptPathHasBeenSet(false),
-    m_outputStorageHasBeenSet(false)
+    m_scriptPathsHasBeenSet(false),
+    m_outputStorageHasBeenSet(false),
+    m_outputSubtitlePathHasBeenSet(false),
+    m_outputSubtitlePathsHasBeenSet(false)
 {
 }
 
@@ -66,6 +69,19 @@ CoreInternalOutcome AiAnalysisTaskReelOutput::Deserialize(const rapidjson::Value
         m_scriptPathHasBeenSet = true;
     }
 
+    if (value.HasMember("ScriptPaths") && !value["ScriptPaths"].IsNull())
+    {
+        if (!value["ScriptPaths"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskReelOutput.ScriptPaths` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ScriptPaths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_scriptPaths.push_back((*itr).GetString());
+        }
+        m_scriptPathsHasBeenSet = true;
+    }
+
     if (value.HasMember("OutputStorage") && !value["OutputStorage"].IsNull())
     {
         if (!value["OutputStorage"].IsObject())
@@ -81,6 +97,29 @@ CoreInternalOutcome AiAnalysisTaskReelOutput::Deserialize(const rapidjson::Value
         }
 
         m_outputStorageHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputSubtitlePath") && !value["OutputSubtitlePath"].IsNull())
+    {
+        if (!value["OutputSubtitlePath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskReelOutput.OutputSubtitlePath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputSubtitlePath = string(value["OutputSubtitlePath"].GetString());
+        m_outputSubtitlePathHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutputSubtitlePaths") && !value["OutputSubtitlePaths"].IsNull())
+    {
+        if (!value["OutputSubtitlePaths"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisTaskReelOutput.OutputSubtitlePaths` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OutputSubtitlePaths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_outputSubtitlePaths.push_back((*itr).GetString());
+        }
+        m_outputSubtitlePathsHasBeenSet = true;
     }
 
 
@@ -119,6 +158,19 @@ void AiAnalysisTaskReelOutput::ToJsonObject(rapidjson::Value &value, rapidjson::
         value.AddMember(iKey, rapidjson::Value(m_scriptPath.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_scriptPathsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScriptPaths";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_scriptPaths.begin(); itr != m_scriptPaths.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_outputStorageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -126,6 +178,27 @@ void AiAnalysisTaskReelOutput::ToJsonObject(rapidjson::Value &value, rapidjson::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_outputStorage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_outputSubtitlePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputSubtitlePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputSubtitlePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputSubtitlePathsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputSubtitlePaths";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_outputSubtitlePaths.begin(); itr != m_outputSubtitlePaths.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -179,6 +252,22 @@ bool AiAnalysisTaskReelOutput::ScriptPathHasBeenSet() const
     return m_scriptPathHasBeenSet;
 }
 
+vector<string> AiAnalysisTaskReelOutput::GetScriptPaths() const
+{
+    return m_scriptPaths;
+}
+
+void AiAnalysisTaskReelOutput::SetScriptPaths(const vector<string>& _scriptPaths)
+{
+    m_scriptPaths = _scriptPaths;
+    m_scriptPathsHasBeenSet = true;
+}
+
+bool AiAnalysisTaskReelOutput::ScriptPathsHasBeenSet() const
+{
+    return m_scriptPathsHasBeenSet;
+}
+
 TaskOutputStorage AiAnalysisTaskReelOutput::GetOutputStorage() const
 {
     return m_outputStorage;
@@ -193,5 +282,37 @@ void AiAnalysisTaskReelOutput::SetOutputStorage(const TaskOutputStorage& _output
 bool AiAnalysisTaskReelOutput::OutputStorageHasBeenSet() const
 {
     return m_outputStorageHasBeenSet;
+}
+
+string AiAnalysisTaskReelOutput::GetOutputSubtitlePath() const
+{
+    return m_outputSubtitlePath;
+}
+
+void AiAnalysisTaskReelOutput::SetOutputSubtitlePath(const string& _outputSubtitlePath)
+{
+    m_outputSubtitlePath = _outputSubtitlePath;
+    m_outputSubtitlePathHasBeenSet = true;
+}
+
+bool AiAnalysisTaskReelOutput::OutputSubtitlePathHasBeenSet() const
+{
+    return m_outputSubtitlePathHasBeenSet;
+}
+
+vector<string> AiAnalysisTaskReelOutput::GetOutputSubtitlePaths() const
+{
+    return m_outputSubtitlePaths;
+}
+
+void AiAnalysisTaskReelOutput::SetOutputSubtitlePaths(const vector<string>& _outputSubtitlePaths)
+{
+    m_outputSubtitlePaths = _outputSubtitlePaths;
+    m_outputSubtitlePathsHasBeenSet = true;
+}
+
+bool AiAnalysisTaskReelOutput::OutputSubtitlePathsHasBeenSet() const
+{
+    return m_outputSubtitlePathsHasBeenSet;
 }
 

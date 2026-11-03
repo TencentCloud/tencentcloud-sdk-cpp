@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取<p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480p、720p、1080p、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480p、720p；</li><li>当 Model 是 character_scene_fast 时，支持 720p。</li></ul>
-                     * @return Resolution <p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480p、720p、1080p、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480p、720p；</li><li>当 Model 是 character_scene_fast 时，支持 720p。</li></ul>
+                     * 获取<p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480P、720P、1080P、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480P、720P；</li><li>当 Model 是 character_scene_fast 时，支持 720P。</li></ul>
+                     * @return Resolution <p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480P、720P、1080P、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480P、720P；</li><li>当 Model 是 character_scene_fast 时，支持 720P。</li></ul>
                      * 
                      */
                     std::string GetResolution() const;
 
                     /**
-                     * 设置<p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480p、720p、1080p、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480p、720p；</li><li>当 Model 是 character_scene_fast 时，支持 720p。</li></ul>
-                     * @param _resolution <p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480p、720p、1080p、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480p、720p；</li><li>当 Model 是 character_scene_fast 时，支持 720p。</li></ul>
+                     * 设置<p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480P、720P、1080P、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480P、720P；</li><li>当 Model 是 character_scene_fast 时，支持 720P。</li></ul>
+                     * @param _resolution <p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480P、720P、1080P、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480P、720P；</li><li>当 Model 是 character_scene_fast 时，支持 720P。</li></ul>
                      * 
                      */
                     void SetResolution(const std::string& _resolution);
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_durationHasBeenSet;
 
                     /**
-                     * <p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480p、720p、1080p、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480p、720p；</li><li>当 Model 是 character_scene_fast 时，支持 720p。</li></ul>
+                     * <p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480P、720P、1080P、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480P、720P；</li><li>当 Model 是 character_scene_fast 时，支持 720P。</li></ul>
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdb/v20170320/model/Account.h>
+#include <tencentcloud/cdb/v20170320/model/DeleteDBAccount.h>
 
 
 namespace TencentCloud
@@ -85,6 +86,27 @@ namespace TencentCloud
                      */
                     bool AccountsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>待删除账号的完整信息。</p>
+                     * @return DeleteAccounts <p>待删除账号的完整信息。</p>
+                     * 
+                     */
+                    std::vector<DeleteDBAccount> GetDeleteAccounts() const;
+
+                    /**
+                     * 设置<p>待删除账号的完整信息。</p>
+                     * @param _deleteAccounts <p>待删除账号的完整信息。</p>
+                     * 
+                     */
+                    void SetDeleteAccounts(const std::vector<DeleteDBAccount>& _deleteAccounts);
+
+                    /**
+                     * 判断参数 DeleteAccounts 是否已赋值
+                     * @return DeleteAccounts 是否已赋值
+                     * 
+                     */
+                    bool DeleteAccountsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +120,12 @@ namespace TencentCloud
                      */
                     std::vector<Account> m_accounts;
                     bool m_accountsHasBeenSet;
+
+                    /**
+                     * <p>待删除账号的完整信息。</p>
+                     */
+                    std::vector<DeleteDBAccount> m_deleteAccounts;
+                    bool m_deleteAccountsHasBeenSet;
 
                 };
             }

@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool PlatformIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>查询返回数据时间界别</p><p>枚举值：</p><ul><li>Daily： 按照天级别返回数据</li><li>Hourly： 按照小时级别返回数据</li></ul><p>默认值：Daily</p><p>部分数据按照天级别统计，无法按照小时级别返回</p>
+                     * @return QueryLevel <p>查询返回数据时间界别</p><p>枚举值：</p><ul><li>Daily： 按照天级别返回数据</li><li>Hourly： 按照小时级别返回数据</li></ul><p>默认值：Daily</p><p>部分数据按照天级别统计，无法按照小时级别返回</p>
+                     * 
+                     */
+                    std::string GetQueryLevel() const;
+
+                    /**
+                     * 设置<p>查询返回数据时间界别</p><p>枚举值：</p><ul><li>Daily： 按照天级别返回数据</li><li>Hourly： 按照小时级别返回数据</li></ul><p>默认值：Daily</p><p>部分数据按照天级别统计，无法按照小时级别返回</p>
+                     * @param _queryLevel <p>查询返回数据时间界别</p><p>枚举值：</p><ul><li>Daily： 按照天级别返回数据</li><li>Hourly： 按照小时级别返回数据</li></ul><p>默认值：Daily</p><p>部分数据按照天级别统计，无法按照小时级别返回</p>
+                     * 
+                     */
+                    void SetQueryLevel(const std::string& _queryLevel);
+
+                    /**
+                     * 判断参数 QueryLevel 是否已赋值
+                     * @return QueryLevel 是否已赋值
+                     * 
+                     */
+                    bool QueryLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_platformId;
                     bool m_platformIdHasBeenSet;
+
+                    /**
+                     * <p>查询返回数据时间界别</p><p>枚举值：</p><ul><li>Daily： 按照天级别返回数据</li><li>Hourly： 按照小时级别返回数据</li></ul><p>默认值：Daily</p><p>部分数据按照天级别统计，无法按照小时级别返回</p>
+                     */
+                    std::string m_queryLevel;
+                    bool m_queryLevelHasBeenSet;
 
                 };
             }

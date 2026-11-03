@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220901/model/SemanticAnalysisRules.h>
 #include <tencentcloud/teo/v20220901/model/ManagedRuleAutoUpdate.h>
 #include <tencentcloud/teo/v20220901/model/ManagedRuleGroup.h>
 #include <tencentcloud/teo/v20220901/model/FrequentScanningProtection.h>
@@ -50,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取托管规则是否开启。取值有：<li>on：开启，所有托管规则按配置生效；</li><li>off：关闭，所有托管规则不生效。</li>
-                     * @return Enabled 托管规则是否开启。取值有：<li>on：开启，所有托管规则按配置生效；</li><li>off：关闭，所有托管规则不生效。</li>
+                     * 获取<p>托管规则是否开启。取值有：<li>on：开启，所有托管规则按配置生效；</li><li>off：关闭，所有托管规则不生效。</li></p>
+                     * @return Enabled <p>托管规则是否开启。取值有：<li>on：开启，所有托管规则按配置生效；</li><li>off：关闭，所有托管规则不生效。</li></p>
                      * 
                      */
                     std::string GetEnabled() const;
 
                     /**
-                     * 设置托管规则是否开启。取值有：<li>on：开启，所有托管规则按配置生效；</li><li>off：关闭，所有托管规则不生效。</li>
-                     * @param _enabled 托管规则是否开启。取值有：<li>on：开启，所有托管规则按配置生效；</li><li>off：关闭，所有托管规则不生效。</li>
+                     * 设置<p>托管规则是否开启。取值有：<li>on：开启，所有托管规则按配置生效；</li><li>off：关闭，所有托管规则不生效。</li></p>
+                     * @param _enabled <p>托管规则是否开启。取值有：<li>on：开启，所有托管规则按配置生效；</li><li>off：关闭，所有托管规则不生效。</li></p>
                      * 
                      */
                     void SetEnabled(const std::string& _enabled);
@@ -71,15 +72,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取评估模式是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，表示所有托管规则以观察模式生效；</li><li>off：关闭，表示所有托管规则以实际配置生效。</li>
-                     * @return DetectionOnly 评估模式是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，表示所有托管规则以观察模式生效；</li><li>off：关闭，表示所有托管规则以实际配置生效。</li>
+                     * 获取<p>评估模式是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，表示所有托管规则以观察模式生效；</li><li>off：关闭，表示所有托管规则以实际配置生效。</li></p>
+                     * @return DetectionOnly <p>评估模式是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，表示所有托管规则以观察模式生效；</li><li>off：关闭，表示所有托管规则以实际配置生效。</li></p>
                      * 
                      */
                     std::string GetDetectionOnly() const;
 
                     /**
-                     * 设置评估模式是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，表示所有托管规则以观察模式生效；</li><li>off：关闭，表示所有托管规则以实际配置生效。</li>
-                     * @param _detectionOnly 评估模式是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，表示所有托管规则以观察模式生效；</li><li>off：关闭，表示所有托管规则以实际配置生效。</li>
+                     * 设置<p>评估模式是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，表示所有托管规则以观察模式生效；</li><li>off：关闭，表示所有托管规则以实际配置生效。</li></p>
+                     * @param _detectionOnly <p>评估模式是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，表示所有托管规则以观察模式生效；</li><li>off：关闭，表示所有托管规则以实际配置生效。</li></p>
                      * 
                      */
                     void SetDetectionOnly(const std::string& _detectionOnly);
@@ -92,15 +93,15 @@ namespace TencentCloud
                     bool DetectionOnlyHasBeenSet() const;
 
                     /**
-                     * 获取托管规则语义分析选项是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，对请求进行语义分析后进行处理；</li><li>off：关闭，对请求不进行语义分析，直接进行处理。</li> <br/>默认为 off。
-                     * @return SemanticAnalysis 托管规则语义分析选项是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，对请求进行语义分析后进行处理；</li><li>off：关闭，对请求不进行语义分析，直接进行处理。</li> <br/>默认为 off。
+                     * 获取<p>托管规则深度分析选项是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，对请求进行深度分析后进行处理；</li><li>off：关闭，对请求不进行深度分析，直接进行处理。</li> <br>此参数待废弃，深度分析规则开关迁移至 SemanticAnalysisRules.Enabled 参数。</p>
+                     * @return SemanticAnalysis <p>托管规则深度分析选项是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，对请求进行深度分析后进行处理；</li><li>off：关闭，对请求不进行深度分析，直接进行处理。</li> <br>此参数待废弃，深度分析规则开关迁移至 SemanticAnalysisRules.Enabled 参数。</p>
                      * 
                      */
                     std::string GetSemanticAnalysis() const;
 
                     /**
-                     * 设置托管规则语义分析选项是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，对请求进行语义分析后进行处理；</li><li>off：关闭，对请求不进行语义分析，直接进行处理。</li> <br/>默认为 off。
-                     * @param _semanticAnalysis 托管规则语义分析选项是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，对请求进行语义分析后进行处理；</li><li>off：关闭，对请求不进行语义分析，直接进行处理。</li> <br/>默认为 off。
+                     * 设置<p>托管规则深度分析选项是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，对请求进行深度分析后进行处理；</li><li>off：关闭，对请求不进行深度分析，直接进行处理。</li> <br>此参数待废弃，深度分析规则开关迁移至 SemanticAnalysisRules.Enabled 参数。</p>
+                     * @param _semanticAnalysis <p>托管规则深度分析选项是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，对请求进行深度分析后进行处理；</li><li>off：关闭，对请求不进行深度分析，直接进行处理。</li> <br>此参数待废弃，深度分析规则开关迁移至 SemanticAnalysisRules.Enabled 参数。</p>
                      * 
                      */
                     void SetSemanticAnalysis(const std::string& _semanticAnalysis);
@@ -113,15 +114,36 @@ namespace TencentCloud
                     bool SemanticAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取托管规则自动更新选项。
-                     * @return AutoUpdate 托管规则自动更新选项。
+                     * 获取<p>深度分析配置选项，识别请求中的恶意行为（如：SQL 注入，XSS 攻击等），对恶意请求进行日志记录和拦截。</p>
+                     * @return SemanticAnalysisRules <p>深度分析配置选项，识别请求中的恶意行为（如：SQL 注入，XSS 攻击等），对恶意请求进行日志记录和拦截。</p>
+                     * 
+                     */
+                    SemanticAnalysisRules GetSemanticAnalysisRules() const;
+
+                    /**
+                     * 设置<p>深度分析配置选项，识别请求中的恶意行为（如：SQL 注入，XSS 攻击等），对恶意请求进行日志记录和拦截。</p>
+                     * @param _semanticAnalysisRules <p>深度分析配置选项，识别请求中的恶意行为（如：SQL 注入，XSS 攻击等），对恶意请求进行日志记录和拦截。</p>
+                     * 
+                     */
+                    void SetSemanticAnalysisRules(const SemanticAnalysisRules& _semanticAnalysisRules);
+
+                    /**
+                     * 判断参数 SemanticAnalysisRules 是否已赋值
+                     * @return SemanticAnalysisRules 是否已赋值
+                     * 
+                     */
+                    bool SemanticAnalysisRulesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>托管规则自动更新选项。</p>
+                     * @return AutoUpdate <p>托管规则自动更新选项。</p>
                      * 
                      */
                     ManagedRuleAutoUpdate GetAutoUpdate() const;
 
                     /**
-                     * 设置托管规则自动更新选项。
-                     * @param _autoUpdate 托管规则自动更新选项。
+                     * 设置<p>托管规则自动更新选项。</p>
+                     * @param _autoUpdate <p>托管规则自动更新选项。</p>
                      * 
                      */
                     void SetAutoUpdate(const ManagedRuleAutoUpdate& _autoUpdate);
@@ -134,15 +156,15 @@ namespace TencentCloud
                     bool AutoUpdateHasBeenSet() const;
 
                     /**
-                     * 获取托管规则组的配置。如果此结构传空数组或 GroupId 未包含在列表内将按照默认方式处理。
-                     * @return ManagedRuleGroups 托管规则组的配置。如果此结构传空数组或 GroupId 未包含在列表内将按照默认方式处理。
+                     * 获取<p>托管规则组的配置。如果此结构传空数组或 GroupId 未包含在列表内将按照默认方式处理。</p>
+                     * @return ManagedRuleGroups <p>托管规则组的配置。如果此结构传空数组或 GroupId 未包含在列表内将按照默认方式处理。</p>
                      * 
                      */
                     std::vector<ManagedRuleGroup> GetManagedRuleGroups() const;
 
                     /**
-                     * 设置托管规则组的配置。如果此结构传空数组或 GroupId 未包含在列表内将按照默认方式处理。
-                     * @param _managedRuleGroups 托管规则组的配置。如果此结构传空数组或 GroupId 未包含在列表内将按照默认方式处理。
+                     * 设置<p>托管规则组的配置。如果此结构传空数组或 GroupId 未包含在列表内将按照默认方式处理。</p>
+                     * @param _managedRuleGroups <p>托管规则组的配置。如果此结构传空数组或 GroupId 未包含在列表内将按照默认方式处理。</p>
                      * 
                      */
                     void SetManagedRuleGroups(const std::vector<ManagedRuleGroup>& _managedRuleGroups);
@@ -155,15 +177,15 @@ namespace TencentCloud
                     bool ManagedRuleGroupsHasBeenSet() const;
 
                     /**
-                     * 获取高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。
-                     * @return FrequentScanningProtection 高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。
+                     * 获取<p>高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。</p>
+                     * @return FrequentScanningProtection <p>高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。</p>
                      * 
                      */
                     FrequentScanningProtection GetFrequentScanningProtection() const;
 
                     /**
-                     * 设置高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。
-                     * @param _frequentScanningProtection 高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。
+                     * 设置<p>高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。</p>
+                     * @param _frequentScanningProtection <p>高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。</p>
                      * 
                      */
                     void SetFrequentScanningProtection(const FrequentScanningProtection& _frequentScanningProtection);
@@ -178,37 +200,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 托管规则是否开启。取值有：<li>on：开启，所有托管规则按配置生效；</li><li>off：关闭，所有托管规则不生效。</li>
+                     * <p>托管规则是否开启。取值有：<li>on：开启，所有托管规则按配置生效；</li><li>off：关闭，所有托管规则不生效。</li></p>
                      */
                     std::string m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 评估模式是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，表示所有托管规则以观察模式生效；</li><li>off：关闭，表示所有托管规则以实际配置生效。</li>
+                     * <p>评估模式是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，表示所有托管规则以观察模式生效；</li><li>off：关闭，表示所有托管规则以实际配置生效。</li></p>
                      */
                     std::string m_detectionOnly;
                     bool m_detectionOnlyHasBeenSet;
 
                     /**
-                     * 托管规则语义分析选项是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，对请求进行语义分析后进行处理；</li><li>off：关闭，对请求不进行语义分析，直接进行处理。</li> <br/>默认为 off。
+                     * <p>托管规则深度分析选项是否开启，仅在 Enabled 参数为 on 时有效。取值有：<li>on：开启，对请求进行深度分析后进行处理；</li><li>off：关闭，对请求不进行深度分析，直接进行处理。</li> <br>此参数待废弃，深度分析规则开关迁移至 SemanticAnalysisRules.Enabled 参数。</p>
                      */
                     std::string m_semanticAnalysis;
                     bool m_semanticAnalysisHasBeenSet;
 
                     /**
-                     * 托管规则自动更新选项。
+                     * <p>深度分析配置选项，识别请求中的恶意行为（如：SQL 注入，XSS 攻击等），对恶意请求进行日志记录和拦截。</p>
+                     */
+                    SemanticAnalysisRules m_semanticAnalysisRules;
+                    bool m_semanticAnalysisRulesHasBeenSet;
+
+                    /**
+                     * <p>托管规则自动更新选项。</p>
                      */
                     ManagedRuleAutoUpdate m_autoUpdate;
                     bool m_autoUpdateHasBeenSet;
 
                     /**
-                     * 托管规则组的配置。如果此结构传空数组或 GroupId 未包含在列表内将按照默认方式处理。
+                     * <p>托管规则组的配置。如果此结构传空数组或 GroupId 未包含在列表内将按照默认方式处理。</p>
                      */
                     std::vector<ManagedRuleGroup> m_managedRuleGroups;
                     bool m_managedRuleGroupsHasBeenSet;
 
                     /**
-                     * 高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。
+                     * <p>高频扫描防护配置选项，当某一访客的请求频繁命中「配置为拦截」的托管规则时，在一段时间内封禁该访客所有请求。</p>
                      */
                     FrequentScanningProtection m_frequentScanningProtection;
                     bool m_frequentScanningProtectionHasBeenSet;

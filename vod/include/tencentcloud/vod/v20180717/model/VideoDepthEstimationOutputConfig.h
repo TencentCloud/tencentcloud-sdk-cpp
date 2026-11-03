@@ -121,6 +121,27 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否保留原视频音频，默认不保留原视频音频。</p><p>枚举值：</p><ul><li>ON： 保留音频</li><li>OFF： 不保留音频</li></ul>
+                     * @return KeepAudio <p>是否保留原视频音频，默认不保留原视频音频。</p><p>枚举值：</p><ul><li>ON： 保留音频</li><li>OFF： 不保留音频</li></ul>
+                     * 
+                     */
+                    std::string GetKeepAudio() const;
+
+                    /**
+                     * 设置<p>是否保留原视频音频，默认不保留原视频音频。</p><p>枚举值：</p><ul><li>ON： 保留音频</li><li>OFF： 不保留音频</li></ul>
+                     * @param _keepAudio <p>是否保留原视频音频，默认不保留原视频音频。</p><p>枚举值：</p><ul><li>ON： 保留音频</li><li>OFF： 不保留音频</li></ul>
+                     * 
+                     */
+                    void SetKeepAudio(const std::string& _keepAudio);
+
+                    /**
+                     * 判断参数 KeepAudio 是否已赋值
+                     * @return KeepAudio 是否已赋值
+                     * 
+                     */
+                    bool KeepAudioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +164,12 @@ namespace TencentCloud
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * <p>是否保留原视频音频，默认不保留原视频音频。</p><p>枚举值：</p><ul><li>ON： 保留音频</li><li>OFF： 不保留音频</li></ul>
+                     */
+                    std::string m_keepAudio;
+                    bool m_keepAudioHasBeenSet;
 
                 };
             }

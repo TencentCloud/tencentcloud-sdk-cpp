@@ -36,9 +36,10 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/TaskStepInfo.h
   include/tencentcloud/tcbr/v20220217/model/VersionPodInstance.h
   include/tencentcloud/tcbr/v20220217/model/DescribeVersionDetailRequest.h
-  include/tencentcloud/tcbr/v20220217/model/StopVersionInstanceResponse.h
+  include/tencentcloud/tcbr/v20220217/model/InitializeCloudRunResourceResponse.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunEnvsResponse.h
   include/tencentcloud/tcbr/v20220217/model/ServerBaseInfo.h
+  include/tencentcloud/tcbr/v20220217/model/InitializeCloudRunResourceRequest.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunEnvsRequest.h
   include/tencentcloud/tcbr/v20220217/model/ReleaseGrayResponse.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunProcessLogResponse.h
@@ -48,6 +49,7 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/DeployParam.h
   include/tencentcloud/tcbr/v20220217/model/DiffConfigItem.h
   include/tencentcloud/tcbr/v20220217/model/VolumeConf.h
+  include/tencentcloud/tcbr/v20220217/model/StopVersionInstanceResponse.h
   include/tencentcloud/tcbr/v20220217/model/SubmitServerRollbackResponse.h
   include/tencentcloud/tcbr/v20220217/model/SubmitServerConfigChangeDiffResponse.h
   include/tencentcloud/tcbr/v20220217/model/Tag.h
@@ -121,9 +123,10 @@ set(tcbr_src
   src/v20220217/model/TaskStepInfo.cpp
   src/v20220217/model/VersionPodInstance.cpp
   src/v20220217/model/DescribeVersionDetailRequest.cpp
-  src/v20220217/model/StopVersionInstanceResponse.cpp
+  src/v20220217/model/InitializeCloudRunResourceResponse.cpp
   src/v20220217/model/DescribeCloudRunEnvsResponse.cpp
   src/v20220217/model/ServerBaseInfo.cpp
+  src/v20220217/model/InitializeCloudRunResourceRequest.cpp
   src/v20220217/model/DescribeCloudRunEnvsRequest.cpp
   src/v20220217/model/ReleaseGrayResponse.cpp
   src/v20220217/model/DescribeCloudRunProcessLogResponse.cpp
@@ -133,6 +136,7 @@ set(tcbr_src
   src/v20220217/model/DeployParam.cpp
   src/v20220217/model/DiffConfigItem.cpp
   src/v20220217/model/VolumeConf.cpp
+  src/v20220217/model/StopVersionInstanceResponse.cpp
   src/v20220217/model/SubmitServerRollbackResponse.cpp
   src/v20220217/model/SubmitServerConfigChangeDiffResponse.cpp
   src/v20220217/model/Tag.cpp

@@ -13240,6 +13240,56 @@ DlcClient::GetRayJobYamlOutcomeCallable DlcClient::GetRayJobYamlCallable(const G
     return prom->get_future();
 }
 
+DlcClient::GetRayServeEventOutcome DlcClient::GetRayServeEvent(const GetRayServeEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetRayServeEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRayServeEventResponse rsp = GetRayServeEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRayServeEventOutcome(rsp);
+        else
+            return GetRayServeEventOutcome(o.GetError());
+    }
+    else
+    {
+        return GetRayServeEventOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::GetRayServeEventAsync(const GetRayServeEventRequest& request, const GetRayServeEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetRayServeEventRequest&;
+    using Resp = GetRayServeEventResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetRayServeEvent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::GetRayServeEventOutcomeCallable DlcClient::GetRayServeEventCallable(const GetRayServeEventRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetRayServeEventOutcome>>();
+    GetRayServeEventAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const GetRayServeEventRequest&,
+        GetRayServeEventOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::GetResourceConfigOutcome DlcClient::GetResourceConfig(const GetResourceConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "GetResourceConfig");
@@ -14882,6 +14932,56 @@ DlcClient::ListServiceApiKeysOutcomeCallable DlcClient::ListServiceApiKeysCallab
         const DlcClient*,
         const ListServiceApiKeysRequest&,
         ListServiceApiKeysOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::ListStoragesOutcome DlcClient::ListStorages(const ListStoragesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListStorages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListStoragesResponse rsp = ListStoragesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListStoragesOutcome(rsp);
+        else
+            return ListStoragesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListStoragesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListStoragesAsync(const ListStoragesRequest& request, const ListStoragesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListStoragesRequest&;
+    using Resp = ListStoragesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListStorages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::ListStoragesOutcomeCallable DlcClient::ListStoragesCallable(const ListStoragesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListStoragesOutcome>>();
+    ListStoragesAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const ListStoragesRequest&,
+        ListStoragesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -17332,6 +17432,56 @@ DlcClient::StopRayClusterOutcomeCallable DlcClient::StopRayClusterCallable(const
         const DlcClient*,
         const StopRayClusterRequest&,
         StopRayClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DlcClient::SubmitRayJobOutcome DlcClient::SubmitRayJob(const SubmitRayJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitRayJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitRayJobResponse rsp = SubmitRayJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitRayJobOutcome(rsp);
+        else
+            return SubmitRayJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitRayJobOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::SubmitRayJobAsync(const SubmitRayJobRequest& request, const SubmitRayJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SubmitRayJobRequest&;
+    using Resp = SubmitRayJobResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SubmitRayJob", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::SubmitRayJobOutcomeCallable DlcClient::SubmitRayJobCallable(const SubmitRayJobRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SubmitRayJobOutcome>>();
+    SubmitRayJobAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const SubmitRayJobRequest&,
+        SubmitRayJobOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

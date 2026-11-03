@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteAccountsRequest::DeleteAccountsRequest() :
     m_instanceIdHasBeenSet(false),
-    m_accountsHasBeenSet(false)
+    m_accountsHasBeenSet(false),
+    m_deleteAccountsHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,21 @@ string DeleteAccountsRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_accounts.begin(); itr != m_accounts.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_deleteAccountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteAccounts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deleteAccounts.begin(); itr != m_deleteAccounts.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -96,6 +112,22 @@ void DeleteAccountsRequest::SetAccounts(const vector<Account>& _accounts)
 bool DeleteAccountsRequest::AccountsHasBeenSet() const
 {
     return m_accountsHasBeenSet;
+}
+
+vector<DeleteDBAccount> DeleteAccountsRequest::GetDeleteAccounts() const
+{
+    return m_deleteAccounts;
+}
+
+void DeleteAccountsRequest::SetDeleteAccounts(const vector<DeleteDBAccount>& _deleteAccounts)
+{
+    m_deleteAccounts = _deleteAccounts;
+    m_deleteAccountsHasBeenSet = true;
+}
+
+bool DeleteAccountsRequest::DeleteAccountsHasBeenSet() const
+{
+    return m_deleteAccountsHasBeenSet;
 }
 
 

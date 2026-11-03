@@ -33,7 +33,8 @@ WhiteRuleInfo::WhiteRuleInfo() :
     m_urlHasBeenSet(false),
     m_userAgentHasBeenSet(false),
     m_whiteIdHasBeenSet(false),
-    m_xForwardedForHasBeenSet(false)
+    m_xForwardedForHasBeenSet(false),
+    m_riskEventTypeHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome WhiteRuleInfo::Deserialize(const rapidjson::Value &value)
         m_xForwardedForHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskEventType") && !value["RiskEventType"].IsNull())
+    {
+        if (!value["RiskEventType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WhiteRuleInfo.RiskEventType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskEventType = string(value["RiskEventType"].GetString());
+        m_riskEventTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void WhiteRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "XForwardedFor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_xForwardedFor.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskEventTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskEventType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskEventType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void WhiteRuleInfo::SetXForwardedFor(const string& _xForwardedFor)
 bool WhiteRuleInfo::XForwardedForHasBeenSet() const
 {
     return m_xForwardedForHasBeenSet;
+}
+
+string WhiteRuleInfo::GetRiskEventType() const
+{
+    return m_riskEventType;
+}
+
+void WhiteRuleInfo::SetRiskEventType(const string& _riskEventType)
+{
+    m_riskEventType = _riskEventType;
+    m_riskEventTypeHasBeenSet = true;
+}
+
+bool WhiteRuleInfo::RiskEventTypeHasBeenSet() const
+{
+    return m_riskEventTypeHasBeenSet;
 }
 

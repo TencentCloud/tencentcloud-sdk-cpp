@@ -231,6 +231,48 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务类别</p><p>枚举值：</p><ul><li>0： Linux 类型任务</li><li>1： Windows 类型任务</li></ul>
+                     * @return Category <p>任务类别</p><p>枚举值：</p><ul><li>0： Linux 类型任务</li><li>1： Windows 类型任务</li></ul>
+                     * 
+                     */
+                    std::vector<int64_t> GetCategory() const;
+
+                    /**
+                     * 设置<p>任务类别</p><p>枚举值：</p><ul><li>0： Linux 类型任务</li><li>1： Windows 类型任务</li></ul>
+                     * @param _category <p>任务类别</p><p>枚举值：</p><ul><li>0： Linux 类型任务</li><li>1： Windows 类型任务</li></ul>
+                     * 
+                     */
+                    void SetCategory(const std::vector<int64_t>& _category);
+
+                    /**
+                     * 判断参数 Category 是否已赋值
+                     * @return Category 是否已赋值
+                     * 
+                     */
+                    bool CategoryHasBeenSet() const;
+
+                    /**
+                     * 获取<p>任务状态</p><p>枚举值：</p><ul><li>1： 执行中</li><li>2： 成功</li><li>3： 失败</li><li>4： 部分成功</li></ul>
+                     * @return Status <p>任务状态</p><p>枚举值：</p><ul><li>1： 执行中</li><li>2： 成功</li><li>3： 失败</li><li>4： 部分成功</li></ul>
+                     * 
+                     */
+                    std::vector<uint64_t> GetStatus() const;
+
+                    /**
+                     * 设置<p>任务状态</p><p>枚举值：</p><ul><li>1： 执行中</li><li>2： 成功</li><li>3： 失败</li><li>4： 部分成功</li></ul>
+                     * @param _status <p>任务状态</p><p>枚举值：</p><ul><li>1： 执行中</li><li>2： 成功</li><li>3： 失败</li><li>4： 部分成功</li></ul>
+                     * 
+                     */
+                    void SetStatus(const std::vector<uint64_t>& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +328,18 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>任务类别</p><p>枚举值：</p><ul><li>0： Linux 类型任务</li><li>1： Windows 类型任务</li></ul>
+                     */
+                    std::vector<int64_t> m_category;
+                    bool m_categoryHasBeenSet;
+
+                    /**
+                     * <p>任务状态</p><p>枚举值：</p><ul><li>1： 执行中</li><li>2： 成功</li><li>3： 失败</li><li>4： 部分成功</li></ul>
+                     */
+                    std::vector<uint64_t> m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

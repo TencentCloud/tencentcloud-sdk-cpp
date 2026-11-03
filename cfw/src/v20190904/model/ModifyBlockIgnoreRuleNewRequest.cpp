@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyBlockIgnoreRuleNewRequest::ModifyBlockIgnoreRuleNewRequest() :
     m_ruleHasBeenSet(false),
-    m_ruleTypeHasBeenSet(false)
+    m_ruleTypeHasBeenSet(false),
+    m_coverDuplicateHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string ModifyBlockIgnoreRuleNewRequest::ToJsonString() const
         string key = "RuleType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ruleType, allocator);
+    }
+
+    if (m_coverDuplicateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoverDuplicate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_coverDuplicate, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void ModifyBlockIgnoreRuleNewRequest::SetRuleType(const int64_t& _ruleType)
 bool ModifyBlockIgnoreRuleNewRequest::RuleTypeHasBeenSet() const
 {
     return m_ruleTypeHasBeenSet;
+}
+
+int64_t ModifyBlockIgnoreRuleNewRequest::GetCoverDuplicate() const
+{
+    return m_coverDuplicate;
+}
+
+void ModifyBlockIgnoreRuleNewRequest::SetCoverDuplicate(const int64_t& _coverDuplicate)
+{
+    m_coverDuplicate = _coverDuplicate;
+    m_coverDuplicateHasBeenSet = true;
+}
+
+bool ModifyBlockIgnoreRuleNewRequest::CoverDuplicateHasBeenSet() const
+{
+    return m_coverDuplicateHasBeenSet;
 }
 
 

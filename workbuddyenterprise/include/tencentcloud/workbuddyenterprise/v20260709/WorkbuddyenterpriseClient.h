@@ -39,6 +39,8 @@
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DeleteAgentResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DeleteScheduledTaskRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DeleteScheduledTaskResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DeleteSessionArtifactListRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DeleteSessionArtifactListResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentListRequest.h>
@@ -71,6 +73,10 @@
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogListRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogListResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeSessionArtifactDownloadUrlRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeSessionArtifactDownloadUrlResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeSessionArtifactListRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeSessionArtifactListResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeSkillListRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeSkillListResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeUserAccessTokenRequest.h>
@@ -129,6 +135,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteScheduledTaskResponse> DeleteScheduledTaskOutcome;
                 typedef std::future<DeleteScheduledTaskOutcome> DeleteScheduledTaskOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DeleteScheduledTaskRequest&, DeleteScheduledTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScheduledTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSessionArtifactListResponse> DeleteSessionArtifactListOutcome;
+                typedef std::future<DeleteSessionArtifactListOutcome> DeleteSessionArtifactListOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DeleteSessionArtifactListRequest&, DeleteSessionArtifactListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSessionArtifactListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAgentResponse> DescribeAgentOutcome;
                 typedef std::future<DescribeAgentOutcome> DescribeAgentOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeAgentRequest&, DescribeAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentAsyncHandler;
@@ -177,6 +186,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeScheduledTaskLogListResponse> DescribeScheduledTaskLogListOutcome;
                 typedef std::future<DescribeScheduledTaskLogListOutcome> DescribeScheduledTaskLogListOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeScheduledTaskLogListRequest&, DescribeScheduledTaskLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledTaskLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSessionArtifactDownloadUrlResponse> DescribeSessionArtifactDownloadUrlOutcome;
+                typedef std::future<DescribeSessionArtifactDownloadUrlOutcome> DescribeSessionArtifactDownloadUrlOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeSessionArtifactDownloadUrlRequest&, DescribeSessionArtifactDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionArtifactDownloadUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSessionArtifactListResponse> DescribeSessionArtifactListOutcome;
+                typedef std::future<DescribeSessionArtifactListOutcome> DescribeSessionArtifactListOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeSessionArtifactListRequest&, DescribeSessionArtifactListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionArtifactListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSkillListResponse> DescribeSkillListOutcome;
                 typedef std::future<DescribeSkillListOutcome> DescribeSkillListOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeSkillListRequest&, DescribeSkillListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillListAsyncHandler;
@@ -281,6 +296,15 @@ namespace TencentCloud
                 DeleteScheduledTaskOutcome DeleteScheduledTask(const Model::DeleteScheduledTaskRequest &request);
                 void DeleteScheduledTaskAsync(const Model::DeleteScheduledTaskRequest& request, const DeleteScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteScheduledTaskOutcomeCallable DeleteScheduledTaskCallable(const Model::DeleteScheduledTaskRequest& request);
+
+                /**
+                 *删除指定的物料，删除后不可恢复。
+                 * @param req DeleteSessionArtifactListRequest
+                 * @return DeleteSessionArtifactListOutcome
+                 */
+                DeleteSessionArtifactListOutcome DeleteSessionArtifactList(const Model::DeleteSessionArtifactListRequest &request);
+                void DeleteSessionArtifactListAsync(const Model::DeleteSessionArtifactListRequest& request, const DeleteSessionArtifactListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSessionArtifactListOutcomeCallable DeleteSessionArtifactListCallable(const Model::DeleteSessionArtifactListRequest& request);
 
                 /**
                  *查询单个 Agent 的详细信息，包括基础配置和路由配置。
@@ -425,6 +449,24 @@ namespace TencentCloud
                 DescribeScheduledTaskLogListOutcome DescribeScheduledTaskLogList(const Model::DescribeScheduledTaskLogListRequest &request);
                 void DescribeScheduledTaskLogListAsync(const Model::DescribeScheduledTaskLogListRequest& request, const DescribeScheduledTaskLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScheduledTaskLogListOutcomeCallable DescribeScheduledTaskLogListCallable(const Model::DescribeScheduledTaskLogListRequest& request);
+
+                /**
+                 *获取会话物料下载链接。
+                 * @param req DescribeSessionArtifactDownloadUrlRequest
+                 * @return DescribeSessionArtifactDownloadUrlOutcome
+                 */
+                DescribeSessionArtifactDownloadUrlOutcome DescribeSessionArtifactDownloadUrl(const Model::DescribeSessionArtifactDownloadUrlRequest &request);
+                void DescribeSessionArtifactDownloadUrlAsync(const Model::DescribeSessionArtifactDownloadUrlRequest& request, const DescribeSessionArtifactDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSessionArtifactDownloadUrlOutcomeCallable DescribeSessionArtifactDownloadUrlCallable(const Model::DescribeSessionArtifactDownloadUrlRequest& request);
+
+                /**
+                 *分页查询会话物料列表。
+                 * @param req DescribeSessionArtifactListRequest
+                 * @return DescribeSessionArtifactListOutcome
+                 */
+                DescribeSessionArtifactListOutcome DescribeSessionArtifactList(const Model::DescribeSessionArtifactListRequest &request);
+                void DescribeSessionArtifactListAsync(const Model::DescribeSessionArtifactListRequest& request, const DescribeSessionArtifactListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSessionArtifactListOutcomeCallable DescribeSessionArtifactListCallable(const Model::DescribeSessionArtifactListRequest& request);
 
                 /**
                  *分页查询 Skill 列表，支持关键词、分类、发布状态过滤。

@@ -23,7 +23,8 @@ using namespace std;
 VideoDepthEstimationOutputConfig::VideoDepthEstimationOutputConfig() :
     m_storageModeHasBeenSet(false),
     m_mediaNameHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_keepAudioHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome VideoDepthEstimationOutputConfig::Deserialize(const rapidjso
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("KeepAudio") && !value["KeepAudio"].IsNull())
+    {
+        if (!value["KeepAudio"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoDepthEstimationOutputConfig.KeepAudio` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keepAudio = string(value["KeepAudio"].GetString());
+        m_keepAudioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void VideoDepthEstimationOutputConfig::ToJsonObject(rapidjson::Value &value, rap
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keepAudioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepAudio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keepAudio.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void VideoDepthEstimationOutputConfig::SetExpireTime(const string& _expireTime)
 bool VideoDepthEstimationOutputConfig::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+string VideoDepthEstimationOutputConfig::GetKeepAudio() const
+{
+    return m_keepAudio;
+}
+
+void VideoDepthEstimationOutputConfig::SetKeepAudio(const string& _keepAudio)
+{
+    m_keepAudio = _keepAudio;
+    m_keepAudioHasBeenSet = true;
+}
+
+bool VideoDepthEstimationOutputConfig::KeepAudioHasBeenSet() const
+{
+    return m_keepAudioHasBeenSet;
 }
 

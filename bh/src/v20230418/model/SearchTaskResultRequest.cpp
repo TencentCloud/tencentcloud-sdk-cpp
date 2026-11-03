@@ -31,7 +31,9 @@ SearchTaskResultRequest::SearchTaskResultRequest() :
     m_realNameHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,32 @@ string SearchTaskResultRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_category.begin(); itr != m_category.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_status.begin(); itr != m_status.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -269,6 +297,38 @@ void SearchTaskResultRequest::SetLimit(const uint64_t& _limit)
 bool SearchTaskResultRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<int64_t> SearchTaskResultRequest::GetCategory() const
+{
+    return m_category;
+}
+
+void SearchTaskResultRequest::SetCategory(const vector<int64_t>& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool SearchTaskResultRequest::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
+}
+
+vector<uint64_t> SearchTaskResultRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void SearchTaskResultRequest::SetStatus(const vector<uint64_t>& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool SearchTaskResultRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

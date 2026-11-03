@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdb/v20170320/model/Account.h>
+#include <tencentcloud/cdb/v20170320/model/CreateDBAccount.h>
 
 
 namespace TencentCloud
@@ -148,6 +149,27 @@ namespace TencentCloud
                      */
                     bool MaxUserConnectionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>创建账号时的完整信息</p>
+                     * @return CreateAccounts <p>创建账号时的完整信息</p>
+                     * 
+                     */
+                    std::vector<CreateDBAccount> GetCreateAccounts() const;
+
+                    /**
+                     * 设置<p>创建账号时的完整信息</p>
+                     * @param _createAccounts <p>创建账号时的完整信息</p>
+                     * 
+                     */
+                    void SetCreateAccounts(const std::vector<CreateDBAccount>& _createAccounts);
+
+                    /**
+                     * 判断参数 CreateAccounts 是否已赋值
+                     * @return CreateAccounts 是否已赋值
+                     * 
+                     */
+                    bool CreateAccountsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +201,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;
+
+                    /**
+                     * <p>创建账号时的完整信息</p>
+                     */
+                    std::vector<CreateDBAccount> m_createAccounts;
+                    bool m_createAccountsHasBeenSet;
 
                 };
             }

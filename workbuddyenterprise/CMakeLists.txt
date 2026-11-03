@@ -27,6 +27,7 @@ set(workbuddyenterprise_public_header_model
   include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentVersionRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentSessionResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DeleteSessionArtifactListRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/TokenUsage.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ConnectorInfo.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionFromSourceResponse.h
@@ -36,6 +37,7 @@ set(workbuddyenterprise_public_header_model
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/TriggerScheduledTaskRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/SessionItem.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeSessionArtifactListResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentVersionListRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/SkillItem.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ConnectorRefInput.h
@@ -47,10 +49,11 @@ set(workbuddyenterprise_public_header_model
   include/tencentcloud/workbuddyenterprise/v20260709/model/SkillCounts.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExternalAgentRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentVersionListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeSessionArtifactDownloadUrlResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeConnectorListResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentRoutingRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ChatEndpoint.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DeleteSessionArtifactListResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeSkillListRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/CreateScheduledTaskRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExternalAgentListRequest.h
@@ -90,11 +93,13 @@ set(workbuddyenterprise_public_header_model
   include/tencentcloud/workbuddyenterprise/v20260709/model/ExpertItem.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExpertListResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/Header.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeSessionArtifactDownloadUrlRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/MigrateAgentSessionRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeMessageEventListResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/TargetOptions.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeSessionArtifactListRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentSessionRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/RoutingItem.h
@@ -104,6 +109,7 @@ set(workbuddyenterprise_public_header_model
   include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentA2AConfigRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentSessionRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionFromSourceRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentVersionListResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/AgentVersionItem.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeBuiltinModelListRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogResponse.h
@@ -127,6 +133,7 @@ set(workbuddyenterprise_src
   src/v20260709/model/CreateAgentVersionRequest.cpp
   src/v20260709/model/ModifyAgentVersionRequest.cpp
   src/v20260709/model/DescribeAgentSessionResponse.cpp
+  src/v20260709/model/DeleteSessionArtifactListRequest.cpp
   src/v20260709/model/TokenUsage.cpp
   src/v20260709/model/ConnectorInfo.cpp
   src/v20260709/model/CreateAgentVersionFromSourceResponse.cpp
@@ -136,6 +143,7 @@ set(workbuddyenterprise_src
   src/v20260709/model/DescribeAgentRequest.cpp
   src/v20260709/model/TriggerScheduledTaskRequest.cpp
   src/v20260709/model/SessionItem.cpp
+  src/v20260709/model/DescribeSessionArtifactListResponse.cpp
   src/v20260709/model/DescribeAgentVersionListRequest.cpp
   src/v20260709/model/SkillItem.cpp
   src/v20260709/model/ConnectorRefInput.cpp
@@ -147,10 +155,11 @@ set(workbuddyenterprise_src
   src/v20260709/model/SkillCounts.cpp
   src/v20260709/model/DescribeExternalAgentRequest.cpp
   src/v20260709/model/CreateAgentRequest.cpp
-  src/v20260709/model/DescribeAgentVersionListResponse.cpp
+  src/v20260709/model/DescribeSessionArtifactDownloadUrlResponse.cpp
   src/v20260709/model/DescribeConnectorListResponse.cpp
   src/v20260709/model/ModifyAgentRoutingRequest.cpp
   src/v20260709/model/ChatEndpoint.cpp
+  src/v20260709/model/DeleteSessionArtifactListResponse.cpp
   src/v20260709/model/DescribeSkillListRequest.cpp
   src/v20260709/model/CreateScheduledTaskRequest.cpp
   src/v20260709/model/DescribeExternalAgentListRequest.cpp
@@ -190,11 +199,13 @@ set(workbuddyenterprise_src
   src/v20260709/model/ExpertItem.cpp
   src/v20260709/model/DescribeExpertListResponse.cpp
   src/v20260709/model/Header.cpp
+  src/v20260709/model/DescribeSessionArtifactDownloadUrlRequest.cpp
   src/v20260709/model/MigrateAgentSessionRequest.cpp
   src/v20260709/model/DescribeAgentResponse.cpp
   src/v20260709/model/DescribeMessageEventListResponse.cpp
   src/v20260709/model/CreateAgentVersionResponse.cpp
   src/v20260709/model/TargetOptions.cpp
+  src/v20260709/model/DescribeSessionArtifactListRequest.cpp
   src/v20260709/model/CreateAgentResponse.cpp
   src/v20260709/model/DescribeAgentSessionRequest.cpp
   src/v20260709/model/RoutingItem.cpp
@@ -204,6 +215,7 @@ set(workbuddyenterprise_src
   src/v20260709/model/ModifyAgentA2AConfigRequest.cpp
   src/v20260709/model/CreateAgentSessionRequest.cpp
   src/v20260709/model/CreateAgentVersionFromSourceRequest.cpp
+  src/v20260709/model/DescribeAgentVersionListResponse.cpp
   src/v20260709/model/AgentVersionItem.cpp
   src/v20260709/model/DescribeBuiltinModelListRequest.cpp
   src/v20260709/model/DescribeScheduledTaskLogResponse.cpp

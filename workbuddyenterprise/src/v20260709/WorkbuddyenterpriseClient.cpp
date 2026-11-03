@@ -440,6 +440,56 @@ WorkbuddyenterpriseClient::DeleteScheduledTaskOutcomeCallable Workbuddyenterpris
     return prom->get_future();
 }
 
+WorkbuddyenterpriseClient::DeleteSessionArtifactListOutcome WorkbuddyenterpriseClient::DeleteSessionArtifactList(const DeleteSessionArtifactListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSessionArtifactList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSessionArtifactListResponse rsp = DeleteSessionArtifactListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSessionArtifactListOutcome(rsp);
+        else
+            return DeleteSessionArtifactListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSessionArtifactListOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::DeleteSessionArtifactListAsync(const DeleteSessionArtifactListRequest& request, const DeleteSessionArtifactListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteSessionArtifactListRequest&;
+    using Resp = DeleteSessionArtifactListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteSessionArtifactList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::DeleteSessionArtifactListOutcomeCallable WorkbuddyenterpriseClient::DeleteSessionArtifactListCallable(const DeleteSessionArtifactListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteSessionArtifactListOutcome>>();
+    DeleteSessionArtifactListAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const DeleteSessionArtifactListRequest&,
+        DeleteSessionArtifactListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WorkbuddyenterpriseClient::DescribeAgentOutcome WorkbuddyenterpriseClient::DescribeAgent(const DescribeAgentRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgent");
@@ -1232,6 +1282,106 @@ WorkbuddyenterpriseClient::DescribeScheduledTaskLogListOutcomeCallable Workbuddy
         const WorkbuddyenterpriseClient*,
         const DescribeScheduledTaskLogListRequest&,
         DescribeScheduledTaskLogListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WorkbuddyenterpriseClient::DescribeSessionArtifactDownloadUrlOutcome WorkbuddyenterpriseClient::DescribeSessionArtifactDownloadUrl(const DescribeSessionArtifactDownloadUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSessionArtifactDownloadUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSessionArtifactDownloadUrlResponse rsp = DescribeSessionArtifactDownloadUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSessionArtifactDownloadUrlOutcome(rsp);
+        else
+            return DescribeSessionArtifactDownloadUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSessionArtifactDownloadUrlOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::DescribeSessionArtifactDownloadUrlAsync(const DescribeSessionArtifactDownloadUrlRequest& request, const DescribeSessionArtifactDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSessionArtifactDownloadUrlRequest&;
+    using Resp = DescribeSessionArtifactDownloadUrlResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSessionArtifactDownloadUrl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::DescribeSessionArtifactDownloadUrlOutcomeCallable WorkbuddyenterpriseClient::DescribeSessionArtifactDownloadUrlCallable(const DescribeSessionArtifactDownloadUrlRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSessionArtifactDownloadUrlOutcome>>();
+    DescribeSessionArtifactDownloadUrlAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const DescribeSessionArtifactDownloadUrlRequest&,
+        DescribeSessionArtifactDownloadUrlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WorkbuddyenterpriseClient::DescribeSessionArtifactListOutcome WorkbuddyenterpriseClient::DescribeSessionArtifactList(const DescribeSessionArtifactListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSessionArtifactList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSessionArtifactListResponse rsp = DescribeSessionArtifactListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSessionArtifactListOutcome(rsp);
+        else
+            return DescribeSessionArtifactListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSessionArtifactListOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::DescribeSessionArtifactListAsync(const DescribeSessionArtifactListRequest& request, const DescribeSessionArtifactListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSessionArtifactListRequest&;
+    using Resp = DescribeSessionArtifactListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSessionArtifactList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::DescribeSessionArtifactListOutcomeCallable WorkbuddyenterpriseClient::DescribeSessionArtifactListCallable(const DescribeSessionArtifactListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSessionArtifactListOutcome>>();
+    DescribeSessionArtifactListAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const DescribeSessionArtifactListRequest&,
+        DescribeSessionArtifactListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

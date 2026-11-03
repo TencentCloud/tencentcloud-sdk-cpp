@@ -28,7 +28,8 @@ GetReconstructDocumentResultResponse::GetReconstructDocumentResultResponse() :
     m_documentRecognizeResultUrlHasBeenSet(false),
     m_failedPagesHasBeenSet(false),
     m_usageHasBeenSet(false),
-    m_errorHasBeenSet(false)
+    m_errorHasBeenSet(false),
+    m_taskErrInfoHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,23 @@ CoreInternalOutcome GetReconstructDocumentResultResponse::Deserialize(const stri
         m_errorHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskErrInfo") && !rsp["TaskErrInfo"].IsNull())
+    {
+        if (!rsp["TaskErrInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskErrInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskErrInfo.Deserialize(rsp["TaskErrInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskErrInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -197,6 +215,15 @@ string GetReconstructDocumentResultResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_error.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_taskErrInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskErrInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskErrInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -259,6 +286,16 @@ ErrorInfo GetReconstructDocumentResultResponse::GetError() const
 bool GetReconstructDocumentResultResponse::ErrorHasBeenSet() const
 {
     return m_errorHasBeenSet;
+}
+
+TaskErrInfo GetReconstructDocumentResultResponse::GetTaskErrInfo() const
+{
+    return m_taskErrInfo;
+}
+
+bool GetReconstructDocumentResultResponse::TaskErrInfoHasBeenSet() const
+{
+    return m_taskErrInfoHasBeenSet;
 }
 
 

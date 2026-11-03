@@ -30,6 +30,7 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/Choice.h
   include/tencentcloud/lkeap/v20240522/model/GetCharacterUsageRequest.h
   include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentSSEConfig.h
+  include/tencentcloud/lkeap/v20240522/model/TaskErrInfo.h
   include/tencentcloud/lkeap/v20240522/model/DocumentUsage.h
   include/tencentcloud/lkeap/v20240522/model/SearchResult.h
   include/tencentcloud/lkeap/v20240522/model/GetReconstructDocumentResultResponse.h
@@ -71,6 +72,7 @@ set(lkeap_src
   src/v20240522/model/Choice.cpp
   src/v20240522/model/GetCharacterUsageRequest.cpp
   src/v20240522/model/ReconstructDocumentSSEConfig.cpp
+  src/v20240522/model/TaskErrInfo.cpp
   src/v20240522/model/DocumentUsage.cpp
   src/v20240522/model/SearchResult.cpp
   src/v20240522/model/GetReconstructDocumentResultResponse.cpp

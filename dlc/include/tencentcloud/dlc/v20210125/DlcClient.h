@@ -551,6 +551,8 @@
 #include <tencentcloud/dlc/v20210125/model/GetRayJobPodsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetRayJobYamlRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GetRayJobYamlResponse.h>
+#include <tencentcloud/dlc/v20210125/model/GetRayServeEventRequest.h>
+#include <tencentcloud/dlc/v20210125/model/GetRayServeEventResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GetResourceConfigRequest.h>
 #include <tencentcloud/dlc/v20210125/model/GetResourceConfigResponse.h>
 #include <tencentcloud/dlc/v20210125/model/GrantDLCCatalogAccessRequest.h>
@@ -617,6 +619,8 @@
 #include <tencentcloud/dlc/v20210125/model/ListResourceConfigsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListServiceApiKeysRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListServiceApiKeysResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ListStoragesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ListStoragesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogNameRequest.h>
@@ -715,6 +719,8 @@
 #include <tencentcloud/dlc/v20210125/model/StopMlflowServerResponse.h>
 #include <tencentcloud/dlc/v20210125/model/StopRayClusterRequest.h>
 #include <tencentcloud/dlc/v20210125/model/StopRayClusterResponse.h>
+#include <tencentcloud/dlc/v20210125/model/SubmitRayJobRequest.h>
+#include <tencentcloud/dlc/v20210125/model/SubmitRayJobResponse.h>
 #include <tencentcloud/dlc/v20210125/model/SubmitTrainingJobRequest.h>
 #include <tencentcloud/dlc/v20210125/model/SubmitTrainingJobResponse.h>
 #include <tencentcloud/dlc/v20210125/model/SuspendResumeDataEngineRequest.h>
@@ -1581,6 +1587,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetRayJobYamlResponse> GetRayJobYamlOutcome;
                 typedef std::future<GetRayJobYamlOutcome> GetRayJobYamlOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GetRayJobYamlRequest&, GetRayJobYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRayJobYamlAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetRayServeEventResponse> GetRayServeEventOutcome;
+                typedef std::future<GetRayServeEventOutcome> GetRayServeEventOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::GetRayServeEventRequest&, GetRayServeEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRayServeEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetResourceConfigResponse> GetResourceConfigOutcome;
                 typedef std::future<GetResourceConfigOutcome> GetResourceConfigOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::GetResourceConfigRequest&, GetResourceConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceConfigAsyncHandler;
@@ -1680,6 +1689,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListServiceApiKeysResponse> ListServiceApiKeysOutcome;
                 typedef std::future<ListServiceApiKeysOutcome> ListServiceApiKeysOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListServiceApiKeysRequest&, ListServiceApiKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListServiceApiKeysAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListStoragesResponse> ListStoragesOutcome;
+                typedef std::future<ListStoragesOutcome> ListStoragesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ListStoragesRequest&, ListStoragesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListStoragesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTaskJobLogDetailResponse> ListTaskJobLogDetailOutcome;
                 typedef std::future<ListTaskJobLogDetailOutcome> ListTaskJobLogDetailOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListTaskJobLogDetailRequest&, ListTaskJobLogDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskJobLogDetailAsyncHandler;
@@ -1827,6 +1839,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopRayClusterResponse> StopRayClusterOutcome;
                 typedef std::future<StopRayClusterOutcome> StopRayClusterOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::StopRayClusterRequest&, StopRayClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRayClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitRayJobResponse> SubmitRayJobOutcome;
+                typedef std::future<SubmitRayJobOutcome> SubmitRayJobOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::SubmitRayJobRequest&, SubmitRayJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitRayJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitTrainingJobResponse> SubmitTrainingJobOutcome;
                 typedef std::future<SubmitTrainingJobOutcome> SubmitTrainingJobOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::SubmitTrainingJobRequest&, SubmitTrainingJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTrainingJobAsyncHandler;
@@ -4302,6 +4317,15 @@ RunID, ExperimentID 对应MLflow 实验追踪用的参数 RunID, ExperimentID
                 GetRayJobYamlOutcomeCallable GetRayJobYamlCallable(const Model::GetRayJobYamlRequest& request);
 
                 /**
+                 *通过 ResourceManager 调用 CLS SearchLog API 查询 RayServe 部署相关事件日志。不返回总数，使用 Context 进行翻页，ListOver 标识是否还有更多数据。
+                 * @param req GetRayServeEventRequest
+                 * @return GetRayServeEventOutcome
+                 */
+                GetRayServeEventOutcome GetRayServeEvent(const Model::GetRayServeEventRequest &request);
+                void GetRayServeEventAsync(const Model::GetRayServeEventRequest& request, const GetRayServeEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRayServeEventOutcomeCallable GetRayServeEventCallable(const Model::GetRayServeEventRequest& request);
+
+                /**
                  *获取资源配置模板详情
                  * @param req GetResourceConfigRequest
                  * @return GetResourceConfigOutcome
@@ -4597,6 +4621,15 @@ RunID, ExperimentID 对应MLflow 实验追踪用的参数 RunID, ExperimentID
                 ListServiceApiKeysOutcome ListServiceApiKeys(const Model::ListServiceApiKeysRequest &request);
                 void ListServiceApiKeysAsync(const Model::ListServiceApiKeysRequest& request, const ListServiceApiKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListServiceApiKeysOutcomeCallable ListServiceApiKeysCallable(const Model::ListServiceApiKeysRequest& request);
+
+                /**
+                 *根据集群ID列出所有Ray任务
+                 * @param req ListStoragesRequest
+                 * @return ListStoragesOutcome
+                 */
+                ListStoragesOutcome ListStorages(const Model::ListStoragesRequest &request);
+                void ListStoragesAsync(const Model::ListStoragesRequest& request, const ListStoragesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListStoragesOutcomeCallable ListStoragesCallable(const Model::ListStoragesRequest& request);
 
                 /**
                  *本接口（ListTaskJobLogDetail）用于获取spark 作业任务日志详情
@@ -5038,6 +5071,15 @@ RunID, ExperimentID 对应MLflow 实验追踪用的参数 RunID, ExperimentID
                 StopRayClusterOutcome StopRayCluster(const Model::StopRayClusterRequest &request);
                 void StopRayClusterAsync(const Model::StopRayClusterRequest& request, const StopRayClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopRayClusterOutcomeCallable StopRayClusterCallable(const Model::StopRayClusterRequest& request);
+
+                /**
+                 *提交新的Ray任务到指定集群
+                 * @param req SubmitRayJobRequest
+                 * @return SubmitRayJobOutcome
+                 */
+                SubmitRayJobOutcome SubmitRayJob(const Model::SubmitRayJobRequest &request);
+                void SubmitRayJobAsync(const Model::SubmitRayJobRequest& request, const SubmitRayJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitRayJobOutcomeCallable SubmitRayJobCallable(const Model::SubmitRayJobRequest& request);
 
                 /**
                  *断点续训（克隆实例）

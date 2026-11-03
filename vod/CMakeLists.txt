@@ -91,6 +91,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AiReviewTaskPoliticalOcrResult.h
   include/tencentcloud/vod/v20180717/model/VideoDubbingAsyncInput.h
   include/tencentcloud/vod/v20180717/model/QualityEnhanceTask.h
+  include/tencentcloud/vod/v20180717/model/MediaMiniProgramReviewElem.h
   include/tencentcloud/vod/v20180717/model/AiSampleWord.h
   include/tencentcloud/vod/v20180717/model/OverrideTranscodeParameter.h
   include/tencentcloud/vod/v20180717/model/PoliticalOcrReviewTemplateInfo.h
@@ -257,7 +258,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/WatermarkConfigureInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/ModifyQualityInspectTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/AigcAudioTaskInput.h
-  include/tencentcloud/vod/v20180717/model/MediaMiniProgramReviewElem.h
+  include/tencentcloud/vod/v20180717/model/AigcModelQuotaWithUsage.h
   include/tencentcloud/vod/v20180717/model/ModifyAdaptiveDynamicStreamingTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/ForbidMediaDistributionRequest.h
   include/tencentcloud/vod/v20180717/model/DescribeAIRecognitionTemplatesResponse.h
@@ -698,6 +699,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/CreateAdaptiveDynamicStreamingTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/DeleteSampleSnapshotTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/AiAnalysisTaskInput.h
+  include/tencentcloud/vod/v20180717/model/AigcModelQuota.h
   include/tencentcloud/vod/v20180717/model/MediaAiAnalysisTagItem.h
   include/tencentcloud/vod/v20180717/model/DescribeStorageDataResponse.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrFullTextSegmentTextItem.h
@@ -1279,6 +1281,7 @@ set(vod_src
   src/v20180717/model/AiReviewTaskPoliticalOcrResult.cpp
   src/v20180717/model/VideoDubbingAsyncInput.cpp
   src/v20180717/model/QualityEnhanceTask.cpp
+  src/v20180717/model/MediaMiniProgramReviewElem.cpp
   src/v20180717/model/AiSampleWord.cpp
   src/v20180717/model/OverrideTranscodeParameter.cpp
   src/v20180717/model/PoliticalOcrReviewTemplateInfo.cpp
@@ -1445,7 +1448,7 @@ set(vod_src
   src/v20180717/model/WatermarkConfigureInfoForUpdate.cpp
   src/v20180717/model/ModifyQualityInspectTemplateResponse.cpp
   src/v20180717/model/AigcAudioTaskInput.cpp
-  src/v20180717/model/MediaMiniProgramReviewElem.cpp
+  src/v20180717/model/AigcModelQuotaWithUsage.cpp
   src/v20180717/model/ModifyAdaptiveDynamicStreamingTemplateRequest.cpp
   src/v20180717/model/ForbidMediaDistributionRequest.cpp
   src/v20180717/model/DescribeAIRecognitionTemplatesResponse.cpp
@@ -1886,6 +1889,7 @@ set(vod_src
   src/v20180717/model/CreateAdaptiveDynamicStreamingTemplateResponse.cpp
   src/v20180717/model/DeleteSampleSnapshotTemplateRequest.cpp
   src/v20180717/model/AiAnalysisTaskInput.cpp
+  src/v20180717/model/AigcModelQuota.cpp
   src/v20180717/model/MediaAiAnalysisTagItem.cpp
   src/v20180717/model/DescribeStorageDataResponse.cpp
   src/v20180717/model/AiRecognitionTaskOcrFullTextSegmentTextItem.cpp

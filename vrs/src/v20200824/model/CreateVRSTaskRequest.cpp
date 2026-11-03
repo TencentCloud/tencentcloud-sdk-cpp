@@ -34,7 +34,8 @@ CreateVRSTaskRequest::CreateVRSTaskRequest() :
     m_modelTypeHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_vPRAudioIdHasBeenSet(false),
-    m_enableVoiceEnhanceHasBeenSet(false)
+    m_enableVoiceEnhanceHasBeenSet(false),
+    m_engineTypeHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,14 @@ string CreateVRSTaskRequest::ToJsonString() const
         string key = "EnableVoiceEnhance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableVoiceEnhance, allocator);
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -344,6 +353,22 @@ void CreateVRSTaskRequest::SetEnableVoiceEnhance(const uint64_t& _enableVoiceEnh
 bool CreateVRSTaskRequest::EnableVoiceEnhanceHasBeenSet() const
 {
     return m_enableVoiceEnhanceHasBeenSet;
+}
+
+string CreateVRSTaskRequest::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void CreateVRSTaskRequest::SetEngineType(const string& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool CreateVRSTaskRequest::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
 }
 
 

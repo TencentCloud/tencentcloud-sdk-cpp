@@ -3340,6 +3340,56 @@ DatabuddyClient::ListWorkspaceGroupsOutcomeCallable DatabuddyClient::ListWorkspa
     return prom->get_future();
 }
 
+DatabuddyClient::ListWorkspaceRolesOutcome DatabuddyClient::ListWorkspaceRoles(const ListWorkspaceRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListWorkspaceRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListWorkspaceRolesResponse rsp = ListWorkspaceRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListWorkspaceRolesOutcome(rsp);
+        else
+            return ListWorkspaceRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListWorkspaceRolesOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ListWorkspaceRolesAsync(const ListWorkspaceRolesRequest& request, const ListWorkspaceRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListWorkspaceRolesRequest&;
+    using Resp = ListWorkspaceRolesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListWorkspaceRoles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ListWorkspaceRolesOutcomeCallable DatabuddyClient::ListWorkspaceRolesCallable(const ListWorkspaceRolesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListWorkspaceRolesOutcome>>();
+    ListWorkspaceRolesAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ListWorkspaceRolesRequest&,
+        ListWorkspaceRolesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::ListWorkspaceUsersOutcome DatabuddyClient::ListWorkspaceUsers(const ListWorkspaceUsersRequest &request)
 {
     auto outcome = MakeRequest(request, "ListWorkspaceUsers");

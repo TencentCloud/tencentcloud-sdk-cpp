@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 通用的列表检索过滤选项
+                * 通用的列表检索过滤选项.
                 */
                 class CommonFilter : public AbstractModel
                 {

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建任务结果
-                     * @return Data 创建任务结果
+                     * 获取<p>创建任务结果</p>
+                     * @return Data <p>创建任务结果</p>
                      * 
                      */
                     CreateVRSTaskRespData GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建任务结果
+                     * <p>创建任务结果</p>
                      */
                     CreateVRSTaskRespData m_data;
                     bool m_dataHasBeenSet;

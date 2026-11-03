@@ -1,0 +1,94 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TCBR_V20220217_MODEL_INITIALIZECLOUDRUNRESOURCERESPONSE_H_
+#define TENCENTCLOUD_TCBR_V20220217_MODEL_INITIALIZECLOUDRUNRESOURCERESPONSE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Tcbr
+    {
+        namespace V20220217
+        {
+            namespace Model
+            {
+                /**
+                * InitializeCloudRunResource返回参数结构体
+                */
+                class InitializeCloudRunResourceResponse : public AbstractModel
+                {
+                public:
+                    InitializeCloudRunResourceResponse();
+                    ~InitializeCloudRunResourceResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取<p>环境Id</p>
+                     * @return EnvId <p>环境Id</p>
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>后付费订单号</p>
+                     * @return TranId <p>后付费订单号</p>
+                     * 
+                     */
+                    std::string GetTranId() const;
+
+                    /**
+                     * 判断参数 TranId 是否已赋值
+                     * @return TranId 是否已赋值
+                     * 
+                     */
+                    bool TranIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>环境Id</p>
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
+
+                    /**
+                     * <p>后付费订单号</p>
+                     */
+                    std::string m_tranId;
+                    bool m_tranIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TCBR_V20220217_MODEL_INITIALIZECLOUDRUNRESOURCERESPONSE_H_

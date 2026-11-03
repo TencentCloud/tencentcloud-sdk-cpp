@@ -863,6 +863,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/SecurityWeightedAction.h
   include/tencentcloud/teo/v20220901/model/ModifyMultiPathGatewayLineResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesResponse.h
+  include/tencentcloud/teo/v20220901/model/SemanticAnalysisRules.h
   include/tencentcloud/teo/v20220901/model/CreateOriginGroupResponse.h
   include/tencentcloud/teo/v20220901/model/CreateMultiPathGatewayLineRequest.h
   include/tencentcloud/teo/v20220901/model/IPGroupReference.h
@@ -1782,6 +1783,7 @@ set(teo_src
   src/v20220901/model/SecurityWeightedAction.cpp
   src/v20220901/model/ModifyMultiPathGatewayLineResponse.cpp
   src/v20220901/model/DescribeDefaultCertificatesResponse.cpp
+  src/v20220901/model/SemanticAnalysisRules.cpp
   src/v20220901/model/CreateOriginGroupResponse.cpp
   src/v20220901/model/CreateMultiPathGatewayLineRequest.cpp
   src/v20220901/model/IPGroupReference.cpp

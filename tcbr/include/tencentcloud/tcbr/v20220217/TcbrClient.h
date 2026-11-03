@@ -51,6 +51,8 @@
 #include <tencentcloud/tcbr/v20220217/model/DescribeServerManageTaskResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/DescribeVersionDetailRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/DescribeVersionDetailResponse.h>
+#include <tencentcloud/tcbr/v20220217/model/InitializeCloudRunResourceRequest.h>
+#include <tencentcloud/tcbr/v20220217/model/InitializeCloudRunResourceResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/OperateServerManageRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/OperateServerManageResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/ReleaseGrayRequest.h>
@@ -123,6 +125,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVersionDetailResponse> DescribeVersionDetailOutcome;
                 typedef std::future<DescribeVersionDetailOutcome> DescribeVersionDetailOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::DescribeVersionDetailRequest&, DescribeVersionDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVersionDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::InitializeCloudRunResourceResponse> InitializeCloudRunResourceOutcome;
+                typedef std::future<InitializeCloudRunResourceOutcome> InitializeCloudRunResourceOutcomeCallable;
+                typedef std::function<void(const TcbrClient*, const Model::InitializeCloudRunResourceRequest&, InitializeCloudRunResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitializeCloudRunResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::OperateServerManageResponse> OperateServerManageOutcome;
                 typedef std::future<OperateServerManageOutcome> OperateServerManageOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::OperateServerManageRequest&, OperateServerManageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateServerManageAsyncHandler;
@@ -275,6 +280,15 @@ namespace TencentCloud
                 DescribeVersionDetailOutcome DescribeVersionDetail(const Model::DescribeVersionDetailRequest &request);
                 void DescribeVersionDetailAsync(const Model::DescribeVersionDetailRequest& request, const DescribeVersionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVersionDetailOutcomeCallable DescribeVersionDetailCallable(const Model::DescribeVersionDetailRequest& request);
+
+                /**
+                 *创建云托管环境，并开通资源。
+                 * @param req InitializeCloudRunResourceRequest
+                 * @return InitializeCloudRunResourceOutcome
+                 */
+                InitializeCloudRunResourceOutcome InitializeCloudRunResource(const Model::InitializeCloudRunResourceRequest &request);
+                void InitializeCloudRunResourceAsync(const Model::InitializeCloudRunResourceRequest& request, const InitializeCloudRunResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InitializeCloudRunResourceOutcomeCallable InitializeCloudRunResourceCallable(const Model::InitializeCloudRunResourceRequest& request);
 
                 /**
                  *操作发布单

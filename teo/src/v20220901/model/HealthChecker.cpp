@@ -28,6 +28,7 @@ HealthChecker::HealthChecker() :
     m_healthThresholdHasBeenSet(false),
     m_criticalThresholdHasBeenSet(false),
     m_pathHasBeenSet(false),
+    m_hostHeaderPolicyHasBeenSet(false),
     m_methodHasBeenSet(false),
     m_expectedCodesHasBeenSet(false),
     m_headersHasBeenSet(false),
@@ -111,6 +112,16 @@ CoreInternalOutcome HealthChecker::Deserialize(const rapidjson::Value &value)
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
+    }
+
+    if (value.HasMember("HostHeaderPolicy") && !value["HostHeaderPolicy"].IsNull())
+    {
+        if (!value["HostHeaderPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HealthChecker.HostHeaderPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostHeaderPolicy = string(value["HostHeaderPolicy"].GetString());
+        m_hostHeaderPolicyHasBeenSet = true;
     }
 
     if (value.HasMember("Method") && !value["Method"].IsNull())
@@ -257,6 +268,14 @@ void HealthChecker::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostHeaderPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostHeaderPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostHeaderPolicy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_methodHasBeenSet)
@@ -440,6 +459,22 @@ void HealthChecker::SetPath(const string& _path)
 bool HealthChecker::PathHasBeenSet() const
 {
     return m_pathHasBeenSet;
+}
+
+string HealthChecker::GetHostHeaderPolicy() const
+{
+    return m_hostHeaderPolicy;
+}
+
+void HealthChecker::SetHostHeaderPolicy(const string& _hostHeaderPolicy)
+{
+    m_hostHeaderPolicy = _hostHeaderPolicy;
+    m_hostHeaderPolicyHasBeenSet = true;
+}
+
+bool HealthChecker::HostHeaderPolicyHasBeenSet() const
+{
+    return m_hostHeaderPolicyHasBeenSet;
 }
 
 string HealthChecker::GetMethod() const

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/AigcModelQuota.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,90 @@ namespace TencentCloud
                      */
                     bool ApiTokenHasBeenSet() const;
 
+                    /**
+                     * 获取<p>配额重置周期。</p><p>枚举值：</p><ul><li>Day： 每天重置。</li><li>Month： 每月指定日期重置。</li><li>Total： 永不重置，QuotaLimit参数即为总额度。</li></ul>
+                     * @return QuotaPeriod <p>配额重置周期。</p><p>枚举值：</p><ul><li>Day： 每天重置。</li><li>Month： 每月指定日期重置。</li><li>Total： 永不重置，QuotaLimit参数即为总额度。</li></ul>
+                     * 
+                     */
+                    std::string GetQuotaPeriod() const;
+
+                    /**
+                     * 设置<p>配额重置周期。</p><p>枚举值：</p><ul><li>Day： 每天重置。</li><li>Month： 每月指定日期重置。</li><li>Total： 永不重置，QuotaLimit参数即为总额度。</li></ul>
+                     * @param _quotaPeriod <p>配额重置周期。</p><p>枚举值：</p><ul><li>Day： 每天重置。</li><li>Month： 每月指定日期重置。</li><li>Total： 永不重置，QuotaLimit参数即为总额度。</li></ul>
+                     * 
+                     */
+                    void SetQuotaPeriod(const std::string& _quotaPeriod);
+
+                    /**
+                     * 判断参数 QuotaPeriod 是否已赋值
+                     * @return QuotaPeriod 是否已赋值
+                     * 
+                     */
+                    bool QuotaPeriodHasBeenSet() const;
+
+                    /**
+                     * 获取<p>每月配额的重置日期，仅QuotaPeriod=Month时有效。</p><p>如果当月无所选日期时，顺延至次月 1 日 00:00 重置。</p>
+                     * @return ResetDay <p>每月配额的重置日期，仅QuotaPeriod=Month时有效。</p><p>如果当月无所选日期时，顺延至次月 1 日 00:00 重置。</p>
+                     * 
+                     */
+                    uint64_t GetResetDay() const;
+
+                    /**
+                     * 设置<p>每月配额的重置日期，仅QuotaPeriod=Month时有效。</p><p>如果当月无所选日期时，顺延至次月 1 日 00:00 重置。</p>
+                     * @param _resetDay <p>每月配额的重置日期，仅QuotaPeriod=Month时有效。</p><p>如果当月无所选日期时，顺延至次月 1 日 00:00 重置。</p>
+                     * 
+                     */
+                    void SetResetDay(const uint64_t& _resetDay);
+
+                    /**
+                     * 判断参数 ResetDay 是否已赋值
+                     * @return ResetDay 是否已赋值
+                     * 
+                     */
+                    bool ResetDayHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启按单个模型设置配额</p><p>枚举值：</p><ul><li>ON： 打开</li><li>OFF： 关闭</li></ul>
+                     * @return ModelQuotaSwitch <p>是否开启按单个模型设置配额</p><p>枚举值：</p><ul><li>ON： 打开</li><li>OFF： 关闭</li></ul>
+                     * 
+                     */
+                    std::string GetModelQuotaSwitch() const;
+
+                    /**
+                     * 设置<p>是否开启按单个模型设置配额</p><p>枚举值：</p><ul><li>ON： 打开</li><li>OFF： 关闭</li></ul>
+                     * @param _modelQuotaSwitch <p>是否开启按单个模型设置配额</p><p>枚举值：</p><ul><li>ON： 打开</li><li>OFF： 关闭</li></ul>
+                     * 
+                     */
+                    void SetModelQuotaSwitch(const std::string& _modelQuotaSwitch);
+
+                    /**
+                     * 判断参数 ModelQuotaSwitch 是否已赋值
+                     * @return ModelQuotaSwitch 是否已赋值
+                     * 
+                     */
+                    bool ModelQuotaSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取<p>按单个模型设置的配额，仅ModelQuotaSwitch=ON时有效。</p>
+                     * @return ModelQuotas <p>按单个模型设置的配额，仅ModelQuotaSwitch=ON时有效。</p>
+                     * 
+                     */
+                    std::vector<AigcModelQuota> GetModelQuotas() const;
+
+                    /**
+                     * 设置<p>按单个模型设置的配额，仅ModelQuotaSwitch=ON时有效。</p>
+                     * @param _modelQuotas <p>按单个模型设置的配额，仅ModelQuotaSwitch=ON时有效。</p>
+                     * 
+                     */
+                    void SetModelQuotas(const std::vector<AigcModelQuota>& _modelQuotas);
+
+                    /**
+                     * 判断参数 ModelQuotas 是否已赋值
+                     * @return ModelQuotas 是否已赋值
+                     * 
+                     */
+                    bool ModelQuotasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +236,30 @@ namespace TencentCloud
                      */
                     std::string m_apiToken;
                     bool m_apiTokenHasBeenSet;
+
+                    /**
+                     * <p>配额重置周期。</p><p>枚举值：</p><ul><li>Day： 每天重置。</li><li>Month： 每月指定日期重置。</li><li>Total： 永不重置，QuotaLimit参数即为总额度。</li></ul>
+                     */
+                    std::string m_quotaPeriod;
+                    bool m_quotaPeriodHasBeenSet;
+
+                    /**
+                     * <p>每月配额的重置日期，仅QuotaPeriod=Month时有效。</p><p>如果当月无所选日期时，顺延至次月 1 日 00:00 重置。</p>
+                     */
+                    uint64_t m_resetDay;
+                    bool m_resetDayHasBeenSet;
+
+                    /**
+                     * <p>是否开启按单个模型设置配额</p><p>枚举值：</p><ul><li>ON： 打开</li><li>OFF： 关闭</li></ul>
+                     */
+                    std::string m_modelQuotaSwitch;
+                    bool m_modelQuotaSwitchHasBeenSet;
+
+                    /**
+                     * <p>按单个模型设置的配额，仅ModelQuotaSwitch=ON时有效。</p>
+                     */
+                    std::vector<AigcModelQuota> m_modelQuotas;
+                    bool m_modelQuotasHasBeenSet;
 
                 };
             }

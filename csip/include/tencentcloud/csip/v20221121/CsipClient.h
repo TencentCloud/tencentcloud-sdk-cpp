@@ -329,6 +329,10 @@
 #include <tencentcloud/csip/v20221121/model/DeleteImageVirusWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteImageVulWhitelistRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteImageVulWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteLoginWhiteCustomEDRRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteLoginWhiteCustomEDRResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteLoginWhiteLearnEDRRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteLoginWhiteLearnEDRResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteLoginWhiteListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteLoginWhiteListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteMachineClearHistoryRequest.h>
@@ -825,6 +829,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeEdrExportJobListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeEdrLogCollectPathsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeEdrLogCollectPathsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrMalwareFileRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeEdrMalwareFileResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExportJobDownloadURLRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExportJobDownloadURLResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeExportJobManageListRequest.h>
@@ -943,8 +949,12 @@
 #include <tencentcloud/csip/v20221121/model/DescribeLoginTypeHostResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeLoginWhiteCombinedListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeLoginWhiteCombinedListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeLoginWhiteCustomListEDRRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeLoginWhiteCustomListEDRResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeLoginWhiteHostListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeLoginWhiteHostListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeLoginWhiteLearnListEDRRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeLoginWhiteLearnListEDRResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeMachineClearHistoryRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeMachineClearHistoryResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeMachineGeneralRequest.h>
@@ -1369,6 +1379,10 @@
 #include <tencentcloud/csip/v20221121/model/ModifyImageVirusWhitelistResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyImageVulWhitelistRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyImageVulWhitelistResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyLoginWhiteCustomEDRRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyLoginWhiteCustomEDRResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyLoginWhiteLearnEDRRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyLoginWhiteLearnEDRResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyLoginWhiteRecordRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyLoginWhiteRecordResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyMachineAutoClearConfigRequest.h>
@@ -1998,6 +2012,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteImageVulWhitelistResponse> DeleteImageVulWhitelistOutcome;
                 typedef std::future<DeleteImageVulWhitelistOutcome> DeleteImageVulWhitelistOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteImageVulWhitelistRequest&, DeleteImageVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageVulWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLoginWhiteCustomEDRResponse> DeleteLoginWhiteCustomEDROutcome;
+                typedef std::future<DeleteLoginWhiteCustomEDROutcome> DeleteLoginWhiteCustomEDROutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteLoginWhiteCustomEDRRequest&, DeleteLoginWhiteCustomEDROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoginWhiteCustomEDRAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLoginWhiteLearnEDRResponse> DeleteLoginWhiteLearnEDROutcome;
+                typedef std::future<DeleteLoginWhiteLearnEDROutcome> DeleteLoginWhiteLearnEDROutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteLoginWhiteLearnEDRRequest&, DeleteLoginWhiteLearnEDROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoginWhiteLearnEDRAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLoginWhiteListResponse> DeleteLoginWhiteListOutcome;
                 typedef std::future<DeleteLoginWhiteListOutcome> DeleteLoginWhiteListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteLoginWhiteListRequest&, DeleteLoginWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoginWhiteListAsyncHandler;
@@ -2742,6 +2762,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEdrLogCollectPathsResponse> DescribeEdrLogCollectPathsOutcome;
                 typedef std::future<DescribeEdrLogCollectPathsOutcome> DescribeEdrLogCollectPathsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeEdrLogCollectPathsRequest&, DescribeEdrLogCollectPathsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrLogCollectPathsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdrMalwareFileResponse> DescribeEdrMalwareFileOutcome;
+                typedef std::future<DescribeEdrMalwareFileOutcome> DescribeEdrMalwareFileOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeEdrMalwareFileRequest&, DescribeEdrMalwareFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdrMalwareFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExportJobDownloadURLResponse> DescribeExportJobDownloadURLOutcome;
                 typedef std::future<DescribeExportJobDownloadURLOutcome> DescribeExportJobDownloadURLOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeExportJobDownloadURLRequest&, DescribeExportJobDownloadURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportJobDownloadURLAsyncHandler;
@@ -2919,9 +2942,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLoginWhiteCombinedListResponse> DescribeLoginWhiteCombinedListOutcome;
                 typedef std::future<DescribeLoginWhiteCombinedListOutcome> DescribeLoginWhiteCombinedListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeLoginWhiteCombinedListRequest&, DescribeLoginWhiteCombinedListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginWhiteCombinedListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLoginWhiteCustomListEDRResponse> DescribeLoginWhiteCustomListEDROutcome;
+                typedef std::future<DescribeLoginWhiteCustomListEDROutcome> DescribeLoginWhiteCustomListEDROutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeLoginWhiteCustomListEDRRequest&, DescribeLoginWhiteCustomListEDROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginWhiteCustomListEDRAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLoginWhiteHostListResponse> DescribeLoginWhiteHostListOutcome;
                 typedef std::future<DescribeLoginWhiteHostListOutcome> DescribeLoginWhiteHostListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeLoginWhiteHostListRequest&, DescribeLoginWhiteHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginWhiteHostListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLoginWhiteLearnListEDRResponse> DescribeLoginWhiteLearnListEDROutcome;
+                typedef std::future<DescribeLoginWhiteLearnListEDROutcome> DescribeLoginWhiteLearnListEDROutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeLoginWhiteLearnListEDRRequest&, DescribeLoginWhiteLearnListEDROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginWhiteLearnListEDRAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMachineClearHistoryResponse> DescribeMachineClearHistoryOutcome;
                 typedef std::future<DescribeMachineClearHistoryOutcome> DescribeMachineClearHistoryOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeMachineClearHistoryRequest&, DescribeMachineClearHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMachineClearHistoryAsyncHandler;
@@ -3558,6 +3587,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyImageVulWhitelistResponse> ModifyImageVulWhitelistOutcome;
                 typedef std::future<ModifyImageVulWhitelistOutcome> ModifyImageVulWhitelistOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyImageVulWhitelistRequest&, ModifyImageVulWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageVulWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLoginWhiteCustomEDRResponse> ModifyLoginWhiteCustomEDROutcome;
+                typedef std::future<ModifyLoginWhiteCustomEDROutcome> ModifyLoginWhiteCustomEDROutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyLoginWhiteCustomEDRRequest&, ModifyLoginWhiteCustomEDROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoginWhiteCustomEDRAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLoginWhiteLearnEDRResponse> ModifyLoginWhiteLearnEDROutcome;
+                typedef std::future<ModifyLoginWhiteLearnEDROutcome> ModifyLoginWhiteLearnEDROutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyLoginWhiteLearnEDRRequest&, ModifyLoginWhiteLearnEDROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoginWhiteLearnEDRAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLoginWhiteRecordResponse> ModifyLoginWhiteRecordOutcome;
                 typedef std::future<ModifyLoginWhiteRecordOutcome> ModifyLoginWhiteRecordOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyLoginWhiteRecordRequest&, ModifyLoginWhiteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoginWhiteRecordAsyncHandler;
@@ -5175,6 +5210,24 @@ namespace TencentCloud
                 DeleteImageVulWhitelistOutcome DeleteImageVulWhitelist(const Model::DeleteImageVulWhitelistRequest &request);
                 void DeleteImageVulWhitelistAsync(const Model::DeleteImageVulWhitelistRequest& request, const DeleteImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteImageVulWhitelistOutcomeCallable DeleteImageVulWhitelistCallable(const Model::DeleteImageVulWhitelistRequest& request);
+
+                /**
+                 *批量删除 CSC 异常登录自定义白名单（软删 status=2），支持跨页全选。Ids 与 SelectAll 二选一，均为空时返回 InvalidParameter；跨页全选总量超过 100000 条时整体拒绝。
+                 * @param req DeleteLoginWhiteCustomEDRRequest
+                 * @return DeleteLoginWhiteCustomEDROutcome
+                 */
+                DeleteLoginWhiteCustomEDROutcome DeleteLoginWhiteCustomEDR(const Model::DeleteLoginWhiteCustomEDRRequest &request);
+                void DeleteLoginWhiteCustomEDRAsync(const Model::DeleteLoginWhiteCustomEDRRequest& request, const DeleteLoginWhiteCustomEDRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLoginWhiteCustomEDROutcomeCallable DeleteLoginWhiteCustomEDRCallable(const Model::DeleteLoginWhiteCustomEDRRequest& request);
+
+                /**
+                 *批量删除 CSC 异常登录自学习白名单规则组（整组软删 enable=0），传入组内任一行 ID 即可定位整组，支持跨页全选（上限 100000 个规则组）。删除后不会被自动重学，需重新开关自学习刷新学习锚点；本接口不回扫历史告警。
+                 * @param req DeleteLoginWhiteLearnEDRRequest
+                 * @return DeleteLoginWhiteLearnEDROutcome
+                 */
+                DeleteLoginWhiteLearnEDROutcome DeleteLoginWhiteLearnEDR(const Model::DeleteLoginWhiteLearnEDRRequest &request);
+                void DeleteLoginWhiteLearnEDRAsync(const Model::DeleteLoginWhiteLearnEDRRequest& request, const DeleteLoginWhiteLearnEDRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLoginWhiteLearnEDROutcomeCallable DeleteLoginWhiteLearnEDRCallable(const Model::DeleteLoginWhiteLearnEDRRequest& request);
 
                 /**
                  *本接口用于删除异地登录白名单规则。
@@ -7426,6 +7479,15 @@ namespace TencentCloud
                 DescribeEdrLogCollectPathsOutcomeCallable DescribeEdrLogCollectPathsCallable(const Model::DescribeEdrLogCollectPathsRequest& request);
 
                 /**
+                 *按 EDR 告警标识定位恶意文件告警，返回其恶意样本的下载链接。仅 alert_sub_type=1（恶意文件）的告警允许下载，其它子类型按资源不存在处理。公有云返回 COS 预签名 URL（1 小时有效）；非公有云且导出开关打开时返回 base64 DataURL 并同时返回 FileName。跨账号场景由 TargetAppId 指定告警所属账号，会做归属校验（fail-close，无权限返回 InvalidParameter）。
+                 * @param req DescribeEdrMalwareFileRequest
+                 * @return DescribeEdrMalwareFileOutcome
+                 */
+                DescribeEdrMalwareFileOutcome DescribeEdrMalwareFile(const Model::DescribeEdrMalwareFileRequest &request);
+                void DescribeEdrMalwareFileAsync(const Model::DescribeEdrMalwareFileRequest& request, const DescribeEdrMalwareFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdrMalwareFileOutcomeCallable DescribeEdrMalwareFileCallable(const Model::DescribeEdrMalwareFileRequest& request);
+
+                /**
                  *导出任务结果下载URL
                  * @param req DescribeExportJobDownloadURLRequest
                  * @return DescribeExportJobDownloadURLOutcome
@@ -7957,6 +8019,15 @@ namespace TencentCloud
                 DescribeLoginWhiteCombinedListOutcomeCallable DescribeLoginWhiteCombinedListCallable(const Model::DescribeLoginWhiteCombinedListRequest& request);
 
                 /**
+                 *查询 CSC 异常登录自定义白名单列表。多账号场景按 MemberId 解析出全部成员 AppId 后一次聚合查询。按 ModifyTime DESC 分页返回，出参切片字段恒为 [] 不会为 null。
+                 * @param req DescribeLoginWhiteCustomListEDRRequest
+                 * @return DescribeLoginWhiteCustomListEDROutcome
+                 */
+                DescribeLoginWhiteCustomListEDROutcome DescribeLoginWhiteCustomListEDR(const Model::DescribeLoginWhiteCustomListEDRRequest &request);
+                void DescribeLoginWhiteCustomListEDRAsync(const Model::DescribeLoginWhiteCustomListEDRRequest& request, const DescribeLoginWhiteCustomListEDRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLoginWhiteCustomListEDROutcomeCallable DescribeLoginWhiteCustomListEDRCallable(const Model::DescribeLoginWhiteCustomListEDRRequest& request);
+
+                /**
                  *查询合并后白名单机器列表
                  * @param req DescribeLoginWhiteHostListRequest
                  * @return DescribeLoginWhiteHostListOutcome
@@ -7964,6 +8035,15 @@ namespace TencentCloud
                 DescribeLoginWhiteHostListOutcome DescribeLoginWhiteHostList(const Model::DescribeLoginWhiteHostListRequest &request);
                 void DescribeLoginWhiteHostListAsync(const Model::DescribeLoginWhiteHostListRequest& request, const DescribeLoginWhiteHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLoginWhiteHostListOutcomeCallable DescribeLoginWhiteHostListCallable(const Model::DescribeLoginWhiteHostListRequest& request);
+
+                /**
+                 *查询 CSC 异常登录自学习白名单列表（规则组）。规则组按 (AppId, 常用登录地) 聚合，Id 为组内最小行 ID；出参 SrcIp/UserName/StartTime/EndTime 恒为空。AutoLearnEnable 返回自学习开关状态，供前端空态展示判断是否跳转开启。
+                 * @param req DescribeLoginWhiteLearnListEDRRequest
+                 * @return DescribeLoginWhiteLearnListEDROutcome
+                 */
+                DescribeLoginWhiteLearnListEDROutcome DescribeLoginWhiteLearnListEDR(const Model::DescribeLoginWhiteLearnListEDRRequest &request);
+                void DescribeLoginWhiteLearnListEDRAsync(const Model::DescribeLoginWhiteLearnListEDRRequest& request, const DescribeLoginWhiteLearnListEDRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLoginWhiteLearnListEDROutcomeCallable DescribeLoginWhiteLearnListEDRCallable(const Model::DescribeLoginWhiteLearnListEDRRequest& request);
 
                 /**
                  *查询机器清理历史记录
@@ -9884,6 +9964,24 @@ capi 层处理流程：
                 ModifyImageVulWhitelistOutcome ModifyImageVulWhitelist(const Model::ModifyImageVulWhitelistRequest &request);
                 void ModifyImageVulWhitelistAsync(const Model::ModifyImageVulWhitelistRequest& request, const ModifyImageVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyImageVulWhitelistOutcomeCallable ModifyImageVulWhitelistCallable(const Model::ModifyImageVulWhitelistRequest& request);
+
+                /**
+                 *修改 CSC 异常登录自定义白名单，全量覆盖保存（未传字段视为清空）。本接口不触发历史告警回扫；查重时排除自身；规则不存在返回 ResourceNotFound。
+                 * @param req ModifyLoginWhiteCustomEDRRequest
+                 * @return ModifyLoginWhiteCustomEDROutcome
+                 */
+                ModifyLoginWhiteCustomEDROutcome ModifyLoginWhiteCustomEDR(const Model::ModifyLoginWhiteCustomEDRRequest &request);
+                void ModifyLoginWhiteCustomEDRAsync(const Model::ModifyLoginWhiteCustomEDRRequest& request, const ModifyLoginWhiteCustomEDRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLoginWhiteCustomEDROutcomeCallable ModifyLoginWhiteCustomEDRCallable(const Model::ModifyLoginWhiteCustomEDRRequest& request);
+
+                /**
+                 *修改 CSC 异常登录自学习白名单规则组，按 (AppId, 常用登录地) 定位整组。约束：不支持新建、不支持按标签生效（TagIDs 必须为空）；仅支持 Scope=0 直接选择 与 Scope=1 全部资产+剔除；规则组行数超过 5000 时拒绝；单事务先插后删；编辑后最长一个缓存周期（默认 120s）内生效。本接口不回扫历史告警。
+                 * @param req ModifyLoginWhiteLearnEDRRequest
+                 * @return ModifyLoginWhiteLearnEDROutcome
+                 */
+                ModifyLoginWhiteLearnEDROutcome ModifyLoginWhiteLearnEDR(const Model::ModifyLoginWhiteLearnEDRRequest &request);
+                void ModifyLoginWhiteLearnEDRAsync(const Model::ModifyLoginWhiteLearnEDRRequest& request, const ModifyLoginWhiteLearnEDRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLoginWhiteLearnEDROutcomeCallable ModifyLoginWhiteLearnEDRCallable(const Model::ModifyLoginWhiteLearnEDRRequest& request);
 
                 /**
                  *更新合并后登录审计白名单信息（服务器列表数目应小于1000）

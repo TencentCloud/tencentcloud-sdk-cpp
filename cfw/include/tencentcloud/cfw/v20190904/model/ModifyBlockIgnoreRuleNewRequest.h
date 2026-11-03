@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则
-                     * @return Rule 规则
+                     * 获取<p>规则</p>
+                     * @return Rule <p>规则</p>
                      * 
                      */
                     BanAndAllowRule GetRule() const;
 
                     /**
-                     * 设置规则
-                     * @param _rule 规则
+                     * 设置<p>规则</p>
+                     * @param _rule <p>规则</p>
                      * 
                      */
                     void SetRule(const BanAndAllowRule& _rule);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool RuleHasBeenSet() const;
 
                     /**
-                     * 获取RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
-                     * @return RuleType RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
+                     * 获取<p>RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则</p>
+                     * @return RuleType <p>RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则</p>
                      * 
                      */
                     int64_t GetRuleType() const;
 
                     /**
-                     * 设置RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
-                     * @param _ruleType RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
+                     * 设置<p>RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则</p>
+                     * @param _ruleType <p>RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则</p>
                      * 
                      */
                     void SetRuleType(const int64_t& _ruleType);
@@ -85,19 +85,46 @@ namespace TencentCloud
                      */
                     bool RuleTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>冲突选择</p><p>枚举值：</p><ul><li>1： 删除对端写入</li><li>0： 跳过写入</li></ul>
+                     * @return CoverDuplicate <p>冲突选择</p><p>枚举值：</p><ul><li>1： 删除对端写入</li><li>0： 跳过写入</li></ul>
+                     * 
+                     */
+                    int64_t GetCoverDuplicate() const;
+
+                    /**
+                     * 设置<p>冲突选择</p><p>枚举值：</p><ul><li>1： 删除对端写入</li><li>0： 跳过写入</li></ul>
+                     * @param _coverDuplicate <p>冲突选择</p><p>枚举值：</p><ul><li>1： 删除对端写入</li><li>0： 跳过写入</li></ul>
+                     * 
+                     */
+                    void SetCoverDuplicate(const int64_t& _coverDuplicate);
+
+                    /**
+                     * 判断参数 CoverDuplicate 是否已赋值
+                     * @return CoverDuplicate 是否已赋值
+                     * 
+                     */
+                    bool CoverDuplicateHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规则
+                     * <p>规则</p>
                      */
                     BanAndAllowRule m_rule;
                     bool m_ruleHasBeenSet;
 
                     /**
-                     * RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则
+                     * <p>RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则</p>
                      */
                     int64_t m_ruleType;
                     bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * <p>冲突选择</p><p>枚举值：</p><ul><li>1： 删除对端写入</li><li>0： 跳过写入</li></ul>
+                     */
+                    int64_t m_coverDuplicate;
+                    bool m_coverDuplicateHasBeenSet;
 
                 };
             }

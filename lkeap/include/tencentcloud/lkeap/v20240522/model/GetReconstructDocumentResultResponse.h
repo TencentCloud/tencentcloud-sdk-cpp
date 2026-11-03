@@ -24,6 +24,7 @@
 #include <tencentcloud/lkeap/v20240522/model/ReconstructDocumentFailedPage.h>
 #include <tencentcloud/lkeap/v20240522/model/DocumentUsage.h>
 #include <tencentcloud/lkeap/v20240522/model/ErrorInfo.h>
+#include <tencentcloud/lkeap/v20240522/model/TaskErrInfo.h>
 
 
 namespace TencentCloud
@@ -47,18 +48,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态。
-- `Success`：执行完成
-- `Processing`：执行中
--  `Pause`: 暂停
--  `Failed`：执行失败
--  `WaitExecute`：等待执行
-                     * @return Status 任务状态。
-- `Success`：执行完成
-- `Processing`：执行中
--  `Pause`: 暂停
--  `Failed`：执行失败
--  `WaitExecute`：等待执行
+                     * 获取<p>任务状态。</p><ul><li><code>Success</code>：执行完成</li><li><code>Processing</code>：执行中</li><li><code>Pause</code>: 暂停</li><li><code>Failed</code>：执行失败</li><li><code>WaitExecute</code>：等待执行</li></ul>
+                     * @return Status <p>任务状态。</p><ul><li><code>Success</code>：执行完成</li><li><code>Processing</code>：执行中</li><li><code>Pause</code>: 暂停</li><li><code>Failed</code>：执行失败</li><li><code>WaitExecute</code>：等待执行</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -71,8 +62,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟
-                     * @return DocumentRecognizeResultUrl 解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟
+                     * 获取<p>解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟</p>
+                     * @return DocumentRecognizeResultUrl <p>解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟</p>
                      * 
                      */
                     std::string GetDocumentRecognizeResultUrl() const;
@@ -85,8 +76,8 @@ namespace TencentCloud
                     bool DocumentRecognizeResultUrlHasBeenSet() const;
 
                     /**
-                     * 获取文档解析失败的页码
-                     * @return FailedPages 文档解析失败的页码
+                     * 获取<p>文档解析失败的页码</p>
+                     * @return FailedPages <p>文档解析失败的页码</p>
                      * 
                      */
                     std::vector<ReconstructDocumentFailedPage> GetFailedPages() const;
@@ -99,8 +90,8 @@ namespace TencentCloud
                     bool FailedPagesHasBeenSet() const;
 
                     /**
-                     * 获取文档拆分任务的用量	
-                     * @return Usage 文档拆分任务的用量	
+                     * 获取<p>文档拆分任务的用量</p>
+                     * @return Usage <p>文档拆分任务的用量</p>
                      * 
                      */
                     DocumentUsage GetUsage() const;
@@ -113,55 +104,70 @@ namespace TencentCloud
                     bool UsageHasBeenSet() const;
 
                     /**
-                     * 获取文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息
-                     * @return Error 文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息
-                     * 
+                     * 获取<p>文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息</p>
+                     * @return Error <p>文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息</p>
+                     * @deprecated
                      */
                     ErrorInfo GetError() const;
 
                     /**
                      * 判断参数 Error 是否已赋值
                      * @return Error 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ErrorHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息</p>
+                     * @return TaskErrInfo <p>文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息</p>
+                     * 
+                     */
+                    TaskErrInfo GetTaskErrInfo() const;
+
+                    /**
+                     * 判断参数 TaskErrInfo 是否已赋值
+                     * @return TaskErrInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskErrInfoHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务状态。
-- `Success`：执行完成
-- `Processing`：执行中
--  `Pause`: 暂停
--  `Failed`：执行失败
--  `WaitExecute`：等待执行
+                     * <p>任务状态。</p><ul><li><code>Success</code>：执行完成</li><li><code>Processing</code>：执行中</li><li><code>Pause</code>: 暂停</li><li><code>Failed</code>：执行失败</li><li><code>WaitExecute</code>：等待执行</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟
+                     * <p>解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟</p>
                      */
                     std::string m_documentRecognizeResultUrl;
                     bool m_documentRecognizeResultUrlHasBeenSet;
 
                     /**
-                     * 文档解析失败的页码
+                     * <p>文档解析失败的页码</p>
                      */
                     std::vector<ReconstructDocumentFailedPage> m_failedPages;
                     bool m_failedPagesHasBeenSet;
 
                     /**
-                     * 文档拆分任务的用量	
+                     * <p>文档拆分任务的用量</p>
                      */
                     DocumentUsage m_usage;
                     bool m_usageHasBeenSet;
 
                     /**
-                     * 文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息
+                     * <p>文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息</p>
                      */
                     ErrorInfo m_error;
                     bool m_errorHasBeenSet;
+
+                    /**
+                     * <p>文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息</p>
+                     */
+                    TaskErrInfo m_taskErrInfo;
+                    bool m_taskErrInfoHasBeenSet;
 
                 };
             }

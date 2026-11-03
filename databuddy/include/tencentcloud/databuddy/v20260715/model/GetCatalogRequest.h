@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool WorkspaceIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>数据目录id</p>
-                     * @return CatalogId <p>数据目录id</p>
+                     * 获取<p>数据目录id，通过ListCatalogs接口获取</p>
+                     * @return CatalogId <p>数据目录id，通过ListCatalogs接口获取</p>
                      * 
                      */
                     std::string GetCatalogId() const;
 
                     /**
-                     * 设置<p>数据目录id</p>
-                     * @param _catalogId <p>数据目录id</p>
+                     * 设置<p>数据目录id，通过ListCatalogs接口获取</p>
+                     * @param _catalogId <p>数据目录id，通过ListCatalogs接口获取</p>
                      * 
                      */
                     void SetCatalogId(const std::string& _catalogId);
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_workspaceIdHasBeenSet;
 
                     /**
-                     * <p>数据目录id</p>
+                     * <p>数据目录id，通过ListCatalogs接口获取</p>
                      */
                     std::string m_catalogId;
                     bool m_catalogIdHasBeenSet;

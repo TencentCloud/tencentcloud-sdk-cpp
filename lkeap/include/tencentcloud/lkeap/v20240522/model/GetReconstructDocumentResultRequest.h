@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取说明：解析任务ID
-备注：仅支持单个任务ID
-                     * @return TaskId 说明：解析任务ID
-备注：仅支持单个任务ID
+                     * 获取<p>说明：解析任务ID<br>备注：仅支持单个任务ID</p>
+                     * @return TaskId <p>说明：解析任务ID<br>备注：仅支持单个任务ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置说明：解析任务ID
-备注：仅支持单个任务ID
-                     * @param _taskId 说明：解析任务ID
-备注：仅支持单个任务ID
+                     * 设置<p>说明：解析任务ID<br>备注：仅支持单个任务ID</p>
+                     * @param _taskId <p>说明：解析任务ID<br>备注：仅支持单个任务ID</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -70,8 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 说明：解析任务ID
-备注：仅支持单个任务ID
+                     * <p>说明：解析任务ID<br>备注：仅支持单个任务ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

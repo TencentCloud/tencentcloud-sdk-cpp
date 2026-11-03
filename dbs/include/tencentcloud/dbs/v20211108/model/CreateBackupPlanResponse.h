@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取资源ID。
-                     * @return BackupPlanIds 资源ID。
+                     * 获取备份计划 ID 列表。单次最多返回 10 个。
+                     * @return BackupPlanIds 备份计划 ID 列表。单次最多返回 10 个。
                      * 
                      */
                     std::vector<std::string> GetBackupPlanIds() const;
@@ -80,7 +80,7 @@ namespace TencentCloud
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 资源ID。
+                     * 备份计划 ID 列表。单次最多返回 10 个。
                      */
                     std::vector<std::string> m_backupPlanIds;
                     bool m_backupPlanIdsHasBeenSet;

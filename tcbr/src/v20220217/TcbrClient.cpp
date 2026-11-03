@@ -740,6 +740,56 @@ TcbrClient::DescribeVersionDetailOutcomeCallable TcbrClient::DescribeVersionDeta
     return prom->get_future();
 }
 
+TcbrClient::InitializeCloudRunResourceOutcome TcbrClient::InitializeCloudRunResource(const InitializeCloudRunResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "InitializeCloudRunResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InitializeCloudRunResourceResponse rsp = InitializeCloudRunResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InitializeCloudRunResourceOutcome(rsp);
+        else
+            return InitializeCloudRunResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return InitializeCloudRunResourceOutcome(outcome.GetError());
+    }
+}
+
+void TcbrClient::InitializeCloudRunResourceAsync(const InitializeCloudRunResourceRequest& request, const InitializeCloudRunResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const InitializeCloudRunResourceRequest&;
+    using Resp = InitializeCloudRunResourceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "InitializeCloudRunResource", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbrClient::InitializeCloudRunResourceOutcomeCallable TcbrClient::InitializeCloudRunResourceCallable(const InitializeCloudRunResourceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<InitializeCloudRunResourceOutcome>>();
+    InitializeCloudRunResourceAsync(
+    request,
+    [prom](
+        const TcbrClient*,
+        const InitializeCloudRunResourceRequest&,
+        InitializeCloudRunResourceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbrClient::OperateServerManageOutcome TcbrClient::OperateServerManage(const OperateServerManageRequest &request)
 {
     auto outcome = MakeRequest(request, "OperateServerManage");

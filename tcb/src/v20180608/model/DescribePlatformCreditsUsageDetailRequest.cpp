@@ -27,7 +27,8 @@ DescribePlatformCreditsUsageDetailRequest::DescribePlatformCreditsUsageDetailReq
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
     m_needUsageDetailsHasBeenSet(false),
-    m_platformIdHasBeenSet(false)
+    m_platformIdHasBeenSet(false),
+    m_queryLevelHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string DescribePlatformCreditsUsageDetailRequest::ToJsonString() const
         string key = "PlatformId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_platformId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queryLevel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -169,6 +178,22 @@ void DescribePlatformCreditsUsageDetailRequest::SetPlatformId(const string& _pla
 bool DescribePlatformCreditsUsageDetailRequest::PlatformIdHasBeenSet() const
 {
     return m_platformIdHasBeenSet;
+}
+
+string DescribePlatformCreditsUsageDetailRequest::GetQueryLevel() const
+{
+    return m_queryLevel;
+}
+
+void DescribePlatformCreditsUsageDetailRequest::SetQueryLevel(const string& _queryLevel)
+{
+    m_queryLevel = _queryLevel;
+    m_queryLevelHasBeenSet = true;
+}
+
+bool DescribePlatformCreditsUsageDetailRequest::QueryLevelHasBeenSet() const
+{
+    return m_queryLevelHasBeenSet;
 }
 
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例类型。<li>  S3L.MEDIUM4: 云桌面-标准S3_2核4G </li><li> S3L.LARGE8: 云桌面-标准S3_4核8G </li><li> S3L.LARGE16: 云桌面-标准S3_4核16G </li><li> S3L.2XLARGE16: 云桌面-标准S3_8核16G </li><li> S1L.LARGE8：云桌面-标准S1_4核8G </li><li> S1L.LARGE16：标准S1_4核16G </li><li> S2L.2XLARGE16：标准S2_8核16G </li><li> G1L.LARGE16：图形G1_4核16G  </li><li> G1L.2XLARGE32：图形G1_8核32G </li><li> G1L.4XLARGE64：图形G1_16核64G </li><li> G2L.LARGE24: 云桌面-图形G2_6核24G </li><li> G2L.3XLARGE58: 云桌面-图形G2_14核58G </li><li> G2L.3XLARGE44: 云桌面-图形G2_12核44G </li><li> G3L.LARGE16: 云桌面-图形G3_4核16G </li><li> G3L.5XMEDIUM40: 云桌面-图形G3_10核40G </li><li> G3L.5XLARGE80: 云桌面-图形G3_20核80G </li><li> G4L.5XMEDIUM40: 云桌面-图形G4_10核40G </li><li> G4L.11XMEDIUM80: 云桌面-图形G4_22核80G </li><li> G4L.11XLARGE160: 云桌面-图形G4_44核160G </li><li> G5L.5XMEDIUM40: 云桌面-图形G5_10核40G </li><li> G5L.5XLARGE80: 云桌面-图形G5_22核80G </li><li> G5L.21XMEDIUM160: 云桌面-图形G5_42核160G </li><li> G5L.21XLARGE320: 云桌面-图形G5_84核320G </li>
-                     * @return InstanceType 实例类型。<li>  S3L.MEDIUM4: 云桌面-标准S3_2核4G </li><li> S3L.LARGE8: 云桌面-标准S3_4核8G </li><li> S3L.LARGE16: 云桌面-标准S3_4核16G </li><li> S3L.2XLARGE16: 云桌面-标准S3_8核16G </li><li> S1L.LARGE8：云桌面-标准S1_4核8G </li><li> S1L.LARGE16：标准S1_4核16G </li><li> S2L.2XLARGE16：标准S2_8核16G </li><li> G1L.LARGE16：图形G1_4核16G  </li><li> G1L.2XLARGE32：图形G1_8核32G </li><li> G1L.4XLARGE64：图形G1_16核64G </li><li> G2L.LARGE24: 云桌面-图形G2_6核24G </li><li> G2L.3XLARGE58: 云桌面-图形G2_14核58G </li><li> G2L.3XLARGE44: 云桌面-图形G2_12核44G </li><li> G3L.LARGE16: 云桌面-图形G3_4核16G </li><li> G3L.5XMEDIUM40: 云桌面-图形G3_10核40G </li><li> G3L.5XLARGE80: 云桌面-图形G3_20核80G </li><li> G4L.5XMEDIUM40: 云桌面-图形G4_10核40G </li><li> G4L.11XMEDIUM80: 云桌面-图形G4_22核80G </li><li> G4L.11XLARGE160: 云桌面-图形G4_44核160G </li><li> G5L.5XMEDIUM40: 云桌面-图形G5_10核40G </li><li> G5L.5XLARGE80: 云桌面-图形G5_22核80G </li><li> G5L.21XMEDIUM160: 云桌面-图形G5_42核160G </li><li> G5L.21XLARGE320: 云桌面-图形G5_84核320G </li>
+                     * 获取<p>实例类型。<li>  S3L.MEDIUM4: 云桌面-标准S3_2核4G </li><li> S3L.LARGE8: 云桌面-标准S3_4核8G </li><li> S3L.LARGE16: 云桌面-标准S3_4核16G </li><li> S3L.2XLARGE16: 云桌面-标准S3_8核16G </li><li> S1L.LARGE8：云桌面-标准S1_4核8G </li><li> S1L.LARGE16：标准S1_4核16G </li><li> S2L.2XLARGE16：标准S2_8核16G </li><li> G1L.LARGE16：图形G1_4核16G  </li><li> G1L.2XLARGE32：图形G1_8核32G </li><li> G1L.4XLARGE64：图形G1_16核64G </li><li> G2L.LARGE24: 云桌面-图形G2_6核24G </li><li> G2L.3XLARGE58: 云桌面-图形G2_14核58G </li><li> G2L.3XLARGE44: 云桌面-图形G2_12核44G </li><li> G3L.LARGE16: 云桌面-图形G3_4核16G </li><li> G3L.5XMEDIUM40: 云桌面-图形G3_10核40G </li><li> G3L.5XLARGE80: 云桌面-图形G3_20核80G </li><li> G4L.5XMEDIUM40: 云桌面-图形G4_10核40G </li><li> G4L.11XMEDIUM80: 云桌面-图形G4_22核80G </li><li> G4L.11XLARGE160: 云桌面-图形G4_44核160G </li><li> G5L.5XMEDIUM40: 云桌面-图形G5_10核40G </li><li> G5L.5XLARGE80: 云桌面-图形G5_22核80G </li><li> G5L.21XMEDIUM160: 云桌面-图形G5_42核160G </li><li> G5L.21XLARGE320: 云桌面-图形G5_84核320G </li><li> G6L.8XLARGE96: 云桌面-图形G6_32核96G </li></p><li> G6L.16XLARGE192: 云桌面-图形G6_64核192G </li><li> G6L.24XLARGE288: 云桌面-图形G6_96核288G </li><li> G6L.32XLARGE384: 云桌面-图形G6_128核384G </li><li> G6L.48XLARGE576: 云桌面-图形G6_192核576G </li><li> G6L.64XLARGE768: 云桌面-图形G6_256核768G </li><li> G6L.96XLARGE1152: 云桌面-图形G6_384核1152G </li><li> G6L.96XLARGE1536: 云桌面-图形G6_384核1536G </li><li> G6L.192XLARGE2304: 云桌面-图形G6_768核2304G </li><li> G6Ls.8XLARGE96: 云桌面-图形G6s_32核96G </li><li> G6Ls.16XLARGE192: 云桌面-图形G6s_64核192G </li><li> G6Ls.24XLARGE288: 云桌面-图形G6s_96核288G </li><li> G6Ls.32XLARGE384: 云桌面-图形G6s_128核384G </li><li> G6Ls.48XLARGE576: 云桌面-图形G6s_192核576G </li><li> G6Ls.64XLARGE768: 云桌面-图形G6s_256核768G </li><li> G6Ls.96XLARGE1152: 云桌面-图形G6s_384核1152G </li><li> G6Ls.96XLARGE1536: 云桌面-图形G6s_384核1536G </li><li> G6Ls.192XLARGE2304: 云桌面-图形G6s_768核2304G </li><li> G8L.8XLARGE96: 云桌面-图形G8_32核96G </li><li> G8L.12XLARGE192: 云桌面-图形G8_48核192G </li><li> G8L.16XLARGE192: 云桌面-图形G8_64核192G </li><li> G8L.24XLARGE384: 云桌面-图形G8_96核384G </li><li> G8L.32XLARGE384: 云桌面-图形G8_128核384G </li><li> G8L.48XLARGE768: 云桌面-图形G8_192核768G </li><li> G8L.64XLARGE768: 云桌面-图形G8_256核768G </li><li> G8L.96XLARGE1536: 云桌面-图形G8_384核1536G </li><li> G9L.12XLARGE192: 云桌面-图形G9_48核192G </li><li> G9L.24XLARGE384: 云桌面-图形G9_96核384G </li><li> G9L.48XLARGE768: 云桌面-图形G9_192核768G </li><li> G9L.96XLARGE1536: 云桌面-图形G9_384核1536G </li><p>枚举值：</p><ul><li>S3L.MEDIUM4： 云桌面-标准S3_2核4G</li><li>S3L.LARGE8： 云桌面-标准S3_4核8G</li><li>S3L.LARGE16： 云桌面-标准S3_4核16G</li><li>S3L.2XLARGE16： 云桌面-标准S3_8核16G</li><li>S1L.LARGE8： 云桌面-标准S1_4核8G</li><li>S1L.LARGE16： 标准S1_4核16G</li><li>S2L.2XLARGE16： 标准S2_8核16G</li><li>G1L.LARGE16： 图形G1_4核16G</li><li>G1L.2XLARGE32： 图形G1_8核32G</li><li>G1L.4XLARGE64： 图形G1_16核64G</li><li>G2L.LARGE24： 云桌面-图形G2_6核24G</li><li>G2L.3XLARGE58： 云桌面-图形G2_14核58G</li><li>G2L.3XLARGE44： 云桌面-图形G2_12核44G</li><li>G3L.LARGE16： 云桌面-图形G3_4核16G</li><li>G3L.5XMEDIUM40： 云桌面-图形G3_10核40G</li><li>G3L.5XLARGE80： 云桌面-图形G3_20核80G</li><li>G4L.5XMEDIUM40： 云桌面-图形G4_10核40G</li><li>G4L.11XMEDIUM80： 云桌面-图形G4_22核80G</li><li>G4L.11XLARGE160： 云桌面-图形G4_44核160G</li><li>G5L.5XMEDIUM40： 云桌面-图形G5_10核40G</li><li>G5L.5XLARGE80： 云桌面-图形G5_22核80G</li><li>G5L.21XMEDIUM160： 云桌面-图形G5_42核160G</li><li>G5L.21XLARGE320： 云桌面-图形G5_84核320G</li><li>G6L.8XLARGE96： 云桌面-图形G6_32核96G</li><li>G6L.16XLARGE192： 云桌面-图形G6_64核192G</li><li>G6L.24XLARGE288： 云桌面-图形G6_96核288G</li><li>G6L.32XLARGE384： 云桌面-图形G6_128核384G</li><li>G6L.48XLARGE576： 云桌面-图形G6_192核576G</li><li>G6L.64XLARGE768： 云桌面-图形G6_256核768G</li><li>G6L.96XLARGE1152： 云桌面-图形G6_384核1152G</li><li>G6L.96XLARGE1536： 云桌面-图形G6_384核1536G</li><li>G6L.192XLARGE2304： 云桌面-图形G6_768核2304G</li><li>G6Ls.8XLARGE96： 云桌面-图形G6s_32核96G</li><li>G6Ls.16XLARGE192： 云桌面-图形G6s_64核192G</li><li>G6Ls.24XLARGE288： 云桌面-图形G6s_96核288G</li><li>G6Ls.32XLARGE384： 云桌面-图形G6s_128核384G</li><li>G6Ls.48XLARGE576： 云桌面-图形G6s_192核576G</li><li>G6Ls.64XLARGE768： 云桌面-图形G6s_256核768G</li><li>G6Ls.96XLARGE1152： 云桌面-图形G6s_384核1152G</li><li>G6Ls.96XLARGE1536： 云桌面-图形G6s_384核1536G</li><li>G6Ls.192XLARGE2304： 云桌面-图形G6s_768核2304G</li><li>G8L.8XLARGE96： 云桌面-图形G8_32核96G</li><li>G8L.12XLARGE192： 云桌面-图形G8_48核192G</li><li>G8L.16XLARGE192： 云桌面-图形G8_64核192G</li><li>G8L.24XLARGE384： 云桌面-图形G8_96核384G</li><li>G8L.32XLARGE384： 云桌面-图形G8_128核384G</li><li>G8L.48XLARGE768： 云桌面-图形G8_192核768G</li><li>G8L.64XLARGE768： 云桌面-图形G8_256核768G</li><li>G8L.96XLARGE1536： 云桌面-图形G8_384核1536G</li><li>G9L.12XLARGE192： 云桌面-图形G9_48核192G</li><li>G9L.24XLARGE384： 云桌面-图形G9_96核384G</li><li>G9L.48XLARGE768： 云桌面-图形G9_192核768G</li><li>G9L.96XLARGE1536： 云桌面-图形G9_384核1536G</li></ul>
+                     * @return InstanceType <p>实例类型。<li>  S3L.MEDIUM4: 云桌面-标准S3_2核4G </li><li> S3L.LARGE8: 云桌面-标准S3_4核8G </li><li> S3L.LARGE16: 云桌面-标准S3_4核16G </li><li> S3L.2XLARGE16: 云桌面-标准S3_8核16G </li><li> S1L.LARGE8：云桌面-标准S1_4核8G </li><li> S1L.LARGE16：标准S1_4核16G </li><li> S2L.2XLARGE16：标准S2_8核16G </li><li> G1L.LARGE16：图形G1_4核16G  </li><li> G1L.2XLARGE32：图形G1_8核32G </li><li> G1L.4XLARGE64：图形G1_16核64G </li><li> G2L.LARGE24: 云桌面-图形G2_6核24G </li><li> G2L.3XLARGE58: 云桌面-图形G2_14核58G </li><li> G2L.3XLARGE44: 云桌面-图形G2_12核44G </li><li> G3L.LARGE16: 云桌面-图形G3_4核16G </li><li> G3L.5XMEDIUM40: 云桌面-图形G3_10核40G </li><li> G3L.5XLARGE80: 云桌面-图形G3_20核80G </li><li> G4L.5XMEDIUM40: 云桌面-图形G4_10核40G </li><li> G4L.11XMEDIUM80: 云桌面-图形G4_22核80G </li><li> G4L.11XLARGE160: 云桌面-图形G4_44核160G </li><li> G5L.5XMEDIUM40: 云桌面-图形G5_10核40G </li><li> G5L.5XLARGE80: 云桌面-图形G5_22核80G </li><li> G5L.21XMEDIUM160: 云桌面-图形G5_42核160G </li><li> G5L.21XLARGE320: 云桌面-图形G5_84核320G </li><li> G6L.8XLARGE96: 云桌面-图形G6_32核96G </li></p><li> G6L.16XLARGE192: 云桌面-图形G6_64核192G </li><li> G6L.24XLARGE288: 云桌面-图形G6_96核288G </li><li> G6L.32XLARGE384: 云桌面-图形G6_128核384G </li><li> G6L.48XLARGE576: 云桌面-图形G6_192核576G </li><li> G6L.64XLARGE768: 云桌面-图形G6_256核768G </li><li> G6L.96XLARGE1152: 云桌面-图形G6_384核1152G </li><li> G6L.96XLARGE1536: 云桌面-图形G6_384核1536G </li><li> G6L.192XLARGE2304: 云桌面-图形G6_768核2304G </li><li> G6Ls.8XLARGE96: 云桌面-图形G6s_32核96G </li><li> G6Ls.16XLARGE192: 云桌面-图形G6s_64核192G </li><li> G6Ls.24XLARGE288: 云桌面-图形G6s_96核288G </li><li> G6Ls.32XLARGE384: 云桌面-图形G6s_128核384G </li><li> G6Ls.48XLARGE576: 云桌面-图形G6s_192核576G </li><li> G6Ls.64XLARGE768: 云桌面-图形G6s_256核768G </li><li> G6Ls.96XLARGE1152: 云桌面-图形G6s_384核1152G </li><li> G6Ls.96XLARGE1536: 云桌面-图形G6s_384核1536G </li><li> G6Ls.192XLARGE2304: 云桌面-图形G6s_768核2304G </li><li> G8L.8XLARGE96: 云桌面-图形G8_32核96G </li><li> G8L.12XLARGE192: 云桌面-图形G8_48核192G </li><li> G8L.16XLARGE192: 云桌面-图形G8_64核192G </li><li> G8L.24XLARGE384: 云桌面-图形G8_96核384G </li><li> G8L.32XLARGE384: 云桌面-图形G8_128核384G </li><li> G8L.48XLARGE768: 云桌面-图形G8_192核768G </li><li> G8L.64XLARGE768: 云桌面-图形G8_256核768G </li><li> G8L.96XLARGE1536: 云桌面-图形G8_384核1536G </li><li> G9L.12XLARGE192: 云桌面-图形G9_48核192G </li><li> G9L.24XLARGE384: 云桌面-图形G9_96核384G </li><li> G9L.48XLARGE768: 云桌面-图形G9_192核768G </li><li> G9L.96XLARGE1536: 云桌面-图形G9_384核1536G </li><p>枚举值：</p><ul><li>S3L.MEDIUM4： 云桌面-标准S3_2核4G</li><li>S3L.LARGE8： 云桌面-标准S3_4核8G</li><li>S3L.LARGE16： 云桌面-标准S3_4核16G</li><li>S3L.2XLARGE16： 云桌面-标准S3_8核16G</li><li>S1L.LARGE8： 云桌面-标准S1_4核8G</li><li>S1L.LARGE16： 标准S1_4核16G</li><li>S2L.2XLARGE16： 标准S2_8核16G</li><li>G1L.LARGE16： 图形G1_4核16G</li><li>G1L.2XLARGE32： 图形G1_8核32G</li><li>G1L.4XLARGE64： 图形G1_16核64G</li><li>G2L.LARGE24： 云桌面-图形G2_6核24G</li><li>G2L.3XLARGE58： 云桌面-图形G2_14核58G</li><li>G2L.3XLARGE44： 云桌面-图形G2_12核44G</li><li>G3L.LARGE16： 云桌面-图形G3_4核16G</li><li>G3L.5XMEDIUM40： 云桌面-图形G3_10核40G</li><li>G3L.5XLARGE80： 云桌面-图形G3_20核80G</li><li>G4L.5XMEDIUM40： 云桌面-图形G4_10核40G</li><li>G4L.11XMEDIUM80： 云桌面-图形G4_22核80G</li><li>G4L.11XLARGE160： 云桌面-图形G4_44核160G</li><li>G5L.5XMEDIUM40： 云桌面-图形G5_10核40G</li><li>G5L.5XLARGE80： 云桌面-图形G5_22核80G</li><li>G5L.21XMEDIUM160： 云桌面-图形G5_42核160G</li><li>G5L.21XLARGE320： 云桌面-图形G5_84核320G</li><li>G6L.8XLARGE96： 云桌面-图形G6_32核96G</li><li>G6L.16XLARGE192： 云桌面-图形G6_64核192G</li><li>G6L.24XLARGE288： 云桌面-图形G6_96核288G</li><li>G6L.32XLARGE384： 云桌面-图形G6_128核384G</li><li>G6L.48XLARGE576： 云桌面-图形G6_192核576G</li><li>G6L.64XLARGE768： 云桌面-图形G6_256核768G</li><li>G6L.96XLARGE1152： 云桌面-图形G6_384核1152G</li><li>G6L.96XLARGE1536： 云桌面-图形G6_384核1536G</li><li>G6L.192XLARGE2304： 云桌面-图形G6_768核2304G</li><li>G6Ls.8XLARGE96： 云桌面-图形G6s_32核96G</li><li>G6Ls.16XLARGE192： 云桌面-图形G6s_64核192G</li><li>G6Ls.24XLARGE288： 云桌面-图形G6s_96核288G</li><li>G6Ls.32XLARGE384： 云桌面-图形G6s_128核384G</li><li>G6Ls.48XLARGE576： 云桌面-图形G6s_192核576G</li><li>G6Ls.64XLARGE768： 云桌面-图形G6s_256核768G</li><li>G6Ls.96XLARGE1152： 云桌面-图形G6s_384核1152G</li><li>G6Ls.96XLARGE1536： 云桌面-图形G6s_384核1536G</li><li>G6Ls.192XLARGE2304： 云桌面-图形G6s_768核2304G</li><li>G8L.8XLARGE96： 云桌面-图形G8_32核96G</li><li>G8L.12XLARGE192： 云桌面-图形G8_48核192G</li><li>G8L.16XLARGE192： 云桌面-图形G8_64核192G</li><li>G8L.24XLARGE384： 云桌面-图形G8_96核384G</li><li>G8L.32XLARGE384： 云桌面-图形G8_128核384G</li><li>G8L.48XLARGE768： 云桌面-图形G8_192核768G</li><li>G8L.64XLARGE768： 云桌面-图形G8_256核768G</li><li>G8L.96XLARGE1536： 云桌面-图形G8_384核1536G</li><li>G9L.12XLARGE192： 云桌面-图形G9_48核192G</li><li>G9L.24XLARGE384： 云桌面-图形G9_96核384G</li><li>G9L.48XLARGE768： 云桌面-图形G9_192核768G</li><li>G9L.96XLARGE1536： 云桌面-图形G9_384核1536G</li></ul>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型。<li>  S3L.MEDIUM4: 云桌面-标准S3_2核4G </li><li> S3L.LARGE8: 云桌面-标准S3_4核8G </li><li> S3L.LARGE16: 云桌面-标准S3_4核16G </li><li> S3L.2XLARGE16: 云桌面-标准S3_8核16G </li><li> S1L.LARGE8：云桌面-标准S1_4核8G </li><li> S1L.LARGE16：标准S1_4核16G </li><li> S2L.2XLARGE16：标准S2_8核16G </li><li> G1L.LARGE16：图形G1_4核16G  </li><li> G1L.2XLARGE32：图形G1_8核32G </li><li> G1L.4XLARGE64：图形G1_16核64G </li><li> G2L.LARGE24: 云桌面-图形G2_6核24G </li><li> G2L.3XLARGE58: 云桌面-图形G2_14核58G </li><li> G2L.3XLARGE44: 云桌面-图形G2_12核44G </li><li> G3L.LARGE16: 云桌面-图形G3_4核16G </li><li> G3L.5XMEDIUM40: 云桌面-图形G3_10核40G </li><li> G3L.5XLARGE80: 云桌面-图形G3_20核80G </li><li> G4L.5XMEDIUM40: 云桌面-图形G4_10核40G </li><li> G4L.11XMEDIUM80: 云桌面-图形G4_22核80G </li><li> G4L.11XLARGE160: 云桌面-图形G4_44核160G </li><li> G5L.5XMEDIUM40: 云桌面-图形G5_10核40G </li><li> G5L.5XLARGE80: 云桌面-图形G5_22核80G </li><li> G5L.21XMEDIUM160: 云桌面-图形G5_42核160G </li><li> G5L.21XLARGE320: 云桌面-图形G5_84核320G </li>
-                     * @param _instanceType 实例类型。<li>  S3L.MEDIUM4: 云桌面-标准S3_2核4G </li><li> S3L.LARGE8: 云桌面-标准S3_4核8G </li><li> S3L.LARGE16: 云桌面-标准S3_4核16G </li><li> S3L.2XLARGE16: 云桌面-标准S3_8核16G </li><li> S1L.LARGE8：云桌面-标准S1_4核8G </li><li> S1L.LARGE16：标准S1_4核16G </li><li> S2L.2XLARGE16：标准S2_8核16G </li><li> G1L.LARGE16：图形G1_4核16G  </li><li> G1L.2XLARGE32：图形G1_8核32G </li><li> G1L.4XLARGE64：图形G1_16核64G </li><li> G2L.LARGE24: 云桌面-图形G2_6核24G </li><li> G2L.3XLARGE58: 云桌面-图形G2_14核58G </li><li> G2L.3XLARGE44: 云桌面-图形G2_12核44G </li><li> G3L.LARGE16: 云桌面-图形G3_4核16G </li><li> G3L.5XMEDIUM40: 云桌面-图形G3_10核40G </li><li> G3L.5XLARGE80: 云桌面-图形G3_20核80G </li><li> G4L.5XMEDIUM40: 云桌面-图形G4_10核40G </li><li> G4L.11XMEDIUM80: 云桌面-图形G4_22核80G </li><li> G4L.11XLARGE160: 云桌面-图形G4_44核160G </li><li> G5L.5XMEDIUM40: 云桌面-图形G5_10核40G </li><li> G5L.5XLARGE80: 云桌面-图形G5_22核80G </li><li> G5L.21XMEDIUM160: 云桌面-图形G5_42核160G </li><li> G5L.21XLARGE320: 云桌面-图形G5_84核320G </li>
+                     * 设置<p>实例类型。<li>  S3L.MEDIUM4: 云桌面-标准S3_2核4G </li><li> S3L.LARGE8: 云桌面-标准S3_4核8G </li><li> S3L.LARGE16: 云桌面-标准S3_4核16G </li><li> S3L.2XLARGE16: 云桌面-标准S3_8核16G </li><li> S1L.LARGE8：云桌面-标准S1_4核8G </li><li> S1L.LARGE16：标准S1_4核16G </li><li> S2L.2XLARGE16：标准S2_8核16G </li><li> G1L.LARGE16：图形G1_4核16G  </li><li> G1L.2XLARGE32：图形G1_8核32G </li><li> G1L.4XLARGE64：图形G1_16核64G </li><li> G2L.LARGE24: 云桌面-图形G2_6核24G </li><li> G2L.3XLARGE58: 云桌面-图形G2_14核58G </li><li> G2L.3XLARGE44: 云桌面-图形G2_12核44G </li><li> G3L.LARGE16: 云桌面-图形G3_4核16G </li><li> G3L.5XMEDIUM40: 云桌面-图形G3_10核40G </li><li> G3L.5XLARGE80: 云桌面-图形G3_20核80G </li><li> G4L.5XMEDIUM40: 云桌面-图形G4_10核40G </li><li> G4L.11XMEDIUM80: 云桌面-图形G4_22核80G </li><li> G4L.11XLARGE160: 云桌面-图形G4_44核160G </li><li> G5L.5XMEDIUM40: 云桌面-图形G5_10核40G </li><li> G5L.5XLARGE80: 云桌面-图形G5_22核80G </li><li> G5L.21XMEDIUM160: 云桌面-图形G5_42核160G </li><li> G5L.21XLARGE320: 云桌面-图形G5_84核320G </li><li> G6L.8XLARGE96: 云桌面-图形G6_32核96G </li></p><li> G6L.16XLARGE192: 云桌面-图形G6_64核192G </li><li> G6L.24XLARGE288: 云桌面-图形G6_96核288G </li><li> G6L.32XLARGE384: 云桌面-图形G6_128核384G </li><li> G6L.48XLARGE576: 云桌面-图形G6_192核576G </li><li> G6L.64XLARGE768: 云桌面-图形G6_256核768G </li><li> G6L.96XLARGE1152: 云桌面-图形G6_384核1152G </li><li> G6L.96XLARGE1536: 云桌面-图形G6_384核1536G </li><li> G6L.192XLARGE2304: 云桌面-图形G6_768核2304G </li><li> G6Ls.8XLARGE96: 云桌面-图形G6s_32核96G </li><li> G6Ls.16XLARGE192: 云桌面-图形G6s_64核192G </li><li> G6Ls.24XLARGE288: 云桌面-图形G6s_96核288G </li><li> G6Ls.32XLARGE384: 云桌面-图形G6s_128核384G </li><li> G6Ls.48XLARGE576: 云桌面-图形G6s_192核576G </li><li> G6Ls.64XLARGE768: 云桌面-图形G6s_256核768G </li><li> G6Ls.96XLARGE1152: 云桌面-图形G6s_384核1152G </li><li> G6Ls.96XLARGE1536: 云桌面-图形G6s_384核1536G </li><li> G6Ls.192XLARGE2304: 云桌面-图形G6s_768核2304G </li><li> G8L.8XLARGE96: 云桌面-图形G8_32核96G </li><li> G8L.12XLARGE192: 云桌面-图形G8_48核192G </li><li> G8L.16XLARGE192: 云桌面-图形G8_64核192G </li><li> G8L.24XLARGE384: 云桌面-图形G8_96核384G </li><li> G8L.32XLARGE384: 云桌面-图形G8_128核384G </li><li> G8L.48XLARGE768: 云桌面-图形G8_192核768G </li><li> G8L.64XLARGE768: 云桌面-图形G8_256核768G </li><li> G8L.96XLARGE1536: 云桌面-图形G8_384核1536G </li><li> G9L.12XLARGE192: 云桌面-图形G9_48核192G </li><li> G9L.24XLARGE384: 云桌面-图形G9_96核384G </li><li> G9L.48XLARGE768: 云桌面-图形G9_192核768G </li><li> G9L.96XLARGE1536: 云桌面-图形G9_384核1536G </li><p>枚举值：</p><ul><li>S3L.MEDIUM4： 云桌面-标准S3_2核4G</li><li>S3L.LARGE8： 云桌面-标准S3_4核8G</li><li>S3L.LARGE16： 云桌面-标准S3_4核16G</li><li>S3L.2XLARGE16： 云桌面-标准S3_8核16G</li><li>S1L.LARGE8： 云桌面-标准S1_4核8G</li><li>S1L.LARGE16： 标准S1_4核16G</li><li>S2L.2XLARGE16： 标准S2_8核16G</li><li>G1L.LARGE16： 图形G1_4核16G</li><li>G1L.2XLARGE32： 图形G1_8核32G</li><li>G1L.4XLARGE64： 图形G1_16核64G</li><li>G2L.LARGE24： 云桌面-图形G2_6核24G</li><li>G2L.3XLARGE58： 云桌面-图形G2_14核58G</li><li>G2L.3XLARGE44： 云桌面-图形G2_12核44G</li><li>G3L.LARGE16： 云桌面-图形G3_4核16G</li><li>G3L.5XMEDIUM40： 云桌面-图形G3_10核40G</li><li>G3L.5XLARGE80： 云桌面-图形G3_20核80G</li><li>G4L.5XMEDIUM40： 云桌面-图形G4_10核40G</li><li>G4L.11XMEDIUM80： 云桌面-图形G4_22核80G</li><li>G4L.11XLARGE160： 云桌面-图形G4_44核160G</li><li>G5L.5XMEDIUM40： 云桌面-图形G5_10核40G</li><li>G5L.5XLARGE80： 云桌面-图形G5_22核80G</li><li>G5L.21XMEDIUM160： 云桌面-图形G5_42核160G</li><li>G5L.21XLARGE320： 云桌面-图形G5_84核320G</li><li>G6L.8XLARGE96： 云桌面-图形G6_32核96G</li><li>G6L.16XLARGE192： 云桌面-图形G6_64核192G</li><li>G6L.24XLARGE288： 云桌面-图形G6_96核288G</li><li>G6L.32XLARGE384： 云桌面-图形G6_128核384G</li><li>G6L.48XLARGE576： 云桌面-图形G6_192核576G</li><li>G6L.64XLARGE768： 云桌面-图形G6_256核768G</li><li>G6L.96XLARGE1152： 云桌面-图形G6_384核1152G</li><li>G6L.96XLARGE1536： 云桌面-图形G6_384核1536G</li><li>G6L.192XLARGE2304： 云桌面-图形G6_768核2304G</li><li>G6Ls.8XLARGE96： 云桌面-图形G6s_32核96G</li><li>G6Ls.16XLARGE192： 云桌面-图形G6s_64核192G</li><li>G6Ls.24XLARGE288： 云桌面-图形G6s_96核288G</li><li>G6Ls.32XLARGE384： 云桌面-图形G6s_128核384G</li><li>G6Ls.48XLARGE576： 云桌面-图形G6s_192核576G</li><li>G6Ls.64XLARGE768： 云桌面-图形G6s_256核768G</li><li>G6Ls.96XLARGE1152： 云桌面-图形G6s_384核1152G</li><li>G6Ls.96XLARGE1536： 云桌面-图形G6s_384核1536G</li><li>G6Ls.192XLARGE2304： 云桌面-图形G6s_768核2304G</li><li>G8L.8XLARGE96： 云桌面-图形G8_32核96G</li><li>G8L.12XLARGE192： 云桌面-图形G8_48核192G</li><li>G8L.16XLARGE192： 云桌面-图形G8_64核192G</li><li>G8L.24XLARGE384： 云桌面-图形G8_96核384G</li><li>G8L.32XLARGE384： 云桌面-图形G8_128核384G</li><li>G8L.48XLARGE768： 云桌面-图形G8_192核768G</li><li>G8L.64XLARGE768： 云桌面-图形G8_256核768G</li><li>G8L.96XLARGE1536： 云桌面-图形G8_384核1536G</li><li>G9L.12XLARGE192： 云桌面-图形G9_48核192G</li><li>G9L.24XLARGE384： 云桌面-图形G9_96核384G</li><li>G9L.48XLARGE768： 云桌面-图形G9_192核768G</li><li>G9L.96XLARGE1536： 云桌面-图形G9_384核1536G</li></ul>
+                     * @param _instanceType <p>实例类型。<li>  S3L.MEDIUM4: 云桌面-标准S3_2核4G </li><li> S3L.LARGE8: 云桌面-标准S3_4核8G </li><li> S3L.LARGE16: 云桌面-标准S3_4核16G </li><li> S3L.2XLARGE16: 云桌面-标准S3_8核16G </li><li> S1L.LARGE8：云桌面-标准S1_4核8G </li><li> S1L.LARGE16：标准S1_4核16G </li><li> S2L.2XLARGE16：标准S2_8核16G </li><li> G1L.LARGE16：图形G1_4核16G  </li><li> G1L.2XLARGE32：图形G1_8核32G </li><li> G1L.4XLARGE64：图形G1_16核64G </li><li> G2L.LARGE24: 云桌面-图形G2_6核24G </li><li> G2L.3XLARGE58: 云桌面-图形G2_14核58G </li><li> G2L.3XLARGE44: 云桌面-图形G2_12核44G </li><li> G3L.LARGE16: 云桌面-图形G3_4核16G </li><li> G3L.5XMEDIUM40: 云桌面-图形G3_10核40G </li><li> G3L.5XLARGE80: 云桌面-图形G3_20核80G </li><li> G4L.5XMEDIUM40: 云桌面-图形G4_10核40G </li><li> G4L.11XMEDIUM80: 云桌面-图形G4_22核80G </li><li> G4L.11XLARGE160: 云桌面-图形G4_44核160G </li><li> G5L.5XMEDIUM40: 云桌面-图形G5_10核40G </li><li> G5L.5XLARGE80: 云桌面-图形G5_22核80G </li><li> G5L.21XMEDIUM160: 云桌面-图形G5_42核160G </li><li> G5L.21XLARGE320: 云桌面-图形G5_84核320G </li><li> G6L.8XLARGE96: 云桌面-图形G6_32核96G </li></p><li> G6L.16XLARGE192: 云桌面-图形G6_64核192G </li><li> G6L.24XLARGE288: 云桌面-图形G6_96核288G </li><li> G6L.32XLARGE384: 云桌面-图形G6_128核384G </li><li> G6L.48XLARGE576: 云桌面-图形G6_192核576G </li><li> G6L.64XLARGE768: 云桌面-图形G6_256核768G </li><li> G6L.96XLARGE1152: 云桌面-图形G6_384核1152G </li><li> G6L.96XLARGE1536: 云桌面-图形G6_384核1536G </li><li> G6L.192XLARGE2304: 云桌面-图形G6_768核2304G </li><li> G6Ls.8XLARGE96: 云桌面-图形G6s_32核96G </li><li> G6Ls.16XLARGE192: 云桌面-图形G6s_64核192G </li><li> G6Ls.24XLARGE288: 云桌面-图形G6s_96核288G </li><li> G6Ls.32XLARGE384: 云桌面-图形G6s_128核384G </li><li> G6Ls.48XLARGE576: 云桌面-图形G6s_192核576G </li><li> G6Ls.64XLARGE768: 云桌面-图形G6s_256核768G </li><li> G6Ls.96XLARGE1152: 云桌面-图形G6s_384核1152G </li><li> G6Ls.96XLARGE1536: 云桌面-图形G6s_384核1536G </li><li> G6Ls.192XLARGE2304: 云桌面-图形G6s_768核2304G </li><li> G8L.8XLARGE96: 云桌面-图形G8_32核96G </li><li> G8L.12XLARGE192: 云桌面-图形G8_48核192G </li><li> G8L.16XLARGE192: 云桌面-图形G8_64核192G </li><li> G8L.24XLARGE384: 云桌面-图形G8_96核384G </li><li> G8L.32XLARGE384: 云桌面-图形G8_128核384G </li><li> G8L.48XLARGE768: 云桌面-图形G8_192核768G </li><li> G8L.64XLARGE768: 云桌面-图形G8_256核768G </li><li> G8L.96XLARGE1536: 云桌面-图形G8_384核1536G </li><li> G9L.12XLARGE192: 云桌面-图形G9_48核192G </li><li> G9L.24XLARGE384: 云桌面-图形G9_96核384G </li><li> G9L.48XLARGE768: 云桌面-图形G9_192核768G </li><li> G9L.96XLARGE1536: 云桌面-图形G9_384核1536G </li><p>枚举值：</p><ul><li>S3L.MEDIUM4： 云桌面-标准S3_2核4G</li><li>S3L.LARGE8： 云桌面-标准S3_4核8G</li><li>S3L.LARGE16： 云桌面-标准S3_4核16G</li><li>S3L.2XLARGE16： 云桌面-标准S3_8核16G</li><li>S1L.LARGE8： 云桌面-标准S1_4核8G</li><li>S1L.LARGE16： 标准S1_4核16G</li><li>S2L.2XLARGE16： 标准S2_8核16G</li><li>G1L.LARGE16： 图形G1_4核16G</li><li>G1L.2XLARGE32： 图形G1_8核32G</li><li>G1L.4XLARGE64： 图形G1_16核64G</li><li>G2L.LARGE24： 云桌面-图形G2_6核24G</li><li>G2L.3XLARGE58： 云桌面-图形G2_14核58G</li><li>G2L.3XLARGE44： 云桌面-图形G2_12核44G</li><li>G3L.LARGE16： 云桌面-图形G3_4核16G</li><li>G3L.5XMEDIUM40： 云桌面-图形G3_10核40G</li><li>G3L.5XLARGE80： 云桌面-图形G3_20核80G</li><li>G4L.5XMEDIUM40： 云桌面-图形G4_10核40G</li><li>G4L.11XMEDIUM80： 云桌面-图形G4_22核80G</li><li>G4L.11XLARGE160： 云桌面-图形G4_44核160G</li><li>G5L.5XMEDIUM40： 云桌面-图形G5_10核40G</li><li>G5L.5XLARGE80： 云桌面-图形G5_22核80G</li><li>G5L.21XMEDIUM160： 云桌面-图形G5_42核160G</li><li>G5L.21XLARGE320： 云桌面-图形G5_84核320G</li><li>G6L.8XLARGE96： 云桌面-图形G6_32核96G</li><li>G6L.16XLARGE192： 云桌面-图形G6_64核192G</li><li>G6L.24XLARGE288： 云桌面-图形G6_96核288G</li><li>G6L.32XLARGE384： 云桌面-图形G6_128核384G</li><li>G6L.48XLARGE576： 云桌面-图形G6_192核576G</li><li>G6L.64XLARGE768： 云桌面-图形G6_256核768G</li><li>G6L.96XLARGE1152： 云桌面-图形G6_384核1152G</li><li>G6L.96XLARGE1536： 云桌面-图形G6_384核1536G</li><li>G6L.192XLARGE2304： 云桌面-图形G6_768核2304G</li><li>G6Ls.8XLARGE96： 云桌面-图形G6s_32核96G</li><li>G6Ls.16XLARGE192： 云桌面-图形G6s_64核192G</li><li>G6Ls.24XLARGE288： 云桌面-图形G6s_96核288G</li><li>G6Ls.32XLARGE384： 云桌面-图形G6s_128核384G</li><li>G6Ls.48XLARGE576： 云桌面-图形G6s_192核576G</li><li>G6Ls.64XLARGE768： 云桌面-图形G6s_256核768G</li><li>G6Ls.96XLARGE1152： 云桌面-图形G6s_384核1152G</li><li>G6Ls.96XLARGE1536： 云桌面-图形G6s_384核1536G</li><li>G6Ls.192XLARGE2304： 云桌面-图形G6s_768核2304G</li><li>G8L.8XLARGE96： 云桌面-图形G8_32核96G</li><li>G8L.12XLARGE192： 云桌面-图形G8_48核192G</li><li>G8L.16XLARGE192： 云桌面-图形G8_64核192G</li><li>G8L.24XLARGE384： 云桌面-图形G8_96核384G</li><li>G8L.32XLARGE384： 云桌面-图形G8_128核384G</li><li>G8L.48XLARGE768： 云桌面-图形G8_192核768G</li><li>G8L.64XLARGE768： 云桌面-图形G8_256核768G</li><li>G8L.96XLARGE1536： 云桌面-图形G8_384核1536G</li><li>G9L.12XLARGE192： 云桌面-图形G9_48核192G</li><li>G9L.24XLARGE384： 云桌面-图形G9_96核384G</li><li>G9L.48XLARGE768： 云桌面-图形G9_192核768G</li><li>G9L.96XLARGE1536： 云桌面-图形G9_384核1536G</li></ul>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取系统盘信息
-                     * @return SystemDisk 系统盘信息
+                     * 获取<p>系统盘信息</p>
+                     * @return SystemDisk <p>系统盘信息</p>
                      * 
                      */
                     Disk GetSystemDisk() const;
 
                     /**
-                     * 设置系统盘信息
-                     * @param _systemDisk 系统盘信息
+                     * 设置<p>系统盘信息</p>
+                     * @param _systemDisk <p>系统盘信息</p>
                      * 
                      */
                     void SetSystemDisk(const Disk& _systemDisk);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool SystemDiskHasBeenSet() const;
 
                     /**
-                     * 获取镜像ID
-                     * @return ImageId 镜像ID
+                     * 获取<p>镜像ID</p>
+                     * @return ImageId <p>镜像ID</p>
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置镜像ID
-                     * @param _imageId 镜像ID
+                     * 设置<p>镜像ID</p>
+                     * @param _imageId <p>镜像ID</p>
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
-                     * @return VirtualPrivateCloud 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     * 获取<p>私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。</p>
+                     * @return VirtualPrivateCloud <p>私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。</p>
                      * 
                      */
                     VirtualPrivateCloud GetVirtualPrivateCloud() const;
 
                     /**
-                     * 设置私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
-                     * @param _virtualPrivateCloud 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     * 设置<p>私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。</p>
+                     * @param _virtualPrivateCloud <p>私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。</p>
                      * 
                      */
                     void SetVirtualPrivateCloud(const VirtualPrivateCloud& _virtualPrivateCloud);
@@ -131,31 +131,15 @@ namespace TencentCloud
                     bool VirtualPrivateCloudHasBeenSet() const;
 
                     /**
-                     * 获取实例显示名称。
-<li> 如果该字段为空，则采用默认格式：云桌面型号+月日+三位随机数+镜像ID。</li>
-<li> 购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server_{R:3}，购买1台时，实例显示名称为server_3；购买2台时，实例显示名称分别为server_3，server_4。支持指定多个模式串{R:x}。</li>
-<li> 购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server_1，server_2。</li>
-<li> 最多支持60个字符（包含模式串）。</li>
-                     * @return InstanceName 实例显示名称。
-<li> 如果该字段为空，则采用默认格式：云桌面型号+月日+三位随机数+镜像ID。</li>
-<li> 购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server_{R:3}，购买1台时，实例显示名称为server_3；购买2台时，实例显示名称分别为server_3，server_4。支持指定多个模式串{R:x}。</li>
-<li> 购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server_1，server_2。</li>
-<li> 最多支持60个字符（包含模式串）。</li>
+                     * 获取<p>实例显示名称。</p><li> 如果该字段为空，则采用默认格式：云桌面型号+月日+三位随机数+镜像ID。</li><li> 购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server_{R:3}，购买1台时，实例显示名称为server_3；购买2台时，实例显示名称分别为server_3，server_4。支持指定多个模式串{R:x}。</li><li> 购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server_1，server_2。</li><li> 最多支持60个字符（包含模式串）。</li>
+                     * @return InstanceName <p>实例显示名称。</p><li> 如果该字段为空，则采用默认格式：云桌面型号+月日+三位随机数+镜像ID。</li><li> 购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server_{R:3}，购买1台时，实例显示名称为server_3；购买2台时，实例显示名称分别为server_3，server_4。支持指定多个模式串{R:x}。</li><li> 购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server_1，server_2。</li><li> 最多支持60个字符（包含模式串）。</li>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例显示名称。
-<li> 如果该字段为空，则采用默认格式：云桌面型号+月日+三位随机数+镜像ID。</li>
-<li> 购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server_{R:3}，购买1台时，实例显示名称为server_3；购买2台时，实例显示名称分别为server_3，server_4。支持指定多个模式串{R:x}。</li>
-<li> 购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server_1，server_2。</li>
-<li> 最多支持60个字符（包含模式串）。</li>
-                     * @param _instanceName 实例显示名称。
-<li> 如果该字段为空，则采用默认格式：云桌面型号+月日+三位随机数+镜像ID。</li>
-<li> 购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server_{R:3}，购买1台时，实例显示名称为server_3；购买2台时，实例显示名称分别为server_3，server_4。支持指定多个模式串{R:x}。</li>
-<li> 购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server_1，server_2。</li>
-<li> 最多支持60个字符（包含模式串）。</li>
+                     * 设置<p>实例显示名称。</p><li> 如果该字段为空，则采用默认格式：云桌面型号+月日+三位随机数+镜像ID。</li><li> 购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server_{R:3}，购买1台时，实例显示名称为server_3；购买2台时，实例显示名称分别为server_3，server_4。支持指定多个模式串{R:x}。</li><li> 购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server_1，server_2。</li><li> 最多支持60个字符（包含模式串）。</li>
+                     * @param _instanceName <p>实例显示名称。</p><li> 如果该字段为空，则采用默认格式：云桌面型号+月日+三位随机数+镜像ID。</li><li> 购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server_{R:3}，购买1台时，实例显示名称为server_3；购买2台时，实例显示名称分别为server_3，server_4。支持指定多个模式串{R:x}。</li><li> 购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server_1，server_2。</li><li> 最多支持60个字符（包含模式串）。</li>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -168,15 +152,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取购买实例数量。取值范围[1,50]。默认为1
-                     * @return InstanceCount 购买实例数量。取值范围[1,50]。默认为1
+                     * 获取<p>购买实例数量。取值范围[1,50]。默认为1</p>
+                     * @return InstanceCount <p>购买实例数量。取值范围[1,50]。默认为1</p>
                      * 
                      */
                     uint64_t GetInstanceCount() const;
 
                     /**
-                     * 设置购买实例数量。取值范围[1,50]。默认为1
-                     * @param _instanceCount 购买实例数量。取值范围[1,50]。默认为1
+                     * 设置<p>购买实例数量。取值范围[1,50]。默认为1</p>
+                     * @param _instanceCount <p>购买实例数量。取值范围[1,50]。默认为1</p>
                      * 
                      */
                     void SetInstanceCount(const uint64_t& _instanceCount);
@@ -189,15 +173,15 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取数据盘信息。目前只支持一块数据盘。
-                     * @return DataDisks 数据盘信息。目前只支持一块数据盘。
+                     * 获取<p>数据盘信息。目前只支持一块数据盘。</p>
+                     * @return DataDisks <p>数据盘信息。目前只支持一块数据盘。</p>
                      * 
                      */
                     std::vector<Disk> GetDataDisks() const;
 
                     /**
-                     * 设置数据盘信息。目前只支持一块数据盘。
-                     * @param _dataDisks 数据盘信息。目前只支持一块数据盘。
+                     * 设置<p>数据盘信息。目前只支持一块数据盘。</p>
+                     * @param _dataDisks <p>数据盘信息。目前只支持一块数据盘。</p>
                      * 
                      */
                     void SetDataDisks(const std::vector<Disk>& _dataDisks);
@@ -210,27 +194,15 @@ namespace TencentCloud
                     bool DataDisksHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型。
-<li> PREPAID：预付费，即包年包月</li>
-<li> POSTPAID_BY_HOUR：按小时后付费</li>
-默认为PREPAID
-                     * @return ChargeType 实例计费类型。
-<li> PREPAID：预付费，即包年包月</li>
-<li> POSTPAID_BY_HOUR：按小时后付费</li>
-默认为PREPAID
+                     * 获取<p>实例计费类型。</p><li> PREPAID：预付费，即包年包月</li><li> POSTPAID_BY_HOUR：按小时后付费</li>默认为PREPAID
+                     * @return ChargeType <p>实例计费类型。</p><li> PREPAID：预付费，即包年包月</li><li> POSTPAID_BY_HOUR：按小时后付费</li>默认为PREPAID
                      * 
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置实例计费类型。
-<li> PREPAID：预付费，即包年包月</li>
-<li> POSTPAID_BY_HOUR：按小时后付费</li>
-默认为PREPAID
-                     * @param _chargeType 实例计费类型。
-<li> PREPAID：预付费，即包年包月</li>
-<li> POSTPAID_BY_HOUR：按小时后付费</li>
-默认为PREPAID
+                     * 设置<p>实例计费类型。</p><li> PREPAID：预付费，即包年包月</li><li> POSTPAID_BY_HOUR：按小时后付费</li>默认为PREPAID
+                     * @param _chargeType <p>实例计费类型。</p><li> PREPAID：预付费，即包年包月</li><li> POSTPAID_BY_HOUR：按小时后付费</li>默认为PREPAID
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -243,15 +215,15 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-                     * @return ChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * 获取<p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。</p>
+                     * @return ChargePrepaid <p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。</p>
                      * 
                      */
                     ChargePrepaid GetChargePrepaid() const;
 
                     /**
-                     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-                     * @param _chargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * 设置<p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。</p>
+                     * @param _chargePrepaid <p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。</p>
                      * 
                      */
                     void SetChargePrepaid(const ChargePrepaid& _chargePrepaid);
@@ -264,27 +236,15 @@ namespace TencentCloud
                     bool ChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取是否只预检此次请求。
-<li> true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。
-如果检查通过，则返回的错误码为DryRunOperation；如果返回其他错误码表示检查没有通过；</li>
-<li> false（默认）：发送正常请求，通过检查后直接创建实例</li>
-                     * @return DryRun 是否只预检此次请求。
-<li> true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。
-如果检查通过，则返回的错误码为DryRunOperation；如果返回其他错误码表示检查没有通过；</li>
-<li> false（默认）：发送正常请求，通过检查后直接创建实例</li>
+                     * 获取<p>是否只预检此次请求。</p><li> true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。如果检查通过，则返回的错误码为DryRunOperation；如果返回其他错误码表示检查没有通过；</li><li> false（默认）：发送正常请求，通过检查后直接创建实例</li>
+                     * @return DryRun <p>是否只预检此次请求。</p><li> true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。如果检查通过，则返回的错误码为DryRunOperation；如果返回其他错误码表示检查没有通过；</li><li> false（默认）：发送正常请求，通过检查后直接创建实例</li>
                      * 
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置是否只预检此次请求。
-<li> true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。
-如果检查通过，则返回的错误码为DryRunOperation；如果返回其他错误码表示检查没有通过；</li>
-<li> false（默认）：发送正常请求，通过检查后直接创建实例</li>
-                     * @param _dryRun 是否只预检此次请求。
-<li> true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。
-如果检查通过，则返回的错误码为DryRunOperation；如果返回其他错误码表示检查没有通过；</li>
-<li> false（默认）：发送正常请求，通过检查后直接创建实例</li>
+                     * 设置<p>是否只预检此次请求。</p><li> true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。如果检查通过，则返回的错误码为DryRunOperation；如果返回其他错误码表示检查没有通过；</li><li> false（默认）：发送正常请求，通过检查后直接创建实例</li>
+                     * @param _dryRun <p>是否只预检此次请求。</p><li> true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。如果检查通过，则返回的错误码为DryRunOperation；如果返回其他错误码表示检查没有通过；</li><li> false（默认）：发送正常请求，通过检查后直接创建实例</li>
                      * 
                      */
                     void SetDryRun(const bool& _dryRun);
@@ -297,15 +257,15 @@ namespace TencentCloud
                     bool DryRunHasBeenSet() const;
 
                     /**
-                     * 获取允许绑定用户前的匿名访问。默认值：false。
-                     * @return AnonymousAccess 允许绑定用户前的匿名访问。默认值：false。
+                     * 获取<p>允许绑定用户前的匿名访问。默认值：false。</p>
+                     * @return AnonymousAccess <p>允许绑定用户前的匿名访问。默认值：false。</p>
                      * 
                      */
                     bool GetAnonymousAccess() const;
 
                     /**
-                     * 设置允许绑定用户前的匿名访问。默认值：false。
-                     * @param _anonymousAccess 允许绑定用户前的匿名访问。默认值：false。
+                     * 设置<p>允许绑定用户前的匿名访问。默认值：false。</p>
+                     * @param _anonymousAccess <p>允许绑定用户前的匿名访问。默认值：false。</p>
                      * 
                      */
                     void SetAnonymousAccess(const bool& _anonymousAccess);
@@ -318,15 +278,15 @@ namespace TencentCloud
                     bool AnonymousAccessHasBeenSet() const;
 
                     /**
-                     * 获取关联的安全组ID列表
-                     * @return SecurityGroups 关联的安全组ID列表
+                     * 获取<p>关联的安全组ID列表</p>
+                     * @return SecurityGroups <p>关联的安全组ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroups() const;
 
                     /**
-                     * 设置关联的安全组ID列表
-                     * @param _securityGroups 关联的安全组ID列表
+                     * 设置<p>关联的安全组ID列表</p>
+                     * @param _securityGroups <p>关联的安全组ID列表</p>
                      * 
                      */
                     void SetSecurityGroups(const std::vector<std::string>& _securityGroups);
@@ -339,15 +299,15 @@ namespace TencentCloud
                     bool SecurityGroupsHasBeenSet() const;
 
                     /**
-                     * 获取桌面池ID
-                     * @return PoolId 桌面池ID
+                     * 获取<p>桌面池ID</p>
+                     * @return PoolId <p>桌面池ID</p>
                      * 
                      */
                     std::string GetPoolId() const;
 
                     /**
-                     * 设置桌面池ID
-                     * @param _poolId 桌面池ID
+                     * 设置<p>桌面池ID</p>
+                     * @param _poolId <p>桌面池ID</p>
                      * 
                      */
                     void SetPoolId(const std::string& _poolId);
@@ -360,15 +320,15 @@ namespace TencentCloud
                     bool PoolIdHasBeenSet() const;
 
                     /**
-                     * 获取域名管控策略ID
-                     * @return DomainControlPolicies 域名管控策略ID
+                     * 获取<p>域名管控策略ID</p>
+                     * @return DomainControlPolicies <p>域名管控策略ID</p>
                      * 
                      */
                     std::vector<std::string> GetDomainControlPolicies() const;
 
                     /**
-                     * 设置域名管控策略ID
-                     * @param _domainControlPolicies 域名管控策略ID
+                     * 设置<p>域名管控策略ID</p>
+                     * @param _domainControlPolicies <p>域名管控策略ID</p>
                      * 
                      */
                     void SetDomainControlPolicies(const std::vector<std::string>& _domainControlPolicies);
@@ -381,15 +341,15 @@ namespace TencentCloud
                     bool DomainControlPoliciesHasBeenSet() const;
 
                     /**
-                     * 获取标签，最多10个
-                     * @return Tags 标签，最多10个
+                     * 获取<p>标签，最多10个</p>
+                     * @return Tags <p>标签，最多10个</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签，最多10个
-                     * @param _tags 标签，最多10个
+                     * 设置<p>标签，最多10个</p>
+                     * @param _tags <p>标签，最多10个</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -402,15 +362,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return Zone 可用区
+                     * 获取<p>可用区</p>
+                     * @return Zone <p>可用区</p>
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区
-                     * @param _zone 可用区
+                     * 设置<p>可用区</p>
+                     * @param _zone <p>可用区</p>
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -425,107 +385,97 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例类型。<li>  S3L.MEDIUM4: 云桌面-标准S3_2核4G </li><li> S3L.LARGE8: 云桌面-标准S3_4核8G </li><li> S3L.LARGE16: 云桌面-标准S3_4核16G </li><li> S3L.2XLARGE16: 云桌面-标准S3_8核16G </li><li> S1L.LARGE8：云桌面-标准S1_4核8G </li><li> S1L.LARGE16：标准S1_4核16G </li><li> S2L.2XLARGE16：标准S2_8核16G </li><li> G1L.LARGE16：图形G1_4核16G  </li><li> G1L.2XLARGE32：图形G1_8核32G </li><li> G1L.4XLARGE64：图形G1_16核64G </li><li> G2L.LARGE24: 云桌面-图形G2_6核24G </li><li> G2L.3XLARGE58: 云桌面-图形G2_14核58G </li><li> G2L.3XLARGE44: 云桌面-图形G2_12核44G </li><li> G3L.LARGE16: 云桌面-图形G3_4核16G </li><li> G3L.5XMEDIUM40: 云桌面-图形G3_10核40G </li><li> G3L.5XLARGE80: 云桌面-图形G3_20核80G </li><li> G4L.5XMEDIUM40: 云桌面-图形G4_10核40G </li><li> G4L.11XMEDIUM80: 云桌面-图形G4_22核80G </li><li> G4L.11XLARGE160: 云桌面-图形G4_44核160G </li><li> G5L.5XMEDIUM40: 云桌面-图形G5_10核40G </li><li> G5L.5XLARGE80: 云桌面-图形G5_22核80G </li><li> G5L.21XMEDIUM160: 云桌面-图形G5_42核160G </li><li> G5L.21XLARGE320: 云桌面-图形G5_84核320G </li>
+                     * <p>实例类型。<li>  S3L.MEDIUM4: 云桌面-标准S3_2核4G </li><li> S3L.LARGE8: 云桌面-标准S3_4核8G </li><li> S3L.LARGE16: 云桌面-标准S3_4核16G </li><li> S3L.2XLARGE16: 云桌面-标准S3_8核16G </li><li> S1L.LARGE8：云桌面-标准S1_4核8G </li><li> S1L.LARGE16：标准S1_4核16G </li><li> S2L.2XLARGE16：标准S2_8核16G </li><li> G1L.LARGE16：图形G1_4核16G  </li><li> G1L.2XLARGE32：图形G1_8核32G </li><li> G1L.4XLARGE64：图形G1_16核64G </li><li> G2L.LARGE24: 云桌面-图形G2_6核24G </li><li> G2L.3XLARGE58: 云桌面-图形G2_14核58G </li><li> G2L.3XLARGE44: 云桌面-图形G2_12核44G </li><li> G3L.LARGE16: 云桌面-图形G3_4核16G </li><li> G3L.5XMEDIUM40: 云桌面-图形G3_10核40G </li><li> G3L.5XLARGE80: 云桌面-图形G3_20核80G </li><li> G4L.5XMEDIUM40: 云桌面-图形G4_10核40G </li><li> G4L.11XMEDIUM80: 云桌面-图形G4_22核80G </li><li> G4L.11XLARGE160: 云桌面-图形G4_44核160G </li><li> G5L.5XMEDIUM40: 云桌面-图形G5_10核40G </li><li> G5L.5XLARGE80: 云桌面-图形G5_22核80G </li><li> G5L.21XMEDIUM160: 云桌面-图形G5_42核160G </li><li> G5L.21XLARGE320: 云桌面-图形G5_84核320G </li><li> G6L.8XLARGE96: 云桌面-图形G6_32核96G </li></p><li> G6L.16XLARGE192: 云桌面-图形G6_64核192G </li><li> G6L.24XLARGE288: 云桌面-图形G6_96核288G </li><li> G6L.32XLARGE384: 云桌面-图形G6_128核384G </li><li> G6L.48XLARGE576: 云桌面-图形G6_192核576G </li><li> G6L.64XLARGE768: 云桌面-图形G6_256核768G </li><li> G6L.96XLARGE1152: 云桌面-图形G6_384核1152G </li><li> G6L.96XLARGE1536: 云桌面-图形G6_384核1536G </li><li> G6L.192XLARGE2304: 云桌面-图形G6_768核2304G </li><li> G6Ls.8XLARGE96: 云桌面-图形G6s_32核96G </li><li> G6Ls.16XLARGE192: 云桌面-图形G6s_64核192G </li><li> G6Ls.24XLARGE288: 云桌面-图形G6s_96核288G </li><li> G6Ls.32XLARGE384: 云桌面-图形G6s_128核384G </li><li> G6Ls.48XLARGE576: 云桌面-图形G6s_192核576G </li><li> G6Ls.64XLARGE768: 云桌面-图形G6s_256核768G </li><li> G6Ls.96XLARGE1152: 云桌面-图形G6s_384核1152G </li><li> G6Ls.96XLARGE1536: 云桌面-图形G6s_384核1536G </li><li> G6Ls.192XLARGE2304: 云桌面-图形G6s_768核2304G </li><li> G8L.8XLARGE96: 云桌面-图形G8_32核96G </li><li> G8L.12XLARGE192: 云桌面-图形G8_48核192G </li><li> G8L.16XLARGE192: 云桌面-图形G8_64核192G </li><li> G8L.24XLARGE384: 云桌面-图形G8_96核384G </li><li> G8L.32XLARGE384: 云桌面-图形G8_128核384G </li><li> G8L.48XLARGE768: 云桌面-图形G8_192核768G </li><li> G8L.64XLARGE768: 云桌面-图形G8_256核768G </li><li> G8L.96XLARGE1536: 云桌面-图形G8_384核1536G </li><li> G9L.12XLARGE192: 云桌面-图形G9_48核192G </li><li> G9L.24XLARGE384: 云桌面-图形G9_96核384G </li><li> G9L.48XLARGE768: 云桌面-图形G9_192核768G </li><li> G9L.96XLARGE1536: 云桌面-图形G9_384核1536G </li><p>枚举值：</p><ul><li>S3L.MEDIUM4： 云桌面-标准S3_2核4G</li><li>S3L.LARGE8： 云桌面-标准S3_4核8G</li><li>S3L.LARGE16： 云桌面-标准S3_4核16G</li><li>S3L.2XLARGE16： 云桌面-标准S3_8核16G</li><li>S1L.LARGE8： 云桌面-标准S1_4核8G</li><li>S1L.LARGE16： 标准S1_4核16G</li><li>S2L.2XLARGE16： 标准S2_8核16G</li><li>G1L.LARGE16： 图形G1_4核16G</li><li>G1L.2XLARGE32： 图形G1_8核32G</li><li>G1L.4XLARGE64： 图形G1_16核64G</li><li>G2L.LARGE24： 云桌面-图形G2_6核24G</li><li>G2L.3XLARGE58： 云桌面-图形G2_14核58G</li><li>G2L.3XLARGE44： 云桌面-图形G2_12核44G</li><li>G3L.LARGE16： 云桌面-图形G3_4核16G</li><li>G3L.5XMEDIUM40： 云桌面-图形G3_10核40G</li><li>G3L.5XLARGE80： 云桌面-图形G3_20核80G</li><li>G4L.5XMEDIUM40： 云桌面-图形G4_10核40G</li><li>G4L.11XMEDIUM80： 云桌面-图形G4_22核80G</li><li>G4L.11XLARGE160： 云桌面-图形G4_44核160G</li><li>G5L.5XMEDIUM40： 云桌面-图形G5_10核40G</li><li>G5L.5XLARGE80： 云桌面-图形G5_22核80G</li><li>G5L.21XMEDIUM160： 云桌面-图形G5_42核160G</li><li>G5L.21XLARGE320： 云桌面-图形G5_84核320G</li><li>G6L.8XLARGE96： 云桌面-图形G6_32核96G</li><li>G6L.16XLARGE192： 云桌面-图形G6_64核192G</li><li>G6L.24XLARGE288： 云桌面-图形G6_96核288G</li><li>G6L.32XLARGE384： 云桌面-图形G6_128核384G</li><li>G6L.48XLARGE576： 云桌面-图形G6_192核576G</li><li>G6L.64XLARGE768： 云桌面-图形G6_256核768G</li><li>G6L.96XLARGE1152： 云桌面-图形G6_384核1152G</li><li>G6L.96XLARGE1536： 云桌面-图形G6_384核1536G</li><li>G6L.192XLARGE2304： 云桌面-图形G6_768核2304G</li><li>G6Ls.8XLARGE96： 云桌面-图形G6s_32核96G</li><li>G6Ls.16XLARGE192： 云桌面-图形G6s_64核192G</li><li>G6Ls.24XLARGE288： 云桌面-图形G6s_96核288G</li><li>G6Ls.32XLARGE384： 云桌面-图形G6s_128核384G</li><li>G6Ls.48XLARGE576： 云桌面-图形G6s_192核576G</li><li>G6Ls.64XLARGE768： 云桌面-图形G6s_256核768G</li><li>G6Ls.96XLARGE1152： 云桌面-图形G6s_384核1152G</li><li>G6Ls.96XLARGE1536： 云桌面-图形G6s_384核1536G</li><li>G6Ls.192XLARGE2304： 云桌面-图形G6s_768核2304G</li><li>G8L.8XLARGE96： 云桌面-图形G8_32核96G</li><li>G8L.12XLARGE192： 云桌面-图形G8_48核192G</li><li>G8L.16XLARGE192： 云桌面-图形G8_64核192G</li><li>G8L.24XLARGE384： 云桌面-图形G8_96核384G</li><li>G8L.32XLARGE384： 云桌面-图形G8_128核384G</li><li>G8L.48XLARGE768： 云桌面-图形G8_192核768G</li><li>G8L.64XLARGE768： 云桌面-图形G8_256核768G</li><li>G8L.96XLARGE1536： 云桌面-图形G8_384核1536G</li><li>G9L.12XLARGE192： 云桌面-图形G9_48核192G</li><li>G9L.24XLARGE384： 云桌面-图形G9_96核384G</li><li>G9L.48XLARGE768： 云桌面-图形G9_192核768G</li><li>G9L.96XLARGE1536： 云桌面-图形G9_384核1536G</li></ul>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 系统盘信息
+                     * <p>系统盘信息</p>
                      */
                     Disk m_systemDisk;
                     bool m_systemDiskHasBeenSet;
 
                     /**
-                     * 镜像ID
+                     * <p>镜像ID</p>
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * 私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。
+                     * <p>私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。</p>
                      */
                     VirtualPrivateCloud m_virtualPrivateCloud;
                     bool m_virtualPrivateCloudHasBeenSet;
 
                     /**
-                     * 实例显示名称。
-<li> 如果该字段为空，则采用默认格式：云桌面型号+月日+三位随机数+镜像ID。</li>
-<li> 购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server_{R:3}，购买1台时，实例显示名称为server_3；购买2台时，实例显示名称分别为server_3，server_4。支持指定多个模式串{R:x}。</li>
-<li> 购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server_1，server_2。</li>
-<li> 最多支持60个字符（包含模式串）。</li>
+                     * <p>实例显示名称。</p><li> 如果该字段为空，则采用默认格式：云桌面型号+月日+三位随机数+镜像ID。</li><li> 购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server_{R:3}，购买1台时，实例显示名称为server_3；购买2台时，实例显示名称分别为server_3，server_4。支持指定多个模式串{R:x}。</li><li> 购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server_1，server_2。</li><li> 最多支持60个字符（包含模式串）。</li>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 购买实例数量。取值范围[1,50]。默认为1
+                     * <p>购买实例数量。取值范围[1,50]。默认为1</p>
                      */
                     uint64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 数据盘信息。目前只支持一块数据盘。
+                     * <p>数据盘信息。目前只支持一块数据盘。</p>
                      */
                     std::vector<Disk> m_dataDisks;
                     bool m_dataDisksHasBeenSet;
 
                     /**
-                     * 实例计费类型。
-<li> PREPAID：预付费，即包年包月</li>
-<li> POSTPAID_BY_HOUR：按小时后付费</li>
-默认为PREPAID
+                     * <p>实例计费类型。</p><li> PREPAID：预付费，即包年包月</li><li> POSTPAID_BY_HOUR：按小时后付费</li>默认为PREPAID
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+                     * <p>预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。</p>
                      */
                     ChargePrepaid m_chargePrepaid;
                     bool m_chargePrepaidHasBeenSet;
 
                     /**
-                     * 是否只预检此次请求。
-<li> true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。
-如果检查通过，则返回的错误码为DryRunOperation；如果返回其他错误码表示检查没有通过；</li>
-<li> false（默认）：发送正常请求，通过检查后直接创建实例</li>
+                     * <p>是否只预检此次请求。</p><li> true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。如果检查通过，则返回的错误码为DryRunOperation；如果返回其他错误码表示检查没有通过；</li><li> false（默认）：发送正常请求，通过检查后直接创建实例</li>
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
 
                     /**
-                     * 允许绑定用户前的匿名访问。默认值：false。
+                     * <p>允许绑定用户前的匿名访问。默认值：false。</p>
                      */
                     bool m_anonymousAccess;
                     bool m_anonymousAccessHasBeenSet;
 
                     /**
-                     * 关联的安全组ID列表
+                     * <p>关联的安全组ID列表</p>
                      */
                     std::vector<std::string> m_securityGroups;
                     bool m_securityGroupsHasBeenSet;
 
                     /**
-                     * 桌面池ID
+                     * <p>桌面池ID</p>
                      */
                     std::string m_poolId;
                     bool m_poolIdHasBeenSet;
 
                     /**
-                     * 域名管控策略ID
+                     * <p>域名管控策略ID</p>
                      */
                     std::vector<std::string> m_domainControlPolicies;
                     bool m_domainControlPoliciesHasBeenSet;
 
                     /**
-                     * 标签，最多10个
+                     * <p>标签，最多10个</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 可用区
+                     * <p>可用区</p>
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

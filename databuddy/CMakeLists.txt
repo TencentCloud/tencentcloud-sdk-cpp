@@ -189,6 +189,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/StopComputeRequest.h
   include/tencentcloud/databuddy/v20260715/model/RemoveWorkspaceGroupsRequest.h
   include/tencentcloud/databuddy/v20260715/model/AdvancedParameter.h
+  include/tencentcloud/databuddy/v20260715/model/ListWorkspaceRolesRequest.h
   include/tencentcloud/databuddy/v20260715/model/UpdateWorkspaceGroupsTagsRequest.h
   include/tencentcloud/databuddy/v20260715/model/CreateVolumeResponse.h
   include/tencentcloud/databuddy/v20260715/model/DeleteCatalogRequest.h
@@ -209,6 +210,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/UpdateWorkspaceUsersRolesResponse.h
   include/tencentcloud/databuddy/v20260715/model/GetTableRsp.h
   include/tencentcloud/databuddy/v20260715/model/ListConsoleRolesResponse.h
+  include/tencentcloud/databuddy/v20260715/model/ListWorkspaceRolesResponse.h
   include/tencentcloud/databuddy/v20260715/model/GetModelVersionRsp.h
   include/tencentcloud/databuddy/v20260715/model/DeleteTableRsp.h
   include/tencentcloud/databuddy/v20260715/model/CreateConsoleGroupResponse.h
@@ -217,6 +219,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/CreateWorkspaceRoleResponse.h
   include/tencentcloud/databuddy/v20260715/model/AddWorkspaceGroupsRequest.h
   include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupUsersRequest.h
+  include/tencentcloud/databuddy/v20260715/model/Role.h
   include/tencentcloud/databuddy/v20260715/model/GetViewResponse.h
   include/tencentcloud/databuddy/v20260715/model/RemoveWorkspaceGroupsResponse.h
   include/tencentcloud/databuddy/v20260715/model/UpdateConsoleUsersResponse.h
@@ -253,6 +256,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/RemoveConsoleUsersRequest.h
   include/tencentcloud/databuddy/v20260715/model/LocationUpdate.h
   include/tencentcloud/databuddy/v20260715/model/GetFileRequest.h
+  include/tencentcloud/databuddy/v20260715/model/ListWorkspaceRolesRsp.h
   include/tencentcloud/databuddy/v20260715/model/UpdateWorkspaceRequest.h
   include/tencentcloud/databuddy/v20260715/model/UpdateSchemaRequest.h
   include/tencentcloud/databuddy/v20260715/model/DeleteSchemaResponse.h
@@ -591,6 +595,7 @@ set(databuddy_src
   src/v20260715/model/StopComputeRequest.cpp
   src/v20260715/model/RemoveWorkspaceGroupsRequest.cpp
   src/v20260715/model/AdvancedParameter.cpp
+  src/v20260715/model/ListWorkspaceRolesRequest.cpp
   src/v20260715/model/UpdateWorkspaceGroupsTagsRequest.cpp
   src/v20260715/model/CreateVolumeResponse.cpp
   src/v20260715/model/DeleteCatalogRequest.cpp
@@ -611,6 +616,7 @@ set(databuddy_src
   src/v20260715/model/UpdateWorkspaceUsersRolesResponse.cpp
   src/v20260715/model/GetTableRsp.cpp
   src/v20260715/model/ListConsoleRolesResponse.cpp
+  src/v20260715/model/ListWorkspaceRolesResponse.cpp
   src/v20260715/model/GetModelVersionRsp.cpp
   src/v20260715/model/DeleteTableRsp.cpp
   src/v20260715/model/CreateConsoleGroupResponse.cpp
@@ -619,6 +625,7 @@ set(databuddy_src
   src/v20260715/model/CreateWorkspaceRoleResponse.cpp
   src/v20260715/model/AddWorkspaceGroupsRequest.cpp
   src/v20260715/model/ListConsoleGroupUsersRequest.cpp
+  src/v20260715/model/Role.cpp
   src/v20260715/model/GetViewResponse.cpp
   src/v20260715/model/RemoveWorkspaceGroupsResponse.cpp
   src/v20260715/model/UpdateConsoleUsersResponse.cpp
@@ -655,6 +662,7 @@ set(databuddy_src
   src/v20260715/model/RemoveConsoleUsersRequest.cpp
   src/v20260715/model/LocationUpdate.cpp
   src/v20260715/model/GetFileRequest.cpp
+  src/v20260715/model/ListWorkspaceRolesRsp.cpp
   src/v20260715/model/UpdateWorkspaceRequest.cpp
   src/v20260715/model/UpdateSchemaRequest.cpp
   src/v20260715/model/DeleteSchemaResponse.cpp

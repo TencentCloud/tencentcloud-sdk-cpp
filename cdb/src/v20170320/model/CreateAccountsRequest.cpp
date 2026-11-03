@@ -27,7 +27,8 @@ CreateAccountsRequest::CreateAccountsRequest() :
     m_accountsHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_maxUserConnectionsHasBeenSet(false)
+    m_maxUserConnectionsHasBeenSet(false),
+    m_createAccountsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,21 @@ string CreateAccountsRequest::ToJsonString() const
         string key = "MaxUserConnections";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxUserConnections, allocator);
+    }
+
+    if (m_createAccountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateAccounts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_createAccounts.begin(); itr != m_createAccounts.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -171,6 +187,22 @@ void CreateAccountsRequest::SetMaxUserConnections(const int64_t& _maxUserConnect
 bool CreateAccountsRequest::MaxUserConnectionsHasBeenSet() const
 {
     return m_maxUserConnectionsHasBeenSet;
+}
+
+vector<CreateDBAccount> CreateAccountsRequest::GetCreateAccounts() const
+{
+    return m_createAccounts;
+}
+
+void CreateAccountsRequest::SetCreateAccounts(const vector<CreateDBAccount>& _createAccounts)
+{
+    m_createAccounts = _createAccounts;
+    m_createAccountsHasBeenSet = true;
+}
+
+bool CreateAccountsRequest::CreateAccountsHasBeenSet() const
+{
+    return m_createAccountsHasBeenSet;
 }
 
 

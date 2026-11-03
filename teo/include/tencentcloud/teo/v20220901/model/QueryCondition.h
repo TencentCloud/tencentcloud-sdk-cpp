@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取筛选条件的key。
-                     * @return Key 筛选条件的key。
+                     * 获取<p>筛选条件的key。</p>
+                     * @return Key <p>筛选条件的key。</p>
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置筛选条件的key。
-                     * @param _key 筛选条件的key。
+                     * 设置<p>筛选条件的key。</p>
+                     * @param _key <p>筛选条件的key。</p>
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,47 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取查询条件操作符，操作类型有：
-<li>equals: 等于；</li>
-<li>notEquals: 不等于；</li>
-<li>include: 包含；</li>
-<li>notInclude: 不包含; </li>
-<li>startWith: 开始的值是value；</li>
-<li>notStartWith: 不以value的值开始；</li>
-<li>endWith: 结尾是value值；</li>
-<li>notEndWith: 不以value的值结尾。</li>
-                     * @return Operator 查询条件操作符，操作类型有：
-<li>equals: 等于；</li>
-<li>notEquals: 不等于；</li>
-<li>include: 包含；</li>
-<li>notInclude: 不包含; </li>
-<li>startWith: 开始的值是value；</li>
-<li>notStartWith: 不以value的值开始；</li>
-<li>endWith: 结尾是value值；</li>
-<li>notEndWith: 不以value的值结尾。</li>
+                     * 获取<p>查询条件操作符，操作类型有：</p><li>equals: 等于；</li><li>notEquals: 不等于；</li><li>include: 包含；</li><li>notInclude: 不包含; </li><li>startWith: 开始的值是value；</li><li>notStartWith: 不以value的值开始；</li><li>endWith: 结尾是value值；</li><li>notEndWith: 不以value的值结尾。</li>
+                     * @return Operator <p>查询条件操作符，操作类型有：</p><li>equals: 等于；</li><li>notEquals: 不等于；</li><li>include: 包含；</li><li>notInclude: 不包含; </li><li>startWith: 开始的值是value；</li><li>notStartWith: 不以value的值开始；</li><li>endWith: 结尾是value值；</li><li>notEndWith: 不以value的值结尾。</li>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置查询条件操作符，操作类型有：
-<li>equals: 等于；</li>
-<li>notEquals: 不等于；</li>
-<li>include: 包含；</li>
-<li>notInclude: 不包含; </li>
-<li>startWith: 开始的值是value；</li>
-<li>notStartWith: 不以value的值开始；</li>
-<li>endWith: 结尾是value值；</li>
-<li>notEndWith: 不以value的值结尾。</li>
-                     * @param _operator 查询条件操作符，操作类型有：
-<li>equals: 等于；</li>
-<li>notEquals: 不等于；</li>
-<li>include: 包含；</li>
-<li>notInclude: 不包含; </li>
-<li>startWith: 开始的值是value；</li>
-<li>notStartWith: 不以value的值开始；</li>
-<li>endWith: 结尾是value值；</li>
-<li>notEndWith: 不以value的值结尾。</li>
+                     * 设置<p>查询条件操作符，操作类型有：</p><li>equals: 等于；</li><li>notEquals: 不等于；</li><li>include: 包含；</li><li>notInclude: 不包含; </li><li>startWith: 开始的值是value；</li><li>notStartWith: 不以value的值开始；</li><li>endWith: 结尾是value值；</li><li>notEndWith: 不以value的值结尾。</li>
+                     * @param _operator <p>查询条件操作符，操作类型有：</p><li>equals: 等于；</li><li>notEquals: 不等于；</li><li>include: 包含；</li><li>notInclude: 不包含; </li><li>startWith: 开始的值是value；</li><li>notStartWith: 不以value的值开始；</li><li>endWith: 结尾是value值；</li><li>notEndWith: 不以value的值结尾。</li>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -121,15 +89,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件的值。
-                     * @return Value 筛选条件的值。
+                     * 获取<p>筛选条件的值。</p>
+                     * @return Value <p>筛选条件的值。</p>
                      * 
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
-                     * 设置筛选条件的值。
-                     * @param _value 筛选条件的值。
+                     * 设置<p>筛选条件的值。</p>
+                     * @param _value <p>筛选条件的值。</p>
                      * 
                      */
                     void SetValue(const std::vector<std::string>& _value);
@@ -144,27 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 筛选条件的key。
+                     * <p>筛选条件的key。</p>
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 查询条件操作符，操作类型有：
-<li>equals: 等于；</li>
-<li>notEquals: 不等于；</li>
-<li>include: 包含；</li>
-<li>notInclude: 不包含; </li>
-<li>startWith: 开始的值是value；</li>
-<li>notStartWith: 不以value的值开始；</li>
-<li>endWith: 结尾是value值；</li>
-<li>notEndWith: 不以value的值结尾。</li>
+                     * <p>查询条件操作符，操作类型有：</p><li>equals: 等于；</li><li>notEquals: 不等于；</li><li>include: 包含；</li><li>notInclude: 不包含; </li><li>startWith: 开始的值是value；</li><li>notStartWith: 不以value的值开始；</li><li>endWith: 结尾是value值；</li><li>notEndWith: 不以value的值结尾。</li>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 筛选条件的值。
+                     * <p>筛选条件的值。</p>
                      */
                     std::vector<std::string> m_value;
                     bool m_valueHasBeenSet;

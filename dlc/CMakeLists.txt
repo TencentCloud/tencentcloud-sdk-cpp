@@ -145,7 +145,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/ListInferenceModelsResponse.h
   include/tencentcloud/dlc/v20210125/model/RayJobEventItem.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSTableRequest.h
-  include/tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h
+  include/tencentcloud/dlc/v20210125/model/GetRayServeEventRequest.h
   include/tencentcloud/dlc/v20210125/model/CreatePartitionRequest.h
   include/tencentcloud/dlc/v20210125/model/DMSTable.h
   include/tencentcloud/dlc/v20210125/model/CreateSparkSubmitTaskResponse.h
@@ -187,6 +187,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CheckQueueNameRequest.h
   include/tencentcloud/dlc/v20210125/model/DataGovernPolicy.h
   include/tencentcloud/dlc/v20210125/model/ListServiceApiKeysRequest.h
+  include/tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribePartitionsRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeFlowDetailListResponse.h
@@ -194,6 +195,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeWorkGroupInfoResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTablesRequest.h
   include/tencentcloud/dlc/v20210125/model/StartLabResponse.h
+  include/tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateStoreLocationRequest.h
   include/tencentcloud/dlc/v20210125/model/CheckApiKeyNameResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeLakeFsInfoResponse.h
@@ -299,8 +301,9 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DLCCatalogAccess.h
   include/tencentcloud/dlc/v20210125/model/ModifyUserResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteScriptResponse.h
-  include/tencentcloud/dlc/v20210125/model/Task.h
+  include/tencentcloud/dlc/v20210125/model/ListStoragesRequest.h
   include/tencentcloud/dlc/v20210125/model/DataEngineConfigInstanceInfo.h
+  include/tencentcloud/dlc/v20210125/model/COSBucketInfo.h
   include/tencentcloud/dlc/v20210125/model/CrontabResumeSuspendStrategy.h
   include/tencentcloud/dlc/v20210125/model/DescribeStandardEngineResourceGroupConfigInfoRequest.h
   include/tencentcloud/dlc/v20210125/model/TableExpirationPolicy.h
@@ -308,6 +311,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CustomConfig.h
   include/tencentcloud/dlc/v20210125/model/NotebookSessions.h
   include/tencentcloud/dlc/v20210125/model/SparkSessionBatchLogOperate.h
+  include/tencentcloud/dlc/v20210125/model/SubmitRayJobRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLRequest.h
   include/tencentcloud/dlc/v20210125/model/UpgradeDataEngineImageResponse.h
   include/tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyResponse.h
@@ -327,6 +331,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DorisConnection.h
   include/tencentcloud/dlc/v20210125/model/CreateModelVersionResponse.h
   include/tencentcloud/dlc/v20210125/model/PauseStandardEngineResourceGroupsResponse.h
+  include/tencentcloud/dlc/v20210125/model/CFSTurboFileSystemInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeSaleRegionsResponse.h
   include/tencentcloud/dlc/v20210125/model/ModifyLabPriorityResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteStandardEngineResourceGroupRequest.h
@@ -446,6 +451,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/GetJobSpecResponse.h
   include/tencentcloud/dlc/v20210125/model/ListLabsRequest.h
   include/tencentcloud/dlc/v20210125/model/KafkaInfo.h
+  include/tencentcloud/dlc/v20210125/model/SubmitRayJobResponse.h
   include/tencentcloud/dlc/v20210125/model/ListTrainingJobInstanceRequest.h
   include/tencentcloud/dlc/v20210125/model/FavorInfo.h
   include/tencentcloud/dlc/v20210125/model/StopInferenceServiceResponse.h
@@ -532,6 +538,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/ReplicaInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribePartitionQueuesRequest.h
+  include/tencentcloud/dlc/v20210125/model/ListStoragesResponse.h
   include/tencentcloud/dlc/v20210125/model/CosPermission.h
   include/tencentcloud/dlc/v20210125/model/GetResourceConfigResponse.h
   include/tencentcloud/dlc/v20210125/model/LockComponentInfo.h
@@ -732,6 +739,8 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DataEngineImageVersion.h
   include/tencentcloud/dlc/v20210125/model/ListModelVersionsResponse.h
   include/tencentcloud/dlc/v20210125/model/ListInferenceEnginesRequest.h
+  include/tencentcloud/dlc/v20210125/model/Task.h
+  include/tencentcloud/dlc/v20210125/model/GetRayServeEventResponse.h
   include/tencentcloud/dlc/v20210125/model/ModifyPartitionDescriptionResponse.h
   include/tencentcloud/dlc/v20210125/model/UpdateClusterGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/MysqlInfo.h
@@ -741,7 +750,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateResourceConfigRequest.h
   include/tencentcloud/dlc/v20210125/model/StatementInformation.h
   include/tencentcloud/dlc/v20210125/model/GetInferenceModelResponse.h
-  include/tencentcloud/dlc/v20210125/model/DeleteResourceConfigResponse.h
+  include/tencentcloud/dlc/v20210125/model/CreateUserRoleResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteThirdPartyAccessUserResponse.h
   include/tencentcloud/dlc/v20210125/model/ImportExternalClusterResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeSaleResourceInfoResponse.h
@@ -779,6 +788,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/LockMetaDataRequest.h
   include/tencentcloud/dlc/v20210125/model/SQLTask.h
   include/tencentcloud/dlc/v20210125/model/NetWork.h
+  include/tencentcloud/dlc/v20210125/model/GooseFSClustersInfo.h
   include/tencentcloud/dlc/v20210125/model/ListExampleDifficultiesResponse.h
   include/tencentcloud/dlc/v20210125/model/AttachUserPolicyResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSDatabaseRequest.h
@@ -831,7 +841,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/GetRayClusterPodsResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeStandardEngineResourceGroupsResponse.h
   include/tencentcloud/dlc/v20210125/model/ListResourceConfigsResponse.h
-  include/tencentcloud/dlc/v20210125/model/CreateUserRoleResponse.h
+  include/tencentcloud/dlc/v20210125/model/DeleteResourceConfigResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTaskLogResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/DropDMSPartitionsRequest.h
@@ -911,7 +921,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeWorkGroupsResponse.h
   include/tencentcloud/dlc/v20210125/model/SparkJobInfo.h
   include/tencentcloud/dlc/v20210125/model/StopDeploymentRequest.h
-  include/tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h
+  include/tencentcloud/dlc/v20210125/model/CFSFileSystemInfo.h
   include/tencentcloud/dlc/v20210125/model/ViewBaseInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobResponse.h
   include/tencentcloud/dlc/v20210125/model/HiveTablePartition.h
@@ -1178,7 +1188,7 @@ set(dlc_src
   src/v20210125/model/ListInferenceModelsResponse.cpp
   src/v20210125/model/RayJobEventItem.cpp
   src/v20210125/model/CreateDMSTableRequest.cpp
-  src/v20210125/model/ModifySparkAppResponse.cpp
+  src/v20210125/model/GetRayServeEventRequest.cpp
   src/v20210125/model/CreatePartitionRequest.cpp
   src/v20210125/model/DMSTable.cpp
   src/v20210125/model/CreateSparkSubmitTaskResponse.cpp
@@ -1220,6 +1230,7 @@ set(dlc_src
   src/v20210125/model/CheckQueueNameRequest.cpp
   src/v20210125/model/DataGovernPolicy.cpp
   src/v20210125/model/ListServiceApiKeysRequest.cpp
+  src/v20210125/model/DescribeScriptsRequest.cpp
   src/v20210125/model/DescribePartitionsRequest.cpp
   src/v20210125/model/CreateWorkGroupResponse.cpp
   src/v20210125/model/DescribeFlowDetailListResponse.cpp
@@ -1227,6 +1238,7 @@ set(dlc_src
   src/v20210125/model/DescribeWorkGroupInfoResponse.cpp
   src/v20210125/model/DescribeTablesRequest.cpp
   src/v20210125/model/StartLabResponse.cpp
+  src/v20210125/model/ModifySparkAppResponse.cpp
   src/v20210125/model/CreateStoreLocationRequest.cpp
   src/v20210125/model/CheckApiKeyNameResponse.cpp
   src/v20210125/model/DescribeLakeFsInfoResponse.cpp
@@ -1332,8 +1344,9 @@ set(dlc_src
   src/v20210125/model/DLCCatalogAccess.cpp
   src/v20210125/model/ModifyUserResponse.cpp
   src/v20210125/model/DeleteScriptResponse.cpp
-  src/v20210125/model/Task.cpp
+  src/v20210125/model/ListStoragesRequest.cpp
   src/v20210125/model/DataEngineConfigInstanceInfo.cpp
+  src/v20210125/model/COSBucketInfo.cpp
   src/v20210125/model/CrontabResumeSuspendStrategy.cpp
   src/v20210125/model/DescribeStandardEngineResourceGroupConfigInfoRequest.cpp
   src/v20210125/model/TableExpirationPolicy.cpp
@@ -1341,6 +1354,7 @@ set(dlc_src
   src/v20210125/model/CustomConfig.cpp
   src/v20210125/model/NotebookSessions.cpp
   src/v20210125/model/SparkSessionBatchLogOperate.cpp
+  src/v20210125/model/SubmitRayJobRequest.cpp
   src/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLRequest.cpp
   src/v20210125/model/UpgradeDataEngineImageResponse.cpp
   src/v20210125/model/DetachWorkGroupPolicyResponse.cpp
@@ -1360,6 +1374,7 @@ set(dlc_src
   src/v20210125/model/DorisConnection.cpp
   src/v20210125/model/CreateModelVersionResponse.cpp
   src/v20210125/model/PauseStandardEngineResourceGroupsResponse.cpp
+  src/v20210125/model/CFSTurboFileSystemInfo.cpp
   src/v20210125/model/DescribeSaleRegionsResponse.cpp
   src/v20210125/model/ModifyLabPriorityResponse.cpp
   src/v20210125/model/DeleteStandardEngineResourceGroupRequest.cpp
@@ -1479,6 +1494,7 @@ set(dlc_src
   src/v20210125/model/GetJobSpecResponse.cpp
   src/v20210125/model/ListLabsRequest.cpp
   src/v20210125/model/KafkaInfo.cpp
+  src/v20210125/model/SubmitRayJobResponse.cpp
   src/v20210125/model/ListTrainingJobInstanceRequest.cpp
   src/v20210125/model/FavorInfo.cpp
   src/v20210125/model/StopInferenceServiceResponse.cpp
@@ -1565,6 +1581,7 @@ set(dlc_src
   src/v20210125/model/DeleteDataEngineResponse.cpp
   src/v20210125/model/ReplicaInfo.cpp
   src/v20210125/model/DescribePartitionQueuesRequest.cpp
+  src/v20210125/model/ListStoragesResponse.cpp
   src/v20210125/model/CosPermission.cpp
   src/v20210125/model/GetResourceConfigResponse.cpp
   src/v20210125/model/LockComponentInfo.cpp
@@ -1765,6 +1782,8 @@ set(dlc_src
   src/v20210125/model/DataEngineImageVersion.cpp
   src/v20210125/model/ListModelVersionsResponse.cpp
   src/v20210125/model/ListInferenceEnginesRequest.cpp
+  src/v20210125/model/Task.cpp
+  src/v20210125/model/GetRayServeEventResponse.cpp
   src/v20210125/model/ModifyPartitionDescriptionResponse.cpp
   src/v20210125/model/UpdateClusterGroupResponse.cpp
   src/v20210125/model/MysqlInfo.cpp
@@ -1774,7 +1793,7 @@ set(dlc_src
   src/v20210125/model/CreateResourceConfigRequest.cpp
   src/v20210125/model/StatementInformation.cpp
   src/v20210125/model/GetInferenceModelResponse.cpp
-  src/v20210125/model/DeleteResourceConfigResponse.cpp
+  src/v20210125/model/CreateUserRoleResponse.cpp
   src/v20210125/model/DeleteThirdPartyAccessUserResponse.cpp
   src/v20210125/model/ImportExternalClusterResponse.cpp
   src/v20210125/model/DescribeSaleResourceInfoResponse.cpp
@@ -1812,6 +1831,7 @@ set(dlc_src
   src/v20210125/model/LockMetaDataRequest.cpp
   src/v20210125/model/SQLTask.cpp
   src/v20210125/model/NetWork.cpp
+  src/v20210125/model/GooseFSClustersInfo.cpp
   src/v20210125/model/ListExampleDifficultiesResponse.cpp
   src/v20210125/model/AttachUserPolicyResponse.cpp
   src/v20210125/model/CreateDMSDatabaseRequest.cpp
@@ -1864,7 +1884,7 @@ set(dlc_src
   src/v20210125/model/GetRayClusterPodsResponse.cpp
   src/v20210125/model/DescribeStandardEngineResourceGroupsResponse.cpp
   src/v20210125/model/ListResourceConfigsResponse.cpp
-  src/v20210125/model/CreateUserRoleResponse.cpp
+  src/v20210125/model/DeleteResourceConfigResponse.cpp
   src/v20210125/model/DescribeTaskLogResponse.cpp
   src/v20210125/model/DescribeTasksResponse.cpp
   src/v20210125/model/DropDMSPartitionsRequest.cpp
@@ -1944,7 +1964,7 @@ set(dlc_src
   src/v20210125/model/DescribeWorkGroupsResponse.cpp
   src/v20210125/model/SparkJobInfo.cpp
   src/v20210125/model/StopDeploymentRequest.cpp
-  src/v20210125/model/DescribeScriptsRequest.cpp
+  src/v20210125/model/CFSFileSystemInfo.cpp
   src/v20210125/model/ViewBaseInfo.cpp
   src/v20210125/model/DescribeSparkAppJobResponse.cpp
   src/v20210125/model/HiveTablePartition.cpp

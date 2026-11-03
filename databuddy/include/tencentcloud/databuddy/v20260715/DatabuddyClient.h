@@ -155,6 +155,8 @@
 #include <tencentcloud/databuddy/v20260715/model/ListWorkspaceGroupUsersResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkspaceGroupsRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkspaceGroupsResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/ListWorkspaceRolesRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/ListWorkspaceRolesResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkspaceUsersRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkspaceUsersResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkspacesRequest.h>
@@ -431,6 +433,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListWorkspaceGroupsResponse> ListWorkspaceGroupsOutcome;
                 typedef std::future<ListWorkspaceGroupsOutcome> ListWorkspaceGroupsOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::ListWorkspaceGroupsRequest&, ListWorkspaceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkspaceGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListWorkspaceRolesResponse> ListWorkspaceRolesOutcome;
+                typedef std::future<ListWorkspaceRolesOutcome> ListWorkspaceRolesOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::ListWorkspaceRolesRequest&, ListWorkspaceRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkspaceRolesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListWorkspaceUsersResponse> ListWorkspaceUsersOutcome;
                 typedef std::future<ListWorkspaceUsersOutcome> ListWorkspaceUsersOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::ListWorkspaceUsersRequest&, ListWorkspaceUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkspaceUsersAsyncHandler;
@@ -1172,6 +1177,15 @@ namespace TencentCloud
                 ListWorkspaceGroupsOutcome ListWorkspaceGroups(const Model::ListWorkspaceGroupsRequest &request);
                 void ListWorkspaceGroupsAsync(const Model::ListWorkspaceGroupsRequest& request, const ListWorkspaceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListWorkspaceGroupsOutcomeCallable ListWorkspaceGroupsCallable(const Model::ListWorkspaceGroupsRequest& request);
+
+                /**
+                 *查询工作空间角色列表
+                 * @param req ListWorkspaceRolesRequest
+                 * @return ListWorkspaceRolesOutcome
+                 */
+                ListWorkspaceRolesOutcome ListWorkspaceRoles(const Model::ListWorkspaceRolesRequest &request);
+                void ListWorkspaceRolesAsync(const Model::ListWorkspaceRolesRequest& request, const ListWorkspaceRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListWorkspaceRolesOutcomeCallable ListWorkspaceRolesCallable(const Model::ListWorkspaceRolesRequest& request);
 
                 /**
                  *查询工作空间用户列表
