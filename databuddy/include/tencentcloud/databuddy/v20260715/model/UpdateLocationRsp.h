@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/databuddy/v20260715/model/LocationInfo.h>
+#include <tencentcloud/databuddy/v20260715/model/CosEventSubscription.h>
 
 
 namespace TencentCloud
@@ -68,6 +69,27 @@ namespace TencentCloud
                      */
                     bool LocationHasBeenSet() const;
 
+                    /**
+                     * 获取COS 文件事件订阅明细（未订阅时为空）
+                     * @return FileEventSubscription COS 文件事件订阅明细（未订阅时为空）
+                     * 
+                     */
+                    CosEventSubscription GetFileEventSubscription() const;
+
+                    /**
+                     * 设置COS 文件事件订阅明细（未订阅时为空）
+                     * @param _fileEventSubscription COS 文件事件订阅明细（未订阅时为空）
+                     * 
+                     */
+                    void SetFileEventSubscription(const CosEventSubscription& _fileEventSubscription);
+
+                    /**
+                     * 判断参数 FileEventSubscription 是否已赋值
+                     * @return FileEventSubscription 是否已赋值
+                     * 
+                     */
+                    bool FileEventSubscriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +97,12 @@ namespace TencentCloud
                      */
                     LocationInfo m_location;
                     bool m_locationHasBeenSet;
+
+                    /**
+                     * COS 文件事件订阅明细（未订阅时为空）
+                     */
+                    CosEventSubscription m_fileEventSubscription;
+                    bool m_fileEventSubscriptionHasBeenSet;
 
                 };
             }

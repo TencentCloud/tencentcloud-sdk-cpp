@@ -1100,6 +1100,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/CreateBaselineStrategyResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeRaspEventDetailTCSSRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportAssetCoreModuleListResponse.h
+  include/tencentcloud/cwp/v20180228/model/QuaraTypeDictItem.h
   include/tencentcloud/cwp/v20180228/model/ModifyMachineAutoClearConfigResponse.h
   include/tencentcloud/cwp/v20180228/model/ModifyLogStorageConfigResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeHistoryAccountsResponse.h
@@ -2448,6 +2449,7 @@ set(cwp_src
   src/v20180228/model/CreateBaselineStrategyResponse.cpp
   src/v20180228/model/DescribeRaspEventDetailTCSSRequest.cpp
   src/v20180228/model/ExportAssetCoreModuleListResponse.cpp
+  src/v20180228/model/QuaraTypeDictItem.cpp
   src/v20180228/model/ModifyMachineAutoClearConfigResponse.cpp
   src/v20180228/model/ModifyLogStorageConfigResponse.cpp
   src/v20180228/model/DescribeHistoryAccountsResponse.cpp

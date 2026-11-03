@@ -369,6 +369,31 @@ namespace TencentCloud
                     bool CfwSharerAppIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>共享者MemberId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CfwSharerMemberId <p>共享者MemberId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCfwSharerMemberId() const;
+
+                    /**
+                     * 设置<p>共享者MemberId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cfwSharerMemberId <p>共享者MemberId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCfwSharerMemberId(const std::string& _cfwSharerMemberId);
+
+                    /**
+                     * 判断参数 CfwSharerMemberId 是否已赋值
+                     * @return CfwSharerMemberId 是否已赋值
+                     * 
+                     */
+                    bool CfwSharerMemberIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>云防火墙计费实例 ID，非空表示已购买云防火墙</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CfwInstanceId <p>云防火墙计费实例 ID，非空表示已购买云防火墙</p>
@@ -548,6 +573,27 @@ namespace TencentCloud
                      */
                     bool IsCfwPostPayHasBeenSet() const;
 
+                    /**
+                     * 获取<p>企业安全组免费额度领取态：0-未领用，1-已领用（永久领取态）</p>
+                     * @return SgFreeClaimed <p>企业安全组免费额度领取态：0-未领用，1-已领用（永久领取态）</p>
+                     * 
+                     */
+                    int64_t GetSgFreeClaimed() const;
+
+                    /**
+                     * 设置<p>企业安全组免费额度领取态：0-未领用，1-已领用（永久领取态）</p>
+                     * @param _sgFreeClaimed <p>企业安全组免费额度领取态：0-未领用，1-已领用（永久领取态）</p>
+                     * 
+                     */
+                    void SetSgFreeClaimed(const int64_t& _sgFreeClaimed);
+
+                    /**
+                     * 判断参数 SgFreeClaimed 是否已赋值
+                     * @return SgFreeClaimed 是否已赋值
+                     * 
+                     */
+                    bool SgFreeClaimedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,6 +687,13 @@ namespace TencentCloud
                     bool m_cfwSharerAppIdHasBeenSet;
 
                     /**
+                     * <p>共享者MemberId</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cfwSharerMemberId;
+                    bool m_cfwSharerMemberIdHasBeenSet;
+
+                    /**
                      * <p>云防火墙计费实例 ID，非空表示已购买云防火墙</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -690,6 +743,12 @@ namespace TencentCloud
                      */
                     int64_t m_isCfwPostPay;
                     bool m_isCfwPostPayHasBeenSet;
+
+                    /**
+                     * <p>企业安全组免费额度领取态：0-未领用，1-已领用（永久领取态）</p>
+                     */
+                    int64_t m_sgFreeClaimed;
+                    bool m_sgFreeClaimedHasBeenSet;
 
                 };
             }

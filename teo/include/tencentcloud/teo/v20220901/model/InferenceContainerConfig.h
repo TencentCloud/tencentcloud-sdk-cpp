@@ -116,15 +116,15 @@ namespace TencentCloud
                     bool StartupCommandHasBeenSet() const;
 
                     /**
-                     * 获取<p>容器运行时的环境变量。最多支持 10 个变量。</p>
-                     * @return EnvironmentVariables <p>容器运行时的环境变量。最多支持 10 个变量。</p>
+                     * 获取<p>容器运行时的环境变量。最多支持 50 个变量。</p>
+                     * @return EnvironmentVariables <p>容器运行时的环境变量。最多支持 50 个变量。</p>
                      * 
                      */
                     std::vector<InferenceEnvironmentVariable> GetEnvironmentVariables() const;
 
                     /**
-                     * 设置<p>容器运行时的环境变量。最多支持 10 个变量。</p>
-                     * @param _environmentVariables <p>容器运行时的环境变量。最多支持 10 个变量。</p>
+                     * 设置<p>容器运行时的环境变量。最多支持 50 个变量。</p>
+                     * @param _environmentVariables <p>容器运行时的环境变量。最多支持 50 个变量。</p>
                      * 
                      */
                     void SetEnvironmentVariables(const std::vector<InferenceEnvironmentVariable>& _environmentVariables);
@@ -158,7 +158,7 @@ namespace TencentCloud
                     bool m_startupCommandHasBeenSet;
 
                     /**
-                     * <p>容器运行时的环境变量。最多支持 10 个变量。</p>
+                     * <p>容器运行时的环境变量。最多支持 50 个变量。</p>
                      */
                     std::vector<InferenceEnvironmentVariable> m_environmentVariables;
                     bool m_environmentVariablesHasBeenSet;

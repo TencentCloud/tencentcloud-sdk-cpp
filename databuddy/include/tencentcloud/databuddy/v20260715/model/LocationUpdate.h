@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取更新类型，取值：modify_location_name、modify_location_comment、modify_location_properties
-                     * @return UpdateType 更新类型，取值：modify_location_name、modify_location_comment、modify_location_properties
+                     * 获取更新类型，取值：modify_location_name、modify_location_comment、modify_location_properties、modify_file_event_subscription（操作COS文件事件订阅，WeData侧联动不透传TCLake；配合请求顶层FileEventSubscription字段：有值=开启/编辑订阅，未设置=关闭订阅）
+                     * @return UpdateType 更新类型，取值：modify_location_name、modify_location_comment、modify_location_properties、modify_file_event_subscription（操作COS文件事件订阅，WeData侧联动不透传TCLake；配合请求顶层FileEventSubscription字段：有值=开启/编辑订阅，未设置=关闭订阅）
                      * 
                      */
                     std::string GetUpdateType() const;
 
                     /**
-                     * 设置更新类型，取值：modify_location_name、modify_location_comment、modify_location_properties
-                     * @param _updateType 更新类型，取值：modify_location_name、modify_location_comment、modify_location_properties
+                     * 设置更新类型，取值：modify_location_name、modify_location_comment、modify_location_properties、modify_file_event_subscription（操作COS文件事件订阅，WeData侧联动不透传TCLake；配合请求顶层FileEventSubscription字段：有值=开启/编辑订阅，未设置=关闭订阅）
+                     * @param _updateType 更新类型，取值：modify_location_name、modify_location_comment、modify_location_properties、modify_file_event_subscription（操作COS文件事件订阅，WeData侧联动不透传TCLake；配合请求顶层FileEventSubscription字段：有值=开启/编辑订阅，未设置=关闭订阅）
                      * 
                      */
                     void SetUpdateType(const std::string& _updateType);
@@ -155,7 +155,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 更新类型，取值：modify_location_name、modify_location_comment、modify_location_properties
+                     * 更新类型，取值：modify_location_name、modify_location_comment、modify_location_properties、modify_file_event_subscription（操作COS文件事件订阅，WeData侧联动不透传TCLake；配合请求顶层FileEventSubscription字段：有值=开启/编辑订阅，未设置=关闭订阅）
                      */
                     std::string m_updateType;
                     bool m_updateTypeHasBeenSet;

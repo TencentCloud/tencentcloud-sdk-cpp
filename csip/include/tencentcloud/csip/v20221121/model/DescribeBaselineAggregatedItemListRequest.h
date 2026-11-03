@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>通用过滤条件。支持的 Name：ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）、Name（检测项名称，模糊搜索）、RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）、PolicyName（所属基线/策略名称，模糊搜索）。</p>
-                     * @return Filters <p>通用过滤条件。支持的 Name：ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）、Name（检测项名称，模糊搜索）、RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）、PolicyName（所属基线/策略名称，模糊搜索）。</p>
+                     * 获取<p>通用过滤条件。支持的 Name：<br>ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）<br>Name（检测项名称，模糊搜索）<br>RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）<br>ClusterCaMD5（集群CaMD5，精准搜索）<br>ClusterId（集群Id，精准搜索）</p>
+                     * @return Filters <p>通用过滤条件。支持的 Name：<br>ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）<br>Name（检测项名称，模糊搜索）<br>RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）<br>ClusterCaMD5（集群CaMD5，精准搜索）<br>ClusterId（集群Id，精准搜索）</p>
                      * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
-                     * 设置<p>通用过滤条件。支持的 Name：ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）、Name（检测项名称，模糊搜索）、RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）、PolicyName（所属基线/策略名称，模糊搜索）。</p>
-                     * @param _filters <p>通用过滤条件。支持的 Name：ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）、Name（检测项名称，模糊搜索）、RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）、PolicyName（所属基线/策略名称，模糊搜索）。</p>
+                     * 设置<p>通用过滤条件。支持的 Name：<br>ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）<br>Name（检测项名称，模糊搜索）<br>RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）<br>ClusterCaMD5（集群CaMD5，精准搜索）<br>ClusterId（集群Id，精准搜索）</p>
+                     * @param _filters <p>通用过滤条件。支持的 Name：<br>ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）<br>Name（检测项名称，模糊搜索）<br>RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）<br>ClusterCaMD5（集群CaMD5，精准搜索）<br>ClusterId（集群Id，精准搜索）</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
@@ -286,7 +286,7 @@ namespace TencentCloud
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * <p>通用过滤条件。支持的 Name：ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）、Name（检测项名称，模糊搜索）、RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）、PolicyName（所属基线/策略名称，模糊搜索）。</p>
+                     * <p>通用过滤条件。支持的 Name：<br>ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）<br>Name（检测项名称，模糊搜索）<br>RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）<br>ClusterCaMD5（集群CaMD5，精准搜索）<br>ClusterId（集群Id，精准搜索）</p>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;

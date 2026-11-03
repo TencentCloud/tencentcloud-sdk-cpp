@@ -35,6 +35,8 @@
 #include <tencentcloud/cngw/v20230418/model/CheckCloudNativeAPIGatewayMCPToolVersionExistResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CompareCloudNativeAPIGatewayMCPToolVersionRequest.h>
 #include <tencentcloud/cngw/v20230418/model/CompareCloudNativeAPIGatewayMCPToolVersionResponse.h>
+#include <tencentcloud/cngw/v20230418/model/CreateAIGWCustomGuardrailPolicyRequest.h>
+#include <tencentcloud/cngw/v20230418/model/CreateAIGWCustomGuardrailPolicyResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayAIServiceSourceRequest.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayAIServiceSourceResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayConsumerRequest.h>
@@ -53,12 +55,18 @@
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayMCPToolResponse.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewaySecretKeyRequest.h>
 #include <tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewaySecretKeyResponse.h>
+#include <tencentcloud/cngw/v20230418/model/CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest.h>
+#include <tencentcloud/cngw/v20230418/model/CreateOrModifyCloudNativeAPIGatewayIPRestrictionResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DeleteAIGWCustomGuardrailPolicyRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DeleteAIGWCustomGuardrailPolicyResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayAIServiceSourceRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayAIServiceSourceResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayConsumerRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayConsumerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayConsumerGroupRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayConsumerGroupResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayIPRestrictionRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayIPRestrictionResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelAPIRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelAPIResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelServiceRequest.h>
@@ -73,6 +81,16 @@
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolVersionResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewaySecretKeyRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewaySecretKeyResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailBindableResourcesRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailBindableResourcesResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailCapabilitiesRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailCapabilitiesResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailHitsRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailHitsResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailPolicyRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailPolicyResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailPolicyListRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailPolicyListResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCNGWServicesWithRoutesRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCNGWServicesWithRoutesResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayAIQuotaRequest.h>
@@ -85,6 +103,8 @@
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayConsumerResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayConsumerGroupRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayConsumerGroupResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayIPRestrictionRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayIPRestrictionResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMModelAPIRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMModelAPIResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMModelAPIsRequest.h>
@@ -127,6 +147,10 @@
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewaySecretKeyListResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewaySecretKeyValueRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewaySecretKeyValueResponse.h>
+#include <tencentcloud/cngw/v20230418/model/ExportAIGWCustomGuardrailHitsRequest.h>
+#include <tencentcloud/cngw/v20230418/model/ExportAIGWCustomGuardrailHitsResponse.h>
+#include <tencentcloud/cngw/v20230418/model/ModifyAIGWCustomGuardrailPolicyRequest.h>
+#include <tencentcloud/cngw/v20230418/model/ModifyAIGWCustomGuardrailPolicyResponse.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayAIServiceSourceRequest.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayAIServiceSourceResponse.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayConsumerRequest.h>
@@ -199,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CompareCloudNativeAPIGatewayMCPToolVersionResponse> CompareCloudNativeAPIGatewayMCPToolVersionOutcome;
                 typedef std::future<CompareCloudNativeAPIGatewayMCPToolVersionOutcome> CompareCloudNativeAPIGatewayMCPToolVersionOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::CompareCloudNativeAPIGatewayMCPToolVersionRequest&, CompareCloudNativeAPIGatewayMCPToolVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompareCloudNativeAPIGatewayMCPToolVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAIGWCustomGuardrailPolicyResponse> CreateAIGWCustomGuardrailPolicyOutcome;
+                typedef std::future<CreateAIGWCustomGuardrailPolicyOutcome> CreateAIGWCustomGuardrailPolicyOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::CreateAIGWCustomGuardrailPolicyRequest&, CreateAIGWCustomGuardrailPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIGWCustomGuardrailPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewayAIServiceSourceResponse> CreateCloudNativeAPIGatewayAIServiceSourceOutcome;
                 typedef std::future<CreateCloudNativeAPIGatewayAIServiceSourceOutcome> CreateCloudNativeAPIGatewayAIServiceSourceOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::CreateCloudNativeAPIGatewayAIServiceSourceRequest&, CreateCloudNativeAPIGatewayAIServiceSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewayAIServiceSourceAsyncHandler;
@@ -226,6 +253,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewaySecretKeyResponse> CreateCloudNativeAPIGatewaySecretKeyOutcome;
                 typedef std::future<CreateCloudNativeAPIGatewaySecretKeyOutcome> CreateCloudNativeAPIGatewaySecretKeyOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::CreateCloudNativeAPIGatewaySecretKeyRequest&, CreateCloudNativeAPIGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewaySecretKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrModifyCloudNativeAPIGatewayIPRestrictionResponse> CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome;
+                typedef std::future<CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome> CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest&, CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrModifyCloudNativeAPIGatewayIPRestrictionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAIGWCustomGuardrailPolicyResponse> DeleteAIGWCustomGuardrailPolicyOutcome;
+                typedef std::future<DeleteAIGWCustomGuardrailPolicyOutcome> DeleteAIGWCustomGuardrailPolicyOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DeleteAIGWCustomGuardrailPolicyRequest&, DeleteAIGWCustomGuardrailPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAIGWCustomGuardrailPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayAIServiceSourceResponse> DeleteCloudNativeAPIGatewayAIServiceSourceOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayAIServiceSourceOutcome> DeleteCloudNativeAPIGatewayAIServiceSourceOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewayAIServiceSourceRequest&, DeleteCloudNativeAPIGatewayAIServiceSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayAIServiceSourceAsyncHandler;
@@ -235,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayConsumerGroupResponse> DeleteCloudNativeAPIGatewayConsumerGroupOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayConsumerGroupOutcome> DeleteCloudNativeAPIGatewayConsumerGroupOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewayConsumerGroupRequest&, DeleteCloudNativeAPIGatewayConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayConsumerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayIPRestrictionResponse> DeleteCloudNativeAPIGatewayIPRestrictionOutcome;
+                typedef std::future<DeleteCloudNativeAPIGatewayIPRestrictionOutcome> DeleteCloudNativeAPIGatewayIPRestrictionOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewayIPRestrictionRequest&, DeleteCloudNativeAPIGatewayIPRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayIPRestrictionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayLLMModelAPIResponse> DeleteCloudNativeAPIGatewayLLMModelAPIOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayLLMModelAPIOutcome> DeleteCloudNativeAPIGatewayLLMModelAPIOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewayLLMModelAPIRequest&, DeleteCloudNativeAPIGatewayLLMModelAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayLLMModelAPIAsyncHandler;
@@ -256,6 +292,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewaySecretKeyResponse> DeleteCloudNativeAPIGatewaySecretKeyOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewaySecretKeyOutcome> DeleteCloudNativeAPIGatewaySecretKeyOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DeleteCloudNativeAPIGatewaySecretKeyRequest&, DeleteCloudNativeAPIGatewaySecretKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewaySecretKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIGWCustomGuardrailBindableResourcesResponse> DescribeAIGWCustomGuardrailBindableResourcesOutcome;
+                typedef std::future<DescribeAIGWCustomGuardrailBindableResourcesOutcome> DescribeAIGWCustomGuardrailBindableResourcesOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeAIGWCustomGuardrailBindableResourcesRequest&, DescribeAIGWCustomGuardrailBindableResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIGWCustomGuardrailBindableResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIGWCustomGuardrailCapabilitiesResponse> DescribeAIGWCustomGuardrailCapabilitiesOutcome;
+                typedef std::future<DescribeAIGWCustomGuardrailCapabilitiesOutcome> DescribeAIGWCustomGuardrailCapabilitiesOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeAIGWCustomGuardrailCapabilitiesRequest&, DescribeAIGWCustomGuardrailCapabilitiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIGWCustomGuardrailCapabilitiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIGWCustomGuardrailHitsResponse> DescribeAIGWCustomGuardrailHitsOutcome;
+                typedef std::future<DescribeAIGWCustomGuardrailHitsOutcome> DescribeAIGWCustomGuardrailHitsOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeAIGWCustomGuardrailHitsRequest&, DescribeAIGWCustomGuardrailHitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIGWCustomGuardrailHitsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIGWCustomGuardrailPolicyResponse> DescribeAIGWCustomGuardrailPolicyOutcome;
+                typedef std::future<DescribeAIGWCustomGuardrailPolicyOutcome> DescribeAIGWCustomGuardrailPolicyOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeAIGWCustomGuardrailPolicyRequest&, DescribeAIGWCustomGuardrailPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIGWCustomGuardrailPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIGWCustomGuardrailPolicyListResponse> DescribeAIGWCustomGuardrailPolicyListOutcome;
+                typedef std::future<DescribeAIGWCustomGuardrailPolicyListOutcome> DescribeAIGWCustomGuardrailPolicyListOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeAIGWCustomGuardrailPolicyListRequest&, DescribeAIGWCustomGuardrailPolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIGWCustomGuardrailPolicyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCNGWServicesWithRoutesResponse> DescribeCNGWServicesWithRoutesOutcome;
                 typedef std::future<DescribeCNGWServicesWithRoutesOutcome> DescribeCNGWServicesWithRoutesOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCNGWServicesWithRoutesRequest&, DescribeCNGWServicesWithRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCNGWServicesWithRoutesAsyncHandler;
@@ -274,6 +325,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayConsumerGroupResponse> DescribeCloudNativeAPIGatewayConsumerGroupOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayConsumerGroupOutcome> DescribeCloudNativeAPIGatewayConsumerGroupOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayConsumerGroupRequest&, DescribeCloudNativeAPIGatewayConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayConsumerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayIPRestrictionResponse> DescribeCloudNativeAPIGatewayIPRestrictionOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayIPRestrictionOutcome> DescribeCloudNativeAPIGatewayIPRestrictionOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayIPRestrictionRequest&, DescribeCloudNativeAPIGatewayIPRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayIPRestrictionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayLLMModelAPIResponse> DescribeCloudNativeAPIGatewayLLMModelAPIOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayLLMModelAPIOutcome> DescribeCloudNativeAPIGatewayLLMModelAPIOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewayLLMModelAPIRequest&, DescribeCloudNativeAPIGatewayLLMModelAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayLLMModelAPIAsyncHandler;
@@ -337,6 +391,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewaySecretKeyValueResponse> DescribeCloudNativeAPIGatewaySecretKeyValueOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewaySecretKeyValueOutcome> DescribeCloudNativeAPIGatewaySecretKeyValueOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCloudNativeAPIGatewaySecretKeyValueRequest&, DescribeCloudNativeAPIGatewaySecretKeyValueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewaySecretKeyValueAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportAIGWCustomGuardrailHitsResponse> ExportAIGWCustomGuardrailHitsOutcome;
+                typedef std::future<ExportAIGWCustomGuardrailHitsOutcome> ExportAIGWCustomGuardrailHitsOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::ExportAIGWCustomGuardrailHitsRequest&, ExportAIGWCustomGuardrailHitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportAIGWCustomGuardrailHitsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAIGWCustomGuardrailPolicyResponse> ModifyAIGWCustomGuardrailPolicyOutcome;
+                typedef std::future<ModifyAIGWCustomGuardrailPolicyOutcome> ModifyAIGWCustomGuardrailPolicyOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::ModifyAIGWCustomGuardrailPolicyRequest&, ModifyAIGWCustomGuardrailPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAIGWCustomGuardrailPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayAIServiceSourceResponse> ModifyCloudNativeAPIGatewayAIServiceSourceOutcome;
                 typedef std::future<ModifyCloudNativeAPIGatewayAIServiceSourceOutcome> ModifyCloudNativeAPIGatewayAIServiceSourceOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::ModifyCloudNativeAPIGatewayAIServiceSourceRequest&, ModifyCloudNativeAPIGatewayAIServiceSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayAIServiceSourceAsyncHandler;
@@ -420,7 +480,7 @@ namespace TencentCloud
 
                 /**
                  *添加密钥与资源的引用关系接口
-【消费者批量自动分配 API Key｜修改：内部并发/配额逻辑，字段不变】ResourceType=Consumer 时与批量预留共用实例写锁，单消费者绑定配额使用当前锁定读。仍按原 SecretKeyId、ResourceIds 绑定；消费者目标最多一个，单密钥不能同时绑定多个消费者，成功仍返回 Result=true。此入口不新增 OperationDenied.BatchKeyPending；该错误属于下述四个变更入口的保护逻辑。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。
+【消费者批量自动分配 API Key｜修改：内部并发/配额逻辑，字段不变】ResourceType=Consumer 时与批量预留共用实例写锁，单消费者绑定配额使用当前锁定读。仍按原 SecretKeyId、ResourceIds 绑定；消费者目标最多一个，单密钥不能同时绑定多个消费者，成功仍返回 Result=true。此入口不新增 OperationDenied.BatchKeyPending；该错误属于下述四个变更入口的保护逻辑。
                  * @param req BindCloudNativeAPIGatewaySecretKeyRequest
                  * @return BindCloudNativeAPIGatewaySecretKeyOutcome
                  */
@@ -454,6 +514,19 @@ namespace TencentCloud
                 CompareCloudNativeAPIGatewayMCPToolVersionOutcome CompareCloudNativeAPIGatewayMCPToolVersion(const Model::CompareCloudNativeAPIGatewayMCPToolVersionRequest &request);
                 void CompareCloudNativeAPIGatewayMCPToolVersionAsync(const Model::CompareCloudNativeAPIGatewayMCPToolVersionRequest& request, const CompareCloudNativeAPIGatewayMCPToolVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CompareCloudNativeAPIGatewayMCPToolVersionOutcomeCallable CompareCloudNativeAPIGatewayMCPToolVersionCallable(const Model::CompareCloudNativeAPIGatewayMCPToolVersionRequest& request);
+
+                /**
+                 *创建自定义外部审核策略，并把资源绑定配置同步到 Kong Route。建议先调用 DescribeAIGWCustomGuardrailCapabilities、DescribeAIGWCustomGuardrailBindableResources 和 TestAIGWCustomGuardrailPolicy。支持模型 API、MCP Streamable HTTP、A2A Agent API；当前不开放 Dify、Custom Agent、Legacy SSE MCP。请检查 Result.Success、SyncStatus、FailedResources；部分同步失败不等于策略未创建，应按返回 PolicyId 查询并处理，避免重复创建。网关需满足最低版本 3.9.6，且已安装、启用并加载 cngw-ai-custom-guardrail。创建、修改、删除要求网关处于稳定 Running 状态，升级/回滚/撤销升级期间不能修改策略。
+
+本产品为 cngw，版本为 2023-04-18。公共参数及签名按云 API 规范配置；在 API Explorer 选择目标环境，示例正文仅为业务参数，中文诊断示例以公共参数 Language=zh-CN 为前提。响应业务字段统一位于 Response.Result，Response.RequestId 为云 API 请求 ID；HTTP 成功不代表 Result.Success=true。示例 ID、域名和鉴权值均为占位内容，须替换为实际值。
+
+输入约束：新配置只接受 field_mapping，不再默认为 standard_v2。创建时鉴权和检测行为必须完整填写；修改为 PATCH，省略保留，显式空值不补默认值。存量 standard_v2 策略仍可查询、删除或直接停用；修改其判定配置或重新启用前需迁移到 field_mapping。条件必填由后端按完整配置校验，非法配置不写库、不下发。
+                 * @param req CreateAIGWCustomGuardrailPolicyRequest
+                 * @return CreateAIGWCustomGuardrailPolicyOutcome
+                 */
+                CreateAIGWCustomGuardrailPolicyOutcome CreateAIGWCustomGuardrailPolicy(const Model::CreateAIGWCustomGuardrailPolicyRequest &request);
+                void CreateAIGWCustomGuardrailPolicyAsync(const Model::CreateAIGWCustomGuardrailPolicyRequest& request, const CreateAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAIGWCustomGuardrailPolicyOutcomeCallable CreateAIGWCustomGuardrailPolicyCallable(const Model::CreateAIGWCustomGuardrailPolicyRequest& request);
 
                 /**
                  *创建云原生网关AI服务来源
@@ -492,7 +565,7 @@ namespace TencentCloud
                 CreateCloudNativeAPIGatewayLLMModelAPIOutcomeCallable CreateCloudNativeAPIGatewayLLMModelAPICallable(const Model::CreateCloudNativeAPIGatewayLLMModelAPIRequest& request);
 
                 /**
-                 *创建 LLM 模型服务。同一网关下 Name 唯一。
+                 *创建指定网关实例内的 LLM 模型服务。同一网关下 Name 唯一。可为明确请求 gzip 的供应商选择是否关闭上游压缩协商。
                  * @param req CreateCloudNativeAPIGatewayLLMModelServiceRequest
                  * @return CreateCloudNativeAPIGatewayLLMModelServiceOutcome
                  */
@@ -529,13 +602,33 @@ namespace TencentCloud
 
                 /**
                  *创建消费者密钥。
-【消费者批量自动分配 API Key｜修改：内部并发/配额逻辑，字段不变】消费者密钥单条创建在事务中使用与批量预留相同的实例写锁，配额检查使用当前锁定读，避免单条与批量并发绕过配额。仍是单条创建；原 GenerateType、请求字段、既有配额错误语义及 Result.Success/ID 不变，不增加 ConsumerIds/ClientToken。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。
+【消费者批量自动分配 API Key｜修改：内部并发/配额逻辑，字段不变】消费者密钥单条创建在事务中使用与批量预留相同的实例写锁，配额检查使用当前锁定读，避免单条与批量并发绕过配额。仍是单条创建；原 GenerateType、请求字段、既有配额错误语义及 Result.Success/ID 不变，不增加 ConsumerIds/ClientToken。
                  * @param req CreateCloudNativeAPIGatewaySecretKeyRequest
                  * @return CreateCloudNativeAPIGatewaySecretKeyOutcome
                  */
                 CreateCloudNativeAPIGatewaySecretKeyOutcome CreateCloudNativeAPIGatewaySecretKey(const Model::CreateCloudNativeAPIGatewaySecretKeyRequest &request);
                 void CreateCloudNativeAPIGatewaySecretKeyAsync(const Model::CreateCloudNativeAPIGatewaySecretKeyRequest& request, const CreateCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCloudNativeAPIGatewaySecretKeyOutcomeCallable CreateCloudNativeAPIGatewaySecretKeyCallable(const Model::CreateCloudNativeAPIGatewaySecretKeyRequest& request);
+
+                /**
+                 *创建或编辑云原生网关访问控制
+                 * @param req CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest
+                 * @return CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome
+                 */
+                CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome CreateOrModifyCloudNativeAPIGatewayIPRestriction(const Model::CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest &request);
+                void CreateOrModifyCloudNativeAPIGatewayIPRestrictionAsync(const Model::CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest& request, const CreateOrModifyCloudNativeAPIGatewayIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcomeCallable CreateOrModifyCloudNativeAPIGatewayIPRestrictionCallable(const Model::CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest& request);
+
+                /**
+                 *先清理该策略的 Route 插件投影，再删除策略和绑定。清理失败返回 Result.Success=false，保留策略供排障后重试；不删除绑定的模型、MCP、Agent 或审核引擎服务。网关需满足最低版本 3.9.6，且已安装、启用并加载 cngw-ai-custom-guardrail。创建、修改、删除要求网关处于稳定 Running 状态，升级/回滚/撤销升级期间不能修改策略。
+
+本产品为 cngw，版本为 2023-04-18。公共参数及签名按云 API 规范配置；在 API Explorer 选择目标环境，示例正文仅为业务参数，中文诊断示例以公共参数 Language=zh-CN 为前提。响应业务字段统一位于 Response.Result，Response.RequestId 为云 API 请求 ID；HTTP 成功不代表 Result.Success=true。示例 ID、域名和鉴权值均为占位内容，须替换为实际值。
+                 * @param req DeleteAIGWCustomGuardrailPolicyRequest
+                 * @return DeleteAIGWCustomGuardrailPolicyOutcome
+                 */
+                DeleteAIGWCustomGuardrailPolicyOutcome DeleteAIGWCustomGuardrailPolicy(const Model::DeleteAIGWCustomGuardrailPolicyRequest &request);
+                void DeleteAIGWCustomGuardrailPolicyAsync(const Model::DeleteAIGWCustomGuardrailPolicyRequest& request, const DeleteAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAIGWCustomGuardrailPolicyOutcomeCallable DeleteAIGWCustomGuardrailPolicyCallable(const Model::DeleteAIGWCustomGuardrailPolicyRequest& request);
 
                 /**
                  *删除云原生网关AI服务来源
@@ -565,6 +658,15 @@ namespace TencentCloud
                 DeleteCloudNativeAPIGatewayConsumerGroupOutcome DeleteCloudNativeAPIGatewayConsumerGroup(const Model::DeleteCloudNativeAPIGatewayConsumerGroupRequest &request);
                 void DeleteCloudNativeAPIGatewayConsumerGroupAsync(const Model::DeleteCloudNativeAPIGatewayConsumerGroupRequest& request, const DeleteCloudNativeAPIGatewayConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCloudNativeAPIGatewayConsumerGroupOutcomeCallable DeleteCloudNativeAPIGatewayConsumerGroupCallable(const Model::DeleteCloudNativeAPIGatewayConsumerGroupRequest& request);
+
+                /**
+                 *删除云原生网关访问控制
+                 * @param req DeleteCloudNativeAPIGatewayIPRestrictionRequest
+                 * @return DeleteCloudNativeAPIGatewayIPRestrictionOutcome
+                 */
+                DeleteCloudNativeAPIGatewayIPRestrictionOutcome DeleteCloudNativeAPIGatewayIPRestriction(const Model::DeleteCloudNativeAPIGatewayIPRestrictionRequest &request);
+                void DeleteCloudNativeAPIGatewayIPRestrictionAsync(const Model::DeleteCloudNativeAPIGatewayIPRestrictionRequest& request, const DeleteCloudNativeAPIGatewayIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudNativeAPIGatewayIPRestrictionOutcomeCallable DeleteCloudNativeAPIGatewayIPRestrictionCallable(const Model::DeleteCloudNativeAPIGatewayIPRestrictionRequest& request);
 
                 /**
                  *删除 LLM 模型 API。
@@ -622,13 +724,68 @@ namespace TencentCloud
 
                 /**
                  *删除消费者密钥（被绑定时需先解绑）。
-【消费者批量自动分配 API Key｜修改：新增未完成批次保护，字段不变】目标密钥属于批次且对应项处于 Pending/Running/Reconciling 时，删除返回 OperationDenied.BatchKeyPending。完成后仍执行原绑定/依赖删除检查；原 GatewayId/SecretKeyId 不变，成功不新增业务 Result。删除已生成密钥不改写批次历史成功，后续批次明文读取返回逐项 ResourceNotFound.SecretKey。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。
+【消费者批量自动分配 API Key｜修改：新增未完成批次保护，字段不变】目标密钥属于批次且对应项处于 Pending/Running/Reconciling 时，删除返回 OperationDenied.BatchKeyPending。完成后仍执行原绑定/依赖删除检查；原 GatewayId/SecretKeyId 不变，成功不新增业务 Result。删除已生成密钥不改写批次历史成功，后续批次明文读取返回逐项 ResourceNotFound.SecretKey。
                  * @param req DeleteCloudNativeAPIGatewaySecretKeyRequest
                  * @return DeleteCloudNativeAPIGatewaySecretKeyOutcome
                  */
                 DeleteCloudNativeAPIGatewaySecretKeyOutcome DeleteCloudNativeAPIGatewaySecretKey(const Model::DeleteCloudNativeAPIGatewaySecretKeyRequest &request);
                 void DeleteCloudNativeAPIGatewaySecretKeyAsync(const Model::DeleteCloudNativeAPIGatewaySecretKeyRequest& request, const DeleteCloudNativeAPIGatewaySecretKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCloudNativeAPIGatewaySecretKeyOutcomeCallable DeleteCloudNativeAPIGatewaySecretKeyCallable(const Model::DeleteCloudNativeAPIGatewaySecretKeyRequest& request);
+
+                /**
+                 *按一种业务资源类型分页查询绑定候选及 Route 占用情况。编辑策略时传 PolicyId 排除自身占用，选择时同时检查 Supported 和 Occupied。当前屏蔽的 Dify/Custom Agent、Legacy SSE MCP 不进入可绑定列表。创建策略时使用 ResourceId，不使用 RouteIds。
+
+本产品为 cngw，版本为 2023-04-18。公共参数及签名按云 API 规范配置；在 API Explorer 选择目标环境，示例正文仅为业务参数，中文诊断示例以公共参数 Language=zh-CN 为前提。响应业务字段统一位于 Response.Result，Response.RequestId 为云 API 请求 ID；HTTP 成功不代表 Result.Success=true。示例 ID、域名和鉴权值均为占位内容，须替换为实际值。
+                 * @param req DescribeAIGWCustomGuardrailBindableResourcesRequest
+                 * @return DescribeAIGWCustomGuardrailBindableResourcesOutcome
+                 */
+                DescribeAIGWCustomGuardrailBindableResourcesOutcome DescribeAIGWCustomGuardrailBindableResources(const Model::DescribeAIGWCustomGuardrailBindableResourcesRequest &request);
+                void DescribeAIGWCustomGuardrailBindableResourcesAsync(const Model::DescribeAIGWCustomGuardrailBindableResourcesRequest& request, const DescribeAIGWCustomGuardrailBindableResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIGWCustomGuardrailBindableResourcesOutcomeCallable DescribeAIGWCustomGuardrailBindableResourcesCallable(const Model::DescribeAIGWCustomGuardrailBindableResourcesRequest& request);
+
+                /**
+                 *查询当前控制面支持的协议分类、业务资源类型、审核方向及限制。会校验网关版本和插件可用性。Limits 是能力说明，不等于创建/修改策略可配置的字段，也不是逐个数据面实例的实时状态。
+
+本产品为 cngw，版本为 2023-04-18。公共参数及签名按云 API 规范配置；在 API Explorer 选择目标环境，示例正文仅为业务参数，中文诊断示例以公共参数 Language=zh-CN 为前提。响应业务字段统一位于 Response.Result，Response.RequestId 为云 API 请求 ID；HTTP 成功不代表 Result.Success=true。示例 ID、域名和鉴权值均为占位内容，须替换为实际值。
+                 * @param req DescribeAIGWCustomGuardrailCapabilitiesRequest
+                 * @return DescribeAIGWCustomGuardrailCapabilitiesOutcome
+                 */
+                DescribeAIGWCustomGuardrailCapabilitiesOutcome DescribeAIGWCustomGuardrailCapabilities(const Model::DescribeAIGWCustomGuardrailCapabilitiesRequest &request);
+                void DescribeAIGWCustomGuardrailCapabilitiesAsync(const Model::DescribeAIGWCustomGuardrailCapabilitiesRequest& request, const DescribeAIGWCustomGuardrailCapabilitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIGWCustomGuardrailCapabilitiesOutcomeCallable DescribeAIGWCustomGuardrailCapabilitiesCallable(const Model::DescribeAIGWCustomGuardrailCapabilitiesRequest& request);
+
+                /**
+                 *从网关 RuntimeEventLog 对应 CLS 主题分页查询审核记录，调用前需开启日志投递。按时间倒序返回，查询时间入参为 Unix 秒，记录 Timestamp 为 Unix 毫秒；同一流式业务请求可有多次审核记录。当前查询无导出接口的 1000 条截断限制，使用 Offset/Limit 翻页。
+
+本产品为 cngw，版本为 2023-04-18。公共参数及签名按云 API 规范配置；在 API Explorer 选择目标环境，示例正文仅为业务参数，中文诊断示例以公共参数 Language=zh-CN 为前提。响应业务字段统一位于 Response.Result，Response.RequestId 为云 API 请求 ID；HTTP 成功不代表 Result.Success=true。示例 ID、域名和鉴权值均为占位内容，须替换为实际值。
+                 * @param req DescribeAIGWCustomGuardrailHitsRequest
+                 * @return DescribeAIGWCustomGuardrailHitsOutcome
+                 */
+                DescribeAIGWCustomGuardrailHitsOutcome DescribeAIGWCustomGuardrailHits(const Model::DescribeAIGWCustomGuardrailHitsRequest &request);
+                void DescribeAIGWCustomGuardrailHitsAsync(const Model::DescribeAIGWCustomGuardrailHitsRequest& request, const DescribeAIGWCustomGuardrailHitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIGWCustomGuardrailHitsOutcomeCallable DescribeAIGWCustomGuardrailHitsCallable(const Model::DescribeAIGWCustomGuardrailHitsRequest& request);
+
+                /**
+                 *查询已有策略、脱敏鉴权配置、资源绑定与配置同步状态。Result 本身就是策略对象，不是 Result.Policy。密钥不返回明文，编辑时省略 ApiKey 即可保留。
+
+本产品为 cngw，版本为 2023-04-18。公共参数及签名按云 API 规范配置；在 API Explorer 选择目标环境，示例正文仅为业务参数，中文诊断示例以公共参数 Language=zh-CN 为前提。响应业务字段统一位于 Response.Result，Response.RequestId 为云 API 请求 ID；HTTP 成功不代表 Result.Success=true。示例 ID、域名和鉴权值均为占位内容，须替换为实际值。
+                 * @param req DescribeAIGWCustomGuardrailPolicyRequest
+                 * @return DescribeAIGWCustomGuardrailPolicyOutcome
+                 */
+                DescribeAIGWCustomGuardrailPolicyOutcome DescribeAIGWCustomGuardrailPolicy(const Model::DescribeAIGWCustomGuardrailPolicyRequest &request);
+                void DescribeAIGWCustomGuardrailPolicyAsync(const Model::DescribeAIGWCustomGuardrailPolicyRequest& request, const DescribeAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIGWCustomGuardrailPolicyOutcomeCallable DescribeAIGWCustomGuardrailPolicyCallable(const Model::DescribeAIGWCustomGuardrailPolicyRequest& request);
+
+                /**
+                 *按网关分页查询策略；Limit 必填，范围 1～100，Offset 默认 0。支持名称/描述搜索及配置过滤；同项多值 OR，不同过滤项 AND。Result.DataList 为策略数组。
+
+本产品为 cngw，版本为 2023-04-18。公共参数及签名按云 API 规范配置；在 API Explorer 选择目标环境，示例正文仅为业务参数，中文诊断示例以公共参数 Language=zh-CN 为前提。响应业务字段统一位于 Response.Result，Response.RequestId 为云 API 请求 ID；HTTP 成功不代表 Result.Success=true。示例 ID、域名和鉴权值均为占位内容，须替换为实际值。
+                 * @param req DescribeAIGWCustomGuardrailPolicyListRequest
+                 * @return DescribeAIGWCustomGuardrailPolicyListOutcome
+                 */
+                DescribeAIGWCustomGuardrailPolicyListOutcome DescribeAIGWCustomGuardrailPolicyList(const Model::DescribeAIGWCustomGuardrailPolicyListRequest &request);
+                void DescribeAIGWCustomGuardrailPolicyListAsync(const Model::DescribeAIGWCustomGuardrailPolicyListRequest& request, const DescribeAIGWCustomGuardrailPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIGWCustomGuardrailPolicyListOutcomeCallable DescribeAIGWCustomGuardrailPolicyListCallable(const Model::DescribeAIGWCustomGuardrailPolicyListRequest& request);
 
                 /**
                  *查询云原生网关服务和路由列表
@@ -691,6 +848,15 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayConsumerGroupOutcome DescribeCloudNativeAPIGatewayConsumerGroup(const Model::DescribeCloudNativeAPIGatewayConsumerGroupRequest &request);
                 void DescribeCloudNativeAPIGatewayConsumerGroupAsync(const Model::DescribeCloudNativeAPIGatewayConsumerGroupRequest& request, const DescribeCloudNativeAPIGatewayConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudNativeAPIGatewayConsumerGroupOutcomeCallable DescribeCloudNativeAPIGatewayConsumerGroupCallable(const Model::DescribeCloudNativeAPIGatewayConsumerGroupRequest& request);
+
+                /**
+                 *查询云原生网关访问控制
+                 * @param req DescribeCloudNativeAPIGatewayIPRestrictionRequest
+                 * @return DescribeCloudNativeAPIGatewayIPRestrictionOutcome
+                 */
+                DescribeCloudNativeAPIGatewayIPRestrictionOutcome DescribeCloudNativeAPIGatewayIPRestriction(const Model::DescribeCloudNativeAPIGatewayIPRestrictionRequest &request);
+                void DescribeCloudNativeAPIGatewayIPRestrictionAsync(const Model::DescribeCloudNativeAPIGatewayIPRestrictionRequest& request, const DescribeCloudNativeAPIGatewayIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayIPRestrictionOutcomeCallable DescribeCloudNativeAPIGatewayIPRestrictionCallable(const Model::DescribeCloudNativeAPIGatewayIPRestrictionRequest& request);
 
                 /**
                  *查询单个 LLM 模型 API 详情。
@@ -856,8 +1022,8 @@ namespace TencentCloud
 
                 /**
                  *查询密钥详情（SecretValue 字段会被掩码）。
-普通版批量新建密钥的生成来源扩展：新页面按需 IncludeCreationInfo=true，省略/false 保持原响应字段。原 GenerateType 不新增 Batch；批量记录仍为 System。协议：https://iwiki.woa.com/p/4042678235。
-【消费者批量自动分配 API Key｜修改：可选参数及可选出参】增加可选 IncludeCreationInfo（默认 false）。仅 true 且 ResourceType=Consumer 时在原 Result 增加 CredentialGenerateType、CreationSource、BatchId 三个非必返字段；省略/false 保持旧响应。原字段、SecretValue 脱敏和单条详情结构不变。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。
+普通版批量新建密钥的生成来源扩展：新页面按需 IncludeCreationInfo=true，省略/false 保持原响应字段。原 GenerateType 不新增 Batch；批量记录仍为 System。
+【消费者批量自动分配 API Key｜修改：可选参数及可选出参】增加可选 IncludeCreationInfo（默认 false）。仅 true 且 ResourceType=Consumer 时在原 Result 增加 CredentialGenerateType、CreationSource、BatchId 三个非必返字段；省略/false 保持旧响应。原字段、SecretValue 脱敏和单条详情结构不变。
                  * @param req DescribeCloudNativeAPIGatewaySecretKeyRequest
                  * @return DescribeCloudNativeAPIGatewaySecretKeyOutcome
                  */
@@ -867,8 +1033,8 @@ namespace TencentCloud
 
                 /**
                  *查询密钥列表。
-普通版批量新建密钥的生成来源扩展：新页面按需 IncludeCreationInfo=true，省略/false 保持原响应字段。原 GenerateType 不新增 Batch；批量记录仍为 System。协议：https://iwiki.woa.com/p/4042678235。
-【消费者批量自动分配 API Key｜修改：可选参数、可选出参及筛选】增加可选 IncludeCreationInfo（默认 false）。仅 true 且 ResourceType=Consumer 时在原 Result.SecretKeys[] 增加 CredentialGenerateType、CreationSource、BatchId 三个非必返字段；Result.TotalCount/SecretKeys 结构不变。Filters 新增 CredentialGenerateType、CreationSource，先过滤后计数分页，与是否返回来源字段独立；保留原 GenerateType 枚举和原分页上限。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。
+普通版批量新建密钥的生成来源扩展：新页面按需 IncludeCreationInfo=true，省略/false 保持原响应字段。原 GenerateType 不新增 Batch；批量记录仍为 System。
+【消费者批量自动分配 API Key｜修改：可选参数、可选出参及筛选】增加可选 IncludeCreationInfo（默认 false）。仅 true 且 ResourceType=Consumer 时在原 Result.SecretKeys[] 增加 CredentialGenerateType、CreationSource、BatchId 三个非必返字段；Result.TotalCount/SecretKeys 结构不变。Filters 新增 CredentialGenerateType、CreationSource，先过滤后计数分页，与是否返回来源字段独立；保留原 GenerateType 枚举和原分页上限。
                  * @param req DescribeCloudNativeAPIGatewaySecretKeyListRequest
                  * @return DescribeCloudNativeAPIGatewaySecretKeyListOutcome
                  */
@@ -884,6 +1050,30 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewaySecretKeyValueOutcome DescribeCloudNativeAPIGatewaySecretKeyValue(const Model::DescribeCloudNativeAPIGatewaySecretKeyValueRequest &request);
                 void DescribeCloudNativeAPIGatewaySecretKeyValueAsync(const Model::DescribeCloudNativeAPIGatewaySecretKeyValueRequest& request, const DescribeCloudNativeAPIGatewaySecretKeyValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudNativeAPIGatewaySecretKeyValueOutcomeCallable DescribeCloudNativeAPIGatewaySecretKeyValueCallable(const Model::DescribeCloudNativeAPIGatewaySecretKeyValueRequest& request);
+
+                /**
+                 *从 RuntimeEventLog 对应 CLS 主题同步导出审核记录，需先开启投递。单次最多 1000 条，可选择 csv（默认）或 json；Result.Content 是 Base64 编码文件内容，不是下载链接。Truncated=true 时可能还有更多记录，请缩小时间范围分别导出。
+
+本产品为 cngw，版本为 2023-04-18。公共参数及签名按云 API 规范配置；在 API Explorer 选择目标环境，示例正文仅为业务参数，中文诊断示例以公共参数 Language=zh-CN 为前提。响应业务字段统一位于 Response.Result，Response.RequestId 为云 API 请求 ID；HTTP 成功不代表 Result.Success=true。示例 ID、域名和鉴权值均为占位内容，须替换为实际值。
+                 * @param req ExportAIGWCustomGuardrailHitsRequest
+                 * @return ExportAIGWCustomGuardrailHitsOutcome
+                 */
+                ExportAIGWCustomGuardrailHitsOutcome ExportAIGWCustomGuardrailHits(const Model::ExportAIGWCustomGuardrailHitsRequest &request);
+                void ExportAIGWCustomGuardrailHitsAsync(const Model::ExportAIGWCustomGuardrailHitsRequest& request, const ExportAIGWCustomGuardrailHitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportAIGWCustomGuardrailHitsOutcomeCallable ExportAIGWCustomGuardrailHitsCallable(const Model::ExportAIGWCustomGuardrailHitsRequest& request);
+
+                /**
+                 *局部修改已有策略并重新同步。省略字段保留原值，显式 false/0/[] 与省略不同；数组按整体替换，Scope 传入时替换完整范围。切换 AddressMode 时会自动清除未显式传入的另一模式地址字段；AuthType=none 会清除已有密钥并默认清空 HeaderName。请检查 Result.Success 和 FailedResources。网关需满足最低版本 3.9.6，且已安装、启用并加载 cngw-ai-custom-guardrail。创建、修改、删除要求网关处于稳定 Running 状态，升级/回滚/撤销升级期间不能修改策略。
+
+本产品为 cngw，版本为 2023-04-18。公共参数及签名按云 API 规范配置；在 API Explorer 选择目标环境，示例正文仅为业务参数，中文诊断示例以公共参数 Language=zh-CN 为前提。响应业务字段统一位于 Response.Result，Response.RequestId 为云 API 请求 ID；HTTP 成功不代表 Result.Success=true。示例 ID、域名和鉴权值均为占位内容，须替换为实际值。
+
+输入约束：新配置只接受 field_mapping，不再默认为 standard_v2。创建时鉴权和检测行为必须完整填写；修改为 PATCH，省略保留，显式空值不补默认值。存量 standard_v2 策略仍可查询、删除或直接停用；修改其判定配置或重新启用前需迁移到 field_mapping。条件必填由后端按完整配置校验，非法配置不写库、不下发。
+                 * @param req ModifyAIGWCustomGuardrailPolicyRequest
+                 * @return ModifyAIGWCustomGuardrailPolicyOutcome
+                 */
+                ModifyAIGWCustomGuardrailPolicyOutcome ModifyAIGWCustomGuardrailPolicy(const Model::ModifyAIGWCustomGuardrailPolicyRequest &request);
+                void ModifyAIGWCustomGuardrailPolicyAsync(const Model::ModifyAIGWCustomGuardrailPolicyRequest& request, const ModifyAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAIGWCustomGuardrailPolicyOutcomeCallable ModifyAIGWCustomGuardrailPolicyCallable(const Model::ModifyAIGWCustomGuardrailPolicyRequest& request);
 
                 /**
                  *修改云原生网关AI服务来源
@@ -1013,7 +1203,7 @@ namespace TencentCloud
 
                 /**
                  *修改AI网关密钥
-【消费者批量自动分配 API Key｜修改：新增未完成批次保护，字段不变】目标密钥属于批次且对应项处于 Pending/Running/Reconciling 时，编辑返回 OperationDenied.BatchKeyPending，提示等待批次完成。其他情况继续原编辑校验和行为；原 GatewayId/SecretKeyId/Name/Description 不变，成功不新增业务 Result。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。
+【消费者批量自动分配 API Key｜修改：新增未完成批次保护，字段不变】目标密钥属于批次且对应项处于 Pending/Running/Reconciling 时，编辑返回 OperationDenied.BatchKeyPending，提示等待批次完成。其他情况继续原编辑校验和行为；原 GatewayId/SecretKeyId/Name/Description 不变，成功不新增业务 Result。
                  * @param req ModifyCloudNativeAPIGatewaySecretKeyRequest
                  * @return ModifyCloudNativeAPIGatewaySecretKeyOutcome
                  */
@@ -1050,7 +1240,7 @@ namespace TencentCloud
 
                 /**
                  *解绑密钥
-【消费者批量自动分配 API Key｜修改：新增未完成批次保护，字段不变】目标密钥属于批次且对应项处于 Pending/Running/Reconciling 时，解绑返回 OperationDenied.BatchKeyPending。完成后继续原解绑；原 GatewayId/SecretKeyId/ResourceType/ResourceIds 不变，成功不新增业务 Result。解绑不改写批次历史成功，后续批次明文读取返回逐项 OperationDenied.BindingChanged。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。
+【消费者批量自动分配 API Key｜修改：新增未完成批次保护，字段不变】目标密钥属于批次且对应项处于 Pending/Running/Reconciling 时，解绑返回 OperationDenied.BatchKeyPending。完成后继续原解绑；原 GatewayId/SecretKeyId/ResourceType/ResourceIds 不变，成功不新增业务 Result。解绑不改写批次历史成功，后续批次明文读取返回逐项 OperationDenied.BindingChanged。
                  * @param req UnbindCloudNativeAPIGatewaySecretKeyRequest
                  * @return UnbindCloudNativeAPIGatewaySecretKeyOutcome
                  */

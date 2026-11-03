@@ -29,6 +29,7 @@
 #include <tencentcloud/csip/v20221121/model/ConditionMatch.h>
 #include <tencentcloud/csip/v20221121/model/EDRRuleTagItem.h>
 #include <tencentcloud/csip/v20221121/model/RuleContentFileOperation.h>
+#include <tencentcloud/csip/v20221121/model/RuleContentK8sAPI.h>
 
 
 namespace TencentCloud
@@ -136,15 +137,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取<p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network</p>
-                     * @return ContentType <p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network</p>
+                     * 获取<p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network, k8s_api-K8s API/K8s API</p><p>枚举值：</p><ul><li>md5-文件MD5： File MD5</li></ul>
+                     * @return ContentType <p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network, k8s_api-K8s API/K8s API</p><p>枚举值：</p><ul><li>md5-文件MD5： File MD5</li></ul>
                      * 
                      */
                     std::string GetContentType() const;
 
                     /**
-                     * 设置<p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network</p>
-                     * @param _contentType <p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network</p>
+                     * 设置<p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network, k8s_api-K8s API/K8s API</p><p>枚举值：</p><ul><li>md5-文件MD5： File MD5</li></ul>
+                     * @param _contentType <p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network, k8s_api-K8s API/K8s API</p><p>枚举值：</p><ul><li>md5-文件MD5： File MD5</li></ul>
                      * 
                      */
                     void SetContentType(const std::string& _contentType);
@@ -849,6 +850,27 @@ namespace TencentCloud
                      */
                     bool FileOperationRulesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>K8s API 规则，ContentType=k8s_api 的自定义规则填充</p>
+                     * @return K8sApiRule <p>K8s API 规则，ContentType=k8s_api 的自定义规则填充</p>
+                     * 
+                     */
+                    RuleContentK8sAPI GetK8sApiRule() const;
+
+                    /**
+                     * 设置<p>K8s API 规则，ContentType=k8s_api 的自定义规则填充</p>
+                     * @param _k8sApiRule <p>K8s API 规则，ContentType=k8s_api 的自定义规则填充</p>
+                     * 
+                     */
+                    void SetK8sApiRule(const RuleContentK8sAPI& _k8sApiRule);
+
+                    /**
+                     * 判断参数 K8sApiRule 是否已赋值
+                     * @return K8sApiRule 是否已赋值
+                     * 
+                     */
+                    bool K8sApiRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -876,7 +898,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * <p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network</p>
+                     * <p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network, k8s_api-K8s API/K8s API</p><p>枚举值：</p><ul><li>md5-文件MD5： File MD5</li></ul>
                      */
                     std::string m_contentType;
                     bool m_contentTypeHasBeenSet;
@@ -1078,6 +1100,12 @@ namespace TencentCloud
                      */
                     RuleContentFileOperation m_fileOperationRules;
                     bool m_fileOperationRulesHasBeenSet;
+
+                    /**
+                     * <p>K8s API 规则，ContentType=k8s_api 的自定义规则填充</p>
+                     */
+                    RuleContentK8sAPI m_k8sApiRule;
+                    bool m_k8sApiRuleHasBeenSet;
 
                 };
             }

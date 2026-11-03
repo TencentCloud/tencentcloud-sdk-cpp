@@ -62,7 +62,16 @@ ImageAssetInfo::ImageAssetInfo() :
     m_scanFailReasonHasBeenSet(false),
     m_scanSolutionHasBeenSet(false),
     m_regionInfoHasBeenSet(false),
-    m_scanTaskIdHasBeenSet(false)
+    m_scanTaskIdHasBeenSet(false),
+    m_cICDNameHasBeenSet(false),
+    m_cICDIdHasBeenSet(false),
+    m_isCICDHasBeenSet(false),
+    m_secretFileCntHasBeenSet(false),
+    m_buildRiskCntHasBeenSet(false),
+    m_highLevelSecretFileCntHasBeenSet(false),
+    m_criticalLevelSecretFileCntHasBeenSet(false),
+    m_highLevelBuildRiskCntHasBeenSet(false),
+    m_criticalLevelBuildRiskCntHasBeenSet(false)
 {
 }
 
@@ -498,6 +507,96 @@ CoreInternalOutcome ImageAssetInfo::Deserialize(const rapidjson::Value &value)
         m_scanTaskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CICDName") && !value["CICDName"].IsNull())
+    {
+        if (!value["CICDName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssetInfo.CICDName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cICDName = string(value["CICDName"].GetString());
+        m_cICDNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CICDId") && !value["CICDId"].IsNull())
+    {
+        if (!value["CICDId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssetInfo.CICDId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cICDId = value["CICDId"].GetUint64();
+        m_cICDIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsCICD") && !value["IsCICD"].IsNull())
+    {
+        if (!value["IsCICD"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssetInfo.IsCICD` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCICD = value["IsCICD"].GetUint64();
+        m_isCICDHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecretFileCnt") && !value["SecretFileCnt"].IsNull())
+    {
+        if (!value["SecretFileCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssetInfo.SecretFileCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretFileCnt = value["SecretFileCnt"].GetUint64();
+        m_secretFileCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("BuildRiskCnt") && !value["BuildRiskCnt"].IsNull())
+    {
+        if (!value["BuildRiskCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssetInfo.BuildRiskCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_buildRiskCnt = value["BuildRiskCnt"].GetUint64();
+        m_buildRiskCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("HighLevelSecretFileCnt") && !value["HighLevelSecretFileCnt"].IsNull())
+    {
+        if (!value["HighLevelSecretFileCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssetInfo.HighLevelSecretFileCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_highLevelSecretFileCnt = value["HighLevelSecretFileCnt"].GetUint64();
+        m_highLevelSecretFileCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("CriticalLevelSecretFileCnt") && !value["CriticalLevelSecretFileCnt"].IsNull())
+    {
+        if (!value["CriticalLevelSecretFileCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssetInfo.CriticalLevelSecretFileCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_criticalLevelSecretFileCnt = value["CriticalLevelSecretFileCnt"].GetUint64();
+        m_criticalLevelSecretFileCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("HighLevelBuildRiskCnt") && !value["HighLevelBuildRiskCnt"].IsNull())
+    {
+        if (!value["HighLevelBuildRiskCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssetInfo.HighLevelBuildRiskCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_highLevelBuildRiskCnt = value["HighLevelBuildRiskCnt"].GetUint64();
+        m_highLevelBuildRiskCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("CriticalLevelBuildRiskCnt") && !value["CriticalLevelBuildRiskCnt"].IsNull())
+    {
+        if (!value["CriticalLevelBuildRiskCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssetInfo.CriticalLevelBuildRiskCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_criticalLevelBuildRiskCnt = value["CriticalLevelBuildRiskCnt"].GetUint64();
+        m_criticalLevelBuildRiskCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -840,6 +939,78 @@ void ImageAssetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ScanTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scanTaskId, allocator);
+    }
+
+    if (m_cICDNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CICDName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cICDName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cICDIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CICDId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cICDId, allocator);
+    }
+
+    if (m_isCICDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCICD";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCICD, allocator);
+    }
+
+    if (m_secretFileCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretFileCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_secretFileCnt, allocator);
+    }
+
+    if (m_buildRiskCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildRiskCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_buildRiskCnt, allocator);
+    }
+
+    if (m_highLevelSecretFileCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighLevelSecretFileCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_highLevelSecretFileCnt, allocator);
+    }
+
+    if (m_criticalLevelSecretFileCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CriticalLevelSecretFileCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_criticalLevelSecretFileCnt, allocator);
+    }
+
+    if (m_highLevelBuildRiskCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighLevelBuildRiskCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_highLevelBuildRiskCnt, allocator);
+    }
+
+    if (m_criticalLevelBuildRiskCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CriticalLevelBuildRiskCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_criticalLevelBuildRiskCnt, allocator);
     }
 
 }
@@ -1515,5 +1686,149 @@ void ImageAssetInfo::SetScanTaskId(const uint64_t& _scanTaskId)
 bool ImageAssetInfo::ScanTaskIdHasBeenSet() const
 {
     return m_scanTaskIdHasBeenSet;
+}
+
+string ImageAssetInfo::GetCICDName() const
+{
+    return m_cICDName;
+}
+
+void ImageAssetInfo::SetCICDName(const string& _cICDName)
+{
+    m_cICDName = _cICDName;
+    m_cICDNameHasBeenSet = true;
+}
+
+bool ImageAssetInfo::CICDNameHasBeenSet() const
+{
+    return m_cICDNameHasBeenSet;
+}
+
+uint64_t ImageAssetInfo::GetCICDId() const
+{
+    return m_cICDId;
+}
+
+void ImageAssetInfo::SetCICDId(const uint64_t& _cICDId)
+{
+    m_cICDId = _cICDId;
+    m_cICDIdHasBeenSet = true;
+}
+
+bool ImageAssetInfo::CICDIdHasBeenSet() const
+{
+    return m_cICDIdHasBeenSet;
+}
+
+uint64_t ImageAssetInfo::GetIsCICD() const
+{
+    return m_isCICD;
+}
+
+void ImageAssetInfo::SetIsCICD(const uint64_t& _isCICD)
+{
+    m_isCICD = _isCICD;
+    m_isCICDHasBeenSet = true;
+}
+
+bool ImageAssetInfo::IsCICDHasBeenSet() const
+{
+    return m_isCICDHasBeenSet;
+}
+
+uint64_t ImageAssetInfo::GetSecretFileCnt() const
+{
+    return m_secretFileCnt;
+}
+
+void ImageAssetInfo::SetSecretFileCnt(const uint64_t& _secretFileCnt)
+{
+    m_secretFileCnt = _secretFileCnt;
+    m_secretFileCntHasBeenSet = true;
+}
+
+bool ImageAssetInfo::SecretFileCntHasBeenSet() const
+{
+    return m_secretFileCntHasBeenSet;
+}
+
+uint64_t ImageAssetInfo::GetBuildRiskCnt() const
+{
+    return m_buildRiskCnt;
+}
+
+void ImageAssetInfo::SetBuildRiskCnt(const uint64_t& _buildRiskCnt)
+{
+    m_buildRiskCnt = _buildRiskCnt;
+    m_buildRiskCntHasBeenSet = true;
+}
+
+bool ImageAssetInfo::BuildRiskCntHasBeenSet() const
+{
+    return m_buildRiskCntHasBeenSet;
+}
+
+uint64_t ImageAssetInfo::GetHighLevelSecretFileCnt() const
+{
+    return m_highLevelSecretFileCnt;
+}
+
+void ImageAssetInfo::SetHighLevelSecretFileCnt(const uint64_t& _highLevelSecretFileCnt)
+{
+    m_highLevelSecretFileCnt = _highLevelSecretFileCnt;
+    m_highLevelSecretFileCntHasBeenSet = true;
+}
+
+bool ImageAssetInfo::HighLevelSecretFileCntHasBeenSet() const
+{
+    return m_highLevelSecretFileCntHasBeenSet;
+}
+
+uint64_t ImageAssetInfo::GetCriticalLevelSecretFileCnt() const
+{
+    return m_criticalLevelSecretFileCnt;
+}
+
+void ImageAssetInfo::SetCriticalLevelSecretFileCnt(const uint64_t& _criticalLevelSecretFileCnt)
+{
+    m_criticalLevelSecretFileCnt = _criticalLevelSecretFileCnt;
+    m_criticalLevelSecretFileCntHasBeenSet = true;
+}
+
+bool ImageAssetInfo::CriticalLevelSecretFileCntHasBeenSet() const
+{
+    return m_criticalLevelSecretFileCntHasBeenSet;
+}
+
+uint64_t ImageAssetInfo::GetHighLevelBuildRiskCnt() const
+{
+    return m_highLevelBuildRiskCnt;
+}
+
+void ImageAssetInfo::SetHighLevelBuildRiskCnt(const uint64_t& _highLevelBuildRiskCnt)
+{
+    m_highLevelBuildRiskCnt = _highLevelBuildRiskCnt;
+    m_highLevelBuildRiskCntHasBeenSet = true;
+}
+
+bool ImageAssetInfo::HighLevelBuildRiskCntHasBeenSet() const
+{
+    return m_highLevelBuildRiskCntHasBeenSet;
+}
+
+uint64_t ImageAssetInfo::GetCriticalLevelBuildRiskCnt() const
+{
+    return m_criticalLevelBuildRiskCnt;
+}
+
+void ImageAssetInfo::SetCriticalLevelBuildRiskCnt(const uint64_t& _criticalLevelBuildRiskCnt)
+{
+    m_criticalLevelBuildRiskCnt = _criticalLevelBuildRiskCnt;
+    m_criticalLevelBuildRiskCntHasBeenSet = true;
+}
+
+bool ImageAssetInfo::CriticalLevelBuildRiskCntHasBeenSet() const
+{
+    return m_criticalLevelBuildRiskCntHasBeenSet;
 }
 

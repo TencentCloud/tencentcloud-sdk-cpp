@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的实例总数。
-                     * @return TotalCnt 符合条件的实例总数。
+                     * 获取<p>符合条件的实例总数。</p>
+                     * @return TotalCnt <p>符合条件的实例总数。</p>
                      * 
                      */
                     int64_t GetTotalCnt() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCntHasBeenSet() const;
 
                     /**
-                     * 获取集群实例列表
-                     * @return InstancesList 集群实例列表
+                     * 获取<p>集群实例列表</p>
+                     * @return InstancesList <p>集群实例列表</p>
                      * 
                      */
                     std::vector<EmrListInstance> GetInstancesList() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的实例总数。
+                     * <p>符合条件的实例总数。</p>
                      */
                     int64_t m_totalCnt;
                     bool m_totalCntHasBeenSet;
 
                     /**
-                     * 集群实例列表
+                     * <p>集群实例列表</p>
                      */
                     std::vector<EmrListInstance> m_instancesList;
                     bool m_instancesListHasBeenSet;

@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SnapshotBasedHasBeenSet() const;
 
                     /**
-                     * 获取<p>快照ID</p>
-                     * @return SnapshotId <p>快照ID</p>
+                     * 获取<p>快照ID，首次查询时不传，后续传入上一次 ListLocations 响应返回的 SnapshotId</p>
+                     * @return SnapshotId <p>快照ID，首次查询时不传，后续传入上一次 ListLocations 响应返回的 SnapshotId</p>
                      * 
                      */
                     std::string GetSnapshotId() const;
 
                     /**
-                     * 设置<p>快照ID</p>
-                     * @param _snapshotId <p>快照ID</p>
+                     * 设置<p>快照ID，首次查询时不传，后续传入上一次 ListLocations 响应返回的 SnapshotId</p>
+                     * @param _snapshotId <p>快照ID，首次查询时不传，后续传入上一次 ListLocations 响应返回的 SnapshotId</p>
                      * 
                      */
                     void SetSnapshotId(const std::string& _snapshotId);
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_snapshotBasedHasBeenSet;
 
                     /**
-                     * <p>快照ID</p>
+                     * <p>快照ID，首次查询时不传，后续传入上一次 ListLocations 响应返回的 SnapshotId</p>
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;

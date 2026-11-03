@@ -55,7 +55,8 @@ ModifyEDRRuleRequest::ModifyEDRRuleRequest() :
     m_excludeClusterIDsWithAppIdHasBeenSet(false),
     m_imageIDsWithAppIdHasBeenSet(false),
     m_conditionMatchesHasBeenSet(false),
-    m_fileOperationRulesHasBeenSet(false)
+    m_fileOperationRulesHasBeenSet(false),
+    m_k8sApiRuleHasBeenSet(false)
 {
 }
 
@@ -424,6 +425,15 @@ string ModifyEDRRuleRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fileOperationRules.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_k8sApiRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "K8sApiRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_k8sApiRule.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -960,6 +970,22 @@ void ModifyEDRRuleRequest::SetFileOperationRules(const RuleContentFileOperation&
 bool ModifyEDRRuleRequest::FileOperationRulesHasBeenSet() const
 {
     return m_fileOperationRulesHasBeenSet;
+}
+
+RuleContentK8sAPI ModifyEDRRuleRequest::GetK8sApiRule() const
+{
+    return m_k8sApiRule;
+}
+
+void ModifyEDRRuleRequest::SetK8sApiRule(const RuleContentK8sAPI& _k8sApiRule)
+{
+    m_k8sApiRule = _k8sApiRule;
+    m_k8sApiRuleHasBeenSet = true;
+}
+
+bool ModifyEDRRuleRequest::K8sApiRuleHasBeenSet() const
+{
+    return m_k8sApiRuleHasBeenSet;
 }
 
 

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/databuddy/v20260715/model/LocationUpdate.h>
+#include <tencentcloud/databuddy/v20260715/model/CosEventSubscription.h>
 
 
 namespace TencentCloud
@@ -65,15 +66,15 @@ namespace TencentCloud
                     bool LocationNameHasBeenSet() const;
 
                     /**
-                     * 获取更新location的操作列表，必填
-                     * @return Updates 更新location的操作列表，必填
+                     * 获取更新location的操作列表，必填。通过 UpdateType 指定操作类型，支持的 UpdateType：modify_location_name（修改名称）、modify_location_comment（修改描述）、modify_location_properties（修改属性）、modify_file_event_subscription（操作COS文件事件订阅开关）
+                     * @return Updates 更新location的操作列表，必填。通过 UpdateType 指定操作类型，支持的 UpdateType：modify_location_name（修改名称）、modify_location_comment（修改描述）、modify_location_properties（修改属性）、modify_file_event_subscription（操作COS文件事件订阅开关）
                      * 
                      */
                     std::vector<LocationUpdate> GetUpdates() const;
 
                     /**
-                     * 设置更新location的操作列表，必填
-                     * @param _updates 更新location的操作列表，必填
+                     * 设置更新location的操作列表，必填。通过 UpdateType 指定操作类型，支持的 UpdateType：modify_location_name（修改名称）、modify_location_comment（修改描述）、modify_location_properties（修改属性）、modify_file_event_subscription（操作COS文件事件订阅开关）
+                     * @param _updates 更新location的操作列表，必填。通过 UpdateType 指定操作类型，支持的 UpdateType：modify_location_name（修改名称）、modify_location_comment（修改描述）、modify_location_properties（修改属性）、modify_file_event_subscription（操作COS文件事件订阅开关）
                      * 
                      */
                     void SetUpdates(const std::vector<LocationUpdate>& _updates);
@@ -106,6 +107,27 @@ namespace TencentCloud
                      */
                     bool WorkspaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取COS 文件事件订阅配置，可选；不设置时不改动现有订阅（仅 COS 类型 Location 生效）。设置时：先按新配置重新订阅（同桶覆盖写，幂等），再修改 Location 元数据。与 Updates 中的 modify_file_event_subscription 配合表达开关操作：Updates 含该类型且本字段有值=开启/编辑订阅；Updates 含该类型且本字段未设置=关闭订阅；Updates 不含该类型时维持默认语义（不设置不动、设置覆盖）
+                     * @return FileEventSubscription COS 文件事件订阅配置，可选；不设置时不改动现有订阅（仅 COS 类型 Location 生效）。设置时：先按新配置重新订阅（同桶覆盖写，幂等），再修改 Location 元数据。与 Updates 中的 modify_file_event_subscription 配合表达开关操作：Updates 含该类型且本字段有值=开启/编辑订阅；Updates 含该类型且本字段未设置=关闭订阅；Updates 不含该类型时维持默认语义（不设置不动、设置覆盖）
+                     * 
+                     */
+                    CosEventSubscription GetFileEventSubscription() const;
+
+                    /**
+                     * 设置COS 文件事件订阅配置，可选；不设置时不改动现有订阅（仅 COS 类型 Location 生效）。设置时：先按新配置重新订阅（同桶覆盖写，幂等），再修改 Location 元数据。与 Updates 中的 modify_file_event_subscription 配合表达开关操作：Updates 含该类型且本字段有值=开启/编辑订阅；Updates 含该类型且本字段未设置=关闭订阅；Updates 不含该类型时维持默认语义（不设置不动、设置覆盖）
+                     * @param _fileEventSubscription COS 文件事件订阅配置，可选；不设置时不改动现有订阅（仅 COS 类型 Location 生效）。设置时：先按新配置重新订阅（同桶覆盖写，幂等），再修改 Location 元数据。与 Updates 中的 modify_file_event_subscription 配合表达开关操作：Updates 含该类型且本字段有值=开启/编辑订阅；Updates 含该类型且本字段未设置=关闭订阅；Updates 不含该类型时维持默认语义（不设置不动、设置覆盖）
+                     * 
+                     */
+                    void SetFileEventSubscription(const CosEventSubscription& _fileEventSubscription);
+
+                    /**
+                     * 判断参数 FileEventSubscription 是否已赋值
+                     * @return FileEventSubscription 是否已赋值
+                     * 
+                     */
+                    bool FileEventSubscriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,7 +137,7 @@ namespace TencentCloud
                     bool m_locationNameHasBeenSet;
 
                     /**
-                     * 更新location的操作列表，必填
+                     * 更新location的操作列表，必填。通过 UpdateType 指定操作类型，支持的 UpdateType：modify_location_name（修改名称）、modify_location_comment（修改描述）、modify_location_properties（修改属性）、modify_file_event_subscription（操作COS文件事件订阅开关）
                      */
                     std::vector<LocationUpdate> m_updates;
                     bool m_updatesHasBeenSet;
@@ -125,6 +147,12 @@ namespace TencentCloud
                      */
                     std::string m_workspaceId;
                     bool m_workspaceIdHasBeenSet;
+
+                    /**
+                     * COS 文件事件订阅配置，可选；不设置时不改动现有订阅（仅 COS 类型 Location 生效）。设置时：先按新配置重新订阅（同桶覆盖写，幂等），再修改 Location 元数据。与 Updates 中的 modify_file_event_subscription 配合表达开关操作：Updates 含该类型且本字段有值=开启/编辑订阅；Updates 含该类型且本字段未设置=关闭订阅；Updates 不含该类型时维持默认语义（不设置不动、设置覆盖）
+                     */
+                    CosEventSubscription m_fileEventSubscription;
+                    bool m_fileEventSubscriptionHasBeenSet;
 
                 };
             }

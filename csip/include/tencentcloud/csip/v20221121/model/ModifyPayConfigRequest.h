@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/HostAutoScaleConfig.h>
+#include <tencentcloud/csip/v20221121/model/ContainerAutoScaleConfig.h>
 
 
 namespace TencentCloud
@@ -44,19 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主机安全模块自动扩容配置
-补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段
-                     * @return HostConfig 主机安全模块自动扩容配置
-补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段
+                     * 获取<p>主机安全模块自动扩容配置<br>补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段</p>
+                     * @return HostConfig <p>主机安全模块自动扩容配置<br>补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段</p>
                      * 
                      */
                     HostAutoScaleConfig GetHostConfig() const;
 
                     /**
-                     * 设置主机安全模块自动扩容配置
-补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段
-                     * @param _hostConfig 主机安全模块自动扩容配置
-补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段
+                     * 设置<p>主机安全模块自动扩容配置<br>补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段</p>
+                     * @param _hostConfig <p>主机安全模块自动扩容配置<br>补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段</p>
                      * 
                      */
                     void SetHostConfig(const HostAutoScaleConfig& _hostConfig);
@@ -68,14 +65,40 @@ namespace TencentCloud
                      */
                     bool HostConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>容器安全模块自动扩容配置，不传则不修改</p>
+                     * @return ContainerConfig <p>容器安全模块自动扩容配置，不传则不修改</p>
+                     * 
+                     */
+                    ContainerAutoScaleConfig GetContainerConfig() const;
+
+                    /**
+                     * 设置<p>容器安全模块自动扩容配置，不传则不修改</p>
+                     * @param _containerConfig <p>容器安全模块自动扩容配置，不传则不修改</p>
+                     * 
+                     */
+                    void SetContainerConfig(const ContainerAutoScaleConfig& _containerConfig);
+
+                    /**
+                     * 判断参数 ContainerConfig 是否已赋值
+                     * @return ContainerConfig 是否已赋值
+                     * 
+                     */
+                    bool ContainerConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主机安全模块自动扩容配置
-补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段
+                     * <p>主机安全模块自动扩容配置<br>补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段</p>
                      */
                     HostAutoScaleConfig m_hostConfig;
                     bool m_hostConfigHasBeenSet;
+
+                    /**
+                     * <p>容器安全模块自动扩容配置，不传则不修改</p>
+                     */
+                    ContainerAutoScaleConfig m_containerConfig;
+                    bool m_containerConfigHasBeenSet;
 
                 };
             }

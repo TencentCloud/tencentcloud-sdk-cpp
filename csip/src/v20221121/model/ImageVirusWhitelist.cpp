@@ -30,7 +30,8 @@ ImageVirusWhitelist::ImageVirusWhitelist() :
     m_remarkHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_md5HasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome ImageVirusWhitelist::Deserialize(const rapidjson::Value &val
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("Md5") && !value["Md5"].IsNull())
+    {
+        if (!value["Md5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageVirusWhitelist.Md5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_md5 = string(value["Md5"].GetString());
+        m_md5HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void ImageVirusWhitelist::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_md5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Md5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void ImageVirusWhitelist::SetName(const string& _name)
 bool ImageVirusWhitelist::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string ImageVirusWhitelist::GetMd5() const
+{
+    return m_md5;
+}
+
+void ImageVirusWhitelist::SetMd5(const string& _md5)
+{
+    m_md5 = _md5;
+    m_md5HasBeenSet = true;
+}
+
+bool ImageVirusWhitelist::Md5HasBeenSet() const
+{
+    return m_md5HasBeenSet;
 }
 

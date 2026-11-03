@@ -910,6 +910,48 @@ namespace TencentCloud
                      */
                     bool TagModifyInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群普通节点数</p>
+                     * @return NormalNodeCount <p>集群普通节点数</p>
+                     * 
+                     */
+                    uint64_t GetNormalNodeCount() const;
+
+                    /**
+                     * 设置<p>集群普通节点数</p>
+                     * @param _normalNodeCount <p>集群普通节点数</p>
+                     * 
+                     */
+                    void SetNormalNodeCount(const uint64_t& _normalNodeCount);
+
+                    /**
+                     * 判断参数 NormalNodeCount 是否已赋值
+                     * @return NormalNodeCount 是否已赋值
+                     * 
+                     */
+                    bool NormalNodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>审计日志开关失败信息，只在 AuditLogSwitchStatus 为 2（开启失败）或 3（关闭失败）时非空。</p>
+                     * @return AuditLogFailedInfo <p>审计日志开关失败信息，只在 AuditLogSwitchStatus 为 2（开启失败）或 3（关闭失败）时非空。</p>
+                     * 
+                     */
+                    std::string GetAuditLogFailedInfo() const;
+
+                    /**
+                     * 设置<p>审计日志开关失败信息，只在 AuditLogSwitchStatus 为 2（开启失败）或 3（关闭失败）时非空。</p>
+                     * @param _auditLogFailedInfo <p>审计日志开关失败信息，只在 AuditLogSwitchStatus 为 2（开启失败）或 3（关闭失败）时非空。</p>
+                     * 
+                     */
+                    void SetAuditLogFailedInfo(const std::string& _auditLogFailedInfo);
+
+                    /**
+                     * 判断参数 AuditLogFailedInfo 是否已赋值
+                     * @return AuditLogFailedInfo 是否已赋值
+                     * 
+                     */
+                    bool AuditLogFailedInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1157,6 +1199,18 @@ namespace TencentCloud
                      */
                     AssetTagModifyAssetItem m_tagModifyInfo;
                     bool m_tagModifyInfoHasBeenSet;
+
+                    /**
+                     * <p>集群普通节点数</p>
+                     */
+                    uint64_t m_normalNodeCount;
+                    bool m_normalNodeCountHasBeenSet;
+
+                    /**
+                     * <p>审计日志开关失败信息，只在 AuditLogSwitchStatus 为 2（开启失败）或 3（关闭失败）时非空。</p>
+                     */
+                    std::string m_auditLogFailedInfo;
+                    bool m_auditLogFailedInfoHasBeenSet;
 
                 };
             }

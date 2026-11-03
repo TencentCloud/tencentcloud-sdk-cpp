@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取DNS域名
-                     * @return Address DNS域名
+                     * 获取<p>DNS域名</p>
+                     * @return Address <p>DNS域名</p>
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
-                     * 设置DNS域名
-                     * @param _address DNS域名
+                     * 设置<p>DNS域名</p>
+                     * @param _address <p>DNS域名</p>
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取IP地址
-                     * @return Ip IP地址
+                     * 获取<p>IP地址</p>
+                     * @return Ip <p>IP地址</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置IP地址
-                     * @param _ip IP地址
+                     * 设置<p>IP地址</p>
+                     * @param _ip <p>IP地址</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取连接Port地址
-                     * @return Port 连接Port地址
+                     * 获取<p>连接Port地址</p>
+                     * @return Port <p>连接Port地址</p>
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置连接Port地址
-                     * @param _port 连接Port地址
+                     * 设置<p>连接Port地址</p>
+                     * @param _port <p>连接Port地址</p>
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；
-                     * @return NetType 网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；
+                     * 获取<p>网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；</p>
+                     * @return NetType <p>网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；</p>
                      * 
                      */
                     std::string GetNetType() const;
 
                     /**
-                     * 设置网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；
-                     * @param _netType 网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；
+                     * 设置<p>网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；</p>
+                     * @param _netType <p>网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；</p>
                      * 
                      */
                     void SetNetType(const std::string& _netType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；
-                     * @return Status 网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；
+                     * 获取<p>网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；</p>
+                     * @return Status <p>网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；
-                     * @param _status 网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；
+                     * 设置<p>网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；</p>
+                     * @param _status <p>网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID
-                     * @return VpcId 私有网络ID
+                     * 获取<p>私有网络ID</p>
+                     * @return VpcId <p>私有网络ID</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID
-                     * @param _vpcId 私有网络ID
+                     * 设置<p>私有网络ID</p>
+                     * @param _vpcId <p>私有网络ID</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
-                     * @return SubnetId 子网ID
+                     * 获取<p>子网ID</p>
+                     * @return SubnetId <p>子网ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID
-                     * @param _subnetId 子网ID
+                     * 设置<p>子网ID</p>
+                     * @param _subnetId <p>子网ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）
-                     * @return ProtocolType 连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）
+                     * 获取<p>连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）</p>
+                     * @return ProtocolType <p>连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）</p>
                      * 
                      */
                     std::string GetProtocolType() const;
 
                     /**
-                     * 设置连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）
-                     * @param _protocolType 连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）
+                     * 设置<p>连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）</p>
+                     * @param _protocolType <p>连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）</p>
                      * 
                      */
                     void SetProtocolType(const std::string& _protocolType);
@@ -217,49 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * DNS域名
+                     * <p>DNS域名</p>
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
-                     * IP地址
+                     * <p>IP地址</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 连接Port地址
+                     * <p>连接Port地址</p>
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；
+                     * <p>网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；</p>
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；
+                     * <p>网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 私有网络ID
+                     * <p>私有网络ID</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * <p>子网ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）
+                     * <p>连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）</p>
                      */
                     std::string m_protocolType;
                     bool m_protocolTypeHasBeenSet;

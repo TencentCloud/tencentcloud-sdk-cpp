@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取端口
-                     * @return Port 端口
+                     * 获取<p>端口</p>
+                     * @return Port <p>端口</p>
                      * 
                      */
                     std::string GetPort() const;
 
                     /**
-                     * 设置端口
-                     * @param _port 端口
+                     * 设置<p>端口</p>
+                     * @param _port <p>端口</p>
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取安全组ID 
-                     * @return SecurityGroupIds 安全组ID 
+                     * 获取<p>安全组ID</p>
+                     * @return SecurityGroupIds <p>安全组ID</p>
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组ID 
-                     * @param _securityGroupIds 安全组ID 
+                     * 设置<p>安全组ID</p>
+                     * @param _securityGroupIds <p>安全组ID</p>
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 端口
+                     * <p>端口</p>
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 安全组ID 
+                     * <p>安全组ID</p>
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;

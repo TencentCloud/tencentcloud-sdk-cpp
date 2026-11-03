@@ -23,7 +23,8 @@ using namespace std;
 ListLocationsRsp::ListLocationsRsp() :
     m_locationsHasBeenSet(false),
     m_totalCountHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false)
+    m_snapshotIdHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome ListLocationsRsp::Deserialize(const rapidjson::Value &value)
         m_snapshotIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Items") && !value["Items"].IsNull())
+    {
+        if (!value["Items"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ListLocationsRsp.Items` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Items"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ListLocationItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_items.push_back(item);
+        }
+        m_itemsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +129,21 @@ void ListLocationsRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SnapshotId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_snapshotId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_itemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Items";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -159,5 +195,21 @@ void ListLocationsRsp::SetSnapshotId(const string& _snapshotId)
 bool ListLocationsRsp::SnapshotIdHasBeenSet() const
 {
     return m_snapshotIdHasBeenSet;
+}
+
+vector<ListLocationItem> ListLocationsRsp::GetItems() const
+{
+    return m_items;
+}
+
+void ListLocationsRsp::SetItems(const vector<ListLocationItem>& _items)
+{
+    m_items = _items;
+    m_itemsHasBeenSet = true;
+}
+
+bool ListLocationsRsp::ItemsHasBeenSet() const
+{
+    return m_itemsHasBeenSet;
 }
 

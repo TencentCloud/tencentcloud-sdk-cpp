@@ -31,6 +31,7 @@
 #include <tencentcloud/tse/v20201207/model/DescribeInstanceRegionInfo.h>
 #include <tencentcloud/tse/v20201207/model/StorageOption.h>
 #include <tencentcloud/tse/v20201207/model/ZookeeperRegionInfo.h>
+#include <tencentcloud/tse/v20201207/model/MaintenanceWindow.h>
 
 
 namespace TencentCloud
@@ -935,6 +936,27 @@ namespace TencentCloud
                      */
                     bool MaxCapacityLimitEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取<p>维护窗口</p>
+                     * @return MaintenanceWindow <p>维护窗口</p>
+                     * 
+                     */
+                    std::vector<MaintenanceWindow> GetMaintenanceWindow() const;
+
+                    /**
+                     * 设置<p>维护窗口</p>
+                     * @param _maintenanceWindow <p>维护窗口</p>
+                     * 
+                     */
+                    void SetMaintenanceWindow(const std::vector<MaintenanceWindow>& _maintenanceWindow);
+
+                    /**
+                     * 判断参数 MaintenanceWindow 是否已赋值
+                     * @return MaintenanceWindow 是否已赋值
+                     * 
+                     */
+                    bool MaintenanceWindowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1188,6 +1210,12 @@ namespace TencentCloud
                      */
                     bool m_maxCapacityLimitEnabled;
                     bool m_maxCapacityLimitEnabledHasBeenSet;
+
+                    /**
+                     * <p>维护窗口</p>
+                     */
+                    std::vector<MaintenanceWindow> m_maintenanceWindow;
+                    bool m_maintenanceWindowHasBeenSet;
 
                 };
             }

@@ -28,7 +28,9 @@ ImageVulSummary::ImageVulSummary() :
     m_latestFoundTimeHasBeenSet(false),
     m_affectImageCountHasBeenSet(false),
     m_vulInfoHasBeenSet(false),
-    m_iDHasBeenSet(false)
+    m_iDHasBeenSet(false),
+    m_affectedRegistryImageCountHasBeenSet(false),
+    m_affectedCICDImageCountHasBeenSet(false)
 {
 }
 
@@ -124,6 +126,26 @@ CoreInternalOutcome ImageVulSummary::Deserialize(const rapidjson::Value &value)
         m_iDHasBeenSet = true;
     }
 
+    if (value.HasMember("AffectedRegistryImageCount") && !value["AffectedRegistryImageCount"].IsNull())
+    {
+        if (!value["AffectedRegistryImageCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageVulSummary.AffectedRegistryImageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_affectedRegistryImageCount = value["AffectedRegistryImageCount"].GetUint64();
+        m_affectedRegistryImageCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AffectedCICDImageCount") && !value["AffectedCICDImageCount"].IsNull())
+    {
+        if (!value["AffectedCICDImageCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageVulSummary.AffectedCICDImageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_affectedCICDImageCount = value["AffectedCICDImageCount"].GetUint64();
+        m_affectedCICDImageCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +216,22 @@ void ImageVulSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_iD, allocator);
+    }
+
+    if (m_affectedRegistryImageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffectedRegistryImageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_affectedRegistryImageCount, allocator);
+    }
+
+    if (m_affectedCICDImageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffectedCICDImageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_affectedCICDImageCount, allocator);
     }
 
 }
@@ -325,5 +363,37 @@ void ImageVulSummary::SetID(const uint64_t& _iD)
 bool ImageVulSummary::IDHasBeenSet() const
 {
     return m_iDHasBeenSet;
+}
+
+uint64_t ImageVulSummary::GetAffectedRegistryImageCount() const
+{
+    return m_affectedRegistryImageCount;
+}
+
+void ImageVulSummary::SetAffectedRegistryImageCount(const uint64_t& _affectedRegistryImageCount)
+{
+    m_affectedRegistryImageCount = _affectedRegistryImageCount;
+    m_affectedRegistryImageCountHasBeenSet = true;
+}
+
+bool ImageVulSummary::AffectedRegistryImageCountHasBeenSet() const
+{
+    return m_affectedRegistryImageCountHasBeenSet;
+}
+
+uint64_t ImageVulSummary::GetAffectedCICDImageCount() const
+{
+    return m_affectedCICDImageCount;
+}
+
+void ImageVulSummary::SetAffectedCICDImageCount(const uint64_t& _affectedCICDImageCount)
+{
+    m_affectedCICDImageCount = _affectedCICDImageCount;
+    m_affectedCICDImageCountHasBeenSet = true;
+}
+
+bool ImageVulSummary::AffectedCICDImageCountHasBeenSet() const
+{
+    return m_affectedCICDImageCountHasBeenSet;
 }
 

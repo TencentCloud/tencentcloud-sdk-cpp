@@ -62,7 +62,8 @@ SREInstance::SREInstance() :
     m_groupIdHasBeenSet(false),
     m_isMainRegionHasBeenSet(false),
     m_mutationEnabledHasBeenSet(false),
-    m_maxCapacityLimitEnabledHasBeenSet(false)
+    m_maxCapacityLimitEnabledHasBeenSet(false),
+    m_maintenanceWindowHasBeenSet(false)
 {
 }
 
@@ -564,6 +565,26 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_maxCapacityLimitEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("MaintenanceWindow") && !value["MaintenanceWindow"].IsNull())
+    {
+        if (!value["MaintenanceWindow"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SREInstance.MaintenanceWindow` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MaintenanceWindow"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MaintenanceWindow item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_maintenanceWindow.push_back(item);
+        }
+        m_maintenanceWindowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -958,6 +979,21 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "MaxCapacityLimitEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxCapacityLimitEnabled, allocator);
+    }
+
+    if (m_maintenanceWindowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaintenanceWindow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_maintenanceWindow.begin(); itr != m_maintenanceWindow.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1633,5 +1669,21 @@ void SREInstance::SetMaxCapacityLimitEnabled(const bool& _maxCapacityLimitEnable
 bool SREInstance::MaxCapacityLimitEnabledHasBeenSet() const
 {
     return m_maxCapacityLimitEnabledHasBeenSet;
+}
+
+vector<MaintenanceWindow> SREInstance::GetMaintenanceWindow() const
+{
+    return m_maintenanceWindow;
+}
+
+void SREInstance::SetMaintenanceWindow(const vector<MaintenanceWindow>& _maintenanceWindow)
+{
+    m_maintenanceWindow = _maintenanceWindow;
+    m_maintenanceWindowHasBeenSet = true;
+}
+
+bool SREInstance::MaintenanceWindowHasBeenSet() const
+{
+    return m_maintenanceWindowHasBeenSet;
 }
 

@@ -58,7 +58,8 @@ EDRRule::EDRRule() :
     m_excludeClusterIDsHasBeenSet(false),
     m_conditionMatchesHasBeenSet(false),
     m_tagItemsHasBeenSet(false),
-    m_fileOperationRulesHasBeenSet(false)
+    m_fileOperationRulesHasBeenSet(false),
+    m_k8sApiRuleHasBeenSet(false)
 {
 }
 
@@ -530,6 +531,23 @@ CoreInternalOutcome EDRRule::Deserialize(const rapidjson::Value &value)
         m_fileOperationRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("K8sApiRule") && !value["K8sApiRule"].IsNull())
+    {
+        if (!value["K8sApiRule"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EDRRule.K8sApiRule` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_k8sApiRule.Deserialize(value["K8sApiRule"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_k8sApiRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -926,6 +944,15 @@ void EDRRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_fileOperationRules.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_k8sApiRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "K8sApiRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_k8sApiRule.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1537,5 +1564,21 @@ void EDRRule::SetFileOperationRules(const RuleContentFileOperation& _fileOperati
 bool EDRRule::FileOperationRulesHasBeenSet() const
 {
     return m_fileOperationRulesHasBeenSet;
+}
+
+RuleContentK8sAPI EDRRule::GetK8sApiRule() const
+{
+    return m_k8sApiRule;
+}
+
+void EDRRule::SetK8sApiRule(const RuleContentK8sAPI& _k8sApiRule)
+{
+    m_k8sApiRule = _k8sApiRule;
+    m_k8sApiRuleHasBeenSet = true;
+}
+
+bool EDRRule::K8sApiRuleHasBeenSet() const
+{
+    return m_k8sApiRuleHasBeenSet;
 }
 

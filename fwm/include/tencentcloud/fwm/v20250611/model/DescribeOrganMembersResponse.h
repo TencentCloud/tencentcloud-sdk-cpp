@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集团成员总数
-                     * @return TotalCount 集团成员总数
+                     * 获取<p>集团成员总数</p>
+                     * @return TotalCount <p>集团成员总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取集团成员列表
-                     * @return Members 集团成员列表
+                     * 获取<p>集团成员列表</p>
+                     * @return Members <p>集团成员列表</p>
                      * 
                      */
                     std::vector<OrganMemberItem> GetMembers() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集团成员总数
+                     * <p>集团成员总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 集团成员列表
+                     * <p>集团成员列表</p>
                      */
                     std::vector<OrganMemberItem> m_members;
                     bool m_membersHasBeenSet;

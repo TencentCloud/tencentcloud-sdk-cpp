@@ -29,7 +29,8 @@ DescribeInstancesListRequest::DescribeInstancesListRequest() :
     m_orderFieldHasBeenSet(false),
     m_ascHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false)
+    m_clusterTypeHasBeenSet(false),
+    m_needMcpPasswordInfoHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string DescribeInstancesListRequest::ToJsonString() const
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_clusterType, allocator);
+    }
+
+    if (m_needMcpPasswordInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedMcpPasswordInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needMcpPasswordInfo, allocator);
     }
 
 
@@ -221,6 +230,22 @@ void DescribeInstancesListRequest::SetClusterType(const int64_t& _clusterType)
 bool DescribeInstancesListRequest::ClusterTypeHasBeenSet() const
 {
     return m_clusterTypeHasBeenSet;
+}
+
+bool DescribeInstancesListRequest::GetNeedMcpPasswordInfo() const
+{
+    return m_needMcpPasswordInfo;
+}
+
+void DescribeInstancesListRequest::SetNeedMcpPasswordInfo(const bool& _needMcpPasswordInfo)
+{
+    m_needMcpPasswordInfo = _needMcpPasswordInfo;
+    m_needMcpPasswordInfoHasBeenSet = true;
+}
+
+bool DescribeInstancesListRequest::NeedMcpPasswordInfoHasBeenSet() const
+{
+    return m_needMcpPasswordInfoHasBeenSet;
 }
 
 

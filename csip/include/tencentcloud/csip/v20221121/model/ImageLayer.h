@@ -277,6 +277,48 @@ namespace TencentCloud
                      */
                     bool LayerCreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>敏感文件数</p>
+                     * @return SecretFileCnt <p>敏感文件数</p>
+                     * 
+                     */
+                    uint64_t GetSecretFileCnt() const;
+
+                    /**
+                     * 设置<p>敏感文件数</p>
+                     * @param _secretFileCnt <p>敏感文件数</p>
+                     * 
+                     */
+                    void SetSecretFileCnt(const uint64_t& _secretFileCnt);
+
+                    /**
+                     * 判断参数 SecretFileCnt 是否已赋值
+                     * @return SecretFileCnt 是否已赋值
+                     * 
+                     */
+                    bool SecretFileCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>构建风险数</p>
+                     * @return BuildRiskCnt <p>构建风险数</p>
+                     * 
+                     */
+                    uint64_t GetBuildRiskCnt() const;
+
+                    /**
+                     * 设置<p>构建风险数</p>
+                     * @param _buildRiskCnt <p>构建风险数</p>
+                     * 
+                     */
+                    void SetBuildRiskCnt(const uint64_t& _buildRiskCnt);
+
+                    /**
+                     * 判断参数 BuildRiskCnt 是否已赋值
+                     * @return BuildRiskCnt 是否已赋值
+                     * 
+                     */
+                    bool BuildRiskCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +386,18 @@ namespace TencentCloud
                      */
                     std::string m_layerCreateTime;
                     bool m_layerCreateTimeHasBeenSet;
+
+                    /**
+                     * <p>敏感文件数</p>
+                     */
+                    uint64_t m_secretFileCnt;
+                    bool m_secretFileCntHasBeenSet;
+
+                    /**
+                     * <p>构建风险数</p>
+                     */
+                    uint64_t m_buildRiskCnt;
+                    bool m_buildRiskCntHasBeenSet;
 
                 };
             }

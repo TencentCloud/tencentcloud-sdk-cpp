@@ -449,6 +449,20 @@ namespace TencentCloud
                      */
                     bool UnboundUltimateNodeCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>普通节点总数</p>
+                     * @return NormalNodeCount <p>普通节点总数</p>
+                     * 
+                     */
+                    uint64_t GetNormalNodeCount() const;
+
+                    /**
+                     * 判断参数 NormalNodeCount 是否已赋值
+                     * @return NormalNodeCount 是否已赋值
+                     * 
+                     */
+                    bool NormalNodeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -624,6 +638,12 @@ namespace TencentCloud
                      */
                     uint64_t m_unboundUltimateNodeCount;
                     bool m_unboundUltimateNodeCountHasBeenSet;
+
+                    /**
+                     * <p>普通节点总数</p>
+                     */
+                    uint64_t m_normalNodeCount;
+                    bool m_normalNodeCountHasBeenSet;
 
                 };
             }

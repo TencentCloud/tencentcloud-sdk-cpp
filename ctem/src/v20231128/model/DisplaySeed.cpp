@@ -28,7 +28,8 @@ DisplaySeed::DisplaySeed() :
     m_md5HasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_createAtHasBeenSet(false),
-    m_isValidHasBeenSet(false)
+    m_isValidHasBeenSet(false),
+    m_purposesHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,19 @@ CoreInternalOutcome DisplaySeed::Deserialize(const rapidjson::Value &value)
         m_isValidHasBeenSet = true;
     }
 
+    if (value.HasMember("Purposes") && !value["Purposes"].IsNull())
+    {
+        if (!value["Purposes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DisplaySeed.Purposes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Purposes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_purposes.push_back((*itr).GetString());
+        }
+        m_purposesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +200,19 @@ void DisplaySeed::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsValid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isValid, allocator);
+    }
+
+    if (m_purposesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Purposes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_purposes.begin(); itr != m_purposes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -317,5 +344,21 @@ void DisplaySeed::SetIsValid(const bool& _isValid)
 bool DisplaySeed::IsValidHasBeenSet() const
 {
     return m_isValidHasBeenSet;
+}
+
+vector<string> DisplaySeed::GetPurposes() const
+{
+    return m_purposes;
+}
+
+void DisplaySeed::SetPurposes(const vector<string>& _purposes)
+{
+    m_purposes = _purposes;
+    m_purposesHasBeenSet = true;
+}
+
+bool DisplaySeed::PurposesHasBeenSet() const
+{
+    return m_purposesHasBeenSet;
 }
 

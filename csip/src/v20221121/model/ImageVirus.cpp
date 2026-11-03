@@ -42,7 +42,10 @@ ImageVirus::ImageVirus() :
     m_idHasBeenSet(false),
     m_suggestionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_virusTypeHasBeenSet(false)
+    m_virusTypeHasBeenSet(false),
+    m_affectedImageCountHasBeenSet(false),
+    m_affectedRegistryImageCountHasBeenSet(false),
+    m_affectedCICDImageCountHasBeenSet(false)
 {
 }
 
@@ -271,6 +274,36 @@ CoreInternalOutcome ImageVirus::Deserialize(const rapidjson::Value &value)
         m_virusTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AffectedImageCount") && !value["AffectedImageCount"].IsNull())
+    {
+        if (!value["AffectedImageCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageVirus.AffectedImageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_affectedImageCount = value["AffectedImageCount"].GetUint64();
+        m_affectedImageCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AffectedRegistryImageCount") && !value["AffectedRegistryImageCount"].IsNull())
+    {
+        if (!value["AffectedRegistryImageCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageVirus.AffectedRegistryImageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_affectedRegistryImageCount = value["AffectedRegistryImageCount"].GetUint64();
+        m_affectedRegistryImageCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AffectedCICDImageCount") && !value["AffectedCICDImageCount"].IsNull())
+    {
+        if (!value["AffectedCICDImageCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageVirus.AffectedCICDImageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_affectedCICDImageCount = value["AffectedCICDImageCount"].GetUint64();
+        m_affectedCICDImageCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +485,30 @@ void ImageVirus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "VirusType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_virusType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_affectedImageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffectedImageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_affectedImageCount, allocator);
+    }
+
+    if (m_affectedRegistryImageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffectedRegistryImageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_affectedRegistryImageCount, allocator);
+    }
+
+    if (m_affectedCICDImageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffectedCICDImageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_affectedCICDImageCount, allocator);
     }
 
 }
@@ -807,5 +864,53 @@ void ImageVirus::SetVirusType(const string& _virusType)
 bool ImageVirus::VirusTypeHasBeenSet() const
 {
     return m_virusTypeHasBeenSet;
+}
+
+uint64_t ImageVirus::GetAffectedImageCount() const
+{
+    return m_affectedImageCount;
+}
+
+void ImageVirus::SetAffectedImageCount(const uint64_t& _affectedImageCount)
+{
+    m_affectedImageCount = _affectedImageCount;
+    m_affectedImageCountHasBeenSet = true;
+}
+
+bool ImageVirus::AffectedImageCountHasBeenSet() const
+{
+    return m_affectedImageCountHasBeenSet;
+}
+
+uint64_t ImageVirus::GetAffectedRegistryImageCount() const
+{
+    return m_affectedRegistryImageCount;
+}
+
+void ImageVirus::SetAffectedRegistryImageCount(const uint64_t& _affectedRegistryImageCount)
+{
+    m_affectedRegistryImageCount = _affectedRegistryImageCount;
+    m_affectedRegistryImageCountHasBeenSet = true;
+}
+
+bool ImageVirus::AffectedRegistryImageCountHasBeenSet() const
+{
+    return m_affectedRegistryImageCountHasBeenSet;
+}
+
+uint64_t ImageVirus::GetAffectedCICDImageCount() const
+{
+    return m_affectedCICDImageCount;
+}
+
+void ImageVirus::SetAffectedCICDImageCount(const uint64_t& _affectedCICDImageCount)
+{
+    m_affectedCICDImageCount = _affectedCICDImageCount;
+    m_affectedCICDImageCountHasBeenSet = true;
+}
+
+bool ImageVirus::AffectedCICDImageCountHasBeenSet() const
+{
+    return m_affectedCICDImageCountHasBeenSet;
 }
 

@@ -282,6 +282,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeMetaDBInfoRequest.h
   include/tencentcloud/emr/v20190103/model/UserManagerUserBriefInfo.h
   include/tencentcloud/emr/v20190103/model/Placement.h
+  include/tencentcloud/emr/v20190103/model/McpPasswordInfo.h
   include/tencentcloud/emr/v20190103/model/ComponentDeployInfo.h
   include/tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerRequest.h
   include/tencentcloud/emr/v20190103/model/ConfigSetInfo.h
@@ -721,6 +722,7 @@ set(emr_src
   src/v20190103/model/DescribeMetaDBInfoRequest.cpp
   src/v20190103/model/UserManagerUserBriefInfo.cpp
   src/v20190103/model/Placement.cpp
+  src/v20190103/model/McpPasswordInfo.cpp
   src/v20190103/model/ComponentDeployInfo.cpp
   src/v20190103/model/DescribeUsersForUserManagerRequest.cpp
   src/v20190103/model/ConfigSetInfo.cpp

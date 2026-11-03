@@ -59,7 +59,8 @@ DescribeCertificateResponse::DescribeCertificateResponse() :
     m_cAEncryptAlgorithmsHasBeenSet(false),
     m_cACommonNamesHasBeenSet(false),
     m_cAEndTimesHasBeenSet(false),
-    m_dvRevokeAuthDetailHasBeenSet(false)
+    m_dvRevokeAuthDetailHasBeenSet(false),
+    m_resubmitAbleHasBeenSet(false)
 {
 }
 
@@ -510,6 +511,16 @@ CoreInternalOutcome DescribeCertificateResponse::Deserialize(const string &paylo
         m_dvRevokeAuthDetailHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResubmitAble") && !rsp["ResubmitAble"].IsNull())
+    {
+        if (!rsp["ResubmitAble"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResubmitAble` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_resubmitAble = rsp["ResubmitAble"].GetBool();
+        m_resubmitAbleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -843,6 +854,14 @@ string DescribeCertificateResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_resubmitAbleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResubmitAble";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resubmitAble, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1215,6 +1234,16 @@ vector<DvAuths> DescribeCertificateResponse::GetDvRevokeAuthDetail() const
 bool DescribeCertificateResponse::DvRevokeAuthDetailHasBeenSet() const
 {
     return m_dvRevokeAuthDetailHasBeenSet;
+}
+
+bool DescribeCertificateResponse::GetResubmitAble() const
+{
+    return m_resubmitAble;
+}
+
+bool DescribeCertificateResponse::ResubmitAbleHasBeenSet() const
+{
+    return m_resubmitAbleHasBeenSet;
 }
 
 

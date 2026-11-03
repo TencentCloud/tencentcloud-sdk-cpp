@@ -23,6 +23,7 @@ using namespace std;
 StrategyResp::StrategyResp() :
     m_strategyIdHasBeenSet(false),
     m_groupIdHasBeenSet(false),
+    m_productHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_ruleCountHasBeenSet(false),
     m_ruleStatusHasBeenSet(false),
@@ -63,6 +64,16 @@ CoreInternalOutcome StrategyResp::Deserialize(const rapidjson::Value &value)
         }
         m_groupId = string(value["GroupId"].GetString());
         m_groupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Product") && !value["Product"].IsNull())
+    {
+        if (!value["Product"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StrategyResp.Product` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_product = string(value["Product"].GetString());
+        m_productHasBeenSet = true;
     }
 
     if (value.HasMember("GroupName") && !value["GroupName"].IsNull())
@@ -238,6 +249,14 @@ void StrategyResp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_groupNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -390,6 +409,22 @@ void StrategyResp::SetGroupId(const string& _groupId)
 bool StrategyResp::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+string StrategyResp::GetProduct() const
+{
+    return m_product;
+}
+
+void StrategyResp::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool StrategyResp::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 string StrategyResp::GetGroupName() const

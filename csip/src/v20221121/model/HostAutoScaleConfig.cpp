@@ -22,7 +22,9 @@ using namespace std;
 
 HostAutoScaleConfig::HostAutoScaleConfig() :
     m_switchHasBeenSet(false),
-    m_protectTypeHasBeenSet(false)
+    m_protectTypeHasBeenSet(false),
+    m_assetRangeHasBeenSet(false),
+    m_tagIdsHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,29 @@ CoreInternalOutcome HostAutoScaleConfig::Deserialize(const rapidjson::Value &val
         m_protectTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AssetRange") && !value["AssetRange"].IsNull())
+    {
+        if (!value["AssetRange"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostAutoScaleConfig.AssetRange` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assetRange = string(value["AssetRange"].GetString());
+        m_assetRangeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagIds") && !value["TagIds"].IsNull())
+    {
+        if (!value["TagIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HostAutoScaleConfig.TagIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tagIds.push_back((*itr).GetInt64());
+        }
+        m_tagIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +97,27 @@ void HostAutoScaleConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ProtectType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_protectType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assetRange.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagIds.begin(); itr != m_tagIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -107,5 +153,37 @@ void HostAutoScaleConfig::SetProtectType(const string& _protectType)
 bool HostAutoScaleConfig::ProtectTypeHasBeenSet() const
 {
     return m_protectTypeHasBeenSet;
+}
+
+string HostAutoScaleConfig::GetAssetRange() const
+{
+    return m_assetRange;
+}
+
+void HostAutoScaleConfig::SetAssetRange(const string& _assetRange)
+{
+    m_assetRange = _assetRange;
+    m_assetRangeHasBeenSet = true;
+}
+
+bool HostAutoScaleConfig::AssetRangeHasBeenSet() const
+{
+    return m_assetRangeHasBeenSet;
+}
+
+vector<int64_t> HostAutoScaleConfig::GetTagIds() const
+{
+    return m_tagIds;
+}
+
+void HostAutoScaleConfig::SetTagIds(const vector<int64_t>& _tagIds)
+{
+    m_tagIds = _tagIds;
+    m_tagIdsHasBeenSet = true;
+}
+
+bool HostAutoScaleConfig::TagIdsHasBeenSet() const
+{
+    return m_tagIdsHasBeenSet;
 }
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
-                     * @return Id 主键ID
+                     * 获取<p>主键ID</p>
+                     * @return Id <p>主键ID</p>
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置主键ID
-                     * @param _id 主键ID
+                     * 设置<p>主键ID</p>
+                     * @param _id <p>主键ID</p>
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取企业ID
-                     * @return CustomerId 企业ID
+                     * 获取<p>企业ID</p>
+                     * @return CustomerId <p>企业ID</p>
                      * 
                      */
                     int64_t GetCustomerId() const;
 
                     /**
-                     * 设置企业ID
-                     * @param _customerId 企业ID
+                     * 设置<p>企业ID</p>
+                     * @param _customerId <p>企业ID</p>
                      * 
                      */
                     void SetCustomerId(const int64_t& _customerId);
@@ -89,19 +89,15 @@ namespace TencentCloud
                     bool CustomerIdHasBeenSet() const;
 
                     /**
-                     * 获取分类，包括：domain(主域名)、icon(图标)、ip(IP)、
-keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)
-                     * @return Category 分类，包括：domain(主域名)、icon(图标)、ip(IP)、
-keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)
+                     * 获取<p>分类，包括：domain(主域名)、icon(图标)、ip(IP)、<br>keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)</p>
+                     * @return Category <p>分类，包括：domain(主域名)、icon(图标)、ip(IP)、<br>keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)</p>
                      * 
                      */
                     std::string GetCategory() const;
 
                     /**
-                     * 设置分类，包括：domain(主域名)、icon(图标)、ip(IP)、
-keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)
-                     * @param _category 分类，包括：domain(主域名)、icon(图标)、ip(IP)、
-keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)
+                     * 设置<p>分类，包括：domain(主域名)、icon(图标)、ip(IP)、<br>keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)</p>
+                     * @param _category <p>分类，包括：domain(主域名)、icon(图标)、ip(IP)、<br>keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)</p>
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -114,15 +110,15 @@ keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(�
                     bool CategoryHasBeenSet() const;
 
                     /**
-                     * 获取值
-                     * @return Value 值
+                     * 获取<p>值</p>
+                     * @return Value <p>值</p>
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置值
-                     * @param _value 值
+                     * 设置<p>值</p>
+                     * @param _value <p>值</p>
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -135,15 +131,15 @@ keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(�
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取md5值
-                     * @return Md5 md5值
+                     * 获取<p>md5值</p>
+                     * @return Md5 <p>md5值</p>
                      * 
                      */
                     std::string GetMd5() const;
 
                     /**
-                     * 设置md5值
-                     * @param _md5 md5值
+                     * 设置<p>md5值</p>
+                     * @param _md5 <p>md5值</p>
                      * 
                      */
                     void SetMd5(const std::string& _md5);
@@ -156,15 +152,15 @@ keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(�
                     bool Md5HasBeenSet() const;
 
                     /**
-                     * 获取来源
-                     * @return Source 来源
+                     * 获取<p>来源</p>
+                     * @return Source <p>来源</p>
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置来源
-                     * @param _source 来源
+                     * 设置<p>来源</p>
+                     * @param _source <p>来源</p>
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -177,15 +173,15 @@ keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(�
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateAt 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateAt <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateAt() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createAt 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createAt <p>创建时间</p>
                      * 
                      */
                     void SetCreateAt(const std::string& _createAt);
@@ -198,15 +194,15 @@ keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(�
                     bool CreateAtHasBeenSet() const;
 
                     /**
-                     * 获取是否可信
-                     * @return IsValid 是否可信
+                     * 获取<p>是否可信</p>
+                     * @return IsValid <p>是否可信</p>
                      * 
                      */
                     bool GetIsValid() const;
 
                     /**
-                     * 设置是否可信
-                     * @param _isValid 是否可信
+                     * 设置<p>是否可信</p>
+                     * @param _isValid <p>是否可信</p>
                      * 
                      */
                     void SetIsValid(const bool& _isValid);
@@ -218,56 +214,87 @@ keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(�
                      */
                     bool IsValidHasBeenSet() const;
 
+                    /**
+                     * 获取<p>关键词用途，可多选：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号；不填=全部用途</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Purposes <p>关键词用途，可多选：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号；不填=全部用途</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetPurposes() const;
+
+                    /**
+                     * 设置<p>关键词用途，可多选：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号；不填=全部用途</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _purposes <p>关键词用途，可多选：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号；不填=全部用途</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPurposes(const std::vector<std::string>& _purposes);
+
+                    /**
+                     * 判断参数 Purposes 是否已赋值
+                     * @return Purposes 是否已赋值
+                     * 
+                     */
+                    bool PurposesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主键ID
+                     * <p>主键ID</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 企业ID
+                     * <p>企业ID</p>
                      */
                     int64_t m_customerId;
                     bool m_customerIdHasBeenSet;
 
                     /**
-                     * 分类，包括：domain(主域名)、icon(图标)、ip(IP)、
-keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)
+                     * <p>分类，包括：domain(主域名)、icon(图标)、ip(IP)、<br>keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)</p>
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
 
                     /**
-                     * 值
+                     * <p>值</p>
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * md5值
+                     * <p>md5值</p>
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
-                     * 来源
+                     * <p>来源</p>
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createAt;
                     bool m_createAtHasBeenSet;
 
                     /**
-                     * 是否可信
+                     * <p>是否可信</p>
                      */
                     bool m_isValid;
                     bool m_isValidHasBeenSet;
+
+                    /**
+                     * <p>关键词用途，可多选：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号；不填=全部用途</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_purposes;
+                    bool m_purposesHasBeenSet;
 
                 };
             }

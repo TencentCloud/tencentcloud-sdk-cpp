@@ -25,7 +25,8 @@ using namespace std;
 UpdateLocationRequest::UpdateLocationRequest() :
     m_locationNameHasBeenSet(false),
     m_updatesHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
+    m_workspaceIdHasBeenSet(false),
+    m_fileEventSubscriptionHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,15 @@ string UpdateLocationRequest::ToJsonString() const
         string key = "WorkspaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workspaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileEventSubscriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileEventSubscription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileEventSubscription.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -121,6 +131,22 @@ void UpdateLocationRequest::SetWorkspaceId(const string& _workspaceId)
 bool UpdateLocationRequest::WorkspaceIdHasBeenSet() const
 {
     return m_workspaceIdHasBeenSet;
+}
+
+CosEventSubscription UpdateLocationRequest::GetFileEventSubscription() const
+{
+    return m_fileEventSubscription;
+}
+
+void UpdateLocationRequest::SetFileEventSubscription(const CosEventSubscription& _fileEventSubscription)
+{
+    m_fileEventSubscription = _fileEventSubscription;
+    m_fileEventSubscriptionHasBeenSet = true;
+}
+
+bool UpdateLocationRequest::FileEventSubscriptionHasBeenSet() const
+{
+    return m_fileEventSubscriptionHasBeenSet;
 }
 
 

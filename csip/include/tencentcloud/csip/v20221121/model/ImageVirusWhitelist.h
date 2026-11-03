@@ -256,6 +256,27 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>白名单Md5</p>
+                     * @return Md5 <p>白名单Md5</p>
+                     * 
+                     */
+                    std::string GetMd5() const;
+
+                    /**
+                     * 设置<p>白名单Md5</p>
+                     * @param _md5 <p>白名单Md5</p>
+                     * 
+                     */
+                    void SetMd5(const std::string& _md5);
+
+                    /**
+                     * 判断参数 Md5 是否已赋值
+                     * @return Md5 是否已赋值
+                     * 
+                     */
+                    bool Md5HasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +338,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * <p>白名单Md5</p>
+                     */
+                    std::string m_md5;
+                    bool m_md5HasBeenSet;
 
                 };
             }

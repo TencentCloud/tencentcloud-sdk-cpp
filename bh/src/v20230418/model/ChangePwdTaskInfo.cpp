@@ -43,7 +43,10 @@ ChangePwdTaskInfo::ChangePwdTaskInfo() :
     m_firstTimeHasBeenSet(false),
     m_nextTimeHasBeenSet(false),
     m_lastTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -305,6 +308,36 @@ CoreInternalOutcome ChangePwdTaskInfo::Deserialize(const rapidjson::Value &value
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Category") && !value["Category"].IsNull())
+    {
+        if (!value["Category"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChangePwdTaskInfo.Category` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_category = value["Category"].GetInt64();
+        m_categoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChangePwdTaskInfo.Protocol` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = value["Protocol"].GetInt64();
+        m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChangePwdTaskInfo.Port` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = value["Port"].GetUint64();
+        m_portHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -512,6 +545,30 @@ void ChangePwdTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_category, allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protocol, allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_port, allocator);
     }
 
 }
@@ -883,5 +940,53 @@ void ChangePwdTaskInfo::SetStatus(const uint64_t& _status)
 bool ChangePwdTaskInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t ChangePwdTaskInfo::GetCategory() const
+{
+    return m_category;
+}
+
+void ChangePwdTaskInfo::SetCategory(const int64_t& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool ChangePwdTaskInfo::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
+}
+
+int64_t ChangePwdTaskInfo::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void ChangePwdTaskInfo::SetProtocol(const int64_t& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool ChangePwdTaskInfo::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
+}
+
+uint64_t ChangePwdTaskInfo::GetPort() const
+{
+    return m_port;
+}
+
+void ChangePwdTaskInfo::SetPort(const uint64_t& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool ChangePwdTaskInfo::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
 }
 

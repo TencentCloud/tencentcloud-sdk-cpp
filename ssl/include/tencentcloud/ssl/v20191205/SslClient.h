@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ssl/v20191205/model/ApplyCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/ApplyCertificateResponse.h>
+#include <tencentcloud/ssl/v20191205/model/BatchDeleteCSRRequest.h>
+#include <tencentcloud/ssl/v20191205/model/BatchDeleteCSRResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CancelAuditCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CancelAuditCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CancelCertificateOrderRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/ssl/v20191205/model/CommitCertificateInformationResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CompleteCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CompleteCertificateResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CreateCSRRequest.h>
+#include <tencentcloud/ssl/v20191205/model/CreateCSRResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CreateCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CreateCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CreateCertificateBindResourceSyncTaskRequest.h>
@@ -61,6 +65,10 @@
 #include <tencentcloud/ssl/v20191205/model/DeployCertificateRecordRetryResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DeployCertificateRecordRollbackRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DeployCertificateRecordRollbackResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeCSRRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeCSRResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeCSRSetRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeCSRSetResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificateBindResourceTaskDetailRequest.h>
@@ -123,6 +131,8 @@
 #include <tencentcloud/ssl/v20191205/model/DescribePackagesResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DownloadCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DownloadCertificateResponse.h>
+#include <tencentcloud/ssl/v20191205/model/ModifyCSRRequest.h>
+#include <tencentcloud/ssl/v20191205/model/ModifyCSRResponse.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateAliasRequest.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateAliasResponse.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateProjectRequest.h>
@@ -176,6 +186,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyCertificateResponse> ApplyCertificateOutcome;
                 typedef std::future<ApplyCertificateOutcome> ApplyCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::ApplyCertificateRequest&, ApplyCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchDeleteCSRResponse> BatchDeleteCSROutcome;
+                typedef std::future<BatchDeleteCSROutcome> BatchDeleteCSROutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::BatchDeleteCSRRequest&, BatchDeleteCSROutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteCSRAsyncHandler;
                 typedef Outcome<Core::Error, Model::CancelAuditCertificateResponse> CancelAuditCertificateOutcome;
                 typedef std::future<CancelAuditCertificateOutcome> CancelAuditCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CancelAuditCertificateRequest&, CancelAuditCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelAuditCertificateAsyncHandler;
@@ -203,6 +216,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CompleteCertificateResponse> CompleteCertificateOutcome;
                 typedef std::future<CompleteCertificateOutcome> CompleteCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CompleteCertificateRequest&, CompleteCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompleteCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCSRResponse> CreateCSROutcome;
+                typedef std::future<CreateCSROutcome> CreateCSROutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::CreateCSRRequest&, CreateCSROutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCSRAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCertificateResponse> CreateCertificateOutcome;
                 typedef std::future<CreateCertificateOutcome> CreateCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CreateCertificateRequest&, CreateCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCertificateAsyncHandler;
@@ -230,6 +246,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeployCertificateRecordRollbackResponse> DeployCertificateRecordRollbackOutcome;
                 typedef std::future<DeployCertificateRecordRollbackOutcome> DeployCertificateRecordRollbackOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DeployCertificateRecordRollbackRequest&, DeployCertificateRecordRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployCertificateRecordRollbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCSRResponse> DescribeCSROutcome;
+                typedef std::future<DescribeCSROutcome> DescribeCSROutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeCSRRequest&, DescribeCSROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSRAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCSRSetResponse> DescribeCSRSetOutcome;
+                typedef std::future<DescribeCSRSetOutcome> DescribeCSRSetOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeCSRSetRequest&, DescribeCSRSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCSRSetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCertificateResponse> DescribeCertificateOutcome;
                 typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeCertificateRequest&, DescribeCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateAsyncHandler;
@@ -323,6 +345,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadCertificateResponse> DownloadCertificateOutcome;
                 typedef std::future<DownloadCertificateOutcome> DownloadCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DownloadCertificateRequest&, DownloadCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCSRResponse> ModifyCSROutcome;
+                typedef std::future<ModifyCSROutcome> ModifyCSROutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::ModifyCSRRequest&, ModifyCSROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCSRAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCertificateAliasResponse> ModifyCertificateAliasOutcome;
                 typedef std::future<ModifyCertificateAliasOutcome> ModifyCertificateAliasOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::ModifyCertificateAliasRequest&, ModifyCertificateAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCertificateAliasAsyncHandler;
@@ -388,6 +413,15 @@ namespace TencentCloud
                 ApplyCertificateOutcome ApplyCertificate(const Model::ApplyCertificateRequest &request);
                 void ApplyCertificateAsync(const Model::ApplyCertificateRequest& request, const ApplyCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyCertificateOutcomeCallable ApplyCertificateCallable(const Model::ApplyCertificateRequest& request);
+
+                /**
+                 *批量删除CSR
+                 * @param req BatchDeleteCSRRequest
+                 * @return BatchDeleteCSROutcome
+                 */
+                BatchDeleteCSROutcome BatchDeleteCSR(const Model::BatchDeleteCSRRequest &request);
+                void BatchDeleteCSRAsync(const Model::BatchDeleteCSRRequest& request, const BatchDeleteCSRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchDeleteCSROutcomeCallable BatchDeleteCSRCallable(const Model::BatchDeleteCSRRequest& request);
 
                 /**
                  *取消证书审核
@@ -469,6 +503,15 @@ namespace TencentCloud
                 CompleteCertificateOutcome CompleteCertificate(const Model::CompleteCertificateRequest &request);
                 void CompleteCertificateAsync(const Model::CompleteCertificateRequest& request, const CompleteCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CompleteCertificateOutcomeCallable CompleteCertificateCallable(const Model::CompleteCertificateRequest& request);
+
+                /**
+                 *创建CSR
+                 * @param req CreateCSRRequest
+                 * @return CreateCSROutcome
+                 */
+                CreateCSROutcome CreateCSR(const Model::CreateCSRRequest &request);
+                void CreateCSRAsync(const Model::CreateCSRRequest& request, const CreateCSRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCSROutcomeCallable CreateCSRCallable(const Model::CreateCSRRequest& request);
 
                 /**
                  *本接口（CreateCertificate）用于创建付费证书。
@@ -557,6 +600,24 @@ namespace TencentCloud
                 DeployCertificateRecordRollbackOutcome DeployCertificateRecordRollback(const Model::DeployCertificateRecordRollbackRequest &request);
                 void DeployCertificateRecordRollbackAsync(const Model::DeployCertificateRecordRollbackRequest& request, const DeployCertificateRecordRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeployCertificateRecordRollbackOutcomeCallable DeployCertificateRecordRollbackCallable(const Model::DeployCertificateRecordRollbackRequest& request);
+
+                /**
+                 *查询CSR详情
+                 * @param req DescribeCSRRequest
+                 * @return DescribeCSROutcome
+                 */
+                DescribeCSROutcome DescribeCSR(const Model::DescribeCSRRequest &request);
+                void DescribeCSRAsync(const Model::DescribeCSRRequest& request, const DescribeCSRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCSROutcomeCallable DescribeCSRCallable(const Model::DescribeCSRRequest& request);
+
+                /**
+                 *查询CSR列表
+                 * @param req DescribeCSRSetRequest
+                 * @return DescribeCSRSetOutcome
+                 */
+                DescribeCSRSetOutcome DescribeCSRSet(const Model::DescribeCSRSetRequest &request);
+                void DescribeCSRSetAsync(const Model::DescribeCSRSetRequest& request, const DescribeCSRSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCSRSetOutcomeCallable DescribeCSRSetCallable(const Model::DescribeCSRSetRequest& request);
 
                 /**
                  *本接口（DescribeCertificate）用于获取证书信息。
@@ -836,6 +897,15 @@ namespace TencentCloud
                 DownloadCertificateOutcome DownloadCertificate(const Model::DownloadCertificateRequest &request);
                 void DownloadCertificateAsync(const Model::DownloadCertificateRequest& request, const DownloadCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadCertificateOutcomeCallable DownloadCertificateCallable(const Model::DownloadCertificateRequest& request);
+
+                /**
+                 *修改CSR信息
+                 * @param req ModifyCSRRequest
+                 * @return ModifyCSROutcome
+                 */
+                ModifyCSROutcome ModifyCSR(const Model::ModifyCSRRequest &request);
+                void ModifyCSRAsync(const Model::ModifyCSRRequest& request, const ModifyCSRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCSROutcomeCallable ModifyCSRCallable(const Model::ModifyCSRRequest& request);
 
                 /**
                  *用户传入证书id和备注来修改证书备注。

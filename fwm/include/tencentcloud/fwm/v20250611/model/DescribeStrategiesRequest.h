@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品类型
-                     * @return Product 产品类型
+                     * 获取<p>产品类型</p>
+                     * @return Product <p>产品类型</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置产品类型
-                     * @param _product 产品类型
+                     * 设置<p>产品类型</p>
+                     * @param _product <p>产品类型</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取执行区域：pre是前区，post 是后区
-                     * @return ExecArea 执行区域：pre是前区，post 是后区
+                     * 获取<p>执行区域：pre是前区，post 是后区</p>
+                     * @return ExecArea <p>执行区域：pre是前区，post 是后区</p>
                      * 
                      */
                     std::string GetExecArea() const;
 
                     /**
-                     * 设置执行区域：pre是前区，post 是后区
-                     * @param _execArea 执行区域：pre是前区，post 是后区
+                     * 设置<p>执行区域：pre是前区，post 是后区</p>
+                     * @param _execArea <p>执行区域：pre是前区，post 是后区</p>
                      * 
                      */
                     void SetExecArea(const std::string& _execArea);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ExecAreaHasBeenSet() const;
 
                     /**
-                     * 获取筛选条件
-                     * @return Filters 筛选条件
+                     * 获取<p>筛选条件</p>
+                     * @return Filters <p>筛选条件</p>
                      * 
                      */
                     std::vector<CommonFilter> GetFilters() const;
 
                     /**
-                     * 设置筛选条件
-                     * @param _filters 筛选条件
+                     * 设置<p>筛选条件</p>
+                     * @param _filters <p>筛选条件</p>
                      * 
                      */
                     void SetFilters(const std::vector<CommonFilter>& _filters);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取条数限制
-                     * @return Limit 条数限制
+                     * 获取<p>条数限制</p>
+                     * @return Limit <p>条数限制</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置条数限制
-                     * @param _limit 条数限制
+                     * 设置<p>条数限制</p>
+                     * @param _limit <p>条数限制</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品类型
+                     * <p>产品类型</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 执行区域：pre是前区，post 是后区
+                     * <p>执行区域：pre是前区，post 是后区</p>
                      */
                     std::string m_execArea;
                     bool m_execAreaHasBeenSet;
 
                     /**
-                     * 筛选条件
+                     * <p>筛选条件</p>
                      */
                     std::vector<CommonFilter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 条数限制
+                     * <p>条数限制</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

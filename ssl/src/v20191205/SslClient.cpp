@@ -90,6 +90,56 @@ SslClient::ApplyCertificateOutcomeCallable SslClient::ApplyCertificateCallable(c
     return prom->get_future();
 }
 
+SslClient::BatchDeleteCSROutcome SslClient::BatchDeleteCSR(const BatchDeleteCSRRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDeleteCSR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDeleteCSRResponse rsp = BatchDeleteCSRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDeleteCSROutcome(rsp);
+        else
+            return BatchDeleteCSROutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDeleteCSROutcome(outcome.GetError());
+    }
+}
+
+void SslClient::BatchDeleteCSRAsync(const BatchDeleteCSRRequest& request, const BatchDeleteCSRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BatchDeleteCSRRequest&;
+    using Resp = BatchDeleteCSRResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BatchDeleteCSR", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SslClient::BatchDeleteCSROutcomeCallable SslClient::BatchDeleteCSRCallable(const BatchDeleteCSRRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BatchDeleteCSROutcome>>();
+    BatchDeleteCSRAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const BatchDeleteCSRRequest&,
+        BatchDeleteCSROutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 SslClient::CancelAuditCertificateOutcome SslClient::CancelAuditCertificate(const CancelAuditCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelAuditCertificate");
@@ -540,6 +590,56 @@ SslClient::CompleteCertificateOutcomeCallable SslClient::CompleteCertificateCall
     return prom->get_future();
 }
 
+SslClient::CreateCSROutcome SslClient::CreateCSR(const CreateCSRRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCSR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCSRResponse rsp = CreateCSRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCSROutcome(rsp);
+        else
+            return CreateCSROutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCSROutcome(outcome.GetError());
+    }
+}
+
+void SslClient::CreateCSRAsync(const CreateCSRRequest& request, const CreateCSRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCSRRequest&;
+    using Resp = CreateCSRResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCSR", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SslClient::CreateCSROutcomeCallable SslClient::CreateCSRCallable(const CreateCSRRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCSROutcome>>();
+    CreateCSRAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const CreateCSRRequest&,
+        CreateCSROutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 SslClient::CreateCertificateOutcome SslClient::CreateCertificate(const CreateCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCertificate");
@@ -982,6 +1082,106 @@ SslClient::DeployCertificateRecordRollbackOutcomeCallable SslClient::DeployCerti
         const SslClient*,
         const DeployCertificateRecordRollbackRequest&,
         DeployCertificateRecordRollbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+SslClient::DescribeCSROutcome SslClient::DescribeCSR(const DescribeCSRRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCSR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCSRResponse rsp = DescribeCSRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCSROutcome(rsp);
+        else
+            return DescribeCSROutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCSROutcome(outcome.GetError());
+    }
+}
+
+void SslClient::DescribeCSRAsync(const DescribeCSRRequest& request, const DescribeCSRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCSRRequest&;
+    using Resp = DescribeCSRResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCSR", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SslClient::DescribeCSROutcomeCallable SslClient::DescribeCSRCallable(const DescribeCSRRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCSROutcome>>();
+    DescribeCSRAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeCSRRequest&,
+        DescribeCSROutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+SslClient::DescribeCSRSetOutcome SslClient::DescribeCSRSet(const DescribeCSRSetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCSRSet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCSRSetResponse rsp = DescribeCSRSetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCSRSetOutcome(rsp);
+        else
+            return DescribeCSRSetOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCSRSetOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::DescribeCSRSetAsync(const DescribeCSRSetRequest& request, const DescribeCSRSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCSRSetRequest&;
+    using Resp = DescribeCSRSetResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCSRSet", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SslClient::DescribeCSRSetOutcomeCallable SslClient::DescribeCSRSetCallable(const DescribeCSRSetRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCSRSetOutcome>>();
+    DescribeCSRSetAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const DescribeCSRSetRequest&,
+        DescribeCSRSetOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2532,6 +2732,56 @@ SslClient::DownloadCertificateOutcomeCallable SslClient::DownloadCertificateCall
         const SslClient*,
         const DownloadCertificateRequest&,
         DownloadCertificateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+SslClient::ModifyCSROutcome SslClient::ModifyCSR(const ModifyCSRRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCSR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCSRResponse rsp = ModifyCSRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCSROutcome(rsp);
+        else
+            return ModifyCSROutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCSROutcome(outcome.GetError());
+    }
+}
+
+void SslClient::ModifyCSRAsync(const ModifyCSRRequest& request, const ModifyCSRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCSRRequest&;
+    using Resp = ModifyCSRResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCSR", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+SslClient::ModifyCSROutcomeCallable SslClient::ModifyCSRCallable(const ModifyCSRRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCSROutcome>>();
+    ModifyCSRAsync(
+    request,
+    [prom](
+        const SslClient*,
+        const ModifyCSRRequest&,
+        ModifyCSROutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

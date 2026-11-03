@@ -34,6 +34,7 @@ OrganMemberItem::OrganMemberItem() :
     m_cfwShareRoleHasBeenSet(false),
     m_cfwShareRoleDisplayHasBeenSet(false),
     m_cfwSharerAppIdHasBeenSet(false),
+    m_cfwSharerMemberIdHasBeenSet(false),
     m_cfwInstanceIdHasBeenSet(false),
     m_policyAnalysisEnabledHasBeenSet(false),
     m_memberCreateTimeHasBeenSet(false),
@@ -41,7 +42,8 @@ OrganMemberItem::OrganMemberItem() :
     m_cfwPayStatusHasBeenSet(false),
     m_cfwCapableHasBeenSet(false),
     m_sgManagedHasBeenSet(false),
-    m_isCfwPostPayHasBeenSet(false)
+    m_isCfwPostPayHasBeenSet(false),
+    m_sgFreeClaimedHasBeenSet(false)
 {
 }
 
@@ -187,6 +189,16 @@ CoreInternalOutcome OrganMemberItem::Deserialize(const rapidjson::Value &value)
         m_cfwSharerAppIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CfwSharerMemberId") && !value["CfwSharerMemberId"].IsNull())
+    {
+        if (!value["CfwSharerMemberId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganMemberItem.CfwSharerMemberId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cfwSharerMemberId = string(value["CfwSharerMemberId"].GetString());
+        m_cfwSharerMemberIdHasBeenSet = true;
+    }
+
     if (value.HasMember("CfwInstanceId") && !value["CfwInstanceId"].IsNull())
     {
         if (!value["CfwInstanceId"].IsString())
@@ -265,6 +277,16 @@ CoreInternalOutcome OrganMemberItem::Deserialize(const rapidjson::Value &value)
         }
         m_isCfwPostPay = value["IsCfwPostPay"].GetInt64();
         m_isCfwPostPayHasBeenSet = true;
+    }
+
+    if (value.HasMember("SgFreeClaimed") && !value["SgFreeClaimed"].IsNull())
+    {
+        if (!value["SgFreeClaimed"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganMemberItem.SgFreeClaimed` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sgFreeClaimed = value["SgFreeClaimed"].GetInt64();
+        m_sgFreeClaimedHasBeenSet = true;
     }
 
 
@@ -379,6 +401,14 @@ void OrganMemberItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_cfwSharerAppId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_cfwSharerMemberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CfwSharerMemberId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cfwSharerMemberId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_cfwInstanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -441,6 +471,14 @@ void OrganMemberItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsCfwPostPay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCfwPostPay, allocator);
+    }
+
+    if (m_sgFreeClaimedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SgFreeClaimed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sgFreeClaimed, allocator);
     }
 
 }
@@ -654,6 +692,22 @@ bool OrganMemberItem::CfwSharerAppIdHasBeenSet() const
     return m_cfwSharerAppIdHasBeenSet;
 }
 
+string OrganMemberItem::GetCfwSharerMemberId() const
+{
+    return m_cfwSharerMemberId;
+}
+
+void OrganMemberItem::SetCfwSharerMemberId(const string& _cfwSharerMemberId)
+{
+    m_cfwSharerMemberId = _cfwSharerMemberId;
+    m_cfwSharerMemberIdHasBeenSet = true;
+}
+
+bool OrganMemberItem::CfwSharerMemberIdHasBeenSet() const
+{
+    return m_cfwSharerMemberIdHasBeenSet;
+}
+
 string OrganMemberItem::GetCfwInstanceId() const
 {
     return m_cfwInstanceId;
@@ -780,5 +834,21 @@ void OrganMemberItem::SetIsCfwPostPay(const int64_t& _isCfwPostPay)
 bool OrganMemberItem::IsCfwPostPayHasBeenSet() const
 {
     return m_isCfwPostPayHasBeenSet;
+}
+
+int64_t OrganMemberItem::GetSgFreeClaimed() const
+{
+    return m_sgFreeClaimed;
+}
+
+void OrganMemberItem::SetSgFreeClaimed(const int64_t& _sgFreeClaimed)
+{
+    m_sgFreeClaimed = _sgFreeClaimed;
+    m_sgFreeClaimedHasBeenSet = true;
+}
+
+bool OrganMemberItem::SgFreeClaimedHasBeenSet() const
+{
+    return m_sgFreeClaimedHasBeenSet;
 }
 

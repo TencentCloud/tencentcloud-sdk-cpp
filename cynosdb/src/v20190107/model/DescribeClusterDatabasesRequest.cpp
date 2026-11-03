@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeClusterDatabasesRequest::DescribeClusterDatabasesRequest() :
     m_clusterIdHasBeenSet(false),
+    m_fuzzyDBNamesHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -42,6 +43,19 @@ string DescribeClusterDatabasesRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fuzzyDBNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FuzzyDBNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_fuzzyDBNames.begin(); itr != m_fuzzyDBNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_offsetHasBeenSet)
@@ -82,6 +96,22 @@ void DescribeClusterDatabasesRequest::SetClusterId(const string& _clusterId)
 bool DescribeClusterDatabasesRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+vector<string> DescribeClusterDatabasesRequest::GetFuzzyDBNames() const
+{
+    return m_fuzzyDBNames;
+}
+
+void DescribeClusterDatabasesRequest::SetFuzzyDBNames(const vector<string>& _fuzzyDBNames)
+{
+    m_fuzzyDBNames = _fuzzyDBNames;
+    m_fuzzyDBNamesHasBeenSet = true;
+}
+
+bool DescribeClusterDatabasesRequest::FuzzyDBNamesHasBeenSet() const
+{
+    return m_fuzzyDBNamesHasBeenSet;
 }
 
 int64_t DescribeClusterDatabasesRequest::GetOffset() const

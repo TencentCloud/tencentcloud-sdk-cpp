@@ -1379,6 +1379,27 @@ namespace TencentCloud
                      */
                     bool CertServiceValidCertificateCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否可重新提交。</p><p>默认值：false</p>
+                     * @return ResubmitAble <p>是否可重新提交。</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetResubmitAble() const;
+
+                    /**
+                     * 设置<p>是否可重新提交。</p><p>默认值：false</p>
+                     * @param _resubmitAble <p>是否可重新提交。</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetResubmitAble(const bool& _resubmitAble);
+
+                    /**
+                     * 判断参数 ResubmitAble 是否已赋值
+                     * @return ResubmitAble 是否已赋值
+                     * 
+                     */
+                    bool ResubmitAbleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1759,6 +1780,12 @@ namespace TencentCloud
                      */
                     int64_t m_certServiceValidCertificateCount;
                     bool m_certServiceValidCertificateCountHasBeenSet;
+
+                    /**
+                     * <p>是否可重新提交。</p><p>默认值：false</p>
+                     */
+                    bool m_resubmitAble;
+                    bool m_resubmitAbleHasBeenSet;
 
                 };
             }

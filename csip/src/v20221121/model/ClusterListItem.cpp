@@ -61,7 +61,9 @@ ClusterListItem::ClusterListItem() :
     m_regionNameEnHasBeenSet(false),
     m_unboundUltimateNodeCountHasBeenSet(false),
     m_tagItemsHasBeenSet(false),
-    m_tagModifyInfoHasBeenSet(false)
+    m_tagModifyInfoHasBeenSet(false),
+    m_normalNodeCountHasBeenSet(false),
+    m_auditLogFailedInfoHasBeenSet(false)
 {
 }
 
@@ -507,6 +509,26 @@ CoreInternalOutcome ClusterListItem::Deserialize(const rapidjson::Value &value)
         m_tagModifyInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("NormalNodeCount") && !value["NormalNodeCount"].IsNull())
+    {
+        if (!value["NormalNodeCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterListItem.NormalNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_normalNodeCount = value["NormalNodeCount"].GetUint64();
+        m_normalNodeCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuditLogFailedInfo") && !value["AuditLogFailedInfo"].IsNull())
+    {
+        if (!value["AuditLogFailedInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterListItem.AuditLogFailedInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_auditLogFailedInfo = string(value["AuditLogFailedInfo"].GetString());
+        m_auditLogFailedInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -855,6 +877,22 @@ void ClusterListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tagModifyInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_normalNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NormalNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_normalNodeCount, allocator);
+    }
+
+    if (m_auditLogFailedInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuditLogFailedInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_auditLogFailedInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1514,5 +1552,37 @@ void ClusterListItem::SetTagModifyInfo(const AssetTagModifyAssetItem& _tagModify
 bool ClusterListItem::TagModifyInfoHasBeenSet() const
 {
     return m_tagModifyInfoHasBeenSet;
+}
+
+uint64_t ClusterListItem::GetNormalNodeCount() const
+{
+    return m_normalNodeCount;
+}
+
+void ClusterListItem::SetNormalNodeCount(const uint64_t& _normalNodeCount)
+{
+    m_normalNodeCount = _normalNodeCount;
+    m_normalNodeCountHasBeenSet = true;
+}
+
+bool ClusterListItem::NormalNodeCountHasBeenSet() const
+{
+    return m_normalNodeCountHasBeenSet;
+}
+
+string ClusterListItem::GetAuditLogFailedInfo() const
+{
+    return m_auditLogFailedInfo;
+}
+
+void ClusterListItem::SetAuditLogFailedInfo(const string& _auditLogFailedInfo)
+{
+    m_auditLogFailedInfo = _auditLogFailedInfo;
+    m_auditLogFailedInfoHasBeenSet = true;
+}
+
+bool ClusterListItem::AuditLogFailedInfoHasBeenSet() const
+{
+    return m_auditLogFailedInfoHasBeenSet;
 }
 

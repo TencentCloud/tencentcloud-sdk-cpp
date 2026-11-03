@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/databuddy/v20260715/model/CosEventSubscription.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取COS 文件事件订阅配置，可选；不设置时不订阅（仅 COS 类型 Location 生效）。设置时先订阅 COS 桶事件投递到 CKafka 再创建 Location，创建失败自动回滚退订
+                     * @return FileEventSubscription COS 文件事件订阅配置，可选；不设置时不订阅（仅 COS 类型 Location 生效）。设置时先订阅 COS 桶事件投递到 CKafka 再创建 Location，创建失败自动回滚退订
+                     * 
+                     */
+                    CosEventSubscription GetFileEventSubscription() const;
+
+                    /**
+                     * 设置COS 文件事件订阅配置，可选；不设置时不订阅（仅 COS 类型 Location 生效）。设置时先订阅 COS 桶事件投递到 CKafka 再创建 Location，创建失败自动回滚退订
+                     * @param _fileEventSubscription COS 文件事件订阅配置，可选；不设置时不订阅（仅 COS 类型 Location 生效）。设置时先订阅 COS 桶事件投递到 CKafka 再创建 Location，创建失败自动回滚退订
+                     * 
+                     */
+                    void SetFileEventSubscription(const CosEventSubscription& _fileEventSubscription);
+
+                    /**
+                     * 判断参数 FileEventSubscription 是否已赋值
+                     * @return FileEventSubscription 是否已赋值
+                     * 
+                     */
+                    bool FileEventSubscriptionHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * COS 文件事件订阅配置，可选；不设置时不订阅（仅 COS 类型 Location 生效）。设置时先订阅 COS 桶事件投递到 CKafka 再创建 Location，创建失败自动回滚退订
+                     */
+                    CosEventSubscription m_fileEventSubscription;
+                    bool m_fileEventSubscriptionHasBeenSet;
 
                 };
             }

@@ -69,7 +69,8 @@ DescribeCertificateDetailResponse::DescribeCertificateDetailResponse() :
     m_domainTypeHasBeenSet(false),
     m_certTypeHasBeenSet(false),
     m_useCrossSignRootHasBeenSet(false),
-    m_hostingStatusHasBeenSet(false)
+    m_hostingStatusHasBeenSet(false),
+    m_resubmitAbleHasBeenSet(false)
 {
 }
 
@@ -628,6 +629,16 @@ CoreInternalOutcome DescribeCertificateDetailResponse::Deserialize(const string 
         m_hostingStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResubmitAble") && !rsp["ResubmitAble"].IsNull())
+    {
+        if (!rsp["ResubmitAble"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResubmitAble` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_resubmitAble = rsp["ResubmitAble"].GetBool();
+        m_resubmitAbleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1034,6 +1045,14 @@ string DescribeCertificateDetailResponse::ToJsonString() const
         string key = "HostingStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hostingStatus, allocator);
+    }
+
+    if (m_resubmitAbleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResubmitAble";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resubmitAble, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1506,6 +1525,16 @@ int64_t DescribeCertificateDetailResponse::GetHostingStatus() const
 bool DescribeCertificateDetailResponse::HostingStatusHasBeenSet() const
 {
     return m_hostingStatusHasBeenSet;
+}
+
+bool DescribeCertificateDetailResponse::GetResubmitAble() const
+{
+    return m_resubmitAble;
+}
+
+bool DescribeCertificateDetailResponse::ResubmitAbleHasBeenSet() const
+{
+    return m_resubmitAbleHasBeenSet;
 }
 
 

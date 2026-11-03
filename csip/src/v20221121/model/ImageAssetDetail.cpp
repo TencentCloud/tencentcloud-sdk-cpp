@@ -55,7 +55,9 @@ ImageAssetDetail::ImageAssetDetail() :
     m_lowLevelSensitiveCntHasBeenSet(false),
     m_mediumLevelSensitiveCntHasBeenSet(false),
     m_highLevelSensitiveCntHasBeenSet(false),
-    m_criticalLevelSensitiveCntHasBeenSet(false)
+    m_criticalLevelSensitiveCntHasBeenSet(false),
+    m_secretFileCntHasBeenSet(false),
+    m_buildRiskCntHasBeenSet(false)
 {
 }
 
@@ -414,6 +416,26 @@ CoreInternalOutcome ImageAssetDetail::Deserialize(const rapidjson::Value &value)
         m_criticalLevelSensitiveCntHasBeenSet = true;
     }
 
+    if (value.HasMember("SecretFileCnt") && !value["SecretFileCnt"].IsNull())
+    {
+        if (!value["SecretFileCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssetDetail.SecretFileCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretFileCnt = value["SecretFileCnt"].GetUint64();
+        m_secretFileCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("BuildRiskCnt") && !value["BuildRiskCnt"].IsNull())
+    {
+        if (!value["BuildRiskCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageAssetDetail.BuildRiskCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_buildRiskCnt = value["BuildRiskCnt"].GetUint64();
+        m_buildRiskCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -699,6 +721,22 @@ void ImageAssetDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CriticalLevelSensitiveCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_criticalLevelSensitiveCnt, allocator);
+    }
+
+    if (m_secretFileCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretFileCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_secretFileCnt, allocator);
+    }
+
+    if (m_buildRiskCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildRiskCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_buildRiskCnt, allocator);
     }
 
 }
@@ -1262,5 +1300,37 @@ void ImageAssetDetail::SetCriticalLevelSensitiveCnt(const uint64_t& _criticalLev
 bool ImageAssetDetail::CriticalLevelSensitiveCntHasBeenSet() const
 {
     return m_criticalLevelSensitiveCntHasBeenSet;
+}
+
+uint64_t ImageAssetDetail::GetSecretFileCnt() const
+{
+    return m_secretFileCnt;
+}
+
+void ImageAssetDetail::SetSecretFileCnt(const uint64_t& _secretFileCnt)
+{
+    m_secretFileCnt = _secretFileCnt;
+    m_secretFileCntHasBeenSet = true;
+}
+
+bool ImageAssetDetail::SecretFileCntHasBeenSet() const
+{
+    return m_secretFileCntHasBeenSet;
+}
+
+uint64_t ImageAssetDetail::GetBuildRiskCnt() const
+{
+    return m_buildRiskCnt;
+}
+
+void ImageAssetDetail::SetBuildRiskCnt(const uint64_t& _buildRiskCnt)
+{
+    m_buildRiskCnt = _buildRiskCnt;
+    m_buildRiskCntHasBeenSet = true;
+}
+
+bool ImageAssetDetail::BuildRiskCntHasBeenSet() const
+{
+    return m_buildRiskCntHasBeenSet;
 }
 

@@ -32,7 +32,9 @@ IaCFile::IaCFile() :
     m_riskLevelCntHasBeenSet(false),
     m_scanTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_failTypeHasBeenSet(false)
+    m_failTypeHasBeenSet(false),
+    m_failReasonHasBeenSet(false),
+    m_failSolutionHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,26 @@ CoreInternalOutcome IaCFile::Deserialize(const rapidjson::Value &value)
         m_failTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("FailReason") && !value["FailReason"].IsNull())
+    {
+        if (!value["FailReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IaCFile.FailReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failReason = string(value["FailReason"].GetString());
+        m_failReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailSolution") && !value["FailSolution"].IsNull())
+    {
+        if (!value["FailSolution"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IaCFile.FailSolution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failSolution = string(value["FailSolution"].GetString());
+        m_failSolutionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +301,22 @@ void IaCFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "FailType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failType, allocator);
+    }
+
+    if (m_failReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failSolutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailSolution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failSolution.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -474,5 +512,37 @@ void IaCFile::SetFailType(const int64_t& _failType)
 bool IaCFile::FailTypeHasBeenSet() const
 {
     return m_failTypeHasBeenSet;
+}
+
+string IaCFile::GetFailReason() const
+{
+    return m_failReason;
+}
+
+void IaCFile::SetFailReason(const string& _failReason)
+{
+    m_failReason = _failReason;
+    m_failReasonHasBeenSet = true;
+}
+
+bool IaCFile::FailReasonHasBeenSet() const
+{
+    return m_failReasonHasBeenSet;
+}
+
+string IaCFile::GetFailSolution() const
+{
+    return m_failSolution;
+}
+
+void IaCFile::SetFailSolution(const string& _failSolution)
+{
+    m_failSolution = _failSolution;
+    m_failSolutionHasBeenSet = true;
+}
+
+bool IaCFile::FailSolutionHasBeenSet() const
+{
+    return m_failSolutionHasBeenSet;
 }
 

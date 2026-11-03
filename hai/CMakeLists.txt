@@ -66,6 +66,7 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusRequest.h
   include/tencentcloud/hai/v20230812/model/MuskPromptInfo.h
   include/tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h
+  include/tencentcloud/hai/v20230812/model/RoleStatusInfo.h
   include/tencentcloud/hai/v20230812/model/EnvParam.h
   include/tencentcloud/hai/v20230812/model/GetServicePodLogsResponse.h
   include/tencentcloud/hai/v20230812/model/DeleteServiceResponse.h
@@ -159,6 +160,7 @@ set(hai_src
   src/v20230812/model/DescribeInstanceNetworkStatusRequest.cpp
   src/v20230812/model/MuskPromptInfo.cpp
   src/v20230812/model/InquirePriceRunInstancesRequest.cpp
+  src/v20230812/model/RoleStatusInfo.cpp
   src/v20230812/model/EnvParam.cpp
   src/v20230812/model/GetServicePodLogsResponse.cpp
   src/v20230812/model/DeleteServiceResponse.cpp

@@ -1,0 +1,75 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_CNGW_V20230418_MODEL_DESCRIBEAIGWCUSTOMGUARDRAILHITSRESPONSE_H_
+#define TENCENTCLOUD_CNGW_V20230418_MODEL_DESCRIBEAIGWCUSTOMGUARDRAILHITSRESPONSE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailHitsResult.h>
+
+
+namespace TencentCloud
+{
+    namespace Cngw
+    {
+        namespace V20230418
+        {
+            namespace Model
+            {
+                /**
+                * DescribeAIGWCustomGuardrailHits返回参数结构体
+                */
+                class DescribeAIGWCustomGuardrailHitsResponse : public AbstractModel
+                {
+                public:
+                    DescribeAIGWCustomGuardrailHitsResponse();
+                    ~DescribeAIGWCustomGuardrailHitsResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取<p>接口业务结果，位于完整云 API 响应 Response.Result。存在 Success 时仍须单独判断；Response.RequestId 是本次云 API 请求标识。</p>
+                     * @return Result <p>接口业务结果，位于完整云 API 响应 Response.Result。存在 Success 时仍须单独判断；Response.RequestId 是本次云 API 请求标识。</p>
+                     * 
+                     */
+                    DescribeAIGWCustomGuardrailHitsResult GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>接口业务结果，位于完整云 API 响应 Response.Result。存在 Success 时仍须单独判断；Response.RequestId 是本次云 API 请求标识。</p>
+                     */
+                    DescribeAIGWCustomGuardrailHitsResult m_result;
+                    bool m_resultHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_CNGW_V20230418_MODEL_DESCRIBEAIGWCUSTOMGUARDRAILHITSRESPONSE_H_

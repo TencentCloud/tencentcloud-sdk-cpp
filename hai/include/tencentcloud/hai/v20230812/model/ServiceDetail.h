@@ -27,6 +27,7 @@
 #include <tencentcloud/hai/v20230812/model/ComputeDetail.h>
 #include <tencentcloud/hai/v20230812/model/DeploymentConfig.h>
 #include <tencentcloud/hai/v20230812/model/HyperParam.h>
+#include <tencentcloud/hai/v20230812/model/RoleStatusInfo.h>
 
 
 namespace TencentCloud
@@ -260,6 +261,27 @@ namespace TencentCloud
                     bool HyperParamHasBeenSet() const;
 
                     /**
+                     * 获取<p>角色状态</p>
+                     * @return RoleStatuses <p>角色状态</p>
+                     * 
+                     */
+                    std::vector<RoleStatusInfo> GetRoleStatuses() const;
+
+                    /**
+                     * 设置<p>角色状态</p>
+                     * @param _roleStatuses <p>角色状态</p>
+                     * 
+                     */
+                    void SetRoleStatuses(const std::vector<RoleStatusInfo>& _roleStatuses);
+
+                    /**
+                     * 判断参数 RoleStatuses 是否已赋值
+                     * @return RoleStatuses 是否已赋值
+                     * 
+                     */
+                    bool RoleStatusesHasBeenSet() const;
+
+                    /**
                      * 获取<p>安全类型</p>
                      * @return SecurityType <p>安全类型</p>
                      * 
@@ -488,6 +510,12 @@ namespace TencentCloud
                      */
                     HyperParam m_hyperParam;
                     bool m_hyperParamHasBeenSet;
+
+                    /**
+                     * <p>角色状态</p>
+                     */
+                    std::vector<RoleStatusInfo> m_roleStatuses;
+                    bool m_roleStatusesHasBeenSet;
 
                     /**
                      * <p>安全类型</p>

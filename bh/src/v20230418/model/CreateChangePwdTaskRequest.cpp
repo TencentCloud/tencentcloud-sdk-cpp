@@ -41,7 +41,10 @@ CreateChangePwdTaskRequest::CreateChangePwdTaskRequest() :
     m_departmentIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_firstTimeHasBeenSet(false)
+    m_firstTimeHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -217,6 +220,30 @@ string CreateChangePwdTaskRequest::ToJsonString() const
         string key = "FirstTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_firstTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_category, allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_protocol, allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_port, allocator);
     }
 
 
@@ -529,6 +556,54 @@ void CreateChangePwdTaskRequest::SetFirstTime(const string& _firstTime)
 bool CreateChangePwdTaskRequest::FirstTimeHasBeenSet() const
 {
     return m_firstTimeHasBeenSet;
+}
+
+int64_t CreateChangePwdTaskRequest::GetCategory() const
+{
+    return m_category;
+}
+
+void CreateChangePwdTaskRequest::SetCategory(const int64_t& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool CreateChangePwdTaskRequest::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
+}
+
+int64_t CreateChangePwdTaskRequest::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void CreateChangePwdTaskRequest::SetProtocol(const int64_t& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool CreateChangePwdTaskRequest::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
+}
+
+uint64_t CreateChangePwdTaskRequest::GetPort() const
+{
+    return m_port;
+}
+
+void CreateChangePwdTaskRequest::SetPort(const uint64_t& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool CreateChangePwdTaskRequest::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
 }
 
 

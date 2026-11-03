@@ -240,6 +240,56 @@ TseClient::CloseWafProtectionOutcomeCallable TseClient::CloseWafProtectionCallab
     return prom->get_future();
 }
 
+TseClient::CreateAIGWCustomGuardrailPolicyOutcome TseClient::CreateAIGWCustomGuardrailPolicy(const CreateAIGWCustomGuardrailPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAIGWCustomGuardrailPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAIGWCustomGuardrailPolicyResponse rsp = CreateAIGWCustomGuardrailPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAIGWCustomGuardrailPolicyOutcome(rsp);
+        else
+            return CreateAIGWCustomGuardrailPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAIGWCustomGuardrailPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateAIGWCustomGuardrailPolicyAsync(const CreateAIGWCustomGuardrailPolicyRequest& request, const CreateAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAIGWCustomGuardrailPolicyRequest&;
+    using Resp = CreateAIGWCustomGuardrailPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAIGWCustomGuardrailPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::CreateAIGWCustomGuardrailPolicyOutcomeCallable TseClient::CreateAIGWCustomGuardrailPolicyCallable(const CreateAIGWCustomGuardrailPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAIGWCustomGuardrailPolicyOutcome>>();
+    CreateAIGWCustomGuardrailPolicyAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const CreateAIGWCustomGuardrailPolicyRequest&,
+        CreateAIGWCustomGuardrailPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TseClient::CreateAutoScalerResourceStrategyOutcome TseClient::CreateAutoScalerResourceStrategy(const CreateAutoScalerResourceStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAutoScalerResourceStrategy");
@@ -1632,6 +1682,56 @@ TseClient::CreateWafDomainsOutcomeCallable TseClient::CreateWafDomainsCallable(c
         const TseClient*,
         const CreateWafDomainsRequest&,
         CreateWafDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DeleteAIGWCustomGuardrailPolicyOutcome TseClient::DeleteAIGWCustomGuardrailPolicy(const DeleteAIGWCustomGuardrailPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAIGWCustomGuardrailPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAIGWCustomGuardrailPolicyResponse rsp = DeleteAIGWCustomGuardrailPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAIGWCustomGuardrailPolicyOutcome(rsp);
+        else
+            return DeleteAIGWCustomGuardrailPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAIGWCustomGuardrailPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteAIGWCustomGuardrailPolicyAsync(const DeleteAIGWCustomGuardrailPolicyRequest& request, const DeleteAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAIGWCustomGuardrailPolicyRequest&;
+    using Resp = DeleteAIGWCustomGuardrailPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAIGWCustomGuardrailPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DeleteAIGWCustomGuardrailPolicyOutcomeCallable TseClient::DeleteAIGWCustomGuardrailPolicyCallable(const DeleteAIGWCustomGuardrailPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAIGWCustomGuardrailPolicyOutcome>>();
+    DeleteAIGWCustomGuardrailPolicyAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DeleteAIGWCustomGuardrailPolicyRequest&,
+        DeleteAIGWCustomGuardrailPolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3082,6 +3182,256 @@ TseClient::DeleteWafDomainsOutcomeCallable TseClient::DeleteWafDomainsCallable(c
         const TseClient*,
         const DeleteWafDomainsRequest&,
         DeleteWafDomainsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeAIGWCustomGuardrailBindableResourcesOutcome TseClient::DescribeAIGWCustomGuardrailBindableResources(const DescribeAIGWCustomGuardrailBindableResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGWCustomGuardrailBindableResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGWCustomGuardrailBindableResourcesResponse rsp = DescribeAIGWCustomGuardrailBindableResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGWCustomGuardrailBindableResourcesOutcome(rsp);
+        else
+            return DescribeAIGWCustomGuardrailBindableResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGWCustomGuardrailBindableResourcesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeAIGWCustomGuardrailBindableResourcesAsync(const DescribeAIGWCustomGuardrailBindableResourcesRequest& request, const DescribeAIGWCustomGuardrailBindableResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGWCustomGuardrailBindableResourcesRequest&;
+    using Resp = DescribeAIGWCustomGuardrailBindableResourcesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGWCustomGuardrailBindableResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeAIGWCustomGuardrailBindableResourcesOutcomeCallable TseClient::DescribeAIGWCustomGuardrailBindableResourcesCallable(const DescribeAIGWCustomGuardrailBindableResourcesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGWCustomGuardrailBindableResourcesOutcome>>();
+    DescribeAIGWCustomGuardrailBindableResourcesAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeAIGWCustomGuardrailBindableResourcesRequest&,
+        DescribeAIGWCustomGuardrailBindableResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeAIGWCustomGuardrailCapabilitiesOutcome TseClient::DescribeAIGWCustomGuardrailCapabilities(const DescribeAIGWCustomGuardrailCapabilitiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGWCustomGuardrailCapabilities");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGWCustomGuardrailCapabilitiesResponse rsp = DescribeAIGWCustomGuardrailCapabilitiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGWCustomGuardrailCapabilitiesOutcome(rsp);
+        else
+            return DescribeAIGWCustomGuardrailCapabilitiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGWCustomGuardrailCapabilitiesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeAIGWCustomGuardrailCapabilitiesAsync(const DescribeAIGWCustomGuardrailCapabilitiesRequest& request, const DescribeAIGWCustomGuardrailCapabilitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGWCustomGuardrailCapabilitiesRequest&;
+    using Resp = DescribeAIGWCustomGuardrailCapabilitiesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGWCustomGuardrailCapabilities", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeAIGWCustomGuardrailCapabilitiesOutcomeCallable TseClient::DescribeAIGWCustomGuardrailCapabilitiesCallable(const DescribeAIGWCustomGuardrailCapabilitiesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGWCustomGuardrailCapabilitiesOutcome>>();
+    DescribeAIGWCustomGuardrailCapabilitiesAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeAIGWCustomGuardrailCapabilitiesRequest&,
+        DescribeAIGWCustomGuardrailCapabilitiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeAIGWCustomGuardrailHitsOutcome TseClient::DescribeAIGWCustomGuardrailHits(const DescribeAIGWCustomGuardrailHitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGWCustomGuardrailHits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGWCustomGuardrailHitsResponse rsp = DescribeAIGWCustomGuardrailHitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGWCustomGuardrailHitsOutcome(rsp);
+        else
+            return DescribeAIGWCustomGuardrailHitsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGWCustomGuardrailHitsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeAIGWCustomGuardrailHitsAsync(const DescribeAIGWCustomGuardrailHitsRequest& request, const DescribeAIGWCustomGuardrailHitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGWCustomGuardrailHitsRequest&;
+    using Resp = DescribeAIGWCustomGuardrailHitsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGWCustomGuardrailHits", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeAIGWCustomGuardrailHitsOutcomeCallable TseClient::DescribeAIGWCustomGuardrailHitsCallable(const DescribeAIGWCustomGuardrailHitsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGWCustomGuardrailHitsOutcome>>();
+    DescribeAIGWCustomGuardrailHitsAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeAIGWCustomGuardrailHitsRequest&,
+        DescribeAIGWCustomGuardrailHitsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeAIGWCustomGuardrailPolicyOutcome TseClient::DescribeAIGWCustomGuardrailPolicy(const DescribeAIGWCustomGuardrailPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGWCustomGuardrailPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGWCustomGuardrailPolicyResponse rsp = DescribeAIGWCustomGuardrailPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGWCustomGuardrailPolicyOutcome(rsp);
+        else
+            return DescribeAIGWCustomGuardrailPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGWCustomGuardrailPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeAIGWCustomGuardrailPolicyAsync(const DescribeAIGWCustomGuardrailPolicyRequest& request, const DescribeAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGWCustomGuardrailPolicyRequest&;
+    using Resp = DescribeAIGWCustomGuardrailPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGWCustomGuardrailPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeAIGWCustomGuardrailPolicyOutcomeCallable TseClient::DescribeAIGWCustomGuardrailPolicyCallable(const DescribeAIGWCustomGuardrailPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGWCustomGuardrailPolicyOutcome>>();
+    DescribeAIGWCustomGuardrailPolicyAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeAIGWCustomGuardrailPolicyRequest&,
+        DescribeAIGWCustomGuardrailPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::DescribeAIGWCustomGuardrailPolicyListOutcome TseClient::DescribeAIGWCustomGuardrailPolicyList(const DescribeAIGWCustomGuardrailPolicyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGWCustomGuardrailPolicyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGWCustomGuardrailPolicyListResponse rsp = DescribeAIGWCustomGuardrailPolicyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGWCustomGuardrailPolicyListOutcome(rsp);
+        else
+            return DescribeAIGWCustomGuardrailPolicyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGWCustomGuardrailPolicyListOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeAIGWCustomGuardrailPolicyListAsync(const DescribeAIGWCustomGuardrailPolicyListRequest& request, const DescribeAIGWCustomGuardrailPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGWCustomGuardrailPolicyListRequest&;
+    using Resp = DescribeAIGWCustomGuardrailPolicyListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGWCustomGuardrailPolicyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::DescribeAIGWCustomGuardrailPolicyListOutcomeCallable TseClient::DescribeAIGWCustomGuardrailPolicyListCallable(const DescribeAIGWCustomGuardrailPolicyListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGWCustomGuardrailPolicyListOutcome>>();
+    DescribeAIGWCustomGuardrailPolicyListAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const DescribeAIGWCustomGuardrailPolicyListRequest&,
+        DescribeAIGWCustomGuardrailPolicyListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6182,6 +6532,106 @@ TseClient::DescribeZookeeperServerInterfacesOutcomeCallable TseClient::DescribeZ
         const TseClient*,
         const DescribeZookeeperServerInterfacesRequest&,
         DescribeZookeeperServerInterfacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::ExportAIGWCustomGuardrailHitsOutcome TseClient::ExportAIGWCustomGuardrailHits(const ExportAIGWCustomGuardrailHitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportAIGWCustomGuardrailHits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportAIGWCustomGuardrailHitsResponse rsp = ExportAIGWCustomGuardrailHitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportAIGWCustomGuardrailHitsOutcome(rsp);
+        else
+            return ExportAIGWCustomGuardrailHitsOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportAIGWCustomGuardrailHitsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ExportAIGWCustomGuardrailHitsAsync(const ExportAIGWCustomGuardrailHitsRequest& request, const ExportAIGWCustomGuardrailHitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExportAIGWCustomGuardrailHitsRequest&;
+    using Resp = ExportAIGWCustomGuardrailHitsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExportAIGWCustomGuardrailHits", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::ExportAIGWCustomGuardrailHitsOutcomeCallable TseClient::ExportAIGWCustomGuardrailHitsCallable(const ExportAIGWCustomGuardrailHitsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExportAIGWCustomGuardrailHitsOutcome>>();
+    ExportAIGWCustomGuardrailHitsAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const ExportAIGWCustomGuardrailHitsRequest&,
+        ExportAIGWCustomGuardrailHitsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TseClient::ModifyAIGWCustomGuardrailPolicyOutcome TseClient::ModifyAIGWCustomGuardrailPolicy(const ModifyAIGWCustomGuardrailPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAIGWCustomGuardrailPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAIGWCustomGuardrailPolicyResponse rsp = ModifyAIGWCustomGuardrailPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAIGWCustomGuardrailPolicyOutcome(rsp);
+        else
+            return ModifyAIGWCustomGuardrailPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAIGWCustomGuardrailPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyAIGWCustomGuardrailPolicyAsync(const ModifyAIGWCustomGuardrailPolicyRequest& request, const ModifyAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAIGWCustomGuardrailPolicyRequest&;
+    using Resp = ModifyAIGWCustomGuardrailPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAIGWCustomGuardrailPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TseClient::ModifyAIGWCustomGuardrailPolicyOutcomeCallable TseClient::ModifyAIGWCustomGuardrailPolicyCallable(const ModifyAIGWCustomGuardrailPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAIGWCustomGuardrailPolicyOutcome>>();
+    ModifyAIGWCustomGuardrailPolicyAsync(
+    request,
+    [prom](
+        const TseClient*,
+        const ModifyAIGWCustomGuardrailPolicyRequest&,
+        ModifyAIGWCustomGuardrailPolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

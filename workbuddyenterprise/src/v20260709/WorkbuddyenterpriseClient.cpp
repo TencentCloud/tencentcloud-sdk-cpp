@@ -290,6 +290,56 @@ WorkbuddyenterpriseClient::CreateAgentVersionFromSourceOutcomeCallable Workbuddy
     return prom->get_future();
 }
 
+WorkbuddyenterpriseClient::CreateScheduledTaskOutcome WorkbuddyenterpriseClient::CreateScheduledTask(const CreateScheduledTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateScheduledTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScheduledTaskResponse rsp = CreateScheduledTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScheduledTaskOutcome(rsp);
+        else
+            return CreateScheduledTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScheduledTaskOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::CreateScheduledTaskAsync(const CreateScheduledTaskRequest& request, const CreateScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateScheduledTaskRequest&;
+    using Resp = CreateScheduledTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateScheduledTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::CreateScheduledTaskOutcomeCallable WorkbuddyenterpriseClient::CreateScheduledTaskCallable(const CreateScheduledTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateScheduledTaskOutcome>>();
+    CreateScheduledTaskAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const CreateScheduledTaskRequest&,
+        CreateScheduledTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WorkbuddyenterpriseClient::DeleteAgentOutcome WorkbuddyenterpriseClient::DeleteAgent(const DeleteAgentRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAgent");
@@ -332,6 +382,56 @@ WorkbuddyenterpriseClient::DeleteAgentOutcomeCallable WorkbuddyenterpriseClient:
         const WorkbuddyenterpriseClient*,
         const DeleteAgentRequest&,
         DeleteAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WorkbuddyenterpriseClient::DeleteScheduledTaskOutcome WorkbuddyenterpriseClient::DeleteScheduledTask(const DeleteScheduledTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteScheduledTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteScheduledTaskResponse rsp = DeleteScheduledTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteScheduledTaskOutcome(rsp);
+        else
+            return DeleteScheduledTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteScheduledTaskOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::DeleteScheduledTaskAsync(const DeleteScheduledTaskRequest& request, const DeleteScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteScheduledTaskRequest&;
+    using Resp = DeleteScheduledTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteScheduledTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::DeleteScheduledTaskOutcomeCallable WorkbuddyenterpriseClient::DeleteScheduledTaskCallable(const DeleteScheduledTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteScheduledTaskOutcome>>();
+    DeleteScheduledTaskAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const DeleteScheduledTaskRequest&,
+        DeleteScheduledTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -940,6 +1040,206 @@ WorkbuddyenterpriseClient::DescribeMessageEventListOutcomeCallable Workbuddyente
     return prom->get_future();
 }
 
+WorkbuddyenterpriseClient::DescribeScheduledTaskOutcome WorkbuddyenterpriseClient::DescribeScheduledTask(const DescribeScheduledTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScheduledTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScheduledTaskResponse rsp = DescribeScheduledTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScheduledTaskOutcome(rsp);
+        else
+            return DescribeScheduledTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScheduledTaskOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::DescribeScheduledTaskAsync(const DescribeScheduledTaskRequest& request, const DescribeScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeScheduledTaskRequest&;
+    using Resp = DescribeScheduledTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeScheduledTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::DescribeScheduledTaskOutcomeCallable WorkbuddyenterpriseClient::DescribeScheduledTaskCallable(const DescribeScheduledTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeScheduledTaskOutcome>>();
+    DescribeScheduledTaskAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const DescribeScheduledTaskRequest&,
+        DescribeScheduledTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WorkbuddyenterpriseClient::DescribeScheduledTaskListOutcome WorkbuddyenterpriseClient::DescribeScheduledTaskList(const DescribeScheduledTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScheduledTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScheduledTaskListResponse rsp = DescribeScheduledTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScheduledTaskListOutcome(rsp);
+        else
+            return DescribeScheduledTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScheduledTaskListOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::DescribeScheduledTaskListAsync(const DescribeScheduledTaskListRequest& request, const DescribeScheduledTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeScheduledTaskListRequest&;
+    using Resp = DescribeScheduledTaskListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeScheduledTaskList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::DescribeScheduledTaskListOutcomeCallable WorkbuddyenterpriseClient::DescribeScheduledTaskListCallable(const DescribeScheduledTaskListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeScheduledTaskListOutcome>>();
+    DescribeScheduledTaskListAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const DescribeScheduledTaskListRequest&,
+        DescribeScheduledTaskListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WorkbuddyenterpriseClient::DescribeScheduledTaskLogOutcome WorkbuddyenterpriseClient::DescribeScheduledTaskLog(const DescribeScheduledTaskLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScheduledTaskLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScheduledTaskLogResponse rsp = DescribeScheduledTaskLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScheduledTaskLogOutcome(rsp);
+        else
+            return DescribeScheduledTaskLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScheduledTaskLogOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::DescribeScheduledTaskLogAsync(const DescribeScheduledTaskLogRequest& request, const DescribeScheduledTaskLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeScheduledTaskLogRequest&;
+    using Resp = DescribeScheduledTaskLogResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeScheduledTaskLog", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::DescribeScheduledTaskLogOutcomeCallable WorkbuddyenterpriseClient::DescribeScheduledTaskLogCallable(const DescribeScheduledTaskLogRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeScheduledTaskLogOutcome>>();
+    DescribeScheduledTaskLogAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const DescribeScheduledTaskLogRequest&,
+        DescribeScheduledTaskLogOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WorkbuddyenterpriseClient::DescribeScheduledTaskLogListOutcome WorkbuddyenterpriseClient::DescribeScheduledTaskLogList(const DescribeScheduledTaskLogListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScheduledTaskLogList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScheduledTaskLogListResponse rsp = DescribeScheduledTaskLogListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScheduledTaskLogListOutcome(rsp);
+        else
+            return DescribeScheduledTaskLogListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScheduledTaskLogListOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::DescribeScheduledTaskLogListAsync(const DescribeScheduledTaskLogListRequest& request, const DescribeScheduledTaskLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeScheduledTaskLogListRequest&;
+    using Resp = DescribeScheduledTaskLogListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeScheduledTaskLogList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::DescribeScheduledTaskLogListOutcomeCallable WorkbuddyenterpriseClient::DescribeScheduledTaskLogListCallable(const DescribeScheduledTaskLogListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeScheduledTaskLogListOutcome>>();
+    DescribeScheduledTaskLogListAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const DescribeScheduledTaskLogListRequest&,
+        DescribeScheduledTaskLogListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 WorkbuddyenterpriseClient::DescribeSkillListOutcome WorkbuddyenterpriseClient::DescribeSkillList(const DescribeSkillListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSkillList");
@@ -1282,6 +1582,106 @@ WorkbuddyenterpriseClient::ModifyAgentVersionOutcomeCallable Workbuddyenterprise
         const WorkbuddyenterpriseClient*,
         const ModifyAgentVersionRequest&,
         ModifyAgentVersionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WorkbuddyenterpriseClient::ModifyScheduledTaskOutcome WorkbuddyenterpriseClient::ModifyScheduledTask(const ModifyScheduledTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyScheduledTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyScheduledTaskResponse rsp = ModifyScheduledTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyScheduledTaskOutcome(rsp);
+        else
+            return ModifyScheduledTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyScheduledTaskOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::ModifyScheduledTaskAsync(const ModifyScheduledTaskRequest& request, const ModifyScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyScheduledTaskRequest&;
+    using Resp = ModifyScheduledTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyScheduledTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::ModifyScheduledTaskOutcomeCallable WorkbuddyenterpriseClient::ModifyScheduledTaskCallable(const ModifyScheduledTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyScheduledTaskOutcome>>();
+    ModifyScheduledTaskAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const ModifyScheduledTaskRequest&,
+        ModifyScheduledTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+WorkbuddyenterpriseClient::TriggerScheduledTaskOutcome WorkbuddyenterpriseClient::TriggerScheduledTask(const TriggerScheduledTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "TriggerScheduledTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TriggerScheduledTaskResponse rsp = TriggerScheduledTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TriggerScheduledTaskOutcome(rsp);
+        else
+            return TriggerScheduledTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return TriggerScheduledTaskOutcome(outcome.GetError());
+    }
+}
+
+void WorkbuddyenterpriseClient::TriggerScheduledTaskAsync(const TriggerScheduledTaskRequest& request, const TriggerScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const TriggerScheduledTaskRequest&;
+    using Resp = TriggerScheduledTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "TriggerScheduledTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+WorkbuddyenterpriseClient::TriggerScheduledTaskOutcomeCallable WorkbuddyenterpriseClient::TriggerScheduledTaskCallable(const TriggerScheduledTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<TriggerScheduledTaskOutcome>>();
+    TriggerScheduledTaskAsync(
+    request,
+    [prom](
+        const WorkbuddyenterpriseClient*,
+        const TriggerScheduledTaskRequest&,
+        TriggerScheduledTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

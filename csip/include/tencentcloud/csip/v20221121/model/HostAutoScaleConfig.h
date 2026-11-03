@@ -47,31 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主机自动扩容开关
-枚举值：
-ON：开启
-OFF：关闭
-补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch
-                     * @return Switch 主机自动扩容开关
-枚举值：
-ON：开启
-OFF：关闭
-补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch
+                     * 获取<p>主机自动扩容开关<br>枚举值：<br>ON：开启<br>OFF：关闭<br>补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch</p>
+                     * @return Switch <p>主机自动扩容开关<br>枚举值：<br>ON：开启<br>OFF：关闭<br>补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch</p>
                      * 
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置主机自动扩容开关
-枚举值：
-ON：开启
-OFF：关闭
-补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch
-                     * @param _switch 主机自动扩容开关
-枚举值：
-ON：开启
-OFF：关闭
-补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch
+                     * 设置<p>主机自动扩容开关<br>枚举值：<br>ON：开启<br>OFF：关闭<br>补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch</p>
+                     * @param _switch <p>主机自动扩容开关<br>枚举值：<br>ON：开启<br>OFF：关闭<br>补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch</p>
                      * 
                      */
                     void SetSwitch(const std::string& _switch);
@@ -84,31 +68,15 @@ OFF：关闭
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取扩容版本
-枚举值：
-PRO：专业版
-ULTIMATE：旗舰版
-补充说明：不传则不修改
-                     * @return ProtectType 扩容版本
-枚举值：
-PRO：专业版
-ULTIMATE：旗舰版
-补充说明：不传则不修改
+                     * 获取<p>扩容版本<br>枚举值：<br>PRO：专业版<br>ULTIMATE：旗舰版<br>补充说明：不传则不修改</p>
+                     * @return ProtectType <p>扩容版本<br>枚举值：<br>PRO：专业版<br>ULTIMATE：旗舰版<br>补充说明：不传则不修改</p>
                      * 
                      */
                     std::string GetProtectType() const;
 
                     /**
-                     * 设置扩容版本
-枚举值：
-PRO：专业版
-ULTIMATE：旗舰版
-补充说明：不传则不修改
-                     * @param _protectType 扩容版本
-枚举值：
-PRO：专业版
-ULTIMATE：旗舰版
-补充说明：不传则不修改
+                     * 设置<p>扩容版本<br>枚举值：<br>PRO：专业版<br>ULTIMATE：旗舰版<br>补充说明：不传则不修改</p>
+                     * @param _protectType <p>扩容版本<br>枚举值：<br>PRO：专业版<br>ULTIMATE：旗舰版<br>补充说明：不传则不修改</p>
                      * 
                      */
                     void SetProtectType(const std::string& _protectType);
@@ -120,27 +88,73 @@ ULTIMATE：旗舰版
                      */
                     bool ProtectTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扩容资产范围</p><p>枚举值：</p><ul><li>ALL： 全部资产</li><li>BY_TAG： 按标签扩容</li></ul>
+                     * @return AssetRange <p>扩容资产范围</p><p>枚举值：</p><ul><li>ALL： 全部资产</li><li>BY_TAG： 按标签扩容</li></ul>
+                     * 
+                     */
+                    std::string GetAssetRange() const;
+
+                    /**
+                     * 设置<p>扩容资产范围</p><p>枚举值：</p><ul><li>ALL： 全部资产</li><li>BY_TAG： 按标签扩容</li></ul>
+                     * @param _assetRange <p>扩容资产范围</p><p>枚举值：</p><ul><li>ALL： 全部资产</li><li>BY_TAG： 按标签扩容</li></ul>
+                     * 
+                     */
+                    void SetAssetRange(const std::string& _assetRange);
+
+                    /**
+                     * 判断参数 AssetRange 是否已赋值
+                     * @return AssetRange 是否已赋值
+                     * 
+                     */
+                    bool AssetRangeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标签ID列表</p>
+                     * @return TagIds <p>标签ID列表</p>
+                     * 
+                     */
+                    std::vector<int64_t> GetTagIds() const;
+
+                    /**
+                     * 设置<p>标签ID列表</p>
+                     * @param _tagIds <p>标签ID列表</p>
+                     * 
+                     */
+                    void SetTagIds(const std::vector<int64_t>& _tagIds);
+
+                    /**
+                     * 判断参数 TagIds 是否已赋值
+                     * @return TagIds 是否已赋值
+                     * 
+                     */
+                    bool TagIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主机自动扩容开关
-枚举值：
-ON：开启
-OFF：关闭
-补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch
+                     * <p>主机自动扩容开关<br>枚举值：<br>ON：开启<br>OFF：关闭<br>补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch</p>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 扩容版本
-枚举值：
-PRO：专业版
-ULTIMATE：旗舰版
-补充说明：不传则不修改
+                     * <p>扩容版本<br>枚举值：<br>PRO：专业版<br>ULTIMATE：旗舰版<br>补充说明：不传则不修改</p>
                      */
                     std::string m_protectType;
                     bool m_protectTypeHasBeenSet;
+
+                    /**
+                     * <p>扩容资产范围</p><p>枚举值：</p><ul><li>ALL： 全部资产</li><li>BY_TAG： 按标签扩容</li></ul>
+                     */
+                    std::string m_assetRange;
+                    bool m_assetRangeHasBeenSet;
+
+                    /**
+                     * <p>标签ID列表</p>
+                     */
+                    std::vector<int64_t> m_tagIds;
+                    bool m_tagIdsHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ CreateSeedsRequest::CreateSeedsRequest() :
     m_titlesHasBeenSet(false),
     m_subDomainsHasBeenSet(false),
     m_keywordsHasBeenSet(false),
-    m_parentCompaniesHasBeenSet(false)
+    m_parentCompaniesHasBeenSet(false),
+    m_keywordPurposesHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,19 @@ string CreateSeedsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_parentCompanies.begin(); itr != m_parentCompanies.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_keywordPurposesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeywordPurposes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keywordPurposes.begin(); itr != m_keywordPurposes.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -274,6 +288,22 @@ void CreateSeedsRequest::SetParentCompanies(const vector<string>& _parentCompani
 bool CreateSeedsRequest::ParentCompaniesHasBeenSet() const
 {
     return m_parentCompaniesHasBeenSet;
+}
+
+vector<string> CreateSeedsRequest::GetKeywordPurposes() const
+{
+    return m_keywordPurposes;
+}
+
+void CreateSeedsRequest::SetKeywordPurposes(const vector<string>& _keywordPurposes)
+{
+    m_keywordPurposes = _keywordPurposes;
+    m_keywordPurposesHasBeenSet = true;
+}
+
+bool CreateSeedsRequest::KeywordPurposesHasBeenSet() const
+{
+    return m_keywordPurposesHasBeenSet;
 }
 
 

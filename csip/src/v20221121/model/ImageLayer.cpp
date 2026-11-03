@@ -31,7 +31,9 @@ ImageLayer::ImageLayer() :
     m_lowLevelVulCntHasBeenSet(false),
     m_virusCntHasBeenSet(false),
     m_sensitiveCntHasBeenSet(false),
-    m_layerCreateTimeHasBeenSet(false)
+    m_layerCreateTimeHasBeenSet(false),
+    m_secretFileCntHasBeenSet(false),
+    m_buildRiskCntHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome ImageLayer::Deserialize(const rapidjson::Value &value)
         m_layerCreateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SecretFileCnt") && !value["SecretFileCnt"].IsNull())
+    {
+        if (!value["SecretFileCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageLayer.SecretFileCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretFileCnt = value["SecretFileCnt"].GetUint64();
+        m_secretFileCntHasBeenSet = true;
+    }
+
+    if (value.HasMember("BuildRiskCnt") && !value["BuildRiskCnt"].IsNull())
+    {
+        if (!value["BuildRiskCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageLayer.BuildRiskCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_buildRiskCnt = value["BuildRiskCnt"].GetUint64();
+        m_buildRiskCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void ImageLayer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "LayerCreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_layerCreateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretFileCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretFileCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_secretFileCnt, allocator);
+    }
+
+    if (m_buildRiskCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildRiskCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_buildRiskCnt, allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void ImageLayer::SetLayerCreateTime(const string& _layerCreateTime)
 bool ImageLayer::LayerCreateTimeHasBeenSet() const
 {
     return m_layerCreateTimeHasBeenSet;
+}
+
+uint64_t ImageLayer::GetSecretFileCnt() const
+{
+    return m_secretFileCnt;
+}
+
+void ImageLayer::SetSecretFileCnt(const uint64_t& _secretFileCnt)
+{
+    m_secretFileCnt = _secretFileCnt;
+    m_secretFileCntHasBeenSet = true;
+}
+
+bool ImageLayer::SecretFileCntHasBeenSet() const
+{
+    return m_secretFileCntHasBeenSet;
+}
+
+uint64_t ImageLayer::GetBuildRiskCnt() const
+{
+    return m_buildRiskCnt;
+}
+
+void ImageLayer::SetBuildRiskCnt(const uint64_t& _buildRiskCnt)
+{
+    m_buildRiskCnt = _buildRiskCnt;
+    m_buildRiskCntHasBeenSet = true;
+}
+
+bool ImageLayer::BuildRiskCntHasBeenSet() const
+{
+    return m_buildRiskCntHasBeenSet;
 }
 

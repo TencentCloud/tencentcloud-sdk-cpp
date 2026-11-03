@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例的磁盘大小，单位GB
-                     * @return Storage 实例的磁盘大小，单位GB
+                     * 获取<p>实例的磁盘大小，单位GB</p>
+                     * @return Storage <p>实例的磁盘大小，单位GB</p>
                      * 
                      */
                     int64_t GetStorage() const;
 
                     /**
-                     * 设置实例的磁盘大小，单位GB
-                     * @param _storage 实例的磁盘大小，单位GB
+                     * 设置<p>实例的磁盘大小，单位GB</p>
+                     * @param _storage <p>实例的磁盘大小，单位GB</p>
                      * 
                      */
                     void SetStorage(const int64_t& _storage);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取实例的内存大小，单位GB
-                     * @return Memory 实例的内存大小，单位GB
+                     * 获取<p>实例的内存大小，单位GB</p>
+                     * @return Memory <p>实例的内存大小，单位GB</p>
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置实例的内存大小，单位GB
-                     * @param _memory 实例的内存大小，单位GB
+                     * 设置<p>实例的内存大小，单位GB</p>
+                     * @param _memory <p>实例的内存大小，单位GB</p>
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
-                     * @return DBInstanceId 实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * 获取<p>实例ID，形如postgres-hez4fh0v。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * @return DBInstanceId <p>实例ID，形如postgres-hez4fh0v。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
-                     * 设置实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
-                     * @param _dBInstanceId 实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * 设置<p>实例ID，形如postgres-hez4fh0v。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
+                     * @param _dBInstanceId <p>实例ID，形如postgres-hez4fh0v。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型。
-                     * @return InstanceChargeType 实例计费类型。
+                     * 获取<p>实例计费类型。</p>
+                     * @return InstanceChargeType <p>实例计费类型。</p>
                      * @deprecated
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费类型。
-                     * @param _instanceChargeType 实例计费类型。
+                     * 设置<p>实例计费类型。</p>
+                     * @param _instanceChargeType <p>实例计费类型。</p>
                      * @deprecated
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -127,19 +127,15 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例的Cpu大小，单位Core。
-不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
-                     * @return Cpu 实例的Cpu大小，单位Core。
-不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
+                     * 获取<p>实例的Cpu大小，单位Core。<br>不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。</p>
+                     * @return Cpu <p>实例的Cpu大小，单位Core。<br>不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。</p>
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
-                     * 设置实例的Cpu大小，单位Core。
-不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
-                     * @param _cpu 实例的Cpu大小，单位Core。
-不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
+                     * 设置<p>实例的Cpu大小，单位Core。<br>不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。</p>
+                     * @param _cpu <p>实例的Cpu大小，单位Core。<br>不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。</p>
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -154,32 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例的磁盘大小，单位GB
+                     * <p>实例的磁盘大小，单位GB</p>
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 实例的内存大小，单位GB
+                     * <p>实例的内存大小，单位GB</p>
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取
+                     * <p>实例ID，形如postgres-hez4fh0v。可通过<a href="https://cloud.tencent.com/document/api/409/16773">DescribeDBInstances</a>接口获取</p>
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 实例计费类型。
+                     * <p>实例计费类型。</p>
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 实例的Cpu大小，单位Core。
-不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。
+                     * <p>实例的Cpu大小，单位Core。<br>不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。</p>
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;

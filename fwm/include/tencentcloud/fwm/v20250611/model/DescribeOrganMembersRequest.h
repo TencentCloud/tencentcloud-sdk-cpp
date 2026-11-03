@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选
-                     * @return Filters 搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选
+                     * 获取<p>搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选</p>
+                     * @return Filters <p>搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选</p>
                      * 
                      */
                     std::vector<CommonFilter> GetFilters() const;
 
                     /**
-                     * 设置搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选
-                     * @param _filters 搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选
+                     * 设置<p>搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选</p>
+                     * @param _filters <p>搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选</p>
                      * 
                      */
                     void SetFilters(const std::vector<CommonFilter>& _filters);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取分页大小，默认 20
-                     * @return Limit 分页大小，默认 20
+                     * 获取<p>分页大小，默认 20</p>
+                     * @return Limit <p>分页大小，默认 20</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小，默认 20
-                     * @param _limit 分页大小，默认 20
+                     * 设置<p>分页大小，默认 20</p>
+                     * @param _limit <p>分页大小，默认 20</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，默认 0
-                     * @return Offset 分页偏移量，默认 0
+                     * 获取<p>分页偏移量，默认 0</p>
+                     * @return Offset <p>分页偏移量，默认 0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，默认 0
-                     * @param _offset 分页偏移量，默认 0
+                     * 设置<p>分页偏移量，默认 0</p>
+                     * @param _offset <p>分页偏移量，默认 0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，如 MemberCreateTime
-                     * @return By 排序字段，如 MemberCreateTime
+                     * 获取<p>排序字段，如 MemberCreateTime</p>
+                     * @return By <p>排序字段，如 MemberCreateTime</p>
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段，如 MemberCreateTime
-                     * @param _by 排序字段，如 MemberCreateTime
+                     * 设置<p>排序字段，如 MemberCreateTime</p>
+                     * @param _by <p>排序字段，如 MemberCreateTime</p>
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool ByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式：asc 升序，desc 降序
-                     * @return Order 排序方式：asc 升序，desc 降序
+                     * 获取<p>排序方式：asc 升序，desc 降序</p>
+                     * @return Order <p>排序方式：asc 升序，desc 降序</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方式：asc 升序，desc 降序
-                     * @param _order 排序方式：asc 升序，desc 降序
+                     * 设置<p>排序方式：asc 升序，desc 降序</p>
+                     * @param _order <p>排序方式：asc 升序，desc 降序</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选
+                     * <p>搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选</p>
                      */
                     std::vector<CommonFilter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 分页大小，默认 20
+                     * <p>分页大小，默认 20</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量，默认 0
+                     * <p>分页偏移量，默认 0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序字段，如 MemberCreateTime
+                     * <p>排序字段，如 MemberCreateTime</p>
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
 
                     /**
-                     * 排序方式：asc 升序，desc 降序
+                     * <p>排序方式：asc 升序，desc 降序</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;

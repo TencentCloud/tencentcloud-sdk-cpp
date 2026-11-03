@@ -52,7 +52,10 @@ EmrListInstance::EmrListInstance() :
     m_outSideSoftInfoHasBeenSet(false),
     m_isSupportOutsideClusterHasBeenSet(false),
     m_isDedicatedClusterHasBeenSet(false),
-    m_isSupportCloneHasBeenSet(false)
+    m_isSupportCloneHasBeenSet(false),
+    m_softHasBeenSet(false),
+    m_isTerminateProtectionHasBeenSet(false),
+    m_mcpPasswordInfoHasBeenSet(false)
 {
 }
 
@@ -401,6 +404,46 @@ CoreInternalOutcome EmrListInstance::Deserialize(const rapidjson::Value &value)
         m_isSupportCloneHasBeenSet = true;
     }
 
+    if (value.HasMember("Soft") && !value["Soft"].IsNull())
+    {
+        if (!value["Soft"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EmrListInstance.Soft` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Soft"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_soft.push_back((*itr).GetString());
+        }
+        m_softHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsTerminateProtection") && !value["IsTerminateProtection"].IsNull())
+    {
+        if (!value["IsTerminateProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmrListInstance.IsTerminateProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isTerminateProtection = value["IsTerminateProtection"].GetBool();
+        m_isTerminateProtectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("McpPasswordInfo") && !value["McpPasswordInfo"].IsNull())
+    {
+        if (!value["McpPasswordInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmrListInstance.McpPasswordInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mcpPasswordInfo.Deserialize(value["McpPasswordInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mcpPasswordInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -676,6 +719,36 @@ void EmrListInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsSupportClone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSupportClone, allocator);
+    }
+
+    if (m_softHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Soft";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_soft.begin(); itr != m_soft.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isTerminateProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTerminateProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isTerminateProtection, allocator);
+    }
+
+    if (m_mcpPasswordInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "McpPasswordInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mcpPasswordInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1191,5 +1264,53 @@ void EmrListInstance::SetIsSupportClone(const bool& _isSupportClone)
 bool EmrListInstance::IsSupportCloneHasBeenSet() const
 {
     return m_isSupportCloneHasBeenSet;
+}
+
+vector<string> EmrListInstance::GetSoft() const
+{
+    return m_soft;
+}
+
+void EmrListInstance::SetSoft(const vector<string>& _soft)
+{
+    m_soft = _soft;
+    m_softHasBeenSet = true;
+}
+
+bool EmrListInstance::SoftHasBeenSet() const
+{
+    return m_softHasBeenSet;
+}
+
+bool EmrListInstance::GetIsTerminateProtection() const
+{
+    return m_isTerminateProtection;
+}
+
+void EmrListInstance::SetIsTerminateProtection(const bool& _isTerminateProtection)
+{
+    m_isTerminateProtection = _isTerminateProtection;
+    m_isTerminateProtectionHasBeenSet = true;
+}
+
+bool EmrListInstance::IsTerminateProtectionHasBeenSet() const
+{
+    return m_isTerminateProtectionHasBeenSet;
+}
+
+McpPasswordInfo EmrListInstance::GetMcpPasswordInfo() const
+{
+    return m_mcpPasswordInfo;
+}
+
+void EmrListInstance::SetMcpPasswordInfo(const McpPasswordInfo& _mcpPasswordInfo)
+{
+    m_mcpPasswordInfo = _mcpPasswordInfo;
+    m_mcpPasswordInfoHasBeenSet = true;
+}
+
+bool EmrListInstance::McpPasswordInfoHasBeenSet() const
+{
+    return m_mcpPasswordInfoHasBeenSet;
 }
 

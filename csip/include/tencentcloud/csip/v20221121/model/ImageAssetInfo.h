@@ -929,6 +929,195 @@ namespace TencentCloud
                      */
                     bool ScanTaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>CICD名</p>
+                     * @return CICDName <p>CICD名</p>
+                     * 
+                     */
+                    std::string GetCICDName() const;
+
+                    /**
+                     * 设置<p>CICD名</p>
+                     * @param _cICDName <p>CICD名</p>
+                     * 
+                     */
+                    void SetCICDName(const std::string& _cICDName);
+
+                    /**
+                     * 判断参数 CICDName 是否已赋值
+                     * @return CICDName 是否已赋值
+                     * 
+                     */
+                    bool CICDNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CICD Id</p>
+                     * @return CICDId <p>CICD Id</p>
+                     * 
+                     */
+                    uint64_t GetCICDId() const;
+
+                    /**
+                     * 设置<p>CICD Id</p>
+                     * @param _cICDId <p>CICD Id</p>
+                     * 
+                     */
+                    void SetCICDId(const uint64_t& _cICDId);
+
+                    /**
+                     * 判断参数 CICDId 是否已赋值
+                     * @return CICDId 是否已赋值
+                     * 
+                     */
+                    bool CICDIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否是CICD镜像</p>
+                     * @return IsCICD <p>是否是CICD镜像</p>
+                     * 
+                     */
+                    uint64_t GetIsCICD() const;
+
+                    /**
+                     * 设置<p>是否是CICD镜像</p>
+                     * @param _isCICD <p>是否是CICD镜像</p>
+                     * 
+                     */
+                    void SetIsCICD(const uint64_t& _isCICD);
+
+                    /**
+                     * 判断参数 IsCICD 是否已赋值
+                     * @return IsCICD 是否已赋值
+                     * 
+                     */
+                    bool IsCICDHasBeenSet() const;
+
+                    /**
+                     * 获取<p>敏感文件数</p>
+                     * @return SecretFileCnt <p>敏感文件数</p>
+                     * 
+                     */
+                    uint64_t GetSecretFileCnt() const;
+
+                    /**
+                     * 设置<p>敏感文件数</p>
+                     * @param _secretFileCnt <p>敏感文件数</p>
+                     * 
+                     */
+                    void SetSecretFileCnt(const uint64_t& _secretFileCnt);
+
+                    /**
+                     * 判断参数 SecretFileCnt 是否已赋值
+                     * @return SecretFileCnt 是否已赋值
+                     * 
+                     */
+                    bool SecretFileCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>构建风险数</p>
+                     * @return BuildRiskCnt <p>构建风险数</p>
+                     * 
+                     */
+                    uint64_t GetBuildRiskCnt() const;
+
+                    /**
+                     * 设置<p>构建风险数</p>
+                     * @param _buildRiskCnt <p>构建风险数</p>
+                     * 
+                     */
+                    void SetBuildRiskCnt(const uint64_t& _buildRiskCnt);
+
+                    /**
+                     * 判断参数 BuildRiskCnt 是否已赋值
+                     * @return BuildRiskCnt 是否已赋值
+                     * 
+                     */
+                    bool BuildRiskCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>高危敏感文件数</p>
+                     * @return HighLevelSecretFileCnt <p>高危敏感文件数</p>
+                     * 
+                     */
+                    uint64_t GetHighLevelSecretFileCnt() const;
+
+                    /**
+                     * 设置<p>高危敏感文件数</p>
+                     * @param _highLevelSecretFileCnt <p>高危敏感文件数</p>
+                     * 
+                     */
+                    void SetHighLevelSecretFileCnt(const uint64_t& _highLevelSecretFileCnt);
+
+                    /**
+                     * 判断参数 HighLevelSecretFileCnt 是否已赋值
+                     * @return HighLevelSecretFileCnt 是否已赋值
+                     * 
+                     */
+                    bool HighLevelSecretFileCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>严重敏感文件数</p>
+                     * @return CriticalLevelSecretFileCnt <p>严重敏感文件数</p>
+                     * 
+                     */
+                    uint64_t GetCriticalLevelSecretFileCnt() const;
+
+                    /**
+                     * 设置<p>严重敏感文件数</p>
+                     * @param _criticalLevelSecretFileCnt <p>严重敏感文件数</p>
+                     * 
+                     */
+                    void SetCriticalLevelSecretFileCnt(const uint64_t& _criticalLevelSecretFileCnt);
+
+                    /**
+                     * 判断参数 CriticalLevelSecretFileCnt 是否已赋值
+                     * @return CriticalLevelSecretFileCnt 是否已赋值
+                     * 
+                     */
+                    bool CriticalLevelSecretFileCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>高危构建风险数</p>
+                     * @return HighLevelBuildRiskCnt <p>高危构建风险数</p>
+                     * 
+                     */
+                    uint64_t GetHighLevelBuildRiskCnt() const;
+
+                    /**
+                     * 设置<p>高危构建风险数</p>
+                     * @param _highLevelBuildRiskCnt <p>高危构建风险数</p>
+                     * 
+                     */
+                    void SetHighLevelBuildRiskCnt(const uint64_t& _highLevelBuildRiskCnt);
+
+                    /**
+                     * 判断参数 HighLevelBuildRiskCnt 是否已赋值
+                     * @return HighLevelBuildRiskCnt 是否已赋值
+                     * 
+                     */
+                    bool HighLevelBuildRiskCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>严重构建风险数</p>
+                     * @return CriticalLevelBuildRiskCnt <p>严重构建风险数</p>
+                     * 
+                     */
+                    uint64_t GetCriticalLevelBuildRiskCnt() const;
+
+                    /**
+                     * 设置<p>严重构建风险数</p>
+                     * @param _criticalLevelBuildRiskCnt <p>严重构建风险数</p>
+                     * 
+                     */
+                    void SetCriticalLevelBuildRiskCnt(const uint64_t& _criticalLevelBuildRiskCnt);
+
+                    /**
+                     * 判断参数 CriticalLevelBuildRiskCnt 是否已赋值
+                     * @return CriticalLevelBuildRiskCnt 是否已赋值
+                     * 
+                     */
+                    bool CriticalLevelBuildRiskCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1182,6 +1371,60 @@ namespace TencentCloud
                      */
                     uint64_t m_scanTaskId;
                     bool m_scanTaskIdHasBeenSet;
+
+                    /**
+                     * <p>CICD名</p>
+                     */
+                    std::string m_cICDName;
+                    bool m_cICDNameHasBeenSet;
+
+                    /**
+                     * <p>CICD Id</p>
+                     */
+                    uint64_t m_cICDId;
+                    bool m_cICDIdHasBeenSet;
+
+                    /**
+                     * <p>是否是CICD镜像</p>
+                     */
+                    uint64_t m_isCICD;
+                    bool m_isCICDHasBeenSet;
+
+                    /**
+                     * <p>敏感文件数</p>
+                     */
+                    uint64_t m_secretFileCnt;
+                    bool m_secretFileCntHasBeenSet;
+
+                    /**
+                     * <p>构建风险数</p>
+                     */
+                    uint64_t m_buildRiskCnt;
+                    bool m_buildRiskCntHasBeenSet;
+
+                    /**
+                     * <p>高危敏感文件数</p>
+                     */
+                    uint64_t m_highLevelSecretFileCnt;
+                    bool m_highLevelSecretFileCntHasBeenSet;
+
+                    /**
+                     * <p>严重敏感文件数</p>
+                     */
+                    uint64_t m_criticalLevelSecretFileCnt;
+                    bool m_criticalLevelSecretFileCntHasBeenSet;
+
+                    /**
+                     * <p>高危构建风险数</p>
+                     */
+                    uint64_t m_highLevelBuildRiskCnt;
+                    bool m_highLevelBuildRiskCntHasBeenSet;
+
+                    /**
+                     * <p>严重构建风险数</p>
+                     */
+                    uint64_t m_criticalLevelBuildRiskCnt;
+                    bool m_criticalLevelBuildRiskCntHasBeenSet;
 
                 };
             }

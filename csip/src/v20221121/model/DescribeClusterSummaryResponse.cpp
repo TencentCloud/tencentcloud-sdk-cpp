@@ -52,7 +52,8 @@ DescribeClusterSummaryResponse::DescribeClusterSummaryResponse() :
     m_highAlarmClusterCountHasBeenSet(false),
     m_criticalRiskClusterCountHasBeenSet(false),
     m_highRiskClusterCountHasBeenSet(false),
-    m_unboundUltimateNodeCountHasBeenSet(false)
+    m_unboundUltimateNodeCountHasBeenSet(false),
+    m_normalNodeCountHasBeenSet(false)
 {
 }
 
@@ -380,6 +381,16 @@ CoreInternalOutcome DescribeClusterSummaryResponse::Deserialize(const string &pa
         m_unboundUltimateNodeCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NormalNodeCount") && !rsp["NormalNodeCount"].IsNull())
+    {
+        if (!rsp["NormalNodeCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NormalNodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_normalNodeCount = rsp["NormalNodeCount"].GetUint64();
+        m_normalNodeCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -620,6 +631,14 @@ string DescribeClusterSummaryResponse::ToJsonString() const
         string key = "UnboundUltimateNodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unboundUltimateNodeCount, allocator);
+    }
+
+    if (m_normalNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NormalNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_normalNodeCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -922,6 +941,16 @@ uint64_t DescribeClusterSummaryResponse::GetUnboundUltimateNodeCount() const
 bool DescribeClusterSummaryResponse::UnboundUltimateNodeCountHasBeenSet() const
 {
     return m_unboundUltimateNodeCountHasBeenSet;
+}
+
+uint64_t DescribeClusterSummaryResponse::GetNormalNodeCount() const
+{
+    return m_normalNodeCount;
+}
+
+bool DescribeClusterSummaryResponse::NormalNodeCountHasBeenSet() const
+{
+    return m_normalNodeCountHasBeenSet;
 }
 
 

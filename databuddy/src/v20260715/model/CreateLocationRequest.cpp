@@ -22,7 +22,8 @@
 using namespace TencentCloud::Databuddy::V20260715::Model;
 using namespace std;
 
-CreateLocationRequest::CreateLocationRequest()
+CreateLocationRequest::CreateLocationRequest() :
+    m_fileEventSubscriptionHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,15 @@ string CreateLocationRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_fileEventSubscriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileEventSubscription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileEventSubscription.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +50,21 @@ string CreateLocationRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+CosEventSubscription CreateLocationRequest::GetFileEventSubscription() const
+{
+    return m_fileEventSubscription;
+}
+
+void CreateLocationRequest::SetFileEventSubscription(const CosEventSubscription& _fileEventSubscription)
+{
+    m_fileEventSubscription = _fileEventSubscription;
+    m_fileEventSubscriptionHasBeenSet = true;
+}
+
+bool CreateLocationRequest::FileEventSubscriptionHasBeenSet() const
+{
+    return m_fileEventSubscriptionHasBeenSet;
+}
 
 

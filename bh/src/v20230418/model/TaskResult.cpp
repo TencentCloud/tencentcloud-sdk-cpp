@@ -29,7 +29,8 @@ TaskResult::TaskResult() :
     m_realNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_categoryHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome TaskResult::Deserialize(const rapidjson::Value &value)
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Category") && !value["Category"].IsNull())
+    {
+        if (!value["Category"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResult.Category` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_category = value["Category"].GetInt64();
+        m_categoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void TaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_category, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void TaskResult::SetEndTime(const string& _endTime)
 bool TaskResult::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+int64_t TaskResult::GetCategory() const
+{
+    return m_category;
+}
+
+void TaskResult::SetCategory(const int64_t& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool TaskResult::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
 }
 

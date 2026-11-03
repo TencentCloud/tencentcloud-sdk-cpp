@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return ClusterId 集群id
+                     * 获取<p>集群id</p>
+                     * @return ClusterId <p>集群id</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _clusterId <p>集群id</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,36 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移
-                     * @return Offset 分页偏移
+                     * 获取<p>DB库名（支持模糊匹配）</p>
+                     * @return FuzzyDBNames <p>DB库名（支持模糊匹配）</p>
+                     * 
+                     */
+                    std::vector<std::string> GetFuzzyDBNames() const;
+
+                    /**
+                     * 设置<p>DB库名（支持模糊匹配）</p>
+                     * @param _fuzzyDBNames <p>DB库名（支持模糊匹配）</p>
+                     * 
+                     */
+                    void SetFuzzyDBNames(const std::vector<std::string>& _fuzzyDBNames);
+
+                    /**
+                     * 判断参数 FuzzyDBNames 是否已赋值
+                     * @return FuzzyDBNames 是否已赋值
+                     * 
+                     */
+                    bool FuzzyDBNamesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分页偏移</p>
+                     * @return Offset <p>分页偏移</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移
-                     * @param _offset 分页偏移
+                     * 设置<p>分页偏移</p>
+                     * @param _offset <p>分页偏移</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -85,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页限制数量
-                     * @return Limit 分页限制数量
+                     * 获取<p>分页限制数量</p>
+                     * @return Limit <p>分页限制数量</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页限制数量
-                     * @param _limit 分页限制数量
+                     * 设置<p>分页限制数量</p>
+                     * @param _limit <p>分页限制数量</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -108,19 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 分页偏移
+                     * <p>DB库名（支持模糊匹配）</p>
+                     */
+                    std::vector<std::string> m_fuzzyDBNames;
+                    bool m_fuzzyDBNamesHasBeenSet;
+
+                    /**
+                     * <p>分页偏移</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页限制数量
+                     * <p>分页限制数量</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

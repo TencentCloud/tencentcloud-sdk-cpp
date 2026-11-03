@@ -145,6 +145,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DeleteImageRegistryTimedScanTaskConfigRequest.h
   include/tencentcloud/csip/v20221121/model/CreateRiskCenterScanTaskRequest.h
   include/tencentcloud/csip/v20221121/model/BaselinePolicyBrief.h
+  include/tencentcloud/csip/v20221121/model/ContainerAutoScaleConfig.h
   include/tencentcloud/csip/v20221121/model/ModifyEDRRuleStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeBanStatusResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeDynamicAssetsResponse.h
@@ -1165,6 +1166,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/LogDeliveryType.h
   include/tencentcloud/csip/v20221121/model/DescribePolicyHitDataRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeSandboxDLPSystemRuleListRequest.h
+  include/tencentcloud/csip/v20221121/model/RuleContentK8sAPI.h
   include/tencentcloud/csip/v20221121/model/LevelOption.h
   include/tencentcloud/csip/v20221121/model/CSIPMalwareScanUuidDetailItem.h
   include/tencentcloud/csip/v20221121/model/DescribeCosAccessPermissionRequest.h
@@ -1297,6 +1299,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DeleteSandboxACLRuleResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeCosIpInvokeLogResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteDspmShareUserDataRequest.h
+  include/tencentcloud/csip/v20221121/model/QuaraTypeDictItem.h
   include/tencentcloud/csip/v20221121/model/DescribeImageAssetDetailRequest.h
   include/tencentcloud/csip/v20221121/model/CreatePodServiceListExportJobRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeImageRegistryListRequest.h
@@ -2217,6 +2220,7 @@ set(csip_src
   src/v20221121/model/DeleteImageRegistryTimedScanTaskConfigRequest.cpp
   src/v20221121/model/CreateRiskCenterScanTaskRequest.cpp
   src/v20221121/model/BaselinePolicyBrief.cpp
+  src/v20221121/model/ContainerAutoScaleConfig.cpp
   src/v20221121/model/ModifyEDRRuleStatusResponse.cpp
   src/v20221121/model/DescribeBanStatusResponse.cpp
   src/v20221121/model/DescribeDynamicAssetsResponse.cpp
@@ -3237,6 +3241,7 @@ set(csip_src
   src/v20221121/model/LogDeliveryType.cpp
   src/v20221121/model/DescribePolicyHitDataRequest.cpp
   src/v20221121/model/DescribeSandboxDLPSystemRuleListRequest.cpp
+  src/v20221121/model/RuleContentK8sAPI.cpp
   src/v20221121/model/LevelOption.cpp
   src/v20221121/model/CSIPMalwareScanUuidDetailItem.cpp
   src/v20221121/model/DescribeCosAccessPermissionRequest.cpp
@@ -3369,6 +3374,7 @@ set(csip_src
   src/v20221121/model/DeleteSandboxACLRuleResponse.cpp
   src/v20221121/model/DescribeCosIpInvokeLogResponse.cpp
   src/v20221121/model/DeleteDspmShareUserDataRequest.cpp
+  src/v20221121/model/QuaraTypeDictItem.cpp
   src/v20221121/model/DescribeImageAssetDetailRequest.cpp
   src/v20221121/model/CreatePodServiceListExportJobRequest.cpp
   src/v20221121/model/DescribeImageRegistryListRequest.cpp

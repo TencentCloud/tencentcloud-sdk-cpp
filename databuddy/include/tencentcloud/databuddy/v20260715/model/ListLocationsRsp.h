@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/databuddy/v20260715/model/LocationInfo.h>
+#include <tencentcloud/databuddy/v20260715/model/ListLocationItem.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取存储位置详情列表
-                     * @return Locations 存储位置详情列表
+                     * 获取存储位置详情列表（Deprecated: 请使用 Items，平铺含订阅状态；前端切换完成后移除）
+                     * @return Locations 存储位置详情列表（Deprecated: 请使用 Items，平铺含订阅状态；前端切换完成后移除）
                      * 
                      */
                     std::vector<LocationInfo> GetLocations() const;
 
                     /**
-                     * 设置存储位置详情列表
-                     * @param _locations 存储位置详情列表
+                     * 设置存储位置详情列表（Deprecated: 请使用 Items，平铺含订阅状态；前端切换完成后移除）
+                     * @param _locations 存储位置详情列表（Deprecated: 请使用 Items，平铺含订阅状态；前端切换完成后移除）
                      * 
                      */
                     void SetLocations(const std::vector<LocationInfo>& _locations);
@@ -110,10 +111,31 @@ namespace TencentCloud
                      */
                     bool SnapshotIdHasBeenSet() const;
 
+                    /**
+                     * 获取存储位置 + 订阅平铺列表（与 Locations 同序同长，前端优先使用本字段）；订阅状态判断：FileEventSubscription 非空即已开启
+                     * @return Items 存储位置 + 订阅平铺列表（与 Locations 同序同长，前端优先使用本字段）；订阅状态判断：FileEventSubscription 非空即已开启
+                     * 
+                     */
+                    std::vector<ListLocationItem> GetItems() const;
+
+                    /**
+                     * 设置存储位置 + 订阅平铺列表（与 Locations 同序同长，前端优先使用本字段）；订阅状态判断：FileEventSubscription 非空即已开启
+                     * @param _items 存储位置 + 订阅平铺列表（与 Locations 同序同长，前端优先使用本字段）；订阅状态判断：FileEventSubscription 非空即已开启
+                     * 
+                     */
+                    void SetItems(const std::vector<ListLocationItem>& _items);
+
+                    /**
+                     * 判断参数 Items 是否已赋值
+                     * @return Items 是否已赋值
+                     * 
+                     */
+                    bool ItemsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 存储位置详情列表
+                     * 存储位置详情列表（Deprecated: 请使用 Items，平铺含订阅状态；前端切换完成后移除）
                      */
                     std::vector<LocationInfo> m_locations;
                     bool m_locationsHasBeenSet;
@@ -129,6 +151,12 @@ namespace TencentCloud
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
+
+                    /**
+                     * 存储位置 + 订阅平铺列表（与 Locations 同序同长，前端优先使用本字段）；订阅状态判断：FileEventSubscription 非空即已开启
+                     */
+                    std::vector<ListLocationItem> m_items;
+                    bool m_itemsHasBeenSet;
 
                 };
             }

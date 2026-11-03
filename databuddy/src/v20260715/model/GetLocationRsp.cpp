@@ -21,7 +21,8 @@ using namespace TencentCloud::Databuddy::V20260715::Model;
 using namespace std;
 
 GetLocationRsp::GetLocationRsp() :
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_fileEventSubscriptionHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,23 @@ CoreInternalOutcome GetLocationRsp::Deserialize(const rapidjson::Value &value)
         m_locationHasBeenSet = true;
     }
 
+    if (value.HasMember("FileEventSubscription") && !value["FileEventSubscription"].IsNull())
+    {
+        if (!value["FileEventSubscription"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetLocationRsp.FileEventSubscription` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fileEventSubscription.Deserialize(value["FileEventSubscription"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fileEventSubscriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +79,15 @@ void GetLocationRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_location.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fileEventSubscriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileEventSubscription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileEventSubscription.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -80,5 +107,21 @@ void GetLocationRsp::SetLocation(const LocationInfo& _location)
 bool GetLocationRsp::LocationHasBeenSet() const
 {
     return m_locationHasBeenSet;
+}
+
+CosEventSubscription GetLocationRsp::GetFileEventSubscription() const
+{
+    return m_fileEventSubscription;
+}
+
+void GetLocationRsp::SetFileEventSubscription(const CosEventSubscription& _fileEventSubscription)
+{
+    m_fileEventSubscription = _fileEventSubscription;
+    m_fileEventSubscriptionHasBeenSet = true;
+}
+
+bool GetLocationRsp::FileEventSubscriptionHasBeenSet() const
+{
+    return m_fileEventSubscriptionHasBeenSet;
 }
 

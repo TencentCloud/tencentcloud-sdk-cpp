@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool AlertIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE）</p>
-                     * @return AlertCategory <p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE）</p>
+                     * 获取<p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE/K8S_API）</p>
+                     * @return AlertCategory <p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE/K8S_API）</p>
                      * 
                      */
                     std::string GetAlertCategory() const;
 
                     /**
-                     * 设置<p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE）</p>
-                     * @param _alertCategory <p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE）</p>
+                     * 设置<p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE/K8S_API）</p>
+                     * @param _alertCategory <p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE/K8S_API）</p>
                      * 
                      */
                     void SetAlertCategory(const std::string& _alertCategory);
@@ -427,15 +427,15 @@ namespace TencentCloud
                     bool ContainerIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>集群ID（保留字段，恒为空串）</p>
-                     * @return ClusterId <p>集群ID（保留字段，恒为空串）</p>
+                     * 获取<p>集群ID。容器告警和 K8s API 异常请求告警有值</p>
+                     * @return ClusterId <p>集群ID。容器告警和 K8s API 异常请求告警有值</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置<p>集群ID（保留字段，恒为空串）</p>
-                     * @param _clusterId <p>集群ID（保留字段，恒为空串）</p>
+                     * 设置<p>集群ID。容器告警和 K8s API 异常请求告警有值</p>
+                     * @param _clusterId <p>集群ID。容器告警和 K8s API 异常请求告警有值</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -511,15 +511,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network</p>
-                     * @return ContentType <p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network</p>
+                     * 获取<p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network/k8s_api</p><p>枚举值：</p><ul><li>k8s_api： k8s api告警类型</li></ul>
+                     * @return ContentType <p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network/k8s_api</p><p>枚举值：</p><ul><li>k8s_api： k8s api告警类型</li></ul>
                      * 
                      */
                     std::string GetContentType() const;
 
                     /**
-                     * 设置<p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network</p>
-                     * @param _contentType <p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network</p>
+                     * 设置<p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network/k8s_api</p><p>枚举值：</p><ul><li>k8s_api： k8s api告警类型</li></ul>
+                     * @param _contentType <p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network/k8s_api</p><p>枚举值：</p><ul><li>k8s_api： k8s api告警类型</li></ul>
                      * 
                      */
                     void SetContentType(const std::string& _contentType);
@@ -1287,7 +1287,7 @@ namespace TencentCloud
                     bool m_alertIdHasBeenSet;
 
                     /**
-                     * <p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE）</p>
+                     * <p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE/K8S_API）</p>
                      */
                     std::string m_alertCategory;
                     bool m_alertCategoryHasBeenSet;
@@ -1377,7 +1377,7 @@ namespace TencentCloud
                     bool m_containerIdHasBeenSet;
 
                     /**
-                     * <p>集群ID（保留字段，恒为空串）</p>
+                     * <p>集群ID。容器告警和 K8s API 异常请求告警有值</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -1401,7 +1401,7 @@ namespace TencentCloud
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * <p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network</p>
+                     * <p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network/k8s_api</p><p>枚举值：</p><ul><li>k8s_api： k8s api告警类型</li></ul>
                      */
                     std::string m_contentType;
                     bool m_contentTypeHasBeenSet;

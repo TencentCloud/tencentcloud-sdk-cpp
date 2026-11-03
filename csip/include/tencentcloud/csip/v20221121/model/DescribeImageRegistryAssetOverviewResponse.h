@@ -197,6 +197,90 @@ namespace TencentCloud
                      */
                     bool TrialQuotaHasBeenSet() const;
 
+                    /**
+                     * 获取<p>有风险的镜像数</p>
+                     * @return RiskImageCnt <p>有风险的镜像数</p>
+                     * 
+                     */
+                    uint64_t GetRiskImageCnt() const;
+
+                    /**
+                     * 判断参数 RiskImageCnt 是否已赋值
+                     * @return RiskImageCnt 是否已赋值
+                     * 
+                     */
+                    bool RiskImageCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CICD镜像数</p>
+                     * @return CICDImageCnt <p>CICD镜像数</p>
+                     * 
+                     */
+                    uint64_t GetCICDImageCnt() const;
+
+                    /**
+                     * 判断参数 CICDImageCnt 是否已赋值
+                     * @return CICDImageCnt 是否已赋值
+                     * 
+                     */
+                    bool CICDImageCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CICD已扫描镜数</p>
+                     * @return CICDImageScannedCnt <p>CICD已扫描镜数</p>
+                     * 
+                     */
+                    uint64_t GetCICDImageScannedCnt() const;
+
+                    /**
+                     * 判断参数 CICDImageScannedCnt 是否已赋值
+                     * @return CICDImageScannedCnt 是否已赋值
+                     * 
+                     */
+                    bool CICDImageScannedCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>有风险的CICD镜像数</p>
+                     * @return RiskCICDImageCnt <p>有风险的CICD镜像数</p>
+                     * 
+                     */
+                    uint64_t GetRiskCICDImageCnt() const;
+
+                    /**
+                     * 判断参数 RiskCICDImageCnt 是否已赋值
+                     * @return RiskCICDImageCnt 是否已赋值
+                     * 
+                     */
+                    bool RiskCICDImageCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>敏感文件数</p>
+                     * @return SecretFileCnt <p>敏感文件数</p>
+                     * 
+                     */
+                    uint64_t GetSecretFileCnt() const;
+
+                    /**
+                     * 判断参数 SecretFileCnt 是否已赋值
+                     * @return SecretFileCnt 是否已赋值
+                     * 
+                     */
+                    bool SecretFileCntHasBeenSet() const;
+
+                    /**
+                     * 获取<p>构建风险数</p>
+                     * @return BuildRiskCnt <p>构建风险数</p>
+                     * 
+                     */
+                    uint64_t GetBuildRiskCnt() const;
+
+                    /**
+                     * 判断参数 BuildRiskCnt 是否已赋值
+                     * @return BuildRiskCnt 是否已赋值
+                     * 
+                     */
+                    bool BuildRiskCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +348,42 @@ namespace TencentCloud
                      */
                     uint64_t m_trialQuota;
                     bool m_trialQuotaHasBeenSet;
+
+                    /**
+                     * <p>有风险的镜像数</p>
+                     */
+                    uint64_t m_riskImageCnt;
+                    bool m_riskImageCntHasBeenSet;
+
+                    /**
+                     * <p>CICD镜像数</p>
+                     */
+                    uint64_t m_cICDImageCnt;
+                    bool m_cICDImageCntHasBeenSet;
+
+                    /**
+                     * <p>CICD已扫描镜数</p>
+                     */
+                    uint64_t m_cICDImageScannedCnt;
+                    bool m_cICDImageScannedCntHasBeenSet;
+
+                    /**
+                     * <p>有风险的CICD镜像数</p>
+                     */
+                    uint64_t m_riskCICDImageCnt;
+                    bool m_riskCICDImageCntHasBeenSet;
+
+                    /**
+                     * <p>敏感文件数</p>
+                     */
+                    uint64_t m_secretFileCnt;
+                    bool m_secretFileCntHasBeenSet;
+
+                    /**
+                     * <p>构建风险数</p>
+                     */
+                    uint64_t m_buildRiskCnt;
+                    bool m_buildRiskCntHasBeenSet;
 
                 };
             }

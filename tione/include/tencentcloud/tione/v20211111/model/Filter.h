@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤字段名称
-                     * @return Name 过滤字段名称
+                     * 获取<p>过滤字段名称</p>
+                     * @return Name <p>过滤字段名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置过滤字段名称
-                     * @param _name 过滤字段名称
+                     * 设置<p>过滤字段名称</p>
+                     * @param _name <p>过滤字段名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取过滤字段取值
-                     * @return Values 过滤字段取值
+                     * 获取<p>过滤字段取值</p>
+                     * @return Values <p>过滤字段取值</p>
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置过滤字段取值
-                     * @param _values 过滤字段取值
+                     * 设置<p>过滤字段取值</p>
+                     * @param _values <p>过滤字段取值</p>
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取是否开启反向查询
-                     * @return Negative 是否开启反向查询
+                     * 获取<p>是否开启反向查询</p>
+                     * @return Negative <p>是否开启反向查询</p>
                      * 
                      */
                     bool GetNegative() const;
 
                     /**
-                     * 设置是否开启反向查询
-                     * @param _negative 是否开启反向查询
+                     * 设置<p>是否开启反向查询</p>
+                     * @param _negative <p>是否开启反向查询</p>
                      * 
                      */
                     void SetNegative(const bool& _negative);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool NegativeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启模糊匹配
-                     * @return Fuzzy 是否开启模糊匹配
+                     * 获取<p>是否开启模糊匹配</p>
+                     * @return Fuzzy <p>是否开启模糊匹配</p>
                      * 
                      */
                     bool GetFuzzy() const;
 
                     /**
-                     * 设置是否开启模糊匹配
-                     * @param _fuzzy 是否开启模糊匹配
+                     * 设置<p>是否开启模糊匹配</p>
+                     * @param _fuzzy <p>是否开启模糊匹配</p>
                      * 
                      */
                     void SetFuzzy(const bool& _fuzzy);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 过滤字段名称
+                     * <p>过滤字段名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 过滤字段取值
+                     * <p>过滤字段取值</p>
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * 是否开启反向查询
+                     * <p>是否开启反向查询</p>
                      */
                     bool m_negative;
                     bool m_negativeHasBeenSet;
 
                     /**
-                     * 是否开启模糊匹配
+                     * <p>是否开启模糊匹配</p>
                      */
                     bool m_fuzzy;
                     bool m_fuzzyHasBeenSet;

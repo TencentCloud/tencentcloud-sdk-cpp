@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>通用过滤条件。支持的 Name：ResultStatus（通过状态，Values: PASS/NOT_PASS）、AssetName（资产名称/ID，模糊搜索）、IP（IP地址，模糊搜索）、Tag（资产标签，模糊搜索）。</p>
-                     * @return Filters <p>通用过滤条件。支持的 Name：ResultStatus（通过状态，Values: PASS/NOT_PASS）、AssetName（资产名称/ID，模糊搜索）、IP（IP地址，模糊搜索）、Tag（资产标签，模糊搜索）。</p>
+                     * 获取<p>通用过滤条件。支持的 Name：<br>ResultStatus（通过状态，Values: PASS/NOT_PASS）<br>AssetName（资产名称/ID，模糊搜索）<br>IP（IP地址，模糊搜索）<br>Tag（资产标签，模糊搜索）<br>ClusterCaMD5 (集群ca-md5,精确匹配)<br>ClusterId (集群Id,精确匹配)</p>
+                     * @return Filters <p>通用过滤条件。支持的 Name：<br>ResultStatus（通过状态，Values: PASS/NOT_PASS）<br>AssetName（资产名称/ID，模糊搜索）<br>IP（IP地址，模糊搜索）<br>Tag（资产标签，模糊搜索）<br>ClusterCaMD5 (集群ca-md5,精确匹配)<br>ClusterId (集群Id,精确匹配)</p>
                      * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
-                     * 设置<p>通用过滤条件。支持的 Name：ResultStatus（通过状态，Values: PASS/NOT_PASS）、AssetName（资产名称/ID，模糊搜索）、IP（IP地址，模糊搜索）、Tag（资产标签，模糊搜索）。</p>
-                     * @param _filters <p>通用过滤条件。支持的 Name：ResultStatus（通过状态，Values: PASS/NOT_PASS）、AssetName（资产名称/ID，模糊搜索）、IP（IP地址，模糊搜索）、Tag（资产标签，模糊搜索）。</p>
+                     * 设置<p>通用过滤条件。支持的 Name：<br>ResultStatus（通过状态，Values: PASS/NOT_PASS）<br>AssetName（资产名称/ID，模糊搜索）<br>IP（IP地址，模糊搜索）<br>Tag（资产标签，模糊搜索）<br>ClusterCaMD5 (集群ca-md5,精确匹配)<br>ClusterId (集群Id,精确匹配)</p>
+                     * @param _filters <p>通用过滤条件。支持的 Name：<br>ResultStatus（通过状态，Values: PASS/NOT_PASS）<br>AssetName（资产名称/ID，模糊搜索）<br>IP（IP地址，模糊搜索）<br>Tag（资产标签，模糊搜索）<br>ClusterCaMD5 (集群ca-md5,精确匹配)<br>ClusterId (集群Id,精确匹配)</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
@@ -313,7 +313,7 @@ namespace TencentCloud
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * <p>通用过滤条件。支持的 Name：ResultStatus（通过状态，Values: PASS/NOT_PASS）、AssetName（资产名称/ID，模糊搜索）、IP（IP地址，模糊搜索）、Tag（资产标签，模糊搜索）。</p>
+                     * <p>通用过滤条件。支持的 Name：<br>ResultStatus（通过状态，Values: PASS/NOT_PASS）<br>AssetName（资产名称/ID，模糊搜索）<br>IP（IP地址，模糊搜索）<br>Tag（资产标签，模糊搜索）<br>ClusterCaMD5 (集群ca-md5,精确匹配)<br>ClusterId (集群Id,精确匹配)</p>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;

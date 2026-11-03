@@ -299,6 +299,48 @@ namespace TencentCloud
                      */
                     bool FailTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>扫描失败原因</p>
+                     * @return FailReason <p>扫描失败原因</p>
+                     * 
+                     */
+                    std::string GetFailReason() const;
+
+                    /**
+                     * 设置<p>扫描失败原因</p>
+                     * @param _failReason <p>扫描失败原因</p>
+                     * 
+                     */
+                    void SetFailReason(const std::string& _failReason);
+
+                    /**
+                     * 判断参数 FailReason 是否已赋值
+                     * @return FailReason 是否已赋值
+                     * 
+                     */
+                    bool FailReasonHasBeenSet() const;
+
+                    /**
+                     * 获取<p>扫描失败解决方案</p>
+                     * @return FailSolution <p>扫描失败解决方案</p>
+                     * 
+                     */
+                    std::string GetFailSolution() const;
+
+                    /**
+                     * 设置<p>扫描失败解决方案</p>
+                     * @param _failSolution <p>扫描失败解决方案</p>
+                     * 
+                     */
+                    void SetFailSolution(const std::string& _failSolution);
+
+                    /**
+                     * 判断参数 FailSolution 是否已赋值
+                     * @return FailSolution 是否已赋值
+                     * 
+                     */
+                    bool FailSolutionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -372,6 +414,18 @@ namespace TencentCloud
                      */
                     int64_t m_failType;
                     bool m_failTypeHasBeenSet;
+
+                    /**
+                     * <p>扫描失败原因</p>
+                     */
+                    std::string m_failReason;
+                    bool m_failReasonHasBeenSet;
+
+                    /**
+                     * <p>扫描失败解决方案</p>
+                     */
+                    std::string m_failSolution;
+                    bool m_failSolutionHasBeenSet;
 
                 };
             }

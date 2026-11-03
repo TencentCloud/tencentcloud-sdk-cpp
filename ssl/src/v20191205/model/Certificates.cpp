@@ -83,7 +83,8 @@ Certificates::Certificates() :
     m_certServiceBeginTimeHasBeenSet(false),
     m_certServiceEndTimeHasBeenSet(false),
     m_certServiceShareEnabledHasBeenSet(false),
-    m_certServiceValidCertificateCountHasBeenSet(false)
+    m_certServiceValidCertificateCountHasBeenSet(false),
+    m_resubmitAbleHasBeenSet(false)
 {
 }
 
@@ -788,6 +789,16 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_certServiceValidCertificateCountHasBeenSet = true;
     }
 
+    if (value.HasMember("ResubmitAble") && !value["ResubmitAble"].IsNull())
+    {
+        if (!value["ResubmitAble"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.ResubmitAble` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_resubmitAble = value["ResubmitAble"].GetBool();
+        m_resubmitAbleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1344,6 +1355,14 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CertServiceValidCertificateCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_certServiceValidCertificateCount, allocator);
+    }
+
+    if (m_resubmitAbleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResubmitAble";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resubmitAble, allocator);
     }
 
 }
@@ -2355,5 +2374,21 @@ void Certificates::SetCertServiceValidCertificateCount(const int64_t& _certServi
 bool Certificates::CertServiceValidCertificateCountHasBeenSet() const
 {
     return m_certServiceValidCertificateCountHasBeenSet;
+}
+
+bool Certificates::GetResubmitAble() const
+{
+    return m_resubmitAble;
+}
+
+void Certificates::SetResubmitAble(const bool& _resubmitAble)
+{
+    m_resubmitAble = _resubmitAble;
+    m_resubmitAbleHasBeenSet = true;
+}
+
+bool Certificates::ResubmitAbleHasBeenSet() const
+{
+    return m_resubmitAbleHasBeenSet;
 }
 

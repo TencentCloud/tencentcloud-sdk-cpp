@@ -31,6 +31,7 @@ ServiceDetail::ServiceDetail() :
     m_modelNameHasBeenSet(false),
     m_deploymentConfigsHasBeenSet(false),
     m_hyperParamHasBeenSet(false),
+    m_roleStatusesHasBeenSet(false),
     m_securityTypeHasBeenSet(false),
     m_roleComputeSetHasBeenSet(false),
     m_targetReplicasHasBeenSet(false),
@@ -172,6 +173,26 @@ CoreInternalOutcome ServiceDetail::Deserialize(const rapidjson::Value &value)
         }
 
         m_hyperParamHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoleStatuses") && !value["RoleStatuses"].IsNull())
+    {
+        if (!value["RoleStatuses"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.RoleStatuses` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RoleStatuses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RoleStatusInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_roleStatuses.push_back(item);
+        }
+        m_roleStatusesHasBeenSet = true;
     }
 
     if (value.HasMember("SecurityType") && !value["SecurityType"].IsNull())
@@ -364,6 +385,21 @@ void ServiceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hyperParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_roleStatusesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleStatuses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_roleStatuses.begin(); itr != m_roleStatuses.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_securityTypeHasBeenSet)
@@ -598,6 +634,22 @@ void ServiceDetail::SetHyperParam(const HyperParam& _hyperParam)
 bool ServiceDetail::HyperParamHasBeenSet() const
 {
     return m_hyperParamHasBeenSet;
+}
+
+vector<RoleStatusInfo> ServiceDetail::GetRoleStatuses() const
+{
+    return m_roleStatuses;
+}
+
+void ServiceDetail::SetRoleStatuses(const vector<RoleStatusInfo>& _roleStatuses)
+{
+    m_roleStatuses = _roleStatuses;
+    m_roleStatusesHasBeenSet = true;
+}
+
+bool ServiceDetail::RoleStatusesHasBeenSet() const
+{
+    return m_roleStatusesHasBeenSet;
 }
 
 string ServiceDetail::GetSecurityType() const

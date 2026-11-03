@@ -340,6 +340,56 @@ CngwClient::CompareCloudNativeAPIGatewayMCPToolVersionOutcomeCallable CngwClient
     return prom->get_future();
 }
 
+CngwClient::CreateAIGWCustomGuardrailPolicyOutcome CngwClient::CreateAIGWCustomGuardrailPolicy(const CreateAIGWCustomGuardrailPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAIGWCustomGuardrailPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAIGWCustomGuardrailPolicyResponse rsp = CreateAIGWCustomGuardrailPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAIGWCustomGuardrailPolicyOutcome(rsp);
+        else
+            return CreateAIGWCustomGuardrailPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAIGWCustomGuardrailPolicyOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::CreateAIGWCustomGuardrailPolicyAsync(const CreateAIGWCustomGuardrailPolicyRequest& request, const CreateAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAIGWCustomGuardrailPolicyRequest&;
+    using Resp = CreateAIGWCustomGuardrailPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAIGWCustomGuardrailPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::CreateAIGWCustomGuardrailPolicyOutcomeCallable CngwClient::CreateAIGWCustomGuardrailPolicyCallable(const CreateAIGWCustomGuardrailPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAIGWCustomGuardrailPolicyOutcome>>();
+    CreateAIGWCustomGuardrailPolicyAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const CreateAIGWCustomGuardrailPolicyRequest&,
+        CreateAIGWCustomGuardrailPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::CreateCloudNativeAPIGatewayAIServiceSourceOutcome CngwClient::CreateCloudNativeAPIGatewayAIServiceSource(const CreateCloudNativeAPIGatewayAIServiceSourceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudNativeAPIGatewayAIServiceSource");
@@ -790,6 +840,106 @@ CngwClient::CreateCloudNativeAPIGatewaySecretKeyOutcomeCallable CngwClient::Crea
     return prom->get_future();
 }
 
+CngwClient::CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome CngwClient::CreateOrModifyCloudNativeAPIGatewayIPRestriction(const CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrModifyCloudNativeAPIGatewayIPRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrModifyCloudNativeAPIGatewayIPRestrictionResponse rsp = CreateOrModifyCloudNativeAPIGatewayIPRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome(rsp);
+        else
+            return CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::CreateOrModifyCloudNativeAPIGatewayIPRestrictionAsync(const CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest& request, const CreateOrModifyCloudNativeAPIGatewayIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest&;
+    using Resp = CreateOrModifyCloudNativeAPIGatewayIPRestrictionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateOrModifyCloudNativeAPIGatewayIPRestriction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcomeCallable CngwClient::CreateOrModifyCloudNativeAPIGatewayIPRestrictionCallable(const CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome>>();
+    CreateOrModifyCloudNativeAPIGatewayIPRestrictionAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const CreateOrModifyCloudNativeAPIGatewayIPRestrictionRequest&,
+        CreateOrModifyCloudNativeAPIGatewayIPRestrictionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DeleteAIGWCustomGuardrailPolicyOutcome CngwClient::DeleteAIGWCustomGuardrailPolicy(const DeleteAIGWCustomGuardrailPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAIGWCustomGuardrailPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAIGWCustomGuardrailPolicyResponse rsp = DeleteAIGWCustomGuardrailPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAIGWCustomGuardrailPolicyOutcome(rsp);
+        else
+            return DeleteAIGWCustomGuardrailPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAIGWCustomGuardrailPolicyOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DeleteAIGWCustomGuardrailPolicyAsync(const DeleteAIGWCustomGuardrailPolicyRequest& request, const DeleteAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAIGWCustomGuardrailPolicyRequest&;
+    using Resp = DeleteAIGWCustomGuardrailPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAIGWCustomGuardrailPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DeleteAIGWCustomGuardrailPolicyOutcomeCallable CngwClient::DeleteAIGWCustomGuardrailPolicyCallable(const DeleteAIGWCustomGuardrailPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAIGWCustomGuardrailPolicyOutcome>>();
+    DeleteAIGWCustomGuardrailPolicyAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DeleteAIGWCustomGuardrailPolicyRequest&,
+        DeleteAIGWCustomGuardrailPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::DeleteCloudNativeAPIGatewayAIServiceSourceOutcome CngwClient::DeleteCloudNativeAPIGatewayAIServiceSource(const DeleteCloudNativeAPIGatewayAIServiceSourceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayAIServiceSource");
@@ -932,6 +1082,56 @@ CngwClient::DeleteCloudNativeAPIGatewayConsumerGroupOutcomeCallable CngwClient::
         const CngwClient*,
         const DeleteCloudNativeAPIGatewayConsumerGroupRequest&,
         DeleteCloudNativeAPIGatewayConsumerGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DeleteCloudNativeAPIGatewayIPRestrictionOutcome CngwClient::DeleteCloudNativeAPIGatewayIPRestriction(const DeleteCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGatewayIPRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudNativeAPIGatewayIPRestrictionResponse rsp = DeleteCloudNativeAPIGatewayIPRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudNativeAPIGatewayIPRestrictionOutcome(rsp);
+        else
+            return DeleteCloudNativeAPIGatewayIPRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudNativeAPIGatewayIPRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DeleteCloudNativeAPIGatewayIPRestrictionAsync(const DeleteCloudNativeAPIGatewayIPRestrictionRequest& request, const DeleteCloudNativeAPIGatewayIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCloudNativeAPIGatewayIPRestrictionRequest&;
+    using Resp = DeleteCloudNativeAPIGatewayIPRestrictionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCloudNativeAPIGatewayIPRestriction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DeleteCloudNativeAPIGatewayIPRestrictionOutcomeCallable CngwClient::DeleteCloudNativeAPIGatewayIPRestrictionCallable(const DeleteCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCloudNativeAPIGatewayIPRestrictionOutcome>>();
+    DeleteCloudNativeAPIGatewayIPRestrictionAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DeleteCloudNativeAPIGatewayIPRestrictionRequest&,
+        DeleteCloudNativeAPIGatewayIPRestrictionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1290,6 +1490,256 @@ CngwClient::DeleteCloudNativeAPIGatewaySecretKeyOutcomeCallable CngwClient::Dele
     return prom->get_future();
 }
 
+CngwClient::DescribeAIGWCustomGuardrailBindableResourcesOutcome CngwClient::DescribeAIGWCustomGuardrailBindableResources(const DescribeAIGWCustomGuardrailBindableResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGWCustomGuardrailBindableResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGWCustomGuardrailBindableResourcesResponse rsp = DescribeAIGWCustomGuardrailBindableResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGWCustomGuardrailBindableResourcesOutcome(rsp);
+        else
+            return DescribeAIGWCustomGuardrailBindableResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGWCustomGuardrailBindableResourcesOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeAIGWCustomGuardrailBindableResourcesAsync(const DescribeAIGWCustomGuardrailBindableResourcesRequest& request, const DescribeAIGWCustomGuardrailBindableResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGWCustomGuardrailBindableResourcesRequest&;
+    using Resp = DescribeAIGWCustomGuardrailBindableResourcesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGWCustomGuardrailBindableResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeAIGWCustomGuardrailBindableResourcesOutcomeCallable CngwClient::DescribeAIGWCustomGuardrailBindableResourcesCallable(const DescribeAIGWCustomGuardrailBindableResourcesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGWCustomGuardrailBindableResourcesOutcome>>();
+    DescribeAIGWCustomGuardrailBindableResourcesAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeAIGWCustomGuardrailBindableResourcesRequest&,
+        DescribeAIGWCustomGuardrailBindableResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DescribeAIGWCustomGuardrailCapabilitiesOutcome CngwClient::DescribeAIGWCustomGuardrailCapabilities(const DescribeAIGWCustomGuardrailCapabilitiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGWCustomGuardrailCapabilities");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGWCustomGuardrailCapabilitiesResponse rsp = DescribeAIGWCustomGuardrailCapabilitiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGWCustomGuardrailCapabilitiesOutcome(rsp);
+        else
+            return DescribeAIGWCustomGuardrailCapabilitiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGWCustomGuardrailCapabilitiesOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeAIGWCustomGuardrailCapabilitiesAsync(const DescribeAIGWCustomGuardrailCapabilitiesRequest& request, const DescribeAIGWCustomGuardrailCapabilitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGWCustomGuardrailCapabilitiesRequest&;
+    using Resp = DescribeAIGWCustomGuardrailCapabilitiesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGWCustomGuardrailCapabilities", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeAIGWCustomGuardrailCapabilitiesOutcomeCallable CngwClient::DescribeAIGWCustomGuardrailCapabilitiesCallable(const DescribeAIGWCustomGuardrailCapabilitiesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGWCustomGuardrailCapabilitiesOutcome>>();
+    DescribeAIGWCustomGuardrailCapabilitiesAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeAIGWCustomGuardrailCapabilitiesRequest&,
+        DescribeAIGWCustomGuardrailCapabilitiesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DescribeAIGWCustomGuardrailHitsOutcome CngwClient::DescribeAIGWCustomGuardrailHits(const DescribeAIGWCustomGuardrailHitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGWCustomGuardrailHits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGWCustomGuardrailHitsResponse rsp = DescribeAIGWCustomGuardrailHitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGWCustomGuardrailHitsOutcome(rsp);
+        else
+            return DescribeAIGWCustomGuardrailHitsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGWCustomGuardrailHitsOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeAIGWCustomGuardrailHitsAsync(const DescribeAIGWCustomGuardrailHitsRequest& request, const DescribeAIGWCustomGuardrailHitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGWCustomGuardrailHitsRequest&;
+    using Resp = DescribeAIGWCustomGuardrailHitsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGWCustomGuardrailHits", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeAIGWCustomGuardrailHitsOutcomeCallable CngwClient::DescribeAIGWCustomGuardrailHitsCallable(const DescribeAIGWCustomGuardrailHitsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGWCustomGuardrailHitsOutcome>>();
+    DescribeAIGWCustomGuardrailHitsAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeAIGWCustomGuardrailHitsRequest&,
+        DescribeAIGWCustomGuardrailHitsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DescribeAIGWCustomGuardrailPolicyOutcome CngwClient::DescribeAIGWCustomGuardrailPolicy(const DescribeAIGWCustomGuardrailPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGWCustomGuardrailPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGWCustomGuardrailPolicyResponse rsp = DescribeAIGWCustomGuardrailPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGWCustomGuardrailPolicyOutcome(rsp);
+        else
+            return DescribeAIGWCustomGuardrailPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGWCustomGuardrailPolicyOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeAIGWCustomGuardrailPolicyAsync(const DescribeAIGWCustomGuardrailPolicyRequest& request, const DescribeAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGWCustomGuardrailPolicyRequest&;
+    using Resp = DescribeAIGWCustomGuardrailPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGWCustomGuardrailPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeAIGWCustomGuardrailPolicyOutcomeCallable CngwClient::DescribeAIGWCustomGuardrailPolicyCallable(const DescribeAIGWCustomGuardrailPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGWCustomGuardrailPolicyOutcome>>();
+    DescribeAIGWCustomGuardrailPolicyAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeAIGWCustomGuardrailPolicyRequest&,
+        DescribeAIGWCustomGuardrailPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DescribeAIGWCustomGuardrailPolicyListOutcome CngwClient::DescribeAIGWCustomGuardrailPolicyList(const DescribeAIGWCustomGuardrailPolicyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGWCustomGuardrailPolicyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGWCustomGuardrailPolicyListResponse rsp = DescribeAIGWCustomGuardrailPolicyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGWCustomGuardrailPolicyListOutcome(rsp);
+        else
+            return DescribeAIGWCustomGuardrailPolicyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGWCustomGuardrailPolicyListOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeAIGWCustomGuardrailPolicyListAsync(const DescribeAIGWCustomGuardrailPolicyListRequest& request, const DescribeAIGWCustomGuardrailPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGWCustomGuardrailPolicyListRequest&;
+    using Resp = DescribeAIGWCustomGuardrailPolicyListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGWCustomGuardrailPolicyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeAIGWCustomGuardrailPolicyListOutcomeCallable CngwClient::DescribeAIGWCustomGuardrailPolicyListCallable(const DescribeAIGWCustomGuardrailPolicyListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGWCustomGuardrailPolicyListOutcome>>();
+    DescribeAIGWCustomGuardrailPolicyListAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeAIGWCustomGuardrailPolicyListRequest&,
+        DescribeAIGWCustomGuardrailPolicyListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::DescribeCNGWServicesWithRoutesOutcome CngwClient::DescribeCNGWServicesWithRoutes(const DescribeCNGWServicesWithRoutesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCNGWServicesWithRoutes");
@@ -1582,6 +2032,56 @@ CngwClient::DescribeCloudNativeAPIGatewayConsumerGroupOutcomeCallable CngwClient
         const CngwClient*,
         const DescribeCloudNativeAPIGatewayConsumerGroupRequest&,
         DescribeCloudNativeAPIGatewayConsumerGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayIPRestrictionOutcome CngwClient::DescribeCloudNativeAPIGatewayIPRestriction(const DescribeCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayIPRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayIPRestrictionResponse rsp = DescribeCloudNativeAPIGatewayIPRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayIPRestrictionOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayIPRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayIPRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeCloudNativeAPIGatewayIPRestrictionAsync(const DescribeCloudNativeAPIGatewayIPRestrictionRequest& request, const DescribeCloudNativeAPIGatewayIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCloudNativeAPIGatewayIPRestrictionRequest&;
+    using Resp = DescribeCloudNativeAPIGatewayIPRestrictionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCloudNativeAPIGatewayIPRestriction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeCloudNativeAPIGatewayIPRestrictionOutcomeCallable CngwClient::DescribeCloudNativeAPIGatewayIPRestrictionCallable(const DescribeCloudNativeAPIGatewayIPRestrictionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCloudNativeAPIGatewayIPRestrictionOutcome>>();
+    DescribeCloudNativeAPIGatewayIPRestrictionAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeCloudNativeAPIGatewayIPRestrictionRequest&,
+        DescribeCloudNativeAPIGatewayIPRestrictionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2632,6 +3132,106 @@ CngwClient::DescribeCloudNativeAPIGatewaySecretKeyValueOutcomeCallable CngwClien
         const CngwClient*,
         const DescribeCloudNativeAPIGatewaySecretKeyValueRequest&,
         DescribeCloudNativeAPIGatewaySecretKeyValueOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::ExportAIGWCustomGuardrailHitsOutcome CngwClient::ExportAIGWCustomGuardrailHits(const ExportAIGWCustomGuardrailHitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportAIGWCustomGuardrailHits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportAIGWCustomGuardrailHitsResponse rsp = ExportAIGWCustomGuardrailHitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportAIGWCustomGuardrailHitsOutcome(rsp);
+        else
+            return ExportAIGWCustomGuardrailHitsOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportAIGWCustomGuardrailHitsOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::ExportAIGWCustomGuardrailHitsAsync(const ExportAIGWCustomGuardrailHitsRequest& request, const ExportAIGWCustomGuardrailHitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ExportAIGWCustomGuardrailHitsRequest&;
+    using Resp = ExportAIGWCustomGuardrailHitsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ExportAIGWCustomGuardrailHits", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::ExportAIGWCustomGuardrailHitsOutcomeCallable CngwClient::ExportAIGWCustomGuardrailHitsCallable(const ExportAIGWCustomGuardrailHitsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ExportAIGWCustomGuardrailHitsOutcome>>();
+    ExportAIGWCustomGuardrailHitsAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const ExportAIGWCustomGuardrailHitsRequest&,
+        ExportAIGWCustomGuardrailHitsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::ModifyAIGWCustomGuardrailPolicyOutcome CngwClient::ModifyAIGWCustomGuardrailPolicy(const ModifyAIGWCustomGuardrailPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAIGWCustomGuardrailPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAIGWCustomGuardrailPolicyResponse rsp = ModifyAIGWCustomGuardrailPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAIGWCustomGuardrailPolicyOutcome(rsp);
+        else
+            return ModifyAIGWCustomGuardrailPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAIGWCustomGuardrailPolicyOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::ModifyAIGWCustomGuardrailPolicyAsync(const ModifyAIGWCustomGuardrailPolicyRequest& request, const ModifyAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAIGWCustomGuardrailPolicyRequest&;
+    using Resp = ModifyAIGWCustomGuardrailPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAIGWCustomGuardrailPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::ModifyAIGWCustomGuardrailPolicyOutcomeCallable CngwClient::ModifyAIGWCustomGuardrailPolicyCallable(const ModifyAIGWCustomGuardrailPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAIGWCustomGuardrailPolicyOutcome>>();
+    ModifyAIGWCustomGuardrailPolicyAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const ModifyAIGWCustomGuardrailPolicyRequest&,
+        ModifyAIGWCustomGuardrailPolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

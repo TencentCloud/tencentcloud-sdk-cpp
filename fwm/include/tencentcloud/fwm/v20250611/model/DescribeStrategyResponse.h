@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略详情
-                     * @return Strategy 策略详情
+                     * 获取<p>策略详情</p>
+                     * @return Strategy <p>策略详情</p>
                      * 
                      */
                     StrategyResp GetStrategy() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略详情
+                     * <p>策略详情</p>
                      */
                     StrategyResp m_strategy;
                     bool m_strategyHasBeenSet;

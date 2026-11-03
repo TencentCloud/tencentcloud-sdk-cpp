@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取物理专线的ID。
-                     * @return DirectConnectId 物理专线的ID。
+                     * 获取<p>物理专线的ID。</p>
+                     * @return DirectConnectId <p>物理专线的ID。</p>
                      * 
                      */
                     std::string GetDirectConnectId() const;
 
                     /**
-                     * 设置物理专线的ID。
-                     * @param _directConnectId 物理专线的ID。
+                     * 设置<p>物理专线的ID。</p>
+                     * @param _directConnectId <p>物理专线的ID。</p>
                      * 
                      */
                     void SetDirectConnectId(const std::string& _directConnectId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool DirectConnectIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>预计裁撤时间</p>
+                     * @return PlannedRepealDate <p>预计裁撤时间</p>
+                     * 
+                     */
+                    std::string GetPlannedRepealDate() const;
+
+                    /**
+                     * 设置<p>预计裁撤时间</p>
+                     * @param _plannedRepealDate <p>预计裁撤时间</p>
+                     * 
+                     */
+                    void SetPlannedRepealDate(const std::string& _plannedRepealDate);
+
+                    /**
+                     * 判断参数 PlannedRepealDate 是否已赋值
+                     * @return PlannedRepealDate 是否已赋值
+                     * 
+                     */
+                    bool PlannedRepealDateHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 物理专线的ID。
+                     * <p>物理专线的ID。</p>
                      */
                     std::string m_directConnectId;
                     bool m_directConnectIdHasBeenSet;
+
+                    /**
+                     * <p>预计裁撤时间</p>
+                     */
+                    std::string m_plannedRepealDate;
+                    bool m_plannedRepealDateHasBeenSet;
 
                 };
             }

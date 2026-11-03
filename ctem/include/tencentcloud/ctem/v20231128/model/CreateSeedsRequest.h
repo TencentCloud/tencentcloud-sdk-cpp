@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取企业ID
-                     * @return CustomerId 企业ID
+                     * 获取<p>企业ID</p>
+                     * @return CustomerId <p>企业ID</p>
                      * 
                      */
                     int64_t GetCustomerId() const;
 
                     /**
-                     * 设置企业ID
-                     * @param _customerId 企业ID
+                     * 设置<p>企业ID</p>
+                     * @param _customerId <p>企业ID</p>
                      * 
                      */
                     void SetCustomerId(const int64_t& _customerId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CustomerIdHasBeenSet() const;
 
                     /**
-                     * 获取ip种子数组
-                     * @return Ips ip种子数组
+                     * 获取<p>ip种子数组</p>
+                     * @return Ips <p>ip种子数组</p>
                      * 
                      */
                     std::vector<std::string> GetIps() const;
 
                     /**
-                     * 设置ip种子数组
-                     * @param _ips ip种子数组
+                     * 设置<p>ip种子数组</p>
+                     * @param _ips <p>ip种子数组</p>
                      * 
                      */
                     void SetIps(const std::vector<std::string>& _ips);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool IpsHasBeenSet() const;
 
                     /**
-                     * 获取icon种子数组
-                     * @return Icons icon种子数组
+                     * 获取<p>icon种子数组</p>
+                     * @return Icons <p>icon种子数组</p>
                      * 
                      */
                     std::vector<std::string> GetIcons() const;
 
                     /**
-                     * 设置icon种子数组
-                     * @param _icons icon种子数组
+                     * 设置<p>icon种子数组</p>
+                     * @param _icons <p>icon种子数组</p>
                      * 
                      */
                     void SetIcons(const std::vector<std::string>& _icons);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IconsHasBeenSet() const;
 
                     /**
-                     * 获取主域名种子数组
-                     * @return Domains 主域名种子数组
+                     * 获取<p>主域名种子数组</p>
+                     * @return Domains <p>主域名种子数组</p>
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置主域名种子数组
-                     * @param _domains 主域名种子数组
+                     * 设置<p>主域名种子数组</p>
+                     * @param _domains <p>主域名种子数组</p>
                      * 
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取title种子数组
-                     * @return Titles title种子数组
+                     * 获取<p>title种子数组</p>
+                     * @return Titles <p>title种子数组</p>
                      * 
                      */
                     std::vector<std::string> GetTitles() const;
 
                     /**
-                     * 设置title种子数组
-                     * @param _titles title种子数组
+                     * 设置<p>title种子数组</p>
+                     * @param _titles <p>title种子数组</p>
                      * 
                      */
                     void SetTitles(const std::vector<std::string>& _titles);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TitlesHasBeenSet() const;
 
                     /**
-                     * 获取子域名种子数组
-                     * @return SubDomains 子域名种子数组
+                     * 获取<p>子域名种子数组</p>
+                     * @return SubDomains <p>子域名种子数组</p>
                      * 
                      */
                     std::vector<std::string> GetSubDomains() const;
 
                     /**
-                     * 设置子域名种子数组
-                     * @param _subDomains 子域名种子数组
+                     * 设置<p>子域名种子数组</p>
+                     * @param _subDomains <p>子域名种子数组</p>
                      * 
                      */
                     void SetSubDomains(const std::vector<std::string>& _subDomains);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool SubDomainsHasBeenSet() const;
 
                     /**
-                     * 获取关键词种子数组
-                     * @return Keywords 关键词种子数组
+                     * 获取<p>关键词种子数组</p>
+                     * @return Keywords <p>关键词种子数组</p>
                      * 
                      */
                     std::vector<std::string> GetKeywords() const;
 
                     /**
-                     * 设置关键词种子数组
-                     * @param _keywords 关键词种子数组
+                     * 设置<p>关键词种子数组</p>
+                     * @param _keywords <p>关键词种子数组</p>
                      * 
                      */
                     void SetKeywords(const std::vector<std::string>& _keywords);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool KeywordsHasBeenSet() const;
 
                     /**
-                     * 获取母公司种子数组
-                     * @return ParentCompanies 母公司种子数组
+                     * 获取<p>母公司种子数组</p>
+                     * @return ParentCompanies <p>母公司种子数组</p>
                      * 
                      */
                     std::vector<std::string> GetParentCompanies() const;
 
                     /**
-                     * 设置母公司种子数组
-                     * @param _parentCompanies 母公司种子数组
+                     * 设置<p>母公司种子数组</p>
+                     * @param _parentCompanies <p>母公司种子数组</p>
                      * 
                      */
                     void SetParentCompanies(const std::vector<std::string>& _parentCompanies);
@@ -210,55 +210,82 @@ namespace TencentCloud
                      */
                     bool ParentCompaniesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>关键词用途：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号，不填=全部用途</p>
+                     * @return KeywordPurposes <p>关键词用途：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号，不填=全部用途</p>
+                     * 
+                     */
+                    std::vector<std::string> GetKeywordPurposes() const;
+
+                    /**
+                     * 设置<p>关键词用途：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号，不填=全部用途</p>
+                     * @param _keywordPurposes <p>关键词用途：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号，不填=全部用途</p>
+                     * 
+                     */
+                    void SetKeywordPurposes(const std::vector<std::string>& _keywordPurposes);
+
+                    /**
+                     * 判断参数 KeywordPurposes 是否已赋值
+                     * @return KeywordPurposes 是否已赋值
+                     * 
+                     */
+                    bool KeywordPurposesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 企业ID
+                     * <p>企业ID</p>
                      */
                     int64_t m_customerId;
                     bool m_customerIdHasBeenSet;
 
                     /**
-                     * ip种子数组
+                     * <p>ip种子数组</p>
                      */
                     std::vector<std::string> m_ips;
                     bool m_ipsHasBeenSet;
 
                     /**
-                     * icon种子数组
+                     * <p>icon种子数组</p>
                      */
                     std::vector<std::string> m_icons;
                     bool m_iconsHasBeenSet;
 
                     /**
-                     * 主域名种子数组
+                     * <p>主域名种子数组</p>
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * title种子数组
+                     * <p>title种子数组</p>
                      */
                     std::vector<std::string> m_titles;
                     bool m_titlesHasBeenSet;
 
                     /**
-                     * 子域名种子数组
+                     * <p>子域名种子数组</p>
                      */
                     std::vector<std::string> m_subDomains;
                     bool m_subDomainsHasBeenSet;
 
                     /**
-                     * 关键词种子数组
+                     * <p>关键词种子数组</p>
                      */
                     std::vector<std::string> m_keywords;
                     bool m_keywordsHasBeenSet;
 
                     /**
-                     * 母公司种子数组
+                     * <p>母公司种子数组</p>
                      */
                     std::vector<std::string> m_parentCompanies;
                     bool m_parentCompaniesHasBeenSet;
+
+                    /**
+                     * <p>关键词用途：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号，不填=全部用途</p>
+                     */
+                    std::vector<std::string> m_keywordPurposes;
+                    bool m_keywordPurposesHasBeenSet;
 
                 };
             }

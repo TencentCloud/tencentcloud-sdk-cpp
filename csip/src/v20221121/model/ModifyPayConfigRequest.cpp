@@ -23,7 +23,8 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 ModifyPayConfigRequest::ModifyPayConfigRequest() :
-    m_hostConfigHasBeenSet(false)
+    m_hostConfigHasBeenSet(false),
+    m_containerConfigHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,15 @@ string ModifyPayConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hostConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_containerConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_containerConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -65,6 +75,22 @@ void ModifyPayConfigRequest::SetHostConfig(const HostAutoScaleConfig& _hostConfi
 bool ModifyPayConfigRequest::HostConfigHasBeenSet() const
 {
     return m_hostConfigHasBeenSet;
+}
+
+ContainerAutoScaleConfig ModifyPayConfigRequest::GetContainerConfig() const
+{
+    return m_containerConfig;
+}
+
+void ModifyPayConfigRequest::SetContainerConfig(const ContainerAutoScaleConfig& _containerConfig)
+{
+    m_containerConfig = _containerConfig;
+    m_containerConfigHasBeenSet = true;
+}
+
+bool ModifyPayConfigRequest::ContainerConfigHasBeenSet() const
+{
+    return m_containerConfigHasBeenSet;
 }
 
 

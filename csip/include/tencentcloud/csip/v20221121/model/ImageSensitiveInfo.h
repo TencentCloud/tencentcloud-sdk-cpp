@@ -361,6 +361,48 @@ namespace TencentCloud
                      */
                     bool LayerIndexHasBeenSet() const;
 
+                    /**
+                     * 获取<p>影响仓库镜像数</p>
+                     * @return AffectedRegistryImageCount <p>影响仓库镜像数</p>
+                     * 
+                     */
+                    uint64_t GetAffectedRegistryImageCount() const;
+
+                    /**
+                     * 设置<p>影响仓库镜像数</p>
+                     * @param _affectedRegistryImageCount <p>影响仓库镜像数</p>
+                     * 
+                     */
+                    void SetAffectedRegistryImageCount(const uint64_t& _affectedRegistryImageCount);
+
+                    /**
+                     * 判断参数 AffectedRegistryImageCount 是否已赋值
+                     * @return AffectedRegistryImageCount 是否已赋值
+                     * 
+                     */
+                    bool AffectedRegistryImageCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>影响CICD镜像数</p>
+                     * @return AffectedCICDImageCount <p>影响CICD镜像数</p>
+                     * 
+                     */
+                    uint64_t GetAffectedCICDImageCount() const;
+
+                    /**
+                     * 设置<p>影响CICD镜像数</p>
+                     * @param _affectedCICDImageCount <p>影响CICD镜像数</p>
+                     * 
+                     */
+                    void SetAffectedCICDImageCount(const uint64_t& _affectedCICDImageCount);
+
+                    /**
+                     * 判断参数 AffectedCICDImageCount 是否已赋值
+                     * @return AffectedCICDImageCount 是否已赋值
+                     * 
+                     */
+                    bool AffectedCICDImageCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +494,18 @@ namespace TencentCloud
                      */
                     uint64_t m_layerIndex;
                     bool m_layerIndexHasBeenSet;
+
+                    /**
+                     * <p>影响仓库镜像数</p>
+                     */
+                    uint64_t m_affectedRegistryImageCount;
+                    bool m_affectedRegistryImageCountHasBeenSet;
+
+                    /**
+                     * <p>影响CICD镜像数</p>
+                     */
+                    uint64_t m_affectedCICDImageCount;
+                    bool m_affectedCICDImageCountHasBeenSet;
 
                 };
             }

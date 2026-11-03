@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略Id
-                     * @return StrategyId 策略Id
+                     * 获取<p>策略Id</p>
+                     * @return StrategyId <p>策略Id</p>
                      * 
                      */
                     std::string GetStrategyId() const;
 
                     /**
-                     * 设置策略Id
-                     * @param _strategyId 策略Id
+                     * 设置<p>策略Id</p>
+                     * @param _strategyId <p>策略Id</p>
                      * 
                      */
                     void SetStrategyId(const std::string& _strategyId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool StrategyIdHasBeenSet() const;
 
                     /**
-                     * 获取规则组Id
-                     * @return GroupId 规则组Id
+                     * 获取<p>规则组Id</p>
+                     * @return GroupId <p>规则组Id</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置规则组Id
-                     * @param _groupId 规则组Id
+                     * 设置<p>规则组Id</p>
+                     * @param _groupId <p>规则组Id</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -90,15 +90,36 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取规则组名称
-                     * @return GroupName 规则组名称
+                     * 获取<p>产品类型</p>
+                     * @return Product <p>产品类型</p>
+                     * 
+                     */
+                    std::string GetProduct() const;
+
+                    /**
+                     * 设置<p>产品类型</p>
+                     * @param _product <p>产品类型</p>
+                     * 
+                     */
+                    void SetProduct(const std::string& _product);
+
+                    /**
+                     * 判断参数 Product 是否已赋值
+                     * @return Product 是否已赋值
+                     * 
+                     */
+                    bool ProductHasBeenSet() const;
+
+                    /**
+                     * 获取<p>规则组名称</p>
+                     * @return GroupName <p>规则组名称</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置规则组名称
-                     * @param _groupName 规则组名称
+                     * 设置<p>规则组名称</p>
+                     * @param _groupName <p>规则组名称</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -111,15 +132,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取规则数
-                     * @return RuleCount 规则数
+                     * 获取<p>规则数</p>
+                     * @return RuleCount <p>规则数</p>
                      * 
                      */
                     int64_t GetRuleCount() const;
 
                     /**
-                     * 设置规则数
-                     * @param _ruleCount 规则数
+                     * 设置<p>规则数</p>
+                     * @param _ruleCount <p>规则数</p>
                      * 
                      */
                     void SetRuleCount(const int64_t& _ruleCount);
@@ -132,15 +153,15 @@ namespace TencentCloud
                     bool RuleCountHasBeenSet() const;
 
                     /**
-                     * 获取策略状态
-                     * @return RuleStatus 策略状态
+                     * 获取<p>策略状态</p>
+                     * @return RuleStatus <p>策略状态</p>
                      * 
                      */
                     int64_t GetRuleStatus() const;
 
                     /**
-                     * 设置策略状态
-                     * @param _ruleStatus 策略状态
+                     * 设置<p>策略状态</p>
+                     * @param _ruleStatus <p>策略状态</p>
                      * 
                      */
                     void SetRuleStatus(const int64_t& _ruleStatus);
@@ -153,15 +174,15 @@ namespace TencentCloud
                     bool RuleStatusHasBeenSet() const;
 
                     /**
-                     * 获取下发账号
-                     * @return ReceiveAccount 下发账号
+                     * 获取<p>下发账号</p>
+                     * @return ReceiveAccount <p>下发账号</p>
                      * 
                      */
                     std::vector<ReceiveAccount> GetReceiveAccount() const;
 
                     /**
-                     * 设置下发账号
-                     * @param _receiveAccount 下发账号
+                     * 设置<p>下发账号</p>
+                     * @param _receiveAccount <p>下发账号</p>
                      * 
                      */
                     void SetReceiveAccount(const std::vector<ReceiveAccount>& _receiveAccount);
@@ -174,15 +195,15 @@ namespace TencentCloud
                     bool ReceiveAccountHasBeenSet() const;
 
                     /**
-                     * 获取优先级
-                     * @return Sequence 优先级
+                     * 获取<p>优先级</p>
+                     * @return Sequence <p>优先级</p>
                      * 
                      */
                     int64_t GetSequence() const;
 
                     /**
-                     * 设置优先级
-                     * @param _sequence 优先级
+                     * 设置<p>优先级</p>
+                     * @param _sequence <p>优先级</p>
                      * 
                      */
                     void SetSequence(const int64_t& _sequence);
@@ -195,15 +216,15 @@ namespace TencentCloud
                     bool SequenceHasBeenSet() const;
 
                     /**
-                     * 获取下发失败原因
-                     * @return ErrMsg 下发失败原因
+                     * 获取<p>下发失败原因</p>
+                     * @return ErrMsg <p>下发失败原因</p>
                      * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
-                     * 设置下发失败原因
-                     * @param _errMsg 下发失败原因
+                     * 设置<p>下发失败原因</p>
+                     * @param _errMsg <p>下发失败原因</p>
                      * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
@@ -216,15 +237,15 @@ namespace TencentCloud
                     bool ErrMsgHasBeenSet() const;
 
                     /**
-                     * 获取下发失败原因类型
-                     * @return ErrorType 下发失败原因类型
+                     * 获取<p>下发失败原因类型</p>
+                     * @return ErrorType <p>下发失败原因类型</p>
                      * 
                      */
                     std::string GetErrorType() const;
 
                     /**
-                     * 设置下发失败原因类型
-                     * @param _errorType 下发失败原因类型
+                     * 设置<p>下发失败原因类型</p>
+                     * @param _errorType <p>下发失败原因类型</p>
                      * 
                      */
                     void SetErrorType(const std::string& _errorType);
@@ -237,15 +258,15 @@ namespace TencentCloud
                     bool ErrorTypeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -258,15 +279,15 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建人
-                     * @return CreateBy 创建人
+                     * 获取<p>创建人</p>
+                     * @return CreateBy <p>创建人</p>
                      * 
                      */
                     std::string GetCreateBy() const;
 
                     /**
-                     * 设置创建人
-                     * @param _createBy 创建人
+                     * 设置<p>创建人</p>
+                     * @param _createBy <p>创建人</p>
                      * 
                      */
                     void SetCreateBy(const std::string& _createBy);
@@ -279,15 +300,15 @@ namespace TencentCloud
                     bool CreateByHasBeenSet() const;
 
                     /**
-                     * 获取更新人
-                     * @return UpdateBy 更新人
+                     * 获取<p>更新人</p>
+                     * @return UpdateBy <p>更新人</p>
                      * 
                      */
                     std::string GetUpdateBy() const;
 
                     /**
-                     * 设置更新人
-                     * @param _updateBy 更新人
+                     * 设置<p>更新人</p>
+                     * @param _updateBy <p>更新人</p>
                      * 
                      */
                     void SetUpdateBy(const std::string& _updateBy);
@@ -300,15 +321,15 @@ namespace TencentCloud
                     bool UpdateByHasBeenSet() const;
 
                     /**
-                     * 获取执行区域
-                     * @return ExecArea 执行区域
+                     * 获取<p>执行区域</p>
+                     * @return ExecArea <p>执行区域</p>
                      * 
                      */
                     std::string GetExecArea() const;
 
                     /**
-                     * 设置执行区域
-                     * @param _execArea 执行区域
+                     * 设置<p>执行区域</p>
+                     * @param _execArea <p>执行区域</p>
                      * 
                      */
                     void SetExecArea(const std::string& _execArea);
@@ -321,15 +342,15 @@ namespace TencentCloud
                     bool ExecAreaHasBeenSet() const;
 
                     /**
-                     * 获取创建人名称
-                     * @return CreateName 创建人名称
+                     * 获取<p>创建人名称</p>
+                     * @return CreateName <p>创建人名称</p>
                      * 
                      */
                     std::string GetCreateName() const;
 
                     /**
-                     * 设置创建人名称
-                     * @param _createName 创建人名称
+                     * 设置<p>创建人名称</p>
+                     * @param _createName <p>创建人名称</p>
                      * 
                      */
                     void SetCreateName(const std::string& _createName);
@@ -342,15 +363,15 @@ namespace TencentCloud
                     bool CreateNameHasBeenSet() const;
 
                     /**
-                     * 获取更新人名称
-                     * @return UpdateName 更新人名称
+                     * 获取<p>更新人名称</p>
+                     * @return UpdateName <p>更新人名称</p>
                      * 
                      */
                     std::string GetUpdateName() const;
 
                     /**
-                     * 设置更新人名称
-                     * @param _updateName 更新人名称
+                     * 设置<p>更新人名称</p>
+                     * @param _updateName <p>更新人名称</p>
                      * 
                      */
                     void SetUpdateName(const std::string& _updateName);
@@ -363,15 +384,15 @@ namespace TencentCloud
                     bool UpdateNameHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -386,97 +407,103 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略Id
+                     * <p>策略Id</p>
                      */
                     std::string m_strategyId;
                     bool m_strategyIdHasBeenSet;
 
                     /**
-                     * 规则组Id
+                     * <p>规则组Id</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 规则组名称
+                     * <p>产品类型</p>
+                     */
+                    std::string m_product;
+                    bool m_productHasBeenSet;
+
+                    /**
+                     * <p>规则组名称</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 规则数
+                     * <p>规则数</p>
                      */
                     int64_t m_ruleCount;
                     bool m_ruleCountHasBeenSet;
 
                     /**
-                     * 策略状态
+                     * <p>策略状态</p>
                      */
                     int64_t m_ruleStatus;
                     bool m_ruleStatusHasBeenSet;
 
                     /**
-                     * 下发账号
+                     * <p>下发账号</p>
                      */
                     std::vector<ReceiveAccount> m_receiveAccount;
                     bool m_receiveAccountHasBeenSet;
 
                     /**
-                     * 优先级
+                     * <p>优先级</p>
                      */
                     int64_t m_sequence;
                     bool m_sequenceHasBeenSet;
 
                     /**
-                     * 下发失败原因
+                     * <p>下发失败原因</p>
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;
 
                     /**
-                     * 下发失败原因类型
+                     * <p>下发失败原因类型</p>
                      */
                     std::string m_errorType;
                     bool m_errorTypeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 创建人
+                     * <p>创建人</p>
                      */
                     std::string m_createBy;
                     bool m_createByHasBeenSet;
 
                     /**
-                     * 更新人
+                     * <p>更新人</p>
                      */
                     std::string m_updateBy;
                     bool m_updateByHasBeenSet;
 
                     /**
-                     * 执行区域
+                     * <p>执行区域</p>
                      */
                     std::string m_execArea;
                     bool m_execAreaHasBeenSet;
 
                     /**
-                     * 创建人名称
+                     * <p>创建人名称</p>
                      */
                     std::string m_createName;
                     bool m_createNameHasBeenSet;
 
                     /**
-                     * 更新人名称
+                     * <p>更新人名称</p>
                      */
                     std::string m_updateName;
                     bool m_updateNameHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

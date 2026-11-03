@@ -33,8 +33,12 @@
 #include <tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionFromSourceRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionFromSourceResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/CreateScheduledTaskRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/CreateScheduledTaskResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DeleteAgentRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DeleteAgentResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DeleteScheduledTaskRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DeleteScheduledTaskResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentListRequest.h>
@@ -59,6 +63,14 @@
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeExternalAgentListResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeMessageEventListRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeMessageEventListResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskListRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskListResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogListRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogListResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeSkillListRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeSkillListResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/DescribeUserAccessTokenRequest.h>
@@ -73,6 +85,10 @@
 #include <tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentRoutingResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentVersionRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentVersionResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/ModifyScheduledTaskRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/ModifyScheduledTaskResponse.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/TriggerScheduledTaskRequest.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/TriggerScheduledTaskResponse.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/UnbindExternalAgentRequest.h>
 #include <tencentcloud/workbuddyenterprise/v20260709/model/UnbindExternalAgentResponse.h>
 
@@ -104,9 +120,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAgentVersionFromSourceResponse> CreateAgentVersionFromSourceOutcome;
                 typedef std::future<CreateAgentVersionFromSourceOutcome> CreateAgentVersionFromSourceOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::CreateAgentVersionFromSourceRequest&, CreateAgentVersionFromSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentVersionFromSourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateScheduledTaskResponse> CreateScheduledTaskOutcome;
+                typedef std::future<CreateScheduledTaskOutcome> CreateScheduledTaskOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::CreateScheduledTaskRequest&, CreateScheduledTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScheduledTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAgentResponse> DeleteAgentOutcome;
                 typedef std::future<DeleteAgentOutcome> DeleteAgentOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DeleteAgentRequest&, DeleteAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteScheduledTaskResponse> DeleteScheduledTaskOutcome;
+                typedef std::future<DeleteScheduledTaskOutcome> DeleteScheduledTaskOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DeleteScheduledTaskRequest&, DeleteScheduledTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScheduledTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAgentResponse> DescribeAgentOutcome;
                 typedef std::future<DescribeAgentOutcome> DescribeAgentOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeAgentRequest&, DescribeAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentAsyncHandler;
@@ -143,6 +165,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMessageEventListResponse> DescribeMessageEventListOutcome;
                 typedef std::future<DescribeMessageEventListOutcome> DescribeMessageEventListOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeMessageEventListRequest&, DescribeMessageEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageEventListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScheduledTaskResponse> DescribeScheduledTaskOutcome;
+                typedef std::future<DescribeScheduledTaskOutcome> DescribeScheduledTaskOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeScheduledTaskRequest&, DescribeScheduledTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScheduledTaskListResponse> DescribeScheduledTaskListOutcome;
+                typedef std::future<DescribeScheduledTaskListOutcome> DescribeScheduledTaskListOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeScheduledTaskListRequest&, DescribeScheduledTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledTaskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScheduledTaskLogResponse> DescribeScheduledTaskLogOutcome;
+                typedef std::future<DescribeScheduledTaskLogOutcome> DescribeScheduledTaskLogOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeScheduledTaskLogRequest&, DescribeScheduledTaskLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledTaskLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScheduledTaskLogListResponse> DescribeScheduledTaskLogListOutcome;
+                typedef std::future<DescribeScheduledTaskLogListOutcome> DescribeScheduledTaskLogListOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeScheduledTaskLogListRequest&, DescribeScheduledTaskLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScheduledTaskLogListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSkillListResponse> DescribeSkillListOutcome;
                 typedef std::future<DescribeSkillListOutcome> DescribeSkillListOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::DescribeSkillListRequest&, DescribeSkillListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillListAsyncHandler;
@@ -164,6 +198,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAgentVersionResponse> ModifyAgentVersionOutcome;
                 typedef std::future<ModifyAgentVersionOutcome> ModifyAgentVersionOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::ModifyAgentVersionRequest&, ModifyAgentVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAgentVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyScheduledTaskResponse> ModifyScheduledTaskOutcome;
+                typedef std::future<ModifyScheduledTaskOutcome> ModifyScheduledTaskOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::ModifyScheduledTaskRequest&, ModifyScheduledTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScheduledTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::TriggerScheduledTaskResponse> TriggerScheduledTaskOutcome;
+                typedef std::future<TriggerScheduledTaskOutcome> TriggerScheduledTaskOutcomeCallable;
+                typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::TriggerScheduledTaskRequest&, TriggerScheduledTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerScheduledTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindExternalAgentResponse> UnbindExternalAgentOutcome;
                 typedef std::future<UnbindExternalAgentOutcome> UnbindExternalAgentOutcomeCallable;
                 typedef std::function<void(const WorkbuddyenterpriseClient*, const Model::UnbindExternalAgentRequest&, UnbindExternalAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindExternalAgentAsyncHandler;
@@ -216,6 +256,15 @@ namespace TencentCloud
                 CreateAgentVersionFromSourceOutcomeCallable CreateAgentVersionFromSourceCallable(const Model::CreateAgentVersionFromSourceRequest& request);
 
                 /**
+                 *创建自动化任务。AgentConfig 由上游传入，managed-agent 仅做协议透传。
+                 * @param req CreateScheduledTaskRequest
+                 * @return CreateScheduledTaskOutcome
+                 */
+                CreateScheduledTaskOutcome CreateScheduledTask(const Model::CreateScheduledTaskRequest &request);
+                void CreateScheduledTaskAsync(const Model::CreateScheduledTaskRequest& request, const CreateScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateScheduledTaskOutcomeCallable CreateScheduledTaskCallable(const Model::CreateScheduledTaskRequest& request);
+
+                /**
                  *删除指定的 Agent 及其所有版本。删除后不可恢复。
                  * @param req DeleteAgentRequest
                  * @return DeleteAgentOutcome
@@ -223,6 +272,15 @@ namespace TencentCloud
                 DeleteAgentOutcome DeleteAgent(const Model::DeleteAgentRequest &request);
                 void DeleteAgentAsync(const Model::DeleteAgentRequest& request, const DeleteAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAgentOutcomeCallable DeleteAgentCallable(const Model::DeleteAgentRequest& request);
+
+                /**
+                 *删除指定的自动化任务。删除后不可恢复。
+                 * @param req DeleteScheduledTaskRequest
+                 * @return DeleteScheduledTaskOutcome
+                 */
+                DeleteScheduledTaskOutcome DeleteScheduledTask(const Model::DeleteScheduledTaskRequest &request);
+                void DeleteScheduledTaskAsync(const Model::DeleteScheduledTaskRequest& request, const DeleteScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteScheduledTaskOutcomeCallable DeleteScheduledTaskCallable(const Model::DeleteScheduledTaskRequest& request);
 
                 /**
                  *查询单个 Agent 的详细信息，包括基础配置和路由配置。
@@ -333,6 +391,42 @@ namespace TencentCloud
                 DescribeMessageEventListOutcomeCallable DescribeMessageEventListCallable(const Model::DescribeMessageEventListRequest& request);
 
                 /**
+                 *查询单个自动化任务的详细信息。
+                 * @param req DescribeScheduledTaskRequest
+                 * @return DescribeScheduledTaskOutcome
+                 */
+                DescribeScheduledTaskOutcome DescribeScheduledTask(const Model::DescribeScheduledTaskRequest &request);
+                void DescribeScheduledTaskAsync(const Model::DescribeScheduledTaskRequest& request, const DescribeScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScheduledTaskOutcomeCallable DescribeScheduledTaskCallable(const Model::DescribeScheduledTaskRequest& request);
+
+                /**
+                 *分页查询自动化任务列表，支持按任务名称、状态、Agent 过滤。
+                 * @param req DescribeScheduledTaskListRequest
+                 * @return DescribeScheduledTaskListOutcome
+                 */
+                DescribeScheduledTaskListOutcome DescribeScheduledTaskList(const Model::DescribeScheduledTaskListRequest &request);
+                void DescribeScheduledTaskListAsync(const Model::DescribeScheduledTaskListRequest& request, const DescribeScheduledTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScheduledTaskListOutcomeCallable DescribeScheduledTaskListCallable(const Model::DescribeScheduledTaskListRequest& request);
+
+                /**
+                 *查询单条自动化任务执行日志的详细信息。
+                 * @param req DescribeScheduledTaskLogRequest
+                 * @return DescribeScheduledTaskLogOutcome
+                 */
+                DescribeScheduledTaskLogOutcome DescribeScheduledTaskLog(const Model::DescribeScheduledTaskLogRequest &request);
+                void DescribeScheduledTaskLogAsync(const Model::DescribeScheduledTaskLogRequest& request, const DescribeScheduledTaskLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScheduledTaskLogOutcomeCallable DescribeScheduledTaskLogCallable(const Model::DescribeScheduledTaskLogRequest& request);
+
+                /**
+                 *分页查询自动化任务执行日志列表，支持状态和时间范围过滤，可选返回聚合统计。
+                 * @param req DescribeScheduledTaskLogListRequest
+                 * @return DescribeScheduledTaskLogListOutcome
+                 */
+                DescribeScheduledTaskLogListOutcome DescribeScheduledTaskLogList(const Model::DescribeScheduledTaskLogListRequest &request);
+                void DescribeScheduledTaskLogListAsync(const Model::DescribeScheduledTaskLogListRequest& request, const DescribeScheduledTaskLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScheduledTaskLogListOutcomeCallable DescribeScheduledTaskLogListCallable(const Model::DescribeScheduledTaskLogListRequest& request);
+
+                /**
                  *分页查询 Skill 列表，支持关键词、分类、发布状态过滤。
                  * @param req DescribeSkillListRequest
                  * @return DescribeSkillListOutcome
@@ -394,6 +488,24 @@ namespace TencentCloud
                 ModifyAgentVersionOutcome ModifyAgentVersion(const Model::ModifyAgentVersionRequest &request);
                 void ModifyAgentVersionAsync(const Model::ModifyAgentVersionRequest& request, const ModifyAgentVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAgentVersionOutcomeCallable ModifyAgentVersionCallable(const Model::ModifyAgentVersionRequest& request);
+
+                /**
+                 *部分更新自动化任务配置（Patch 语义：仅传递需要更新的字段），支持启停状态切换。
+                 * @param req ModifyScheduledTaskRequest
+                 * @return ModifyScheduledTaskOutcome
+                 */
+                ModifyScheduledTaskOutcome ModifyScheduledTask(const Model::ModifyScheduledTaskRequest &request);
+                void ModifyScheduledTaskAsync(const Model::ModifyScheduledTaskRequest& request, const ModifyScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyScheduledTaskOutcomeCallable ModifyScheduledTaskCallable(const Model::ModifyScheduledTaskRequest& request);
+
+                /**
+                 *手动触发一次自动化任务执行，返回执行日志 ID。
+                 * @param req TriggerScheduledTaskRequest
+                 * @return TriggerScheduledTaskOutcome
+                 */
+                TriggerScheduledTaskOutcome TriggerScheduledTask(const Model::TriggerScheduledTaskRequest &request);
+                void TriggerScheduledTaskAsync(const Model::TriggerScheduledTaskRequest& request, const TriggerScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TriggerScheduledTaskOutcomeCallable TriggerScheduledTaskCallable(const Model::TriggerScheduledTaskRequest& request);
 
                 /**
                  *解除外部 agent 与 managed agent 的绑定

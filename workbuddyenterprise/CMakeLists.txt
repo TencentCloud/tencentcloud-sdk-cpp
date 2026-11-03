@@ -20,155 +20,201 @@ set(workbuddyenterprise_public_header
 
 set(workbuddyenterprise_public_header_model
   include/tencentcloud/workbuddyenterprise/v20260709/model/DeleteAgentRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExpertListRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/A2ASkillItem.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeMessageEventListResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/AgentItem.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/UnbindExternalAgentRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeBuiltinModelListResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/AgentConfig.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExternalAgentResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentVersionResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/BindExternalAgentResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/SkillCounts.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/BindExternalAgentRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentRoutingRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExternalAgentListResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExternalAgentRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentVersionRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentVersionRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentSessionResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentSessionRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/UnbindExternalAgentResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeSkillListRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentSessionListResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeConnectorListResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentListResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentSessionResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/MessageEventMessage.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/ExternalAgentInfo.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/A2ASkillInput.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/ChatEndpoint.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeBuiltinModelListRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/ConnectorInfo.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentSessionRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionFromSourceRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentVersionListResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExternalAgentListRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentA2AConfigRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/AgentVersionItem.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeUserAccessTokenResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionFromSourceResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentListRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentA2AConfigResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/TokenUsage.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/Filter.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/BuiltinModel.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeConnectorListRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/RoutingItem.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ConnectorInfo.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionFromSourceResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/MessageEventToolCall.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentVersionResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeUserAccessTokenRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/A2AConfig.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentSessionListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/MessageEvent.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/MigrateAgentSessionResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DeleteAgentResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/ExpertItem.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentRequest.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeSkillListResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeMessageEventListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/TriggerScheduledTaskRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/SessionItem.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExpertListResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/ExpertCounts.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentVersionListRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/SkillItem.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ConnectorRefInput.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExpertListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentVersionResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DeleteScheduledTaskResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentVersionResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/SkillCounts.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExternalAgentRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentVersionListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeConnectorListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentRoutingRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ChatEndpoint.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeSkillListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateScheduledTaskRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExternalAgentListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeUserAccessTokenResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ScheduledTaskLogSummary.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeConnectorListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExternalAgentListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentVersionRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/MigrateAgentSessionResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/TriggerScheduledTaskResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ScheduledTaskLogStats.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyScheduledTaskRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentSessionListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/UnbindExternalAgentRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeBuiltinModelListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/BindExternalAgentResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DeliveryTarget.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/A2AConfig.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DeleteScheduledTaskRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyScheduledTaskResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/A2ASkillInput.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/BindExternalAgentRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ExternalAgentInfo.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DeleteAgentResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentA2AConfigResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/Filter.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/BuiltinModel.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeUserAccessTokenRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentSessionListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ExpertItem.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeExpertListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/Header.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/MigrateAgentSessionRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeMessageEventListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/TargetOptions.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeAgentSessionRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/RoutingItem.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentSessionResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/MessageEventMessage.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentA2AConfigRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentSessionRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionFromSourceRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/AgentVersionItem.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeBuiltinModelListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskLogResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/UnbindExternalAgentResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/CreateScheduledTaskResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeSkillListResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeMessageEventListRequest.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ScheduledTaskSummary.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/ExpertCounts.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentRoutingResponse.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ModifyAgentResponse.h
-  include/tencentcloud/workbuddyenterprise/v20260709/model/MigrateAgentSessionRequest.h
   )
 
 set(workbuddyenterprise_src
   src/v20260709/WorkbuddyenterpriseClient.cpp
   src/v20260709/model/DeleteAgentRequest.cpp
-  src/v20260709/model/DescribeAgentResponse.cpp
-  src/v20260709/model/DescribeExpertListRequest.cpp
   src/v20260709/model/A2ASkillItem.cpp
-  src/v20260709/model/DescribeMessageEventListResponse.cpp
   src/v20260709/model/AgentItem.cpp
-  src/v20260709/model/UnbindExternalAgentRequest.cpp
-  src/v20260709/model/DescribeBuiltinModelListResponse.cpp
-  src/v20260709/model/CreateAgentVersionResponse.cpp
+  src/v20260709/model/AgentConfig.cpp
   src/v20260709/model/DescribeExternalAgentResponse.cpp
-  src/v20260709/model/ModifyAgentVersionResponse.cpp
-  src/v20260709/model/BindExternalAgentResponse.cpp
-  src/v20260709/model/SkillCounts.cpp
-  src/v20260709/model/BindExternalAgentRequest.cpp
-  src/v20260709/model/ModifyAgentRoutingRequest.cpp
-  src/v20260709/model/DescribeExternalAgentListResponse.cpp
-  src/v20260709/model/DescribeExternalAgentRequest.cpp
   src/v20260709/model/CreateAgentVersionRequest.cpp
   src/v20260709/model/ModifyAgentVersionRequest.cpp
-  src/v20260709/model/CreateAgentRequest.cpp
-  src/v20260709/model/DescribeAgentVersionRequest.cpp
-  src/v20260709/model/ModifyAgentRequest.cpp
   src/v20260709/model/DescribeAgentSessionResponse.cpp
-  src/v20260709/model/CreateAgentResponse.cpp
-  src/v20260709/model/DescribeAgentSessionRequest.cpp
-  src/v20260709/model/UnbindExternalAgentResponse.cpp
-  src/v20260709/model/DescribeSkillListRequest.cpp
-  src/v20260709/model/DescribeAgentSessionListResponse.cpp
-  src/v20260709/model/DescribeConnectorListResponse.cpp
-  src/v20260709/model/DescribeAgentListResponse.cpp
-  src/v20260709/model/CreateAgentSessionResponse.cpp
-  src/v20260709/model/MessageEventMessage.cpp
-  src/v20260709/model/ExternalAgentInfo.cpp
-  src/v20260709/model/A2ASkillInput.cpp
-  src/v20260709/model/ChatEndpoint.cpp
-  src/v20260709/model/DescribeBuiltinModelListRequest.cpp
-  src/v20260709/model/ConnectorInfo.cpp
-  src/v20260709/model/CreateAgentSessionRequest.cpp
-  src/v20260709/model/CreateAgentVersionFromSourceRequest.cpp
-  src/v20260709/model/DescribeAgentVersionListResponse.cpp
-  src/v20260709/model/DescribeExternalAgentListRequest.cpp
-  src/v20260709/model/ModifyAgentA2AConfigRequest.cpp
-  src/v20260709/model/AgentVersionItem.cpp
-  src/v20260709/model/DescribeUserAccessTokenResponse.cpp
-  src/v20260709/model/CreateAgentVersionFromSourceResponse.cpp
-  src/v20260709/model/DescribeAgentListRequest.cpp
-  src/v20260709/model/ModifyAgentA2AConfigResponse.cpp
   src/v20260709/model/TokenUsage.cpp
-  src/v20260709/model/Filter.cpp
-  src/v20260709/model/BuiltinModel.cpp
-  src/v20260709/model/DescribeConnectorListRequest.cpp
-  src/v20260709/model/RoutingItem.cpp
+  src/v20260709/model/ConnectorInfo.cpp
+  src/v20260709/model/CreateAgentVersionFromSourceResponse.cpp
   src/v20260709/model/MessageEventToolCall.cpp
-  src/v20260709/model/DescribeAgentVersionResponse.cpp
-  src/v20260709/model/DescribeUserAccessTokenRequest.cpp
-  src/v20260709/model/A2AConfig.cpp
-  src/v20260709/model/DescribeAgentSessionListRequest.cpp
+  src/v20260709/model/DescribeScheduledTaskRequest.cpp
   src/v20260709/model/MessageEvent.cpp
-  src/v20260709/model/MigrateAgentSessionResponse.cpp
-  src/v20260709/model/DeleteAgentResponse.cpp
-  src/v20260709/model/ExpertItem.cpp
   src/v20260709/model/DescribeAgentRequest.cpp
-  src/v20260709/model/DescribeSkillListResponse.cpp
-  src/v20260709/model/DescribeMessageEventListRequest.cpp
+  src/v20260709/model/TriggerScheduledTaskRequest.cpp
   src/v20260709/model/SessionItem.cpp
-  src/v20260709/model/DescribeExpertListResponse.cpp
-  src/v20260709/model/ExpertCounts.cpp
   src/v20260709/model/DescribeAgentVersionListRequest.cpp
   src/v20260709/model/SkillItem.cpp
   src/v20260709/model/ConnectorRefInput.cpp
+  src/v20260709/model/DescribeExpertListRequest.cpp
+  src/v20260709/model/DescribeScheduledTaskLogRequest.cpp
+  src/v20260709/model/DescribeAgentVersionResponse.cpp
+  src/v20260709/model/DeleteScheduledTaskResponse.cpp
+  src/v20260709/model/ModifyAgentVersionResponse.cpp
+  src/v20260709/model/SkillCounts.cpp
+  src/v20260709/model/DescribeExternalAgentRequest.cpp
+  src/v20260709/model/CreateAgentRequest.cpp
+  src/v20260709/model/DescribeAgentVersionListResponse.cpp
+  src/v20260709/model/DescribeConnectorListResponse.cpp
+  src/v20260709/model/ModifyAgentRoutingRequest.cpp
+  src/v20260709/model/ChatEndpoint.cpp
+  src/v20260709/model/DescribeSkillListRequest.cpp
+  src/v20260709/model/CreateScheduledTaskRequest.cpp
+  src/v20260709/model/DescribeExternalAgentListRequest.cpp
+  src/v20260709/model/DescribeScheduledTaskListResponse.cpp
+  src/v20260709/model/DescribeUserAccessTokenResponse.cpp
+  src/v20260709/model/DescribeAgentListRequest.cpp
+  src/v20260709/model/ScheduledTaskLogSummary.cpp
+  src/v20260709/model/DescribeConnectorListRequest.cpp
+  src/v20260709/model/DescribeExternalAgentListResponse.cpp
+  src/v20260709/model/DescribeAgentVersionRequest.cpp
+  src/v20260709/model/MigrateAgentSessionResponse.cpp
+  src/v20260709/model/DescribeScheduledTaskListRequest.cpp
+  src/v20260709/model/TriggerScheduledTaskResponse.cpp
+  src/v20260709/model/DescribeScheduledTaskResponse.cpp
+  src/v20260709/model/ScheduledTaskLogStats.cpp
+  src/v20260709/model/ModifyScheduledTaskRequest.cpp
+  src/v20260709/model/DescribeAgentSessionListResponse.cpp
+  src/v20260709/model/UnbindExternalAgentRequest.cpp
+  src/v20260709/model/DescribeBuiltinModelListResponse.cpp
+  src/v20260709/model/BindExternalAgentResponse.cpp
+  src/v20260709/model/DeliveryTarget.cpp
+  src/v20260709/model/A2AConfig.cpp
+  src/v20260709/model/DescribeScheduledTaskLogListRequest.cpp
+  src/v20260709/model/DeleteScheduledTaskRequest.cpp
+  src/v20260709/model/ModifyScheduledTaskResponse.cpp
+  src/v20260709/model/ModifyAgentRequest.cpp
+  src/v20260709/model/A2ASkillInput.cpp
+  src/v20260709/model/BindExternalAgentRequest.cpp
+  src/v20260709/model/ExternalAgentInfo.cpp
+  src/v20260709/model/DescribeAgentListResponse.cpp
+  src/v20260709/model/DeleteAgentResponse.cpp
+  src/v20260709/model/ModifyAgentA2AConfigResponse.cpp
+  src/v20260709/model/Filter.cpp
+  src/v20260709/model/BuiltinModel.cpp
+  src/v20260709/model/DescribeUserAccessTokenRequest.cpp
+  src/v20260709/model/DescribeAgentSessionListRequest.cpp
+  src/v20260709/model/ExpertItem.cpp
+  src/v20260709/model/DescribeExpertListResponse.cpp
+  src/v20260709/model/Header.cpp
+  src/v20260709/model/MigrateAgentSessionRequest.cpp
+  src/v20260709/model/DescribeAgentResponse.cpp
+  src/v20260709/model/DescribeMessageEventListResponse.cpp
+  src/v20260709/model/CreateAgentVersionResponse.cpp
+  src/v20260709/model/TargetOptions.cpp
+  src/v20260709/model/CreateAgentResponse.cpp
+  src/v20260709/model/DescribeAgentSessionRequest.cpp
+  src/v20260709/model/RoutingItem.cpp
+  src/v20260709/model/CreateAgentSessionResponse.cpp
+  src/v20260709/model/MessageEventMessage.cpp
+  src/v20260709/model/DescribeScheduledTaskLogListResponse.cpp
+  src/v20260709/model/ModifyAgentA2AConfigRequest.cpp
+  src/v20260709/model/CreateAgentSessionRequest.cpp
+  src/v20260709/model/CreateAgentVersionFromSourceRequest.cpp
+  src/v20260709/model/AgentVersionItem.cpp
+  src/v20260709/model/DescribeBuiltinModelListRequest.cpp
+  src/v20260709/model/DescribeScheduledTaskLogResponse.cpp
+  src/v20260709/model/UnbindExternalAgentResponse.cpp
+  src/v20260709/model/CreateScheduledTaskResponse.cpp
+  src/v20260709/model/DescribeSkillListResponse.cpp
+  src/v20260709/model/DescribeMessageEventListRequest.cpp
+  src/v20260709/model/ScheduledTaskSummary.cpp
+  src/v20260709/model/ExpertCounts.cpp
   src/v20260709/model/ModifyAgentRoutingResponse.cpp
   src/v20260709/model/ModifyAgentResponse.cpp
-  src/v20260709/model/MigrateAgentSessionRequest.cpp
   )
 
 set(workbuddyenterprise_include

@@ -23,7 +23,8 @@ using namespace TencentCloud::Dc::V20180410::Model;
 using namespace std;
 
 DeleteDirectConnectRequest::DeleteDirectConnectRequest() :
-    m_directConnectIdHasBeenSet(false)
+    m_directConnectIdHasBeenSet(false),
+    m_plannedRepealDateHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DeleteDirectConnectRequest::ToJsonString() const
         string key = "DirectConnectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_directConnectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_plannedRepealDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlannedRepealDate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_plannedRepealDate.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DeleteDirectConnectRequest::SetDirectConnectId(const string& _directConnect
 bool DeleteDirectConnectRequest::DirectConnectIdHasBeenSet() const
 {
     return m_directConnectIdHasBeenSet;
+}
+
+string DeleteDirectConnectRequest::GetPlannedRepealDate() const
+{
+    return m_plannedRepealDate;
+}
+
+void DeleteDirectConnectRequest::SetPlannedRepealDate(const string& _plannedRepealDate)
+{
+    m_plannedRepealDate = _plannedRepealDate;
+    m_plannedRepealDateHasBeenSet = true;
+}
+
+bool DeleteDirectConnectRequest::PlannedRepealDateHasBeenSet() const
+{
+    return m_plannedRepealDateHasBeenSet;
 }
 
 

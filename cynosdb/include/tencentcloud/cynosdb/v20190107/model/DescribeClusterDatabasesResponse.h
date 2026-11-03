@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总条数
-                     * @return TotalCount 总条数
+                     * 获取<p>总条数</p>
+                     * @return TotalCount <p>总条数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移
-                     * @return Offset 分页偏移
+                     * 获取<p>分页偏移</p>
+                     * @return Offset <p>分页偏移</p>
                      * 
                      */
                     int64_t GetOffset() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取数据库列表
-                     * @return Databases 数据库列表
+                     * 获取<p>数据库列表</p>
+                     * @return Databases <p>数据库列表</p>
                      * 
                      */
                     std::vector<std::string> GetDatabases() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool DatabasesHasBeenSet() const;
 
                     /**
-                     * 获取分页限制数
-                     * @return Limit 分页限制数
+                     * 获取<p>分页限制数</p>
+                     * @return Limit <p>分页限制数</p>
                      * 
                      */
                     int64_t GetLimit() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总条数
+                     * <p>总条数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 分页偏移
+                     * <p>分页偏移</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 数据库列表
+                     * <p>数据库列表</p>
                      */
                     std::vector<std::string> m_databases;
                     bool m_databasesHasBeenSet;
 
                     /**
-                     * 分页限制数
+                     * <p>分页限制数</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

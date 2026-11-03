@@ -730,6 +730,20 @@ namespace TencentCloud
                      */
                     bool HostingStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否可重新提交。</p>
+                     * @return ResubmitAble <p>是否可重新提交。</p>
+                     * 
+                     */
+                    bool GetResubmitAble() const;
+
+                    /**
+                     * 判断参数 ResubmitAble 是否已赋值
+                     * @return ResubmitAble 是否已赋值
+                     * 
+                     */
+                    bool ResubmitAbleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1025,6 +1039,12 @@ namespace TencentCloud
                      */
                     int64_t m_hostingStatus;
                     bool m_hostingStatusHasBeenSet;
+
+                    /**
+                     * <p>是否可重新提交。</p>
+                     */
+                    bool m_resubmitAble;
+                    bool m_resubmitAbleHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略Id
-                     * @return StrategyId 策略Id
+                     * 获取<p>策略Id</p>
+                     * @return StrategyId <p>策略Id</p>
                      * 
                      */
                     std::string GetStrategyId() const;
 
                     /**
-                     * 设置策略Id
-                     * @param _strategyId 策略Id
+                     * 设置<p>策略Id</p>
+                     * @param _strategyId <p>策略Id</p>
                      * 
                      */
                     void SetStrategyId(const std::string& _strategyId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略Id
+                     * <p>策略Id</p>
                      */
                     std::string m_strategyId;
                     bool m_strategyIdHasBeenSet;

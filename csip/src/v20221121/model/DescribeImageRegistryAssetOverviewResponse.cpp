@@ -34,7 +34,13 @@ DescribeImageRegistryAssetOverviewResponse::DescribeImageRegistryAssetOverviewRe
     m_totalQuotaHasBeenSet(false),
     m_usedQuotaHasBeenSet(false),
     m_remainingQuotaHasBeenSet(false),
-    m_trialQuotaHasBeenSet(false)
+    m_trialQuotaHasBeenSet(false),
+    m_riskImageCntHasBeenSet(false),
+    m_cICDImageCntHasBeenSet(false),
+    m_cICDImageScannedCntHasBeenSet(false),
+    m_riskCICDImageCntHasBeenSet(false),
+    m_secretFileCntHasBeenSet(false),
+    m_buildRiskCntHasBeenSet(false)
 {
 }
 
@@ -182,6 +188,66 @@ CoreInternalOutcome DescribeImageRegistryAssetOverviewResponse::Deserialize(cons
         m_trialQuotaHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RiskImageCnt") && !rsp["RiskImageCnt"].IsNull())
+    {
+        if (!rsp["RiskImageCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskImageCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskImageCnt = rsp["RiskImageCnt"].GetUint64();
+        m_riskImageCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CICDImageCnt") && !rsp["CICDImageCnt"].IsNull())
+    {
+        if (!rsp["CICDImageCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CICDImageCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cICDImageCnt = rsp["CICDImageCnt"].GetUint64();
+        m_cICDImageCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CICDImageScannedCnt") && !rsp["CICDImageScannedCnt"].IsNull())
+    {
+        if (!rsp["CICDImageScannedCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CICDImageScannedCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cICDImageScannedCnt = rsp["CICDImageScannedCnt"].GetUint64();
+        m_cICDImageScannedCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RiskCICDImageCnt") && !rsp["RiskCICDImageCnt"].IsNull())
+    {
+        if (!rsp["RiskCICDImageCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskCICDImageCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskCICDImageCnt = rsp["RiskCICDImageCnt"].GetUint64();
+        m_riskCICDImageCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SecretFileCnt") && !rsp["SecretFileCnt"].IsNull())
+    {
+        if (!rsp["SecretFileCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecretFileCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretFileCnt = rsp["SecretFileCnt"].GetUint64();
+        m_secretFileCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BuildRiskCnt") && !rsp["BuildRiskCnt"].IsNull())
+    {
+        if (!rsp["BuildRiskCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BuildRiskCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_buildRiskCnt = rsp["BuildRiskCnt"].GetUint64();
+        m_buildRiskCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +344,54 @@ string DescribeImageRegistryAssetOverviewResponse::ToJsonString() const
         string key = "TrialQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trialQuota, allocator);
+    }
+
+    if (m_riskImageCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskImageCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskImageCnt, allocator);
+    }
+
+    if (m_cICDImageCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CICDImageCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cICDImageCnt, allocator);
+    }
+
+    if (m_cICDImageScannedCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CICDImageScannedCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cICDImageScannedCnt, allocator);
+    }
+
+    if (m_riskCICDImageCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskCICDImageCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskCICDImageCnt, allocator);
+    }
+
+    if (m_secretFileCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretFileCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_secretFileCnt, allocator);
+    }
+
+    if (m_buildRiskCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildRiskCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_buildRiskCnt, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -400,6 +514,66 @@ uint64_t DescribeImageRegistryAssetOverviewResponse::GetTrialQuota() const
 bool DescribeImageRegistryAssetOverviewResponse::TrialQuotaHasBeenSet() const
 {
     return m_trialQuotaHasBeenSet;
+}
+
+uint64_t DescribeImageRegistryAssetOverviewResponse::GetRiskImageCnt() const
+{
+    return m_riskImageCnt;
+}
+
+bool DescribeImageRegistryAssetOverviewResponse::RiskImageCntHasBeenSet() const
+{
+    return m_riskImageCntHasBeenSet;
+}
+
+uint64_t DescribeImageRegistryAssetOverviewResponse::GetCICDImageCnt() const
+{
+    return m_cICDImageCnt;
+}
+
+bool DescribeImageRegistryAssetOverviewResponse::CICDImageCntHasBeenSet() const
+{
+    return m_cICDImageCntHasBeenSet;
+}
+
+uint64_t DescribeImageRegistryAssetOverviewResponse::GetCICDImageScannedCnt() const
+{
+    return m_cICDImageScannedCnt;
+}
+
+bool DescribeImageRegistryAssetOverviewResponse::CICDImageScannedCntHasBeenSet() const
+{
+    return m_cICDImageScannedCntHasBeenSet;
+}
+
+uint64_t DescribeImageRegistryAssetOverviewResponse::GetRiskCICDImageCnt() const
+{
+    return m_riskCICDImageCnt;
+}
+
+bool DescribeImageRegistryAssetOverviewResponse::RiskCICDImageCntHasBeenSet() const
+{
+    return m_riskCICDImageCntHasBeenSet;
+}
+
+uint64_t DescribeImageRegistryAssetOverviewResponse::GetSecretFileCnt() const
+{
+    return m_secretFileCnt;
+}
+
+bool DescribeImageRegistryAssetOverviewResponse::SecretFileCntHasBeenSet() const
+{
+    return m_secretFileCntHasBeenSet;
+}
+
+uint64_t DescribeImageRegistryAssetOverviewResponse::GetBuildRiskCnt() const
+{
+    return m_buildRiskCnt;
+}
+
+bool DescribeImageRegistryAssetOverviewResponse::BuildRiskCntHasBeenSet() const
+{
+    return m_buildRiskCntHasBeenSet;
 }
 
 
