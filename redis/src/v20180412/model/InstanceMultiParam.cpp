@@ -28,7 +28,12 @@ InstanceMultiParam::InstanceMultiParam() :
     m_currentValueHasBeenSet(false),
     m_tipsHasBeenSet(false),
     m_enumValueHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_paramTypeHasBeenSet(false),
+    m_featureSupportedHasBeenSet(false),
+    m_newFeatureOnlineTimeHasBeenSet(false),
+    m_patternHasBeenSet(false),
+    m_inputDescriptionHasBeenSet(false)
 {
 }
 
@@ -120,6 +125,56 @@ CoreInternalOutcome InstanceMultiParam::Deserialize(const rapidjson::Value &valu
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("ParamType") && !value["ParamType"].IsNull())
+    {
+        if (!value["ParamType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.ParamType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paramType = string(value["ParamType"].GetString());
+        m_paramTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FeatureSupported") && !value["FeatureSupported"].IsNull())
+    {
+        if (!value["FeatureSupported"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.FeatureSupported` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_featureSupported = value["FeatureSupported"].GetBool();
+        m_featureSupportedHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewFeatureOnlineTime") && !value["NewFeatureOnlineTime"].IsNull())
+    {
+        if (!value["NewFeatureOnlineTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.NewFeatureOnlineTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newFeatureOnlineTime = string(value["NewFeatureOnlineTime"].GetString());
+        m_newFeatureOnlineTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Pattern") && !value["Pattern"].IsNull())
+    {
+        if (!value["Pattern"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.Pattern` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pattern = string(value["Pattern"].GetString());
+        m_patternHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputDescription") && !value["InputDescription"].IsNull())
+    {
+        if (!value["InputDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceMultiParam.InputDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputDescription = string(value["InputDescription"].GetString());
+        m_inputDescriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +249,46 @@ void InstanceMultiParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_paramTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paramType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_featureSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeatureSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_featureSupported, allocator);
+    }
+
+    if (m_newFeatureOnlineTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewFeatureOnlineTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newFeatureOnlineTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_patternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pattern";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputDescription.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +420,85 @@ void InstanceMultiParam::SetStatus(const int64_t& _status)
 bool InstanceMultiParam::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string InstanceMultiParam::GetParamType() const
+{
+    return m_paramType;
+}
+
+void InstanceMultiParam::SetParamType(const string& _paramType)
+{
+    m_paramType = _paramType;
+    m_paramTypeHasBeenSet = true;
+}
+
+bool InstanceMultiParam::ParamTypeHasBeenSet() const
+{
+    return m_paramTypeHasBeenSet;
+}
+
+bool InstanceMultiParam::GetFeatureSupported() const
+{
+    return m_featureSupported;
+}
+
+void InstanceMultiParam::SetFeatureSupported(const bool& _featureSupported)
+{
+    m_featureSupported = _featureSupported;
+    m_featureSupportedHasBeenSet = true;
+}
+
+bool InstanceMultiParam::FeatureSupportedHasBeenSet() const
+{
+    return m_featureSupportedHasBeenSet;
+}
+
+string InstanceMultiParam::GetNewFeatureOnlineTime() const
+{
+    return m_newFeatureOnlineTime;
+}
+
+void InstanceMultiParam::SetNewFeatureOnlineTime(const string& _newFeatureOnlineTime)
+{
+    m_newFeatureOnlineTime = _newFeatureOnlineTime;
+    m_newFeatureOnlineTimeHasBeenSet = true;
+}
+
+bool InstanceMultiParam::NewFeatureOnlineTimeHasBeenSet() const
+{
+    return m_newFeatureOnlineTimeHasBeenSet;
+}
+
+string InstanceMultiParam::GetPattern() const
+{
+    return m_pattern;
+}
+
+void InstanceMultiParam::SetPattern(const string& _pattern)
+{
+    m_pattern = _pattern;
+    m_patternHasBeenSet = true;
+}
+
+bool InstanceMultiParam::PatternHasBeenSet() const
+{
+    return m_patternHasBeenSet;
+}
+
+string InstanceMultiParam::GetInputDescription() const
+{
+    return m_inputDescription;
+}
+
+void InstanceMultiParam::SetInputDescription(const string& _inputDescription)
+{
+    m_inputDescription = _inputDescription;
+    m_inputDescriptionHasBeenSet = true;
+}
+
+bool InstanceMultiParam::InputDescriptionHasBeenSet() const
+{
+    return m_inputDescriptionHasBeenSet;
 }
 

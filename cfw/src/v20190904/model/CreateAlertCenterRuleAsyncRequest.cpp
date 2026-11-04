@@ -37,7 +37,8 @@ CreateAlertCenterRuleAsyncRequest::CreateAlertCenterRuleAsyncRequest() :
     m_ignoreReasonHasBeenSet(false),
     m_isolateTypeHasBeenSet(false),
     m_targetEventIdListHasBeenSet(false),
-    m_whiteIpListHasBeenSet(false)
+    m_whiteIpListHasBeenSet(false),
+    m_excludeIdListHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,19 @@ string CreateAlertCenterRuleAsyncRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_whiteIpList.begin(); itr != m_whiteIpList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludeIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeIdList.begin(); itr != m_excludeIdList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -449,6 +463,22 @@ void CreateAlertCenterRuleAsyncRequest::SetWhiteIpList(const vector<string>& _wh
 bool CreateAlertCenterRuleAsyncRequest::WhiteIpListHasBeenSet() const
 {
     return m_whiteIpListHasBeenSet;
+}
+
+vector<string> CreateAlertCenterRuleAsyncRequest::GetExcludeIdList() const
+{
+    return m_excludeIdList;
+}
+
+void CreateAlertCenterRuleAsyncRequest::SetExcludeIdList(const vector<string>& _excludeIdList)
+{
+    m_excludeIdList = _excludeIdList;
+    m_excludeIdListHasBeenSet = true;
+}
+
+bool CreateAlertCenterRuleAsyncRequest::ExcludeIdListHasBeenSet() const
+{
+    return m_excludeIdListHasBeenSet;
 }
 
 

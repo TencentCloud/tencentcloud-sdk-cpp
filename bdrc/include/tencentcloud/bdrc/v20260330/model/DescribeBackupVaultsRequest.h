@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份库ID列表
-                     * @return VaultIds 备份库ID列表
+                     * 获取<p>备份库ID列表</p>
+                     * @return VaultIds <p>备份库ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetVaultIds() const;
 
                     /**
-                     * 设置备份库ID列表
-                     * @param _vaultIds 备份库ID列表
+                     * 设置<p>备份库ID列表</p>
+                     * @param _vaultIds <p>备份库ID列表</p>
                      * 
                      */
                     void SetVaultIds(const std::vector<std::string>& _vaultIds);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool VaultIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，支持instance-id和auto-backup-policy-id
-                     * @return Filters 过滤条件，支持instance-id和auto-backup-policy-id
+                     * 获取<p>过滤条件，支持vault-id、vault-name、status</p>
+                     * @return Filters <p>过滤条件，支持vault-id、vault-name、status</p>
                      * 
                      */
                     std::vector<FilterModel> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，支持instance-id和auto-backup-policy-id
-                     * @param _filters 过滤条件，支持instance-id和auto-backup-policy-id
+                     * 设置<p>过滤条件，支持vault-id、vault-name、status</p>
+                     * @param _filters <p>过滤条件，支持vault-id、vault-name、status</p>
                      * 
                      */
                     void SetFilters(const std::vector<FilterModel>& _filters);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认0
-                     * @return Offset 偏移量，默认0
+                     * 获取<p>偏移量，默认0</p>
+                     * @return Offset <p>偏移量，默认0</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认0
-                     * @param _offset 偏移量，默认0
+                     * 设置<p>偏移量，默认0</p>
+                     * @param _offset <p>偏移量，默认0</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认20，最大1000
-                     * @return Limit 返回数量，默认20，最大1000
+                     * 获取<p>返回数量，默认20，最大100</p><p>取值范围：[1, 100]</p>
+                     * @return Limit <p>返回数量，默认20，最大100</p><p>取值范围：[1, 100]</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认20，最大1000
-                     * @param _limit 返回数量，默认20，最大1000
+                     * 设置<p>返回数量，默认20，最大100</p><p>取值范围：[1, 100]</p>
+                     * @param _limit <p>返回数量，默认20，最大100</p><p>取值范围：[1, 100]</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序方式
-                     * @return Order 排序方式
+                     * 获取<p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>
+                     * @return Order <p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序方式
-                     * @param _order 排序方式
+                     * 设置<p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>
+                     * @param _order <p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return OrderField 排序字段
+                     * 获取<p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>
+                     * @return OrderField <p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>
                      * 
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _orderField 排序字段
+                     * 设置<p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>
+                     * @param _orderField <p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>
                      * 
                      */
                     void SetOrderField(const std::string& _orderField);
@@ -172,37 +172,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份库ID列表
+                     * <p>备份库ID列表</p>
                      */
                     std::vector<std::string> m_vaultIds;
                     bool m_vaultIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，支持instance-id和auto-backup-policy-id
+                     * <p>过滤条件，支持vault-id、vault-name、status</p>
                      */
                     std::vector<FilterModel> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量，默认0
+                     * <p>偏移量，默认0</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认20，最大1000
+                     * <p>返回数量，默认20，最大100</p><p>取值范围：[1, 100]</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序方式
+                     * <p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * <p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;

@@ -26,7 +26,8 @@ MigrateDBItem::MigrateDBItem() :
     m_vipHasBeenSet(false),
     m_vportHasBeenSet(false),
     m_usableHasBeenSet(false),
-    m_hintHasBeenSet(false)
+    m_hintHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome MigrateDBItem::Deserialize(const rapidjson::Value &value)
         m_hintHasBeenSet = true;
     }
 
+    if (value.HasMember("StorageType") && !value["StorageType"].IsNull())
+    {
+        if (!value["StorageType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MigrateDBItem.StorageType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageType = string(value["StorageType"].GetString());
+        m_storageTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void MigrateDBItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Hint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void MigrateDBItem::SetHint(const string& _hint)
 bool MigrateDBItem::HintHasBeenSet() const
 {
     return m_hintHasBeenSet;
+}
+
+string MigrateDBItem::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void MigrateDBItem::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool MigrateDBItem::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
 }
 

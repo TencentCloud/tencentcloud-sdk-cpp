@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PlanNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例配置列表，[1,20]</p>
-                     * @return Resources <p>实例配置列表，[1,20]</p>
+                     * 获取<p>实例配置列表，1~20 项，此参数必填。</p>
+                     * @return Resources <p>实例配置列表，1~20 项，此参数必填。</p>
                      * 
                      */
                     std::vector<ResourcePlan> GetResources() const;
 
                     /**
-                     * 设置<p>实例配置列表，[1,20]</p>
-                     * @param _resources <p>实例配置列表，[1,20]</p>
+                     * 设置<p>实例配置列表，1~20 项，此参数必填。</p>
+                     * @param _resources <p>实例配置列表，1~20 项，此参数必填。</p>
                      * 
                      */
                     void SetResources(const std::vector<ResourcePlan>& _resources);
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_planNameHasBeenSet;
 
                     /**
-                     * <p>实例配置列表，[1,20]</p>
+                     * <p>实例配置列表，1~20 项，此参数必填。</p>
                      */
                     std::vector<ResourcePlan> m_resources;
                     bool m_resourcesHasBeenSet;

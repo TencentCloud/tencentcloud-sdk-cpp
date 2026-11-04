@@ -45,8 +45,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前页码（从1开始）
-                     * @return Page 当前页码（从1开始）
+                     * 获取<p>总记录数</p>
+                     * @return Total <p>总记录数</p>
+                     * 
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     * 
+                     */
+                    bool TotalHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前页码（从1开始）</p>
+                     * @return Page <p>当前页码（从1开始）</p>
                      * 
                      */
                     int64_t GetPage() const;
@@ -59,8 +73,8 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取每页数量
-                     * @return PageSize 每页数量
+                     * 获取<p>每页数量</p>
+                     * @return PageSize <p>每页数量</p>
                      * 
                      */
                     int64_t GetPageSize() const;
@@ -73,8 +87,8 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取总页数
-                     * @return TotalPages 总页数
+                     * 获取<p>总页数</p>
+                     * @return TotalPages <p>总页数</p>
                      * 
                      */
                     int64_t GetTotalPages() const;
@@ -87,8 +101,8 @@ namespace TencentCloud
                     bool TotalPagesHasBeenSet() const;
 
                     /**
-                     * 获取该集群下的Ray作业列表
-                     * @return Items 该集群下的Ray作业列表
+                     * 获取<p>该集群下的Ray作业列表</p>
+                     * @return Items <p>该集群下的Ray作业列表</p>
                      * 
                      */
                     std::vector<RayJobSubmitEntity> GetItems() const;
@@ -103,25 +117,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前页码（从1开始）
+                     * <p>总记录数</p>
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
+
+                    /**
+                     * <p>当前页码（从1开始）</p>
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 每页数量
+                     * <p>每页数量</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 总页数
+                     * <p>总页数</p>
                      */
                     int64_t m_totalPages;
                     bool m_totalPagesHasBeenSet;
 
                     /**
-                     * 该集群下的Ray作业列表
+                     * <p>该集群下的Ray作业列表</p>
                      */
                     std::vector<RayJobSubmitEntity> m_items;
                     bool m_itemsHasBeenSet;

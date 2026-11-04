@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询的容灾策略产品类型。取值范围：DISK / INSTANCE / CFS。
-                     * @return SitePairType 要查询的容灾策略产品类型。取值范围：DISK / INSTANCE / CFS。
+                     * 获取<p>要查询的容灾策略产品类型。取值范围：INSTANCE 。</p><p>枚举值：</p><ul><li>INSTANCE： CVM站点对</li></ul>
+                     * @return SitePairType <p>要查询的容灾策略产品类型。取值范围：INSTANCE 。</p><p>枚举值：</p><ul><li>INSTANCE： CVM站点对</li></ul>
                      * 
                      */
                     std::string GetSitePairType() const;
 
                     /**
-                     * 设置要查询的容灾策略产品类型。取值范围：DISK / INSTANCE / CFS。
-                     * @param _sitePairType 要查询的容灾策略产品类型。取值范围：DISK / INSTANCE / CFS。
+                     * 设置<p>要查询的容灾策略产品类型。取值范围：INSTANCE 。</p><p>枚举值：</p><ul><li>INSTANCE： CVM站点对</li></ul>
+                     * @param _sitePairType <p>要查询的容灾策略产品类型。取值范围：INSTANCE 。</p><p>枚举值：</p><ul><li>INSTANCE： CVM站点对</li></ul>
                      * 
                      */
                     void SetSitePairType(const std::string& _sitePairType);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SitePairTypeHasBeenSet() const;
 
                     /**
-                     * 获取要查询的容灾策略ID列表。
-                     * @return SitePairIds 要查询的容灾策略ID列表。
+                     * 获取<p>要查询的容灾策略ID列表。</p>
+                     * @return SitePairIds <p>要查询的容灾策略ID列表。</p>
                      * 
                      */
                     std::vector<std::string> GetSitePairIds() const;
 
                     /**
-                     * 设置要查询的容灾策略ID列表。
-                     * @param _sitePairIds 要查询的容灾策略ID列表。
+                     * 设置<p>要查询的容灾策略ID列表。</p>
+                     * @param _sitePairIds <p>要查询的容灾策略ID列表。</p>
                      * 
                      */
                     void SetSitePairIds(const std::vector<std::string>& _sitePairIds);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool SitePairIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，详见定期快照过滤条件表。
-                     * @return Filters 过滤条件，详见定期快照过滤条件表。
+                     * 获取<p>过滤条件，详见定期快照过滤条件表。</p>
+                     * @return Filters <p>过滤条件，详见定期快照过滤条件表。</p>
                      * 
                      */
                     std::vector<FilterModel> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，详见定期快照过滤条件表。
-                     * @param _filters 过滤条件，详见定期快照过滤条件表。
+                     * 设置<p>过滤条件，详见定期快照过滤条件表。</p>
+                     * @param _filters <p>过滤条件，详见定期快照过滤条件表。</p>
                      * 
                      */
                     void SetFilters(const std::vector<FilterModel>& _filters);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
-                     * @return Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
+                     * 获取<p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。</p>
+                     * @return Offset <p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
-                     * @param _offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
+                     * 设置<p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。</p>
+                     * @param _offset <p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。
-                     * @return Limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。
+                     * 获取<p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。
-                     * @param _limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。
+                     * 设置<p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取输出结果按升序还是降序，DESC表示降序，ASC表示升序
-                     * @return Order 输出结果按升序还是降序，DESC表示降序，ASC表示升序
+                     * 获取<p>输出结果按升序还是降序，DESC表示降序，ASC表示升序</p>
+                     * @return Order <p>输出结果按升序还是降序，DESC表示降序，ASC表示升序</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置输出结果按升序还是降序，DESC表示降序，ASC表示升序
-                     * @param _order 输出结果按升序还是降序，DESC表示降序，ASC表示升序
+                     * 设置<p>输出结果按升序还是降序，DESC表示降序，ASC表示升序</p>
+                     * @param _order <p>输出结果按升序还是降序，DESC表示降序，ASC表示升序</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取输出结果的排序字段
-                     * @return OrderField 输出结果的排序字段
+                     * 获取<p>输出结果的排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>
+                     * @return OrderField <p>输出结果的排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>
                      * 
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置输出结果的排序字段
-                     * @param _orderField 输出结果的排序字段
+                     * 设置<p>输出结果的排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>
+                     * @param _orderField <p>输出结果的排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>
                      * 
                      */
                     void SetOrderField(const std::string& _orderField);
@@ -193,43 +193,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询的容灾策略产品类型。取值范围：DISK / INSTANCE / CFS。
+                     * <p>要查询的容灾策略产品类型。取值范围：INSTANCE 。</p><p>枚举值：</p><ul><li>INSTANCE： CVM站点对</li></ul>
                      */
                     std::string m_sitePairType;
                     bool m_sitePairTypeHasBeenSet;
 
                     /**
-                     * 要查询的容灾策略ID列表。
+                     * <p>要查询的容灾策略ID列表。</p>
                      */
                     std::vector<std::string> m_sitePairIds;
                     bool m_sitePairIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，详见定期快照过滤条件表。
+                     * <p>过滤条件，详见定期快照过滤条件表。</p>
                      */
                     std::vector<FilterModel> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。
+                     * <p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。
+                     * <p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 输出结果按升序还是降序，DESC表示降序，ASC表示升序
+                     * <p>输出结果按升序还是降序，DESC表示降序，ASC表示升序</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 输出结果的排序字段
+                     * <p>输出结果的排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;

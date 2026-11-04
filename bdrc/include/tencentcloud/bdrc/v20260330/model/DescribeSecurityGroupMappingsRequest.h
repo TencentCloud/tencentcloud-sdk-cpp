@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SitePairIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，详见过滤条件表。支持的Name：src-security-group-id、target-security-group-id
-                     * @return Filters 过滤条件，详见过滤条件表。支持的Name：src-security-group-id、target-security-group-id
+                     * 获取过滤条件。支持的Name：src-security-group-id、target-security-group-id
+                     * @return Filters 过滤条件。支持的Name：src-security-group-id、target-security-group-id
                      * 
                      */
                     std::vector<FilterModel> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，详见过滤条件表。支持的Name：src-security-group-id、target-security-group-id
-                     * @param _filters 过滤条件，详见过滤条件表。支持的Name：src-security-group-id、target-security-group-id
+                     * 设置过滤条件。支持的Name：src-security-group-id、target-security-group-id
+                     * @param _filters 过滤条件。支持的Name：src-security-group-id、target-security-group-id
                      * 
                      */
                     void SetFilters(const std::vector<FilterModel>& _filters);
@@ -178,7 +178,7 @@ namespace TencentCloud
                     bool m_sitePairIdHasBeenSet;
 
                     /**
-                     * 过滤条件，详见过滤条件表。支持的Name：src-security-group-id、target-security-group-id
+                     * 过滤条件。支持的Name：src-security-group-id、target-security-group-id
                      */
                     std::vector<FilterModel> m_filters;
                     bool m_filtersHasBeenSet;

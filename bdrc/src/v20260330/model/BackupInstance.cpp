@@ -28,7 +28,8 @@ BackupInstance::BackupInstance() :
     m_backupGroupIdSetHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_instanceNameHasBeenSet(false)
+    m_instanceNameHasBeenSet(false),
+    m_backupSizeMbHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome BackupInstance::Deserialize(const rapidjson::Value &value)
         m_instanceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupSizeMb") && !value["BackupSizeMb"].IsNull())
+    {
+        if (!value["BackupSizeMb"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInstance.BackupSizeMb` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupSizeMb = value["BackupSizeMb"].GetInt64();
+        m_backupSizeMbHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ void BackupInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupSizeMbHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupSizeMb";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupSizeMb, allocator);
     }
 
 }
@@ -333,5 +352,21 @@ void BackupInstance::SetInstanceName(const string& _instanceName)
 bool BackupInstance::InstanceNameHasBeenSet() const
 {
     return m_instanceNameHasBeenSet;
+}
+
+int64_t BackupInstance::GetBackupSizeMb() const
+{
+    return m_backupSizeMb;
+}
+
+void BackupInstance::SetBackupSizeMb(const int64_t& _backupSizeMb)
+{
+    m_backupSizeMb = _backupSizeMb;
+    m_backupSizeMbHasBeenSet = true;
+}
+
+bool BackupInstance::BackupSizeMbHasBeenSet() const
+{
+    return m_backupSizeMbHasBeenSet;
 }
 

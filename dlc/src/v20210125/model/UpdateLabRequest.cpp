@@ -23,22 +23,28 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 UpdateLabRequest::UpdateLabRequest() :
+    m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_labImageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_imagePullPolicyHasBeenSet(false),
+    m_resourceConfigHasBeenSet(false),
     m_resourceConfigIdHasBeenSet(false),
+    m_catalogHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_resourcePartitionIdHasBeenSet(false),
     m_queueHasBeenSet(false),
+    m_serviceTypesHasBeenSet(false),
     m_exampleIdHasBeenSet(false),
     m_codeArchiveUrlHasBeenSet(false),
     m_labImagePullPolicyHasBeenSet(false),
+    m_advancedOptionsHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_enableTokenHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_persistentWorkDirHasBeenSet(false),
+    m_autoscalerOptionsHasBeenSet(false),
     m_imagePullTypeHasBeenSet(false),
     m_labImagePullTypeHasBeenSet(false),
     m_networkConfigHasBeenSet(false)
@@ -51,6 +57,14 @@ string UpdateLabRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_nameHasBeenSet)
     {
@@ -92,12 +106,28 @@ string UpdateLabRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_imagePullPolicy.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_resourceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceConfig.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_resourceConfigIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceConfigId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceConfigId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_catalogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Catalog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_catalog.c_str(), allocator).Move(), allocator);
     }
 
     if (m_groupIdHasBeenSet)
@@ -124,6 +154,19 @@ string UpdateLabRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_queue.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_serviceTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_serviceTypes.begin(); itr != m_serviceTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_exampleIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -146,6 +189,14 @@ string UpdateLabRequest::ToJsonString() const
         string key = "LabImagePullPolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_labImagePullPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_advancedOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_advancedOptions.c_str(), allocator).Move(), allocator);
     }
 
     if (m_priorityHasBeenSet)
@@ -188,6 +239,14 @@ string UpdateLabRequest::ToJsonString() const
         m_persistentWorkDir.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_autoscalerOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoscalerOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoscalerOptions.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_imagePullTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -219,6 +278,22 @@ string UpdateLabRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string UpdateLabRequest::GetId() const
+{
+    return m_id;
+}
+
+void UpdateLabRequest::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool UpdateLabRequest::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
 
 string UpdateLabRequest::GetName() const
 {
@@ -300,6 +375,22 @@ bool UpdateLabRequest::ImagePullPolicyHasBeenSet() const
     return m_imagePullPolicyHasBeenSet;
 }
 
+string UpdateLabRequest::GetResourceConfig() const
+{
+    return m_resourceConfig;
+}
+
+void UpdateLabRequest::SetResourceConfig(const string& _resourceConfig)
+{
+    m_resourceConfig = _resourceConfig;
+    m_resourceConfigHasBeenSet = true;
+}
+
+bool UpdateLabRequest::ResourceConfigHasBeenSet() const
+{
+    return m_resourceConfigHasBeenSet;
+}
+
 string UpdateLabRequest::GetResourceConfigId() const
 {
     return m_resourceConfigId;
@@ -314,6 +405,22 @@ void UpdateLabRequest::SetResourceConfigId(const string& _resourceConfigId)
 bool UpdateLabRequest::ResourceConfigIdHasBeenSet() const
 {
     return m_resourceConfigIdHasBeenSet;
+}
+
+string UpdateLabRequest::GetCatalog() const
+{
+    return m_catalog;
+}
+
+void UpdateLabRequest::SetCatalog(const string& _catalog)
+{
+    m_catalog = _catalog;
+    m_catalogHasBeenSet = true;
+}
+
+bool UpdateLabRequest::CatalogHasBeenSet() const
+{
+    return m_catalogHasBeenSet;
 }
 
 string UpdateLabRequest::GetGroupId() const
@@ -364,6 +471,22 @@ bool UpdateLabRequest::QueueHasBeenSet() const
     return m_queueHasBeenSet;
 }
 
+vector<string> UpdateLabRequest::GetServiceTypes() const
+{
+    return m_serviceTypes;
+}
+
+void UpdateLabRequest::SetServiceTypes(const vector<string>& _serviceTypes)
+{
+    m_serviceTypes = _serviceTypes;
+    m_serviceTypesHasBeenSet = true;
+}
+
+bool UpdateLabRequest::ServiceTypesHasBeenSet() const
+{
+    return m_serviceTypesHasBeenSet;
+}
+
 string UpdateLabRequest::GetExampleId() const
 {
     return m_exampleId;
@@ -410,6 +533,22 @@ void UpdateLabRequest::SetLabImagePullPolicy(const string& _labImagePullPolicy)
 bool UpdateLabRequest::LabImagePullPolicyHasBeenSet() const
 {
     return m_labImagePullPolicyHasBeenSet;
+}
+
+string UpdateLabRequest::GetAdvancedOptions() const
+{
+    return m_advancedOptions;
+}
+
+void UpdateLabRequest::SetAdvancedOptions(const string& _advancedOptions)
+{
+    m_advancedOptions = _advancedOptions;
+    m_advancedOptionsHasBeenSet = true;
+}
+
+bool UpdateLabRequest::AdvancedOptionsHasBeenSet() const
+{
+    return m_advancedOptionsHasBeenSet;
 }
 
 int64_t UpdateLabRequest::GetPriority() const
@@ -474,6 +613,22 @@ void UpdateLabRequest::SetPersistentWorkDir(const PersistentWorkDir& _persistent
 bool UpdateLabRequest::PersistentWorkDirHasBeenSet() const
 {
     return m_persistentWorkDirHasBeenSet;
+}
+
+string UpdateLabRequest::GetAutoscalerOptions() const
+{
+    return m_autoscalerOptions;
+}
+
+void UpdateLabRequest::SetAutoscalerOptions(const string& _autoscalerOptions)
+{
+    m_autoscalerOptions = _autoscalerOptions;
+    m_autoscalerOptionsHasBeenSet = true;
+}
+
+bool UpdateLabRequest::AutoscalerOptionsHasBeenSet() const
+{
+    return m_autoscalerOptionsHasBeenSet;
 }
 
 string UpdateLabRequest::GetImagePullType() const

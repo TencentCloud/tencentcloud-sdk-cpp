@@ -27,6 +27,7 @@
 #include <tencentcloud/databuddy/v20260715/model/ResourceGroupInfo.h>
 #include <tencentcloud/databuddy/v20260715/model/LabelBrief.h>
 #include <tencentcloud/databuddy/v20260715/model/AdvancedParameter.h>
+#include <tencentcloud/databuddy/v20260715/model/FileArrivalConfig.h>
 
 
 namespace TencentCloud
@@ -874,6 +875,31 @@ namespace TencentCloud
                      */
                     bool ScheduledTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>工作流调度文件到达方式配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileArrivalConfig <p>工作流调度文件到达方式配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    FileArrivalConfig GetFileArrivalConfig() const;
+
+                    /**
+                     * 设置<p>工作流调度文件到达方式配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileArrivalConfig <p>工作流调度文件到达方式配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileArrivalConfig(const FileArrivalConfig& _fileArrivalConfig);
+
+                    /**
+                     * 判断参数 FileArrivalConfig 是否已赋值
+                     * @return FileArrivalConfig 是否已赋值
+                     * 
+                     */
+                    bool FileArrivalConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1106,6 +1132,13 @@ namespace TencentCloud
                      */
                     std::string m_scheduledTime;
                     bool m_scheduledTimeHasBeenSet;
+
+                    /**
+                     * <p>工作流调度文件到达方式配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FileArrivalConfig m_fileArrivalConfig;
+                    bool m_fileArrivalConfigHasBeenSet;
 
                 };
             }

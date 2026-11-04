@@ -43,6 +43,8 @@
 #include <tencentcloud/tione/v20211111/model/CreateNotebookImageResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlResponse.h>
+#include <tencentcloud/tione/v20211111/model/CreateRoleRequest.h>
+#include <tencentcloud/tione/v20211111/model/CreateRoleResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingModelRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingModelResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingTaskRequest.h>
@@ -63,12 +65,16 @@
 #include <tencentcloud/tione/v20211111/model/DeleteMountLimitResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteNotebookRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteNotebookResponse.h>
+#include <tencentcloud/tione/v20211111/model/DeleteRoleRequest.h>
+#include <tencentcloud/tione/v20211111/model/DeleteRoleResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingModelRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingModelResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeAccessRulesRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeAccessRulesResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeAnnotatedTaskListRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeAnnotatedTaskListResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupRequest.h>
@@ -129,6 +135,12 @@
 #include <tencentcloud/tione/v20211111/model/DescribePresetImageListResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribePublicAlgoVersionListRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribePublicAlgoVersionListResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeRoleRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeRoleResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeRoleUsersRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeRoleUsersResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeRolesRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeRolesResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeSubAccountLinuxUserInfosRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeSubAccountLinuxUserInfosResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionRequest.h>
@@ -143,6 +155,14 @@
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeWorkspaceRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeWorkspaceResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeWorkspaceMembersRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeWorkspaceMembersResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeWorkspaceQuotaUsageRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeWorkspaceQuotaUsageResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeWorkspaceQuotasRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeWorkspaceQuotasResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeWorkspacesRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeWorkspacesResponse.h>
 #include <tencentcloud/tione/v20211111/model/EnableTrainingTaskClsConfigRequest.h>
@@ -157,8 +177,18 @@
 #include <tencentcloud/tione/v20211111/model/ModifyNotebookResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyNotebookTagsResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyRoleRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyRoleResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyRoleAccessRulesRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyRoleAccessRulesResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyRoleUserGrantRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyRoleUserGrantResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyUserGrantRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyUserGrantResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyWorkspaceMembersRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyWorkspaceMembersResponse.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsResponse.h>
 #include <tencentcloud/tione/v20211111/model/StartNotebookRequest.h>
@@ -221,6 +251,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePresignedNotebookUrlResponse> CreatePresignedNotebookUrlOutcome;
                 typedef std::future<CreatePresignedNotebookUrlOutcome> CreatePresignedNotebookUrlOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreatePresignedNotebookUrlRequest&, CreatePresignedNotebookUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePresignedNotebookUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoleResponse> CreateRoleOutcome;
+                typedef std::future<CreateRoleOutcome> CreateRoleOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::CreateRoleRequest&, CreateRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTrainingModelResponse> CreateTrainingModelOutcome;
                 typedef std::future<CreateTrainingModelOutcome> CreateTrainingModelOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateTrainingModelRequest&, CreateTrainingModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrainingModelAsyncHandler;
@@ -251,6 +284,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNotebookResponse> DeleteNotebookOutcome;
                 typedef std::future<DeleteNotebookOutcome> DeleteNotebookOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteNotebookRequest&, DeleteNotebookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNotebookAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoleResponse> DeleteRoleOutcome;
+                typedef std::future<DeleteRoleOutcome> DeleteRoleOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DeleteRoleRequest&, DeleteRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTrainingModelResponse> DeleteTrainingModelOutcome;
                 typedef std::future<DeleteTrainingModelOutcome> DeleteTrainingModelOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteTrainingModelRequest&, DeleteTrainingModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrainingModelAsyncHandler;
@@ -260,6 +296,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTrainingTaskResponse> DeleteTrainingTaskOutcome;
                 typedef std::future<DeleteTrainingTaskOutcome> DeleteTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteTrainingTaskRequest&, DeleteTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrainingTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccessRulesResponse> DescribeAccessRulesOutcome;
+                typedef std::future<DescribeAccessRulesOutcome> DescribeAccessRulesOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeAccessRulesRequest&, DescribeAccessRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAnnotatedTaskListResponse> DescribeAnnotatedTaskListOutcome;
                 typedef std::future<DescribeAnnotatedTaskListOutcome> DescribeAnnotatedTaskListOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeAnnotatedTaskListRequest&, DescribeAnnotatedTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnnotatedTaskListAsyncHandler;
@@ -350,6 +389,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePublicAlgoVersionListResponse> DescribePublicAlgoVersionListOutcome;
                 typedef std::future<DescribePublicAlgoVersionListOutcome> DescribePublicAlgoVersionListOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribePublicAlgoVersionListRequest&, DescribePublicAlgoVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicAlgoVersionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRoleResponse> DescribeRoleOutcome;
+                typedef std::future<DescribeRoleOutcome> DescribeRoleOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeRoleRequest&, DescribeRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRoleUsersResponse> DescribeRoleUsersOutcome;
+                typedef std::future<DescribeRoleUsersOutcome> DescribeRoleUsersOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeRoleUsersRequest&, DescribeRoleUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRolesResponse> DescribeRolesOutcome;
+                typedef std::future<DescribeRolesOutcome> DescribeRolesOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeRolesRequest&, DescribeRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRolesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubAccountLinuxUserInfosResponse> DescribeSubAccountLinuxUserInfosOutcome;
                 typedef std::future<DescribeSubAccountLinuxUserInfosOutcome> DescribeSubAccountLinuxUserInfosOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeSubAccountLinuxUserInfosRequest&, DescribeSubAccountLinuxUserInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubAccountLinuxUserInfosAsyncHandler;
@@ -371,6 +419,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTrainingTasksResponse> DescribeTrainingTasksOutcome;
                 typedef std::future<DescribeTrainingTasksOutcome> DescribeTrainingTasksOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeTrainingTasksRequest&, DescribeTrainingTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkspaceResponse> DescribeWorkspaceOutcome;
+                typedef std::future<DescribeWorkspaceOutcome> DescribeWorkspaceOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeWorkspaceRequest&, DescribeWorkspaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkspaceMembersResponse> DescribeWorkspaceMembersOutcome;
+                typedef std::future<DescribeWorkspaceMembersOutcome> DescribeWorkspaceMembersOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeWorkspaceMembersRequest&, DescribeWorkspaceMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspaceMembersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkspaceQuotaUsageResponse> DescribeWorkspaceQuotaUsageOutcome;
+                typedef std::future<DescribeWorkspaceQuotaUsageOutcome> DescribeWorkspaceQuotaUsageOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeWorkspaceQuotaUsageRequest&, DescribeWorkspaceQuotaUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspaceQuotaUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkspaceQuotasResponse> DescribeWorkspaceQuotasOutcome;
+                typedef std::future<DescribeWorkspaceQuotasOutcome> DescribeWorkspaceQuotasOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeWorkspaceQuotasRequest&, DescribeWorkspaceQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspaceQuotasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkspacesResponse> DescribeWorkspacesOutcome;
                 typedef std::future<DescribeWorkspacesOutcome> DescribeWorkspacesOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeWorkspacesRequest&, DescribeWorkspacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspacesAsyncHandler;
@@ -392,9 +452,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNotebookTagsResponse> ModifyNotebookTagsOutcome;
                 typedef std::future<ModifyNotebookTagsOutcome> ModifyNotebookTagsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyNotebookTagsRequest&, ModifyNotebookTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNotebookTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoleResponse> ModifyRoleOutcome;
+                typedef std::future<ModifyRoleOutcome> ModifyRoleOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyRoleRequest&, ModifyRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoleAccessRulesResponse> ModifyRoleAccessRulesOutcome;
+                typedef std::future<ModifyRoleAccessRulesOutcome> ModifyRoleAccessRulesOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyRoleAccessRulesRequest&, ModifyRoleAccessRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoleAccessRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoleUserGrantResponse> ModifyRoleUserGrantOutcome;
+                typedef std::future<ModifyRoleUserGrantOutcome> ModifyRoleUserGrantOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyRoleUserGrantRequest&, ModifyRoleUserGrantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoleUserGrantAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyServiceGroupWeightsResponse> ModifyServiceGroupWeightsOutcome;
                 typedef std::future<ModifyServiceGroupWeightsOutcome> ModifyServiceGroupWeightsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyServiceGroupWeightsRequest&, ModifyServiceGroupWeightsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceGroupWeightsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserGrantResponse> ModifyUserGrantOutcome;
+                typedef std::future<ModifyUserGrantOutcome> ModifyUserGrantOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyUserGrantRequest&, ModifyUserGrantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserGrantAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyWorkspaceMembersResponse> ModifyWorkspaceMembersOutcome;
+                typedef std::future<ModifyWorkspaceMembersOutcome> ModifyWorkspaceMembersOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyWorkspaceMembersRequest&, ModifyWorkspaceMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkspaceMembersAsyncHandler;
                 typedef Outcome<Core::Error, Model::PushTrainingMetricsResponse> PushTrainingMetricsOutcome;
                 typedef std::future<PushTrainingMetricsOutcome> PushTrainingMetricsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::PushTrainingMetricsRequest&, PushTrainingMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushTrainingMetricsAsyncHandler;
@@ -519,6 +594,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 CreatePresignedNotebookUrlOutcomeCallable CreatePresignedNotebookUrlCallable(const Model::CreatePresignedNotebookUrlRequest& request);
 
                 /**
+                 *创建自定义角色
+                 * @param req CreateRoleRequest
+                 * @return CreateRoleOutcome
+                 */
+                CreateRoleOutcome CreateRole(const Model::CreateRoleRequest &request);
+                void CreateRoleAsync(const Model::CreateRoleRequest& request, const CreateRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoleOutcomeCallable CreateRoleCallable(const Model::CreateRoleRequest& request);
+
+                /**
                  *导入模型
                  * @param req CreateTrainingModelRequest
                  * @return CreateTrainingModelOutcome
@@ -609,6 +693,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DeleteNotebookOutcomeCallable DeleteNotebookCallable(const Model::DeleteNotebookRequest& request);
 
                 /**
+                 *删除权限角色
+                 * @param req DeleteRoleRequest
+                 * @return DeleteRoleOutcome
+                 */
+                DeleteRoleOutcome DeleteRole(const Model::DeleteRoleRequest &request);
+                void DeleteRoleAsync(const Model::DeleteRoleRequest& request, const DeleteRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoleOutcomeCallable DeleteRoleCallable(const Model::DeleteRoleRequest& request);
+
+                /**
                  *删除模型
                  * @param req DeleteTrainingModelRequest
                  * @return DeleteTrainingModelOutcome
@@ -634,6 +727,15 @@ https://cloud.tencent.com/document/product/1278/85305
                 DeleteTrainingTaskOutcome DeleteTrainingTask(const Model::DeleteTrainingTaskRequest &request);
                 void DeleteTrainingTaskAsync(const Model::DeleteTrainingTaskRequest& request, const DeleteTrainingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTrainingTaskOutcomeCallable DeleteTrainingTaskCallable(const Model::DeleteTrainingTaskRequest& request);
+
+                /**
+                 *列取访问权限规则列表
+                 * @param req DescribeAccessRulesRequest
+                 * @return DescribeAccessRulesOutcome
+                 */
+                DescribeAccessRulesOutcome DescribeAccessRules(const Model::DescribeAccessRulesRequest &request);
+                void DescribeAccessRulesAsync(const Model::DescribeAccessRulesRequest& request, const DescribeAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccessRulesOutcomeCallable DescribeAccessRulesCallable(const Model::DescribeAccessRulesRequest& request);
 
                 /**
                  *本接口（DescribeAnnotatedTaskList）用于查询用户标注任务详细信息列表；支持各种过滤条件；
@@ -908,6 +1010,33 @@ https://cloud.tencent.com/document/product/1278/85305
                 DescribePublicAlgoVersionListOutcomeCallable DescribePublicAlgoVersionListCallable(const Model::DescribePublicAlgoVersionListRequest& request);
 
                 /**
+                 *获取角色详情
+                 * @param req DescribeRoleRequest
+                 * @return DescribeRoleOutcome
+                 */
+                DescribeRoleOutcome DescribeRole(const Model::DescribeRoleRequest &request);
+                void DescribeRoleAsync(const Model::DescribeRoleRequest& request, const DescribeRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoleOutcomeCallable DescribeRoleCallable(const Model::DescribeRoleRequest& request);
+
+                /**
+                 *获取角色下已授权的用户列表
+                 * @param req DescribeRoleUsersRequest
+                 * @return DescribeRoleUsersOutcome
+                 */
+                DescribeRoleUsersOutcome DescribeRoleUsers(const Model::DescribeRoleUsersRequest &request);
+                void DescribeRoleUsersAsync(const Model::DescribeRoleUsersRequest& request, const DescribeRoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoleUsersOutcomeCallable DescribeRoleUsersCallable(const Model::DescribeRoleUsersRequest& request);
+
+                /**
+                 *获取角色列表
+                 * @param req DescribeRolesRequest
+                 * @return DescribeRolesOutcome
+                 */
+                DescribeRolesOutcome DescribeRoles(const Model::DescribeRolesRequest &request);
+                void DescribeRolesAsync(const Model::DescribeRolesRequest& request, const DescribeRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRolesOutcomeCallable DescribeRolesCallable(const Model::DescribeRolesRequest& request);
+
+                /**
                  *批量查询子账号Linux用户信息
                  * @param req DescribeSubAccountLinuxUserInfosRequest
                  * @return DescribeSubAccountLinuxUserInfosOutcome
@@ -969,6 +1098,293 @@ https://cloud.tencent.com/document/product/1278/85305
                 DescribeTrainingTasksOutcome DescribeTrainingTasks(const Model::DescribeTrainingTasksRequest &request);
                 void DescribeTrainingTasksAsync(const Model::DescribeTrainingTasksRequest& request, const DescribeTrainingTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTrainingTasksOutcomeCallable DescribeTrainingTasksCallable(const Model::DescribeTrainingTasksRequest& request);
+
+                /**
+                 *查询工作空间详情
+                 * @param req DescribeWorkspaceRequest
+                 * @return DescribeWorkspaceOutcome
+                 */
+                DescribeWorkspaceOutcome DescribeWorkspace(const Model::DescribeWorkspaceRequest &request);
+                void DescribeWorkspaceAsync(const Model::DescribeWorkspaceRequest& request, const DescribeWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkspaceOutcomeCallable DescribeWorkspaceCallable(const Model::DescribeWorkspaceRequest& request);
+
+                /**
+                 *查询空间成员列表
+                 * @param req DescribeWorkspaceMembersRequest
+                 * @return DescribeWorkspaceMembersOutcome
+                 */
+                DescribeWorkspaceMembersOutcome DescribeWorkspaceMembers(const Model::DescribeWorkspaceMembersRequest &request);
+                void DescribeWorkspaceMembersAsync(const Model::DescribeWorkspaceMembersRequest& request, const DescribeWorkspaceMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkspaceMembersOutcomeCallable DescribeWorkspaceMembersCallable(const Model::DescribeWorkspaceMembersRequest& request);
+
+                /**
+                 *## DescribeWorkspaceQuotaUsage 接口文档
+
+### 接口描述
+查询工作空间配额用量信息。该接口用于查询指定工作空间下某个子账号的配额使用情况，支持多种配额类型（CBS存储配额、Notebook开发机数量配额、托管按量资源规格限制）。
+
+### 错误码
+
+| 错误码 | 说明 |
+|--------|------|
+| InvalidParameterValue | 参数值无效（如必填参数为空、QuotaType不在枚举范围内） |
+| FailedOperation.QueryDatabaseFail | 数据库查询失败 |
+
+### 示例
+
+**请求示例**：
+```json
+{
+  "QuotaType": "Notebook",
+  "SupervisorUin": "100012345678",
+  "SupervisorSubUin": "100012345679",
+  "TiProjectId": "ti-proj-123456"
+}
+```
+
+**响应示例**：
+```json
+{
+  "QuotaType": "Notebook",
+  "QuotaEnabled": true,
+  "TotalQuota": 10,
+  "UsedQuota": 3,
+}
+```
+                 * @param req DescribeWorkspaceQuotaUsageRequest
+                 * @return DescribeWorkspaceQuotaUsageOutcome
+                 */
+                DescribeWorkspaceQuotaUsageOutcome DescribeWorkspaceQuotaUsage(const Model::DescribeWorkspaceQuotaUsageRequest &request);
+                void DescribeWorkspaceQuotaUsageAsync(const Model::DescribeWorkspaceQuotaUsageRequest& request, const DescribeWorkspaceQuotaUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkspaceQuotaUsageOutcomeCallable DescribeWorkspaceQuotaUsageCallable(const Model::DescribeWorkspaceQuotaUsageRequest& request);
+
+                /**
+                 *# DescribeWorkspaceQuotas 接口文档
+
+## 接口描述
+
+查询指定工作空间下的配额配置和配额列表。该接口用于获取主账号在某个工作空间下的配额管理配置，包括是否启用配额管理、默认配额值以及针对子账号或用户组的具体配额分配情况。
+
+支持三种配额类型：
+- **CBS**：CBS存储配额管理
+- **Notebook**：开发机数量配额管理
+- **PostPaySpec**：托管按量资源规格限制
+
+
+
+## 请求参数
+
+### 公共参数（HTTP Header）
+| 参数名 | 类型 | 必填 | 描述 |
+|--------|------|------|------|
+| X-TC-Uin | string | 是 | 主账号Uin |
+| X-TC-ProjectId | uint32 | 是 | 工作空间ID |
+
+### 请求体参数
+| 参数名 | 类型 | 必填 | 描述 |
+|--------|------|------|------|
+| QuotaType | string | 是 | 配额类型，可选值：<br>- `CBS`：CBS存储配额<br>- `Notebook`：开发机数量配额<br>- `PostPaySpec`：托管按量资源规格限制 |
+
+## 响应参数
+
+| 参数名 | 类型 | 描述 |
+|--------|------|------|
+| QuotaType | string | 配额类型 |
+| QuotaEnabled | bool | 是否启用配额管理功能 |
+| DefaultQuota | WorkspaceQuota | 默认配额配置（当QuotaEnabled为false时为空对象） |
+| Quotas | ][WorkspaceQuota | 配额列表，包含所有子账号或用户组的配额配置（仅当QuotaEnabled为true时返回） |
+
+### WorkspaceQuota
+
+| 参数名 | 类型 | 描述 |
+|--------|------|------|
+| Id | string | 配额ID，格式：<br>- 用户配额：`{quota_type}-{uin}-{subuin}-{TiProjectId}`<br>- 用户组配额：`{quota_type}-{uin}-{groupid}-{TiProjectId}`<br>- 默认配额：`{quota_type}-{uin}-default-{TiProjectId}` |
+| QuotaType | string | 配额类型 |
+| Uin | string | 主账号Uin |
+| SubUin | string | 子账号Uin（当TargetType为USER时有值） |
+| SubUinName | string | 子账号名称（当TargetType为USER时有值） |
+| QuotaValue | uint32 | 配额值：<br>- CBS：容量（GiB），默认100，范围10-10000<br>- Notebook：数量（个），默认1，范围1-999<br>- PostPaySpec：无意义，关注QuotaData字段 |
+| QuotaData | []string | 配额数据（JSON数组格式）：<br>- 当QuotaType为PostPaySpec时，存储允许使用的规格ID列表 |
+| TargetType | string | 配额目标类型：<br>- `USER`：用户配额<br>- `USER_GROUP`：用户组配额 |
+| GroupId | string | 用户组ID（当TargetType为USER_GROUP时有值） |
+| GroupName | string | 用户组名称（当TargetType为USER_GROUP时有值） |
+| TiProjectId | string | 工作空间ID |
+
+## 业务逻辑
+
+1. **参数校验**：验证QuotaType参数是否合法
+2. **查询配额配置**：根据主账号Uin、工作空间ID和配额类型查询配额配置
+3. **配置不存在**：
+   - 返回系统默认的配额启用状态和默认配额值
+   - CBS默认启用，默认值100GiB
+   - Notebook默认启用，默认值1个
+   - PostPaySpec默认不启用
+4. **配置存在但未启用**：
+   - QuotaEnabled返回false
+   - DefaultQuota返回空对象
+   - Quotas不返回
+5. **配置存在且已启用**：
+   - QuotaEnabled返回true
+   - DefaultQuota返回配置的默认配额值
+   - Quotas返回所有子账号或用户组的配额列表
+   - 自动反序列化QuotaData字段（JSON数组）
+
+## 使用场景
+
+1. **配额管理页面初始化**：获取当前工作空间的配额配置状态
+2. **配额列表展示**：展示所有子账号或用户组的配额分配情况
+3. **配额编辑前查询**：在修改配额前获取当前配置
+4. **权限控制判断**：判断是否启用了配额管理功能
+
+## 错误码
+
+| 错误码 | 描述 | 解决方案 |
+|--------|------|----------|
+| InvalidParameterValue | 参数值错误 | 检查QuotaType参数是否为合法值（CBS/Notebook/PostPaySpec） |
+| FailedOperation.QueryDatabaseFail | 数据库查询失败 | 稍后重试或联系管理员 |
+
+## 请求示例
+
+```json
+{
+  "QuotaType": "CBS"
+}
+```
+
+**HTTP Header:**
+```
+X-TC-Uin: 100012345678
+X-TC-ProjectId: 123456
+```
+
+## 响应示例
+
+### 示例1：配额已启用且有配额列表
+
+```json
+{
+  "QuotaType": "CBS",
+  "QuotaEnabled": true,
+  "DefaultQuota": {
+    "Id": "CBS-100012345678-default-123456",
+    "QuotaType": "CBS",
+    "Uin": "100012345678",
+    "SubUin": "",
+    "SubUinName": "",
+    "QuotaValue": 100,
+    "QuotaData": [],
+    "TargetType": "",
+    "GroupId": "",
+    "GroupName": "",
+    "TiProjectId": "123456"
+  },
+  "Quotas": [
+    {
+      "Id": "CBS-100012345678-100012345679-123456",
+      "QuotaType": "CBS",
+      "Uin": "100012345678",
+      "SubUin": "100012345679",
+      "SubUinName": "张三",
+      "QuotaValue": 200,
+      "QuotaData": [],
+      "TargetType": "USER",
+      "GroupId": "",
+      "GroupName": "",
+      "TiProjectId": "123456"
+    },
+    {
+      "Id": "CBS-100012345678-group001-123456",
+      "QuotaType": "CBS",
+      "Uin": "100012345678",
+      "SubUin": "",
+      "SubUinName": "",
+      "QuotaValue": 500,
+      "QuotaData": [],
+      "TargetType": "USER_GROUP",
+      "GroupId": "group001",
+      "GroupName": "开发组",
+      "TiProjectId": "123456"
+    }
+  ]
+}
+```
+
+### 示例2：配额未启用
+
+```json
+{
+  "QuotaType": "PostPaySpec",
+  "QuotaEnabled": false,
+  "DefaultQuota": {},
+  "Quotas": []
+}
+```
+
+### 示例3：PostPaySpec类型配额（带QuotaData）
+
+```json
+{
+  "QuotaType": "PostPaySpec",
+  "QuotaEnabled": true,
+  "DefaultQuota": {
+    "Id": "PostPaySpec-100012345678-default-123456",
+    "QuotaType": "PostPaySpec",
+    "Uin": "100012345678",
+    "SubUin": "",
+    "SubUinName": "",
+    "QuotaValue": 0,
+    "QuotaData": ["spec-001", "spec-002", "spec-003"],
+    "TargetType": "",
+    "GroupId": "",
+    "GroupName": "",
+    "TiProjectId": "123456"
+  },
+  "Quotas": [
+    {
+      "Id": "PostPaySpec-100012345678-100012345679-123456",
+      "QuotaType": "PostPaySpec",
+      "Uin": "100012345678",
+      "SubUin": "100012345679",
+      "SubUinName": "李四",
+      "QuotaValue": 0,
+      "QuotaData": ["spec-001", "spec-002"],
+      "TargetType": "USER",
+      "GroupId": "",
+      "GroupName": "",
+      "TiProjectId": "123456"
+    }
+  ]
+}
+```
+
+## 注意事项
+
+1. **配额继承规则**：
+   - 如果子账号或用户组没有单独配置配额，则使用DefaultQuota的值
+   - 用户组配额优先级高于默认配额，用户配额优先级最高
+
+2. **QuotaData字段**：
+   - 仅在QuotaType为PostPaySpec时有实际意义
+   - 存储的是允许使用的规格ID列表
+   - 其他类型的配额该字段为空数组
+
+3. **TargetType字段**：
+   - DefaultQuota的TargetType为空字符串
+   - Quotas列表中的每个配额都有明确的TargetType
+
+4. **配额值单位**：
+   - CBS配额：GiB（1 GiB = 1024 MiB）
+   - Notebook配额：个数
+
+5. **性能优化**：
+   - 接口会一次性返回所有配额列表，避免多次查询
+   - 建议前端做好缓存，减少重复请求
+                 * @param req DescribeWorkspaceQuotasRequest
+                 * @return DescribeWorkspaceQuotasOutcome
+                 */
+                DescribeWorkspaceQuotasOutcome DescribeWorkspaceQuotas(const Model::DescribeWorkspaceQuotasRequest &request);
+                void DescribeWorkspaceQuotasAsync(const Model::DescribeWorkspaceQuotasRequest& request, const DescribeWorkspaceQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkspaceQuotasOutcomeCallable DescribeWorkspaceQuotasCallable(const Model::DescribeWorkspaceQuotasRequest& request);
 
                 /**
                  *查询工作空间列表
@@ -1034,6 +1450,33 @@ https://cloud.tencent.com/document/product/1278/85305
                 ModifyNotebookTagsOutcomeCallable ModifyNotebookTagsCallable(const Model::ModifyNotebookTagsRequest& request);
 
                 /**
+                 *修改自定义角色
+                 * @param req ModifyRoleRequest
+                 * @return ModifyRoleOutcome
+                 */
+                ModifyRoleOutcome ModifyRole(const Model::ModifyRoleRequest &request);
+                void ModifyRoleAsync(const Model::ModifyRoleRequest& request, const ModifyRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoleOutcomeCallable ModifyRoleCallable(const Model::ModifyRoleRequest& request);
+
+                /**
+                 *修改自定义角色的权限规则
+                 * @param req ModifyRoleAccessRulesRequest
+                 * @return ModifyRoleAccessRulesOutcome
+                 */
+                ModifyRoleAccessRulesOutcome ModifyRoleAccessRules(const Model::ModifyRoleAccessRulesRequest &request);
+                void ModifyRoleAccessRulesAsync(const Model::ModifyRoleAccessRulesRequest& request, const ModifyRoleAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoleAccessRulesOutcomeCallable ModifyRoleAccessRulesCallable(const Model::ModifyRoleAccessRulesRequest& request);
+
+                /**
+                 *修改角色下用户的授权状态
+                 * @param req ModifyRoleUserGrantRequest
+                 * @return ModifyRoleUserGrantOutcome
+                 */
+                ModifyRoleUserGrantOutcome ModifyRoleUserGrant(const Model::ModifyRoleUserGrantRequest &request);
+                void ModifyRoleUserGrantAsync(const Model::ModifyRoleUserGrantRequest& request, const ModifyRoleUserGrantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoleUserGrantOutcomeCallable ModifyRoleUserGrantCallable(const Model::ModifyRoleUserGrantRequest& request);
+
+                /**
                  *更新推理服务组流量分配
                  * @param req ModifyServiceGroupWeightsRequest
                  * @return ModifyServiceGroupWeightsOutcome
@@ -1041,6 +1484,24 @@ https://cloud.tencent.com/document/product/1278/85305
                 ModifyServiceGroupWeightsOutcome ModifyServiceGroupWeights(const Model::ModifyServiceGroupWeightsRequest &request);
                 void ModifyServiceGroupWeightsAsync(const Model::ModifyServiceGroupWeightsRequest& request, const ModifyServiceGroupWeightsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyServiceGroupWeightsOutcomeCallable ModifyServiceGroupWeightsCallable(const Model::ModifyServiceGroupWeightsRequest& request);
+
+                /**
+                 *更新用户授权
+                 * @param req ModifyUserGrantRequest
+                 * @return ModifyUserGrantOutcome
+                 */
+                ModifyUserGrantOutcome ModifyUserGrant(const Model::ModifyUserGrantRequest &request);
+                void ModifyUserGrantAsync(const Model::ModifyUserGrantRequest& request, const ModifyUserGrantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserGrantOutcomeCallable ModifyUserGrantCallable(const Model::ModifyUserGrantRequest& request);
+
+                /**
+                 *更新空间用户列表
+                 * @param req ModifyWorkspaceMembersRequest
+                 * @return ModifyWorkspaceMembersOutcome
+                 */
+                ModifyWorkspaceMembersOutcome ModifyWorkspaceMembers(const Model::ModifyWorkspaceMembersRequest &request);
+                void ModifyWorkspaceMembersAsync(const Model::ModifyWorkspaceMembersRequest& request, const ModifyWorkspaceMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWorkspaceMembersOutcomeCallable ModifyWorkspaceMembersCallable(const Model::ModifyWorkspaceMembersRequest& request);
 
                 /**
                  *上报训练自定义指标

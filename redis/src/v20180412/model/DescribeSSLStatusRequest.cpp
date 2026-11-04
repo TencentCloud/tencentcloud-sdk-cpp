@@ -23,7 +23,8 @@ using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
 DescribeSSLStatusRequest::DescribeSSLStatusRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_serviceTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeSSLStatusRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeSSLStatusRequest::SetInstanceId(const string& _instanceId)
 bool DescribeSSLStatusRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string DescribeSSLStatusRequest::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void DescribeSSLStatusRequest::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool DescribeSSLStatusRequest::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
 }
 
 

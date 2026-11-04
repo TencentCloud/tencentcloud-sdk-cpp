@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取`HAVIP`唯一`ID`，形如：`havip-9o233uri`。
-                     * @return HaVipId `HAVIP`唯一`ID`，形如：`havip-9o233uri`。
+                     * 获取<p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>
+                     * @return HaVipId <p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>
                      * 
                      */
                     std::string GetHaVipId() const;
 
                     /**
-                     * 设置`HAVIP`唯一`ID`，形如：`havip-9o233uri`。
-                     * @param _haVipId `HAVIP`唯一`ID`，形如：`havip-9o233uri`。
+                     * 设置<p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>
+                     * @param _haVipId <p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>
                      * 
                      */
                     void SetHaVipId(const std::string& _haVipId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool HaVipIdHasBeenSet() const;
 
                     /**
-                     * 获取`HAVIP`名称，可任意命名，但不得超过60个字符。
-                     * @return HaVipName `HAVIP`名称，可任意命名，但不得超过60个字符。
+                     * 获取<p><code>HAVIP</code>名称，可任意命名，但不得超过60个字符。</p>
+                     * @return HaVipName <p><code>HAVIP</code>名称，可任意命名，但不得超过60个字符。</p>
                      * 
                      */
                     std::string GetHaVipName() const;
 
                     /**
-                     * 设置`HAVIP`名称，可任意命名，但不得超过60个字符。
-                     * @param _haVipName `HAVIP`名称，可任意命名，但不得超过60个字符。
+                     * 设置<p><code>HAVIP</code>名称，可任意命名，但不得超过60个字符。</p>
+                     * @param _haVipName <p><code>HAVIP</code>名称，可任意命名，但不得超过60个字符。</p>
                      * 
                      */
                     void SetHaVipName(const std::string& _haVipName);
@@ -84,19 +84,73 @@ namespace TencentCloud
                      */
                     bool HaVipNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>删除保护。</p>
+                     * @return TerminationProtection <p>删除保护。</p>
+                     * 
+                     */
+                    bool GetTerminationProtection() const;
+
+                    /**
+                     * 设置<p>删除保护。</p>
+                     * @param _terminationProtection <p>删除保护。</p>
+                     * 
+                     */
+                    void SetTerminationProtection(const bool& _terminationProtection);
+
+                    /**
+                     * 判断参数 TerminationProtection 是否已赋值
+                     * @return TerminationProtection 是否已赋值
+                     * 
+                     */
+                    bool TerminationProtectionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>流量保护。</p>
+                     * @return TrafficProtection <p>流量保护。</p>
+                     * 
+                     */
+                    bool GetTrafficProtection() const;
+
+                    /**
+                     * 设置<p>流量保护。</p>
+                     * @param _trafficProtection <p>流量保护。</p>
+                     * 
+                     */
+                    void SetTrafficProtection(const bool& _trafficProtection);
+
+                    /**
+                     * 判断参数 TrafficProtection 是否已赋值
+                     * @return TrafficProtection 是否已赋值
+                     * 
+                     */
+                    bool TrafficProtectionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * `HAVIP`唯一`ID`，形如：`havip-9o233uri`。
+                     * <p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>
                      */
                     std::string m_haVipId;
                     bool m_haVipIdHasBeenSet;
 
                     /**
-                     * `HAVIP`名称，可任意命名，但不得超过60个字符。
+                     * <p><code>HAVIP</code>名称，可任意命名，但不得超过60个字符。</p>
                      */
                     std::string m_haVipName;
                     bool m_haVipNameHasBeenSet;
+
+                    /**
+                     * <p>删除保护。</p>
+                     */
+                    bool m_terminationProtection;
+                    bool m_terminationProtectionHasBeenSet;
+
+                    /**
+                     * <p>流量保护。</p>
+                     */
+                    bool m_trafficProtection;
+                    bool m_trafficProtectionHasBeenSet;
 
                 };
             }

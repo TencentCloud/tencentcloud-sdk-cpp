@@ -65,6 +65,27 @@ namespace TencentCloud
                     bool EntrypointHasBeenSet() const;
 
                     /**
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>资源分区ID</p>
                      * @return ResourcePartitionId <p>资源分区ID</p>
                      * 
@@ -317,6 +338,27 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>集群分派策略，本期仅支持 RANDOM；大小写不敏感</p>
+                     * @return DispatchStrategy <p>集群分派策略，本期仅支持 RANDOM；大小写不敏感</p>
+                     * 
+                     */
+                    std::string GetDispatchStrategy() const;
+
+                    /**
+                     * 设置<p>集群分派策略，本期仅支持 RANDOM；大小写不敏感</p>
+                     * @param _dispatchStrategy <p>集群分派策略，本期仅支持 RANDOM；大小写不敏感</p>
+                     * 
+                     */
+                    void SetDispatchStrategy(const std::string& _dispatchStrategy);
+
+                    /**
+                     * 判断参数 DispatchStrategy 是否已赋值
+                     * @return DispatchStrategy 是否已赋值
+                     * 
+                     */
+                    bool DispatchStrategyHasBeenSet() const;
+
+                    /**
                      * 获取<p>作业优先级（1-9，数字越大优先级越高）</p>
                      * @return Priority <p>作业优先级（1-9，数字越大优先级越高）</p>
                      * 
@@ -359,6 +401,132 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
+                     * 获取<p>作业包 URL</p>
+                     * @return JobPackage <p>作业包 URL</p>
+                     * 
+                     */
+                    std::string GetJobPackage() const;
+
+                    /**
+                     * 设置<p>作业包 URL</p>
+                     * @param _jobPackage <p>作业包 URL</p>
+                     * 
+                     */
+                    void SetJobPackage(const std::string& _jobPackage);
+
+                    /**
+                     * 判断参数 JobPackage 是否已赋值
+                     * @return JobPackage 是否已赋值
+                     * 
+                     */
+                    bool JobPackageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>作业包名称</p>
+                     * @return JobPackageName <p>作业包名称</p>
+                     * 
+                     */
+                    std::string GetJobPackageName() const;
+
+                    /**
+                     * 设置<p>作业包名称</p>
+                     * @param _jobPackageName <p>作业包名称</p>
+                     * 
+                     */
+                    void SetJobPackageName(const std::string& _jobPackageName);
+
+                    /**
+                     * 判断参数 JobPackageName 是否已赋值
+                     * @return JobPackageName 是否已赋值
+                     * 
+                     */
+                    bool JobPackageNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺省时按 Local 处理</p>
+                     * @return JobPackageSource <p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺省时按 Local 处理</p>
+                     * 
+                     */
+                    std::string GetJobPackageSource() const;
+
+                    /**
+                     * 设置<p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺省时按 Local 处理</p>
+                     * @param _jobPackageSource <p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺省时按 Local 处理</p>
+                     * 
+                     */
+                    void SetJobPackageSource(const std::string& _jobPackageSource);
+
+                    /**
+                     * 判断参数 JobPackageSource 是否已赋值
+                     * @return JobPackageSource 是否已赋值
+                     * 
+                     */
+                    bool JobPackageSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>业务来源标识，只为调用上下文，不落盘 JobSpec</p>
+                     * @return JobSource <p>业务来源标识，只为调用上下文，不落盘 JobSpec</p>
+                     * 
+                     */
+                    std::string GetJobSource() const;
+
+                    /**
+                     * 设置<p>业务来源标识，只为调用上下文，不落盘 JobSpec</p>
+                     * @param _jobSource <p>业务来源标识，只为调用上下文，不落盘 JobSpec</p>
+                     * 
+                     */
+                    void SetJobSource(const std::string& _jobSource);
+
+                    /**
+                     * 判断参数 JobSource 是否已赋值
+                     * @return JobSource 是否已赋值
+                     * 
+                     */
+                    bool JobSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>外部工作流引擎业务键 flowId</p>
+                     * @return FlowId <p>外部工作流引擎业务键 flowId</p>
+                     * 
+                     */
+                    std::string GetFlowId() const;
+
+                    /**
+                     * 设置<p>外部工作流引擎业务键 flowId</p>
+                     * @param _flowId <p>外部工作流引擎业务键 flowId</p>
+                     * 
+                     */
+                    void SetFlowId(const std::string& _flowId);
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>外部工作流引擎业务键 executionId</p>
+                     * @return ExecutionId <p>外部工作流引擎业务键 executionId</p>
+                     * 
+                     */
+                    std::string GetExecutionId() const;
+
+                    /**
+                     * 设置<p>外部工作流引擎业务键 executionId</p>
+                     * @param _executionId <p>外部工作流引擎业务键 executionId</p>
+                     * 
+                     */
+                    void SetExecutionId(const std::string& _executionId);
+
+                    /**
+                     * 判断参数 ExecutionId 是否已赋值
+                     * @return ExecutionId 是否已赋值
+                     * 
+                     */
+                    bool ExecutionIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>用户网络配置 JSON 字符串</p>
                      * @return NetworkConfig <p>用户网络配置 JSON 字符串</p>
                      * 
@@ -386,6 +554,12 @@ namespace TencentCloud
                      */
                     std::string m_entrypoint;
                     bool m_entrypointHasBeenSet;
+
+                    /**
+                     * <p>集群ID</p>
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                     /**
                      * <p>资源分区ID</p>
@@ -460,6 +634,12 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
+                     * <p>集群分派策略，本期仅支持 RANDOM；大小写不敏感</p>
+                     */
+                    std::string m_dispatchStrategy;
+                    bool m_dispatchStrategyHasBeenSet;
+
+                    /**
                      * <p>作业优先级（1-9，数字越大优先级越高）</p>
                      */
                     int64_t m_priority;
@@ -470,6 +650,42 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>作业包 URL</p>
+                     */
+                    std::string m_jobPackage;
+                    bool m_jobPackageHasBeenSet;
+
+                    /**
+                     * <p>作业包名称</p>
+                     */
+                    std::string m_jobPackageName;
+                    bool m_jobPackageNameHasBeenSet;
+
+                    /**
+                     * <p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺省时按 Local 处理</p>
+                     */
+                    std::string m_jobPackageSource;
+                    bool m_jobPackageSourceHasBeenSet;
+
+                    /**
+                     * <p>业务来源标识，只为调用上下文，不落盘 JobSpec</p>
+                     */
+                    std::string m_jobSource;
+                    bool m_jobSourceHasBeenSet;
+
+                    /**
+                     * <p>外部工作流引擎业务键 flowId</p>
+                     */
+                    std::string m_flowId;
+                    bool m_flowIdHasBeenSet;
+
+                    /**
+                     * <p>外部工作流引擎业务键 executionId</p>
+                     */
+                    std::string m_executionId;
+                    bool m_executionIdHasBeenSet;
 
                     /**
                      * <p>用户网络配置 JSON 字符串</p>

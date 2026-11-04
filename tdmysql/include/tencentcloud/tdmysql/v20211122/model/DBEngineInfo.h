@@ -230,6 +230,48 @@ namespace TencentCloud
                      */
                     bool IsSupportServerlessHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否支持透明加密</p>
+                     * @return IsSupportTDE <p>是否支持透明加密</p>
+                     * 
+                     */
+                    bool GetIsSupportTDE() const;
+
+                    /**
+                     * 设置<p>是否支持透明加密</p>
+                     * @param _isSupportTDE <p>是否支持透明加密</p>
+                     * 
+                     */
+                    void SetIsSupportTDE(const bool& _isSupportTDE);
+
+                    /**
+                     * 判断参数 IsSupportTDE 是否已赋值
+                     * @return IsSupportTDE 是否已赋值
+                     * 
+                     */
+                    bool IsSupportTDEHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否支持密码复杂度</p>
+                     * @return IsSupportPasswordComplexity <p>是否支持密码复杂度</p>
+                     * 
+                     */
+                    bool GetIsSupportPasswordComplexity() const;
+
+                    /**
+                     * 设置<p>是否支持密码复杂度</p>
+                     * @param _isSupportPasswordComplexity <p>是否支持密码复杂度</p>
+                     * 
+                     */
+                    void SetIsSupportPasswordComplexity(const bool& _isSupportPasswordComplexity);
+
+                    /**
+                     * 判断参数 IsSupportPasswordComplexity 是否已赋值
+                     * @return IsSupportPasswordComplexity 是否已赋值
+                     * 
+                     */
+                    bool IsSupportPasswordComplexityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +325,18 @@ namespace TencentCloud
                      */
                     bool m_isSupportServerless;
                     bool m_isSupportServerlessHasBeenSet;
+
+                    /**
+                     * <p>是否支持透明加密</p>
+                     */
+                    bool m_isSupportTDE;
+                    bool m_isSupportTDEHasBeenSet;
+
+                    /**
+                     * <p>是否支持密码复杂度</p>
+                     */
+                    bool m_isSupportPasswordComplexity;
+                    bool m_isSupportPasswordComplexityHasBeenSet;
 
                 };
             }

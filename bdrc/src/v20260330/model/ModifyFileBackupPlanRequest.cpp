@@ -31,7 +31,9 @@ ModifyFileBackupPlanRequest::ModifyFileBackupPlanRequest() :
     m_excludePatternsHasBeenSet(false),
     m_excludeSystemDirectoriesHasBeenSet(false),
     m_backupStorageIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_enableObjectAclHasBeenSet(false),
+    m_enableObjectTagsHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,22 @@ string ModifyFileBackupPlanRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableObjectAclHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableObjectAcl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableObjectAcl, allocator);
+    }
+
+    if (m_enableObjectTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableObjectTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableObjectTags, allocator);
     }
 
 
@@ -279,6 +297,38 @@ void ModifyFileBackupPlanRequest::SetStatus(const string& _status)
 bool ModifyFileBackupPlanRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+bool ModifyFileBackupPlanRequest::GetEnableObjectAcl() const
+{
+    return m_enableObjectAcl;
+}
+
+void ModifyFileBackupPlanRequest::SetEnableObjectAcl(const bool& _enableObjectAcl)
+{
+    m_enableObjectAcl = _enableObjectAcl;
+    m_enableObjectAclHasBeenSet = true;
+}
+
+bool ModifyFileBackupPlanRequest::EnableObjectAclHasBeenSet() const
+{
+    return m_enableObjectAclHasBeenSet;
+}
+
+bool ModifyFileBackupPlanRequest::GetEnableObjectTags() const
+{
+    return m_enableObjectTags;
+}
+
+void ModifyFileBackupPlanRequest::SetEnableObjectTags(const bool& _enableObjectTags)
+{
+    m_enableObjectTags = _enableObjectTags;
+    m_enableObjectTagsHasBeenSet = true;
+}
+
+bool ModifyFileBackupPlanRequest::EnableObjectTagsHasBeenSet() const
+{
+    return m_enableObjectTagsHasBeenSet;
 }
 
 

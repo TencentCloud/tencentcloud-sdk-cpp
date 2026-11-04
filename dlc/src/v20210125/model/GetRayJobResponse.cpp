@@ -25,16 +25,19 @@ using namespace std;
 
 GetRayJobResponse::GetRayJobResponse() :
     m_idHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_resourcePartitionIdHasBeenSet(false),
     m_resourcePartitionNameHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_queueAliasHasBeenSet(false),
+    m_submissionIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_entrypointHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_uinHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
+    m_subAccountNameHasBeenSet(false),
     m_historyUrlHasBeenSet(false),
     m_runningTimeHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
@@ -100,6 +103,16 @@ CoreInternalOutcome GetRayJobResponse::Deserialize(const string &payload)
         m_idHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClusterId") && !rsp["ClusterId"].IsNull())
+    {
+        if (!rsp["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(rsp["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ResourcePartitionId") && !rsp["ResourcePartitionId"].IsNull())
     {
         if (!rsp["ResourcePartitionId"].IsString())
@@ -138,6 +151,16 @@ CoreInternalOutcome GetRayJobResponse::Deserialize(const string &payload)
         }
         m_queueAlias = string(rsp["QueueAlias"].GetString());
         m_queueAliasHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubmissionId") && !rsp["SubmissionId"].IsNull())
+    {
+        if (!rsp["SubmissionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubmissionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_submissionId = string(rsp["SubmissionId"].GetString());
+        m_submissionIdHasBeenSet = true;
     }
 
     if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
@@ -198,6 +221,16 @@ CoreInternalOutcome GetRayJobResponse::Deserialize(const string &payload)
         }
         m_subAccountUin = string(rsp["SubAccountUin"].GetString());
         m_subAccountUinHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubAccountName") && !rsp["SubAccountName"].IsNull())
+    {
+        if (!rsp["SubAccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubAccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountName = string(rsp["SubAccountName"].GetString());
+        m_subAccountNameHasBeenSet = true;
     }
 
     if (rsp.HasMember("HistoryUrl") && !rsp["HistoryUrl"].IsNull())
@@ -408,6 +441,14 @@ string GetRayJobResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_resourcePartitionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -438,6 +479,14 @@ string GetRayJobResponse::ToJsonString() const
         string key = "QueueAlias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_queueAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_submissionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubmissionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_submissionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -486,6 +535,14 @@ string GetRayJobResponse::ToJsonString() const
         string key = "SubAccountUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_historyUrlHasBeenSet)
@@ -661,6 +718,16 @@ bool GetRayJobResponse::IdHasBeenSet() const
     return m_idHasBeenSet;
 }
 
+string GetRayJobResponse::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+bool GetRayJobResponse::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
 string GetRayJobResponse::GetResourcePartitionId() const
 {
     return m_resourcePartitionId;
@@ -699,6 +766,16 @@ string GetRayJobResponse::GetQueueAlias() const
 bool GetRayJobResponse::QueueAliasHasBeenSet() const
 {
     return m_queueAliasHasBeenSet;
+}
+
+string GetRayJobResponse::GetSubmissionId() const
+{
+    return m_submissionId;
+}
+
+bool GetRayJobResponse::SubmissionIdHasBeenSet() const
+{
+    return m_submissionIdHasBeenSet;
 }
 
 string GetRayJobResponse::GetStatus() const
@@ -759,6 +836,16 @@ string GetRayJobResponse::GetSubAccountUin() const
 bool GetRayJobResponse::SubAccountUinHasBeenSet() const
 {
     return m_subAccountUinHasBeenSet;
+}
+
+string GetRayJobResponse::GetSubAccountName() const
+{
+    return m_subAccountName;
+}
+
+bool GetRayJobResponse::SubAccountNameHasBeenSet() const
+{
+    return m_subAccountNameHasBeenSet;
 }
 
 string GetRayJobResponse::GetHistoryUrl() const

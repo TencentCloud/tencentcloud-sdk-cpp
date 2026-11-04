@@ -43,8 +43,11 @@ CopyJobSpecResponse::CopyJobSpecResponse() :
     m_queueAliasHasBeenSet(false),
     m_jobPackageHasBeenSet(false),
     m_jobPackageNameHasBeenSet(false),
+    m_jobPackageSourceHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_uinHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false),
+    m_subAccountNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_jobInstanceCountHasBeenSet(false),
@@ -285,6 +288,16 @@ CoreInternalOutcome CopyJobSpecResponse::Deserialize(const string &payload)
         m_jobPackageNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("JobPackageSource") && !rsp["JobPackageSource"].IsNull())
+    {
+        if (!rsp["JobPackageSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobPackageSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobPackageSource = string(rsp["JobPackageSource"].GetString());
+        m_jobPackageSourceHasBeenSet = true;
+    }
+
     if (rsp.HasMember("AppId") && !rsp["AppId"].IsNull())
     {
         if (!rsp["AppId"].IsInt64())
@@ -303,6 +316,26 @@ CoreInternalOutcome CopyJobSpecResponse::Deserialize(const string &payload)
         }
         m_uin = string(rsp["Uin"].GetString());
         m_uinHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubAccountUin") && !rsp["SubAccountUin"].IsNull())
+    {
+        if (!rsp["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(rsp["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubAccountName") && !rsp["SubAccountName"].IsNull())
+    {
+        if (!rsp["SubAccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubAccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountName = string(rsp["SubAccountName"].GetString());
+        m_subAccountNameHasBeenSet = true;
     }
 
     if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
@@ -607,6 +640,14 @@ string CopyJobSpecResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_jobPackageName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_jobPackageSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobPackageSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobPackageSource.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_appIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -621,6 +662,22 @@ string CopyJobSpecResponse::ToJsonString() const
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -936,6 +993,16 @@ bool CopyJobSpecResponse::JobPackageNameHasBeenSet() const
     return m_jobPackageNameHasBeenSet;
 }
 
+string CopyJobSpecResponse::GetJobPackageSource() const
+{
+    return m_jobPackageSource;
+}
+
+bool CopyJobSpecResponse::JobPackageSourceHasBeenSet() const
+{
+    return m_jobPackageSourceHasBeenSet;
+}
+
 int64_t CopyJobSpecResponse::GetAppId() const
 {
     return m_appId;
@@ -954,6 +1021,26 @@ string CopyJobSpecResponse::GetUin() const
 bool CopyJobSpecResponse::UinHasBeenSet() const
 {
     return m_uinHasBeenSet;
+}
+
+string CopyJobSpecResponse::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+bool CopyJobSpecResponse::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
+}
+
+string CopyJobSpecResponse::GetSubAccountName() const
+{
+    return m_subAccountName;
+}
+
+bool CopyJobSpecResponse::SubAccountNameHasBeenSet() const
+{
+    return m_subAccountNameHasBeenSet;
 }
 
 uint64_t CopyJobSpecResponse::GetCreateTime() const

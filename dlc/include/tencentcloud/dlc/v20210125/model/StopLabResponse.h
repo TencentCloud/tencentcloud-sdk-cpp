@@ -61,6 +61,20 @@ namespace TencentCloud
                     bool ExampleIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>代码包/工程归档地址</p>
+                     * @return CodeArchiveUrl <p>代码包/工程归档地址</p>
+                     * 
+                     */
+                    std::string GetCodeArchiveUrl() const;
+
+                    /**
+                     * 判断参数 CodeArchiveUrl 是否已赋值
+                     * @return CodeArchiveUrl 是否已赋值
+                     * 
+                     */
+                    bool CodeArchiveUrlHasBeenSet() const;
+
+                    /**
                      * 获取<p>数据实验室服务入口（服务类型 -&gt; 访问地址）</p>
                      * @return Services <p>数据实验室服务入口（服务类型 -&gt; 访问地址）</p>
                      * 
@@ -87,6 +101,20 @@ namespace TencentCloud
                      * 
                      */
                     bool LabImageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Lab sidecar 镜像拉取策略（Always, IfNotPresent, Never）</p>
+                     * @return LabImagePullPolicy <p>Lab sidecar 镜像拉取策略（Always, IfNotPresent, Never）</p>
+                     * 
+                     */
+                    std::string GetLabImagePullPolicy() const;
+
+                    /**
+                     * 判断参数 LabImagePullPolicy 是否已赋值
+                     * @return LabImagePullPolicy 是否已赋值
+                     * 
+                     */
+                    bool LabImagePullPolicyHasBeenSet() const;
 
                     /**
                      * 获取<p>集群ID</p>
@@ -129,6 +157,20 @@ namespace TencentCloud
                      * 
                      */
                     bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群描述</p>
+                     * @return Description <p>集群描述</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取<p>所属资源分区ID</p>
@@ -229,6 +271,20 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>状态详情/错误信息</p>
+                     * @return StatusMessage <p>状态详情/错误信息</p>
+                     * 
+                     */
+                    std::string GetStatusMessage() const;
+
+                    /**
+                     * 判断参数 StatusMessage 是否已赋值
+                     * @return StatusMessage 是否已赋值
+                     * 
+                     */
+                    bool StatusMessageHasBeenSet() const;
+
+                    /**
                      * 获取<p>创建时间</p>
                      * @return CreateTime <p>创建时间</p>
                      * 
@@ -243,6 +299,48 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
+                     * 
+                     */
+                    uint64_t GetUpdateTime() const;
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>所属集群组名称</p>
+                     * @return GroupName <p>所属集群组名称</p>
+                     * 
+                     */
+                    std::string GetGroupName() const;
+
+                    /**
+                     * 判断参数 GroupName 是否已赋值
+                     * @return GroupName 是否已赋值
+                     * 
+                     */
+                    bool GroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>计算组 ID</p>
+                     * @return GroupId <p>计算组 ID</p>
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>资源配置(JSON)</p>
                      * @return ResourceConfig <p>资源配置(JSON)</p>
                      * 
@@ -255,6 +353,20 @@ namespace TencentCloud
                      * 
                      */
                     bool ResourceConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>资源配置ID</p>
+                     * @return ResourceConfigId <p>资源配置ID</p>
+                     * 
+                     */
+                    std::string GetResourceConfigId() const;
+
+                    /**
+                     * 判断参数 ResourceConfigId 是否已赋值
+                     * @return ResourceConfigId 是否已赋值
+                     * 
+                     */
+                    bool ResourceConfigIdHasBeenSet() const;
 
                     /**
                      * 获取<p>Ray 集群镜像地址（可选，OpenAPI/SDK 高级控制入口）。前端不再传递此字段；为空时后端按 R1（镜像表查询命中）→ R2（同值 fallback）顺序自动派生。非空时直接作为 Ray 集群镜像，跳过派生（EXPLICIT），且后端不校验其与 LabImage 的兼容性。</p>
@@ -299,6 +411,20 @@ namespace TencentCloud
                     bool HistoryUrlHasBeenSet() const;
 
                     /**
+                     * 获取<p>镜像拉取策略</p>
+                     * @return ImagePullPolicy <p>镜像拉取策略</p>
+                     * 
+                     */
+                    std::string GetImagePullPolicy() const;
+
+                    /**
+                     * 判断参数 ImagePullPolicy 是否已赋值
+                     * @return ImagePullPolicy 是否已赋值
+                     * 
+                     */
+                    bool ImagePullPolicyHasBeenSet() const;
+
+                    /**
                      * 获取<p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>
                      * @return AdvancedOptions <p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>
                      * 
@@ -339,6 +465,34 @@ namespace TencentCloud
                      * 
                      */
                     bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>停止时间（最近一次停止/休眠）</p>
+                     * @return StopTime <p>停止时间（最近一次停止/休眠）</p>
+                     * 
+                     */
+                    uint64_t GetStopTime() const;
+
+                    /**
+                     * 判断参数 StopTime 是否已赋值
+                     * @return StopTime 是否已赋值
+                     * 
+                     */
+                    bool StopTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>删除时间</p>
+                     * @return DeleteTime <p>删除时间</p>
+                     * 
+                     */
+                    uint64_t GetDeleteTime() const;
+
+                    /**
+                     * 判断参数 DeleteTime 是否已赋值
+                     * @return DeleteTime 是否已赋值
+                     * 
+                     */
+                    bool DeleteTimeHasBeenSet() const;
 
                     /**
                      * 获取<p>标签列表（TagKey-TagValue）</p>
@@ -395,6 +549,20 @@ namespace TencentCloud
                      * 
                      */
                     bool TokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>弹性伸缩配置（JSON）</p>
+                     * @return AutoscalerOptions <p>弹性伸缩配置（JSON）</p>
+                     * 
+                     */
+                    std::string GetAutoscalerOptions() const;
+
+                    /**
+                     * 判断参数 AutoscalerOptions 是否已赋值
+                     * @return AutoscalerOptions 是否已赋值
+                     * 
+                     */
+                    bool AutoscalerOptionsHasBeenSet() const;
 
                     /**
                      * 获取<p>Lab sidecar 镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>
@@ -461,6 +629,12 @@ namespace TencentCloud
                     bool m_exampleIdHasBeenSet;
 
                     /**
+                     * <p>代码包/工程归档地址</p>
+                     */
+                    std::string m_codeArchiveUrl;
+                    bool m_codeArchiveUrlHasBeenSet;
+
+                    /**
                      * <p>数据实验室服务入口（服务类型 -&gt; 访问地址）</p>
                      */
                     std::vector<TypeKVPair> m_services;
@@ -471,6 +645,12 @@ namespace TencentCloud
                      */
                     std::string m_labImage;
                     bool m_labImageHasBeenSet;
+
+                    /**
+                     * <p>Lab sidecar 镜像拉取策略（Always, IfNotPresent, Never）</p>
+                     */
+                    std::string m_labImagePullPolicy;
+                    bool m_labImagePullPolicyHasBeenSet;
 
                     /**
                      * <p>集群ID</p>
@@ -489,6 +669,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * <p>集群描述</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                     /**
                      * <p>所属资源分区ID</p>
@@ -533,16 +719,46 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
+                     * <p>状态详情/错误信息</p>
+                     */
+                    std::string m_statusMessage;
+                    bool m_statusMessageHasBeenSet;
+
+                    /**
                      * <p>创建时间</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
+                     * <p>更新时间</p>
+                     */
+                    uint64_t m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>所属集群组名称</p>
+                     */
+                    std::string m_groupName;
+                    bool m_groupNameHasBeenSet;
+
+                    /**
+                     * <p>计算组 ID</p>
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
                      * <p>资源配置(JSON)</p>
                      */
                     std::string m_resourceConfig;
                     bool m_resourceConfigHasBeenSet;
+
+                    /**
+                     * <p>资源配置ID</p>
+                     */
+                    std::string m_resourceConfigId;
+                    bool m_resourceConfigIdHasBeenSet;
 
                     /**
                      * <p>Ray 集群镜像地址（可选，OpenAPI/SDK 高级控制入口）。前端不再传递此字段；为空时后端按 R1（镜像表查询命中）→ R2（同值 fallback）顺序自动派生。非空时直接作为 Ray 集群镜像，跳过派生（EXPLICIT），且后端不校验其与 LabImage 的兼容性。</p>
@@ -563,6 +779,12 @@ namespace TencentCloud
                     bool m_historyUrlHasBeenSet;
 
                     /**
+                     * <p>镜像拉取策略</p>
+                     */
+                    std::string m_imagePullPolicy;
+                    bool m_imagePullPolicyHasBeenSet;
+
+                    /**
                      * <p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>
                      */
                     std::string m_advancedOptions;
@@ -579,6 +801,18 @@ namespace TencentCloud
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
+
+                    /**
+                     * <p>停止时间（最近一次停止/休眠）</p>
+                     */
+                    uint64_t m_stopTime;
+                    bool m_stopTimeHasBeenSet;
+
+                    /**
+                     * <p>删除时间</p>
+                     */
+                    uint64_t m_deleteTime;
+                    bool m_deleteTimeHasBeenSet;
 
                     /**
                      * <p>标签列表（TagKey-TagValue）</p>
@@ -603,6 +837,12 @@ namespace TencentCloud
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;
+
+                    /**
+                     * <p>弹性伸缩配置（JSON）</p>
+                     */
+                    std::string m_autoscalerOptions;
+                    bool m_autoscalerOptionsHasBeenSet;
 
                     /**
                      * <p>Lab sidecar 镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>

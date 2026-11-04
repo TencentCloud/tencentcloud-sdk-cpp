@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取定期备份策略ID。
-                     * @return AutoBackupPolicyId 定期备份策略ID。
+                     * 获取<p>定期备份策略ID。</p>
+                     * @return AutoBackupPolicyId <p>定期备份策略ID。</p>
                      * 
                      */
                     std::string GetAutoBackupPolicyId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 定期备份策略ID。
+                     * <p>定期备份策略ID。</p>
                      */
                     std::string m_autoBackupPolicyId;
                     bool m_autoBackupPolicyIdHasBeenSet;

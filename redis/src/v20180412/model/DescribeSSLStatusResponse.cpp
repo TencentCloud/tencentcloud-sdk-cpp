@@ -30,7 +30,15 @@ DescribeSSLStatusResponse::DescribeSSLStatusResponse() :
     m_featureSupportHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_addressTypeHasBeenSet(false),
-    m_encryptAddressHasBeenSet(false)
+    m_encryptAddressHasBeenSet(false),
+    m_certSourceHasBeenSet(false),
+    m_certStatusHasBeenSet(false),
+    m_certIdHasBeenSet(false),
+    m_certAliasHasBeenSet(false),
+    m_certExpireTimeHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_sSLMinVersionHasBeenSet(false),
+    m_encryptionModeHasBeenSet(false)
 {
 }
 
@@ -138,6 +146,86 @@ CoreInternalOutcome DescribeSSLStatusResponse::Deserialize(const string &payload
         m_encryptAddressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CertSource") && !rsp["CertSource"].IsNull())
+    {
+        if (!rsp["CertSource"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertSource` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_certSource = rsp["CertSource"].GetUint64();
+        m_certSourceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CertStatus") && !rsp["CertStatus"].IsNull())
+    {
+        if (!rsp["CertStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_certStatus = rsp["CertStatus"].GetUint64();
+        m_certStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CertId") && !rsp["CertId"].IsNull())
+    {
+        if (!rsp["CertId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certId = string(rsp["CertId"].GetString());
+        m_certIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CertAlias") && !rsp["CertAlias"].IsNull())
+    {
+        if (!rsp["CertAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certAlias = string(rsp["CertAlias"].GetString());
+        m_certAliasHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CertExpireTime") && !rsp["CertExpireTime"].IsNull())
+    {
+        if (!rsp["CertExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_certExpireTime = string(rsp["CertExpireTime"].GetString());
+        m_certExpireTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Domain") && !rsp["Domain"].IsNull())
+    {
+        if (!rsp["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(rsp["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SSLMinVersion") && !rsp["SSLMinVersion"].IsNull())
+    {
+        if (!rsp["SSLMinVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSLMinVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sSLMinVersion = string(rsp["SSLMinVersion"].GetString());
+        m_sSLMinVersionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EncryptionMode") && !rsp["EncryptionMode"].IsNull())
+    {
+        if (!rsp["EncryptionMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncryptionMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptionMode = string(rsp["EncryptionMode"].GetString());
+        m_encryptionModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +290,70 @@ string DescribeSSLStatusResponse::ToJsonString() const
         string key = "EncryptAddress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_encryptAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_certSource, allocator);
+    }
+
+    if (m_certStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_certStatus, allocator);
+    }
+
+    if (m_certIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_certExpireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sSLMinVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLMinVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sSLMinVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptionMode.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -284,6 +436,86 @@ string DescribeSSLStatusResponse::GetEncryptAddress() const
 bool DescribeSSLStatusResponse::EncryptAddressHasBeenSet() const
 {
     return m_encryptAddressHasBeenSet;
+}
+
+uint64_t DescribeSSLStatusResponse::GetCertSource() const
+{
+    return m_certSource;
+}
+
+bool DescribeSSLStatusResponse::CertSourceHasBeenSet() const
+{
+    return m_certSourceHasBeenSet;
+}
+
+uint64_t DescribeSSLStatusResponse::GetCertStatus() const
+{
+    return m_certStatus;
+}
+
+bool DescribeSSLStatusResponse::CertStatusHasBeenSet() const
+{
+    return m_certStatusHasBeenSet;
+}
+
+string DescribeSSLStatusResponse::GetCertId() const
+{
+    return m_certId;
+}
+
+bool DescribeSSLStatusResponse::CertIdHasBeenSet() const
+{
+    return m_certIdHasBeenSet;
+}
+
+string DescribeSSLStatusResponse::GetCertAlias() const
+{
+    return m_certAlias;
+}
+
+bool DescribeSSLStatusResponse::CertAliasHasBeenSet() const
+{
+    return m_certAliasHasBeenSet;
+}
+
+string DescribeSSLStatusResponse::GetCertExpireTime() const
+{
+    return m_certExpireTime;
+}
+
+bool DescribeSSLStatusResponse::CertExpireTimeHasBeenSet() const
+{
+    return m_certExpireTimeHasBeenSet;
+}
+
+string DescribeSSLStatusResponse::GetDomain() const
+{
+    return m_domain;
+}
+
+bool DescribeSSLStatusResponse::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+string DescribeSSLStatusResponse::GetSSLMinVersion() const
+{
+    return m_sSLMinVersion;
+}
+
+bool DescribeSSLStatusResponse::SSLMinVersionHasBeenSet() const
+{
+    return m_sSLMinVersionHasBeenSet;
+}
+
+string DescribeSSLStatusResponse::GetEncryptionMode() const
+{
+    return m_encryptionMode;
+}
+
+bool DescribeSSLStatusResponse::EncryptionModeHasBeenSet() const
+{
+    return m_encryptionModeHasBeenSet;
 }
 
 

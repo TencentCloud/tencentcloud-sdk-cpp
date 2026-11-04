@@ -45,6 +45,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<p>数据实验室ID</p>
+                     * @return Id <p>数据实验室ID</p>
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置<p>数据实验室ID</p>
+                     * @param _id <p>数据实验室ID</p>
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
                      * 获取<p>数据实验室名称</p>
                      * @return Name <p>数据实验室名称</p>
                      * 
@@ -150,6 +171,27 @@ namespace TencentCloud
                     bool ImagePullPolicyHasBeenSet() const;
 
                     /**
+                     * 获取<p>资源配置</p>
+                     * @return ResourceConfig <p>资源配置</p>
+                     * 
+                     */
+                    std::string GetResourceConfig() const;
+
+                    /**
+                     * 设置<p>资源配置</p>
+                     * @param _resourceConfig <p>资源配置</p>
+                     * 
+                     */
+                    void SetResourceConfig(const std::string& _resourceConfig);
+
+                    /**
+                     * 判断参数 ResourceConfig 是否已赋值
+                     * @return ResourceConfig 是否已赋值
+                     * 
+                     */
+                    bool ResourceConfigHasBeenSet() const;
+
+                    /**
                      * 获取<p>资源配置ID</p>
                      * @return ResourceConfigId <p>资源配置ID</p>
                      * 
@@ -169,6 +211,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ResourceConfigIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>存储卷和挂载卷配置</p>
+                     * @return Catalog <p>存储卷和挂载卷配置</p>
+                     * 
+                     */
+                    std::string GetCatalog() const;
+
+                    /**
+                     * 设置<p>存储卷和挂载卷配置</p>
+                     * @param _catalog <p>存储卷和挂载卷配置</p>
+                     * 
+                     */
+                    void SetCatalog(const std::string& _catalog);
+
+                    /**
+                     * 判断参数 Catalog 是否已赋值
+                     * @return Catalog 是否已赋值
+                     * 
+                     */
+                    bool CatalogHasBeenSet() const;
 
                     /**
                      * 获取<p>计算组 ID</p>
@@ -234,6 +297,27 @@ namespace TencentCloud
                     bool QueueHasBeenSet() const;
 
                     /**
+                     * 获取<p>服务类型列表(VSCODE, JUPYTER, WEBSHELL)，不填则使用默认配置</p>
+                     * @return ServiceTypes <p>服务类型列表(VSCODE, JUPYTER, WEBSHELL)，不填则使用默认配置</p>
+                     * 
+                     */
+                    std::vector<std::string> GetServiceTypes() const;
+
+                    /**
+                     * 设置<p>服务类型列表(VSCODE, JUPYTER, WEBSHELL)，不填则使用默认配置</p>
+                     * @param _serviceTypes <p>服务类型列表(VSCODE, JUPYTER, WEBSHELL)，不填则使用默认配置</p>
+                     * 
+                     */
+                    void SetServiceTypes(const std::vector<std::string>& _serviceTypes);
+
+                    /**
+                     * 判断参数 ServiceTypes 是否已赋值
+                     * @return ServiceTypes 是否已赋值
+                     * 
+                     */
+                    bool ServiceTypesHasBeenSet() const;
+
+                    /**
                      * 获取<p>案例ID，当 startMode=EXAMPLE 时必填</p>
                      * @return ExampleId <p>案例ID，当 startMode=EXAMPLE 时必填</p>
                      * 
@@ -295,6 +379,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LabImagePullPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取<p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>
+                     * @return AdvancedOptions <p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>
+                     * 
+                     */
+                    std::string GetAdvancedOptions() const;
+
+                    /**
+                     * 设置<p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>
+                     * @param _advancedOptions <p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>
+                     * 
+                     */
+                    void SetAdvancedOptions(const std::string& _advancedOptions);
+
+                    /**
+                     * 判断参数 AdvancedOptions 是否已赋值
+                     * @return AdvancedOptions 是否已赋值
+                     * 
+                     */
+                    bool AdvancedOptionsHasBeenSet() const;
 
                     /**
                      * 获取<p>优先级（1-9，数字越大优先级越高）</p>
@@ -381,6 +486,27 @@ namespace TencentCloud
                     bool PersistentWorkDirHasBeenSet() const;
 
                     /**
+                     * 获取<p>弹性伸缩配置（JSON）</p>
+                     * @return AutoscalerOptions <p>弹性伸缩配置（JSON）</p>
+                     * 
+                     */
+                    std::string GetAutoscalerOptions() const;
+
+                    /**
+                     * 设置<p>弹性伸缩配置（JSON）</p>
+                     * @param _autoscalerOptions <p>弹性伸缩配置（JSON）</p>
+                     * 
+                     */
+                    void SetAutoscalerOptions(const std::string& _autoscalerOptions);
+
+                    /**
+                     * 判断参数 AutoscalerOptions 是否已赋值
+                     * @return AutoscalerOptions 是否已赋值
+                     * 
+                     */
+                    bool AutoscalerOptionsHasBeenSet() const;
+
+                    /**
                      * 获取<p>镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>
                      * @return ImagePullType <p>镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>
                      * 
@@ -446,6 +572,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * <p>数据实验室ID</p>
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
                      * <p>数据实验室名称</p>
                      */
                     std::string m_name;
@@ -476,10 +608,22 @@ namespace TencentCloud
                     bool m_imagePullPolicyHasBeenSet;
 
                     /**
+                     * <p>资源配置</p>
+                     */
+                    std::string m_resourceConfig;
+                    bool m_resourceConfigHasBeenSet;
+
+                    /**
                      * <p>资源配置ID</p>
                      */
                     std::string m_resourceConfigId;
                     bool m_resourceConfigIdHasBeenSet;
+
+                    /**
+                     * <p>存储卷和挂载卷配置</p>
+                     */
+                    std::string m_catalog;
+                    bool m_catalogHasBeenSet;
 
                     /**
                      * <p>计算组 ID</p>
@@ -500,6 +644,12 @@ namespace TencentCloud
                     bool m_queueHasBeenSet;
 
                     /**
+                     * <p>服务类型列表(VSCODE, JUPYTER, WEBSHELL)，不填则使用默认配置</p>
+                     */
+                    std::vector<std::string> m_serviceTypes;
+                    bool m_serviceTypesHasBeenSet;
+
+                    /**
                      * <p>案例ID，当 startMode=EXAMPLE 时必填</p>
                      */
                     std::string m_exampleId;
@@ -516,6 +666,12 @@ namespace TencentCloud
                      */
                     std::string m_labImagePullPolicy;
                     bool m_labImagePullPolicyHasBeenSet;
+
+                    /**
+                     * <p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>
+                     */
+                    std::string m_advancedOptions;
+                    bool m_advancedOptionsHasBeenSet;
 
                     /**
                      * <p>优先级（1-9，数字越大优先级越高）</p>
@@ -540,6 +696,12 @@ namespace TencentCloud
                      */
                     PersistentWorkDir m_persistentWorkDir;
                     bool m_persistentWorkDirHasBeenSet;
+
+                    /**
+                     * <p>弹性伸缩配置（JSON）</p>
+                     */
+                    std::string m_autoscalerOptions;
+                    bool m_autoscalerOptionsHasBeenSet;
 
                     /**
                      * <p>镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>

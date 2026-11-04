@@ -1440,6 +1440,106 @@ OcrClient::GeneralHandwritingOCROutcomeCallable OcrClient::GeneralHandwritingOCR
     return prom->get_future();
 }
 
+OcrClient::GenerateTextEmbeddingOutcome OcrClient::GenerateTextEmbedding(const GenerateTextEmbeddingRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateTextEmbedding");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateTextEmbeddingResponse rsp = GenerateTextEmbeddingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateTextEmbeddingOutcome(rsp);
+        else
+            return GenerateTextEmbeddingOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateTextEmbeddingOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::GenerateTextEmbeddingAsync(const GenerateTextEmbeddingRequest& request, const GenerateTextEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GenerateTextEmbeddingRequest&;
+    using Resp = GenerateTextEmbeddingResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GenerateTextEmbedding", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::GenerateTextEmbeddingOutcomeCallable OcrClient::GenerateTextEmbeddingCallable(const GenerateTextEmbeddingRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GenerateTextEmbeddingOutcome>>();
+    GenerateTextEmbeddingAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const GenerateTextEmbeddingRequest&,
+        GenerateTextEmbeddingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+OcrClient::GenerateVLEmbeddingOutcome OcrClient::GenerateVLEmbedding(const GenerateVLEmbeddingRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateVLEmbedding");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateVLEmbeddingResponse rsp = GenerateVLEmbeddingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateVLEmbeddingOutcome(rsp);
+        else
+            return GenerateVLEmbeddingOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateVLEmbeddingOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::GenerateVLEmbeddingAsync(const GenerateVLEmbeddingRequest& request, const GenerateVLEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GenerateVLEmbeddingRequest&;
+    using Resp = GenerateVLEmbeddingResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GenerateVLEmbedding", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::GenerateVLEmbeddingOutcomeCallable OcrClient::GenerateVLEmbeddingCallable(const GenerateVLEmbeddingRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GenerateVLEmbeddingOutcome>>();
+    GenerateVLEmbeddingAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const GenerateVLEmbeddingRequest&,
+        GenerateVLEmbeddingOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::GetOCRResultOutcome OcrClient::GetOCRResult(const GetOCRResultRequest &request)
 {
     auto outcome = MakeRequest(request, "GetOCRResult");

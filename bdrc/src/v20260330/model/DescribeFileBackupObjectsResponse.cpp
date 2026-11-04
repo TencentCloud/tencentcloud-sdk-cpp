@@ -24,6 +24,8 @@ using namespace TencentCloud::Bdrc::V20260330::Model;
 using namespace std;
 
 DescribeFileBackupObjectsResponse::DescribeFileBackupObjectsResponse() :
+    m_dirListHasBeenSet(false),
+    m_fileListHasBeenSet(false),
     m_totalCountHasBeenSet(false)
 {
 }
@@ -62,6 +64,46 @@ CoreInternalOutcome DescribeFileBackupObjectsResponse::Deserialize(const string 
     }
 
 
+    if (rsp.HasMember("DirList") && !rsp["DirList"].IsNull())
+    {
+        if (!rsp["DirList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DirList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DirList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FileInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dirList.push_back(item);
+        }
+        m_dirListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileList") && !rsp["FileList"].IsNull())
+    {
+        if (!rsp["FileList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FileList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["FileList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FileInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_fileList.push_back(item);
+        }
+        m_fileListHasBeenSet = true;
+    }
+
     if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
         if (!rsp["TotalCount"].IsUint64())
@@ -82,6 +124,36 @@ string DescribeFileBackupObjectsResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_dirListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DirList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dirList.begin(); itr != m_dirList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_fileListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fileList.begin(); itr != m_fileList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -101,6 +173,26 @@ string DescribeFileBackupObjectsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<FileInfo> DescribeFileBackupObjectsResponse::GetDirList() const
+{
+    return m_dirList;
+}
+
+bool DescribeFileBackupObjectsResponse::DirListHasBeenSet() const
+{
+    return m_dirListHasBeenSet;
+}
+
+vector<FileInfo> DescribeFileBackupObjectsResponse::GetFileList() const
+{
+    return m_fileList;
+}
+
+bool DescribeFileBackupObjectsResponse::FileListHasBeenSet() const
+{
+    return m_fileListHasBeenSet;
+}
 
 uint64_t DescribeFileBackupObjectsResponse::GetTotalCount() const
 {

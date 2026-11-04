@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份点 ID 列表
-                     * @return PlanIds 备份点 ID 列表
+                     * 获取<p>备份计划 ID 列表</p>
+                     * @return PlanIds <p>备份计划 ID 列表</p>
                      * 
                      */
                     std::vector<std::string> GetPlanIds() const;
 
                     /**
-                     * 设置备份点 ID 列表
-                     * @param _planIds 备份点 ID 列表
+                     * 设置<p>备份计划 ID 列表</p>
+                     * @param _planIds <p>备份计划 ID 列表</p>
                      * 
                      */
                     void SetPlanIds(const std::vector<std::string>& _planIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份点 ID 列表
+                     * <p>备份计划 ID 列表</p>
                      */
                     std::vector<std::string> m_planIds;
                     bool m_planIdsHasBeenSet;

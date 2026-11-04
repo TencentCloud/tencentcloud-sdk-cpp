@@ -382,6 +382,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/WorkflowTask.h
   include/tencentcloud/databuddy/v20260715/model/UpdateModelVersionResponse.h
   include/tencentcloud/databuddy/v20260715/model/UpdateLocationResponse.h
+  include/tencentcloud/databuddy/v20260715/model/FileArrivalConfig.h
   include/tencentcloud/databuddy/v20260715/model/GetVolumeRsp.h
   include/tencentcloud/databuddy/v20260715/model/WorkflowRun.h
   include/tencentcloud/databuddy/v20260715/model/FileNode.h
@@ -788,6 +789,7 @@ set(databuddy_src
   src/v20260715/model/WorkflowTask.cpp
   src/v20260715/model/UpdateModelVersionResponse.cpp
   src/v20260715/model/UpdateLocationResponse.cpp
+  src/v20260715/model/FileArrivalConfig.cpp
   src/v20260715/model/GetVolumeRsp.cpp
   src/v20260715/model/WorkflowRun.cpp
   src/v20260715/model/FileNode.cpp

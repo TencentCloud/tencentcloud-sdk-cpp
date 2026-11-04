@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的计划总数量
-                     * @return TotalCount 符合条件的计划总数量
+                     * 获取<p>符合条件的计划总数量</p>
+                     * @return TotalCount <p>符合条件的计划总数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的计划详情
-                     * @return PlanSet 符合条件的计划详情
+                     * 获取<p>符合条件的计划详情</p>
+                     * @return PlanSet <p>符合条件的计划详情</p>
                      * 
                      */
                     std::vector<PlanInfo> GetPlanSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的计划总数量
+                     * <p>符合条件的计划总数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 符合条件的计划详情
+                     * <p>符合条件的计划详情</p>
                      */
                     std::vector<PlanInfo> m_planSet;
                     bool m_planSetHasBeenSet;

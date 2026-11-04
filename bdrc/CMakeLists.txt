@@ -114,6 +114,7 @@ set(bdrc_public_header_model
   include/tencentcloud/bdrc/v20260330/model/CopyPair.h
   include/tencentcloud/bdrc/v20260330/model/DescribeDisasterRecoverySupportRegionResponse.h
   include/tencentcloud/bdrc/v20260330/model/DrilledResourceStatus.h
+  include/tencentcloud/bdrc/v20260330/model/BackupResourceInfo.h
   include/tencentcloud/bdrc/v20260330/model/ReportJobProgressResponse.h
   include/tencentcloud/bdrc/v20260330/model/FileBackupOverview.h
   include/tencentcloud/bdrc/v20260330/model/PlanInfo.h
@@ -163,6 +164,7 @@ set(bdrc_public_header_model
   include/tencentcloud/bdrc/v20260330/model/DeleteCopyPairsRequest.h
   include/tencentcloud/bdrc/v20260330/model/DeleteSecurityGroupMappingRequest.h
   include/tencentcloud/bdrc/v20260330/model/CreateInstanceModel.h
+  include/tencentcloud/bdrc/v20260330/model/FileInfo.h
   include/tencentcloud/bdrc/v20260330/model/DrillPair.h
   include/tencentcloud/bdrc/v20260330/model/DescribeDisasterRecoveryOverviewRequest.h
   include/tencentcloud/bdrc/v20260330/model/ModifyAutoBackupPolicyAttributeRequest.h
@@ -334,6 +336,7 @@ set(bdrc_src
   src/v20260330/model/CopyPair.cpp
   src/v20260330/model/DescribeDisasterRecoverySupportRegionResponse.cpp
   src/v20260330/model/DrilledResourceStatus.cpp
+  src/v20260330/model/BackupResourceInfo.cpp
   src/v20260330/model/ReportJobProgressResponse.cpp
   src/v20260330/model/FileBackupOverview.cpp
   src/v20260330/model/PlanInfo.cpp
@@ -383,6 +386,7 @@ set(bdrc_src
   src/v20260330/model/DeleteCopyPairsRequest.cpp
   src/v20260330/model/DeleteSecurityGroupMappingRequest.cpp
   src/v20260330/model/CreateInstanceModel.cpp
+  src/v20260330/model/FileInfo.cpp
   src/v20260330/model/DrillPair.cpp
   src/v20260330/model/DescribeDisasterRecoveryOverviewRequest.cpp
   src/v20260330/model/ModifyAutoBackupPolicyAttributeRequest.cpp

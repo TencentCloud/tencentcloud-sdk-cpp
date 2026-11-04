@@ -59,7 +59,8 @@ GetWorkflowTaskRunRsp::GetWorkflowTaskRunRsp() :
     m_errorMessageHasBeenSet(false),
     m_runResultHasBeenSet(false),
     m_innerWorkflowTaskRunHasBeenSet(false),
-    m_scheduledTimeHasBeenSet(false)
+    m_scheduledTimeHasBeenSet(false),
+    m_fileArrivalConfigHasBeenSet(false)
 {
 }
 
@@ -478,6 +479,23 @@ CoreInternalOutcome GetWorkflowTaskRunRsp::Deserialize(const rapidjson::Value &v
         m_scheduledTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FileArrivalConfig") && !value["FileArrivalConfig"].IsNull())
+    {
+        if (!value["FileArrivalConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetWorkflowTaskRunRsp.FileArrivalConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fileArrivalConfig.Deserialize(value["FileArrivalConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fileArrivalConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -808,6 +826,15 @@ void GetWorkflowTaskRunRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ScheduledTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scheduledTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileArrivalConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileArrivalConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileArrivalConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1435,5 +1462,21 @@ void GetWorkflowTaskRunRsp::SetScheduledTime(const string& _scheduledTime)
 bool GetWorkflowTaskRunRsp::ScheduledTimeHasBeenSet() const
 {
     return m_scheduledTimeHasBeenSet;
+}
+
+FileArrivalConfig GetWorkflowTaskRunRsp::GetFileArrivalConfig() const
+{
+    return m_fileArrivalConfig;
+}
+
+void GetWorkflowTaskRunRsp::SetFileArrivalConfig(const FileArrivalConfig& _fileArrivalConfig)
+{
+    m_fileArrivalConfig = _fileArrivalConfig;
+    m_fileArrivalConfigHasBeenSet = true;
+}
+
+bool GetWorkflowTaskRunRsp::FileArrivalConfigHasBeenSet() const
+{
+    return m_fileArrivalConfigHasBeenSet;
 }
 

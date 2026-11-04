@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/TypeKVPair.h>
+#include <tencentcloud/dlc/v20210125/model/Tag.h>
 #include <tencentcloud/dlc/v20210125/model/PersistentWorkDir.h>
 
 
@@ -242,6 +243,20 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
+                     * 获取<p>子用户UIN</p>
+                     * @return SubAccountUin <p>子用户UIN</p>
+                     * 
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
+                    /**
                      * 获取<p>集群状态</p>
                      * @return Status <p>集群状态</p>
                      * 
@@ -254,6 +269,62 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>状态详情/错误信息</p>
+                     * @return StatusMessage <p>状态详情/错误信息</p>
+                     * 
+                     */
+                    std::string GetStatusMessage() const;
+
+                    /**
+                     * 判断参数 StatusMessage 是否已赋值
+                     * @return StatusMessage 是否已赋值
+                     * 
+                     */
+                    bool StatusMessageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
+                     * 
+                     */
+                    uint64_t GetCreateTime() const;
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
+                     * 
+                     */
+                    uint64_t GetUpdateTime() const;
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>所属集群组名称</p>
+                     * @return GroupName <p>所属集群组名称</p>
+                     * 
+                     */
+                    std::string GetGroupName() const;
+
+                    /**
+                     * 判断参数 GroupName 是否已赋值
+                     * @return GroupName 是否已赋值
+                     * 
+                     */
+                    bool GroupNameHasBeenSet() const;
 
                     /**
                      * 获取<p>计算组 ID</p>
@@ -312,6 +383,34 @@ namespace TencentCloud
                     bool ImageHasBeenSet() const;
 
                     /**
+                     * 获取<p>存储卷和挂载卷配置(JSON)</p>
+                     * @return Catalog <p>存储卷和挂载卷配置(JSON)</p>
+                     * 
+                     */
+                    std::string GetCatalog() const;
+
+                    /**
+                     * 判断参数 Catalog 是否已赋值
+                     * @return Catalog 是否已赋值
+                     * 
+                     */
+                    bool CatalogHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Dashboard URL / 历史记录链接</p>
+                     * @return HistoryUrl <p>Dashboard URL / 历史记录链接</p>
+                     * 
+                     */
+                    std::string GetHistoryUrl() const;
+
+                    /**
+                     * 判断参数 HistoryUrl 是否已赋值
+                     * @return HistoryUrl 是否已赋值
+                     * 
+                     */
+                    bool HistoryUrlHasBeenSet() const;
+
+                    /**
                      * 获取<p>镜像拉取策略</p>
                      * @return ImagePullPolicy <p>镜像拉取策略</p>
                      * 
@@ -326,6 +425,20 @@ namespace TencentCloud
                     bool ImagePullPolicyHasBeenSet() const;
 
                     /**
+                     * 获取<p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>
+                     * @return AdvancedOptions <p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>
+                     * 
+                     */
+                    std::string GetAdvancedOptions() const;
+
+                    /**
+                     * 判断参数 AdvancedOptions 是否已赋值
+                     * @return AdvancedOptions 是否已赋值
+                     * 
+                     */
+                    bool AdvancedOptionsHasBeenSet() const;
+
+                    /**
                      * 获取<p>优先级（1-9，数字越大优先级越高）</p>
                      * @return Priority <p>优先级（1-9，数字越大优先级越高）</p>
                      * 
@@ -338,6 +451,62 @@ namespace TencentCloud
                      * 
                      */
                     bool PriorityHasBeenSet() const;
+
+                    /**
+                     * 获取<p>启动时间（最近一次启动）</p>
+                     * @return StartTime <p>启动时间（最近一次启动）</p>
+                     * 
+                     */
+                    uint64_t GetStartTime() const;
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>停止时间（最近一次停止/休眠）</p>
+                     * @return StopTime <p>停止时间（最近一次停止/休眠）</p>
+                     * 
+                     */
+                    uint64_t GetStopTime() const;
+
+                    /**
+                     * 判断参数 StopTime 是否已赋值
+                     * @return StopTime 是否已赋值
+                     * 
+                     */
+                    bool StopTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>删除时间</p>
+                     * @return DeleteTime <p>删除时间</p>
+                     * 
+                     */
+                    uint64_t GetDeleteTime() const;
+
+                    /**
+                     * 判断参数 DeleteTime 是否已赋值
+                     * @return DeleteTime 是否已赋值
+                     * 
+                     */
+                    bool DeleteTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>标签列表（TagKey-TagValue）</p>
+                     * @return Tags <p>标签列表（TagKey-TagValue）</p>
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
 
                     /**
                      * 获取<p>持久化工作目录配置（可选）。启用后将 COS/CFS 指定路径挂载到容器内 /workspace 工作目录，与现有 Catalog 的卷配置互斥（不允许同时在 Catalog 中显式声明 MountPath=/workspace）。</p>
@@ -366,6 +535,34 @@ namespace TencentCloud
                      * 
                      */
                     bool EnableTokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Token 认证密钥（开启 token 认证时由系统生成）</p>
+                     * @return Token <p>Token 认证密钥（开启 token 认证时由系统生成）</p>
+                     * 
+                     */
+                    std::string GetToken() const;
+
+                    /**
+                     * 判断参数 Token 是否已赋值
+                     * @return Token 是否已赋值
+                     * 
+                     */
+                    bool TokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>弹性伸缩配置（JSON）</p>
+                     * @return AutoscalerOptions <p>弹性伸缩配置（JSON）</p>
+                     * 
+                     */
+                    std::string GetAutoscalerOptions() const;
+
+                    /**
+                     * 判断参数 AutoscalerOptions 是否已赋值
+                     * @return AutoscalerOptions 是否已赋值
+                     * 
+                     */
+                    bool AutoscalerOptionsHasBeenSet() const;
 
                     /**
                      * 获取<p>Lab sidecar 镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>
@@ -510,10 +707,40 @@ namespace TencentCloud
                     bool m_uinHasBeenSet;
 
                     /**
+                     * <p>子用户UIN</p>
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
+
+                    /**
                      * <p>集群状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>状态详情/错误信息</p>
+                     */
+                    std::string m_statusMessage;
+                    bool m_statusMessageHasBeenSet;
+
+                    /**
+                     * <p>创建时间</p>
+                     */
+                    uint64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>更新时间</p>
+                     */
+                    uint64_t m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>所属集群组名称</p>
+                     */
+                    std::string m_groupName;
+                    bool m_groupNameHasBeenSet;
 
                     /**
                      * <p>计算组 ID</p>
@@ -540,16 +767,58 @@ namespace TencentCloud
                     bool m_imageHasBeenSet;
 
                     /**
+                     * <p>存储卷和挂载卷配置(JSON)</p>
+                     */
+                    std::string m_catalog;
+                    bool m_catalogHasBeenSet;
+
+                    /**
+                     * <p>Dashboard URL / 历史记录链接</p>
+                     */
+                    std::string m_historyUrl;
+                    bool m_historyUrlHasBeenSet;
+
+                    /**
                      * <p>镜像拉取策略</p>
                      */
                     std::string m_imagePullPolicy;
                     bool m_imagePullPolicyHasBeenSet;
 
                     /**
+                     * <p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>
+                     */
+                    std::string m_advancedOptions;
+                    bool m_advancedOptionsHasBeenSet;
+
+                    /**
                      * <p>优先级（1-9，数字越大优先级越高）</p>
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
+
+                    /**
+                     * <p>启动时间（最近一次启动）</p>
+                     */
+                    uint64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * <p>停止时间（最近一次停止/休眠）</p>
+                     */
+                    uint64_t m_stopTime;
+                    bool m_stopTimeHasBeenSet;
+
+                    /**
+                     * <p>删除时间</p>
+                     */
+                    uint64_t m_deleteTime;
+                    bool m_deleteTimeHasBeenSet;
+
+                    /**
+                     * <p>标签列表（TagKey-TagValue）</p>
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                     /**
                      * <p>持久化工作目录配置（可选）。启用后将 COS/CFS 指定路径挂载到容器内 /workspace 工作目录，与现有 Catalog 的卷配置互斥（不允许同时在 Catalog 中显式声明 MountPath=/workspace）。</p>
@@ -562,6 +831,18 @@ namespace TencentCloud
                      */
                     bool m_enableToken;
                     bool m_enableTokenHasBeenSet;
+
+                    /**
+                     * <p>Token 认证密钥（开启 token 认证时由系统生成）</p>
+                     */
+                    std::string m_token;
+                    bool m_tokenHasBeenSet;
+
+                    /**
+                     * <p>弹性伸缩配置（JSON）</p>
+                     */
+                    std::string m_autoscalerOptions;
+                    bool m_autoscalerOptionsHasBeenSet;
 
                     /**
                      * <p>Lab sidecar 镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>

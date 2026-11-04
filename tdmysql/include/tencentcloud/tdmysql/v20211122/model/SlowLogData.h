@@ -497,6 +497,31 @@ namespace TencentCloud
                      */
                     bool ExplainHasBeenSet() const;
 
+                    /**
+                     * 获取<p>执行计划树</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExplainTree <p>执行计划树</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExplainTree() const;
+
+                    /**
+                     * 设置<p>执行计划树</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _explainTree <p>执行计划树</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExplainTree(const std::string& _explainTree);
+
+                    /**
+                     * 判断参数 ExplainTree 是否已赋值
+                     * @return ExplainTree 是否已赋值
+                     * 
+                     */
+                    bool ExplainTreeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -624,6 +649,13 @@ namespace TencentCloud
                      */
                     std::vector<Explain> m_explain;
                     bool m_explainHasBeenSet;
+
+                    /**
+                     * <p>执行计划树</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_explainTree;
+                    bool m_explainTreeHasBeenSet;
 
                 };
             }

@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool ErrMsgHasBeenSet() const;
 
+                    /**
+                     * 获取<p>proxy的节点ID</p>
+                     * @return Node <p>proxy的节点ID</p>
+                     * 
+                     */
+                    std::string GetNode() const;
+
+                    /**
+                     * 设置<p>proxy的节点ID</p>
+                     * @param _node <p>proxy的节点ID</p>
+                     * 
+                     */
+                    void SetNode(const std::string& _node);
+
+                    /**
+                     * 判断参数 Node 是否已赋值
+                     * @return Node 是否已赋值
+                     * 
+                     */
+                    bool NodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;
+
+                    /**
+                     * <p>proxy的节点ID</p>
+                     */
+                    std::string m_node;
+                    bool m_nodeHasBeenSet;
 
                 };
             }

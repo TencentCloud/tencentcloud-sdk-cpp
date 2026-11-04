@@ -31,7 +31,9 @@ ProtectInstance::ProtectInstance() :
     m_backupCountHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_latestBackupTimeHasBeenSet(false),
-    m_offlineReasonHasBeenSet(false)
+    m_offlineReasonHasBeenSet(false),
+    m_backupSizeHasBeenSet(false),
+    m_productTypeHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome ProtectInstance::Deserialize(const rapidjson::Value &value)
         m_offlineReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupSize") && !value["BackupSize"].IsNull())
+    {
+        if (!value["BackupSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectInstance.BackupSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupSize = value["BackupSize"].GetInt64();
+        m_backupSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductType") && !value["ProductType"].IsNull())
+    {
+        if (!value["ProductType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectInstance.ProductType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productType = string(value["ProductType"].GetString());
+        m_productTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void ProtectInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "OfflineReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_offlineReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupSize, allocator);
+    }
+
+    if (m_productTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void ProtectInstance::SetOfflineReason(const string& _offlineReason)
 bool ProtectInstance::OfflineReasonHasBeenSet() const
 {
     return m_offlineReasonHasBeenSet;
+}
+
+int64_t ProtectInstance::GetBackupSize() const
+{
+    return m_backupSize;
+}
+
+void ProtectInstance::SetBackupSize(const int64_t& _backupSize)
+{
+    m_backupSize = _backupSize;
+    m_backupSizeHasBeenSet = true;
+}
+
+bool ProtectInstance::BackupSizeHasBeenSet() const
+{
+    return m_backupSizeHasBeenSet;
+}
+
+string ProtectInstance::GetProductType() const
+{
+    return m_productType;
+}
+
+void ProtectInstance::SetProductType(const string& _productType)
+{
+    m_productType = _productType;
+    m_productTypeHasBeenSet = true;
+}
+
+bool ProtectInstance::ProductTypeHasBeenSet() const
+{
+    return m_productTypeHasBeenSet;
 }
 

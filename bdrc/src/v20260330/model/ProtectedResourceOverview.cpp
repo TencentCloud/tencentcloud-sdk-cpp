@@ -24,7 +24,9 @@ ProtectedResourceOverview::ProtectedResourceOverview() :
     m_totalProtectedCountHasBeenSet(false),
     m_totalResourceCountHasBeenSet(false),
     m_cvmHasBeenSet(false),
-    m_cFSHasBeenSet(false)
+    m_cFSHasBeenSet(false),
+    m_cFSAgentHasBeenSet(false),
+    m_cOSAgentHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,40 @@ CoreInternalOutcome ProtectedResourceOverview::Deserialize(const rapidjson::Valu
         m_cFSHasBeenSet = true;
     }
 
+    if (value.HasMember("CFSAgent") && !value["CFSAgent"].IsNull())
+    {
+        if (!value["CFSAgent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectedResourceOverview.CFSAgent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cFSAgent.Deserialize(value["CFSAgent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cFSAgentHasBeenSet = true;
+    }
+
+    if (value.HasMember("COSAgent") && !value["COSAgent"].IsNull())
+    {
+        if (!value["COSAgent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectedResourceOverview.COSAgent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cOSAgent.Deserialize(value["COSAgent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cOSAgentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +162,24 @@ void ProtectedResourceOverview::ToJsonObject(rapidjson::Value &value, rapidjson:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cFS.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cFSAgentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CFSAgent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cFSAgent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cOSAgentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "COSAgent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cOSAgent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -193,5 +247,37 @@ void ProtectedResourceOverview::SetCFS(const ResourceProtectStat& _cFS)
 bool ProtectedResourceOverview::CFSHasBeenSet() const
 {
     return m_cFSHasBeenSet;
+}
+
+ResourceProtectStat ProtectedResourceOverview::GetCFSAgent() const
+{
+    return m_cFSAgent;
+}
+
+void ProtectedResourceOverview::SetCFSAgent(const ResourceProtectStat& _cFSAgent)
+{
+    m_cFSAgent = _cFSAgent;
+    m_cFSAgentHasBeenSet = true;
+}
+
+bool ProtectedResourceOverview::CFSAgentHasBeenSet() const
+{
+    return m_cFSAgentHasBeenSet;
+}
+
+ResourceProtectStat ProtectedResourceOverview::GetCOSAgent() const
+{
+    return m_cOSAgent;
+}
+
+void ProtectedResourceOverview::SetCOSAgent(const ResourceProtectStat& _cOSAgent)
+{
+    m_cOSAgent = _cOSAgent;
+    m_cOSAgentHasBeenSet = true;
+}
+
+bool ProtectedResourceOverview::COSAgentHasBeenSet() const
+{
+    return m_cOSAgentHasBeenSet;
 }
 

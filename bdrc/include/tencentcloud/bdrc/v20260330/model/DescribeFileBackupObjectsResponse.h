@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bdrc/v20260330/model/FileInfo.h>
 
 
 namespace TencentCloud
@@ -44,8 +45,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前路径下包含的目录及文件总数
-                     * @return TotalCount 当前路径下包含的目录及文件总数
+                     * 获取<p>当前路径下包含的目录信息</p>
+                     * @return DirList <p>当前路径下包含的目录信息</p>
+                     * 
+                     */
+                    std::vector<FileInfo> GetDirList() const;
+
+                    /**
+                     * 判断参数 DirList 是否已赋值
+                     * @return DirList 是否已赋值
+                     * 
+                     */
+                    bool DirListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前路径下包含的文件信息</p>
+                     * @return FileList <p>当前路径下包含的文件信息</p>
+                     * 
+                     */
+                    std::vector<FileInfo> GetFileList() const;
+
+                    /**
+                     * 判断参数 FileList 是否已赋值
+                     * @return FileList 是否已赋值
+                     * 
+                     */
+                    bool FileListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前路径下包含的目录及文件总数</p>
+                     * @return TotalCount <p>当前路径下包含的目录及文件总数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -60,7 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前路径下包含的目录及文件总数
+                     * <p>当前路径下包含的目录信息</p>
+                     */
+                    std::vector<FileInfo> m_dirList;
+                    bool m_dirListHasBeenSet;
+
+                    /**
+                     * <p>当前路径下包含的文件信息</p>
+                     */
+                    std::vector<FileInfo> m_fileList;
+                    bool m_fileListHasBeenSet;
+
+                    /**
+                     * <p>当前路径下包含的目录及文件总数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

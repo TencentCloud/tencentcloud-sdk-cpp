@@ -110,14 +110,14 @@ namespace TencentCloud
                      * @return Cnt <p>控制返回结果条数，可取值：cnt=10/20/30/40/50。（<strong>极速版不支持该参数</strong>）</p><p>枚举值：</p><ul><li>10： 返回10条结果</li><li>20： 返回20条结果</li><li>30： 返回30条结果</li><li>40： 返回40条结果</li><li>50： 返回50条结果</li></ul>
                      * 
                      */
-                    uint64_t GetCnt() const;
+                    int64_t GetCnt() const;
 
                     /**
                      * 设置<p>控制返回结果条数，可取值：cnt=10/20/30/40/50。（<strong>极速版不支持该参数</strong>）</p><p>枚举值：</p><ul><li>10： 返回10条结果</li><li>20： 返回20条结果</li><li>30： 返回30条结果</li><li>40： 返回40条结果</li><li>50： 返回50条结果</li></ul>
                      * @param _cnt <p>控制返回结果条数，可取值：cnt=10/20/30/40/50。（<strong>极速版不支持该参数</strong>）</p><p>枚举值：</p><ul><li>10： 返回10条结果</li><li>20： 返回20条结果</li><li>30： 返回30条结果</li><li>40： 返回40条结果</li><li>50： 返回50条结果</li></ul>
                      * 
                      */
-                    void SetCnt(const uint64_t& _cnt);
+                    void SetCnt(const int64_t& _cnt);
 
                     /**
                      * 判断参数 Cnt 是否已赋值
@@ -212,7 +212,7 @@ namespace TencentCloud
                     /**
                      * <p>控制返回结果条数，可取值：cnt=10/20/30/40/50。（<strong>极速版不支持该参数</strong>）</p><p>枚举值：</p><ul><li>10： 返回10条结果</li><li>20： 返回20条结果</li><li>30： 返回30条结果</li><li>40： 返回40条结果</li><li>50： 返回50条结果</li></ul>
                      */
-                    uint64_t m_cnt;
+                    int64_t m_cnt;
                     bool m_cntHasBeenSet;
 
                     /**

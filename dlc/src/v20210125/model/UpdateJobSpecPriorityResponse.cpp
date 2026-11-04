@@ -43,6 +43,7 @@ UpdateJobSpecPriorityResponse::UpdateJobSpecPriorityResponse() :
     m_groupIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_dispatchStrategyHasBeenSet(false),
+    m_submissionTargetHasBeenSet(false),
     m_jobPackageHasBeenSet(false),
     m_jobPackageNameHasBeenSet(false),
     m_priorityHasBeenSet(false),
@@ -55,7 +56,10 @@ UpdateJobSpecPriorityResponse::UpdateJobSpecPriorityResponse() :
     m_hasRunningJobsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_jobPackageSourceHasBeenSet(false)
+    m_groupNameHasBeenSet(false),
+    m_clusterNameHasBeenSet(false),
+    m_jobPackageSourceHasBeenSet(false),
+    m_subAccountNameHasBeenSet(false)
 {
 }
 
@@ -283,6 +287,16 @@ CoreInternalOutcome UpdateJobSpecPriorityResponse::Deserialize(const string &pay
         m_dispatchStrategyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SubmissionTarget") && !rsp["SubmissionTarget"].IsNull())
+    {
+        if (!rsp["SubmissionTarget"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubmissionTarget` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_submissionTarget = string(rsp["SubmissionTarget"].GetString());
+        m_submissionTargetHasBeenSet = true;
+    }
+
     if (rsp.HasMember("JobPackage") && !rsp["JobPackage"].IsNull())
     {
         if (!rsp["JobPackage"].IsString())
@@ -413,6 +427,26 @@ CoreInternalOutcome UpdateJobSpecPriorityResponse::Deserialize(const string &pay
         m_tagsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("GroupName") && !rsp["GroupName"].IsNull())
+    {
+        if (!rsp["GroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupName = string(rsp["GroupName"].GetString());
+        m_groupNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClusterName") && !rsp["ClusterName"].IsNull())
+    {
+        if (!rsp["ClusterName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterName = string(rsp["ClusterName"].GetString());
+        m_clusterNameHasBeenSet = true;
+    }
+
     if (rsp.HasMember("JobPackageSource") && !rsp["JobPackageSource"].IsNull())
     {
         if (!rsp["JobPackageSource"].IsString())
@@ -421,6 +455,16 @@ CoreInternalOutcome UpdateJobSpecPriorityResponse::Deserialize(const string &pay
         }
         m_jobPackageSource = string(rsp["JobPackageSource"].GetString());
         m_jobPackageSourceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubAccountName") && !rsp["SubAccountName"].IsNull())
+    {
+        if (!rsp["SubAccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubAccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountName = string(rsp["SubAccountName"].GetString());
+        m_subAccountNameHasBeenSet = true;
     }
 
 
@@ -585,6 +629,14 @@ string UpdateJobSpecPriorityResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_dispatchStrategy.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_submissionTargetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubmissionTarget";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_submissionTarget.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_jobPackageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -688,12 +740,36 @@ string UpdateJobSpecPriorityResponse::ToJsonString() const
         }
     }
 
+    if (m_groupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_jobPackageSourceHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "JobPackageSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jobPackageSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -898,6 +974,16 @@ bool UpdateJobSpecPriorityResponse::DispatchStrategyHasBeenSet() const
     return m_dispatchStrategyHasBeenSet;
 }
 
+string UpdateJobSpecPriorityResponse::GetSubmissionTarget() const
+{
+    return m_submissionTarget;
+}
+
+bool UpdateJobSpecPriorityResponse::SubmissionTargetHasBeenSet() const
+{
+    return m_submissionTargetHasBeenSet;
+}
+
 string UpdateJobSpecPriorityResponse::GetJobPackage() const
 {
     return m_jobPackage;
@@ -1018,6 +1104,26 @@ bool UpdateJobSpecPriorityResponse::TagsHasBeenSet() const
     return m_tagsHasBeenSet;
 }
 
+string UpdateJobSpecPriorityResponse::GetGroupName() const
+{
+    return m_groupName;
+}
+
+bool UpdateJobSpecPriorityResponse::GroupNameHasBeenSet() const
+{
+    return m_groupNameHasBeenSet;
+}
+
+string UpdateJobSpecPriorityResponse::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+bool UpdateJobSpecPriorityResponse::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
+}
+
 string UpdateJobSpecPriorityResponse::GetJobPackageSource() const
 {
     return m_jobPackageSource;
@@ -1026,6 +1132,16 @@ string UpdateJobSpecPriorityResponse::GetJobPackageSource() const
 bool UpdateJobSpecPriorityResponse::JobPackageSourceHasBeenSet() const
 {
     return m_jobPackageSourceHasBeenSet;
+}
+
+string UpdateJobSpecPriorityResponse::GetSubAccountName() const
+{
+    return m_subAccountName;
+}
+
+bool UpdateJobSpecPriorityResponse::SubAccountNameHasBeenSet() const
+{
+    return m_subAccountNameHasBeenSet;
 }
 
 

@@ -84,6 +84,111 @@ namespace TencentCloud
                      */
                     bool AddressTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>密钥类型。</p><p>枚举值：</p><ul><li>0： 腾讯云提供</li><li>1： 用户自定义证书</li></ul><p>默认值：0</p>
+                     * @return CertSource <p>密钥类型。</p><p>枚举值：</p><ul><li>0： 腾讯云提供</li><li>1： 用户自定义证书</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    int64_t GetCertSource() const;
+
+                    /**
+                     * 设置<p>密钥类型。</p><p>枚举值：</p><ul><li>0： 腾讯云提供</li><li>1： 用户自定义证书</li></ul><p>默认值：0</p>
+                     * @param _certSource <p>密钥类型。</p><p>枚举值：</p><ul><li>0： 腾讯云提供</li><li>1： 用户自定义证书</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetCertSource(const int64_t& _certSource);
+
+                    /**
+                     * 判断参数 CertSource 是否已赋值
+                     * @return CertSource 是否已赋值
+                     * 
+                     */
+                    bool CertSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>切换时间。（该参数废弃，不再生效）</p><p>枚举值：</p><ul><li>1： 维护时间窗操作：指开启SSL加密在设置的维护时间窗内执行。请通过接口DescribeMaintenanceWindow查询设置的维护时间窗时间段。</li><li>2： 立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。</li></ul>
+                     * @return SwitchOption <p>切换时间。（该参数废弃，不再生效）</p><p>枚举值：</p><ul><li>1： 维护时间窗操作：指开启SSL加密在设置的维护时间窗内执行。请通过接口DescribeMaintenanceWindow查询设置的维护时间窗时间段。</li><li>2： 立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。</li></ul>
+                     * @deprecated
+                     */
+                    int64_t GetSwitchOption() const;
+
+                    /**
+                     * 设置<p>切换时间。（该参数废弃，不再生效）</p><p>枚举值：</p><ul><li>1： 维护时间窗操作：指开启SSL加密在设置的维护时间窗内执行。请通过接口DescribeMaintenanceWindow查询设置的维护时间窗时间段。</li><li>2： 立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。</li></ul>
+                     * @param _switchOption <p>切换时间。（该参数废弃，不再生效）</p><p>枚举值：</p><ul><li>1： 维护时间窗操作：指开启SSL加密在设置的维护时间窗内执行。请通过接口DescribeMaintenanceWindow查询设置的维护时间窗时间段。</li><li>2： 立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。</li></ul>
+                     * @deprecated
+                     */
+                    void SetSwitchOption(const int64_t& _switchOption);
+
+                    /**
+                     * 判断参数 SwitchOption 是否已赋值
+                     * @return SwitchOption 是否已赋值
+                     * @deprecated
+                     */
+                    bool SwitchOptionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>SSL 证书服务的证书 ID，CertSource=1 时必填</p>
+                     * @return CertId <p>SSL 证书服务的证书 ID，CertSource=1 时必填</p>
+                     * 
+                     */
+                    std::string GetCertId() const;
+
+                    /**
+                     * 设置<p>SSL 证书服务的证书 ID，CertSource=1 时必填</p>
+                     * @param _certId <p>SSL 证书服务的证书 ID，CertSource=1 时必填</p>
+                     * 
+                     */
+                    void SetCertId(const std::string& _certId);
+
+                    /**
+                     * 判断参数 CertId 是否已赋值
+                     * @return CertId 是否已赋值
+                     * 
+                     */
+                    bool CertIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最低TLS版本</p><p>枚举值：</p><ul><li>TLSv1.0： TLSv1.0</li><li>TLSv1.1： TLSv1.1</li><li>TLSv1.2： TLSv1.2</li></ul>
+                     * @return SSLMinVersion <p>最低TLS版本</p><p>枚举值：</p><ul><li>TLSv1.0： TLSv1.0</li><li>TLSv1.1： TLSv1.1</li><li>TLSv1.2： TLSv1.2</li></ul>
+                     * 
+                     */
+                    std::string GetSSLMinVersion() const;
+
+                    /**
+                     * 设置<p>最低TLS版本</p><p>枚举值：</p><ul><li>TLSv1.0： TLSv1.0</li><li>TLSv1.1： TLSv1.1</li><li>TLSv1.2： TLSv1.2</li></ul>
+                     * @param _sSLMinVersion <p>最低TLS版本</p><p>枚举值：</p><ul><li>TLSv1.0： TLSv1.0</li><li>TLSv1.1： TLSv1.1</li><li>TLSv1.2： TLSv1.2</li></ul>
+                     * 
+                     */
+                    void SetSSLMinVersion(const std::string& _sSLMinVersion);
+
+                    /**
+                     * 判断参数 SSLMinVersion 是否已赋值
+                     * @return SSLMinVersion 是否已赋值
+                     * 
+                     */
+                    bool SSLMinVersionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>目标加密模式</p><p>枚举值：</p><ul><li>required： 强制加密</li><li>flexible： 兼容模式</li></ul><p>默认值：flexible</p>
+                     * @return EncryptionMode <p>目标加密模式</p><p>枚举值：</p><ul><li>required： 强制加密</li><li>flexible： 兼容模式</li></ul><p>默认值：flexible</p>
+                     * 
+                     */
+                    std::string GetEncryptionMode() const;
+
+                    /**
+                     * 设置<p>目标加密模式</p><p>枚举值：</p><ul><li>required： 强制加密</li><li>flexible： 兼容模式</li></ul><p>默认值：flexible</p>
+                     * @param _encryptionMode <p>目标加密模式</p><p>枚举值：</p><ul><li>required： 强制加密</li><li>flexible： 兼容模式</li></ul><p>默认值：flexible</p>
+                     * 
+                     */
+                    void SetEncryptionMode(const std::string& _encryptionMode);
+
+                    /**
+                     * 判断参数 EncryptionMode 是否已赋值
+                     * @return EncryptionMode 是否已赋值
+                     * 
+                     */
+                    bool EncryptionModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +202,36 @@ namespace TencentCloud
                      */
                     int64_t m_addressType;
                     bool m_addressTypeHasBeenSet;
+
+                    /**
+                     * <p>密钥类型。</p><p>枚举值：</p><ul><li>0： 腾讯云提供</li><li>1： 用户自定义证书</li></ul><p>默认值：0</p>
+                     */
+                    int64_t m_certSource;
+                    bool m_certSourceHasBeenSet;
+
+                    /**
+                     * <p>切换时间。（该参数废弃，不再生效）</p><p>枚举值：</p><ul><li>1： 维护时间窗操作：指开启SSL加密在设置的维护时间窗内执行。请通过接口DescribeMaintenanceWindow查询设置的维护时间窗时间段。</li><li>2： 立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。</li></ul>
+                     */
+                    int64_t m_switchOption;
+                    bool m_switchOptionHasBeenSet;
+
+                    /**
+                     * <p>SSL 证书服务的证书 ID，CertSource=1 时必填</p>
+                     */
+                    std::string m_certId;
+                    bool m_certIdHasBeenSet;
+
+                    /**
+                     * <p>最低TLS版本</p><p>枚举值：</p><ul><li>TLSv1.0： TLSv1.0</li><li>TLSv1.1： TLSv1.1</li><li>TLSv1.2： TLSv1.2</li></ul>
+                     */
+                    std::string m_sSLMinVersion;
+                    bool m_sSLMinVersionHasBeenSet;
+
+                    /**
+                     * <p>目标加密模式</p><p>枚举值：</p><ul><li>required： 强制加密</li><li>flexible： 兼容模式</li></ul><p>默认值：flexible</p>
+                     */
+                    std::string m_encryptionMode;
+                    bool m_encryptionModeHasBeenSet;
 
                 };
             }

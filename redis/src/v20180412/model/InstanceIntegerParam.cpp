@@ -30,7 +30,12 @@ InstanceIntegerParam::InstanceIntegerParam() :
     m_minHasBeenSet(false),
     m_maxHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_paramTypeHasBeenSet(false),
+    m_featureSupportedHasBeenSet(false),
+    m_newFeatureOnlineTimeHasBeenSet(false),
+    m_patternHasBeenSet(false),
+    m_inputDescriptionHasBeenSet(false)
 {
 }
 
@@ -139,6 +144,56 @@ CoreInternalOutcome InstanceIntegerParam::Deserialize(const rapidjson::Value &va
         m_unitHasBeenSet = true;
     }
 
+    if (value.HasMember("ParamType") && !value["ParamType"].IsNull())
+    {
+        if (!value["ParamType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.ParamType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paramType = string(value["ParamType"].GetString());
+        m_paramTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FeatureSupported") && !value["FeatureSupported"].IsNull())
+    {
+        if (!value["FeatureSupported"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.FeatureSupported` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_featureSupported = value["FeatureSupported"].GetBool();
+        m_featureSupportedHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewFeatureOnlineTime") && !value["NewFeatureOnlineTime"].IsNull())
+    {
+        if (!value["NewFeatureOnlineTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.NewFeatureOnlineTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newFeatureOnlineTime = string(value["NewFeatureOnlineTime"].GetString());
+        m_newFeatureOnlineTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Pattern") && !value["Pattern"].IsNull())
+    {
+        if (!value["Pattern"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.Pattern` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pattern = string(value["Pattern"].GetString());
+        m_patternHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputDescription") && !value["InputDescription"].IsNull())
+    {
+        if (!value["InputDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceIntegerParam.InputDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputDescription = string(value["InputDescription"].GetString());
+        m_inputDescriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +279,46 @@ void InstanceIntegerParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Unit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paramType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_featureSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeatureSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_featureSupported, allocator);
+    }
+
+    if (m_newFeatureOnlineTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewFeatureOnlineTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newFeatureOnlineTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_patternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pattern";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputDescription.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +482,85 @@ void InstanceIntegerParam::SetUnit(const string& _unit)
 bool InstanceIntegerParam::UnitHasBeenSet() const
 {
     return m_unitHasBeenSet;
+}
+
+string InstanceIntegerParam::GetParamType() const
+{
+    return m_paramType;
+}
+
+void InstanceIntegerParam::SetParamType(const string& _paramType)
+{
+    m_paramType = _paramType;
+    m_paramTypeHasBeenSet = true;
+}
+
+bool InstanceIntegerParam::ParamTypeHasBeenSet() const
+{
+    return m_paramTypeHasBeenSet;
+}
+
+bool InstanceIntegerParam::GetFeatureSupported() const
+{
+    return m_featureSupported;
+}
+
+void InstanceIntegerParam::SetFeatureSupported(const bool& _featureSupported)
+{
+    m_featureSupported = _featureSupported;
+    m_featureSupportedHasBeenSet = true;
+}
+
+bool InstanceIntegerParam::FeatureSupportedHasBeenSet() const
+{
+    return m_featureSupportedHasBeenSet;
+}
+
+string InstanceIntegerParam::GetNewFeatureOnlineTime() const
+{
+    return m_newFeatureOnlineTime;
+}
+
+void InstanceIntegerParam::SetNewFeatureOnlineTime(const string& _newFeatureOnlineTime)
+{
+    m_newFeatureOnlineTime = _newFeatureOnlineTime;
+    m_newFeatureOnlineTimeHasBeenSet = true;
+}
+
+bool InstanceIntegerParam::NewFeatureOnlineTimeHasBeenSet() const
+{
+    return m_newFeatureOnlineTimeHasBeenSet;
+}
+
+string InstanceIntegerParam::GetPattern() const
+{
+    return m_pattern;
+}
+
+void InstanceIntegerParam::SetPattern(const string& _pattern)
+{
+    m_pattern = _pattern;
+    m_patternHasBeenSet = true;
+}
+
+bool InstanceIntegerParam::PatternHasBeenSet() const
+{
+    return m_patternHasBeenSet;
+}
+
+string InstanceIntegerParam::GetInputDescription() const
+{
+    return m_inputDescription;
+}
+
+void InstanceIntegerParam::SetInputDescription(const string& _inputDescription)
+{
+    m_inputDescription = _inputDescription;
+    m_inputDescriptionHasBeenSet = true;
+}
+
+bool InstanceIntegerParam::InputDescriptionHasBeenSet() const
+{
+    return m_inputDescriptionHasBeenSet;
 }
 

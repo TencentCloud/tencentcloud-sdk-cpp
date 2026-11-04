@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取定期备份的执行策略。
-                     * @return Policy 定期备份的执行策略。
+                     * 获取<p>定期备份的执行策略。</p>
+                     * @return Policy <p>定期备份的执行策略。</p>
                      * 
                      */
                     std::vector<Policy> GetPolicy() const;
 
                     /**
-                     * 设置定期备份的执行策略。
-                     * @param _policy 定期备份的执行策略。
+                     * 设置<p>定期备份的执行策略。</p>
+                     * @param _policy <p>定期备份的执行策略。</p>
                      * 
                      */
                     void SetPolicy(const std::vector<Policy>& _policy);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool PolicyHasBeenSet() const;
 
                     /**
-                     * 获取通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。
-                     * @return IsPermanent 通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。
+                     * 获取<p>通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。</p>
+                     * @return IsPermanent <p>通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。</p>
                      * 
                      */
                     bool GetIsPermanent() const;
 
                     /**
-                     * 设置通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。
-                     * @param _isPermanent 通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。
+                     * 设置<p>通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。</p>
+                     * @param _isPermanent <p>通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。</p>
                      * 
                      */
                     void SetIsPermanent(const bool& _isPermanent);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool IsPermanentHasBeenSet() const;
 
                     /**
-                     * 获取定期备份策略的名称。
-                     * @return AutoBackupPolicyName 定期备份策略的名称。
+                     * 获取<p>定期备份策略的名称。</p>
+                     * @return AutoBackupPolicyName <p>定期备份策略的名称。</p>
                      * 
                      */
                     std::string GetAutoBackupPolicyName() const;
 
                     /**
-                     * 设置定期备份策略的名称。
-                     * @param _autoBackupPolicyName 定期备份策略的名称。
+                     * 设置<p>定期备份策略的名称。</p>
+                     * @param _autoBackupPolicyName <p>定期备份策略的名称。</p>
                      * 
                      */
                     void SetAutoBackupPolicyName(const std::string& _autoBackupPolicyName);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool AutoBackupPolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取是否激活定期备份策略。
-                     * @return IsActivated 是否激活定期备份策略。
+                     * 获取<p>是否激活定期备份策略。</p>
+                     * @return IsActivated <p>是否激活定期备份策略。</p>
                      * 
                      */
                     bool GetIsActivated() const;
 
                     /**
-                     * 设置是否激活定期备份策略。
-                     * @param _isActivated 是否激活定期备份策略。
+                     * 设置<p>是否激活定期备份策略。</p>
+                     * @param _isActivated <p>是否激活定期备份策略。</p>
                      * 
                      */
                     void SetIsActivated(const bool& _isActivated);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool IsActivatedHasBeenSet() const;
 
                     /**
-                     * 获取通过定期备份策略创建出的备份保留时间。
-                     * @return RetentionDays 通过定期备份策略创建出的备份保留时间。
+                     * 获取<p>通过定期备份策略创建出的备份保留时间。本参数与 RetentionMonths、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
+                     * @return RetentionDays <p>通过定期备份策略创建出的备份保留时间。本参数与 RetentionMonths、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
                      * 
                      */
                     uint64_t GetRetentionDays() const;
 
                     /**
-                     * 设置通过定期备份策略创建出的备份保留时间。
-                     * @param _retentionDays 通过定期备份策略创建出的备份保留时间。
+                     * 设置<p>通过定期备份策略创建出的备份保留时间。本参数与 RetentionMonths、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
+                     * @param _retentionDays <p>通过定期备份策略创建出的备份保留时间。本参数与 RetentionMonths、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
                      * 
                      */
                     void SetRetentionDays(const uint64_t& _retentionDays);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool RetentionDaysHasBeenSet() const;
 
                     /**
-                     * 获取该定期备份策略创建的备份可以保留的月数，该参数不可与IsPermanent/RetentionDays参数冲突。
-                     * @return RetentionMonths 该定期备份策略创建的备份可以保留的月数，该参数不可与IsPermanent/RetentionDays参数冲突。
+                     * 获取<p>该定期备份策略创建的备份可以保留的月数。本参数与 RetentionDays、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
+                     * @return RetentionMonths <p>该定期备份策略创建的备份可以保留的月数。本参数与 RetentionDays、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
                      * 
                      */
                     uint64_t GetRetentionMonths() const;
 
                     /**
-                     * 设置该定期备份策略创建的备份可以保留的月数，该参数不可与IsPermanent/RetentionDays参数冲突。
-                     * @param _retentionMonths 该定期备份策略创建的备份可以保留的月数，该参数不可与IsPermanent/RetentionDays参数冲突。
+                     * 设置<p>该定期备份策略创建的备份可以保留的月数。本参数与 RetentionDays、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
+                     * @param _retentionMonths <p>该定期备份策略创建的备份可以保留的月数。本参数与 RetentionDays、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
                      * 
                      */
                     void SetRetentionMonths(const uint64_t& _retentionMonths);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool RetentionMonthsHasBeenSet() const;
 
                     /**
-                     * 获取通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份，该参数不可与IsPermanent参数冲突。
-                     * @return RetentionAmount 通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份，该参数不可与IsPermanent参数冲突。
+                     * 获取<p>通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份。本参数与 RetentionDays、RetentionMonths互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
+                     * @return RetentionAmount <p>通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份。本参数与 RetentionDays、RetentionMonths互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
                      * 
                      */
                     uint64_t GetRetentionAmount() const;
 
                     /**
-                     * 设置通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份，该参数不可与IsPermanent参数冲突。
-                     * @param _retentionAmount 通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份，该参数不可与IsPermanent参数冲突。
+                     * 设置<p>通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份。本参数与 RetentionDays、RetentionMonths互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
+                     * @param _retentionAmount <p>通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份。本参数与 RetentionDays、RetentionMonths互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
                      * 
                      */
                     void SetRetentionAmount(const uint64_t& _retentionAmount);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool RetentionAmountHasBeenSet() const;
 
                     /**
-                     * 获取备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON
-                     * @return StorageType 备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON
+                     * 获取<p>备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON</p>
+                     * @return StorageType <p>备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON</p>
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON
-                     * @param _storageType 备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON
+                     * 设置<p>备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON</p>
+                     * @param _storageType <p>备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON</p>
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。
-                     * @return VaultId 备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。
+                     * 获取<p>备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。</p>
+                     * @return VaultId <p>备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。</p>
                      * 
                      */
                     std::string GetVaultId() const;
 
                     /**
-                     * 设置备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。
-                     * @param _vaultId 备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。
+                     * 设置<p>备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。</p>
+                     * @param _vaultId <p>备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。</p>
                      * 
                      */
                     void SetVaultId(const std::string& _vaultId);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool VaultIdHasBeenSet() const;
 
                     /**
-                     * 获取定期备份高级保留策略，该参数不可与IsPermanent参数冲突。
-                     * @return AdvancedRetentionPolicy 定期备份高级保留策略，该参数不可与IsPermanent参数冲突。
+                     * 获取<p>定期备份高级保留策略，该参数不可与 IsPermanent 参数冲突。当 IsPermanent 为 false 或不传、且未传入 RetentionDays / RetentionMonths / RetentionAmount 时，必须传入本参数。</p>
+                     * @return AdvancedRetentionPolicy <p>定期备份高级保留策略，该参数不可与 IsPermanent 参数冲突。当 IsPermanent 为 false 或不传、且未传入 RetentionDays / RetentionMonths / RetentionAmount 时，必须传入本参数。</p>
                      * 
                      */
                     AdvancedRetentionPolicy GetAdvancedRetentionPolicy() const;
 
                     /**
-                     * 设置定期备份高级保留策略，该参数不可与IsPermanent参数冲突。
-                     * @param _advancedRetentionPolicy 定期备份高级保留策略，该参数不可与IsPermanent参数冲突。
+                     * 设置<p>定期备份高级保留策略，该参数不可与 IsPermanent 参数冲突。当 IsPermanent 为 false 或不传、且未传入 RetentionDays / RetentionMonths / RetentionAmount 时，必须传入本参数。</p>
+                     * @param _advancedRetentionPolicy <p>定期备份高级保留策略，该参数不可与 IsPermanent 参数冲突。当 IsPermanent 为 false 或不传、且未传入 RetentionDays / RetentionMonths / RetentionAmount 时，必须传入本参数。</p>
                      * 
                      */
                     void SetAdvancedRetentionPolicy(const AdvancedRetentionPolicy& _advancedRetentionPolicy);
@@ -257,61 +257,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 定期备份的执行策略。
+                     * <p>定期备份的执行策略。</p>
                      */
                     std::vector<Policy> m_policy;
                     bool m_policyHasBeenSet;
 
                     /**
-                     * 通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。
+                     * <p>通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。</p>
                      */
                     bool m_isPermanent;
                     bool m_isPermanentHasBeenSet;
 
                     /**
-                     * 定期备份策略的名称。
+                     * <p>定期备份策略的名称。</p>
                      */
                     std::string m_autoBackupPolicyName;
                     bool m_autoBackupPolicyNameHasBeenSet;
 
                     /**
-                     * 是否激活定期备份策略。
+                     * <p>是否激活定期备份策略。</p>
                      */
                     bool m_isActivated;
                     bool m_isActivatedHasBeenSet;
 
                     /**
-                     * 通过定期备份策略创建出的备份保留时间。
+                     * <p>通过定期备份策略创建出的备份保留时间。本参数与 RetentionMonths、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
                      */
                     uint64_t m_retentionDays;
                     bool m_retentionDaysHasBeenSet;
 
                     /**
-                     * 该定期备份策略创建的备份可以保留的月数，该参数不可与IsPermanent/RetentionDays参数冲突。
+                     * <p>该定期备份策略创建的备份可以保留的月数。本参数与 RetentionDays、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
                      */
                     uint64_t m_retentionMonths;
                     bool m_retentionMonthsHasBeenSet;
 
                     /**
-                     * 通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份，该参数不可与IsPermanent参数冲突。
+                     * <p>通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份。本参数与 RetentionDays、RetentionMonths互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>
                      */
                     uint64_t m_retentionAmount;
                     bool m_retentionAmountHasBeenSet;
 
                     /**
-                     * 备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON
+                     * <p>备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON</p>
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。
+                     * <p>备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。</p>
                      */
                     std::string m_vaultId;
                     bool m_vaultIdHasBeenSet;
 
                     /**
-                     * 定期备份高级保留策略，该参数不可与IsPermanent参数冲突。
+                     * <p>定期备份高级保留策略，该参数不可与 IsPermanent 参数冲突。当 IsPermanent 为 false 或不传、且未传入 RetentionDays / RetentionMonths / RetentionAmount 时，必须传入本参数。</p>
                      */
                     AdvancedRetentionPolicy m_advancedRetentionPolicy;
                     bool m_advancedRetentionPolicyHasBeenSet;

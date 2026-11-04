@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取电子印章编号
-                     * @return SealId 电子印章编号
+                     * 获取<p>电子印章编号</p>
+                     * @return SealId <p>电子印章编号</p>
                      * 
                      */
                     std::string GetSealId() const;
 
                     /**
-                     * 设置电子印章编号
-                     * @param _sealId 电子印章编号
+                     * 设置<p>电子印章编号</p>
+                     * @param _sealId <p>电子印章编号</p>
                      * 
                      */
                     void SetSealId(const std::string& _sealId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool SealIdHasBeenSet() const;
 
                     /**
-                     * 获取电子印章名称
-                     * @return SealName 电子印章名称
+                     * 获取<p>电子印章名称</p>
+                     * @return SealName <p>电子印章名称</p>
                      * 
                      */
                     std::string GetSealName() const;
 
                     /**
-                     * 设置电子印章名称
-                     * @param _sealName 电子印章名称
+                     * 设置<p>电子印章名称</p>
+                     * @param _sealName <p>电子印章名称</p>
                      * 
                      */
                     void SetSealName(const std::string& _sealName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool SealNameHasBeenSet() const;
 
                     /**
-                     * 获取电子印章授权时间戳，单位秒
-                     * @return CreateOn 电子印章授权时间戳，单位秒
+                     * 获取<p>电子印章授权时间戳，单位秒</p>
+                     * @return CreateOn <p>电子印章授权时间戳，单位秒</p>
                      * 
                      */
                     int64_t GetCreateOn() const;
 
                     /**
-                     * 设置电子印章授权时间戳，单位秒
-                     * @param _createOn 电子印章授权时间戳，单位秒
+                     * 设置<p>电子印章授权时间戳，单位秒</p>
+                     * @param _createOn <p>电子印章授权时间戳，单位秒</p>
                      * 
                      */
                     void SetCreateOn(const int64_t& _createOn);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool CreateOnHasBeenSet() const;
 
                     /**
-                     * 获取电子印章授权人，电子签的UserId
-                     * @return Creator 电子印章授权人，电子签的UserId
+                     * 获取<p>电子印章授权人，电子签的UserId</p>
+                     * @return Creator <p>电子印章授权人，电子签的UserId</p>
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置电子印章授权人，电子签的UserId
-                     * @param _creator 电子印章授权人，电子签的UserId
+                     * 设置<p>电子印章授权人，电子签的UserId</p>
+                     * @param _creator <p>电子印章授权人，电子签的UserId</p>
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取电子印章策略Id
-                     * @return SealPolicyId 电子印章策略Id
+                     * 获取<p>电子印章策略Id</p>
+                     * @return SealPolicyId <p>电子印章策略Id</p>
                      * 
                      */
                     std::string GetSealPolicyId() const;
 
                     /**
-                     * 设置电子印章策略Id
-                     * @param _sealPolicyId 电子印章策略Id
+                     * 设置<p>电子印章策略Id</p>
+                     * @param _sealPolicyId <p>电子印章策略Id</p>
                      * 
                      */
                     void SetSealPolicyId(const std::string& _sealPolicyId);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool SealPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取印章状态，有以下六种：CHECKING（审核中）SUCCESS（已启用）FAIL（审核拒绝）CHECKING-SADM（待超管审核）DISABLE（已停用）STOPPED（已终止）
-                     * @return SealStatus 印章状态，有以下六种：CHECKING（审核中）SUCCESS（已启用）FAIL（审核拒绝）CHECKING-SADM（待超管审核）DISABLE（已停用）STOPPED（已终止）
+                     * 获取<p>印章状态</p><p>枚举值：</p><ul><li>CHECKING： 待审核</li><li>CHECKING-SADM： 待超管审核</li><li>SUCCESS： 启用状态</li><li>FAIL： 审核拒绝</li><li>DISABLE： 已停用</li><li>STOPPED： 已终止</li><li>VOID： 已作废</li><li>INVALID： 已失效</li></ul>
+                     * @return SealStatus <p>印章状态</p><p>枚举值：</p><ul><li>CHECKING： 待审核</li><li>CHECKING-SADM： 待超管审核</li><li>SUCCESS： 启用状态</li><li>FAIL： 审核拒绝</li><li>DISABLE： 已停用</li><li>STOPPED： 已终止</li><li>VOID： 已作废</li><li>INVALID： 已失效</li></ul>
                      * 
                      */
                     std::string GetSealStatus() const;
 
                     /**
-                     * 设置印章状态，有以下六种：CHECKING（审核中）SUCCESS（已启用）FAIL（审核拒绝）CHECKING-SADM（待超管审核）DISABLE（已停用）STOPPED（已终止）
-                     * @param _sealStatus 印章状态，有以下六种：CHECKING（审核中）SUCCESS（已启用）FAIL（审核拒绝）CHECKING-SADM（待超管审核）DISABLE（已停用）STOPPED（已终止）
+                     * 设置<p>印章状态</p><p>枚举值：</p><ul><li>CHECKING： 待审核</li><li>CHECKING-SADM： 待超管审核</li><li>SUCCESS： 启用状态</li><li>FAIL： 审核拒绝</li><li>DISABLE： 已停用</li><li>STOPPED： 已终止</li><li>VOID： 已作废</li><li>INVALID： 已失效</li></ul>
+                     * @param _sealStatus <p>印章状态</p><p>枚举值：</p><ul><li>CHECKING： 待审核</li><li>CHECKING-SADM： 待超管审核</li><li>SUCCESS： 启用状态</li><li>FAIL： 审核拒绝</li><li>DISABLE： 已停用</li><li>STOPPED： 已终止</li><li>VOID： 已作废</li><li>INVALID： 已失效</li></ul>
                      * 
                      */
                     void SetSealStatus(const std::string& _sealStatus);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool SealStatusHasBeenSet() const;
 
                     /**
-                     * 获取审核失败原因
-                     * @return FailReason 审核失败原因
+                     * 获取<p>审核失败原因</p>
+                     * @return FailReason <p>审核失败原因</p>
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
-                     * 设置审核失败原因
-                     * @param _failReason 审核失败原因
+                     * 设置<p>审核失败原因</p>
+                     * @param _failReason <p>审核失败原因</p>
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool FailReasonHasBeenSet() const;
 
                     /**
-                     * 获取印章图片url，5分钟内有效
-                     * @return Url 印章图片url，5分钟内有效
+                     * 获取<p>印章图片url，5分钟内有效</p>
+                     * @return Url <p>印章图片url，5分钟内有效</p>
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置印章图片url，5分钟内有效
-                     * @param _url 印章图片url，5分钟内有效
+                     * 设置<p>印章图片url，5分钟内有效</p>
+                     * @param _url <p>印章图片url，5分钟内有效</p>
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -216,39 +216,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取电子印章类型 , 可选类型如下: 
-<ul><li>**OFFICIAL**: (默认)公章</li>
-<li>**CONTRACT**: 合同专用章;</li>
-<li>**FINANCE**: 财务专用章;</li>
-<li>**PERSONNEL**: 人事专用章</li>
-<li>**INVOICE**: 发票专用章</li>
-</ul>
-                     * @return SealType 电子印章类型 , 可选类型如下: 
-<ul><li>**OFFICIAL**: (默认)公章</li>
-<li>**CONTRACT**: 合同专用章;</li>
-<li>**FINANCE**: 财务专用章;</li>
-<li>**PERSONNEL**: 人事专用章</li>
-<li>**INVOICE**: 发票专用章</li>
-</ul>
+                     * 获取<p>电子印章类型 , 可选类型如下: </p><ul><li>**OFFICIAL**: (默认)公章</li><li>**CONTRACT**: 合同专用章;</li><li>**FINANCE**: 财务专用章;</li><li>**PERSONNEL**: 人事专用章</li><li>**INVOICE**: 发票专用章</li></ul>
+                     * @return SealType <p>电子印章类型 , 可选类型如下: </p><ul><li>**OFFICIAL**: (默认)公章</li><li>**CONTRACT**: 合同专用章;</li><li>**FINANCE**: 财务专用章;</li><li>**PERSONNEL**: 人事专用章</li><li>**INVOICE**: 发票专用章</li></ul>
                      * 
                      */
                     std::string GetSealType() const;
 
                     /**
-                     * 设置电子印章类型 , 可选类型如下: 
-<ul><li>**OFFICIAL**: (默认)公章</li>
-<li>**CONTRACT**: 合同专用章;</li>
-<li>**FINANCE**: 财务专用章;</li>
-<li>**PERSONNEL**: 人事专用章</li>
-<li>**INVOICE**: 发票专用章</li>
-</ul>
-                     * @param _sealType 电子印章类型 , 可选类型如下: 
-<ul><li>**OFFICIAL**: (默认)公章</li>
-<li>**CONTRACT**: 合同专用章;</li>
-<li>**FINANCE**: 财务专用章;</li>
-<li>**PERSONNEL**: 人事专用章</li>
-<li>**INVOICE**: 发票专用章</li>
-</ul>
+                     * 设置<p>电子印章类型 , 可选类型如下: </p><ul><li>**OFFICIAL**: (默认)公章</li><li>**CONTRACT**: 合同专用章;</li><li>**FINANCE**: 财务专用章;</li><li>**PERSONNEL**: 人事专用章</li><li>**INVOICE**: 发票专用章</li></ul>
+                     * @param _sealType <p>电子印章类型 , 可选类型如下: </p><ul><li>**OFFICIAL**: (默认)公章</li><li>**CONTRACT**: 合同专用章;</li><li>**FINANCE**: 财务专用章;</li><li>**PERSONNEL**: 人事专用章</li><li>**INVOICE**: 发票专用章</li></ul>
                      * 
                      */
                     void SetSealType(const std::string& _sealType);
@@ -261,15 +237,15 @@ namespace TencentCloud
                     bool SealTypeHasBeenSet() const;
 
                     /**
-                     * 获取用印申请是否为永久授权
-                     * @return IsAllTime 用印申请是否为永久授权
+                     * 获取<p>用印申请是否为永久授权</p>
+                     * @return IsAllTime <p>用印申请是否为永久授权</p>
                      * 
                      */
                     bool GetIsAllTime() const;
 
                     /**
-                     * 设置用印申请是否为永久授权
-                     * @param _isAllTime 用印申请是否为永久授权
+                     * 设置<p>用印申请是否为永久授权</p>
+                     * @param _isAllTime <p>用印申请是否为永久授权</p>
                      * 
                      */
                     void SetIsAllTime(const bool& _isAllTime);
@@ -282,15 +258,15 @@ namespace TencentCloud
                     bool IsAllTimeHasBeenSet() const;
 
                     /**
-                     * 获取授权人列表
-                     * @return AuthorizedUsers 授权人列表
+                     * 获取<p>授权人列表</p>
+                     * @return AuthorizedUsers <p>授权人列表</p>
                      * 
                      */
                     std::vector<AuthorizedUser> GetAuthorizedUsers() const;
 
                     /**
-                     * 设置授权人列表
-                     * @param _authorizedUsers 授权人列表
+                     * 设置<p>授权人列表</p>
+                     * @param _authorizedUsers <p>授权人列表</p>
                      * 
                      */
                     void SetAuthorizedUsers(const std::vector<AuthorizedUser>& _authorizedUsers);
@@ -303,15 +279,15 @@ namespace TencentCloud
                     bool AuthorizedUsersHasBeenSet() const;
 
                     /**
-                     * 获取印章的真实宽度，单位毫米	
-                     * @return RealWidth 印章的真实宽度，单位毫米	
+                     * 获取<p>印章的真实宽度，单位毫米</p>
+                     * @return RealWidth <p>印章的真实宽度，单位毫米</p>
                      * 
                      */
                     int64_t GetRealWidth() const;
 
                     /**
-                     * 设置印章的真实宽度，单位毫米	
-                     * @param _realWidth 印章的真实宽度，单位毫米	
+                     * 设置<p>印章的真实宽度，单位毫米</p>
+                     * @param _realWidth <p>印章的真实宽度，单位毫米</p>
                      * 
                      */
                     void SetRealWidth(const int64_t& _realWidth);
@@ -324,15 +300,15 @@ namespace TencentCloud
                     bool RealWidthHasBeenSet() const;
 
                     /**
-                     * 获取印章的真实高度，单位毫米	
-                     * @return RealHeight 印章的真实高度，单位毫米	
+                     * 获取<p>印章的真实高度，单位毫米</p>
+                     * @return RealHeight <p>印章的真实高度，单位毫米</p>
                      * 
                      */
                     int64_t GetRealHeight() const;
 
                     /**
-                     * 设置印章的真实高度，单位毫米	
-                     * @param _realHeight 印章的真实高度，单位毫米	
+                     * 设置<p>印章的真实高度，单位毫米</p>
+                     * @param _realHeight <p>印章的真实高度，单位毫米</p>
                      * 
                      */
                     void SetRealHeight(const int64_t& _realHeight);
@@ -345,15 +321,15 @@ namespace TencentCloud
                     bool RealHeightHasBeenSet() const;
 
                     /**
-                     * 获取印章描述
-                     * @return SealDescription 印章描述
+                     * 获取<p>印章描述</p>
+                     * @return SealDescription <p>印章描述</p>
                      * 
                      */
                     std::string GetSealDescription() const;
 
                     /**
-                     * 设置印章描述
-                     * @param _sealDescription 印章描述
+                     * 设置<p>印章描述</p>
+                     * @param _sealDescription <p>印章描述</p>
                      * 
                      */
                     void SetSealDescription(const std::string& _sealDescription);
@@ -368,91 +344,85 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 电子印章编号
+                     * <p>电子印章编号</p>
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;
 
                     /**
-                     * 电子印章名称
+                     * <p>电子印章名称</p>
                      */
                     std::string m_sealName;
                     bool m_sealNameHasBeenSet;
 
                     /**
-                     * 电子印章授权时间戳，单位秒
+                     * <p>电子印章授权时间戳，单位秒</p>
                      */
                     int64_t m_createOn;
                     bool m_createOnHasBeenSet;
 
                     /**
-                     * 电子印章授权人，电子签的UserId
+                     * <p>电子印章授权人，电子签的UserId</p>
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 电子印章策略Id
+                     * <p>电子印章策略Id</p>
                      */
                     std::string m_sealPolicyId;
                     bool m_sealPolicyIdHasBeenSet;
 
                     /**
-                     * 印章状态，有以下六种：CHECKING（审核中）SUCCESS（已启用）FAIL（审核拒绝）CHECKING-SADM（待超管审核）DISABLE（已停用）STOPPED（已终止）
+                     * <p>印章状态</p><p>枚举值：</p><ul><li>CHECKING： 待审核</li><li>CHECKING-SADM： 待超管审核</li><li>SUCCESS： 启用状态</li><li>FAIL： 审核拒绝</li><li>DISABLE： 已停用</li><li>STOPPED： 已终止</li><li>VOID： 已作废</li><li>INVALID： 已失效</li></ul>
                      */
                     std::string m_sealStatus;
                     bool m_sealStatusHasBeenSet;
 
                     /**
-                     * 审核失败原因
+                     * <p>审核失败原因</p>
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
 
                     /**
-                     * 印章图片url，5分钟内有效
+                     * <p>印章图片url，5分钟内有效</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 电子印章类型 , 可选类型如下: 
-<ul><li>**OFFICIAL**: (默认)公章</li>
-<li>**CONTRACT**: 合同专用章;</li>
-<li>**FINANCE**: 财务专用章;</li>
-<li>**PERSONNEL**: 人事专用章</li>
-<li>**INVOICE**: 发票专用章</li>
-</ul>
+                     * <p>电子印章类型 , 可选类型如下: </p><ul><li>**OFFICIAL**: (默认)公章</li><li>**CONTRACT**: 合同专用章;</li><li>**FINANCE**: 财务专用章;</li><li>**PERSONNEL**: 人事专用章</li><li>**INVOICE**: 发票专用章</li></ul>
                      */
                     std::string m_sealType;
                     bool m_sealTypeHasBeenSet;
 
                     /**
-                     * 用印申请是否为永久授权
+                     * <p>用印申请是否为永久授权</p>
                      */
                     bool m_isAllTime;
                     bool m_isAllTimeHasBeenSet;
 
                     /**
-                     * 授权人列表
+                     * <p>授权人列表</p>
                      */
                     std::vector<AuthorizedUser> m_authorizedUsers;
                     bool m_authorizedUsersHasBeenSet;
 
                     /**
-                     * 印章的真实宽度，单位毫米	
+                     * <p>印章的真实宽度，单位毫米</p>
                      */
                     int64_t m_realWidth;
                     bool m_realWidthHasBeenSet;
 
                     /**
-                     * 印章的真实高度，单位毫米	
+                     * <p>印章的真实高度，单位毫米</p>
                      */
                     int64_t m_realHeight;
                     bool m_realHeightHasBeenSet;
 
                     /**
-                     * 印章描述
+                     * <p>印章描述</p>
                      */
                     std::string m_sealDescription;
                     bool m_sealDescriptionHasBeenSet;

@@ -465,6 +465,27 @@ namespace TencentCloud
                     bool EnableTokenHasBeenSet() const;
 
                     /**
+                     * 获取<p>弹性伸缩配置（JSON）</p>
+                     * @return AutoscalerOptions <p>弹性伸缩配置（JSON）</p>
+                     * 
+                     */
+                    std::string GetAutoscalerOptions() const;
+
+                    /**
+                     * 设置<p>弹性伸缩配置（JSON）</p>
+                     * @param _autoscalerOptions <p>弹性伸缩配置（JSON）</p>
+                     * 
+                     */
+                    void SetAutoscalerOptions(const std::string& _autoscalerOptions);
+
+                    /**
+                     * 判断参数 AutoscalerOptions 是否已赋值
+                     * @return AutoscalerOptions 是否已赋值
+                     * 
+                     */
+                    bool AutoscalerOptionsHasBeenSet() const;
+
+                    /**
                      * 获取<p>镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>
                      * @return ImagePullType <p>镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>
                      * 
@@ -648,6 +669,12 @@ namespace TencentCloud
                      */
                     bool m_enableToken;
                     bool m_enableTokenHasBeenSet;
+
+                    /**
+                     * <p>弹性伸缩配置（JSON）</p>
+                     */
+                    std::string m_autoscalerOptions;
+                    bool m_autoscalerOptionsHasBeenSet;
 
                     /**
                      * <p>镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>

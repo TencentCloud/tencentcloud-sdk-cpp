@@ -36,7 +36,8 @@ ApplicationInfo::ApplicationInfo() :
     m_winProcessNameHasBeenSet(false),
     m_domainListHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_nameLimitHasBeenSet(false)
+    m_nameLimitHasBeenSet(false),
+    m_linuxProcessNameHasBeenSet(false)
 {
 }
 
@@ -228,6 +229,16 @@ CoreInternalOutcome ApplicationInfo::Deserialize(const rapidjson::Value &value)
         m_nameLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("LinuxProcessName") && !value["LinuxProcessName"].IsNull())
+    {
+        if (!value["LinuxProcessName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationInfo.LinuxProcessName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_linuxProcessName = string(value["LinuxProcessName"].GetString());
+        m_linuxProcessNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -380,6 +391,14 @@ void ApplicationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "NameLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nameLimit, allocator);
+    }
+
+    if (m_linuxProcessNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LinuxProcessName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_linuxProcessName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -639,5 +658,21 @@ void ApplicationInfo::SetNameLimit(const uint64_t& _nameLimit)
 bool ApplicationInfo::NameLimitHasBeenSet() const
 {
     return m_nameLimitHasBeenSet;
+}
+
+string ApplicationInfo::GetLinuxProcessName() const
+{
+    return m_linuxProcessName;
+}
+
+void ApplicationInfo::SetLinuxProcessName(const string& _linuxProcessName)
+{
+    m_linuxProcessName = _linuxProcessName;
+    m_linuxProcessNameHasBeenSet = true;
+}
+
+bool ApplicationInfo::LinuxProcessNameHasBeenSet() const
+{
+    return m_linuxProcessNameHasBeenSet;
 }
 

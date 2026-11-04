@@ -60,7 +60,8 @@ WorkflowTaskRun::WorkflowTaskRun() :
     m_dependOnRunConditionHasBeenSet(false),
     m_advancedDependencyConfigHasBeenSet(false),
     m_innerTaskHasBeenSet(false),
-    m_scheduledTimeHasBeenSet(false)
+    m_scheduledTimeHasBeenSet(false),
+    m_fileArrivalConfigHasBeenSet(false)
 {
 }
 
@@ -496,6 +497,23 @@ CoreInternalOutcome WorkflowTaskRun::Deserialize(const rapidjson::Value &value)
         m_scheduledTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FileArrivalConfig") && !value["FileArrivalConfig"].IsNull())
+    {
+        if (!value["FileArrivalConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowTaskRun.FileArrivalConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fileArrivalConfig.Deserialize(value["FileArrivalConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fileArrivalConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -835,6 +853,15 @@ void WorkflowTaskRun::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ScheduledTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scheduledTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileArrivalConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileArrivalConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileArrivalConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1478,5 +1505,21 @@ void WorkflowTaskRun::SetScheduledTime(const string& _scheduledTime)
 bool WorkflowTaskRun::ScheduledTimeHasBeenSet() const
 {
     return m_scheduledTimeHasBeenSet;
+}
+
+FileArrivalConfig WorkflowTaskRun::GetFileArrivalConfig() const
+{
+    return m_fileArrivalConfig;
+}
+
+void WorkflowTaskRun::SetFileArrivalConfig(const FileArrivalConfig& _fileArrivalConfig)
+{
+    m_fileArrivalConfig = _fileArrivalConfig;
+    m_fileArrivalConfigHasBeenSet = true;
+}
+
+bool WorkflowTaskRun::FileArrivalConfigHasBeenSet() const
+{
+    return m_fileArrivalConfigHasBeenSet;
 }
 

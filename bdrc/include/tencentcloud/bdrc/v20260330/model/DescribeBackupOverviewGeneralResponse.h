@@ -63,8 +63,8 @@ namespace TencentCloud
                     bool InstanceBackupOverviewHasBeenSet() const;
 
                     /**
-                     * 获取<p>文件备份概览数据</p>
-                     * @return FileBackupOverview <p>文件备份概览数据</p>
+                     * 获取<p>CVM文件备份概览数据</p>
+                     * @return FileBackupOverview <p>CVM文件备份概览数据</p>
                      * 
                      */
                     FileBackupOverview GetFileBackupOverview() const;
@@ -118,6 +118,34 @@ namespace TencentCloud
                      */
                     bool ProtectedResourceOverviewHasBeenSet() const;
 
+                    /**
+                     * 获取<p>CFS文件备份概览数据</p>
+                     * @return CFSAgentBackupOverview <p>CFS文件备份概览数据</p>
+                     * 
+                     */
+                    FileBackupOverview GetCFSAgentBackupOverview() const;
+
+                    /**
+                     * 判断参数 CFSAgentBackupOverview 是否已赋值
+                     * @return CFSAgentBackupOverview 是否已赋值
+                     * 
+                     */
+                    bool CFSAgentBackupOverviewHasBeenSet() const;
+
+                    /**
+                     * 获取<p>COS备份概览数据</p>
+                     * @return COSAgentBackupOverview <p>COS备份概览数据</p>
+                     * 
+                     */
+                    FileBackupOverview GetCOSAgentBackupOverview() const;
+
+                    /**
+                     * 判断参数 COSAgentBackupOverview 是否已赋值
+                     * @return COSAgentBackupOverview 是否已赋值
+                     * 
+                     */
+                    bool COSAgentBackupOverviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -127,7 +155,7 @@ namespace TencentCloud
                     bool m_instanceBackupOverviewHasBeenSet;
 
                     /**
-                     * <p>文件备份概览数据</p>
+                     * <p>CVM文件备份概览数据</p>
                      */
                     FileBackupOverview m_fileBackupOverview;
                     bool m_fileBackupOverviewHasBeenSet;
@@ -149,6 +177,18 @@ namespace TencentCloud
                      */
                     ProtectedResourceOverview m_protectedResourceOverview;
                     bool m_protectedResourceOverviewHasBeenSet;
+
+                    /**
+                     * <p>CFS文件备份概览数据</p>
+                     */
+                    FileBackupOverview m_cFSAgentBackupOverview;
+                    bool m_cFSAgentBackupOverviewHasBeenSet;
+
+                    /**
+                     * <p>COS备份概览数据</p>
+                     */
+                    FileBackupOverview m_cOSAgentBackupOverview;
+                    bool m_cOSAgentBackupOverviewHasBeenSet;
 
                 };
             }

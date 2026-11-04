@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份点ID
-                     * @return BackupId 备份点ID
+                     * 获取<p>备份点ID</p>
+                     * @return BackupId <p>备份点ID</p>
                      * 
                      */
                     std::string GetBackupId() const;
 
                     /**
-                     * 设置备份点ID
-                     * @param _backupId 备份点ID
+                     * 设置<p>备份点ID</p>
+                     * @param _backupId <p>备份点ID</p>
                      * 
                      */
                     void SetBackupId(const std::string& _backupId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取备份名称
-                     * @return BackupName 备份名称
+                     * 获取<p>备份名称</p>
+                     * @return BackupName <p>备份名称</p>
                      * 
                      */
                     std::string GetBackupName() const;
 
                     /**
-                     * 设置备份名称
-                     * @param _backupName 备份名称
+                     * 设置<p>备份名称</p>
+                     * @param _backupName <p>备份名称</p>
                      * 
                      */
                     void SetBackupName(const std::string& _backupName);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool BackupNameHasBeenSet() const;
 
                     /**
-                     * 获取所属计划ID
+                     * 获取<p>所属计划ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PlanId 所属计划ID
+                     * @return PlanId <p>所属计划ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlanId() const;
 
                     /**
-                     * 设置所属计划ID
+                     * 设置<p>所属计划ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _planId 所属计划ID
+                     * @param _planId <p>所属计划ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool PlanIdHasBeenSet() const;
 
                     /**
-                     * 获取策略ID
-                     * @return AspInstanceId 策略ID
+                     * 获取<p>策略ID</p>
+                     * @return AspInstanceId <p>策略ID</p>
                      * 
                      */
                     std::string GetAspInstanceId() const;
 
                     /**
-                     * 设置策略ID
-                     * @param _aspInstanceId 策略ID
+                     * 设置<p>策略ID</p>
+                     * @param _aspInstanceId <p>策略ID</p>
                      * 
                      */
                     void SetAspInstanceId(const std::string& _aspInstanceId);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool AspInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源ID
-                     * @return ResourceId 资源ID
+                     * 获取<p>资源ID</p>
+                     * @return ResourceId <p>资源ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID
-                     * @param _resourceId 资源ID
+                     * 设置<p>资源ID</p>
+                     * @param _resourceId <p>资源ID</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -156,51 +156,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取备份状态，取值如下：
-0 备份完成
-1 创建中（备份进行中）
-2 部分成功（指定的备份路径中部分目录不存在）
-3 恢复中（该备份点正在被恢复任务使用）
-92  已取消
-98 创建失败
-99 已删除
-100 删除中
-
-                     * @return Status 备份状态，取值如下：
-0 备份完成
-1 创建中（备份进行中）
-2 部分成功（指定的备份路径中部分目录不存在）
-3 恢复中（该备份点正在被恢复任务使用）
-92  已取消
-98 创建失败
-99 已删除
-100 删除中
-
+                     * 获取<p>备份状态，取值如下：<br>0 备份完成<br>1 创建中（备份进行中）<br>2 部分成功（指定的备份路径中部分目录不存在）<br>3 恢复中（该备份点正在被恢复任务使用）<br>92  已取消<br>98 创建失败<br>99 已删除<br>100 删除中</p>
+                     * @return Status <p>备份状态，取值如下：<br>0 备份完成<br>1 创建中（备份进行中）<br>2 部分成功（指定的备份路径中部分目录不存在）<br>3 恢复中（该备份点正在被恢复任务使用）<br>92  已取消<br>98 创建失败<br>99 已删除<br>100 删除中</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置备份状态，取值如下：
-0 备份完成
-1 创建中（备份进行中）
-2 部分成功（指定的备份路径中部分目录不存在）
-3 恢复中（该备份点正在被恢复任务使用）
-92  已取消
-98 创建失败
-99 已删除
-100 删除中
-
-                     * @param _status 备份状态，取值如下：
-0 备份完成
-1 创建中（备份进行中）
-2 部分成功（指定的备份路径中部分目录不存在）
-3 恢复中（该备份点正在被恢复任务使用）
-92  已取消
-98 创建失败
-99 已删除
-100 删除中
-
+                     * 设置<p>备份状态，取值如下：<br>0 备份完成<br>1 创建中（备份进行中）<br>2 部分成功（指定的备份路径中部分目录不存在）<br>3 恢复中（该备份点正在被恢复任务使用）<br>92  已取消<br>98 创建失败<br>99 已删除<br>100 删除中</p>
+                     * @param _status <p>备份状态，取值如下：<br>0 备份完成<br>1 创建中（备份进行中）<br>2 部分成功（指定的备份路径中部分目录不存在）<br>3 恢复中（该备份点正在被恢复任务使用）<br>92  已取消<br>98 创建失败<br>99 已删除<br>100 删除中</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -213,15 +177,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取备份路径
-                     * @return BackupPaths 备份路径
+                     * 获取<p>备份路径</p>
+                     * @return BackupPaths <p>备份路径</p>
                      * 
                      */
                     std::vector<std::string> GetBackupPaths() const;
 
                     /**
-                     * 设置备份路径
-                     * @param _backupPaths 备份路径
+                     * 设置<p>备份路径</p>
+                     * @param _backupPaths <p>备份路径</p>
                      * 
                      */
                     void SetBackupPaths(const std::vector<std::string>& _backupPaths);
@@ -234,18 +198,18 @@ namespace TencentCloud
                     bool BackupPathsHasBeenSet() const;
 
                     /**
-                     * 获取包含文件类型
+                     * 获取<p>包含文件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IncludeFileTypes 包含文件类型
+                     * @return IncludeFileTypes <p>包含文件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetIncludeFileTypes() const;
 
                     /**
-                     * 设置包含文件类型
+                     * 设置<p>包含文件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _includeFileTypes 包含文件类型
+                     * @param _includeFileTypes <p>包含文件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -259,18 +223,18 @@ namespace TencentCloud
                     bool IncludeFileTypesHasBeenSet() const;
 
                     /**
-                     * 获取排除路径
+                     * 获取<p>排除路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExcludePatterns 排除路径
+                     * @return ExcludePatterns <p>排除路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetExcludePatterns() const;
 
                     /**
-                     * 设置排除路径
+                     * 设置<p>排除路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _excludePatterns 排除路径
+                     * @param _excludePatterns <p>排除路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -284,15 +248,15 @@ namespace TencentCloud
                     bool ExcludePatternsHasBeenSet() const;
 
                     /**
-                     * 获取是否排除系统目录
-                     * @return ExcludeSystemDirectories 是否排除系统目录
+                     * 获取<p>是否排除系统目录</p>
+                     * @return ExcludeSystemDirectories <p>是否排除系统目录</p>
                      * 
                      */
                     bool GetExcludeSystemDirectories() const;
 
                     /**
-                     * 设置是否排除系统目录
-                     * @param _excludeSystemDirectories 是否排除系统目录
+                     * 设置<p>是否排除系统目录</p>
+                     * @param _excludeSystemDirectories <p>是否排除系统目录</p>
                      * 
                      */
                     void SetExcludeSystemDirectories(const bool& _excludeSystemDirectories);
@@ -305,15 +269,15 @@ namespace TencentCloud
                     bool ExcludeSystemDirectoriesHasBeenSet() const;
 
                     /**
-                     * 获取备份库ID
-                     * @return VaultId 备份库ID
+                     * 获取<p>备份库ID</p>
+                     * @return VaultId <p>备份库ID</p>
                      * 
                      */
                     std::string GetVaultId() const;
 
                     /**
-                     * 设置备份库ID
-                     * @param _vaultId 备份库ID
+                     * 设置<p>备份库ID</p>
+                     * @param _vaultId <p>备份库ID</p>
                      * 
                      */
                     void SetVaultId(const std::string& _vaultId);
@@ -326,15 +290,15 @@ namespace TencentCloud
                     bool VaultIdHasBeenSet() const;
 
                     /**
-                     * 获取扫描文件数
-                     * @return ScannedFileCount 扫描文件数
+                     * 获取<p>扫描文件数</p>
+                     * @return ScannedFileCount <p>扫描文件数</p>
                      * 
                      */
                     int64_t GetScannedFileCount() const;
 
                     /**
-                     * 设置扫描文件数
-                     * @param _scannedFileCount 扫描文件数
+                     * 设置<p>扫描文件数</p>
+                     * @param _scannedFileCount <p>扫描文件数</p>
                      * 
                      */
                     void SetScannedFileCount(const int64_t& _scannedFileCount);
@@ -347,15 +311,15 @@ namespace TencentCloud
                     bool ScannedFileCountHasBeenSet() const;
 
                     /**
-                     * 获取扫描大小(字节)
-                     * @return ScannedSize 扫描大小(字节)
+                     * 获取<p>扫描大小(字节)</p>
+                     * @return ScannedSize <p>扫描大小(字节)</p>
                      * 
                      */
                     int64_t GetScannedSize() const;
 
                     /**
-                     * 设置扫描大小(字节)
-                     * @param _scannedSize 扫描大小(字节)
+                     * 设置<p>扫描大小(字节)</p>
+                     * @param _scannedSize <p>扫描大小(字节)</p>
                      * 
                      */
                     void SetScannedSize(const int64_t& _scannedSize);
@@ -368,15 +332,15 @@ namespace TencentCloud
                     bool ScannedSizeHasBeenSet() const;
 
                     /**
-                     * 获取扫描大小(格式化)
-                     * @return ScannedSizeFormatted 扫描大小(格式化)
+                     * 获取<p>扫描大小(格式化)</p>
+                     * @return ScannedSizeFormatted <p>扫描大小(格式化)</p>
                      * 
                      */
                     std::string GetScannedSizeFormatted() const;
 
                     /**
-                     * 设置扫描大小(格式化)
-                     * @param _scannedSizeFormatted 扫描大小(格式化)
+                     * 设置<p>扫描大小(格式化)</p>
+                     * @param _scannedSizeFormatted <p>扫描大小(格式化)</p>
                      * 
                      */
                     void SetScannedSizeFormatted(const std::string& _scannedSizeFormatted);
@@ -389,15 +353,15 @@ namespace TencentCloud
                     bool ScannedSizeFormattedHasBeenSet() const;
 
                     /**
-                     * 获取已备份文件数量
-                     * @return BackupFileCount 已备份文件数量
+                     * 获取<p>已备份文件数量</p>
+                     * @return BackupFileCount <p>已备份文件数量</p>
                      * 
                      */
                     int64_t GetBackupFileCount() const;
 
                     /**
-                     * 设置已备份文件数量
-                     * @param _backupFileCount 已备份文件数量
+                     * 设置<p>已备份文件数量</p>
+                     * @param _backupFileCount <p>已备份文件数量</p>
                      * 
                      */
                     void SetBackupFileCount(const int64_t& _backupFileCount);
@@ -410,15 +374,15 @@ namespace TencentCloud
                     bool BackupFileCountHasBeenSet() const;
 
                     /**
-                     * 获取已备份大小(字节)
-                     * @return BackupSize 已备份大小(字节)
+                     * 获取<p>已备份大小(字节)</p>
+                     * @return BackupSize <p>已备份大小(字节)</p>
                      * 
                      */
                     int64_t GetBackupSize() const;
 
                     /**
-                     * 设置已备份大小(字节)
-                     * @param _backupSize 已备份大小(字节)
+                     * 设置<p>已备份大小(字节)</p>
+                     * @param _backupSize <p>已备份大小(字节)</p>
                      * 
                      */
                     void SetBackupSize(const int64_t& _backupSize);
@@ -431,15 +395,15 @@ namespace TencentCloud
                     bool BackupSizeHasBeenSet() const;
 
                     /**
-                     * 获取已备份大小(格式化)
-                     * @return BackupSizeFormatted 已备份大小(格式化)
+                     * 获取<p>已备份大小(格式化)</p>
+                     * @return BackupSizeFormatted <p>已备份大小(格式化)</p>
                      * 
                      */
                     std::string GetBackupSizeFormatted() const;
 
                     /**
-                     * 设置已备份大小(格式化)
-                     * @param _backupSizeFormatted 已备份大小(格式化)
+                     * 设置<p>已备份大小(格式化)</p>
+                     * @param _backupSizeFormatted <p>已备份大小(格式化)</p>
                      * 
                      */
                     void SetBackupSizeFormatted(const std::string& _backupSizeFormatted);
@@ -452,15 +416,15 @@ namespace TencentCloud
                     bool BackupSizeFormattedHasBeenSet() const;
 
                     /**
-                     * 获取备份进度(0-100)
-                     * @return Progress 备份进度(0-100)
+                     * 获取<p>备份进度(0-100)</p>
+                     * @return Progress <p>备份进度(0-100)</p>
                      * 
                      */
                     double GetProgress() const;
 
                     /**
-                     * 设置备份进度(0-100)
-                     * @param _progress 备份进度(0-100)
+                     * 设置<p>备份进度(0-100)</p>
+                     * @param _progress <p>备份进度(0-100)</p>
                      * 
                      */
                     void SetProgress(const double& _progress);
@@ -473,15 +437,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取任务ID
-                     * @return JobId 任务ID
+                     * 获取<p>任务ID</p>
+                     * @return JobId <p>任务ID</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _jobId 任务ID
+                     * 设置<p>任务ID</p>
+                     * @param _jobId <p>任务ID</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -494,15 +458,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -515,15 +479,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -536,15 +500,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdTime <p>创建时间</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -557,15 +521,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否为永久保留
-                     * @return IsPermanent 是否为永久保留
+                     * 获取<p>是否为永久保留</p>
+                     * @return IsPermanent <p>是否为永久保留</p>
                      * 
                      */
                     bool GetIsPermanent() const;
 
                     /**
-                     * 设置是否为永久保留
-                     * @param _isPermanent 是否为永久保留
+                     * 设置<p>是否为永久保留</p>
+                     * @param _isPermanent <p>是否为永久保留</p>
                      * 
                      */
                     void SetIsPermanent(const bool& _isPermanent);
@@ -578,15 +542,15 @@ namespace TencentCloud
                     bool IsPermanentHasBeenSet() const;
 
                     /**
-                     * 获取到期时间
-                     * @return Deadline 到期时间
+                     * 获取<p>到期时间</p>
+                     * @return Deadline <p>到期时间</p>
                      * 
                      */
                     std::string GetDeadline() const;
 
                     /**
-                     * 设置到期时间
-                     * @param _deadline 到期时间
+                     * 设置<p>到期时间</p>
+                     * @param _deadline <p>到期时间</p>
                      * 
                      */
                     void SetDeadline(const std::string& _deadline);
@@ -599,18 +563,18 @@ namespace TencentCloud
                     bool DeadlineHasBeenSet() const;
 
                     /**
-                     * 获取不存在的路径信息
+                     * 获取<p>不存在的路径信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NonExistSourcePaths 不存在的路径信息
+                     * @return NonExistSourcePaths <p>不存在的路径信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNonExistSourcePaths() const;
 
                     /**
-                     * 设置不存在的路径信息
+                     * 设置<p>不存在的路径信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nonExistSourcePaths 不存在的路径信息
+                     * @param _nonExistSourcePaths <p>不存在的路径信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -624,15 +588,15 @@ namespace TencentCloud
                     bool NonExistSourcePathsHasBeenSet() const;
 
                     /**
-                     * 获取备份失败原因
-                     * @return FailReason 备份失败原因
+                     * 获取<p>备份失败原因</p>
+                     * @return FailReason <p>备份失败原因</p>
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
-                     * 设置备份失败原因
-                     * @param _failReason 备份失败原因
+                     * 设置<p>备份失败原因</p>
+                     * @param _failReason <p>备份失败原因</p>
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -645,15 +609,15 @@ namespace TencentCloud
                     bool FailReasonHasBeenSet() const;
 
                     /**
-                     * 获取备份所属AppId
-                     * @return AppId 备份所属AppId
+                     * 获取<p>备份所属AppId</p>
+                     * @return AppId <p>备份所属AppId</p>
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置备份所属AppId
-                     * @param _appId 备份所属AppId
+                     * 设置<p>备份所属AppId</p>
+                     * @param _appId <p>备份所属AppId</p>
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -666,15 +630,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取备份类型
-                     * @return ResourceType 备份类型
+                     * 获取<p>备份类型</p>
+                     * @return ResourceType <p>备份类型</p>
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置备份类型
-                     * @param _resourceType 备份类型
+                     * 设置<p>备份类型</p>
+                     * @param _resourceType <p>备份类型</p>
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -686,188 +650,339 @@ namespace TencentCloud
                      */
                     bool ResourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>cos备份场景使用，标识是否清单生成中</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsInventoryPending <p>cos备份场景使用，标识是否清单生成中</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsInventoryPending() const;
+
+                    /**
+                     * 设置<p>cos备份场景使用，标识是否清单生成中</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isInventoryPending <p>cos备份场景使用，标识是否清单生成中</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsInventoryPending(const bool& _isInventoryPending);
+
+                    /**
+                     * 判断参数 IsInventoryPending 是否已赋值
+                     * @return IsInventoryPending 是否已赋值
+                     * 
+                     */
+                    bool IsInventoryPendingHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableObjectAcl <p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnableObjectAcl() const;
+
+                    /**
+                     * 设置<p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableObjectAcl <p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableObjectAcl(const bool& _enableObjectAcl);
+
+                    /**
+                     * 判断参数 EnableObjectAcl 是否已赋值
+                     * @return EnableObjectAcl 是否已赋值
+                     * 
+                     */
+                    bool EnableObjectAclHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableObjectTags <p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnableObjectTags() const;
+
+                    /**
+                     * 设置<p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableObjectTags <p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableObjectTags(const bool& _enableObjectTags);
+
+                    /**
+                     * 判断参数 EnableObjectTags 是否已赋值
+                     * @return EnableObjectTags 是否已赋值
+                     * 
+                     */
+                    bool EnableObjectTagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>云上资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudResourceId <p>云上资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCloudResourceId() const;
+
+                    /**
+                     * 设置<p>云上资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cloudResourceId <p>云上资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCloudResourceId(const std::string& _cloudResourceId);
+
+                    /**
+                     * 判断参数 CloudResourceId 是否已赋值
+                     * @return CloudResourceId 是否已赋值
+                     * 
+                     */
+                    bool CloudResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductType <p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductType() const;
+
+                    /**
+                     * 设置<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productType <p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductType(const std::string& _productType);
+
+                    /**
+                     * 判断参数 ProductType 是否已赋值
+                     * @return ProductType 是否已赋值
+                     * 
+                     */
+                    bool ProductTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 备份点ID
+                     * <p>备份点ID</p>
                      */
                     std::string m_backupId;
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * 备份名称
+                     * <p>备份名称</p>
                      */
                     std::string m_backupName;
                     bool m_backupNameHasBeenSet;
 
                     /**
-                     * 所属计划ID
+                     * <p>所属计划ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_planId;
                     bool m_planIdHasBeenSet;
 
                     /**
-                     * 策略ID
+                     * <p>策略ID</p>
                      */
                     std::string m_aspInstanceId;
                     bool m_aspInstanceIdHasBeenSet;
 
                     /**
-                     * 资源ID
+                     * <p>资源ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 备份状态，取值如下：
-0 备份完成
-1 创建中（备份进行中）
-2 部分成功（指定的备份路径中部分目录不存在）
-3 恢复中（该备份点正在被恢复任务使用）
-92  已取消
-98 创建失败
-99 已删除
-100 删除中
-
+                     * <p>备份状态，取值如下：<br>0 备份完成<br>1 创建中（备份进行中）<br>2 部分成功（指定的备份路径中部分目录不存在）<br>3 恢复中（该备份点正在被恢复任务使用）<br>92  已取消<br>98 创建失败<br>99 已删除<br>100 删除中</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 备份路径
+                     * <p>备份路径</p>
                      */
                     std::vector<std::string> m_backupPaths;
                     bool m_backupPathsHasBeenSet;
 
                     /**
-                     * 包含文件类型
+                     * <p>包含文件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_includeFileTypes;
                     bool m_includeFileTypesHasBeenSet;
 
                     /**
-                     * 排除路径
+                     * <p>排除路径</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_excludePatterns;
                     bool m_excludePatternsHasBeenSet;
 
                     /**
-                     * 是否排除系统目录
+                     * <p>是否排除系统目录</p>
                      */
                     bool m_excludeSystemDirectories;
                     bool m_excludeSystemDirectoriesHasBeenSet;
 
                     /**
-                     * 备份库ID
+                     * <p>备份库ID</p>
                      */
                     std::string m_vaultId;
                     bool m_vaultIdHasBeenSet;
 
                     /**
-                     * 扫描文件数
+                     * <p>扫描文件数</p>
                      */
                     int64_t m_scannedFileCount;
                     bool m_scannedFileCountHasBeenSet;
 
                     /**
-                     * 扫描大小(字节)
+                     * <p>扫描大小(字节)</p>
                      */
                     int64_t m_scannedSize;
                     bool m_scannedSizeHasBeenSet;
 
                     /**
-                     * 扫描大小(格式化)
+                     * <p>扫描大小(格式化)</p>
                      */
                     std::string m_scannedSizeFormatted;
                     bool m_scannedSizeFormattedHasBeenSet;
 
                     /**
-                     * 已备份文件数量
+                     * <p>已备份文件数量</p>
                      */
                     int64_t m_backupFileCount;
                     bool m_backupFileCountHasBeenSet;
 
                     /**
-                     * 已备份大小(字节)
+                     * <p>已备份大小(字节)</p>
                      */
                     int64_t m_backupSize;
                     bool m_backupSizeHasBeenSet;
 
                     /**
-                     * 已备份大小(格式化)
+                     * <p>已备份大小(格式化)</p>
                      */
                     std::string m_backupSizeFormatted;
                     bool m_backupSizeFormattedHasBeenSet;
 
                     /**
-                     * 备份进度(0-100)
+                     * <p>备份进度(0-100)</p>
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 任务ID
+                     * <p>任务ID</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 是否为永久保留
+                     * <p>是否为永久保留</p>
                      */
                     bool m_isPermanent;
                     bool m_isPermanentHasBeenSet;
 
                     /**
-                     * 到期时间
+                     * <p>到期时间</p>
                      */
                     std::string m_deadline;
                     bool m_deadlineHasBeenSet;
 
                     /**
-                     * 不存在的路径信息
+                     * <p>不存在的路径信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_nonExistSourcePaths;
                     bool m_nonExistSourcePathsHasBeenSet;
 
                     /**
-                     * 备份失败原因
+                     * <p>备份失败原因</p>
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
 
                     /**
-                     * 备份所属AppId
+                     * <p>备份所属AppId</p>
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 备份类型
+                     * <p>备份类型</p>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * <p>cos备份场景使用，标识是否清单生成中</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isInventoryPending;
+                    bool m_isInventoryPendingHasBeenSet;
+
+                    /**
+                     * <p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableObjectAcl;
+                    bool m_enableObjectAclHasBeenSet;
+
+                    /**
+                     * <p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableObjectTags;
+                    bool m_enableObjectTagsHasBeenSet;
+
+                    /**
+                     * <p>云上资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cloudResourceId;
+                    bool m_cloudResourceIdHasBeenSet;
+
+                    /**
+                     * <p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productType;
+                    bool m_productTypeHasBeenSet;
 
                 };
             }

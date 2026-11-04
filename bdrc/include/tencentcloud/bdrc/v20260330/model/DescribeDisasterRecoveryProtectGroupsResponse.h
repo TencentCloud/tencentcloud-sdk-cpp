@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的容灾保护组总数
-                     * @return TotalCount 符合条件的容灾保护组总数
+                     * 获取<p>符合条件的容灾保护组总数</p>
+                     * @return TotalCount <p>符合条件的容灾保护组总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取容灾保护组列表
-                     * @return ProtectGroupSet 容灾保护组列表
+                     * 获取<p>容灾保护组列表</p>
+                     * @return ProtectGroupSet <p>容灾保护组列表</p>
                      * 
                      */
                     std::vector<ProtectGroup> GetProtectGroupSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的容灾保护组总数
+                     * <p>符合条件的容灾保护组总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 容灾保护组列表
+                     * <p>容灾保护组列表</p>
                      */
                     std::vector<ProtectGroup> m_protectGroupSet;
                     bool m_protectGroupSetHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数名称。
-                     * @return ParamName 参数名称。
+                     * 获取<p>参数名称。</p>
+                     * @return ParamName <p>参数名称。</p>
                      * 
                      */
                     std::string GetParamName() const;
 
                     /**
-                     * 设置参数名称。
-                     * @param _paramName 参数名称。
+                     * 设置<p>参数名称。</p>
+                     * @param _paramName <p>参数名称。</p>
                      * 
                      */
                     void SetParamName(const std::string& _paramName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ParamNameHasBeenSet() const;
 
                     /**
-                     * 获取参数类型，例如：Enum。
-                     * @return ValueType 参数类型，例如：Enum。
+                     * 获取<p>参数类型，例如：Enum。</p>
+                     * @return ValueType <p>参数类型，例如：Enum。</p>
                      * 
                      */
                     std::string GetValueType() const;
 
                     /**
-                     * 设置参数类型，例如：Enum。
-                     * @param _valueType 参数类型，例如：Enum。
+                     * 设置<p>参数类型，例如：Enum。</p>
+                     * @param _valueType <p>参数类型，例如：Enum。</p>
                      * 
                      */
                     void SetValueType(const std::string& _valueType);
@@ -89,23 +89,15 @@ namespace TencentCloud
                     bool ValueTypeHasBeenSet() const;
 
                     /**
-                     * 获取参数值修改后是否需要重启。
-- true：需要。
-- false：不需要。
-                     * @return NeedRestart 参数值修改后是否需要重启。
-- true：需要。
-- false：不需要。
+                     * 获取<p>参数值修改后是否需要重启。</p><ul><li>true：需要。</li><li>false：不需要。</li></ul>
+                     * @return NeedRestart <p>参数值修改后是否需要重启。</p><ul><li>true：需要。</li><li>false：不需要。</li></ul>
                      * 
                      */
                     std::string GetNeedRestart() const;
 
                     /**
-                     * 设置参数值修改后是否需要重启。
-- true：需要。
-- false：不需要。
-                     * @param _needRestart 参数值修改后是否需要重启。
-- true：需要。
-- false：不需要。
+                     * 设置<p>参数值修改后是否需要重启。</p><ul><li>true：需要。</li><li>false：不需要。</li></ul>
+                     * @param _needRestart <p>参数值修改后是否需要重启。</p><ul><li>true：需要。</li><li>false：不需要。</li></ul>
                      * 
                      */
                     void SetNeedRestart(const std::string& _needRestart);
@@ -118,15 +110,15 @@ namespace TencentCloud
                     bool NeedRestartHasBeenSet() const;
 
                     /**
-                     * 获取参数默认值。
-                     * @return DefaultValue 参数默认值。
+                     * 获取<p>参数默认值。</p>
+                     * @return DefaultValue <p>参数默认值。</p>
                      * 
                      */
                     std::string GetDefaultValue() const;
 
                     /**
-                     * 设置参数默认值。
-                     * @param _defaultValue 参数默认值。
+                     * 设置<p>参数默认值。</p>
+                     * @param _defaultValue <p>参数默认值。</p>
                      * 
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
@@ -139,15 +131,15 @@ namespace TencentCloud
                     bool DefaultValueHasBeenSet() const;
 
                     /**
-                     * 获取参数当前运行值。
-                     * @return CurrentValue 参数当前运行值。
+                     * 获取<p>参数当前运行值。</p>
+                     * @return CurrentValue <p>参数当前运行值。</p>
                      * 
                      */
                     std::string GetCurrentValue() const;
 
                     /**
-                     * 设置参数当前运行值。
-                     * @param _currentValue 参数当前运行值。
+                     * 设置<p>参数当前运行值。</p>
+                     * @param _currentValue <p>参数当前运行值。</p>
                      * 
                      */
                     void SetCurrentValue(const std::string& _currentValue);
@@ -160,15 +152,15 @@ namespace TencentCloud
                     bool CurrentValueHasBeenSet() const;
 
                     /**
-                     * 获取参数说明。
-                     * @return Tips 参数说明。
+                     * 获取<p>参数说明。</p>
+                     * @return Tips <p>参数说明。</p>
                      * 
                      */
                     std::string GetTips() const;
 
                     /**
-                     * 设置参数说明。
-                     * @param _tips 参数说明。
+                     * 设置<p>参数说明。</p>
+                     * @param _tips <p>参数说明。</p>
                      * 
                      */
                     void SetTips(const std::string& _tips);
@@ -181,15 +173,15 @@ namespace TencentCloud
                     bool TipsHasBeenSet() const;
 
                     /**
-                     * 获取参数可取的值。
-                     * @return EnumValue 参数可取的值。
+                     * 获取<p>参数可取的值。</p>
+                     * @return EnumValue <p>参数可取的值。</p>
                      * 
                      */
                     std::vector<std::string> GetEnumValue() const;
 
                     /**
-                     * 设置参数可取的值。
-                     * @param _enumValue 参数可取的值。
+                     * 设置<p>参数可取的值。</p>
+                     * @param _enumValue <p>参数可取的值。</p>
                      * 
                      */
                     void SetEnumValue(const std::vector<std::string>& _enumValue);
@@ -202,23 +194,15 @@ namespace TencentCloud
                     bool EnumValueHasBeenSet() const;
 
                     /**
-                     * 获取参数修改状态。
-- 1: 修改中。
-- 2：修改完成。
-                     * @return Status 参数修改状态。
-- 1: 修改中。
-- 2：修改完成。
+                     * 获取<p>参数修改状态。</p><ul><li>1: 修改中。</li><li>2：修改完成。</li></ul>
+                     * @return Status <p>参数修改状态。</p><ul><li>1: 修改中。</li><li>2：修改完成。</li></ul>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置参数修改状态。
-- 1: 修改中。
-- 2：修改完成。
-                     * @param _status 参数修改状态。
-- 1: 修改中。
-- 2：修改完成。
+                     * 设置<p>参数修改状态。</p><ul><li>1: 修改中。</li><li>2：修改完成。</li></ul>
+                     * @param _status <p>参数修改状态。</p><ul><li>1: 修改中。</li><li>2：修改完成。</li></ul>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -230,59 +214,190 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>参数类型</p><p>枚举值：</p><ul><li>redis： cache节点支持的参数</li><li>redis-interface： 代理proxy支持的参数</li><li>tendis： tendis支持的参数</li></ul>
+                     * @return ParamType <p>参数类型</p><p>枚举值：</p><ul><li>redis： cache节点支持的参数</li><li>redis-interface： 代理proxy支持的参数</li><li>tendis： tendis支持的参数</li></ul>
+                     * 
+                     */
+                    std::string GetParamType() const;
+
+                    /**
+                     * 设置<p>参数类型</p><p>枚举值：</p><ul><li>redis： cache节点支持的参数</li><li>redis-interface： 代理proxy支持的参数</li><li>tendis： tendis支持的参数</li></ul>
+                     * @param _paramType <p>参数类型</p><p>枚举值：</p><ul><li>redis： cache节点支持的参数</li><li>redis-interface： 代理proxy支持的参数</li><li>tendis： tendis支持的参数</li></ul>
+                     * 
+                     */
+                    void SetParamType(const std::string& _paramType);
+
+                    /**
+                     * 判断参数 ParamType 是否已赋值
+                     * @return ParamType 是否已赋值
+                     * 
+                     */
+                    bool ParamTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前实例是否支持该特性</p>
+                     * @return FeatureSupported <p>当前实例是否支持该特性</p>
+                     * 
+                     */
+                    bool GetFeatureSupported() const;
+
+                    /**
+                     * 设置<p>当前实例是否支持该特性</p>
+                     * @param _featureSupported <p>当前实例是否支持该特性</p>
+                     * 
+                     */
+                    void SetFeatureSupported(const bool& _featureSupported);
+
+                    /**
+                     * 判断参数 FeatureSupported 是否已赋值
+                     * @return FeatureSupported 是否已赋值
+                     * 
+                     */
+                    bool FeatureSupportedHasBeenSet() const;
+
+                    /**
+                     * 获取<p>新特性上线日期</p><p>参数格式：时间格式YYYY-MM-DD</p>
+                     * @return NewFeatureOnlineTime <p>新特性上线日期</p><p>参数格式：时间格式YYYY-MM-DD</p>
+                     * 
+                     */
+                    std::string GetNewFeatureOnlineTime() const;
+
+                    /**
+                     * 设置<p>新特性上线日期</p><p>参数格式：时间格式YYYY-MM-DD</p>
+                     * @param _newFeatureOnlineTime <p>新特性上线日期</p><p>参数格式：时间格式YYYY-MM-DD</p>
+                     * 
+                     */
+                    void SetNewFeatureOnlineTime(const std::string& _newFeatureOnlineTime);
+
+                    /**
+                     * 判断参数 NewFeatureOnlineTime 是否已赋值
+                     * @return NewFeatureOnlineTime 是否已赋值
+                     * 
+                     */
+                    bool NewFeatureOnlineTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>正则校验规则</p>
+                     * @return Pattern <p>正则校验规则</p>
+                     * 
+                     */
+                    std::string GetPattern() const;
+
+                    /**
+                     * 设置<p>正则校验规则</p>
+                     * @param _pattern <p>正则校验规则</p>
+                     * 
+                     */
+                    void SetPattern(const std::string& _pattern);
+
+                    /**
+                     * 判断参数 Pattern 是否已赋值
+                     * @return Pattern 是否已赋值
+                     * 
+                     */
+                    bool PatternHasBeenSet() const;
+
+                    /**
+                     * 获取<p>输入格式描述</p>
+                     * @return InputDescription <p>输入格式描述</p>
+                     * 
+                     */
+                    std::string GetInputDescription() const;
+
+                    /**
+                     * 设置<p>输入格式描述</p>
+                     * @param _inputDescription <p>输入格式描述</p>
+                     * 
+                     */
+                    void SetInputDescription(const std::string& _inputDescription);
+
+                    /**
+                     * 判断参数 InputDescription 是否已赋值
+                     * @return InputDescription 是否已赋值
+                     * 
+                     */
+                    bool InputDescriptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 参数名称。
+                     * <p>参数名称。</p>
                      */
                     std::string m_paramName;
                     bool m_paramNameHasBeenSet;
 
                     /**
-                     * 参数类型，例如：Enum。
+                     * <p>参数类型，例如：Enum。</p>
                      */
                     std::string m_valueType;
                     bool m_valueTypeHasBeenSet;
 
                     /**
-                     * 参数值修改后是否需要重启。
-- true：需要。
-- false：不需要。
+                     * <p>参数值修改后是否需要重启。</p><ul><li>true：需要。</li><li>false：不需要。</li></ul>
                      */
                     std::string m_needRestart;
                     bool m_needRestartHasBeenSet;
 
                     /**
-                     * 参数默认值。
+                     * <p>参数默认值。</p>
                      */
                     std::string m_defaultValue;
                     bool m_defaultValueHasBeenSet;
 
                     /**
-                     * 参数当前运行值。
+                     * <p>参数当前运行值。</p>
                      */
                     std::string m_currentValue;
                     bool m_currentValueHasBeenSet;
 
                     /**
-                     * 参数说明。
+                     * <p>参数说明。</p>
                      */
                     std::string m_tips;
                     bool m_tipsHasBeenSet;
 
                     /**
-                     * 参数可取的值。
+                     * <p>参数可取的值。</p>
                      */
                     std::vector<std::string> m_enumValue;
                     bool m_enumValueHasBeenSet;
 
                     /**
-                     * 参数修改状态。
-- 1: 修改中。
-- 2：修改完成。
+                     * <p>参数修改状态。</p><ul><li>1: 修改中。</li><li>2：修改完成。</li></ul>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>参数类型</p><p>枚举值：</p><ul><li>redis： cache节点支持的参数</li><li>redis-interface： 代理proxy支持的参数</li><li>tendis： tendis支持的参数</li></ul>
+                     */
+                    std::string m_paramType;
+                    bool m_paramTypeHasBeenSet;
+
+                    /**
+                     * <p>当前实例是否支持该特性</p>
+                     */
+                    bool m_featureSupported;
+                    bool m_featureSupportedHasBeenSet;
+
+                    /**
+                     * <p>新特性上线日期</p><p>参数格式：时间格式YYYY-MM-DD</p>
+                     */
+                    std::string m_newFeatureOnlineTime;
+                    bool m_newFeatureOnlineTimeHasBeenSet;
+
+                    /**
+                     * <p>正则校验规则</p>
+                     */
+                    std::string m_pattern;
+                    bool m_patternHasBeenSet;
+
+                    /**
+                     * <p>输入格式描述</p>
+                     */
+                    std::string m_inputDescription;
+                    bool m_inputDescriptionHasBeenSet;
 
                 };
             }

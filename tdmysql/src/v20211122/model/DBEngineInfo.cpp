@@ -28,7 +28,9 @@ DBEngineInfo::DBEngineInfo() :
     m_newHasBeenSet(false),
     m_sQLModeHasBeenSet(false),
     m_isSupportParamTemplateHasBeenSet(false),
-    m_isSupportServerlessHasBeenSet(false)
+    m_isSupportServerlessHasBeenSet(false),
+    m_isSupportTDEHasBeenSet(false),
+    m_isSupportPasswordComplexityHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,26 @@ CoreInternalOutcome DBEngineInfo::Deserialize(const rapidjson::Value &value)
         m_isSupportServerlessHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportTDE") && !value["IsSupportTDE"].IsNull())
+    {
+        if (!value["IsSupportTDE"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBEngineInfo.IsSupportTDE` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportTDE = value["IsSupportTDE"].GetBool();
+        m_isSupportTDEHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsSupportPasswordComplexity") && !value["IsSupportPasswordComplexity"].IsNull())
+    {
+        if (!value["IsSupportPasswordComplexity"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBEngineInfo.IsSupportPasswordComplexity` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportPasswordComplexity = value["IsSupportPasswordComplexity"].GetBool();
+        m_isSupportPasswordComplexityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +216,22 @@ void DBEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsSupportServerless";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSupportServerless, allocator);
+    }
+
+    if (m_isSupportTDEHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportTDE";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportTDE, allocator);
+    }
+
+    if (m_isSupportPasswordComplexityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportPasswordComplexity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportPasswordComplexity, allocator);
     }
 
 }
@@ -325,5 +363,37 @@ void DBEngineInfo::SetIsSupportServerless(const bool& _isSupportServerless)
 bool DBEngineInfo::IsSupportServerlessHasBeenSet() const
 {
     return m_isSupportServerlessHasBeenSet;
+}
+
+bool DBEngineInfo::GetIsSupportTDE() const
+{
+    return m_isSupportTDE;
+}
+
+void DBEngineInfo::SetIsSupportTDE(const bool& _isSupportTDE)
+{
+    m_isSupportTDE = _isSupportTDE;
+    m_isSupportTDEHasBeenSet = true;
+}
+
+bool DBEngineInfo::IsSupportTDEHasBeenSet() const
+{
+    return m_isSupportTDEHasBeenSet;
+}
+
+bool DBEngineInfo::GetIsSupportPasswordComplexity() const
+{
+    return m_isSupportPasswordComplexity;
+}
+
+void DBEngineInfo::SetIsSupportPasswordComplexity(const bool& _isSupportPasswordComplexity)
+{
+    m_isSupportPasswordComplexity = _isSupportPasswordComplexity;
+    m_isSupportPasswordComplexityHasBeenSet = true;
+}
+
+bool DBEngineInfo::IsSupportPasswordComplexityHasBeenSet() const
+{
+    return m_isSupportPasswordComplexityHasBeenSet;
 }
 

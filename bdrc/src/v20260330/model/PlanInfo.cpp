@@ -38,7 +38,10 @@ PlanInfo::PlanInfo() :
     m_createdTimeHasBeenSet(false),
     m_lastTriggerErrorHasBeenSet(false),
     m_backupCountHasBeenSet(false),
-    m_flowControlSettingsHasBeenSet(false)
+    m_flowControlSettingsHasBeenSet(false),
+    m_enableObjectAclHasBeenSet(false),
+    m_enableObjectTagsHasBeenSet(false),
+    m_productTypeHasBeenSet(false)
 {
 }
 
@@ -256,6 +259,36 @@ CoreInternalOutcome PlanInfo::Deserialize(const rapidjson::Value &value)
         m_flowControlSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableObjectAcl") && !value["EnableObjectAcl"].IsNull())
+    {
+        if (!value["EnableObjectAcl"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.EnableObjectAcl` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableObjectAcl = value["EnableObjectAcl"].GetBool();
+        m_enableObjectAclHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableObjectTags") && !value["EnableObjectTags"].IsNull())
+    {
+        if (!value["EnableObjectTags"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.EnableObjectTags` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableObjectTags = value["EnableObjectTags"].GetBool();
+        m_enableObjectTagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductType") && !value["ProductType"].IsNull())
+    {
+        if (!value["ProductType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlanInfo.ProductType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productType = string(value["ProductType"].GetString());
+        m_productTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +466,30 @@ void PlanInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableObjectAclHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableObjectAcl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableObjectAcl, allocator);
+    }
+
+    if (m_enableObjectTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableObjectTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableObjectTags, allocator);
+    }
+
+    if (m_productTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -724,5 +781,53 @@ void PlanInfo::SetFlowControlSettings(const vector<FlowControlRule>& _flowContro
 bool PlanInfo::FlowControlSettingsHasBeenSet() const
 {
     return m_flowControlSettingsHasBeenSet;
+}
+
+bool PlanInfo::GetEnableObjectAcl() const
+{
+    return m_enableObjectAcl;
+}
+
+void PlanInfo::SetEnableObjectAcl(const bool& _enableObjectAcl)
+{
+    m_enableObjectAcl = _enableObjectAcl;
+    m_enableObjectAclHasBeenSet = true;
+}
+
+bool PlanInfo::EnableObjectAclHasBeenSet() const
+{
+    return m_enableObjectAclHasBeenSet;
+}
+
+bool PlanInfo::GetEnableObjectTags() const
+{
+    return m_enableObjectTags;
+}
+
+void PlanInfo::SetEnableObjectTags(const bool& _enableObjectTags)
+{
+    m_enableObjectTags = _enableObjectTags;
+    m_enableObjectTagsHasBeenSet = true;
+}
+
+bool PlanInfo::EnableObjectTagsHasBeenSet() const
+{
+    return m_enableObjectTagsHasBeenSet;
+}
+
+string PlanInfo::GetProductType() const
+{
+    return m_productType;
+}
+
+void PlanInfo::SetProductType(const string& _productType)
+{
+    m_productType = _productType;
+    m_productTypeHasBeenSet = true;
+}
+
+bool PlanInfo::ProductTypeHasBeenSet() const
+{
+    return m_productTypeHasBeenSet;
 }
 

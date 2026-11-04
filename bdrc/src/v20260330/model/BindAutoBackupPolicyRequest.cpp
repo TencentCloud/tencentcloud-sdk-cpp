@@ -22,7 +22,9 @@
 using namespace TencentCloud::Bdrc::V20260330::Model;
 using namespace std;
 
-BindAutoBackupPolicyRequest::BindAutoBackupPolicyRequest()
+BindAutoBackupPolicyRequest::BindAutoBackupPolicyRequest() :
+    m_autoBackupPolicyIdHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,27 @@ string BindAutoBackupPolicyRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_autoBackupPolicyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoBackupPolicyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoBackupPolicyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +63,37 @@ string BindAutoBackupPolicyRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string BindAutoBackupPolicyRequest::GetAutoBackupPolicyId() const
+{
+    return m_autoBackupPolicyId;
+}
+
+void BindAutoBackupPolicyRequest::SetAutoBackupPolicyId(const string& _autoBackupPolicyId)
+{
+    m_autoBackupPolicyId = _autoBackupPolicyId;
+    m_autoBackupPolicyIdHasBeenSet = true;
+}
+
+bool BindAutoBackupPolicyRequest::AutoBackupPolicyIdHasBeenSet() const
+{
+    return m_autoBackupPolicyIdHasBeenSet;
+}
+
+vector<string> BindAutoBackupPolicyRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void BindAutoBackupPolicyRequest::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool BindAutoBackupPolicyRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
 
 

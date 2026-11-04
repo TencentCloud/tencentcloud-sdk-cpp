@@ -511,7 +511,7 @@ namespace TencentCloud
                 CreateFileBackupPlanOutcomeCallable CreateFileBackupPlanCallable(const Model::CreateFileBackupPlanRequest& request);
 
                 /**
-                 *创建恢复任务
+                 *创建恢复任务。
                  * @param req CreateFileRestoreTaskRequest
                  * @return CreateFileRestoreTaskOutcome
                  */

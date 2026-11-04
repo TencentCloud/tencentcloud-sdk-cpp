@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID（必填）
-                     * @return ClusterId 集群ID（必填）
+                     * 获取<p>集群ID（必填）</p>
+                     * @return ClusterId <p>集群ID（必填）</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID（必填）
-                     * @param _clusterId 集群ID（必填）
+                     * 设置<p>集群ID（必填）</p>
+                     * @param _clusterId <p>集群ID（必填）</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取当前页码（从1开始）
-                     * @return Page 当前页码（从1开始）
+                     * 获取<p>当前页码（从1开始）</p>
+                     * @return Page <p>当前页码（从1开始）</p>
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
-                     * 设置当前页码（从1开始）
-                     * @param _page 当前页码（从1开始）
+                     * 设置<p>当前页码（从1开始）</p>
+                     * @param _page <p>当前页码（从1开始）</p>
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取每页数量
-                     * @return PageSize 每页数量
+                     * 获取<p>每页数量</p>
+                     * @return PageSize <p>每页数量</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数量
-                     * @param _pageSize 每页数量
+                     * 设置<p>每页数量</p>
+                     * @param _pageSize <p>每页数量</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）
-                     * @return Filters 额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）
+                     * 获取<p>额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）</p>
+                     * @return Filters <p>额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）
-                     * @param _filters 额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）
+                     * 设置<p>额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）</p>
+                     * @param _filters <p>额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取提交时间起始过滤-时间戳（毫秒，可选）
-                     * @return StartTime 提交时间起始过滤-时间戳（毫秒，可选）
+                     * 获取<p>提交时间起始过滤-时间戳（毫秒，可选）</p>
+                     * @return StartTime <p>提交时间起始过滤-时间戳（毫秒，可选）</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置提交时间起始过滤-时间戳（毫秒，可选）
-                     * @param _startTime 提交时间起始过滤-时间戳（毫秒，可选）
+                     * 设置<p>提交时间起始过滤-时间戳（毫秒，可选）</p>
+                     * @param _startTime <p>提交时间起始过滤-时间戳（毫秒，可选）</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取提交时间截止过滤-时间戳（毫秒，可选）
-                     * @return EndTime 提交时间截止过滤-时间戳（毫秒，可选）
+                     * 获取<p>提交时间截止过滤-时间戳（毫秒，可选）</p>
+                     * @return EndTime <p>提交时间截止过滤-时间戳（毫秒，可选）</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置提交时间截止过滤-时间戳（毫秒，可选）
-                     * @param _endTime 提交时间截止过滤-时间戳（毫秒，可选）
+                     * 设置<p>提交时间截止过滤-时间戳（毫秒，可选）</p>
+                     * @param _endTime <p>提交时间截止过滤-时间戳（毫秒，可选）</p>
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取排序字段列表
-                     * @return SortFields 排序字段列表
+                     * 获取<p>排序字段列表</p>
+                     * @return SortFields <p>排序字段列表</p>
                      * 
                      */
                     std::vector<SortField> GetSortFields() const;
 
                     /**
-                     * 设置排序字段列表
-                     * @param _sortFields 排序字段列表
+                     * 设置<p>排序字段列表</p>
+                     * @param _sortFields <p>排序字段列表</p>
                      * 
                      */
                     void SetSortFields(const std::vector<SortField>& _sortFields);
@@ -194,43 +194,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID（必填）
+                     * <p>集群ID（必填）</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 当前页码（从1开始）
+                     * <p>当前页码（从1开始）</p>
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 每页数量
+                     * <p>每页数量</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）
+                     * <p>额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 提交时间起始过滤-时间戳（毫秒，可选）
+                     * <p>提交时间起始过滤-时间戳（毫秒，可选）</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 提交时间截止过滤-时间戳（毫秒，可选）
+                     * <p>提交时间截止过滤-时间戳（毫秒，可选）</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 排序字段列表
+                     * <p>排序字段列表</p>
                      */
                     std::vector<SortField> m_sortFields;
                     bool m_sortFieldsHasBeenSet;

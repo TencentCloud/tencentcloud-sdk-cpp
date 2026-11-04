@@ -26,7 +26,9 @@ ResourcePlan::ResourcePlan() :
     m_includeFileTypesHasBeenSet(false),
     m_excludePatternsHasBeenSet(false),
     m_excludeSystemDirectoriesHasBeenSet(false),
-    m_executeImmediatelyHasBeenSet(false)
+    m_executeImmediatelyHasBeenSet(false),
+    m_enableObjectAclHasBeenSet(false),
+    m_enableObjectTagsHasBeenSet(false)
 {
 }
 
@@ -104,6 +106,26 @@ CoreInternalOutcome ResourcePlan::Deserialize(const rapidjson::Value &value)
         m_executeImmediatelyHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableObjectAcl") && !value["EnableObjectAcl"].IsNull())
+    {
+        if (!value["EnableObjectAcl"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourcePlan.EnableObjectAcl` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableObjectAcl = value["EnableObjectAcl"].GetBool();
+        m_enableObjectAclHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableObjectTags") && !value["EnableObjectTags"].IsNull())
+    {
+        if (!value["EnableObjectTags"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourcePlan.EnableObjectTags` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableObjectTags = value["EnableObjectTags"].GetBool();
+        m_enableObjectTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +194,22 @@ void ResourcePlan::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ExecuteImmediately";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_executeImmediately, allocator);
+    }
+
+    if (m_enableObjectAclHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableObjectAcl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableObjectAcl, allocator);
+    }
+
+    if (m_enableObjectTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableObjectTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableObjectTags, allocator);
     }
 
 }
@@ -271,5 +309,37 @@ void ResourcePlan::SetExecuteImmediately(const bool& _executeImmediately)
 bool ResourcePlan::ExecuteImmediatelyHasBeenSet() const
 {
     return m_executeImmediatelyHasBeenSet;
+}
+
+bool ResourcePlan::GetEnableObjectAcl() const
+{
+    return m_enableObjectAcl;
+}
+
+void ResourcePlan::SetEnableObjectAcl(const bool& _enableObjectAcl)
+{
+    m_enableObjectAcl = _enableObjectAcl;
+    m_enableObjectAclHasBeenSet = true;
+}
+
+bool ResourcePlan::EnableObjectAclHasBeenSet() const
+{
+    return m_enableObjectAclHasBeenSet;
+}
+
+bool ResourcePlan::GetEnableObjectTags() const
+{
+    return m_enableObjectTags;
+}
+
+void ResourcePlan::SetEnableObjectTags(const bool& _enableObjectTags)
+{
+    m_enableObjectTags = _enableObjectTags;
+    m_enableObjectTagsHasBeenSet = true;
+}
+
+bool ResourcePlan::EnableObjectTagsHasBeenSet() const
+{
+    return m_enableObjectTagsHasBeenSet;
 }
 

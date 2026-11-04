@@ -27,7 +27,8 @@ DescribeFileRestoreTasksRequest::DescribeFileRestoreTasksRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_orderFieldHasBeenSet(false)
+    m_orderFieldHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string DescribeFileRestoreTasksRequest::ToJsonString() const
         string key = "OrderField";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +180,22 @@ void DescribeFileRestoreTasksRequest::SetOrderField(const string& _orderField)
 bool DescribeFileRestoreTasksRequest::OrderFieldHasBeenSet() const
 {
     return m_orderFieldHasBeenSet;
+}
+
+string DescribeFileRestoreTasksRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void DescribeFileRestoreTasksRequest::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool DescribeFileRestoreTasksRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
 }
 
 

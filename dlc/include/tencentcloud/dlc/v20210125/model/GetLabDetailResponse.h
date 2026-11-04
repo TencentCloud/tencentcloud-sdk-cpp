@@ -271,6 +271,34 @@ namespace TencentCloud
                     bool StatusMessageHasBeenSet() const;
 
                     /**
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
+                     * 
+                     */
+                    uint64_t GetCreateTime() const;
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
+                     * 
+                     */
+                    uint64_t GetUpdateTime() const;
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
                      * 获取<p>资源配置(JSON)</p>
                      * @return ResourceConfig <p>资源配置(JSON)</p>
                      * 
@@ -467,6 +495,34 @@ namespace TencentCloud
                     bool EnableTokenHasBeenSet() const;
 
                     /**
+                     * 获取<p>Token 认证密钥（开启 token 认证时由系统生成）</p>
+                     * @return Token <p>Token 认证密钥（开启 token 认证时由系统生成）</p>
+                     * 
+                     */
+                    std::string GetToken() const;
+
+                    /**
+                     * 判断参数 Token 是否已赋值
+                     * @return Token 是否已赋值
+                     * 
+                     */
+                    bool TokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>弹性伸缩配置（JSON）</p>
+                     * @return AutoscalerOptions <p>弹性伸缩配置（JSON）</p>
+                     * 
+                     */
+                    std::string GetAutoscalerOptions() const;
+
+                    /**
+                     * 判断参数 AutoscalerOptions 是否已赋值
+                     * @return AutoscalerOptions 是否已赋值
+                     * 
+                     */
+                    bool AutoscalerOptionsHasBeenSet() const;
+
+                    /**
                      * 获取<p>Lab sidecar 镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>
                      * @return LabImagePullType <p>Lab sidecar 镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>
                      * 
@@ -621,6 +677,18 @@ namespace TencentCloud
                     bool m_statusMessageHasBeenSet;
 
                     /**
+                     * <p>创建时间</p>
+                     */
+                    uint64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>更新时间</p>
+                     */
+                    uint64_t m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
                      * <p>资源配置(JSON)</p>
                      */
                     std::string m_resourceConfig;
@@ -703,6 +771,18 @@ namespace TencentCloud
                      */
                     bool m_enableToken;
                     bool m_enableTokenHasBeenSet;
+
+                    /**
+                     * <p>Token 认证密钥（开启 token 认证时由系统生成）</p>
+                     */
+                    std::string m_token;
+                    bool m_tokenHasBeenSet;
+
+                    /**
+                     * <p>弹性伸缩配置（JSON）</p>
+                     */
+                    std::string m_autoscalerOptions;
+                    bool m_autoscalerOptionsHasBeenSet;
 
                     /**
                      * <p>Lab sidecar 镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例绑定的定期备份策略列表。
-                     * @return AutoBackupPolicyIdSet 实例绑定的定期备份策略列表。
+                     * 获取<p>实例绑定的定期备份策略列表。</p>
+                     * @return AutoBackupPolicyIdSet <p>实例绑定的定期备份策略列表。</p>
                      * 
                      */
                     std::vector<std::string> GetAutoBackupPolicyIdSet() const;
 
                     /**
-                     * 设置实例绑定的定期备份策略列表。
-                     * @param _autoBackupPolicyIdSet 实例绑定的定期备份策略列表。
+                     * 设置<p>实例绑定的定期备份策略列表。</p>
+                     * @param _autoBackupPolicyIdSet <p>实例绑定的定期备份策略列表。</p>
                      * 
                      */
                     void SetAutoBackupPolicyIdSet(const std::vector<std::string>& _autoBackupPolicyIdSet);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AutoBackupPolicyIdSetHasBeenSet() const;
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取<p>实例ID。</p>
+                     * @return InstanceId <p>实例ID。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置<p>实例ID。</p>
+                     * @param _instanceId <p>实例ID。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户AppId。
-                     * @return AppId 用户AppId。
+                     * 获取<p>用户AppId。</p>
+                     * @return AppId <p>用户AppId。</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置用户AppId。
-                     * @param _appId 用户AppId。
+                     * 设置<p>用户AppId。</p>
+                     * @param _appId <p>用户AppId。</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -110,18 +110,18 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取实例最新备份时间。
+                     * 获取<p>实例最新备份时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LatestBackupTime 实例最新备份时间。
+                     * @return LatestBackupTime <p>实例最新备份时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestBackupTime() const;
 
                     /**
-                     * 设置实例最新备份时间。
+                     * 设置<p>实例最新备份时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _latestBackupTime 实例最新备份时间。
+                     * @param _latestBackupTime <p>实例最新备份时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool LatestBackupTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例的备份组ID列表。
-                     * @return BackupGroupIdSet 实例的备份组ID列表。
+                     * 获取<p>实例的备份组ID列表。</p>
+                     * @return BackupGroupIdSet <p>实例的备份组ID列表。</p>
                      * 
                      */
                     std::vector<std::string> GetBackupGroupIdSet() const;
 
                     /**
-                     * 设置实例的备份组ID列表。
-                     * @param _backupGroupIdSet 实例的备份组ID列表。
+                     * 设置<p>实例的备份组ID列表。</p>
+                     * @param _backupGroupIdSet <p>实例的备份组ID列表。</p>
                      * 
                      */
                     void SetBackupGroupIdSet(const std::vector<std::string>& _backupGroupIdSet);
@@ -156,18 +156,18 @@ namespace TencentCloud
                     bool BackupGroupIdSetHasBeenSet() const;
 
                     /**
-                     * 获取修改时间。
+                     * 获取<p>修改时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModifyTime 修改时间。
+                     * @return ModifyTime <p>修改时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置修改时间。
+                     * 设置<p>修改时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modifyTime 修改时间。
+                     * @param _modifyTime <p>修改时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -181,15 +181,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -202,15 +202,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -222,57 +222,89 @@ namespace TencentCloud
                      */
                     bool InstanceNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>备份数据量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupSizeMb <p>备份数据量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBackupSizeMb() const;
+
+                    /**
+                     * 设置<p>备份数据量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _backupSizeMb <p>备份数据量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBackupSizeMb(const int64_t& _backupSizeMb);
+
+                    /**
+                     * 判断参数 BackupSizeMb 是否已赋值
+                     * @return BackupSizeMb 是否已赋值
+                     * 
+                     */
+                    bool BackupSizeMbHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例绑定的定期备份策略列表。
+                     * <p>实例绑定的定期备份策略列表。</p>
                      */
                     std::vector<std::string> m_autoBackupPolicyIdSet;
                     bool m_autoBackupPolicyIdSetHasBeenSet;
 
                     /**
-                     * 实例ID。
+                     * <p>实例ID。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户AppId。
+                     * <p>用户AppId。</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 实例最新备份时间。
+                     * <p>实例最新备份时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestBackupTime;
                     bool m_latestBackupTimeHasBeenSet;
 
                     /**
-                     * 实例的备份组ID列表。
+                     * <p>实例的备份组ID列表。</p>
                      */
                     std::vector<std::string> m_backupGroupIdSet;
                     bool m_backupGroupIdSetHasBeenSet;
 
                     /**
-                     * 修改时间。
+                     * <p>修改时间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
+
+                    /**
+                     * <p>备份数据量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_backupSizeMb;
+                    bool m_backupSizeMbHasBeenSet;
 
                 };
             }

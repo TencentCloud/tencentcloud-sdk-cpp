@@ -25,22 +25,31 @@ using namespace std;
 
 SubmitRayJobResponse::SubmitRayJobResponse() :
     m_idHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_resourcePartitionIdHasBeenSet(false),
+    m_resourcePartitionNameHasBeenSet(false),
     m_queueHasBeenSet(false),
+    m_submissionIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_entrypointHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_uinHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
+    m_subAccountNameHasBeenSet(false),
+    m_historyUrlHasBeenSet(false),
     m_runningTimeHasBeenSet(false),
+    m_finishTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_errorMessageHasBeenSet(false),
     m_runtimeEnvHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
     m_catalogHasBeenSet(false),
     m_imagePullPolicyHasBeenSet(false),
     m_autoscalerOptionsHasBeenSet(false),
+    m_specIdHasBeenSet(false),
+    m_specNameHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -93,6 +102,16 @@ CoreInternalOutcome SubmitRayJobResponse::Deserialize(const string &payload)
         m_idHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClusterId") && !rsp["ClusterId"].IsNull())
+    {
+        if (!rsp["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(rsp["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ResourcePartitionId") && !rsp["ResourcePartitionId"].IsNull())
     {
         if (!rsp["ResourcePartitionId"].IsString())
@@ -103,6 +122,16 @@ CoreInternalOutcome SubmitRayJobResponse::Deserialize(const string &payload)
         m_resourcePartitionIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResourcePartitionName") && !rsp["ResourcePartitionName"].IsNull())
+    {
+        if (!rsp["ResourcePartitionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourcePartitionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourcePartitionName = string(rsp["ResourcePartitionName"].GetString());
+        m_resourcePartitionNameHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Queue") && !rsp["Queue"].IsNull())
     {
         if (!rsp["Queue"].IsString())
@@ -111,6 +140,16 @@ CoreInternalOutcome SubmitRayJobResponse::Deserialize(const string &payload)
         }
         m_queue = string(rsp["Queue"].GetString());
         m_queueHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubmissionId") && !rsp["SubmissionId"].IsNull())
+    {
+        if (!rsp["SubmissionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubmissionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_submissionId = string(rsp["SubmissionId"].GetString());
+        m_submissionIdHasBeenSet = true;
     }
 
     if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
@@ -173,6 +212,26 @@ CoreInternalOutcome SubmitRayJobResponse::Deserialize(const string &payload)
         m_subAccountUinHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SubAccountName") && !rsp["SubAccountName"].IsNull())
+    {
+        if (!rsp["SubAccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubAccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountName = string(rsp["SubAccountName"].GetString());
+        m_subAccountNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("HistoryUrl") && !rsp["HistoryUrl"].IsNull())
+    {
+        if (!rsp["HistoryUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HistoryUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_historyUrl = string(rsp["HistoryUrl"].GetString());
+        m_historyUrlHasBeenSet = true;
+    }
+
     if (rsp.HasMember("RunningTime") && !rsp["RunningTime"].IsNull())
     {
         if (!rsp["RunningTime"].IsInt64())
@@ -183,6 +242,16 @@ CoreInternalOutcome SubmitRayJobResponse::Deserialize(const string &payload)
         m_runningTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FinishTime") && !rsp["FinishTime"].IsNull())
+    {
+        if (!rsp["FinishTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FinishTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishTime = rsp["FinishTime"].GetUint64();
+        m_finishTimeHasBeenSet = true;
+    }
+
     if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
     {
         if (!rsp["CreateTime"].IsUint64())
@@ -191,6 +260,16 @@ CoreInternalOutcome SubmitRayJobResponse::Deserialize(const string &payload)
         }
         m_createTime = rsp["CreateTime"].GetUint64();
         m_createTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ErrorMessage") && !rsp["ErrorMessage"].IsNull())
+    {
+        if (!rsp["ErrorMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMessage = string(rsp["ErrorMessage"].GetString());
+        m_errorMessageHasBeenSet = true;
     }
 
     if (rsp.HasMember("RuntimeEnv") && !rsp["RuntimeEnv"].IsNull())
@@ -251,6 +330,26 @@ CoreInternalOutcome SubmitRayJobResponse::Deserialize(const string &payload)
         }
         m_autoscalerOptions = string(rsp["AutoscalerOptions"].GetString());
         m_autoscalerOptionsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SpecId") && !rsp["SpecId"].IsNull())
+    {
+        if (!rsp["SpecId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specId = string(rsp["SpecId"].GetString());
+        m_specIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SpecName") && !rsp["SpecName"].IsNull())
+    {
+        if (!rsp["SpecName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specName = string(rsp["SpecName"].GetString());
+        m_specNameHasBeenSet = true;
     }
 
     if (rsp.HasMember("AdvancedOptions") && !rsp["AdvancedOptions"].IsNull())
@@ -331,6 +430,14 @@ string SubmitRayJobResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_resourcePartitionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -339,12 +446,28 @@ string SubmitRayJobResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_resourcePartitionId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_resourcePartitionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourcePartitionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourcePartitionName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_queueHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Queue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_queue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_submissionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubmissionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_submissionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -395,6 +518,22 @@ string SubmitRayJobResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subAccountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_historyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HistoryUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_historyUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_runningTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -403,12 +542,28 @@ string SubmitRayJobResponse::ToJsonString() const
         value.AddMember(iKey, m_runningTime, allocator);
     }
 
+    if (m_finishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_finishTime, allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_errorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_runtimeEnvHasBeenSet)
@@ -457,6 +612,22 @@ string SubmitRayJobResponse::ToJsonString() const
         string key = "AutoscalerOptions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_autoscalerOptions.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_advancedOptionsHasBeenSet)
@@ -528,6 +699,16 @@ bool SubmitRayJobResponse::IdHasBeenSet() const
     return m_idHasBeenSet;
 }
 
+string SubmitRayJobResponse::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+bool SubmitRayJobResponse::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
 string SubmitRayJobResponse::GetResourcePartitionId() const
 {
     return m_resourcePartitionId;
@@ -538,6 +719,16 @@ bool SubmitRayJobResponse::ResourcePartitionIdHasBeenSet() const
     return m_resourcePartitionIdHasBeenSet;
 }
 
+string SubmitRayJobResponse::GetResourcePartitionName() const
+{
+    return m_resourcePartitionName;
+}
+
+bool SubmitRayJobResponse::ResourcePartitionNameHasBeenSet() const
+{
+    return m_resourcePartitionNameHasBeenSet;
+}
+
 string SubmitRayJobResponse::GetQueue() const
 {
     return m_queue;
@@ -546,6 +737,16 @@ string SubmitRayJobResponse::GetQueue() const
 bool SubmitRayJobResponse::QueueHasBeenSet() const
 {
     return m_queueHasBeenSet;
+}
+
+string SubmitRayJobResponse::GetSubmissionId() const
+{
+    return m_submissionId;
+}
+
+bool SubmitRayJobResponse::SubmissionIdHasBeenSet() const
+{
+    return m_submissionIdHasBeenSet;
 }
 
 string SubmitRayJobResponse::GetStatus() const
@@ -608,6 +809,26 @@ bool SubmitRayJobResponse::SubAccountUinHasBeenSet() const
     return m_subAccountUinHasBeenSet;
 }
 
+string SubmitRayJobResponse::GetSubAccountName() const
+{
+    return m_subAccountName;
+}
+
+bool SubmitRayJobResponse::SubAccountNameHasBeenSet() const
+{
+    return m_subAccountNameHasBeenSet;
+}
+
+string SubmitRayJobResponse::GetHistoryUrl() const
+{
+    return m_historyUrl;
+}
+
+bool SubmitRayJobResponse::HistoryUrlHasBeenSet() const
+{
+    return m_historyUrlHasBeenSet;
+}
+
 int64_t SubmitRayJobResponse::GetRunningTime() const
 {
     return m_runningTime;
@@ -618,6 +839,16 @@ bool SubmitRayJobResponse::RunningTimeHasBeenSet() const
     return m_runningTimeHasBeenSet;
 }
 
+uint64_t SubmitRayJobResponse::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+bool SubmitRayJobResponse::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
+}
+
 uint64_t SubmitRayJobResponse::GetCreateTime() const
 {
     return m_createTime;
@@ -626,6 +857,16 @@ uint64_t SubmitRayJobResponse::GetCreateTime() const
 bool SubmitRayJobResponse::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string SubmitRayJobResponse::GetErrorMessage() const
+{
+    return m_errorMessage;
+}
+
+bool SubmitRayJobResponse::ErrorMessageHasBeenSet() const
+{
+    return m_errorMessageHasBeenSet;
 }
 
 string SubmitRayJobResponse::GetRuntimeEnv() const
@@ -686,6 +927,26 @@ string SubmitRayJobResponse::GetAutoscalerOptions() const
 bool SubmitRayJobResponse::AutoscalerOptionsHasBeenSet() const
 {
     return m_autoscalerOptionsHasBeenSet;
+}
+
+string SubmitRayJobResponse::GetSpecId() const
+{
+    return m_specId;
+}
+
+bool SubmitRayJobResponse::SpecIdHasBeenSet() const
+{
+    return m_specIdHasBeenSet;
+}
+
+string SubmitRayJobResponse::GetSpecName() const
+{
+    return m_specName;
+}
+
+bool SubmitRayJobResponse::SpecNameHasBeenSet() const
+{
+    return m_specNameHasBeenSet;
 }
 
 string SubmitRayJobResponse::GetAdvancedOptions() const

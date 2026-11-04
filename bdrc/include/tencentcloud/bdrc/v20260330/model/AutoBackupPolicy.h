@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/bdrc/v20260330/model/Policy.h>
 #include <tencentcloud/bdrc/v20260330/model/AdvancedRetentionPolicy.h>
+#include <tencentcloud/bdrc/v20260330/model/BackupResourceInfo.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取定期备份策略是否激活。
-                     * @return IsActivated 定期备份策略是否激活。
+                     * 获取<p>定期备份策略是否激活。</p>
+                     * @return IsActivated <p>定期备份策略是否激活。</p>
                      * 
                      */
                     bool GetIsActivated() const;
 
                     /**
-                     * 设置定期备份策略是否激活。
-                     * @param _isActivated 定期备份策略是否激活。
+                     * 设置<p>定期备份策略是否激活。</p>
+                     * @param _isActivated <p>定期备份策略是否激活。</p>
                      * 
                      */
                     void SetIsActivated(const bool& _isActivated);
@@ -70,18 +71,18 @@ namespace TencentCloud
                     bool IsActivatedHasBeenSet() const;
 
                     /**
-                     * 获取使用该定期备份策略创建出来的备份是否永久保留。
+                     * 获取<p>使用该定期备份策略创建出来的备份是否永久保留。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsPermanent 使用该定期备份策略创建出来的备份是否永久保留。
+                     * @return IsPermanent <p>使用该定期备份策略创建出来的备份是否永久保留。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsPermanent() const;
 
                     /**
-                     * 设置使用该定期备份策略创建出来的备份是否永久保留。
+                     * 设置<p>使用该定期备份策略创建出来的备份是否永久保留。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isPermanent 使用该定期备份策略创建出来的备份是否永久保留。
+                     * @param _isPermanent <p>使用该定期备份策略创建出来的备份是否永久保留。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,15 +96,15 @@ namespace TencentCloud
                     bool IsPermanentHasBeenSet() const;
 
                     /**
-                     * 获取使用该定期备份策略创建出来的备份是否永久保留。
-                     * @return NextTriggerTime 使用该定期备份策略创建出来的备份是否永久保留。
+                     * 获取<p>使用该定期备份策略创建出来的备份是否永久保留。</p>
+                     * @return NextTriggerTime <p>使用该定期备份策略创建出来的备份是否永久保留。</p>
                      * 
                      */
                     std::string GetNextTriggerTime() const;
 
                     /**
-                     * 设置使用该定期备份策略创建出来的备份是否永久保留。
-                     * @param _nextTriggerTime 使用该定期备份策略创建出来的备份是否永久保留。
+                     * 设置<p>使用该定期备份策略创建出来的备份是否永久保留。</p>
+                     * @param _nextTriggerTime <p>使用该定期备份策略创建出来的备份是否永久保留。</p>
                      * 
                      */
                     void SetNextTriggerTime(const std::string& _nextTriggerTime);
@@ -116,15 +117,15 @@ namespace TencentCloud
                     bool NextTriggerTimeHasBeenSet() const;
 
                     /**
-                     * 获取NORMAL
-                     * @return AutoBackupPolicyState NORMAL
+                     * 获取<p>NORMAL</p>
+                     * @return AutoBackupPolicyState <p>NORMAL</p>
                      * 
                      */
                     std::string GetAutoBackupPolicyState() const;
 
                     /**
-                     * 设置NORMAL
-                     * @param _autoBackupPolicyState NORMAL
+                     * 设置<p>NORMAL</p>
+                     * @param _autoBackupPolicyState <p>NORMAL</p>
                      * 
                      */
                     void SetAutoBackupPolicyState(const std::string& _autoBackupPolicyState);
@@ -137,15 +138,15 @@ namespace TencentCloud
                     bool AutoBackupPolicyStateHasBeenSet() const;
 
                     /**
-                     * 获取备份策略的名称。
-                     * @return AutoBackupPolicyName 备份策略的名称。
+                     * 获取<p>备份策略的名称。</p>
+                     * @return AutoBackupPolicyName <p>备份策略的名称。</p>
                      * 
                      */
                     std::string GetAutoBackupPolicyName() const;
 
                     /**
-                     * 设置备份策略的名称。
-                     * @param _autoBackupPolicyName 备份策略的名称。
+                     * 设置<p>备份策略的名称。</p>
+                     * @param _autoBackupPolicyName <p>备份策略的名称。</p>
                      * 
                      */
                     void SetAutoBackupPolicyName(const std::string& _autoBackupPolicyName);
@@ -158,15 +159,15 @@ namespace TencentCloud
                     bool AutoBackupPolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取定期备份的执行策略。
-                     * @return Policy 定期备份的执行策略。
+                     * 获取<p>定期备份的执行策略。</p>
+                     * @return Policy <p>定期备份的执行策略。</p>
                      * 
                      */
                     std::vector<Policy> GetPolicy() const;
 
                     /**
-                     * 设置定期备份的执行策略。
-                     * @param _policy 定期备份的执行策略。
+                     * 设置<p>定期备份的执行策略。</p>
+                     * @param _policy <p>定期备份的执行策略。</p>
                      * 
                      */
                     void SetPolicy(const std::vector<Policy>& _policy);
@@ -179,15 +180,15 @@ namespace TencentCloud
                     bool PolicyHasBeenSet() const;
 
                     /**
-                     * 获取备份策略ID。
-                     * @return AutoBackupPolicyId 备份策略ID。
+                     * 获取<p>备份策略ID。</p>
+                     * @return AutoBackupPolicyId <p>备份策略ID。</p>
                      * 
                      */
                     std::string GetAutoBackupPolicyId() const;
 
                     /**
-                     * 设置备份策略ID。
-                     * @param _autoBackupPolicyId 备份策略ID。
+                     * 设置<p>备份策略ID。</p>
+                     * @param _autoBackupPolicyId <p>备份策略ID。</p>
                      * 
                      */
                     void SetAutoBackupPolicyId(const std::string& _autoBackupPolicyId);
@@ -200,15 +201,15 @@ namespace TencentCloud
                     bool AutoBackupPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取备份策略的创建时间。
-                     * @return CreateTime 备份策略的创建时间。
+                     * 获取<p>备份策略的创建时间。</p>
+                     * @return CreateTime <p>备份策略的创建时间。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置备份策略的创建时间。
-                     * @param _createTime 备份策略的创建时间。
+                     * 设置<p>备份策略的创建时间。</p>
+                     * @param _createTime <p>备份策略的创建时间。</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -221,15 +222,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取使用该定期备份策略创建出来的备份保留天数。
-                     * @return RetentionDays 使用该定期备份策略创建出来的备份保留天数。
+                     * 获取<p>使用该定期备份策略创建出来的备份保留天数。</p>
+                     * @return RetentionDays <p>使用该定期备份策略创建出来的备份保留天数。</p>
                      * 
                      */
                     uint64_t GetRetentionDays() const;
 
                     /**
-                     * 设置使用该定期备份策略创建出来的备份保留天数。
-                     * @param _retentionDays 使用该定期备份策略创建出来的备份保留天数。
+                     * 设置<p>使用该定期备份策略创建出来的备份保留天数。</p>
+                     * @param _retentionDays <p>使用该定期备份策略创建出来的备份保留天数。</p>
                      * 
                      */
                     void SetRetentionDays(const uint64_t& _retentionDays);
@@ -242,15 +243,15 @@ namespace TencentCloud
                     bool RetentionDaysHasBeenSet() const;
 
                     /**
-                     * 获取用户AppId。
-                     * @return AppId 用户AppId。
+                     * 获取<p>用户AppId。</p>
+                     * @return AppId <p>用户AppId。</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置用户AppId。
-                     * @param _appId 用户AppId。
+                     * 设置<p>用户AppId。</p>
+                     * @param _appId <p>用户AppId。</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -263,15 +264,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取定期备份策略绑定的实例ID列表。
-                     * @return InstanceIdSet 定期备份策略绑定的实例ID列表。
+                     * 获取<p>定期备份策略绑定的实例ID列表。</p>
+                     * @return InstanceIdSet <p>定期备份策略绑定的实例ID列表。</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
-                     * 设置定期备份策略绑定的实例ID列表。
-                     * @param _instanceIdSet 定期备份策略绑定的实例ID列表。
+                     * 设置<p>定期备份策略绑定的实例ID列表。</p>
+                     * @param _instanceIdSet <p>定期备份策略绑定的实例ID列表。</p>
                      * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
@@ -284,15 +285,15 @@ namespace TencentCloud
                     bool InstanceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取该定期快照创建的快照最大保留月数
-                     * @return RetentionMonths 该定期快照创建的快照最大保留月数
+                     * 获取<p>使用该定期备份策略创建的备份最大保留月数</p>
+                     * @return RetentionMonths <p>使用该定期备份策略创建的备份最大保留月数</p>
                      * 
                      */
                     uint64_t GetRetentionMonths() const;
 
                     /**
-                     * 设置该定期快照创建的快照最大保留月数
-                     * @param _retentionMonths 该定期快照创建的快照最大保留月数
+                     * 设置<p>使用该定期备份策略创建的备份最大保留月数</p>
+                     * @param _retentionMonths <p>使用该定期备份策略创建的备份最大保留月数</p>
                      * 
                      */
                     void SetRetentionMonths(const uint64_t& _retentionMonths);
@@ -305,15 +306,15 @@ namespace TencentCloud
                     bool RetentionMonthsHasBeenSet() const;
 
                     /**
-                     * 获取该定期快照创建的快照最大保留数量
-                     * @return RetentionAmount 该定期快照创建的快照最大保留数量
+                     * 获取<p>使用该定期备份策略创建的备份最大保留数量</p>
+                     * @return RetentionAmount <p>使用该定期备份策略创建的备份最大保留数量</p>
                      * 
                      */
                     uint64_t GetRetentionAmount() const;
 
                     /**
-                     * 设置该定期快照创建的快照最大保留数量
-                     * @param _retentionAmount 该定期快照创建的快照最大保留数量
+                     * 设置<p>使用该定期备份策略创建的备份最大保留数量</p>
+                     * @param _retentionAmount <p>使用该定期备份策略创建的备份最大保留数量</p>
                      * 
                      */
                     void SetRetentionAmount(const uint64_t& _retentionAmount);
@@ -326,18 +327,18 @@ namespace TencentCloud
                     bool RetentionAmountHasBeenSet() const;
 
                     /**
-                     * 获取创建人。
+                     * 获取<p>创建人。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountName 创建人。
+                     * @return AccountName <p>创建人。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置创建人。
+                     * 设置<p>创建人。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accountName 创建人。
+                     * @param _accountName <p>创建人。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -351,18 +352,18 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取主账号uin。
+                     * 获取<p>主账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountUin 主账号uin。
+                     * @return AccountUin <p>主账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountUin() const;
 
                     /**
-                     * 设置主账号uin。
+                     * 设置<p>主账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accountUin 主账号uin。
+                     * @param _accountUin <p>主账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -376,18 +377,18 @@ namespace TencentCloud
                     bool AccountUinHasBeenSet() const;
 
                     /**
-                     * 获取子账号uin。
+                     * 获取<p>子账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubAccountUin 子账号uin。
+                     * @return SubAccountUin <p>子账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
-                     * 设置子账号uin。
+                     * 设置<p>子账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subAccountUin 子账号uin。
+                     * @param _subAccountUin <p>子账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -401,15 +402,15 @@ namespace TencentCloud
                     bool SubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取策略存储类型
-                     * @return StorageType 策略存储类型
+                     * 获取<p>策略存储类型</p>
+                     * @return StorageType <p>策略存储类型</p>
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置策略存储类型
-                     * @param _storageType 策略存储类型
+                     * 设置<p>策略存储类型</p>
+                     * @param _storageType <p>策略存储类型</p>
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -422,18 +423,18 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取备份库ID
+                     * 获取<p>备份库ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VaultId 备份库ID
+                     * @return VaultId <p>备份库ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVaultId() const;
 
                     /**
-                     * 设置备份库ID
+                     * 设置<p>备份库ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vaultId 备份库ID
+                     * @param _vaultId <p>备份库ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -447,15 +448,15 @@ namespace TencentCloud
                     bool VaultIdHasBeenSet() const;
 
                     /**
-                     * 获取高级保留策略
-                     * @return AdvancedRetentionPolicy 高级保留策略
+                     * 获取<p>高级保留策略</p>
+                     * @return AdvancedRetentionPolicy <p>高级保留策略</p>
                      * 
                      */
                     AdvancedRetentionPolicy GetAdvancedRetentionPolicy() const;
 
                     /**
-                     * 设置高级保留策略
-                     * @param _advancedRetentionPolicy 高级保留策略
+                     * 设置<p>高级保留策略</p>
+                     * @param _advancedRetentionPolicy <p>高级保留策略</p>
                      * 
                      */
                     void SetAdvancedRetentionPolicy(const AdvancedRetentionPolicy& _advancedRetentionPolicy);
@@ -467,126 +468,158 @@ namespace TencentCloud
                      */
                     bool AdvancedRetentionPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>备份资源信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupResourceInfos <p>备份资源信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<BackupResourceInfo> GetBackupResourceInfos() const;
+
+                    /**
+                     * 设置<p>备份资源信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _backupResourceInfos <p>备份资源信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBackupResourceInfos(const std::vector<BackupResourceInfo>& _backupResourceInfos);
+
+                    /**
+                     * 判断参数 BackupResourceInfos 是否已赋值
+                     * @return BackupResourceInfos 是否已赋值
+                     * 
+                     */
+                    bool BackupResourceInfosHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 定期备份策略是否激活。
+                     * <p>定期备份策略是否激活。</p>
                      */
                     bool m_isActivated;
                     bool m_isActivatedHasBeenSet;
 
                     /**
-                     * 使用该定期备份策略创建出来的备份是否永久保留。
+                     * <p>使用该定期备份策略创建出来的备份是否永久保留。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isPermanent;
                     bool m_isPermanentHasBeenSet;
 
                     /**
-                     * 使用该定期备份策略创建出来的备份是否永久保留。
+                     * <p>使用该定期备份策略创建出来的备份是否永久保留。</p>
                      */
                     std::string m_nextTriggerTime;
                     bool m_nextTriggerTimeHasBeenSet;
 
                     /**
-                     * NORMAL
+                     * <p>NORMAL</p>
                      */
                     std::string m_autoBackupPolicyState;
                     bool m_autoBackupPolicyStateHasBeenSet;
 
                     /**
-                     * 备份策略的名称。
+                     * <p>备份策略的名称。</p>
                      */
                     std::string m_autoBackupPolicyName;
                     bool m_autoBackupPolicyNameHasBeenSet;
 
                     /**
-                     * 定期备份的执行策略。
+                     * <p>定期备份的执行策略。</p>
                      */
                     std::vector<Policy> m_policy;
                     bool m_policyHasBeenSet;
 
                     /**
-                     * 备份策略ID。
+                     * <p>备份策略ID。</p>
                      */
                     std::string m_autoBackupPolicyId;
                     bool m_autoBackupPolicyIdHasBeenSet;
 
                     /**
-                     * 备份策略的创建时间。
+                     * <p>备份策略的创建时间。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 使用该定期备份策略创建出来的备份保留天数。
+                     * <p>使用该定期备份策略创建出来的备份保留天数。</p>
                      */
                     uint64_t m_retentionDays;
                     bool m_retentionDaysHasBeenSet;
 
                     /**
-                     * 用户AppId。
+                     * <p>用户AppId。</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 定期备份策略绑定的实例ID列表。
+                     * <p>定期备份策略绑定的实例ID列表。</p>
                      */
                     std::vector<std::string> m_instanceIdSet;
                     bool m_instanceIdSetHasBeenSet;
 
                     /**
-                     * 该定期快照创建的快照最大保留月数
+                     * <p>使用该定期备份策略创建的备份最大保留月数</p>
                      */
                     uint64_t m_retentionMonths;
                     bool m_retentionMonthsHasBeenSet;
 
                     /**
-                     * 该定期快照创建的快照最大保留数量
+                     * <p>使用该定期备份策略创建的备份最大保留数量</p>
                      */
                     uint64_t m_retentionAmount;
                     bool m_retentionAmountHasBeenSet;
 
                     /**
-                     * 创建人。
+                     * <p>创建人。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 主账号uin。
+                     * <p>主账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountUin;
                     bool m_accountUinHasBeenSet;
 
                     /**
-                     * 子账号uin。
+                     * <p>子账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
 
                     /**
-                     * 策略存储类型
+                     * <p>策略存储类型</p>
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 备份库ID
+                     * <p>备份库ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vaultId;
                     bool m_vaultIdHasBeenSet;
 
                     /**
-                     * 高级保留策略
+                     * <p>高级保留策略</p>
                      */
                     AdvancedRetentionPolicy m_advancedRetentionPolicy;
                     bool m_advancedRetentionPolicyHasBeenSet;
+
+                    /**
+                     * <p>备份资源信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BackupResourceInfo> m_backupResourceInfos;
+                    bool m_backupResourceInfosHasBeenSet;
 
                 };
             }

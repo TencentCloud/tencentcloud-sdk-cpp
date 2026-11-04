@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/databuddy/v20260715/model/WorkflowTriggerAdvancedConfiguration.h>
+#include <tencentcloud/databuddy/v20260715/model/FileArrivalConfig.h>
 
 
 namespace TencentCloud
@@ -322,6 +323,31 @@ namespace TencentCloud
                      */
                     bool AdvancedConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>工作流调度文件到达方式配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileArrivalConfig <p>工作流调度文件到达方式配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    FileArrivalConfig GetFileArrivalConfig() const;
+
+                    /**
+                     * 设置<p>工作流调度文件到达方式配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileArrivalConfig <p>工作流调度文件到达方式配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileArrivalConfig(const FileArrivalConfig& _fileArrivalConfig);
+
+                    /**
+                     * 判断参数 FileArrivalConfig 是否已赋值
+                     * @return FileArrivalConfig 是否已赋值
+                     * 
+                     */
+                    bool FileArrivalConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,6 +426,13 @@ namespace TencentCloud
                      */
                     WorkflowTriggerAdvancedConfiguration m_advancedConfig;
                     bool m_advancedConfigHasBeenSet;
+
+                    /**
+                     * <p>工作流调度文件到达方式配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FileArrivalConfig m_fileArrivalConfig;
+                    bool m_fileArrivalConfigHasBeenSet;
 
                 };
             }

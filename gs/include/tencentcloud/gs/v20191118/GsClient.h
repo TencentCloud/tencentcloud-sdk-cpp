@@ -45,6 +45,8 @@
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceImageResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceLabelRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceLabelResponse.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceMCPTokenRequest.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceMCPTokenResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceSSHRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceSSHResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceWebShellRequest.h>
@@ -71,6 +73,8 @@
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceImagesResponse.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceLabelRequest.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceLabelResponse.h>
+#include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceMCPTokenRequest.h>
+#include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceMCPTokenResponse.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidAppsRequest.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidAppsResponse.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceAppsRequest.h>
@@ -81,6 +85,8 @@
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceImagesResponse.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceLabelsRequest.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceLabelsResponse.h>
+#include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceMCPTokensRequest.h>
+#include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceMCPTokensResponse.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceTasksStatusRequest.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstanceTasksStatusResponse.h>
 #include <tencentcloud/gs/v20191118/model/DescribeAndroidInstancesRequest.h>
@@ -143,6 +149,8 @@
 #include <tencentcloud/gs/v20191118/model/RebootAndroidInstanceHostsResponse.h>
 #include <tencentcloud/gs/v20191118/model/RebootAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/RebootAndroidInstancesResponse.h>
+#include <tencentcloud/gs/v20191118/model/RenewAndroidInstanceMCPTokenRequest.h>
+#include <tencentcloud/gs/v20191118/model/RenewAndroidInstanceMCPTokenResponse.h>
 #include <tencentcloud/gs/v20191118/model/RenewAndroidInstancesAccessTokenRequest.h>
 #include <tencentcloud/gs/v20191118/model/RenewAndroidInstancesAccessTokenResponse.h>
 #include <tencentcloud/gs/v20191118/model/ResetAndroidInstancesRequest.h>
@@ -236,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAndroidInstanceLabelResponse> CreateAndroidInstanceLabelOutcome;
                 typedef std::future<CreateAndroidInstanceLabelOutcome> CreateAndroidInstanceLabelOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateAndroidInstanceLabelRequest&, CreateAndroidInstanceLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstanceLabelAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAndroidInstanceMCPTokenResponse> CreateAndroidInstanceMCPTokenOutcome;
+                typedef std::future<CreateAndroidInstanceMCPTokenOutcome> CreateAndroidInstanceMCPTokenOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::CreateAndroidInstanceMCPTokenRequest&, CreateAndroidInstanceMCPTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstanceMCPTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAndroidInstanceSSHResponse> CreateAndroidInstanceSSHOutcome;
                 typedef std::future<CreateAndroidInstanceSSHOutcome> CreateAndroidInstanceSSHOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateAndroidInstanceSSHRequest&, CreateAndroidInstanceSSHOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstanceSSHAsyncHandler;
@@ -275,6 +286,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAndroidInstanceLabelResponse> DeleteAndroidInstanceLabelOutcome;
                 typedef std::future<DeleteAndroidInstanceLabelOutcome> DeleteAndroidInstanceLabelOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DeleteAndroidInstanceLabelRequest&, DeleteAndroidInstanceLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAndroidInstanceLabelAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAndroidInstanceMCPTokenResponse> DeleteAndroidInstanceMCPTokenOutcome;
+                typedef std::future<DeleteAndroidInstanceMCPTokenOutcome> DeleteAndroidInstanceMCPTokenOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DeleteAndroidInstanceMCPTokenRequest&, DeleteAndroidInstanceMCPTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAndroidInstanceMCPTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAndroidAppsResponse> DescribeAndroidAppsOutcome;
                 typedef std::future<DescribeAndroidAppsOutcome> DescribeAndroidAppsOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DescribeAndroidAppsRequest&, DescribeAndroidAppsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAndroidAppsAsyncHandler;
@@ -290,6 +304,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAndroidInstanceLabelsResponse> DescribeAndroidInstanceLabelsOutcome;
                 typedef std::future<DescribeAndroidInstanceLabelsOutcome> DescribeAndroidInstanceLabelsOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DescribeAndroidInstanceLabelsRequest&, DescribeAndroidInstanceLabelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAndroidInstanceLabelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAndroidInstanceMCPTokensResponse> DescribeAndroidInstanceMCPTokensOutcome;
+                typedef std::future<DescribeAndroidInstanceMCPTokensOutcome> DescribeAndroidInstanceMCPTokensOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DescribeAndroidInstanceMCPTokensRequest&, DescribeAndroidInstanceMCPTokensOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAndroidInstanceMCPTokensAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAndroidInstanceTasksStatusResponse> DescribeAndroidInstanceTasksStatusOutcome;
                 typedef std::future<DescribeAndroidInstanceTasksStatusOutcome> DescribeAndroidInstanceTasksStatusOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DescribeAndroidInstanceTasksStatusRequest&, DescribeAndroidInstanceTasksStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAndroidInstanceTasksStatusAsyncHandler;
@@ -383,6 +400,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RebootAndroidInstancesResponse> RebootAndroidInstancesOutcome;
                 typedef std::future<RebootAndroidInstancesOutcome> RebootAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::RebootAndroidInstancesRequest&, RebootAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootAndroidInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewAndroidInstanceMCPTokenResponse> RenewAndroidInstanceMCPTokenOutcome;
+                typedef std::future<RenewAndroidInstanceMCPTokenOutcome> RenewAndroidInstanceMCPTokenOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::RenewAndroidInstanceMCPTokenRequest&, RenewAndroidInstanceMCPTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewAndroidInstanceMCPTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewAndroidInstancesAccessTokenResponse> RenewAndroidInstancesAccessTokenOutcome;
                 typedef std::future<RenewAndroidInstancesAccessTokenOutcome> RenewAndroidInstancesAccessTokenOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::RenewAndroidInstancesAccessTokenRequest&, RenewAndroidInstancesAccessTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewAndroidInstancesAccessTokenAsyncHandler;
@@ -559,6 +579,15 @@ namespace TencentCloud
                 CreateAndroidInstanceLabelOutcomeCallable CreateAndroidInstanceLabelCallable(const Model::CreateAndroidInstanceLabelRequest& request);
 
                 /**
+                 *创建安卓实例MCP token
+                 * @param req CreateAndroidInstanceMCPTokenRequest
+                 * @return CreateAndroidInstanceMCPTokenOutcome
+                 */
+                CreateAndroidInstanceMCPTokenOutcome CreateAndroidInstanceMCPToken(const Model::CreateAndroidInstanceMCPTokenRequest &request);
+                void CreateAndroidInstanceMCPTokenAsync(const Model::CreateAndroidInstanceMCPTokenRequest& request, const CreateAndroidInstanceMCPTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAndroidInstanceMCPTokenOutcomeCallable CreateAndroidInstanceMCPTokenCallable(const Model::CreateAndroidInstanceMCPTokenRequest& request);
+
+                /**
                  *创建安卓实例 SSH 连接信息，请将返回结果的 PrivateKey 字段保存为 pem 文件，并将 pem 文件权限设置为 600，再参考返回结果的 ConnectCommand 使用 ssh 连接实例。
                  * @param req CreateAndroidInstanceSSHRequest
                  * @return CreateAndroidInstanceSSHOutcome
@@ -676,6 +705,15 @@ namespace TencentCloud
                 DeleteAndroidInstanceLabelOutcomeCallable DeleteAndroidInstanceLabelCallable(const Model::DeleteAndroidInstanceLabelRequest& request);
 
                 /**
+                 *删除安卓实例 MCP token
+                 * @param req DeleteAndroidInstanceMCPTokenRequest
+                 * @return DeleteAndroidInstanceMCPTokenOutcome
+                 */
+                DeleteAndroidInstanceMCPTokenOutcome DeleteAndroidInstanceMCPToken(const Model::DeleteAndroidInstanceMCPTokenRequest &request);
+                void DeleteAndroidInstanceMCPTokenAsync(const Model::DeleteAndroidInstanceMCPTokenRequest& request, const DeleteAndroidInstanceMCPTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAndroidInstanceMCPTokenOutcomeCallable DeleteAndroidInstanceMCPTokenCallable(const Model::DeleteAndroidInstanceMCPTokenRequest& request);
+
+                /**
                  *查询安卓应用信息
                  * @param req DescribeAndroidAppsRequest
                  * @return DescribeAndroidAppsOutcome
@@ -719,6 +757,15 @@ namespace TencentCloud
                 DescribeAndroidInstanceLabelsOutcome DescribeAndroidInstanceLabels(const Model::DescribeAndroidInstanceLabelsRequest &request);
                 void DescribeAndroidInstanceLabelsAsync(const Model::DescribeAndroidInstanceLabelsRequest& request, const DescribeAndroidInstanceLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAndroidInstanceLabelsOutcomeCallable DescribeAndroidInstanceLabelsCallable(const Model::DescribeAndroidInstanceLabelsRequest& request);
+
+                /**
+                 *查询安卓实例MCP Token
+                 * @param req DescribeAndroidInstanceMCPTokensRequest
+                 * @return DescribeAndroidInstanceMCPTokensOutcome
+                 */
+                DescribeAndroidInstanceMCPTokensOutcome DescribeAndroidInstanceMCPTokens(const Model::DescribeAndroidInstanceMCPTokensRequest &request);
+                void DescribeAndroidInstanceMCPTokensAsync(const Model::DescribeAndroidInstanceMCPTokensRequest& request, const DescribeAndroidInstanceMCPTokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAndroidInstanceMCPTokensOutcomeCallable DescribeAndroidInstanceMCPTokensCallable(const Model::DescribeAndroidInstanceMCPTokensRequest& request);
 
                 /**
                  *查询安卓实例任务状态
@@ -1001,6 +1048,15 @@ namespace TencentCloud
                 RebootAndroidInstancesOutcome RebootAndroidInstances(const Model::RebootAndroidInstancesRequest &request);
                 void RebootAndroidInstancesAsync(const Model::RebootAndroidInstancesRequest& request, const RebootAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RebootAndroidInstancesOutcomeCallable RebootAndroidInstancesCallable(const Model::RebootAndroidInstancesRequest& request);
+
+                /**
+                 *续期安卓实例 MCP token
+                 * @param req RenewAndroidInstanceMCPTokenRequest
+                 * @return RenewAndroidInstanceMCPTokenOutcome
+                 */
+                RenewAndroidInstanceMCPTokenOutcome RenewAndroidInstanceMCPToken(const Model::RenewAndroidInstanceMCPTokenRequest &request);
+                void RenewAndroidInstanceMCPTokenAsync(const Model::RenewAndroidInstanceMCPTokenRequest& request, const RenewAndroidInstanceMCPTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewAndroidInstanceMCPTokenOutcomeCallable RenewAndroidInstanceMCPTokenCallable(const Model::RenewAndroidInstanceMCPTokenRequest& request);
 
                 /**
                  *续期安卓实例访问Token

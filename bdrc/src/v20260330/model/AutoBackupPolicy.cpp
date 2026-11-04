@@ -39,7 +39,8 @@ AutoBackupPolicy::AutoBackupPolicy() :
     m_subAccountUinHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_vaultIdHasBeenSet(false),
-    m_advancedRetentionPolicyHasBeenSet(false)
+    m_advancedRetentionPolicyHasBeenSet(false),
+    m_backupResourceInfosHasBeenSet(false)
 {
 }
 
@@ -258,6 +259,26 @@ CoreInternalOutcome AutoBackupPolicy::Deserialize(const rapidjson::Value &value)
         m_advancedRetentionPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupResourceInfos") && !value["BackupResourceInfos"].IsNull())
+    {
+        if (!value["BackupResourceInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AutoBackupPolicy.BackupResourceInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BackupResourceInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BackupResourceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_backupResourceInfos.push_back(item);
+        }
+        m_backupResourceInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -428,6 +449,21 @@ void AutoBackupPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_advancedRetentionPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_backupResourceInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupResourceInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_backupResourceInfos.begin(); itr != m_backupResourceInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -735,5 +771,21 @@ void AutoBackupPolicy::SetAdvancedRetentionPolicy(const AdvancedRetentionPolicy&
 bool AutoBackupPolicy::AdvancedRetentionPolicyHasBeenSet() const
 {
     return m_advancedRetentionPolicyHasBeenSet;
+}
+
+vector<BackupResourceInfo> AutoBackupPolicy::GetBackupResourceInfos() const
+{
+    return m_backupResourceInfos;
+}
+
+void AutoBackupPolicy::SetBackupResourceInfos(const vector<BackupResourceInfo>& _backupResourceInfos)
+{
+    m_backupResourceInfos = _backupResourceInfos;
+    m_backupResourceInfosHasBeenSet = true;
+}
+
+bool AutoBackupPolicy::BackupResourceInfosHasBeenSet() const
+{
+    return m_backupResourceInfosHasBeenSet;
 }
 

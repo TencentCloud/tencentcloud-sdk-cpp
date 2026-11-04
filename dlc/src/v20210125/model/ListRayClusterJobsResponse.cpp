@@ -24,6 +24,7 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 ListRayClusterJobsResponse::ListRayClusterJobsResponse() :
+    m_totalHasBeenSet(false),
     m_pageHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_totalPagesHasBeenSet(false),
@@ -64,6 +65,16 @@ CoreInternalOutcome ListRayClusterJobsResponse::Deserialize(const string &payloa
         return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
+
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
 
     if (rsp.HasMember("Page") && !rsp["Page"].IsNull())
     {
@@ -125,6 +136,14 @@ string ListRayClusterJobsResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
     if (m_pageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -175,6 +194,16 @@ string ListRayClusterJobsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t ListRayClusterJobsResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool ListRayClusterJobsResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
+}
 
 int64_t ListRayClusterJobsResponse::GetPage() const
 {

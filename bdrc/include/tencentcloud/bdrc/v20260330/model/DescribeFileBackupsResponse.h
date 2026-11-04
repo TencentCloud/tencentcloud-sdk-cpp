@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的备份点总数量
-                     * @return TotalCount 符合条件的备份点总数量
+                     * 获取<p>符合条件的备份点总数量</p>
+                     * @return TotalCount <p>符合条件的备份点总数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的备份点详情
-                     * @return BackupSet 符合条件的备份点详情
+                     * 获取<p>符合条件的备份点详情</p>
+                     * @return BackupSet <p>符合条件的备份点详情</p>
                      * 
                      */
                     std::vector<BackupInfo> GetBackupSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的备份点总数量
+                     * <p>符合条件的备份点总数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 符合条件的备份点详情
+                     * <p>符合条件的备份点详情</p>
                      */
                     std::vector<BackupInfo> m_backupSet;
                     bool m_backupSetHasBeenSet;

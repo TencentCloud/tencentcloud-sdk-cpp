@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前页码（从1开始）
-                     * @return Page 当前页码（从1开始）
+                     * 获取<p>当前页码（从1开始）</p>
+                     * @return Page <p>当前页码（从1开始）</p>
                      * 
                      */
                     int64_t GetPage() const;
 
                     /**
-                     * 设置当前页码（从1开始）
-                     * @param _page 当前页码（从1开始）
+                     * 设置<p>当前页码（从1开始）</p>
+                     * @param _page <p>当前页码（从1开始）</p>
                      * 
                      */
                     void SetPage(const int64_t& _page);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取页数
-                     * @return PageSize 页数
+                     * 获取<p>页数</p>
+                     * @return PageSize <p>页数</p>
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置页数
-                     * @param _pageSize 页数
+                     * 设置<p>页数</p>
+                     * @param _pageSize <p>页数</p>
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件列表（列表的字段名称）
-                     * @return Filters 过滤条件列表（列表的字段名称）
+                     * 获取<p>过滤条件列表（列表的字段名称）</p>
+                     * @return Filters <p>过滤条件列表（列表的字段名称）</p>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件列表（列表的字段名称）
-                     * @param _filters 过滤条件列表（列表的字段名称）
+                     * 设置<p>过滤条件列表（列表的字段名称）</p>
+                     * @param _filters <p>过滤条件列表（列表的字段名称）</p>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取提交时间起始过滤-时间戳（毫秒，可选）
-                     * @return StartTime 提交时间起始过滤-时间戳（毫秒，可选）
+                     * 获取<p>提交时间起始过滤-时间戳（毫秒，可选）</p>
+                     * @return StartTime <p>提交时间起始过滤-时间戳（毫秒，可选）</p>
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置提交时间起始过滤-时间戳（毫秒，可选）
-                     * @param _startTime 提交时间起始过滤-时间戳（毫秒，可选）
+                     * 设置<p>提交时间起始过滤-时间戳（毫秒，可选）</p>
+                     * @param _startTime <p>提交时间起始过滤-时间戳（毫秒，可选）</p>
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取提交时间截止过滤-时间戳（毫秒，可选）
-                     * @return EndTime 提交时间截止过滤-时间戳（毫秒，可选）
+                     * 获取<p>提交时间截止过滤-时间戳（毫秒，可选）</p>
+                     * @return EndTime <p>提交时间截止过滤-时间戳（毫秒，可选）</p>
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置提交时间截止过滤-时间戳（毫秒，可选）
-                     * @param _endTime 提交时间截止过滤-时间戳（毫秒，可选）
+                     * 设置<p>提交时间截止过滤-时间戳（毫秒，可选）</p>
+                     * @param _endTime <p>提交时间截止过滤-时间戳（毫秒，可选）</p>
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取排序字段列表（列表字段）
-                     * @return SortFields 排序字段列表（列表字段）
+                     * 获取<p>排序字段列表（列表字段）</p>
+                     * @return SortFields <p>排序字段列表（列表字段）</p>
                      * 
                      */
                     std::vector<SortField> GetSortFields() const;
 
                     /**
-                     * 设置排序字段列表（列表字段）
-                     * @param _sortFields 排序字段列表（列表字段）
+                     * 设置<p>排序字段列表（列表字段）</p>
+                     * @param _sortFields <p>排序字段列表（列表字段）</p>
                      * 
                      */
                     void SetSortFields(const std::vector<SortField>& _sortFields);
@@ -173,37 +173,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前页码（从1开始）
+                     * <p>当前页码（从1开始）</p>
                      */
                     int64_t m_page;
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 页数
+                     * <p>页数</p>
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 过滤条件列表（列表的字段名称）
+                     * <p>过滤条件列表（列表的字段名称）</p>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 提交时间起始过滤-时间戳（毫秒，可选）
+                     * <p>提交时间起始过滤-时间戳（毫秒，可选）</p>
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 提交时间截止过滤-时间戳（毫秒，可选）
+                     * <p>提交时间截止过滤-时间戳（毫秒，可选）</p>
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 排序字段列表（列表字段）
+                     * <p>排序字段列表（列表字段）</p>
                      */
                     std::vector<SortField> m_sortFields;
                     bool m_sortFieldsHasBeenSet;

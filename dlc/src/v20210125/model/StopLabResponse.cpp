@@ -25,11 +25,14 @@ using namespace std;
 
 StopLabResponse::StopLabResponse() :
     m_exampleIdHasBeenSet(false),
+    m_codeArchiveUrlHasBeenSet(false),
     m_servicesHasBeenSet(false),
     m_labImageHasBeenSet(false),
+    m_labImagePullPolicyHasBeenSet(false),
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_resourcePartitionIdHasBeenSet(false),
     m_resourcePartitionNameHasBeenSet(false),
     m_queueHasBeenSet(false),
@@ -37,18 +40,27 @@ StopLabResponse::StopLabResponse() :
     m_uinHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_statusMessageHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
+    m_resourceConfigIdHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_catalogHasBeenSet(false),
     m_historyUrlHasBeenSet(false),
+    m_imagePullPolicyHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_stopTimeHasBeenSet(false),
+    m_deleteTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_persistentWorkDirHasBeenSet(false),
     m_enableTokenHasBeenSet(false),
     m_tokenHasBeenSet(false),
+    m_autoscalerOptionsHasBeenSet(false),
     m_labImagePullTypeHasBeenSet(false),
     m_subAccountNameHasBeenSet(false),
     m_imagePullTypeHasBeenSet(false),
@@ -100,6 +112,16 @@ CoreInternalOutcome StopLabResponse::Deserialize(const string &payload)
         m_exampleIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CodeArchiveUrl") && !rsp["CodeArchiveUrl"].IsNull())
+    {
+        if (!rsp["CodeArchiveUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodeArchiveUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codeArchiveUrl = string(rsp["CodeArchiveUrl"].GetString());
+        m_codeArchiveUrlHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Services") && !rsp["Services"].IsNull())
     {
         if (!rsp["Services"].IsArray())
@@ -130,6 +152,16 @@ CoreInternalOutcome StopLabResponse::Deserialize(const string &payload)
         m_labImageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LabImagePullPolicy") && !rsp["LabImagePullPolicy"].IsNull())
+    {
+        if (!rsp["LabImagePullPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LabImagePullPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_labImagePullPolicy = string(rsp["LabImagePullPolicy"].GetString());
+        m_labImagePullPolicyHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Id") && !rsp["Id"].IsNull())
     {
         if (!rsp["Id"].IsString())
@@ -158,6 +190,16 @@ CoreInternalOutcome StopLabResponse::Deserialize(const string &payload)
         }
         m_name = string(rsp["Name"].GetString());
         m_nameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Description") && !rsp["Description"].IsNull())
+    {
+        if (!rsp["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(rsp["Description"].GetString());
+        m_descriptionHasBeenSet = true;
     }
 
     if (rsp.HasMember("ResourcePartitionId") && !rsp["ResourcePartitionId"].IsNull())
@@ -230,6 +272,16 @@ CoreInternalOutcome StopLabResponse::Deserialize(const string &payload)
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StatusMessage") && !rsp["StatusMessage"].IsNull())
+    {
+        if (!rsp["StatusMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StatusMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusMessage = string(rsp["StatusMessage"].GetString());
+        m_statusMessageHasBeenSet = true;
+    }
+
     if (rsp.HasMember("CreateTime") && !rsp["CreateTime"].IsNull())
     {
         if (!rsp["CreateTime"].IsUint64())
@@ -240,6 +292,36 @@ CoreInternalOutcome StopLabResponse::Deserialize(const string &payload)
         m_createTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UpdateTime") && !rsp["UpdateTime"].IsNull())
+    {
+        if (!rsp["UpdateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = rsp["UpdateTime"].GetUint64();
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("GroupName") && !rsp["GroupName"].IsNull())
+    {
+        if (!rsp["GroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupName = string(rsp["GroupName"].GetString());
+        m_groupNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("GroupId") && !rsp["GroupId"].IsNull())
+    {
+        if (!rsp["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(rsp["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ResourceConfig") && !rsp["ResourceConfig"].IsNull())
     {
         if (!rsp["ResourceConfig"].IsString())
@@ -248,6 +330,16 @@ CoreInternalOutcome StopLabResponse::Deserialize(const string &payload)
         }
         m_resourceConfig = string(rsp["ResourceConfig"].GetString());
         m_resourceConfigHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResourceConfigId") && !rsp["ResourceConfigId"].IsNull())
+    {
+        if (!rsp["ResourceConfigId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceConfigId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceConfigId = string(rsp["ResourceConfigId"].GetString());
+        m_resourceConfigIdHasBeenSet = true;
     }
 
     if (rsp.HasMember("Image") && !rsp["Image"].IsNull())
@@ -280,6 +372,16 @@ CoreInternalOutcome StopLabResponse::Deserialize(const string &payload)
         m_historyUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImagePullPolicy") && !rsp["ImagePullPolicy"].IsNull())
+    {
+        if (!rsp["ImagePullPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImagePullPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imagePullPolicy = string(rsp["ImagePullPolicy"].GetString());
+        m_imagePullPolicyHasBeenSet = true;
+    }
+
     if (rsp.HasMember("AdvancedOptions") && !rsp["AdvancedOptions"].IsNull())
     {
         if (!rsp["AdvancedOptions"].IsString())
@@ -308,6 +410,26 @@ CoreInternalOutcome StopLabResponse::Deserialize(const string &payload)
         }
         m_startTime = rsp["StartTime"].GetUint64();
         m_startTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("StopTime") && !rsp["StopTime"].IsNull())
+    {
+        if (!rsp["StopTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StopTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_stopTime = rsp["StopTime"].GetUint64();
+        m_stopTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DeleteTime") && !rsp["DeleteTime"].IsNull())
+    {
+        if (!rsp["DeleteTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeleteTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteTime = rsp["DeleteTime"].GetUint64();
+        m_deleteTimeHasBeenSet = true;
     }
 
     if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
@@ -365,6 +487,16 @@ CoreInternalOutcome StopLabResponse::Deserialize(const string &payload)
         }
         m_token = string(rsp["Token"].GetString());
         m_tokenHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoscalerOptions") && !rsp["AutoscalerOptions"].IsNull())
+    {
+        if (!rsp["AutoscalerOptions"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoscalerOptions` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoscalerOptions = string(rsp["AutoscalerOptions"].GetString());
+        m_autoscalerOptionsHasBeenSet = true;
     }
 
     if (rsp.HasMember("LabImagePullType") && !rsp["LabImagePullType"].IsNull())
@@ -425,6 +557,14 @@ string StopLabResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_exampleId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_codeArchiveUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeArchiveUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codeArchiveUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_servicesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -446,6 +586,14 @@ string StopLabResponse::ToJsonString() const
         string key = "LabImage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_labImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labImagePullPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LabImagePullPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_labImagePullPolicy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idHasBeenSet)
@@ -470,6 +618,14 @@ string StopLabResponse::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourcePartitionIdHasBeenSet)
@@ -528,6 +684,14 @@ string StopLabResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_statusMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusMessage.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -536,12 +700,44 @@ string StopLabResponse::ToJsonString() const
         value.AddMember(iKey, m_createTime, allocator);
     }
 
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_groupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_resourceConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ResourceConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceConfigIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceConfigId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceConfigId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageHasBeenSet)
@@ -568,6 +764,14 @@ string StopLabResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_historyUrl.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_imagePullPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImagePullPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imagePullPolicy.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_advancedOptionsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -590,6 +794,22 @@ string StopLabResponse::ToJsonString() const
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_stopTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_stopTime, allocator);
+    }
+
+    if (m_deleteTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteTime, allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -630,6 +850,14 @@ string StopLabResponse::ToJsonString() const
         string key = "Token";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoscalerOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoscalerOptions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoscalerOptions.c_str(), allocator).Move(), allocator);
     }
 
     if (m_labImagePullTypeHasBeenSet)
@@ -686,6 +914,16 @@ bool StopLabResponse::ExampleIdHasBeenSet() const
     return m_exampleIdHasBeenSet;
 }
 
+string StopLabResponse::GetCodeArchiveUrl() const
+{
+    return m_codeArchiveUrl;
+}
+
+bool StopLabResponse::CodeArchiveUrlHasBeenSet() const
+{
+    return m_codeArchiveUrlHasBeenSet;
+}
+
 vector<TypeKVPair> StopLabResponse::GetServices() const
 {
     return m_services;
@@ -704,6 +942,16 @@ string StopLabResponse::GetLabImage() const
 bool StopLabResponse::LabImageHasBeenSet() const
 {
     return m_labImageHasBeenSet;
+}
+
+string StopLabResponse::GetLabImagePullPolicy() const
+{
+    return m_labImagePullPolicy;
+}
+
+bool StopLabResponse::LabImagePullPolicyHasBeenSet() const
+{
+    return m_labImagePullPolicyHasBeenSet;
 }
 
 string StopLabResponse::GetId() const
@@ -734,6 +982,16 @@ string StopLabResponse::GetName() const
 bool StopLabResponse::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string StopLabResponse::GetDescription() const
+{
+    return m_description;
+}
+
+bool StopLabResponse::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 string StopLabResponse::GetResourcePartitionId() const
@@ -806,6 +1064,16 @@ bool StopLabResponse::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
+string StopLabResponse::GetStatusMessage() const
+{
+    return m_statusMessage;
+}
+
+bool StopLabResponse::StatusMessageHasBeenSet() const
+{
+    return m_statusMessageHasBeenSet;
+}
+
 uint64_t StopLabResponse::GetCreateTime() const
 {
     return m_createTime;
@@ -816,6 +1084,36 @@ bool StopLabResponse::CreateTimeHasBeenSet() const
     return m_createTimeHasBeenSet;
 }
 
+uint64_t StopLabResponse::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+bool StopLabResponse::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+string StopLabResponse::GetGroupName() const
+{
+    return m_groupName;
+}
+
+bool StopLabResponse::GroupNameHasBeenSet() const
+{
+    return m_groupNameHasBeenSet;
+}
+
+string StopLabResponse::GetGroupId() const
+{
+    return m_groupId;
+}
+
+bool StopLabResponse::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
 string StopLabResponse::GetResourceConfig() const
 {
     return m_resourceConfig;
@@ -824,6 +1122,16 @@ string StopLabResponse::GetResourceConfig() const
 bool StopLabResponse::ResourceConfigHasBeenSet() const
 {
     return m_resourceConfigHasBeenSet;
+}
+
+string StopLabResponse::GetResourceConfigId() const
+{
+    return m_resourceConfigId;
+}
+
+bool StopLabResponse::ResourceConfigIdHasBeenSet() const
+{
+    return m_resourceConfigIdHasBeenSet;
 }
 
 string StopLabResponse::GetImage() const
@@ -856,6 +1164,16 @@ bool StopLabResponse::HistoryUrlHasBeenSet() const
     return m_historyUrlHasBeenSet;
 }
 
+string StopLabResponse::GetImagePullPolicy() const
+{
+    return m_imagePullPolicy;
+}
+
+bool StopLabResponse::ImagePullPolicyHasBeenSet() const
+{
+    return m_imagePullPolicyHasBeenSet;
+}
+
 string StopLabResponse::GetAdvancedOptions() const
 {
     return m_advancedOptions;
@@ -884,6 +1202,26 @@ uint64_t StopLabResponse::GetStartTime() const
 bool StopLabResponse::StartTimeHasBeenSet() const
 {
     return m_startTimeHasBeenSet;
+}
+
+uint64_t StopLabResponse::GetStopTime() const
+{
+    return m_stopTime;
+}
+
+bool StopLabResponse::StopTimeHasBeenSet() const
+{
+    return m_stopTimeHasBeenSet;
+}
+
+uint64_t StopLabResponse::GetDeleteTime() const
+{
+    return m_deleteTime;
+}
+
+bool StopLabResponse::DeleteTimeHasBeenSet() const
+{
+    return m_deleteTimeHasBeenSet;
 }
 
 vector<Tag> StopLabResponse::GetTags() const
@@ -924,6 +1262,16 @@ string StopLabResponse::GetToken() const
 bool StopLabResponse::TokenHasBeenSet() const
 {
     return m_tokenHasBeenSet;
+}
+
+string StopLabResponse::GetAutoscalerOptions() const
+{
+    return m_autoscalerOptions;
+}
+
+bool StopLabResponse::AutoscalerOptionsHasBeenSet() const
+{
+    return m_autoscalerOptionsHasBeenSet;
 }
 
 string StopLabResponse::GetLabImagePullType() const

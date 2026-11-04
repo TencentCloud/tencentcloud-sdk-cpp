@@ -48,7 +48,12 @@ BackupInfo::BackupInfo() :
     m_nonExistSourcePathsHasBeenSet(false),
     m_failReasonHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_isInventoryPendingHasBeenSet(false),
+    m_enableObjectAclHasBeenSet(false),
+    m_enableObjectTagsHasBeenSet(false),
+    m_cloudResourceIdHasBeenSet(false),
+    m_productTypeHasBeenSet(false)
 {
 }
 
@@ -349,6 +354,56 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
         m_resourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsInventoryPending") && !value["IsInventoryPending"].IsNull())
+    {
+        if (!value["IsInventoryPending"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.IsInventoryPending` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInventoryPending = value["IsInventoryPending"].GetBool();
+        m_isInventoryPendingHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableObjectAcl") && !value["EnableObjectAcl"].IsNull())
+    {
+        if (!value["EnableObjectAcl"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.EnableObjectAcl` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableObjectAcl = value["EnableObjectAcl"].GetBool();
+        m_enableObjectAclHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableObjectTags") && !value["EnableObjectTags"].IsNull())
+    {
+        if (!value["EnableObjectTags"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.EnableObjectTags` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableObjectTags = value["EnableObjectTags"].GetBool();
+        m_enableObjectTagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudResourceId") && !value["CloudResourceId"].IsNull())
+    {
+        if (!value["CloudResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.CloudResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudResourceId = string(value["CloudResourceId"].GetString());
+        m_cloudResourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductType") && !value["ProductType"].IsNull())
+    {
+        if (!value["ProductType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.ProductType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productType = string(value["ProductType"].GetString());
+        m_productTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -598,6 +653,46 @@ void BackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInventoryPendingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInventoryPending";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInventoryPending, allocator);
+    }
+
+    if (m_enableObjectAclHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableObjectAcl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableObjectAcl, allocator);
+    }
+
+    if (m_enableObjectTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableObjectTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableObjectTags, allocator);
+    }
+
+    if (m_cloudResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cloudResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1049,5 +1144,85 @@ void BackupInfo::SetResourceType(const string& _resourceType)
 bool BackupInfo::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
+}
+
+bool BackupInfo::GetIsInventoryPending() const
+{
+    return m_isInventoryPending;
+}
+
+void BackupInfo::SetIsInventoryPending(const bool& _isInventoryPending)
+{
+    m_isInventoryPending = _isInventoryPending;
+    m_isInventoryPendingHasBeenSet = true;
+}
+
+bool BackupInfo::IsInventoryPendingHasBeenSet() const
+{
+    return m_isInventoryPendingHasBeenSet;
+}
+
+bool BackupInfo::GetEnableObjectAcl() const
+{
+    return m_enableObjectAcl;
+}
+
+void BackupInfo::SetEnableObjectAcl(const bool& _enableObjectAcl)
+{
+    m_enableObjectAcl = _enableObjectAcl;
+    m_enableObjectAclHasBeenSet = true;
+}
+
+bool BackupInfo::EnableObjectAclHasBeenSet() const
+{
+    return m_enableObjectAclHasBeenSet;
+}
+
+bool BackupInfo::GetEnableObjectTags() const
+{
+    return m_enableObjectTags;
+}
+
+void BackupInfo::SetEnableObjectTags(const bool& _enableObjectTags)
+{
+    m_enableObjectTags = _enableObjectTags;
+    m_enableObjectTagsHasBeenSet = true;
+}
+
+bool BackupInfo::EnableObjectTagsHasBeenSet() const
+{
+    return m_enableObjectTagsHasBeenSet;
+}
+
+string BackupInfo::GetCloudResourceId() const
+{
+    return m_cloudResourceId;
+}
+
+void BackupInfo::SetCloudResourceId(const string& _cloudResourceId)
+{
+    m_cloudResourceId = _cloudResourceId;
+    m_cloudResourceIdHasBeenSet = true;
+}
+
+bool BackupInfo::CloudResourceIdHasBeenSet() const
+{
+    return m_cloudResourceIdHasBeenSet;
+}
+
+string BackupInfo::GetProductType() const
+{
+    return m_productType;
+}
+
+void BackupInfo::SetProductType(const string& _productType)
+{
+    m_productType = _productType;
+    m_productTypeHasBeenSet = true;
+}
+
+bool BackupInfo::ProductTypeHasBeenSet() const
+{
+    return m_productTypeHasBeenSet;
 }
 

@@ -590,6 +590,56 @@ GsClient::CreateAndroidInstanceLabelOutcomeCallable GsClient::CreateAndroidInsta
     return prom->get_future();
 }
 
+GsClient::CreateAndroidInstanceMCPTokenOutcome GsClient::CreateAndroidInstanceMCPToken(const CreateAndroidInstanceMCPTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidInstanceMCPToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidInstanceMCPTokenResponse rsp = CreateAndroidInstanceMCPTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidInstanceMCPTokenOutcome(rsp);
+        else
+            return CreateAndroidInstanceMCPTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidInstanceMCPTokenOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidInstanceMCPTokenAsync(const CreateAndroidInstanceMCPTokenRequest& request, const CreateAndroidInstanceMCPTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAndroidInstanceMCPTokenRequest&;
+    using Resp = CreateAndroidInstanceMCPTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAndroidInstanceMCPToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GsClient::CreateAndroidInstanceMCPTokenOutcomeCallable GsClient::CreateAndroidInstanceMCPTokenCallable(const CreateAndroidInstanceMCPTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAndroidInstanceMCPTokenOutcome>>();
+    CreateAndroidInstanceMCPTokenAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const CreateAndroidInstanceMCPTokenRequest&,
+        CreateAndroidInstanceMCPTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GsClient::CreateAndroidInstanceSSHOutcome GsClient::CreateAndroidInstanceSSH(const CreateAndroidInstanceSSHRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAndroidInstanceSSH");
@@ -1240,6 +1290,56 @@ GsClient::DeleteAndroidInstanceLabelOutcomeCallable GsClient::DeleteAndroidInsta
     return prom->get_future();
 }
 
+GsClient::DeleteAndroidInstanceMCPTokenOutcome GsClient::DeleteAndroidInstanceMCPToken(const DeleteAndroidInstanceMCPTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAndroidInstanceMCPToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAndroidInstanceMCPTokenResponse rsp = DeleteAndroidInstanceMCPTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAndroidInstanceMCPTokenOutcome(rsp);
+        else
+            return DeleteAndroidInstanceMCPTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAndroidInstanceMCPTokenOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DeleteAndroidInstanceMCPTokenAsync(const DeleteAndroidInstanceMCPTokenRequest& request, const DeleteAndroidInstanceMCPTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAndroidInstanceMCPTokenRequest&;
+    using Resp = DeleteAndroidInstanceMCPTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAndroidInstanceMCPToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GsClient::DeleteAndroidInstanceMCPTokenOutcomeCallable GsClient::DeleteAndroidInstanceMCPTokenCallable(const DeleteAndroidInstanceMCPTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAndroidInstanceMCPTokenOutcome>>();
+    DeleteAndroidInstanceMCPTokenAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DeleteAndroidInstanceMCPTokenRequest&,
+        DeleteAndroidInstanceMCPTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 GsClient::DescribeAndroidAppsOutcome GsClient::DescribeAndroidApps(const DescribeAndroidAppsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAndroidApps");
@@ -1482,6 +1582,56 @@ GsClient::DescribeAndroidInstanceLabelsOutcomeCallable GsClient::DescribeAndroid
         const GsClient*,
         const DescribeAndroidInstanceLabelsRequest&,
         DescribeAndroidInstanceLabelsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GsClient::DescribeAndroidInstanceMCPTokensOutcome GsClient::DescribeAndroidInstanceMCPTokens(const DescribeAndroidInstanceMCPTokensRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAndroidInstanceMCPTokens");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAndroidInstanceMCPTokensResponse rsp = DescribeAndroidInstanceMCPTokensResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAndroidInstanceMCPTokensOutcome(rsp);
+        else
+            return DescribeAndroidInstanceMCPTokensOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAndroidInstanceMCPTokensOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DescribeAndroidInstanceMCPTokensAsync(const DescribeAndroidInstanceMCPTokensRequest& request, const DescribeAndroidInstanceMCPTokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAndroidInstanceMCPTokensRequest&;
+    using Resp = DescribeAndroidInstanceMCPTokensResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAndroidInstanceMCPTokens", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GsClient::DescribeAndroidInstanceMCPTokensOutcomeCallable GsClient::DescribeAndroidInstanceMCPTokensCallable(const DescribeAndroidInstanceMCPTokensRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAndroidInstanceMCPTokensOutcome>>();
+    DescribeAndroidInstanceMCPTokensAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const DescribeAndroidInstanceMCPTokensRequest&,
+        DescribeAndroidInstanceMCPTokensOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3032,6 +3182,56 @@ GsClient::RebootAndroidInstancesOutcomeCallable GsClient::RebootAndroidInstances
         const GsClient*,
         const RebootAndroidInstancesRequest&,
         RebootAndroidInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+GsClient::RenewAndroidInstanceMCPTokenOutcome GsClient::RenewAndroidInstanceMCPToken(const RenewAndroidInstanceMCPTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewAndroidInstanceMCPToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewAndroidInstanceMCPTokenResponse rsp = RenewAndroidInstanceMCPTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewAndroidInstanceMCPTokenOutcome(rsp);
+        else
+            return RenewAndroidInstanceMCPTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewAndroidInstanceMCPTokenOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::RenewAndroidInstanceMCPTokenAsync(const RenewAndroidInstanceMCPTokenRequest& request, const RenewAndroidInstanceMCPTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RenewAndroidInstanceMCPTokenRequest&;
+    using Resp = RenewAndroidInstanceMCPTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RenewAndroidInstanceMCPToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+GsClient::RenewAndroidInstanceMCPTokenOutcomeCallable GsClient::RenewAndroidInstanceMCPTokenCallable(const RenewAndroidInstanceMCPTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RenewAndroidInstanceMCPTokenOutcome>>();
+    RenewAndroidInstanceMCPTokenAsync(
+    request,
+    [prom](
+        const GsClient*,
+        const RenewAndroidInstanceMCPTokenRequest&,
+        RenewAndroidInstanceMCPTokenOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

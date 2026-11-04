@@ -31,6 +31,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/ResumeSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/ModifySessionSpaceResponse.h
   include/tencentcloud/ags/v20250920/model/DescribePreCacheImageTaskRequest.h
+  include/tencentcloud/ags/v20250920/model/HarnessVersionReference.h
   include/tencentcloud/ags/v20250920/model/CloudRecord.h
   include/tencentcloud/ags/v20250920/model/DescribeDeploymentResponse.h
   include/tencentcloud/ags/v20250920/model/RejectRegistryRecordResponse.h
@@ -144,6 +145,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/AcquireSandboxInstanceTokenResponse.h
   include/tencentcloud/ags/v20250920/model/AccountQuotaOverview.h
   include/tencentcloud/ags/v20250920/model/AgentBucketStorageSource.h
+  include/tencentcloud/ags/v20250920/model/MetadataEntry.h
   include/tencentcloud/ags/v20250920/model/DeletePreCacheImageRequest.h
   include/tencentcloud/ags/v20250920/model/CloudRecordLabelMutation.h
   include/tencentcloud/ags/v20250920/model/DescribeSandboxSnapshotListResponse.h
@@ -216,6 +218,7 @@ set(ags_src
   src/v20250920/model/ResumeSandboxInstanceRequest.cpp
   src/v20250920/model/ModifySessionSpaceResponse.cpp
   src/v20250920/model/DescribePreCacheImageTaskRequest.cpp
+  src/v20250920/model/HarnessVersionReference.cpp
   src/v20250920/model/CloudRecord.cpp
   src/v20250920/model/DescribeDeploymentResponse.cpp
   src/v20250920/model/RejectRegistryRecordResponse.cpp
@@ -329,6 +332,7 @@ set(ags_src
   src/v20250920/model/AcquireSandboxInstanceTokenResponse.cpp
   src/v20250920/model/AccountQuotaOverview.cpp
   src/v20250920/model/AgentBucketStorageSource.cpp
+  src/v20250920/model/MetadataEntry.cpp
   src/v20250920/model/DeletePreCacheImageRequest.cpp
   src/v20250920/model/CloudRecordLabelMutation.cpp
   src/v20250920/model/DescribeSandboxSnapshotListResponse.cpp

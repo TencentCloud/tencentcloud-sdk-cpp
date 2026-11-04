@@ -311,6 +311,20 @@ namespace TencentCloud
                     bool JobPackageNameHasBeenSet() const;
 
                     /**
+                     * 获取<p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺省时按 Local 处理</p>
+                     * @return JobPackageSource <p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺省时按 Local 处理</p>
+                     * 
+                     */
+                    std::string GetJobPackageSource() const;
+
+                    /**
+                     * 判断参数 JobPackageSource 是否已赋值
+                     * @return JobPackageSource 是否已赋值
+                     * 
+                     */
+                    bool JobPackageSourceHasBeenSet() const;
+
+                    /**
                      * 获取<p>应用ID</p>
                      * @return AppId <p>应用ID</p>
                      * 
@@ -337,6 +351,34 @@ namespace TencentCloud
                      * 
                      */
                     bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>子用户UIN</p>
+                     * @return SubAccountUin <p>子用户UIN</p>
+                     * 
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * @return SubAccountName <p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * 
+                     */
+                    std::string GetSubAccountName() const;
+
+                    /**
+                     * 判断参数 SubAccountName 是否已赋值
+                     * @return SubAccountName 是否已赋值
+                     * 
+                     */
+                    bool SubAccountNameHasBeenSet() const;
 
                     /**
                      * 获取<p>创建时间</p>
@@ -643,6 +685,12 @@ namespace TencentCloud
                     bool m_jobPackageNameHasBeenSet;
 
                     /**
+                     * <p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺省时按 Local 处理</p>
+                     */
+                    std::string m_jobPackageSource;
+                    bool m_jobPackageSourceHasBeenSet;
+
+                    /**
                      * <p>应用ID</p>
                      */
                     int64_t m_appId;
@@ -653,6 +701,18 @@ namespace TencentCloud
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
+
+                    /**
+                     * <p>子用户UIN</p>
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * <p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     */
+                    std::string m_subAccountName;
+                    bool m_subAccountNameHasBeenSet;
 
                     /**
                      * <p>创建时间</p>

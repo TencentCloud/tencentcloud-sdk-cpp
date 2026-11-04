@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DrillPairIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，详见定期快照过滤条件表。
-                     * @return Filters 过滤条件，详见定期快照过滤条件表。
+                     * 获取过滤条件。
+                     * @return Filters 过滤条件。
                      * 
                      */
                     std::vector<FilterModel> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，详见定期快照过滤条件表。
-                     * @param _filters 过滤条件，详见定期快照过滤条件表。
+                     * 设置过滤条件。
+                     * @param _filters 过滤条件。
                      * 
                      */
                     void SetFilters(const std::vector<FilterModel>& _filters);
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_drillPairIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，详见定期快照过滤条件表。
+                     * 过滤条件。
                      */
                     std::vector<FilterModel> m_filters;
                     bool m_filtersHasBeenSet;

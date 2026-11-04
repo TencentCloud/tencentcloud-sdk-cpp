@@ -152,12 +152,12 @@ bool SearchProRequest::SiteHasBeenSet() const
     return m_siteHasBeenSet;
 }
 
-uint64_t SearchProRequest::GetCnt() const
+int64_t SearchProRequest::GetCnt() const
 {
     return m_cnt;
 }
 
-void SearchProRequest::SetCnt(const uint64_t& _cnt)
+void SearchProRequest::SetCnt(const int64_t& _cnt)
 {
     m_cnt = _cnt;
     m_cntHasBeenSet = true;

@@ -28,7 +28,12 @@ InstanceEnumParam::InstanceEnumParam() :
     m_currentValueHasBeenSet(false),
     m_tipsHasBeenSet(false),
     m_enumValueHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_paramTypeHasBeenSet(false),
+    m_featureSupportedHasBeenSet(false),
+    m_newFeatureOnlineTimeHasBeenSet(false),
+    m_patternHasBeenSet(false),
+    m_inputDescriptionHasBeenSet(false)
 {
 }
 
@@ -120,6 +125,56 @@ CoreInternalOutcome InstanceEnumParam::Deserialize(const rapidjson::Value &value
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("ParamType") && !value["ParamType"].IsNull())
+    {
+        if (!value["ParamType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceEnumParam.ParamType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paramType = string(value["ParamType"].GetString());
+        m_paramTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FeatureSupported") && !value["FeatureSupported"].IsNull())
+    {
+        if (!value["FeatureSupported"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceEnumParam.FeatureSupported` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_featureSupported = value["FeatureSupported"].GetBool();
+        m_featureSupportedHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewFeatureOnlineTime") && !value["NewFeatureOnlineTime"].IsNull())
+    {
+        if (!value["NewFeatureOnlineTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceEnumParam.NewFeatureOnlineTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newFeatureOnlineTime = string(value["NewFeatureOnlineTime"].GetString());
+        m_newFeatureOnlineTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Pattern") && !value["Pattern"].IsNull())
+    {
+        if (!value["Pattern"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceEnumParam.Pattern` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pattern = string(value["Pattern"].GetString());
+        m_patternHasBeenSet = true;
+    }
+
+    if (value.HasMember("InputDescription") && !value["InputDescription"].IsNull())
+    {
+        if (!value["InputDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceEnumParam.InputDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputDescription = string(value["InputDescription"].GetString());
+        m_inputDescriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +249,46 @@ void InstanceEnumParam::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_paramTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paramType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_featureSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeatureSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_featureSupported, allocator);
+    }
+
+    if (m_newFeatureOnlineTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewFeatureOnlineTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newFeatureOnlineTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_patternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pattern";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputDescription.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +420,85 @@ void InstanceEnumParam::SetStatus(const int64_t& _status)
 bool InstanceEnumParam::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string InstanceEnumParam::GetParamType() const
+{
+    return m_paramType;
+}
+
+void InstanceEnumParam::SetParamType(const string& _paramType)
+{
+    m_paramType = _paramType;
+    m_paramTypeHasBeenSet = true;
+}
+
+bool InstanceEnumParam::ParamTypeHasBeenSet() const
+{
+    return m_paramTypeHasBeenSet;
+}
+
+bool InstanceEnumParam::GetFeatureSupported() const
+{
+    return m_featureSupported;
+}
+
+void InstanceEnumParam::SetFeatureSupported(const bool& _featureSupported)
+{
+    m_featureSupported = _featureSupported;
+    m_featureSupportedHasBeenSet = true;
+}
+
+bool InstanceEnumParam::FeatureSupportedHasBeenSet() const
+{
+    return m_featureSupportedHasBeenSet;
+}
+
+string InstanceEnumParam::GetNewFeatureOnlineTime() const
+{
+    return m_newFeatureOnlineTime;
+}
+
+void InstanceEnumParam::SetNewFeatureOnlineTime(const string& _newFeatureOnlineTime)
+{
+    m_newFeatureOnlineTime = _newFeatureOnlineTime;
+    m_newFeatureOnlineTimeHasBeenSet = true;
+}
+
+bool InstanceEnumParam::NewFeatureOnlineTimeHasBeenSet() const
+{
+    return m_newFeatureOnlineTimeHasBeenSet;
+}
+
+string InstanceEnumParam::GetPattern() const
+{
+    return m_pattern;
+}
+
+void InstanceEnumParam::SetPattern(const string& _pattern)
+{
+    m_pattern = _pattern;
+    m_patternHasBeenSet = true;
+}
+
+bool InstanceEnumParam::PatternHasBeenSet() const
+{
+    return m_patternHasBeenSet;
+}
+
+string InstanceEnumParam::GetInputDescription() const
+{
+    return m_inputDescription;
+}
+
+void InstanceEnumParam::SetInputDescription(const string& _inputDescription)
+{
+    m_inputDescription = _inputDescription;
+    m_inputDescriptionHasBeenSet = true;
+}
+
+bool InstanceEnumParam::InputDescriptionHasBeenSet() const
+{
+    return m_inputDescriptionHasBeenSet;
 }
 

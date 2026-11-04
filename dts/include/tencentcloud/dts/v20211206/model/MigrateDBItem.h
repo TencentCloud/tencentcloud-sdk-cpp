@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取<p>实例名称</p>
+                     * @return InstanceName <p>实例名称</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
+                     * 设置<p>实例名称</p>
+                     * @param _instanceName <p>实例名称</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例Vip
-                     * @return Vip 实例Vip
+                     * 获取<p>实例Vip</p>
+                     * @return Vip <p>实例Vip</p>
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置实例Vip
-                     * @param _vip 实例Vip
+                     * 设置<p>实例Vip</p>
+                     * @param _vip <p>实例Vip</p>
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取实例Vport
-                     * @return Vport 实例Vport
+                     * 获取<p>实例Vport</p>
+                     * @return Vport <p>实例Vport</p>
                      * 
                      */
                     int64_t GetVport() const;
 
                     /**
-                     * 设置实例Vport
-                     * @param _vport 实例Vport
+                     * 设置<p>实例Vport</p>
+                     * @param _vport <p>实例Vport</p>
                      * 
                      */
                     void SetVport(const int64_t& _vport);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取是否可以作为迁移对象，1-可以，0-不可以
-                     * @return Usable 是否可以作为迁移对象，1-可以，0-不可以
+                     * 获取<p>是否可以作为迁移对象，1-可以，0-不可以</p>
+                     * @return Usable <p>是否可以作为迁移对象，1-可以，0-不可以</p>
                      * 
                      */
                     int64_t GetUsable() const;
 
                     /**
-                     * 设置是否可以作为迁移对象，1-可以，0-不可以
-                     * @param _usable 是否可以作为迁移对象，1-可以，0-不可以
+                     * 设置<p>是否可以作为迁移对象，1-可以，0-不可以</p>
+                     * @param _usable <p>是否可以作为迁移对象，1-可以，0-不可以</p>
                      * 
                      */
                     void SetUsable(const int64_t& _usable);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UsableHasBeenSet() const;
 
                     /**
-                     * 获取不可以作为迁移对象的原因
-                     * @return Hint 不可以作为迁移对象的原因
+                     * 获取<p>不可以作为迁移对象的原因</p>
+                     * @return Hint <p>不可以作为迁移对象的原因</p>
                      * 
                      */
                     std::string GetHint() const;
 
                     /**
-                     * 设置不可以作为迁移对象的原因
-                     * @param _hint 不可以作为迁移对象的原因
+                     * 设置<p>不可以作为迁移对象的原因</p>
+                     * @param _hint <p>不可以作为迁移对象的原因</p>
                      * 
                      */
                     void SetHint(const std::string& _hint);
@@ -172,43 +172,70 @@ namespace TencentCloud
                      */
                     bool HintHasBeenSet() const;
 
+                    /**
+                     * 获取<p>硬盘类型，仅Postgresql适用</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 本地SSD</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_HSSD： 增强型SSD云硬盘</li></ul>
+                     * @return StorageType <p>硬盘类型，仅Postgresql适用</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 本地SSD</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_HSSD： 增强型SSD云硬盘</li></ul>
+                     * 
+                     */
+                    std::string GetStorageType() const;
+
+                    /**
+                     * 设置<p>硬盘类型，仅Postgresql适用</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 本地SSD</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_HSSD： 增强型SSD云硬盘</li></ul>
+                     * @param _storageType <p>硬盘类型，仅Postgresql适用</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 本地SSD</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_HSSD： 增强型SSD云硬盘</li></ul>
+                     * 
+                     */
+                    void SetStorageType(const std::string& _storageType);
+
+                    /**
+                     * 判断参数 StorageType 是否已赋值
+                     * @return StorageType 是否已赋值
+                     * 
+                     */
+                    bool StorageTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例Vip
+                     * <p>实例Vip</p>
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 实例Vport
+                     * <p>实例Vport</p>
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 是否可以作为迁移对象，1-可以，0-不可以
+                     * <p>是否可以作为迁移对象，1-可以，0-不可以</p>
                      */
                     int64_t m_usable;
                     bool m_usableHasBeenSet;
 
                     /**
-                     * 不可以作为迁移对象的原因
+                     * <p>不可以作为迁移对象的原因</p>
                      */
                     std::string m_hint;
                     bool m_hintHasBeenSet;
+
+                    /**
+                     * <p>硬盘类型，仅Postgresql适用</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 本地SSD</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_HSSD： 增强型SSD云硬盘</li></ul>
+                     */
+                    std::string m_storageType;
+                    bool m_storageTypeHasBeenSet;
 
                 };
             }

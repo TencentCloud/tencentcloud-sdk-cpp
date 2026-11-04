@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内嵌工作流任务运行列表选项（仅限 FOR_EACH 任务使用）
+                * <p>嵌套工作流任务运行的查询选项。<br>PageNumber：页码，从 1 开始<br>PageSize：每页数量，最大 200<br>RunStates：按运行状态过滤，如 ["SUCCESS"]</p>
                 */
                 class InnerWorkflowTaskRunListOption : public AbstractModel
                 {

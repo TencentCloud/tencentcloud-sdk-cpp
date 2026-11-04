@@ -29,7 +29,8 @@ LogResult::LogResult() :
     m_commandTypeHasBeenSet(false),
     m_cacheCodeHasBeenSet(false),
     m_commandDetailHasBeenSet(false),
-    m_errMsgHasBeenSet(false)
+    m_errMsgHasBeenSet(false),
+    m_nodeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome LogResult::Deserialize(const rapidjson::Value &value)
         m_errMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("Node") && !value["Node"].IsNull())
+    {
+        if (!value["Node"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogResult.Node` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_node = string(value["Node"].GetString());
+        m_nodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void LogResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ErrMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Node";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_node.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void LogResult::SetErrMsg(const string& _errMsg)
 bool LogResult::ErrMsgHasBeenSet() const
 {
     return m_errMsgHasBeenSet;
+}
+
+string LogResult::GetNode() const
+{
+    return m_node;
+}
+
+void LogResult::SetNode(const string& _node)
+{
+    m_node = _node;
+    m_nodeHasBeenSet = true;
+}
+
+bool LogResult::NodeHasBeenSet() const
+{
+    return m_nodeHasBeenSet;
 }
 

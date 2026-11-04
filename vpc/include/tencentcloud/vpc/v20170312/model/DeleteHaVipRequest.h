@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取`HAVIP`唯一`ID`，形如：`havip-9o233uri`。
-                     * @return HaVipId `HAVIP`唯一`ID`，形如：`havip-9o233uri`。
+                     * 获取<p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>
+                     * @return HaVipId <p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>
                      * 
                      */
                     std::string GetHaVipId() const;
 
                     /**
-                     * 设置`HAVIP`唯一`ID`，形如：`havip-9o233uri`。
-                     * @param _haVipId `HAVIP`唯一`ID`，形如：`havip-9o233uri`。
+                     * 设置<p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>
+                     * @param _haVipId <p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>
                      * 
                      */
                     void SetHaVipId(const std::string& _haVipId);
@@ -63,13 +63,40 @@ namespace TencentCloud
                      */
                     bool HaVipIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>忽略删除保护。</p>
+                     * @return SkipTerminationProtection <p>忽略删除保护。</p>
+                     * 
+                     */
+                    bool GetSkipTerminationProtection() const;
+
+                    /**
+                     * 设置<p>忽略删除保护。</p>
+                     * @param _skipTerminationProtection <p>忽略删除保护。</p>
+                     * 
+                     */
+                    void SetSkipTerminationProtection(const bool& _skipTerminationProtection);
+
+                    /**
+                     * 判断参数 SkipTerminationProtection 是否已赋值
+                     * @return SkipTerminationProtection 是否已赋值
+                     * 
+                     */
+                    bool SkipTerminationProtectionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * `HAVIP`唯一`ID`，形如：`havip-9o233uri`。
+                     * <p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>
                      */
                     std::string m_haVipId;
                     bool m_haVipIdHasBeenSet;
+
+                    /**
+                     * <p>忽略删除保护。</p>
+                     */
+                    bool m_skipTerminationProtection;
+                    bool m_skipTerminationProtectionHasBeenSet;
 
                 };
             }

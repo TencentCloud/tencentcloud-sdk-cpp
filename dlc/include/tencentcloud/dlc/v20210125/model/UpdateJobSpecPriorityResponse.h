@@ -315,6 +315,20 @@ namespace TencentCloud
                     bool DispatchStrategyHasBeenSet() const;
 
                     /**
+                     * 获取<p>作业提交目标：GROUP（按计算组分派）/ CLUSTER（指定集群）/ SERVERLESS（按 Serverless 拉起）</p>
+                     * @return SubmissionTarget <p>作业提交目标：GROUP（按计算组分派）/ CLUSTER（指定集群）/ SERVERLESS（按 Serverless 拉起）</p>
+                     * 
+                     */
+                    std::string GetSubmissionTarget() const;
+
+                    /**
+                     * 判断参数 SubmissionTarget 是否已赋值
+                     * @return SubmissionTarget 是否已赋值
+                     * 
+                     */
+                    bool SubmissionTargetHasBeenSet() const;
+
+                    /**
                      * 获取<p>作业包URL</p>
                      * @return JobPackage <p>作业包URL</p>
                      * 
@@ -485,6 +499,34 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
+                     * 获取<p>计算组名称</p>
+                     * @return GroupName <p>计算组名称</p>
+                     * 
+                     */
+                    std::string GetGroupName() const;
+
+                    /**
+                     * 判断参数 GroupName 是否已赋值
+                     * @return GroupName 是否已赋值
+                     * 
+                     */
+                    bool GroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺时按 Local 处理</p>
                      * @return JobPackageSource <p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺时按 Local 处理</p>
                      * 
@@ -497,6 +539,20 @@ namespace TencentCloud
                      * 
                      */
                     bool JobPackageSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * @return SubAccountName <p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * 
+                     */
+                    std::string GetSubAccountName() const;
+
+                    /**
+                     * 判断参数 SubAccountName 是否已赋值
+                     * @return SubAccountName 是否已赋值
+                     * 
+                     */
+                    bool SubAccountNameHasBeenSet() const;
 
                 private:
 
@@ -617,6 +673,12 @@ namespace TencentCloud
                     bool m_dispatchStrategyHasBeenSet;
 
                     /**
+                     * <p>作业提交目标：GROUP（按计算组分派）/ CLUSTER（指定集群）/ SERVERLESS（按 Serverless 拉起）</p>
+                     */
+                    std::string m_submissionTarget;
+                    bool m_submissionTargetHasBeenSet;
+
+                    /**
                      * <p>作业包URL</p>
                      */
                     std::string m_jobPackage;
@@ -690,10 +752,28 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
+                     * <p>计算组名称</p>
+                     */
+                    std::string m_groupName;
+                    bool m_groupNameHasBeenSet;
+
+                    /**
+                     * <p>集群名称</p>
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
+
+                    /**
                      * <p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺时按 Local 处理</p>
                      */
                     std::string m_jobPackageSource;
                     bool m_jobPackageSourceHasBeenSet;
+
+                    /**
+                     * <p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     */
+                    std::string m_subAccountName;
+                    bool m_subAccountNameHasBeenSet;
 
                 };
             }

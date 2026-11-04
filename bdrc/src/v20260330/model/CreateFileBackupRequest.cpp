@@ -31,7 +31,10 @@ CreateFileBackupRequest::CreateFileBackupRequest() :
     m_excludeSystemDirectoriesHasBeenSet(false),
     m_backupStorageIdHasBeenSet(false),
     m_deadlineHasBeenSet(false),
-    m_backupNameHasBeenSet(false)
+    m_backupNameHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_enableObjectAclHasBeenSet(false),
+    m_enableObjectTagsHasBeenSet(false)
 {
 }
 
@@ -127,6 +130,30 @@ string CreateFileBackupRequest::ToJsonString() const
         string key = "BackupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_backupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableObjectAclHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableObjectAcl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableObjectAcl, allocator);
+    }
+
+    if (m_enableObjectTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableObjectTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableObjectTags, allocator);
     }
 
 
@@ -279,6 +306,54 @@ void CreateFileBackupRequest::SetBackupName(const string& _backupName)
 bool CreateFileBackupRequest::BackupNameHasBeenSet() const
 {
     return m_backupNameHasBeenSet;
+}
+
+string CreateFileBackupRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void CreateFileBackupRequest::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool CreateFileBackupRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
+}
+
+bool CreateFileBackupRequest::GetEnableObjectAcl() const
+{
+    return m_enableObjectAcl;
+}
+
+void CreateFileBackupRequest::SetEnableObjectAcl(const bool& _enableObjectAcl)
+{
+    m_enableObjectAcl = _enableObjectAcl;
+    m_enableObjectAclHasBeenSet = true;
+}
+
+bool CreateFileBackupRequest::EnableObjectAclHasBeenSet() const
+{
+    return m_enableObjectAclHasBeenSet;
+}
+
+bool CreateFileBackupRequest::GetEnableObjectTags() const
+{
+    return m_enableObjectTags;
+}
+
+void CreateFileBackupRequest::SetEnableObjectTags(const bool& _enableObjectTags)
+{
+    m_enableObjectTags = _enableObjectTags;
+    m_enableObjectTagsHasBeenSet = true;
+}
+
+bool CreateFileBackupRequest::EnableObjectTagsHasBeenSet() const
+{
+    return m_enableObjectTagsHasBeenSet;
 }
 
 

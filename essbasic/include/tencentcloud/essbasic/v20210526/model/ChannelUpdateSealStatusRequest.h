@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 获取<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p>
+                     * @return Agent <p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * 设置<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p>
+                     * @param _agent <p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -67,19 +67,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取印章状态，目前支持传入以下类型：
-<ul><li>DISABLE-停用印章</li></ul>
-                     * @return Status 印章状态，目前支持传入以下类型：
-<ul><li>DISABLE-停用印章</li></ul>
+                     * 获取<p>印章状态，目前支持传入以下类型：</p><ul><li>ENABLE-启用印章</li><li>DISABLE-停用印章</li></ul>
+                     * @return Status <p>印章状态，目前支持传入以下类型：</p><ul><li>ENABLE-启用印章</li><li>DISABLE-停用印章</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置印章状态，目前支持传入以下类型：
-<ul><li>DISABLE-停用印章</li></ul>
-                     * @param _status 印章状态，目前支持传入以下类型：
-<ul><li>DISABLE-停用印章</li></ul>
+                     * 设置<p>印章状态，目前支持传入以下类型：</p><ul><li>ENABLE-启用印章</li><li>DISABLE-停用印章</li></ul>
+                     * @param _status <p>印章状态，目前支持传入以下类型：</p><ul><li>ENABLE-启用印章</li><li>DISABLE-停用印章</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -92,15 +88,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取印章ID
-                     * @return SealId 印章ID
+                     * 获取<p>印章ID</p>
+                     * @return SealId <p>印章ID</p>
                      * 
                      */
                     std::string GetSealId() const;
 
                     /**
-                     * 设置印章ID
-                     * @param _sealId 印章ID
+                     * 设置<p>印章ID</p>
+                     * @param _sealId <p>印章ID</p>
                      * 
                      */
                     void SetSealId(const std::string& _sealId);
@@ -113,15 +109,15 @@ namespace TencentCloud
                     bool SealIdHasBeenSet() const;
 
                     /**
-                     * 获取更新印章状态原因说明
-                     * @return Reason 更新印章状态原因说明
+                     * 获取<p>更新印章状态原因说明</p>
+                     * @return Reason <p>更新印章状态原因说明</p>
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
-                     * 设置更新印章状态原因说明
-                     * @param _reason 更新印章状态原因说明
+                     * 设置<p>更新印章状态原因说明</p>
+                     * @param _reason <p>更新印章状态原因说明</p>
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -134,15 +130,15 @@ namespace TencentCloud
                     bool ReasonHasBeenSet() const;
 
                     /**
-                     * 获取操作者的信息
-                     * @return Operator 操作者的信息
+                     * 获取<p>操作者的信息</p>
+                     * @return Operator <p>操作者的信息</p>
                      * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作者的信息
-                     * @param _operator 操作者的信息
+                     * 设置<p>操作者的信息</p>
+                     * @param _operator <p>操作者的信息</p>
                      * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -155,15 +151,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取个性化配置字段，默认不传。
-                     * @return Options 个性化配置字段，默认不传。
+                     * 获取<p>个性化配置字段，默认不传。</p>
+                     * @return Options <p>个性化配置字段，默认不传。</p>
                      * 
                      */
                     std::vector<Option> GetOptions() const;
 
                     /**
-                     * 设置个性化配置字段，默认不传。
-                     * @param _options 个性化配置字段，默认不传。
+                     * 设置<p>个性化配置字段，默认不传。</p>
+                     * @param _options <p>个性化配置字段，默认不传。</p>
                      * 
                      */
                     void SetOptions(const std::vector<Option>& _options);
@@ -178,38 +174,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+                     * <p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 印章状态，目前支持传入以下类型：
-<ul><li>DISABLE-停用印章</li></ul>
+                     * <p>印章状态，目前支持传入以下类型：</p><ul><li>ENABLE-启用印章</li><li>DISABLE-停用印章</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 印章ID
+                     * <p>印章ID</p>
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;
 
                     /**
-                     * 更新印章状态原因说明
+                     * <p>更新印章状态原因说明</p>
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
-                     * 操作者的信息
+                     * <p>操作者的信息</p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 个性化配置字段，默认不传。
+                     * <p>个性化配置字段，默认不传。</p>
                      */
                     std::vector<Option> m_options;
                     bool m_optionsHasBeenSet;

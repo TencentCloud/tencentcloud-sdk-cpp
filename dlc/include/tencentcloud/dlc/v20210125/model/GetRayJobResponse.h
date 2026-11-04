@@ -59,6 +59,20 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
+                     * 获取<p>所属集群ID</p>
+                     * @return ClusterId <p>所属集群ID</p>
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>所属资源分区ID</p>
                      * @return ResourcePartitionId <p>所属资源分区ID</p>
                      * 
@@ -113,6 +127,20 @@ namespace TencentCloud
                      * 
                      */
                     bool QueueAliasHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Ray Submission ID</p>
+                     * @return SubmissionId <p>Ray Submission ID</p>
+                     * 
+                     */
+                    std::string GetSubmissionId() const;
+
+                    /**
+                     * 判断参数 SubmissionId 是否已赋值
+                     * @return SubmissionId 是否已赋值
+                     * 
+                     */
+                    bool SubmissionIdHasBeenSet() const;
 
                     /**
                      * 获取<p>任务状态</p>
@@ -197,6 +225,20 @@ namespace TencentCloud
                      * 
                      */
                     bool SubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * @return SubAccountName <p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * 
+                     */
+                    std::string GetSubAccountName() const;
+
+                    /**
+                     * 判断参数 SubAccountName 是否已赋值
+                     * @return SubAccountName 是否已赋值
+                     * 
+                     */
+                    bool SubAccountNameHasBeenSet() const;
 
                     /**
                      * 获取<p>历史记录链接</p>
@@ -459,6 +501,12 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
+                     * <p>所属集群ID</p>
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
                      * <p>所属资源分区ID</p>
                      */
                     std::string m_resourcePartitionId;
@@ -481,6 +529,12 @@ namespace TencentCloud
                      */
                     std::string m_queueAlias;
                     bool m_queueAliasHasBeenSet;
+
+                    /**
+                     * <p>Ray Submission ID</p>
+                     */
+                    std::string m_submissionId;
+                    bool m_submissionIdHasBeenSet;
 
                     /**
                      * <p>任务状态</p>
@@ -517,6 +571,12 @@ namespace TencentCloud
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * <p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     */
+                    std::string m_subAccountName;
+                    bool m_subAccountNameHasBeenSet;
 
                     /**
                      * <p>历史记录链接</p>

@@ -23,7 +23,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 DeleteHaVipRequest::DeleteHaVipRequest() :
-    m_haVipIdHasBeenSet(false)
+    m_haVipIdHasBeenSet(false),
+    m_skipTerminationProtectionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DeleteHaVipRequest::ToJsonString() const
         string key = "HaVipId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_haVipId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_skipTerminationProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipTerminationProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_skipTerminationProtection, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DeleteHaVipRequest::SetHaVipId(const string& _haVipId)
 bool DeleteHaVipRequest::HaVipIdHasBeenSet() const
 {
     return m_haVipIdHasBeenSet;
+}
+
+bool DeleteHaVipRequest::GetSkipTerminationProtection() const
+{
+    return m_skipTerminationProtection;
+}
+
+void DeleteHaVipRequest::SetSkipTerminationProtection(const bool& _skipTerminationProtection)
+{
+    m_skipTerminationProtection = _skipTerminationProtection;
+    m_skipTerminationProtectionHasBeenSet = true;
+}
+
+bool DeleteHaVipRequest::SkipTerminationProtectionHasBeenSet() const
+{
+    return m_skipTerminationProtectionHasBeenSet;
 }
 
 

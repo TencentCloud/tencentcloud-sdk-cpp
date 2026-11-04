@@ -43,19 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
-
-                     * @return JobId 数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
-
+                     * 获取<p>数据迁移任务ID，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
+                     * @return JobId <p>数据迁移任务ID，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
-
-                     * @param _jobId 数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
-
+                     * 设置<p>数据迁移任务ID，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
+                     * @param _jobId <p>数据迁移任务ID，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -67,14 +63,40 @@ namespace TencentCloud
                      */
                     bool JobIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>任务结束时是否强制迁移高级对象，仅PG适用</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul>
+                     * @return MigrateAdvancedObject <p>任务结束时是否强制迁移高级对象，仅PG适用</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul>
+                     * 
+                     */
+                    std::string GetMigrateAdvancedObject() const;
+
+                    /**
+                     * 设置<p>任务结束时是否强制迁移高级对象，仅PG适用</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul>
+                     * @param _migrateAdvancedObject <p>任务结束时是否强制迁移高级对象，仅PG适用</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul>
+                     * 
+                     */
+                    void SetMigrateAdvancedObject(const std::string& _migrateAdvancedObject);
+
+                    /**
+                     * 判断参数 MigrateAdvancedObject 是否已赋值
+                     * @return MigrateAdvancedObject 是否已赋值
+                     * 
+                     */
+                    bool MigrateAdvancedObjectHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。
-
+                     * <p>数据迁移任务ID，可通过<a href="https://cloud.tencent.com/document/product/571/82084">DescribeMigrationJobs</a>接口获取。</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
+
+                    /**
+                     * <p>任务结束时是否强制迁移高级对象，仅PG适用</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul>
+                     */
+                    std::string m_migrateAdvancedObject;
+                    bool m_migrateAdvancedObjectHasBeenSet;
 
                 };
             }

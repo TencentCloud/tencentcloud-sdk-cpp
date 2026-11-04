@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源ID列表
-                     * @return ResourceId 资源ID列表
+                     * 获取<p>资源ID列表</p>
+                     * @return ResourceId <p>资源ID列表</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID列表
-                     * @param _resourceId 资源ID列表
+                     * 设置<p>资源ID列表</p>
+                     * @param _resourceId <p>资源ID列表</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取计划ID
-                     * @return PlanId 计划ID
+                     * 获取<p>计划ID</p>
+                     * @return PlanId <p>计划ID</p>
                      * 
                      */
                     std::string GetPlanId() const;
 
                     /**
-                     * 设置计划ID
-                     * @param _planId 计划ID
+                     * 设置<p>计划ID</p>
+                     * @param _planId <p>计划ID</p>
                      * 
                      */
                     void SetPlanId(const std::string& _planId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PlanIdHasBeenSet() const;
 
                     /**
-                     * 获取备份路径列表，1~20 个
-                     * @return BackupPaths 备份路径列表，1~20 个
+                     * 获取<p>备份路径列表，1~20 个</p>
+                     * @return BackupPaths <p>备份路径列表，1~20 个</p>
                      * 
                      */
                     std::vector<std::string> GetBackupPaths() const;
 
                     /**
-                     * 设置备份路径列表，1~20 个
-                     * @param _backupPaths 备份路径列表，1~20 个
+                     * 设置<p>备份路径列表，1~20 个</p>
+                     * @param _backupPaths <p>备份路径列表，1~20 个</p>
                      * 
                      */
                     void SetBackupPaths(const std::vector<std::string>& _backupPaths);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool BackupPathsHasBeenSet() const;
 
                     /**
-                     * 获取包含文件类型，0~20 个
-                     * @return IncludeFileTypes 包含文件类型，0~20 个
+                     * 获取<p>包含文件类型，0~20 个</p>
+                     * @return IncludeFileTypes <p>包含文件类型，0~20 个</p>
                      * 
                      */
                     std::vector<std::string> GetIncludeFileTypes() const;
 
                     /**
-                     * 设置包含文件类型，0~20 个
-                     * @param _includeFileTypes 包含文件类型，0~20 个
+                     * 设置<p>包含文件类型，0~20 个</p>
+                     * @param _includeFileTypes <p>包含文件类型，0~20 个</p>
                      * 
                      */
                     void SetIncludeFileTypes(const std::vector<std::string>& _includeFileTypes);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool IncludeFileTypesHasBeenSet() const;
 
                     /**
-                     * 获取排除文件路径列表，0~20 个
-                     * @return ExcludePatterns 排除文件路径列表，0~20 个
+                     * 获取<p>排除文件路径列表，0~20 个</p>
+                     * @return ExcludePatterns <p>排除文件路径列表，0~20 个</p>
                      * 
                      */
                     std::vector<std::string> GetExcludePatterns() const;
 
                     /**
-                     * 设置排除文件路径列表，0~20 个
-                     * @param _excludePatterns 排除文件路径列表，0~20 个
+                     * 设置<p>排除文件路径列表，0~20 个</p>
+                     * @param _excludePatterns <p>排除文件路径列表，0~20 个</p>
                      * 
                      */
                     void SetExcludePatterns(const std::vector<std::string>& _excludePatterns);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ExcludePatternsHasBeenSet() const;
 
                     /**
-                     * 获取是否排除系统目录
-                     * @return ExcludeSystemDirectories 是否排除系统目录
+                     * 获取<p>是否排除系统目录</p>
+                     * @return ExcludeSystemDirectories <p>是否排除系统目录</p>
                      * 
                      */
                     bool GetExcludeSystemDirectories() const;
 
                     /**
-                     * 设置是否排除系统目录
-                     * @param _excludeSystemDirectories 是否排除系统目录
+                     * 设置<p>是否排除系统目录</p>
+                     * @param _excludeSystemDirectories <p>是否排除系统目录</p>
                      * 
                      */
                     void SetExcludeSystemDirectories(const bool& _excludeSystemDirectories);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ExcludeSystemDirectoriesHasBeenSet() const;
 
                     /**
-                     * 获取备份库ID
-                     * @return BackupStorageId 备份库ID
+                     * 获取<p>备份库ID，此参数必填。</p>
+                     * @return BackupStorageId <p>备份库ID，此参数必填。</p>
                      * 
                      */
                     std::string GetBackupStorageId() const;
 
                     /**
-                     * 设置备份库ID
-                     * @param _backupStorageId 备份库ID
+                     * 设置<p>备份库ID，此参数必填。</p>
+                     * @param _backupStorageId <p>备份库ID，此参数必填。</p>
                      * 
                      */
                     void SetBackupStorageId(const std::string& _backupStorageId);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool BackupStorageIdHasBeenSet() const;
 
                     /**
-                     * 获取备份到期时间
-                     * @return Deadline 备份到期时间
+                     * 获取<p>备份到期时间</p>
+                     * @return Deadline <p>备份到期时间</p>
                      * 
                      */
                     std::string GetDeadline() const;
 
                     /**
-                     * 设置备份到期时间
-                     * @param _deadline 备份到期时间
+                     * 设置<p>备份到期时间</p>
+                     * @param _deadline <p>备份到期时间</p>
                      * 
                      */
                     void SetDeadline(const std::string& _deadline);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool DeadlineHasBeenSet() const;
 
                     /**
-                     * 获取备份名称
-                     * @return BackupName 备份名称
+                     * 获取<p>备份名称</p>
+                     * @return BackupName <p>备份名称</p>
                      * 
                      */
                     std::string GetBackupName() const;
 
                     /**
-                     * 设置备份名称
-                     * @param _backupName 备份名称
+                     * 设置<p>备份名称</p>
+                     * @param _backupName <p>备份名称</p>
                      * 
                      */
                     void SetBackupName(const std::string& _backupName);
@@ -231,61 +231,142 @@ namespace TencentCloud
                      */
                     bool BackupNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>
+                     * @return ResourceType <p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>
+                     * 
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置<p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>
+                     * @param _resourceType <p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>
+                     * 
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * @return EnableObjectAcl <p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetEnableObjectAcl() const;
+
+                    /**
+                     * 设置<p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * @param _enableObjectAcl <p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    void SetEnableObjectAcl(const bool& _enableObjectAcl);
+
+                    /**
+                     * 判断参数 EnableObjectAcl 是否已赋值
+                     * @return EnableObjectAcl 是否已赋值
+                     * 
+                     */
+                    bool EnableObjectAclHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * @return EnableObjectTags <p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetEnableObjectTags() const;
+
+                    /**
+                     * 设置<p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * @param _enableObjectTags <p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    void SetEnableObjectTags(const bool& _enableObjectTags);
+
+                    /**
+                     * 判断参数 EnableObjectTags 是否已赋值
+                     * @return EnableObjectTags 是否已赋值
+                     * 
+                     */
+                    bool EnableObjectTagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源ID列表
+                     * <p>资源ID列表</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 计划ID
+                     * <p>计划ID</p>
                      */
                     std::string m_planId;
                     bool m_planIdHasBeenSet;
 
                     /**
-                     * 备份路径列表，1~20 个
+                     * <p>备份路径列表，1~20 个</p>
                      */
                     std::vector<std::string> m_backupPaths;
                     bool m_backupPathsHasBeenSet;
 
                     /**
-                     * 包含文件类型，0~20 个
+                     * <p>包含文件类型，0~20 个</p>
                      */
                     std::vector<std::string> m_includeFileTypes;
                     bool m_includeFileTypesHasBeenSet;
 
                     /**
-                     * 排除文件路径列表，0~20 个
+                     * <p>排除文件路径列表，0~20 个</p>
                      */
                     std::vector<std::string> m_excludePatterns;
                     bool m_excludePatternsHasBeenSet;
 
                     /**
-                     * 是否排除系统目录
+                     * <p>是否排除系统目录</p>
                      */
                     bool m_excludeSystemDirectories;
                     bool m_excludeSystemDirectoriesHasBeenSet;
 
                     /**
-                     * 备份库ID
+                     * <p>备份库ID，此参数必填。</p>
                      */
                     std::string m_backupStorageId;
                     bool m_backupStorageIdHasBeenSet;
 
                     /**
-                     * 备份到期时间
+                     * <p>备份到期时间</p>
                      */
                     std::string m_deadline;
                     bool m_deadlineHasBeenSet;
 
                     /**
-                     * 备份名称
+                     * <p>备份名称</p>
                      */
                     std::string m_backupName;
                     bool m_backupNameHasBeenSet;
+
+                    /**
+                     * <p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * <p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     */
+                    bool m_enableObjectAcl;
+                    bool m_enableObjectAclHasBeenSet;
+
+                    /**
+                     * <p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>
+                     */
+                    bool m_enableObjectTags;
+                    bool m_enableObjectTagsHasBeenSet;
 
                 };
             }

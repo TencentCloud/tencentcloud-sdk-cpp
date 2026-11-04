@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的总数量。
-                     * @return TotalCount 符合条件的总数量。
+                     * 获取<p>符合条件的总数量。</p>
+                     * @return TotalCount <p>符合条件的总数量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取备份组恢复详情。
-                     * @return RollbackTaskSet 备份组恢复详情。
+                     * 获取<p>备份组恢复详情。</p>
+                     * @return RollbackTaskSet <p>备份组恢复详情。</p>
                      * 
                      */
                     std::vector<BackupGroupRollbackTask> GetRollbackTaskSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的总数量。
+                     * <p>符合条件的总数量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 备份组恢复详情。
+                     * <p>备份组恢复详情。</p>
                      */
                     std::vector<BackupGroupRollbackTask> m_rollbackTaskSet;
                     bool m_rollbackTaskSetHasBeenSet;

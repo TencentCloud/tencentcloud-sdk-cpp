@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用名称
-                     * @return AppName 应用名称
+                     * 获取<p>应用名称</p>
+                     * @return AppName <p>应用名称</p>
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置应用名称
-                     * @param _appName 应用名称
+                     * 设置<p>应用名称</p>
+                     * @param _appName <p>应用名称</p>
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -70,18 +70,18 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取Ios应用的唯一标识
+                     * 获取<p>Ios应用的唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BundleId Ios应用的唯一标识
+                     * @return BundleId <p>Ios应用的唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBundleId() const;
 
                     /**
-                     * 设置Ios应用的唯一标识
+                     * 设置<p>Ios应用的唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _bundleId Ios应用的唯一标识
+                     * @param _bundleId <p>Ios应用的唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,15 +95,15 @@ namespace TencentCloud
                     bool BundleIdHasBeenSet() const;
 
                     /**
-                     * 获取应用类型，formal： 正式应用，test：测试应用
-                     * @return AppType 应用类型，formal： 正式应用，test：测试应用
+                     * 获取<p>应用类型，formal： 正式应用，test：测试应用</p>
+                     * @return AppType <p>应用类型，formal： 正式应用，test：测试应用</p>
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置应用类型，formal： 正式应用，test：测试应用
-                     * @param _appType 应用类型，formal： 正式应用，test：测试应用
+                     * 设置<p>应用类型，formal： 正式应用，test：测试应用</p>
+                     * @param _appType <p>应用类型，formal： 正式应用，test：测试应用</p>
                      * 
                      */
                     void SetAppType(const std::string& _appType);
@@ -116,18 +116,18 @@ namespace TencentCloud
                     bool AppTypeHasBeenSet() const;
 
                     /**
-                     * 获取license数组
+                     * 获取<p>license数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Licenses license数组
+                     * @return Licenses <p>license数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<License> GetLicenses() const;
 
                     /**
-                     * 设置license数组
+                     * 设置<p>license数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _licenses license数组
+                     * @param _licenses <p>license数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -141,15 +141,15 @@ namespace TencentCloud
                     bool LicensesHasBeenSet() const;
 
                     /**
-                     * 获取license 秘钥
-                     * @return LicenseKey license 秘钥
+                     * 获取<p>license 秘钥</p>
+                     * @return LicenseKey <p>license 秘钥</p>
                      * 
                      */
                     std::string GetLicenseKey() const;
 
                     /**
-                     * 设置license 秘钥
-                     * @param _licenseKey license 秘钥
+                     * 设置<p>license 秘钥</p>
+                     * @param _licenseKey <p>license 秘钥</p>
                      * 
                      */
                     void SetLicenseKey(const std::string& _licenseKey);
@@ -162,18 +162,18 @@ namespace TencentCloud
                     bool LicenseKeyHasBeenSet() const;
 
                     /**
-                     * 获取安卓应用的唯一标识
+                     * 获取<p>安卓应用的唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageName 安卓应用的唯一标识
+                     * @return PackageName <p>安卓应用的唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageName() const;
 
                     /**
-                     * 设置安卓应用的唯一标识
+                     * 设置<p>安卓应用的唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _packageName 安卓应用的唯一标识
+                     * @param _packageName <p>安卓应用的唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -187,15 +187,15 @@ namespace TencentCloud
                     bool PackageNameHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedAt 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedAt <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdAt 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdAt <p>创建时间</p>
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -208,15 +208,15 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdatedAt 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdatedAt <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updatedAt 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updatedAt <p>更新时间</p>
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -229,15 +229,15 @@ namespace TencentCloud
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取用户应用Id
-                     * @return ApplicationId 用户应用Id
+                     * 获取<p>用户应用Id</p>
+                     * @return ApplicationId <p>用户应用Id</p>
                      * 
                      */
                     uint64_t GetApplicationId() const;
 
                     /**
-                     * 设置用户应用Id
-                     * @param _applicationId 用户应用Id
+                     * 设置<p>用户应用Id</p>
+                     * @param _applicationId <p>用户应用Id</p>
                      * 
                      */
                     void SetApplicationId(const uint64_t& _applicationId);
@@ -250,15 +250,15 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取视立方下载license的url
-                     * @return LicenseUrl 视立方下载license的url
+                     * 获取<p>视立方下载license的url</p>
+                     * @return LicenseUrl <p>视立方下载license的url</p>
                      * 
                      */
                     std::string GetLicenseUrl() const;
 
                     /**
-                     * 设置视立方下载license的url
-                     * @param _licenseUrl 视立方下载license的url
+                     * 设置<p>视立方下载license的url</p>
+                     * @param _licenseUrl <p>视立方下载license的url</p>
                      * 
                      */
                     void SetLicenseUrl(const std::string& _licenseUrl);
@@ -271,18 +271,18 @@ namespace TencentCloud
                     bool LicenseUrlHasBeenSet() const;
 
                     /**
-                     * 获取优图美视信息列表
+                     * 获取<p>优图美视信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return XMagics 优图美视信息列表
+                     * @return XMagics <p>优图美视信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<XMagicInfo> GetXMagics() const;
 
                     /**
-                     * 设置优图美视信息列表
+                     * 设置<p>优图美视信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _xMagics 优图美视信息列表
+                     * @param _xMagics <p>优图美视信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -296,18 +296,18 @@ namespace TencentCloud
                     bool XMagicsHasBeenSet() const;
 
                     /**
-                     * 获取Mac  进程名
+                     * 获取<p>Mac  进程名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MacBundleId Mac  进程名
+                     * @return MacBundleId <p>Mac  进程名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMacBundleId() const;
 
                     /**
-                     * 设置Mac  进程名
+                     * 设置<p>Mac  进程名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _macBundleId Mac  进程名
+                     * @param _macBundleId <p>Mac  进程名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -321,18 +321,18 @@ namespace TencentCloud
                     bool MacBundleIdHasBeenSet() const;
 
                     /**
-                     * 获取windows 进程名
+                     * 获取<p>windows 进程名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WinProcessName windows 进程名
+                     * @return WinProcessName <p>windows 进程名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWinProcessName() const;
 
                     /**
-                     * 设置windows 进程名
+                     * 设置<p>windows 进程名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _winProcessName windows 进程名
+                     * @param _winProcessName <p>windows 进程名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -346,18 +346,18 @@ namespace TencentCloud
                     bool WinProcessNameHasBeenSet() const;
 
                     /**
-                     * 获取web端Domain列表
+                     * 获取<p>web端Domain列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DomainList web端Domain列表
+                     * @return DomainList <p>web端Domain列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDomainList() const;
 
                     /**
-                     * 设置web端Domain列表
+                     * 设置<p>web端Domain列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _domainList web端Domain列表
+                     * @param _domainList <p>web端Domain列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -371,15 +371,15 @@ namespace TencentCloud
                     bool DomainListHasBeenSet() const;
 
                     /**
-                     * 获取账号AppId
-                     * @return AppId 账号AppId
+                     * 获取<p>账号AppId</p>
+                     * @return AppId <p>账号AppId</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置账号AppId
-                     * @param _appId 账号AppId
+                     * 设置<p>账号AppId</p>
+                     * @param _appId <p>账号AppId</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -392,15 +392,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取扩展包名数量上限
-                     * @return NameLimit 扩展包名数量上限
+                     * 获取<p>扩展包名数量上限</p>
+                     * @return NameLimit <p>扩展包名数量上限</p>
                      * 
                      */
                     uint64_t GetNameLimit() const;
 
                     /**
-                     * 设置扩展包名数量上限
-                     * @param _nameLimit 扩展包名数量上限
+                     * 设置<p>扩展包名数量上限</p>
+                     * @param _nameLimit <p>扩展包名数量上限</p>
                      * 
                      */
                     void SetNameLimit(const uint64_t& _nameLimit);
@@ -412,110 +412,137 @@ namespace TencentCloud
                      */
                     bool NameLimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>linux 进程名</p>
+                     * @return LinuxProcessName <p>linux 进程名</p>
+                     * 
+                     */
+                    std::string GetLinuxProcessName() const;
+
+                    /**
+                     * 设置<p>linux 进程名</p>
+                     * @param _linuxProcessName <p>linux 进程名</p>
+                     * 
+                     */
+                    void SetLinuxProcessName(const std::string& _linuxProcessName);
+
+                    /**
+                     * 判断参数 LinuxProcessName 是否已赋值
+                     * @return LinuxProcessName 是否已赋值
+                     * 
+                     */
+                    bool LinuxProcessNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 应用名称
+                     * <p>应用名称</p>
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * Ios应用的唯一标识
+                     * <p>Ios应用的唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bundleId;
                     bool m_bundleIdHasBeenSet;
 
                     /**
-                     * 应用类型，formal： 正式应用，test：测试应用
+                     * <p>应用类型，formal： 正式应用，test：测试应用</p>
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;
 
                     /**
-                     * license数组
+                     * <p>license数组</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<License> m_licenses;
                     bool m_licensesHasBeenSet;
 
                     /**
-                     * license 秘钥
+                     * <p>license 秘钥</p>
                      */
                     std::string m_licenseKey;
                     bool m_licenseKeyHasBeenSet;
 
                     /**
-                     * 安卓应用的唯一标识
+                     * <p>安卓应用的唯一标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 用户应用Id
+                     * <p>用户应用Id</p>
                      */
                     uint64_t m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * 视立方下载license的url
+                     * <p>视立方下载license的url</p>
                      */
                     std::string m_licenseUrl;
                     bool m_licenseUrlHasBeenSet;
 
                     /**
-                     * 优图美视信息列表
+                     * <p>优图美视信息列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<XMagicInfo> m_xMagics;
                     bool m_xMagicsHasBeenSet;
 
                     /**
-                     * Mac  进程名
+                     * <p>Mac  进程名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_macBundleId;
                     bool m_macBundleIdHasBeenSet;
 
                     /**
-                     * windows 进程名
+                     * <p>windows 进程名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_winProcessName;
                     bool m_winProcessNameHasBeenSet;
 
                     /**
-                     * web端Domain列表
+                     * <p>web端Domain列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_domainList;
                     bool m_domainListHasBeenSet;
 
                     /**
-                     * 账号AppId
+                     * <p>账号AppId</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 扩展包名数量上限
+                     * <p>扩展包名数量上限</p>
                      */
                     uint64_t m_nameLimit;
                     bool m_nameLimitHasBeenSet;
+
+                    /**
+                     * <p>linux 进程名</p>
+                     */
+                    std::string m_linuxProcessName;
+                    bool m_linuxProcessNameHasBeenSet;
 
                 };
             }

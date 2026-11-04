@@ -42,7 +42,12 @@ CloudRecordVersion::CloudRecordVersion() :
     m_approvalActionsHasBeenSet(false),
     m_contentReadyTimeHasBeenSet(false),
     m_changeLogHasBeenSet(false),
-    m_labelSetHasBeenSet(false)
+    m_labelSetHasBeenSet(false),
+    m_supportedHarnessVersionsHasBeenSet(false),
+    m_metadataHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_descriptorTypeHasBeenSet(false)
 {
 }
 
@@ -284,6 +289,76 @@ CoreInternalOutcome CloudRecordVersion::Deserialize(const rapidjson::Value &valu
         m_labelSetHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportedHarnessVersions") && !value["SupportedHarnessVersions"].IsNull())
+    {
+        if (!value["SupportedHarnessVersions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudRecordVersion.SupportedHarnessVersions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SupportedHarnessVersions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HarnessVersionReference item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_supportedHarnessVersions.push_back(item);
+        }
+        m_supportedHarnessVersionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Metadata") && !value["Metadata"].IsNull())
+    {
+        if (!value["Metadata"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudRecordVersion.Metadata` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Metadata"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MetadataEntry item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metadata.push_back(item);
+        }
+        m_metadataHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudRecordVersion.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudRecordVersion.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DescriptorType") && !value["DescriptorType"].IsNull())
+    {
+        if (!value["DescriptorType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudRecordVersion.DescriptorType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_descriptorType = string(value["DescriptorType"].GetString());
+        m_descriptorTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -477,6 +552,60 @@ void CloudRecordVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_supportedHarnessVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportedHarnessVersions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_supportedHarnessVersions.begin(); itr != m_supportedHarnessVersions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metadata.begin(); itr != m_metadata.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptorTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DescriptorType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_descriptorType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -832,5 +961,85 @@ void CloudRecordVersion::SetLabelSet(const vector<string>& _labelSet)
 bool CloudRecordVersion::LabelSetHasBeenSet() const
 {
     return m_labelSetHasBeenSet;
+}
+
+vector<HarnessVersionReference> CloudRecordVersion::GetSupportedHarnessVersions() const
+{
+    return m_supportedHarnessVersions;
+}
+
+void CloudRecordVersion::SetSupportedHarnessVersions(const vector<HarnessVersionReference>& _supportedHarnessVersions)
+{
+    m_supportedHarnessVersions = _supportedHarnessVersions;
+    m_supportedHarnessVersionsHasBeenSet = true;
+}
+
+bool CloudRecordVersion::SupportedHarnessVersionsHasBeenSet() const
+{
+    return m_supportedHarnessVersionsHasBeenSet;
+}
+
+vector<MetadataEntry> CloudRecordVersion::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void CloudRecordVersion::SetMetadata(const vector<MetadataEntry>& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool CloudRecordVersion::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
+}
+
+string CloudRecordVersion::GetName() const
+{
+    return m_name;
+}
+
+void CloudRecordVersion::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool CloudRecordVersion::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string CloudRecordVersion::GetDescription() const
+{
+    return m_description;
+}
+
+void CloudRecordVersion::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CloudRecordVersion::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string CloudRecordVersion::GetDescriptorType() const
+{
+    return m_descriptorType;
+}
+
+void CloudRecordVersion::SetDescriptorType(const string& _descriptorType)
+{
+    m_descriptorType = _descriptorType;
+    m_descriptorTypeHasBeenSet = true;
+}
+
+bool CloudRecordVersion::DescriptorTypeHasBeenSet() const
+{
+    return m_descriptorTypeHasBeenSet;
 }
 

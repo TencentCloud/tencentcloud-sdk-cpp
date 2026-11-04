@@ -23,7 +23,8 @@ using namespace TencentCloud::Dts::V20211206::Model;
 using namespace std;
 
 StopMigrateJobRequest::StopMigrateJobRequest() :
-    m_jobIdHasBeenSet(false)
+    m_jobIdHasBeenSet(false),
+    m_migrateAdvancedObjectHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string StopMigrateJobRequest::ToJsonString() const
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_migrateAdvancedObjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MigrateAdvancedObject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_migrateAdvancedObject.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void StopMigrateJobRequest::SetJobId(const string& _jobId)
 bool StopMigrateJobRequest::JobIdHasBeenSet() const
 {
     return m_jobIdHasBeenSet;
+}
+
+string StopMigrateJobRequest::GetMigrateAdvancedObject() const
+{
+    return m_migrateAdvancedObject;
+}
+
+void StopMigrateJobRequest::SetMigrateAdvancedObject(const string& _migrateAdvancedObject)
+{
+    m_migrateAdvancedObject = _migrateAdvancedObject;
+    m_migrateAdvancedObjectHasBeenSet = true;
+}
+
+bool StopMigrateJobRequest::MigrateAdvancedObjectHasBeenSet() const
+{
+    return m_migrateAdvancedObjectHasBeenSet;
 }
 
 

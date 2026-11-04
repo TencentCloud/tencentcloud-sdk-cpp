@@ -31,7 +31,8 @@ WorkflowTriggerConfiguration::WorkflowTriggerConfiguration() :
     m_cycleTypeHasBeenSet(false),
     m_crontabExpressionHasBeenSet(false),
     m_extraInfoHasBeenSet(false),
-    m_advancedConfigHasBeenSet(false)
+    m_advancedConfigHasBeenSet(false),
+    m_fileArrivalConfigHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,23 @@ CoreInternalOutcome WorkflowTriggerConfiguration::Deserialize(const rapidjson::V
         m_advancedConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("FileArrivalConfig") && !value["FileArrivalConfig"].IsNull())
+    {
+        if (!value["FileArrivalConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowTriggerConfiguration.FileArrivalConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fileArrivalConfig.Deserialize(value["FileArrivalConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fileArrivalConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +269,15 @@ void WorkflowTriggerConfiguration::ToJsonObject(rapidjson::Value &value, rapidjs
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_advancedConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fileArrivalConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileArrivalConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileArrivalConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -430,5 +457,21 @@ void WorkflowTriggerConfiguration::SetAdvancedConfig(const WorkflowTriggerAdvanc
 bool WorkflowTriggerConfiguration::AdvancedConfigHasBeenSet() const
 {
     return m_advancedConfigHasBeenSet;
+}
+
+FileArrivalConfig WorkflowTriggerConfiguration::GetFileArrivalConfig() const
+{
+    return m_fileArrivalConfig;
+}
+
+void WorkflowTriggerConfiguration::SetFileArrivalConfig(const FileArrivalConfig& _fileArrivalConfig)
+{
+    m_fileArrivalConfig = _fileArrivalConfig;
+    m_fileArrivalConfigHasBeenSet = true;
+}
+
+bool WorkflowTriggerConfiguration::FileArrivalConfigHasBeenSet() const
+{
+    return m_fileArrivalConfigHasBeenSet;
 }
 

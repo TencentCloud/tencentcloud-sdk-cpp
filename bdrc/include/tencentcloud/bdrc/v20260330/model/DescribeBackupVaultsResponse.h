@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的总数量。
-                     * @return TotalCount 符合条件的总数量。
+                     * 获取<p>符合条件的总数量。</p>
+                     * @return TotalCount <p>符合条件的总数量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取备份库列表详情。
-                     * @return BackupVaultSet 备份库列表详情。
+                     * 获取<p>备份库列表详情。</p>
+                     * @return BackupVaultSet <p>备份库列表详情。</p>
                      * 
                      */
                     std::vector<BackupVault> GetBackupVaultSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的总数量。
+                     * <p>符合条件的总数量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 备份库列表详情。
+                     * <p>备份库列表详情。</p>
                      */
                     std::vector<BackupVault> m_backupVaultSet;
                     bool m_backupVaultSetHasBeenSet;

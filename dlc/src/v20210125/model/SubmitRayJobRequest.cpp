@@ -24,6 +24,7 @@ using namespace std;
 
 SubmitRayJobRequest::SubmitRayJobRequest() :
     m_entrypointHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
     m_resourcePartitionIdHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_jobNameHasBeenSet(false),
@@ -36,8 +37,15 @@ SubmitRayJobRequest::SubmitRayJobRequest() :
     m_autoscalerOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_groupIdHasBeenSet(false),
+    m_dispatchStrategyHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_jobPackageHasBeenSet(false),
+    m_jobPackageNameHasBeenSet(false),
+    m_jobPackageSourceHasBeenSet(false),
+    m_jobSourceHasBeenSet(false),
+    m_flowIdHasBeenSet(false),
+    m_executionIdHasBeenSet(false),
     m_networkConfigHasBeenSet(false)
 {
 }
@@ -55,6 +63,14 @@ string SubmitRayJobRequest::ToJsonString() const
         string key = "Entrypoint";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_entrypoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourcePartitionIdHasBeenSet)
@@ -153,6 +169,14 @@ string SubmitRayJobRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_dispatchStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DispatchStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dispatchStrategy.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_priorityHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -174,6 +198,54 @@ string SubmitRayJobRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_jobPackageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobPackage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobPackage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobPackageNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobPackageName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobPackageName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobPackageSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobPackageSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobPackageSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_executionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_networkConfigHasBeenSet)
@@ -206,6 +278,22 @@ void SubmitRayJobRequest::SetEntrypoint(const string& _entrypoint)
 bool SubmitRayJobRequest::EntrypointHasBeenSet() const
 {
     return m_entrypointHasBeenSet;
+}
+
+string SubmitRayJobRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void SubmitRayJobRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool SubmitRayJobRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 string SubmitRayJobRequest::GetResourcePartitionId() const
@@ -400,6 +488,22 @@ bool SubmitRayJobRequest::GroupIdHasBeenSet() const
     return m_groupIdHasBeenSet;
 }
 
+string SubmitRayJobRequest::GetDispatchStrategy() const
+{
+    return m_dispatchStrategy;
+}
+
+void SubmitRayJobRequest::SetDispatchStrategy(const string& _dispatchStrategy)
+{
+    m_dispatchStrategy = _dispatchStrategy;
+    m_dispatchStrategyHasBeenSet = true;
+}
+
+bool SubmitRayJobRequest::DispatchStrategyHasBeenSet() const
+{
+    return m_dispatchStrategyHasBeenSet;
+}
+
 int64_t SubmitRayJobRequest::GetPriority() const
 {
     return m_priority;
@@ -430,6 +534,102 @@ void SubmitRayJobRequest::SetTags(const vector<Tag>& _tags)
 bool SubmitRayJobRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string SubmitRayJobRequest::GetJobPackage() const
+{
+    return m_jobPackage;
+}
+
+void SubmitRayJobRequest::SetJobPackage(const string& _jobPackage)
+{
+    m_jobPackage = _jobPackage;
+    m_jobPackageHasBeenSet = true;
+}
+
+bool SubmitRayJobRequest::JobPackageHasBeenSet() const
+{
+    return m_jobPackageHasBeenSet;
+}
+
+string SubmitRayJobRequest::GetJobPackageName() const
+{
+    return m_jobPackageName;
+}
+
+void SubmitRayJobRequest::SetJobPackageName(const string& _jobPackageName)
+{
+    m_jobPackageName = _jobPackageName;
+    m_jobPackageNameHasBeenSet = true;
+}
+
+bool SubmitRayJobRequest::JobPackageNameHasBeenSet() const
+{
+    return m_jobPackageNameHasBeenSet;
+}
+
+string SubmitRayJobRequest::GetJobPackageSource() const
+{
+    return m_jobPackageSource;
+}
+
+void SubmitRayJobRequest::SetJobPackageSource(const string& _jobPackageSource)
+{
+    m_jobPackageSource = _jobPackageSource;
+    m_jobPackageSourceHasBeenSet = true;
+}
+
+bool SubmitRayJobRequest::JobPackageSourceHasBeenSet() const
+{
+    return m_jobPackageSourceHasBeenSet;
+}
+
+string SubmitRayJobRequest::GetJobSource() const
+{
+    return m_jobSource;
+}
+
+void SubmitRayJobRequest::SetJobSource(const string& _jobSource)
+{
+    m_jobSource = _jobSource;
+    m_jobSourceHasBeenSet = true;
+}
+
+bool SubmitRayJobRequest::JobSourceHasBeenSet() const
+{
+    return m_jobSourceHasBeenSet;
+}
+
+string SubmitRayJobRequest::GetFlowId() const
+{
+    return m_flowId;
+}
+
+void SubmitRayJobRequest::SetFlowId(const string& _flowId)
+{
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
+}
+
+bool SubmitRayJobRequest::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
+}
+
+string SubmitRayJobRequest::GetExecutionId() const
+{
+    return m_executionId;
+}
+
+void SubmitRayJobRequest::SetExecutionId(const string& _executionId)
+{
+    m_executionId = _executionId;
+    m_executionIdHasBeenSet = true;
+}
+
+bool SubmitRayJobRequest::ExecutionIdHasBeenSet() const
+{
+    return m_executionIdHasBeenSet;
 }
 
 string SubmitRayJobRequest::GetNetworkConfig() const

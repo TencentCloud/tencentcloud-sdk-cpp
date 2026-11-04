@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取受保护资源总数
-                     * @return TotalProtectedCount 受保护资源总数
+                     * 获取<p>受保护资源总数</p>
+                     * @return TotalProtectedCount <p>受保护资源总数</p>
                      * 
                      */
                     int64_t GetTotalProtectedCount() const;
 
                     /**
-                     * 设置受保护资源总数
-                     * @param _totalProtectedCount 受保护资源总数
+                     * 设置<p>受保护资源总数</p>
+                     * @param _totalProtectedCount <p>受保护资源总数</p>
                      * 
                      */
                     void SetTotalProtectedCount(const int64_t& _totalProtectedCount);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TotalProtectedCountHasBeenSet() const;
 
                     /**
-                     * 获取总资源数
-                     * @return TotalResourceCount 总资源数
+                     * 获取<p>总资源数</p>
+                     * @return TotalResourceCount <p>总资源数</p>
                      * 
                      */
                     int64_t GetTotalResourceCount() const;
 
                     /**
-                     * 设置总资源数
-                     * @param _totalResourceCount 总资源数
+                     * 设置<p>总资源数</p>
+                     * @param _totalResourceCount <p>总资源数</p>
                      * 
                      */
                     void SetTotalResourceCount(const int64_t& _totalResourceCount);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool TotalResourceCountHasBeenSet() const;
 
                     /**
-                     * 获取CVM 受保护统计
-                     * @return Cvm CVM 受保护统计
+                     * 获取<p>CVM整机备份受保护统计</p>
+                     * @return Cvm <p>CVM整机备份受保护统计</p>
                      * 
                      */
                     ResourceProtectStat GetCvm() const;
 
                     /**
-                     * 设置CVM 受保护统计
-                     * @param _cvm CVM 受保护统计
+                     * 设置<p>CVM整机备份受保护统计</p>
+                     * @param _cvm <p>CVM整机备份受保护统计</p>
                      * 
                      */
                     void SetCvm(const ResourceProtectStat& _cvm);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool CvmHasBeenSet() const;
 
                     /**
-                     * 获取CFS 受保护统计
-                     * @return CFS CFS 受保护统计
+                     * 获取<p>CVM文件备份受保护统计</p>
+                     * @return CFS <p>CVM文件备份受保护统计</p>
                      * 
                      */
                     ResourceProtectStat GetCFS() const;
 
                     /**
-                     * 设置CFS 受保护统计
-                     * @param _cFS CFS 受保护统计
+                     * 设置<p>CVM文件备份受保护统计</p>
+                     * @param _cFS <p>CVM文件备份受保护统计</p>
                      * 
                      */
                     void SetCFS(const ResourceProtectStat& _cFS);
@@ -131,31 +131,95 @@ namespace TencentCloud
                      */
                     bool CFSHasBeenSet() const;
 
+                    /**
+                     * 获取<p>CFS文件备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CFSAgent <p>CFS文件备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ResourceProtectStat GetCFSAgent() const;
+
+                    /**
+                     * 设置<p>CFS文件备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cFSAgent <p>CFS文件备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCFSAgent(const ResourceProtectStat& _cFSAgent);
+
+                    /**
+                     * 判断参数 CFSAgent 是否已赋值
+                     * @return CFSAgent 是否已赋值
+                     * 
+                     */
+                    bool CFSAgentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>COS备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return COSAgent <p>COS备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ResourceProtectStat GetCOSAgent() const;
+
+                    /**
+                     * 设置<p>COS备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cOSAgent <p>COS备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCOSAgent(const ResourceProtectStat& _cOSAgent);
+
+                    /**
+                     * 判断参数 COSAgent 是否已赋值
+                     * @return COSAgent 是否已赋值
+                     * 
+                     */
+                    bool COSAgentHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 受保护资源总数
+                     * <p>受保护资源总数</p>
                      */
                     int64_t m_totalProtectedCount;
                     bool m_totalProtectedCountHasBeenSet;
 
                     /**
-                     * 总资源数
+                     * <p>总资源数</p>
                      */
                     int64_t m_totalResourceCount;
                     bool m_totalResourceCountHasBeenSet;
 
                     /**
-                     * CVM 受保护统计
+                     * <p>CVM整机备份受保护统计</p>
                      */
                     ResourceProtectStat m_cvm;
                     bool m_cvmHasBeenSet;
 
                     /**
-                     * CFS 受保护统计
+                     * <p>CVM文件备份受保护统计</p>
                      */
                     ResourceProtectStat m_cFS;
                     bool m_cFSHasBeenSet;
+
+                    /**
+                     * <p>CFS文件备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceProtectStat m_cFSAgent;
+                    bool m_cFSAgentHasBeenSet;
+
+                    /**
+                     * <p>COS备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceProtectStat m_cOSAgent;
+                    bool m_cOSAgentHasBeenSet;
 
                 };
             }

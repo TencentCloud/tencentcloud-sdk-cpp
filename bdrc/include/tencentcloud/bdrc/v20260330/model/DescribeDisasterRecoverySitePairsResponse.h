@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取有效的容灾策略数量。
-                     * @return TotalCount 有效的容灾策略数量。
+                     * 获取<p>有效的容灾策略数量。</p>
+                     * @return TotalCount <p>有效的容灾策略数量。</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取容灾策略列表。
-                     * @return SitePairSet 容灾策略列表。
+                     * 获取<p>容灾策略列表。</p>
+                     * @return SitePairSet <p>容灾策略列表。</p>
                      * 
                      */
                     std::vector<SitePair> GetSitePairSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 有效的容灾策略数量。
+                     * <p>有效的容灾策略数量。</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 容灾策略列表。
+                     * <p>容灾策略列表。</p>
                      */
                     std::vector<SitePair> m_sitePairSet;
                     bool m_sitePairSetHasBeenSet;

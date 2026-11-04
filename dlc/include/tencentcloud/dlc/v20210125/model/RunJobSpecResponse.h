@@ -59,6 +59,34 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
+                     * 获取<p>所属集群ID</p>
+                     * @return ClusterId <p>所属集群ID</p>
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>集群名称</p>
+                     * @return ClusterName <p>集群名称</p>
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>所属资源分区ID</p>
                      * @return ResourcePartitionId <p>所属资源分区ID</p>
                      * 
@@ -73,6 +101,20 @@ namespace TencentCloud
                     bool ResourcePartitionIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>默认资源分区名称</p>
+                     * @return ResourcePartitionName <p>默认资源分区名称</p>
+                     * 
+                     */
+                    std::string GetResourcePartitionName() const;
+
+                    /**
+                     * 判断参数 ResourcePartitionName 是否已赋值
+                     * @return ResourcePartitionName 是否已赋值
+                     * 
+                     */
+                    bool ResourcePartitionNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>所属队列名称</p>
                      * @return Queue <p>所属队列名称</p>
                      * 
@@ -85,6 +127,20 @@ namespace TencentCloud
                      * 
                      */
                     bool QueueHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Ray Submission ID</p>
+                     * @return SubmissionId <p>Ray Submission ID</p>
+                     * 
+                     */
+                    std::string GetSubmissionId() const;
+
+                    /**
+                     * 判断参数 SubmissionId 是否已赋值
+                     * @return SubmissionId 是否已赋值
+                     * 
+                     */
+                    bool SubmissionIdHasBeenSet() const;
 
                     /**
                      * 获取<p>任务状态</p>
@@ -171,6 +227,20 @@ namespace TencentCloud
                     bool SubAccountUinHasBeenSet() const;
 
                     /**
+                     * 获取<p>历史记录链接</p>
+                     * @return HistoryUrl <p>历史记录链接</p>
+                     * 
+                     */
+                    std::string GetHistoryUrl() const;
+
+                    /**
+                     * 判断参数 HistoryUrl 是否已赋值
+                     * @return HistoryUrl 是否已赋值
+                     * 
+                     */
+                    bool HistoryUrlHasBeenSet() const;
+
+                    /**
                      * 获取<p>运行时间(ms)</p>
                      * @return RunningTime <p>运行时间(ms)</p>
                      * 
@@ -185,6 +255,20 @@ namespace TencentCloud
                     bool RunningTimeHasBeenSet() const;
 
                     /**
+                     * 获取<p>完成时间</p>
+                     * @return FinishTime <p>完成时间</p>
+                     * 
+                     */
+                    uint64_t GetFinishTime() const;
+
+                    /**
+                     * 判断参数 FinishTime 是否已赋值
+                     * @return FinishTime 是否已赋值
+                     * 
+                     */
+                    bool FinishTimeHasBeenSet() const;
+
+                    /**
                      * 获取<p>创建时间</p>
                      * @return CreateTime <p>创建时间</p>
                      * 
@@ -197,6 +281,20 @@ namespace TencentCloud
                      * 
                      */
                     bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>失败原因/错误信息</p>
+                     * @return ErrorMessage <p>失败原因/错误信息</p>
+                     * 
+                     */
+                    std::string GetErrorMessage() const;
+
+                    /**
+                     * 判断参数 ErrorMessage 是否已赋值
+                     * @return ErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool ErrorMessageHasBeenSet() const;
 
                     /**
                      * 获取<p>运行时环境配置(JSON)</p>
@@ -375,16 +473,40 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
+                     * <p>所属集群ID</p>
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * <p>集群名称</p>
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
+
+                    /**
                      * <p>所属资源分区ID</p>
                      */
                     std::string m_resourcePartitionId;
                     bool m_resourcePartitionIdHasBeenSet;
 
                     /**
+                     * <p>默认资源分区名称</p>
+                     */
+                    std::string m_resourcePartitionName;
+                    bool m_resourcePartitionNameHasBeenSet;
+
+                    /**
                      * <p>所属队列名称</p>
                      */
                     std::string m_queue;
                     bool m_queueHasBeenSet;
+
+                    /**
+                     * <p>Ray Submission ID</p>
+                     */
+                    std::string m_submissionId;
+                    bool m_submissionIdHasBeenSet;
 
                     /**
                      * <p>任务状态</p>
@@ -423,16 +545,34 @@ namespace TencentCloud
                     bool m_subAccountUinHasBeenSet;
 
                     /**
+                     * <p>历史记录链接</p>
+                     */
+                    std::string m_historyUrl;
+                    bool m_historyUrlHasBeenSet;
+
+                    /**
                      * <p>运行时间(ms)</p>
                      */
                     int64_t m_runningTime;
                     bool m_runningTimeHasBeenSet;
 
                     /**
+                     * <p>完成时间</p>
+                     */
+                    uint64_t m_finishTime;
+                    bool m_finishTimeHasBeenSet;
+
+                    /**
                      * <p>创建时间</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>失败原因/错误信息</p>
+                     */
+                    std::string m_errorMessage;
+                    bool m_errorMessageHasBeenSet;
 
                     /**
                      * <p>运行时环境配置(JSON)</p>

@@ -39,6 +39,7 @@ CreateLabResponse::CreateLabResponse() :
     m_subAccountUinHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
     m_resourceConfigIdHasBeenSet(false),
@@ -47,9 +48,14 @@ CreateLabResponse::CreateLabResponse() :
     m_imagePullPolicyHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_priorityHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_stopTimeHasBeenSet(false),
+    m_deleteTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_persistentWorkDirHasBeenSet(false),
     m_enableTokenHasBeenSet(false),
+    m_tokenHasBeenSet(false),
+    m_autoscalerOptionsHasBeenSet(false),
     m_labImagePullTypeHasBeenSet(false),
     m_subAccountNameHasBeenSet(false),
     m_imagePullTypeHasBeenSet(false),
@@ -251,6 +257,16 @@ CoreInternalOutcome CreateLabResponse::Deserialize(const string &payload)
         m_createTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UpdateTime") && !rsp["UpdateTime"].IsNull())
+    {
+        if (!rsp["UpdateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = rsp["UpdateTime"].GetUint64();
+        m_updateTimeHasBeenSet = true;
+    }
+
     if (rsp.HasMember("GroupId") && !rsp["GroupId"].IsNull())
     {
         if (!rsp["GroupId"].IsString())
@@ -331,6 +347,36 @@ CoreInternalOutcome CreateLabResponse::Deserialize(const string &payload)
         m_priorityHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StartTime") && !rsp["StartTime"].IsNull())
+    {
+        if (!rsp["StartTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StartTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = rsp["StartTime"].GetUint64();
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("StopTime") && !rsp["StopTime"].IsNull())
+    {
+        if (!rsp["StopTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StopTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_stopTime = rsp["StopTime"].GetUint64();
+        m_stopTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DeleteTime") && !rsp["DeleteTime"].IsNull())
+    {
+        if (!rsp["DeleteTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeleteTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteTime = rsp["DeleteTime"].GetUint64();
+        m_deleteTimeHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
     {
         if (!rsp["Tags"].IsArray())
@@ -376,6 +422,26 @@ CoreInternalOutcome CreateLabResponse::Deserialize(const string &payload)
         }
         m_enableToken = rsp["EnableToken"].GetBool();
         m_enableTokenHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Token") && !rsp["Token"].IsNull())
+    {
+        if (!rsp["Token"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Token` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_token = string(rsp["Token"].GetString());
+        m_tokenHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoscalerOptions") && !rsp["AutoscalerOptions"].IsNull())
+    {
+        if (!rsp["AutoscalerOptions"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoscalerOptions` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoscalerOptions = string(rsp["AutoscalerOptions"].GetString());
+        m_autoscalerOptionsHasBeenSet = true;
     }
 
     if (rsp.HasMember("LabImagePullType") && !rsp["LabImagePullType"].IsNull())
@@ -555,6 +621,14 @@ string CreateLabResponse::ToJsonString() const
         value.AddMember(iKey, m_createTime, allocator);
     }
 
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateTime, allocator);
+    }
+
     if (m_groupIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -619,6 +693,30 @@ string CreateLabResponse::ToJsonString() const
         value.AddMember(iKey, m_priority, allocator);
     }
 
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_stopTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_stopTime, allocator);
+    }
+
+    if (m_deleteTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deleteTime, allocator);
+    }
+
     if (m_tagsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -649,6 +747,22 @@ string CreateLabResponse::ToJsonString() const
         string key = "EnableToken";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableToken, allocator);
+    }
+
+    if (m_tokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Token";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoscalerOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoscalerOptions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoscalerOptions.c_str(), allocator).Move(), allocator);
     }
 
     if (m_labImagePullTypeHasBeenSet)
@@ -845,6 +959,16 @@ bool CreateLabResponse::CreateTimeHasBeenSet() const
     return m_createTimeHasBeenSet;
 }
 
+uint64_t CreateLabResponse::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+bool CreateLabResponse::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
 string CreateLabResponse::GetGroupId() const
 {
     return m_groupId;
@@ -925,6 +1049,36 @@ bool CreateLabResponse::PriorityHasBeenSet() const
     return m_priorityHasBeenSet;
 }
 
+uint64_t CreateLabResponse::GetStartTime() const
+{
+    return m_startTime;
+}
+
+bool CreateLabResponse::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+uint64_t CreateLabResponse::GetStopTime() const
+{
+    return m_stopTime;
+}
+
+bool CreateLabResponse::StopTimeHasBeenSet() const
+{
+    return m_stopTimeHasBeenSet;
+}
+
+uint64_t CreateLabResponse::GetDeleteTime() const
+{
+    return m_deleteTime;
+}
+
+bool CreateLabResponse::DeleteTimeHasBeenSet() const
+{
+    return m_deleteTimeHasBeenSet;
+}
+
 vector<Tag> CreateLabResponse::GetTags() const
 {
     return m_tags;
@@ -953,6 +1107,26 @@ bool CreateLabResponse::GetEnableToken() const
 bool CreateLabResponse::EnableTokenHasBeenSet() const
 {
     return m_enableTokenHasBeenSet;
+}
+
+string CreateLabResponse::GetToken() const
+{
+    return m_token;
+}
+
+bool CreateLabResponse::TokenHasBeenSet() const
+{
+    return m_tokenHasBeenSet;
+}
+
+string CreateLabResponse::GetAutoscalerOptions() const
+{
+    return m_autoscalerOptions;
+}
+
+bool CreateLabResponse::AutoscalerOptionsHasBeenSet() const
+{
+    return m_autoscalerOptionsHasBeenSet;
 }
 
 string CreateLabResponse::GetLabImagePullType() const

@@ -271,6 +271,20 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
+                     * 
+                     */
+                    uint64_t GetUpdateTime() const;
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
                      * 获取<p>所属集群组名称</p>
                      * @return GroupName <p>所属集群组名称</p>
                      * 
@@ -425,6 +439,34 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
+                     * 获取<p>停止时间（最近一次停止/休眠）</p>
+                     * @return StopTime <p>停止时间（最近一次停止/休眠）</p>
+                     * 
+                     */
+                    uint64_t GetStopTime() const;
+
+                    /**
+                     * 判断参数 StopTime 是否已赋值
+                     * @return StopTime 是否已赋值
+                     * 
+                     */
+                    bool StopTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>删除时间</p>
+                     * @return DeleteTime <p>删除时间</p>
+                     * 
+                     */
+                    uint64_t GetDeleteTime() const;
+
+                    /**
+                     * 判断参数 DeleteTime 是否已赋值
+                     * @return DeleteTime 是否已赋值
+                     * 
+                     */
+                    bool DeleteTimeHasBeenSet() const;
+
+                    /**
                      * 获取<p>标签列表（TagKey-TagValue）</p>
                      * @return Tags <p>标签列表（TagKey-TagValue）</p>
                      * 
@@ -465,6 +507,34 @@ namespace TencentCloud
                      * 
                      */
                     bool EnableTokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Token 认证密钥（开启 token 认证时由系统生成）</p>
+                     * @return Token <p>Token 认证密钥（开启 token 认证时由系统生成）</p>
+                     * 
+                     */
+                    std::string GetToken() const;
+
+                    /**
+                     * 判断参数 Token 是否已赋值
+                     * @return Token 是否已赋值
+                     * 
+                     */
+                    bool TokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>弹性伸缩配置（JSON）</p>
+                     * @return AutoscalerOptions <p>弹性伸缩配置（JSON）</p>
+                     * 
+                     */
+                    std::string GetAutoscalerOptions() const;
+
+                    /**
+                     * 判断参数 AutoscalerOptions 是否已赋值
+                     * @return AutoscalerOptions 是否已赋值
+                     * 
+                     */
+                    bool AutoscalerOptionsHasBeenSet() const;
 
                     /**
                      * 获取<p>Lab sidecar 镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>
@@ -621,6 +691,12 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
+                     * <p>更新时间</p>
+                     */
+                    uint64_t m_updateTime;
+                    bool m_updateTimeHasBeenSet;
+
+                    /**
                      * <p>所属集群组名称</p>
                      */
                     std::string m_groupName;
@@ -687,6 +763,18 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
+                     * <p>停止时间（最近一次停止/休眠）</p>
+                     */
+                    uint64_t m_stopTime;
+                    bool m_stopTimeHasBeenSet;
+
+                    /**
+                     * <p>删除时间</p>
+                     */
+                    uint64_t m_deleteTime;
+                    bool m_deleteTimeHasBeenSet;
+
+                    /**
                      * <p>标签列表（TagKey-TagValue）</p>
                      */
                     std::vector<Tag> m_tags;
@@ -703,6 +791,18 @@ namespace TencentCloud
                      */
                     bool m_enableToken;
                     bool m_enableTokenHasBeenSet;
+
+                    /**
+                     * <p>Token 认证密钥（开启 token 认证时由系统生成）</p>
+                     */
+                    std::string m_token;
+                    bool m_tokenHasBeenSet;
+
+                    /**
+                     * <p>弹性伸缩配置（JSON）</p>
+                     */
+                    std::string m_autoscalerOptions;
+                    bool m_autoscalerOptionsHasBeenSet;
 
                     /**
                      * <p>Lab sidecar 镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>

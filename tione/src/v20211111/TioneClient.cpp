@@ -540,6 +540,56 @@ TioneClient::CreatePresignedNotebookUrlOutcomeCallable TioneClient::CreatePresig
     return prom->get_future();
 }
 
+TioneClient::CreateRoleOutcome TioneClient::CreateRole(const CreateRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoleResponse rsp = CreateRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoleOutcome(rsp);
+        else
+            return CreateRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoleOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::CreateRoleAsync(const CreateRoleRequest& request, const CreateRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateRoleRequest&;
+    using Resp = CreateRoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::CreateRoleOutcomeCallable TioneClient::CreateRoleCallable(const CreateRoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateRoleOutcome>>();
+    CreateRoleAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const CreateRoleRequest&,
+        CreateRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::CreateTrainingModelOutcome TioneClient::CreateTrainingModel(const CreateTrainingModelRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTrainingModel");
@@ -1040,6 +1090,56 @@ TioneClient::DeleteNotebookOutcomeCallable TioneClient::DeleteNotebookCallable(c
     return prom->get_future();
 }
 
+TioneClient::DeleteRoleOutcome TioneClient::DeleteRole(const DeleteRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoleResponse rsp = DeleteRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoleOutcome(rsp);
+        else
+            return DeleteRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoleOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DeleteRoleAsync(const DeleteRoleRequest& request, const DeleteRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteRoleRequest&;
+    using Resp = DeleteRoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DeleteRoleOutcomeCallable TioneClient::DeleteRoleCallable(const DeleteRoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteRoleOutcome>>();
+    DeleteRoleAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DeleteRoleRequest&,
+        DeleteRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::DeleteTrainingModelOutcome TioneClient::DeleteTrainingModel(const DeleteTrainingModelRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTrainingModel");
@@ -1182,6 +1282,56 @@ TioneClient::DeleteTrainingTaskOutcomeCallable TioneClient::DeleteTrainingTaskCa
         const TioneClient*,
         const DeleteTrainingTaskRequest&,
         DeleteTrainingTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeAccessRulesOutcome TioneClient::DescribeAccessRules(const DescribeAccessRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessRulesResponse rsp = DescribeAccessRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessRulesOutcome(rsp);
+        else
+            return DescribeAccessRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessRulesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeAccessRulesAsync(const DescribeAccessRulesRequest& request, const DescribeAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAccessRulesRequest&;
+    using Resp = DescribeAccessRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAccessRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeAccessRulesOutcomeCallable TioneClient::DescribeAccessRulesCallable(const DescribeAccessRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAccessRulesOutcome>>();
+    DescribeAccessRulesAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeAccessRulesRequest&,
+        DescribeAccessRulesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2690,6 +2840,156 @@ TioneClient::DescribePublicAlgoVersionListOutcomeCallable TioneClient::DescribeP
     return prom->get_future();
 }
 
+TioneClient::DescribeRoleOutcome TioneClient::DescribeRole(const DescribeRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoleResponse rsp = DescribeRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoleOutcome(rsp);
+        else
+            return DescribeRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoleOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeRoleAsync(const DescribeRoleRequest& request, const DescribeRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRoleRequest&;
+    using Resp = DescribeRoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeRoleOutcomeCallable TioneClient::DescribeRoleCallable(const DescribeRoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRoleOutcome>>();
+    DescribeRoleAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeRoleRequest&,
+        DescribeRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeRoleUsersOutcome TioneClient::DescribeRoleUsers(const DescribeRoleUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoleUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoleUsersResponse rsp = DescribeRoleUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoleUsersOutcome(rsp);
+        else
+            return DescribeRoleUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoleUsersOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeRoleUsersAsync(const DescribeRoleUsersRequest& request, const DescribeRoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRoleUsersRequest&;
+    using Resp = DescribeRoleUsersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRoleUsers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeRoleUsersOutcomeCallable TioneClient::DescribeRoleUsersCallable(const DescribeRoleUsersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRoleUsersOutcome>>();
+    DescribeRoleUsersAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeRoleUsersRequest&,
+        DescribeRoleUsersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeRolesOutcome TioneClient::DescribeRoles(const DescribeRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRolesResponse rsp = DescribeRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRolesOutcome(rsp);
+        else
+            return DescribeRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRolesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeRolesAsync(const DescribeRolesRequest& request, const DescribeRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeRolesRequest&;
+    using Resp = DescribeRolesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeRoles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeRolesOutcomeCallable TioneClient::DescribeRolesCallable(const DescribeRolesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeRolesOutcome>>();
+    DescribeRolesAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeRolesRequest&,
+        DescribeRolesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::DescribeSubAccountLinuxUserInfosOutcome TioneClient::DescribeSubAccountLinuxUserInfos(const DescribeSubAccountLinuxUserInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubAccountLinuxUserInfos");
@@ -3032,6 +3332,206 @@ TioneClient::DescribeTrainingTasksOutcomeCallable TioneClient::DescribeTrainingT
         const TioneClient*,
         const DescribeTrainingTasksRequest&,
         DescribeTrainingTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeWorkspaceOutcome TioneClient::DescribeWorkspace(const DescribeWorkspaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkspace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkspaceResponse rsp = DescribeWorkspaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkspaceOutcome(rsp);
+        else
+            return DescribeWorkspaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkspaceOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeWorkspaceAsync(const DescribeWorkspaceRequest& request, const DescribeWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWorkspaceRequest&;
+    using Resp = DescribeWorkspaceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkspace", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeWorkspaceOutcomeCallable TioneClient::DescribeWorkspaceCallable(const DescribeWorkspaceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWorkspaceOutcome>>();
+    DescribeWorkspaceAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeWorkspaceRequest&,
+        DescribeWorkspaceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeWorkspaceMembersOutcome TioneClient::DescribeWorkspaceMembers(const DescribeWorkspaceMembersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkspaceMembers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkspaceMembersResponse rsp = DescribeWorkspaceMembersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkspaceMembersOutcome(rsp);
+        else
+            return DescribeWorkspaceMembersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkspaceMembersOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeWorkspaceMembersAsync(const DescribeWorkspaceMembersRequest& request, const DescribeWorkspaceMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWorkspaceMembersRequest&;
+    using Resp = DescribeWorkspaceMembersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkspaceMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeWorkspaceMembersOutcomeCallable TioneClient::DescribeWorkspaceMembersCallable(const DescribeWorkspaceMembersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWorkspaceMembersOutcome>>();
+    DescribeWorkspaceMembersAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeWorkspaceMembersRequest&,
+        DescribeWorkspaceMembersOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeWorkspaceQuotaUsageOutcome TioneClient::DescribeWorkspaceQuotaUsage(const DescribeWorkspaceQuotaUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkspaceQuotaUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkspaceQuotaUsageResponse rsp = DescribeWorkspaceQuotaUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkspaceQuotaUsageOutcome(rsp);
+        else
+            return DescribeWorkspaceQuotaUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkspaceQuotaUsageOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeWorkspaceQuotaUsageAsync(const DescribeWorkspaceQuotaUsageRequest& request, const DescribeWorkspaceQuotaUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWorkspaceQuotaUsageRequest&;
+    using Resp = DescribeWorkspaceQuotaUsageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkspaceQuotaUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeWorkspaceQuotaUsageOutcomeCallable TioneClient::DescribeWorkspaceQuotaUsageCallable(const DescribeWorkspaceQuotaUsageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWorkspaceQuotaUsageOutcome>>();
+    DescribeWorkspaceQuotaUsageAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeWorkspaceQuotaUsageRequest&,
+        DescribeWorkspaceQuotaUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::DescribeWorkspaceQuotasOutcome TioneClient::DescribeWorkspaceQuotas(const DescribeWorkspaceQuotasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkspaceQuotas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkspaceQuotasResponse rsp = DescribeWorkspaceQuotasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkspaceQuotasOutcome(rsp);
+        else
+            return DescribeWorkspaceQuotasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkspaceQuotasOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeWorkspaceQuotasAsync(const DescribeWorkspaceQuotasRequest& request, const DescribeWorkspaceQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeWorkspaceQuotasRequest&;
+    using Resp = DescribeWorkspaceQuotasResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeWorkspaceQuotas", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::DescribeWorkspaceQuotasOutcomeCallable TioneClient::DescribeWorkspaceQuotasCallable(const DescribeWorkspaceQuotasRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeWorkspaceQuotasOutcome>>();
+    DescribeWorkspaceQuotasAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const DescribeWorkspaceQuotasRequest&,
+        DescribeWorkspaceQuotasOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3390,6 +3890,156 @@ TioneClient::ModifyNotebookTagsOutcomeCallable TioneClient::ModifyNotebookTagsCa
     return prom->get_future();
 }
 
+TioneClient::ModifyRoleOutcome TioneClient::ModifyRole(const ModifyRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoleResponse rsp = ModifyRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoleOutcome(rsp);
+        else
+            return ModifyRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoleOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyRoleAsync(const ModifyRoleRequest& request, const ModifyRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyRoleRequest&;
+    using Resp = ModifyRoleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyRole", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::ModifyRoleOutcomeCallable TioneClient::ModifyRoleCallable(const ModifyRoleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyRoleOutcome>>();
+    ModifyRoleAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const ModifyRoleRequest&,
+        ModifyRoleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::ModifyRoleAccessRulesOutcome TioneClient::ModifyRoleAccessRules(const ModifyRoleAccessRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoleAccessRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoleAccessRulesResponse rsp = ModifyRoleAccessRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoleAccessRulesOutcome(rsp);
+        else
+            return ModifyRoleAccessRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoleAccessRulesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyRoleAccessRulesAsync(const ModifyRoleAccessRulesRequest& request, const ModifyRoleAccessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyRoleAccessRulesRequest&;
+    using Resp = ModifyRoleAccessRulesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyRoleAccessRules", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::ModifyRoleAccessRulesOutcomeCallable TioneClient::ModifyRoleAccessRulesCallable(const ModifyRoleAccessRulesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyRoleAccessRulesOutcome>>();
+    ModifyRoleAccessRulesAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const ModifyRoleAccessRulesRequest&,
+        ModifyRoleAccessRulesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::ModifyRoleUserGrantOutcome TioneClient::ModifyRoleUserGrant(const ModifyRoleUserGrantRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoleUserGrant");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoleUserGrantResponse rsp = ModifyRoleUserGrantResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoleUserGrantOutcome(rsp);
+        else
+            return ModifyRoleUserGrantOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoleUserGrantOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyRoleUserGrantAsync(const ModifyRoleUserGrantRequest& request, const ModifyRoleUserGrantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyRoleUserGrantRequest&;
+    using Resp = ModifyRoleUserGrantResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyRoleUserGrant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::ModifyRoleUserGrantOutcomeCallable TioneClient::ModifyRoleUserGrantCallable(const ModifyRoleUserGrantRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyRoleUserGrantOutcome>>();
+    ModifyRoleUserGrantAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const ModifyRoleUserGrantRequest&,
+        ModifyRoleUserGrantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::ModifyServiceGroupWeightsOutcome TioneClient::ModifyServiceGroupWeights(const ModifyServiceGroupWeightsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyServiceGroupWeights");
@@ -3432,6 +4082,106 @@ TioneClient::ModifyServiceGroupWeightsOutcomeCallable TioneClient::ModifyService
         const TioneClient*,
         const ModifyServiceGroupWeightsRequest&,
         ModifyServiceGroupWeightsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::ModifyUserGrantOutcome TioneClient::ModifyUserGrant(const ModifyUserGrantRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserGrant");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserGrantResponse rsp = ModifyUserGrantResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserGrantOutcome(rsp);
+        else
+            return ModifyUserGrantOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserGrantOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyUserGrantAsync(const ModifyUserGrantRequest& request, const ModifyUserGrantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyUserGrantRequest&;
+    using Resp = ModifyUserGrantResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyUserGrant", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::ModifyUserGrantOutcomeCallable TioneClient::ModifyUserGrantCallable(const ModifyUserGrantRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyUserGrantOutcome>>();
+    ModifyUserGrantAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const ModifyUserGrantRequest&,
+        ModifyUserGrantOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TioneClient::ModifyWorkspaceMembersOutcome TioneClient::ModifyWorkspaceMembers(const ModifyWorkspaceMembersRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWorkspaceMembers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWorkspaceMembersResponse rsp = ModifyWorkspaceMembersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWorkspaceMembersOutcome(rsp);
+        else
+            return ModifyWorkspaceMembersOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWorkspaceMembersOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyWorkspaceMembersAsync(const ModifyWorkspaceMembersRequest& request, const ModifyWorkspaceMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyWorkspaceMembersRequest&;
+    using Resp = ModifyWorkspaceMembersResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyWorkspaceMembers", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::ModifyWorkspaceMembersOutcomeCallable TioneClient::ModifyWorkspaceMembersCallable(const ModifyWorkspaceMembersRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyWorkspaceMembersOutcome>>();
+    ModifyWorkspaceMembersAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const ModifyWorkspaceMembersRequest&,
+        ModifyWorkspaceMembersOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端ID
-                     * @return AgentId 客户端ID
+                     * 获取<p>客户端ID</p>
+                     * @return AgentId <p>客户端ID</p>
                      * 
                      */
                     std::string GetAgentId() const;
 
                     /**
-                     * 设置客户端ID
-                     * @param _agentId 客户端ID
+                     * 设置<p>客户端ID</p>
+                     * @param _agentId <p>客户端ID</p>
                      * 
                      */
                     void SetAgentId(const std::string& _agentId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AgentIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端版本
-                     * @return AgentVersion 客户端版本
+                     * 获取<p>客户端版本</p>
+                     * @return AgentVersion <p>客户端版本</p>
                      * 
                      */
                     std::string GetAgentVersion() const;
 
                     /**
-                     * 设置客户端版本
-                     * @param _agentVersion 客户端版本
+                     * 设置<p>客户端版本</p>
+                     * @param _agentVersion <p>客户端版本</p>
                      * 
                      */
                     void SetAgentVersion(const std::string& _agentVersion);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool AgentVersionHasBeenSet() const;
 
                     /**
-                     * 获取客户端状态
-                     * @return AgentStatus 客户端状态
+                     * 获取<p>客户端状态</p>
+                     * @return AgentStatus <p>客户端状态</p>
                      * 
                      */
                     std::string GetAgentStatus() const;
 
                     /**
-                     * 设置客户端状态
-                     * @param _agentStatus 客户端状态
+                     * 设置<p>客户端状态</p>
+                     * @param _agentStatus <p>客户端状态</p>
                      * 
                      */
                     void SetAgentStatus(const std::string& _agentStatus);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool AgentStatusHasBeenSet() const;
 
                     /**
-                     * 获取最后心跳时间
-                     * @return LastHeartbeatTime 最后心跳时间
+                     * 获取<p>最后心跳时间</p>
+                     * @return LastHeartbeatTime <p>最后心跳时间</p>
                      * 
                      */
                     std::string GetLastHeartbeatTime() const;
 
                     /**
-                     * 设置最后心跳时间
-                     * @param _lastHeartbeatTime 最后心跳时间
+                     * 设置<p>最后心跳时间</p>
+                     * @param _lastHeartbeatTime <p>最后心跳时间</p>
                      * 
                      */
                     void SetLastHeartbeatTime(const std::string& _lastHeartbeatTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool LastHeartbeatTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdTime <p>创建时间</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取最新备份点中记录的 CVM 基础信息
-                     * @return ExtraInfo 最新备份点中记录的 CVM 基础信息
+                     * 获取<p>最新备份点中记录的 CVM 基础信息</p>
+                     * @return ExtraInfo <p>最新备份点中记录的 CVM 基础信息</p>
                      * 
                      */
                     std::string GetExtraInfo() const;
 
                     /**
-                     * 设置最新备份点中记录的 CVM 基础信息
-                     * @param _extraInfo 最新备份点中记录的 CVM 基础信息
+                     * 设置<p>最新备份点中记录的 CVM 基础信息</p>
+                     * @param _extraInfo <p>最新备份点中记录的 CVM 基础信息</p>
                      * 
                      */
                     void SetExtraInfo(const std::string& _extraInfo);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ExtraInfoHasBeenSet() const;
 
                     /**
-                     * 获取该实例可用备份点数量
-                     * @return BackupCount 该实例可用备份点数量
+                     * 获取<p>该实例可用备份点数量</p>
+                     * @return BackupCount <p>该实例可用备份点数量</p>
                      * 
                      */
                     uint64_t GetBackupCount() const;
 
                     /**
-                     * 设置该实例可用备份点数量
-                     * @param _backupCount 该实例可用备份点数量
+                     * 设置<p>该实例可用备份点数量</p>
+                     * @param _backupCount <p>该实例可用备份点数量</p>
                      * 
                      */
                     void SetBackupCount(const uint64_t& _backupCount);
@@ -215,18 +215,18 @@ namespace TencentCloud
                     bool BackupCountHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
+                     * 获取<p>实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceName 实例名称
+                     * @return InstanceName <p>实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
+                     * 设置<p>实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceName 实例名称
+                     * @param _instanceName <p>实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -240,15 +240,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取最近一次备份时间
-                     * @return LatestBackupTime 最近一次备份时间
+                     * 获取<p>最近一次备份时间</p>
+                     * @return LatestBackupTime <p>最近一次备份时间</p>
                      * 
                      */
                     std::string GetLatestBackupTime() const;
 
                     /**
-                     * 设置最近一次备份时间
-                     * @param _latestBackupTime 最近一次备份时间
+                     * 设置<p>最近一次备份时间</p>
+                     * @param _latestBackupTime <p>最近一次备份时间</p>
                      * 
                      */
                     void SetLatestBackupTime(const std::string& _latestBackupTime);
@@ -261,15 +261,15 @@ namespace TencentCloud
                     bool LatestBackupTimeHasBeenSet() const;
 
                     /**
-                     * 获取离线原因
-                     * @return OfflineReason 离线原因
+                     * 获取<p>离线原因</p>
+                     * @return OfflineReason <p>离线原因</p>
                      * 
                      */
                     std::string GetOfflineReason() const;
 
                     /**
-                     * 设置离线原因
-                     * @param _offlineReason 离线原因
+                     * 设置<p>离线原因</p>
+                     * @param _offlineReason <p>离线原因</p>
                      * 
                      */
                     void SetOfflineReason(const std::string& _offlineReason);
@@ -281,74 +281,138 @@ namespace TencentCloud
                      */
                     bool OfflineReasonHasBeenSet() const;
 
+                    /**
+                     * 获取<p>备份数据量，单位为字节</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupSize <p>备份数据量，单位为字节</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBackupSize() const;
+
+                    /**
+                     * 设置<p>备份数据量，单位为字节</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _backupSize <p>备份数据量，单位为字节</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBackupSize(const int64_t& _backupSize);
+
+                    /**
+                     * 判断参数 BackupSize 是否已赋值
+                     * @return BackupSize 是否已赋值
+                     * 
+                     */
+                    bool BackupSizeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductType <p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductType() const;
+
+                    /**
+                     * 设置<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productType <p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductType(const std::string& _productType);
+
+                    /**
+                     * 判断参数 ProductType 是否已赋值
+                     * @return ProductType 是否已赋值
+                     * 
+                     */
+                    bool ProductTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 客户端ID
+                     * <p>客户端ID</p>
                      */
                     std::string m_agentId;
                     bool m_agentIdHasBeenSet;
 
                     /**
-                     * 客户端版本
+                     * <p>客户端版本</p>
                      */
                     std::string m_agentVersion;
                     bool m_agentVersionHasBeenSet;
 
                     /**
-                     * 客户端状态
+                     * <p>客户端状态</p>
                      */
                     std::string m_agentStatus;
                     bool m_agentStatusHasBeenSet;
 
                     /**
-                     * 最后心跳时间
+                     * <p>最后心跳时间</p>
                      */
                     std::string m_lastHeartbeatTime;
                     bool m_lastHeartbeatTimeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 最新备份点中记录的 CVM 基础信息
+                     * <p>最新备份点中记录的 CVM 基础信息</p>
                      */
                     std::string m_extraInfo;
                     bool m_extraInfoHasBeenSet;
 
                     /**
-                     * 该实例可用备份点数量
+                     * <p>该实例可用备份点数量</p>
                      */
                     uint64_t m_backupCount;
                     bool m_backupCountHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * <p>实例名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 最近一次备份时间
+                     * <p>最近一次备份时间</p>
                      */
                     std::string m_latestBackupTime;
                     bool m_latestBackupTimeHasBeenSet;
 
                     /**
-                     * 离线原因
+                     * <p>离线原因</p>
                      */
                     std::string m_offlineReason;
                     bool m_offlineReasonHasBeenSet;
+
+                    /**
+                     * <p>备份数据量，单位为字节</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_backupSize;
+                    bool m_backupSizeHasBeenSet;
+
+                    /**
+                     * <p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productType;
+                    bool m_productTypeHasBeenSet;
 
                 };
             }

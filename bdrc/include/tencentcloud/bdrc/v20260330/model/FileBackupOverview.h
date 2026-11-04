@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取整机备份点总数
-                     * @return BackupCount 整机备份点总数
+                     * 获取<p>备份点总数</p>
+                     * @return BackupCount <p>备份点总数</p>
                      * 
                      */
                     int64_t GetBackupCount() const;
 
                     /**
-                     * 设置整机备份点总数
-                     * @param _backupCount 整机备份点总数
+                     * 设置<p>备份点总数</p>
+                     * @param _backupCount <p>备份点总数</p>
                      * 
                      */
                     void SetBackupCount(const int64_t& _backupCount);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BackupCountHasBeenSet() const;
 
                     /**
-                     * 获取创建中数量
-                     * @return CreatingBackupCount 创建中数量
+                     * 获取<p>创建中数量</p>
+                     * @return CreatingBackupCount <p>创建中数量</p>
                      * 
                      */
                     int64_t GetCreatingBackupCount() const;
 
                     /**
-                     * 设置创建中数量
-                     * @param _creatingBackupCount 创建中数量
+                     * 设置<p>创建中数量</p>
+                     * @param _creatingBackupCount <p>创建中数量</p>
                      * 
                      */
                     void SetCreatingBackupCount(const int64_t& _creatingBackupCount);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CreatingBackupCountHasBeenSet() const;
 
                     /**
-                     * 获取失败数量
-                     * @return FailedBackupCount 失败数量
+                     * 获取<p>失败数量</p>
+                     * @return FailedBackupCount <p>失败数量</p>
                      * 
                      */
                     int64_t GetFailedBackupCount() const;
 
                     /**
-                     * 设置失败数量
-                     * @param _failedBackupCount 失败数量
+                     * 设置<p>失败数量</p>
+                     * @param _failedBackupCount <p>失败数量</p>
                      * 
                      */
                     void SetFailedBackupCount(const int64_t& _failedBackupCount);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool FailedBackupCountHasBeenSet() const;
 
                     /**
-                     * 获取已完成数量
-                     * @return SuccessBackupCount 已完成数量
+                     * 获取<p>已完成数量</p>
+                     * @return SuccessBackupCount <p>已完成数量</p>
                      * 
                      */
                     int64_t GetSuccessBackupCount() const;
 
                     /**
-                     * 设置已完成数量
-                     * @param _successBackupCount 已完成数量
+                     * 设置<p>已完成数量</p>
+                     * @param _successBackupCount <p>已完成数量</p>
                      * 
                      */
                     void SetSuccessBackupCount(const int64_t& _successBackupCount);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool SuccessBackupCountHasBeenSet() const;
 
                     /**
-                     * 获取恢复中的总数量
-                     * @return RestoringBackupCount 恢复中的总数量
+                     * 获取<p>恢复中的总数量</p>
+                     * @return RestoringBackupCount <p>恢复中的总数量</p>
                      * 
                      */
                     int64_t GetRestoringBackupCount() const;
 
                     /**
-                     * 设置恢复中的总数量
-                     * @param _restoringBackupCount 恢复中的总数量
+                     * 设置<p>恢复中的总数量</p>
+                     * @param _restoringBackupCount <p>恢复中的总数量</p>
                      * 
                      */
                     void SetRestoringBackupCount(const int64_t& _restoringBackupCount);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RestoringBackupCountHasBeenSet() const;
 
                     /**
-                     * 获取整机备份总容量
-                     * @return BackupSizeMb 整机备份总容量
+                     * 获取<p>备份总容量</p>
+                     * @return BackupSizeMb <p>备份总容量</p>
                      * 
                      */
                     int64_t GetBackupSizeMb() const;
 
                     /**
-                     * 设置整机备份总容量
-                     * @param _backupSizeMb 整机备份总容量
+                     * 设置<p>备份总容量</p>
+                     * @param _backupSizeMb <p>备份总容量</p>
                      * 
                      */
                     void SetBackupSizeMb(const int64_t& _backupSizeMb);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool BackupSizeMbHasBeenSet() const;
 
                     /**
-                     * 获取受保护 CVM 资源数
-                     * @return BackupResourceCount 受保护 CVM 资源数
+                     * 获取<p>受保护资源数</p>
+                     * @return BackupResourceCount <p>受保护资源数</p>
                      * 
                      */
                     int64_t GetBackupResourceCount() const;
 
                     /**
-                     * 设置受保护 CVM 资源数
-                     * @param _backupResourceCount 受保护 CVM 资源数
+                     * 设置<p>受保护资源数</p>
+                     * @param _backupResourceCount <p>受保护资源数</p>
                      * 
                      */
                     void SetBackupResourceCount(const int64_t& _backupResourceCount);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 整机备份点总数
+                     * <p>备份点总数</p>
                      */
                     int64_t m_backupCount;
                     bool m_backupCountHasBeenSet;
 
                     /**
-                     * 创建中数量
+                     * <p>创建中数量</p>
                      */
                     int64_t m_creatingBackupCount;
                     bool m_creatingBackupCountHasBeenSet;
 
                     /**
-                     * 失败数量
+                     * <p>失败数量</p>
                      */
                     int64_t m_failedBackupCount;
                     bool m_failedBackupCountHasBeenSet;
 
                     /**
-                     * 已完成数量
+                     * <p>已完成数量</p>
                      */
                     int64_t m_successBackupCount;
                     bool m_successBackupCountHasBeenSet;
 
                     /**
-                     * 恢复中的总数量
+                     * <p>恢复中的总数量</p>
                      */
                     int64_t m_restoringBackupCount;
                     bool m_restoringBackupCountHasBeenSet;
 
                     /**
-                     * 整机备份总容量
+                     * <p>备份总容量</p>
                      */
                     int64_t m_backupSizeMb;
                     bool m_backupSizeMbHasBeenSet;
 
                     /**
-                     * 受保护 CVM 资源数
+                     * <p>受保护资源数</p>
                      */
                     int64_t m_backupResourceCount;
                     bool m_backupResourceCountHasBeenSet;

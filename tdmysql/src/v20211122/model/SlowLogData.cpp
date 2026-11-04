@@ -38,7 +38,8 @@ SlowLogData::SlowLogData() :
     m_rpcTraceHasBeenSet(false),
     m_tDStoreLockTimeHasBeenSet(false),
     m_traceIdHasBeenSet(false),
-    m_explainHasBeenSet(false)
+    m_explainHasBeenSet(false),
+    m_explainTreeHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,16 @@ CoreInternalOutcome SlowLogData::Deserialize(const rapidjson::Value &value)
         m_explainHasBeenSet = true;
     }
 
+    if (value.HasMember("ExplainTree") && !value["ExplainTree"].IsNull())
+    {
+        if (!value["ExplainTree"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowLogData.ExplainTree` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_explainTree = string(value["ExplainTree"].GetString());
+        m_explainTreeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +404,14 @@ void SlowLogData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_explainTreeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExplainTree";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_explainTree.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -684,5 +703,21 @@ void SlowLogData::SetExplain(const vector<Explain>& _explain)
 bool SlowLogData::ExplainHasBeenSet() const
 {
     return m_explainHasBeenSet;
+}
+
+string SlowLogData::GetExplainTree() const
+{
+    return m_explainTree;
+}
+
+void SlowLogData::SetExplainTree(const string& _explainTree)
+{
+    m_explainTree = _explainTree;
+    m_explainTreeHasBeenSet = true;
+}
+
+bool SlowLogData::ExplainTreeHasBeenSet() const
+{
+    return m_explainTreeHasBeenSet;
 }
 

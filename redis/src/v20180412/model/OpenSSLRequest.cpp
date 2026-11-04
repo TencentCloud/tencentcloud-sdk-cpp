@@ -24,7 +24,12 @@ using namespace std;
 
 OpenSSLRequest::OpenSSLRequest() :
     m_instanceIdHasBeenSet(false),
-    m_addressTypeHasBeenSet(false)
+    m_addressTypeHasBeenSet(false),
+    m_certSourceHasBeenSet(false),
+    m_switchOptionHasBeenSet(false),
+    m_certIdHasBeenSet(false),
+    m_sSLMinVersionHasBeenSet(false),
+    m_encryptionModeHasBeenSet(false)
 {
 }
 
@@ -49,6 +54,46 @@ string OpenSSLRequest::ToJsonString() const
         string key = "AddressType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_addressType, allocator);
+    }
+
+    if (m_certSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_certSource, allocator);
+    }
+
+    if (m_switchOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_switchOption, allocator);
+    }
+
+    if (m_certIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sSLMinVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLMinVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sSLMinVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptionMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +134,86 @@ void OpenSSLRequest::SetAddressType(const int64_t& _addressType)
 bool OpenSSLRequest::AddressTypeHasBeenSet() const
 {
     return m_addressTypeHasBeenSet;
+}
+
+int64_t OpenSSLRequest::GetCertSource() const
+{
+    return m_certSource;
+}
+
+void OpenSSLRequest::SetCertSource(const int64_t& _certSource)
+{
+    m_certSource = _certSource;
+    m_certSourceHasBeenSet = true;
+}
+
+bool OpenSSLRequest::CertSourceHasBeenSet() const
+{
+    return m_certSourceHasBeenSet;
+}
+
+int64_t OpenSSLRequest::GetSwitchOption() const
+{
+    return m_switchOption;
+}
+
+void OpenSSLRequest::SetSwitchOption(const int64_t& _switchOption)
+{
+    m_switchOption = _switchOption;
+    m_switchOptionHasBeenSet = true;
+}
+
+bool OpenSSLRequest::SwitchOptionHasBeenSet() const
+{
+    return m_switchOptionHasBeenSet;
+}
+
+string OpenSSLRequest::GetCertId() const
+{
+    return m_certId;
+}
+
+void OpenSSLRequest::SetCertId(const string& _certId)
+{
+    m_certId = _certId;
+    m_certIdHasBeenSet = true;
+}
+
+bool OpenSSLRequest::CertIdHasBeenSet() const
+{
+    return m_certIdHasBeenSet;
+}
+
+string OpenSSLRequest::GetSSLMinVersion() const
+{
+    return m_sSLMinVersion;
+}
+
+void OpenSSLRequest::SetSSLMinVersion(const string& _sSLMinVersion)
+{
+    m_sSLMinVersion = _sSLMinVersion;
+    m_sSLMinVersionHasBeenSet = true;
+}
+
+bool OpenSSLRequest::SSLMinVersionHasBeenSet() const
+{
+    return m_sSLMinVersionHasBeenSet;
+}
+
+string OpenSSLRequest::GetEncryptionMode() const
+{
+    return m_encryptionMode;
+}
+
+void OpenSSLRequest::SetEncryptionMode(const string& _encryptionMode)
+{
+    m_encryptionMode = _encryptionMode;
+    m_encryptionModeHasBeenSet = true;
+}
+
+bool OpenSSLRequest::EncryptionModeHasBeenSet() const
+{
+    return m_encryptionModeHasBeenSet;
 }
 
 

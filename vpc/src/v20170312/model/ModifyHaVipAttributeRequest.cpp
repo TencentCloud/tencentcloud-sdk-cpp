@@ -24,7 +24,9 @@ using namespace std;
 
 ModifyHaVipAttributeRequest::ModifyHaVipAttributeRequest() :
     m_haVipIdHasBeenSet(false),
-    m_haVipNameHasBeenSet(false)
+    m_haVipNameHasBeenSet(false),
+    m_terminationProtectionHasBeenSet(false),
+    m_trafficProtectionHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string ModifyHaVipAttributeRequest::ToJsonString() const
         string key = "HaVipName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_haVipName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_terminationProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TerminationProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_terminationProtection, allocator);
+    }
+
+    if (m_trafficProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_trafficProtection, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void ModifyHaVipAttributeRequest::SetHaVipName(const string& _haVipName)
 bool ModifyHaVipAttributeRequest::HaVipNameHasBeenSet() const
 {
     return m_haVipNameHasBeenSet;
+}
+
+bool ModifyHaVipAttributeRequest::GetTerminationProtection() const
+{
+    return m_terminationProtection;
+}
+
+void ModifyHaVipAttributeRequest::SetTerminationProtection(const bool& _terminationProtection)
+{
+    m_terminationProtection = _terminationProtection;
+    m_terminationProtectionHasBeenSet = true;
+}
+
+bool ModifyHaVipAttributeRequest::TerminationProtectionHasBeenSet() const
+{
+    return m_terminationProtectionHasBeenSet;
+}
+
+bool ModifyHaVipAttributeRequest::GetTrafficProtection() const
+{
+    return m_trafficProtection;
+}
+
+void ModifyHaVipAttributeRequest::SetTrafficProtection(const bool& _trafficProtection)
+{
+    m_trafficProtection = _trafficProtection;
+    m_trafficProtectionHasBeenSet = true;
+}
+
+bool ModifyHaVipAttributeRequest::TrafficProtectionHasBeenSet() const
+{
+    return m_trafficProtectionHasBeenSet;
 }
 
 

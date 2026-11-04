@@ -43,6 +43,7 @@ CreateLabRequest::CreateLabRequest() :
     m_tagsHasBeenSet(false),
     m_persistentWorkDirHasBeenSet(false),
     m_enableTokenHasBeenSet(false),
+    m_autoscalerOptionsHasBeenSet(false),
     m_imagePullTypeHasBeenSet(false),
     m_labImagePullTypeHasBeenSet(false),
     m_networkConfigHasBeenSet(false)
@@ -227,6 +228,14 @@ string CreateLabRequest::ToJsonString() const
         string key = "EnableToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableToken, allocator);
+    }
+
+    if (m_autoscalerOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoscalerOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoscalerOptions.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imagePullTypeHasBeenSet)
@@ -579,6 +588,22 @@ void CreateLabRequest::SetEnableToken(const bool& _enableToken)
 bool CreateLabRequest::EnableTokenHasBeenSet() const
 {
     return m_enableTokenHasBeenSet;
+}
+
+string CreateLabRequest::GetAutoscalerOptions() const
+{
+    return m_autoscalerOptions;
+}
+
+void CreateLabRequest::SetAutoscalerOptions(const string& _autoscalerOptions)
+{
+    m_autoscalerOptions = _autoscalerOptions;
+    m_autoscalerOptionsHasBeenSet = true;
+}
+
+bool CreateLabRequest::AutoscalerOptionsHasBeenSet() const
+{
+    return m_autoscalerOptionsHasBeenSet;
 }
 
 string CreateLabRequest::GetImagePullType() const

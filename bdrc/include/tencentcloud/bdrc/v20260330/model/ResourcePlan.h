@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云服务器实例 ID
-                     * @return ResourceId 云服务器实例 ID
+                     * 获取<p>云服务器实例 ID</p>
+                     * @return ResourceId <p>云服务器实例 ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置云服务器实例 ID
-                     * @param _resourceId 云服务器实例 ID
+                     * 设置<p>云服务器实例 ID</p>
+                     * @param _resourceId <p>云服务器实例 ID</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取备份路径，[0,20]
-                     * @return BackupPaths 备份路径，[0,20]
+                     * 获取<p>备份路径，[0,20]</p>
+                     * @return BackupPaths <p>备份路径，[0,20]</p>
                      * 
                      */
                     std::vector<std::string> GetBackupPaths() const;
 
                     /**
-                     * 设置备份路径，[0,20]
-                     * @param _backupPaths 备份路径，[0,20]
+                     * 设置<p>备份路径，[0,20]</p>
+                     * @param _backupPaths <p>备份路径，[0,20]</p>
                      * 
                      */
                     void SetBackupPaths(const std::vector<std::string>& _backupPaths);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BackupPathsHasBeenSet() const;
 
                     /**
-                     * 获取包含文件类型，[0,20]
-                     * @return IncludeFileTypes 包含文件类型，[0,20]
+                     * 获取<p>包含文件类型，[0,20]</p>
+                     * @return IncludeFileTypes <p>包含文件类型，[0,20]</p>
                      * 
                      */
                     std::vector<std::string> GetIncludeFileTypes() const;
 
                     /**
-                     * 设置包含文件类型，[0,20]
-                     * @param _includeFileTypes 包含文件类型，[0,20]
+                     * 设置<p>包含文件类型，[0,20]</p>
+                     * @param _includeFileTypes <p>包含文件类型，[0,20]</p>
                      * 
                      */
                     void SetIncludeFileTypes(const std::vector<std::string>& _includeFileTypes);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool IncludeFileTypesHasBeenSet() const;
 
                     /**
-                     * 获取排除路径，[0,20]
-                     * @return ExcludePatterns 排除路径，[0,20]
+                     * 获取<p>排除路径，[0,20]</p>
+                     * @return ExcludePatterns <p>排除路径，[0,20]</p>
                      * 
                      */
                     std::vector<std::string> GetExcludePatterns() const;
 
                     /**
-                     * 设置排除路径，[0,20]
-                     * @param _excludePatterns 排除路径，[0,20]
+                     * 设置<p>排除路径，[0,20]</p>
+                     * @param _excludePatterns <p>排除路径，[0,20]</p>
                      * 
                      */
                     void SetExcludePatterns(const std::vector<std::string>& _excludePatterns);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ExcludePatternsHasBeenSet() const;
 
                     /**
-                     * 获取是否排除系统目录
-                     * @return ExcludeSystemDirectories 是否排除系统目录
+                     * 获取<p>是否排除系统目录</p>
+                     * @return ExcludeSystemDirectories <p>是否排除系统目录</p>
                      * 
                      */
                     bool GetExcludeSystemDirectories() const;
 
                     /**
-                     * 设置是否排除系统目录
-                     * @param _excludeSystemDirectories 是否排除系统目录
+                     * 设置<p>是否排除系统目录</p>
+                     * @param _excludeSystemDirectories <p>是否排除系统目录</p>
                      * 
                      */
                     void SetExcludeSystemDirectories(const bool& _excludeSystemDirectories);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ExcludeSystemDirectoriesHasBeenSet() const;
 
                     /**
-                     * 获取是否立即触发全量备份
-                     * @return ExecuteImmediately 是否立即触发全量备份
+                     * 获取<p>是否立即触发全量备份</p>
+                     * @return ExecuteImmediately <p>是否立即触发全量备份</p>
                      * 
                      */
                     bool GetExecuteImmediately() const;
 
                     /**
-                     * 设置是否立即触发全量备份
-                     * @param _executeImmediately 是否立即触发全量备份
+                     * 设置<p>是否立即触发全量备份</p>
+                     * @param _executeImmediately <p>是否立即触发全量备份</p>
                      * 
                      */
                     void SetExecuteImmediately(const bool& _executeImmediately);
@@ -172,43 +172,97 @@ namespace TencentCloud
                      */
                     bool ExecuteImmediatelyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>cos备份是否备份ACL</p>
+                     * @return EnableObjectAcl <p>cos备份是否备份ACL</p>
+                     * 
+                     */
+                    bool GetEnableObjectAcl() const;
+
+                    /**
+                     * 设置<p>cos备份是否备份ACL</p>
+                     * @param _enableObjectAcl <p>cos备份是否备份ACL</p>
+                     * 
+                     */
+                    void SetEnableObjectAcl(const bool& _enableObjectAcl);
+
+                    /**
+                     * 判断参数 EnableObjectAcl 是否已赋值
+                     * @return EnableObjectAcl 是否已赋值
+                     * 
+                     */
+                    bool EnableObjectAclHasBeenSet() const;
+
+                    /**
+                     * 获取<p>cos备份是否备份tag</p>
+                     * @return EnableObjectTags <p>cos备份是否备份tag</p>
+                     * 
+                     */
+                    bool GetEnableObjectTags() const;
+
+                    /**
+                     * 设置<p>cos备份是否备份tag</p>
+                     * @param _enableObjectTags <p>cos备份是否备份tag</p>
+                     * 
+                     */
+                    void SetEnableObjectTags(const bool& _enableObjectTags);
+
+                    /**
+                     * 判断参数 EnableObjectTags 是否已赋值
+                     * @return EnableObjectTags 是否已赋值
+                     * 
+                     */
+                    bool EnableObjectTagsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云服务器实例 ID
+                     * <p>云服务器实例 ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 备份路径，[0,20]
+                     * <p>备份路径，[0,20]</p>
                      */
                     std::vector<std::string> m_backupPaths;
                     bool m_backupPathsHasBeenSet;
 
                     /**
-                     * 包含文件类型，[0,20]
+                     * <p>包含文件类型，[0,20]</p>
                      */
                     std::vector<std::string> m_includeFileTypes;
                     bool m_includeFileTypesHasBeenSet;
 
                     /**
-                     * 排除路径，[0,20]
+                     * <p>排除路径，[0,20]</p>
                      */
                     std::vector<std::string> m_excludePatterns;
                     bool m_excludePatternsHasBeenSet;
 
                     /**
-                     * 是否排除系统目录
+                     * <p>是否排除系统目录</p>
                      */
                     bool m_excludeSystemDirectories;
                     bool m_excludeSystemDirectoriesHasBeenSet;
 
                     /**
-                     * 是否立即触发全量备份
+                     * <p>是否立即触发全量备份</p>
                      */
                     bool m_executeImmediately;
                     bool m_executeImmediatelyHasBeenSet;
+
+                    /**
+                     * <p>cos备份是否备份ACL</p>
+                     */
+                    bool m_enableObjectAcl;
+                    bool m_enableObjectAclHasBeenSet;
+
+                    /**
+                     * <p>cos备份是否备份tag</p>
+                     */
+                    bool m_enableObjectTags;
+                    bool m_enableObjectTagsHasBeenSet;
 
                 };
             }

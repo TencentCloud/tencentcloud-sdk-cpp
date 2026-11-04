@@ -59,6 +59,20 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
+                     * 获取<p>所属集群ID</p>
+                     * @return ClusterId <p>所属集群ID</p>
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>所属资源分区ID</p>
                      * @return ResourcePartitionId <p>所属资源分区ID</p>
                      * 
@@ -73,6 +87,20 @@ namespace TencentCloud
                     bool ResourcePartitionIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>默认资源分区名称</p>
+                     * @return ResourcePartitionName <p>默认资源分区名称</p>
+                     * 
+                     */
+                    std::string GetResourcePartitionName() const;
+
+                    /**
+                     * 判断参数 ResourcePartitionName 是否已赋值
+                     * @return ResourcePartitionName 是否已赋值
+                     * 
+                     */
+                    bool ResourcePartitionNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>所属队列名称</p>
                      * @return Queue <p>所属队列名称</p>
                      * 
@@ -85,6 +113,20 @@ namespace TencentCloud
                      * 
                      */
                     bool QueueHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Ray Submission ID</p>
+                     * @return SubmissionId <p>Ray Submission ID</p>
+                     * 
+                     */
+                    std::string GetSubmissionId() const;
+
+                    /**
+                     * 判断参数 SubmissionId 是否已赋值
+                     * @return SubmissionId 是否已赋值
+                     * 
+                     */
+                    bool SubmissionIdHasBeenSet() const;
 
                     /**
                      * 获取<p>任务状态</p>
@@ -171,6 +213,34 @@ namespace TencentCloud
                     bool SubAccountUinHasBeenSet() const;
 
                     /**
+                     * 获取<p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * @return SubAccountName <p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     * 
+                     */
+                    std::string GetSubAccountName() const;
+
+                    /**
+                     * 判断参数 SubAccountName 是否已赋值
+                     * @return SubAccountName 是否已赋值
+                     * 
+                     */
+                    bool SubAccountNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>历史记录链接</p>
+                     * @return HistoryUrl <p>历史记录链接</p>
+                     * 
+                     */
+                    std::string GetHistoryUrl() const;
+
+                    /**
+                     * 判断参数 HistoryUrl 是否已赋值
+                     * @return HistoryUrl 是否已赋值
+                     * 
+                     */
+                    bool HistoryUrlHasBeenSet() const;
+
+                    /**
                      * 获取<p>运行时间(ms)</p>
                      * @return RunningTime <p>运行时间(ms)</p>
                      * 
@@ -185,6 +255,20 @@ namespace TencentCloud
                     bool RunningTimeHasBeenSet() const;
 
                     /**
+                     * 获取<p>完成时间</p>
+                     * @return FinishTime <p>完成时间</p>
+                     * 
+                     */
+                    uint64_t GetFinishTime() const;
+
+                    /**
+                     * 判断参数 FinishTime 是否已赋值
+                     * @return FinishTime 是否已赋值
+                     * 
+                     */
+                    bool FinishTimeHasBeenSet() const;
+
+                    /**
                      * 获取<p>创建时间</p>
                      * @return CreateTime <p>创建时间</p>
                      * 
@@ -197,6 +281,20 @@ namespace TencentCloud
                      * 
                      */
                     bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>失败原因/错误信息</p>
+                     * @return ErrorMessage <p>失败原因/错误信息</p>
+                     * 
+                     */
+                    std::string GetErrorMessage() const;
+
+                    /**
+                     * 判断参数 ErrorMessage 是否已赋值
+                     * @return ErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool ErrorMessageHasBeenSet() const;
 
                     /**
                      * 获取<p>运行时环境配置(JSON)</p>
@@ -283,6 +381,34 @@ namespace TencentCloud
                     bool AutoscalerOptionsHasBeenSet() const;
 
                     /**
+                     * 获取<p>来源配置ID</p>
+                     * @return SpecId <p>来源配置ID</p>
+                     * 
+                     */
+                    std::string GetSpecId() const;
+
+                    /**
+                     * 判断参数 SpecId 是否已赋值
+                     * @return SpecId 是否已赋值
+                     * 
+                     */
+                    bool SpecIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>来源配置名称</p>
+                     * @return SpecName <p>来源配置名称</p>
+                     * 
+                     */
+                    std::string GetSpecName() const;
+
+                    /**
+                     * 判断参数 SpecName 是否已赋值
+                     * @return SpecName 是否已赋值
+                     * 
+                     */
+                    bool SpecNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>高级参数，JSON 字符串（透传到 Neutrino）</p>
                      * @return AdvancedOptions <p>高级参数，JSON 字符串（透传到 Neutrino）</p>
                      * 
@@ -361,16 +487,34 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
+                     * <p>所属集群ID</p>
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
                      * <p>所属资源分区ID</p>
                      */
                     std::string m_resourcePartitionId;
                     bool m_resourcePartitionIdHasBeenSet;
 
                     /**
+                     * <p>默认资源分区名称</p>
+                     */
+                    std::string m_resourcePartitionName;
+                    bool m_resourcePartitionNameHasBeenSet;
+
+                    /**
                      * <p>所属队列名称</p>
                      */
                     std::string m_queue;
                     bool m_queueHasBeenSet;
+
+                    /**
+                     * <p>Ray Submission ID</p>
+                     */
+                    std::string m_submissionId;
+                    bool m_submissionIdHasBeenSet;
 
                     /**
                      * <p>任务状态</p>
@@ -409,16 +553,40 @@ namespace TencentCloud
                     bool m_subAccountUinHasBeenSet;
 
                     /**
+                     * <p>子用户名称（由聚合层通过 CAM 接口回填）</p>
+                     */
+                    std::string m_subAccountName;
+                    bool m_subAccountNameHasBeenSet;
+
+                    /**
+                     * <p>历史记录链接</p>
+                     */
+                    std::string m_historyUrl;
+                    bool m_historyUrlHasBeenSet;
+
+                    /**
                      * <p>运行时间(ms)</p>
                      */
                     int64_t m_runningTime;
                     bool m_runningTimeHasBeenSet;
 
                     /**
+                     * <p>完成时间</p>
+                     */
+                    uint64_t m_finishTime;
+                    bool m_finishTimeHasBeenSet;
+
+                    /**
                      * <p>创建时间</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>失败原因/错误信息</p>
+                     */
+                    std::string m_errorMessage;
+                    bool m_errorMessageHasBeenSet;
 
                     /**
                      * <p>运行时环境配置(JSON)</p>
@@ -455,6 +623,18 @@ namespace TencentCloud
                      */
                     std::string m_autoscalerOptions;
                     bool m_autoscalerOptionsHasBeenSet;
+
+                    /**
+                     * <p>来源配置ID</p>
+                     */
+                    std::string m_specId;
+                    bool m_specIdHasBeenSet;
+
+                    /**
+                     * <p>来源配置名称</p>
+                     */
+                    std::string m_specName;
+                    bool m_specNameHasBeenSet;
 
                     /**
                      * <p>高级参数，JSON 字符串（透传到 Neutrino）</p>
