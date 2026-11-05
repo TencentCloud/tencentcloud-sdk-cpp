@@ -24,6 +24,7 @@ using namespace std;
 
 CloneVoiceSyncRequest::CloneVoiceSyncRequest() :
     m_subAppIdHasBeenSet(false),
+    m_modelNameHasBeenSet(false),
     m_audioDataHasBeenSet(false),
     m_audioUrlHasBeenSet(false),
     m_audioFileIdHasBeenSet(false),
@@ -45,6 +46,14 @@ string CloneVoiceSyncRequest::ToJsonString() const
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_audioDataHasBeenSet)
@@ -109,6 +118,22 @@ void CloneVoiceSyncRequest::SetSubAppId(const string& _subAppId)
 bool CloneVoiceSyncRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+string CloneVoiceSyncRequest::GetModelName() const
+{
+    return m_modelName;
+}
+
+void CloneVoiceSyncRequest::SetModelName(const string& _modelName)
+{
+    m_modelName = _modelName;
+    m_modelNameHasBeenSet = true;
+}
+
+bool CloneVoiceSyncRequest::ModelNameHasBeenSet() const
+{
+    return m_modelNameHasBeenSet;
 }
 
 string CloneVoiceSyncRequest::GetAudioData() const

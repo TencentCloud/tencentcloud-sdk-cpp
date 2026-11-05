@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
+#include <tencentcloud/cynosdb/v20190107/model/InstanceServerlessQuotaInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/AIOptimizerStatus.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceNetInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
@@ -659,6 +660,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ServerlessStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>实例Serverless弹性配置信息</p>
+                     * @return ServerlessQuotaInfo <p>实例Serverless弹性配置信息</p>
+                     * 
+                     */
+                    InstanceServerlessQuotaInfo GetServerlessQuotaInfo() const;
+
+                    /**
+                     * 设置<p>实例Serverless弹性配置信息</p>
+                     * @param _serverlessQuotaInfo <p>实例Serverless弹性配置信息</p>
+                     * 
+                     */
+                    void SetServerlessQuotaInfo(const InstanceServerlessQuotaInfo& _serverlessQuotaInfo);
+
+                    /**
+                     * 判断参数 ServerlessQuotaInfo 是否已赋值
+                     * @return ServerlessQuotaInfo 是否已赋值
+                     * 
+                     */
+                    bool ServerlessQuotaInfoHasBeenSet() const;
 
                     /**
                      * 获取<p>AI优化器状态</p>
@@ -1553,6 +1575,12 @@ namespace TencentCloud
                      */
                     std::string m_serverlessStatus;
                     bool m_serverlessStatusHasBeenSet;
+
+                    /**
+                     * <p>实例Serverless弹性配置信息</p>
+                     */
+                    InstanceServerlessQuotaInfo m_serverlessQuotaInfo;
+                    bool m_serverlessQuotaInfoHasBeenSet;
 
                     /**
                      * <p>AI优化器状态</p>

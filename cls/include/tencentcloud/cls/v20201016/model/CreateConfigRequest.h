@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>采集配置名称</p><ul><li>名称种不得包含特殊字符｜</li><li>名称最长255字符，超过截断</li></ul>
-                     * @return Name <p>采集配置名称</p><ul><li>名称种不得包含特殊字符｜</li><li>名称最长255字符，超过截断</li></ul>
+                     * 获取<p>采集配置名称- 名称中不得包含特殊字符&quot;|&quot;</p><p>名称最长255字符，超过截断</p>
+                     * @return Name <p>采集配置名称- 名称中不得包含特殊字符&quot;|&quot;</p><p>名称最长255字符，超过截断</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>采集配置名称</p><ul><li>名称种不得包含特殊字符｜</li><li>名称最长255字符，超过截断</li></ul>
-                     * @param _name <p>采集配置名称</p><ul><li>名称种不得包含特殊字符｜</li><li>名称最长255字符，超过截断</li></ul>
+                     * 设置<p>采集配置名称- 名称中不得包含特殊字符&quot;|&quot;</p><p>名称最长255字符，超过截断</p>
+                     * @param _name <p>采集配置名称- 名称中不得包含特殊字符&quot;|&quot;</p><p>名称最长255字符，超过截断</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -236,7 +236,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>采集配置名称</p><ul><li>名称种不得包含特殊字符｜</li><li>名称最长255字符，超过截断</li></ul>
+                     * <p>采集配置名称- 名称中不得包含特殊字符&quot;|&quot;</p><p>名称最长255字符，超过截断</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

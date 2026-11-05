@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmysql/v20211122/model/CharsetCollationItem.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>字符集与排序规则对应列表</p>
+                     * @return CharsetCollations <p>字符集与排序规则对应列表</p>
+                     * 
+                     */
+                    std::vector<CharsetCollationItem> GetCharsetCollations() const;
+
+                    /**
+                     * 判断参数 CharsetCollations 是否已赋值
+                     * @return CharsetCollations 是否已赋值
+                     * 
+                     */
+                    bool CharsetCollationsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>字符集与排序规则对应列表</p>
+                     */
+                    std::vector<CharsetCollationItem> m_charsetCollations;
+                    bool m_charsetCollationsHasBeenSet;
 
                 };
             }

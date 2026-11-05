@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeVoicesResponse::DescribeVoicesResponse() :
     m_voicesHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_voiceSlotHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,23 @@ CoreInternalOutcome DescribeVoicesResponse::Deserialize(const string &payload)
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VoiceSlot") && !rsp["VoiceSlot"].IsNull())
+    {
+        if (!rsp["VoiceSlot"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VoiceSlot` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_voiceSlot.Deserialize(rsp["VoiceSlot"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_voiceSlotHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +144,15 @@ string DescribeVoicesResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
+    if (m_voiceSlotHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoiceSlot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_voiceSlot.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +183,16 @@ int64_t DescribeVoicesResponse::GetTotalCount() const
 bool DescribeVoicesResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+VoiceSlotInfo DescribeVoicesResponse::GetVoiceSlot() const
+{
+    return m_voiceSlot;
+}
+
+bool DescribeVoicesResponse::VoiceSlotHasBeenSet() const
+{
+    return m_voiceSlotHasBeenSet;
 }
 
 

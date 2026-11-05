@@ -68,7 +68,8 @@ Instance::Instance() :
     m_metadataHasBeenSet(false),
     m_publicIPv6AddressesHasBeenSet(false),
     m_cpuTopologyHasBeenSet(false),
-    m_partitionNumberHasBeenSet(false)
+    m_partitionNumberHasBeenSet(false),
+    m_superNodeIdHasBeenSet(false)
 {
 }
 
@@ -654,6 +655,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_partitionNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("SuperNodeId") && !value["SuperNodeId"].IsNull())
+    {
+        if (!value["SuperNodeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.SuperNodeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_superNodeId = string(value["SuperNodeId"].GetString());
+        m_superNodeIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1100,6 +1111,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "PartitionNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_partitionNumber, allocator);
+    }
+
+    if (m_superNodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperNodeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_superNodeId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1871,5 +1890,21 @@ void Instance::SetPartitionNumber(const int64_t& _partitionNumber)
 bool Instance::PartitionNumberHasBeenSet() const
 {
     return m_partitionNumberHasBeenSet;
+}
+
+string Instance::GetSuperNodeId() const
+{
+    return m_superNodeId;
+}
+
+void Instance::SetSuperNodeId(const string& _superNodeId)
+{
+    m_superNodeId = _superNodeId;
+    m_superNodeIdHasBeenSet = true;
+}
+
+bool Instance::SuperNodeIdHasBeenSet() const
+{
+    return m_superNodeIdHasBeenSet;
 }
 

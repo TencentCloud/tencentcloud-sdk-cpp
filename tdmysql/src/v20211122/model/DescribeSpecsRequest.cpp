@@ -25,7 +25,8 @@ using namespace std;
 DescribeSpecsRequest::DescribeSpecsRequest() :
     m_fullReplicationsHasBeenSet(false),
     m_isExclusiveInstanceHasBeenSet(false),
-    m_zonesHasBeenSet(false)
+    m_zonesHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DescribeSpecsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DescribeSpecsRequest::SetZones(const vector<string>& _zones)
 bool DescribeSpecsRequest::ZonesHasBeenSet() const
 {
     return m_zonesHasBeenSet;
+}
+
+string DescribeSpecsRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeSpecsRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeSpecsRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

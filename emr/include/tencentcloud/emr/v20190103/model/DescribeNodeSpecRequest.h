@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息</p>
-                     * @return ZoneId <p>可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息</p>
+                     * 获取<p>可用区Id，可以通过<a href="https://cloud.tencent.com/document/product/1596/77929">可用区列表</a>查询相关信息</p>
+                     * @return ZoneId <p>可用区Id，可以通过<a href="https://cloud.tencent.com/document/product/1596/77929">可用区列表</a>查询相关信息</p>
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置<p>可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息</p>
-                     * @param _zoneId <p>可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息</p>
+                     * 设置<p>可用区Id，可以通过<a href="https://cloud.tencent.com/document/product/1596/77929">可用区列表</a>查询相关信息</p>
+                     * @param _zoneId <p>可用区Id，可以通过<a href="https://cloud.tencent.com/document/product/1596/77929">可用区列表</a>查询相关信息</p>
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -213,7 +213,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息</p>
+                     * <p>可用区Id，可以通过<a href="https://cloud.tencent.com/document/product/1596/77929">可用区列表</a>查询相关信息</p>
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/csip/v20221121/model/VulFixableMachineAction.h>
 #include <tencentcloud/csip/v20221121/model/MiniTagItem.h>
 
 
@@ -216,6 +217,27 @@ namespace TencentCloud
                     bool MachineStatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>主机运行状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>
+                     * @return HostStatus <p>主机运行状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>
+                     * 
+                     */
+                    std::string GetHostStatus() const;
+
+                    /**
+                     * 设置<p>主机运行状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>
+                     * @param _hostStatus <p>主机运行状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>
+                     * 
+                     */
+                    void SetHostStatus(const std::string& _hostStatus);
+
+                    /**
+                     * 判断参数 HostStatus 是否已赋值
+                     * @return HostStatus 是否已赋值
+                     * 
+                     */
+                    bool HostStatusHasBeenSet() const;
+
+                    /**
                      * 获取<p>是否支持自动修复<br>枚举值：<br>0：不支持<br>1：支持</p>
                      * @return SupportAutoFix <p>是否支持自动修复<br>枚举值：<br>0：不支持<br>1：支持</p>
                      * 
@@ -298,6 +320,48 @@ namespace TencentCloud
                      * 
                      */
                     bool NotFixableReasonHasBeenSet() const;
+
+                    /**
+                     * 获取<p>不可修复原因码，SupportAutoFix为0时返回<br>枚举值：<br>BASIC_VERSION：基础版主机不支持一键修复<br>HOST_STOPPED：主机已关机<br>CLIENT_OFFLINE：主机防护客户端已离线<br>PATCH_UNAVAILABLE：官方已停止发布该系统版本的安全补丁<br>SOURCE_COMPILED：源码编译安装，不支持一键修复</p>
+                     * @return NotFixableReasonCode <p>不可修复原因码，SupportAutoFix为0时返回<br>枚举值：<br>BASIC_VERSION：基础版主机不支持一键修复<br>HOST_STOPPED：主机已关机<br>CLIENT_OFFLINE：主机防护客户端已离线<br>PATCH_UNAVAILABLE：官方已停止发布该系统版本的安全补丁<br>SOURCE_COMPILED：源码编译安装，不支持一键修复</p>
+                     * 
+                     */
+                    std::string GetNotFixableReasonCode() const;
+
+                    /**
+                     * 设置<p>不可修复原因码，SupportAutoFix为0时返回<br>枚举值：<br>BASIC_VERSION：基础版主机不支持一键修复<br>HOST_STOPPED：主机已关机<br>CLIENT_OFFLINE：主机防护客户端已离线<br>PATCH_UNAVAILABLE：官方已停止发布该系统版本的安全补丁<br>SOURCE_COMPILED：源码编译安装，不支持一键修复</p>
+                     * @param _notFixableReasonCode <p>不可修复原因码，SupportAutoFix为0时返回<br>枚举值：<br>BASIC_VERSION：基础版主机不支持一键修复<br>HOST_STOPPED：主机已关机<br>CLIENT_OFFLINE：主机防护客户端已离线<br>PATCH_UNAVAILABLE：官方已停止发布该系统版本的安全补丁<br>SOURCE_COMPILED：源码编译安装，不支持一键修复</p>
+                     * 
+                     */
+                    void SetNotFixableReasonCode(const std::string& _notFixableReasonCode);
+
+                    /**
+                     * 判断参数 NotFixableReasonCode 是否已赋值
+                     * @return NotFixableReasonCode 是否已赋值
+                     * 
+                     */
+                    bool NotFixableReasonCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>不可修复原因关联动作，SupportAutoFix为0且存在可引导动作时返回</p>
+                     * @return NotFixableAction <p>不可修复原因关联动作，SupportAutoFix为0且存在可引导动作时返回</p>
+                     * 
+                     */
+                    VulFixableMachineAction GetNotFixableAction() const;
+
+                    /**
+                     * 设置<p>不可修复原因关联动作，SupportAutoFix为0且存在可引导动作时返回</p>
+                     * @param _notFixableAction <p>不可修复原因关联动作，SupportAutoFix为0且存在可引导动作时返回</p>
+                     * 
+                     */
+                    void SetNotFixableAction(const VulFixableMachineAction& _notFixableAction);
+
+                    /**
+                     * 判断参数 NotFixableAction 是否已赋值
+                     * @return NotFixableAction 是否已赋值
+                     * 
+                     */
+                    bool NotFixableActionHasBeenSet() const;
 
                     /**
                      * 获取<p>修复命令列表，SupportAutoFix为1时返回</p>
@@ -455,6 +519,12 @@ namespace TencentCloud
                     bool m_machineStatusHasBeenSet;
 
                     /**
+                     * <p>主机运行状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>
+                     */
+                    std::string m_hostStatus;
+                    bool m_hostStatusHasBeenSet;
+
+                    /**
                      * <p>是否支持自动修复<br>枚举值：<br>0：不支持<br>1：支持</p>
                      */
                     int64_t m_supportAutoFix;
@@ -477,6 +547,18 @@ namespace TencentCloud
                      */
                     std::string m_notFixableReason;
                     bool m_notFixableReasonHasBeenSet;
+
+                    /**
+                     * <p>不可修复原因码，SupportAutoFix为0时返回<br>枚举值：<br>BASIC_VERSION：基础版主机不支持一键修复<br>HOST_STOPPED：主机已关机<br>CLIENT_OFFLINE：主机防护客户端已离线<br>PATCH_UNAVAILABLE：官方已停止发布该系统版本的安全补丁<br>SOURCE_COMPILED：源码编译安装，不支持一键修复</p>
+                     */
+                    std::string m_notFixableReasonCode;
+                    bool m_notFixableReasonCodeHasBeenSet;
+
+                    /**
+                     * <p>不可修复原因关联动作，SupportAutoFix为0且存在可引导动作时返回</p>
+                     */
+                    VulFixableMachineAction m_notFixableAction;
+                    bool m_notFixableActionHasBeenSet;
 
                     /**
                      * <p>修复命令列表，SupportAutoFix为1时返回</p>

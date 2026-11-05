@@ -221,6 +221,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/GetProvidersRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifySafeRuleRequest.h
   include/tencentcloud/tcb/v20180608/model/AddProviderRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/SMSProviderTemplateConfig.h
   include/tencentcloud/tcb/v20180608/model/HTTPServicePathRewrite.h
   include/tencentcloud/tcb/v20180608/model/CodeReq.h
@@ -300,6 +301,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateApiKeyResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribePlatformEnvUsageRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateAIModelRequest.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvInfoResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeGatewayVersionsRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResult.h
@@ -627,6 +629,7 @@ set(tcb_src
   src/v20180608/model/GetProvidersRequest.cpp
   src/v20180608/model/ModifySafeRuleRequest.cpp
   src/v20180608/model/AddProviderRequest.cpp
+  src/v20180608/model/DescribeEnvInfoRequest.cpp
   src/v20180608/model/SMSProviderTemplateConfig.cpp
   src/v20180608/model/HTTPServicePathRewrite.cpp
   src/v20180608/model/CodeReq.cpp
@@ -706,6 +709,7 @@ set(tcb_src
   src/v20180608/model/CreateApiKeyResponse.cpp
   src/v20180608/model/DescribePlatformEnvUsageRequest.cpp
   src/v20180608/model/CreateAIModelRequest.cpp
+  src/v20180608/model/DescribeEnvInfoResponse.cpp
   src/v20180608/model/DescribeGatewayVersionsRequest.cpp
   src/v20180608/model/DescribeQuotaDataRequest.cpp
   src/v20180608/model/DescribeCreateMySQLResult.cpp

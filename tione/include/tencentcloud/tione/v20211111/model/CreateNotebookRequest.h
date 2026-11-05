@@ -29,6 +29,7 @@
 #include <tencentcloud/tione/v20211111/model/ImageInfo.h>
 #include <tencentcloud/tione/v20211111/model/SSHConfig.h>
 #include <tencentcloud/tione/v20211111/model/GooseFS.h>
+#include <tencentcloud/tione/v20211111/model/ResourceSupplyAttribute.h>
 
 
 namespace TencentCloud
@@ -596,6 +597,48 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源供应属性</p>
+                     * @return ResourceSupplyAttribute <p>资源供应属性</p>
+                     * 
+                     */
+                    ResourceSupplyAttribute GetResourceSupplyAttribute() const;
+
+                    /**
+                     * 设置<p>资源供应属性</p>
+                     * @param _resourceSupplyAttribute <p>资源供应属性</p>
+                     * 
+                     */
+                    void SetResourceSupplyAttribute(const ResourceSupplyAttribute& _resourceSupplyAttribute);
+
+                    /**
+                     * 判断参数 ResourceSupplyAttribute 是否已赋值
+                     * @return ResourceSupplyAttribute 是否已赋值
+                     * 
+                     */
+                    bool ResourceSupplyAttributeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>队列ID</p>
+                     * @return Queues <p>队列ID</p>
+                     * 
+                     */
+                    std::vector<std::string> GetQueues() const;
+
+                    /**
+                     * 设置<p>队列ID</p>
+                     * @param _queues <p>队列ID</p>
+                     * 
+                     */
+                    void SetQueues(const std::vector<std::string>& _queues);
+
+                    /**
+                     * 判断参数 Queues 是否已赋值
+                     * @return Queues 是否已赋值
+                     * 
+                     */
+                    bool QueuesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -753,6 +796,18 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * <p>资源供应属性</p>
+                     */
+                    ResourceSupplyAttribute m_resourceSupplyAttribute;
+                    bool m_resourceSupplyAttributeHasBeenSet;
+
+                    /**
+                     * <p>队列ID</p>
+                     */
+                    std::vector<std::string> m_queues;
+                    bool m_queuesHasBeenSet;
 
                 };
             }

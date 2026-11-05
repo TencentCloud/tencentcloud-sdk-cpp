@@ -811,6 +811,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/BotManagementLite.h
   include/tencentcloud/teo/v20220901/model/IPWhitelist.h
   include/tencentcloud/teo/v20220901/model/DescribeSharedCNAMERequest.h
+  include/tencentcloud/teo/v20220901/model/AccessURLRedirectPort.h
   include/tencentcloud/teo/v20220901/model/ModifyZoneRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyL7AccSettingRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyFunctionRulePriorityResponse.h
@@ -1731,6 +1732,7 @@ set(teo_src
   src/v20220901/model/BotManagementLite.cpp
   src/v20220901/model/IPWhitelist.cpp
   src/v20220901/model/DescribeSharedCNAMERequest.cpp
+  src/v20220901/model/AccessURLRedirectPort.cpp
   src/v20220901/model/ModifyZoneRequest.cpp
   src/v20220901/model/ModifyL7AccSettingRequest.cpp
   src/v20220901/model/ModifyFunctionRulePriorityResponse.cpp

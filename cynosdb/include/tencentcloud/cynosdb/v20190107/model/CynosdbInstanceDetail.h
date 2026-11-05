@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/InstanceServerlessQuotaInfo.h>
 
 
 namespace TencentCloud
@@ -865,6 +866,27 @@ namespace TencentCloud
                      */
                     bool StorageVersionHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例Serverless弹性信息</p>
+                     * @return ServerlessQuotaInfo <p>实例Serverless弹性信息</p>
+                     * 
+                     */
+                    InstanceServerlessQuotaInfo GetServerlessQuotaInfo() const;
+
+                    /**
+                     * 设置<p>实例Serverless弹性信息</p>
+                     * @param _serverlessQuotaInfo <p>实例Serverless弹性信息</p>
+                     * 
+                     */
+                    void SetServerlessQuotaInfo(const InstanceServerlessQuotaInfo& _serverlessQuotaInfo);
+
+                    /**
+                     * 判断参数 ServerlessQuotaInfo 是否已赋值
+                     * @return ServerlessQuotaInfo 是否已赋值
+                     * 
+                     */
+                    bool ServerlessQuotaInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1100,6 +1122,12 @@ namespace TencentCloud
                      */
                     std::string m_storageVersion;
                     bool m_storageVersionHasBeenSet;
+
+                    /**
+                     * <p>实例Serverless弹性信息</p>
+                     */
+                    InstanceServerlessQuotaInfo m_serverlessQuotaInfo;
+                    bool m_serverlessQuotaInfoHasBeenSet;
 
                 };
             }

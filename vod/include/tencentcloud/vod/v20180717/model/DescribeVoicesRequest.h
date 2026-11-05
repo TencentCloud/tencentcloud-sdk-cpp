@@ -64,6 +64,27 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>模型名，不填默认为MiniMax模型。</p>枚举值：<ul><li><p>MiniMax</p></li><li><p>ElevenLabs</p></li></ul>
+                     * @return ModelName <p>模型名，不填默认为MiniMax模型。</p>枚举值：<ul><li><p>MiniMax</p></li><li><p>ElevenLabs</p></li></ul>
+                     * 
+                     */
+                    std::string GetModelName() const;
+
+                    /**
+                     * 设置<p>模型名，不填默认为MiniMax模型。</p>枚举值：<ul><li><p>MiniMax</p></li><li><p>ElevenLabs</p></li></ul>
+                     * @param _modelName <p>模型名，不填默认为MiniMax模型。</p>枚举值：<ul><li><p>MiniMax</p></li><li><p>ElevenLabs</p></li></ul>
+                     * 
+                     */
+                    void SetModelName(const std::string& _modelName);
+
+                    /**
+                     * 判断参数 ModelName 是否已赋值
+                     * @return ModelName 是否已赋值
+                     * 
+                     */
+                    bool ModelNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>音色ID</p>
                      * @return VoiceId <p>音色ID</p>
                      * 
@@ -280,6 +301,12 @@ namespace TencentCloud
                      */
                     std::string m_subAppId;
                     bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * <p>模型名，不填默认为MiniMax模型。</p>枚举值：<ul><li><p>MiniMax</p></li><li><p>ElevenLabs</p></li></ul>
+                     */
+                    std::string m_modelName;
+                    bool m_modelNameHasBeenSet;
 
                     /**
                      * <p>音色ID</p>

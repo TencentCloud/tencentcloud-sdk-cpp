@@ -262,6 +262,48 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
+                     * 获取<p>子账号 UIN</p>
+                     * @return SubAccountUin <p>子账号 UIN</p>
+                     * 
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 设置<p>子账号 UIN</p>
+                     * @param _subAccountUin <p>子账号 UIN</p>
+                     * 
+                     */
+                    void SetSubAccountUin(const std::string& _subAccountUin);
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>子账号名称</p>
+                     * @return SubAccountName <p>子账号名称</p>
+                     * 
+                     */
+                    std::string GetSubAccountName() const;
+
+                    /**
+                     * 设置<p>子账号名称</p>
+                     * @param _subAccountName <p>子账号名称</p>
+                     * 
+                     */
+                    void SetSubAccountName(const std::string& _subAccountName);
+
+                    /**
+                     * 判断参数 SubAccountName 是否已赋值
+                     * @return SubAccountName 是否已赋值
+                     * 
+                     */
+                    bool SubAccountNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>创建时间（毫秒时间戳）</p>
                      * @return CreateTime <p>创建时间（毫秒时间戳）</p>
                      * 
@@ -744,6 +786,48 @@ namespace TencentCloud
                      */
                     bool ResumeTrainingHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义网络配置</p>
+                     * @return NetworkConfig <p>自定义网络配置</p>
+                     * 
+                     */
+                    std::string GetNetworkConfig() const;
+
+                    /**
+                     * 设置<p>自定义网络配置</p>
+                     * @param _networkConfig <p>自定义网络配置</p>
+                     * 
+                     */
+                    void SetNetworkConfig(const std::string& _networkConfig);
+
+                    /**
+                     * 判断参数 NetworkConfig 是否已赋值
+                     * @return NetworkConfig 是否已赋值
+                     * 
+                     */
+                    bool NetworkConfigHasBeenSet() const;
+
+                    /**
+                     * 获取<p>断点续训来源实例 ID（仅续训产生的实例有值，仅详情返回）</p>
+                     * @return ResumeSourceInstanceId <p>断点续训来源实例 ID（仅续训产生的实例有值，仅详情返回）</p>
+                     * 
+                     */
+                    std::string GetResumeSourceInstanceId() const;
+
+                    /**
+                     * 设置<p>断点续训来源实例 ID（仅续训产生的实例有值，仅详情返回）</p>
+                     * @param _resumeSourceInstanceId <p>断点续训来源实例 ID（仅续训产生的实例有值，仅详情返回）</p>
+                     * 
+                     */
+                    void SetResumeSourceInstanceId(const std::string& _resumeSourceInstanceId);
+
+                    /**
+                     * 判断参数 ResumeSourceInstanceId 是否已赋值
+                     * @return ResumeSourceInstanceId 是否已赋值
+                     * 
+                     */
+                    bool ResumeSourceInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -805,6 +889,18 @@ namespace TencentCloud
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
+
+                    /**
+                     * <p>子账号 UIN</p>
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * <p>子账号名称</p>
+                     */
+                    std::string m_subAccountName;
+                    bool m_subAccountNameHasBeenSet;
 
                     /**
                      * <p>创建时间（毫秒时间戳）</p>
@@ -943,6 +1039,18 @@ namespace TencentCloud
                      */
                     bool m_resumeTraining;
                     bool m_resumeTrainingHasBeenSet;
+
+                    /**
+                     * <p>自定义网络配置</p>
+                     */
+                    std::string m_networkConfig;
+                    bool m_networkConfigHasBeenSet;
+
+                    /**
+                     * <p>断点续训来源实例 ID（仅续训产生的实例有值，仅详情返回）</p>
+                     */
+                    std::string m_resumeSourceInstanceId;
+                    bool m_resumeSourceInstanceIdHasBeenSet;
 
                 };
             }

@@ -28,7 +28,9 @@ CreateFaceRequest::CreateFaceRequest() :
     m_urlsHasBeenSet(false),
     m_faceMatchThresholdHasBeenSet(false),
     m_qualityControlHasBeenSet(false),
-    m_needRotateDetectionHasBeenSet(false)
+    m_needRotateDetectionHasBeenSet(false),
+    m_encryptionHasBeenSet(false),
+    m_encryptedBodyHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,23 @@ string CreateFaceRequest::ToJsonString() const
         string key = "NeedRotateDetection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needRotateDetection, allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_encryptedBodyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptedBody";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptedBody.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -199,6 +218,38 @@ void CreateFaceRequest::SetNeedRotateDetection(const uint64_t& _needRotateDetect
 bool CreateFaceRequest::NeedRotateDetectionHasBeenSet() const
 {
     return m_needRotateDetectionHasBeenSet;
+}
+
+Encryption CreateFaceRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void CreateFaceRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool CreateFaceRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
+}
+
+string CreateFaceRequest::GetEncryptedBody() const
+{
+    return m_encryptedBody;
+}
+
+void CreateFaceRequest::SetEncryptedBody(const string& _encryptedBody)
+{
+    m_encryptedBody = _encryptedBody;
+    m_encryptedBodyHasBeenSet = true;
+}
+
+bool CreateFaceRequest::EncryptedBodyHasBeenSet() const
+{
+    return m_encryptedBodyHasBeenSet;
 }
 
 

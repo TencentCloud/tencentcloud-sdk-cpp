@@ -24,6 +24,7 @@
 #include <tencentcloud/adp/v20260520/model/AppShareAccessControl.h>
 #include <tencentcloud/adp/v20260520/model/CorpShareConfig.h>
 #include <tencentcloud/adp/v20260520/model/PortalShareConfig.h>
+#include <tencentcloud/adp/v20260520/model/A2AConfig.h>
 
 
 namespace TencentCloud
@@ -213,6 +214,27 @@ namespace TencentCloud
                      */
                     bool PortalShareConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>A2A配置</p>
+                     * @return A2AConfig <p>A2A配置</p>
+                     * 
+                     */
+                    A2AConfig GetA2AConfig() const;
+
+                    /**
+                     * 设置<p>A2A配置</p>
+                     * @param _a2AConfig <p>A2A配置</p>
+                     * 
+                     */
+                    void SetA2AConfig(const A2AConfig& _a2AConfig);
+
+                    /**
+                     * 判断参数 A2AConfig 是否已赋值
+                     * @return A2AConfig 是否已赋值
+                     * 
+                     */
+                    bool A2AConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -262,6 +284,12 @@ namespace TencentCloud
                      */
                     PortalShareConfig m_portalShareConfig;
                     bool m_portalShareConfigHasBeenSet;
+
+                    /**
+                     * <p>A2A配置</p>
+                     */
+                    A2AConfig m_a2AConfig;
+                    bool m_a2AConfigHasBeenSet;
 
                 };
             }

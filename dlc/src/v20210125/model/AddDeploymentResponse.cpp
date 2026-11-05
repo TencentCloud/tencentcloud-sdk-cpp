@@ -36,18 +36,25 @@ AddDeploymentResponse::AddDeploymentResponse() :
     m_headHighAvailabilityEnabledHasBeenSet(false),
     m_advancedParamsHasBeenSet(false),
     m_autoscalingEnabledHasBeenSet(false),
+    m_minReplicasHasBeenSet(false),
+    m_maxReplicasHasBeenSet(false),
+    m_autoscalerOptionsHasBeenSet(false),
     m_modelStorageConfigHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_uinHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_neutrinoServeIdHasBeenSet(false),
+    m_rayDashboardUrlHasBeenSet(false),
     m_resourcePartitionIdHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_resourcePartitionNameHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false)
+    m_advancedOptionsHasBeenSet(false),
+    m_codePackageUriHasBeenSet(false),
+    m_codePackageOriginalNameHasBeenSet(false),
+    m_loraBindingsHasBeenSet(false)
 {
 }
 
@@ -205,6 +212,36 @@ CoreInternalOutcome AddDeploymentResponse::Deserialize(const string &payload)
         m_autoscalingEnabledHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MinReplicas") && !rsp["MinReplicas"].IsNull())
+    {
+        if (!rsp["MinReplicas"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MinReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minReplicas = rsp["MinReplicas"].GetInt64();
+        m_minReplicasHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MaxReplicas") && !rsp["MaxReplicas"].IsNull())
+    {
+        if (!rsp["MaxReplicas"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxReplicas = rsp["MaxReplicas"].GetInt64();
+        m_maxReplicasHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoscalerOptions") && !rsp["AutoscalerOptions"].IsNull())
+    {
+        if (!rsp["AutoscalerOptions"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoscalerOptions` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoscalerOptions = string(rsp["AutoscalerOptions"].GetString());
+        m_autoscalerOptionsHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ModelStorageConfig") && !rsp["ModelStorageConfig"].IsNull())
     {
         if (!rsp["ModelStorageConfig"].IsString())
@@ -265,6 +302,16 @@ CoreInternalOutcome AddDeploymentResponse::Deserialize(const string &payload)
         m_neutrinoServeIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RayDashboardUrl") && !rsp["RayDashboardUrl"].IsNull())
+    {
+        if (!rsp["RayDashboardUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RayDashboardUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rayDashboardUrl = string(rsp["RayDashboardUrl"].GetString());
+        m_rayDashboardUrlHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ResourcePartitionId") && !rsp["ResourcePartitionId"].IsNull())
     {
         if (!rsp["ResourcePartitionId"].IsString())
@@ -323,6 +370,46 @@ CoreInternalOutcome AddDeploymentResponse::Deserialize(const string &payload)
         }
         m_advancedOptions = string(rsp["AdvancedOptions"].GetString());
         m_advancedOptionsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CodePackageUri") && !rsp["CodePackageUri"].IsNull())
+    {
+        if (!rsp["CodePackageUri"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodePackageUri` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codePackageUri = string(rsp["CodePackageUri"].GetString());
+        m_codePackageUriHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CodePackageOriginalName") && !rsp["CodePackageOriginalName"].IsNull())
+    {
+        if (!rsp["CodePackageOriginalName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodePackageOriginalName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codePackageOriginalName = string(rsp["CodePackageOriginalName"].GetString());
+        m_codePackageOriginalNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LoraBindings") && !rsp["LoraBindings"].IsNull())
+    {
+        if (!rsp["LoraBindings"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoraBindings` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["LoraBindings"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LoraItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_loraBindings.push_back(item);
+        }
+        m_loraBindingsHasBeenSet = true;
     }
 
 
@@ -431,6 +518,30 @@ string AddDeploymentResponse::ToJsonString() const
         value.AddMember(iKey, m_autoscalingEnabled, allocator);
     }
 
+    if (m_minReplicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinReplicas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minReplicas, allocator);
+    }
+
+    if (m_maxReplicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxReplicas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxReplicas, allocator);
+    }
+
+    if (m_autoscalerOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoscalerOptions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoscalerOptions.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_modelStorageConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -479,6 +590,14 @@ string AddDeploymentResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_neutrinoServeId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_rayDashboardUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RayDashboardUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rayDashboardUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_resourcePartitionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -525,6 +644,37 @@ string AddDeploymentResponse::ToJsonString() const
         string key = "AdvancedOptions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_advancedOptions.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codePackageUriHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodePackageUri";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codePackageUri.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codePackageOriginalNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodePackageOriginalName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codePackageOriginalName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loraBindingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoraBindings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_loraBindings.begin(); itr != m_loraBindings.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -659,6 +809,36 @@ bool AddDeploymentResponse::AutoscalingEnabledHasBeenSet() const
     return m_autoscalingEnabledHasBeenSet;
 }
 
+int64_t AddDeploymentResponse::GetMinReplicas() const
+{
+    return m_minReplicas;
+}
+
+bool AddDeploymentResponse::MinReplicasHasBeenSet() const
+{
+    return m_minReplicasHasBeenSet;
+}
+
+int64_t AddDeploymentResponse::GetMaxReplicas() const
+{
+    return m_maxReplicas;
+}
+
+bool AddDeploymentResponse::MaxReplicasHasBeenSet() const
+{
+    return m_maxReplicasHasBeenSet;
+}
+
+string AddDeploymentResponse::GetAutoscalerOptions() const
+{
+    return m_autoscalerOptions;
+}
+
+bool AddDeploymentResponse::AutoscalerOptionsHasBeenSet() const
+{
+    return m_autoscalerOptionsHasBeenSet;
+}
+
 string AddDeploymentResponse::GetModelStorageConfig() const
 {
     return m_modelStorageConfig;
@@ -719,6 +899,16 @@ bool AddDeploymentResponse::NeutrinoServeIdHasBeenSet() const
     return m_neutrinoServeIdHasBeenSet;
 }
 
+string AddDeploymentResponse::GetRayDashboardUrl() const
+{
+    return m_rayDashboardUrl;
+}
+
+bool AddDeploymentResponse::RayDashboardUrlHasBeenSet() const
+{
+    return m_rayDashboardUrlHasBeenSet;
+}
+
 string AddDeploymentResponse::GetResourcePartitionId() const
 {
     return m_resourcePartitionId;
@@ -777,6 +967,36 @@ string AddDeploymentResponse::GetAdvancedOptions() const
 bool AddDeploymentResponse::AdvancedOptionsHasBeenSet() const
 {
     return m_advancedOptionsHasBeenSet;
+}
+
+string AddDeploymentResponse::GetCodePackageUri() const
+{
+    return m_codePackageUri;
+}
+
+bool AddDeploymentResponse::CodePackageUriHasBeenSet() const
+{
+    return m_codePackageUriHasBeenSet;
+}
+
+string AddDeploymentResponse::GetCodePackageOriginalName() const
+{
+    return m_codePackageOriginalName;
+}
+
+bool AddDeploymentResponse::CodePackageOriginalNameHasBeenSet() const
+{
+    return m_codePackageOriginalNameHasBeenSet;
+}
+
+vector<LoraItem> AddDeploymentResponse::GetLoraBindings() const
+{
+    return m_loraBindings;
+}
+
+bool AddDeploymentResponse::LoraBindingsHasBeenSet() const
+{
+    return m_loraBindingsHasBeenSet;
 }
 
 

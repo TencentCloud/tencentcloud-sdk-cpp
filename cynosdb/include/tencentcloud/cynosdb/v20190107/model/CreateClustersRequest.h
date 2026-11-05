@@ -25,6 +25,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/ParamItem.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceInitInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/ProxyConfig.h>
+#include <tencentcloud/cynosdb/v20190107/model/ServerlessQuotaConfig.h>
 
 
 namespace TencentCloud
@@ -1075,6 +1076,27 @@ namespace TencentCloud
                      */
                     bool SemiSyncTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取<p>集群实例Serverless弹性配置</p>
+                     * @return ServerlessQuotaConfigs <p>集群实例Serverless弹性配置</p>
+                     * 
+                     */
+                    std::vector<ServerlessQuotaConfig> GetServerlessQuotaConfigs() const;
+
+                    /**
+                     * 设置<p>集群实例Serverless弹性配置</p>
+                     * @param _serverlessQuotaConfigs <p>集群实例Serverless弹性配置</p>
+                     * 
+                     */
+                    void SetServerlessQuotaConfigs(const std::vector<ServerlessQuotaConfig>& _serverlessQuotaConfigs);
+
+                    /**
+                     * 判断参数 ServerlessQuotaConfigs 是否已赋值
+                     * @return ServerlessQuotaConfigs 是否已赋值
+                     * 
+                     */
+                    bool ServerlessQuotaConfigsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1370,6 +1392,12 @@ namespace TencentCloud
                      */
                     int64_t m_semiSyncTimeout;
                     bool m_semiSyncTimeoutHasBeenSet;
+
+                    /**
+                     * <p>集群实例Serverless弹性配置</p>
+                     */
+                    std::vector<ServerlessQuotaConfig> m_serverlessQuotaConfigs;
+                    bool m_serverlessQuotaConfigsHasBeenSet;
 
                 };
             }

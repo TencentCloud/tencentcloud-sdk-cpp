@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/VoiceInfo.h>
+#include <tencentcloud/vod/v20180717/model/VoiceSlotInfo.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可用音色槽位信息</p>
+                     * @return VoiceSlot <p>可用音色槽位信息</p>
+                     * 
+                     */
+                    VoiceSlotInfo GetVoiceSlot() const;
+
+                    /**
+                     * 判断参数 VoiceSlot 是否已赋值
+                     * @return VoiceSlot 是否已赋值
+                     * 
+                     */
+                    bool VoiceSlotHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +100,12 @@ namespace TencentCloud
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * <p>可用音色槽位信息</p>
+                     */
+                    VoiceSlotInfo m_voiceSlot;
+                    bool m_voiceSlotHasBeenSet;
 
                 };
             }

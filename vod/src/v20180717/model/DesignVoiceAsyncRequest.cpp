@@ -25,6 +25,7 @@ using namespace std;
 DesignVoiceAsyncRequest::DesignVoiceAsyncRequest() :
     m_promptHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
+    m_modelNameHasBeenSet(false),
     m_voiceSettingsHasBeenSet(false),
     m_previewTextHasBeenSet(false),
     m_extParamHasBeenSet(false),
@@ -54,6 +55,14 @@ string DesignVoiceAsyncRequest::ToJsonString() const
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_voiceSettingsHasBeenSet)
@@ -135,6 +144,22 @@ void DesignVoiceAsyncRequest::SetSubAppId(const string& _subAppId)
 bool DesignVoiceAsyncRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+string DesignVoiceAsyncRequest::GetModelName() const
+{
+    return m_modelName;
+}
+
+void DesignVoiceAsyncRequest::SetModelName(const string& _modelName)
+{
+    m_modelName = _modelName;
+    m_modelNameHasBeenSet = true;
+}
+
+bool DesignVoiceAsyncRequest::ModelNameHasBeenSet() const
+{
+    return m_modelNameHasBeenSet;
 }
 
 VoiceSettings DesignVoiceAsyncRequest::GetVoiceSettings() const

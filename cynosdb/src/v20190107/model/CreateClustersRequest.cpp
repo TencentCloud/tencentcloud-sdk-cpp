@@ -71,7 +71,8 @@ CreateClustersRequest::CreateClustersRequest() :
     m_clusterLevelHasBeenSet(false),
     m_cynosVersionHasBeenSet(false),
     m_syncWayHasBeenSet(false),
-    m_semiSyncTimeoutHasBeenSet(false)
+    m_semiSyncTimeoutHasBeenSet(false),
+    m_serverlessQuotaConfigsHasBeenSet(false)
 {
 }
 
@@ -504,6 +505,21 @@ string CreateClustersRequest::ToJsonString() const
         string key = "SemiSyncTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_semiSyncTimeout, allocator);
+    }
+
+    if (m_serverlessQuotaConfigsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerlessQuotaConfigs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serverlessQuotaConfigs.begin(); itr != m_serverlessQuotaConfigs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -1296,6 +1312,22 @@ void CreateClustersRequest::SetSemiSyncTimeout(const int64_t& _semiSyncTimeout)
 bool CreateClustersRequest::SemiSyncTimeoutHasBeenSet() const
 {
     return m_semiSyncTimeoutHasBeenSet;
+}
+
+vector<ServerlessQuotaConfig> CreateClustersRequest::GetServerlessQuotaConfigs() const
+{
+    return m_serverlessQuotaConfigs;
+}
+
+void CreateClustersRequest::SetServerlessQuotaConfigs(const vector<ServerlessQuotaConfig>& _serverlessQuotaConfigs)
+{
+    m_serverlessQuotaConfigs = _serverlessQuotaConfigs;
+    m_serverlessQuotaConfigsHasBeenSet = true;
+}
+
+bool CreateClustersRequest::ServerlessQuotaConfigsHasBeenSet() const
+{
+    return m_serverlessQuotaConfigsHasBeenSet;
 }
 
 

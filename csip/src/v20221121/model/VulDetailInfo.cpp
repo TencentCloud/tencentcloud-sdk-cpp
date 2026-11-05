@@ -50,7 +50,10 @@ VulDetailInfo::VulDetailInfo() :
     m_fixSolutionHasBeenSet(false),
     m_refLinkHasBeenSet(false),
     m_harmDescriptionHasBeenSet(false),
-    m_affectVendorProductHasBeenSet(false)
+    m_affectVendorProductHasBeenSet(false),
+    m_vPRExplainInfoHasBeenSet(false),
+    m_scanTaskIdHasBeenSet(false),
+    m_affectAssetHasBeenSet(false)
 {
 }
 
@@ -405,6 +408,43 @@ CoreInternalOutcome VulDetailInfo::Deserialize(const rapidjson::Value &value)
         m_affectVendorProductHasBeenSet = true;
     }
 
+    if (value.HasMember("VPRExplainInfo") && !value["VPRExplainInfo"].IsNull())
+    {
+        if (!value["VPRExplainInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDetailInfo.VPRExplainInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vPRExplainInfo.Deserialize(value["VPRExplainInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vPRExplainInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScanTaskId") && !value["ScanTaskId"].IsNull())
+    {
+        if (!value["ScanTaskId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDetailInfo.ScanTaskId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanTaskId = value["ScanTaskId"].GetUint64();
+        m_scanTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AffectAsset") && !value["AffectAsset"].IsNull())
+    {
+        if (!value["AffectAsset"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulDetailInfo.AffectAsset` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_affectAsset = value["AffectAsset"].GetUint64();
+        m_affectAssetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -687,6 +727,31 @@ void VulDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_vPRExplainInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VPRExplainInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vPRExplainInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_scanTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scanTaskId, allocator);
+    }
+
+    if (m_affectAssetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffectAsset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_affectAsset, allocator);
     }
 
 }
@@ -1170,5 +1235,53 @@ void VulDetailInfo::SetAffectVendorProduct(const vector<VulVendorProduct>& _affe
 bool VulDetailInfo::AffectVendorProductHasBeenSet() const
 {
     return m_affectVendorProductHasBeenSet;
+}
+
+VPRExplainInfo VulDetailInfo::GetVPRExplainInfo() const
+{
+    return m_vPRExplainInfo;
+}
+
+void VulDetailInfo::SetVPRExplainInfo(const VPRExplainInfo& _vPRExplainInfo)
+{
+    m_vPRExplainInfo = _vPRExplainInfo;
+    m_vPRExplainInfoHasBeenSet = true;
+}
+
+bool VulDetailInfo::VPRExplainInfoHasBeenSet() const
+{
+    return m_vPRExplainInfoHasBeenSet;
+}
+
+uint64_t VulDetailInfo::GetScanTaskId() const
+{
+    return m_scanTaskId;
+}
+
+void VulDetailInfo::SetScanTaskId(const uint64_t& _scanTaskId)
+{
+    m_scanTaskId = _scanTaskId;
+    m_scanTaskIdHasBeenSet = true;
+}
+
+bool VulDetailInfo::ScanTaskIdHasBeenSet() const
+{
+    return m_scanTaskIdHasBeenSet;
+}
+
+uint64_t VulDetailInfo::GetAffectAsset() const
+{
+    return m_affectAsset;
+}
+
+void VulDetailInfo::SetAffectAsset(const uint64_t& _affectAsset)
+{
+    m_affectAsset = _affectAsset;
+    m_affectAssetHasBeenSet = true;
+}
+
+bool VulDetailInfo::AffectAssetHasBeenSet() const
+{
+    return m_affectAssetHasBeenSet;
 }
 

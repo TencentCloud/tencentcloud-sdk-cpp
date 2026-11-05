@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/LoraAdapterBinding.h>
 
 
 namespace TencentCloud
@@ -147,6 +148,132 @@ namespace TencentCloud
                      */
                     bool AutoscalingEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取<p>代码包 URI（可选，未传时从 primary deployment 继承）</p>
+                     * @return CodePackageUri <p>代码包 URI（可选，未传时从 primary deployment 继承）</p>
+                     * 
+                     */
+                    std::string GetCodePackageUri() const;
+
+                    /**
+                     * 设置<p>代码包 URI（可选，未传时从 primary deployment 继承）</p>
+                     * @param _codePackageUri <p>代码包 URI（可选，未传时从 primary deployment 继承）</p>
+                     * 
+                     */
+                    void SetCodePackageUri(const std::string& _codePackageUri);
+
+                    /**
+                     * 判断参数 CodePackageUri 是否已赋值
+                     * @return CodePackageUri 是否已赋值
+                     * 
+                     */
+                    bool CodePackageUriHasBeenSet() const;
+
+                    /**
+                     * 获取<p>代码包原始文件名（可选，详情页「代码引用」回显用，仅记录不参与业务逻辑）</p>
+                     * @return CodePackageOriginalName <p>代码包原始文件名（可选，详情页「代码引用」回显用，仅记录不参与业务逻辑）</p>
+                     * 
+                     */
+                    std::string GetCodePackageOriginalName() const;
+
+                    /**
+                     * 设置<p>代码包原始文件名（可选，详情页「代码引用」回显用，仅记录不参与业务逻辑）</p>
+                     * @param _codePackageOriginalName <p>代码包原始文件名（可选，详情页「代码引用」回显用，仅记录不参与业务逻辑）</p>
+                     * 
+                     */
+                    void SetCodePackageOriginalName(const std::string& _codePackageOriginalName);
+
+                    /**
+                     * 判断参数 CodePackageOriginalName 是否已赋值
+                     * @return CodePackageOriginalName 是否已赋值
+                     * 
+                     */
+                    bool CodePackageOriginalNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CR / PodSpec overrides JSON（可选）</p>
+                     * @return CrOverrides <p>CR / PodSpec overrides JSON（可选）</p>
+                     * 
+                     */
+                    std::string GetCrOverrides() const;
+
+                    /**
+                     * 设置<p>CR / PodSpec overrides JSON（可选）</p>
+                     * @param _crOverrides <p>CR / PodSpec overrides JSON（可选）</p>
+                     * 
+                     */
+                    void SetCrOverrides(const std::string& _crOverrides);
+
+                    /**
+                     * 判断参数 CrOverrides 是否已赋值
+                     * @return CrOverrides 是否已赋值
+                     * 
+                     */
+                    bool CrOverridesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Head 节点高可用开关（可选，不传或 true 为开启，仅 false 为关闭；与当前值不同会触发服务重建）</p>
+                     * @return HeadHighAvailabilityEnabled <p>Head 节点高可用开关（可选，不传或 true 为开启，仅 false 为关闭；与当前值不同会触发服务重建）</p>
+                     * 
+                     */
+                    bool GetHeadHighAvailabilityEnabled() const;
+
+                    /**
+                     * 设置<p>Head 节点高可用开关（可选，不传或 true 为开启，仅 false 为关闭；与当前值不同会触发服务重建）</p>
+                     * @param _headHighAvailabilityEnabled <p>Head 节点高可用开关（可选，不传或 true 为开启，仅 false 为关闭；与当前值不同会触发服务重建）</p>
+                     * 
+                     */
+                    void SetHeadHighAvailabilityEnabled(const bool& _headHighAvailabilityEnabled);
+
+                    /**
+                     * 判断参数 HeadHighAvailabilityEnabled 是否已赋值
+                     * @return HeadHighAvailabilityEnabled 是否已赋值
+                     * 
+                     */
+                    bool HeadHighAvailabilityEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * @return LoraBindings <p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * 
+                     */
+                    std::vector<LoraAdapterBinding> GetLoraBindings() const;
+
+                    /**
+                     * 设置<p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * @param _loraBindings <p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * 
+                     */
+                    void SetLoraBindings(const std::vector<LoraAdapterBinding>& _loraBindings);
+
+                    /**
+                     * 判断参数 LoraBindings 是否已赋值
+                     * @return LoraBindings 是否已赋值
+                     * 
+                     */
+                    bool LoraBindingsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>ray runtime env 字段</p>
+                     * @return RuntimeEnv <p>ray runtime env 字段</p>
+                     * 
+                     */
+                    std::string GetRuntimeEnv() const;
+
+                    /**
+                     * 设置<p>ray runtime env 字段</p>
+                     * @param _runtimeEnv <p>ray runtime env 字段</p>
+                     * 
+                     */
+                    void SetRuntimeEnv(const std::string& _runtimeEnv);
+
+                    /**
+                     * 判断参数 RuntimeEnv 是否已赋值
+                     * @return RuntimeEnv 是否已赋值
+                     * 
+                     */
+                    bool RuntimeEnvHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +305,42 @@ namespace TencentCloud
                      */
                     bool m_autoscalingEnabled;
                     bool m_autoscalingEnabledHasBeenSet;
+
+                    /**
+                     * <p>代码包 URI（可选，未传时从 primary deployment 继承）</p>
+                     */
+                    std::string m_codePackageUri;
+                    bool m_codePackageUriHasBeenSet;
+
+                    /**
+                     * <p>代码包原始文件名（可选，详情页「代码引用」回显用，仅记录不参与业务逻辑）</p>
+                     */
+                    std::string m_codePackageOriginalName;
+                    bool m_codePackageOriginalNameHasBeenSet;
+
+                    /**
+                     * <p>CR / PodSpec overrides JSON（可选）</p>
+                     */
+                    std::string m_crOverrides;
+                    bool m_crOverridesHasBeenSet;
+
+                    /**
+                     * <p>Head 节点高可用开关（可选，不传或 true 为开启，仅 false 为关闭；与当前值不同会触发服务重建）</p>
+                     */
+                    bool m_headHighAvailabilityEnabled;
+                    bool m_headHighAvailabilityEnabledHasBeenSet;
+
+                    /**
+                     * <p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     */
+                    std::vector<LoraAdapterBinding> m_loraBindings;
+                    bool m_loraBindingsHasBeenSet;
+
+                    /**
+                     * <p>ray runtime env 字段</p>
+                     */
+                    std::string m_runtimeEnv;
+                    bool m_runtimeEnvHasBeenSet;
 
                 };
             }

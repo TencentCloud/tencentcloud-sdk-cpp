@@ -28,7 +28,8 @@ QueryUserSessionDetailResponse::QueryUserSessionDetailResponse() :
     m_sessionIdHasBeenSet(false),
     m_recordListHasBeenSet(false),
     m_totalCountHasBeenSet(false),
-    m_runRecordHasBeenSet(false)
+    m_runRecordHasBeenSet(false),
+    m_sessionTargetInfoHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,23 @@ CoreInternalOutcome QueryUserSessionDetailResponse::Deserialize(const string &pa
         m_runRecordHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SessionTargetInfo") && !rsp["SessionTargetInfo"].IsNull())
+    {
+        if (!rsp["SessionTargetInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionTargetInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sessionTargetInfo.Deserialize(rsp["SessionTargetInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sessionTargetInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +199,15 @@ string QueryUserSessionDetailResponse::ToJsonString() const
         string key = "RunRecord";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_runRecord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionTargetInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionTargetInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sessionTargetInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +270,16 @@ string QueryUserSessionDetailResponse::GetRunRecord() const
 bool QueryUserSessionDetailResponse::RunRecordHasBeenSet() const
 {
     return m_runRecordHasBeenSet;
+}
+
+SessionTargetInfo QueryUserSessionDetailResponse::GetSessionTargetInfo() const
+{
+    return m_sessionTargetInfo;
+}
+
+bool QueryUserSessionDetailResponse::SessionTargetInfoHasBeenSet() const
+{
+    return m_sessionTargetInfoHasBeenSet;
 }
 
 

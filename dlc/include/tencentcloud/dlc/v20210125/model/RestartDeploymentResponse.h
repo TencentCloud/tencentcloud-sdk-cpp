@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/LoraItem.h>
 
 
 namespace TencentCloud
@@ -435,6 +436,20 @@ namespace TencentCloud
                      */
                     bool ResourcePartitionNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>部署当前挂载的 LoRA 模型版本列表。</p>
+                     * @return LoraBindings <p>部署当前挂载的 LoRA 模型版本列表。</p>
+                     * 
+                     */
+                    std::vector<LoraItem> GetLoraBindings() const;
+
+                    /**
+                     * 判断参数 LoraBindings 是否已赋值
+                     * @return LoraBindings 是否已赋值
+                     * 
+                     */
+                    bool LoraBindingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -607,6 +622,12 @@ namespace TencentCloud
                      */
                     std::string m_resourcePartitionName;
                     bool m_resourcePartitionNameHasBeenSet;
+
+                    /**
+                     * <p>部署当前挂载的 LoRA 模型版本列表。</p>
+                     */
+                    std::vector<LoraItem> m_loraBindings;
+                    bool m_loraBindingsHasBeenSet;
 
                 };
             }

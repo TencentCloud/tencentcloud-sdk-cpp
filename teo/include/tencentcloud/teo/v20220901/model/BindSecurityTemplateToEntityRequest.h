@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要绑定或解绑的策略模板所属站点 ID。
-                     * @return ZoneId 需要绑定或解绑的策略模板所属站点 ID。
+                     * 获取<p>需要绑定或解绑的域名所属站点 ID。</p>
+                     * @return ZoneId <p>需要绑定或解绑的域名所属站点 ID。</p>
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置需要绑定或解绑的策略模板所属站点 ID。
-                     * @param _zoneId 需要绑定或解绑的策略模板所属站点 ID。
+                     * 设置<p>需要绑定或解绑的域名所属站点 ID。</p>
+                     * @param _zoneId <p>需要绑定或解绑的域名所属站点 ID。</p>
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取绑定至策略模板（或者从策略模板解绑）的域名列表。
-                     * @return Entities 绑定至策略模板（或者从策略模板解绑）的域名列表。
+                     * 获取<p>绑定至策略模板（或者从策略模板解绑）的域名列表。</p>
+                     * @return Entities <p>绑定至策略模板（或者从策略模板解绑）的域名列表。</p>
                      * 
                      */
                     std::vector<std::string> GetEntities() const;
 
                     /**
-                     * 设置绑定至策略模板（或者从策略模板解绑）的域名列表。
-                     * @param _entities 绑定至策略模板（或者从策略模板解绑）的域名列表。
+                     * 设置<p>绑定至策略模板（或者从策略模板解绑）的域名列表。</p>
+                     * @param _entities <p>绑定至策略模板（或者从策略模板解绑）的域名列表。</p>
                      * 
                      */
                     void SetEntities(const std::vector<std::string>& _entities);
@@ -85,27 +85,15 @@ namespace TencentCloud
                     bool EntitiesHasBeenSet() const;
 
                     /**
-                     * 获取绑定或解绑操作选项，取值有：
-<li>bind：绑定域名至策略模板。</li>
-<li>unbind-keep-policy：将域名从策略模板解绑，解绑时保留当前策略。</li>
-<li>unbind-use-default：将域名从策略模板解绑，并使用默认空白策略。</li>注意：解绑操作当前仅支持单个域名解绑。即：当 Operate 参数取值为 unbind-keep-policy 或 unbind-use-default 时，Entities 参数列表仅支持填写一个域名。
-                     * @return Operate 绑定或解绑操作选项，取值有：
-<li>bind：绑定域名至策略模板。</li>
-<li>unbind-keep-policy：将域名从策略模板解绑，解绑时保留当前策略。</li>
-<li>unbind-use-default：将域名从策略模板解绑，并使用默认空白策略。</li>注意：解绑操作当前仅支持单个域名解绑。即：当 Operate 参数取值为 unbind-keep-policy 或 unbind-use-default 时，Entities 参数列表仅支持填写一个域名。
+                     * 获取<p>绑定或解绑操作选项。</p><p>枚举值：</p><ul><li>bind： 绑定域名至策略模板。</li><li>unbind-keep-policy： 将域名从策略模板解绑，解绑时保留当前策略。</li><li>unbind-use-default： 将域名从策略模板解绑，并使用默认空白策略。</li></ul>
+                     * @return Operate <p>绑定或解绑操作选项。</p><p>枚举值：</p><ul><li>bind： 绑定域名至策略模板。</li><li>unbind-keep-policy： 将域名从策略模板解绑，解绑时保留当前策略。</li><li>unbind-use-default： 将域名从策略模板解绑，并使用默认空白策略。</li></ul>
                      * 
                      */
                     std::string GetOperate() const;
 
                     /**
-                     * 设置绑定或解绑操作选项，取值有：
-<li>bind：绑定域名至策略模板。</li>
-<li>unbind-keep-policy：将域名从策略模板解绑，解绑时保留当前策略。</li>
-<li>unbind-use-default：将域名从策略模板解绑，并使用默认空白策略。</li>注意：解绑操作当前仅支持单个域名解绑。即：当 Operate 参数取值为 unbind-keep-policy 或 unbind-use-default 时，Entities 参数列表仅支持填写一个域名。
-                     * @param _operate 绑定或解绑操作选项，取值有：
-<li>bind：绑定域名至策略模板。</li>
-<li>unbind-keep-policy：将域名从策略模板解绑，解绑时保留当前策略。</li>
-<li>unbind-use-default：将域名从策略模板解绑，并使用默认空白策略。</li>注意：解绑操作当前仅支持单个域名解绑。即：当 Operate 参数取值为 unbind-keep-policy 或 unbind-use-default 时，Entities 参数列表仅支持填写一个域名。
+                     * 设置<p>绑定或解绑操作选项。</p><p>枚举值：</p><ul><li>bind： 绑定域名至策略模板。</li><li>unbind-keep-policy： 将域名从策略模板解绑，解绑时保留当前策略。</li><li>unbind-use-default： 将域名从策略模板解绑，并使用默认空白策略。</li></ul>
+                     * @param _operate <p>绑定或解绑操作选项。</p><p>枚举值：</p><ul><li>bind： 绑定域名至策略模板。</li><li>unbind-keep-policy： 将域名从策略模板解绑，解绑时保留当前策略。</li><li>unbind-use-default： 将域名从策略模板解绑，并使用默认空白策略。</li></ul>
                      * 
                      */
                     void SetOperate(const std::string& _operate);
@@ -118,31 +106,15 @@ namespace TencentCloud
                     bool OperateHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定或解绑的策略模板 ID 或站点全局策略
-<li>如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID。</li>
-<li>如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。</li>
-
-注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。
-                     * @return TemplateId 指定绑定或解绑的策略模板 ID 或站点全局策略
-<li>如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID。</li>
-<li>如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。</li>
-
-注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。
+                     * 获取<p>指定绑定或解绑的策略模板 ID 或站点全局策略。<li>如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID；</li><li>如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。</li></p><p>注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。</p>
+                     * @return TemplateId <p>指定绑定或解绑的策略模板 ID 或站点全局策略。<li>如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID；</li><li>如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。</li></p><p>注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。</p>
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置指定绑定或解绑的策略模板 ID 或站点全局策略
-<li>如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID。</li>
-<li>如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。</li>
-
-注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。
-                     * @param _templateId 指定绑定或解绑的策略模板 ID 或站点全局策略
-<li>如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID。</li>
-<li>如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。</li>
-
-注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。
+                     * 设置<p>指定绑定或解绑的策略模板 ID 或站点全局策略。<li>如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID；</li><li>如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。</li></p><p>注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。</p>
+                     * @param _templateId <p>指定绑定或解绑的策略模板 ID 或站点全局策略。<li>如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID；</li><li>如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。</li></p><p>注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。</p>
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -155,15 +127,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取传入域名如果已经绑定了策略模板（含站点级防护策略），通过设置该参数表示是否替换该模板，默认值为 true。支持下列取值：<li>true： 替换域名当前绑定的模板。</li><li>false：不替换域名当前绑定的模板。</li>注意：当设置为 false 时，若传入域名已经绑定策略模板，API  将返回错误；站点级防护策略也为一种策略模板。
-                     * @return OverWrite 传入域名如果已经绑定了策略模板（含站点级防护策略），通过设置该参数表示是否替换该模板，默认值为 true。支持下列取值：<li>true： 替换域名当前绑定的模板。</li><li>false：不替换域名当前绑定的模板。</li>注意：当设置为 false 时，若传入域名已经绑定策略模板，API  将返回错误；站点级防护策略也为一种策略模板。
+                     * 获取<p>传入域名如果已经绑定了策略模板（含站点级防护策略），通过设置该参数表示是否替换该模板。</p><p>枚举值：</p><ul><li>true： 替换域名当前绑定的模板。</li><li>false： 不替换域名当前绑定的模板。</li></ul><p>默认值：true</p><p>注意：当设置为 false 时，若传入域名已经绑定策略模板，API  将返回错误；站点级防护策略也为一种策略模板。</p>
+                     * @return OverWrite <p>传入域名如果已经绑定了策略模板（含站点级防护策略），通过设置该参数表示是否替换该模板。</p><p>枚举值：</p><ul><li>true： 替换域名当前绑定的模板。</li><li>false： 不替换域名当前绑定的模板。</li></ul><p>默认值：true</p><p>注意：当设置为 false 时，若传入域名已经绑定策略模板，API  将返回错误；站点级防护策略也为一种策略模板。</p>
                      * 
                      */
                     bool GetOverWrite() const;
 
                     /**
-                     * 设置传入域名如果已经绑定了策略模板（含站点级防护策略），通过设置该参数表示是否替换该模板，默认值为 true。支持下列取值：<li>true： 替换域名当前绑定的模板。</li><li>false：不替换域名当前绑定的模板。</li>注意：当设置为 false 时，若传入域名已经绑定策略模板，API  将返回错误；站点级防护策略也为一种策略模板。
-                     * @param _overWrite 传入域名如果已经绑定了策略模板（含站点级防护策略），通过设置该参数表示是否替换该模板，默认值为 true。支持下列取值：<li>true： 替换域名当前绑定的模板。</li><li>false：不替换域名当前绑定的模板。</li>注意：当设置为 false 时，若传入域名已经绑定策略模板，API  将返回错误；站点级防护策略也为一种策略模板。
+                     * 设置<p>传入域名如果已经绑定了策略模板（含站点级防护策略），通过设置该参数表示是否替换该模板。</p><p>枚举值：</p><ul><li>true： 替换域名当前绑定的模板。</li><li>false： 不替换域名当前绑定的模板。</li></ul><p>默认值：true</p><p>注意：当设置为 false 时，若传入域名已经绑定策略模板，API  将返回错误；站点级防护策略也为一种策略模板。</p>
+                     * @param _overWrite <p>传入域名如果已经绑定了策略模板（含站点级防护策略），通过设置该参数表示是否替换该模板。</p><p>枚举值：</p><ul><li>true： 替换域名当前绑定的模板。</li><li>false： 不替换域名当前绑定的模板。</li></ul><p>默认值：true</p><p>注意：当设置为 false 时，若传入域名已经绑定策略模板，API  将返回错误；站点级防护策略也为一种策略模板。</p>
                      * 
                      */
                     void SetOverWrite(const bool& _overWrite);
@@ -178,38 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要绑定或解绑的策略模板所属站点 ID。
+                     * <p>需要绑定或解绑的域名所属站点 ID。</p>
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 绑定至策略模板（或者从策略模板解绑）的域名列表。
+                     * <p>绑定至策略模板（或者从策略模板解绑）的域名列表。</p>
                      */
                     std::vector<std::string> m_entities;
                     bool m_entitiesHasBeenSet;
 
                     /**
-                     * 绑定或解绑操作选项，取值有：
-<li>bind：绑定域名至策略模板。</li>
-<li>unbind-keep-policy：将域名从策略模板解绑，解绑时保留当前策略。</li>
-<li>unbind-use-default：将域名从策略模板解绑，并使用默认空白策略。</li>注意：解绑操作当前仅支持单个域名解绑。即：当 Operate 参数取值为 unbind-keep-policy 或 unbind-use-default 时，Entities 参数列表仅支持填写一个域名。
+                     * <p>绑定或解绑操作选项。</p><p>枚举值：</p><ul><li>bind： 绑定域名至策略模板。</li><li>unbind-keep-policy： 将域名从策略模板解绑，解绑时保留当前策略。</li><li>unbind-use-default： 将域名从策略模板解绑，并使用默认空白策略。</li></ul>
                      */
                     std::string m_operate;
                     bool m_operateHasBeenSet;
 
                     /**
-                     * 指定绑定或解绑的策略模板 ID 或站点全局策略
-<li>如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID。</li>
-<li>如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。</li>
-
-注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。
+                     * <p>指定绑定或解绑的策略模板 ID 或站点全局策略。<li>如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID；</li><li>如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。</li></p><p>注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。</p>
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 传入域名如果已经绑定了策略模板（含站点级防护策略），通过设置该参数表示是否替换该模板，默认值为 true。支持下列取值：<li>true： 替换域名当前绑定的模板。</li><li>false：不替换域名当前绑定的模板。</li>注意：当设置为 false 时，若传入域名已经绑定策略模板，API  将返回错误；站点级防护策略也为一种策略模板。
+                     * <p>传入域名如果已经绑定了策略模板（含站点级防护策略），通过设置该参数表示是否替换该模板。</p><p>枚举值：</p><ul><li>true： 替换域名当前绑定的模板。</li><li>false： 不替换域名当前绑定的模板。</li></ul><p>默认值：true</p><p>注意：当设置为 false 时，若传入域名已经绑定策略模板，API  将返回错误；站点级防护策略也为一种策略模板。</p>
                      */
                     bool m_overWrite;
                     bool m_overWriteHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别结果。
-                     * @return Results 识别结果。
+                     * 获取<p>识别结果。</p>
+                     * @return Results <p>识别结果。</p>
                      * 
                      */
                     std::vector<Result> GetResults() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ResultsHasBeenSet() const;
 
                     /**
-                     * 获取搜索的人员库中包含的人员数。若输入图片中所有人脸均不符合质量要求，则返回0。
-                     * @return PersonNum 搜索的人员库中包含的人员数。若输入图片中所有人脸均不符合质量要求，则返回0。
+                     * 获取<p>搜索的人员库中包含的人员数。若输入图片中所有人脸均不符合质量要求，则返回0。</p>
+                     * @return PersonNum <p>搜索的人员库中包含的人员数。若输入图片中所有人脸均不符合质量要求，则返回0。</p>
                      * 
                      */
                     uint64_t GetPersonNum() const;
@@ -73,9 +73,9 @@ namespace TencentCloud
                     bool PersonNumHasBeenSet() const;
 
                     /**
-                     * 获取人脸识别所用的算法模型版本。
+                     * 获取<p>人脸识别所用的算法模型版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     * @return FaceModelVersion <p>人脸识别所用的算法模型版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -91,19 +91,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 识别结果。
+                     * <p>识别结果。</p>
                      */
                     std::vector<Result> m_results;
                     bool m_resultsHasBeenSet;
 
                     /**
-                     * 搜索的人员库中包含的人员数。若输入图片中所有人脸均不符合质量要求，则返回0。
+                     * <p>搜索的人员库中包含的人员数。若输入图片中所有人脸均不符合质量要求，则返回0。</p>
                      */
                     uint64_t m_personNum;
                     bool m_personNumHasBeenSet;
 
                     /**
-                     * 人脸识别所用的算法模型版本。
+                     * <p>人脸识别所用的算法模型版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_faceModelVersion;

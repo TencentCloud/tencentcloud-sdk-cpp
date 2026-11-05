@@ -31,6 +31,8 @@ TrainingJobInstance::TrainingJobInstance() :
     m_jobRunningTimeHasBeenSet(false),
     m_historyUrlHasBeenSet(false),
     m_creatorHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false),
+    m_subAccountNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_resourcePartitionIdHasBeenSet(false),
     m_resourcePartitionNameHasBeenSet(false),
@@ -53,7 +55,9 @@ TrainingJobInstance::TrainingJobInstance() :
     m_datasetsHasBeenSet(false),
     m_checkpointHasBeenSet(false),
     m_tuningParamsHasBeenSet(false),
-    m_resumeTrainingHasBeenSet(false)
+    m_resumeTrainingHasBeenSet(false),
+    m_networkConfigHasBeenSet(false),
+    m_resumeSourceInstanceIdHasBeenSet(false)
 {
 }
 
@@ -160,6 +164,26 @@ CoreInternalOutcome TrainingJobInstance::Deserialize(const rapidjson::Value &val
         }
         m_creator = string(value["Creator"].GetString());
         m_creatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
+    {
+        if (!value["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingJobInstance.SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(value["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountName") && !value["SubAccountName"].IsNull())
+    {
+        if (!value["SubAccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingJobInstance.SubAccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountName = string(value["SubAccountName"].GetString());
+        m_subAccountNameHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -433,6 +457,26 @@ CoreInternalOutcome TrainingJobInstance::Deserialize(const rapidjson::Value &val
         m_resumeTrainingHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkConfig") && !value["NetworkConfig"].IsNull())
+    {
+        if (!value["NetworkConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingJobInstance.NetworkConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkConfig = string(value["NetworkConfig"].GetString());
+        m_networkConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResumeSourceInstanceId") && !value["ResumeSourceInstanceId"].IsNull())
+    {
+        if (!value["ResumeSourceInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingJobInstance.ResumeSourceInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resumeSourceInstanceId = string(value["ResumeSourceInstanceId"].GetString());
+        m_resumeSourceInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -518,6 +562,22 @@ void TrainingJobInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Creator";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -721,6 +781,22 @@ void TrainingJobInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, m_resumeTraining, allocator);
     }
 
+    if (m_networkConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resumeSourceInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResumeSourceInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resumeSourceInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -882,6 +958,38 @@ void TrainingJobInstance::SetCreator(const string& _creator)
 bool TrainingJobInstance::CreatorHasBeenSet() const
 {
     return m_creatorHasBeenSet;
+}
+
+string TrainingJobInstance::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+void TrainingJobInstance::SetSubAccountUin(const string& _subAccountUin)
+{
+    m_subAccountUin = _subAccountUin;
+    m_subAccountUinHasBeenSet = true;
+}
+
+bool TrainingJobInstance::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
+}
+
+string TrainingJobInstance::GetSubAccountName() const
+{
+    return m_subAccountName;
+}
+
+void TrainingJobInstance::SetSubAccountName(const string& _subAccountName)
+{
+    m_subAccountName = _subAccountName;
+    m_subAccountNameHasBeenSet = true;
+}
+
+bool TrainingJobInstance::SubAccountNameHasBeenSet() const
+{
+    return m_subAccountNameHasBeenSet;
 }
 
 int64_t TrainingJobInstance::GetCreateTime() const
@@ -1250,5 +1358,37 @@ void TrainingJobInstance::SetResumeTraining(const bool& _resumeTraining)
 bool TrainingJobInstance::ResumeTrainingHasBeenSet() const
 {
     return m_resumeTrainingHasBeenSet;
+}
+
+string TrainingJobInstance::GetNetworkConfig() const
+{
+    return m_networkConfig;
+}
+
+void TrainingJobInstance::SetNetworkConfig(const string& _networkConfig)
+{
+    m_networkConfig = _networkConfig;
+    m_networkConfigHasBeenSet = true;
+}
+
+bool TrainingJobInstance::NetworkConfigHasBeenSet() const
+{
+    return m_networkConfigHasBeenSet;
+}
+
+string TrainingJobInstance::GetResumeSourceInstanceId() const
+{
+    return m_resumeSourceInstanceId;
+}
+
+void TrainingJobInstance::SetResumeSourceInstanceId(const string& _resumeSourceInstanceId)
+{
+    m_resumeSourceInstanceId = _resumeSourceInstanceId;
+    m_resumeSourceInstanceIdHasBeenSet = true;
+}
+
+bool TrainingJobInstance::ResumeSourceInstanceIdHasBeenSet() const
+{
+    return m_resumeSourceInstanceIdHasBeenSet;
 }
 

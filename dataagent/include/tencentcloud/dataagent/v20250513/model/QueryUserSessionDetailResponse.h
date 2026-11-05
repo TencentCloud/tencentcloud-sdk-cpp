@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dataagent/v20250513/model/RecordList.h>
+#include <tencentcloud/dataagent/v20250513/model/SessionTargetInfo.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,20 @@ namespace TencentCloud
                      */
                     bool RunRecordHasBeenSet() const;
 
+                    /**
+                     * 获取<p>会话归属信息</p>
+                     * @return SessionTargetInfo <p>会话归属信息</p>
+                     * 
+                     */
+                    SessionTargetInfo GetSessionTargetInfo() const;
+
+                    /**
+                     * 判断参数 SessionTargetInfo 是否已赋值
+                     * @return SessionTargetInfo 是否已赋值
+                     * 
+                     */
+                    bool SessionTargetInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +160,12 @@ namespace TencentCloud
                      */
                     std::string m_runRecord;
                     bool m_runRecordHasBeenSet;
+
+                    /**
+                     * <p>会话归属信息</p>
+                     */
+                    SessionTargetInfo m_sessionTargetInfo;
+                    bool m_sessionTargetInfoHasBeenSet;
 
                 };
             }

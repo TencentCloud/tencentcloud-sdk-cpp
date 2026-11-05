@@ -29,6 +29,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/InstanceNetInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResourcePackage.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceAbility.h>
+#include <tencentcloud/cynosdb/v20190107/model/InstanceServerlessQuotaInfo.h>
 
 
 namespace TencentCloud
@@ -1323,6 +1324,27 @@ namespace TencentCloud
                      */
                     bool RealZoneHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例Serverless弹性信息</p>
+                     * @return ServerlessQuotaInfo <p>实例Serverless弹性信息</p>
+                     * 
+                     */
+                    InstanceServerlessQuotaInfo GetServerlessQuotaInfo() const;
+
+                    /**
+                     * 设置<p>实例Serverless弹性信息</p>
+                     * @param _serverlessQuotaInfo <p>实例Serverless弹性信息</p>
+                     * 
+                     */
+                    void SetServerlessQuotaInfo(const InstanceServerlessQuotaInfo& _serverlessQuotaInfo);
+
+                    /**
+                     * 判断参数 ServerlessQuotaInfo 是否已赋值
+                     * @return ServerlessQuotaInfo 是否已赋值
+                     * 
+                     */
+                    bool ServerlessQuotaInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1687,6 +1709,12 @@ namespace TencentCloud
                      */
                     std::string m_realZone;
                     bool m_realZoneHasBeenSet;
+
+                    /**
+                     * <p>实例Serverless弹性信息</p>
+                     */
+                    InstanceServerlessQuotaInfo m_serverlessQuotaInfo;
+                    bool m_serverlessQuotaInfoHasBeenSet;
 
                 };
             }

@@ -27,6 +27,7 @@ GetActiveDeviceCountRequest::GetActiveDeviceCountRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_devGroupHasBeenSet(false),
+    m_applicationIdHasBeenSet(false),
     m_licenseTypeHasBeenSet(false)
 {
 }
@@ -68,6 +69,14 @@ string GetActiveDeviceCountRequest::ToJsonString() const
         string key = "DevGroup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_devGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_licenseTypeHasBeenSet)
@@ -148,6 +157,22 @@ void GetActiveDeviceCountRequest::SetDevGroup(const string& _devGroup)
 bool GetActiveDeviceCountRequest::DevGroupHasBeenSet() const
 {
     return m_devGroupHasBeenSet;
+}
+
+string GetActiveDeviceCountRequest::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void GetActiveDeviceCountRequest::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool GetActiveDeviceCountRequest::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
 }
 
 int64_t GetActiveDeviceCountRequest::GetLicenseType() const

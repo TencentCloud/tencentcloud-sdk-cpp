@@ -44,7 +44,14 @@ InferenceModelInfo::InferenceModelInfo() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_modelSourceHasBeenSet(false),
+    m_modelCategoryHasBeenSet(false),
+    m_baseModelUidHasBeenSet(false),
+    m_latestVersionUidHasBeenSet(false),
+    m_baseModelVersionUidHasBeenSet(false),
+    m_baseModelNameHasBeenSet(false),
+    m_baseModelVersionHasBeenSet(false)
 {
 }
 
@@ -312,6 +319,76 @@ CoreInternalOutcome InferenceModelInfo::Deserialize(const rapidjson::Value &valu
         m_resourceTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelSource") && !value["ModelSource"].IsNull())
+    {
+        if (!value["ModelSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceModelInfo.ModelSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelSource = string(value["ModelSource"].GetString());
+        m_modelSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModelCategory") && !value["ModelCategory"].IsNull())
+    {
+        if (!value["ModelCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceModelInfo.ModelCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelCategory = string(value["ModelCategory"].GetString());
+        m_modelCategoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("BaseModelUid") && !value["BaseModelUid"].IsNull())
+    {
+        if (!value["BaseModelUid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceModelInfo.BaseModelUid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_baseModelUid = string(value["BaseModelUid"].GetString());
+        m_baseModelUidHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestVersionUid") && !value["LatestVersionUid"].IsNull())
+    {
+        if (!value["LatestVersionUid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceModelInfo.LatestVersionUid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestVersionUid = string(value["LatestVersionUid"].GetString());
+        m_latestVersionUidHasBeenSet = true;
+    }
+
+    if (value.HasMember("BaseModelVersionUid") && !value["BaseModelVersionUid"].IsNull())
+    {
+        if (!value["BaseModelVersionUid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceModelInfo.BaseModelVersionUid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_baseModelVersionUid = string(value["BaseModelVersionUid"].GetString());
+        m_baseModelVersionUidHasBeenSet = true;
+    }
+
+    if (value.HasMember("BaseModelName") && !value["BaseModelName"].IsNull())
+    {
+        if (!value["BaseModelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceModelInfo.BaseModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_baseModelName = string(value["BaseModelName"].GetString());
+        m_baseModelNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("BaseModelVersion") && !value["BaseModelVersion"].IsNull())
+    {
+        if (!value["BaseModelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InferenceModelInfo.BaseModelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_baseModelVersion = string(value["BaseModelVersion"].GetString());
+        m_baseModelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -531,6 +608,62 @@ void InferenceModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_modelSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelCategory.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_baseModelUidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseModelUid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_baseModelUid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestVersionUidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestVersionUid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestVersionUid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_baseModelVersionUidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseModelVersionUid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_baseModelVersionUid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_baseModelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_baseModelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_baseModelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseModelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_baseModelVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -918,5 +1051,117 @@ void InferenceModelInfo::SetResourceTags(const vector<Tag>& _resourceTags)
 bool InferenceModelInfo::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+string InferenceModelInfo::GetModelSource() const
+{
+    return m_modelSource;
+}
+
+void InferenceModelInfo::SetModelSource(const string& _modelSource)
+{
+    m_modelSource = _modelSource;
+    m_modelSourceHasBeenSet = true;
+}
+
+bool InferenceModelInfo::ModelSourceHasBeenSet() const
+{
+    return m_modelSourceHasBeenSet;
+}
+
+string InferenceModelInfo::GetModelCategory() const
+{
+    return m_modelCategory;
+}
+
+void InferenceModelInfo::SetModelCategory(const string& _modelCategory)
+{
+    m_modelCategory = _modelCategory;
+    m_modelCategoryHasBeenSet = true;
+}
+
+bool InferenceModelInfo::ModelCategoryHasBeenSet() const
+{
+    return m_modelCategoryHasBeenSet;
+}
+
+string InferenceModelInfo::GetBaseModelUid() const
+{
+    return m_baseModelUid;
+}
+
+void InferenceModelInfo::SetBaseModelUid(const string& _baseModelUid)
+{
+    m_baseModelUid = _baseModelUid;
+    m_baseModelUidHasBeenSet = true;
+}
+
+bool InferenceModelInfo::BaseModelUidHasBeenSet() const
+{
+    return m_baseModelUidHasBeenSet;
+}
+
+string InferenceModelInfo::GetLatestVersionUid() const
+{
+    return m_latestVersionUid;
+}
+
+void InferenceModelInfo::SetLatestVersionUid(const string& _latestVersionUid)
+{
+    m_latestVersionUid = _latestVersionUid;
+    m_latestVersionUidHasBeenSet = true;
+}
+
+bool InferenceModelInfo::LatestVersionUidHasBeenSet() const
+{
+    return m_latestVersionUidHasBeenSet;
+}
+
+string InferenceModelInfo::GetBaseModelVersionUid() const
+{
+    return m_baseModelVersionUid;
+}
+
+void InferenceModelInfo::SetBaseModelVersionUid(const string& _baseModelVersionUid)
+{
+    m_baseModelVersionUid = _baseModelVersionUid;
+    m_baseModelVersionUidHasBeenSet = true;
+}
+
+bool InferenceModelInfo::BaseModelVersionUidHasBeenSet() const
+{
+    return m_baseModelVersionUidHasBeenSet;
+}
+
+string InferenceModelInfo::GetBaseModelName() const
+{
+    return m_baseModelName;
+}
+
+void InferenceModelInfo::SetBaseModelName(const string& _baseModelName)
+{
+    m_baseModelName = _baseModelName;
+    m_baseModelNameHasBeenSet = true;
+}
+
+bool InferenceModelInfo::BaseModelNameHasBeenSet() const
+{
+    return m_baseModelNameHasBeenSet;
+}
+
+string InferenceModelInfo::GetBaseModelVersion() const
+{
+    return m_baseModelVersion;
+}
+
+void InferenceModelInfo::SetBaseModelVersion(const string& _baseModelVersion)
+{
+    m_baseModelVersion = _baseModelVersion;
+    m_baseModelVersionHasBeenSet = true;
+}
+
+bool InferenceModelInfo::BaseModelVersionHasBeenSet() const
+{
+    return m_baseModelVersionHasBeenSet;
 }
 

@@ -85,7 +85,9 @@ DescribeDBInstanceDetailResponse::DescribeDBInstanceDetailResponse() :
     m_maintenanceWindowHasBeenSet(false),
     m_encryptionEnableHasBeenSet(false),
     m_encryptionKmsRegionHasBeenSet(false),
-    m_autoScaleConfigsHasBeenSet(false)
+    m_autoScaleConfigsHasBeenSet(false),
+    m_sSLStatusHasBeenSet(false),
+    m_collationHasBeenSet(false)
 {
 }
 
@@ -817,6 +819,26 @@ CoreInternalOutcome DescribeDBInstanceDetailResponse::Deserialize(const string &
         m_autoScaleConfigsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SSLStatus") && !rsp["SSLStatus"].IsNull())
+    {
+        if (!rsp["SSLStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSLStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sSLStatus = string(rsp["SSLStatus"].GetString());
+        m_sSLStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Collation") && !rsp["Collation"].IsNull())
+    {
+        if (!rsp["Collation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Collation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_collation = string(rsp["Collation"].GetString());
+        m_collationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1364,6 +1386,22 @@ string DescribeDBInstanceDetailResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_sSLStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sSLStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_collationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Collation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_collation.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1996,6 +2034,26 @@ vector<AutoScalingConfig> DescribeDBInstanceDetailResponse::GetAutoScaleConfigs(
 bool DescribeDBInstanceDetailResponse::AutoScaleConfigsHasBeenSet() const
 {
     return m_autoScaleConfigsHasBeenSet;
+}
+
+string DescribeDBInstanceDetailResponse::GetSSLStatus() const
+{
+    return m_sSLStatus;
+}
+
+bool DescribeDBInstanceDetailResponse::SSLStatusHasBeenSet() const
+{
+    return m_sSLStatusHasBeenSet;
+}
+
+string DescribeDBInstanceDetailResponse::GetCollation() const
+{
+    return m_collation;
+}
+
+bool DescribeDBInstanceDetailResponse::CollationHasBeenSet() const
+{
+    return m_collationHasBeenSet;
 }
 
 

@@ -300,6 +300,27 @@ namespace TencentCloud
                      */
                     bool VPRExplainInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>修复方式：AUTO_FIX-一键修复 MANUAL_FIX-手动修复 </p>
+                     * @return RepairMethod <p>修复方式：AUTO_FIX-一键修复 MANUAL_FIX-手动修复 </p>
+                     * 
+                     */
+                    std::string GetRepairMethod() const;
+
+                    /**
+                     * 设置<p>修复方式：AUTO_FIX-一键修复 MANUAL_FIX-手动修复 </p>
+                     * @param _repairMethod <p>修复方式：AUTO_FIX-一键修复 MANUAL_FIX-手动修复 </p>
+                     * 
+                     */
+                    void SetRepairMethod(const std::string& _repairMethod);
+
+                    /**
+                     * 判断参数 RepairMethod 是否已赋值
+                     * @return RepairMethod 是否已赋值
+                     * 
+                     */
+                    bool RepairMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -373,6 +394,12 @@ namespace TencentCloud
                      */
                     VPRExplainInfo m_vPRExplainInfo;
                     bool m_vPRExplainInfoHasBeenSet;
+
+                    /**
+                     * <p>修复方式：AUTO_FIX-一键修复 MANUAL_FIX-手动修复 </p>
+                     */
+                    std::string m_repairMethod;
+                    bool m_repairMethodHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ AccessURLRedirectParameters::AccessURLRedirectParameters() :
     m_protocolHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_uRLPathHasBeenSet(false),
-    m_queryStringHasBeenSet(false)
+    m_queryStringHasBeenSet(false),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,23 @@ CoreInternalOutcome AccessURLRedirectParameters::Deserialize(const rapidjson::Va
         m_queryStringHasBeenSet = true;
     }
 
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessURLRedirectParameters.Port` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_port.Deserialize(value["Port"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_portHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +171,15 @@ void AccessURLRedirectParameters::ToJsonObject(rapidjson::Value &value, rapidjso
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_queryString.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_port.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -236,5 +263,21 @@ void AccessURLRedirectParameters::SetQueryString(const AccessURLRedirectQueryStr
 bool AccessURLRedirectParameters::QueryStringHasBeenSet() const
 {
     return m_queryStringHasBeenSet;
+}
+
+AccessURLRedirectPort AccessURLRedirectParameters::GetPort() const
+{
+    return m_port;
+}
+
+void AccessURLRedirectParameters::SetPort(const AccessURLRedirectPort& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool AccessURLRedirectParameters::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
 }
 

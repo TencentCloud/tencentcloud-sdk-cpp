@@ -264,6 +264,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/UpdateStandardEngineResourceGroupConfigInfoRequest.h
   include/tencentcloud/dlc/v20210125/model/GetRayClusterHistoryResponse.h
   include/tencentcloud/dlc/v20210125/model/LinkedServiceInfo.h
+  include/tencentcloud/dlc/v20210125/model/LoraItem.h
   include/tencentcloud/dlc/v20210125/model/UpdateUserDataEngineConfigRequest.h
   include/tencentcloud/dlc/v20210125/model/GetResourceConfigRequest.h
   include/tencentcloud/dlc/v20210125/model/ListExampleCategoriesRequest.h
@@ -301,6 +302,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DLCCatalogAccess.h
   include/tencentcloud/dlc/v20210125/model/ModifyUserResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteScriptResponse.h
+  include/tencentcloud/dlc/v20210125/model/RegisterMeta.h
   include/tencentcloud/dlc/v20210125/model/ListStoragesRequest.h
   include/tencentcloud/dlc/v20210125/model/DataEngineConfigInstanceInfo.h
   include/tencentcloud/dlc/v20210125/model/COSBucketInfo.h
@@ -341,6 +343,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateJobResponse.h
   include/tencentcloud/dlc/v20210125/model/QueryResultResponse.h
   include/tencentcloud/dlc/v20210125/model/SubmitTrainingJobRequest.h
+  include/tencentcloud/dlc/v20210125/model/LoraAdapterBinding.h
   include/tencentcloud/dlc/v20210125/model/RegisterThirdPartyAccessUserResponse.h
   include/tencentcloud/dlc/v20210125/model/Env.h
   include/tencentcloud/dlc/v20210125/model/DeleteThirdPartyAccessUserRequest.h
@@ -944,6 +947,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/OperateEngineResourceGroupFailMessage.h
   include/tencentcloud/dlc/v20210125/model/GetRayJobHistoryRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeStoreLocationResponse.h
+  include/tencentcloud/dlc/v20210125/model/LoraVersionMeta.h
   include/tencentcloud/dlc/v20210125/model/DescribeTCLakeMetaInstanceResponse.h
   include/tencentcloud/dlc/v20210125/model/ModifyJobDefinitionResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateSparkAppTaskRequest.h
@@ -1307,6 +1311,7 @@ set(dlc_src
   src/v20210125/model/UpdateStandardEngineResourceGroupConfigInfoRequest.cpp
   src/v20210125/model/GetRayClusterHistoryResponse.cpp
   src/v20210125/model/LinkedServiceInfo.cpp
+  src/v20210125/model/LoraItem.cpp
   src/v20210125/model/UpdateUserDataEngineConfigRequest.cpp
   src/v20210125/model/GetResourceConfigRequest.cpp
   src/v20210125/model/ListExampleCategoriesRequest.cpp
@@ -1344,6 +1349,7 @@ set(dlc_src
   src/v20210125/model/DLCCatalogAccess.cpp
   src/v20210125/model/ModifyUserResponse.cpp
   src/v20210125/model/DeleteScriptResponse.cpp
+  src/v20210125/model/RegisterMeta.cpp
   src/v20210125/model/ListStoragesRequest.cpp
   src/v20210125/model/DataEngineConfigInstanceInfo.cpp
   src/v20210125/model/COSBucketInfo.cpp
@@ -1384,6 +1390,7 @@ set(dlc_src
   src/v20210125/model/CreateJobResponse.cpp
   src/v20210125/model/QueryResultResponse.cpp
   src/v20210125/model/SubmitTrainingJobRequest.cpp
+  src/v20210125/model/LoraAdapterBinding.cpp
   src/v20210125/model/RegisterThirdPartyAccessUserResponse.cpp
   src/v20210125/model/Env.cpp
   src/v20210125/model/DeleteThirdPartyAccessUserRequest.cpp
@@ -1987,6 +1994,7 @@ set(dlc_src
   src/v20210125/model/OperateEngineResourceGroupFailMessage.cpp
   src/v20210125/model/GetRayJobHistoryRequest.cpp
   src/v20210125/model/DescribeStoreLocationResponse.cpp
+  src/v20210125/model/LoraVersionMeta.cpp
   src/v20210125/model/DescribeTCLakeMetaInstanceResponse.cpp
   src/v20210125/model/ModifyJobDefinitionResponse.cpp
   src/v20210125/model/CreateSparkAppTaskRequest.cpp

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库唯一标识
-                     * @return InstanceId 数据库唯一标识
+                     * 获取<p>数据库唯一标识</p>
+                     * @return InstanceId <p>数据库唯一标识</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置数据库唯一标识
-                     * @param _instanceId 数据库唯一标识
+                     * 设置<p>数据库唯一标识</p>
+                     * @param _instanceId <p>数据库唯一标识</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -68,31 +68,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取状态。包含以下取值：
-<li>INITIALIZING：资源初始化中</li>
-<li>RUNNING：运行中，可正常使用的状态</li>
-<li>UNUSABLE：禁用，不可用</li>
-<li>OVERDUE：资源过期</li>
-                     * @return Status 状态。包含以下取值：
-<li>INITIALIZING：资源初始化中</li>
-<li>RUNNING：运行中，可正常使用的状态</li>
-<li>UNUSABLE：禁用，不可用</li>
-<li>OVERDUE：资源过期</li>
+                     * 获取<p>状态。包含以下取值：</p><li>INITIALIZING：资源初始化中</li><li>RUNNING：运行中，可正常使用的状态</li><li>UNUSABLE：禁用，不可用</li><li>OVERDUE：资源过期</li>
+                     * @return Status <p>状态。包含以下取值：</p><li>INITIALIZING：资源初始化中</li><li>RUNNING：运行中，可正常使用的状态</li><li>UNUSABLE：禁用，不可用</li><li>OVERDUE：资源过期</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态。包含以下取值：
-<li>INITIALIZING：资源初始化中</li>
-<li>RUNNING：运行中，可正常使用的状态</li>
-<li>UNUSABLE：禁用，不可用</li>
-<li>OVERDUE：资源过期</li>
-                     * @param _status 状态。包含以下取值：
-<li>INITIALIZING：资源初始化中</li>
-<li>RUNNING：运行中，可正常使用的状态</li>
-<li>UNUSABLE：禁用，不可用</li>
-<li>OVERDUE：资源过期</li>
+                     * 设置<p>状态。包含以下取值：</p><li>INITIALIZING：资源初始化中</li><li>RUNNING：运行中，可正常使用的状态</li><li>UNUSABLE：禁用，不可用</li><li>OVERDUE：资源过期</li>
+                     * @param _status <p>状态。包含以下取值：</p><li>INITIALIZING：资源初始化中</li><li>RUNNING：运行中，可正常使用的状态</li><li>UNUSABLE：禁用，不可用</li><li>OVERDUE：资源过期</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -105,19 +89,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取所属地域。
-当前支持ap-shanghai
-                     * @return Region 所属地域。
-当前支持ap-shanghai
+                     * 获取<p>所属地域。<br>当前支持ap-shanghai</p>
+                     * @return Region <p>所属地域。<br>当前支持ap-shanghai</p>
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置所属地域。
-当前支持ap-shanghai
-                     * @param _region 所属地域。
-当前支持ap-shanghai
+                     * 设置<p>所属地域。<br>当前支持ap-shanghai</p>
+                     * @param _region <p>所属地域。<br>当前支持ap-shanghai</p>
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -130,15 +110,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取<p>更新时间</p>
+                     * @return UpdateTime <p>更新时间</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param _updateTime 更新时间
+                     * 设置<p>更新时间</p>
+                     * @param _updateTime <p>更新时间</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -153,30 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库唯一标识
+                     * <p>数据库唯一标识</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 状态。包含以下取值：
-<li>INITIALIZING：资源初始化中</li>
-<li>RUNNING：运行中，可正常使用的状态</li>
-<li>UNUSABLE：禁用，不可用</li>
-<li>OVERDUE：资源过期</li>
+                     * <p>状态。包含以下取值：</p><li>INITIALIZING：资源初始化中</li><li>RUNNING：运行中，可正常使用的状态</li><li>UNUSABLE：禁用，不可用</li><li>OVERDUE：资源过期</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 所属地域。
-当前支持ap-shanghai
+                     * <p>所属地域。<br>当前支持ap-shanghai</p>
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * <p>更新时间</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

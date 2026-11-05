@@ -86,6 +86,27 @@ namespace TencentCloud
                     bool VoiceFieldsHasBeenSet() const;
 
                     /**
+                     * 获取<p>模型名，不填默认为MiniMax模型。</p> 枚举值： <ul><li>MiniMax </li><li>ElevenLabs</li></ul>
+                     * @return ModelName <p>模型名，不填默认为MiniMax模型。</p> 枚举值： <ul><li>MiniMax </li><li>ElevenLabs</li></ul>
+                     * 
+                     */
+                    std::string GetModelName() const;
+
+                    /**
+                     * 设置<p>模型名，不填默认为MiniMax模型。</p> 枚举值： <ul><li>MiniMax </li><li>ElevenLabs</li></ul>
+                     * @param _modelName <p>模型名，不填默认为MiniMax模型。</p> 枚举值： <ul><li>MiniMax </li><li>ElevenLabs</li></ul>
+                     * 
+                     */
+                    void SetModelName(const std::string& _modelName);
+
+                    /**
+                     * 判断参数 ModelName 是否已赋值
+                     * @return ModelName 是否已赋值
+                     * 
+                     */
+                    bool ModelNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>
                      * @return SubAppId <p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>
                      * 
@@ -140,6 +161,12 @@ namespace TencentCloud
                      */
                     VoiceUpdateFields m_voiceFields;
                     bool m_voiceFieldsHasBeenSet;
+
+                    /**
+                     * <p>模型名，不填默认为MiniMax模型。</p> 枚举值： <ul><li>MiniMax </li><li>ElevenLabs</li></ul>
+                     */
+                    std::string m_modelName;
+                    bool m_modelNameHasBeenSet;
 
                     /**
                      * <p>点播应用 ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</p>

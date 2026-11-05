@@ -211,6 +211,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceErrorLogsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceParamsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceServerlessQuotaRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceServerlessQuotaResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSlowQueriesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSlowQueriesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsRequest.h>
@@ -481,6 +483,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/SearchClusterDatabasesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SearchClusterTablesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SearchClusterTablesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/SetInstanceServerlessQuotaRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/SetInstanceServerlessQuotaResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetLibraDBClusterRenewFlagRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetLibraDBClusterRenewFlagResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h>
@@ -807,6 +811,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceServerlessQuotaResponse> DescribeInstanceServerlessQuotaOutcome;
+                typedef std::future<DescribeInstanceServerlessQuotaOutcome> DescribeInstanceServerlessQuotaOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceServerlessQuotaRequest&, DescribeInstanceServerlessQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceServerlessQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceSlowQueriesResponse> DescribeInstanceSlowQueriesOutcome;
                 typedef std::future<DescribeInstanceSlowQueriesOutcome> DescribeInstanceSlowQueriesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceSlowQueriesRequest&, DescribeInstanceSlowQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSlowQueriesAsyncHandler;
@@ -1212,6 +1219,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchClusterTablesResponse> SearchClusterTablesOutcome;
                 typedef std::future<SearchClusterTablesOutcome> SearchClusterTablesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SearchClusterTablesRequest&, SearchClusterTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchClusterTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetInstanceServerlessQuotaResponse> SetInstanceServerlessQuotaOutcome;
+                typedef std::future<SetInstanceServerlessQuotaOutcome> SetInstanceServerlessQuotaOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::SetInstanceServerlessQuotaRequest&, SetInstanceServerlessQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetInstanceServerlessQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetLibraDBClusterRenewFlagResponse> SetLibraDBClusterRenewFlagOutcome;
                 typedef std::future<SetLibraDBClusterRenewFlagOutcome> SetLibraDBClusterRenewFlagOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SetLibraDBClusterRenewFlagRequest&, SetLibraDBClusterRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetLibraDBClusterRenewFlagAsyncHandler;
@@ -2105,6 +2115,15 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcome DescribeInstanceParams(const Model::DescribeInstanceParamsRequest &request);
                 void DescribeInstanceParamsAsync(const Model::DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
+
+                /**
+                 *查询集群设置的serverless弹性配置
+                 * @param req DescribeInstanceServerlessQuotaRequest
+                 * @return DescribeInstanceServerlessQuotaOutcome
+                 */
+                DescribeInstanceServerlessQuotaOutcome DescribeInstanceServerlessQuota(const Model::DescribeInstanceServerlessQuotaRequest &request);
+                void DescribeInstanceServerlessQuotaAsync(const Model::DescribeInstanceServerlessQuotaRequest& request, const DescribeInstanceServerlessQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceServerlessQuotaOutcomeCallable DescribeInstanceServerlessQuotaCallable(const Model::DescribeInstanceServerlessQuotaRequest& request);
 
                 /**
                  *此接口（DescribeInstanceSlowQueries）用于查询实例慢日志详情。受到平台返回大小限制，当返回结果过大时，可能会对超过限制的内容进行截断。
@@ -3320,6 +3339,15 @@ namespace TencentCloud
                 SearchClusterTablesOutcome SearchClusterTables(const Model::SearchClusterTablesRequest &request);
                 void SearchClusterTablesAsync(const Model::SearchClusterTablesRequest& request, const SearchClusterTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchClusterTablesOutcomeCallable SearchClusterTablesCallable(const Model::SearchClusterTablesRequest& request);
+
+                /**
+                 *将普通集群转换为Serverless集群
+                 * @param req SetInstanceServerlessQuotaRequest
+                 * @return SetInstanceServerlessQuotaOutcome
+                 */
+                SetInstanceServerlessQuotaOutcome SetInstanceServerlessQuota(const Model::SetInstanceServerlessQuotaRequest &request);
+                void SetInstanceServerlessQuotaAsync(const Model::SetInstanceServerlessQuotaRequest& request, const SetInstanceServerlessQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetInstanceServerlessQuotaOutcomeCallable SetInstanceServerlessQuotaCallable(const Model::SetInstanceServerlessQuotaRequest& request);
 
                 /**
                  *设置 TDSQL-C 分析集群是否续费

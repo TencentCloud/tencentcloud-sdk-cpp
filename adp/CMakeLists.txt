@@ -381,6 +381,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/ConsumptionUsage.h
   include/tencentcloud/adp/v20260520/model/AppTriggerPromptExecuteConfig.h
   include/tencentcloud/adp/v20260520/model/DeleteSkillShareResponse.h
+  include/tencentcloud/adp/v20260520/model/A2AConfig.h
   include/tencentcloud/adp/v20260520/model/ModifyCategoryResponse.h
   include/tencentcloud/adp/v20260520/model/WorkflowRunSummary.h
   include/tencentcloud/adp/v20260520/model/ReleaseSummary.h
@@ -986,6 +987,7 @@ set(adp_src
   src/v20260520/model/ConsumptionUsage.cpp
   src/v20260520/model/AppTriggerPromptExecuteConfig.cpp
   src/v20260520/model/DeleteSkillShareResponse.cpp
+  src/v20260520/model/A2AConfig.cpp
   src/v20260520/model/ModifyCategoryResponse.cpp
   src/v20260520/model/WorkflowRunSummary.cpp
   src/v20260520/model/ReleaseSummary.cpp

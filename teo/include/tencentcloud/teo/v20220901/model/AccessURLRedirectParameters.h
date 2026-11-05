@@ -27,6 +27,7 @@
 #include <tencentcloud/teo/v20220901/model/HostName.h>
 #include <tencentcloud/teo/v20220901/model/URLPath.h>
 #include <tencentcloud/teo/v20220901/model/AccessURLRedirectQueryString.h>
+#include <tencentcloud/teo/v20220901/model/AccessURLRedirectPort.h>
 
 
 namespace TencentCloud
@@ -166,6 +167,31 @@ namespace TencentCloud
                      */
                     bool QueryStringHasBeenSet() const;
 
+                    /**
+                     * 获取<p>目标端口配置。</p><p>不填写此参数时，按 FollowProtocol 模式处理，即重定向地址中不显式指定端口，由目标协议使用默认端口，HTTP 使用 80，HTTPS 使用 443。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Port <p>目标端口配置。</p><p>不填写此参数时，按 FollowProtocol 模式处理，即重定向地址中不显式指定端口，由目标协议使用默认端口，HTTP 使用 80，HTTPS 使用 443。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AccessURLRedirectPort GetPort() const;
+
+                    /**
+                     * 设置<p>目标端口配置。</p><p>不填写此参数时，按 FollowProtocol 模式处理，即重定向地址中不显式指定端口，由目标协议使用默认端口，HTTP 使用 80，HTTPS 使用 443。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _port <p>目标端口配置。</p><p>不填写此参数时，按 FollowProtocol 模式处理，即重定向地址中不显式指定端口，由目标协议使用默认端口，HTTP 使用 80，HTTPS 使用 443。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPort(const AccessURLRedirectPort& _port);
+
+                    /**
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
+                     * 
+                     */
+                    bool PortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -200,6 +226,13 @@ namespace TencentCloud
                      */
                     AccessURLRedirectQueryString m_queryString;
                     bool m_queryStringHasBeenSet;
+
+                    /**
+                     * <p>目标端口配置。</p><p>不填写此参数时，按 FollowProtocol 模式处理，即重定向地址中不显式指定端口，由目标协议使用默认端口，HTTP 使用 80，HTTPS 使用 443。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AccessURLRedirectPort m_port;
+                    bool m_portHasBeenSet;
 
                 };
             }

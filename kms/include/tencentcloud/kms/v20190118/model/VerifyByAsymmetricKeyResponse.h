@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签名是否有效。true：签名有效，false：签名无效。
-                     * @return SignatureValid 签名是否有效。true：签名有效，false：签名无效。
+                     * 获取<p>签名是否有效。true：签名有效，false：签名无效。</p>
+                     * @return SignatureValid <p>签名是否有效。true：签名有效，false：签名无效。</p>
                      * 
                      */
                     bool GetSignatureValid() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签名是否有效。true：签名有效，false：签名无效。
+                     * <p>签名是否有效。true：签名有效，false：签名无效。</p>
                      */
                     bool m_signatureValid;
                     bool m_signatureValidHasBeenSet;

@@ -29,10 +29,13 @@ VulFixableMachineItem::VulFixableMachineItem() :
     m_osTypeHasBeenSet(false),
     m_osNameHasBeenSet(false),
     m_machineStatusHasBeenSet(false),
+    m_hostStatusHasBeenSet(false),
     m_supportAutoFixHasBeenSet(false),
     m_fixStatusHasBeenSet(false),
     m_latestFixTimeHasBeenSet(false),
     m_notFixableReasonHasBeenSet(false),
+    m_notFixableReasonCodeHasBeenSet(false),
+    m_notFixableActionHasBeenSet(false),
     m_fixCommandsHasBeenSet(false),
     m_componentsHasBeenSet(false),
     m_tagItemsHasBeenSet(false),
@@ -129,6 +132,16 @@ CoreInternalOutcome VulFixableMachineItem::Deserialize(const rapidjson::Value &v
         m_machineStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("HostStatus") && !value["HostStatus"].IsNull())
+    {
+        if (!value["HostStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixableMachineItem.HostStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostStatus = string(value["HostStatus"].GetString());
+        m_hostStatusHasBeenSet = true;
+    }
+
     if (value.HasMember("SupportAutoFix") && !value["SupportAutoFix"].IsNull())
     {
         if (!value["SupportAutoFix"].IsInt64())
@@ -167,6 +180,33 @@ CoreInternalOutcome VulFixableMachineItem::Deserialize(const rapidjson::Value &v
         }
         m_notFixableReason = string(value["NotFixableReason"].GetString());
         m_notFixableReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("NotFixableReasonCode") && !value["NotFixableReasonCode"].IsNull())
+    {
+        if (!value["NotFixableReasonCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixableMachineItem.NotFixableReasonCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notFixableReasonCode = string(value["NotFixableReasonCode"].GetString());
+        m_notFixableReasonCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("NotFixableAction") && !value["NotFixableAction"].IsNull())
+    {
+        if (!value["NotFixableAction"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixableMachineItem.NotFixableAction` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_notFixableAction.Deserialize(value["NotFixableAction"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_notFixableActionHasBeenSet = true;
     }
 
     if (value.HasMember("FixCommands") && !value["FixCommands"].IsNull())
@@ -311,6 +351,14 @@ void VulFixableMachineItem::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_machineStatus.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_hostStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostStatus.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_supportAutoFixHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -341,6 +389,23 @@ void VulFixableMachineItem::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "NotFixableReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_notFixableReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notFixableReasonCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotFixableReasonCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notFixableReasonCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notFixableActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotFixableAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_notFixableAction.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_fixCommandsHasBeenSet)
@@ -531,6 +596,22 @@ bool VulFixableMachineItem::MachineStatusHasBeenSet() const
     return m_machineStatusHasBeenSet;
 }
 
+string VulFixableMachineItem::GetHostStatus() const
+{
+    return m_hostStatus;
+}
+
+void VulFixableMachineItem::SetHostStatus(const string& _hostStatus)
+{
+    m_hostStatus = _hostStatus;
+    m_hostStatusHasBeenSet = true;
+}
+
+bool VulFixableMachineItem::HostStatusHasBeenSet() const
+{
+    return m_hostStatusHasBeenSet;
+}
+
 int64_t VulFixableMachineItem::GetSupportAutoFix() const
 {
     return m_supportAutoFix;
@@ -593,6 +674,38 @@ void VulFixableMachineItem::SetNotFixableReason(const string& _notFixableReason)
 bool VulFixableMachineItem::NotFixableReasonHasBeenSet() const
 {
     return m_notFixableReasonHasBeenSet;
+}
+
+string VulFixableMachineItem::GetNotFixableReasonCode() const
+{
+    return m_notFixableReasonCode;
+}
+
+void VulFixableMachineItem::SetNotFixableReasonCode(const string& _notFixableReasonCode)
+{
+    m_notFixableReasonCode = _notFixableReasonCode;
+    m_notFixableReasonCodeHasBeenSet = true;
+}
+
+bool VulFixableMachineItem::NotFixableReasonCodeHasBeenSet() const
+{
+    return m_notFixableReasonCodeHasBeenSet;
+}
+
+VulFixableMachineAction VulFixableMachineItem::GetNotFixableAction() const
+{
+    return m_notFixableAction;
+}
+
+void VulFixableMachineItem::SetNotFixableAction(const VulFixableMachineAction& _notFixableAction)
+{
+    m_notFixableAction = _notFixableAction;
+    m_notFixableActionHasBeenSet = true;
+}
+
+bool VulFixableMachineItem::NotFixableActionHasBeenSet() const
+{
+    return m_notFixableActionHasBeenSet;
 }
 
 vector<string> VulFixableMachineItem::GetFixCommands() const

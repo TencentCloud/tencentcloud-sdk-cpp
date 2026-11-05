@@ -28,6 +28,7 @@
 #include <tencentcloud/csip/v20221121/model/VPRLabel.h>
 #include <tencentcloud/csip/v20221121/model/VulSpreadTrend.h>
 #include <tencentcloud/csip/v20221121/model/VulVendorProduct.h>
+#include <tencentcloud/csip/v20221121/model/VPRExplainInfo.h>
 
 
 namespace TencentCloud
@@ -792,6 +793,69 @@ false：未收录
                      */
                     bool AffectVendorProductHasBeenSet() const;
 
+                    /**
+                     * 获取<p>VPR暴露面信息</p>
+                     * @return VPRExplainInfo <p>VPR暴露面信息</p>
+                     * 
+                     */
+                    VPRExplainInfo GetVPRExplainInfo() const;
+
+                    /**
+                     * 设置<p>VPR暴露面信息</p>
+                     * @param _vPRExplainInfo <p>VPR暴露面信息</p>
+                     * 
+                     */
+                    void SetVPRExplainInfo(const VPRExplainInfo& _vPRExplainInfo);
+
+                    /**
+                     * 判断参数 VPRExplainInfo 是否已赋值
+                     * @return VPRExplainInfo 是否已赋值
+                     * 
+                     */
+                    bool VPRExplainInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最近扫描任务id(应急漏洞)</p>
+                     * @return ScanTaskId <p>最近扫描任务id(应急漏洞)</p>
+                     * 
+                     */
+                    uint64_t GetScanTaskId() const;
+
+                    /**
+                     * 设置<p>最近扫描任务id(应急漏洞)</p>
+                     * @param _scanTaskId <p>最近扫描任务id(应急漏洞)</p>
+                     * 
+                     */
+                    void SetScanTaskId(const uint64_t& _scanTaskId);
+
+                    /**
+                     * 判断参数 ScanTaskId 是否已赋值
+                     * @return ScanTaskId 是否已赋值
+                     * 
+                     */
+                    bool ScanTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>影响资产数(应急漏洞)</p>
+                     * @return AffectAsset <p>影响资产数(应急漏洞)</p>
+                     * 
+                     */
+                    uint64_t GetAffectAsset() const;
+
+                    /**
+                     * 设置<p>影响资产数(应急漏洞)</p>
+                     * @param _affectAsset <p>影响资产数(应急漏洞)</p>
+                     * 
+                     */
+                    void SetAffectAsset(const uint64_t& _affectAsset);
+
+                    /**
+                     * 判断参数 AffectAsset 是否已赋值
+                     * @return AffectAsset 是否已赋值
+                     * 
+                     */
+                    bool AffectAssetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1001,6 +1065,24 @@ false：未收录
                      */
                     std::vector<VulVendorProduct> m_affectVendorProduct;
                     bool m_affectVendorProductHasBeenSet;
+
+                    /**
+                     * <p>VPR暴露面信息</p>
+                     */
+                    VPRExplainInfo m_vPRExplainInfo;
+                    bool m_vPRExplainInfoHasBeenSet;
+
+                    /**
+                     * <p>最近扫描任务id(应急漏洞)</p>
+                     */
+                    uint64_t m_scanTaskId;
+                    bool m_scanTaskIdHasBeenSet;
+
+                    /**
+                     * <p>影响资产数(应急漏洞)</p>
+                     */
+                    uint64_t m_affectAsset;
+                    bool m_affectAssetHasBeenSet;
 
                 };
             }

@@ -33,6 +33,7 @@ DescribePreCacheImageTaskResponse::DescribePreCacheImageTaskResponse() :
     m_preCacheImageIdHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_cachedImageSizeBytesHasBeenSet(false),
+    m_readyTimeHasBeenSet(false),
     m_lastUsedTimeHasBeenSet(false)
 {
 }
@@ -161,6 +162,16 @@ CoreInternalOutcome DescribePreCacheImageTaskResponse::Deserialize(const string 
         m_cachedImageSizeBytesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ReadyTime") && !rsp["ReadyTime"].IsNull())
+    {
+        if (!rsp["ReadyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReadyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_readyTime = string(rsp["ReadyTime"].GetString());
+        m_readyTimeHasBeenSet = true;
+    }
+
     if (rsp.HasMember("LastUsedTime") && !rsp["LastUsedTime"].IsNull())
     {
         if (!rsp["LastUsedTime"].IsString())
@@ -251,6 +262,14 @@ string DescribePreCacheImageTaskResponse::ToJsonString() const
         string key = "CachedImageSizeBytes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cachedImageSizeBytes, allocator);
+    }
+
+    if (m_readyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_readyTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastUsedTimeHasBeenSet)
@@ -361,6 +380,16 @@ int64_t DescribePreCacheImageTaskResponse::GetCachedImageSizeBytes() const
 bool DescribePreCacheImageTaskResponse::CachedImageSizeBytesHasBeenSet() const
 {
     return m_cachedImageSizeBytesHasBeenSet;
+}
+
+string DescribePreCacheImageTaskResponse::GetReadyTime() const
+{
+    return m_readyTime;
+}
+
+bool DescribePreCacheImageTaskResponse::ReadyTimeHasBeenSet() const
+{
+    return m_readyTimeHasBeenSet;
 }
 
 string DescribePreCacheImageTaskResponse::GetLastUsedTime() const

@@ -36,7 +36,8 @@ CreateBenchmarkTaskRequest::CreateBenchmarkTaskRequest() :
     m_resourcePartitionIdHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_billingItemHasBeenSet(false),
-    m_specHasBeenSet(false)
+    m_specHasBeenSet(false),
+    m_modelIdentifierHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,14 @@ string CreateBenchmarkTaskRequest::ToJsonString() const
         string key = "Spec";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_spec, allocator);
+    }
+
+    if (m_modelIdentifierHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelIdentifier";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelIdentifier.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -389,6 +398,22 @@ void CreateBenchmarkTaskRequest::SetSpec(const int64_t& _spec)
 bool CreateBenchmarkTaskRequest::SpecHasBeenSet() const
 {
     return m_specHasBeenSet;
+}
+
+string CreateBenchmarkTaskRequest::GetModelIdentifier() const
+{
+    return m_modelIdentifier;
+}
+
+void CreateBenchmarkTaskRequest::SetModelIdentifier(const string& _modelIdentifier)
+{
+    m_modelIdentifier = _modelIdentifier;
+    m_modelIdentifierHasBeenSet = true;
+}
+
+bool CreateBenchmarkTaskRequest::ModelIdentifierHasBeenSet() const
+{
+    return m_modelIdentifierHasBeenSet;
 }
 
 

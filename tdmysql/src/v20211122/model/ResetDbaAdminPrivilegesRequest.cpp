@@ -23,7 +23,8 @@ using namespace TencentCloud::Tdmysql::V20211122::Model;
 using namespace std;
 
 ResetDbaAdminPrivilegesRequest::ResetDbaAdminPrivilegesRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_hostHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string ResetDbaAdminPrivilegesRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Host";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_host.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void ResetDbaAdminPrivilegesRequest::SetInstanceId(const string& _instanceId)
 bool ResetDbaAdminPrivilegesRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string ResetDbaAdminPrivilegesRequest::GetHost() const
+{
+    return m_host;
+}
+
+void ResetDbaAdminPrivilegesRequest::SetHost(const string& _host)
+{
+    m_host = _host;
+    m_hostHasBeenSet = true;
+}
+
+bool ResetDbaAdminPrivilegesRequest::HostHasBeenSet() const
+{
+    return m_hostHasBeenSet;
 }
 
 

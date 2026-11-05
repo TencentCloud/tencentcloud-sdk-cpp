@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>DbaAdmin的host</p>
+                     * @return Host <p>DbaAdmin的host</p>
+                     * 
+                     */
+                    std::string GetHost() const;
+
+                    /**
+                     * 设置<p>DbaAdmin的host</p>
+                     * @param _host <p>DbaAdmin的host</p>
+                     * 
+                     */
+                    void SetHost(const std::string& _host);
+
+                    /**
+                     * 判断参数 Host 是否已赋值
+                     * @return Host 是否已赋值
+                     * 
+                     */
+                    bool HostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>DbaAdmin的host</p>
+                     */
+                    std::string m_host;
+                    bool m_hostHasBeenSet;
 
                 };
             }

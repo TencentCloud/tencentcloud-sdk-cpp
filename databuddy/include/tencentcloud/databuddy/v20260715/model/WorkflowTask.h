@@ -55,18 +55,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务参数
+                     * 获取<p>任务参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParamList 任务参数
+                     * @return ParamList <p>任务参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ParamInfo> GetParamList() const;
 
                     /**
-                     * 设置任务参数
+                     * 设置<p>任务参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _paramList 任务参数
+                     * @param _paramList <p>任务参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -80,18 +80,18 @@ namespace TencentCloud
                     bool ParamListHasBeenSet() const;
 
                     /**
-                     * 获取任务依赖
+                     * 获取<p>任务依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DependOnList 任务依赖
+                     * @return DependOnList <p>任务依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DependOnBrief> GetDependOnList() const;
 
                     /**
-                     * 设置任务依赖
+                     * 设置<p>任务依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dependOnList 任务依赖
+                     * @param _dependOnList <p>任务依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -105,18 +105,18 @@ namespace TencentCloud
                     bool DependOnListHasBeenSet() const;
 
                     /**
-                     * 获取任务ID，创建时无需传入，由服务端生成
+                     * 获取<p>任务ID，创建时无需传入，由服务端生成</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskId 任务ID，创建时无需传入，由服务端生成
+                     * @return TaskId <p>任务ID，创建时无需传入，由服务端生成</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID，创建时无需传入，由服务端生成
+                     * 设置<p>任务ID，创建时无需传入，由服务端生成</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskId 任务ID，创建时无需传入，由服务端生成
+                     * @param _taskId <p>任务ID，创建时无需传入，由服务端生成</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -130,18 +130,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名称
+                     * 获取<p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskName 任务名称
+                     * @return TaskName <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
-                     * 设置任务名称
+                     * 设置<p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskName 任务名称
+                     * @param _taskName <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -155,18 +155,18 @@ namespace TencentCloud
                     bool TaskNameHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
+                     * 获取<p>任务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskType 任务类型
+                     * @return TaskType <p>任务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskType GetTaskType() const;
 
                     /**
-                     * 设置任务类型
+                     * 设置<p>任务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskType 任务类型
+                     * @param _taskType <p>任务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -180,18 +180,18 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源组ID，可通过资源组相关接口获取
+                     * 获取<p>计算资源组ID，计算资源取值通过 ListComputeResourceOptions 接口获取，入参 ResourceTypes 需按任务类型传值：DATA_INTEGRATION 传 [1]（平台集群），PYTHON/NOTEBOOK/RAY_JOB/DATA_QUALITY/IF_ELSE 传 [2]（作业集群），SQL 传 [2,3]（交互式+作业集群），其余任务类型无需填写本字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceGroupId 资源组ID，可通过资源组相关接口获取
+                     * @return ResourceGroupId <p>计算资源组ID，计算资源取值通过 ListComputeResourceOptions 接口获取，入参 ResourceTypes 需按任务类型传值：DATA_INTEGRATION 传 [1]（平台集群），PYTHON/NOTEBOOK/RAY_JOB/DATA_QUALITY/IF_ELSE 传 [2]（作业集群），SQL 传 [2,3]（交互式+作业集群），其余任务类型无需填写本字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceGroupId() const;
 
                     /**
-                     * 设置资源组ID，可通过资源组相关接口获取
+                     * 设置<p>计算资源组ID，计算资源取值通过 ListComputeResourceOptions 接口获取，入参 ResourceTypes 需按任务类型传值：DATA_INTEGRATION 传 [1]（平台集群），PYTHON/NOTEBOOK/RAY_JOB/DATA_QUALITY/IF_ELSE 传 [2]（作业集群），SQL 传 [2,3]（交互式+作业集群），其余任务类型无需填写本字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceGroupId 资源组ID，可通过资源组相关接口获取
+                     * @param _resourceGroupId <p>计算资源组ID，计算资源取值通过 ListComputeResourceOptions 接口获取，入参 ResourceTypes 需按任务类型传值：DATA_INTEGRATION 传 [1]（平台集群），PYTHON/NOTEBOOK/RAY_JOB/DATA_QUALITY/IF_ELSE 传 [2]（作业集群），SQL 传 [2,3]（交互式+作业集群），其余任务类型无需填写本字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -205,18 +205,18 @@ namespace TencentCloud
                     bool ResourceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取任务描述
+                     * 获取<p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 任务描述
+                     * @return Description <p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置任务描述
+                     * 设置<p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 任务描述
+                     * @param _description <p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -230,18 +230,18 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取任务告警
+                     * 获取<p>任务告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Alarm 任务告警
+                     * @return Alarm <p>任务告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AlarmBrief GetAlarm() const;
 
                     /**
-                     * 设置任务告警
+                     * 设置<p>任务告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _alarm 任务告警
+                     * @param _alarm <p>任务告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -255,18 +255,18 @@ namespace TencentCloud
                     bool AlarmHasBeenSet() const;
 
                     /**
-                     * 获取监控指标
+                     * 获取<p>监控指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MonitorMetric 监控指标
+                     * @return MonitorMetric <p>监控指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MonitorMetricBrief GetMonitorMetric() const;
 
                     /**
-                     * 设置监控指标
+                     * 设置<p>监控指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _monitorMetric 监控指标
+                     * @param _monitorMetric <p>监控指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -280,18 +280,18 @@ namespace TencentCloud
                     bool MonitorMetricHasBeenSet() const;
 
                     /**
-                     * 获取任务重试策略
+                     * 获取<p>任务重试策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskRetryStrategy 任务重试策略
+                     * @return TaskRetryStrategy <p>任务重试策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskRetryStrategy GetTaskRetryStrategy() const;
 
                     /**
-                     * 设置任务重试策略
+                     * 设置<p>任务重试策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskRetryStrategy 任务重试策略
+                     * @param _taskRetryStrategy <p>任务重试策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -330,18 +330,18 @@ namespace TencentCloud
                     bool DependOnRunConditionHasBeenSet() const;
 
                     /**
-                     * 获取任务X坐标
+                     * 获取<p>任务X坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LeftCoordinate 任务X坐标
+                     * @return LeftCoordinate <p>任务X坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetLeftCoordinate() const;
 
                     /**
-                     * 设置任务X坐标
+                     * 设置<p>任务X坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _leftCoordinate 任务X坐标
+                     * @param _leftCoordinate <p>任务X坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -355,18 +355,18 @@ namespace TencentCloud
                     bool LeftCoordinateHasBeenSet() const;
 
                     /**
-                     * 获取任务Y坐标
+                     * 获取<p>任务Y坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopCoordinate 任务Y坐标
+                     * @return TopCoordinate <p>任务Y坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTopCoordinate() const;
 
                     /**
-                     * 设置任务Y坐标
+                     * 设置<p>任务Y坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topCoordinate 任务Y坐标
+                     * @param _topCoordinate <p>任务Y坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -507,70 +507,70 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务参数
+                     * <p>任务参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ParamInfo> m_paramList;
                     bool m_paramListHasBeenSet;
 
                     /**
-                     * 任务依赖
+                     * <p>任务依赖</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DependOnBrief> m_dependOnList;
                     bool m_dependOnListHasBeenSet;
 
                     /**
-                     * 任务ID，创建时无需传入，由服务端生成
+                     * <p>任务ID，创建时无需传入，由服务端生成</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务名称
+                     * <p>任务名称</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * <p>任务类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskType m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 资源组ID，可通过资源组相关接口获取
+                     * <p>计算资源组ID，计算资源取值通过 ListComputeResourceOptions 接口获取，入参 ResourceTypes 需按任务类型传值：DATA_INTEGRATION 传 [1]（平台集群），PYTHON/NOTEBOOK/RAY_JOB/DATA_QUALITY/IF_ELSE 传 [2]（作业集群），SQL 传 [2,3]（交互式+作业集群），其余任务类型无需填写本字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroupId;
                     bool m_resourceGroupIdHasBeenSet;
 
                     /**
-                     * 任务描述
+                     * <p>任务描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 任务告警
+                     * <p>任务告警</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AlarmBrief m_alarm;
                     bool m_alarmHasBeenSet;
 
                     /**
-                     * 监控指标
+                     * <p>监控指标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MonitorMetricBrief m_monitorMetric;
                     bool m_monitorMetricHasBeenSet;
 
                     /**
-                     * 任务重试策略
+                     * <p>任务重试策略</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskRetryStrategy m_taskRetryStrategy;
@@ -584,14 +584,14 @@ namespace TencentCloud
                     bool m_dependOnRunConditionHasBeenSet;
 
                     /**
-                     * 任务X坐标
+                     * <p>任务X坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_leftCoordinate;
                     bool m_leftCoordinateHasBeenSet;
 
                     /**
-                     * 任务Y坐标
+                     * <p>任务Y坐标</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_topCoordinate;

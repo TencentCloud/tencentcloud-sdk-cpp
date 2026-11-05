@@ -34,6 +34,7 @@
 #include <tencentcloud/adp/v20260520/model/AppSharedKbInfo.h>
 #include <tencentcloud/adp/v20260520/model/PortalShareConfig.h>
 #include <tencentcloud/adp/v20260520/model/FileVolumeMount.h>
+#include <tencentcloud/adp/v20260520/model/A2AConfig.h>
 
 
 namespace TencentCloud
@@ -306,6 +307,31 @@ namespace TencentCloud
                      */
                     bool FileVolumeMountListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>A2A配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return A2AConfig <p>A2A配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    A2AConfig GetA2AConfig() const;
+
+                    /**
+                     * 设置<p>A2A配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _a2AConfig <p>A2A配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetA2AConfig(const A2AConfig& _a2AConfig);
+
+                    /**
+                     * 判断参数 A2AConfig 是否已赋值
+                     * @return A2AConfig 是否已赋值
+                     * 
+                     */
+                    bool A2AConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -377,6 +403,13 @@ namespace TencentCloud
                      */
                     std::vector<FileVolumeMount> m_fileVolumeMountList;
                     bool m_fileVolumeMountListHasBeenSet;
+
+                    /**
+                     * <p>A2A配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    A2AConfig m_a2AConfig;
+                    bool m_a2AConfigHasBeenSet;
 
                 };
             }

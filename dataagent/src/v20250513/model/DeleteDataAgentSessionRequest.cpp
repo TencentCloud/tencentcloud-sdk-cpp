@@ -25,7 +25,8 @@ using namespace std;
 DeleteDataAgentSessionRequest::DeleteDataAgentSessionRequest() :
     m_instanceIdHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_sessionIdsHasBeenSet(false)
+    m_sessionIdsHasBeenSet(false),
+    m_surfaceContextHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,15 @@ string DeleteDataAgentSessionRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_surfaceContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SurfaceContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_surfaceContext.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -119,6 +129,22 @@ void DeleteDataAgentSessionRequest::SetSessionIds(const vector<string>& _session
 bool DeleteDataAgentSessionRequest::SessionIdsHasBeenSet() const
 {
     return m_sessionIdsHasBeenSet;
+}
+
+SurfaceContext DeleteDataAgentSessionRequest::GetSurfaceContext() const
+{
+    return m_surfaceContext;
+}
+
+void DeleteDataAgentSessionRequest::SetSurfaceContext(const SurfaceContext& _surfaceContext)
+{
+    m_surfaceContext = _surfaceContext;
+    m_surfaceContextHasBeenSet = true;
+}
+
+bool DeleteDataAgentSessionRequest::SurfaceContextHasBeenSet() const
+{
+    return m_surfaceContextHasBeenSet;
 }
 
 

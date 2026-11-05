@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dataagent/v20250513/model/SurfaceContext.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取会话ID
-                     * @return SessionId 会话ID
+                     * 获取<p>会话ID</p>
+                     * @return SessionId <p>会话ID</p>
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置会话ID
-                     * @param _sessionId 会话ID
+                     * 设置<p>会话ID</p>
+                     * @param _sessionId <p>会话ID</p>
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取批量删除 会话id 列表
-                     * @return SessionIds 批量删除 会话id 列表
+                     * 获取<p>批量删除 会话id 列表</p>
+                     * @return SessionIds <p>批量删除 会话id 列表</p>
                      * 
                      */
                     std::vector<std::string> GetSessionIds() const;
 
                     /**
-                     * 设置批量删除 会话id 列表
-                     * @param _sessionIds 批量删除 会话id 列表
+                     * 设置<p>批量删除 会话id 列表</p>
+                     * @param _sessionIds <p>批量删除 会话id 列表</p>
                      * 
                      */
                     void SetSessionIds(const std::vector<std::string>& _sessionIds);
@@ -105,25 +106,52 @@ namespace TencentCloud
                      */
                     bool SessionIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>上下文</p>
+                     * @return SurfaceContext <p>上下文</p>
+                     * 
+                     */
+                    SurfaceContext GetSurfaceContext() const;
+
+                    /**
+                     * 设置<p>上下文</p>
+                     * @param _surfaceContext <p>上下文</p>
+                     * 
+                     */
+                    void SetSurfaceContext(const SurfaceContext& _surfaceContext);
+
+                    /**
+                     * 判断参数 SurfaceContext 是否已赋值
+                     * @return SurfaceContext 是否已赋值
+                     * 
+                     */
+                    bool SurfaceContextHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 会话ID
+                     * <p>会话ID</p>
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 批量删除 会话id 列表
+                     * <p>批量删除 会话id 列表</p>
                      */
                     std::vector<std::string> m_sessionIds;
                     bool m_sessionIdsHasBeenSet;
+
+                    /**
+                     * <p>上下文</p>
+                     */
+                    SurfaceContext m_surfaceContext;
+                    bool m_surfaceContextHasBeenSet;
 
                 };
             }

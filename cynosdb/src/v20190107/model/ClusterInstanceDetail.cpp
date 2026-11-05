@@ -50,6 +50,7 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_dbModeHasBeenSet(false),
     m_nodeListHasBeenSet(false),
     m_serverlessStatusHasBeenSet(false),
+    m_serverlessQuotaInfoHasBeenSet(false),
     m_aIOptimizerStatusHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_regionHasBeenSet(false),
@@ -396,6 +397,23 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         }
         m_serverlessStatus = string(value["ServerlessStatus"].GetString());
         m_serverlessStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServerlessQuotaInfo") && !value["ServerlessQuotaInfo"].IsNull())
+    {
+        if (!value["ServerlessQuotaInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.ServerlessQuotaInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_serverlessQuotaInfo.Deserialize(value["ServerlessQuotaInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_serverlessQuotaInfoHasBeenSet = true;
     }
 
     if (value.HasMember("AIOptimizerStatus") && !value["AIOptimizerStatus"].IsNull())
@@ -1036,6 +1054,15 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ServerlessStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serverlessStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverlessQuotaInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerlessQuotaInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serverlessQuotaInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_aIOptimizerStatusHasBeenSet)
@@ -1798,6 +1825,22 @@ void ClusterInstanceDetail::SetServerlessStatus(const string& _serverlessStatus)
 bool ClusterInstanceDetail::ServerlessStatusHasBeenSet() const
 {
     return m_serverlessStatusHasBeenSet;
+}
+
+InstanceServerlessQuotaInfo ClusterInstanceDetail::GetServerlessQuotaInfo() const
+{
+    return m_serverlessQuotaInfo;
+}
+
+void ClusterInstanceDetail::SetServerlessQuotaInfo(const InstanceServerlessQuotaInfo& _serverlessQuotaInfo)
+{
+    m_serverlessQuotaInfo = _serverlessQuotaInfo;
+    m_serverlessQuotaInfoHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::ServerlessQuotaInfoHasBeenSet() const
+{
+    return m_serverlessQuotaInfoHasBeenSet;
 }
 
 AIOptimizerStatus ClusterInstanceDetail::GetAIOptimizerStatus() const

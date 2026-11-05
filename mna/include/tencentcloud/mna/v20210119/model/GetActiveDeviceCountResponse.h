@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取激活设备统计
-                     * @return ActiveDeviceList 激活设备统计
+                     * 获取<p>激活设备统计</p>
+                     * @return ActiveDeviceList <p>激活设备统计</p>
                      * 
                      */
                     std::vector<ActiveDeviceList> GetActiveDeviceList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ActiveDeviceListHasBeenSet() const;
 
                     /**
-                     * 获取查询粒度，0:day, 1:week, 2:month, 不传默认为day
-                     * @return Period 查询粒度，0:day, 1:week, 2:month, 不传默认为day
+                     * 获取<p>查询粒度，0:day, 1:week, 2:month, 不传默认为day</p>
+                     * @return Period <p>查询粒度，0:day, 1:week, 2:month, 不传默认为day</p>
                      * 
                      */
                     int64_t GetPeriod() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取设备组
-                     * @return DevGroup 设备组
+                     * 获取<p>设备组</p>
+                     * @return DevGroup <p>设备组</p>
                      * 
                      */
                     std::string GetDevGroup() const;
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool DevGroupHasBeenSet() const;
 
                     /**
-                     * 获取license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权
-                     * @return LicenseType license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权
+                     * 获取<p>license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权</p>
+                     * @return LicenseType <p>license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权</p>
                      * 
                      */
                     std::string GetLicenseType() const;
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool LicenseTypeHasBeenSet() const;
 
                     /**
-                     * 获取租户ID
-                     * @return AppId 租户ID
+                     * 获取<p>租户ID</p>
+                     * @return AppId <p>租户ID</p>
                      * 
                      */
                     std::string GetAppId() const;
@@ -145,43 +145,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 激活设备统计
+                     * <p>激活设备统计</p>
                      */
                     std::vector<ActiveDeviceList> m_activeDeviceList;
                     bool m_activeDeviceListHasBeenSet;
 
                     /**
-                     * 查询粒度，0:day, 1:week, 2:month, 不传默认为day
+                     * <p>查询粒度，0:day, 1:week, 2:month, 不传默认为day</p>
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 设备组
+                     * <p>设备组</p>
                      */
                     std::string m_devGroup;
                     bool m_devGroupHasBeenSet;
 
                     /**
-                     * license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权
+                     * <p>license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权</p>
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;
 
                     /**
-                     * 租户ID
+                     * <p>租户ID</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;

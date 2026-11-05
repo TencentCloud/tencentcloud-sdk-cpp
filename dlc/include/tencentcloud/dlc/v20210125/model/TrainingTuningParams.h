@@ -676,6 +676,174 @@ namespace TencentCloud
                      */
                     bool GpuMemoryUtilizationHasBeenSet() const;
 
+                    /**
+                     * 获取<p>Actor Token 上限 / GPU</p>
+                     * @return PPOMaxTokenLenPerGpu <p>Actor Token 上限 / GPU</p>
+                     * 
+                     */
+                    int64_t GetPPOMaxTokenLenPerGpu() const;
+
+                    /**
+                     * 设置<p>Actor Token 上限 / GPU</p>
+                     * @param _pPOMaxTokenLenPerGpu <p>Actor Token 上限 / GPU</p>
+                     * 
+                     */
+                    void SetPPOMaxTokenLenPerGpu(const int64_t& _pPOMaxTokenLenPerGpu);
+
+                    /**
+                     * 判断参数 PPOMaxTokenLenPerGpu 是否已赋值
+                     * @return PPOMaxTokenLenPerGpu 是否已赋值
+                     * 
+                     */
+                    bool PPOMaxTokenLenPerGpuHasBeenSet() const;
+
+                    /**
+                     * 获取<p>LogProb Token 上限 / GPU</p>
+                     * @return LogProbMaxTokenLenPerGpu <p>LogProb Token 上限 / GPU</p>
+                     * 
+                     */
+                    int64_t GetLogProbMaxTokenLenPerGpu() const;
+
+                    /**
+                     * 设置<p>LogProb Token 上限 / GPU</p>
+                     * @param _logProbMaxTokenLenPerGpu <p>LogProb Token 上限 / GPU</p>
+                     * 
+                     */
+                    void SetLogProbMaxTokenLenPerGpu(const int64_t& _logProbMaxTokenLenPerGpu);
+
+                    /**
+                     * 判断参数 LogProbMaxTokenLenPerGpu 是否已赋值
+                     * @return LogProbMaxTokenLenPerGpu 是否已赋值
+                     * 
+                     */
+                    bool LogProbMaxTokenLenPerGpuHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Actor 参数 Offload</p>
+                     * @return ActorParamOffload <p>Actor 参数 Offload</p>
+                     * 
+                     */
+                    bool GetActorParamOffload() const;
+
+                    /**
+                     * 设置<p>Actor 参数 Offload</p>
+                     * @param _actorParamOffload <p>Actor 参数 Offload</p>
+                     * 
+                     */
+                    void SetActorParamOffload(const bool& _actorParamOffload);
+
+                    /**
+                     * 判断参数 ActorParamOffload 是否已赋值
+                     * @return ActorParamOffload 是否已赋值
+                     * 
+                     */
+                    bool ActorParamOffloadHasBeenSet() const;
+
+                    /**
+                     * 获取<p>优化器 Offload</p>
+                     * @return ActorOptimizerOffload <p>优化器 Offload</p>
+                     * 
+                     */
+                    bool GetActorOptimizerOffload() const;
+
+                    /**
+                     * 设置<p>优化器 Offload</p>
+                     * @param _actorOptimizerOffload <p>优化器 Offload</p>
+                     * 
+                     */
+                    void SetActorOptimizerOffload(const bool& _actorOptimizerOffload);
+
+                    /**
+                     * 判断参数 ActorOptimizerOffload 是否已赋值
+                     * @return ActorOptimizerOffload 是否已赋值
+                     * 
+                     */
+                    bool ActorOptimizerOffloadHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Ref 参数 Offload</p>
+                     * @return RefParamOffload <p>Ref 参数 Offload</p>
+                     * 
+                     */
+                    bool GetRefParamOffload() const;
+
+                    /**
+                     * 设置<p>Ref 参数 Offload</p>
+                     * @param _refParamOffload <p>Ref 参数 Offload</p>
+                     * 
+                     */
+                    void SetRefParamOffload(const bool& _refParamOffload);
+
+                    /**
+                     * 判断参数 RefParamOffload 是否已赋值
+                     * @return RefParamOffload 是否已赋值
+                     * 
+                     */
+                    bool RefParamOffloadHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Actor Micro Batch / GPU</p>
+                     * @return PPOMicroBatchSizePerGpu <p>Actor Micro Batch / GPU</p>
+                     * 
+                     */
+                    int64_t GetPPOMicroBatchSizePerGpu() const;
+
+                    /**
+                     * 设置<p>Actor Micro Batch / GPU</p>
+                     * @param _pPOMicroBatchSizePerGpu <p>Actor Micro Batch / GPU</p>
+                     * 
+                     */
+                    void SetPPOMicroBatchSizePerGpu(const int64_t& _pPOMicroBatchSizePerGpu);
+
+                    /**
+                     * 判断参数 PPOMicroBatchSizePerGpu 是否已赋值
+                     * @return PPOMicroBatchSizePerGpu 是否已赋值
+                     * 
+                     */
+                    bool PPOMicroBatchSizePerGpuHasBeenSet() const;
+
+                    /**
+                     * 获取<p>LogProb Micro Batch / GPU</p>
+                     * @return RollOutLogProbMicroBatchSizePerGpu <p>LogProb Micro Batch / GPU</p>
+                     * 
+                     */
+                    int64_t GetRollOutLogProbMicroBatchSizePerGpu() const;
+
+                    /**
+                     * 设置<p>LogProb Micro Batch / GPU</p>
+                     * @param _rollOutLogProbMicroBatchSizePerGpu <p>LogProb Micro Batch / GPU</p>
+                     * 
+                     */
+                    void SetRollOutLogProbMicroBatchSizePerGpu(const int64_t& _rollOutLogProbMicroBatchSizePerGpu);
+
+                    /**
+                     * 判断参数 RollOutLogProbMicroBatchSizePerGpu 是否已赋值
+                     * @return RollOutLogProbMicroBatchSizePerGpu 是否已赋值
+                     * 
+                     */
+                    bool RollOutLogProbMicroBatchSizePerGpuHasBeenSet() const;
+
+                    /**
+                     * 获取<p>直接追加为命令行 override，优先级最高</p>
+                     * @return GRPORawOverrides <p>直接追加为命令行 override，优先级最高</p>
+                     * 
+                     */
+                    std::string GetGRPORawOverrides() const;
+
+                    /**
+                     * 设置<p>直接追加为命令行 override，优先级最高</p>
+                     * @param _gRPORawOverrides <p>直接追加为命令行 override，优先级最高</p>
+                     * 
+                     */
+                    void SetGRPORawOverrides(const std::string& _gRPORawOverrides);
+
+                    /**
+                     * 判断参数 GRPORawOverrides 是否已赋值
+                     * @return GRPORawOverrides 是否已赋值
+                     * 
+                     */
+                    bool GRPORawOverridesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -857,6 +1025,54 @@ namespace TencentCloud
                      */
                     double m_gpuMemoryUtilization;
                     bool m_gpuMemoryUtilizationHasBeenSet;
+
+                    /**
+                     * <p>Actor Token 上限 / GPU</p>
+                     */
+                    int64_t m_pPOMaxTokenLenPerGpu;
+                    bool m_pPOMaxTokenLenPerGpuHasBeenSet;
+
+                    /**
+                     * <p>LogProb Token 上限 / GPU</p>
+                     */
+                    int64_t m_logProbMaxTokenLenPerGpu;
+                    bool m_logProbMaxTokenLenPerGpuHasBeenSet;
+
+                    /**
+                     * <p>Actor 参数 Offload</p>
+                     */
+                    bool m_actorParamOffload;
+                    bool m_actorParamOffloadHasBeenSet;
+
+                    /**
+                     * <p>优化器 Offload</p>
+                     */
+                    bool m_actorOptimizerOffload;
+                    bool m_actorOptimizerOffloadHasBeenSet;
+
+                    /**
+                     * <p>Ref 参数 Offload</p>
+                     */
+                    bool m_refParamOffload;
+                    bool m_refParamOffloadHasBeenSet;
+
+                    /**
+                     * <p>Actor Micro Batch / GPU</p>
+                     */
+                    int64_t m_pPOMicroBatchSizePerGpu;
+                    bool m_pPOMicroBatchSizePerGpuHasBeenSet;
+
+                    /**
+                     * <p>LogProb Micro Batch / GPU</p>
+                     */
+                    int64_t m_rollOutLogProbMicroBatchSizePerGpu;
+                    bool m_rollOutLogProbMicroBatchSizePerGpuHasBeenSet;
+
+                    /**
+                     * <p>直接追加为命令行 override，优先级最高</p>
+                     */
+                    std::string m_gRPORawOverrides;
+                    bool m_gRPORawOverridesHasBeenSet;
 
                 };
             }

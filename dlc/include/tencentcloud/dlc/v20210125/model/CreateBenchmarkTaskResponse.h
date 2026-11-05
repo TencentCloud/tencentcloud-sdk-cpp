@@ -339,6 +339,20 @@ namespace TencentCloud
                      */
                     bool ResourcesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;</p>
+                     * @return ModelIdentifier <p>&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;</p>
+                     * 
+                     */
+                    std::string GetModelIdentifier() const;
+
+                    /**
+                     * 判断参数 ModelIdentifier 是否已赋值
+                     * @return ModelIdentifier 是否已赋值
+                     * 
+                     */
+                    bool ModelIdentifierHasBeenSet() const;
+
                 private:
 
                     /**
@@ -466,6 +480,12 @@ namespace TencentCloud
                      */
                     BenchmarkResourceInfo m_resources;
                     bool m_resourcesHasBeenSet;
+
+                    /**
+                     * <p>&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;</p>
+                     */
+                    std::string m_modelIdentifier;
+                    bool m_modelIdentifierHasBeenSet;
 
                 };
             }

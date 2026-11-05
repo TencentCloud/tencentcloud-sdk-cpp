@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeVoicesRequest::DescribeVoicesRequest() :
     m_subAppIdHasBeenSet(false),
+    m_modelNameHasBeenSet(false),
     m_voiceIdHasBeenSet(false),
     m_voiceTypeHasBeenSet(false),
     m_voiceNameHasBeenSet(false),
@@ -50,6 +51,14 @@ string DescribeVoicesRequest::ToJsonString() const
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_voiceIdHasBeenSet)
@@ -169,6 +178,22 @@ void DescribeVoicesRequest::SetSubAppId(const string& _subAppId)
 bool DescribeVoicesRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+string DescribeVoicesRequest::GetModelName() const
+{
+    return m_modelName;
+}
+
+void DescribeVoicesRequest::SetModelName(const string& _modelName)
+{
+    m_modelName = _modelName;
+    m_modelNameHasBeenSet = true;
+}
+
+bool DescribeVoicesRequest::ModelNameHasBeenSet() const
+{
+    return m_modelNameHasBeenSet;
 }
 
 string DescribeVoicesRequest::GetVoiceId() const

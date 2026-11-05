@@ -59,7 +59,8 @@ CynosdbInstanceDetail::CynosdbInstanceDetail() :
     m_masterZoneHasBeenSet(false),
     m_realZoneHasBeenSet(false),
     m_slaveZonesHasBeenSet(false),
-    m_storageVersionHasBeenSet(false)
+    m_storageVersionHasBeenSet(false),
+    m_serverlessQuotaInfoHasBeenSet(false)
 {
 }
 
@@ -461,6 +462,23 @@ CoreInternalOutcome CynosdbInstanceDetail::Deserialize(const rapidjson::Value &v
         m_storageVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ServerlessQuotaInfo") && !value["ServerlessQuotaInfo"].IsNull())
+    {
+        if (!value["ServerlessQuotaInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceDetail.ServerlessQuotaInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_serverlessQuotaInfo.Deserialize(value["ServerlessQuotaInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_serverlessQuotaInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -783,6 +801,15 @@ void CynosdbInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "StorageVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storageVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverlessQuotaInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerlessQuotaInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serverlessQuotaInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1410,5 +1437,21 @@ void CynosdbInstanceDetail::SetStorageVersion(const string& _storageVersion)
 bool CynosdbInstanceDetail::StorageVersionHasBeenSet() const
 {
     return m_storageVersionHasBeenSet;
+}
+
+InstanceServerlessQuotaInfo CynosdbInstanceDetail::GetServerlessQuotaInfo() const
+{
+    return m_serverlessQuotaInfo;
+}
+
+void CynosdbInstanceDetail::SetServerlessQuotaInfo(const InstanceServerlessQuotaInfo& _serverlessQuotaInfo)
+{
+    m_serverlessQuotaInfo = _serverlessQuotaInfo;
+    m_serverlessQuotaInfoHasBeenSet = true;
+}
+
+bool CynosdbInstanceDetail::ServerlessQuotaInfoHasBeenSet() const
+{
+    return m_serverlessQuotaInfoHasBeenSet;
 }
 

@@ -49,7 +49,8 @@ StopDeploymentResponse::StopDeploymentResponse() :
     m_imageHasBeenSet(false),
     m_imagePullTypeHasBeenSet(false),
     m_imagePullPolicyHasBeenSet(false),
-    m_resourcePartitionNameHasBeenSet(false)
+    m_resourcePartitionNameHasBeenSet(false),
+    m_loraBindingsHasBeenSet(false)
 {
 }
 
@@ -347,6 +348,26 @@ CoreInternalOutcome StopDeploymentResponse::Deserialize(const string &payload)
         m_resourcePartitionNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LoraBindings") && !rsp["LoraBindings"].IsNull())
+    {
+        if (!rsp["LoraBindings"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoraBindings` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["LoraBindings"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LoraItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_loraBindings.push_back(item);
+        }
+        m_loraBindingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -563,6 +584,21 @@ string StopDeploymentResponse::ToJsonString() const
         string key = "ResourcePartitionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourcePartitionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loraBindingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoraBindings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_loraBindings.begin(); itr != m_loraBindings.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -835,6 +871,16 @@ string StopDeploymentResponse::GetResourcePartitionName() const
 bool StopDeploymentResponse::ResourcePartitionNameHasBeenSet() const
 {
     return m_resourcePartitionNameHasBeenSet;
+}
+
+vector<LoraItem> StopDeploymentResponse::GetLoraBindings() const
+{
+    return m_loraBindings;
+}
+
+bool StopDeploymentResponse::LoraBindingsHasBeenSet() const
+{
+    return m_loraBindingsHasBeenSet;
 }
 
 

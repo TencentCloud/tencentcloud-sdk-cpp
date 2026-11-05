@@ -35,7 +35,10 @@ AddDeploymentRequest::AddDeploymentRequest() :
     m_autoscalingEnabledHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
-    m_networkConfigHasBeenSet(false)
+    m_networkConfigHasBeenSet(false),
+    m_loraBindingsHasBeenSet(false),
+    m_codePackageOriginalNameHasBeenSet(false),
+    m_codePackageUriHasBeenSet(false)
 {
 }
 
@@ -148,6 +151,37 @@ string AddDeploymentRequest::ToJsonString() const
         string key = "NetworkConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loraBindingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoraBindings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_loraBindings.begin(); itr != m_loraBindings.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_codePackageOriginalNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodePackageOriginalName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_codePackageOriginalName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codePackageUriHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodePackageUri";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_codePackageUri.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +398,54 @@ void AddDeploymentRequest::SetNetworkConfig(const string& _networkConfig)
 bool AddDeploymentRequest::NetworkConfigHasBeenSet() const
 {
     return m_networkConfigHasBeenSet;
+}
+
+vector<LoraAdapterBinding> AddDeploymentRequest::GetLoraBindings() const
+{
+    return m_loraBindings;
+}
+
+void AddDeploymentRequest::SetLoraBindings(const vector<LoraAdapterBinding>& _loraBindings)
+{
+    m_loraBindings = _loraBindings;
+    m_loraBindingsHasBeenSet = true;
+}
+
+bool AddDeploymentRequest::LoraBindingsHasBeenSet() const
+{
+    return m_loraBindingsHasBeenSet;
+}
+
+string AddDeploymentRequest::GetCodePackageOriginalName() const
+{
+    return m_codePackageOriginalName;
+}
+
+void AddDeploymentRequest::SetCodePackageOriginalName(const string& _codePackageOriginalName)
+{
+    m_codePackageOriginalName = _codePackageOriginalName;
+    m_codePackageOriginalNameHasBeenSet = true;
+}
+
+bool AddDeploymentRequest::CodePackageOriginalNameHasBeenSet() const
+{
+    return m_codePackageOriginalNameHasBeenSet;
+}
+
+string AddDeploymentRequest::GetCodePackageUri() const
+{
+    return m_codePackageUri;
+}
+
+void AddDeploymentRequest::SetCodePackageUri(const string& _codePackageUri)
+{
+    m_codePackageUri = _codePackageUri;
+    m_codePackageUriHasBeenSet = true;
+}
+
+bool AddDeploymentRequest::CodePackageUriHasBeenSet() const
+{
+    return m_codePackageUriHasBeenSet;
 }
 
 

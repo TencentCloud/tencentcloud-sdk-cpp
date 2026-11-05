@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/LoraItem.h>
 
 
 namespace TencentCloud
@@ -234,6 +235,54 @@ namespace TencentCloud
                     bool AutoscalingEnabledHasBeenSet() const;
 
                     /**
+                     * 获取<p>最小副本数（自动伸缩时使用）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MinReplicas <p>最小副本数（自动伸缩时使用）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMinReplicas() const;
+
+                    /**
+                     * 判断参数 MinReplicas 是否已赋值
+                     * @return MinReplicas 是否已赋值
+                     * 
+                     */
+                    bool MinReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最大副本数（自动伸缩时使用）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxReplicas <p>最大副本数（自动伸缩时使用）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMaxReplicas() const;
+
+                    /**
+                     * 判断参数 MaxReplicas 是否已赋值
+                     * @return MaxReplicas 是否已赋值
+                     * 
+                     */
+                    bool MaxReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取<p>弹性伸缩配置（JSON 字符串）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoscalerOptions <p>弹性伸缩配置（JSON 字符串）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAutoscalerOptions() const;
+
+                    /**
+                     * 判断参数 AutoscalerOptions 是否已赋值
+                     * @return AutoscalerOptions 是否已赋值
+                     * 
+                     */
+                    bool AutoscalerOptionsHasBeenSet() const;
+
+                    /**
                      * 获取<p>模型存储配置（Catalog JSON，记录模型 COS 挂载信息）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelStorageConfig <p>模型存储配置（Catalog JSON，记录模型 COS 挂载信息）</p>
@@ -330,6 +379,22 @@ namespace TencentCloud
                     bool NeutrinoServeIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>Ray Dashboard 访问地址（通过 Ingress 代理，仅 Running 状态的部署有值）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RayDashboardUrl <p>Ray Dashboard 访问地址（通过 Ingress 代理，仅 Running 状态的部署有值）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRayDashboardUrl() const;
+
+                    /**
+                     * 判断参数 RayDashboardUrl 是否已赋值
+                     * @return RayDashboardUrl 是否已赋值
+                     * 
+                     */
+                    bool RayDashboardUrlHasBeenSet() const;
+
+                    /**
                      * 获取<p>资源分区 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourcePartitionId <p>资源分区 ID</p>
@@ -417,6 +482,48 @@ namespace TencentCloud
                      */
                     bool AdvancedOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户代码包 URL</p>
+                     * @return CodePackageUri <p>用户代码包 URL</p>
+                     * 
+                     */
+                    std::string GetCodePackageUri() const;
+
+                    /**
+                     * 判断参数 CodePackageUri 是否已赋值
+                     * @return CodePackageUri 是否已赋值
+                     * 
+                     */
+                    bool CodePackageUriHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户上传代码包的原始文件名</p>
+                     * @return CodePackageOriginalName <p>用户上传代码包的原始文件名</p>
+                     * 
+                     */
+                    std::string GetCodePackageOriginalName() const;
+
+                    /**
+                     * 判断参数 CodePackageOriginalName 是否已赋值
+                     * @return CodePackageOriginalName 是否已赋值
+                     * 
+                     */
+                    bool CodePackageOriginalNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>部署当前挂载的 LoRA 模型版本列表。</p>
+                     * @return LoraBindings <p>部署当前挂载的 LoRA 模型版本列表。</p>
+                     * 
+                     */
+                    std::vector<LoraItem> GetLoraBindings() const;
+
+                    /**
+                     * 判断参数 LoraBindings 是否已赋值
+                     * @return LoraBindings 是否已赋值
+                     * 
+                     */
+                    bool LoraBindingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -503,6 +610,27 @@ namespace TencentCloud
                     bool m_autoscalingEnabledHasBeenSet;
 
                     /**
+                     * <p>最小副本数（自动伸缩时使用）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_minReplicas;
+                    bool m_minReplicasHasBeenSet;
+
+                    /**
+                     * <p>最大副本数（自动伸缩时使用）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxReplicas;
+                    bool m_maxReplicasHasBeenSet;
+
+                    /**
+                     * <p>弹性伸缩配置（JSON 字符串）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_autoscalerOptions;
+                    bool m_autoscalerOptionsHasBeenSet;
+
+                    /**
                      * <p>模型存储配置（Catalog JSON，记录模型 COS 挂载信息）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -545,6 +673,13 @@ namespace TencentCloud
                     bool m_neutrinoServeIdHasBeenSet;
 
                     /**
+                     * <p>Ray Dashboard 访问地址（通过 Ingress 代理，仅 Running 状态的部署有值）</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rayDashboardUrl;
+                    bool m_rayDashboardUrlHasBeenSet;
+
+                    /**
                      * <p>资源分区 ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -581,6 +716,24 @@ namespace TencentCloud
                      */
                     std::string m_advancedOptions;
                     bool m_advancedOptionsHasBeenSet;
+
+                    /**
+                     * <p>用户代码包 URL</p>
+                     */
+                    std::string m_codePackageUri;
+                    bool m_codePackageUriHasBeenSet;
+
+                    /**
+                     * <p>用户上传代码包的原始文件名</p>
+                     */
+                    std::string m_codePackageOriginalName;
+                    bool m_codePackageOriginalNameHasBeenSet;
+
+                    /**
+                     * <p>部署当前挂载的 LoRA 模型版本列表。</p>
+                     */
+                    std::vector<LoraItem> m_loraBindings;
+                    bool m_loraBindingsHasBeenSet;
 
                 };
             }

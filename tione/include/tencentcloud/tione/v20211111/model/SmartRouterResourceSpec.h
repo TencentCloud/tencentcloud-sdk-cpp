@@ -198,6 +198,27 @@ namespace TencentCloud
                      */
                     bool ResourceSupplyAttributeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源组类型（output only，查询时回显供前端区分资源组表单）。枚举值：NORMAL（托管资源组）/ SW（纳管资源组）。按量计费（ChargeType=POSTPAID_BY_HOUR）时为空；写入时仍以查询到的资源组实际类型为准，调用方无需传入</p>
+                     * @return ResourceGroupSWType <p>资源组类型（output only，查询时回显供前端区分资源组表单）。枚举值：NORMAL（托管资源组）/ SW（纳管资源组）。按量计费（ChargeType=POSTPAID_BY_HOUR）时为空；写入时仍以查询到的资源组实际类型为准，调用方无需传入</p>
+                     * 
+                     */
+                    std::string GetResourceGroupSWType() const;
+
+                    /**
+                     * 设置<p>资源组类型（output only，查询时回显供前端区分资源组表单）。枚举值：NORMAL（托管资源组）/ SW（纳管资源组）。按量计费（ChargeType=POSTPAID_BY_HOUR）时为空；写入时仍以查询到的资源组实际类型为准，调用方无需传入</p>
+                     * @param _resourceGroupSWType <p>资源组类型（output only，查询时回显供前端区分资源组表单）。枚举值：NORMAL（托管资源组）/ SW（纳管资源组）。按量计费（ChargeType=POSTPAID_BY_HOUR）时为空；写入时仍以查询到的资源组实际类型为准，调用方无需传入</p>
+                     * 
+                     */
+                    void SetResourceGroupSWType(const std::string& _resourceGroupSWType);
+
+                    /**
+                     * 判断参数 ResourceGroupSWType 是否已赋值
+                     * @return ResourceGroupSWType 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupSWTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +263,12 @@ namespace TencentCloud
                      */
                     ResourceSupplyAttribute m_resourceSupplyAttribute;
                     bool m_resourceSupplyAttributeHasBeenSet;
+
+                    /**
+                     * <p>资源组类型（output only，查询时回显供前端区分资源组表单）。枚举值：NORMAL（托管资源组）/ SW（纳管资源组）。按量计费（ChargeType=POSTPAID_BY_HOUR）时为空；写入时仍以查询到的资源组实际类型为准，调用方无需传入</p>
+                     */
+                    std::string m_resourceGroupSWType;
+                    bool m_resourceGroupSWTypeHasBeenSet;
 
                 };
             }

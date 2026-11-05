@@ -192,6 +192,27 @@ namespace TencentCloud
                     bool ResourceConfigHasBeenSet() const;
 
                     /**
+                     * 获取<p>启动参数（可选，单个字符串，如 &quot;--workers 4&quot;）；分词后追加在平台固定命令之后，下次 start 时生效。平台保留参数（--host/--port/--backend-store-uri 等）不允许指定；不传或空白为默认命令</p>
+                     * @return ServerArgs <p>启动参数（可选，单个字符串，如 &quot;--workers 4&quot;）；分词后追加在平台固定命令之后，下次 start 时生效。平台保留参数（--host/--port/--backend-store-uri 等）不允许指定；不传或空白为默认命令</p>
+                     * 
+                     */
+                    std::string GetServerArgs() const;
+
+                    /**
+                     * 设置<p>启动参数（可选，单个字符串，如 &quot;--workers 4&quot;）；分词后追加在平台固定命令之后，下次 start 时生效。平台保留参数（--host/--port/--backend-store-uri 等）不允许指定；不传或空白为默认命令</p>
+                     * @param _serverArgs <p>启动参数（可选，单个字符串，如 &quot;--workers 4&quot;）；分词后追加在平台固定命令之后，下次 start 时生效。平台保留参数（--host/--port/--backend-store-uri 等）不允许指定；不传或空白为默认命令</p>
+                     * 
+                     */
+                    void SetServerArgs(const std::string& _serverArgs);
+
+                    /**
+                     * 判断参数 ServerArgs 是否已赋值
+                     * @return ServerArgs 是否已赋值
+                     * 
+                     */
+                    bool ServerArgsHasBeenSet() const;
+
+                    /**
                      * 获取<p>标签列表（TagKey-TagValue），用于将 MLflow Server 与腾讯云标签系统中的标签绑定</p>
                      * @return Tags <p>标签列表（TagKey-TagValue），用于将 MLflow Server 与腾讯云标签系统中的标签绑定</p>
                      * 
@@ -211,6 +232,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>描述信息（可选，纯文本，不允许换行，最长 1024）；不传或空白为未填写</p>
+                     * @return Description <p>描述信息（可选，纯文本，不允许换行，最长 1024）；不传或空白为未填写</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>描述信息（可选，纯文本，不允许换行，最长 1024）；不传或空白为未填写</p>
+                     * @param _description <p>描述信息（可选，纯文本，不允许换行，最长 1024）；不传或空白为未填写</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
 
                 private:
 
@@ -257,10 +299,22 @@ namespace TencentCloud
                     bool m_resourceConfigHasBeenSet;
 
                     /**
+                     * <p>启动参数（可选，单个字符串，如 &quot;--workers 4&quot;）；分词后追加在平台固定命令之后，下次 start 时生效。平台保留参数（--host/--port/--backend-store-uri 等）不允许指定；不传或空白为默认命令</p>
+                     */
+                    std::string m_serverArgs;
+                    bool m_serverArgsHasBeenSet;
+
+                    /**
                      * <p>标签列表（TagKey-TagValue），用于将 MLflow Server 与腾讯云标签系统中的标签绑定</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>描述信息（可选，纯文本，不允许换行，最长 1024）；不传或空白为未填写</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

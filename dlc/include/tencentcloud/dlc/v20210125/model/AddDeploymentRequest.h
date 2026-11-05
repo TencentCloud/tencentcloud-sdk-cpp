@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/LoraAdapterBinding.h>
 
 
 namespace TencentCloud
@@ -315,6 +316,69 @@ namespace TencentCloud
                      */
                     bool NetworkConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * @return LoraBindings <p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * 
+                     */
+                    std::vector<LoraAdapterBinding> GetLoraBindings() const;
+
+                    /**
+                     * 设置<p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * @param _loraBindings <p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * 
+                     */
+                    void SetLoraBindings(const std::vector<LoraAdapterBinding>& _loraBindings);
+
+                    /**
+                     * 判断参数 LoraBindings 是否已赋值
+                     * @return LoraBindings 是否已赋值
+                     * 
+                     */
+                    bool LoraBindingsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>用户上传代码包的原始文件名（详情页「代码引用」回显用）</p>
+                     * @return CodePackageOriginalName <p>用户上传代码包的原始文件名（详情页「代码引用」回显用）</p>
+                     * 
+                     */
+                    std::string GetCodePackageOriginalName() const;
+
+                    /**
+                     * 设置<p>用户上传代码包的原始文件名（详情页「代码引用」回显用）</p>
+                     * @param _codePackageOriginalName <p>用户上传代码包的原始文件名（详情页「代码引用」回显用）</p>
+                     * 
+                     */
+                    void SetCodePackageOriginalName(const std::string& _codePackageOriginalName);
+
+                    /**
+                     * 判断参数 CodePackageOriginalName 是否已赋值
+                     * @return CodePackageOriginalName 是否已赋值
+                     * 
+                     */
+                    bool CodePackageOriginalNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>代码包 URI（Git URL / COS URI）</p>
+                     * @return CodePackageUri <p>代码包 URI（Git URL / COS URI）</p>
+                     * 
+                     */
+                    std::string GetCodePackageUri() const;
+
+                    /**
+                     * 设置<p>代码包 URI（Git URL / COS URI）</p>
+                     * @param _codePackageUri <p>代码包 URI（Git URL / COS URI）</p>
+                     * 
+                     */
+                    void SetCodePackageUri(const std::string& _codePackageUri);
+
+                    /**
+                     * 判断参数 CodePackageUri 是否已赋值
+                     * @return CodePackageUri 是否已赋值
+                     * 
+                     */
+                    bool CodePackageUriHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,6 +458,24 @@ namespace TencentCloud
                      */
                     std::string m_networkConfig;
                     bool m_networkConfigHasBeenSet;
+
+                    /**
+                     * <p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     */
+                    std::vector<LoraAdapterBinding> m_loraBindings;
+                    bool m_loraBindingsHasBeenSet;
+
+                    /**
+                     * <p>用户上传代码包的原始文件名（详情页「代码引用」回显用）</p>
+                     */
+                    std::string m_codePackageOriginalName;
+                    bool m_codePackageOriginalNameHasBeenSet;
+
+                    /**
+                     * <p>代码包 URI（Git URL / COS URI）</p>
+                     */
+                    std::string m_codePackageUri;
+                    bool m_codePackageUriHasBeenSet;
 
                 };
             }

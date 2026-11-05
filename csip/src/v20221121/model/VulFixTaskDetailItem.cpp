@@ -33,11 +33,17 @@ VulFixTaskDetailItem::VulFixTaskDetailItem() :
     m_fixStatusHasBeenSet(false),
     m_snapshotStatusHasBeenSet(false),
     m_exceptionMessageHasBeenSet(false),
+    m_errorCodeHasBeenSet(false),
+    m_errorReasonHasBeenSet(false),
+    m_errorSolutionHasBeenSet(false),
+    m_rawErrorMessageHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_snapshotCreateTimeHasBeenSet(false),
     m_snapshotExpireTimeHasBeenSet(false),
-    m_snapshotFailReasonHasBeenSet(false)
+    m_snapshotFailReasonHasBeenSet(false),
+    m_machineTypeHasBeenSet(false),
+    m_snapshotReusedHasBeenSet(false)
 {
 }
 
@@ -166,6 +172,46 @@ CoreInternalOutcome VulFixTaskDetailItem::Deserialize(const rapidjson::Value &va
         m_exceptionMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorCode") && !value["ErrorCode"].IsNull())
+    {
+        if (!value["ErrorCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixTaskDetailItem.ErrorCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorCode = string(value["ErrorCode"].GetString());
+        m_errorCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrorReason") && !value["ErrorReason"].IsNull())
+    {
+        if (!value["ErrorReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixTaskDetailItem.ErrorReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorReason = string(value["ErrorReason"].GetString());
+        m_errorReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrorSolution") && !value["ErrorSolution"].IsNull())
+    {
+        if (!value["ErrorSolution"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixTaskDetailItem.ErrorSolution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorSolution = string(value["ErrorSolution"].GetString());
+        m_errorSolutionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RawErrorMessage") && !value["RawErrorMessage"].IsNull())
+    {
+        if (!value["RawErrorMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixTaskDetailItem.RawErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rawErrorMessage = string(value["RawErrorMessage"].GetString());
+        m_rawErrorMessageHasBeenSet = true;
+    }
+
     if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
     {
         if (!value["StartTime"].IsString())
@@ -214,6 +260,26 @@ CoreInternalOutcome VulFixTaskDetailItem::Deserialize(const rapidjson::Value &va
         }
         m_snapshotFailReason = string(value["SnapshotFailReason"].GetString());
         m_snapshotFailReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixTaskDetailItem.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SnapshotReused") && !value["SnapshotReused"].IsNull())
+    {
+        if (!value["SnapshotReused"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixTaskDetailItem.SnapshotReused` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshotReused = value["SnapshotReused"].GetBool();
+        m_snapshotReusedHasBeenSet = true;
     }
 
 
@@ -319,6 +385,38 @@ void VulFixTaskDetailItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         value.AddMember(iKey, rapidjson::Value(m_exceptionMessage.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_errorCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorSolutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorSolution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorSolution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rawErrorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RawErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rawErrorMessage.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_startTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -357,6 +455,22 @@ void VulFixTaskDetailItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "SnapshotFailReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_snapshotFailReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapshotReusedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotReused";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_snapshotReused, allocator);
     }
 
 }
@@ -554,6 +668,70 @@ bool VulFixTaskDetailItem::ExceptionMessageHasBeenSet() const
     return m_exceptionMessageHasBeenSet;
 }
 
+string VulFixTaskDetailItem::GetErrorCode() const
+{
+    return m_errorCode;
+}
+
+void VulFixTaskDetailItem::SetErrorCode(const string& _errorCode)
+{
+    m_errorCode = _errorCode;
+    m_errorCodeHasBeenSet = true;
+}
+
+bool VulFixTaskDetailItem::ErrorCodeHasBeenSet() const
+{
+    return m_errorCodeHasBeenSet;
+}
+
+string VulFixTaskDetailItem::GetErrorReason() const
+{
+    return m_errorReason;
+}
+
+void VulFixTaskDetailItem::SetErrorReason(const string& _errorReason)
+{
+    m_errorReason = _errorReason;
+    m_errorReasonHasBeenSet = true;
+}
+
+bool VulFixTaskDetailItem::ErrorReasonHasBeenSet() const
+{
+    return m_errorReasonHasBeenSet;
+}
+
+string VulFixTaskDetailItem::GetErrorSolution() const
+{
+    return m_errorSolution;
+}
+
+void VulFixTaskDetailItem::SetErrorSolution(const string& _errorSolution)
+{
+    m_errorSolution = _errorSolution;
+    m_errorSolutionHasBeenSet = true;
+}
+
+bool VulFixTaskDetailItem::ErrorSolutionHasBeenSet() const
+{
+    return m_errorSolutionHasBeenSet;
+}
+
+string VulFixTaskDetailItem::GetRawErrorMessage() const
+{
+    return m_rawErrorMessage;
+}
+
+void VulFixTaskDetailItem::SetRawErrorMessage(const string& _rawErrorMessage)
+{
+    m_rawErrorMessage = _rawErrorMessage;
+    m_rawErrorMessageHasBeenSet = true;
+}
+
+bool VulFixTaskDetailItem::RawErrorMessageHasBeenSet() const
+{
+    return m_rawErrorMessageHasBeenSet;
+}
+
 string VulFixTaskDetailItem::GetStartTime() const
 {
     return m_startTime;
@@ -632,5 +810,37 @@ void VulFixTaskDetailItem::SetSnapshotFailReason(const string& _snapshotFailReas
 bool VulFixTaskDetailItem::SnapshotFailReasonHasBeenSet() const
 {
     return m_snapshotFailReasonHasBeenSet;
+}
+
+string VulFixTaskDetailItem::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void VulFixTaskDetailItem::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool VulFixTaskDetailItem::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
+}
+
+bool VulFixTaskDetailItem::GetSnapshotReused() const
+{
+    return m_snapshotReused;
+}
+
+void VulFixTaskDetailItem::SetSnapshotReused(const bool& _snapshotReused)
+{
+    m_snapshotReused = _snapshotReused;
+    m_snapshotReusedHasBeenSet = true;
+}
+
+bool VulFixTaskDetailItem::SnapshotReusedHasBeenSet() const
+{
+    return m_snapshotReusedHasBeenSet;
 }
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取URL地址
-                     * @return FilePath URL地址
+                     * 获取<p>URL地址</p>
+                     * @return FilePath <p>URL地址</p>
                      * 
                      */
                     std::string GetFilePath() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * URL地址
+                     * <p>URL地址</p>
                      */
                     std::string m_filePath;
                     bool m_filePathHasBeenSet;

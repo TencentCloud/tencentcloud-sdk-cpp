@@ -115,6 +115,8 @@
 #include <tencentcloud/ocr/v20181119/model/PermitOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/QueryEnterpriseBasicInfoRequest.h>
+#include <tencentcloud/ocr/v20181119/model/QueryEnterpriseBasicInfoResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuestionOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QuestionOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuestionSplitLayoutOCRRequest.h>
@@ -345,6 +347,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QrcodeOCRResponse> QrcodeOCROutcome;
                 typedef std::future<QrcodeOCROutcome> QrcodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QrcodeOCRRequest&, QrcodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QrcodeOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryEnterpriseBasicInfoResponse> QueryEnterpriseBasicInfoOutcome;
+                typedef std::future<QueryEnterpriseBasicInfoOutcome> QueryEnterpriseBasicInfoOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::QueryEnterpriseBasicInfoRequest&, QueryEnterpriseBasicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryEnterpriseBasicInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::QuestionOCRResponse> QuestionOCROutcome;
                 typedef std::future<QuestionOCROutcome> QuestionOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QuestionOCRRequest&, QuestionOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuestionOCRAsyncHandler;
@@ -1147,6 +1152,15 @@ namespace TencentCloud
                 QrcodeOCROutcome QrcodeOCR(const Model::QrcodeOCRRequest &request);
                 void QrcodeOCRAsync(const Model::QrcodeOCRRequest& request, const QrcodeOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QrcodeOCROutcomeCallable QrcodeOCRCallable(const Model::QrcodeOCRRequest& request);
+
+                /**
+                 *本接口用于查询企业基本信息。输入企业名称或统一社会信用代码，返回企业名称、统一社会信用代码、法定代表人、登记机关、经营期限、经营状态、经营范围、注册地址、主体类型、成立日期、核准日期、行政区划等企业登记信息。部分出参可能无法查得，具体以实际查询结果为准。
+                 * @param req QueryEnterpriseBasicInfoRequest
+                 * @return QueryEnterpriseBasicInfoOutcome
+                 */
+                QueryEnterpriseBasicInfoOutcome QueryEnterpriseBasicInfo(const Model::QueryEnterpriseBasicInfoRequest &request);
+                void QueryEnterpriseBasicInfoAsync(const Model::QueryEnterpriseBasicInfoRequest& request, const QueryEnterpriseBasicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryEnterpriseBasicInfoOutcomeCallable QueryEnterpriseBasicInfoCallable(const Model::QueryEnterpriseBasicInfoRequest& request);
 
                 /**
                  *题目识别是教育的基础OCR识别能力。可支持扫描、拍照场景的单题题目识别。接口支持印刷体文本、手写体文本及公式的OCR识别和坐标返回，此外，接口还可对题目中的配图位置进行检测并返回坐标位置。适用于智能批改等场景的题目内容识别作为检索输入。

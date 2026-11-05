@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool WorkflowIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>需要清空的字段名列表，用于将指定字段重置为空</p>
-                     * @return FieldToRemoveList <p>需要清空的字段名列表，用于将指定字段重置为空</p>
+                     * 获取<p>需要清空的字段名列表，用于将指定字段重置为空。每项为斜杠分隔的字段路径（如 /BaseInfo/Description、/ParamList:[参数ID]），路径段与 NewSetting 字段名一致；列表字段用 字段名:[主键值] 定位单个元素、不带 [] 表示清空整个列表；workflowId、workspaceId、baseInfo 等标识类受保护字段不可删除，路径无效或未命中将返回 InvalidParameterValue 报错。</p>
+                     * @return FieldToRemoveList <p>需要清空的字段名列表，用于将指定字段重置为空。每项为斜杠分隔的字段路径（如 /BaseInfo/Description、/ParamList:[参数ID]），路径段与 NewSetting 字段名一致；列表字段用 字段名:[主键值] 定位单个元素、不带 [] 表示清空整个列表；workflowId、workspaceId、baseInfo 等标识类受保护字段不可删除，路径无效或未命中将返回 InvalidParameterValue 报错。</p>
                      * 
                      */
                     std::vector<std::string> GetFieldToRemoveList() const;
 
                     /**
-                     * 设置<p>需要清空的字段名列表，用于将指定字段重置为空</p>
-                     * @param _fieldToRemoveList <p>需要清空的字段名列表，用于将指定字段重置为空</p>
+                     * 设置<p>需要清空的字段名列表，用于将指定字段重置为空。每项为斜杠分隔的字段路径（如 /BaseInfo/Description、/ParamList:[参数ID]），路径段与 NewSetting 字段名一致；列表字段用 字段名:[主键值] 定位单个元素、不带 [] 表示清空整个列表；workflowId、workspaceId、baseInfo 等标识类受保护字段不可删除，路径无效或未命中将返回 InvalidParameterValue 报错。</p>
+                     * @param _fieldToRemoveList <p>需要清空的字段名列表，用于将指定字段重置为空。每项为斜杠分隔的字段路径（如 /BaseInfo/Description、/ParamList:[参数ID]），路径段与 NewSetting 字段名一致；列表字段用 字段名:[主键值] 定位单个元素、不带 [] 表示清空整个列表；workflowId、workspaceId、baseInfo 等标识类受保护字段不可删除，路径无效或未命中将返回 InvalidParameterValue 报错。</p>
                      * 
                      */
                     void SetFieldToRemoveList(const std::vector<std::string>& _fieldToRemoveList);
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_workflowIdHasBeenSet;
 
                     /**
-                     * <p>需要清空的字段名列表，用于将指定字段重置为空</p>
+                     * <p>需要清空的字段名列表，用于将指定字段重置为空。每项为斜杠分隔的字段路径（如 /BaseInfo/Description、/ParamList:[参数ID]），路径段与 NewSetting 字段名一致；列表字段用 字段名:[主键值] 定位单个元素、不带 [] 表示清空整个列表；workflowId、workspaceId、baseInfo 等标识类受保护字段不可删除，路径无效或未命中将返回 InvalidParameterValue 报错。</p>
                      */
                     std::vector<std::string> m_fieldToRemoveList;
                     bool m_fieldToRemoveListHasBeenSet;

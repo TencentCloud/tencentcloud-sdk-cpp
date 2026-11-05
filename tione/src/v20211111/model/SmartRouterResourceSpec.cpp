@@ -27,7 +27,8 @@ SmartRouterResourceSpec::SmartRouterResourceSpec() :
     m_zoneHasBeenSet(false),
     m_queueIdHasBeenSet(false),
     m_priorityHasBeenSet(false),
-    m_resourceSupplyAttributeHasBeenSet(false)
+    m_resourceSupplyAttributeHasBeenSet(false),
+    m_resourceGroupSWTypeHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,16 @@ CoreInternalOutcome SmartRouterResourceSpec::Deserialize(const rapidjson::Value 
         m_resourceSupplyAttributeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceGroupSWType") && !value["ResourceGroupSWType"].IsNull())
+    {
+        if (!value["ResourceGroupSWType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartRouterResourceSpec.ResourceGroupSWType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupSWType = string(value["ResourceGroupSWType"].GetString());
+        m_resourceGroupSWTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void SmartRouterResourceSpec::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_resourceSupplyAttribute.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_resourceGroupSWTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupSWType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupSWType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void SmartRouterResourceSpec::SetResourceSupplyAttribute(const ResourceSupplyAtt
 bool SmartRouterResourceSpec::ResourceSupplyAttributeHasBeenSet() const
 {
     return m_resourceSupplyAttributeHasBeenSet;
+}
+
+string SmartRouterResourceSpec::GetResourceGroupSWType() const
+{
+    return m_resourceGroupSWType;
+}
+
+void SmartRouterResourceSpec::SetResourceGroupSWType(const string& _resourceGroupSWType)
+{
+    m_resourceGroupSWType = _resourceGroupSWType;
+    m_resourceGroupSWTypeHasBeenSet = true;
+}
+
+bool SmartRouterResourceSpec::ResourceGroupSWTypeHasBeenSet() const
+{
+    return m_resourceGroupSWTypeHasBeenSet;
 }
 

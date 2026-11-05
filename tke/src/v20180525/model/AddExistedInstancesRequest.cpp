@@ -33,6 +33,7 @@ AddExistedInstancesRequest::AddExistedInstancesRequest() :
     m_nodePoolHasBeenSet(false),
     m_skipValidateOptionsHasBeenSet(false),
     m_instanceAdvancedSettingsOverridesHasBeenSet(false),
+    m_skipOptionsHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -150,6 +151,19 @@ string AddExistedInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_skipOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_skipOptions.begin(); itr != m_skipOptions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -358,6 +372,22 @@ void AddExistedInstancesRequest::SetInstanceAdvancedSettingsOverrides(const vect
 bool AddExistedInstancesRequest::InstanceAdvancedSettingsOverridesHasBeenSet() const
 {
     return m_instanceAdvancedSettingsOverridesHasBeenSet;
+}
+
+vector<string> AddExistedInstancesRequest::GetSkipOptions() const
+{
+    return m_skipOptions;
+}
+
+void AddExistedInstancesRequest::SetSkipOptions(const vector<string>& _skipOptions)
+{
+    m_skipOptions = _skipOptions;
+    m_skipOptionsHasBeenSet = true;
+}
+
+bool AddExistedInstancesRequest::SkipOptionsHasBeenSet() const
+{
+    return m_skipOptionsHasBeenSet;
 }
 
 string AddExistedInstancesRequest::GetImageId() const

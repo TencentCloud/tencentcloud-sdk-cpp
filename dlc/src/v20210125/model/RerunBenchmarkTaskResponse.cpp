@@ -44,7 +44,8 @@ RerunBenchmarkTaskResponse::RerunBenchmarkTaskResponse() :
     m_appIdHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
     m_resourcesHasBeenSet(false),
-    m_deploymentResourcesHasBeenSet(false)
+    m_deploymentResourcesHasBeenSet(false),
+    m_modelIdentifierHasBeenSet(false)
 {
 }
 
@@ -309,6 +310,16 @@ CoreInternalOutcome RerunBenchmarkTaskResponse::Deserialize(const string &payloa
         m_deploymentResourcesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ModelIdentifier") && !rsp["ModelIdentifier"].IsNull())
+    {
+        if (!rsp["ModelIdentifier"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelIdentifier` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelIdentifier = string(rsp["ModelIdentifier"].GetString());
+        m_modelIdentifierHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -493,6 +504,14 @@ string RerunBenchmarkTaskResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_modelIdentifierHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelIdentifier";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelIdentifier.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -715,6 +734,16 @@ vector<DeploymentResourceInfo> RerunBenchmarkTaskResponse::GetDeploymentResource
 bool RerunBenchmarkTaskResponse::DeploymentResourcesHasBeenSet() const
 {
     return m_deploymentResourcesHasBeenSet;
+}
+
+string RerunBenchmarkTaskResponse::GetModelIdentifier() const
+{
+    return m_modelIdentifier;
+}
+
+bool RerunBenchmarkTaskResponse::ModelIdentifierHasBeenSet() const
+{
+    return m_modelIdentifierHasBeenSet;
 }
 
 

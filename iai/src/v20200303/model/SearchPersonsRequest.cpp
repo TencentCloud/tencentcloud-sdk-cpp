@@ -32,7 +32,9 @@ SearchPersonsRequest::SearchPersonsRequest() :
     m_qualityControlHasBeenSet(false),
     m_faceMatchThresholdHasBeenSet(false),
     m_needPersonInfoHasBeenSet(false),
-    m_needRotateDetectionHasBeenSet(false)
+    m_needRotateDetectionHasBeenSet(false),
+    m_encryptionHasBeenSet(false),
+    m_encryptedBodyHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,23 @@ string SearchPersonsRequest::ToJsonString() const
         string key = "NeedRotateDetection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needRotateDetection, allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_encryptedBodyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptedBody";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptedBody.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -294,6 +313,38 @@ void SearchPersonsRequest::SetNeedRotateDetection(const uint64_t& _needRotateDet
 bool SearchPersonsRequest::NeedRotateDetectionHasBeenSet() const
 {
     return m_needRotateDetectionHasBeenSet;
+}
+
+Encryption SearchPersonsRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void SearchPersonsRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool SearchPersonsRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
+}
+
+string SearchPersonsRequest::GetEncryptedBody() const
+{
+    return m_encryptedBody;
+}
+
+void SearchPersonsRequest::SetEncryptedBody(const string& _encryptedBody)
+{
+    m_encryptedBody = _encryptedBody;
+    m_encryptedBodyHasBeenSet = true;
+}
+
+bool SearchPersonsRequest::EncryptedBodyHasBeenSet() const
+{
+    return m_encryptedBodyHasBeenSet;
 }
 
 

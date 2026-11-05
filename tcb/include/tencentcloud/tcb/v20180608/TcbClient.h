@@ -131,6 +131,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvAccountCircleRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvAccountCircleResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvInfoRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvPlansRequest.h>
@@ -453,6 +455,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEnvAccountCircleResponse> DescribeEnvAccountCircleOutcome;
                 typedef std::future<DescribeEnvAccountCircleOutcome> DescribeEnvAccountCircleOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvAccountCircleRequest&, DescribeEnvAccountCircleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvAccountCircleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnvInfoResponse> DescribeEnvInfoOutcome;
+                typedef std::future<DescribeEnvInfoOutcome> DescribeEnvInfoOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeEnvInfoRequest&, DescribeEnvInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnvLimitResponse> DescribeEnvLimitOutcome;
                 typedef std::future<DescribeEnvLimitOutcome> DescribeEnvLimitOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvLimitRequest&, DescribeEnvLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvLimitAsyncHandler;
@@ -1248,6 +1253,15 @@ namespace TencentCloud
                 DescribeEnvAccountCircleOutcome DescribeEnvAccountCircle(const Model::DescribeEnvAccountCircleRequest &request);
                 void DescribeEnvAccountCircleAsync(const Model::DescribeEnvAccountCircleRequest& request, const DescribeEnvAccountCircleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvAccountCircleOutcomeCallable DescribeEnvAccountCircleCallable(const Model::DescribeEnvAccountCircleRequest& request);
+
+                /**
+                 *查询环境详细信息
+                 * @param req DescribeEnvInfoRequest
+                 * @return DescribeEnvInfoOutcome
+                 */
+                DescribeEnvInfoOutcome DescribeEnvInfo(const Model::DescribeEnvInfoRequest &request);
+                void DescribeEnvInfoAsync(const Model::DescribeEnvInfoRequest& request, const DescribeEnvInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvInfoOutcomeCallable DescribeEnvInfoCallable(const Model::DescribeEnvInfoRequest& request);
 
                 /**
                  *查询环境个数上限

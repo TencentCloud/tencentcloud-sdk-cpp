@@ -195,6 +195,48 @@ namespace TencentCloud
                      */
                     bool VulDetailHasBeenSet() const;
 
+                    /**
+                     * 获取<p>修复任务ID</p>
+                     * @return FixTaskId <p>修复任务ID</p>
+                     * 
+                     */
+                    std::string GetFixTaskId() const;
+
+                    /**
+                     * 设置<p>修复任务ID</p>
+                     * @param _fixTaskId <p>修复任务ID</p>
+                     * 
+                     */
+                    void SetFixTaskId(const std::string& _fixTaskId);
+
+                    /**
+                     * 判断参数 FixTaskId 是否已赋值
+                     * @return FixTaskId 是否已赋值
+                     * 
+                     */
+                    bool FixTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前用户可见范围内存在至少一台支持自动修复的主机时为 1，否则为 0</p><p>单位：1</p>
+                     * @return SupportAutoFix <p>当前用户可见范围内存在至少一台支持自动修复的主机时为 1，否则为 0</p><p>单位：1</p>
+                     * 
+                     */
+                    uint64_t GetSupportAutoFix() const;
+
+                    /**
+                     * 设置<p>当前用户可见范围内存在至少一台支持自动修复的主机时为 1，否则为 0</p><p>单位：1</p>
+                     * @param _supportAutoFix <p>当前用户可见范围内存在至少一台支持自动修复的主机时为 1，否则为 0</p><p>单位：1</p>
+                     * 
+                     */
+                    void SetSupportAutoFix(const uint64_t& _supportAutoFix);
+
+                    /**
+                     * 判断参数 SupportAutoFix 是否已赋值
+                     * @return SupportAutoFix 是否已赋值
+                     * 
+                     */
+                    bool SupportAutoFixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +280,18 @@ namespace TencentCloud
                      */
                     VulDetailInfo m_vulDetail;
                     bool m_vulDetailHasBeenSet;
+
+                    /**
+                     * <p>修复任务ID</p>
+                     */
+                    std::string m_fixTaskId;
+                    bool m_fixTaskIdHasBeenSet;
+
+                    /**
+                     * <p>当前用户可见范围内存在至少一台支持自动修复的主机时为 1，否则为 0</p><p>单位：1</p>
+                     */
+                    uint64_t m_supportAutoFix;
+                    bool m_supportAutoFixHasBeenSet;
 
                 };
             }

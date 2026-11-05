@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/LinkedServiceInfo.h>
+#include <tencentcloud/dlc/v20210125/model/RegisterMeta.h>
+#include <tencentcloud/dlc/v20210125/model/LoraVersionMeta.h>
 
 
 namespace TencentCloud
@@ -184,6 +186,62 @@ namespace TencentCloud
                      */
                     bool UseCustomStorageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>注册元信息（仅注册语义创建的版本有值，与创建请求 RegisterMeta 结构一致）</p>
+                     * @return RegisterMeta <p>注册元信息（仅注册语义创建的版本有值，与创建请求 RegisterMeta 结构一致）</p>
+                     * 
+                     */
+                    RegisterMeta GetRegisterMeta() const;
+
+                    /**
+                     * 判断参数 RegisterMeta 是否已赋值
+                     * @return RegisterMeta 是否已赋值
+                     * 
+                     */
+                    bool RegisterMetaHasBeenSet() const;
+
+                    /**
+                     * 获取<p>版本业务唯一标识；LoRA 模型版本挂载到部署时以此引用</p>
+                     * @return VersionUid <p>版本业务唯一标识；LoRA 模型版本挂载到部署时以此引用</p>
+                     * 
+                     */
+                    std::string GetVersionUid() const;
+
+                    /**
+                     * 判断参数 VersionUid 是否已赋值
+                     * @return VersionUid 是否已赋值
+                     * 
+                     */
+                    bool VersionUidHasBeenSet() const;
+
+                    /**
+                     * 获取<p>LoRA Adapter 元信息（仅 LoRA 模型版本有值，解析自 adapter_config.json）</p>
+                     * @return LoraMeta <p>LoRA Adapter 元信息（仅 LoRA 模型版本有值，解析自 adapter_config.json）</p>
+                     * 
+                     */
+                    LoraVersionMeta GetLoraMeta() const;
+
+                    /**
+                     * 判断参数 LoraMeta 是否已赋值
+                     * @return LoraMeta 是否已赋值
+                     * 
+                     */
+                    bool LoraMetaHasBeenSet() const;
+
+                    /**
+                     * 获取<p>LoRA pool 异步导入状态（Importing/Ready/Failed；NULL=就绪），未就绪不能挂载</p>
+                     * @return PoolImportStatus <p>LoRA pool 异步导入状态（Importing/Ready/Failed；NULL=就绪），未就绪不能挂载</p>
+                     * 
+                     */
+                    std::string GetPoolImportStatus() const;
+
+                    /**
+                     * 判断参数 PoolImportStatus 是否已赋值
+                     * @return PoolImportStatus 是否已赋值
+                     * 
+                     */
+                    bool PoolImportStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +304,30 @@ namespace TencentCloud
                      */
                     bool m_useCustomStorage;
                     bool m_useCustomStorageHasBeenSet;
+
+                    /**
+                     * <p>注册元信息（仅注册语义创建的版本有值，与创建请求 RegisterMeta 结构一致）</p>
+                     */
+                    RegisterMeta m_registerMeta;
+                    bool m_registerMetaHasBeenSet;
+
+                    /**
+                     * <p>版本业务唯一标识；LoRA 模型版本挂载到部署时以此引用</p>
+                     */
+                    std::string m_versionUid;
+                    bool m_versionUidHasBeenSet;
+
+                    /**
+                     * <p>LoRA Adapter 元信息（仅 LoRA 模型版本有值，解析自 adapter_config.json）</p>
+                     */
+                    LoraVersionMeta m_loraMeta;
+                    bool m_loraMetaHasBeenSet;
+
+                    /**
+                     * <p>LoRA pool 异步导入状态（Importing/Ready/Failed；NULL=就绪），未就绪不能挂载</p>
+                     */
+                    std::string m_poolImportStatus;
+                    bool m_poolImportStatusHasBeenSet;
 
                 };
             }

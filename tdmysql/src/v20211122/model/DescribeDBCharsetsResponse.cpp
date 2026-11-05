@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tdmysql::V20211122::Model;
 using namespace std;
 
-DescribeDBCharsetsResponse::DescribeDBCharsetsResponse()
+DescribeDBCharsetsResponse::DescribeDBCharsetsResponse() :
+    m_charsetCollationsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome DescribeDBCharsetsResponse::Deserialize(const string &payloa
     }
 
 
+    if (rsp.HasMember("CharsetCollations") && !rsp["CharsetCollations"].IsNull())
+    {
+        if (!rsp["CharsetCollations"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CharsetCollations` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CharsetCollations"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CharsetCollationItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_charsetCollations.push_back(item);
+        }
+        m_charsetCollationsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string DescribeDBCharsetsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_charsetCollationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CharsetCollations";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_charsetCollations.begin(); itr != m_charsetCollations.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string DescribeDBCharsetsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<CharsetCollationItem> DescribeDBCharsetsResponse::GetCharsetCollations() const
+{
+    return m_charsetCollations;
+}
+
+bool DescribeDBCharsetsResponse::CharsetCollationsHasBeenSet() const
+{
+    return m_charsetCollationsHasBeenSet;
+}
 
 

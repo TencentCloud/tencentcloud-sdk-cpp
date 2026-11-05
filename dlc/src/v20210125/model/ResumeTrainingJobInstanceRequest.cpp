@@ -23,7 +23,8 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 ResumeTrainingJobInstanceRequest::ResumeTrainingJobInstanceRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_resumeCheckpointSubDirHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string ResumeTrainingJobInstanceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resumeCheckpointSubDirHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResumeCheckpointSubDir";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resumeCheckpointSubDir.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void ResumeTrainingJobInstanceRequest::SetInstanceId(const string& _instanceId)
 bool ResumeTrainingJobInstanceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string ResumeTrainingJobInstanceRequest::GetResumeCheckpointSubDir() const
+{
+    return m_resumeCheckpointSubDir;
+}
+
+void ResumeTrainingJobInstanceRequest::SetResumeCheckpointSubDir(const string& _resumeCheckpointSubDir)
+{
+    m_resumeCheckpointSubDir = _resumeCheckpointSubDir;
+    m_resumeCheckpointSubDirHasBeenSet = true;
+}
+
+bool ResumeTrainingJobInstanceRequest::ResumeCheckpointSubDirHasBeenSet() const
+{
+    return m_resumeCheckpointSubDirHasBeenSet;
 }
 
 

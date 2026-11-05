@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>输入来源类型：0 用户输入，3 自定义变量（API参数）</p>
-                     * @return InputType <p>输入来源类型：0 用户输入，3 自定义变量（API参数）</p>
+                     * 获取<p>输入来源类型</p><p>枚举值：</p><ul><li>1： 用户输入</li><li>2： 系统变量</li><li>3： 自定义变量（API参数）</li><li>4： 环境变量</li><li>5： 应用变量</li><li>6： 工具参数</li></ul>
+                     * @return InputType <p>输入来源类型</p><p>枚举值：</p><ul><li>1： 用户输入</li><li>2： 系统变量</li><li>3： 自定义变量（API参数）</li><li>4： 环境变量</li><li>5： 应用变量</li><li>6： 工具参数</li></ul>
                      * 
                      */
                     int64_t GetInputType() const;
 
                     /**
-                     * 设置<p>输入来源类型：0 用户输入，3 自定义变量（API参数）</p>
-                     * @param _inputType <p>输入来源类型：0 用户输入，3 自定义变量（API参数）</p>
+                     * 设置<p>输入来源类型</p><p>枚举值：</p><ul><li>1： 用户输入</li><li>2： 系统变量</li><li>3： 自定义变量（API参数）</li><li>4： 环境变量</li><li>5： 应用变量</li><li>6： 工具参数</li></ul>
+                     * @param _inputType <p>输入来源类型</p><p>枚举值：</p><ul><li>1： 用户输入</li><li>2： 系统变量</li><li>3： 自定义变量（API参数）</li><li>4： 环境变量</li><li>5： 应用变量</li><li>6： 工具参数</li></ul>
                      * 
                      */
                     void SetInputType(const int64_t& _inputType);
@@ -185,7 +185,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>输入来源类型：0 用户输入，3 自定义变量（API参数）</p>
+                     * <p>输入来源类型</p><p>枚举值：</p><ul><li>1： 用户输入</li><li>2： 系统变量</li><li>3： 自定义变量（API参数）</li><li>4： 环境变量</li><li>5： 应用变量</li><li>6： 工具参数</li></ul>
                      */
                     int64_t m_inputType;
                     bool m_inputTypeHasBeenSet;

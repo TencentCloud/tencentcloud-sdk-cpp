@@ -27,7 +27,9 @@ HostVulRisk::HostVulRisk() :
     m_accountHasBeenSet(false),
     m_defendStatusHasBeenSet(false),
     m_riskStatusHasBeenSet(false),
-    m_vulDetailHasBeenSet(false)
+    m_vulDetailHasBeenSet(false),
+    m_fixTaskIdHasBeenSet(false),
+    m_supportAutoFixHasBeenSet(false)
 {
 }
 
@@ -123,6 +125,26 @@ CoreInternalOutcome HostVulRisk::Deserialize(const rapidjson::Value &value)
         m_vulDetailHasBeenSet = true;
     }
 
+    if (value.HasMember("FixTaskId") && !value["FixTaskId"].IsNull())
+    {
+        if (!value["FixTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostVulRisk.FixTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fixTaskId = string(value["FixTaskId"].GetString());
+        m_fixTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportAutoFix") && !value["SupportAutoFix"].IsNull())
+    {
+        if (!value["SupportAutoFix"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostVulRisk.SupportAutoFix` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportAutoFix = value["SupportAutoFix"].GetUint64();
+        m_supportAutoFixHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -192,6 +214,22 @@ void HostVulRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_vulDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fixTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FixTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fixTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportAutoFixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportAutoFix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportAutoFix, allocator);
     }
 
 }
@@ -307,5 +345,37 @@ void HostVulRisk::SetVulDetail(const VulDetailInfo& _vulDetail)
 bool HostVulRisk::VulDetailHasBeenSet() const
 {
     return m_vulDetailHasBeenSet;
+}
+
+string HostVulRisk::GetFixTaskId() const
+{
+    return m_fixTaskId;
+}
+
+void HostVulRisk::SetFixTaskId(const string& _fixTaskId)
+{
+    m_fixTaskId = _fixTaskId;
+    m_fixTaskIdHasBeenSet = true;
+}
+
+bool HostVulRisk::FixTaskIdHasBeenSet() const
+{
+    return m_fixTaskIdHasBeenSet;
+}
+
+uint64_t HostVulRisk::GetSupportAutoFix() const
+{
+    return m_supportAutoFix;
+}
+
+void HostVulRisk::SetSupportAutoFix(const uint64_t& _supportAutoFix)
+{
+    m_supportAutoFix = _supportAutoFix;
+    m_supportAutoFixHasBeenSet = true;
+}
+
+bool HostVulRisk::SupportAutoFixHasBeenSet() const
+{
+    return m_supportAutoFixHasBeenSet;
 }
 

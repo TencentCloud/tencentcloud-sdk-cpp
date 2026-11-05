@@ -25,6 +25,8 @@ using namespace std;
 TextToSpeechSyncRequest::TextToSpeechSyncRequest() :
     m_textHasBeenSet(false),
     m_voiceIdHasBeenSet(false),
+    m_modelNameHasBeenSet(false),
+    m_modelVersionHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_languageBoostHasBeenSet(false),
     m_outputHasBeenSet(false),
@@ -53,6 +55,22 @@ string TextToSpeechSyncRequest::ToJsonString() const
         string key = "VoiceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_voiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -126,6 +144,38 @@ void TextToSpeechSyncRequest::SetVoiceId(const string& _voiceId)
 bool TextToSpeechSyncRequest::VoiceIdHasBeenSet() const
 {
     return m_voiceIdHasBeenSet;
+}
+
+string TextToSpeechSyncRequest::GetModelName() const
+{
+    return m_modelName;
+}
+
+void TextToSpeechSyncRequest::SetModelName(const string& _modelName)
+{
+    m_modelName = _modelName;
+    m_modelNameHasBeenSet = true;
+}
+
+bool TextToSpeechSyncRequest::ModelNameHasBeenSet() const
+{
+    return m_modelNameHasBeenSet;
+}
+
+string TextToSpeechSyncRequest::GetModelVersion() const
+{
+    return m_modelVersion;
+}
+
+void TextToSpeechSyncRequest::SetModelVersion(const string& _modelVersion)
+{
+    m_modelVersion = _modelVersion;
+    m_modelVersionHasBeenSet = true;
+}
+
+bool TextToSpeechSyncRequest::ModelVersionHasBeenSet() const
+{
+    return m_modelVersionHasBeenSet;
 }
 
 string TextToSpeechSyncRequest::GetSubAppId() const

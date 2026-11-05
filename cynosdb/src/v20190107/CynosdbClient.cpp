@@ -4740,6 +4740,56 @@ CynosdbClient::DescribeInstanceParamsOutcomeCallable CynosdbClient::DescribeInst
     return prom->get_future();
 }
 
+CynosdbClient::DescribeInstanceServerlessQuotaOutcome CynosdbClient::DescribeInstanceServerlessQuota(const DescribeInstanceServerlessQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceServerlessQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceServerlessQuotaResponse rsp = DescribeInstanceServerlessQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceServerlessQuotaOutcome(rsp);
+        else
+            return DescribeInstanceServerlessQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceServerlessQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeInstanceServerlessQuotaAsync(const DescribeInstanceServerlessQuotaRequest& request, const DescribeInstanceServerlessQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstanceServerlessQuotaRequest&;
+    using Resp = DescribeInstanceServerlessQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceServerlessQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::DescribeInstanceServerlessQuotaOutcomeCallable CynosdbClient::DescribeInstanceServerlessQuotaCallable(const DescribeInstanceServerlessQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstanceServerlessQuotaOutcome>>();
+    DescribeInstanceServerlessQuotaAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const DescribeInstanceServerlessQuotaRequest&,
+        DescribeInstanceServerlessQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::DescribeInstanceSlowQueriesOutcome CynosdbClient::DescribeInstanceSlowQueries(const DescribeInstanceSlowQueriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceSlowQueries");
@@ -11482,6 +11532,56 @@ CynosdbClient::SearchClusterTablesOutcomeCallable CynosdbClient::SearchClusterTa
         const CynosdbClient*,
         const SearchClusterTablesRequest&,
         SearchClusterTablesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CynosdbClient::SetInstanceServerlessQuotaOutcome CynosdbClient::SetInstanceServerlessQuota(const SetInstanceServerlessQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetInstanceServerlessQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetInstanceServerlessQuotaResponse rsp = SetInstanceServerlessQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetInstanceServerlessQuotaOutcome(rsp);
+        else
+            return SetInstanceServerlessQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return SetInstanceServerlessQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::SetInstanceServerlessQuotaAsync(const SetInstanceServerlessQuotaRequest& request, const SetInstanceServerlessQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetInstanceServerlessQuotaRequest&;
+    using Resp = SetInstanceServerlessQuotaResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SetInstanceServerlessQuota", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::SetInstanceServerlessQuotaOutcomeCallable CynosdbClient::SetInstanceServerlessQuotaCallable(const SetInstanceServerlessQuotaRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SetInstanceServerlessQuotaOutcome>>();
+    SetInstanceServerlessQuotaAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const SetInstanceServerlessQuotaRequest&,
+        SetInstanceServerlessQuotaOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

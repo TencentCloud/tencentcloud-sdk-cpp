@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CMK的全局唯一标识符
-                     * @return KeyId CMK的全局唯一标识符
+                     * 获取<p>CMK的全局唯一标识符</p>
+                     * @return KeyId <p>CMK的全局唯一标识符</p>
                      * 
                      */
                     std::string GetKeyId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取作为密钥更容易辨识，更容易被人看懂的别名
-                     * @return Alias 作为密钥更容易辨识，更容易被人看懂的别名
+                     * 获取<p>作为密钥更容易辨识，更容易被人看懂的别名</p>
+                     * @return Alias <p>作为密钥更容易辨识，更容易被人看懂的别名</p>
                      * 
                      */
                     std::string GetAlias() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool AliasHasBeenSet() const;
 
                     /**
-                     * 获取密钥创建时间，unix时间戳
-                     * @return CreateTime 密钥创建时间，unix时间戳
+                     * 获取<p>密钥创建时间，unix时间戳</p>
+                     * @return CreateTime <p>密钥创建时间，unix时间戳</p>
                      * 
                      */
                     uint64_t GetCreateTime() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取CMK的描述
-                     * @return Description CMK的描述
+                     * 获取<p>CMK的描述</p>
+                     * @return Description <p>CMK的描述</p>
                      * 
                      */
                     std::string GetDescription() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取CMK的状态
-                     * @return KeyState CMK的状态
+                     * 获取<p>CMK的状态</p>
+                     * @return KeyState <p>CMK的状态</p>
                      * 
                      */
                     std::string GetKeyState() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool KeyStateHasBeenSet() const;
 
                     /**
-                     * 获取CMK的用途
-                     * @return KeyUsage CMK的用途
+                     * 获取<p>CMK的用途</p>
+                     * @return KeyUsage <p>CMK的用途</p>
                      * 
                      */
                     std::string GetKeyUsage() const;
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool KeyUsageHasBeenSet() const;
 
                     /**
-                     * 获取标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
-                     * @return TagCode 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
+                     * 获取<p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误</p>
+                     * @return TagCode <p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误</p>
                      * 
                      */
                     uint64_t GetTagCode() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool TagCodeHasBeenSet() const;
 
                     /**
-                     * 获取标签操作的返回信息
-                     * @return TagMsg 标签操作的返回信息
+                     * 获取<p>标签操作的返回信息</p>
+                     * @return TagMsg <p>标签操作的返回信息</p>
                      * 
                      */
                     std::string GetTagMsg() const;
@@ -156,8 +156,8 @@ namespace TencentCloud
                     bool TagMsgHasBeenSet() const;
 
                     /**
-                     * 获取HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
-                     * @return HsmClusterId HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
+                     * 获取<p>HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）</p>
+                     * @return HsmClusterId <p>HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）</p>
                      * 
                      */
                     std::string GetHsmClusterId() const;
@@ -172,55 +172,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CMK的全局唯一标识符
+                     * <p>CMK的全局唯一标识符</p>
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * 作为密钥更容易辨识，更容易被人看懂的别名
+                     * <p>作为密钥更容易辨识，更容易被人看懂的别名</p>
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
-                     * 密钥创建时间，unix时间戳
+                     * <p>密钥创建时间，unix时间戳</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * CMK的描述
+                     * <p>CMK的描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * CMK的状态
+                     * <p>CMK的状态</p>
                      */
                     std::string m_keyState;
                     bool m_keyStateHasBeenSet;
 
                     /**
-                     * CMK的用途
+                     * <p>CMK的用途</p>
                      */
                     std::string m_keyUsage;
                     bool m_keyUsageHasBeenSet;
 
                     /**
-                     * 标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误
+                     * <p>标签操作的返回码. 0: 成功；1: 内部错误；2: 业务处理错误</p>
                      */
                     uint64_t m_tagCode;
                     bool m_tagCodeHasBeenSet;
 
                     /**
-                     * 标签操作的返回信息
+                     * <p>标签操作的返回信息</p>
                      */
                     std::string m_tagMsg;
                     bool m_tagMsgHasBeenSet;
 
                     /**
-                     * HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）
+                     * <p>HSM 集群 ID（仅对 KMS 独占版/托管版服务实例有效）</p>
                      */
                     std::string m_hsmClusterId;
                     bool m_hsmClusterIdHasBeenSet;

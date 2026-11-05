@@ -30,7 +30,9 @@ CreateMlflowServerRequest::CreateMlflowServerRequest() :
     m_storageConfigHasBeenSet(false),
     m_storageModeHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_serverArgsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -98,6 +100,14 @@ string CreateMlflowServerRequest::ToJsonString() const
         m_resourceConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_serverArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerArgs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverArgs.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_tagsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -111,6 +121,14 @@ string CreateMlflowServerRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -233,6 +251,22 @@ bool CreateMlflowServerRequest::ResourceConfigHasBeenSet() const
     return m_resourceConfigHasBeenSet;
 }
 
+string CreateMlflowServerRequest::GetServerArgs() const
+{
+    return m_serverArgs;
+}
+
+void CreateMlflowServerRequest::SetServerArgs(const string& _serverArgs)
+{
+    m_serverArgs = _serverArgs;
+    m_serverArgsHasBeenSet = true;
+}
+
+bool CreateMlflowServerRequest::ServerArgsHasBeenSet() const
+{
+    return m_serverArgsHasBeenSet;
+}
+
 vector<Tag> CreateMlflowServerRequest::GetTags() const
 {
     return m_tags;
@@ -247,6 +281,22 @@ void CreateMlflowServerRequest::SetTags(const vector<Tag>& _tags)
 bool CreateMlflowServerRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateMlflowServerRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateMlflowServerRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateMlflowServerRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

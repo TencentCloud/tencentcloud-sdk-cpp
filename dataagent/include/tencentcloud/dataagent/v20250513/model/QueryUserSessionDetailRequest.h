@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dataagent/v20250513/model/SurfaceContext.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>上下文</p>
+                     * @return SurfaceContext <p>上下文</p>
+                     * 
+                     */
+                    SurfaceContext GetSurfaceContext() const;
+
+                    /**
+                     * 设置<p>上下文</p>
+                     * @param _surfaceContext <p>上下文</p>
+                     * 
+                     */
+                    void SetSurfaceContext(const SurfaceContext& _surfaceContext);
+
+                    /**
+                     * 判断参数 SurfaceContext 是否已赋值
+                     * @return SurfaceContext 是否已赋值
+                     * 
+                     */
+                    bool SurfaceContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +173,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>上下文</p>
+                     */
+                    SurfaceContext m_surfaceContext;
+                    bool m_surfaceContextHasBeenSet;
 
                 };
             }

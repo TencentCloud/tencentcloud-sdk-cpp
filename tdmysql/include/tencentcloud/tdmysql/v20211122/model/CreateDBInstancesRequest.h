@@ -24,6 +24,7 @@
 #include <tencentcloud/tdmysql/v20211122/model/ResourceTag.h>
 #include <tencentcloud/tdmysql/v20211122/model/InstanceParam.h>
 #include <tencentcloud/tdmysql/v20211122/model/AutoScalingConfig.h>
+#include <tencentcloud/tdmysql/v20211122/model/PasswordComplexity.h>
 
 
 namespace TencentCloud
@@ -44,27 +45,6 @@ namespace TencentCloud
                     ~CreateDBInstancesRequest() = default;
                     std::string ToJsonString() const;
 
-
-                    /**
-                     * 获取<p>创建实例区域</p>
-                     * @return Zone <p>创建实例区域</p>
-                     * 
-                     */
-                    std::string GetZone() const;
-
-                    /**
-                     * 设置<p>创建实例区域</p>
-                     * @param _zone <p>创建实例区域</p>
-                     * 
-                     */
-                    void SetZone(const std::string& _zone);
-
-                    /**
-                     * 判断参数 Zone 是否已赋值
-                     * @return Zone 是否已赋值
-                     * 
-                     */
-                    bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取<p>字符型vpcid</p>
@@ -212,6 +192,27 @@ namespace TencentCloud
                      * 
                      */
                     bool InstanceCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建实例区域</p>
+                     * @return Zone <p>创建实例区域</p>
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置<p>创建实例区域</p>
+                     * @param _zone <p>创建实例区域</p>
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
 
                     /**
                      * 获取<p>全能型副本数量</p>
@@ -780,13 +781,28 @@ namespace TencentCloud
                      */
                     bool AutoScaleConfigsHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取<p>密码复杂度</p>
+                     * @return PasswordComplexity <p>密码复杂度</p>
+                     * 
+                     */
+                    PasswordComplexity GetPasswordComplexity() const;
 
                     /**
-                     * <p>创建实例区域</p>
+                     * 设置<p>密码复杂度</p>
+                     * @param _passwordComplexity <p>密码复杂度</p>
+                     * 
                      */
-                    std::string m_zone;
-                    bool m_zoneHasBeenSet;
+                    void SetPasswordComplexity(const PasswordComplexity& _passwordComplexity);
+
+                    /**
+                     * 判断参数 PasswordComplexity 是否已赋值
+                     * @return PasswordComplexity 是否已赋值
+                     * 
+                     */
+                    bool PasswordComplexityHasBeenSet() const;
+
+                private:
 
                     /**
                      * <p>字符型vpcid</p>
@@ -829,6 +845,12 @@ namespace TencentCloud
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
+
+                    /**
+                     * <p>创建实例区域</p>
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                     /**
                      * <p>全能型副本数量</p>
@@ -991,6 +1013,12 @@ namespace TencentCloud
                      */
                     std::vector<AutoScalingConfig> m_autoScaleConfigs;
                     bool m_autoScaleConfigsHasBeenSet;
+
+                    /**
+                     * <p>密码复杂度</p>
+                     */
+                    PasswordComplexity m_passwordComplexity;
+                    bool m_passwordComplexityHasBeenSet;
 
                 };
             }

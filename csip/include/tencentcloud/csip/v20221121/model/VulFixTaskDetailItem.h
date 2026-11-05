@@ -299,6 +299,90 @@ namespace TencentCloud
                     bool ExceptionMessageHasBeenSet() const;
 
                     /**
+                     * 获取<p>结构化错误码（如 VF-INS-002、VF-AG-013）</p>
+                     * @return ErrorCode <p>结构化错误码（如 VF-INS-002、VF-AG-013）</p>
+                     * 
+                     */
+                    std::string GetErrorCode() const;
+
+                    /**
+                     * 设置<p>结构化错误码（如 VF-INS-002、VF-AG-013）</p>
+                     * @param _errorCode <p>结构化错误码（如 VF-INS-002、VF-AG-013）</p>
+                     * 
+                     */
+                    void SetErrorCode(const std::string& _errorCode);
+
+                    /**
+                     * 判断参数 ErrorCode 是否已赋值
+                     * @return ErrorCode 是否已赋值
+                     * 
+                     */
+                    bool ErrorCodeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>结构化失败原因</p>
+                     * @return ErrorReason <p>结构化失败原因</p>
+                     * 
+                     */
+                    std::string GetErrorReason() const;
+
+                    /**
+                     * 设置<p>结构化失败原因</p>
+                     * @param _errorReason <p>结构化失败原因</p>
+                     * 
+                     */
+                    void SetErrorReason(const std::string& _errorReason);
+
+                    /**
+                     * 判断参数 ErrorReason 是否已赋值
+                     * @return ErrorReason 是否已赋值
+                     * 
+                     */
+                    bool ErrorReasonHasBeenSet() const;
+
+                    /**
+                     * 获取<p>结构化解决方案</p>
+                     * @return ErrorSolution <p>结构化解决方案</p>
+                     * 
+                     */
+                    std::string GetErrorSolution() const;
+
+                    /**
+                     * 设置<p>结构化解决方案</p>
+                     * @param _errorSolution <p>结构化解决方案</p>
+                     * 
+                     */
+                    void SetErrorSolution(const std::string& _errorSolution);
+
+                    /**
+                     * 判断参数 ErrorSolution 是否已赋值
+                     * @return ErrorSolution 是否已赋值
+                     * 
+                     */
+                    bool ErrorSolutionHasBeenSet() const;
+
+                    /**
+                     * 获取<p>原始错误信息（不做翻译）</p>
+                     * @return RawErrorMessage <p>原始错误信息（不做翻译）</p>
+                     * 
+                     */
+                    std::string GetRawErrorMessage() const;
+
+                    /**
+                     * 设置<p>原始错误信息（不做翻译）</p>
+                     * @param _rawErrorMessage <p>原始错误信息（不做翻译）</p>
+                     * 
+                     */
+                    void SetRawErrorMessage(const std::string& _rawErrorMessage);
+
+                    /**
+                     * 判断参数 RawErrorMessage 是否已赋值
+                     * @return RawErrorMessage 是否已赋值
+                     * 
+                     */
+                    bool RawErrorMessageHasBeenSet() const;
+
+                    /**
                      * 获取<p>修复启动时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>
                      * @return StartTime <p>修复启动时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>
                      * 
@@ -403,6 +487,48 @@ namespace TencentCloud
                      */
                     bool SnapshotFailReasonHasBeenSet() const;
 
+                    /**
+                     * 获取<p>机器类型</p><p>枚举值：</p><ul><li>CVM： 腾讯云cvm</li><li>Other： 混合云机器</li></ul>
+                     * @return MachineType <p>机器类型</p><p>枚举值：</p><ul><li>CVM： 腾讯云cvm</li><li>Other： 混合云机器</li></ul>
+                     * 
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 设置<p>机器类型</p><p>枚举值：</p><ul><li>CVM： 腾讯云cvm</li><li>Other： 混合云机器</li></ul>
+                     * @param _machineType <p>机器类型</p><p>枚举值：</p><ul><li>CVM： 腾讯云cvm</li><li>Other： 混合云机器</li></ul>
+                     * 
+                     */
+                    void SetMachineType(const std::string& _machineType);
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     * 
+                     */
+                    bool MachineTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>快照是否复用</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * @return SnapshotReused <p>快照是否复用</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * 
+                     */
+                    bool GetSnapshotReused() const;
+
+                    /**
+                     * 设置<p>快照是否复用</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * @param _snapshotReused <p>快照是否复用</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * 
+                     */
+                    void SetSnapshotReused(const bool& _snapshotReused);
+
+                    /**
+                     * 判断参数 SnapshotReused 是否已赋值
+                     * @return SnapshotReused 是否已赋值
+                     * 
+                     */
+                    bool SnapshotReusedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -478,6 +604,30 @@ namespace TencentCloud
                     bool m_exceptionMessageHasBeenSet;
 
                     /**
+                     * <p>结构化错误码（如 VF-INS-002、VF-AG-013）</p>
+                     */
+                    std::string m_errorCode;
+                    bool m_errorCodeHasBeenSet;
+
+                    /**
+                     * <p>结构化失败原因</p>
+                     */
+                    std::string m_errorReason;
+                    bool m_errorReasonHasBeenSet;
+
+                    /**
+                     * <p>结构化解决方案</p>
+                     */
+                    std::string m_errorSolution;
+                    bool m_errorSolutionHasBeenSet;
+
+                    /**
+                     * <p>原始错误信息（不做翻译）</p>
+                     */
+                    std::string m_rawErrorMessage;
+                    bool m_rawErrorMessageHasBeenSet;
+
+                    /**
                      * <p>修复启动时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>
                      */
                     std::string m_startTime;
@@ -506,6 +656,18 @@ namespace TencentCloud
                      */
                     std::string m_snapshotFailReason;
                     bool m_snapshotFailReasonHasBeenSet;
+
+                    /**
+                     * <p>机器类型</p><p>枚举值：</p><ul><li>CVM： 腾讯云cvm</li><li>Other： 混合云机器</li></ul>
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
+
+                    /**
+                     * <p>快照是否复用</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     */
+                    bool m_snapshotReused;
+                    bool m_snapshotReusedHasBeenSet;
 
                 };
             }

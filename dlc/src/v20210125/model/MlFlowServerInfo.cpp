@@ -33,12 +33,21 @@ MlFlowServerInfo::MlFlowServerInfo() :
     m_imageHasBeenSet(false),
     m_storageConfigHasBeenSet(false),
     m_storageModeHasBeenSet(false),
+    m_serverArgsHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_uinHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false),
+    m_subAccountNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_lastProbeSuccessTimeHasBeenSet(false),
+    m_consecutiveProbeFailuresHasBeenSet(false),
+    m_lastProbeErrorHasBeenSet(false),
+    m_totalInstanceCountHasBeenSet(false),
+    m_runningInstanceCountHasBeenSet(false)
 {
 }
 
@@ -167,6 +176,26 @@ CoreInternalOutcome MlFlowServerInfo::Deserialize(const rapidjson::Value &value)
         m_storageModeHasBeenSet = true;
     }
 
+    if (value.HasMember("ServerArgs") && !value["ServerArgs"].IsNull())
+    {
+        if (!value["ServerArgs"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MlFlowServerInfo.ServerArgs` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverArgs = string(value["ServerArgs"].GetString());
+        m_serverArgsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MlFlowServerInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
     if (value.HasMember("AppId") && !value["AppId"].IsNull())
     {
         if (!value["AppId"].IsInt64())
@@ -185,6 +214,26 @@ CoreInternalOutcome MlFlowServerInfo::Deserialize(const rapidjson::Value &value)
         }
         m_uin = string(value["Uin"].GetString());
         m_uinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
+    {
+        if (!value["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MlFlowServerInfo.SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(value["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountName") && !value["SubAccountName"].IsNull())
+    {
+        if (!value["SubAccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MlFlowServerInfo.SubAccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountName = string(value["SubAccountName"].GetString());
+        m_subAccountNameHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -235,6 +284,56 @@ CoreInternalOutcome MlFlowServerInfo::Deserialize(const rapidjson::Value &value)
             m_tags.push_back(item);
         }
         m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastProbeSuccessTime") && !value["LastProbeSuccessTime"].IsNull())
+    {
+        if (!value["LastProbeSuccessTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MlFlowServerInfo.LastProbeSuccessTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastProbeSuccessTime = value["LastProbeSuccessTime"].GetInt64();
+        m_lastProbeSuccessTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsecutiveProbeFailures") && !value["ConsecutiveProbeFailures"].IsNull())
+    {
+        if (!value["ConsecutiveProbeFailures"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MlFlowServerInfo.ConsecutiveProbeFailures` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_consecutiveProbeFailures = value["ConsecutiveProbeFailures"].GetInt64();
+        m_consecutiveProbeFailuresHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastProbeError") && !value["LastProbeError"].IsNull())
+    {
+        if (!value["LastProbeError"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MlFlowServerInfo.LastProbeError` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastProbeError = string(value["LastProbeError"].GetString());
+        m_lastProbeErrorHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalInstanceCount") && !value["TotalInstanceCount"].IsNull())
+    {
+        if (!value["TotalInstanceCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MlFlowServerInfo.TotalInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalInstanceCount = value["TotalInstanceCount"].GetInt64();
+        m_totalInstanceCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningInstanceCount") && !value["RunningInstanceCount"].IsNull())
+    {
+        if (!value["RunningInstanceCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MlFlowServerInfo.RunningInstanceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningInstanceCount = value["RunningInstanceCount"].GetInt64();
+        m_runningInstanceCountHasBeenSet = true;
     }
 
 
@@ -340,6 +439,22 @@ void MlFlowServerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_storageMode.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_serverArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerArgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverArgs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_appIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -354,6 +469,22 @@ void MlFlowServerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -393,6 +524,46 @@ void MlFlowServerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_lastProbeSuccessTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastProbeSuccessTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastProbeSuccessTime, allocator);
+    }
+
+    if (m_consecutiveProbeFailuresHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsecutiveProbeFailures";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consecutiveProbeFailures, allocator);
+    }
+
+    if (m_lastProbeErrorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastProbeError";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastProbeError.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalInstanceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalInstanceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalInstanceCount, allocator);
+    }
+
+    if (m_runningInstanceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningInstanceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningInstanceCount, allocator);
     }
 
 }
@@ -590,6 +761,38 @@ bool MlFlowServerInfo::StorageModeHasBeenSet() const
     return m_storageModeHasBeenSet;
 }
 
+string MlFlowServerInfo::GetServerArgs() const
+{
+    return m_serverArgs;
+}
+
+void MlFlowServerInfo::SetServerArgs(const string& _serverArgs)
+{
+    m_serverArgs = _serverArgs;
+    m_serverArgsHasBeenSet = true;
+}
+
+bool MlFlowServerInfo::ServerArgsHasBeenSet() const
+{
+    return m_serverArgsHasBeenSet;
+}
+
+string MlFlowServerInfo::GetDescription() const
+{
+    return m_description;
+}
+
+void MlFlowServerInfo::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool MlFlowServerInfo::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
 int64_t MlFlowServerInfo::GetAppId() const
 {
     return m_appId;
@@ -620,6 +823,38 @@ void MlFlowServerInfo::SetUin(const string& _uin)
 bool MlFlowServerInfo::UinHasBeenSet() const
 {
     return m_uinHasBeenSet;
+}
+
+string MlFlowServerInfo::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+void MlFlowServerInfo::SetSubAccountUin(const string& _subAccountUin)
+{
+    m_subAccountUin = _subAccountUin;
+    m_subAccountUinHasBeenSet = true;
+}
+
+bool MlFlowServerInfo::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
+}
+
+string MlFlowServerInfo::GetSubAccountName() const
+{
+    return m_subAccountName;
+}
+
+void MlFlowServerInfo::SetSubAccountName(const string& _subAccountName)
+{
+    m_subAccountName = _subAccountName;
+    m_subAccountNameHasBeenSet = true;
+}
+
+bool MlFlowServerInfo::SubAccountNameHasBeenSet() const
+{
+    return m_subAccountNameHasBeenSet;
 }
 
 int64_t MlFlowServerInfo::GetCreateTime() const
@@ -684,5 +919,85 @@ void MlFlowServerInfo::SetTags(const vector<Tag>& _tags)
 bool MlFlowServerInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t MlFlowServerInfo::GetLastProbeSuccessTime() const
+{
+    return m_lastProbeSuccessTime;
+}
+
+void MlFlowServerInfo::SetLastProbeSuccessTime(const int64_t& _lastProbeSuccessTime)
+{
+    m_lastProbeSuccessTime = _lastProbeSuccessTime;
+    m_lastProbeSuccessTimeHasBeenSet = true;
+}
+
+bool MlFlowServerInfo::LastProbeSuccessTimeHasBeenSet() const
+{
+    return m_lastProbeSuccessTimeHasBeenSet;
+}
+
+int64_t MlFlowServerInfo::GetConsecutiveProbeFailures() const
+{
+    return m_consecutiveProbeFailures;
+}
+
+void MlFlowServerInfo::SetConsecutiveProbeFailures(const int64_t& _consecutiveProbeFailures)
+{
+    m_consecutiveProbeFailures = _consecutiveProbeFailures;
+    m_consecutiveProbeFailuresHasBeenSet = true;
+}
+
+bool MlFlowServerInfo::ConsecutiveProbeFailuresHasBeenSet() const
+{
+    return m_consecutiveProbeFailuresHasBeenSet;
+}
+
+string MlFlowServerInfo::GetLastProbeError() const
+{
+    return m_lastProbeError;
+}
+
+void MlFlowServerInfo::SetLastProbeError(const string& _lastProbeError)
+{
+    m_lastProbeError = _lastProbeError;
+    m_lastProbeErrorHasBeenSet = true;
+}
+
+bool MlFlowServerInfo::LastProbeErrorHasBeenSet() const
+{
+    return m_lastProbeErrorHasBeenSet;
+}
+
+int64_t MlFlowServerInfo::GetTotalInstanceCount() const
+{
+    return m_totalInstanceCount;
+}
+
+void MlFlowServerInfo::SetTotalInstanceCount(const int64_t& _totalInstanceCount)
+{
+    m_totalInstanceCount = _totalInstanceCount;
+    m_totalInstanceCountHasBeenSet = true;
+}
+
+bool MlFlowServerInfo::TotalInstanceCountHasBeenSet() const
+{
+    return m_totalInstanceCountHasBeenSet;
+}
+
+int64_t MlFlowServerInfo::GetRunningInstanceCount() const
+{
+    return m_runningInstanceCount;
+}
+
+void MlFlowServerInfo::SetRunningInstanceCount(const int64_t& _runningInstanceCount)
+{
+    m_runningInstanceCount = _runningInstanceCount;
+    m_runningInstanceCountHasBeenSet = true;
+}
+
+bool MlFlowServerInfo::RunningInstanceCountHasBeenSet() const
+{
+    return m_runningInstanceCountHasBeenSet;
 }
 

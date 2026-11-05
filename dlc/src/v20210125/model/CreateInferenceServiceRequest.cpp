@@ -45,7 +45,8 @@ CreateInferenceServiceRequest::CreateInferenceServiceRequest() :
     m_resourceTagsHasBeenSet(false),
     m_isCustomHasBeenSet(false),
     m_runtimeEnvHasBeenSet(false),
-    m_networkConfigHasBeenSet(false)
+    m_networkConfigHasBeenSet(false),
+    m_loraBindingsHasBeenSet(false)
 {
 }
 
@@ -250,6 +251,21 @@ string CreateInferenceServiceRequest::ToJsonString() const
         string key = "NetworkConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_networkConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loraBindingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoraBindings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_loraBindings.begin(); itr != m_loraBindings.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -626,6 +642,22 @@ void CreateInferenceServiceRequest::SetNetworkConfig(const string& _networkConfi
 bool CreateInferenceServiceRequest::NetworkConfigHasBeenSet() const
 {
     return m_networkConfigHasBeenSet;
+}
+
+vector<LoraAdapterBinding> CreateInferenceServiceRequest::GetLoraBindings() const
+{
+    return m_loraBindings;
+}
+
+void CreateInferenceServiceRequest::SetLoraBindings(const vector<LoraAdapterBinding>& _loraBindings)
+{
+    m_loraBindings = _loraBindings;
+    m_loraBindingsHasBeenSet = true;
+}
+
+bool CreateInferenceServiceRequest::LoraBindingsHasBeenSet() const
+{
+    return m_loraBindingsHasBeenSet;
 }
 
 

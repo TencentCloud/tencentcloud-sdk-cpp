@@ -121,6 +121,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/BackupTypeStatisticsModel.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSCloneInstancesResponse.h
   include/tencentcloud/tdmysql/v20211122/model/InstanceInfo.h
+  include/tencentcloud/tdmysql/v20211122/model/CharsetCollationItem.h
   include/tencentcloud/tdmysql/v20211122/model/User.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupSetsRequest.h
   include/tencentcloud/tdmysql/v20211122/model/AnalysisInstanceInfo.h
@@ -132,6 +133,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/LogBackupStatisticsModel.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeUsersRequest.h
   include/tencentcloud/tdmysql/v20211122/model/BackupMethodStatisticsModel.h
+  include/tencentcloud/tdmysql/v20211122/model/PasswordComplexity.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBSBackupPolicyRequest.h
   include/tencentcloud/tdmysql/v20211122/model/UpgradeInstanceResponse.h
   include/tencentcloud/tdmysql/v20211122/model/CancelIsolateDBInstancesRequest.h
@@ -285,6 +287,7 @@ set(tdmysql_src
   src/v20211122/model/BackupTypeStatisticsModel.cpp
   src/v20211122/model/DescribeDBSCloneInstancesResponse.cpp
   src/v20211122/model/InstanceInfo.cpp
+  src/v20211122/model/CharsetCollationItem.cpp
   src/v20211122/model/User.cpp
   src/v20211122/model/DescribeDBSBackupSetsRequest.cpp
   src/v20211122/model/AnalysisInstanceInfo.cpp
@@ -296,6 +299,7 @@ set(tdmysql_src
   src/v20211122/model/LogBackupStatisticsModel.cpp
   src/v20211122/model/DescribeUsersRequest.cpp
   src/v20211122/model/BackupMethodStatisticsModel.cpp
+  src/v20211122/model/PasswordComplexity.cpp
   src/v20211122/model/DescribeDBSBackupPolicyRequest.cpp
   src/v20211122/model/UpgradeInstanceResponse.cpp
   src/v20211122/model/CancelIsolateDBInstancesRequest.cpp

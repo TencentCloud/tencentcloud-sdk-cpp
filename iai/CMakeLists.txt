@@ -137,6 +137,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/CopyPersonResponse.h
   include/tencentcloud/iai/v20200303/model/GroupCandidate.h
   include/tencentcloud/iai/v20200303/model/DeleteFaceResponse.h
+  include/tencentcloud/iai/v20200303/model/Encryption.h
   include/tencentcloud/iai/v20200303/model/DeletePersonRequest.h
   include/tencentcloud/iai/v20200303/model/DeleteFaceRequest.h
   include/tencentcloud/iai/v20200303/model/ModifyGroupRequest.h
@@ -332,6 +333,7 @@ set(iai_src
   src/v20200303/model/CopyPersonResponse.cpp
   src/v20200303/model/GroupCandidate.cpp
   src/v20200303/model/DeleteFaceResponse.cpp
+  src/v20200303/model/Encryption.cpp
   src/v20200303/model/DeletePersonRequest.cpp
   src/v20200303/model/DeleteFaceRequest.cpp
   src/v20200303/model/ModifyGroupRequest.cpp

@@ -27,7 +27,13 @@ UpdateDeploymentRequest::UpdateDeploymentRequest() :
     m_modelVersionHasBeenSet(false),
     m_engineHasBeenSet(false),
     m_replicasHasBeenSet(false),
-    m_autoscalingEnabledHasBeenSet(false)
+    m_autoscalingEnabledHasBeenSet(false),
+    m_codePackageUriHasBeenSet(false),
+    m_codePackageOriginalNameHasBeenSet(false),
+    m_crOverridesHasBeenSet(false),
+    m_headHighAvailabilityEnabledHasBeenSet(false),
+    m_loraBindingsHasBeenSet(false),
+    m_runtimeEnvHasBeenSet(false)
 {
 }
 
@@ -76,6 +82,61 @@ string UpdateDeploymentRequest::ToJsonString() const
         string key = "AutoscalingEnabled";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoscalingEnabled, allocator);
+    }
+
+    if (m_codePackageUriHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodePackageUri";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_codePackageUri.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codePackageOriginalNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodePackageOriginalName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_codePackageOriginalName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_crOverridesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrOverrides";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_crOverrides.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_headHighAvailabilityEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeadHighAvailabilityEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_headHighAvailabilityEnabled, allocator);
+    }
+
+    if (m_loraBindingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoraBindings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_loraBindings.begin(); itr != m_loraBindings.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_runtimeEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeEnv";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_runtimeEnv.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +225,102 @@ void UpdateDeploymentRequest::SetAutoscalingEnabled(const bool& _autoscalingEnab
 bool UpdateDeploymentRequest::AutoscalingEnabledHasBeenSet() const
 {
     return m_autoscalingEnabledHasBeenSet;
+}
+
+string UpdateDeploymentRequest::GetCodePackageUri() const
+{
+    return m_codePackageUri;
+}
+
+void UpdateDeploymentRequest::SetCodePackageUri(const string& _codePackageUri)
+{
+    m_codePackageUri = _codePackageUri;
+    m_codePackageUriHasBeenSet = true;
+}
+
+bool UpdateDeploymentRequest::CodePackageUriHasBeenSet() const
+{
+    return m_codePackageUriHasBeenSet;
+}
+
+string UpdateDeploymentRequest::GetCodePackageOriginalName() const
+{
+    return m_codePackageOriginalName;
+}
+
+void UpdateDeploymentRequest::SetCodePackageOriginalName(const string& _codePackageOriginalName)
+{
+    m_codePackageOriginalName = _codePackageOriginalName;
+    m_codePackageOriginalNameHasBeenSet = true;
+}
+
+bool UpdateDeploymentRequest::CodePackageOriginalNameHasBeenSet() const
+{
+    return m_codePackageOriginalNameHasBeenSet;
+}
+
+string UpdateDeploymentRequest::GetCrOverrides() const
+{
+    return m_crOverrides;
+}
+
+void UpdateDeploymentRequest::SetCrOverrides(const string& _crOverrides)
+{
+    m_crOverrides = _crOverrides;
+    m_crOverridesHasBeenSet = true;
+}
+
+bool UpdateDeploymentRequest::CrOverridesHasBeenSet() const
+{
+    return m_crOverridesHasBeenSet;
+}
+
+bool UpdateDeploymentRequest::GetHeadHighAvailabilityEnabled() const
+{
+    return m_headHighAvailabilityEnabled;
+}
+
+void UpdateDeploymentRequest::SetHeadHighAvailabilityEnabled(const bool& _headHighAvailabilityEnabled)
+{
+    m_headHighAvailabilityEnabled = _headHighAvailabilityEnabled;
+    m_headHighAvailabilityEnabledHasBeenSet = true;
+}
+
+bool UpdateDeploymentRequest::HeadHighAvailabilityEnabledHasBeenSet() const
+{
+    return m_headHighAvailabilityEnabledHasBeenSet;
+}
+
+vector<LoraAdapterBinding> UpdateDeploymentRequest::GetLoraBindings() const
+{
+    return m_loraBindings;
+}
+
+void UpdateDeploymentRequest::SetLoraBindings(const vector<LoraAdapterBinding>& _loraBindings)
+{
+    m_loraBindings = _loraBindings;
+    m_loraBindingsHasBeenSet = true;
+}
+
+bool UpdateDeploymentRequest::LoraBindingsHasBeenSet() const
+{
+    return m_loraBindingsHasBeenSet;
+}
+
+string UpdateDeploymentRequest::GetRuntimeEnv() const
+{
+    return m_runtimeEnv;
+}
+
+void UpdateDeploymentRequest::SetRuntimeEnv(const string& _runtimeEnv)
+{
+    m_runtimeEnv = _runtimeEnv;
+    m_runtimeEnvHasBeenSet = true;
+}
+
+bool UpdateDeploymentRequest::RuntimeEnvHasBeenSet() const
+{
+    return m_runtimeEnvHasBeenSet;
 }
 
 

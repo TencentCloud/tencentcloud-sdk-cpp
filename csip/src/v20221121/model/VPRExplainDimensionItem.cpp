@@ -23,7 +23,8 @@ using namespace std;
 VPRExplainDimensionItem::VPRExplainDimensionItem() :
     m_keyHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_levelHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome VPRExplainDimensionItem::Deserialize(const rapidjson::Value 
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("Level") && !value["Level"].IsNull())
+    {
+        if (!value["Level"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VPRExplainDimensionItem.Level` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_level = string(value["Level"].GetString());
+        m_levelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void VPRExplainDimensionItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_levelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Level";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_level.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void VPRExplainDimensionItem::SetRemark(const string& _remark)
 bool VPRExplainDimensionItem::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string VPRExplainDimensionItem::GetLevel() const
+{
+    return m_level;
+}
+
+void VPRExplainDimensionItem::SetLevel(const string& _level)
+{
+    m_level = _level;
+    m_levelHasBeenSet = true;
+}
+
+bool VPRExplainDimensionItem::LevelHasBeenSet() const
+{
+    return m_levelHasBeenSet;
 }
 

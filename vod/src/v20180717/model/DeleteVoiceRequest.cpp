@@ -24,6 +24,7 @@ using namespace std;
 
 DeleteVoiceRequest::DeleteVoiceRequest() :
     m_voiceIdHasBeenSet(false),
+    m_modelNameHasBeenSet(false),
     m_subAppIdHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string DeleteVoiceRequest::ToJsonString() const
         string key = "VoiceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_voiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -73,6 +82,22 @@ void DeleteVoiceRequest::SetVoiceId(const string& _voiceId)
 bool DeleteVoiceRequest::VoiceIdHasBeenSet() const
 {
     return m_voiceIdHasBeenSet;
+}
+
+string DeleteVoiceRequest::GetModelName() const
+{
+    return m_modelName;
+}
+
+void DeleteVoiceRequest::SetModelName(const string& _modelName)
+{
+    m_modelName = _modelName;
+    m_modelNameHasBeenSet = true;
+}
+
+bool DeleteVoiceRequest::ModelNameHasBeenSet() const
+{
+    return m_modelNameHasBeenSet;
 }
 
 string DeleteVoiceRequest::GetSubAppId() const

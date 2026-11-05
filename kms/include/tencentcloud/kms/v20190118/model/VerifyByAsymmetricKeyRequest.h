@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取密钥的唯一标识
-                     * @return KeyId 密钥的唯一标识
+                     * 获取<p>密钥的唯一标识</p>
+                     * @return KeyId <p>密钥的唯一标识</p>
                      * 
                      */
                     std::string GetKeyId() const;
 
                     /**
-                     * 设置密钥的唯一标识
-                     * @param _keyId 密钥的唯一标识
+                     * 设置<p>密钥的唯一标识</p>
+                     * @param _keyId <p>密钥的唯一标识</p>
                      * 
                      */
                     void SetKeyId(const std::string& _keyId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取签名值，通过调用KMS签名接口生成
-                     * @return SignatureValue 签名值，通过调用KMS签名接口生成
+                     * 获取<p>签名值，通过调用KMS签名接口生成</p>
+                     * @return SignatureValue <p>签名值，通过调用KMS签名接口生成</p>
                      * 
                      */
                     std::string GetSignatureValue() const;
 
                     /**
-                     * 设置签名值，通过调用KMS签名接口生成
-                     * @param _signatureValue 签名值，通过调用KMS签名接口生成
+                     * 设置<p>签名值，通过调用KMS签名接口生成</p>
+                     * @param _signatureValue <p>签名值，通过调用KMS签名接口生成</p>
                      * 
                      */
                     void SetSignatureValue(const std::string& _signatureValue);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool SignatureValueHasBeenSet() const;
 
                     /**
-                     * 获取消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节
-                     * @return Message 消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节
+                     * 获取<p>消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节</p>
+                     * @return Message <p>消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节</p>
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节
-                     * @param _message 消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节
+                     * 设置<p>消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节</p>
+                     * @param _message <p>消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节</p>
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256 等。更多支持的算法可通过 ListAlgorithms 接口进行查询。
-                     * @return Algorithm 签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256 等。更多支持的算法可通过 ListAlgorithms 接口进行查询。
+                     * 获取<p>签名算法，支持的算法：SM2DSA，ECC_P256_R1，ECDSA384_SHA384，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256，RSA_PSS_SHA_384，RSA_PKCS1_SHA_384，RSA_PSS_SHA_512，RSA_PKCS1_SHA_512 等。更多支持的算法可通过 ListAlgorithms 接口进行查询</p>
+                     * @return Algorithm <p>签名算法，支持的算法：SM2DSA，ECC_P256_R1，ECDSA384_SHA384，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256，RSA_PSS_SHA_384，RSA_PKCS1_SHA_384，RSA_PSS_SHA_512，RSA_PKCS1_SHA_512 等。更多支持的算法可通过 ListAlgorithms 接口进行查询</p>
                      * 
                      */
                     std::string GetAlgorithm() const;
 
                     /**
-                     * 设置签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256 等。更多支持的算法可通过 ListAlgorithms 接口进行查询。
-                     * @param _algorithm 签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256 等。更多支持的算法可通过 ListAlgorithms 接口进行查询。
+                     * 设置<p>签名算法，支持的算法：SM2DSA，ECC_P256_R1，ECDSA384_SHA384，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256，RSA_PSS_SHA_384，RSA_PKCS1_SHA_384，RSA_PSS_SHA_512，RSA_PKCS1_SHA_512 等。更多支持的算法可通过 ListAlgorithms 接口进行查询</p>
+                     * @param _algorithm <p>签名算法，支持的算法：SM2DSA，ECC_P256_R1，ECDSA384_SHA384，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256，RSA_PSS_SHA_384，RSA_PKCS1_SHA_384，RSA_PSS_SHA_512，RSA_PKCS1_SHA_512 等。更多支持的算法可通过 ListAlgorithms 接口进行查询</p>
                      * 
                      */
                     void SetAlgorithm(const std::string& _algorithm);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool AlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。
-                     * @return MessageType 消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。
+                     * 获取<p>消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。</p>
+                     * @return MessageType <p>消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。</p>
                      * 
                      */
                     std::string GetMessageType() const;
 
                     /**
-                     * 设置消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。
-                     * @param _messageType 消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。
+                     * 设置<p>消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。</p>
+                     * @param _messageType <p>消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。</p>
                      * 
                      */
                     void SetMessageType(const std::string& _messageType);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 密钥的唯一标识
+                     * <p>密钥的唯一标识</p>
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * 签名值，通过调用KMS签名接口生成
+                     * <p>签名值，通过调用KMS签名接口生成</p>
                      */
                     std::string m_signatureValue;
                     bool m_signatureValueHasBeenSet;
 
                     /**
-                     * 消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节
+                     * <p>消息原文或消息摘要。如果提供的是消息原文，则消息原文的长度（Base64编码前的长度）不超过4096字节。如果提供的是消息摘要，则消息摘要长度（Base64编码前的长度）必须等于32字节</p>
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 签名算法，支持的算法：SM2DSA，ECC_P256_R1，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256 等。更多支持的算法可通过 ListAlgorithms 接口进行查询。
+                     * <p>签名算法，支持的算法：SM2DSA，ECC_P256_R1，ECDSA384_SHA384，RSA_PSS_SHA_256，RSA_PKCS1_SHA_256，RSA_PSS_SHA_384，RSA_PKCS1_SHA_384，RSA_PSS_SHA_512，RSA_PKCS1_SHA_512 等。更多支持的算法可通过 ListAlgorithms 接口进行查询</p>
                      */
                     std::string m_algorithm;
                     bool m_algorithmHasBeenSet;
 
                     /**
-                     * 消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。
+                     * <p>消息类型：RAW，DIGEST，如果不传，默认为RAW，表示消息原文。</p>
                      */
                     std::string m_messageType;
                     bool m_messageTypeHasBeenSet;

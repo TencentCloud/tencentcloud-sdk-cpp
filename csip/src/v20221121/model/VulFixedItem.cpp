@@ -32,7 +32,8 @@ VulFixedItem::VulFixedItem() :
     m_componentCountHasBeenSet(false),
     m_componentsHasBeenSet(false),
     m_latestFixTimeHasBeenSet(false),
-    m_vPRExplainInfoHasBeenSet(false)
+    m_vPRExplainInfoHasBeenSet(false),
+    m_repairMethodHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,16 @@ CoreInternalOutcome VulFixedItem::Deserialize(const rapidjson::Value &value)
         m_vPRExplainInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("RepairMethod") && !value["RepairMethod"].IsNull())
+    {
+        if (!value["RepairMethod"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulFixedItem.RepairMethod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repairMethod = string(value["RepairMethod"].GetString());
+        m_repairMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -286,6 +297,14 @@ void VulFixedItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_vPRExplainInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_repairMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepairMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repairMethod.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -481,5 +500,21 @@ void VulFixedItem::SetVPRExplainInfo(const VPRExplainInfo& _vPRExplainInfo)
 bool VulFixedItem::VPRExplainInfoHasBeenSet() const
 {
     return m_vPRExplainInfoHasBeenSet;
+}
+
+string VulFixedItem::GetRepairMethod() const
+{
+    return m_repairMethod;
+}
+
+void VulFixedItem::SetRepairMethod(const string& _repairMethod)
+{
+    m_repairMethod = _repairMethod;
+    m_repairMethodHasBeenSet = true;
+}
+
+bool VulFixedItem::RepairMethodHasBeenSet() const
+{
+    return m_repairMethodHasBeenSet;
 }
 

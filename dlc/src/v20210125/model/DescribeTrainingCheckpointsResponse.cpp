@@ -29,6 +29,7 @@ DescribeTrainingCheckpointsResponse::DescribeTrainingCheckpointsResponse() :
     m_subPathHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_storagePathHasBeenSet(false),
+    m_artifactRootUriHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_snapshotTimestampHasBeenSet(false)
 {
@@ -128,6 +129,16 @@ CoreInternalOutcome DescribeTrainingCheckpointsResponse::Deserialize(const strin
         m_storagePathHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ArtifactRootUri") && !rsp["ArtifactRootUri"].IsNull())
+    {
+        if (!rsp["ArtifactRootUri"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ArtifactRootUri` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_artifactRootUri = string(rsp["ArtifactRootUri"].GetString());
+        m_artifactRootUriHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Message") && !rsp["Message"].IsNull())
     {
         if (!rsp["Message"].IsString())
@@ -203,6 +214,14 @@ string DescribeTrainingCheckpointsResponse::ToJsonString() const
         string key = "StoragePath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storagePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_artifactRootUriHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArtifactRootUri";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_artifactRootUri.c_str(), allocator).Move(), allocator);
     }
 
     if (m_messageHasBeenSet)
@@ -281,6 +300,16 @@ string DescribeTrainingCheckpointsResponse::GetStoragePath() const
 bool DescribeTrainingCheckpointsResponse::StoragePathHasBeenSet() const
 {
     return m_storagePathHasBeenSet;
+}
+
+string DescribeTrainingCheckpointsResponse::GetArtifactRootUri() const
+{
+    return m_artifactRootUri;
+}
+
+bool DescribeTrainingCheckpointsResponse::ArtifactRootUriHasBeenSet() const
+{
+    return m_artifactRootUriHasBeenSet;
 }
 
 string DescribeTrainingCheckpointsResponse::GetMessage() const

@@ -48,7 +48,9 @@ CreateNotebookRequest::CreateNotebookRequest() :
     m_imageTypeHasBeenSet(false),
     m_sSHConfigHasBeenSet(false),
     m_volumeSourceGooseFSHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_resourceSupplyAttributeHasBeenSet(false),
+    m_queuesHasBeenSet(false)
 {
 }
 
@@ -290,6 +292,28 @@ string CreateNotebookRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceSupplyAttributeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceSupplyAttribute";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resourceSupplyAttribute.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_queuesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Queues";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_queues.begin(); itr != m_queues.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -714,6 +738,38 @@ void CreateNotebookRequest::SetDescription(const string& _description)
 bool CreateNotebookRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+ResourceSupplyAttribute CreateNotebookRequest::GetResourceSupplyAttribute() const
+{
+    return m_resourceSupplyAttribute;
+}
+
+void CreateNotebookRequest::SetResourceSupplyAttribute(const ResourceSupplyAttribute& _resourceSupplyAttribute)
+{
+    m_resourceSupplyAttribute = _resourceSupplyAttribute;
+    m_resourceSupplyAttributeHasBeenSet = true;
+}
+
+bool CreateNotebookRequest::ResourceSupplyAttributeHasBeenSet() const
+{
+    return m_resourceSupplyAttributeHasBeenSet;
+}
+
+vector<string> CreateNotebookRequest::GetQueues() const
+{
+    return m_queues;
+}
+
+void CreateNotebookRequest::SetQueues(const vector<string>& _queues)
+{
+    m_queues = _queues;
+    m_queuesHasBeenSet = true;
+}
+
+bool CreateNotebookRequest::QueuesHasBeenSet() const
+{
+    return m_queuesHasBeenSet;
 }
 
 

@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool NeedRebootHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否支持一键修复true-支持 false-不支持</p>
-                     * @return FixSwitch <p>是否支持一键修复true-支持 false-不支持</p>
+                     * 获取<p>是否支持一键修复</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * @return FixSwitch <p>是否支持一键修复</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
                      * 
                      */
                     bool GetFixSwitch() const;
 
                     /**
-                     * 设置<p>是否支持一键修复true-支持 false-不支持</p>
-                     * @param _fixSwitch <p>是否支持一键修复true-支持 false-不支持</p>
+                     * 设置<p>是否支持一键修复</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * @param _fixSwitch <p>是否支持一键修复</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
                      * 
                      */
                     void SetFixSwitch(const bool& _fixSwitch);
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_needRebootHasBeenSet;
 
                     /**
-                     * <p>是否支持一键修复true-支持 false-不支持</p>
+                     * <p>是否支持一键修复</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
                      */
                     bool m_fixSwitch;
                     bool m_fixSwitchHasBeenSet;

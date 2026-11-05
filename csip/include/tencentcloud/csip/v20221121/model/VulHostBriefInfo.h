@@ -28,6 +28,7 @@
 #include <tencentcloud/csip/v20221121/model/VPRRatingInfo.h>
 #include <tencentcloud/csip/v20221121/model/MiniTagItem.h>
 #include <tencentcloud/csip/v20221121/model/Tag.h>
+#include <tencentcloud/csip/v20221121/model/VPRExplainInfo.h>
 
 
 namespace TencentCloud
@@ -135,15 +136,15 @@ namespace TencentCloud
                     bool PrivateIPHasBeenSet() const;
 
                     /**
-                     * 获取<p>防护版本<br>枚举值：<br>NONE：无防护<br>BASIC：基础版<br>PRO：专业版<br>ULTIMATE：旗舰版<br>PRO_LH：轻量版</p>
-                     * @return DefendVersion <p>防护版本<br>枚举值：<br>NONE：无防护<br>BASIC：基础版<br>PRO：专业版<br>ULTIMATE：旗舰版<br>PRO_LH：轻量版</p>
+                     * 获取<p>防护版本枚举值 BASIC：基础版PRO：专业版ULTIMATE：旗舰版PRO_LH：轻量版</p>
+                     * @return DefendVersion <p>防护版本枚举值 BASIC：基础版PRO：专业版ULTIMATE：旗舰版PRO_LH：轻量版</p>
                      * 
                      */
                     std::string GetDefendVersion() const;
 
                     /**
-                     * 设置<p>防护版本<br>枚举值：<br>NONE：无防护<br>BASIC：基础版<br>PRO：专业版<br>ULTIMATE：旗舰版<br>PRO_LH：轻量版</p>
-                     * @param _defendVersion <p>防护版本<br>枚举值：<br>NONE：无防护<br>BASIC：基础版<br>PRO：专业版<br>ULTIMATE：旗舰版<br>PRO_LH：轻量版</p>
+                     * 设置<p>防护版本枚举值 BASIC：基础版PRO：专业版ULTIMATE：旗舰版PRO_LH：轻量版</p>
+                     * @param _defendVersion <p>防护版本枚举值 BASIC：基础版PRO：专业版ULTIMATE：旗舰版PRO_LH：轻量版</p>
                      * 
                      */
                     void SetDefendVersion(const std::string& _defendVersion);
@@ -198,15 +199,15 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
-                     * 获取<p>云主机实例状态<br>枚举值：<br>RUNNING：运行中<br>STOPPED：已停止<br>UNKNOWN：未知</p>
-                     * @return InstanceStatus <p>云主机实例状态<br>枚举值：<br>RUNNING：运行中<br>STOPPED：已停止<br>UNKNOWN：未知</p>
+                     * 获取<p>云主机实例状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>
+                     * @return InstanceStatus <p>云主机实例状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>
                      * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
-                     * 设置<p>云主机实例状态<br>枚举值：<br>RUNNING：运行中<br>STOPPED：已停止<br>UNKNOWN：未知</p>
-                     * @param _instanceStatus <p>云主机实例状态<br>枚举值：<br>RUNNING：运行中<br>STOPPED：已停止<br>UNKNOWN：未知</p>
+                     * 设置<p>云主机实例状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>
+                     * @param _instanceStatus <p>云主机实例状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>
                      * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
@@ -323,6 +324,27 @@ namespace TencentCloud
                      */
                     bool CloudTagHasBeenSet() const;
 
+                    /**
+                     * 获取<p>VPR评级解释卡片</p>
+                     * @return VPRExplainInfo <p>VPR评级解释卡片</p>
+                     * 
+                     */
+                    VPRExplainInfo GetVPRExplainInfo() const;
+
+                    /**
+                     * 设置<p>VPR评级解释卡片</p>
+                     * @param _vPRExplainInfo <p>VPR评级解释卡片</p>
+                     * 
+                     */
+                    void SetVPRExplainInfo(const VPRExplainInfo& _vPRExplainInfo);
+
+                    /**
+                     * 判断参数 VPRExplainInfo 是否已赋值
+                     * @return VPRExplainInfo 是否已赋值
+                     * 
+                     */
+                    bool VPRExplainInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,7 +372,7 @@ namespace TencentCloud
                     bool m_privateIPHasBeenSet;
 
                     /**
-                     * <p>防护版本<br>枚举值：<br>NONE：无防护<br>BASIC：基础版<br>PRO：专业版<br>ULTIMATE：旗舰版<br>PRO_LH：轻量版</p>
+                     * <p>防护版本枚举值 BASIC：基础版PRO：专业版ULTIMATE：旗舰版PRO_LH：轻量版</p>
                      */
                     std::string m_defendVersion;
                     bool m_defendVersionHasBeenSet;
@@ -368,7 +390,7 @@ namespace TencentCloud
                     bool m_accountHasBeenSet;
 
                     /**
-                     * <p>云主机实例状态<br>枚举值：<br>RUNNING：运行中<br>STOPPED：已停止<br>UNKNOWN：未知</p>
+                     * <p>云主机实例状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
@@ -402,6 +424,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_cloudTag;
                     bool m_cloudTagHasBeenSet;
+
+                    /**
+                     * <p>VPR评级解释卡片</p>
+                     */
+                    VPRExplainInfo m_vPRExplainInfo;
+                    bool m_vPRExplainInfoHasBeenSet;
 
                 };
             }

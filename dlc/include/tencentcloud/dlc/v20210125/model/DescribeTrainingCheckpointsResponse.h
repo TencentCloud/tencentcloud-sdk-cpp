@@ -115,6 +115,20 @@ namespace TencentCloud
                     bool StoragePathHasBeenSet() const;
 
                     /**
+                     * 获取<p>训练产物根的完整存储 URI（注册推理模型用，如 cos://bucket/path/、cfs://fs-id/path/）；作为 CreateInferenceModel / CreateModelVersion 的 StorageUri 传回（配合 UseCustomStorage=true）</p>
+                     * @return ArtifactRootUri <p>训练产物根的完整存储 URI（注册推理模型用，如 cos://bucket/path/、cfs://fs-id/path/）；作为 CreateInferenceModel / CreateModelVersion 的 StorageUri 传回（配合 UseCustomStorage=true）</p>
+                     * 
+                     */
+                    std::string GetArtifactRootUri() const;
+
+                    /**
+                     * 判断参数 ArtifactRootUri 是否已赋值
+                     * @return ArtifactRootUri 是否已赋值
+                     * 
+                     */
+                    bool ArtifactRootUriHasBeenSet() const;
+
+                    /**
                      * 获取<p>错误或提示信息（仅在请求异常时有值）</p>
                      * @return Message <p>错误或提示信息（仅在请求异常时有值）</p>
                      * 
@@ -173,6 +187,12 @@ namespace TencentCloud
                      */
                     std::string m_storagePath;
                     bool m_storagePathHasBeenSet;
+
+                    /**
+                     * <p>训练产物根的完整存储 URI（注册推理模型用，如 cos://bucket/path/、cfs://fs-id/path/）；作为 CreateInferenceModel / CreateModelVersion 的 StorageUri 传回（配合 UseCustomStorage=true）</p>
+                     */
+                    std::string m_artifactRootUri;
+                    bool m_artifactRootUriHasBeenSet;
 
                     /**
                      * <p>错误或提示信息（仅在请求异常时有值）</p>

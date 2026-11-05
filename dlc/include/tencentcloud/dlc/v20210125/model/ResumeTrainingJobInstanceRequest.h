@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>续训指定的源 checkpoint 子目录（相对源实例 checkpoint 根；空 = 自动选最新）</p>
+                     * @return ResumeCheckpointSubDir <p>续训指定的源 checkpoint 子目录（相对源实例 checkpoint 根；空 = 自动选最新）</p>
+                     * 
+                     */
+                    std::string GetResumeCheckpointSubDir() const;
+
+                    /**
+                     * 设置<p>续训指定的源 checkpoint 子目录（相对源实例 checkpoint 根；空 = 自动选最新）</p>
+                     * @param _resumeCheckpointSubDir <p>续训指定的源 checkpoint 子目录（相对源实例 checkpoint 根；空 = 自动选最新）</p>
+                     * 
+                     */
+                    void SetResumeCheckpointSubDir(const std::string& _resumeCheckpointSubDir);
+
+                    /**
+                     * 判断参数 ResumeCheckpointSubDir 是否已赋值
+                     * @return ResumeCheckpointSubDir 是否已赋值
+                     * 
+                     */
+                    bool ResumeCheckpointSubDirHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * <p>续训指定的源 checkpoint 子目录（相对源实例 checkpoint 根；空 = 自动选最新）</p>
+                     */
+                    std::string m_resumeCheckpointSubDir;
+                    bool m_resumeCheckpointSubDirHasBeenSet;
 
                 };
             }

@@ -300,6 +300,48 @@ namespace TencentCloud
                     bool StorageModeHasBeenSet() const;
 
                     /**
+                     * 获取<p>启动参数（用户自定义；null = 默认命令，编辑弹窗预填用）</p>
+                     * @return ServerArgs <p>启动参数（用户自定义；null = 默认命令，编辑弹窗预填用）</p>
+                     * 
+                     */
+                    std::string GetServerArgs() const;
+
+                    /**
+                     * 设置<p>启动参数（用户自定义；null = 默认命令，编辑弹窗预填用）</p>
+                     * @param _serverArgs <p>启动参数（用户自定义；null = 默认命令，编辑弹窗预填用）</p>
+                     * 
+                     */
+                    void SetServerArgs(const std::string& _serverArgs);
+
+                    /**
+                     * 判断参数 ServerArgs 是否已赋值
+                     * @return ServerArgs 是否已赋值
+                     * 
+                     */
+                    bool ServerArgsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>描述信息（纯文本；null = 未填写）</p>
+                     * @return Description <p>描述信息（纯文本；null = 未填写）</p>
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置<p>描述信息（纯文本；null = 未填写）</p>
+                     * @param _description <p>描述信息（纯文本；null = 未填写）</p>
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
                      * 获取<p>应用 ID</p>
                      * @return AppId <p>应用 ID</p>
                      * 
@@ -340,6 +382,48 @@ namespace TencentCloud
                      * 
                      */
                     bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建人子账号 UIN（实际提交者，存量数据可能为空）</p>
+                     * @return SubAccountUin <p>创建人子账号 UIN（实际提交者，存量数据可能为空）</p>
+                     * 
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 设置<p>创建人子账号 UIN（实际提交者，存量数据可能为空）</p>
+                     * @param _subAccountUin <p>创建人子账号 UIN（实际提交者，存量数据可能为空）</p>
+                     * 
+                     */
+                    void SetSubAccountUin(const std::string& _subAccountUin);
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建人子账号名称（CAM 动态回填，非持久化；查询失败时为空）</p>
+                     * @return SubAccountName <p>创建人子账号名称（CAM 动态回填，非持久化；查询失败时为空）</p>
+                     * 
+                     */
+                    std::string GetSubAccountName() const;
+
+                    /**
+                     * 设置<p>创建人子账号名称（CAM 动态回填，非持久化；查询失败时为空）</p>
+                     * @param _subAccountName <p>创建人子账号名称（CAM 动态回填，非持久化；查询失败时为空）</p>
+                     * 
+                     */
+                    void SetSubAccountName(const std::string& _subAccountName);
+
+                    /**
+                     * 判断参数 SubAccountName 是否已赋值
+                     * @return SubAccountName 是否已赋值
+                     * 
+                     */
+                    bool SubAccountNameHasBeenSet() const;
 
                     /**
                      * 获取<p>创建时间（epoch 毫秒）</p><p>单位：毫秒</p>
@@ -429,6 +513,111 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>最近一次成功探测 Deployment 的时间（epoch millis，Neutrino 透传）；NULL=尚未成功探测过。</p>
+                     * @return LastProbeSuccessTime <p>最近一次成功探测 Deployment 的时间（epoch millis，Neutrino 透传）；NULL=尚未成功探测过。</p>
+                     * 
+                     */
+                    int64_t GetLastProbeSuccessTime() const;
+
+                    /**
+                     * 设置<p>最近一次成功探测 Deployment 的时间（epoch millis，Neutrino 透传）；NULL=尚未成功探测过。</p>
+                     * @param _lastProbeSuccessTime <p>最近一次成功探测 Deployment 的时间（epoch millis，Neutrino 透传）；NULL=尚未成功探测过。</p>
+                     * 
+                     */
+                    void SetLastProbeSuccessTime(const int64_t& _lastProbeSuccessTime);
+
+                    /**
+                     * 判断参数 LastProbeSuccessTime 是否已赋值
+                     * @return LastProbeSuccessTime 是否已赋值
+                     * 
+                     */
+                    bool LastProbeSuccessTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最近一次成功探测后的连续失败次数（&gt;0 表示当前 Status 可能过期）</p>
+                     * @return ConsecutiveProbeFailures <p>最近一次成功探测后的连续失败次数（&gt;0 表示当前 Status 可能过期）</p>
+                     * 
+                     */
+                    int64_t GetConsecutiveProbeFailures() const;
+
+                    /**
+                     * 设置<p>最近一次成功探测后的连续失败次数（&gt;0 表示当前 Status 可能过期）</p>
+                     * @param _consecutiveProbeFailures <p>最近一次成功探测后的连续失败次数（&gt;0 表示当前 Status 可能过期）</p>
+                     * 
+                     */
+                    void SetConsecutiveProbeFailures(const int64_t& _consecutiveProbeFailures);
+
+                    /**
+                     * 判断参数 ConsecutiveProbeFailures 是否已赋值
+                     * @return ConsecutiveProbeFailures 是否已赋值
+                     * 
+                     */
+                    bool ConsecutiveProbeFailuresHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最近一次探测失败原因（Neutrino 透传，仅诊断展示）</p>
+                     * @return LastProbeError <p>最近一次探测失败原因（Neutrino 透传，仅诊断展示）</p>
+                     * 
+                     */
+                    std::string GetLastProbeError() const;
+
+                    /**
+                     * 设置<p>最近一次探测失败原因（Neutrino 透传，仅诊断展示）</p>
+                     * @param _lastProbeError <p>最近一次探测失败原因（Neutrino 透传，仅诊断展示）</p>
+                     * 
+                     */
+                    void SetLastProbeError(const std::string& _lastProbeError);
+
+                    /**
+                     * 判断参数 LastProbeError 是否已赋值
+                     * @return LastProbeError 是否已赋值
+                     * 
+                     */
+                    bool LastProbeErrorHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关联训练实例总数（ray-nexus 侧统计，仅 ListMlflowServers 返回；详情/监控请用 QueryMlFlowServerInstanceStats）</p>
+                     * @return TotalInstanceCount <p>关联训练实例总数（ray-nexus 侧统计，仅 ListMlflowServers 返回；详情/监控请用 QueryMlFlowServerInstanceStats）</p>
+                     * 
+                     */
+                    int64_t GetTotalInstanceCount() const;
+
+                    /**
+                     * 设置<p>关联训练实例总数（ray-nexus 侧统计，仅 ListMlflowServers 返回；详情/监控请用 QueryMlFlowServerInstanceStats）</p>
+                     * @param _totalInstanceCount <p>关联训练实例总数（ray-nexus 侧统计，仅 ListMlflowServers 返回；详情/监控请用 QueryMlFlowServerInstanceStats）</p>
+                     * 
+                     */
+                    void SetTotalInstanceCount(const int64_t& _totalInstanceCount);
+
+                    /**
+                     * 判断参数 TotalInstanceCount 是否已赋值
+                     * @return TotalInstanceCount 是否已赋值
+                     * 
+                     */
+                    bool TotalInstanceCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关联的运行中（RUNNING）训练实例数（仅 ListMlflowServers 返回；详情/监控请用 QueryMlflowServerInstanceStats）</p>
+                     * @return RunningInstanceCount <p>关联的运行中（RUNNING）训练实例数（仅 ListMlflowServers 返回；详情/监控请用 QueryMlflowServerInstanceStats）</p>
+                     * 
+                     */
+                    int64_t GetRunningInstanceCount() const;
+
+                    /**
+                     * 设置<p>关联的运行中（RUNNING）训练实例数（仅 ListMlflowServers 返回；详情/监控请用 QueryMlflowServerInstanceStats）</p>
+                     * @param _runningInstanceCount <p>关联的运行中（RUNNING）训练实例数（仅 ListMlflowServers 返回；详情/监控请用 QueryMlflowServerInstanceStats）</p>
+                     * 
+                     */
+                    void SetRunningInstanceCount(const int64_t& _runningInstanceCount);
+
+                    /**
+                     * 判断参数 RunningInstanceCount 是否已赋值
+                     * @return RunningInstanceCount 是否已赋值
+                     * 
+                     */
+                    bool RunningInstanceCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -504,6 +693,18 @@ namespace TencentCloud
                     bool m_storageModeHasBeenSet;
 
                     /**
+                     * <p>启动参数（用户自定义；null = 默认命令，编辑弹窗预填用）</p>
+                     */
+                    std::string m_serverArgs;
+                    bool m_serverArgsHasBeenSet;
+
+                    /**
+                     * <p>描述信息（纯文本；null = 未填写）</p>
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
                      * <p>应用 ID</p>
                      */
                     int64_t m_appId;
@@ -514,6 +715,18 @@ namespace TencentCloud
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
+
+                    /**
+                     * <p>创建人子账号 UIN（实际提交者，存量数据可能为空）</p>
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * <p>创建人子账号名称（CAM 动态回填，非持久化；查询失败时为空）</p>
+                     */
+                    std::string m_subAccountName;
+                    bool m_subAccountNameHasBeenSet;
 
                     /**
                      * <p>创建时间（epoch 毫秒）</p><p>单位：毫秒</p>
@@ -539,6 +752,36 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>最近一次成功探测 Deployment 的时间（epoch millis，Neutrino 透传）；NULL=尚未成功探测过。</p>
+                     */
+                    int64_t m_lastProbeSuccessTime;
+                    bool m_lastProbeSuccessTimeHasBeenSet;
+
+                    /**
+                     * <p>最近一次成功探测后的连续失败次数（&gt;0 表示当前 Status 可能过期）</p>
+                     */
+                    int64_t m_consecutiveProbeFailures;
+                    bool m_consecutiveProbeFailuresHasBeenSet;
+
+                    /**
+                     * <p>最近一次探测失败原因（Neutrino 透传，仅诊断展示）</p>
+                     */
+                    std::string m_lastProbeError;
+                    bool m_lastProbeErrorHasBeenSet;
+
+                    /**
+                     * <p>关联训练实例总数（ray-nexus 侧统计，仅 ListMlflowServers 返回；详情/监控请用 QueryMlFlowServerInstanceStats）</p>
+                     */
+                    int64_t m_totalInstanceCount;
+                    bool m_totalInstanceCountHasBeenSet;
+
+                    /**
+                     * <p>关联的运行中（RUNNING）训练实例数（仅 ListMlflowServers 返回；详情/监控请用 QueryMlflowServerInstanceStats）</p>
+                     */
+                    int64_t m_runningInstanceCount;
+                    bool m_runningInstanceCountHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ App::App() :
     m_corpShareConfigHasBeenSet(false),
     m_sharedKbListHasBeenSet(false),
     m_portalShareConfigHasBeenSet(false),
-    m_fileVolumeMountListHasBeenSet(false)
+    m_fileVolumeMountListHasBeenSet(false),
+    m_a2AConfigHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,23 @@ CoreInternalOutcome App::Deserialize(const rapidjson::Value &value)
         m_fileVolumeMountListHasBeenSet = true;
     }
 
+    if (value.HasMember("A2AConfig") && !value["A2AConfig"].IsNull())
+    {
+        if (!value["A2AConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `App.A2AConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_a2AConfig.Deserialize(value["A2AConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_a2AConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -322,6 +340,15 @@ void App::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_a2AConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "A2AConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_a2AConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -485,5 +512,21 @@ void App::SetFileVolumeMountList(const vector<FileVolumeMount>& _fileVolumeMount
 bool App::FileVolumeMountListHasBeenSet() const
 {
     return m_fileVolumeMountListHasBeenSet;
+}
+
+A2AConfig App::GetA2AConfig() const
+{
+    return m_a2AConfig;
+}
+
+void App::SetA2AConfig(const A2AConfig& _a2AConfig)
+{
+    m_a2AConfig = _a2AConfig;
+    m_a2AConfigHasBeenSet = true;
+}
+
+bool App::A2AConfigHasBeenSet() const
+{
+    return m_a2AConfigHasBeenSet;
 }
 

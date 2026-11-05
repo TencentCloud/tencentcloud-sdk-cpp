@@ -339,6 +339,20 @@ namespace TencentCloud
                      */
                     bool DeploymentResourcesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>评测路由模型（可选）：基座或 &quot;&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;&quot;，不传默认压测基座</p>
+                     * @return ModelIdentifier <p>评测路由模型（可选）：基座或 &quot;&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;&quot;，不传默认压测基座</p>
+                     * 
+                     */
+                    std::string GetModelIdentifier() const;
+
+                    /**
+                     * 判断参数 ModelIdentifier 是否已赋值
+                     * @return ModelIdentifier 是否已赋值
+                     * 
+                     */
+                    bool ModelIdentifierHasBeenSet() const;
+
                 private:
 
                     /**
@@ -466,6 +480,12 @@ namespace TencentCloud
                      */
                     std::vector<DeploymentResourceInfo> m_deploymentResources;
                     bool m_deploymentResourcesHasBeenSet;
+
+                    /**
+                     * <p>评测路由模型（可选）：基座或 &quot;&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;&quot;，不传默认压测基座</p>
+                     */
+                    std::string m_modelIdentifier;
+                    bool m_modelIdentifierHasBeenSet;
 
                 };
             }

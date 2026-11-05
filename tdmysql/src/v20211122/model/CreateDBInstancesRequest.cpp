@@ -23,7 +23,6 @@ using namespace TencentCloud::Tdmysql::V20211122::Model;
 using namespace std;
 
 CreateDBInstancesRequest::CreateDBInstancesRequest() :
-    m_zoneHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_specCodeHasBeenSet(false),
@@ -31,6 +30,7 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_storageNodeNumHasBeenSet(false),
     m_replicationsHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
+    m_zoneHasBeenSet(false),
     m_fullReplicationsHasBeenSet(false),
     m_createVersionHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
@@ -57,7 +57,8 @@ CreateDBInstancesRequest::CreateDBInstancesRequest() :
     m_userNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_encryptionEnableHasBeenSet(false),
-    m_autoScaleConfigsHasBeenSet(false)
+    m_autoScaleConfigsHasBeenSet(false),
+    m_passwordComplexityHasBeenSet(false)
 {
 }
 
@@ -67,14 +68,6 @@ string CreateDBInstancesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_zoneHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Zone";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_vpcIdHasBeenSet)
     {
@@ -130,6 +123,14 @@ string CreateDBInstancesRequest::ToJsonString() const
         string key = "InstanceCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_instanceCount, allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fullReplicationsHasBeenSet)
@@ -385,6 +386,15 @@ string CreateDBInstancesRequest::ToJsonString() const
         }
     }
 
+    if (m_passwordComplexityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PasswordComplexity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_passwordComplexity.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -392,22 +402,6 @@ string CreateDBInstancesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateDBInstancesRequest::GetZone() const
-{
-    return m_zone;
-}
-
-void CreateDBInstancesRequest::SetZone(const string& _zone)
-{
-    m_zone = _zone;
-    m_zoneHasBeenSet = true;
-}
-
-bool CreateDBInstancesRequest::ZoneHasBeenSet() const
-{
-    return m_zoneHasBeenSet;
-}
 
 string CreateDBInstancesRequest::GetVpcId() const
 {
@@ -519,6 +513,22 @@ void CreateDBInstancesRequest::SetInstanceCount(const int64_t& _instanceCount)
 bool CreateDBInstancesRequest::InstanceCountHasBeenSet() const
 {
     return m_instanceCountHasBeenSet;
+}
+
+string CreateDBInstancesRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void CreateDBInstancesRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 
 int64_t CreateDBInstancesRequest::GetFullReplications() const
@@ -951,6 +961,22 @@ void CreateDBInstancesRequest::SetAutoScaleConfigs(const vector<AutoScalingConfi
 bool CreateDBInstancesRequest::AutoScaleConfigsHasBeenSet() const
 {
     return m_autoScaleConfigsHasBeenSet;
+}
+
+PasswordComplexity CreateDBInstancesRequest::GetPasswordComplexity() const
+{
+    return m_passwordComplexity;
+}
+
+void CreateDBInstancesRequest::SetPasswordComplexity(const PasswordComplexity& _passwordComplexity)
+{
+    m_passwordComplexity = _passwordComplexity;
+    m_passwordComplexityHasBeenSet = true;
+}
+
+bool CreateDBInstancesRequest::PasswordComplexityHasBeenSet() const
+{
+    return m_passwordComplexityHasBeenSet;
 }
 
 

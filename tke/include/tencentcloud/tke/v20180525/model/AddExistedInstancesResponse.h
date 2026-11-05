@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取失败的节点ID
+                     * 获取<p>失败的节点ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FailedInstanceIds 失败的节点ID
+                     * @return FailedInstanceIds <p>失败的节点ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool FailedInstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取成功的节点ID
+                     * 获取<p>成功的节点ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SuccInstanceIds 成功的节点ID
+                     * @return SuccInstanceIds <p>成功的节点ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,9 +76,9 @@ namespace TencentCloud
                     bool SuccInstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取超时未返回出来节点的ID(可能失败，也可能成功)
+                     * 获取<p>超时未返回出来节点的ID(可能失败，也可能成功)</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeoutInstanceIds 超时未返回出来节点的ID(可能失败，也可能成功)
+                     * @return TimeoutInstanceIds <p>超时未返回出来节点的ID(可能失败，也可能成功)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -92,9 +92,9 @@ namespace TencentCloud
                     bool TimeoutInstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取失败的节点的失败原因
+                     * 获取<p>失败的节点的失败原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FailedReasons 失败的节点的失败原因
+                     * @return FailedReasons <p>失败的节点的失败原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -110,28 +110,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 失败的节点ID
+                     * <p>失败的节点ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_failedInstanceIds;
                     bool m_failedInstanceIdsHasBeenSet;
 
                     /**
-                     * 成功的节点ID
+                     * <p>成功的节点ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_succInstanceIds;
                     bool m_succInstanceIdsHasBeenSet;
 
                     /**
-                     * 超时未返回出来节点的ID(可能失败，也可能成功)
+                     * <p>超时未返回出来节点的ID(可能失败，也可能成功)</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_timeoutInstanceIds;
                     bool m_timeoutInstanceIdsHasBeenSet;
 
                     /**
-                     * 失败的节点的失败原因
+                     * <p>失败的节点的失败原因</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_failedReasons;

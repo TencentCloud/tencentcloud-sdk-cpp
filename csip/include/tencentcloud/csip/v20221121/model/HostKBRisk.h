@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool EffectHostCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>最近扫描时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ</p>
-                     * @return LatestScanTime <p>最近扫描时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ</p>
+                     * 获取<p>最近扫描时间<br>参数格式：YYYY-MM-DD HH:mm:ss</p>
+                     * @return LatestScanTime <p>最近扫描时间<br>参数格式：YYYY-MM-DD HH:mm:ss</p>
                      * 
                      */
                     std::string GetLatestScanTime() const;
 
                     /**
-                     * 设置<p>最近扫描时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ</p>
-                     * @param _latestScanTime <p>最近扫描时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ</p>
+                     * 设置<p>最近扫描时间<br>参数格式：YYYY-MM-DD HH:mm:ss</p>
+                     * @param _latestScanTime <p>最近扫描时间<br>参数格式：YYYY-MM-DD HH:mm:ss</p>
                      * 
                      */
                     void SetLatestScanTime(const std::string& _latestScanTime);
@@ -174,6 +174,48 @@ namespace TencentCloud
                      */
                     bool RiskStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否最新补丁</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * @return IsNew <p>是否最新补丁</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * 
+                     */
+                    bool GetIsNew() const;
+
+                    /**
+                     * 设置<p>是否最新补丁</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * @param _isNew <p>是否最新补丁</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     * 
+                     */
+                    void SetIsNew(const bool& _isNew);
+
+                    /**
+                     * 判断参数 IsNew 是否已赋值
+                     * @return IsNew 是否已赋值
+                     * 
+                     */
+                    bool IsNewHasBeenSet() const;
+
+                    /**
+                     * 获取<p>修复任务id</p>
+                     * @return FixTaskId <p>修复任务id</p>
+                     * 
+                     */
+                    std::string GetFixTaskId() const;
+
+                    /**
+                     * 设置<p>修复任务id</p>
+                     * @param _fixTaskId <p>修复任务id</p>
+                     * 
+                     */
+                    void SetFixTaskId(const std::string& _fixTaskId);
+
+                    /**
+                     * 判断参数 FixTaskId 是否已赋值
+                     * @return FixTaskId 是否已赋值
+                     * 
+                     */
+                    bool FixTaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -195,7 +237,7 @@ namespace TencentCloud
                     bool m_effectHostCountHasBeenSet;
 
                     /**
-                     * <p>最近扫描时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ</p>
+                     * <p>最近扫描时间<br>参数格式：YYYY-MM-DD HH:mm:ss</p>
                      */
                     std::string m_latestScanTime;
                     bool m_latestScanTimeHasBeenSet;
@@ -211,6 +253,18 @@ namespace TencentCloud
                      */
                     std::string m_riskStatus;
                     bool m_riskStatusHasBeenSet;
+
+                    /**
+                     * <p>是否最新补丁</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>
+                     */
+                    bool m_isNew;
+                    bool m_isNewHasBeenSet;
+
+                    /**
+                     * <p>修复任务id</p>
+                     */
+                    std::string m_fixTaskId;
+                    bool m_fixTaskIdHasBeenSet;
 
                 };
             }

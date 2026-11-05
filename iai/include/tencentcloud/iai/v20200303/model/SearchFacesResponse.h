@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取识别结果。
-                     * @return Results 识别结果。
+                     * 获取<p>识别结果。</p>
+                     * @return Results <p>识别结果。</p>
                      * 
                      */
                     std::vector<Result> GetResults() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ResultsHasBeenSet() const;
 
                     /**
-                     * 获取搜索的人员库中包含的人脸数。
-                     * @return FaceNum 搜索的人员库中包含的人脸数。
+                     * 获取<p>搜索的人员库中包含的人脸数。</p>
+                     * @return FaceNum <p>搜索的人员库中包含的人脸数。</p>
                      * 
                      */
                     uint64_t GetFaceNum() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool FaceNumHasBeenSet() const;
 
                     /**
-                     * 获取人脸识别所用的算法模型版本。
-                     * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     * 获取<p>人脸识别所用的算法模型版本。</p>
+                     * @return FaceModelVersion <p>人脸识别所用的算法模型版本。</p>
                      * 
                      */
                     std::string GetFaceModelVersion() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 识别结果。
+                     * <p>识别结果。</p>
                      */
                     std::vector<Result> m_results;
                     bool m_resultsHasBeenSet;
 
                     /**
-                     * 搜索的人员库中包含的人脸数。
+                     * <p>搜索的人员库中包含的人脸数。</p>
                      */
                     uint64_t m_faceNum;
                     bool m_faceNumHasBeenSet;
 
                     /**
-                     * 人脸识别所用的算法模型版本。
+                     * <p>人脸识别所用的算法模型版本。</p>
                      */
                     std::string m_faceModelVersion;
                     bool m_faceModelVersionHasBeenSet;

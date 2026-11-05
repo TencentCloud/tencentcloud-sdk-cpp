@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return ResourceId 实例Id
+                     * 获取<p>实例Id</p>
+                     * @return ResourceId <p>实例Id</p>
                      * 
                      */
                     std::string GetResourceId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Id
+                     * <p>实例Id</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

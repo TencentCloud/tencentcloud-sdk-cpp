@@ -29,7 +29,8 @@ ReleaseSummary::ReleaseSummary() :
     m_appShareAccessControlHasBeenSet(false),
     m_channelIdListHasBeenSet(false),
     m_corpShareConfigHasBeenSet(false),
-    m_portalShareConfigHasBeenSet(false)
+    m_portalShareConfigHasBeenSet(false),
+    m_a2AConfigHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,23 @@ CoreInternalOutcome ReleaseSummary::Deserialize(const rapidjson::Value &value)
         m_portalShareConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("A2AConfig") && !value["A2AConfig"].IsNull())
+    {
+        if (!value["A2AConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleaseSummary.A2AConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_a2AConfig.Deserialize(value["A2AConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_a2AConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +255,15 @@ void ReleaseSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_portalShareConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_a2AConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "A2AConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_a2AConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -384,5 +411,21 @@ void ReleaseSummary::SetPortalShareConfig(const PortalShareConfig& _portalShareC
 bool ReleaseSummary::PortalShareConfigHasBeenSet() const
 {
     return m_portalShareConfigHasBeenSet;
+}
+
+A2AConfig ReleaseSummary::GetA2AConfig() const
+{
+    return m_a2AConfig;
+}
+
+void ReleaseSummary::SetA2AConfig(const A2AConfig& _a2AConfig)
+{
+    m_a2AConfig = _a2AConfig;
+    m_a2AConfigHasBeenSet = true;
+}
+
+bool ReleaseSummary::A2AConfigHasBeenSet() const
+{
+    return m_a2AConfigHasBeenSet;
 }
 

@@ -30,7 +30,8 @@ CreateReleaseRequest::CreateReleaseRequest() :
     m_descriptionHasBeenSet(false),
     m_isDevToReleaseHasBeenSet(false),
     m_isPublishAsTemplateHasBeenSet(false),
-    m_portalShareConfigHasBeenSet(false)
+    m_portalShareConfigHasBeenSet(false),
+    m_a2AConfigHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,15 @@ string CreateReleaseRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_portalShareConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_a2AConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "A2AConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_a2AConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -247,6 +257,22 @@ void CreateReleaseRequest::SetPortalShareConfig(const PortalShareConfig& _portal
 bool CreateReleaseRequest::PortalShareConfigHasBeenSet() const
 {
     return m_portalShareConfigHasBeenSet;
+}
+
+A2AConfig CreateReleaseRequest::GetA2AConfig() const
+{
+    return m_a2AConfig;
+}
+
+void CreateReleaseRequest::SetA2AConfig(const A2AConfig& _a2AConfig)
+{
+    m_a2AConfig = _a2AConfig;
+    m_a2AConfigHasBeenSet = true;
+}
+
+bool CreateReleaseRequest::A2AConfigHasBeenSet() const
+{
+    return m_a2AConfigHasBeenSet;
 }
 
 

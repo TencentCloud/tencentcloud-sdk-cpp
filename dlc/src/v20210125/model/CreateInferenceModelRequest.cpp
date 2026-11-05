@@ -36,7 +36,13 @@ CreateInferenceModelRequest::CreateInferenceModelRequest() :
     m_modelUidHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_gooseFSConfigHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_modelSourceHasBeenSet(false),
+    m_registerMetaHasBeenSet(false),
+    m_fileListHasBeenSet(false),
+    m_baseModelUidHasBeenSet(false),
+    m_baseModelVersionUidHasBeenSet(false),
+    m_modelCategoryHasBeenSet(false)
 {
 }
 
@@ -175,6 +181,62 @@ string CreateInferenceModelRequest::ToJsonString() const
         string key = "StorageType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registerMetaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegisterMeta";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_registerMeta.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_fileListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fileList.begin(); itr != m_fileList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_baseModelUidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseModelUid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_baseModelUid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_baseModelVersionUidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaseModelVersionUid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_baseModelVersionUid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelCategory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelCategory.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -407,6 +469,102 @@ void CreateInferenceModelRequest::SetStorageType(const string& _storageType)
 bool CreateInferenceModelRequest::StorageTypeHasBeenSet() const
 {
     return m_storageTypeHasBeenSet;
+}
+
+string CreateInferenceModelRequest::GetModelSource() const
+{
+    return m_modelSource;
+}
+
+void CreateInferenceModelRequest::SetModelSource(const string& _modelSource)
+{
+    m_modelSource = _modelSource;
+    m_modelSourceHasBeenSet = true;
+}
+
+bool CreateInferenceModelRequest::ModelSourceHasBeenSet() const
+{
+    return m_modelSourceHasBeenSet;
+}
+
+RegisterMeta CreateInferenceModelRequest::GetRegisterMeta() const
+{
+    return m_registerMeta;
+}
+
+void CreateInferenceModelRequest::SetRegisterMeta(const RegisterMeta& _registerMeta)
+{
+    m_registerMeta = _registerMeta;
+    m_registerMetaHasBeenSet = true;
+}
+
+bool CreateInferenceModelRequest::RegisterMetaHasBeenSet() const
+{
+    return m_registerMetaHasBeenSet;
+}
+
+vector<FileNode> CreateInferenceModelRequest::GetFileList() const
+{
+    return m_fileList;
+}
+
+void CreateInferenceModelRequest::SetFileList(const vector<FileNode>& _fileList)
+{
+    m_fileList = _fileList;
+    m_fileListHasBeenSet = true;
+}
+
+bool CreateInferenceModelRequest::FileListHasBeenSet() const
+{
+    return m_fileListHasBeenSet;
+}
+
+string CreateInferenceModelRequest::GetBaseModelUid() const
+{
+    return m_baseModelUid;
+}
+
+void CreateInferenceModelRequest::SetBaseModelUid(const string& _baseModelUid)
+{
+    m_baseModelUid = _baseModelUid;
+    m_baseModelUidHasBeenSet = true;
+}
+
+bool CreateInferenceModelRequest::BaseModelUidHasBeenSet() const
+{
+    return m_baseModelUidHasBeenSet;
+}
+
+string CreateInferenceModelRequest::GetBaseModelVersionUid() const
+{
+    return m_baseModelVersionUid;
+}
+
+void CreateInferenceModelRequest::SetBaseModelVersionUid(const string& _baseModelVersionUid)
+{
+    m_baseModelVersionUid = _baseModelVersionUid;
+    m_baseModelVersionUidHasBeenSet = true;
+}
+
+bool CreateInferenceModelRequest::BaseModelVersionUidHasBeenSet() const
+{
+    return m_baseModelVersionUidHasBeenSet;
+}
+
+string CreateInferenceModelRequest::GetModelCategory() const
+{
+    return m_modelCategory;
+}
+
+void CreateInferenceModelRequest::SetModelCategory(const string& _modelCategory)
+{
+    m_modelCategory = _modelCategory;
+    m_modelCategoryHasBeenSet = true;
+}
+
+bool CreateInferenceModelRequest::ModelCategoryHasBeenSet() const
+{
+    return m_modelCategoryHasBeenSet;
 }
 
 

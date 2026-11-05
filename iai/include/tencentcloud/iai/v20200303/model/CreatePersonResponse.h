@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人脸图片唯一标识。
-                     * @return FaceId 人脸图片唯一标识。
+                     * 获取<p>人脸图片唯一标识。</p>
+                     * @return FaceId <p>人脸图片唯一标识。</p>
                      * 
                      */
                     std::string GetFaceId() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool FaceIdHasBeenSet() const;
 
                     /**
-                     * 获取检测出的人脸框的位置。
+                     * 获取<p>检测出的人脸框的位置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FaceRect 检测出的人脸框的位置。
+                     * @return FaceRect <p>检测出的人脸框的位置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,10 +75,8 @@ namespace TencentCloud
                     bool FaceRectHasBeenSet() const;
 
                     /**
-                     * 获取疑似同一人的PersonId。 
-- 当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
-                     * @return SimilarPersonId 疑似同一人的PersonId。 
-- 当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
+                     * 获取<p>疑似同一人的PersonId。 </p><ul><li>当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。</li></ul>
+                     * @return SimilarPersonId <p>疑似同一人的PersonId。 </p><ul><li>当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。</li></ul>
                      * 
                      */
                     std::string GetSimilarPersonId() const;
@@ -91,8 +89,8 @@ namespace TencentCloud
                     bool SimilarPersonIdHasBeenSet() const;
 
                     /**
-                     * 获取人脸识别所用的算法模型版本。
-                     * @return FaceModelVersion 人脸识别所用的算法模型版本。
+                     * 获取<p>人脸识别所用的算法模型版本。</p>
+                     * @return FaceModelVersion <p>人脸识别所用的算法模型版本。</p>
                      * 
                      */
                     std::string GetFaceModelVersion() const;
@@ -107,27 +105,26 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人脸图片唯一标识。
+                     * <p>人脸图片唯一标识。</p>
                      */
                     std::string m_faceId;
                     bool m_faceIdHasBeenSet;
 
                     /**
-                     * 检测出的人脸框的位置。
+                     * <p>检测出的人脸框的位置。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FaceRect m_faceRect;
                     bool m_faceRectHasBeenSet;
 
                     /**
-                     * 疑似同一人的PersonId。 
-- 当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。
+                     * <p>疑似同一人的PersonId。 </p><ul><li>当 UniquePersonControl 参数不为0且人员库中有疑似的同一人，此参数才有意义。</li></ul>
                      */
                     std::string m_similarPersonId;
                     bool m_similarPersonIdHasBeenSet;
 
                     /**
-                     * 人脸识别所用的算法模型版本。
+                     * <p>人脸识别所用的算法模型版本。</p>
                      */
                     std::string m_faceModelVersion;
                     bool m_faceModelVersionHasBeenSet;

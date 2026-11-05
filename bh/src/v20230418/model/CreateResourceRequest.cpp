@@ -32,6 +32,9 @@ CreateResourceRequest::CreateResourceRequest() :
     m_timeSpanHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
+    m_iOAResourceHasBeenSet(false),
+    m_packageIOAUserCountHasBeenSet(false),
+    m_packageIOABandwidthHasBeenSet(false),
     m_deployZoneHasBeenSet(false),
     m_trialHasBeenSet(false),
     m_shareClbHasBeenSet(false)
@@ -115,6 +118,30 @@ string CreateResourceRequest::ToJsonString() const
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_iOAResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IOAResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_iOAResource, allocator);
+    }
+
+    if (m_packageIOAUserCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageIOAUserCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_packageIOAUserCount, allocator);
+    }
+
+    if (m_packageIOABandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageIOABandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_packageIOABandwidth, allocator);
     }
 
     if (m_deployZoneHasBeenSet)
@@ -291,6 +318,54 @@ void CreateResourceRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
 bool CreateResourceRequest::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+uint64_t CreateResourceRequest::GetIOAResource() const
+{
+    return m_iOAResource;
+}
+
+void CreateResourceRequest::SetIOAResource(const uint64_t& _iOAResource)
+{
+    m_iOAResource = _iOAResource;
+    m_iOAResourceHasBeenSet = true;
+}
+
+bool CreateResourceRequest::IOAResourceHasBeenSet() const
+{
+    return m_iOAResourceHasBeenSet;
+}
+
+uint64_t CreateResourceRequest::GetPackageIOAUserCount() const
+{
+    return m_packageIOAUserCount;
+}
+
+void CreateResourceRequest::SetPackageIOAUserCount(const uint64_t& _packageIOAUserCount)
+{
+    m_packageIOAUserCount = _packageIOAUserCount;
+    m_packageIOAUserCountHasBeenSet = true;
+}
+
+bool CreateResourceRequest::PackageIOAUserCountHasBeenSet() const
+{
+    return m_packageIOAUserCountHasBeenSet;
+}
+
+uint64_t CreateResourceRequest::GetPackageIOABandwidth() const
+{
+    return m_packageIOABandwidth;
+}
+
+void CreateResourceRequest::SetPackageIOABandwidth(const uint64_t& _packageIOABandwidth)
+{
+    m_packageIOABandwidth = _packageIOABandwidth;
+    m_packageIOABandwidthHasBeenSet = true;
+}
+
+bool CreateResourceRequest::PackageIOABandwidthHasBeenSet() const
+{
+    return m_packageIOABandwidthHasBeenSet;
 }
 
 string CreateResourceRequest::GetDeployZone() const

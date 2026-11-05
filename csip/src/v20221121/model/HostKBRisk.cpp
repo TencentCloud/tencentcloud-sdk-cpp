@@ -26,7 +26,9 @@ HostKBRisk::HostKBRisk() :
     m_effectHostCountHasBeenSet(false),
     m_latestScanTimeHasBeenSet(false),
     m_accountHasBeenSet(false),
-    m_riskStatusHasBeenSet(false)
+    m_riskStatusHasBeenSet(false),
+    m_isNewHasBeenSet(false),
+    m_fixTaskIdHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,26 @@ CoreInternalOutcome HostKBRisk::Deserialize(const rapidjson::Value &value)
         m_riskStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("IsNew") && !value["IsNew"].IsNull())
+    {
+        if (!value["IsNew"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostKBRisk.IsNew` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNew = value["IsNew"].GetBool();
+        m_isNewHasBeenSet = true;
+    }
+
+    if (value.HasMember("FixTaskId") && !value["FixTaskId"].IsNull())
+    {
+        if (!value["FixTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostKBRisk.FixTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fixTaskId = string(value["FixTaskId"].GetString());
+        m_fixTaskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -173,6 +195,22 @@ void HostKBRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "RiskStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_riskStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isNewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNew, allocator);
+    }
+
+    if (m_fixTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FixTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fixTaskId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -272,5 +310,37 @@ void HostKBRisk::SetRiskStatus(const string& _riskStatus)
 bool HostKBRisk::RiskStatusHasBeenSet() const
 {
     return m_riskStatusHasBeenSet;
+}
+
+bool HostKBRisk::GetIsNew() const
+{
+    return m_isNew;
+}
+
+void HostKBRisk::SetIsNew(const bool& _isNew)
+{
+    m_isNew = _isNew;
+    m_isNewHasBeenSet = true;
+}
+
+bool HostKBRisk::IsNewHasBeenSet() const
+{
+    return m_isNewHasBeenSet;
+}
+
+string HostKBRisk::GetFixTaskId() const
+{
+    return m_fixTaskId;
+}
+
+void HostKBRisk::SetFixTaskId(const string& _fixTaskId)
+{
+    m_fixTaskId = _fixTaskId;
+    m_fixTaskIdHasBeenSet = true;
+}
+
+bool HostKBRisk::FixTaskIdHasBeenSet() const
+{
+    return m_fixTaskIdHasBeenSet;
 }
 

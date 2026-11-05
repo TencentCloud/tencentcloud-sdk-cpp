@@ -922,6 +922,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DomainHTTPSConfig.h
   include/tencentcloud/vod/v20180717/model/DescribeMediaProcessUsageDataResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeSuperPlayerConfigsRequest.h
+  include/tencentcloud/vod/v20180717/model/VoiceSlotInfo.h
   include/tencentcloud/vod/v20180717/model/ReduceMediaBitrateMediaProcessTaskResult.h
   include/tencentcloud/vod/v20180717/model/CreateAigcAdvancedCustomElementOutput.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrFullTextResultInput.h
@@ -2112,6 +2113,7 @@ set(vod_src
   src/v20180717/model/DomainHTTPSConfig.cpp
   src/v20180717/model/DescribeMediaProcessUsageDataResponse.cpp
   src/v20180717/model/DescribeSuperPlayerConfigsRequest.cpp
+  src/v20180717/model/VoiceSlotInfo.cpp
   src/v20180717/model/ReduceMediaBitrateMediaProcessTaskResult.cpp
   src/v20180717/model/CreateAigcAdvancedCustomElementOutput.cpp
   src/v20180717/model/AiRecognitionTaskOcrFullTextResultInput.cpp

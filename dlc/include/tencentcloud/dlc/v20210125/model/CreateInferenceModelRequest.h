@@ -23,6 +23,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/Tag.h>
 #include <tencentcloud/dlc/v20210125/model/GooseFSConfig.h>
+#include <tencentcloud/dlc/v20210125/model/RegisterMeta.h>
+#include <tencentcloud/dlc/v20210125/model/FileNode.h>
 
 
 namespace TencentCloud
@@ -338,6 +340,132 @@ namespace TencentCloud
                      */
                     bool StorageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型来源标识（如 train-checkpoint=训练 Checkpoint 注册；空=普通上传等无注册元信息链路）</p>
+                     * @return ModelSource <p>模型来源标识（如 train-checkpoint=训练 Checkpoint 注册；空=普通上传等无注册元信息链路）</p>
+                     * 
+                     */
+                    std::string GetModelSource() const;
+
+                    /**
+                     * 设置<p>模型来源标识（如 train-checkpoint=训练 Checkpoint 注册；空=普通上传等无注册元信息链路）</p>
+                     * @param _modelSource <p>模型来源标识（如 train-checkpoint=训练 Checkpoint 注册；空=普通上传等无注册元信息链路）</p>
+                     * 
+                     */
+                    void SetModelSource(const std::string& _modelSource);
+
+                    /**
+                     * 判断参数 ModelSource 是否已赋值
+                     * @return ModelSource 是否已赋值
+                     * 
+                     */
+                    bool ModelSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>注册元信息（携带即注册语义：storageUri 为训练产物根，零拷贝引用）</p>
+                     * @return RegisterMeta <p>注册元信息（携带即注册语义：storageUri 为训练产物根，零拷贝引用）</p>
+                     * 
+                     */
+                    RegisterMeta GetRegisterMeta() const;
+
+                    /**
+                     * 设置<p>注册元信息（携带即注册语义：storageUri 为训练产物根，零拷贝引用）</p>
+                     * @param _registerMeta <p>注册元信息（携带即注册语义：storageUri 为训练产物根，零拷贝引用）</p>
+                     * 
+                     */
+                    void SetRegisterMeta(const RegisterMeta& _registerMeta);
+
+                    /**
+                     * 判断参数 RegisterMeta 是否已赋值
+                     * @return RegisterMeta 是否已赋值
+                     * 
+                     */
+                    bool RegisterMetaHasBeenSet() const;
+
+                    /**
+                     * 获取<p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>
+                     * @return FileList <p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>
+                     * 
+                     */
+                    std::vector<FileNode> GetFileList() const;
+
+                    /**
+                     * 设置<p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>
+                     * @param _fileList <p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>
+                     * 
+                     */
+                    void SetFileList(const std::vector<FileNode>& _fileList);
+
+                    /**
+                     * 判断参数 FileList 是否已赋值
+                     * @return FileList 是否已赋值
+                     * 
+                     */
+                    bool FileListHasBeenSet() const;
+
+                    /**
+                     * 获取<p>LoRA 基座模型 UID（仅 ModelCategory=LoRA 时有值）</p>
+                     * @return BaseModelUid <p>LoRA 基座模型 UID（仅 ModelCategory=LoRA 时有值）</p>
+                     * 
+                     */
+                    std::string GetBaseModelUid() const;
+
+                    /**
+                     * 设置<p>LoRA 基座模型 UID（仅 ModelCategory=LoRA 时有值）</p>
+                     * @param _baseModelUid <p>LoRA 基座模型 UID（仅 ModelCategory=LoRA 时有值）</p>
+                     * 
+                     */
+                    void SetBaseModelUid(const std::string& _baseModelUid);
+
+                    /**
+                     * 判断参数 BaseModelUid 是否已赋值
+                     * @return BaseModelUid 是否已赋值
+                     * 
+                     */
+                    bool BaseModelUidHasBeenSet() const;
+
+                    /**
+                     * 获取<p>LoRA 基座模型版本 UID（仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>
+                     * @return BaseModelVersionUid <p>LoRA 基座模型版本 UID（仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>
+                     * 
+                     */
+                    std::string GetBaseModelVersionUid() const;
+
+                    /**
+                     * 设置<p>LoRA 基座模型版本 UID（仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>
+                     * @param _baseModelVersionUid <p>LoRA 基座模型版本 UID（仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>
+                     * 
+                     */
+                    void SetBaseModelVersionUid(const std::string& _baseModelVersionUid);
+
+                    /**
+                     * 判断参数 BaseModelVersionUid 是否已赋值
+                     * @return BaseModelVersionUid 是否已赋值
+                     * 
+                     */
+                    bool BaseModelVersionUidHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型类别：Base=普通（基座）模型；LoRA=LoRA Adapter 系列（各版本为 Adapter）</p>
+                     * @return ModelCategory <p>模型类别：Base=普通（基座）模型；LoRA=LoRA Adapter 系列（各版本为 Adapter）</p>
+                     * 
+                     */
+                    std::string GetModelCategory() const;
+
+                    /**
+                     * 设置<p>模型类别：Base=普通（基座）模型；LoRA=LoRA Adapter 系列（各版本为 Adapter）</p>
+                     * @param _modelCategory <p>模型类别：Base=普通（基座）模型；LoRA=LoRA Adapter 系列（各版本为 Adapter）</p>
+                     * 
+                     */
+                    void SetModelCategory(const std::string& _modelCategory);
+
+                    /**
+                     * 判断参数 ModelCategory 是否已赋值
+                     * @return ModelCategory 是否已赋值
+                     * 
+                     */
+                    bool ModelCategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -423,6 +551,42 @@ namespace TencentCloud
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
+
+                    /**
+                     * <p>模型来源标识（如 train-checkpoint=训练 Checkpoint 注册；空=普通上传等无注册元信息链路）</p>
+                     */
+                    std::string m_modelSource;
+                    bool m_modelSourceHasBeenSet;
+
+                    /**
+                     * <p>注册元信息（携带即注册语义：storageUri 为训练产物根，零拷贝引用）</p>
+                     */
+                    RegisterMeta m_registerMeta;
+                    bool m_registerMetaHasBeenSet;
+
+                    /**
+                     * <p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>
+                     */
+                    std::vector<FileNode> m_fileList;
+                    bool m_fileListHasBeenSet;
+
+                    /**
+                     * <p>LoRA 基座模型 UID（仅 ModelCategory=LoRA 时有值）</p>
+                     */
+                    std::string m_baseModelUid;
+                    bool m_baseModelUidHasBeenSet;
+
+                    /**
+                     * <p>LoRA 基座模型版本 UID（仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>
+                     */
+                    std::string m_baseModelVersionUid;
+                    bool m_baseModelVersionUidHasBeenSet;
+
+                    /**
+                     * <p>模型类别：Base=普通（基座）模型；LoRA=LoRA Adapter 系列（各版本为 Adapter）</p>
+                     */
+                    std::string m_modelCategory;
+                    bool m_modelCategoryHasBeenSet;
 
                 };
             }

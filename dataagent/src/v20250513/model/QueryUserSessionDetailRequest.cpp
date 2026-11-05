@@ -26,7 +26,8 @@ QueryUserSessionDetailRequest::QueryUserSessionDetailRequest() :
     m_sessionIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_surfaceContextHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,15 @@ string QueryUserSessionDetailRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_surfaceContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SurfaceContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_surfaceContext.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -139,6 +149,22 @@ void QueryUserSessionDetailRequest::SetInstanceId(const string& _instanceId)
 bool QueryUserSessionDetailRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+SurfaceContext QueryUserSessionDetailRequest::GetSurfaceContext() const
+{
+    return m_surfaceContext;
+}
+
+void QueryUserSessionDetailRequest::SetSurfaceContext(const SurfaceContext& _surfaceContext)
+{
+    m_surfaceContext = _surfaceContext;
+    m_surfaceContextHasBeenSet = true;
+}
+
+bool QueryUserSessionDetailRequest::SurfaceContextHasBeenSet() const
+{
+    return m_surfaceContextHasBeenSet;
 }
 
 

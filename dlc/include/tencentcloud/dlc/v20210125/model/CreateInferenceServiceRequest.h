@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/Tag.h>
+#include <tencentcloud/dlc/v20210125/model/LoraAdapterBinding.h>
 
 
 namespace TencentCloud
@@ -526,6 +527,27 @@ namespace TencentCloud
                      */
                     bool NetworkConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * @return LoraBindings <p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * 
+                     */
+                    std::vector<LoraAdapterBinding> GetLoraBindings() const;
+
+                    /**
+                     * 设置<p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * @param _loraBindings <p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     * 
+                     */
+                    void SetLoraBindings(const std::vector<LoraAdapterBinding>& _loraBindings);
+
+                    /**
+                     * 判断参数 LoraBindings 是否已赋值
+                     * @return LoraBindings 是否已赋值
+                     * 
+                     */
+                    bool LoraBindingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -665,6 +687,12 @@ namespace TencentCloud
                      */
                     std::string m_networkConfig;
                     bool m_networkConfigHasBeenSet;
+
+                    /**
+                     * <p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>
+                     */
+                    std::vector<LoraAdapterBinding> m_loraBindings;
+                    bool m_loraBindingsHasBeenSet;
 
                 };
             }

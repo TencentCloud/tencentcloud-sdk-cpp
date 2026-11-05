@@ -2740,6 +2740,56 @@ TcbClient::DescribeEnvAccountCircleOutcomeCallable TcbClient::DescribeEnvAccount
     return prom->get_future();
 }
 
+TcbClient::DescribeEnvInfoOutcome TcbClient::DescribeEnvInfo(const DescribeEnvInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnvInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnvInfoResponse rsp = DescribeEnvInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnvInfoOutcome(rsp);
+        else
+            return DescribeEnvInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnvInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeEnvInfoAsync(const DescribeEnvInfoRequest& request, const DescribeEnvInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEnvInfoRequest&;
+    using Resp = DescribeEnvInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnvInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeEnvInfoOutcomeCallable TcbClient::DescribeEnvInfoCallable(const DescribeEnvInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEnvInfoOutcome>>();
+    DescribeEnvInfoAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeEnvInfoRequest&,
+        DescribeEnvInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeEnvLimitOutcome TcbClient::DescribeEnvLimit(const DescribeEnvLimitRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnvLimit");

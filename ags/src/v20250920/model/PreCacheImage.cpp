@@ -29,6 +29,7 @@ PreCacheImage::PreCacheImage() :
     m_preCacheImageIdHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_cachedImageSizeBytesHasBeenSet(false),
+    m_readyTimeHasBeenSet(false),
     m_lastUsedTimeHasBeenSet(false)
 {
 }
@@ -118,6 +119,16 @@ CoreInternalOutcome PreCacheImage::Deserialize(const rapidjson::Value &value)
         m_cachedImageSizeBytesHasBeenSet = true;
     }
 
+    if (value.HasMember("ReadyTime") && !value["ReadyTime"].IsNull())
+    {
+        if (!value["ReadyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreCacheImage.ReadyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_readyTime = string(value["ReadyTime"].GetString());
+        m_readyTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("LastUsedTime") && !value["LastUsedTime"].IsNull())
     {
         if (!value["LastUsedTime"].IsString())
@@ -197,6 +208,14 @@ void PreCacheImage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "CachedImageSizeBytes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cachedImageSizeBytes, allocator);
+    }
+
+    if (m_readyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_readyTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastUsedTimeHasBeenSet)
@@ -336,6 +355,22 @@ void PreCacheImage::SetCachedImageSizeBytes(const int64_t& _cachedImageSizeBytes
 bool PreCacheImage::CachedImageSizeBytesHasBeenSet() const
 {
     return m_cachedImageSizeBytesHasBeenSet;
+}
+
+string PreCacheImage::GetReadyTime() const
+{
+    return m_readyTime;
+}
+
+void PreCacheImage::SetReadyTime(const string& _readyTime)
+{
+    m_readyTime = _readyTime;
+    m_readyTimeHasBeenSet = true;
+}
+
+bool PreCacheImage::ReadyTimeHasBeenSet() const
+{
+    return m_readyTimeHasBeenSet;
 }
 
 string PreCacheImage::GetLastUsedTime() const

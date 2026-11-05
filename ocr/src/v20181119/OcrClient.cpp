@@ -2340,6 +2340,56 @@ OcrClient::QrcodeOCROutcomeCallable OcrClient::QrcodeOCRCallable(const QrcodeOCR
     return prom->get_future();
 }
 
+OcrClient::QueryEnterpriseBasicInfoOutcome OcrClient::QueryEnterpriseBasicInfo(const QueryEnterpriseBasicInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryEnterpriseBasicInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryEnterpriseBasicInfoResponse rsp = QueryEnterpriseBasicInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryEnterpriseBasicInfoOutcome(rsp);
+        else
+            return QueryEnterpriseBasicInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryEnterpriseBasicInfoOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::QueryEnterpriseBasicInfoAsync(const QueryEnterpriseBasicInfoRequest& request, const QueryEnterpriseBasicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const QueryEnterpriseBasicInfoRequest&;
+    using Resp = QueryEnterpriseBasicInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "QueryEnterpriseBasicInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::QueryEnterpriseBasicInfoOutcomeCallable OcrClient::QueryEnterpriseBasicInfoCallable(const QueryEnterpriseBasicInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<QueryEnterpriseBasicInfoOutcome>>();
+    QueryEnterpriseBasicInfoAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const QueryEnterpriseBasicInfoRequest&,
+        QueryEnterpriseBasicInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::QuestionOCROutcome OcrClient::QuestionOCR(const QuestionOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "QuestionOCR");

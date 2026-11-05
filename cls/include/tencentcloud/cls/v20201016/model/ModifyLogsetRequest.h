@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
-                     * @return LogsetId 日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
+                     * 获取<p>日志集Id。通过 <a href="https://cloud.tencent.com/document/product/614/58624">获取日志集列表</a>获取日志集Id。</p>
+                     * @return LogsetId <p>日志集Id。通过 <a href="https://cloud.tencent.com/document/product/614/58624">获取日志集列表</a>获取日志集Id。</p>
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
-                     * 设置日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
-                     * @param _logsetId 日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
+                     * 设置<p>日志集Id。通过 <a href="https://cloud.tencent.com/document/product/614/58624">获取日志集列表</a>获取日志集Id。</p>
+                     * @param _logsetId <p>日志集Id。通过 <a href="https://cloud.tencent.com/document/product/614/58624">获取日志集列表</a>获取日志集Id。</p>
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取日志集名字。- 最大支持255个字符。不支持`|`字符。
-                     * @return LogsetName 日志集名字。- 最大支持255个字符。不支持`|`字符。
+                     * 获取<p>日志集名字。- 最大支持255个字符。不支持&quot;|&quot;字符。</p>
+                     * @return LogsetName <p>日志集名字。- 最大支持255个字符。不支持&quot;|&quot;字符。</p>
                      * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
-                     * 设置日志集名字。- 最大支持255个字符。不支持`|`字符。
-                     * @param _logsetName 日志集名字。- 最大支持255个字符。不支持`|`字符。
+                     * 设置<p>日志集名字。- 最大支持255个字符。不支持&quot;|&quot;字符。</p>
+                     * @param _logsetName <p>日志集名字。- 最大支持255个字符。不支持&quot;|&quot;字符。</p>
                      * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LogsetNameHasBeenSet() const;
 
                     /**
-                     * 获取日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。
-                     * @return Tags 日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。
+                     * 获取<p>日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。</p>
+                     * @return Tags <p>日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。
-                     * @param _tags 日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。
+                     * 设置<p>日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。</p>
+                     * @param _tags <p>日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志集Id。通过 [获取日志集列表](https://cloud.tencent.com/document/product/614/58624)获取日志集Id。
+                     * <p>日志集Id。通过 <a href="https://cloud.tencent.com/document/product/614/58624">获取日志集列表</a>获取日志集Id。</p>
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * 日志集名字。- 最大支持255个字符。不支持`|`字符。
+                     * <p>日志集名字。- 最大支持255个字符。不支持&quot;|&quot;字符。</p>
                      */
                     std::string m_logsetName;
                     bool m_logsetNameHasBeenSet;
 
                     /**
-                     * 日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。
+                     * <p>日志集的绑定的标签键值对。最大支持10个标签键值对，同一个资源只能同时绑定一个标签键。</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

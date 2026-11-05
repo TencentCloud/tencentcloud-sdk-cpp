@@ -28,10 +28,12 @@ KBUpdateMachineItem::KBUpdateMachineItem() :
     m_publicIpHasBeenSet(false),
     m_osNameHasBeenSet(false),
     m_machineStatusHasBeenSet(false),
+    m_hostStatusHasBeenSet(false),
     m_supportAutoFixHasBeenSet(false),
     m_fixStatusHasBeenSet(false),
     m_latestFixTimeHasBeenSet(false),
     m_notFixableReasonHasBeenSet(false),
+    m_notFixableActionHasBeenSet(false),
     m_tagItemsHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_payVersionHasBeenSet(false)
@@ -113,6 +115,16 @@ CoreInternalOutcome KBUpdateMachineItem::Deserialize(const rapidjson::Value &val
         m_machineStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("HostStatus") && !value["HostStatus"].IsNull())
+    {
+        if (!value["HostStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KBUpdateMachineItem.HostStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostStatus = string(value["HostStatus"].GetString());
+        m_hostStatusHasBeenSet = true;
+    }
+
     if (value.HasMember("SupportAutoFix") && !value["SupportAutoFix"].IsNull())
     {
         if (!value["SupportAutoFix"].IsInt64())
@@ -151,6 +163,23 @@ CoreInternalOutcome KBUpdateMachineItem::Deserialize(const rapidjson::Value &val
         }
         m_notFixableReason = string(value["NotFixableReason"].GetString());
         m_notFixableReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("NotFixableAction") && !value["NotFixableAction"].IsNull())
+    {
+        if (!value["NotFixableAction"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KBUpdateMachineItem.NotFixableAction` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_notFixableAction.Deserialize(value["NotFixableAction"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_notFixableActionHasBeenSet = true;
     }
 
     if (value.HasMember("TagItems") && !value["TagItems"].IsNull())
@@ -256,6 +285,14 @@ void KBUpdateMachineItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(m_machineStatus.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_hostStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostStatus.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_supportAutoFixHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -286,6 +323,15 @@ void KBUpdateMachineItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "NotFixableReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_notFixableReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notFixableActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotFixableAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_notFixableAction.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_tagItemsHasBeenSet)
@@ -434,6 +480,22 @@ bool KBUpdateMachineItem::MachineStatusHasBeenSet() const
     return m_machineStatusHasBeenSet;
 }
 
+string KBUpdateMachineItem::GetHostStatus() const
+{
+    return m_hostStatus;
+}
+
+void KBUpdateMachineItem::SetHostStatus(const string& _hostStatus)
+{
+    m_hostStatus = _hostStatus;
+    m_hostStatusHasBeenSet = true;
+}
+
+bool KBUpdateMachineItem::HostStatusHasBeenSet() const
+{
+    return m_hostStatusHasBeenSet;
+}
+
 int64_t KBUpdateMachineItem::GetSupportAutoFix() const
 {
     return m_supportAutoFix;
@@ -496,6 +558,22 @@ void KBUpdateMachineItem::SetNotFixableReason(const string& _notFixableReason)
 bool KBUpdateMachineItem::NotFixableReasonHasBeenSet() const
 {
     return m_notFixableReasonHasBeenSet;
+}
+
+VulFixableMachineAction KBUpdateMachineItem::GetNotFixableAction() const
+{
+    return m_notFixableAction;
+}
+
+void KBUpdateMachineItem::SetNotFixableAction(const VulFixableMachineAction& _notFixableAction)
+{
+    m_notFixableAction = _notFixableAction;
+    m_notFixableActionHasBeenSet = true;
+}
+
+bool KBUpdateMachineItem::NotFixableActionHasBeenSet() const
+{
+    return m_notFixableActionHasBeenSet;
 }
 
 vector<MiniTagItem> KBUpdateMachineItem::GetTagItems() const

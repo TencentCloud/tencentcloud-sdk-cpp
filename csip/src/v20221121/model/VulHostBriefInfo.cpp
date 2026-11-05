@@ -33,7 +33,8 @@ VulHostBriefInfo::VulHostBriefInfo() :
     m_vPRRatingHasBeenSet(false),
     m_agentStatusHasBeenSet(false),
     m_tagItemHasBeenSet(false),
-    m_cloudTagHasBeenSet(false)
+    m_cloudTagHasBeenSet(false),
+    m_vPRExplainInfoHasBeenSet(false)
 {
 }
 
@@ -206,6 +207,23 @@ CoreInternalOutcome VulHostBriefInfo::Deserialize(const rapidjson::Value &value)
         m_cloudTagHasBeenSet = true;
     }
 
+    if (value.HasMember("VPRExplainInfo") && !value["VPRExplainInfo"].IsNull())
+    {
+        if (!value["VPRExplainInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulHostBriefInfo.VPRExplainInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vPRExplainInfo.Deserialize(value["VPRExplainInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vPRExplainInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -331,6 +349,15 @@ void VulHostBriefInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_vPRExplainInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VPRExplainInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vPRExplainInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -542,5 +569,21 @@ void VulHostBriefInfo::SetCloudTag(const vector<Tag>& _cloudTag)
 bool VulHostBriefInfo::CloudTagHasBeenSet() const
 {
     return m_cloudTagHasBeenSet;
+}
+
+VPRExplainInfo VulHostBriefInfo::GetVPRExplainInfo() const
+{
+    return m_vPRExplainInfo;
+}
+
+void VulHostBriefInfo::SetVPRExplainInfo(const VPRExplainInfo& _vPRExplainInfo)
+{
+    m_vPRExplainInfo = _vPRExplainInfo;
+    m_vPRExplainInfoHasBeenSet = true;
+}
+
+bool VulHostBriefInfo::VPRExplainInfoHasBeenSet() const
+{
+    return m_vPRExplainInfoHasBeenSet;
 }
 

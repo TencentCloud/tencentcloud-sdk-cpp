@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要开通服务的资源ID
-                     * @return ResourceId 需要开通服务的资源ID
+                     * 获取<p>需要开通服务的资源ID</p>
+                     * @return ResourceId <p>需要开通服务的资源ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置需要开通服务的资源ID
-                     * @param _resourceId 需要开通服务的资源ID
+                     * 设置<p>需要开通服务的资源ID</p>
+                     * @param _resourceId <p>需要开通服务的资源ID</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取<p>状态</p>
+                     * @return Status <p>状态</p>
                      * @deprecated
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置<p>状态</p>
+                     * @param _status <p>状态</p>
                      * @deprecated
                      */
                     void SetStatus(const std::string& _status);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例版本
-                     * @return ResourceEdition 实例版本
+                     * 获取<p>实例版本</p>
+                     * @return ResourceEdition <p>实例版本</p>
                      * 
                      */
                     std::string GetResourceEdition() const;
 
                     /**
-                     * 设置实例版本
-                     * @param _resourceEdition 实例版本
+                     * 设置<p>实例版本</p>
+                     * @param _resourceEdition <p>实例版本</p>
                      * 
                      */
                     void SetResourceEdition(const std::string& _resourceEdition);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ResourceEditionHasBeenSet() const;
 
                     /**
-                     * 获取资源节点数
-                     * @return ResourceNode 资源节点数
+                     * 获取<p>资源节点数</p>
+                     * @return ResourceNode <p>资源节点数</p>
                      * 
                      */
                     int64_t GetResourceNode() const;
 
                     /**
-                     * 设置资源节点数
-                     * @param _resourceNode 资源节点数
+                     * 设置<p>资源节点数</p>
+                     * @param _resourceNode <p>资源节点数</p>
                      * 
                      */
                     void SetResourceNode(const int64_t& _resourceNode);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ResourceNodeHasBeenSet() const;
 
                     /**
-                     * 获取自动续费
-                     * @return AutoRenewFlag 自动续费
+                     * 获取<p>自动续费</p>
+                     * @return AutoRenewFlag <p>自动续费</p>
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费
-                     * @param _autoRenewFlag 自动续费
+                     * 设置<p>自动续费</p>
+                     * @param _autoRenewFlag <p>自动续费</p>
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取带宽扩展包个数(4M)
-                     * @return PackageBandwidth 带宽扩展包个数(4M)
+                     * 获取<p>带宽扩展包个数(4M)</p>
+                     * @return PackageBandwidth <p>带宽扩展包个数(4M)</p>
                      * 
                      */
                     int64_t GetPackageBandwidth() const;
 
                     /**
-                     * 设置带宽扩展包个数(4M)
-                     * @param _packageBandwidth 带宽扩展包个数(4M)
+                     * 设置<p>带宽扩展包个数(4M)</p>
+                     * @param _packageBandwidth <p>带宽扩展包个数(4M)</p>
                      * 
                      */
                     void SetPackageBandwidth(const int64_t& _packageBandwidth);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool PackageBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取授权点数扩展包个数(50点)
-                     * @return PackageNode 授权点数扩展包个数(50点)
+                     * 获取<p>授权点数扩展包个数(50点)</p>
+                     * @return PackageNode <p>授权点数扩展包个数(50点)</p>
                      * 
                      */
                     int64_t GetPackageNode() const;
 
                     /**
-                     * 设置授权点数扩展包个数(50点)
-                     * @param _packageNode 授权点数扩展包个数(50点)
+                     * 设置<p>授权点数扩展包个数(50点)</p>
+                     * @param _packageNode <p>授权点数扩展包个数(50点)</p>
                      * 
                      */
                     void SetPackageNode(const int64_t& _packageNode);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool PackageNodeHasBeenSet() const;
 
                     /**
-                     * 获取日志投递
-                     * @return LogDelivery 日志投递
+                     * 获取<p>日志投递</p>
+                     * @return LogDelivery <p>日志投递</p>
                      * 
                      */
                     int64_t GetLogDelivery() const;
 
                     /**
-                     * 设置日志投递
-                     * @param _logDelivery 日志投递
+                     * 设置<p>日志投递</p>
+                     * @param _logDelivery <p>日志投递</p>
                      * 
                      */
                     void SetLogDelivery(const int64_t& _logDelivery);
@@ -210,55 +210,136 @@ namespace TencentCloud
                      */
                     bool LogDeliveryHasBeenSet() const;
 
+                    /**
+                     * 获取<p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul><p>默认值：0</p>
+                     * @return IOAResource <p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    uint64_t GetIOAResource() const;
+
+                    /**
+                     * 设置<p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul><p>默认值：0</p>
+                     * @param _iOAResource <p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul><p>默认值：0</p>
+                     * 
+                     */
+                    void SetIOAResource(const uint64_t& _iOAResource);
+
+                    /**
+                     * 判断参数 IOAResource 是否已赋值
+                     * @return IOAResource 是否已赋值
+                     * 
+                     */
+                    bool IOAResourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>
+                     * @return PackageIOAUserCount <p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>
+                     * 
+                     */
+                    uint64_t GetPackageIOAUserCount() const;
+
+                    /**
+                     * 设置<p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>
+                     * @param _packageIOAUserCount <p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>
+                     * 
+                     */
+                    void SetPackageIOAUserCount(const uint64_t& _packageIOAUserCount);
+
+                    /**
+                     * 判断参数 PackageIOAUserCount 是否已赋值
+                     * @return PackageIOAUserCount 是否已赋值
+                     * 
+                     */
+                    bool PackageIOAUserCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>
+                     * @return PackageIOABandwidth <p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>
+                     * 
+                     */
+                    uint64_t GetPackageIOABandwidth() const;
+
+                    /**
+                     * 设置<p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>
+                     * @param _packageIOABandwidth <p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>
+                     * 
+                     */
+                    void SetPackageIOABandwidth(const uint64_t& _packageIOABandwidth);
+
+                    /**
+                     * 判断参数 PackageIOABandwidth 是否已赋值
+                     * @return PackageIOABandwidth 是否已赋值
+                     * 
+                     */
+                    bool PackageIOABandwidthHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 需要开通服务的资源ID
+                     * <p>需要开通服务的资源ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例版本
+                     * <p>实例版本</p>
                      */
                     std::string m_resourceEdition;
                     bool m_resourceEditionHasBeenSet;
 
                     /**
-                     * 资源节点数
+                     * <p>资源节点数</p>
                      */
                     int64_t m_resourceNode;
                     bool m_resourceNodeHasBeenSet;
 
                     /**
-                     * 自动续费
+                     * <p>自动续费</p>
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 带宽扩展包个数(4M)
+                     * <p>带宽扩展包个数(4M)</p>
                      */
                     int64_t m_packageBandwidth;
                     bool m_packageBandwidthHasBeenSet;
 
                     /**
-                     * 授权点数扩展包个数(50点)
+                     * <p>授权点数扩展包个数(50点)</p>
                      */
                     int64_t m_packageNode;
                     bool m_packageNodeHasBeenSet;
 
                     /**
-                     * 日志投递
+                     * <p>日志投递</p>
                      */
                     int64_t m_logDelivery;
                     bool m_logDeliveryHasBeenSet;
+
+                    /**
+                     * <p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul><p>默认值：0</p>
+                     */
+                    uint64_t m_iOAResource;
+                    bool m_iOAResourceHasBeenSet;
+
+                    /**
+                     * <p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>
+                     */
+                    uint64_t m_packageIOAUserCount;
+                    bool m_packageIOAUserCountHasBeenSet;
+
+                    /**
+                     * <p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>
+                     */
+                    uint64_t m_packageIOABandwidth;
+                    bool m_packageIOABandwidthHasBeenSet;
 
                 };
             }

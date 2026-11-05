@@ -32,7 +32,11 @@ CreateModelVersionResponse::CreateModelVersionResponse() :
     m_updateTimeHasBeenSet(false),
     m_linkedServicesHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_useCustomStorageHasBeenSet(false)
+    m_useCustomStorageHasBeenSet(false),
+    m_registerMetaHasBeenSet(false),
+    m_versionUidHasBeenSet(false),
+    m_loraMetaHasBeenSet(false),
+    m_poolImportStatusHasBeenSet(false)
 {
 }
 
@@ -170,6 +174,60 @@ CoreInternalOutcome CreateModelVersionResponse::Deserialize(const string &payloa
         m_useCustomStorageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RegisterMeta") && !rsp["RegisterMeta"].IsNull())
+    {
+        if (!rsp["RegisterMeta"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegisterMeta` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_registerMeta.Deserialize(rsp["RegisterMeta"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_registerMetaHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VersionUid") && !rsp["VersionUid"].IsNull())
+    {
+        if (!rsp["VersionUid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VersionUid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_versionUid = string(rsp["VersionUid"].GetString());
+        m_versionUidHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LoraMeta") && !rsp["LoraMeta"].IsNull())
+    {
+        if (!rsp["LoraMeta"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoraMeta` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_loraMeta.Deserialize(rsp["LoraMeta"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_loraMetaHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PoolImportStatus") && !rsp["PoolImportStatus"].IsNull())
+    {
+        if (!rsp["PoolImportStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PoolImportStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_poolImportStatus = string(rsp["PoolImportStatus"].GetString());
+        m_poolImportStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -257,6 +315,40 @@ string CreateModelVersionResponse::ToJsonString() const
         string key = "UseCustomStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useCustomStorage, allocator);
+    }
+
+    if (m_registerMetaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegisterMeta";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_registerMeta.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_versionUidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionUid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionUid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loraMetaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoraMeta";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_loraMeta.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_poolImportStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PoolImportStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_poolImportStatus.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -359,6 +451,46 @@ bool CreateModelVersionResponse::GetUseCustomStorage() const
 bool CreateModelVersionResponse::UseCustomStorageHasBeenSet() const
 {
     return m_useCustomStorageHasBeenSet;
+}
+
+RegisterMeta CreateModelVersionResponse::GetRegisterMeta() const
+{
+    return m_registerMeta;
+}
+
+bool CreateModelVersionResponse::RegisterMetaHasBeenSet() const
+{
+    return m_registerMetaHasBeenSet;
+}
+
+string CreateModelVersionResponse::GetVersionUid() const
+{
+    return m_versionUid;
+}
+
+bool CreateModelVersionResponse::VersionUidHasBeenSet() const
+{
+    return m_versionUidHasBeenSet;
+}
+
+LoraVersionMeta CreateModelVersionResponse::GetLoraMeta() const
+{
+    return m_loraMeta;
+}
+
+bool CreateModelVersionResponse::LoraMetaHasBeenSet() const
+{
+    return m_loraMetaHasBeenSet;
+}
+
+string CreateModelVersionResponse::GetPoolImportStatus() const
+{
+    return m_poolImportStatus;
+}
+
+bool CreateModelVersionResponse::PoolImportStatusHasBeenSet() const
+{
+    return m_poolImportStatusHasBeenSet;
 }
 
 

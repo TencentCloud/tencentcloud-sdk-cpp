@@ -763,6 +763,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/EdrAlertTagItem.h
   include/tencentcloud/csip/v20221121/model/DescribeSecurityScoreOverviewResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeExposeAssetCategoryRequest.h
+  include/tencentcloud/csip/v20221121/model/VulFixableMachineAction.h
   include/tencentcloud/csip/v20221121/model/BaselinePolicy.h
   include/tencentcloud/csip/v20221121/model/DescribeImageRegistryNamespaceListResponse.h
   include/tencentcloud/csip/v20221121/model/AssetDetailItem.h
@@ -2855,6 +2856,7 @@ set(csip_src
   src/v20221121/model/EdrAlertTagItem.cpp
   src/v20221121/model/DescribeSecurityScoreOverviewResponse.cpp
   src/v20221121/model/DescribeExposeAssetCategoryRequest.cpp
+  src/v20221121/model/VulFixableMachineAction.cpp
   src/v20221121/model/BaselinePolicy.cpp
   src/v20221121/model/DescribeImageRegistryNamespaceListResponse.cpp
   src/v20221121/model/AssetDetailItem.cpp

@@ -30,7 +30,10 @@ ModifyResourceRequest::ModifyResourceRequest() :
     m_autoRenewFlagHasBeenSet(false),
     m_packageBandwidthHasBeenSet(false),
     m_packageNodeHasBeenSet(false),
-    m_logDeliveryHasBeenSet(false)
+    m_logDeliveryHasBeenSet(false),
+    m_iOAResourceHasBeenSet(false),
+    m_packageIOAUserCountHasBeenSet(false),
+    m_packageIOABandwidthHasBeenSet(false)
 {
 }
 
@@ -103,6 +106,30 @@ string ModifyResourceRequest::ToJsonString() const
         string key = "LogDelivery";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_logDelivery, allocator);
+    }
+
+    if (m_iOAResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IOAResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_iOAResource, allocator);
+    }
+
+    if (m_packageIOAUserCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageIOAUserCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_packageIOAUserCount, allocator);
+    }
+
+    if (m_packageIOABandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageIOABandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_packageIOABandwidth, allocator);
     }
 
 
@@ -239,6 +266,54 @@ void ModifyResourceRequest::SetLogDelivery(const int64_t& _logDelivery)
 bool ModifyResourceRequest::LogDeliveryHasBeenSet() const
 {
     return m_logDeliveryHasBeenSet;
+}
+
+uint64_t ModifyResourceRequest::GetIOAResource() const
+{
+    return m_iOAResource;
+}
+
+void ModifyResourceRequest::SetIOAResource(const uint64_t& _iOAResource)
+{
+    m_iOAResource = _iOAResource;
+    m_iOAResourceHasBeenSet = true;
+}
+
+bool ModifyResourceRequest::IOAResourceHasBeenSet() const
+{
+    return m_iOAResourceHasBeenSet;
+}
+
+uint64_t ModifyResourceRequest::GetPackageIOAUserCount() const
+{
+    return m_packageIOAUserCount;
+}
+
+void ModifyResourceRequest::SetPackageIOAUserCount(const uint64_t& _packageIOAUserCount)
+{
+    m_packageIOAUserCount = _packageIOAUserCount;
+    m_packageIOAUserCountHasBeenSet = true;
+}
+
+bool ModifyResourceRequest::PackageIOAUserCountHasBeenSet() const
+{
+    return m_packageIOAUserCountHasBeenSet;
+}
+
+uint64_t ModifyResourceRequest::GetPackageIOABandwidth() const
+{
+    return m_packageIOABandwidth;
+}
+
+void ModifyResourceRequest::SetPackageIOABandwidth(const uint64_t& _packageIOABandwidth)
+{
+    m_packageIOABandwidth = _packageIOABandwidth;
+    m_packageIOABandwidthHasBeenSet = true;
+}
+
+bool ModifyResourceRequest::PackageIOABandwidthHasBeenSet() const
+{
+    return m_packageIOABandwidthHasBeenSet;
 }
 
 

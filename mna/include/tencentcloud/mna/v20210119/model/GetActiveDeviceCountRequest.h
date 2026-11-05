@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询粒度。0:day, 1:week, 2:month, 不传默认为day
-                     * @return Period 查询粒度。0:day, 1:week, 2:month, 不传默认为day
+                     * 获取<p>查询粒度。0:day, 1:week, 2:month, 不传默认为day</p>
+                     * @return Period <p>查询粒度。0:day, 1:week, 2:month, 不传默认为day</p>
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置查询粒度。0:day, 1:week, 2:month, 不传默认为day
-                     * @param _period 查询粒度。0:day, 1:week, 2:month, 不传默认为day
+                     * 设置<p>查询粒度。0:day, 1:week, 2:month, 不传默认为day</p>
+                     * @param _period <p>查询粒度。0:day, 1:week, 2:month, 不传默认为day</p>
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取开始时间。单位秒
-                     * @return StartTime 开始时间。单位秒
+                     * 获取<p>开始时间。单位秒</p>
+                     * @return StartTime <p>开始时间。单位秒</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间。单位秒
-                     * @param _startTime 开始时间。单位秒
+                     * 设置<p>开始时间。单位秒</p>
+                     * @param _startTime <p>开始时间。单位秒</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间。单位秒
-                     * @return EndTime 结束时间。单位秒
+                     * 获取<p>结束时间。单位秒</p>
+                     * @return EndTime <p>结束时间。单位秒</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间。单位秒
-                     * @param _endTime 结束时间。单位秒
+                     * 设置<p>结束时间。单位秒</p>
+                     * @param _endTime <p>结束时间。单位秒</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取设备组, 不传查询全部
-                     * @return DevGroup 设备组, 不传查询全部
+                     * 获取<p>设备组, 不传查询全部</p>
+                     * @return DevGroup <p>设备组, 不传查询全部</p>
                      * 
                      */
                     std::string GetDevGroup() const;
 
                     /**
-                     * 设置设备组, 不传查询全部
-                     * @param _devGroup 设备组, 不传查询全部
+                     * 设置<p>设备组, 不传查询全部</p>
+                     * @param _devGroup <p>设备组, 不传查询全部</p>
                      * 
                      */
                     void SetDevGroup(const std::string& _devGroup);
@@ -127,15 +127,36 @@ namespace TencentCloud
                     bool DevGroupHasBeenSet() const;
 
                     /**
-                     * 获取license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权
-                     * @return LicenseType license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权
+                     * 获取<p>应用ID，指控制台上设备管理中的动态设备应用ID，不传查询全部。</p>
+                     * @return ApplicationId <p>应用ID，指控制台上设备管理中的动态设备应用ID，不传查询全部。</p>
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置<p>应用ID，指控制台上设备管理中的动态设备应用ID，不传查询全部。</p>
+                     * @param _applicationId <p>应用ID，指控制台上设备管理中的动态设备应用ID，不传查询全部。</p>
+                     * 
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权</p>
+                     * @return LicenseType <p>license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权</p>
                      * 
                      */
                     int64_t GetLicenseType() const;
 
                     /**
-                     * 设置license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权
-                     * @param _licenseType license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权
+                     * 设置<p>license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权</p>
+                     * @param _licenseType <p>license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权</p>
                      * 
                      */
                     void SetLicenseType(const int64_t& _licenseType);
@@ -150,31 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询粒度。0:day, 1:week, 2:month, 不传默认为day
+                     * <p>查询粒度。0:day, 1:week, 2:month, 不传默认为day</p>
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 开始时间。单位秒
+                     * <p>开始时间。单位秒</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间。单位秒
+                     * <p>结束时间。单位秒</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 设备组, 不传查询全部
+                     * <p>设备组, 不传查询全部</p>
                      */
                     std::string m_devGroup;
                     bool m_devGroupHasBeenSet;
 
                     /**
-                     * license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权
+                     * <p>应用ID，指控制台上设备管理中的动态设备应用ID，不传查询全部。</p>
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * <p>license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权</p>
                      */
                     int64_t m_licenseType;
                     bool m_licenseTypeHasBeenSet;

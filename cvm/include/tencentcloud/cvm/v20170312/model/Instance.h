@@ -1096,6 +1096,27 @@ namespace TencentCloud
                      */
                     bool PartitionNumberHasBeenSet() const;
 
+                    /**
+                     * 获取<p>逻辑超节点标识</p>
+                     * @return SuperNodeId <p>逻辑超节点标识</p>
+                     * 
+                     */
+                    std::string GetSuperNodeId() const;
+
+                    /**
+                     * 设置<p>逻辑超节点标识</p>
+                     * @param _superNodeId <p>逻辑超节点标识</p>
+                     * 
+                     */
+                    void SetSuperNodeId(const std::string& _superNodeId);
+
+                    /**
+                     * 判断参数 SuperNodeId 是否已赋值
+                     * @return SuperNodeId 是否已赋值
+                     * 
+                     */
+                    bool SuperNodeIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1393,6 +1414,12 @@ namespace TencentCloud
                      */
                     int64_t m_partitionNumber;
                     bool m_partitionNumberHasBeenSet;
+
+                    /**
+                     * <p>逻辑超节点标识</p>
+                     */
+                    std::string m_superNodeId;
+                    bool m_superNodeIdHasBeenSet;
 
                 };
             }

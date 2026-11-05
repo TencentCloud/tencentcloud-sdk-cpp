@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署region
-                     * @return DeployRegion 部署region
+                     * 获取<p>部署region</p>
+                     * @return DeployRegion <p>部署region</p>
                      * 
                      */
                     std::string GetDeployRegion() const;
 
                     /**
-                     * 设置部署region
-                     * @param _deployRegion 部署region
+                     * 设置<p>部署region</p>
+                     * @param _deployRegion <p>部署region</p>
                      * 
                      */
                     void SetDeployRegion(const std::string& _deployRegion);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DeployRegionHasBeenSet() const;
 
                     /**
-                     * 获取部署堡垒机的VpcId
-                     * @return VpcId 部署堡垒机的VpcId
+                     * 获取<p>部署堡垒机的VpcId</p>
+                     * @return VpcId <p>部署堡垒机的VpcId</p>
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置部署堡垒机的VpcId
-                     * @param _vpcId 部署堡垒机的VpcId
+                     * 设置<p>部署堡垒机的VpcId</p>
+                     * @param _vpcId <p>部署堡垒机的VpcId</p>
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取部署堡垒机的SubnetId
-                     * @return SubnetId 部署堡垒机的SubnetId
+                     * 获取<p>部署堡垒机的SubnetId</p>
+                     * @return SubnetId <p>部署堡垒机的SubnetId</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置部署堡垒机的SubnetId
-                     * @param _subnetId 部署堡垒机的SubnetId
+                     * 设置<p>部署堡垒机的SubnetId</p>
+                     * @param _subnetId <p>部署堡垒机的SubnetId</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型。取值:standard/pro
-                     * @return ResourceEdition 资源类型。取值:standard/pro
+                     * 获取<p>资源类型。取值:standard/pro</p>
+                     * @return ResourceEdition <p>资源类型。取值:standard/pro</p>
                      * 
                      */
                     std::string GetResourceEdition() const;
 
                     /**
-                     * 设置资源类型。取值:standard/pro
-                     * @param _resourceEdition 资源类型。取值:standard/pro
+                     * 设置<p>资源类型。取值:standard/pro</p>
+                     * @param _resourceEdition <p>资源类型。取值:standard/pro</p>
                      * 
                      */
                     void SetResourceEdition(const std::string& _resourceEdition);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ResourceEditionHasBeenSet() const;
 
                     /**
-                     * 获取资源节点数
-                     * @return ResourceNode 资源节点数
+                     * 获取<p>资源节点数</p>
+                     * @return ResourceNode <p>资源节点数</p>
                      * 
                      */
                     int64_t GetResourceNode() const;
 
                     /**
-                     * 设置资源节点数
-                     * @param _resourceNode 资源节点数
+                     * 设置<p>资源节点数</p>
+                     * @param _resourceNode <p>资源节点数</p>
                      * 
                      */
                     void SetResourceNode(const int64_t& _resourceNode);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ResourceNodeHasBeenSet() const;
 
                     /**
-                     * 获取计费周期
-                     * @return TimeUnit 计费周期
+                     * 获取<p>计费周期</p>
+                     * @return TimeUnit <p>计费周期</p>
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
-                     * 设置计费周期
-                     * @param _timeUnit 计费周期
+                     * 设置<p>计费周期</p>
+                     * @param _timeUnit <p>计费周期</p>
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取计费时长
-                     * @return TimeSpan 计费时长
+                     * 获取<p>计费时长</p>
+                     * @return TimeSpan <p>计费时长</p>
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
-                     * 设置计费时长
-                     * @param _timeSpan 计费时长
+                     * 设置<p>计费时长</p>
+                     * @param _timeSpan <p>计费时长</p>
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取计费模式 1预付费
-                     * @return PayMode 计费模式 1预付费
+                     * 获取<p>计费模式 1预付费</p>
+                     * @return PayMode <p>计费模式 1预付费</p>
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置计费模式 1预付费
-                     * @param _payMode 计费模式 1预付费
+                     * 设置<p>计费模式 1预付费</p>
+                     * @param _payMode <p>计费模式 1预付费</p>
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取自动续费
-                     * @return AutoRenewFlag 自动续费
+                     * 获取<p>自动续费</p>
+                     * @return AutoRenewFlag <p>自动续费</p>
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费
-                     * @param _autoRenewFlag 自动续费
+                     * 设置<p>自动续费</p>
+                     * @param _autoRenewFlag <p>自动续费</p>
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -232,15 +232,78 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取部署zone
-                     * @return DeployZone 部署zone
+                     * 获取<p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul>
+                     * @return IOAResource <p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul>
+                     * 
+                     */
+                    uint64_t GetIOAResource() const;
+
+                    /**
+                     * 设置<p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul>
+                     * @param _iOAResource <p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul>
+                     * 
+                     */
+                    void SetIOAResource(const uint64_t& _iOAResource);
+
+                    /**
+                     * 判断参数 IOAResource 是否已赋值
+                     * @return IOAResource 是否已赋值
+                     * 
+                     */
+                    bool IOAResourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>
+                     * @return PackageIOAUserCount <p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>
+                     * 
+                     */
+                    uint64_t GetPackageIOAUserCount() const;
+
+                    /**
+                     * 设置<p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>
+                     * @param _packageIOAUserCount <p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>
+                     * 
+                     */
+                    void SetPackageIOAUserCount(const uint64_t& _packageIOAUserCount);
+
+                    /**
+                     * 判断参数 PackageIOAUserCount 是否已赋值
+                     * @return PackageIOAUserCount 是否已赋值
+                     * 
+                     */
+                    bool PackageIOAUserCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>
+                     * @return PackageIOABandwidth <p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>
+                     * 
+                     */
+                    uint64_t GetPackageIOABandwidth() const;
+
+                    /**
+                     * 设置<p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>
+                     * @param _packageIOABandwidth <p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>
+                     * 
+                     */
+                    void SetPackageIOABandwidth(const uint64_t& _packageIOABandwidth);
+
+                    /**
+                     * 判断参数 PackageIOABandwidth 是否已赋值
+                     * @return PackageIOABandwidth 是否已赋值
+                     * 
+                     */
+                    bool PackageIOABandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>部署zone</p>
+                     * @return DeployZone <p>部署zone</p>
                      * 
                      */
                     std::string GetDeployZone() const;
 
                     /**
-                     * 设置部署zone
-                     * @param _deployZone 部署zone
+                     * 设置<p>部署zone</p>
+                     * @param _deployZone <p>部署zone</p>
                      * 
                      */
                     void SetDeployZone(const std::string& _deployZone);
@@ -253,15 +316,15 @@ namespace TencentCloud
                     bool DeployZoneHasBeenSet() const;
 
                     /**
-                     * 获取0非试用版，1试用版
-                     * @return Trial 0非试用版，1试用版
+                     * 获取<p>0非试用版，1试用版</p>
+                     * @return Trial <p>0非试用版，1试用版</p>
                      * 
                      */
                     uint64_t GetTrial() const;
 
                     /**
-                     * 设置0非试用版，1试用版
-                     * @param _trial 0非试用版，1试用版
+                     * 设置<p>0非试用版，1试用版</p>
+                     * @param _trial <p>0非试用版，1试用版</p>
                      * 
                      */
                     void SetTrial(const uint64_t& _trial);
@@ -274,15 +337,15 @@ namespace TencentCloud
                     bool TrialHasBeenSet() const;
 
                     /**
-                     * 获取是否共享clb，0：不共享，1：共享
-                     * @return ShareClb 是否共享clb，0：不共享，1：共享
+                     * 获取<p>是否共享clb</p><p>枚举值：</p><ul><li>0： 不共享</li><li>1： 共享</li></ul><p>默认值：0</p><p>公有云传0</p>
+                     * @return ShareClb <p>是否共享clb</p><p>枚举值：</p><ul><li>0： 不共享</li><li>1： 共享</li></ul><p>默认值：0</p><p>公有云传0</p>
                      * 
                      */
                     uint64_t GetShareClb() const;
 
                     /**
-                     * 设置是否共享clb，0：不共享，1：共享
-                     * @param _shareClb 是否共享clb，0：不共享，1：共享
+                     * 设置<p>是否共享clb</p><p>枚举值：</p><ul><li>0： 不共享</li><li>1： 共享</li></ul><p>默认值：0</p><p>公有云传0</p>
+                     * @param _shareClb <p>是否共享clb</p><p>枚举值：</p><ul><li>0： 不共享</li><li>1： 共享</li></ul><p>默认值：0</p><p>公有云传0</p>
                      * 
                      */
                     void SetShareClb(const uint64_t& _shareClb);
@@ -297,73 +360,91 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部署region
+                     * <p>部署region</p>
                      */
                     std::string m_deployRegion;
                     bool m_deployRegionHasBeenSet;
 
                     /**
-                     * 部署堡垒机的VpcId
+                     * <p>部署堡垒机的VpcId</p>
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 部署堡垒机的SubnetId
+                     * <p>部署堡垒机的SubnetId</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 资源类型。取值:standard/pro
+                     * <p>资源类型。取值:standard/pro</p>
                      */
                     std::string m_resourceEdition;
                     bool m_resourceEditionHasBeenSet;
 
                     /**
-                     * 资源节点数
+                     * <p>资源节点数</p>
                      */
                     int64_t m_resourceNode;
                     bool m_resourceNodeHasBeenSet;
 
                     /**
-                     * 计费周期
+                     * <p>计费周期</p>
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 计费时长
+                     * <p>计费时长</p>
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 计费模式 1预付费
+                     * <p>计费模式 1预付费</p>
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 自动续费
+                     * <p>自动续费</p>
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 部署zone
+                     * <p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul>
+                     */
+                    uint64_t m_iOAResource;
+                    bool m_iOAResourceHasBeenSet;
+
+                    /**
+                     * <p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>
+                     */
+                    uint64_t m_packageIOAUserCount;
+                    bool m_packageIOAUserCountHasBeenSet;
+
+                    /**
+                     * <p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>
+                     */
+                    uint64_t m_packageIOABandwidth;
+                    bool m_packageIOABandwidthHasBeenSet;
+
+                    /**
+                     * <p>部署zone</p>
                      */
                     std::string m_deployZone;
                     bool m_deployZoneHasBeenSet;
 
                     /**
-                     * 0非试用版，1试用版
+                     * <p>0非试用版，1试用版</p>
                      */
                     uint64_t m_trial;
                     bool m_trialHasBeenSet;
 
                     /**
-                     * 是否共享clb，0：不共享，1：共享
+                     * <p>是否共享clb</p><p>枚举值：</p><ul><li>0： 不共享</li><li>1： 共享</li></ul><p>默认值：0</p><p>公有云传0</p>
                      */
                     uint64_t m_shareClb;
                     bool m_shareClbHasBeenSet;

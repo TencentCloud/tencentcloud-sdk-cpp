@@ -928,6 +928,34 @@ namespace TencentCloud
                      */
                     bool AutoScaleConfigsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>SSL开启状态</p>
+                     * @return SSLStatus <p>SSL开启状态</p>
+                     * 
+                     */
+                    std::string GetSSLStatus() const;
+
+                    /**
+                     * 判断参数 SSLStatus 是否已赋值
+                     * @return SSLStatus 是否已赋值
+                     * 
+                     */
+                    bool SSLStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>字符集的排序规则</p>
+                     * @return Collation <p>字符集的排序规则</p>
+                     * 
+                     */
+                    std::string GetCollation() const;
+
+                    /**
+                     * 判断参数 Collation 是否已赋值
+                     * @return Collation 是否已赋值
+                     * 
+                     */
+                    bool CollationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1306,6 +1334,18 @@ namespace TencentCloud
                      */
                     std::vector<AutoScalingConfig> m_autoScaleConfigs;
                     bool m_autoScaleConfigsHasBeenSet;
+
+                    /**
+                     * <p>SSL开启状态</p>
+                     */
+                    std::string m_sSLStatus;
+                    bool m_sSLStatusHasBeenSet;
+
+                    /**
+                     * <p>字符集的排序规则</p>
+                     */
+                    std::string m_collation;
+                    bool m_collationHasBeenSet;
 
                 };
             }

@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/GooseFSConfig.h>
+#include <tencentcloud/dlc/v20210125/model/RegisterMeta.h>
+#include <tencentcloud/dlc/v20210125/model/FileNode.h>
 
 
 namespace TencentCloud
@@ -190,6 +192,69 @@ namespace TencentCloud
                      */
                     bool StorageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型来源标识（可选；有 RegisterMeta 时必填；须与模型现有来源一致）</p>
+                     * @return ModelSource <p>模型来源标识（可选；有 RegisterMeta 时必填；须与模型现有来源一致）</p>
+                     * 
+                     */
+                    std::string GetModelSource() const;
+
+                    /**
+                     * 设置<p>模型来源标识（可选；有 RegisterMeta 时必填；须与模型现有来源一致）</p>
+                     * @param _modelSource <p>模型来源标识（可选；有 RegisterMeta 时必填；须与模型现有来源一致）</p>
+                     * 
+                     */
+                    void SetModelSource(const std::string& _modelSource);
+
+                    /**
+                     * 判断参数 ModelSource 是否已赋值
+                     * @return ModelSource 是否已赋值
+                     * 
+                     */
+                    bool ModelSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>注册元信息（仅注册语义创建的版本有值，与创建请求 RegisterMeta 结构一致）</p>
+                     * @return RegisterMeta <p>注册元信息（仅注册语义创建的版本有值，与创建请求 RegisterMeta 结构一致）</p>
+                     * 
+                     */
+                    RegisterMeta GetRegisterMeta() const;
+
+                    /**
+                     * 设置<p>注册元信息（仅注册语义创建的版本有值，与创建请求 RegisterMeta 结构一致）</p>
+                     * @param _registerMeta <p>注册元信息（仅注册语义创建的版本有值，与创建请求 RegisterMeta 结构一致）</p>
+                     * 
+                     */
+                    void SetRegisterMeta(const RegisterMeta& _registerMeta);
+
+                    /**
+                     * 判断参数 RegisterMeta 是否已赋值
+                     * @return RegisterMeta 是否已赋值
+                     * 
+                     */
+                    bool RegisterMetaHasBeenSet() const;
+
+                    /**
+                     * 获取<p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>
+                     * @return FileList <p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>
+                     * 
+                     */
+                    std::vector<FileNode> GetFileList() const;
+
+                    /**
+                     * 设置<p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>
+                     * @param _fileList <p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>
+                     * 
+                     */
+                    void SetFileList(const std::vector<FileNode>& _fileList);
+
+                    /**
+                     * 判断参数 FileList 是否已赋值
+                     * @return FileList 是否已赋值
+                     * 
+                     */
+                    bool FileListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +298,24 @@ namespace TencentCloud
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
+
+                    /**
+                     * <p>模型来源标识（可选；有 RegisterMeta 时必填；须与模型现有来源一致）</p>
+                     */
+                    std::string m_modelSource;
+                    bool m_modelSourceHasBeenSet;
+
+                    /**
+                     * <p>注册元信息（仅注册语义创建的版本有值，与创建请求 RegisterMeta 结构一致）</p>
+                     */
+                    RegisterMeta m_registerMeta;
+                    bool m_registerMetaHasBeenSet;
+
+                    /**
+                     * <p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>
+                     */
+                    std::vector<FileNode> m_fileList;
+                    bool m_fileListHasBeenSet;
 
                 };
             }

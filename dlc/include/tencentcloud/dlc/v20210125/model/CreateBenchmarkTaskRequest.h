@@ -336,6 +336,27 @@ namespace TencentCloud
                      */
                     bool SpecHasBeenSet() const;
 
+                    /**
+                     * 获取<p>评测路由模型（可选）：基座或 &quot;&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;&quot;，不传默认压测基座</p>
+                     * @return ModelIdentifier <p>评测路由模型（可选）：基座或 &quot;&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;&quot;，不传默认压测基座</p>
+                     * 
+                     */
+                    std::string GetModelIdentifier() const;
+
+                    /**
+                     * 设置<p>评测路由模型（可选）：基座或 &quot;&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;&quot;，不传默认压测基座</p>
+                     * @param _modelIdentifier <p>评测路由模型（可选）：基座或 &quot;&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;&quot;，不传默认压测基座</p>
+                     * 
+                     */
+                    void SetModelIdentifier(const std::string& _modelIdentifier);
+
+                    /**
+                     * 判断参数 ModelIdentifier 是否已赋值
+                     * @return ModelIdentifier 是否已赋值
+                     * 
+                     */
+                    bool ModelIdentifierHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +442,12 @@ namespace TencentCloud
                      */
                     int64_t m_spec;
                     bool m_specHasBeenSet;
+
+                    /**
+                     * <p>评测路由模型（可选）：基座或 &quot;&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;&quot;，不传默认压测基座</p>
+                     */
+                    std::string m_modelIdentifier;
+                    bool m_modelIdentifierHasBeenSet;
 
                 };
             }

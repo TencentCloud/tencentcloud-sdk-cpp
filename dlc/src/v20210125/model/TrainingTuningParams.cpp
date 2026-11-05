@@ -50,7 +50,15 @@ TrainingTuningParams::TrainingTuningParams() :
     m_pPOEpochsHasBeenSet(false),
     m_trainBatchSizeHasBeenSet(false),
     m_tensorModelParallelSizeHasBeenSet(false),
-    m_gpuMemoryUtilizationHasBeenSet(false)
+    m_gpuMemoryUtilizationHasBeenSet(false),
+    m_pPOMaxTokenLenPerGpuHasBeenSet(false),
+    m_logProbMaxTokenLenPerGpuHasBeenSet(false),
+    m_actorParamOffloadHasBeenSet(false),
+    m_actorOptimizerOffloadHasBeenSet(false),
+    m_refParamOffloadHasBeenSet(false),
+    m_pPOMicroBatchSizePerGpuHasBeenSet(false),
+    m_rollOutLogProbMicroBatchSizePerGpuHasBeenSet(false),
+    m_gRPORawOverridesHasBeenSet(false)
 {
 }
 
@@ -359,6 +367,86 @@ CoreInternalOutcome TrainingTuningParams::Deserialize(const rapidjson::Value &va
         m_gpuMemoryUtilizationHasBeenSet = true;
     }
 
+    if (value.HasMember("PPOMaxTokenLenPerGpu") && !value["PPOMaxTokenLenPerGpu"].IsNull())
+    {
+        if (!value["PPOMaxTokenLenPerGpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTuningParams.PPOMaxTokenLenPerGpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pPOMaxTokenLenPerGpu = value["PPOMaxTokenLenPerGpu"].GetInt64();
+        m_pPOMaxTokenLenPerGpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogProbMaxTokenLenPerGpu") && !value["LogProbMaxTokenLenPerGpu"].IsNull())
+    {
+        if (!value["LogProbMaxTokenLenPerGpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTuningParams.LogProbMaxTokenLenPerGpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_logProbMaxTokenLenPerGpu = value["LogProbMaxTokenLenPerGpu"].GetInt64();
+        m_logProbMaxTokenLenPerGpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("ActorParamOffload") && !value["ActorParamOffload"].IsNull())
+    {
+        if (!value["ActorParamOffload"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTuningParams.ActorParamOffload` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_actorParamOffload = value["ActorParamOffload"].GetBool();
+        m_actorParamOffloadHasBeenSet = true;
+    }
+
+    if (value.HasMember("ActorOptimizerOffload") && !value["ActorOptimizerOffload"].IsNull())
+    {
+        if (!value["ActorOptimizerOffload"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTuningParams.ActorOptimizerOffload` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_actorOptimizerOffload = value["ActorOptimizerOffload"].GetBool();
+        m_actorOptimizerOffloadHasBeenSet = true;
+    }
+
+    if (value.HasMember("RefParamOffload") && !value["RefParamOffload"].IsNull())
+    {
+        if (!value["RefParamOffload"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTuningParams.RefParamOffload` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_refParamOffload = value["RefParamOffload"].GetBool();
+        m_refParamOffloadHasBeenSet = true;
+    }
+
+    if (value.HasMember("PPOMicroBatchSizePerGpu") && !value["PPOMicroBatchSizePerGpu"].IsNull())
+    {
+        if (!value["PPOMicroBatchSizePerGpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTuningParams.PPOMicroBatchSizePerGpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pPOMicroBatchSizePerGpu = value["PPOMicroBatchSizePerGpu"].GetInt64();
+        m_pPOMicroBatchSizePerGpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("RollOutLogProbMicroBatchSizePerGpu") && !value["RollOutLogProbMicroBatchSizePerGpu"].IsNull())
+    {
+        if (!value["RollOutLogProbMicroBatchSizePerGpu"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTuningParams.RollOutLogProbMicroBatchSizePerGpu` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rollOutLogProbMicroBatchSizePerGpu = value["RollOutLogProbMicroBatchSizePerGpu"].GetInt64();
+        m_rollOutLogProbMicroBatchSizePerGpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("GRPORawOverrides") && !value["GRPORawOverrides"].IsNull())
+    {
+        if (!value["GRPORawOverrides"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTuningParams.GRPORawOverrides` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gRPORawOverrides = string(value["GRPORawOverrides"].GetString());
+        m_gRPORawOverridesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -604,6 +692,70 @@ void TrainingTuningParams::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "GpuMemoryUtilization";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gpuMemoryUtilization, allocator);
+    }
+
+    if (m_pPOMaxTokenLenPerGpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PPOMaxTokenLenPerGpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pPOMaxTokenLenPerGpu, allocator);
+    }
+
+    if (m_logProbMaxTokenLenPerGpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogProbMaxTokenLenPerGpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_logProbMaxTokenLenPerGpu, allocator);
+    }
+
+    if (m_actorParamOffloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActorParamOffload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_actorParamOffload, allocator);
+    }
+
+    if (m_actorOptimizerOffloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActorOptimizerOffload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_actorOptimizerOffload, allocator);
+    }
+
+    if (m_refParamOffloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RefParamOffload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_refParamOffload, allocator);
+    }
+
+    if (m_pPOMicroBatchSizePerGpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PPOMicroBatchSizePerGpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pPOMicroBatchSizePerGpu, allocator);
+    }
+
+    if (m_rollOutLogProbMicroBatchSizePerGpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollOutLogProbMicroBatchSizePerGpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rollOutLogProbMicroBatchSizePerGpu, allocator);
+    }
+
+    if (m_gRPORawOverridesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GRPORawOverrides";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gRPORawOverrides.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1087,5 +1239,133 @@ void TrainingTuningParams::SetGpuMemoryUtilization(const double& _gpuMemoryUtili
 bool TrainingTuningParams::GpuMemoryUtilizationHasBeenSet() const
 {
     return m_gpuMemoryUtilizationHasBeenSet;
+}
+
+int64_t TrainingTuningParams::GetPPOMaxTokenLenPerGpu() const
+{
+    return m_pPOMaxTokenLenPerGpu;
+}
+
+void TrainingTuningParams::SetPPOMaxTokenLenPerGpu(const int64_t& _pPOMaxTokenLenPerGpu)
+{
+    m_pPOMaxTokenLenPerGpu = _pPOMaxTokenLenPerGpu;
+    m_pPOMaxTokenLenPerGpuHasBeenSet = true;
+}
+
+bool TrainingTuningParams::PPOMaxTokenLenPerGpuHasBeenSet() const
+{
+    return m_pPOMaxTokenLenPerGpuHasBeenSet;
+}
+
+int64_t TrainingTuningParams::GetLogProbMaxTokenLenPerGpu() const
+{
+    return m_logProbMaxTokenLenPerGpu;
+}
+
+void TrainingTuningParams::SetLogProbMaxTokenLenPerGpu(const int64_t& _logProbMaxTokenLenPerGpu)
+{
+    m_logProbMaxTokenLenPerGpu = _logProbMaxTokenLenPerGpu;
+    m_logProbMaxTokenLenPerGpuHasBeenSet = true;
+}
+
+bool TrainingTuningParams::LogProbMaxTokenLenPerGpuHasBeenSet() const
+{
+    return m_logProbMaxTokenLenPerGpuHasBeenSet;
+}
+
+bool TrainingTuningParams::GetActorParamOffload() const
+{
+    return m_actorParamOffload;
+}
+
+void TrainingTuningParams::SetActorParamOffload(const bool& _actorParamOffload)
+{
+    m_actorParamOffload = _actorParamOffload;
+    m_actorParamOffloadHasBeenSet = true;
+}
+
+bool TrainingTuningParams::ActorParamOffloadHasBeenSet() const
+{
+    return m_actorParamOffloadHasBeenSet;
+}
+
+bool TrainingTuningParams::GetActorOptimizerOffload() const
+{
+    return m_actorOptimizerOffload;
+}
+
+void TrainingTuningParams::SetActorOptimizerOffload(const bool& _actorOptimizerOffload)
+{
+    m_actorOptimizerOffload = _actorOptimizerOffload;
+    m_actorOptimizerOffloadHasBeenSet = true;
+}
+
+bool TrainingTuningParams::ActorOptimizerOffloadHasBeenSet() const
+{
+    return m_actorOptimizerOffloadHasBeenSet;
+}
+
+bool TrainingTuningParams::GetRefParamOffload() const
+{
+    return m_refParamOffload;
+}
+
+void TrainingTuningParams::SetRefParamOffload(const bool& _refParamOffload)
+{
+    m_refParamOffload = _refParamOffload;
+    m_refParamOffloadHasBeenSet = true;
+}
+
+bool TrainingTuningParams::RefParamOffloadHasBeenSet() const
+{
+    return m_refParamOffloadHasBeenSet;
+}
+
+int64_t TrainingTuningParams::GetPPOMicroBatchSizePerGpu() const
+{
+    return m_pPOMicroBatchSizePerGpu;
+}
+
+void TrainingTuningParams::SetPPOMicroBatchSizePerGpu(const int64_t& _pPOMicroBatchSizePerGpu)
+{
+    m_pPOMicroBatchSizePerGpu = _pPOMicroBatchSizePerGpu;
+    m_pPOMicroBatchSizePerGpuHasBeenSet = true;
+}
+
+bool TrainingTuningParams::PPOMicroBatchSizePerGpuHasBeenSet() const
+{
+    return m_pPOMicroBatchSizePerGpuHasBeenSet;
+}
+
+int64_t TrainingTuningParams::GetRollOutLogProbMicroBatchSizePerGpu() const
+{
+    return m_rollOutLogProbMicroBatchSizePerGpu;
+}
+
+void TrainingTuningParams::SetRollOutLogProbMicroBatchSizePerGpu(const int64_t& _rollOutLogProbMicroBatchSizePerGpu)
+{
+    m_rollOutLogProbMicroBatchSizePerGpu = _rollOutLogProbMicroBatchSizePerGpu;
+    m_rollOutLogProbMicroBatchSizePerGpuHasBeenSet = true;
+}
+
+bool TrainingTuningParams::RollOutLogProbMicroBatchSizePerGpuHasBeenSet() const
+{
+    return m_rollOutLogProbMicroBatchSizePerGpuHasBeenSet;
+}
+
+string TrainingTuningParams::GetGRPORawOverrides() const
+{
+    return m_gRPORawOverrides;
+}
+
+void TrainingTuningParams::SetGRPORawOverrides(const string& _gRPORawOverrides)
+{
+    m_gRPORawOverrides = _gRPORawOverrides;
+    m_gRPORawOverridesHasBeenSet = true;
+}
+
+bool TrainingTuningParams::GRPORawOverridesHasBeenSet() const
+{
+    return m_gRPORawOverridesHasBeenSet;
 }
 

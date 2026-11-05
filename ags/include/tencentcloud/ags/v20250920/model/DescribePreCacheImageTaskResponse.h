@@ -170,6 +170,20 @@ namespace TencentCloud
                     bool CachedImageSizeBytesHasBeenSet() const;
 
                     /**
+                     * 获取<p>镜像预热完成时间</p>
+                     * @return ReadyTime <p>镜像预热完成时间</p>
+                     * 
+                     */
+                    std::string GetReadyTime() const;
+
+                    /**
+                     * 判断参数 ReadyTime 是否已赋值
+                     * @return ReadyTime 是否已赋值
+                     * 
+                     */
+                    bool ReadyTimeHasBeenSet() const;
+
+                    /**
                      * 获取<p>该预热镜像最近一次被沙箱实例使用时间</p>
                      * @return LastUsedTime <p>该预热镜像最近一次被沙箱实例使用时间</p>
                      * 
@@ -238,6 +252,12 @@ namespace TencentCloud
                      */
                     int64_t m_cachedImageSizeBytes;
                     bool m_cachedImageSizeBytesHasBeenSet;
+
+                    /**
+                     * <p>镜像预热完成时间</p>
+                     */
+                    std::string m_readyTime;
+                    bool m_readyTimeHasBeenSet;
 
                     /**
                      * <p>该预热镜像最近一次被沙箱实例使用时间</p>
