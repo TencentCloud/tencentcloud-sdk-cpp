@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBETRTCMARKETSCALEMETRICDATARESPONSE_H_
-#define TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBETRTCMARKETSCALEMETRICDATARESPONSE_H_
+#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_CREATEVOICECONVERSATIONRESPONSE_H_
+#define TENCENTCLOUD_TRTC_V20190722_MODEL_CREATEVOICECONVERSATIONRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/trtc/v20190722/model/TRTCDataResp.h>
 
 
 namespace TencentCloud
@@ -33,41 +32,38 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeTRTCMarketScaleMetricData返回参数结构体
+                * CreateVoiceConversation返回参数结构体
                 */
-                class DescribeTRTCMarketScaleMetricDataResponse : public AbstractModel
+                class CreateVoiceConversationResponse : public AbstractModel
                 {
                 public:
-                    DescribeTRTCMarketScaleMetricDataResponse();
-                    ~DescribeTRTCMarketScaleMetricDataResponse() = default;
+                    CreateVoiceConversationResponse();
+                    ~CreateVoiceConversationResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取TRTC监控数据出参
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data TRTC监控数据出参
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取<p>用于唯一标识对话任务，由腾讯云服务端生成，后续查询、控制等请求都需要携带TaskID参数。</p>
+                     * @return TaskId <p>用于唯一标识对话任务，由腾讯云服务端生成，后续查询、控制等请求都需要携带TaskID参数。</p>
                      * 
                      */
-                    TRTCDataResp GetData() const;
+                    std::string GetTaskId() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      * 
                      */
-                    bool DataHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * TRTC监控数据出参
-注意：此字段可能返回 null，表示取不到有效值。
+                     * <p>用于唯一标识对话任务，由腾讯云服务端生成，后续查询、控制等请求都需要携带TaskID参数。</p>
                      */
-                    TRTCDataResp m_data;
-                    bool m_dataHasBeenSet;
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -75,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBETRTCMARKETSCALEMETRICDATARESPONSE_H_
+#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_CREATEVOICECONVERSATIONRESPONSE_H_

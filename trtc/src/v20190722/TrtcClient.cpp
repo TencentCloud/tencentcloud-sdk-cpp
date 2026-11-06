@@ -90,6 +90,56 @@ TrtcClient::AsyncTextToSpeechOutcomeCallable TrtcClient::AsyncTextToSpeechCallab
     return prom->get_future();
 }
 
+TrtcClient::BatchDeleteTRTCVoicePrintOutcome TrtcClient::BatchDeleteTRTCVoicePrint(const BatchDeleteTRTCVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDeleteTRTCVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDeleteTRTCVoicePrintResponse rsp = BatchDeleteTRTCVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDeleteTRTCVoicePrintOutcome(rsp);
+        else
+            return BatchDeleteTRTCVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDeleteTRTCVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::BatchDeleteTRTCVoicePrintAsync(const BatchDeleteTRTCVoicePrintRequest& request, const BatchDeleteTRTCVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BatchDeleteTRTCVoicePrintRequest&;
+    using Resp = BatchDeleteTRTCVoicePrintResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BatchDeleteTRTCVoicePrint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::BatchDeleteTRTCVoicePrintOutcomeCallable TrtcClient::BatchDeleteTRTCVoicePrintCallable(const BatchDeleteTRTCVoicePrintRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BatchDeleteTRTCVoicePrintOutcome>>();
+    BatchDeleteTRTCVoicePrintAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const BatchDeleteTRTCVoicePrintRequest&,
+        BatchDeleteTRTCVoicePrintOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::ControlAIConversationOutcome TrtcClient::ControlAIConversation(const ControlAIConversationRequest &request)
 {
     auto outcome = MakeRequest(request, "ControlAIConversation");
@@ -132,6 +182,56 @@ TrtcClient::ControlAIConversationOutcomeCallable TrtcClient::ControlAIConversati
         const TrtcClient*,
         const ControlAIConversationRequest&,
         ControlAIConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::ControlVoiceConversationOutcome TrtcClient::ControlVoiceConversation(const ControlVoiceConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ControlVoiceConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ControlVoiceConversationResponse rsp = ControlVoiceConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ControlVoiceConversationOutcome(rsp);
+        else
+            return ControlVoiceConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return ControlVoiceConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::ControlVoiceConversationAsync(const ControlVoiceConversationRequest& request, const ControlVoiceConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ControlVoiceConversationRequest&;
+    using Resp = ControlVoiceConversationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ControlVoiceConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::ControlVoiceConversationOutcomeCallable TrtcClient::ControlVoiceConversationCallable(const ControlVoiceConversationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ControlVoiceConversationOutcome>>();
+    ControlVoiceConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const ControlVoiceConversationRequest&,
+        ControlVoiceConversationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -540,6 +640,56 @@ TrtcClient::CreateRecognizeVocabV3OutcomeCallable TrtcClient::CreateRecognizeVoc
     return prom->get_future();
 }
 
+TrtcClient::CreateVoiceConversationOutcome TrtcClient::CreateVoiceConversation(const CreateVoiceConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVoiceConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVoiceConversationResponse rsp = CreateVoiceConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVoiceConversationOutcome(rsp);
+        else
+            return CreateVoiceConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVoiceConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::CreateVoiceConversationAsync(const CreateVoiceConversationRequest& request, const CreateVoiceConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateVoiceConversationRequest&;
+    using Resp = CreateVoiceConversationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateVoiceConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::CreateVoiceConversationOutcomeCallable TrtcClient::CreateVoiceConversationCallable(const CreateVoiceConversationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateVoiceConversationOutcome>>();
+    CreateVoiceConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const CreateVoiceConversationRequest&,
+        CreateVoiceConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::DeleteCloudModerationOutcome TrtcClient::DeleteCloudModeration(const DeleteCloudModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudModeration");
@@ -882,6 +1032,106 @@ TrtcClient::DeleteRecognizeVocabV3OutcomeCallable TrtcClient::DeleteRecognizeVoc
         const TrtcClient*,
         const DeleteRecognizeVocabV3Request&,
         DeleteRecognizeVocabV3Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DeleteTRTCVoicePrintOutcome TrtcClient::DeleteTRTCVoicePrint(const DeleteTRTCVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTRTCVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTRTCVoicePrintResponse rsp = DeleteTRTCVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTRTCVoicePrintOutcome(rsp);
+        else
+            return DeleteTRTCVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTRTCVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteTRTCVoicePrintAsync(const DeleteTRTCVoicePrintRequest& request, const DeleteTRTCVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteTRTCVoicePrintRequest&;
+    using Resp = DeleteTRTCVoicePrintResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteTRTCVoicePrint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DeleteTRTCVoicePrintOutcomeCallable TrtcClient::DeleteTRTCVoicePrintCallable(const DeleteTRTCVoicePrintRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteTRTCVoicePrintOutcome>>();
+    DeleteTRTCVoicePrintAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DeleteTRTCVoicePrintRequest&,
+        DeleteTRTCVoicePrintOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DeleteVoiceConversationOutcome TrtcClient::DeleteVoiceConversation(const DeleteVoiceConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVoiceConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVoiceConversationResponse rsp = DeleteVoiceConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVoiceConversationOutcome(rsp);
+        else
+            return DeleteVoiceConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVoiceConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DeleteVoiceConversationAsync(const DeleteVoiceConversationRequest& request, const DeleteVoiceConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteVoiceConversationRequest&;
+    using Resp = DeleteVoiceConversationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteVoiceConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DeleteVoiceConversationOutcomeCallable TrtcClient::DeleteVoiceConversationCallable(const DeleteVoiceConversationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteVoiceConversationOutcome>>();
+    DeleteVoiceConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DeleteVoiceConversationRequest&,
+        DeleteVoiceConversationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1990,56 +2240,6 @@ TrtcClient::DescribeTRTCMarketScaleDataOutcomeCallable TrtcClient::DescribeTRTCM
     return prom->get_future();
 }
 
-TrtcClient::DescribeTRTCMarketScaleMetricDataOutcome TrtcClient::DescribeTRTCMarketScaleMetricData(const DescribeTRTCMarketScaleMetricDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeTRTCMarketScaleMetricData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeTRTCMarketScaleMetricDataResponse rsp = DescribeTRTCMarketScaleMetricDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeTRTCMarketScaleMetricDataOutcome(rsp);
-        else
-            return DescribeTRTCMarketScaleMetricDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeTRTCMarketScaleMetricDataOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeTRTCMarketScaleMetricDataAsync(const DescribeTRTCMarketScaleMetricDataRequest& request, const DescribeTRTCMarketScaleMetricDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    using Req = const DescribeTRTCMarketScaleMetricDataRequest&;
-    using Resp = DescribeTRTCMarketScaleMetricDataResponse;
-
-    DoRequestAsync<Req, Resp>(
-        "DescribeTRTCMarketScaleMetricData", request, {{{"Content-Type", "application/json"}}},
-        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
-        {
-            handler(this, req, std::move(resp), context);
-        });
-}
-
-TrtcClient::DescribeTRTCMarketScaleMetricDataOutcomeCallable TrtcClient::DescribeTRTCMarketScaleMetricDataCallable(const DescribeTRTCMarketScaleMetricDataRequest &request)
-{
-    const auto prom = std::make_shared<std::promise<DescribeTRTCMarketScaleMetricDataOutcome>>();
-    DescribeTRTCMarketScaleMetricDataAsync(
-    request,
-    [prom](
-        const TrtcClient*,
-        const DescribeTRTCMarketScaleMetricDataRequest&,
-        DescribeTRTCMarketScaleMetricDataOutcome resp,
-        const std::shared_ptr<const AsyncCallerContext>&
-    )
-    {
-        prom->set_value(resp);
-    });
-    return prom->get_future();
-}
-
 TrtcClient::DescribeTRTCRealTimeQualityDataOutcome TrtcClient::DescribeTRTCRealTimeQualityData(const DescribeTRTCRealTimeQualityDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTRTCRealTimeQualityData");
@@ -2182,6 +2382,56 @@ TrtcClient::DescribeTRTCSegmentModerationUsageOutcomeCallable TrtcClient::Descri
         const TrtcClient*,
         const DescribeTRTCSegmentModerationUsageRequest&,
         DescribeTRTCSegmentModerationUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DescribeTRTCVoicePrintOutcome TrtcClient::DescribeTRTCVoicePrint(const DescribeTRTCVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTRTCVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTRTCVoicePrintResponse rsp = DescribeTRTCVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTRTCVoicePrintOutcome(rsp);
+        else
+            return DescribeTRTCVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTRTCVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTRTCVoicePrintAsync(const DescribeTRTCVoicePrintRequest& request, const DescribeTRTCVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTRTCVoicePrintRequest&;
+    using Resp = DescribeTRTCVoicePrintResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTRTCVoicePrint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeTRTCVoicePrintOutcomeCallable TrtcClient::DescribeTRTCVoicePrintCallable(const DescribeTRTCVoicePrintRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTRTCVoicePrintOutcome>>();
+    DescribeTRTCVoicePrintAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeTRTCVoicePrintRequest&,
+        DescribeTRTCVoicePrintOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2482,6 +2732,56 @@ TrtcClient::DescribeUserInfoOutcomeCallable TrtcClient::DescribeUserInfoCallable
         const TrtcClient*,
         const DescribeUserInfoRequest&,
         DescribeUserInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::DescribeVoiceConversationOutcome TrtcClient::DescribeVoiceConversation(const DescribeVoiceConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVoiceConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVoiceConversationResponse rsp = DescribeVoiceConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVoiceConversationOutcome(rsp);
+        else
+            return DescribeVoiceConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVoiceConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeVoiceConversationAsync(const DescribeVoiceConversationRequest& request, const DescribeVoiceConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeVoiceConversationRequest&;
+    using Resp = DescribeVoiceConversationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeVoiceConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeVoiceConversationOutcomeCallable TrtcClient::DescribeVoiceConversationCallable(const DescribeVoiceConversationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeVoiceConversationOutcome>>();
+    DescribeVoiceConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeVoiceConversationRequest&,
+        DescribeVoiceConversationOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3032,6 +3332,106 @@ TrtcClient::ModifyPictureOutcomeCallable TrtcClient::ModifyPictureCallable(const
         const TrtcClient*,
         const ModifyPictureRequest&,
         ModifyPictureOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::ModifyVoiceConversationOutcome TrtcClient::ModifyVoiceConversation(const ModifyVoiceConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVoiceConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVoiceConversationResponse rsp = ModifyVoiceConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVoiceConversationOutcome(rsp);
+        else
+            return ModifyVoiceConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVoiceConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::ModifyVoiceConversationAsync(const ModifyVoiceConversationRequest& request, const ModifyVoiceConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyVoiceConversationRequest&;
+    using Resp = ModifyVoiceConversationResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyVoiceConversation", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::ModifyVoiceConversationOutcomeCallable TrtcClient::ModifyVoiceConversationCallable(const ModifyVoiceConversationRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyVoiceConversationOutcome>>();
+    ModifyVoiceConversationAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const ModifyVoiceConversationRequest&,
+        ModifyVoiceConversationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::RegisterTRTCVoicePrintOutcome TrtcClient::RegisterTRTCVoicePrint(const RegisterTRTCVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegisterTRTCVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegisterTRTCVoicePrintResponse rsp = RegisterTRTCVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegisterTRTCVoicePrintOutcome(rsp);
+        else
+            return RegisterTRTCVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return RegisterTRTCVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::RegisterTRTCVoicePrintAsync(const RegisterTRTCVoicePrintRequest& request, const RegisterTRTCVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RegisterTRTCVoicePrintRequest&;
+    using Resp = RegisterTRTCVoicePrintResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RegisterTRTCVoicePrint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::RegisterTRTCVoicePrintOutcomeCallable TrtcClient::RegisterTRTCVoicePrintCallable(const RegisterTRTCVoicePrintRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RegisterTRTCVoicePrintOutcome>>();
+    RegisterTRTCVoicePrintAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const RegisterTRTCVoicePrintRequest&,
+        RegisterTRTCVoicePrintOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4240,6 +4640,56 @@ TrtcClient::UpdateStreamIngestOutcomeCallable TrtcClient::UpdateStreamIngestCall
     return prom->get_future();
 }
 
+TrtcClient::UpdateTRTCVoicePrintOutcome TrtcClient::UpdateTRTCVoicePrint(const UpdateTRTCVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateTRTCVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateTRTCVoicePrintResponse rsp = UpdateTRTCVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateTRTCVoicePrintOutcome(rsp);
+        else
+            return UpdateTRTCVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateTRTCVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::UpdateTRTCVoicePrintAsync(const UpdateTRTCVoicePrintRequest& request, const UpdateTRTCVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdateTRTCVoicePrintRequest&;
+    using Resp = UpdateTRTCVoicePrintResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdateTRTCVoicePrint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::UpdateTRTCVoicePrintOutcomeCallable TrtcClient::UpdateTRTCVoicePrintCallable(const UpdateTRTCVoicePrintRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdateTRTCVoicePrintOutcome>>();
+    UpdateTRTCVoicePrintAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const UpdateTRTCVoicePrintRequest&,
+        UpdateTRTCVoicePrintOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::UpdateVoicePrintOutcome TrtcClient::UpdateVoicePrint(const UpdateVoicePrintRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateVoicePrint");
@@ -4282,6 +4732,56 @@ TrtcClient::UpdateVoicePrintOutcomeCallable TrtcClient::UpdateVoicePrintCallable
         const TrtcClient*,
         const UpdateVoicePrintRequest&,
         UpdateVoicePrintOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TrtcClient::VerifyTRTCVoicePrintOutcome TrtcClient::VerifyTRTCVoicePrint(const VerifyTRTCVoicePrintRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyTRTCVoicePrint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyTRTCVoicePrintResponse rsp = VerifyTRTCVoicePrintResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyTRTCVoicePrintOutcome(rsp);
+        else
+            return VerifyTRTCVoicePrintOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyTRTCVoicePrintOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::VerifyTRTCVoicePrintAsync(const VerifyTRTCVoicePrintRequest& request, const VerifyTRTCVoicePrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const VerifyTRTCVoicePrintRequest&;
+    using Resp = VerifyTRTCVoicePrintResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "VerifyTRTCVoicePrint", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::VerifyTRTCVoicePrintOutcomeCallable TrtcClient::VerifyTRTCVoicePrintCallable(const VerifyTRTCVoicePrintRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<VerifyTRTCVoicePrintOutcome>>();
+    VerifyTRTCVoicePrintAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const VerifyTRTCVoicePrintRequest&,
+        VerifyTRTCVoicePrintOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

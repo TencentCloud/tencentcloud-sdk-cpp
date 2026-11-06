@@ -212,6 +212,27 @@ namespace TencentCloud
                      */
                     bool ResourceExpiredHourHasBeenSet() const;
 
+                    /**
+                     * 获取<p>客户自定义扩展字段，服务端完全不解析，只做透传，在事件回调中原样返回</p><p>入参限制：总字符数≤4KB</p>
+                     * @return Extra <p>客户自定义扩展字段，服务端完全不解析，只做透传，在事件回调中原样返回</p><p>入参限制：总字符数≤4KB</p>
+                     * 
+                     */
+                    std::string GetExtra() const;
+
+                    /**
+                     * 设置<p>客户自定义扩展字段，服务端完全不解析，只做透传，在事件回调中原样返回</p><p>入参限制：总字符数≤4KB</p>
+                     * @param _extra <p>客户自定义扩展字段，服务端完全不解析，只做透传，在事件回调中原样返回</p><p>入参限制：总字符数≤4KB</p>
+                     * 
+                     */
+                    void SetExtra(const std::string& _extra);
+
+                    /**
+                     * 判断参数 Extra 是否已赋值
+                     * @return Extra 是否已赋值
+                     * 
+                     */
+                    bool ExtraHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +282,12 @@ namespace TencentCloud
                      */
                     uint64_t m_resourceExpiredHour;
                     bool m_resourceExpiredHourHasBeenSet;
+
+                    /**
+                     * <p>客户自定义扩展字段，服务端完全不解析，只做透传，在事件回调中原样返回</p><p>入参限制：总字符数≤4KB</p>
+                     */
+                    std::string m_extra;
+                    bool m_extraHasBeenSet;
 
                 };
             }

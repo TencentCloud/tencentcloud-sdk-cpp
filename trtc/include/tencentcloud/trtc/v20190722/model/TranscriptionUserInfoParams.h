@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户ID。
-                     * @return UserId 用户ID。
+                     * 获取<p>用户ID。</p>
+                     * @return UserId <p>用户ID。</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户ID。
-                     * @param _userId 用户ID。
+                     * 设置<p>用户ID。</p>
+                     * @param _userId <p>用户ID。</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户ID。
+                     * <p>用户ID。</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

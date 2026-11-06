@@ -30,7 +30,8 @@ CreateCloudModerationRequest::CreateCloudModerationRequest() :
     m_userSigHasBeenSet(false),
     m_moderationStorageParamsHasBeenSet(false),
     m_roomIdTypeHasBeenSet(false),
-    m_resourceExpiredHourHasBeenSet(false)
+    m_resourceExpiredHourHasBeenSet(false),
+    m_extraHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,14 @@ string CreateCloudModerationRequest::ToJsonString() const
         string key = "ResourceExpiredHour";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_resourceExpiredHour, allocator);
+    }
+
+    if (m_extraHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extra";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -241,6 +250,22 @@ void CreateCloudModerationRequest::SetResourceExpiredHour(const uint64_t& _resou
 bool CreateCloudModerationRequest::ResourceExpiredHourHasBeenSet() const
 {
     return m_resourceExpiredHourHasBeenSet;
+}
+
+string CreateCloudModerationRequest::GetExtra() const
+{
+    return m_extra;
+}
+
+void CreateCloudModerationRequest::SetExtra(const string& _extra)
+{
+    m_extra = _extra;
+    m_extraHasBeenSet = true;
+}
+
+bool CreateCloudModerationRequest::ExtraHasBeenSet() const
+{
+    return m_extraHasBeenSet;
 }
 
 
