@@ -30,7 +30,8 @@ SubmitExtractDocAgentJobRequest::SubmitExtractDocAgentJobRequest() :
     m_enableCoordHasBeenSet(false),
     m_fileStartPageNumberHasBeenSet(false),
     m_fileEndPageNumberHasBeenSet(false),
-    m_modelConfigHasBeenSet(false)
+    m_modelConfigHasBeenSet(false),
+    m_agentTypeHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string SubmitExtractDocAgentJobRequest::ToJsonString() const
         string key = "ModelConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modelConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_agentType, allocator);
     }
 
 
@@ -246,6 +255,22 @@ void SubmitExtractDocAgentJobRequest::SetModelConfig(const string& _modelConfig)
 bool SubmitExtractDocAgentJobRequest::ModelConfigHasBeenSet() const
 {
     return m_modelConfigHasBeenSet;
+}
+
+int64_t SubmitExtractDocAgentJobRequest::GetAgentType() const
+{
+    return m_agentType;
+}
+
+void SubmitExtractDocAgentJobRequest::SetAgentType(const int64_t& _agentType)
+{
+    m_agentType = _agentType;
+    m_agentTypeHasBeenSet = true;
+}
+
+bool SubmitExtractDocAgentJobRequest::AgentTypeHasBeenSet() const
+{
+    return m_agentTypeHasBeenSet;
 }
 
 

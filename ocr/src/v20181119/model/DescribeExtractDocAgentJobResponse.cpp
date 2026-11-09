@@ -29,7 +29,8 @@ DescribeExtractDocAgentJobResponse::DescribeExtractDocAgentJobResponse() :
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
     m_jobStatusHasBeenSet(false),
-    m_thoughtContentHasBeenSet(false)
+    m_thoughtContentHasBeenSet(false),
+    m_agentResultJsonHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,16 @@ CoreInternalOutcome DescribeExtractDocAgentJobResponse::Deserialize(const string
         m_thoughtContentHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AgentResultJson") && !rsp["AgentResultJson"].IsNull())
+    {
+        if (!rsp["AgentResultJson"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentResultJson` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentResultJson = string(rsp["AgentResultJson"].GetString());
+        m_agentResultJsonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +211,14 @@ string DescribeExtractDocAgentJobResponse::ToJsonString() const
         string key = "ThoughtContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_thoughtContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentResultJsonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentResultJson";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentResultJson.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -272,6 +291,16 @@ string DescribeExtractDocAgentJobResponse::GetThoughtContent() const
 bool DescribeExtractDocAgentJobResponse::ThoughtContentHasBeenSet() const
 {
     return m_thoughtContentHasBeenSet;
+}
+
+string DescribeExtractDocAgentJobResponse::GetAgentResultJson() const
+{
+    return m_agentResultJson;
+}
+
+bool DescribeExtractDocAgentJobResponse::AgentResultJsonHasBeenSet() const
+{
+    return m_agentResultJsonHasBeenSet;
 }
 
 

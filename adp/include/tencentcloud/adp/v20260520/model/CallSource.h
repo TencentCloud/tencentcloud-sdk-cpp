@@ -47,6 +47,69 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<p>环境 UUID（来源于上报字段 channel_uuid）；公有云可为空，不能用 deployment_type 替代</p>
+                     * @return DeploymentUuid <p>环境 UUID（来源于上报字段 channel_uuid）；公有云可为空，不能用 deployment_type 替代</p>
+                     * 
+                     */
+                    std::string GetDeploymentUuid() const;
+
+                    /**
+                     * 设置<p>环境 UUID（来源于上报字段 channel_uuid）；公有云可为空，不能用 deployment_type 替代</p>
+                     * @param _deploymentUuid <p>环境 UUID（来源于上报字段 channel_uuid）；公有云可为空，不能用 deployment_type 替代</p>
+                     * 
+                     */
+                    void SetDeploymentUuid(const std::string& _deploymentUuid);
+
+                    /**
+                     * 判断参数 DeploymentUuid 是否已赋值
+                     * @return DeploymentUuid 是否已赋值
+                     * 
+                     */
+                    bool DeploymentUuidHasBeenSet() const;
+
+                    /**
+                     * 获取<p>空间 ID</p>
+                     * @return SpaceId <p>空间 ID</p>
+                     * 
+                     */
+                    std::string GetSpaceId() const;
+
+                    /**
+                     * 设置<p>空间 ID</p>
+                     * @param _spaceId <p>空间 ID</p>
+                     * 
+                     */
+                    void SetSpaceId(const std::string& _spaceId);
+
+                    /**
+                     * 判断参数 SpaceId 是否已赋值
+                     * @return SpaceId 是否已赋值
+                     * 
+                     */
+                    bool SpaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>空间名称；空间不存在或查询失败时为空</p>
+                     * @return SpaceName <p>空间名称；空间不存在或查询失败时为空</p>
+                     * 
+                     */
+                    std::string GetSpaceName() const;
+
+                    /**
+                     * 设置<p>空间名称；空间不存在或查询失败时为空</p>
+                     * @param _spaceName <p>空间名称；空间不存在或查询失败时为空</p>
+                     * 
+                     */
+                    void SetSpaceName(const std::string& _spaceName);
+
+                    /**
+                     * 判断参数 SpaceName 是否已赋值
+                     * @return SpaceName 是否已赋值
+                     * 
+                     */
+                    bool SpaceNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>调用主体 ID，含义由 subject_type 决定（如 app_id、kb_id 等）</p>
                      * @return SubjectId <p>调用主体 ID，含义由 subject_type 决定（如 app_id、kb_id 等）</p>
                      * 
@@ -110,6 +173,24 @@ namespace TencentCloud
                     bool SubjectTypeHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * <p>环境 UUID（来源于上报字段 channel_uuid）；公有云可为空，不能用 deployment_type 替代</p>
+                     */
+                    std::string m_deploymentUuid;
+                    bool m_deploymentUuidHasBeenSet;
+
+                    /**
+                     * <p>空间 ID</p>
+                     */
+                    std::string m_spaceId;
+                    bool m_spaceIdHasBeenSet;
+
+                    /**
+                     * <p>空间名称；空间不存在或查询失败时为空</p>
+                     */
+                    std::string m_spaceName;
+                    bool m_spaceNameHasBeenSet;
 
                     /**
                      * <p>调用主体 ID，含义由 subject_type 决定（如 app_id、kb_id 等）</p>

@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
-RenewAndroidInstanceMCPTokenResponse::RenewAndroidInstanceMCPTokenResponse()
+RenewAndroidInstanceMCPTokenResponse::RenewAndroidInstanceMCPTokenResponse() :
+    m_expiresTimeHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome RenewAndroidInstanceMCPTokenResponse::Deserialize(const stri
     }
 
 
+    if (rsp.HasMember("ExpiresTime") && !rsp["ExpiresTime"].IsNull())
+    {
+        if (!rsp["ExpiresTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpiresTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiresTime = string(rsp["ExpiresTime"].GetString());
+        m_expiresTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string RenewAndroidInstanceMCPTokenResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_expiresTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiresTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expiresTime.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string RenewAndroidInstanceMCPTokenResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string RenewAndroidInstanceMCPTokenResponse::GetExpiresTime() const
+{
+    return m_expiresTime;
+}
+
+bool RenewAndroidInstanceMCPTokenResponse::ExpiresTimeHasBeenSet() const
+{
+    return m_expiresTimeHasBeenSet;
+}
 
 

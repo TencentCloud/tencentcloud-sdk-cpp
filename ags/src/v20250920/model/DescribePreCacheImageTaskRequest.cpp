@@ -26,7 +26,8 @@ DescribePreCacheImageTaskRequest::DescribePreCacheImageTaskRequest() :
     m_imageHasBeenSet(false),
     m_imageRegistryTypeHasBeenSet(false),
     m_imageDigestHasBeenSet(false),
-    m_preCacheImageIdHasBeenSet(false)
+    m_preCacheImageIdHasBeenSet(false),
+    m_preCacheTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribePreCacheImageTaskRequest::ToJsonString() const
         string key = "PreCacheImageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_preCacheImageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preCacheTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreCacheType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_preCacheType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribePreCacheImageTaskRequest::SetPreCacheImageId(const string& _preCach
 bool DescribePreCacheImageTaskRequest::PreCacheImageIdHasBeenSet() const
 {
     return m_preCacheImageIdHasBeenSet;
+}
+
+string DescribePreCacheImageTaskRequest::GetPreCacheType() const
+{
+    return m_preCacheType;
+}
+
+void DescribePreCacheImageTaskRequest::SetPreCacheType(const string& _preCacheType)
+{
+    m_preCacheType = _preCacheType;
+    m_preCacheTypeHasBeenSet = true;
+}
+
+bool DescribePreCacheImageTaskRequest::PreCacheTypeHasBeenSet() const
+{
+    return m_preCacheTypeHasBeenSet;
 }
 
 

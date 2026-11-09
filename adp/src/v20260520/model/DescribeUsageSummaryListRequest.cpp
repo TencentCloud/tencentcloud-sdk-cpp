@@ -28,7 +28,8 @@ DescribeUsageSummaryListRequest::DescribeUsageSummaryListRequest() :
     m_viewScopeHasBeenSet(false),
     m_filterListHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_spaceIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeUsageSummaryListRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_spaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -198,6 +207,22 @@ void DescribeUsageSummaryListRequest::SetPageSize(const uint64_t& _pageSize)
 bool DescribeUsageSummaryListRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeUsageSummaryListRequest::GetSpaceId() const
+{
+    return m_spaceId;
+}
+
+void DescribeUsageSummaryListRequest::SetSpaceId(const string& _spaceId)
+{
+    m_spaceId = _spaceId;
+    m_spaceIdHasBeenSet = true;
+}
+
+bool DescribeUsageSummaryListRequest::SpaceIdHasBeenSet() const
+{
+    return m_spaceIdHasBeenSet;
 }
 
 

@@ -22,7 +22,9 @@
 using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
-DescribeAndroidInstanceMCPTokensRequest::DescribeAndroidInstanceMCPTokensRequest()
+DescribeAndroidInstanceMCPTokensRequest::DescribeAndroidInstanceMCPTokensRequest() :
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string DescribeAndroidInstanceMCPTokensRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string DescribeAndroidInstanceMCPTokensRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeAndroidInstanceMCPTokensRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeAndroidInstanceMCPTokensRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeAndroidInstanceMCPTokensRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeAndroidInstanceMCPTokensRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeAndroidInstanceMCPTokensRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeAndroidInstanceMCPTokensRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
 
 

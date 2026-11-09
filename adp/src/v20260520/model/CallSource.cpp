@@ -21,6 +21,9 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 CallSource::CallSource() :
+    m_deploymentUuidHasBeenSet(false),
+    m_spaceIdHasBeenSet(false),
+    m_spaceNameHasBeenSet(false),
     m_subjectIdHasBeenSet(false),
     m_subjectNameHasBeenSet(false),
     m_subjectTypeHasBeenSet(false)
@@ -31,6 +34,36 @@ CoreInternalOutcome CallSource::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("DeploymentUuid") && !value["DeploymentUuid"].IsNull())
+    {
+        if (!value["DeploymentUuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CallSource.DeploymentUuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deploymentUuid = string(value["DeploymentUuid"].GetString());
+        m_deploymentUuidHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpaceId") && !value["SpaceId"].IsNull())
+    {
+        if (!value["SpaceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CallSource.SpaceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_spaceId = string(value["SpaceId"].GetString());
+        m_spaceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpaceName") && !value["SpaceName"].IsNull())
+    {
+        if (!value["SpaceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CallSource.SpaceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_spaceName = string(value["SpaceName"].GetString());
+        m_spaceNameHasBeenSet = true;
+    }
 
     if (value.HasMember("SubjectId") && !value["SubjectId"].IsNull())
     {
@@ -69,6 +102,30 @@ CoreInternalOutcome CallSource::Deserialize(const rapidjson::Value &value)
 void CallSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_deploymentUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeploymentUuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deploymentUuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_spaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_spaceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_spaceName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_subjectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -95,6 +152,54 @@ void CallSource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
 
 }
 
+
+string CallSource::GetDeploymentUuid() const
+{
+    return m_deploymentUuid;
+}
+
+void CallSource::SetDeploymentUuid(const string& _deploymentUuid)
+{
+    m_deploymentUuid = _deploymentUuid;
+    m_deploymentUuidHasBeenSet = true;
+}
+
+bool CallSource::DeploymentUuidHasBeenSet() const
+{
+    return m_deploymentUuidHasBeenSet;
+}
+
+string CallSource::GetSpaceId() const
+{
+    return m_spaceId;
+}
+
+void CallSource::SetSpaceId(const string& _spaceId)
+{
+    m_spaceId = _spaceId;
+    m_spaceIdHasBeenSet = true;
+}
+
+bool CallSource::SpaceIdHasBeenSet() const
+{
+    return m_spaceIdHasBeenSet;
+}
+
+string CallSource::GetSpaceName() const
+{
+    return m_spaceName;
+}
+
+void CallSource::SetSpaceName(const string& _spaceName)
+{
+    m_spaceName = _spaceName;
+    m_spaceNameHasBeenSet = true;
+}
+
+bool CallSource::SpaceNameHasBeenSet() const
+{
+    return m_spaceNameHasBeenSet;
+}
 
 string CallSource::GetSubjectId() const
 {

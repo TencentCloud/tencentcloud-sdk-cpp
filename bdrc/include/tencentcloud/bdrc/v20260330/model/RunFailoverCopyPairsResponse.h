@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取故障切换任务ID
-                     * @return TaskId 故障切换任务ID
+                     * 获取<p>故障切换任务ID</p>
+                     * @return TaskId <p>故障切换任务ID</p>
                      * 
                      */
                     int64_t GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 故障切换任务ID
+                     * <p>故障切换任务ID</p>
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;

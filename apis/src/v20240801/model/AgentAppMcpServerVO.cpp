@@ -30,7 +30,8 @@ AgentAppMcpServerVO::AgentAppMcpServerVO() :
     m_sSEResourceIdentifierHasBeenSet(false),
     m_streamableResourceIdentifierHasBeenSet(false),
     m_agentAppIDHasBeenSet(false),
-    m_mcpServerIDHasBeenSet(false)
+    m_mcpServerIDHasBeenSet(false),
+    m_agentAppVOHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,23 @@ CoreInternalOutcome AgentAppMcpServerVO::Deserialize(const rapidjson::Value &val
         m_mcpServerIDHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentAppVO") && !value["AgentAppVO"].IsNull())
+    {
+        if (!value["AgentAppVO"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentAppMcpServerVO.AgentAppVO` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agentAppVO.Deserialize(value["AgentAppVO"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agentAppVOHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +258,15 @@ void AgentAppMcpServerVO::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "McpServerID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mcpServerID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentAppVOHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentAppVO";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agentAppVO.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -403,5 +430,21 @@ void AgentAppMcpServerVO::SetMcpServerID(const string& _mcpServerID)
 bool AgentAppMcpServerVO::McpServerIDHasBeenSet() const
 {
     return m_mcpServerIDHasBeenSet;
+}
+
+DescribeAgentAppResp AgentAppMcpServerVO::GetAgentAppVO() const
+{
+    return m_agentAppVO;
+}
+
+void AgentAppMcpServerVO::SetAgentAppVO(const DescribeAgentAppResp& _agentAppVO)
+{
+    m_agentAppVO = _agentAppVO;
+    m_agentAppVOHasBeenSet = true;
+}
+
+bool AgentAppMcpServerVO::AgentAppVOHasBeenSet() const
+{
+    return m_agentAppVOHasBeenSet;
 }
 

@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
-CreateAndroidInstanceMCPTokenResponse::CreateAndroidInstanceMCPTokenResponse()
+CreateAndroidInstanceMCPTokenResponse::CreateAndroidInstanceMCPTokenResponse() :
+    m_tokenIdHasBeenSet(false),
+    m_tokenHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome CreateAndroidInstanceMCPTokenResponse::Deserialize(const str
     }
 
 
+    if (rsp.HasMember("TokenId") && !rsp["TokenId"].IsNull())
+    {
+        if (!rsp["TokenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TokenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenId = string(rsp["TokenId"].GetString());
+        m_tokenIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Token") && !rsp["Token"].IsNull())
+    {
+        if (!rsp["Token"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Token` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_token = string(rsp["Token"].GetString());
+        m_tokenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string CreateAndroidInstanceMCPTokenResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_tokenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tokenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Token";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string CreateAndroidInstanceMCPTokenResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateAndroidInstanceMCPTokenResponse::GetTokenId() const
+{
+    return m_tokenId;
+}
+
+bool CreateAndroidInstanceMCPTokenResponse::TokenIdHasBeenSet() const
+{
+    return m_tokenIdHasBeenSet;
+}
+
+string CreateAndroidInstanceMCPTokenResponse::GetToken() const
+{
+    return m_token;
+}
+
+bool CreateAndroidInstanceMCPTokenResponse::TokenHasBeenSet() const
+{
+    return m_tokenHasBeenSet;
+}
 
 

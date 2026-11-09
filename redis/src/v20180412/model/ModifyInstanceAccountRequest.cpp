@@ -30,7 +30,9 @@ ModifyInstanceAccountRequest::ModifyInstanceAccountRequest() :
     m_readonlyPolicyHasBeenSet(false),
     m_privilegeHasBeenSet(false),
     m_noAuthHasBeenSet(false),
-    m_encryptPasswordHasBeenSet(false)
+    m_encryptPasswordHasBeenSet(false),
+    m_disableCommandsHasBeenSet(false),
+    m_modifyDisableCommandsHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,27 @@ string ModifyInstanceAccountRequest::ToJsonString() const
         string key = "EncryptPassword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encryptPassword, allocator);
+    }
+
+    if (m_disableCommandsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableCommands";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_disableCommands.begin(); itr != m_disableCommands.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_modifyDisableCommandsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyDisableCommands";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modifyDisableCommands, allocator);
     }
 
 
@@ -244,6 +267,38 @@ void ModifyInstanceAccountRequest::SetEncryptPassword(const bool& _encryptPasswo
 bool ModifyInstanceAccountRequest::EncryptPasswordHasBeenSet() const
 {
     return m_encryptPasswordHasBeenSet;
+}
+
+vector<string> ModifyInstanceAccountRequest::GetDisableCommands() const
+{
+    return m_disableCommands;
+}
+
+void ModifyInstanceAccountRequest::SetDisableCommands(const vector<string>& _disableCommands)
+{
+    m_disableCommands = _disableCommands;
+    m_disableCommandsHasBeenSet = true;
+}
+
+bool ModifyInstanceAccountRequest::DisableCommandsHasBeenSet() const
+{
+    return m_disableCommandsHasBeenSet;
+}
+
+bool ModifyInstanceAccountRequest::GetModifyDisableCommands() const
+{
+    return m_modifyDisableCommands;
+}
+
+void ModifyInstanceAccountRequest::SetModifyDisableCommands(const bool& _modifyDisableCommands)
+{
+    m_modifyDisableCommands = _modifyDisableCommands;
+    m_modifyDisableCommandsHasBeenSet = true;
+}
+
+bool ModifyInstanceAccountRequest::ModifyDisableCommandsHasBeenSet() const
+{
+    return m_modifyDisableCommandsHasBeenSet;
 }
 
 

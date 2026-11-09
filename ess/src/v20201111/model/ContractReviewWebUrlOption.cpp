@@ -24,7 +24,9 @@ ContractReviewWebUrlOption::ContractReviewWebUrlOption() :
     m_disableTemporaryStoreHasBeenSet(false),
     m_disableExportHasBeenSet(false),
     m_disableReviewAgainHasBeenSet(false),
-    m_disableWxQrcodeHasBeenSet(false)
+    m_disableWxQrcodeHasBeenSet(false),
+    m_disableIgnoreRiskHasBeenSet(false),
+    m_disableRevisedRiskHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome ContractReviewWebUrlOption::Deserialize(const rapidjson::Val
         m_disableWxQrcodeHasBeenSet = true;
     }
 
+    if (value.HasMember("DisableIgnoreRisk") && !value["DisableIgnoreRisk"].IsNull())
+    {
+        if (!value["DisableIgnoreRisk"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContractReviewWebUrlOption.DisableIgnoreRisk` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableIgnoreRisk = value["DisableIgnoreRisk"].GetBool();
+        m_disableIgnoreRiskHasBeenSet = true;
+    }
+
+    if (value.HasMember("DisableRevisedRisk") && !value["DisableRevisedRisk"].IsNull())
+    {
+        if (!value["DisableRevisedRisk"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContractReviewWebUrlOption.DisableRevisedRisk` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableRevisedRisk = value["DisableRevisedRisk"].GetBool();
+        m_disableRevisedRiskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void ContractReviewWebUrlOption::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "DisableWxQrcode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disableWxQrcode, allocator);
+    }
+
+    if (m_disableIgnoreRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableIgnoreRisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableIgnoreRisk, allocator);
+    }
+
+    if (m_disableRevisedRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableRevisedRisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableRevisedRisk, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void ContractReviewWebUrlOption::SetDisableWxQrcode(const bool& _disableWxQrcode
 bool ContractReviewWebUrlOption::DisableWxQrcodeHasBeenSet() const
 {
     return m_disableWxQrcodeHasBeenSet;
+}
+
+bool ContractReviewWebUrlOption::GetDisableIgnoreRisk() const
+{
+    return m_disableIgnoreRisk;
+}
+
+void ContractReviewWebUrlOption::SetDisableIgnoreRisk(const bool& _disableIgnoreRisk)
+{
+    m_disableIgnoreRisk = _disableIgnoreRisk;
+    m_disableIgnoreRiskHasBeenSet = true;
+}
+
+bool ContractReviewWebUrlOption::DisableIgnoreRiskHasBeenSet() const
+{
+    return m_disableIgnoreRiskHasBeenSet;
+}
+
+bool ContractReviewWebUrlOption::GetDisableRevisedRisk() const
+{
+    return m_disableRevisedRisk;
+}
+
+void ContractReviewWebUrlOption::SetDisableRevisedRisk(const bool& _disableRevisedRisk)
+{
+    m_disableRevisedRisk = _disableRevisedRisk;
+    m_disableRevisedRiskHasBeenSet = true;
+}
+
+bool ContractReviewWebUrlOption::DisableRevisedRiskHasBeenSet() const
+{
+    return m_disableRevisedRiskHasBeenSet;
 }
 

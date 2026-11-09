@@ -26,7 +26,8 @@ DescribeMetricOverviewListRequest::DescribeMetricOverviewListRequest() :
     m_resourceTypeHasBeenSet(false),
     m_timeRangeHasBeenSet(false),
     m_viewScopeHasBeenSet(false),
-    m_filterListHasBeenSet(false)
+    m_filterListHasBeenSet(false),
+    m_spaceIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeMetricOverviewListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_spaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_spaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -148,6 +157,22 @@ void DescribeMetricOverviewListRequest::SetFilterList(const vector<Filter>& _fil
 bool DescribeMetricOverviewListRequest::FilterListHasBeenSet() const
 {
     return m_filterListHasBeenSet;
+}
+
+string DescribeMetricOverviewListRequest::GetSpaceId() const
+{
+    return m_spaceId;
+}
+
+void DescribeMetricOverviewListRequest::SetSpaceId(const string& _spaceId)
+{
+    m_spaceId = _spaceId;
+    m_spaceIdHasBeenSet = true;
+}
+
+bool DescribeMetricOverviewListRequest::SpaceIdHasBeenSet() const
+{
+    return m_spaceIdHasBeenSet;
 }
 
 

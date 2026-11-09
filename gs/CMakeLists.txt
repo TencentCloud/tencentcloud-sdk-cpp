@@ -68,6 +68,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstanceAppsResponse.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstanceWebShellRequest.h
   include/tencentcloud/gs/v20191118/model/ResetAndroidInstancesRequest.h
+  include/tencentcloud/gs/v20191118/model/TrylockWorkerResponse.h
   include/tencentcloud/gs/v20191118/model/FetchAndroidInstancesLogsRequest.h
   include/tencentcloud/gs/v20191118/model/DisconnectAndroidInstanceAcceleratorResponse.h
   include/tencentcloud/gs/v20191118/model/CleanAndroidInstancesAppDataRequest.h
@@ -159,7 +160,7 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/DescribeAndroidAppsRequest.h
   include/tencentcloud/gs/v20191118/model/StopGameRequest.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstancesByAppsRequest.h
-  include/tencentcloud/gs/v20191118/model/TrylockWorkerResponse.h
+  include/tencentcloud/gs/v20191118/model/AndroidInstanceMCPToken.h
   include/tencentcloud/gs/v20191118/model/S3Options.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstancesAppBlacklistRequest.h
   include/tencentcloud/gs/v20191118/model/CreateAndroidInstancesAccessTokenResponse.h
@@ -272,6 +273,7 @@ set(gs_src
   src/v20191118/model/DescribeAndroidInstanceAppsResponse.cpp
   src/v20191118/model/CreateAndroidInstanceWebShellRequest.cpp
   src/v20191118/model/ResetAndroidInstancesRequest.cpp
+  src/v20191118/model/TrylockWorkerResponse.cpp
   src/v20191118/model/FetchAndroidInstancesLogsRequest.cpp
   src/v20191118/model/DisconnectAndroidInstanceAcceleratorResponse.cpp
   src/v20191118/model/CleanAndroidInstancesAppDataRequest.cpp
@@ -363,7 +365,7 @@ set(gs_src
   src/v20191118/model/DescribeAndroidAppsRequest.cpp
   src/v20191118/model/StopGameRequest.cpp
   src/v20191118/model/DescribeAndroidInstancesByAppsRequest.cpp
-  src/v20191118/model/TrylockWorkerResponse.cpp
+  src/v20191118/model/AndroidInstanceMCPToken.cpp
   src/v20191118/model/S3Options.cpp
   src/v20191118/model/DescribeAndroidInstancesAppBlacklistRequest.cpp
   src/v20191118/model/CreateAndroidInstancesAccessTokenResponse.cpp

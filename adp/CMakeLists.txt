@@ -457,6 +457,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/DescribePluginResponse.h
   include/tencentcloud/adp/v20260520/model/ClawAgentChannelContextTimeoutConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeAgentReleasePreviewListResponse.h
+  include/tencentcloud/adp/v20260520/model/DocumentParseUsageDetail.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillSummaryListResponse.h
   include/tencentcloud/adp/v20260520/model/DescribeConversationMessageListRequest.h
   include/tencentcloud/adp/v20260520/model/DescribeKBResponse.h
@@ -1063,6 +1064,7 @@ set(adp_src
   src/v20260520/model/DescribePluginResponse.cpp
   src/v20260520/model/ClawAgentChannelContextTimeoutConfig.cpp
   src/v20260520/model/DescribeAgentReleasePreviewListResponse.cpp
+  src/v20260520/model/DocumentParseUsageDetail.cpp
   src/v20260520/model/DescribeSkillSummaryListResponse.cpp
   src/v20260520/model/DescribeConversationMessageListRequest.cpp
   src/v20260520/model/DescribeKBResponse.cpp

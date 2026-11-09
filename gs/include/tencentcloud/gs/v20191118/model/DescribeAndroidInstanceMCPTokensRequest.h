@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>偏移量，默认为 0</p>
+                     * @return Offset <p>偏移量，默认为 0</p>
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置<p>偏移量，默认为 0</p>
+                     * @param _offset <p>偏移量，默认为 0</p>
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>本次请求单次返回数据条数，用于分页控制</p><p>取值范围：[0, 100]</p><p>默认值：10</p>
+                     * @return Limit <p>本次请求单次返回数据条数，用于分页控制</p><p>取值范围：[0, 100]</p><p>默认值：10</p>
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置<p>本次请求单次返回数据条数，用于分页控制</p><p>取值范围：[0, 100]</p><p>默认值：10</p>
+                     * @param _limit <p>本次请求单次返回数据条数，用于分页控制</p><p>取值范围：[0, 100]</p><p>默认值：10</p>
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>偏移量，默认为 0</p>
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>本次请求单次返回数据条数，用于分页控制</p><p>取值范围：[0, 100]</p><p>默认值：10</p>
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

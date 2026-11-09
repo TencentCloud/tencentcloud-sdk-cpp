@@ -22,10 +22,10 @@ using namespace std;
 
 ModelUsageSummary::ModelUsageSummary() :
     m_callCountHasBeenSet(false),
+    m_consumptionPUHasBeenSet(false),
     m_isDefaultKBHasBeenSet(false),
     m_modelNameHasBeenSet(false),
-    m_resourceConsumptionListHasBeenSet(false),
-    m_consumptionPUHasBeenSet(false)
+    m_resourceConsumptionListHasBeenSet(false)
 {
 }
 
@@ -42,6 +42,16 @@ CoreInternalOutcome ModelUsageSummary::Deserialize(const rapidjson::Value &value
         }
         m_callCount = value["CallCount"].GetDouble();
         m_callCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumptionPU") && !value["ConsumptionPU"].IsNull())
+    {
+        if (!value["ConsumptionPU"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelUsageSummary.ConsumptionPU` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumptionPU = value["ConsumptionPU"].GetDouble();
+        m_consumptionPUHasBeenSet = true;
     }
 
     if (value.HasMember("IsDefaultKB") && !value["IsDefaultKB"].IsNull())
@@ -84,16 +94,6 @@ CoreInternalOutcome ModelUsageSummary::Deserialize(const rapidjson::Value &value
         m_resourceConsumptionListHasBeenSet = true;
     }
 
-    if (value.HasMember("ConsumptionPU") && !value["ConsumptionPU"].IsNull())
-    {
-        if (!value["ConsumptionPU"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `ModelUsageSummary.ConsumptionPU` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_consumptionPU = value["ConsumptionPU"].GetDouble();
-        m_consumptionPUHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +107,14 @@ void ModelUsageSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CallCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_callCount, allocator);
+    }
+
+    if (m_consumptionPUHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumptionPU";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consumptionPU, allocator);
     }
 
     if (m_isDefaultKBHasBeenSet)
@@ -140,14 +148,6 @@ void ModelUsageSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         }
     }
 
-    if (m_consumptionPUHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ConsumptionPU";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_consumptionPU, allocator);
-    }
-
 }
 
 
@@ -165,6 +165,22 @@ void ModelUsageSummary::SetCallCount(const double& _callCount)
 bool ModelUsageSummary::CallCountHasBeenSet() const
 {
     return m_callCountHasBeenSet;
+}
+
+double ModelUsageSummary::GetConsumptionPU() const
+{
+    return m_consumptionPU;
+}
+
+void ModelUsageSummary::SetConsumptionPU(const double& _consumptionPU)
+{
+    m_consumptionPU = _consumptionPU;
+    m_consumptionPUHasBeenSet = true;
+}
+
+bool ModelUsageSummary::ConsumptionPUHasBeenSet() const
+{
+    return m_consumptionPUHasBeenSet;
 }
 
 bool ModelUsageSummary::GetIsDefaultKB() const
@@ -213,21 +229,5 @@ void ModelUsageSummary::SetResourceConsumptionList(const vector<ResourceConsumpt
 bool ModelUsageSummary::ResourceConsumptionListHasBeenSet() const
 {
     return m_resourceConsumptionListHasBeenSet;
-}
-
-double ModelUsageSummary::GetConsumptionPU() const
-{
-    return m_consumptionPU;
-}
-
-void ModelUsageSummary::SetConsumptionPU(const double& _consumptionPU)
-{
-    m_consumptionPU = _consumptionPU;
-    m_consumptionPUHasBeenSet = true;
-}
-
-bool ModelUsageSummary::ConsumptionPUHasBeenSet() const
-{
-    return m_consumptionPUHasBeenSet;
 }
 

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/CallSource.h>
+#include <tencentcloud/adp/v20260520/model/DocumentParseUsageDetail.h>
 #include <tencentcloud/adp/v20260520/model/ModelUsageDetail.h>
 #include <tencentcloud/adp/v20260520/model/PluginUsageDetail.h>
 
@@ -69,6 +70,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CallSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>MODEL 类型的文档解析明细</p>
+                     * @return DocumentParse <p>MODEL 类型的文档解析明细</p>
+                     * 
+                     */
+                    DocumentParseUsageDetail GetDocumentParse() const;
+
+                    /**
+                     * 设置<p>MODEL 类型的文档解析明细</p>
+                     * @param _documentParse <p>MODEL 类型的文档解析明细</p>
+                     * 
+                     */
+                    void SetDocumentParse(const DocumentParseUsageDetail& _documentParse);
+
+                    /**
+                     * 判断参数 DocumentParse 是否已赋值
+                     * @return DocumentParse 是否已赋值
+                     * 
+                     */
+                    bool DocumentParseHasBeenSet() const;
 
                     /**
                      * 获取<p>计量 ID，用于对账/回溯</p>
@@ -203,6 +225,12 @@ namespace TencentCloud
                      */
                     CallSource m_callSource;
                     bool m_callSourceHasBeenSet;
+
+                    /**
+                     * <p>MODEL 类型的文档解析明细</p>
+                     */
+                    DocumentParseUsageDetail m_documentParse;
+                    bool m_documentParseHasBeenSet;
 
                     /**
                      * <p>计量 ID，用于对账/回溯</p>

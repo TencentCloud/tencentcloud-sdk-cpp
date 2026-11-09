@@ -183,6 +183,8 @@
 #include <tencentcloud/iss/v20230517/model/ListSubTasksResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListTasksRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListTasksResponse.h>
+#include <tencentcloud/iss/v20230517/model/ListVLPlanResultsRequest.h>
+#include <tencentcloud/iss/v20230517/model/ListVLPlanResultsResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListVLPlansRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListVLPlansResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListVLTemplatesRequest.h>
@@ -473,6 +475,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListTasksResponse> ListTasksOutcome;
                 typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListTasksRequest&, ListTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListVLPlanResultsResponse> ListVLPlanResultsOutcome;
+                typedef std::future<ListVLPlanResultsOutcome> ListVLPlanResultsOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ListVLPlanResultsRequest&, ListVLPlanResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVLPlanResultsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListVLPlansResponse> ListVLPlansOutcome;
                 typedef std::future<ListVLPlansOutcome> ListVLPlansOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListVLPlansRequest&, ListVLPlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVLPlansAsyncHandler;
@@ -1253,6 +1258,15 @@ namespace TencentCloud
                 ListTasksOutcome ListTasks(const Model::ListTasksRequest &request);
                 void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTasksOutcomeCallable ListTasksCallable(const Model::ListTasksRequest& request);
+
+                /**
+                 *获取视觉理解计划结果列表
+                 * @param req ListVLPlanResultsRequest
+                 * @return ListVLPlanResultsOutcome
+                 */
+                ListVLPlanResultsOutcome ListVLPlanResults(const Model::ListVLPlanResultsRequest &request);
+                void ListVLPlanResultsAsync(const Model::ListVLPlanResultsRequest& request, const ListVLPlanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListVLPlanResultsOutcomeCallable ListVLPlanResultsCallable(const Model::ListVLPlanResultsRequest& request);
 
                 /**
                  *获取视觉理解计划列表

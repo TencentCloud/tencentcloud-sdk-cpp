@@ -27,6 +27,7 @@
 #include <tencentcloud/apis/v20240801/model/InvokeLimitConfigDTO.h>
 #include <tencentcloud/apis/v20240801/model/ServiceVO.h>
 #include <tencentcloud/apis/v20240801/model/DescribeAgentCredentialResp.h>
+#include <tencentcloud/apis/v20240801/model/DescribeAgentAppResp.h>
 
 
 namespace TencentCloud
@@ -259,6 +260,27 @@ namespace TencentCloud
                      */
                     bool AgentCredentialVOHasBeenSet() const;
 
+                    /**
+                     * 获取<p>应用</p>
+                     * @return AgentAppVO <p>应用</p>
+                     * 
+                     */
+                    DescribeAgentAppResp GetAgentAppVO() const;
+
+                    /**
+                     * 设置<p>应用</p>
+                     * @param _agentAppVO <p>应用</p>
+                     * 
+                     */
+                    void SetAgentAppVO(const DescribeAgentAppResp& _agentAppVO);
+
+                    /**
+                     * 判断参数 AgentAppVO 是否已赋值
+                     * @return AgentAppVO 是否已赋值
+                     * 
+                     */
+                    bool AgentAppVOHasBeenSet() const;
+
                 private:
 
                     /**
@@ -320,6 +342,12 @@ namespace TencentCloud
                      */
                     DescribeAgentCredentialResp m_agentCredentialVO;
                     bool m_agentCredentialVOHasBeenSet;
+
+                    /**
+                     * <p>应用</p>
+                     */
+                    DescribeAgentAppResp m_agentAppVO;
+                    bool m_agentAppVOHasBeenSet;
 
                 };
             }

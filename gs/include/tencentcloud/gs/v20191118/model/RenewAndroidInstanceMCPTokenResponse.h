@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>过期时间，ISO8601 字符串；token 永不过期时为空串</p>
+                     * @return ExpiresTime <p>过期时间，ISO8601 字符串；token 永不过期时为空串</p>
+                     * 
+                     */
+                    std::string GetExpiresTime() const;
+
+                    /**
+                     * 判断参数 ExpiresTime 是否已赋值
+                     * @return ExpiresTime 是否已赋值
+                     * 
+                     */
+                    bool ExpiresTimeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>过期时间，ISO8601 字符串；token 永不过期时为空串</p>
+                     */
+                    std::string m_expiresTime;
+                    bool m_expiresTimeHasBeenSet;
 
                 };
             }

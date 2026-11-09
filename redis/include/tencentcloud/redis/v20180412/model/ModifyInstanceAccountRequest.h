@@ -210,6 +210,48 @@ namespace TencentCloud
                      */
                     bool EncryptPasswordHasBeenSet() const;
 
+                    /**
+                     * 获取<p>账号维度的禁用命令配置。</p><ul><li>默认值：[]（空数组，即不禁用任何命令）</li><li>入参限制：仅支持配置以下指定的数据库命令（支持多选）<br>flushall, flushdb, keys, hgetall, eval, evalsha, script, scan, psetex, set, hmset, hset, lpush, rpush, sadd, zadd, del, mget, mset, bitop, exists, msetnx, blpop, brpop, rpoplpush, brpoplpush, smove, sunion, sinter, sdiff, sunionstore, sinterstore, sdiffstore, zunionstore, zinterstore, pfmerge, pfcount, pfadd。</li></ul><p>默认值：&quot;&quot;</p>
+                     * @return DisableCommands <p>账号维度的禁用命令配置。</p><ul><li>默认值：[]（空数组，即不禁用任何命令）</li><li>入参限制：仅支持配置以下指定的数据库命令（支持多选）<br>flushall, flushdb, keys, hgetall, eval, evalsha, script, scan, psetex, set, hmset, hset, lpush, rpush, sadd, zadd, del, mget, mset, bitop, exists, msetnx, blpop, brpop, rpoplpush, brpoplpush, smove, sunion, sinter, sdiff, sunionstore, sinterstore, sdiffstore, zunionstore, zinterstore, pfmerge, pfcount, pfadd。</li></ul><p>默认值：&quot;&quot;</p>
+                     * 
+                     */
+                    std::vector<std::string> GetDisableCommands() const;
+
+                    /**
+                     * 设置<p>账号维度的禁用命令配置。</p><ul><li>默认值：[]（空数组，即不禁用任何命令）</li><li>入参限制：仅支持配置以下指定的数据库命令（支持多选）<br>flushall, flushdb, keys, hgetall, eval, evalsha, script, scan, psetex, set, hmset, hset, lpush, rpush, sadd, zadd, del, mget, mset, bitop, exists, msetnx, blpop, brpop, rpoplpush, brpoplpush, smove, sunion, sinter, sdiff, sunionstore, sinterstore, sdiffstore, zunionstore, zinterstore, pfmerge, pfcount, pfadd。</li></ul><p>默认值：&quot;&quot;</p>
+                     * @param _disableCommands <p>账号维度的禁用命令配置。</p><ul><li>默认值：[]（空数组，即不禁用任何命令）</li><li>入参限制：仅支持配置以下指定的数据库命令（支持多选）<br>flushall, flushdb, keys, hgetall, eval, evalsha, script, scan, psetex, set, hmset, hset, lpush, rpush, sadd, zadd, del, mget, mset, bitop, exists, msetnx, blpop, brpop, rpoplpush, brpoplpush, smove, sunion, sinter, sdiff, sunionstore, sinterstore, sdiffstore, zunionstore, zinterstore, pfmerge, pfcount, pfadd。</li></ul><p>默认值：&quot;&quot;</p>
+                     * 
+                     */
+                    void SetDisableCommands(const std::vector<std::string>& _disableCommands);
+
+                    /**
+                     * 判断参数 DisableCommands 是否已赋值
+                     * @return DisableCommands 是否已赋值
+                     * 
+                     */
+                    bool DisableCommandsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否修改账号维度的禁用命令配置。仅在需要更新禁用命令列表时传入。</p><ul><li>true：修改（将根据传入的新命令列表进行覆盖更新）。</li><li>false：不修改（默认值）。</li></ul>
+                     * @return ModifyDisableCommands <p>是否修改账号维度的禁用命令配置。仅在需要更新禁用命令列表时传入。</p><ul><li>true：修改（将根据传入的新命令列表进行覆盖更新）。</li><li>false：不修改（默认值）。</li></ul>
+                     * 
+                     */
+                    bool GetModifyDisableCommands() const;
+
+                    /**
+                     * 设置<p>是否修改账号维度的禁用命令配置。仅在需要更新禁用命令列表时传入。</p><ul><li>true：修改（将根据传入的新命令列表进行覆盖更新）。</li><li>false：不修改（默认值）。</li></ul>
+                     * @param _modifyDisableCommands <p>是否修改账号维度的禁用命令配置。仅在需要更新禁用命令列表时传入。</p><ul><li>true：修改（将根据传入的新命令列表进行覆盖更新）。</li><li>false：不修改（默认值）。</li></ul>
+                     * 
+                     */
+                    void SetModifyDisableCommands(const bool& _modifyDisableCommands);
+
+                    /**
+                     * 判断参数 ModifyDisableCommands 是否已赋值
+                     * @return ModifyDisableCommands 是否已赋值
+                     * 
+                     */
+                    bool ModifyDisableCommandsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +301,18 @@ namespace TencentCloud
                      */
                     bool m_encryptPassword;
                     bool m_encryptPasswordHasBeenSet;
+
+                    /**
+                     * <p>账号维度的禁用命令配置。</p><ul><li>默认值：[]（空数组，即不禁用任何命令）</li><li>入参限制：仅支持配置以下指定的数据库命令（支持多选）<br>flushall, flushdb, keys, hgetall, eval, evalsha, script, scan, psetex, set, hmset, hset, lpush, rpush, sadd, zadd, del, mget, mset, bitop, exists, msetnx, blpop, brpop, rpoplpush, brpoplpush, smove, sunion, sinter, sdiff, sunionstore, sinterstore, sdiffstore, zunionstore, zinterstore, pfmerge, pfcount, pfadd。</li></ul><p>默认值：&quot;&quot;</p>
+                     */
+                    std::vector<std::string> m_disableCommands;
+                    bool m_disableCommandsHasBeenSet;
+
+                    /**
+                     * <p>是否修改账号维度的禁用命令配置。仅在需要更新禁用命令列表时传入。</p><ul><li>true：修改（将根据传入的新命令列表进行覆盖更新）。</li><li>false：不修改（默认值）。</li></ul>
+                     */
+                    bool m_modifyDisableCommands;
+                    bool m_modifyDisableCommandsHasBeenSet;
 
                 };
             }

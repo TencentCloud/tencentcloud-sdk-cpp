@@ -22,6 +22,7 @@ using namespace std;
 
 UsageDetail::UsageDetail() :
     m_callSourceHasBeenSet(false),
+    m_documentParseHasBeenSet(false),
     m_dosageIdHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
     m_modelHasBeenSet(false),
@@ -51,6 +52,23 @@ CoreInternalOutcome UsageDetail::Deserialize(const rapidjson::Value &value)
         }
 
         m_callSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("DocumentParse") && !value["DocumentParse"].IsNull())
+    {
+        if (!value["DocumentParse"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageDetail.DocumentParse` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_documentParse.Deserialize(value["DocumentParse"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_documentParseHasBeenSet = true;
     }
 
     if (value.HasMember("DosageId") && !value["DosageId"].IsNull())
@@ -143,6 +161,15 @@ void UsageDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         m_callSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_documentParseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocumentParse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_documentParse.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_dosageIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -210,6 +237,22 @@ void UsageDetail::SetCallSource(const CallSource& _callSource)
 bool UsageDetail::CallSourceHasBeenSet() const
 {
     return m_callSourceHasBeenSet;
+}
+
+DocumentParseUsageDetail UsageDetail::GetDocumentParse() const
+{
+    return m_documentParse;
+}
+
+void UsageDetail::SetDocumentParse(const DocumentParseUsageDetail& _documentParse)
+{
+    m_documentParse = _documentParse;
+    m_documentParseHasBeenSet = true;
+}
+
+bool UsageDetail::DocumentParseHasBeenSet() const
+{
+    return m_documentParseHasBeenSet;
 }
 
 string UsageDetail::GetDosageId() const

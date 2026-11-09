@@ -75,6 +75,8 @@
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanListResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeUsageRankListRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeUsageRankListResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyBindingsRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyBindingsResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyInfoRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyInfoResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyStatusRequest.h>
@@ -183,6 +185,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUsageRankListResponse> DescribeUsageRankListOutcome;
                 typedef std::future<DescribeUsageRankListOutcome> DescribeUsageRankListOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeUsageRankListRequest&, DescribeUsageRankListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsageRankListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApiKeyBindingsResponse> ModifyApiKeyBindingsOutcome;
+                typedef std::future<ModifyApiKeyBindingsOutcome> ModifyApiKeyBindingsOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::ModifyApiKeyBindingsRequest&, ModifyApiKeyBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiKeyBindingsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyApiKeyInfoResponse> ModifyApiKeyInfoOutcome;
                 typedef std::future<ModifyApiKeyInfoOutcome> ModifyApiKeyInfoOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::ModifyApiKeyInfoRequest&, ModifyApiKeyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiKeyInfoAsyncHandler;
@@ -502,6 +507,17 @@ namespace TencentCloud
                 DescribeUsageRankListOutcome DescribeUsageRankList(const Model::DescribeUsageRankListRequest &request);
                 void DescribeUsageRankListAsync(const Model::DescribeUsageRankListRequest& request, const DescribeUsageRankListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUsageRankListOutcomeCallable DescribeUsageRankListCallable(const Model::DescribeUsageRankListRequest& request);
+
+                /**
+                 *更新 API 密钥绑定。
+
+更新 API 密钥的绑定关系和绑定类型。BindType 为 all 时 Bindings 必须为空，BindType含 custom 时 Bindings 为绑定列表。
+                 * @param req ModifyApiKeyBindingsRequest
+                 * @return ModifyApiKeyBindingsOutcome
+                 */
+                ModifyApiKeyBindingsOutcome ModifyApiKeyBindings(const Model::ModifyApiKeyBindingsRequest &request);
+                void ModifyApiKeyBindingsAsync(const Model::ModifyApiKeyBindingsRequest& request, const ModifyApiKeyBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApiKeyBindingsOutcomeCallable ModifyApiKeyBindingsCallable(const Model::ModifyApiKeyBindingsRequest& request);
 
                 /**
                  *更新 API 密钥信息。

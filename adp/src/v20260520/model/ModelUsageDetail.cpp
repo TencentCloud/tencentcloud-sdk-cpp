@@ -21,11 +21,13 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 ModelUsageDetail::ModelUsageDetail() :
+    m_apiKeyDisplayHasBeenSet(false),
+    m_billingTypeHasBeenSet(false),
     m_callTypeHasBeenSet(false),
+    m_consumptionPUHasBeenSet(false),
     m_isDefaultKBHasBeenSet(false),
     m_modelNameHasBeenSet(false),
-    m_resourceConsumptionListHasBeenSet(false),
-    m_consumptionPUHasBeenSet(false)
+    m_resourceConsumptionListHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,26 @@ CoreInternalOutcome ModelUsageDetail::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("ApiKeyDisplay") && !value["ApiKeyDisplay"].IsNull())
+    {
+        if (!value["ApiKeyDisplay"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelUsageDetail.ApiKeyDisplay` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiKeyDisplay = string(value["ApiKeyDisplay"].GetString());
+        m_apiKeyDisplayHasBeenSet = true;
+    }
+
+    if (value.HasMember("BillingType") && !value["BillingType"].IsNull())
+    {
+        if (!value["BillingType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelUsageDetail.BillingType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingType = value["BillingType"].GetInt64();
+        m_billingTypeHasBeenSet = true;
+    }
 
     if (value.HasMember("CallType") && !value["CallType"].IsNull())
     {
@@ -42,6 +64,16 @@ CoreInternalOutcome ModelUsageDetail::Deserialize(const rapidjson::Value &value)
         }
         m_callType = string(value["CallType"].GetString());
         m_callTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsumptionPU") && !value["ConsumptionPU"].IsNull())
+    {
+        if (!value["ConsumptionPU"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelUsageDetail.ConsumptionPU` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_consumptionPU = value["ConsumptionPU"].GetDouble();
+        m_consumptionPUHasBeenSet = true;
     }
 
     if (value.HasMember("IsDefaultKB") && !value["IsDefaultKB"].IsNull())
@@ -84,16 +116,6 @@ CoreInternalOutcome ModelUsageDetail::Deserialize(const rapidjson::Value &value)
         m_resourceConsumptionListHasBeenSet = true;
     }
 
-    if (value.HasMember("ConsumptionPU") && !value["ConsumptionPU"].IsNull())
-    {
-        if (!value["ConsumptionPU"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `ModelUsageDetail.ConsumptionPU` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_consumptionPU = value["ConsumptionPU"].GetDouble();
-        m_consumptionPUHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -101,12 +123,36 @@ CoreInternalOutcome ModelUsageDetail::Deserialize(const rapidjson::Value &value)
 void ModelUsageDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_apiKeyDisplayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiKeyDisplay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiKeyDisplay.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billingTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_billingType, allocator);
+    }
+
     if (m_callTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CallType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_callType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_consumptionPUHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsumptionPU";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_consumptionPU, allocator);
     }
 
     if (m_isDefaultKBHasBeenSet)
@@ -140,16 +186,40 @@ void ModelUsageDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         }
     }
 
-    if (m_consumptionPUHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ConsumptionPU";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_consumptionPU, allocator);
-    }
-
 }
 
+
+string ModelUsageDetail::GetApiKeyDisplay() const
+{
+    return m_apiKeyDisplay;
+}
+
+void ModelUsageDetail::SetApiKeyDisplay(const string& _apiKeyDisplay)
+{
+    m_apiKeyDisplay = _apiKeyDisplay;
+    m_apiKeyDisplayHasBeenSet = true;
+}
+
+bool ModelUsageDetail::ApiKeyDisplayHasBeenSet() const
+{
+    return m_apiKeyDisplayHasBeenSet;
+}
+
+int64_t ModelUsageDetail::GetBillingType() const
+{
+    return m_billingType;
+}
+
+void ModelUsageDetail::SetBillingType(const int64_t& _billingType)
+{
+    m_billingType = _billingType;
+    m_billingTypeHasBeenSet = true;
+}
+
+bool ModelUsageDetail::BillingTypeHasBeenSet() const
+{
+    return m_billingTypeHasBeenSet;
+}
 
 string ModelUsageDetail::GetCallType() const
 {
@@ -165,6 +235,22 @@ void ModelUsageDetail::SetCallType(const string& _callType)
 bool ModelUsageDetail::CallTypeHasBeenSet() const
 {
     return m_callTypeHasBeenSet;
+}
+
+double ModelUsageDetail::GetConsumptionPU() const
+{
+    return m_consumptionPU;
+}
+
+void ModelUsageDetail::SetConsumptionPU(const double& _consumptionPU)
+{
+    m_consumptionPU = _consumptionPU;
+    m_consumptionPUHasBeenSet = true;
+}
+
+bool ModelUsageDetail::ConsumptionPUHasBeenSet() const
+{
+    return m_consumptionPUHasBeenSet;
 }
 
 bool ModelUsageDetail::GetIsDefaultKB() const
@@ -213,21 +299,5 @@ void ModelUsageDetail::SetResourceConsumptionList(const vector<ResourceConsumpti
 bool ModelUsageDetail::ResourceConsumptionListHasBeenSet() const
 {
     return m_resourceConsumptionListHasBeenSet;
-}
-
-double ModelUsageDetail::GetConsumptionPU() const
-{
-    return m_consumptionPU;
-}
-
-void ModelUsageDetail::SetConsumptionPU(const double& _consumptionPU)
-{
-    m_consumptionPU = _consumptionPU;
-    m_consumptionPUHasBeenSet = true;
-}
-
-bool ModelUsageDetail::ConsumptionPUHasBeenSet() const
-{
-    return m_consumptionPUHasBeenSet;
 }
 

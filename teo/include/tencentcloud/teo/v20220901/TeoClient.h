@@ -329,6 +329,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityTemplateBindingsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSharedCNAMERequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSharedCNAMEResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTimingFunctionAnalysisDataRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTimingFunctionAnalysisDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataRequest.h>
@@ -337,6 +339,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7CacheDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7OriginPullDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7OriginPullDataResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTopFunctionAnalysisDataRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTopFunctionAnalysisDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataRequest.h>
@@ -972,6 +976,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSharedCNAMEResponse> DescribeSharedCNAMEOutcome;
                 typedef std::future<DescribeSharedCNAMEOutcome> DescribeSharedCNAMEOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSharedCNAMERequest&, DescribeSharedCNAMEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSharedCNAMEAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTimingFunctionAnalysisDataResponse> DescribeTimingFunctionAnalysisDataOutcome;
+                typedef std::future<DescribeTimingFunctionAnalysisDataOutcome> DescribeTimingFunctionAnalysisDataOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeTimingFunctionAnalysisDataRequest&, DescribeTimingFunctionAnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingFunctionAnalysisDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTimingL4DataResponse> DescribeTimingL4DataOutcome;
                 typedef std::future<DescribeTimingL4DataOutcome> DescribeTimingL4DataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTimingL4DataRequest&, DescribeTimingL4DataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL4DataAsyncHandler;
@@ -984,6 +991,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTimingL7OriginPullDataResponse> DescribeTimingL7OriginPullDataOutcome;
                 typedef std::future<DescribeTimingL7OriginPullDataOutcome> DescribeTimingL7OriginPullDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTimingL7OriginPullDataRequest&, DescribeTimingL7OriginPullDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL7OriginPullDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopFunctionAnalysisDataResponse> DescribeTopFunctionAnalysisDataOutcome;
+                typedef std::future<DescribeTopFunctionAnalysisDataOutcome> DescribeTopFunctionAnalysisDataOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeTopFunctionAnalysisDataRequest&, DescribeTopFunctionAnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopFunctionAnalysisDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopL7AnalysisDataResponse> DescribeTopL7AnalysisDataOutcome;
                 typedef std::future<DescribeTopL7AnalysisDataOutcome> DescribeTopL7AnalysisDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTopL7AnalysisDataRequest&, DescribeTopL7AnalysisDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopL7AnalysisDataAsyncHandler;
@@ -2682,6 +2692,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeSharedCNAMEOutcomeCallable DescribeSharedCNAMECallable(const Model::DescribeSharedCNAMERequest& request);
 
                 /**
+                 *本接口查询边缘函数分析的时序数据。请注意本接口查询数据有 10 分钟左右延迟，建议拉取当前时间 10 分钟以前的数据。
+                 * @param req DescribeTimingFunctionAnalysisDataRequest
+                 * @return DescribeTimingFunctionAnalysisDataOutcome
+                 */
+                DescribeTimingFunctionAnalysisDataOutcome DescribeTimingFunctionAnalysisData(const Model::DescribeTimingFunctionAnalysisDataRequest &request);
+                void DescribeTimingFunctionAnalysisDataAsync(const Model::DescribeTimingFunctionAnalysisDataRequest& request, const DescribeTimingFunctionAnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTimingFunctionAnalysisDataOutcomeCallable DescribeTimingFunctionAnalysisDataCallable(const Model::DescribeTimingFunctionAnalysisDataRequest& request);
+
+                /**
                  *<p>本接口（<code>DescribeTimingL4Data</code>）用于查询四层时序数据列表。</p>
                  * @param req DescribeTimingL4DataRequest
                  * @return DescribeTimingL4DataOutcome
@@ -2720,6 +2739,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeTimingL7OriginPullDataOutcome DescribeTimingL7OriginPullData(const Model::DescribeTimingL7OriginPullDataRequest &request);
                 void DescribeTimingL7OriginPullDataAsync(const Model::DescribeTimingL7OriginPullDataRequest& request, const DescribeTimingL7OriginPullDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTimingL7OriginPullDataOutcomeCallable DescribeTimingL7OriginPullDataCallable(const Model::DescribeTimingL7OriginPullDataRequest& request);
+
+                /**
+                 *本接口用于查询边缘函数按照指定维度的 topN 数据。请注意本接口查询数据有 10 分钟左右延迟，建议拉取当前时间 10 分钟以前的数据。
+                 * @param req DescribeTopFunctionAnalysisDataRequest
+                 * @return DescribeTopFunctionAnalysisDataOutcome
+                 */
+                DescribeTopFunctionAnalysisDataOutcome DescribeTopFunctionAnalysisData(const Model::DescribeTopFunctionAnalysisDataRequest &request);
+                void DescribeTopFunctionAnalysisDataAsync(const Model::DescribeTopFunctionAnalysisDataRequest& request, const DescribeTopFunctionAnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopFunctionAnalysisDataOutcomeCallable DescribeTopFunctionAnalysisDataCallable(const Model::DescribeTopFunctionAnalysisDataRequest& request);
 
                 /**
                  *本接口用于查询七层域名业务按照指定维度的 topN 数据。

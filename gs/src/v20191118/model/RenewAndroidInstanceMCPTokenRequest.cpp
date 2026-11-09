@@ -22,7 +22,9 @@
 using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
-RenewAndroidInstanceMCPTokenRequest::RenewAndroidInstanceMCPTokenRequest()
+RenewAndroidInstanceMCPTokenRequest::RenewAndroidInstanceMCPTokenRequest() :
+    m_tokenIdHasBeenSet(false),
+    m_expireSecondsHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string RenewAndroidInstanceMCPTokenRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_tokenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tokenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expireSeconds, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string RenewAndroidInstanceMCPTokenRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string RenewAndroidInstanceMCPTokenRequest::GetTokenId() const
+{
+    return m_tokenId;
+}
+
+void RenewAndroidInstanceMCPTokenRequest::SetTokenId(const string& _tokenId)
+{
+    m_tokenId = _tokenId;
+    m_tokenIdHasBeenSet = true;
+}
+
+bool RenewAndroidInstanceMCPTokenRequest::TokenIdHasBeenSet() const
+{
+    return m_tokenIdHasBeenSet;
+}
+
+int64_t RenewAndroidInstanceMCPTokenRequest::GetExpireSeconds() const
+{
+    return m_expireSeconds;
+}
+
+void RenewAndroidInstanceMCPTokenRequest::SetExpireSeconds(const int64_t& _expireSeconds)
+{
+    m_expireSeconds = _expireSeconds;
+    m_expireSecondsHasBeenSet = true;
+}
+
+bool RenewAndroidInstanceMCPTokenRequest::ExpireSecondsHasBeenSet() const
+{
+    return m_expireSecondsHasBeenSet;
+}
 
 

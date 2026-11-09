@@ -22,7 +22,8 @@
 using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
-DeleteAndroidInstanceMCPTokenRequest::DeleteAndroidInstanceMCPTokenRequest()
+DeleteAndroidInstanceMCPTokenRequest::DeleteAndroidInstanceMCPTokenRequest() :
+    m_tokenIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DeleteAndroidInstanceMCPTokenRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_tokenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tokenId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DeleteAndroidInstanceMCPTokenRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteAndroidInstanceMCPTokenRequest::GetTokenId() const
+{
+    return m_tokenId;
+}
+
+void DeleteAndroidInstanceMCPTokenRequest::SetTokenId(const string& _tokenId)
+{
+    m_tokenId = _tokenId;
+    m_tokenIdHasBeenSet = true;
+}
+
+bool DeleteAndroidInstanceMCPTokenRequest::TokenIdHasBeenSet() const
+{
+    return m_tokenIdHasBeenSet;
+}
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取复制对ID列表
-                     * @return CopyPairIds 复制对ID列表
+                     * 获取<p>复制对ID列表</p>
+                     * @return CopyPairIds <p>复制对ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetCopyPairIds() const;
 
                     /**
-                     * 设置复制对ID列表
-                     * @param _copyPairIds 复制对ID列表
+                     * 设置<p>复制对ID列表</p>
+                     * @param _copyPairIds <p>复制对ID列表</p>
                      * 
                      */
                     void SetCopyPairIds(const std::vector<std::string>& _copyPairIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CopyPairIdsHasBeenSet() const;
 
                     /**
-                     * 获取复制对类型，枚举值：DISK / INSTANCE / CFS。
-                     * @return CopyPairType 复制对类型，枚举值：DISK / INSTANCE / CFS。
+                     * 获取<p>复制对类型，枚举值：INSTANCE。</p><p>枚举值：</p><ul><li>INSTANCE： CVM复制对</li></ul>
+                     * @return CopyPairType <p>复制对类型，枚举值：INSTANCE。</p><p>枚举值：</p><ul><li>INSTANCE： CVM复制对</li></ul>
                      * 
                      */
                     std::string GetCopyPairType() const;
 
                     /**
-                     * 设置复制对类型，枚举值：DISK / INSTANCE / CFS。
-                     * @param _copyPairType 复制对类型，枚举值：DISK / INSTANCE / CFS。
+                     * 设置<p>复制对类型，枚举值：INSTANCE。</p><p>枚举值：</p><ul><li>INSTANCE： CVM复制对</li></ul>
+                     * @param _copyPairType <p>复制对类型，枚举值：INSTANCE。</p><p>枚举值：</p><ul><li>INSTANCE： CVM复制对</li></ul>
                      * 
                      */
                     void SetCopyPairType(const std::string& _copyPairType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CopyPairTypeHasBeenSet() const;
 
                     /**
-                     * 获取切换类型，支持WAIT和NOW
-                     * @return FailoverType 切换类型，支持WAIT和NOW
+                     * 获取<p>切换类型，支持WAIT和NOW</p>
+                     * @return FailoverType <p>切换类型，支持WAIT和NOW</p>
                      * 
                      */
                     std::string GetFailoverType() const;
 
                     /**
-                     * 设置切换类型，支持WAIT和NOW
-                     * @param _failoverType 切换类型，支持WAIT和NOW
+                     * 设置<p>切换类型，支持WAIT和NOW</p>
+                     * @param _failoverType <p>切换类型，支持WAIT和NOW</p>
                      * 
                      */
                     void SetFailoverType(const std::string& _failoverType);
@@ -105,25 +105,52 @@ namespace TencentCloud
                      */
                     bool FailoverTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>故障切换成功后是否自动关机生产端实例，默认为true</p>
+                     * @return StopSourceInstance <p>故障切换成功后是否自动关机生产端实例，默认为true</p>
+                     * 
+                     */
+                    bool GetStopSourceInstance() const;
+
+                    /**
+                     * 设置<p>故障切换成功后是否自动关机生产端实例，默认为true</p>
+                     * @param _stopSourceInstance <p>故障切换成功后是否自动关机生产端实例，默认为true</p>
+                     * 
+                     */
+                    void SetStopSourceInstance(const bool& _stopSourceInstance);
+
+                    /**
+                     * 判断参数 StopSourceInstance 是否已赋值
+                     * @return StopSourceInstance 是否已赋值
+                     * 
+                     */
+                    bool StopSourceInstanceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 复制对ID列表
+                     * <p>复制对ID列表</p>
                      */
                     std::vector<std::string> m_copyPairIds;
                     bool m_copyPairIdsHasBeenSet;
 
                     /**
-                     * 复制对类型，枚举值：DISK / INSTANCE / CFS。
+                     * <p>复制对类型，枚举值：INSTANCE。</p><p>枚举值：</p><ul><li>INSTANCE： CVM复制对</li></ul>
                      */
                     std::string m_copyPairType;
                     bool m_copyPairTypeHasBeenSet;
 
                     /**
-                     * 切换类型，支持WAIT和NOW
+                     * <p>切换类型，支持WAIT和NOW</p>
                      */
                     std::string m_failoverType;
                     bool m_failoverTypeHasBeenSet;
+
+                    /**
+                     * <p>故障切换成功后是否自动关机生产端实例，默认为true</p>
+                     */
+                    bool m_stopSourceInstance;
+                    bool m_stopSourceInstanceHasBeenSet;
 
                 };
             }

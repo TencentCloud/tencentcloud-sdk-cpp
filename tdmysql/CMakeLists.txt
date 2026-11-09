@@ -27,6 +27,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/BackupMethodStatisticsOutPut.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDatabasesRequest.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBParametersRequest.h
+  include/tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyInstanceNetworkResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyInstanceSSLStatusResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBEnginesRequest.h
@@ -149,6 +150,7 @@ set(tdmysql_public_header_model
   include/tencentcloud/tdmysql/v20211122/model/DescribeFlowRequest.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyDBSBackupSetCommentResponse.h
   include/tencentcloud/tdmysql/v20211122/model/AutoScalingConfig.h
+  include/tencentcloud/tdmysql/v20211122/model/ModifyDBInstanceResponse.h
   include/tencentcloud/tdmysql/v20211122/model/DatabaseProcedure.h
   include/tencentcloud/tdmysql/v20211122/model/DescribeDBEnginesResponse.h
   include/tencentcloud/tdmysql/v20211122/model/ModifyAutoRenewFlagRequest.h
@@ -193,6 +195,7 @@ set(tdmysql_src
   src/v20211122/model/BackupMethodStatisticsOutPut.cpp
   src/v20211122/model/DescribeDatabasesRequest.cpp
   src/v20211122/model/DescribeDBParametersRequest.cpp
+  src/v20211122/model/ModifyDBInstanceRequest.cpp
   src/v20211122/model/ModifyInstanceNetworkResponse.cpp
   src/v20211122/model/ModifyInstanceSSLStatusResponse.cpp
   src/v20211122/model/DescribeDBEnginesRequest.cpp
@@ -315,6 +318,7 @@ set(tdmysql_src
   src/v20211122/model/DescribeFlowRequest.cpp
   src/v20211122/model/ModifyDBSBackupSetCommentResponse.cpp
   src/v20211122/model/AutoScalingConfig.cpp
+  src/v20211122/model/ModifyDBInstanceResponse.cpp
   src/v20211122/model/DatabaseProcedure.cpp
   src/v20211122/model/DescribeDBEnginesResponse.cpp
   src/v20211122/model/ModifyAutoRenewFlagRequest.cpp

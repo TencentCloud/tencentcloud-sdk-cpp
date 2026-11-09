@@ -26,7 +26,11 @@ ModifyCopyPairAttributeRequest::ModifyCopyPairAttributeRequest() :
     m_copyPairIdHasBeenSet(false),
     m_copyPairTypeHasBeenSet(false),
     m_copyPairNameHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false),
+    m_useDefaultPrivateIpHasBeenSet(false),
+    m_loginSettingsHasBeenSet(false),
+    m_useDefaultPasswordHasBeenSet(false)
 {
 }
 
@@ -67,6 +71,39 @@ string ModifyCopyPairAttributeRequest::ToJsonString() const
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privateIpAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateIpAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_privateIpAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useDefaultPrivateIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseDefaultPrivateIp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useDefaultPrivateIp, allocator);
+    }
+
+    if (m_loginSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginSettings";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_loginSettings.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_useDefaultPasswordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseDefaultPassword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useDefaultPassword, allocator);
     }
 
 
@@ -139,6 +176,70 @@ void ModifyCopyPairAttributeRequest::SetInstanceType(const string& _instanceType
 bool ModifyCopyPairAttributeRequest::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+string ModifyCopyPairAttributeRequest::GetPrivateIpAddress() const
+{
+    return m_privateIpAddress;
+}
+
+void ModifyCopyPairAttributeRequest::SetPrivateIpAddress(const string& _privateIpAddress)
+{
+    m_privateIpAddress = _privateIpAddress;
+    m_privateIpAddressHasBeenSet = true;
+}
+
+bool ModifyCopyPairAttributeRequest::PrivateIpAddressHasBeenSet() const
+{
+    return m_privateIpAddressHasBeenSet;
+}
+
+bool ModifyCopyPairAttributeRequest::GetUseDefaultPrivateIp() const
+{
+    return m_useDefaultPrivateIp;
+}
+
+void ModifyCopyPairAttributeRequest::SetUseDefaultPrivateIp(const bool& _useDefaultPrivateIp)
+{
+    m_useDefaultPrivateIp = _useDefaultPrivateIp;
+    m_useDefaultPrivateIpHasBeenSet = true;
+}
+
+bool ModifyCopyPairAttributeRequest::UseDefaultPrivateIpHasBeenSet() const
+{
+    return m_useDefaultPrivateIpHasBeenSet;
+}
+
+LoginSettings ModifyCopyPairAttributeRequest::GetLoginSettings() const
+{
+    return m_loginSettings;
+}
+
+void ModifyCopyPairAttributeRequest::SetLoginSettings(const LoginSettings& _loginSettings)
+{
+    m_loginSettings = _loginSettings;
+    m_loginSettingsHasBeenSet = true;
+}
+
+bool ModifyCopyPairAttributeRequest::LoginSettingsHasBeenSet() const
+{
+    return m_loginSettingsHasBeenSet;
+}
+
+bool ModifyCopyPairAttributeRequest::GetUseDefaultPassword() const
+{
+    return m_useDefaultPassword;
+}
+
+void ModifyCopyPairAttributeRequest::SetUseDefaultPassword(const bool& _useDefaultPassword)
+{
+    m_useDefaultPassword = _useDefaultPassword;
+    m_useDefaultPasswordHasBeenSet = true;
+}
+
+bool ModifyCopyPairAttributeRequest::UseDefaultPasswordHasBeenSet() const
+{
+    return m_useDefaultPasswordHasBeenSet;
 }
 
 

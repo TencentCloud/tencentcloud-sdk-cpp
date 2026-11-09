@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>内部 ID，格式 k_ + 16 位 hex</p>
+                     * @return TokenId <p>内部 ID，格式 k_ + 16 位 hex</p>
+                     * 
+                     */
+                    std::string GetTokenId() const;
+
+                    /**
+                     * 设置<p>内部 ID，格式 k_ + 16 位 hex</p>
+                     * @param _tokenId <p>内部 ID，格式 k_ + 16 位 hex</p>
+                     * 
+                     */
+                    void SetTokenId(const std::string& _tokenId);
+
+                    /**
+                     * 判断参数 TokenId 是否已赋值
+                     * @return TokenId 是否已赋值
+                     * 
+                     */
+                    bool TokenIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>内部 ID，格式 k_ + 16 位 hex</p>
+                     */
+                    std::string m_tokenId;
+                    bool m_tokenIdHasBeenSet;
 
                 };
             }

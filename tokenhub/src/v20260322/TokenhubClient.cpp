@@ -1340,6 +1340,56 @@ TokenhubClient::DescribeUsageRankListOutcomeCallable TokenhubClient::DescribeUsa
     return prom->get_future();
 }
 
+TokenhubClient::ModifyApiKeyBindingsOutcome TokenhubClient::ModifyApiKeyBindings(const ModifyApiKeyBindingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApiKeyBindings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApiKeyBindingsResponse rsp = ModifyApiKeyBindingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApiKeyBindingsOutcome(rsp);
+        else
+            return ModifyApiKeyBindingsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApiKeyBindingsOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::ModifyApiKeyBindingsAsync(const ModifyApiKeyBindingsRequest& request, const ModifyApiKeyBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyApiKeyBindingsRequest&;
+    using Resp = ModifyApiKeyBindingsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyApiKeyBindings", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::ModifyApiKeyBindingsOutcomeCallable TokenhubClient::ModifyApiKeyBindingsCallable(const ModifyApiKeyBindingsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyApiKeyBindingsOutcome>>();
+    ModifyApiKeyBindingsAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const ModifyApiKeyBindingsRequest&,
+        ModifyApiKeyBindingsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TokenhubClient::ModifyApiKeyInfoOutcome TokenhubClient::ModifyApiKeyInfo(const ModifyApiKeyInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyApiKeyInfo");

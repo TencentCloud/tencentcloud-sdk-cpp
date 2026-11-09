@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/apis/v20240801/model/DescribeAgentCredentialResp.h>
 #include <tencentcloud/apis/v20240801/model/DescribeMcpServerResponseVO.h>
+#include <tencentcloud/apis/v20240801/model/DescribeAgentAppResp.h>
 
 
 namespace TencentCloud
@@ -49,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取绑定ID
-                     * @return ID 绑定ID
+                     * 获取<p>绑定ID</p>
+                     * @return ID <p>绑定ID</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置绑定ID
-                     * @param _iD 绑定ID
+                     * 设置<p>绑定ID</p>
+                     * @param _iD <p>绑定ID</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -70,15 +71,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取需要认证
-                     * @return NeedAuth 需要认证
+                     * 获取<p>需要认证</p>
+                     * @return NeedAuth <p>需要认证</p>
                      * 
                      */
                     bool GetNeedAuth() const;
 
                     /**
-                     * 设置需要认证
-                     * @param _needAuth 需要认证
+                     * 设置<p>需要认证</p>
+                     * @param _needAuth <p>需要认证</p>
                      * 
                      */
                     void SetNeedAuth(const bool& _needAuth);
@@ -91,15 +92,15 @@ namespace TencentCloud
                     bool NeedAuthHasBeenSet() const;
 
                     /**
-                     * 获取凭据ID
-                     * @return AgentCredentialID 凭据ID
+                     * 获取<p>凭据ID</p>
+                     * @return AgentCredentialID <p>凭据ID</p>
                      * 
                      */
                     std::string GetAgentCredentialID() const;
 
                     /**
-                     * 设置凭据ID
-                     * @param _agentCredentialID 凭据ID
+                     * 设置<p>凭据ID</p>
+                     * @param _agentCredentialID <p>凭据ID</p>
                      * 
                      */
                     void SetAgentCredentialID(const std::string& _agentCredentialID);
@@ -112,15 +113,15 @@ namespace TencentCloud
                     bool AgentCredentialIDHasBeenSet() const;
 
                     /**
-                     * 获取凭据详情
-                     * @return AgentCredentialVO 凭据详情
+                     * 获取<p>凭据详情</p>
+                     * @return AgentCredentialVO <p>凭据详情</p>
                      * 
                      */
                     DescribeAgentCredentialResp GetAgentCredentialVO() const;
 
                     /**
-                     * 设置凭据详情
-                     * @param _agentCredentialVO 凭据详情
+                     * 设置<p>凭据详情</p>
+                     * @param _agentCredentialVO <p>凭据详情</p>
                      * 
                      */
                     void SetAgentCredentialVO(const DescribeAgentCredentialResp& _agentCredentialVO);
@@ -133,15 +134,15 @@ namespace TencentCloud
                     bool AgentCredentialVOHasBeenSet() const;
 
                     /**
-                     * 获取mcp详情
-                     * @return McpServerVO mcp详情
+                     * 获取<p>mcp详情</p>
+                     * @return McpServerVO <p>mcp详情</p>
                      * 
                      */
                     DescribeMcpServerResponseVO GetMcpServerVO() const;
 
                     /**
-                     * 设置mcp详情
-                     * @param _mcpServerVO mcp详情
+                     * 设置<p>mcp详情</p>
+                     * @param _mcpServerVO <p>mcp详情</p>
                      * 
                      */
                     void SetMcpServerVO(const DescribeMcpServerResponseVO& _mcpServerVO);
@@ -154,15 +155,15 @@ namespace TencentCloud
                     bool McpServerVOHasBeenSet() const;
 
                     /**
-                     * 获取关联时间
-                     * @return RelateTime 关联时间
+                     * 获取<p>关联时间</p>
+                     * @return RelateTime <p>关联时间</p>
                      * 
                      */
                     std::string GetRelateTime() const;
 
                     /**
-                     * 设置关联时间
-                     * @param _relateTime 关联时间
+                     * 设置<p>关联时间</p>
+                     * @param _relateTime <p>关联时间</p>
                      * 
                      */
                     void SetRelateTime(const std::string& _relateTime);
@@ -175,18 +176,18 @@ namespace TencentCloud
                     bool RelateTimeHasBeenSet() const;
 
                     /**
-                     * 获取应用为OAuth2认证时，sse模式请求mcp时的资源标识
+                     * 获取<p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SSEResourceIdentifier 应用为OAuth2认证时，sse模式请求mcp时的资源标识
+                     * @return SSEResourceIdentifier <p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSSEResourceIdentifier() const;
 
                     /**
-                     * 设置应用为OAuth2认证时，sse模式请求mcp时的资源标识
+                     * 设置<p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sSEResourceIdentifier 应用为OAuth2认证时，sse模式请求mcp时的资源标识
+                     * @param _sSEResourceIdentifier <p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -200,18 +201,18 @@ namespace TencentCloud
                     bool SSEResourceIdentifierHasBeenSet() const;
 
                     /**
-                     * 获取应用为OAuth2认证时，streamable模式请求mcp时的资源标识
+                     * 获取<p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StreamableResourceIdentifier 应用为OAuth2认证时，streamable模式请求mcp时的资源标识
+                     * @return StreamableResourceIdentifier <p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStreamableResourceIdentifier() const;
 
                     /**
-                     * 设置应用为OAuth2认证时，streamable模式请求mcp时的资源标识
+                     * 设置<p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _streamableResourceIdentifier 应用为OAuth2认证时，streamable模式请求mcp时的资源标识
+                     * @param _streamableResourceIdentifier <p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -225,18 +226,18 @@ namespace TencentCloud
                     bool StreamableResourceIdentifierHasBeenSet() const;
 
                     /**
-                     * 获取应用ID
+                     * 获取<p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AgentAppID 应用ID
+                     * @return AgentAppID <p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAgentAppID() const;
 
                     /**
-                     * 设置应用ID
+                     * 设置<p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _agentAppID 应用ID
+                     * @param _agentAppID <p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -250,18 +251,18 @@ namespace TencentCloud
                     bool AgentAppIDHasBeenSet() const;
 
                     /**
-                     * 获取mcp ID
+                     * 获取<p>mcp ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return McpServerID mcp ID
+                     * @return McpServerID <p>mcp ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMcpServerID() const;
 
                     /**
-                     * 设置mcp ID
+                     * 设置<p>mcp ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mcpServerID mcp ID
+                     * @param _mcpServerID <p>mcp ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -274,71 +275,98 @@ namespace TencentCloud
                      */
                     bool McpServerIDHasBeenSet() const;
 
+                    /**
+                     * 获取<p>应用</p>
+                     * @return AgentAppVO <p>应用</p>
+                     * 
+                     */
+                    DescribeAgentAppResp GetAgentAppVO() const;
+
+                    /**
+                     * 设置<p>应用</p>
+                     * @param _agentAppVO <p>应用</p>
+                     * 
+                     */
+                    void SetAgentAppVO(const DescribeAgentAppResp& _agentAppVO);
+
+                    /**
+                     * 判断参数 AgentAppVO 是否已赋值
+                     * @return AgentAppVO 是否已赋值
+                     * 
+                     */
+                    bool AgentAppVOHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 绑定ID
+                     * <p>绑定ID</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 需要认证
+                     * <p>需要认证</p>
                      */
                     bool m_needAuth;
                     bool m_needAuthHasBeenSet;
 
                     /**
-                     * 凭据ID
+                     * <p>凭据ID</p>
                      */
                     std::string m_agentCredentialID;
                     bool m_agentCredentialIDHasBeenSet;
 
                     /**
-                     * 凭据详情
+                     * <p>凭据详情</p>
                      */
                     DescribeAgentCredentialResp m_agentCredentialVO;
                     bool m_agentCredentialVOHasBeenSet;
 
                     /**
-                     * mcp详情
+                     * <p>mcp详情</p>
                      */
                     DescribeMcpServerResponseVO m_mcpServerVO;
                     bool m_mcpServerVOHasBeenSet;
 
                     /**
-                     * 关联时间
+                     * <p>关联时间</p>
                      */
                     std::string m_relateTime;
                     bool m_relateTimeHasBeenSet;
 
                     /**
-                     * 应用为OAuth2认证时，sse模式请求mcp时的资源标识
+                     * <p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sSEResourceIdentifier;
                     bool m_sSEResourceIdentifierHasBeenSet;
 
                     /**
-                     * 应用为OAuth2认证时，streamable模式请求mcp时的资源标识
+                     * <p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_streamableResourceIdentifier;
                     bool m_streamableResourceIdentifierHasBeenSet;
 
                     /**
-                     * 应用ID
+                     * <p>应用ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_agentAppID;
                     bool m_agentAppIDHasBeenSet;
 
                     /**
-                     * mcp ID
+                     * <p>mcp ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mcpServerID;
                     bool m_mcpServerIDHasBeenSet;
+
+                    /**
+                     * <p>应用</p>
+                     */
+                    DescribeAgentAppResp m_agentAppVO;
+                    bool m_agentAppVOHasBeenSet;
 
                 };
             }

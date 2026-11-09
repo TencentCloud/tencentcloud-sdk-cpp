@@ -23,7 +23,8 @@ using namespace std;
 ResourceConfiguration::ResourceConfiguration() :
     m_cPUHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_storageHasBeenSet(false)
+    m_storageHasBeenSet(false),
+    m_gPUResourceGroupIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ResourceConfiguration::Deserialize(const rapidjson::Value &v
         m_storageHasBeenSet = true;
     }
 
+    if (value.HasMember("GPUResourceGroupId") && !value["GPUResourceGroupId"].IsNull())
+    {
+        if (!value["GPUResourceGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceConfiguration.GPUResourceGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gPUResourceGroupId = string(value["GPUResourceGroupId"].GetString());
+        m_gPUResourceGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ResourceConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Storage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gPUResourceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUResourceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gPUResourceGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ResourceConfiguration::SetStorage(const string& _storage)
 bool ResourceConfiguration::StorageHasBeenSet() const
 {
     return m_storageHasBeenSet;
+}
+
+string ResourceConfiguration::GetGPUResourceGroupId() const
+{
+    return m_gPUResourceGroupId;
+}
+
+void ResourceConfiguration::SetGPUResourceGroupId(const string& _gPUResourceGroupId)
+{
+    m_gPUResourceGroupId = _gPUResourceGroupId;
+    m_gPUResourceGroupIdHasBeenSet = true;
+}
+
+bool ResourceConfiguration::GPUResourceGroupIdHasBeenSet() const
+{
+    return m_gPUResourceGroupIdHasBeenSet;
 }
 

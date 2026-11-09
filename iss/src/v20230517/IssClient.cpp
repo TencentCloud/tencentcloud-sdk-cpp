@@ -4040,6 +4040,56 @@ IssClient::ListTasksOutcomeCallable IssClient::ListTasksCallable(const ListTasks
     return prom->get_future();
 }
 
+IssClient::ListVLPlanResultsOutcome IssClient::ListVLPlanResults(const ListVLPlanResultsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListVLPlanResults");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListVLPlanResultsResponse rsp = ListVLPlanResultsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListVLPlanResultsOutcome(rsp);
+        else
+            return ListVLPlanResultsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListVLPlanResultsOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::ListVLPlanResultsAsync(const ListVLPlanResultsRequest& request, const ListVLPlanResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListVLPlanResultsRequest&;
+    using Resp = ListVLPlanResultsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListVLPlanResults", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IssClient::ListVLPlanResultsOutcomeCallable IssClient::ListVLPlanResultsCallable(const ListVLPlanResultsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListVLPlanResultsOutcome>>();
+    ListVLPlanResultsAsync(
+    request,
+    [prom](
+        const IssClient*,
+        const ListVLPlanResultsRequest&,
+        ListVLPlanResultsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IssClient::ListVLPlansOutcome IssClient::ListVLPlans(const ListVLPlansRequest &request)
 {
     auto outcome = MakeRequest(request, "ListVLPlans");

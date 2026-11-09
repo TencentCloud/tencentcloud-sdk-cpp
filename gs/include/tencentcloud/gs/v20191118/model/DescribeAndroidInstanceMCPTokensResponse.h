@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/gs/v20191118/model/AndroidInstanceMCPToken.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,50 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>Token列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tokens <p>Token列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AndroidInstanceMCPToken> GetTokens() const;
+
+                    /**
+                     * 判断参数 Tokens 是否已赋值
+                     * @return Tokens 是否已赋值
+                     * 
+                     */
+                    bool TokensHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Token总数</p><p>单位：个</p>
+                     * @return TotalCount <p>Token总数</p><p>单位：个</p>
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>Token列表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AndroidInstanceMCPToken> m_tokens;
+                    bool m_tokensHasBeenSet;
+
+                    /**
+                     * <p>Token总数</p><p>单位：个</p>
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

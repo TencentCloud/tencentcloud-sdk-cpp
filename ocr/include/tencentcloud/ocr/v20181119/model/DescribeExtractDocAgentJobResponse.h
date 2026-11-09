@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。
-                     * @return Angle 图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。
+                     * 获取<p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。</p>
+                     * @return Angle <p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。</p>
                      * 
                      */
                     double GetAngle() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool AngleHasBeenSet() const;
 
                     /**
-                     * 获取配置结构化文本信息。
-                     * @return StructuralList 配置结构化文本信息。
+                     * 获取<p>配置结构化文本信息。AgentType为0按照这个结构返回</p>
+                     * @return StructuralList <p>配置结构化文本信息。AgentType为0按照这个结构返回</p>
                      * 
                      */
                     std::vector<GroupInfo> GetStructuralList() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool StructuralListHasBeenSet() const;
 
                     /**
-                     * 获取任务执行错误码。当任务状态不为 FAIL 时，该值为""。
-                     * @return ErrorCode 任务执行错误码。当任务状态不为 FAIL 时，该值为""。
+                     * 获取<p>任务执行错误码。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
+                     * @return ErrorCode <p>任务执行错误码。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
                      * 
                      */
                     std::string GetErrorCode() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool ErrorCodeHasBeenSet() const;
 
                     /**
-                     * 获取任务执行错误信息。当任务状态不为 FAIL 时，该值为""。
-                     * @return ErrorMessage 任务执行错误信息。当任务状态不为 FAIL 时，该值为""。
+                     * 获取<p>任务执行错误信息。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
+                     * @return ErrorMessage <p>任务执行错误信息。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
                      * 
                      */
                     std::string GetErrorMessage() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
-                     * 获取任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功
-                     * @return JobStatus 任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功
+                     * 获取<p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功</p>
+                     * @return JobStatus <p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功</p>
                      * 
                      */
                     std::string GetJobStatus() const;
@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool JobStatusHasBeenSet() const;
 
                     /**
-                     * 获取思考过程
-                     * @return ThoughtContent 思考过程
+                     * 获取<p>思考过程</p>
+                     * @return ThoughtContent <p>思考过程</p>
                      * 
                      */
                     std::string GetThoughtContent() const;
@@ -128,43 +128,63 @@ namespace TencentCloud
                      */
                     bool ThoughtContentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>定制的json结构字符串，主要用于快速定制输出的agent输出结构。推荐用于POC场景</p>
+                     * @return AgentResultJson <p>定制的json结构字符串，主要用于快速定制输出的agent输出结构。推荐用于POC场景</p>
+                     * 
+                     */
+                    std::string GetAgentResultJson() const;
+
+                    /**
+                     * 判断参数 AgentResultJson 是否已赋值
+                     * @return AgentResultJson 是否已赋值
+                     * 
+                     */
+                    bool AgentResultJsonHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。
+                     * <p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。</p>
                      */
                     double m_angle;
                     bool m_angleHasBeenSet;
 
                     /**
-                     * 配置结构化文本信息。
+                     * <p>配置结构化文本信息。AgentType为0按照这个结构返回</p>
                      */
                     std::vector<GroupInfo> m_structuralList;
                     bool m_structuralListHasBeenSet;
 
                     /**
-                     * 任务执行错误码。当任务状态不为 FAIL 时，该值为""。
+                     * <p>任务执行错误码。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
                      */
                     std::string m_errorCode;
                     bool m_errorCodeHasBeenSet;
 
                     /**
-                     * 任务执行错误信息。当任务状态不为 FAIL 时，该值为""。
+                     * <p>任务执行错误信息。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
-                     * 任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功
+                     * <p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功</p>
                      */
                     std::string m_jobStatus;
                     bool m_jobStatusHasBeenSet;
 
                     /**
-                     * 思考过程
+                     * <p>思考过程</p>
                      */
                     std::string m_thoughtContent;
                     bool m_thoughtContentHasBeenSet;
+
+                    /**
+                     * <p>定制的json结构字符串，主要用于快速定制输出的agent输出结构。推荐用于POC场景</p>
+                     */
+                    std::string m_agentResultJson;
+                    bool m_agentResultJsonHasBeenSet;
 
                 };
             }

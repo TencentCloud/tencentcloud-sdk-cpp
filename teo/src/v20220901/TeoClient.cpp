@@ -7690,6 +7690,56 @@ TeoClient::DescribeSharedCNAMEOutcomeCallable TeoClient::DescribeSharedCNAMECall
     return prom->get_future();
 }
 
+TeoClient::DescribeTimingFunctionAnalysisDataOutcome TeoClient::DescribeTimingFunctionAnalysisData(const DescribeTimingFunctionAnalysisDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTimingFunctionAnalysisData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTimingFunctionAnalysisDataResponse rsp = DescribeTimingFunctionAnalysisDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTimingFunctionAnalysisDataOutcome(rsp);
+        else
+            return DescribeTimingFunctionAnalysisDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTimingFunctionAnalysisDataOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeTimingFunctionAnalysisDataAsync(const DescribeTimingFunctionAnalysisDataRequest& request, const DescribeTimingFunctionAnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTimingFunctionAnalysisDataRequest&;
+    using Resp = DescribeTimingFunctionAnalysisDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTimingFunctionAnalysisData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeTimingFunctionAnalysisDataOutcomeCallable TeoClient::DescribeTimingFunctionAnalysisDataCallable(const DescribeTimingFunctionAnalysisDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTimingFunctionAnalysisDataOutcome>>();
+    DescribeTimingFunctionAnalysisDataAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeTimingFunctionAnalysisDataRequest&,
+        DescribeTimingFunctionAnalysisDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::DescribeTimingL4DataOutcome TeoClient::DescribeTimingL4Data(const DescribeTimingL4DataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTimingL4Data");
@@ -7882,6 +7932,56 @@ TeoClient::DescribeTimingL7OriginPullDataOutcomeCallable TeoClient::DescribeTimi
         const TeoClient*,
         const DescribeTimingL7OriginPullDataRequest&,
         DescribeTimingL7OriginPullDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeTopFunctionAnalysisDataOutcome TeoClient::DescribeTopFunctionAnalysisData(const DescribeTopFunctionAnalysisDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopFunctionAnalysisData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopFunctionAnalysisDataResponse rsp = DescribeTopFunctionAnalysisDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopFunctionAnalysisDataOutcome(rsp);
+        else
+            return DescribeTopFunctionAnalysisDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopFunctionAnalysisDataOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeTopFunctionAnalysisDataAsync(const DescribeTopFunctionAnalysisDataRequest& request, const DescribeTopFunctionAnalysisDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTopFunctionAnalysisDataRequest&;
+    using Resp = DescribeTopFunctionAnalysisDataResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTopFunctionAnalysisData", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeTopFunctionAnalysisDataOutcomeCallable TeoClient::DescribeTopFunctionAnalysisDataCallable(const DescribeTopFunctionAnalysisDataRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTopFunctionAnalysisDataOutcome>>();
+    DescribeTopFunctionAnalysisDataAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeTopFunctionAnalysisDataRequest&,
+        DescribeTopFunctionAnalysisDataOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

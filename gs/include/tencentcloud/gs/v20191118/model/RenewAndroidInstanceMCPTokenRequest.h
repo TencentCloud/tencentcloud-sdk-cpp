@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>内部 ID，格式 k_ + 16 位 hex</p>
+                     * @return TokenId <p>内部 ID，格式 k_ + 16 位 hex</p>
+                     * 
+                     */
+                    std::string GetTokenId() const;
+
+                    /**
+                     * 设置<p>内部 ID，格式 k_ + 16 位 hex</p>
+                     * @param _tokenId <p>内部 ID，格式 k_ + 16 位 hex</p>
+                     * 
+                     */
+                    void SetTokenId(const std::string& _tokenId);
+
+                    /**
+                     * 判断参数 TokenId 是否已赋值
+                     * @return TokenId 是否已赋值
+                     * 
+                     */
+                    bool TokenIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>有效期（秒），必须大于 0</p><p>单位：秒</p>
+                     * @return ExpireSeconds <p>有效期（秒），必须大于 0</p><p>单位：秒</p>
+                     * 
+                     */
+                    int64_t GetExpireSeconds() const;
+
+                    /**
+                     * 设置<p>有效期（秒），必须大于 0</p><p>单位：秒</p>
+                     * @param _expireSeconds <p>有效期（秒），必须大于 0</p><p>单位：秒</p>
+                     * 
+                     */
+                    void SetExpireSeconds(const int64_t& _expireSeconds);
+
+                    /**
+                     * 判断参数 ExpireSeconds 是否已赋值
+                     * @return ExpireSeconds 是否已赋值
+                     * 
+                     */
+                    bool ExpireSecondsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>内部 ID，格式 k_ + 16 位 hex</p>
+                     */
+                    std::string m_tokenId;
+                    bool m_tokenIdHasBeenSet;
+
+                    /**
+                     * <p>有效期（秒），必须大于 0</p><p>单位：秒</p>
+                     */
+                    int64_t m_expireSeconds;
+                    bool m_expireSecondsHasBeenSet;
 
                 };
             }

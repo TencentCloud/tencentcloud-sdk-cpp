@@ -32,7 +32,8 @@ StartSandboxInstanceRequest::StartSandboxInstanceRequest() :
     m_mountOptionsHasBeenSet(false),
     m_customConfigurationHasBeenSet(false),
     m_authModeHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_startModeHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,14 @@ string StartSandboxInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_startModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -304,6 +313,22 @@ void StartSandboxInstanceRequest::SetMetadata(const vector<MetadataVar>& _metada
 bool StartSandboxInstanceRequest::MetadataHasBeenSet() const
 {
     return m_metadataHasBeenSet;
+}
+
+string StartSandboxInstanceRequest::GetStartMode() const
+{
+    return m_startMode;
+}
+
+void StartSandboxInstanceRequest::SetStartMode(const string& _startMode)
+{
+    m_startMode = _startMode;
+    m_startModeHasBeenSet = true;
+}
+
+bool StartSandboxInstanceRequest::StartModeHasBeenSet() const
+{
+    return m_startModeHasBeenSet;
 }
 
 

@@ -171,6 +171,27 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>空间 ID；空间或应用视图必传，由服务端校验空间权限</p>
+                     * @return SpaceId <p>空间 ID；空间或应用视图必传，由服务端校验空间权限</p>
+                     * 
+                     */
+                    std::string GetSpaceId() const;
+
+                    /**
+                     * 设置<p>空间 ID；空间或应用视图必传，由服务端校验空间权限</p>
+                     * @param _spaceId <p>空间 ID；空间或应用视图必传，由服务端校验空间权限</p>
+                     * 
+                     */
+                    void SetSpaceId(const std::string& _spaceId);
+
+                    /**
+                     * 判断参数 SpaceId 是否已赋值
+                     * @return SpaceId 是否已赋值
+                     * 
+                     */
+                    bool SpaceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +229,12 @@ namespace TencentCloud
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * <p>空间 ID；空间或应用视图必传，由服务端校验空间权限</p>
+                     */
+                    std::string m_spaceId;
+                    bool m_spaceIdHasBeenSet;
 
                 };
             }

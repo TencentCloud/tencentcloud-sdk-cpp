@@ -1990,6 +1990,56 @@ TdmysqlClient::ModifyAutoRenewFlagOutcomeCallable TdmysqlClient::ModifyAutoRenew
     return prom->get_future();
 }
 
+TdmysqlClient::ModifyDBInstanceOutcome TdmysqlClient::ModifyDBInstance(const ModifyDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceResponse rsp = ModifyDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceOutcome(rsp);
+        else
+            return ModifyDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TdmysqlClient::ModifyDBInstanceAsync(const ModifyDBInstanceRequest& request, const ModifyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyDBInstanceRequest&;
+    using Resp = ModifyDBInstanceResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyDBInstance", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TdmysqlClient::ModifyDBInstanceOutcomeCallable TdmysqlClient::ModifyDBInstanceCallable(const ModifyDBInstanceRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyDBInstanceOutcome>>();
+    ModifyDBInstanceAsync(
+    request,
+    [prom](
+        const TdmysqlClient*,
+        const ModifyDBInstanceRequest&,
+        ModifyDBInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TdmysqlClient::ModifyDBInstanceSecurityGroupsOutcome TdmysqlClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroups");

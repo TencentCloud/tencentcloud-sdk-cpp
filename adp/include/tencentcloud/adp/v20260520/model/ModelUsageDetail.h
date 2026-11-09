@@ -48,6 +48,48 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<p>API Key 别名或脱敏值；禁止返回明文密钥</p>
+                     * @return ApiKeyDisplay <p>API Key 别名或脱敏值；禁止返回明文密钥</p>
+                     * 
+                     */
+                    std::string GetApiKeyDisplay() const;
+
+                    /**
+                     * 设置<p>API Key 别名或脱敏值；禁止返回明文密钥</p>
+                     * @param _apiKeyDisplay <p>API Key 别名或脱敏值；禁止返回明文密钥</p>
+                     * 
+                     */
+                    void SetApiKeyDisplay(const std::string& _apiKeyDisplay);
+
+                    /**
+                     * 判断参数 ApiKeyDisplay 是否已赋值
+                     * @return ApiKeyDisplay 是否已赋值
+                     * 
+                     */
+                    bool ApiKeyDisplayHasBeenSet() const;
+
+                    /**
+                     * 获取<p>计费方式；非模型 API 或历史数据可为未指定；后付费不产生 PU</p>
+                     * @return BillingType <p>计费方式；非模型 API 或历史数据可为未指定；后付费不产生 PU</p>
+                     * 
+                     */
+                    int64_t GetBillingType() const;
+
+                    /**
+                     * 设置<p>计费方式；非模型 API 或历史数据可为未指定；后付费不产生 PU</p>
+                     * @param _billingType <p>计费方式；非模型 API 或历史数据可为未指定；后付费不产生 PU</p>
+                     * 
+                     */
+                    void SetBillingType(const int64_t& _billingType);
+
+                    /**
+                     * 判断参数 BillingType 是否已赋值
+                     * @return BillingType 是否已赋值
+                     * 
+                     */
+                    bool BillingTypeHasBeenSet() const;
+
+                    /**
                      * 获取<p>调用类型，来源于计费 scene_billing（与 filter.call_type 对应）</p>
                      * @return CallType <p>调用类型，来源于计费 scene_billing（与 filter.call_type 对应）</p>
                      * 
@@ -67,6 +109,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CallTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>本次调用消耗 PU 量</p>
+                     * @return ConsumptionPU <p>本次调用消耗 PU 量</p>
+                     * 
+                     */
+                    double GetConsumptionPU() const;
+
+                    /**
+                     * 设置<p>本次调用消耗 PU 量</p>
+                     * @param _consumptionPU <p>本次调用消耗 PU 量</p>
+                     * 
+                     */
+                    void SetConsumptionPU(const double& _consumptionPU);
+
+                    /**
+                     * 判断参数 ConsumptionPU 是否已赋值
+                     * @return ConsumptionPU 是否已赋值
+                     * 
+                     */
+                    bool ConsumptionPUHasBeenSet() const;
 
                     /**
                      * 获取<p>是否默认知识库，仅ResourceType=5（知识库容量）业务下有意义</p>
@@ -131,34 +194,31 @@ namespace TencentCloud
                      */
                     bool ResourceConsumptionListHasBeenSet() const;
 
-                    /**
-                     * 获取<p>本次调用消耗 PU 量</p>
-                     * @return ConsumptionPU <p>本次调用消耗 PU 量</p>
-                     * 
-                     */
-                    double GetConsumptionPU() const;
-
-                    /**
-                     * 设置<p>本次调用消耗 PU 量</p>
-                     * @param _consumptionPU <p>本次调用消耗 PU 量</p>
-                     * 
-                     */
-                    void SetConsumptionPU(const double& _consumptionPU);
-
-                    /**
-                     * 判断参数 ConsumptionPU 是否已赋值
-                     * @return ConsumptionPU 是否已赋值
-                     * 
-                     */
-                    bool ConsumptionPUHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * <p>API Key 别名或脱敏值；禁止返回明文密钥</p>
+                     */
+                    std::string m_apiKeyDisplay;
+                    bool m_apiKeyDisplayHasBeenSet;
+
+                    /**
+                     * <p>计费方式；非模型 API 或历史数据可为未指定；后付费不产生 PU</p>
+                     */
+                    int64_t m_billingType;
+                    bool m_billingTypeHasBeenSet;
 
                     /**
                      * <p>调用类型，来源于计费 scene_billing（与 filter.call_type 对应）</p>
                      */
                     std::string m_callType;
                     bool m_callTypeHasBeenSet;
+
+                    /**
+                     * <p>本次调用消耗 PU 量</p>
+                     */
+                    double m_consumptionPU;
+                    bool m_consumptionPUHasBeenSet;
 
                     /**
                      * <p>是否默认知识库，仅ResourceType=5（知识库容量）业务下有意义</p>
@@ -177,12 +237,6 @@ namespace TencentCloud
                      */
                     std::vector<ResourceConsumption> m_resourceConsumptionList;
                     bool m_resourceConsumptionListHasBeenSet;
-
-                    /**
-                     * <p>本次调用消耗 PU 量</p>
-                     */
-                    double m_consumptionPU;
-                    bool m_consumptionPUHasBeenSet;
 
                 };
             }

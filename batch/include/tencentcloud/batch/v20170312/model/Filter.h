@@ -58,15 +58,15 @@ Filters.0.Name=zone
 
 
                     /**
-                     * 获取需要过滤的字段。
-                     * @return Name 需要过滤的字段。
+                     * 获取<p>需要过滤的字段。</p>
+                     * @return Name <p>需要过滤的字段。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置需要过滤的字段。
-                     * @param _name 需要过滤的字段。
+                     * 设置<p>需要过滤的字段。</p>
+                     * @param _name <p>需要过滤的字段。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -79,15 +79,15 @@ Filters.0.Name=zone
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取字段的过滤值。
-                     * @return Values 字段的过滤值。
+                     * 获取<p>字段的过滤值。</p>
+                     * @return Values <p>字段的过滤值。</p>
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置字段的过滤值。
-                     * @param _values 字段的过滤值。
+                     * 设置<p>字段的过滤值。</p>
+                     * @param _values <p>字段的过滤值。</p>
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -102,13 +102,13 @@ Filters.0.Name=zone
                 private:
 
                     /**
-                     * 需要过滤的字段。
+                     * <p>需要过滤的字段。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 字段的过滤值。
+                     * <p>字段的过滤值。</p>
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

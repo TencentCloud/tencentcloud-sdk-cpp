@@ -56,9 +56,11 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/ModifyApiKeyInfoResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DeleteGlossaryRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeGlossaryEntriesRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/ModifyApiKeyBindingsResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DeleteApiKeyResponse.h
   include/tencentcloud/tokenhub/v20260322/model/ModifyGlossaryEntryInput.h
+  include/tencentcloud/tokenhub/v20260322/model/ModifyApiKeyBindingsRequest.h
   include/tencentcloud/tokenhub/v20260322/model/CreateEndpointResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyListRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeGlossariesRequest.h
@@ -164,9 +166,11 @@ set(tokenhub_src
   src/v20260322/model/ModifyApiKeyInfoResponse.cpp
   src/v20260322/model/DeleteGlossaryRequest.cpp
   src/v20260322/model/DescribeGlossaryEntriesRequest.cpp
+  src/v20260322/model/ModifyApiKeyBindingsResponse.cpp
   src/v20260322/model/DescribeTokenPlanApiKeyRequest.cpp
   src/v20260322/model/DeleteApiKeyResponse.cpp
   src/v20260322/model/ModifyGlossaryEntryInput.cpp
+  src/v20260322/model/ModifyApiKeyBindingsRequest.cpp
   src/v20260322/model/CreateEndpointResponse.cpp
   src/v20260322/model/DescribeTokenPlanApiKeyListRequest.cpp
   src/v20260322/model/DescribeGlossariesRequest.cpp

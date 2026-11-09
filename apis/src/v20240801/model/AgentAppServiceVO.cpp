@@ -30,7 +30,8 @@ AgentAppServiceVO::AgentAppServiceVO() :
     m_relateTimeHasBeenSet(false),
     m_needAuthHasBeenSet(false),
     m_agentCredentialIDHasBeenSet(false),
-    m_agentCredentialVOHasBeenSet(false)
+    m_agentCredentialVOHasBeenSet(false),
+    m_agentAppVOHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,23 @@ CoreInternalOutcome AgentAppServiceVO::Deserialize(const rapidjson::Value &value
         m_agentCredentialVOHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentAppVO") && !value["AgentAppVO"].IsNull())
+    {
+        if (!value["AgentAppVO"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentAppServiceVO.AgentAppVO` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agentAppVO.Deserialize(value["AgentAppVO"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agentAppVOHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -248,6 +266,15 @@ void AgentAppServiceVO::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agentCredentialVO.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_agentAppVOHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentAppVO";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agentAppVO.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -411,5 +438,21 @@ void AgentAppServiceVO::SetAgentCredentialVO(const DescribeAgentCredentialResp& 
 bool AgentAppServiceVO::AgentCredentialVOHasBeenSet() const
 {
     return m_agentCredentialVOHasBeenSet;
+}
+
+DescribeAgentAppResp AgentAppServiceVO::GetAgentAppVO() const
+{
+    return m_agentAppVO;
+}
+
+void AgentAppServiceVO::SetAgentAppVO(const DescribeAgentAppResp& _agentAppVO)
+{
+    m_agentAppVO = _agentAppVO;
+    m_agentAppVOHasBeenSet = true;
+}
+
+bool AgentAppServiceVO::AgentAppVOHasBeenSet() const
+{
+    return m_agentAppVOHasBeenSet;
 }
 

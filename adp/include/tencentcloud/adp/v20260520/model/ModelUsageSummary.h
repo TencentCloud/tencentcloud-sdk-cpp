@@ -69,6 +69,27 @@ namespace TencentCloud
                     bool CallCountHasBeenSet() const;
 
                     /**
+                     * 获取<p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>
+                     * @return ConsumptionPU <p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>
+                     * 
+                     */
+                    double GetConsumptionPU() const;
+
+                    /**
+                     * 设置<p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>
+                     * @param _consumptionPU <p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>
+                     * 
+                     */
+                    void SetConsumptionPU(const double& _consumptionPU);
+
+                    /**
+                     * 判断参数 ConsumptionPU 是否已赋值
+                     * @return ConsumptionPU 是否已赋值
+                     * 
+                     */
+                    bool ConsumptionPUHasBeenSet() const;
+
+                    /**
                      * 获取<p>是否默认知识库</p>
                      * @return IsDefaultKB <p>是否默认知识库</p>
                      * 
@@ -131,27 +152,6 @@ namespace TencentCloud
                      */
                     bool ResourceConsumptionListHasBeenSet() const;
 
-                    /**
-                     * 获取<p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>
-                     * @return ConsumptionPU <p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>
-                     * 
-                     */
-                    double GetConsumptionPU() const;
-
-                    /**
-                     * 设置<p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>
-                     * @param _consumptionPU <p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>
-                     * 
-                     */
-                    void SetConsumptionPU(const double& _consumptionPU);
-
-                    /**
-                     * 判断参数 ConsumptionPU 是否已赋值
-                     * @return ConsumptionPU 是否已赋值
-                     * 
-                     */
-                    bool ConsumptionPUHasBeenSet() const;
-
                 private:
 
                     /**
@@ -159,6 +159,12 @@ namespace TencentCloud
                      */
                     double m_callCount;
                     bool m_callCountHasBeenSet;
+
+                    /**
+                     * <p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>
+                     */
+                    double m_consumptionPU;
+                    bool m_consumptionPUHasBeenSet;
 
                     /**
                      * <p>是否默认知识库</p>
@@ -177,12 +183,6 @@ namespace TencentCloud
                      */
                     std::vector<ResourceConsumption> m_resourceConsumptionList;
                     bool m_resourceConsumptionListHasBeenSet;
-
-                    /**
-                     * <p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>
-                     */
-                    double m_consumptionPU;
-                    bool m_consumptionPUHasBeenSet;
 
                 };
             }

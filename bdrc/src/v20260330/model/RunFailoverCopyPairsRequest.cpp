@@ -25,7 +25,8 @@ using namespace std;
 RunFailoverCopyPairsRequest::RunFailoverCopyPairsRequest() :
     m_copyPairIdsHasBeenSet(false),
     m_copyPairTypeHasBeenSet(false),
-    m_failoverTypeHasBeenSet(false)
+    m_failoverTypeHasBeenSet(false),
+    m_stopSourceInstanceHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string RunFailoverCopyPairsRequest::ToJsonString() const
         string key = "FailoverType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_failoverType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stopSourceInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopSourceInstance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_stopSourceInstance, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void RunFailoverCopyPairsRequest::SetFailoverType(const string& _failoverType)
 bool RunFailoverCopyPairsRequest::FailoverTypeHasBeenSet() const
 {
     return m_failoverTypeHasBeenSet;
+}
+
+bool RunFailoverCopyPairsRequest::GetStopSourceInstance() const
+{
+    return m_stopSourceInstance;
+}
+
+void RunFailoverCopyPairsRequest::SetStopSourceInstance(const bool& _stopSourceInstance)
+{
+    m_stopSourceInstance = _stopSourceInstance;
+    m_stopSourceInstanceHasBeenSet = true;
+}
+
+bool RunFailoverCopyPairsRequest::StopSourceInstanceHasBeenSet() const
+{
+    return m_stopSourceInstanceHasBeenSet;
 }
 
 

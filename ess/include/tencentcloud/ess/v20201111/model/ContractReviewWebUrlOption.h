@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取禁用暂存。 默认 false，设置为 true 会隐藏界面上的临时保存按钮
-                     * @return DisableTemporaryStore 禁用暂存。 默认 false，设置为 true 会隐藏界面上的临时保存按钮
+                     * 获取<p>禁用暂存。 默认 false，设置为 true 会隐藏界面上的临时保存按钮</p>
+                     * @return DisableTemporaryStore <p>禁用暂存。 默认 false，设置为 true 会隐藏界面上的临时保存按钮</p>
                      * 
                      */
                     bool GetDisableTemporaryStore() const;
 
                     /**
-                     * 设置禁用暂存。 默认 false，设置为 true 会隐藏界面上的临时保存按钮
-                     * @param _disableTemporaryStore 禁用暂存。 默认 false，设置为 true 会隐藏界面上的临时保存按钮
+                     * 设置<p>禁用暂存。 默认 false，设置为 true 会隐藏界面上的临时保存按钮</p>
+                     * @param _disableTemporaryStore <p>禁用暂存。 默认 false，设置为 true 会隐藏界面上的临时保存按钮</p>
                      * 
                      */
                     void SetDisableTemporaryStore(const bool& _disableTemporaryStore);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DisableTemporaryStoreHasBeenSet() const;
 
                     /**
-                     * 获取禁用导出。默认 false，设置为 true 会隐藏界面上的导出按钮
-                     * @return DisableExport 禁用导出。默认 false，设置为 true 会隐藏界面上的导出按钮
+                     * 获取<p>禁用导出。默认 false，设置为 true 会隐藏界面上的导出按钮</p>
+                     * @return DisableExport <p>禁用导出。默认 false，设置为 true 会隐藏界面上的导出按钮</p>
                      * 
                      */
                     bool GetDisableExport() const;
 
                     /**
-                     * 设置禁用导出。默认 false，设置为 true 会隐藏界面上的导出按钮
-                     * @param _disableExport 禁用导出。默认 false，设置为 true 会隐藏界面上的导出按钮
+                     * 设置<p>禁用导出。默认 false，设置为 true 会隐藏界面上的导出按钮</p>
+                     * @param _disableExport <p>禁用导出。默认 false，设置为 true 会隐藏界面上的导出按钮</p>
                      * 
                      */
                     void SetDisableExport(const bool& _disableExport);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DisableExportHasBeenSet() const;
 
                     /**
-                     * 获取禁用重新审查。默认 false，设置为 true 会隐藏界面上的重新审查按钮
-                     * @return DisableReviewAgain 禁用重新审查。默认 false，设置为 true 会隐藏界面上的重新审查按钮
+                     * 获取<p>禁用重新审查。默认 false，设置为 true 会隐藏界面上的重新审查按钮</p>
+                     * @return DisableReviewAgain <p>禁用重新审查。默认 false，设置为 true 会隐藏界面上的重新审查按钮</p>
                      * 
                      */
                     bool GetDisableReviewAgain() const;
 
                     /**
-                     * 设置禁用重新审查。默认 false，设置为 true 会隐藏界面上的重新审查按钮
-                     * @param _disableReviewAgain 禁用重新审查。默认 false，设置为 true 会隐藏界面上的重新审查按钮
+                     * 设置<p>禁用重新审查。默认 false，设置为 true 会隐藏界面上的重新审查按钮</p>
+                     * @param _disableReviewAgain <p>禁用重新审查。默认 false，设置为 true 会隐藏界面上的重新审查按钮</p>
                      * 
                      */
                     void SetDisableReviewAgain(const bool& _disableReviewAgain);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DisableReviewAgainHasBeenSet() const;
 
                     /**
-                     * 获取禁用二维码分享。默认 false，设置为 true 会隐藏界面上的分享二维码
-                     * @return DisableWxQrcode 禁用二维码分享。默认 false，设置为 true 会隐藏界面上的分享二维码
+                     * 获取<p>禁用二维码分享。默认 false，设置为 true 会隐藏界面上的分享二维码</p>
+                     * @return DisableWxQrcode <p>禁用二维码分享。默认 false，设置为 true 会隐藏界面上的分享二维码</p>
                      * 
                      */
                     bool GetDisableWxQrcode() const;
 
                     /**
-                     * 设置禁用二维码分享。默认 false，设置为 true 会隐藏界面上的分享二维码
-                     * @param _disableWxQrcode 禁用二维码分享。默认 false，设置为 true 会隐藏界面上的分享二维码
+                     * 设置<p>禁用二维码分享。默认 false，设置为 true 会隐藏界面上的分享二维码</p>
+                     * @param _disableWxQrcode <p>禁用二维码分享。默认 false，设置为 true 会隐藏界面上的分享二维码</p>
                      * 
                      */
                     void SetDisableWxQrcode(const bool& _disableWxQrcode);
@@ -130,31 +130,85 @@ namespace TencentCloud
                      */
                     bool DisableWxQrcodeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>禁用忽略风险。默认false，设置为true，会根据用户合同审查忽略风险权限点决定是否禁用忽略选项。</p>
+                     * @return DisableIgnoreRisk <p>禁用忽略风险。默认false，设置为true，会根据用户合同审查忽略风险权限点决定是否禁用忽略选项。</p>
+                     * 
+                     */
+                    bool GetDisableIgnoreRisk() const;
+
+                    /**
+                     * 设置<p>禁用忽略风险。默认false，设置为true，会根据用户合同审查忽略风险权限点决定是否禁用忽略选项。</p>
+                     * @param _disableIgnoreRisk <p>禁用忽略风险。默认false，设置为true，会根据用户合同审查忽略风险权限点决定是否禁用忽略选项。</p>
+                     * 
+                     */
+                    void SetDisableIgnoreRisk(const bool& _disableIgnoreRisk);
+
+                    /**
+                     * 判断参数 DisableIgnoreRisk 是否已赋值
+                     * @return DisableIgnoreRisk 是否已赋值
+                     * 
+                     */
+                    bool DisableIgnoreRiskHasBeenSet() const;
+
+                    /**
+                     * 获取<p>关闭原文修改。默认false，设置为true，根据用户合同审查修订操作权限点决定能否修改、一键修订原文。</p>
+                     * @return DisableRevisedRisk <p>关闭原文修改。默认false，设置为true，根据用户合同审查修订操作权限点决定能否修改、一键修订原文。</p>
+                     * 
+                     */
+                    bool GetDisableRevisedRisk() const;
+
+                    /**
+                     * 设置<p>关闭原文修改。默认false，设置为true，根据用户合同审查修订操作权限点决定能否修改、一键修订原文。</p>
+                     * @param _disableRevisedRisk <p>关闭原文修改。默认false，设置为true，根据用户合同审查修订操作权限点决定能否修改、一键修订原文。</p>
+                     * 
+                     */
+                    void SetDisableRevisedRisk(const bool& _disableRevisedRisk);
+
+                    /**
+                     * 判断参数 DisableRevisedRisk 是否已赋值
+                     * @return DisableRevisedRisk 是否已赋值
+                     * 
+                     */
+                    bool DisableRevisedRiskHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 禁用暂存。 默认 false，设置为 true 会隐藏界面上的临时保存按钮
+                     * <p>禁用暂存。 默认 false，设置为 true 会隐藏界面上的临时保存按钮</p>
                      */
                     bool m_disableTemporaryStore;
                     bool m_disableTemporaryStoreHasBeenSet;
 
                     /**
-                     * 禁用导出。默认 false，设置为 true 会隐藏界面上的导出按钮
+                     * <p>禁用导出。默认 false，设置为 true 会隐藏界面上的导出按钮</p>
                      */
                     bool m_disableExport;
                     bool m_disableExportHasBeenSet;
 
                     /**
-                     * 禁用重新审查。默认 false，设置为 true 会隐藏界面上的重新审查按钮
+                     * <p>禁用重新审查。默认 false，设置为 true 会隐藏界面上的重新审查按钮</p>
                      */
                     bool m_disableReviewAgain;
                     bool m_disableReviewAgainHasBeenSet;
 
                     /**
-                     * 禁用二维码分享。默认 false，设置为 true 会隐藏界面上的分享二维码
+                     * <p>禁用二维码分享。默认 false，设置为 true 会隐藏界面上的分享二维码</p>
                      */
                     bool m_disableWxQrcode;
                     bool m_disableWxQrcodeHasBeenSet;
+
+                    /**
+                     * <p>禁用忽略风险。默认false，设置为true，会根据用户合同审查忽略风险权限点决定是否禁用忽略选项。</p>
+                     */
+                    bool m_disableIgnoreRisk;
+                    bool m_disableIgnoreRiskHasBeenSet;
+
+                    /**
+                     * <p>关闭原文修改。默认false，设置为true，根据用户合同审查修订操作权限点决定能否修改、一键修订原文。</p>
+                     */
+                    bool m_disableRevisedRisk;
+                    bool m_disableRevisedRiskHasBeenSet;
 
                 };
             }

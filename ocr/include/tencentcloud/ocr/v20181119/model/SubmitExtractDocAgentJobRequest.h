@@ -211,6 +211,27 @@ namespace TencentCloud
                      */
                     bool ModelConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>agent支持的类型枚举,不同类型输出结果不一样，默认为0</p><p>0:表示标准抽取Agent</p><p>1:表示合同协议分类+抽取+审核Agent</p>
+                     * @return AgentType <p>agent支持的类型枚举,不同类型输出结果不一样，默认为0</p><p>0:表示标准抽取Agent</p><p>1:表示合同协议分类+抽取+审核Agent</p>
+                     * 
+                     */
+                    int64_t GetAgentType() const;
+
+                    /**
+                     * 设置<p>agent支持的类型枚举,不同类型输出结果不一样，默认为0</p><p>0:表示标准抽取Agent</p><p>1:表示合同协议分类+抽取+审核Agent</p>
+                     * @param _agentType <p>agent支持的类型枚举,不同类型输出结果不一样，默认为0</p><p>0:表示标准抽取Agent</p><p>1:表示合同协议分类+抽取+审核Agent</p>
+                     * 
+                     */
+                    void SetAgentType(const int64_t& _agentType);
+
+                    /**
+                     * 判断参数 AgentType 是否已赋值
+                     * @return AgentType 是否已赋值
+                     * 
+                     */
+                    bool AgentTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +281,12 @@ namespace TencentCloud
                      */
                     std::string m_modelConfig;
                     bool m_modelConfigHasBeenSet;
+
+                    /**
+                     * <p>agent支持的类型枚举,不同类型输出结果不一样，默认为0</p><p>0:表示标准抽取Agent</p><p>1:表示合同协议分类+抽取+审核Agent</p>
+                     */
+                    int64_t m_agentType;
+                    bool m_agentTypeHasBeenSet;
 
                 };
             }

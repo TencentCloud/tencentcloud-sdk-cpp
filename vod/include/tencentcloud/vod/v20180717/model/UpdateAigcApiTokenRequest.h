@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
-                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
-                     * 
-                     */
-                    uint64_t GetSubAppId() const;
-
-                    /**
-                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
-                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
-                     * 
-                     */
-                    void SetSubAppId(const uint64_t& _subAppId);
-
-                    /**
-                     * 判断参数 SubAppId 是否已赋值
-                     * @return SubAppId 是否已赋值
-                     * 
-                     */
-                    bool SubAppIdHasBeenSet() const;
-
-                    /**
                      * 获取<p>要更新Api Key</p>
                      * @return ApiToken <p>要更新Api Key</p>
                      * 
@@ -83,6 +62,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ApiTokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @return SubAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * 
+                     */
+                    uint64_t GetSubAppId() const;
+
+                    /**
+                     * 设置<p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * @param _subAppId <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     * 
+                     */
+                    void SetSubAppId(const uint64_t& _subAppId);
+
+                    /**
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
+                     * 
+                     */
+                    bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取<p>Merge（默认，对 ExtInfo JSON 按顶层 key 合并）、Overwrite（直接覆盖）</p>
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ActionTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>token 的扩展信息</p>
-                     * @return ExtInfo <p>token 的扩展信息</p>
+                     * 获取<p>ip白名单和模型白名单在ExtInfo上，用json保存，分别字段是</p><p>（1）ip白名单<br>&quot;ip&quot;: {&quot;127.0.0.1&quot;:true}<br>不开启&quot;ip&quot;: {}<br>多组  {&quot;&#39;11.12.112.90&quot;:true,&quot;15.12.112.90&quot;:true}</p><p>（2）模型白名单<br>&quot;model&quot;: {&quot;deepseek-v4-pro&quot;:true}<br>不开启&quot;model&quot;: {}</p><p>（3）名称<br>&quot;name&quot;: &quot;test&quot;</p>
+                     * @return ExtInfo <p>ip白名单和模型白名单在ExtInfo上，用json保存，分别字段是</p><p>（1）ip白名单<br>&quot;ip&quot;: {&quot;127.0.0.1&quot;:true}<br>不开启&quot;ip&quot;: {}<br>多组  {&quot;&#39;11.12.112.90&quot;:true,&quot;15.12.112.90&quot;:true}</p><p>（2）模型白名单<br>&quot;model&quot;: {&quot;deepseek-v4-pro&quot;:true}<br>不开启&quot;model&quot;: {}</p><p>（3）名称<br>&quot;name&quot;: &quot;test&quot;</p>
                      * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置<p>token 的扩展信息</p>
-                     * @param _extInfo <p>token 的扩展信息</p>
+                     * 设置<p>ip白名单和模型白名单在ExtInfo上，用json保存，分别字段是</p><p>（1）ip白名单<br>&quot;ip&quot;: {&quot;127.0.0.1&quot;:true}<br>不开启&quot;ip&quot;: {}<br>多组  {&quot;&#39;11.12.112.90&quot;:true,&quot;15.12.112.90&quot;:true}</p><p>（2）模型白名单<br>&quot;model&quot;: {&quot;deepseek-v4-pro&quot;:true}<br>不开启&quot;model&quot;: {}</p><p>（3）名称<br>&quot;name&quot;: &quot;test&quot;</p>
+                     * @param _extInfo <p>ip白名单和模型白名单在ExtInfo上，用json保存，分别字段是</p><p>（1）ip白名单<br>&quot;ip&quot;: {&quot;127.0.0.1&quot;:true}<br>不开启&quot;ip&quot;: {}<br>多组  {&quot;&#39;11.12.112.90&quot;:true,&quot;15.12.112.90&quot;:true}</p><p>（2）模型白名单<br>&quot;model&quot;: {&quot;deepseek-v4-pro&quot;:true}<br>不开启&quot;model&quot;: {}</p><p>（3）名称<br>&quot;name&quot;: &quot;test&quot;</p>
                      * 
                      */
                     void SetExtInfo(const std::string& _extInfo);
@@ -129,16 +129,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
-                     */
-                    uint64_t m_subAppId;
-                    bool m_subAppIdHasBeenSet;
-
-                    /**
                      * <p>要更新Api Key</p>
                      */
                     std::string m_apiToken;
                     bool m_apiTokenHasBeenSet;
+
+                    /**
+                     * <p><b>点播<a href="/document/product/266/14574">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>
+                     */
+                    uint64_t m_subAppId;
+                    bool m_subAppIdHasBeenSet;
 
                     /**
                      * <p>Merge（默认，对 ExtInfo JSON 按顶层 key 合并）、Overwrite（直接覆盖）</p>
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_actionTypeHasBeenSet;
 
                     /**
-                     * <p>token 的扩展信息</p>
+                     * <p>ip白名单和模型白名单在ExtInfo上，用json保存，分别字段是</p><p>（1）ip白名单<br>&quot;ip&quot;: {&quot;127.0.0.1&quot;:true}<br>不开启&quot;ip&quot;: {}<br>多组  {&quot;&#39;11.12.112.90&quot;:true,&quot;15.12.112.90&quot;:true}</p><p>（2）模型白名单<br>&quot;model&quot;: {&quot;deepseek-v4-pro&quot;:true}<br>不开启&quot;model&quot;: {}</p><p>（3）名称<br>&quot;name&quot;: &quot;test&quot;</p>
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;

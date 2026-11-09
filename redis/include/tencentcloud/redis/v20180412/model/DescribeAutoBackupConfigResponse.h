@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该参数因兼容性问题暂时保留，请忽略。
-                     * @return AutoBackupType 该参数因兼容性问题暂时保留，请忽略。
+                     * 获取<p>该参数因兼容性问题暂时保留，请忽略。</p>
+                     * @return AutoBackupType <p>该参数因兼容性问题暂时保留，请忽略。</p>
                      * 
                      */
                     int64_t GetAutoBackupType() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool AutoBackupTypeHasBeenSet() const;
 
                     /**
-                     * 获取备份周期，默认为每天自动备份，Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
-                     * @return WeekDays 备份周期，默认为每天自动备份，Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+                     * 获取<p>备份周期，默认为每天自动备份，Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。</p>
+                     * @return WeekDays <p>备份周期，默认为每天自动备份，Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。</p>
                      * 
                      */
                     std::vector<std::string> GetWeekDays() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool WeekDaysHasBeenSet() const;
 
                     /**
-                     * 获取备份任务发起时间段。
-                     * @return TimePeriod 备份任务发起时间段。
+                     * 获取<p>备份任务发起时间段。</p>
+                     * @return TimePeriod <p>备份任务发起时间段。</p>
                      * 
                      */
                     std::string GetTimePeriod() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool TimePeriodHasBeenSet() const;
 
                     /**
-                     * 获取全量备份文件保存天数。默认为7天。如需保存更多天数，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请。
-                     * @return BackupStorageDays 全量备份文件保存天数。默认为7天。如需保存更多天数，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请。
+                     * 获取<p>全量备份文件保存天数。默认为7天。如需保存更多天数，请<a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>申请。</p>
+                     * @return BackupStorageDays <p>全量备份文件保存天数。默认为7天。如需保存更多天数，请<a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>申请。</p>
                      * 
                      */
                     int64_t GetBackupStorageDays() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool BackupStorageDaysHasBeenSet() const;
 
                     /**
-                     * 获取该参数不再使用，请忽略。
-                     * @return BinlogStorageDays 该参数不再使用，请忽略。
+                     * 获取<p>该参数不再使用，请忽略。</p>
+                     * @return BinlogStorageDays <p>该参数不再使用，请忽略。</p>
                      * 
                      */
                     int64_t GetBinlogStorageDays() const;
@@ -116,31 +116,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该参数因兼容性问题暂时保留，请忽略。
+                     * <p>该参数因兼容性问题暂时保留，请忽略。</p>
                      */
                     int64_t m_autoBackupType;
                     bool m_autoBackupTypeHasBeenSet;
 
                     /**
-                     * 备份周期，默认为每天自动备份，Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+                     * <p>备份周期，默认为每天自动备份，Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。</p>
                      */
                     std::vector<std::string> m_weekDays;
                     bool m_weekDaysHasBeenSet;
 
                     /**
-                     * 备份任务发起时间段。
+                     * <p>备份任务发起时间段。</p>
                      */
                     std::string m_timePeriod;
                     bool m_timePeriodHasBeenSet;
 
                     /**
-                     * 全量备份文件保存天数。默认为7天。如需保存更多天数，请[提交工单](https://console.cloud.tencent.com/workorder/category)申请。
+                     * <p>全量备份文件保存天数。默认为7天。如需保存更多天数，请<a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>申请。</p>
                      */
                     int64_t m_backupStorageDays;
                     bool m_backupStorageDaysHasBeenSet;
 
                     /**
-                     * 该参数不再使用，请忽略。
+                     * <p>该参数不再使用，请忽略。</p>
                      */
                     int64_t m_binlogStorageDays;
                     bool m_binlogStorageDaysHasBeenSet;

@@ -113,6 +113,27 @@ namespace TencentCloud
                      */
                     bool StorageHasBeenSet() const;
 
+                    /**
+                     * 获取<p>关联的GPU资源组ID</p>
+                     * @return GPUResourceGroupId <p>关联的GPU资源组ID</p>
+                     * 
+                     */
+                    std::string GetGPUResourceGroupId() const;
+
+                    /**
+                     * 设置<p>关联的GPU资源组ID</p>
+                     * @param _gPUResourceGroupId <p>关联的GPU资源组ID</p>
+                     * 
+                     */
+                    void SetGPUResourceGroupId(const std::string& _gPUResourceGroupId);
+
+                    /**
+                     * 判断参数 GPUResourceGroupId 是否已赋值
+                     * @return GPUResourceGroupId 是否已赋值
+                     * 
+                     */
+                    bool GPUResourceGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,6 +154,12 @@ namespace TencentCloud
                      */
                     std::string m_storage;
                     bool m_storageHasBeenSet;
+
+                    /**
+                     * <p>关联的GPU资源组ID</p>
+                     */
+                    std::string m_gPUResourceGroupId;
+                    bool m_gPUResourceGroupIdHasBeenSet;
 
                 };
             }
