@@ -32,7 +32,8 @@ DescribeIndexListRequest::DescribeIndexListRequest() :
     m_limitHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_indexStatusListHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_filterIndexNamesHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,19 @@ string DescribeIndexListRequest::ToJsonString() const
         string key = "Order";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterIndexNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterIndexNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_filterIndexNames.begin(); itr != m_filterIndexNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -294,6 +308,22 @@ void DescribeIndexListRequest::SetOrder(const string& _order)
 bool DescribeIndexListRequest::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
+}
+
+vector<string> DescribeIndexListRequest::GetFilterIndexNames() const
+{
+    return m_filterIndexNames;
+}
+
+void DescribeIndexListRequest::SetFilterIndexNames(const vector<string>& _filterIndexNames)
+{
+    m_filterIndexNames = _filterIndexNames;
+    m_filterIndexNamesHasBeenSet = true;
+}
+
+bool DescribeIndexListRequest::FilterIndexNamesHasBeenSet() const
+{
+    return m_filterIndexNamesHasBeenSet;
 }
 
 

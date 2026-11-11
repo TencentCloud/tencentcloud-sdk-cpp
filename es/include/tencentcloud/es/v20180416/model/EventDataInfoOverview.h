@@ -361,6 +361,27 @@ namespace TencentCloud
                      */
                     bool EventScopeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>展开详情</p>
+                     * @return ExpandDetail <p>展开详情</p>
+                     * 
+                     */
+                    std::string GetExpandDetail() const;
+
+                    /**
+                     * 设置<p>展开详情</p>
+                     * @param _expandDetail <p>展开详情</p>
+                     * 
+                     */
+                    void SetExpandDetail(const std::string& _expandDetail);
+
+                    /**
+                     * 判断参数 ExpandDetail 是否已赋值
+                     * @return ExpandDetail 是否已赋值
+                     * 
+                     */
+                    bool ExpandDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +473,12 @@ namespace TencentCloud
                      */
                     uint64_t m_eventScope;
                     bool m_eventScopeHasBeenSet;
+
+                    /**
+                     * <p>展开详情</p>
+                     */
+                    std::string m_expandDetail;
+                    bool m_expandDetailHasBeenSet;
 
                 };
             }

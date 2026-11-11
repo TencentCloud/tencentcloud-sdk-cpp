@@ -75,6 +75,8 @@
 #include <tencentcloud/ags/v20250920/model/DescribeDeploymentResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeDeploymentListRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeDeploymentListResponse.h>
+#include <tencentcloud/ags/v20250920/model/DescribeEventCenterEventsRequest.h>
+#include <tencentcloud/ags/v20250920/model/DescribeEventCenterEventsResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeEventsRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeEventsResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribePreCacheImageListRequest.h>
@@ -235,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeploymentListResponse> DescribeDeploymentListOutcome;
                 typedef std::future<DescribeDeploymentListOutcome> DescribeDeploymentListOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribeDeploymentListRequest&, DescribeDeploymentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeploymentListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEventCenterEventsResponse> DescribeEventCenterEventsOutcome;
+                typedef std::future<DescribeEventCenterEventsOutcome> DescribeEventCenterEventsOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::DescribeEventCenterEventsRequest&, DescribeEventCenterEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventCenterEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEventsResponse> DescribeEventsOutcome;
                 typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribeEventsRequest&, DescribeEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsAsyncHandler;
@@ -582,6 +587,15 @@ namespace TencentCloud
                 DescribeDeploymentListOutcome DescribeDeploymentList(const Model::DescribeDeploymentListRequest &request);
                 void DescribeDeploymentListAsync(const Model::DescribeDeploymentListRequest& request, const DescribeDeploymentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeploymentListOutcomeCallable DescribeDeploymentListCallable(const Model::DescribeDeploymentListRequest& request);
+
+                /**
+                 *本接口用于查询当前账号在指定地域的事件列表，支持按事件来源、资源对象、事件类型、事件级别及时间范围等条件筛选，并支持分页和时间排序。默认查询最近 1 小时的事件，支持查询最近 7 天内的事件。
+                 * @param req DescribeEventCenterEventsRequest
+                 * @return DescribeEventCenterEventsOutcome
+                 */
+                DescribeEventCenterEventsOutcome DescribeEventCenterEvents(const Model::DescribeEventCenterEventsRequest &request);
+                void DescribeEventCenterEventsAsync(const Model::DescribeEventCenterEventsRequest& request, const DescribeEventCenterEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventCenterEventsOutcomeCallable DescribeEventCenterEventsCallable(const Model::DescribeEventCenterEventsRequest& request);
 
                 /**
                  *查询事件列表。

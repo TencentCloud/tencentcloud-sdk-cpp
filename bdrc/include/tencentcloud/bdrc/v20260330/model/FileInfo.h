@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件名称
-                     * @return Path 文件名称
+                     * 获取完整路径：浏览路径 + "/" + 名称（浏览根目录时为 "/名称"）
+                     * @return Path 完整路径：浏览路径 + "/" + 名称（浏览根目录时为 "/名称"）
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置文件名称
-                     * @param _path 文件名称
+                     * 设置完整路径：浏览路径 + "/" + 名称（浏览根目录时为 "/名称"）
+                     * @param _path 完整路径：浏览路径 + "/" + 名称（浏览根目录时为 "/名称"）
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件名称
+                     * 完整路径：浏览路径 + "/" + 名称（浏览根目录时为 "/名称"）
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;

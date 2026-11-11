@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取索引主分片数
+                     * 获取<p>索引主分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NumberOfShards 索引主分片数
+                     * @return NumberOfShards <p>索引主分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNumberOfShards() const;
 
                     /**
-                     * 设置索引主分片数
+                     * 设置<p>索引主分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _numberOfShards 索引主分片数
+                     * @param _numberOfShards <p>索引主分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool NumberOfShardsHasBeenSet() const;
 
                     /**
-                     * 获取索引副本分片数
+                     * 获取<p>索引副本分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NumberOfReplicas 索引副本分片数
+                     * @return NumberOfReplicas <p>索引副本分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNumberOfReplicas() const;
 
                     /**
-                     * 设置索引副本分片数
+                     * 设置<p>索引副本分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _numberOfReplicas 索引副本分片数
+                     * @param _numberOfReplicas <p>索引副本分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool NumberOfReplicasHasBeenSet() const;
 
                     /**
-                     * 获取索引刷新频率
+                     * 获取<p>索引刷新频率</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RefreshInterval 索引刷新频率
+                     * @return RefreshInterval <p>索引刷新频率</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRefreshInterval() const;
 
                     /**
-                     * 设置索引刷新频率
+                     * 设置<p>索引刷新频率</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _refreshInterval 索引刷新频率
+                     * @param _refreshInterval <p>索引刷新频率</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -121,28 +121,82 @@ namespace TencentCloud
                      */
                     bool RefreshIntervalHasBeenSet() const;
 
+                    /**
+                     * 获取<p>动态字段识别开关</p>
+                     * @return Dynamic <p>动态字段识别开关</p>
+                     * 
+                     */
+                    std::string GetDynamic() const;
+
+                    /**
+                     * 设置<p>动态字段识别开关</p>
+                     * @param _dynamic <p>动态字段识别开关</p>
+                     * 
+                     */
+                    void SetDynamic(const std::string& _dynamic);
+
+                    /**
+                     * 判断参数 Dynamic 是否已赋值
+                     * @return Dynamic 是否已赋值
+                     * 
+                     */
+                    bool DynamicHasBeenSet() const;
+
+                    /**
+                     * 获取<p>索引字段数上限</p>
+                     * @return TotalFieldsLimit <p>索引字段数上限</p>
+                     * 
+                     */
+                    std::string GetTotalFieldsLimit() const;
+
+                    /**
+                     * 设置<p>索引字段数上限</p>
+                     * @param _totalFieldsLimit <p>索引字段数上限</p>
+                     * 
+                     */
+                    void SetTotalFieldsLimit(const std::string& _totalFieldsLimit);
+
+                    /**
+                     * 判断参数 TotalFieldsLimit 是否已赋值
+                     * @return TotalFieldsLimit 是否已赋值
+                     * 
+                     */
+                    bool TotalFieldsLimitHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 索引主分片数
+                     * <p>索引主分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_numberOfShards;
                     bool m_numberOfShardsHasBeenSet;
 
                     /**
-                     * 索引副本分片数
+                     * <p>索引副本分片数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_numberOfReplicas;
                     bool m_numberOfReplicasHasBeenSet;
 
                     /**
-                     * 索引刷新频率
+                     * <p>索引刷新频率</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_refreshInterval;
                     bool m_refreshIntervalHasBeenSet;
+
+                    /**
+                     * <p>动态字段识别开关</p>
+                     */
+                    std::string m_dynamic;
+                    bool m_dynamicHasBeenSet;
+
+                    /**
+                     * <p>索引字段数上限</p>
+                     */
+                    std::string m_totalFieldsLimit;
+                    bool m_totalFieldsLimitHasBeenSet;
 
                 };
             }

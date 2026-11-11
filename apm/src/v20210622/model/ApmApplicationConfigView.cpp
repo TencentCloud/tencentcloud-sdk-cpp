@@ -71,7 +71,9 @@ ApmApplicationConfigView::ApmApplicationConfigView() :
     m_enableThresholdConfigHasBeenSet(false),
     m_errRateThresholdHasBeenSet(false),
     m_responseDurationWarningThresholdHasBeenSet(false),
-    m_useDefaultFuseConfigHasBeenSet(false)
+    m_useDefaultFuseConfigHasBeenSet(false),
+    m_isJNDIInjectionAnalysisHasBeenSet(false),
+    m_isJNIInjectionAnalysisHasBeenSet(false)
 {
 }
 
@@ -617,6 +619,26 @@ CoreInternalOutcome ApmApplicationConfigView::Deserialize(const rapidjson::Value
         m_useDefaultFuseConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("IsJNDIInjectionAnalysis") && !value["IsJNDIInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsJNDIInjectionAnalysis"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmApplicationConfigView.IsJNDIInjectionAnalysis` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isJNDIInjectionAnalysis = string(value["IsJNDIInjectionAnalysis"].GetString());
+        m_isJNDIInjectionAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsJNIInjectionAnalysis") && !value["IsJNIInjectionAnalysis"].IsNull())
+    {
+        if (!value["IsJNIInjectionAnalysis"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmApplicationConfigView.IsJNIInjectionAnalysis` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isJNIInjectionAnalysis = string(value["IsJNIInjectionAnalysis"].GetString());
+        m_isJNIInjectionAnalysisHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1045,6 +1067,22 @@ void ApmApplicationConfigView::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "UseDefaultFuseConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useDefaultFuseConfig, allocator);
+    }
+
+    if (m_isJNDIInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsJNDIInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isJNDIInjectionAnalysis.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isJNIInjectionAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsJNIInjectionAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isJNIInjectionAnalysis.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1864,5 +1902,37 @@ void ApmApplicationConfigView::SetUseDefaultFuseConfig(const bool& _useDefaultFu
 bool ApmApplicationConfigView::UseDefaultFuseConfigHasBeenSet() const
 {
     return m_useDefaultFuseConfigHasBeenSet;
+}
+
+string ApmApplicationConfigView::GetIsJNDIInjectionAnalysis() const
+{
+    return m_isJNDIInjectionAnalysis;
+}
+
+void ApmApplicationConfigView::SetIsJNDIInjectionAnalysis(const string& _isJNDIInjectionAnalysis)
+{
+    m_isJNDIInjectionAnalysis = _isJNDIInjectionAnalysis;
+    m_isJNDIInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmApplicationConfigView::IsJNDIInjectionAnalysisHasBeenSet() const
+{
+    return m_isJNDIInjectionAnalysisHasBeenSet;
+}
+
+string ApmApplicationConfigView::GetIsJNIInjectionAnalysis() const
+{
+    return m_isJNIInjectionAnalysis;
+}
+
+void ApmApplicationConfigView::SetIsJNIInjectionAnalysis(const string& _isJNIInjectionAnalysis)
+{
+    m_isJNIInjectionAnalysis = _isJNIInjectionAnalysis;
+    m_isJNIInjectionAnalysisHasBeenSet = true;
+}
+
+bool ApmApplicationConfigView::IsJNIInjectionAnalysisHasBeenSet() const
+{
+    return m_isJNIInjectionAnalysisHasBeenSet;
 }
 

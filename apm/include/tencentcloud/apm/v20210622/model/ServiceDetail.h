@@ -102,7 +102,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppID <p>用户appid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetAppID() const;
 
@@ -111,14 +111,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appID <p>用户appid</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetAppID(const int64_t& _appID);
 
                     /**
                      * 判断参数 AppID 是否已赋值
                      * @return AppID 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AppIDHasBeenSet() const;
 
@@ -127,7 +127,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateUIN <p>主账号uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetCreateUIN() const;
 
@@ -136,14 +136,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createUIN <p>主账号uin</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetCreateUIN(const std::string& _createUIN);
 
                     /**
                      * 判断参数 CreateUIN 是否已赋值
                      * @return CreateUIN 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CreateUINHasBeenSet() const;
 
@@ -343,6 +343,48 @@ namespace TencentCloud
                      */
                     bool ResponseDurationWarningThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户appid</p>
+                     * @return AppId <p>用户appid</p>
+                     * 
+                     */
+                    std::string GetAppId() const;
+
+                    /**
+                     * 设置<p>用户appid</p>
+                     * @param _appId <p>用户appid</p>
+                     * 
+                     */
+                    void SetAppId(const std::string& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>主账号uin</p>
+                     * @return CreateUin <p>主账号uin</p>
+                     * 
+                     */
+                    std::string GetCreateUin() const;
+
+                    /**
+                     * 设置<p>主账号uin</p>
+                     * @param _createUin <p>主账号uin</p>
+                     * 
+                     */
+                    void SetCreateUin(const std::string& _createUin);
+
+                    /**
+                     * 判断参数 CreateUin 是否已赋值
+                     * @return CreateUin 是否已赋值
+                     * 
+                     */
+                    bool CreateUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +469,18 @@ namespace TencentCloud
                      */
                     int64_t m_responseDurationWarningThreshold;
                     bool m_responseDurationWarningThresholdHasBeenSet;
+
+                    /**
+                     * <p>用户appid</p>
+                     */
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * <p>主账号uin</p>
+                     */
+                    std::string m_createUin;
+                    bool m_createUinHasBeenSet;
 
                 };
             }

@@ -32,7 +32,8 @@ HPCNode::HPCNode() :
     m_tagsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_queueNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_isExistingNodeHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,16 @@ CoreInternalOutcome HPCNode::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("IsExistingNode") && !value["IsExistingNode"].IsNull())
+    {
+        if (!value["IsExistingNode"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `HPCNode.IsExistingNode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isExistingNode = value["IsExistingNode"].GetBool();
+        m_isExistingNodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +298,14 @@ void HPCNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isExistingNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExistingNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isExistingNode, allocator);
     }
 
 }
@@ -482,5 +501,21 @@ void HPCNode::SetStatus(const string& _status)
 bool HPCNode::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+bool HPCNode::GetIsExistingNode() const
+{
+    return m_isExistingNode;
+}
+
+void HPCNode::SetIsExistingNode(const bool& _isExistingNode)
+{
+    m_isExistingNode = _isExistingNode;
+    m_isExistingNodeHasBeenSet = true;
+}
+
+bool HPCNode::IsExistingNodeHasBeenSet() const
+{
+    return m_isExistingNodeHasBeenSet;
 }
 

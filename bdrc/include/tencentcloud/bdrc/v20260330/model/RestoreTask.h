@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取恢复任务 ID
-                     * @return TaskId 恢复任务 ID
+                     * 获取<p>恢复任务 ID</p>
+                     * @return TaskId <p>恢复任务 ID</p>
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置恢复任务 ID
-                     * @param _taskId 恢复任务 ID
+                     * 设置<p>恢复任务 ID</p>
+                     * @param _taskId <p>恢复任务 ID</p>
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取关联备份点 ID
-                     * @return BackupId 关联备份点 ID
+                     * 获取<p>关联备份点 ID</p>
+                     * @return BackupId <p>关联备份点 ID</p>
                      * 
                      */
                     std::string GetBackupId() const;
 
                     /**
-                     * 设置关联备份点 ID
-                     * @param _backupId 关联备份点 ID
+                     * 设置<p>关联备份点 ID</p>
+                     * @param _backupId <p>关联备份点 ID</p>
                      * 
                      */
                     void SetBackupId(const std::string& _backupId);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取源实例 ID
-                     * @return ResourceId 源实例 ID
+                     * 获取<p>源实例 ID</p>
+                     * @return ResourceId <p>源实例 ID</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置源实例 ID
-                     * @param _resourceId 源实例 ID
+                     * 设置<p>源实例 ID</p>
+                     * @param _resourceId <p>源实例 ID</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取目标实例 ID
-                     * @return TargetResourceId 目标实例 ID
+                     * 获取<p>目标实例 ID</p>
+                     * @return TargetResourceId <p>目标实例 ID</p>
                      * 
                      */
                     std::string GetTargetResourceId() const;
 
                     /**
-                     * 设置目标实例 ID
-                     * @param _targetResourceId 目标实例 ID
+                     * 设置<p>目标实例 ID</p>
+                     * @param _targetResourceId <p>目标实例 ID</p>
                      * 
                      */
                     void SetTargetResourceId(const std::string& _targetResourceId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool TargetResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取恢复路径列表
-                     * @return RestorePaths 恢复路径列表
+                     * 获取<p>恢复路径列表</p>
+                     * @return RestorePaths <p>恢复路径列表</p>
                      * 
                      */
                     std::vector<std::string> GetRestorePaths() const;
 
                     /**
-                     * 设置恢复路径列表
-                     * @param _restorePaths 恢复路径列表
+                     * 设置<p>恢复路径列表</p>
+                     * @param _restorePaths <p>恢复路径列表</p>
                      * 
                      */
                     void SetRestorePaths(const std::vector<std::string>& _restorePaths);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RestorePathsHasBeenSet() const;
 
                     /**
-                     * 获取目标恢复位置
-                     * @return TargetLocation 目标恢复位置
+                     * 获取<p>目标恢复位置</p>
+                     * @return TargetLocation <p>目标恢复位置</p>
                      * 
                      */
                     std::string GetTargetLocation() const;
 
                     /**
-                     * 设置目标恢复位置
-                     * @param _targetLocation 目标恢复位置
+                     * 设置<p>目标恢复位置</p>
+                     * @param _targetLocation <p>目标恢复位置</p>
                      * 
                      */
                     void SetTargetLocation(const std::string& _targetLocation);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool TargetLocationHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-                     * @return Status 任务状态
+                     * 获取<p>任务状态</p>
+                     * @return Status <p>任务状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态
-                     * @param _status 任务状态
+                     * 设置<p>任务状态</p>
+                     * @param _status <p>任务状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取需恢复文件总数
-                     * @return TotalFileCount 需恢复文件总数
+                     * 获取<p>需恢复文件总数</p>
+                     * @return TotalFileCount <p>需恢复文件总数</p>
                      * 
                      */
                     int64_t GetTotalFileCount() const;
 
                     /**
-                     * 设置需恢复文件总数
-                     * @param _totalFileCount 需恢复文件总数
+                     * 设置<p>需恢复文件总数</p>
+                     * @param _totalFileCount <p>需恢复文件总数</p>
                      * 
                      */
                     void SetTotalFileCount(const int64_t& _totalFileCount);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool TotalFileCountHasBeenSet() const;
 
                     /**
-                     * 获取需恢复数据总量（字节）
-                     * @return TotalSize 需恢复数据总量（字节）
+                     * 获取<p>需恢复数据总量（字节）</p>
+                     * @return TotalSize <p>需恢复数据总量（字节）</p>
                      * 
                      */
                     int64_t GetTotalSize() const;
 
                     /**
-                     * 设置需恢复数据总量（字节）
-                     * @param _totalSize 需恢复数据总量（字节）
+                     * 设置<p>需恢复数据总量（字节）</p>
+                     * @param _totalSize <p>需恢复数据总量（字节）</p>
                      * 
                      */
                     void SetTotalSize(const int64_t& _totalSize);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool TotalSizeHasBeenSet() const;
 
                     /**
-                     * 获取需恢复数据总量（格式化，如 "1.5 GB"）
-                     * @return TotalSizeFormatted 需恢复数据总量（格式化，如 "1.5 GB"）
+                     * 获取<p>需恢复数据总量（格式化：1024 进制，保留两位小数，单位 B/KiB/MiB/GiB/TiB/PiB，如 &quot;1.50 GiB&quot;）</p>
+                     * @return TotalSizeFormatted <p>需恢复数据总量（格式化：1024 进制，保留两位小数，单位 B/KiB/MiB/GiB/TiB/PiB，如 &quot;1.50 GiB&quot;）</p>
                      * 
                      */
                     std::string GetTotalSizeFormatted() const;
 
                     /**
-                     * 设置需恢复数据总量（格式化，如 "1.5 GB"）
-                     * @param _totalSizeFormatted 需恢复数据总量（格式化，如 "1.5 GB"）
+                     * 设置<p>需恢复数据总量（格式化：1024 进制，保留两位小数，单位 B/KiB/MiB/GiB/TiB/PiB，如 &quot;1.50 GiB&quot;）</p>
+                     * @param _totalSizeFormatted <p>需恢复数据总量（格式化：1024 进制，保留两位小数，单位 B/KiB/MiB/GiB/TiB/PiB，如 &quot;1.50 GiB&quot;）</p>
                      * 
                      */
                     void SetTotalSizeFormatted(const std::string& _totalSizeFormatted);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool TotalSizeFormattedHasBeenSet() const;
 
                     /**
-                     * 获取已恢复文件数
-                     * @return RestoreFileCount 已恢复文件数
+                     * 获取<p>已恢复文件数</p>
+                     * @return RestoreFileCount <p>已恢复文件数</p>
                      * 
                      */
                     int64_t GetRestoreFileCount() const;
 
                     /**
-                     * 设置已恢复文件数
-                     * @param _restoreFileCount 已恢复文件数
+                     * 设置<p>已恢复文件数</p>
+                     * @param _restoreFileCount <p>已恢复文件数</p>
                      * 
                      */
                     void SetRestoreFileCount(const int64_t& _restoreFileCount);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool RestoreFileCountHasBeenSet() const;
 
                     /**
-                     * 获取已恢复数据量（字节）
-                     * @return RestoreSize 已恢复数据量（字节）
+                     * 获取<p>已恢复数据量（字节）</p>
+                     * @return RestoreSize <p>已恢复数据量（字节）</p>
                      * 
                      */
                     int64_t GetRestoreSize() const;
 
                     /**
-                     * 设置已恢复数据量（字节）
-                     * @param _restoreSize 已恢复数据量（字节）
+                     * 设置<p>已恢复数据量（字节）</p>
+                     * @param _restoreSize <p>已恢复数据量（字节）</p>
                      * 
                      */
                     void SetRestoreSize(const int64_t& _restoreSize);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool RestoreSizeHasBeenSet() const;
 
                     /**
-                     * 获取已恢复数据量（格式化）
-                     * @return RestoreSizeFormatted 已恢复数据量（格式化）
+                     * 获取<p>已恢复数据量（格式化，口径同 TotalSizeFormatted，如 &quot;512.00 MiB&quot;）</p>
+                     * @return RestoreSizeFormatted <p>已恢复数据量（格式化，口径同 TotalSizeFormatted，如 &quot;512.00 MiB&quot;）</p>
                      * 
                      */
                     std::string GetRestoreSizeFormatted() const;
 
                     /**
-                     * 设置已恢复数据量（格式化）
-                     * @param _restoreSizeFormatted 已恢复数据量（格式化）
+                     * 设置<p>已恢复数据量（格式化，口径同 TotalSizeFormatted，如 &quot;512.00 MiB&quot;）</p>
+                     * @param _restoreSizeFormatted <p>已恢复数据量（格式化，口径同 TotalSizeFormatted，如 &quot;512.00 MiB&quot;）</p>
                      * 
                      */
                     void SetRestoreSizeFormatted(const std::string& _restoreSizeFormatted);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool RestoreSizeFormattedHasBeenSet() const;
 
                     /**
-                     * 获取恢复进度（0-100）
-                     * @return Progress 恢复进度（0-100）
+                     * 获取<p>恢复进度（0-100）</p>
+                     * @return Progress <p>恢复进度（0-100）</p>
                      * 
                      */
                     double GetProgress() const;
 
                     /**
-                     * 设置恢复进度（0-100）
-                     * @param _progress 恢复进度（0-100）
+                     * 设置<p>恢复进度（0-100）</p>
+                     * @param _progress <p>恢复进度（0-100）</p>
                      * 
                      */
                     void SetProgress(const double& _progress);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool ProgressHasBeenSet() const;
 
                     /**
-                     * 获取关联 Job ID
-                     * @return JobId 关联 Job ID
+                     * 获取<p>关联 Job ID</p>
+                     * @return JobId <p>关联 Job ID</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置关联 Job ID
-                     * @param _jobId 关联 Job ID
+                     * 设置<p>关联 Job ID</p>
+                     * @param _jobId <p>关联 Job ID</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取任务开始时间（ISO 格式）
-                     * @return StartTime 任务开始时间（ISO 格式）
+                     * 获取<p>任务开始时间（ISO 格式）</p>
+                     * @return StartTime <p>任务开始时间（ISO 格式）</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置任务开始时间（ISO 格式）
-                     * @param _startTime 任务开始时间（ISO 格式）
+                     * 设置<p>任务开始时间（ISO 格式）</p>
+                     * @param _startTime <p>任务开始时间（ISO 格式）</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务结束时间
-                     * @return EndTime 任务结束时间
+                     * 获取<p>任务结束时间</p>
+                     * @return EndTime <p>任务结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置任务结束时间
-                     * @param _endTime 任务结束时间
+                     * 设置<p>任务结束时间</p>
+                     * @param _endTime <p>任务结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务创建时间
-                     * @return CreatedTime 任务创建时间
+                     * 获取<p>任务创建时间</p>
+                     * @return CreatedTime <p>任务创建时间</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置任务创建时间
-                     * @param _createdTime 任务创建时间
+                     * 设置<p>任务创建时间</p>
+                     * @param _createdTime <p>任务创建时间</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取恢复任务失败原因
-                     * @return FailReason 恢复任务失败原因
+                     * 获取<p>恢复任务失败原因</p>
+                     * @return FailReason <p>恢复任务失败原因</p>
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
-                     * 设置恢复任务失败原因
-                     * @param _failReason 恢复任务失败原因
+                     * 设置<p>恢复任务失败原因</p>
+                     * @param _failReason <p>恢复任务失败原因</p>
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool FailReasonHasBeenSet() const;
 
                     /**
-                     * 获取冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖
-                     * @return ConflictStrategy 冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖
+                     * 获取<p>冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖</p>
+                     * @return ConflictStrategy <p>冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖</p>
                      * 
                      */
                     std::string GetConflictStrategy() const;
 
                     /**
-                     * 设置冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖
-                     * @param _conflictStrategy 冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖
+                     * 设置<p>冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖</p>
+                     * @param _conflictStrategy <p>冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖</p>
                      * 
                      */
                     void SetConflictStrategy(const std::string& _conflictStrategy);
@@ -466,127 +466,223 @@ namespace TencentCloud
                      */
                     bool ConflictStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否为原路径恢复</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsOriginalPath <p>是否为原路径恢复</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsOriginalPath() const;
+
+                    /**
+                     * 设置<p>是否为原路径恢复</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isOriginalPath <p>是否为原路径恢复</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsOriginalPath(const bool& _isOriginalPath);
+
+                    /**
+                     * 判断参数 IsOriginalPath 是否已赋值
+                     * @return IsOriginalPath 是否已赋值
+                     * 
+                     */
+                    bool IsOriginalPathHasBeenSet() const;
+
+                    /**
+                     * 获取<p>源端腾讯云资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudResourceId <p>源端腾讯云资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCloudResourceId() const;
+
+                    /**
+                     * 设置<p>源端腾讯云资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cloudResourceId <p>源端腾讯云资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCloudResourceId(const std::string& _cloudResourceId);
+
+                    /**
+                     * 判断参数 CloudResourceId 是否已赋值
+                     * @return CloudResourceId 是否已赋值
+                     * 
+                     */
+                    bool CloudResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>目标端腾讯云资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetCloudResourceId <p>目标端腾讯云资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTargetCloudResourceId() const;
+
+                    /**
+                     * 设置<p>目标端腾讯云资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _targetCloudResourceId <p>目标端腾讯云资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTargetCloudResourceId(const std::string& _targetCloudResourceId);
+
+                    /**
+                     * 判断参数 TargetCloudResourceId 是否已赋值
+                     * @return TargetCloudResourceId 是否已赋值
+                     * 
+                     */
+                    bool TargetCloudResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 恢复任务 ID
+                     * <p>恢复任务 ID</p>
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 关联备份点 ID
+                     * <p>关联备份点 ID</p>
                      */
                     std::string m_backupId;
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * 源实例 ID
+                     * <p>源实例 ID</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 目标实例 ID
+                     * <p>目标实例 ID</p>
                      */
                     std::string m_targetResourceId;
                     bool m_targetResourceIdHasBeenSet;
 
                     /**
-                     * 恢复路径列表
+                     * <p>恢复路径列表</p>
                      */
                     std::vector<std::string> m_restorePaths;
                     bool m_restorePathsHasBeenSet;
 
                     /**
-                     * 目标恢复位置
+                     * <p>目标恢复位置</p>
                      */
                     std::string m_targetLocation;
                     bool m_targetLocationHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * <p>任务状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 需恢复文件总数
+                     * <p>需恢复文件总数</p>
                      */
                     int64_t m_totalFileCount;
                     bool m_totalFileCountHasBeenSet;
 
                     /**
-                     * 需恢复数据总量（字节）
+                     * <p>需恢复数据总量（字节）</p>
                      */
                     int64_t m_totalSize;
                     bool m_totalSizeHasBeenSet;
 
                     /**
-                     * 需恢复数据总量（格式化，如 "1.5 GB"）
+                     * <p>需恢复数据总量（格式化：1024 进制，保留两位小数，单位 B/KiB/MiB/GiB/TiB/PiB，如 &quot;1.50 GiB&quot;）</p>
                      */
                     std::string m_totalSizeFormatted;
                     bool m_totalSizeFormattedHasBeenSet;
 
                     /**
-                     * 已恢复文件数
+                     * <p>已恢复文件数</p>
                      */
                     int64_t m_restoreFileCount;
                     bool m_restoreFileCountHasBeenSet;
 
                     /**
-                     * 已恢复数据量（字节）
+                     * <p>已恢复数据量（字节）</p>
                      */
                     int64_t m_restoreSize;
                     bool m_restoreSizeHasBeenSet;
 
                     /**
-                     * 已恢复数据量（格式化）
+                     * <p>已恢复数据量（格式化，口径同 TotalSizeFormatted，如 &quot;512.00 MiB&quot;）</p>
                      */
                     std::string m_restoreSizeFormatted;
                     bool m_restoreSizeFormattedHasBeenSet;
 
                     /**
-                     * 恢复进度（0-100）
+                     * <p>恢复进度（0-100）</p>
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
-                     * 关联 Job ID
+                     * <p>关联 Job ID</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 任务开始时间（ISO 格式）
+                     * <p>任务开始时间（ISO 格式）</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 任务结束时间
+                     * <p>任务结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 任务创建时间
+                     * <p>任务创建时间</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 恢复任务失败原因
+                     * <p>恢复任务失败原因</p>
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
 
                     /**
-                     * 冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖
+                     * <p>冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖</p>
                      */
                     std::string m_conflictStrategy;
                     bool m_conflictStrategyHasBeenSet;
+
+                    /**
+                     * <p>是否为原路径恢复</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isOriginalPath;
+                    bool m_isOriginalPathHasBeenSet;
+
+                    /**
+                     * <p>源端腾讯云资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cloudResourceId;
+                    bool m_cloudResourceIdHasBeenSet;
+
+                    /**
+                     * <p>目标端腾讯云资源ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetCloudResourceId;
+                    bool m_targetCloudResourceIdHasBeenSet;
 
                 };
             }

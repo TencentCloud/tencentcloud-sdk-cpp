@@ -65,6 +65,8 @@
 #include <tencentcloud/csip/v20221121/model/CreateAccessKeySyncTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAllAssetsExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateAllAssetsExportJobResponse.h>
+#include <tencentcloud/csip/v20221121/model/CreateAssetBaselineRiskExportJobRequest.h>
+#include <tencentcloud/csip/v20221121/model/CreateAssetBaselineRiskExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAssetComponentListExportJobRequest.h>
 #include <tencentcloud/csip/v20221121/model/CreateAssetComponentListExportJobResponse.h>
 #include <tencentcloud/csip/v20221121/model/CreateAssetComponentRelatedImageListExportJobRequest.h>
@@ -259,6 +261,8 @@
 #include <tencentcloud/csip/v20221121/model/DeleteAssetFilterViewResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteAssetTagRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteAssetTagResponse.h>
+#include <tencentcloud/csip/v20221121/model/DeleteBaselineIgnorePolicyRequest.h>
+#include <tencentcloud/csip/v20221121/model/DeleteBaselineIgnorePolicyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteBaselineSelfDefinedPolicyListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DeleteBaselineSelfDefinedPolicyListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DeleteCSIPMalwareScanTaskRequest.h>
@@ -413,6 +417,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeAgentRunPolicyResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAlertListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAlertListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAssetBaselineRiskListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeAssetBaselineRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssetComponentListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssetComponentListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeAssetComponentRelatedImageListRequest.h>
@@ -463,6 +469,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeBaselineCategoryItemListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeBaselineFixRecordListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeBaselineFixRecordListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeBaselineIgnorePolicyListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeBaselineIgnorePolicyListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeBaselineItemRiskListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeBaselineItemRiskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeBaselineMainTaskItemListRequest.h>
@@ -559,6 +567,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeClusterAssetSyncTaskStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeClusterBaselineRiskPolicyListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeClusterBaselineRiskPolicyListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterContainerAppListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterContainerAppListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterContainerComponentListRequest.h>
@@ -683,6 +693,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologyAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologyIpsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologyIpsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologySummaryRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeDspmAccessTopologySummaryResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmApplyHistoryRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmApplyHistoryResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDspmApplyOrderListRequest.h>
@@ -863,8 +875,12 @@
 #include <tencentcloud/csip/v20221121/model/DescribeHostVulItemVPRInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHostVulOverviewRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHostVulOverviewResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostVulRiskEventListRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostVulRiskEventListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHostVulRiskListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeHostVulRiskListResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostVulScanStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeHostVulScanStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIaCFileListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIaCFileListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeIaCFileOverviewRequest.h>
@@ -1249,6 +1265,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifyAssetTagsByAssetInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyBanModeRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyBanModeResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyBaselineIgnorePolicyRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyBaselineIgnorePolicyResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyBaselinePolicyRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyBaselinePolicyResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyBaselinePolicyEnableRequest.h>
@@ -1271,6 +1289,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifyCSIPRaspLicenseBindsResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCSIPRaspLicenseUnBindsRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCSIPRaspLicenseUnBindsResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyClusterAuditLogStatusRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyClusterAuditLogStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyClusterDefendStatusRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyClusterDefendStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyCosAuditBucketMonitorStatusRequest.h>
@@ -1616,6 +1636,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAllAssetsExportJobResponse> CreateAllAssetsExportJobOutcome;
                 typedef std::future<CreateAllAssetsExportJobOutcome> CreateAllAssetsExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateAllAssetsExportJobRequest&, CreateAllAssetsExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAllAssetsExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAssetBaselineRiskExportJobResponse> CreateAssetBaselineRiskExportJobOutcome;
+                typedef std::future<CreateAssetBaselineRiskExportJobOutcome> CreateAssetBaselineRiskExportJobOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::CreateAssetBaselineRiskExportJobRequest&, CreateAssetBaselineRiskExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetBaselineRiskExportJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAssetComponentListExportJobResponse> CreateAssetComponentListExportJobOutcome;
                 typedef std::future<CreateAssetComponentListExportJobOutcome> CreateAssetComponentListExportJobOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::CreateAssetComponentListExportJobRequest&, CreateAssetComponentListExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetComponentListExportJobAsyncHandler;
@@ -1907,6 +1930,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAssetTagResponse> DeleteAssetTagOutcome;
                 typedef std::future<DeleteAssetTagOutcome> DeleteAssetTagOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteAssetTagRequest&, DeleteAssetTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAssetTagAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBaselineIgnorePolicyResponse> DeleteBaselineIgnorePolicyOutcome;
+                typedef std::future<DeleteBaselineIgnorePolicyOutcome> DeleteBaselineIgnorePolicyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DeleteBaselineIgnorePolicyRequest&, DeleteBaselineIgnorePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBaselineIgnorePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBaselineSelfDefinedPolicyListResponse> DeleteBaselineSelfDefinedPolicyListOutcome;
                 typedef std::future<DeleteBaselineSelfDefinedPolicyListOutcome> DeleteBaselineSelfDefinedPolicyListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DeleteBaselineSelfDefinedPolicyListRequest&, DeleteBaselineSelfDefinedPolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBaselineSelfDefinedPolicyListAsyncHandler;
@@ -2138,6 +2164,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAlertListResponse> DescribeAlertListOutcome;
                 typedef std::future<DescribeAlertListOutcome> DescribeAlertListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAlertListRequest&, DescribeAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetBaselineRiskListResponse> DescribeAssetBaselineRiskListOutcome;
+                typedef std::future<DescribeAssetBaselineRiskListOutcome> DescribeAssetBaselineRiskListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeAssetBaselineRiskListRequest&, DescribeAssetBaselineRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetBaselineRiskListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetComponentListResponse> DescribeAssetComponentListOutcome;
                 typedef std::future<DescribeAssetComponentListOutcome> DescribeAssetComponentListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeAssetComponentListRequest&, DescribeAssetComponentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetComponentListAsyncHandler;
@@ -2213,6 +2242,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBaselineFixRecordListResponse> DescribeBaselineFixRecordListOutcome;
                 typedef std::future<DescribeBaselineFixRecordListOutcome> DescribeBaselineFixRecordListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeBaselineFixRecordListRequest&, DescribeBaselineFixRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineFixRecordListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaselineIgnorePolicyListResponse> DescribeBaselineIgnorePolicyListOutcome;
+                typedef std::future<DescribeBaselineIgnorePolicyListOutcome> DescribeBaselineIgnorePolicyListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeBaselineIgnorePolicyListRequest&, DescribeBaselineIgnorePolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineIgnorePolicyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBaselineItemRiskListResponse> DescribeBaselineItemRiskListOutcome;
                 typedef std::future<DescribeBaselineItemRiskListOutcome> DescribeBaselineItemRiskListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeBaselineItemRiskListRequest&, DescribeBaselineItemRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineItemRiskListAsyncHandler;
@@ -2357,6 +2389,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterAssetsResponse> DescribeClusterAssetsOutcome;
                 typedef std::future<DescribeClusterAssetsOutcome> DescribeClusterAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeClusterAssetsRequest&, DescribeClusterAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterBaselineRiskPolicyListResponse> DescribeClusterBaselineRiskPolicyListOutcome;
+                typedef std::future<DescribeClusterBaselineRiskPolicyListOutcome> DescribeClusterBaselineRiskPolicyListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeClusterBaselineRiskPolicyListRequest&, DescribeClusterBaselineRiskPolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterBaselineRiskPolicyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterContainerAppListResponse> DescribeClusterContainerAppListOutcome;
                 typedef std::future<DescribeClusterContainerAppListOutcome> DescribeClusterContainerAppListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeClusterContainerAppListRequest&, DescribeClusterContainerAppListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterContainerAppListAsyncHandler;
@@ -2543,6 +2578,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDspmAccessTopologyIpsResponse> DescribeDspmAccessTopologyIpsOutcome;
                 typedef std::future<DescribeDspmAccessTopologyIpsOutcome> DescribeDspmAccessTopologyIpsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmAccessTopologyIpsRequest&, DescribeDspmAccessTopologyIpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAccessTopologyIpsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDspmAccessTopologySummaryResponse> DescribeDspmAccessTopologySummaryOutcome;
+                typedef std::future<DescribeDspmAccessTopologySummaryOutcome> DescribeDspmAccessTopologySummaryOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeDspmAccessTopologySummaryRequest&, DescribeDspmAccessTopologySummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmAccessTopologySummaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDspmApplyHistoryResponse> DescribeDspmApplyHistoryOutcome;
                 typedef std::future<DescribeDspmApplyHistoryOutcome> DescribeDspmApplyHistoryOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeDspmApplyHistoryRequest&, DescribeDspmApplyHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDspmApplyHistoryAsyncHandler;
@@ -2813,9 +2851,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHostVulOverviewResponse> DescribeHostVulOverviewOutcome;
                 typedef std::future<DescribeHostVulOverviewOutcome> DescribeHostVulOverviewOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeHostVulOverviewRequest&, DescribeHostVulOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostVulOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostVulRiskEventListResponse> DescribeHostVulRiskEventListOutcome;
+                typedef std::future<DescribeHostVulRiskEventListOutcome> DescribeHostVulRiskEventListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeHostVulRiskEventListRequest&, DescribeHostVulRiskEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostVulRiskEventListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHostVulRiskListResponse> DescribeHostVulRiskListOutcome;
                 typedef std::future<DescribeHostVulRiskListOutcome> DescribeHostVulRiskListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeHostVulRiskListRequest&, DescribeHostVulRiskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostVulRiskListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostVulScanStatusResponse> DescribeHostVulScanStatusOutcome;
+                typedef std::future<DescribeHostVulScanStatusOutcome> DescribeHostVulScanStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeHostVulScanStatusRequest&, DescribeHostVulScanStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostVulScanStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIaCFileListResponse> DescribeIaCFileListOutcome;
                 typedef std::future<DescribeIaCFileListOutcome> DescribeIaCFileListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeIaCFileListRequest&, DescribeIaCFileListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIaCFileListAsyncHandler;
@@ -3392,6 +3436,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBanModeResponse> ModifyBanModeOutcome;
                 typedef std::future<ModifyBanModeOutcome> ModifyBanModeOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyBanModeRequest&, ModifyBanModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBanModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBaselineIgnorePolicyResponse> ModifyBaselineIgnorePolicyOutcome;
+                typedef std::future<ModifyBaselineIgnorePolicyOutcome> ModifyBaselineIgnorePolicyOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyBaselineIgnorePolicyRequest&, ModifyBaselineIgnorePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBaselineIgnorePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBaselinePolicyResponse> ModifyBaselinePolicyOutcome;
                 typedef std::future<ModifyBaselinePolicyOutcome> ModifyBaselinePolicyOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyBaselinePolicyRequest&, ModifyBaselinePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBaselinePolicyAsyncHandler;
@@ -3425,6 +3472,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCSIPRaspLicenseUnBindsResponse> ModifyCSIPRaspLicenseUnBindsOutcome;
                 typedef std::future<ModifyCSIPRaspLicenseUnBindsOutcome> ModifyCSIPRaspLicenseUnBindsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyCSIPRaspLicenseUnBindsRequest&, ModifyCSIPRaspLicenseUnBindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCSIPRaspLicenseUnBindsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterAuditLogStatusResponse> ModifyClusterAuditLogStatusOutcome;
+                typedef std::future<ModifyClusterAuditLogStatusOutcome> ModifyClusterAuditLogStatusOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyClusterAuditLogStatusRequest&, ModifyClusterAuditLogStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterAuditLogStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterDefendStatusResponse> ModifyClusterDefendStatusOutcome;
                 typedef std::future<ModifyClusterDefendStatusOutcome> ModifyClusterDefendStatusOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyClusterDefendStatusRequest&, ModifyClusterDefendStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterDefendStatusAsyncHandler;
@@ -4020,6 +4070,15 @@ namespace TencentCloud
                 CreateAllAssetsExportJobOutcome CreateAllAssetsExportJob(const Model::CreateAllAssetsExportJobRequest &request);
                 void CreateAllAssetsExportJobAsync(const Model::CreateAllAssetsExportJobRequest& request, const CreateAllAssetsExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAllAssetsExportJobOutcomeCallable CreateAllAssetsExportJobCallable(const Model::CreateAllAssetsExportJobRequest& request);
+
+                /**
+                 *创建资产基线风险导出任务
+                 * @param req CreateAssetBaselineRiskExportJobRequest
+                 * @return CreateAssetBaselineRiskExportJobOutcome
+                 */
+                CreateAssetBaselineRiskExportJobOutcome CreateAssetBaselineRiskExportJob(const Model::CreateAssetBaselineRiskExportJobRequest &request);
+                void CreateAssetBaselineRiskExportJobAsync(const Model::CreateAssetBaselineRiskExportJobRequest& request, const CreateAssetBaselineRiskExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAssetBaselineRiskExportJobOutcomeCallable CreateAssetBaselineRiskExportJobCallable(const Model::CreateAssetBaselineRiskExportJobRequest& request);
 
                 /**
                  *创建镜像资产中组件列表导出任务
@@ -4897,6 +4956,15 @@ namespace TencentCloud
                 DeleteAssetTagOutcomeCallable DeleteAssetTagCallable(const Model::DeleteAssetTagRequest& request);
 
                 /**
+                 *删除基线忽略策略
+                 * @param req DeleteBaselineIgnorePolicyRequest
+                 * @return DeleteBaselineIgnorePolicyOutcome
+                 */
+                DeleteBaselineIgnorePolicyOutcome DeleteBaselineIgnorePolicy(const Model::DeleteBaselineIgnorePolicyRequest &request);
+                void DeleteBaselineIgnorePolicyAsync(const Model::DeleteBaselineIgnorePolicyRequest& request, const DeleteBaselineIgnorePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBaselineIgnorePolicyOutcomeCallable DeleteBaselineIgnorePolicyCallable(const Model::DeleteBaselineIgnorePolicyRequest& request);
+
+                /**
                  *批量删除自定义基线策略。仅支持删除 PolicyType=SELF 的策略；删除后历史风险记录保留，但不再产生新结果。
                  * @param req DeleteBaselineSelfDefinedPolicyListRequest
                  * @return DeleteBaselineSelfDefinedPolicyListOutcome
@@ -5602,6 +5670,15 @@ namespace TencentCloud
                 DescribeAlertListOutcomeCallable DescribeAlertListCallable(const Model::DescribeAlertListRequest& request);
 
                 /**
+                 *获取资产风险列表
+                 * @param req DescribeAssetBaselineRiskListRequest
+                 * @return DescribeAssetBaselineRiskListOutcome
+                 */
+                DescribeAssetBaselineRiskListOutcome DescribeAssetBaselineRiskList(const Model::DescribeAssetBaselineRiskListRequest &request);
+                void DescribeAssetBaselineRiskListAsync(const Model::DescribeAssetBaselineRiskListRequest& request, const DescribeAssetBaselineRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetBaselineRiskListOutcomeCallable DescribeAssetBaselineRiskListCallable(const Model::DescribeAssetBaselineRiskListRequest& request);
+
+                /**
                  *查询资产中组件列表
                  * @param req DescribeAssetComponentListRequest
                  * @return DescribeAssetComponentListOutcome
@@ -5825,6 +5902,15 @@ namespace TencentCloud
                 DescribeBaselineFixRecordListOutcome DescribeBaselineFixRecordList(const Model::DescribeBaselineFixRecordListRequest &request);
                 void DescribeBaselineFixRecordListAsync(const Model::DescribeBaselineFixRecordListRequest& request, const DescribeBaselineFixRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBaselineFixRecordListOutcomeCallable DescribeBaselineFixRecordListCallable(const Model::DescribeBaselineFixRecordListRequest& request);
+
+                /**
+                 *获取基线忽略策略列表
+                 * @param req DescribeBaselineIgnorePolicyListRequest
+                 * @return DescribeBaselineIgnorePolicyListOutcome
+                 */
+                DescribeBaselineIgnorePolicyListOutcome DescribeBaselineIgnorePolicyList(const Model::DescribeBaselineIgnorePolicyListRequest &request);
+                void DescribeBaselineIgnorePolicyListAsync(const Model::DescribeBaselineIgnorePolicyListRequest& request, const DescribeBaselineIgnorePolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaselineIgnorePolicyListOutcomeCallable DescribeBaselineIgnorePolicyListCallable(const Model::DescribeBaselineIgnorePolicyListRequest& request);
 
                 /**
                  *获取检测项维度的风险记录列表。
@@ -6262,6 +6348,15 @@ namespace TencentCloud
                 DescribeClusterAssetsOutcome DescribeClusterAssets(const Model::DescribeClusterAssetsRequest &request);
                 void DescribeClusterAssetsAsync(const Model::DescribeClusterAssetsRequest& request, const DescribeClusterAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterAssetsOutcomeCallable DescribeClusterAssetsCallable(const Model::DescribeClusterAssetsRequest& request);
+
+                /**
+                 *获取集群风险策略列表
+                 * @param req DescribeClusterBaselineRiskPolicyListRequest
+                 * @return DescribeClusterBaselineRiskPolicyListOutcome
+                 */
+                DescribeClusterBaselineRiskPolicyListOutcome DescribeClusterBaselineRiskPolicyList(const Model::DescribeClusterBaselineRiskPolicyListRequest &request);
+                void DescribeClusterBaselineRiskPolicyListAsync(const Model::DescribeClusterBaselineRiskPolicyListRequest& request, const DescribeClusterBaselineRiskPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterBaselineRiskPolicyListOutcomeCallable DescribeClusterBaselineRiskPolicyListCallable(const Model::DescribeClusterBaselineRiskPolicyListRequest& request);
 
                 /**
                  *查询容器关联应用列表。通过容器ID获取关联的应用服务信息，支持分页。
@@ -6820,6 +6915,16 @@ namespace TencentCloud
                 DescribeDspmAccessTopologyIpsOutcome DescribeDspmAccessTopologyIps(const Model::DescribeDspmAccessTopologyIpsRequest &request);
                 void DescribeDspmAccessTopologyIpsAsync(const Model::DescribeDspmAccessTopologyIpsRequest& request, const DescribeDspmAccessTopologyIpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDspmAccessTopologyIpsOutcomeCallable DescribeDspmAccessTopologyIpsCallable(const Model::DescribeDspmAccessTopologyIpsRequest& request);
+
+                /**
+                 *查询数据库访问拓扑（库级/表级）的概览卡片数据，包含来源IP数、访问账号数、被访问库数/表数、近7天与近30天访问次数。
+数据由后台预聚合产生，查询侧无聚合开销；出参 LastCalcTime 为数据最后计算时间，可据此判断数据新鲜度。
+                 * @param req DescribeDspmAccessTopologySummaryRequest
+                 * @return DescribeDspmAccessTopologySummaryOutcome
+                 */
+                DescribeDspmAccessTopologySummaryOutcome DescribeDspmAccessTopologySummary(const Model::DescribeDspmAccessTopologySummaryRequest &request);
+                void DescribeDspmAccessTopologySummaryAsync(const Model::DescribeDspmAccessTopologySummaryRequest& request, const DescribeDspmAccessTopologySummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDspmAccessTopologySummaryOutcomeCallable DescribeDspmAccessTopologySummaryCallable(const Model::DescribeDspmAccessTopologySummaryRequest& request);
 
                 /**
                  *查询Dspm申请历史
@@ -7632,6 +7737,15 @@ namespace TencentCloud
                 DescribeHostVulOverviewOutcomeCallable DescribeHostVulOverviewCallable(const Model::DescribeHostVulOverviewRequest& request);
 
                 /**
+                 *查询主机漏洞风险事件列表，按风险记录维度返回漏洞基础信息、实例信息、风险状态和最近扫描时间。
+                 * @param req DescribeHostVulRiskEventListRequest
+                 * @return DescribeHostVulRiskEventListOutcome
+                 */
+                DescribeHostVulRiskEventListOutcome DescribeHostVulRiskEventList(const Model::DescribeHostVulRiskEventListRequest &request);
+                void DescribeHostVulRiskEventListAsync(const Model::DescribeHostVulRiskEventListRequest& request, const DescribeHostVulRiskEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostVulRiskEventListOutcomeCallable DescribeHostVulRiskEventListCallable(const Model::DescribeHostVulRiskEventListRequest& request);
+
+                /**
                  *获取主机漏洞风险列表
                  * @param req DescribeHostVulRiskListRequest
                  * @return DescribeHostVulRiskListOutcome
@@ -7639,6 +7753,15 @@ namespace TencentCloud
                 DescribeHostVulRiskListOutcome DescribeHostVulRiskList(const Model::DescribeHostVulRiskListRequest &request);
                 void DescribeHostVulRiskListAsync(const Model::DescribeHostVulRiskListRequest& request, const DescribeHostVulRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeHostVulRiskListOutcomeCallable DescribeHostVulRiskListCallable(const Model::DescribeHostVulRiskListRequest& request);
+
+                /**
+                 *查询主机漏洞扫描状态，用于判断是否扫描过漏洞、首次漏洞扫描是否失败，以及首次扫描完成后的可修复漏洞状态。
+                 * @param req DescribeHostVulScanStatusRequest
+                 * @return DescribeHostVulScanStatusOutcome
+                 */
+                DescribeHostVulScanStatusOutcome DescribeHostVulScanStatus(const Model::DescribeHostVulScanStatusRequest &request);
+                void DescribeHostVulScanStatusAsync(const Model::DescribeHostVulScanStatusRequest& request, const DescribeHostVulScanStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostVulScanStatusOutcomeCallable DescribeHostVulScanStatusCallable(const Model::DescribeHostVulScanStatusRequest& request);
 
                 /**
                  *获取IaC检测文件列表
@@ -9381,6 +9504,15 @@ capi 层处理流程：
                 ModifyBanModeOutcomeCallable ModifyBanModeCallable(const Model::ModifyBanModeRequest& request);
 
                 /**
+                 *修改基线忽略策略
+                 * @param req ModifyBaselineIgnorePolicyRequest
+                 * @return ModifyBaselineIgnorePolicyOutcome
+                 */
+                ModifyBaselineIgnorePolicyOutcome ModifyBaselineIgnorePolicy(const Model::ModifyBaselineIgnorePolicyRequest &request);
+                void ModifyBaselineIgnorePolicyAsync(const Model::ModifyBaselineIgnorePolicyRequest& request, const ModifyBaselineIgnorePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBaselineIgnorePolicyOutcomeCallable ModifyBaselineIgnorePolicyCallable(const Model::ModifyBaselineIgnorePolicyRequest& request);
+
+                /**
                  *新建或编辑一条基线策略。Policy.ID 为 0 视为新建，非 0 视为编辑；新建/编辑时 Name 必填，CheckAssetType 与 Type 需符合 CheckAssetType / PolicyType 枚举。
                  * @param req ModifyBaselinePolicyRequest
                  * @return ModifyBaselinePolicyOutcome
@@ -9478,6 +9610,15 @@ capi 层处理流程：
                 ModifyCSIPRaspLicenseUnBindsOutcome ModifyCSIPRaspLicenseUnBinds(const Model::ModifyCSIPRaspLicenseUnBindsRequest &request);
                 void ModifyCSIPRaspLicenseUnBindsAsync(const Model::ModifyCSIPRaspLicenseUnBindsRequest& request, const ModifyCSIPRaspLicenseUnBindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCSIPRaspLicenseUnBindsOutcomeCallable ModifyCSIPRaspLicenseUnBindsCallable(const Model::ModifyCSIPRaspLicenseUnBindsRequest& request);
+
+                /**
+                 *修改集群审计日志状态
+                 * @param req ModifyClusterAuditLogStatusRequest
+                 * @return ModifyClusterAuditLogStatusOutcome
+                 */
+                ModifyClusterAuditLogStatusOutcome ModifyClusterAuditLogStatus(const Model::ModifyClusterAuditLogStatusRequest &request);
+                void ModifyClusterAuditLogStatusAsync(const Model::ModifyClusterAuditLogStatusRequest& request, const ModifyClusterAuditLogStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterAuditLogStatusOutcomeCallable ModifyClusterAuditLogStatusCallable(const Model::ModifyClusterAuditLogStatusRequest& request);
 
                 /**
                  *修改集群防护状态

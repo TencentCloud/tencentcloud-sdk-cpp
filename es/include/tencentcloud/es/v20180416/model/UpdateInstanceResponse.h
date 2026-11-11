@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单号
+                     * 获取<p>订单号</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DealName 订单号
+                     * @return DealName <p>订单号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单号
+                     * <p>订单号</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dealName;

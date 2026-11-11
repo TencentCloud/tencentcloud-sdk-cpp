@@ -34,7 +34,10 @@ HPCCluster::HPCCluster() :
     m_osNameHasBeenSet(false),
     m_schedulerVersionHasBeenSet(false),
     m_vPCCIDRBlockHasBeenSet(false),
-    m_confirmDeadlineHasBeenSet(false)
+    m_confirmDeadlineHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
+    m_isolateTimeHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -193,6 +196,36 @@ CoreInternalOutcome HPCCluster::Deserialize(const rapidjson::Value &value)
         m_confirmDeadlineHasBeenSet = true;
     }
 
+    if (value.HasMember("StatusReason") && !value["StatusReason"].IsNull())
+    {
+        if (!value["StatusReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HPCCluster.StatusReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusReason = string(value["StatusReason"].GetString());
+        m_statusReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolateTime") && !value["IsolateTime"].IsNull())
+    {
+        if (!value["IsolateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HPCCluster.IsolateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateTime = string(value["IsolateTime"].GetString());
+        m_isolateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HPCCluster.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +350,30 @@ void HPCCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ConfirmDeadline";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_confirmDeadline.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_statusReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +601,53 @@ void HPCCluster::SetConfirmDeadline(const string& _confirmDeadline)
 bool HPCCluster::ConfirmDeadlineHasBeenSet() const
 {
     return m_confirmDeadlineHasBeenSet;
+}
+
+string HPCCluster::GetStatusReason() const
+{
+    return m_statusReason;
+}
+
+void HPCCluster::SetStatusReason(const string& _statusReason)
+{
+    m_statusReason = _statusReason;
+    m_statusReasonHasBeenSet = true;
+}
+
+bool HPCCluster::StatusReasonHasBeenSet() const
+{
+    return m_statusReasonHasBeenSet;
+}
+
+string HPCCluster::GetIsolateTime() const
+{
+    return m_isolateTime;
+}
+
+void HPCCluster::SetIsolateTime(const string& _isolateTime)
+{
+    m_isolateTime = _isolateTime;
+    m_isolateTimeHasBeenSet = true;
+}
+
+bool HPCCluster::IsolateTimeHasBeenSet() const
+{
+    return m_isolateTimeHasBeenSet;
+}
+
+string HPCCluster::GetMessage() const
+{
+    return m_message;
+}
+
+void HPCCluster::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool HPCCluster::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 

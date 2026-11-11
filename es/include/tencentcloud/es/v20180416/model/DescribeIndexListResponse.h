@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取索引元数据字段
+                     * 获取<p>索引元数据字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IndexMetaFields 索引元数据字段
+                     * @return IndexMetaFields <p>索引元数据字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool IndexMetaFieldsHasBeenSet() const;
 
                     /**
-                     * 获取查询总数
+                     * 获取<p>查询总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 查询总数
+                     * @return TotalCount <p>查询总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 索引元数据字段
+                     * <p>索引元数据字段</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IndexMetaField> m_indexMetaFields;
                     bool m_indexMetaFieldsHasBeenSet;
 
                     /**
-                     * 查询总数
+                     * <p>查询总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;

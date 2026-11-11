@@ -23,7 +23,11 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Es::V20180416::Model;
 using namespace std;
 
-DeleteIndexResponse::DeleteIndexResponse()
+DeleteIndexResponse::DeleteIndexResponse() :
+    m_totalCountHasBeenSet(false),
+    m_successCountHasBeenSet(false),
+    m_failedCountHasBeenSet(false),
+    m_resultsHasBeenSet(false)
 {
 }
 
@@ -61,6 +65,56 @@ CoreInternalOutcome DeleteIndexResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuccessCount") && !rsp["SuccessCount"].IsNull())
+    {
+        if (!rsp["SuccessCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuccessCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_successCount = rsp["SuccessCount"].GetInt64();
+        m_successCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FailedCount") && !rsp["FailedCount"].IsNull())
+    {
+        if (!rsp["FailedCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FailedCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failedCount = rsp["FailedCount"].GetInt64();
+        m_failedCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Results") && !rsp["Results"].IsNull())
+    {
+        if (!rsp["Results"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Results` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Results"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BatchIndexResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_results.push_back(item);
+        }
+        m_resultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +124,45 @@ string DeleteIndexResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_successCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_successCount, allocator);
+    }
+
+    if (m_failedCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failedCount, allocator);
+    }
+
+    if (m_resultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Results";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_results.begin(); itr != m_results.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +175,45 @@ string DeleteIndexResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DeleteIndexResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DeleteIndexResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+int64_t DeleteIndexResponse::GetSuccessCount() const
+{
+    return m_successCount;
+}
+
+bool DeleteIndexResponse::SuccessCountHasBeenSet() const
+{
+    return m_successCountHasBeenSet;
+}
+
+int64_t DeleteIndexResponse::GetFailedCount() const
+{
+    return m_failedCount;
+}
+
+bool DeleteIndexResponse::FailedCountHasBeenSet() const
+{
+    return m_failedCountHasBeenSet;
+}
+
+vector<BatchIndexResult> DeleteIndexResponse::GetResults() const
+{
+    return m_results;
+}
+
+bool DeleteIndexResponse::ResultsHasBeenSet() const
+{
+    return m_resultsHasBeenSet;
+}
 
 

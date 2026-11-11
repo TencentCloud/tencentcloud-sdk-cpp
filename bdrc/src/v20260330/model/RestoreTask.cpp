@@ -40,7 +40,10 @@ RestoreTask::RestoreTask() :
     m_endTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_failReasonHasBeenSet(false),
-    m_conflictStrategyHasBeenSet(false)
+    m_conflictStrategyHasBeenSet(false),
+    m_isOriginalPathHasBeenSet(false),
+    m_cloudResourceIdHasBeenSet(false),
+    m_targetCloudResourceIdHasBeenSet(false)
 {
 }
 
@@ -252,6 +255,36 @@ CoreInternalOutcome RestoreTask::Deserialize(const rapidjson::Value &value)
         m_conflictStrategyHasBeenSet = true;
     }
 
+    if (value.HasMember("IsOriginalPath") && !value["IsOriginalPath"].IsNull())
+    {
+        if (!value["IsOriginalPath"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RestoreTask.IsOriginalPath` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOriginalPath = value["IsOriginalPath"].GetBool();
+        m_isOriginalPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudResourceId") && !value["CloudResourceId"].IsNull())
+    {
+        if (!value["CloudResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RestoreTask.CloudResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudResourceId = string(value["CloudResourceId"].GetString());
+        m_cloudResourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetCloudResourceId") && !value["TargetCloudResourceId"].IsNull())
+    {
+        if (!value["TargetCloudResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RestoreTask.TargetCloudResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetCloudResourceId = string(value["TargetCloudResourceId"].GetString());
+        m_targetCloudResourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +455,30 @@ void RestoreTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ConflictStrategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_conflictStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOriginalPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOriginalPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOriginalPath, allocator);
+    }
+
+    if (m_cloudResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cloudResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetCloudResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetCloudResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetCloudResourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -745,5 +802,53 @@ void RestoreTask::SetConflictStrategy(const string& _conflictStrategy)
 bool RestoreTask::ConflictStrategyHasBeenSet() const
 {
     return m_conflictStrategyHasBeenSet;
+}
+
+bool RestoreTask::GetIsOriginalPath() const
+{
+    return m_isOriginalPath;
+}
+
+void RestoreTask::SetIsOriginalPath(const bool& _isOriginalPath)
+{
+    m_isOriginalPath = _isOriginalPath;
+    m_isOriginalPathHasBeenSet = true;
+}
+
+bool RestoreTask::IsOriginalPathHasBeenSet() const
+{
+    return m_isOriginalPathHasBeenSet;
+}
+
+string RestoreTask::GetCloudResourceId() const
+{
+    return m_cloudResourceId;
+}
+
+void RestoreTask::SetCloudResourceId(const string& _cloudResourceId)
+{
+    m_cloudResourceId = _cloudResourceId;
+    m_cloudResourceIdHasBeenSet = true;
+}
+
+bool RestoreTask::CloudResourceIdHasBeenSet() const
+{
+    return m_cloudResourceIdHasBeenSet;
+}
+
+string RestoreTask::GetTargetCloudResourceId() const
+{
+    return m_targetCloudResourceId;
+}
+
+void RestoreTask::SetTargetCloudResourceId(const string& _targetCloudResourceId)
+{
+    m_targetCloudResourceId = _targetCloudResourceId;
+    m_targetCloudResourceIdHasBeenSet = true;
+}
+
+bool RestoreTask::TargetCloudResourceIdHasBeenSet() const
+{
+    return m_targetCloudResourceIdHasBeenSet;
 }
 

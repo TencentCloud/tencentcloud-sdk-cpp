@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool IndexPhraseHasBeenSet() const;
 
+                    /**
+                     * 获取<p>索引列表</p>
+                     * @return IndexNames <p>索引列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetIndexNames() const;
+
+                    /**
+                     * 设置<p>索引列表</p>
+                     * @param _indexNames <p>索引列表</p>
+                     * 
+                     */
+                    void SetIndexNames(const std::vector<std::string>& _indexNames);
+
+                    /**
+                     * 判断参数 IndexNames 是否已赋值
+                     * @return IndexNames 是否已赋值
+                     * 
+                     */
+                    bool IndexNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_indexPhrase;
                     bool m_indexPhraseHasBeenSet;
+
+                    /**
+                     * <p>索引列表</p>
+                     */
+                    std::vector<std::string> m_indexNames;
+                    bool m_indexNamesHasBeenSet;
 
                 };
             }

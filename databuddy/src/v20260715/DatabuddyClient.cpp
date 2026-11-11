@@ -1790,6 +1790,56 @@ DatabuddyClient::GetSchemaOutcomeCallable DatabuddyClient::GetSchemaCallable(con
     return prom->get_future();
 }
 
+DatabuddyClient::GetSessionStatusOutcome DatabuddyClient::GetSessionStatus(const GetSessionStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetSessionStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetSessionStatusResponse rsp = GetSessionStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetSessionStatusOutcome(rsp);
+        else
+            return GetSessionStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return GetSessionStatusOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::GetSessionStatusAsync(const GetSessionStatusRequest& request, const GetSessionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetSessionStatusRequest&;
+    using Resp = GetSessionStatusResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetSessionStatus", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::GetSessionStatusOutcomeCallable DatabuddyClient::GetSessionStatusCallable(const GetSessionStatusRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetSessionStatusOutcome>>();
+    GetSessionStatusAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const GetSessionStatusRequest&,
+        GetSessionStatusOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::GetTableOutcome DatabuddyClient::GetTable(const GetTableRequest &request)
 {
     auto outcome = MakeRequest(request, "GetTable");
@@ -3482,6 +3532,56 @@ DatabuddyClient::ListWorkspacesOutcomeCallable DatabuddyClient::ListWorkspacesCa
         const DatabuddyClient*,
         const ListWorkspacesRequest&,
         ListWorkspacesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::ReadProductJsonOutcome DatabuddyClient::ReadProductJson(const ReadProductJsonRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReadProductJson");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReadProductJsonResponse rsp = ReadProductJsonResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReadProductJsonOutcome(rsp);
+        else
+            return ReadProductJsonOutcome(o.GetError());
+    }
+    else
+    {
+        return ReadProductJsonOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ReadProductJsonAsync(const ReadProductJsonRequest& request, const ReadProductJsonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ReadProductJsonRequest&;
+    using Resp = ReadProductJsonResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ReadProductJson", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ReadProductJsonOutcomeCallable DatabuddyClient::ReadProductJsonCallable(const ReadProductJsonRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ReadProductJsonOutcome>>();
+    ReadProductJsonAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ReadProductJsonRequest&,
+        ReadProductJsonOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

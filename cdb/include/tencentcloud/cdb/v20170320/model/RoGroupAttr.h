@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取RO 组名称。
-                     * @return RoGroupName RO 组名称。
+                     * 获取<p>RO 组名称。</p>
+                     * @return RoGroupName <p>RO 组名称。</p>
                      * 
                      */
                     std::string GetRoGroupName() const;
 
                     /**
-                     * 设置RO 组名称。
-                     * @param _roGroupName RO 组名称。
+                     * 设置<p>RO 组名称。</p>
+                     * @param _roGroupName <p>RO 组名称。</p>
                      * 
                      */
                     void SetRoGroupName(const std::string& _roGroupName);
@@ -68,19 +68,15 @@ namespace TencentCloud
                     bool RoGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。
-注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。
-                     * @return RoMaxDelayTime RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。
-注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。
+                     * 获取<p>RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。<br>注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。</p>
+                     * @return RoMaxDelayTime <p>RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。<br>注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。</p>
                      * 
                      */
                     int64_t GetRoMaxDelayTime() const;
 
                     /**
-                     * 设置RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。
-注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。
-                     * @param _roMaxDelayTime RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。
-注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。
+                     * 设置<p>RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。<br>注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。</p>
+                     * @param _roMaxDelayTime <p>RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。<br>注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。</p>
                      * 
                      */
                     void SetRoMaxDelayTime(const int64_t& _roMaxDelayTime);
@@ -93,15 +89,15 @@ namespace TencentCloud
                     bool RoMaxDelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。
-                     * @return RoOfflineDelay 是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。
+                     * 获取<p>是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。</p>
+                     * @return RoOfflineDelay <p>是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。</p>
                      * 
                      */
                     int64_t GetRoOfflineDelay() const;
 
                     /**
-                     * 设置是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。
-                     * @param _roOfflineDelay 是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。
+                     * 设置<p>是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。</p>
+                     * @param _roOfflineDelay <p>是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。</p>
                      * 
                      */
                     void SetRoOfflineDelay(const int64_t& _roOfflineDelay);
@@ -114,19 +110,15 @@ namespace TencentCloud
                     bool RoOfflineDelayHasBeenSet() const;
 
                     /**
-                     * 获取最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。
-注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
-                     * @return MinRoInGroup 最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。
-注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
+                     * 获取<p>最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。<br>注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。</p>
+                     * @return MinRoInGroup <p>最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。<br>注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。</p>
                      * 
                      */
                     int64_t GetMinRoInGroup() const;
 
                     /**
-                     * 设置最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。
-注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
-                     * @param _minRoInGroup 最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。
-注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
+                     * 设置<p>最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。<br>注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。</p>
+                     * @param _minRoInGroup <p>最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。<br>注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。</p>
                      * 
                      */
                     void SetMinRoInGroup(const int64_t& _minRoInGroup);
@@ -139,15 +131,15 @@ namespace TencentCloud
                     bool MinRoInGroupHasBeenSet() const;
 
                     /**
-                     * 获取权重模式。支持值包括："system" - 系统自动分配； "custom" - 用户自定义设置。注意，若设置 "custom" 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。
-                     * @return WeightMode 权重模式。支持值包括："system" - 系统自动分配； "custom" - 用户自定义设置。注意，若设置 "custom" 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。
+                     * 获取<p>权重模式。支持值包括：&quot;system&quot; - 系统自动分配； &quot;custom&quot; - 用户自定义设置。注意，若设置 &quot;custom&quot; 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。</p>
+                     * @return WeightMode <p>权重模式。支持值包括：&quot;system&quot; - 系统自动分配； &quot;custom&quot; - 用户自定义设置。注意，若设置 &quot;custom&quot; 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。</p>
                      * 
                      */
                     std::string GetWeightMode() const;
 
                     /**
-                     * 设置权重模式。支持值包括："system" - 系统自动分配； "custom" - 用户自定义设置。注意，若设置 "custom" 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。
-                     * @param _weightMode 权重模式。支持值包括："system" - 系统自动分配； "custom" - 用户自定义设置。注意，若设置 "custom" 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。
+                     * 设置<p>权重模式。支持值包括：&quot;system&quot; - 系统自动分配； &quot;custom&quot; - 用户自定义设置。注意，若设置 &quot;custom&quot; 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。</p>
+                     * @param _weightMode <p>权重模式。支持值包括：&quot;system&quot; - 系统自动分配； &quot;custom&quot; - 用户自定义设置。注意，若设置 &quot;custom&quot; 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。</p>
                      * 
                      */
                     void SetWeightMode(const std::string& _weightMode);
@@ -160,15 +152,15 @@ namespace TencentCloud
                     bool WeightModeHasBeenSet() const;
 
                     /**
-                     * 获取延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。
-                     * @return ReplicationDelayTime 延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。
+                     * 获取<p>延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。</p>
+                     * @return ReplicationDelayTime <p>延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。</p>
                      * 
                      */
                     int64_t GetReplicationDelayTime() const;
 
                     /**
-                     * 设置延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。
-                     * @param _replicationDelayTime 延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。
+                     * 设置<p>延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。</p>
+                     * @param _replicationDelayTime <p>延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。</p>
                      * 
                      */
                     void SetReplicationDelayTime(const int64_t& _replicationDelayTime);
@@ -183,39 +175,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * RO 组名称。
+                     * <p>RO 组名称。</p>
                      */
                     std::string m_roGroupName;
                     bool m_roGroupNameHasBeenSet;
 
                     /**
-                     * RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。
-注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。
+                     * <p>RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。<br>注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。</p>
                      */
                     int64_t m_roMaxDelayTime;
                     bool m_roMaxDelayTimeHasBeenSet;
 
                     /**
-                     * 是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。
+                     * <p>是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。</p>
                      */
                     int64_t m_roOfflineDelay;
                     bool m_roOfflineDelayHasBeenSet;
 
                     /**
-                     * 最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。
-注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。
+                     * <p>最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。<br>注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。</p>
                      */
                     int64_t m_minRoInGroup;
                     bool m_minRoInGroupHasBeenSet;
 
                     /**
-                     * 权重模式。支持值包括："system" - 系统自动分配； "custom" - 用户自定义设置。注意，若设置 "custom" 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。
+                     * <p>权重模式。支持值包括：&quot;system&quot; - 系统自动分配； &quot;custom&quot; - 用户自定义设置。注意，若设置 &quot;custom&quot; 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。</p>
                      */
                     std::string m_weightMode;
                     bool m_weightModeHasBeenSet;
 
                     /**
-                     * 延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。
+                     * <p>延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。</p>
                      */
                     int64_t m_replicationDelayTime;
                     bool m_replicationDelayTimeHasBeenSet;

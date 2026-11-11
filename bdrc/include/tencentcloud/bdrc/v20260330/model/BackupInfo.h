@@ -751,18 +751,18 @@ namespace TencentCloud
                     bool CloudResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+                     * 获取<p>产品存储类型。CFS 资源返回文件系统存储类型；非 CFS 资源无存储类型，返回资源类型标识。</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li><li>CVM_AGENT： CVM 资源（非 CFS 资源时返回）</li><li>COS_AGENT： COS 资源（非 CFS 资源时返回）</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProductType <p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+                     * @return ProductType <p>产品存储类型。CFS 资源返回文件系统存储类型；非 CFS 资源无存储类型，返回资源类型标识。</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li><li>CVM_AGENT： CVM 资源（非 CFS 资源时返回）</li><li>COS_AGENT： COS 资源（非 CFS 资源时返回）</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductType() const;
 
                     /**
-                     * 设置<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+                     * 设置<p>产品存储类型。CFS 资源返回文件系统存储类型；非 CFS 资源无存储类型，返回资源类型标识。</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li><li>CVM_AGENT： CVM 资源（非 CFS 资源时返回）</li><li>COS_AGENT： COS 资源（非 CFS 资源时返回）</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _productType <p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+                     * @param _productType <p>产品存储类型。CFS 资源返回文件系统存储类型；非 CFS 资源无存储类型，返回资源类型标识。</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li><li>CVM_AGENT： CVM 资源（非 CFS 资源时返回）</li><li>COS_AGENT： COS 资源（非 CFS 资源时返回）</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -774,6 +774,56 @@ namespace TencentCloud
                      * 
                      */
                     bool ProductTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备份完成量</p><p>单位：MB</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupCompletedSize <p>备份完成量</p><p>单位：MB</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBackupCompletedSize() const;
+
+                    /**
+                     * 设置<p>备份完成量</p><p>单位：MB</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _backupCompletedSize <p>备份完成量</p><p>单位：MB</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBackupCompletedSize(const int64_t& _backupCompletedSize);
+
+                    /**
+                     * 判断参数 BackupCompletedSize 是否已赋值
+                     * @return BackupCompletedSize 是否已赋值
+                     * 
+                     */
+                    bool BackupCompletedSizeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备份完成量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupCompletedSizeFormatted <p>备份完成量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBackupCompletedSizeFormatted() const;
+
+                    /**
+                     * 设置<p>备份完成量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _backupCompletedSizeFormatted <p>备份完成量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBackupCompletedSizeFormatted(const std::string& _backupCompletedSizeFormatted);
+
+                    /**
+                     * 判断参数 BackupCompletedSizeFormatted 是否已赋值
+                     * @return BackupCompletedSizeFormatted 是否已赋值
+                     * 
+                     */
+                    bool BackupCompletedSizeFormattedHasBeenSet() const;
 
                 private:
 
@@ -978,11 +1028,25 @@ namespace TencentCloud
                     bool m_cloudResourceIdHasBeenSet;
 
                     /**
-                     * <p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>
+                     * <p>产品存储类型。CFS 资源返回文件系统存储类型；非 CFS 资源无存储类型，返回资源类型标识。</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li><li>CVM_AGENT： CVM 资源（非 CFS 资源时返回）</li><li>COS_AGENT： COS 资源（非 CFS 资源时返回）</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productType;
                     bool m_productTypeHasBeenSet;
+
+                    /**
+                     * <p>备份完成量</p><p>单位：MB</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_backupCompletedSize;
+                    bool m_backupCompletedSizeHasBeenSet;
+
+                    /**
+                     * <p>备份完成量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_backupCompletedSizeFormatted;
+                    bool m_backupCompletedSizeFormattedHasBeenSet;
 
                 };
             }

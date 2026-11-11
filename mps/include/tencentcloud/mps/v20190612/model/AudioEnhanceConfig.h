@@ -29,6 +29,8 @@
 #include <tencentcloud/mps/v20190612/model/VolumeBalanceConfig.h>
 #include <tencentcloud/mps/v20190612/model/AudioBeautifyConfig.h>
 #include <tencentcloud/mps/v20190612/model/AudioEnhanceEditConfig.h>
+#include <tencentcloud/mps/v20190612/model/AudioSRConfig.h>
+#include <tencentcloud/mps/v20190612/model/SpatialAudioConfig.h>
 
 
 namespace TencentCloud
@@ -176,6 +178,56 @@ namespace TencentCloud
                      */
                     bool AudioEnhanceEditHasBeenSet() const;
 
+                    /**
+                     * 获取<p>音频超分配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AudioSR <p>音频超分配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AudioSRConfig GetAudioSR() const;
+
+                    /**
+                     * 设置<p>音频超分配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _audioSR <p>音频超分配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAudioSR(const AudioSRConfig& _audioSR);
+
+                    /**
+                     * 判断参数 AudioSR 是否已赋值
+                     * @return AudioSR 是否已赋值
+                     * 
+                     */
+                    bool AudioSRHasBeenSet() const;
+
+                    /**
+                     * 获取<p>空间音频配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpatialAudio <p>空间音频配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SpatialAudioConfig GetSpatialAudio() const;
+
+                    /**
+                     * 设置<p>空间音频配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _spatialAudio <p>空间音频配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSpatialAudio(const SpatialAudioConfig& _spatialAudio);
+
+                    /**
+                     * 判断参数 SpatialAudio 是否已赋值
+                     * @return SpatialAudio 是否已赋值
+                     * 
+                     */
+                    bool SpatialAudioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +264,20 @@ namespace TencentCloud
                      */
                     AudioEnhanceEditConfig m_audioEnhanceEdit;
                     bool m_audioEnhanceEditHasBeenSet;
+
+                    /**
+                     * <p>音频超分配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AudioSRConfig m_audioSR;
+                    bool m_audioSRHasBeenSet;
+
+                    /**
+                     * <p>空间音频配置。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SpatialAudioConfig m_spatialAudio;
+                    bool m_spatialAudioHasBeenSet;
 
                 };
             }

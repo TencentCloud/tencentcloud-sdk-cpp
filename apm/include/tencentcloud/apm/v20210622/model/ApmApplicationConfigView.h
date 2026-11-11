@@ -745,42 +745,42 @@ namespace TencentCloud
                     /**
                      * 获取<p>是否开启JNDI注入检测</p>
                      * @return IsJndiInjectionAnalysis <p>是否开启JNDI注入检测</p>
-                     * 
+                     * @deprecated
                      */
                     int64_t GetIsJndiInjectionAnalysis() const;
 
                     /**
                      * 设置<p>是否开启JNDI注入检测</p>
                      * @param _isJndiInjectionAnalysis <p>是否开启JNDI注入检测</p>
-                     * 
+                     * @deprecated
                      */
                     void SetIsJndiInjectionAnalysis(const int64_t& _isJndiInjectionAnalysis);
 
                     /**
                      * 判断参数 IsJndiInjectionAnalysis 是否已赋值
                      * @return IsJndiInjectionAnalysis 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsJndiInjectionAnalysisHasBeenSet() const;
 
                     /**
                      * 获取<p>是否开启JNI注入检测</p>
                      * @return IsJniInjectionAnalysis <p>是否开启JNI注入检测</p>
-                     * 
+                     * @deprecated
                      */
                     int64_t GetIsJniInjectionAnalysis() const;
 
                     /**
                      * 设置<p>是否开启JNI注入检测</p>
                      * @param _isJniInjectionAnalysis <p>是否开启JNI注入检测</p>
-                     * 
+                     * @deprecated
                      */
                     void SetIsJniInjectionAnalysis(const int64_t& _isJniInjectionAnalysis);
 
                     /**
                      * 判断参数 IsJniInjectionAnalysis 是否已赋值
                      * @return IsJniInjectionAnalysis 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsJniInjectionAnalysisHasBeenSet() const;
 
@@ -1120,6 +1120,48 @@ namespace TencentCloud
                      */
                     bool UseDefaultFuseConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否开启JNDI注入检测</p>
+                     * @return IsJNDIInjectionAnalysis <p>是否开启JNDI注入检测</p>
+                     * 
+                     */
+                    std::string GetIsJNDIInjectionAnalysis() const;
+
+                    /**
+                     * 设置<p>是否开启JNDI注入检测</p>
+                     * @param _isJNDIInjectionAnalysis <p>是否开启JNDI注入检测</p>
+                     * 
+                     */
+                    void SetIsJNDIInjectionAnalysis(const std::string& _isJNDIInjectionAnalysis);
+
+                    /**
+                     * 判断参数 IsJNDIInjectionAnalysis 是否已赋值
+                     * @return IsJNDIInjectionAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsJNDIInjectionAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启JNI注入检测</p>
+                     * @return IsJNIInjectionAnalysis <p>是否开启JNI注入检测</p>
+                     * 
+                     */
+                    std::string GetIsJNIInjectionAnalysis() const;
+
+                    /**
+                     * 设置<p>是否开启JNI注入检测</p>
+                     * @param _isJNIInjectionAnalysis <p>是否开启JNI注入检测</p>
+                     * 
+                     */
+                    void SetIsJNIInjectionAnalysis(const std::string& _isJNIInjectionAnalysis);
+
+                    /**
+                     * 判断参数 IsJNIInjectionAnalysis 是否已赋值
+                     * @return IsJNIInjectionAnalysis 是否已赋值
+                     * 
+                     */
+                    bool IsJNIInjectionAnalysisHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1427,6 +1469,18 @@ namespace TencentCloud
                      */
                     bool m_useDefaultFuseConfig;
                     bool m_useDefaultFuseConfigHasBeenSet;
+
+                    /**
+                     * <p>是否开启JNDI注入检测</p>
+                     */
+                    std::string m_isJNDIInjectionAnalysis;
+                    bool m_isJNDIInjectionAnalysisHasBeenSet;
+
+                    /**
+                     * <p>是否开启JNI注入检测</p>
+                     */
+                    std::string m_isJNIInjectionAnalysis;
+                    bool m_isJNIInjectionAnalysisHasBeenSet;
 
                 };
             }

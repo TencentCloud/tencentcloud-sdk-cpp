@@ -653,6 +653,27 @@ namespace TencentCloud
                      */
                     bool FourthZoneHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否使用最新小版本号进行克隆。</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 否</li></ul><p>默认值：0</p><p>默认和源实例的小版本号对齐</p>
+                     * @return UseLatestMinorVersion <p>是否使用最新小版本号进行克隆。</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 否</li></ul><p>默认值：0</p><p>默认和源实例的小版本号对齐</p>
+                     * 
+                     */
+                    int64_t GetUseLatestMinorVersion() const;
+
+                    /**
+                     * 设置<p>是否使用最新小版本号进行克隆。</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 否</li></ul><p>默认值：0</p><p>默认和源实例的小版本号对齐</p>
+                     * @param _useLatestMinorVersion <p>是否使用最新小版本号进行克隆。</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 否</li></ul><p>默认值：0</p><p>默认和源实例的小版本号对齐</p>
+                     * 
+                     */
+                    void SetUseLatestMinorVersion(const int64_t& _useLatestMinorVersion);
+
+                    /**
+                     * 判断参数 UseLatestMinorVersion 是否已赋值
+                     * @return UseLatestMinorVersion 是否已赋值
+                     * 
+                     */
+                    bool UseLatestMinorVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -828,6 +849,12 @@ namespace TencentCloud
                      */
                     std::string m_fourthZone;
                     bool m_fourthZoneHasBeenSet;
+
+                    /**
+                     * <p>是否使用最新小版本号进行克隆。</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 否</li></ul><p>默认值：0</p><p>默认和源实例的小版本号对齐</p>
+                     */
+                    int64_t m_useLatestMinorVersion;
+                    bool m_useLatestMinorVersionHasBeenSet;
 
                 };
             }

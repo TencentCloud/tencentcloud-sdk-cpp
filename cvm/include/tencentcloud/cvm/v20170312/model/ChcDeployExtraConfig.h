@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取minos类型。是使用腾讯云的minios，还是客户自己的minios。
-                     * @return MiniOsType minos类型。是使用腾讯云的minios，还是客户自己的minios。
+                     * 获取<p>MiniOS类型。是使用腾讯云的MiniOS，还是客户私有的MiniOS。</p><p>枚举值：</p><ul><li>public： 腾讯云的MiniOS。</li><li>private： 客户私有的MiniOS。</li></ul>
+                     * @return MiniOsType <p>MiniOS类型。是使用腾讯云的MiniOS，还是客户私有的MiniOS。</p><p>枚举值：</p><ul><li>public： 腾讯云的MiniOS。</li><li>private： 客户私有的MiniOS。</li></ul>
                      * 
                      */
                     std::string GetMiniOsType() const;
 
                     /**
-                     * 设置minos类型。是使用腾讯云的minios，还是客户自己的minios。
-                     * @param _miniOsType minos类型。是使用腾讯云的minios，还是客户自己的minios。
+                     * 设置<p>MiniOS类型。是使用腾讯云的MiniOS，还是客户私有的MiniOS。</p><p>枚举值：</p><ul><li>public： 腾讯云的MiniOS。</li><li>private： 客户私有的MiniOS。</li></ul>
+                     * @param _miniOsType <p>MiniOS类型。是使用腾讯云的MiniOS，还是客户私有的MiniOS。</p><p>枚举值：</p><ul><li>public： 腾讯云的MiniOS。</li><li>private： 客户私有的MiniOS。</li></ul>
                      * 
                      */
                     void SetMiniOsType(const std::string& _miniOsType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool MiniOsTypeHasBeenSet() const;
 
                     /**
-                     * 获取服务器的架构和启动方式。取值为x86_legacy, arm_uefi。
-                     * @return BootType 服务器的架构和启动方式。取值为x86_legacy, arm_uefi。
+                     * 获取<p>服务器的架构和启动方式。</p><p>枚举值：</p><ul><li>x86_legacy： X86架构、Legacy启动模式。</li><li>x86_uefi： X86架构、UEFI启动模式。</li><li>arm_uefi： ARM架构，UEFI启动模式。</li></ul>
+                     * @return BootType <p>服务器的架构和启动方式。</p><p>枚举值：</p><ul><li>x86_legacy： X86架构、Legacy启动模式。</li><li>x86_uefi： X86架构、UEFI启动模式。</li><li>arm_uefi： ARM架构，UEFI启动模式。</li></ul>
                      * 
                      */
                     std::string GetBootType() const;
 
                     /**
-                     * 设置服务器的架构和启动方式。取值为x86_legacy, arm_uefi。
-                     * @param _bootType 服务器的架构和启动方式。取值为x86_legacy, arm_uefi。
+                     * 设置<p>服务器的架构和启动方式。</p><p>枚举值：</p><ul><li>x86_legacy： X86架构、Legacy启动模式。</li><li>x86_uefi： X86架构、UEFI启动模式。</li><li>arm_uefi： ARM架构，UEFI启动模式。</li></ul>
+                     * @param _bootType <p>服务器的架构和启动方式。</p><p>枚举值：</p><ul><li>x86_legacy： X86架构、Legacy启动模式。</li><li>x86_uefi： X86架构、UEFI启动模式。</li><li>arm_uefi： ARM架构，UEFI启动模式。</li></ul>
                      * 
                      */
                     void SetBootType(const std::string& _bootType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BootTypeHasBeenSet() const;
 
                     /**
-                     * 获取PXE使用的引导文件。默认为pxelinux.0。
-                     * @return BootFile PXE使用的引导文件。默认为pxelinux.0。
+                     * 获取<p>PXE使用的引导文件。默认为pxelinux.0。</p>
+                     * @return BootFile <p>PXE使用的引导文件。默认为pxelinux.0。</p>
                      * 
                      */
                     std::string GetBootFile() const;
 
                     /**
-                     * 设置PXE使用的引导文件。默认为pxelinux.0。
-                     * @param _bootFile PXE使用的引导文件。默认为pxelinux.0。
+                     * 设置<p>PXE使用的引导文件。默认为pxelinux.0。</p>
+                     * @param _bootFile <p>PXE使用的引导文件。默认为pxelinux.0。</p>
                      * 
                      */
                     void SetBootFile(const std::string& _bootFile);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool BootFileHasBeenSet() const;
 
                     /**
-                     * 获取tftp服务器的ip地址。
-                     * @return NextServerAddress tftp服务器的ip地址。
+                     * 获取<p>TFTP服务器的IP地址。</p>
+                     * @return NextServerAddress <p>TFTP服务器的IP地址。</p>
                      * 
                      */
                     std::string GetNextServerAddress() const;
 
                     /**
-                     * 设置tftp服务器的ip地址。
-                     * @param _nextServerAddress tftp服务器的ip地址。
+                     * 设置<p>TFTP服务器的IP地址。</p>
+                     * @param _nextServerAddress <p>TFTP服务器的IP地址。</p>
                      * 
                      */
                     void SetNextServerAddress(const std::string& _nextServerAddress);
@@ -133,25 +133,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * minos类型。是使用腾讯云的minios，还是客户自己的minios。
+                     * <p>MiniOS类型。是使用腾讯云的MiniOS，还是客户私有的MiniOS。</p><p>枚举值：</p><ul><li>public： 腾讯云的MiniOS。</li><li>private： 客户私有的MiniOS。</li></ul>
                      */
                     std::string m_miniOsType;
                     bool m_miniOsTypeHasBeenSet;
 
                     /**
-                     * 服务器的架构和启动方式。取值为x86_legacy, arm_uefi。
+                     * <p>服务器的架构和启动方式。</p><p>枚举值：</p><ul><li>x86_legacy： X86架构、Legacy启动模式。</li><li>x86_uefi： X86架构、UEFI启动模式。</li><li>arm_uefi： ARM架构，UEFI启动模式。</li></ul>
                      */
                     std::string m_bootType;
                     bool m_bootTypeHasBeenSet;
 
                     /**
-                     * PXE使用的引导文件。默认为pxelinux.0。
+                     * <p>PXE使用的引导文件。默认为pxelinux.0。</p>
                      */
                     std::string m_bootFile;
                     bool m_bootFileHasBeenSet;
 
                     /**
-                     * tftp服务器的ip地址。
+                     * <p>TFTP服务器的IP地址。</p>
                      */
                     std::string m_nextServerAddress;
                     bool m_nextServerAddressHasBeenSet;

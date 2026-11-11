@@ -51,7 +51,8 @@ CreateCloneInstanceRequest::CreateCloneInstanceRequest() :
     m_specifiedSubBackupIdHasBeenSet(false),
     m_masterZoneHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_fourthZoneHasBeenSet(false)
+    m_fourthZoneHasBeenSet(false),
+    m_useLatestMinorVersionHasBeenSet(false)
 {
 }
 
@@ -305,6 +306,14 @@ string CreateCloneInstanceRequest::ToJsonString() const
         string key = "FourthZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fourthZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useLatestMinorVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseLatestMinorVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useLatestMinorVersion, allocator);
     }
 
 
@@ -777,6 +786,22 @@ void CreateCloneInstanceRequest::SetFourthZone(const string& _fourthZone)
 bool CreateCloneInstanceRequest::FourthZoneHasBeenSet() const
 {
     return m_fourthZoneHasBeenSet;
+}
+
+int64_t CreateCloneInstanceRequest::GetUseLatestMinorVersion() const
+{
+    return m_useLatestMinorVersion;
+}
+
+void CreateCloneInstanceRequest::SetUseLatestMinorVersion(const int64_t& _useLatestMinorVersion)
+{
+    m_useLatestMinorVersion = _useLatestMinorVersion;
+    m_useLatestMinorVersionHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::UseLatestMinorVersionHasBeenSet() const
+{
+    return m_useLatestMinorVersionHasBeenSet;
 }
 
 

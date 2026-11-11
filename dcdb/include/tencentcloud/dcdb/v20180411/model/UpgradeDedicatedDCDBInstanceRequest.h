@@ -234,6 +234,48 @@ namespace TencentCloud
                      */
                     bool SwitchIntervalHasBeenSet() const;
 
+                    /**
+                     * 获取<p>主节点所在机器，类似svr-xxx</p>
+                     * @return MasterHostId <p>主节点所在机器，类似svr-xxx</p>
+                     * 
+                     */
+                    std::string GetMasterHostId() const;
+
+                    /**
+                     * 设置<p>主节点所在机器，类似svr-xxx</p>
+                     * @param _masterHostId <p>主节点所在机器，类似svr-xxx</p>
+                     * 
+                     */
+                    void SetMasterHostId(const std::string& _masterHostId);
+
+                    /**
+                     * 判断参数 MasterHostId 是否已赋值
+                     * @return MasterHostId 是否已赋值
+                     * 
+                     */
+                    bool MasterHostIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备节点所在机器，类似[svr-xxx1,svr-xxx2]</p>
+                     * @return SlaveHostIds <p>备节点所在机器，类似[svr-xxx1,svr-xxx2]</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSlaveHostIds() const;
+
+                    /**
+                     * 设置<p>备节点所在机器，类似[svr-xxx1,svr-xxx2]</p>
+                     * @param _slaveHostIds <p>备节点所在机器，类似[svr-xxx1,svr-xxx2]</p>
+                     * 
+                     */
+                    void SetSlaveHostIds(const std::vector<std::string>& _slaveHostIds);
+
+                    /**
+                     * 判断参数 SlaveHostIds 是否已赋值
+                     * @return SlaveHostIds 是否已赋值
+                     * 
+                     */
+                    bool SlaveHostIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +331,18 @@ namespace TencentCloud
                      */
                     int64_t m_switchInterval;
                     bool m_switchIntervalHasBeenSet;
+
+                    /**
+                     * <p>主节点所在机器，类似svr-xxx</p>
+                     */
+                    std::string m_masterHostId;
+                    bool m_masterHostIdHasBeenSet;
+
+                    /**
+                     * <p>备节点所在机器，类似[svr-xxx1,svr-xxx2]</p>
+                     */
+                    std::vector<std::string> m_slaveHostIds;
+                    bool m_slaveHostIdsHasBeenSet;
 
                 };
             }

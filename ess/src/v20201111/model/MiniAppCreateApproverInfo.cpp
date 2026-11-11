@@ -27,7 +27,8 @@ MiniAppCreateApproverInfo::MiniAppCreateApproverInfo() :
     m_approverMobileHasBeenSet(false),
     m_approverIdCardTypeHasBeenSet(false),
     m_approverIdCardNumberHasBeenSet(false),
-    m_recipientIdHasBeenSet(false)
+    m_recipientIdHasBeenSet(false),
+    m_pinCodeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome MiniAppCreateApproverInfo::Deserialize(const rapidjson::Valu
         m_recipientIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PinCode") && !value["PinCode"].IsNull())
+    {
+        if (!value["PinCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MiniAppCreateApproverInfo.PinCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pinCode = string(value["PinCode"].GetString());
+        m_pinCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void MiniAppCreateApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "RecipientId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pinCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PinCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pinCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void MiniAppCreateApproverInfo::SetRecipientId(const string& _recipientId)
 bool MiniAppCreateApproverInfo::RecipientIdHasBeenSet() const
 {
     return m_recipientIdHasBeenSet;
+}
+
+string MiniAppCreateApproverInfo::GetPinCode() const
+{
+    return m_pinCode;
+}
+
+void MiniAppCreateApproverInfo::SetPinCode(const string& _pinCode)
+{
+    m_pinCode = _pinCode;
+    m_pinCodeHasBeenSet = true;
+}
+
+bool MiniAppCreateApproverInfo::PinCodeHasBeenSet() const
+{
+    return m_pinCodeHasBeenSet;
 }
 

@@ -44,12 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主从同步方式：
-<li>Semi-sync：半同步</li>
-<li>Async：异步</li>
-                     * @return SyncMode 主从同步方式：
-<li>Semi-sync：半同步</li>
-<li>Async：异步</li>
+                     * 获取<p>主从同步方式：</p><li>Semi-sync：半同步</li><li>Async：异步</li>
+                     * @return SyncMode <p>主从同步方式：</p><li>Semi-sync：半同步</li><li>Async：异步</li>
                      * 
                      */
                     std::string GetSyncMode() const;
@@ -62,12 +58,8 @@ namespace TencentCloud
                     bool SyncModeHasBeenSet() const;
 
                     /**
-                     * 获取高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。
-<li>单位：byte</li>
-<li>参数范围：[1073741824, 322122547200]</li>
-                     * @return MaxStandbyLatency 高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。
-<li>单位：byte</li>
-<li>参数范围：[1073741824, 322122547200]</li>
+                     * 获取<p>高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。</p><li>单位：byte</li><li>参数范围：[1073741824, 322122547200]</li>
+                     * @return MaxStandbyLatency <p>高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。</p><li>单位：byte</li><li>参数范围：[1073741824, 322122547200]</li>
                      * 
                      */
                     uint64_t GetMaxStandbyLatency() const;
@@ -80,12 +72,8 @@ namespace TencentCloud
                     bool MaxStandbyLatencyHasBeenSet() const;
 
                     /**
-                     * 获取高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。
-<li>单位：s</li>
-<li>参数范围：[5, 10]</li>
-                     * @return MaxStandbyLag 高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。
-<li>单位：s</li>
-<li>参数范围：[5, 10]</li>
+                     * 获取<p>高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。</p><li>单位：s</li><li>参数范围：[5, 10]</li>
+                     * @return MaxStandbyLag <p>高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。</p><li>单位：s</li><li>参数范围：[5, 10]</li>
                      * 
                      */
                     uint64_t GetMaxStandbyLag() const;
@@ -98,15 +86,9 @@ namespace TencentCloud
                     bool MaxStandbyLagHasBeenSet() const;
 
                     /**
-                     * 获取同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。
-该参数值针对SyncMode设置为Semi-sync的实例有效。
-异步实例该字段返回null。
-半同步实例禁止退化为异步复制时，该字段返回null。
+                     * 获取<p>同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。<br>该参数值针对SyncMode设置为Semi-sync的实例有效。<br>异步实例该字段返回null。<br>半同步实例禁止退化为异步复制时，该字段返回null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxSyncStandbyLatency 同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。
-该参数值针对SyncMode设置为Semi-sync的实例有效。
-异步实例该字段返回null。
-半同步实例禁止退化为异步复制时，该字段返回null。
+                     * @return MaxSyncStandbyLatency <p>同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。<br>该参数值针对SyncMode设置为Semi-sync的实例有效。<br>异步实例该字段返回null。<br>半同步实例禁止退化为异步复制时，该字段返回null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -120,15 +102,9 @@ namespace TencentCloud
                     bool MaxSyncStandbyLatencyHasBeenSet() const;
 
                     /**
-                     * 获取同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。
-该参数值针对SyncMode设置为Semi-sync的实例有效。
-异步实例不返回该字段。
-半同步实例禁止退化为异步复制时，不返回该字段。
+                     * 获取<p>同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。<br>该参数值针对SyncMode设置为Semi-sync的实例有效。<br>异步实例不返回该字段。<br>半同步实例禁止退化为异步复制时，不返回该字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxSyncStandbyLag 同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。
-该参数值针对SyncMode设置为Semi-sync的实例有效。
-异步实例不返回该字段。
-半同步实例禁止退化为异步复制时，不返回该字段。
+                     * @return MaxSyncStandbyLag <p>同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。<br>该参数值针对SyncMode设置为Semi-sync的实例有效。<br>异步实例不返回该字段。<br>半同步实例禁止退化为异步复制时，不返回该字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -144,44 +120,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主从同步方式：
-<li>Semi-sync：半同步</li>
-<li>Async：异步</li>
+                     * <p>主从同步方式：</p><li>Semi-sync：半同步</li><li>Async：异步</li>
                      */
                     std::string m_syncMode;
                     bool m_syncModeHasBeenSet;
 
                     /**
-                     * 高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。
-<li>单位：byte</li>
-<li>参数范围：[1073741824, 322122547200]</li>
+                     * <p>高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。</p><li>单位：byte</li><li>参数范围：[1073741824, 322122547200]</li>
                      */
                     uint64_t m_maxStandbyLatency;
                     bool m_maxStandbyLatencyHasBeenSet;
 
                     /**
-                     * 高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。
-<li>单位：s</li>
-<li>参数范围：[5, 10]</li>
+                     * <p>高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。</p><li>单位：s</li><li>参数范围：[5, 10]</li>
                      */
                     uint64_t m_maxStandbyLag;
                     bool m_maxStandbyLagHasBeenSet;
 
                     /**
-                     * 同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。
-该参数值针对SyncMode设置为Semi-sync的实例有效。
-异步实例该字段返回null。
-半同步实例禁止退化为异步复制时，该字段返回null。
+                     * <p>同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。<br>该参数值针对SyncMode设置为Semi-sync的实例有效。<br>异步实例该字段返回null。<br>半同步实例禁止退化为异步复制时，该字段返回null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxSyncStandbyLatency;
                     bool m_maxSyncStandbyLatencyHasBeenSet;
 
                     /**
-                     * 同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。
-该参数值针对SyncMode设置为Semi-sync的实例有效。
-异步实例不返回该字段。
-半同步实例禁止退化为异步复制时，不返回该字段。
+                     * <p>同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。<br>该参数值针对SyncMode设置为Semi-sync的实例有效。<br>异步实例不返回该字段。<br>半同步实例禁止退化为异步复制时，不返回该字段。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxSyncStandbyLag;

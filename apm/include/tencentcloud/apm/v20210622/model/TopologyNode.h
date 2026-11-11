@@ -50,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取错误率
+                     * 获取<p>错误率</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrRate 错误率
+                     * @return ErrRate <p>错误率</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetErrRate() const;
 
                     /**
-                     * 设置错误率
+                     * 设置<p>错误率</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _errRate 错误率
+                     * @param _errRate <p>错误率</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,18 +75,18 @@ namespace TencentCloud
                     bool ErrRateHasBeenSet() const;
 
                     /**
-                     * 获取节点类型
+                     * 获取<p>节点类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Kind 节点类型
+                     * @return Kind <p>节点类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置节点类型
+                     * 设置<p>节点类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kind 节点类型
+                     * @param _kind <p>节点类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,15 +100,15 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
-                     * 获取节点名
-                     * @return Name 节点名
+                     * 获取<p>节点名</p>
+                     * @return Name <p>节点名</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置节点名
-                     * @param _name 节点名
+                     * 设置<p>节点名</p>
+                     * @param _name <p>节点名</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -121,18 +121,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取节点权重
+                     * 获取<p>节点权重</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Weight 节点权重
+                     * @return Weight <p>节点权重</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetWeight() const;
 
                     /**
-                     * 设置节点权重
+                     * 设置<p>节点权重</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _weight 节点权重
+                     * @param _weight <p>节点权重</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -146,18 +146,18 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取节点颜色
+                     * 获取<p>节点颜色</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Color 节点颜色
+                     * @return Color <p>节点颜色</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColor() const;
 
                     /**
-                     * 设置节点颜色
+                     * 设置<p>节点颜色</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _color 节点颜色
+                     * @param _color <p>节点颜色</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -171,18 +171,18 @@ namespace TencentCloud
                     bool ColorHasBeenSet() const;
 
                     /**
-                     * 获取响应时间
+                     * 获取<p>响应时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Duration 响应时间
+                     * @return Duration <p>响应时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDuration() const;
 
                     /**
-                     * 设置响应时间
+                     * 设置<p>响应时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _duration 响应时间
+                     * @param _duration <p>响应时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -196,18 +196,18 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取吞吐量
+                     * 获取<p>吞吐量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Qps 吞吐量
+                     * @return Qps <p>吞吐量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetQps() const;
 
                     /**
-                     * 设置吞吐量
+                     * 设置<p>吞吐量</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qps 吞吐量
+                     * @param _qps <p>吞吐量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -221,18 +221,18 @@ namespace TencentCloud
                     bool QpsHasBeenSet() const;
 
                     /**
-                     * 获取节点类型
+                     * 获取<p>节点类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 节点类型
+                     * @return Type <p>节点类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置节点类型
+                     * 设置<p>节点类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 节点类型
+                     * @param _type <p>节点类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -246,15 +246,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取节点ID
-                     * @return Id 节点ID
+                     * 获取<p>节点ID</p>
+                     * @return Id <p>节点ID</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置节点ID
-                     * @param _id 节点ID
+                     * 设置<p>节点ID</p>
+                     * @param _id <p>节点ID</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -267,18 +267,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取节点大小
+                     * 获取<p>节点大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Size 节点大小
+                     * @return Size <p>节点大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSize() const;
 
                     /**
-                     * 设置节点大小
+                     * 设置<p>节点大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _size 节点大小
+                     * @param _size <p>节点大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -292,18 +292,18 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取节点是否为组件类型
+                     * 获取<p>节点是否为组件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsModule 节点是否为组件类型
+                     * @return IsModule <p>节点是否为组件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsModule() const;
 
                     /**
-                     * 设置节点是否为组件类型
+                     * 设置<p>节点是否为组件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isModule 节点是否为组件类型
+                     * @param _isModule <p>节点是否为组件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -317,18 +317,18 @@ namespace TencentCloud
                     bool IsModuleHasBeenSet() const;
 
                     /**
-                     * 获取节点位置信息
+                     * 获取<p>节点位置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Position 节点位置信息
+                     * @return Position <p>节点位置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Position GetPosition() const;
 
                     /**
-                     * 设置节点位置信息
+                     * 设置<p>节点位置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _position 节点位置信息
+                     * @param _position <p>节点位置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -342,18 +342,18 @@ namespace TencentCloud
                     bool PositionHasBeenSet() const;
 
                     /**
-                     * 获取节点标签
+                     * 获取<p>节点标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 节点标签
+                     * @return Tags <p>节点标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
-                     * 设置节点标签
+                     * 设置<p>节点标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 节点标签
+                     * @param _tags <p>节点标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -367,18 +367,18 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取节点是否可以下钻
+                     * 获取<p>节点是否可以下钻</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CanDrillDown 节点是否可以下钻
+                     * @return CanDrillDown <p>节点是否可以下钻</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCanDrillDown() const;
 
                     /**
-                     * 设置节点是否可以下钻
+                     * 设置<p>节点是否可以下钻</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _canDrillDown 节点是否可以下钻
+                     * @param _canDrillDown <p>节点是否可以下钻</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -392,18 +392,18 @@ namespace TencentCloud
                     bool CanDrillDownHasBeenSet() const;
 
                     /**
-                     * 获取资源层信息
+                     * 获取<p>资源层信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Resource 资源层信息
+                     * @return Resource <p>资源层信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Resource GetResource() const;
 
                     /**
-                     * 设置资源层信息
+                     * 设置<p>资源层信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resource 资源层信息
+                     * @param _resource <p>资源层信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -417,15 +417,15 @@ namespace TencentCloud
                     bool ResourceHasBeenSet() const;
 
                     /**
-                     * 获取拓扑节点视图名字
-                     * @return NodeView 拓扑节点视图名字
+                     * 获取<p>拓扑节点视图名字</p>
+                     * @return NodeView <p>拓扑节点视图名字</p>
                      * 
                      */
                     std::string GetNodeView() const;
 
                     /**
-                     * 设置拓扑节点视图名字
-                     * @param _nodeView 拓扑节点视图名字
+                     * 设置<p>拓扑节点视图名字</p>
+                     * @param _nodeView <p>拓扑节点视图名字</p>
                      * 
                      */
                     void SetNodeView(const std::string& _nodeView);
@@ -438,15 +438,15 @@ namespace TencentCloud
                     bool NodeViewHasBeenSet() const;
 
                     /**
-                     * 获取MQ 消费者视角的响应时间 ms
-                     * @return ConsumerDuration MQ 消费者视角的响应时间 ms
+                     * 获取<p>MQ 消费者视角的响应时间 ms</p>
+                     * @return ConsumerDuration <p>MQ 消费者视角的响应时间 ms</p>
                      * 
                      */
                     double GetConsumerDuration() const;
 
                     /**
-                     * 设置MQ 消费者视角的响应时间 ms
-                     * @param _consumerDuration MQ 消费者视角的响应时间 ms
+                     * 设置<p>MQ 消费者视角的响应时间 ms</p>
+                     * @param _consumerDuration <p>MQ 消费者视角的响应时间 ms</p>
                      * 
                      */
                     void SetConsumerDuration(const double& _consumerDuration);
@@ -459,15 +459,15 @@ namespace TencentCloud
                     bool ConsumerDurationHasBeenSet() const;
 
                     /**
-                     * 获取MQ 消费者视角的错误率 %
-                     * @return ConsumerErrRate MQ 消费者视角的错误率 %
+                     * 获取<p>MQ 消费者视角的错误率 %</p>
+                     * @return ConsumerErrRate <p>MQ 消费者视角的错误率 %</p>
                      * 
                      */
                     double GetConsumerErrRate() const;
 
                     /**
-                     * 设置MQ 消费者视角的错误率 %
-                     * @param _consumerErrRate MQ 消费者视角的错误率 %
+                     * 设置<p>MQ 消费者视角的错误率 %</p>
+                     * @param _consumerErrRate <p>MQ 消费者视角的错误率 %</p>
                      * 
                      */
                     void SetConsumerErrRate(const double& _consumerErrRate);
@@ -480,15 +480,15 @@ namespace TencentCloud
                     bool ConsumerErrRateHasBeenSet() const;
 
                     /**
-                     * 获取MQ 消费者视角的吞吐量
-                     * @return ConsumerQps MQ 消费者视角的吞吐量
+                     * 获取<p>MQ 消费者视角的吞吐量</p>
+                     * @return ConsumerQps <p>MQ 消费者视角的吞吐量</p>
                      * 
                      */
                     double GetConsumerQps() const;
 
                     /**
-                     * 设置MQ 消费者视角的吞吐量
-                     * @param _consumerQps MQ 消费者视角的吞吐量
+                     * 设置<p>MQ 消费者视角的吞吐量</p>
+                     * @param _consumerQps <p>MQ 消费者视角的吞吐量</p>
                      * 
                      */
                     void SetConsumerQps(const double& _consumerQps);
@@ -501,36 +501,36 @@ namespace TencentCloud
                     bool ConsumerQpsHasBeenSet() const;
 
                     /**
-                     * 获取应用 ID
-                     * @return ServiceId 应用 ID
-                     * 
+                     * 获取<p>应用 ID</p>
+                     * @return ServiceId <p>应用 ID</p>
+                     * @deprecated
                      */
                     std::string GetServiceId() const;
 
                     /**
-                     * 设置应用 ID
-                     * @param _serviceId 应用 ID
-                     * 
+                     * 设置<p>应用 ID</p>
+                     * @param _serviceId <p>应用 ID</p>
+                     * @deprecated
                      */
                     void SetServiceId(const std::string& _serviceId);
 
                     /**
                      * 判断参数 ServiceId 是否已赋值
                      * @return ServiceId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ServiceIdHasBeenSet() const;
 
                     /**
-                     * 获取调用次数
-                     * @return ReqCnt 调用次数
+                     * 获取<p>调用次数</p>
+                     * @return ReqCnt <p>调用次数</p>
                      * 
                      */
                     int64_t GetReqCnt() const;
 
                     /**
-                     * 设置调用次数
-                     * @param _reqCnt 调用次数
+                     * 设置<p>调用次数</p>
+                     * @param _reqCnt <p>调用次数</p>
                      * 
                      */
                     void SetReqCnt(const int64_t& _reqCnt);
@@ -543,15 +543,15 @@ namespace TencentCloud
                     bool ReqCntHasBeenSet() const;
 
                     /**
-                     * 获取消息队列消费者视角的调用次数
-                     * @return ConsumerReqCnt 消息队列消费者视角的调用次数
+                     * 获取<p>消息队列消费者视角的调用次数</p>
+                     * @return ConsumerReqCnt <p>消息队列消费者视角的调用次数</p>
                      * 
                      */
                     int64_t GetConsumerReqCnt() const;
 
                     /**
-                     * 设置消息队列消费者视角的调用次数
-                     * @param _consumerReqCnt 消息队列消费者视角的调用次数
+                     * 设置<p>消息队列消费者视角的调用次数</p>
+                     * @param _consumerReqCnt <p>消息队列消费者视角的调用次数</p>
                      * 
                      */
                     void SetConsumerReqCnt(const int64_t& _consumerReqCnt);
@@ -563,152 +563,179 @@ namespace TencentCloud
                      */
                     bool ConsumerReqCntHasBeenSet() const;
 
+                    /**
+                     * 获取<p>应用 ID</p>
+                     * @return ServiceID <p>应用 ID</p>
+                     * 
+                     */
+                    std::string GetServiceID() const;
+
+                    /**
+                     * 设置<p>应用 ID</p>
+                     * @param _serviceID <p>应用 ID</p>
+                     * 
+                     */
+                    void SetServiceID(const std::string& _serviceID);
+
+                    /**
+                     * 判断参数 ServiceID 是否已赋值
+                     * @return ServiceID 是否已赋值
+                     * 
+                     */
+                    bool ServiceIDHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 错误率
+                     * <p>错误率</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_errRate;
                     bool m_errRateHasBeenSet;
 
                     /**
-                     * 节点类型
+                     * <p>节点类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
-                     * 节点名
+                     * <p>节点名</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 节点权重
+                     * <p>节点权重</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 节点颜色
+                     * <p>节点颜色</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_color;
                     bool m_colorHasBeenSet;
 
                     /**
-                     * 响应时间
+                     * <p>响应时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 吞吐量
+                     * <p>吞吐量</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_qps;
                     bool m_qpsHasBeenSet;
 
                     /**
-                     * 节点类型
+                     * <p>节点类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 节点ID
+                     * <p>节点ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 节点大小
+                     * <p>节点大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 节点是否为组件类型
+                     * <p>节点是否为组件类型</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isModule;
                     bool m_isModuleHasBeenSet;
 
                     /**
-                     * 节点位置信息
+                     * <p>节点位置信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Position m_position;
                     bool m_positionHasBeenSet;
 
                     /**
-                     * 节点标签
+                     * <p>节点标签</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 节点是否可以下钻
+                     * <p>节点是否可以下钻</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canDrillDown;
                     bool m_canDrillDownHasBeenSet;
 
                     /**
-                     * 资源层信息
+                     * <p>资源层信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Resource m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
-                     * 拓扑节点视图名字
+                     * <p>拓扑节点视图名字</p>
                      */
                     std::string m_nodeView;
                     bool m_nodeViewHasBeenSet;
 
                     /**
-                     * MQ 消费者视角的响应时间 ms
+                     * <p>MQ 消费者视角的响应时间 ms</p>
                      */
                     double m_consumerDuration;
                     bool m_consumerDurationHasBeenSet;
 
                     /**
-                     * MQ 消费者视角的错误率 %
+                     * <p>MQ 消费者视角的错误率 %</p>
                      */
                     double m_consumerErrRate;
                     bool m_consumerErrRateHasBeenSet;
 
                     /**
-                     * MQ 消费者视角的吞吐量
+                     * <p>MQ 消费者视角的吞吐量</p>
                      */
                     double m_consumerQps;
                     bool m_consumerQpsHasBeenSet;
 
                     /**
-                     * 应用 ID
+                     * <p>应用 ID</p>
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;
 
                     /**
-                     * 调用次数
+                     * <p>调用次数</p>
                      */
                     int64_t m_reqCnt;
                     bool m_reqCntHasBeenSet;
 
                     /**
-                     * 消息队列消费者视角的调用次数
+                     * <p>消息队列消费者视角的调用次数</p>
                      */
                     int64_t m_consumerReqCnt;
                     bool m_consumerReqCntHasBeenSet;
+
+                    /**
+                     * <p>应用 ID</p>
+                     */
+                    std::string m_serviceID;
+                    bool m_serviceIDHasBeenSet;
 
                 };
             }

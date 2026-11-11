@@ -42,7 +42,8 @@ TopologyNode::TopologyNode() :
     m_consumerQpsHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
     m_reqCntHasBeenSet(false),
-    m_consumerReqCntHasBeenSet(false)
+    m_consumerReqCntHasBeenSet(false),
+    m_serviceIDHasBeenSet(false)
 {
 }
 
@@ -295,6 +296,16 @@ CoreInternalOutcome TopologyNode::Deserialize(const rapidjson::Value &value)
         m_consumerReqCntHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceID") && !value["ServiceID"].IsNull())
+    {
+        if (!value["ServiceID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopologyNode.ServiceID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceID = string(value["ServiceID"].GetString());
+        m_serviceIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -485,6 +496,14 @@ void TopologyNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ConsumerReqCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consumerReqCnt, allocator);
+    }
+
+    if (m_serviceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -840,5 +859,21 @@ void TopologyNode::SetConsumerReqCnt(const int64_t& _consumerReqCnt)
 bool TopologyNode::ConsumerReqCntHasBeenSet() const
 {
     return m_consumerReqCntHasBeenSet;
+}
+
+string TopologyNode::GetServiceID() const
+{
+    return m_serviceID;
+}
+
+void TopologyNode::SetServiceID(const string& _serviceID)
+{
+    m_serviceID = _serviceID;
+    m_serviceIDHasBeenSet = true;
+}
+
+bool TopologyNode::ServiceIDHasBeenSet() const
+{
+    return m_serviceIDHasBeenSet;
 }
 

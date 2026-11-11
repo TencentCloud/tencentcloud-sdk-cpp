@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频流的码率，单位：bps。
-                     * @return Bitrate 视频流的码率，单位：bps。
+                     * 获取<p>视频流的码率，单位：bps。</p>
+                     * @return Bitrate <p>视频流的码率，单位：bps。</p>
                      * 
                      */
                     int64_t GetBitrate() const;
 
                     /**
-                     * 设置视频流的码率，单位：bps。
-                     * @param _bitrate 视频流的码率，单位：bps。
+                     * 设置<p>视频流的码率，单位：bps。</p>
+                     * @param _bitrate <p>视频流的码率，单位：bps。</p>
                      * 
                      */
                     void SetBitrate(const int64_t& _bitrate);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取视频流的高度，单位：px。
-                     * @return Height 视频流的高度，单位：px。
+                     * 获取<p>视频流的高度，单位：px。</p>
+                     * @return Height <p>视频流的高度，单位：px。</p>
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置视频流的高度，单位：px。
-                     * @param _height 视频流的高度，单位：px。
+                     * 设置<p>视频流的高度，单位：px。</p>
+                     * @param _height <p>视频流的高度，单位：px。</p>
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取视频流的宽度，单位：px。
-                     * @return Width 视频流的宽度，单位：px。
+                     * 获取<p>视频流的宽度，单位：px。</p>
+                     * @return Width <p>视频流的宽度，单位：px。</p>
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置视频流的宽度，单位：px。
-                     * @param _width 视频流的宽度，单位：px。
+                     * 设置<p>视频流的宽度，单位：px。</p>
+                     * @param _width <p>视频流的宽度，单位：px。</p>
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取视频流的编码格式，例如 h264。
-                     * @return Codec 视频流的编码格式，例如 h264。
+                     * 获取<p>视频流的编码格式，例如 h264。</p>
+                     * @return Codec <p>视频流的编码格式，例如 h264。</p>
                      * 
                      */
                     std::string GetCodec() const;
 
                     /**
-                     * 设置视频流的编码格式，例如 h264。
-                     * @param _codec 视频流的编码格式，例如 h264。
+                     * 设置<p>视频流的编码格式，例如 h264。</p>
+                     * @param _codec <p>视频流的编码格式，例如 h264。</p>
                      * 
                      */
                     void SetCodec(const std::string& _codec);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CodecHasBeenSet() const;
 
                     /**
-                     * 获取帧率，单位：hz。
-                     * @return Fps 帧率，单位：hz。
+                     * 获取<p>帧率，单位：hz。</p>
+                     * @return Fps <p>帧率，单位：hz。</p>
                      * 
                      */
                     int64_t GetFps() const;
 
                     /**
-                     * 设置帧率，单位：hz。
-                     * @param _fps 帧率，单位：hz。
+                     * 设置<p>帧率，单位：hz。</p>
+                     * @param _fps <p>帧率，单位：hz。</p>
                      * 
                      */
                     void SetFps(const int64_t& _fps);
@@ -152,18 +152,18 @@ namespace TencentCloud
                     bool FpsHasBeenSet() const;
 
                     /**
-                     * 获取色彩空间。
+                     * 获取<p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColorPrimaries 色彩空间。
+                     * @return ColorPrimaries <p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColorPrimaries() const;
 
                     /**
-                     * 设置色彩空间。
+                     * 设置<p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _colorPrimaries 色彩空间。
+                     * @param _colorPrimaries <p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -177,18 +177,18 @@ namespace TencentCloud
                     bool ColorPrimariesHasBeenSet() const;
 
                     /**
-                     * 获取色彩空间。
+                     * 获取<p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColorSpace 色彩空间。
+                     * @return ColorSpace <p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColorSpace() const;
 
                     /**
-                     * 设置色彩空间。
+                     * 设置<p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _colorSpace 色彩空间。
+                     * @param _colorSpace <p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -202,18 +202,18 @@ namespace TencentCloud
                     bool ColorSpaceHasBeenSet() const;
 
                     /**
-                     * 获取色彩空间。
+                     * 获取<p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColorTransfer 色彩空间。
+                     * @return ColorTransfer <p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColorTransfer() const;
 
                     /**
-                     * 设置色彩空间。
+                     * 设置<p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _colorTransfer 色彩空间。
+                     * @param _colorTransfer <p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -227,18 +227,18 @@ namespace TencentCloud
                     bool ColorTransferHasBeenSet() const;
 
                     /**
-                     * 获取HDR类型。
+                     * 获取<p>HDR类型。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HdrType HDR类型。
+                     * @return HdrType <p>HDR类型。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHdrType() const;
 
                     /**
-                     * 设置HDR类型。
+                     * 设置<p>HDR类型。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hdrType HDR类型。
+                     * @param _hdrType <p>HDR类型。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -252,18 +252,18 @@ namespace TencentCloud
                     bool HdrTypeHasBeenSet() const;
 
                     /**
-                     * 获取视频Codecs。
+                     * 获取<p>视频Codecs。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Codecs 视频Codecs。
+                     * @return Codecs <p>视频Codecs。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodecs() const;
 
                     /**
-                     * 设置视频Codecs。
+                     * 设置<p>视频Codecs。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _codecs 视频Codecs。
+                     * @param _codecs <p>视频Codecs。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -277,18 +277,43 @@ namespace TencentCloud
                     bool CodecsHasBeenSet() const;
 
                     /**
-                     * 获取帧率分子部分
+                     * 获取<p>视频时长。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FpsNumerator 帧率分子部分
+                     * @return Duration <p>视频时长。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetDuration() const;
+
+                    /**
+                     * 设置<p>视频时长。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _duration <p>视频时长。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDuration(const double& _duration);
+
+                    /**
+                     * 判断参数 Duration 是否已赋值
+                     * @return Duration 是否已赋值
+                     * 
+                     */
+                    bool DurationHasBeenSet() const;
+
+                    /**
+                     * 获取<p>帧率分子部分</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FpsNumerator <p>帧率分子部分</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFpsNumerator() const;
 
                     /**
-                     * 设置帧率分子部分
+                     * 设置<p>帧率分子部分</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fpsNumerator 帧率分子部分
+                     * @param _fpsNumerator <p>帧率分子部分</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -302,18 +327,18 @@ namespace TencentCloud
                     bool FpsNumeratorHasBeenSet() const;
 
                     /**
-                     * 获取帧率分母部分
+                     * 获取<p>帧率分母部分</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FpsDenominator 帧率分母部分
+                     * @return FpsDenominator <p>帧率分母部分</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFpsDenominator() const;
 
                     /**
-                     * 设置帧率分母部分
+                     * 设置<p>帧率分母部分</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fpsDenominator 帧率分母部分
+                     * @param _fpsDenominator <p>帧率分母部分</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -329,79 +354,86 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频流的码率，单位：bps。
+                     * <p>视频流的码率，单位：bps。</p>
                      */
                     int64_t m_bitrate;
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * 视频流的高度，单位：px。
+                     * <p>视频流的高度，单位：px。</p>
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 视频流的宽度，单位：px。
+                     * <p>视频流的宽度，单位：px。</p>
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 视频流的编码格式，例如 h264。
+                     * <p>视频流的编码格式，例如 h264。</p>
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
 
                     /**
-                     * 帧率，单位：hz。
+                     * <p>帧率，单位：hz。</p>
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;
 
                     /**
-                     * 色彩空间。
+                     * <p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_colorPrimaries;
                     bool m_colorPrimariesHasBeenSet;
 
                     /**
-                     * 色彩空间。
+                     * <p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_colorSpace;
                     bool m_colorSpaceHasBeenSet;
 
                     /**
-                     * 色彩空间。
+                     * <p>色彩空间。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_colorTransfer;
                     bool m_colorTransferHasBeenSet;
 
                     /**
-                     * HDR类型。
+                     * <p>HDR类型。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hdrType;
                     bool m_hdrTypeHasBeenSet;
 
                     /**
-                     * 视频Codecs。
+                     * <p>视频Codecs。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codecs;
                     bool m_codecsHasBeenSet;
 
                     /**
-                     * 帧率分子部分
+                     * <p>视频时长。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_duration;
+                    bool m_durationHasBeenSet;
+
+                    /**
+                     * <p>帧率分子部分</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fpsNumerator;
                     bool m_fpsNumeratorHasBeenSet;
 
                     /**
-                     * 帧率分母部分
+                     * <p>帧率分母部分</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fpsDenominator;

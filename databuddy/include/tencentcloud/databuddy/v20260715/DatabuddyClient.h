@@ -93,6 +93,8 @@
 #include <tencentcloud/databuddy/v20260715/model/GetModelVersionResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/GetSchemaRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/GetSchemaResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/GetSessionStatusRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/GetSessionStatusResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/GetTableRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/GetTableResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/GetTablesRequest.h>
@@ -161,6 +163,8 @@
 #include <tencentcloud/databuddy/v20260715/model/ListWorkspaceUsersResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkspacesRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/ListWorkspacesResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/ReadProductJsonRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/ReadProductJsonResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/RemoveConsoleUsersRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/RemoveConsoleUsersResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/RemoveWorkspaceGroupsRequest.h>
@@ -340,6 +344,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetSchemaResponse> GetSchemaOutcome;
                 typedef std::future<GetSchemaOutcome> GetSchemaOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::GetSchemaRequest&, GetSchemaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSchemaAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetSessionStatusResponse> GetSessionStatusOutcome;
+                typedef std::future<GetSessionStatusOutcome> GetSessionStatusOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::GetSessionStatusRequest&, GetSessionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSessionStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTableResponse> GetTableOutcome;
                 typedef std::future<GetTableOutcome> GetTableOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::GetTableRequest&, GetTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTableAsyncHandler;
@@ -442,6 +449,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListWorkspacesResponse> ListWorkspacesOutcome;
                 typedef std::future<ListWorkspacesOutcome> ListWorkspacesOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::ListWorkspacesRequest&, ListWorkspacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkspacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReadProductJsonResponse> ReadProductJsonOutcome;
+                typedef std::future<ReadProductJsonOutcome> ReadProductJsonOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::ReadProductJsonRequest&, ReadProductJsonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReadProductJsonAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveConsoleUsersResponse> RemoveConsoleUsersOutcome;
                 typedef std::future<RemoveConsoleUsersOutcome> RemoveConsoleUsersOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::RemoveConsoleUsersRequest&, RemoveConsoleUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveConsoleUsersAsyncHandler;
@@ -899,6 +909,15 @@ namespace TencentCloud
                 GetSchemaOutcomeCallable GetSchemaCallable(const Model::GetSchemaRequest& request);
 
                 /**
+                 *查询会话任务运行状态（支持批量）
+                 * @param req GetSessionStatusRequest
+                 * @return GetSessionStatusOutcome
+                 */
+                GetSessionStatusOutcome GetSessionStatus(const Model::GetSessionStatusRequest &request);
+                void GetSessionStatusAsync(const Model::GetSessionStatusRequest& request, const GetSessionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetSessionStatusOutcomeCallable GetSessionStatusCallable(const Model::GetSessionStatusRequest& request);
+
+                /**
                  *查询table详情
                  * @param req GetTableRequest
                  * @return GetTableOutcome
@@ -1204,6 +1223,15 @@ namespace TencentCloud
                 ListWorkspacesOutcome ListWorkspaces(const Model::ListWorkspacesRequest &request);
                 void ListWorkspacesAsync(const Model::ListWorkspacesRequest& request, const ListWorkspacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListWorkspacesOutcomeCallable ListWorkspacesCallable(const Model::ListWorkspacesRequest& request);
+
+                /**
+                 *databuddy 产物获取接口
+                 * @param req ReadProductJsonRequest
+                 * @return ReadProductJsonOutcome
+                 */
+                ReadProductJsonOutcome ReadProductJson(const Model::ReadProductJsonRequest &request);
+                void ReadProductJsonAsync(const Model::ReadProductJsonRequest& request, const ReadProductJsonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReadProductJsonOutcomeCallable ReadProductJsonCallable(const Model::ReadProductJsonRequest& request);
 
                 /**
                  *<p>批量移除控制台用户（单次最多10个；前置校验任一不满足整体拒绝；执行阶段单个失败不中断后续删除，成败以 SuccessUins/FailItems 为准），该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。</p>

@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CHC物理服务器的实例Id。
-                     * @return ChcIds CHC物理服务器的实例Id。
+                     * 获取<p>CHC物理服务器ID。</p>
+                     * @return ChcIds <p>CHC物理服务器ID。</p>
                      * 
                      */
                     std::vector<std::string> GetChcIds() const;
 
                     /**
-                     * 设置CHC物理服务器的实例Id。
-                     * @param _chcIds CHC物理服务器的实例Id。
+                     * 设置<p>CHC物理服务器ID。</p>
+                     * @param _chcIds <p>CHC物理服务器ID。</p>
                      * 
                      */
                     void SetChcIds(const std::vector<std::string>& _chcIds);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ChcIdsHasBeenSet() const;
 
                     /**
-                     * 获取带外网络信息。
-                     * @return BmcVirtualPrivateCloud 带外网络信息。
+                     * 获取<p>带外网络信息。</p>
+                     * @return BmcVirtualPrivateCloud <p>带外网络信息。</p>
                      * 
                      */
                     VirtualPrivateCloud GetBmcVirtualPrivateCloud() const;
 
                     /**
-                     * 设置带外网络信息。
-                     * @param _bmcVirtualPrivateCloud 带外网络信息。
+                     * 设置<p>带外网络信息。</p>
+                     * @param _bmcVirtualPrivateCloud <p>带外网络信息。</p>
                      * 
                      */
                     void SetBmcVirtualPrivateCloud(const VirtualPrivateCloud& _bmcVirtualPrivateCloud);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool BmcVirtualPrivateCloudHasBeenSet() const;
 
                     /**
-                     * 获取带外网络的安全组列表
-                     * @return BmcSecurityGroupIds 带外网络的安全组列表
+                     * 获取<p>带外网络的安全组列表。</p>
+                     * @return BmcSecurityGroupIds <p>带外网络的安全组列表。</p>
                      * 
                      */
                     std::vector<std::string> GetBmcSecurityGroupIds() const;
 
                     /**
-                     * 设置带外网络的安全组列表
-                     * @param _bmcSecurityGroupIds 带外网络的安全组列表
+                     * 设置<p>带外网络的安全组列表。</p>
+                     * @param _bmcSecurityGroupIds <p>带外网络的安全组列表。</p>
                      * 
                      */
                     void SetBmcSecurityGroupIds(const std::vector<std::string>& _bmcSecurityGroupIds);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool BmcSecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取部署网络信息。
-                     * @return DeployVirtualPrivateCloud 部署网络信息。
+                     * 获取<p>部署网络信息。</p>
+                     * @return DeployVirtualPrivateCloud <p>部署网络信息。</p>
                      * 
                      */
                     VirtualPrivateCloud GetDeployVirtualPrivateCloud() const;
 
                     /**
-                     * 设置部署网络信息。
-                     * @param _deployVirtualPrivateCloud 部署网络信息。
+                     * 设置<p>部署网络信息。</p>
+                     * @param _deployVirtualPrivateCloud <p>部署网络信息。</p>
                      * 
                      */
                     void SetDeployVirtualPrivateCloud(const VirtualPrivateCloud& _deployVirtualPrivateCloud);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool DeployVirtualPrivateCloudHasBeenSet() const;
 
                     /**
-                     * 获取部署网络的安全组列表
-                     * @return DeploySecurityGroupIds 部署网络的安全组列表
+                     * 获取<p>部署网络的安全组列表。</p>
+                     * @return DeploySecurityGroupIds <p>部署网络的安全组列表。</p>
                      * 
                      */
                     std::vector<std::string> GetDeploySecurityGroupIds() const;
 
                     /**
-                     * 设置部署网络的安全组列表
-                     * @param _deploySecurityGroupIds 部署网络的安全组列表
+                     * 设置<p>部署网络的安全组列表。</p>
+                     * @param _deploySecurityGroupIds <p>部署网络的安全组列表。</p>
                      * 
                      */
                     void SetDeploySecurityGroupIds(const std::vector<std::string>& _deploySecurityGroupIds);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool DeploySecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取部署网络的附加参数，用于指定minios类型、bios引导模式等
-                     * @return ChcDeployExtraConfig 部署网络的附加参数，用于指定minios类型、bios引导模式等
+                     * 获取<p>部署网络的附加参数，用于指定DHCP选项、bios引导模式等配置。</p>
+                     * @return ChcDeployExtraConfig <p>部署网络的附加参数，用于指定DHCP选项、bios引导模式等配置。</p>
                      * 
                      */
                     ChcDeployExtraConfig GetChcDeployExtraConfig() const;
 
                     /**
-                     * 设置部署网络的附加参数，用于指定minios类型、bios引导模式等
-                     * @param _chcDeployExtraConfig 部署网络的附加参数，用于指定minios类型、bios引导模式等
+                     * 设置<p>部署网络的附加参数，用于指定DHCP选项、bios引导模式等配置。</p>
+                     * @param _chcDeployExtraConfig <p>部署网络的附加参数，用于指定DHCP选项、bios引导模式等配置。</p>
                      * 
                      */
                     void SetChcDeployExtraConfig(const ChcDeployExtraConfig& _chcDeployExtraConfig);
@@ -170,43 +170,70 @@ namespace TencentCloud
                      */
                     bool ChcDeployExtraConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否跳过带外检查。</p><p>默认值：false</p>
+                     * @return SkipBmcCheck <p>是否跳过带外检查。</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetSkipBmcCheck() const;
+
+                    /**
+                     * 设置<p>是否跳过带外检查。</p><p>默认值：false</p>
+                     * @param _skipBmcCheck <p>是否跳过带外检查。</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetSkipBmcCheck(const bool& _skipBmcCheck);
+
+                    /**
+                     * 判断参数 SkipBmcCheck 是否已赋值
+                     * @return SkipBmcCheck 是否已赋值
+                     * 
+                     */
+                    bool SkipBmcCheckHasBeenSet() const;
+
                 private:
 
                     /**
-                     * CHC物理服务器的实例Id。
+                     * <p>CHC物理服务器ID。</p>
                      */
                     std::vector<std::string> m_chcIds;
                     bool m_chcIdsHasBeenSet;
 
                     /**
-                     * 带外网络信息。
+                     * <p>带外网络信息。</p>
                      */
                     VirtualPrivateCloud m_bmcVirtualPrivateCloud;
                     bool m_bmcVirtualPrivateCloudHasBeenSet;
 
                     /**
-                     * 带外网络的安全组列表
+                     * <p>带外网络的安全组列表。</p>
                      */
                     std::vector<std::string> m_bmcSecurityGroupIds;
                     bool m_bmcSecurityGroupIdsHasBeenSet;
 
                     /**
-                     * 部署网络信息。
+                     * <p>部署网络信息。</p>
                      */
                     VirtualPrivateCloud m_deployVirtualPrivateCloud;
                     bool m_deployVirtualPrivateCloudHasBeenSet;
 
                     /**
-                     * 部署网络的安全组列表
+                     * <p>部署网络的安全组列表。</p>
                      */
                     std::vector<std::string> m_deploySecurityGroupIds;
                     bool m_deploySecurityGroupIdsHasBeenSet;
 
                     /**
-                     * 部署网络的附加参数，用于指定minios类型、bios引导模式等
+                     * <p>部署网络的附加参数，用于指定DHCP选项、bios引导模式等配置。</p>
                      */
                     ChcDeployExtraConfig m_chcDeployExtraConfig;
                     bool m_chcDeployExtraConfigHasBeenSet;
+
+                    /**
+                     * <p>是否跳过带外检查。</p><p>默认值：false</p>
+                     */
+                    bool m_skipBmcCheck;
+                    bool m_skipBmcCheckHasBeenSet;
 
                 };
             }

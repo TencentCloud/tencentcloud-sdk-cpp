@@ -28,7 +28,9 @@ UpgradeDedicatedDBInstanceRequest::UpgradeDedicatedDBInstanceRequest() :
     m_storageHasBeenSet(false),
     m_switchAutoRetryHasBeenSet(false),
     m_switchStartTimeHasBeenSet(false),
-    m_switchEndTimeHasBeenSet(false)
+    m_switchEndTimeHasBeenSet(false),
+    m_masterHostIdHasBeenSet(false),
+    m_slaveHostIdsHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,27 @@ string UpgradeDedicatedDBInstanceRequest::ToJsonString() const
         string key = "SwitchEndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_switchEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_masterHostIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MasterHostId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_masterHostId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_slaveHostIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveHostIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_slaveHostIds.begin(); itr != m_slaveHostIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -189,6 +212,38 @@ void UpgradeDedicatedDBInstanceRequest::SetSwitchEndTime(const string& _switchEn
 bool UpgradeDedicatedDBInstanceRequest::SwitchEndTimeHasBeenSet() const
 {
     return m_switchEndTimeHasBeenSet;
+}
+
+string UpgradeDedicatedDBInstanceRequest::GetMasterHostId() const
+{
+    return m_masterHostId;
+}
+
+void UpgradeDedicatedDBInstanceRequest::SetMasterHostId(const string& _masterHostId)
+{
+    m_masterHostId = _masterHostId;
+    m_masterHostIdHasBeenSet = true;
+}
+
+bool UpgradeDedicatedDBInstanceRequest::MasterHostIdHasBeenSet() const
+{
+    return m_masterHostIdHasBeenSet;
+}
+
+vector<string> UpgradeDedicatedDBInstanceRequest::GetSlaveHostIds() const
+{
+    return m_slaveHostIds;
+}
+
+void UpgradeDedicatedDBInstanceRequest::SetSlaveHostIds(const vector<string>& _slaveHostIds)
+{
+    m_slaveHostIds = _slaveHostIds;
+    m_slaveHostIdsHasBeenSet = true;
+}
+
+bool UpgradeDedicatedDBInstanceRequest::SlaveHostIdsHasBeenSet() const
+{
+    return m_slaveHostIdsHasBeenSet;
 }
 
 

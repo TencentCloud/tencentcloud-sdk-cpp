@@ -31,6 +31,7 @@ MediaVideoStreamItem::MediaVideoStreamItem() :
     m_colorTransferHasBeenSet(false),
     m_hdrTypeHasBeenSet(false),
     m_codecsHasBeenSet(false),
+    m_durationHasBeenSet(false),
     m_fpsNumeratorHasBeenSet(false),
     m_fpsDenominatorHasBeenSet(false)
 {
@@ -141,6 +142,16 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
         m_codecsHasBeenSet = true;
     }
 
+    if (value.HasMember("Duration") && !value["Duration"].IsNull())
+    {
+        if (!value["Duration"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.Duration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_duration = value["Duration"].GetDouble();
+        m_durationHasBeenSet = true;
+    }
+
     if (value.HasMember("FpsNumerator") && !value["FpsNumerator"].IsNull())
     {
         if (!value["FpsNumerator"].IsInt64())
@@ -246,6 +257,14 @@ void MediaVideoStreamItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Codecs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_codecs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_durationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Duration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_duration, allocator);
     }
 
     if (m_fpsNumeratorHasBeenSet)
@@ -425,6 +444,22 @@ void MediaVideoStreamItem::SetCodecs(const string& _codecs)
 bool MediaVideoStreamItem::CodecsHasBeenSet() const
 {
     return m_codecsHasBeenSet;
+}
+
+double MediaVideoStreamItem::GetDuration() const
+{
+    return m_duration;
+}
+
+void MediaVideoStreamItem::SetDuration(const double& _duration)
+{
+    m_duration = _duration;
+    m_durationHasBeenSet = true;
+}
+
+bool MediaVideoStreamItem::DurationHasBeenSet() const
+{
+    return m_durationHasBeenSet;
 }
 
 int64_t MediaVideoStreamItem::GetFpsNumerator() const

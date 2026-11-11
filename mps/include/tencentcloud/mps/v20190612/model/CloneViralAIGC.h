@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>视频时长</p><p>取值范围：[4, 15]</p>
-                     * @return Duration <p>视频时长</p><p>取值范围：[4, 15]</p>
+                     * 获取<p>视频时长</p><p>取值范围：[4, 30]</p><p>指定时取值范围随档位不同：flash 为 2-15, pro 为 4-30。</p>
+                     * @return Duration <p>视频时长</p><p>取值范围：[4, 30]</p><p>指定时取值范围随档位不同：flash 为 2-15, pro 为 4-30。</p>
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置<p>视频时长</p><p>取值范围：[4, 15]</p>
-                     * @param _duration <p>视频时长</p><p>取值范围：[4, 15]</p>
+                     * 设置<p>视频时长</p><p>取值范围：[4, 30]</p><p>指定时取值范围随档位不同：flash 为 2-15, pro 为 4-30。</p>
+                     * @param _duration <p>视频时长</p><p>取值范围：[4, 30]</p><p>指定时取值范围随档位不同：flash 为 2-15, pro 为 4-30。</p>
                      * 
                      */
                     void SetDuration(const int64_t& _duration);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取<p>宽高比。旗舰版支持 16:9/4:3/1:1/3:4/9:16/21:9/adaptive，标准版支持16:9/1:1/9:16</p>
-                     * @return AspectRatio <p>宽高比。旗舰版支持 16:9/4:3/1:1/3:4/9:16/21:9/adaptive，标准版支持16:9/1:1/9:16</p>
+                     * 获取<p>宽高比。可选 9:16、16:9、3:4、4:3、1:1、21:9、adaptive（自适应参考视频，flash 档不支持）。</p>
+                     * @return AspectRatio <p>宽高比。可选 9:16、16:9、3:4、4:3、1:1、21:9、adaptive（自适应参考视频，flash 档不支持）。</p>
                      * 
                      */
                     std::string GetAspectRatio() const;
 
                     /**
-                     * 设置<p>宽高比。旗舰版支持 16:9/4:3/1:1/3:4/9:16/21:9/adaptive，标准版支持16:9/1:1/9:16</p>
-                     * @param _aspectRatio <p>宽高比。旗舰版支持 16:9/4:3/1:1/3:4/9:16/21:9/adaptive，标准版支持16:9/1:1/9:16</p>
+                     * 设置<p>宽高比。可选 9:16、16:9、3:4、4:3、1:1、21:9、adaptive（自适应参考视频，flash 档不支持）。</p>
+                     * @param _aspectRatio <p>宽高比。可选 9:16、16:9、3:4、4:3、1:1、21:9、adaptive（自适应参考视频，flash 档不支持）。</p>
                      * 
                      */
                     void SetAspectRatio(const std::string& _aspectRatio);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AspectRatioHasBeenSet() const;
 
                     /**
-                     * 获取<p>分辨率。支持720p（默认）/1080p/2k/4k</p>
-                     * @return Resolution <p>分辨率。支持720p（默认）/1080p/2k/4k</p>
+                     * 获取<p>分辨率。支持720p（默认）/1080p</p>
+                     * @return Resolution <p>分辨率。支持720p（默认）/1080p</p>
                      * 
                      */
                     std::string GetResolution() const;
 
                     /**
-                     * 设置<p>分辨率。支持720p（默认）/1080p/2k/4k</p>
-                     * @param _resolution <p>分辨率。支持720p（默认）/1080p/2k/4k</p>
+                     * 设置<p>分辨率。支持720p（默认）/1080p</p>
+                     * @param _resolution <p>分辨率。支持720p（默认）/1080p</p>
                      * 
                      */
                     void SetResolution(const std::string& _resolution);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取<p>模式。flagship（高级版，默认）、standard（标准版）、depthcrafter(深度提取)</p>
-                     * @return ModelTier <p>模式。flagship（高级版，默认）、standard（标准版）、depthcrafter(深度提取)</p>
+                     * 获取<p>模式。可选 pro（专业版）、 flash（高级版，默认）</p>
+                     * @return ModelTier <p>模式。可选 pro（专业版）、 flash（高级版，默认）</p>
                      * 
                      */
                     std::string GetModelTier() const;
 
                     /**
-                     * 设置<p>模式。flagship（高级版，默认）、standard（标准版）、depthcrafter(深度提取)</p>
-                     * @param _modelTier <p>模式。flagship（高级版，默认）、standard（标准版）、depthcrafter(深度提取)</p>
+                     * 设置<p>模式。可选 pro（专业版）、 flash（高级版，默认）</p>
+                     * @param _modelTier <p>模式。可选 pro（专业版）、 flash（高级版，默认）</p>
                      * 
                      */
                     void SetModelTier(const std::string& _modelTier);
@@ -154,25 +154,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>视频时长</p><p>取值范围：[4, 15]</p>
+                     * <p>视频时长</p><p>取值范围：[4, 30]</p><p>指定时取值范围随档位不同：flash 为 2-15, pro 为 4-30。</p>
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * <p>宽高比。旗舰版支持 16:9/4:3/1:1/3:4/9:16/21:9/adaptive，标准版支持16:9/1:1/9:16</p>
+                     * <p>宽高比。可选 9:16、16:9、3:4、4:3、1:1、21:9、adaptive（自适应参考视频，flash 档不支持）。</p>
                      */
                     std::string m_aspectRatio;
                     bool m_aspectRatioHasBeenSet;
 
                     /**
-                     * <p>分辨率。支持720p（默认）/1080p/2k/4k</p>
+                     * <p>分辨率。支持720p（默认）/1080p</p>
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * <p>模式。flagship（高级版，默认）、standard（标准版）、depthcrafter(深度提取)</p>
+                     * <p>模式。可选 pro（专业版）、 flash（高级版，默认）</p>
                      */
                     std::string m_modelTier;
                     bool m_modelTierHasBeenSet;

@@ -300,6 +300,27 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否存量节点</p>
+                     * @return IsExistingNode <p>是否存量节点</p>
+                     * 
+                     */
+                    bool GetIsExistingNode() const;
+
+                    /**
+                     * 设置<p>是否存量节点</p>
+                     * @param _isExistingNode <p>是否存量节点</p>
+                     * 
+                     */
+                    void SetIsExistingNode(const bool& _isExistingNode);
+
+                    /**
+                     * 判断参数 IsExistingNode 是否已赋值
+                     * @return IsExistingNode 是否已赋值
+                     * 
+                     */
+                    bool IsExistingNodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -373,6 +394,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>是否存量节点</p>
+                     */
+                    bool m_isExistingNode;
+                    bool m_isExistingNodeHasBeenSet;
 
                 };
             }

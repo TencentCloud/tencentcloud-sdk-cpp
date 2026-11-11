@@ -22,7 +22,8 @@ using namespace std;
 
 CVMMeta::CVMMeta() :
     m_regionHasBeenSet(false),
-    m_instanceIDHasBeenSet(false)
+    m_instanceIDHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome CVMMeta::Deserialize(const rapidjson::Value &value)
         m_instanceIDHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMMeta.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void CVMMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "InstanceID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void CVMMeta::SetInstanceID(const string& _instanceID)
 bool CVMMeta::InstanceIDHasBeenSet() const
 {
     return m_instanceIDHasBeenSet;
+}
+
+string CVMMeta::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CVMMeta::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CVMMeta::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

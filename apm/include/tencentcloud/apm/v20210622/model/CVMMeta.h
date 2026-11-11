@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域
+                     * 获取<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 地域
+                     * @return Region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
+                     * 设置<p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _region 地域
+                     * @param _region <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,45 +72,77 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
+                     * 获取<p>业务系统ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceID 实例ID
+                     * @return InstanceID <p>业务系统ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例ID
+                     * 设置<p>业务系统ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceID 实例ID
+                     * @param _instanceID <p>业务系统ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceID(const std::string& _instanceID);
 
                     /**
                      * 判断参数 InstanceID 是否已赋值
                      * @return InstanceID 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceIDHasBeenSet() const;
+
+                    /**
+                     * 获取<p>业务系统ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId <p>业务系统ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置<p>业务系统ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceId <p>业务系统ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 地域
+                     * <p>地域</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>业务系统ID</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
+
+                    /**
+                     * <p>业务系统ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取<p>名称</p>
+                     * @return Name <p>名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置<p>名称</p>
+                     * @param _name <p>名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取<p>描述</p>
+                     * @return Description <p>描述</p>
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置<p>描述</p>
+                     * @param _description <p>描述</p>
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取<p>状态</p>
+                     * @return Status <p>状态</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置<p>状态</p>
+                     * @param _status <p>状态</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取调度器
-                     * @return Scheduler 调度器
+                     * 获取<p>调度器</p>
+                     * @return Scheduler <p>调度器</p>
                      * 
                      */
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置调度器
-                     * @param _scheduler 调度器
+                     * 设置<p>调度器</p>
+                     * @param _scheduler <p>调度器</p>
                      * 
                      */
                     void SetScheduler(const std::string& _scheduler);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取VPC ID
-                     * @return VPCId VPC ID
+                     * 获取<p>VPC ID</p>
+                     * @return VPCId <p>VPC ID</p>
                      * 
                      */
                     std::string GetVPCId() const;
 
                     /**
-                     * 设置VPC ID
-                     * @param _vPCId VPC ID
+                     * 设置<p>VPC ID</p>
+                     * @param _vPCId <p>VPC ID</p>
                      * 
                      */
                     void SetVPCId(const std::string& _vPCId);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool VPCIdHasBeenSet() const;
 
                     /**
-                     * 获取节点数量
-                     * @return NodeCount 节点数量
+                     * 获取<p>节点数量</p>
+                     * @return NodeCount <p>节点数量</p>
                      * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
-                     * 设置节点数量
-                     * @param _nodeCount 节点数量
+                     * 设置<p>节点数量</p>
+                     * @param _nodeCount <p>节点数量</p>
                      * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool NodeCountHasBeenSet() const;
 
                     /**
-                     * 获取标签
-                     * @return Tags 标签
+                     * 获取<p>标签</p>
+                     * @return Tags <p>标签</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置标签
-                     * @param _tags 标签
+                     * 设置<p>标签</p>
+                     * @param _tags <p>标签</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取集群类型
-                     * @return Type 集群类型
+                     * 获取<p>集群类型</p>
+                     * @return Type <p>集群类型</p>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置集群类型
-                     * @param _type 集群类型
+                     * 设置<p>集群类型</p>
+                     * @param _type <p>集群类型</p>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取系统名称
-                     * @return OsName 系统名称
+                     * 获取<p>系统名称</p>
+                     * @return OsName <p>系统名称</p>
                      * 
                      */
                     std::string GetOsName() const;
 
                     /**
-                     * 设置系统名称
-                     * @param _osName 系统名称
+                     * 设置<p>系统名称</p>
+                     * @param _osName <p>系统名称</p>
                      * 
                      */
                     void SetOsName(const std::string& _osName);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool OsNameHasBeenSet() const;
 
                     /**
-                     * 获取调度器版本
-                     * @return SchedulerVersion 调度器版本
+                     * 获取<p>调度器版本</p>
+                     * @return SchedulerVersion <p>调度器版本</p>
                      * 
                      */
                     std::string GetSchedulerVersion() const;
 
                     /**
-                     * 设置调度器版本
-                     * @param _schedulerVersion 调度器版本
+                     * 设置<p>调度器版本</p>
+                     * @param _schedulerVersion <p>调度器版本</p>
                      * 
                      */
                     void SetSchedulerVersion(const std::string& _schedulerVersion);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool SchedulerVersionHasBeenSet() const;
 
                     /**
-                     * 获取集群VPC CIDR
-                     * @return VPCCIDRBlock 集群VPC CIDR
+                     * 获取<p>集群VPC CIDR</p>
+                     * @return VPCCIDRBlock <p>集群VPC CIDR</p>
                      * 
                      */
                     std::string GetVPCCIDRBlock() const;
 
                     /**
-                     * 设置集群VPC CIDR
-                     * @param _vPCCIDRBlock 集群VPC CIDR
+                     * 设置<p>集群VPC CIDR</p>
+                     * @param _vPCCIDRBlock <p>集群VPC CIDR</p>
                      * 
                      */
                     void SetVPCCIDRBlock(const std::string& _vPCCIDRBlock);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool VPCCIDRBlockHasBeenSet() const;
 
                     /**
-                     * 获取集群确认交付截止日期
-                     * @return ConfirmDeadline 集群确认交付截止日期
+                     * 获取<p>集群确认交付截止日期</p>
+                     * @return ConfirmDeadline <p>集群确认交付截止日期</p>
                      * 
                      */
                     std::string GetConfirmDeadline() const;
 
                     /**
-                     * 设置集群确认交付截止日期
-                     * @param _confirmDeadline 集群确认交付截止日期
+                     * 设置<p>集群确认交付截止日期</p>
+                     * @param _confirmDeadline <p>集群确认交付截止日期</p>
                      * 
                      */
                     void SetConfirmDeadline(const std::string& _confirmDeadline);
@@ -341,91 +341,172 @@ namespace TencentCloud
                      */
                     bool ConfirmDeadlineHasBeenSet() const;
 
+                    /**
+                     * 获取<p>状态原因</p>
+                     * @return StatusReason <p>状态原因</p>
+                     * 
+                     */
+                    std::string GetStatusReason() const;
+
+                    /**
+                     * 设置<p>状态原因</p>
+                     * @param _statusReason <p>状态原因</p>
+                     * 
+                     */
+                    void SetStatusReason(const std::string& _statusReason);
+
+                    /**
+                     * 判断参数 StatusReason 是否已赋值
+                     * @return StatusReason 是否已赋值
+                     * 
+                     */
+                    bool StatusReasonHasBeenSet() const;
+
+                    /**
+                     * 获取<p>隔离时间</p>
+                     * @return IsolateTime <p>隔离时间</p>
+                     * 
+                     */
+                    std::string GetIsolateTime() const;
+
+                    /**
+                     * 设置<p>隔离时间</p>
+                     * @param _isolateTime <p>隔离时间</p>
+                     * 
+                     */
+                    void SetIsolateTime(const std::string& _isolateTime);
+
+                    /**
+                     * 判断参数 IsolateTime 是否已赋值
+                     * @return IsolateTime 是否已赋值
+                     * 
+                     */
+                    bool IsolateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>消息</p>
+                     * @return Message <p>消息</p>
+                     * 
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 设置<p>消息</p>
+                     * @param _message <p>消息</p>
+                     * 
+                     */
+                    void SetMessage(const std::string& _message);
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     * 
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 描述
+                     * <p>描述</p>
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 状态
+                     * <p>状态</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 调度器
+                     * <p>调度器</p>
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * VPC ID
+                     * <p>VPC ID</p>
                      */
                     std::string m_vPCId;
                     bool m_vPCIdHasBeenSet;
 
                     /**
-                     * 节点数量
+                     * <p>节点数量</p>
                      */
                     uint64_t m_nodeCount;
                     bool m_nodeCountHasBeenSet;
 
                     /**
-                     * 标签
+                     * <p>标签</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 集群类型
+                     * <p>集群类型</p>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 系统名称
+                     * <p>系统名称</p>
                      */
                     std::string m_osName;
                     bool m_osNameHasBeenSet;
 
                     /**
-                     * 调度器版本
+                     * <p>调度器版本</p>
                      */
                     std::string m_schedulerVersion;
                     bool m_schedulerVersionHasBeenSet;
 
                     /**
-                     * 集群VPC CIDR
+                     * <p>集群VPC CIDR</p>
                      */
                     std::string m_vPCCIDRBlock;
                     bool m_vPCCIDRBlockHasBeenSet;
 
                     /**
-                     * 集群确认交付截止日期
+                     * <p>集群确认交付截止日期</p>
                      */
                     std::string m_confirmDeadline;
                     bool m_confirmDeadlineHasBeenSet;
+
+                    /**
+                     * <p>状态原因</p>
+                     */
+                    std::string m_statusReason;
+                    bool m_statusReasonHasBeenSet;
+
+                    /**
+                     * <p>隔离时间</p>
+                     */
+                    std::string m_isolateTime;
+                    bool m_isolateTimeHasBeenSet;
+
+                    /**
+                     * <p>消息</p>
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

@@ -1340,6 +1340,56 @@ MpsClient::CreateMediaEvaluationOutcomeCallable MpsClient::CreateMediaEvaluation
     return prom->get_future();
 }
 
+MpsClient::CreateModelChatTaskOutcome MpsClient::CreateModelChatTask(const CreateModelChatTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateModelChatTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateModelChatTaskResponse rsp = CreateModelChatTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateModelChatTaskOutcome(rsp);
+        else
+            return CreateModelChatTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateModelChatTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateModelChatTaskAsync(const CreateModelChatTaskRequest& request, const CreateModelChatTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateModelChatTaskRequest&;
+    using Resp = CreateModelChatTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateModelChatTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::CreateModelChatTaskOutcomeCallable MpsClient::CreateModelChatTaskCallable(const CreateModelChatTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateModelChatTaskOutcome>>();
+    CreateModelChatTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const CreateModelChatTaskRequest&,
+        CreateModelChatTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MpsClient::CreatePersonSampleOutcome MpsClient::CreatePersonSample(const CreatePersonSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePersonSample");
@@ -5682,6 +5732,56 @@ MpsClient::DescribeMediaMetaDataOutcomeCallable MpsClient::DescribeMediaMetaData
         const MpsClient*,
         const DescribeMediaMetaDataRequest&,
         DescribeMediaMetaDataOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+MpsClient::DescribeModelChatTaskOutcome MpsClient::DescribeModelChatTask(const DescribeModelChatTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelChatTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelChatTaskResponse rsp = DescribeModelChatTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelChatTaskOutcome(rsp);
+        else
+            return DescribeModelChatTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelChatTaskOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeModelChatTaskAsync(const DescribeModelChatTaskRequest& request, const DescribeModelChatTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeModelChatTaskRequest&;
+    using Resp = DescribeModelChatTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeModelChatTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MpsClient::DescribeModelChatTaskOutcomeCallable MpsClient::DescribeModelChatTaskCallable(const DescribeModelChatTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeModelChatTaskOutcome>>();
+    DescribeModelChatTaskAsync(
+    request,
+    [prom](
+        const MpsClient*,
+        const DescribeModelChatTaskRequest&,
+        DescribeModelChatTaskOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

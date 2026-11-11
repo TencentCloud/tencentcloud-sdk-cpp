@@ -36,7 +36,9 @@ BackupGroup::BackupGroup() :
     m_accountNameHasBeenSet(false),
     m_accountUinHasBeenSet(false),
     m_subAccountUinHasBeenSet(false),
-    m_autoBackupPolicyIdHasBeenSet(false)
+    m_autoBackupPolicyIdHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -215,6 +217,26 @@ CoreInternalOutcome BackupGroup::Deserialize(const rapidjson::Value &value)
         m_autoBackupPolicyIdHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupGroup.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupGroup.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(value["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +377,22 @@ void BackupGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AutoBackupPolicyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_autoBackupPolicyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -614,5 +652,37 @@ void BackupGroup::SetAutoBackupPolicyId(const string& _autoBackupPolicyId)
 bool BackupGroup::AutoBackupPolicyIdHasBeenSet() const
 {
     return m_autoBackupPolicyIdHasBeenSet;
+}
+
+string BackupGroup::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void BackupGroup::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool BackupGroup::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string BackupGroup::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void BackupGroup::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool BackupGroup::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 

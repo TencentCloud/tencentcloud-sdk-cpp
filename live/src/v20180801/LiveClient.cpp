@@ -940,6 +940,56 @@ LiveClient::CreateAuditTemplateOutcomeCallable LiveClient::CreateAuditTemplateCa
     return prom->get_future();
 }
 
+LiveClient::CreateAvatarEditingLiveOutcome LiveClient::CreateAvatarEditingLive(const CreateAvatarEditingLiveRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAvatarEditingLive");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAvatarEditingLiveResponse rsp = CreateAvatarEditingLiveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAvatarEditingLiveOutcome(rsp);
+        else
+            return CreateAvatarEditingLiveOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAvatarEditingLiveOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateAvatarEditingLiveAsync(const CreateAvatarEditingLiveRequest& request, const CreateAvatarEditingLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAvatarEditingLiveRequest&;
+    using Resp = CreateAvatarEditingLiveResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAvatarEditingLive", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::CreateAvatarEditingLiveOutcomeCallable LiveClient::CreateAvatarEditingLiveCallable(const CreateAvatarEditingLiveRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAvatarEditingLiveOutcome>>();
+    CreateAvatarEditingLiveAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const CreateAvatarEditingLiveRequest&,
+        CreateAvatarEditingLiveOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::CreateCasterOutcome LiveClient::CreateCaster(const CreateCasterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCaster");
@@ -4932,6 +4982,56 @@ LiveClient::DescribeAuditTemplatesOutcomeCallable LiveClient::DescribeAuditTempl
         const LiveClient*,
         const DescribeAuditTemplatesRequest&,
         DescribeAuditTemplatesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::DescribeAvatarEditingLiveOutcome LiveClient::DescribeAvatarEditingLive(const DescribeAvatarEditingLiveRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAvatarEditingLive");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAvatarEditingLiveResponse rsp = DescribeAvatarEditingLiveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAvatarEditingLiveOutcome(rsp);
+        else
+            return DescribeAvatarEditingLiveOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAvatarEditingLiveOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeAvatarEditingLiveAsync(const DescribeAvatarEditingLiveRequest& request, const DescribeAvatarEditingLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAvatarEditingLiveRequest&;
+    using Resp = DescribeAvatarEditingLiveResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAvatarEditingLive", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::DescribeAvatarEditingLiveOutcomeCallable LiveClient::DescribeAvatarEditingLiveCallable(const DescribeAvatarEditingLiveRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAvatarEditingLiveOutcome>>();
+    DescribeAvatarEditingLiveAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const DescribeAvatarEditingLiveRequest&,
+        DescribeAvatarEditingLiveOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -12490,6 +12590,56 @@ LiveClient::StartLiveStreamMonitorOutcomeCallable LiveClient::StartLiveStreamMon
     return prom->get_future();
 }
 
+LiveClient::StopAvatarEditingLiveOutcome LiveClient::StopAvatarEditingLive(const StopAvatarEditingLiveRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopAvatarEditingLive");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopAvatarEditingLiveResponse rsp = StopAvatarEditingLiveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopAvatarEditingLiveOutcome(rsp);
+        else
+            return StopAvatarEditingLiveOutcome(o.GetError());
+    }
+    else
+    {
+        return StopAvatarEditingLiveOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::StopAvatarEditingLiveAsync(const StopAvatarEditingLiveRequest& request, const StopAvatarEditingLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopAvatarEditingLiveRequest&;
+    using Resp = StopAvatarEditingLiveResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopAvatarEditingLive", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::StopAvatarEditingLiveOutcomeCallable LiveClient::StopAvatarEditingLiveCallable(const StopAvatarEditingLiveRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopAvatarEditingLiveOutcome>>();
+    StopAvatarEditingLiveAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const StopAvatarEditingLiveRequest&,
+        StopAvatarEditingLiveOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::StopCasterPgmOutcome LiveClient::StopCasterPgm(const StopCasterPgmRequest &request)
 {
     auto outcome = MakeRequest(request, "StopCasterPgm");
@@ -12882,6 +13032,56 @@ LiveClient::StopScreenshotTaskOutcomeCallable LiveClient::StopScreenshotTaskCall
         const LiveClient*,
         const StopScreenshotTaskRequest&,
         StopScreenshotTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::SwitchAvatarEditingSceneOutcome LiveClient::SwitchAvatarEditingScene(const SwitchAvatarEditingSceneRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchAvatarEditingScene");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchAvatarEditingSceneResponse rsp = SwitchAvatarEditingSceneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchAvatarEditingSceneOutcome(rsp);
+        else
+            return SwitchAvatarEditingSceneOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchAvatarEditingSceneOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::SwitchAvatarEditingSceneAsync(const SwitchAvatarEditingSceneRequest& request, const SwitchAvatarEditingSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SwitchAvatarEditingSceneRequest&;
+    using Resp = SwitchAvatarEditingSceneResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SwitchAvatarEditingScene", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::SwitchAvatarEditingSceneOutcomeCallable LiveClient::SwitchAvatarEditingSceneCallable(const SwitchAvatarEditingSceneRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SwitchAvatarEditingSceneOutcome>>();
+    SwitchAvatarEditingSceneAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const SwitchAvatarEditingSceneRequest&,
+        SwitchAvatarEditingSceneOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

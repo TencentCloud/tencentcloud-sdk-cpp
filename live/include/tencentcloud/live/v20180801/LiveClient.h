@@ -59,6 +59,8 @@
 #include <tencentcloud/live/v20180801/model/CreateAuditRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateAuditTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateAuditTemplateResponse.h>
+#include <tencentcloud/live/v20180801/model/CreateAvatarEditingLiveRequest.h>
+#include <tencentcloud/live/v20180801/model/CreateAvatarEditingLiveResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCasterInputPushUrlRequest.h>
@@ -219,6 +221,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeAuditTemplateResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeAuditTemplatesRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeAuditTemplatesResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeAvatarEditingLiveRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeAvatarEditingLiveResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBackupStreamListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeBackupStreamListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeBillBandwidthAndFluxListRequest.h>
@@ -521,6 +525,8 @@
 #include <tencentcloud/live/v20180801/model/StartLivePadStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/StartLiveStreamMonitorRequest.h>
 #include <tencentcloud/live/v20180801/model/StartLiveStreamMonitorResponse.h>
+#include <tencentcloud/live/v20180801/model/StopAvatarEditingLiveRequest.h>
+#include <tencentcloud/live/v20180801/model/StopAvatarEditingLiveResponse.h>
 #include <tencentcloud/live/v20180801/model/StopCasterPgmRequest.h>
 #include <tencentcloud/live/v20180801/model/StopCasterPgmResponse.h>
 #include <tencentcloud/live/v20180801/model/StopCasterPvwRequest.h>
@@ -537,6 +543,8 @@
 #include <tencentcloud/live/v20180801/model/StopRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/StopScreenshotTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/StopScreenshotTaskResponse.h>
+#include <tencentcloud/live/v20180801/model/SwitchAvatarEditingSceneRequest.h>
+#include <tencentcloud/live/v20180801/model/SwitchAvatarEditingSceneResponse.h>
 #include <tencentcloud/live/v20180801/model/SwitchBackupStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/SwitchBackupStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/SwitchCasterToEmergencyRequest.h>
@@ -613,6 +621,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAuditTemplateResponse> CreateAuditTemplateOutcome;
                 typedef std::future<CreateAuditTemplateOutcome> CreateAuditTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateAuditTemplateRequest&, CreateAuditTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAvatarEditingLiveResponse> CreateAvatarEditingLiveOutcome;
+                typedef std::future<CreateAvatarEditingLiveOutcome> CreateAvatarEditingLiveOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::CreateAvatarEditingLiveRequest&, CreateAvatarEditingLiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAvatarEditingLiveAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCasterResponse> CreateCasterOutcome;
                 typedef std::future<CreateCasterOutcome> CreateCasterOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateCasterRequest&, CreateCasterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCasterAsyncHandler;
@@ -853,6 +864,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditTemplatesResponse> DescribeAuditTemplatesOutcome;
                 typedef std::future<DescribeAuditTemplatesOutcome> DescribeAuditTemplatesOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeAuditTemplatesRequest&, DescribeAuditTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAvatarEditingLiveResponse> DescribeAvatarEditingLiveOutcome;
+                typedef std::future<DescribeAvatarEditingLiveOutcome> DescribeAvatarEditingLiveOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeAvatarEditingLiveRequest&, DescribeAvatarEditingLiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvatarEditingLiveAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupStreamListResponse> DescribeBackupStreamListOutcome;
                 typedef std::future<DescribeBackupStreamListOutcome> DescribeBackupStreamListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeBackupStreamListRequest&, DescribeBackupStreamListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupStreamListAsyncHandler;
@@ -1306,6 +1320,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartLiveStreamMonitorResponse> StartLiveStreamMonitorOutcome;
                 typedef std::future<StartLiveStreamMonitorOutcome> StartLiveStreamMonitorOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StartLiveStreamMonitorRequest&, StartLiveStreamMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartLiveStreamMonitorAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopAvatarEditingLiveResponse> StopAvatarEditingLiveOutcome;
+                typedef std::future<StopAvatarEditingLiveOutcome> StopAvatarEditingLiveOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::StopAvatarEditingLiveRequest&, StopAvatarEditingLiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAvatarEditingLiveAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopCasterPgmResponse> StopCasterPgmOutcome;
                 typedef std::future<StopCasterPgmOutcome> StopCasterPgmOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopCasterPgmRequest&, StopCasterPgmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopCasterPgmAsyncHandler;
@@ -1330,6 +1347,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopScreenshotTaskResponse> StopScreenshotTaskOutcome;
                 typedef std::future<StopScreenshotTaskOutcome> StopScreenshotTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopScreenshotTaskRequest&, StopScreenshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopScreenshotTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchAvatarEditingSceneResponse> SwitchAvatarEditingSceneOutcome;
+                typedef std::future<SwitchAvatarEditingSceneOutcome> SwitchAvatarEditingSceneOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::SwitchAvatarEditingSceneRequest&, SwitchAvatarEditingSceneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchAvatarEditingSceneAsyncHandler;
                 typedef Outcome<Core::Error, Model::SwitchBackupStreamResponse> SwitchBackupStreamOutcome;
                 typedef std::future<SwitchBackupStreamOutcome> SwitchBackupStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::SwitchBackupStreamRequest&, SwitchBackupStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchBackupStreamAsyncHandler;
@@ -1508,6 +1528,15 @@ namespace TencentCloud
                 CreateAuditTemplateOutcome CreateAuditTemplate(const Model::CreateAuditTemplateRequest &request);
                 void CreateAuditTemplateAsync(const Model::CreateAuditTemplateRequest& request, const CreateAuditTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAuditTemplateOutcomeCallable CreateAuditTemplateCallable(const Model::CreateAuditTemplateRequest& request);
+
+                /**
+                 *调用该接口，用于创建数字人直播间。
+                 * @param req CreateAvatarEditingLiveRequest
+                 * @return CreateAvatarEditingLiveOutcome
+                 */
+                CreateAvatarEditingLiveOutcome CreateAvatarEditingLive(const Model::CreateAvatarEditingLiveRequest &request);
+                void CreateAvatarEditingLiveAsync(const Model::CreateAvatarEditingLiveRequest& request, const CreateAvatarEditingLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAvatarEditingLiveOutcomeCallable CreateAvatarEditingLiveCallable(const Model::CreateAvatarEditingLiveRequest& request);
 
                 /**
                  *该接口用来创建新的导播台
@@ -2293,6 +2322,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeAuditTemplatesOutcome DescribeAuditTemplates(const Model::DescribeAuditTemplatesRequest &request);
                 void DescribeAuditTemplatesAsync(const Model::DescribeAuditTemplatesRequest& request, const DescribeAuditTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuditTemplatesOutcomeCallable DescribeAuditTemplatesCallable(const Model::DescribeAuditTemplatesRequest& request);
+
+                /**
+                 *调用该接口，查询数字人直播间信息列表。
+                 * @param req DescribeAvatarEditingLiveRequest
+                 * @return DescribeAvatarEditingLiveOutcome
+                 */
+                DescribeAvatarEditingLiveOutcome DescribeAvatarEditingLive(const Model::DescribeAvatarEditingLiveRequest &request);
+                void DescribeAvatarEditingLiveAsync(const Model::DescribeAvatarEditingLiveRequest& request, const DescribeAvatarEditingLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAvatarEditingLiveOutcomeCallable DescribeAvatarEditingLiveCallable(const Model::DescribeAvatarEditingLiveRequest& request);
 
                 /**
                  *返回正在直播中的流列表。适用于推流成功后查询在线流信息。
@@ -3725,6 +3763,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 StartLiveStreamMonitorOutcomeCallable StartLiveStreamMonitorCallable(const Model::StartLiveStreamMonitorRequest& request);
 
                 /**
+                 *调用该接口，用于停止数字人直播间。
+                 * @param req StopAvatarEditingLiveRequest
+                 * @return StopAvatarEditingLiveOutcome
+                 */
+                StopAvatarEditingLiveOutcome StopAvatarEditingLive(const Model::StopAvatarEditingLiveRequest &request);
+                void StopAvatarEditingLiveAsync(const Model::StopAvatarEditingLiveRequest& request, const StopAvatarEditingLiveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopAvatarEditingLiveOutcomeCallable StopAvatarEditingLiveCallable(const Model::StopAvatarEditingLiveRequest& request);
+
+                /**
                  *该接口用来停止导播台的主监输出。
 停止主监后，对应的推流到腾讯云直播源站和推流到其他第三方平台均将会停止。
                  * @param req StopCasterPgmRequest
@@ -3796,6 +3843,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 StopScreenshotTaskOutcome StopScreenshotTask(const Model::StopScreenshotTaskRequest &request);
                 void StopScreenshotTaskAsync(const Model::StopScreenshotTaskRequest& request, const StopScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopScreenshotTaskOutcomeCallable StopScreenshotTaskCallable(const Model::StopScreenshotTaskRequest& request);
+
+                /**
+                 *调用该接口，用于临时驱动数字人播报。
+                 * @param req SwitchAvatarEditingSceneRequest
+                 * @return SwitchAvatarEditingSceneOutcome
+                 */
+                SwitchAvatarEditingSceneOutcome SwitchAvatarEditingScene(const Model::SwitchAvatarEditingSceneRequest &request);
+                void SwitchAvatarEditingSceneAsync(const Model::SwitchAvatarEditingSceneRequest& request, const SwitchAvatarEditingSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchAvatarEditingSceneOutcomeCallable SwitchAvatarEditingSceneCallable(const Model::SwitchAvatarEditingSceneRequest& request);
 
                 /**
                  *调用该接口实现切换当前播放所使用的主备流。

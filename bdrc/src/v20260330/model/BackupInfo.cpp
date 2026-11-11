@@ -53,7 +53,9 @@ BackupInfo::BackupInfo() :
     m_enableObjectAclHasBeenSet(false),
     m_enableObjectTagsHasBeenSet(false),
     m_cloudResourceIdHasBeenSet(false),
-    m_productTypeHasBeenSet(false)
+    m_productTypeHasBeenSet(false),
+    m_backupCompletedSizeHasBeenSet(false),
+    m_backupCompletedSizeFormattedHasBeenSet(false)
 {
 }
 
@@ -404,6 +406,26 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
         m_productTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupCompletedSize") && !value["BackupCompletedSize"].IsNull())
+    {
+        if (!value["BackupCompletedSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.BackupCompletedSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupCompletedSize = value["BackupCompletedSize"].GetInt64();
+        m_backupCompletedSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupCompletedSizeFormatted") && !value["BackupCompletedSizeFormatted"].IsNull())
+    {
+        if (!value["BackupCompletedSizeFormatted"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.BackupCompletedSizeFormatted` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupCompletedSizeFormatted = string(value["BackupCompletedSizeFormatted"].GetString());
+        m_backupCompletedSizeFormattedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -693,6 +715,22 @@ void BackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ProductType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupCompletedSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupCompletedSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupCompletedSize, allocator);
+    }
+
+    if (m_backupCompletedSizeFormattedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupCompletedSizeFormatted";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupCompletedSizeFormatted.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1224,5 +1262,37 @@ void BackupInfo::SetProductType(const string& _productType)
 bool BackupInfo::ProductTypeHasBeenSet() const
 {
     return m_productTypeHasBeenSet;
+}
+
+int64_t BackupInfo::GetBackupCompletedSize() const
+{
+    return m_backupCompletedSize;
+}
+
+void BackupInfo::SetBackupCompletedSize(const int64_t& _backupCompletedSize)
+{
+    m_backupCompletedSize = _backupCompletedSize;
+    m_backupCompletedSizeHasBeenSet = true;
+}
+
+bool BackupInfo::BackupCompletedSizeHasBeenSet() const
+{
+    return m_backupCompletedSizeHasBeenSet;
+}
+
+string BackupInfo::GetBackupCompletedSizeFormatted() const
+{
+    return m_backupCompletedSizeFormatted;
+}
+
+void BackupInfo::SetBackupCompletedSizeFormatted(const string& _backupCompletedSizeFormatted)
+{
+    m_backupCompletedSizeFormatted = _backupCompletedSizeFormatted;
+    m_backupCompletedSizeFormattedHasBeenSet = true;
+}
+
+bool BackupInfo::BackupCompletedSizeFormattedHasBeenSet() const
+{
+    return m_backupCompletedSizeFormattedHasBeenSet;
 }
 

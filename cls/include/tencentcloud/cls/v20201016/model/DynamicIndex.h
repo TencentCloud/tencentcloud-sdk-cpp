@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取键值索引自动配置开关
-                     * @return Status 键值索引自动配置开关
+                     * 获取<p>键值索引自动配置开关</p>
+                     * @return Status <p>键值索引自动配置开关</p>
                      * 
                      */
                     bool GetStatus() const;
 
                     /**
-                     * 设置键值索引自动配置开关
-                     * @param _status 键值索引自动配置开关
+                     * 设置<p>键值索引自动配置开关</p>
+                     * @param _status <p>键值索引自动配置开关</p>
                      * 
                      */
                     void SetStatus(const bool& _status);
@@ -67,13 +67,40 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>索引的分词符，其中的每个字符代表一个分词符；<br>仅支持英文符号、\n\t\r及转义符\；<br>注意：\n\t\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\n\t\r被重复转义</p>
+                     * @return Tokenizer <p>索引的分词符，其中的每个字符代表一个分词符；<br>仅支持英文符号、\n\t\r及转义符\；<br>注意：\n\t\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\n\t\r被重复转义</p>
+                     * 
+                     */
+                    std::string GetTokenizer() const;
+
+                    /**
+                     * 设置<p>索引的分词符，其中的每个字符代表一个分词符；<br>仅支持英文符号、\n\t\r及转义符\；<br>注意：\n\t\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\n\t\r被重复转义</p>
+                     * @param _tokenizer <p>索引的分词符，其中的每个字符代表一个分词符；<br>仅支持英文符号、\n\t\r及转义符\；<br>注意：\n\t\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\n\t\r被重复转义</p>
+                     * 
+                     */
+                    void SetTokenizer(const std::string& _tokenizer);
+
+                    /**
+                     * 判断参数 Tokenizer 是否已赋值
+                     * @return Tokenizer 是否已赋值
+                     * 
+                     */
+                    bool TokenizerHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 键值索引自动配置开关
+                     * <p>键值索引自动配置开关</p>
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>索引的分词符，其中的每个字符代表一个分词符；<br>仅支持英文符号、\n\t\r及转义符\；<br>注意：\n\t\r本身已被转义，直接使用双引号包裹即可作为入参，无需再次转义。使用API Explorer进行调试时请使用JSON参数输入方式，以避免\n\t\r被重复转义</p>
+                     */
+                    std::string m_tokenizer;
+                    bool m_tokenizerHasBeenSet;
 
                 };
             }

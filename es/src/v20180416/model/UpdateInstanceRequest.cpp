@@ -69,7 +69,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_enableDestroyProtectionHasBeenSet(false),
     m_autoScaleDiskInfoListHasBeenSet(false),
     m_autoScaleDiskDeleteNodeTypeListHasBeenSet(false),
-    m_otherConfigHasBeenSet(false)
+    m_otherConfigHasBeenSet(false),
+    m_waitGreenHasBeenSet(false)
 {
 }
 
@@ -495,6 +496,14 @@ string UpdateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_otherConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_waitGreenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaitGreen";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_waitGreen.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1255,6 +1264,22 @@ void UpdateInstanceRequest::SetOtherConfig(const OtherConfig& _otherConfig)
 bool UpdateInstanceRequest::OtherConfigHasBeenSet() const
 {
     return m_otherConfigHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetWaitGreen() const
+{
+    return m_waitGreen;
+}
+
+void UpdateInstanceRequest::SetWaitGreen(const string& _waitGreen)
+{
+    m_waitGreen = _waitGreen;
+    m_waitGreenHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::WaitGreenHasBeenSet() const
+{
+    return m_waitGreenHasBeenSet;
 }
 
 

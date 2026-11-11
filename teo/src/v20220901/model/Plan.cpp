@@ -31,6 +31,7 @@ Plan::Plan() :
     m_smartRequestCapacityHasBeenSet(false),
     m_vAUCapacityHasBeenSet(false),
     m_accTrafficCapacityHasBeenSet(false),
+    m_clientAuthTrafficCapacityHasBeenSet(false),
     m_smartTrafficCapacityHasBeenSet(false),
     m_dDoSTrafficCapacityHasBeenSet(false),
     m_secTrafficCapacityHasBeenSet(false),
@@ -157,6 +158,16 @@ CoreInternalOutcome Plan::Deserialize(const rapidjson::Value &value)
         }
         m_accTrafficCapacity = value["AccTrafficCapacity"].GetInt64();
         m_accTrafficCapacityHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClientAuthTrafficCapacity") && !value["ClientAuthTrafficCapacity"].IsNull())
+    {
+        if (!value["ClientAuthTrafficCapacity"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Plan.ClientAuthTrafficCapacity` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientAuthTrafficCapacity = value["ClientAuthTrafficCapacity"].GetInt64();
+        m_clientAuthTrafficCapacityHasBeenSet = true;
     }
 
     if (value.HasMember("SmartTrafficCapacity") && !value["SmartTrafficCapacity"].IsNull())
@@ -354,6 +365,14 @@ void Plan::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "AccTrafficCapacity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accTrafficCapacity, allocator);
+    }
+
+    if (m_clientAuthTrafficCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientAuthTrafficCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientAuthTrafficCapacity, allocator);
     }
 
     if (m_smartTrafficCapacityHasBeenSet)
@@ -602,6 +621,22 @@ void Plan::SetAccTrafficCapacity(const int64_t& _accTrafficCapacity)
 bool Plan::AccTrafficCapacityHasBeenSet() const
 {
     return m_accTrafficCapacityHasBeenSet;
+}
+
+int64_t Plan::GetClientAuthTrafficCapacity() const
+{
+    return m_clientAuthTrafficCapacity;
+}
+
+void Plan::SetClientAuthTrafficCapacity(const int64_t& _clientAuthTrafficCapacity)
+{
+    m_clientAuthTrafficCapacity = _clientAuthTrafficCapacity;
+    m_clientAuthTrafficCapacityHasBeenSet = true;
+}
+
+bool Plan::ClientAuthTrafficCapacityHasBeenSet() const
+{
+    return m_clientAuthTrafficCapacityHasBeenSet;
 }
 
 int64_t Plan::GetSmartTrafficCapacity() const

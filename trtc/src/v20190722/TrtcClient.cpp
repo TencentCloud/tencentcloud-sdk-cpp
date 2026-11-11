@@ -3290,6 +3290,56 @@ TrtcClient::ModifyCloudSliceTaskOutcomeCallable TrtcClient::ModifyCloudSliceTask
     return prom->get_future();
 }
 
+TrtcClient::ModifyCloudTranscriptionOutcome TrtcClient::ModifyCloudTranscription(const ModifyCloudTranscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudTranscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudTranscriptionResponse rsp = ModifyCloudTranscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudTranscriptionOutcome(rsp);
+        else
+            return ModifyCloudTranscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudTranscriptionOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::ModifyCloudTranscriptionAsync(const ModifyCloudTranscriptionRequest& request, const ModifyCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCloudTranscriptionRequest&;
+    using Resp = ModifyCloudTranscriptionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCloudTranscription", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::ModifyCloudTranscriptionOutcomeCallable TrtcClient::ModifyCloudTranscriptionCallable(const ModifyCloudTranscriptionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCloudTranscriptionOutcome>>();
+    ModifyCloudTranscriptionAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const ModifyCloudTranscriptionRequest&,
+        ModifyCloudTranscriptionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::ModifyPictureOutcome TrtcClient::ModifyPicture(const ModifyPictureRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPicture");

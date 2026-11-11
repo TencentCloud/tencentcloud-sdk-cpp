@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份组ID。
-                     * @return BackupGroupId 备份组ID。
+                     * 获取<p>备份组ID。</p>
+                     * @return BackupGroupId <p>备份组ID。</p>
                      * 
                      */
                     std::string GetBackupGroupId() const;
 
                     /**
-                     * 设置备份组ID。
-                     * @param _backupGroupId 备份组ID。
+                     * 设置<p>备份组ID。</p>
+                     * @param _backupGroupId <p>备份组ID。</p>
                      * 
                      */
                     void SetBackupGroupId(const std::string& _backupGroupId);
@@ -69,18 +69,18 @@ namespace TencentCloud
                     bool BackupGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取备份组创建进度。
+                     * 获取<p>备份组创建进度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Percent 备份组创建进度。
+                     * @return Percent <p>备份组创建进度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPercent() const;
 
                     /**
-                     * 设置备份组创建进度。
+                     * 设置<p>备份组创建进度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _percent 备份组创建进度。
+                     * @param _percent <p>备份组创建进度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -94,18 +94,18 @@ namespace TencentCloud
                     bool PercentHasBeenSet() const;
 
                     /**
-                     * 获取备份和云盘绑定关系
+                     * 获取<p>备份和云盘绑定关系</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BackupBindDisk 备份和云盘绑定关系
+                     * @return BackupBindDisk <p>备份和云盘绑定关系</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApplyDisk> GetBackupBindDisk() const;
 
                     /**
-                     * 设置备份和云盘绑定关系
+                     * 设置<p>备份和云盘绑定关系</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _backupBindDisk 备份和云盘绑定关系
+                     * @param _backupBindDisk <p>备份和云盘绑定关系</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -119,15 +119,15 @@ namespace TencentCloud
                     bool BackupBindDiskHasBeenSet() const;
 
                     /**
-                     * 获取备份组名称。
-                     * @return BackupGroupName 备份组名称。
+                     * 获取<p>备份组名称。</p>
+                     * @return BackupGroupName <p>备份组名称。</p>
                      * 
                      */
                     std::string GetBackupGroupName() const;
 
                     /**
-                     * 设置备份组名称。
-                     * @param _backupGroupName 备份组名称。
+                     * 设置<p>备份组名称。</p>
+                     * @param _backupGroupName <p>备份组名称。</p>
                      * 
                      */
                     void SetBackupGroupName(const std::string& _backupGroupName);
@@ -140,15 +140,15 @@ namespace TencentCloud
                     bool BackupGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中
-                     * @return BackupGroupState 备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中
+                     * 获取<p>备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中</p>
+                     * @return BackupGroupState <p>备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中</p>
                      * 
                      */
                     std::string GetBackupGroupState() const;
 
                     /**
-                     * 设置备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中
-                     * @param _backupGroupState 备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中
+                     * 设置<p>备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中</p>
+                     * @param _backupGroupState <p>备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中</p>
                      * 
                      */
                     void SetBackupGroupState(const std::string& _backupGroupState);
@@ -161,15 +161,15 @@ namespace TencentCloud
                     bool BackupGroupStateHasBeenSet() const;
 
                     /**
-                     * 获取修改时间
-                     * @return ModifyTime 修改时间
+                     * 获取<p>修改时间</p>
+                     * @return ModifyTime <p>修改时间</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置修改时间
-                     * @param _modifyTime 修改时间
+                     * 设置<p>修改时间</p>
+                     * @param _modifyTime <p>修改时间</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -182,15 +182,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -203,15 +203,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户AppId。
-                     * @return AppId 用户AppId。
+                     * 获取<p>用户AppId。</p>
+                     * @return AppId <p>用户AppId。</p>
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置用户AppId。
-                     * @param _appId 用户AppId。
+                     * 设置<p>用户AppId。</p>
+                     * @param _appId <p>用户AppId。</p>
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -224,15 +224,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取是否为永久备份组。
-                     * @return IsPermanent 是否为永久备份组。
+                     * 获取<p>是否为永久备份组。</p>
+                     * @return IsPermanent <p>是否为永久备份组。</p>
                      * 
                      */
                     bool GetIsPermanent() const;
 
                     /**
-                     * 设置是否为永久备份组。
-                     * @param _isPermanent 是否为永久备份组。
+                     * 设置<p>是否为永久备份组。</p>
+                     * @param _isPermanent <p>是否为永久备份组。</p>
                      * 
                      */
                     void SetIsPermanent(const bool& _isPermanent);
@@ -245,18 +245,18 @@ namespace TencentCloud
                     bool IsPermanentHasBeenSet() const;
 
                     /**
-                     * 获取备份组的到期时间。如果为永久备份组，则取值为null。
+                     * 获取<p>备份组的到期时间。如果为永久备份组，则取值为null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeadlineTime 备份组的到期时间。如果为永久备份组，则取值为null。
+                     * @return DeadlineTime <p>备份组的到期时间。如果为永久备份组，则取值为null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeadlineTime() const;
 
                     /**
-                     * 设置备份组的到期时间。如果为永久备份组，则取值为null。
+                     * 设置<p>备份组的到期时间。如果为永久备份组，则取值为null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deadlineTime 备份组的到期时间。如果为永久备份组，则取值为null。
+                     * @param _deadlineTime <p>备份组的到期时间。如果为永久备份组，则取值为null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -270,18 +270,18 @@ namespace TencentCloud
                     bool DeadlineTimeHasBeenSet() const;
 
                     /**
-                     * 获取创建备份组的实例ID。
+                     * 获取<p>创建备份组的实例ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 创建备份组的实例ID。
+                     * @return InstanceId <p>创建备份组的实例ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置创建备份组的实例ID。
+                     * 设置<p>创建备份组的实例ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceId 创建备份组的实例ID。
+                     * @param _instanceId <p>创建备份组的实例ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -295,18 +295,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取创建备份组时刻实例的详情。
+                     * 获取<p>创建备份组时刻实例的详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceDetails 创建备份组时刻实例的详情。
+                     * @return InstanceDetails <p>创建备份组时刻实例的详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceDetails() const;
 
                     /**
-                     * 设置创建备份组时刻实例的详情。
+                     * 设置<p>创建备份组时刻实例的详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceDetails 创建备份组时刻实例的详情。
+                     * @param _instanceDetails <p>创建备份组时刻实例的详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -320,18 +320,18 @@ namespace TencentCloud
                     bool InstanceDetailsHasBeenSet() const;
 
                     /**
-                     * 获取创建人名称。
+                     * 获取<p>创建人名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountName 创建人名称。
+                     * @return AccountName <p>创建人名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置创建人名称。
+                     * 设置<p>创建人名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accountName 创建人名称。
+                     * @param _accountName <p>创建人名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -345,18 +345,18 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取主账号uin。
+                     * 获取<p>主账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountUin 主账号uin。
+                     * @return AccountUin <p>主账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountUin() const;
 
                     /**
-                     * 设置主账号uin。
+                     * 设置<p>主账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accountUin 主账号uin。
+                     * @param _accountUin <p>主账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -370,18 +370,18 @@ namespace TencentCloud
                     bool AccountUinHasBeenSet() const;
 
                     /**
-                     * 获取创建备份的子账号uin。
+                     * 获取<p>创建备份的子账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubAccountUin 创建备份的子账号uin。
+                     * @return SubAccountUin <p>创建备份的子账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
-                     * 设置创建备份的子账号uin。
+                     * 设置<p>创建备份的子账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subAccountUin 创建备份的子账号uin。
+                     * @param _subAccountUin <p>创建备份的子账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -395,18 +395,18 @@ namespace TencentCloud
                     bool SubAccountUinHasBeenSet() const;
 
                     /**
-                     * 获取创建当前备份的定期备份策略ID，为null则为手动创建的备份。
+                     * 获取<p>创建当前备份的定期备份策略ID，为null则为手动创建的备份。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoBackupPolicyId 创建当前备份的定期备份策略ID，为null则为手动创建的备份。
+                     * @return AutoBackupPolicyId <p>创建当前备份的定期备份策略ID，为null则为手动创建的备份。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAutoBackupPolicyId() const;
 
                     /**
-                     * 设置创建当前备份的定期备份策略ID，为null则为手动创建的备份。
+                     * 设置<p>创建当前备份的定期备份策略ID，为null则为手动创建的备份。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoBackupPolicyId 创建当前备份的定期备份策略ID，为null则为手动创建的备份。
+                     * @param _autoBackupPolicyId <p>创建当前备份的定期备份策略ID，为null则为手动创建的备份。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -419,112 +419,176 @@ namespace TencentCloud
                      */
                     bool AutoBackupPolicyIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>开始时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartTime <p>开始时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置<p>开始时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _startTime <p>开始时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>结束时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndTime <p>结束时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置<p>结束时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _endTime <p>结束时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 备份组ID。
+                     * <p>备份组ID。</p>
                      */
                     std::string m_backupGroupId;
                     bool m_backupGroupIdHasBeenSet;
 
                     /**
-                     * 备份组创建进度。
+                     * <p>备份组创建进度。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_percent;
                     bool m_percentHasBeenSet;
 
                     /**
-                     * 备份和云盘绑定关系
+                     * <p>备份和云盘绑定关系</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApplyDisk> m_backupBindDisk;
                     bool m_backupBindDiskHasBeenSet;
 
                     /**
-                     * 备份组名称。
+                     * <p>备份组名称。</p>
                      */
                     std::string m_backupGroupName;
                     bool m_backupGroupNameHasBeenSet;
 
                     /**
-                     * 备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中
+                     * <p>备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中</p>
                      */
                     std::string m_backupGroupState;
                     bool m_backupGroupStateHasBeenSet;
 
                     /**
-                     * 修改时间
+                     * <p>修改时间</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 用户AppId。
+                     * <p>用户AppId。</p>
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 是否为永久备份组。
+                     * <p>是否为永久备份组。</p>
                      */
                     bool m_isPermanent;
                     bool m_isPermanentHasBeenSet;
 
                     /**
-                     * 备份组的到期时间。如果为永久备份组，则取值为null。
+                     * <p>备份组的到期时间。如果为永久备份组，则取值为null。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deadlineTime;
                     bool m_deadlineTimeHasBeenSet;
 
                     /**
-                     * 创建备份组的实例ID。
+                     * <p>创建备份组的实例ID。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 创建备份组时刻实例的详情。
+                     * <p>创建备份组时刻实例的详情。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceDetails;
                     bool m_instanceDetailsHasBeenSet;
 
                     /**
-                     * 创建人名称。
+                     * <p>创建人名称。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 主账号uin。
+                     * <p>主账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountUin;
                     bool m_accountUinHasBeenSet;
 
                     /**
-                     * 创建备份的子账号uin。
+                     * <p>创建备份的子账号uin。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
 
                     /**
-                     * 创建当前备份的定期备份策略ID，为null则为手动创建的备份。
+                     * <p>创建当前备份的定期备份策略ID，为null则为手动创建的备份。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_autoBackupPolicyId;
                     bool m_autoBackupPolicyIdHasBeenSet;
+
+                    /**
+                     * <p>开始时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * <p>结束时间</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

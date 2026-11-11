@@ -55,15 +55,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceId <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceId <p>实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -76,15 +76,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
-                     * @return InstanceName 实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
+                     * 获取<p>实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）</p>
+                     * @return InstanceName <p>实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）</p>
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
-                     * @param _instanceName 实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
+                     * 设置<p>实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）</p>
+                     * @param _instanceName <p>实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）</p>
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -97,19 +97,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-节点个数（2-50个）
-                     * @return NodeNum 已废弃请使用NodeInfoList
-节点个数（2-50个）
+                     * 获取<p>已废弃请使用NodeInfoList<br>节点个数（2-50个）</p>
+                     * @return NodeNum <p>已废弃请使用NodeInfoList<br>节点个数（2-50个）</p>
                      * 
                      */
                     uint64_t GetNodeNum() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-节点个数（2-50个）
-                     * @param _nodeNum 已废弃请使用NodeInfoList
-节点个数（2-50个）
+                     * 设置<p>已废弃请使用NodeInfoList<br>节点个数（2-50个）</p>
+                     * @param _nodeNum <p>已废弃请使用NodeInfoList<br>节点个数（2-50个）</p>
                      * 
                      */
                     void SetNodeNum(const uint64_t& _nodeNum);
@@ -122,15 +118,15 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取ES配置项（JSON格式字符串）
-                     * @return EsConfig ES配置项（JSON格式字符串）
+                     * 获取<p>ES配置项（JSON格式字符串）</p>
+                     * @return EsConfig <p>ES配置项（JSON格式字符串）</p>
                      * 
                      */
                     std::string GetEsConfig() const;
 
                     /**
-                     * 设置ES配置项（JSON格式字符串）
-                     * @param _esConfig ES配置项（JSON格式字符串）
+                     * 设置<p>ES配置项（JSON格式字符串）</p>
+                     * @param _esConfig <p>ES配置项（JSON格式字符串）</p>
                      * 
                      */
                     void SetEsConfig(const std::string& _esConfig);
@@ -143,15 +139,15 @@ namespace TencentCloud
                     bool EsConfigHasBeenSet() const;
 
                     /**
-                     * 获取默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
-                     * @return Password 默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
+                     * 获取<p>默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&amp;^*+=_:;,.?]的特殊符号）</p>
+                     * @return Password <p>默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&amp;^*+=_:;,.?]的特殊符号）</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
-                     * @param _password 默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
+                     * 设置<p>默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&amp;^*+=_:;,.?]的特殊符号）</p>
+                     * @param _password <p>默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&amp;^*+=_:;,.?]的特殊符号）</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -164,15 +160,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取可视化组件（Kibana、Cerebro）的公网访问策略
-                     * @return EsAcl 可视化组件（Kibana、Cerebro）的公网访问策略
+                     * 获取<p>可视化组件（Kibana、Cerebro）的公网访问策略</p>
+                     * @return EsAcl <p>可视化组件（Kibana、Cerebro）的公网访问策略</p>
                      * 
                      */
                     EsAcl GetEsAcl() const;
 
                     /**
-                     * 设置可视化组件（Kibana、Cerebro）的公网访问策略
-                     * @param _esAcl 可视化组件（Kibana、Cerebro）的公网访问策略
+                     * 设置<p>可视化组件（Kibana、Cerebro）的公网访问策略</p>
+                     * @param _esAcl <p>可视化组件（Kibana、Cerebro）的公网访问策略</p>
                      * 
                      */
                     void SetEsAcl(const EsAcl& _esAcl);
@@ -185,19 +181,15 @@ namespace TencentCloud
                     bool EsAclHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-磁盘大小（单位GB）
-                     * @return DiskSize 已废弃请使用NodeInfoList
-磁盘大小（单位GB）
+                     * 获取<p>已废弃请使用NodeInfoList<br>磁盘大小（单位GB）</p>
+                     * @return DiskSize <p>已废弃请使用NodeInfoList<br>磁盘大小（单位GB）</p>
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-磁盘大小（单位GB）
-                     * @param _diskSize 已废弃请使用NodeInfoList
-磁盘大小（单位GB）
+                     * 设置<p>已废弃请使用NodeInfoList<br>磁盘大小（单位GB）</p>
+                     * @param _diskSize <p>已废弃请使用NodeInfoList<br>磁盘大小（单位GB）</p>
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -210,19 +202,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @return NodeType 已废弃请使用NodeInfoList
-节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 获取<p>已废弃请使用NodeInfoList<br>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @return NodeType <p>已废弃请使用NodeInfoList<br>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @param _nodeType 已废弃请使用NodeInfoList
-节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 设置<p>已废弃请使用NodeInfoList<br>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @param _nodeType <p>已废弃请使用NodeInfoList<br>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -235,19 +223,15 @@ namespace TencentCloud
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-专用主节点个数（只支持3个或5个）
-                     * @return MasterNodeNum 已废弃请使用NodeInfoList
-专用主节点个数（只支持3个或5个）
+                     * 获取<p>已废弃请使用NodeInfoList<br>专用主节点个数（只支持3个或5个）</p>
+                     * @return MasterNodeNum <p>已废弃请使用NodeInfoList<br>专用主节点个数（只支持3个或5个）</p>
                      * 
                      */
                     uint64_t GetMasterNodeNum() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-专用主节点个数（只支持3个或5个）
-                     * @param _masterNodeNum 已废弃请使用NodeInfoList
-专用主节点个数（只支持3个或5个）
+                     * 设置<p>已废弃请使用NodeInfoList<br>专用主节点个数（只支持3个或5个）</p>
+                     * @param _masterNodeNum <p>已废弃请使用NodeInfoList<br>专用主节点个数（只支持3个或5个）</p>
                      * 
                      */
                     void SetMasterNodeNum(const uint64_t& _masterNodeNum);
@@ -260,19 +244,15 @@ namespace TencentCloud
                     bool MasterNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @return MasterNodeType 已废弃请使用NodeInfoList
-专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 获取<p>已废弃请使用NodeInfoList<br>专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @return MasterNodeType <p>已废弃请使用NodeInfoList<br>专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     std::string GetMasterNodeType() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
-                     * @param _masterNodeType 已废弃请使用NodeInfoList
-专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * 设置<p>已废弃请使用NodeInfoList<br>专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
+                     * @param _masterNodeType <p>已废弃请使用NodeInfoList<br>专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      * 
                      */
                     void SetMasterNodeType(const std::string& _masterNodeType);
@@ -285,19 +265,15 @@ namespace TencentCloud
                     bool MasterNodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取已废弃请使用NodeInfoList
-专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）
-                     * @return MasterNodeDiskSize 已废弃请使用NodeInfoList
-专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）
+                     * 获取<p>已废弃请使用NodeInfoList<br>专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）</p>
+                     * @return MasterNodeDiskSize <p>已废弃请使用NodeInfoList<br>专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）</p>
                      * 
                      */
                     uint64_t GetMasterNodeDiskSize() const;
 
                     /**
-                     * 设置已废弃请使用NodeInfoList
-专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）
-                     * @param _masterNodeDiskSize 已废弃请使用NodeInfoList
-专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）
+                     * 设置<p>已废弃请使用NodeInfoList<br>专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）</p>
+                     * @param _masterNodeDiskSize <p>已废弃请使用NodeInfoList<br>专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）</p>
                      * 
                      */
                     void SetMasterNodeDiskSize(const uint64_t& _masterNodeDiskSize);
@@ -310,15 +286,15 @@ namespace TencentCloud
                     bool MasterNodeDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false
-                     * @return ForceRestart 更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false
+                     * 获取<p>更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false</p>
+                     * @return ForceRestart <p>更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false</p>
                      * 
                      */
                     bool GetForceRestart() const;
 
                     /**
-                     * 设置更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false
-                     * @param _forceRestart 更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false
+                     * 设置<p>更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false</p>
+                     * @param _forceRestart <p>更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false</p>
                      * 
                      */
                     void SetForceRestart(const bool& _forceRestart);
@@ -331,15 +307,15 @@ namespace TencentCloud
                     bool ForceRestartHasBeenSet() const;
 
                     /**
-                     * 获取COS自动备份信息
-                     * @return CosBackup COS自动备份信息
+                     * 获取<p>COS自动备份信息</p>
+                     * @return CosBackup <p>COS自动备份信息</p>
                      * 
                      */
                     CosBackup GetCosBackup() const;
 
                     /**
-                     * 设置COS自动备份信息
-                     * @param _cosBackup COS自动备份信息
+                     * 设置<p>COS自动备份信息</p>
+                     * @param _cosBackup <p>COS自动备份信息</p>
                      * 
                      */
                     void SetCosBackup(const CosBackup& _cosBackup);
@@ -352,15 +328,15 @@ namespace TencentCloud
                     bool CosBackupHasBeenSet() const;
 
                     /**
-                     * 获取节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改
-                     * @return NodeInfoList 节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改
+                     * 获取<p>节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改</p>
+                     * @return NodeInfoList <p>节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改</p>
                      * 
                      */
                     std::vector<NodeInfo> GetNodeInfoList() const;
 
                     /**
-                     * 设置节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改
-                     * @param _nodeInfoList 节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改
+                     * 设置<p>节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改</p>
+                     * @param _nodeInfoList <p>节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改</p>
                      * 
                      */
                     void SetNodeInfoList(const std::vector<NodeInfo>& _nodeInfoList);
@@ -373,23 +349,15 @@ namespace TencentCloud
                     bool NodeInfoListHasBeenSet() const;
 
                     /**
-                     * 获取ES集群公网访问状态
-OPEN 开启
-CLOSE 关闭
-                     * @return PublicAccess ES集群公网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * 获取<p>ES集群公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @return PublicAccess <p>ES集群公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     std::string GetPublicAccess() const;
 
                     /**
-                     * 设置ES集群公网访问状态
-OPEN 开启
-CLOSE 关闭
-                     * @param _publicAccess ES集群公网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * 设置<p>ES集群公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @param _publicAccess <p>ES集群公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     void SetPublicAccess(const std::string& _publicAccess);
@@ -402,15 +370,15 @@ CLOSE 关闭
                     bool PublicAccessHasBeenSet() const;
 
                     /**
-                     * 获取公网访问控制列表
-                     * @return EsPublicAcl 公网访问控制列表
+                     * 获取<p>公网访问控制列表</p>
+                     * @return EsPublicAcl <p>公网访问控制列表</p>
                      * 
                      */
                     EsPublicAcl GetEsPublicAcl() const;
 
                     /**
-                     * 设置公网访问控制列表
-                     * @param _esPublicAcl 公网访问控制列表
+                     * 设置<p>公网访问控制列表</p>
+                     * @param _esPublicAcl <p>公网访问控制列表</p>
                      * 
                      */
                     void SetEsPublicAcl(const EsPublicAcl& _esPublicAcl);
@@ -423,23 +391,15 @@ CLOSE 关闭
                     bool EsPublicAclHasBeenSet() const;
 
                     /**
-                     * 获取Kibana公网访问状态
-OPEN 开启
-CLOSE 关闭
-                     * @return KibanaPublicAccess Kibana公网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * 获取<p>Kibana公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @return KibanaPublicAccess <p>Kibana公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     std::string GetKibanaPublicAccess() const;
 
                     /**
-                     * 设置Kibana公网访问状态
-OPEN 开启
-CLOSE 关闭
-                     * @param _kibanaPublicAccess Kibana公网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * 设置<p>Kibana公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @param _kibanaPublicAccess <p>Kibana公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     void SetKibanaPublicAccess(const std::string& _kibanaPublicAccess);
@@ -452,23 +412,15 @@ CLOSE 关闭
                     bool KibanaPublicAccessHasBeenSet() const;
 
                     /**
-                     * 获取Kibana内网访问状态
-OPEN 开启
-CLOSE 关闭
-                     * @return KibanaPrivateAccess Kibana内网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * 获取<p>Kibana内网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @return KibanaPrivateAccess <p>Kibana内网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     std::string GetKibanaPrivateAccess() const;
 
                     /**
-                     * 设置Kibana内网访问状态
-OPEN 开启
-CLOSE 关闭
-                     * @param _kibanaPrivateAccess Kibana内网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * 设置<p>Kibana内网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @param _kibanaPrivateAccess <p>Kibana内网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     void SetKibanaPrivateAccess(const std::string& _kibanaPrivateAccess);
@@ -481,15 +433,15 @@ CLOSE 关闭
                     bool KibanaPrivateAccessHasBeenSet() const;
 
                     /**
-                     * 获取ES 6.8及以上版本基础版开启或关闭用户认证
-                     * @return BasicSecurityType ES 6.8及以上版本基础版开启或关闭用户认证
+                     * 获取<p>ES 6.8及以上版本基础版开启或关闭用户认证</p>
+                     * @return BasicSecurityType <p>ES 6.8及以上版本基础版开启或关闭用户认证</p>
                      * 
                      */
                     int64_t GetBasicSecurityType() const;
 
                     /**
-                     * 设置ES 6.8及以上版本基础版开启或关闭用户认证
-                     * @param _basicSecurityType ES 6.8及以上版本基础版开启或关闭用户认证
+                     * 设置<p>ES 6.8及以上版本基础版开启或关闭用户认证</p>
+                     * @param _basicSecurityType <p>ES 6.8及以上版本基础版开启或关闭用户认证</p>
                      * 
                      */
                     void SetBasicSecurityType(const int64_t& _basicSecurityType);
@@ -502,15 +454,15 @@ CLOSE 关闭
                     bool BasicSecurityTypeHasBeenSet() const;
 
                     /**
-                     * 获取Kibana内网端口
-                     * @return KibanaPrivatePort Kibana内网端口
+                     * 获取<p>Kibana内网端口</p>
+                     * @return KibanaPrivatePort <p>Kibana内网端口</p>
                      * 
                      */
                     uint64_t GetKibanaPrivatePort() const;
 
                     /**
-                     * 设置Kibana内网端口
-                     * @param _kibanaPrivatePort Kibana内网端口
+                     * 设置<p>Kibana内网端口</p>
+                     * @param _kibanaPrivatePort <p>Kibana内网端口</p>
                      * 
                      */
                     void SetKibanaPrivatePort(const uint64_t& _kibanaPrivatePort);
@@ -523,15 +475,15 @@ CLOSE 关闭
                     bool KibanaPrivatePortHasBeenSet() const;
 
                     /**
-                     * 获取0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启
-                     * @return ScaleType 0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启
+                     * 获取<p>0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启</p>
+                     * @return ScaleType <p>0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启</p>
                      * 
                      */
                     int64_t GetScaleType() const;
 
                     /**
-                     * 设置0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启
-                     * @param _scaleType 0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启
+                     * 设置<p>0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启</p>
+                     * @param _scaleType <p>0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启</p>
                      * 
                      */
                     void SetScaleType(const int64_t& _scaleType);
@@ -544,15 +496,15 @@ CLOSE 关闭
                     bool ScaleTypeHasBeenSet() const;
 
                     /**
-                     * 获取多可用区部署
-                     * @return MultiZoneInfo 多可用区部署
+                     * 获取<p>多可用区部署</p>
+                     * @return MultiZoneInfo <p>多可用区部署</p>
                      * 
                      */
                     std::vector<ZoneDetail> GetMultiZoneInfo() const;
 
                     /**
-                     * 设置多可用区部署
-                     * @param _multiZoneInfo 多可用区部署
+                     * 设置<p>多可用区部署</p>
+                     * @param _multiZoneInfo <p>多可用区部署</p>
                      * 
                      */
                     void SetMultiZoneInfo(const std::vector<ZoneDetail>& _multiZoneInfo);
@@ -565,15 +517,15 @@ CLOSE 关闭
                     bool MultiZoneInfoHasBeenSet() const;
 
                     /**
-                     * 获取场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索
-                     * @return SceneType 场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索
+                     * 获取<p>场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索</p>
+                     * @return SceneType <p>场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索</p>
                      * 
                      */
                     int64_t GetSceneType() const;
 
                     /**
-                     * 设置场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索
-                     * @param _sceneType 场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索
+                     * 设置<p>场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索</p>
+                     * @param _sceneType <p>场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索</p>
                      * 
                      */
                     void SetSceneType(const int64_t& _sceneType);
@@ -586,15 +538,15 @@ CLOSE 关闭
                     bool SceneTypeHasBeenSet() const;
 
                     /**
-                     * 获取Kibana配置项（JSON格式字符串）
-                     * @return KibanaConfig Kibana配置项（JSON格式字符串）
+                     * 获取<p>Kibana配置项（JSON格式字符串）</p>
+                     * @return KibanaConfig <p>Kibana配置项（JSON格式字符串）</p>
                      * 
                      */
                     std::string GetKibanaConfig() const;
 
                     /**
-                     * 设置Kibana配置项（JSON格式字符串）
-                     * @param _kibanaConfig Kibana配置项（JSON格式字符串）
+                     * 设置<p>Kibana配置项（JSON格式字符串）</p>
+                     * @param _kibanaConfig <p>Kibana配置项（JSON格式字符串）</p>
                      * 
                      */
                     void SetKibanaConfig(const std::string& _kibanaConfig);
@@ -607,15 +559,15 @@ CLOSE 关闭
                     bool KibanaConfigHasBeenSet() const;
 
                     /**
-                     * 获取可视化节点配置
-                     * @return WebNodeTypeInfo 可视化节点配置
+                     * 获取<p>可视化节点配置</p>
+                     * @return WebNodeTypeInfo <p>可视化节点配置</p>
                      * 
                      */
                     WebNodeTypeInfo GetWebNodeTypeInfo() const;
 
                     /**
-                     * 设置可视化节点配置
-                     * @param _webNodeTypeInfo 可视化节点配置
+                     * 设置<p>可视化节点配置</p>
+                     * @param _webNodeTypeInfo <p>可视化节点配置</p>
                      * 
                      */
                     void SetWebNodeTypeInfo(const WebNodeTypeInfo& _webNodeTypeInfo);
@@ -628,15 +580,15 @@ CLOSE 关闭
                     bool WebNodeTypeInfoHasBeenSet() const;
 
                     /**
-                     * 获取切换到新网络架构
-                     * @return SwitchPrivateLink 切换到新网络架构
+                     * 获取<p>切换到新网络架构</p>
+                     * @return SwitchPrivateLink <p>切换到新网络架构</p>
                      * 
                      */
                     std::string GetSwitchPrivateLink() const;
 
                     /**
-                     * 设置切换到新网络架构
-                     * @param _switchPrivateLink 切换到新网络架构
+                     * 设置<p>切换到新网络架构</p>
+                     * @param _switchPrivateLink <p>切换到新网络架构</p>
                      * 
                      */
                     void SetSwitchPrivateLink(const std::string& _switchPrivateLink);
@@ -649,15 +601,15 @@ CLOSE 关闭
                     bool SwitchPrivateLinkHasBeenSet() const;
 
                     /**
-                     * 获取启用Cerebro
-                     * @return EnableCerebro 启用Cerebro
+                     * 获取<p>启用Cerebro</p>
+                     * @return EnableCerebro <p>启用Cerebro</p>
                      * 
                      */
                     bool GetEnableCerebro() const;
 
                     /**
-                     * 设置启用Cerebro
-                     * @param _enableCerebro 启用Cerebro
+                     * 设置<p>启用Cerebro</p>
+                     * @param _enableCerebro <p>启用Cerebro</p>
                      * 
                      */
                     void SetEnableCerebro(const bool& _enableCerebro);
@@ -670,23 +622,15 @@ CLOSE 关闭
                     bool EnableCerebroHasBeenSet() const;
 
                     /**
-                     * 获取Cerebro公网访问状态
-OPEN 开启
-CLOSE 关闭
-                     * @return CerebroPublicAccess Cerebro公网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * 获取<p>Cerebro公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @return CerebroPublicAccess <p>Cerebro公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     std::string GetCerebroPublicAccess() const;
 
                     /**
-                     * 设置Cerebro公网访问状态
-OPEN 开启
-CLOSE 关闭
-                     * @param _cerebroPublicAccess Cerebro公网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * 设置<p>Cerebro公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @param _cerebroPublicAccess <p>Cerebro公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     void SetCerebroPublicAccess(const std::string& _cerebroPublicAccess);
@@ -699,23 +643,15 @@ CLOSE 关闭
                     bool CerebroPublicAccessHasBeenSet() const;
 
                     /**
-                     * 获取Cerebro内网访问状态
-OPEN 开启
-CLOSE 关闭
-                     * @return CerebroPrivateAccess Cerebro内网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * 获取<p>Cerebro内网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @return CerebroPrivateAccess <p>Cerebro内网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     std::string GetCerebroPrivateAccess() const;
 
                     /**
-                     * 设置Cerebro内网访问状态
-OPEN 开启
-CLOSE 关闭
-                     * @param _cerebroPrivateAccess Cerebro内网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * 设置<p>Cerebro内网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @param _cerebroPrivateAccess <p>Cerebro内网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     void SetCerebroPrivateAccess(const std::string& _cerebroPrivateAccess);
@@ -728,15 +664,15 @@ CLOSE 关闭
                     bool CerebroPrivateAccessHasBeenSet() const;
 
                     /**
-                     * 获取新增或修改的配置组信息
-                     * @return EsConfigSet 新增或修改的配置组信息
+                     * 获取<p>新增或修改的配置组信息</p>
+                     * @return EsConfigSet <p>新增或修改的配置组信息</p>
                      * 
                      */
                     EsConfigSetInfo GetEsConfigSet() const;
 
                     /**
-                     * 设置新增或修改的配置组信息
-                     * @param _esConfigSet 新增或修改的配置组信息
+                     * 设置<p>新增或修改的配置组信息</p>
+                     * @param _esConfigSet <p>新增或修改的配置组信息</p>
                      * 
                      */
                     void SetEsConfigSet(const EsConfigSetInfo& _esConfigSet);
@@ -749,15 +685,15 @@ CLOSE 关闭
                     bool EsConfigSetHasBeenSet() const;
 
                     /**
-                     * 获取可维护时间段
-                     * @return OperationDuration 可维护时间段
+                     * 获取<p>可维护时间段</p>
+                     * @return OperationDuration <p>可维护时间段</p>
                      * 
                      */
                     OperationDurationUpdated GetOperationDuration() const;
 
                     /**
-                     * 设置可维护时间段
-                     * @param _operationDuration 可维护时间段
+                     * 设置<p>可维护时间段</p>
+                     * @param _operationDuration <p>可维护时间段</p>
                      * 
                      */
                     void SetOperationDuration(const OperationDurationUpdated& _operationDuration);
@@ -770,23 +706,15 @@ CLOSE 关闭
                     bool OperationDurationHasBeenSet() const;
 
                     /**
-                     * 获取是否开启Alerting 外网告警输出：
-OPEN 开启
-CLOSE 关闭
-                     * @return KibanaAlteringPublicAccess 是否开启Alerting 外网告警输出：
-OPEN 开启
-CLOSE 关闭
+                     * 获取<p>是否开启Alerting 外网告警输出：<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @return KibanaAlteringPublicAccess <p>是否开启Alerting 外网告警输出：<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     std::string GetKibanaAlteringPublicAccess() const;
 
                     /**
-                     * 设置是否开启Alerting 外网告警输出：
-OPEN 开启
-CLOSE 关闭
-                     * @param _kibanaAlteringPublicAccess 是否开启Alerting 外网告警输出：
-OPEN 开启
-CLOSE 关闭
+                     * 设置<p>是否开启Alerting 外网告警输出：<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @param _kibanaAlteringPublicAccess <p>是否开启Alerting 外网告警输出：<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     void SetKibanaAlteringPublicAccess(const std::string& _kibanaAlteringPublicAccess);
@@ -799,15 +727,15 @@ CLOSE 关闭
                     bool KibanaAlteringPublicAccessHasBeenSet() const;
 
                     /**
-                     * 获取kibana内网自定义域名
-                     * @return KibanaPrivateDomain kibana内网自定义域名
+                     * 获取<p>kibana内网自定义域名</p>
+                     * @return KibanaPrivateDomain <p>kibana内网自定义域名</p>
                      * 
                      */
                     std::string GetKibanaPrivateDomain() const;
 
                     /**
-                     * 设置kibana内网自定义域名
-                     * @param _kibanaPrivateDomain kibana内网自定义域名
+                     * 设置<p>kibana内网自定义域名</p>
+                     * @param _kibanaPrivateDomain <p>kibana内网自定义域名</p>
                      * 
                      */
                     void SetKibanaPrivateDomain(const std::string& _kibanaPrivateDomain);
@@ -820,15 +748,15 @@ CLOSE 关闭
                     bool KibanaPrivateDomainHasBeenSet() const;
 
                     /**
-                     * 获取cerebro内网自定义域名
-                     * @return CerebroPrivateDomain cerebro内网自定义域名
+                     * 获取<p>cerebro内网自定义域名</p>
+                     * @return CerebroPrivateDomain <p>cerebro内网自定义域名</p>
                      * 
                      */
                     std::string GetCerebroPrivateDomain() const;
 
                     /**
-                     * 设置cerebro内网自定义域名
-                     * @param _cerebroPrivateDomain cerebro内网自定义域名
+                     * 设置<p>cerebro内网自定义域名</p>
+                     * @param _cerebroPrivateDomain <p>cerebro内网自定义域名</p>
                      * 
                      */
                     void SetCerebroPrivateDomain(const std::string& _cerebroPrivateDomain);
@@ -841,15 +769,15 @@ CLOSE 关闭
                     bool CerebroPrivateDomainHasBeenSet() const;
 
                     /**
-                     * 获取变更为https集群，默认是http
-                     * @return Protocol 变更为https集群，默认是http
+                     * 获取<p>变更为https集群，默认是http</p>
+                     * @return Protocol <p>变更为https集群，默认是http</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置变更为https集群，默认是http
-                     * @param _protocol 变更为https集群，默认是http
+                     * 设置<p>变更为https集群，默认是http</p>
+                     * @param _protocol <p>变更为https集群，默认是http</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -862,19 +790,15 @@ CLOSE 关闭
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取节点出站访问详细信息
-
-                     * @return OutboundPublicAcls 节点出站访问详细信息
-
+                     * 获取<p>节点出站访问详细信息</p>
+                     * @return OutboundPublicAcls <p>节点出站访问详细信息</p>
                      * 
                      */
                     std::vector<OutboundPublicAcl> GetOutboundPublicAcls() const;
 
                     /**
-                     * 设置节点出站访问详细信息
-
-                     * @param _outboundPublicAcls 节点出站访问详细信息
-
+                     * 设置<p>节点出站访问详细信息</p>
+                     * @param _outboundPublicAcls <p>节点出站访问详细信息</p>
                      * 
                      */
                     void SetOutboundPublicAcls(const std::vector<OutboundPublicAcl>& _outboundPublicAcls);
@@ -887,23 +811,15 @@ CLOSE 关闭
                     bool OutboundPublicAclsHasBeenSet() const;
 
                     /**
-                     * 获取节点出站访问操作
-OPEN 开启
-CLOSE 关闭
-                     * @return OutboundPublicAccess 节点出站访问操作
-OPEN 开启
-CLOSE 关闭
+                     * 获取<p>节点出站访问操作<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @return OutboundPublicAccess <p>节点出站访问操作<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     std::string GetOutboundPublicAccess() const;
 
                     /**
-                     * 设置节点出站访问操作
-OPEN 开启
-CLOSE 关闭
-                     * @param _outboundPublicAccess 节点出站访问操作
-OPEN 开启
-CLOSE 关闭
+                     * 设置<p>节点出站访问操作<br>OPEN 开启<br>CLOSE 关闭</p>
+                     * @param _outboundPublicAccess <p>节点出站访问操作<br>OPEN 开启<br>CLOSE 关闭</p>
                      * 
                      */
                     void SetOutboundPublicAccess(const std::string& _outboundPublicAccess);
@@ -916,15 +832,15 @@ CLOSE 关闭
                     bool OutboundPublicAccessHasBeenSet() const;
 
                     /**
-                     * 获取cvm延迟上架参数
-                     * @return CvmDelayOnlineTime cvm延迟上架参数
+                     * 获取<p>cvm延迟上架参数</p>
+                     * @return CvmDelayOnlineTime <p>cvm延迟上架参数</p>
                      * 
                      */
                     uint64_t GetCvmDelayOnlineTime() const;
 
                     /**
-                     * 设置cvm延迟上架参数
-                     * @param _cvmDelayOnlineTime cvm延迟上架参数
+                     * 设置<p>cvm延迟上架参数</p>
+                     * @param _cvmDelayOnlineTime <p>cvm延迟上架参数</p>
                      * 
                      */
                     void SetCvmDelayOnlineTime(const uint64_t& _cvmDelayOnlineTime);
@@ -937,15 +853,15 @@ CLOSE 关闭
                     bool CvmDelayOnlineTimeHasBeenSet() const;
 
                     /**
-                     * 获取分片迁移并发数
-                     * @return ShardAllocationConcurrents 分片迁移并发数
+                     * 获取<p>分片迁移并发数</p>
+                     * @return ShardAllocationConcurrents <p>分片迁移并发数</p>
                      * 
                      */
                     uint64_t GetShardAllocationConcurrents() const;
 
                     /**
-                     * 设置分片迁移并发数
-                     * @param _shardAllocationConcurrents 分片迁移并发数
+                     * 设置<p>分片迁移并发数</p>
+                     * @param _shardAllocationConcurrents <p>分片迁移并发数</p>
                      * 
                      */
                     void SetShardAllocationConcurrents(const uint64_t& _shardAllocationConcurrents);
@@ -958,15 +874,15 @@ CLOSE 关闭
                     bool ShardAllocationConcurrentsHasBeenSet() const;
 
                     /**
-                     * 获取分片迁移并发速度
-                     * @return ShardAllocationBytes 分片迁移并发速度
+                     * 获取<p>分片迁移并发速度</p>
+                     * @return ShardAllocationBytes <p>分片迁移并发速度</p>
                      * 
                      */
                     uint64_t GetShardAllocationBytes() const;
 
                     /**
-                     * 设置分片迁移并发速度
-                     * @param _shardAllocationBytes 分片迁移并发速度
+                     * 设置<p>分片迁移并发速度</p>
+                     * @param _shardAllocationBytes <p>分片迁移并发速度</p>
                      * 
                      */
                     void SetShardAllocationBytes(const uint64_t& _shardAllocationBytes);
@@ -979,15 +895,15 @@ CLOSE 关闭
                     bool ShardAllocationBytesHasBeenSet() const;
 
                     /**
-                     * 获取读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离
-                     * @return ReadWriteMode 读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离
+                     * 获取<p>读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离</p>
+                     * @return ReadWriteMode <p>读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离</p>
                      * 
                      */
                     int64_t GetReadWriteMode() const;
 
                     /**
-                     * 设置读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离
-                     * @param _readWriteMode 读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离
+                     * 设置<p>读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离</p>
+                     * @param _readWriteMode <p>读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离</p>
                      * 
                      */
                     void SetReadWriteMode(const int64_t& _readWriteMode);
@@ -1000,15 +916,15 @@ CLOSE 关闭
                     bool ReadWriteModeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启置放群组异步任务
-                     * @return EnableScheduleRecoverGroup 是否开启置放群组异步任务
+                     * 获取<p>是否开启置放群组异步任务</p>
+                     * @return EnableScheduleRecoverGroup <p>是否开启置放群组异步任务</p>
                      * 
                      */
                     bool GetEnableScheduleRecoverGroup() const;
 
                     /**
-                     * 设置是否开启置放群组异步任务
-                     * @param _enableScheduleRecoverGroup 是否开启置放群组异步任务
+                     * 设置<p>是否开启置放群组异步任务</p>
+                     * @param _enableScheduleRecoverGroup <p>是否开启置放群组异步任务</p>
                      * 
                      */
                     void SetEnableScheduleRecoverGroup(const bool& _enableScheduleRecoverGroup);
@@ -1021,15 +937,15 @@ CLOSE 关闭
                     bool EnableScheduleRecoverGroupHasBeenSet() const;
 
                     /**
-                     * 获取置放群组异步任务可维护时间段
-                     * @return EnableScheduleOperationDuration 置放群组异步任务可维护时间段
+                     * 获取<p>置放群组异步任务可维护时间段</p>
+                     * @return EnableScheduleOperationDuration <p>置放群组异步任务可维护时间段</p>
                      * 
                      */
                     EnableScheduleOperationDuration GetEnableScheduleOperationDuration() const;
 
                     /**
-                     * 设置置放群组异步任务可维护时间段
-                     * @param _enableScheduleOperationDuration 置放群组异步任务可维护时间段
+                     * 设置<p>置放群组异步任务可维护时间段</p>
+                     * @param _enableScheduleOperationDuration <p>置放群组异步任务可维护时间段</p>
                      * 
                      */
                     void SetEnableScheduleOperationDuration(const EnableScheduleOperationDuration& _enableScheduleOperationDuration);
@@ -1042,15 +958,15 @@ CLOSE 关闭
                     bool EnableScheduleOperationDurationHasBeenSet() const;
 
                     /**
-                     * 获取开启集群保护：OPEN-开启，CLOSE-关闭
-                     * @return EnableDestroyProtection 开启集群保护：OPEN-开启，CLOSE-关闭
+                     * 获取<p>开启集群保护：OPEN-开启，CLOSE-关闭</p>
+                     * @return EnableDestroyProtection <p>开启集群保护：OPEN-开启，CLOSE-关闭</p>
                      * 
                      */
                     std::string GetEnableDestroyProtection() const;
 
                     /**
-                     * 设置开启集群保护：OPEN-开启，CLOSE-关闭
-                     * @param _enableDestroyProtection 开启集群保护：OPEN-开启，CLOSE-关闭
+                     * 设置<p>开启集群保护：OPEN-开启，CLOSE-关闭</p>
+                     * @param _enableDestroyProtection <p>开启集群保护：OPEN-开启，CLOSE-关闭</p>
                      * 
                      */
                     void SetEnableDestroyProtection(const std::string& _enableDestroyProtection);
@@ -1063,15 +979,15 @@ CLOSE 关闭
                     bool EnableDestroyProtectionHasBeenSet() const;
 
                     /**
-                     * 获取自动扩盘参数
-                     * @return AutoScaleDiskInfoList 自动扩盘参数
+                     * 获取<p>自动扩盘参数</p>
+                     * @return AutoScaleDiskInfoList <p>自动扩盘参数</p>
                      * 
                      */
                     std::vector<AutoScaleDiskInfo> GetAutoScaleDiskInfoList() const;
 
                     /**
-                     * 设置自动扩盘参数
-                     * @param _autoScaleDiskInfoList 自动扩盘参数
+                     * 设置<p>自动扩盘参数</p>
+                     * @param _autoScaleDiskInfoList <p>自动扩盘参数</p>
                      * 
                      */
                     void SetAutoScaleDiskInfoList(const std::vector<AutoScaleDiskInfo>& _autoScaleDiskInfoList);
@@ -1084,15 +1000,15 @@ CLOSE 关闭
                     bool AutoScaleDiskInfoListHasBeenSet() const;
 
                     /**
-                     * 获取自动扩盘删除参数
-                     * @return AutoScaleDiskDeleteNodeTypeList 自动扩盘删除参数
+                     * 获取<p>自动扩盘删除参数</p>
+                     * @return AutoScaleDiskDeleteNodeTypeList <p>自动扩盘删除参数</p>
                      * 
                      */
                     std::vector<std::string> GetAutoScaleDiskDeleteNodeTypeList() const;
 
                     /**
-                     * 设置自动扩盘删除参数
-                     * @param _autoScaleDiskDeleteNodeTypeList 自动扩盘删除参数
+                     * 设置<p>自动扩盘删除参数</p>
+                     * @param _autoScaleDiskDeleteNodeTypeList <p>自动扩盘删除参数</p>
                      * 
                      */
                     void SetAutoScaleDiskDeleteNodeTypeList(const std::vector<std::string>& _autoScaleDiskDeleteNodeTypeList);
@@ -1105,15 +1021,15 @@ CLOSE 关闭
                     bool AutoScaleDiskDeleteNodeTypeListHasBeenSet() const;
 
                     /**
-                     * 获取其他附加配置，jvm或者yml
-                     * @return OtherConfig 其他附加配置，jvm或者yml
+                     * 获取<p>其他附加配置，jvm或者yml</p>
+                     * @return OtherConfig <p>其他附加配置，jvm或者yml</p>
                      * 
                      */
                     OtherConfig GetOtherConfig() const;
 
                     /**
-                     * 设置其他附加配置，jvm或者yml
-                     * @param _otherConfig 其他附加配置，jvm或者yml
+                     * 设置<p>其他附加配置，jvm或者yml</p>
+                     * @param _otherConfig <p>其他附加配置，jvm或者yml</p>
                      * 
                      */
                     void SetOtherConfig(const OtherConfig& _otherConfig);
@@ -1125,310 +1041,316 @@ CLOSE 关闭
                      */
                     bool OtherConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>滚动升降配时是否等待集群恢复Green再滚动下一个节点</p>
+                     * @return WaitGreen <p>滚动升降配时是否等待集群恢复Green再滚动下一个节点</p>
+                     * 
+                     */
+                    std::string GetWaitGreen() const;
+
+                    /**
+                     * 设置<p>滚动升降配时是否等待集群恢复Green再滚动下一个节点</p>
+                     * @param _waitGreen <p>滚动升降配时是否等待集群恢复Green再滚动下一个节点</p>
+                     * 
+                     */
+                    void SetWaitGreen(const std::string& _waitGreen);
+
+                    /**
+                     * 判断参数 WaitGreen 是否已赋值
+                     * @return WaitGreen 是否已赋值
+                     * 
+                     */
+                    bool WaitGreenHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）
+                     * <p>实例名称（1-50 个英文、汉字、数字、连接线-或下划线_）</p>
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-节点个数（2-50个）
+                     * <p>已废弃请使用NodeInfoList<br>节点个数（2-50个）</p>
                      */
                     uint64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * ES配置项（JSON格式字符串）
+                     * <p>ES配置项（JSON格式字符串）</p>
                      */
                     std::string m_esConfig;
                     bool m_esConfigHasBeenSet;
 
                     /**
-                     * 默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号）
+                     * <p>默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&amp;^*+=_:;,.?]的特殊符号）</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 可视化组件（Kibana、Cerebro）的公网访问策略
+                     * <p>可视化组件（Kibana、Cerebro）的公网访问策略</p>
                      */
                     EsAcl m_esAcl;
                     bool m_esAclHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-磁盘大小（单位GB）
+                     * <p>已废弃请使用NodeInfoList<br>磁盘大小（单位GB）</p>
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * <p>已废弃请使用NodeInfoList<br>节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-专用主节点个数（只支持3个或5个）
+                     * <p>已废弃请使用NodeInfoList<br>专用主节点个数（只支持3个或5个）</p>
                      */
                     uint64_t m_masterNodeNum;
                     bool m_masterNodeNumHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
+                     * <p>已废弃请使用NodeInfoList<br>专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li></p>
                      */
                     std::string m_masterNodeType;
                     bool m_masterNodeTypeHasBeenSet;
 
                     /**
-                     * 已废弃请使用NodeInfoList
-专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）
+                     * <p>已废弃请使用NodeInfoList<br>专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义）</p>
                      */
                     uint64_t m_masterNodeDiskSize;
                     bool m_masterNodeDiskSizeHasBeenSet;
 
                     /**
-                     * 更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false
+                     * <p>更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false</p>
                      */
                     bool m_forceRestart;
                     bool m_forceRestartHasBeenSet;
 
                     /**
-                     * COS自动备份信息
+                     * <p>COS自动备份信息</p>
                      */
                     CosBackup m_cosBackup;
                     bool m_cosBackupHasBeenSet;
 
                     /**
-                     * 节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改
+                     * <p>节点信息列表，可以只传递要更新的节点及其对应的规格信息。支持的操作包括<li>修改一种节点的个数</li><li>修改一种节点的节点规格及磁盘大小</li><li>增加一种节点类型（需要同时指定该节点的类型，个数，规格，磁盘等信息）</li>上述操作一次只能进行一种，且磁盘类型不支持修改</p>
                      */
                     std::vector<NodeInfo> m_nodeInfoList;
                     bool m_nodeInfoListHasBeenSet;
 
                     /**
-                     * ES集群公网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * <p>ES集群公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      */
                     std::string m_publicAccess;
                     bool m_publicAccessHasBeenSet;
 
                     /**
-                     * 公网访问控制列表
+                     * <p>公网访问控制列表</p>
                      */
                     EsPublicAcl m_esPublicAcl;
                     bool m_esPublicAclHasBeenSet;
 
                     /**
-                     * Kibana公网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * <p>Kibana公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      */
                     std::string m_kibanaPublicAccess;
                     bool m_kibanaPublicAccessHasBeenSet;
 
                     /**
-                     * Kibana内网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * <p>Kibana内网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      */
                     std::string m_kibanaPrivateAccess;
                     bool m_kibanaPrivateAccessHasBeenSet;
 
                     /**
-                     * ES 6.8及以上版本基础版开启或关闭用户认证
+                     * <p>ES 6.8及以上版本基础版开启或关闭用户认证</p>
                      */
                     int64_t m_basicSecurityType;
                     bool m_basicSecurityTypeHasBeenSet;
 
                     /**
-                     * Kibana内网端口
+                     * <p>Kibana内网端口</p>
                      */
                     uint64_t m_kibanaPrivatePort;
                     bool m_kibanaPrivatePortHasBeenSet;
 
                     /**
-                     * 0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启
+                     * <p>0: 蓝绿变更方式扩容，集群不重启 （默认） 1: 磁盘解挂载扩容，集群滚动重启</p>
                      */
                     int64_t m_scaleType;
                     bool m_scaleTypeHasBeenSet;
 
                     /**
-                     * 多可用区部署
+                     * <p>多可用区部署</p>
                      */
                     std::vector<ZoneDetail> m_multiZoneInfo;
                     bool m_multiZoneInfoHasBeenSet;
 
                     /**
-                     * 场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索
+                     * <p>场景化模板类型 -1：不启用 1：通用 2：日志 3：搜索</p>
                      */
                     int64_t m_sceneType;
                     bool m_sceneTypeHasBeenSet;
 
                     /**
-                     * Kibana配置项（JSON格式字符串）
+                     * <p>Kibana配置项（JSON格式字符串）</p>
                      */
                     std::string m_kibanaConfig;
                     bool m_kibanaConfigHasBeenSet;
 
                     /**
-                     * 可视化节点配置
+                     * <p>可视化节点配置</p>
                      */
                     WebNodeTypeInfo m_webNodeTypeInfo;
                     bool m_webNodeTypeInfoHasBeenSet;
 
                     /**
-                     * 切换到新网络架构
+                     * <p>切换到新网络架构</p>
                      */
                     std::string m_switchPrivateLink;
                     bool m_switchPrivateLinkHasBeenSet;
 
                     /**
-                     * 启用Cerebro
+                     * <p>启用Cerebro</p>
                      */
                     bool m_enableCerebro;
                     bool m_enableCerebroHasBeenSet;
 
                     /**
-                     * Cerebro公网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * <p>Cerebro公网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      */
                     std::string m_cerebroPublicAccess;
                     bool m_cerebroPublicAccessHasBeenSet;
 
                     /**
-                     * Cerebro内网访问状态
-OPEN 开启
-CLOSE 关闭
+                     * <p>Cerebro内网访问状态<br>OPEN 开启<br>CLOSE 关闭</p>
                      */
                     std::string m_cerebroPrivateAccess;
                     bool m_cerebroPrivateAccessHasBeenSet;
 
                     /**
-                     * 新增或修改的配置组信息
+                     * <p>新增或修改的配置组信息</p>
                      */
                     EsConfigSetInfo m_esConfigSet;
                     bool m_esConfigSetHasBeenSet;
 
                     /**
-                     * 可维护时间段
+                     * <p>可维护时间段</p>
                      */
                     OperationDurationUpdated m_operationDuration;
                     bool m_operationDurationHasBeenSet;
 
                     /**
-                     * 是否开启Alerting 外网告警输出：
-OPEN 开启
-CLOSE 关闭
+                     * <p>是否开启Alerting 外网告警输出：<br>OPEN 开启<br>CLOSE 关闭</p>
                      */
                     std::string m_kibanaAlteringPublicAccess;
                     bool m_kibanaAlteringPublicAccessHasBeenSet;
 
                     /**
-                     * kibana内网自定义域名
+                     * <p>kibana内网自定义域名</p>
                      */
                     std::string m_kibanaPrivateDomain;
                     bool m_kibanaPrivateDomainHasBeenSet;
 
                     /**
-                     * cerebro内网自定义域名
+                     * <p>cerebro内网自定义域名</p>
                      */
                     std::string m_cerebroPrivateDomain;
                     bool m_cerebroPrivateDomainHasBeenSet;
 
                     /**
-                     * 变更为https集群，默认是http
+                     * <p>变更为https集群，默认是http</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 节点出站访问详细信息
-
+                     * <p>节点出站访问详细信息</p>
                      */
                     std::vector<OutboundPublicAcl> m_outboundPublicAcls;
                     bool m_outboundPublicAclsHasBeenSet;
 
                     /**
-                     * 节点出站访问操作
-OPEN 开启
-CLOSE 关闭
+                     * <p>节点出站访问操作<br>OPEN 开启<br>CLOSE 关闭</p>
                      */
                     std::string m_outboundPublicAccess;
                     bool m_outboundPublicAccessHasBeenSet;
 
                     /**
-                     * cvm延迟上架参数
+                     * <p>cvm延迟上架参数</p>
                      */
                     uint64_t m_cvmDelayOnlineTime;
                     bool m_cvmDelayOnlineTimeHasBeenSet;
 
                     /**
-                     * 分片迁移并发数
+                     * <p>分片迁移并发数</p>
                      */
                     uint64_t m_shardAllocationConcurrents;
                     bool m_shardAllocationConcurrentsHasBeenSet;
 
                     /**
-                     * 分片迁移并发速度
+                     * <p>分片迁移并发速度</p>
                      */
                     uint64_t m_shardAllocationBytes;
                     bool m_shardAllocationBytesHasBeenSet;
 
                     /**
-                     * 读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离
+                     * <p>读写分离模式：-1-不开启，1-本地读写分离，2-远端读写分离</p>
                      */
                     int64_t m_readWriteMode;
                     bool m_readWriteModeHasBeenSet;
 
                     /**
-                     * 是否开启置放群组异步任务
+                     * <p>是否开启置放群组异步任务</p>
                      */
                     bool m_enableScheduleRecoverGroup;
                     bool m_enableScheduleRecoverGroupHasBeenSet;
 
                     /**
-                     * 置放群组异步任务可维护时间段
+                     * <p>置放群组异步任务可维护时间段</p>
                      */
                     EnableScheduleOperationDuration m_enableScheduleOperationDuration;
                     bool m_enableScheduleOperationDurationHasBeenSet;
 
                     /**
-                     * 开启集群保护：OPEN-开启，CLOSE-关闭
+                     * <p>开启集群保护：OPEN-开启，CLOSE-关闭</p>
                      */
                     std::string m_enableDestroyProtection;
                     bool m_enableDestroyProtectionHasBeenSet;
 
                     /**
-                     * 自动扩盘参数
+                     * <p>自动扩盘参数</p>
                      */
                     std::vector<AutoScaleDiskInfo> m_autoScaleDiskInfoList;
                     bool m_autoScaleDiskInfoListHasBeenSet;
 
                     /**
-                     * 自动扩盘删除参数
+                     * <p>自动扩盘删除参数</p>
                      */
                     std::vector<std::string> m_autoScaleDiskDeleteNodeTypeList;
                     bool m_autoScaleDiskDeleteNodeTypeListHasBeenSet;
 
                     /**
-                     * 其他附加配置，jvm或者yml
+                     * <p>其他附加配置，jvm或者yml</p>
                      */
                     OtherConfig m_otherConfig;
                     bool m_otherConfigHasBeenSet;
+
+                    /**
+                     * <p>滚动升降配时是否等待集群恢复Green再滚动下一个节点</p>
+                     */
+                    std::string m_waitGreen;
+                    bool m_waitGreenHasBeenSet;
 
                 };
             }

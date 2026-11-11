@@ -36,7 +36,15 @@ IndexMetaField::IndexMetaField() :
     m_indexSettingsFieldHasBeenSet(false),
     m_indexAliasesFieldHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_indexDocsHasBeenSet(false)
+    m_indexDocsHasBeenSet(false),
+    m_fieldCountHasBeenSet(false),
+    m_fieldLimitHasBeenSet(false),
+    m_fieldUsageRatioHasBeenSet(false),
+    m_occupiedShardsHasBeenSet(false),
+    m_indexOpenStatusHasBeenSet(false),
+    m_fieldLimitHardCapHasBeenSet(false),
+    m_fieldLimitMinHasBeenSet(false),
+    m_fieldAutoAdjustRemainingHasBeenSet(false)
 {
 }
 
@@ -239,6 +247,86 @@ CoreInternalOutcome IndexMetaField::Deserialize(const rapidjson::Value &value)
         m_indexDocsHasBeenSet = true;
     }
 
+    if (value.HasMember("FieldCount") && !value["FieldCount"].IsNull())
+    {
+        if (!value["FieldCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.FieldCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fieldCount = value["FieldCount"].GetInt64();
+        m_fieldCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("FieldLimit") && !value["FieldLimit"].IsNull())
+    {
+        if (!value["FieldLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.FieldLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fieldLimit = value["FieldLimit"].GetInt64();
+        m_fieldLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("FieldUsageRatio") && !value["FieldUsageRatio"].IsNull())
+    {
+        if (!value["FieldUsageRatio"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.FieldUsageRatio` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fieldUsageRatio = string(value["FieldUsageRatio"].GetString());
+        m_fieldUsageRatioHasBeenSet = true;
+    }
+
+    if (value.HasMember("OccupiedShards") && !value["OccupiedShards"].IsNull())
+    {
+        if (!value["OccupiedShards"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.OccupiedShards` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_occupiedShards = value["OccupiedShards"].GetInt64();
+        m_occupiedShardsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IndexOpenStatus") && !value["IndexOpenStatus"].IsNull())
+    {
+        if (!value["IndexOpenStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.IndexOpenStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexOpenStatus = string(value["IndexOpenStatus"].GetString());
+        m_indexOpenStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("FieldLimitHardCap") && !value["FieldLimitHardCap"].IsNull())
+    {
+        if (!value["FieldLimitHardCap"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.FieldLimitHardCap` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fieldLimitHardCap = value["FieldLimitHardCap"].GetInt64();
+        m_fieldLimitHardCapHasBeenSet = true;
+    }
+
+    if (value.HasMember("FieldLimitMin") && !value["FieldLimitMin"].IsNull())
+    {
+        if (!value["FieldLimitMin"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.FieldLimitMin` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fieldLimitMin = value["FieldLimitMin"].GetInt64();
+        m_fieldLimitMinHasBeenSet = true;
+    }
+
+    if (value.HasMember("FieldAutoAdjustRemaining") && !value["FieldAutoAdjustRemaining"].IsNull())
+    {
+        if (!value["FieldAutoAdjustRemaining"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.FieldAutoAdjustRemaining` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fieldAutoAdjustRemaining = value["FieldAutoAdjustRemaining"].GetInt64();
+        m_fieldAutoAdjustRemainingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -387,6 +475,70 @@ void IndexMetaField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "IndexDocs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_indexDocs, allocator);
+    }
+
+    if (m_fieldCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fieldCount, allocator);
+    }
+
+    if (m_fieldLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fieldLimit, allocator);
+    }
+
+    if (m_fieldUsageRatioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldUsageRatio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fieldUsageRatio.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_occupiedShardsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OccupiedShards";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_occupiedShards, allocator);
+    }
+
+    if (m_indexOpenStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexOpenStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexOpenStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fieldLimitHardCapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldLimitHardCap";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fieldLimitHardCap, allocator);
+    }
+
+    if (m_fieldLimitMinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldLimitMin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fieldLimitMin, allocator);
+    }
+
+    if (m_fieldAutoAdjustRemainingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FieldAutoAdjustRemaining";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fieldAutoAdjustRemaining, allocator);
     }
 
 }
@@ -646,5 +798,133 @@ void IndexMetaField::SetIndexDocs(const uint64_t& _indexDocs)
 bool IndexMetaField::IndexDocsHasBeenSet() const
 {
     return m_indexDocsHasBeenSet;
+}
+
+int64_t IndexMetaField::GetFieldCount() const
+{
+    return m_fieldCount;
+}
+
+void IndexMetaField::SetFieldCount(const int64_t& _fieldCount)
+{
+    m_fieldCount = _fieldCount;
+    m_fieldCountHasBeenSet = true;
+}
+
+bool IndexMetaField::FieldCountHasBeenSet() const
+{
+    return m_fieldCountHasBeenSet;
+}
+
+int64_t IndexMetaField::GetFieldLimit() const
+{
+    return m_fieldLimit;
+}
+
+void IndexMetaField::SetFieldLimit(const int64_t& _fieldLimit)
+{
+    m_fieldLimit = _fieldLimit;
+    m_fieldLimitHasBeenSet = true;
+}
+
+bool IndexMetaField::FieldLimitHasBeenSet() const
+{
+    return m_fieldLimitHasBeenSet;
+}
+
+string IndexMetaField::GetFieldUsageRatio() const
+{
+    return m_fieldUsageRatio;
+}
+
+void IndexMetaField::SetFieldUsageRatio(const string& _fieldUsageRatio)
+{
+    m_fieldUsageRatio = _fieldUsageRatio;
+    m_fieldUsageRatioHasBeenSet = true;
+}
+
+bool IndexMetaField::FieldUsageRatioHasBeenSet() const
+{
+    return m_fieldUsageRatioHasBeenSet;
+}
+
+int64_t IndexMetaField::GetOccupiedShards() const
+{
+    return m_occupiedShards;
+}
+
+void IndexMetaField::SetOccupiedShards(const int64_t& _occupiedShards)
+{
+    m_occupiedShards = _occupiedShards;
+    m_occupiedShardsHasBeenSet = true;
+}
+
+bool IndexMetaField::OccupiedShardsHasBeenSet() const
+{
+    return m_occupiedShardsHasBeenSet;
+}
+
+string IndexMetaField::GetIndexOpenStatus() const
+{
+    return m_indexOpenStatus;
+}
+
+void IndexMetaField::SetIndexOpenStatus(const string& _indexOpenStatus)
+{
+    m_indexOpenStatus = _indexOpenStatus;
+    m_indexOpenStatusHasBeenSet = true;
+}
+
+bool IndexMetaField::IndexOpenStatusHasBeenSet() const
+{
+    return m_indexOpenStatusHasBeenSet;
+}
+
+int64_t IndexMetaField::GetFieldLimitHardCap() const
+{
+    return m_fieldLimitHardCap;
+}
+
+void IndexMetaField::SetFieldLimitHardCap(const int64_t& _fieldLimitHardCap)
+{
+    m_fieldLimitHardCap = _fieldLimitHardCap;
+    m_fieldLimitHardCapHasBeenSet = true;
+}
+
+bool IndexMetaField::FieldLimitHardCapHasBeenSet() const
+{
+    return m_fieldLimitHardCapHasBeenSet;
+}
+
+int64_t IndexMetaField::GetFieldLimitMin() const
+{
+    return m_fieldLimitMin;
+}
+
+void IndexMetaField::SetFieldLimitMin(const int64_t& _fieldLimitMin)
+{
+    m_fieldLimitMin = _fieldLimitMin;
+    m_fieldLimitMinHasBeenSet = true;
+}
+
+bool IndexMetaField::FieldLimitMinHasBeenSet() const
+{
+    return m_fieldLimitMinHasBeenSet;
+}
+
+int64_t IndexMetaField::GetFieldAutoAdjustRemaining() const
+{
+    return m_fieldAutoAdjustRemaining;
+}
+
+void IndexMetaField::SetFieldAutoAdjustRemaining(const int64_t& _fieldAutoAdjustRemaining)
+{
+    m_fieldAutoAdjustRemaining = _fieldAutoAdjustRemaining;
+    m_fieldAutoAdjustRemainingHasBeenSet = true;
+}
+
+bool IndexMetaField::FieldAutoAdjustRemainingHasBeenSet() const
+{
+    return m_fieldAutoAdjustRemainingHasBeenSet;
 }
 

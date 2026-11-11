@@ -75,6 +75,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateLiveRecordTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateMediaEvaluationRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateMediaEvaluationResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateModelChatTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateModelChatTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateProcessImageTemplateRequest.h>
@@ -249,6 +251,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeMDPMPSUserInfoResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeMediaMetaDataRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeMediaMetaDataResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeModelChatTaskRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeModelChatTaskResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribePersonSamplesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribePersonSamplesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeProcessImageTemplatesRequest.h>
@@ -575,6 +579,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMediaEvaluationResponse> CreateMediaEvaluationOutcome;
                 typedef std::future<CreateMediaEvaluationOutcome> CreateMediaEvaluationOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateMediaEvaluationRequest&, CreateMediaEvaluationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMediaEvaluationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateModelChatTaskResponse> CreateModelChatTaskOutcome;
+                typedef std::future<CreateModelChatTaskOutcome> CreateModelChatTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateModelChatTaskRequest&, CreateModelChatTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelChatTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePersonSampleResponse> CreatePersonSampleOutcome;
                 typedef std::future<CreatePersonSampleOutcome> CreatePersonSampleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreatePersonSampleRequest&, CreatePersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonSampleAsyncHandler;
@@ -836,6 +843,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMediaMetaDataResponse> DescribeMediaMetaDataOutcome;
                 typedef std::future<DescribeMediaMetaDataOutcome> DescribeMediaMetaDataOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeMediaMetaDataRequest&, DescribeMediaMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMediaMetaDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelChatTaskResponse> DescribeModelChatTaskOutcome;
+                typedef std::future<DescribeModelChatTaskOutcome> DescribeModelChatTaskOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeModelChatTaskRequest&, DescribeModelChatTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelChatTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePersonSamplesResponse> DescribePersonSamplesOutcome;
                 typedef std::future<DescribePersonSamplesOutcome> DescribePersonSamplesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribePersonSamplesRequest&, DescribePersonSamplesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePersonSamplesAsyncHandler;
@@ -1428,6 +1438,15 @@ namespace TencentCloud
                 CreateMediaEvaluationOutcome CreateMediaEvaluation(const Model::CreateMediaEvaluationRequest &request);
                 void CreateMediaEvaluationAsync(const Model::CreateMediaEvaluationRequest& request, const CreateMediaEvaluationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateMediaEvaluationOutcomeCallable CreateMediaEvaluationCallable(const Model::CreateMediaEvaluationRequest& request);
+
+                /**
+                 *提交异步多模态理解任务，返回 TaskId
+                 * @param req CreateModelChatTaskRequest
+                 * @return CreateModelChatTaskOutcome
+                 */
+                CreateModelChatTaskOutcome CreateModelChatTask(const Model::CreateModelChatTaskRequest &request);
+                void CreateModelChatTaskAsync(const Model::CreateModelChatTaskRequest& request, const CreateModelChatTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateModelChatTaskOutcomeCallable CreateModelChatTaskCallable(const Model::CreateModelChatTaskRequest& request);
 
                 /**
                  *该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、内容不适宜等视频处理。
@@ -2239,6 +2258,15 @@ namespace TencentCloud
                 DescribeMediaMetaDataOutcome DescribeMediaMetaData(const Model::DescribeMediaMetaDataRequest &request);
                 void DescribeMediaMetaDataAsync(const Model::DescribeMediaMetaDataRequest& request, const DescribeMediaMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMediaMetaDataOutcomeCallable DescribeMediaMetaDataCallable(const Model::DescribeMediaMetaDataRequest& request);
+
+                /**
+                 *按 TaskId 查询多模态理解任务结果
+                 * @param req DescribeModelChatTaskRequest
+                 * @return DescribeModelChatTaskOutcome
+                 */
+                DescribeModelChatTaskOutcome DescribeModelChatTask(const Model::DescribeModelChatTaskRequest &request);
+                void DescribeModelChatTaskAsync(const Model::DescribeModelChatTaskRequest& request, const DescribeModelChatTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelChatTaskOutcomeCallable DescribeModelChatTaskCallable(const Model::DescribeModelChatTaskRequest& request);
 
                 /**
                  *该接口用于查询素材样本信息，支持根据素材 ID、名称、标签，分页查询。

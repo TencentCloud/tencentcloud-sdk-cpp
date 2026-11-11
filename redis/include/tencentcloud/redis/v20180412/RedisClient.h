@@ -139,6 +139,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeLogsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeMaintenanceWindowResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeModulesRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeModulesResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeParamTemplateInfoRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeParamTemplateInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeParamTemplatesRequest.h>
@@ -229,12 +231,18 @@
 #include <tencentcloud/redis/v20180412/model/ModifyLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyModuleRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyModuleResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyParamTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyParamTemplateResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyReplicationGroupRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyReplicationGroupResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifySSLEncryptionModeRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifySSLEncryptionModeResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyValkeyModuleRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyValkeyModuleResponse.h>
 #include <tencentcloud/redis/v20180412/model/OpenLogRequest.h>
 #include <tencentcloud/redis/v20180412/model/OpenLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/OpenSSLRequest.h>
@@ -259,6 +267,8 @@
 #include <tencentcloud/redis/v20180412/model/SwitchInstanceVipResponse.h>
 #include <tencentcloud/redis/v20180412/model/SwitchProxyRequest.h>
 #include <tencentcloud/redis/v20180412/model/SwitchProxyResponse.h>
+#include <tencentcloud/redis/v20180412/model/UpdateSSLCertRequest.h>
+#include <tencentcloud/redis/v20180412/model/UpdateSSLCertResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceProductVersionRequest.h>
@@ -459,6 +469,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMaintenanceWindowResponse> DescribeMaintenanceWindowOutcome;
                 typedef std::future<DescribeMaintenanceWindowOutcome> DescribeMaintenanceWindowOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeMaintenanceWindowRequest&, DescribeMaintenanceWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintenanceWindowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModulesResponse> DescribeModulesOutcome;
+                typedef std::future<DescribeModulesOutcome> DescribeModulesOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeModulesRequest&, DescribeModulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeParamTemplateInfoResponse> DescribeParamTemplateInfoOutcome;
                 typedef std::future<DescribeParamTemplateInfoOutcome> DescribeParamTemplateInfoOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeParamTemplateInfoRequest&, DescribeParamTemplateInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParamTemplateInfoAsyncHandler;
@@ -594,6 +607,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMaintenanceWindowResponse> ModifyMaintenanceWindowOutcome;
                 typedef std::future<ModifyMaintenanceWindowOutcome> ModifyMaintenanceWindowOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyMaintenanceWindowRequest&, ModifyMaintenanceWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintenanceWindowAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyModuleResponse> ModifyModuleOutcome;
+                typedef std::future<ModifyModuleOutcome> ModifyModuleOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyModuleRequest&, ModifyModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNetworkConfigResponse> ModifyNetworkConfigOutcome;
                 typedef std::future<ModifyNetworkConfigOutcome> ModifyNetworkConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyNetworkConfigRequest&, ModifyNetworkConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkConfigAsyncHandler;
@@ -603,6 +619,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyReplicationGroupResponse> ModifyReplicationGroupOutcome;
                 typedef std::future<ModifyReplicationGroupOutcome> ModifyReplicationGroupOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyReplicationGroupRequest&, ModifyReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReplicationGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySSLEncryptionModeResponse> ModifySSLEncryptionModeOutcome;
+                typedef std::future<ModifySSLEncryptionModeOutcome> ModifySSLEncryptionModeOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifySSLEncryptionModeRequest&, ModifySSLEncryptionModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySSLEncryptionModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyValkeyModuleResponse> ModifyValkeyModuleOutcome;
+                typedef std::future<ModifyValkeyModuleOutcome> ModifyValkeyModuleOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyValkeyModuleRequest&, ModifyValkeyModuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyValkeyModuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenLogResponse> OpenLogOutcome;
                 typedef std::future<OpenLogOutcome> OpenLogOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::OpenLogRequest&, OpenLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenLogAsyncHandler;
@@ -639,6 +661,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchProxyResponse> SwitchProxyOutcome;
                 typedef std::future<SwitchProxyOutcome> SwitchProxyOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::SwitchProxyRequest&, SwitchProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchProxyAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateSSLCertResponse> UpdateSSLCertOutcome;
+                typedef std::future<UpdateSSLCertOutcome> UpdateSSLCertOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::UpdateSSLCertRequest&, UpdateSSLCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSSLCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
                 typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
@@ -1183,6 +1208,15 @@ namespace TencentCloud
                 DescribeMaintenanceWindowOutcomeCallable DescribeMaintenanceWindowCallable(const Model::DescribeMaintenanceWindowRequest& request);
 
                 /**
+                 *本接口（DescribeModules）用于查询实例的扩展模块信息，包括模块的支持状态（是否支持）、启用状态（是否已启用）等信息。
+                 * @param req DescribeModulesRequest
+                 * @return DescribeModulesOutcome
+                 */
+                DescribeModulesOutcome DescribeModules(const Model::DescribeModulesRequest &request);
+                void DescribeModulesAsync(const Model::DescribeModulesRequest& request, const DescribeModulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModulesOutcomeCallable DescribeModulesCallable(const Model::DescribeModulesRequest& request);
+
+                /**
                  *本接口（DescribeParamTemplateInfo）用于查询参数模板详情。
                  * @param req DescribeParamTemplateInfoRequest
                  * @return DescribeParamTemplateInfoOutcome
@@ -1590,6 +1624,15 @@ namespace TencentCloud
                 ModifyMaintenanceWindowOutcomeCallable ModifyMaintenanceWindowCallable(const Model::ModifyMaintenanceWindowRequest& request);
 
                 /**
+                 *本接口（ModifyModule）用于修改实例扩展模块的启用状态。
+                 * @param req ModifyModuleRequest
+                 * @return ModifyModuleOutcome
+                 */
+                ModifyModuleOutcome ModifyModule(const Model::ModifyModuleRequest &request);
+                void ModifyModuleAsync(const Model::ModifyModuleRequest& request, const ModifyModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyModuleOutcomeCallable ModifyModuleCallable(const Model::ModifyModuleRequest& request);
+
+                /**
                  *本接口（ModifyNetworkConfig）用于修改实例网络配置。
                  * @param req ModifyNetworkConfigRequest
                  * @return ModifyNetworkConfigOutcome
@@ -1615,6 +1658,24 @@ namespace TencentCloud
                 ModifyReplicationGroupOutcome ModifyReplicationGroup(const Model::ModifyReplicationGroupRequest &request);
                 void ModifyReplicationGroupAsync(const Model::ModifyReplicationGroupRequest& request, const ModifyReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyReplicationGroupOutcomeCallable ModifyReplicationGroupCallable(const Model::ModifyReplicationGroupRequest& request);
+
+                /**
+                 *本接口（ModifySSLEncryptionMode）用于更改SSL加密模式
+                 * @param req ModifySSLEncryptionModeRequest
+                 * @return ModifySSLEncryptionModeOutcome
+                 */
+                ModifySSLEncryptionModeOutcome ModifySSLEncryptionMode(const Model::ModifySSLEncryptionModeRequest &request);
+                void ModifySSLEncryptionModeAsync(const Model::ModifySSLEncryptionModeRequest& request, const ModifySSLEncryptionModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySSLEncryptionModeOutcomeCallable ModifySSLEncryptionModeCallable(const Model::ModifySSLEncryptionModeRequest& request);
+
+                /**
+                 *本接口（ModifyValkeyModule）用于修改Valkey实例扩展模块的启用状态。
+                 * @param req ModifyValkeyModuleRequest
+                 * @return ModifyValkeyModuleOutcome
+                 */
+                ModifyValkeyModuleOutcome ModifyValkeyModule(const Model::ModifyValkeyModuleRequest &request);
+                void ModifyValkeyModuleAsync(const Model::ModifyValkeyModuleRequest& request, const ModifyValkeyModuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyValkeyModuleOutcomeCallable ModifyValkeyModuleCallable(const Model::ModifyValkeyModuleRequest& request);
 
                 /**
                  *开启日志
@@ -1723,6 +1784,15 @@ namespace TencentCloud
                 SwitchProxyOutcome SwitchProxy(const Model::SwitchProxyRequest &request);
                 void SwitchProxyAsync(const Model::SwitchProxyRequest& request, const SwitchProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchProxyOutcomeCallable SwitchProxyCallable(const Model::SwitchProxyRequest& request);
+
+                /**
+                 *本接口（UpdateSSLCert）用于更新SSL密钥信息。
+                 * @param req UpdateSSLCertRequest
+                 * @return UpdateSSLCertOutcome
+                 */
+                UpdateSSLCertOutcome UpdateSSLCert(const Model::UpdateSSLCertRequest &request);
+                void UpdateSSLCertAsync(const Model::UpdateSSLCertRequest& request, const UpdateSSLCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateSSLCertOutcomeCallable UpdateSSLCertCallable(const Model::UpdateSSLCertRequest& request);
 
                 /**
                  *本接口（UpgradeInstance）用于变更实例的配置规格。

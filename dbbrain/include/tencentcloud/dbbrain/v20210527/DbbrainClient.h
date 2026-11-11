@@ -181,6 +181,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogUserHostStatsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogsResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeSqlExplainV2Request.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeSqlExplainV2Response.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSqlFiltersRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSqlFiltersResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSqlTemplateRequest.h>
@@ -476,6 +478,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSlowLogsResponse> DescribeSlowLogsOutcome;
                 typedef std::future<DescribeSlowLogsOutcome> DescribeSlowLogsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSlowLogsRequest&, DescribeSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSqlExplainV2Response> DescribeSqlExplainV2Outcome;
+                typedef std::future<DescribeSqlExplainV2Outcome> DescribeSqlExplainV2OutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeSqlExplainV2Request&, DescribeSqlExplainV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlExplainV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSqlFiltersResponse> DescribeSqlFiltersOutcome;
                 typedef std::future<DescribeSqlFiltersOutcome> DescribeSqlFiltersOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSqlFiltersRequest&, DescribeSqlFiltersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlFiltersAsyncHandler;
@@ -1255,6 +1260,15 @@ namespace TencentCloud
                 DescribeSlowLogsOutcome DescribeSlowLogs(const Model::DescribeSlowLogsRequest &request);
                 void DescribeSlowLogsAsync(const Model::DescribeSlowLogsRequest& request, const DescribeSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSlowLogsOutcomeCallable DescribeSlowLogsCallable(const Model::DescribeSlowLogsRequest& request);
+
+                /**
+                 *查询指定 SELECT SQL 在实例上的执行计划，常用于慢 SQL 分析、SQL 优化等场景。仅支持 SELECT 类语句
+                 * @param req DescribeSqlExplainV2Request
+                 * @return DescribeSqlExplainV2Outcome
+                 */
+                DescribeSqlExplainV2Outcome DescribeSqlExplainV2(const Model::DescribeSqlExplainV2Request &request);
+                void DescribeSqlExplainV2Async(const Model::DescribeSqlExplainV2Request& request, const DescribeSqlExplainV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSqlExplainV2OutcomeCallable DescribeSqlExplainV2Callable(const Model::DescribeSqlExplainV2Request& request);
 
                 /**
                  *查询实例SQL限流任务列表。

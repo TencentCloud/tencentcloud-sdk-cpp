@@ -25,7 +25,9 @@ AudioEnhanceConfig::AudioEnhanceConfig() :
     m_separateHasBeenSet(false),
     m_volumeBalanceHasBeenSet(false),
     m_beautifyHasBeenSet(false),
-    m_audioEnhanceEditHasBeenSet(false)
+    m_audioEnhanceEditHasBeenSet(false),
+    m_audioSRHasBeenSet(false),
+    m_spatialAudioHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,40 @@ CoreInternalOutcome AudioEnhanceConfig::Deserialize(const rapidjson::Value &valu
         m_audioEnhanceEditHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioSR") && !value["AudioSR"].IsNull())
+    {
+        if (!value["AudioSR"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioEnhanceConfig.AudioSR` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_audioSR.Deserialize(value["AudioSR"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_audioSRHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpatialAudio") && !value["SpatialAudio"].IsNull())
+    {
+        if (!value["SpatialAudio"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioEnhanceConfig.SpatialAudio` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_spatialAudio.Deserialize(value["SpatialAudio"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_spatialAudioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -169,6 +205,24 @@ void AudioEnhanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_audioEnhanceEdit.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_audioSRHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioSR";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_audioSR.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_spatialAudioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpatialAudio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spatialAudio.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -252,5 +306,37 @@ void AudioEnhanceConfig::SetAudioEnhanceEdit(const AudioEnhanceEditConfig& _audi
 bool AudioEnhanceConfig::AudioEnhanceEditHasBeenSet() const
 {
     return m_audioEnhanceEditHasBeenSet;
+}
+
+AudioSRConfig AudioEnhanceConfig::GetAudioSR() const
+{
+    return m_audioSR;
+}
+
+void AudioEnhanceConfig::SetAudioSR(const AudioSRConfig& _audioSR)
+{
+    m_audioSR = _audioSR;
+    m_audioSRHasBeenSet = true;
+}
+
+bool AudioEnhanceConfig::AudioSRHasBeenSet() const
+{
+    return m_audioSRHasBeenSet;
+}
+
+SpatialAudioConfig AudioEnhanceConfig::GetSpatialAudio() const
+{
+    return m_spatialAudio;
+}
+
+void AudioEnhanceConfig::SetSpatialAudio(const SpatialAudioConfig& _spatialAudio)
+{
+    m_spatialAudio = _spatialAudio;
+    m_spatialAudioHasBeenSet = true;
+}
+
+bool AudioEnhanceConfig::SpatialAudioHasBeenSet() const
+{
+    return m_spatialAudioHasBeenSet;
 }
 

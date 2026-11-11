@@ -21,7 +21,8 @@ using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
 DynamicIndex::DynamicIndex() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_tokenizerHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome DynamicIndex::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Tokenizer") && !value["Tokenizer"].IsNull())
+    {
+        if (!value["Tokenizer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DynamicIndex.Tokenizer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenizer = string(value["Tokenizer"].GetString());
+        m_tokenizerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void DynamicIndex::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_tokenizerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tokenizer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tokenizer.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void DynamicIndex::SetStatus(const bool& _status)
 bool DynamicIndex::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DynamicIndex::GetTokenizer() const
+{
+    return m_tokenizer;
+}
+
+void DynamicIndex::SetTokenizer(const string& _tokenizer)
+{
+    m_tokenizer = _tokenizer;
+    m_tokenizerHasBeenSet = true;
+}
+
+bool DynamicIndex::TokenizerHasBeenSet() const
+{
+    return m_tokenizerHasBeenSet;
 }
 

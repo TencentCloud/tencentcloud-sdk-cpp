@@ -1340,6 +1340,56 @@ AgsClient::DescribeDeploymentListOutcomeCallable AgsClient::DescribeDeploymentLi
     return prom->get_future();
 }
 
+AgsClient::DescribeEventCenterEventsOutcome AgsClient::DescribeEventCenterEvents(const DescribeEventCenterEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEventCenterEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEventCenterEventsResponse rsp = DescribeEventCenterEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEventCenterEventsOutcome(rsp);
+        else
+            return DescribeEventCenterEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEventCenterEventsOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DescribeEventCenterEventsAsync(const DescribeEventCenterEventsRequest& request, const DescribeEventCenterEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEventCenterEventsRequest&;
+    using Resp = DescribeEventCenterEventsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEventCenterEvents", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DescribeEventCenterEventsOutcomeCallable AgsClient::DescribeEventCenterEventsCallable(const DescribeEventCenterEventsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEventCenterEventsOutcome>>();
+    DescribeEventCenterEventsAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DescribeEventCenterEventsRequest&,
+        DescribeEventCenterEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AgsClient::DescribeEventsOutcome AgsClient::DescribeEvents(const DescribeEventsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEvents");

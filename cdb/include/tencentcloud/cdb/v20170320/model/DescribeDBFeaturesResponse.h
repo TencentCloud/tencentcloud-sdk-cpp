@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否支持数据库审计功能。
-                     * @return IsSupportAudit 是否支持数据库审计功能。
+                     * 获取<p>是否支持数据库审计功能。</p>
+                     * @return IsSupportAudit <p>是否支持数据库审计功能。</p>
                      * 
                      */
                     bool GetIsSupportAudit() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool IsSupportAuditHasBeenSet() const;
 
                     /**
-                     * 获取开启审计是否需要升级内核版本。
-                     * @return AuditNeedUpgrade 开启审计是否需要升级内核版本。
+                     * 获取<p>开启审计是否需要升级内核版本。</p>
+                     * @return AuditNeedUpgrade <p>开启审计是否需要升级内核版本。</p>
                      * 
                      */
                     bool GetAuditNeedUpgrade() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool AuditNeedUpgradeHasBeenSet() const;
 
                     /**
-                     * 获取是否支持数据库加密功能。
-                     * @return IsSupportEncryption 是否支持数据库加密功能。
+                     * 获取<p>是否支持数据库加密功能。</p>
+                     * @return IsSupportEncryption <p>是否支持数据库加密功能。</p>
                      * 
                      */
                     bool GetIsSupportEncryption() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool IsSupportEncryptionHasBeenSet() const;
 
                     /**
-                     * 获取开启加密是否需要升级内核版本。
-                     * @return EncryptionNeedUpgrade 开启加密是否需要升级内核版本。
+                     * 获取<p>开启加密是否需要升级内核版本。</p>
+                     * @return EncryptionNeedUpgrade <p>开启加密是否需要升级内核版本。</p>
                      * 
                      */
                     bool GetEncryptionNeedUpgrade() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool EncryptionNeedUpgradeHasBeenSet() const;
 
                     /**
-                     * 获取是否为异地只读实例。
-                     * @return IsRemoteRo 是否为异地只读实例。
+                     * 获取<p>是否为异地只读实例。</p>
+                     * @return IsRemoteRo <p>是否为异地只读实例。</p>
                      * 
                      */
                     bool GetIsRemoteRo() const;
@@ -114,10 +114,8 @@ namespace TencentCloud
                     bool IsRemoteRoHasBeenSet() const;
 
                     /**
-                     * 获取主实例所在地域。
-说明：此参数可能返回空值，您可忽略此出参返回值。如需获取实例所在地域详情，您可调用 [查询实例列表](https://cloud.tencent.com/document/product/236/15872) 接口查询。
-                     * @return MasterRegion 主实例所在地域。
-说明：此参数可能返回空值，您可忽略此出参返回值。如需获取实例所在地域详情，您可调用 [查询实例列表](https://cloud.tencent.com/document/product/236/15872) 接口查询。
+                     * 获取<p>主实例所在地域。<br>说明：此参数可能返回空值，您可忽略此出参返回值。如需获取实例所在地域详情，您可调用 <a href="https://cloud.tencent.com/document/product/236/15872">查询实例列表</a> 接口查询。</p>
+                     * @return MasterRegion <p>主实例所在地域。<br>说明：此参数可能返回空值，您可忽略此出参返回值。如需获取实例所在地域详情，您可调用 <a href="https://cloud.tencent.com/document/product/236/15872">查询实例列表</a> 接口查询。</p>
                      * 
                      */
                     std::string GetMasterRegion() const;
@@ -130,8 +128,8 @@ namespace TencentCloud
                     bool MasterRegionHasBeenSet() const;
 
                     /**
-                     * 获取是否支持小版本升级。
-                     * @return IsSupportUpdateSubVersion 是否支持小版本升级。
+                     * 获取<p>是否支持小版本升级。</p>
+                     * @return IsSupportUpdateSubVersion <p>是否支持小版本升级。</p>
                      * 
                      */
                     bool GetIsSupportUpdateSubVersion() const;
@@ -144,8 +142,8 @@ namespace TencentCloud
                     bool IsSupportUpdateSubVersionHasBeenSet() const;
 
                     /**
-                     * 获取当前内核版本。
-                     * @return CurrentSubVersion 当前内核版本。
+                     * 获取<p>当前内核版本。</p>
+                     * @return CurrentSubVersion <p>当前内核版本。</p>
                      * 
                      */
                     std::string GetCurrentSubVersion() const;
@@ -158,8 +156,8 @@ namespace TencentCloud
                     bool CurrentSubVersionHasBeenSet() const;
 
                     /**
-                     * 获取可供升级的内核版本。
-                     * @return TargetSubVersion 可供升级的内核版本。
+                     * 获取<p>可供升级的内核版本。</p>
+                     * @return TargetSubVersion <p>可供升级的内核版本。</p>
                      * 
                      */
                     std::string GetTargetSubVersion() const;
@@ -174,56 +172,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否支持数据库审计功能。
+                     * <p>是否支持数据库审计功能。</p>
                      */
                     bool m_isSupportAudit;
                     bool m_isSupportAuditHasBeenSet;
 
                     /**
-                     * 开启审计是否需要升级内核版本。
+                     * <p>开启审计是否需要升级内核版本。</p>
                      */
                     bool m_auditNeedUpgrade;
                     bool m_auditNeedUpgradeHasBeenSet;
 
                     /**
-                     * 是否支持数据库加密功能。
+                     * <p>是否支持数据库加密功能。</p>
                      */
                     bool m_isSupportEncryption;
                     bool m_isSupportEncryptionHasBeenSet;
 
                     /**
-                     * 开启加密是否需要升级内核版本。
+                     * <p>开启加密是否需要升级内核版本。</p>
                      */
                     bool m_encryptionNeedUpgrade;
                     bool m_encryptionNeedUpgradeHasBeenSet;
 
                     /**
-                     * 是否为异地只读实例。
+                     * <p>是否为异地只读实例。</p>
                      */
                     bool m_isRemoteRo;
                     bool m_isRemoteRoHasBeenSet;
 
                     /**
-                     * 主实例所在地域。
-说明：此参数可能返回空值，您可忽略此出参返回值。如需获取实例所在地域详情，您可调用 [查询实例列表](https://cloud.tencent.com/document/product/236/15872) 接口查询。
+                     * <p>主实例所在地域。<br>说明：此参数可能返回空值，您可忽略此出参返回值。如需获取实例所在地域详情，您可调用 <a href="https://cloud.tencent.com/document/product/236/15872">查询实例列表</a> 接口查询。</p>
                      */
                     std::string m_masterRegion;
                     bool m_masterRegionHasBeenSet;
 
                     /**
-                     * 是否支持小版本升级。
+                     * <p>是否支持小版本升级。</p>
                      */
                     bool m_isSupportUpdateSubVersion;
                     bool m_isSupportUpdateSubVersionHasBeenSet;
 
                     /**
-                     * 当前内核版本。
+                     * <p>当前内核版本。</p>
                      */
                     std::string m_currentSubVersion;
                     bool m_currentSubVersionHasBeenSet;
 
                     /**
-                     * 可供升级的内核版本。
+                     * <p>可供升级的内核版本。</p>
                      */
                     std::string m_targetSubVersion;
                     bool m_targetSubVersionHasBeenSet;

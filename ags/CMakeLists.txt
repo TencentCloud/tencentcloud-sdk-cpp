@@ -110,6 +110,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/DescribeSessionsResponse.h
   include/tencentcloud/ags/v20250920/model/DescribeDeploymentListRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryAuditLogListRequest.h
+  include/tencentcloud/ags/v20250920/model/EventItem.h
   include/tencentcloud/ags/v20250920/model/PauseSandboxInstanceRequest.h
   include/tencentcloud/ags/v20250920/model/DescribeRegistryRecordListResponse.h
   include/tencentcloud/ags/v20250920/model/CloudAuditLog.h
@@ -171,6 +172,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/DescribePreCacheImageTaskResponse.h
   include/tencentcloud/ags/v20250920/model/DeleteRegistryRecordResponse.h
   include/tencentcloud/ags/v20250920/model/CreateRegistryRecordRequest.h
+  include/tencentcloud/ags/v20250920/model/DescribeEventCenterEventsResponse.h
   include/tencentcloud/ags/v20250920/model/ModifySessionResponse.h
   include/tencentcloud/ags/v20250920/model/UpdateSandboxInstanceResponse.h
   include/tencentcloud/ags/v20250920/model/Deployment.h
@@ -180,6 +182,7 @@ set(ags_public_header_model
   include/tencentcloud/ags/v20250920/model/DeleteRegistryRecordRequest.h
   include/tencentcloud/ags/v20250920/model/EventPartInfo.h
   include/tencentcloud/ags/v20250920/model/Tag.h
+  include/tencentcloud/ags/v20250920/model/DescribeEventCenterEventsRequest.h
   include/tencentcloud/ags/v20250920/model/StopSandboxInstanceResponse.h
   include/tencentcloud/ags/v20250920/model/ScalingConfiguration.h
   include/tencentcloud/ags/v20250920/model/CreateSandboxSnapshotRequest.h
@@ -297,6 +300,7 @@ set(ags_src
   src/v20250920/model/DescribeSessionsResponse.cpp
   src/v20250920/model/DescribeDeploymentListRequest.cpp
   src/v20250920/model/DescribeRegistryAuditLogListRequest.cpp
+  src/v20250920/model/EventItem.cpp
   src/v20250920/model/PauseSandboxInstanceRequest.cpp
   src/v20250920/model/DescribeRegistryRecordListResponse.cpp
   src/v20250920/model/CloudAuditLog.cpp
@@ -358,6 +362,7 @@ set(ags_src
   src/v20250920/model/DescribePreCacheImageTaskResponse.cpp
   src/v20250920/model/DeleteRegistryRecordResponse.cpp
   src/v20250920/model/CreateRegistryRecordRequest.cpp
+  src/v20250920/model/DescribeEventCenterEventsResponse.cpp
   src/v20250920/model/ModifySessionResponse.cpp
   src/v20250920/model/UpdateSandboxInstanceResponse.cpp
   src/v20250920/model/Deployment.cpp
@@ -367,6 +372,7 @@ set(ags_src
   src/v20250920/model/DeleteRegistryRecordRequest.cpp
   src/v20250920/model/EventPartInfo.cpp
   src/v20250920/model/Tag.cpp
+  src/v20250920/model/DescribeEventCenterEventsRequest.cpp
   src/v20250920/model/StopSandboxInstanceResponse.cpp
   src/v20250920/model/ScalingConfiguration.cpp
   src/v20250920/model/CreateSandboxSnapshotRequest.cpp

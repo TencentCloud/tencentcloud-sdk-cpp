@@ -72,21 +72,21 @@ namespace TencentCloud
                     /**
                      * 获取<p>接口参数列表</p>
                      * @return YAxis <p>接口参数列表</p>
-                     * 
+                     * @deprecated
                      */
                     std::vector<YAxis> GetYAxis() const;
 
                     /**
                      * 设置<p>接口参数列表</p>
                      * @param _yAxis <p>接口参数列表</p>
-                     * 
+                     * @deprecated
                      */
                     void SetYAxis(const std::vector<YAxis>& _yAxis);
 
                     /**
                      * 判断参数 YAxis 是否已赋值
                      * @return YAxis 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool YAxisHasBeenSet() const;
 

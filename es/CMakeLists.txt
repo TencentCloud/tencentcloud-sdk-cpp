@@ -98,9 +98,9 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/LogDetail.h
   include/tencentcloud/es/v20180416/model/CreateCollectorRequest.h
   include/tencentcloud/es/v20180416/model/DescribeAutoBackUpStrategyRequest.h
-  include/tencentcloud/es/v20180416/model/CosSnapShotInfo.h
+  include/tencentcloud/es/v20180416/model/DescribeLogstashInstanceLogsRequest.h
   include/tencentcloud/es/v20180416/model/DescribeIndexMetaResponse.h
-  include/tencentcloud/es/v20180416/model/DescribeLogstashViewsRequest.h
+  include/tencentcloud/es/v20180416/model/BatchIndexResult.h
   include/tencentcloud/es/v20180416/model/StartLogstashPipelinesRequest.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessMetricsRequest.h
   include/tencentcloud/es/v20180416/model/GetDiagnoseSettingsResponse.h
@@ -207,6 +207,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupRequest.h
   include/tencentcloud/es/v20180416/model/ProcessDetail.h
   include/tencentcloud/es/v20180416/model/PodLabel.h
+  include/tencentcloud/es/v20180416/model/DescribeLogstashViewsRequest.h
   include/tencentcloud/es/v20180416/model/DescribeEventInfoListRequest.h
   include/tencentcloud/es/v20180416/model/DescribeLogstashInstancesRequest.h
   include/tencentcloud/es/v20180416/model/CreateCosMigrateToServerlessInstanceRequest.h
@@ -269,7 +270,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/GpuInfo.h
   include/tencentcloud/es/v20180416/model/DescribeInstancePluginListResponse.h
   include/tencentcloud/es/v20180416/model/DiSourceCvm.h
-  include/tencentcloud/es/v20180416/model/DescribeLogstashInstanceLogsRequest.h
+  include/tencentcloud/es/v20180416/model/CosSnapShotInfo.h
   include/tencentcloud/es/v20180416/model/CheckUpdateInstanceRequest.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessSpacesRequest.h
   include/tencentcloud/es/v20180416/model/RestartInstanceRequest.h
@@ -427,9 +428,9 @@ set(es_src
   src/v20180416/model/LogDetail.cpp
   src/v20180416/model/CreateCollectorRequest.cpp
   src/v20180416/model/DescribeAutoBackUpStrategyRequest.cpp
-  src/v20180416/model/CosSnapShotInfo.cpp
+  src/v20180416/model/DescribeLogstashInstanceLogsRequest.cpp
   src/v20180416/model/DescribeIndexMetaResponse.cpp
-  src/v20180416/model/DescribeLogstashViewsRequest.cpp
+  src/v20180416/model/BatchIndexResult.cpp
   src/v20180416/model/StartLogstashPipelinesRequest.cpp
   src/v20180416/model/DescribeServerlessMetricsRequest.cpp
   src/v20180416/model/GetDiagnoseSettingsResponse.cpp
@@ -536,6 +537,7 @@ set(es_src
   src/v20180416/model/ModifyEsVipSecurityGroupRequest.cpp
   src/v20180416/model/ProcessDetail.cpp
   src/v20180416/model/PodLabel.cpp
+  src/v20180416/model/DescribeLogstashViewsRequest.cpp
   src/v20180416/model/DescribeEventInfoListRequest.cpp
   src/v20180416/model/DescribeLogstashInstancesRequest.cpp
   src/v20180416/model/CreateCosMigrateToServerlessInstanceRequest.cpp
@@ -598,7 +600,7 @@ set(es_src
   src/v20180416/model/GpuInfo.cpp
   src/v20180416/model/DescribeInstancePluginListResponse.cpp
   src/v20180416/model/DiSourceCvm.cpp
-  src/v20180416/model/DescribeLogstashInstanceLogsRequest.cpp
+  src/v20180416/model/CosSnapShotInfo.cpp
   src/v20180416/model/CheckUpdateInstanceRequest.cpp
   src/v20180416/model/DescribeServerlessSpacesRequest.cpp
   src/v20180416/model/RestartInstanceRequest.cpp

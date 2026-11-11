@@ -3990,6 +3990,56 @@ DbbrainClient::DescribeSlowLogsOutcomeCallable DbbrainClient::DescribeSlowLogsCa
     return prom->get_future();
 }
 
+DbbrainClient::DescribeSqlExplainV2Outcome DbbrainClient::DescribeSqlExplainV2(const DescribeSqlExplainV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSqlExplainV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSqlExplainV2Response rsp = DescribeSqlExplainV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSqlExplainV2Outcome(rsp);
+        else
+            return DescribeSqlExplainV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSqlExplainV2Outcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeSqlExplainV2Async(const DescribeSqlExplainV2Request& request, const DescribeSqlExplainV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeSqlExplainV2Request&;
+    using Resp = DescribeSqlExplainV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeSqlExplainV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeSqlExplainV2OutcomeCallable DbbrainClient::DescribeSqlExplainV2Callable(const DescribeSqlExplainV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeSqlExplainV2Outcome>>();
+    DescribeSqlExplainV2Async(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeSqlExplainV2Request&,
+        DescribeSqlExplainV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeSqlFiltersOutcome DbbrainClient::DescribeSqlFilters(const DescribeSqlFiltersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSqlFilters");

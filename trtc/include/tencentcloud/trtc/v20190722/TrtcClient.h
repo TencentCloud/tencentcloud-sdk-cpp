@@ -153,6 +153,8 @@
 #include <tencentcloud/trtc/v20190722/model/ModifyCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyCloudSliceTaskRequest.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyCloudSliceTaskResponse.h>
+#include <tencentcloud/trtc/v20190722/model/ModifyCloudTranscriptionRequest.h>
+#include <tencentcloud/trtc/v20190722/model/ModifyCloudTranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyPictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyPictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/ModifyVoiceConversationRequest.h>
@@ -424,6 +426,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCloudSliceTaskResponse> ModifyCloudSliceTaskOutcome;
                 typedef std::future<ModifyCloudSliceTaskOutcome> ModifyCloudSliceTaskOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::ModifyCloudSliceTaskRequest&, ModifyCloudSliceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudSliceTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloudTranscriptionResponse> ModifyCloudTranscriptionOutcome;
+                typedef std::future<ModifyCloudTranscriptionOutcome> ModifyCloudTranscriptionOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::ModifyCloudTranscriptionRequest&, ModifyCloudTranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudTranscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPictureResponse> ModifyPictureOutcome;
                 typedef std::future<ModifyPictureOutcome> ModifyPictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::ModifyPictureRequest&, ModifyPictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPictureAsyncHandler;
@@ -1237,6 +1242,15 @@ peakCurrentUsers：峰值同时在线人数。
                 ModifyCloudSliceTaskOutcome ModifyCloudSliceTask(const Model::ModifyCloudSliceTaskRequest &request);
                 void ModifyCloudSliceTaskAsync(const Model::ModifyCloudSliceTaskRequest& request, const ModifyCloudSliceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCloudSliceTaskOutcomeCallable ModifyCloudSliceTaskCallable(const Model::ModifyCloudSliceTaskRequest& request);
+
+                /**
+                 *成功开启转录后，可以使用此接口来更新转录任务。仅在转录任务进行时有效，转录退出后更新将会返回错误。
+                 * @param req ModifyCloudTranscriptionRequest
+                 * @return ModifyCloudTranscriptionOutcome
+                 */
+                ModifyCloudTranscriptionOutcome ModifyCloudTranscription(const Model::ModifyCloudTranscriptionRequest &request);
+                void ModifyCloudTranscriptionAsync(const Model::ModifyCloudTranscriptionRequest& request, const ModifyCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudTranscriptionOutcomeCallable ModifyCloudTranscriptionCallable(const Model::ModifyCloudTranscriptionRequest& request);
 
                 /**
                  *如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁修改自定义背景图或水印素材，可通过此接口修改已上传的图片。无需频繁修改图片素材的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。

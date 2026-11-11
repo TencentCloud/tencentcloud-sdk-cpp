@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-abseq：ab序列版权数字水印；</li>
-                     * @return Type 数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-abseq：ab序列版权数字水印；</li>
+                     * 获取<p>数字水印类型，可选值：</p><li>blind-basic：基础版权数字水印；</li><li>blind-abseq：ab序列版权数字水印；</li><li>blind-vega：vega数字水印；</li>
+                     * @return Type <p>数字水印类型，可选值：</p><li>blind-basic：基础版权数字水印；</li><li>blind-abseq：ab序列版权数字水印；</li><li>blind-vega：vega数字水印；</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-abseq：ab序列版权数字水印；</li>
-                     * @param _type 数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-abseq：ab序列版权数字水印；</li>
+                     * 设置<p>数字水印类型，可选值：</p><li>blind-basic：基础版权数字水印；</li><li>blind-abseq：ab序列版权数字水印；</li><li>blind-vega：vega数字水印；</li>
+                     * @param _type <p>数字水印类型，可选值：</p><li>blind-basic：基础版权数字水印；</li><li>blind-abseq：ab序列版权数字水印；</li><li>blind-vega：vega数字水印；</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理的文件输入信息。
-                     * @return InputInfo 媒体处理的文件输入信息。
+                     * 获取<p>媒体处理的文件输入信息。</p>
+                     * @return InputInfo <p>媒体处理的文件输入信息。</p>
                      * 
                      */
                     MediaInputInfo GetInputInfo() const;
 
                     /**
-                     * 设置媒体处理的文件输入信息。
-                     * @param _inputInfo 媒体处理的文件输入信息。
+                     * 设置<p>媒体处理的文件输入信息。</p>
+                     * @param _inputInfo <p>媒体处理的文件输入信息。</p>
                      * 
                      */
                     void SetInputInfo(const MediaInputInfo& _inputInfo);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool InputInfoHasBeenSet() const;
 
                     /**
-                     * 获取任务的事件通知信息，不填代表不获取事件通知。
-                     * @return TaskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 获取<p>任务的事件通知信息，不填代表不获取事件通知。</p>
+                     * @return TaskNotifyConfig <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * 
                      */
                     TaskNotifyConfig GetTaskNotifyConfig() const;
 
                     /**
-                     * 设置任务的事件通知信息，不填代表不获取事件通知。
-                     * @param _taskNotifyConfig 任务的事件通知信息，不填代表不获取事件通知。
+                     * 设置<p>任务的事件通知信息，不填代表不获取事件通知。</p>
+                     * @param _taskNotifyConfig <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      * 
                      */
                     void SetTaskNotifyConfig(const TaskNotifyConfig& _taskNotifyConfig);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool TaskNotifyConfigHasBeenSet() const;
 
                     /**
-                     * 获取提取数字水印任务配置
-                     * @return ExtractBlindWatermarkConfig 提取数字水印任务配置
+                     * 获取<p>提取数字水印任务配置</p>
+                     * @return ExtractBlindWatermarkConfig <p>提取数字水印任务配置</p>
                      * 
                      */
                     ExtractBlindWatermarkTaskConfig GetExtractBlindWatermarkConfig() const;
 
                     /**
-                     * 设置提取数字水印任务配置
-                     * @param _extractBlindWatermarkConfig 提取数字水印任务配置
+                     * 设置<p>提取数字水印任务配置</p>
+                     * @param _extractBlindWatermarkConfig <p>提取数字水印任务配置</p>
                      * 
                      */
                     void SetExtractBlindWatermarkConfig(const ExtractBlindWatermarkTaskConfig& _extractBlindWatermarkConfig);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool ExtractBlindWatermarkConfigHasBeenSet() const;
 
                     /**
-                     * 获取资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
-                     * @return ResourceId 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * 获取<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
+                     * @return ResourceId <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
-                     * @param _resourceId 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * 设置<p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
+                     * @param _resourceId <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -153,31 +153,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数字水印类型，可选值：<li>blind-basic：基础版权数字水印；</li><li>blind-abseq：ab序列版权数字水印；</li>
+                     * <p>数字水印类型，可选值：</p><li>blind-basic：基础版权数字水印；</li><li>blind-abseq：ab序列版权数字水印；</li><li>blind-vega：vega数字水印；</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 媒体处理的文件输入信息。
+                     * <p>媒体处理的文件输入信息。</p>
                      */
                     MediaInputInfo m_inputInfo;
                     bool m_inputInfoHasBeenSet;
 
                     /**
-                     * 任务的事件通知信息，不填代表不获取事件通知。
+                     * <p>任务的事件通知信息，不填代表不获取事件通知。</p>
                      */
                     TaskNotifyConfig m_taskNotifyConfig;
                     bool m_taskNotifyConfigHasBeenSet;
 
                     /**
-                     * 提取数字水印任务配置
+                     * <p>提取数字水印任务配置</p>
                      */
                     ExtractBlindWatermarkTaskConfig m_extractBlindWatermarkConfig;
                     bool m_extractBlindWatermarkConfigHasBeenSet;
 
                     /**
-                     * 资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。
+                     * <p>资源ID，需要保证对应资源是开启状态。默认为账号主资源ID。</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

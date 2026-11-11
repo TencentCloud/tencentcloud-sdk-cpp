@@ -28,7 +28,8 @@ ConfigureChcAssistVpcRequest::ConfigureChcAssistVpcRequest() :
     m_bmcSecurityGroupIdsHasBeenSet(false),
     m_deployVirtualPrivateCloudHasBeenSet(false),
     m_deploySecurityGroupIdsHasBeenSet(false),
-    m_chcDeployExtraConfigHasBeenSet(false)
+    m_chcDeployExtraConfigHasBeenSet(false),
+    m_skipBmcCheckHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string ConfigureChcAssistVpcRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_chcDeployExtraConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_skipBmcCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipBmcCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_skipBmcCheck, allocator);
     }
 
 
@@ -207,6 +216,22 @@ void ConfigureChcAssistVpcRequest::SetChcDeployExtraConfig(const ChcDeployExtraC
 bool ConfigureChcAssistVpcRequest::ChcDeployExtraConfigHasBeenSet() const
 {
     return m_chcDeployExtraConfigHasBeenSet;
+}
+
+bool ConfigureChcAssistVpcRequest::GetSkipBmcCheck() const
+{
+    return m_skipBmcCheck;
+}
+
+void ConfigureChcAssistVpcRequest::SetSkipBmcCheck(const bool& _skipBmcCheck)
+{
+    m_skipBmcCheck = _skipBmcCheck;
+    m_skipBmcCheckHasBeenSet = true;
+}
+
+bool ConfigureChcAssistVpcRequest::SkipBmcCheckHasBeenSet() const
+{
+    return m_skipBmcCheckHasBeenSet;
 }
 
 

@@ -32,7 +32,9 @@ ServiceDetail::ServiceDetail() :
     m_instanceNameHasBeenSet(false),
     m_enableThresholdConfigHasBeenSet(false),
     m_errRateThresholdHasBeenSet(false),
-    m_responseDurationWarningThresholdHasBeenSet(false)
+    m_responseDurationWarningThresholdHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_createUinHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,26 @@ CoreInternalOutcome ServiceDetail::Deserialize(const rapidjson::Value &value)
         m_responseDurationWarningThresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.AppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = string(value["AppId"].GetString());
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateUin") && !value["CreateUin"].IsNull())
+    {
+        if (!value["CreateUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceDetail.CreateUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUin = string(value["CreateUin"].GetString());
+        m_createUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +301,22 @@ void ServiceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ResponseDurationWarningThreshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_responseDurationWarningThreshold, allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -474,5 +512,37 @@ void ServiceDetail::SetResponseDurationWarningThreshold(const int64_t& _response
 bool ServiceDetail::ResponseDurationWarningThresholdHasBeenSet() const
 {
     return m_responseDurationWarningThresholdHasBeenSet;
+}
+
+string ServiceDetail::GetAppId() const
+{
+    return m_appId;
+}
+
+void ServiceDetail::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool ServiceDetail::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string ServiceDetail::GetCreateUin() const
+{
+    return m_createUin;
+}
+
+void ServiceDetail::SetCreateUin(const string& _createUin)
+{
+    m_createUin = _createUin;
+    m_createUinHasBeenSet = true;
+}
+
+bool ServiceDetail::CreateUinHasBeenSet() const
+{
+    return m_createUinHasBeenSet;
 }
 

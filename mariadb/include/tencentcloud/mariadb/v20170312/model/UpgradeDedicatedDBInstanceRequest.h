@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。
-                     * @return InstanceId 待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。
+                     * 获取<p>待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。</p>
+                     * @return InstanceId <p>待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。
-                     * @param _instanceId 待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。
+                     * 设置<p>待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。</p>
+                     * @param _instanceId <p>待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
- 查询实例规格获得。
-                     * @return Memory 内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
- 查询实例规格获得。
+                     * 获取<p>内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs<br> 查询实例规格获得。</p>
+                     * @return Memory <p>内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs<br> 查询实例规格获得。</p>
                      * 
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
- 查询实例规格获得。
-                     * @param _memory 内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
- 查询实例规格获得。
+                     * 设置<p>内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs<br> 查询实例规格获得。</p>
+                     * @param _memory <p>内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs<br> 查询实例规格获得。</p>
                      * 
                      */
                     void SetMemory(const int64_t& _memory);
@@ -89,19 +85,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
- 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
-                     * @return Storage 存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
- 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
+                     * 获取<p>存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs<br> 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。</p>
+                     * @return Storage <p>存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs<br> 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。</p>
                      * 
                      */
                     int64_t GetStorage() const;
 
                     /**
-                     * 设置存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
- 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
-                     * @param _storage 存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
- 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
+                     * 设置<p>存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs<br> 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。</p>
+                     * @param _storage <p>存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs<br> 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。</p>
                      * 
                      */
                     void SetStorage(const int64_t& _storage);
@@ -114,15 +106,15 @@ namespace TencentCloud
                     bool StorageHasBeenSet() const;
 
                     /**
-                     * 获取错过切换时间窗口时，是否自动重试一次，0-否，1-是
-                     * @return SwitchAutoRetry 错过切换时间窗口时，是否自动重试一次，0-否，1-是
+                     * 获取<p>错过切换时间窗口时，是否自动重试一次，0-否，1-是</p>
+                     * @return SwitchAutoRetry <p>错过切换时间窗口时，是否自动重试一次，0-否，1-是</p>
                      * 
                      */
                     int64_t GetSwitchAutoRetry() const;
 
                     /**
-                     * 设置错过切换时间窗口时，是否自动重试一次，0-否，1-是
-                     * @param _switchAutoRetry 错过切换时间窗口时，是否自动重试一次，0-否，1-是
+                     * 设置<p>错过切换时间窗口时，是否自动重试一次，0-否，1-是</p>
+                     * @param _switchAutoRetry <p>错过切换时间窗口时，是否自动重试一次，0-否，1-是</p>
                      * 
                      */
                     void SetSwitchAutoRetry(const int64_t& _switchAutoRetry);
@@ -135,15 +127,15 @@ namespace TencentCloud
                     bool SwitchAutoRetryHasBeenSet() const;
 
                     /**
-                     * 获取切换时间窗口开始时间
-                     * @return SwitchStartTime 切换时间窗口开始时间
+                     * 获取<p>切换时间窗口开始时间</p>
+                     * @return SwitchStartTime <p>切换时间窗口开始时间</p>
                      * 
                      */
                     std::string GetSwitchStartTime() const;
 
                     /**
-                     * 设置切换时间窗口开始时间
-                     * @param _switchStartTime 切换时间窗口开始时间
+                     * 设置<p>切换时间窗口开始时间</p>
+                     * @param _switchStartTime <p>切换时间窗口开始时间</p>
                      * 
                      */
                     void SetSwitchStartTime(const std::string& _switchStartTime);
@@ -156,15 +148,15 @@ namespace TencentCloud
                     bool SwitchStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取切换时间窗口结束时间
-                     * @return SwitchEndTime 切换时间窗口结束时间
+                     * 获取<p>切换时间窗口结束时间</p>
+                     * @return SwitchEndTime <p>切换时间窗口结束时间</p>
                      * 
                      */
                     std::string GetSwitchEndTime() const;
 
                     /**
-                     * 设置切换时间窗口结束时间
-                     * @param _switchEndTime 切换时间窗口结束时间
+                     * 设置<p>切换时间窗口结束时间</p>
+                     * @param _switchEndTime <p>切换时间窗口结束时间</p>
                      * 
                      */
                     void SetSwitchEndTime(const std::string& _switchEndTime);
@@ -176,45 +168,97 @@ namespace TencentCloud
                      */
                     bool SwitchEndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>主节点的机器id，类似svr-xxx</p>
+                     * @return MasterHostId <p>主节点的机器id，类似svr-xxx</p>
+                     * 
+                     */
+                    std::string GetMasterHostId() const;
+
+                    /**
+                     * 设置<p>主节点的机器id，类似svr-xxx</p>
+                     * @param _masterHostId <p>主节点的机器id，类似svr-xxx</p>
+                     * 
+                     */
+                    void SetMasterHostId(const std::string& _masterHostId);
+
+                    /**
+                     * 判断参数 MasterHostId 是否已赋值
+                     * @return MasterHostId 是否已赋值
+                     * 
+                     */
+                    bool MasterHostIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>备节点的机器id组，类似[svr-xxx1, svr-xxx2]</p>
+                     * @return SlaveHostIds <p>备节点的机器id组，类似[svr-xxx1, svr-xxx2]</p>
+                     * 
+                     */
+                    std::vector<std::string> GetSlaveHostIds() const;
+
+                    /**
+                     * 设置<p>备节点的机器id组，类似[svr-xxx1, svr-xxx2]</p>
+                     * @param _slaveHostIds <p>备节点的机器id组，类似[svr-xxx1, svr-xxx2]</p>
+                     * 
+                     */
+                    void SetSlaveHostIds(const std::vector<std::string>& _slaveHostIds);
+
+                    /**
+                     * 判断参数 SlaveHostIds 是否已赋值
+                     * @return SlaveHostIds 是否已赋值
+                     * 
+                     */
+                    bool SlaveHostIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。
+                     * <p>待升级的实例ID。形如：tdsql-ow728lmc，可以通过 DescribeDBInstances 查询实例获得。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
- 查询实例规格获得。
+                     * <p>内存大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs<br> 查询实例规格获得。</p>
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs
- 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。
+                     * <p>存储空间大小，单位：GB，可以通过 DescribeFenceDBInstanceSpecs<br> 查询实例规格获得不同内存大小对应的磁盘规格下限和上限。</p>
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
-                     * 错过切换时间窗口时，是否自动重试一次，0-否，1-是
+                     * <p>错过切换时间窗口时，是否自动重试一次，0-否，1-是</p>
                      */
                     int64_t m_switchAutoRetry;
                     bool m_switchAutoRetryHasBeenSet;
 
                     /**
-                     * 切换时间窗口开始时间
+                     * <p>切换时间窗口开始时间</p>
                      */
                     std::string m_switchStartTime;
                     bool m_switchStartTimeHasBeenSet;
 
                     /**
-                     * 切换时间窗口结束时间
+                     * <p>切换时间窗口结束时间</p>
                      */
                     std::string m_switchEndTime;
                     bool m_switchEndTimeHasBeenSet;
+
+                    /**
+                     * <p>主节点的机器id，类似svr-xxx</p>
+                     */
+                    std::string m_masterHostId;
+                    bool m_masterHostIdHasBeenSet;
+
+                    /**
+                     * <p>备节点的机器id组，类似[svr-xxx1, svr-xxx2]</p>
+                     */
+                    std::vector<std::string> m_slaveHostIds;
+                    bool m_slaveHostIdsHasBeenSet;
 
                 };
             }

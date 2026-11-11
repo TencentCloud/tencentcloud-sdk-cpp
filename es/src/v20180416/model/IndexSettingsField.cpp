@@ -23,7 +23,9 @@ using namespace std;
 IndexSettingsField::IndexSettingsField() :
     m_numberOfShardsHasBeenSet(false),
     m_numberOfReplicasHasBeenSet(false),
-    m_refreshIntervalHasBeenSet(false)
+    m_refreshIntervalHasBeenSet(false),
+    m_dynamicHasBeenSet(false),
+    m_totalFieldsLimitHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome IndexSettingsField::Deserialize(const rapidjson::Value &valu
         m_refreshIntervalHasBeenSet = true;
     }
 
+    if (value.HasMember("Dynamic") && !value["Dynamic"].IsNull())
+    {
+        if (!value["Dynamic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexSettingsField.Dynamic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dynamic = string(value["Dynamic"].GetString());
+        m_dynamicHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalFieldsLimit") && !value["TotalFieldsLimit"].IsNull())
+    {
+        if (!value["TotalFieldsLimit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexSettingsField.TotalFieldsLimit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalFieldsLimit = string(value["TotalFieldsLimit"].GetString());
+        m_totalFieldsLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void IndexSettingsField::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "RefreshInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_refreshInterval.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dynamicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Dynamic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dynamic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalFieldsLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalFieldsLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalFieldsLimit.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void IndexSettingsField::SetRefreshInterval(const string& _refreshInterval)
 bool IndexSettingsField::RefreshIntervalHasBeenSet() const
 {
     return m_refreshIntervalHasBeenSet;
+}
+
+string IndexSettingsField::GetDynamic() const
+{
+    return m_dynamic;
+}
+
+void IndexSettingsField::SetDynamic(const string& _dynamic)
+{
+    m_dynamic = _dynamic;
+    m_dynamicHasBeenSet = true;
+}
+
+bool IndexSettingsField::DynamicHasBeenSet() const
+{
+    return m_dynamicHasBeenSet;
+}
+
+string IndexSettingsField::GetTotalFieldsLimit() const
+{
+    return m_totalFieldsLimit;
+}
+
+void IndexSettingsField::SetTotalFieldsLimit(const string& _totalFieldsLimit)
+{
+    m_totalFieldsLimit = _totalFieldsLimit;
+    m_totalFieldsLimitHasBeenSet = true;
+}
+
+bool IndexSettingsField::TotalFieldsLimitHasBeenSet() const
+{
+    return m_totalFieldsLimitHasBeenSet;
 }
 

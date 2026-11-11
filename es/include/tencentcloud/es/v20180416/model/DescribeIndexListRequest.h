@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取索引类型。auto：自治索引；normal：普通索引
-                     * @return IndexType 索引类型。auto：自治索引；normal：普通索引
+                     * 获取<p>索引类型。auto：自治索引；normal：普通索引</p>
+                     * @return IndexType <p>索引类型。auto：自治索引；normal：普通索引</p>
                      * 
                      */
                     std::string GetIndexType() const;
 
                     /**
-                     * 设置索引类型。auto：自治索引；normal：普通索引
-                     * @param _indexType 索引类型。auto：自治索引；normal：普通索引
+                     * 设置<p>索引类型。auto：自治索引；normal：普通索引</p>
+                     * @param _indexType <p>索引类型。auto：自治索引；normal：普通索引</p>
                      * 
                      */
                     void SetIndexType(const std::string& _indexType);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool IndexTypeHasBeenSet() const;
 
                     /**
-                     * 获取ES集群ID
-                     * @return InstanceId ES集群ID
+                     * 获取<p>ES集群ID</p>
+                     * @return InstanceId <p>ES集群ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ES集群ID
-                     * @param _instanceId ES集群ID
+                     * 设置<p>ES集群ID</p>
+                     * @param _instanceId <p>ES集群ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取索引名，若填空则获取所有索引
-                     * @return IndexName 索引名，若填空则获取所有索引
+                     * 获取<p>索引名，若填空则获取所有索引</p>
+                     * @return IndexName <p>索引名，若填空则获取所有索引</p>
                      * 
                      */
                     std::string GetIndexName() const;
 
                     /**
-                     * 设置索引名，若填空则获取所有索引
-                     * @param _indexName 索引名，若填空则获取所有索引
+                     * 设置<p>索引名，若填空则获取所有索引</p>
+                     * @param _indexName <p>索引名，若填空则获取所有索引</p>
                      * 
                      */
                     void SetIndexName(const std::string& _indexName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IndexNameHasBeenSet() const;
 
                     /**
-                     * 获取集群访问用户名
-                     * @return Username 集群访问用户名
+                     * 获取<p>集群访问用户名</p>
+                     * @return Username <p>集群访问用户名</p>
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
-                     * 设置集群访问用户名
-                     * @param _username 集群访问用户名
+                     * 设置<p>集群访问用户名</p>
+                     * @param _username <p>集群访问用户名</p>
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取集群访问密码
-                     * @return Password 集群访问密码
+                     * 获取<p>集群访问密码</p>
+                     * @return Password <p>集群访问密码</p>
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置集群访问密码
-                     * @param _password 集群访问密码
+                     * 设置<p>集群访问密码</p>
+                     * @param _password <p>集群访问密码</p>
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取分页起始位置
-                     * @return Offset 分页起始位置
+                     * 获取<p>分页起始位置</p>
+                     * @return Offset <p>分页起始位置</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页起始位置
-                     * @param _offset 分页起始位置
+                     * 设置<p>分页起始位置</p>
+                     * @param _offset <p>分页起始位置</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取一页展示数量
-                     * @return Limit 一页展示数量
+                     * 获取<p>一页展示数量</p>
+                     * @return Limit <p>一页展示数量</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置一页展示数量
-                     * @param _limit 一页展示数量
+                     * 设置<p>一页展示数量</p>
+                     * @param _limit <p>一页展示数量</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime
-                     * @return OrderBy 排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime
+                     * 获取<p>排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime</p>
+                     * @return OrderBy <p>排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime</p>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime
-                     * @param _orderBy 排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime
+                     * 设置<p>排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime</p>
+                     * @param _orderBy <p>排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime</p>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取过滤索引状态
-                     * @return IndexStatusList 过滤索引状态
+                     * 获取<p>过滤索引状态</p>
+                     * @return IndexStatusList <p>过滤索引状态</p>
                      * 
                      */
                     std::vector<std::string> GetIndexStatusList() const;
 
                     /**
-                     * 设置过滤索引状态
-                     * @param _indexStatusList 过滤索引状态
+                     * 设置<p>过滤索引状态</p>
+                     * @param _indexStatusList <p>过滤索引状态</p>
                      * 
                      */
                     void SetIndexStatusList(const std::vector<std::string>& _indexStatusList);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool IndexStatusListHasBeenSet() const;
 
                     /**
-                     * 获取排序顺序，支持asc、desc，默认为desc 数据格式"asc","desc"
-                     * @return Order 排序顺序，支持asc、desc，默认为desc 数据格式"asc","desc"
+                     * 获取<p>排序顺序，支持asc、desc，默认为desc 数据格式&quot;asc&quot;,&quot;desc&quot;</p>
+                     * @return Order <p>排序顺序，支持asc、desc，默认为desc 数据格式&quot;asc&quot;,&quot;desc&quot;</p>
                      * 
                      */
                     std::string GetOrder() const;
 
                     /**
-                     * 设置排序顺序，支持asc、desc，默认为desc 数据格式"asc","desc"
-                     * @param _order 排序顺序，支持asc、desc，默认为desc 数据格式"asc","desc"
+                     * 设置<p>排序顺序，支持asc、desc，默认为desc 数据格式&quot;asc&quot;,&quot;desc&quot;</p>
+                     * @param _order <p>排序顺序，支持asc、desc，默认为desc 数据格式&quot;asc&quot;,&quot;desc&quot;</p>
                      * 
                      */
                     void SetOrder(const std::string& _order);
@@ -252,67 +252,94 @@ namespace TencentCloud
                      */
                     bool OrderHasBeenSet() const;
 
+                    /**
+                     * 获取<p>索引名称过滤列表。仅返回列表中指定的索引，常用于事件中心跳转时筛选受影响的索引；不填返回全部索引。单次最多支持100个索引名称。</p>
+                     * @return FilterIndexNames <p>索引名称过滤列表。仅返回列表中指定的索引，常用于事件中心跳转时筛选受影响的索引；不填返回全部索引。单次最多支持100个索引名称。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetFilterIndexNames() const;
+
+                    /**
+                     * 设置<p>索引名称过滤列表。仅返回列表中指定的索引，常用于事件中心跳转时筛选受影响的索引；不填返回全部索引。单次最多支持100个索引名称。</p>
+                     * @param _filterIndexNames <p>索引名称过滤列表。仅返回列表中指定的索引，常用于事件中心跳转时筛选受影响的索引；不填返回全部索引。单次最多支持100个索引名称。</p>
+                     * 
+                     */
+                    void SetFilterIndexNames(const std::vector<std::string>& _filterIndexNames);
+
+                    /**
+                     * 判断参数 FilterIndexNames 是否已赋值
+                     * @return FilterIndexNames 是否已赋值
+                     * 
+                     */
+                    bool FilterIndexNamesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 索引类型。auto：自治索引；normal：普通索引
+                     * <p>索引类型。auto：自治索引；normal：普通索引</p>
                      */
                     std::string m_indexType;
                     bool m_indexTypeHasBeenSet;
 
                     /**
-                     * ES集群ID
+                     * <p>ES集群ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 索引名，若填空则获取所有索引
+                     * <p>索引名，若填空则获取所有索引</p>
                      */
                     std::string m_indexName;
                     bool m_indexNameHasBeenSet;
 
                     /**
-                     * 集群访问用户名
+                     * <p>集群访问用户名</p>
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 集群访问密码
+                     * <p>集群访问密码</p>
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 分页起始位置
+                     * <p>分页起始位置</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 一页展示数量
+                     * <p>一页展示数量</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime
+                     * <p>排序字段，支持索引名：IndexName、索引存储量：IndexStorage、索引创建时间：IndexCreateTime</p>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 过滤索引状态
+                     * <p>过滤索引状态</p>
                      */
                     std::vector<std::string> m_indexStatusList;
                     bool m_indexStatusListHasBeenSet;
 
                     /**
-                     * 排序顺序，支持asc、desc，默认为desc 数据格式"asc","desc"
+                     * <p>排序顺序，支持asc、desc，默认为desc 数据格式&quot;asc&quot;,&quot;desc&quot;</p>
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
+
+                    /**
+                     * <p>索引名称过滤列表。仅返回列表中指定的索引，常用于事件中心跳转时筛选受影响的索引；不填返回全部索引。单次最多支持100个索引名称。</p>
+                     */
+                    std::vector<std::string> m_filterIndexNames;
+                    bool m_filterIndexNamesHasBeenSet;
 
                 };
             }
