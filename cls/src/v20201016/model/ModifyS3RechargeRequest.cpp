@@ -36,7 +36,9 @@ ModifyS3RechargeRequest::ModifyS3RechargeRequest() :
     m_logTypeHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_compressHasBeenSet(false),
-    m_extractRuleInfoHasBeenSet(false)
+    m_extractRuleInfoHasBeenSet(false),
+    m_sQSEnabledHasBeenSet(false),
+    m_sQSUrlHasBeenSet(false)
 {
 }
 
@@ -158,6 +160,22 @@ string ModifyS3RechargeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extractRuleInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sQSEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SQSEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sQSEnabled, allocator);
+    }
+
+    if (m_sQSUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SQSUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sQSUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -390,6 +408,38 @@ void ModifyS3RechargeRequest::SetExtractRuleInfo(const ExtractRuleInfo& _extract
 bool ModifyS3RechargeRequest::ExtractRuleInfoHasBeenSet() const
 {
     return m_extractRuleInfoHasBeenSet;
+}
+
+bool ModifyS3RechargeRequest::GetSQSEnabled() const
+{
+    return m_sQSEnabled;
+}
+
+void ModifyS3RechargeRequest::SetSQSEnabled(const bool& _sQSEnabled)
+{
+    m_sQSEnabled = _sQSEnabled;
+    m_sQSEnabledHasBeenSet = true;
+}
+
+bool ModifyS3RechargeRequest::SQSEnabledHasBeenSet() const
+{
+    return m_sQSEnabledHasBeenSet;
+}
+
+string ModifyS3RechargeRequest::GetSQSUrl() const
+{
+    return m_sQSUrl;
+}
+
+void ModifyS3RechargeRequest::SetSQSUrl(const string& _sQSUrl)
+{
+    m_sQSUrl = _sQSUrl;
+    m_sQSUrlHasBeenSet = true;
+}
+
+bool ModifyS3RechargeRequest::SQSUrlHasBeenSet() const
+{
+    return m_sQSUrlHasBeenSet;
 }
 
 

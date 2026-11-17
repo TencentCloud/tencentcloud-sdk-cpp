@@ -23,7 +23,8 @@ using namespace std;
 ApiKeyAuthConfig::ApiKeyAuthConfig() :
     m_keyLocationHasBeenSet(false),
     m_keyParamNameHasBeenSet(false),
-    m_keyParamValueHasBeenSet(false)
+    m_keyParamValueHasBeenSet(false),
+    m_keyValueUsageHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ApiKeyAuthConfig::Deserialize(const rapidjson::Value &value)
         m_keyParamValueHasBeenSet = true;
     }
 
+    if (value.HasMember("KeyValueUsage") && !value["KeyValueUsage"].IsNull())
+    {
+        if (!value["KeyValueUsage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiKeyAuthConfig.KeyValueUsage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyValueUsage = value["KeyValueUsage"].GetInt64();
+        m_keyValueUsageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ApiKeyAuthConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "KeyParamValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_keyParamValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyValueUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyValueUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keyValueUsage, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ApiKeyAuthConfig::SetKeyParamValue(const string& _keyParamValue)
 bool ApiKeyAuthConfig::KeyParamValueHasBeenSet() const
 {
     return m_keyParamValueHasBeenSet;
+}
+
+int64_t ApiKeyAuthConfig::GetKeyValueUsage() const
+{
+    return m_keyValueUsage;
+}
+
+void ApiKeyAuthConfig::SetKeyValueUsage(const int64_t& _keyValueUsage)
+{
+    m_keyValueUsage = _keyValueUsage;
+    m_keyValueUsageHasBeenSet = true;
+}
+
+bool ApiKeyAuthConfig::KeyValueUsageHasBeenSet() const
+{
+    return m_keyValueUsageHasBeenSet;
 }
 

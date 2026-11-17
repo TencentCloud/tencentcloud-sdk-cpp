@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取投递流唯一ID
-                     * @return FlowId 投递流唯一ID
+                     * 获取<p>投递流唯一ID</p>
+                     * @return FlowId <p>投递流唯一ID</p>
                      * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
-                     * 设置投递流唯一ID
-                     * @param _flowId 投递流唯一ID
+                     * 设置<p>投递流唯一ID</p>
+                     * @param _flowId <p>投递流唯一ID</p>
                      * 
                      */
                     void SetFlowId(const int64_t& _flowId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取1-访问日志 2-攻击日志
-                     * @return LogType 1-访问日志 2-攻击日志
+                     * 获取<p>1-访问日志 2-攻击日志</p>
+                     * @return LogType <p>1-访问日志 2-攻击日志</p>
                      * 
                      */
                     int64_t GetLogType() const;
 
                     /**
-                     * 设置1-访问日志 2-攻击日志
-                     * @param _logType 1-访问日志 2-攻击日志
+                     * 设置<p>1-访问日志 2-攻击日志</p>
+                     * @param _logType <p>1-访问日志 2-攻击日志</p>
                      * 
                      */
                     void SetLogType(const int64_t& _logType);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取状态 0-为关闭 1-为启用
-                     * @return Status 状态 0-为关闭 1-为启用
+                     * 获取<p>状态 0-为关闭 1-为启用</p>
+                     * @return Status <p>状态 0-为关闭 1-为启用</p>
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态 0-为关闭 1-为启用
-                     * @param _status 状态 0-为关闭 1-为启用
+                     * 设置<p>状态 0-为关闭 1-为启用</p>
+                     * @param _status <p>状态 0-为关闭 1-为启用</p>
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取CLS所在区域
-                     * @return CLSRegion CLS所在区域
+                     * 获取<p>CLS所在区域</p>
+                     * @return CLSRegion <p>CLS所在区域</p>
                      * 
                      */
                     std::string GetCLSRegion() const;
 
                     /**
-                     * 设置CLS所在区域
-                     * @param _cLSRegion CLS所在区域
+                     * 设置<p>CLS所在区域</p>
+                     * @param _cLSRegion <p>CLS所在区域</p>
                      * 
                      */
                     void SetCLSRegion(const std::string& _cLSRegion);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool CLSRegionHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志集合名称
-                     * @return LogsetName CLS日志集合名称
+                     * 获取<p>CLS日志集合名称</p>
+                     * @return LogsetName <p>CLS日志集合名称</p>
                      * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
-                     * 设置CLS日志集合名称
-                     * @param _logsetName CLS日志集合名称
+                     * 设置<p>CLS日志集合名称</p>
+                     * @param _logsetName <p>CLS日志集合名称</p>
                      * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool LogsetNameHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志集合ID
-                     * @return LogsetID CLS日志集合ID
+                     * 获取<p>CLS日志集合ID</p>
+                     * @return LogsetID <p>CLS日志集合ID</p>
                      * 
                      */
                     std::string GetLogsetID() const;
 
                     /**
-                     * 设置CLS日志集合ID
-                     * @param _logsetID CLS日志集合ID
+                     * 设置<p>CLS日志集合ID</p>
+                     * @param _logsetID <p>CLS日志集合ID</p>
                      * 
                      */
                     void SetLogsetID(const std::string& _logsetID);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool LogsetIDHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志主题名称
-                     * @return LogTopicName CLS日志主题名称
+                     * 获取<p>CLS日志主题名称</p>
+                     * @return LogTopicName <p>CLS日志主题名称</p>
                      * 
                      */
                     std::string GetLogTopicName() const;
 
                     /**
-                     * 设置CLS日志主题名称
-                     * @param _logTopicName CLS日志主题名称
+                     * 设置<p>CLS日志主题名称</p>
+                     * @param _logTopicName <p>CLS日志主题名称</p>
                      * 
                      */
                     void SetLogTopicName(const std::string& _logTopicName);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool LogTopicNameHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志集合ID
-                     * @return LogTopicID CLS日志集合ID
+                     * 获取<p>CLS日志集合ID</p>
+                     * @return LogTopicID <p>CLS日志集合ID</p>
                      * 
                      */
                     std::string GetLogTopicID() const;
 
                     /**
-                     * 设置CLS日志集合ID
-                     * @param _logTopicID CLS日志集合ID
+                     * 设置<p>CLS日志集合ID</p>
+                     * @param _logTopicID <p>CLS日志集合ID</p>
                      * 
                      */
                     void SetLogTopicID(const std::string& _logTopicID);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool LogTopicIDHasBeenSet() const;
 
                     /**
-                     * 获取写配置
-                     * @return WriteConfig 写配置
+                     * 获取<p>写配置</p>
+                     * @return WriteConfig <p>写配置</p>
                      * 
                      */
                     FieldWriteConfig GetWriteConfig() const;
 
                     /**
-                     * 设置写配置
-                     * @param _writeConfig 写配置
+                     * 设置<p>写配置</p>
+                     * @param _writeConfig <p>写配置</p>
                      * 
                      */
                     void SetWriteConfig(const FieldWriteConfig& _writeConfig);
@@ -239,55 +239,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 投递流唯一ID
+                     * <p>投递流唯一ID</p>
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 1-访问日志 2-攻击日志
+                     * <p>1-访问日志 2-攻击日志</p>
                      */
                     int64_t m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * 状态 0-为关闭 1-为启用
+                     * <p>状态 0-为关闭 1-为启用</p>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * CLS所在区域
+                     * <p>CLS所在区域</p>
                      */
                     std::string m_cLSRegion;
                     bool m_cLSRegionHasBeenSet;
 
                     /**
-                     * CLS日志集合名称
+                     * <p>CLS日志集合名称</p>
                      */
                     std::string m_logsetName;
                     bool m_logsetNameHasBeenSet;
 
                     /**
-                     * CLS日志集合ID
+                     * <p>CLS日志集合ID</p>
                      */
                     std::string m_logsetID;
                     bool m_logsetIDHasBeenSet;
 
                     /**
-                     * CLS日志主题名称
+                     * <p>CLS日志主题名称</p>
                      */
                     std::string m_logTopicName;
                     bool m_logTopicNameHasBeenSet;
 
                     /**
-                     * CLS日志集合ID
+                     * <p>CLS日志集合ID</p>
                      */
                     std::string m_logTopicID;
                     bool m_logTopicIDHasBeenSet;
 
                     /**
-                     * 写配置
+                     * <p>写配置</p>
                      */
                     FieldWriteConfig m_writeConfig;
                     bool m_writeConfigHasBeenSet;

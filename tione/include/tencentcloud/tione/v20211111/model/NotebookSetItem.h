@@ -834,6 +834,27 @@ namespace TencentCloud
                      */
                     bool LatestOperatorInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>预付费专用资源组</p>
+                     * @return ResourceGroupInstanceId <p>预付费专用资源组</p>
+                     * 
+                     */
+                    std::string GetResourceGroupInstanceId() const;
+
+                    /**
+                     * 设置<p>预付费专用资源组</p>
+                     * @param _resourceGroupInstanceId <p>预付费专用资源组</p>
+                     * 
+                     */
+                    void SetResourceGroupInstanceId(const std::string& _resourceGroupInstanceId);
+
+                    /**
+                     * 判断参数 ResourceGroupInstanceId 是否已赋值
+                     * @return ResourceGroupInstanceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1055,6 +1076,12 @@ namespace TencentCloud
                      */
                     OperatorInfo m_latestOperatorInfo;
                     bool m_latestOperatorInfoHasBeenSet;
+
+                    /**
+                     * <p>预付费专用资源组</p>
+                     */
+                    std::string m_resourceGroupInstanceId;
+                    bool m_resourceGroupInstanceIdHasBeenSet;
 
                 };
             }

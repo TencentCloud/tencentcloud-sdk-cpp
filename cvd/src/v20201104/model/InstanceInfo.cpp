@@ -60,7 +60,8 @@ InstanceInfo::InstanceInfo() :
     m_runControlPolicyHasBeenSet(false),
     m_installControlPolicyHasBeenSet(false),
     m_anonymousAccessHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_underwriteDeadlineHasBeenSet(false)
 {
 }
 
@@ -502,6 +503,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("UnderwriteDeadline") && !value["UnderwriteDeadline"].IsNull())
+    {
+        if (!value["UnderwriteDeadline"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.UnderwriteDeadline` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_underwriteDeadline = string(value["UnderwriteDeadline"].GetString());
+        m_underwriteDeadlineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -852,6 +863,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_underwriteDeadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnderwriteDeadline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_underwriteDeadline.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1495,5 +1514,21 @@ void InstanceInfo::SetTags(const vector<Tag>& _tags)
 bool InstanceInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string InstanceInfo::GetUnderwriteDeadline() const
+{
+    return m_underwriteDeadline;
+}
+
+void InstanceInfo::SetUnderwriteDeadline(const string& _underwriteDeadline)
+{
+    m_underwriteDeadline = _underwriteDeadline;
+    m_underwriteDeadlineHasBeenSet = true;
+}
+
+bool InstanceInfo::UnderwriteDeadlineHasBeenSet() const
+{
+    return m_underwriteDeadlineHasBeenSet;
 }
 

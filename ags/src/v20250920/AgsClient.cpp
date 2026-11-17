@@ -840,6 +840,56 @@ AgsClient::DeleteDeploymentOutcomeCallable AgsClient::DeleteDeploymentCallable(c
     return prom->get_future();
 }
 
+AgsClient::DeleteGPUResourceGroupOutcome AgsClient::DeleteGPUResourceGroup(const DeleteGPUResourceGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGPUResourceGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGPUResourceGroupResponse rsp = DeleteGPUResourceGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGPUResourceGroupOutcome(rsp);
+        else
+            return DeleteGPUResourceGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGPUResourceGroupOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DeleteGPUResourceGroupAsync(const DeleteGPUResourceGroupRequest& request, const DeleteGPUResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteGPUResourceGroupRequest&;
+    using Resp = DeleteGPUResourceGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteGPUResourceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DeleteGPUResourceGroupOutcomeCallable AgsClient::DeleteGPUResourceGroupCallable(const DeleteGPUResourceGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteGPUResourceGroupOutcome>>();
+    DeleteGPUResourceGroupAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DeleteGPUResourceGroupRequest&,
+        DeleteGPUResourceGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AgsClient::DeletePreCacheImageOutcome AgsClient::DeletePreCacheImage(const DeletePreCacheImageRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePreCacheImage");
@@ -1432,6 +1482,156 @@ AgsClient::DescribeEventsOutcomeCallable AgsClient::DescribeEventsCallable(const
         const AgsClient*,
         const DescribeEventsRequest&,
         DescribeEventsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::DescribeGPUResourceGroupsOutcome AgsClient::DescribeGPUResourceGroups(const DescribeGPUResourceGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGPUResourceGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGPUResourceGroupsResponse rsp = DescribeGPUResourceGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGPUResourceGroupsOutcome(rsp);
+        else
+            return DescribeGPUResourceGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGPUResourceGroupsOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DescribeGPUResourceGroupsAsync(const DescribeGPUResourceGroupsRequest& request, const DescribeGPUResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGPUResourceGroupsRequest&;
+    using Resp = DescribeGPUResourceGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGPUResourceGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DescribeGPUResourceGroupsOutcomeCallable AgsClient::DescribeGPUResourceGroupsCallable(const DescribeGPUResourceGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGPUResourceGroupsOutcome>>();
+    DescribeGPUResourceGroupsAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DescribeGPUResourceGroupsRequest&,
+        DescribeGPUResourceGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::DescribeGPUResourceSpecsOutcome AgsClient::DescribeGPUResourceSpecs(const DescribeGPUResourceSpecsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGPUResourceSpecs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGPUResourceSpecsResponse rsp = DescribeGPUResourceSpecsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGPUResourceSpecsOutcome(rsp);
+        else
+            return DescribeGPUResourceSpecsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGPUResourceSpecsOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DescribeGPUResourceSpecsAsync(const DescribeGPUResourceSpecsRequest& request, const DescribeGPUResourceSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGPUResourceSpecsRequest&;
+    using Resp = DescribeGPUResourceSpecsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGPUResourceSpecs", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DescribeGPUResourceSpecsOutcomeCallable AgsClient::DescribeGPUResourceSpecsCallable(const DescribeGPUResourceSpecsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGPUResourceSpecsOutcome>>();
+    DescribeGPUResourceSpecsAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DescribeGPUResourceSpecsRequest&,
+        DescribeGPUResourceSpecsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::DescribeGPUResourcesOutcome AgsClient::DescribeGPUResources(const DescribeGPUResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGPUResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGPUResourcesResponse rsp = DescribeGPUResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGPUResourcesOutcome(rsp);
+        else
+            return DescribeGPUResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGPUResourcesOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DescribeGPUResourcesAsync(const DescribeGPUResourcesRequest& request, const DescribeGPUResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeGPUResourcesRequest&;
+    using Resp = DescribeGPUResourcesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeGPUResources", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DescribeGPUResourcesOutcomeCallable AgsClient::DescribeGPUResourcesCallable(const DescribeGPUResourcesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeGPUResourcesOutcome>>();
+    DescribeGPUResourcesAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DescribeGPUResourcesRequest&,
+        DescribeGPUResourcesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2432,6 +2632,56 @@ AgsClient::ModifyDeploymentOutcomeCallable AgsClient::ModifyDeploymentCallable(c
         const AgsClient*,
         const ModifyDeploymentRequest&,
         ModifyDeploymentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::ModifyGPUResourceGroupOutcome AgsClient::ModifyGPUResourceGroup(const ModifyGPUResourceGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGPUResourceGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGPUResourceGroupResponse rsp = ModifyGPUResourceGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGPUResourceGroupOutcome(rsp);
+        else
+            return ModifyGPUResourceGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGPUResourceGroupOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::ModifyGPUResourceGroupAsync(const ModifyGPUResourceGroupRequest& request, const ModifyGPUResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyGPUResourceGroupRequest&;
+    using Resp = ModifyGPUResourceGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyGPUResourceGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::ModifyGPUResourceGroupOutcomeCallable AgsClient::ModifyGPUResourceGroupCallable(const ModifyGPUResourceGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyGPUResourceGroupOutcome>>();
+    ModifyGPUResourceGroupAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const ModifyGPUResourceGroupRequest&,
+        ModifyGPUResourceGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

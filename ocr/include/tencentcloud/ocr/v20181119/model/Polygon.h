@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取左上顶点坐标
-                     * @return LeftTop 左上顶点坐标
+                     * 获取<p>左上顶点坐标</p>
+                     * @return LeftTop <p>左上顶点坐标</p>
                      * 
                      */
                     Coord GetLeftTop() const;
 
                     /**
-                     * 设置左上顶点坐标
-                     * @param _leftTop 左上顶点坐标
+                     * 设置<p>左上顶点坐标</p>
+                     * @param _leftTop <p>左上顶点坐标</p>
                      * 
                      */
                     void SetLeftTop(const Coord& _leftTop);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool LeftTopHasBeenSet() const;
 
                     /**
-                     * 获取右上顶点坐标
-                     * @return RightTop 右上顶点坐标
+                     * 获取<p>右上顶点坐标</p>
+                     * @return RightTop <p>右上顶点坐标</p>
                      * 
                      */
                     Coord GetRightTop() const;
 
                     /**
-                     * 设置右上顶点坐标
-                     * @param _rightTop 右上顶点坐标
+                     * 设置<p>右上顶点坐标</p>
+                     * @param _rightTop <p>右上顶点坐标</p>
                      * 
                      */
                     void SetRightTop(const Coord& _rightTop);
@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool RightTopHasBeenSet() const;
 
                     /**
-                     * 获取右下顶点坐标
-                     * @return RightBottom 右下顶点坐标
+                     * 获取<p>右下顶点坐标</p>
+                     * @return RightBottom <p>右下顶点坐标</p>
                      * 
                      */
                     Coord GetRightBottom() const;
 
                     /**
-                     * 设置右下顶点坐标
-                     * @param _rightBottom 右下顶点坐标
+                     * 设置<p>右下顶点坐标</p>
+                     * @param _rightBottom <p>右下顶点坐标</p>
                      * 
                      */
                     void SetRightBottom(const Coord& _rightBottom);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool RightBottomHasBeenSet() const;
 
                     /**
-                     * 获取左下顶点坐标
-                     * @return LeftBottom 左下顶点坐标
+                     * 获取<p>左下顶点坐标</p>
+                     * @return LeftBottom <p>左下顶点坐标</p>
                      * 
                      */
                     Coord GetLeftBottom() const;
 
                     /**
-                     * 设置左下顶点坐标
-                     * @param _leftBottom 左下顶点坐标
+                     * 设置<p>左下顶点坐标</p>
+                     * @param _leftBottom <p>左下顶点坐标</p>
                      * 
                      */
                     void SetLeftBottom(const Coord& _leftBottom);
@@ -135,25 +135,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 左上顶点坐标
+                     * <p>左上顶点坐标</p>
                      */
                     Coord m_leftTop;
                     bool m_leftTopHasBeenSet;
 
                     /**
-                     * 右上顶点坐标
+                     * <p>右上顶点坐标</p>
                      */
                     Coord m_rightTop;
                     bool m_rightTopHasBeenSet;
 
                     /**
-                     * 右下顶点坐标
+                     * <p>右下顶点坐标</p>
                      */
                     Coord m_rightBottom;
                     bool m_rightBottomHasBeenSet;
 
                     /**
-                     * 左下顶点坐标
+                     * <p>左下顶点坐标</p>
                      */
                     Coord m_leftBottom;
                     bool m_leftBottomHasBeenSet;

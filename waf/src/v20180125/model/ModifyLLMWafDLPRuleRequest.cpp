@@ -23,12 +23,13 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 ModifyLLMWafDLPRuleRequest::ModifyLLMWafDLPRuleRequest() :
-    m_serviceIdHasBeenSet(false),
     m_ruleIdsHasBeenSet(false),
+    m_serviceIdHasBeenSet(false),
     m_ruleActionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_directionHasBeenSet(false)
+    m_directionHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -38,14 +39,6 @@ string ModifyLLMWafDLPRuleRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_serviceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_ruleIdsHasBeenSet)
     {
@@ -58,6 +51,14 @@ string ModifyLLMWafDLPRuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_serviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleActionHasBeenSet)
@@ -92,6 +93,14 @@ string ModifyLLMWafDLPRuleRequest::ToJsonString() const
         d.AddMember(iKey, m_direction, allocator);
     }
 
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -99,22 +108,6 @@ string ModifyLLMWafDLPRuleRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ModifyLLMWafDLPRuleRequest::GetServiceId() const
-{
-    return m_serviceId;
-}
-
-void ModifyLLMWafDLPRuleRequest::SetServiceId(const string& _serviceId)
-{
-    m_serviceId = _serviceId;
-    m_serviceIdHasBeenSet = true;
-}
-
-bool ModifyLLMWafDLPRuleRequest::ServiceIdHasBeenSet() const
-{
-    return m_serviceIdHasBeenSet;
-}
 
 vector<string> ModifyLLMWafDLPRuleRequest::GetRuleIds() const
 {
@@ -130,6 +123,22 @@ void ModifyLLMWafDLPRuleRequest::SetRuleIds(const vector<string>& _ruleIds)
 bool ModifyLLMWafDLPRuleRequest::RuleIdsHasBeenSet() const
 {
     return m_ruleIdsHasBeenSet;
+}
+
+string ModifyLLMWafDLPRuleRequest::GetServiceId() const
+{
+    return m_serviceId;
+}
+
+void ModifyLLMWafDLPRuleRequest::SetServiceId(const string& _serviceId)
+{
+    m_serviceId = _serviceId;
+    m_serviceIdHasBeenSet = true;
+}
+
+bool ModifyLLMWafDLPRuleRequest::ServiceIdHasBeenSet() const
+{
+    return m_serviceIdHasBeenSet;
 }
 
 string ModifyLLMWafDLPRuleRequest::GetRuleAction() const
@@ -194,6 +203,22 @@ void ModifyLLMWafDLPRuleRequest::SetDirection(const int64_t& _direction)
 bool ModifyLLMWafDLPRuleRequest::DirectionHasBeenSet() const
 {
     return m_directionHasBeenSet;
+}
+
+string ModifyLLMWafDLPRuleRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void ModifyLLMWafDLPRuleRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool ModifyLLMWafDLPRuleRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 

@@ -27,7 +27,8 @@ CreateNotebookImageRequest::CreateNotebookImageRequest() :
     m_notebookIdHasBeenSet(false),
     m_tiProjectIdHasBeenSet(false),
     m_kernelsHasBeenSet(false),
-    m_registerToImageCenterHasBeenSet(false)
+    m_registerToImageCenterHasBeenSet(false),
+    m_ignoreUnfreezableProcessesHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string CreateNotebookImageRequest::ToJsonString() const
         string key = "RegisterToImageCenter";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_registerToImageCenter, allocator);
+    }
+
+    if (m_ignoreUnfreezableProcessesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreUnfreezableProcesses";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ignoreUnfreezableProcesses, allocator);
     }
 
 
@@ -170,6 +179,22 @@ void CreateNotebookImageRequest::SetRegisterToImageCenter(const bool& _registerT
 bool CreateNotebookImageRequest::RegisterToImageCenterHasBeenSet() const
 {
     return m_registerToImageCenterHasBeenSet;
+}
+
+bool CreateNotebookImageRequest::GetIgnoreUnfreezableProcesses() const
+{
+    return m_ignoreUnfreezableProcesses;
+}
+
+void CreateNotebookImageRequest::SetIgnoreUnfreezableProcesses(const bool& _ignoreUnfreezableProcesses)
+{
+    m_ignoreUnfreezableProcesses = _ignoreUnfreezableProcesses;
+    m_ignoreUnfreezableProcessesHasBeenSet = true;
+}
+
+bool CreateNotebookImageRequest::IgnoreUnfreezableProcessesHasBeenSet() const
+{
+    return m_ignoreUnfreezableProcessesHasBeenSet;
 }
 
 

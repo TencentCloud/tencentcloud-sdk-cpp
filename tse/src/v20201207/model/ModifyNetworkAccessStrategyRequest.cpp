@@ -27,7 +27,9 @@ ModifyNetworkAccessStrategyRequest::ModifyNetworkAccessStrategyRequest() :
     m_groupIdHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_vipHasBeenSet(false),
-    m_accessControlHasBeenSet(false)
+    m_accessControlHasBeenSet(false),
+    m_accessControlSourceHasBeenSet(false),
+    m_globalConfigIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,22 @@ string ModifyNetworkAccessStrategyRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_accessControl.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_accessControlSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessControlSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessControlSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_globalConfigIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GlobalConfigId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_globalConfigId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +183,38 @@ void ModifyNetworkAccessStrategyRequest::SetAccessControl(const NetworkAccessCon
 bool ModifyNetworkAccessStrategyRequest::AccessControlHasBeenSet() const
 {
     return m_accessControlHasBeenSet;
+}
+
+string ModifyNetworkAccessStrategyRequest::GetAccessControlSource() const
+{
+    return m_accessControlSource;
+}
+
+void ModifyNetworkAccessStrategyRequest::SetAccessControlSource(const string& _accessControlSource)
+{
+    m_accessControlSource = _accessControlSource;
+    m_accessControlSourceHasBeenSet = true;
+}
+
+bool ModifyNetworkAccessStrategyRequest::AccessControlSourceHasBeenSet() const
+{
+    return m_accessControlSourceHasBeenSet;
+}
+
+string ModifyNetworkAccessStrategyRequest::GetGlobalConfigId() const
+{
+    return m_globalConfigId;
+}
+
+void ModifyNetworkAccessStrategyRequest::SetGlobalConfigId(const string& _globalConfigId)
+{
+    m_globalConfigId = _globalConfigId;
+    m_globalConfigIdHasBeenSet = true;
+}
+
+bool ModifyNetworkAccessStrategyRequest::GlobalConfigIdHasBeenSet() const
+{
+    return m_globalConfigIdHasBeenSet;
 }
 
 

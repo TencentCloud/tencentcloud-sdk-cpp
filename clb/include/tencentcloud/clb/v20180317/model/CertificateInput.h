@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证。
-默认为 UNIDIRECTIONAL。
-                     * @return SSLMode 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证。
-默认为 UNIDIRECTIONAL。
+                     * 获取<p>认证类型，取值：<code>UNIDIRECTIONAL</code>：单向认证；<code>MUTUAL</code>：双向认证。 此参数是否必填取决于调用场景： - 创建监听器或转发规则：需要通过 Certificate 配置证书时，此参数必填；复用已有域名证书的转发规则无需传入。 - 修改监听器或域名属性：通过 Certificate 更新证书时，此参数必填；不修改证书时，无需传入整个 Certificate。 - 批量替换证书（ReplaceCertForLoadBalancers）：此参数无需传入，接口仅替换证书，不修改认证类型。</p><p>枚举值：</p><ul><li>UNIDIRECTIONAL： 单向认证</li><li>MUTUAL： 双向认证</li></ul>
+                     * @return SSLMode <p>认证类型，取值：<code>UNIDIRECTIONAL</code>：单向认证；<code>MUTUAL</code>：双向认证。 此参数是否必填取决于调用场景： - 创建监听器或转发规则：需要通过 Certificate 配置证书时，此参数必填；复用已有域名证书的转发规则无需传入。 - 修改监听器或域名属性：通过 Certificate 更新证书时，此参数必填；不修改证书时，无需传入整个 Certificate。 - 批量替换证书（ReplaceCertForLoadBalancers）：此参数无需传入，接口仅替换证书，不修改认证类型。</p><p>枚举值：</p><ul><li>UNIDIRECTIONAL： 单向认证</li><li>MUTUAL： 双向认证</li></ul>
                      * 
                      */
                     std::string GetSSLMode() const;
 
                     /**
-                     * 设置认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证。
-默认为 UNIDIRECTIONAL。
-                     * @param _sSLMode 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证。
-默认为 UNIDIRECTIONAL。
+                     * 设置<p>认证类型，取值：<code>UNIDIRECTIONAL</code>：单向认证；<code>MUTUAL</code>：双向认证。 此参数是否必填取决于调用场景： - 创建监听器或转发规则：需要通过 Certificate 配置证书时，此参数必填；复用已有域名证书的转发规则无需传入。 - 修改监听器或域名属性：通过 Certificate 更新证书时，此参数必填；不修改证书时，无需传入整个 Certificate。 - 批量替换证书（ReplaceCertForLoadBalancers）：此参数无需传入，接口仅替换证书，不修改认证类型。</p><p>枚举值：</p><ul><li>UNIDIRECTIONAL： 单向认证</li><li>MUTUAL： 双向认证</li></ul>
+                     * @param _sSLMode <p>认证类型，取值：<code>UNIDIRECTIONAL</code>：单向认证；<code>MUTUAL</code>：双向认证。 此参数是否必填取决于调用场景： - 创建监听器或转发规则：需要通过 Certificate 配置证书时，此参数必填；复用已有域名证书的转发规则无需传入。 - 修改监听器或域名属性：通过 Certificate 更新证书时，此参数必填；不修改证书时，无需传入整个 Certificate。 - 批量替换证书（ReplaceCertForLoadBalancers）：此参数无需传入，接口仅替换证书，不修改认证类型。</p><p>枚举值：</p><ul><li>UNIDIRECTIONAL： 单向认证</li><li>MUTUAL： 双向认证</li></ul>
                      * 
                      */
                     void SetSSLMode(const std::string& _sSLMode);
@@ -72,15 +68,15 @@ namespace TencentCloud
                     bool SSLModeHasBeenSet() const;
 
                     /**
-                     * 获取双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。
-                     * @return SSLVerifyClient 双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。
+                     * 获取<p>双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。</p>
+                     * @return SSLVerifyClient <p>双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。</p>
                      * 
                      */
                     std::string GetSSLVerifyClient() const;
 
                     /**
-                     * 设置双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。
-                     * @param _sSLVerifyClient 双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。
+                     * 设置<p>双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。</p>
+                     * @param _sSLVerifyClient <p>双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。</p>
                      * 
                      */
                     void SetSSLVerifyClient(const std::string& _sSLVerifyClient);
@@ -93,15 +89,15 @@ namespace TencentCloud
                     bool SSLVerifyClientHasBeenSet() const;
 
                     /**
-                     * 获取服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。
-                     * @return CertId 服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。
+                     * 获取<p>服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。</p>
+                     * @return CertId <p>服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。</p>
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。
-                     * @param _certId 服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。
+                     * 设置<p>服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。</p>
+                     * @param _certId <p>服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。</p>
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -114,15 +110,15 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
-                     * @return CertCaId 客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
+                     * 获取<p>客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。</p>
+                     * @return CertCaId <p>客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。</p>
                      * 
                      */
                     std::string GetCertCaId() const;
 
                     /**
-                     * 设置客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
-                     * @param _certCaId 客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
+                     * 设置<p>客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。</p>
+                     * @param _certCaId <p>客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。</p>
                      * 
                      */
                     void SetCertCaId(const std::string& _certCaId);
@@ -135,15 +131,15 @@ namespace TencentCloud
                     bool CertCaIdHasBeenSet() const;
 
                     /**
-                     * 获取上传服务端证书的名称，如果没有 CertId，则此项必传。
-                     * @return CertName 上传服务端证书的名称，如果没有 CertId，则此项必传。
+                     * 获取<p>上传服务端证书的名称，如果没有 CertId，则此项必传。</p>
+                     * @return CertName <p>上传服务端证书的名称，如果没有 CertId，则此项必传。</p>
                      * 
                      */
                     std::string GetCertName() const;
 
                     /**
-                     * 设置上传服务端证书的名称，如果没有 CertId，则此项必传。
-                     * @param _certName 上传服务端证书的名称，如果没有 CertId，则此项必传。
+                     * 设置<p>上传服务端证书的名称，如果没有 CertId，则此项必传。</p>
+                     * @param _certName <p>上传服务端证书的名称，如果没有 CertId，则此项必传。</p>
                      * 
                      */
                     void SetCertName(const std::string& _certName);
@@ -156,15 +152,15 @@ namespace TencentCloud
                     bool CertNameHasBeenSet() const;
 
                     /**
-                     * 获取上传服务端证书的 key，如果没有 CertId，则此项必传。
-                     * @return CertKey 上传服务端证书的 key，如果没有 CertId，则此项必传。
+                     * 获取<p>上传服务端证书的 key，如果没有 CertId，则此项必传。</p>
+                     * @return CertKey <p>上传服务端证书的 key，如果没有 CertId，则此项必传。</p>
                      * 
                      */
                     std::string GetCertKey() const;
 
                     /**
-                     * 设置上传服务端证书的 key，如果没有 CertId，则此项必传。
-                     * @param _certKey 上传服务端证书的 key，如果没有 CertId，则此项必传。
+                     * 设置<p>上传服务端证书的 key，如果没有 CertId，则此项必传。</p>
+                     * @param _certKey <p>上传服务端证书的 key，如果没有 CertId，则此项必传。</p>
                      * 
                      */
                     void SetCertKey(const std::string& _certKey);
@@ -177,15 +173,15 @@ namespace TencentCloud
                     bool CertKeyHasBeenSet() const;
 
                     /**
-                     * 获取上传服务端证书的内容，如果没有 CertId，则此项必传。
-                     * @return CertContent 上传服务端证书的内容，如果没有 CertId，则此项必传。
+                     * 获取<p>上传服务端证书的内容，如果没有 CertId，则此项必传。</p>
+                     * @return CertContent <p>上传服务端证书的内容，如果没有 CertId，则此项必传。</p>
                      * 
                      */
                     std::string GetCertContent() const;
 
                     /**
-                     * 设置上传服务端证书的内容，如果没有 CertId，则此项必传。
-                     * @param _certContent 上传服务端证书的内容，如果没有 CertId，则此项必传。
+                     * 设置<p>上传服务端证书的内容，如果没有 CertId，则此项必传。</p>
+                     * @param _certContent <p>上传服务端证书的内容，如果没有 CertId，则此项必传。</p>
                      * 
                      */
                     void SetCertContent(const std::string& _certContent);
@@ -198,15 +194,15 @@ namespace TencentCloud
                     bool CertContentHasBeenSet() const;
 
                     /**
-                     * 获取上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
-                     * @return CertCaName 上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
+                     * 获取<p>上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。</p>
+                     * @return CertCaName <p>上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。</p>
                      * 
                      */
                     std::string GetCertCaName() const;
 
                     /**
-                     * 设置上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
-                     * @param _certCaName 上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
+                     * 设置<p>上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。</p>
+                     * @param _certCaName <p>上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。</p>
                      * 
                      */
                     void SetCertCaName(const std::string& _certCaName);
@@ -219,15 +215,15 @@ namespace TencentCloud
                     bool CertCaNameHasBeenSet() const;
 
                     /**
-                     * 获取上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
-                     * @return CertCaContent 上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
+                     * 获取<p>上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。</p>
+                     * @return CertCaContent <p>上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。</p>
                      * 
                      */
                     std::string GetCertCaContent() const;
 
                     /**
-                     * 设置上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
-                     * @param _certCaContent 上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
+                     * 设置<p>上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。</p>
+                     * @param _certCaContent <p>上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。</p>
                      * 
                      */
                     void SetCertCaContent(const std::string& _certCaContent);
@@ -242,56 +238,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证。
-默认为 UNIDIRECTIONAL。
+                     * <p>认证类型，取值：<code>UNIDIRECTIONAL</code>：单向认证；<code>MUTUAL</code>：双向认证。 此参数是否必填取决于调用场景： - 创建监听器或转发规则：需要通过 Certificate 配置证书时，此参数必填；复用已有域名证书的转发规则无需传入。 - 修改监听器或域名属性：通过 Certificate 更新证书时，此参数必填；不修改证书时，无需传入整个 Certificate。 - 批量替换证书（ReplaceCertForLoadBalancers）：此参数无需传入，接口仅替换证书，不修改认证类型。</p><p>枚举值：</p><ul><li>UNIDIRECTIONAL： 单向认证</li><li>MUTUAL： 双向认证</li></ul>
                      */
                     std::string m_sSLMode;
                     bool m_sSLModeHasBeenSet;
 
                     /**
-                     * 双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。
+                     * <p>双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。</p>
                      */
                     std::string m_sSLVerifyClient;
                     bool m_sSLVerifyClientHasBeenSet;
 
                     /**
-                     * 服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。
+                     * <p>服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent（服务端证书内容），CertKey（服务端证书密钥），CertName（服务端证书名称）。</p>
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * 客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。
+                     * <p>客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。</p>
                      */
                     std::string m_certCaId;
                     bool m_certCaIdHasBeenSet;
 
                     /**
-                     * 上传服务端证书的名称，如果没有 CertId，则此项必传。
+                     * <p>上传服务端证书的名称，如果没有 CertId，则此项必传。</p>
                      */
                     std::string m_certName;
                     bool m_certNameHasBeenSet;
 
                     /**
-                     * 上传服务端证书的 key，如果没有 CertId，则此项必传。
+                     * <p>上传服务端证书的 key，如果没有 CertId，则此项必传。</p>
                      */
                     std::string m_certKey;
                     bool m_certKeyHasBeenSet;
 
                     /**
-                     * 上传服务端证书的内容，如果没有 CertId，则此项必传。
+                     * <p>上传服务端证书的内容，如果没有 CertId，则此项必传。</p>
                      */
                     std::string m_certContent;
                     bool m_certContentHasBeenSet;
 
                     /**
-                     * 上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
+                     * <p>上传客户端 CA 证书的名称，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。</p>
                      */
                     std::string m_certCaName;
                     bool m_certCaNameHasBeenSet;
 
                     /**
-                     * 上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。
+                     * <p>上传客户端证书的内容，如果 SSLMode=MUTUAL，如果没有 CertCaId，则此项必传。</p>
                      */
                     std::string m_certCaContent;
                     bool m_certCaContentHasBeenSet;

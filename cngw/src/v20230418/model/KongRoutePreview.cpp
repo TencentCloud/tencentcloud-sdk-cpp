@@ -40,7 +40,10 @@ KongRoutePreview::KongRoutePreview() :
     m_responseBufferingHasBeenSet(false),
     m_regexPriorityHasBeenSet(false),
     m_queryStringParametersHasBeenSet(false),
-    m_routeSourceHasBeenSet(false)
+    m_routeSourceHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_timeoutHasBeenSet(false),
+    m_timeoutSourceHasBeenSet(false)
 {
 }
 
@@ -284,6 +287,46 @@ CoreInternalOutcome KongRoutePreview::Deserialize(const rapidjson::Value &value)
         m_routeSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KongRoutePreview.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KongUserTagKV item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Timeout") && !value["Timeout"].IsNull())
+    {
+        if (!value["Timeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongRoutePreview.Timeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeout = value["Timeout"].GetInt64();
+        m_timeoutHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeoutSource") && !value["TimeoutSource"].IsNull())
+    {
+        if (!value["TimeoutSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongRoutePreview.TimeoutSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeoutSource = string(value["TimeoutSource"].GetString());
+        m_timeoutSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +531,37 @@ void KongRoutePreview::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "RouteSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_routeSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_timeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeout, allocator);
+    }
+
+    if (m_timeoutSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeoutSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeoutSource.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -811,5 +885,53 @@ void KongRoutePreview::SetRouteSource(const string& _routeSource)
 bool KongRoutePreview::RouteSourceHasBeenSet() const
 {
     return m_routeSourceHasBeenSet;
+}
+
+vector<KongUserTagKV> KongRoutePreview::GetTags() const
+{
+    return m_tags;
+}
+
+void KongRoutePreview::SetTags(const vector<KongUserTagKV>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool KongRoutePreview::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+int64_t KongRoutePreview::GetTimeout() const
+{
+    return m_timeout;
+}
+
+void KongRoutePreview::SetTimeout(const int64_t& _timeout)
+{
+    m_timeout = _timeout;
+    m_timeoutHasBeenSet = true;
+}
+
+bool KongRoutePreview::TimeoutHasBeenSet() const
+{
+    return m_timeoutHasBeenSet;
+}
+
+string KongRoutePreview::GetTimeoutSource() const
+{
+    return m_timeoutSource;
+}
+
+void KongRoutePreview::SetTimeoutSource(const string& _timeoutSource)
+{
+    m_timeoutSource = _timeoutSource;
+    m_timeoutSourceHasBeenSet = true;
+}
+
+bool KongRoutePreview::TimeoutSourceHasBeenSet() const
+{
+    return m_timeoutSourceHasBeenSet;
 }
 

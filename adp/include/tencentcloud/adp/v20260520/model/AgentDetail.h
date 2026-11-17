@@ -31,6 +31,8 @@
 #include <tencentcloud/adp/v20260520/model/AgentSkill.h>
 #include <tencentcloud/adp/v20260520/model/AgentAdvancedConfig.h>
 #include <tencentcloud/adp/v20260520/model/AgentExternalToolConfig.h>
+#include <tencentcloud/adp/v20260520/model/ReferenceAppDetail.h>
+#include <tencentcloud/adp/v20260520/model/AgentBuiltinTool.h>
 
 
 namespace TencentCloud
@@ -242,6 +244,115 @@ namespace TencentCloud
                      */
                     bool ExternalToolListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * @return ProviderType <p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * 
+                     */
+                    int64_t GetProviderType() const;
+
+                    /**
+                     * 设置<p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * @param _providerType <p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * 
+                     */
+                    void SetProviderType(const int64_t& _providerType);
+
+                    /**
+                     * 判断参数 ProviderType 是否已赋值
+                     * @return ProviderType 是否已赋值
+                     * 
+                     */
+                    bool ProviderTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>引用应用的ID</p>
+                     * @return ReferenceAppId <p>引用应用的ID</p>
+                     * 
+                     */
+                    std::string GetReferenceAppId() const;
+
+                    /**
+                     * 设置<p>引用应用的ID</p>
+                     * @param _referenceAppId <p>引用应用的ID</p>
+                     * 
+                     */
+                    void SetReferenceAppId(const std::string& _referenceAppId);
+
+                    /**
+                     * 判断参数 ReferenceAppId 是否已赋值
+                     * @return ReferenceAppId 是否已赋值
+                     * 
+                     */
+                    bool ReferenceAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>
+                     * @return ReferenceAppStatus <p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>
+                     * 
+                     */
+                    int64_t GetReferenceAppStatus() const;
+
+                    /**
+                     * 设置<p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>
+                     * @param _referenceAppStatus <p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>
+                     * 
+                     */
+                    void SetReferenceAppStatus(const int64_t& _referenceAppStatus);
+
+                    /**
+                     * 判断参数 ReferenceAppStatus 是否已赋值
+                     * @return ReferenceAppStatus 是否已赋值
+                     * 
+                     */
+                    bool ReferenceAppStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>引用应用详情，ProviderType=1 时返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReferenceApp <p>引用应用详情，ProviderType=1 时返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ReferenceAppDetail GetReferenceApp() const;
+
+                    /**
+                     * 设置<p>引用应用详情，ProviderType=1 时返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _referenceApp <p>引用应用详情，ProviderType=1 时返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReferenceApp(const ReferenceAppDetail& _referenceApp);
+
+                    /**
+                     * 判断参数 ReferenceApp 是否已赋值
+                     * @return ReferenceApp 是否已赋值
+                     * 
+                     */
+                    bool ReferenceAppHasBeenSet() const;
+
+                    /**
+                     * 获取<p>内置工具列表</p>
+                     * @return BuiltinToolList <p>内置工具列表</p>
+                     * 
+                     */
+                    std::vector<AgentBuiltinTool> GetBuiltinToolList() const;
+
+                    /**
+                     * 设置<p>内置工具列表</p>
+                     * @param _builtinToolList <p>内置工具列表</p>
+                     * 
+                     */
+                    void SetBuiltinToolList(const std::vector<AgentBuiltinTool>& _builtinToolList);
+
+                    /**
+                     * 判断参数 BuiltinToolList 是否已赋值
+                     * @return BuiltinToolList 是否已赋值
+                     * 
+                     */
+                    bool BuiltinToolListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -297,6 +408,37 @@ namespace TencentCloud
                      */
                     std::vector<AgentExternalToolConfig> m_externalToolList;
                     bool m_externalToolListHasBeenSet;
+
+                    /**
+                     * <p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     */
+                    int64_t m_providerType;
+                    bool m_providerTypeHasBeenSet;
+
+                    /**
+                     * <p>引用应用的ID</p>
+                     */
+                    std::string m_referenceAppId;
+                    bool m_referenceAppIdHasBeenSet;
+
+                    /**
+                     * <p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>
+                     */
+                    int64_t m_referenceAppStatus;
+                    bool m_referenceAppStatusHasBeenSet;
+
+                    /**
+                     * <p>引用应用详情，ProviderType=1 时返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReferenceAppDetail m_referenceApp;
+                    bool m_referenceAppHasBeenSet;
+
+                    /**
+                     * <p>内置工具列表</p>
+                     */
+                    std::vector<AgentBuiltinTool> m_builtinToolList;
+                    bool m_builtinToolListHasBeenSet;
 
                 };
             }

@@ -22,6 +22,7 @@ using namespace std;
 
 ConversationMessage::ConversationMessage() :
     m_conversationIdHasBeenSet(false),
+    m_extraInfoHasBeenSet(false),
     m_iconHasBeenSet(false),
     m_messageIdHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -49,6 +50,23 @@ CoreInternalOutcome ConversationMessage::Deserialize(const rapidjson::Value &val
         }
         m_conversationId = string(value["ConversationId"].GetString());
         m_conversationIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtraInfo") && !value["ExtraInfo"].IsNull())
+    {
+        if (!value["ExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConversationMessage.ExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extraInfo.Deserialize(value["ExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extraInfoHasBeenSet = true;
     }
 
     if (value.HasMember("Icon") && !value["Icon"].IsNull())
@@ -196,6 +214,15 @@ void ConversationMessage::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(m_conversationId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_extraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_iconHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -315,6 +342,22 @@ void ConversationMessage::SetConversationId(const string& _conversationId)
 bool ConversationMessage::ConversationIdHasBeenSet() const
 {
     return m_conversationIdHasBeenSet;
+}
+
+ConversationMessageExtraInfo ConversationMessage::GetExtraInfo() const
+{
+    return m_extraInfo;
+}
+
+void ConversationMessage::SetExtraInfo(const ConversationMessageExtraInfo& _extraInfo)
+{
+    m_extraInfo = _extraInfo;
+    m_extraInfoHasBeenSet = true;
+}
+
+bool ConversationMessage::ExtraInfoHasBeenSet() const
+{
+    return m_extraInfoHasBeenSet;
 }
 
 string ConversationMessage::GetIcon() const

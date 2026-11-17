@@ -510,6 +510,39 @@ namespace TencentCloud
                      */
                     bool ActionRatioHasBeenSet() const;
 
+                    /**
+                     * 获取自定义规则预览开关
+枚举值：
+0：关闭预览
+1：开启预览
+                     * @return Preview 自定义规则预览开关
+枚举值：
+0：关闭预览
+1：开启预览
+                     * 
+                     */
+                    int64_t GetPreview() const;
+
+                    /**
+                     * 设置自定义规则预览开关
+枚举值：
+0：关闭预览
+1：开启预览
+                     * @param _preview 自定义规则预览开关
+枚举值：
+0：关闭预览
+1：开启预览
+                     * 
+                     */
+                    void SetPreview(const int64_t& _preview);
+
+                    /**
+                     * 判断参数 Preview 是否已赋值
+                     * @return Preview 是否已赋值
+                     * 
+                     */
+                    bool PreviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -643,6 +676,15 @@ namespace TencentCloud
                      */
                     uint64_t m_actionRatio;
                     bool m_actionRatioHasBeenSet;
+
+                    /**
+                     * 自定义规则预览开关
+枚举值：
+0：关闭预览
+1：开启预览
+                     */
+                    int64_t m_preview;
+                    bool m_previewHasBeenSet;
 
                 };
             }

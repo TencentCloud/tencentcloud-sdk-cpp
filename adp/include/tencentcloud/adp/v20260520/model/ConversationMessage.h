@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/ConversationMessageExtraInfo.h>
 #include <tencentcloud/adp/v20260520/model/ConversationContent.h>
 
 
@@ -67,6 +68,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ConversationIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>额外信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtraInfo <p>额外信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ConversationMessageExtraInfo GetExtraInfo() const;
+
+                    /**
+                     * 设置<p>额外信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extraInfo <p>额外信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtraInfo(const ConversationMessageExtraInfo& _extraInfo);
+
+                    /**
+                     * 判断参数 ExtraInfo 是否已赋值
+                     * @return ExtraInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtraInfoHasBeenSet() const;
 
                     /**
                      * 获取<p>消息图标</p>
@@ -306,6 +332,13 @@ namespace TencentCloud
                      */
                     std::string m_conversationId;
                     bool m_conversationIdHasBeenSet;
+
+                    /**
+                     * <p>额外信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ConversationMessageExtraInfo m_extraInfo;
+                    bool m_extraInfoHasBeenSet;
 
                     /**
                      * <p>消息图标</p>

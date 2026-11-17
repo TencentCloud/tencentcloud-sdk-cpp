@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开通 SSL 。ON 代表开通 ，OFF 代表未开通。
-                     * @return Status 是否开通 SSL 。ON 代表开通 ，OFF 代表未开通。
+                     * 获取<p>是否开通 SSL 。ON 代表开通 ，OFF 代表未开通。</p>
+                     * @return Status <p>是否开通 SSL 。ON 代表开通 ，OFF 代表未开通。</p>
                      * 
                      */
                     std::string GetStatus() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取证书下载链接。
-                     * @return Url 证书下载链接。
+                     * 获取<p>证书下载链接。</p>
+                     * @return Url <p>证书下载链接。</p>
                      * 
                      */
                     std::string GetUrl() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开通 SSL 。ON 代表开通 ，OFF 代表未开通。
+                     * <p>是否开通 SSL 。ON 代表开通 ，OFF 代表未开通。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 证书下载链接。
+                     * <p>证书下载链接。</p>
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

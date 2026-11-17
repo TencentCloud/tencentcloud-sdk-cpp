@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据源ID
-                     * @return Id 数据源ID
+                     * 获取<p>数据源ID</p>
+                     * @return Id <p>数据源ID</p>
                      * 
                      */
                     std::string GetId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据源ID
+                     * <p>数据源ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

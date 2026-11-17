@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DeleteAllHasBeenSet() const;
 
                     /**
-                     * 获取用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则
-                     * @return SourceType 用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则
+                     * 获取数据来源，'batch'表示批量黑白名单规则，空/不传表示单域名黑白名单规则
+                     * @return SourceType 数据来源，'batch'表示批量黑白名单规则，空/不传表示单域名黑白名单规则
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则
-                     * @param _sourceType 用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则
+                     * 设置数据来源，'batch'表示批量黑白名单规则，空/不传表示单域名黑白名单规则
+                     * @param _sourceType 数据来源，'batch'表示批量黑白名单规则，空/不传表示单域名黑白名单规则
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_deleteAllHasBeenSet;
 
                     /**
-                     * 用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护	），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则
+                     * 数据来源，'batch'表示批量黑白名单规则，空/不传表示单域名黑白名单规则
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;

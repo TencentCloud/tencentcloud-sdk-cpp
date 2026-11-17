@@ -221,6 +221,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceBindGatewayRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceBindGatewayResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceCloudStoragePackagesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceCloudStoragePackagesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryRequest.h>
@@ -852,6 +854,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceBindGatewayResponse> DescribeDeviceBindGatewayOutcome;
                 typedef std::future<DescribeDeviceBindGatewayOutcome> DescribeDeviceBindGatewayOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceBindGatewayRequest&, DescribeDeviceBindGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceBindGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceCloudStoragePackagesResponse> DescribeDeviceCloudStoragePackagesOutcome;
+                typedef std::future<DescribeDeviceCloudStoragePackagesOutcome> DescribeDeviceCloudStoragePackagesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceCloudStoragePackagesRequest&, DescribeDeviceCloudStoragePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceCloudStoragePackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceDataResponse> DescribeDeviceDataOutcome;
                 typedef std::future<DescribeDeviceDataOutcome> DescribeDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceDataRequest&, DescribeDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceDataAsyncHandler;
@@ -2263,6 +2268,15 @@ namespace TencentCloud
                 DescribeDeviceBindGatewayOutcome DescribeDeviceBindGateway(const Model::DescribeDeviceBindGatewayRequest &request);
                 void DescribeDeviceBindGatewayAsync(const Model::DescribeDeviceBindGatewayRequest& request, const DescribeDeviceBindGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceBindGatewayOutcomeCallable DescribeDeviceBindGatewayCallable(const Model::DescribeDeviceBindGatewayRequest& request);
+
+                /**
+                 *查询设备云存套餐
+                 * @param req DescribeDeviceCloudStoragePackagesRequest
+                 * @return DescribeDeviceCloudStoragePackagesOutcome
+                 */
+                DescribeDeviceCloudStoragePackagesOutcome DescribeDeviceCloudStoragePackages(const Model::DescribeDeviceCloudStoragePackagesRequest &request);
+                void DescribeDeviceCloudStoragePackagesAsync(const Model::DescribeDeviceCloudStoragePackagesRequest& request, const DescribeDeviceCloudStoragePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceCloudStoragePackagesOutcomeCallable DescribeDeviceCloudStoragePackagesCallable(const Model::DescribeDeviceCloudStoragePackagesRequest& request);
 
                 /**
                  *根据设备产品ID、设备名称，获取设备上报的属性数据。

@@ -28,7 +28,10 @@ DescribeMarkEssayAgentJobResponse::DescribeMarkEssayAgentJobResponse() :
     m_sentenceSuggestsHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
-    m_jobStatusHasBeenSet(false)
+    m_jobStatusHasBeenSet(false),
+    m_questionInfoHasBeenSet(false),
+    m_agentResultJsonHasBeenSet(false),
+    m_thoughtContentHasBeenSet(false)
 {
 }
 
@@ -126,6 +129,46 @@ CoreInternalOutcome DescribeMarkEssayAgentJobResponse::Deserialize(const string 
         m_jobStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("QuestionInfo") && !rsp["QuestionInfo"].IsNull())
+    {
+        if (!rsp["QuestionInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `QuestionInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["QuestionInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            QuestionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_questionInfo.push_back(item);
+        }
+        m_questionInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AgentResultJson") && !rsp["AgentResultJson"].IsNull())
+    {
+        if (!rsp["AgentResultJson"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentResultJson` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentResultJson = string(rsp["AgentResultJson"].GetString());
+        m_agentResultJsonHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ThoughtContent") && !rsp["ThoughtContent"].IsNull())
+    {
+        if (!rsp["ThoughtContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ThoughtContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_thoughtContent = string(rsp["ThoughtContent"].GetString());
+        m_thoughtContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +224,37 @@ string DescribeMarkEssayAgentJobResponse::ToJsonString() const
         string key = "JobStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jobStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_questionInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuestionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_questionInfo.begin(); itr != m_questionInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_agentResultJsonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentResultJson";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentResultJson.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_thoughtContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThoughtContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_thoughtContent.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +317,36 @@ string DescribeMarkEssayAgentJobResponse::GetJobStatus() const
 bool DescribeMarkEssayAgentJobResponse::JobStatusHasBeenSet() const
 {
     return m_jobStatusHasBeenSet;
+}
+
+vector<QuestionInfo> DescribeMarkEssayAgentJobResponse::GetQuestionInfo() const
+{
+    return m_questionInfo;
+}
+
+bool DescribeMarkEssayAgentJobResponse::QuestionInfoHasBeenSet() const
+{
+    return m_questionInfoHasBeenSet;
+}
+
+string DescribeMarkEssayAgentJobResponse::GetAgentResultJson() const
+{
+    return m_agentResultJson;
+}
+
+bool DescribeMarkEssayAgentJobResponse::AgentResultJsonHasBeenSet() const
+{
+    return m_agentResultJsonHasBeenSet;
+}
+
+string DescribeMarkEssayAgentJobResponse::GetThoughtContent() const
+{
+    return m_thoughtContent;
+}
+
+bool DescribeMarkEssayAgentJobResponse::ThoughtContentHasBeenSet() const
+{
+    return m_thoughtContentHasBeenSet;
 }
 
 

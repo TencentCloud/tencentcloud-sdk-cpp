@@ -59,44 +59,44 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）</p>
-                     * @return QuestionInfo <p>切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）</p>
-                     * 
+                     * 获取<p>【废弃字段】</p>
+                     * @return QuestionInfo <p>【废弃字段】</p>
+                     * @deprecated
                      */
                     std::vector<QuestionInfo> GetQuestionInfo() const;
 
                     /**
                      * 判断参数 QuestionInfo 是否已赋值
                      * @return QuestionInfo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool QuestionInfoHasBeenSet() const;
 
                     /**
-                     * 获取<p>题目切题数量，作为计费题目数总量</p>
-                     * @return QuestionCount <p>题目切题数量，作为计费题目数总量</p>
-                     * 
+                     * 获取<p>【废弃字段】</p>
+                     * @return QuestionCount <p>【废弃字段】</p>
+                     * @deprecated
                      */
                     std::string GetQuestionCount() const;
 
                     /**
                      * 判断参数 QuestionCount 是否已赋值
                      * @return QuestionCount 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool QuestionCountHasBeenSet() const;
 
                     /**
                      * 获取<p>【废弃字段】</p>
                      * @return OriginalImageUrl <p>【废弃字段】</p>
-                     * 
+                     * @deprecated
                      */
                     std::string GetOriginalImageUrl() const;
 
                     /**
                      * 判断参数 OriginalImageUrl 是否已赋值
                      * @return OriginalImageUrl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OriginalImageUrlHasBeenSet() const;
 
@@ -109,13 +109,13 @@ namespace TencentCloud
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * <p>切题题目边框坐标列表 （如果BoolSingleQuestion为true则返回空）</p>
+                     * <p>【废弃字段】</p>
                      */
                     std::vector<QuestionInfo> m_questionInfo;
                     bool m_questionInfoHasBeenSet;
 
                     /**
-                     * <p>题目切题数量，作为计费题目数总量</p>
+                     * <p>【废弃字段】</p>
                      */
                     std::string m_questionCount;
                     bool m_questionCountHasBeenSet;

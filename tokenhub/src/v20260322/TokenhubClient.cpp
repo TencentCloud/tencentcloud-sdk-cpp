@@ -1290,6 +1290,56 @@ TokenhubClient::DescribeTokenPlanListOutcomeCallable TokenhubClient::DescribeTok
     return prom->get_future();
 }
 
+TokenhubClient::DescribeTokenPlanPersonalPackageOutcome TokenhubClient::DescribeTokenPlanPersonalPackage(const DescribeTokenPlanPersonalPackageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTokenPlanPersonalPackage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTokenPlanPersonalPackageResponse rsp = DescribeTokenPlanPersonalPackageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTokenPlanPersonalPackageOutcome(rsp);
+        else
+            return DescribeTokenPlanPersonalPackageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTokenPlanPersonalPackageOutcome(outcome.GetError());
+    }
+}
+
+void TokenhubClient::DescribeTokenPlanPersonalPackageAsync(const DescribeTokenPlanPersonalPackageRequest& request, const DescribeTokenPlanPersonalPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTokenPlanPersonalPackageRequest&;
+    using Resp = DescribeTokenPlanPersonalPackageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTokenPlanPersonalPackage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TokenhubClient::DescribeTokenPlanPersonalPackageOutcomeCallable TokenhubClient::DescribeTokenPlanPersonalPackageCallable(const DescribeTokenPlanPersonalPackageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTokenPlanPersonalPackageOutcome>>();
+    DescribeTokenPlanPersonalPackageAsync(
+    request,
+    [prom](
+        const TokenhubClient*,
+        const DescribeTokenPlanPersonalPackageRequest&,
+        DescribeTokenPlanPersonalPackageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TokenhubClient::DescribeUsageRankListOutcome TokenhubClient::DescribeUsageRankList(const DescribeUsageRankListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUsageRankList");

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>资源ID列表</p>
-                     * @return ResourceId <p>资源ID列表</p>
+                     * 获取<p>资源ID（单个）：CVM 场景传实例ID（ins-xxx），CFS 场景传文件系统ID（cfs-xxx），COS 场景传源桶名称。</p>
+                     * @return ResourceId <p>资源ID（单个）：CVM 场景传实例ID（ins-xxx），CFS 场景传文件系统ID（cfs-xxx），COS 场景传源桶名称。</p>
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置<p>资源ID列表</p>
-                     * @param _resourceId <p>资源ID列表</p>
+                     * 设置<p>资源ID（单个）：CVM 场景传实例ID（ins-xxx），CFS 场景传文件系统ID（cfs-xxx），COS 场景传源桶名称。</p>
+                     * @param _resourceId <p>资源ID（单个）：CVM 场景传实例ID（ins-xxx），CFS 场景传文件系统ID（cfs-xxx），COS 场景传源桶名称。</p>
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PlanIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>备份路径列表，1~20 个</p>
-                     * @return BackupPaths <p>备份路径列表，1~20 个</p>
+                     * 获取<p>备份路径列表，0~20 个。不传或传空数组时，CVM/CFS 默认 ["/"]（根目录），COS 默认整桶；COS 最多 1 个对象前缀。</p>
+                     * @return BackupPaths <p>备份路径列表，0~20 个。不传或传空数组时，CVM/CFS 默认 ["/"]（根目录），COS 默认整桶；COS 最多 1 个对象前缀。</p>
                      * 
                      */
                     std::vector<std::string> GetBackupPaths() const;
 
                     /**
-                     * 设置<p>备份路径列表，1~20 个</p>
-                     * @param _backupPaths <p>备份路径列表，1~20 个</p>
+                     * 设置<p>备份路径列表，0~20 个。不传或传空数组时，CVM/CFS 默认 ["/"]（根目录），COS 默认整桶；COS 最多 1 个对象前缀。</p>
+                     * @param _backupPaths <p>备份路径列表，0~20 个。不传或传空数组时，CVM/CFS 默认 ["/"]（根目录），COS 默认整桶；COS 最多 1 个对象前缀。</p>
                      * 
                      */
                     void SetBackupPaths(const std::vector<std::string>& _backupPaths);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool DeadlineHasBeenSet() const;
 
                     /**
-                     * 获取<p>备份名称</p>
-                     * @return BackupName <p>备份名称</p>
+                     * 获取<p>备份名称，最长128个字符；不传或为空时系统自动生成</p>
+                     * @return BackupName <p>备份名称，最长128个字符；不传或为空时系统自动生成</p>
                      * 
                      */
                     std::string GetBackupName() const;
 
                     /**
-                     * 设置<p>备份名称</p>
-                     * @param _backupName <p>备份名称</p>
+                     * 设置<p>备份名称，最长128个字符；不传或为空时系统自动生成</p>
+                     * @param _backupName <p>备份名称，最长128个字符；不传或为空时系统自动生成</p>
                      * 
                      */
                     void SetBackupName(const std::string& _backupName);
@@ -297,7 +297,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>资源ID列表</p>
+                     * <p>资源ID（单个）：CVM 场景传实例ID（ins-xxx），CFS 场景传文件系统ID（cfs-xxx），COS 场景传源桶名称。</p>
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
@@ -309,7 +309,7 @@ namespace TencentCloud
                     bool m_planIdHasBeenSet;
 
                     /**
-                     * <p>备份路径列表，1~20 个</p>
+                     * <p>备份路径列表，0~20 个。不传或传空数组时，CVM/CFS 默认 ["/"]（根目录），COS 默认整桶；COS 最多 1 个对象前缀。</p>
                      */
                     std::vector<std::string> m_backupPaths;
                     bool m_backupPathsHasBeenSet;
@@ -345,7 +345,7 @@ namespace TencentCloud
                     bool m_deadlineHasBeenSet;
 
                     /**
-                     * <p>备份名称</p>
+                     * <p>备份名称，最长128个字符；不传或为空时系统自动生成</p>
                      */
                     std::string m_backupName;
                     bool m_backupNameHasBeenSet;

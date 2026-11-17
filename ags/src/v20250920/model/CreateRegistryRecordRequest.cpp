@@ -31,7 +31,10 @@ CreateRegistryRecordRequest::CreateRegistryRecordRequest() :
     m_mCPSourceHasBeenSet(false),
     m_agentSourceHasBeenSet(false),
     m_skillSourceHasBeenSet(false),
-    m_customDescriptorsHasBeenSet(false)
+    m_customDescriptorsHasBeenSet(false),
+    m_fileSourceHasBeenSet(false),
+    m_supportedHarnessVersionsHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -115,6 +118,45 @@ string CreateRegistryRecordRequest::ToJsonString() const
         string key = "CustomDescriptors";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customDescriptors.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileSource.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_supportedHarnessVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportedHarnessVersions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_supportedHarnessVersions.begin(); itr != m_supportedHarnessVersions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metadata.begin(); itr != m_metadata.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -267,6 +309,54 @@ void CreateRegistryRecordRequest::SetCustomDescriptors(const string& _customDesc
 bool CreateRegistryRecordRequest::CustomDescriptorsHasBeenSet() const
 {
     return m_customDescriptorsHasBeenSet;
+}
+
+CloudFileSourceInput CreateRegistryRecordRequest::GetFileSource() const
+{
+    return m_fileSource;
+}
+
+void CreateRegistryRecordRequest::SetFileSource(const CloudFileSourceInput& _fileSource)
+{
+    m_fileSource = _fileSource;
+    m_fileSourceHasBeenSet = true;
+}
+
+bool CreateRegistryRecordRequest::FileSourceHasBeenSet() const
+{
+    return m_fileSourceHasBeenSet;
+}
+
+vector<HarnessVersionReference> CreateRegistryRecordRequest::GetSupportedHarnessVersions() const
+{
+    return m_supportedHarnessVersions;
+}
+
+void CreateRegistryRecordRequest::SetSupportedHarnessVersions(const vector<HarnessVersionReference>& _supportedHarnessVersions)
+{
+    m_supportedHarnessVersions = _supportedHarnessVersions;
+    m_supportedHarnessVersionsHasBeenSet = true;
+}
+
+bool CreateRegistryRecordRequest::SupportedHarnessVersionsHasBeenSet() const
+{
+    return m_supportedHarnessVersionsHasBeenSet;
+}
+
+vector<MetadataEntry> CreateRegistryRecordRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void CreateRegistryRecordRequest::SetMetadata(const vector<MetadataEntry>& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool CreateRegistryRecordRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 
 

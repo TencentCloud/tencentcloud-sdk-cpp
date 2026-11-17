@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cngw/v20230418/model/KVMapping.h>
+#include <tencentcloud/cngw/v20230418/model/KongUserTagKV.h>
 
 
 namespace TencentCloud
@@ -483,6 +484,73 @@ namespace TencentCloud
                      */
                     bool RouteSourceHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户绑定的业务标签（路由/服务标签分组能力，不含 Kong 内部 tag）。未绑定时字段为空数组或不返回。关联需求：路由/服务标签分组管理</p>
+                     * @return Tags <p>用户绑定的业务标签（路由/服务标签分组能力，不含 Kong 内部 tag）。未绑定时字段为空数组或不返回。关联需求：路由/服务标签分组管理</p>
+                     * 
+                     */
+                    std::vector<KongUserTagKV> GetTags() const;
+
+                    /**
+                     * 设置<p>用户绑定的业务标签（路由/服务标签分组能力，不含 Kong 内部 tag）。未绑定时字段为空数组或不返回。关联需求：路由/服务标签分组管理</p>
+                     * @param _tags <p>用户绑定的业务标签（路由/服务标签分组能力，不含 Kong 内部 tag）。未绑定时字段为空数组或不返回。关联需求：路由/服务标签分组管理</p>
+                     * 
+                     */
+                    void SetTags(const std::vector<KongUserTagKV>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>超时时间，单位ms</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Timeout <p>超时时间，单位ms</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTimeout() const;
+
+                    /**
+                     * 设置<p>超时时间，单位ms</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _timeout <p>超时时间，单位ms</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTimeout(const int64_t& _timeout);
+
+                    /**
+                     * 判断参数 Timeout 是否已赋值
+                     * @return Timeout 是否已赋值
+                     * 
+                     */
+                    bool TimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取<p>路由超时配置的来源。</p>
+                     * @return TimeoutSource <p>路由超时配置的来源。</p>
+                     * 
+                     */
+                    std::string GetTimeoutSource() const;
+
+                    /**
+                     * 设置<p>路由超时配置的来源。</p>
+                     * @param _timeoutSource <p>路由超时配置的来源。</p>
+                     * 
+                     */
+                    void SetTimeoutSource(const std::string& _timeoutSource);
+
+                    /**
+                     * 判断参数 TimeoutSource 是否已赋值
+                     * @return TimeoutSource 是否已赋值
+                     * 
+                     */
+                    bool TimeoutSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -608,6 +676,25 @@ namespace TencentCloud
                      */
                     std::string m_routeSource;
                     bool m_routeSourceHasBeenSet;
+
+                    /**
+                     * <p>用户绑定的业务标签（路由/服务标签分组能力，不含 Kong 内部 tag）。未绑定时字段为空数组或不返回。关联需求：路由/服务标签分组管理</p>
+                     */
+                    std::vector<KongUserTagKV> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>超时时间，单位ms</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_timeout;
+                    bool m_timeoutHasBeenSet;
+
+                    /**
+                     * <p>路由超时配置的来源。</p>
+                     */
+                    std::string m_timeoutSource;
+                    bool m_timeoutSourceHasBeenSet;
 
                 };
             }

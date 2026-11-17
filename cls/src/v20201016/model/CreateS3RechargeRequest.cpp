@@ -34,7 +34,9 @@ CreateS3RechargeRequest::CreateS3RechargeRequest() :
     m_prefixHasBeenSet(false),
     m_compressHasBeenSet(false),
     m_extractRuleInfoHasBeenSet(false),
-    m_taskTypeHasBeenSet(false)
+    m_taskTypeHasBeenSet(false),
+    m_sQSEnabledHasBeenSet(false),
+    m_sQSUrlHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,22 @@ string CreateS3RechargeRequest::ToJsonString() const
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_sQSEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SQSEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sQSEnabled, allocator);
+    }
+
+    if (m_sQSUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SQSUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sQSUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -340,6 +358,38 @@ void CreateS3RechargeRequest::SetTaskType(const uint64_t& _taskType)
 bool CreateS3RechargeRequest::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+bool CreateS3RechargeRequest::GetSQSEnabled() const
+{
+    return m_sQSEnabled;
+}
+
+void CreateS3RechargeRequest::SetSQSEnabled(const bool& _sQSEnabled)
+{
+    m_sQSEnabled = _sQSEnabled;
+    m_sQSEnabledHasBeenSet = true;
+}
+
+bool CreateS3RechargeRequest::SQSEnabledHasBeenSet() const
+{
+    return m_sQSEnabledHasBeenSet;
+}
+
+string CreateS3RechargeRequest::GetSQSUrl() const
+{
+    return m_sQSUrl;
+}
+
+void CreateS3RechargeRequest::SetSQSUrl(const string& _sQSUrl)
+{
+    m_sQSUrl = _sQSUrl;
+    m_sQSUrlHasBeenSet = true;
+}
+
+bool CreateS3RechargeRequest::SQSUrlHasBeenSet() const
+{
+    return m_sQSUrlHasBeenSet;
 }
 
 

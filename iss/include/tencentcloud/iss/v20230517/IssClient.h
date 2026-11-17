@@ -191,6 +191,8 @@
 #include <tencentcloud/iss/v20230517/model/ListVLTemplatesResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListVideoDownloadTaskRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListVideoDownloadTaskResponse.h>
+#include <tencentcloud/iss/v20230517/model/ListVideoSnapshotResultRequest.h>
+#include <tencentcloud/iss/v20230517/model/ListVideoSnapshotResultResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListVideoSnapshotTemplateRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListVideoSnapshotTemplateResponse.h>
 #include <tencentcloud/iss/v20230517/model/ModifyVLPlanRequest.h>
@@ -487,6 +489,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListVideoDownloadTaskResponse> ListVideoDownloadTaskOutcome;
                 typedef std::future<ListVideoDownloadTaskOutcome> ListVideoDownloadTaskOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListVideoDownloadTaskRequest&, ListVideoDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVideoDownloadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListVideoSnapshotResultResponse> ListVideoSnapshotResultOutcome;
+                typedef std::future<ListVideoSnapshotResultOutcome> ListVideoSnapshotResultOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ListVideoSnapshotResultRequest&, ListVideoSnapshotResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVideoSnapshotResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListVideoSnapshotTemplateResponse> ListVideoSnapshotTemplateOutcome;
                 typedef std::future<ListVideoSnapshotTemplateOutcome> ListVideoSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListVideoSnapshotTemplateRequest&, ListVideoSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListVideoSnapshotTemplateAsyncHandler;
@@ -1294,6 +1299,15 @@ namespace TencentCloud
                 ListVideoDownloadTaskOutcome ListVideoDownloadTask(const Model::ListVideoDownloadTaskRequest &request);
                 void ListVideoDownloadTaskAsync(const Model::ListVideoDownloadTaskRequest& request, const ListVideoDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListVideoDownloadTaskOutcomeCallable ListVideoDownloadTaskCallable(const Model::ListVideoDownloadTaskRequest& request);
+
+                /**
+                 *获取截图结果列表
+                 * @param req ListVideoSnapshotResultRequest
+                 * @return ListVideoSnapshotResultOutcome
+                 */
+                ListVideoSnapshotResultOutcome ListVideoSnapshotResult(const Model::ListVideoSnapshotResultRequest &request);
+                void ListVideoSnapshotResultAsync(const Model::ListVideoSnapshotResultRequest& request, const ListVideoSnapshotResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListVideoSnapshotResultOutcomeCallable ListVideoSnapshotResultCallable(const Model::ListVideoSnapshotResultRequest& request);
 
                 /**
                  *获取截图模板详情列表

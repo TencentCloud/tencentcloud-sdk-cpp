@@ -111,6 +111,48 @@ namespace TencentCloud
                      */
                     bool AdvancedConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * @return ProviderType <p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * 
+                     */
+                    int64_t GetProviderType() const;
+
+                    /**
+                     * 设置<p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * @param _providerType <p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * 
+                     */
+                    void SetProviderType(const int64_t& _providerType);
+
+                    /**
+                     * 判断参数 ProviderType 是否已赋值
+                     * @return ProviderType 是否已赋值
+                     * 
+                     */
+                    bool ProviderTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>
+                     * @return ReferenceAppStatus <p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>
+                     * 
+                     */
+                    int64_t GetReferenceAppStatus() const;
+
+                    /**
+                     * 设置<p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>
+                     * @param _referenceAppStatus <p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>
+                     * 
+                     */
+                    void SetReferenceAppStatus(const int64_t& _referenceAppStatus);
+
+                    /**
+                     * 判断参数 ReferenceAppStatus 是否已赋值
+                     * @return ReferenceAppStatus 是否已赋值
+                     * 
+                     */
+                    bool ReferenceAppStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -130,6 +172,18 @@ namespace TencentCloud
                      */
                     AgentAdvancedConfig m_advancedConfig;
                     bool m_advancedConfigHasBeenSet;
+
+                    /**
+                     * <p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     */
+                    int64_t m_providerType;
+                    bool m_providerTypeHasBeenSet;
+
+                    /**
+                     * <p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>
+                     */
+                    int64_t m_referenceAppStatus;
+                    bool m_referenceAppStatusHasBeenSet;
 
                 };
             }

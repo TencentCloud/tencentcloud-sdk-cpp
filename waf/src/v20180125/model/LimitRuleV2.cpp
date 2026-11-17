@@ -43,7 +43,9 @@ LimitRuleV2::LimitRuleV2() :
     m_objectSrcHasBeenSet(false),
     m_quotaShareHasBeenSet(false),
     m_pathsOptionHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_matchConditionsHasBeenSet(false),
+    m_conditionLogicHasBeenSet(false)
 {
 }
 
@@ -372,6 +374,36 @@ CoreInternalOutcome LimitRuleV2::Deserialize(const rapidjson::Value &value)
         m_orderHasBeenSet = true;
     }
 
+    if (value.HasMember("MatchConditions") && !value["MatchConditions"].IsNull())
+    {
+        if (!value["MatchConditions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LimitRuleV2.MatchConditions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MatchConditions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Strategy item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_matchConditions.push_back(item);
+        }
+        m_matchConditionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConditionLogic") && !value["ConditionLogic"].IsNull())
+    {
+        if (!value["ConditionLogic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LimitRuleV2.ConditionLogic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_conditionLogic = string(value["ConditionLogic"].GetString());
+        m_conditionLogicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -585,6 +617,29 @@ void LimitRuleV2::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Order";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_order, allocator);
+    }
+
+    if (m_matchConditionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchConditions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_matchConditions.begin(); itr != m_matchConditions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_conditionLogicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConditionLogic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_conditionLogic.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -956,5 +1011,37 @@ void LimitRuleV2::SetOrder(const int64_t& _order)
 bool LimitRuleV2::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
+}
+
+vector<Strategy> LimitRuleV2::GetMatchConditions() const
+{
+    return m_matchConditions;
+}
+
+void LimitRuleV2::SetMatchConditions(const vector<Strategy>& _matchConditions)
+{
+    m_matchConditions = _matchConditions;
+    m_matchConditionsHasBeenSet = true;
+}
+
+bool LimitRuleV2::MatchConditionsHasBeenSet() const
+{
+    return m_matchConditionsHasBeenSet;
+}
+
+string LimitRuleV2::GetConditionLogic() const
+{
+    return m_conditionLogic;
+}
+
+void LimitRuleV2::SetConditionLogic(const string& _conditionLogic)
+{
+    m_conditionLogic = _conditionLogic;
+    m_conditionLogicHasBeenSet = true;
+}
+
+bool LimitRuleV2::ConditionLogicHasBeenSet() const
+{
+    return m_conditionLogicHasBeenSet;
 }
 

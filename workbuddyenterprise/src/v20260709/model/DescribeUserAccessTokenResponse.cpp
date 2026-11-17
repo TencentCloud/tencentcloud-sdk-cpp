@@ -23,7 +23,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Workbuddyenterprise::V20260709::Model;
 using namespace std;
 
-DescribeUserAccessTokenResponse::DescribeUserAccessTokenResponse()
+DescribeUserAccessTokenResponse::DescribeUserAccessTokenResponse() :
+    m_accessTokenHasBeenSet(false),
+    m_tokenTypeHasBeenSet(false),
+    m_expiresInHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,36 @@ CoreInternalOutcome DescribeUserAccessTokenResponse::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("AccessToken") && !rsp["AccessToken"].IsNull())
+    {
+        if (!rsp["AccessToken"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessToken = string(rsp["AccessToken"].GetString());
+        m_accessTokenHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TokenType") && !rsp["TokenType"].IsNull())
+    {
+        if (!rsp["TokenType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TokenType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenType = string(rsp["TokenType"].GetString());
+        m_tokenTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpiresIn") && !rsp["ExpiresIn"].IsNull())
+    {
+        if (!rsp["ExpiresIn"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpiresIn` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiresIn = rsp["ExpiresIn"].GetInt64();
+        m_expiresInHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +103,30 @@ string DescribeUserAccessTokenResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_accessTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tokenType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiresInHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiresIn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expiresIn, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +139,35 @@ string DescribeUserAccessTokenResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeUserAccessTokenResponse::GetAccessToken() const
+{
+    return m_accessToken;
+}
+
+bool DescribeUserAccessTokenResponse::AccessTokenHasBeenSet() const
+{
+    return m_accessTokenHasBeenSet;
+}
+
+string DescribeUserAccessTokenResponse::GetTokenType() const
+{
+    return m_tokenType;
+}
+
+bool DescribeUserAccessTokenResponse::TokenTypeHasBeenSet() const
+{
+    return m_tokenTypeHasBeenSet;
+}
+
+int64_t DescribeUserAccessTokenResponse::GetExpiresIn() const
+{
+    return m_expiresIn;
+}
+
+bool DescribeUserAccessTokenResponse::ExpiresInHasBeenSet() const
+{
+    return m_expiresInHasBeenSet;
+}
 
 

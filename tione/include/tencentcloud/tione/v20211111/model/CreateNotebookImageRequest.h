@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool RegisterToImageCenterHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否忽略无法被冻结的进程</p>
+                     * @return IgnoreUnfreezableProcesses <p>是否忽略无法被冻结的进程</p>
+                     * 
+                     */
+                    bool GetIgnoreUnfreezableProcesses() const;
+
+                    /**
+                     * 设置<p>是否忽略无法被冻结的进程</p>
+                     * @param _ignoreUnfreezableProcesses <p>是否忽略无法被冻结的进程</p>
+                     * 
+                     */
+                    void SetIgnoreUnfreezableProcesses(const bool& _ignoreUnfreezableProcesses);
+
+                    /**
+                     * 判断参数 IgnoreUnfreezableProcesses 是否已赋值
+                     * @return IgnoreUnfreezableProcesses 是否已赋值
+                     * 
+                     */
+                    bool IgnoreUnfreezableProcessesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     bool m_registerToImageCenter;
                     bool m_registerToImageCenterHasBeenSet;
+
+                    /**
+                     * <p>是否忽略无法被冻结的进程</p>
+                     */
+                    bool m_ignoreUnfreezableProcesses;
+                    bool m_ignoreUnfreezableProcessesHasBeenSet;
 
                 };
             }

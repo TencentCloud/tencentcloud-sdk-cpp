@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取Action 值
-                     * @return ActionType Action 值
+                     * 获取防信息泄露动作类型，取值0~4
+                     * @return ActionType 防信息泄露动作类型，取值0~4
                      * 
                      */
                     uint64_t GetActionType() const;
 
                     /**
-                     * 设置Action 值
-                     * @param _actionType Action 值
+                     * 设置防信息泄露动作类型，取值0~4
+                     * @param _actionType 防信息泄露动作类型，取值0~4
                      * 
                      */
                     void SetActionType(const uint64_t& _actionType);
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * Action 值
+                     * 防信息泄露动作类型，取值0~4
                      */
                     uint64_t m_actionType;
                     bool m_actionTypeHasBeenSet;

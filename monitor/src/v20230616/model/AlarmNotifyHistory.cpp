@@ -38,7 +38,11 @@ AlarmNotifyHistory::AlarmNotifyHistory() :
     m_triggerStatusHasBeenSet(false),
     m_promeConsoleURLHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_receiverGroupsHasBeenSet(false)
+    m_receiverGroupsHasBeenSet(false),
+    m_alarmIdHasBeenSet(false),
+    m_alarmNameHasBeenSet(false),
+    m_alarmStatusHasBeenSet(false),
+    m_notifyTypeHasBeenSet(false)
 {
 }
 
@@ -270,6 +274,46 @@ CoreInternalOutcome AlarmNotifyHistory::Deserialize(const rapidjson::Value &valu
         m_receiverGroupsHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmId") && !value["AlarmId"].IsNull())
+    {
+        if (!value["AlarmId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotifyHistory.AlarmId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmId = string(value["AlarmId"].GetString());
+        m_alarmIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmName") && !value["AlarmName"].IsNull())
+    {
+        if (!value["AlarmName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotifyHistory.AlarmName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmName = string(value["AlarmName"].GetString());
+        m_alarmNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmStatus") && !value["AlarmStatus"].IsNull())
+    {
+        if (!value["AlarmStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotifyHistory.AlarmStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmStatus = string(value["AlarmStatus"].GetString());
+        m_alarmStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("NotifyType") && !value["NotifyType"].IsNull())
+    {
+        if (!value["NotifyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotifyHistory.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notifyType = string(value["NotifyType"].GetString());
+        m_notifyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +496,38 @@ void AlarmNotifyHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_alarmIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -743,5 +819,69 @@ void AlarmNotifyHistory::SetReceiverGroups(const vector<ReceiverGroup>& _receive
 bool AlarmNotifyHistory::ReceiverGroupsHasBeenSet() const
 {
     return m_receiverGroupsHasBeenSet;
+}
+
+string AlarmNotifyHistory::GetAlarmId() const
+{
+    return m_alarmId;
+}
+
+void AlarmNotifyHistory::SetAlarmId(const string& _alarmId)
+{
+    m_alarmId = _alarmId;
+    m_alarmIdHasBeenSet = true;
+}
+
+bool AlarmNotifyHistory::AlarmIdHasBeenSet() const
+{
+    return m_alarmIdHasBeenSet;
+}
+
+string AlarmNotifyHistory::GetAlarmName() const
+{
+    return m_alarmName;
+}
+
+void AlarmNotifyHistory::SetAlarmName(const string& _alarmName)
+{
+    m_alarmName = _alarmName;
+    m_alarmNameHasBeenSet = true;
+}
+
+bool AlarmNotifyHistory::AlarmNameHasBeenSet() const
+{
+    return m_alarmNameHasBeenSet;
+}
+
+string AlarmNotifyHistory::GetAlarmStatus() const
+{
+    return m_alarmStatus;
+}
+
+void AlarmNotifyHistory::SetAlarmStatus(const string& _alarmStatus)
+{
+    m_alarmStatus = _alarmStatus;
+    m_alarmStatusHasBeenSet = true;
+}
+
+bool AlarmNotifyHistory::AlarmStatusHasBeenSet() const
+{
+    return m_alarmStatusHasBeenSet;
+}
+
+string AlarmNotifyHistory::GetNotifyType() const
+{
+    return m_notifyType;
+}
+
+void AlarmNotifyHistory::SetNotifyType(const string& _notifyType)
+{
+    m_notifyType = _notifyType;
+    m_notifyTypeHasBeenSet = true;
+}
+
+bool AlarmNotifyHistory::NotifyTypeHasBeenSet() const
+{
+    return m_notifyTypeHasBeenSet;
 }
 

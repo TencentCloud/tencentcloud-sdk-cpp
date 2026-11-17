@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/faceid/v20180301/model/AttackRiskDetail.h>
 #include <tencentcloud/faceid/v20180301/model/ExtraInfo.h>
+#include <tencentcloud/faceid/v20180301/model/ExtraRiskResult.h>
 
 
 namespace TencentCloud
@@ -87,6 +88,22 @@ namespace TencentCloud
                      */
                     bool ExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>附加风险结论的独立容器，回答“本次附加风险检查是否可信、有没有发现问题”。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtraRiskResult <p>附加风险结论的独立容器，回答“本次附加风险检查是否可信、有没有发现问题”。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ExtraRiskResult GetExtraRiskResult() const;
+
+                    /**
+                     * 判断参数 ExtraRiskResult 是否已赋值
+                     * @return ExtraRiskResult 是否已赋值
+                     * 
+                     */
+                    bool ExtraRiskResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +123,13 @@ namespace TencentCloud
                      */
                     ExtraInfo m_extraInfo;
                     bool m_extraInfoHasBeenSet;
+
+                    /**
+                     * <p>附加风险结论的独立容器，回答“本次附加风险检查是否可信、有没有发现问题”。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtraRiskResult m_extraRiskResult;
+                    bool m_extraRiskResultHasBeenSet;
 
                 };
             }

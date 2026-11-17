@@ -57,6 +57,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/DetectDetail.h
   include/tencentcloud/faceid/v20180301/model/VideoDetailData.h
   include/tencentcloud/faceid/v20180301/model/RetrievalLivenessExtraInfo.h
+  include/tencentcloud/faceid/v20180301/model/ExtraRiskResult.h
   include/tencentcloud/faceid/v20180301/model/IntentionActionConfig.h
   include/tencentcloud/faceid/v20180301/model/CheckBankCardInformationRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCardVerificationRequest.h
@@ -82,6 +83,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/PhoneVerificationCUCCRequest.h
   include/tencentcloud/faceid/v20180301/model/PhoneVerificationCMCCRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectInfoText.h
+  include/tencentcloud/faceid/v20180301/model/ExtraRiskInfo.h
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoResponse.h
   include/tencentcloud/faceid/v20180301/model/IdCardOCRVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/IdCardVerificationResponse.h
@@ -98,6 +100,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/IntentionActionResult.h
   include/tencentcloud/faceid/v20180301/model/GetFaceidRiskInfoTokenRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCard2EVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/BlackListItem.h
   include/tencentcloud/faceid/v20180301/model/ImageRecognitionV2Request.h
   include/tencentcloud/faceid/v20180301/model/PhoneVerificationCTCCResponse.h
   include/tencentcloud/faceid/v20180301/model/ChargeDetail.h
@@ -105,6 +108,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/PhoneVerificationCTCCRequest.h
   include/tencentcloud/faceid/v20180301/model/BankCard4EVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/GetNFCTokenResponse.h
+  include/tencentcloud/faceid/v20180301/model/RiskDetailItem.h
   include/tencentcloud/faceid/v20180301/model/GetActionSequenceResponse.h
   include/tencentcloud/faceid/v20180301/model/GetNFCTokenRequest.h
   include/tencentcloud/faceid/v20180301/model/GetFaceIdRiskInfoRequest.h
@@ -156,6 +160,7 @@ set(faceid_src
   src/v20180301/model/DetectDetail.cpp
   src/v20180301/model/VideoDetailData.cpp
   src/v20180301/model/RetrievalLivenessExtraInfo.cpp
+  src/v20180301/model/ExtraRiskResult.cpp
   src/v20180301/model/IntentionActionConfig.cpp
   src/v20180301/model/CheckBankCardInformationRequest.cpp
   src/v20180301/model/BankCardVerificationRequest.cpp
@@ -181,6 +186,7 @@ set(faceid_src
   src/v20180301/model/PhoneVerificationCUCCRequest.cpp
   src/v20180301/model/PhoneVerificationCMCCRequest.cpp
   src/v20180301/model/DetectInfoText.cpp
+  src/v20180301/model/ExtraRiskInfo.cpp
   src/v20180301/model/GetDetectInfoResponse.cpp
   src/v20180301/model/IdCardOCRVerificationResponse.cpp
   src/v20180301/model/IdCardVerificationResponse.cpp
@@ -197,6 +203,7 @@ set(faceid_src
   src/v20180301/model/IntentionActionResult.cpp
   src/v20180301/model/GetFaceidRiskInfoTokenRequest.cpp
   src/v20180301/model/BankCard2EVerificationRequest.cpp
+  src/v20180301/model/BlackListItem.cpp
   src/v20180301/model/ImageRecognitionV2Request.cpp
   src/v20180301/model/PhoneVerificationCTCCResponse.cpp
   src/v20180301/model/ChargeDetail.cpp
@@ -204,6 +211,7 @@ set(faceid_src
   src/v20180301/model/PhoneVerificationCTCCRequest.cpp
   src/v20180301/model/BankCard4EVerificationRequest.cpp
   src/v20180301/model/GetNFCTokenResponse.cpp
+  src/v20180301/model/RiskDetailItem.cpp
   src/v20180301/model/GetActionSequenceResponse.cpp
   src/v20180301/model/GetNFCTokenRequest.cpp
   src/v20180301/model/GetFaceIdRiskInfoRequest.cpp

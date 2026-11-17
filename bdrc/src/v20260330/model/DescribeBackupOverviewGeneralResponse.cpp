@@ -30,7 +30,9 @@ DescribeBackupOverviewGeneralResponse::DescribeBackupOverviewGeneralResponse() :
     m_backupVaultOverviewHasBeenSet(false),
     m_protectedResourceOverviewHasBeenSet(false),
     m_cFSAgentBackupOverviewHasBeenSet(false),
-    m_cOSAgentBackupOverviewHasBeenSet(false)
+    m_cOSAgentBackupOverviewHasBeenSet(false),
+    m_localCVMAgentBackupOverviewHasBeenSet(false),
+    m_localCFSAgentBackupOverviewHasBeenSet(false)
 {
 }
 
@@ -187,6 +189,40 @@ CoreInternalOutcome DescribeBackupOverviewGeneralResponse::Deserialize(const str
         m_cOSAgentBackupOverviewHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LocalCVMAgentBackupOverview") && !rsp["LocalCVMAgentBackupOverview"].IsNull())
+    {
+        if (!rsp["LocalCVMAgentBackupOverview"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LocalCVMAgentBackupOverview` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_localCVMAgentBackupOverview.Deserialize(rsp["LocalCVMAgentBackupOverview"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_localCVMAgentBackupOverviewHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LocalCFSAgentBackupOverview") && !rsp["LocalCFSAgentBackupOverview"].IsNull())
+    {
+        if (!rsp["LocalCFSAgentBackupOverview"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LocalCFSAgentBackupOverview` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_localCFSAgentBackupOverview.Deserialize(rsp["LocalCFSAgentBackupOverview"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_localCFSAgentBackupOverviewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -258,6 +294,24 @@ string DescribeBackupOverviewGeneralResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cOSAgentBackupOverview.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_localCVMAgentBackupOverviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalCVMAgentBackupOverview";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_localCVMAgentBackupOverview.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_localCFSAgentBackupOverviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalCFSAgentBackupOverview";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_localCFSAgentBackupOverview.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -340,6 +394,26 @@ FileBackupOverview DescribeBackupOverviewGeneralResponse::GetCOSAgentBackupOverv
 bool DescribeBackupOverviewGeneralResponse::COSAgentBackupOverviewHasBeenSet() const
 {
     return m_cOSAgentBackupOverviewHasBeenSet;
+}
+
+FileBackupOverview DescribeBackupOverviewGeneralResponse::GetLocalCVMAgentBackupOverview() const
+{
+    return m_localCVMAgentBackupOverview;
+}
+
+bool DescribeBackupOverviewGeneralResponse::LocalCVMAgentBackupOverviewHasBeenSet() const
+{
+    return m_localCVMAgentBackupOverviewHasBeenSet;
+}
+
+FileBackupOverview DescribeBackupOverviewGeneralResponse::GetLocalCFSAgentBackupOverview() const
+{
+    return m_localCFSAgentBackupOverview;
+}
+
+bool DescribeBackupOverviewGeneralResponse::LocalCFSAgentBackupOverviewHasBeenSet() const
+{
+    return m_localCFSAgentBackupOverviewHasBeenSet;
 }
 
 

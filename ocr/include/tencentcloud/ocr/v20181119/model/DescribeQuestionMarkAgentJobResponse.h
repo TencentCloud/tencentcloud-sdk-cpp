@@ -104,14 +104,14 @@ namespace TencentCloud
                     /**
                      * 获取<p>试题批改信息  （该字段后续废弃，使用QuestionInfo兼容多页批改场景）</p>
                      * @return MarkInfos <p>试题批改信息  （该字段后续废弃，使用QuestionInfo兼容多页批改场景）</p>
-                     * 
+                     * @deprecated
                      */
                     std::vector<MarkInfo> GetMarkInfos() const;
 
                     /**
                      * 判断参数 MarkInfos 是否已赋值
                      * @return MarkInfos 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MarkInfosHasBeenSet() const;
 

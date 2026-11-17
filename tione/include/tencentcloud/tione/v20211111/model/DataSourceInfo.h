@@ -347,6 +347,27 @@ namespace TencentCloud
                      */
                     bool ExtraConfHasBeenSet() const;
 
+                    /**
+                     * 获取<p>挂载数据源时默认填充的容器内路径</p>
+                     * @return ContainerPath <p>挂载数据源时默认填充的容器内路径</p>
+                     * 
+                     */
+                    std::string GetContainerPath() const;
+
+                    /**
+                     * 设置<p>挂载数据源时默认填充的容器内路径</p>
+                     * @param _containerPath <p>挂载数据源时默认填充的容器内路径</p>
+                     * 
+                     */
+                    void SetContainerPath(const std::string& _containerPath);
+
+                    /**
+                     * 判断参数 ContainerPath 是否已赋值
+                     * @return ContainerPath 是否已赋值
+                     * 
+                     */
+                    bool ContainerPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -433,6 +454,12 @@ namespace TencentCloud
                      */
                     StorageExtraConf m_extraConf;
                     bool m_extraConfHasBeenSet;
+
+                    /**
+                     * <p>挂载数据源时默认填充的容器内路径</p>
+                     */
+                    std::string m_containerPath;
+                    bool m_containerPathHasBeenSet;
 
                 };
             }

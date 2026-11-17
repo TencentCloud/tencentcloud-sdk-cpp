@@ -40,7 +40,8 @@ ModifyCloudNativeAPIGatewayRouteRequest::ModifyCloudNativeAPIGatewayRouteRequest
     m_requestBufferingHasBeenSet(false),
     m_responseBufferingHasBeenSet(false),
     m_regexPriorityHasBeenSet(false),
-    m_queryStringParametersHasBeenSet(false)
+    m_queryStringParametersHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
 }
 
@@ -232,6 +233,14 @@ string ModifyCloudNativeAPIGatewayRouteRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_timeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeout, allocator);
     }
 
 
@@ -528,6 +537,22 @@ void ModifyCloudNativeAPIGatewayRouteRequest::SetQueryStringParameters(const vec
 bool ModifyCloudNativeAPIGatewayRouteRequest::QueryStringParametersHasBeenSet() const
 {
     return m_queryStringParametersHasBeenSet;
+}
+
+int64_t ModifyCloudNativeAPIGatewayRouteRequest::GetTimeout() const
+{
+    return m_timeout;
+}
+
+void ModifyCloudNativeAPIGatewayRouteRequest::SetTimeout(const int64_t& _timeout)
+{
+    m_timeout = _timeout;
+    m_timeoutHasBeenSet = true;
+}
+
+bool ModifyCloudNativeAPIGatewayRouteRequest::TimeoutHasBeenSet() const
+{
+    return m_timeoutHasBeenSet;
 }
 
 

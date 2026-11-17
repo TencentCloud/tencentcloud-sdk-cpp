@@ -42,7 +42,8 @@ DescribeCustomRulesRspRuleListItem::DescribeCustomRulesRspRuleListItem() :
     m_pageIdHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_logicalOpHasBeenSet(false),
-    m_actionRatioHasBeenSet(false)
+    m_actionRatioHasBeenSet(false),
+    m_previewHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,16 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
         m_actionRatioHasBeenSet = true;
     }
 
+    if (value.HasMember("Preview") && !value["Preview"].IsNull())
+    {
+        if (!value["Preview"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.Preview` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_preview = value["Preview"].GetInt64();
+        m_previewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -477,6 +488,14 @@ void DescribeCustomRulesRspRuleListItem::ToJsonObject(rapidjson::Value &value, r
         string key = "ActionRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_actionRatio, allocator);
+    }
+
+    if (m_previewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Preview";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_preview, allocator);
     }
 
 }
@@ -832,5 +851,21 @@ void DescribeCustomRulesRspRuleListItem::SetActionRatio(const uint64_t& _actionR
 bool DescribeCustomRulesRspRuleListItem::ActionRatioHasBeenSet() const
 {
     return m_actionRatioHasBeenSet;
+}
+
+int64_t DescribeCustomRulesRspRuleListItem::GetPreview() const
+{
+    return m_preview;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetPreview(const int64_t& _preview)
+{
+    m_preview = _preview;
+    m_previewHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::PreviewHasBeenSet() const
+{
+    return m_previewHasBeenSet;
 }
 

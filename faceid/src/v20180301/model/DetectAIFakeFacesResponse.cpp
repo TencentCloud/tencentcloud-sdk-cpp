@@ -26,7 +26,8 @@ using namespace std;
 DetectAIFakeFacesResponse::DetectAIFakeFacesResponse() :
     m_attackRiskLevelHasBeenSet(false),
     m_attackRiskDetailListHasBeenSet(false),
-    m_extraInfoHasBeenSet(false)
+    m_extraInfoHasBeenSet(false),
+    m_extraRiskResultHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,23 @@ CoreInternalOutcome DetectAIFakeFacesResponse::Deserialize(const string &payload
         m_extraInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExtraRiskResult") && !rsp["ExtraRiskResult"].IsNull())
+    {
+        if (!rsp["ExtraRiskResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtraRiskResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extraRiskResult.Deserialize(rsp["ExtraRiskResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extraRiskResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +171,15 @@ string DetectAIFakeFacesResponse::ToJsonString() const
         m_extraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_extraRiskResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraRiskResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extraRiskResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -193,6 +220,16 @@ ExtraInfo DetectAIFakeFacesResponse::GetExtraInfo() const
 bool DetectAIFakeFacesResponse::ExtraInfoHasBeenSet() const
 {
     return m_extraInfoHasBeenSet;
+}
+
+ExtraRiskResult DetectAIFakeFacesResponse::GetExtraRiskResult() const
+{
+    return m_extraRiskResult;
+}
+
+bool DetectAIFakeFacesResponse::ExtraRiskResultHasBeenSet() const
+{
+    return m_extraRiskResultHasBeenSet;
 }
 
 

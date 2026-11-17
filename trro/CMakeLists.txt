@@ -91,6 +91,7 @@ set(trro_public_header_model
   include/tencentcloud/trro/v20220325/model/OutputInfo.h
   include/tencentcloud/trro/v20220325/model/StopPublishLiveStreamRequest.h
   include/tencentcloud/trro/v20220325/model/DeleteCloudRecordingRequest.h
+  include/tencentcloud/trro/v20220325/model/ExtraSourceInfo.h
   include/tencentcloud/trro/v20220325/model/StopPublishLiveStreamResponse.h
   include/tencentcloud/trro/v20220325/model/DescribeSessionStatisticsResponse.h
   include/tencentcloud/trro/v20220325/model/PublishParams.h
@@ -198,6 +199,7 @@ set(trro_src
   src/v20220325/model/OutputInfo.cpp
   src/v20220325/model/StopPublishLiveStreamRequest.cpp
   src/v20220325/model/DeleteCloudRecordingRequest.cpp
+  src/v20220325/model/ExtraSourceInfo.cpp
   src/v20220325/model/StopPublishLiveStreamResponse.cpp
   src/v20220325/model/DescribeSessionStatisticsResponse.cpp
   src/v20220325/model/PublishParams.cpp

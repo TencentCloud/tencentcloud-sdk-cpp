@@ -436,6 +436,90 @@ namespace TencentCloud
                      */
                     bool ReceiverGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>发送时的告警历史 ID，用于从通知历史跳到对应告警历史。非分级告警与告警 ID 相同；分级告警为“告警 ID_发生时间的 32 进制_告警级别”。</p>
+                     * @return AlarmId <p>发送时的告警历史 ID，用于从通知历史跳到对应告警历史。非分级告警与告警 ID 相同；分级告警为“告警 ID_发生时间的 32 进制_告警级别”。</p>
+                     * 
+                     */
+                    std::string GetAlarmId() const;
+
+                    /**
+                     * 设置<p>发送时的告警历史 ID，用于从通知历史跳到对应告警历史。非分级告警与告警 ID 相同；分级告警为“告警 ID_发生时间的 32 进制_告警级别”。</p>
+                     * @param _alarmId <p>发送时的告警历史 ID，用于从通知历史跳到对应告警历史。非分级告警与告警 ID 相同；分级告警为“告警 ID_发生时间的 32 进制_告警级别”。</p>
+                     * 
+                     */
+                    void SetAlarmId(const std::string& _alarmId);
+
+                    /**
+                     * 判断参数 AlarmId 是否已赋值
+                     * @return AlarmId 是否已赋值
+                     * 
+                     */
+                    bool AlarmIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>发送时的告警内容，不含产品名前缀，按请求语言返回。用于列表「告警历史」的展示文案。</p>
+                     * @return AlarmName <p>发送时的告警内容，不含产品名前缀，按请求语言返回。用于列表「告警历史」的展示文案。</p>
+                     * 
+                     */
+                    std::string GetAlarmName() const;
+
+                    /**
+                     * 设置<p>发送时的告警内容，不含产品名前缀，按请求语言返回。用于列表「告警历史」的展示文案。</p>
+                     * @param _alarmName <p>发送时的告警内容，不含产品名前缀，按请求语言返回。用于列表「告警历史」的展示文案。</p>
+                     * 
+                     */
+                    void SetAlarmName(const std::string& _alarmName);
+
+                    /**
+                     * 判断参数 AlarmName 是否已赋值
+                     * @return AlarmName 是否已赋值
+                     * 
+                     */
+                    bool AlarmNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>发送时的告警状态。控制台「告警状态」请使用 TriggerStatus。无数据、失效通知不返回该字段。</p><p>枚举值：</p><ul><li>ALARM： 未恢复</li><li>OK： 已恢复</li></ul>
+                     * @return AlarmStatus <p>发送时的告警状态。控制台「告警状态」请使用 TriggerStatus。无数据、失效通知不返回该字段。</p><p>枚举值：</p><ul><li>ALARM： 未恢复</li><li>OK： 已恢复</li></ul>
+                     * 
+                     */
+                    std::string GetAlarmStatus() const;
+
+                    /**
+                     * 设置<p>发送时的告警状态。控制台「告警状态」请使用 TriggerStatus。无数据、失效通知不返回该字段。</p><p>枚举值：</p><ul><li>ALARM： 未恢复</li><li>OK： 已恢复</li></ul>
+                     * @param _alarmStatus <p>发送时的告警状态。控制台「告警状态」请使用 TriggerStatus。无数据、失效通知不返回该字段。</p><p>枚举值：</p><ul><li>ALARM： 未恢复</li><li>OK： 已恢复</li></ul>
+                     * 
+                     */
+                    void SetAlarmStatus(const std::string& _alarmStatus);
+
+                    /**
+                     * 判断参数 AlarmStatus 是否已赋值
+                     * @return AlarmStatus 是否已赋值
+                     * 
+                     */
+                    bool AlarmStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>通知类型，无数据、失效通知不返回该字段。</p><p>枚举值：</p><ul><li>Recovery： 恢复</li><li>FirstTrigger： 首次触发</li><li>ContinueTrigger： 持续触发</li></ul>
+                     * @return NotifyType <p>通知类型，无数据、失效通知不返回该字段。</p><p>枚举值：</p><ul><li>Recovery： 恢复</li><li>FirstTrigger： 首次触发</li><li>ContinueTrigger： 持续触发</li></ul>
+                     * 
+                     */
+                    std::string GetNotifyType() const;
+
+                    /**
+                     * 设置<p>通知类型，无数据、失效通知不返回该字段。</p><p>枚举值：</p><ul><li>Recovery： 恢复</li><li>FirstTrigger： 首次触发</li><li>ContinueTrigger： 持续触发</li></ul>
+                     * @param _notifyType <p>通知类型，无数据、失效通知不返回该字段。</p><p>枚举值：</p><ul><li>Recovery： 恢复</li><li>FirstTrigger： 首次触发</li><li>ContinueTrigger： 持续触发</li></ul>
+                     * 
+                     */
+                    void SetNotifyType(const std::string& _notifyType);
+
+                    /**
+                     * 判断参数 NotifyType 是否已赋值
+                     * @return NotifyType 是否已赋值
+                     * 
+                     */
+                    bool NotifyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -547,6 +631,30 @@ namespace TencentCloud
                      */
                     std::vector<ReceiverGroup> m_receiverGroups;
                     bool m_receiverGroupsHasBeenSet;
+
+                    /**
+                     * <p>发送时的告警历史 ID，用于从通知历史跳到对应告警历史。非分级告警与告警 ID 相同；分级告警为“告警 ID_发生时间的 32 进制_告警级别”。</p>
+                     */
+                    std::string m_alarmId;
+                    bool m_alarmIdHasBeenSet;
+
+                    /**
+                     * <p>发送时的告警内容，不含产品名前缀，按请求语言返回。用于列表「告警历史」的展示文案。</p>
+                     */
+                    std::string m_alarmName;
+                    bool m_alarmNameHasBeenSet;
+
+                    /**
+                     * <p>发送时的告警状态。控制台「告警状态」请使用 TriggerStatus。无数据、失效通知不返回该字段。</p><p>枚举值：</p><ul><li>ALARM： 未恢复</li><li>OK： 已恢复</li></ul>
+                     */
+                    std::string m_alarmStatus;
+                    bool m_alarmStatusHasBeenSet;
+
+                    /**
+                     * <p>通知类型，无数据、失效通知不返回该字段。</p><p>枚举值：</p><ul><li>Recovery： 恢复</li><li>FirstTrigger： 首次触发</li><li>ContinueTrigger： 持续触发</li></ul>
+                     */
+                    std::string m_notifyType;
+                    bool m_notifyTypeHasBeenSet;
 
                 };
             }

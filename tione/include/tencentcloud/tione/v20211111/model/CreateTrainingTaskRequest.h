@@ -56,15 +56,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>训练任务名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
-                     * @return Name <p>训练任务名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
+                     * 获取<p>训练任务名称，不超过256个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
+                     * @return Name <p>训练任务名称，不超过256个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>训练任务名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
-                     * @param _name <p>训练任务名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
+                     * 设置<p>训练任务名称，不超过256个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
+                     * @param _name <p>训练任务名称，不超过256个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -329,15 +329,15 @@ namespace TencentCloud
                     bool TrainingModeHasBeenSet() const;
 
                     /**
-                     * 获取<p>数据配置，依赖DataSource字段，数量不超过10个</p>
-                     * @return DataConfigs <p>数据配置，依赖DataSource字段，数量不超过10个</p>
+                     * 获取<p>数据配置，数量不超过10个</p>
+                     * @return DataConfigs <p>数据配置，数量不超过10个</p>
                      * 
                      */
                     std::vector<DataConfig> GetDataConfigs() const;
 
                     /**
-                     * 设置<p>数据配置，依赖DataSource字段，数量不超过10个</p>
-                     * @param _dataConfigs <p>数据配置，依赖DataSource字段，数量不超过10个</p>
+                     * 设置<p>数据配置，数量不超过10个</p>
+                     * @param _dataConfigs <p>数据配置，数量不超过10个</p>
                      * 
                      */
                     void SetDataConfigs(const std::vector<DataConfig>& _dataConfigs);
@@ -688,7 +688,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>训练任务名称，不超过60个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
+                     * <p>训练任务名称，不超过256个字符，仅支持中英文、数字、下划线&quot;_&quot;、短横&quot;-&quot;，只能以中英文、数字开头</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -766,7 +766,7 @@ namespace TencentCloud
                     bool m_trainingModeHasBeenSet;
 
                     /**
-                     * <p>数据配置，依赖DataSource字段，数量不超过10个</p>
+                     * <p>数据配置，数量不超过10个</p>
                      */
                     std::vector<DataConfig> m_dataConfigs;
                     bool m_dataConfigsHasBeenSet;

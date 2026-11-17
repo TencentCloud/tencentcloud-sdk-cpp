@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取pod名
+                     * 获取<p>pod名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name pod名
+                     * @return Name <p>pod名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置pod名
+                     * 设置<p>pod名</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name pod名
+                     * @param _name <p>pod名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取pod的IP
+                     * 获取<p>pod的IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IP pod的IP
+                     * @return IP <p>pod的IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIP() const;
 
                     /**
-                     * 设置pod的IP
+                     * 设置<p>pod的IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _iP pod的IP
+                     * @param _iP <p>pod的IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool IPHasBeenSet() const;
 
                     /**
-                     * 获取pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止
+                     * 获取<p>pod状态</p><p>枚举值：</p><ul><li>PENDING： 排队中</li><li>RUNNING： 运行中</li><li>SUCCEEDED： 已完成</li><li>FAILED： 异常</li><li>TERMINATING： 停止中</li><li>TERMINATED： 已停止</li><li>UNKNOWN： 未知</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止
+                     * @return Status <p>pod状态</p><p>枚举值：</p><ul><li>PENDING： 排队中</li><li>RUNNING： 运行中</li><li>SUCCEEDED： 已完成</li><li>FAILED： 异常</li><li>TERMINATING： 停止中</li><li>TERMINATED： 已停止</li><li>UNKNOWN： 未知</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止
+                     * 设置<p>pod状态</p><p>枚举值：</p><ul><li>PENDING： 排队中</li><li>RUNNING： 运行中</li><li>SUCCEEDED： 已完成</li><li>FAILED： 异常</li><li>TERMINATING： 停止中</li><li>TERMINATED： 已停止</li><li>UNKNOWN： 未知</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止
+                     * @param _status <p>pod状态</p><p>枚举值：</p><ul><li>PENDING： 排队中</li><li>RUNNING： 运行中</li><li>SUCCEEDED： 已完成</li><li>FAILED： 异常</li><li>TERMINATING： 停止中</li><li>TERMINATED： 已停止</li><li>UNKNOWN： 未知</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取pod启动时间
+                     * 获取<p>pod启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime pod启动时间
+                     * @return StartTime <p>pod启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置pod启动时间
+                     * 设置<p>pod启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime pod启动时间
+                     * @param _startTime <p>pod启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取pod结束时间
+                     * 获取<p>pod结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime pod结束时间
+                     * @return EndTime <p>pod结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置pod结束时间
+                     * 设置<p>pod结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endTime pod结束时间
+                     * @param _endTime <p>pod结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取pod资源配置
+                     * 获取<p>pod资源配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceConfigInfo pod资源配置
+                     * @return ResourceConfigInfo <p>pod资源配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ResourceConfigInfo GetResourceConfigInfo() const;
 
                     /**
-                     * 设置pod资源配置
+                     * 设置<p>pod资源配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceConfigInfo pod资源配置
+                     * @param _resourceConfigInfo <p>pod资源配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool ResourceConfigInfoHasBeenSet() const;
 
                     /**
-                     * 获取Pod所属任务的SubUin信息
+                     * 获取<p>Pod所属任务的SubUin信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubUin Pod所属任务的SubUin信息
+                     * @return SubUin <p>Pod所属任务的SubUin信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubUin() const;
 
                     /**
-                     * 设置Pod所属任务的SubUin信息
+                     * 设置<p>Pod所属任务的SubUin信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subUin Pod所属任务的SubUin信息
+                     * @param _subUin <p>Pod所属任务的SubUin信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -225,49 +225,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * pod名
+                     * <p>pod名</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * pod的IP
+                     * <p>pod的IP</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
 
                     /**
-                     * pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止
+                     * <p>pod状态</p><p>枚举值：</p><ul><li>PENDING： 排队中</li><li>RUNNING： 运行中</li><li>SUCCEEDED： 已完成</li><li>FAILED： 异常</li><li>TERMINATING： 停止中</li><li>TERMINATED： 已停止</li><li>UNKNOWN： 未知</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * pod启动时间
+                     * <p>pod启动时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * pod结束时间
+                     * <p>pod结束时间</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * pod资源配置
+                     * <p>pod资源配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResourceConfigInfo m_resourceConfigInfo;
                     bool m_resourceConfigInfoHasBeenSet;
 
                     /**
-                     * Pod所属任务的SubUin信息
+                     * <p>Pod所属任务的SubUin信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subUin;

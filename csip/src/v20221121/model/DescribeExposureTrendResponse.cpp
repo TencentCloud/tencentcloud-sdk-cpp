@@ -28,7 +28,9 @@ DescribeExposureTrendResponse::DescribeExposureTrendResponse() :
     m_exposeIncrementHasBeenSet(false),
     m_openCountHasBeenSet(false),
     m_aclCountHasBeenSet(false),
-    m_closeCountHasBeenSet(false)
+    m_closeCountHasBeenSet(false),
+    m_exposeTotalCountHasBeenSet(false),
+    m_toGovernRiskCountHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,26 @@ CoreInternalOutcome DescribeExposureTrendResponse::Deserialize(const string &pay
         m_closeCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExposeTotalCount") && !rsp["ExposeTotalCount"].IsNull())
+    {
+        if (!rsp["ExposeTotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExposeTotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_exposeTotalCount = rsp["ExposeTotalCount"].GetUint64();
+        m_exposeTotalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ToGovernRiskCount") && !rsp["ToGovernRiskCount"].IsNull())
+    {
+        if (!rsp["ToGovernRiskCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ToGovernRiskCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_toGovernRiskCount = rsp["ToGovernRiskCount"].GetUint64();
+        m_toGovernRiskCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +203,22 @@ string DescribeExposureTrendResponse::ToJsonString() const
         string key = "CloseCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_closeCount, allocator);
+    }
+
+    if (m_exposeTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExposeTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exposeTotalCount, allocator);
+    }
+
+    if (m_toGovernRiskCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToGovernRiskCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_toGovernRiskCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +281,26 @@ uint64_t DescribeExposureTrendResponse::GetCloseCount() const
 bool DescribeExposureTrendResponse::CloseCountHasBeenSet() const
 {
     return m_closeCountHasBeenSet;
+}
+
+uint64_t DescribeExposureTrendResponse::GetExposeTotalCount() const
+{
+    return m_exposeTotalCount;
+}
+
+bool DescribeExposureTrendResponse::ExposeTotalCountHasBeenSet() const
+{
+    return m_exposeTotalCountHasBeenSet;
+}
+
+uint64_t DescribeExposureTrendResponse::GetToGovernRiskCount() const
+{
+    return m_toGovernRiskCount;
+}
+
+bool DescribeExposureTrendResponse::ToGovernRiskCountHasBeenSet() const
+{
+    return m_toGovernRiskCountHasBeenSet;
 }
 
 

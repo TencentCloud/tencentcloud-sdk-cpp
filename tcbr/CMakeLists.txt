@@ -21,7 +21,7 @@ set(tcbr_public_header
 set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunServersResponse.h
   include/tencentcloud/tcbr/v20220217/model/SubmitServerConfigChangeDiffRequest.h
-  include/tencentcloud/tcbr/v20220217/model/ServerBaseConfig.h
+  include/tencentcloud/tcbr/v20220217/model/ModifyStableIPStatusResponse.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunProcessLogRequest.h
   include/tencentcloud/tcbr/v20220217/model/RepositoryInfo.h
   include/tencentcloud/tcbr/v20220217/model/ReleaseGrayRequest.h
@@ -36,6 +36,7 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/TaskStepInfo.h
   include/tencentcloud/tcbr/v20220217/model/VersionPodInstance.h
   include/tencentcloud/tcbr/v20220217/model/DescribeVersionDetailRequest.h
+  include/tencentcloud/tcbr/v20220217/model/ServerBaseConfig.h
   include/tencentcloud/tcbr/v20220217/model/InitializeCloudRunResourceResponse.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunEnvsResponse.h
   include/tencentcloud/tcbr/v20220217/model/ServerBaseInfo.h
@@ -71,7 +72,7 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/DeleteCloudRunServerRequest.h
   include/tencentcloud/tcbr/v20220217/model/ClsInfo.h
   include/tencentcloud/tcbr/v20220217/model/DescribeServerManageTaskRequest.h
-  include/tencentcloud/tcbr/v20220217/model/VpcConf.h
+  include/tencentcloud/tcbr/v20220217/model/ModifyStableIPStatusRequest.h
   include/tencentcloud/tcbr/v20220217/model/HpaPolicy.h
   include/tencentcloud/tcbr/v20220217/model/OperateServerManageRequest.h
   include/tencentcloud/tcbr/v20220217/model/LogObject.h
@@ -83,6 +84,7 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunServerDetailResponse.h
   include/tencentcloud/tcbr/v20220217/model/CreateCloudRunEnvResponse.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunDeployRecordRequest.h
+  include/tencentcloud/tcbr/v20220217/model/VpcConf.h
   include/tencentcloud/tcbr/v20220217/model/ReleaseOrderInfo.h
   include/tencentcloud/tcbr/v20220217/model/DeleteCloudRunVersionsRequest.h
   include/tencentcloud/tcbr/v20220217/model/DeleteCloudRunServerResponse.h
@@ -108,7 +110,7 @@ set(tcbr_src
   src/v20220217/TcbrClient.cpp
   src/v20220217/model/DescribeCloudRunServersResponse.cpp
   src/v20220217/model/SubmitServerConfigChangeDiffRequest.cpp
-  src/v20220217/model/ServerBaseConfig.cpp
+  src/v20220217/model/ModifyStableIPStatusResponse.cpp
   src/v20220217/model/DescribeCloudRunProcessLogRequest.cpp
   src/v20220217/model/RepositoryInfo.cpp
   src/v20220217/model/ReleaseGrayRequest.cpp
@@ -123,6 +125,7 @@ set(tcbr_src
   src/v20220217/model/TaskStepInfo.cpp
   src/v20220217/model/VersionPodInstance.cpp
   src/v20220217/model/DescribeVersionDetailRequest.cpp
+  src/v20220217/model/ServerBaseConfig.cpp
   src/v20220217/model/InitializeCloudRunResourceResponse.cpp
   src/v20220217/model/DescribeCloudRunEnvsResponse.cpp
   src/v20220217/model/ServerBaseInfo.cpp
@@ -158,7 +161,7 @@ set(tcbr_src
   src/v20220217/model/DeleteCloudRunServerRequest.cpp
   src/v20220217/model/ClsInfo.cpp
   src/v20220217/model/DescribeServerManageTaskRequest.cpp
-  src/v20220217/model/VpcConf.cpp
+  src/v20220217/model/ModifyStableIPStatusRequest.cpp
   src/v20220217/model/HpaPolicy.cpp
   src/v20220217/model/OperateServerManageRequest.cpp
   src/v20220217/model/LogObject.cpp
@@ -170,6 +173,7 @@ set(tcbr_src
   src/v20220217/model/DescribeCloudRunServerDetailResponse.cpp
   src/v20220217/model/CreateCloudRunEnvResponse.cpp
   src/v20220217/model/DescribeCloudRunDeployRecordRequest.cpp
+  src/v20220217/model/VpcConf.cpp
   src/v20220217/model/ReleaseOrderInfo.cpp
   src/v20220217/model/DeleteCloudRunVersionsRequest.cpp
   src/v20220217/model/DeleteCloudRunServerResponse.cpp

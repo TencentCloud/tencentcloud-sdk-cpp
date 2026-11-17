@@ -59,7 +59,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/AsyncOperation.h
   include/tencentcloud/databuddy/v20260715/model/UpdateTableResponse.h
   include/tencentcloud/databuddy/v20260715/model/ListFilesRsp.h
-  include/tencentcloud/databuddy/v20260715/model/GetWorkflowRunRsp.h
+  include/tencentcloud/databuddy/v20260715/model/RangePartitioning.h
   include/tencentcloud/databuddy/v20260715/model/ListLocationsRequest.h
   include/tencentcloud/databuddy/v20260715/model/GetCatalogRsp.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkflowsResponse.h
@@ -124,6 +124,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/DeleteSchemaRequest.h
   include/tencentcloud/databuddy/v20260715/model/UpdateConsoleUsersRequest.h
   include/tencentcloud/databuddy/v20260715/model/GetWorkflowTaskRunRsp.h
+  include/tencentcloud/databuddy/v20260715/model/TrainingData.h
   include/tencentcloud/databuddy/v20260715/model/DependOnBrief.h
   include/tencentcloud/databuddy/v20260715/model/FolderLocator.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkspaceGroupsResponse.h
@@ -131,6 +132,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/ListTablesRsp.h
   include/tencentcloud/databuddy/v20260715/model/FileStorage.h
   include/tencentcloud/databuddy/v20260715/model/UpdateVolumeRsp.h
+  include/tencentcloud/databuddy/v20260715/model/FeatureLookup.h
   include/tencentcloud/databuddy/v20260715/model/UpdateWorkspaceUsersTagsRequest.h
   include/tencentcloud/databuddy/v20260715/model/MonitorMetricBrief.h
   include/tencentcloud/databuddy/v20260715/model/ParamInfo.h
@@ -139,7 +141,8 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/WorkspaceInfo.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkflowTaskRunsRequest.h
   include/tencentcloud/databuddy/v20260715/model/ListPartitioning.h
-  include/tencentcloud/databuddy/v20260715/model/UpdateConsoleUsersRsp.h
+  include/tencentcloud/databuddy/v20260715/model/CreateExperimentResponse.h
+  include/tencentcloud/databuddy/v20260715/model/ListWorkspacesRequest.h
   include/tencentcloud/databuddy/v20260715/model/CreateModelVersionResponse.h
   include/tencentcloud/databuddy/v20260715/model/WorkflowRunBrief.h
   include/tencentcloud/databuddy/v20260715/model/FeatureTableDetail.h
@@ -152,7 +155,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/DeleteCatalogRsp.h
   include/tencentcloud/databuddy/v20260715/model/GetFileResponse.h
   include/tencentcloud/databuddy/v20260715/model/UpdateWorkspaceGroupsTagsRsp.h
-  include/tencentcloud/databuddy/v20260715/model/RangePartitioning.h
+  include/tencentcloud/databuddy/v20260715/model/GetWorkflowRunRsp.h
   include/tencentcloud/databuddy/v20260715/model/LocationInfo.h
   include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupUsersResponse.h
   include/tencentcloud/databuddy/v20260715/model/AddWorkspaceGroupsResponse.h
@@ -181,11 +184,12 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/AdvancedDependencyConfig.h
   include/tencentcloud/databuddy/v20260715/model/ReadProductJsonResponse.h
   include/tencentcloud/databuddy/v20260715/model/FileInfo.h
-  include/tencentcloud/databuddy/v20260715/model/UpdateModelRequest.h
+  include/tencentcloud/databuddy/v20260715/model/Label.h
   include/tencentcloud/databuddy/v20260715/model/TableInfo.h
   include/tencentcloud/databuddy/v20260715/model/ListSchemaNamesRequest.h
   include/tencentcloud/databuddy/v20260715/model/CreateModelRequest.h
   include/tencentcloud/databuddy/v20260715/model/RemoveConsoleUsersRequest.h
+  include/tencentcloud/databuddy/v20260715/model/CreateExperimentRequest.h
   include/tencentcloud/databuddy/v20260715/model/GetVolumeResponse.h
   include/tencentcloud/databuddy/v20260715/model/CreateWorkspaceRoleResult.h
   include/tencentcloud/databuddy/v20260715/model/RunWorkflowResponse.h
@@ -219,6 +223,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/CreateConsoleGroupResponse.h
   include/tencentcloud/databuddy/v20260715/model/DeleteLocationResponse.h
   include/tencentcloud/databuddy/v20260715/model/ColumnInfo.h
+  include/tencentcloud/databuddy/v20260715/model/GetVolumeRequest.h
   include/tencentcloud/databuddy/v20260715/model/CreateWorkspaceRoleResponse.h
   include/tencentcloud/databuddy/v20260715/model/AddWorkspaceGroupsRequest.h
   include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupUsersRequest.h
@@ -226,6 +231,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/GetViewResponse.h
   include/tencentcloud/databuddy/v20260715/model/RemoveWorkspaceGroupsResponse.h
   include/tencentcloud/databuddy/v20260715/model/UpdateConsoleUsersResponse.h
+  include/tencentcloud/databuddy/v20260715/model/UpdateModelRequest.h
   include/tencentcloud/databuddy/v20260715/model/ListViewNamesResponse.h
   include/tencentcloud/databuddy/v20260715/model/DeleteModelRsp.h
   include/tencentcloud/databuddy/v20260715/model/CreateVolumeRequest.h
@@ -233,6 +239,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/RemoveConsoleUsersResponse.h
   include/tencentcloud/databuddy/v20260715/model/GetTablesRequest.h
   include/tencentcloud/databuddy/v20260715/model/RemoveWorkspaceUsersResponse.h
+  include/tencentcloud/databuddy/v20260715/model/UpdateConsoleUsersRsp.h
   include/tencentcloud/databuddy/v20260715/model/ListModelsRequest.h
   include/tencentcloud/databuddy/v20260715/model/InnerWorkflowTaskRunIteration.h
   include/tencentcloud/databuddy/v20260715/model/SparseCheckoutConfig.h
@@ -264,8 +271,10 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/UpdateSchemaRequest.h
   include/tencentcloud/databuddy/v20260715/model/DeleteSchemaResponse.h
   include/tencentcloud/databuddy/v20260715/model/DeleteWorkspaceRoleResponse.h
+  include/tencentcloud/databuddy/v20260715/model/CreateExperimentRsp.h
   include/tencentcloud/databuddy/v20260715/model/ListCatalogNamesResponse.h
   include/tencentcloud/databuddy/v20260715/model/ScheduleBizEnumBrief.h
+  include/tencentcloud/databuddy/v20260715/model/ExperimentTag.h
   include/tencentcloud/databuddy/v20260715/model/CreateSchemaResponse.h
   include/tencentcloud/databuddy/v20260715/model/CreateFolderResponse.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkflowsRsp.h
@@ -324,7 +333,8 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/UpdateFileResponse.h
   include/tencentcloud/databuddy/v20260715/model/CreateFolderRsp.h
   include/tencentcloud/databuddy/v20260715/model/StartComputeRequest.h
-  include/tencentcloud/databuddy/v20260715/model/GetVolumeRequest.h
+  include/tencentcloud/databuddy/v20260715/model/GetFileContentRequest.h
+  include/tencentcloud/databuddy/v20260715/model/GetFileContentRsp.h
   include/tencentcloud/databuddy/v20260715/model/DeleteFolderResponse.h
   include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupsRequest.h
   include/tencentcloud/databuddy/v20260715/model/TaskRetryStrategy.h
@@ -349,7 +359,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/KVPair.h
   include/tencentcloud/databuddy/v20260715/model/CreateFolderRequest.h
   include/tencentcloud/databuddy/v20260715/model/UpdateCatalogResponse.h
-  include/tencentcloud/databuddy/v20260715/model/ListWorkspacesRequest.h
+  include/tencentcloud/databuddy/v20260715/model/ListSchemasRsp.h
   include/tencentcloud/databuddy/v20260715/model/CreateWorkspaceRequest.h
   include/tencentcloud/databuddy/v20260715/model/HighlightingInfo.h
   include/tencentcloud/databuddy/v20260715/model/WorkflowTriggerConfiguration.h
@@ -362,6 +372,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/RoleMetaData.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkflowTaskRunsRsp.h
   include/tencentcloud/databuddy/v20260715/model/ListLocationsRsp.h
+  include/tencentcloud/databuddy/v20260715/model/GetFileContentResponse.h
   include/tencentcloud/databuddy/v20260715/model/ListVolumesResponse.h
   include/tencentcloud/databuddy/v20260715/model/GetSchemaResponse.h
   include/tencentcloud/databuddy/v20260715/model/TagValueInfo.h
@@ -414,7 +425,6 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupUsersRsp.h
   include/tencentcloud/databuddy/v20260715/model/Audit.h
   include/tencentcloud/databuddy/v20260715/model/DeleteCatalogResponse.h
-  include/tencentcloud/databuddy/v20260715/model/ListSchemasRsp.h
   include/tencentcloud/databuddy/v20260715/model/GetWorkflowTaskRunResponse.h
   include/tencentcloud/databuddy/v20260715/model/ListWorkspacesResponse.h
   include/tencentcloud/databuddy/v20260715/model/PermissionDetail.h
@@ -428,6 +438,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/UpdateVolumeResponse.h
   include/tencentcloud/databuddy/v20260715/model/RemoveWorkspaceUsersRequest.h
   include/tencentcloud/databuddy/v20260715/model/GetTableRequest.h
+  include/tencentcloud/databuddy/v20260715/model/AutoMlConf.h
   include/tencentcloud/databuddy/v20260715/model/FeatureTable.h
   include/tencentcloud/databuddy/v20260715/model/ReadProductJsonRequest.h
   )
@@ -474,7 +485,7 @@ set(databuddy_src
   src/v20260715/model/AsyncOperation.cpp
   src/v20260715/model/UpdateTableResponse.cpp
   src/v20260715/model/ListFilesRsp.cpp
-  src/v20260715/model/GetWorkflowRunRsp.cpp
+  src/v20260715/model/RangePartitioning.cpp
   src/v20260715/model/ListLocationsRequest.cpp
   src/v20260715/model/GetCatalogRsp.cpp
   src/v20260715/model/ListWorkflowsResponse.cpp
@@ -539,6 +550,7 @@ set(databuddy_src
   src/v20260715/model/DeleteSchemaRequest.cpp
   src/v20260715/model/UpdateConsoleUsersRequest.cpp
   src/v20260715/model/GetWorkflowTaskRunRsp.cpp
+  src/v20260715/model/TrainingData.cpp
   src/v20260715/model/DependOnBrief.cpp
   src/v20260715/model/FolderLocator.cpp
   src/v20260715/model/ListWorkspaceGroupsResponse.cpp
@@ -546,6 +558,7 @@ set(databuddy_src
   src/v20260715/model/ListTablesRsp.cpp
   src/v20260715/model/FileStorage.cpp
   src/v20260715/model/UpdateVolumeRsp.cpp
+  src/v20260715/model/FeatureLookup.cpp
   src/v20260715/model/UpdateWorkspaceUsersTagsRequest.cpp
   src/v20260715/model/MonitorMetricBrief.cpp
   src/v20260715/model/ParamInfo.cpp
@@ -554,7 +567,8 @@ set(databuddy_src
   src/v20260715/model/WorkspaceInfo.cpp
   src/v20260715/model/ListWorkflowTaskRunsRequest.cpp
   src/v20260715/model/ListPartitioning.cpp
-  src/v20260715/model/UpdateConsoleUsersRsp.cpp
+  src/v20260715/model/CreateExperimentResponse.cpp
+  src/v20260715/model/ListWorkspacesRequest.cpp
   src/v20260715/model/CreateModelVersionResponse.cpp
   src/v20260715/model/WorkflowRunBrief.cpp
   src/v20260715/model/FeatureTableDetail.cpp
@@ -567,7 +581,7 @@ set(databuddy_src
   src/v20260715/model/DeleteCatalogRsp.cpp
   src/v20260715/model/GetFileResponse.cpp
   src/v20260715/model/UpdateWorkspaceGroupsTagsRsp.cpp
-  src/v20260715/model/RangePartitioning.cpp
+  src/v20260715/model/GetWorkflowRunRsp.cpp
   src/v20260715/model/LocationInfo.cpp
   src/v20260715/model/ListConsoleGroupUsersResponse.cpp
   src/v20260715/model/AddWorkspaceGroupsResponse.cpp
@@ -596,11 +610,12 @@ set(databuddy_src
   src/v20260715/model/AdvancedDependencyConfig.cpp
   src/v20260715/model/ReadProductJsonResponse.cpp
   src/v20260715/model/FileInfo.cpp
-  src/v20260715/model/UpdateModelRequest.cpp
+  src/v20260715/model/Label.cpp
   src/v20260715/model/TableInfo.cpp
   src/v20260715/model/ListSchemaNamesRequest.cpp
   src/v20260715/model/CreateModelRequest.cpp
   src/v20260715/model/RemoveConsoleUsersRequest.cpp
+  src/v20260715/model/CreateExperimentRequest.cpp
   src/v20260715/model/GetVolumeResponse.cpp
   src/v20260715/model/CreateWorkspaceRoleResult.cpp
   src/v20260715/model/RunWorkflowResponse.cpp
@@ -634,6 +649,7 @@ set(databuddy_src
   src/v20260715/model/CreateConsoleGroupResponse.cpp
   src/v20260715/model/DeleteLocationResponse.cpp
   src/v20260715/model/ColumnInfo.cpp
+  src/v20260715/model/GetVolumeRequest.cpp
   src/v20260715/model/CreateWorkspaceRoleResponse.cpp
   src/v20260715/model/AddWorkspaceGroupsRequest.cpp
   src/v20260715/model/ListConsoleGroupUsersRequest.cpp
@@ -641,6 +657,7 @@ set(databuddy_src
   src/v20260715/model/GetViewResponse.cpp
   src/v20260715/model/RemoveWorkspaceGroupsResponse.cpp
   src/v20260715/model/UpdateConsoleUsersResponse.cpp
+  src/v20260715/model/UpdateModelRequest.cpp
   src/v20260715/model/ListViewNamesResponse.cpp
   src/v20260715/model/DeleteModelRsp.cpp
   src/v20260715/model/CreateVolumeRequest.cpp
@@ -648,6 +665,7 @@ set(databuddy_src
   src/v20260715/model/RemoveConsoleUsersResponse.cpp
   src/v20260715/model/GetTablesRequest.cpp
   src/v20260715/model/RemoveWorkspaceUsersResponse.cpp
+  src/v20260715/model/UpdateConsoleUsersRsp.cpp
   src/v20260715/model/ListModelsRequest.cpp
   src/v20260715/model/InnerWorkflowTaskRunIteration.cpp
   src/v20260715/model/SparseCheckoutConfig.cpp
@@ -679,8 +697,10 @@ set(databuddy_src
   src/v20260715/model/UpdateSchemaRequest.cpp
   src/v20260715/model/DeleteSchemaResponse.cpp
   src/v20260715/model/DeleteWorkspaceRoleResponse.cpp
+  src/v20260715/model/CreateExperimentRsp.cpp
   src/v20260715/model/ListCatalogNamesResponse.cpp
   src/v20260715/model/ScheduleBizEnumBrief.cpp
+  src/v20260715/model/ExperimentTag.cpp
   src/v20260715/model/CreateSchemaResponse.cpp
   src/v20260715/model/CreateFolderResponse.cpp
   src/v20260715/model/ListWorkflowsRsp.cpp
@@ -739,7 +759,8 @@ set(databuddy_src
   src/v20260715/model/UpdateFileResponse.cpp
   src/v20260715/model/CreateFolderRsp.cpp
   src/v20260715/model/StartComputeRequest.cpp
-  src/v20260715/model/GetVolumeRequest.cpp
+  src/v20260715/model/GetFileContentRequest.cpp
+  src/v20260715/model/GetFileContentRsp.cpp
   src/v20260715/model/DeleteFolderResponse.cpp
   src/v20260715/model/ListConsoleGroupsRequest.cpp
   src/v20260715/model/TaskRetryStrategy.cpp
@@ -764,7 +785,7 @@ set(databuddy_src
   src/v20260715/model/KVPair.cpp
   src/v20260715/model/CreateFolderRequest.cpp
   src/v20260715/model/UpdateCatalogResponse.cpp
-  src/v20260715/model/ListWorkspacesRequest.cpp
+  src/v20260715/model/ListSchemasRsp.cpp
   src/v20260715/model/CreateWorkspaceRequest.cpp
   src/v20260715/model/HighlightingInfo.cpp
   src/v20260715/model/WorkflowTriggerConfiguration.cpp
@@ -777,6 +798,7 @@ set(databuddy_src
   src/v20260715/model/RoleMetaData.cpp
   src/v20260715/model/ListWorkflowTaskRunsRsp.cpp
   src/v20260715/model/ListLocationsRsp.cpp
+  src/v20260715/model/GetFileContentResponse.cpp
   src/v20260715/model/ListVolumesResponse.cpp
   src/v20260715/model/GetSchemaResponse.cpp
   src/v20260715/model/TagValueInfo.cpp
@@ -829,7 +851,6 @@ set(databuddy_src
   src/v20260715/model/ListConsoleGroupUsersRsp.cpp
   src/v20260715/model/Audit.cpp
   src/v20260715/model/DeleteCatalogResponse.cpp
-  src/v20260715/model/ListSchemasRsp.cpp
   src/v20260715/model/GetWorkflowTaskRunResponse.cpp
   src/v20260715/model/ListWorkspacesResponse.cpp
   src/v20260715/model/PermissionDetail.cpp
@@ -843,6 +864,7 @@ set(databuddy_src
   src/v20260715/model/UpdateVolumeResponse.cpp
   src/v20260715/model/RemoveWorkspaceUsersRequest.cpp
   src/v20260715/model/GetTableRequest.cpp
+  src/v20260715/model/AutoMlConf.cpp
   src/v20260715/model/FeatureTable.cpp
   src/v20260715/model/ReadProductJsonRequest.cpp
   )

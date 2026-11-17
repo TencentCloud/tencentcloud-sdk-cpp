@@ -28,7 +28,9 @@ QuestionInfo::QuestionInfo() :
     m_orgHeightHasBeenSet(false),
     m_orgWidthHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
-    m_returnImageUrlHasBeenSet(false)
+    m_returnImageUrlHasBeenSet(false),
+    m_classNameHasBeenSet(false),
+    m_pageIndexHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome QuestionInfo::Deserialize(const rapidjson::Value &value)
         m_returnImageUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("ClassName") && !value["ClassName"].IsNull())
+    {
+        if (!value["ClassName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QuestionInfo.ClassName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_className = string(value["ClassName"].GetString());
+        m_classNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PageIndex") && !value["PageIndex"].IsNull())
+    {
+        if (!value["PageIndex"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QuestionInfo.PageIndex` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageIndex = value["PageIndex"].GetInt64();
+        m_pageIndexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +225,22 @@ void QuestionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ReturnImageUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_returnImageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_classNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClassName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_className.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageIndex, allocator);
     }
 
 }
@@ -334,5 +372,37 @@ void QuestionInfo::SetReturnImageUrl(const string& _returnImageUrl)
 bool QuestionInfo::ReturnImageUrlHasBeenSet() const
 {
     return m_returnImageUrlHasBeenSet;
+}
+
+string QuestionInfo::GetClassName() const
+{
+    return m_className;
+}
+
+void QuestionInfo::SetClassName(const string& _className)
+{
+    m_className = _className;
+    m_classNameHasBeenSet = true;
+}
+
+bool QuestionInfo::ClassNameHasBeenSet() const
+{
+    return m_classNameHasBeenSet;
+}
+
+int64_t QuestionInfo::GetPageIndex() const
+{
+    return m_pageIndex;
+}
+
+void QuestionInfo::SetPageIndex(const int64_t& _pageIndex)
+{
+    m_pageIndex = _pageIndex;
+    m_pageIndexHasBeenSet = true;
+}
+
+bool QuestionInfo::PageIndexHasBeenSet() const
+{
+    return m_pageIndexHasBeenSet;
 }
 

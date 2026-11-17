@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取流量来源
-                     * @return AlbType 流量来源
+                     * 获取流量来源类型，'clb'表示CLB负载均衡，'apisix'表示自建网关（含Kong），'tsegw'表示TSE云原生网关
+                     * @return AlbType 流量来源类型，'clb'表示CLB负载均衡，'apisix'表示自建网关（含Kong），'tsegw'表示TSE云原生网关
                      * 
                      */
                     std::string GetAlbType() const;
 
                     /**
-                     * 设置流量来源
-                     * @param _albType 流量来源
+                     * 设置流量来源类型，'clb'表示CLB负载均衡，'apisix'表示自建网关（含Kong），'tsegw'表示TSE云原生网关
+                     * @param _albType 流量来源类型，'clb'表示CLB负载均衡，'apisix'表示自建网关（含Kong），'tsegw'表示TSE云原生网关
                      * 
                      */
                     void SetAlbType(const std::string& _albType);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 流量来源
+                     * 流量来源类型，'clb'表示CLB负载均衡，'apisix'表示自建网关（含Kong），'tsegw'表示TSE云原生网关
                      */
                     std::string m_albType;
                     bool m_albTypeHasBeenSet;

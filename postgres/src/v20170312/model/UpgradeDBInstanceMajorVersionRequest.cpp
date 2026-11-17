@@ -31,7 +31,8 @@ UpgradeDBInstanceMajorVersionRequest::UpgradeDBInstanceMajorVersionRequest() :
     m_extensionUpgradeOptionHasBeenSet(false),
     m_upgradeTimeOptionHasBeenSet(false),
     m_upgradeTimeBeginHasBeenSet(false),
-    m_upgradeTimeEndHasBeenSet(false)
+    m_upgradeTimeEndHasBeenSet(false),
+    m_upgradeReadOnlyInstanceHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string UpgradeDBInstanceMajorVersionRequest::ToJsonString() const
         string key = "UpgradeTimeEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_upgradeTimeEnd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upgradeReadOnlyInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeReadOnlyInstance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_upgradeReadOnlyInstance, allocator);
     }
 
 
@@ -264,6 +273,22 @@ void UpgradeDBInstanceMajorVersionRequest::SetUpgradeTimeEnd(const string& _upgr
 bool UpgradeDBInstanceMajorVersionRequest::UpgradeTimeEndHasBeenSet() const
 {
     return m_upgradeTimeEndHasBeenSet;
+}
+
+bool UpgradeDBInstanceMajorVersionRequest::GetUpgradeReadOnlyInstance() const
+{
+    return m_upgradeReadOnlyInstance;
+}
+
+void UpgradeDBInstanceMajorVersionRequest::SetUpgradeReadOnlyInstance(const bool& _upgradeReadOnlyInstance)
+{
+    m_upgradeReadOnlyInstance = _upgradeReadOnlyInstance;
+    m_upgradeReadOnlyInstanceHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceMajorVersionRequest::UpgradeReadOnlyInstanceHasBeenSet() const
+{
+    return m_upgradeReadOnlyInstanceHasBeenSet;
 }
 
 

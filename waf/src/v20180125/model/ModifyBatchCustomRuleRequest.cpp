@@ -39,7 +39,8 @@ ModifyBatchCustomRuleRequest::ModifyBatchCustomRuleRequest() :
     m_groupIdsHasBeenSet(false),
     m_logicalOpHasBeenSet(false),
     m_pageIdHasBeenSet(false),
-    m_actionRatioHasBeenSet(false)
+    m_actionRatioHasBeenSet(false),
+    m_previewHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,14 @@ string ModifyBatchCustomRuleRequest::ToJsonString() const
         string key = "ActionRatio";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_actionRatio, allocator);
+    }
+
+    if (m_previewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Preview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_preview, allocator);
     }
 
 
@@ -482,6 +491,22 @@ void ModifyBatchCustomRuleRequest::SetActionRatio(const uint64_t& _actionRatio)
 bool ModifyBatchCustomRuleRequest::ActionRatioHasBeenSet() const
 {
     return m_actionRatioHasBeenSet;
+}
+
+int64_t ModifyBatchCustomRuleRequest::GetPreview() const
+{
+    return m_preview;
+}
+
+void ModifyBatchCustomRuleRequest::SetPreview(const int64_t& _preview)
+{
+    m_preview = _preview;
+    m_previewHasBeenSet = true;
+}
+
+bool ModifyBatchCustomRuleRequest::PreviewHasBeenSet() const
+{
+    return m_previewHasBeenSet;
 }
 
 

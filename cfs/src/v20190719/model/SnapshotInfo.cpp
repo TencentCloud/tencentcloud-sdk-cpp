@@ -35,7 +35,8 @@ SnapshotInfo::SnapshotInfo() :
     m_fsNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_snapshotTypeHasBeenSet(false),
-    m_snapshotTimeHasBeenSet(false)
+    m_snapshotTimeHasBeenSet(false),
+    m_finishTimeHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome SnapshotInfo::Deserialize(const rapidjson::Value &value)
         m_snapshotTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FinishTime") && !value["FinishTime"].IsNull())
+    {
+        if (!value["FinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SnapshotInfo.FinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishTime = string(value["FinishTime"].GetString());
+        m_finishTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +347,14 @@ void SnapshotInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SnapshotTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_snapshotTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_finishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -579,5 +598,21 @@ void SnapshotInfo::SetSnapshotTime(const string& _snapshotTime)
 bool SnapshotInfo::SnapshotTimeHasBeenSet() const
 {
     return m_snapshotTimeHasBeenSet;
+}
+
+string SnapshotInfo::GetFinishTime() const
+{
+    return m_finishTime;
+}
+
+void SnapshotInfo::SetFinishTime(const string& _finishTime)
+{
+    m_finishTime = _finishTime;
+    m_finishTimeHasBeenSet = true;
+}
+
+bool SnapshotInfo::FinishTimeHasBeenSet() const
+{
+    return m_finishTimeHasBeenSet;
 }
 

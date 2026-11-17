@@ -23,11 +23,14 @@ using namespace std;
 FieldWriteConfig::FieldWriteConfig() :
     m_enableHeadersHasBeenSet(false),
     m_enableBodyHasBeenSet(false),
+    m_enableAttackBodyHasBeenSet(false),
     m_enableBotHasBeenSet(false),
     m_enableResponseHasBeenSet(false),
     m_enableResponseHeadersHasBeenSet(false),
     m_enableResponseLengthHasBeenSet(false),
-    m_enableResponseStatusLineHasBeenSet(false)
+    m_enableResponseStatusLineHasBeenSet(false),
+    m_llmItemHasBeenSet(false),
+    m_filterPlusEnableHeaderFilterHasBeenSet(false)
 {
 }
 
@@ -54,6 +57,16 @@ CoreInternalOutcome FieldWriteConfig::Deserialize(const rapidjson::Value &value)
         }
         m_enableBody = value["EnableBody"].GetInt64();
         m_enableBodyHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableAttackBody") && !value["EnableAttackBody"].IsNull())
+    {
+        if (!value["EnableAttackBody"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FieldWriteConfig.EnableAttackBody` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableAttackBody = value["EnableAttackBody"].GetInt64();
+        m_enableAttackBodyHasBeenSet = true;
     }
 
     if (value.HasMember("EnableBot") && !value["EnableBot"].IsNull())
@@ -106,6 +119,26 @@ CoreInternalOutcome FieldWriteConfig::Deserialize(const rapidjson::Value &value)
         m_enableResponseStatusLineHasBeenSet = true;
     }
 
+    if (value.HasMember("LlmItem") && !value["LlmItem"].IsNull())
+    {
+        if (!value["LlmItem"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FieldWriteConfig.LlmItem` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_llmItem = string(value["LlmItem"].GetString());
+        m_llmItemHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilterPlusEnableHeaderFilter") && !value["FilterPlusEnableHeaderFilter"].IsNull())
+    {
+        if (!value["FilterPlusEnableHeaderFilter"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FieldWriteConfig.FilterPlusEnableHeaderFilter` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_filterPlusEnableHeaderFilter = value["FilterPlusEnableHeaderFilter"].GetInt64();
+        m_filterPlusEnableHeaderFilterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +160,14 @@ void FieldWriteConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "EnableBody";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableBody, allocator);
+    }
+
+    if (m_enableAttackBodyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAttackBody";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableAttackBody, allocator);
     }
 
     if (m_enableBotHasBeenSet)
@@ -169,6 +210,22 @@ void FieldWriteConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, m_enableResponseStatusLine, allocator);
     }
 
+    if (m_llmItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LlmItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_llmItem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterPlusEnableHeaderFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterPlusEnableHeaderFilter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filterPlusEnableHeaderFilter, allocator);
+    }
+
 }
 
 
@@ -202,6 +259,22 @@ void FieldWriteConfig::SetEnableBody(const int64_t& _enableBody)
 bool FieldWriteConfig::EnableBodyHasBeenSet() const
 {
     return m_enableBodyHasBeenSet;
+}
+
+int64_t FieldWriteConfig::GetEnableAttackBody() const
+{
+    return m_enableAttackBody;
+}
+
+void FieldWriteConfig::SetEnableAttackBody(const int64_t& _enableAttackBody)
+{
+    m_enableAttackBody = _enableAttackBody;
+    m_enableAttackBodyHasBeenSet = true;
+}
+
+bool FieldWriteConfig::EnableAttackBodyHasBeenSet() const
+{
+    return m_enableAttackBodyHasBeenSet;
 }
 
 int64_t FieldWriteConfig::GetEnableBot() const
@@ -282,5 +355,37 @@ void FieldWriteConfig::SetEnableResponseStatusLine(const int64_t& _enableRespons
 bool FieldWriteConfig::EnableResponseStatusLineHasBeenSet() const
 {
     return m_enableResponseStatusLineHasBeenSet;
+}
+
+string FieldWriteConfig::GetLlmItem() const
+{
+    return m_llmItem;
+}
+
+void FieldWriteConfig::SetLlmItem(const string& _llmItem)
+{
+    m_llmItem = _llmItem;
+    m_llmItemHasBeenSet = true;
+}
+
+bool FieldWriteConfig::LlmItemHasBeenSet() const
+{
+    return m_llmItemHasBeenSet;
+}
+
+int64_t FieldWriteConfig::GetFilterPlusEnableHeaderFilter() const
+{
+    return m_filterPlusEnableHeaderFilter;
+}
+
+void FieldWriteConfig::SetFilterPlusEnableHeaderFilter(const int64_t& _filterPlusEnableHeaderFilter)
+{
+    m_filterPlusEnableHeaderFilter = _filterPlusEnableHeaderFilter;
+    m_filterPlusEnableHeaderFilterHasBeenSet = true;
+}
+
+bool FieldWriteConfig::FilterPlusEnableHeaderFilterHasBeenSet() const
+{
+    return m_filterPlusEnableHeaderFilterHasBeenSet;
 }
 

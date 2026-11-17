@@ -87,6 +87,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteMetaDatabaseRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeTrainingJobInstanceResponse.h
   include/tencentcloud/dlc/v20210125/model/GetRayClusterRequest.h
+  include/tencentcloud/dlc/v20210125/model/UpdateResourceConfigResponse.h
   include/tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementBatchResponse.h
   include/tencentcloud/dlc/v20210125/model/VolumeConnection.h
   include/tencentcloud/dlc/v20210125/model/Label.h
@@ -170,7 +171,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateSparkSubmitTaskRequest.h
   include/tencentcloud/dlc/v20210125/model/RecommendedKeyValue.h
   include/tencentcloud/dlc/v20210125/model/UserVpcConnectionInfo.h
-  include/tencentcloud/dlc/v20210125/model/UpdateResourceConfigResponse.h
+  include/tencentcloud/dlc/v20210125/model/MetricLabels.h
   include/tencentcloud/dlc/v20210125/model/CreateTableResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateBenchmarkTaskRequest.h
   include/tencentcloud/dlc/v20210125/model/QueryMonitorOverviewRequest.h
@@ -521,6 +522,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeDataEnginesResponse.h
   include/tencentcloud/dlc/v20210125/model/ListRayClustersResponse.h
   include/tencentcloud/dlc/v20210125/model/StandardEngineResourceGroupConfigInfo.h
+  include/tencentcloud/dlc/v20210125/model/DescribePartitionMonitorOverviewRequest.h
   include/tencentcloud/dlc/v20210125/model/DownloadInfo.h
   include/tencentcloud/dlc/v20210125/model/RecommendedAdvancedParams.h
   include/tencentcloud/dlc/v20210125/model/CopyJobSpecRequest.h
@@ -528,6 +530,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/ColumnInfo.h
   include/tencentcloud/dlc/v20210125/model/TColumn.h
   include/tencentcloud/dlc/v20210125/model/LakeFileSystemToken.h
+  include/tencentcloud/dlc/v20210125/model/DescribePartitionMonitorOverviewResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteNativeSparkSessionRequest.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSTableResponse.h
   include/tencentcloud/dlc/v20210125/model/PartitionDetail.h
@@ -935,6 +938,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DropDMSTableRequest.h
   include/tencentcloud/dlc/v20210125/model/InferenceServiceInfo.h
   include/tencentcloud/dlc/v20210125/model/UpdateJobSpecRequest.h
+  include/tencentcloud/dlc/v20210125/model/MetricValue.h
   include/tencentcloud/dlc/v20210125/model/DescribeTrainingJobSpecResponse.h
   include/tencentcloud/dlc/v20210125/model/ListBenchmarkTasksRequest.h
   include/tencentcloud/dlc/v20210125/model/TaskResponseInfo.h
@@ -1134,6 +1138,7 @@ set(dlc_src
   src/v20210125/model/DeleteMetaDatabaseRequest.cpp
   src/v20210125/model/DescribeTrainingJobInstanceResponse.cpp
   src/v20210125/model/GetRayClusterRequest.cpp
+  src/v20210125/model/UpdateResourceConfigResponse.cpp
   src/v20210125/model/CancelNotebookSessionStatementBatchResponse.cpp
   src/v20210125/model/VolumeConnection.cpp
   src/v20210125/model/Label.cpp
@@ -1217,7 +1222,7 @@ set(dlc_src
   src/v20210125/model/CreateSparkSubmitTaskRequest.cpp
   src/v20210125/model/RecommendedKeyValue.cpp
   src/v20210125/model/UserVpcConnectionInfo.cpp
-  src/v20210125/model/UpdateResourceConfigResponse.cpp
+  src/v20210125/model/MetricLabels.cpp
   src/v20210125/model/CreateTableResponse.cpp
   src/v20210125/model/CreateBenchmarkTaskRequest.cpp
   src/v20210125/model/QueryMonitorOverviewRequest.cpp
@@ -1568,6 +1573,7 @@ set(dlc_src
   src/v20210125/model/DescribeDataEnginesResponse.cpp
   src/v20210125/model/ListRayClustersResponse.cpp
   src/v20210125/model/StandardEngineResourceGroupConfigInfo.cpp
+  src/v20210125/model/DescribePartitionMonitorOverviewRequest.cpp
   src/v20210125/model/DownloadInfo.cpp
   src/v20210125/model/RecommendedAdvancedParams.cpp
   src/v20210125/model/CopyJobSpecRequest.cpp
@@ -1575,6 +1581,7 @@ set(dlc_src
   src/v20210125/model/ColumnInfo.cpp
   src/v20210125/model/TColumn.cpp
   src/v20210125/model/LakeFileSystemToken.cpp
+  src/v20210125/model/DescribePartitionMonitorOverviewResponse.cpp
   src/v20210125/model/DeleteNativeSparkSessionRequest.cpp
   src/v20210125/model/AlterDMSTableResponse.cpp
   src/v20210125/model/PartitionDetail.cpp
@@ -1982,6 +1989,7 @@ set(dlc_src
   src/v20210125/model/DropDMSTableRequest.cpp
   src/v20210125/model/InferenceServiceInfo.cpp
   src/v20210125/model/UpdateJobSpecRequest.cpp
+  src/v20210125/model/MetricValue.cpp
   src/v20210125/model/DescribeTrainingJobSpecResponse.cpp
   src/v20210125/model/ListBenchmarkTasksRequest.cpp
   src/v20210125/model/TaskResponseInfo.cpp

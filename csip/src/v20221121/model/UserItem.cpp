@@ -31,7 +31,8 @@ UserItem::UserItem() :
     m_quotaFlushTimeHasBeenSet(false),
     m_quotaSourceHasBeenSet(false),
     m_shareFromAppIDHasBeenSet(false),
-    m_shareFromUserHasBeenSet(false)
+    m_shareFromUserHasBeenSet(false),
+    m_isTrialOrderHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome UserItem::Deserialize(const rapidjson::Value &value)
         m_shareFromUserHasBeenSet = true;
     }
 
+    if (value.HasMember("IsTrialOrder") && !value["IsTrialOrder"].IsNull())
+    {
+        if (!value["IsTrialOrder"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserItem.IsTrialOrder` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isTrialOrder = value["IsTrialOrder"].GetUint64();
+        m_isTrialOrderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void UserItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ShareFromUser";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_shareFromUser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isTrialOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTrialOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isTrialOrder, allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void UserItem::SetShareFromUser(const string& _shareFromUser)
 bool UserItem::ShareFromUserHasBeenSet() const
 {
     return m_shareFromUserHasBeenSet;
+}
+
+uint64_t UserItem::GetIsTrialOrder() const
+{
+    return m_isTrialOrder;
+}
+
+void UserItem::SetIsTrialOrder(const uint64_t& _isTrialOrder)
+{
+    m_isTrialOrder = _isTrialOrder;
+    m_isTrialOrderHasBeenSet = true;
+}
+
+bool UserItem::IsTrialOrderHasBeenSet() const
+{
+    return m_isTrialOrderHasBeenSet;
 }
 

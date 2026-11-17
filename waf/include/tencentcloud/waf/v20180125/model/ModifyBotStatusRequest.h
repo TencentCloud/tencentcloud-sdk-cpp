@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CategoryHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取BOT模块开关状态，传入'0'表示关闭，'1'表示开启
+                     * @return Status BOT模块开关状态，传入'0'表示关闭，'1'表示开启
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置BOT模块开关状态，传入'0'表示关闭，'1'表示开启
+                     * @param _status BOT模块开关状态，传入'0'表示关闭，'1'表示开启
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_categoryHasBeenSet;
 
                     /**
-                     * 状态
+                     * BOT模块开关状态，传入'0'表示关闭，'1'表示开启
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

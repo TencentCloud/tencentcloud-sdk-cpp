@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool IsDefaultWeightHasBeenSet() const;
 
+                    /**
+                     * 获取节点类型
+                     * @return NodeType 节点类型
+                     * 
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置节点类型
+                     * @param _nodeType 节点类型
+                     * 
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     * 
+                     */
+                    bool NodeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     bool m_isDefaultWeight;
                     bool m_isDefaultWeightHasBeenSet;
+
+                    /**
+                     * 节点类型
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
 
                 };
             }

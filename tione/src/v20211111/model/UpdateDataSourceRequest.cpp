@@ -27,7 +27,8 @@ UpdateDataSourceRequest::UpdateDataSourceRequest() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_permissionHasBeenSet(false),
-    m_mountConfigureHasBeenSet(false)
+    m_mountConfigureHasBeenSet(false),
+    m_containerPathHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string UpdateDataSourceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mountConfigure.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_containerPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_containerPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void UpdateDataSourceRequest::SetMountConfigure(const MountConfigureInfo& _mount
 bool UpdateDataSourceRequest::MountConfigureHasBeenSet() const
 {
     return m_mountConfigureHasBeenSet;
+}
+
+string UpdateDataSourceRequest::GetContainerPath() const
+{
+    return m_containerPath;
+}
+
+void UpdateDataSourceRequest::SetContainerPath(const string& _containerPath)
+{
+    m_containerPath = _containerPath;
+    m_containerPathHasBeenSet = true;
+}
+
+bool UpdateDataSourceRequest::ContainerPathHasBeenSet() const
+{
+    return m_containerPathHasBeenSet;
 }
 
 

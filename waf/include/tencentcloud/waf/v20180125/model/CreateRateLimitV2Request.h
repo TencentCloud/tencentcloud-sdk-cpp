@@ -29,6 +29,7 @@
 #include <tencentcloud/waf/v20180125/model/MatchOption.h>
 #include <tencentcloud/waf/v20180125/model/RedirectInfo.h>
 #include <tencentcloud/waf/v20180125/model/PathItem.h>
+#include <tencentcloud/waf/v20180125/model/Strategy.h>
 
 
 namespace TencentCloud
@@ -512,6 +513,48 @@ namespace TencentCloud
                      */
                     bool OrderHasBeenSet() const;
 
+                    /**
+                     * 获取统一匹配条件列表，复用ACL自定义策略结构，条件数量上限10条。MatchConditions非空时引擎只走新字段
+                     * @return MatchConditions 统一匹配条件列表，复用ACL自定义策略结构，条件数量上限10条。MatchConditions非空时引擎只走新字段
+                     * 
+                     */
+                    std::vector<Strategy> GetMatchConditions() const;
+
+                    /**
+                     * 设置统一匹配条件列表，复用ACL自定义策略结构，条件数量上限10条。MatchConditions非空时引擎只走新字段
+                     * @param _matchConditions 统一匹配条件列表，复用ACL自定义策略结构，条件数量上限10条。MatchConditions非空时引擎只走新字段
+                     * 
+                     */
+                    void SetMatchConditions(const std::vector<Strategy>& _matchConditions);
+
+                    /**
+                     * 判断参数 MatchConditions 是否已赋值
+                     * @return MatchConditions 是否已赋值
+                     * 
+                     */
+                    bool MatchConditionsHasBeenSet() const;
+
+                    /**
+                     * 获取条件间逻辑：and(默认)/or
+                     * @return ConditionLogic 条件间逻辑：and(默认)/or
+                     * 
+                     */
+                    std::string GetConditionLogic() const;
+
+                    /**
+                     * 设置条件间逻辑：and(默认)/or
+                     * @param _conditionLogic 条件间逻辑：and(默认)/or
+                     * 
+                     */
+                    void SetConditionLogic(const std::string& _conditionLogic);
+
+                    /**
+                     * 判断参数 ConditionLogic 是否已赋值
+                     * @return ConditionLogic 是否已赋值
+                     * 
+                     */
+                    bool ConditionLogicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -645,6 +688,18 @@ namespace TencentCloud
                      */
                     int64_t m_order;
                     bool m_orderHasBeenSet;
+
+                    /**
+                     * 统一匹配条件列表，复用ACL自定义策略结构，条件数量上限10条。MatchConditions非空时引擎只走新字段
+                     */
+                    std::vector<Strategy> m_matchConditions;
+                    bool m_matchConditionsHasBeenSet;
+
+                    /**
+                     * 条件间逻辑：and(默认)/or
+                     */
+                    std::string m_conditionLogic;
+                    bool m_conditionLogicHasBeenSet;
 
                 };
             }

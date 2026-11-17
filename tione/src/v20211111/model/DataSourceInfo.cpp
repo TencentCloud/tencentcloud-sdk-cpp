@@ -34,7 +34,8 @@ DataSourceInfo::DataSourceInfo() :
     m_updateTimeHasBeenSet(false),
     m_limitMountHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_extraConfHasBeenSet(false)
+    m_extraConfHasBeenSet(false),
+    m_containerPathHasBeenSet(false)
 {
 }
 
@@ -207,6 +208,16 @@ CoreInternalOutcome DataSourceInfo::Deserialize(const rapidjson::Value &value)
         m_extraConfHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerPath") && !value["ContainerPath"].IsNull())
+    {
+        if (!value["ContainerPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.ContainerPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerPath = string(value["ContainerPath"].GetString());
+        m_containerPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -333,6 +344,14 @@ void DataSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extraConf.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_containerPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -560,5 +579,21 @@ void DataSourceInfo::SetExtraConf(const StorageExtraConf& _extraConf)
 bool DataSourceInfo::ExtraConfHasBeenSet() const
 {
     return m_extraConfHasBeenSet;
+}
+
+string DataSourceInfo::GetContainerPath() const
+{
+    return m_containerPath;
+}
+
+void DataSourceInfo::SetContainerPath(const string& _containerPath)
+{
+    m_containerPath = _containerPath;
+    m_containerPathHasBeenSet = true;
+}
+
+bool DataSourceInfo::ContainerPathHasBeenSet() const
+{
+    return m_containerPathHasBeenSet;
 }
 

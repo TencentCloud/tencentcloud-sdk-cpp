@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取CC规则开关，0表示关闭，1表示开启
+                     * @return Status CC规则开关，0表示关闭，1表示开启
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置CC规则开关，0表示关闭，1表示开启
+                     * @param _status CC规则开关，0表示关闭，1表示开启
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取动作有效时间
-                     * @return ValidTime 动作有效时间
+                     * 获取动作有效时间，单位：秒，取值范围60~604800（即1分钟~7天）
+                     * @return ValidTime 动作有效时间，单位：秒，取值范围60~604800（即1分钟~7天）
                      * 
                      */
                     int64_t GetValidTime() const;
 
                     /**
-                     * 设置动作有效时间
-                     * @param _validTime 动作有效时间
+                     * 设置动作有效时间，单位：秒，取值范围60~604800（即1分钟~7天）
+                     * @param _validTime 动作有效时间，单位：秒，取值范围60~604800（即1分钟~7天）
                      * 
                      */
                     void SetValidTime(const int64_t& _validTime);
@@ -317,15 +317,15 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取操作类型
-                     * @return Type 操作类型
+                     * 获取CC规则类型，0表示基础规则，1表示高级规则
+                     * @return Type CC规则类型，0表示基础规则，1表示高级规则
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置操作类型
-                     * @param _type 操作类型
+                     * 设置CC规则类型，0表示基础规则，1表示高级规则
+                     * @param _type CC规则类型，0表示基础规则，1表示高级规则
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -667,7 +667,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 状态
+                     * CC规则开关，0表示关闭，1表示开启
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -703,7 +703,7 @@ namespace TencentCloud
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * 动作有效时间
+                     * 动作有效时间，单位：秒，取值范围60~604800（即1分钟~7天）
                      */
                     int64_t m_validTime;
                     bool m_validTimeHasBeenSet;
@@ -733,7 +733,7 @@ namespace TencentCloud
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 操作类型
+                     * CC规则类型，0表示基础规则，1表示高级规则
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

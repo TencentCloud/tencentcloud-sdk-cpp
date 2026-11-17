@@ -79,6 +79,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ChangeP2PRouteResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateDeviceTWeCallAuthorizeStatusRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateTWeSeeDirectUploadCredentialResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceCloudStoragePackagesRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateProjectResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteProjectResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareUpdateStatusResponse.h
@@ -223,6 +224,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/GetTWeTalkActiveRecordListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteCloudStorageEventRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/ProductEntry.h
   include/tencentcloud/iotexplorer/v20190423/model/SeeCreateSubscriptionEntry.h
   include/tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/VisionCustomDetectQuery.h
@@ -560,7 +562,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeProjectResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/VisionDetectedObject.h
   include/tencentcloud/iotexplorer/v20190423/model/DeviceData.h
-  include/tencentcloud/iotexplorer/v20190423/model/ProductEntry.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceCloudStoragePackagesResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/BindDeviceInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTask.h
   include/tencentcloud/iotexplorer/v20190423/model/SeeExtendedOutput.h
@@ -652,6 +654,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ListOtaModulesResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SeeCompHighlightConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/NewCloudStoragePackage.h
   include/tencentcloud/iotexplorer/v20190423/model/ListOtaModulesRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/SeeDetectContinuousConfig.h
   include/tencentcloud/iotexplorer/v20190423/model/RevokeBindUserDeviceResponse.h
@@ -745,6 +748,7 @@ set(iotexplorer_src
   src/v20190423/model/ChangeP2PRouteResponse.cpp
   src/v20190423/model/UpdateDeviceTWeCallAuthorizeStatusRequest.cpp
   src/v20190423/model/CreateTWeSeeDirectUploadCredentialResponse.cpp
+  src/v20190423/model/DescribeDeviceCloudStoragePackagesRequest.cpp
   src/v20190423/model/CreateProjectResponse.cpp
   src/v20190423/model/DeleteProjectResponse.cpp
   src/v20190423/model/DescribeFirmwareUpdateStatusResponse.cpp
@@ -889,6 +893,7 @@ set(iotexplorer_src
   src/v20190423/model/GetTWeTalkActiveRecordListResponse.cpp
   src/v20190423/model/DeleteCloudStorageEventRequest.cpp
   src/v20190423/model/SearchPositionSpaceRequest.cpp
+  src/v20190423/model/ProductEntry.cpp
   src/v20190423/model/SeeCreateSubscriptionEntry.cpp
   src/v20190423/model/DirectBindDeviceInFamilyResponse.cpp
   src/v20190423/model/VisionCustomDetectQuery.cpp
@@ -1226,7 +1231,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeProjectResponse.cpp
   src/v20190423/model/VisionDetectedObject.cpp
   src/v20190423/model/DeviceData.cpp
-  src/v20190423/model/ProductEntry.cpp
+  src/v20190423/model/DescribeDeviceCloudStoragePackagesResponse.cpp
   src/v20190423/model/BindDeviceInfo.cpp
   src/v20190423/model/CloudStorageAIServiceTask.cpp
   src/v20190423/model/SeeExtendedOutput.cpp
@@ -1318,6 +1323,7 @@ set(iotexplorer_src
   src/v20190423/model/ListOtaModulesResponse.cpp
   src/v20190423/model/SeeCompHighlightConfig.cpp
   src/v20190423/model/GetTopicRuleListRequest.cpp
+  src/v20190423/model/NewCloudStoragePackage.cpp
   src/v20190423/model/ListOtaModulesRequest.cpp
   src/v20190423/model/SeeDetectContinuousConfig.cpp
   src/v20190423/model/RevokeBindUserDeviceResponse.cpp

@@ -53,7 +53,8 @@ NotebookSetItem::NotebookSetItem() :
     m_appIdHasBeenSet(false),
     m_exposePortConfigHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_latestOperatorInfoHasBeenSet(false)
+    m_latestOperatorInfoHasBeenSet(false),
+    m_resourceGroupInstanceIdHasBeenSet(false)
 {
 }
 
@@ -450,6 +451,16 @@ CoreInternalOutcome NotebookSetItem::Deserialize(const rapidjson::Value &value)
         m_latestOperatorInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceGroupInstanceId") && !value["ResourceGroupInstanceId"].IsNull())
+    {
+        if (!value["ResourceGroupInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSetItem.ResourceGroupInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupInstanceId = string(value["ResourceGroupInstanceId"].GetString());
+        m_resourceGroupInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -742,6 +753,14 @@ void NotebookSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_latestOperatorInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_resourceGroupInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1273,5 +1292,21 @@ void NotebookSetItem::SetLatestOperatorInfo(const OperatorInfo& _latestOperatorI
 bool NotebookSetItem::LatestOperatorInfoHasBeenSet() const
 {
     return m_latestOperatorInfoHasBeenSet;
+}
+
+string NotebookSetItem::GetResourceGroupInstanceId() const
+{
+    return m_resourceGroupInstanceId;
+}
+
+void NotebookSetItem::SetResourceGroupInstanceId(const string& _resourceGroupInstanceId)
+{
+    m_resourceGroupInstanceId = _resourceGroupInstanceId;
+    m_resourceGroupInstanceIdHasBeenSet = true;
+}
+
+bool NotebookSetItem::ResourceGroupInstanceIdHasBeenSet() const
+{
+    return m_resourceGroupInstanceIdHasBeenSet;
 }
 

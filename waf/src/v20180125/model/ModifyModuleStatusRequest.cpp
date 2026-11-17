@@ -28,6 +28,7 @@ ModifyModuleStatusRequest::ModifyModuleStatusRequest() :
     m_accessControlHasBeenSet(false),
     m_ccProtectionHasBeenSet(false),
     m_apiProtectionHasBeenSet(false),
+    m_apiDetectHasBeenSet(false),
     m_antiTamperHasBeenSet(false),
     m_antiLeakageHasBeenSet(false),
     m_rateLimitHasBeenSet(false),
@@ -80,6 +81,14 @@ string ModifyModuleStatusRequest::ToJsonString() const
         string key = "ApiProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_apiProtection, allocator);
+    }
+
+    if (m_apiDetectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiDetect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_apiDetect, allocator);
     }
 
     if (m_antiTamperHasBeenSet)
@@ -200,6 +209,22 @@ void ModifyModuleStatusRequest::SetApiProtection(const uint64_t& _apiProtection)
 bool ModifyModuleStatusRequest::ApiProtectionHasBeenSet() const
 {
     return m_apiProtectionHasBeenSet;
+}
+
+uint64_t ModifyModuleStatusRequest::GetApiDetect() const
+{
+    return m_apiDetect;
+}
+
+void ModifyModuleStatusRequest::SetApiDetect(const uint64_t& _apiDetect)
+{
+    m_apiDetect = _apiDetect;
+    m_apiDetectHasBeenSet = true;
+}
+
+bool ModifyModuleStatusRequest::ApiDetectHasBeenSet() const
+{
+    return m_apiDetectHasBeenSet;
 }
 
 uint64_t ModifyModuleStatusRequest::GetAntiTamper() const

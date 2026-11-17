@@ -43,7 +43,67 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>OneID 颁发的用户级访问凭证</p>
+                     * @return AccessToken <p>OneID 颁发的用户级访问凭证</p>
+                     * 
+                     */
+                    std::string GetAccessToken() const;
+
+                    /**
+                     * 判断参数 AccessToken 是否已赋值
+                     * @return AccessToken 是否已赋值
+                     * 
+                     */
+                    bool AccessTokenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>凭证类型，目前固定 Bearer</p>
+                     * @return TokenType <p>凭证类型，目前固定 Bearer</p>
+                     * 
+                     */
+                    std::string GetTokenType() const;
+
+                    /**
+                     * 判断参数 TokenType 是否已赋值
+                     * @return TokenType 是否已赋值
+                     * 
+                     */
+                    bool TokenTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>凭证有效期，单位：秒</p>
+                     * @return ExpiresIn <p>凭证有效期，单位：秒</p>
+                     * 
+                     */
+                    int64_t GetExpiresIn() const;
+
+                    /**
+                     * 判断参数 ExpiresIn 是否已赋值
+                     * @return ExpiresIn 是否已赋值
+                     * 
+                     */
+                    bool ExpiresInHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>OneID 颁发的用户级访问凭证</p>
+                     */
+                    std::string m_accessToken;
+                    bool m_accessTokenHasBeenSet;
+
+                    /**
+                     * <p>凭证类型，目前固定 Bearer</p>
+                     */
+                    std::string m_tokenType;
+                    bool m_tokenTypeHasBeenSet;
+
+                    /**
+                     * <p>凭证有效期，单位：秒</p>
+                     */
+                    int64_t m_expiresIn;
+                    bool m_expiresInHasBeenSet;
 
                 };
             }

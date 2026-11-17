@@ -21,30 +21,67 @@ set(dbs_public_header
 set(dbs_public_header_model
   include/tencentcloud/dbs/v20211108/model/DescribeBackupCheckJobRequest.h
   include/tencentcloud/dbs/v20211108/model/BackupStrategy.h
+  include/tencentcloud/dbs/v20211108/model/IncrementBackup.h
   include/tencentcloud/dbs/v20211108/model/TestItem.h
-  include/tencentcloud/dbs/v20211108/model/StartBackupCheckJobRequest.h
-  include/tencentcloud/dbs/v20211108/model/ConfigureBackupPlanRequest.h
+  include/tencentcloud/dbs/v20211108/model/DescribeBackupPlanDetailRequest.h
+  include/tencentcloud/dbs/v20211108/model/DeleteBackupPlanResponse.h
+  include/tencentcloud/dbs/v20211108/model/FullBackupErrorMessage.h
+  include/tencentcloud/dbs/v20211108/model/DescribeConnectTestResultResponse.h
+  include/tencentcloud/dbs/v20211108/model/BackupFile.h
+  include/tencentcloud/dbs/v20211108/model/DescribeIncrementBackupSetFilesResponse.h
   include/tencentcloud/dbs/v20211108/model/ConfigureBackupPlanResponse.h
   include/tencentcloud/dbs/v20211108/model/BackupPlanInfo.h
+  include/tencentcloud/dbs/v20211108/model/TagInfo.h
+  include/tencentcloud/dbs/v20211108/model/BackupPeriodItem.h
   include/tencentcloud/dbs/v20211108/model/DescribeBackupPlansResponse.h
+  include/tencentcloud/dbs/v20211108/model/StartBackupCheckJobRequest.h
+  include/tencentcloud/dbs/v20211108/model/BackupSetOption.h
   include/tencentcloud/dbs/v20211108/model/DescribeConnectTestResultRequest.h
+  include/tencentcloud/dbs/v20211108/model/ResourceDetail.h
   include/tencentcloud/dbs/v20211108/model/BackupObjectItem.h
+  include/tencentcloud/dbs/v20211108/model/ResourceItemDetail.h
+  include/tencentcloud/dbs/v20211108/model/FullBackupProgress.h
+  include/tencentcloud/dbs/v20211108/model/StorageTieredStrategy.h
+  include/tencentcloud/dbs/v20211108/model/DestroyBackupPlanByUserRequest.h
   include/tencentcloud/dbs/v20211108/model/StartBackupPlanResponse.h
   include/tencentcloud/dbs/v20211108/model/BackupObject.h
   include/tencentcloud/dbs/v20211108/model/CreateBackupPlanResponse.h
-  include/tencentcloud/dbs/v20211108/model/DescribeBackupPlansRequest.h
-  include/tencentcloud/dbs/v20211108/model/BackupPeriod.h
-  include/tencentcloud/dbs/v20211108/model/TagFilter.h
-  include/tencentcloud/dbs/v20211108/model/DescribeConnectTestResultResponse.h
+  include/tencentcloud/dbs/v20211108/model/ModifyBackupPlanSourceInfoResponse.h
+  include/tencentcloud/dbs/v20211108/model/DescribeFullBackupSetDetailRequest.h
+  include/tencentcloud/dbs/v20211108/model/FullBackupSetDetail.h
   include/tencentcloud/dbs/v20211108/model/BackupTableItem.h
+  include/tencentcloud/dbs/v20211108/model/DescribeFullBackupSetDetailResponse.h
+  include/tencentcloud/dbs/v20211108/model/BackupPeriod.h
+  include/tencentcloud/dbs/v20211108/model/Endpoint.h
+  include/tencentcloud/dbs/v20211108/model/StopBackupPlanResponse.h
+  include/tencentcloud/dbs/v20211108/model/ResumeBackupPlanRequest.h
+  include/tencentcloud/dbs/v20211108/model/RestoreRange.h
+  include/tencentcloud/dbs/v20211108/model/DescribeBackupPlanDetailResponse.h
+  include/tencentcloud/dbs/v20211108/model/DestroyBackupPlanByUserResponse.h
+  include/tencentcloud/dbs/v20211108/model/TagFilter.h
+  include/tencentcloud/dbs/v20211108/model/StorageStrategySingle.h
+  include/tencentcloud/dbs/v20211108/model/BackupProgress.h
+  include/tencentcloud/dbs/v20211108/model/ConfigureBackupPlanRequest.h
   include/tencentcloud/dbs/v20211108/model/StartBackupPlanRequest.h
+  include/tencentcloud/dbs/v20211108/model/DeleteBackupPlanRequest.h
   include/tencentcloud/dbs/v20211108/model/DescribeBackupCheckJobResponse.h
+  include/tencentcloud/dbs/v20211108/model/BackupStrategyItem.h
+  include/tencentcloud/dbs/v20211108/model/StopBackupPlanRequest.h
+  include/tencentcloud/dbs/v20211108/model/DescribeIncrementBackupSetsRequest.h
   include/tencentcloud/dbs/v20211108/model/CreateConnectTestJobRequest.h
   include/tencentcloud/dbs/v20211108/model/BackupColumnItem.h
+  include/tencentcloud/dbs/v20211108/model/BackupPlanPayInfo.h
+  include/tencentcloud/dbs/v20211108/model/DescribeBackupPlansRequest.h
   include/tencentcloud/dbs/v20211108/model/BackupEndpoint.h
+  include/tencentcloud/dbs/v20211108/model/ModifyBackupPlanSourceInfoRequest.h
   include/tencentcloud/dbs/v20211108/model/StartBackupCheckJobResponse.h
+  include/tencentcloud/dbs/v20211108/model/DescribeIncrementBackupSetFilesRequest.h
   include/tencentcloud/dbs/v20211108/model/Tag.h
   include/tencentcloud/dbs/v20211108/model/CreateBackupPlanRequest.h
+  include/tencentcloud/dbs/v20211108/model/StorageStrategyItem.h
+  include/tencentcloud/dbs/v20211108/model/ResumeBackupPlanResponse.h
+  include/tencentcloud/dbs/v20211108/model/DescribeIncrementBackupSetsResponse.h
+  include/tencentcloud/dbs/v20211108/model/ErrorInfo.h
   include/tencentcloud/dbs/v20211108/model/ConnectTestResult.h
   include/tencentcloud/dbs/v20211108/model/CreateConnectTestJobResponse.h
   include/tencentcloud/dbs/v20211108/model/StorageStrategy.h
@@ -54,30 +91,67 @@ set(dbs_src
   src/v20211108/DbsClient.cpp
   src/v20211108/model/DescribeBackupCheckJobRequest.cpp
   src/v20211108/model/BackupStrategy.cpp
+  src/v20211108/model/IncrementBackup.cpp
   src/v20211108/model/TestItem.cpp
-  src/v20211108/model/StartBackupCheckJobRequest.cpp
-  src/v20211108/model/ConfigureBackupPlanRequest.cpp
+  src/v20211108/model/DescribeBackupPlanDetailRequest.cpp
+  src/v20211108/model/DeleteBackupPlanResponse.cpp
+  src/v20211108/model/FullBackupErrorMessage.cpp
+  src/v20211108/model/DescribeConnectTestResultResponse.cpp
+  src/v20211108/model/BackupFile.cpp
+  src/v20211108/model/DescribeIncrementBackupSetFilesResponse.cpp
   src/v20211108/model/ConfigureBackupPlanResponse.cpp
   src/v20211108/model/BackupPlanInfo.cpp
+  src/v20211108/model/TagInfo.cpp
+  src/v20211108/model/BackupPeriodItem.cpp
   src/v20211108/model/DescribeBackupPlansResponse.cpp
+  src/v20211108/model/StartBackupCheckJobRequest.cpp
+  src/v20211108/model/BackupSetOption.cpp
   src/v20211108/model/DescribeConnectTestResultRequest.cpp
+  src/v20211108/model/ResourceDetail.cpp
   src/v20211108/model/BackupObjectItem.cpp
+  src/v20211108/model/ResourceItemDetail.cpp
+  src/v20211108/model/FullBackupProgress.cpp
+  src/v20211108/model/StorageTieredStrategy.cpp
+  src/v20211108/model/DestroyBackupPlanByUserRequest.cpp
   src/v20211108/model/StartBackupPlanResponse.cpp
   src/v20211108/model/BackupObject.cpp
   src/v20211108/model/CreateBackupPlanResponse.cpp
-  src/v20211108/model/DescribeBackupPlansRequest.cpp
-  src/v20211108/model/BackupPeriod.cpp
-  src/v20211108/model/TagFilter.cpp
-  src/v20211108/model/DescribeConnectTestResultResponse.cpp
+  src/v20211108/model/ModifyBackupPlanSourceInfoResponse.cpp
+  src/v20211108/model/DescribeFullBackupSetDetailRequest.cpp
+  src/v20211108/model/FullBackupSetDetail.cpp
   src/v20211108/model/BackupTableItem.cpp
+  src/v20211108/model/DescribeFullBackupSetDetailResponse.cpp
+  src/v20211108/model/BackupPeriod.cpp
+  src/v20211108/model/Endpoint.cpp
+  src/v20211108/model/StopBackupPlanResponse.cpp
+  src/v20211108/model/ResumeBackupPlanRequest.cpp
+  src/v20211108/model/RestoreRange.cpp
+  src/v20211108/model/DescribeBackupPlanDetailResponse.cpp
+  src/v20211108/model/DestroyBackupPlanByUserResponse.cpp
+  src/v20211108/model/TagFilter.cpp
+  src/v20211108/model/StorageStrategySingle.cpp
+  src/v20211108/model/BackupProgress.cpp
+  src/v20211108/model/ConfigureBackupPlanRequest.cpp
   src/v20211108/model/StartBackupPlanRequest.cpp
+  src/v20211108/model/DeleteBackupPlanRequest.cpp
   src/v20211108/model/DescribeBackupCheckJobResponse.cpp
+  src/v20211108/model/BackupStrategyItem.cpp
+  src/v20211108/model/StopBackupPlanRequest.cpp
+  src/v20211108/model/DescribeIncrementBackupSetsRequest.cpp
   src/v20211108/model/CreateConnectTestJobRequest.cpp
   src/v20211108/model/BackupColumnItem.cpp
+  src/v20211108/model/BackupPlanPayInfo.cpp
+  src/v20211108/model/DescribeBackupPlansRequest.cpp
   src/v20211108/model/BackupEndpoint.cpp
+  src/v20211108/model/ModifyBackupPlanSourceInfoRequest.cpp
   src/v20211108/model/StartBackupCheckJobResponse.cpp
+  src/v20211108/model/DescribeIncrementBackupSetFilesRequest.cpp
   src/v20211108/model/Tag.cpp
   src/v20211108/model/CreateBackupPlanRequest.cpp
+  src/v20211108/model/StorageStrategyItem.cpp
+  src/v20211108/model/ResumeBackupPlanResponse.cpp
+  src/v20211108/model/DescribeIncrementBackupSetsResponse.cpp
+  src/v20211108/model/ErrorInfo.cpp
   src/v20211108/model/ConnectTestResult.cpp
   src/v20211108/model/CreateConnectTestJobResponse.cpp
   src/v20211108/model/StorageStrategy.cpp

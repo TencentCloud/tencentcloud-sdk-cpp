@@ -370,6 +370,27 @@ namespace TencentCloud
                      */
                     bool SnapshotTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>快照完成时间</p>
+                     * @return FinishTime <p>快照完成时间</p>
+                     * 
+                     */
+                    std::string GetFinishTime() const;
+
+                    /**
+                     * 设置<p>快照完成时间</p>
+                     * @param _finishTime <p>快照完成时间</p>
+                     * 
+                     */
+                    void SetFinishTime(const std::string& _finishTime);
+
+                    /**
+                     * 判断参数 FinishTime 是否已赋值
+                     * @return FinishTime 是否已赋值
+                     * 
+                     */
+                    bool FinishTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +484,12 @@ namespace TencentCloud
                      */
                     std::string m_snapshotTime;
                     bool m_snapshotTimeHasBeenSet;
+
+                    /**
+                     * <p>快照完成时间</p>
+                     */
+                    std::string m_finishTime;
+                    bool m_finishTimeHasBeenSet;
 
                 };
             }

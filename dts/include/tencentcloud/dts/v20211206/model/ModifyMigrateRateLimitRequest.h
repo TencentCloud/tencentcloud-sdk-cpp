@@ -106,6 +106,27 @@ namespace TencentCloud
                     bool DumpRpsHasBeenSet() const;
 
                     /**
+                     * 获取<p>全量导出Bps，单位MB/s，MongoDB专用，上限80</p>
+                     * @return DumpBps <p>全量导出Bps，单位MB/s，MongoDB专用，上限80</p>
+                     * 
+                     */
+                    int64_t GetDumpBps() const;
+
+                    /**
+                     * 设置<p>全量导出Bps，单位MB/s，MongoDB专用，上限80</p>
+                     * @param _dumpBps <p>全量导出Bps，单位MB/s，MongoDB专用，上限80</p>
+                     * 
+                     */
+                    void SetDumpBps(const int64_t& _dumpBps);
+
+                    /**
+                     * 判断参数 DumpBps 是否已赋值
+                     * @return DumpBps 是否已赋值
+                     * 
+                     */
+                    bool DumpBpsHasBeenSet() const;
+
+                    /**
                      * 获取<p>迁移任务全量导入线程数、有效值为 1-16</p>
                      * @return LoadThread <p>迁移任务全量导入线程数、有效值为 1-16</p>
                      * 
@@ -168,6 +189,90 @@ namespace TencentCloud
                      */
                     bool LoadRpsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>导入BPS，单位MB/s。目前仅对redis生效，表示目标库单分片流量限制大小</p>
+                     * @return LoadBps <p>导入BPS，单位MB/s。目前仅对redis生效，表示目标库单分片流量限制大小</p>
+                     * 
+                     */
+                    int64_t GetLoadBps() const;
+
+                    /**
+                     * 设置<p>导入BPS，单位MB/s。目前仅对redis生效，表示目标库单分片流量限制大小</p>
+                     * @param _loadBps <p>导入BPS，单位MB/s。目前仅对redis生效，表示目标库单分片流量限制大小</p>
+                     * 
+                     */
+                    void SetLoadBps(const int64_t& _loadBps);
+
+                    /**
+                     * 判断参数 LoadBps 是否已赋值
+                     * @return LoadBps 是否已赋值
+                     * 
+                     */
+                    bool LoadBpsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>目标库分片数，目前仅对redis生效</p>
+                     * @return DstShardCount <p>目标库分片数，目前仅对redis生效</p>
+                     * 
+                     */
+                    int64_t GetDstShardCount() const;
+
+                    /**
+                     * 设置<p>目标库分片数，目前仅对redis生效</p>
+                     * @param _dstShardCount <p>目标库分片数，目前仅对redis生效</p>
+                     * 
+                     */
+                    void SetDstShardCount(const int64_t& _dstShardCount);
+
+                    /**
+                     * 判断参数 DstShardCount 是否已赋值
+                     * @return DstShardCount 是否已赋值
+                     * 
+                     */
+                    bool DstShardCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>增量导入Rps，MongoDB专用，上限30000</p>
+                     * @return SinkerRps <p>增量导入Rps，MongoDB专用，上限30000</p>
+                     * 
+                     */
+                    int64_t GetSinkerRps() const;
+
+                    /**
+                     * 设置<p>增量导入Rps，MongoDB专用，上限30000</p>
+                     * @param _sinkerRps <p>增量导入Rps，MongoDB专用，上限30000</p>
+                     * 
+                     */
+                    void SetSinkerRps(const int64_t& _sinkerRps);
+
+                    /**
+                     * 判断参数 SinkerRps 是否已赋值
+                     * @return SinkerRps 是否已赋值
+                     * 
+                     */
+                    bool SinkerRpsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>增量导入Bps，单位MB/s，MongoDB专用，上限120</p>
+                     * @return SinkerBps <p>增量导入Bps，单位MB/s，MongoDB专用，上限120</p>
+                     * 
+                     */
+                    int64_t GetSinkerBps() const;
+
+                    /**
+                     * 设置<p>增量导入Bps，单位MB/s，MongoDB专用，上限120</p>
+                     * @param _sinkerBps <p>增量导入Bps，单位MB/s，MongoDB专用，上限120</p>
+                     * 
+                     */
+                    void SetSinkerBps(const int64_t& _sinkerBps);
+
+                    /**
+                     * 判断参数 SinkerBps 是否已赋值
+                     * @return SinkerBps 是否已赋值
+                     * 
+                     */
+                    bool SinkerBpsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +294,12 @@ namespace TencentCloud
                     bool m_dumpRpsHasBeenSet;
 
                     /**
+                     * <p>全量导出Bps，单位MB/s，MongoDB专用，上限80</p>
+                     */
+                    int64_t m_dumpBps;
+                    bool m_dumpBpsHasBeenSet;
+
+                    /**
                      * <p>迁移任务全量导入线程数、有效值为 1-16</p>
                      */
                     int64_t m_loadThread;
@@ -205,6 +316,30 @@ namespace TencentCloud
                      */
                     int64_t m_loadRps;
                     bool m_loadRpsHasBeenSet;
+
+                    /**
+                     * <p>导入BPS，单位MB/s。目前仅对redis生效，表示目标库单分片流量限制大小</p>
+                     */
+                    int64_t m_loadBps;
+                    bool m_loadBpsHasBeenSet;
+
+                    /**
+                     * <p>目标库分片数，目前仅对redis生效</p>
+                     */
+                    int64_t m_dstShardCount;
+                    bool m_dstShardCountHasBeenSet;
+
+                    /**
+                     * <p>增量导入Rps，MongoDB专用，上限30000</p>
+                     */
+                    int64_t m_sinkerRps;
+                    bool m_sinkerRpsHasBeenSet;
+
+                    /**
+                     * <p>增量导入Bps，单位MB/s，MongoDB专用，上限120</p>
+                     */
+                    int64_t m_sinkerBps;
+                    bool m_sinkerBpsHasBeenSet;
 
                 };
             }

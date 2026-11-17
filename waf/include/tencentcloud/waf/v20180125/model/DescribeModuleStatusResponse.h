@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取WEB安全规则是否开启
-                     * @return WebSecurity WEB安全规则是否开启
+                     * 获取<p>WEB安全规则是否开启</p>
+                     * @return WebSecurity <p>WEB安全规则是否开启</p>
                      * 
                      */
                     uint64_t GetWebSecurity() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool WebSecurityHasBeenSet() const;
 
                     /**
-                     * 获取访问控制规则是否开启
-                     * @return AccessControl 访问控制规则是否开启
+                     * 获取<p>访问控制规则是否开启</p>
+                     * @return AccessControl <p>访问控制规则是否开启</p>
                      * 
                      */
                     int64_t GetAccessControl() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool AccessControlHasBeenSet() const;
 
                     /**
-                     * 获取CC防护是否开启
-                     * @return CcProtection CC防护是否开启
+                     * 获取<p>CC防护是否开启</p>
+                     * @return CcProtection <p>CC防护是否开启</p>
                      * 
                      */
                     uint64_t GetCcProtection() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool CcProtectionHasBeenSet() const;
 
                     /**
-                     * 获取网页防篡改是否开启
-                     * @return AntiTamper 网页防篡改是否开启
+                     * 获取<p>网页防篡改是否开启</p>
+                     * @return AntiTamper <p>网页防篡改是否开启</p>
                      * 
                      */
                     uint64_t GetAntiTamper() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool AntiTamperHasBeenSet() const;
 
                     /**
-                     * 获取信息防泄漏是否开启
-                     * @return AntiLeakage 信息防泄漏是否开启
+                     * 获取<p>信息防泄漏是否开启</p>
+                     * @return AntiLeakage <p>信息防泄漏是否开启</p>
                      * 
                      */
                     uint64_t GetAntiLeakage() const;
@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool AntiLeakageHasBeenSet() const;
 
                     /**
-                     * 获取API安全是否开启
-                     * @return ApiProtection API安全是否开启
+                     * 获取<p>API安全是否开启</p>
+                     * @return ApiProtection <p>API安全是否开启</p>
                      * 
                      */
                     uint64_t GetApiProtection() const;
@@ -128,8 +128,22 @@ namespace TencentCloud
                     bool ApiProtectionHasBeenSet() const;
 
                     /**
-                     * 获取限流模块开关
-                     * @return RateLimit 限流模块开关
+                     * 获取<p>API安全检测开关是否开启</p>
+                     * @return ApiDetect <p>API安全检测开关是否开启</p>
+                     * 
+                     */
+                    uint64_t GetApiDetect() const;
+
+                    /**
+                     * 判断参数 ApiDetect 是否已赋值
+                     * @return ApiDetect 是否已赋值
+                     * 
+                     */
+                    bool ApiDetectHasBeenSet() const;
+
+                    /**
+                     * 获取<p>限流模块开关，0表示关闭，1表示开启</p>
+                     * @return RateLimit <p>限流模块开关，0表示关闭，1表示开启</p>
                      * 
                      */
                     uint64_t GetRateLimit() const;
@@ -142,8 +156,8 @@ namespace TencentCloud
                     bool RateLimitHasBeenSet() const;
 
                     /**
-                     * 获取gzip 开关
-                     * @return GzipAnalysis gzip 开关
+                     * 获取<p>gzip 开关</p>
+                     * @return GzipAnalysis <p>gzip 开关</p>
                      * 
                      */
                     uint64_t GetGzipAnalysis() const;
@@ -158,49 +172,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * WEB安全规则是否开启
+                     * <p>WEB安全规则是否开启</p>
                      */
                     uint64_t m_webSecurity;
                     bool m_webSecurityHasBeenSet;
 
                     /**
-                     * 访问控制规则是否开启
+                     * <p>访问控制规则是否开启</p>
                      */
                     int64_t m_accessControl;
                     bool m_accessControlHasBeenSet;
 
                     /**
-                     * CC防护是否开启
+                     * <p>CC防护是否开启</p>
                      */
                     uint64_t m_ccProtection;
                     bool m_ccProtectionHasBeenSet;
 
                     /**
-                     * 网页防篡改是否开启
+                     * <p>网页防篡改是否开启</p>
                      */
                     uint64_t m_antiTamper;
                     bool m_antiTamperHasBeenSet;
 
                     /**
-                     * 信息防泄漏是否开启
+                     * <p>信息防泄漏是否开启</p>
                      */
                     uint64_t m_antiLeakage;
                     bool m_antiLeakageHasBeenSet;
 
                     /**
-                     * API安全是否开启
+                     * <p>API安全是否开启</p>
                      */
                     uint64_t m_apiProtection;
                     bool m_apiProtectionHasBeenSet;
 
                     /**
-                     * 限流模块开关
+                     * <p>API安全检测开关是否开启</p>
+                     */
+                    uint64_t m_apiDetect;
+                    bool m_apiDetectHasBeenSet;
+
+                    /**
+                     * <p>限流模块开关，0表示关闭，1表示开启</p>
                      */
                     uint64_t m_rateLimit;
                     bool m_rateLimitHasBeenSet;
 
                     /**
-                     * gzip 开关
+                     * <p>gzip 开关</p>
                      */
                     uint64_t m_gzipAnalysis;
                     bool m_gzipAnalysisHasBeenSet;

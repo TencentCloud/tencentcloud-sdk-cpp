@@ -140,6 +140,56 @@ OcrClient::ArithmeticOCROutcomeCallable OcrClient::ArithmeticOCRCallable(const A
     return prom->get_future();
 }
 
+OcrClient::AuditMaterialAgentOutcome OcrClient::AuditMaterialAgent(const AuditMaterialAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "AuditMaterialAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AuditMaterialAgentResponse rsp = AuditMaterialAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AuditMaterialAgentOutcome(rsp);
+        else
+            return AuditMaterialAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return AuditMaterialAgentOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::AuditMaterialAgentAsync(const AuditMaterialAgentRequest& request, const AuditMaterialAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AuditMaterialAgentRequest&;
+    using Resp = AuditMaterialAgentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AuditMaterialAgent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+OcrClient::AuditMaterialAgentOutcomeCallable OcrClient::AuditMaterialAgentCallable(const AuditMaterialAgentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AuditMaterialAgentOutcome>>();
+    AuditMaterialAgentAsync(
+    request,
+    [prom](
+        const OcrClient*,
+        const AuditMaterialAgentRequest&,
+        AuditMaterialAgentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 OcrClient::BankCardOCROutcome OcrClient::BankCardOCR(const BankCardOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "BankCardOCR");

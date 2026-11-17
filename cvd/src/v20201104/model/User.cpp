@@ -30,7 +30,8 @@ User::User() :
     m_departmentIdHasBeenSet(false),
     m_strategyIdHasBeenSet(false),
     m_strategyNameHasBeenSet(false),
-    m_bindStatusHasBeenSet(false)
+    m_bindStatusHasBeenSet(false),
+    m_lockRemainMsHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_bindStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("LockRemainMs") && !value["LockRemainMs"].IsNull())
+    {
+        if (!value["LockRemainMs"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.LockRemainMs` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lockRemainMs = value["LockRemainMs"].GetInt64();
+        m_lockRemainMsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "BindStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bindStatus, allocator);
+    }
+
+    if (m_lockRemainMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LockRemainMs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lockRemainMs, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void User::SetBindStatus(const bool& _bindStatus)
 bool User::BindStatusHasBeenSet() const
 {
     return m_bindStatusHasBeenSet;
+}
+
+int64_t User::GetLockRemainMs() const
+{
+    return m_lockRemainMs;
+}
+
+void User::SetLockRemainMs(const int64_t& _lockRemainMs)
+{
+    m_lockRemainMs = _lockRemainMs;
+    m_lockRemainMsHasBeenSet = true;
+}
+
+bool User::LockRemainMsHasBeenSet() const
+{
+    return m_lockRemainMsHasBeenSet;
 }
 

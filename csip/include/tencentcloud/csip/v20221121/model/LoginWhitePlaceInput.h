@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>国家ID，当前仅支持国内：1</p>
-                     * @return CountryId <p>国家ID，当前仅支持国内：1</p>
+                     * 获取<p>国家ID，当前仅支持境内：1</p>
+                     * @return CountryId <p>国家ID，当前仅支持境内：1</p>
                      * 
                      */
                     int64_t GetCountryId() const;
 
                     /**
-                     * 设置<p>国家ID，当前仅支持国内：1</p>
-                     * @param _countryId <p>国家ID，当前仅支持国内：1</p>
+                     * 设置<p>国家ID，当前仅支持境内：1</p>
+                     * @param _countryId <p>国家ID，当前仅支持境内：1</p>
                      * 
                      */
                     void SetCountryId(const int64_t& _countryId);
@@ -112,7 +112,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>国家ID，当前仅支持国内：1</p>
+                     * <p>国家ID，当前仅支持境内：1</p>
                      */
                     int64_t m_countryId;
                     bool m_countryIdHasBeenSet;

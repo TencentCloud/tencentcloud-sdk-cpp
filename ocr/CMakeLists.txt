@@ -30,7 +30,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/BusinessCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VinOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ResidencePermitInfo.h
-  include/tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/AuditMaterialAgentRequest.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewResponse.h
   include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/DescribeQuestionMarkAgentJobResponse.h
@@ -56,6 +56,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/TextDetectionEn.h
   include/tencentcloud/ocr/v20181119/model/ElectronicFlightTicketFull.h
   include/tencentcloud/ocr/v20181119/model/ClassifyStoreNameRequest.h
+  include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/QueryEnterpriseBasicInfoRequest.h
   include/tencentcloud/ocr/v20181119/model/CustomsPaymentReceipt.h
   include/tencentcloud/ocr/v20181119/model/SingleInvoiceInfo.h
@@ -127,7 +128,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/RecognizeMedicalInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/RecognizeValidIDCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MultimodalDocParseResponse.h
   include/tencentcloud/ocr/v20181119/model/ExtractDocAgentResponse.h
   include/tencentcloud/ocr/v20181119/model/RecognizeStoreNameResponse.h
@@ -340,6 +341,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/SubmitQuestionMarkAgentJobRequest.h
   include/tencentcloud/ocr/v20181119/model/BusinessCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/AuditMaterialAgentResponse.h
   include/tencentcloud/ocr/v20181119/model/RecognizeValidIDCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/DescribeMarkEssayAgentJobRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralFastOCRResponse.h
@@ -360,7 +362,7 @@ set(ocr_src
   src/v20181119/model/BusinessCardOCRResponse.cpp
   src/v20181119/model/VinOCRResponse.cpp
   src/v20181119/model/ResidencePermitInfo.cpp
-  src/v20181119/model/BankCardOCRRequest.cpp
+  src/v20181119/model/AuditMaterialAgentRequest.cpp
   src/v20181119/model/VatInvoiceVerifyNewResponse.cpp
   src/v20181119/model/CarInvoiceOCRRequest.cpp
   src/v20181119/model/DescribeQuestionMarkAgentJobResponse.cpp
@@ -386,6 +388,7 @@ set(ocr_src
   src/v20181119/model/TextDetectionEn.cpp
   src/v20181119/model/ElectronicFlightTicketFull.cpp
   src/v20181119/model/ClassifyStoreNameRequest.cpp
+  src/v20181119/model/ClassifyDetectOCRResponse.cpp
   src/v20181119/model/QueryEnterpriseBasicInfoRequest.cpp
   src/v20181119/model/CustomsPaymentReceipt.cpp
   src/v20181119/model/SingleInvoiceInfo.cpp
@@ -457,7 +460,7 @@ set(ocr_src
   src/v20181119/model/RecognizeMedicalInvoiceOCRResponse.cpp
   src/v20181119/model/RecognizeValidIDCardOCRRequest.cpp
   src/v20181119/model/MixedInvoiceOCRResponse.cpp
-  src/v20181119/model/ClassifyDetectOCRResponse.cpp
+  src/v20181119/model/BankCardOCRRequest.cpp
   src/v20181119/model/MultimodalDocParseResponse.cpp
   src/v20181119/model/ExtractDocAgentResponse.cpp
   src/v20181119/model/RecognizeStoreNameResponse.cpp
@@ -670,6 +673,7 @@ set(ocr_src
   src/v20181119/model/SubmitQuestionMarkAgentJobRequest.cpp
   src/v20181119/model/BusinessCardOCRRequest.cpp
   src/v20181119/model/VatInvoiceOCRResponse.cpp
+  src/v20181119/model/AuditMaterialAgentResponse.cpp
   src/v20181119/model/RecognizeValidIDCardOCRResponse.cpp
   src/v20181119/model/DescribeMarkEssayAgentJobRequest.cpp
   src/v20181119/model/GeneralFastOCRResponse.cpp

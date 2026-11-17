@@ -235,6 +235,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeLLMContentRuleListResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLLMContentSecCheckRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLLMContentSecCheckResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMHourBillDetailRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMHourBillDetailResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLLMKeywordLibraryRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLLMKeywordLibraryResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLLMSdkAccessRequest.h>
@@ -243,6 +245,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeLLMWafDLPRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLLMWafProtectRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLLMWafProtectRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafToolCallRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeLLMWafToolCallRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLogHistogramRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeLogHistogramResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeModuleStatusRequest.h>
@@ -427,12 +431,16 @@
 #include <tencentcloud/waf/v20180125/model/ModifyLLMContentRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyLLMKeywordLibraryRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyLLMKeywordLibraryResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMSdkAccessRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMSdkAccessResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyLLMStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyLLMStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyLLMWafDLPRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyLLMWafDLPRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyLLMWafProtectRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyLLMWafProtectRuleResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafToolCallRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyLLMWafToolCallRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyObjectRequest.h>
@@ -841,6 +849,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLLMContentSecCheckResponse> DescribeLLMContentSecCheckOutcome;
                 typedef std::future<DescribeLLMContentSecCheckOutcome> DescribeLLMContentSecCheckOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeLLMContentSecCheckRequest&, DescribeLLMContentSecCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMContentSecCheckAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMHourBillDetailResponse> DescribeLLMHourBillDetailOutcome;
+                typedef std::future<DescribeLLMHourBillDetailOutcome> DescribeLLMHourBillDetailOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMHourBillDetailRequest&, DescribeLLMHourBillDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMHourBillDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLLMKeywordLibraryResponse> DescribeLLMKeywordLibraryOutcome;
                 typedef std::future<DescribeLLMKeywordLibraryOutcome> DescribeLLMKeywordLibraryOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeLLMKeywordLibraryRequest&, DescribeLLMKeywordLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMKeywordLibraryAsyncHandler;
@@ -853,6 +864,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLLMWafProtectRulesResponse> DescribeLLMWafProtectRulesOutcome;
                 typedef std::future<DescribeLLMWafProtectRulesOutcome> DescribeLLMWafProtectRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeLLMWafProtectRulesRequest&, DescribeLLMWafProtectRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMWafProtectRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLLMWafToolCallRulesResponse> DescribeLLMWafToolCallRulesOutcome;
+                typedef std::future<DescribeLLMWafToolCallRulesOutcome> DescribeLLMWafToolCallRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeLLMWafToolCallRulesRequest&, DescribeLLMWafToolCallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLLMWafToolCallRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogHistogramResponse> DescribeLogHistogramOutcome;
                 typedef std::future<DescribeLogHistogramOutcome> DescribeLogHistogramOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeLogHistogramRequest&, DescribeLogHistogramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogHistogramAsyncHandler;
@@ -1129,6 +1143,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLLMKeywordLibraryResponse> ModifyLLMKeywordLibraryOutcome;
                 typedef std::future<ModifyLLMKeywordLibraryOutcome> ModifyLLMKeywordLibraryOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyLLMKeywordLibraryRequest&, ModifyLLMKeywordLibraryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMKeywordLibraryAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMSdkAccessResponse> ModifyLLMSdkAccessOutcome;
+                typedef std::future<ModifyLLMSdkAccessOutcome> ModifyLLMSdkAccessOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMSdkAccessRequest&, ModifyLLMSdkAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMSdkAccessAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLLMStatusResponse> ModifyLLMStatusOutcome;
                 typedef std::future<ModifyLLMStatusOutcome> ModifyLLMStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyLLMStatusRequest&, ModifyLLMStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMStatusAsyncHandler;
@@ -1138,6 +1155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLLMWafProtectRuleResponse> ModifyLLMWafProtectRuleOutcome;
                 typedef std::future<ModifyLLMWafProtectRuleOutcome> ModifyLLMWafProtectRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyLLMWafProtectRuleRequest&, ModifyLLMWafProtectRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMWafProtectRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLLMWafToolCallRuleResponse> ModifyLLMWafToolCallRuleOutcome;
+                typedef std::future<ModifyLLMWafToolCallRuleOutcome> ModifyLLMWafToolCallRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyLLMWafToolCallRuleRequest&, ModifyLLMWafToolCallRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLLMWafToolCallRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyModuleStatusResponse> ModifyModuleStatusOutcome;
                 typedef std::future<ModifyModuleStatusOutcome> ModifyModuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyModuleStatusRequest&, ModifyModuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleStatusAsyncHandler;
@@ -2220,6 +2240,15 @@ namespace TencentCloud
                 DescribeLLMContentSecCheckOutcomeCallable DescribeLLMContentSecCheckCallable(const Model::DescribeLLMContentSecCheckRequest& request);
 
                 /**
+                 *查询单实例、单日的按小时账单明细，包含账单预估总额、分项费用、分时趋势和分时明细
+                 * @param req DescribeLLMHourBillDetailRequest
+                 * @return DescribeLLMHourBillDetailOutcome
+                 */
+                DescribeLLMHourBillDetailOutcome DescribeLLMHourBillDetail(const Model::DescribeLLMHourBillDetailRequest &request);
+                void DescribeLLMHourBillDetailAsync(const Model::DescribeLLMHourBillDetailRequest& request, const DescribeLLMHourBillDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMHourBillDetailOutcomeCallable DescribeLLMHourBillDetailCallable(const Model::DescribeLLMHourBillDetailRequest& request);
+
+                /**
                  *查询关键词列表
                  * @param req DescribeLLMKeywordLibraryRequest
                  * @return DescribeLLMKeywordLibraryOutcome
@@ -2254,6 +2283,15 @@ namespace TencentCloud
                 DescribeLLMWafProtectRulesOutcome DescribeLLMWafProtectRules(const Model::DescribeLLMWafProtectRulesRequest &request);
                 void DescribeLLMWafProtectRulesAsync(const Model::DescribeLLMWafProtectRulesRequest& request, const DescribeLLMWafProtectRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLLMWafProtectRulesOutcomeCallable DescribeLLMWafProtectRulesCallable(const Model::DescribeLLMWafProtectRulesRequest& request);
+
+                /**
+                 *查询 Tool Call 规则
+                 * @param req DescribeLLMWafToolCallRulesRequest
+                 * @return DescribeLLMWafToolCallRulesOutcome
+                 */
+                DescribeLLMWafToolCallRulesOutcome DescribeLLMWafToolCallRules(const Model::DescribeLLMWafToolCallRulesRequest &request);
+                void DescribeLLMWafToolCallRulesAsync(const Model::DescribeLLMWafToolCallRulesRequest& request, const DescribeLLMWafToolCallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLLMWafToolCallRulesOutcomeCallable DescribeLLMWafToolCallRulesCallable(const Model::DescribeLLMWafToolCallRulesRequest& request);
 
                 /**
                  *本接口用于构建日志数量直方图
@@ -3089,6 +3127,15 @@ namespace TencentCloud
                 ModifyLLMKeywordLibraryOutcomeCallable ModifyLLMKeywordLibraryCallable(const Model::ModifyLLMKeywordLibraryRequest& request);
 
                 /**
+                 *llmwaf-sdk边界接入配置接口
+                 * @param req ModifyLLMSdkAccessRequest
+                 * @return ModifyLLMSdkAccessOutcome
+                 */
+                ModifyLLMSdkAccessOutcome ModifyLLMSdkAccess(const Model::ModifyLLMSdkAccessRequest &request);
+                void ModifyLLMSdkAccessAsync(const Model::ModifyLLMSdkAccessRequest& request, const ModifyLLMSdkAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMSdkAccessOutcomeCallable ModifyLLMSdkAccessCallable(const Model::ModifyLLMSdkAccessRequest& request);
+
+                /**
                  *修改大模型防护的模块开关状态，支持总开关及各子模块独立开关的开启/关闭操作。开启前需确保实例已购买大模型防护能力，未购买时开启操作会返回 AuthFailure.ErrCodeNoPurchased 错误。
                  * @param req ModifyLLMStatusRequest
                  * @return ModifyLLMStatusOutcome
@@ -3114,6 +3161,15 @@ namespace TencentCloud
                 ModifyLLMWafProtectRuleOutcome ModifyLLMWafProtectRule(const Model::ModifyLLMWafProtectRuleRequest &request);
                 void ModifyLLMWafProtectRuleAsync(const Model::ModifyLLMWafProtectRuleRequest& request, const ModifyLLMWafProtectRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLLMWafProtectRuleOutcomeCallable ModifyLLMWafProtectRuleCallable(const Model::ModifyLLMWafProtectRuleRequest& request);
+
+                /**
+                 *修改 Tool Call 规则
+                 * @param req ModifyLLMWafToolCallRuleRequest
+                 * @return ModifyLLMWafToolCallRuleOutcome
+                 */
+                ModifyLLMWafToolCallRuleOutcome ModifyLLMWafToolCallRule(const Model::ModifyLLMWafToolCallRuleRequest &request);
+                void ModifyLLMWafToolCallRuleAsync(const Model::ModifyLLMWafToolCallRuleRequest& request, const ModifyLLMWafToolCallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLLMWafToolCallRuleOutcomeCallable ModifyLLMWafToolCallRuleCallable(const Model::ModifyLLMWafToolCallRuleRequest& request);
 
                 /**
                  *设置某个domain下基础安全模块的开关

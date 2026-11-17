@@ -29,7 +29,8 @@ ListCatalogsRequest::ListCatalogsRequest() :
     m_typesHasBeenSet(false),
     m_currentWorkspaceOnlyHasBeenSet(false),
     m_fetchOptionHasBeenSet(false),
-    m_catalogSourcesHasBeenSet(false)
+    m_catalogSourcesHasBeenSet(false),
+    m_connectionIdHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,14 @@ string ListCatalogsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_connectionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_connectionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -225,6 +234,22 @@ void ListCatalogsRequest::SetCatalogSources(const vector<string>& _catalogSource
 bool ListCatalogsRequest::CatalogSourcesHasBeenSet() const
 {
     return m_catalogSourcesHasBeenSet;
+}
+
+string ListCatalogsRequest::GetConnectionId() const
+{
+    return m_connectionId;
+}
+
+void ListCatalogsRequest::SetConnectionId(const string& _connectionId)
+{
+    m_connectionId = _connectionId;
+    m_connectionIdHasBeenSet = true;
+}
+
+bool ListCatalogsRequest::ConnectionIdHasBeenSet() const
+{
+    return m_connectionIdHasBeenSet;
 }
 
 

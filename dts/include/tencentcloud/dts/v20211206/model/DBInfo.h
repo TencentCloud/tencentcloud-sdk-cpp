@@ -508,6 +508,27 @@ namespace TencentCloud
                      */
                     bool SetIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>MongoDB专用。分片标识（如&quot;shard01&quot;），仅NodeType=cluster时生效，用于区分分片集群中不同的mongod节点</p>
+                     * @return Shard <p>MongoDB专用。分片标识（如&quot;shard01&quot;），仅NodeType=cluster时生效，用于区分分片集群中不同的mongod节点</p>
+                     * 
+                     */
+                    std::string GetShard() const;
+
+                    /**
+                     * 设置<p>MongoDB专用。分片标识（如&quot;shard01&quot;），仅NodeType=cluster时生效，用于区分分片集群中不同的mongod节点</p>
+                     * @param _shard <p>MongoDB专用。分片标识（如&quot;shard01&quot;），仅NodeType=cluster时生效，用于区分分片集群中不同的mongod节点</p>
+                     * 
+                     */
+                    void SetShard(const std::string& _shard);
+
+                    /**
+                     * 判断参数 Shard 是否已赋值
+                     * @return Shard 是否已赋值
+                     * 
+                     */
+                    bool ShardHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,6 +662,12 @@ namespace TencentCloud
                      */
                     std::string m_setId;
                     bool m_setIdHasBeenSet;
+
+                    /**
+                     * <p>MongoDB专用。分片标识（如&quot;shard01&quot;），仅NodeType=cluster时生效，用于区分分片集群中不同的mongod节点</p>
+                     */
+                    std::string m_shard;
+                    bool m_shardHasBeenSet;
 
                 };
             }

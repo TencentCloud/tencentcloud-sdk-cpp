@@ -42,7 +42,8 @@ DBInfo::DBInfo() :
     m_tmpSecretKeyHasBeenSet(false),
     m_tmpTokenHasBeenSet(false),
     m_encryptConnHasBeenSet(false),
-    m_setIdHasBeenSet(false)
+    m_setIdHasBeenSet(false),
+    m_shardHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,16 @@ CoreInternalOutcome DBInfo::Deserialize(const rapidjson::Value &value)
         m_setIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Shard") && !value["Shard"].IsNull())
+    {
+        if (!value["Shard"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInfo.Shard` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shard = string(value["Shard"].GetString());
+        m_shardHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +463,14 @@ void DBInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "SetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_setId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Shard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shard.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -807,5 +826,21 @@ void DBInfo::SetSetId(const string& _setId)
 bool DBInfo::SetIdHasBeenSet() const
 {
     return m_setIdHasBeenSet;
+}
+
+string DBInfo::GetShard() const
+{
+    return m_shard;
+}
+
+void DBInfo::SetShard(const string& _shard)
+{
+    m_shard = _shard;
+    m_shardHasBeenSet = true;
+}
+
+bool DBInfo::ShardHasBeenSet() const
+{
+    return m_shardHasBeenSet;
 }
 

@@ -553,6 +553,27 @@ namespace TencentCloud
                      */
                     bool EnvInfosHasBeenSet() const;
 
+                    /**
+                     * 获取<p>前置加工任务源主题、目标主题说明</p>
+                     * @return Describe <p>前置加工任务源主题、目标主题说明</p>
+                     * 
+                     */
+                    std::string GetDescribe() const;
+
+                    /**
+                     * 设置<p>前置加工任务源主题、目标主题说明</p>
+                     * @param _describe <p>前置加工任务源主题、目标主题说明</p>
+                     * 
+                     */
+                    void SetDescribe(const std::string& _describe);
+
+                    /**
+                     * 判断参数 Describe 是否已赋值
+                     * @return Describe 是否已赋值
+                     * 
+                     */
+                    bool DescribeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -698,6 +719,12 @@ namespace TencentCloud
                      */
                     std::vector<EnvInfo> m_envInfos;
                     bool m_envInfosHasBeenSet;
+
+                    /**
+                     * <p>前置加工任务源主题、目标主题说明</p>
+                     */
+                    std::string m_describe;
+                    bool m_describeHasBeenSet;
 
                 };
             }

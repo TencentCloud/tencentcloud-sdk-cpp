@@ -167,6 +167,27 @@ namespace TencentCloud
                      */
                     bool MountOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>GooseFS FUSE，支持用户自定义配置，输入格式为“空格”分隔的参数名</p>
+                     * @return FuseOptions <p>GooseFS FUSE，支持用户自定义配置，输入格式为“空格”分隔的参数名</p>
+                     * 
+                     */
+                    std::string GetFuseOptions() const;
+
+                    /**
+                     * 设置<p>GooseFS FUSE，支持用户自定义配置，输入格式为“空格”分隔的参数名</p>
+                     * @param _fuseOptions <p>GooseFS FUSE，支持用户自定义配置，输入格式为“空格”分隔的参数名</p>
+                     * 
+                     */
+                    void SetFuseOptions(const std::string& _fuseOptions);
+
+                    /**
+                     * 判断参数 FuseOptions 是否已赋值
+                     * @return FuseOptions 是否已赋值
+                     * 
+                     */
+                    bool FuseOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +223,12 @@ namespace TencentCloud
                      */
                     std::string m_mountOptions;
                     bool m_mountOptionsHasBeenSet;
+
+                    /**
+                     * <p>GooseFS FUSE，支持用户自定义配置，输入格式为“空格”分隔的参数名</p>
+                     */
+                    std::string m_fuseOptions;
+                    bool m_fuseOptionsHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ SubmitExtractDocAgentJobRequest::SubmitExtractDocAgentJobRequest() :
     m_fileStartPageNumberHasBeenSet(false),
     m_fileEndPageNumberHasBeenSet(false),
     m_modelConfigHasBeenSet(false),
-    m_agentTypeHasBeenSet(false)
+    m_agentTypeHasBeenSet(false),
+    m_questionConfigMapHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string SubmitExtractDocAgentJobRequest::ToJsonString() const
         string key = "AgentType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_agentType, allocator);
+    }
+
+    if (m_questionConfigMapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuestionConfigMap";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_questionConfigMap.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +280,22 @@ void SubmitExtractDocAgentJobRequest::SetAgentType(const int64_t& _agentType)
 bool SubmitExtractDocAgentJobRequest::AgentTypeHasBeenSet() const
 {
     return m_agentTypeHasBeenSet;
+}
+
+string SubmitExtractDocAgentJobRequest::GetQuestionConfigMap() const
+{
+    return m_questionConfigMap;
+}
+
+void SubmitExtractDocAgentJobRequest::SetQuestionConfigMap(const string& _questionConfigMap)
+{
+    m_questionConfigMap = _questionConfigMap;
+    m_questionConfigMapHasBeenSet = true;
+}
+
+bool SubmitExtractDocAgentJobRequest::QuestionConfigMapHasBeenSet() const
+{
+    return m_questionConfigMapHasBeenSet;
 }
 
 

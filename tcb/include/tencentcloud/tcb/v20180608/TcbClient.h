@@ -129,6 +129,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeCurveDataResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeDatabaseACLResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvAccessControlRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeEnvAccessControlResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvAccountCircleRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvAccountCircleResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeEnvInfoRequest.h>
@@ -219,6 +221,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyEnvAccessControlRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyEnvAccessControlResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvExtraRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvExtraResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEnvPlanRequest.h>
@@ -452,6 +456,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatabaseACLResponse> DescribeDatabaseACLOutcome;
                 typedef std::future<DescribeDatabaseACLOutcome> DescribeDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeDatabaseACLRequest&, DescribeDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseACLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnvAccessControlResponse> DescribeEnvAccessControlOutcome;
+                typedef std::future<DescribeEnvAccessControlOutcome> DescribeEnvAccessControlOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeEnvAccessControlRequest&, DescribeEnvAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvAccessControlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnvAccountCircleResponse> DescribeEnvAccountCircleOutcome;
                 typedef std::future<DescribeEnvAccountCircleOutcome> DescribeEnvAccountCircleOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeEnvAccountCircleRequest&, DescribeEnvAccountCircleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvAccountCircleAsyncHandler;
@@ -587,6 +594,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEnvResponse> ModifyEnvOutcome;
                 typedef std::future<ModifyEnvOutcome> ModifyEnvOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyEnvRequest&, ModifyEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEnvAccessControlResponse> ModifyEnvAccessControlOutcome;
+                typedef std::future<ModifyEnvAccessControlOutcome> ModifyEnvAccessControlOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyEnvAccessControlRequest&, ModifyEnvAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvAccessControlAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEnvExtraResponse> ModifyEnvExtraOutcome;
                 typedef std::future<ModifyEnvExtraOutcome> ModifyEnvExtraOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyEnvExtraRequest&, ModifyEnvExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvExtraAsyncHandler;
@@ -1237,6 +1247,17 @@ namespace TencentCloud
                 DescribeDatabaseACLOutcomeCallable DescribeDatabaseACLCallable(const Model::DescribeDatabaseACLRequest& request);
 
                 /**
+                 *查询云开发域名访问限制配置，返回指定环境下公网、VPC、办公网三种来源的当前访问策略
+（1）可以通过控制台调用查询域名访问控制。响应  Current 返回各来源（PUBLIC/VPC/WOA）当前生效的配置
+（2）不产生写副作用
+                 * @param req DescribeEnvAccessControlRequest
+                 * @return DescribeEnvAccessControlOutcome
+                 */
+                DescribeEnvAccessControlOutcome DescribeEnvAccessControl(const Model::DescribeEnvAccessControlRequest &request);
+                void DescribeEnvAccessControlAsync(const Model::DescribeEnvAccessControlRequest& request, const DescribeEnvAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvAccessControlOutcomeCallable DescribeEnvAccessControlCallable(const Model::DescribeEnvAccessControlRequest& request);
+
+                /**
                  *查询环境计费周期。
 云开发环境的资源点都是按月结算的，每个月都有一定的抵扣额度。
 
@@ -1712,6 +1733,19 @@ Id、Secret、CreatedAt、Meta 等字段在该接口中不可修改，当客户�
                 ModifyEnvOutcome ModifyEnv(const Model::ModifyEnvRequest &request);
                 void ModifyEnvAsync(const Model::ModifyEnvRequest& request, const ModifyEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEnvOutcomeCallable ModifyEnvCallable(const Model::ModifyEnvRequest& request);
+
+                /**
+                 *云开发域名访问限制配置
+（1）影响指定环境下域名来源访问策略，包含公网与 VPC 白名单
+（2）关闭公网访问后，云开发提供的默认域名在公网访问场景下返回403
+（3）可以通过配置 VPC 白名单指定放通特定 VPC 来源的请求
+（4）可以通过云开发控制台调用修改访问配置，修改后可通过查询接口核对生效配置
+                 * @param req ModifyEnvAccessControlRequest
+                 * @return ModifyEnvAccessControlOutcome
+                 */
+                ModifyEnvAccessControlOutcome ModifyEnvAccessControl(const Model::ModifyEnvAccessControlRequest &request);
+                void ModifyEnvAccessControlAsync(const Model::ModifyEnvAccessControlRequest& request, const ModifyEnvAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEnvAccessControlOutcomeCallable ModifyEnvAccessControlCallable(const Model::ModifyEnvAccessControlRequest& request);
 
                 /**
                  *修改环境额外配置

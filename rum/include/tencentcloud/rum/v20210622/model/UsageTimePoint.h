@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool ReportVolumeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>聚合桶时间。与旧字段 Time 同源，保留 Time 及其格式；按查询服务运行时区输出。</p><p>参数格式：RFC3339，带数值时区偏移，例如 2026-10-01T00:00:00+08:00。</p>
+                     * @return Datetime <p>聚合桶时间。与旧字段 Time 同源，保留 Time 及其格式；按查询服务运行时区输出。</p><p>参数格式：RFC3339，带数值时区偏移，例如 2026-10-01T00:00:00+08:00。</p>
+                     * 
+                     */
+                    std::string GetDatetime() const;
+
+                    /**
+                     * 设置<p>聚合桶时间。与旧字段 Time 同源，保留 Time 及其格式；按查询服务运行时区输出。</p><p>参数格式：RFC3339，带数值时区偏移，例如 2026-10-01T00:00:00+08:00。</p>
+                     * @param _datetime <p>聚合桶时间。与旧字段 Time 同源，保留 Time 及其格式；按查询服务运行时区输出。</p><p>参数格式：RFC3339，带数值时区偏移，例如 2026-10-01T00:00:00+08:00。</p>
+                     * 
+                     */
+                    void SetDatetime(const std::string& _datetime);
+
+                    /**
+                     * 判断参数 Datetime 是否已赋值
+                     * @return Datetime 是否已赋值
+                     * 
+                     */
+                    bool DatetimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     int64_t m_reportVolume;
                     bool m_reportVolumeHasBeenSet;
+
+                    /**
+                     * <p>聚合桶时间。与旧字段 Time 同源，保留 Time 及其格式；按查询服务运行时区输出。</p><p>参数格式：RFC3339，带数值时区偏移，例如 2026-10-01T00:00:00+08:00。</p>
+                     */
+                    std::string m_datetime;
+                    bool m_datetimeHasBeenSet;
 
                 };
             }

@@ -5040,6 +5040,56 @@ VodClient::DescribeAigcUsageDataOutcomeCallable VodClient::DescribeAigcUsageData
     return prom->get_future();
 }
 
+VodClient::DescribeAigcWhitelistOutcome VodClient::DescribeAigcWhitelist(const DescribeAigcWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAigcWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAigcWhitelistResponse rsp = DescribeAigcWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAigcWhitelistOutcome(rsp);
+        else
+            return DescribeAigcWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAigcWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeAigcWhitelistAsync(const DescribeAigcWhitelistRequest& request, const DescribeAigcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAigcWhitelistRequest&;
+    using Resp = DescribeAigcWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAigcWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::DescribeAigcWhitelistOutcomeCallable VodClient::DescribeAigcWhitelistCallable(const DescribeAigcWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAigcWhitelistOutcome>>();
+    DescribeAigcWhitelistAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const DescribeAigcWhitelistRequest&,
+        DescribeAigcWhitelistOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 VodClient::DescribeAllClassOutcome VodClient::DescribeAllClass(const DescribeAllClassRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAllClass");
@@ -11482,6 +11532,56 @@ VodClient::SearchMediaBySemanticsOutcomeCallable VodClient::SearchMediaBySemanti
         const VodClient*,
         const SearchMediaBySemanticsRequest&,
         SearchMediaBySemanticsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+VodClient::SetAigcWhitelistOutcome VodClient::SetAigcWhitelist(const SetAigcWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetAigcWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetAigcWhitelistResponse rsp = SetAigcWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetAigcWhitelistOutcome(rsp);
+        else
+            return SetAigcWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return SetAigcWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::SetAigcWhitelistAsync(const SetAigcWhitelistRequest& request, const SetAigcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const SetAigcWhitelistRequest&;
+    using Resp = SetAigcWhitelistResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "SetAigcWhitelist", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+VodClient::SetAigcWhitelistOutcomeCallable VodClient::SetAigcWhitelistCallable(const SetAigcWhitelistRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<SetAigcWhitelistOutcome>>();
+    SetAigcWhitelistAsync(
+    request,
+    [prom](
+        const VodClient*,
+        const SetAigcWhitelistRequest&,
+        SetAigcWhitelistOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云原生API网关实例ID。
-                     * @return GatewayId 云原生API网关实例ID。
+                     * 获取<p>云原生API网关实例ID。</p>
+                     * @return GatewayId <p>云原生API网关实例ID。</p>
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
-                     * 设置云原生API网关实例ID。
-                     * @param _gatewayId 云原生API网关实例ID。
+                     * 设置<p>云原生API网关实例ID。</p>
+                     * @param _gatewayId <p>云原生API网关实例ID。</p>
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取分组id
-                     * @return GroupId 分组id
+                     * 获取<p>分组id</p>
+                     * @return GroupId <p>分组id</p>
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置分组id
-                     * @param _groupId 分组id
+                     * 设置<p>分组id</p>
+                     * @param _groupId <p>分组id</p>
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -86,23 +86,15 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取网络类型： 
-- Open 公网
-- Internal 内网	（暂不支持）
-                     * @return NetworkType 网络类型： 
-- Open 公网
-- Internal 内网	（暂不支持）
+                     * 获取<p>网络类型： </p><ul><li>Open 公网</li><li>Internal 内网    （暂不支持）</li></ul>
+                     * @return NetworkType <p>网络类型： </p><ul><li>Open 公网</li><li>Internal 内网    （暂不支持）</li></ul>
                      * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置网络类型： 
-- Open 公网
-- Internal 内网	（暂不支持）
-                     * @param _networkType 网络类型： 
-- Open 公网
-- Internal 内网	（暂不支持）
+                     * 设置<p>网络类型： </p><ul><li>Open 公网</li><li>Internal 内网    （暂不支持）</li></ul>
+                     * @param _networkType <p>网络类型： </p><ul><li>Open 公网</li><li>Internal 内网    （暂不支持）</li></ul>
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -115,15 +107,15 @@ namespace TencentCloud
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取ip地址
-                     * @return Vip ip地址
+                     * 获取<p>ip地址</p>
+                     * @return Vip <p>ip地址</p>
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置ip地址
-                     * @param _vip ip地址
+                     * 设置<p>ip地址</p>
+                     * @param _vip <p>ip地址</p>
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -136,15 +128,15 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取访问控制策略
-                     * @return AccessControl 访问控制策略
+                     * 获取<p>访问控制策略</p>
+                     * @return AccessControl <p>访问控制策略</p>
                      * 
                      */
                     NetworkAccessControl GetAccessControl() const;
 
                     /**
-                     * 设置访问控制策略
-                     * @param _accessControl 访问控制策略
+                     * 设置<p>访问控制策略</p>
+                     * @param _accessControl <p>访问控制策略</p>
                      * 
                      */
                     void SetAccessControl(const NetworkAccessControl& _accessControl);
@@ -156,39 +148,91 @@ namespace TencentCloud
                      */
                     bool AccessControlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>GlobalConfig / Custom；不传默认 Custom</p>
+                     * @return AccessControlSource <p>GlobalConfig / Custom；不传默认 Custom</p>
+                     * 
+                     */
+                    std::string GetAccessControlSource() const;
+
+                    /**
+                     * 设置<p>GlobalConfig / Custom；不传默认 Custom</p>
+                     * @param _accessControlSource <p>GlobalConfig / Custom；不传默认 Custom</p>
+                     * 
+                     */
+                    void SetAccessControlSource(const std::string& _accessControlSource);
+
+                    /**
+                     * 判断参数 AccessControlSource 是否已赋值
+                     * @return AccessControlSource 是否已赋值
+                     * 
+                     */
+                    bool AccessControlSourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>全局配置ID</p>
+                     * @return GlobalConfigId <p>全局配置ID</p>
+                     * 
+                     */
+                    std::string GetGlobalConfigId() const;
+
+                    /**
+                     * 设置<p>全局配置ID</p>
+                     * @param _globalConfigId <p>全局配置ID</p>
+                     * 
+                     */
+                    void SetGlobalConfigId(const std::string& _globalConfigId);
+
+                    /**
+                     * 判断参数 GlobalConfigId 是否已赋值
+                     * @return GlobalConfigId 是否已赋值
+                     * 
+                     */
+                    bool GlobalConfigIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 云原生API网关实例ID。
+                     * <p>云原生API网关实例ID。</p>
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 分组id
+                     * <p>分组id</p>
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 网络类型： 
-- Open 公网
-- Internal 内网	（暂不支持）
+                     * <p>网络类型： </p><ul><li>Open 公网</li><li>Internal 内网    （暂不支持）</li></ul>
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * ip地址
+                     * <p>ip地址</p>
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 访问控制策略
+                     * <p>访问控制策略</p>
                      */
                     NetworkAccessControl m_accessControl;
                     bool m_accessControlHasBeenSet;
+
+                    /**
+                     * <p>GlobalConfig / Custom；不传默认 Custom</p>
+                     */
+                    std::string m_accessControlSource;
+                    bool m_accessControlSourceHasBeenSet;
+
+                    /**
+                     * <p>全局配置ID</p>
+                     */
+                    std::string m_globalConfigId;
+                    bool m_globalConfigIdHasBeenSet;
 
                 };
             }

@@ -26,6 +26,7 @@
 #include <tencentcloud/trro/v20220325/model/ProcessParams.h>
 #include <tencentcloud/trro/v20220325/model/OutputStorage.h>
 #include <tencentcloud/trro/v20220325/model/CallbackInfo.h>
+#include <tencentcloud/trro/v20220325/model/ExtraSourceInfo.h>
 
 
 namespace TencentCloud
@@ -173,6 +174,27 @@ namespace TencentCloud
                      */
                     bool CallbackInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>伴生输入文件列表，全批共用一份。与主视频同桶同凭证，Path 相对每个处理项各自的主视频目录解析，支持 ${FileName} 占位符。最多 8 条；HTTP 源（InputType=2）不支持。</p>
+                     * @return ExtraSources <p>伴生输入文件列表，全批共用一份。与主视频同桶同凭证，Path 相对每个处理项各自的主视频目录解析，支持 ${FileName} 占位符。最多 8 条；HTTP 源（InputType=2）不支持。</p>
+                     * 
+                     */
+                    std::vector<ExtraSourceInfo> GetExtraSources() const;
+
+                    /**
+                     * 设置<p>伴生输入文件列表，全批共用一份。与主视频同桶同凭证，Path 相对每个处理项各自的主视频目录解析，支持 ${FileName} 占位符。最多 8 条；HTTP 源（InputType=2）不支持。</p>
+                     * @param _extraSources <p>伴生输入文件列表，全批共用一份。与主视频同桶同凭证，Path 相对每个处理项各自的主视频目录解析，支持 ${FileName} 占位符。最多 8 条；HTTP 源（InputType=2）不支持。</p>
+                     * 
+                     */
+                    void SetExtraSources(const std::vector<ExtraSourceInfo>& _extraSources);
+
+                    /**
+                     * 判断参数 ExtraSources 是否已赋值
+                     * @return ExtraSources 是否已赋值
+                     * 
+                     */
+                    bool ExtraSourcesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +232,12 @@ namespace TencentCloud
                      */
                     CallbackInfo m_callbackInfo;
                     bool m_callbackInfoHasBeenSet;
+
+                    /**
+                     * <p>伴生输入文件列表，全批共用一份。与主视频同桶同凭证，Path 相对每个处理项各自的主视频目录解析，支持 ${FileName} 占位符。最多 8 条；HTTP 源（InputType=2）不支持。</p>
+                     */
+                    std::vector<ExtraSourceInfo> m_extraSources;
+                    bool m_extraSourcesHasBeenSet;
 
                 };
             }

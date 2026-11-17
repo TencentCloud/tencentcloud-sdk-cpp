@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取规则状态
-                     * @return Status 规则状态
+                     * 获取规则状态，0表示关闭，1表示开启
+                     * @return Status 规则状态，0表示关闭，1表示开启
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置规则状态
-                     * @param _status 规则状态
+                     * 设置规则状态，0表示关闭，1表示开启
+                     * @param _status 规则状态，0表示关闭，1表示开启
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -247,7 +247,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 规则状态
+                     * 规则状态，0表示关闭，1表示开启
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

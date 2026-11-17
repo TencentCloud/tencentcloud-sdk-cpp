@@ -31,7 +31,15 @@ RateLimitOption::RateLimitOption() :
     m_defaultLoadRpsHasBeenSet(false),
     m_currentSinkerThreadHasBeenSet(false),
     m_defaultSinkerThreadHasBeenSet(false),
-    m_hasUserSetRateLimitHasBeenSet(false)
+    m_hasUserSetRateLimitHasBeenSet(false),
+    m_defaultDumpBpsHasBeenSet(false),
+    m_currentSinkerRpsHasBeenSet(false),
+    m_defaultSinkerRpsHasBeenSet(false),
+    m_currentLoadBpsHasBeenSet(false),
+    m_currentDstShardCountHasBeenSet(false),
+    m_currentDumpBpsHasBeenSet(false),
+    m_currentSinkerBpsHasBeenSet(false),
+    m_defaultSinkerBpsHasBeenSet(false)
 {
 }
 
@@ -150,6 +158,86 @@ CoreInternalOutcome RateLimitOption::Deserialize(const rapidjson::Value &value)
         m_hasUserSetRateLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultDumpBps") && !value["DefaultDumpBps"].IsNull())
+    {
+        if (!value["DefaultDumpBps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitOption.DefaultDumpBps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultDumpBps = value["DefaultDumpBps"].GetInt64();
+        m_defaultDumpBpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurrentSinkerRps") && !value["CurrentSinkerRps"].IsNull())
+    {
+        if (!value["CurrentSinkerRps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitOption.CurrentSinkerRps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentSinkerRps = value["CurrentSinkerRps"].GetInt64();
+        m_currentSinkerRpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultSinkerRps") && !value["DefaultSinkerRps"].IsNull())
+    {
+        if (!value["DefaultSinkerRps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitOption.DefaultSinkerRps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultSinkerRps = value["DefaultSinkerRps"].GetInt64();
+        m_defaultSinkerRpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurrentLoadBps") && !value["CurrentLoadBps"].IsNull())
+    {
+        if (!value["CurrentLoadBps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitOption.CurrentLoadBps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentLoadBps = value["CurrentLoadBps"].GetInt64();
+        m_currentLoadBpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurrentDstShardCount") && !value["CurrentDstShardCount"].IsNull())
+    {
+        if (!value["CurrentDstShardCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitOption.CurrentDstShardCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentDstShardCount = value["CurrentDstShardCount"].GetInt64();
+        m_currentDstShardCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurrentDumpBps") && !value["CurrentDumpBps"].IsNull())
+    {
+        if (!value["CurrentDumpBps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitOption.CurrentDumpBps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentDumpBps = value["CurrentDumpBps"].GetInt64();
+        m_currentDumpBpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurrentSinkerBps") && !value["CurrentSinkerBps"].IsNull())
+    {
+        if (!value["CurrentSinkerBps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitOption.CurrentSinkerBps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentSinkerBps = value["CurrentSinkerBps"].GetInt64();
+        m_currentSinkerBpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultSinkerBps") && !value["DefaultSinkerBps"].IsNull())
+    {
+        if (!value["DefaultSinkerBps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitOption.DefaultSinkerBps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultSinkerBps = value["DefaultSinkerBps"].GetInt64();
+        m_defaultSinkerBpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +331,70 @@ void RateLimitOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "HasUserSetRateLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hasUserSetRateLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultDumpBpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultDumpBps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultDumpBps, allocator);
+    }
+
+    if (m_currentSinkerRpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentSinkerRps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentSinkerRps, allocator);
+    }
+
+    if (m_defaultSinkerRpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultSinkerRps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultSinkerRps, allocator);
+    }
+
+    if (m_currentLoadBpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentLoadBps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentLoadBps, allocator);
+    }
+
+    if (m_currentDstShardCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentDstShardCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentDstShardCount, allocator);
+    }
+
+    if (m_currentDumpBpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentDumpBps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentDumpBps, allocator);
+    }
+
+    if (m_currentSinkerBpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentSinkerBps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentSinkerBps, allocator);
+    }
+
+    if (m_defaultSinkerBpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultSinkerBps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultSinkerBps, allocator);
     }
 
 }
@@ -422,5 +574,133 @@ void RateLimitOption::SetHasUserSetRateLimit(const string& _hasUserSetRateLimit)
 bool RateLimitOption::HasUserSetRateLimitHasBeenSet() const
 {
     return m_hasUserSetRateLimitHasBeenSet;
+}
+
+int64_t RateLimitOption::GetDefaultDumpBps() const
+{
+    return m_defaultDumpBps;
+}
+
+void RateLimitOption::SetDefaultDumpBps(const int64_t& _defaultDumpBps)
+{
+    m_defaultDumpBps = _defaultDumpBps;
+    m_defaultDumpBpsHasBeenSet = true;
+}
+
+bool RateLimitOption::DefaultDumpBpsHasBeenSet() const
+{
+    return m_defaultDumpBpsHasBeenSet;
+}
+
+int64_t RateLimitOption::GetCurrentSinkerRps() const
+{
+    return m_currentSinkerRps;
+}
+
+void RateLimitOption::SetCurrentSinkerRps(const int64_t& _currentSinkerRps)
+{
+    m_currentSinkerRps = _currentSinkerRps;
+    m_currentSinkerRpsHasBeenSet = true;
+}
+
+bool RateLimitOption::CurrentSinkerRpsHasBeenSet() const
+{
+    return m_currentSinkerRpsHasBeenSet;
+}
+
+int64_t RateLimitOption::GetDefaultSinkerRps() const
+{
+    return m_defaultSinkerRps;
+}
+
+void RateLimitOption::SetDefaultSinkerRps(const int64_t& _defaultSinkerRps)
+{
+    m_defaultSinkerRps = _defaultSinkerRps;
+    m_defaultSinkerRpsHasBeenSet = true;
+}
+
+bool RateLimitOption::DefaultSinkerRpsHasBeenSet() const
+{
+    return m_defaultSinkerRpsHasBeenSet;
+}
+
+int64_t RateLimitOption::GetCurrentLoadBps() const
+{
+    return m_currentLoadBps;
+}
+
+void RateLimitOption::SetCurrentLoadBps(const int64_t& _currentLoadBps)
+{
+    m_currentLoadBps = _currentLoadBps;
+    m_currentLoadBpsHasBeenSet = true;
+}
+
+bool RateLimitOption::CurrentLoadBpsHasBeenSet() const
+{
+    return m_currentLoadBpsHasBeenSet;
+}
+
+int64_t RateLimitOption::GetCurrentDstShardCount() const
+{
+    return m_currentDstShardCount;
+}
+
+void RateLimitOption::SetCurrentDstShardCount(const int64_t& _currentDstShardCount)
+{
+    m_currentDstShardCount = _currentDstShardCount;
+    m_currentDstShardCountHasBeenSet = true;
+}
+
+bool RateLimitOption::CurrentDstShardCountHasBeenSet() const
+{
+    return m_currentDstShardCountHasBeenSet;
+}
+
+int64_t RateLimitOption::GetCurrentDumpBps() const
+{
+    return m_currentDumpBps;
+}
+
+void RateLimitOption::SetCurrentDumpBps(const int64_t& _currentDumpBps)
+{
+    m_currentDumpBps = _currentDumpBps;
+    m_currentDumpBpsHasBeenSet = true;
+}
+
+bool RateLimitOption::CurrentDumpBpsHasBeenSet() const
+{
+    return m_currentDumpBpsHasBeenSet;
+}
+
+int64_t RateLimitOption::GetCurrentSinkerBps() const
+{
+    return m_currentSinkerBps;
+}
+
+void RateLimitOption::SetCurrentSinkerBps(const int64_t& _currentSinkerBps)
+{
+    m_currentSinkerBps = _currentSinkerBps;
+    m_currentSinkerBpsHasBeenSet = true;
+}
+
+bool RateLimitOption::CurrentSinkerBpsHasBeenSet() const
+{
+    return m_currentSinkerBpsHasBeenSet;
+}
+
+int64_t RateLimitOption::GetDefaultSinkerBps() const
+{
+    return m_defaultSinkerBps;
+}
+
+void RateLimitOption::SetDefaultSinkerBps(const int64_t& _defaultSinkerBps)
+{
+    m_defaultSinkerBps = _defaultSinkerBps;
+    m_defaultSinkerBpsHasBeenSet = true;
+}
+
+bool RateLimitOption::DefaultSinkerBpsHasBeenSet() const
+{
+    return m_defaultSinkerBpsHasBeenSet;
 }
 

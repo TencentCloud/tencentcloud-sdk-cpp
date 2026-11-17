@@ -44,7 +44,8 @@ DataTransformTaskInfo::DataTransformTaskInfo() :
     m_processFromTimestampHasBeenSet(false),
     m_processToTimestampHasBeenSet(false),
     m_dataTransformSqlDataSourcesHasBeenSet(false),
-    m_envInfosHasBeenSet(false)
+    m_envInfosHasBeenSet(false),
+    m_describeHasBeenSet(false)
 {
 }
 
@@ -323,6 +324,16 @@ CoreInternalOutcome DataTransformTaskInfo::Deserialize(const rapidjson::Value &v
         m_envInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("Describe") && !value["Describe"].IsNull())
+    {
+        if (!value["Describe"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.Describe` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_describe = string(value["Describe"].GetString());
+        m_describeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -541,6 +552,14 @@ void DataTransformTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_describeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Describe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_describe.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -928,5 +947,21 @@ void DataTransformTaskInfo::SetEnvInfos(const vector<EnvInfo>& _envInfos)
 bool DataTransformTaskInfo::EnvInfosHasBeenSet() const
 {
     return m_envInfosHasBeenSet;
+}
+
+string DataTransformTaskInfo::GetDescribe() const
+{
+    return m_describe;
+}
+
+void DataTransformTaskInfo::SetDescribe(const string& _describe)
+{
+    m_describe = _describe;
+    m_describeHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::DescribeHasBeenSet() const
+{
+    return m_describeHasBeenSet;
 }
 

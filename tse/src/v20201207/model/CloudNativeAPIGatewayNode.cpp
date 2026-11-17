@@ -29,7 +29,8 @@ CloudNativeAPIGatewayNode::CloudNativeAPIGatewayNode() :
     m_groupNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_weightHasBeenSet(false),
-    m_isDefaultWeightHasBeenSet(false)
+    m_isDefaultWeightHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome CloudNativeAPIGatewayNode::Deserialize(const rapidjson::Valu
         m_isDefaultWeightHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeType") && !value["NodeType"].IsNull())
+    {
+        if (!value["NodeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayNode.NodeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeType = string(value["NodeType"].GetString());
+        m_nodeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void CloudNativeAPIGatewayNode::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "IsDefaultWeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDefaultWeight, allocator);
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void CloudNativeAPIGatewayNode::SetIsDefaultWeight(const bool& _isDefaultWeight)
 bool CloudNativeAPIGatewayNode::IsDefaultWeightHasBeenSet() const
 {
     return m_isDefaultWeightHasBeenSet;
+}
+
+string CloudNativeAPIGatewayNode::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void CloudNativeAPIGatewayNode::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayNode::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
 }
 

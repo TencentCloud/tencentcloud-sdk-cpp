@@ -4990,6 +4990,56 @@ IotexplorerClient::DescribeDeviceBindGatewayOutcomeCallable IotexplorerClient::D
     return prom->get_future();
 }
 
+IotexplorerClient::DescribeDeviceCloudStoragePackagesOutcome IotexplorerClient::DescribeDeviceCloudStoragePackages(const DescribeDeviceCloudStoragePackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceCloudStoragePackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceCloudStoragePackagesResponse rsp = DescribeDeviceCloudStoragePackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceCloudStoragePackagesOutcome(rsp);
+        else
+            return DescribeDeviceCloudStoragePackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceCloudStoragePackagesOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeDeviceCloudStoragePackagesAsync(const DescribeDeviceCloudStoragePackagesRequest& request, const DescribeDeviceCloudStoragePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeDeviceCloudStoragePackagesRequest&;
+    using Resp = DescribeDeviceCloudStoragePackagesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeDeviceCloudStoragePackages", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IotexplorerClient::DescribeDeviceCloudStoragePackagesOutcomeCallable IotexplorerClient::DescribeDeviceCloudStoragePackagesCallable(const DescribeDeviceCloudStoragePackagesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeDeviceCloudStoragePackagesOutcome>>();
+    DescribeDeviceCloudStoragePackagesAsync(
+    request,
+    [prom](
+        const IotexplorerClient*,
+        const DescribeDeviceCloudStoragePackagesRequest&,
+        DescribeDeviceCloudStoragePackagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IotexplorerClient::DescribeDeviceDataOutcome IotexplorerClient::DescribeDeviceData(const DescribeDeviceDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDeviceData");

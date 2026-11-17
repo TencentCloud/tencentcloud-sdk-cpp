@@ -23,7 +23,10 @@ using namespace std;
 KBCapacity::KBCapacity() :
     m_maxCharSizeHasBeenSet(false),
     m_overCharSizeHasBeenSet(false),
-    m_usedCharSizeHasBeenSet(false)
+    m_usedCharSizeHasBeenSet(false),
+    m_characterSizeHasBeenSet(false),
+    m_byteCapacityHasBeenSet(false),
+    m_capacityStatusHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,50 @@ CoreInternalOutcome KBCapacity::Deserialize(const rapidjson::Value &value)
         m_usedCharSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("CharacterSize") && !value["CharacterSize"].IsNull())
+    {
+        if (!value["CharacterSize"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KBCapacity.CharacterSize` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_characterSize.Deserialize(value["CharacterSize"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_characterSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ByteCapacity") && !value["ByteCapacity"].IsNull())
+    {
+        if (!value["ByteCapacity"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KBCapacity.ByteCapacity` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_byteCapacity.Deserialize(value["ByteCapacity"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_byteCapacityHasBeenSet = true;
+    }
+
+    if (value.HasMember("CapacityStatus") && !value["CapacityStatus"].IsNull())
+    {
+        if (!value["CapacityStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KBCapacity.CapacityStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_capacityStatus = value["CapacityStatus"].GetInt64();
+        m_capacityStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +138,32 @@ void KBCapacity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "UsedCharSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_usedCharSize.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_characterSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CharacterSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_characterSize.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_byteCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ByteCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_byteCapacity.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_capacityStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CapacityStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_capacityStatus, allocator);
     }
 
 }
@@ -142,5 +215,53 @@ void KBCapacity::SetUsedCharSize(const string& _usedCharSize)
 bool KBCapacity::UsedCharSizeHasBeenSet() const
 {
     return m_usedCharSizeHasBeenSet;
+}
+
+CharacterSize KBCapacity::GetCharacterSize() const
+{
+    return m_characterSize;
+}
+
+void KBCapacity::SetCharacterSize(const CharacterSize& _characterSize)
+{
+    m_characterSize = _characterSize;
+    m_characterSizeHasBeenSet = true;
+}
+
+bool KBCapacity::CharacterSizeHasBeenSet() const
+{
+    return m_characterSizeHasBeenSet;
+}
+
+ByteCapacity KBCapacity::GetByteCapacity() const
+{
+    return m_byteCapacity;
+}
+
+void KBCapacity::SetByteCapacity(const ByteCapacity& _byteCapacity)
+{
+    m_byteCapacity = _byteCapacity;
+    m_byteCapacityHasBeenSet = true;
+}
+
+bool KBCapacity::ByteCapacityHasBeenSet() const
+{
+    return m_byteCapacityHasBeenSet;
+}
+
+int64_t KBCapacity::GetCapacityStatus() const
+{
+    return m_capacityStatus;
+}
+
+void KBCapacity::SetCapacityStatus(const int64_t& _capacityStatus)
+{
+    m_capacityStatus = _capacityStatus;
+    m_capacityStatusHasBeenSet = true;
+}
+
+bool KBCapacity::CapacityStatusHasBeenSet() const
+{
+    return m_capacityStatusHasBeenSet;
 }
 

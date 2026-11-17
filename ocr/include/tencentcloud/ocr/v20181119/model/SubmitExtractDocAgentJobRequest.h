@@ -232,6 +232,27 @@ namespace TencentCloud
                      */
                     bool AgentTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>输出配置扩展，当key对应为1表示开启配置开关。</p>
+                     * @return QuestionConfigMap <p>输出配置扩展，当key对应为1表示开启配置开关。</p>
+                     * 
+                     */
+                    std::string GetQuestionConfigMap() const;
+
+                    /**
+                     * 设置<p>输出配置扩展，当key对应为1表示开启配置开关。</p>
+                     * @param _questionConfigMap <p>输出配置扩展，当key对应为1表示开启配置开关。</p>
+                     * 
+                     */
+                    void SetQuestionConfigMap(const std::string& _questionConfigMap);
+
+                    /**
+                     * 判断参数 QuestionConfigMap 是否已赋值
+                     * @return QuestionConfigMap 是否已赋值
+                     * 
+                     */
+                    bool QuestionConfigMapHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +308,12 @@ namespace TencentCloud
                      */
                     int64_t m_agentType;
                     bool m_agentTypeHasBeenSet;
+
+                    /**
+                     * <p>输出配置扩展，当key对应为1表示开启配置开关。</p>
+                     */
+                    std::string m_questionConfigMap;
+                    bool m_questionConfigMapHasBeenSet;
 
                 };
             }

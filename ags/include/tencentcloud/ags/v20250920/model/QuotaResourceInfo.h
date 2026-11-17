@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool MemoryGiBHasBeenSet() const;
 
+                    /**
+                     * 获取<p>最大镜像预热并发处理数量</p><p>单位：个</p>
+                     * @return PreCacheImageConcurrency <p>最大镜像预热并发处理数量</p><p>单位：个</p>
+                     * 
+                     */
+                    int64_t GetPreCacheImageConcurrency() const;
+
+                    /**
+                     * 设置<p>最大镜像预热并发处理数量</p><p>单位：个</p>
+                     * @param _preCacheImageConcurrency <p>最大镜像预热并发处理数量</p><p>单位：个</p>
+                     * 
+                     */
+                    void SetPreCacheImageConcurrency(const int64_t& _preCacheImageConcurrency);
+
+                    /**
+                     * 判断参数 PreCacheImageConcurrency 是否已赋值
+                     * @return PreCacheImageConcurrency 是否已赋值
+                     * 
+                     */
+                    bool PreCacheImageConcurrencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     double m_memoryGiB;
                     bool m_memoryGiBHasBeenSet;
+
+                    /**
+                     * <p>最大镜像预热并发处理数量</p><p>单位：个</p>
+                     */
+                    int64_t m_preCacheImageConcurrency;
+                    bool m_preCacheImageConcurrencyHasBeenSet;
 
                 };
             }

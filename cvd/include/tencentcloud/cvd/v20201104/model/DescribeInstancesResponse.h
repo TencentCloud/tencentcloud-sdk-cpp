@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回查询到的所有实例信息
+                     * 获取<p>返回查询到的所有实例信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceList 返回查询到的所有实例信息
+                     * @return InstanceList <p>返回查询到的所有实例信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool InstanceListHasBeenSet() const;
 
                     /**
-                     * 获取返回当前查询到的实例总数
+                     * 获取<p>返回当前查询到的实例总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 返回当前查询到的实例总数
+                     * @return Total <p>返回当前查询到的实例总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回查询到的所有实例信息
+                     * <p>返回查询到的所有实例信息</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceInfo> m_instanceList;
                     bool m_instanceListHasBeenSet;
 
                     /**
-                     * 返回当前查询到的实例总数
+                     * <p>返回当前查询到的实例总数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;

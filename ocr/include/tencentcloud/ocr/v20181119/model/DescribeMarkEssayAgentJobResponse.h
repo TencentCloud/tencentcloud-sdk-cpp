@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/MarkEssaySuggestions.h>
+#include <tencentcloud/ocr/v20181119/model/QuestionInfo.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,48 @@ namespace TencentCloud
                      */
                     bool JobStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>支持题目结构化、批改场景的结构。AgentType为1、2都按照这个结构返回</p>
+                     * @return QuestionInfo <p>支持题目结构化、批改场景的结构。AgentType为1、2都按照这个结构返回</p>
+                     * 
+                     */
+                    std::vector<QuestionInfo> GetQuestionInfo() const;
+
+                    /**
+                     * 判断参数 QuestionInfo 是否已赋值
+                     * @return QuestionInfo 是否已赋值
+                     * 
+                     */
+                    bool QuestionInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>定制的json结构字符串，主要用于快速定制输出的agent输出结构。推荐用于POC场景</p>
+                     * @return AgentResultJson <p>定制的json结构字符串，主要用于快速定制输出的agent输出结构。推荐用于POC场景</p>
+                     * 
+                     */
+                    std::string GetAgentResultJson() const;
+
+                    /**
+                     * 判断参数 AgentResultJson 是否已赋值
+                     * @return AgentResultJson 是否已赋值
+                     * 
+                     */
+                    bool AgentResultJsonHasBeenSet() const;
+
+                    /**
+                     * 获取<p>扩展字段</p>
+                     * @return ThoughtContent <p>扩展字段</p>
+                     * 
+                     */
+                    std::string GetThoughtContent() const;
+
+                    /**
+                     * 判断参数 ThoughtContent 是否已赋值
+                     * @return ThoughtContent 是否已赋值
+                     * 
+                     */
+                    bool ThoughtContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +188,24 @@ namespace TencentCloud
                      */
                     std::string m_jobStatus;
                     bool m_jobStatusHasBeenSet;
+
+                    /**
+                     * <p>支持题目结构化、批改场景的结构。AgentType为1、2都按照这个结构返回</p>
+                     */
+                    std::vector<QuestionInfo> m_questionInfo;
+                    bool m_questionInfoHasBeenSet;
+
+                    /**
+                     * <p>定制的json结构字符串，主要用于快速定制输出的agent输出结构。推荐用于POC场景</p>
+                     */
+                    std::string m_agentResultJson;
+                    bool m_agentResultJsonHasBeenSet;
+
+                    /**
+                     * <p>扩展字段</p>
+                     */
+                    std::string m_thoughtContent;
+                    bool m_thoughtContentHasBeenSet;
 
                 };
             }

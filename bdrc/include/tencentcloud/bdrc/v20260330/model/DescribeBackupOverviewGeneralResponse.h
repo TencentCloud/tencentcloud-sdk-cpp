@@ -146,6 +146,38 @@ namespace TencentCloud
                      */
                     bool COSAgentBackupOverviewHasBeenSet() const;
 
+                    /**
+                     * 获取<p>非腾讯云虚拟机备份概览数据</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalCVMAgentBackupOverview <p>非腾讯云虚拟机备份概览数据</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    FileBackupOverview GetLocalCVMAgentBackupOverview() const;
+
+                    /**
+                     * 判断参数 LocalCVMAgentBackupOverview 是否已赋值
+                     * @return LocalCVMAgentBackupOverview 是否已赋值
+                     * 
+                     */
+                    bool LocalCVMAgentBackupOverviewHasBeenSet() const;
+
+                    /**
+                     * 获取<p>非腾讯云文件存储备份概览数据</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalCFSAgentBackupOverview <p>非腾讯云文件存储备份概览数据</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    FileBackupOverview GetLocalCFSAgentBackupOverview() const;
+
+                    /**
+                     * 判断参数 LocalCFSAgentBackupOverview 是否已赋值
+                     * @return LocalCFSAgentBackupOverview 是否已赋值
+                     * 
+                     */
+                    bool LocalCFSAgentBackupOverviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +221,20 @@ namespace TencentCloud
                      */
                     FileBackupOverview m_cOSAgentBackupOverview;
                     bool m_cOSAgentBackupOverviewHasBeenSet;
+
+                    /**
+                     * <p>非腾讯云虚拟机备份概览数据</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FileBackupOverview m_localCVMAgentBackupOverview;
+                    bool m_localCVMAgentBackupOverviewHasBeenSet;
+
+                    /**
+                     * <p>非腾讯云文件存储备份概览数据</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FileBackupOverview m_localCFSAgentBackupOverview;
+                    bool m_localCFSAgentBackupOverviewHasBeenSet;
 
                 };
             }

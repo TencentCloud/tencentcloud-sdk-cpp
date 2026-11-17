@@ -39,7 +39,9 @@ S3RechargeInfo::S3RechargeInfo() :
     m_enableHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_sQSEnabledHasBeenSet(false),
+    m_sQSUrlHasBeenSet(false)
 {
 }
 
@@ -248,6 +250,26 @@ CoreInternalOutcome S3RechargeInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SQSEnabled") && !value["SQSEnabled"].IsNull())
+    {
+        if (!value["SQSEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `S3RechargeInfo.SQSEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_sQSEnabled = value["SQSEnabled"].GetBool();
+        m_sQSEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("SQSUrl") && !value["SQSUrl"].IsNull())
+    {
+        if (!value["SQSUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `S3RechargeInfo.SQSUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sQSUrl = string(value["SQSUrl"].GetString());
+        m_sQSUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -411,6 +433,22 @@ void S3RechargeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_sQSEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SQSEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sQSEnabled, allocator);
+    }
+
+    if (m_sQSUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SQSUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sQSUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -718,5 +756,37 @@ void S3RechargeInfo::SetUpdateTime(const uint64_t& _updateTime)
 bool S3RechargeInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+bool S3RechargeInfo::GetSQSEnabled() const
+{
+    return m_sQSEnabled;
+}
+
+void S3RechargeInfo::SetSQSEnabled(const bool& _sQSEnabled)
+{
+    m_sQSEnabled = _sQSEnabled;
+    m_sQSEnabledHasBeenSet = true;
+}
+
+bool S3RechargeInfo::SQSEnabledHasBeenSet() const
+{
+    return m_sQSEnabledHasBeenSet;
+}
+
+string S3RechargeInfo::GetSQSUrl() const
+{
+    return m_sQSUrl;
+}
+
+void S3RechargeInfo::SetSQSUrl(const string& _sQSUrl)
+{
+    m_sQSUrl = _sQSUrl;
+    m_sQSUrlHasBeenSet = true;
+}
+
+bool S3RechargeInfo::SQSUrlHasBeenSet() const
+{
+    return m_sQSUrlHasBeenSet;
 }
 

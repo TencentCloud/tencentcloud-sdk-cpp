@@ -37,7 +37,8 @@ CreateCloudNativeAPIGatewayRequest::CreateCloudNativeAPIGatewayRequest() :
     m_ingressClassNameHasBeenSet(false),
     m_tradeTypeHasBeenSet(false),
     m_internetConfigHasBeenSet(false),
-    m_promIdHasBeenSet(false)
+    m_promIdHasBeenSet(false),
+    m_enableHttpPortHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,14 @@ string CreateCloudNativeAPIGatewayRequest::ToJsonString() const
         string key = "PromId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_promId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableHttpPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableHttpPort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableHttpPort, allocator);
     }
 
 
@@ -424,6 +433,22 @@ void CreateCloudNativeAPIGatewayRequest::SetPromId(const string& _promId)
 bool CreateCloudNativeAPIGatewayRequest::PromIdHasBeenSet() const
 {
     return m_promIdHasBeenSet;
+}
+
+bool CreateCloudNativeAPIGatewayRequest::GetEnableHttpPort() const
+{
+    return m_enableHttpPort;
+}
+
+void CreateCloudNativeAPIGatewayRequest::SetEnableHttpPort(const bool& _enableHttpPort)
+{
+    m_enableHttpPort = _enableHttpPort;
+    m_enableHttpPortHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayRequest::EnableHttpPortHasBeenSet() const
+{
+    return m_enableHttpPortHasBeenSet;
 }
 
 

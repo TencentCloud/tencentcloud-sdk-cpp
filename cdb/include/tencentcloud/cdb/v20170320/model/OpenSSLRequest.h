@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。只读组 ID 为空时必填。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
-                     * @return InstanceId 实例 ID。只读组 ID 为空时必填。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * 获取<p>实例 ID。只读组 ID 为空时必填。可通过 <a href="https://cloud.tencent.com/document/product/236/15872">DescribeDBInstances</a> 接口获取。</p>
+                     * @return InstanceId <p>实例 ID。只读组 ID 为空时必填。可通过 <a href="https://cloud.tencent.com/document/product/236/15872">DescribeDBInstances</a> 接口获取。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。只读组 ID 为空时必填。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
-                     * @param _instanceId 实例 ID。只读组 ID 为空时必填。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * 设置<p>实例 ID。只读组 ID 为空时必填。可通过 <a href="https://cloud.tencent.com/document/product/236/15872">DescribeDBInstances</a> 接口获取。</p>
+                     * @param _instanceId <p>实例 ID。只读组 ID 为空时必填。可通过 <a href="https://cloud.tencent.com/document/product/236/15872">DescribeDBInstances</a> 接口获取。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取只读组 ID。实例 ID 为空时必填。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
-                     * @return RoGroupId 只读组 ID。实例 ID 为空时必填。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
+                     * 获取<p>只读组 ID。实例 ID 为空时必填。可通过 <a href="https://cloud.tencent.com/document/api/236/40939">DescribeRoGroups</a> 接口获取。</p>
+                     * @return RoGroupId <p>只读组 ID。实例 ID 为空时必填。可通过 <a href="https://cloud.tencent.com/document/api/236/40939">DescribeRoGroups</a> 接口获取。</p>
                      * 
                      */
                     std::string GetRoGroupId() const;
 
                     /**
-                     * 设置只读组 ID。实例 ID 为空时必填。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
-                     * @param _roGroupId 只读组 ID。实例 ID 为空时必填。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
+                     * 设置<p>只读组 ID。实例 ID 为空时必填。可通过 <a href="https://cloud.tencent.com/document/api/236/40939">DescribeRoGroups</a> 接口获取。</p>
+                     * @param _roGroupId <p>只读组 ID。实例 ID 为空时必填。可通过 <a href="https://cloud.tencent.com/document/api/236/40939">DescribeRoGroups</a> 接口获取。</p>
                      * 
                      */
                     void SetRoGroupId(const std::string& _roGroupId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。只读组 ID 为空时必填。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。
+                     * <p>实例 ID。只读组 ID 为空时必填。可通过 <a href="https://cloud.tencent.com/document/product/236/15872">DescribeDBInstances</a> 接口获取。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 只读组 ID。实例 ID 为空时必填。可通过 [DescribeRoGroups](https://cloud.tencent.com/document/api/236/40939) 接口获取。
+                     * <p>只读组 ID。实例 ID 为空时必填。可通过 <a href="https://cloud.tencent.com/document/api/236/40939">DescribeRoGroups</a> 接口获取。</p>
                      */
                     std::string m_roGroupId;
                     bool m_roGroupIdHasBeenSet;

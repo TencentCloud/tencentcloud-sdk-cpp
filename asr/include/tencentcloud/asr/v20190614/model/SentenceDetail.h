@@ -415,6 +415,27 @@ namespace TencentCloud
                      */
                     bool SpeakerRoleNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>说话人的声纹 ID</p>
+                     * @return SpeakerVoicePrintId <p>说话人的声纹 ID</p>
+                     * 
+                     */
+                    std::string GetSpeakerVoicePrintId() const;
+
+                    /**
+                     * 设置<p>说话人的声纹 ID</p>
+                     * @param _speakerVoicePrintId <p>说话人的声纹 ID</p>
+                     * 
+                     */
+                    void SetSpeakerVoicePrintId(const std::string& _speakerVoicePrintId);
+
+                    /**
+                     * 判断参数 SpeakerVoicePrintId 是否已赋值
+                     * @return SpeakerVoicePrintId 是否已赋值
+                     * 
+                     */
+                    bool SpeakerVoicePrintIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -519,6 +540,12 @@ namespace TencentCloud
                      */
                     std::string m_speakerRoleName;
                     bool m_speakerRoleNameHasBeenSet;
+
+                    /**
+                     * <p>说话人的声纹 ID</p>
+                     */
+                    std::string m_speakerVoicePrintId;
+                    bool m_speakerVoicePrintIdHasBeenSet;
 
                 };
             }

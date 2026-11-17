@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/faceid/v20180301/model/Encryption.h>
+#include <tencentcloud/faceid/v20180301/model/ExtraRiskInfo.h>
 
 
 namespace TencentCloud
@@ -127,6 +128,27 @@ namespace TencentCloud
                      */
                     bool EncryptedBodyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>一次性携带本次请求的风控上下文，即“是谁、在哪、从哪个 IP 发起”</p>
+                     * @return ExtraRiskInfo <p>一次性携带本次请求的风控上下文，即“是谁、在哪、从哪个 IP 发起”</p>
+                     * 
+                     */
+                    ExtraRiskInfo GetExtraRiskInfo() const;
+
+                    /**
+                     * 设置<p>一次性携带本次请求的风控上下文，即“是谁、在哪、从哪个 IP 发起”</p>
+                     * @param _extraRiskInfo <p>一次性携带本次请求的风控上下文，即“是谁、在哪、从哪个 IP 发起”</p>
+                     * 
+                     */
+                    void SetExtraRiskInfo(const ExtraRiskInfo& _extraRiskInfo);
+
+                    /**
+                     * 判断参数 ExtraRiskInfo 是否已赋值
+                     * @return ExtraRiskInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtraRiskInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +174,12 @@ namespace TencentCloud
                      */
                     std::string m_encryptedBody;
                     bool m_encryptedBodyHasBeenSet;
+
+                    /**
+                     * <p>一次性携带本次请求的风控上下文，即“是谁、在哪、从哪个 IP 发起”</p>
+                     */
+                    ExtraRiskInfo m_extraRiskInfo;
+                    bool m_extraRiskInfoHasBeenSet;
 
                 };
             }

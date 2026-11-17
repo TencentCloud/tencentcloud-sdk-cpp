@@ -26,7 +26,9 @@ ProtectedResourceOverview::ProtectedResourceOverview() :
     m_cvmHasBeenSet(false),
     m_cFSHasBeenSet(false),
     m_cFSAgentHasBeenSet(false),
-    m_cOSAgentHasBeenSet(false)
+    m_cOSAgentHasBeenSet(false),
+    m_localCVMAgentHasBeenSet(false),
+    m_localCFSAgentHasBeenSet(false)
 {
 }
 
@@ -123,6 +125,40 @@ CoreInternalOutcome ProtectedResourceOverview::Deserialize(const rapidjson::Valu
         m_cOSAgentHasBeenSet = true;
     }
 
+    if (value.HasMember("LocalCVMAgent") && !value["LocalCVMAgent"].IsNull())
+    {
+        if (!value["LocalCVMAgent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectedResourceOverview.LocalCVMAgent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_localCVMAgent.Deserialize(value["LocalCVMAgent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_localCVMAgentHasBeenSet = true;
+    }
+
+    if (value.HasMember("LocalCFSAgent") && !value["LocalCFSAgent"].IsNull())
+    {
+        if (!value["LocalCFSAgent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtectedResourceOverview.LocalCFSAgent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_localCFSAgent.Deserialize(value["LocalCFSAgent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_localCFSAgentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +216,24 @@ void ProtectedResourceOverview::ToJsonObject(rapidjson::Value &value, rapidjson:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cOSAgent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_localCVMAgentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalCVMAgent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_localCVMAgent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_localCFSAgentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalCFSAgent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_localCFSAgent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -279,5 +333,37 @@ void ProtectedResourceOverview::SetCOSAgent(const ResourceProtectStat& _cOSAgent
 bool ProtectedResourceOverview::COSAgentHasBeenSet() const
 {
     return m_cOSAgentHasBeenSet;
+}
+
+ResourceProtectStat ProtectedResourceOverview::GetLocalCVMAgent() const
+{
+    return m_localCVMAgent;
+}
+
+void ProtectedResourceOverview::SetLocalCVMAgent(const ResourceProtectStat& _localCVMAgent)
+{
+    m_localCVMAgent = _localCVMAgent;
+    m_localCVMAgentHasBeenSet = true;
+}
+
+bool ProtectedResourceOverview::LocalCVMAgentHasBeenSet() const
+{
+    return m_localCVMAgentHasBeenSet;
+}
+
+ResourceProtectStat ProtectedResourceOverview::GetLocalCFSAgent() const
+{
+    return m_localCFSAgent;
+}
+
+void ProtectedResourceOverview::SetLocalCFSAgent(const ResourceProtectStat& _localCFSAgent)
+{
+    m_localCFSAgent = _localCFSAgent;
+    m_localCFSAgentHasBeenSet = true;
+}
+
+bool ProtectedResourceOverview::LocalCFSAgentHasBeenSet() const
+{
+    return m_localCFSAgentHasBeenSet;
 }
 

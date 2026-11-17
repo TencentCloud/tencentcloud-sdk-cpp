@@ -421,6 +421,27 @@ namespace TencentCloud
                      */
                     bool QueryStringParametersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>路由级超时时间，单位ms</p>
+                     * @return Timeout <p>路由级超时时间，单位ms</p>
+                     * 
+                     */
+                    int64_t GetTimeout() const;
+
+                    /**
+                     * 设置<p>路由级超时时间，单位ms</p>
+                     * @param _timeout <p>路由级超时时间，单位ms</p>
+                     * 
+                     */
+                    void SetTimeout(const int64_t& _timeout);
+
+                    /**
+                     * 判断参数 Timeout 是否已赋值
+                     * @return Timeout 是否已赋值
+                     * 
+                     */
+                    bool TimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -530,6 +551,12 @@ namespace TencentCloud
                      */
                     std::vector<KVMapping> m_queryStringParameters;
                     bool m_queryStringParametersHasBeenSet;
+
+                    /**
+                     * <p>路由级超时时间，单位ms</p>
+                     */
+                    int64_t m_timeout;
+                    bool m_timeoutHasBeenSet;
 
                 };
             }

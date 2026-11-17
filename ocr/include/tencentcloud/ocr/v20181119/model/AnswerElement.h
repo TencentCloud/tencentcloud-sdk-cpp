@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IsCorrectHasBeenSet() const;
 
                     /**
-                     * 获取<p>答案分析结果</p>
-                     * @return AnswerAnalysis <p>答案分析结果</p>
+                     * 获取<p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，该字段返回空。通过ResultList. AnswerAnalysis返回题目维度答案解析<br>当ModelType= youtu_correction_model，返回答案维度答案解析</p>
+                     * @return AnswerAnalysis <p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，该字段返回空。通过ResultList. AnswerAnalysis返回题目维度答案解析<br>当ModelType= youtu_correction_model，返回答案维度答案解析</p>
                      * 
                      */
                     std::string GetAnswerAnalysis() const;
 
                     /**
-                     * 设置<p>答案分析结果</p>
-                     * @param _answerAnalysis <p>答案分析结果</p>
+                     * 设置<p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，该字段返回空。通过ResultList. AnswerAnalysis返回题目维度答案解析<br>当ModelType= youtu_correction_model，返回答案维度答案解析</p>
+                     * @param _answerAnalysis <p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，该字段返回空。通过ResultList. AnswerAnalysis返回题目维度答案解析<br>当ModelType= youtu_correction_model，返回答案维度答案解析</p>
                      * 
                      */
                     void SetAnswerAnalysis(const std::string& _answerAnalysis);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AnswerAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取<p>返回正确答案内容</p>
-                     * @return RightAnswer <p>返回正确答案内容</p>
+                     * 获取<p>返回正确答案内容。为提升速度算式批改场景默认不输出正确答案</p>
+                     * @return RightAnswer <p>返回正确答案内容。为提升速度算式批改场景默认不输出正确答案</p>
                      * 
                      */
                     std::string GetRightAnswer() const;
 
                     /**
-                     * 设置<p>返回正确答案内容</p>
-                     * @param _rightAnswer <p>返回正确答案内容</p>
+                     * 设置<p>返回正确答案内容。为提升速度算式批改场景默认不输出正确答案</p>
+                     * @param _rightAnswer <p>返回正确答案内容。为提升速度算式批改场景默认不输出正确答案</p>
                      * 
                      */
                     void SetRightAnswer(const std::string& _rightAnswer);
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_isCorrectHasBeenSet;
 
                     /**
-                     * <p>答案分析结果</p>
+                     * <p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，该字段返回空。通过ResultList. AnswerAnalysis返回题目维度答案解析<br>当ModelType= youtu_correction_model，返回答案维度答案解析</p>
                      */
                     std::string m_answerAnalysis;
                     bool m_answerAnalysisHasBeenSet;
 
                     /**
-                     * <p>返回正确答案内容</p>
+                     * <p>返回正确答案内容。为提升速度算式批改场景默认不输出正确答案</p>
                      */
                     std::string m_rightAnswer;
                     bool m_rightAnswerHasBeenSet;

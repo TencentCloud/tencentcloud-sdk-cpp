@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TiProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取数据源ID
-                     * @return Id 数据源ID
+                     * 获取<p>数据源ID</p>
+                     * @return Id <p>数据源ID</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置数据源ID
-                     * @param _id 数据源ID
+                     * 设置<p>数据源ID</p>
+                     * @param _id <p>数据源ID</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取数据源名称
-                     * @return Name 数据源名称
+                     * 获取<p>数据源名称</p>
+                     * @return Name <p>数据源名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置数据源名称
-                     * @param _name 数据源名称
+                     * 设置<p>数据源名称</p>
+                     * @param _name <p>数据源名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取数据源权限，取值有RW RO
-                     * @return Permission 数据源权限，取值有RW RO
+                     * 获取<p>数据源权限，取值有RW RO</p>
+                     * @return Permission <p>数据源权限，取值有RW RO</p>
                      * 
                      */
                     std::string GetPermission() const;
 
                     /**
-                     * 设置数据源权限，取值有RW RO
-                     * @param _permission 数据源权限，取值有RW RO
+                     * 设置<p>数据源权限，取值有RW RO</p>
+                     * @param _permission <p>数据源权限，取值有RW RO</p>
                      * 
                      */
                     void SetPermission(const std::string& _permission);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool PermissionHasBeenSet() const;
 
                     /**
-                     * 获取数据源挂载配置
-                     * @return MountConfigure 数据源挂载配置
+                     * 获取<p>数据源挂载配置</p>
+                     * @return MountConfigure <p>数据源挂载配置</p>
                      * 
                      */
                     MountConfigureInfo GetMountConfigure() const;
 
                     /**
-                     * 设置数据源挂载配置
-                     * @param _mountConfigure 数据源挂载配置
+                     * 设置<p>数据源挂载配置</p>
+                     * @param _mountConfigure <p>数据源挂载配置</p>
                      * 
                      */
                     void SetMountConfigure(const MountConfigureInfo& _mountConfigure);
@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool MountConfigureHasBeenSet() const;
 
+                    /**
+                     * 获取<p>挂载数据源时默认填充的容器内路径</p>
+                     * @return ContainerPath <p>挂载数据源时默认填充的容器内路径</p>
+                     * 
+                     */
+                    std::string GetContainerPath() const;
+
+                    /**
+                     * 设置<p>挂载数据源时默认填充的容器内路径</p>
+                     * @param _containerPath <p>挂载数据源时默认填充的容器内路径</p>
+                     * 
+                     */
+                    void SetContainerPath(const std::string& _containerPath);
+
+                    /**
+                     * 判断参数 ContainerPath 是否已赋值
+                     * @return ContainerPath 是否已赋值
+                     * 
+                     */
+                    bool ContainerPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -157,28 +178,34 @@ namespace TencentCloud
                     bool m_tiProjectIdHasBeenSet;
 
                     /**
-                     * 数据源ID
+                     * <p>数据源ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 数据源名称
+                     * <p>数据源名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 数据源权限，取值有RW RO
+                     * <p>数据源权限，取值有RW RO</p>
                      */
                     std::string m_permission;
                     bool m_permissionHasBeenSet;
 
                     /**
-                     * 数据源挂载配置
+                     * <p>数据源挂载配置</p>
                      */
                     MountConfigureInfo m_mountConfigure;
                     bool m_mountConfigureHasBeenSet;
+
+                    /**
+                     * <p>挂载数据源时默认填充的容器内路径</p>
+                     */
+                    std::string m_containerPath;
+                    bool m_containerPathHasBeenSet;
 
                 };
             }

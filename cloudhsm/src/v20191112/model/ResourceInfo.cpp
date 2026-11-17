@@ -49,7 +49,8 @@ ResourceInfo::ResourceInfo() :
     m_deployEnvHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_clusterRoleHasBeenSet(false)
+    m_clusterRoleHasBeenSet(false),
+    m_syncStatusHasBeenSet(false)
 {
 }
 
@@ -368,6 +369,16 @@ CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
         m_clusterRoleHasBeenSet = true;
     }
 
+    if (value.HasMember("SyncStatus") && !value["SyncStatus"].IsNull())
+    {
+        if (!value["SyncStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.SyncStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncStatus = string(value["SyncStatus"].GetString());
+        m_syncStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -619,6 +630,14 @@ void ResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ClusterRole";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterRole, allocator);
+    }
+
+    if (m_syncStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_syncStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1086,5 +1105,21 @@ void ResourceInfo::SetClusterRole(const int64_t& _clusterRole)
 bool ResourceInfo::ClusterRoleHasBeenSet() const
 {
     return m_clusterRoleHasBeenSet;
+}
+
+string ResourceInfo::GetSyncStatus() const
+{
+    return m_syncStatus;
+}
+
+void ResourceInfo::SetSyncStatus(const string& _syncStatus)
+{
+    m_syncStatus = _syncStatus;
+    m_syncStatusHasBeenSet = true;
+}
+
+bool ResourceInfo::SyncStatusHasBeenSet() const
+{
+    return m_syncStatusHasBeenSet;
 }
 

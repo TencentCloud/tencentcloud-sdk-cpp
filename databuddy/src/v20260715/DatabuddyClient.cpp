@@ -290,6 +290,56 @@ DatabuddyClient::CreateConsoleGroupOutcomeCallable DatabuddyClient::CreateConsol
     return prom->get_future();
 }
 
+DatabuddyClient::CreateExperimentOutcome DatabuddyClient::CreateExperiment(const CreateExperimentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExperiment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExperimentResponse rsp = CreateExperimentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExperimentOutcome(rsp);
+        else
+            return CreateExperimentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExperimentOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::CreateExperimentAsync(const CreateExperimentRequest& request, const CreateExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateExperimentRequest&;
+    using Resp = CreateExperimentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateExperiment", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::CreateExperimentOutcomeCallable DatabuddyClient::CreateExperimentCallable(const CreateExperimentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateExperimentOutcome>>();
+    CreateExperimentAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const CreateExperimentRequest&,
+        CreateExperimentOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::CreateFileOutcome DatabuddyClient::CreateFile(const CreateFileRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFile");
@@ -1532,6 +1582,56 @@ DatabuddyClient::GetFileOutcomeCallable DatabuddyClient::GetFileCallable(const G
         const DatabuddyClient*,
         const GetFileRequest&,
         GetFileOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DatabuddyClient::GetFileContentOutcome DatabuddyClient::GetFileContent(const GetFileContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFileContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFileContentResponse rsp = GetFileContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFileContentOutcome(rsp);
+        else
+            return GetFileContentOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFileContentOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::GetFileContentAsync(const GetFileContentRequest& request, const GetFileContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetFileContentRequest&;
+    using Resp = GetFileContentResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetFileContent", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::GetFileContentOutcomeCallable DatabuddyClient::GetFileContentCallable(const GetFileContentRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetFileContentOutcome>>();
+    GetFileContentAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const GetFileContentRequest&,
+        GetFileContentOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

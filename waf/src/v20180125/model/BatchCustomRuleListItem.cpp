@@ -43,7 +43,8 @@ BatchCustomRuleListItem::BatchCustomRuleListItem() :
     m_pageIdHasBeenSet(false),
     m_logicalOpHasBeenSet(false),
     m_actionRatioHasBeenSet(false),
-    m_groupIdsHasBeenSet(false)
+    m_groupIdsHasBeenSet(false),
+    m_previewHasBeenSet(false)
 {
 }
 
@@ -305,6 +306,16 @@ CoreInternalOutcome BatchCustomRuleListItem::Deserialize(const rapidjson::Value 
         m_groupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("Preview") && !value["Preview"].IsNull())
+    {
+        if (!value["Preview"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchCustomRuleListItem.Preview` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_preview = value["Preview"].GetInt64();
+        m_previewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -512,6 +523,14 @@ void BatchCustomRuleListItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_previewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Preview";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_preview, allocator);
     }
 
 }
@@ -883,5 +902,21 @@ void BatchCustomRuleListItem::SetGroupIds(const vector<uint64_t>& _groupIds)
 bool BatchCustomRuleListItem::GroupIdsHasBeenSet() const
 {
     return m_groupIdsHasBeenSet;
+}
+
+int64_t BatchCustomRuleListItem::GetPreview() const
+{
+    return m_preview;
+}
+
+void BatchCustomRuleListItem::SetPreview(const int64_t& _preview)
+{
+    m_preview = _preview;
+    m_previewHasBeenSet = true;
+}
+
+bool BatchCustomRuleListItem::PreviewHasBeenSet() const
+{
+    return m_previewHasBeenSet;
 }
 

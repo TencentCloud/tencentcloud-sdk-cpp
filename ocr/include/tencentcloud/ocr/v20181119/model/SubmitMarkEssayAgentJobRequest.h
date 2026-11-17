@@ -87,21 +87,21 @@ namespace TencentCloud
                     /**
                      * 获取<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为1。 示例值：1</p>
                      * @return PdfPageNumber <p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为1。 示例值：1</p>
-                     * 
+                     * @deprecated
                      */
                     int64_t GetPdfPageNumber() const;
 
                     /**
                      * 设置<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为1。 示例值：1</p>
                      * @param _pdfPageNumber <p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为1。 示例值：1</p>
-                     * 
+                     * @deprecated
                      */
                     void SetPdfPageNumber(const int64_t& _pdfPageNumber);
 
                     /**
                      * 判断参数 PdfPageNumber 是否已赋值
                      * @return PdfPageNumber 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PdfPageNumberHasBeenSet() const;
 
@@ -125,6 +125,48 @@ namespace TencentCloud
                      * 
                      */
                     bool QuestionConfigMapHasBeenSet() const;
+
+                    /**
+                     * 获取<p>agent支持的类型枚举,不同类型输出结果不一样，默认为0</p><p>0:表示中英文作文批改Agent</p><p>1:表示教辅试卷题库拆录Agent(支持拆录含解析与答案的教辅（解析、答案可与正文分置首尾，或与试题混排）、多页成套标准答案试卷及带有手写批注痕迹的试题)</p>
+                     * @return AgentType <p>agent支持的类型枚举,不同类型输出结果不一样，默认为0</p><p>0:表示中英文作文批改Agent</p><p>1:表示教辅试卷题库拆录Agent(支持拆录含解析与答案的教辅（解析、答案可与正文分置首尾，或与试题混排）、多页成套标准答案试卷及带有手写批注痕迹的试题)</p>
+                     * 
+                     */
+                    int64_t GetAgentType() const;
+
+                    /**
+                     * 设置<p>agent支持的类型枚举,不同类型输出结果不一样，默认为0</p><p>0:表示中英文作文批改Agent</p><p>1:表示教辅试卷题库拆录Agent(支持拆录含解析与答案的教辅（解析、答案可与正文分置首尾，或与试题混排）、多页成套标准答案试卷及带有手写批注痕迹的试题)</p>
+                     * @param _agentType <p>agent支持的类型枚举,不同类型输出结果不一样，默认为0</p><p>0:表示中英文作文批改Agent</p><p>1:表示教辅试卷题库拆录Agent(支持拆录含解析与答案的教辅（解析、答案可与正文分置首尾，或与试题混排）、多页成套标准答案试卷及带有手写批注痕迹的试题)</p>
+                     * 
+                     */
+                    void SetAgentType(const int64_t& _agentType);
+
+                    /**
+                     * 判断参数 AgentType 是否已赋值
+                     * @return AgentType 是否已赋值
+                     * 
+                     */
+                    bool AgentTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>需要识别的页码范围（目前只有AgentType=1支持），单次调用最多支持100页。  参数格式：1-10   示例值：1-2</p>
+                     * @return PageRange <p>需要识别的页码范围（目前只有AgentType=1支持），单次调用最多支持100页。  参数格式：1-10   示例值：1-2</p>
+                     * 
+                     */
+                    std::string GetPageRange() const;
+
+                    /**
+                     * 设置<p>需要识别的页码范围（目前只有AgentType=1支持），单次调用最多支持100页。  参数格式：1-10   示例值：1-2</p>
+                     * @param _pageRange <p>需要识别的页码范围（目前只有AgentType=1支持），单次调用最多支持100页。  参数格式：1-10   示例值：1-2</p>
+                     * 
+                     */
+                    void SetPageRange(const std::string& _pageRange);
+
+                    /**
+                     * 判断参数 PageRange 是否已赋值
+                     * @return PageRange 是否已赋值
+                     * 
+                     */
+                    bool PageRangeHasBeenSet() const;
 
                 private:
 
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     std::string m_questionConfigMap;
                     bool m_questionConfigMapHasBeenSet;
+
+                    /**
+                     * <p>agent支持的类型枚举,不同类型输出结果不一样，默认为0</p><p>0:表示中英文作文批改Agent</p><p>1:表示教辅试卷题库拆录Agent(支持拆录含解析与答案的教辅（解析、答案可与正文分置首尾，或与试题混排）、多页成套标准答案试卷及带有手写批注痕迹的试题)</p>
+                     */
+                    int64_t m_agentType;
+                    bool m_agentTypeHasBeenSet;
+
+                    /**
+                     * <p>需要识别的页码范围（目前只有AgentType=1支持），单次调用最多支持100页。  参数格式：1-10   示例值：1-2</p>
+                     */
+                    std::string m_pageRange;
+                    bool m_pageRangeHasBeenSet;
 
                 };
             }

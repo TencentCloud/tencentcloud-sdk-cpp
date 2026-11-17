@@ -290,6 +290,56 @@ KeewidbClient::CreateBackupManuallyOutcomeCallable KeewidbClient::CreateBackupMa
     return prom->get_future();
 }
 
+KeewidbClient::CreateInstanceAccountOutcome KeewidbClient::CreateInstanceAccount(const CreateInstanceAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstanceAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstanceAccountResponse rsp = CreateInstanceAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstanceAccountOutcome(rsp);
+        else
+            return CreateInstanceAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstanceAccountOutcome(outcome.GetError());
+    }
+}
+
+void KeewidbClient::CreateInstanceAccountAsync(const CreateInstanceAccountRequest& request, const CreateInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateInstanceAccountRequest&;
+    using Resp = CreateInstanceAccountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateInstanceAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+KeewidbClient::CreateInstanceAccountOutcomeCallable KeewidbClient::CreateInstanceAccountCallable(const CreateInstanceAccountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateInstanceAccountOutcome>>();
+    CreateInstanceAccountAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const CreateInstanceAccountRequest&,
+        CreateInstanceAccountOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 KeewidbClient::CreateInstancesOutcome KeewidbClient::CreateInstances(const CreateInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstances");
@@ -332,6 +382,56 @@ KeewidbClient::CreateInstancesOutcomeCallable KeewidbClient::CreateInstancesCall
         const KeewidbClient*,
         const CreateInstancesRequest&,
         CreateInstancesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+KeewidbClient::DeleteInstanceAccountOutcome KeewidbClient::DeleteInstanceAccount(const DeleteInstanceAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstanceAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstanceAccountResponse rsp = DeleteInstanceAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstanceAccountOutcome(rsp);
+        else
+            return DeleteInstanceAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstanceAccountOutcome(outcome.GetError());
+    }
+}
+
+void KeewidbClient::DeleteInstanceAccountAsync(const DeleteInstanceAccountRequest& request, const DeleteInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteInstanceAccountRequest&;
+    using Resp = DeleteInstanceAccountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteInstanceAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+KeewidbClient::DeleteInstanceAccountOutcomeCallable KeewidbClient::DeleteInstanceAccountCallable(const DeleteInstanceAccountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteInstanceAccountOutcome>>();
+    DeleteInstanceAccountAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DeleteInstanceAccountRequest&,
+        DeleteInstanceAccountOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -482,6 +582,56 @@ KeewidbClient::DescribeDBSecurityGroupsOutcomeCallable KeewidbClient::DescribeDB
         const KeewidbClient*,
         const DescribeDBSecurityGroupsRequest&,
         DescribeDBSecurityGroupsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+KeewidbClient::DescribeInstanceAccountOutcome KeewidbClient::DescribeInstanceAccount(const DescribeInstanceAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceAccountResponse rsp = DescribeInstanceAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceAccountOutcome(rsp);
+        else
+            return DescribeInstanceAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceAccountOutcome(outcome.GetError());
+    }
+}
+
+void KeewidbClient::DescribeInstanceAccountAsync(const DescribeInstanceAccountRequest& request, const DescribeInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInstanceAccountRequest&;
+    using Resp = DescribeInstanceAccountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInstanceAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+KeewidbClient::DescribeInstanceAccountOutcomeCallable KeewidbClient::DescribeInstanceAccountCallable(const DescribeInstanceAccountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInstanceAccountOutcome>>();
+    DescribeInstanceAccountAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const DescribeInstanceAccountRequest&,
+        DescribeInstanceAccountOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1582,6 +1732,56 @@ KeewidbClient::ModifyInstanceOutcomeCallable KeewidbClient::ModifyInstanceCallab
         const KeewidbClient*,
         const ModifyInstanceRequest&,
         ModifyInstanceOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+KeewidbClient::ModifyInstanceAccountOutcome KeewidbClient::ModifyInstanceAccount(const ModifyInstanceAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceAccountResponse rsp = ModifyInstanceAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceAccountOutcome(rsp);
+        else
+            return ModifyInstanceAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceAccountOutcome(outcome.GetError());
+    }
+}
+
+void KeewidbClient::ModifyInstanceAccountAsync(const ModifyInstanceAccountRequest& request, const ModifyInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyInstanceAccountRequest&;
+    using Resp = ModifyInstanceAccountResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyInstanceAccount", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+KeewidbClient::ModifyInstanceAccountOutcomeCallable KeewidbClient::ModifyInstanceAccountCallable(const ModifyInstanceAccountRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyInstanceAccountOutcome>>();
+    ModifyInstanceAccountAsync(
+    request,
+    [prom](
+        const KeewidbClient*,
+        const ModifyInstanceAccountRequest&,
+        ModifyInstanceAccountOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

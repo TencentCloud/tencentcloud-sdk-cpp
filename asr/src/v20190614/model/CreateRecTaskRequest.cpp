@@ -47,7 +47,11 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_hotwordListHasBeenSet(false),
     m_keyWordLibIdListHasBeenSet(false),
     m_replaceTextIdHasBeenSet(false),
-    m_speakerRolesHasBeenSet(false)
+    m_speakerRolesHasBeenSet(false),
+    m_contextDataHasBeenSet(false),
+    m_sentenceStrategyHasBeenSet(false),
+    m_enableSpeakerContextHasBeenSet(false),
+    m_speakerContextIdHasBeenSet(false)
 {
 }
 
@@ -268,6 +272,38 @@ string CreateRecTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_contextDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContextData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_contextData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sentenceStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SentenceStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sentenceStrategy, allocator);
+    }
+
+    if (m_enableSpeakerContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSpeakerContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSpeakerContext, allocator);
+    }
+
+    if (m_speakerContextIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerContextId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_speakerContextId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -676,6 +712,70 @@ void CreateRecTaskRequest::SetSpeakerRoles(const vector<SpeakerRoleInfo>& _speak
 bool CreateRecTaskRequest::SpeakerRolesHasBeenSet() const
 {
     return m_speakerRolesHasBeenSet;
+}
+
+string CreateRecTaskRequest::GetContextData() const
+{
+    return m_contextData;
+}
+
+void CreateRecTaskRequest::SetContextData(const string& _contextData)
+{
+    m_contextData = _contextData;
+    m_contextDataHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::ContextDataHasBeenSet() const
+{
+    return m_contextDataHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetSentenceStrategy() const
+{
+    return m_sentenceStrategy;
+}
+
+void CreateRecTaskRequest::SetSentenceStrategy(const int64_t& _sentenceStrategy)
+{
+    m_sentenceStrategy = _sentenceStrategy;
+    m_sentenceStrategyHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::SentenceStrategyHasBeenSet() const
+{
+    return m_sentenceStrategyHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetEnableSpeakerContext() const
+{
+    return m_enableSpeakerContext;
+}
+
+void CreateRecTaskRequest::SetEnableSpeakerContext(const int64_t& _enableSpeakerContext)
+{
+    m_enableSpeakerContext = _enableSpeakerContext;
+    m_enableSpeakerContextHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::EnableSpeakerContextHasBeenSet() const
+{
+    return m_enableSpeakerContextHasBeenSet;
+}
+
+string CreateRecTaskRequest::GetSpeakerContextId() const
+{
+    return m_speakerContextId;
+}
+
+void CreateRecTaskRequest::SetSpeakerContextId(const string& _speakerContextId)
+{
+    m_speakerContextId = _speakerContextId;
+    m_speakerContextIdHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::SpeakerContextIdHasBeenSet() const
+{
+    return m_speakerContextIdHasBeenSet;
 }
 
 

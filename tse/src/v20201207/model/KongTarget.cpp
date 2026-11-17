@@ -24,11 +24,12 @@ KongTarget::KongTarget() :
     m_hostHasBeenSet(false),
     m_portHasBeenSet(false),
     m_weightHasBeenSet(false),
-    m_healthHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
     m_cvmInstanceIdHasBeenSet(false),
     m_cvmInstanceNameHasBeenSet(false),
+    m_healthHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_sourceHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -68,16 +69,6 @@ CoreInternalOutcome KongTarget::Deserialize(const rapidjson::Value &value)
         m_weightHasBeenSet = true;
     }
 
-    if (value.HasMember("Health") && !value["Health"].IsNull())
-    {
-        if (!value["Health"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `KongTarget.Health` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_health = string(value["Health"].GetString());
-        m_healthHasBeenSet = true;
-    }
-
     if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
     {
         if (!value["CreatedTime"].IsString())
@@ -86,16 +77,6 @@ CoreInternalOutcome KongTarget::Deserialize(const rapidjson::Value &value)
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
-    }
-
-    if (value.HasMember("Source") && !value["Source"].IsNull())
-    {
-        if (!value["Source"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `KongTarget.Source` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_source = string(value["Source"].GetString());
-        m_sourceHasBeenSet = true;
     }
 
     if (value.HasMember("CvmInstanceId") && !value["CvmInstanceId"].IsNull())
@@ -116,6 +97,36 @@ CoreInternalOutcome KongTarget::Deserialize(const rapidjson::Value &value)
         }
         m_cvmInstanceName = string(value["CvmInstanceName"].GetString());
         m_cvmInstanceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Health") && !value["Health"].IsNull())
+    {
+        if (!value["Health"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongTarget.Health` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_health = string(value["Health"].GetString());
+        m_healthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongTarget.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Source") && !value["Source"].IsNull())
+    {
+        if (!value["Source"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongTarget.Source` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_source = string(value["Source"].GetString());
+        m_sourceHasBeenSet = true;
     }
 
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
@@ -162,28 +173,12 @@ void KongTarget::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_weight, allocator);
     }
 
-    if (m_healthHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Health";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_health.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_createdTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_sourceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Source";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cvmInstanceIdHasBeenSet)
@@ -200,6 +195,30 @@ void KongTarget::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CvmInstanceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cvmInstanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Health";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_health.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -266,22 +285,6 @@ bool KongTarget::WeightHasBeenSet() const
     return m_weightHasBeenSet;
 }
 
-string KongTarget::GetHealth() const
-{
-    return m_health;
-}
-
-void KongTarget::SetHealth(const string& _health)
-{
-    m_health = _health;
-    m_healthHasBeenSet = true;
-}
-
-bool KongTarget::HealthHasBeenSet() const
-{
-    return m_healthHasBeenSet;
-}
-
 string KongTarget::GetCreatedTime() const
 {
     return m_createdTime;
@@ -296,22 +299,6 @@ void KongTarget::SetCreatedTime(const string& _createdTime)
 bool KongTarget::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
-}
-
-string KongTarget::GetSource() const
-{
-    return m_source;
-}
-
-void KongTarget::SetSource(const string& _source)
-{
-    m_source = _source;
-    m_sourceHasBeenSet = true;
-}
-
-bool KongTarget::SourceHasBeenSet() const
-{
-    return m_sourceHasBeenSet;
 }
 
 string KongTarget::GetCvmInstanceId() const
@@ -344,6 +331,54 @@ void KongTarget::SetCvmInstanceName(const string& _cvmInstanceName)
 bool KongTarget::CvmInstanceNameHasBeenSet() const
 {
     return m_cvmInstanceNameHasBeenSet;
+}
+
+string KongTarget::GetHealth() const
+{
+    return m_health;
+}
+
+void KongTarget::SetHealth(const string& _health)
+{
+    m_health = _health;
+    m_healthHasBeenSet = true;
+}
+
+bool KongTarget::HealthHasBeenSet() const
+{
+    return m_healthHasBeenSet;
+}
+
+string KongTarget::GetId() const
+{
+    return m_id;
+}
+
+void KongTarget::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool KongTarget::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+string KongTarget::GetSource() const
+{
+    return m_source;
+}
+
+void KongTarget::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool KongTarget::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
 }
 
 vector<string> KongTarget::GetTags() const

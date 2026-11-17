@@ -187,18 +187,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取<p>训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH</p>
+                     * 获取<p>训练框架名称，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FrameworkName <p>训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH</p>
+                     * @return FrameworkName <p>训练框架名称，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFrameworkName() const;
 
                     /**
-                     * 设置<p>训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH</p>
+                     * 设置<p>训练框架名称，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _frameworkName <p>训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH</p>
+                     * @param _frameworkName <p>训练框架名称，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -951,15 +951,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取<p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>
-                     * @return Status <p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>
+                     * 获取<p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 提交中</li><li>PENDING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>SUCCEED： 已完成</li><li>FAILED： 异常</li><li>SUBMIT_FAILED： 提交失败</li></ul>
+                     * @return Status <p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 提交中</li><li>PENDING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>SUCCEED： 已完成</li><li>FAILED： 异常</li><li>SUBMIT_FAILED： 提交失败</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置<p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>
-                     * @param _status <p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>
+                     * 设置<p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 提交中</li><li>PENDING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>SUCCEED： 已完成</li><li>FAILED： 异常</li><li>SUBMIT_FAILED： 提交失败</li></ul>
+                     * @param _status <p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 提交中</li><li>PENDING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>SUCCEED： 已完成</li><li>FAILED： 异常</li><li>SUBMIT_FAILED： 提交失败</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -1099,7 +1099,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * <p>训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH</p>
+                     * <p>训练框架名称，eg：SPARK、PYSPARK、TENSORFLOW、PYTORCH</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_frameworkName;
@@ -1314,7 +1314,7 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * <p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>FAILED： 异常</li><li>SUCCEED： 已完成</li><li>SUBMIT_FAILED： 提交失败</li></ul>
+                     * <p>任务状态</p><p>枚举值：</p><ul><li>SUBMITTING： 提交中</li><li>PENDING： 排队中</li><li>STARTING： 启动中</li><li>RUNNING： 运行中</li><li>STOPPING： 停止中</li><li>STOPPED： 已停止</li><li>SUCCEED： 已完成</li><li>FAILED： 异常</li><li>SUBMIT_FAILED： 提交失败</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

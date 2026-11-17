@@ -29,7 +29,8 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_permissionHasBeenSet(false),
     m_storageIdHasBeenSet(false),
     m_mountConfigureHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_containerPathHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,14 @@ string CreateDataSourceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_containerPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_containerPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -222,6 +231,22 @@ void CreateDataSourceRequest::SetTags(const vector<Tag>& _tags)
 bool CreateDataSourceRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateDataSourceRequest::GetContainerPath() const
+{
+    return m_containerPath;
+}
+
+void CreateDataSourceRequest::SetContainerPath(const string& _containerPath)
+{
+    m_containerPath = _containerPath;
+    m_containerPathHasBeenSet = true;
+}
+
+bool CreateDataSourceRequest::ContainerPathHasBeenSet() const
+{
+    return m_containerPathHasBeenSet;
 }
 
 

@@ -27,9 +27,11 @@ ConversationContent::ConversationContent() :
     m_customParamsHasBeenSet(false),
     m_customVariablesDataHasBeenSet(false),
     m_enterpriseChartsHasBeenSet(false),
+    m_fileHasBeenSet(false),
     m_optionCardListHasBeenSet(false),
     m_optionCardsHasBeenSet(false),
     m_optionModeHasBeenSet(false),
+    m_questionnaireHasBeenSet(false),
     m_quoteInfoListHasBeenSet(false),
     m_quoteInfosHasBeenSet(false),
     m_referenceListHasBeenSet(false),
@@ -37,6 +39,8 @@ ConversationContent::ConversationContent() :
     m_relatedRecordIdHasBeenSet(false),
     m_taskListHasBeenSet(false),
     m_tasksHasBeenSet(false),
+    m_widgetHasBeenSet(false),
+    m_widgetActionHasBeenSet(false),
     m_workflowInputHasBeenSet(false),
     m_mcpAppHasBeenSet(false)
 {
@@ -113,6 +117,23 @@ CoreInternalOutcome ConversationContent::Deserialize(const rapidjson::Value &val
         m_enterpriseChartsHasBeenSet = true;
     }
 
+    if (value.HasMember("File") && !value["File"].IsNull())
+    {
+        if (!value["File"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConversationContent.File` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_file.Deserialize(value["File"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fileHasBeenSet = true;
+    }
+
     if (value.HasMember("OptionCardList") && !value["OptionCardList"].IsNull())
     {
         if (!value["OptionCardList"].IsArray())
@@ -147,6 +168,23 @@ CoreInternalOutcome ConversationContent::Deserialize(const rapidjson::Value &val
         }
         m_optionMode = value["OptionMode"].GetInt64();
         m_optionModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Questionnaire") && !value["Questionnaire"].IsNull())
+    {
+        if (!value["Questionnaire"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConversationContent.Questionnaire` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_questionnaire.Deserialize(value["Questionnaire"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_questionnaireHasBeenSet = true;
     }
 
     if (value.HasMember("QuoteInfoList") && !value["QuoteInfoList"].IsNull())
@@ -279,6 +317,40 @@ CoreInternalOutcome ConversationContent::Deserialize(const rapidjson::Value &val
         m_tasksHasBeenSet = true;
     }
 
+    if (value.HasMember("Widget") && !value["Widget"].IsNull())
+    {
+        if (!value["Widget"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConversationContent.Widget` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_widget.Deserialize(value["Widget"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_widgetHasBeenSet = true;
+    }
+
+    if (value.HasMember("WidgetAction") && !value["WidgetAction"].IsNull())
+    {
+        if (!value["WidgetAction"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConversationContent.WidgetAction` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_widgetAction.Deserialize(value["WidgetAction"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_widgetActionHasBeenSet = true;
+    }
+
     if (value.HasMember("WorkflowInput") && !value["WorkflowInput"].IsNull())
     {
         if (!value["WorkflowInput"].IsString())
@@ -371,6 +443,15 @@ void ConversationContent::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(m_enterpriseCharts.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_fileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "File";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_file.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_optionCardListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -403,6 +484,15 @@ void ConversationContent::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "OptionMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_optionMode, allocator);
+    }
+
+    if (m_questionnaireHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Questionnaire";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_questionnaire.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_quoteInfoListHasBeenSet)
@@ -501,6 +591,24 @@ void ConversationContent::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_widgetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Widget";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_widget.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_widgetActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WidgetAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_widgetAction.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_workflowInputHasBeenSet)
@@ -619,6 +727,22 @@ bool ConversationContent::EnterpriseChartsHasBeenSet() const
     return m_enterpriseChartsHasBeenSet;
 }
 
+ConversationFileInfo ConversationContent::GetFile() const
+{
+    return m_file;
+}
+
+void ConversationContent::SetFile(const ConversationFileInfo& _file)
+{
+    m_file = _file;
+    m_fileHasBeenSet = true;
+}
+
+bool ConversationContent::FileHasBeenSet() const
+{
+    return m_fileHasBeenSet;
+}
+
 vector<string> ConversationContent::GetOptionCardList() const
 {
     return m_optionCardList;
@@ -665,6 +789,22 @@ void ConversationContent::SetOptionMode(const int64_t& _optionMode)
 bool ConversationContent::OptionModeHasBeenSet() const
 {
     return m_optionModeHasBeenSet;
+}
+
+ConversationQuestionnaire ConversationContent::GetQuestionnaire() const
+{
+    return m_questionnaire;
+}
+
+void ConversationContent::SetQuestionnaire(const ConversationQuestionnaire& _questionnaire)
+{
+    m_questionnaire = _questionnaire;
+    m_questionnaireHasBeenSet = true;
+}
+
+bool ConversationContent::QuestionnaireHasBeenSet() const
+{
+    return m_questionnaireHasBeenSet;
 }
 
 vector<ConversationQuoteInfo> ConversationContent::GetQuoteInfoList() const
@@ -777,6 +917,38 @@ void ConversationContent::SetTasks(const vector<ConversationAgentTask>& _tasks)
 bool ConversationContent::TasksHasBeenSet() const
 {
     return m_tasksHasBeenSet;
+}
+
+ConversationWidget ConversationContent::GetWidget() const
+{
+    return m_widget;
+}
+
+void ConversationContent::SetWidget(const ConversationWidget& _widget)
+{
+    m_widget = _widget;
+    m_widgetHasBeenSet = true;
+}
+
+bool ConversationContent::WidgetHasBeenSet() const
+{
+    return m_widgetHasBeenSet;
+}
+
+ConversationWidgetAction ConversationContent::GetWidgetAction() const
+{
+    return m_widgetAction;
+}
+
+void ConversationContent::SetWidgetAction(const ConversationWidgetAction& _widgetAction)
+{
+    m_widgetAction = _widgetAction;
+    m_widgetActionHasBeenSet = true;
+}
+
+bool ConversationContent::WidgetActionHasBeenSet() const
+{
+    return m_widgetActionHasBeenSet;
 }
 
 string ConversationContent::GetWorkflowInput() const

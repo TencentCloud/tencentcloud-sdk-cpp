@@ -4240,6 +4240,56 @@ IssClient::ListVideoDownloadTaskOutcomeCallable IssClient::ListVideoDownloadTask
     return prom->get_future();
 }
 
+IssClient::ListVideoSnapshotResultOutcome IssClient::ListVideoSnapshotResult(const ListVideoSnapshotResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListVideoSnapshotResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListVideoSnapshotResultResponse rsp = ListVideoSnapshotResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListVideoSnapshotResultOutcome(rsp);
+        else
+            return ListVideoSnapshotResultOutcome(o.GetError());
+    }
+    else
+    {
+        return ListVideoSnapshotResultOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::ListVideoSnapshotResultAsync(const ListVideoSnapshotResultRequest& request, const ListVideoSnapshotResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListVideoSnapshotResultRequest&;
+    using Resp = ListVideoSnapshotResultResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListVideoSnapshotResult", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+IssClient::ListVideoSnapshotResultOutcomeCallable IssClient::ListVideoSnapshotResultCallable(const ListVideoSnapshotResultRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListVideoSnapshotResultOutcome>>();
+    ListVideoSnapshotResultAsync(
+    request,
+    [prom](
+        const IssClient*,
+        const ListVideoSnapshotResultRequest&,
+        ListVideoSnapshotResultOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 IssClient::ListVideoSnapshotTemplateOutcome IssClient::ListVideoSnapshotTemplate(const ListVideoSnapshotTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ListVideoSnapshotTemplate");

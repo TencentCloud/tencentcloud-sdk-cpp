@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建云原生API网关实例响应结果。
-                     * @return Result 创建云原生API网关实例响应结果。
+                     * 获取<p>创建云原生API网关实例响应结果。</p>
+                     * @return Result <p>创建云原生API网关实例响应结果。</p>
                      * 
                      */
                     CreateCloudNativeAPIGatewayResult GetResult() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建云原生API网关实例响应结果。
+                     * <p>创建云原生API网关实例响应结果。</p>
                      */
                     CreateCloudNativeAPIGatewayResult m_result;
                     bool m_resultHasBeenSet;

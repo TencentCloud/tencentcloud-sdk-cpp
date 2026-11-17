@@ -31,6 +31,7 @@
 #include <tencentcloud/adp/v20260520/model/AgentSkillConfig.h>
 #include <tencentcloud/adp/v20260520/model/AgentAdvancedConfig.h>
 #include <tencentcloud/adp/v20260520/model/AgentExternalToolConfig.h>
+#include <tencentcloud/adp/v20260520/model/AgentBuiltinToolConfig.h>
 
 
 namespace TencentCloud
@@ -221,6 +222,69 @@ namespace TencentCloud
                      */
                     bool ExternalToolListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>子 Agent执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * @return ProviderType <p>子 Agent执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * 
+                     */
+                    int64_t GetProviderType() const;
+
+                    /**
+                     * 设置<p>子 Agent执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * @param _providerType <p>子 Agent执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     * 
+                     */
+                    void SetProviderType(const int64_t& _providerType);
+
+                    /**
+                     * 判断参数 ProviderType 是否已赋值
+                     * @return ProviderType 是否已赋值
+                     * 
+                     */
+                    bool ProviderTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>引用应用的Id</p>
+                     * @return ReferenceAppId <p>引用应用的Id</p>
+                     * 
+                     */
+                    std::string GetReferenceAppId() const;
+
+                    /**
+                     * 设置<p>引用应用的Id</p>
+                     * @param _referenceAppId <p>引用应用的Id</p>
+                     * 
+                     */
+                    void SetReferenceAppId(const std::string& _referenceAppId);
+
+                    /**
+                     * 判断参数 ReferenceAppId 是否已赋值
+                     * @return ReferenceAppId 是否已赋值
+                     * 
+                     */
+                    bool ReferenceAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>内置工具信息</p>
+                     * @return BuiltinToolList <p>内置工具信息</p>
+                     * 
+                     */
+                    std::vector<AgentBuiltinToolConfig> GetBuiltinToolList() const;
+
+                    /**
+                     * 设置<p>内置工具信息</p>
+                     * @param _builtinToolList <p>内置工具信息</p>
+                     * 
+                     */
+                    void SetBuiltinToolList(const std::vector<AgentBuiltinToolConfig>& _builtinToolList);
+
+                    /**
+                     * 判断参数 BuiltinToolList 是否已赋值
+                     * @return BuiltinToolList 是否已赋值
+                     * 
+                     */
+                    bool BuiltinToolListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -270,6 +334,24 @@ namespace TencentCloud
                      */
                     std::vector<AgentExternalToolConfig> m_externalToolList;
                     bool m_externalToolListHasBeenSet;
+
+                    /**
+                     * <p>子 Agent执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>
+                     */
+                    int64_t m_providerType;
+                    bool m_providerTypeHasBeenSet;
+
+                    /**
+                     * <p>引用应用的Id</p>
+                     */
+                    std::string m_referenceAppId;
+                    bool m_referenceAppIdHasBeenSet;
+
+                    /**
+                     * <p>内置工具信息</p>
+                     */
+                    std::vector<AgentBuiltinToolConfig> m_builtinToolList;
+                    bool m_builtinToolListHasBeenSet;
 
                 };
             }

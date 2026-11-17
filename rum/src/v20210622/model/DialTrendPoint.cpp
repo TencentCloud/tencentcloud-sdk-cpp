@@ -25,7 +25,8 @@ DialTrendPoint::DialTrendPoint() :
     m_executionCountHasBeenSet(false),
     m_successCountHasBeenSet(false),
     m_failCountHasBeenSet(false),
-    m_avgDurationHasBeenSet(false)
+    m_avgDurationHasBeenSet(false),
+    m_datetimeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome DialTrendPoint::Deserialize(const rapidjson::Value &value)
         m_avgDurationHasBeenSet = true;
     }
 
+    if (value.HasMember("Datetime") && !value["Datetime"].IsNull())
+    {
+        if (!value["Datetime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DialTrendPoint.Datetime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datetime = string(value["Datetime"].GetString());
+        m_datetimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void DialTrendPoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AvgDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_avgDuration, allocator);
+    }
+
+    if (m_datetimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Datetime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datetime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void DialTrendPoint::SetAvgDuration(const double& _avgDuration)
 bool DialTrendPoint::AvgDurationHasBeenSet() const
 {
     return m_avgDurationHasBeenSet;
+}
+
+string DialTrendPoint::GetDatetime() const
+{
+    return m_datetime;
+}
+
+void DialTrendPoint::SetDatetime(const string& _datetime)
+{
+    m_datetime = _datetime;
+    m_datetimeHasBeenSet = true;
+}
+
+bool DialTrendPoint::DatetimeHasBeenSet() const
+{
+    return m_datetimeHasBeenSet;
 }
 

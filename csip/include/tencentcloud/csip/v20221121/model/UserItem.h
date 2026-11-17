@@ -277,6 +277,27 @@ namespace TencentCloud
                      */
                     bool ShareFromUserHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否试用订单</p>
+                     * @return IsTrialOrder <p>是否试用订单</p>
+                     * 
+                     */
+                    uint64_t GetIsTrialOrder() const;
+
+                    /**
+                     * 设置<p>是否试用订单</p>
+                     * @param _isTrialOrder <p>是否试用订单</p>
+                     * 
+                     */
+                    void SetIsTrialOrder(const uint64_t& _isTrialOrder);
+
+                    /**
+                     * 判断参数 IsTrialOrder 是否已赋值
+                     * @return IsTrialOrder 是否已赋值
+                     * 
+                     */
+                    bool IsTrialOrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +365,12 @@ namespace TencentCloud
                      */
                     std::string m_shareFromUser;
                     bool m_shareFromUserHasBeenSet;
+
+                    /**
+                     * <p>是否试用订单</p>
+                     */
+                    uint64_t m_isTrialOrder;
+                    bool m_isTrialOrderHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ CreateVideoAnnotationJobRequest::CreateVideoAnnotationJobRequest() :
     m_annotationContextHasBeenSet(false),
     m_processParamsHasBeenSet(false),
     m_outputInfoHasBeenSet(false),
-    m_callbackInfoHasBeenSet(false)
+    m_callbackInfoHasBeenSet(false),
+    m_extraSourcesHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,21 @@ string CreateVideoAnnotationJobRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_callbackInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_extraSourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraSources";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extraSources.begin(); itr != m_extraSources.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -244,6 +260,22 @@ void CreateVideoAnnotationJobRequest::SetCallbackInfo(const CallbackInfo& _callb
 bool CreateVideoAnnotationJobRequest::CallbackInfoHasBeenSet() const
 {
     return m_callbackInfoHasBeenSet;
+}
+
+vector<ExtraSourceInfo> CreateVideoAnnotationJobRequest::GetExtraSources() const
+{
+    return m_extraSources;
+}
+
+void CreateVideoAnnotationJobRequest::SetExtraSources(const vector<ExtraSourceInfo>& _extraSources)
+{
+    m_extraSources = _extraSources;
+    m_extraSourcesHasBeenSet = true;
+}
+
+bool CreateVideoAnnotationJobRequest::ExtraSourcesHasBeenSet() const
+{
+    return m_extraSourcesHasBeenSet;
 }
 
 

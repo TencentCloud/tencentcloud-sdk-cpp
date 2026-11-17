@@ -72,7 +72,7 @@ namespace TencentCloud
 		<tr>
 			<td>Referer（Referer）</td>
 			<td>不支持参数</td>
-			<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
+			<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
 			<td>请输入内容,512个字符以内</td>
 		</tr>
 		<tr>
@@ -84,7 +84,7 @@ namespace TencentCloud
 		<tr>
 			<td>UserAgent（UserAgent）</td>
 			<td>不支持参数</td>
-			<td>同匹配字段<font color="Red">Referer</font>逻辑符号</td>
+			<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
 			<td>请输入内容,512个字符以内</td>
 		</tr>
 		<tr>
@@ -162,8 +162,8 @@ namespace TencentCloud
 		<tr>
 			<td>CONTENT_LENGTH（Content-length）</td>
 			<td>不支持参数</td>
-			<td>numeq（数值等于）<br />numneq（数值不等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numge（数值大于等于）<br />numle（数值小于等于）</td>
-			<td>请输入0-9999999999999之间的整数</td>
+			<td>numeq（数值等于）<br />numgt（数值大于）<br />numlt（数值小于）</td>
+			<td>请输入0-999999999999之间的整数</td>
 		</tr>
 		<tr>
 			<td>IP_GEO（来源IP归属地）</td>
@@ -222,7 +222,7 @@ namespace TencentCloud
 		<tr>
 			<td>Referer（Referer）</td>
 			<td>不支持参数</td>
-			<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
+			<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
 			<td>请输入内容,512个字符以内</td>
 		</tr>
 		<tr>
@@ -234,7 +234,7 @@ namespace TencentCloud
 		<tr>
 			<td>UserAgent（UserAgent）</td>
 			<td>不支持参数</td>
-			<td>同匹配字段<font color="Red">Referer</font>逻辑符号</td>
+			<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
 			<td>请输入内容,512个字符以内</td>
 		</tr>
 		<tr>
@@ -312,8 +312,8 @@ namespace TencentCloud
 		<tr>
 			<td>CONTENT_LENGTH（Content-length）</td>
 			<td>不支持参数</td>
-			<td>numeq（数值等于）<br />numneq（数值不等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numge（数值大于等于）<br />numle（数值小于等于）</td>
-			<td>请输入0-9999999999999之间的整数</td>
+			<td>numeq（数值等于）<br />numgt（数值大于）<br />numlt（数值小于）</td>
+			<td>请输入0-999999999999之间的整数</td>
 		</tr>
 		<tr>
 			<td>IP_GEO（来源IP归属地）</td>
@@ -377,7 +377,7 @@ namespace TencentCloud
 		<tr>
 			<td>Referer（Referer）</td>
 			<td>不支持参数</td>
-			<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
+			<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
 			<td>请输入内容,512个字符以内</td>
 		</tr>
 		<tr>
@@ -389,7 +389,7 @@ namespace TencentCloud
 		<tr>
 			<td>UserAgent（UserAgent）</td>
 			<td>不支持参数</td>
-			<td>同匹配字段<font color="Red">Referer</font>逻辑符号</td>
+			<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
 			<td>请输入内容,512个字符以内</td>
 		</tr>
 		<tr>
@@ -467,8 +467,8 @@ namespace TencentCloud
 		<tr>
 			<td>CONTENT_LENGTH（Content-length）</td>
 			<td>不支持参数</td>
-			<td>numeq（数值等于）<br />numneq（数值不等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numge（数值大于等于）<br />numle（数值小于等于）</td>
-			<td>请输入0-9999999999999之间的整数</td>
+			<td>numeq（数值等于）<br />numgt（数值大于）<br />numlt（数值小于）</td>
+			<td>请输入0-999999999999之间的整数</td>
 		</tr>
 		<tr>
 			<td>IP_GEO（来源IP归属地）</td>
@@ -527,7 +527,7 @@ namespace TencentCloud
 		<tr>
 			<td>Referer（Referer）</td>
 			<td>不支持参数</td>
-			<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
+			<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
 			<td>请输入内容,512个字符以内</td>
 		</tr>
 		<tr>
@@ -539,7 +539,7 @@ namespace TencentCloud
 		<tr>
 			<td>UserAgent（UserAgent）</td>
 			<td>不支持参数</td>
-			<td>同匹配字段<font color="Red">Referer</font>逻辑符号</td>
+			<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
 			<td>请输入内容,512个字符以内</td>
 		</tr>
 		<tr>
@@ -617,8 +617,8 @@ namespace TencentCloud
 		<tr>
 			<td>CONTENT_LENGTH（Content-length）</td>
 			<td>不支持参数</td>
-			<td>numeq（数值等于）<br />numneq（数值不等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numge（数值大于等于）<br />numle（数值小于等于）</td>
-			<td>请输入0-9999999999999之间的整数</td>
+			<td>numeq（数值等于）<br />numgt（数值大于）<br />numlt（数值小于）</td>
+			<td>请输入0-999999999999之间的整数</td>
 		</tr>
 		<tr>
 			<td>IP_GEO（来源IP归属地）</td>
@@ -931,7 +931,7 @@ strsuffix （ 后缀匹配）
 		<tr>
 			<td>Referer（Referer）</td>
 			<td>不支持参数</td>
-			<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
+			<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
 			<td>请输入内容,512个字符以内</td>
 		</tr>
 		<tr>
@@ -943,7 +943,7 @@ strsuffix （ 后缀匹配）
 		<tr>
 			<td>UserAgent（UserAgent）</td>
 			<td>不支持参数</td>
-			<td>同匹配字段<font color="Red">Referer</font>逻辑符号</td>
+			<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>
 			<td>请输入内容,512个字符以内</td>
 		</tr>
 		<tr>
@@ -1021,8 +1021,8 @@ strsuffix （ 后缀匹配）
 		<tr>
 			<td>CONTENT_LENGTH（Content-length）</td>
 			<td>不支持参数</td>
-			<td>numeq（数值等于）<br />numneq（数值不等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numge（数值大于等于）<br />numle（数值小于等于）</td>
-			<td>请输入0-9999999999999之间的整数</td>
+			<td>numeq（数值等于）<br />numgt（数值大于）<br />numlt（数值小于）</td>
+			<td>请输入0-999999999999之间的整数</td>
 		</tr>
 		<tr>
 			<td>IP_GEO（来源IP归属地）</td>

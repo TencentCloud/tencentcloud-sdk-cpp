@@ -28,7 +28,10 @@ AgentSpec::AgentSpec() :
     m_pluginListHasBeenSet(false),
     m_skillListHasBeenSet(false),
     m_advancedConfigHasBeenSet(false),
-    m_externalToolListHasBeenSet(false)
+    m_externalToolListHasBeenSet(false),
+    m_providerTypeHasBeenSet(false),
+    m_referenceAppIdHasBeenSet(false),
+    m_builtinToolListHasBeenSet(false)
 {
 }
 
@@ -178,6 +181,46 @@ CoreInternalOutcome AgentSpec::Deserialize(const rapidjson::Value &value)
         m_externalToolListHasBeenSet = true;
     }
 
+    if (value.HasMember("ProviderType") && !value["ProviderType"].IsNull())
+    {
+        if (!value["ProviderType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentSpec.ProviderType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_providerType = value["ProviderType"].GetInt64();
+        m_providerTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReferenceAppId") && !value["ReferenceAppId"].IsNull())
+    {
+        if (!value["ReferenceAppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentSpec.ReferenceAppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_referenceAppId = string(value["ReferenceAppId"].GetString());
+        m_referenceAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("BuiltinToolList") && !value["BuiltinToolList"].IsNull())
+    {
+        if (!value["BuiltinToolList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AgentSpec.BuiltinToolList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BuiltinToolList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AgentBuiltinToolConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_builtinToolList.push_back(item);
+        }
+        m_builtinToolListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -274,6 +317,37 @@ void AgentSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
 
         int i=0;
         for (auto itr = m_externalToolList.begin(); itr != m_externalToolList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_providerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProviderType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_providerType, allocator);
+    }
+
+    if (m_referenceAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReferenceAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_referenceAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_builtinToolListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuiltinToolList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_builtinToolList.begin(); itr != m_builtinToolList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -409,5 +483,53 @@ void AgentSpec::SetExternalToolList(const vector<AgentExternalToolConfig>& _exte
 bool AgentSpec::ExternalToolListHasBeenSet() const
 {
     return m_externalToolListHasBeenSet;
+}
+
+int64_t AgentSpec::GetProviderType() const
+{
+    return m_providerType;
+}
+
+void AgentSpec::SetProviderType(const int64_t& _providerType)
+{
+    m_providerType = _providerType;
+    m_providerTypeHasBeenSet = true;
+}
+
+bool AgentSpec::ProviderTypeHasBeenSet() const
+{
+    return m_providerTypeHasBeenSet;
+}
+
+string AgentSpec::GetReferenceAppId() const
+{
+    return m_referenceAppId;
+}
+
+void AgentSpec::SetReferenceAppId(const string& _referenceAppId)
+{
+    m_referenceAppId = _referenceAppId;
+    m_referenceAppIdHasBeenSet = true;
+}
+
+bool AgentSpec::ReferenceAppIdHasBeenSet() const
+{
+    return m_referenceAppIdHasBeenSet;
+}
+
+vector<AgentBuiltinToolConfig> AgentSpec::GetBuiltinToolList() const
+{
+    return m_builtinToolList;
+}
+
+void AgentSpec::SetBuiltinToolList(const vector<AgentBuiltinToolConfig>& _builtinToolList)
+{
+    m_builtinToolList = _builtinToolList;
+    m_builtinToolListHasBeenSet = true;
+}
+
+bool AgentSpec::BuiltinToolListHasBeenSet() const
+{
+    return m_builtinToolListHasBeenSet;
 }
 

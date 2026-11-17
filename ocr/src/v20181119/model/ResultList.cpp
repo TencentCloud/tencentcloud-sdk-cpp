@@ -31,7 +31,9 @@ ResultList::ResultList() :
     m_coordPageIndexHasBeenSet(false),
     m_rightAnswerHasBeenSet(false),
     m_subjectHasBeenSet(false),
-    m_knowledgePointsHasBeenSet(false)
+    m_knowledgePointsHasBeenSet(false),
+    m_answerAnalysisHasBeenSet(false),
+    m_gradeHasBeenSet(false)
 {
 }
 
@@ -226,6 +228,26 @@ CoreInternalOutcome ResultList::Deserialize(const rapidjson::Value &value)
         m_knowledgePointsHasBeenSet = true;
     }
 
+    if (value.HasMember("AnswerAnalysis") && !value["AnswerAnalysis"].IsNull())
+    {
+        if (!value["AnswerAnalysis"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultList.AnswerAnalysis` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_answerAnalysis = string(value["AnswerAnalysis"].GetString());
+        m_answerAnalysisHasBeenSet = true;
+    }
+
+    if (value.HasMember("Grade") && !value["Grade"].IsNull())
+    {
+        if (!value["Grade"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultList.Grade` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_grade = string(value["Grade"].GetString());
+        m_gradeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -378,6 +400,22 @@ void ResultList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_answerAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnswerAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_answerAnalysis.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gradeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Grade";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_grade.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -557,5 +595,37 @@ void ResultList::SetKnowledgePoints(const vector<string>& _knowledgePoints)
 bool ResultList::KnowledgePointsHasBeenSet() const
 {
     return m_knowledgePointsHasBeenSet;
+}
+
+string ResultList::GetAnswerAnalysis() const
+{
+    return m_answerAnalysis;
+}
+
+void ResultList::SetAnswerAnalysis(const string& _answerAnalysis)
+{
+    m_answerAnalysis = _answerAnalysis;
+    m_answerAnalysisHasBeenSet = true;
+}
+
+bool ResultList::AnswerAnalysisHasBeenSet() const
+{
+    return m_answerAnalysisHasBeenSet;
+}
+
+string ResultList::GetGrade() const
+{
+    return m_grade;
+}
+
+void ResultList::SetGrade(const string& _grade)
+{
+    m_grade = _grade;
+    m_gradeHasBeenSet = true;
+}
+
+bool ResultList::GradeHasBeenSet() const
+{
+    return m_gradeHasBeenSet;
 }
 

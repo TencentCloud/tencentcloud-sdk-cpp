@@ -34,7 +34,8 @@ SubmitQuestionMarkAgentJobRequest::SubmitQuestionMarkAgentJobRequest() :
     m_imageUrlListHasBeenSet(false),
     m_assistMarkTypeHasBeenSet(false),
     m_answerAssistMapHasBeenSet(false),
-    m_enableImageCropHasBeenSet(false)
+    m_enableImageCropHasBeenSet(false),
+    m_modelTypeHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,14 @@ string SubmitQuestionMarkAgentJobRequest::ToJsonString() const
         string key = "EnableImageCrop";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableImageCrop, allocator);
+    }
+
+    if (m_modelTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -349,6 +358,22 @@ void SubmitQuestionMarkAgentJobRequest::SetEnableImageCrop(const bool& _enableIm
 bool SubmitQuestionMarkAgentJobRequest::EnableImageCropHasBeenSet() const
 {
     return m_enableImageCropHasBeenSet;
+}
+
+string SubmitQuestionMarkAgentJobRequest::GetModelType() const
+{
+    return m_modelType;
+}
+
+void SubmitQuestionMarkAgentJobRequest::SetModelType(const string& _modelType)
+{
+    m_modelType = _modelType;
+    m_modelTypeHasBeenSet = true;
+}
+
+bool SubmitQuestionMarkAgentJobRequest::ModelTypeHasBeenSet() const
+{
+    return m_modelTypeHasBeenSet;
 }
 
 

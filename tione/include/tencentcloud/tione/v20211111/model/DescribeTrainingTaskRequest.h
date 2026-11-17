@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取训练任务ID
-                     * @return Id 训练任务ID
+                     * 获取<p>训练任务ID</p>
+                     * @return Id <p>训练任务ID</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置训练任务ID
-                     * @param _id 训练任务ID
+                     * 设置<p>训练任务ID</p>
+                     * @param _id <p>训练任务ID</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TiProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取训练任务实例ID
-                     * @return InstanceId 训练任务实例ID
+                     * 获取<p>训练任务实例ID</p>
+                     * @return InstanceId <p>训练任务实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置训练任务实例ID
-                     * @param _instanceId 训练任务实例ID
+                     * 设置<p>训练任务实例ID</p>
+                     * @param _instanceId <p>训练任务实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 训练任务ID
+                     * <p>训练任务ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_tiProjectIdHasBeenSet;
 
                     /**
-                     * 训练任务实例ID
+                     * <p>训练任务实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取修改域名的访问日志开关为Status
-                     * @return Status 修改域名的访问日志开关为Status
+                     * 获取CLS访问日志开关，0表示关闭，1表示开启
+                     * @return Status CLS访问日志开关，0表示关闭，1表示开启
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置修改域名的访问日志开关为Status
-                     * @param _status 修改域名的访问日志开关为Status
+                     * 设置CLS访问日志开关，0表示关闭，1表示开启
+                     * @param _status CLS访问日志开关，0表示关闭，1表示开启
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 修改域名的访问日志开关为Status
+                     * CLS访问日志开关，0表示关闭，1表示开启
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

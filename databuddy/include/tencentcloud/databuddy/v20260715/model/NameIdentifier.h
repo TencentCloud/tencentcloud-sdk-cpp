@@ -142,6 +142,56 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取数据源连接ID（仅 CONNECTION 来源时返回）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConnectionId 数据源连接ID（仅 CONNECTION 来源时返回）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetConnectionId() const;
+
+                    /**
+                     * 设置数据源连接ID（仅 CONNECTION 来源时返回）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _connectionId 数据源连接ID（仅 CONNECTION 来源时返回）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConnectionId(const std::string& _connectionId);
+
+                    /**
+                     * 判断参数 ConnectionId 是否已赋值
+                     * @return ConnectionId 是否已赋值
+                     * 
+                     */
+                    bool ConnectionIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据源连接名称（仅CatalogSource=CONNECTION）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConnectionName 数据源连接名称（仅CatalogSource=CONNECTION）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetConnectionName() const;
+
+                    /**
+                     * 设置数据源连接名称（仅CatalogSource=CONNECTION）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _connectionName 数据源连接名称（仅CatalogSource=CONNECTION）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConnectionName(const std::string& _connectionName);
+
+                    /**
+                     * 判断参数 ConnectionName 是否已赋值
+                     * @return ConnectionName 是否已赋值
+                     * 
+                     */
+                    bool ConnectionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,6 +220,20 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 数据源连接ID（仅 CONNECTION 来源时返回）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_connectionId;
+                    bool m_connectionIdHasBeenSet;
+
+                    /**
+                     * 数据源连接名称（仅CatalogSource=CONNECTION）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_connectionName;
+                    bool m_connectionNameHasBeenSet;
 
                 };
             }

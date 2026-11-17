@@ -191,6 +191,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/KongTarget.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPServerACLRequest.h
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolVersionRequest.h
+  include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceRequest.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolRequest.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsRequest.h
   include/tencentcloud/cngw/v20230418/model/RollbackCloudNativeAPIGatewayMCPToolVersionRequest.h
@@ -323,7 +324,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/AIGWSensitiveWordRoute.h
   include/tencentcloud/cngw/v20230418/model/AIGWAKSKCredentialConfig.h
   include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayMCPToolResponse.h
-  include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceRequest.h
+  include/tencentcloud/cngw/v20230418/model/KongUserTagKV.h
   include/tencentcloud/cngw/v20230418/model/CustomGuardrailDecisionConfig.h
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayAIServiceSourceRequest.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceResponse.h
@@ -521,6 +522,7 @@ set(cngw_src
   src/v20230418/model/KongTarget.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayMCPServerACLRequest.cpp
   src/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolVersionRequest.cpp
+  src/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceRequest.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolRequest.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsRequest.cpp
   src/v20230418/model/RollbackCloudNativeAPIGatewayMCPToolVersionRequest.cpp
@@ -653,7 +655,7 @@ set(cngw_src
   src/v20230418/model/AIGWSensitiveWordRoute.cpp
   src/v20230418/model/AIGWAKSKCredentialConfig.cpp
   src/v20230418/model/CreateCloudNativeAPIGatewayMCPToolResponse.cpp
-  src/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceRequest.cpp
+  src/v20230418/model/KongUserTagKV.cpp
   src/v20230418/model/CustomGuardrailDecisionConfig.cpp
   src/v20230418/model/DeleteCloudNativeAPIGatewayAIServiceSourceRequest.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceResponse.cpp

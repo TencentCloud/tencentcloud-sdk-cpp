@@ -22,7 +22,8 @@ using namespace std;
 
 UsageTimePoint::UsageTimePoint() :
     m_timeHasBeenSet(false),
-    m_reportVolumeHasBeenSet(false)
+    m_reportVolumeHasBeenSet(false),
+    m_datetimeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome UsageTimePoint::Deserialize(const rapidjson::Value &value)
         m_reportVolumeHasBeenSet = true;
     }
 
+    if (value.HasMember("Datetime") && !value["Datetime"].IsNull())
+    {
+        if (!value["Datetime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageTimePoint.Datetime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datetime = string(value["Datetime"].GetString());
+        m_datetimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void UsageTimePoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ReportVolume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reportVolume, allocator);
+    }
+
+    if (m_datetimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Datetime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datetime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void UsageTimePoint::SetReportVolume(const int64_t& _reportVolume)
 bool UsageTimePoint::ReportVolumeHasBeenSet() const
 {
     return m_reportVolumeHasBeenSet;
+}
+
+string UsageTimePoint::GetDatetime() const
+{
+    return m_datetime;
+}
+
+void UsageTimePoint::SetDatetime(const string& _datetime)
+{
+    m_datetime = _datetime;
+    m_datetimeHasBeenSet = true;
+}
+
+bool UsageTimePoint::DatetimeHasBeenSet() const
+{
+    return m_datetimeHasBeenSet;
 }
 

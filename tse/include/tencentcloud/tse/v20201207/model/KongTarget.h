@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Host
-                     * @return Host Host
+                     * 获取<p>Host</p>
+                     * @return Host <p>Host</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置Host
-                     * @param _host Host
+                     * 设置<p>Host</p>
+                     * @param _host <p>Host</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取端口
-                     * @return Port 端口
+                     * 获取<p>端口</p>
+                     * @return Port <p>端口</p>
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置端口
-                     * @param _port 端口
+                     * 设置<p>端口</p>
+                     * @param _port <p>端口</p>
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取权重
-                     * @return Weight 权重
+                     * 获取<p>权重</p>
+                     * @return Weight <p>权重</p>
                      * 
                      */
                     int64_t GetWeight() const;
 
                     /**
-                     * 设置权重
-                     * @param _weight 权重
+                     * 设置<p>权重</p>
+                     * @param _weight <p>权重</p>
                      * 
                      */
                     void SetWeight(const int64_t& _weight);
@@ -110,36 +110,15 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取健康状态
-                     * @return Health 健康状态
-                     * 
-                     */
-                    std::string GetHealth() const;
-
-                    /**
-                     * 设置健康状态
-                     * @param _health 健康状态
-                     * 
-                     */
-                    void SetHealth(const std::string& _health);
-
-                    /**
-                     * 判断参数 Health 是否已赋值
-                     * @return Health 是否已赋值
-                     * 
-                     */
-                    bool HealthHasBeenSet() const;
-
-                    /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreatedTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createdTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createdTime <p>创建时间</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -152,36 +131,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取Target的来源
-                     * @return Source Target的来源
-                     * 
-                     */
-                    std::string GetSource() const;
-
-                    /**
-                     * 设置Target的来源
-                     * @param _source Target的来源
-                     * 
-                     */
-                    void SetSource(const std::string& _source);
-
-                    /**
-                     * 判断参数 Source 是否已赋值
-                     * @return Source 是否已赋值
-                     * 
-                     */
-                    bool SourceHasBeenSet() const;
-
-                    /**
-                     * 获取CVM实例ID
-                     * @return CvmInstanceId CVM实例ID
+                     * 获取<p>CVM实例ID</p>
+                     * @return CvmInstanceId <p>CVM实例ID</p>
                      * 
                      */
                     std::string GetCvmInstanceId() const;
 
                     /**
-                     * 设置CVM实例ID
-                     * @param _cvmInstanceId CVM实例ID
+                     * 设置<p>CVM实例ID</p>
+                     * @param _cvmInstanceId <p>CVM实例ID</p>
                      * 
                      */
                     void SetCvmInstanceId(const std::string& _cvmInstanceId);
@@ -194,15 +152,15 @@ namespace TencentCloud
                     bool CvmInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取CVM实例名称
-                     * @return CvmInstanceName CVM实例名称
+                     * 获取<p>CVM实例名称</p>
+                     * @return CvmInstanceName <p>CVM实例名称</p>
                      * 
                      */
                     std::string GetCvmInstanceName() const;
 
                     /**
-                     * 设置CVM实例名称
-                     * @param _cvmInstanceName CVM实例名称
+                     * 设置<p>CVM实例名称</p>
+                     * @param _cvmInstanceName <p>CVM实例名称</p>
                      * 
                      */
                     void SetCvmInstanceName(const std::string& _cvmInstanceName);
@@ -215,15 +173,78 @@ namespace TencentCloud
                     bool CvmInstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取target标签
-                     * @return Tags target标签
+                     * 获取<p>健康状态</p>
+                     * @return Health <p>健康状态</p>
+                     * 
+                     */
+                    std::string GetHealth() const;
+
+                    /**
+                     * 设置<p>健康状态</p>
+                     * @param _health <p>健康状态</p>
+                     * 
+                     */
+                    void SetHealth(const std::string& _health);
+
+                    /**
+                     * 判断参数 Health 是否已赋值
+                     * @return Health 是否已赋值
+                     * 
+                     */
+                    bool HealthHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Target ID</p>
+                     * @return Id <p>Target ID</p>
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置<p>Target ID</p>
+                     * @param _id <p>Target ID</p>
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Target的来源</p>
+                     * @return Source <p>Target的来源</p>
+                     * 
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置<p>Target的来源</p>
+                     * @param _source <p>Target的来源</p>
+                     * 
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
+                    /**
+                     * 获取<p>target标签</p>
+                     * @return Tags <p>target标签</p>
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
-                     * 设置target标签
-                     * @param _tags target标签
+                     * 设置<p>target标签</p>
+                     * @param _tags <p>target标签</p>
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -238,55 +259,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Host
+                     * <p>Host</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 端口
+                     * <p>端口</p>
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 权重
+                     * <p>权重</p>
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 健康状态
-                     */
-                    std::string m_health;
-                    bool m_healthHasBeenSet;
-
-                    /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * Target的来源
-                     */
-                    std::string m_source;
-                    bool m_sourceHasBeenSet;
-
-                    /**
-                     * CVM实例ID
+                     * <p>CVM实例ID</p>
                      */
                     std::string m_cvmInstanceId;
                     bool m_cvmInstanceIdHasBeenSet;
 
                     /**
-                     * CVM实例名称
+                     * <p>CVM实例名称</p>
                      */
                     std::string m_cvmInstanceName;
                     bool m_cvmInstanceNameHasBeenSet;
 
                     /**
-                     * target标签
+                     * <p>健康状态</p>
+                     */
+                    std::string m_health;
+                    bool m_healthHasBeenSet;
+
+                    /**
+                     * <p>Target ID</p>
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * <p>Target的来源</p>
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
+
+                    /**
+                     * <p>target标签</p>
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;

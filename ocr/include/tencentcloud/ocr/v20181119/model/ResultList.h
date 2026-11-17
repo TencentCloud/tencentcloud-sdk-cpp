@@ -220,15 +220,15 @@ namespace TencentCloud
                     bool CoordHasBeenSet() const;
 
                     /**
-                     * 获取<p>多坐标返回，显示坐标所在页</p><p>默认值：[]</p>
-                     * @return CoordPageIndex <p>多坐标返回，显示坐标所在页</p><p>默认值：[]</p>
+                     * 获取<p>单题跨栏/跨页场景下：配合CoordPageIndex一起使用，支持多坐标显示在不同页，按顺序对齐</p><p>默认值：[]</p>
+                     * @return CoordPageIndex <p>单题跨栏/跨页场景下：配合CoordPageIndex一起使用，支持多坐标显示在不同页，按顺序对齐</p><p>默认值：[]</p>
                      * 
                      */
                     std::vector<int64_t> GetCoordPageIndex() const;
 
                     /**
-                     * 设置<p>多坐标返回，显示坐标所在页</p><p>默认值：[]</p>
-                     * @param _coordPageIndex <p>多坐标返回，显示坐标所在页</p><p>默认值：[]</p>
+                     * 设置<p>单题跨栏/跨页场景下：配合CoordPageIndex一起使用，支持多坐标显示在不同页，按顺序对齐</p><p>默认值：[]</p>
+                     * @param _coordPageIndex <p>单题跨栏/跨页场景下：配合CoordPageIndex一起使用，支持多坐标显示在不同页，按顺序对齐</p><p>默认值：[]</p>
                      * 
                      */
                     void SetCoordPageIndex(const std::vector<int64_t>& _coordPageIndex);
@@ -241,15 +241,15 @@ namespace TencentCloud
                     bool CoordPageIndexHasBeenSet() const;
 
                     /**
-                     * 获取<p>返回正确答案内容</p>
-                     * @return RightAnswer <p>返回正确答案内容</p>
+                     * 获取<p>【批改 API 专属特性】返回步骤批改场景下的正确答案内容</p>
+                     * @return RightAnswer <p>【批改 API 专属特性】返回步骤批改场景下的正确答案内容</p>
                      * 
                      */
                     std::string GetRightAnswer() const;
 
                     /**
-                     * 设置<p>返回正确答案内容</p>
-                     * @param _rightAnswer <p>返回正确答案内容</p>
+                     * 设置<p>【批改 API 专属特性】返回步骤批改场景下的正确答案内容</p>
+                     * @param _rightAnswer <p>【批改 API 专属特性】返回步骤批改场景下的正确答案内容</p>
                      * 
                      */
                     void SetRightAnswer(const std::string& _rightAnswer);
@@ -303,6 +303,48 @@ namespace TencentCloud
                      */
                     bool KnowledgePointsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，通过该字段返回题目维度的答案解析<br>当ModelType= youtu_correction_model，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</p>
+                     * @return AnswerAnalysis <p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，通过该字段返回题目维度的答案解析<br>当ModelType= youtu_correction_model，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</p>
+                     * 
+                     */
+                    std::string GetAnswerAnalysis() const;
+
+                    /**
+                     * 设置<p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，通过该字段返回题目维度的答案解析<br>当ModelType= youtu_correction_model，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</p>
+                     * @param _answerAnalysis <p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，通过该字段返回题目维度的答案解析<br>当ModelType= youtu_correction_model，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</p>
+                     * 
+                     */
+                    void SetAnswerAnalysis(const std::string& _answerAnalysis);
+
+                    /**
+                     * 判断参数 AnswerAnalysis 是否已赋值
+                     * @return AnswerAnalysis 是否已赋值
+                     * 
+                     */
+                    bool AnswerAnalysisHasBeenSet() const;
+
+                    /**
+                     * 获取<p>年级：小学/初中/高中</p>
+                     * @return Grade <p>年级：小学/初中/高中</p>
+                     * 
+                     */
+                    std::string GetGrade() const;
+
+                    /**
+                     * 设置<p>年级：小学/初中/高中</p>
+                     * @param _grade <p>年级：小学/初中/高中</p>
+                     * 
+                     */
+                    void SetGrade(const std::string& _grade);
+
+                    /**
+                     * 判断参数 Grade 是否已赋值
+                     * @return Grade 是否已赋值
+                     * 
+                     */
+                    bool GradeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -354,13 +396,13 @@ namespace TencentCloud
                     bool m_coordHasBeenSet;
 
                     /**
-                     * <p>多坐标返回，显示坐标所在页</p><p>默认值：[]</p>
+                     * <p>单题跨栏/跨页场景下：配合CoordPageIndex一起使用，支持多坐标显示在不同页，按顺序对齐</p><p>默认值：[]</p>
                      */
                     std::vector<int64_t> m_coordPageIndex;
                     bool m_coordPageIndexHasBeenSet;
 
                     /**
-                     * <p>返回正确答案内容</p>
+                     * <p>【批改 API 专属特性】返回步骤批改场景下的正确答案内容</p>
                      */
                     std::string m_rightAnswer;
                     bool m_rightAnswerHasBeenSet;
@@ -376,6 +418,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_knowledgePoints;
                     bool m_knowledgePointsHasBeenSet;
+
+                    /**
+                     * <p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，通过该字段返回题目维度的答案解析<br>当ModelType= youtu_correction_model，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</p>
+                     */
+                    std::string m_answerAnalysis;
+                    bool m_answerAnalysisHasBeenSet;
+
+                    /**
+                     * <p>年级：小学/初中/高中</p>
+                     */
+                    std::string m_grade;
+                    bool m_gradeHasBeenSet;
 
                 };
             }

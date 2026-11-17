@@ -32,7 +32,9 @@ DescribeCloudNativeAPIGatewayRoutesRequest::DescribeCloudNativeAPIGatewayRoutesR
     m_routeTypesHasBeenSet(false),
     m_grayRoutesFirstHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
-    m_orderTypeHasBeenSet(false)
+    m_orderTypeHasBeenSet(false),
+    m_tagIdsHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false)
 {
 }
 
@@ -133,6 +135,34 @@ string DescribeCloudNativeAPIGatewayRoutesRequest::ToJsonString() const
         string key = "OrderType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagIds.begin(); itr != m_tagIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_tagFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagFilters.begin(); itr != m_tagFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -301,6 +331,38 @@ void DescribeCloudNativeAPIGatewayRoutesRequest::SetOrderType(const string& _ord
 bool DescribeCloudNativeAPIGatewayRoutesRequest::OrderTypeHasBeenSet() const
 {
     return m_orderTypeHasBeenSet;
+}
+
+vector<int64_t> DescribeCloudNativeAPIGatewayRoutesRequest::GetTagIds() const
+{
+    return m_tagIds;
+}
+
+void DescribeCloudNativeAPIGatewayRoutesRequest::SetTagIds(const vector<int64_t>& _tagIds)
+{
+    m_tagIds = _tagIds;
+    m_tagIdsHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayRoutesRequest::TagIdsHasBeenSet() const
+{
+    return m_tagIdsHasBeenSet;
+}
+
+vector<TagKVFilter> DescribeCloudNativeAPIGatewayRoutesRequest::GetTagFilters() const
+{
+    return m_tagFilters;
+}
+
+void DescribeCloudNativeAPIGatewayRoutesRequest::SetTagFilters(const vector<TagKVFilter>& _tagFilters)
+{
+    m_tagFilters = _tagFilters;
+    m_tagFiltersHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayRoutesRequest::TagFiltersHasBeenSet() const
+{
+    return m_tagFiltersHasBeenSet;
 }
 
 

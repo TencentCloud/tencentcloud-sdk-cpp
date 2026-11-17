@@ -51,7 +51,8 @@ DescribeCloudNativeAPIGatewayResult::DescribeCloudNativeAPIGatewayResult() :
     m_availableUpgradeVersionsHasBeenSet(false),
     m_availableUpgradeHasBeenSet(false),
     m_availableRollbackVersionHasBeenSet(false),
-    m_forceHTTPSRedirectHasBeenSet(false)
+    m_forceHTTPSRedirectHasBeenSet(false),
+    m_privateIpAddressesHasBeenSet(false)
 {
 }
 
@@ -410,6 +411,19 @@ CoreInternalOutcome DescribeCloudNativeAPIGatewayResult::Deserialize(const rapid
         m_forceHTTPSRedirectHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivateIpAddresses") && !value["PrivateIpAddresses"].IsNull())
+    {
+        if (!value["PrivateIpAddresses"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeCloudNativeAPIGatewayResult.PrivateIpAddresses` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PrivateIpAddresses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_privateIpAddresses.push_back((*itr).GetString());
+        }
+        m_privateIpAddressesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -688,6 +702,19 @@ void DescribeCloudNativeAPIGatewayResult::ToJsonObject(rapidjson::Value &value, 
         string key = "ForceHTTPSRedirect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forceHTTPSRedirect, allocator);
+    }
+
+    if (m_privateIpAddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateIpAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_privateIpAddresses.begin(); itr != m_privateIpAddresses.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1187,5 +1214,21 @@ void DescribeCloudNativeAPIGatewayResult::SetForceHTTPSRedirect(const bool& _for
 bool DescribeCloudNativeAPIGatewayResult::ForceHTTPSRedirectHasBeenSet() const
 {
     return m_forceHTTPSRedirectHasBeenSet;
+}
+
+vector<string> DescribeCloudNativeAPIGatewayResult::GetPrivateIpAddresses() const
+{
+    return m_privateIpAddresses;
+}
+
+void DescribeCloudNativeAPIGatewayResult::SetPrivateIpAddresses(const vector<string>& _privateIpAddresses)
+{
+    m_privateIpAddresses = _privateIpAddresses;
+    m_privateIpAddressesHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayResult::PrivateIpAddressesHasBeenSet() const
+{
+    return m_privateIpAddressesHasBeenSet;
 }
 

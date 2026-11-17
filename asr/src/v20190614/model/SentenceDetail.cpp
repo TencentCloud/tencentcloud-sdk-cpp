@@ -35,7 +35,8 @@ SentenceDetail::SentenceDetail() :
     m_emotionTypeHasBeenSet(false),
     m_keyWordResultsHasBeenSet(false),
     m_langTypeHasBeenSet(false),
-    m_speakerRoleNameHasBeenSet(false)
+    m_speakerRoleNameHasBeenSet(false),
+    m_speakerVoicePrintIdHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,16 @@ CoreInternalOutcome SentenceDetail::Deserialize(const rapidjson::Value &value)
         m_speakerRoleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SpeakerVoicePrintId") && !value["SpeakerVoicePrintId"].IsNull())
+    {
+        if (!value["SpeakerVoicePrintId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SentenceDetail.SpeakerVoicePrintId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_speakerVoicePrintId = string(value["SpeakerVoicePrintId"].GetString());
+        m_speakerVoicePrintIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -361,6 +372,14 @@ void SentenceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SpeakerRoleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_speakerRoleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_speakerVoicePrintIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerVoicePrintId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_speakerVoicePrintId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -604,5 +623,21 @@ void SentenceDetail::SetSpeakerRoleName(const string& _speakerRoleName)
 bool SentenceDetail::SpeakerRoleNameHasBeenSet() const
 {
     return m_speakerRoleNameHasBeenSet;
+}
+
+string SentenceDetail::GetSpeakerVoicePrintId() const
+{
+    return m_speakerVoicePrintId;
+}
+
+void SentenceDetail::SetSpeakerVoicePrintId(const string& _speakerVoicePrintId)
+{
+    m_speakerVoicePrintId = _speakerVoicePrintId;
+    m_speakerVoicePrintIdHasBeenSet = true;
+}
+
+bool SentenceDetail::SpeakerVoicePrintIdHasBeenSet() const
+{
+    return m_speakerVoicePrintIdHasBeenSet;
 }
 

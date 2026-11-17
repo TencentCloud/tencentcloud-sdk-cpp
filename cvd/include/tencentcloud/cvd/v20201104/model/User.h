@@ -256,6 +256,27 @@ namespace TencentCloud
                      */
                     bool BindStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>用户登录锁定剩余时间</p>
+                     * @return LockRemainMs <p>用户登录锁定剩余时间</p>
+                     * 
+                     */
+                    int64_t GetLockRemainMs() const;
+
+                    /**
+                     * 设置<p>用户登录锁定剩余时间</p>
+                     * @param _lockRemainMs <p>用户登录锁定剩余时间</p>
+                     * 
+                     */
+                    void SetLockRemainMs(const int64_t& _lockRemainMs);
+
+                    /**
+                     * 判断参数 LockRemainMs 是否已赋值
+                     * @return LockRemainMs 是否已赋值
+                     * 
+                     */
+                    bool LockRemainMsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +338,12 @@ namespace TencentCloud
                      */
                     bool m_bindStatus;
                     bool m_bindStatusHasBeenSet;
+
+                    /**
+                     * <p>用户登录锁定剩余时间</p>
+                     */
+                    int64_t m_lockRemainMs;
+                    bool m_lockRemainMsHasBeenSet;
 
                 };
             }

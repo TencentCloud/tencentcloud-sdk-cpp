@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区</p>
-                     * @return MachineType <p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区</p>
+                     * 获取<p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区<br>ALL 全部机器类型</p>
+                     * @return MachineType <p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区<br>ALL 全部机器类型</p>
                      * 
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置<p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区</p>
-                     * @param _machineType <p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区</p>
+                     * 设置<p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区<br>ALL 全部机器类型</p>
+                     * @param _machineType <p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区<br>ALL 全部机器类型</p>
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取<p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others</p>
-                     * @return MachineRegion <p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others</p>
+                     * 获取<p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others ，全部地域使用：all-regions</p>
+                     * @return MachineRegion <p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others ，全部地域使用：all-regions</p>
                      * 
                      */
                     std::string GetMachineRegion() const;
 
                     /**
-                     * 设置<p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others</p>
-                     * @param _machineRegion <p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others</p>
+                     * 设置<p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others ，全部地域使用：all-regions</p>
+                     * @param _machineRegion <p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others ，全部地域使用：all-regions</p>
                      * 
                      */
                     void SetMachineRegion(const std::string& _machineRegion);
@@ -193,13 +193,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区</p>
+                     * <p>机器所属专区类型<br>CVM 云服务器<br>BM 黑石<br>ECM 边缘计算<br>LH 轻量应用服务器<br>Other 混合云专区<br>ALL 全部机器类型</p>
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * <p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others</p>
+                     * <p>机器所属地域。如：ap-guangzhou，ap-shanghai，非腾讯云主机使用：ap-others ，全部地域使用：all-regions</p>
                      */
                     std::string m_machineRegion;
                     bool m_machineRegionHasBeenSet;

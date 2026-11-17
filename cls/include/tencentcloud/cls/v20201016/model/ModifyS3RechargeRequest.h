@@ -337,6 +337,48 @@ namespace TencentCloud
                      */
                     bool ExtractRuleInfoHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否启用SQS。不传保持原配置； 开启开关仅对增量数据生效。</p>
+                     * @return SQSEnabled <p>是否启用SQS。不传保持原配置； 开启开关仅对增量数据生效。</p>
+                     * 
+                     */
+                    bool GetSQSEnabled() const;
+
+                    /**
+                     * 设置<p>是否启用SQS。不传保持原配置； 开启开关仅对增量数据生效。</p>
+                     * @param _sQSEnabled <p>是否启用SQS。不传保持原配置； 开启开关仅对增量数据生效。</p>
+                     * 
+                     */
+                    void SetSQSEnabled(const bool& _sQSEnabled);
+
+                    /**
+                     * 判断参数 SQSEnabled 是否已赋值
+                     * @return SQSEnabled 是否已赋值
+                     * 
+                     */
+                    bool SQSEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>SQS队列URL。开启开关后仅对增量数据生效。</p>
+                     * @return SQSUrl <p>SQS队列URL。开启开关后仅对增量数据生效。</p>
+                     * 
+                     */
+                    std::string GetSQSUrl() const;
+
+                    /**
+                     * 设置<p>SQS队列URL。开启开关后仅对增量数据生效。</p>
+                     * @param _sQSUrl <p>SQS队列URL。开启开关后仅对增量数据生效。</p>
+                     * 
+                     */
+                    void SetSQSUrl(const std::string& _sQSUrl);
+
+                    /**
+                     * 判断参数 SQSUrl 是否已赋值
+                     * @return SQSUrl 是否已赋值
+                     * 
+                     */
+                    bool SQSUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,6 +464,18 @@ namespace TencentCloud
                      */
                     ExtractRuleInfo m_extractRuleInfo;
                     bool m_extractRuleInfoHasBeenSet;
+
+                    /**
+                     * <p>是否启用SQS。不传保持原配置； 开启开关仅对增量数据生效。</p>
+                     */
+                    bool m_sQSEnabled;
+                    bool m_sQSEnabledHasBeenSet;
+
+                    /**
+                     * <p>SQS队列URL。开启开关后仅对增量数据生效。</p>
+                     */
+                    std::string m_sQSUrl;
+                    bool m_sQSUrlHasBeenSet;
 
                 };
             }

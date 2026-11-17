@@ -33,14 +33,20 @@
 #include <tencentcloud/keewidb/v20220308/model/ClearInstanceResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/CreateBackupManuallyRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/CreateBackupManuallyResponse.h>
+#include <tencentcloud/keewidb/v20220308/model/CreateInstanceAccountRequest.h>
+#include <tencentcloud/keewidb/v20220308/model/CreateInstanceAccountResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/CreateInstancesRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/CreateInstancesResponse.h>
+#include <tencentcloud/keewidb/v20220308/model/DeleteInstanceAccountRequest.h>
+#include <tencentcloud/keewidb/v20220308/model/DeleteInstanceAccountResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeAutoBackupConfigRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeAutoBackupConfigResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeConnectionConfigRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeConnectionConfigResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeDBSecurityGroupsRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeDBSecurityGroupsResponse.h>
+#include <tencentcloud/keewidb/v20220308/model/DescribeInstanceAccountRequest.h>
+#include <tencentcloud/keewidb/v20220308/model/DescribeInstanceAccountResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeInstanceBackupsRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeInstanceBackupsResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeInstanceBinlogsRequest.h>
@@ -85,6 +91,8 @@
 #include <tencentcloud/keewidb/v20220308/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/ModifyInstanceRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/ModifyInstanceResponse.h>
+#include <tencentcloud/keewidb/v20220308/model/ModifyInstanceAccountRequest.h>
+#include <tencentcloud/keewidb/v20220308/model/ModifyInstanceAccountResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/ModifyInstanceParamsRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/ModifyInstanceParamsResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/ModifyMaintenanceWindowRequest.h>
@@ -128,9 +136,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBackupManuallyResponse> CreateBackupManuallyOutcome;
                 typedef std::future<CreateBackupManuallyOutcome> CreateBackupManuallyOutcomeCallable;
                 typedef std::function<void(const KeewidbClient*, const Model::CreateBackupManuallyRequest&, CreateBackupManuallyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupManuallyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInstanceAccountResponse> CreateInstanceAccountOutcome;
+                typedef std::future<CreateInstanceAccountOutcome> CreateInstanceAccountOutcomeCallable;
+                typedef std::function<void(const KeewidbClient*, const Model::CreateInstanceAccountRequest&, CreateInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstancesResponse> CreateInstancesOutcome;
                 typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
                 typedef std::function<void(const KeewidbClient*, const Model::CreateInstancesRequest&, CreateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInstanceAccountResponse> DeleteInstanceAccountOutcome;
+                typedef std::future<DeleteInstanceAccountOutcome> DeleteInstanceAccountOutcomeCallable;
+                typedef std::function<void(const KeewidbClient*, const Model::DeleteInstanceAccountRequest&, DeleteInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoBackupConfigResponse> DescribeAutoBackupConfigOutcome;
                 typedef std::future<DescribeAutoBackupConfigOutcome> DescribeAutoBackupConfigOutcomeCallable;
                 typedef std::function<void(const KeewidbClient*, const Model::DescribeAutoBackupConfigRequest&, DescribeAutoBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoBackupConfigAsyncHandler;
@@ -140,6 +154,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
                 typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const KeewidbClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceAccountResponse> DescribeInstanceAccountOutcome;
+                typedef std::future<DescribeInstanceAccountOutcome> DescribeInstanceAccountOutcomeCallable;
+                typedef std::function<void(const KeewidbClient*, const Model::DescribeInstanceAccountRequest&, DescribeInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceBackupsResponse> DescribeInstanceBackupsOutcome;
                 typedef std::future<DescribeInstanceBackupsOutcome> DescribeInstanceBackupsOutcomeCallable;
                 typedef std::function<void(const KeewidbClient*, const Model::DescribeInstanceBackupsRequest&, DescribeInstanceBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceBackupsAsyncHandler;
@@ -206,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
                 typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
                 typedef std::function<void(const KeewidbClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceAccountResponse> ModifyInstanceAccountOutcome;
+                typedef std::future<ModifyInstanceAccountOutcome> ModifyInstanceAccountOutcomeCallable;
+                typedef std::function<void(const KeewidbClient*, const Model::ModifyInstanceAccountRequest&, ModifyInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceParamsResponse> ModifyInstanceParamsOutcome;
                 typedef std::future<ModifyInstanceParamsOutcome> ModifyInstanceParamsOutcomeCallable;
                 typedef std::function<void(const KeewidbClient*, const Model::ModifyInstanceParamsRequest&, ModifyInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceParamsAsyncHandler;
@@ -277,6 +297,15 @@ namespace TencentCloud
                 CreateBackupManuallyOutcomeCallable CreateBackupManuallyCallable(const Model::CreateBackupManuallyRequest& request);
 
                 /**
+                 *本接口（CreateInstanceAccount）用于自定义访问实例的账号。
+                 * @param req CreateInstanceAccountRequest
+                 * @return CreateInstanceAccountOutcome
+                 */
+                CreateInstanceAccountOutcome CreateInstanceAccount(const Model::CreateInstanceAccountRequest &request);
+                void CreateInstanceAccountAsync(const Model::CreateInstanceAccountRequest& request, const CreateInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstanceAccountOutcomeCallable CreateInstanceAccountCallable(const Model::CreateInstanceAccountRequest& request);
+
+                /**
                  *创建数据库实例
                  * @param req CreateInstancesRequest
                  * @return CreateInstancesOutcome
@@ -284,6 +313,15 @@ namespace TencentCloud
                 CreateInstancesOutcome CreateInstances(const Model::CreateInstancesRequest &request);
                 void CreateInstancesAsync(const Model::CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstancesOutcomeCallable CreateInstancesCallable(const Model::CreateInstancesRequest& request);
+
+                /**
+                 *本接口（DeleteInstanceAccount）用于删除实例自定义账号。
+                 * @param req DeleteInstanceAccountRequest
+                 * @return DeleteInstanceAccountOutcome
+                 */
+                DeleteInstanceAccountOutcome DeleteInstanceAccount(const Model::DeleteInstanceAccountRequest &request);
+                void DeleteInstanceAccountAsync(const Model::DeleteInstanceAccountRequest& request, const DeleteInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstanceAccountOutcomeCallable DeleteInstanceAccountCallable(const Model::DeleteInstanceAccountRequest& request);
 
                 /**
                  *本接口（DescribeAutoBackupConfig）用于获取自动备份配置。
@@ -311,6 +349,15 @@ namespace TencentCloud
                 DescribeDBSecurityGroupsOutcome DescribeDBSecurityGroups(const Model::DescribeDBSecurityGroupsRequest &request);
                 void DescribeDBSecurityGroupsAsync(const Model::DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
+
+                /**
+                 *本接口（DescribeInstanceAccount）用于查看实例账号信息。
+                 * @param req DescribeInstanceAccountRequest
+                 * @return DescribeInstanceAccountOutcome
+                 */
+                DescribeInstanceAccountOutcome DescribeInstanceAccount(const Model::DescribeInstanceAccountRequest &request);
+                void DescribeInstanceAccountAsync(const Model::DescribeInstanceAccountRequest& request, const DescribeInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceAccountOutcomeCallable DescribeInstanceAccountCallable(const Model::DescribeInstanceAccountRequest& request);
 
                 /**
                  *本接口（DescribeInstanceBackups）用于查询实例全量备份列表。
@@ -509,6 +556,15 @@ namespace TencentCloud
                 ModifyInstanceOutcome ModifyInstance(const Model::ModifyInstanceRequest &request);
                 void ModifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
+
+                /**
+                 *本接口（ModifyInstanceAccount）用于修改实例账号。
+                 * @param req ModifyInstanceAccountRequest
+                 * @return ModifyInstanceAccountOutcome
+                 */
+                ModifyInstanceAccountOutcome ModifyInstanceAccount(const Model::ModifyInstanceAccountRequest &request);
+                void ModifyInstanceAccountAsync(const Model::ModifyInstanceAccountRequest& request, const ModifyInstanceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceAccountOutcomeCallable ModifyInstanceAccountCallable(const Model::ModifyInstanceAccountRequest& request);
 
                 /**
                  *本接口（ModifyInstanceParams）用于修改实例参数配置。

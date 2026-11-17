@@ -8840,6 +8840,56 @@ DlcClient::DescribePartitionDetailOutcomeCallable DlcClient::DescribePartitionDe
     return prom->get_future();
 }
 
+DlcClient::DescribePartitionMonitorOverviewOutcome DlcClient::DescribePartitionMonitorOverview(const DescribePartitionMonitorOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePartitionMonitorOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePartitionMonitorOverviewResponse rsp = DescribePartitionMonitorOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePartitionMonitorOverviewOutcome(rsp);
+        else
+            return DescribePartitionMonitorOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePartitionMonitorOverviewOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribePartitionMonitorOverviewAsync(const DescribePartitionMonitorOverviewRequest& request, const DescribePartitionMonitorOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePartitionMonitorOverviewRequest&;
+    using Resp = DescribePartitionMonitorOverviewResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePartitionMonitorOverview", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DlcClient::DescribePartitionMonitorOverviewOutcomeCallable DlcClient::DescribePartitionMonitorOverviewCallable(const DescribePartitionMonitorOverviewRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePartitionMonitorOverviewOutcome>>();
+    DescribePartitionMonitorOverviewAsync(
+    request,
+    [prom](
+        const DlcClient*,
+        const DescribePartitionMonitorOverviewRequest&,
+        DescribePartitionMonitorOverviewOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DlcClient::DescribePartitionQueuesOutcome DlcClient::DescribePartitionQueues(const DescribePartitionQueuesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePartitionQueues");

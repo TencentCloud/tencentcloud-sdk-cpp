@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取环境 ID，用于指定需要修改登录策略的云开发环境。
-                     * @return EnvId 环境 ID，用于指定需要修改登录策略的云开发环境。
+                     * 获取<p>环境 ID，用于指定需要修改登录策略的云开发环境。</p>
+                     * @return EnvId <p>环境 ID，用于指定需要修改登录策略的云开发环境。</p>
                      * 
                      */
                     std::string GetEnvId() const;
 
                     /**
-                     * 设置环境 ID，用于指定需要修改登录策略的云开发环境。
-                     * @param _envId 环境 ID，用于指定需要修改登录策略的云开发环境。
+                     * 设置<p>环境 ID，用于指定需要修改登录策略的云开发环境。</p>
+                     * @param _envId <p>环境 ID，用于指定需要修改登录策略的云开发环境。</p>
                      * 
                      */
                     void SetEnvId(const std::string& _envId);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
-                     * 获取手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。
-                     * @return PhoneNumberLogin 手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。
+                     * 获取<p>手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。</p>
+                     * @return PhoneNumberLogin <p>手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。</p>
                      * 
                      */
                     bool GetPhoneNumberLogin() const;
 
                     /**
-                     * 设置手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。
-                     * @param _phoneNumberLogin 手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。
+                     * 设置<p>手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。</p>
+                     * @param _phoneNumberLogin <p>手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。</p>
                      * 
                      */
                     void SetPhoneNumberLogin(const bool& _phoneNumberLogin);
@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool PhoneNumberLoginHasBeenSet() const;
 
                     /**
-                     * 获取邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。
-                     * @return EmailLogin 邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。
+                     * 获取<p>邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。</p>
+                     * @return EmailLogin <p>邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。</p>
                      * 
                      */
                     bool GetEmailLogin() const;
 
                     /**
-                     * 设置邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。
-                     * @param _emailLogin 邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。
+                     * 设置<p>邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。</p>
+                     * @param _emailLogin <p>邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。</p>
                      * 
                      */
                     void SetEmailLogin(const bool& _emailLogin);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool EmailLoginHasBeenSet() const;
 
                     /**
-                     * 获取用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。
-                     * @return UserNameLogin 用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。
+                     * 获取<p>用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。</p>
+                     * @return UserNameLogin <p>用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。</p>
                      * 
                      */
                     bool GetUserNameLogin() const;
 
                     /**
-                     * 设置用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。
-                     * @param _userNameLogin 用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。
+                     * 设置<p>用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。</p>
+                     * @param _userNameLogin <p>用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。</p>
                      * 
                      */
                     void SetUserNameLogin(const bool& _userNameLogin);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool UserNameLoginHasBeenSet() const;
 
                     /**
-                     * 获取匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。
-                     * @return AnonymousLogin 匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。
+                     * 获取<p>匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。</p>
+                     * @return AnonymousLogin <p>匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。</p>
                      * 
                      */
                     bool GetAnonymousLogin() const;
 
                     /**
-                     * 设置匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。
-                     * @param _anonymousLogin 匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。
+                     * 设置<p>匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。</p>
+                     * @param _anonymousLogin <p>匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。</p>
                      * 
                      */
                     void SetAnonymousLogin(const bool& _anonymousLogin);
@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool AnonymousLoginHasBeenSet() const;
 
                     /**
-                     * 获取短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。
-                     * @return SmsVerificationConfig 短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。
+                     * 获取<p>短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。</p>
+                     * @return SmsVerificationConfig <p>短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。</p>
                      * 
                      */
                     VerificationConfig GetSmsVerificationConfig() const;
 
                     /**
-                     * 设置短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。
-                     * @param _smsVerificationConfig 短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。
+                     * 设置<p>短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。</p>
+                     * @param _smsVerificationConfig <p>短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。</p>
                      * 
                      */
                     void SetSmsVerificationConfig(const VerificationConfig& _smsVerificationConfig);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool SmsVerificationConfigHasBeenSet() const;
 
                     /**
-                     * 获取MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。
-                     * @return MfaConfig MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。
+                     * 获取<p>MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。</p>
+                     * @return MfaConfig <p>MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。</p>
                      * 
                      */
                     MFALoginConfig GetMfaConfig() const;
 
                     /**
-                     * 设置MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。
-                     * @param _mfaConfig MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。
+                     * 设置<p>MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。</p>
+                     * @param _mfaConfig <p>MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。</p>
                      * 
                      */
                     void SetMfaConfig(const MFALoginConfig& _mfaConfig);
@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool MfaConfigHasBeenSet() const;
 
                     /**
-                     * 获取密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。
-                     * @return PwdUpdateStrategy 密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。
+                     * 获取<p>密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。</p>
+                     * @return PwdUpdateStrategy <p>密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。</p>
                      * 
                      */
                     PasswordUpdateLoginConfig GetPwdUpdateStrategy() const;
 
                     /**
-                     * 设置密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。
-                     * @param _pwdUpdateStrategy 密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。
+                     * 设置<p>密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。</p>
+                     * @param _pwdUpdateStrategy <p>密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。</p>
                      * 
                      */
                     void SetPwdUpdateStrategy(const PasswordUpdateLoginConfig& _pwdUpdateStrategy);
@@ -216,49 +216,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 环境 ID，用于指定需要修改登录策略的云开发环境。
+                     * <p>环境 ID，用于指定需要修改登录策略的云开发环境。</p>
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
 
                     /**
-                     * 手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。
+                     * <p>手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。</p>
                      */
                     bool m_phoneNumberLogin;
                     bool m_phoneNumberLoginHasBeenSet;
 
                     /**
-                     * 邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。
+                     * <p>邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。</p>
                      */
                     bool m_emailLogin;
                     bool m_emailLoginHasBeenSet;
 
                     /**
-                     * 用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。
+                     * <p>用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。</p>
                      */
                     bool m_userNameLogin;
                     bool m_userNameLoginHasBeenSet;
 
                     /**
-                     * 匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。
+                     * <p>匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。</p>
                      */
                     bool m_anonymousLogin;
                     bool m_anonymousLoginHasBeenSet;
 
                     /**
-                     * 短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。
+                     * <p>短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。</p>
                      */
                     VerificationConfig m_smsVerificationConfig;
                     bool m_smsVerificationConfigHasBeenSet;
 
                     /**
-                     * MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。
+                     * <p>MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。</p>
                      */
                     MFALoginConfig m_mfaConfig;
                     bool m_mfaConfigHasBeenSet;
 
                     /**
-                     * 密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。
+                     * <p>密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。</p>
                      */
                     PasswordUpdateLoginConfig m_pwdUpdateStrategy;
                     bool m_pwdUpdateStrategyHasBeenSet;

@@ -33,6 +33,8 @@
 #include <tencentcloud/databuddy/v20260715/model/CreateCatalogResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateConsoleGroupRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateConsoleGroupResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/CreateExperimentRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/CreateExperimentResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateFileRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateFileResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/CreateFolderRequest.h>
@@ -83,6 +85,8 @@
 #include <tencentcloud/databuddy/v20260715/model/GetCatalogResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/GetFileRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/GetFileResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/GetFileContentRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/GetFileContentResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/GetFolderRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/GetFolderResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/GetLocationRequest.h>
@@ -254,6 +258,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConsoleGroupResponse> CreateConsoleGroupOutcome;
                 typedef std::future<CreateConsoleGroupOutcome> CreateConsoleGroupOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::CreateConsoleGroupRequest&, CreateConsoleGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsoleGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExperimentResponse> CreateExperimentOutcome;
+                typedef std::future<CreateExperimentOutcome> CreateExperimentOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::CreateExperimentRequest&, CreateExperimentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExperimentAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFileResponse> CreateFileOutcome;
                 typedef std::future<CreateFileOutcome> CreateFileOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::CreateFileRequest&, CreateFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileAsyncHandler;
@@ -329,6 +336,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetFileResponse> GetFileOutcome;
                 typedef std::future<GetFileOutcome> GetFileOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::GetFileRequest&, GetFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFileContentResponse> GetFileContentOutcome;
+                typedef std::future<GetFileContentOutcome> GetFileContentOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::GetFileContentRequest&, GetFileContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFileContentAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetFolderResponse> GetFolderOutcome;
                 typedef std::future<GetFolderOutcome> GetFolderOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::GetFolderRequest&, GetFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFolderAsyncHandler;
@@ -589,6 +599,15 @@ namespace TencentCloud
                 CreateConsoleGroupOutcome CreateConsoleGroup(const Model::CreateConsoleGroupRequest &request);
                 void CreateConsoleGroupAsync(const Model::CreateConsoleGroupRequest& request, const CreateConsoleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateConsoleGroupOutcomeCallable CreateConsoleGroupCallable(const Model::CreateConsoleGroupRequest& request);
+
+                /**
+                 *创建实验。实验是 MLflow 训练跟踪的容器，用于承载训练运行记录与已记录模型。支持 MACHINE_LEARNING/CLASSIFICATION/REGRESSION/FORECASTING/AGENT 五种类型；AutoML 类型（分类/回归/时序预测）需同时传入 AutoMlConf 与 TrainingData。
+                 * @param req CreateExperimentRequest
+                 * @return CreateExperimentOutcome
+                 */
+                CreateExperimentOutcome CreateExperiment(const Model::CreateExperimentRequest &request);
+                void CreateExperimentAsync(const Model::CreateExperimentRequest& request, const CreateExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExperimentOutcomeCallable CreateExperimentCallable(const Model::CreateExperimentRequest& request);
 
                 /**
                  *在Studio（统一开发 IDE）的工作空间文件树中新建一个文件（Notebook/SQL/Python等），创建成功后返回文件的完整元信息。
@@ -859,6 +878,15 @@ namespace TencentCloud
                 GetFileOutcome GetFile(const Model::GetFileRequest &request);
                 void GetFileAsync(const Model::GetFileRequest& request, const GetFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetFileOutcomeCallable GetFileCallable(const Model::GetFileRequest& request);
+
+                /**
+                 *获取文件内容。第一期：支持 FileId 定位
+                 * @param req GetFileContentRequest
+                 * @return GetFileContentOutcome
+                 */
+                GetFileContentOutcome GetFileContent(const Model::GetFileContentRequest &request);
+                void GetFileContentAsync(const Model::GetFileContentRequest& request, const GetFileContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFileContentOutcomeCallable GetFileContentCallable(const Model::GetFileContentRequest& request);
 
                 /**
                  *获取文件夹详情

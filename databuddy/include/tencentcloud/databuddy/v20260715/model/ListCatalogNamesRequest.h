@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool CatalogSourcesHasBeenSet() const;
 
+                    /**
+                     * 获取数据源连接ID，可选。传入后仅返回该数据源下的 catalog/database；不传则不做过滤，返回全部数据。
+                     * @return ConnectionId 数据源连接ID，可选。传入后仅返回该数据源下的 catalog/database；不传则不做过滤，返回全部数据。
+                     * 
+                     */
+                    std::string GetConnectionId() const;
+
+                    /**
+                     * 设置数据源连接ID，可选。传入后仅返回该数据源下的 catalog/database；不传则不做过滤，返回全部数据。
+                     * @param _connectionId 数据源连接ID，可选。传入后仅返回该数据源下的 catalog/database；不传则不做过滤，返回全部数据。
+                     * 
+                     */
+                    void SetConnectionId(const std::string& _connectionId);
+
+                    /**
+                     * 判断参数 ConnectionId 是否已赋值
+                     * @return ConnectionId 是否已赋值
+                     * 
+                     */
+                    bool ConnectionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_catalogSources;
                     bool m_catalogSourcesHasBeenSet;
+
+                    /**
+                     * 数据源连接ID，可选。传入后仅返回该数据源下的 catalog/database；不传则不做过滤，返回全部数据。
+                     */
+                    std::string m_connectionId;
+                    bool m_connectionIdHasBeenSet;
 
                 };
             }

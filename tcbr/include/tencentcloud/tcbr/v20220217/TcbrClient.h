@@ -53,6 +53,8 @@
 #include <tencentcloud/tcbr/v20220217/model/DescribeVersionDetailResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/InitializeCloudRunResourceRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/InitializeCloudRunResourceResponse.h>
+#include <tencentcloud/tcbr/v20220217/model/ModifyStableIPStatusRequest.h>
+#include <tencentcloud/tcbr/v20220217/model/ModifyStableIPStatusResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/OperateServerManageRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/OperateServerManageResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/ReleaseGrayRequest.h>
@@ -128,6 +130,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InitializeCloudRunResourceResponse> InitializeCloudRunResourceOutcome;
                 typedef std::future<InitializeCloudRunResourceOutcome> InitializeCloudRunResourceOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::InitializeCloudRunResourceRequest&, InitializeCloudRunResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitializeCloudRunResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStableIPStatusResponse> ModifyStableIPStatusOutcome;
+                typedef std::future<ModifyStableIPStatusOutcome> ModifyStableIPStatusOutcomeCallable;
+                typedef std::function<void(const TcbrClient*, const Model::ModifyStableIPStatusRequest&, ModifyStableIPStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStableIPStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::OperateServerManageResponse> OperateServerManageOutcome;
                 typedef std::future<OperateServerManageOutcome> OperateServerManageOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::OperateServerManageRequest&, OperateServerManageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateServerManageAsyncHandler;
@@ -289,6 +294,15 @@ namespace TencentCloud
                 InitializeCloudRunResourceOutcome InitializeCloudRunResource(const Model::InitializeCloudRunResourceRequest &request);
                 void InitializeCloudRunResourceAsync(const Model::InitializeCloudRunResourceRequest& request, const InitializeCloudRunResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InitializeCloudRunResourceOutcomeCallable InitializeCloudRunResourceCallable(const Model::InitializeCloudRunResourceRequest& request);
+
+                /**
+                 *本接口 ModifyStableIPStatus 用于修改固定 IP 状态
+                 * @param req ModifyStableIPStatusRequest
+                 * @return ModifyStableIPStatusOutcome
+                 */
+                ModifyStableIPStatusOutcome ModifyStableIPStatus(const Model::ModifyStableIPStatusRequest &request);
+                void ModifyStableIPStatusAsync(const Model::ModifyStableIPStatusRequest& request, const ModifyStableIPStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStableIPStatusOutcomeCallable ModifyStableIPStatusCallable(const Model::ModifyStableIPStatusRequest& request);
 
                 /**
                  *操作发布单

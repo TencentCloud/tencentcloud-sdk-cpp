@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取mqtt实例ID
-                     * @return InstanceId mqtt实例ID
+                     * 获取<p>mqtt实例ID</p>
+                     * @return InstanceId <p>mqtt实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取ca 证书的序列号
-                     * @return CaSn ca 证书的序列号
+                     * 获取<p>ca 证书的序列号</p>
+                     * @return CaSn <p>ca 证书的序列号</p>
                      * 
                      */
                     std::string GetCaSn() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * mqtt实例ID
+                     * <p>mqtt实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * ca 证书的序列号
+                     * <p>ca 证书的序列号</p>
                      */
                     std::string m_caSn;
                     bool m_caSnHasBeenSet;

@@ -178,15 +178,15 @@ namespace TencentCloud
                     bool OrgWidthHasBeenSet() const;
 
                     /**
-                     * 获取<p>预处理后的图片base64编码</p>
-                     * @return ImageBase64 <p>预处理后的图片base64编码</p>
+                     * 获取<p>废弃字段</p>
+                     * @return ImageBase64 <p>废弃字段</p>
                      * 
                      */
                     std::string GetImageBase64() const;
 
                     /**
-                     * 设置<p>预处理后的图片base64编码</p>
-                     * @param _imageBase64 <p>预处理后的图片base64编码</p>
+                     * 设置<p>废弃字段</p>
+                     * @param _imageBase64 <p>废弃字段</p>
                      * 
                      */
                     void SetImageBase64(const std::string& _imageBase64);
@@ -218,6 +218,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ReturnImageUrlHasBeenSet() const;
+
+                    /**
+                     * 获取<p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 时生效。其他模型类型不支持该能力。</p>
+                     * @return ClassName <p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 时生效。其他模型类型不支持该能力。</p>
+                     * 
+                     */
+                    std::string GetClassName() const;
+
+                    /**
+                     * 设置<p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 时生效。其他模型类型不支持该能力。</p>
+                     * @param _className <p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 时生效。其他模型类型不支持该能力。</p>
+                     * 
+                     */
+                    void SetClassName(const std::string& _className);
+
+                    /**
+                     * 判断参数 ClassName 是否已赋值
+                     * @return ClassName 是否已赋值
+                     * 
+                     */
+                    bool ClassNameHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文档所在页</p>
+                     * @return PageIndex <p>文档所在页</p>
+                     * 
+                     */
+                    int64_t GetPageIndex() const;
+
+                    /**
+                     * 设置<p>文档所在页</p>
+                     * @param _pageIndex <p>文档所在页</p>
+                     * 
+                     */
+                    void SetPageIndex(const int64_t& _pageIndex);
+
+                    /**
+                     * 判断参数 PageIndex 是否已赋值
+                     * @return PageIndex 是否已赋值
+                     * 
+                     */
+                    bool PageIndexHasBeenSet() const;
 
                 private:
 
@@ -259,7 +301,7 @@ namespace TencentCloud
                     bool m_orgWidthHasBeenSet;
 
                     /**
-                     * <p>预处理后的图片base64编码</p>
+                     * <p>废弃字段</p>
                      */
                     std::string m_imageBase64;
                     bool m_imageBase64HasBeenSet;
@@ -269,6 +311,18 @@ namespace TencentCloud
                      */
                     std::string m_returnImageUrl;
                     bool m_returnImageUrlHasBeenSet;
+
+                    /**
+                     * <p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 时生效。其他模型类型不支持该能力。</p>
+                     */
+                    std::string m_className;
+                    bool m_classNameHasBeenSet;
+
+                    /**
+                     * <p>文档所在页</p>
+                     */
+                    int64_t m_pageIndex;
+                    bool m_pageIndexHasBeenSet;
 
                 };
             }

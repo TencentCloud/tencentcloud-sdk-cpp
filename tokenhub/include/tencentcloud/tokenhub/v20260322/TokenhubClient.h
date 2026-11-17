@@ -73,6 +73,8 @@
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyUsageDetailResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanListRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanListResponse.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanPersonalPackageRequest.h>
+#include <tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanPersonalPackageResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeUsageRankListRequest.h>
 #include <tencentcloud/tokenhub/v20260322/model/DescribeUsageRankListResponse.h>
 #include <tencentcloud/tokenhub/v20260322/model/ModifyApiKeyBindingsRequest.h>
@@ -182,6 +184,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTokenPlanListResponse> DescribeTokenPlanListOutcome;
                 typedef std::future<DescribeTokenPlanListOutcome> DescribeTokenPlanListOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeTokenPlanListRequest&, DescribeTokenPlanListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTokenPlanListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTokenPlanPersonalPackageResponse> DescribeTokenPlanPersonalPackageOutcome;
+                typedef std::future<DescribeTokenPlanPersonalPackageOutcome> DescribeTokenPlanPersonalPackageOutcomeCallable;
+                typedef std::function<void(const TokenhubClient*, const Model::DescribeTokenPlanPersonalPackageRequest&, DescribeTokenPlanPersonalPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTokenPlanPersonalPackageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUsageRankListResponse> DescribeUsageRankListOutcome;
                 typedef std::future<DescribeUsageRankListOutcome> DescribeUsageRankListOutcomeCallable;
                 typedef std::function<void(const TokenhubClient*, const Model::DescribeUsageRankListRequest&, DescribeUsageRankListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsageRankListAsyncHandler;
@@ -484,6 +489,17 @@ namespace TencentCloud
                 DescribeTokenPlanListOutcome DescribeTokenPlanList(const Model::DescribeTokenPlanListRequest &request);
                 void DescribeTokenPlanListAsync(const Model::DescribeTokenPlanListRequest& request, const DescribeTokenPlanListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTokenPlanListOutcomeCallable DescribeTokenPlanListCallable(const Model::DescribeTokenPlanListRequest& request);
+
+                /**
+                 *查询个人版套餐详情。
+
+查询指定产品类型的个人版 Token Plan 套餐状态、额度及续费信息。
+                 * @param req DescribeTokenPlanPersonalPackageRequest
+                 * @return DescribeTokenPlanPersonalPackageOutcome
+                 */
+                DescribeTokenPlanPersonalPackageOutcome DescribeTokenPlanPersonalPackage(const Model::DescribeTokenPlanPersonalPackageRequest &request);
+                void DescribeTokenPlanPersonalPackageAsync(const Model::DescribeTokenPlanPersonalPackageRequest& request, const DescribeTokenPlanPersonalPackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTokenPlanPersonalPackageOutcomeCallable DescribeTokenPlanPersonalPackageCallable(const Model::DescribeTokenPlanPersonalPackageRequest& request);
 
                 /**
                  *查询用量排行列表。

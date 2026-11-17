@@ -25,7 +25,12 @@ RateLimit::RateLimit() :
     m_dumpRpsHasBeenSet(false),
     m_loadThreadHasBeenSet(false),
     m_loadRpsHasBeenSet(false),
-    m_sinkerThreadHasBeenSet(false)
+    m_sinkerThreadHasBeenSet(false),
+    m_loadBpsHasBeenSet(false),
+    m_dstShardCountHasBeenSet(false),
+    m_dumpBpsHasBeenSet(false),
+    m_sinkerRpsHasBeenSet(false),
+    m_sinkerBpsHasBeenSet(false)
 {
 }
 
@@ -84,6 +89,56 @@ CoreInternalOutcome RateLimit::Deserialize(const rapidjson::Value &value)
         m_sinkerThreadHasBeenSet = true;
     }
 
+    if (value.HasMember("LoadBps") && !value["LoadBps"].IsNull())
+    {
+        if (!value["LoadBps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimit.LoadBps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBps = value["LoadBps"].GetInt64();
+        m_loadBpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DstShardCount") && !value["DstShardCount"].IsNull())
+    {
+        if (!value["DstShardCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimit.DstShardCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dstShardCount = value["DstShardCount"].GetInt64();
+        m_dstShardCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("DumpBps") && !value["DumpBps"].IsNull())
+    {
+        if (!value["DumpBps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimit.DumpBps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dumpBps = value["DumpBps"].GetInt64();
+        m_dumpBpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SinkerRps") && !value["SinkerRps"].IsNull())
+    {
+        if (!value["SinkerRps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimit.SinkerRps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sinkerRps = value["SinkerRps"].GetInt64();
+        m_sinkerRpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SinkerBps") && !value["SinkerBps"].IsNull())
+    {
+        if (!value["SinkerBps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimit.SinkerBps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sinkerBps = value["SinkerBps"].GetInt64();
+        m_sinkerBpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +184,46 @@ void RateLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SinkerThread";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sinkerThread, allocator);
+    }
+
+    if (m_loadBpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_loadBps, allocator);
+    }
+
+    if (m_dstShardCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstShardCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dstShardCount, allocator);
+    }
+
+    if (m_dumpBpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DumpBps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dumpBps, allocator);
+    }
+
+    if (m_sinkerRpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SinkerRps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sinkerRps, allocator);
+    }
+
+    if (m_sinkerBpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SinkerBps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sinkerBps, allocator);
     }
 
 }
@@ -212,5 +307,85 @@ void RateLimit::SetSinkerThread(const int64_t& _sinkerThread)
 bool RateLimit::SinkerThreadHasBeenSet() const
 {
     return m_sinkerThreadHasBeenSet;
+}
+
+int64_t RateLimit::GetLoadBps() const
+{
+    return m_loadBps;
+}
+
+void RateLimit::SetLoadBps(const int64_t& _loadBps)
+{
+    m_loadBps = _loadBps;
+    m_loadBpsHasBeenSet = true;
+}
+
+bool RateLimit::LoadBpsHasBeenSet() const
+{
+    return m_loadBpsHasBeenSet;
+}
+
+int64_t RateLimit::GetDstShardCount() const
+{
+    return m_dstShardCount;
+}
+
+void RateLimit::SetDstShardCount(const int64_t& _dstShardCount)
+{
+    m_dstShardCount = _dstShardCount;
+    m_dstShardCountHasBeenSet = true;
+}
+
+bool RateLimit::DstShardCountHasBeenSet() const
+{
+    return m_dstShardCountHasBeenSet;
+}
+
+int64_t RateLimit::GetDumpBps() const
+{
+    return m_dumpBps;
+}
+
+void RateLimit::SetDumpBps(const int64_t& _dumpBps)
+{
+    m_dumpBps = _dumpBps;
+    m_dumpBpsHasBeenSet = true;
+}
+
+bool RateLimit::DumpBpsHasBeenSet() const
+{
+    return m_dumpBpsHasBeenSet;
+}
+
+int64_t RateLimit::GetSinkerRps() const
+{
+    return m_sinkerRps;
+}
+
+void RateLimit::SetSinkerRps(const int64_t& _sinkerRps)
+{
+    m_sinkerRps = _sinkerRps;
+    m_sinkerRpsHasBeenSet = true;
+}
+
+bool RateLimit::SinkerRpsHasBeenSet() const
+{
+    return m_sinkerRpsHasBeenSet;
+}
+
+int64_t RateLimit::GetSinkerBps() const
+{
+    return m_sinkerBps;
+}
+
+void RateLimit::SetSinkerBps(const int64_t& _sinkerBps)
+{
+    m_sinkerBps = _sinkerBps;
+    m_sinkerBpsHasBeenSet = true;
+}
+
+bool RateLimit::SinkerBpsHasBeenSet() const
+{
+    return m_sinkerBpsHasBeenSet;
 }
 

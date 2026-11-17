@@ -2690,6 +2690,56 @@ TcbClient::DescribeDatabaseACLOutcomeCallable TcbClient::DescribeDatabaseACLCall
     return prom->get_future();
 }
 
+TcbClient::DescribeEnvAccessControlOutcome TcbClient::DescribeEnvAccessControl(const DescribeEnvAccessControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnvAccessControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnvAccessControlResponse rsp = DescribeEnvAccessControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnvAccessControlOutcome(rsp);
+        else
+            return DescribeEnvAccessControlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnvAccessControlOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeEnvAccessControlAsync(const DescribeEnvAccessControlRequest& request, const DescribeEnvAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeEnvAccessControlRequest&;
+    using Resp = DescribeEnvAccessControlResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeEnvAccessControl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::DescribeEnvAccessControlOutcomeCallable TcbClient::DescribeEnvAccessControlCallable(const DescribeEnvAccessControlRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeEnvAccessControlOutcome>>();
+    DescribeEnvAccessControlAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const DescribeEnvAccessControlRequest&,
+        DescribeEnvAccessControlOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbClient::DescribeEnvAccountCircleOutcome TcbClient::DescribeEnvAccountCircle(const DescribeEnvAccountCircleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnvAccountCircle");
@@ -4932,6 +4982,56 @@ TcbClient::ModifyEnvOutcomeCallable TcbClient::ModifyEnvCallable(const ModifyEnv
         const TcbClient*,
         const ModifyEnvRequest&,
         ModifyEnvOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TcbClient::ModifyEnvAccessControlOutcome TcbClient::ModifyEnvAccessControl(const ModifyEnvAccessControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEnvAccessControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEnvAccessControlResponse rsp = ModifyEnvAccessControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEnvAccessControlOutcome(rsp);
+        else
+            return ModifyEnvAccessControlOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEnvAccessControlOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyEnvAccessControlAsync(const ModifyEnvAccessControlRequest& request, const ModifyEnvAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyEnvAccessControlRequest&;
+    using Resp = ModifyEnvAccessControlResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyEnvAccessControl", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbClient::ModifyEnvAccessControlOutcomeCallable TcbClient::ModifyEnvAccessControlCallable(const ModifyEnvAccessControlRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyEnvAccessControlOutcome>>();
+    ModifyEnvAccessControlAsync(
+    request,
+    [prom](
+        const TcbClient*,
+        const ModifyEnvAccessControlRequest&,
+        ModifyEnvAccessControlOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

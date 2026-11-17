@@ -25,7 +25,8 @@ MetaOwner::MetaOwner() :
     m_ownerTypeHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
-    m_catalogSourceHasBeenSet(false)
+    m_catalogSourceHasBeenSet(false),
+    m_connectionIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome MetaOwner::Deserialize(const rapidjson::Value &value)
         m_catalogSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("ConnectionId") && !value["ConnectionId"].IsNull())
+    {
+        if (!value["ConnectionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MetaOwner.ConnectionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_connectionId = string(value["ConnectionId"].GetString());
+        m_connectionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void MetaOwner::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CatalogSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_catalogSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connectionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void MetaOwner::SetCatalogSource(const string& _catalogSource)
 bool MetaOwner::CatalogSourceHasBeenSet() const
 {
     return m_catalogSourceHasBeenSet;
+}
+
+string MetaOwner::GetConnectionId() const
+{
+    return m_connectionId;
+}
+
+void MetaOwner::SetConnectionId(const string& _connectionId)
+{
+    m_connectionId = _connectionId;
+    m_connectionIdHasBeenSet = true;
+}
+
+bool MetaOwner::ConnectionIdHasBeenSet() const
+{
+    return m_connectionIdHasBeenSet;
 }
 

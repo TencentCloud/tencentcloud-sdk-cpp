@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务名称
-                     * @return ServiceName 服务名称
+                     * 获取<p>服务名称</p>
+                     * @return ServiceName <p>服务名称</p>
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
-                     * 设置服务名称
-                     * @param _serviceName 服务名称
+                     * 设置<p>服务名称</p>
+                     * @param _serviceName <p>服务名称</p>
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ServiceNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>
-                     * @return ServiceChargeType <p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>
+                     * 获取<p>付费方式</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量后付费</li><li>PREPAID_BY_MONTH： 包年包月</li><li>SPOT： 竞价售卖</li></ul>
+                     * @return ServiceChargeType <p>付费方式</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量后付费</li><li>PREPAID_BY_MONTH： 包年包月</li><li>SPOT： 竞价售卖</li></ul>
                      * 
                      */
                     std::string GetServiceChargeType() const;
 
                     /**
-                     * 设置<p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>
-                     * @param _serviceChargeType <p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>
+                     * 设置<p>付费方式</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量后付费</li><li>PREPAID_BY_MONTH： 包年包月</li><li>SPOT： 竞价售卖</li></ul>
+                     * @param _serviceChargeType <p>付费方式</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量后付费</li><li>PREPAID_BY_MONTH： 包年包月</li><li>SPOT： 竞价售卖</li></ul>
                      * 
                      */
                     void SetServiceChargeType(const std::string& _serviceChargeType);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务名称
+                     * <p>服务名称</p>
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
-                     * <p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>
+                     * <p>付费方式</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量后付费</li><li>PREPAID_BY_MONTH： 包年包月</li><li>SPOT： 竞价售卖</li></ul>
                      */
                     std::string m_serviceChargeType;
                     bool m_serviceChargeTypeHasBeenSet;

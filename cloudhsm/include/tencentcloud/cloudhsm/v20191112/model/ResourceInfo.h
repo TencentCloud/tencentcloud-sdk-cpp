@@ -657,6 +657,27 @@ namespace TencentCloud
                      */
                     bool ClusterRoleHasBeenSet() const;
 
+                    /**
+                     * 获取<p>同步状态</p>
+                     * @return SyncStatus <p>同步状态</p>
+                     * 
+                     */
+                    std::string GetSyncStatus() const;
+
+                    /**
+                     * 设置<p>同步状态</p>
+                     * @param _syncStatus <p>同步状态</p>
+                     * 
+                     */
+                    void SetSyncStatus(const std::string& _syncStatus);
+
+                    /**
+                     * 判断参数 SyncStatus 是否已赋值
+                     * @return SyncStatus 是否已赋值
+                     * 
+                     */
+                    bool SyncStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -832,6 +853,12 @@ namespace TencentCloud
                      */
                     int64_t m_clusterRole;
                     bool m_clusterRoleHasBeenSet;
+
+                    /**
+                     * <p>同步状态</p>
+                     */
+                    std::string m_syncStatus;
+                    bool m_syncStatusHasBeenSet;
 
                 };
             }

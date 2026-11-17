@@ -190,6 +190,56 @@ DbsClient::CreateConnectTestJobOutcomeCallable DbsClient::CreateConnectTestJobCa
     return prom->get_future();
 }
 
+DbsClient::DeleteBackupPlanOutcome DbsClient::DeleteBackupPlan(const DeleteBackupPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBackupPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBackupPlanResponse rsp = DeleteBackupPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBackupPlanOutcome(rsp);
+        else
+            return DeleteBackupPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBackupPlanOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::DeleteBackupPlanAsync(const DeleteBackupPlanRequest& request, const DeleteBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteBackupPlanRequest&;
+    using Resp = DeleteBackupPlanResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteBackupPlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::DeleteBackupPlanOutcomeCallable DbsClient::DeleteBackupPlanCallable(const DeleteBackupPlanRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteBackupPlanOutcome>>();
+    DeleteBackupPlanAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const DeleteBackupPlanRequest&,
+        DeleteBackupPlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbsClient::DescribeBackupCheckJobOutcome DbsClient::DescribeBackupCheckJob(const DescribeBackupCheckJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupCheckJob");
@@ -232,6 +282,56 @@ DbsClient::DescribeBackupCheckJobOutcomeCallable DbsClient::DescribeBackupCheckJ
         const DbsClient*,
         const DescribeBackupCheckJobRequest&,
         DescribeBackupCheckJobOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbsClient::DescribeBackupPlanDetailOutcome DbsClient::DescribeBackupPlanDetail(const DescribeBackupPlanDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupPlanDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupPlanDetailResponse rsp = DescribeBackupPlanDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupPlanDetailOutcome(rsp);
+        else
+            return DescribeBackupPlanDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupPlanDetailOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::DescribeBackupPlanDetailAsync(const DescribeBackupPlanDetailRequest& request, const DescribeBackupPlanDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeBackupPlanDetailRequest&;
+    using Resp = DescribeBackupPlanDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeBackupPlanDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::DescribeBackupPlanDetailOutcomeCallable DbsClient::DescribeBackupPlanDetailCallable(const DescribeBackupPlanDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeBackupPlanDetailOutcome>>();
+    DescribeBackupPlanDetailAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const DescribeBackupPlanDetailRequest&,
+        DescribeBackupPlanDetailOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -340,6 +440,306 @@ DbsClient::DescribeConnectTestResultOutcomeCallable DbsClient::DescribeConnectTe
     return prom->get_future();
 }
 
+DbsClient::DescribeFullBackupSetDetailOutcome DbsClient::DescribeFullBackupSetDetail(const DescribeFullBackupSetDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFullBackupSetDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFullBackupSetDetailResponse rsp = DescribeFullBackupSetDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFullBackupSetDetailOutcome(rsp);
+        else
+            return DescribeFullBackupSetDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFullBackupSetDetailOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::DescribeFullBackupSetDetailAsync(const DescribeFullBackupSetDetailRequest& request, const DescribeFullBackupSetDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFullBackupSetDetailRequest&;
+    using Resp = DescribeFullBackupSetDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFullBackupSetDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::DescribeFullBackupSetDetailOutcomeCallable DbsClient::DescribeFullBackupSetDetailCallable(const DescribeFullBackupSetDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFullBackupSetDetailOutcome>>();
+    DescribeFullBackupSetDetailAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const DescribeFullBackupSetDetailRequest&,
+        DescribeFullBackupSetDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbsClient::DescribeIncrementBackupSetFilesOutcome DbsClient::DescribeIncrementBackupSetFiles(const DescribeIncrementBackupSetFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIncrementBackupSetFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIncrementBackupSetFilesResponse rsp = DescribeIncrementBackupSetFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIncrementBackupSetFilesOutcome(rsp);
+        else
+            return DescribeIncrementBackupSetFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIncrementBackupSetFilesOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::DescribeIncrementBackupSetFilesAsync(const DescribeIncrementBackupSetFilesRequest& request, const DescribeIncrementBackupSetFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeIncrementBackupSetFilesRequest&;
+    using Resp = DescribeIncrementBackupSetFilesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeIncrementBackupSetFiles", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::DescribeIncrementBackupSetFilesOutcomeCallable DbsClient::DescribeIncrementBackupSetFilesCallable(const DescribeIncrementBackupSetFilesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeIncrementBackupSetFilesOutcome>>();
+    DescribeIncrementBackupSetFilesAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const DescribeIncrementBackupSetFilesRequest&,
+        DescribeIncrementBackupSetFilesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbsClient::DescribeIncrementBackupSetsOutcome DbsClient::DescribeIncrementBackupSets(const DescribeIncrementBackupSetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIncrementBackupSets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIncrementBackupSetsResponse rsp = DescribeIncrementBackupSetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIncrementBackupSetsOutcome(rsp);
+        else
+            return DescribeIncrementBackupSetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIncrementBackupSetsOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::DescribeIncrementBackupSetsAsync(const DescribeIncrementBackupSetsRequest& request, const DescribeIncrementBackupSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeIncrementBackupSetsRequest&;
+    using Resp = DescribeIncrementBackupSetsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeIncrementBackupSets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::DescribeIncrementBackupSetsOutcomeCallable DbsClient::DescribeIncrementBackupSetsCallable(const DescribeIncrementBackupSetsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeIncrementBackupSetsOutcome>>();
+    DescribeIncrementBackupSetsAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const DescribeIncrementBackupSetsRequest&,
+        DescribeIncrementBackupSetsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbsClient::DestroyBackupPlanByUserOutcome DbsClient::DestroyBackupPlanByUser(const DestroyBackupPlanByUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyBackupPlanByUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyBackupPlanByUserResponse rsp = DestroyBackupPlanByUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyBackupPlanByUserOutcome(rsp);
+        else
+            return DestroyBackupPlanByUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyBackupPlanByUserOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::DestroyBackupPlanByUserAsync(const DestroyBackupPlanByUserRequest& request, const DestroyBackupPlanByUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DestroyBackupPlanByUserRequest&;
+    using Resp = DestroyBackupPlanByUserResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DestroyBackupPlanByUser", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::DestroyBackupPlanByUserOutcomeCallable DbsClient::DestroyBackupPlanByUserCallable(const DestroyBackupPlanByUserRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DestroyBackupPlanByUserOutcome>>();
+    DestroyBackupPlanByUserAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const DestroyBackupPlanByUserRequest&,
+        DestroyBackupPlanByUserOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbsClient::ModifyBackupPlanSourceInfoOutcome DbsClient::ModifyBackupPlanSourceInfo(const ModifyBackupPlanSourceInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupPlanSourceInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupPlanSourceInfoResponse rsp = ModifyBackupPlanSourceInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupPlanSourceInfoOutcome(rsp);
+        else
+            return ModifyBackupPlanSourceInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupPlanSourceInfoOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::ModifyBackupPlanSourceInfoAsync(const ModifyBackupPlanSourceInfoRequest& request, const ModifyBackupPlanSourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyBackupPlanSourceInfoRequest&;
+    using Resp = ModifyBackupPlanSourceInfoResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyBackupPlanSourceInfo", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::ModifyBackupPlanSourceInfoOutcomeCallable DbsClient::ModifyBackupPlanSourceInfoCallable(const ModifyBackupPlanSourceInfoRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyBackupPlanSourceInfoOutcome>>();
+    ModifyBackupPlanSourceInfoAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const ModifyBackupPlanSourceInfoRequest&,
+        ModifyBackupPlanSourceInfoOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbsClient::ResumeBackupPlanOutcome DbsClient::ResumeBackupPlan(const ResumeBackupPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeBackupPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeBackupPlanResponse rsp = ResumeBackupPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeBackupPlanOutcome(rsp);
+        else
+            return ResumeBackupPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeBackupPlanOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::ResumeBackupPlanAsync(const ResumeBackupPlanRequest& request, const ResumeBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ResumeBackupPlanRequest&;
+    using Resp = ResumeBackupPlanResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ResumeBackupPlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::ResumeBackupPlanOutcomeCallable DbsClient::ResumeBackupPlanCallable(const ResumeBackupPlanRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ResumeBackupPlanOutcome>>();
+    ResumeBackupPlanAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const ResumeBackupPlanRequest&,
+        ResumeBackupPlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbsClient::StartBackupCheckJobOutcome DbsClient::StartBackupCheckJob(const StartBackupCheckJobRequest &request)
 {
     auto outcome = MakeRequest(request, "StartBackupCheckJob");
@@ -432,6 +832,56 @@ DbsClient::StartBackupPlanOutcomeCallable DbsClient::StartBackupPlanCallable(con
         const DbsClient*,
         const StartBackupPlanRequest&,
         StartBackupPlanOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+DbsClient::StopBackupPlanOutcome DbsClient::StopBackupPlan(const StopBackupPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopBackupPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopBackupPlanResponse rsp = StopBackupPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopBackupPlanOutcome(rsp);
+        else
+            return StopBackupPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return StopBackupPlanOutcome(outcome.GetError());
+    }
+}
+
+void DbsClient::StopBackupPlanAsync(const StopBackupPlanRequest& request, const StopBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopBackupPlanRequest&;
+    using Resp = StopBackupPlanResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopBackupPlan", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbsClient::StopBackupPlanOutcomeCallable DbsClient::StopBackupPlanCallable(const StopBackupPlanRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopBackupPlanOutcome>>();
+    StopBackupPlanAsync(
+    request,
+    [prom](
+        const DbsClient*,
+        const StopBackupPlanRequest&,
+        StopBackupPlanOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

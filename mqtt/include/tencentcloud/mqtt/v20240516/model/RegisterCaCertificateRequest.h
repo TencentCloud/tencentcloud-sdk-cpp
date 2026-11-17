@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 获取<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @return InstanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
-                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * 设置<p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
+                     * @param _instanceId <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取CA证书内容，自签CA可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 签发自签CA
-                     * @return CaCertificate CA证书内容，自签CA可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 签发自签CA
+                     * 获取<p>CA证书内容</p>
+                     * @return CaCertificate <p>CA证书内容</p>
                      * 
                      */
                     std::string GetCaCertificate() const;
 
                     /**
-                     * 设置CA证书内容，自签CA可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 签发自签CA
-                     * @param _caCertificate CA证书内容，自签CA可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 签发自签CA
+                     * 设置<p>CA证书内容</p>
+                     * @param _caCertificate <p>CA证书内容</p>
                      * 
                      */
                     void SetCaCertificate(const std::string& _caCertificate);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CaCertificateHasBeenSet() const;
 
                     /**
-                     * 获取验证证书内容，可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 手动注册CA证书章节
-                     * @return VerificationCertificate 验证证书内容，可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 手动注册CA证书章节
+                     * 获取<p>验证证书内容</p>
+                     * @return VerificationCertificate <p>验证证书内容</p>
                      * 
                      */
                     std::string GetVerificationCertificate() const;
 
                     /**
-                     * 设置验证证书内容，可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 手动注册CA证书章节
-                     * @param _verificationCertificate 验证证书内容，可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 手动注册CA证书章节
+                     * 设置<p>验证证书内容</p>
+                     * @param _verificationCertificate <p>验证证书内容</p>
                      * 
                      */
                     void SetVerificationCertificate(const std::string& _verificationCertificate);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool VerificationCertificateHasBeenSet() const;
 
                     /**
-                     * 获取证书格式，不传默认PEM格式，当前仅支持PEM格式
-                     * @return Format 证书格式，不传默认PEM格式，当前仅支持PEM格式
+                     * 获取<p>证书格式，不传默认PEM格式，当前仅支持PEM格式</p>
+                     * @return Format <p>证书格式，不传默认PEM格式，当前仅支持PEM格式</p>
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置证书格式，不传默认PEM格式，当前仅支持PEM格式
-                     * @param _format 证书格式，不传默认PEM格式，当前仅支持PEM格式
+                     * 设置<p>证书格式，不传默认PEM格式，当前仅支持PEM格式</p>
+                     * @param _format <p>证书格式，不传默认PEM格式，当前仅支持PEM格式</p>
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -127,23 +127,15 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取证书状态，不传默认ACTIVE状态
-    ACTIVE：激活
-    INACTIVE：未激活
-                     * @return Status 证书状态，不传默认ACTIVE状态
-    ACTIVE：激活
-    INACTIVE：未激活
+                     * 获取<p>证书状态，不传默认ACTIVE状态<br>    ACTIVE：激活<br>    INACTIVE：未激活</p>
+                     * @return Status <p>证书状态，不传默认ACTIVE状态<br>    ACTIVE：激活<br>    INACTIVE：未激活</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置证书状态，不传默认ACTIVE状态
-    ACTIVE：激活
-    INACTIVE：未激活
-                     * @param _status 证书状态，不传默认ACTIVE状态
-    ACTIVE：激活
-    INACTIVE：未激活
+                     * 设置<p>证书状态，不传默认ACTIVE状态<br>    ACTIVE：激活<br>    INACTIVE：未激活</p>
+                     * @param _status <p>证书状态，不传默认ACTIVE状态<br>    ACTIVE：激活<br>    INACTIVE：未激活</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -158,33 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * <p>腾讯云MQTT实例ID，从 <a href="https://cloud.tencent.com/document/api/1778/111029">DescribeInstanceList</a>接口或控制台获得。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * CA证书内容，自签CA可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 签发自签CA
+                     * <p>CA证书内容</p>
                      */
                     std::string m_caCertificate;
                     bool m_caCertificateHasBeenSet;
 
                     /**
-                     * 验证证书内容，可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 手动注册CA证书章节
+                     * <p>验证证书内容</p>
                      */
                     std::string m_verificationCertificate;
                     bool m_verificationCertificateHasBeenSet;
 
                     /**
-                     * 证书格式，不传默认PEM格式，当前仅支持PEM格式
+                     * <p>证书格式，不传默认PEM格式，当前仅支持PEM格式</p>
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
 
                     /**
-                     * 证书状态，不传默认ACTIVE状态
-    ACTIVE：激活
-    INACTIVE：未激活
+                     * <p>证书状态，不传默认ACTIVE状态<br>    ACTIVE：激活<br>    INACTIVE：未激活</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

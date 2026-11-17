@@ -26,7 +26,8 @@ DetectAIFakeFacesRequest::DetectAIFakeFacesRequest() :
     m_faceInputHasBeenSet(false),
     m_faceInputTypeHasBeenSet(false),
     m_encryptionHasBeenSet(false),
-    m_encryptedBodyHasBeenSet(false)
+    m_encryptedBodyHasBeenSet(false),
+    m_extraRiskInfoHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,15 @@ string DetectAIFakeFacesRequest::ToJsonString() const
         string key = "EncryptedBody";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_encryptedBody.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraRiskInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraRiskInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extraRiskInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -140,6 +150,22 @@ void DetectAIFakeFacesRequest::SetEncryptedBody(const string& _encryptedBody)
 bool DetectAIFakeFacesRequest::EncryptedBodyHasBeenSet() const
 {
     return m_encryptedBodyHasBeenSet;
+}
+
+ExtraRiskInfo DetectAIFakeFacesRequest::GetExtraRiskInfo() const
+{
+    return m_extraRiskInfo;
+}
+
+void DetectAIFakeFacesRequest::SetExtraRiskInfo(const ExtraRiskInfo& _extraRiskInfo)
+{
+    m_extraRiskInfo = _extraRiskInfo;
+    m_extraRiskInfoHasBeenSet = true;
+}
+
+bool DetectAIFakeFacesRequest::ExtraRiskInfoHasBeenSet() const
+{
+    return m_extraRiskInfoHasBeenSet;
 }
 
 

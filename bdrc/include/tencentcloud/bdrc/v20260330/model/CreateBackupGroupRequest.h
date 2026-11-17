@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BackupGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取指定备份组到期时间，如果未传入该参数，默认为永久保留。
-                     * @return Deadline 指定备份组到期时间，如果未传入该参数，默认为永久保留。
+                     * 获取指定备份组到期时间，ISO 8601 格式字符串，如 2026-01-01T00:00:00+08:00。如果未传入该参数，默认为永久保留。
+                     * @return Deadline 指定备份组到期时间，ISO 8601 格式字符串，如 2026-01-01T00:00:00+08:00。如果未传入该参数，默认为永久保留。
                      * 
                      */
                     std::string GetDeadline() const;
 
                     /**
-                     * 设置指定备份组到期时间，如果未传入该参数，默认为永久保留。
-                     * @param _deadline 指定备份组到期时间，如果未传入该参数，默认为永久保留。
+                     * 设置指定备份组到期时间，ISO 8601 格式字符串，如 2026-01-01T00:00:00+08:00。如果未传入该参数，默认为永久保留。
+                     * @param _deadline 指定备份组到期时间，ISO 8601 格式字符串，如 2026-01-01T00:00:00+08:00。如果未传入该参数，默认为永久保留。
                      * 
                      */
                     void SetDeadline(const std::string& _deadline);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_backupGroupNameHasBeenSet;
 
                     /**
-                     * 指定备份组到期时间，如果未传入该参数，默认为永久保留。
+                     * 指定备份组到期时间，ISO 8601 格式字符串，如 2026-01-01T00:00:00+08:00。如果未传入该参数，默认为永久保留。
                      */
                     std::string m_deadline;
                     bool m_deadlineHasBeenSet;

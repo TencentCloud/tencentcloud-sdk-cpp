@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询状态的域名
-                     * @return Domain 要查询状态的域名
+                     * 获取<p>要查询状态的域名</p>
+                     * @return Domain <p>要查询状态的域名</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置要查询状态的域名
-                     * @param _domain 要查询状态的域名
+                     * 设置<p>要查询状态的域名</p>
+                     * @param _domain <p>要查询状态的域名</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询状态的域名
+                     * <p>要查询状态的域名</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

@@ -446,6 +446,48 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否启用SQS。</p>
+                     * @return SQSEnabled <p>是否启用SQS。</p>
+                     * 
+                     */
+                    bool GetSQSEnabled() const;
+
+                    /**
+                     * 设置<p>是否启用SQS。</p>
+                     * @param _sQSEnabled <p>是否启用SQS。</p>
+                     * 
+                     */
+                    void SetSQSEnabled(const bool& _sQSEnabled);
+
+                    /**
+                     * 判断参数 SQSEnabled 是否已赋值
+                     * @return SQSEnabled 是否已赋值
+                     * 
+                     */
+                    bool SQSEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取<p>SQS队列URL。</p>
+                     * @return SQSUrl <p>SQS队列URL。</p>
+                     * 
+                     */
+                    std::string GetSQSUrl() const;
+
+                    /**
+                     * 设置<p>SQS队列URL。</p>
+                     * @param _sQSUrl <p>SQS队列URL。</p>
+                     * 
+                     */
+                    void SetSQSUrl(const std::string& _sQSUrl);
+
+                    /**
+                     * 判断参数 SQSUrl 是否已赋值
+                     * @return SQSUrl 是否已赋值
+                     * 
+                     */
+                    bool SQSUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -561,6 +603,18 @@ namespace TencentCloud
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>是否启用SQS。</p>
+                     */
+                    bool m_sQSEnabled;
+                    bool m_sQSEnabledHasBeenSet;
+
+                    /**
+                     * <p>SQS队列URL。</p>
+                     */
+                    std::string m_sQSUrl;
+                    bool m_sQSUrlHasBeenSet;
 
                 };
             }

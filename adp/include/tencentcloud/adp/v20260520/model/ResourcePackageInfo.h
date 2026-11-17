@@ -172,6 +172,48 @@ namespace TencentCloud
                      */
                     bool ResourceStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>云盘容量</p><p>单位：GB</p>
+                     * @return CloudDiskCapacity <p>云盘容量</p><p>单位：GB</p>
+                     * 
+                     */
+                    double GetCloudDiskCapacity() const;
+
+                    /**
+                     * 设置<p>云盘容量</p><p>单位：GB</p>
+                     * @param _cloudDiskCapacity <p>云盘容量</p><p>单位：GB</p>
+                     * 
+                     */
+                    void SetCloudDiskCapacity(const double& _cloudDiskCapacity);
+
+                    /**
+                     * 判断参数 CloudDiskCapacity 是否已赋值
+                     * @return CloudDiskCapacity 是否已赋值
+                     * 
+                     */
+                    bool CloudDiskCapacityHasBeenSet() const;
+
+                    /**
+                     * 获取<p>云盘用量</p><p>单位：GB</p>
+                     * @return CloudDiskUsage <p>云盘用量</p><p>单位：GB</p>
+                     * 
+                     */
+                    double GetCloudDiskUsage() const;
+
+                    /**
+                     * 设置<p>云盘用量</p><p>单位：GB</p>
+                     * @param _cloudDiskUsage <p>云盘用量</p><p>单位：GB</p>
+                     * 
+                     */
+                    void SetCloudDiskUsage(const double& _cloudDiskUsage);
+
+                    /**
+                     * 判断参数 CloudDiskUsage 是否已赋值
+                     * @return CloudDiskUsage 是否已赋值
+                     * 
+                     */
+                    bool CloudDiskUsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +251,18 @@ namespace TencentCloud
                      */
                     uint64_t m_resourceStatus;
                     bool m_resourceStatusHasBeenSet;
+
+                    /**
+                     * <p>云盘容量</p><p>单位：GB</p>
+                     */
+                    double m_cloudDiskCapacity;
+                    bool m_cloudDiskCapacityHasBeenSet;
+
+                    /**
+                     * <p>云盘用量</p><p>单位：GB</p>
+                     */
+                    double m_cloudDiskUsage;
+                    bool m_cloudDiskUsageHasBeenSet;
 
                 };
             }

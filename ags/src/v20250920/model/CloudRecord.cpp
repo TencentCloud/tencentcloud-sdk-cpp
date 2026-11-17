@@ -27,11 +27,11 @@ CloudRecord::CloudRecord() :
     m_descriptionHasBeenSet(false),
     m_descriptorTypeHasBeenSet(false),
     m_lifecycleStatusHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_creatorUinHasBeenSet(false),
     m_creatorSubAccountUinHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
     m_versionCountHasBeenSet(false),
     m_labelSetHasBeenSet(false)
 {
@@ -102,6 +102,26 @@ CoreInternalOutcome CloudRecord::Deserialize(const rapidjson::Value &value)
         m_lifecycleStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudRecord.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudRecord.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("AppId") && !value["AppId"].IsNull())
     {
         if (!value["AppId"].IsInt64())
@@ -130,26 +150,6 @@ CoreInternalOutcome CloudRecord::Deserialize(const rapidjson::Value &value)
         }
         m_creatorSubAccountUin = string(value["CreatorSubAccountUin"].GetString());
         m_creatorSubAccountUinHasBeenSet = true;
-    }
-
-    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
-    {
-        if (!value["CreateTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CloudRecord.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_createTime = string(value["CreateTime"].GetString());
-        m_createTimeHasBeenSet = true;
-    }
-
-    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
-    {
-        if (!value["UpdateTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CloudRecord.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_updateTime = string(value["UpdateTime"].GetString());
-        m_updateTimeHasBeenSet = true;
     }
 
     if (value.HasMember("VersionCount") && !value["VersionCount"].IsNull())
@@ -230,6 +230,22 @@ void CloudRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_lifecycleStatus.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_appIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -252,22 +268,6 @@ void CloudRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CreatorSubAccountUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creatorSubAccountUin.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_createTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreateTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_updateTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UpdateTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_versionCountHasBeenSet)
@@ -390,6 +390,38 @@ bool CloudRecord::LifecycleStatusHasBeenSet() const
     return m_lifecycleStatusHasBeenSet;
 }
 
+string CloudRecord::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void CloudRecord::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool CloudRecord::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string CloudRecord::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void CloudRecord::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool CloudRecord::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
 int64_t CloudRecord::GetAppId() const
 {
     return m_appId;
@@ -436,38 +468,6 @@ void CloudRecord::SetCreatorSubAccountUin(const string& _creatorSubAccountUin)
 bool CloudRecord::CreatorSubAccountUinHasBeenSet() const
 {
     return m_creatorSubAccountUinHasBeenSet;
-}
-
-string CloudRecord::GetCreateTime() const
-{
-    return m_createTime;
-}
-
-void CloudRecord::SetCreateTime(const string& _createTime)
-{
-    m_createTime = _createTime;
-    m_createTimeHasBeenSet = true;
-}
-
-bool CloudRecord::CreateTimeHasBeenSet() const
-{
-    return m_createTimeHasBeenSet;
-}
-
-string CloudRecord::GetUpdateTime() const
-{
-    return m_updateTime;
-}
-
-void CloudRecord::SetUpdateTime(const string& _updateTime)
-{
-    m_updateTime = _updateTime;
-    m_updateTimeHasBeenSet = true;
-}
-
-bool CloudRecord::UpdateTimeHasBeenSet() const
-{
-    return m_updateTimeHasBeenSet;
 }
 
 int64_t CloudRecord::GetVersionCount() const

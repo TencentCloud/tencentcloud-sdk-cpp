@@ -22,7 +22,10 @@ using namespace std;
 
 ChannelContent::ChannelContent() :
     m_subChannelHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_deliverStatusHasBeenSet(false),
+    m_deliverTimeHasBeenSet(false),
+    m_deliverErrMsgHasBeenSet(false)
 {
 }
 
@@ -51,6 +54,36 @@ CoreInternalOutcome ChannelContent::Deserialize(const rapidjson::Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("DeliverStatus") && !value["DeliverStatus"].IsNull())
+    {
+        if (!value["DeliverStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelContent.DeliverStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliverStatus = string(value["DeliverStatus"].GetString());
+        m_deliverStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeliverTime") && !value["DeliverTime"].IsNull())
+    {
+        if (!value["DeliverTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelContent.DeliverTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliverTime = string(value["DeliverTime"].GetString());
+        m_deliverTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeliverErrMsg") && !value["DeliverErrMsg"].IsNull())
+    {
+        if (!value["DeliverErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelContent.DeliverErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliverErrMsg = string(value["DeliverErrMsg"].GetString());
+        m_deliverErrMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +105,30 @@ void ChannelContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deliverStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deliverTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverErrMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deliverErrMsg.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +164,53 @@ void ChannelContent::SetContent(const string& _content)
 bool ChannelContent::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string ChannelContent::GetDeliverStatus() const
+{
+    return m_deliverStatus;
+}
+
+void ChannelContent::SetDeliverStatus(const string& _deliverStatus)
+{
+    m_deliverStatus = _deliverStatus;
+    m_deliverStatusHasBeenSet = true;
+}
+
+bool ChannelContent::DeliverStatusHasBeenSet() const
+{
+    return m_deliverStatusHasBeenSet;
+}
+
+string ChannelContent::GetDeliverTime() const
+{
+    return m_deliverTime;
+}
+
+void ChannelContent::SetDeliverTime(const string& _deliverTime)
+{
+    m_deliverTime = _deliverTime;
+    m_deliverTimeHasBeenSet = true;
+}
+
+bool ChannelContent::DeliverTimeHasBeenSet() const
+{
+    return m_deliverTimeHasBeenSet;
+}
+
+string ChannelContent::GetDeliverErrMsg() const
+{
+    return m_deliverErrMsg;
+}
+
+void ChannelContent::SetDeliverErrMsg(const string& _deliverErrMsg)
+{
+    m_deliverErrMsg = _deliverErrMsg;
+    m_deliverErrMsgHasBeenSet = true;
+}
+
+bool ChannelContent::DeliverErrMsgHasBeenSet() const
+{
+    return m_deliverErrMsgHasBeenSet;
 }
 

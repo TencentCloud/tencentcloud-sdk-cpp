@@ -163,18 +163,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>资源规格（查询时回显用户创建/修改时的资源选择）。公有云场景展示：ChargeType / Zone / ResourceSupplyAttribute；内网版场景展示：QueueId</p>
+                     * 获取<p>资源规格（查询时回显用户创建/修改时的资源选择）。公有云场景展示：ChargeType / Zone / ResourceSupplyAttribute / ResourceGroupSWType；内网版场景展示：QueueId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceSpec <p>资源规格（查询时回显用户创建/修改时的资源选择）。公有云场景展示：ChargeType / Zone / ResourceSupplyAttribute；内网版场景展示：QueueId</p>
+                     * @return ResourceSpec <p>资源规格（查询时回显用户创建/修改时的资源选择）。公有云场景展示：ChargeType / Zone / ResourceSupplyAttribute / ResourceGroupSWType；内网版场景展示：QueueId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SmartRouterResourceSpec GetResourceSpec() const;
 
                     /**
-                     * 设置<p>资源规格（查询时回显用户创建/修改时的资源选择）。公有云场景展示：ChargeType / Zone / ResourceSupplyAttribute；内网版场景展示：QueueId</p>
+                     * 设置<p>资源规格（查询时回显用户创建/修改时的资源选择）。公有云场景展示：ChargeType / Zone / ResourceSupplyAttribute / ResourceGroupSWType；内网版场景展示：QueueId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceSpec <p>资源规格（查询时回显用户创建/修改时的资源选择）。公有云场景展示：ChargeType / Zone / ResourceSupplyAttribute；内网版场景展示：QueueId</p>
+                     * @param _resourceSpec <p>资源规格（查询时回显用户创建/修改时的资源选择）。公有云场景展示：ChargeType / Zone / ResourceSupplyAttribute / ResourceGroupSWType；内网版场景展示：QueueId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -264,7 +264,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * <p>资源规格（查询时回显用户创建/修改时的资源选择）。公有云场景展示：ChargeType / Zone / ResourceSupplyAttribute；内网版场景展示：QueueId</p>
+                     * <p>资源规格（查询时回显用户创建/修改时的资源选择）。公有云场景展示：ChargeType / Zone / ResourceSupplyAttribute / ResourceGroupSWType；内网版场景展示：QueueId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmartRouterResourceSpec m_resourceSpec;

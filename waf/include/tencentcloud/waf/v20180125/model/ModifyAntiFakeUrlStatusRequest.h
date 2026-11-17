@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取防篡改规则状态，0表示关闭，1表示开启
+                     * @return Status 防篡改规则状态，0表示关闭，1表示开启
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置防篡改规则状态，0表示关闭，1表示开启
+                     * @param _status 防篡改规则状态，0表示关闭，1表示开启
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 状态
+                     * 防篡改规则状态，0表示关闭，1表示开启
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

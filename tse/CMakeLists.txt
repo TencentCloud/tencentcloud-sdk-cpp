@@ -164,6 +164,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ModifyConsoleNetworkResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeWafDomainsResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h
+  include/tencentcloud/tse/v20201207/model/KongUserTagKV.h
   include/tencentcloud/tse/v20201207/model/ModifyGovernanceLaneGroupsRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeUpstreamHealthCheckConfigResponse.h
   include/tencentcloud/tse/v20201207/model/ModifyGovernanceInstancesResponse.h
@@ -361,6 +362,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayPortsResponse.h
   include/tencentcloud/tse/v20201207/model/TSEGatewaySelector.h
+  include/tencentcloud/tse/v20201207/model/TagKVFilter.h
   include/tencentcloud/tse/v20201207/model/DeleteGovernanceNamespacesRequest.h
   include/tencentcloud/tse/v20201207/model/AIGWSmartBalanceConfig.h
   include/tencentcloud/tse/v20201207/model/CustomGuardrailAuthConfig.h
@@ -754,6 +756,7 @@ set(tse_src
   src/v20201207/model/ModifyConsoleNetworkResponse.cpp
   src/v20201207/model/DescribeWafDomainsResponse.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressRequest.cpp
+  src/v20201207/model/KongUserTagKV.cpp
   src/v20201207/model/ModifyGovernanceLaneGroupsRequest.cpp
   src/v20201207/model/DescribeUpstreamHealthCheckConfigResponse.cpp
   src/v20201207/model/ModifyGovernanceInstancesResponse.cpp
@@ -951,6 +954,7 @@ set(tse_src
   src/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayPortsResponse.cpp
   src/v20201207/model/TSEGatewaySelector.cpp
+  src/v20201207/model/TagKVFilter.cpp
   src/v20201207/model/DeleteGovernanceNamespacesRequest.cpp
   src/v20201207/model/AIGWSmartBalanceConfig.cpp
   src/v20201207/model/CustomGuardrailAuthConfig.cpp

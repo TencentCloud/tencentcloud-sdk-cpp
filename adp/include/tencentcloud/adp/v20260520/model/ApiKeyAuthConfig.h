@@ -47,39 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取密钥位置 HEADER/QUERY
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | Header鉴权 |
-| 1 | Query鉴权 |
-                     * @return KeyLocation 密钥位置 HEADER/QUERY
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | Header鉴权 |
-| 1 | Query鉴权 |
+                     * 获取<p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | Header鉴权 |<br>| 1 | Query鉴权 |</p>
+                     * @return KeyLocation <p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | Header鉴权 |<br>| 1 | Query鉴权 |</p>
                      * 
                      */
                     int64_t GetKeyLocation() const;
 
                     /**
-                     * 设置密钥位置 HEADER/QUERY
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | Header鉴权 |
-| 1 | Query鉴权 |
-                     * @param _keyLocation 密钥位置 HEADER/QUERY
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | Header鉴权 |
-| 1 | Query鉴权 |
+                     * 设置<p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | Header鉴权 |<br>| 1 | Query鉴权 |</p>
+                     * @param _keyLocation <p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | Header鉴权 |<br>| 1 | Query鉴权 |</p>
                      * 
                      */
                     void SetKeyLocation(const int64_t& _keyLocation);
@@ -92,15 +68,15 @@ namespace TencentCloud
                     bool KeyLocationHasBeenSet() const;
 
                     /**
-                     * 获取密钥参数名
-                     * @return KeyParamName 密钥参数名
+                     * 获取<p>密钥参数名</p>
+                     * @return KeyParamName <p>密钥参数名</p>
                      * 
                      */
                     std::string GetKeyParamName() const;
 
                     /**
-                     * 设置密钥参数名
-                     * @param _keyParamName 密钥参数名
+                     * 设置<p>密钥参数名</p>
+                     * @param _keyParamName <p>密钥参数名</p>
                      * 
                      */
                     void SetKeyParamName(const std::string& _keyParamName);
@@ -113,15 +89,15 @@ namespace TencentCloud
                     bool KeyParamNameHasBeenSet() const;
 
                     /**
-                     * 获取密钥参数值
-                     * @return KeyParamValue 密钥参数值
+                     * 获取<p>密钥参数值</p>
+                     * @return KeyParamValue <p>密钥参数值</p>
                      * 
                      */
                     std::string GetKeyParamValue() const;
 
                     /**
-                     * 设置密钥参数值
-                     * @param _keyParamValue 密钥参数值
+                     * 设置<p>密钥参数值</p>
+                     * @param _keyParamValue <p>密钥参数值</p>
                      * 
                      */
                     void SetKeyParamValue(const std::string& _keyParamValue);
@@ -133,31 +109,52 @@ namespace TencentCloud
                      */
                     bool KeyParamValueHasBeenSet() const;
 
+                    /**
+                     * 获取<p>密钥值用途，未指定按允许工具调用处理</p><p>枚举值：</p><ul><li>1： 允许用于工具调用</li><li>2： 仅用于连接测试和获取工具列表</li></ul>
+                     * @return KeyValueUsage <p>密钥值用途，未指定按允许工具调用处理</p><p>枚举值：</p><ul><li>1： 允许用于工具调用</li><li>2： 仅用于连接测试和获取工具列表</li></ul>
+                     * 
+                     */
+                    int64_t GetKeyValueUsage() const;
+
+                    /**
+                     * 设置<p>密钥值用途，未指定按允许工具调用处理</p><p>枚举值：</p><ul><li>1： 允许用于工具调用</li><li>2： 仅用于连接测试和获取工具列表</li></ul>
+                     * @param _keyValueUsage <p>密钥值用途，未指定按允许工具调用处理</p><p>枚举值：</p><ul><li>1： 允许用于工具调用</li><li>2： 仅用于连接测试和获取工具列表</li></ul>
+                     * 
+                     */
+                    void SetKeyValueUsage(const int64_t& _keyValueUsage);
+
+                    /**
+                     * 判断参数 KeyValueUsage 是否已赋值
+                     * @return KeyValueUsage 是否已赋值
+                     * 
+                     */
+                    bool KeyValueUsageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 密钥位置 HEADER/QUERY
-
-枚举值:
-| uint | 描述 |
-| --- | --- |
-| 0 | Header鉴权 |
-| 1 | Query鉴权 |
+                     * <p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | Header鉴权 |<br>| 1 | Query鉴权 |</p>
                      */
                     int64_t m_keyLocation;
                     bool m_keyLocationHasBeenSet;
 
                     /**
-                     * 密钥参数名
+                     * <p>密钥参数名</p>
                      */
                     std::string m_keyParamName;
                     bool m_keyParamNameHasBeenSet;
 
                     /**
-                     * 密钥参数值
+                     * <p>密钥参数值</p>
                      */
                     std::string m_keyParamValue;
                     bool m_keyParamValueHasBeenSet;
+
+                    /**
+                     * <p>密钥值用途，未指定按允许工具调用处理</p><p>枚举值：</p><ul><li>1： 允许用于工具调用</li><li>2： 仅用于连接测试和获取工具列表</li></ul>
+                     */
+                    int64_t m_keyValueUsage;
+                    bool m_keyValueUsageHasBeenSet;
 
                 };
             }

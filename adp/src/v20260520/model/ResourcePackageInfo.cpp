@@ -26,7 +26,9 @@ ResourcePackageInfo::ResourcePackageInfo() :
     m_resourceUsageHasBeenSet(false),
     m_knowledgeCapacityHasBeenSet(false),
     m_knowledgeUsageHasBeenSet(false),
-    m_resourceStatusHasBeenSet(false)
+    m_resourceStatusHasBeenSet(false),
+    m_cloudDiskCapacityHasBeenSet(false),
+    m_cloudDiskUsageHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome ResourcePackageInfo::Deserialize(const rapidjson::Value &val
         m_resourceStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudDiskCapacity") && !value["CloudDiskCapacity"].IsNull())
+    {
+        if (!value["CloudDiskCapacity"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourcePackageInfo.CloudDiskCapacity` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudDiskCapacity = value["CloudDiskCapacity"].GetDouble();
+        m_cloudDiskCapacityHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudDiskUsage") && !value["CloudDiskUsage"].IsNull())
+    {
+        if (!value["CloudDiskUsage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourcePackageInfo.CloudDiskUsage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudDiskUsage = value["CloudDiskUsage"].GetDouble();
+        m_cloudDiskUsageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void ResourcePackageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ResourceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceStatus, allocator);
+    }
+
+    if (m_cloudDiskCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudDiskCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudDiskCapacity, allocator);
+    }
+
+    if (m_cloudDiskUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudDiskUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudDiskUsage, allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void ResourcePackageInfo::SetResourceStatus(const uint64_t& _resourceStatus)
 bool ResourcePackageInfo::ResourceStatusHasBeenSet() const
 {
     return m_resourceStatusHasBeenSet;
+}
+
+double ResourcePackageInfo::GetCloudDiskCapacity() const
+{
+    return m_cloudDiskCapacity;
+}
+
+void ResourcePackageInfo::SetCloudDiskCapacity(const double& _cloudDiskCapacity)
+{
+    m_cloudDiskCapacity = _cloudDiskCapacity;
+    m_cloudDiskCapacityHasBeenSet = true;
+}
+
+bool ResourcePackageInfo::CloudDiskCapacityHasBeenSet() const
+{
+    return m_cloudDiskCapacityHasBeenSet;
+}
+
+double ResourcePackageInfo::GetCloudDiskUsage() const
+{
+    return m_cloudDiskUsage;
+}
+
+void ResourcePackageInfo::SetCloudDiskUsage(const double& _cloudDiskUsage)
+{
+    m_cloudDiskUsage = _cloudDiskUsage;
+    m_cloudDiskUsageHasBeenSet = true;
+}
+
+bool ResourcePackageInfo::CloudDiskUsageHasBeenSet() const
+{
+    return m_cloudDiskUsageHasBeenSet;
 }
 

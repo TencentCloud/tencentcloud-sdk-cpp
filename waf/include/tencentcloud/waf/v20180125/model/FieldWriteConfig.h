@@ -89,6 +89,27 @@ namespace TencentCloud
                     bool EnableBodyHasBeenSet() const;
 
                     /**
+                     * 获取<p>仅当该条访问日志命中攻击规则时，是否额外存储 attack_body 字段（取值与 body 字段相同）。1:开启 0/不填:不开启。与 EnableBody 完全独立，互不影响。仅在存储查询链路（DescribeAccessMeta/ModifyAccessPeriod）中生效，不影响 CLS/CKafka 自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow）配置。</p>
+                     * @return EnableAttackBody <p>仅当该条访问日志命中攻击规则时，是否额外存储 attack_body 字段（取值与 body 字段相同）。1:开启 0/不填:不开启。与 EnableBody 完全独立，互不影响。仅在存储查询链路（DescribeAccessMeta/ModifyAccessPeriod）中生效，不影响 CLS/CKafka 自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow）配置。</p>
+                     * 
+                     */
+                    int64_t GetEnableAttackBody() const;
+
+                    /**
+                     * 设置<p>仅当该条访问日志命中攻击规则时，是否额外存储 attack_body 字段（取值与 body 字段相同）。1:开启 0/不填:不开启。与 EnableBody 完全独立，互不影响。仅在存储查询链路（DescribeAccessMeta/ModifyAccessPeriod）中生效，不影响 CLS/CKafka 自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow）配置。</p>
+                     * @param _enableAttackBody <p>仅当该条访问日志命中攻击规则时，是否额外存储 attack_body 字段（取值与 body 字段相同）。1:开启 0/不填:不开启。与 EnableBody 完全独立，互不影响。仅在存储查询链路（DescribeAccessMeta/ModifyAccessPeriod）中生效，不影响 CLS/CKafka 自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow）配置。</p>
+                     * 
+                     */
+                    void SetEnableAttackBody(const int64_t& _enableAttackBody);
+
+                    /**
+                     * 判断参数 EnableAttackBody 是否已赋值
+                     * @return EnableAttackBody 是否已赋值
+                     * 
+                     */
+                    bool EnableAttackBodyHasBeenSet() const;
+
+                    /**
                      * 获取<p>1:开启 0:不开启</p>
                      * @return EnableBot <p>1:开启 0:不开启</p>
                      * 
@@ -193,6 +214,48 @@ namespace TencentCloud
                      */
                     bool EnableResponseStatusLineHasBeenSet() const;
 
+                    /**
+                     * 获取<p>大模型安全防护详情字段，用;分割，仅对 SDK 访问日志生效。不传表示全部写入；传空字符串表示只写必填字段（uuid、appid、instance、timestamp、llm_service_id）。</p>
+                     * @return LlmItem <p>大模型安全防护详情字段，用;分割，仅对 SDK 访问日志生效。不传表示全部写入；传空字符串表示只写必填字段（uuid、appid、instance、timestamp、llm_service_id）。</p>
+                     * 
+                     */
+                    std::string GetLlmItem() const;
+
+                    /**
+                     * 设置<p>大模型安全防护详情字段，用;分割，仅对 SDK 访问日志生效。不传表示全部写入；传空字符串表示只写必填字段（uuid、appid、instance、timestamp、llm_service_id）。</p>
+                     * @param _llmItem <p>大模型安全防护详情字段，用;分割，仅对 SDK 访问日志生效。不传表示全部写入；传空字符串表示只写必填字段（uuid、appid、instance、timestamp、llm_service_id）。</p>
+                     * 
+                     */
+                    void SetLlmItem(const std::string& _llmItem);
+
+                    /**
+                     * 判断参数 LlmItem 是否已赋值
+                     * @return LlmItem 是否已赋值
+                     * 
+                     */
+                    bool LlmItemHasBeenSet() const;
+
+                    /**
+                     * 获取<p>headers 字段中10个通用冗余子字段（accept/accept-encoding/accept-language/connection/content-type/cookie/host/referer/x-forwarded-for/user-agent）剔除开关。1:剔除 0/不填:不剔除。仅在CLS/CKafka自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow及对应Describe接口）中生效，不影响原有存储日志配置。</p>
+                     * @return FilterPlusEnableHeaderFilter <p>headers 字段中10个通用冗余子字段（accept/accept-encoding/accept-language/connection/content-type/cookie/host/referer/x-forwarded-for/user-agent）剔除开关。1:剔除 0/不填:不剔除。仅在CLS/CKafka自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow及对应Describe接口）中生效，不影响原有存储日志配置。</p>
+                     * 
+                     */
+                    int64_t GetFilterPlusEnableHeaderFilter() const;
+
+                    /**
+                     * 设置<p>headers 字段中10个通用冗余子字段（accept/accept-encoding/accept-language/connection/content-type/cookie/host/referer/x-forwarded-for/user-agent）剔除开关。1:剔除 0/不填:不剔除。仅在CLS/CKafka自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow及对应Describe接口）中生效，不影响原有存储日志配置。</p>
+                     * @param _filterPlusEnableHeaderFilter <p>headers 字段中10个通用冗余子字段（accept/accept-encoding/accept-language/connection/content-type/cookie/host/referer/x-forwarded-for/user-agent）剔除开关。1:剔除 0/不填:不剔除。仅在CLS/CKafka自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow及对应Describe接口）中生效，不影响原有存储日志配置。</p>
+                     * 
+                     */
+                    void SetFilterPlusEnableHeaderFilter(const int64_t& _filterPlusEnableHeaderFilter);
+
+                    /**
+                     * 判断参数 FilterPlusEnableHeaderFilter 是否已赋值
+                     * @return FilterPlusEnableHeaderFilter 是否已赋值
+                     * 
+                     */
+                    bool FilterPlusEnableHeaderFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +269,12 @@ namespace TencentCloud
                      */
                     int64_t m_enableBody;
                     bool m_enableBodyHasBeenSet;
+
+                    /**
+                     * <p>仅当该条访问日志命中攻击规则时，是否额外存储 attack_body 字段（取值与 body 字段相同）。1:开启 0/不填:不开启。与 EnableBody 完全独立，互不影响。仅在存储查询链路（DescribeAccessMeta/ModifyAccessPeriod）中生效，不影响 CLS/CKafka 自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow）配置。</p>
+                     */
+                    int64_t m_enableAttackBody;
+                    bool m_enableAttackBodyHasBeenSet;
 
                     /**
                      * <p>1:开启 0:不开启</p>
@@ -236,6 +305,18 @@ namespace TencentCloud
                      */
                     int64_t m_enableResponseStatusLine;
                     bool m_enableResponseStatusLineHasBeenSet;
+
+                    /**
+                     * <p>大模型安全防护详情字段，用;分割，仅对 SDK 访问日志生效。不传表示全部写入；传空字符串表示只写必填字段（uuid、appid、instance、timestamp、llm_service_id）。</p>
+                     */
+                    std::string m_llmItem;
+                    bool m_llmItemHasBeenSet;
+
+                    /**
+                     * <p>headers 字段中10个通用冗余子字段（accept/accept-encoding/accept-language/connection/content-type/cookie/host/referer/x-forwarded-for/user-agent）剔除开关。1:剔除 0/不填:不剔除。仅在CLS/CKafka自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow及对应Describe接口）中生效，不影响原有存储日志配置。</p>
+                     */
+                    int64_t m_filterPlusEnableHeaderFilter;
+                    bool m_filterPlusEnableHeaderFilterHasBeenSet;
 
                 };
             }

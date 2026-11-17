@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要设置的domain
-                     * @return Domain 需要设置的domain
+                     * 获取<p>需要设置的domain</p>
+                     * @return Domain <p>需要设置的domain</p>
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置需要设置的domain
-                     * @param _domain 需要设置的domain
+                     * 设置<p>需要设置的domain</p>
+                     * @param _domain <p>需要设置的domain</p>
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取Web 安全模块开关，0或1
-                     * @return WebSecurity Web 安全模块开关，0或1
+                     * 获取<p>Web 安全模块开关，0或1</p>
+                     * @return WebSecurity <p>Web 安全模块开关，0或1</p>
                      * 
                      */
                     uint64_t GetWebSecurity() const;
 
                     /**
-                     * 设置Web 安全模块开关，0或1
-                     * @param _webSecurity Web 安全模块开关，0或1
+                     * 设置<p>Web 安全模块开关，0或1</p>
+                     * @param _webSecurity <p>Web 安全模块开关，0或1</p>
                      * 
                      */
                     void SetWebSecurity(const uint64_t& _webSecurity);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool WebSecurityHasBeenSet() const;
 
                     /**
-                     * 获取访问控制模块开关，0或者1
-                     * @return AccessControl 访问控制模块开关，0或者1
+                     * 获取<p>访问控制模块开关，0或者1</p>
+                     * @return AccessControl <p>访问控制模块开关，0或者1</p>
                      * 
                      */
                     uint64_t GetAccessControl() const;
 
                     /**
-                     * 设置访问控制模块开关，0或者1
-                     * @param _accessControl 访问控制模块开关，0或者1
+                     * 设置<p>访问控制模块开关，0或者1</p>
+                     * @param _accessControl <p>访问控制模块开关，0或者1</p>
                      * 
                      */
                     void SetAccessControl(const uint64_t& _accessControl);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AccessControlHasBeenSet() const;
 
                     /**
-                     * 获取CC模块开关，0或者1
-                     * @return CcProtection CC模块开关，0或者1
+                     * 获取<p>CC模块开关，0或者1</p>
+                     * @return CcProtection <p>CC模块开关，0或者1</p>
                      * 
                      */
                     uint64_t GetCcProtection() const;
 
                     /**
-                     * 设置CC模块开关，0或者1
-                     * @param _ccProtection CC模块开关，0或者1
+                     * 设置<p>CC模块开关，0或者1</p>
+                     * @param _ccProtection <p>CC模块开关，0或者1</p>
                      * 
                      */
                     void SetCcProtection(const uint64_t& _ccProtection);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CcProtectionHasBeenSet() const;
 
                     /**
-                     * 获取API安全模块开关，0或者1
-                     * @return ApiProtection API安全模块开关，0或者1
+                     * 获取<p>API安全模块开关，0或者1</p>
+                     * @return ApiProtection <p>API安全模块开关，0或者1</p>
                      * 
                      */
                     uint64_t GetApiProtection() const;
 
                     /**
-                     * 设置API安全模块开关，0或者1
-                     * @param _apiProtection API安全模块开关，0或者1
+                     * 设置<p>API安全模块开关，0或者1</p>
+                     * @param _apiProtection <p>API安全模块开关，0或者1</p>
                      * 
                      */
                     void SetApiProtection(const uint64_t& _apiProtection);
@@ -148,15 +148,36 @@ namespace TencentCloud
                     bool ApiProtectionHasBeenSet() const;
 
                     /**
-                     * 获取防篡改模块开关，0或者1
-                     * @return AntiTamper 防篡改模块开关，0或者1
+                     * 获取<p>API安全检测开关，0关闭1开启</p>
+                     * @return ApiDetect <p>API安全检测开关，0关闭1开启</p>
+                     * 
+                     */
+                    uint64_t GetApiDetect() const;
+
+                    /**
+                     * 设置<p>API安全检测开关，0关闭1开启</p>
+                     * @param _apiDetect <p>API安全检测开关，0关闭1开启</p>
+                     * 
+                     */
+                    void SetApiDetect(const uint64_t& _apiDetect);
+
+                    /**
+                     * 判断参数 ApiDetect 是否已赋值
+                     * @return ApiDetect 是否已赋值
+                     * 
+                     */
+                    bool ApiDetectHasBeenSet() const;
+
+                    /**
+                     * 获取<p>防篡改模块开关，0或者1</p>
+                     * @return AntiTamper <p>防篡改模块开关，0或者1</p>
                      * 
                      */
                     uint64_t GetAntiTamper() const;
 
                     /**
-                     * 设置防篡改模块开关，0或者1
-                     * @param _antiTamper 防篡改模块开关，0或者1
+                     * 设置<p>防篡改模块开关，0或者1</p>
+                     * @param _antiTamper <p>防篡改模块开关，0或者1</p>
                      * 
                      */
                     void SetAntiTamper(const uint64_t& _antiTamper);
@@ -169,15 +190,15 @@ namespace TencentCloud
                     bool AntiTamperHasBeenSet() const;
 
                     /**
-                     * 获取防泄漏模块开关，0或者1
-                     * @return AntiLeakage 防泄漏模块开关，0或者1
+                     * 获取<p>防泄漏模块开关，0或者1</p>
+                     * @return AntiLeakage <p>防泄漏模块开关，0或者1</p>
                      * 
                      */
                     uint64_t GetAntiLeakage() const;
 
                     /**
-                     * 设置防泄漏模块开关，0或者1
-                     * @param _antiLeakage 防泄漏模块开关，0或者1
+                     * 设置<p>防泄漏模块开关，0或者1</p>
+                     * @param _antiLeakage <p>防泄漏模块开关，0或者1</p>
                      * 
                      */
                     void SetAntiLeakage(const uint64_t& _antiLeakage);
@@ -190,15 +211,15 @@ namespace TencentCloud
                     bool AntiLeakageHasBeenSet() const;
 
                     /**
-                     * 获取限流模块开关，0或1
-                     * @return RateLimit 限流模块开关，0或1
+                     * 获取<p>限流模块开关，0或1</p>
+                     * @return RateLimit <p>限流模块开关，0或1</p>
                      * 
                      */
                     uint64_t GetRateLimit() const;
 
                     /**
-                     * 设置限流模块开关，0或1
-                     * @param _rateLimit 限流模块开关，0或1
+                     * 设置<p>限流模块开关，0或1</p>
+                     * @param _rateLimit <p>限流模块开关，0或1</p>
                      * 
                      */
                     void SetRateLimit(const uint64_t& _rateLimit);
@@ -211,15 +232,15 @@ namespace TencentCloud
                     bool RateLimitHasBeenSet() const;
 
                     /**
-                     * 获取gzip 开关
-                     * @return GzipAnalysis gzip 开关
+                     * 获取<p>gzip 开关</p>
+                     * @return GzipAnalysis <p>gzip 开关</p>
                      * 
                      */
                     uint64_t GetGzipAnalysis() const;
 
                     /**
-                     * 设置gzip 开关
-                     * @param _gzipAnalysis gzip 开关
+                     * 设置<p>gzip 开关</p>
+                     * @param _gzipAnalysis <p>gzip 开关</p>
                      * 
                      */
                     void SetGzipAnalysis(const uint64_t& _gzipAnalysis);
@@ -234,55 +255,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要设置的domain
+                     * <p>需要设置的domain</p>
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * Web 安全模块开关，0或1
+                     * <p>Web 安全模块开关，0或1</p>
                      */
                     uint64_t m_webSecurity;
                     bool m_webSecurityHasBeenSet;
 
                     /**
-                     * 访问控制模块开关，0或者1
+                     * <p>访问控制模块开关，0或者1</p>
                      */
                     uint64_t m_accessControl;
                     bool m_accessControlHasBeenSet;
 
                     /**
-                     * CC模块开关，0或者1
+                     * <p>CC模块开关，0或者1</p>
                      */
                     uint64_t m_ccProtection;
                     bool m_ccProtectionHasBeenSet;
 
                     /**
-                     * API安全模块开关，0或者1
+                     * <p>API安全模块开关，0或者1</p>
                      */
                     uint64_t m_apiProtection;
                     bool m_apiProtectionHasBeenSet;
 
                     /**
-                     * 防篡改模块开关，0或者1
+                     * <p>API安全检测开关，0关闭1开启</p>
+                     */
+                    uint64_t m_apiDetect;
+                    bool m_apiDetectHasBeenSet;
+
+                    /**
+                     * <p>防篡改模块开关，0或者1</p>
                      */
                     uint64_t m_antiTamper;
                     bool m_antiTamperHasBeenSet;
 
                     /**
-                     * 防泄漏模块开关，0或者1
+                     * <p>防泄漏模块开关，0或者1</p>
                      */
                     uint64_t m_antiLeakage;
                     bool m_antiLeakageHasBeenSet;
 
                     /**
-                     * 限流模块开关，0或1
+                     * <p>限流模块开关，0或1</p>
                      */
                     uint64_t m_rateLimit;
                     bool m_rateLimitHasBeenSet;
 
                     /**
-                     * gzip 开关
+                     * <p>gzip 开关</p>
                      */
                     uint64_t m_gzipAnalysis;
                     bool m_gzipAnalysisHasBeenSet;

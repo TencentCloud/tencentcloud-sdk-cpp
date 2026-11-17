@@ -26,7 +26,9 @@ SubmitMarkEssayAgentJobRequest::SubmitMarkEssayAgentJobRequest() :
     m_imageBase64ListHasBeenSet(false),
     m_imageUrlListHasBeenSet(false),
     m_pdfPageNumberHasBeenSet(false),
-    m_questionConfigMapHasBeenSet(false)
+    m_questionConfigMapHasBeenSet(false),
+    m_agentTypeHasBeenSet(false),
+    m_pageRangeHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,22 @@ string SubmitMarkEssayAgentJobRequest::ToJsonString() const
         string key = "QuestionConfigMap";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_questionConfigMap.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_agentType, allocator);
+    }
+
+    if (m_pageRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageRange";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pageRange.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -149,6 +167,38 @@ void SubmitMarkEssayAgentJobRequest::SetQuestionConfigMap(const string& _questio
 bool SubmitMarkEssayAgentJobRequest::QuestionConfigMapHasBeenSet() const
 {
     return m_questionConfigMapHasBeenSet;
+}
+
+int64_t SubmitMarkEssayAgentJobRequest::GetAgentType() const
+{
+    return m_agentType;
+}
+
+void SubmitMarkEssayAgentJobRequest::SetAgentType(const int64_t& _agentType)
+{
+    m_agentType = _agentType;
+    m_agentTypeHasBeenSet = true;
+}
+
+bool SubmitMarkEssayAgentJobRequest::AgentTypeHasBeenSet() const
+{
+    return m_agentTypeHasBeenSet;
+}
+
+string SubmitMarkEssayAgentJobRequest::GetPageRange() const
+{
+    return m_pageRange;
+}
+
+void SubmitMarkEssayAgentJobRequest::SetPageRange(const string& _pageRange)
+{
+    m_pageRange = _pageRange;
+    m_pageRangeHasBeenSet = true;
+}
+
+bool SubmitMarkEssayAgentJobRequest::PageRangeHasBeenSet() const
+{
+    return m_pageRangeHasBeenSet;
 }
 
 

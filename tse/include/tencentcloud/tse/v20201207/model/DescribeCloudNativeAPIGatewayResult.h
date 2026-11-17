@@ -705,6 +705,27 @@ namespace TencentCloud
                      */
                     bool ForceHTTPSRedirectHasBeenSet() const;
 
+                    /**
+                     * 获取<p>内网IP地址列表</p>
+                     * @return PrivateIpAddresses <p>内网IP地址列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetPrivateIpAddresses() const;
+
+                    /**
+                     * 设置<p>内网IP地址列表</p>
+                     * @param _privateIpAddresses <p>内网IP地址列表</p>
+                     * 
+                     */
+                    void SetPrivateIpAddresses(const std::vector<std::string>& _privateIpAddresses);
+
+                    /**
+                     * 判断参数 PrivateIpAddresses 是否已赋值
+                     * @return PrivateIpAddresses 是否已赋值
+                     * 
+                     */
+                    bool PrivateIpAddressesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -893,6 +914,12 @@ namespace TencentCloud
                      */
                     bool m_forceHTTPSRedirect;
                     bool m_forceHTTPSRedirectHasBeenSet;
+
+                    /**
+                     * <p>内网IP地址列表</p>
+                     */
+                    std::vector<std::string> m_privateIpAddresses;
+                    bool m_privateIpAddressesHasBeenSet;
 
                 };
             }

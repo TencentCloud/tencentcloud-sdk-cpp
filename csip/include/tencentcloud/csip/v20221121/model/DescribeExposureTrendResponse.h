@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取暴露周期趋势数量统计信息
-                     * @return ExposeTrendList 暴露周期趋势数量统计信息
+                     * 获取<p>暴露周期趋势数量统计信息</p>
+                     * @return ExposeTrendList <p>暴露周期趋势数量统计信息</p>
                      * 
                      */
                     std::vector<ExposeTrendItem> GetExposeTrendList() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool ExposeTrendListHasBeenSet() const;
 
                     /**
-                     * 获取暴露周期新增数量统计
-                     * @return ExposeIncrement 暴露周期新增数量统计
+                     * 获取<p>暴露周期新增数量统计</p>
+                     * @return ExposeIncrement <p>暴露周期新增数量统计</p>
                      * 
                      */
                     uint64_t GetExposeIncrement() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ExposeIncrementHasBeenSet() const;
 
                     /**
-                     * 获取近1天（24h）完全开放数量
-                     * @return OpenCount 近1天（24h）完全开放数量
+                     * 获取<p>近1天（24h）完全开放数量</p>
+                     * @return OpenCount <p>近1天（24h）完全开放数量</p>
                      * 
                      */
                     uint64_t GetOpenCount() const;
@@ -87,8 +87,8 @@ namespace TencentCloud
                     bool OpenCountHasBeenSet() const;
 
                     /**
-                     * 获取近1天（24h）受限访问数量
-                     * @return AclCount 近1天（24h）受限访问数量
+                     * 获取<p>近1天（24h）受限访问数量</p>
+                     * @return AclCount <p>近1天（24h）受限访问数量</p>
                      * 
                      */
                     uint64_t GetAclCount() const;
@@ -101,8 +101,8 @@ namespace TencentCloud
                     bool AclCountHasBeenSet() const;
 
                     /**
-                     * 获取近1天（24h）无法访问数量
-                     * @return CloseCount 近1天（24h）无法访问数量
+                     * 获取<p>近1天（24h）无法访问数量</p>
+                     * @return CloseCount <p>近1天（24h）无法访问数量</p>
                      * 
                      */
                     uint64_t GetCloseCount() const;
@@ -114,37 +114,77 @@ namespace TencentCloud
                      */
                     bool CloseCountHasBeenSet() const;
 
+                    /**
+                     * 获取<p>互联网边界总数</p>
+                     * @return ExposeTotalCount <p>互联网边界总数</p>
+                     * 
+                     */
+                    uint64_t GetExposeTotalCount() const;
+
+                    /**
+                     * 判断参数 ExposeTotalCount 是否已赋值
+                     * @return ExposeTotalCount 是否已赋值
+                     * 
+                     */
+                    bool ExposeTotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>待处理边界数量</p>
+                     * @return ToGovernRiskCount <p>待处理边界数量</p>
+                     * 
+                     */
+                    uint64_t GetToGovernRiskCount() const;
+
+                    /**
+                     * 判断参数 ToGovernRiskCount 是否已赋值
+                     * @return ToGovernRiskCount 是否已赋值
+                     * 
+                     */
+                    bool ToGovernRiskCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 暴露周期趋势数量统计信息
+                     * <p>暴露周期趋势数量统计信息</p>
                      */
                     std::vector<ExposeTrendItem> m_exposeTrendList;
                     bool m_exposeTrendListHasBeenSet;
 
                     /**
-                     * 暴露周期新增数量统计
+                     * <p>暴露周期新增数量统计</p>
                      */
                     uint64_t m_exposeIncrement;
                     bool m_exposeIncrementHasBeenSet;
 
                     /**
-                     * 近1天（24h）完全开放数量
+                     * <p>近1天（24h）完全开放数量</p>
                      */
                     uint64_t m_openCount;
                     bool m_openCountHasBeenSet;
 
                     /**
-                     * 近1天（24h）受限访问数量
+                     * <p>近1天（24h）受限访问数量</p>
                      */
                     uint64_t m_aclCount;
                     bool m_aclCountHasBeenSet;
 
                     /**
-                     * 近1天（24h）无法访问数量
+                     * <p>近1天（24h）无法访问数量</p>
                      */
                     uint64_t m_closeCount;
                     bool m_closeCountHasBeenSet;
+
+                    /**
+                     * <p>互联网边界总数</p>
+                     */
+                    uint64_t m_exposeTotalCount;
+                    bool m_exposeTotalCountHasBeenSet;
+
+                    /**
+                     * <p>待处理边界数量</p>
+                     */
+                    uint64_t m_toGovernRiskCount;
+                    bool m_toGovernRiskCountHasBeenSet;
 
                 };
             }

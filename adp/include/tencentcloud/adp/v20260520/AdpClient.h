@@ -247,6 +247,8 @@
 #include <tencentcloud/adp/v20260520/model/ModifyKBResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyLabelRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyLabelResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyMessageRecordFeedbackRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyMessageRecordFeedbackResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyMsgRecordCategoryRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyMsgRecordCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyPluginRequest.h>
@@ -641,6 +643,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLabelResponse> ModifyLabelOutcome;
                 typedef std::future<ModifyLabelOutcome> ModifyLabelOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyLabelRequest&, ModifyLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLabelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMessageRecordFeedbackResponse> ModifyMessageRecordFeedbackOutcome;
+                typedef std::future<ModifyMessageRecordFeedbackOutcome> ModifyMessageRecordFeedbackOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyMessageRecordFeedbackRequest&, ModifyMessageRecordFeedbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMessageRecordFeedbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMsgRecordCategoryResponse> ModifyMsgRecordCategoryOutcome;
                 typedef std::future<ModifyMsgRecordCategoryOutcome> ModifyMsgRecordCategoryOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyMsgRecordCategoryRequest&, ModifyMsgRecordCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMsgRecordCategoryAsyncHandler;
@@ -1718,6 +1723,15 @@ namespace TencentCloud
                 ModifyLabelOutcome ModifyLabel(const Model::ModifyLabelRequest &request);
                 void ModifyLabelAsync(const Model::ModifyLabelRequest& request, const ModifyLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLabelOutcomeCallable ModifyLabelCallable(const Model::ModifyLabelRequest& request);
+
+                /**
+                 *修改消息记录反馈
+                 * @param req ModifyMessageRecordFeedbackRequest
+                 * @return ModifyMessageRecordFeedbackOutcome
+                 */
+                ModifyMessageRecordFeedbackOutcome ModifyMessageRecordFeedback(const Model::ModifyMessageRecordFeedbackRequest &request);
+                void ModifyMessageRecordFeedbackAsync(const Model::ModifyMessageRecordFeedbackRequest& request, const ModifyMessageRecordFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMessageRecordFeedbackOutcomeCallable ModifyMessageRecordFeedbackCallable(const Model::ModifyMessageRecordFeedbackRequest& request);
 
                 /**
                  *修改指定消息记录分类的名称

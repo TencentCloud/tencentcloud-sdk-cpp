@@ -31,6 +31,7 @@ PrometheusClusterAgentBasic::PrometheusClusterAgentBasic() :
     m_notScrapeHasBeenSet(false),
     m_dropAllHasBeenSet(false),
     m_collectAllHasBeenSet(false),
+    m_privateLinkIPHasBeenSet(false),
     m_openDefaultRecordHasBeenSet(false)
 {
 }
@@ -157,6 +158,16 @@ CoreInternalOutcome PrometheusClusterAgentBasic::Deserialize(const rapidjson::Va
         m_collectAllHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivateLinkIP") && !value["PrivateLinkIP"].IsNull())
+    {
+        if (!value["PrivateLinkIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusClusterAgentBasic.PrivateLinkIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privateLinkIP = string(value["PrivateLinkIP"].GetString());
+        m_privateLinkIPHasBeenSet = true;
+    }
+
     if (value.HasMember("OpenDefaultRecord") && !value["OpenDefaultRecord"].IsNull())
     {
         if (!value["OpenDefaultRecord"].IsBool())
@@ -260,6 +271,14 @@ void PrometheusClusterAgentBasic::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "CollectAll";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_collectAll, allocator);
+    }
+
+    if (m_privateLinkIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateLinkIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privateLinkIP.c_str(), allocator).Move(), allocator);
     }
 
     if (m_openDefaultRecordHasBeenSet)
@@ -431,6 +450,22 @@ void PrometheusClusterAgentBasic::SetCollectAll(const bool& _collectAll)
 bool PrometheusClusterAgentBasic::CollectAllHasBeenSet() const
 {
     return m_collectAllHasBeenSet;
+}
+
+string PrometheusClusterAgentBasic::GetPrivateLinkIP() const
+{
+    return m_privateLinkIP;
+}
+
+void PrometheusClusterAgentBasic::SetPrivateLinkIP(const string& _privateLinkIP)
+{
+    m_privateLinkIP = _privateLinkIP;
+    m_privateLinkIPHasBeenSet = true;
+}
+
+bool PrometheusClusterAgentBasic::PrivateLinkIPHasBeenSet() const
+{
+    return m_privateLinkIPHasBeenSet;
 }
 
 bool PrometheusClusterAgentBasic::GetOpenDefaultRecord() const

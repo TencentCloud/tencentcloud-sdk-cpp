@@ -27,7 +27,8 @@ ListCatalogNamesRequest::ListCatalogNamesRequest() :
     m_maxResultsHasBeenSet(false),
     m_pageTokenHasBeenSet(false),
     m_typesHasBeenSet(false),
-    m_catalogSourcesHasBeenSet(false)
+    m_catalogSourcesHasBeenSet(false),
+    m_connectionIdHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string ListCatalogNamesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_connectionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_connectionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -174,6 +183,22 @@ void ListCatalogNamesRequest::SetCatalogSources(const vector<string>& _catalogSo
 bool ListCatalogNamesRequest::CatalogSourcesHasBeenSet() const
 {
     return m_catalogSourcesHasBeenSet;
+}
+
+string ListCatalogNamesRequest::GetConnectionId() const
+{
+    return m_connectionId;
+}
+
+void ListCatalogNamesRequest::SetConnectionId(const string& _connectionId)
+{
+    m_connectionId = _connectionId;
+    m_connectionIdHasBeenSet = true;
+}
+
+bool ListCatalogNamesRequest::ConnectionIdHasBeenSet() const
+{
+    return m_connectionIdHasBeenSet;
 }
 
 

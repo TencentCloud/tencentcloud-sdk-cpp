@@ -25,7 +25,9 @@ using namespace std;
 ModifyDBInstanceSSLConfigRequest::ModifyDBInstanceSSLConfigRequest() :
     m_dBInstanceIdHasBeenSet(false),
     m_sSLEnabledHasBeenSet(false),
-    m_connectAddressHasBeenSet(false)
+    m_connectAddressHasBeenSet(false),
+    m_certSourceHasBeenSet(false),
+    m_certificateIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string ModifyDBInstanceSSLConfigRequest::ToJsonString() const
         string key = "ConnectAddress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_connectAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certificateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void ModifyDBInstanceSSLConfigRequest::SetConnectAddress(const string& _connectA
 bool ModifyDBInstanceSSLConfigRequest::ConnectAddressHasBeenSet() const
 {
     return m_connectAddressHasBeenSet;
+}
+
+string ModifyDBInstanceSSLConfigRequest::GetCertSource() const
+{
+    return m_certSource;
+}
+
+void ModifyDBInstanceSSLConfigRequest::SetCertSource(const string& _certSource)
+{
+    m_certSource = _certSource;
+    m_certSourceHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSSLConfigRequest::CertSourceHasBeenSet() const
+{
+    return m_certSourceHasBeenSet;
+}
+
+string ModifyDBInstanceSSLConfigRequest::GetCertificateId() const
+{
+    return m_certificateId;
+}
+
+void ModifyDBInstanceSSLConfigRequest::SetCertificateId(const string& _certificateId)
+{
+    m_certificateId = _certificateId;
+    m_certificateIdHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSSLConfigRequest::CertificateIdHasBeenSet() const
+{
+    return m_certificateIdHasBeenSet;
 }
 
 

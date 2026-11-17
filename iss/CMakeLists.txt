@@ -63,6 +63,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/DeleteRecordRetrieveTaskResponse.h
   include/tencentcloud/iss/v20230517/model/DeleteRecordPlanResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeOrganizationResponse.h
+  include/tencentcloud/iss/v20230517/model/VideoSnapshotInfo.h
   include/tencentcloud/iss/v20230517/model/UpdateUserDeviceRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeVideoSnapshotTemplateRequest.h
   include/tencentcloud/iss/v20230517/model/CreateVLPlanResponse.h
@@ -122,6 +123,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/AddRecordRetrieveTaskRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordPlanRequest.h
   include/tencentcloud/iss/v20230517/model/VideoSceneInfo.h
+  include/tencentcloud/iss/v20230517/model/TaskData.h
   include/tencentcloud/iss/v20230517/model/ControlDevicePresetResponse.h
   include/tencentcloud/iss/v20230517/model/ListRecordBackupPlansResponse.h
   include/tencentcloud/iss/v20230517/model/OrganizationChannelInfo.h
@@ -172,6 +174,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/AddUserDeviceRequest.h
   include/tencentcloud/iss/v20230517/model/ListRecordBackupPlanDevicesResponse.h
   include/tencentcloud/iss/v20230517/model/DeleteTaskRequest.h
+  include/tencentcloud/iss/v20230517/model/ModifyVideoSnapshotConfigResponse.h
   include/tencentcloud/iss/v20230517/model/UpdateUserDeviceResponse.h
   include/tencentcloud/iss/v20230517/model/ControlDevicePTZRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordBackupPlanRequest.h
@@ -198,7 +201,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/AddRecordTemplateRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordFileRequest.h
   include/tencentcloud/iss/v20230517/model/VLPlanResultInfo.h
-  include/tencentcloud/iss/v20230517/model/TaskData.h
+  include/tencentcloud/iss/v20230517/model/ListVideoSnapshotResultRequest.h
   include/tencentcloud/iss/v20230517/model/RecordSliceInfo.h
   include/tencentcloud/iss/v20230517/model/QueryForbidPlayChannelListResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlRequest.h
@@ -224,7 +227,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/ControlDeviceStreamRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeVideoSnapshotConfigResponse.h
   include/tencentcloud/iss/v20230517/model/ListRecordBackupPlanDevicesRequest.h
-  include/tencentcloud/iss/v20230517/model/ModifyVideoSnapshotConfigResponse.h
+  include/tencentcloud/iss/v20230517/model/ListVideoSnapshotResultData.h
   include/tencentcloud/iss/v20230517/model/DeleteDomainResponse.h
   include/tencentcloud/iss/v20230517/model/AddRecordRetrieveTaskResponse.h
   include/tencentcloud/iss/v20230517/model/DeleteRecordTemplateResponse.h
@@ -239,10 +242,11 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/ControlRecordTimelineResponse.h
   include/tencentcloud/iss/v20230517/model/AddRecordRetrieveTaskData.h
   include/tencentcloud/iss/v20230517/model/BatchAssignVLPlanChannelsRequest.h
+  include/tencentcloud/iss/v20230517/model/UpdateRecordPlanResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordBackupPlanData.h
   include/tencentcloud/iss/v20230517/model/ImageUrlInfo.h
   include/tencentcloud/iss/v20230517/model/ChannelAttrInfo.h
-  include/tencentcloud/iss/v20230517/model/UpdateRecordPlanResponse.h
+  include/tencentcloud/iss/v20230517/model/ListVideoSnapshotResultResponse.h
   include/tencentcloud/iss/v20230517/model/DeleteVLTemplateResponse.h
   include/tencentcloud/iss/v20230517/model/ListVideoDownloadTaskData.h
   include/tencentcloud/iss/v20230517/model/DeleteRecordBackupPlanRequest.h
@@ -351,6 +355,7 @@ set(iss_src
   src/v20230517/model/DeleteRecordRetrieveTaskResponse.cpp
   src/v20230517/model/DeleteRecordPlanResponse.cpp
   src/v20230517/model/DescribeOrganizationResponse.cpp
+  src/v20230517/model/VideoSnapshotInfo.cpp
   src/v20230517/model/UpdateUserDeviceRequest.cpp
   src/v20230517/model/DescribeVideoSnapshotTemplateRequest.cpp
   src/v20230517/model/CreateVLPlanResponse.cpp
@@ -410,6 +415,7 @@ set(iss_src
   src/v20230517/model/AddRecordRetrieveTaskRequest.cpp
   src/v20230517/model/DescribeRecordPlanRequest.cpp
   src/v20230517/model/VideoSceneInfo.cpp
+  src/v20230517/model/TaskData.cpp
   src/v20230517/model/ControlDevicePresetResponse.cpp
   src/v20230517/model/ListRecordBackupPlansResponse.cpp
   src/v20230517/model/OrganizationChannelInfo.cpp
@@ -460,6 +466,7 @@ set(iss_src
   src/v20230517/model/AddUserDeviceRequest.cpp
   src/v20230517/model/ListRecordBackupPlanDevicesResponse.cpp
   src/v20230517/model/DeleteTaskRequest.cpp
+  src/v20230517/model/ModifyVideoSnapshotConfigResponse.cpp
   src/v20230517/model/UpdateUserDeviceResponse.cpp
   src/v20230517/model/ControlDevicePTZRequest.cpp
   src/v20230517/model/DescribeRecordBackupPlanRequest.cpp
@@ -486,7 +493,7 @@ set(iss_src
   src/v20230517/model/AddRecordTemplateRequest.cpp
   src/v20230517/model/DescribeRecordFileRequest.cpp
   src/v20230517/model/VLPlanResultInfo.cpp
-  src/v20230517/model/TaskData.cpp
+  src/v20230517/model/ListVideoSnapshotResultRequest.cpp
   src/v20230517/model/RecordSliceInfo.cpp
   src/v20230517/model/QueryForbidPlayChannelListResponse.cpp
   src/v20230517/model/DescribeVideoDownloadUrlRequest.cpp
@@ -512,7 +519,7 @@ set(iss_src
   src/v20230517/model/ControlDeviceStreamRequest.cpp
   src/v20230517/model/DescribeVideoSnapshotConfigResponse.cpp
   src/v20230517/model/ListRecordBackupPlanDevicesRequest.cpp
-  src/v20230517/model/ModifyVideoSnapshotConfigResponse.cpp
+  src/v20230517/model/ListVideoSnapshotResultData.cpp
   src/v20230517/model/DeleteDomainResponse.cpp
   src/v20230517/model/AddRecordRetrieveTaskResponse.cpp
   src/v20230517/model/DeleteRecordTemplateResponse.cpp
@@ -527,10 +534,11 @@ set(iss_src
   src/v20230517/model/ControlRecordTimelineResponse.cpp
   src/v20230517/model/AddRecordRetrieveTaskData.cpp
   src/v20230517/model/BatchAssignVLPlanChannelsRequest.cpp
+  src/v20230517/model/UpdateRecordPlanResponse.cpp
   src/v20230517/model/DescribeRecordBackupPlanData.cpp
   src/v20230517/model/ImageUrlInfo.cpp
   src/v20230517/model/ChannelAttrInfo.cpp
-  src/v20230517/model/UpdateRecordPlanResponse.cpp
+  src/v20230517/model/ListVideoSnapshotResultResponse.cpp
   src/v20230517/model/DeleteVLTemplateResponse.cpp
   src/v20230517/model/ListVideoDownloadTaskData.cpp
   src/v20230517/model/DeleteRecordBackupPlanRequest.cpp

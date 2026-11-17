@@ -25,7 +25,8 @@ QuotaResourceInfo::QuotaResourceInfo() :
     m_sandboxInstancesHasBeenSet(false),
     m_pausedInstancesHasBeenSet(false),
     m_cPUCoresHasBeenSet(false),
-    m_memoryGiBHasBeenSet(false)
+    m_memoryGiBHasBeenSet(false),
+    m_preCacheImageConcurrencyHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome QuotaResourceInfo::Deserialize(const rapidjson::Value &value
         m_memoryGiBHasBeenSet = true;
     }
 
+    if (value.HasMember("PreCacheImageConcurrency") && !value["PreCacheImageConcurrency"].IsNull())
+    {
+        if (!value["PreCacheImageConcurrency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QuotaResourceInfo.PreCacheImageConcurrency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_preCacheImageConcurrency = value["PreCacheImageConcurrency"].GetInt64();
+        m_preCacheImageConcurrencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void QuotaResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "MemoryGiB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memoryGiB, allocator);
+    }
+
+    if (m_preCacheImageConcurrencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreCacheImageConcurrency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_preCacheImageConcurrency, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void QuotaResourceInfo::SetMemoryGiB(const double& _memoryGiB)
 bool QuotaResourceInfo::MemoryGiBHasBeenSet() const
 {
     return m_memoryGiBHasBeenSet;
+}
+
+int64_t QuotaResourceInfo::GetPreCacheImageConcurrency() const
+{
+    return m_preCacheImageConcurrency;
+}
+
+void QuotaResourceInfo::SetPreCacheImageConcurrency(const int64_t& _preCacheImageConcurrency)
+{
+    m_preCacheImageConcurrency = _preCacheImageConcurrency;
+    m_preCacheImageConcurrencyHasBeenSet = true;
+}
+
+bool QuotaResourceInfo::PreCacheImageConcurrencyHasBeenSet() const
+{
+    return m_preCacheImageConcurrencyHasBeenSet;
 }
 

@@ -45,7 +45,9 @@ UpdateRateLimitV2Request::UpdateRateLimitV2Request() :
     m_objectSrcHasBeenSet(false),
     m_quotaShareHasBeenSet(false),
     m_pathsOptionHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_matchConditionsHasBeenSet(false),
+    m_conditionLogicHasBeenSet(false)
 {
 }
 
@@ -262,6 +264,29 @@ string UpdateRateLimitV2Request::ToJsonString() const
         string key = "Order";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_order, allocator);
+    }
+
+    if (m_matchConditionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchConditions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_matchConditions.begin(); itr != m_matchConditions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_conditionLogicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConditionLogic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_conditionLogic.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -638,6 +663,38 @@ void UpdateRateLimitV2Request::SetOrder(const int64_t& _order)
 bool UpdateRateLimitV2Request::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
+}
+
+vector<Strategy> UpdateRateLimitV2Request::GetMatchConditions() const
+{
+    return m_matchConditions;
+}
+
+void UpdateRateLimitV2Request::SetMatchConditions(const vector<Strategy>& _matchConditions)
+{
+    m_matchConditions = _matchConditions;
+    m_matchConditionsHasBeenSet = true;
+}
+
+bool UpdateRateLimitV2Request::MatchConditionsHasBeenSet() const
+{
+    return m_matchConditionsHasBeenSet;
+}
+
+string UpdateRateLimitV2Request::GetConditionLogic() const
+{
+    return m_conditionLogic;
+}
+
+void UpdateRateLimitV2Request::SetConditionLogic(const string& _conditionLogic)
+{
+    m_conditionLogic = _conditionLogic;
+    m_conditionLogicHasBeenSet = true;
+}
+
+bool UpdateRateLimitV2Request::ConditionLogicHasBeenSet() const
+{
+    return m_conditionLogicHasBeenSet;
 }
 
 

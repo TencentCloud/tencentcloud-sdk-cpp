@@ -23,7 +23,9 @@ using namespace std;
 AgentSummary::AgentSummary() :
     m_agentIdHasBeenSet(false),
     m_profileHasBeenSet(false),
-    m_advancedConfigHasBeenSet(false)
+    m_advancedConfigHasBeenSet(false),
+    m_providerTypeHasBeenSet(false),
+    m_referenceAppStatusHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,26 @@ CoreInternalOutcome AgentSummary::Deserialize(const rapidjson::Value &value)
         m_advancedConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ProviderType") && !value["ProviderType"].IsNull())
+    {
+        if (!value["ProviderType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentSummary.ProviderType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_providerType = value["ProviderType"].GetInt64();
+        m_providerTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReferenceAppStatus") && !value["ReferenceAppStatus"].IsNull())
+    {
+        if (!value["ReferenceAppStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentSummary.ReferenceAppStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_referenceAppStatus = value["ReferenceAppStatus"].GetInt64();
+        m_referenceAppStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ void AgentSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_advancedConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_providerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProviderType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_providerType, allocator);
+    }
+
+    if (m_referenceAppStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReferenceAppStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_referenceAppStatus, allocator);
     }
 
 }
@@ -158,5 +196,37 @@ void AgentSummary::SetAdvancedConfig(const AgentAdvancedConfig& _advancedConfig)
 bool AgentSummary::AdvancedConfigHasBeenSet() const
 {
     return m_advancedConfigHasBeenSet;
+}
+
+int64_t AgentSummary::GetProviderType() const
+{
+    return m_providerType;
+}
+
+void AgentSummary::SetProviderType(const int64_t& _providerType)
+{
+    m_providerType = _providerType;
+    m_providerTypeHasBeenSet = true;
+}
+
+bool AgentSummary::ProviderTypeHasBeenSet() const
+{
+    return m_providerTypeHasBeenSet;
+}
+
+int64_t AgentSummary::GetReferenceAppStatus() const
+{
+    return m_referenceAppStatus;
+}
+
+void AgentSummary::SetReferenceAppStatus(const int64_t& _referenceAppStatus)
+{
+    m_referenceAppStatus = _referenceAppStatus;
+    m_referenceAppStatusHasBeenSet = true;
+}
+
+bool AgentSummary::ReferenceAppStatusHasBeenSet() const
+{
+    return m_referenceAppStatusHasBeenSet;
 }
 

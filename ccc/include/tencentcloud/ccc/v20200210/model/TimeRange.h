@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取<p>开始时间</p>
+                     * @return StartTime <p>开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置<p>开始时间</p>
+                     * @param _startTime <p>开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取<p>结束时间</p>
+                     * @return EndTime <p>结束时间</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置<p>结束时间</p>
+                     * @param _endTime <p>结束时间</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
+                     * <p>开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * <p>结束时间</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

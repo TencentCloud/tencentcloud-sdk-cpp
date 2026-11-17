@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/ListFilter.h>
+#include <tencentcloud/tse/v20201207/model/TagKVFilter.h>
 
 
 namespace TencentCloud
@@ -253,6 +254,48 @@ namespace TencentCloud
                      */
                     bool OrderTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>按标签 ID 过滤路由（AND 语义，需同时命中所有传入的 tag），最多 10 个。关联需求：路由/服务标签分组管理</p>
+                     * @return TagIds <p>按标签 ID 过滤路由（AND 语义，需同时命中所有传入的 tag），最多 10 个。关联需求：路由/服务标签分组管理</p>
+                     * 
+                     */
+                    std::vector<int64_t> GetTagIds() const;
+
+                    /**
+                     * 设置<p>按标签 ID 过滤路由（AND 语义，需同时命中所有传入的 tag），最多 10 个。关联需求：路由/服务标签分组管理</p>
+                     * @param _tagIds <p>按标签 ID 过滤路由（AND 语义，需同时命中所有传入的 tag），最多 10 个。关联需求：路由/服务标签分组管理</p>
+                     * 
+                     */
+                    void SetTagIds(const std::vector<int64_t>& _tagIds);
+
+                    /**
+                     * 判断参数 TagIds 是否已赋值
+                     * @return TagIds 是否已赋值
+                     * 
+                     */
+                    bool TagIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>按标签 K:V 过滤路由（AND 语义，前端下拉直传场景），最多 10 个。与 TagIds 同时传时取交集</p>
+                     * @return TagFilters <p>按标签 K:V 过滤路由（AND 语义，前端下拉直传场景），最多 10 个。与 TagIds 同时传时取交集</p>
+                     * 
+                     */
+                    std::vector<TagKVFilter> GetTagFilters() const;
+
+                    /**
+                     * 设置<p>按标签 K:V 过滤路由（AND 语义，前端下拉直传场景），最多 10 个。与 TagIds 同时传时取交集</p>
+                     * @param _tagFilters <p>按标签 K:V 过滤路由（AND 语义，前端下拉直传场景），最多 10 个。与 TagIds 同时传时取交集</p>
+                     * 
+                     */
+                    void SetTagFilters(const std::vector<TagKVFilter>& _tagFilters);
+
+                    /**
+                     * 判断参数 TagFilters 是否已赋值
+                     * @return TagFilters 是否已赋值
+                     * 
+                     */
+                    bool TagFiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +357,18 @@ namespace TencentCloud
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;
+
+                    /**
+                     * <p>按标签 ID 过滤路由（AND 语义，需同时命中所有传入的 tag），最多 10 个。关联需求：路由/服务标签分组管理</p>
+                     */
+                    std::vector<int64_t> m_tagIds;
+                    bool m_tagIdsHasBeenSet;
+
+                    /**
+                     * <p>按标签 K:V 过滤路由（AND 语义，前端下拉直传场景），最多 10 个。与 TagIds 同时传时取交集</p>
+                     */
+                    std::vector<TagKVFilter> m_tagFilters;
+                    bool m_tagFiltersHasBeenSet;
 
                 };
             }

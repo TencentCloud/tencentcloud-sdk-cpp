@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取训练任务详情
-                     * @return TrainingTaskDetail 训练任务详情
+                     * 获取<p>训练任务详情</p>
+                     * @return TrainingTaskDetail <p>训练任务详情</p>
                      * 
                      */
                     TrainingTaskDetail GetTrainingTaskDetail() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 训练任务详情
+                     * <p>训练任务详情</p>
                      */
                     TrainingTaskDetail m_trainingTaskDetail;
                     bool m_trainingTaskDetailHasBeenSet;

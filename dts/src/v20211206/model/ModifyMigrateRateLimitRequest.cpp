@@ -26,9 +26,14 @@ ModifyMigrateRateLimitRequest::ModifyMigrateRateLimitRequest() :
     m_jobIdHasBeenSet(false),
     m_dumpThreadHasBeenSet(false),
     m_dumpRpsHasBeenSet(false),
+    m_dumpBpsHasBeenSet(false),
     m_loadThreadHasBeenSet(false),
     m_sinkerThreadHasBeenSet(false),
-    m_loadRpsHasBeenSet(false)
+    m_loadRpsHasBeenSet(false),
+    m_loadBpsHasBeenSet(false),
+    m_dstShardCountHasBeenSet(false),
+    m_sinkerRpsHasBeenSet(false),
+    m_sinkerBpsHasBeenSet(false)
 {
 }
 
@@ -63,6 +68,14 @@ string ModifyMigrateRateLimitRequest::ToJsonString() const
         d.AddMember(iKey, m_dumpRps, allocator);
     }
 
+    if (m_dumpBpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DumpBps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dumpBps, allocator);
+    }
+
     if (m_loadThreadHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -85,6 +98,38 @@ string ModifyMigrateRateLimitRequest::ToJsonString() const
         string key = "LoadRps";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_loadRps, allocator);
+    }
+
+    if (m_loadBpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_loadBps, allocator);
+    }
+
+    if (m_dstShardCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstShardCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dstShardCount, allocator);
+    }
+
+    if (m_sinkerRpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SinkerRps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sinkerRps, allocator);
+    }
+
+    if (m_sinkerBpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SinkerBps";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sinkerBps, allocator);
     }
 
 
@@ -143,6 +188,22 @@ bool ModifyMigrateRateLimitRequest::DumpRpsHasBeenSet() const
     return m_dumpRpsHasBeenSet;
 }
 
+int64_t ModifyMigrateRateLimitRequest::GetDumpBps() const
+{
+    return m_dumpBps;
+}
+
+void ModifyMigrateRateLimitRequest::SetDumpBps(const int64_t& _dumpBps)
+{
+    m_dumpBps = _dumpBps;
+    m_dumpBpsHasBeenSet = true;
+}
+
+bool ModifyMigrateRateLimitRequest::DumpBpsHasBeenSet() const
+{
+    return m_dumpBpsHasBeenSet;
+}
+
 int64_t ModifyMigrateRateLimitRequest::GetLoadThread() const
 {
     return m_loadThread;
@@ -189,6 +250,70 @@ void ModifyMigrateRateLimitRequest::SetLoadRps(const int64_t& _loadRps)
 bool ModifyMigrateRateLimitRequest::LoadRpsHasBeenSet() const
 {
     return m_loadRpsHasBeenSet;
+}
+
+int64_t ModifyMigrateRateLimitRequest::GetLoadBps() const
+{
+    return m_loadBps;
+}
+
+void ModifyMigrateRateLimitRequest::SetLoadBps(const int64_t& _loadBps)
+{
+    m_loadBps = _loadBps;
+    m_loadBpsHasBeenSet = true;
+}
+
+bool ModifyMigrateRateLimitRequest::LoadBpsHasBeenSet() const
+{
+    return m_loadBpsHasBeenSet;
+}
+
+int64_t ModifyMigrateRateLimitRequest::GetDstShardCount() const
+{
+    return m_dstShardCount;
+}
+
+void ModifyMigrateRateLimitRequest::SetDstShardCount(const int64_t& _dstShardCount)
+{
+    m_dstShardCount = _dstShardCount;
+    m_dstShardCountHasBeenSet = true;
+}
+
+bool ModifyMigrateRateLimitRequest::DstShardCountHasBeenSet() const
+{
+    return m_dstShardCountHasBeenSet;
+}
+
+int64_t ModifyMigrateRateLimitRequest::GetSinkerRps() const
+{
+    return m_sinkerRps;
+}
+
+void ModifyMigrateRateLimitRequest::SetSinkerRps(const int64_t& _sinkerRps)
+{
+    m_sinkerRps = _sinkerRps;
+    m_sinkerRpsHasBeenSet = true;
+}
+
+bool ModifyMigrateRateLimitRequest::SinkerRpsHasBeenSet() const
+{
+    return m_sinkerRpsHasBeenSet;
+}
+
+int64_t ModifyMigrateRateLimitRequest::GetSinkerBps() const
+{
+    return m_sinkerBps;
+}
+
+void ModifyMigrateRateLimitRequest::SetSinkerBps(const int64_t& _sinkerBps)
+{
+    m_sinkerBps = _sinkerBps;
+    m_sinkerBpsHasBeenSet = true;
+}
+
+bool ModifyMigrateRateLimitRequest::SinkerBpsHasBeenSet() const
+{
+    return m_sinkerBpsHasBeenSet;
 }
 
 

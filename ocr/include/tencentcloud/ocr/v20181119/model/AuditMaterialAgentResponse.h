@@ -1,0 +1,276 @@
+/*
+ * Copyright (c) 2017-2025 Tencent. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_OCR_V20181119_MODEL_AUDITMATERIALAGENTRESPONSE_H_
+#define TENCENTCLOUD_OCR_V20181119_MODEL_AUDITMATERIALAGENTRESPONSE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/StoreInfo.h>
+#include <tencentcloud/ocr/v20181119/model/SceneWarnInfo.h>
+
+
+namespace TencentCloud
+{
+    namespace Ocr
+    {
+        namespace V20181119
+        {
+            namespace Model
+            {
+                /**
+                * AuditMaterialAgent返回参数结构体
+                */
+                class AuditMaterialAgentResponse : public AbstractModel
+                {
+                public:
+                    AuditMaterialAgentResponse();
+                    ~AuditMaterialAgentResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取<p>商户照片类型  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     * @return StoreLabel <p>商户照片类型  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     * 
+                     */
+                    std::vector<std::string> GetStoreLabel() const;
+
+                    /**
+                     * 判断参数 StoreLabel 是否已赋值
+                     * @return StoreLabel 是否已赋值
+                     * 
+                     */
+                    bool StoreLabelHasBeenSet() const;
+
+                    /**
+                     * 获取<p>商户照片分类具体场景标签，输出3个最匹配的场景， 注：仅SceneType配置为true时支持。  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     * @return SceneType <p>商户照片分类具体场景标签，输出3个最匹配的场景， 注：仅SceneType配置为true时支持。  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     * 
+                     */
+                    std::string GetSceneType() const;
+
+                    /**
+                     * 判断参数 SceneType 是否已赋值
+                     * @return SceneType 是否已赋值
+                     * 
+                     */
+                    bool SceneTypeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>商户门头名称  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     * @return StoreInfo <p>商户门头名称  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     * 
+                     */
+                    std::vector<StoreInfo> GetStoreInfo() const;
+
+                    /**
+                     * 判断参数 StoreInfo 是否已赋值
+                     * @return StoreInfo 是否已赋值
+                     * 
+                     */
+                    bool StoreInfoHasBeenSet() const;
+
+                    /**
+                     * 获取<p>图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     * @return Angle <p>图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     * 
+                     */
+                    double GetAngle() const;
+
+                    /**
+                     * 判断参数 Angle 是否已赋值
+                     * @return Angle 是否已赋值
+                     * 
+                     */
+                    bool AngleHasBeenSet() const;
+
+                    /**
+                     * 获取<p>区域篡改提示</p>
+                     * @return Tamper <p>区域篡改提示</p>
+                     * 
+                     */
+                    SceneWarnInfo GetTamper() const;
+
+                    /**
+                     * 判断参数 Tamper 是否已赋值
+                     * @return Tamper 是否已赋值
+                     * 
+                     */
+                    bool TamperHasBeenSet() const;
+
+                    /**
+                     * 获取<p>AIGC合成提示</p>
+                     * @return Synthesis <p>AIGC合成提示</p>
+                     * 
+                     */
+                    SceneWarnInfo GetSynthesis() const;
+
+                    /**
+                     * 判断参数 Synthesis 是否已赋值
+                     * @return Synthesis 是否已赋值
+                     * 
+                     */
+                    bool SynthesisHasBeenSet() const;
+
+                    /**
+                     * 获取<p>屏幕翻拍提示</p>
+                     * @return RemakeScreen <p>屏幕翻拍提示</p>
+                     * 
+                     */
+                    SceneWarnInfo GetRemakeScreen() const;
+
+                    /**
+                     * 判断参数 RemakeScreen 是否已赋值
+                     * @return RemakeScreen 是否已赋值
+                     * 
+                     */
+                    bool RemakeScreenHasBeenSet() const;
+
+                    /**
+                     * 获取<p>截图提示</p>
+                     * @return Screenshot <p>截图提示</p>
+                     * 
+                     */
+                    SceneWarnInfo GetScreenshot() const;
+
+                    /**
+                     * 判断参数 Screenshot 是否已赋值
+                     * @return Screenshot 是否已赋值
+                     * 
+                     */
+                    bool ScreenshotHasBeenSet() const;
+
+                    /**
+                     * 获取<p>文字水印提示</p>
+                     * @return TextWatermark <p>文字水印提示</p>
+                     * 
+                     */
+                    SceneWarnInfo GetTextWatermark() const;
+
+                    /**
+                     * 判断参数 TextWatermark 是否已赋值
+                     * @return TextWatermark 是否已赋值
+                     * 
+                     */
+                    bool TextWatermarkHasBeenSet() const;
+
+                    /**
+                     * 获取<p>水印内容，当未检测到文字水印时不返回，返回多组水印时以 | 分隔。</p>
+                     * @return WatermarkContent <p>水印内容，当未检测到文字水印时不返回，返回多组水印时以 | 分隔。</p>
+                     * 
+                     */
+                    std::string GetWatermarkContent() const;
+
+                    /**
+                     * 判断参数 WatermarkContent 是否已赋值
+                     * @return WatermarkContent 是否已赋值
+                     * 
+                     */
+                    bool WatermarkContentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模板图片提示</p>
+                     * @return Template <p>模板图片提示</p>
+                     * 
+                     */
+                    SceneWarnInfo GetTemplate() const;
+
+                    /**
+                     * 判断参数 Template 是否已赋值
+                     * @return Template 是否已赋值
+                     * 
+                     */
+                    bool TemplateHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * <p>商户照片类型  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     */
+                    std::vector<std::string> m_storeLabel;
+                    bool m_storeLabelHasBeenSet;
+
+                    /**
+                     * <p>商户照片分类具体场景标签，输出3个最匹配的场景， 注：仅SceneType配置为true时支持。  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     */
+                    std::string m_sceneType;
+                    bool m_sceneTypeHasBeenSet;
+
+                    /**
+                     * <p>商户门头名称  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     */
+                    std::vector<StoreInfo> m_storeInfo;
+                    bool m_storeInfoHasBeenSet;
+
+                    /**
+                     * <p>图片旋转角度（角度制），文本的水平方向为0°，顺时针为正，逆时针为负  支持该出参的资料审核Agent类型：StorePicAudit</p>
+                     */
+                    double m_angle;
+                    bool m_angleHasBeenSet;
+
+                    /**
+                     * <p>区域篡改提示</p>
+                     */
+                    SceneWarnInfo m_tamper;
+                    bool m_tamperHasBeenSet;
+
+                    /**
+                     * <p>AIGC合成提示</p>
+                     */
+                    SceneWarnInfo m_synthesis;
+                    bool m_synthesisHasBeenSet;
+
+                    /**
+                     * <p>屏幕翻拍提示</p>
+                     */
+                    SceneWarnInfo m_remakeScreen;
+                    bool m_remakeScreenHasBeenSet;
+
+                    /**
+                     * <p>截图提示</p>
+                     */
+                    SceneWarnInfo m_screenshot;
+                    bool m_screenshotHasBeenSet;
+
+                    /**
+                     * <p>文字水印提示</p>
+                     */
+                    SceneWarnInfo m_textWatermark;
+                    bool m_textWatermarkHasBeenSet;
+
+                    /**
+                     * <p>水印内容，当未检测到文字水印时不返回，返回多组水印时以 | 分隔。</p>
+                     */
+                    std::string m_watermarkContent;
+                    bool m_watermarkContentHasBeenSet;
+
+                    /**
+                     * <p>模板图片提示</p>
+                     */
+                    SceneWarnInfo m_template;
+                    bool m_templateHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_OCR_V20181119_MODEL_AUDITMATERIALAGENTRESPONSE_H_

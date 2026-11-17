@@ -259,6 +259,27 @@ namespace TencentCloud
                     bool CollectAllHasBeenSet() const;
 
                     /**
+                     * 获取<p>私有连接的 IP</p>
+                     * @return PrivateLinkIP <p>私有连接的 IP</p>
+                     * 
+                     */
+                    std::string GetPrivateLinkIP() const;
+
+                    /**
+                     * 设置<p>私有连接的 IP</p>
+                     * @param _privateLinkIP <p>私有连接的 IP</p>
+                     * 
+                     */
+                    void SetPrivateLinkIP(const std::string& _privateLinkIP);
+
+                    /**
+                     * 判断参数 PrivateLinkIP 是否已赋值
+                     * @return PrivateLinkIP 是否已赋值
+                     * 
+                     */
+                    bool PrivateLinkIPHasBeenSet() const;
+
+                    /**
                      * 获取<p>是否开启默认预聚合规则</p>
                      * @return OpenDefaultRecord <p>是否开启默认预聚合规则</p>
                      * 
@@ -340,6 +361,12 @@ namespace TencentCloud
                      */
                     bool m_collectAll;
                     bool m_collectAllHasBeenSet;
+
+                    /**
+                     * <p>私有连接的 IP</p>
+                     */
+                    std::string m_privateLinkIP;
+                    bool m_privateLinkIPHasBeenSet;
 
                     /**
                      * <p>是否开启默认预聚合规则</p>

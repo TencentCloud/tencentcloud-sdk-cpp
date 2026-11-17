@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>服务ID</p>
-                     * @return ServiceId <p>服务ID</p>
-                     * 
-                     */
-                    std::string GetServiceId() const;
-
-                    /**
-                     * 设置<p>服务ID</p>
-                     * @param _serviceId <p>服务ID</p>
-                     * 
-                     */
-                    void SetServiceId(const std::string& _serviceId);
-
-                    /**
-                     * 判断参数 ServiceId 是否已赋值
-                     * @return ServiceId 是否已赋值
-                     * 
-                     */
-                    bool ServiceIdHasBeenSet() const;
-
-                    /**
                      * 获取<p>要修改的规则id列表</p>
                      * @return RuleIds <p>要修改的规则id列表</p>
                      * 
@@ -83,6 +62,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RuleIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>SDK 模式传 ServiceId（与 Domain 二选一）</p>
+                     * @return ServiceId <p>SDK 模式传 ServiceId（与 Domain 二选一）</p>
+                     * 
+                     */
+                    std::string GetServiceId() const;
+
+                    /**
+                     * 设置<p>SDK 模式传 ServiceId（与 Domain 二选一）</p>
+                     * @param _serviceId <p>SDK 模式传 ServiceId（与 Domain 二选一）</p>
+                     * 
+                     */
+                    void SetServiceId(const std::string& _serviceId);
+
+                    /**
+                     * 判断参数 ServiceId 是否已赋值
+                     * @return ServiceId 是否已赋值
+                     * 
+                     */
+                    bool ServiceIdHasBeenSet() const;
 
                     /**
                      * 获取<p>规则动作</p>
@@ -168,19 +168,40 @@ namespace TencentCloud
                      */
                     bool DirectionHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取<p>域名模式传 Domain（与 ServiceId 二选一）</p>
+                     * @return Domain <p>域名模式传 Domain（与 ServiceId 二选一）</p>
+                     * 
+                     */
+                    std::string GetDomain() const;
 
                     /**
-                     * <p>服务ID</p>
+                     * 设置<p>域名模式传 Domain（与 ServiceId 二选一）</p>
+                     * @param _domain <p>域名模式传 Domain（与 ServiceId 二选一）</p>
+                     * 
                      */
-                    std::string m_serviceId;
-                    bool m_serviceIdHasBeenSet;
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                private:
 
                     /**
                      * <p>要修改的规则id列表</p>
                      */
                     std::vector<std::string> m_ruleIds;
                     bool m_ruleIdsHasBeenSet;
+
+                    /**
+                     * <p>SDK 模式传 ServiceId（与 Domain 二选一）</p>
+                     */
+                    std::string m_serviceId;
+                    bool m_serviceIdHasBeenSet;
 
                     /**
                      * <p>规则动作</p>
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;
+
+                    /**
+                     * <p>域名模式传 Domain（与 ServiceId 二选一）</p>
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

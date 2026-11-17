@@ -24,7 +24,8 @@ using namespace std;
 
 CreatePreCacheImageTaskRequest::CreatePreCacheImageTaskRequest() :
     m_imageHasBeenSet(false),
-    m_imageRegistryTypeHasBeenSet(false)
+    m_imageRegistryTypeHasBeenSet(false),
+    m_preCacheTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreatePreCacheImageTaskRequest::ToJsonString() const
         string key = "ImageRegistryType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageRegistryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preCacheTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreCacheType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_preCacheType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreatePreCacheImageTaskRequest::SetImageRegistryType(const string& _imageRe
 bool CreatePreCacheImageTaskRequest::ImageRegistryTypeHasBeenSet() const
 {
     return m_imageRegistryTypeHasBeenSet;
+}
+
+string CreatePreCacheImageTaskRequest::GetPreCacheType() const
+{
+    return m_preCacheType;
+}
+
+void CreatePreCacheImageTaskRequest::SetPreCacheType(const string& _preCacheType)
+{
+    m_preCacheType = _preCacheType;
+    m_preCacheTypeHasBeenSet = true;
+}
+
+bool CreatePreCacheImageTaskRequest::PreCacheTypeHasBeenSet() const
+{
+    return m_preCacheTypeHasBeenSet;
 }
 
 

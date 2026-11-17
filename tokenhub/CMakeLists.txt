@@ -36,6 +36,7 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/CreateTokenPlanApiKeysResponse.h
   include/tencentcloud/tokenhub/v20260322/model/ModelAccessInfo.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeModelListResponse.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanPersonalPackageResponse.h
   include/tencentcloud/tokenhub/v20260322/model/DeleteEndpointResponse.h
   include/tencentcloud/tokenhub/v20260322/model/CreateTokenPlanTeamOrderAndBuyRequest.h
   include/tencentcloud/tokenhub/v20260322/model/CreateEndpointRequest.h
@@ -91,6 +92,7 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyUsageDetailResponse.h
   include/tencentcloud/tokenhub/v20260322/model/ModifyApiKeyInfoRequest.h
   include/tencentcloud/tokenhub/v20260322/model/TokenPlanListItem.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanPersonalPackageRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeApiKeyRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeUsageRankListRequest.h
   include/tencentcloud/tokenhub/v20260322/model/CreateGlossaryEntriesRequest.h
@@ -107,7 +109,7 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/ModelChargingItem.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeModelEndpointListRequest.h
   include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanApiKeyResponse.h
-  include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanListRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/ModifyTokenPlanApiKeySecretRequest.h
   include/tencentcloud/tokenhub/v20260322/model/ModelFreeTrialInfo.h
   include/tencentcloud/tokenhub/v20260322/model/TokenPlanApiKeyInfo.h
   include/tencentcloud/tokenhub/v20260322/model/ModifyTokenPlanApiKeyRequest.h
@@ -122,7 +124,7 @@ set(tokenhub_public_header_model
   include/tencentcloud/tokenhub/v20260322/model/ModifyApiKeyStatusResponse.h
   include/tencentcloud/tokenhub/v20260322/model/CreateTokenPlanTeamOrderAndBuyResponse.h
   include/tencentcloud/tokenhub/v20260322/model/RequestFilter.h
-  include/tencentcloud/tokenhub/v20260322/model/ModifyTokenPlanApiKeySecretRequest.h
+  include/tencentcloud/tokenhub/v20260322/model/DescribeTokenPlanListRequest.h
   include/tencentcloud/tokenhub/v20260322/model/RequestSort.h
   include/tencentcloud/tokenhub/v20260322/model/CreateApiKeyRequest.h
   )
@@ -146,6 +148,7 @@ set(tokenhub_src
   src/v20260322/model/CreateTokenPlanApiKeysResponse.cpp
   src/v20260322/model/ModelAccessInfo.cpp
   src/v20260322/model/DescribeModelListResponse.cpp
+  src/v20260322/model/DescribeTokenPlanPersonalPackageResponse.cpp
   src/v20260322/model/DeleteEndpointResponse.cpp
   src/v20260322/model/CreateTokenPlanTeamOrderAndBuyRequest.cpp
   src/v20260322/model/CreateEndpointRequest.cpp
@@ -201,6 +204,7 @@ set(tokenhub_src
   src/v20260322/model/DescribeTokenPlanApiKeyUsageDetailResponse.cpp
   src/v20260322/model/ModifyApiKeyInfoRequest.cpp
   src/v20260322/model/TokenPlanListItem.cpp
+  src/v20260322/model/DescribeTokenPlanPersonalPackageRequest.cpp
   src/v20260322/model/DescribeApiKeyRequest.cpp
   src/v20260322/model/DescribeUsageRankListRequest.cpp
   src/v20260322/model/CreateGlossaryEntriesRequest.cpp
@@ -217,7 +221,7 @@ set(tokenhub_src
   src/v20260322/model/ModelChargingItem.cpp
   src/v20260322/model/DescribeModelEndpointListRequest.cpp
   src/v20260322/model/DescribeTokenPlanApiKeyResponse.cpp
-  src/v20260322/model/DescribeTokenPlanListRequest.cpp
+  src/v20260322/model/ModifyTokenPlanApiKeySecretRequest.cpp
   src/v20260322/model/ModelFreeTrialInfo.cpp
   src/v20260322/model/TokenPlanApiKeyInfo.cpp
   src/v20260322/model/ModifyTokenPlanApiKeyRequest.cpp
@@ -232,7 +236,7 @@ set(tokenhub_src
   src/v20260322/model/ModifyApiKeyStatusResponse.cpp
   src/v20260322/model/CreateTokenPlanTeamOrderAndBuyResponse.cpp
   src/v20260322/model/RequestFilter.cpp
-  src/v20260322/model/ModifyTokenPlanApiKeySecretRequest.cpp
+  src/v20260322/model/DescribeTokenPlanListRequest.cpp
   src/v20260322/model/RequestSort.cpp
   src/v20260322/model/CreateApiKeyRequest.cpp
   )

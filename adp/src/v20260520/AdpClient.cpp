@@ -5640,6 +5640,56 @@ AdpClient::ModifyLabelOutcomeCallable AdpClient::ModifyLabelCallable(const Modif
     return prom->get_future();
 }
 
+AdpClient::ModifyMessageRecordFeedbackOutcome AdpClient::ModifyMessageRecordFeedback(const ModifyMessageRecordFeedbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMessageRecordFeedback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMessageRecordFeedbackResponse rsp = ModifyMessageRecordFeedbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMessageRecordFeedbackOutcome(rsp);
+        else
+            return ModifyMessageRecordFeedbackOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMessageRecordFeedbackOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyMessageRecordFeedbackAsync(const ModifyMessageRecordFeedbackRequest& request, const ModifyMessageRecordFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyMessageRecordFeedbackRequest&;
+    using Resp = ModifyMessageRecordFeedbackResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyMessageRecordFeedback", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyMessageRecordFeedbackOutcomeCallable AdpClient::ModifyMessageRecordFeedbackCallable(const ModifyMessageRecordFeedbackRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyMessageRecordFeedbackOutcome>>();
+    ModifyMessageRecordFeedbackAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyMessageRecordFeedbackRequest&,
+        ModifyMessageRecordFeedbackOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::ModifyMsgRecordCategoryOutcome AdpClient::ModifyMsgRecordCategory(const ModifyMsgRecordCategoryRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMsgRecordCategory");

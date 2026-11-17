@@ -181,6 +181,56 @@ namespace TencentCloud
                      */
                     bool COSAgentHasBeenSet() const;
 
+                    /**
+                     * 获取<p>非腾讯云虚拟机备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalCVMAgent <p>非腾讯云虚拟机备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ResourceProtectStat GetLocalCVMAgent() const;
+
+                    /**
+                     * 设置<p>非腾讯云虚拟机备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _localCVMAgent <p>非腾讯云虚拟机备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLocalCVMAgent(const ResourceProtectStat& _localCVMAgent);
+
+                    /**
+                     * 判断参数 LocalCVMAgent 是否已赋值
+                     * @return LocalCVMAgent 是否已赋值
+                     * 
+                     */
+                    bool LocalCVMAgentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>非腾讯云文件存储备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalCFSAgent <p>非腾讯云文件存储备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ResourceProtectStat GetLocalCFSAgent() const;
+
+                    /**
+                     * 设置<p>非腾讯云文件存储备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _localCFSAgent <p>非腾讯云文件存储备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLocalCFSAgent(const ResourceProtectStat& _localCFSAgent);
+
+                    /**
+                     * 判断参数 LocalCFSAgent 是否已赋值
+                     * @return LocalCFSAgent 是否已赋值
+                     * 
+                     */
+                    bool LocalCFSAgentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +270,20 @@ namespace TencentCloud
                      */
                     ResourceProtectStat m_cOSAgent;
                     bool m_cOSAgentHasBeenSet;
+
+                    /**
+                     * <p>非腾讯云虚拟机备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceProtectStat m_localCVMAgent;
+                    bool m_localCVMAgentHasBeenSet;
+
+                    /**
+                     * <p>非腾讯云文件存储备份受保护统计</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceProtectStat m_localCFSAgent;
+                    bool m_localCFSAgentHasBeenSet;
 
                 };
             }

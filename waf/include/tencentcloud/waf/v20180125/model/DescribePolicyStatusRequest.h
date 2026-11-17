@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取clb-waf或者saas-waf
-                     * @return Edition clb-waf或者saas-waf
+                     * 获取clb-waf或者sparta-waf
+                     * @return Edition clb-waf或者sparta-waf
                      * 
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置clb-waf或者saas-waf
-                     * @param _edition clb-waf或者saas-waf
+                     * 设置clb-waf或者sparta-waf
+                     * @param _edition clb-waf或者sparta-waf
                      * 
                      */
                     void SetEdition(const std::string& _edition);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * clb-waf或者saas-waf
+                     * clb-waf或者sparta-waf
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;

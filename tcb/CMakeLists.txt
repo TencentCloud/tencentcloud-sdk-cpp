@@ -92,6 +92,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCurveDataRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyResourcePermissionResponse.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceCacheAction.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvAccessControlRequest.h
   include/tencentcloud/tcb/v20180608/model/VerificationConfig.h
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
   include/tencentcloud/tcb/v20180608/model/ModifyUserResp.h
@@ -225,6 +226,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/SMSProviderTemplateConfig.h
   include/tencentcloud/tcb/v20180608/model/HTTPServicePathRewrite.h
   include/tencentcloud/tcb/v20180608/model/CodeReq.h
+  include/tencentcloud/tcb/v20180608/model/ModifyEnvAccessControlRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteUsersResp.h
   include/tencentcloud/tcb/v20180608/model/BuildContext.h
   include/tencentcloud/tcb/v20180608/model/BuildCommands.h
@@ -235,6 +237,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/UpdateFunctionConfigurationResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeBaasPackageListRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudAppLinkService.h
+  include/tencentcloud/tcb/v20180608/model/DescribeEnvAccessControlResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeLoginConfigRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudAppResponse.h
   include/tencentcloud/tcb/v20180608/model/PlatFormResourceInfo.h
@@ -324,6 +327,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/FunctionPublicNetConfig.h
   include/tencentcloud/tcb/v20180608/model/PrivateConfig.h
   include/tencentcloud/tcb/v20180608/model/AIModelSecret.h
+  include/tencentcloud/tcb/v20180608/model/ModifyEnvAccessControlResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeTaskResultResponse.h
   include/tencentcloud/tcb/v20180608/model/ReleaseEnvResponse.h
@@ -500,6 +504,7 @@ set(tcb_src
   src/v20180608/model/DescribeCurveDataRequest.cpp
   src/v20180608/model/ModifyResourcePermissionResponse.cpp
   src/v20180608/model/HTTPServiceCacheAction.cpp
+  src/v20180608/model/DescribeEnvAccessControlRequest.cpp
   src/v20180608/model/VerificationConfig.cpp
   src/v20180608/model/StorageInfo.cpp
   src/v20180608/model/ModifyUserResp.cpp
@@ -633,6 +638,7 @@ set(tcb_src
   src/v20180608/model/SMSProviderTemplateConfig.cpp
   src/v20180608/model/HTTPServicePathRewrite.cpp
   src/v20180608/model/CodeReq.cpp
+  src/v20180608/model/ModifyEnvAccessControlRequest.cpp
   src/v20180608/model/DeleteUsersResp.cpp
   src/v20180608/model/BuildContext.cpp
   src/v20180608/model/BuildCommands.cpp
@@ -643,6 +649,7 @@ set(tcb_src
   src/v20180608/model/UpdateFunctionConfigurationResponse.cpp
   src/v20180608/model/DescribeBaasPackageListRequest.cpp
   src/v20180608/model/CloudAppLinkService.cpp
+  src/v20180608/model/DescribeEnvAccessControlResponse.cpp
   src/v20180608/model/DescribeLoginConfigRequest.cpp
   src/v20180608/model/DeleteCloudAppResponse.cpp
   src/v20180608/model/PlatFormResourceInfo.cpp
@@ -732,6 +739,7 @@ set(tcb_src
   src/v20180608/model/FunctionPublicNetConfig.cpp
   src/v20180608/model/PrivateConfig.cpp
   src/v20180608/model/AIModelSecret.cpp
+  src/v20180608/model/ModifyEnvAccessControlResponse.cpp
   src/v20180608/model/DescribeEnvLimitResponse.cpp
   src/v20180608/model/DescribeTaskResultResponse.cpp
   src/v20180608/model/ReleaseEnvResponse.cpp

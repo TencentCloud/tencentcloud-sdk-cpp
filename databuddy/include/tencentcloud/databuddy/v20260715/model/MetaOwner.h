@@ -171,6 +171,31 @@ namespace TencentCloud
                      */
                     bool CatalogSourceHasBeenSet() const;
 
+                    /**
+                     * 获取数据源连接ID，与入参 Catalogs[].ConnectionId 对应。CatalogSource=CONNECTION 时返回该连接ID，用于区分同名目录的归属；METALAKE / SETATS 来源为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConnectionId 数据源连接ID，与入参 Catalogs[].ConnectionId 对应。CatalogSource=CONNECTION 时返回该连接ID，用于区分同名目录的归属；METALAKE / SETATS 来源为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetConnectionId() const;
+
+                    /**
+                     * 设置数据源连接ID，与入参 Catalogs[].ConnectionId 对应。CatalogSource=CONNECTION 时返回该连接ID，用于区分同名目录的归属；METALAKE / SETATS 来源为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _connectionId 数据源连接ID，与入参 Catalogs[].ConnectionId 对应。CatalogSource=CONNECTION 时返回该连接ID，用于区分同名目录的归属；METALAKE / SETATS 来源为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConnectionId(const std::string& _connectionId);
+
+                    /**
+                     * 判断参数 ConnectionId 是否已赋值
+                     * @return ConnectionId 是否已赋值
+                     * 
+                     */
+                    bool ConnectionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +232,13 @@ namespace TencentCloud
                      */
                     std::string m_catalogSource;
                     bool m_catalogSourceHasBeenSet;
+
+                    /**
+                     * 数据源连接ID，与入参 Catalogs[].ConnectionId 对应。CatalogSource=CONNECTION 时返回该连接ID，用于区分同名目录的归属；METALAKE / SETATS 来源为空。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_connectionId;
+                    bool m_connectionIdHasBeenSet;
 
                 };
             }

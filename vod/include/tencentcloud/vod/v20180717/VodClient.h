@@ -223,6 +223,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeAigcQuotasResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAigcUsageDataResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcWhitelistRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeAigcWhitelistResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAllClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeAnimatedGraphicsTemplatesRequest.h>
@@ -481,6 +483,8 @@
 #include <tencentcloud/vod/v20180717/model/SearchMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaBySemanticsRequest.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaBySemanticsResponse.h>
+#include <tencentcloud/vod/v20180717/model/SetAigcWhitelistRequest.h>
+#include <tencentcloud/vod/v20180717/model/SetAigcWhitelistResponse.h>
 #include <tencentcloud/vod/v20180717/model/SetCLSPushTargetRequest.h>
 #include <tencentcloud/vod/v20180717/model/SetCLSPushTargetResponse.h>
 #include <tencentcloud/vod/v20180717/model/SetDrmKeyProviderInfoRequest.h>
@@ -819,6 +823,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAigcUsageDataResponse> DescribeAigcUsageDataOutcome;
                 typedef std::future<DescribeAigcUsageDataOutcome> DescribeAigcUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAigcUsageDataRequest&, DescribeAigcUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcUsageDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAigcWhitelistResponse> DescribeAigcWhitelistOutcome;
+                typedef std::future<DescribeAigcWhitelistOutcome> DescribeAigcWhitelistOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeAigcWhitelistRequest&, DescribeAigcWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAigcWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllClassResponse> DescribeAllClassOutcome;
                 typedef std::future<DescribeAllClassOutcome> DescribeAllClassOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeAllClassRequest&, DescribeAllClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllClassAsyncHandler;
@@ -1206,6 +1213,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchMediaBySemanticsResponse> SearchMediaBySemanticsOutcome;
                 typedef std::future<SearchMediaBySemanticsOutcome> SearchMediaBySemanticsOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SearchMediaBySemanticsRequest&, SearchMediaBySemanticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaBySemanticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetAigcWhitelistResponse> SetAigcWhitelistOutcome;
+                typedef std::future<SetAigcWhitelistOutcome> SetAigcWhitelistOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::SetAigcWhitelistRequest&, SetAigcWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAigcWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetCLSPushTargetResponse> SetCLSPushTargetOutcome;
                 typedef std::future<SetCLSPushTargetOutcome> SetCLSPushTargetOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SetCLSPushTargetRequest&, SetCLSPushTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetCLSPushTargetAsyncHandler;
@@ -2220,6 +2230,15 @@ namespace TencentCloud
                 DescribeAigcUsageDataOutcome DescribeAigcUsageData(const Model::DescribeAigcUsageDataRequest &request);
                 void DescribeAigcUsageDataAsync(const Model::DescribeAigcUsageDataRequest& request, const DescribeAigcUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAigcUsageDataOutcomeCallable DescribeAigcUsageDataCallable(const Model::DescribeAigcUsageDataRequest& request);
+
+                /**
+                 *查询AIGC白名单配置
+                 * @param req DescribeAigcWhitelistRequest
+                 * @return DescribeAigcWhitelistOutcome
+                 */
+                DescribeAigcWhitelistOutcome DescribeAigcWhitelist(const Model::DescribeAigcWhitelistRequest &request);
+                void DescribeAigcWhitelistAsync(const Model::DescribeAigcWhitelistRequest& request, const DescribeAigcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAigcWhitelistOutcomeCallable DescribeAigcWhitelistCallable(const Model::DescribeAigcWhitelistRequest& request);
 
                 /**
                  ** 获得用户的所有分类信息。
@@ -3648,6 +3667,15 @@ namespace TencentCloud
                 SearchMediaBySemanticsOutcome SearchMediaBySemantics(const Model::SearchMediaBySemanticsRequest &request);
                 void SearchMediaBySemanticsAsync(const Model::SearchMediaBySemanticsRequest& request, const SearchMediaBySemanticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchMediaBySemanticsOutcomeCallable SearchMediaBySemanticsCallable(const Model::SearchMediaBySemanticsRequest& request);
+
+                /**
+                 *修改AIGC白名单设置
+                 * @param req SetAigcWhitelistRequest
+                 * @return SetAigcWhitelistOutcome
+                 */
+                SetAigcWhitelistOutcome SetAigcWhitelist(const Model::SetAigcWhitelistRequest &request);
+                void SetAigcWhitelistAsync(const Model::SetAigcWhitelistRequest& request, const SetAigcWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetAigcWhitelistOutcomeCallable SetAigcWhitelistCallable(const Model::SetAigcWhitelistRequest& request);
 
                 /**
                  *为点播域名设置投递 CLS 的目标。

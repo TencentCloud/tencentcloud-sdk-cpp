@@ -24,9 +24,13 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/ConversationFileInfo.h>
+#include <tencentcloud/adp/v20260520/model/ConversationQuestionnaire.h>
 #include <tencentcloud/adp/v20260520/model/ConversationQuoteInfo.h>
 #include <tencentcloud/adp/v20260520/model/ConversationReference.h>
 #include <tencentcloud/adp/v20260520/model/ConversationAgentTask.h>
+#include <tencentcloud/adp/v20260520/model/ConversationWidget.h>
+#include <tencentcloud/adp/v20260520/model/ConversationWidgetAction.h>
 #include <tencentcloud/adp/v20260520/model/ConversationMcpApp.h>
 
 
@@ -185,6 +189,31 @@ namespace TencentCloud
                     bool EnterpriseChartsHasBeenSet() const;
 
                     /**
+                     * 获取<p>文件信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return File <p>文件信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ConversationFileInfo GetFile() const;
+
+                    /**
+                     * 设置<p>文件信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _file <p>文件信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFile(const ConversationFileInfo& _file);
+
+                    /**
+                     * 判断参数 File 是否已赋值
+                     * @return File 是否已赋值
+                     * 
+                     */
+                    bool FileHasBeenSet() const;
+
+                    /**
                      * 获取<p>选项卡列表</p>
                      * @return OptionCardList <p>选项卡列表</p>
                      * 
@@ -250,6 +279,31 @@ namespace TencentCloud
                      * 
                      */
                     bool OptionModeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>问卷信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Questionnaire <p>问卷信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ConversationQuestionnaire GetQuestionnaire() const;
+
+                    /**
+                     * 设置<p>问卷信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _questionnaire <p>问卷信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQuestionnaire(const ConversationQuestionnaire& _questionnaire);
+
+                    /**
+                     * 判断参数 Questionnaire 是否已赋值
+                     * @return Questionnaire 是否已赋值
+                     * 
+                     */
+                    bool QuestionnaireHasBeenSet() const;
 
                     /**
                      * 获取<p>引用角标信息列表</p>
@@ -403,6 +457,56 @@ namespace TencentCloud
                     bool TasksHasBeenSet() const;
 
                     /**
+                     * 获取<p>Widget 信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Widget <p>Widget 信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ConversationWidget GetWidget() const;
+
+                    /**
+                     * 设置<p>Widget 信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _widget <p>Widget 信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWidget(const ConversationWidget& _widget);
+
+                    /**
+                     * 判断参数 Widget 是否已赋值
+                     * @return Widget 是否已赋值
+                     * 
+                     */
+                    bool WidgetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Widget 动作信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WidgetAction <p>Widget 动作信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ConversationWidgetAction GetWidgetAction() const;
+
+                    /**
+                     * 设置<p>Widget 动作信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _widgetAction <p>Widget 动作信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWidgetAction(const ConversationWidgetAction& _widgetAction);
+
+                    /**
+                     * 判断参数 WidgetAction 是否已赋值
+                     * @return WidgetAction 是否已赋值
+                     * 
+                     */
+                    bool WidgetActionHasBeenSet() const;
+
+                    /**
                      * 获取<p>工作流输入参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkflowInput <p>工作流输入参数</p>
@@ -493,6 +597,13 @@ namespace TencentCloud
                     bool m_enterpriseChartsHasBeenSet;
 
                     /**
+                     * <p>文件信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ConversationFileInfo m_file;
+                    bool m_fileHasBeenSet;
+
+                    /**
                      * <p>选项卡列表</p>
                      */
                     std::vector<std::string> m_optionCardList;
@@ -510,6 +621,13 @@ namespace TencentCloud
                      */
                     int64_t m_optionMode;
                     bool m_optionModeHasBeenSet;
+
+                    /**
+                     * <p>问卷信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ConversationQuestionnaire m_questionnaire;
+                    bool m_questionnaireHasBeenSet;
 
                     /**
                      * <p>引用角标信息列表</p>
@@ -553,6 +671,20 @@ namespace TencentCloud
                      */
                     std::vector<ConversationAgentTask> m_tasks;
                     bool m_tasksHasBeenSet;
+
+                    /**
+                     * <p>Widget 信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ConversationWidget m_widget;
+                    bool m_widgetHasBeenSet;
+
+                    /**
+                     * <p>Widget 动作信息</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ConversationWidgetAction m_widgetAction;
+                    bool m_widgetActionHasBeenSet;
 
                     /**
                      * <p>工作流输入参数</p>

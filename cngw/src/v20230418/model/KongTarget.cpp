@@ -28,6 +28,7 @@ KongTarget::KongTarget() :
     m_cvmInstanceIdHasBeenSet(false),
     m_cvmInstanceNameHasBeenSet(false),
     m_healthHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -106,6 +107,16 @@ CoreInternalOutcome KongTarget::Deserialize(const rapidjson::Value &value)
         }
         m_health = string(value["Health"].GetString());
         m_healthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongTarget.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
     }
 
     if (value.HasMember("Source") && !value["Source"].IsNull())
@@ -192,6 +203,14 @@ void KongTarget::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Health";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_health.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sourceHasBeenSet)
@@ -328,6 +347,22 @@ void KongTarget::SetHealth(const string& _health)
 bool KongTarget::HealthHasBeenSet() const
 {
     return m_healthHasBeenSet;
+}
+
+string KongTarget::GetId() const
+{
+    return m_id;
+}
+
+void KongTarget::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool KongTarget::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 string KongTarget::GetSource() const

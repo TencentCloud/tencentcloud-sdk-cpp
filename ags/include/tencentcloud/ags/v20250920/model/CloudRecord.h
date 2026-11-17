@@ -197,81 +197,6 @@ namespace TencentCloud
                     bool LifecycleStatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>所属租户 AppId。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppId <p>所属租户 AppId。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetAppId() const;
-
-                    /**
-                     * 设置<p>所属租户 AppId。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _appId <p>所属租户 AppId。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetAppId(const int64_t& _appId);
-
-                    /**
-                     * 判断参数 AppId 是否已赋值
-                     * @return AppId 是否已赋值
-                     * 
-                     */
-                    bool AppIdHasBeenSet() const;
-
-                    /**
-                     * 获取<p>创建者主账号 UIN。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatorUin <p>创建者主账号 UIN。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetCreatorUin() const;
-
-                    /**
-                     * 设置<p>创建者主账号 UIN。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creatorUin <p>创建者主账号 UIN。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCreatorUin(const std::string& _creatorUin);
-
-                    /**
-                     * 判断参数 CreatorUin 是否已赋值
-                     * @return CreatorUin 是否已赋值
-                     * 
-                     */
-                    bool CreatorUinHasBeenSet() const;
-
-                    /**
-                     * 获取<p>创建者子账号 UIN；主账号直接创建时为空。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatorSubAccountUin <p>创建者子账号 UIN；主账号直接创建时为空。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetCreatorSubAccountUin() const;
-
-                    /**
-                     * 设置<p>创建者子账号 UIN；主账号直接创建时为空。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creatorSubAccountUin <p>创建者子账号 UIN；主账号直接创建时为空。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCreatorSubAccountUin(const std::string& _creatorSubAccountUin);
-
-                    /**
-                     * 判断参数 CreatorSubAccountUin 是否已赋值
-                     * @return CreatorSubAccountUin 是否已赋值
-                     * 
-                     */
-                    bool CreatorSubAccountUinHasBeenSet() const;
-
-                    /**
                      * 获取<p>创建时间，ISO 8601 UTC。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime <p>创建时间，ISO 8601 UTC。</p>
@@ -322,18 +247,93 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>Record 下未删除 Version 数量。</p>
+                     * 获取<p>所属租户 AppId。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VersionCount <p>Record 下未删除 Version 数量。</p>
+                     * @return AppId <p>所属租户 AppId。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAppId() const;
+
+                    /**
+                     * 设置<p>所属租户 AppId。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appId <p>所属租户 AppId。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppId(const int64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建者主账号 UIN。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatorUin <p>创建者主账号 UIN。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreatorUin() const;
+
+                    /**
+                     * 设置<p>创建者主账号 UIN。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _creatorUin <p>创建者主账号 UIN。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreatorUin(const std::string& _creatorUin);
+
+                    /**
+                     * 判断参数 CreatorUin 是否已赋值
+                     * @return CreatorUin 是否已赋值
+                     * 
+                     */
+                    bool CreatorUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建者子账号 UIN；主账号直接创建时为空。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatorSubAccountUin <p>创建者子账号 UIN；主账号直接创建时为空。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreatorSubAccountUin() const;
+
+                    /**
+                     * 设置<p>创建者子账号 UIN；主账号直接创建时为空。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _creatorSubAccountUin <p>创建者子账号 UIN；主账号直接创建时为空。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreatorSubAccountUin(const std::string& _creatorSubAccountUin);
+
+                    /**
+                     * 判断参数 CreatorSubAccountUin 是否已赋值
+                     * @return CreatorSubAccountUin 是否已赋值
+                     * 
+                     */
+                    bool CreatorSubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Record 下未删除 Version 数量。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VersionCount <p>Record 下未删除 Version 数量。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVersionCount() const;
 
                     /**
-                     * 设置<p>Record 下未删除 Version 数量。</p>
+                     * 设置<p>Record 下未删除 Version 数量。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _versionCount <p>Record 下未删除 Version 数量。</p>
+                     * @param _versionCount <p>Record 下未删除 Version 数量。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +347,18 @@ namespace TencentCloud
                     bool VersionCountHasBeenSet() const;
 
                     /**
-                     * 获取<p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p>
+                     * 获取<p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LabelSet <p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p>
+                     * @return LabelSet <p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLabelSet() const;
 
                     /**
-                     * 设置<p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p>
+                     * 设置<p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _labelSet <p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p>
+                     * @param _labelSet <p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -416,27 +416,6 @@ namespace TencentCloud
                     bool m_lifecycleStatusHasBeenSet;
 
                     /**
-                     * <p>所属租户 AppId。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_appId;
-                    bool m_appIdHasBeenSet;
-
-                    /**
-                     * <p>创建者主账号 UIN。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_creatorUin;
-                    bool m_creatorUinHasBeenSet;
-
-                    /**
-                     * <p>创建者子账号 UIN；主账号直接创建时为空。</p>
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_creatorSubAccountUin;
-                    bool m_creatorSubAccountUinHasBeenSet;
-
-                    /**
                      * <p>创建时间，ISO 8601 UTC。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -451,14 +430,35 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * <p>Record 下未删除 Version 数量。</p>
+                     * <p>所属租户 AppId。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * <p>创建者主账号 UIN。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creatorUin;
+                    bool m_creatorUinHasBeenSet;
+
+                    /**
+                     * <p>创建者子账号 UIN；主账号直接创建时为空。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creatorSubAccountUin;
+                    bool m_creatorSubAccountUinHasBeenSet;
+
+                    /**
+                     * <p>Record 下未删除 Version 数量。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_versionCount;
                     bool m_versionCountHasBeenSet;
 
                     /**
-                     * <p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p>
+                     * <p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_labelSet;

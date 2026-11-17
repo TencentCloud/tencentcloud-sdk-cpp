@@ -24,7 +24,9 @@ NameIdentifier::NameIdentifier() :
     m_nameHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_catalogSourceHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_connectionIdHasBeenSet(false),
+    m_connectionNameHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,26 @@ CoreInternalOutcome NameIdentifier::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("ConnectionId") && !value["ConnectionId"].IsNull())
+    {
+        if (!value["ConnectionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NameIdentifier.ConnectionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_connectionId = string(value["ConnectionId"].GetString());
+        m_connectionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConnectionName") && !value["ConnectionName"].IsNull())
+    {
+        if (!value["ConnectionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NameIdentifier.ConnectionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_connectionName = string(value["ConnectionName"].GetString());
+        m_connectionNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +140,22 @@ void NameIdentifier::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connectionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connectionName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +223,37 @@ void NameIdentifier::SetStatus(const string& _status)
 bool NameIdentifier::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string NameIdentifier::GetConnectionId() const
+{
+    return m_connectionId;
+}
+
+void NameIdentifier::SetConnectionId(const string& _connectionId)
+{
+    m_connectionId = _connectionId;
+    m_connectionIdHasBeenSet = true;
+}
+
+bool NameIdentifier::ConnectionIdHasBeenSet() const
+{
+    return m_connectionIdHasBeenSet;
+}
+
+string NameIdentifier::GetConnectionName() const
+{
+    return m_connectionName;
+}
+
+void NameIdentifier::SetConnectionName(const string& _connectionName)
+{
+    m_connectionName = _connectionName;
+    m_connectionNameHasBeenSet = true;
+}
+
+bool NameIdentifier::ConnectionNameHasBeenSet() const
+{
+    return m_connectionNameHasBeenSet;
 }
 

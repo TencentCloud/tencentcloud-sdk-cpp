@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ImageRegistryTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>镜像预热类型</p><p>枚举值：</p><ul><li>image： 镜像预热</li><li>image_volume： 镜像卷预热</li></ul><p>默认值：image</p>
+                     * @return PreCacheType <p>镜像预热类型</p><p>枚举值：</p><ul><li>image： 镜像预热</li><li>image_volume： 镜像卷预热</li></ul><p>默认值：image</p>
+                     * 
+                     */
+                    std::string GetPreCacheType() const;
+
+                    /**
+                     * 设置<p>镜像预热类型</p><p>枚举值：</p><ul><li>image： 镜像预热</li><li>image_volume： 镜像卷预热</li></ul><p>默认值：image</p>
+                     * @param _preCacheType <p>镜像预热类型</p><p>枚举值：</p><ul><li>image： 镜像预热</li><li>image_volume： 镜像卷预热</li></ul><p>默认值：image</p>
+                     * 
+                     */
+                    void SetPreCacheType(const std::string& _preCacheType);
+
+                    /**
+                     * 判断参数 PreCacheType 是否已赋值
+                     * @return PreCacheType 是否已赋值
+                     * 
+                     */
+                    bool PreCacheTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_imageRegistryType;
                     bool m_imageRegistryTypeHasBeenSet;
+
+                    /**
+                     * <p>镜像预热类型</p><p>枚举值：</p><ul><li>image： 镜像预热</li><li>image_volume： 镜像卷预热</li></ul><p>默认值：image</p>
+                     */
+                    std::string m_preCacheType;
+                    bool m_preCacheTypeHasBeenSet;
 
                 };
             }

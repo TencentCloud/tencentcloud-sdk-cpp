@@ -1008,6 +1008,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>包销到期时间</p>
+                     * @return UnderwriteDeadline <p>包销到期时间</p>
+                     * 
+                     */
+                    std::string GetUnderwriteDeadline() const;
+
+                    /**
+                     * 设置<p>包销到期时间</p>
+                     * @param _underwriteDeadline <p>包销到期时间</p>
+                     * 
+                     */
+                    void SetUnderwriteDeadline(const std::string& _underwriteDeadline);
+
+                    /**
+                     * 判断参数 UnderwriteDeadline 是否已赋值
+                     * @return UnderwriteDeadline 是否已赋值
+                     * 
+                     */
+                    bool UnderwriteDeadlineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1279,6 +1300,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>包销到期时间</p>
+                     */
+                    std::string m_underwriteDeadline;
+                    bool m_underwriteDeadlineHasBeenSet;
 
                 };
             }

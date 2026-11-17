@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool IpListHasBeenSet() const;
 
                     /**
-                     * 获取42为黑名单，40为白名单
-                     * @return ActionType 42为黑名单，40为白名单
+                     * 获取IP黑白名单类型，40表示白名单，42表示黑名单
+                     * @return ActionType IP黑白名单类型，40表示白名单，42表示黑名单
                      * 
                      */
                     int64_t GetActionType() const;
 
                     /**
-                     * 设置42为黑名单，40为白名单
-                     * @param _actionType 42为黑名单，40为白名单
+                     * 设置IP黑白名单类型，40表示白名单，42表示黑名单
+                     * @param _actionType IP黑白名单类型，40表示白名单，42表示黑名单
                      * 
                      */
                     void SetActionType(const int64_t& _actionType);
@@ -294,7 +294,7 @@ namespace TencentCloud
                     bool m_ipListHasBeenSet;
 
                     /**
-                     * 42为黑名单，40为白名单
+                     * IP黑白名单类型，40表示白名单，42表示黑名单
                      */
                     int64_t m_actionType;
                     bool m_actionTypeHasBeenSet;
