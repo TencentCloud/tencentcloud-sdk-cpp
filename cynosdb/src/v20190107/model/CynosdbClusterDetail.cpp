@@ -81,7 +81,8 @@ CynosdbClusterDetail::CynosdbClusterDetail() :
     m_isOpenTDEHasBeenSet(false),
     m_realZoneHasBeenSet(false),
     m_storageOverUseHasBeenSet(false),
-    m_storageAutoExpandHasBeenSet(false)
+    m_storageAutoExpandHasBeenSet(false),
+    m_isInInstantRollbackChainHasBeenSet(false)
 {
 }
 
@@ -770,6 +771,16 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
         m_storageAutoExpandHasBeenSet = true;
     }
 
+    if (value.HasMember("IsInInstantRollbackChain") && !value["IsInInstantRollbackChain"].IsNull())
+    {
+        if (!value["IsInInstantRollbackChain"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.IsInInstantRollbackChain` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInInstantRollbackChain = value["IsInInstantRollbackChain"].GetBool();
+        m_isInInstantRollbackChainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1311,6 +1322,14 @@ void CynosdbClusterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "StorageAutoExpand";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storageAutoExpand.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInInstantRollbackChainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInInstantRollbackChain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInInstantRollbackChain, allocator);
     }
 
 }
@@ -2290,5 +2309,21 @@ void CynosdbClusterDetail::SetStorageAutoExpand(const string& _storageAutoExpand
 bool CynosdbClusterDetail::StorageAutoExpandHasBeenSet() const
 {
     return m_storageAutoExpandHasBeenSet;
+}
+
+bool CynosdbClusterDetail::GetIsInInstantRollbackChain() const
+{
+    return m_isInInstantRollbackChain;
+}
+
+void CynosdbClusterDetail::SetIsInInstantRollbackChain(const bool& _isInInstantRollbackChain)
+{
+    m_isInInstantRollbackChain = _isInInstantRollbackChain;
+    m_isInInstantRollbackChainHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::IsInInstantRollbackChainHasBeenSet() const
+{
+    return m_isInInstantRollbackChainHasBeenSet;
 }
 

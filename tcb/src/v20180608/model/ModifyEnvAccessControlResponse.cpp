@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-ModifyEnvAccessControlResponse::ModifyEnvAccessControlResponse()
+ModifyEnvAccessControlResponse::ModifyEnvAccessControlResponse() :
+    m_affectedRowsHasBeenSet(false),
+    m_currentHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome ModifyEnvAccessControlResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("AffectedRows") && !rsp["AffectedRows"].IsNull())
+    {
+        if (!rsp["AffectedRows"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AffectedRows` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_affectedRows = rsp["AffectedRows"].GetInt64();
+        m_affectedRowsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Current") && !rsp["Current"].IsNull())
+    {
+        if (!rsp["Current"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Current` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Current"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AccessSourceSetting item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_current.push_back(item);
+        }
+        m_currentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string ModifyEnvAccessControlResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_affectedRowsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffectedRows";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_affectedRows, allocator);
+    }
+
+    if (m_currentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Current";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_current.begin(); itr != m_current.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string ModifyEnvAccessControlResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t ModifyEnvAccessControlResponse::GetAffectedRows() const
+{
+    return m_affectedRows;
+}
+
+bool ModifyEnvAccessControlResponse::AffectedRowsHasBeenSet() const
+{
+    return m_affectedRowsHasBeenSet;
+}
+
+vector<AccessSourceSetting> ModifyEnvAccessControlResponse::GetCurrent() const
+{
+    return m_current;
+}
+
+bool ModifyEnvAccessControlResponse::CurrentHasBeenSet() const
+{
+    return m_currentHasBeenSet;
+}
 
 

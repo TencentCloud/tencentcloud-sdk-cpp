@@ -2740,6 +2740,56 @@ DbbrainClient::DescribeIndexRecommendInfoOutcomeCallable DbbrainClient::Describe
     return prom->get_future();
 }
 
+DbbrainClient::DescribeInterfaceEncryptKeyV2Outcome DbbrainClient::DescribeInterfaceEncryptKeyV2(const DescribeInterfaceEncryptKeyV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInterfaceEncryptKeyV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInterfaceEncryptKeyV2Response rsp = DescribeInterfaceEncryptKeyV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInterfaceEncryptKeyV2Outcome(rsp);
+        else
+            return DescribeInterfaceEncryptKeyV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInterfaceEncryptKeyV2Outcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeInterfaceEncryptKeyV2Async(const DescribeInterfaceEncryptKeyV2Request& request, const DescribeInterfaceEncryptKeyV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeInterfaceEncryptKeyV2Request&;
+    using Resp = DescribeInterfaceEncryptKeyV2Response;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeInterfaceEncryptKeyV2", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DbbrainClient::DescribeInterfaceEncryptKeyV2OutcomeCallable DbbrainClient::DescribeInterfaceEncryptKeyV2Callable(const DescribeInterfaceEncryptKeyV2Request &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeInterfaceEncryptKeyV2Outcome>>();
+    DescribeInterfaceEncryptKeyV2Async(
+    request,
+    [prom](
+        const DbbrainClient*,
+        const DescribeInterfaceEncryptKeyV2Request&,
+        DescribeInterfaceEncryptKeyV2Outcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DbbrainClient::DescribeMailProfileOutcome DbbrainClient::DescribeMailProfile(const DescribeMailProfileRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMailProfile");

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/oceanus/v20190422/model/Filter.h>
 
 
 namespace TencentCloud
@@ -43,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取作业ID，例如：cql-6v1jkxrn
-                     * @return JobId 作业ID，例如：cql-6v1jkxrn
+                     * 获取<p>作业ID，例如：cql-6v1jkxrn</p>
+                     * @return JobId <p>作业ID，例如：cql-6v1jkxrn</p>
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置作业ID，例如：cql-6v1jkxrn
-                     * @param _jobId 作业ID，例如：cql-6v1jkxrn
+                     * 设置<p>作业ID，例如：cql-6v1jkxrn</p>
+                     * @param _jobId <p>作业ID，例如：cql-6v1jkxrn</p>
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -64,15 +65,15 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取起始时间，unix时间戳，毫秒级，例如：1611754219108
-                     * @return StartTime 起始时间，unix时间戳，毫秒级，例如：1611754219108
+                     * 获取<p>起始时间，unix时间戳，毫秒级，例如：1611754219108</p>
+                     * @return StartTime <p>起始时间，unix时间戳，毫秒级，例如：1611754219108</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置起始时间，unix时间戳，毫秒级，例如：1611754219108
-                     * @param _startTime 起始时间，unix时间戳，毫秒级，例如：1611754219108
+                     * 设置<p>起始时间，unix时间戳，毫秒级，例如：1611754219108</p>
+                     * @param _startTime <p>起始时间，unix时间戳，毫秒级，例如：1611754219108</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -85,15 +86,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间，unix时间戳，毫秒级，例如：1611754219108
-                     * @return EndTime 结束时间，unix时间戳，毫秒级，例如：1611754219108
+                     * 获取<p>结束时间，unix时间戳，毫秒级，例如：1611754219108</p>
+                     * @return EndTime <p>结束时间，unix时间戳，毫秒级，例如：1611754219108</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间，unix时间戳，毫秒级，例如：1611754219108
-                     * @param _endTime 结束时间，unix时间戳，毫秒级，例如：1611754219108
+                     * 设置<p>结束时间，unix时间戳，毫秒级，例如：1611754219108</p>
+                     * @param _endTime <p>结束时间，unix时间戳，毫秒级，例如：1611754219108</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -106,15 +107,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志
-                     * @return RunningOrderId 作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志
+                     * 获取<p>作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志</p>
+                     * @return RunningOrderId <p>作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志</p>
                      * 
                      */
                     int64_t GetRunningOrderId() const;
 
                     /**
-                     * 设置作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志
-                     * @param _runningOrderId 作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志
+                     * 设置<p>作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志</p>
+                     * @param _runningOrderId <p>作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志</p>
                      * 
                      */
                     void SetRunningOrderId(const int64_t& _runningOrderId);
@@ -127,15 +128,15 @@ namespace TencentCloud
                     bool RunningOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取日志搜索的关键词，默认为空
-                     * @return Keyword 日志搜索的关键词，默认为空
+                     * 获取<p>日志搜索的关键词，默认为空</p>
+                     * @return Keyword <p>日志搜索的关键词，默认为空</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置日志搜索的关键词，默认为空
-                     * @param _keyword 日志搜索的关键词，默认为空
+                     * 设置<p>日志搜索的关键词，默认为空</p>
+                     * @param _keyword <p>日志搜索的关键词，默认为空</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -148,15 +149,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取日志搜索的游标，可透传上次返回的值，默认为空
-                     * @return Cursor 日志搜索的游标，可透传上次返回的值，默认为空
+                     * 获取<p>日志搜索的游标，可透传上次返回的值，默认为空</p>
+                     * @return Cursor <p>日志搜索的游标，可透传上次返回的值，默认为空</p>
                      * 
                      */
                     std::string GetCursor() const;
 
                     /**
-                     * 设置日志搜索的游标，可透传上次返回的值，默认为空
-                     * @param _cursor 日志搜索的游标，可透传上次返回的值，默认为空
+                     * 设置<p>日志搜索的游标，可透传上次返回的值，默认为空</p>
+                     * @param _cursor <p>日志搜索的游标，可透传上次返回的值，默认为空</p>
                      * 
                      */
                     void SetCursor(const std::string& _cursor);
@@ -169,15 +170,15 @@ namespace TencentCloud
                     bool CursorHasBeenSet() const;
 
                     /**
-                     * 获取时间戳排序规则，asc - 升序，desc - 降序。默认为升序
-                     * @return OrderType 时间戳排序规则，asc - 升序，desc - 降序。默认为升序
+                     * 获取<p>时间戳排序规则，asc - 升序，desc - 降序。默认为升序</p>
+                     * @return OrderType <p>时间戳排序规则，asc - 升序，desc - 降序。默认为升序</p>
                      * 
                      */
                     std::string GetOrderType() const;
 
                     /**
-                     * 设置时间戳排序规则，asc - 升序，desc - 降序。默认为升序
-                     * @param _orderType 时间戳排序规则，asc - 升序，desc - 降序。默认为升序
+                     * 设置<p>时间戳排序规则，asc - 升序，desc - 降序。默认为升序</p>
+                     * @param _orderType <p>时间戳排序规则，asc - 升序，desc - 降序。默认为升序</p>
                      * 
                      */
                     void SetOrderType(const std::string& _orderType);
@@ -190,15 +191,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取搜索的日志条数上限值，最大为100
-                     * @return Limit 搜索的日志条数上限值，最大为100
+                     * 获取<p>搜索的日志条数上限值，最大为100</p>
+                     * @return Limit <p>搜索的日志条数上限值，最大为100</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置搜索的日志条数上限值，最大为100
-                     * @param _limit 搜索的日志条数上限值，最大为100
+                     * 设置<p>搜索的日志条数上限值，最大为100</p>
+                     * @param _limit <p>搜索的日志条数上限值，最大为100</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -210,55 +211,109 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分页偏移</p>
+                     * @return Offset <p>分页偏移</p>
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置<p>分页偏移</p>
+                     * @param _offset <p>分页偏移</p>
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>过滤</p>
+                     * @return Filters <p>过滤</p>
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置<p>过滤</p>
+                     * @param _filters <p>过滤</p>
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 作业ID，例如：cql-6v1jkxrn
+                     * <p>作业ID，例如：cql-6v1jkxrn</p>
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 起始时间，unix时间戳，毫秒级，例如：1611754219108
+                     * <p>起始时间，unix时间戳，毫秒级，例如：1611754219108</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间，unix时间戳，毫秒级，例如：1611754219108
+                     * <p>结束时间，unix时间戳，毫秒级，例如：1611754219108</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志
+                     * <p>作业运行的实例ID, 例如：1,2,3。默认为0，表示未选中任何实例，搜索该时间段内最近的一个实例的日志</p>
                      */
                     int64_t m_runningOrderId;
                     bool m_runningOrderIdHasBeenSet;
 
                     /**
-                     * 日志搜索的关键词，默认为空
+                     * <p>日志搜索的关键词，默认为空</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 日志搜索的游标，可透传上次返回的值，默认为空
+                     * <p>日志搜索的游标，可透传上次返回的值，默认为空</p>
                      */
                     std::string m_cursor;
                     bool m_cursorHasBeenSet;
 
                     /**
-                     * 时间戳排序规则，asc - 升序，desc - 降序。默认为升序
+                     * <p>时间戳排序规则，asc - 升序，desc - 降序。默认为升序</p>
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 搜索的日志条数上限值，最大为100
+                     * <p>搜索的日志条数上限值，最大为100</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * <p>分页偏移</p>
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>过滤</p>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

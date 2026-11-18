@@ -23,7 +23,9 @@ using namespace std;
 Input::Input() :
     m_urlHasBeenSet(false),
     m_formatHasBeenSet(false),
-    m_agoraParamHasBeenSet(false)
+    m_agoraParamHasBeenSet(false),
+    m_neteaseParamHasBeenSet(false),
+    m_volcParamHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,40 @@ CoreInternalOutcome Input::Deserialize(const rapidjson::Value &value)
         m_agoraParamHasBeenSet = true;
     }
 
+    if (value.HasMember("NeteaseParam") && !value["NeteaseParam"].IsNull())
+    {
+        if (!value["NeteaseParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Input.NeteaseParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_neteaseParam.Deserialize(value["NeteaseParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_neteaseParamHasBeenSet = true;
+    }
+
+    if (value.HasMember("VolcParam") && !value["VolcParam"].IsNull())
+    {
+        if (!value["VolcParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Input.VolcParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_volcParam.Deserialize(value["VolcParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_volcParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +135,24 @@ void Input::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agoraParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_neteaseParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeteaseParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_neteaseParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_volcParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolcParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_volcParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -150,5 +204,37 @@ void Input::SetAgoraParam(const AgoraParam& _agoraParam)
 bool Input::AgoraParamHasBeenSet() const
 {
     return m_agoraParamHasBeenSet;
+}
+
+NeteaseParam Input::GetNeteaseParam() const
+{
+    return m_neteaseParam;
+}
+
+void Input::SetNeteaseParam(const NeteaseParam& _neteaseParam)
+{
+    m_neteaseParam = _neteaseParam;
+    m_neteaseParamHasBeenSet = true;
+}
+
+bool Input::NeteaseParamHasBeenSet() const
+{
+    return m_neteaseParamHasBeenSet;
+}
+
+VolcParam Input::GetVolcParam() const
+{
+    return m_volcParam;
+}
+
+void Input::SetVolcParam(const VolcParam& _volcParam)
+{
+    m_volcParam = _volcParam;
+    m_volcParamHasBeenSet = true;
+}
+
+bool Input::VolcParamHasBeenSet() const
+{
+    return m_volcParamHasBeenSet;
 }
 

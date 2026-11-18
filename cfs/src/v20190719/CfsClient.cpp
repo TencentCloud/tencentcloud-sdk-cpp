@@ -190,6 +190,56 @@ CfsClient::CreateAccessCertOutcomeCallable CfsClient::CreateAccessCertCallable(c
     return prom->get_future();
 }
 
+CfsClient::CreateAutoDeletePolicyOutcome CfsClient::CreateAutoDeletePolicy(const CreateAutoDeletePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAutoDeletePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAutoDeletePolicyResponse rsp = CreateAutoDeletePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAutoDeletePolicyOutcome(rsp);
+        else
+            return CreateAutoDeletePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAutoDeletePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::CreateAutoDeletePolicyAsync(const CreateAutoDeletePolicyRequest& request, const CreateAutoDeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateAutoDeletePolicyRequest&;
+    using Resp = CreateAutoDeletePolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateAutoDeletePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfsClient::CreateAutoDeletePolicyOutcomeCallable CfsClient::CreateAutoDeletePolicyCallable(const CreateAutoDeletePolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateAutoDeletePolicyOutcome>>();
+    CreateAutoDeletePolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const CreateAutoDeletePolicyRequest&,
+        CreateAutoDeletePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfsClient::CreateAutoSnapshotPolicyOutcome CfsClient::CreateAutoSnapshotPolicy(const CreateAutoSnapshotPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAutoSnapshotPolicy");
@@ -740,6 +790,56 @@ CfsClient::CreateMigrationTaskOutcomeCallable CfsClient::CreateMigrationTaskCall
     return prom->get_future();
 }
 
+CfsClient::DeleteAutoDeletePolicyOutcome CfsClient::DeleteAutoDeletePolicy(const DeleteAutoDeletePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAutoDeletePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAutoDeletePolicyResponse rsp = DeleteAutoDeletePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAutoDeletePolicyOutcome(rsp);
+        else
+            return DeleteAutoDeletePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAutoDeletePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DeleteAutoDeletePolicyAsync(const DeleteAutoDeletePolicyRequest& request, const DeleteAutoDeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteAutoDeletePolicyRequest&;
+    using Resp = DeleteAutoDeletePolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteAutoDeletePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfsClient::DeleteAutoDeletePolicyOutcomeCallable CfsClient::DeleteAutoDeletePolicyCallable(const DeleteAutoDeletePolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteAutoDeletePolicyOutcome>>();
+    DeleteAutoDeletePolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DeleteAutoDeletePolicyRequest&,
+        DeleteAutoDeletePolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CfsClient::DeleteAutoSnapshotPolicyOutcome CfsClient::DeleteAutoSnapshotPolicy(const DeleteAutoSnapshotPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAutoSnapshotPolicy");
@@ -1232,6 +1332,56 @@ CfsClient::DeleteUserQuotaOutcomeCallable CfsClient::DeleteUserQuotaCallable(con
         const CfsClient*,
         const DeleteUserQuotaRequest&,
         DeleteUserQuotaOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfsClient::DescribeAutoDeletePoliciesOutcome CfsClient::DescribeAutoDeletePolicies(const DescribeAutoDeletePoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoDeletePolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoDeletePoliciesResponse rsp = DescribeAutoDeletePoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoDeletePoliciesOutcome(rsp);
+        else
+            return DescribeAutoDeletePoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoDeletePoliciesOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DescribeAutoDeletePoliciesAsync(const DescribeAutoDeletePoliciesRequest& request, const DescribeAutoDeletePoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAutoDeletePoliciesRequest&;
+    using Resp = DescribeAutoDeletePoliciesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAutoDeletePolicies", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfsClient::DescribeAutoDeletePoliciesOutcomeCallable CfsClient::DescribeAutoDeletePoliciesCallable(const DescribeAutoDeletePoliciesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAutoDeletePoliciesOutcome>>();
+    DescribeAutoDeletePoliciesAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const DescribeAutoDeletePoliciesRequest&,
+        DescribeAutoDeletePoliciesOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -2232,6 +2382,56 @@ CfsClient::DoDirectoryOperationOutcomeCallable CfsClient::DoDirectoryOperationCa
         const CfsClient*,
         const DoDirectoryOperationRequest&,
         DoDirectoryOperationOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CfsClient::ModifyAutoDeletePolicyOutcome CfsClient::ModifyAutoDeletePolicy(const ModifyAutoDeletePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAutoDeletePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAutoDeletePolicyResponse rsp = ModifyAutoDeletePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAutoDeletePolicyOutcome(rsp);
+        else
+            return ModifyAutoDeletePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAutoDeletePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::ModifyAutoDeletePolicyAsync(const ModifyAutoDeletePolicyRequest& request, const ModifyAutoDeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAutoDeletePolicyRequest&;
+    using Resp = ModifyAutoDeletePolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAutoDeletePolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CfsClient::ModifyAutoDeletePolicyOutcomeCallable CfsClient::ModifyAutoDeletePolicyCallable(const ModifyAutoDeletePolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAutoDeletePolicyOutcome>>();
+    ModifyAutoDeletePolicyAsync(
+    request,
+    [prom](
+        const CfsClient*,
+        const ModifyAutoDeletePolicyRequest&,
+        ModifyAutoDeletePolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

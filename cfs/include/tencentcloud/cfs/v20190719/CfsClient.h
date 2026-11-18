@@ -29,6 +29,8 @@
 #include <tencentcloud/cfs/v20190719/model/BindAutoSnapshotPolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateAccessCertRequest.h>
 #include <tencentcloud/cfs/v20190719/model/CreateAccessCertResponse.h>
+#include <tencentcloud/cfs/v20190719/model/CreateAutoDeletePolicyRequest.h>
+#include <tencentcloud/cfs/v20190719/model/CreateAutoDeletePolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cfs/v20190719/model/CreateAutoSnapshotPolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateCfsFileSystemRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/cfs/v20190719/model/CreateLifecyclePolicyDownloadTaskResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateMigrationTaskRequest.h>
 #include <tencentcloud/cfs/v20190719/model/CreateMigrationTaskResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DeleteAutoDeletePolicyRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DeleteAutoDeletePolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteAutoSnapshotPolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteCfsFileSystemRequest.h>
@@ -71,6 +75,8 @@
 #include <tencentcloud/cfs/v20190719/model/DeleteMigrationTaskResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteUserQuotaRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteUserQuotaResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeAutoDeletePoliciesRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeAutoDeletePoliciesResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeAutoSnapshotPoliciesRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeAutoSnapshotPoliciesResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeAvailableZoneInfoRequest.h>
@@ -111,6 +117,8 @@
 #include <tencentcloud/cfs/v20190719/model/DescribeUserQuotaResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DoDirectoryOperationRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DoDirectoryOperationResponse.h>
+#include <tencentcloud/cfs/v20190719/model/ModifyAutoDeletePolicyRequest.h>
+#include <tencentcloud/cfs/v20190719/model/ModifyAutoDeletePolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyDataFlowRequest.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyDataFlowResponse.h>
 #include <tencentcloud/cfs/v20190719/model/ModifyDataRetrievalRequest.h>
@@ -174,6 +182,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAccessCertResponse> CreateAccessCertOutcome;
                 typedef std::future<CreateAccessCertOutcome> CreateAccessCertOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::CreateAccessCertRequest&, CreateAccessCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessCertAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAutoDeletePolicyResponse> CreateAutoDeletePolicyOutcome;
+                typedef std::future<CreateAutoDeletePolicyOutcome> CreateAutoDeletePolicyOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::CreateAutoDeletePolicyRequest&, CreateAutoDeletePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoDeletePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAutoSnapshotPolicyResponse> CreateAutoSnapshotPolicyOutcome;
                 typedef std::future<CreateAutoSnapshotPolicyOutcome> CreateAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::CreateAutoSnapshotPolicyRequest&, CreateAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoSnapshotPolicyAsyncHandler;
@@ -207,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMigrationTaskResponse> CreateMigrationTaskOutcome;
                 typedef std::future<CreateMigrationTaskOutcome> CreateMigrationTaskOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::CreateMigrationTaskRequest&, CreateMigrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMigrationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAutoDeletePolicyResponse> DeleteAutoDeletePolicyOutcome;
+                typedef std::future<DeleteAutoDeletePolicyOutcome> DeleteAutoDeletePolicyOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DeleteAutoDeletePolicyRequest&, DeleteAutoDeletePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoDeletePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAutoSnapshotPolicyResponse> DeleteAutoSnapshotPolicyOutcome;
                 typedef std::future<DeleteAutoSnapshotPolicyOutcome> DeleteAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DeleteAutoSnapshotPolicyRequest&, DeleteAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoSnapshotPolicyAsyncHandler;
@@ -237,6 +251,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUserQuotaResponse> DeleteUserQuotaOutcome;
                 typedef std::future<DeleteUserQuotaOutcome> DeleteUserQuotaOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DeleteUserQuotaRequest&, DeleteUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAutoDeletePoliciesResponse> DescribeAutoDeletePoliciesOutcome;
+                typedef std::future<DescribeAutoDeletePoliciesOutcome> DescribeAutoDeletePoliciesOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DescribeAutoDeletePoliciesRequest&, DescribeAutoDeletePoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoDeletePoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoSnapshotPoliciesResponse> DescribeAutoSnapshotPoliciesOutcome;
                 typedef std::future<DescribeAutoSnapshotPoliciesOutcome> DescribeAutoSnapshotPoliciesOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeAutoSnapshotPoliciesRequest&, DescribeAutoSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoSnapshotPoliciesAsyncHandler;
@@ -297,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DoDirectoryOperationResponse> DoDirectoryOperationOutcome;
                 typedef std::future<DoDirectoryOperationOutcome> DoDirectoryOperationOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DoDirectoryOperationRequest&, DoDirectoryOperationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DoDirectoryOperationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAutoDeletePolicyResponse> ModifyAutoDeletePolicyOutcome;
+                typedef std::future<ModifyAutoDeletePolicyOutcome> ModifyAutoDeletePolicyOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::ModifyAutoDeletePolicyRequest&, ModifyAutoDeletePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoDeletePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDataFlowResponse> ModifyDataFlowOutcome;
                 typedef std::future<ModifyDataFlowOutcome> ModifyDataFlowOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::ModifyDataFlowRequest&, ModifyDataFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataFlowAsyncHandler;
@@ -386,6 +406,15 @@ namespace TencentCloud
                 CreateAccessCertOutcome CreateAccessCert(const Model::CreateAccessCertRequest &request);
                 void CreateAccessCertAsync(const Model::CreateAccessCertRequest& request, const CreateAccessCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAccessCertOutcomeCallable CreateAccessCertCallable(const Model::CreateAccessCertRequest& request);
+
+                /**
+                 *为指定 CFS 文件系统创建一条数据自动删除策略
+                 * @param req CreateAutoDeletePolicyRequest
+                 * @return CreateAutoDeletePolicyOutcome
+                 */
+                CreateAutoDeletePolicyOutcome CreateAutoDeletePolicy(const Model::CreateAutoDeletePolicyRequest &request);
+                void CreateAutoDeletePolicyAsync(const Model::CreateAutoDeletePolicyRequest& request, const CreateAutoDeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAutoDeletePolicyOutcomeCallable CreateAutoDeletePolicyCallable(const Model::CreateAutoDeletePolicyRequest& request);
 
                 /**
                  *创建定期快照策略
@@ -487,6 +516,15 @@ namespace TencentCloud
                 CreateMigrationTaskOutcomeCallable CreateMigrationTaskCallable(const Model::CreateMigrationTaskRequest& request);
 
                 /**
+                 *删除指定自动删除策略
+                 * @param req DeleteAutoDeletePolicyRequest
+                 * @return DeleteAutoDeletePolicyOutcome
+                 */
+                DeleteAutoDeletePolicyOutcome DeleteAutoDeletePolicy(const Model::DeleteAutoDeletePolicyRequest &request);
+                void DeleteAutoDeletePolicyAsync(const Model::DeleteAutoDeletePolicyRequest& request, const DeleteAutoDeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAutoDeletePolicyOutcomeCallable DeleteAutoDeletePolicyCallable(const Model::DeleteAutoDeletePolicyRequest& request);
+
+                /**
                  *删除快照定期策略
                  * @param req DeleteAutoSnapshotPolicyRequest
                  * @return DeleteAutoSnapshotPolicyOutcome
@@ -577,6 +615,15 @@ namespace TencentCloud
                 DeleteUserQuotaOutcome DeleteUserQuota(const Model::DeleteUserQuotaRequest &request);
                 void DeleteUserQuotaAsync(const Model::DeleteUserQuotaRequest& request, const DeleteUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUserQuotaOutcomeCallable DeleteUserQuotaCallable(const Model::DeleteUserQuotaRequest& request);
+
+                /**
+                 *查询数据自动删除策略列表
+                 * @param req DescribeAutoDeletePoliciesRequest
+                 * @return DescribeAutoDeletePoliciesOutcome
+                 */
+                DescribeAutoDeletePoliciesOutcome DescribeAutoDeletePolicies(const Model::DescribeAutoDeletePoliciesRequest &request);
+                void DescribeAutoDeletePoliciesAsync(const Model::DescribeAutoDeletePoliciesRequest& request, const DescribeAutoDeletePoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAutoDeletePoliciesOutcomeCallable DescribeAutoDeletePoliciesCallable(const Model::DescribeAutoDeletePoliciesRequest& request);
 
                 /**
                  *查询文件系统快照定期策略列表信息
@@ -760,6 +807,15 @@ namespace TencentCloud
                 DoDirectoryOperationOutcome DoDirectoryOperation(const Model::DoDirectoryOperationRequest &request);
                 void DoDirectoryOperationAsync(const Model::DoDirectoryOperationRequest& request, const DoDirectoryOperationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DoDirectoryOperationOutcomeCallable DoDirectoryOperationCallable(const Model::DoDirectoryOperationRequest& request);
+
+                /**
+                 *修改自动删除策略名称或清理路径
+                 * @param req ModifyAutoDeletePolicyRequest
+                 * @return ModifyAutoDeletePolicyOutcome
+                 */
+                ModifyAutoDeletePolicyOutcome ModifyAutoDeletePolicy(const Model::ModifyAutoDeletePolicyRequest &request);
+                void ModifyAutoDeletePolicyAsync(const Model::ModifyAutoDeletePolicyRequest& request, const ModifyAutoDeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAutoDeletePolicyOutcomeCallable ModifyAutoDeletePolicyCallable(const Model::ModifyAutoDeletePolicyRequest& request);
 
                 /**
                  *修改数据流动相关参数

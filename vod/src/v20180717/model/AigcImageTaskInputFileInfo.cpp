@@ -26,7 +26,8 @@ AigcImageTaskInputFileInfo::AigcImageTaskInputFileInfo() :
     m_urlHasBeenSet(false),
     m_base64HasBeenSet(false),
     m_textHasBeenSet(false),
-    m_referenceTypeHasBeenSet(false)
+    m_referenceTypeHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome AigcImageTaskInputFileInfo::Deserialize(const rapidjson::Val
         m_referenceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcImageTaskInputFileInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void AigcImageTaskInputFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "ReferenceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_referenceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void AigcImageTaskInputFileInfo::SetReferenceType(const string& _referenceType)
 bool AigcImageTaskInputFileInfo::ReferenceTypeHasBeenSet() const
 {
     return m_referenceTypeHasBeenSet;
+}
+
+string AigcImageTaskInputFileInfo::GetId() const
+{
+    return m_id;
+}
+
+void AigcImageTaskInputFileInfo::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool AigcImageTaskInputFileInfo::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 

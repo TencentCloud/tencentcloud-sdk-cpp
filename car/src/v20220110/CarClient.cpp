@@ -90,6 +90,56 @@ CarClient::ApplyConcurrentOutcomeCallable CarClient::ApplyConcurrentCallable(con
     return prom->get_future();
 }
 
+CarClient::CreateMCPTokenOutcome CarClient::CreateMCPToken(const CreateMCPTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMCPToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMCPTokenResponse rsp = CreateMCPTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMCPTokenOutcome(rsp);
+        else
+            return CreateMCPTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMCPTokenOutcome(outcome.GetError());
+    }
+}
+
+void CarClient::CreateMCPTokenAsync(const CreateMCPTokenRequest& request, const CreateMCPTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateMCPTokenRequest&;
+    using Resp = CreateMCPTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateMCPToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CarClient::CreateMCPTokenOutcomeCallable CarClient::CreateMCPTokenCallable(const CreateMCPTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateMCPTokenOutcome>>();
+    CreateMCPTokenAsync(
+    request,
+    [prom](
+        const CarClient*,
+        const CreateMCPTokenRequest&,
+        CreateMCPTokenOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CarClient::CreateSessionOutcome CarClient::CreateSession(const CreateSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSession");
@@ -190,6 +240,56 @@ CarClient::DescribeConcurrentCountOutcomeCallable CarClient::DescribeConcurrentC
     return prom->get_future();
 }
 
+CarClient::DescribeMCPTokensOutcome CarClient::DescribeMCPTokens(const DescribeMCPTokensRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMCPTokens");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMCPTokensResponse rsp = DescribeMCPTokensResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMCPTokensOutcome(rsp);
+        else
+            return DescribeMCPTokensOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMCPTokensOutcome(outcome.GetError());
+    }
+}
+
+void CarClient::DescribeMCPTokensAsync(const DescribeMCPTokensRequest& request, const DescribeMCPTokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeMCPTokensRequest&;
+    using Resp = DescribeMCPTokensResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeMCPTokens", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CarClient::DescribeMCPTokensOutcomeCallable CarClient::DescribeMCPTokensCallable(const DescribeMCPTokensRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeMCPTokensOutcome>>();
+    DescribeMCPTokensAsync(
+    request,
+    [prom](
+        const CarClient*,
+        const DescribeMCPTokensRequest&,
+        DescribeMCPTokensOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CarClient::DestroySessionOutcome CarClient::DestroySession(const DestroySessionRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroySession");
@@ -232,6 +332,56 @@ CarClient::DestroySessionOutcomeCallable CarClient::DestroySessionCallable(const
         const CarClient*,
         const DestroySessionRequest&,
         DestroySessionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CarClient::RenewMCPTokenOutcome CarClient::RenewMCPToken(const RenewMCPTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewMCPToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewMCPTokenResponse rsp = RenewMCPTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewMCPTokenOutcome(rsp);
+        else
+            return RenewMCPTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewMCPTokenOutcome(outcome.GetError());
+    }
+}
+
+void CarClient::RenewMCPTokenAsync(const RenewMCPTokenRequest& request, const RenewMCPTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const RenewMCPTokenRequest&;
+    using Resp = RenewMCPTokenResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "RenewMCPToken", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CarClient::RenewMCPTokenOutcomeCallable CarClient::RenewMCPTokenCallable(const RenewMCPTokenRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<RenewMCPTokenOutcome>>();
+    RenewMCPTokenAsync(
+    request,
+    [prom](
+        const CarClient*,
+        const RenewMCPTokenRequest&,
+        RenewMCPTokenOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

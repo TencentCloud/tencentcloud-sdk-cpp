@@ -211,6 +211,69 @@ namespace TencentCloud
                      */
                     bool NotifyIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>通知渠道多选。按渠道过滤通知历史，多个取值之间为或关系。</p>
+                     * @return ChannelNames <p>通知渠道多选。按渠道过滤通知历史，多个取值之间为或关系。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetChannelNames() const;
+
+                    /**
+                     * 设置<p>通知渠道多选。按渠道过滤通知历史，多个取值之间为或关系。</p>
+                     * @param _channelNames <p>通知渠道多选。按渠道过滤通知历史，多个取值之间为或关系。</p>
+                     * 
+                     */
+                    void SetChannelNames(const std::vector<std::string>& _channelNames);
+
+                    /**
+                     * 判断参数 ChannelNames 是否已赋值
+                     * @return ChannelNames 是否已赋值
+                     * 
+                     */
+                    bool ChannelNamesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>告警策略多选。按策略 ID 精确过滤通知历史，多个 ID 之间为或关系。</p>
+                     * @return PolicyIds <p>告警策略多选。按策略 ID 精确过滤通知历史，多个 ID 之间为或关系。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetPolicyIds() const;
+
+                    /**
+                     * 设置<p>告警策略多选。按策略 ID 精确过滤通知历史，多个 ID 之间为或关系。</p>
+                     * @param _policyIds <p>告警策略多选。按策略 ID 精确过滤通知历史，多个 ID 之间为或关系。</p>
+                     * 
+                     */
+                    void SetPolicyIds(const std::vector<std::string>& _policyIds);
+
+                    /**
+                     * 判断参数 PolicyIds 是否已赋值
+                     * @return PolicyIds 是否已赋值
+                     * 
+                     */
+                    bool PolicyIdsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>字符串数组。每项为告警策略 ID，形如 policy- 开头。</p>
+                     * @return NoticeIds <p>字符串数组。每项为告警策略 ID，形如 policy- 开头。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetNoticeIds() const;
+
+                    /**
+                     * 设置<p>字符串数组。每项为告警策略 ID，形如 policy- 开头。</p>
+                     * @param _noticeIds <p>字符串数组。每项为告警策略 ID，形如 policy- 开头。</p>
+                     * 
+                     */
+                    void SetNoticeIds(const std::vector<std::string>& _noticeIds);
+
+                    /**
+                     * 判断参数 NoticeIds 是否已赋值
+                     * @return NoticeIds 是否已赋值
+                     * 
+                     */
+                    bool NoticeIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +323,24 @@ namespace TencentCloud
                      */
                     std::string m_notifyId;
                     bool m_notifyIdHasBeenSet;
+
+                    /**
+                     * <p>通知渠道多选。按渠道过滤通知历史，多个取值之间为或关系。</p>
+                     */
+                    std::vector<std::string> m_channelNames;
+                    bool m_channelNamesHasBeenSet;
+
+                    /**
+                     * <p>告警策略多选。按策略 ID 精确过滤通知历史，多个 ID 之间为或关系。</p>
+                     */
+                    std::vector<std::string> m_policyIds;
+                    bool m_policyIdsHasBeenSet;
+
+                    /**
+                     * <p>字符串数组。每项为告警策略 ID，形如 policy- 开头。</p>
+                     */
+                    std::vector<std::string> m_noticeIds;
+                    bool m_noticeIdsHasBeenSet;
 
                 };
             }

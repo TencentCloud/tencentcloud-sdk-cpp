@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-DescribeEnvAccessControlRequest::DescribeEnvAccessControlRequest()
+DescribeEnvAccessControlRequest::DescribeEnvAccessControlRequest() :
+    m_envIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeEnvAccessControlRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeEnvAccessControlRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeEnvAccessControlRequest::GetEnvId() const
+{
+    return m_envId;
+}
+
+void DescribeEnvAccessControlRequest::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool DescribeEnvAccessControlRequest::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
+}
 
 

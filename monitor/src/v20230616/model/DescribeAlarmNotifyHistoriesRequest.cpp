@@ -30,7 +30,10 @@ DescribeAlarmNotifyHistoriesRequest::DescribeAlarmNotifyHistoriesRequest() :
     m_namespaceHasBeenSet(false),
     m_modelNameHasBeenSet(false),
     m_policyIdHasBeenSet(false),
-    m_notifyIdHasBeenSet(false)
+    m_notifyIdHasBeenSet(false),
+    m_channelNamesHasBeenSet(false),
+    m_policyIdsHasBeenSet(false),
+    m_noticeIdsHasBeenSet(false)
 {
 }
 
@@ -104,6 +107,45 @@ string DescribeAlarmNotifyHistoriesRequest::ToJsonString() const
         string key = "NotifyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_notifyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_channelNames.begin(); itr != m_channelNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_policyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_policyIds.begin(); itr != m_policyIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_noticeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_noticeIds.begin(); itr != m_noticeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -240,6 +282,54 @@ void DescribeAlarmNotifyHistoriesRequest::SetNotifyId(const string& _notifyId)
 bool DescribeAlarmNotifyHistoriesRequest::NotifyIdHasBeenSet() const
 {
     return m_notifyIdHasBeenSet;
+}
+
+vector<string> DescribeAlarmNotifyHistoriesRequest::GetChannelNames() const
+{
+    return m_channelNames;
+}
+
+void DescribeAlarmNotifyHistoriesRequest::SetChannelNames(const vector<string>& _channelNames)
+{
+    m_channelNames = _channelNames;
+    m_channelNamesHasBeenSet = true;
+}
+
+bool DescribeAlarmNotifyHistoriesRequest::ChannelNamesHasBeenSet() const
+{
+    return m_channelNamesHasBeenSet;
+}
+
+vector<string> DescribeAlarmNotifyHistoriesRequest::GetPolicyIds() const
+{
+    return m_policyIds;
+}
+
+void DescribeAlarmNotifyHistoriesRequest::SetPolicyIds(const vector<string>& _policyIds)
+{
+    m_policyIds = _policyIds;
+    m_policyIdsHasBeenSet = true;
+}
+
+bool DescribeAlarmNotifyHistoriesRequest::PolicyIdsHasBeenSet() const
+{
+    return m_policyIdsHasBeenSet;
+}
+
+vector<string> DescribeAlarmNotifyHistoriesRequest::GetNoticeIds() const
+{
+    return m_noticeIds;
+}
+
+void DescribeAlarmNotifyHistoriesRequest::SetNoticeIds(const vector<string>& _noticeIds)
+{
+    m_noticeIds = _noticeIds;
+    m_noticeIdsHasBeenSet = true;
+}
+
+bool DescribeAlarmNotifyHistoriesRequest::NoticeIdsHasBeenSet() const
+{
+    return m_noticeIdsHasBeenSet;
 }
 
 

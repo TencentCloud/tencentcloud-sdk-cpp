@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-DescribeEnvAccessControlResponse::DescribeEnvAccessControlResponse()
+DescribeEnvAccessControlResponse::DescribeEnvAccessControlResponse() :
+    m_currentHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome DescribeEnvAccessControlResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("Current") && !rsp["Current"].IsNull())
+    {
+        if (!rsp["Current"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Current` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Current"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AccessSourceSetting item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_current.push_back(item);
+        }
+        m_currentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string DescribeEnvAccessControlResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_currentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Current";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_current.begin(); itr != m_current.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string DescribeEnvAccessControlResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<AccessSourceSetting> DescribeEnvAccessControlResponse::GetCurrent() const
+{
+    return m_current;
+}
+
+bool DescribeEnvAccessControlResponse::CurrentHasBeenSet() const
+{
+    return m_currentHasBeenSet;
+}
 
 

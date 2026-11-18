@@ -29,7 +29,8 @@ DescribeJobSubmissionLogResponse::DescribeJobSubmissionLogResponse() :
     m_jobRequestIdHasBeenSet(false),
     m_jobInstanceListHasBeenSet(false),
     m_logListHasBeenSet(false),
-    m_logContentListHasBeenSet(false)
+    m_logContentListHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome DescribeJobSubmissionLogResponse::Deserialize(const string &
         m_logContentListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Offset") && !rsp["Offset"].IsNull())
+    {
+        if (!rsp["Offset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_offset = rsp["Offset"].GetInt64();
+        m_offsetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -227,6 +238,14 @@ string DescribeJobSubmissionLogResponse::ToJsonString() const
         }
     }
 
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offset, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -297,6 +316,16 @@ vector<LogContent> DescribeJobSubmissionLogResponse::GetLogContentList() const
 bool DescribeJobSubmissionLogResponse::LogContentListHasBeenSet() const
 {
     return m_logContentListHasBeenSet;
+}
+
+int64_t DescribeJobSubmissionLogResponse::GetOffset() const
+{
+    return m_offset;
+}
+
+bool DescribeJobSubmissionLogResponse::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

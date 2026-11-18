@@ -109,6 +109,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/FunctionEipConfig.h
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeManagedAIModelListResponse.h
+  include/tencentcloud/tcb/v20180608/model/VPCInfo.h
   include/tencentcloud/tcb/v20180608/model/DownloadFunctionRequest.h
   include/tencentcloud/tcb/v20180608/model/PushPGUserMigrationsResponse.h
   include/tencentcloud/tcb/v20180608/model/BindStorageSourceResponse.h
@@ -159,6 +160,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/MigrationInput.h
   include/tencentcloud/tcb/v20180608/model/DescribeResourcePermissionResult.h
   include/tencentcloud/tcb/v20180608/model/ResetPGAccountPasswordResponse.h
+  include/tencentcloud/tcb/v20180608/model/VPCWhiteListConfig.h
   include/tencentcloud/tcb/v20180608/model/CreateCustomLoginKeyRequest.h
   include/tencentcloud/tcb/v20180608/model/EnablePGDocumentExtResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCreateMySQLResultRequest.h
@@ -260,6 +262,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/VerifyPlatformHTTPServiceRouteResponse.h
   include/tencentcloud/tcb/v20180608/model/AIModelStatus.h
   include/tencentcloud/tcb/v20180608/model/UpdateAIModelRequest.h
+  include/tencentcloud/tcb/v20180608/model/AccessSourceSetting.h
   include/tencentcloud/tcb/v20180608/model/DailyUsageList.h
   include/tencentcloud/tcb/v20180608/model/RenewEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeClientResponse.h
@@ -521,6 +524,7 @@ set(tcb_src
   src/v20180608/model/FunctionEipConfig.cpp
   src/v20180608/model/CheckTcbServiceRequest.cpp
   src/v20180608/model/DescribeManagedAIModelListResponse.cpp
+  src/v20180608/model/VPCInfo.cpp
   src/v20180608/model/DownloadFunctionRequest.cpp
   src/v20180608/model/PushPGUserMigrationsResponse.cpp
   src/v20180608/model/BindStorageSourceResponse.cpp
@@ -571,6 +575,7 @@ set(tcb_src
   src/v20180608/model/MigrationInput.cpp
   src/v20180608/model/DescribeResourcePermissionResult.cpp
   src/v20180608/model/ResetPGAccountPasswordResponse.cpp
+  src/v20180608/model/VPCWhiteListConfig.cpp
   src/v20180608/model/CreateCustomLoginKeyRequest.cpp
   src/v20180608/model/EnablePGDocumentExtResponse.cpp
   src/v20180608/model/DescribeCreateMySQLResultRequest.cpp
@@ -672,6 +677,7 @@ set(tcb_src
   src/v20180608/model/VerifyPlatformHTTPServiceRouteResponse.cpp
   src/v20180608/model/AIModelStatus.cpp
   src/v20180608/model/UpdateAIModelRequest.cpp
+  src/v20180608/model/AccessSourceSetting.cpp
   src/v20180608/model/DailyUsageList.cpp
   src/v20180608/model/RenewEnvRequest.cpp
   src/v20180608/model/DescribeClientResponse.cpp

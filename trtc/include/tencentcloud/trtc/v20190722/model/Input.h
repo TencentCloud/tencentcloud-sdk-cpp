@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/AgoraParam.h>
+#include <tencentcloud/trtc/v20190722/model/NeteaseParam.h>
+#include <tencentcloud/trtc/v20190722/model/VolcParam.h>
 
 
 namespace TencentCloud
@@ -110,6 +112,48 @@ namespace TencentCloud
                      */
                     bool AgoraParamHasBeenSet() const;
 
+                    /**
+                     * 获取<p>网易云信(NERTC)频道拉流参数</p>
+                     * @return NeteaseParam <p>网易云信(NERTC)频道拉流参数</p>
+                     * 
+                     */
+                    NeteaseParam GetNeteaseParam() const;
+
+                    /**
+                     * 设置<p>网易云信(NERTC)频道拉流参数</p>
+                     * @param _neteaseParam <p>网易云信(NERTC)频道拉流参数</p>
+                     * 
+                     */
+                    void SetNeteaseParam(const NeteaseParam& _neteaseParam);
+
+                    /**
+                     * 判断参数 NeteaseParam 是否已赋值
+                     * @return NeteaseParam 是否已赋值
+                     * 
+                     */
+                    bool NeteaseParamHasBeenSet() const;
+
+                    /**
+                     * 获取<p>火山(Volc)房间拉流参数</p>
+                     * @return VolcParam <p>火山(Volc)房间拉流参数</p>
+                     * 
+                     */
+                    VolcParam GetVolcParam() const;
+
+                    /**
+                     * 设置<p>火山(Volc)房间拉流参数</p>
+                     * @param _volcParam <p>火山(Volc)房间拉流参数</p>
+                     * 
+                     */
+                    void SetVolcParam(const VolcParam& _volcParam);
+
+                    /**
+                     * 判断参数 VolcParam 是否已赋值
+                     * @return VolcParam 是否已赋值
+                     * 
+                     */
+                    bool VolcParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +173,18 @@ namespace TencentCloud
                      */
                     AgoraParam m_agoraParam;
                     bool m_agoraParamHasBeenSet;
+
+                    /**
+                     * <p>网易云信(NERTC)频道拉流参数</p>
+                     */
+                    NeteaseParam m_neteaseParam;
+                    bool m_neteaseParamHasBeenSet;
+
+                    /**
+                     * <p>火山(Volc)房间拉流参数</p>
+                     */
+                    VolcParam m_volcParam;
+                    bool m_volcParamHasBeenSet;
 
                 };
             }

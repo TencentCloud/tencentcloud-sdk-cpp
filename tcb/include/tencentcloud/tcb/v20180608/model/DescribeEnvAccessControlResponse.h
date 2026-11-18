@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/AccessSourceSetting.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>修改之后，当前的生效的配置</p>
+                     * @return Current <p>修改之后，当前的生效的配置</p>
+                     * 
+                     */
+                    std::vector<AccessSourceSetting> GetCurrent() const;
+
+                    /**
+                     * 判断参数 Current 是否已赋值
+                     * @return Current 是否已赋值
+                     * 
+                     */
+                    bool CurrentHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>修改之后，当前的生效的配置</p>
+                     */
+                    std::vector<AccessSourceSetting> m_current;
+                    bool m_currentHasBeenSet;
 
                 };
             }

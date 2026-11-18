@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/AccessSourceSetting.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>本次请求影响的权限数量</p>
+                     * @return AffectedRows <p>本次请求影响的权限数量</p>
+                     * 
+                     */
+                    int64_t GetAffectedRows() const;
+
+                    /**
+                     * 判断参数 AffectedRows 是否已赋值
+                     * @return AffectedRows 是否已赋值
+                     * 
+                     */
+                    bool AffectedRowsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>修改之后，当前的生效的配置</p><p>SourceType = PUBLIC 表示公网链路访问配置<br>SourceType = VPC 表示 VPC 链路访问配置<br>SourceType = WOA 表示办公网链路访问配置</p>
+                     * @return Current <p>修改之后，当前的生效的配置</p><p>SourceType = PUBLIC 表示公网链路访问配置<br>SourceType = VPC 表示 VPC 链路访问配置<br>SourceType = WOA 表示办公网链路访问配置</p>
+                     * 
+                     */
+                    std::vector<AccessSourceSetting> GetCurrent() const;
+
+                    /**
+                     * 判断参数 Current 是否已赋值
+                     * @return Current 是否已赋值
+                     * 
+                     */
+                    bool CurrentHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>本次请求影响的权限数量</p>
+                     */
+                    int64_t m_affectedRows;
+                    bool m_affectedRowsHasBeenSet;
+
+                    /**
+                     * <p>修改之后，当前的生效的配置</p><p>SourceType = PUBLIC 表示公网链路访问配置<br>SourceType = VPC 表示 VPC 链路访问配置<br>SourceType = WOA 表示办公网链路访问配置</p>
+                     */
+                    std::vector<AccessSourceSetting> m_current;
+                    bool m_currentHasBeenSet;
 
                 };
             }

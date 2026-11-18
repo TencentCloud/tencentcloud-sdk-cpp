@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool ReferenceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>自定义 Id，一般用于在 Prompt 中引用参考图片。</p>
+                     * @return Id <p>自定义 Id，一般用于在 Prompt 中引用参考图片。</p>
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置<p>自定义 Id，一般用于在 Prompt 中引用参考图片。</p>
+                     * @param _id <p>自定义 Id，一般用于在 Prompt 中引用参考图片。</p>
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_referenceType;
                     bool m_referenceTypeHasBeenSet;
+
+                    /**
+                     * <p>自定义 Id，一般用于在 Prompt 中引用参考图片。</p>
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

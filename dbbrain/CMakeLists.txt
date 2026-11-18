@@ -401,10 +401,12 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListResponse.h
   include/tencentcloud/dbbrain/v20210527/model/RedisMetricTopProxiesData.h
   include/tencentcloud/dbbrain/v20210527/model/RedisCostCmd.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeInterfaceEncryptKeyV2Request.h
   include/tencentcloud/dbbrain/v20210527/model/IndexesToDrop.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeMongoDBProcessListResponse.h
   include/tencentcloud/dbbrain/v20210527/model/CancelRedisBigKeyAnalysisTasksResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeInterfaceEncryptKeyV2Response.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportContentResponse.h
   include/tencentcloud/dbbrain/v20210527/model/ReceiveUin.h
@@ -807,10 +809,12 @@ set(dbbrain_src
   src/v20210527/model/DescribeRedisTopKeyPrefixListResponse.cpp
   src/v20210527/model/RedisMetricTopProxiesData.cpp
   src/v20210527/model/RedisCostCmd.cpp
+  src/v20210527/model/DescribeInterfaceEncryptKeyV2Request.cpp
   src/v20210527/model/IndexesToDrop.cpp
   src/v20210527/model/DescribeHealthScoreResponse.cpp
   src/v20210527/model/DescribeMongoDBProcessListResponse.cpp
   src/v20210527/model/CancelRedisBigKeyAnalysisTasksResponse.cpp
+  src/v20210527/model/DescribeInterfaceEncryptKeyV2Response.cpp
   src/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.cpp
   src/v20210527/model/DescribeDBDiagReportContentResponse.cpp
   src/v20210527/model/ReceiveUin.cpp

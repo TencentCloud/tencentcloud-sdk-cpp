@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志搜索的游标，需要搜索更多时透传这个值
-                     * @return Cursor 日志搜索的游标，需要搜索更多时透传这个值
+                     * 获取<p>日志搜索的游标，需要搜索更多时透传这个值</p>
+                     * @return Cursor <p>日志搜索的游标，需要搜索更多时透传这个值</p>
                      * 
                      */
                     std::string GetCursor() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool CursorHasBeenSet() const;
 
                     /**
-                     * 获取是否返回了所有的日志记录
-                     * @return ListOver 是否返回了所有的日志记录
+                     * 获取<p>是否返回了所有的日志记录</p>
+                     * @return ListOver <p>是否返回了所有的日志记录</p>
                      * 
                      */
                     bool GetListOver() const;
@@ -74,9 +74,9 @@ namespace TencentCloud
                     bool ListOverHasBeenSet() const;
 
                     /**
-                     * 获取作业启动的requestId
+                     * 获取<p>作业启动的requestId</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobRequestId 作业启动的requestId
+                     * @return JobRequestId <p>作业启动的requestId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -90,9 +90,9 @@ namespace TencentCloud
                     bool JobRequestIdHasBeenSet() const;
 
                     /**
-                     * 获取该时间段内符合关键字的所有的作业实例列表
+                     * 获取<p>该时间段内符合关键字的所有的作业实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobInstanceList 该时间段内符合关键字的所有的作业实例列表
+                     * @return JobInstanceList <p>该时间段内符合关键字的所有的作业实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -106,9 +106,9 @@ namespace TencentCloud
                     bool JobInstanceListHasBeenSet() const;
 
                     /**
-                     * 获取废弃，请使用LogContentList
+                     * 获取<p>废弃，请使用LogContentList</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogList 废弃，请使用LogContentList
+                     * @return LogList <p>废弃，请使用LogContentList</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,9 +122,9 @@ namespace TencentCloud
                     bool LogListHasBeenSet() const;
 
                     /**
-                     * 获取日志列表
+                     * 获取<p>日志列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogContentList 日志列表
+                     * @return LogContentList <p>日志列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -137,47 +137,67 @@ namespace TencentCloud
                      */
                     bool LogContentListHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分页偏移</p>
+                     * @return Offset <p>分页偏移</p>
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 日志搜索的游标，需要搜索更多时透传这个值
+                     * <p>日志搜索的游标，需要搜索更多时透传这个值</p>
                      */
                     std::string m_cursor;
                     bool m_cursorHasBeenSet;
 
                     /**
-                     * 是否返回了所有的日志记录
+                     * <p>是否返回了所有的日志记录</p>
                      */
                     bool m_listOver;
                     bool m_listOverHasBeenSet;
 
                     /**
-                     * 作业启动的requestId
+                     * <p>作业启动的requestId</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobRequestId;
                     bool m_jobRequestIdHasBeenSet;
 
                     /**
-                     * 该时间段内符合关键字的所有的作业实例列表
+                     * <p>该时间段内符合关键字的所有的作业实例列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<JobInstanceForSubmissionLog> m_jobInstanceList;
                     bool m_jobInstanceListHasBeenSet;
 
                     /**
-                     * 废弃，请使用LogContentList
+                     * <p>废弃，请使用LogContentList</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_logList;
                     bool m_logListHasBeenSet;
 
                     /**
-                     * 日志列表
+                     * <p>日志列表</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogContent> m_logContentList;
                     bool m_logContentListHasBeenSet;
+
+                    /**
+                     * <p>分页偏移</p>
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

@@ -131,6 +131,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendAggregationSlowLogsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendInfoRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeIndexRecommendInfoResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeInterfaceEncryptKeyV2Request.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeInterfaceEncryptKeyV2Response.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMailProfileRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMailProfileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMetricTopProxiesRequest.h>
@@ -403,6 +405,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIndexRecommendInfoResponse> DescribeIndexRecommendInfoOutcome;
                 typedef std::future<DescribeIndexRecommendInfoOutcome> DescribeIndexRecommendInfoOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeIndexRecommendInfoRequest&, DescribeIndexRecommendInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexRecommendInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInterfaceEncryptKeyV2Response> DescribeInterfaceEncryptKeyV2Outcome;
+                typedef std::future<DescribeInterfaceEncryptKeyV2Outcome> DescribeInterfaceEncryptKeyV2OutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeInterfaceEncryptKeyV2Request&, DescribeInterfaceEncryptKeyV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInterfaceEncryptKeyV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMailProfileResponse> DescribeMailProfileOutcome;
                 typedef std::future<DescribeMailProfileOutcome> DescribeMailProfileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeMailProfileRequest&, DescribeMailProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMailProfileAsyncHandler;
@@ -1035,6 +1040,15 @@ namespace TencentCloud
                 DescribeIndexRecommendInfoOutcome DescribeIndexRecommendInfo(const Model::DescribeIndexRecommendInfoRequest &request);
                 void DescribeIndexRecommendInfoAsync(const Model::DescribeIndexRecommendInfoRequest& request, const DescribeIndexRecommendInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIndexRecommendInfoOutcomeCallable DescribeIndexRecommendInfoCallable(const Model::DescribeIndexRecommendInfoRequest& request);
+
+                /**
+                 *查询接口加密 RSA 公钥，前端用于加密敏感数据。
+                 * @param req DescribeInterfaceEncryptKeyV2Request
+                 * @return DescribeInterfaceEncryptKeyV2Outcome
+                 */
+                DescribeInterfaceEncryptKeyV2Outcome DescribeInterfaceEncryptKeyV2(const Model::DescribeInterfaceEncryptKeyV2Request &request);
+                void DescribeInterfaceEncryptKeyV2Async(const Model::DescribeInterfaceEncryptKeyV2Request& request, const DescribeInterfaceEncryptKeyV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInterfaceEncryptKeyV2OutcomeCallable DescribeInterfaceEncryptKeyV2Callable(const Model::DescribeInterfaceEncryptKeyV2Request& request);
 
                 /**
                  *获取发送邮件的配置， 包括数据库巡检的邮件配置以及定期生成健康报告的邮件发送配置。

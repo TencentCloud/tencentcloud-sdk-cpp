@@ -1334,6 +1334,27 @@ namespace TencentCloud
                      */
                     bool StorageAutoExpandHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否在秒级回档链路中</p>
+                     * @return IsInInstantRollbackChain <p>是否在秒级回档链路中</p>
+                     * 
+                     */
+                    bool GetIsInInstantRollbackChain() const;
+
+                    /**
+                     * 设置<p>是否在秒级回档链路中</p>
+                     * @param _isInInstantRollbackChain <p>是否在秒级回档链路中</p>
+                     * 
+                     */
+                    void SetIsInInstantRollbackChain(const bool& _isInInstantRollbackChain);
+
+                    /**
+                     * 判断参数 IsInInstantRollbackChain 是否已赋值
+                     * @return IsInInstantRollbackChain 是否已赋值
+                     * 
+                     */
+                    bool IsInInstantRollbackChainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1701,6 +1722,12 @@ namespace TencentCloud
                      */
                     std::string m_storageAutoExpand;
                     bool m_storageAutoExpandHasBeenSet;
+
+                    /**
+                     * <p>是否在秒级回档链路中</p>
+                     */
+                    bool m_isInInstantRollbackChain;
+                    bool m_isInInstantRollbackChainHasBeenSet;
 
                 };
             }

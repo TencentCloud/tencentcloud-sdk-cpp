@@ -25,12 +25,18 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/car/v20220110/model/ApplyConcurrentRequest.h>
 #include <tencentcloud/car/v20220110/model/ApplyConcurrentResponse.h>
+#include <tencentcloud/car/v20220110/model/CreateMCPTokenRequest.h>
+#include <tencentcloud/car/v20220110/model/CreateMCPTokenResponse.h>
 #include <tencentcloud/car/v20220110/model/CreateSessionRequest.h>
 #include <tencentcloud/car/v20220110/model/CreateSessionResponse.h>
 #include <tencentcloud/car/v20220110/model/DescribeConcurrentCountRequest.h>
 #include <tencentcloud/car/v20220110/model/DescribeConcurrentCountResponse.h>
+#include <tencentcloud/car/v20220110/model/DescribeMCPTokensRequest.h>
+#include <tencentcloud/car/v20220110/model/DescribeMCPTokensResponse.h>
 #include <tencentcloud/car/v20220110/model/DestroySessionRequest.h>
 #include <tencentcloud/car/v20220110/model/DestroySessionResponse.h>
+#include <tencentcloud/car/v20220110/model/RenewMCPTokenRequest.h>
+#include <tencentcloud/car/v20220110/model/RenewMCPTokenResponse.h>
 #include <tencentcloud/car/v20220110/model/StartPublishStreamRequest.h>
 #include <tencentcloud/car/v20220110/model/StartPublishStreamResponse.h>
 #include <tencentcloud/car/v20220110/model/StartPublishStreamWithURLRequest.h>
@@ -54,15 +60,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyConcurrentResponse> ApplyConcurrentOutcome;
                 typedef std::future<ApplyConcurrentOutcome> ApplyConcurrentOutcomeCallable;
                 typedef std::function<void(const CarClient*, const Model::ApplyConcurrentRequest&, ApplyConcurrentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyConcurrentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMCPTokenResponse> CreateMCPTokenOutcome;
+                typedef std::future<CreateMCPTokenOutcome> CreateMCPTokenOutcomeCallable;
+                typedef std::function<void(const CarClient*, const Model::CreateMCPTokenRequest&, CreateMCPTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMCPTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSessionResponse> CreateSessionOutcome;
                 typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
                 typedef std::function<void(const CarClient*, const Model::CreateSessionRequest&, CreateSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSessionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConcurrentCountResponse> DescribeConcurrentCountOutcome;
                 typedef std::future<DescribeConcurrentCountOutcome> DescribeConcurrentCountOutcomeCallable;
                 typedef std::function<void(const CarClient*, const Model::DescribeConcurrentCountRequest&, DescribeConcurrentCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcurrentCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMCPTokensResponse> DescribeMCPTokensOutcome;
+                typedef std::future<DescribeMCPTokensOutcome> DescribeMCPTokensOutcomeCallable;
+                typedef std::function<void(const CarClient*, const Model::DescribeMCPTokensRequest&, DescribeMCPTokensOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMCPTokensAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroySessionResponse> DestroySessionOutcome;
                 typedef std::future<DestroySessionOutcome> DestroySessionOutcomeCallable;
                 typedef std::function<void(const CarClient*, const Model::DestroySessionRequest&, DestroySessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroySessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewMCPTokenResponse> RenewMCPTokenOutcome;
+                typedef std::future<RenewMCPTokenOutcome> RenewMCPTokenOutcomeCallable;
+                typedef std::function<void(const CarClient*, const Model::RenewMCPTokenRequest&, RenewMCPTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewMCPTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartPublishStreamResponse> StartPublishStreamOutcome;
                 typedef std::future<StartPublishStreamOutcome> StartPublishStreamOutcomeCallable;
                 typedef std::function<void(const CarClient*, const Model::StartPublishStreamRequest&, StartPublishStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartPublishStreamAsyncHandler;
@@ -85,6 +100,15 @@ namespace TencentCloud
                 ApplyConcurrentOutcomeCallable ApplyConcurrentCallable(const Model::ApplyConcurrentRequest& request);
 
                 /**
+                 *创建 MCP Token（签发令牌）
+                 * @param req CreateMCPTokenRequest
+                 * @return CreateMCPTokenOutcome
+                 */
+                CreateMCPTokenOutcome CreateMCPToken(const Model::CreateMCPTokenRequest &request);
+                void CreateMCPTokenAsync(const Model::CreateMCPTokenRequest& request, const CreateMCPTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMCPTokenOutcomeCallable CreateMCPTokenCallable(const Model::CreateMCPTokenRequest& request);
+
+                /**
                  *本接口用于创建会话。接口超时时间：5秒。
                  * @param req CreateSessionRequest
                  * @return CreateSessionOutcome
@@ -103,6 +127,15 @@ namespace TencentCloud
                 DescribeConcurrentCountOutcomeCallable DescribeConcurrentCountCallable(const Model::DescribeConcurrentCountRequest& request);
 
                 /**
+                 *查询 MCP Token 列表
+                 * @param req DescribeMCPTokensRequest
+                 * @return DescribeMCPTokensOutcome
+                 */
+                DescribeMCPTokensOutcome DescribeMCPTokens(const Model::DescribeMCPTokensRequest &request);
+                void DescribeMCPTokensAsync(const Model::DescribeMCPTokensRequest& request, const DescribeMCPTokensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMCPTokensOutcomeCallable DescribeMCPTokensCallable(const Model::DescribeMCPTokensRequest& request);
+
+                /**
                  *销毁会话。如果该会话开启了云端推流，那么销毁会话时会结束云端推流。
                  * @param req DestroySessionRequest
                  * @return DestroySessionOutcome
@@ -110,6 +143,15 @@ namespace TencentCloud
                 DestroySessionOutcome DestroySession(const Model::DestroySessionRequest &request);
                 void DestroySessionAsync(const Model::DestroySessionRequest& request, const DestroySessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroySessionOutcomeCallable DestroySessionCallable(const Model::DestroySessionRequest& request);
+
+                /**
+                 *续期 MCP Token（续期令牌）
+                 * @param req RenewMCPTokenRequest
+                 * @return RenewMCPTokenOutcome
+                 */
+                RenewMCPTokenOutcome RenewMCPToken(const Model::RenewMCPTokenRequest &request);
+                void RenewMCPTokenAsync(const Model::RenewMCPTokenRequest& request, const RenewMCPTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewMCPTokenOutcomeCallable RenewMCPTokenCallable(const Model::RenewMCPTokenRequest& request);
 
                 /**
                  *开始云端推流。云端推流 codec 根据客户端（SDK）能力来自动选择，默认优先顺序为 H265、H264、VP8、VP9。

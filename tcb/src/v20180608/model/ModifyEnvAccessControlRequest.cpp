@@ -22,7 +22,9 @@
 using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-ModifyEnvAccessControlRequest::ModifyEnvAccessControlRequest()
+ModifyEnvAccessControlRequest::ModifyEnvAccessControlRequest() :
+    m_envIdHasBeenSet(false),
+    m_sourcesHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,29 @@ string ModifyEnvAccessControlRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sources";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sources.begin(); itr != m_sources.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +65,37 @@ string ModifyEnvAccessControlRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyEnvAccessControlRequest::GetEnvId() const
+{
+    return m_envId;
+}
+
+void ModifyEnvAccessControlRequest::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool ModifyEnvAccessControlRequest::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
+}
+
+vector<AccessSourceSetting> ModifyEnvAccessControlRequest::GetSources() const
+{
+    return m_sources;
+}
+
+void ModifyEnvAccessControlRequest::SetSources(const vector<AccessSourceSetting>& _sources)
+{
+    m_sources = _sources;
+    m_sourcesHasBeenSet = true;
+}
+
+bool ModifyEnvAccessControlRequest::SourcesHasBeenSet() const
+{
+    return m_sourcesHasBeenSet;
+}
 
 

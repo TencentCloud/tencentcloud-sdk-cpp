@@ -30,7 +30,9 @@ DescribeJobSubmissionLogRequest::DescribeJobSubmissionLogRequest() :
     m_keywordHasBeenSet(false),
     m_cursorHasBeenSet(false),
     m_orderTypeHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -103,6 +105,29 @@ string DescribeJobSubmissionLogRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -239,6 +264,38 @@ void DescribeJobSubmissionLogRequest::SetLimit(const int64_t& _limit)
 bool DescribeJobSubmissionLogRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t DescribeJobSubmissionLogRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeJobSubmissionLogRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeJobSubmissionLogRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+vector<Filter> DescribeJobSubmissionLogRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeJobSubmissionLogRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeJobSubmissionLogRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 
