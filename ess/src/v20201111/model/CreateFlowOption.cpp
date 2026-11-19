@@ -45,7 +45,8 @@ CreateFlowOption::CreateFlowOption() :
     m_previewAfterStartHasBeenSet(false),
     m_signAfterStartHasBeenSet(false),
     m_needFlowDraftHasBeenSet(false),
-    m_ccInfoVisibilityHasBeenSet(false)
+    m_ccInfoVisibilityHasBeenSet(false),
+    m_signComponentLimitsHasBeenSet(false)
 {
 }
 
@@ -333,6 +334,26 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         m_ccInfoVisibilityHasBeenSet = true;
     }
 
+    if (value.HasMember("SignComponentLimits") && !value["SignComponentLimits"].IsNull())
+    {
+        if (!value["SignComponentLimits"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.SignComponentLimits` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SignComponentLimits"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EmbedSignComponentLimit item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_signComponentLimits.push_back(item);
+        }
+        m_signComponentLimitsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -566,6 +587,21 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CcInfoVisibility";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ccInfoVisibility, allocator);
+    }
+
+    if (m_signComponentLimitsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignComponentLimits";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_signComponentLimits.begin(); itr != m_signComponentLimits.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -969,5 +1005,21 @@ void CreateFlowOption::SetCcInfoVisibility(const int64_t& _ccInfoVisibility)
 bool CreateFlowOption::CcInfoVisibilityHasBeenSet() const
 {
     return m_ccInfoVisibilityHasBeenSet;
+}
+
+vector<EmbedSignComponentLimit> CreateFlowOption::GetSignComponentLimits() const
+{
+    return m_signComponentLimits;
+}
+
+void CreateFlowOption::SetSignComponentLimits(const vector<EmbedSignComponentLimit>& _signComponentLimits)
+{
+    m_signComponentLimits = _signComponentLimits;
+    m_signComponentLimitsHasBeenSet = true;
+}
+
+bool CreateFlowOption::SignComponentLimitsHasBeenSet() const
+{
+    return m_signComponentLimitsHasBeenSet;
 }
 

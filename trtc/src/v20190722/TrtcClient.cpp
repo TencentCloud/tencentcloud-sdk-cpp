@@ -1590,6 +1590,56 @@ TrtcClient::DescribeCloudTranscriptionOutcomeCallable TrtcClient::DescribeCloudT
     return prom->get_future();
 }
 
+TrtcClient::DescribeFinanceCloudRoomUsageOutcome TrtcClient::DescribeFinanceCloudRoomUsage(const DescribeFinanceCloudRoomUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFinanceCloudRoomUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFinanceCloudRoomUsageResponse rsp = DescribeFinanceCloudRoomUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFinanceCloudRoomUsageOutcome(rsp);
+        else
+            return DescribeFinanceCloudRoomUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFinanceCloudRoomUsageOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeFinanceCloudRoomUsageAsync(const DescribeFinanceCloudRoomUsageRequest& request, const DescribeFinanceCloudRoomUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeFinanceCloudRoomUsageRequest&;
+    using Resp = DescribeFinanceCloudRoomUsageResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeFinanceCloudRoomUsage", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TrtcClient::DescribeFinanceCloudRoomUsageOutcomeCallable TrtcClient::DescribeFinanceCloudRoomUsageCallable(const DescribeFinanceCloudRoomUsageRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeFinanceCloudRoomUsageOutcome>>();
+    DescribeFinanceCloudRoomUsageAsync(
+    request,
+    [prom](
+        const TrtcClient*,
+        const DescribeFinanceCloudRoomUsageRequest&,
+        DescribeFinanceCloudRoomUsageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TrtcClient::DescribeLiveStreamModerationOutcome TrtcClient::DescribeLiveStreamModeration(const DescribeLiveStreamModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveStreamModeration");

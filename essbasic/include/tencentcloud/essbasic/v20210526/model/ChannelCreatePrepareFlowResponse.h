@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发起的合同嵌入链接， 可以直接点击进入进行合同发起， 有效期为5分钟
-                     * @return PrepareFlowUrl 发起的合同嵌入链接， 可以直接点击进入进行合同发起， 有效期为5分钟
+                     * 获取<p>发起的合同嵌入链接， 可以直接点击进入进行合同发起， 有效期为5分钟</p>
+                     * @return PrepareFlowUrl <p>发起的合同嵌入链接， 可以直接点击进入进行合同发起， 有效期为5分钟</p>
                      * 
                      */
                     std::string GetPrepareFlowUrl() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool PrepareFlowUrlHasBeenSet() const;
 
                     /**
-                     * 获取合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果， 有效期为5分钟
-                     * @return PreviewFlowUrl 合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果， 有效期为5分钟
+                     * 获取<p>合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果， 有效期为5分钟</p>
+                     * @return PreviewFlowUrl <p>合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果， 有效期为5分钟</p>
                      * 
                      */
                     std::string GetPreviewFlowUrl() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool PreviewFlowUrlHasBeenSet() const;
 
                     /**
-                     * 获取发起的合同临时Id， 只有当点击进入链接，成功发起合同后， 此Id才有效
-                     * @return FlowId 发起的合同临时Id， 只有当点击进入链接，成功发起合同后， 此Id才有效
+                     * 获取<p>发起的合同临时Id， 只有当点击进入链接，成功发起合同后， 此Id才有效</p>
+                     * @return FlowId <p>发起的合同临时Id， 只有当点击进入链接，成功发起合同后， 此Id才有效</p>
                      * 
                      */
                     std::string GetFlowId() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。
-                     * @return DraftId 临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。
+                     * 获取<p>临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。</p>
+                     * @return DraftId <p>临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。</p>
                      * 
                      */
                     std::string GetDraftId() const;
@@ -102,25 +102,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 发起的合同嵌入链接， 可以直接点击进入进行合同发起， 有效期为5分钟
+                     * <p>发起的合同嵌入链接， 可以直接点击进入进行合同发起， 有效期为5分钟</p>
                      */
                     std::string m_prepareFlowUrl;
                     bool m_prepareFlowUrlHasBeenSet;
 
                     /**
-                     * 合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果， 有效期为5分钟
+                     * <p>合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果， 有效期为5分钟</p>
                      */
                     std::string m_previewFlowUrl;
                     bool m_previewFlowUrlHasBeenSet;
 
                     /**
-                     * 发起的合同临时Id， 只有当点击进入链接，成功发起合同后， 此Id才有效
+                     * <p>发起的合同临时Id， 只有当点击进入链接，成功发起合同后， 此Id才有效</p>
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。
+                     * <p>临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。</p>
                      */
                     std::string m_draftId;
                     bool m_draftIdHasBeenSet;

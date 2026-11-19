@@ -213,6 +213,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeProxySpecsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/BindClusterResourcePackagesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/IsolateInstanceResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ProxyEndPointItem.h
   include/tencentcloud/cynosdb/v20190107/model/CopyClusterPasswordComplexityResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterTransparentEncryptInfoRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterLevelsRequest.h
@@ -386,6 +387,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterPasswordComplexityRequest.h
   include/tencentcloud/cynosdb/v20190107/model/QueryFilter.h
   include/tencentcloud/cynosdb/v20190107/model/CreateAccountsResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/CreateProxyEndPointsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterGlobalEncryptionResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CheckTransferClusterZoneRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CloseWanResponse.h
@@ -511,6 +513,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DeleteClusterDatabaseResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbClusterDetail.h
   include/tencentcloud/cynosdb/v20190107/model/ActivateLibraDBInstanceResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/CreateProxyEndPointsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RestartInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/PackageDetail.h
   include/tencentcloud/cynosdb/v20190107/model/BackupLimitVpcItem.h
@@ -896,6 +899,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeProxySpecsResponse.cpp
   src/v20190107/model/BindClusterResourcePackagesRequest.cpp
   src/v20190107/model/IsolateInstanceResponse.cpp
+  src/v20190107/model/ProxyEndPointItem.cpp
   src/v20190107/model/CopyClusterPasswordComplexityResponse.cpp
   src/v20190107/model/DescribeClusterTransparentEncryptInfoRequest.cpp
   src/v20190107/model/DescribeClusterLevelsRequest.cpp
@@ -1069,6 +1073,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeClusterPasswordComplexityRequest.cpp
   src/v20190107/model/QueryFilter.cpp
   src/v20190107/model/CreateAccountsResponse.cpp
+  src/v20190107/model/CreateProxyEndPointsRequest.cpp
   src/v20190107/model/ModifyClusterGlobalEncryptionResponse.cpp
   src/v20190107/model/CheckTransferClusterZoneRequest.cpp
   src/v20190107/model/CloseWanResponse.cpp
@@ -1194,6 +1199,7 @@ set(cynosdb_src
   src/v20190107/model/DeleteClusterDatabaseResponse.cpp
   src/v20190107/model/CynosdbClusterDetail.cpp
   src/v20190107/model/ActivateLibraDBInstanceResponse.cpp
+  src/v20190107/model/CreateProxyEndPointsResponse.cpp
   src/v20190107/model/RestartInstanceRequest.cpp
   src/v20190107/model/PackageDetail.cpp
   src/v20190107/model/BackupLimitVpcItem.cpp

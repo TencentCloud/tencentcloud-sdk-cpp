@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool TaskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否输出单元格坐标。开启后，耗时会稍有增加。<br>默认值：false</p>
+                     * @return EnableTableCellCoord <p>是否输出单元格坐标。开启后，耗时会稍有增加。<br>默认值：false</p>
+                     * 
+                     */
+                    bool GetEnableTableCellCoord() const;
+
+                    /**
+                     * 设置<p>是否输出单元格坐标。开启后，耗时会稍有增加。<br>默认值：false</p>
+                     * @param _enableTableCellCoord <p>是否输出单元格坐标。开启后，耗时会稍有增加。<br>默认值：false</p>
+                     * 
+                     */
+                    void SetEnableTableCellCoord(const bool& _enableTableCellCoord);
+
+                    /**
+                     * 判断参数 EnableTableCellCoord 是否已赋值
+                     * @return EnableTableCellCoord 是否已赋值
+                     * 
+                     */
+                    bool EnableTableCellCoordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * <p>是否输出单元格坐标。开启后，耗时会稍有增加。<br>默认值：false</p>
+                     */
+                    bool m_enableTableCellCoord;
+                    bool m_enableTableCellCoordHasBeenSet;
 
                 };
             }

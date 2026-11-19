@@ -317,12 +317,14 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/UpdateRecognizeVocabV3Response.h
   include/tencentcloud/trtc/v20190722/model/TranscriptionParam.h
   include/tencentcloud/trtc/v20190722/model/UpdateRecognizeVocabV3Request.h
+  include/tencentcloud/trtc/v20190722/model/DescribeFinanceCloudRoomUsageResponse.h
   include/tencentcloud/trtc/v20190722/model/MaxVideoUser.h
   include/tencentcloud/trtc/v20190722/model/LayoutParams.h
   include/tencentcloud/trtc/v20190722/model/TextToSpeechSSERequest.h
   include/tencentcloud/trtc/v20190722/model/TextToSpeechRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeStreamIngestRequest.h
   include/tencentcloud/trtc/v20190722/model/VoiceConversationSTTConfig.h
+  include/tencentcloud/trtc/v20190722/model/DescribeFinanceCloudRoomUsageRequest.h
   include/tencentcloud/trtc/v20190722/model/ImageLocation.h
   include/tencentcloud/trtc/v20190722/model/UpdateVoicePrintResponse.h
   include/tencentcloud/trtc/v20190722/model/StopWebRecordRequest.h
@@ -650,12 +652,14 @@ set(trtc_src
   src/v20190722/model/UpdateRecognizeVocabV3Response.cpp
   src/v20190722/model/TranscriptionParam.cpp
   src/v20190722/model/UpdateRecognizeVocabV3Request.cpp
+  src/v20190722/model/DescribeFinanceCloudRoomUsageResponse.cpp
   src/v20190722/model/MaxVideoUser.cpp
   src/v20190722/model/LayoutParams.cpp
   src/v20190722/model/TextToSpeechSSERequest.cpp
   src/v20190722/model/TextToSpeechRequest.cpp
   src/v20190722/model/DescribeStreamIngestRequest.cpp
   src/v20190722/model/VoiceConversationSTTConfig.cpp
+  src/v20190722/model/DescribeFinanceCloudRoomUsageRequest.cpp
   src/v20190722/model/ImageLocation.cpp
   src/v20190722/model/UpdateVoicePrintResponse.cpp
   src/v20190722/model/StopWebRecordRequest.cpp

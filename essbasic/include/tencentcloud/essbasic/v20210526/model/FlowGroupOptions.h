@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/SignComponentConfig.h>
+#include <tencentcloud/essbasic/v20210526/model/EmbedSignComponentLimit.h>
 
 
 namespace TencentCloud
@@ -257,6 +258,48 @@ namespace TencentCloud
                      */
                     bool PreviewAfterStartHasBeenSet() const;
 
+                    /**
+                     * 获取<p><br>在调用<a href="https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlowGroup">获取发起合同组嵌入链接</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>
+                     * @return SignComponentLimits <p><br>在调用<a href="https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlowGroup">获取发起合同组嵌入链接</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>
+                     * 
+                     */
+                    std::vector<EmbedSignComponentLimit> GetSignComponentLimits() const;
+
+                    /**
+                     * 设置<p><br>在调用<a href="https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlowGroup">获取发起合同组嵌入链接</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>
+                     * @param _signComponentLimits <p><br>在调用<a href="https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlowGroup">获取发起合同组嵌入链接</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>
+                     * 
+                     */
+                    void SetSignComponentLimits(const std::vector<EmbedSignComponentLimit>& _signComponentLimits);
+
+                    /**
+                     * 判断参数 SignComponentLimits 是否已赋值
+                     * @return SignComponentLimits 是否已赋值
+                     * 
+                     */
+                    bool SignComponentLimitsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>隐藏操作步骤: 具体的控件类型如下</p><ul><li>2 : 补充文件内容</li><li>4 : 发起前合同信息与设置确认</li></ul>注：仅对新版页面生效
+                     * @return HideOperationSteps <p>隐藏操作步骤: 具体的控件类型如下</p><ul><li>2 : 补充文件内容</li><li>4 : 发起前合同信息与设置确认</li></ul>注：仅对新版页面生效
+                     * 
+                     */
+                    std::vector<uint64_t> GetHideOperationSteps() const;
+
+                    /**
+                     * 设置<p>隐藏操作步骤: 具体的控件类型如下</p><ul><li>2 : 补充文件内容</li><li>4 : 发起前合同信息与设置确认</li></ul>注：仅对新版页面生效
+                     * @param _hideOperationSteps <p>隐藏操作步骤: 具体的控件类型如下</p><ul><li>2 : 补充文件内容</li><li>4 : 发起前合同信息与设置确认</li></ul>注：仅对新版页面生效
+                     * 
+                     */
+                    void SetHideOperationSteps(const std::vector<uint64_t>& _hideOperationSteps);
+
+                    /**
+                     * 判断参数 HideOperationSteps 是否已赋值
+                     * @return HideOperationSteps 是否已赋值
+                     * 
+                     */
+                    bool HideOperationStepsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +361,18 @@ namespace TencentCloud
                      */
                     bool m_previewAfterStart;
                     bool m_previewAfterStartHasBeenSet;
+
+                    /**
+                     * <p><br>在调用<a href="https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlowGroup">获取发起合同组嵌入链接</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>
+                     */
+                    std::vector<EmbedSignComponentLimit> m_signComponentLimits;
+                    bool m_signComponentLimitsHasBeenSet;
+
+                    /**
+                     * <p>隐藏操作步骤: 具体的控件类型如下</p><ul><li>2 : 补充文件内容</li><li>4 : 发起前合同信息与设置确认</li></ul>注：仅对新版页面生效
+                     */
+                    std::vector<uint64_t> m_hideOperationSteps;
+                    bool m_hideOperationStepsHasBeenSet;
 
                 };
             }

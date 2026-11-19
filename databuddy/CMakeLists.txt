@@ -148,6 +148,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/FeatureTableDetail.h
   include/tencentcloud/databuddy/v20260715/model/FunctionInfo.h
   include/tencentcloud/databuddy/v20260715/model/ConsoleRoleInfo.h
+  include/tencentcloud/databuddy/v20260715/model/ListScheduledTasksResponse.h
   include/tencentcloud/databuddy/v20260715/model/NameIdentifier.h
   include/tencentcloud/databuddy/v20260715/model/ListSchemaNamesResponse.h
   include/tencentcloud/databuddy/v20260715/model/SearchResult.h
@@ -160,6 +161,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/ListConsoleGroupUsersResponse.h
   include/tencentcloud/databuddy/v20260715/model/AddWorkspaceGroupsResponse.h
   include/tencentcloud/databuddy/v20260715/model/GetWorkspaceRsp.h
+  include/tencentcloud/databuddy/v20260715/model/ScheduledTaskDetail.h
   include/tencentcloud/databuddy/v20260715/model/CreateConsoleGroupRequest.h
   include/tencentcloud/databuddy/v20260715/model/GetSchemaRsp.h
   include/tencentcloud/databuddy/v20260715/model/ConsoleUserInfo.h
@@ -326,6 +328,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/GetModelRequest.h
   include/tencentcloud/databuddy/v20260715/model/AlarmGroup.h
   include/tencentcloud/databuddy/v20260715/model/DeleteWorkflowRsp.h
+  include/tencentcloud/databuddy/v20260715/model/ListScheduledTasksRequest.h
   include/tencentcloud/databuddy/v20260715/model/ListConsoleUsersRsp.h
   include/tencentcloud/databuddy/v20260715/model/GroupUserInfo.h
   include/tencentcloud/databuddy/v20260715/model/SingleFieldPartitioning.h
@@ -417,6 +420,7 @@ set(databuddy_public_header_model
   include/tencentcloud/databuddy/v20260715/model/UpdateConsoleGroupResponse.h
   include/tencentcloud/databuddy/v20260715/model/UpdateVolumeRequest.h
   include/tencentcloud/databuddy/v20260715/model/ListFeatureTablesRequest.h
+  include/tencentcloud/databuddy/v20260715/model/ListScheduledTasksRsp.h
   include/tencentcloud/databuddy/v20260715/model/Fragment.h
   include/tencentcloud/databuddy/v20260715/model/ListSchemasRequest.h
   include/tencentcloud/databuddy/v20260715/model/Volume.h
@@ -574,6 +578,7 @@ set(databuddy_src
   src/v20260715/model/FeatureTableDetail.cpp
   src/v20260715/model/FunctionInfo.cpp
   src/v20260715/model/ConsoleRoleInfo.cpp
+  src/v20260715/model/ListScheduledTasksResponse.cpp
   src/v20260715/model/NameIdentifier.cpp
   src/v20260715/model/ListSchemaNamesResponse.cpp
   src/v20260715/model/SearchResult.cpp
@@ -586,6 +591,7 @@ set(databuddy_src
   src/v20260715/model/ListConsoleGroupUsersResponse.cpp
   src/v20260715/model/AddWorkspaceGroupsResponse.cpp
   src/v20260715/model/GetWorkspaceRsp.cpp
+  src/v20260715/model/ScheduledTaskDetail.cpp
   src/v20260715/model/CreateConsoleGroupRequest.cpp
   src/v20260715/model/GetSchemaRsp.cpp
   src/v20260715/model/ConsoleUserInfo.cpp
@@ -752,6 +758,7 @@ set(databuddy_src
   src/v20260715/model/GetModelRequest.cpp
   src/v20260715/model/AlarmGroup.cpp
   src/v20260715/model/DeleteWorkflowRsp.cpp
+  src/v20260715/model/ListScheduledTasksRequest.cpp
   src/v20260715/model/ListConsoleUsersRsp.cpp
   src/v20260715/model/GroupUserInfo.cpp
   src/v20260715/model/SingleFieldPartitioning.cpp
@@ -843,6 +850,7 @@ set(databuddy_src
   src/v20260715/model/UpdateConsoleGroupResponse.cpp
   src/v20260715/model/UpdateVolumeRequest.cpp
   src/v20260715/model/ListFeatureTablesRequest.cpp
+  src/v20260715/model/ListScheduledTasksRsp.cpp
   src/v20260715/model/Fragment.cpp
   src/v20260715/model/ListSchemasRequest.cpp
   src/v20260715/model/Volume.cpp

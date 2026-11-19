@@ -32,7 +32,9 @@ FlowGroupOptions::FlowGroupOptions() :
     m_forbidEditWatermarkHasBeenSet(false),
     m_hideSignCodeAfterStartHasBeenSet(false),
     m_signAfterStartHasBeenSet(false),
-    m_previewAfterStartHasBeenSet(false)
+    m_previewAfterStartHasBeenSet(false),
+    m_signComponentLimitsHasBeenSet(false),
+    m_hideOperationStepsHasBeenSet(false)
 {
 }
 
@@ -168,6 +170,39 @@ CoreInternalOutcome FlowGroupOptions::Deserialize(const rapidjson::Value &value)
         m_previewAfterStartHasBeenSet = true;
     }
 
+    if (value.HasMember("SignComponentLimits") && !value["SignComponentLimits"].IsNull())
+    {
+        if (!value["SignComponentLimits"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowGroupOptions.SignComponentLimits` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SignComponentLimits"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            EmbedSignComponentLimit item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_signComponentLimits.push_back(item);
+        }
+        m_signComponentLimitsHasBeenSet = true;
+    }
+
+    if (value.HasMember("HideOperationSteps") && !value["HideOperationSteps"].IsNull())
+    {
+        if (!value["HideOperationSteps"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowGroupOptions.HideOperationSteps` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HideOperationSteps"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_hideOperationSteps.push_back((*itr).GetUint64());
+        }
+        m_hideOperationStepsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +305,34 @@ void FlowGroupOptions::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "PreviewAfterStart";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_previewAfterStart, allocator);
+    }
+
+    if (m_signComponentLimitsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignComponentLimits";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_signComponentLimits.begin(); itr != m_signComponentLimits.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_hideOperationStepsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HideOperationSteps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_hideOperationSteps.begin(); itr != m_hideOperationSteps.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 }
@@ -465,5 +528,37 @@ void FlowGroupOptions::SetPreviewAfterStart(const bool& _previewAfterStart)
 bool FlowGroupOptions::PreviewAfterStartHasBeenSet() const
 {
     return m_previewAfterStartHasBeenSet;
+}
+
+vector<EmbedSignComponentLimit> FlowGroupOptions::GetSignComponentLimits() const
+{
+    return m_signComponentLimits;
+}
+
+void FlowGroupOptions::SetSignComponentLimits(const vector<EmbedSignComponentLimit>& _signComponentLimits)
+{
+    m_signComponentLimits = _signComponentLimits;
+    m_signComponentLimitsHasBeenSet = true;
+}
+
+bool FlowGroupOptions::SignComponentLimitsHasBeenSet() const
+{
+    return m_signComponentLimitsHasBeenSet;
+}
+
+vector<uint64_t> FlowGroupOptions::GetHideOperationSteps() const
+{
+    return m_hideOperationSteps;
+}
+
+void FlowGroupOptions::SetHideOperationSteps(const vector<uint64_t>& _hideOperationSteps)
+{
+    m_hideOperationSteps = _hideOperationSteps;
+    m_hideOperationStepsHasBeenSet = true;
+}
+
+bool FlowGroupOptions::HideOperationStepsHasBeenSet() const
+{
+    return m_hideOperationStepsHasBeenSet;
 }
 

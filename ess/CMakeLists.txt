@@ -52,6 +52,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesResponse.h
   include/tencentcloud/ess/v20201111/model/DetectInfoVideoData.h
+  include/tencentcloud/ess/v20201111/model/EmbedSignComponentLimit.h
   include/tencentcloud/ess/v20201111/model/ContractReviewWebUrlOption.h
   include/tencentcloud/ess/v20201111/model/ModifySingleSignOnEmployeesResponse.h
   include/tencentcloud/ess/v20201111/model/CreateWebThemeConfigResponse.h
@@ -406,7 +407,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksResponse.h
   include/tencentcloud/ess/v20201111/model/Option.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationSealsResponse.h
-  include/tencentcloud/ess/v20201111/model/DescribeBillUsageDetailRequest.h
+  include/tencentcloud/ess/v20201111/model/FlowGroupApproverInfo.h
   include/tencentcloud/ess/v20201111/model/FeedbackList.h
   include/tencentcloud/ess/v20201111/model/CreateBatchAdminChangeInvitationsUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlResponse.h
@@ -473,7 +474,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeSignFaceVideoResponse.h
   include/tencentcloud/ess/v20201111/model/VerifyPdfResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteStaffsResult.h
-  include/tencentcloud/ess/v20201111/model/FlowGroupApproverInfo.h
+  include/tencentcloud/ess/v20201111/model/DescribeBillUsageDetailRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationUrlsResponse.h
   include/tencentcloud/ess/v20201111/model/ExtendAuthInfo.h
   include/tencentcloud/ess/v20201111/model/CreateInformationExtractionWebUrlRequest.h
@@ -521,6 +522,7 @@ set(ess_src
   src/v20201111/model/DeleteSealPoliciesRequest.cpp
   src/v20201111/model/CreateFlowGroupByTemplatesResponse.cpp
   src/v20201111/model/DetectInfoVideoData.cpp
+  src/v20201111/model/EmbedSignComponentLimit.cpp
   src/v20201111/model/ContractReviewWebUrlOption.cpp
   src/v20201111/model/ModifySingleSignOnEmployeesResponse.cpp
   src/v20201111/model/CreateWebThemeConfigResponse.cpp
@@ -875,7 +877,7 @@ set(ess_src
   src/v20201111/model/CreateBatchOrganizationRegistrationTasksResponse.cpp
   src/v20201111/model/Option.cpp
   src/v20201111/model/DescribeOrganizationSealsResponse.cpp
-  src/v20201111/model/DescribeBillUsageDetailRequest.cpp
+  src/v20201111/model/FlowGroupApproverInfo.cpp
   src/v20201111/model/FeedbackList.cpp
   src/v20201111/model/CreateBatchAdminChangeInvitationsUrlRequest.cpp
   src/v20201111/model/CreateUserAutoSignSealUrlResponse.cpp
@@ -942,7 +944,7 @@ set(ess_src
   src/v20201111/model/DescribeSignFaceVideoResponse.cpp
   src/v20201111/model/VerifyPdfResponse.cpp
   src/v20201111/model/DeleteStaffsResult.cpp
-  src/v20201111/model/FlowGroupApproverInfo.cpp
+  src/v20201111/model/DescribeBillUsageDetailRequest.cpp
   src/v20201111/model/DescribeBatchOrganizationRegistrationUrlsResponse.cpp
   src/v20201111/model/ExtendAuthInfo.cpp
   src/v20201111/model/CreateInformationExtractionWebUrlRequest.cpp

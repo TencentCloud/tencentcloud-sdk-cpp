@@ -44,47 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识:  Agent.AppId</li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
-<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
-</ul>
-第三方平台子客企业和员工必须已经经过实名认证
-                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识:  Agent.AppId</li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
-<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
-</ul>
-第三方平台子客企业和员工必须已经经过实名认证
+                     * 获取<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证
+                     * @return Agent <p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识:  Agent.AppId</li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
-<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
-</ul>
-第三方平台子客企业和员工必须已经经过实名认证
-                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识:  Agent.AppId</li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
-<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
-</ul>
-第三方平台子客企业和员工必须已经经过实名认证
+                     * 设置<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证
+                     * @param _agent <p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -97,15 +65,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。
-                     * @return SubOrganizationOpenIds 要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。
+                     * 获取<p>要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。</p>
+                     * @return SubOrganizationOpenIds <p>要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。</p>
                      * 
                      */
                     std::vector<std::string> GetSubOrganizationOpenIds() const;
 
                     /**
-                     * 设置要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。
-                     * @param _subOrganizationOpenIds 要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。
+                     * 设置<p>要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。</p>
+                     * @param _subOrganizationOpenIds <p>要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。</p>
                      * 
                      */
                     void SetSubOrganizationOpenIds(const std::vector<std::string>& _subOrganizationOpenIds);
@@ -118,31 +86,15 @@ namespace TencentCloud
                     bool SubOrganizationOpenIdsHasBeenSet() const;
 
                     /**
-                     * 获取操作类型，可以选择如下：
-
-**false**：（默认）激活子客企业
-**true**：续期子客企业
-
-                     * @return Renew 操作类型，可以选择如下：
-
-**false**：（默认）激活子客企业
-**true**：续期子客企业
-
+                     * 获取<p>操作类型，可以选择如下：</p><p><strong>false</strong>：（默认）激活子客企业<br><strong>true</strong>：续期子客企业</p>
+                     * @return Renew <p>操作类型，可以选择如下：</p><p><strong>false</strong>：（默认）激活子客企业<br><strong>true</strong>：续期子客企业</p>
                      * 
                      */
                     bool GetRenew() const;
 
                     /**
-                     * 设置操作类型，可以选择如下：
-
-**false**：（默认）激活子客企业
-**true**：续期子客企业
-
-                     * @param _renew 操作类型，可以选择如下：
-
-**false**：（默认）激活子客企业
-**true**：续期子客企业
-
+                     * 设置<p>操作类型，可以选择如下：</p><p><strong>false</strong>：（默认）激活子客企业<br><strong>true</strong>：续期子客企业</p>
+                     * @param _renew <p>操作类型，可以选择如下：</p><p><strong>false</strong>：（默认）激活子客企业<br><strong>true</strong>：续期子客企业</p>
                      * 
                      */
                     void SetRenew(const bool& _renew);
@@ -154,37 +106,52 @@ namespace TencentCloud
                      */
                     bool RenewHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否解绑子企业</p><p>枚举值：</p><ul><li>false： 否</li><li>true： 是：解绑后，份额将会返还，但是该子企业无法再次被激活</li></ul><p>默认值：false</p>
+                     * @return Unbind <p>是否解绑子企业</p><p>枚举值：</p><ul><li>false： 否</li><li>true： 是：解绑后，份额将会返还，但是该子企业无法再次被激活</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetUnbind() const;
+
+                    /**
+                     * 设置<p>是否解绑子企业</p><p>枚举值：</p><ul><li>false： 否</li><li>true： 是：解绑后，份额将会返还，但是该子企业无法再次被激活</li></ul><p>默认值：false</p>
+                     * @param _unbind <p>是否解绑子企业</p><p>枚举值：</p><ul><li>false： 否</li><li>true： 是：解绑后，份额将会返还，但是该子企业无法再次被激活</li></ul><p>默认值：false</p>
+                     * 
+                     */
+                    void SetUnbind(const bool& _unbind);
+
+                    /**
+                     * 判断参数 Unbind 是否已赋值
+                     * @return Unbind 是否已赋值
+                     * 
+                     */
+                    bool UnbindHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识:  Agent.AppId</li>
-<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
-<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
-</ul>
-第三方平台子客企业和员工必须已经经过实名认证
+                     * <p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。
+                     * <p>要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。</p>
                      */
                     std::vector<std::string> m_subOrganizationOpenIds;
                     bool m_subOrganizationOpenIdsHasBeenSet;
 
                     /**
-                     * 操作类型，可以选择如下：
-
-**false**：（默认）激活子客企业
-**true**：续期子客企业
-
+                     * <p>操作类型，可以选择如下：</p><p><strong>false</strong>：（默认）激活子客企业<br><strong>true</strong>：续期子客企业</p>
                      */
                     bool m_renew;
                     bool m_renewHasBeenSet;
+
+                    /**
+                     * <p>是否解绑子企业</p><p>枚举值：</p><ul><li>false： 否</li><li>true： 是：解绑后，份额将会返还，但是该子企业无法再次被激活</li></ul><p>默认值：false</p>
+                     */
+                    bool m_unbind;
+                    bool m_unbindHasBeenSet;
 
                 };
             }

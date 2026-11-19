@@ -28,7 +28,8 @@ FetchOption::FetchOption() :
     m_fetchUserInfoHasBeenSet(false),
     m_fetchMaskHasBeenSet(false),
     m_fetchTagsHasBeenSet(false),
-    m_fetchDimensionsHasBeenSet(false)
+    m_fetchDimensionsHasBeenSet(false),
+    m_fetchTableFilesInfoHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,16 @@ CoreInternalOutcome FetchOption::Deserialize(const rapidjson::Value &value)
         m_fetchDimensionsHasBeenSet = true;
     }
 
+    if (value.HasMember("FetchTableFilesInfo") && !value["FetchTableFilesInfo"].IsNull())
+    {
+        if (!value["FetchTableFilesInfo"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FetchOption.FetchTableFilesInfo` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_fetchTableFilesInfo = value["FetchTableFilesInfo"].GetBool();
+        m_fetchTableFilesInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +205,14 @@ void FetchOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "FetchDimensions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fetchDimensions, allocator);
+    }
+
+    if (m_fetchTableFilesInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FetchTableFilesInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fetchTableFilesInfo, allocator);
     }
 
 }
@@ -325,5 +344,21 @@ void FetchOption::SetFetchDimensions(const bool& _fetchDimensions)
 bool FetchOption::FetchDimensionsHasBeenSet() const
 {
     return m_fetchDimensionsHasBeenSet;
+}
+
+bool FetchOption::GetFetchTableFilesInfo() const
+{
+    return m_fetchTableFilesInfo;
+}
+
+void FetchOption::SetFetchTableFilesInfo(const bool& _fetchTableFilesInfo)
+{
+    m_fetchTableFilesInfo = _fetchTableFilesInfo;
+    m_fetchTableFilesInfoHasBeenSet = true;
+}
+
+bool FetchOption::FetchTableFilesInfoHasBeenSet() const
+{
+    return m_fetchTableFilesInfoHasBeenSet;
 }
 

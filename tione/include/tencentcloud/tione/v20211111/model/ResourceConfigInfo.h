@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色，eg：PS、WORKER、DRIVER、EXECUTOR
-                     * @return Role 角色，eg：PS、WORKER、DRIVER、EXECUTOR
+                     * 获取<p>角色，eg：PS、WORKER、DRIVER、EXECUTOR</p>
+                     * @return Role <p>角色，eg：PS、WORKER、DRIVER、EXECUTOR</p>
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置角色，eg：PS、WORKER、DRIVER、EXECUTOR
-                     * @param _role 角色，eg：PS、WORKER、DRIVER、EXECUTOR
+                     * 设置<p>角色，eg：PS、WORKER、DRIVER、EXECUTOR</p>
+                     * @param _role <p>角色，eg：PS、WORKER、DRIVER、EXECUTOR</p>
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核
-                     * @return Cpu cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核
+                     * 获取<p>cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核</p>
+                     * @return Cpu <p>cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核</p>
                      * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
-                     * 设置cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核
-                     * @param _cpu cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核
+                     * 设置<p>cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核</p>
+                     * @param _cpu <p>cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核</p>
                      * 
                      */
                     void SetCpu(const uint64_t& _cpu);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存，使用资源组时需配置。单位为MB
-                     * @return Memory 内存，使用资源组时需配置。单位为MB
+                     * 获取<p>内存，使用资源组时需配置。单位为MB</p>
+                     * @return Memory <p>内存，使用资源组时需配置。单位为MB</p>
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置内存，使用资源组时需配置。单位为MB
-                     * @param _memory 内存，使用资源组时需配置。单位为MB
+                     * 设置<p>内存，使用资源组时需配置。单位为MB</p>
+                     * @param _memory <p>内存，使用资源组时需配置。单位为MB</p>
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取gpu卡类型，使用资源组时需配置
-                     * @return GpuType gpu卡类型，使用资源组时需配置
+                     * 获取<p>gpu卡类型，使用资源组时需配置</p>
+                     * @return GpuType <p>gpu卡类型，使用资源组时需配置</p>
                      * 
                      */
                     std::string GetGpuType() const;
 
                     /**
-                     * 设置gpu卡类型，使用资源组时需配置
-                     * @param _gpuType gpu卡类型，使用资源组时需配置
+                     * 设置<p>gpu卡类型，使用资源组时需配置</p>
+                     * @param _gpuType <p>gpu卡类型，使用资源组时需配置</p>
                      * 
                      */
                     void SetGpuType(const std::string& _gpuType);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool GpuTypeHasBeenSet() const;
 
                     /**
-                     * 获取gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡
-                     * @return Gpu gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡
+                     * 获取<p>gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡</p>
+                     * @return Gpu <p>gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡</p>
                      * 
                      */
                     uint64_t GetGpu() const;
 
                     /**
-                     * 设置gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡
-                     * @param _gpu gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡
+                     * 设置<p>gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡</p>
+                     * @param _gpu <p>gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡</p>
                      * 
                      */
                     void SetGpu(const uint64_t& _gpu);
@@ -153,83 +153,15 @@ namespace TencentCloud
                     bool GpuHasBeenSet() const;
 
                     /**
-                     * 获取算力规格ID
-计算规格 (for后付费)，可选值如下：
-TI.S.LARGE.POST: 4C8G 
-TI.S.2XLARGE16.POST:  8C16G 
-TI.S.2XLARGE32.POST:  8C32G 
-TI.S.4XLARGE32.POST:  16C32G
-TI.S.4XLARGE64.POST:  16C64G
-TI.S.6XLARGE48.POST:  24C48G
-TI.S.6XLARGE96.POST:  24C96G
-TI.S.8XLARGE64.POST:  32C64G
-TI.S.8XLARGE128.POST : 32C128G
-TI.GN10.2XLARGE40.POST: 8C40G V100*1 
-TI.GN10.5XLARGE80.POST:  18C80G V100*2 
-TI.GN10.10XLARGE160.POST :  32C160G V100*4
-TI.GN10.20XLARGE320.POST :  72C320G V100*8
-TI.GN7.8XLARGE128.POST: 32C128G T4*1 
-TI.GN7.10XLARGE160.POST: 40C160G T4*2 
-TI.GN7.20XLARGE320.POST: 80C32
-                     * @return InstanceType 算力规格ID
-计算规格 (for后付费)，可选值如下：
-TI.S.LARGE.POST: 4C8G 
-TI.S.2XLARGE16.POST:  8C16G 
-TI.S.2XLARGE32.POST:  8C32G 
-TI.S.4XLARGE32.POST:  16C32G
-TI.S.4XLARGE64.POST:  16C64G
-TI.S.6XLARGE48.POST:  24C48G
-TI.S.6XLARGE96.POST:  24C96G
-TI.S.8XLARGE64.POST:  32C64G
-TI.S.8XLARGE128.POST : 32C128G
-TI.GN10.2XLARGE40.POST: 8C40G V100*1 
-TI.GN10.5XLARGE80.POST:  18C80G V100*2 
-TI.GN10.10XLARGE160.POST :  32C160G V100*4
-TI.GN10.20XLARGE320.POST :  72C320G V100*8
-TI.GN7.8XLARGE128.POST: 32C128G T4*1 
-TI.GN7.10XLARGE160.POST: 40C160G T4*2 
-TI.GN7.20XLARGE320.POST: 80C32
+                     * 获取<p>算力规格ID<br>计算规格 (for后付费)，可选值如下：<br>TI.S.LARGE.POST: 4C8G<br>TI.S.2XLARGE16.POST:  8C16G<br>TI.S.2XLARGE32.POST:  8C32G<br>TI.S.4XLARGE32.POST:  16C32G<br>TI.S.4XLARGE64.POST:  16C64G<br>TI.S.6XLARGE48.POST:  24C48G<br>TI.S.6XLARGE96.POST:  24C96G<br>TI.S.8XLARGE64.POST:  32C64G<br>TI.S.8XLARGE128.POST : 32C128G<br>TI.GN10.2XLARGE40.POST: 8C40G V100<em>1<br>TI.GN10.5XLARGE80.POST:  18C80G V100</em>2<br>TI.GN10.10XLARGE160.POST :  32C160G V100<em>4<br>TI.GN10.20XLARGE320.POST :  72C320G V100</em>8<br>TI.GN7.8XLARGE128.POST: 32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST: 40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST: 80C32</p>
+                     * @return InstanceType <p>算力规格ID<br>计算规格 (for后付费)，可选值如下：<br>TI.S.LARGE.POST: 4C8G<br>TI.S.2XLARGE16.POST:  8C16G<br>TI.S.2XLARGE32.POST:  8C32G<br>TI.S.4XLARGE32.POST:  16C32G<br>TI.S.4XLARGE64.POST:  16C64G<br>TI.S.6XLARGE48.POST:  24C48G<br>TI.S.6XLARGE96.POST:  24C96G<br>TI.S.8XLARGE64.POST:  32C64G<br>TI.S.8XLARGE128.POST : 32C128G<br>TI.GN10.2XLARGE40.POST: 8C40G V100<em>1<br>TI.GN10.5XLARGE80.POST:  18C80G V100</em>2<br>TI.GN10.10XLARGE160.POST :  32C160G V100<em>4<br>TI.GN10.20XLARGE320.POST :  72C320G V100</em>8<br>TI.GN7.8XLARGE128.POST: 32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST: 40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST: 80C32</p>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置算力规格ID
-计算规格 (for后付费)，可选值如下：
-TI.S.LARGE.POST: 4C8G 
-TI.S.2XLARGE16.POST:  8C16G 
-TI.S.2XLARGE32.POST:  8C32G 
-TI.S.4XLARGE32.POST:  16C32G
-TI.S.4XLARGE64.POST:  16C64G
-TI.S.6XLARGE48.POST:  24C48G
-TI.S.6XLARGE96.POST:  24C96G
-TI.S.8XLARGE64.POST:  32C64G
-TI.S.8XLARGE128.POST : 32C128G
-TI.GN10.2XLARGE40.POST: 8C40G V100*1 
-TI.GN10.5XLARGE80.POST:  18C80G V100*2 
-TI.GN10.10XLARGE160.POST :  32C160G V100*4
-TI.GN10.20XLARGE320.POST :  72C320G V100*8
-TI.GN7.8XLARGE128.POST: 32C128G T4*1 
-TI.GN7.10XLARGE160.POST: 40C160G T4*2 
-TI.GN7.20XLARGE320.POST: 80C32
-                     * @param _instanceType 算力规格ID
-计算规格 (for后付费)，可选值如下：
-TI.S.LARGE.POST: 4C8G 
-TI.S.2XLARGE16.POST:  8C16G 
-TI.S.2XLARGE32.POST:  8C32G 
-TI.S.4XLARGE32.POST:  16C32G
-TI.S.4XLARGE64.POST:  16C64G
-TI.S.6XLARGE48.POST:  24C48G
-TI.S.6XLARGE96.POST:  24C96G
-TI.S.8XLARGE64.POST:  32C64G
-TI.S.8XLARGE128.POST : 32C128G
-TI.GN10.2XLARGE40.POST: 8C40G V100*1 
-TI.GN10.5XLARGE80.POST:  18C80G V100*2 
-TI.GN10.10XLARGE160.POST :  32C160G V100*4
-TI.GN10.20XLARGE320.POST :  72C320G V100*8
-TI.GN7.8XLARGE128.POST: 32C128G T4*1 
-TI.GN7.10XLARGE160.POST: 40C160G T4*2 
-TI.GN7.20XLARGE320.POST: 80C32
+                     * 设置<p>算力规格ID<br>计算规格 (for后付费)，可选值如下：<br>TI.S.LARGE.POST: 4C8G<br>TI.S.2XLARGE16.POST:  8C16G<br>TI.S.2XLARGE32.POST:  8C32G<br>TI.S.4XLARGE32.POST:  16C32G<br>TI.S.4XLARGE64.POST:  16C64G<br>TI.S.6XLARGE48.POST:  24C48G<br>TI.S.6XLARGE96.POST:  24C96G<br>TI.S.8XLARGE64.POST:  32C64G<br>TI.S.8XLARGE128.POST : 32C128G<br>TI.GN10.2XLARGE40.POST: 8C40G V100<em>1<br>TI.GN10.5XLARGE80.POST:  18C80G V100</em>2<br>TI.GN10.10XLARGE160.POST :  32C160G V100<em>4<br>TI.GN10.20XLARGE320.POST :  72C320G V100</em>8<br>TI.GN7.8XLARGE128.POST: 32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST: 40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST: 80C32</p>
+                     * @param _instanceType <p>算力规格ID<br>计算规格 (for后付费)，可选值如下：<br>TI.S.LARGE.POST: 4C8G<br>TI.S.2XLARGE16.POST:  8C16G<br>TI.S.2XLARGE32.POST:  8C32G<br>TI.S.4XLARGE32.POST:  16C32G<br>TI.S.4XLARGE64.POST:  16C64G<br>TI.S.6XLARGE48.POST:  24C48G<br>TI.S.6XLARGE96.POST:  24C96G<br>TI.S.8XLARGE64.POST:  32C64G<br>TI.S.8XLARGE128.POST : 32C128G<br>TI.GN10.2XLARGE40.POST: 8C40G V100<em>1<br>TI.GN10.5XLARGE80.POST:  18C80G V100</em>2<br>TI.GN10.10XLARGE160.POST :  32C160G V100<em>4<br>TI.GN10.20XLARGE320.POST :  72C320G V100</em>8<br>TI.GN7.8XLARGE128.POST: 32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST: 40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST: 80C32</p>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -242,15 +174,15 @@ TI.GN7.20XLARGE320.POST: 80C32
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取计算节点数
-                     * @return InstanceNum 计算节点数
+                     * 获取<p>计算节点数</p>
+                     * @return InstanceNum <p>计算节点数</p>
                      * 
                      */
                     uint64_t GetInstanceNum() const;
 
                     /**
-                     * 设置计算节点数
-                     * @param _instanceNum 计算节点数
+                     * 设置<p>计算节点数</p>
+                     * @param _instanceNum <p>计算节点数</p>
                      * 
                      */
                     void SetInstanceNum(const uint64_t& _instanceNum);
@@ -263,83 +195,15 @@ TI.GN7.20XLARGE320.POST: 80C32
                     bool InstanceNumHasBeenSet() const;
 
                     /**
-                     * 获取算力规格名称
-计算规格 (for后付费)，可选值如下：
-4C8G 
-8C16G 
-8C32G 
-16C32G
-6C64G
-24C48G
-24C96G
-32C64G
-32C128G
-8C40G V100*1 
-8C80G V100*2 
-32C160G V100*4
-72C320G V100*8
-32C128G T4*1 
-40C160G T4*2 
-80C32
-                     * @return InstanceTypeAlias 算力规格名称
-计算规格 (for后付费)，可选值如下：
-4C8G 
-8C16G 
-8C32G 
-16C32G
-6C64G
-24C48G
-24C96G
-32C64G
-32C128G
-8C40G V100*1 
-8C80G V100*2 
-32C160G V100*4
-72C320G V100*8
-32C128G T4*1 
-40C160G T4*2 
-80C32
+                     * 获取<p>算力规格名称<br>计算规格 (for后付费)，可选值如下：<br>4C8G<br>8C16G<br>8C32G<br>16C32G<br>6C64G<br>24C48G<br>24C96G<br>32C64G<br>32C128G<br>8C40G V100<em>1<br>8C80G V100</em>2<br>32C160G V100<em>4<br>72C320G V100</em>8<br>32C128G T4<em>1<br>40C160G T4</em>2<br>80C32</p>
+                     * @return InstanceTypeAlias <p>算力规格名称<br>计算规格 (for后付费)，可选值如下：<br>4C8G<br>8C16G<br>8C32G<br>16C32G<br>6C64G<br>24C48G<br>24C96G<br>32C64G<br>32C128G<br>8C40G V100<em>1<br>8C80G V100</em>2<br>32C160G V100<em>4<br>72C320G V100</em>8<br>32C128G T4<em>1<br>40C160G T4</em>2<br>80C32</p>
                      * 
                      */
                     std::string GetInstanceTypeAlias() const;
 
                     /**
-                     * 设置算力规格名称
-计算规格 (for后付费)，可选值如下：
-4C8G 
-8C16G 
-8C32G 
-16C32G
-6C64G
-24C48G
-24C96G
-32C64G
-32C128G
-8C40G V100*1 
-8C80G V100*2 
-32C160G V100*4
-72C320G V100*8
-32C128G T4*1 
-40C160G T4*2 
-80C32
-                     * @param _instanceTypeAlias 算力规格名称
-计算规格 (for后付费)，可选值如下：
-4C8G 
-8C16G 
-8C32G 
-16C32G
-6C64G
-24C48G
-24C96G
-32C64G
-32C128G
-8C40G V100*1 
-8C80G V100*2 
-32C160G V100*4
-72C320G V100*8
-32C128G T4*1 
-40C160G T4*2 
-80C32
+                     * 设置<p>算力规格名称<br>计算规格 (for后付费)，可选值如下：<br>4C8G<br>8C16G<br>8C32G<br>16C32G<br>6C64G<br>24C48G<br>24C96G<br>32C64G<br>32C128G<br>8C40G V100<em>1<br>8C80G V100</em>2<br>32C160G V100<em>4<br>72C320G V100</em>8<br>32C128G T4<em>1<br>40C160G T4</em>2<br>80C32</p>
+                     * @param _instanceTypeAlias <p>算力规格名称<br>计算规格 (for后付费)，可选值如下：<br>4C8G<br>8C16G<br>8C32G<br>16C32G<br>6C64G<br>24C48G<br>24C96G<br>32C64G<br>32C128G<br>8C40G V100<em>1<br>8C80G V100</em>2<br>32C160G V100<em>4<br>72C320G V100</em>8<br>32C128G T4<em>1<br>40C160G T4</em>2<br>80C32</p>
                      * 
                      */
                     void SetInstanceTypeAlias(const std::string& _instanceTypeAlias);
@@ -352,18 +216,18 @@ TI.GN7.20XLARGE320.POST: 80C32
                     bool InstanceTypeAliasHasBeenSet() const;
 
                     /**
-                     * 获取RDMA配置
+                     * 获取<p>RDMA配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RDMAConfig RDMA配置
+                     * @return RDMAConfig <p>RDMA配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RDMAConfig GetRDMAConfig() const;
 
                     /**
-                     * 设置RDMA配置
+                     * 设置<p>RDMA配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rDMAConfig RDMA配置
+                     * @param _rDMAConfig <p>RDMA配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -379,89 +243,55 @@ TI.GN7.20XLARGE320.POST: 80C32
                 private:
 
                     /**
-                     * 角色，eg：PS、WORKER、DRIVER、EXECUTOR
+                     * <p>角色，eg：PS、WORKER、DRIVER、EXECUTOR</p>
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
 
                     /**
-                     * cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核
+                     * <p>cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核</p>
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存，使用资源组时需配置。单位为MB
+                     * <p>内存，使用资源组时需配置。单位为MB</p>
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * gpu卡类型，使用资源组时需配置
+                     * <p>gpu卡类型，使用资源组时需配置</p>
                      */
                     std::string m_gpuType;
                     bool m_gpuTypeHasBeenSet;
 
                     /**
-                     * gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡
+                     * <p>gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡</p>
                      */
                     uint64_t m_gpu;
                     bool m_gpuHasBeenSet;
 
                     /**
-                     * 算力规格ID
-计算规格 (for后付费)，可选值如下：
-TI.S.LARGE.POST: 4C8G 
-TI.S.2XLARGE16.POST:  8C16G 
-TI.S.2XLARGE32.POST:  8C32G 
-TI.S.4XLARGE32.POST:  16C32G
-TI.S.4XLARGE64.POST:  16C64G
-TI.S.6XLARGE48.POST:  24C48G
-TI.S.6XLARGE96.POST:  24C96G
-TI.S.8XLARGE64.POST:  32C64G
-TI.S.8XLARGE128.POST : 32C128G
-TI.GN10.2XLARGE40.POST: 8C40G V100*1 
-TI.GN10.5XLARGE80.POST:  18C80G V100*2 
-TI.GN10.10XLARGE160.POST :  32C160G V100*4
-TI.GN10.20XLARGE320.POST :  72C320G V100*8
-TI.GN7.8XLARGE128.POST: 32C128G T4*1 
-TI.GN7.10XLARGE160.POST: 40C160G T4*2 
-TI.GN7.20XLARGE320.POST: 80C32
+                     * <p>算力规格ID<br>计算规格 (for后付费)，可选值如下：<br>TI.S.LARGE.POST: 4C8G<br>TI.S.2XLARGE16.POST:  8C16G<br>TI.S.2XLARGE32.POST:  8C32G<br>TI.S.4XLARGE32.POST:  16C32G<br>TI.S.4XLARGE64.POST:  16C64G<br>TI.S.6XLARGE48.POST:  24C48G<br>TI.S.6XLARGE96.POST:  24C96G<br>TI.S.8XLARGE64.POST:  32C64G<br>TI.S.8XLARGE128.POST : 32C128G<br>TI.GN10.2XLARGE40.POST: 8C40G V100<em>1<br>TI.GN10.5XLARGE80.POST:  18C80G V100</em>2<br>TI.GN10.10XLARGE160.POST :  32C160G V100<em>4<br>TI.GN10.20XLARGE320.POST :  72C320G V100</em>8<br>TI.GN7.8XLARGE128.POST: 32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST: 40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST: 80C32</p>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 计算节点数
+                     * <p>计算节点数</p>
                      */
                     uint64_t m_instanceNum;
                     bool m_instanceNumHasBeenSet;
 
                     /**
-                     * 算力规格名称
-计算规格 (for后付费)，可选值如下：
-4C8G 
-8C16G 
-8C32G 
-16C32G
-6C64G
-24C48G
-24C96G
-32C64G
-32C128G
-8C40G V100*1 
-8C80G V100*2 
-32C160G V100*4
-72C320G V100*8
-32C128G T4*1 
-40C160G T4*2 
-80C32
+                     * <p>算力规格名称<br>计算规格 (for后付费)，可选值如下：<br>4C8G<br>8C16G<br>8C32G<br>16C32G<br>6C64G<br>24C48G<br>24C96G<br>32C64G<br>32C128G<br>8C40G V100<em>1<br>8C80G V100</em>2<br>32C160G V100<em>4<br>72C320G V100</em>8<br>32C128G T4<em>1<br>40C160G T4</em>2<br>80C32</p>
                      */
                     std::string m_instanceTypeAlias;
                     bool m_instanceTypeAliasHasBeenSet;
 
                     /**
-                     * RDMA配置
+                     * <p>RDMA配置</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RDMAConfig m_rDMAConfig;

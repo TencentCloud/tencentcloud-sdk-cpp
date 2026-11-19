@@ -2890,6 +2890,56 @@ DatabuddyClient::ListModelsOutcomeCallable DatabuddyClient::ListModelsCallable(c
     return prom->get_future();
 }
 
+DatabuddyClient::ListScheduledTasksOutcome DatabuddyClient::ListScheduledTasks(const ListScheduledTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListScheduledTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListScheduledTasksResponse rsp = ListScheduledTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListScheduledTasksOutcome(rsp);
+        else
+            return ListScheduledTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return ListScheduledTasksOutcome(outcome.GetError());
+    }
+}
+
+void DatabuddyClient::ListScheduledTasksAsync(const ListScheduledTasksRequest& request, const ListScheduledTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ListScheduledTasksRequest&;
+    using Resp = ListScheduledTasksResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ListScheduledTasks", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+DatabuddyClient::ListScheduledTasksOutcomeCallable DatabuddyClient::ListScheduledTasksCallable(const ListScheduledTasksRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ListScheduledTasksOutcome>>();
+    ListScheduledTasksAsync(
+    request,
+    [prom](
+        const DatabuddyClient*,
+        const ListScheduledTasksRequest&,
+        ListScheduledTasksOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 DatabuddyClient::ListSchemaNamesOutcome DatabuddyClient::ListSchemaNames(const ListSchemaNamesRequest &request)
 {
     auto outcome = MakeRequest(request, "ListSchemaNames");

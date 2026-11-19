@@ -63,6 +63,69 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>session会话ID</p>
+                     * @return SessionId <p>session会话ID</p>
+                     * 
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置<p>session会话ID</p>
+                     * @param _sessionId <p>session会话ID</p>
+                     * 
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     * 
+                     */
+                    bool SessionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>输入内容</p>
+                     * @return Content <p>输入内容</p>
+                     * 
+                     */
+                    std::string GetContent() const;
+
+                    /**
+                     * 设置<p>输入内容</p>
+                     * @param _content <p>输入内容</p>
+                     * 
+                     */
+                    void SetContent(const std::string& _content);
+
+                    /**
+                     * 判断参数 Content 是否已赋值
+                     * @return Content 是否已赋值
+                     * 
+                     */
+                    bool ContentHasBeenSet() const;
+
+                    /**
+                     * 获取<p>幂等键，调用方保证同一事件重试时携带同一 key</p>
+                     * @return IdempotencyKey <p>幂等键，调用方保证同一事件重试时携带同一 key</p>
+                     * 
+                     */
+                    std::string GetIdempotencyKey() const;
+
+                    /**
+                     * 设置<p>幂等键，调用方保证同一事件重试时携带同一 key</p>
+                     * @param _idempotencyKey <p>幂等键，调用方保证同一事件重试时携带同一 key</p>
+                     * 
+                     */
+                    void SetIdempotencyKey(const std::string& _idempotencyKey);
+
+                    /**
+                     * 判断参数 IdempotencyKey 是否已赋值
+                     * @return IdempotencyKey 是否已赋值
+                     * 
+                     */
+                    bool IdempotencyKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +133,24 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * <p>session会话ID</p>
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * <p>输入内容</p>
+                     */
+                    std::string m_content;
+                    bool m_contentHasBeenSet;
+
+                    /**
+                     * <p>幂等键，调用方保证同一事件重试时携带同一 key</p>
+                     */
+                    std::string m_idempotencyKey;
+                    bool m_idempotencyKeyHasBeenSet;
 
                 };
             }

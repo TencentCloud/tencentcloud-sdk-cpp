@@ -28,7 +28,8 @@ MultimodalDocParseRequest::MultimodalDocParseRequest() :
     m_resultTypeHasBeenSet(false),
     m_enableSubImgHasBeenSet(false),
     m_pageRangeHasBeenSet(false),
-    m_taskTypeHasBeenSet(false)
+    m_taskTypeHasBeenSet(false),
+    m_enableTableCellCoordHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string MultimodalDocParseRequest::ToJsonString() const
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_enableTableCellCoordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableTableCellCoord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableTableCellCoord, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void MultimodalDocParseRequest::SetTaskType(const int64_t& _taskType)
 bool MultimodalDocParseRequest::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+bool MultimodalDocParseRequest::GetEnableTableCellCoord() const
+{
+    return m_enableTableCellCoord;
+}
+
+void MultimodalDocParseRequest::SetEnableTableCellCoord(const bool& _enableTableCellCoord)
+{
+    m_enableTableCellCoord = _enableTableCellCoord;
+    m_enableTableCellCoordHasBeenSet = true;
+}
+
+bool MultimodalDocParseRequest::EnableTableCellCoordHasBeenSet() const
+{
+    return m_enableTableCellCoordHasBeenSet;
 }
 
 

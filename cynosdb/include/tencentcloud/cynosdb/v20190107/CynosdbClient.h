@@ -95,6 +95,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/CreateProxyResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateProxyEndPointRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateProxyEndPointResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateProxyEndPointsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateProxyEndPointsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateResourcePackageRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateResourcePackageResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateVaultRequest.h>
@@ -637,6 +639,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateProxyEndPointResponse> CreateProxyEndPointOutcome;
                 typedef std::future<CreateProxyEndPointOutcome> CreateProxyEndPointOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateProxyEndPointRequest&, CreateProxyEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProxyEndPointAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProxyEndPointsResponse> CreateProxyEndPointsOutcome;
+                typedef std::future<CreateProxyEndPointsOutcome> CreateProxyEndPointsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CreateProxyEndPointsRequest&, CreateProxyEndPointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProxyEndPointsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateResourcePackageResponse> CreateResourcePackageOutcome;
                 typedef std::future<CreateResourcePackageOutcome> CreateResourcePackageOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateResourcePackageRequest&, CreateResourcePackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourcePackageAsyncHandler;
@@ -1593,6 +1598,15 @@ namespace TencentCloud
                 CreateProxyEndPointOutcome CreateProxyEndPoint(const Model::CreateProxyEndPointRequest &request);
                 void CreateProxyEndPointAsync(const Model::CreateProxyEndPointRequest& request, const CreateProxyEndPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateProxyEndPointOutcomeCallable CreateProxyEndPointCallable(const Model::CreateProxyEndPointRequest& request);
+
+                /**
+                 *本接口（CreateProxyEndPoints）用于批量创建数据库代理连接点。
+                 * @param req CreateProxyEndPointsRequest
+                 * @return CreateProxyEndPointsOutcome
+                 */
+                CreateProxyEndPointsOutcome CreateProxyEndPoints(const Model::CreateProxyEndPointsRequest &request);
+                void CreateProxyEndPointsAsync(const Model::CreateProxyEndPointsRequest& request, const CreateProxyEndPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProxyEndPointsOutcomeCallable CreateProxyEndPointsCallable(const Model::CreateProxyEndPointsRequest& request);
 
                 /**
                  *本接口（CreateResourcePackage）用于新购资源包。

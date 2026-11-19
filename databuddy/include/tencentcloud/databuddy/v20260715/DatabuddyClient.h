@@ -137,6 +137,8 @@
 #include <tencentcloud/databuddy/v20260715/model/ListLocationsResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListModelsRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/ListModelsResponse.h>
+#include <tencentcloud/databuddy/v20260715/model/ListScheduledTasksRequest.h>
+#include <tencentcloud/databuddy/v20260715/model/ListScheduledTasksResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListSchemaNamesRequest.h>
 #include <tencentcloud/databuddy/v20260715/model/ListSchemaNamesResponse.h>
 #include <tencentcloud/databuddy/v20260715/model/ListSchemasRequest.h>
@@ -414,6 +416,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListModelsResponse> ListModelsOutcome;
                 typedef std::future<ListModelsOutcome> ListModelsOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::ListModelsRequest&, ListModelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListModelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListScheduledTasksResponse> ListScheduledTasksOutcome;
+                typedef std::future<ListScheduledTasksOutcome> ListScheduledTasksOutcomeCallable;
+                typedef std::function<void(const DatabuddyClient*, const Model::ListScheduledTasksRequest&, ListScheduledTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListScheduledTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListSchemaNamesResponse> ListSchemaNamesOutcome;
                 typedef std::future<ListSchemaNamesOutcome> ListSchemaNamesOutcomeCallable;
                 typedef std::function<void(const DatabuddyClient*, const Model::ListSchemaNamesRequest&, ListSchemaNamesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListSchemaNamesAsyncHandler;
@@ -1116,6 +1121,15 @@ namespace TencentCloud
                 ListModelsOutcome ListModels(const Model::ListModelsRequest &request);
                 void ListModelsAsync(const Model::ListModelsRequest& request, const ListModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListModelsOutcomeCallable ListModelsCallable(const Model::ListModelsRequest& request);
+
+                /**
+                 *分页查询工作空间下的定时任务列表；支持按 SessionType、AnalysisSpaceId、TaskName 过滤。返回内容包含任务的完整详情，含 SkillIds 与 MCPIds。
+                 * @param req ListScheduledTasksRequest
+                 * @return ListScheduledTasksOutcome
+                 */
+                ListScheduledTasksOutcome ListScheduledTasks(const Model::ListScheduledTasksRequest &request);
+                void ListScheduledTasksAsync(const Model::ListScheduledTasksRequest& request, const ListScheduledTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListScheduledTasksOutcomeCallable ListScheduledTasksCallable(const Model::ListScheduledTasksRequest& request);
 
                 /**
                  *分页查询数据库名称列表

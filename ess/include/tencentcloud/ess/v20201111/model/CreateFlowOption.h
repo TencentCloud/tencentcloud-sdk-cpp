@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/CreateResultPageConfig.h>
 #include <tencentcloud/ess/v20201111/model/SignComponentConfig.h>
+#include <tencentcloud/ess/v20201111/model/EmbedSignComponentLimit.h>
 
 
 namespace TencentCloud
@@ -573,6 +574,27 @@ namespace TencentCloud
                      */
                     bool CcInfoVisibilityHasBeenSet() const;
 
+                    /**
+                     * 获取<p><br>在调用<a href="https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow">创建发起流程web页面</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>
+                     * @return SignComponentLimits <p><br>在调用<a href="https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow">创建发起流程web页面</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>
+                     * 
+                     */
+                    std::vector<EmbedSignComponentLimit> GetSignComponentLimits() const;
+
+                    /**
+                     * 设置<p><br>在调用<a href="https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow">创建发起流程web页面</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>
+                     * @param _signComponentLimits <p><br>在调用<a href="https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow">创建发起流程web页面</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>
+                     * 
+                     */
+                    void SetSignComponentLimits(const std::vector<EmbedSignComponentLimit>& _signComponentLimits);
+
+                    /**
+                     * 判断参数 SignComponentLimits 是否已赋值
+                     * @return SignComponentLimits 是否已赋值
+                     * 
+                     */
+                    bool SignComponentLimitsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -724,6 +746,12 @@ namespace TencentCloud
                      */
                     int64_t m_ccInfoVisibility;
                     bool m_ccInfoVisibilityHasBeenSet;
+
+                    /**
+                     * <p><br>在调用<a href="https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow">创建发起流程web页面</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>
+                     */
+                    std::vector<EmbedSignComponentLimit> m_signComponentLimits;
+                    bool m_signComponentLimitsHasBeenSet;
 
                 };
             }

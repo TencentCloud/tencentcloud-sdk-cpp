@@ -85,6 +85,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudSliceTaskResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudTranscriptionRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudTranscriptionResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeFinanceCloudRoomUsageRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeFinanceCloudRoomUsageResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeLiveStreamModerationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeLiveStreamModerationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeMixTranscodingUsageRequest.h>
@@ -324,6 +326,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudTranscriptionResponse> DescribeCloudTranscriptionOutcome;
                 typedef std::future<DescribeCloudTranscriptionOutcome> DescribeCloudTranscriptionOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCloudTranscriptionRequest&, DescribeCloudTranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudTranscriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFinanceCloudRoomUsageResponse> DescribeFinanceCloudRoomUsageOutcome;
+                typedef std::future<DescribeFinanceCloudRoomUsageOutcome> DescribeFinanceCloudRoomUsageOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeFinanceCloudRoomUsageRequest&, DescribeFinanceCloudRoomUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFinanceCloudRoomUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLiveStreamModerationResponse> DescribeLiveStreamModerationOutcome;
                 typedef std::future<DescribeLiveStreamModerationOutcome> DescribeLiveStreamModerationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeLiveStreamModerationRequest&, DescribeLiveStreamModerationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveStreamModerationAsyncHandler;
@@ -850,6 +855,15 @@ namespace TencentCloud
                 DescribeCloudTranscriptionOutcome DescribeCloudTranscription(const Model::DescribeCloudTranscriptionRequest &request);
                 void DescribeCloudTranscriptionAsync(const Model::DescribeCloudTranscriptionRequest& request, const DescribeCloudTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudTranscriptionOutcomeCallable DescribeCloudTranscriptionCallable(const Model::DescribeCloudTranscriptionRequest& request);
+
+                /**
+                 *本接口（DescribeFinanceCloudRoomUsage）用于查询金融云 TRTC 房间维度用量。
+                 * @param req DescribeFinanceCloudRoomUsageRequest
+                 * @return DescribeFinanceCloudRoomUsageOutcome
+                 */
+                DescribeFinanceCloudRoomUsageOutcome DescribeFinanceCloudRoomUsage(const Model::DescribeFinanceCloudRoomUsageRequest &request);
+                void DescribeFinanceCloudRoomUsageAsync(const Model::DescribeFinanceCloudRoomUsageRequest& request, const DescribeFinanceCloudRoomUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFinanceCloudRoomUsageOutcomeCallable DescribeFinanceCloudRoomUsageCallable(const Model::DescribeFinanceCloudRoomUsageRequest& request);
 
                 /**
                  *成功开启直播流AI 内容理解任务后，可以使用此接口来查询AI 内容理解任务状态，仅在任务进行时有效，任务退出后查询将会返回错误。

@@ -26,7 +26,8 @@ UpdateSecretRequest::UpdateSecretRequest() :
     m_secretNameHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_secretBinaryHasBeenSet(false),
-    m_secretStringHasBeenSet(false)
+    m_secretStringHasBeenSet(false),
+    m_versionStageHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string UpdateSecretRequest::ToJsonString() const
         string key = "SecretString";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_secretString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionStageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionStage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_versionStage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void UpdateSecretRequest::SetSecretString(const string& _secretString)
 bool UpdateSecretRequest::SecretStringHasBeenSet() const
 {
     return m_secretStringHasBeenSet;
+}
+
+string UpdateSecretRequest::GetVersionStage() const
+{
+    return m_versionStage;
+}
+
+void UpdateSecretRequest::SetVersionStage(const string& _versionStage)
+{
+    m_versionStage = _versionStage;
+    m_versionStageHasBeenSet = true;
+}
+
+bool UpdateSecretRequest::VersionStageHasBeenSet() const
+{
+    return m_versionStageHasBeenSet;
 }
 
 

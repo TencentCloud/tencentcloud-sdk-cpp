@@ -1840,6 +1840,56 @@ CynosdbClient::CreateProxyEndPointOutcomeCallable CynosdbClient::CreateProxyEndP
     return prom->get_future();
 }
 
+CynosdbClient::CreateProxyEndPointsOutcome CynosdbClient::CreateProxyEndPoints(const CreateProxyEndPointsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProxyEndPoints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProxyEndPointsResponse rsp = CreateProxyEndPointsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProxyEndPointsOutcome(rsp);
+        else
+            return CreateProxyEndPointsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProxyEndPointsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CreateProxyEndPointsAsync(const CreateProxyEndPointsRequest& request, const CreateProxyEndPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateProxyEndPointsRequest&;
+    using Resp = CreateProxyEndPointsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateProxyEndPoints", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CynosdbClient::CreateProxyEndPointsOutcomeCallable CynosdbClient::CreateProxyEndPointsCallable(const CreateProxyEndPointsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateProxyEndPointsOutcome>>();
+    CreateProxyEndPointsAsync(
+    request,
+    [prom](
+        const CynosdbClient*,
+        const CreateProxyEndPointsRequest&,
+        CreateProxyEndPointsOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CynosdbClient::CreateResourcePackageOutcome CynosdbClient::CreateResourcePackage(const CreateResourcePackageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateResourcePackage");

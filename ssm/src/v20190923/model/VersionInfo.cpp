@@ -22,7 +22,8 @@ using namespace std;
 
 VersionInfo::VersionInfo() :
     m_versionIdHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_versionStagesHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ CoreInternalOutcome VersionInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("VersionStages") && !value["VersionStages"].IsNull())
+    {
+        if (!value["VersionStages"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VersionInfo.VersionStages` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VersionStages"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_versionStages.push_back((*itr).GetString());
+        }
+        m_versionStagesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +86,19 @@ void VersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_versionStagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionStages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_versionStages.begin(); itr != m_versionStages.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -107,5 +134,21 @@ void VersionInfo::SetCreateTime(const uint64_t& _createTime)
 bool VersionInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+vector<string> VersionInfo::GetVersionStages() const
+{
+    return m_versionStages;
+}
+
+void VersionInfo::SetVersionStages(const vector<string>& _versionStages)
+{
+    m_versionStages = _versionStages;
+    m_versionStagesHasBeenSet = true;
+}
+
+bool VersionInfo::VersionStagesHasBeenSet() const
+{
+    return m_versionStagesHasBeenSet;
 }
 

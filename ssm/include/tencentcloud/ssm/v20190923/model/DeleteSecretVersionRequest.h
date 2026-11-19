@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定凭据名称。
-                     * @return SecretName 指定凭据名称。
+                     * 获取<p>指定凭据名称。</p>
+                     * @return SecretName <p>指定凭据名称。</p>
                      * 
                      */
                     std::string GetSecretName() const;
 
                     /**
-                     * 设置指定凭据名称。
-                     * @param _secretName 指定凭据名称。
+                     * 设置<p>指定凭据名称。</p>
+                     * @param _secretName <p>指定凭据名称。</p>
                      * 
                      */
                     void SetSecretName(const std::string& _secretName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取指定该名称下需要删除的凭据的版本号。
-                     * @return VersionId 指定该名称下需要删除的凭据的版本号。
+                     * 获取<p>指定该名称下需要删除的凭据的版本号。</p><p>仅支持删除自定义凭据版本。目标版本持有 Stage_Current 标签时返回 FailedOperation，须先通过 UpdateSecret 将标签迁移到其他已有版本。存在并发写入或轮转等操作、未取得共享写锁时返回 OperationDenied。</p>
+                     * @return VersionId <p>指定该名称下需要删除的凭据的版本号。</p><p>仅支持删除自定义凭据版本。目标版本持有 Stage_Current 标签时返回 FailedOperation，须先通过 UpdateSecret 将标签迁移到其他已有版本。存在并发写入或轮转等操作、未取得共享写锁时返回 OperationDenied。</p>
                      * 
                      */
                     std::string GetVersionId() const;
 
                     /**
-                     * 设置指定该名称下需要删除的凭据的版本号。
-                     * @param _versionId 指定该名称下需要删除的凭据的版本号。
+                     * 设置<p>指定该名称下需要删除的凭据的版本号。</p><p>仅支持删除自定义凭据版本。目标版本持有 Stage_Current 标签时返回 FailedOperation，须先通过 UpdateSecret 将标签迁移到其他已有版本。存在并发写入或轮转等操作、未取得共享写锁时返回 OperationDenied。</p>
+                     * @param _versionId <p>指定该名称下需要删除的凭据的版本号。</p><p>仅支持删除自定义凭据版本。目标版本持有 Stage_Current 标签时返回 FailedOperation，须先通过 UpdateSecret 将标签迁移到其他已有版本。存在并发写入或轮转等操作、未取得共享写锁时返回 OperationDenied。</p>
                      * 
                      */
                     void SetVersionId(const std::string& _versionId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指定凭据名称。
+                     * <p>指定凭据名称。</p>
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 指定该名称下需要删除的凭据的版本号。
+                     * <p>指定该名称下需要删除的凭据的版本号。</p><p>仅支持删除自定义凭据版本。目标版本持有 Stage_Current 标签时返回 FailedOperation，须先通过 UpdateSecret 将标签迁移到其他已有版本。存在并发写入或轮转等操作、未取得共享写锁时返回 OperationDenied。</p>
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 CreateChannelSubOrganizationActiveRequest::CreateChannelSubOrganizationActiveRequest() :
     m_agentHasBeenSet(false),
     m_subOrganizationOpenIdsHasBeenSet(false),
-    m_renewHasBeenSet(false)
+    m_renewHasBeenSet(false),
+    m_unbindHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,14 @@ string CreateChannelSubOrganizationActiveRequest::ToJsonString() const
         string key = "Renew";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_renew, allocator);
+    }
+
+    if (m_unbindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Unbind";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_unbind, allocator);
     }
 
 
@@ -120,6 +129,22 @@ void CreateChannelSubOrganizationActiveRequest::SetRenew(const bool& _renew)
 bool CreateChannelSubOrganizationActiveRequest::RenewHasBeenSet() const
 {
     return m_renewHasBeenSet;
+}
+
+bool CreateChannelSubOrganizationActiveRequest::GetUnbind() const
+{
+    return m_unbind;
+}
+
+void CreateChannelSubOrganizationActiveRequest::SetUnbind(const bool& _unbind)
+{
+    m_unbind = _unbind;
+    m_unbindHasBeenSet = true;
+}
+
+bool CreateChannelSubOrganizationActiveRequest::UnbindHasBeenSet() const
+{
+    return m_unbindHasBeenSet;
 }
 
 

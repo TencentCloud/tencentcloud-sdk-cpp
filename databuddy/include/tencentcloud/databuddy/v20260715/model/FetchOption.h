@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool FetchDimensionsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否获取tclake表的snapshots文件信息（文件大小、文件数量、最后修改时间）<br>各接口默认行为不同：</p><ul><li>GetTable：不传或未设置时默认获取（true），显式传 false 时跳过</li><li>GetTables：不传或未设置时默认不获取（false），显式传 true 时获取；获取会显著增加接口耗时</li></ul>
+                     * @return FetchTableFilesInfo <p>是否获取tclake表的snapshots文件信息（文件大小、文件数量、最后修改时间）<br>各接口默认行为不同：</p><ul><li>GetTable：不传或未设置时默认获取（true），显式传 false 时跳过</li><li>GetTables：不传或未设置时默认不获取（false），显式传 true 时获取；获取会显著增加接口耗时</li></ul>
+                     * 
+                     */
+                    bool GetFetchTableFilesInfo() const;
+
+                    /**
+                     * 设置<p>是否获取tclake表的snapshots文件信息（文件大小、文件数量、最后修改时间）<br>各接口默认行为不同：</p><ul><li>GetTable：不传或未设置时默认获取（true），显式传 false 时跳过</li><li>GetTables：不传或未设置时默认不获取（false），显式传 true 时获取；获取会显著增加接口耗时</li></ul>
+                     * @param _fetchTableFilesInfo <p>是否获取tclake表的snapshots文件信息（文件大小、文件数量、最后修改时间）<br>各接口默认行为不同：</p><ul><li>GetTable：不传或未设置时默认获取（true），显式传 false 时跳过</li><li>GetTables：不传或未设置时默认不获取（false），显式传 true 时获取；获取会显著增加接口耗时</li></ul>
+                     * 
+                     */
+                    void SetFetchTableFilesInfo(const bool& _fetchTableFilesInfo);
+
+                    /**
+                     * 判断参数 FetchTableFilesInfo 是否已赋值
+                     * @return FetchTableFilesInfo 是否已赋值
+                     * 
+                     */
+                    bool FetchTableFilesInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     bool m_fetchDimensions;
                     bool m_fetchDimensionsHasBeenSet;
+
+                    /**
+                     * <p>是否获取tclake表的snapshots文件信息（文件大小、文件数量、最后修改时间）<br>各接口默认行为不同：</p><ul><li>GetTable：不传或未设置时默认获取（true），显式传 false 时跳过</li><li>GetTables：不传或未设置时默认不获取（false），显式传 true 时获取；获取会显著增加接口耗时</li></ul>
+                     */
+                    bool m_fetchTableFilesInfo;
+                    bool m_fetchTableFilesInfoHasBeenSet;
 
                 };
             }

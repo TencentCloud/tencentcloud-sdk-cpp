@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取版本号
-                     * @return VersionId 版本号
+                     * 获取<p>版本号</p>
+                     * @return VersionId <p>版本号</p>
                      * 
                      */
                     std::string GetVersionId() const;
 
                     /**
-                     * 设置版本号
-                     * @param _versionId 版本号
+                     * 设置<p>版本号</p>
+                     * @param _versionId <p>版本号</p>
                      * 
                      */
                     void SetVersionId(const std::string& _versionId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool VersionIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，unix时间戳。
-                     * @return CreateTime 创建时间，unix时间戳。
+                     * 获取<p>创建时间，unix时间戳。</p>
+                     * @return CreateTime <p>创建时间，unix时间戳。</p>
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，unix时间戳。
-                     * @param _createTime 创建时间，unix时间戳。
+                     * 设置<p>创建时间，unix时间戳。</p>
+                     * @param _createTime <p>创建时间，unix时间戳。</p>
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -88,19 +88,46 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>该版本持有的公开版本标签列表，用于查看标签指向。</p><p>自定义、云产品及 Redis/MongoDB 凭据在版本列表中返回此字段，仅包含 Stage_Current；无标签时返回空数组 []。</p>
+                     * @return VersionStages <p>该版本持有的公开版本标签列表，用于查看标签指向。</p><p>自定义、云产品及 Redis/MongoDB 凭据在版本列表中返回此字段，仅包含 Stage_Current；无标签时返回空数组 []。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetVersionStages() const;
+
+                    /**
+                     * 设置<p>该版本持有的公开版本标签列表，用于查看标签指向。</p><p>自定义、云产品及 Redis/MongoDB 凭据在版本列表中返回此字段，仅包含 Stage_Current；无标签时返回空数组 []。</p>
+                     * @param _versionStages <p>该版本持有的公开版本标签列表，用于查看标签指向。</p><p>自定义、云产品及 Redis/MongoDB 凭据在版本列表中返回此字段，仅包含 Stage_Current；无标签时返回空数组 []。</p>
+                     * 
+                     */
+                    void SetVersionStages(const std::vector<std::string>& _versionStages);
+
+                    /**
+                     * 判断参数 VersionStages 是否已赋值
+                     * @return VersionStages 是否已赋值
+                     * 
+                     */
+                    bool VersionStagesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 版本号
+                     * <p>版本号</p>
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
-                     * 创建时间，unix时间戳。
+                     * <p>创建时间，unix时间戳。</p>
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>该版本持有的公开版本标签列表，用于查看标签指向。</p><p>自定义、云产品及 Redis/MongoDB 凭据在版本列表中返回此字段，仅包含 Stage_Current；无标签时返回空数组 []。</p>
+                     */
+                    std::vector<std::string> m_versionStages;
+                    bool m_versionStagesHasBeenSet;
 
                 };
             }

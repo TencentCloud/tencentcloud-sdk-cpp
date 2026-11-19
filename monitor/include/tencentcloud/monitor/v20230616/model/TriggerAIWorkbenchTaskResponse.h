@@ -59,6 +59,38 @@ namespace TencentCloud
                      */
                     bool ExecutionIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>会话 ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionId <p>会话 ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     * 
+                     */
+                    bool SessionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>运行 ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunId <p>运行 ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRunId() const;
+
+                    /**
+                     * 判断参数 RunId 是否已赋值
+                     * @return RunId 是否已赋值
+                     * 
+                     */
+                    bool RunIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +99,20 @@ namespace TencentCloud
                      */
                     std::string m_executionId;
                     bool m_executionIdHasBeenSet;
+
+                    /**
+                     * <p>会话 ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * <p>运行 ID</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_runId;
+                    bool m_runIdHasBeenSet;
 
                 };
             }

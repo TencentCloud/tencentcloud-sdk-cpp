@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指定需要更新凭据内容的名称。
-                     * @return SecretName 指定需要更新凭据内容的名称。
+                     * 获取<p>指定需要更新凭据内容的名称。</p>
+                     * @return SecretName <p>指定需要更新凭据内容的名称。</p>
                      * 
                      */
                     std::string GetSecretName() const;
 
                     /**
-                     * 设置指定需要更新凭据内容的名称。
-                     * @param _secretName 指定需要更新凭据内容的名称。
+                     * 设置<p>指定需要更新凭据内容的名称。</p>
+                     * @param _secretName <p>指定需要更新凭据内容的名称。</p>
                      * 
                      */
                     void SetSecretName(const std::string& _secretName);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取指定需要更新凭据内容的版本号。
-                     * @return VersionId 指定需要更新凭据内容的版本号。
+                     * 获取<p>指定需要更新内容或设置版本标签的已有版本号，必填。</p><p>指定 VersionStage 时，将该标签迁移到此版本。目标版本不存在返回 ResourceNotFound；凭据处于 PendingCreate 或 CreateFailed 状态时返回 FailedOperation。</p>
+                     * @return VersionId <p>指定需要更新内容或设置版本标签的已有版本号，必填。</p><p>指定 VersionStage 时，将该标签迁移到此版本。目标版本不存在返回 ResourceNotFound；凭据处于 PendingCreate 或 CreateFailed 状态时返回 FailedOperation。</p>
                      * 
                      */
                     std::string GetVersionId() const;
 
                     /**
-                     * 设置指定需要更新凭据内容的版本号。
-                     * @param _versionId 指定需要更新凭据内容的版本号。
+                     * 设置<p>指定需要更新内容或设置版本标签的已有版本号，必填。</p><p>指定 VersionStage 时，将该标签迁移到此版本。目标版本不存在返回 ResourceNotFound；凭据处于 PendingCreate 或 CreateFailed 状态时返回 FailedOperation。</p>
+                     * @param _versionId <p>指定需要更新内容或设置版本标签的已有版本号，必填。</p><p>指定 VersionStage 时，将该标签迁移到此版本。目标版本不存在返回 ResourceNotFound；凭据处于 PendingCreate 或 CreateFailed 状态时返回 FailedOperation。</p>
                      * 
                      */
                     void SetVersionId(const std::string& _versionId);
@@ -85,19 +85,15 @@ namespace TencentCloud
                     bool VersionIdHasBeenSet() const;
 
                     /**
-                     * 获取新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。
-SecretBinary 和 SecretString 只能一个不为空。
-                     * @return SecretBinary 新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。
-SecretBinary 和 SecretString 只能一个不为空。
+                     * 获取<p>新的二进制凭据内容，须使用 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>
+                     * @return SecretBinary <p>新的二进制凭据内容，须使用 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>
                      * 
                      */
                     std::string GetSecretBinary() const;
 
                     /**
-                     * 设置新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。
-SecretBinary 和 SecretString 只能一个不为空。
-                     * @param _secretBinary 新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。
-SecretBinary 和 SecretString 只能一个不为空。
+                     * 设置<p>新的二进制凭据内容，须使用 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>
+                     * @param _secretBinary <p>新的二进制凭据内容，须使用 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>
                      * 
                      */
                     void SetSecretBinary(const std::string& _secretBinary);
@@ -110,15 +106,15 @@ SecretBinary 和 SecretString 只能一个不为空。
                     bool SecretBinaryHasBeenSet() const;
 
                     /**
-                     * 获取新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。
-                     * @return SecretString 新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。
+                     * 获取<p>新的文本凭据内容，无需 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>
+                     * @return SecretString <p>新的文本凭据内容，无需 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>
                      * 
                      */
                     std::string GetSecretString() const;
 
                     /**
-                     * 设置新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。
-                     * @param _secretString 新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。
+                     * 设置<p>新的文本凭据内容，无需 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>
+                     * @param _secretString <p>新的文本凭据内容，无需 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>
                      * 
                      */
                     void SetSecretString(const std::string& _secretString);
@@ -130,32 +126,58 @@ SecretBinary 和 SecretString 只能一个不为空。
                      */
                     bool SecretStringHasBeenSet() const;
 
+                    /**
+                     * 获取<p>将 Stage_Current 标签设置或迁移到 VersionId 指定的已有版本，大小写敏感。</p><p>入参限制：支持自定义、云产品及 Redis/MongoDB 凭据；VersionId 必填。</p><p>自定义凭据可仅设置标签，也可同时更新内容；SecretString 和 SecretBinary 不能同时非空。云产品及 Redis/MongoDB 仅支持标签操作，两项内容均须省略。标签绑定版本号，原轮转流程保持不变；绑定历史版本不保证账密仍有效。</p>
+                     * @return VersionStage <p>将 Stage_Current 标签设置或迁移到 VersionId 指定的已有版本，大小写敏感。</p><p>入参限制：支持自定义、云产品及 Redis/MongoDB 凭据；VersionId 必填。</p><p>自定义凭据可仅设置标签，也可同时更新内容；SecretString 和 SecretBinary 不能同时非空。云产品及 Redis/MongoDB 仅支持标签操作，两项内容均须省略。标签绑定版本号，原轮转流程保持不变；绑定历史版本不保证账密仍有效。</p>
+                     * 
+                     */
+                    std::string GetVersionStage() const;
+
+                    /**
+                     * 设置<p>将 Stage_Current 标签设置或迁移到 VersionId 指定的已有版本，大小写敏感。</p><p>入参限制：支持自定义、云产品及 Redis/MongoDB 凭据；VersionId 必填。</p><p>自定义凭据可仅设置标签，也可同时更新内容；SecretString 和 SecretBinary 不能同时非空。云产品及 Redis/MongoDB 仅支持标签操作，两项内容均须省略。标签绑定版本号，原轮转流程保持不变；绑定历史版本不保证账密仍有效。</p>
+                     * @param _versionStage <p>将 Stage_Current 标签设置或迁移到 VersionId 指定的已有版本，大小写敏感。</p><p>入参限制：支持自定义、云产品及 Redis/MongoDB 凭据；VersionId 必填。</p><p>自定义凭据可仅设置标签，也可同时更新内容；SecretString 和 SecretBinary 不能同时非空。云产品及 Redis/MongoDB 仅支持标签操作，两项内容均须省略。标签绑定版本号，原轮转流程保持不变；绑定历史版本不保证账密仍有效。</p>
+                     * 
+                     */
+                    void SetVersionStage(const std::string& _versionStage);
+
+                    /**
+                     * 判断参数 VersionStage 是否已赋值
+                     * @return VersionStage 是否已赋值
+                     * 
+                     */
+                    bool VersionStageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 指定需要更新凭据内容的名称。
+                     * <p>指定需要更新凭据内容的名称。</p>
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 指定需要更新凭据内容的版本号。
+                     * <p>指定需要更新内容或设置版本标签的已有版本号，必填。</p><p>指定 VersionStage 时，将该标签迁移到此版本。目标版本不存在返回 ResourceNotFound；凭据处于 PendingCreate 或 CreateFailed 状态时返回 FailedOperation。</p>
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
-                     * 新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。
-SecretBinary 和 SecretString 只能一个不为空。
+                     * <p>新的二进制凭据内容，须使用 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>
                      */
                     std::string m_secretBinary;
                     bool m_secretBinaryHasBeenSet;
 
                     /**
-                     * 新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。
+                     * <p>新的文本凭据内容，无需 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>
                      */
                     std::string m_secretString;
                     bool m_secretStringHasBeenSet;
+
+                    /**
+                     * <p>将 Stage_Current 标签设置或迁移到 VersionId 指定的已有版本，大小写敏感。</p><p>入参限制：支持自定义、云产品及 Redis/MongoDB 凭据；VersionId 必填。</p><p>自定义凭据可仅设置标签，也可同时更新内容；SecretString 和 SecretBinary 不能同时非空。云产品及 Redis/MongoDB 仅支持标签操作，两项内容均须省略。标签绑定版本号，原轮转流程保持不变；绑定历史版本不保证账密仍有效。</p>
+                     */
+                    std::string m_versionStage;
+                    bool m_versionStageHasBeenSet;
 
                 };
             }

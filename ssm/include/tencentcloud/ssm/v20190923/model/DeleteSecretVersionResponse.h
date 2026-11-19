@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取凭据名称。
-                     * @return SecretName 凭据名称。
+                     * 获取<p>凭据名称。</p>
+                     * @return SecretName <p>凭据名称。</p>
                      * 
                      */
                     std::string GetSecretName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SecretNameHasBeenSet() const;
 
                     /**
-                     * 获取凭据版本号。
-                     * @return VersionId 凭据版本号。
+                     * 获取<p>凭据版本号。</p>
+                     * @return VersionId <p>凭据版本号。</p>
                      * 
                      */
                     std::string GetVersionId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 凭据名称。
+                     * <p>凭据名称。</p>
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
-                     * 凭据版本号。
+                     * <p>凭据版本号。</p>
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;

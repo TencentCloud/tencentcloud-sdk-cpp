@@ -24,7 +24,9 @@ using namespace TencentCloud::Monitor::V20230616::Model;
 using namespace std;
 
 TriggerAIWorkbenchTaskResponse::TriggerAIWorkbenchTaskResponse() :
-    m_executionIdHasBeenSet(false)
+    m_executionIdHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_runIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome TriggerAIWorkbenchTaskResponse::Deserialize(const string &pa
         m_executionIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
+    {
+        if (!rsp["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(rsp["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RunId") && !rsp["RunId"].IsNull())
+    {
+        if (!rsp["RunId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runId = string(rsp["RunId"].GetString());
+        m_runIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string TriggerAIWorkbenchTaskResponse::ToJsonString() const
         string key = "ExecutionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ string TriggerAIWorkbenchTaskResponse::GetExecutionId() const
 bool TriggerAIWorkbenchTaskResponse::ExecutionIdHasBeenSet() const
 {
     return m_executionIdHasBeenSet;
+}
+
+string TriggerAIWorkbenchTaskResponse::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+bool TriggerAIWorkbenchTaskResponse::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+string TriggerAIWorkbenchTaskResponse::GetRunId() const
+{
+    return m_runId;
+}
+
+bool TriggerAIWorkbenchTaskResponse::RunIdHasBeenSet() const
+{
+    return m_runIdHasBeenSet;
 }
 
 

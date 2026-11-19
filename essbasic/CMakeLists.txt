@@ -103,7 +103,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CancelFailureFlow.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeBatchOrganizationRegistrationUrlsRequest.h
-  include/tencentcloud/essbasic/v20210526/model/PrepareFlowsResponse.h
+  include/tencentcloud/essbasic/v20210526/model/EmbedSignComponentLimit.h
   include/tencentcloud/essbasic/v20210526/model/CreateRequestWithEncryptionResponse.h
   include/tencentcloud/essbasic/v20210526/model/SignUrl.h
   include/tencentcloud/essbasic/v20210526/model/TemplateInfo.h
@@ -228,6 +228,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateBatchOrganizationRegistrationTasksRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchQuickSignUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateBatchOrganizationAuthorizationUrlResponse.h
+  include/tencentcloud/essbasic/v20210526/model/PrepareFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeBatchOrganizationRegistrationTasksResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlRequest.h
@@ -534,7 +535,7 @@ set(essbasic_src
   src/v20210526/model/CancelFailureFlow.cpp
   src/v20210526/model/ChannelDescribeRolesRequest.cpp
   src/v20210526/model/DescribeBatchOrganizationRegistrationUrlsRequest.cpp
-  src/v20210526/model/PrepareFlowsResponse.cpp
+  src/v20210526/model/EmbedSignComponentLimit.cpp
   src/v20210526/model/CreateRequestWithEncryptionResponse.cpp
   src/v20210526/model/SignUrl.cpp
   src/v20210526/model/TemplateInfo.cpp
@@ -659,6 +660,7 @@ set(essbasic_src
   src/v20210526/model/CreateBatchOrganizationRegistrationTasksRequest.cpp
   src/v20210526/model/ChannelCreateBatchQuickSignUrlResponse.cpp
   src/v20210526/model/CreateBatchOrganizationAuthorizationUrlResponse.cpp
+  src/v20210526/model/PrepareFlowsResponse.cpp
   src/v20210526/model/CreatePartnerAutoSignAuthUrlRequest.cpp
   src/v20210526/model/DescribeBatchOrganizationRegistrationTasksResponse.cpp
   src/v20210526/model/ChannelCreateBatchCancelFlowUrlRequest.cpp

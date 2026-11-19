@@ -30,7 +30,8 @@ SubmitMultimodalDocParseJobRequest::SubmitMultimodalDocParseJobRequest() :
     m_enableSubImgHasBeenSet(false),
     m_fileStartPageNumberHasBeenSet(false),
     m_fileEndPageNumberHasBeenSet(false),
-    m_taskTypeHasBeenSet(false)
+    m_taskTypeHasBeenSet(false),
+    m_enableTableCellCoordHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string SubmitMultimodalDocParseJobRequest::ToJsonString() const
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_enableTableCellCoordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableTableCellCoord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableTableCellCoord, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void SubmitMultimodalDocParseJobRequest::SetTaskType(const int64_t& _taskType)
 bool SubmitMultimodalDocParseJobRequest::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
+}
+
+bool SubmitMultimodalDocParseJobRequest::GetEnableTableCellCoord() const
+{
+    return m_enableTableCellCoord;
+}
+
+void SubmitMultimodalDocParseJobRequest::SetEnableTableCellCoord(const bool& _enableTableCellCoord)
+{
+    m_enableTableCellCoord = _enableTableCellCoord;
+    m_enableTableCellCoordHasBeenSet = true;
+}
+
+bool SubmitMultimodalDocParseJobRequest::EnableTableCellCoordHasBeenSet() const
+{
+    return m_enableTableCellCoordHasBeenSet;
 }
 
 

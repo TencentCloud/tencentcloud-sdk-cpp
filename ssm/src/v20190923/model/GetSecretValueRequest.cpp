@@ -26,7 +26,8 @@ GetSecretValueRequest::GetSecretValueRequest() :
     m_secretNameHasBeenSet(false),
     m_versionIdHasBeenSet(false),
     m_encryptionPublicKeyHasBeenSet(false),
-    m_encryptionAlgorithmHasBeenSet(false)
+    m_encryptionAlgorithmHasBeenSet(false),
+    m_versionStageHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string GetSecretValueRequest::ToJsonString() const
         string key = "EncryptionAlgorithm";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_encryptionAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionStageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionStage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_versionStage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void GetSecretValueRequest::SetEncryptionAlgorithm(const string& _encryptionAlgo
 bool GetSecretValueRequest::EncryptionAlgorithmHasBeenSet() const
 {
     return m_encryptionAlgorithmHasBeenSet;
+}
+
+string GetSecretValueRequest::GetVersionStage() const
+{
+    return m_versionStage;
+}
+
+void GetSecretValueRequest::SetVersionStage(const string& _versionStage)
+{
+    m_versionStage = _versionStage;
+    m_versionStageHasBeenSet = true;
+}
+
+bool GetSecretValueRequest::VersionStageHasBeenSet() const
+{
+    return m_versionStageHasBeenSet;
 }
 
 
