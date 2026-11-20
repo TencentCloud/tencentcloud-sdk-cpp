@@ -28,7 +28,8 @@ UpdateSandboxToolRequest::UpdateSandboxToolRequest() :
     m_networkConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_customConfigurationHasBeenSet(false),
-    m_computerConfigurationHasBeenSet(false)
+    m_computerConfigurationHasBeenSet(false),
+    m_storageMountsHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,21 @@ string UpdateSandboxToolRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_computerConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_storageMountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageMounts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_storageMounts.begin(); itr != m_storageMounts.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -199,6 +215,22 @@ void UpdateSandboxToolRequest::SetComputerConfiguration(const ComputerConfigurat
 bool UpdateSandboxToolRequest::ComputerConfigurationHasBeenSet() const
 {
     return m_computerConfigurationHasBeenSet;
+}
+
+vector<StorageMount> UpdateSandboxToolRequest::GetStorageMounts() const
+{
+    return m_storageMounts;
+}
+
+void UpdateSandboxToolRequest::SetStorageMounts(const vector<StorageMount>& _storageMounts)
+{
+    m_storageMounts = _storageMounts;
+    m_storageMountsHasBeenSet = true;
+}
+
+bool UpdateSandboxToolRequest::StorageMountsHasBeenSet() const
+{
+    return m_storageMountsHasBeenSet;
 }
 
 
