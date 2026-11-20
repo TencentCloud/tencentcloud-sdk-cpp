@@ -24,6 +24,7 @@
 #include <tencentcloud/ags/v20250920/model/MountOption.h>
 #include <tencentcloud/ags/v20250920/model/CustomConfiguration.h>
 #include <tencentcloud/ags/v20250920/model/MetadataVar.h>
+#include <tencentcloud/ags/v20250920/model/StorageMount.h>
 
 
 namespace TencentCloud
@@ -256,6 +257,27 @@ namespace TencentCloud
                     bool MetadataHasBeenSet() const;
 
                     /**
+                     * 获取<p>启动沙箱实例时追加挂载规则，仅支持 volume、cfs、cos、image</p>
+                     * @return StorageMounts <p>启动沙箱实例时追加挂载规则，仅支持 volume、cfs、cos、image</p>
+                     * 
+                     */
+                    std::vector<StorageMount> GetStorageMounts() const;
+
+                    /**
+                     * 设置<p>启动沙箱实例时追加挂载规则，仅支持 volume、cfs、cos、image</p>
+                     * @param _storageMounts <p>启动沙箱实例时追加挂载规则，仅支持 volume、cfs、cos、image</p>
+                     * 
+                     */
+                    void SetStorageMounts(const std::vector<StorageMount>& _storageMounts);
+
+                    /**
+                     * 判断参数 StorageMounts 是否已赋值
+                     * @return StorageMounts 是否已赋值
+                     * 
+                     */
+                    bool StorageMountsHasBeenSet() const;
+
+                    /**
                      * 获取<p>实例启动模式。DEFAULT：使用原有同步创建流程，为默认值；WAIT_UNTIL_HEALTHY：使用持久化后台创建流程，受理后可能返回 STARTING，需查询实例状态确认最终结果，当前仅支持WAA沙箱和GPU沙箱。</p>
                      * @return StartMode <p>实例启动模式。DEFAULT：使用原有同步创建流程，为默认值；WAIT_UNTIL_HEALTHY：使用持久化后台创建流程，受理后可能返回 STARTING，需查询实例状态确认最终结果，当前仅支持WAA沙箱和GPU沙箱。</p>
                      * 
@@ -337,6 +359,12 @@ namespace TencentCloud
                      */
                     std::vector<MetadataVar> m_metadata;
                     bool m_metadataHasBeenSet;
+
+                    /**
+                     * <p>启动沙箱实例时追加挂载规则，仅支持 volume、cfs、cos、image</p>
+                     */
+                    std::vector<StorageMount> m_storageMounts;
+                    bool m_storageMountsHasBeenSet;
 
                     /**
                      * <p>实例启动模式。DEFAULT：使用原有同步创建流程，为默认值；WAIT_UNTIL_HEALTHY：使用持久化后台创建流程，受理后可能返回 STARTING，需查询实例状态确认最终结果，当前仅支持WAA沙箱和GPU沙箱。</p>

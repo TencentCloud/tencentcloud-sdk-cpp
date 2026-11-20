@@ -33,6 +33,7 @@ StartSandboxInstanceRequest::StartSandboxInstanceRequest() :
     m_customConfigurationHasBeenSet(false),
     m_authModeHasBeenSet(false),
     m_metadataHasBeenSet(false),
+    m_storageMountsHasBeenSet(false),
     m_startModeHasBeenSet(false)
 {
 }
@@ -133,6 +134,21 @@ string StartSandboxInstanceRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_metadata.begin(); itr != m_metadata.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_storageMountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageMounts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_storageMounts.begin(); itr != m_storageMounts.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -313,6 +329,22 @@ void StartSandboxInstanceRequest::SetMetadata(const vector<MetadataVar>& _metada
 bool StartSandboxInstanceRequest::MetadataHasBeenSet() const
 {
     return m_metadataHasBeenSet;
+}
+
+vector<StorageMount> StartSandboxInstanceRequest::GetStorageMounts() const
+{
+    return m_storageMounts;
+}
+
+void StartSandboxInstanceRequest::SetStorageMounts(const vector<StorageMount>& _storageMounts)
+{
+    m_storageMounts = _storageMounts;
+    m_storageMountsHasBeenSet = true;
+}
+
+bool StartSandboxInstanceRequest::StorageMountsHasBeenSet() const
+{
+    return m_storageMountsHasBeenSet;
 }
 
 string StartSandboxInstanceRequest::GetStartMode() const

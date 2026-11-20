@@ -390,6 +390,56 @@ AgsClient::CreateDeploymentOutcomeCallable AgsClient::CreateDeploymentCallable(c
     return prom->get_future();
 }
 
+AgsClient::CreatePreCacheImageCleanupPolicyOutcome AgsClient::CreatePreCacheImageCleanupPolicy(const CreatePreCacheImageCleanupPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePreCacheImageCleanupPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePreCacheImageCleanupPolicyResponse rsp = CreatePreCacheImageCleanupPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePreCacheImageCleanupPolicyOutcome(rsp);
+        else
+            return CreatePreCacheImageCleanupPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePreCacheImageCleanupPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::CreatePreCacheImageCleanupPolicyAsync(const CreatePreCacheImageCleanupPolicyRequest& request, const CreatePreCacheImageCleanupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePreCacheImageCleanupPolicyRequest&;
+    using Resp = CreatePreCacheImageCleanupPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePreCacheImageCleanupPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::CreatePreCacheImageCleanupPolicyOutcomeCallable AgsClient::CreatePreCacheImageCleanupPolicyCallable(const CreatePreCacheImageCleanupPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePreCacheImageCleanupPolicyOutcome>>();
+    CreatePreCacheImageCleanupPolicyAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const CreatePreCacheImageCleanupPolicyRequest&,
+        CreatePreCacheImageCleanupPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AgsClient::CreatePreCacheImageTaskOutcome AgsClient::CreatePreCacheImageTask(const CreatePreCacheImageTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePreCacheImageTask");
@@ -932,6 +982,56 @@ AgsClient::DeletePreCacheImageOutcomeCallable AgsClient::DeletePreCacheImageCall
         const AgsClient*,
         const DeletePreCacheImageRequest&,
         DeletePreCacheImageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::DeletePreCacheImageCleanupPolicyOutcome AgsClient::DeletePreCacheImageCleanupPolicy(const DeletePreCacheImageCleanupPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePreCacheImageCleanupPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePreCacheImageCleanupPolicyResponse rsp = DeletePreCacheImageCleanupPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePreCacheImageCleanupPolicyOutcome(rsp);
+        else
+            return DeletePreCacheImageCleanupPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePreCacheImageCleanupPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DeletePreCacheImageCleanupPolicyAsync(const DeletePreCacheImageCleanupPolicyRequest& request, const DeletePreCacheImageCleanupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeletePreCacheImageCleanupPolicyRequest&;
+    using Resp = DeletePreCacheImageCleanupPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeletePreCacheImageCleanupPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DeletePreCacheImageCleanupPolicyOutcomeCallable AgsClient::DeletePreCacheImageCleanupPolicyCallable(const DeletePreCacheImageCleanupPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeletePreCacheImageCleanupPolicyOutcome>>();
+    DeletePreCacheImageCleanupPolicyAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DeletePreCacheImageCleanupPolicyRequest&,
+        DeletePreCacheImageCleanupPolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -1632,6 +1732,56 @@ AgsClient::DescribeGPUResourcesOutcomeCallable AgsClient::DescribeGPUResourcesCa
         const AgsClient*,
         const DescribeGPUResourcesRequest&,
         DescribeGPUResourcesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::DescribePreCacheImageCleanupPolicyListOutcome AgsClient::DescribePreCacheImageCleanupPolicyList(const DescribePreCacheImageCleanupPolicyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePreCacheImageCleanupPolicyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePreCacheImageCleanupPolicyListResponse rsp = DescribePreCacheImageCleanupPolicyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePreCacheImageCleanupPolicyListOutcome(rsp);
+        else
+            return DescribePreCacheImageCleanupPolicyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePreCacheImageCleanupPolicyListOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::DescribePreCacheImageCleanupPolicyListAsync(const DescribePreCacheImageCleanupPolicyListRequest& request, const DescribePreCacheImageCleanupPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePreCacheImageCleanupPolicyListRequest&;
+    using Resp = DescribePreCacheImageCleanupPolicyListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePreCacheImageCleanupPolicyList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::DescribePreCacheImageCleanupPolicyListOutcomeCallable AgsClient::DescribePreCacheImageCleanupPolicyListCallable(const DescribePreCacheImageCleanupPolicyListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePreCacheImageCleanupPolicyListOutcome>>();
+    DescribePreCacheImageCleanupPolicyListAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const DescribePreCacheImageCleanupPolicyListRequest&,
+        DescribePreCacheImageCleanupPolicyListOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -3132,6 +3282,56 @@ AgsClient::SyncRegistryRecordOutcomeCallable AgsClient::SyncRegistryRecordCallab
         const AgsClient*,
         const SyncRegistryRecordRequest&,
         SyncRegistryRecordOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AgsClient::UpdatePreCacheImageCleanupPolicyOutcome AgsClient::UpdatePreCacheImageCleanupPolicy(const UpdatePreCacheImageCleanupPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePreCacheImageCleanupPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePreCacheImageCleanupPolicyResponse rsp = UpdatePreCacheImageCleanupPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePreCacheImageCleanupPolicyOutcome(rsp);
+        else
+            return UpdatePreCacheImageCleanupPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePreCacheImageCleanupPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AgsClient::UpdatePreCacheImageCleanupPolicyAsync(const UpdatePreCacheImageCleanupPolicyRequest& request, const UpdatePreCacheImageCleanupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UpdatePreCacheImageCleanupPolicyRequest&;
+    using Resp = UpdatePreCacheImageCleanupPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UpdatePreCacheImageCleanupPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AgsClient::UpdatePreCacheImageCleanupPolicyOutcomeCallable AgsClient::UpdatePreCacheImageCleanupPolicyCallable(const UpdatePreCacheImageCleanupPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UpdatePreCacheImageCleanupPolicyOutcome>>();
+    UpdatePreCacheImageCleanupPolicyAsync(
+    request,
+    [prom](
+        const AgsClient*,
+        const UpdatePreCacheImageCleanupPolicyRequest&,
+        UpdatePreCacheImageCleanupPolicyOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

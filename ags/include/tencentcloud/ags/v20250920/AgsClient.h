@@ -37,6 +37,8 @@
 #include <tencentcloud/ags/v20250920/model/CreateAPIKeyResponse.h>
 #include <tencentcloud/ags/v20250920/model/CreateDeploymentRequest.h>
 #include <tencentcloud/ags/v20250920/model/CreateDeploymentResponse.h>
+#include <tencentcloud/ags/v20250920/model/CreatePreCacheImageCleanupPolicyRequest.h>
+#include <tencentcloud/ags/v20250920/model/CreatePreCacheImageCleanupPolicyResponse.h>
 #include <tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskRequest.h>
 #include <tencentcloud/ags/v20250920/model/CreatePreCacheImageTaskResponse.h>
 #include <tencentcloud/ags/v20250920/model/CreateRegistryRequest.h>
@@ -59,6 +61,8 @@
 #include <tencentcloud/ags/v20250920/model/DeleteGPUResourceGroupResponse.h>
 #include <tencentcloud/ags/v20250920/model/DeletePreCacheImageRequest.h>
 #include <tencentcloud/ags/v20250920/model/DeletePreCacheImageResponse.h>
+#include <tencentcloud/ags/v20250920/model/DeletePreCacheImageCleanupPolicyRequest.h>
+#include <tencentcloud/ags/v20250920/model/DeletePreCacheImageCleanupPolicyResponse.h>
 #include <tencentcloud/ags/v20250920/model/DeleteRegistryRequest.h>
 #include <tencentcloud/ags/v20250920/model/DeleteRegistryResponse.h>
 #include <tencentcloud/ags/v20250920/model/DeleteRegistryRecordRequest.h>
@@ -87,6 +91,8 @@
 #include <tencentcloud/ags/v20250920/model/DescribeGPUResourceSpecsResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribeGPUResourcesRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribeGPUResourcesResponse.h>
+#include <tencentcloud/ags/v20250920/model/DescribePreCacheImageCleanupPolicyListRequest.h>
+#include <tencentcloud/ags/v20250920/model/DescribePreCacheImageCleanupPolicyListResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribePreCacheImageListRequest.h>
 #include <tencentcloud/ags/v20250920/model/DescribePreCacheImageListResponse.h>
 #include <tencentcloud/ags/v20250920/model/DescribePreCacheImageTaskRequest.h>
@@ -147,6 +153,8 @@
 #include <tencentcloud/ags/v20250920/model/StopSandboxInstanceResponse.h>
 #include <tencentcloud/ags/v20250920/model/SyncRegistryRecordRequest.h>
 #include <tencentcloud/ags/v20250920/model/SyncRegistryRecordResponse.h>
+#include <tencentcloud/ags/v20250920/model/UpdatePreCacheImageCleanupPolicyRequest.h>
+#include <tencentcloud/ags/v20250920/model/UpdatePreCacheImageCleanupPolicyResponse.h>
 #include <tencentcloud/ags/v20250920/model/UpdateRegistryRequest.h>
 #include <tencentcloud/ags/v20250920/model/UpdateRegistryResponse.h>
 #include <tencentcloud/ags/v20250920/model/UpdateRegistryRecordRequest.h>
@@ -190,6 +198,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDeploymentResponse> CreateDeploymentOutcome;
                 typedef std::future<CreateDeploymentOutcome> CreateDeploymentOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::CreateDeploymentRequest&, CreateDeploymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeploymentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePreCacheImageCleanupPolicyResponse> CreatePreCacheImageCleanupPolicyOutcome;
+                typedef std::future<CreatePreCacheImageCleanupPolicyOutcome> CreatePreCacheImageCleanupPolicyOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::CreatePreCacheImageCleanupPolicyRequest&, CreatePreCacheImageCleanupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePreCacheImageCleanupPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePreCacheImageTaskResponse> CreatePreCacheImageTaskOutcome;
                 typedef std::future<CreatePreCacheImageTaskOutcome> CreatePreCacheImageTaskOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::CreatePreCacheImageTaskRequest&, CreatePreCacheImageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePreCacheImageTaskAsyncHandler;
@@ -223,6 +234,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePreCacheImageResponse> DeletePreCacheImageOutcome;
                 typedef std::future<DeletePreCacheImageOutcome> DeletePreCacheImageOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DeletePreCacheImageRequest&, DeletePreCacheImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePreCacheImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePreCacheImageCleanupPolicyResponse> DeletePreCacheImageCleanupPolicyOutcome;
+                typedef std::future<DeletePreCacheImageCleanupPolicyOutcome> DeletePreCacheImageCleanupPolicyOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::DeletePreCacheImageCleanupPolicyRequest&, DeletePreCacheImageCleanupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePreCacheImageCleanupPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRegistryResponse> DeleteRegistryOutcome;
                 typedef std::future<DeleteRegistryOutcome> DeleteRegistryOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DeleteRegistryRequest&, DeleteRegistryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRegistryAsyncHandler;
@@ -265,6 +279,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGPUResourcesResponse> DescribeGPUResourcesOutcome;
                 typedef std::future<DescribeGPUResourcesOutcome> DescribeGPUResourcesOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribeGPUResourcesRequest&, DescribeGPUResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGPUResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePreCacheImageCleanupPolicyListResponse> DescribePreCacheImageCleanupPolicyListOutcome;
+                typedef std::future<DescribePreCacheImageCleanupPolicyListOutcome> DescribePreCacheImageCleanupPolicyListOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::DescribePreCacheImageCleanupPolicyListRequest&, DescribePreCacheImageCleanupPolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePreCacheImageCleanupPolicyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePreCacheImageListResponse> DescribePreCacheImageListOutcome;
                 typedef std::future<DescribePreCacheImageListOutcome> DescribePreCacheImageListOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::DescribePreCacheImageListRequest&, DescribePreCacheImageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePreCacheImageListAsyncHandler;
@@ -355,6 +372,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SyncRegistryRecordResponse> SyncRegistryRecordOutcome;
                 typedef std::future<SyncRegistryRecordOutcome> SyncRegistryRecordOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::SyncRegistryRecordRequest&, SyncRegistryRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncRegistryRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdatePreCacheImageCleanupPolicyResponse> UpdatePreCacheImageCleanupPolicyOutcome;
+                typedef std::future<UpdatePreCacheImageCleanupPolicyOutcome> UpdatePreCacheImageCleanupPolicyOutcomeCallable;
+                typedef std::function<void(const AgsClient*, const Model::UpdatePreCacheImageCleanupPolicyRequest&, UpdatePreCacheImageCleanupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePreCacheImageCleanupPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateRegistryResponse> UpdateRegistryOutcome;
                 typedef std::future<UpdateRegistryOutcome> UpdateRegistryOutcomeCallable;
                 typedef std::function<void(const AgsClient*, const Model::UpdateRegistryRequest&, UpdateRegistryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRegistryAsyncHandler;
@@ -435,6 +455,15 @@ namespace TencentCloud
                 CreateDeploymentOutcome CreateDeployment(const Model::CreateDeploymentRequest &request);
                 void CreateDeploymentAsync(const Model::CreateDeploymentRequest& request, const CreateDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDeploymentOutcomeCallable CreateDeploymentCallable(const Model::CreateDeploymentRequest& request);
+
+                /**
+                 *创建镜像预热自动清理策略
+                 * @param req CreatePreCacheImageCleanupPolicyRequest
+                 * @return CreatePreCacheImageCleanupPolicyOutcome
+                 */
+                CreatePreCacheImageCleanupPolicyOutcome CreatePreCacheImageCleanupPolicy(const Model::CreatePreCacheImageCleanupPolicyRequest &request);
+                void CreatePreCacheImageCleanupPolicyAsync(const Model::CreatePreCacheImageCleanupPolicyRequest& request, const CreatePreCacheImageCleanupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePreCacheImageCleanupPolicyOutcomeCallable CreatePreCacheImageCleanupPolicyCallable(const Model::CreatePreCacheImageCleanupPolicyRequest& request);
 
                 /**
                  *创建镜像预热任务
@@ -538,6 +567,15 @@ namespace TencentCloud
                 DeletePreCacheImageOutcome DeletePreCacheImage(const Model::DeletePreCacheImageRequest &request);
                 void DeletePreCacheImageAsync(const Model::DeletePreCacheImageRequest& request, const DeletePreCacheImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePreCacheImageOutcomeCallable DeletePreCacheImageCallable(const Model::DeletePreCacheImageRequest& request);
+
+                /**
+                 *删除镜像预热自动卸载策略
+                 * @param req DeletePreCacheImageCleanupPolicyRequest
+                 * @return DeletePreCacheImageCleanupPolicyOutcome
+                 */
+                DeletePreCacheImageCleanupPolicyOutcome DeletePreCacheImageCleanupPolicy(const Model::DeletePreCacheImageCleanupPolicyRequest &request);
+                void DeletePreCacheImageCleanupPolicyAsync(const Model::DeletePreCacheImageCleanupPolicyRequest& request, const DeletePreCacheImageCleanupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePreCacheImageCleanupPolicyOutcomeCallable DeletePreCacheImageCleanupPolicyCallable(const Model::DeletePreCacheImageCleanupPolicyRequest& request);
 
                 /**
                  *删除 Registry。
@@ -668,6 +706,15 @@ namespace TencentCloud
                 DescribeGPUResourcesOutcome DescribeGPUResources(const Model::DescribeGPUResourcesRequest &request);
                 void DescribeGPUResourcesAsync(const Model::DescribeGPUResourcesRequest& request, const DescribeGPUResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGPUResourcesOutcomeCallable DescribeGPUResourcesCallable(const Model::DescribeGPUResourcesRequest& request);
+
+                /**
+                 *查询镜像预热自动卸载策略
+                 * @param req DescribePreCacheImageCleanupPolicyListRequest
+                 * @return DescribePreCacheImageCleanupPolicyListOutcome
+                 */
+                DescribePreCacheImageCleanupPolicyListOutcome DescribePreCacheImageCleanupPolicyList(const Model::DescribePreCacheImageCleanupPolicyListRequest &request);
+                void DescribePreCacheImageCleanupPolicyListAsync(const Model::DescribePreCacheImageCleanupPolicyListRequest& request, const DescribePreCacheImageCleanupPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePreCacheImageCleanupPolicyListOutcomeCallable DescribePreCacheImageCleanupPolicyListCallable(const Model::DescribePreCacheImageCleanupPolicyListRequest& request);
 
                 /**
                  *查询镜像预热列表
@@ -943,6 +990,15 @@ namespace TencentCloud
                 SyncRegistryRecordOutcome SyncRegistryRecord(const Model::SyncRegistryRecordRequest &request);
                 void SyncRegistryRecordAsync(const Model::SyncRegistryRecordRequest& request, const SyncRegistryRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncRegistryRecordOutcomeCallable SyncRegistryRecordCallable(const Model::SyncRegistryRecordRequest& request);
+
+                /**
+                 *更新镜像预热自动卸载策略
+                 * @param req UpdatePreCacheImageCleanupPolicyRequest
+                 * @return UpdatePreCacheImageCleanupPolicyOutcome
+                 */
+                UpdatePreCacheImageCleanupPolicyOutcome UpdatePreCacheImageCleanupPolicy(const Model::UpdatePreCacheImageCleanupPolicyRequest &request);
+                void UpdatePreCacheImageCleanupPolicyAsync(const Model::UpdatePreCacheImageCleanupPolicyRequest& request, const UpdatePreCacheImageCleanupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdatePreCacheImageCleanupPolicyOutcomeCallable UpdatePreCacheImageCleanupPolicyCallable(const Model::UpdatePreCacheImageCleanupPolicyRequest& request);
 
                 /**
                  *更新 Registry 的可变元数据。
