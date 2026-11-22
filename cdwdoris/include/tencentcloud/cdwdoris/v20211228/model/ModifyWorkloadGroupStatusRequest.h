@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return InstanceId 集群id
+                     * 获取<p>集群id</p>
+                     * @return InstanceId <p>集群id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _instanceId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _instanceId <p>集群id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启资源组：open-开启、close-关闭
-                     * @return OperationType 是否开启资源组：open-开启、close-关闭
+                     * 获取<p>是否开启资源组：open-开启、close-关闭</p>
+                     * @return OperationType <p>是否开启资源组：open-开启、close-关闭</p>
                      * 
                      */
                     std::string GetOperationType() const;
 
                     /**
-                     * 设置是否开启资源组：open-开启、close-关闭
-                     * @param _operationType 是否开启资源组：open-开启、close-关闭
+                     * 设置<p>是否开启资源组：open-开启、close-关闭</p>
+                     * @param _operationType <p>是否开启资源组：open-开启、close-关闭</p>
                      * 
                      */
                     void SetOperationType(const std::string& _operationType);
@@ -84,19 +84,46 @@ namespace TencentCloud
                      */
                     bool OperationTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>rolling_restart滚动\restart立即，存算分离开通时的Pod重建方式，默认滚动</p>
+                     * @return RestartType <p>rolling_restart滚动\restart立即，存算分离开通时的Pod重建方式，默认滚动</p>
+                     * 
+                     */
+                    std::string GetRestartType() const;
+
+                    /**
+                     * 设置<p>rolling_restart滚动\restart立即，存算分离开通时的Pod重建方式，默认滚动</p>
+                     * @param _restartType <p>rolling_restart滚动\restart立即，存算分离开通时的Pod重建方式，默认滚动</p>
+                     * 
+                     */
+                    void SetRestartType(const std::string& _restartType);
+
+                    /**
+                     * 判断参数 RestartType 是否已赋值
+                     * @return RestartType 是否已赋值
+                     * 
+                     */
+                    bool RestartTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 是否开启资源组：open-开启、close-关闭
+                     * <p>是否开启资源组：open-开启、close-关闭</p>
                      */
                     std::string m_operationType;
                     bool m_operationTypeHasBeenSet;
+
+                    /**
+                     * <p>rolling_restart滚动\restart立即，存算分离开通时的Pod重建方式，默认滚动</p>
+                     */
+                    std::string m_restartType;
+                    bool m_restartTypeHasBeenSet;
 
                 };
             }

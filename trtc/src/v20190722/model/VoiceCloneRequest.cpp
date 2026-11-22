@@ -30,7 +30,8 @@ VoiceCloneRequest::VoiceCloneRequest() :
     m_promptTextHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_languageHasBeenSet(false),
-    m_extraParamsHasBeenSet(false)
+    m_extraParamsHasBeenSet(false),
+    m_previewTextHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string VoiceCloneRequest::ToJsonString() const
         string key = "ExtraParams";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extraParams.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previewTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewText";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_previewText.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void VoiceCloneRequest::SetExtraParams(const string& _extraParams)
 bool VoiceCloneRequest::ExtraParamsHasBeenSet() const
 {
     return m_extraParamsHasBeenSet;
+}
+
+string VoiceCloneRequest::GetPreviewText() const
+{
+    return m_previewText;
+}
+
+void VoiceCloneRequest::SetPreviewText(const string& _previewText)
+{
+    m_previewText = _previewText;
+    m_previewTextHasBeenSet = true;
+}
+
+bool VoiceCloneRequest::PreviewTextHasBeenSet() const
+{
+    return m_previewTextHasBeenSet;
 }
 
 

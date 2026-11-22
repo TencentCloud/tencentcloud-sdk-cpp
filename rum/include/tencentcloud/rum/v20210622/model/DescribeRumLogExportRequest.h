@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导出标识name
-                     * @return Name 导出标识name
+                     * 获取<p>导出标识name</p>
+                     * @return Name <p>导出标识name</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置导出标识name
-                     * @param _name 导出标识name
+                     * 设置<p>导出标识name</p>
+                     * @param _name <p>导出标识name</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取开始时间（必填）
-                     * @return StartTime 开始时间（必填）
+                     * 获取<p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>
+                     * @return StartTime <p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间（必填）
-                     * @param _startTime 开始时间（必填）
+                     * 设置<p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>
+                     * @param _startTime <p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询语句，参考控制台请求参数，语句长度最大为4096（必填）
-                     * @return Query 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
+                     * 获取<p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>
+                     * @return Query <p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询语句，参考控制台请求参数，语句长度最大为4096（必填）
-                     * @param _query 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
+                     * 设置<p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>
+                     * @param _query <p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取结束时间（必填）
-                     * @return EndTime 结束时间（必填）
+                     * 获取<p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>
+                     * @return EndTime <p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间（必填）
-                     * @param _endTime 结束时间（必填）
+                     * 设置<p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>
+                     * @param _endTime <p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID（必填）
-                     * @return ID 项目ID（必填）
+                     * 获取<p>项目ID（必填）</p>
+                     * @return ID <p>项目ID（必填）</p>
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置项目ID（必填）
-                     * @param _iD 项目ID（必填）
+                     * 设置<p>项目ID（必填）</p>
+                     * @param _iD <p>项目ID（必填）</p>
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取field条件
-                     * @return Fields field条件
+                     * 获取<p>field条件</p>
+                     * @return Fields <p>field条件</p>
                      * 
                      */
                     std::vector<std::string> GetFields() const;
 
                     /**
-                     * 设置field条件
-                     * @param _fields field条件
+                     * 设置<p>field条件</p>
+                     * @param _fields <p>field条件</p>
                      * 
                      */
                     void SetFields(const std::vector<std::string>& _fields);
@@ -171,37 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导出标识name
+                     * <p>导出标识name</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 开始时间（必填）
+                     * <p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
+                     * <p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 结束时间（必填）
+                     * <p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 项目ID（必填）
+                     * <p>项目ID（必填）</p>
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * field条件
+                     * <p>field条件</p>
                      */
                     std::vector<std::string> m_fields;
                     bool m_fieldsHasBeenSet;

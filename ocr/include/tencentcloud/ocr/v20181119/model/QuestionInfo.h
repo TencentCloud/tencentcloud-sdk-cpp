@@ -220,15 +220,15 @@ namespace TencentCloud
                     bool ReturnImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取<p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 时生效。其他模型类型不支持该能力。</p>
-                     * @return ClassName <p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 时生效。其他模型类型不支持该能力。</p>
+                     * 获取<p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 且快速模式下生效。其他模型类型不支持该能力。</p>
+                     * @return ClassName <p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 且快速模式下生效。其他模型类型不支持该能力。</p>
                      * 
                      */
                     std::string GetClassName() const;
 
                     /**
-                     * 设置<p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 时生效。其他模型类型不支持该能力。</p>
-                     * @param _className <p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 时生效。其他模型类型不支持该能力。</p>
+                     * 设置<p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 且快速模式下生效。其他模型类型不支持该能力。</p>
+                     * @param _className <p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 且快速模式下生效。其他模型类型不支持该能力。</p>
                      * 
                      */
                     void SetClassName(const std::string& _className);
@@ -313,7 +313,7 @@ namespace TencentCloud
                     bool m_returnImageUrlHasBeenSet;
 
                     /**
-                     * <p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 时生效。其他模型类型不支持该能力。</p>
+                     * <p>【批改 API 专属特性】图片类型预判别（常规作业 / 非作业图片 / 无作答痕迹），仅 ModelType = yuanbao_correction_model 且快速模式下生效。其他模型类型不支持该能力。</p>
                      */
                     std::string m_className;
                     bool m_classNameHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>日志总量</p>
-                     * @return Result <p>日志总量</p>
+                     * 获取<p>日志总量JSON字符串，内部Total结构不变。总量与明细为独立查询，不保证同一快照；window迁移期间总量仍走旧后端，带新分页参数的明细可走CLS。旧游标继续忽略。</p>
+                     * @return Result <p>日志总量JSON字符串，内部Total结构不变。总量与明细为独立查询，不保证同一快照；window迁移期间总量仍走旧后端，带新分页参数的明细可走CLS。旧游标继续忽略。</p>
                      * 
                      */
                     std::string GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>日志总量</p>
+                     * <p>日志总量JSON字符串，内部Total结构不变。总量与明细为独立查询，不保证同一快照；window迁移期间总量仍走旧后端，带新分页参数的明细可走CLS。旧游标继续忽略。</p>
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

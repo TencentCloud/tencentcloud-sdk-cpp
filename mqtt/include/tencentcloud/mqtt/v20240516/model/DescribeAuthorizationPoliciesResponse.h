@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则
-                     * @return Data 规则
+                     * 获取<p>规则</p>
+                     * @return Data <p>规则</p>
                      * 
                      */
                     std::vector<AuthorizationPolicyItem> GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则
+                     * <p>规则</p>
                      */
                     std::vector<AuthorizationPolicyItem> m_data;
                     bool m_dataHasBeenSet;

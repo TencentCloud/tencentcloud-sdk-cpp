@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>ACL规则名</p>
-                     * @return RuleName <p>ACL规则名</p>
+                     * 获取<p>ACL规则名</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/89217">DescribeAclRule</a></p>
+                     * @return RuleName <p>ACL规则名</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/89217">DescribeAclRule</a></p>
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置<p>ACL规则名</p>
-                     * @param _ruleName <p>ACL规则名</p>
+                     * 设置<p>ACL规则名</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/89217">DescribeAclRule</a></p>
+                     * @param _ruleName <p>ACL规则名</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/89217">DescribeAclRule</a></p>
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * <p>ACL规则名</p>
+                     * <p>ACL规则名</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/89217">DescribeAclRule</a></p>
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;

@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyWorkloadGroupStatusRequest::ModifyWorkloadGroupStatusRequest() :
     m_instanceIdHasBeenSet(false),
-    m_operationTypeHasBeenSet(false)
+    m_operationTypeHasBeenSet(false),
+    m_restartTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyWorkloadGroupStatusRequest::ToJsonString() const
         string key = "OperationType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_operationType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_restartTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestartType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_restartType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyWorkloadGroupStatusRequest::SetOperationType(const string& _operation
 bool ModifyWorkloadGroupStatusRequest::OperationTypeHasBeenSet() const
 {
     return m_operationTypeHasBeenSet;
+}
+
+string ModifyWorkloadGroupStatusRequest::GetRestartType() const
+{
+    return m_restartType;
+}
+
+void ModifyWorkloadGroupStatusRequest::SetRestartType(const string& _restartType)
+{
+    m_restartType = _restartType;
+    m_restartTypeHasBeenSet = true;
+}
+
+bool ModifyWorkloadGroupStatusRequest::RestartTypeHasBeenSet() const
+{
+    return m_restartTypeHasBeenSet;
 }
 
 

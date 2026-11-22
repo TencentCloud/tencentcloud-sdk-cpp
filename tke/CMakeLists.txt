@@ -41,7 +41,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/ManuallyAdded.h
   include/tencentcloud/tke/v20220501/model/Tag.h
   include/tencentcloud/tke/v20220501/model/ModifyHealthCheckPolicyResponse.h
-  include/tencentcloud/tke/v20220501/model/StopMachinesResponse.h
+  include/tencentcloud/tke/v20220501/model/Disk.h
   include/tencentcloud/tke/v20220501/model/HealthCheckTemplate.h
   include/tencentcloud/tke/v20220501/model/DescribeClustersRequest.h
   include/tencentcloud/tke/v20220501/model/Label.h
@@ -52,12 +52,13 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/ModifyNodePoolRequest.h
   include/tencentcloud/tke/v20220501/model/ModifyClusterMachineResponse.h
   include/tencentcloud/tke/v20220501/model/SetMachineLoginRequest.h
+  include/tencentcloud/tke/v20220501/model/RegistryConfig.h
   include/tencentcloud/tke/v20220501/model/ModifyNodePoolResponse.h
   include/tencentcloud/tke/v20220501/model/Taint.h
   include/tencentcloud/tke/v20220501/model/RegularNodeInfo.h
   include/tencentcloud/tke/v20220501/model/HealthCheckPolicyRule.h
   include/tencentcloud/tke/v20220501/model/NativeNodePoolInfo.h
-  include/tencentcloud/tke/v20220501/model/Disk.h
+  include/tencentcloud/tke/v20220501/model/StopMachinesResponse.h
   include/tencentcloud/tke/v20220501/model/DescribeHealthCheckTemplateRequest.h
   include/tencentcloud/tke/v20220501/model/TagSpecification.h
   include/tencentcloud/tke/v20220501/model/DescribeClustersResponse.h
@@ -78,6 +79,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20220501/model/DeleteHealthCheckPolicyResponse.h
   include/tencentcloud/tke/v20220501/model/DescribeGPUInfoRequest.h
   include/tencentcloud/tke/v20220501/model/Filter.h
+  include/tencentcloud/tke/v20220501/model/RegistryMirror.h
   include/tencentcloud/tke/v20220501/model/ManagementConfig.h
   include/tencentcloud/tke/v20220501/model/DetachApplicationRoleResponse.h
   include/tencentcloud/tke/v20220501/model/DeleteNodePoolRequest.h
@@ -891,7 +893,7 @@ set(tke_src
   src/v20220501/model/ManuallyAdded.cpp
   src/v20220501/model/Tag.cpp
   src/v20220501/model/ModifyHealthCheckPolicyResponse.cpp
-  src/v20220501/model/StopMachinesResponse.cpp
+  src/v20220501/model/Disk.cpp
   src/v20220501/model/HealthCheckTemplate.cpp
   src/v20220501/model/DescribeClustersRequest.cpp
   src/v20220501/model/Label.cpp
@@ -902,12 +904,13 @@ set(tke_src
   src/v20220501/model/ModifyNodePoolRequest.cpp
   src/v20220501/model/ModifyClusterMachineResponse.cpp
   src/v20220501/model/SetMachineLoginRequest.cpp
+  src/v20220501/model/RegistryConfig.cpp
   src/v20220501/model/ModifyNodePoolResponse.cpp
   src/v20220501/model/Taint.cpp
   src/v20220501/model/RegularNodeInfo.cpp
   src/v20220501/model/HealthCheckPolicyRule.cpp
   src/v20220501/model/NativeNodePoolInfo.cpp
-  src/v20220501/model/Disk.cpp
+  src/v20220501/model/StopMachinesResponse.cpp
   src/v20220501/model/DescribeHealthCheckTemplateRequest.cpp
   src/v20220501/model/TagSpecification.cpp
   src/v20220501/model/DescribeClustersResponse.cpp
@@ -928,6 +931,7 @@ set(tke_src
   src/v20220501/model/DeleteHealthCheckPolicyResponse.cpp
   src/v20220501/model/DescribeGPUInfoRequest.cpp
   src/v20220501/model/Filter.cpp
+  src/v20220501/model/RegistryMirror.cpp
   src/v20220501/model/ManagementConfig.cpp
   src/v20220501/model/DetachApplicationRoleResponse.cpp
   src/v20220501/model/DeleteNodePoolRequest.cpp

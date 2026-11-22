@@ -73,6 +73,20 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>是否需要重建</p>
+                     * @return NeedPodRebuild <p>是否需要重建</p>
+                     * 
+                     */
+                    bool GetNeedPodRebuild() const;
+
+                    /**
+                     * 判断参数 NeedPodRebuild 是否已赋值
+                     * @return NeedPodRebuild 是否已赋值
+                     * 
+                     */
+                    bool NeedPodRebuildHasBeenSet() const;
+
+                    /**
                      * 获取<p>错误信息</p>
                      * @return ErrorMsg <p>错误信息</p>
                      * 
@@ -113,6 +127,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * <p>是否需要重建</p>
+                     */
+                    bool m_needPodRebuild;
+                    bool m_needPodRebuildHasBeenSet;
 
                     /**
                      * <p>错误信息</p>

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取<p>备注</p>
+                     * @return Remark <p>备注</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置<p>备注</p>
+                     * @param _remark <p>备注</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceID 实例ID
+                     * 获取<p>实例ID</p>
+                     * @return InstanceID <p>实例ID</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceID 实例ID
+                     * 设置<p>实例ID</p>
+                     * @param _instanceID <p>实例ID</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取截止时间
-                     * @return Ttl 截止时间
+                     * 获取<p>截止时间</p>
+                     * @return Ttl <p>截止时间</p>
                      * 
                      */
                     std::string GetTtl() const;
 
                     /**
-                     * 设置截止时间
-                     * @param _ttl 截止时间
+                     * 设置<p>截止时间</p>
+                     * @param _ttl <p>截止时间</p>
                      * 
                      */
                     void SetTtl(const std::string& _ttl);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TtlHasBeenSet() const;
 
                     /**
-                     * 获取白名单自增ID
-                     * @return ID 白名单自增ID
+                     * 获取<p>白名单自增ID</p>
+                     * @return ID <p>白名单自增ID</p>
                      * 
                      */
                     std::string GetID() const;
 
                     /**
-                     * 设置白名单自增ID
-                     * @param _iD 白名单自增ID
+                     * 设置<p>白名单自增ID</p>
+                     * @param _iD <p>白名单自增ID</p>
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取业务唯一标识
-                     * @return WhitelistUin 业务唯一标识
+                     * 获取<p>业务唯一标识</p>
+                     * @return WhitelistUin <p>业务唯一标识</p>
                      * 
                      */
                     std::string GetWhitelistUin() const;
 
                     /**
-                     * 设置业务唯一标识
-                     * @param _whitelistUin 业务唯一标识
+                     * 设置<p>业务唯一标识</p>
+                     * @param _whitelistUin <p>业务唯一标识</p>
                      * 
                      */
                     void SetWhitelistUin(const std::string& _whitelistUin);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool WhitelistUinHasBeenSet() const;
 
                     /**
-                     * 获取创建者ID
-                     * @return CreateUser 创建者ID
+                     * 获取<p>创建者ID</p>
+                     * @return CreateUser <p>创建者ID</p>
                      * 
                      */
                     std::string GetCreateUser() const;
 
                     /**
-                     * 设置创建者ID
-                     * @param _createUser 创建者ID
+                     * 设置<p>创建者ID</p>
+                     * @param _createUser <p>创建者ID</p>
                      * 
                      */
                     void SetCreateUser(const std::string& _createUser);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CreateUserHasBeenSet() const;
 
                     /**
-                     * 获取aid标识
-                     * @return Aid aid标识
+                     * 获取<p>aid标识</p>
+                     * @return Aid <p>aid标识</p>
                      * 
                      */
                     std::string GetAid() const;
 
                     /**
-                     * 设置aid标识
-                     * @param _aid aid标识
+                     * 设置<p>aid标识</p>
+                     * @param _aid <p>aid标识</p>
                      * 
                      */
                     void SetAid(const std::string& _aid);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool AidHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -214,55 +214,82 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>白名单创建时刻。由原始time.Time同源生成带偏移RFC3339，旧CreateTime原值及十二小时显示格式保持；缺失原始时刻时省略本成员。</p>
+                     * @return CreateDatetime <p>白名单创建时刻。由原始time.Time同源生成带偏移RFC3339，旧CreateTime原值及十二小时显示格式保持；缺失原始时刻时省略本成员。</p>
+                     * 
+                     */
+                    std::string GetCreateDatetime() const;
+
+                    /**
+                     * 设置<p>白名单创建时刻。由原始time.Time同源生成带偏移RFC3339，旧CreateTime原值及十二小时显示格式保持；缺失原始时刻时省略本成员。</p>
+                     * @param _createDatetime <p>白名单创建时刻。由原始time.Time同源生成带偏移RFC3339，旧CreateTime原值及十二小时显示格式保持；缺失原始时刻时省略本成员。</p>
+                     * 
+                     */
+                    void SetCreateDatetime(const std::string& _createDatetime);
+
+                    /**
+                     * 判断参数 CreateDatetime 是否已赋值
+                     * @return CreateDatetime 是否已赋值
+                     * 
+                     */
+                    bool CreateDatetimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 备注
+                     * <p>备注</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * <p>实例ID</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 截止时间
+                     * <p>截止时间</p>
                      */
                     std::string m_ttl;
                     bool m_ttlHasBeenSet;
 
                     /**
-                     * 白名单自增ID
+                     * <p>白名单自增ID</p>
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 业务唯一标识
+                     * <p>业务唯一标识</p>
                      */
                     std::string m_whitelistUin;
                     bool m_whitelistUinHasBeenSet;
 
                     /**
-                     * 创建者ID
+                     * <p>创建者ID</p>
                      */
                     std::string m_createUser;
                     bool m_createUserHasBeenSet;
 
                     /**
-                     * aid标识
+                     * <p>aid标识</p>
                      */
                     std::string m_aid;
                     bool m_aidHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * <p>白名单创建时刻。由原始time.Time同源生成带偏移RFC3339，旧CreateTime原值及十二小时显示格式保持；缺失原始时刻时省略本成员。</p>
+                     */
+                    std::string m_createDatetime;
+                    bool m_createDatetimeHasBeenSet;
 
                 };
             }

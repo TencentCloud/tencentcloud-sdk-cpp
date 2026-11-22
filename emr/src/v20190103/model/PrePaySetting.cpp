@@ -21,8 +21,8 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 PrePaySetting::PrePaySetting() :
-    m_periodHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -30,6 +30,16 @@ CoreInternalOutcome PrePaySetting::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
+    {
+        if (!value["AutoRenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrePaySetting.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
 
     if (value.HasMember("Period") && !value["Period"].IsNull())
     {
@@ -48,22 +58,20 @@ CoreInternalOutcome PrePaySetting::Deserialize(const rapidjson::Value &value)
         m_periodHasBeenSet = true;
     }
 
-    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
-    {
-        if (!value["AutoRenewFlag"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `PrePaySetting.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
-        m_autoRenewFlagHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void PrePaySetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
 
     if (m_periodHasBeenSet)
     {
@@ -74,32 +82,8 @@ void PrePaySetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         m_period.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_autoRenewFlagHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoRenewFlag";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_autoRenewFlag, allocator);
-    }
-
 }
 
-
-Period PrePaySetting::GetPeriod() const
-{
-    return m_period;
-}
-
-void PrePaySetting::SetPeriod(const Period& _period)
-{
-    m_period = _period;
-    m_periodHasBeenSet = true;
-}
-
-bool PrePaySetting::PeriodHasBeenSet() const
-{
-    return m_periodHasBeenSet;
-}
 
 int64_t PrePaySetting::GetAutoRenewFlag() const
 {
@@ -115,5 +99,21 @@ void PrePaySetting::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
 bool PrePaySetting::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+Period PrePaySetting::GetPeriod() const
+{
+    return m_period;
+}
+
+void PrePaySetting::SetPeriod(const Period& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool PrePaySetting::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 

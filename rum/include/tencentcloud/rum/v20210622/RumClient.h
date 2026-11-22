@@ -221,12 +221,8 @@
 #include <tencentcloud/rum/v20210622/model/DescribeRumLogDetailsV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumLogExportRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumLogExportResponse.h>
-#include <tencentcloud/rum/v20210622/model/DescribeRumLogExportV2Request.h>
-#include <tencentcloud/rum/v20210622/model/DescribeRumLogExportV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumLogExportsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumLogExportsResponse.h>
-#include <tencentcloud/rum/v20210622/model/DescribeRumLogExportsV2Request.h>
-#include <tencentcloud/rum/v20210622/model/DescribeRumLogExportsV2Response.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumLogListRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumLogListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumLogTotalV2Request.h>
@@ -688,15 +684,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRumLogExportResponse> DescribeRumLogExportOutcome;
                 typedef std::future<DescribeRumLogExportOutcome> DescribeRumLogExportOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeRumLogExportRequest&, DescribeRumLogExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRumLogExportAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRumLogExportV2Response> DescribeRumLogExportV2Outcome;
-                typedef std::future<DescribeRumLogExportV2Outcome> DescribeRumLogExportV2OutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::DescribeRumLogExportV2Request&, DescribeRumLogExportV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRumLogExportV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRumLogExportsResponse> DescribeRumLogExportsOutcome;
                 typedef std::future<DescribeRumLogExportsOutcome> DescribeRumLogExportsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeRumLogExportsRequest&, DescribeRumLogExportsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRumLogExportsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRumLogExportsV2Response> DescribeRumLogExportsV2Outcome;
-                typedef std::future<DescribeRumLogExportsV2Outcome> DescribeRumLogExportsV2OutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::DescribeRumLogExportsV2Request&, DescribeRumLogExportsV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRumLogExportsV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRumLogListResponse> DescribeRumLogListOutcome;
                 typedef std::future<DescribeRumLogListOutcome> DescribeRumLogListOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeRumLogListRequest&, DescribeRumLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRumLogListAsyncHandler;
@@ -1819,15 +1809,6 @@ namespace TencentCloud
                 DescribeRumLogExportOutcomeCallable DescribeRumLogExportCallable(const Model::DescribeRumLogExportRequest& request);
 
                 /**
-                 *创建日志导出
-                 * @param req DescribeRumLogExportV2Request
-                 * @return DescribeRumLogExportV2Outcome
-                 */
-                DescribeRumLogExportV2Outcome DescribeRumLogExportV2(const Model::DescribeRumLogExportV2Request &request);
-                void DescribeRumLogExportV2Async(const Model::DescribeRumLogExportV2Request& request, const DescribeRumLogExportV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRumLogExportV2OutcomeCallable DescribeRumLogExportV2Callable(const Model::DescribeRumLogExportV2Request& request);
-
-                /**
                  *获取项目下的日志导出列表
                  * @param req DescribeRumLogExportsRequest
                  * @return DescribeRumLogExportsOutcome
@@ -1835,15 +1816,6 @@ namespace TencentCloud
                 DescribeRumLogExportsOutcome DescribeRumLogExports(const Model::DescribeRumLogExportsRequest &request);
                 void DescribeRumLogExportsAsync(const Model::DescribeRumLogExportsRequest& request, const DescribeRumLogExportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRumLogExportsOutcomeCallable DescribeRumLogExportsCallable(const Model::DescribeRumLogExportsRequest& request);
-
-                /**
-                 *获取日志导出列表
-                 * @param req DescribeRumLogExportsV2Request
-                 * @return DescribeRumLogExportsV2Outcome
-                 */
-                DescribeRumLogExportsV2Outcome DescribeRumLogExportsV2(const Model::DescribeRumLogExportsV2Request &request);
-                void DescribeRumLogExportsV2Async(const Model::DescribeRumLogExportsV2Request& request, const DescribeRumLogExportsV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRumLogExportsV2OutcomeCallable DescribeRumLogExportsV2Callable(const Model::DescribeRumLogExportsV2Request& request);
 
                 /**
                  *获取项目下的日志列表（实例创建的项目下的日志列表）

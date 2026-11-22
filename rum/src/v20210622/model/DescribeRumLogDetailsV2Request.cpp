@@ -30,7 +30,9 @@ DescribeRumLogDetailsV2Request::DescribeRumLogDetailsV2Request() :
     m_endTimeHasBeenSet(false),
     m_iDHasBeenSet(false),
     m_lastTimeHasBeenSet(false),
-    m_lastRowIdHasBeenSet(false)
+    m_lastRowIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -103,6 +105,22 @@ string DescribeRumLogDetailsV2Request::ToJsonString() const
         string key = "LastRowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_lastRowId, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_contextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Context";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +257,38 @@ void DescribeRumLogDetailsV2Request::SetLastRowId(const int64_t& _lastRowId)
 bool DescribeRumLogDetailsV2Request::LastRowIdHasBeenSet() const
 {
     return m_lastRowIdHasBeenSet;
+}
+
+int64_t DescribeRumLogDetailsV2Request::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeRumLogDetailsV2Request::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeRumLogDetailsV2Request::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+string DescribeRumLogDetailsV2Request::GetContext() const
+{
+    return m_context;
+}
+
+void DescribeRumLogDetailsV2Request::SetContext(const string& _context)
+{
+    m_context = _context;
+    m_contextHasBeenSet = true;
+}
+
+bool DescribeRumLogDetailsV2Request::ContextHasBeenSet() const
+{
+    return m_contextHasBeenSet;
 }
 
 

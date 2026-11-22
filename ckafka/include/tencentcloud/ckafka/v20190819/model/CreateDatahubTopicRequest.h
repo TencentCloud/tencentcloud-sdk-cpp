@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)，可通过接口DescribeAppInfo获取。</p>
-                     * @return Name <p>名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)，可通过接口DescribeAppInfo获取。</p>
+                     * 获取<p>名称，字符串长度不超过 128 个字符。必须以当前用户的实际 AppId 和连字符（-）开头，其余部分仅支持字母、数字和连字符（-）。AppId 可通过 GetUserAppId 接口获取。</p>
+                     * @return Name <p>名称，字符串长度不超过 128 个字符。必须以当前用户的实际 AppId 和连字符（-）开头，其余部分仅支持字母、数字和连字符（-）。AppId 可通过 GetUserAppId 接口获取。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置<p>名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)，可通过接口DescribeAppInfo获取。</p>
-                     * @param _name <p>名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)，可通过接口DescribeAppInfo获取。</p>
+                     * 设置<p>名称，字符串长度不超过 128 个字符。必须以当前用户的实际 AppId 和连字符（-）开头，其余部分仅支持字母、数字和连字符（-）。AppId 可通过 GetUserAppId 接口获取。</p>
+                     * @param _name <p>名称，字符串长度不超过 128 个字符。必须以当前用户的实际 AppId 和连字符（-）开头，其余部分仅支持字母、数字和连字符（-）。AppId 可通过 GetUserAppId 接口获取。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>名称，是一个不超过 128 个字符的字符串，必须以“AppId-”为首字符，剩余部分可以包含字母、数字和横划线(-)，可通过接口DescribeAppInfo获取。</p>
+                     * <p>名称，字符串长度不超过 128 个字符。必须以当前用户的实际 AppId 和连字符（-）开头，其余部分仅支持字母、数字和连字符（-）。AppId 可通过 GetUserAppId 接口获取。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群Id
-                     * @return InstanceId 集群Id
+                     * 获取<p>集群Id</p>
+                     * @return InstanceId <p>集群Id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取策略id
-                     * @return Id 策略id
+                     * 获取<p>策略id</p>
+                     * @return Id <p>策略id</p>
                      * 
                      */
                     int64_t GetId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群Id
+                     * <p>集群Id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 策略id
+                     * <p>策略id</p>
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;

@@ -48,25 +48,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区名称
-                     * @return Zone 可用区名称
+                     * 获取可用区节点数量
+                     * @return NodeNum 可用区节点数量
                      * 
                      */
-                    std::string GetZone() const;
+                    int64_t GetNodeNum() const;
 
                     /**
-                     * 设置可用区名称
-                     * @param _zone 可用区名称
+                     * 设置可用区节点数量
+                     * @param _nodeNum 可用区节点数量
                      * 
                      */
-                    void SetZone(const std::string& _zone);
+                    void SetNodeNum(const int64_t& _nodeNum);
 
                     /**
-                     * 判断参数 Zone 是否已赋值
-                     * @return Zone 是否已赋值
+                     * 判断参数 NodeNum 是否已赋值
+                     * @return NodeNum 是否已赋值
                      * 
                      */
-                    bool ZoneHasBeenSet() const;
+                    bool NodeNumHasBeenSet() const;
 
                     /**
                      * 获取可用区VPC和子网
@@ -90,33 +90,33 @@ namespace TencentCloud
                     bool VPCSettingsHasBeenSet() const;
 
                     /**
-                     * 获取可用区节点数量
-                     * @return NodeNum 可用区节点数量
+                     * 获取可用区名称
+                     * @return Zone 可用区名称
                      * 
                      */
-                    int64_t GetNodeNum() const;
+                    std::string GetZone() const;
 
                     /**
-                     * 设置可用区节点数量
-                     * @param _nodeNum 可用区节点数量
+                     * 设置可用区名称
+                     * @param _zone 可用区名称
                      * 
                      */
-                    void SetNodeNum(const int64_t& _nodeNum);
+                    void SetZone(const std::string& _zone);
 
                     /**
-                     * 判断参数 NodeNum 是否已赋值
-                     * @return NodeNum 是否已赋值
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
                      * 
                      */
-                    bool NodeNumHasBeenSet() const;
+                    bool ZoneHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 可用区名称
+                     * 可用区节点数量
                      */
-                    std::string m_zone;
-                    bool m_zoneHasBeenSet;
+                    int64_t m_nodeNum;
+                    bool m_nodeNumHasBeenSet;
 
                     /**
                      * 可用区VPC和子网
@@ -125,10 +125,10 @@ namespace TencentCloud
                     bool m_vPCSettingsHasBeenSet;
 
                     /**
-                     * 可用区节点数量
+                     * 可用区名称
                      */
-                    int64_t m_nodeNum;
-                    bool m_nodeNumHasBeenSet;
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

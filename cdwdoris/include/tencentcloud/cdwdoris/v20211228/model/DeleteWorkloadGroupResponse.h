@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取错误信息
-                     * @return ErrorMsg 错误信息
+                     * 获取<p>错误信息</p>
+                     * @return ErrorMsg <p>错误信息</p>
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 错误信息
+                     * <p>错误信息</p>
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;

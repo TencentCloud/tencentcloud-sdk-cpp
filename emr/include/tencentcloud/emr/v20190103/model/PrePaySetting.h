@@ -48,6 +48,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费
+                     * @return AutoRenewFlag 自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费
+                     * 
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费
+                     * @param _autoRenewFlag 自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费
+                     * 
+                     */
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
+                    /**
                      * 获取时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Period 时间
@@ -72,28 +93,13 @@ namespace TencentCloud
                      */
                     bool PeriodHasBeenSet() const;
 
-                    /**
-                     * 获取自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费
-                     * @return AutoRenewFlag 自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费
-                     * 
-                     */
-                    int64_t GetAutoRenewFlag() const;
-
-                    /**
-                     * 设置自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费
-                     * @param _autoRenewFlag 自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费
-                     * 
-                     */
-                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
-
-                    /**
-                     * 判断参数 AutoRenewFlag 是否已赋值
-                     * @return AutoRenewFlag 是否已赋值
-                     * 
-                     */
-                    bool AutoRenewFlagHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
 
                     /**
                      * 时间
@@ -101,12 +107,6 @@ namespace TencentCloud
                      */
                     Period m_period;
                     bool m_periodHasBeenSet;
-
-                    /**
-                     * 自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费
-                     */
-                    int64_t m_autoRenewFlag;
-                    bool m_autoRenewFlagHasBeenSet;
 
                 };
             }

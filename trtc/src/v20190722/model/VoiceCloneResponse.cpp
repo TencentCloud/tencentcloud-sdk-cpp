@@ -24,7 +24,8 @@ using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
 VoiceCloneResponse::VoiceCloneResponse() :
-    m_voiceIdHasBeenSet(false)
+    m_voiceIdHasBeenSet(false),
+    m_previewUrlHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome VoiceCloneResponse::Deserialize(const string &payload)
         m_voiceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PreviewUrl") && !rsp["PreviewUrl"].IsNull())
+    {
+        if (!rsp["PreviewUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewUrl = string(rsp["PreviewUrl"].GetString());
+        m_previewUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string VoiceCloneResponse::ToJsonString() const
         string key = "VoiceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_voiceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previewUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string VoiceCloneResponse::GetVoiceId() const
 bool VoiceCloneResponse::VoiceIdHasBeenSet() const
 {
     return m_voiceIdHasBeenSet;
+}
+
+string VoiceCloneResponse::GetPreviewUrl() const
+{
+    return m_previewUrl;
+}
+
+bool VoiceCloneResponse::PreviewUrlHasBeenSet() const
+{
+    return m_previewUrlHasBeenSet;
 }
 
 

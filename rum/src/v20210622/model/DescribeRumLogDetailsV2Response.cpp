@@ -24,7 +24,9 @@ using namespace TencentCloud::Rum::V20210622::Model;
 using namespace std;
 
 DescribeRumLogDetailsV2Response::DescribeRumLogDetailsV2Response() :
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_contextHasBeenSet(false),
+    m_listOverHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome DescribeRumLogDetailsV2Response::Deserialize(const string &p
         m_resultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Context") && !rsp["Context"].IsNull())
+    {
+        if (!rsp["Context"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Context` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_context = string(rsp["Context"].GetString());
+        m_contextHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ListOver") && !rsp["ListOver"].IsNull())
+    {
+        if (!rsp["ListOver"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListOver` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_listOver = rsp["ListOver"].GetBool();
+        m_listOverHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string DescribeRumLogDetailsV2Response::ToJsonString() const
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Context";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_listOverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ListOver";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_listOver, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ string DescribeRumLogDetailsV2Response::GetResult() const
 bool DescribeRumLogDetailsV2Response::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+string DescribeRumLogDetailsV2Response::GetContext() const
+{
+    return m_context;
+}
+
+bool DescribeRumLogDetailsV2Response::ContextHasBeenSet() const
+{
+    return m_contextHasBeenSet;
+}
+
+bool DescribeRumLogDetailsV2Response::GetListOver() const
+{
+    return m_listOver;
+}
+
+bool DescribeRumLogDetailsV2Response::ListOverHasBeenSet() const
+{
+    return m_listOverHasBeenSet;
 }
 
 

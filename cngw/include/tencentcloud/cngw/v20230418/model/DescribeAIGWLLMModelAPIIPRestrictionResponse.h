@@ -14,41 +14,42 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBERUMLOGEXPORTSV2RESPONSE_H_
-#define TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBERUMLOGEXPORTSV2RESPONSE_H_
+#ifndef TENCENTCLOUD_CNGW_V20230418_MODEL_DESCRIBEAIGWLLMMODELAPIIPRESTRICTIONRESPONSE_H_
+#define TENCENTCLOUD_CNGW_V20230418_MODEL_DESCRIBEAIGWLLMMODELAPIIPRESTRICTIONRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cngw/v20230418/model/AIGWLLMIPRestrictionResult.h>
 
 
 namespace TencentCloud
 {
-    namespace Rum
+    namespace Cngw
     {
-        namespace V20210622
+        namespace V20230418
         {
             namespace Model
             {
                 /**
-                * DescribeRumLogExportsV2返回参数结构体
+                * DescribeAIGWLLMModelAPIIPRestriction返回参数结构体
                 */
-                class DescribeRumLogExportsV2Response : public AbstractModel
+                class DescribeAIGWLLMModelAPIIPRestrictionResponse : public AbstractModel
                 {
                 public:
-                    DescribeRumLogExportsV2Response();
-                    ~DescribeRumLogExportsV2Response() = default;
+                    DescribeAIGWLLMModelAPIIPRestrictionResponse();
+                    ~DescribeAIGWLLMModelAPIIPRestrictionResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取<p>日志导出列表</p>
-                     * @return Result <p>日志导出列表</p>
+                     * 获取<p>IP 黑白名单配置</p>
+                     * @return Result <p>IP 黑白名单配置</p>
                      * 
                      */
-                    std::string GetResult() const;
+                    AIGWLLMIPRestrictionResult GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -60,9 +61,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>日志导出列表</p>
+                     * <p>IP 黑白名单配置</p>
                      */
-                    std::string m_result;
+                    AIGWLLMIPRestrictionResult m_result;
                     bool m_resultHasBeenSet;
 
                 };
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBERUMLOGEXPORTSV2RESPONSE_H_
+#endif // !TENCENTCLOUD_CNGW_V20230418_MODEL_DESCRIBEAIGWLLMMODELAPIIPRESTRICTIONRESPONSE_H_

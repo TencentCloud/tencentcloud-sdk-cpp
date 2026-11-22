@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取pv列表
-                     * @return ProjectPvSet pv列表
+                     * 获取<p>pv列表</p>
+                     * @return ProjectPvSet <p>pv列表</p>
                      * 
                      */
                     std::vector<RumPvInfo> GetProjectPvSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * pv列表
+                     * <p>pv列表</p>
                      */
                     std::vector<RumPvInfo> m_projectPvSet;
                     bool m_projectPvSetHasBeenSet;

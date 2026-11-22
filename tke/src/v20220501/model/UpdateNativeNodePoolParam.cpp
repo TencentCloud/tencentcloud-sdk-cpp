@@ -46,6 +46,7 @@ UpdateNativeNodePoolParam::UpdateNativeNodePoolParam() :
     m_gPUConfigsHasBeenSet(false),
     m_automationServiceHasBeenSet(false),
     m_passwordHasBeenSet(false),
+    m_registryHasBeenSet(false),
     m_customImageHasBeenSet(false)
 {
 }
@@ -382,6 +383,23 @@ CoreInternalOutcome UpdateNativeNodePoolParam::Deserialize(const rapidjson::Valu
         m_passwordHasBeenSet = true;
     }
 
+    if (value.HasMember("Registry") && !value["Registry"].IsNull())
+    {
+        if (!value["Registry"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateNativeNodePoolParam.Registry` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_registry.Deserialize(value["Registry"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_registryHasBeenSet = true;
+    }
+
     if (value.HasMember("CustomImage") && !value["CustomImage"].IsNull())
     {
         if (!value["CustomImage"].IsString())
@@ -642,6 +660,15 @@ void UpdateNativeNodePoolParam::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Registry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_registry.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_customImageHasBeenSet)
@@ -1053,6 +1080,22 @@ void UpdateNativeNodePoolParam::SetPassword(const string& _password)
 bool UpdateNativeNodePoolParam::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+RegistryConfig UpdateNativeNodePoolParam::GetRegistry() const
+{
+    return m_registry;
+}
+
+void UpdateNativeNodePoolParam::SetRegistry(const RegistryConfig& _registry)
+{
+    m_registry = _registry;
+    m_registryHasBeenSet = true;
+}
+
+bool UpdateNativeNodePoolParam::RegistryHasBeenSet() const
+{
+    return m_registryHasBeenSet;
 }
 
 string UpdateNativeNodePoolParam::GetCustomImage() const

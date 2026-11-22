@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/rum/v20210622/model/DescribeRumLogExportsV2Response.h>
+#include <tencentcloud/cngw/v20230418/model/ModifyAIGWLLMModelAPIIPRestrictionResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Rum::V20210622::Model;
+using namespace TencentCloud::Cngw::V20230418::Model;
 using namespace std;
 
-DescribeRumLogExportsV2Response::DescribeRumLogExportsV2Response() :
+ModifyAIGWLLMModelAPIIPRestrictionResponse::ModifyAIGWLLMModelAPIIPRestrictionResponse() :
     m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeRumLogExportsV2Response::Deserialize(const string &payload)
+CoreInternalOutcome ModifyAIGWLLMModelAPIIPRestrictionResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,11 +64,11 @@ CoreInternalOutcome DescribeRumLogExportsV2Response::Deserialize(const string &p
 
     if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["Result"].IsString())
+        if (!rsp["Result"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_result = string(rsp["Result"].GetString());
+        m_result = rsp["Result"].GetBool();
         m_resultHasBeenSet = true;
     }
 
@@ -76,7 +76,7 @@ CoreInternalOutcome DescribeRumLogExportsV2Response::Deserialize(const string &p
     return CoreInternalOutcome(true);
 }
 
-string DescribeRumLogExportsV2Response::ToJsonString() const
+string ModifyAIGWLLMModelAPIIPRestrictionResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -87,7 +87,7 @@ string DescribeRumLogExportsV2Response::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_result, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,12 +102,12 @@ string DescribeRumLogExportsV2Response::ToJsonString() const
 }
 
 
-string DescribeRumLogExportsV2Response::GetResult() const
+bool ModifyAIGWLLMModelAPIIPRestrictionResponse::GetResult() const
 {
     return m_result;
 }
 
-bool DescribeRumLogExportsV2Response::ResultHasBeenSet() const
+bool ModifyAIGWLLMModelAPIIPRestrictionResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
 }

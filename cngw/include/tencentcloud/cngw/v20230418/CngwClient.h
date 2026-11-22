@@ -91,6 +91,8 @@
 #include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailPolicyResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailPolicyListRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailPolicyListResponse.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWLLMModelAPIIPRestrictionRequest.h>
+#include <tencentcloud/cngw/v20230418/model/DescribeAIGWLLMModelAPIIPRestrictionResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCNGWServicesWithRoutesRequest.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCNGWServicesWithRoutesResponse.h>
 #include <tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayAIQuotaRequest.h>
@@ -151,6 +153,8 @@
 #include <tencentcloud/cngw/v20230418/model/ExportAIGWCustomGuardrailHitsResponse.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyAIGWCustomGuardrailPolicyRequest.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyAIGWCustomGuardrailPolicyResponse.h>
+#include <tencentcloud/cngw/v20230418/model/ModifyAIGWLLMModelAPIIPRestrictionRequest.h>
+#include <tencentcloud/cngw/v20230418/model/ModifyAIGWLLMModelAPIIPRestrictionResponse.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayAIServiceSourceRequest.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayAIServiceSourceResponse.h>
 #include <tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayConsumerRequest.h>
@@ -307,6 +311,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAIGWCustomGuardrailPolicyListResponse> DescribeAIGWCustomGuardrailPolicyListOutcome;
                 typedef std::future<DescribeAIGWCustomGuardrailPolicyListOutcome> DescribeAIGWCustomGuardrailPolicyListOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeAIGWCustomGuardrailPolicyListRequest&, DescribeAIGWCustomGuardrailPolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIGWCustomGuardrailPolicyListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIGWLLMModelAPIIPRestrictionResponse> DescribeAIGWLLMModelAPIIPRestrictionOutcome;
+                typedef std::future<DescribeAIGWLLMModelAPIIPRestrictionOutcome> DescribeAIGWLLMModelAPIIPRestrictionOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::DescribeAIGWLLMModelAPIIPRestrictionRequest&, DescribeAIGWLLMModelAPIIPRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIGWLLMModelAPIIPRestrictionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCNGWServicesWithRoutesResponse> DescribeCNGWServicesWithRoutesOutcome;
                 typedef std::future<DescribeCNGWServicesWithRoutesOutcome> DescribeCNGWServicesWithRoutesOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::DescribeCNGWServicesWithRoutesRequest&, DescribeCNGWServicesWithRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCNGWServicesWithRoutesAsyncHandler;
@@ -397,6 +404,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAIGWCustomGuardrailPolicyResponse> ModifyAIGWCustomGuardrailPolicyOutcome;
                 typedef std::future<ModifyAIGWCustomGuardrailPolicyOutcome> ModifyAIGWCustomGuardrailPolicyOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::ModifyAIGWCustomGuardrailPolicyRequest&, ModifyAIGWCustomGuardrailPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAIGWCustomGuardrailPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAIGWLLMModelAPIIPRestrictionResponse> ModifyAIGWLLMModelAPIIPRestrictionOutcome;
+                typedef std::future<ModifyAIGWLLMModelAPIIPRestrictionOutcome> ModifyAIGWLLMModelAPIIPRestrictionOutcomeCallable;
+                typedef std::function<void(const CngwClient*, const Model::ModifyAIGWLLMModelAPIIPRestrictionRequest&, ModifyAIGWLLMModelAPIIPRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAIGWLLMModelAPIIPRestrictionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayAIServiceSourceResponse> ModifyCloudNativeAPIGatewayAIServiceSourceOutcome;
                 typedef std::future<ModifyCloudNativeAPIGatewayAIServiceSourceOutcome> ModifyCloudNativeAPIGatewayAIServiceSourceOutcomeCallable;
                 typedef std::function<void(const CngwClient*, const Model::ModifyCloudNativeAPIGatewayAIServiceSourceRequest&, ModifyCloudNativeAPIGatewayAIServiceSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayAIServiceSourceAsyncHandler;
@@ -788,6 +798,15 @@ namespace TencentCloud
                 DescribeAIGWCustomGuardrailPolicyListOutcomeCallable DescribeAIGWCustomGuardrailPolicyListCallable(const Model::DescribeAIGWCustomGuardrailPolicyListRequest& request);
 
                 /**
+                 *查询指定模型 API 的 IP 黑白名单配置。
+                 * @param req DescribeAIGWLLMModelAPIIPRestrictionRequest
+                 * @return DescribeAIGWLLMModelAPIIPRestrictionOutcome
+                 */
+                DescribeAIGWLLMModelAPIIPRestrictionOutcome DescribeAIGWLLMModelAPIIPRestriction(const Model::DescribeAIGWLLMModelAPIIPRestrictionRequest &request);
+                void DescribeAIGWLLMModelAPIIPRestrictionAsync(const Model::DescribeAIGWLLMModelAPIIPRestrictionRequest& request, const DescribeAIGWLLMModelAPIIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIGWLLMModelAPIIPRestrictionOutcomeCallable DescribeAIGWLLMModelAPIIPRestrictionCallable(const Model::DescribeAIGWLLMModelAPIIPRestrictionRequest& request);
+
+                /**
                  *查询云原生网关服务和路由列表
                  * @param req DescribeCNGWServicesWithRoutesRequest
                  * @return DescribeCNGWServicesWithRoutesOutcome
@@ -1074,6 +1093,15 @@ namespace TencentCloud
                 ModifyAIGWCustomGuardrailPolicyOutcome ModifyAIGWCustomGuardrailPolicy(const Model::ModifyAIGWCustomGuardrailPolicyRequest &request);
                 void ModifyAIGWCustomGuardrailPolicyAsync(const Model::ModifyAIGWCustomGuardrailPolicyRequest& request, const ModifyAIGWCustomGuardrailPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAIGWCustomGuardrailPolicyOutcomeCallable ModifyAIGWCustomGuardrailPolicyCallable(const Model::ModifyAIGWCustomGuardrailPolicyRequest& request);
+
+                /**
+                 *创建或整体覆盖指定模型 API 的 IP 黑白名单配置。PUT 覆盖语义（每次以请求值为最终态）。
+                 * @param req ModifyAIGWLLMModelAPIIPRestrictionRequest
+                 * @return ModifyAIGWLLMModelAPIIPRestrictionOutcome
+                 */
+                ModifyAIGWLLMModelAPIIPRestrictionOutcome ModifyAIGWLLMModelAPIIPRestriction(const Model::ModifyAIGWLLMModelAPIIPRestrictionRequest &request);
+                void ModifyAIGWLLMModelAPIIPRestrictionAsync(const Model::ModifyAIGWLLMModelAPIIPRestrictionRequest& request, const ModifyAIGWLLMModelAPIIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAIGWLLMModelAPIIPRestrictionOutcomeCallable ModifyAIGWLLMModelAPIIPRestrictionCallable(const Model::ModifyAIGWLLMModelAPIIPRestrictionRequest& request);
 
                 /**
                  *修改云原生网关AI服务来源

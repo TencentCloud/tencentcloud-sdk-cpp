@@ -91,6 +91,27 @@ namespace TencentCloud
                     bool ProcedureTaskIdsHasBeenSet() const;
 
                     /**
+                     * 获取<p>输入视频时长。</p>
+                     * @return TotalInputVideoDuration <p>输入视频时长。</p>
+                     * 
+                     */
+                    uint64_t GetTotalInputVideoDuration() const;
+
+                    /**
+                     * 设置<p>输入视频时长。</p>
+                     * @param _totalInputVideoDuration <p>输入视频时长。</p>
+                     * 
+                     */
+                    void SetTotalInputVideoDuration(const uint64_t& _totalInputVideoDuration);
+
+                    /**
+                     * 判断参数 TotalInputVideoDuration 是否已赋值
+                     * @return TotalInputVideoDuration 是否已赋值
+                     * 
+                     */
+                    bool TotalInputVideoDurationHasBeenSet() const;
+
+                    /**
                      * 获取<p>AIGC 生视频任务的用量信息。</p>
                      * @return Usage <p>AIGC 生视频任务的用量信息。</p>
                      * 
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_procedureTaskIds;
                     bool m_procedureTaskIdsHasBeenSet;
+
+                    /**
+                     * <p>输入视频时长。</p>
+                     */
+                    uint64_t m_totalInputVideoDuration;
+                    bool m_totalInputVideoDurationHasBeenSet;
 
                     /**
                      * <p>AIGC 生视频任务的用量信息。</p>

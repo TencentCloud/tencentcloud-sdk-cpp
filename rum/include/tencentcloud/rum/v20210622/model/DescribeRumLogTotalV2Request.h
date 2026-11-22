@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取<p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
-                     * @return StartTime <p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
+                     * 获取<p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>
+                     * @return StartTime <p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置<p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
-                     * @param _startTime <p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
+                     * 设置<p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>
+                     * @param _startTime <p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取<p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
-                     * @return EndTime <p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
+                     * 获取<p>Unix纳秒结束时间，不包含该时刻。</p>
+                     * @return EndTime <p>Unix纳秒结束时间，不包含该时刻。</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置<p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
-                     * @param _endTime <p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
+                     * 设置<p>Unix纳秒结束时间，不包含该时刻。</p>
+                     * @param _endTime <p>Unix纳秒结束时间，不包含该时刻。</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * <p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
+                     * <p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -237,7 +237,7 @@ namespace TencentCloud
                     bool m_filterHasBeenSet;
 
                     /**
-                     * <p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
+                     * <p>Unix纳秒结束时间，不包含该时刻。</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

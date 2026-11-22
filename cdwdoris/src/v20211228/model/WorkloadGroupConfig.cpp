@@ -26,6 +26,7 @@ WorkloadGroupConfig::WorkloadGroupConfig() :
     m_memoryLimitHasBeenSet(false),
     m_enableMemoryOverCommitHasBeenSet(false),
     m_cpuHardLimitHasBeenSet(false),
+    m_computeGroupHasBeenSet(false),
     m_minCpuPercentHasBeenSet(false),
     m_minMemoryPercentHasBeenSet(false),
     m_maxConcurrencyNumHasBeenSet(false),
@@ -87,6 +88,16 @@ CoreInternalOutcome WorkloadGroupConfig::Deserialize(const rapidjson::Value &val
         }
         m_cpuHardLimit = string(value["CpuHardLimit"].GetString());
         m_cpuHardLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComputeGroup") && !value["ComputeGroup"].IsNull())
+    {
+        if (!value["ComputeGroup"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkloadGroupConfig.ComputeGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeGroup = string(value["ComputeGroup"].GetString());
+        m_computeGroupHasBeenSet = true;
     }
 
     if (value.HasMember("MinCpuPercent") && !value["MinCpuPercent"].IsNull())
@@ -184,6 +195,14 @@ void WorkloadGroupConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CpuHardLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cpuHardLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computeGroup.c_str(), allocator).Move(), allocator);
     }
 
     if (m_minCpuPercentHasBeenSet)
@@ -307,6 +326,22 @@ void WorkloadGroupConfig::SetCpuHardLimit(const string& _cpuHardLimit)
 bool WorkloadGroupConfig::CpuHardLimitHasBeenSet() const
 {
     return m_cpuHardLimitHasBeenSet;
+}
+
+string WorkloadGroupConfig::GetComputeGroup() const
+{
+    return m_computeGroup;
+}
+
+void WorkloadGroupConfig::SetComputeGroup(const string& _computeGroup)
+{
+    m_computeGroup = _computeGroup;
+    m_computeGroupHasBeenSet = true;
+}
+
+bool WorkloadGroupConfig::ComputeGroupHasBeenSet() const
+{
+    return m_computeGroupHasBeenSet;
 }
 
 int64_t WorkloadGroupConfig::GetMinCpuPercent() const

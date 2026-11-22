@@ -152,6 +152,27 @@ namespace TencentCloud
                     bool CpuHardLimitHasBeenSet() const;
 
                     /**
+                     * 获取<p>资源组归属的计算组ID</p>
+                     * @return ComputeGroup <p>资源组归属的计算组ID</p>
+                     * 
+                     */
+                    std::string GetComputeGroup() const;
+
+                    /**
+                     * 设置<p>资源组归属的计算组ID</p>
+                     * @param _computeGroup <p>资源组归属的计算组ID</p>
+                     * 
+                     */
+                    void SetComputeGroup(const std::string& _computeGroup);
+
+                    /**
+                     * 判断参数 ComputeGroup 是否已赋值
+                     * @return ComputeGroup 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupHasBeenSet() const;
+
+                    /**
                      * 获取<p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
                      * @return MinCpuPercent <p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>
                      * 
@@ -287,6 +308,12 @@ namespace TencentCloud
                      */
                     std::string m_cpuHardLimit;
                     bool m_cpuHardLimitHasBeenSet;
+
+                    /**
+                     * <p>资源组归属的计算组ID</p>
+                     */
+                    std::string m_computeGroup;
+                    bool m_computeGroupHasBeenSet;
 
                     /**
                      * <p>4.1+ 新增；默认值为 0（不预留），根据业务可设为 5/10</p>

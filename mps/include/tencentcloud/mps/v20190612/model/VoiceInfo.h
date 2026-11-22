@@ -277,6 +277,48 @@ namespace TencentCloud
                      */
                     bool EngineHasBeenSet() const;
 
+                    /**
+                     * 获取<p>音色创建时间</p>
+                     * @return CreatedAt <p>音色创建时间</p>
+                     * 
+                     */
+                    std::string GetCreatedAt() const;
+
+                    /**
+                     * 设置<p>音色创建时间</p>
+                     * @param _createdAt <p>音色创建时间</p>
+                     * 
+                     */
+                    void SetCreatedAt(const std::string& _createdAt);
+
+                    /**
+                     * 判断参数 CreatedAt 是否已赋值
+                     * @return CreatedAt 是否已赋值
+                     * 
+                     */
+                    bool CreatedAtHasBeenSet() const;
+
+                    /**
+                     * 获取<p>音色信息更新时间</p>
+                     * @return UpdatedAt <p>音色信息更新时间</p>
+                     * 
+                     */
+                    std::string GetUpdatedAt() const;
+
+                    /**
+                     * 设置<p>音色信息更新时间</p>
+                     * @param _updatedAt <p>音色信息更新时间</p>
+                     * 
+                     */
+                    void SetUpdatedAt(const std::string& _updatedAt);
+
+                    /**
+                     * 判断参数 UpdatedAt 是否已赋值
+                     * @return UpdatedAt 是否已赋值
+                     * 
+                     */
+                    bool UpdatedAtHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +386,18 @@ namespace TencentCloud
                      */
                     std::string m_engine;
                     bool m_engineHasBeenSet;
+
+                    /**
+                     * <p>音色创建时间</p>
+                     */
+                    std::string m_createdAt;
+                    bool m_createdAtHasBeenSet;
+
+                    /**
+                     * <p>音色信息更新时间</p>
+                     */
+                    std::string m_updatedAt;
+                    bool m_updatedAtHasBeenSet;
 
                 };
             }

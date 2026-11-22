@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBERUMLOGEXPORTV2RESPONSE_H_
-#define TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBERUMLOGEXPORTV2RESPONSE_H_
+#ifndef TENCENTCLOUD_CNGW_V20230418_MODEL_MODIFYAIGWLLMMODELAPIIPRESTRICTIONRESPONSE_H_
+#define TENCENTCLOUD_CNGW_V20230418_MODEL_MODIFYAIGWLLMMODELAPIIPRESTRICTIONRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,30 +25,30 @@
 
 namespace TencentCloud
 {
-    namespace Rum
+    namespace Cngw
     {
-        namespace V20210622
+        namespace V20230418
         {
             namespace Model
             {
                 /**
-                * DescribeRumLogExportV2返回参数结构体
+                * ModifyAIGWLLMModelAPIIPRestriction返回参数结构体
                 */
-                class DescribeRumLogExportV2Response : public AbstractModel
+                class ModifyAIGWLLMModelAPIIPRestrictionResponse : public AbstractModel
                 {
                 public:
-                    DescribeRumLogExportV2Response();
-                    ~DescribeRumLogExportV2Response() = default;
+                    ModifyAIGWLLMModelAPIIPRestrictionResponse();
+                    ~ModifyAIGWLLMModelAPIIPRestrictionResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取<p>日志导出任务TaskId</p>
-                     * @return Result <p>日志导出任务TaskId</p>
+                     * 获取<p>结果</p>
+                     * @return Result <p>结果</p>
                      * 
                      */
-                    std::string GetResult() const;
+                    bool GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -60,9 +60,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>日志导出任务TaskId</p>
+                     * <p>结果</p>
                      */
-                    std::string m_result;
+                    bool m_result;
                     bool m_resultHasBeenSet;
 
                 };
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBERUMLOGEXPORTV2RESPONSE_H_
+#endif // !TENCENTCLOUD_CNGW_V20230418_MODEL_MODIFYAIGWLLMMODELAPIIPRESTRICTIONRESPONSE_H_

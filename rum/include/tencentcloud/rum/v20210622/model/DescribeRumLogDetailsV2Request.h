@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取<p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
-                     * @return StartTime <p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
+                     * 获取<p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>
+                     * @return StartTime <p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置<p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
-                     * @param _startTime <p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
+                     * 设置<p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>
+                     * @param _startTime <p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>单次查询返回的原始日志条数，最大值为100（必填）</p>
-                     * @return Limit <p>单次查询返回的原始日志条数，最大值为100（必填）</p>
+                     * 获取<p>CLS路径单次返回1～1000条；旧路径保留原行为。短页不表示结束，以ListOver为准。</p>
+                     * @return Limit <p>CLS路径单次返回1～1000条；旧路径保留原行为。短页不表示结束，以ListOver为准。</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置<p>单次查询返回的原始日志条数，最大值为100（必填）</p>
-                     * @param _limit <p>单次查询返回的原始日志条数，最大值为100（必填）</p>
+                     * 设置<p>CLS路径单次返回1～1000条；旧路径保留原行为。短页不表示结束，以ListOver为准。</p>
+                     * @param _limit <p>CLS路径单次返回1～1000条；旧路径保留原行为。短页不表示结束，以ListOver为准。</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool FilterHasBeenSet() const;
 
                     /**
-                     * 获取<p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
-                     * @return EndTime <p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
+                     * 获取<p>Unix纳秒结束时间，不包含该时刻。</p>
+                     * @return EndTime <p>Unix纳秒结束时间，不包含该时刻。</p>
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置<p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
-                     * @param _endTime <p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
+                     * 设置<p>Unix纳秒结束时间，不包含该时刻。</p>
+                     * @param _endTime <p>Unix纳秒结束时间，不包含该时刻。</p>
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取<p>上次查询的最后一个日志的时间戳</p>
-                     * @return LastTime <p>上次查询的最后一个日志的时间戳</p>
+                     * 获取<p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>
+                     * @return LastTime <p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>
                      * 
                      */
                     int64_t GetLastTime() const;
 
                     /**
-                     * 设置<p>上次查询的最后一个日志的时间戳</p>
-                     * @param _lastTime <p>上次查询的最后一个日志的时间戳</p>
+                     * 设置<p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>
+                     * @param _lastTime <p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>
                      * 
                      */
                     void SetLastTime(const int64_t& _lastTime);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool LastTimeHasBeenSet() const;
 
                     /**
-                     * 获取<p>上次查询的最后一个日志的rowId</p>
-                     * @return LastRowId <p>上次查询的最后一个日志的rowId</p>
+                     * 获取<p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>
+                     * @return LastRowId <p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>
                      * 
                      */
                     int64_t GetLastRowId() const;
 
                     /**
-                     * 设置<p>上次查询的最后一个日志的rowId</p>
-                     * @param _lastRowId <p>上次查询的最后一个日志的rowId</p>
+                     * 设置<p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>
+                     * @param _lastRowId <p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>
                      * 
                      */
                     void SetLastRowId(const int64_t& _lastRowId);
@@ -210,6 +210,48 @@ namespace TencentCloud
                      */
                     bool LastRowIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>从0开始的非负偏移量；保留缺省与显式0的差别。不能与非空Context同时使用，Context续页时删除Offset。</p>
+                     * @return Offset <p>从0开始的非负偏移量；保留缺省与显式0的差别。不能与非空Context同时使用，Context续页时删除Offset。</p>
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置<p>从0开始的非负偏移量；保留缺省与显式0的差别。不能与非空Context同时使用，Context续页时删除Offset。</p>
+                     * @param _offset <p>从0开始的非负偏移量；保留缺省与显式0的差别。不能与非空Context同时使用，Context续页时删除Offset。</p>
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取<p>原样回传上次非空Context，续页时删除Offset，其余有效查询条件保持不变；空串视为缺省。不保证快照或重放同一页。</p>
+                     * @return Context <p>原样回传上次非空Context，续页时删除Offset，其余有效查询条件保持不变；空串视为缺省。不保证快照或重放同一页。</p>
+                     * 
+                     */
+                    std::string GetContext() const;
+
+                    /**
+                     * 设置<p>原样回传上次非空Context，续页时删除Offset，其余有效查询条件保持不变；空串视为缺省。不保证快照或重放同一页。</p>
+                     * @param _context <p>原样回传上次非空Context，续页时删除Offset，其余有效查询条件保持不变；空串视为缺省。不保证快照或重放同一页。</p>
+                     * 
+                     */
+                    void SetContext(const std::string& _context);
+
+                    /**
+                     * 判断参数 Context 是否已赋值
+                     * @return Context 是否已赋值
+                     * 
+                     */
+                    bool ContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -219,13 +261,13 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * <p>查询日志开始时间（必填）格式为时间戳 毫秒</p>
+                     * <p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * <p>单次查询返回的原始日志条数，最大值为100（必填）</p>
+                     * <p>CLS路径单次返回1～1000条；旧路径保留原行为。短页不表示结束，以ListOver为准。</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -237,7 +279,7 @@ namespace TencentCloud
                     bool m_filterHasBeenSet;
 
                     /**
-                     * <p>查询日志结束时间（必填）格式为时间戳 毫秒</p>
+                     * <p>Unix纳秒结束时间，不包含该时刻。</p>
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -249,16 +291,28 @@ namespace TencentCloud
                     bool m_iDHasBeenSet;
 
                     /**
-                     * <p>上次查询的最后一个日志的时间戳</p>
+                     * <p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>
                      */
                     int64_t m_lastTime;
                     bool m_lastTimeHasBeenSet;
 
                     /**
-                     * <p>上次查询的最后一个日志的rowId</p>
+                     * <p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>
                      */
                     int64_t m_lastRowId;
                     bool m_lastRowIdHasBeenSet;
+
+                    /**
+                     * <p>从0开始的非负偏移量；保留缺省与显式0的差别。不能与非空Context同时使用，Context续页时删除Offset。</p>
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>原样回传上次非空Context，续页时删除Offset，其余有效查询条件保持不变；空串视为缺省。不保证快照或重放同一页。</p>
+                     */
+                    std::string m_context;
+                    bool m_contextHasBeenSet;
 
                 };
             }

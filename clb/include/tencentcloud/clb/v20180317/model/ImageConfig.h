@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * video配置。
+                * image配置。
                 */
                 class ImageConfig : public AbstractModel
                 {
@@ -123,15 +123,15 @@ namespace TencentCloud
                     bool NumRetriesHasBeenSet() const;
 
                     /**
-                     * 获取<p>同步超时时间</p><p>取值范围：[0, 60]</p><p>单位：秒</p>
-                     * @return WaitSeconds <p>同步超时时间</p><p>取值范围：[0, 60]</p><p>单位：秒</p>
+                     * 获取<p>同步超时时间</p><p>取值范围：[0, 300]</p><p>单位：秒</p><p>默认值：15</p>
+                     * @return WaitSeconds <p>同步超时时间</p><p>取值范围：[0, 300]</p><p>单位：秒</p><p>默认值：15</p>
                      * 
                      */
                     uint64_t GetWaitSeconds() const;
 
                     /**
-                     * 设置<p>同步超时时间</p><p>取值范围：[0, 60]</p><p>单位：秒</p>
-                     * @param _waitSeconds <p>同步超时时间</p><p>取值范围：[0, 60]</p><p>单位：秒</p>
+                     * 设置<p>同步超时时间</p><p>取值范围：[0, 300]</p><p>单位：秒</p><p>默认值：15</p>
+                     * @param _waitSeconds <p>同步超时时间</p><p>取值范围：[0, 300]</p><p>单位：秒</p><p>默认值：15</p>
                      * 
                      */
                     void SetWaitSeconds(const uint64_t& _waitSeconds);
@@ -167,7 +167,7 @@ namespace TencentCloud
                     bool m_numRetriesHasBeenSet;
 
                     /**
-                     * <p>同步超时时间</p><p>取值范围：[0, 60]</p><p>单位：秒</p>
+                     * <p>同步超时时间</p><p>取值范围：[0, 300]</p><p>单位：秒</p><p>默认值：15</p>
                      */
                     uint64_t m_waitSeconds;
                     bool m_waitSecondsHasBeenSet;

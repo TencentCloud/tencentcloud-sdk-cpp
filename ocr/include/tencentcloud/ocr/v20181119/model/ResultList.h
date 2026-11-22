@@ -304,15 +304,15 @@ namespace TencentCloud
                     bool KnowledgePointsHasBeenSet() const;
 
                     /**
-                     * 获取<p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，通过该字段返回题目维度的答案解析<br>当ModelType= youtu_correction_model，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</p>
-                     * @return AnswerAnalysis <p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，通过该字段返回题目维度的答案解析<br>当ModelType= youtu_correction_model，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</p>
+                     * 获取<p>【批改 API 专属特性】</p><ol><li>当ModelType= yuanbao_correction_model 且快速模式下，通过该字段返回题目维度的答案解析</li><li>其他批改配置参数情况，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</li></ol>
+                     * @return AnswerAnalysis <p>【批改 API 专属特性】</p><ol><li>当ModelType= yuanbao_correction_model 且快速模式下，通过该字段返回题目维度的答案解析</li><li>其他批改配置参数情况，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</li></ol>
                      * 
                      */
                     std::string GetAnswerAnalysis() const;
 
                     /**
-                     * 设置<p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，通过该字段返回题目维度的答案解析<br>当ModelType= youtu_correction_model，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</p>
-                     * @param _answerAnalysis <p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，通过该字段返回题目维度的答案解析<br>当ModelType= youtu_correction_model，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</p>
+                     * 设置<p>【批改 API 专属特性】</p><ol><li>当ModelType= yuanbao_correction_model 且快速模式下，通过该字段返回题目维度的答案解析</li><li>其他批改配置参数情况，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</li></ol>
+                     * @param _answerAnalysis <p>【批改 API 专属特性】</p><ol><li>当ModelType= yuanbao_correction_model 且快速模式下，通过该字段返回题目维度的答案解析</li><li>其他批改配置参数情况，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</li></ol>
                      * 
                      */
                     void SetAnswerAnalysis(const std::string& _answerAnalysis);
@@ -344,6 +344,27 @@ namespace TencentCloud
                      * 
                      */
                     bool GradeHasBeenSet() const;
+
+                    /**
+                     * 获取<p>【批改 API专属特性】返回题目维度的批改置信度（0-100）值越高表示答案准确度越高<br>备注：仅有ModelType=youtu_correction_model模型且非快速模式支持返回。</p>
+                     * @return Confidence <p>【批改 API专属特性】返回题目维度的批改置信度（0-100）值越高表示答案准确度越高<br>备注：仅有ModelType=youtu_correction_model模型且非快速模式支持返回。</p>
+                     * 
+                     */
+                    int64_t GetConfidence() const;
+
+                    /**
+                     * 设置<p>【批改 API专属特性】返回题目维度的批改置信度（0-100）值越高表示答案准确度越高<br>备注：仅有ModelType=youtu_correction_model模型且非快速模式支持返回。</p>
+                     * @param _confidence <p>【批改 API专属特性】返回题目维度的批改置信度（0-100）值越高表示答案准确度越高<br>备注：仅有ModelType=youtu_correction_model模型且非快速模式支持返回。</p>
+                     * 
+                     */
+                    void SetConfidence(const int64_t& _confidence);
+
+                    /**
+                     * 判断参数 Confidence 是否已赋值
+                     * @return Confidence 是否已赋值
+                     * 
+                     */
+                    bool ConfidenceHasBeenSet() const;
 
                 private:
 
@@ -420,7 +441,7 @@ namespace TencentCloud
                     bool m_knowledgePointsHasBeenSet;
 
                     /**
-                     * <p>【批改 API 专属特性】<br>当ModelType= yuanbao_correction_model，通过该字段返回题目维度的答案解析<br>当ModelType= youtu_correction_model，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</p>
+                     * <p>【批改 API 专属特性】</p><ol><li>当ModelType= yuanbao_correction_model 且快速模式下，通过该字段返回题目维度的答案解析</li><li>其他批改配置参数情况，该字段返回空，通过AnswerElement. AnswerAnalysis返回答案维度答案解析</li></ol>
                      */
                     std::string m_answerAnalysis;
                     bool m_answerAnalysisHasBeenSet;
@@ -430,6 +451,12 @@ namespace TencentCloud
                      */
                     std::string m_grade;
                     bool m_gradeHasBeenSet;
+
+                    /**
+                     * <p>【批改 API专属特性】返回题目维度的批改置信度（0-100）值越高表示答案准确度越高<br>备注：仅有ModelType=youtu_correction_model模型且非快速模式支持返回。</p>
+                     */
+                    int64_t m_confidence;
+                    bool m_confidenceHasBeenSet;
 
                 };
             }

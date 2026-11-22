@@ -30,7 +30,6 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeTokenRequest.h
   include/tencentcloud/rum/v20210622/model/DeleteFieldTransformRuleResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribePvListResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogDetailsV2Response.h
   include/tencentcloud/rum/v20210622/model/DescribeScoresV2Response.h
@@ -72,11 +71,9 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/StopInstanceResponse.h
   include/tencentcloud/rum/v20210622/model/ModifyTDEMSampleConfigRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeTDEMMetricTrendRequest.h
-  include/tencentcloud/rum/v20210622/model/ModifyProjectRequest.h
   include/tencentcloud/rum/v20210622/model/MetricTrendPoint.h
   include/tencentcloud/rum/v20210622/model/CreateStarProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsV2Request.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsV2Request.h
   include/tencentcloud/rum/v20210622/model/RumProject.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMMallocProblemListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeTDEMFunnelStepSessionListResponse.h
@@ -125,7 +122,6 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataResponse.h
   include/tencentcloud/rum/v20210622/model/RumAreaInfo.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportV2Request.h
   include/tencentcloud/rum/v20210622/model/ModifyInstanceRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeAppMetricsDataResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseDetailListResponse.h
@@ -150,7 +146,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeUvListRequest.h
   include/tencentcloud/rum/v20210622/model/CreateFieldTransformRuleRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeReplayMetaRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsV2Response.h
+  include/tencentcloud/rum/v20210622/model/ModifyProjectRequest.h
   include/tencentcloud/rum/v20210622/model/SymbolicatedView.h
   include/tencentcloud/rum/v20210622/model/DescribeFOOMReportListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeApplicationExitReportListRequest.h
@@ -444,7 +440,6 @@ set(rum_src
   src/v20210622/model/DescribeTokenRequest.cpp
   src/v20210622/model/DeleteFieldTransformRuleResponse.cpp
   src/v20210622/model/DescribeDataStaticUrlV2Request.cpp
-  src/v20210622/model/DescribeRumLogExportV2Response.cpp
   src/v20210622/model/DescribePvListResponse.cpp
   src/v20210622/model/DescribeRumLogDetailsV2Response.cpp
   src/v20210622/model/DescribeScoresV2Response.cpp
@@ -486,11 +481,9 @@ set(rum_src
   src/v20210622/model/StopInstanceResponse.cpp
   src/v20210622/model/ModifyTDEMSampleConfigRequest.cpp
   src/v20210622/model/DescribeTDEMMetricTrendRequest.cpp
-  src/v20210622/model/ModifyProjectRequest.cpp
   src/v20210622/model/MetricTrendPoint.cpp
   src/v20210622/model/CreateStarProjectRequest.cpp
   src/v20210622/model/DescribeDataSetUrlStatisticsV2Request.cpp
-  src/v20210622/model/DescribeRumLogExportsV2Request.cpp
   src/v20210622/model/RumProject.cpp
   src/v20210622/model/DescribeFOOMMallocProblemListRequest.cpp
   src/v20210622/model/DescribeTDEMFunnelStepSessionListResponse.cpp
@@ -539,7 +532,6 @@ set(rum_src
   src/v20210622/model/DescribeDataFetchProjectRequest.cpp
   src/v20210622/model/DescribeDataResponse.cpp
   src/v20210622/model/RumAreaInfo.cpp
-  src/v20210622/model/DescribeRumLogExportV2Request.cpp
   src/v20210622/model/ModifyInstanceRequest.cpp
   src/v20210622/model/DescribeAppMetricsDataResponse.cpp
   src/v20210622/model/DescribeAppSingleCaseDetailListResponse.cpp
@@ -564,7 +556,7 @@ set(rum_src
   src/v20210622/model/DescribeUvListRequest.cpp
   src/v20210622/model/CreateFieldTransformRuleRequest.cpp
   src/v20210622/model/DescribeReplayMetaRequest.cpp
-  src/v20210622/model/DescribeRumLogExportsV2Response.cpp
+  src/v20210622/model/ModifyProjectRequest.cpp
   src/v20210622/model/SymbolicatedView.cpp
   src/v20210622/model/DescribeFOOMReportListRequest.cpp
   src/v20210622/model/DescribeApplicationExitReportListRequest.cpp

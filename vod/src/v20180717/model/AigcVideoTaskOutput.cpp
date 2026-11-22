@@ -23,6 +23,7 @@ using namespace std;
 AigcVideoTaskOutput::AigcVideoTaskOutput() :
     m_fileInfosHasBeenSet(false),
     m_procedureTaskIdsHasBeenSet(false),
+    m_totalInputVideoDurationHasBeenSet(false),
     m_usageHasBeenSet(false)
 {
 }
@@ -63,6 +64,16 @@ CoreInternalOutcome AigcVideoTaskOutput::Deserialize(const rapidjson::Value &val
             m_procedureTaskIds.push_back((*itr).GetString());
         }
         m_procedureTaskIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalInputVideoDuration") && !value["TotalInputVideoDuration"].IsNull())
+    {
+        if (!value["TotalInputVideoDuration"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcVideoTaskOutput.TotalInputVideoDuration` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalInputVideoDuration = value["TotalInputVideoDuration"].GetUint64();
+        m_totalInputVideoDurationHasBeenSet = true;
     }
 
     if (value.HasMember("Usage") && !value["Usage"].IsNull())
@@ -117,6 +128,14 @@ void AigcVideoTaskOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         }
     }
 
+    if (m_totalInputVideoDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalInputVideoDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalInputVideoDuration, allocator);
+    }
+
     if (m_usageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -159,6 +178,22 @@ void AigcVideoTaskOutput::SetProcedureTaskIds(const vector<string>& _procedureTa
 bool AigcVideoTaskOutput::ProcedureTaskIdsHasBeenSet() const
 {
     return m_procedureTaskIdsHasBeenSet;
+}
+
+uint64_t AigcVideoTaskOutput::GetTotalInputVideoDuration() const
+{
+    return m_totalInputVideoDuration;
+}
+
+void AigcVideoTaskOutput::SetTotalInputVideoDuration(const uint64_t& _totalInputVideoDuration)
+{
+    m_totalInputVideoDuration = _totalInputVideoDuration;
+    m_totalInputVideoDurationHasBeenSet = true;
+}
+
+bool AigcVideoTaskOutput::TotalInputVideoDurationHasBeenSet() const
+{
+    return m_totalInputVideoDurationHasBeenSet;
 }
 
 AigcVideoTaskUsage AigcVideoTaskOutput::GetUsage() const

@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteWorkloadGroupRequest::DeleteWorkloadGroupRequest() :
     m_instanceIdHasBeenSet(false),
-    m_workloadGroupNameHasBeenSet(false)
+    m_workloadGroupNameHasBeenSet(false),
+    m_computeGroupHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteWorkloadGroupRequest::ToJsonString() const
         string key = "WorkloadGroupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workloadGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_computeGroup.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteWorkloadGroupRequest::SetWorkloadGroupName(const string& _workloadGro
 bool DeleteWorkloadGroupRequest::WorkloadGroupNameHasBeenSet() const
 {
     return m_workloadGroupNameHasBeenSet;
+}
+
+string DeleteWorkloadGroupRequest::GetComputeGroup() const
+{
+    return m_computeGroup;
+}
+
+void DeleteWorkloadGroupRequest::SetComputeGroup(const string& _computeGroup)
+{
+    m_computeGroup = _computeGroup;
+    m_computeGroupHasBeenSet = true;
+}
+
+bool DeleteWorkloadGroupRequest::ComputeGroupHasBeenSet() const
+{
+    return m_computeGroupHasBeenSet;
 }
 
 

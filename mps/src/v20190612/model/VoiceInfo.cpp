@@ -31,7 +31,9 @@ VoiceInfo::VoiceInfo() :
     m_audioUrlHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_scenesHasBeenSet(false),
-    m_engineHasBeenSet(false)
+    m_engineHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false)
 {
 }
 
@@ -159,6 +161,26 @@ CoreInternalOutcome VoiceInfo::Deserialize(const rapidjson::Value &value)
         m_engineHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedAt") && !value["CreatedAt"].IsNull())
+    {
+        if (!value["CreatedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VoiceInfo.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdAt = string(value["CreatedAt"].GetString());
+        m_createdAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdatedAt") && !value["UpdatedAt"].IsNull())
+    {
+        if (!value["UpdatedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VoiceInfo.UpdatedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedAt = string(value["UpdatedAt"].GetString());
+        m_updatedAtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -267,6 +289,22 @@ void VoiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Engine";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_engine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -446,5 +484,37 @@ void VoiceInfo::SetEngine(const string& _engine)
 bool VoiceInfo::EngineHasBeenSet() const
 {
     return m_engineHasBeenSet;
+}
+
+string VoiceInfo::GetCreatedAt() const
+{
+    return m_createdAt;
+}
+
+void VoiceInfo::SetCreatedAt(const string& _createdAt)
+{
+    m_createdAt = _createdAt;
+    m_createdAtHasBeenSet = true;
+}
+
+bool VoiceInfo::CreatedAtHasBeenSet() const
+{
+    return m_createdAtHasBeenSet;
+}
+
+string VoiceInfo::GetUpdatedAt() const
+{
+    return m_updatedAt;
+}
+
+void VoiceInfo::SetUpdatedAt(const string& _updatedAt)
+{
+    m_updatedAt = _updatedAt;
+    m_updatedAtHasBeenSet = true;
+}
+
+bool VoiceInfo::UpdatedAtHasBeenSet() const
+{
+    return m_updatedAtHasBeenSet;
 }
 

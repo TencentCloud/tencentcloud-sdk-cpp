@@ -57,6 +57,20 @@ namespace TencentCloud
                      */
                     bool VoiceIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>试听音频url,请于24小时内尽快下载</p>
+                     * @return PreviewUrl <p>试听音频url,请于24小时内尽快下载</p>
+                     * 
+                     */
+                    std::string GetPreviewUrl() const;
+
+                    /**
+                     * 判断参数 PreviewUrl 是否已赋值
+                     * @return PreviewUrl 是否已赋值
+                     * 
+                     */
+                    bool PreviewUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +78,12 @@ namespace TencentCloud
                      */
                     std::string m_voiceId;
                     bool m_voiceIdHasBeenSet;
+
+                    /**
+                     * <p>试听音频url,请于24小时内尽快下载</p>
+                     */
+                    std::string m_previewUrl;
+                    bool m_previewUrlHasBeenSet;
 
                 };
             }

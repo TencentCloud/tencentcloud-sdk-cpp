@@ -26,6 +26,7 @@ using namespace std;
 DescribeWorkloadGroupResponse::DescribeWorkloadGroupResponse() :
     m_workloadGroupsHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_needPodRebuildHasBeenSet(false),
     m_errorMsgHasBeenSet(false),
     m_monitorStatusHasBeenSet(false)
 {
@@ -95,6 +96,16 @@ CoreInternalOutcome DescribeWorkloadGroupResponse::Deserialize(const string &pay
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NeedPodRebuild") && !rsp["NeedPodRebuild"].IsNull())
+    {
+        if (!rsp["NeedPodRebuild"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NeedPodRebuild` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_needPodRebuild = rsp["NeedPodRebuild"].GetBool();
+        m_needPodRebuildHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
     {
         if (!rsp["ErrorMsg"].IsString())
@@ -148,6 +159,14 @@ string DescribeWorkloadGroupResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_needPodRebuildHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedPodRebuild";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needPodRebuild, allocator);
+    }
+
     if (m_errorMsgHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -194,6 +213,16 @@ string DescribeWorkloadGroupResponse::GetStatus() const
 bool DescribeWorkloadGroupResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+bool DescribeWorkloadGroupResponse::GetNeedPodRebuild() const
+{
+    return m_needPodRebuild;
+}
+
+bool DescribeWorkloadGroupResponse::NeedPodRebuildHasBeenSet() const
+{
+    return m_needPodRebuildHasBeenSet;
 }
 
 string DescribeWorkloadGroupResponse::GetErrorMsg() const

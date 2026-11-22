@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/PairDto.h>
+#include <tencentcloud/wedata/v20210820/model/LogDiagnosisRules.h>
 
 
 namespace TencentCloud
@@ -48,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例运行日志
+                     * 获取<p>实例运行日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogInfo 实例运行日志
+                     * @return LogInfo <p>实例运行日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogInfo() const;
 
                     /**
-                     * 设置实例运行日志
+                     * 设置<p>实例运行日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _logInfo 实例运行日志
+                     * @param _logInfo <p>实例运行日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +74,18 @@ namespace TencentCloud
                     bool LogInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例运行提交的yarn日志地址
+                     * 获取<p>实例运行提交的yarn日志地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return YarnLogInfo 实例运行提交的yarn日志地址
+                     * @return YarnLogInfo <p>实例运行提交的yarn日志地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetYarnLogInfo() const;
 
                     /**
-                     * 设置实例运行提交的yarn日志地址
+                     * 设置<p>实例运行提交的yarn日志地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _yarnLogInfo 实例运行提交的yarn日志地址
+                     * @param _yarnLogInfo <p>实例运行提交的yarn日志地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +99,18 @@ namespace TencentCloud
                     bool YarnLogInfoHasBeenSet() const;
 
                     /**
-                     * 获取实例运行产生的datax日志
+                     * 获取<p>实例运行产生的datax日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataLogInfo 实例运行产生的datax日志
+                     * @return DataLogInfo <p>实例运行产生的datax日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataLogInfo() const;
 
                     /**
-                     * 设置实例运行产生的datax日志
+                     * 设置<p>实例运行产生的datax日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataLogInfo 实例运行产生的datax日志
+                     * @param _dataLogInfo <p>实例运行产生的datax日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +124,18 @@ namespace TencentCloud
                     bool DataLogInfoHasBeenSet() const;
 
                     /**
-                     * 获取第三方任务运行日志
+                     * 获取<p>第三方任务运行日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ThirdTaskRunLogInfo 第三方任务运行日志
+                     * @return ThirdTaskRunLogInfo <p>第三方任务运行日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetThirdTaskRunLogInfo() const;
 
                     /**
-                     * 设置第三方任务运行日志
+                     * 设置<p>第三方任务运行日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _thirdTaskRunLogInfo 第三方任务运行日志
+                     * @param _thirdTaskRunLogInfo <p>第三方任务运行日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +149,18 @@ namespace TencentCloud
                     bool ThirdTaskRunLogInfoHasBeenSet() const;
 
                     /**
-                     * 获取第三方任务日志链接描述
+                     * 获取<p>第三方任务日志链接描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ThirdTaskLogUrlDesc 第三方任务日志链接描述
+                     * @return ThirdTaskLogUrlDesc <p>第三方任务日志链接描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetThirdTaskLogUrlDesc() const;
 
                     /**
-                     * 设置第三方任务日志链接描述
+                     * 设置<p>第三方任务日志链接描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _thirdTaskLogUrlDesc 第三方任务日志链接描述
+                     * @param _thirdTaskLogUrlDesc <p>第三方任务日志链接描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +174,18 @@ namespace TencentCloud
                     bool ThirdTaskLogUrlDescHasBeenSet() const;
 
                     /**
-                     * 获取日志行数
+                     * 获取<p>日志行数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LineCount 日志行数
+                     * @return LineCount <p>日志行数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLineCount() const;
 
                     /**
-                     * 设置日志行数
+                     * 设置<p>日志行数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lineCount 日志行数
+                     * @param _lineCount <p>日志行数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +199,18 @@ namespace TencentCloud
                     bool LineCountHasBeenSet() const;
 
                     /**
-                     * 获取统一执行平台日志分页查询参数
+                     * 获取<p>统一执行平台日志分页查询参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtInfo 统一执行平台日志分页查询参数
+                     * @return ExtInfo <p>统一执行平台日志分页查询参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtInfo() const;
 
                     /**
-                     * 设置统一执行平台日志分页查询参数
+                     * 设置<p>统一执行平台日志分页查询参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _extInfo 统一执行平台日志分页查询参数
+                     * @param _extInfo <p>统一执行平台日志分页查询参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -223,18 +224,18 @@ namespace TencentCloud
                     bool ExtInfoHasBeenSet() const;
 
                     /**
-                     * 获取日志分页查询，是否最后一页
+                     * 获取<p>日志分页查询，是否最后一页</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsEnd 日志分页查询，是否最后一页
+                     * @return IsEnd <p>日志分页查询，是否最后一页</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsEnd() const;
 
                     /**
-                     * 设置日志分页查询，是否最后一页
+                     * 设置<p>日志分页查询，是否最后一页</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isEnd 日志分页查询，是否最后一页
+                     * @param _isEnd <p>日志分页查询，是否最后一页</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,18 +249,18 @@ namespace TencentCloud
                     bool IsEndHasBeenSet() const;
 
                     /**
-                     * 获取文件大小
+                     * 获取<p>文件大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FileSize 文件大小
+                     * @return FileSize <p>文件大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileSize() const;
 
                     /**
-                     * 设置文件大小
+                     * 设置<p>文件大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fileSize 文件大小
+                     * @param _fileSize <p>文件大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -273,15 +274,15 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取日志匹配节点信息
-                     * @return MatchedBrokerIp 日志匹配节点信息
+                     * 获取<p>日志匹配节点信息</p>
+                     * @return MatchedBrokerIp <p>日志匹配节点信息</p>
                      * 
                      */
                     std::string GetMatchedBrokerIp() const;
 
                     /**
-                     * 设置日志匹配节点信息
-                     * @param _matchedBrokerIp 日志匹配节点信息
+                     * 设置<p>日志匹配节点信息</p>
+                     * @param _matchedBrokerIp <p>日志匹配节点信息</p>
                      * 
                      */
                     void SetMatchedBrokerIp(const std::string& _matchedBrokerIp);
@@ -294,15 +295,15 @@ namespace TencentCloud
                     bool MatchedBrokerIpHasBeenSet() const;
 
                     /**
-                     * 获取执行平台通用协议
-                     * @return ExecutionExtendedProps 执行平台通用协议
+                     * 获取<p>执行平台通用协议</p>
+                     * @return ExecutionExtendedProps <p>执行平台通用协议</p>
                      * 
                      */
                     std::vector<PairDto> GetExecutionExtendedProps() const;
 
                     /**
-                     * 设置执行平台通用协议
-                     * @param _executionExtendedProps 执行平台通用协议
+                     * 设置<p>执行平台通用协议</p>
+                     * @param _executionExtendedProps <p>执行平台通用协议</p>
                      * 
                      */
                     void SetExecutionExtendedProps(const std::vector<PairDto>& _executionExtendedProps);
@@ -314,82 +315,114 @@ namespace TencentCloud
                      */
                     bool ExecutionExtendedPropsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>日志诊断规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogDiagnosisRules <p>日志诊断规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    LogDiagnosisRules GetLogDiagnosisRules() const;
+
+                    /**
+                     * 设置<p>日志诊断规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logDiagnosisRules <p>日志诊断规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetLogDiagnosisRules(const LogDiagnosisRules& _logDiagnosisRules);
+
+                    /**
+                     * 判断参数 LogDiagnosisRules 是否已赋值
+                     * @return LogDiagnosisRules 是否已赋值
+                     * @deprecated
+                     */
+                    bool LogDiagnosisRulesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例运行日志
+                     * <p>实例运行日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logInfo;
                     bool m_logInfoHasBeenSet;
 
                     /**
-                     * 实例运行提交的yarn日志地址
+                     * <p>实例运行提交的yarn日志地址</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_yarnLogInfo;
                     bool m_yarnLogInfoHasBeenSet;
 
                     /**
-                     * 实例运行产生的datax日志
+                     * <p>实例运行产生的datax日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataLogInfo;
                     bool m_dataLogInfoHasBeenSet;
 
                     /**
-                     * 第三方任务运行日志
+                     * <p>第三方任务运行日志</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_thirdTaskRunLogInfo;
                     bool m_thirdTaskRunLogInfoHasBeenSet;
 
                     /**
-                     * 第三方任务日志链接描述
+                     * <p>第三方任务日志链接描述</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_thirdTaskLogUrlDesc;
                     bool m_thirdTaskLogUrlDescHasBeenSet;
 
                     /**
-                     * 日志行数
+                     * <p>日志行数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lineCount;
                     bool m_lineCountHasBeenSet;
 
                     /**
-                     * 统一执行平台日志分页查询参数
+                     * <p>统一执行平台日志分页查询参数</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;
 
                     /**
-                     * 日志分页查询，是否最后一页
+                     * <p>日志分页查询，是否最后一页</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isEnd;
                     bool m_isEndHasBeenSet;
 
                     /**
-                     * 文件大小
+                     * <p>文件大小</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 日志匹配节点信息
+                     * <p>日志匹配节点信息</p>
                      */
                     std::string m_matchedBrokerIp;
                     bool m_matchedBrokerIpHasBeenSet;
 
                     /**
-                     * 执行平台通用协议
+                     * <p>执行平台通用协议</p>
                      */
                     std::vector<PairDto> m_executionExtendedProps;
                     bool m_executionExtendedPropsHasBeenSet;
+
+                    /**
+                     * <p>日志诊断规则</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LogDiagnosisRules m_logDiagnosisRules;
+                    bool m_logDiagnosisRulesHasBeenSet;
 
                 };
             }

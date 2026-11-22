@@ -21,9 +21,9 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 ZoneSetting::ZoneSetting() :
-    m_zoneHasBeenSet(false),
+    m_nodeNumHasBeenSet(false),
     m_vPCSettingsHasBeenSet(false),
-    m_nodeNumHasBeenSet(false)
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -32,14 +32,14 @@ CoreInternalOutcome ZoneSetting::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    if (value.HasMember("NodeNum") && !value["NodeNum"].IsNull())
     {
-        if (!value["Zone"].IsString())
+        if (!value["NodeNum"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `ZoneSetting.Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSetting.NodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_zone = string(value["Zone"].GetString());
-        m_zoneHasBeenSet = true;
+        m_nodeNum = value["NodeNum"].GetInt64();
+        m_nodeNumHasBeenSet = true;
     }
 
     if (value.HasMember("VPCSettings") && !value["VPCSettings"].IsNull())
@@ -59,14 +59,14 @@ CoreInternalOutcome ZoneSetting::Deserialize(const rapidjson::Value &value)
         m_vPCSettingsHasBeenSet = true;
     }
 
-    if (value.HasMember("NodeNum") && !value["NodeNum"].IsNull())
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
     {
-        if (!value["NodeNum"].IsInt64())
+        if (!value["Zone"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `ZoneSetting.NodeNum` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ZoneSetting.Zone` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_nodeNum = value["NodeNum"].GetInt64();
-        m_nodeNumHasBeenSet = true;
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
     }
 
 
@@ -76,12 +76,12 @@ CoreInternalOutcome ZoneSetting::Deserialize(const rapidjson::Value &value)
 void ZoneSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_zoneHasBeenSet)
+    if (m_nodeNumHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Zone";
+        string key = "NodeNum";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_nodeNum, allocator);
     }
 
     if (m_vPCSettingsHasBeenSet)
@@ -93,31 +93,31 @@ void ZoneSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         m_vPCSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_nodeNumHasBeenSet)
+    if (m_zoneHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NodeNum";
+        string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_nodeNum, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }
 
 
-string ZoneSetting::GetZone() const
+int64_t ZoneSetting::GetNodeNum() const
 {
-    return m_zone;
+    return m_nodeNum;
 }
 
-void ZoneSetting::SetZone(const string& _zone)
+void ZoneSetting::SetNodeNum(const int64_t& _nodeNum)
 {
-    m_zone = _zone;
-    m_zoneHasBeenSet = true;
+    m_nodeNum = _nodeNum;
+    m_nodeNumHasBeenSet = true;
 }
 
-bool ZoneSetting::ZoneHasBeenSet() const
+bool ZoneSetting::NodeNumHasBeenSet() const
 {
-    return m_zoneHasBeenSet;
+    return m_nodeNumHasBeenSet;
 }
 
 VPCSettings ZoneSetting::GetVPCSettings() const
@@ -136,19 +136,19 @@ bool ZoneSetting::VPCSettingsHasBeenSet() const
     return m_vPCSettingsHasBeenSet;
 }
 
-int64_t ZoneSetting::GetNodeNum() const
+string ZoneSetting::GetZone() const
 {
-    return m_nodeNum;
+    return m_zone;
 }
 
-void ZoneSetting::SetNodeNum(const int64_t& _nodeNum)
+void ZoneSetting::SetZone(const string& _zone)
 {
-    m_nodeNum = _nodeNum;
-    m_nodeNumHasBeenSet = true;
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
 }
 
-bool ZoneSetting::NodeNumHasBeenSet() const
+bool ZoneSetting::ZoneHasBeenSet() const
 {
-    return m_nodeNumHasBeenSet;
+    return m_zoneHasBeenSet;
 }
 

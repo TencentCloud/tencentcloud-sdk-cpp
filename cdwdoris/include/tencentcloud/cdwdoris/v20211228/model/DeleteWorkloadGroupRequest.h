@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return InstanceId 集群id
+                     * 获取<p>集群id</p>
+                     * @return InstanceId <p>集群id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _instanceId 集群id
+                     * 设置<p>集群id</p>
+                     * @param _instanceId <p>集群id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取需要删除的资源组名称
-                     * @return WorkloadGroupName 需要删除的资源组名称
+                     * 获取<p>需要删除的资源组名称</p>
+                     * @return WorkloadGroupName <p>需要删除的资源组名称</p>
                      * 
                      */
                     std::string GetWorkloadGroupName() const;
 
                     /**
-                     * 设置需要删除的资源组名称
-                     * @param _workloadGroupName 需要删除的资源组名称
+                     * 设置<p>需要删除的资源组名称</p>
+                     * @param _workloadGroupName <p>需要删除的资源组名称</p>
                      * 
                      */
                     void SetWorkloadGroupName(const std::string& _workloadGroupName);
@@ -84,19 +84,46 @@ namespace TencentCloud
                      */
                     bool WorkloadGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>资源组归属的计算组ID</p>
+                     * @return ComputeGroup <p>资源组归属的计算组ID</p>
+                     * 
+                     */
+                    std::string GetComputeGroup() const;
+
+                    /**
+                     * 设置<p>资源组归属的计算组ID</p>
+                     * @param _computeGroup <p>资源组归属的计算组ID</p>
+                     * 
+                     */
+                    void SetComputeGroup(const std::string& _computeGroup);
+
+                    /**
+                     * 判断参数 ComputeGroup 是否已赋值
+                     * @return ComputeGroup 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群id
+                     * <p>集群id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 需要删除的资源组名称
+                     * <p>需要删除的资源组名称</p>
                      */
                     std::string m_workloadGroupName;
                     bool m_workloadGroupNameHasBeenSet;
+
+                    /**
+                     * <p>资源组归属的计算组ID</p>
+                     */
+                    std::string m_computeGroup;
+                    bool m_computeGroupHasBeenSet;
 
                 };
             }

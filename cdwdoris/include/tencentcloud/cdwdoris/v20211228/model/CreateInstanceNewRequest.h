@@ -467,6 +467,27 @@ namespace TencentCloud
                     bool CacheDataDiskSizeHasBeenSet() const;
 
                     /**
+                     * 获取<p>缓存盘介质，仅存算分离（IsSSC=true）时有效：CLOUD_HSSD=增强型SSD，ELASTIC_REMOTE_SSD=单副本SSD</p>
+                     * @return CacheDiskType <p>缓存盘介质，仅存算分离（IsSSC=true）时有效：CLOUD_HSSD=增强型SSD，ELASTIC_REMOTE_SSD=单副本SSD</p>
+                     * 
+                     */
+                    std::string GetCacheDiskType() const;
+
+                    /**
+                     * 设置<p>缓存盘介质，仅存算分离（IsSSC=true）时有效：CLOUD_HSSD=增强型SSD，ELASTIC_REMOTE_SSD=单副本SSD</p>
+                     * @param _cacheDiskType <p>缓存盘介质，仅存算分离（IsSSC=true）时有效：CLOUD_HSSD=增强型SSD，ELASTIC_REMOTE_SSD=单副本SSD</p>
+                     * 
+                     */
+                    void SetCacheDiskType(const std::string& _cacheDiskType);
+
+                    /**
+                     * 判断参数 CacheDiskType 是否已赋值
+                     * @return CacheDiskType 是否已赋值
+                     * 
+                     */
+                    bool CacheDiskTypeHasBeenSet() const;
+
+                    /**
                      * 获取<p>磁盘加密</p><p>默认为0不加密，1表示加密</p>
                      * @return DiskEncrypt <p>磁盘加密</p><p>默认为0不加密，1表示加密</p>
                      * 
@@ -608,6 +629,12 @@ namespace TencentCloud
                      */
                     int64_t m_cacheDataDiskSize;
                     bool m_cacheDataDiskSizeHasBeenSet;
+
+                    /**
+                     * <p>缓存盘介质，仅存算分离（IsSSC=true）时有效：CLOUD_HSSD=增强型SSD，ELASTIC_REMOTE_SSD=单副本SSD</p>
+                     */
+                    std::string m_cacheDiskType;
+                    bool m_cacheDiskTypeHasBeenSet;
 
                     /**
                      * <p>磁盘加密</p><p>默认为0不加密，1表示加密</p>

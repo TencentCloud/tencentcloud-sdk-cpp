@@ -30,6 +30,7 @@ AuthorizationPolicyItem::AuthorizationPolicyItem() :
     m_actionsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_clientIdHasBeenSet(false),
+    m_resourceItemsHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_qosHasBeenSet(false),
@@ -133,6 +134,19 @@ CoreInternalOutcome AuthorizationPolicyItem::Deserialize(const rapidjson::Value 
         }
         m_clientId = string(value["ClientId"].GetString());
         m_clientIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceItems") && !value["ResourceItems"].IsNull())
+    {
+        if (!value["ResourceItems"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AuthorizationPolicyItem.ResourceItems` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResourceItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_resourceItems.push_back((*itr).GetString());
+        }
+        m_resourceItemsHasBeenSet = true;
     }
 
     if (value.HasMember("Username") && !value["Username"].IsNull())
@@ -282,6 +296,19 @@ void AuthorizationPolicyItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ClientId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clientId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceItems.begin(); itr != m_resourceItems.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_usernameHasBeenSet)
@@ -485,6 +512,22 @@ void AuthorizationPolicyItem::SetClientId(const string& _clientId)
 bool AuthorizationPolicyItem::ClientIdHasBeenSet() const
 {
     return m_clientIdHasBeenSet;
+}
+
+vector<string> AuthorizationPolicyItem::GetResourceItems() const
+{
+    return m_resourceItems;
+}
+
+void AuthorizationPolicyItem::SetResourceItems(const vector<string>& _resourceItems)
+{
+    m_resourceItems = _resourceItems;
+    m_resourceItemsHasBeenSet = true;
+}
+
+bool AuthorizationPolicyItem::ResourceItemsHasBeenSet() const
+{
+    return m_resourceItemsHasBeenSet;
 }
 
 string AuthorizationPolicyItem::GetUsername() const

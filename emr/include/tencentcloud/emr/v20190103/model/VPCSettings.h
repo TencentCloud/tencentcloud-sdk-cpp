@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC ID
-                     * @return VpcId VPC ID
-                     * 
-                     */
-                    std::string GetVpcId() const;
-
-                    /**
-                     * 设置VPC ID
-                     * @param _vpcId VPC ID
-                     * 
-                     */
-                    void SetVpcId(const std::string& _vpcId);
-
-                    /**
-                     * 判断参数 VpcId 是否已赋值
-                     * @return VpcId 是否已赋值
-                     * 
-                     */
-                    bool VpcIdHasBeenSet() const;
-
-                    /**
                      * 获取Subnet ID
                      * @return SubnetId Subnet ID
                      * 
@@ -88,19 +67,40 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取VPC ID
+                     * @return VpcId VPC ID
+                     * 
+                     */
+                    std::string GetVpcId() const;
 
                     /**
-                     * VPC ID
+                     * 设置VPC ID
+                     * @param _vpcId VPC ID
+                     * 
                      */
-                    std::string m_vpcId;
-                    bool m_vpcIdHasBeenSet;
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * Subnet ID
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * VPC ID
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                 };
             }

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例唯一标识符（字符串表示）
-                     * @return InstanceId 实例唯一标识符（字符串表示）
+                     * 获取<p>实例唯一标识符（字符串表示）</p>
+                     * @return InstanceId <p>实例唯一标识符（字符串表示）</p>
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例唯一标识符（字符串表示）
+                     * <p>实例唯一标识符（字符串表示）</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

@@ -53,7 +53,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse.h
   include/tencentcloud/cngw/v20230418/model/AIGWRerankMaxDocumentsConfig.h
   include/tencentcloud/cngw/v20230418/model/DefaultKongRoute.h
-  include/tencentcloud/cngw/v20230418/model/KeyValue.h
+  include/tencentcloud/cngw/v20230418/model/DescribeAIGWLLMModelAPIIPRestrictionRequest.h
   include/tencentcloud/cngw/v20230418/model/AIGWKVMatch.h
   include/tencentcloud/cngw/v20230418/model/AIGWLengthLimitConfig.h
   include/tencentcloud/cngw/v20230418/model/CNAPIGwAIServiceSourceList.h
@@ -193,7 +193,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolVersionRequest.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceRequest.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolRequest.h
-  include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsRequest.h
+  include/tencentcloud/cngw/v20230418/model/AIGWLLMIPRestrictionResult.h
   include/tencentcloud/cngw/v20230418/model/RollbackCloudNativeAPIGatewayMCPToolVersionRequest.h
   include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewaySecretKeyRequest.h
   include/tencentcloud/cngw/v20230418/model/AIGWQuotaDetail.h
@@ -223,6 +223,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/CompareCloudNativeAPIGatewayMCPToolVersionRequest.h
   include/tencentcloud/cngw/v20230418/model/UpdateCloudNativeAPIGatewayMCPToolsResponse.h
   include/tencentcloud/cngw/v20230418/model/AddCloudNativeAPIGatewayConsumerInGroupRequest.h
+  include/tencentcloud/cngw/v20230418/model/KeyValue.h
   include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayConsumerResponse.h
   include/tencentcloud/cngw/v20230418/model/AIGWMCPRoute.h
   include/tencentcloud/cngw/v20230418/model/CustomGuardrailResourceRefInput.h
@@ -230,6 +231,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelAPIResponse.h
   include/tencentcloud/cngw/v20230418/model/CustomGuardrailPolicy.h
   include/tencentcloud/cngw/v20230418/model/AIGWSimpleSecretKey.h
+  include/tencentcloud/cngw/v20230418/model/ModifyAIGWLLMModelAPIIPRestrictionRequest.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerAuthRequest.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerListResponse.h
   include/tencentcloud/cngw/v20230418/model/AIGWLLMTokenUsageListResult.h
@@ -251,6 +253,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerACLResponse.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayAIServiceSourceListResponse.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPServerRequest.h
+  include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsRequest.h
   include/tencentcloud/cngw/v20230418/model/DescribeAIGWCustomGuardrailPolicyListResult.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPRouteListRequest.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayMCPServerResponse.h
@@ -327,6 +330,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/KongUserTagKV.h
   include/tencentcloud/cngw/v20230418/model/CustomGuardrailDecisionConfig.h
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayAIServiceSourceRequest.h
+  include/tencentcloud/cngw/v20230418/model/ModifyAIGWLLMModelAPIIPRestrictionResponse.h
   include/tencentcloud/cngw/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceResponse.h
   include/tencentcloud/cngw/v20230418/model/CustomGuardrailPolicyFilter.h
   include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayLLMModelAPIResponse.h
@@ -334,6 +338,7 @@ set(cngw_public_header_model
   include/tencentcloud/cngw/v20230418/model/AIGWGatewayVerifyConfig.h
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewaySecretKeyRequest.h
   include/tencentcloud/cngw/v20230418/model/CreateCloudNativeAPIGatewayAIServiceSourceResponse.h
+  include/tencentcloud/cngw/v20230418/model/DescribeAIGWLLMModelAPIIPRestrictionResponse.h
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelServiceRequest.h
   include/tencentcloud/cngw/v20230418/model/DeleteCloudNativeAPIGatewayIPRestrictionResponse.h
   include/tencentcloud/cngw/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest.h
@@ -384,7 +389,7 @@ set(cngw_src
   src/v20230418/model/RemoveCloudNativeAPIGatewayConsumerGroupAuthResponse.cpp
   src/v20230418/model/AIGWRerankMaxDocumentsConfig.cpp
   src/v20230418/model/DefaultKongRoute.cpp
-  src/v20230418/model/KeyValue.cpp
+  src/v20230418/model/DescribeAIGWLLMModelAPIIPRestrictionRequest.cpp
   src/v20230418/model/AIGWKVMatch.cpp
   src/v20230418/model/AIGWLengthLimitConfig.cpp
   src/v20230418/model/CNAPIGwAIServiceSourceList.cpp
@@ -524,7 +529,7 @@ set(cngw_src
   src/v20230418/model/DeleteCloudNativeAPIGatewayMCPToolVersionRequest.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceRequest.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolRequest.cpp
-  src/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsRequest.cpp
+  src/v20230418/model/AIGWLLMIPRestrictionResult.cpp
   src/v20230418/model/RollbackCloudNativeAPIGatewayMCPToolVersionRequest.cpp
   src/v20230418/model/CreateCloudNativeAPIGatewaySecretKeyRequest.cpp
   src/v20230418/model/AIGWQuotaDetail.cpp
@@ -554,6 +559,7 @@ set(cngw_src
   src/v20230418/model/CompareCloudNativeAPIGatewayMCPToolVersionRequest.cpp
   src/v20230418/model/UpdateCloudNativeAPIGatewayMCPToolsResponse.cpp
   src/v20230418/model/AddCloudNativeAPIGatewayConsumerInGroupRequest.cpp
+  src/v20230418/model/KeyValue.cpp
   src/v20230418/model/CreateCloudNativeAPIGatewayConsumerResponse.cpp
   src/v20230418/model/AIGWMCPRoute.cpp
   src/v20230418/model/CustomGuardrailResourceRefInput.cpp
@@ -561,6 +567,7 @@ set(cngw_src
   src/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelAPIResponse.cpp
   src/v20230418/model/CustomGuardrailPolicy.cpp
   src/v20230418/model/AIGWSimpleSecretKey.cpp
+  src/v20230418/model/ModifyAIGWLLMModelAPIIPRestrictionRequest.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerAuthRequest.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerListResponse.cpp
   src/v20230418/model/AIGWLLMTokenUsageListResult.cpp
@@ -582,6 +589,7 @@ set(cngw_src
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPServerACLResponse.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayAIServiceSourceListResponse.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayMCPServerRequest.cpp
+  src/v20230418/model/DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsRequest.cpp
   src/v20230418/model/DescribeAIGWCustomGuardrailPolicyListResult.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPRouteListRequest.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayMCPServerResponse.cpp
@@ -658,6 +666,7 @@ set(cngw_src
   src/v20230418/model/KongUserTagKV.cpp
   src/v20230418/model/CustomGuardrailDecisionConfig.cpp
   src/v20230418/model/DeleteCloudNativeAPIGatewayAIServiceSourceRequest.cpp
+  src/v20230418/model/ModifyAIGWLLMModelAPIIPRestrictionResponse.cpp
   src/v20230418/model/ModifyCloudNativeAPIGatewayLLMModelServiceResponse.cpp
   src/v20230418/model/CustomGuardrailPolicyFilter.cpp
   src/v20230418/model/CreateCloudNativeAPIGatewayLLMModelAPIResponse.cpp
@@ -665,6 +674,7 @@ set(cngw_src
   src/v20230418/model/AIGWGatewayVerifyConfig.cpp
   src/v20230418/model/DeleteCloudNativeAPIGatewaySecretKeyRequest.cpp
   src/v20230418/model/CreateCloudNativeAPIGatewayAIServiceSourceResponse.cpp
+  src/v20230418/model/DescribeAIGWLLMModelAPIIPRestrictionResponse.cpp
   src/v20230418/model/DeleteCloudNativeAPIGatewayLLMModelServiceRequest.cpp
   src/v20230418/model/DeleteCloudNativeAPIGatewayIPRestrictionResponse.cpp
   src/v20230418/model/DescribeCloudNativeAPIGatewayMCPToolImportTaskRequest.cpp

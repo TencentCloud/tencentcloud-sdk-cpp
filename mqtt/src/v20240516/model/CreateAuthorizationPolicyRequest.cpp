@@ -35,7 +35,8 @@ CreateAuthorizationPolicyRequest::CreateAuthorizationPolicyRequest() :
     m_usernameHasBeenSet(false),
     m_clientIdHasBeenSet(false),
     m_ipHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_resourceItemsHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,19 @@ string CreateAuthorizationPolicyRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceItems";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceItems.begin(); itr != m_resourceItems.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -364,6 +378,22 @@ void CreateAuthorizationPolicyRequest::SetRemark(const string& _remark)
 bool CreateAuthorizationPolicyRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+vector<string> CreateAuthorizationPolicyRequest::GetResourceItems() const
+{
+    return m_resourceItems;
+}
+
+void CreateAuthorizationPolicyRequest::SetResourceItems(const vector<string>& _resourceItems)
+{
+    m_resourceItems = _resourceItems;
+    m_resourceItemsHasBeenSet = true;
+}
+
+bool CreateAuthorizationPolicyRequest::ResourceItemsHasBeenSet() const
+{
+    return m_resourceItemsHasBeenSet;
 }
 
 

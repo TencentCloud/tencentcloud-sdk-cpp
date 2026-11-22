@@ -28,6 +28,7 @@ SearchProRequest::SearchProRequest() :
     m_siteHasBeenSet(false),
     m_cntHasBeenSet(false),
     m_industryHasBeenSet(false),
+    m_switchHasBeenSet(false),
     m_freshnessHasBeenSet(false),
     m_deeplinksHasBeenSet(false)
 {
@@ -78,6 +79,14 @@ string SearchProRequest::ToJsonString() const
         string key = "Industry";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_industry.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_switchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Switch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_freshnessHasBeenSet)
@@ -182,6 +191,22 @@ void SearchProRequest::SetIndustry(const string& _industry)
 bool SearchProRequest::IndustryHasBeenSet() const
 {
     return m_industryHasBeenSet;
+}
+
+string SearchProRequest::GetSwitch() const
+{
+    return m_switch;
+}
+
+void SearchProRequest::SetSwitch(const string& _switch)
+{
+    m_switch = _switch;
+    m_switchHasBeenSet = true;
+}
+
+bool SearchProRequest::SwitchHasBeenSet() const
+{
+    return m_switchHasBeenSet;
 }
 
 string SearchProRequest::GetFreshness() const

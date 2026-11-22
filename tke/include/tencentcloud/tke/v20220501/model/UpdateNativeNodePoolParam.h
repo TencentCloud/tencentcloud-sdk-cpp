@@ -32,6 +32,7 @@
 #include <tencentcloud/tke/v20220501/model/LifecycleConfig.h>
 #include <tencentcloud/tke/v20220501/model/DataDisk.h>
 #include <tencentcloud/tke/v20220501/model/GPUConfig.h>
+#include <tencentcloud/tke/v20220501/model/RegistryConfig.h>
 
 
 namespace TencentCloud
@@ -580,6 +581,27 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
+                     * 获取<p>节点的 containerd 镜像仓库定制（仅 containerd 运行时生效）</p>
+                     * @return Registry <p>节点的 containerd 镜像仓库定制（仅 containerd 运行时生效）</p>
+                     * 
+                     */
+                    RegistryConfig GetRegistry() const;
+
+                    /**
+                     * 设置<p>节点的 containerd 镜像仓库定制（仅 containerd 运行时生效）</p>
+                     * @param _registry <p>节点的 containerd 镜像仓库定制（仅 containerd 运行时生效）</p>
+                     * 
+                     */
+                    void SetRegistry(const RegistryConfig& _registry);
+
+                    /**
+                     * 判断参数 Registry 是否已赋值
+                     * @return Registry 是否已赋值
+                     * 
+                     */
+                    bool RegistryHasBeenSet() const;
+
+                    /**
                      * 获取<p>自定义镜像 ID</p>
                      * @return CustomImage <p>自定义镜像 ID</p>
                      * 
@@ -751,6 +773,12 @@ namespace TencentCloud
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
+
+                    /**
+                     * <p>节点的 containerd 镜像仓库定制（仅 containerd 运行时生效）</p>
+                     */
+                    RegistryConfig m_registry;
+                    bool m_registryHasBeenSet;
 
                     /**
                      * <p>自定义镜像 ID</p>

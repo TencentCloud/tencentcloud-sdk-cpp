@@ -31,7 +31,8 @@ InstanceLogInfoOpsDto::InstanceLogInfoOpsDto() :
     m_isEndHasBeenSet(false),
     m_fileSizeHasBeenSet(false),
     m_matchedBrokerIpHasBeenSet(false),
-    m_executionExtendedPropsHasBeenSet(false)
+    m_executionExtendedPropsHasBeenSet(false),
+    m_logDiagnosisRulesHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,23 @@ CoreInternalOutcome InstanceLogInfoOpsDto::Deserialize(const rapidjson::Value &v
         m_executionExtendedPropsHasBeenSet = true;
     }
 
+    if (value.HasMember("LogDiagnosisRules") && !value["LogDiagnosisRules"].IsNull())
+    {
+        if (!value["LogDiagnosisRules"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfoOpsDto.LogDiagnosisRules` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_logDiagnosisRules.Deserialize(value["LogDiagnosisRules"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_logDiagnosisRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +286,15 @@ void InstanceLogInfoOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_logDiagnosisRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogDiagnosisRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logDiagnosisRules.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -447,5 +474,21 @@ void InstanceLogInfoOpsDto::SetExecutionExtendedProps(const vector<PairDto>& _ex
 bool InstanceLogInfoOpsDto::ExecutionExtendedPropsHasBeenSet() const
 {
     return m_executionExtendedPropsHasBeenSet;
+}
+
+LogDiagnosisRules InstanceLogInfoOpsDto::GetLogDiagnosisRules() const
+{
+    return m_logDiagnosisRules;
+}
+
+void InstanceLogInfoOpsDto::SetLogDiagnosisRules(const LogDiagnosisRules& _logDiagnosisRules)
+{
+    m_logDiagnosisRules = _logDiagnosisRules;
+    m_logDiagnosisRulesHasBeenSet = true;
+}
+
+bool InstanceLogInfoOpsDto::LogDiagnosisRulesHasBeenSet() const
+{
+    return m_logDiagnosisRulesHasBeenSet;
 }
 

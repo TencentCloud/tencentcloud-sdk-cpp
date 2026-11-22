@@ -28,7 +28,8 @@ Whitelist::Whitelist() :
     m_whitelistUinHasBeenSet(false),
     m_createUserHasBeenSet(false),
     m_aidHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_createDatetimeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome Whitelist::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateDatetime") && !value["CreateDatetime"].IsNull())
+    {
+        if (!value["CreateDatetime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Whitelist.CreateDatetime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createDatetime = string(value["CreateDatetime"].GetString());
+        m_createDatetimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void Whitelist::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createDatetimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateDatetime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createDatetime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void Whitelist::SetCreateTime(const string& _createTime)
 bool Whitelist::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string Whitelist::GetCreateDatetime() const
+{
+    return m_createDatetime;
+}
+
+void Whitelist::SetCreateDatetime(const string& _createDatetime)
+{
+    m_createDatetime = _createDatetime;
+    m_createDatetimeHasBeenSet = true;
+}
+
+bool Whitelist::CreateDatetimeHasBeenSet() const
+{
+    return m_createDatetimeHasBeenSet;
 }
 

@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool ExtraParamsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>试听文本</p>
+                     * @return PreviewText <p>试听文本</p>
+                     * 
+                     */
+                    std::string GetPreviewText() const;
+
+                    /**
+                     * 设置<p>试听文本</p>
+                     * @param _previewText <p>试听文本</p>
+                     * 
+                     */
+                    void SetPreviewText(const std::string& _previewText);
+
+                    /**
+                     * 判断参数 PreviewText 是否已赋值
+                     * @return PreviewText 是否已赋值
+                     * 
+                     */
+                    bool PreviewTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     std::string m_extraParams;
                     bool m_extraParamsHasBeenSet;
+
+                    /**
+                     * <p>试听文本</p>
+                     */
+                    std::string m_previewText;
+                    bool m_previewTextHasBeenSet;
 
                 };
             }

@@ -751,6 +751,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/CompareRuleItem.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceLogFileRequest.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupSubscribe.h
+  include/tencentcloud/wedata/v20210820/model/LogDiagnosisRules.h
   include/tencentcloud/wedata/v20210820/model/EventListenerDTO.h
   include/tencentcloud/wedata/v20210820/model/DescribeTableDdlRequest.h
   include/tencentcloud/wedata/v20210820/model/DeleteTaskLineageRequest.h
@@ -2413,6 +2414,7 @@ set(wedata_src
   src/v20210820/model/CompareRuleItem.cpp
   src/v20210820/model/DescribeInstanceLogFileRequest.cpp
   src/v20210820/model/RuleGroupSubscribe.cpp
+  src/v20210820/model/LogDiagnosisRules.cpp
   src/v20210820/model/EventListenerDTO.cpp
   src/v20210820/model/DescribeTableDdlRequest.cpp
   src/v20210820/model/DeleteTaskLineageRequest.cpp

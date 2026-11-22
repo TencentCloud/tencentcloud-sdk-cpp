@@ -1740,6 +1740,56 @@ CngwClient::DescribeAIGWCustomGuardrailPolicyListOutcomeCallable CngwClient::Des
     return prom->get_future();
 }
 
+CngwClient::DescribeAIGWLLMModelAPIIPRestrictionOutcome CngwClient::DescribeAIGWLLMModelAPIIPRestriction(const DescribeAIGWLLMModelAPIIPRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIGWLLMModelAPIIPRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIGWLLMModelAPIIPRestrictionResponse rsp = DescribeAIGWLLMModelAPIIPRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIGWLLMModelAPIIPRestrictionOutcome(rsp);
+        else
+            return DescribeAIGWLLMModelAPIIPRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIGWLLMModelAPIIPRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::DescribeAIGWLLMModelAPIIPRestrictionAsync(const DescribeAIGWLLMModelAPIIPRestrictionRequest& request, const DescribeAIGWLLMModelAPIIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeAIGWLLMModelAPIIPRestrictionRequest&;
+    using Resp = DescribeAIGWLLMModelAPIIPRestrictionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeAIGWLLMModelAPIIPRestriction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::DescribeAIGWLLMModelAPIIPRestrictionOutcomeCallable CngwClient::DescribeAIGWLLMModelAPIIPRestrictionCallable(const DescribeAIGWLLMModelAPIIPRestrictionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeAIGWLLMModelAPIIPRestrictionOutcome>>();
+    DescribeAIGWLLMModelAPIIPRestrictionAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const DescribeAIGWLLMModelAPIIPRestrictionRequest&,
+        DescribeAIGWLLMModelAPIIPRestrictionOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 CngwClient::DescribeCNGWServicesWithRoutesOutcome CngwClient::DescribeCNGWServicesWithRoutes(const DescribeCNGWServicesWithRoutesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCNGWServicesWithRoutes");
@@ -3232,6 +3282,56 @@ CngwClient::ModifyAIGWCustomGuardrailPolicyOutcomeCallable CngwClient::ModifyAIG
         const CngwClient*,
         const ModifyAIGWCustomGuardrailPolicyRequest&,
         ModifyAIGWCustomGuardrailPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+CngwClient::ModifyAIGWLLMModelAPIIPRestrictionOutcome CngwClient::ModifyAIGWLLMModelAPIIPRestriction(const ModifyAIGWLLMModelAPIIPRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAIGWLLMModelAPIIPRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAIGWLLMModelAPIIPRestrictionResponse rsp = ModifyAIGWLLMModelAPIIPRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAIGWLLMModelAPIIPRestrictionOutcome(rsp);
+        else
+            return ModifyAIGWLLMModelAPIIPRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAIGWLLMModelAPIIPRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void CngwClient::ModifyAIGWLLMModelAPIIPRestrictionAsync(const ModifyAIGWLLMModelAPIIPRestrictionRequest& request, const ModifyAIGWLLMModelAPIIPRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyAIGWLLMModelAPIIPRestrictionRequest&;
+    using Resp = ModifyAIGWLLMModelAPIIPRestrictionResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyAIGWLLMModelAPIIPRestriction", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CngwClient::ModifyAIGWLLMModelAPIIPRestrictionOutcomeCallable CngwClient::ModifyAIGWLLMModelAPIIPRestrictionCallable(const ModifyAIGWLLMModelAPIIPRestrictionRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyAIGWLLMModelAPIIPRestrictionOutcome>>();
+    ModifyAIGWLLMModelAPIIPRestrictionAsync(
+    request,
+    [prom](
+        const CngwClient*,
+        const ModifyAIGWLLMModelAPIIPRestrictionRequest&,
+        ModifyAIGWLLMModelAPIIPRestrictionOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

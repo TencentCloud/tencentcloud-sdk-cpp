@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>日志明细</p>
-                     * @return Result <p>日志明细</p>
+                     * 获取<p>日志明细JSON字符串，内部Result数组结构不变。CLS路径row_id为0，ts为毫秒精度但单位仍为纳秒，字符串字段完整。</p>
+                     * @return Result <p>日志明细JSON字符串，内部Result数组结构不变。CLS路径row_id为0，ts为毫秒精度但单位仍为纳秒，字符串字段完整。</p>
                      * 
                      */
                     std::string GetResult() const;
@@ -57,13 +57,53 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取<p>CLS续读令牌；ListOver为true时为空。仅CLS路径返回，可缺省。</p>
+                     * @return Context <p>CLS续读令牌；ListOver为true时为空。仅CLS路径返回，可缺省。</p>
+                     * 
+                     */
+                    std::string GetContext() const;
+
+                    /**
+                     * 判断参数 Context 是否已赋值
+                     * @return Context 是否已赋值
+                     * 
+                     */
+                    bool ContextHasBeenSet() const;
+
+                    /**
+                     * 获取<p>当前条件的日志是否全部返回；预算短页不表示结束。仅CLS路径返回，可缺省。</p>
+                     * @return ListOver <p>当前条件的日志是否全部返回；预算短页不表示结束。仅CLS路径返回，可缺省。</p>
+                     * 
+                     */
+                    bool GetListOver() const;
+
+                    /**
+                     * 判断参数 ListOver 是否已赋值
+                     * @return ListOver 是否已赋值
+                     * 
+                     */
+                    bool ListOverHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <p>日志明细</p>
+                     * <p>日志明细JSON字符串，内部Result数组结构不变。CLS路径row_id为0，ts为毫秒精度但单位仍为纳秒，字符串字段完整。</p>
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * <p>CLS续读令牌；ListOver为true时为空。仅CLS路径返回，可缺省。</p>
+                     */
+                    std::string m_context;
+                    bool m_contextHasBeenSet;
+
+                    /**
+                     * <p>当前条件的日志是否全部返回；预算短页不表示结束。仅CLS路径返回，可缺省。</p>
+                     */
+                    bool m_listOver;
+                    bool m_listOverHasBeenSet;
 
                 };
             }

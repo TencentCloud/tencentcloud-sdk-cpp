@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扩展证书 ID 列表。
-                     * @return CertificateIds 扩展证书 ID 列表。
+                     * 获取<p>扩展证书 ID 列表。</p>
+                     * @return CertificateIds <p>扩展证书 ID 列表。</p>
                      * 
                      */
                     std::vector<std::string> GetCertificateIds() const;
 
                     /**
-                     * 设置扩展证书 ID 列表。
-                     * @param _certificateIds 扩展证书 ID 列表。
+                     * 设置<p>扩展证书 ID 列表。</p>
+                     * @param _certificateIds <p>扩展证书 ID 列表。</p>
                      * 
                      */
                     void SetCertificateIds(const std::vector<std::string>& _certificateIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CertificateIdsHasBeenSet() const;
 
                     /**
-                     * 获取监听器 ID，格式为 lst- 后接 8 位字母数字。
-                     * @return ListenerId 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * 获取<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
+                     * @return ListenerId <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器 ID，格式为 lst- 后接 8 位字母数字。
-                     * @param _listenerId 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * 设置<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
+                     * @param _listenerId <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
-                     * @return LoadBalancerId 负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
+                     * 获取<p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
+                     * @return LoadBalancerId <p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
-                     * @param _loadBalancerId 负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
+                     * 设置<p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
+                     * @param _loadBalancerId <p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -106,19 +106,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端 Token，用于保证请求的幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken 只支持 ASCII 字符。
-若您未指定，则系统自动使用 API 请求的 RequestId 作为 ClientToken 标识。每次 API 请求的 RequestId 不一样。
-                     * @return ClientToken 客户端 Token，用于保证请求的幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken 只支持 ASCII 字符。
-若您未指定，则系统自动使用 API 请求的 RequestId 作为 ClientToken 标识。每次 API 请求的 RequestId 不一样。
+                     * 获取<p>客户端 Token，用于保证请求的幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken 只支持 ASCII 字符。<br>若您未指定，则系统自动使用 API 请求的 RequestId 作为 ClientToken 标识。每次 API 请求的 RequestId 不一样。</p>
+                     * @return ClientToken <p>客户端 Token，用于保证请求的幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken 只支持 ASCII 字符。<br>若您未指定，则系统自动使用 API 请求的 RequestId 作为 ClientToken 标识。每次 API 请求的 RequestId 不一样。</p>
                      * 
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置客户端 Token，用于保证请求的幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken 只支持 ASCII 字符。
-若您未指定，则系统自动使用 API 请求的 RequestId 作为 ClientToken 标识。每次 API 请求的 RequestId 不一样。
-                     * @param _clientToken 客户端 Token，用于保证请求的幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken 只支持 ASCII 字符。
-若您未指定，则系统自动使用 API 请求的 RequestId 作为 ClientToken 标识。每次 API 请求的 RequestId 不一样。
+                     * 设置<p>客户端 Token，用于保证请求的幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken 只支持 ASCII 字符。<br>若您未指定，则系统自动使用 API 请求的 RequestId 作为 ClientToken 标识。每次 API 请求的 RequestId 不一样。</p>
+                     * @param _clientToken <p>客户端 Token，用于保证请求的幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken 只支持 ASCII 字符。<br>若您未指定，则系统自动使用 API 请求的 RequestId 作为 ClientToken 标识。每次 API 请求的 RequestId 不一样。</p>
                      * 
                      */
                     void SetClientToken(const std::string& _clientToken);
@@ -131,23 +127,15 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取是否只预检此次请求，取值：
-true：发送检查请求，不会为HTTPS和QUIC监听器添加扩展证书。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回错误码DryRunOperation。
-false（默认值）：发送正常请求，通过检查后返回HTTP2xx状态码并直接进行操作。
-                     * @return DryRun 是否只预检此次请求，取值：
-true：发送检查请求，不会为HTTPS和QUIC监听器添加扩展证书。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回错误码DryRunOperation。
-false（默认值）：发送正常请求，通过检查后返回HTTP2xx状态码并直接进行操作。
+                     * 获取<p>是否只预检此次请求，取值：true：发送检查请求，不会为HTTPS监听器添加扩展证书。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回错误码DryRunOperation。false（默认值）：发送正常请求，通过检查后返回HTTP2xx状态码并直接进行操作。</p>
+                     * @return DryRun <p>是否只预检此次请求，取值：true：发送检查请求，不会为HTTPS监听器添加扩展证书。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回错误码DryRunOperation。false（默认值）：发送正常请求，通过检查后返回HTTP2xx状态码并直接进行操作。</p>
                      * 
                      */
                     std::string GetDryRun() const;
 
                     /**
-                     * 设置是否只预检此次请求，取值：
-true：发送检查请求，不会为HTTPS和QUIC监听器添加扩展证书。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回错误码DryRunOperation。
-false（默认值）：发送正常请求，通过检查后返回HTTP2xx状态码并直接进行操作。
-                     * @param _dryRun 是否只预检此次请求，取值：
-true：发送检查请求，不会为HTTPS和QUIC监听器添加扩展证书。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回错误码DryRunOperation。
-false（默认值）：发送正常请求，通过检查后返回HTTP2xx状态码并直接进行操作。
+                     * 设置<p>是否只预检此次请求，取值：true：发送检查请求，不会为HTTPS监听器添加扩展证书。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回错误码DryRunOperation。false（默认值）：发送正常请求，通过检查后返回HTTP2xx状态码并直接进行操作。</p>
+                     * @param _dryRun <p>是否只预检此次请求，取值：true：发送检查请求，不会为HTTPS监听器添加扩展证书。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回错误码DryRunOperation。false（默认值）：发送正常请求，通过检查后返回HTTP2xx状态码并直接进行操作。</p>
                      * 
                      */
                     void SetDryRun(const std::string& _dryRun);
@@ -162,34 +150,31 @@ false（默认值）：发送正常请求，通过检查后返回HTTP2xx状态�
                 private:
 
                     /**
-                     * 扩展证书 ID 列表。
+                     * <p>扩展证书 ID 列表。</p>
                      */
                     std::vector<std::string> m_certificateIds;
                     bool m_certificateIdsHasBeenSet;
 
                     /**
-                     * 监听器 ID，格式为 lst- 后接 8 位字母数字。
+                     * <p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。
+                     * <p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 客户端 Token，用于保证请求的幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken 只支持 ASCII 字符。
-若您未指定，则系统自动使用 API 请求的 RequestId 作为 ClientToken 标识。每次 API 请求的 RequestId 不一样。
+                     * <p>客户端 Token，用于保证请求的幂等性。从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken 只支持 ASCII 字符。<br>若您未指定，则系统自动使用 API 请求的 RequestId 作为 ClientToken 标识。每次 API 请求的 RequestId 不一样。</p>
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 是否只预检此次请求，取值：
-true：发送检查请求，不会为HTTPS和QUIC监听器添加扩展证书。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回错误码DryRunOperation。
-false（默认值）：发送正常请求，通过检查后返回HTTP2xx状态码并直接进行操作。
+                     * <p>是否只预检此次请求，取值：true：发送检查请求，不会为HTTPS监听器添加扩展证书。检查项包括是否填写了必需参数、请求格式、业务限制。如果检查不通过，则返回对应错误。如果检查通过，则返回错误码DryRunOperation。false（默认值）：发送正常请求，通过检查后返回HTTP2xx状态码并直接进行操作。</p>
                      */
                     std::string m_dryRun;
                     bool m_dryRunHasBeenSet;

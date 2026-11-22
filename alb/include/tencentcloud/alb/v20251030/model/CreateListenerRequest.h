@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool ListenerPortHasBeenSet() const;
 
                     /**
-                     * 获取<p>监听协议。  取值：HTTP、HTTPS 或 QUIC。</p>
-                     * @return ListenerProtocol <p>监听协议。  取值：HTTP、HTTPS 或 QUIC。</p>
+                     * 获取<p>监听协议。  取值：HTTP、HTTPS。</p>
+                     * @return ListenerProtocol <p>监听协议。  取值：HTTP、HTTPS。</p>
                      * 
                      */
                     std::string GetListenerProtocol() const;
 
                     /**
-                     * 设置<p>监听协议。  取值：HTTP、HTTPS 或 QUIC。</p>
-                     * @param _listenerProtocol <p>监听协议。  取值：HTTP、HTTPS 或 QUIC。</p>
+                     * 设置<p>监听协议。  取值：HTTP、HTTPS。</p>
+                     * @param _listenerProtocol <p>监听协议。  取值：HTTP、HTTPS。</p>
                      * 
                      */
                     void SetListenerProtocol(const std::string& _listenerProtocol);
@@ -396,7 +396,7 @@ namespace TencentCloud
                     bool m_listenerPortHasBeenSet;
 
                     /**
-                     * <p>监听协议。  取值：HTTP、HTTPS 或 QUIC。</p>
+                     * <p>监听协议。  取值：HTTP、HTTPS。</p>
                      */
                     std::string m_listenerProtocol;
                     bool m_listenerProtocolHasBeenSet;

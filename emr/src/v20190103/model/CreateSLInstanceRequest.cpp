@@ -23,16 +23,19 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 CreateSLInstanceRequest::CreateSLInstanceRequest() :
-    m_instanceNameHasBeenSet(false),
-    m_payModeHasBeenSet(false),
-    m_diskTypeHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
+    m_diskTypeHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
+    m_payModeHasBeenSet(false),
     m_zoneSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_prePaySettingHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_deploymentModeHasBeenSet(false),
+    m_enablePublicIPHasBeenSet(false),
+    m_prePaySettingHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_terminateProtectionHasBeenSet(false),
     m_userNameHasBeenSet(false)
 {
 }
@@ -44,20 +47,12 @@ string CreateSLInstanceRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_instanceNameHasBeenSet)
+    if (m_diskSizeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceName";
+        string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_payModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PayMode";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_payMode, allocator);
+        d.AddMember(iKey, m_diskSize, allocator);
     }
 
     if (m_diskTypeHasBeenSet)
@@ -68,12 +63,12 @@ string CreateSLInstanceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_diskSizeHasBeenSet)
+    if (m_instanceNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiskSize";
+        string key = "InstanceName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_diskSize, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodeTypeHasBeenSet)
@@ -82,6 +77,14 @@ string CreateSLInstanceRequest::ToJsonString() const
         string key = "NodeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_payMode, allocator);
     }
 
     if (m_zoneSettingsHasBeenSet)
@@ -97,30 +100,6 @@ string CreateSLInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_tagsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Tags";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_prePaySettingHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PrePaySetting";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_prePaySetting.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_clientTokenHasBeenSet)
@@ -139,6 +118,59 @@ string CreateSLInstanceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_deploymentMode.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_enablePublicIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnablePublicIP";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enablePublicIP, allocator);
+    }
+
+    if (m_prePaySettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrePaySetting";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_prePaySetting.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_terminateProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TerminateProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_terminateProtection, allocator);
+    }
+
     if (m_userNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -155,36 +187,20 @@ string CreateSLInstanceRequest::ToJsonString() const
 }
 
 
-string CreateSLInstanceRequest::GetInstanceName() const
+int64_t CreateSLInstanceRequest::GetDiskSize() const
 {
-    return m_instanceName;
+    return m_diskSize;
 }
 
-void CreateSLInstanceRequest::SetInstanceName(const string& _instanceName)
+void CreateSLInstanceRequest::SetDiskSize(const int64_t& _diskSize)
 {
-    m_instanceName = _instanceName;
-    m_instanceNameHasBeenSet = true;
+    m_diskSize = _diskSize;
+    m_diskSizeHasBeenSet = true;
 }
 
-bool CreateSLInstanceRequest::InstanceNameHasBeenSet() const
+bool CreateSLInstanceRequest::DiskSizeHasBeenSet() const
 {
-    return m_instanceNameHasBeenSet;
-}
-
-int64_t CreateSLInstanceRequest::GetPayMode() const
-{
-    return m_payMode;
-}
-
-void CreateSLInstanceRequest::SetPayMode(const int64_t& _payMode)
-{
-    m_payMode = _payMode;
-    m_payModeHasBeenSet = true;
-}
-
-bool CreateSLInstanceRequest::PayModeHasBeenSet() const
-{
-    return m_payModeHasBeenSet;
+    return m_diskSizeHasBeenSet;
 }
 
 string CreateSLInstanceRequest::GetDiskType() const
@@ -203,20 +219,20 @@ bool CreateSLInstanceRequest::DiskTypeHasBeenSet() const
     return m_diskTypeHasBeenSet;
 }
 
-int64_t CreateSLInstanceRequest::GetDiskSize() const
+string CreateSLInstanceRequest::GetInstanceName() const
 {
-    return m_diskSize;
+    return m_instanceName;
 }
 
-void CreateSLInstanceRequest::SetDiskSize(const int64_t& _diskSize)
+void CreateSLInstanceRequest::SetInstanceName(const string& _instanceName)
 {
-    m_diskSize = _diskSize;
-    m_diskSizeHasBeenSet = true;
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
 }
 
-bool CreateSLInstanceRequest::DiskSizeHasBeenSet() const
+bool CreateSLInstanceRequest::InstanceNameHasBeenSet() const
 {
-    return m_diskSizeHasBeenSet;
+    return m_instanceNameHasBeenSet;
 }
 
 string CreateSLInstanceRequest::GetNodeType() const
@@ -235,6 +251,22 @@ bool CreateSLInstanceRequest::NodeTypeHasBeenSet() const
     return m_nodeTypeHasBeenSet;
 }
 
+int64_t CreateSLInstanceRequest::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void CreateSLInstanceRequest::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
 vector<ZoneSetting> CreateSLInstanceRequest::GetZoneSettings() const
 {
     return m_zoneSettings;
@@ -249,38 +281,6 @@ void CreateSLInstanceRequest::SetZoneSettings(const vector<ZoneSetting>& _zoneSe
 bool CreateSLInstanceRequest::ZoneSettingsHasBeenSet() const
 {
     return m_zoneSettingsHasBeenSet;
-}
-
-vector<Tag> CreateSLInstanceRequest::GetTags() const
-{
-    return m_tags;
-}
-
-void CreateSLInstanceRequest::SetTags(const vector<Tag>& _tags)
-{
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
-}
-
-bool CreateSLInstanceRequest::TagsHasBeenSet() const
-{
-    return m_tagsHasBeenSet;
-}
-
-PrePaySetting CreateSLInstanceRequest::GetPrePaySetting() const
-{
-    return m_prePaySetting;
-}
-
-void CreateSLInstanceRequest::SetPrePaySetting(const PrePaySetting& _prePaySetting)
-{
-    m_prePaySetting = _prePaySetting;
-    m_prePaySettingHasBeenSet = true;
-}
-
-bool CreateSLInstanceRequest::PrePaySettingHasBeenSet() const
-{
-    return m_prePaySettingHasBeenSet;
 }
 
 string CreateSLInstanceRequest::GetClientToken() const
@@ -313,6 +313,86 @@ void CreateSLInstanceRequest::SetDeploymentMode(const string& _deploymentMode)
 bool CreateSLInstanceRequest::DeploymentModeHasBeenSet() const
 {
     return m_deploymentModeHasBeenSet;
+}
+
+bool CreateSLInstanceRequest::GetEnablePublicIP() const
+{
+    return m_enablePublicIP;
+}
+
+void CreateSLInstanceRequest::SetEnablePublicIP(const bool& _enablePublicIP)
+{
+    m_enablePublicIP = _enablePublicIP;
+    m_enablePublicIPHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::EnablePublicIPHasBeenSet() const
+{
+    return m_enablePublicIPHasBeenSet;
+}
+
+PrePaySetting CreateSLInstanceRequest::GetPrePaySetting() const
+{
+    return m_prePaySetting;
+}
+
+void CreateSLInstanceRequest::SetPrePaySetting(const PrePaySetting& _prePaySetting)
+{
+    m_prePaySetting = _prePaySetting;
+    m_prePaySettingHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::PrePaySettingHasBeenSet() const
+{
+    return m_prePaySettingHasBeenSet;
+}
+
+vector<string> CreateSLInstanceRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CreateSLInstanceRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
+}
+
+vector<Tag> CreateSLInstanceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateSLInstanceRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+bool CreateSLInstanceRequest::GetTerminateProtection() const
+{
+    return m_terminateProtection;
+}
+
+void CreateSLInstanceRequest::SetTerminateProtection(const bool& _terminateProtection)
+{
+    m_terminateProtection = _terminateProtection;
+    m_terminateProtectionHasBeenSet = true;
+}
+
+bool CreateSLInstanceRequest::TerminateProtectionHasBeenSet() const
+{
+    return m_terminateProtectionHasBeenSet;
 }
 
 string CreateSLInstanceRequest::GetUserName() const
