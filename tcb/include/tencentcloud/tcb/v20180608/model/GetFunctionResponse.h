@@ -23,7 +23,9 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/FunctionTrigger.h>
 #include <tencentcloud/tcb/v20180608/model/FunctionVpcConfig.h>
+#include <tencentcloud/tcb/v20180608/model/EnvironmentOut.h>
 #include <tencentcloud/tcb/v20180608/model/Tag.h>
+#include <tencentcloud/tcb/v20180608/model/EipOutConfig.h>
 #include <tencentcloud/tcb/v20180608/model/AgentRuntimeCodeImageConfig.h>
 
 
@@ -234,6 +236,22 @@ namespace TencentCloud
                     bool UseGpuHasBeenSet() const;
 
                     /**
+                     * 获取<p>环境变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Environment <p>环境变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    EnvironmentOut GetEnvironment() const;
+
+                    /**
+                     * 判断参数 Environment 是否已赋值
+                     * @return Environment 是否已赋值
+                     * 
+                     */
+                    bool EnvironmentHasBeenSet() const;
+
+                    /**
                      * 获取<p>代码校验结果 (&quot;success&quot;/&quot;failed&quot;)</p>
                      * @return CodeResult <p>代码校验结果 (&quot;success&quot;/&quot;failed&quot;)</p>
                      * 
@@ -318,6 +336,34 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>CLS 日志集 ID</p>
+                     * @return ClsLogsetId <p>CLS 日志集 ID</p>
+                     * 
+                     */
+                    std::string GetClsLogsetId() const;
+
+                    /**
+                     * 判断参数 ClsLogsetId 是否已赋值
+                     * @return ClsLogsetId 是否已赋值
+                     * 
+                     */
+                    bool ClsLogsetIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>CLS Topic ID</p>
+                     * @return ClsTopicId <p>CLS Topic ID</p>
+                     * 
+                     */
+                    std::string GetClsTopicId() const;
+
+                    /**
+                     * 判断参数 ClsTopicId 是否已赋值
+                     * @return ClsTopicId 是否已赋值
+                     * 
+                     */
+                    bool ClsTopicIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>函数 ID</p>
                      * @return FunctionId <p>函数 ID</p>
                      * 
@@ -346,6 +392,22 @@ namespace TencentCloud
                      * 
                      */
                     bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>EIP 配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EipConfig <p>EIP 配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    EipOutConfig GetEipConfig() const;
+
+                    /**
+                     * 判断参数 EipConfig 是否已赋值
+                     * @return EipConfig 是否已赋值
+                     * 
+                     */
+                    bool EipConfigHasBeenSet() const;
 
                     /**
                      * 获取<p>函数类型 (&quot;HTTP&quot; 或 &quot;Event&quot;)</p>
@@ -572,6 +634,13 @@ namespace TencentCloud
                     bool m_useGpuHasBeenSet;
 
                     /**
+                     * <p>环境变量</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EnvironmentOut m_environment;
+                    bool m_environmentHasBeenSet;
+
+                    /**
                      * <p>代码校验结果 (&quot;success&quot;/&quot;failed&quot;)</p>
                      */
                     std::string m_codeResult;
@@ -608,6 +677,18 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
+                     * <p>CLS 日志集 ID</p>
+                     */
+                    std::string m_clsLogsetId;
+                    bool m_clsLogsetIdHasBeenSet;
+
+                    /**
+                     * <p>CLS Topic ID</p>
+                     */
+                    std::string m_clsTopicId;
+                    bool m_clsTopicIdHasBeenSet;
+
+                    /**
                      * <p>函数 ID</p>
                      */
                     std::string m_functionId;
@@ -619,6 +700,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * <p>EIP 配置</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EipOutConfig m_eipConfig;
+                    bool m_eipConfigHasBeenSet;
 
                     /**
                      * <p>函数类型 (&quot;HTTP&quot; 或 &quot;Event&quot;)</p>

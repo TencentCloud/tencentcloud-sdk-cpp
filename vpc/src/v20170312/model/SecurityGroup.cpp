@@ -28,7 +28,8 @@ SecurityGroup::SecurityGroup() :
     m_isDefaultHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_tagSetHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_serviceManagedHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome SecurityGroup::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceManaged") && !value["ServiceManaged"].IsNull())
+    {
+        if (!value["ServiceManaged"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup.ServiceManaged` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceManaged = value["ServiceManaged"].GetBool();
+        m_serviceManagedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void SecurityGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceManagedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceManaged";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serviceManaged, allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void SecurityGroup::SetUpdateTime(const string& _updateTime)
 bool SecurityGroup::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+bool SecurityGroup::GetServiceManaged() const
+{
+    return m_serviceManaged;
+}
+
+void SecurityGroup::SetServiceManaged(const bool& _serviceManaged)
+{
+    m_serviceManaged = _serviceManaged;
+    m_serviceManagedHasBeenSet = true;
+}
+
+bool SecurityGroup::ServiceManagedHasBeenSet() const
+{
+    return m_serviceManagedHasBeenSet;
 }
 

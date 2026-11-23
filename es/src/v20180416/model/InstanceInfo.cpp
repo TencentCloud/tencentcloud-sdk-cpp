@@ -128,7 +128,9 @@ InstanceInfo::InstanceInfo() :
     m_serverCertSourceHasBeenSet(false),
     m_oldEsVipHasBeenSet(false),
     m_oldEsPrivateTcpUrlHasBeenSet(false),
-    m_needOfflineOldNodesNotifyHasBeenSet(false)
+    m_needOfflineOldNodesNotifyHasBeenSet(false),
+    m_lvmStatusHasBeenSet(false),
+    m_lvmSwitchFlowIdHasBeenSet(false)
 {
 }
 
@@ -1343,6 +1345,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_needOfflineOldNodesNotifyHasBeenSet = true;
     }
 
+    if (value.HasMember("LvmStatus") && !value["LvmStatus"].IsNull())
+    {
+        if (!value["LvmStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.LvmStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lvmStatus = value["LvmStatus"].GetInt64();
+        m_lvmStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("LvmSwitchFlowId") && !value["LvmSwitchFlowId"].IsNull())
+    {
+        if (!value["LvmSwitchFlowId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.LvmSwitchFlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lvmSwitchFlowId = value["LvmSwitchFlowId"].GetInt64();
+        m_lvmSwitchFlowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -2268,6 +2290,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "NeedOfflineOldNodesNotify";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needOfflineOldNodesNotify, allocator);
+    }
+
+    if (m_lvmStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LvmStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lvmStatus, allocator);
+    }
+
+    if (m_lvmSwitchFlowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LvmSwitchFlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lvmSwitchFlowId, allocator);
     }
 
 }
@@ -3999,5 +4037,37 @@ void InstanceInfo::SetNeedOfflineOldNodesNotify(const bool& _needOfflineOldNodes
 bool InstanceInfo::NeedOfflineOldNodesNotifyHasBeenSet() const
 {
     return m_needOfflineOldNodesNotifyHasBeenSet;
+}
+
+int64_t InstanceInfo::GetLvmStatus() const
+{
+    return m_lvmStatus;
+}
+
+void InstanceInfo::SetLvmStatus(const int64_t& _lvmStatus)
+{
+    m_lvmStatus = _lvmStatus;
+    m_lvmStatusHasBeenSet = true;
+}
+
+bool InstanceInfo::LvmStatusHasBeenSet() const
+{
+    return m_lvmStatusHasBeenSet;
+}
+
+int64_t InstanceInfo::GetLvmSwitchFlowId() const
+{
+    return m_lvmSwitchFlowId;
+}
+
+void InstanceInfo::SetLvmSwitchFlowId(const int64_t& _lvmSwitchFlowId)
+{
+    m_lvmSwitchFlowId = _lvmSwitchFlowId;
+    m_lvmSwitchFlowIdHasBeenSet = true;
+}
+
+bool InstanceInfo::LvmSwitchFlowIdHasBeenSet() const
+{
+    return m_lvmSwitchFlowIdHasBeenSet;
 }
 

@@ -22,7 +22,11 @@
 using namespace TencentCloud::Workbuddyenterprise::V20260709::Model;
 using namespace std;
 
-DescribeSessionArtifactListRequest::DescribeSessionArtifactListRequest()
+DescribeSessionArtifactListRequest::DescribeSessionArtifactListRequest() :
+    m_sessionIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,45 @@ string DescribeSessionArtifactListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +83,69 @@ string DescribeSessionArtifactListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeSessionArtifactListRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void DescribeSessionArtifactListRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool DescribeSessionArtifactListRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+int64_t DescribeSessionArtifactListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeSessionArtifactListRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeSessionArtifactListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeSessionArtifactListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeSessionArtifactListRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeSessionArtifactListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+vector<Filter> DescribeSessionArtifactListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeSessionArtifactListRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeSessionArtifactListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 

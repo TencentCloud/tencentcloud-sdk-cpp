@@ -23,7 +23,8 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 DescribeDeviceSecurityInfoRequest::DescribeDeviceSecurityInfoRequest() :
-    m_midHasBeenSet(false)
+    m_midHasBeenSet(false),
+    m_domainInstanceIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeDeviceSecurityInfoRequest::ToJsonString() const
         string key = "Mid";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeDeviceSecurityInfoRequest::SetMid(const string& _mid)
 bool DescribeDeviceSecurityInfoRequest::MidHasBeenSet() const
 {
     return m_midHasBeenSet;
+}
+
+string DescribeDeviceSecurityInfoRequest::GetDomainInstanceId() const
+{
+    return m_domainInstanceId;
+}
+
+void DescribeDeviceSecurityInfoRequest::SetDomainInstanceId(const string& _domainInstanceId)
+{
+    m_domainInstanceId = _domainInstanceId;
+    m_domainInstanceIdHasBeenSet = true;
+}
+
+bool DescribeDeviceSecurityInfoRequest::DomainInstanceIdHasBeenSet() const
+{
+    return m_domainInstanceIdHasBeenSet;
 }
 
 

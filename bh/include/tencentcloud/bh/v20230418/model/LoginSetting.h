@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool EnableSingleLoginHasBeenSet() const;
 
+                    /**
+                     * 获取<p>主机指纹校验开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * @return EnableDeviceFingerprintVerify <p>主机指纹校验开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * 
+                     */
+                    uint64_t GetEnableDeviceFingerprintVerify() const;
+
+                    /**
+                     * 设置<p>主机指纹校验开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * @param _enableDeviceFingerprintVerify <p>主机指纹校验开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     * 
+                     */
+                    void SetEnableDeviceFingerprintVerify(const uint64_t& _enableDeviceFingerprintVerify);
+
+                    /**
+                     * 判断参数 EnableDeviceFingerprintVerify 是否已赋值
+                     * @return EnableDeviceFingerprintVerify 是否已赋值
+                     * 
+                     */
+                    bool EnableDeviceFingerprintVerifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     uint64_t m_enableSingleLogin;
                     bool m_enableSingleLoginHasBeenSet;
+
+                    /**
+                     * <p>主机指纹校验开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>
+                     */
+                    uint64_t m_enableDeviceFingerprintVerify;
+                    bool m_enableDeviceFingerprintVerifyHasBeenSet;
 
                 };
             }

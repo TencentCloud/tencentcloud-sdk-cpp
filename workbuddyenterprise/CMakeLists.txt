@@ -31,6 +31,7 @@ set(workbuddyenterprise_public_header_model
   include/tencentcloud/workbuddyenterprise/v20260709/model/TokenUsage.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/ConnectorInfo.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/CreateAgentVersionFromSourceResponse.h
+  include/tencentcloud/workbuddyenterprise/v20260709/model/SessionArtifactDetail.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/MessageEventToolCall.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/DescribeScheduledTaskRequest.h
   include/tencentcloud/workbuddyenterprise/v20260709/model/MessageEvent.h
@@ -137,6 +138,7 @@ set(workbuddyenterprise_src
   src/v20260709/model/TokenUsage.cpp
   src/v20260709/model/ConnectorInfo.cpp
   src/v20260709/model/CreateAgentVersionFromSourceResponse.cpp
+  src/v20260709/model/SessionArtifactDetail.cpp
   src/v20260709/model/MessageEventToolCall.cpp
   src/v20260709/model/DescribeScheduledTaskRequest.cpp
   src/v20260709/model/MessageEvent.cpp

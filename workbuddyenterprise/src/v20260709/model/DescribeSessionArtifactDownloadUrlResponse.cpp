@@ -23,7 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Workbuddyenterprise::V20260709::Model;
 using namespace std;
 
-DescribeSessionArtifactDownloadUrlResponse::DescribeSessionArtifactDownloadUrlResponse()
+DescribeSessionArtifactDownloadUrlResponse::DescribeSessionArtifactDownloadUrlResponse() :
+    m_downloadUrlHasBeenSet(false),
+    m_expiredTimeHasBeenSet(false),
+    m_fileNameHasBeenSet(false),
+    m_fileSizeBytesHasBeenSet(false),
+    m_fileSha256HasBeenSet(false)
 {
 }
 
@@ -61,6 +66,56 @@ CoreInternalOutcome DescribeSessionArtifactDownloadUrlResponse::Deserialize(cons
     }
 
 
+    if (rsp.HasMember("DownloadUrl") && !rsp["DownloadUrl"].IsNull())
+    {
+        if (!rsp["DownloadUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_downloadUrl = string(rsp["DownloadUrl"].GetString());
+        m_downloadUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpiredTime") && !rsp["ExpiredTime"].IsNull())
+    {
+        if (!rsp["ExpiredTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiredTime = string(rsp["ExpiredTime"].GetString());
+        m_expiredTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileName") && !rsp["FileName"].IsNull())
+    {
+        if (!rsp["FileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileName = string(rsp["FileName"].GetString());
+        m_fileNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileSizeBytes") && !rsp["FileSizeBytes"].IsNull())
+    {
+        if (!rsp["FileSizeBytes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileSizeBytes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSizeBytes = rsp["FileSizeBytes"].GetInt64();
+        m_fileSizeBytesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileSha256") && !rsp["FileSha256"].IsNull())
+    {
+        if (!rsp["FileSha256"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileSha256` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSha256 = string(rsp["FileSha256"].GetString());
+        m_fileSha256HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +125,46 @@ string DescribeSessionArtifactDownloadUrlResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_downloadUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DownloadUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expiredTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileSizeBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSizeBytes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileSizeBytes, allocator);
+    }
+
+    if (m_fileSha256HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSha256";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileSha256.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +177,55 @@ string DescribeSessionArtifactDownloadUrlResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeSessionArtifactDownloadUrlResponse::GetDownloadUrl() const
+{
+    return m_downloadUrl;
+}
+
+bool DescribeSessionArtifactDownloadUrlResponse::DownloadUrlHasBeenSet() const
+{
+    return m_downloadUrlHasBeenSet;
+}
+
+string DescribeSessionArtifactDownloadUrlResponse::GetExpiredTime() const
+{
+    return m_expiredTime;
+}
+
+bool DescribeSessionArtifactDownloadUrlResponse::ExpiredTimeHasBeenSet() const
+{
+    return m_expiredTimeHasBeenSet;
+}
+
+string DescribeSessionArtifactDownloadUrlResponse::GetFileName() const
+{
+    return m_fileName;
+}
+
+bool DescribeSessionArtifactDownloadUrlResponse::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
+}
+
+int64_t DescribeSessionArtifactDownloadUrlResponse::GetFileSizeBytes() const
+{
+    return m_fileSizeBytes;
+}
+
+bool DescribeSessionArtifactDownloadUrlResponse::FileSizeBytesHasBeenSet() const
+{
+    return m_fileSizeBytesHasBeenSet;
+}
+
+string DescribeSessionArtifactDownloadUrlResponse::GetFileSha256() const
+{
+    return m_fileSha256;
+}
+
+bool DescribeSessionArtifactDownloadUrlResponse::FileSha256HasBeenSet() const
+{
+    return m_fileSha256HasBeenSet;
+}
 
 

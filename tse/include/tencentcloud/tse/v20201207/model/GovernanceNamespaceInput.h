@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命名空间名。
-                     * @return Name 命名空间名。
+                     * 获取<p>命名空间名。</p>
+                     * @return Name <p>命名空间名。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置命名空间名。
-                     * @param _name 命名空间名。
+                     * 设置<p>命名空间名。</p>
+                     * @param _name <p>命名空间名。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取描述信息。
-                     * @return Comment 描述信息。
+                     * 获取<p>描述信息。</p>
+                     * @return Comment <p>描述信息。</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置描述信息。
-                     * @param _comment 描述信息。
+                     * 设置<p>描述信息。</p>
+                     * @param _comment <p>描述信息。</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取新增的可以操作此命名空间的用户ID列表
-                     * @return UserIds 新增的可以操作此命名空间的用户ID列表
+                     * 获取<p>新增的可以操作此命名空间的用户ID列表</p>
+                     * @return UserIds <p>新增的可以操作此命名空间的用户ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置新增的可以操作此命名空间的用户ID列表
-                     * @param _userIds 新增的可以操作此命名空间的用户ID列表
+                     * 设置<p>新增的可以操作此命名空间的用户ID列表</p>
+                     * @param _userIds <p>新增的可以操作此命名空间的用户ID列表</p>
                      * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool UserIdsHasBeenSet() const;
 
                     /**
-                     * 获取新增的可以操作此命名空间的用户组ID列表
-                     * @return GroupIds 新增的可以操作此命名空间的用户组ID列表
+                     * 获取<p>新增的可以操作此命名空间的用户组ID列表</p>
+                     * @return GroupIds <p>新增的可以操作此命名空间的用户组ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
-                     * 设置新增的可以操作此命名空间的用户组ID列表
-                     * @param _groupIds 新增的可以操作此命名空间的用户组ID列表
+                     * 设置<p>新增的可以操作此命名空间的用户组ID列表</p>
+                     * @param _groupIds <p>新增的可以操作此命名空间的用户组ID列表</p>
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool GroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取移除可以操作此命名空间的用户ID列表
-                     * @return RemoveUserIds 移除可以操作此命名空间的用户ID列表
+                     * 获取<p>移除可以操作此命名空间的用户ID列表</p>
+                     * @return RemoveUserIds <p>移除可以操作此命名空间的用户ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetRemoveUserIds() const;
 
                     /**
-                     * 设置移除可以操作此命名空间的用户ID列表
-                     * @param _removeUserIds 移除可以操作此命名空间的用户ID列表
+                     * 设置<p>移除可以操作此命名空间的用户ID列表</p>
+                     * @param _removeUserIds <p>移除可以操作此命名空间的用户ID列表</p>
                      * 
                      */
                     void SetRemoveUserIds(const std::vector<std::string>& _removeUserIds);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool RemoveUserIdsHasBeenSet() const;
 
                     /**
-                     * 获取移除可以操作此命名空间的用户组ID列表
-                     * @return RemoveGroupIds 移除可以操作此命名空间的用户组ID列表
+                     * 获取<p>移除可以操作此命名空间的用户组ID列表</p>
+                     * @return RemoveGroupIds <p>移除可以操作此命名空间的用户组ID列表</p>
                      * 
                      */
                     std::vector<std::string> GetRemoveGroupIds() const;
 
                     /**
-                     * 设置移除可以操作此命名空间的用户组ID列表
-                     * @param _removeGroupIds 移除可以操作此命名空间的用户组ID列表
+                     * 设置<p>移除可以操作此命名空间的用户组ID列表</p>
+                     * @param _removeGroupIds <p>移除可以操作此命名空间的用户组ID列表</p>
                      * 
                      */
                     void SetRemoveGroupIds(const std::vector<std::string>& _removeGroupIds);
@@ -173,27 +173,15 @@ namespace TencentCloud
                     bool RemoveGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取该命名空间下的服务对哪些命名空间下可见，
-1、为空或者不填写，表示仅当前命名空间可见
-2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）
-3、列表内容为部份命名空间名称，则只对这些命名空间下可见
-                     * @return ServiceExportTo 该命名空间下的服务对哪些命名空间下可见，
-1、为空或者不填写，表示仅当前命名空间可见
-2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）
-3、列表内容为部份命名空间名称，则只对这些命名空间下可见
+                     * 获取<p>该命名空间下的服务对哪些命名空间下可见，<br>1、为空或者不填写，表示仅当前命名空间可见<br>2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）<br>3、列表内容为部份命名空间名称，则只对这些命名空间下可见</p>
+                     * @return ServiceExportTo <p>该命名空间下的服务对哪些命名空间下可见，<br>1、为空或者不填写，表示仅当前命名空间可见<br>2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）<br>3、列表内容为部份命名空间名称，则只对这些命名空间下可见</p>
                      * 
                      */
                     std::vector<std::string> GetServiceExportTo() const;
 
                     /**
-                     * 设置该命名空间下的服务对哪些命名空间下可见，
-1、为空或者不填写，表示仅当前命名空间可见
-2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）
-3、列表内容为部份命名空间名称，则只对这些命名空间下可见
-                     * @param _serviceExportTo 该命名空间下的服务对哪些命名空间下可见，
-1、为空或者不填写，表示仅当前命名空间可见
-2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）
-3、列表内容为部份命名空间名称，则只对这些命名空间下可见
+                     * 设置<p>该命名空间下的服务对哪些命名空间下可见，<br>1、为空或者不填写，表示仅当前命名空间可见<br>2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）<br>3、列表内容为部份命名空间名称，则只对这些命名空间下可见</p>
+                     * @param _serviceExportTo <p>该命名空间下的服务对哪些命名空间下可见，<br>1、为空或者不填写，表示仅当前命名空间可见<br>2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）<br>3、列表内容为部份命名空间名称，则只对这些命名空间下可见</p>
                      * 
                      */
                     void SetServiceExportTo(const std::vector<std::string>& _serviceExportTo);
@@ -206,15 +194,15 @@ namespace TencentCloud
                     bool ServiceExportToHasBeenSet() const;
 
                     /**
-                     * 获取是否开启同步到全局注册中心
-                     * @return SyncToGlobalRegistry 是否开启同步到全局注册中心
+                     * 获取<p>是否开启同步到全局注册中心</p>
+                     * @return SyncToGlobalRegistry <p>是否开启同步到全局注册中心</p>
                      * 
                      */
                     bool GetSyncToGlobalRegistry() const;
 
                     /**
-                     * 设置是否开启同步到全局注册中心
-                     * @param _syncToGlobalRegistry 是否开启同步到全局注册中心
+                     * 设置<p>是否开启同步到全局注册中心</p>
+                     * @param _syncToGlobalRegistry <p>是否开启同步到全局注册中心</p>
                      * 
                      */
                     void SetSyncToGlobalRegistry(const bool& _syncToGlobalRegistry);
@@ -229,52 +217,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命名空间名。
+                     * <p>命名空间名。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 描述信息。
+                     * <p>描述信息。</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 新增的可以操作此命名空间的用户ID列表
+                     * <p>新增的可以操作此命名空间的用户ID列表</p>
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
 
                     /**
-                     * 新增的可以操作此命名空间的用户组ID列表
+                     * <p>新增的可以操作此命名空间的用户组ID列表</p>
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;
 
                     /**
-                     * 移除可以操作此命名空间的用户ID列表
+                     * <p>移除可以操作此命名空间的用户ID列表</p>
                      */
                     std::vector<std::string> m_removeUserIds;
                     bool m_removeUserIdsHasBeenSet;
 
                     /**
-                     * 移除可以操作此命名空间的用户组ID列表
+                     * <p>移除可以操作此命名空间的用户组ID列表</p>
                      */
                     std::vector<std::string> m_removeGroupIds;
                     bool m_removeGroupIdsHasBeenSet;
 
                     /**
-                     * 该命名空间下的服务对哪些命名空间下可见，
-1、为空或者不填写，表示仅当前命名空间可见
-2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）
-3、列表内容为部份命名空间名称，则只对这些命名空间下可见
+                     * <p>该命名空间下的服务对哪些命名空间下可见，<br>1、为空或者不填写，表示仅当前命名空间可见<br>2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）<br>3、列表内容为部份命名空间名称，则只对这些命名空间下可见</p>
                      */
                     std::vector<std::string> m_serviceExportTo;
                     bool m_serviceExportToHasBeenSet;
 
                     /**
-                     * 是否开启同步到全局注册中心
+                     * <p>是否开启同步到全局注册中心</p>
                      */
                     bool m_syncToGlobalRegistry;
                     bool m_syncToGlobalRegistryHasBeenSet;

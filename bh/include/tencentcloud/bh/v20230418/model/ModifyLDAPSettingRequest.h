@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启LDAP认证，false-不开启，true-开启
-                     * @return Enable 是否开启LDAP认证，false-不开启，true-开启
+                     * 获取<p>是否开启LDAP认证，false-不开启，true-开启</p>
+                     * @return Enable <p>是否开启LDAP认证，false-不开启，true-开启</p>
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
-                     * 设置是否开启LDAP认证，false-不开启，true-开启
-                     * @param _enable 是否开启LDAP认证，false-不开启，true-开启
+                     * 设置<p>是否开启LDAP认证，false-不开启，true-开启</p>
+                     * @param _enable <p>是否开启LDAP认证，false-不开启，true-开启</p>
                      * 
                      */
                     void SetEnable(const bool& _enable);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取服务器地址
-                     * @return Ip 服务器地址
+                     * 获取<p>服务器地址</p>
+                     * @return Ip <p>服务器地址</p>
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置服务器地址
-                     * @param _ip 服务器地址
+                     * 设置<p>服务器地址</p>
+                     * @param _ip <p>服务器地址</p>
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取备用服务器地址
-                     * @return IpBackup 备用服务器地址
+                     * 获取<p>备用服务器地址</p>
+                     * @return IpBackup <p>备用服务器地址</p>
                      * 
                      */
                     std::string GetIpBackup() const;
 
                     /**
-                     * 设置备用服务器地址
-                     * @param _ipBackup 备用服务器地址
+                     * 设置<p>备用服务器地址</p>
+                     * @param _ipBackup <p>备用服务器地址</p>
                      * 
                      */
                     void SetIpBackup(const std::string& _ipBackup);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IpBackupHasBeenSet() const;
 
                     /**
-                     * 获取服务端口
-                     * @return Port 服务端口
+                     * 获取<p>服务端口</p>
+                     * @return Port <p>服务端口</p>
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置服务端口
-                     * @param _port 服务端口
+                     * 设置<p>服务端口</p>
+                     * @param _port <p>服务端口</p>
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SSL，false-不开启，true-开启
-                     * @return EnableSSL 是否开启SSL，false-不开启，true-开启
+                     * 获取<p>是否开启SSL，false-不开启，true-开启</p>
+                     * @return EnableSSL <p>是否开启SSL，false-不开启，true-开启</p>
                      * 
                      */
                     bool GetEnableSSL() const;
 
                     /**
-                     * 设置是否开启SSL，false-不开启，true-开启
-                     * @param _enableSSL 是否开启SSL，false-不开启，true-开启
+                     * 设置<p>是否开启SSL，false-不开启，true-开启</p>
+                     * @param _enableSSL <p>是否开启SSL，false-不开启，true-开启</p>
                      * 
                      */
                     void SetEnableSSL(const bool& _enableSSL);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool EnableSSLHasBeenSet() const;
 
                     /**
-                     * 获取Base DN
-                     * @return BaseDN Base DN
+                     * 获取<p>Base DN</p>
+                     * @return BaseDN <p>Base DN</p>
                      * 
                      */
                     std::string GetBaseDN() const;
 
                     /**
-                     * 设置Base DN
-                     * @param _baseDN Base DN
+                     * 设置<p>Base DN</p>
+                     * @param _baseDN <p>Base DN</p>
                      * 
                      */
                     void SetBaseDN(const std::string& _baseDN);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool BaseDNHasBeenSet() const;
 
                     /**
-                     * 获取管理员账号
-                     * @return AdminAccount 管理员账号
+                     * 获取<p>管理员账号</p>
+                     * @return AdminAccount <p>管理员账号</p>
                      * 
                      */
                     std::string GetAdminAccount() const;
 
                     /**
-                     * 设置管理员账号
-                     * @param _adminAccount 管理员账号
+                     * 设置<p>管理员账号</p>
+                     * @param _adminAccount <p>管理员账号</p>
                      * 
                      */
                     void SetAdminAccount(const std::string& _adminAccount);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool AdminAccountHasBeenSet() const;
 
                     /**
-                     * 获取管理员密码
-                     * @return AdminPassword 管理员密码
+                     * 获取<p>管理员密码</p>
+                     * @return AdminPassword <p>管理员密码</p>
                      * 
                      */
                     std::string GetAdminPassword() const;
 
                     /**
-                     * 设置管理员密码
-                     * @param _adminPassword 管理员密码
+                     * 设置<p>管理员密码</p>
+                     * @param _adminPassword <p>管理员密码</p>
                      * 
                      */
                     void SetAdminPassword(const std::string& _adminPassword);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool AdminPasswordHasBeenSet() const;
 
                     /**
-                     * 获取用户属性
-                     * @return AttributeUser 用户属性
+                     * 获取<p>用户属性</p>
+                     * @return AttributeUser <p>用户属性</p>
                      * 
                      */
                     std::string GetAttributeUser() const;
 
                     /**
-                     * 设置用户属性
-                     * @param _attributeUser 用户属性
+                     * 设置<p>用户属性</p>
+                     * @param _attributeUser <p>用户属性</p>
                      * 
                      */
                     void SetAttributeUser(const std::string& _attributeUser);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool AttributeUserHasBeenSet() const;
 
                     /**
-                     * 获取用户名属性
-                     * @return AttributeUserName 用户名属性
+                     * 获取<p>用户名属性</p>
+                     * @return AttributeUserName <p>用户名属性</p>
                      * 
                      */
                     std::string GetAttributeUserName() const;
 
                     /**
-                     * 设置用户名属性
-                     * @param _attributeUserName 用户名属性
+                     * 设置<p>用户名属性</p>
+                     * @param _attributeUserName <p>用户名属性</p>
                      * 
                      */
                     void SetAttributeUserName(const std::string& _attributeUserName);
@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool AttributeUserNameHasBeenSet() const;
 
                     /**
-                     * 获取自动同步，false-不开启，true-开启
-                     * @return AutoSync 自动同步，false-不开启，true-开启
+                     * 获取<p>自动同步，false-不开启，true-开启</p>
+                     * @return AutoSync <p>自动同步，false-不开启，true-开启</p>
                      * 
                      */
                     bool GetAutoSync() const;
 
                     /**
-                     * 设置自动同步，false-不开启，true-开启
-                     * @param _autoSync 自动同步，false-不开启，true-开启
+                     * 设置<p>自动同步，false-不开启，true-开启</p>
+                     * @param _autoSync <p>自动同步，false-不开启，true-开启</p>
                      * 
                      */
                     void SetAutoSync(const bool& _autoSync);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool AutoSyncHasBeenSet() const;
 
                     /**
-                     * 获取覆盖用户信息，false-不开启，true-开启
-                     * @return Overwrite 覆盖用户信息，false-不开启，true-开启
+                     * 获取<p>覆盖用户信息，false-不开启，true-开启</p>
+                     * @return Overwrite <p>覆盖用户信息，false-不开启，true-开启</p>
                      * 
                      */
                     bool GetOverwrite() const;
 
                     /**
-                     * 设置覆盖用户信息，false-不开启，true-开启
-                     * @param _overwrite 覆盖用户信息，false-不开启，true-开启
+                     * 设置<p>覆盖用户信息，false-不开启，true-开启</p>
+                     * @param _overwrite <p>覆盖用户信息，false-不开启，true-开启</p>
                      * 
                      */
                     void SetOverwrite(const bool& _overwrite);
@@ -295,15 +295,15 @@ namespace TencentCloud
                     bool OverwriteHasBeenSet() const;
 
                     /**
-                     * 获取同步周期，30～60000之间的整数
-                     * @return SyncPeriod 同步周期，30～60000之间的整数
+                     * 获取<p>同步周期，30～60000之间的整数</p>
+                     * @return SyncPeriod <p>同步周期，30～60000之间的整数</p>
                      * 
                      */
                     uint64_t GetSyncPeriod() const;
 
                     /**
-                     * 设置同步周期，30～60000之间的整数
-                     * @param _syncPeriod 同步周期，30～60000之间的整数
+                     * 设置<p>同步周期，30～60000之间的整数</p>
+                     * @param _syncPeriod <p>同步周期，30～60000之间的整数</p>
                      * 
                      */
                     void SetSyncPeriod(const uint64_t& _syncPeriod);
@@ -316,15 +316,15 @@ namespace TencentCloud
                     bool SyncPeriodHasBeenSet() const;
 
                     /**
-                     * 获取是否同步全部，false-不开启，true-开启
-                     * @return SyncAll 是否同步全部，false-不开启，true-开启
+                     * 获取<p>是否同步全部，false-不开启，true-开启</p>
+                     * @return SyncAll <p>是否同步全部，false-不开启，true-开启</p>
                      * 
                      */
                     bool GetSyncAll() const;
 
                     /**
-                     * 设置是否同步全部，false-不开启，true-开启
-                     * @param _syncAll 是否同步全部，false-不开启，true-开启
+                     * 设置<p>是否同步全部，false-不开启，true-开启</p>
+                     * @param _syncAll <p>是否同步全部，false-不开启，true-开启</p>
                      * 
                      */
                     void SetSyncAll(const bool& _syncAll);
@@ -337,15 +337,15 @@ namespace TencentCloud
                     bool SyncAllHasBeenSet() const;
 
                     /**
-                     * 获取同步OU列表，SyncAll为false时必传
-                     * @return SyncUnitSet 同步OU列表，SyncAll为false时必传
+                     * 获取<p>同步OU列表，SyncAll为false时必传</p>
+                     * @return SyncUnitSet <p>同步OU列表，SyncAll为false时必传</p>
                      * 
                      */
                     std::vector<std::string> GetSyncUnitSet() const;
 
                     /**
-                     * 设置同步OU列表，SyncAll为false时必传
-                     * @param _syncUnitSet 同步OU列表，SyncAll为false时必传
+                     * 设置<p>同步OU列表，SyncAll为false时必传</p>
+                     * @param _syncUnitSet <p>同步OU列表，SyncAll为false时必传</p>
                      * 
                      */
                     void SetSyncUnitSet(const std::vector<std::string>& _syncUnitSet);
@@ -358,15 +358,15 @@ namespace TencentCloud
                     bool SyncUnitSetHasBeenSet() const;
 
                     /**
-                     * 获取组织单元属性
-                     * @return AttributeUnit 组织单元属性
+                     * 获取<p>组织单元属性</p>
+                     * @return AttributeUnit <p>组织单元属性</p>
                      * 
                      */
                     std::string GetAttributeUnit() const;
 
                     /**
-                     * 设置组织单元属性
-                     * @param _attributeUnit 组织单元属性
+                     * 设置<p>组织单元属性</p>
+                     * @param _attributeUnit <p>组织单元属性</p>
                      * 
                      */
                     void SetAttributeUnit(const std::string& _attributeUnit);
@@ -379,15 +379,15 @@ namespace TencentCloud
                     bool AttributeUnitHasBeenSet() const;
 
                     /**
-                     * 获取用户姓名属性
-                     * @return AttributeRealName 用户姓名属性
+                     * 获取<p>用户姓名属性</p>
+                     * @return AttributeRealName <p>用户姓名属性</p>
                      * 
                      */
                     std::string GetAttributeRealName() const;
 
                     /**
-                     * 设置用户姓名属性
-                     * @param _attributeRealName 用户姓名属性
+                     * 设置<p>用户姓名属性</p>
+                     * @param _attributeRealName <p>用户姓名属性</p>
                      * 
                      */
                     void SetAttributeRealName(const std::string& _attributeRealName);
@@ -400,15 +400,15 @@ namespace TencentCloud
                     bool AttributeRealNameHasBeenSet() const;
 
                     /**
-                     * 获取手机号属性
-                     * @return AttributePhone 手机号属性
+                     * 获取<p>手机号属性</p>
+                     * @return AttributePhone <p>手机号属性</p>
                      * 
                      */
                     std::string GetAttributePhone() const;
 
                     /**
-                     * 设置手机号属性
-                     * @param _attributePhone 手机号属性
+                     * 设置<p>手机号属性</p>
+                     * @param _attributePhone <p>手机号属性</p>
                      * 
                      */
                     void SetAttributePhone(const std::string& _attributePhone);
@@ -421,15 +421,15 @@ namespace TencentCloud
                     bool AttributePhoneHasBeenSet() const;
 
                     /**
-                     * 获取邮箱属性
-                     * @return AttributeEmail 邮箱属性
+                     * 获取<p>邮箱属性</p>
+                     * @return AttributeEmail <p>邮箱属性</p>
                      * 
                      */
                     std::string GetAttributeEmail() const;
 
                     /**
-                     * 设置邮箱属性
-                     * @param _attributeEmail 邮箱属性
+                     * 设置<p>邮箱属性</p>
+                     * @param _attributeEmail <p>邮箱属性</p>
                      * 
                      */
                     void SetAttributeEmail(const std::string& _attributeEmail);
@@ -442,15 +442,15 @@ namespace TencentCloud
                     bool AttributeEmailHasBeenSet() const;
 
                     /**
-                     * 获取网络域Id
-                     * @return DomainId 网络域Id
+                     * 获取<p>网络域Id</p>
+                     * @return DomainId <p>网络域Id</p>
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置网络域Id
-                     * @param _domainId 网络域Id
+                     * 设置<p>网络域Id</p>
+                     * @param _domainId <p>网络域Id</p>
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -462,127 +462,154 @@ namespace TencentCloud
                      */
                     bool DomainIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>堡垒机实例ID</p>
+                     * @return ResourceId <p>堡垒机实例ID</p>
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置<p>堡垒机实例ID</p>
+                     * @param _resourceId <p>堡垒机实例ID</p>
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 是否开启LDAP认证，false-不开启，true-开启
+                     * <p>是否开启LDAP认证，false-不开启，true-开启</p>
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 服务器地址
+                     * <p>服务器地址</p>
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 备用服务器地址
+                     * <p>备用服务器地址</p>
                      */
                     std::string m_ipBackup;
                     bool m_ipBackupHasBeenSet;
 
                     /**
-                     * 服务端口
+                     * <p>服务端口</p>
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 是否开启SSL，false-不开启，true-开启
+                     * <p>是否开启SSL，false-不开启，true-开启</p>
                      */
                     bool m_enableSSL;
                     bool m_enableSSLHasBeenSet;
 
                     /**
-                     * Base DN
+                     * <p>Base DN</p>
                      */
                     std::string m_baseDN;
                     bool m_baseDNHasBeenSet;
 
                     /**
-                     * 管理员账号
+                     * <p>管理员账号</p>
                      */
                     std::string m_adminAccount;
                     bool m_adminAccountHasBeenSet;
 
                     /**
-                     * 管理员密码
+                     * <p>管理员密码</p>
                      */
                     std::string m_adminPassword;
                     bool m_adminPasswordHasBeenSet;
 
                     /**
-                     * 用户属性
+                     * <p>用户属性</p>
                      */
                     std::string m_attributeUser;
                     bool m_attributeUserHasBeenSet;
 
                     /**
-                     * 用户名属性
+                     * <p>用户名属性</p>
                      */
                     std::string m_attributeUserName;
                     bool m_attributeUserNameHasBeenSet;
 
                     /**
-                     * 自动同步，false-不开启，true-开启
+                     * <p>自动同步，false-不开启，true-开启</p>
                      */
                     bool m_autoSync;
                     bool m_autoSyncHasBeenSet;
 
                     /**
-                     * 覆盖用户信息，false-不开启，true-开启
+                     * <p>覆盖用户信息，false-不开启，true-开启</p>
                      */
                     bool m_overwrite;
                     bool m_overwriteHasBeenSet;
 
                     /**
-                     * 同步周期，30～60000之间的整数
+                     * <p>同步周期，30～60000之间的整数</p>
                      */
                     uint64_t m_syncPeriod;
                     bool m_syncPeriodHasBeenSet;
 
                     /**
-                     * 是否同步全部，false-不开启，true-开启
+                     * <p>是否同步全部，false-不开启，true-开启</p>
                      */
                     bool m_syncAll;
                     bool m_syncAllHasBeenSet;
 
                     /**
-                     * 同步OU列表，SyncAll为false时必传
+                     * <p>同步OU列表，SyncAll为false时必传</p>
                      */
                     std::vector<std::string> m_syncUnitSet;
                     bool m_syncUnitSetHasBeenSet;
 
                     /**
-                     * 组织单元属性
+                     * <p>组织单元属性</p>
                      */
                     std::string m_attributeUnit;
                     bool m_attributeUnitHasBeenSet;
 
                     /**
-                     * 用户姓名属性
+                     * <p>用户姓名属性</p>
                      */
                     std::string m_attributeRealName;
                     bool m_attributeRealNameHasBeenSet;
 
                     /**
-                     * 手机号属性
+                     * <p>手机号属性</p>
                      */
                     std::string m_attributePhone;
                     bool m_attributePhoneHasBeenSet;
 
                     /**
-                     * 邮箱属性
+                     * <p>邮箱属性</p>
                      */
                     std::string m_attributeEmail;
                     bool m_attributeEmailHasBeenSet;
 
                     /**
-                     * 网络域Id
+                     * <p>网络域Id</p>
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
+
+                    /**
+                     * <p>堡垒机实例ID</p>
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

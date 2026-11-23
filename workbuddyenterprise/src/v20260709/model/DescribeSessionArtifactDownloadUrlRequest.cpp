@@ -22,7 +22,9 @@
 using namespace TencentCloud::Workbuddyenterprise::V20260709::Model;
 using namespace std;
 
-DescribeSessionArtifactDownloadUrlRequest::DescribeSessionArtifactDownloadUrlRequest()
+DescribeSessionArtifactDownloadUrlRequest::DescribeSessionArtifactDownloadUrlRequest() :
+    m_artifactIdHasBeenSet(false),
+    m_expiredSecondsHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string DescribeSessionArtifactDownloadUrlRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_artifactIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArtifactId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_artifactId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expiredSeconds, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string DescribeSessionArtifactDownloadUrlRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeSessionArtifactDownloadUrlRequest::GetArtifactId() const
+{
+    return m_artifactId;
+}
+
+void DescribeSessionArtifactDownloadUrlRequest::SetArtifactId(const string& _artifactId)
+{
+    m_artifactId = _artifactId;
+    m_artifactIdHasBeenSet = true;
+}
+
+bool DescribeSessionArtifactDownloadUrlRequest::ArtifactIdHasBeenSet() const
+{
+    return m_artifactIdHasBeenSet;
+}
+
+int64_t DescribeSessionArtifactDownloadUrlRequest::GetExpiredSeconds() const
+{
+    return m_expiredSeconds;
+}
+
+void DescribeSessionArtifactDownloadUrlRequest::SetExpiredSeconds(const int64_t& _expiredSeconds)
+{
+    m_expiredSeconds = _expiredSeconds;
+    m_expiredSecondsHasBeenSet = true;
+}
+
+bool DescribeSessionArtifactDownloadUrlRequest::ExpiredSecondsHasBeenSet() const
+{
+    return m_expiredSecondsHasBeenSet;
+}
 
 

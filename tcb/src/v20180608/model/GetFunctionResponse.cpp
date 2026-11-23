@@ -37,14 +37,18 @@ GetFunctionResponse::GetFunctionResponse() :
     m_functionNameHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_useGpuHasBeenSet(false),
+    m_environmentHasBeenSet(false),
     m_codeResultHasBeenSet(false),
     m_errNoHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_installDependencyHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_clsLogsetIdHasBeenSet(false),
+    m_clsTopicIdHasBeenSet(false),
     m_functionIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_eipConfigHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_l5EnableHasBeenSet(false),
     m_addTimeHasBeenSet(false),
@@ -239,6 +243,23 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_useGpuHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Environment") && !rsp["Environment"].IsNull())
+    {
+        if (!rsp["Environment"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Environment` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_environment.Deserialize(rsp["Environment"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_environmentHasBeenSet = true;
+    }
+
     if (rsp.HasMember("CodeResult") && !rsp["CodeResult"].IsNull())
     {
         if (!rsp["CodeResult"].IsString())
@@ -299,6 +320,26 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClsLogsetId") && !rsp["ClsLogsetId"].IsNull())
+    {
+        if (!rsp["ClsLogsetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClsLogsetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clsLogsetId = string(rsp["ClsLogsetId"].GetString());
+        m_clsLogsetIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClsTopicId") && !rsp["ClsTopicId"].IsNull())
+    {
+        if (!rsp["ClsTopicId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClsTopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clsTopicId = string(rsp["ClsTopicId"].GetString());
+        m_clsTopicIdHasBeenSet = true;
+    }
+
     if (rsp.HasMember("FunctionId") && !rsp["FunctionId"].IsNull())
     {
         if (!rsp["FunctionId"].IsString())
@@ -327,6 +368,23 @@ CoreInternalOutcome GetFunctionResponse::Deserialize(const string &payload)
             m_tags.push_back(item);
         }
         m_tagsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EipConfig") && !rsp["EipConfig"].IsNull())
+    {
+        if (!rsp["EipConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EipConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_eipConfig.Deserialize(rsp["EipConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_eipConfigHasBeenSet = true;
     }
 
     if (rsp.HasMember("Type") && !rsp["Type"].IsNull())
@@ -558,6 +616,15 @@ string GetFunctionResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_useGpu.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_environment.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_codeResultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -606,6 +673,22 @@ string GetFunctionResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_clsLogsetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClsLogsetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clsLogsetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsTopicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClsTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clsTopicId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_functionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -627,6 +710,15 @@ string GetFunctionResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_eipConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eipConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_typeHasBeenSet)
@@ -852,6 +944,16 @@ bool GetFunctionResponse::UseGpuHasBeenSet() const
     return m_useGpuHasBeenSet;
 }
 
+EnvironmentOut GetFunctionResponse::GetEnvironment() const
+{
+    return m_environment;
+}
+
+bool GetFunctionResponse::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
+}
+
 string GetFunctionResponse::GetCodeResult() const
 {
     return m_codeResult;
@@ -912,6 +1014,26 @@ bool GetFunctionResponse::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
+string GetFunctionResponse::GetClsLogsetId() const
+{
+    return m_clsLogsetId;
+}
+
+bool GetFunctionResponse::ClsLogsetIdHasBeenSet() const
+{
+    return m_clsLogsetIdHasBeenSet;
+}
+
+string GetFunctionResponse::GetClsTopicId() const
+{
+    return m_clsTopicId;
+}
+
+bool GetFunctionResponse::ClsTopicIdHasBeenSet() const
+{
+    return m_clsTopicIdHasBeenSet;
+}
+
 string GetFunctionResponse::GetFunctionId() const
 {
     return m_functionId;
@@ -930,6 +1052,16 @@ vector<Tag> GetFunctionResponse::GetTags() const
 bool GetFunctionResponse::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+EipOutConfig GetFunctionResponse::GetEipConfig() const
+{
+    return m_eipConfig;
+}
+
+bool GetFunctionResponse::EipConfigHasBeenSet() const
+{
+    return m_eipConfigHasBeenSet;
 }
 
 string GetFunctionResponse::GetType() const

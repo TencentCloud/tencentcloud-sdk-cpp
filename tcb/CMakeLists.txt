@@ -174,6 +174,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/UpdateTableRequest.h
   include/tencentcloud/tcb/v20180608/model/AddProviderResponse.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceHeadersHandler.h
+  include/tencentcloud/tcb/v20180608/model/EnvironmentOut.h
   include/tencentcloud/tcb/v20180608/model/HTTPServiceRouteParam.h
   include/tencentcloud/tcb/v20180608/model/ModifyPGInstanceSpecResponse.h
   include/tencentcloud/tcb/v20180608/model/PlatformPkgCreditsUsage.h
@@ -211,6 +212,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/BuildSource.h
   include/tencentcloud/tcb/v20180608/model/DescribePlatformAccountCircleResponse.h
+  include/tencentcloud/tcb/v20180608/model/EipOutConfig.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvPlansResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribePlatformCreditsUsageDetailRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteProviderRequest.h
@@ -589,6 +591,7 @@ set(tcb_src
   src/v20180608/model/UpdateTableRequest.cpp
   src/v20180608/model/AddProviderResponse.cpp
   src/v20180608/model/HTTPServiceHeadersHandler.cpp
+  src/v20180608/model/EnvironmentOut.cpp
   src/v20180608/model/HTTPServiceRouteParam.cpp
   src/v20180608/model/ModifyPGInstanceSpecResponse.cpp
   src/v20180608/model/PlatformPkgCreditsUsage.cpp
@@ -626,6 +629,7 @@ set(tcb_src
   src/v20180608/model/CreateEnvRequest.cpp
   src/v20180608/model/BuildSource.cpp
   src/v20180608/model/DescribePlatformAccountCircleResponse.cpp
+  src/v20180608/model/EipOutConfig.cpp
   src/v20180608/model/DescribeEnvPlansResponse.cpp
   src/v20180608/model/DescribePlatformCreditsUsageDetailRequest.cpp
   src/v20180608/model/DeleteProviderRequest.cpp

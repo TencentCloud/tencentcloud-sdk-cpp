@@ -24,7 +24,8 @@ using namespace std;
 
 CreateAgentSessionRequest::CreateAgentSessionRequest() :
     m_agentIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_metricEntryHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateAgentSessionRequest::ToJsonString() const
         string key = "VersionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metricEntryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricEntry";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_metricEntry.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateAgentSessionRequest::SetVersionId(const string& _versionId)
 bool CreateAgentSessionRequest::VersionIdHasBeenSet() const
 {
     return m_versionIdHasBeenSet;
+}
+
+string CreateAgentSessionRequest::GetMetricEntry() const
+{
+    return m_metricEntry;
+}
+
+void CreateAgentSessionRequest::SetMetricEntry(const string& _metricEntry)
+{
+    m_metricEntry = _metricEntry;
+    m_metricEntryHasBeenSet = true;
+}
+
+bool CreateAgentSessionRequest::MetricEntryHasBeenSet() const
+{
+    return m_metricEntryHasBeenSet;
 }
 
 

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建是否成功。
-                     * @return Result 创建是否成功。
+                     * 获取<p>创建是否成功。</p>
+                     * @return Result <p>创建是否成功。</p>
                      * 
                      */
                     bool GetResult() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建是否成功。
+                     * <p>创建是否成功。</p>
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

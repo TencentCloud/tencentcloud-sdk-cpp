@@ -525,6 +525,8 @@
 #include <tencentcloud/live/v20180801/model/StartLivePadStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/StartLiveStreamMonitorRequest.h>
 #include <tencentcloud/live/v20180801/model/StartLiveStreamMonitorResponse.h>
+#include <tencentcloud/live/v20180801/model/StartLiveSubtitleRequest.h>
+#include <tencentcloud/live/v20180801/model/StartLiveSubtitleResponse.h>
 #include <tencentcloud/live/v20180801/model/StopAvatarEditingLiveRequest.h>
 #include <tencentcloud/live/v20180801/model/StopAvatarEditingLiveResponse.h>
 #include <tencentcloud/live/v20180801/model/StopCasterPgmRequest.h>
@@ -539,6 +541,8 @@
 #include <tencentcloud/live/v20180801/model/StopLiveRecordResponse.h>
 #include <tencentcloud/live/v20180801/model/StopLiveStreamMonitorRequest.h>
 #include <tencentcloud/live/v20180801/model/StopLiveStreamMonitorResponse.h>
+#include <tencentcloud/live/v20180801/model/StopLiveSubtitleRequest.h>
+#include <tencentcloud/live/v20180801/model/StopLiveSubtitleResponse.h>
 #include <tencentcloud/live/v20180801/model/StopRecordTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/StopRecordTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/StopScreenshotTaskRequest.h>
@@ -1320,6 +1324,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartLiveStreamMonitorResponse> StartLiveStreamMonitorOutcome;
                 typedef std::future<StartLiveStreamMonitorOutcome> StartLiveStreamMonitorOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StartLiveStreamMonitorRequest&, StartLiveStreamMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartLiveStreamMonitorAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartLiveSubtitleResponse> StartLiveSubtitleOutcome;
+                typedef std::future<StartLiveSubtitleOutcome> StartLiveSubtitleOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::StartLiveSubtitleRequest&, StartLiveSubtitleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartLiveSubtitleAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopAvatarEditingLiveResponse> StopAvatarEditingLiveOutcome;
                 typedef std::future<StopAvatarEditingLiveOutcome> StopAvatarEditingLiveOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopAvatarEditingLiveRequest&, StopAvatarEditingLiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAvatarEditingLiveAsyncHandler;
@@ -1341,6 +1348,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopLiveStreamMonitorResponse> StopLiveStreamMonitorOutcome;
                 typedef std::future<StopLiveStreamMonitorOutcome> StopLiveStreamMonitorOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopLiveStreamMonitorRequest&, StopLiveStreamMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopLiveStreamMonitorAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopLiveSubtitleResponse> StopLiveSubtitleOutcome;
+                typedef std::future<StopLiveSubtitleOutcome> StopLiveSubtitleOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::StopLiveSubtitleRequest&, StopLiveSubtitleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopLiveSubtitleAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopRecordTaskResponse> StopRecordTaskOutcome;
                 typedef std::future<StopRecordTaskOutcome> StopRecordTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::StopRecordTaskRequest&, StopRecordTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRecordTaskAsyncHandler;
@@ -3763,6 +3773,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 StartLiveStreamMonitorOutcomeCallable StartLiveStreamMonitorCallable(const Model::StartLiveStreamMonitorRequest& request);
 
                 /**
+                 *使用该接口启动直播字幕。
+                 * @param req StartLiveSubtitleRequest
+                 * @return StartLiveSubtitleOutcome
+                 */
+                StartLiveSubtitleOutcome StartLiveSubtitle(const Model::StartLiveSubtitleRequest &request);
+                void StartLiveSubtitleAsync(const Model::StartLiveSubtitleRequest& request, const StartLiveSubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartLiveSubtitleOutcomeCallable StartLiveSubtitleCallable(const Model::StartLiveSubtitleRequest& request);
+
+                /**
                  *调用该接口，用于停止数字人直播间。
                  * @param req StopAvatarEditingLiveRequest
                  * @return StopAvatarEditingLiveOutcome
@@ -3825,6 +3844,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 StopLiveStreamMonitorOutcome StopLiveStreamMonitor(const Model::StopLiveStreamMonitorRequest &request);
                 void StopLiveStreamMonitorAsync(const Model::StopLiveStreamMonitorRequest& request, const StopLiveStreamMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopLiveStreamMonitorOutcomeCallable StopLiveStreamMonitorCallable(const Model::StopLiveStreamMonitorRequest& request);
+
+                /**
+                 *使用该接口将停止直播字幕。
+                 * @param req StopLiveSubtitleRequest
+                 * @return StopLiveSubtitleOutcome
+                 */
+                StopLiveSubtitleOutcome StopLiveSubtitle(const Model::StopLiveSubtitleRequest &request);
+                void StopLiveSubtitleAsync(const Model::StopLiveSubtitleRequest& request, const StopLiveSubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopLiveSubtitleOutcomeCallable StopLiveSubtitleCallable(const Model::StopLiveSubtitleRequest& request);
 
                 /**
                  *提前结束录制，中止运行中的录制任务并生成录制文件。任务被成功终止后，本次任务将不再启动。

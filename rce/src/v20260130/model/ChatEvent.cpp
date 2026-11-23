@@ -24,7 +24,8 @@ ChatEvent::ChatEvent() :
     m_chatInfoHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_senderHasBeenSet(false),
-    m_receiverHasBeenSet(false)
+    m_receiverHasBeenSet(false),
+    m_custHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,26 @@ CoreInternalOutcome ChatEvent::Deserialize(const rapidjson::Value &value)
         m_receiverHasBeenSet = true;
     }
 
+    if (value.HasMember("Cust") && !value["Cust"].IsNull())
+    {
+        if (!value["Cust"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ChatEvent.Cust` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Cust"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Cust item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cust.push_back(item);
+        }
+        m_custHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +155,21 @@ void ChatEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_receiver.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_custHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cust";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cust.begin(); itr != m_cust.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -201,5 +237,21 @@ void ChatEvent::SetReceiver(const Receiver& _receiver)
 bool ChatEvent::ReceiverHasBeenSet() const
 {
     return m_receiverHasBeenSet;
+}
+
+vector<Cust> ChatEvent::GetCust() const
+{
+    return m_cust;
+}
+
+void ChatEvent::SetCust(const vector<Cust>& _cust)
+{
+    m_cust = _cust;
+    m_custHasBeenSet = true;
+}
+
+bool ChatEvent::CustHasBeenSet() const
+{
+    return m_custHasBeenSet;
 }
 

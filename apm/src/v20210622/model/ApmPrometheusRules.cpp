@@ -27,7 +27,8 @@ ApmPrometheusRules::ApmPrometheusRules() :
     m_statusHasBeenSet(false),
     m_metricNameRuleHasBeenSet(false),
     m_metricMatchTypeHasBeenSet(false),
-    m_appendResourceAttributesHasBeenSet(false)
+    m_appendResourceAttributesHasBeenSet(false),
+    m_associationIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome ApmPrometheusRules::Deserialize(const rapidjson::Value &valu
         m_appendResourceAttributesHasBeenSet = true;
     }
 
+    if (value.HasMember("AssociationId") && !value["AssociationId"].IsNull())
+    {
+        if (!value["AssociationId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmPrometheusRules.AssociationId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_associationId = value["AssociationId"].GetInt64();
+        m_associationIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void ApmPrometheusRules::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "AppendResourceAttributes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appendResourceAttributes, allocator);
+    }
+
+    if (m_associationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_associationId, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void ApmPrometheusRules::SetAppendResourceAttributes(const bool& _appendResource
 bool ApmPrometheusRules::AppendResourceAttributesHasBeenSet() const
 {
     return m_appendResourceAttributesHasBeenSet;
+}
+
+int64_t ApmPrometheusRules::GetAssociationId() const
+{
+    return m_associationId;
+}
+
+void ApmPrometheusRules::SetAssociationId(const int64_t& _associationId)
+{
+    m_associationId = _associationId;
+    m_associationIdHasBeenSet = true;
+}
+
+bool ApmPrometheusRules::AssociationIdHasBeenSet() const
+{
+    return m_associationIdHasBeenSet;
 }
 

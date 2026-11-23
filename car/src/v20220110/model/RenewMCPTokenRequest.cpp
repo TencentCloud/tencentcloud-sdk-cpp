@@ -22,7 +22,9 @@
 using namespace TencentCloud::Car::V20220110::Model;
 using namespace std;
 
-RenewMCPTokenRequest::RenewMCPTokenRequest()
+RenewMCPTokenRequest::RenewMCPTokenRequest() :
+    m_tokenIdHasBeenSet(false),
+    m_expireSecondsHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string RenewMCPTokenRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_tokenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tokenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expireSeconds, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string RenewMCPTokenRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string RenewMCPTokenRequest::GetTokenId() const
+{
+    return m_tokenId;
+}
+
+void RenewMCPTokenRequest::SetTokenId(const string& _tokenId)
+{
+    m_tokenId = _tokenId;
+    m_tokenIdHasBeenSet = true;
+}
+
+bool RenewMCPTokenRequest::TokenIdHasBeenSet() const
+{
+    return m_tokenIdHasBeenSet;
+}
+
+int64_t RenewMCPTokenRequest::GetExpireSeconds() const
+{
+    return m_expireSeconds;
+}
+
+void RenewMCPTokenRequest::SetExpireSeconds(const int64_t& _expireSeconds)
+{
+    m_expireSeconds = _expireSeconds;
+    m_expireSecondsHasBeenSet = true;
+}
+
+bool RenewMCPTokenRequest::ExpireSecondsHasBeenSet() const
+{
+    return m_expireSecondsHasBeenSet;
+}
 
 

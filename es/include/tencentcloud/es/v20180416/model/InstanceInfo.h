@@ -2564,6 +2564,48 @@ namespace TencentCloud
                      */
                     bool NeedOfflineOldNodesNotifyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>0 未开启 / 1 已开启 / 2 切换中</p>
+                     * @return LvmStatus <p>0 未开启 / 1 已开启 / 2 切换中</p>
+                     * 
+                     */
+                    int64_t GetLvmStatus() const;
+
+                    /**
+                     * 设置<p>0 未开启 / 1 已开启 / 2 切换中</p>
+                     * @param _lvmStatus <p>0 未开启 / 1 已开启 / 2 切换中</p>
+                     * 
+                     */
+                    void SetLvmStatus(const int64_t& _lvmStatus);
+
+                    /**
+                     * 判断参数 LvmStatus 是否已赋值
+                     * @return LvmStatus 是否已赋值
+                     * 
+                     */
+                    bool LvmStatusHasBeenSet() const;
+
+                    /**
+                     * 获取<p>仅 LvmStatus=2 时返回，值为流程id</p>
+                     * @return LvmSwitchFlowId <p>仅 LvmStatus=2 时返回，值为流程id</p>
+                     * 
+                     */
+                    int64_t GetLvmSwitchFlowId() const;
+
+                    /**
+                     * 设置<p>仅 LvmStatus=2 时返回，值为流程id</p>
+                     * @param _lvmSwitchFlowId <p>仅 LvmStatus=2 时返回，值为流程id</p>
+                     * 
+                     */
+                    void SetLvmSwitchFlowId(const int64_t& _lvmSwitchFlowId);
+
+                    /**
+                     * 判断参数 LvmSwitchFlowId 是否已赋值
+                     * @return LvmSwitchFlowId 是否已赋值
+                     * 
+                     */
+                    bool LvmSwitchFlowIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -3272,6 +3314,18 @@ namespace TencentCloud
                      */
                     bool m_needOfflineOldNodesNotify;
                     bool m_needOfflineOldNodesNotifyHasBeenSet;
+
+                    /**
+                     * <p>0 未开启 / 1 已开启 / 2 切换中</p>
+                     */
+                    int64_t m_lvmStatus;
+                    bool m_lvmStatusHasBeenSet;
+
+                    /**
+                     * <p>仅 LvmStatus=2 时返回，值为流程id</p>
+                     */
+                    int64_t m_lvmSwitchFlowId;
+                    bool m_lvmSwitchFlowIdHasBeenSet;
 
                 };
             }

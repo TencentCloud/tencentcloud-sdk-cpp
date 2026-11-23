@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dsgc/v20190723/model/Filter.h>
 
 
 namespace TencentCloud
@@ -66,42 +67,42 @@ namespace TencentCloud
                     /**
                      * 获取数据分类ID
                      * @return CategoryId 数据分类ID
-                     * 
+                     * @deprecated
                      */
                     int64_t GetCategoryId() const;
 
                     /**
                      * 设置数据分类ID
                      * @param _categoryId 数据分类ID
-                     * 
+                     * @deprecated
                      */
                     void SetCategoryId(const int64_t& _categoryId);
 
                     /**
                      * 判断参数 CategoryId 是否已赋值
                      * @return CategoryId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CategoryIdHasBeenSet() const;
 
                     /**
                      * 获取敏感数据分类名称
                      * @return Name 敏感数据分类名称
-                     * 
+                     * @deprecated
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置敏感数据分类名称
                      * @param _name 敏感数据分类名称
-                     * 
+                     * @deprecated
                      */
                     void SetName(const std::string& _name);
 
                     /**
                      * 判断参数 Name 是否已赋值
                      * @return Name 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool NameHasBeenSet() const;
 
@@ -147,6 +148,48 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件（Id:分类id,Name:分类名称）
+                     * @return Filters 过滤条件（Id:分类id,Name:分类名称）
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件（Id:分类id,Name:分类名称）
+                     * @param _filters 过滤条件（Id:分类id,Name:分类名称）
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取关键字
+                     * @return Keyword 关键字
+                     * 
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置关键字
+                     * @param _keyword 关键字
+                     * 
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     * 
+                     */
+                    bool KeywordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +221,18 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 过滤条件（Id:分类id,Name:分类名称）
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 关键字
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
 
                 };
             }

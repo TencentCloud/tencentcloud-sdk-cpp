@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取tse实例id。
-                     * @return InstanceId tse实例id。
+                     * 获取<p>tse实例id。</p>
+                     * @return InstanceId <p>tse实例id。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置tse实例id。
-                     * @param _instanceId tse实例id。
+                     * 设置<p>tse实例id。</p>
+                     * @param _instanceId <p>tse实例id。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取服务实例信息。
-                     * @return GovernanceInstances 服务实例信息。
+                     * 获取<p>服务实例信息。</p>
+                     * @return GovernanceInstances <p>服务实例信息。</p>
                      * 
                      */
                     std::vector<GovernanceInstanceInput> GetGovernanceInstances() const;
 
                     /**
-                     * 设置服务实例信息。
-                     * @param _governanceInstances 服务实例信息。
+                     * 设置<p>服务实例信息。</p>
+                     * @param _governanceInstances <p>服务实例信息。</p>
                      * 
                      */
                     void SetGovernanceInstances(const std::vector<GovernanceInstanceInput>& _governanceInstances);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * tse实例id。
+                     * <p>tse实例id。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 服务实例信息。
+                     * <p>服务实例信息。</p>
                      */
                     std::vector<GovernanceInstanceInput> m_governanceInstances;
                     bool m_governanceInstancesHasBeenSet;

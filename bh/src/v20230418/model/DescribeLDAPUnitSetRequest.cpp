@@ -33,7 +33,8 @@ DescribeLDAPUnitSetRequest::DescribeLDAPUnitSetRequest() :
     m_attributeUserNameHasBeenSet(false),
     m_attributeUnitHasBeenSet(false),
     m_ipBackupHasBeenSet(false),
-    m_domainIdHasBeenSet(false)
+    m_domainIdHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string DescribeLDAPUnitSetRequest::ToJsonString() const
         string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -314,6 +323,22 @@ void DescribeLDAPUnitSetRequest::SetDomainId(const string& _domainId)
 bool DescribeLDAPUnitSetRequest::DomainIdHasBeenSet() const
 {
     return m_domainIdHasBeenSet;
+}
+
+string DescribeLDAPUnitSetRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void DescribeLDAPUnitSetRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool DescribeLDAPUnitSetRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 

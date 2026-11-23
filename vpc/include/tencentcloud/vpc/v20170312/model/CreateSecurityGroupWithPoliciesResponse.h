@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组对象。
-                     * @return SecurityGroup 安全组对象。
+                     * 获取<p>安全组对象。</p>
+                     * @return SecurityGroup <p>安全组对象。</p>
                      * 
                      */
                     SecurityGroup GetSecurityGroup() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安全组对象。
+                     * <p>安全组对象。</p>
                      */
                     SecurityGroup m_securityGroup;
                     bool m_securityGroupHasBeenSet;

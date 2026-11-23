@@ -53,6 +53,8 @@
 #include <tencentcloud/teo/v20220901/model/CreateConfigGroupVersionResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateContentIdentifierRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateContentIdentifierResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateCustomGroupRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateCustomGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateCustomizeErrorPageRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateCustomizeErrorPageResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateDnsRecordRequest.h>
@@ -131,6 +133,8 @@
 #include <tencentcloud/teo/v20220901/model/DeleteContentIdentifierResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteCustomErrorPageRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteCustomErrorPageResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteCustomGroupRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteCustomGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteDnsRecordsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteDnsRecordsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteEdgeKVNamespaceRequest.h>
@@ -205,6 +209,12 @@
 #include <tencentcloud/teo/v20220901/model/DescribeContentQuotaResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeCustomErrorPagesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeCustomErrorPagesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupReferencesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupReferencesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeCustomGroupsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventRequest.h>
@@ -407,6 +417,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyContentIdentifierResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyCustomErrorPageRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyCustomErrorPageResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyCustomGroupRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyCustomGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyDDoSProtectionRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyDDoSProtectionResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsRequest.h>
@@ -562,6 +574,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateContentIdentifierResponse> CreateContentIdentifierOutcome;
                 typedef std::future<CreateContentIdentifierOutcome> CreateContentIdentifierOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateContentIdentifierRequest&, CreateContentIdentifierOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContentIdentifierAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCustomGroupResponse> CreateCustomGroupOutcome;
+                typedef std::future<CreateCustomGroupOutcome> CreateCustomGroupOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateCustomGroupRequest&, CreateCustomGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustomizeErrorPageResponse> CreateCustomizeErrorPageOutcome;
                 typedef std::future<CreateCustomizeErrorPageOutcome> CreateCustomizeErrorPageOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateCustomizeErrorPageRequest&, CreateCustomizeErrorPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomizeErrorPageAsyncHandler;
@@ -679,6 +694,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCustomErrorPageResponse> DeleteCustomErrorPageOutcome;
                 typedef std::future<DeleteCustomErrorPageOutcome> DeleteCustomErrorPageOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteCustomErrorPageRequest&, DeleteCustomErrorPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomErrorPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomGroupResponse> DeleteCustomGroupOutcome;
+                typedef std::future<DeleteCustomGroupOutcome> DeleteCustomGroupOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteCustomGroupRequest&, DeleteCustomGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDnsRecordsResponse> DeleteDnsRecordsOutcome;
                 typedef std::future<DeleteDnsRecordsOutcome> DeleteDnsRecordsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteDnsRecordsRequest&, DeleteDnsRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDnsRecordsAsyncHandler;
@@ -790,6 +808,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCustomErrorPagesResponse> DescribeCustomErrorPagesOutcome;
                 typedef std::future<DescribeCustomErrorPagesOutcome> DescribeCustomErrorPagesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeCustomErrorPagesRequest&, DescribeCustomErrorPagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomErrorPagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomGroupResponse> DescribeCustomGroupOutcome;
+                typedef std::future<DescribeCustomGroupOutcome> DescribeCustomGroupOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeCustomGroupRequest&, DescribeCustomGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomGroupReferencesResponse> DescribeCustomGroupReferencesOutcome;
+                typedef std::future<DescribeCustomGroupReferencesOutcome> DescribeCustomGroupReferencesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeCustomGroupReferencesRequest&, DescribeCustomGroupReferencesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomGroupReferencesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomGroupsResponse> DescribeCustomGroupsOutcome;
+                typedef std::future<DescribeCustomGroupsOutcome> DescribeCustomGroupsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeCustomGroupsRequest&, DescribeCustomGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDDoSAttackDataResponse> DescribeDDoSAttackDataOutcome;
                 typedef std::future<DescribeDDoSAttackDataOutcome> DescribeDDoSAttackDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDDoSAttackDataRequest&, DescribeDDoSAttackDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDDoSAttackDataAsyncHandler;
@@ -1093,6 +1120,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCustomErrorPageResponse> ModifyCustomErrorPageOutcome;
                 typedef std::future<ModifyCustomErrorPageOutcome> ModifyCustomErrorPageOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyCustomErrorPageRequest&, ModifyCustomErrorPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomErrorPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCustomGroupResponse> ModifyCustomGroupOutcome;
+                typedef std::future<ModifyCustomGroupOutcome> ModifyCustomGroupOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyCustomGroupRequest&, ModifyCustomGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDDoSProtectionResponse> ModifyDDoSProtectionOutcome;
                 typedef std::future<ModifyDDoSProtectionOutcome> ModifyDDoSProtectionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyDDoSProtectionRequest&, ModifyDDoSProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDDoSProtectionAsyncHandler;
@@ -1390,6 +1420,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateContentIdentifierOutcome CreateContentIdentifier(const Model::CreateContentIdentifierRequest &request);
                 void CreateContentIdentifierAsync(const Model::CreateContentIdentifierRequest& request, const CreateContentIdentifierAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateContentIdentifierOutcomeCallable CreateContentIdentifierCallable(const Model::CreateContentIdentifierRequest& request);
+
+                /**
+                 *创建自定义组。自定义组用于集中管理一组可复用的匹配条目，例如可以将多个 JA3/JA4 TLS 指纹保存为一个 TLS 指纹组，并在安全规则中直接引用该组，从而避免在多条规则中重复维护相同的指纹列表。
+                 * @param req CreateCustomGroupRequest
+                 * @return CreateCustomGroupOutcome
+                 */
+                CreateCustomGroupOutcome CreateCustomGroup(const Model::CreateCustomGroupRequest &request);
+                void CreateCustomGroupAsync(const Model::CreateCustomGroupRequest& request, const CreateCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomGroupOutcomeCallable CreateCustomGroupCallable(const Model::CreateCustomGroupRequest& request);
 
                 /**
                  *创建自定义响应页面。
@@ -1776,6 +1815,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteCustomErrorPageOutcomeCallable DeleteCustomErrorPageCallable(const Model::DeleteCustomErrorPageRequest& request);
 
                 /**
+                 *删除指定自定义组。若该组已被规则引用，则不允许删除，请先解除引用关系。
+                 * @param req DeleteCustomGroupRequest
+                 * @return DeleteCustomGroupOutcome
+                 */
+                DeleteCustomGroupOutcome DeleteCustomGroup(const Model::DeleteCustomGroupRequest &request);
+                void DeleteCustomGroupAsync(const Model::DeleteCustomGroupRequest& request, const DeleteCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomGroupOutcomeCallable DeleteCustomGroupCallable(const Model::DeleteCustomGroupRequest& request);
+
+                /**
                  *您可以用本接口批量删除 DNS 记录。
                  * @param req DeleteDnsRecordsRequest
                  * @return DeleteDnsRecordsOutcome
@@ -2125,6 +2173,33 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeCustomErrorPagesOutcome DescribeCustomErrorPages(const Model::DescribeCustomErrorPagesRequest &request);
                 void DescribeCustomErrorPagesAsync(const Model::DescribeCustomErrorPagesRequest& request, const DescribeCustomErrorPagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCustomErrorPagesOutcomeCallable DescribeCustomErrorPagesCallable(const Model::DescribeCustomErrorPagesRequest& request);
+
+                /**
+                 *查询单个自定义组的详细信息，包含组内全量条目（通过 Limit/Offset 分页返回）。DescribeCustomGroups 列表接口每组最多返回前 500 个条目，如需获取全量条目，请使用本接口。GroupId 可通过 CreateCustomGroup 创建时返回或 DescribeCustomGroups 查询获取。
+                 * @param req DescribeCustomGroupRequest
+                 * @return DescribeCustomGroupOutcome
+                 */
+                DescribeCustomGroupOutcome DescribeCustomGroup(const Model::DescribeCustomGroupRequest &request);
+                void DescribeCustomGroupAsync(const Model::DescribeCustomGroupRequest& request, const DescribeCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomGroupOutcomeCallable DescribeCustomGroupCallable(const Model::DescribeCustomGroupRequest& request);
+
+                /**
+                 *获取使用自定义组的安全策略配置。
+                 * @param req DescribeCustomGroupReferencesRequest
+                 * @return DescribeCustomGroupReferencesOutcome
+                 */
+                DescribeCustomGroupReferencesOutcome DescribeCustomGroupReferences(const Model::DescribeCustomGroupReferencesRequest &request);
+                void DescribeCustomGroupReferencesAsync(const Model::DescribeCustomGroupReferencesRequest& request, const DescribeCustomGroupReferencesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomGroupReferencesOutcomeCallable DescribeCustomGroupReferencesCallable(const Model::DescribeCustomGroupReferencesRequest& request);
+
+                /**
+                 *查询指定站点下的自定义组列表。本接口只返回每个自定义组前 500 个条目，如需查询组内完整条目请使用 DescribeSecurityCustomGroup 接口查询。
+                 * @param req DescribeCustomGroupsRequest
+                 * @return DescribeCustomGroupsOutcome
+                 */
+                DescribeCustomGroupsOutcome DescribeCustomGroups(const Model::DescribeCustomGroupsRequest &request);
+                void DescribeCustomGroupsAsync(const Model::DescribeCustomGroupsRequest& request, const DescribeCustomGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomGroupsOutcomeCallable DescribeCustomGroupsCallable(const Model::DescribeCustomGroupsRequest& request);
 
                 /**
                  *本接口（DescribeDDoSAttackData）用于查询DDoS攻击时序数据。
@@ -3070,6 +3145,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyCustomErrorPageOutcome ModifyCustomErrorPage(const Model::ModifyCustomErrorPageRequest &request);
                 void ModifyCustomErrorPageAsync(const Model::ModifyCustomErrorPageRequest& request, const ModifyCustomErrorPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCustomErrorPageOutcomeCallable ModifyCustomErrorPageCallable(const Model::ModifyCustomErrorPageRequest& request);
+
+                /**
+                 *修改自定义组内容。GroupType 创建后不可修改，修改组内条目时，可通过 GroupItemOperation 指定替换、追加或移除操作。
+                 * @param req ModifyCustomGroupRequest
+                 * @return ModifyCustomGroupOutcome
+                 */
+                ModifyCustomGroupOutcome ModifyCustomGroup(const Model::ModifyCustomGroupRequest &request);
+                void ModifyCustomGroupAsync(const Model::ModifyCustomGroupRequest& request, const ModifyCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCustomGroupOutcomeCallable ModifyCustomGroupCallable(const Model::ModifyCustomGroupRequest& request);
 
                 /**
                  *修改站点的独立 DDoS 防护。

@@ -23,7 +23,8 @@ using namespace TencentCloud::Apm::V20210622::Model;
 using namespace std;
 
 DescribeApmPrometheusRuleRequest::DescribeApmPrometheusRuleRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_associationIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeApmPrometheusRuleRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_associationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_associationId, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeApmPrometheusRuleRequest::SetInstanceId(const string& _instanceId)
 bool DescribeApmPrometheusRuleRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+int64_t DescribeApmPrometheusRuleRequest::GetAssociationId() const
+{
+    return m_associationId;
+}
+
+void DescribeApmPrometheusRuleRequest::SetAssociationId(const int64_t& _associationId)
+{
+    m_associationId = _associationId;
+    m_associationIdHasBeenSet = true;
+}
+
+bool DescribeApmPrometheusRuleRequest::AssociationIdHasBeenSet() const
+{
+    return m_associationIdHasBeenSet;
 }
 
 

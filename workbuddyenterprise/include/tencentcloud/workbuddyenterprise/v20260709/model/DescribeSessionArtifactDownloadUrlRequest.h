@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>物料ID</p>
+                     * @return ArtifactId <p>物料ID</p>
+                     * 
+                     */
+                    std::string GetArtifactId() const;
+
+                    /**
+                     * 设置<p>物料ID</p>
+                     * @param _artifactId <p>物料ID</p>
+                     * 
+                     */
+                    void SetArtifactId(const std::string& _artifactId);
+
+                    /**
+                     * 判断参数 ArtifactId 是否已赋值
+                     * @return ArtifactId 是否已赋值
+                     * 
+                     */
+                    bool ArtifactIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>产物过期时间</p><p>单位：s</p>
+                     * @return ExpiredSeconds <p>产物过期时间</p><p>单位：s</p>
+                     * 
+                     */
+                    int64_t GetExpiredSeconds() const;
+
+                    /**
+                     * 设置<p>产物过期时间</p><p>单位：s</p>
+                     * @param _expiredSeconds <p>产物过期时间</p><p>单位：s</p>
+                     * 
+                     */
+                    void SetExpiredSeconds(const int64_t& _expiredSeconds);
+
+                    /**
+                     * 判断参数 ExpiredSeconds 是否已赋值
+                     * @return ExpiredSeconds 是否已赋值
+                     * 
+                     */
+                    bool ExpiredSecondsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>物料ID</p>
+                     */
+                    std::string m_artifactId;
+                    bool m_artifactIdHasBeenSet;
+
+                    /**
+                     * <p>产物过期时间</p><p>单位：s</p>
+                     */
+                    int64_t m_expiredSeconds;
+                    bool m_expiredSecondsHasBeenSet;
 
                 };
             }

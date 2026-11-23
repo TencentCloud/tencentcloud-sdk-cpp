@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool DryRunHasBeenSet() const;
 
+                    /**
+                     * 获取<p>实例Cpu 核数</p><p>取值范围：[0.1, 1024]</p><p>单位：核数</p><p>当 CpuCores 和 Cpu 共存时，优先 CpuCores 生效</p>
+                     * @return CpuCores <p>实例Cpu 核数</p><p>取值范围：[0.1, 1024]</p><p>单位：核数</p><p>当 CpuCores 和 Cpu 共存时，优先 CpuCores 生效</p>
+                     * 
+                     */
+                    double GetCpuCores() const;
+
+                    /**
+                     * 设置<p>实例Cpu 核数</p><p>取值范围：[0.1, 1024]</p><p>单位：核数</p><p>当 CpuCores 和 Cpu 共存时，优先 CpuCores 生效</p>
+                     * @param _cpuCores <p>实例Cpu 核数</p><p>取值范围：[0.1, 1024]</p><p>单位：核数</p><p>当 CpuCores 和 Cpu 共存时，优先 CpuCores 生效</p>
+                     * 
+                     */
+                    void SetCpuCores(const double& _cpuCores);
+
+                    /**
+                     * 判断参数 CpuCores 是否已赋值
+                     * @return CpuCores 是否已赋值
+                     * 
+                     */
+                    bool CpuCoresHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
+
+                    /**
+                     * <p>实例Cpu 核数</p><p>取值范围：[0.1, 1024]</p><p>单位：核数</p><p>当 CpuCores 和 Cpu 共存时，优先 CpuCores 生效</p>
+                     */
+                    double m_cpuCores;
+                    bool m_cpuCoresHasBeenSet;
 
                 };
             }

@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool VersionIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>会话创建来源，仅用于监控统计，不参与鉴权。</p><p>page 表示页面端，adk 表示 ADK/API；不传或无法识别时统计为 unknown。</p>
+                     * @return MetricEntry <p>会话创建来源，仅用于监控统计，不参与鉴权。</p><p>page 表示页面端，adk 表示 ADK/API；不传或无法识别时统计为 unknown。</p>
+                     * 
+                     */
+                    std::string GetMetricEntry() const;
+
+                    /**
+                     * 设置<p>会话创建来源，仅用于监控统计，不参与鉴权。</p><p>page 表示页面端，adk 表示 ADK/API；不传或无法识别时统计为 unknown。</p>
+                     * @param _metricEntry <p>会话创建来源，仅用于监控统计，不参与鉴权。</p><p>page 表示页面端，adk 表示 ADK/API；不传或无法识别时统计为 unknown。</p>
+                     * 
+                     */
+                    void SetMetricEntry(const std::string& _metricEntry);
+
+                    /**
+                     * 判断参数 MetricEntry 是否已赋值
+                     * @return MetricEntry 是否已赋值
+                     * 
+                     */
+                    bool MetricEntryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;
+
+                    /**
+                     * <p>会话创建来源，仅用于监控统计，不参与鉴权。</p><p>page 表示页面端，adk 表示 ADK/API；不传或无法识别时统计为 unknown。</p>
+                     */
+                    std::string m_metricEntry;
+                    bool m_metricEntryHasBeenSet;
 
                 };
             }

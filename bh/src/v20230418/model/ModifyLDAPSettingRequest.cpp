@@ -42,7 +42,8 @@ ModifyLDAPSettingRequest::ModifyLDAPSettingRequest() :
     m_attributeRealNameHasBeenSet(false),
     m_attributePhoneHasBeenSet(false),
     m_attributeEmailHasBeenSet(false),
-    m_domainIdHasBeenSet(false)
+    m_domainIdHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,14 @@ string ModifyLDAPSettingRequest::ToJsonString() const
         string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -544,6 +553,22 @@ void ModifyLDAPSettingRequest::SetDomainId(const string& _domainId)
 bool ModifyLDAPSettingRequest::DomainIdHasBeenSet() const
 {
     return m_domainIdHasBeenSet;
+}
+
+string ModifyLDAPSettingRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void ModifyLDAPSettingRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool ModifyLDAPSettingRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 

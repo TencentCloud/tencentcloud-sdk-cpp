@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool AppendResourceAttributesHasBeenSet() const;
 
+                    /**
+                     * 获取归属的关联记录 ID，0 或不传表示跟随默认关联
+                     * @return AssociationId 归属的关联记录 ID，0 或不传表示跟随默认关联
+                     * 
+                     */
+                    int64_t GetAssociationId() const;
+
+                    /**
+                     * 设置归属的关联记录 ID，0 或不传表示跟随默认关联
+                     * @param _associationId 归属的关联记录 ID，0 或不传表示跟随默认关联
+                     * 
+                     */
+                    void SetAssociationId(const int64_t& _associationId);
+
+                    /**
+                     * 判断参数 AssociationId 是否已赋值
+                     * @return AssociationId 是否已赋值
+                     * 
+                     */
+                    bool AssociationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     bool m_appendResourceAttributes;
                     bool m_appendResourceAttributesHasBeenSet;
+
+                    /**
+                     * 归属的关联记录 ID，0 或不传表示跟随默认关联
+                     */
+                    int64_t m_associationId;
+                    bool m_associationIdHasBeenSet;
 
                 };
             }

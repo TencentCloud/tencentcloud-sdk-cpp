@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>会话ID</p>
+                     * @return SessionId <p>会话ID</p>
+                     * 
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置<p>会话ID</p>
+                     * @param _sessionId <p>会话ID</p>
+                     * 
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     * 
+                     */
+                    bool SessionIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>需要删除的物料ID集合</p>
+                     * @return ArtifactIds <p>需要删除的物料ID集合</p>
+                     * 
+                     */
+                    std::vector<std::string> GetArtifactIds() const;
+
+                    /**
+                     * 设置<p>需要删除的物料ID集合</p>
+                     * @param _artifactIds <p>需要删除的物料ID集合</p>
+                     * 
+                     */
+                    void SetArtifactIds(const std::vector<std::string>& _artifactIds);
+
+                    /**
+                     * 判断参数 ArtifactIds 是否已赋值
+                     * @return ArtifactIds 是否已赋值
+                     * 
+                     */
+                    bool ArtifactIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>会话ID</p>
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * <p>需要删除的物料ID集合</p>
+                     */
+                    std::vector<std::string> m_artifactIds;
+                    bool m_artifactIdsHasBeenSet;
 
                 };
             }

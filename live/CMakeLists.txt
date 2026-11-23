@@ -38,6 +38,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/PublishTime.h
   include/tencentcloud/live/v20180801/model/CommonMixOutputParams.h
   include/tencentcloud/live/v20180801/model/DescribeAuditKeywordsResponse.h
+  include/tencentcloud/live/v20180801/model/StopLiveSubtitleRequest.h
   include/tencentcloud/live/v20180801/model/DeleteAuditKeywordLibRequest.h
   include/tencentcloud/live/v20180801/model/CreateLiveAvatarCloneFigureResponse.h
   include/tencentcloud/live/v20180801/model/DescribeGroupProIspPlayInfoListResponse.h
@@ -170,12 +171,14 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DeleteRecordTaskRequest.h
   include/tencentcloud/live/v20180801/model/AvatarTimbreInfo.h
   include/tencentcloud/live/v20180801/model/DescribeStreamDayPlayInfoListResponse.h
+  include/tencentcloud/live/v20180801/model/StopLiveSubtitleResponse.h
   include/tencentcloud/live/v20180801/model/CreateSceneVideoTaskRequest.h
   include/tencentcloud/live/v20180801/model/DeleteLivePadRuleRequest.h
   include/tencentcloud/live/v20180801/model/CreateLiveSnapshotRuleResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveStreamEventListResponse.h
   include/tencentcloud/live/v20180801/model/DescribeStreamPackageRemuxStatisticsResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveTranscodeTotalInfoRequest.h
+  include/tencentcloud/live/v20180801/model/StartLiveSubtitleRequest.h
   include/tencentcloud/live/v20180801/model/CommonMixCropParams.h
   include/tencentcloud/live/v20180801/model/DescribeLivePushAuthKeyRequest.h
   include/tencentcloud/live/v20180801/model/DescribeCasterEmergencyStatusResponse.h
@@ -481,6 +484,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/AvatarTimbreList.h
   include/tencentcloud/live/v20180801/model/DescribePullTransformPushInfoResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveCloudEffectListRequest.h
+  include/tencentcloud/live/v20180801/model/StartLiveSubtitleResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveStreamStateRequest.h
   include/tencentcloud/live/v20180801/model/CreateLiveTimeShiftTemplateRequest.h
   include/tencentcloud/live/v20180801/model/CreateLiveRecordTemplateResponse.h
@@ -710,6 +714,7 @@ set(live_src
   src/v20180801/model/PublishTime.cpp
   src/v20180801/model/CommonMixOutputParams.cpp
   src/v20180801/model/DescribeAuditKeywordsResponse.cpp
+  src/v20180801/model/StopLiveSubtitleRequest.cpp
   src/v20180801/model/DeleteAuditKeywordLibRequest.cpp
   src/v20180801/model/CreateLiveAvatarCloneFigureResponse.cpp
   src/v20180801/model/DescribeGroupProIspPlayInfoListResponse.cpp
@@ -842,12 +847,14 @@ set(live_src
   src/v20180801/model/DeleteRecordTaskRequest.cpp
   src/v20180801/model/AvatarTimbreInfo.cpp
   src/v20180801/model/DescribeStreamDayPlayInfoListResponse.cpp
+  src/v20180801/model/StopLiveSubtitleResponse.cpp
   src/v20180801/model/CreateSceneVideoTaskRequest.cpp
   src/v20180801/model/DeleteLivePadRuleRequest.cpp
   src/v20180801/model/CreateLiveSnapshotRuleResponse.cpp
   src/v20180801/model/DescribeLiveStreamEventListResponse.cpp
   src/v20180801/model/DescribeStreamPackageRemuxStatisticsResponse.cpp
   src/v20180801/model/DescribeLiveTranscodeTotalInfoRequest.cpp
+  src/v20180801/model/StartLiveSubtitleRequest.cpp
   src/v20180801/model/CommonMixCropParams.cpp
   src/v20180801/model/DescribeLivePushAuthKeyRequest.cpp
   src/v20180801/model/DescribeCasterEmergencyStatusResponse.cpp
@@ -1153,6 +1160,7 @@ set(live_src
   src/v20180801/model/AvatarTimbreList.cpp
   src/v20180801/model/DescribePullTransformPushInfoResponse.cpp
   src/v20180801/model/DescribeLiveCloudEffectListRequest.cpp
+  src/v20180801/model/StartLiveSubtitleResponse.cpp
   src/v20180801/model/DescribeLiveStreamStateRequest.cpp
   src/v20180801/model/CreateLiveTimeShiftTemplateRequest.cpp
   src/v20180801/model/CreateLiveRecordTemplateResponse.cpp

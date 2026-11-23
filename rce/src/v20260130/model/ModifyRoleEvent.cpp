@@ -25,7 +25,8 @@ ModifyRoleEvent::ModifyRoleEvent() :
     m_roleSignatureAfterHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_userInfoHasBeenSet(false),
-    m_roleInfoHasBeenSet(false)
+    m_roleInfoHasBeenSet(false),
+    m_custHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,26 @@ CoreInternalOutcome ModifyRoleEvent::Deserialize(const rapidjson::Value &value)
         m_roleInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Cust") && !value["Cust"].IsNull())
+    {
+        if (!value["Cust"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ModifyRoleEvent.Cust` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Cust"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Cust item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cust.push_back(item);
+        }
+        m_custHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +166,21 @@ void ModifyRoleEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_roleInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_custHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cust";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cust.begin(); itr != m_cust.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -228,5 +264,21 @@ void ModifyRoleEvent::SetRoleInfo(const Role& _roleInfo)
 bool ModifyRoleEvent::RoleInfoHasBeenSet() const
 {
     return m_roleInfoHasBeenSet;
+}
+
+vector<Cust> ModifyRoleEvent::GetCust() const
+{
+    return m_cust;
+}
+
+void ModifyRoleEvent::SetCust(const vector<Cust>& _cust)
+{
+    m_cust = _cust;
+    m_custHasBeenSet = true;
+}
+
+bool ModifyRoleEvent::CustHasBeenSet() const
+{
+    return m_custHasBeenSet;
 }
 

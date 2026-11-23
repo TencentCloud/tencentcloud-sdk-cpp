@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组实例ID，例如：sg-ohuuioma。
-                     * @return SecurityGroupId 安全组实例ID，例如：sg-ohuuioma。
+                     * 获取<p>安全组实例ID，例如：sg-ohuuioma。</p>
+                     * @return SecurityGroupId <p>安全组实例ID，例如：sg-ohuuioma。</p>
                      * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
-                     * 设置安全组实例ID，例如：sg-ohuuioma。
-                     * @param _securityGroupId 安全组实例ID，例如：sg-ohuuioma。
+                     * 设置<p>安全组实例ID，例如：sg-ohuuioma。</p>
+                     * @param _securityGroupId <p>安全组实例ID，例如：sg-ohuuioma。</p>
                      * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取安全组名称，可任意命名，但不得超过60个字符。
-                     * @return SecurityGroupName 安全组名称，可任意命名，但不得超过60个字符。
+                     * 获取<p>安全组名称，可任意命名，但不得超过60个字符。</p>
+                     * @return SecurityGroupName <p>安全组名称，可任意命名，但不得超过60个字符。</p>
                      * 
                      */
                     std::string GetSecurityGroupName() const;
 
                     /**
-                     * 设置安全组名称，可任意命名，但不得超过60个字符。
-                     * @param _securityGroupName 安全组名称，可任意命名，但不得超过60个字符。
+                     * 设置<p>安全组名称，可任意命名，但不得超过60个字符。</p>
+                     * @param _securityGroupName <p>安全组名称，可任意命名，但不得超过60个字符。</p>
                      * 
                      */
                     void SetSecurityGroupName(const std::string& _securityGroupName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool SecurityGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取安全组备注，最多100个字符。
-                     * @return SecurityGroupDesc 安全组备注，最多100个字符。
+                     * 获取<p>安全组备注，最多100个字符。</p>
+                     * @return SecurityGroupDesc <p>安全组备注，最多100个字符。</p>
                      * 
                      */
                     std::string GetSecurityGroupDesc() const;
 
                     /**
-                     * 设置安全组备注，最多100个字符。
-                     * @param _securityGroupDesc 安全组备注，最多100个字符。
+                     * 设置<p>安全组备注，最多100个字符。</p>
+                     * @param _securityGroupDesc <p>安全组备注，最多100个字符。</p>
                      * 
                      */
                     void SetSecurityGroupDesc(const std::string& _securityGroupDesc);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool SecurityGroupDescHasBeenSet() const;
 
                     /**
-                     * 获取项目id，默认0。可在qcloud控制台项目管理页面查询到。
-                     * @return ProjectId 项目id，默认0。可在qcloud控制台项目管理页面查询到。
+                     * 获取<p>项目id，默认0。可在qcloud控制台项目管理页面查询到。</p>
+                     * @return ProjectId <p>项目id，默认0。可在qcloud控制台项目管理页面查询到。</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目id，默认0。可在qcloud控制台项目管理页面查询到。
-                     * @param _projectId 项目id，默认0。可在qcloud控制台项目管理页面查询到。
+                     * 设置<p>项目id，默认0。可在qcloud控制台项目管理页面查询到。</p>
+                     * @param _projectId <p>项目id，默认0。可在qcloud控制台项目管理页面查询到。</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取是否是默认安全组，默认安全组不支持删除。
-                     * @return IsDefault 是否是默认安全组，默认安全组不支持删除。
+                     * 获取<p>是否是默认安全组，默认安全组不支持删除。</p>
+                     * @return IsDefault <p>是否是默认安全组，默认安全组不支持删除。</p>
                      * 
                      */
                     bool GetIsDefault() const;
 
                     /**
-                     * 设置是否是默认安全组，默认安全组不支持删除。
-                     * @param _isDefault 是否是默认安全组，默认安全组不支持删除。
+                     * 设置<p>是否是默认安全组，默认安全组不支持删除。</p>
+                     * @param _isDefault <p>是否是默认安全组，默认安全组不支持删除。</p>
                      * 
                      */
                     void SetIsDefault(const bool& _isDefault);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool IsDefaultHasBeenSet() const;
 
                     /**
-                     * 获取安全组创建时间。
-                     * @return CreatedTime 安全组创建时间。
+                     * 获取<p>安全组创建时间。</p>
+                     * @return CreatedTime <p>安全组创建时间。</p>
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置安全组创建时间。
-                     * @param _createdTime 安全组创建时间。
+                     * 设置<p>安全组创建时间。</p>
+                     * @param _createdTime <p>安全组创建时间。</p>
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取标签键值对。
-                     * @return TagSet 标签键值对。
+                     * 获取<p>标签键值对。</p>
+                     * @return TagSet <p>标签键值对。</p>
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
-                     * 设置标签键值对。
-                     * @param _tagSet 标签键值对。
+                     * 设置<p>标签键值对。</p>
+                     * @param _tagSet <p>标签键值对。</p>
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取安全组更新时间。
-                     * @return UpdateTime 安全组更新时间。
+                     * 获取<p>安全组更新时间。</p>
+                     * @return UpdateTime <p>安全组更新时间。</p>
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置安全组更新时间。
-                     * @param _updateTime 安全组更新时间。
+                     * 设置<p>安全组更新时间。</p>
+                     * @param _updateTime <p>安全组更新时间。</p>
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -215,55 +215,82 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否为托管安全组</p>
+                     * @return ServiceManaged <p>是否为托管安全组</p>
+                     * 
+                     */
+                    bool GetServiceManaged() const;
+
+                    /**
+                     * 设置<p>是否为托管安全组</p>
+                     * @param _serviceManaged <p>是否为托管安全组</p>
+                     * 
+                     */
+                    void SetServiceManaged(const bool& _serviceManaged);
+
+                    /**
+                     * 判断参数 ServiceManaged 是否已赋值
+                     * @return ServiceManaged 是否已赋值
+                     * 
+                     */
+                    bool ServiceManagedHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 安全组实例ID，例如：sg-ohuuioma。
+                     * <p>安全组实例ID，例如：sg-ohuuioma。</p>
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
 
                     /**
-                     * 安全组名称，可任意命名，但不得超过60个字符。
+                     * <p>安全组名称，可任意命名，但不得超过60个字符。</p>
                      */
                     std::string m_securityGroupName;
                     bool m_securityGroupNameHasBeenSet;
 
                     /**
-                     * 安全组备注，最多100个字符。
+                     * <p>安全组备注，最多100个字符。</p>
                      */
                     std::string m_securityGroupDesc;
                     bool m_securityGroupDescHasBeenSet;
 
                     /**
-                     * 项目id，默认0。可在qcloud控制台项目管理页面查询到。
+                     * <p>项目id，默认0。可在qcloud控制台项目管理页面查询到。</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 是否是默认安全组，默认安全组不支持删除。
+                     * <p>是否是默认安全组，默认安全组不支持删除。</p>
                      */
                     bool m_isDefault;
                     bool m_isDefaultHasBeenSet;
 
                     /**
-                     * 安全组创建时间。
+                     * <p>安全组创建时间。</p>
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 标签键值对。
+                     * <p>标签键值对。</p>
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 安全组更新时间。
+                     * <p>安全组更新时间。</p>
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * <p>是否为托管安全组</p>
+                     */
+                    bool m_serviceManaged;
+                    bool m_serviceManagedHasBeenSet;
 
                 };
             }

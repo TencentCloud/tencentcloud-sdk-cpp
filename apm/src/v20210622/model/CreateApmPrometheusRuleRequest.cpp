@@ -28,7 +28,8 @@ CreateApmPrometheusRuleRequest::CreateApmPrometheusRuleRequest() :
     m_metricMatchTypeHasBeenSet(false),
     m_metricNameRuleHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_appendResourceAttributesHasBeenSet(false)
+    m_appendResourceAttributesHasBeenSet(false),
+    m_associationIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateApmPrometheusRuleRequest::ToJsonString() const
         string key = "AppendResourceAttributes";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_appendResourceAttributes, allocator);
+    }
+
+    if (m_associationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_associationId, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateApmPrometheusRuleRequest::SetAppendResourceAttributes(const bool& _ap
 bool CreateApmPrometheusRuleRequest::AppendResourceAttributesHasBeenSet() const
 {
     return m_appendResourceAttributesHasBeenSet;
+}
+
+int64_t CreateApmPrometheusRuleRequest::GetAssociationId() const
+{
+    return m_associationId;
+}
+
+void CreateApmPrometheusRuleRequest::SetAssociationId(const int64_t& _associationId)
+{
+    m_associationId = _associationId;
+    m_associationIdHasBeenSet = true;
+}
+
+bool CreateApmPrometheusRuleRequest::AssociationIdHasBeenSet() const
+{
+    return m_associationIdHasBeenSet;
 }
 
 

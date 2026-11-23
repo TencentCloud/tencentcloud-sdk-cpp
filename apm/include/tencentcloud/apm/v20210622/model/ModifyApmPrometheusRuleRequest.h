@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool AppendResourceAttributesHasBeenSet() const;
 
+                    /**
+                     * 获取修改归属目标 ID，0 或不传表示不改变原归属
+                     * @return AssociationId 修改归属目标 ID，0 或不传表示不改变原归属
+                     * 
+                     */
+                    int64_t GetAssociationId() const;
+
+                    /**
+                     * 设置修改归属目标 ID，0 或不传表示不改变原归属
+                     * @param _associationId 修改归属目标 ID，0 或不传表示不改变原归属
+                     * 
+                     */
+                    void SetAssociationId(const int64_t& _associationId);
+
+                    /**
+                     * 判断参数 AssociationId 是否已赋值
+                     * @return AssociationId 是否已赋值
+                     * 
+                     */
+                    bool AssociationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     bool m_appendResourceAttributes;
                     bool m_appendResourceAttributesHasBeenSet;
+
+                    /**
+                     * 修改归属目标 ID，0 或不传表示不改变原归属
+                     */
+                    int64_t m_associationId;
+                    bool m_associationIdHasBeenSet;
 
                 };
             }

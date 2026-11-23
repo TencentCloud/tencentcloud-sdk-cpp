@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Workbuddyenterprise::V20260709::Model;
 using namespace std;
 
-DeleteSessionArtifactListResponse::DeleteSessionArtifactListResponse()
+DeleteSessionArtifactListResponse::DeleteSessionArtifactListResponse() :
+    m_deletedCountHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome DeleteSessionArtifactListResponse::Deserialize(const string 
     }
 
 
+    if (rsp.HasMember("DeletedCount") && !rsp["DeletedCount"].IsNull())
+    {
+        if (!rsp["DeletedCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeletedCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletedCount = rsp["DeletedCount"].GetInt64();
+        m_deletedCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string DeleteSessionArtifactListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_deletedCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletedCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deletedCount, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string DeleteSessionArtifactListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DeleteSessionArtifactListResponse::GetDeletedCount() const
+{
+    return m_deletedCount;
+}
+
+bool DeleteSessionArtifactListResponse::DeletedCountHasBeenSet() const
+{
+    return m_deletedCountHasBeenSet;
+}
 
 

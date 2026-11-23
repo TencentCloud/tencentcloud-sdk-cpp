@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>删除的物料数量</p>
+                     * @return DeletedCount <p>删除的物料数量</p>
+                     * 
+                     */
+                    int64_t GetDeletedCount() const;
+
+                    /**
+                     * 判断参数 DeletedCount 是否已赋值
+                     * @return DeletedCount 是否已赋值
+                     * 
+                     */
+                    bool DeletedCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>删除的物料数量</p>
+                     */
+                    int64_t m_deletedCount;
+                    bool m_deletedCountHasBeenSet;
 
                 };
             }

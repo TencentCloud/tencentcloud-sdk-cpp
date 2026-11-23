@@ -213,6 +213,31 @@ namespace TencentCloud
                      */
                     bool AppendResourceAttributesHasBeenSet() const;
 
+                    /**
+                     * 获取实际生效的关联记录 ID（存量 0 解析为默认关联）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssociationId 实际生效的关联记录 ID（存量 0 解析为默认关联）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAssociationId() const;
+
+                    /**
+                     * 设置实际生效的关联记录 ID（存量 0 解析为默认关联）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _associationId 实际生效的关联记录 ID（存量 0 解析为默认关联）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAssociationId(const int64_t& _associationId);
+
+                    /**
+                     * 判断参数 AssociationId 是否已赋值
+                     * @return AssociationId 是否已赋值
+                     * 
+                     */
+                    bool AssociationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +286,13 @@ namespace TencentCloud
                      */
                     bool m_appendResourceAttributes;
                     bool m_appendResourceAttributesHasBeenSet;
+
+                    /**
+                     * 实际生效的关联记录 ID（存量 0 解析为默认关联）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_associationId;
+                    bool m_associationIdHasBeenSet;
 
                 };
             }

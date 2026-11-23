@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ou 列表
-                     * @return UnitSet ou 列表
+                     * 获取<p>ou 列表</p>
+                     * @return UnitSet <p>ou 列表</p>
                      * 
                      */
                     std::vector<std::string> GetUnitSet() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ou 列表
+                     * <p>ou 列表</p>
                      */
                     std::vector<std::string> m_unitSet;
                     bool m_unitSetHasBeenSet;

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取组ID
-                     * @return Id 组ID
+                     * 获取<p>组ID</p>
+                     * @return Id <p>组ID</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置组ID
-                     * @param _id 组ID
+                     * 设置<p>组ID</p>
+                     * @param _id <p>组ID</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取组名称
-                     * @return Name 组名称
+                     * 获取<p>组名称</p>
+                     * @return Name <p>组名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置组名称
-                     * @param _name 组名称
+                     * 设置<p>组名称</p>
+                     * @param _name <p>组名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取所属部门信息
-                     * @return Department 所属部门信息
+                     * 获取<p>所属部门信息</p>
+                     * @return Department <p>所属部门信息</p>
                      * 
                      */
                     Department GetDepartment() const;
 
                     /**
-                     * 设置所属部门信息
-                     * @param _department 所属部门信息
+                     * 设置<p>所属部门信息</p>
+                     * @param _department <p>所属部门信息</p>
                      * 
                      */
                     void SetDepartment(const Department& _department);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool DepartmentHasBeenSet() const;
 
                     /**
-                     * 获取个数
-                     * @return Count 个数
+                     * 获取<p>个数</p>
+                     * @return Count <p>个数</p>
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置个数
-                     * @param _count 个数
+                     * 设置<p>个数</p>
+                     * @param _count <p>个数</p>
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -134,25 +134,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 组ID
+                     * <p>组ID</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 组名称
+                     * <p>组名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 所属部门信息
+                     * <p>所属部门信息</p>
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
 
                     /**
-                     * 个数
+                     * <p>个数</p>
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;

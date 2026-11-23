@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/rce/v20260130/model/User.h>
 #include <tencentcloud/rce/v20260130/model/Guild.h>
+#include <tencentcloud/rce/v20260130/model/Cust.h>
 
 
 namespace TencentCloud
@@ -153,6 +154,27 @@ namespace TencentCloud
                      */
                     bool GuildHasBeenSet() const;
 
+                    /**
+                     * 获取<p>与RCE-PRO约定的定制化信息。为K:V 格式的对象数组。示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>
+                     * @return Cust <p>与RCE-PRO约定的定制化信息。为K:V 格式的对象数组。示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>
+                     * 
+                     */
+                    std::vector<Cust> GetCust() const;
+
+                    /**
+                     * 设置<p>与RCE-PRO约定的定制化信息。为K:V 格式的对象数组。示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>
+                     * @param _cust <p>与RCE-PRO约定的定制化信息。为K:V 格式的对象数组。示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>
+                     * 
+                     */
+                    void SetCust(const std::vector<Cust>& _cust);
+
+                    /**
+                     * 判断参数 Cust 是否已赋值
+                     * @return Cust 是否已赋值
+                     * 
+                     */
+                    bool CustHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +206,12 @@ namespace TencentCloud
                      */
                     Guild m_guild;
                     bool m_guildHasBeenSet;
+
+                    /**
+                     * <p>与RCE-PRO约定的定制化信息。为K:V 格式的对象数组。示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>
+                     */
+                    std::vector<Cust> m_cust;
+                    bool m_custHasBeenSet;
 
                 };
             }

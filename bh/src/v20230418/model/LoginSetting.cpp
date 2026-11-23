@@ -25,7 +25,8 @@ LoginSetting::LoginSetting() :
     m_lockThresholdHasBeenSet(false),
     m_lockTimeHasBeenSet(false),
     m_inactiveUserLockHasBeenSet(false),
-    m_enableSingleLoginHasBeenSet(false)
+    m_enableSingleLoginHasBeenSet(false),
+    m_enableDeviceFingerprintVerifyHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome LoginSetting::Deserialize(const rapidjson::Value &value)
         m_enableSingleLoginHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableDeviceFingerprintVerify") && !value["EnableDeviceFingerprintVerify"].IsNull())
+    {
+        if (!value["EnableDeviceFingerprintVerify"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoginSetting.EnableDeviceFingerprintVerify` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableDeviceFingerprintVerify = value["EnableDeviceFingerprintVerify"].GetUint64();
+        m_enableDeviceFingerprintVerifyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void LoginSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EnableSingleLogin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableSingleLogin, allocator);
+    }
+
+    if (m_enableDeviceFingerprintVerifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeviceFingerprintVerify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableDeviceFingerprintVerify, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void LoginSetting::SetEnableSingleLogin(const uint64_t& _enableSingleLogin)
 bool LoginSetting::EnableSingleLoginHasBeenSet() const
 {
     return m_enableSingleLoginHasBeenSet;
+}
+
+uint64_t LoginSetting::GetEnableDeviceFingerprintVerify() const
+{
+    return m_enableDeviceFingerprintVerify;
+}
+
+void LoginSetting::SetEnableDeviceFingerprintVerify(const uint64_t& _enableDeviceFingerprintVerify)
+{
+    m_enableDeviceFingerprintVerify = _enableDeviceFingerprintVerify;
+    m_enableDeviceFingerprintVerifyHasBeenSet = true;
+}
+
+bool LoginSetting::EnableDeviceFingerprintVerifyHasBeenSet() const
+{
+    return m_enableDeviceFingerprintVerifyHasBeenSet;
 }
 

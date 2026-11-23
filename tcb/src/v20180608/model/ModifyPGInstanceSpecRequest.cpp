@@ -30,7 +30,8 @@ ModifyPGInstanceSpecRequest::ModifyPGInstanceSpecRequest() :
     m_switchTagHasBeenSet(false),
     m_switchStartTimeHasBeenSet(false),
     m_switchEndTimeHasBeenSet(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_cpuCoresHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string ModifyPGInstanceSpecRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_cpuCoresHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuCores";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpuCores, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void ModifyPGInstanceSpecRequest::SetDryRun(const bool& _dryRun)
 bool ModifyPGInstanceSpecRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+double ModifyPGInstanceSpecRequest::GetCpuCores() const
+{
+    return m_cpuCores;
+}
+
+void ModifyPGInstanceSpecRequest::SetCpuCores(const double& _cpuCores)
+{
+    m_cpuCores = _cpuCores;
+    m_cpuCoresHasBeenSet = true;
+}
+
+bool ModifyPGInstanceSpecRequest::CpuCoresHasBeenSet() const
+{
+    return m_cpuCoresHasBeenSet;
 }
 
 

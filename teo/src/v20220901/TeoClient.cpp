@@ -790,6 +790,56 @@ TeoClient::CreateContentIdentifierOutcomeCallable TeoClient::CreateContentIdenti
     return prom->get_future();
 }
 
+TeoClient::CreateCustomGroupOutcome TeoClient::CreateCustomGroup(const CreateCustomGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomGroupResponse rsp = CreateCustomGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomGroupOutcome(rsp);
+        else
+            return CreateCustomGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomGroupOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateCustomGroupAsync(const CreateCustomGroupRequest& request, const CreateCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreateCustomGroupRequest&;
+    using Resp = CreateCustomGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreateCustomGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::CreateCustomGroupOutcomeCallable TeoClient::CreateCustomGroupCallable(const CreateCustomGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreateCustomGroupOutcome>>();
+    CreateCustomGroupAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const CreateCustomGroupRequest&,
+        CreateCustomGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::CreateCustomizeErrorPageOutcome TeoClient::CreateCustomizeErrorPage(const CreateCustomizeErrorPageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustomizeErrorPage");
@@ -2740,6 +2790,56 @@ TeoClient::DeleteCustomErrorPageOutcomeCallable TeoClient::DeleteCustomErrorPage
     return prom->get_future();
 }
 
+TeoClient::DeleteCustomGroupOutcome TeoClient::DeleteCustomGroup(const DeleteCustomGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomGroupResponse rsp = DeleteCustomGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomGroupOutcome(rsp);
+        else
+            return DeleteCustomGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomGroupOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteCustomGroupAsync(const DeleteCustomGroupRequest& request, const DeleteCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeleteCustomGroupRequest&;
+    using Resp = DeleteCustomGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeleteCustomGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DeleteCustomGroupOutcomeCallable TeoClient::DeleteCustomGroupCallable(const DeleteCustomGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeleteCustomGroupOutcome>>();
+    DeleteCustomGroupAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DeleteCustomGroupRequest&,
+        DeleteCustomGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TeoClient::DeleteDnsRecordsOutcome TeoClient::DeleteDnsRecords(const DeleteDnsRecordsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDnsRecords");
@@ -4582,6 +4682,156 @@ TeoClient::DescribeCustomErrorPagesOutcomeCallable TeoClient::DescribeCustomErro
         const TeoClient*,
         const DescribeCustomErrorPagesRequest&,
         DescribeCustomErrorPagesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeCustomGroupOutcome TeoClient::DescribeCustomGroup(const DescribeCustomGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomGroupResponse rsp = DescribeCustomGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomGroupOutcome(rsp);
+        else
+            return DescribeCustomGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomGroupOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeCustomGroupAsync(const DescribeCustomGroupRequest& request, const DescribeCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCustomGroupRequest&;
+    using Resp = DescribeCustomGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCustomGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeCustomGroupOutcomeCallable TeoClient::DescribeCustomGroupCallable(const DescribeCustomGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCustomGroupOutcome>>();
+    DescribeCustomGroupAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeCustomGroupRequest&,
+        DescribeCustomGroupOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeCustomGroupReferencesOutcome TeoClient::DescribeCustomGroupReferences(const DescribeCustomGroupReferencesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomGroupReferences");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomGroupReferencesResponse rsp = DescribeCustomGroupReferencesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomGroupReferencesOutcome(rsp);
+        else
+            return DescribeCustomGroupReferencesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomGroupReferencesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeCustomGroupReferencesAsync(const DescribeCustomGroupReferencesRequest& request, const DescribeCustomGroupReferencesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCustomGroupReferencesRequest&;
+    using Resp = DescribeCustomGroupReferencesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCustomGroupReferences", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeCustomGroupReferencesOutcomeCallable TeoClient::DescribeCustomGroupReferencesCallable(const DescribeCustomGroupReferencesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCustomGroupReferencesOutcome>>();
+    DescribeCustomGroupReferencesAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeCustomGroupReferencesRequest&,
+        DescribeCustomGroupReferencesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::DescribeCustomGroupsOutcome TeoClient::DescribeCustomGroups(const DescribeCustomGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomGroupsResponse rsp = DescribeCustomGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomGroupsOutcome(rsp);
+        else
+            return DescribeCustomGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeCustomGroupsAsync(const DescribeCustomGroupsRequest& request, const DescribeCustomGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeCustomGroupsRequest&;
+    using Resp = DescribeCustomGroupsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeCustomGroups", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::DescribeCustomGroupsOutcomeCallable TeoClient::DescribeCustomGroupsCallable(const DescribeCustomGroupsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeCustomGroupsOutcome>>();
+    DescribeCustomGroupsAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const DescribeCustomGroupsRequest&,
+        DescribeCustomGroupsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -9632,6 +9882,56 @@ TeoClient::ModifyCustomErrorPageOutcomeCallable TeoClient::ModifyCustomErrorPage
         const TeoClient*,
         const ModifyCustomErrorPageRequest&,
         ModifyCustomErrorPageOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+TeoClient::ModifyCustomGroupOutcome TeoClient::ModifyCustomGroup(const ModifyCustomGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomGroupResponse rsp = ModifyCustomGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomGroupOutcome(rsp);
+        else
+            return ModifyCustomGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomGroupOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyCustomGroupAsync(const ModifyCustomGroupRequest& request, const ModifyCustomGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyCustomGroupRequest&;
+    using Resp = ModifyCustomGroupResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyCustomGroup", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TeoClient::ModifyCustomGroupOutcomeCallable TeoClient::ModifyCustomGroupCallable(const ModifyCustomGroupRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyCustomGroupOutcome>>();
+    ModifyCustomGroupAsync(
+    request,
+    [prom](
+        const TeoClient*,
+        const ModifyCustomGroupRequest&,
+        ModifyCustomGroupOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

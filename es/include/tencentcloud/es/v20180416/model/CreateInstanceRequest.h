@@ -973,6 +973,27 @@ namespace TencentCloud
                      */
                     bool AlarmPolicyIdsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>LVM 控制台开关，0/不开，1/显式开启</p>
+                     * @return EnableLvm <p>LVM 控制台开关，0/不开，1/显式开启</p>
+                     * 
+                     */
+                    int64_t GetEnableLvm() const;
+
+                    /**
+                     * 设置<p>LVM 控制台开关，0/不开，1/显式开启</p>
+                     * @param _enableLvm <p>LVM 控制台开关，0/不开，1/显式开启</p>
+                     * 
+                     */
+                    void SetEnableLvm(const int64_t& _enableLvm);
+
+                    /**
+                     * 判断参数 EnableLvm 是否已赋值
+                     * @return EnableLvm 是否已赋值
+                     * 
+                     */
+                    bool EnableLvmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1238,6 +1259,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_alarmPolicyIds;
                     bool m_alarmPolicyIdsHasBeenSet;
+
+                    /**
+                     * <p>LVM 控制台开关，0/不开，1/显式开启</p>
+                     */
+                    int64_t m_enableLvm;
+                    bool m_enableLvmHasBeenSet;
 
                 };
             }

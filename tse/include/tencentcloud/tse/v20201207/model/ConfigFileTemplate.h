@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置文件模板id
-                     * @return Id 配置文件模板id
+                     * 获取<p>配置文件模板id</p>
+                     * @return Id <p>配置文件模板id</p>
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
-                     * 设置配置文件模板id
-                     * @param _id 配置文件模板id
+                     * 设置<p>配置文件模板id</p>
+                     * @param _id <p>配置文件模板id</p>
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取配置文件模板名称
-                     * @return Name 配置文件模板名称
+                     * 获取<p>配置文件模板名称</p>
+                     * @return Name <p>配置文件模板名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置配置文件模板名称
-                     * @param _name 配置文件模板名称
+                     * 设置<p>配置文件模板名称</p>
+                     * @param _name <p>配置文件模板名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取配置文件模板内容
-                     * @return Content 配置文件模板内容
+                     * 获取<p>配置文件模板内容</p>
+                     * @return Content <p>配置文件模板内容</p>
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置配置文件模板内容
-                     * @param _content 配置文件模板内容
+                     * 设置<p>配置文件模板内容</p>
+                     * @param _content <p>配置文件模板内容</p>
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取配置文件模板格式
-                     * @return Format 配置文件模板格式
+                     * 获取<p>配置文件模板格式</p>
+                     * @return Format <p>配置文件模板格式</p>
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置配置文件模板格式
-                     * @param _format 配置文件模板格式
+                     * 设置<p>配置文件模板格式</p>
+                     * @param _format <p>配置文件模板格式</p>
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取配置文件模板注释
-                     * @return Comment 配置文件模板注释
+                     * 获取<p>配置文件模板注释</p>
+                     * @return Comment <p>配置文件模板注释</p>
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置配置文件模板注释
-                     * @param _comment 配置文件模板注释
+                     * 设置<p>配置文件模板注释</p>
+                     * @param _comment <p>配置文件模板注释</p>
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取配置文件模板创建时间
-                     * @return CreateTime 配置文件模板创建时间
+                     * 获取<p>配置文件模板创建时间</p>
+                     * @return CreateTime <p>配置文件模板创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置配置文件模板创建时间
-                     * @param _createTime 配置文件模板创建时间
+                     * 设置<p>配置文件模板创建时间</p>
+                     * @param _createTime <p>配置文件模板创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取配置文件模板创建者
-                     * @return CreateBy 配置文件模板创建者
+                     * 获取<p>配置文件模板创建者</p>
+                     * @return CreateBy <p>配置文件模板创建者</p>
                      * 
                      */
                     std::string GetCreateBy() const;
 
                     /**
-                     * 设置配置文件模板创建者
-                     * @param _createBy 配置文件模板创建者
+                     * 设置<p>配置文件模板创建者</p>
+                     * @param _createBy <p>配置文件模板创建者</p>
                      * 
                      */
                     void SetCreateBy(const std::string& _createBy);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool CreateByHasBeenSet() const;
 
                     /**
-                     * 获取配置文件模板修改时间
-                     * @return ModifyTime 配置文件模板修改时间
+                     * 获取<p>配置文件模板修改时间</p>
+                     * @return ModifyTime <p>配置文件模板修改时间</p>
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置配置文件模板修改时间
-                     * @param _modifyTime 配置文件模板修改时间
+                     * 设置<p>配置文件模板修改时间</p>
+                     * @param _modifyTime <p>配置文件模板修改时间</p>
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取配置文件模板修改者
-                     * @return ModifyBy 配置文件模板修改者
+                     * 获取<p>配置文件模板修改者</p>
+                     * @return ModifyBy <p>配置文件模板修改者</p>
                      * 
                      */
                     std::string GetModifyBy() const;
 
                     /**
-                     * 设置配置文件模板修改者
-                     * @param _modifyBy 配置文件模板修改者
+                     * 设置<p>配置文件模板修改者</p>
+                     * @param _modifyBy <p>配置文件模板修改者</p>
                      * 
                      */
                     void SetModifyBy(const std::string& _modifyBy);
@@ -238,55 +238,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置文件模板id
+                     * <p>配置文件模板id</p>
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 配置文件模板名称
+                     * <p>配置文件模板名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 配置文件模板内容
+                     * <p>配置文件模板内容</p>
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 配置文件模板格式
+                     * <p>配置文件模板格式</p>
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
 
                     /**
-                     * 配置文件模板注释
+                     * <p>配置文件模板注释</p>
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 配置文件模板创建时间
+                     * <p>配置文件模板创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 配置文件模板创建者
+                     * <p>配置文件模板创建者</p>
                      */
                     std::string m_createBy;
                     bool m_createByHasBeenSet;
 
                     /**
-                     * 配置文件模板修改时间
+                     * <p>配置文件模板修改时间</p>
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 配置文件模板修改者
+                     * <p>配置文件模板修改者</p>
                      */
                     std::string m_modifyBy;
                     bool m_modifyByHasBeenSet;

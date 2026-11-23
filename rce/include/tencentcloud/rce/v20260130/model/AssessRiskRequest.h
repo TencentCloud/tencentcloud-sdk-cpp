@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>事件码。用于指定业务接入的场景节点。</p><p>账号保护产品下的标准事件包含：</p><ul><li>login： 登录</li><li>register： 注册（创建账户）</li><li>sms： 短信</li><li>logout： 登出</li><li>modify_account： 修改账号</li><li>modify_password： 修改密码</li><li>security_verification： 安全验证</li></ul><p>交易保护产品下的标准事件包含：</p><ul><li>create_order： 创建订单</li><li>transaction： 交易支付</li><li>charge_back： 拒付</li></ul><p>营销保护产品下的标准事件包含：</p><ul><li>add_promotion： 参与营销活动</li><li>redeem： 兑奖</li><li>withdraw： 提现</li><li>scan_code： 扫码</li><li>task： 做任务</li><li>claim_red_packet： 领红包</li><li>lucky_draw： 抽奖</li><li>invitation： 邀请</li><li>browse： 浏览</li></ul><p>社群保护产品下的标准事件包含：</p><ul><li>chat： 聊天消息</li><li>modify_role： 编辑角色资料</li><li>add_friend： 添加好友</li><li>modify_guild： 编辑公会资料</li></ul><p>自定义事件以 cust_ 为前缀，可与 RCE 约定后进行风险评估。</p>
-                     * @return EventCode <p>事件码。用于指定业务接入的场景节点。</p><p>账号保护产品下的标准事件包含：</p><ul><li>login： 登录</li><li>register： 注册（创建账户）</li><li>sms： 短信</li><li>logout： 登出</li><li>modify_account： 修改账号</li><li>modify_password： 修改密码</li><li>security_verification： 安全验证</li></ul><p>交易保护产品下的标准事件包含：</p><ul><li>create_order： 创建订单</li><li>transaction： 交易支付</li><li>charge_back： 拒付</li></ul><p>营销保护产品下的标准事件包含：</p><ul><li>add_promotion： 参与营销活动</li><li>redeem： 兑奖</li><li>withdraw： 提现</li><li>scan_code： 扫码</li><li>task： 做任务</li><li>claim_red_packet： 领红包</li><li>lucky_draw： 抽奖</li><li>invitation： 邀请</li><li>browse： 浏览</li></ul><p>社群保护产品下的标准事件包含：</p><ul><li>chat： 聊天消息</li><li>modify_role： 编辑角色资料</li><li>add_friend： 添加好友</li><li>modify_guild： 编辑公会资料</li></ul><p>自定义事件以 cust_ 为前缀，可与 RCE 约定后进行风险评估。</p>
+                     * 获取<p>事件码。用于指定业务接入的场景节点。</p><p> 账号保护产品下的标准事件包含：</p><ul><li> login： 登录<p></p></li> <li>register： 注册 </li><li>sms： 短信 </li><li>logout： 登出 </li><li>modify_account： 修改账号 </li> <li>account_security： 账号安全 </li><li>modify_password： 修改密码 </li><li>security_verification： 安全验证</li></ul><p>交易保护产品下的标准事件包含：</p><ul><li>create_order： 创建订单 </li><li>transaction： 交易支付 </li><li>charge_back： 拒付</li></ul><p>营销保护产品下的标准事件包含：</p><ul><li>add_promotion： 参加营销活动 </li><li>redeem： 兑奖 </li><li>withdraw： 提现 </li><li>cust_event： 自定义事件，cust_xxx </li><li>scan_code： 扫码 </li><li>lucky_draw： 抽奖 </li><li>task： 做任务 </li><li>invitation： 邀请 </li><li>claim_red_packet： 领红包 </li><li>browse： 浏览</li></ul><p>自定义事件可与RCE约定后进行风险评估</p>
+                     * @return EventCode <p>事件码。用于指定业务接入的场景节点。</p><p> 账号保护产品下的标准事件包含：</p><ul><li> login： 登录<p></p></li> <li>register： 注册 </li><li>sms： 短信 </li><li>logout： 登出 </li><li>modify_account： 修改账号 </li> <li>account_security： 账号安全 </li><li>modify_password： 修改密码 </li><li>security_verification： 安全验证</li></ul><p>交易保护产品下的标准事件包含：</p><ul><li>create_order： 创建订单 </li><li>transaction： 交易支付 </li><li>charge_back： 拒付</li></ul><p>营销保护产品下的标准事件包含：</p><ul><li>add_promotion： 参加营销活动 </li><li>redeem： 兑奖 </li><li>withdraw： 提现 </li><li>cust_event： 自定义事件，cust_xxx </li><li>scan_code： 扫码 </li><li>lucky_draw： 抽奖 </li><li>task： 做任务 </li><li>invitation： 邀请 </li><li>claim_red_packet： 领红包 </li><li>browse： 浏览</li></ul><p>自定义事件可与RCE约定后进行风险评估</p>
                      * 
                      */
                     std::string GetEventCode() const;
 
                     /**
-                     * 设置<p>事件码。用于指定业务接入的场景节点。</p><p>账号保护产品下的标准事件包含：</p><ul><li>login： 登录</li><li>register： 注册（创建账户）</li><li>sms： 短信</li><li>logout： 登出</li><li>modify_account： 修改账号</li><li>modify_password： 修改密码</li><li>security_verification： 安全验证</li></ul><p>交易保护产品下的标准事件包含：</p><ul><li>create_order： 创建订单</li><li>transaction： 交易支付</li><li>charge_back： 拒付</li></ul><p>营销保护产品下的标准事件包含：</p><ul><li>add_promotion： 参与营销活动</li><li>redeem： 兑奖</li><li>withdraw： 提现</li><li>scan_code： 扫码</li><li>task： 做任务</li><li>claim_red_packet： 领红包</li><li>lucky_draw： 抽奖</li><li>invitation： 邀请</li><li>browse： 浏览</li></ul><p>社群保护产品下的标准事件包含：</p><ul><li>chat： 聊天消息</li><li>modify_role： 编辑角色资料</li><li>add_friend： 添加好友</li><li>modify_guild： 编辑公会资料</li></ul><p>自定义事件以 cust_ 为前缀，可与 RCE 约定后进行风险评估。</p>
-                     * @param _eventCode <p>事件码。用于指定业务接入的场景节点。</p><p>账号保护产品下的标准事件包含：</p><ul><li>login： 登录</li><li>register： 注册（创建账户）</li><li>sms： 短信</li><li>logout： 登出</li><li>modify_account： 修改账号</li><li>modify_password： 修改密码</li><li>security_verification： 安全验证</li></ul><p>交易保护产品下的标准事件包含：</p><ul><li>create_order： 创建订单</li><li>transaction： 交易支付</li><li>charge_back： 拒付</li></ul><p>营销保护产品下的标准事件包含：</p><ul><li>add_promotion： 参与营销活动</li><li>redeem： 兑奖</li><li>withdraw： 提现</li><li>scan_code： 扫码</li><li>task： 做任务</li><li>claim_red_packet： 领红包</li><li>lucky_draw： 抽奖</li><li>invitation： 邀请</li><li>browse： 浏览</li></ul><p>社群保护产品下的标准事件包含：</p><ul><li>chat： 聊天消息</li><li>modify_role： 编辑角色资料</li><li>add_friend： 添加好友</li><li>modify_guild： 编辑公会资料</li></ul><p>自定义事件以 cust_ 为前缀，可与 RCE 约定后进行风险评估。</p>
+                     * 设置<p>事件码。用于指定业务接入的场景节点。</p><p> 账号保护产品下的标准事件包含：</p><ul><li> login： 登录<p></p></li> <li>register： 注册 </li><li>sms： 短信 </li><li>logout： 登出 </li><li>modify_account： 修改账号 </li> <li>account_security： 账号安全 </li><li>modify_password： 修改密码 </li><li>security_verification： 安全验证</li></ul><p>交易保护产品下的标准事件包含：</p><ul><li>create_order： 创建订单 </li><li>transaction： 交易支付 </li><li>charge_back： 拒付</li></ul><p>营销保护产品下的标准事件包含：</p><ul><li>add_promotion： 参加营销活动 </li><li>redeem： 兑奖 </li><li>withdraw： 提现 </li><li>cust_event： 自定义事件，cust_xxx </li><li>scan_code： 扫码 </li><li>lucky_draw： 抽奖 </li><li>task： 做任务 </li><li>invitation： 邀请 </li><li>claim_red_packet： 领红包 </li><li>browse： 浏览</li></ul><p>自定义事件可与RCE约定后进行风险评估</p>
+                     * @param _eventCode <p>事件码。用于指定业务接入的场景节点。</p><p> 账号保护产品下的标准事件包含：</p><ul><li> login： 登录<p></p></li> <li>register： 注册 </li><li>sms： 短信 </li><li>logout： 登出 </li><li>modify_account： 修改账号 </li> <li>account_security： 账号安全 </li><li>modify_password： 修改密码 </li><li>security_verification： 安全验证</li></ul><p>交易保护产品下的标准事件包含：</p><ul><li>create_order： 创建订单 </li><li>transaction： 交易支付 </li><li>charge_back： 拒付</li></ul><p>营销保护产品下的标准事件包含：</p><ul><li>add_promotion： 参加营销活动 </li><li>redeem： 兑奖 </li><li>withdraw： 提现 </li><li>cust_event： 自定义事件，cust_xxx </li><li>scan_code： 扫码 </li><li>lucky_draw： 抽奖 </li><li>task： 做任务 </li><li>invitation： 邀请 </li><li>claim_red_packet： 领红包 </li><li>browse： 浏览</li></ul><p>自定义事件可与RCE约定后进行风险评估</p>
                      * 
                      */
                     void SetEventCode(const std::string& _eventCode);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool UserIpHasBeenSet() const;
 
                     /**
-                     * 获取<p>事件详情，根据您输入的事件码传入对应的事件信息</p>
-                     * @return EventDetail <p>事件详情，根据您输入的事件码传入对应的事件信息</p>
+                     * 获取<p>事件详情，根据您输入的事件码传入对应的事件信息。 注意：除&quot;account_security&quot;事件外，其他事件中该字段必填。</p>
+                     * @return EventDetail <p>事件详情，根据您输入的事件码传入对应的事件信息。 注意：除&quot;account_security&quot;事件外，其他事件中该字段必填。</p>
                      * 
                      */
                     EventDetail GetEventDetail() const;
 
                     /**
-                     * 设置<p>事件详情，根据您输入的事件码传入对应的事件信息</p>
-                     * @param _eventDetail <p>事件详情，根据您输入的事件码传入对应的事件信息</p>
+                     * 设置<p>事件详情，根据您输入的事件码传入对应的事件信息。 注意：除&quot;account_security&quot;事件外，其他事件中该字段必填。</p>
+                     * @param _eventDetail <p>事件详情，根据您输入的事件码传入对应的事件信息。 注意：除&quot;account_security&quot;事件外，其他事件中该字段必填。</p>
                      * 
                      */
                     void SetEventDetail(const EventDetail& _eventDetail);
@@ -406,7 +406,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>事件码。用于指定业务接入的场景节点。</p><p>账号保护产品下的标准事件包含：</p><ul><li>login： 登录</li><li>register： 注册（创建账户）</li><li>sms： 短信</li><li>logout： 登出</li><li>modify_account： 修改账号</li><li>modify_password： 修改密码</li><li>security_verification： 安全验证</li></ul><p>交易保护产品下的标准事件包含：</p><ul><li>create_order： 创建订单</li><li>transaction： 交易支付</li><li>charge_back： 拒付</li></ul><p>营销保护产品下的标准事件包含：</p><ul><li>add_promotion： 参与营销活动</li><li>redeem： 兑奖</li><li>withdraw： 提现</li><li>scan_code： 扫码</li><li>task： 做任务</li><li>claim_red_packet： 领红包</li><li>lucky_draw： 抽奖</li><li>invitation： 邀请</li><li>browse： 浏览</li></ul><p>社群保护产品下的标准事件包含：</p><ul><li>chat： 聊天消息</li><li>modify_role： 编辑角色资料</li><li>add_friend： 添加好友</li><li>modify_guild： 编辑公会资料</li></ul><p>自定义事件以 cust_ 为前缀，可与 RCE 约定后进行风险评估。</p>
+                     * <p>事件码。用于指定业务接入的场景节点。</p><p> 账号保护产品下的标准事件包含：</p><ul><li> login： 登录<p></p></li> <li>register： 注册 </li><li>sms： 短信 </li><li>logout： 登出 </li><li>modify_account： 修改账号 </li> <li>account_security： 账号安全 </li><li>modify_password： 修改密码 </li><li>security_verification： 安全验证</li></ul><p>交易保护产品下的标准事件包含：</p><ul><li>create_order： 创建订单 </li><li>transaction： 交易支付 </li><li>charge_back： 拒付</li></ul><p>营销保护产品下的标准事件包含：</p><ul><li>add_promotion： 参加营销活动 </li><li>redeem： 兑奖 </li><li>withdraw： 提现 </li><li>cust_event： 自定义事件，cust_xxx </li><li>scan_code： 扫码 </li><li>lucky_draw： 抽奖 </li><li>task： 做任务 </li><li>invitation： 邀请 </li><li>claim_red_packet： 领红包 </li><li>browse： 浏览</li></ul><p>自定义事件可与RCE约定后进行风险评估</p>
                      */
                     std::string m_eventCode;
                     bool m_eventCodeHasBeenSet;
@@ -436,7 +436,7 @@ namespace TencentCloud
                     bool m_userIpHasBeenSet;
 
                     /**
-                     * <p>事件详情，根据您输入的事件码传入对应的事件信息</p>
+                     * <p>事件详情，根据您输入的事件码传入对应的事件信息。 注意：除&quot;account_security&quot;事件外，其他事件中该字段必填。</p>
                      */
                     EventDetail m_eventDetail;
                     bool m_eventDetailHasBeenSet;

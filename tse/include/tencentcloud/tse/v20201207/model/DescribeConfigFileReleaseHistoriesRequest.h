@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TSE实例id
-                     * @return InstanceId TSE实例id
+                     * 获取<p>TSE实例id</p>
+                     * @return InstanceId <p>TSE实例id</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置TSE实例id
-                     * @param _instanceId TSE实例id
+                     * 设置<p>TSE实例id</p>
+                     * @param _instanceId <p>TSE实例id</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取命名空间
-                     * @return Namespace 命名空间
+                     * 获取<p>命名空间</p>
+                     * @return Namespace <p>命名空间</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置命名空间
-                     * @param _namespace 命名空间
+                     * 设置<p>命名空间</p>
+                     * @param _namespace <p>命名空间</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取组
-                     * @return Group 组
+                     * 获取<p>组</p>
+                     * @return Group <p>组</p>
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置组
-                     * @param _group 组
+                     * 设置<p>组</p>
+                     * @param _group <p>组</p>
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取<p>名称</p>
+                     * @return Name <p>名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置<p>名称</p>
+                     * @param _name <p>名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续
-                     * @return EndId 发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续
+                     * 获取<p>发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续</p>
+                     * @return EndId <p>发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续</p>
                      * 
                      */
                     uint64_t GetEndId() const;
 
                     /**
-                     * 设置发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续
-                     * @param _endId 发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续
+                     * 设置<p>发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续</p>
+                     * @param _endId <p>发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续</p>
                      * 
                      */
                     void SetEndId(const uint64_t& _endId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool EndIdHasBeenSet() const;
 
                     /**
-                     * 获取配置文件ID
-                     * @return ConfigFileId 配置文件ID
+                     * 获取<p>配置文件ID</p>
+                     * @return ConfigFileId <p>配置文件ID</p>
                      * 
                      */
                     std::string GetConfigFileId() const;
 
                     /**
-                     * 设置配置文件ID
-                     * @param _configFileId 配置文件ID
+                     * 设置<p>配置文件ID</p>
+                     * @param _configFileId <p>配置文件ID</p>
                      * 
                      */
                     void SetConfigFileId(const std::string& _configFileId);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ConfigFileIdHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。	
-                     * @return Limit 返回数量，默认为20，最大值为100。	
+                     * 获取<p>返回数量，默认为20，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。	
-                     * @param _limit 返回数量，默认为20，最大值为100。	
+                     * 设置<p>返回数量，默认为20，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。	
-                     * @return Offset 偏移量，默认为0。	
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。	
-                     * @param _offset 偏移量，默认为0。	
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -213,49 +213,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TSE实例id
+                     * <p>TSE实例id</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 命名空间
+                     * <p>命名空间</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 组
+                     * <p>组</p>
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续
+                     * <p>发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续</p>
                      */
                     uint64_t m_endId;
                     bool m_endIdHasBeenSet;
 
                     /**
-                     * 配置文件ID
+                     * <p>配置文件ID</p>
                      */
                     std::string m_configFileId;
                     bool m_configFileIdHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。	
+                     * <p>返回数量，默认为20，最大值为100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。	
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

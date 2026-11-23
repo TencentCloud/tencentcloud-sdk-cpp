@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部门ID
-                     * @return Id 部门ID
+                     * 获取<p>部门ID</p>
+                     * @return Id <p>部门ID</p>
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置部门ID
-                     * @param _id 部门ID
+                     * 设置<p>部门ID</p>
+                     * @param _id <p>部门ID</p>
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取部门名称，1 - 256个字符
-                     * @return Name 部门名称，1 - 256个字符
+                     * 获取<p>部门名称，1 - 256个字符</p>
+                     * @return Name <p>部门名称，1 - 256个字符</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置部门名称，1 - 256个字符
-                     * @param _name 部门名称，1 - 256个字符
+                     * 设置<p>部门名称，1 - 256个字符</p>
+                     * @param _name <p>部门名称，1 - 256个字符</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取部门管理员账号ID
-                     * @return Managers 部门管理员账号ID
+                     * 获取<p>部门管理员账号ID</p>
+                     * @return Managers <p>部门管理员账号ID</p>
                      * 
                      */
                     std::vector<std::string> GetManagers() const;
 
                     /**
-                     * 设置部门管理员账号ID
-                     * @param _managers 部门管理员账号ID
+                     * 设置<p>部门管理员账号ID</p>
+                     * @param _managers <p>部门管理员账号ID</p>
                      * 
                      */
                     void SetManagers(const std::vector<std::string>& _managers);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ManagersHasBeenSet() const;
 
                     /**
-                     * 获取管理员用户
-                     * @return ManagerUsers 管理员用户
+                     * 获取<p>管理员用户</p>
+                     * @return ManagerUsers <p>管理员用户</p>
                      * 
                      */
                     std::vector<DepartmentManagerUser> GetManagerUsers() const;
 
                     /**
-                     * 设置管理员用户
-                     * @param _managerUsers 管理员用户
+                     * 设置<p>管理员用户</p>
+                     * @param _managerUsers <p>管理员用户</p>
                      * 
                      */
                     void SetManagerUsers(const std::vector<DepartmentManagerUser>& _managerUsers);
@@ -134,25 +134,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部门ID
+                     * <p>部门ID</p>
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 部门名称，1 - 256个字符
+                     * <p>部门名称，1 - 256个字符</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 部门管理员账号ID
+                     * <p>部门管理员账号ID</p>
                      */
                     std::vector<std::string> m_managers;
                     bool m_managersHasBeenSet;
 
                     /**
-                     * 管理员用户
+                     * <p>管理员用户</p>
                      */
                     std::vector<DepartmentManagerUser> m_managerUsers;
                     bool m_managerUsersHasBeenSet;

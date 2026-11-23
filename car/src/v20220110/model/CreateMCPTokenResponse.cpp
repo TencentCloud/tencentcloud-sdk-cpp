@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Car::V20220110::Model;
 using namespace std;
 
-CreateMCPTokenResponse::CreateMCPTokenResponse()
+CreateMCPTokenResponse::CreateMCPTokenResponse() :
+    m_tokenIdHasBeenSet(false),
+    m_tokenHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome CreateMCPTokenResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TokenId") && !rsp["TokenId"].IsNull())
+    {
+        if (!rsp["TokenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TokenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenId = string(rsp["TokenId"].GetString());
+        m_tokenIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Token") && !rsp["Token"].IsNull())
+    {
+        if (!rsp["Token"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Token` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_token = string(rsp["Token"].GetString());
+        m_tokenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string CreateMCPTokenResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_tokenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tokenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Token";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string CreateMCPTokenResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateMCPTokenResponse::GetTokenId() const
+{
+    return m_tokenId;
+}
+
+bool CreateMCPTokenResponse::TokenIdHasBeenSet() const
+{
+    return m_tokenIdHasBeenSet;
+}
+
+string CreateMCPTokenResponse::GetToken() const
+{
+    return m_token;
+}
+
+bool CreateMCPTokenResponse::TokenHasBeenSet() const
+{
+    return m_tokenHasBeenSet;
+}
 
 

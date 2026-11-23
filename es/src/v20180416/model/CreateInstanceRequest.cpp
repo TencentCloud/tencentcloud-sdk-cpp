@@ -66,7 +66,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_enableScheduleOperationDurationHasBeenSet(false),
     m_autoScaleDiskInfoListHasBeenSet(false),
     m_enableKibanaPublicAccessHasBeenSet(false),
-    m_alarmPolicyIdsHasBeenSet(false)
+    m_alarmPolicyIdsHasBeenSet(false),
+    m_enableLvmHasBeenSet(false)
 {
 }
 
@@ -468,6 +469,14 @@ string CreateInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_enableLvmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableLvm";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableLvm, allocator);
     }
 
 
@@ -1180,6 +1189,22 @@ void CreateInstanceRequest::SetAlarmPolicyIds(const vector<string>& _alarmPolicy
 bool CreateInstanceRequest::AlarmPolicyIdsHasBeenSet() const
 {
     return m_alarmPolicyIdsHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetEnableLvm() const
+{
+    return m_enableLvm;
+}
+
+void CreateInstanceRequest::SetEnableLvm(const int64_t& _enableLvm)
+{
+    m_enableLvm = _enableLvm;
+    m_enableLvmHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::EnableLvmHasBeenSet() const
+{
+    return m_enableLvmHasBeenSet;
 }
 
 

@@ -19,49 +19,53 @@ set(car_public_header
   )
 
 set(car_public_header_model
-  include/tencentcloud/car/v20220110/model/RenewMCPTokenResponse.h
-  include/tencentcloud/car/v20220110/model/CreateSessionResponse.h
   include/tencentcloud/car/v20220110/model/DescribeMCPTokensResponse.h
-  include/tencentcloud/car/v20220110/model/StopPublishStreamRequest.h
-  include/tencentcloud/car/v20220110/model/DescribeMCPTokensRequest.h
-  include/tencentcloud/car/v20220110/model/StartPublishStreamWithURLResponse.h
-  include/tencentcloud/car/v20220110/model/StopPublishStreamResponse.h
-  include/tencentcloud/car/v20220110/model/StartPublishStreamWithURLRequest.h
-  include/tencentcloud/car/v20220110/model/DestroySessionResponse.h
-  include/tencentcloud/car/v20220110/model/CreateMCPTokenRequest.h
-  include/tencentcloud/car/v20220110/model/ApplyConcurrentResponse.h
-  include/tencentcloud/car/v20220110/model/StartPublishStreamResponse.h
   include/tencentcloud/car/v20220110/model/CreateSessionRequest.h
+  include/tencentcloud/car/v20220110/model/StartPublishStreamWithURLResponse.h
+  include/tencentcloud/car/v20220110/model/DestroySessionResponse.h
+  include/tencentcloud/car/v20220110/model/DescribeConcurrentCountRequest.h
+  include/tencentcloud/car/v20220110/model/RenewMCPTokenResponse.h
+  include/tencentcloud/car/v20220110/model/StopPublishStreamResponse.h
+  include/tencentcloud/car/v20220110/model/CreateMCPTokenRequest.h
+  include/tencentcloud/car/v20220110/model/StartPublishStreamResponse.h
+  include/tencentcloud/car/v20220110/model/MCPTokenInfo.h
+  include/tencentcloud/car/v20220110/model/Filter.h
+  include/tencentcloud/car/v20220110/model/StartPublishStreamRequest.h
+  include/tencentcloud/car/v20220110/model/CreateSessionResponse.h
+  include/tencentcloud/car/v20220110/model/StopPublishStreamRequest.h
+  include/tencentcloud/car/v20220110/model/StartPublishStreamWithURLRequest.h
+  include/tencentcloud/car/v20220110/model/ApplyConcurrentResponse.h
   include/tencentcloud/car/v20220110/model/ApplyConcurrentRequest.h
   include/tencentcloud/car/v20220110/model/DescribeConcurrentCountResponse.h
-  include/tencentcloud/car/v20220110/model/CreateMCPTokenResponse.h
-  include/tencentcloud/car/v20220110/model/DescribeConcurrentCountRequest.h
-  include/tencentcloud/car/v20220110/model/StartPublishStreamRequest.h
   include/tencentcloud/car/v20220110/model/DestroySessionRequest.h
+  include/tencentcloud/car/v20220110/model/DescribeMCPTokensRequest.h
+  include/tencentcloud/car/v20220110/model/CreateMCPTokenResponse.h
   include/tencentcloud/car/v20220110/model/RenewMCPTokenRequest.h
   )
 
 set(car_src
   src/v20220110/CarClient.cpp
-  src/v20220110/model/RenewMCPTokenResponse.cpp
-  src/v20220110/model/CreateSessionResponse.cpp
   src/v20220110/model/DescribeMCPTokensResponse.cpp
-  src/v20220110/model/StopPublishStreamRequest.cpp
-  src/v20220110/model/DescribeMCPTokensRequest.cpp
-  src/v20220110/model/StartPublishStreamWithURLResponse.cpp
-  src/v20220110/model/StopPublishStreamResponse.cpp
-  src/v20220110/model/StartPublishStreamWithURLRequest.cpp
-  src/v20220110/model/DestroySessionResponse.cpp
-  src/v20220110/model/CreateMCPTokenRequest.cpp
-  src/v20220110/model/ApplyConcurrentResponse.cpp
-  src/v20220110/model/StartPublishStreamResponse.cpp
   src/v20220110/model/CreateSessionRequest.cpp
+  src/v20220110/model/StartPublishStreamWithURLResponse.cpp
+  src/v20220110/model/DestroySessionResponse.cpp
+  src/v20220110/model/DescribeConcurrentCountRequest.cpp
+  src/v20220110/model/RenewMCPTokenResponse.cpp
+  src/v20220110/model/StopPublishStreamResponse.cpp
+  src/v20220110/model/CreateMCPTokenRequest.cpp
+  src/v20220110/model/StartPublishStreamResponse.cpp
+  src/v20220110/model/MCPTokenInfo.cpp
+  src/v20220110/model/Filter.cpp
+  src/v20220110/model/StartPublishStreamRequest.cpp
+  src/v20220110/model/CreateSessionResponse.cpp
+  src/v20220110/model/StopPublishStreamRequest.cpp
+  src/v20220110/model/StartPublishStreamWithURLRequest.cpp
+  src/v20220110/model/ApplyConcurrentResponse.cpp
   src/v20220110/model/ApplyConcurrentRequest.cpp
   src/v20220110/model/DescribeConcurrentCountResponse.cpp
-  src/v20220110/model/CreateMCPTokenResponse.cpp
-  src/v20220110/model/DescribeConcurrentCountRequest.cpp
-  src/v20220110/model/StartPublishStreamRequest.cpp
   src/v20220110/model/DestroySessionRequest.cpp
+  src/v20220110/model/DescribeMCPTokensRequest.cpp
+  src/v20220110/model/CreateMCPTokenResponse.cpp
   src/v20220110/model/RenewMCPTokenRequest.cpp
   )
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/workbuddyenterprise/v20260709/model/SessionArtifactDetail.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>符合条件的物料总数（按 ID 批量时为实际命中数）</p>
+                     * @return TotalCount <p>符合条件的物料总数（按 ID 批量时为实际命中数）</p>
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>返回的物料集合</p>
+                     * @return ArtifactSet <p>返回的物料集合</p>
+                     * 
+                     */
+                    std::vector<SessionArtifactDetail> GetArtifactSet() const;
+
+                    /**
+                     * 判断参数 ArtifactSet 是否已赋值
+                     * @return ArtifactSet 是否已赋值
+                     * 
+                     */
+                    bool ArtifactSetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>符合条件的物料总数（按 ID 批量时为实际命中数）</p>
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * <p>返回的物料集合</p>
+                     */
+                    std::vector<SessionArtifactDetail> m_artifactSet;
+                    bool m_artifactSetHasBeenSet;
 
                 };
             }

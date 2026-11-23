@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例所在的服务名。
-                     * @return Service 实例所在的服务名。
+                     * 获取<p>实例所在的服务名。</p>
+                     * @return Service <p>实例所在的服务名。</p>
                      * 
                      */
                     std::string GetService() const;
 
                     /**
-                     * 设置实例所在的服务名。
-                     * @param _service 实例所在的服务名。
+                     * 设置<p>实例所在的服务名。</p>
+                     * @param _service <p>实例所在的服务名。</p>
                      * 
                      */
                     void SetService(const std::string& _service);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ServiceHasBeenSet() const;
 
                     /**
-                     * 获取实例所在命名空间名。
-                     * @return Namespace 实例所在命名空间名。
+                     * 获取<p>实例所在命名空间名。</p>
+                     * @return Namespace <p>实例所在命名空间名。</p>
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置实例所在命名空间名。
-                     * @param _namespace 实例所在命名空间名。
+                     * 设置<p>实例所在命名空间名。</p>
+                     * @param _namespace <p>实例所在命名空间名。</p>
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取tse实例id。
-                     * @return InstanceId tse实例id。
+                     * 获取<p>tse实例id。</p>
+                     * @return InstanceId <p>tse实例id。</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置tse实例id。
-                     * @param _instanceId tse实例id。
+                     * 设置<p>tse实例id。</p>
+                     * @param _instanceId <p>tse实例id。</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取根据实例ip过滤，多个ip使用英文逗号分隔。
-                     * @return Host 根据实例ip过滤，多个ip使用英文逗号分隔。
+                     * 获取<p>根据实例ip过滤，多个ip使用英文逗号分隔。</p>
+                     * @return Host <p>根据实例ip过滤，多个ip使用英文逗号分隔。</p>
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置根据实例ip过滤，多个ip使用英文逗号分隔。
-                     * @param _host 根据实例ip过滤，多个ip使用英文逗号分隔。
+                     * 设置<p>根据实例ip过滤，多个ip使用英文逗号分隔。</p>
+                     * @param _host <p>根据实例ip过滤，多个ip使用英文逗号分隔。</p>
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取根据实例版本过滤。
-                     * @return InstanceVersion 根据实例版本过滤。
+                     * 获取<p>根据实例版本过滤。</p>
+                     * @return InstanceVersion <p>根据实例版本过滤。</p>
                      * 
                      */
                     std::string GetInstanceVersion() const;
 
                     /**
-                     * 设置根据实例版本过滤。
-                     * @param _instanceVersion 根据实例版本过滤。
+                     * 设置<p>根据实例版本过滤。</p>
+                     * @param _instanceVersion <p>根据实例版本过滤。</p>
                      * 
                      */
                     void SetInstanceVersion(const std::string& _instanceVersion);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool InstanceVersionHasBeenSet() const;
 
                     /**
-                     * 获取根据实例协议过滤。
-                     * @return Protocol 根据实例协议过滤。
+                     * 获取<p>根据实例协议过滤。</p>
+                     * @return Protocol <p>根据实例协议过滤。</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置根据实例协议过滤。
-                     * @param _protocol 根据实例协议过滤。
+                     * 设置<p>根据实例协议过滤。</p>
+                     * @param _protocol <p>根据实例协议过滤。</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取根据实例健康状态过滤。false：表示不健康，true：表示健康。
-                     * @return HealthStatus 根据实例健康状态过滤。false：表示不健康，true：表示健康。
+                     * 获取<p>根据实例健康状态过滤。false：表示不健康，true：表示健康。</p>
+                     * @return HealthStatus <p>根据实例健康状态过滤。false：表示不健康，true：表示健康。</p>
                      * 
                      */
                     bool GetHealthStatus() const;
 
                     /**
-                     * 设置根据实例健康状态过滤。false：表示不健康，true：表示健康。
-                     * @param _healthStatus 根据实例健康状态过滤。false：表示不健康，true：表示健康。
+                     * 设置<p>根据实例健康状态过滤。false：表示不健康，true：表示健康。</p>
+                     * @param _healthStatus <p>根据实例健康状态过滤。false：表示不健康，true：表示健康。</p>
                      * 
                      */
                     void SetHealthStatus(const bool& _healthStatus);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool HealthStatusHasBeenSet() const;
 
                     /**
-                     * 获取根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。
-                     * @return Isolate 根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。
+                     * 获取<p>根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。</p>
+                     * @return Isolate <p>根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。</p>
                      * 
                      */
                     bool GetIsolate() const;
 
                     /**
-                     * 设置根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。
-                     * @param _isolate 根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。
+                     * 设置<p>根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。</p>
+                     * @param _isolate <p>根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。</p>
                      * 
                      */
                     void SetIsolate(const bool& _isolate);
@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool IsolateHasBeenSet() const;
 
                     /**
-                     * 获取根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。
-                     * @return Metadatas 根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。
+                     * 获取<p>根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。</p>
+                     * @return Metadatas <p>根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。</p>
                      * 
                      */
                     std::vector<Metadata> GetMetadatas() const;
 
                     /**
-                     * 设置根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。
-                     * @param _metadatas 根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。
+                     * 设置<p>根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。</p>
+                     * @param _metadatas <p>根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。</p>
                      * 
                      */
                     void SetMetadatas(const std::vector<Metadata>& _metadatas);
@@ -234,15 +234,15 @@ namespace TencentCloud
                     bool MetadatasHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取<p>偏移量，默认为0。</p>
+                     * @return Offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置<p>偏移量，默认为0。</p>
+                     * @param _offset <p>偏移量，默认为0。</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -255,15 +255,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为100。
-                     * @return Limit 返回数量，默认为20，最大值为100。
+                     * 获取<p>返回数量，默认为20，最大值为100。</p>
+                     * @return Limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为100。
-                     * @param _limit 返回数量，默认为20，最大值为100。
+                     * 设置<p>返回数量，默认为20，最大值为100。</p>
+                     * @param _limit <p>返回数量，默认为20，最大值为100。</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -276,15 +276,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Location 地域
+                     * 获取<p>地域</p>
+                     * @return Location <p>地域</p>
                      * 
                      */
                     Location GetLocation() const;
 
                     /**
-                     * 设置地域
-                     * @param _location 地域
+                     * 设置<p>地域</p>
+                     * @param _location <p>地域</p>
                      * 
                      */
                     void SetLocation(const Location& _location);
@@ -299,73 +299,73 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例所在的服务名。
+                     * <p>实例所在的服务名。</p>
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;
 
                     /**
-                     * 实例所在命名空间名。
+                     * <p>实例所在命名空间名。</p>
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * tse实例id。
+                     * <p>tse实例id。</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 根据实例ip过滤，多个ip使用英文逗号分隔。
+                     * <p>根据实例ip过滤，多个ip使用英文逗号分隔。</p>
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 根据实例版本过滤。
+                     * <p>根据实例版本过滤。</p>
                      */
                     std::string m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
 
                     /**
-                     * 根据实例协议过滤。
+                     * <p>根据实例协议过滤。</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 根据实例健康状态过滤。false：表示不健康，true：表示健康。
+                     * <p>根据实例健康状态过滤。false：表示不健康，true：表示健康。</p>
                      */
                     bool m_healthStatus;
                     bool m_healthStatusHasBeenSet;
 
                     /**
-                     * 根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。
+                     * <p>根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。</p>
                      */
                     bool m_isolate;
                     bool m_isolateHasBeenSet;
 
                     /**
-                     * 根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。
+                     * <p>根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。</p>
                      */
                     std::vector<Metadata> m_metadatas;
                     bool m_metadatasHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * <p>偏移量，默认为0。</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为100。
+                     * <p>返回数量，默认为20，最大值为100。</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     Location m_location;
                     bool m_locationHasBeenSet;

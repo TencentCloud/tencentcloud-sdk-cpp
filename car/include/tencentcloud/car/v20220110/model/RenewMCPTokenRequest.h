@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>TokenId</p>
+                     * @return TokenId <p>TokenId</p>
+                     * 
+                     */
+                    std::string GetTokenId() const;
+
+                    /**
+                     * 设置<p>TokenId</p>
+                     * @param _tokenId <p>TokenId</p>
+                     * 
+                     */
+                    void SetTokenId(const std::string& _tokenId);
+
+                    /**
+                     * 判断参数 TokenId 是否已赋值
+                     * @return TokenId 是否已赋值
+                     * 
+                     */
+                    bool TokenIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Token 过期时间</p><p>取值范围：[0, 2592000]</p><p>默认值：86400</p><p>单位 秒、不填的话，默认为 1 天；新的超时时间为，当前时刻 + ExpireSeconds</p>
+                     * @return ExpireSeconds <p>Token 过期时间</p><p>取值范围：[0, 2592000]</p><p>默认值：86400</p><p>单位 秒、不填的话，默认为 1 天；新的超时时间为，当前时刻 + ExpireSeconds</p>
+                     * 
+                     */
+                    int64_t GetExpireSeconds() const;
+
+                    /**
+                     * 设置<p>Token 过期时间</p><p>取值范围：[0, 2592000]</p><p>默认值：86400</p><p>单位 秒、不填的话，默认为 1 天；新的超时时间为，当前时刻 + ExpireSeconds</p>
+                     * @param _expireSeconds <p>Token 过期时间</p><p>取值范围：[0, 2592000]</p><p>默认值：86400</p><p>单位 秒、不填的话，默认为 1 天；新的超时时间为，当前时刻 + ExpireSeconds</p>
+                     * 
+                     */
+                    void SetExpireSeconds(const int64_t& _expireSeconds);
+
+                    /**
+                     * 判断参数 ExpireSeconds 是否已赋值
+                     * @return ExpireSeconds 是否已赋值
+                     * 
+                     */
+                    bool ExpireSecondsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>TokenId</p>
+                     */
+                    std::string m_tokenId;
+                    bool m_tokenIdHasBeenSet;
+
+                    /**
+                     * <p>Token 过期时间</p><p>取值范围：[0, 2592000]</p><p>默认值：86400</p><p>单位 秒、不填的话，默认为 1 天；新的超时时间为，当前时刻 + ExpireSeconds</p>
+                     */
+                    int64_t m_expireSeconds;
+                    bool m_expireSecondsHasBeenSet;
 
                 };
             }

@@ -690,6 +690,56 @@ TcbrClient::DescribeServerManageTaskOutcomeCallable TcbrClient::DescribeServerMa
     return prom->get_future();
 }
 
+TcbrClient::DescribeStableIPTaskOutcome TcbrClient::DescribeStableIPTask(const DescribeStableIPTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStableIPTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStableIPTaskResponse rsp = DescribeStableIPTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStableIPTaskOutcome(rsp);
+        else
+            return DescribeStableIPTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStableIPTaskOutcome(outcome.GetError());
+    }
+}
+
+void TcbrClient::DescribeStableIPTaskAsync(const DescribeStableIPTaskRequest& request, const DescribeStableIPTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeStableIPTaskRequest&;
+    using Resp = DescribeStableIPTaskResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeStableIPTask", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbrClient::DescribeStableIPTaskOutcomeCallable TcbrClient::DescribeStableIPTaskCallable(const DescribeStableIPTaskRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeStableIPTaskOutcome>>();
+    DescribeStableIPTaskAsync(
+    request,
+    [prom](
+        const TcbrClient*,
+        const DescribeStableIPTaskRequest&,
+        DescribeStableIPTaskOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbrClient::DescribeVersionDetailOutcome TcbrClient::DescribeVersionDetail(const DescribeVersionDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVersionDetail");

@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务实例总数量。
-                     * @return TotalCount 服务实例总数量。
+                     * 获取<p>服务实例总数量。</p>
+                     * @return TotalCount <p>服务实例总数量。</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取服务里实例列表。
-                     * @return Content 服务里实例列表。
+                     * 获取<p>服务里实例列表。</p>
+                     * @return Content <p>服务里实例列表。</p>
                      * 
                      */
                     std::vector<GovernanceInstance> GetContent() const;
@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Location 地域
+                     * 获取<p>地域</p>
+                     * @return Location <p>地域</p>
                      * 
                      */
                     Location GetLocation() const;
@@ -90,19 +90,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务实例总数量。
+                     * <p>服务实例总数量。</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 服务里实例列表。
+                     * <p>服务里实例列表。</p>
                      */
                     std::vector<GovernanceInstance> m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 地域
+                     * <p>地域</p>
                      */
                     Location m_location;
                     bool m_locationHasBeenSet;

@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取按有效关联过滤，0 或不传表示不过滤
+                     * @return AssociationId 按有效关联过滤，0 或不传表示不过滤
+                     * 
+                     */
+                    int64_t GetAssociationId() const;
+
+                    /**
+                     * 设置按有效关联过滤，0 或不传表示不过滤
+                     * @param _associationId 按有效关联过滤，0 或不传表示不过滤
+                     * 
+                     */
+                    void SetAssociationId(const int64_t& _associationId);
+
+                    /**
+                     * 判断参数 AssociationId 是否已赋值
+                     * @return AssociationId 是否已赋值
+                     * 
+                     */
+                    bool AssociationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 按有效关联过滤，0 或不传表示不过滤
+                     */
+                    int64_t m_associationId;
+                    bool m_associationIdHasBeenSet;
 
                 };
             }

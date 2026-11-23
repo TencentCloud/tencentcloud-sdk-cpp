@@ -43,7 +43,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>TokenId</p>
+                     * @return TokenId <p>TokenId</p>
+                     * 
+                     */
+                    std::string GetTokenId() const;
+
+                    /**
+                     * 判断参数 TokenId 是否已赋值
+                     * @return TokenId 是否已赋值
+                     * 
+                     */
+                    bool TokenIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>MCP Token </p><p>当前值请妥善保存，后续需要使用该 Token 和 MCP Server 进行通信操作，丢失后无法再查看</p>
+                     * @return Token <p>MCP Token </p><p>当前值请妥善保存，后续需要使用该 Token 和 MCP Server 进行通信操作，丢失后无法再查看</p>
+                     * 
+                     */
+                    std::string GetToken() const;
+
+                    /**
+                     * 判断参数 Token 是否已赋值
+                     * @return Token 是否已赋值
+                     * 
+                     */
+                    bool TokenHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>TokenId</p>
+                     */
+                    std::string m_tokenId;
+                    bool m_tokenIdHasBeenSet;
+
+                    /**
+                     * <p>MCP Token </p><p>当前值请妥善保存，后续需要使用该 Token 和 MCP Server 进行通信操作，丢失后无法再查看</p>
+                     */
+                    std::string m_token;
+                    bool m_tokenHasBeenSet;
 
                 };
             }

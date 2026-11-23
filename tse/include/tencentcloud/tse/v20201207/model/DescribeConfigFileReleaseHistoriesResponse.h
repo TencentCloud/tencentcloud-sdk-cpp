@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据总数量
-                     * @return TotalCount 数据总数量
+                     * 获取<p>数据总数量</p>
+                     * @return TotalCount <p>数据总数量</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取配置文件发布历史列表
-                     * @return ConfigFileReleaseHistories 配置文件发布历史列表
+                     * 获取<p>配置文件发布历史列表</p>
+                     * @return ConfigFileReleaseHistories <p>配置文件发布历史列表</p>
                      * 
                      */
                     std::vector<ConfigFileReleaseHistory> GetConfigFileReleaseHistories() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据总数量
+                     * <p>数据总数量</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 配置文件发布历史列表
+                     * <p>配置文件发布历史列表</p>
                      */
                     std::vector<ConfigFileReleaseHistory> m_configFileReleaseHistories;
                     bool m_configFileReleaseHistoriesHasBeenSet;

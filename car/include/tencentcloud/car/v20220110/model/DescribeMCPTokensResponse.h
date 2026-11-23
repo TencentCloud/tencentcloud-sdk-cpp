@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/car/v20220110/model/MCPTokenInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>Token 列表</p>
+                     * @return Tokens <p>Token 列表</p>
+                     * 
+                     */
+                    std::vector<MCPTokenInfo> GetTokens() const;
+
+                    /**
+                     * 判断参数 Tokens 是否已赋值
+                     * @return Tokens 是否已赋值
+                     * 
+                     */
+                    bool TokensHasBeenSet() const;
+
+                    /**
+                     * 获取<p>Token 数量</p><p>单位：个</p>
+                     * @return TotalCount <p>Token 数量</p><p>单位：个</p>
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>Token 列表</p>
+                     */
+                    std::vector<MCPTokenInfo> m_tokens;
+                    bool m_tokensHasBeenSet;
+
+                    /**
+                     * <p>Token 数量</p><p>单位：个</p>
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

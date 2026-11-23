@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组名称，可任意命名，但不得超过60个字符。
-                     * @return GroupName 安全组名称，可任意命名，但不得超过60个字符。
+                     * 获取<p>安全组名称，可任意命名，但不得超过60个字符。</p>
+                     * @return GroupName <p>安全组名称，可任意命名，但不得超过60个字符。</p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置安全组名称，可任意命名，但不得超过60个字符。
-                     * @param _groupName 安全组名称，可任意命名，但不得超过60个字符。
+                     * 设置<p>安全组名称，可任意命名，但不得超过60个字符。</p>
+                     * @param _groupName <p>安全组名称，可任意命名，但不得超过60个字符。</p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取安全组备注，最多100个字符。
-                     * @return GroupDescription 安全组备注，最多100个字符。
+                     * 获取<p>安全组备注，最多100个字符。</p>
+                     * @return GroupDescription <p>安全组备注，最多100个字符。</p>
                      * 
                      */
                     std::string GetGroupDescription() const;
 
                     /**
-                     * 设置安全组备注，最多100个字符。
-                     * @param _groupDescription 安全组备注，最多100个字符。
+                     * 设置<p>安全组备注，最多100个字符。</p>
+                     * @param _groupDescription <p>安全组备注，最多100个字符。</p>
                      * 
                      */
                     void SetGroupDescription(const std::string& _groupDescription);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool GroupDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。
-                     * @return ProjectId 项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。
+                     * 获取<p>项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。</p>
+                     * @return ProjectId <p>项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。
-                     * @param _projectId 项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。
+                     * 设置<p>项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。</p>
+                     * @param _projectId <p>项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取安全组规则集合。
-                     * @return SecurityGroupPolicySet 安全组规则集合。
+                     * 获取<p>安全组规则集合。</p>
+                     * @return SecurityGroupPolicySet <p>安全组规则集合。</p>
                      * 
                      */
                     SecurityGroupPolicySet GetSecurityGroupPolicySet() const;
 
                     /**
-                     * 设置安全组规则集合。
-                     * @param _securityGroupPolicySet 安全组规则集合。
+                     * 设置<p>安全组规则集合。</p>
+                     * @param _securityGroupPolicySet <p>安全组规则集合。</p>
                      * 
                      */
                     void SetSecurityGroupPolicySet(const SecurityGroupPolicySet& _securityGroupPolicySet);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool SecurityGroupPolicySetHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
-                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 获取<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>
+                     * @return Tags <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
-                     * @param _tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * 设置<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>
+                     * @param _tags <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -152,31 +152,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安全组名称，可任意命名，但不得超过60个字符。
+                     * <p>安全组名称，可任意命名，但不得超过60个字符。</p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 安全组备注，最多100个字符。
+                     * <p>安全组备注，最多100个字符。</p>
                      */
                     std::string m_groupDescription;
                     bool m_groupDescriptionHasBeenSet;
 
                     /**
-                     * 项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。
+                     * <p>项目ID，默认0。可在<a href="https://console.cloud.tencent.com/project">控制台项目管理页面</a>查询到。</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 安全组规则集合。
+                     * <p>安全组规则集合。</p>
                      */
                     SecurityGroupPolicySet m_securityGroupPolicySet;
                     bool m_securityGroupPolicySetHasBeenSet;
 
                     /**
-                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * <p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Workbuddyenterprise::V20260709::Model;
 using namespace std;
 
-DescribeSessionArtifactListResponse::DescribeSessionArtifactListResponse()
+DescribeSessionArtifactListResponse::DescribeSessionArtifactListResponse() :
+    m_totalCountHasBeenSet(false),
+    m_artifactSetHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeSessionArtifactListResponse::Deserialize(const strin
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ArtifactSet") && !rsp["ArtifactSet"].IsNull())
+    {
+        if (!rsp["ArtifactSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ArtifactSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ArtifactSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SessionArtifactDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_artifactSet.push_back(item);
+        }
+        m_artifactSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeSessionArtifactListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_artifactSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArtifactSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_artifactSet.begin(); itr != m_artifactSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeSessionArtifactListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeSessionArtifactListResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeSessionArtifactListResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<SessionArtifactDetail> DescribeSessionArtifactListResponse::GetArtifactSet() const
+{
+    return m_artifactSet;
+}
+
+bool DescribeSessionArtifactListResponse::ArtifactSetHasBeenSet() const
+{
+    return m_artifactSetHasBeenSet;
+}
 
 

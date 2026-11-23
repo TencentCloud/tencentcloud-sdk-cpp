@@ -12590,6 +12590,56 @@ LiveClient::StartLiveStreamMonitorOutcomeCallable LiveClient::StartLiveStreamMon
     return prom->get_future();
 }
 
+LiveClient::StartLiveSubtitleOutcome LiveClient::StartLiveSubtitle(const StartLiveSubtitleRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartLiveSubtitle");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartLiveSubtitleResponse rsp = StartLiveSubtitleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartLiveSubtitleOutcome(rsp);
+        else
+            return StartLiveSubtitleOutcome(o.GetError());
+    }
+    else
+    {
+        return StartLiveSubtitleOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::StartLiveSubtitleAsync(const StartLiveSubtitleRequest& request, const StartLiveSubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StartLiveSubtitleRequest&;
+    using Resp = StartLiveSubtitleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StartLiveSubtitle", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::StartLiveSubtitleOutcomeCallable LiveClient::StartLiveSubtitleCallable(const StartLiveSubtitleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StartLiveSubtitleOutcome>>();
+    StartLiveSubtitleAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const StartLiveSubtitleRequest&,
+        StartLiveSubtitleOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 LiveClient::StopAvatarEditingLiveOutcome LiveClient::StopAvatarEditingLive(const StopAvatarEditingLiveRequest &request)
 {
     auto outcome = MakeRequest(request, "StopAvatarEditingLive");
@@ -12932,6 +12982,56 @@ LiveClient::StopLiveStreamMonitorOutcomeCallable LiveClient::StopLiveStreamMonit
         const LiveClient*,
         const StopLiveStreamMonitorRequest&,
         StopLiveStreamMonitorOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+LiveClient::StopLiveSubtitleOutcome LiveClient::StopLiveSubtitle(const StopLiveSubtitleRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopLiveSubtitle");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopLiveSubtitleResponse rsp = StopLiveSubtitleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopLiveSubtitleOutcome(rsp);
+        else
+            return StopLiveSubtitleOutcome(o.GetError());
+    }
+    else
+    {
+        return StopLiveSubtitleOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::StopLiveSubtitleAsync(const StopLiveSubtitleRequest& request, const StopLiveSubtitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const StopLiveSubtitleRequest&;
+    using Resp = StopLiveSubtitleResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "StopLiveSubtitle", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+LiveClient::StopLiveSubtitleOutcomeCallable LiveClient::StopLiveSubtitleCallable(const StopLiveSubtitleRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<StopLiveSubtitleOutcome>>();
+    StopLiveSubtitleAsync(
+    request,
+    [prom](
+        const LiveClient*,
+        const StopLiveSubtitleRequest&,
+        StopLiveSubtitleOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
