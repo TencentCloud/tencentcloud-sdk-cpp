@@ -29,6 +29,8 @@
 #include <tencentcloud/bh/v20230418/model/AddDeviceGroupMembersResponse.h>
 #include <tencentcloud/bh/v20230418/model/AddUserGroupMembersRequest.h>
 #include <tencentcloud/bh/v20230418/model/AddUserGroupMembersResponse.h>
+#include <tencentcloud/bh/v20230418/model/ApproveTicketRequest.h>
+#include <tencentcloud/bh/v20230418/model/ApproveTicketResponse.h>
 #include <tencentcloud/bh/v20230418/model/BindDeviceAccountKubeconfigRequest.h>
 #include <tencentcloud/bh/v20230418/model/BindDeviceAccountKubeconfigResponse.h>
 #include <tencentcloud/bh/v20230418/model/BindDeviceAccountPasswordRequest.h>
@@ -139,6 +141,8 @@
 #include <tencentcloud/bh/v20230418/model/DescribeSecuritySettingResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeSourceTypesRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeSourceTypesResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeTicketsRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeTicketsResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserDirectoryRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserDirectoryResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserGroupMembersRequest.h>
@@ -264,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddUserGroupMembersResponse> AddUserGroupMembersOutcome;
                 typedef std::future<AddUserGroupMembersOutcome> AddUserGroupMembersOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::AddUserGroupMembersRequest&, AddUserGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUserGroupMembersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApproveTicketResponse> ApproveTicketOutcome;
+                typedef std::future<ApproveTicketOutcome> ApproveTicketOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::ApproveTicketRequest&, ApproveTicketOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApproveTicketAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindDeviceAccountKubeconfigResponse> BindDeviceAccountKubeconfigOutcome;
                 typedef std::future<BindDeviceAccountKubeconfigOutcome> BindDeviceAccountKubeconfigOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::BindDeviceAccountKubeconfigRequest&, BindDeviceAccountKubeconfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDeviceAccountKubeconfigAsyncHandler;
@@ -429,6 +436,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSourceTypesResponse> DescribeSourceTypesOutcome;
                 typedef std::future<DescribeSourceTypesOutcome> DescribeSourceTypesOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeSourceTypesRequest&, DescribeSourceTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSourceTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTicketsResponse> DescribeTicketsOutcome;
+                typedef std::future<DescribeTicketsOutcome> DescribeTicketsOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeTicketsRequest&, DescribeTicketsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTicketsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserDirectoryResponse> DescribeUserDirectoryOutcome;
                 typedef std::future<DescribeUserDirectoryOutcome> DescribeUserDirectoryOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeUserDirectoryRequest&, DescribeUserDirectoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDirectoryAsyncHandler;
@@ -611,6 +621,15 @@ namespace TencentCloud
                 AddUserGroupMembersOutcome AddUserGroupMembers(const Model::AddUserGroupMembersRequest &request);
                 void AddUserGroupMembersAsync(const Model::AddUserGroupMembersRequest& request, const AddUserGroupMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddUserGroupMembersOutcomeCallable AddUserGroupMembersCallable(const Model::AddUserGroupMembersRequest& request);
+
+                /**
+                 *审批工单
+                 * @param req ApproveTicketRequest
+                 * @return ApproveTicketOutcome
+                 */
+                ApproveTicketOutcome ApproveTicket(const Model::ApproveTicketRequest &request);
+                void ApproveTicketAsync(const Model::ApproveTicketRequest& request, const ApproveTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApproveTicketOutcomeCallable ApproveTicketCallable(const Model::ApproveTicketRequest& request);
 
                 /**
                  *绑定容器账号凭据
@@ -1106,6 +1125,15 @@ namespace TencentCloud
                 DescribeSourceTypesOutcome DescribeSourceTypes(const Model::DescribeSourceTypesRequest &request);
                 void DescribeSourceTypesAsync(const Model::DescribeSourceTypesRequest& request, const DescribeSourceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSourceTypesOutcomeCallable DescribeSourceTypesCallable(const Model::DescribeSourceTypesRequest& request);
+
+                /**
+                 *查询运维工单列表
+                 * @param req DescribeTicketsRequest
+                 * @return DescribeTicketsOutcome
+                 */
+                DescribeTicketsOutcome DescribeTickets(const Model::DescribeTicketsRequest &request);
+                void DescribeTicketsAsync(const Model::DescribeTicketsRequest& request, const DescribeTicketsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTicketsOutcomeCallable DescribeTicketsCallable(const Model::DescribeTicketsRequest& request);
 
                 /**
                  *获取用户目录

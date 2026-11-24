@@ -21,8 +21,8 @@ using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
 QpsThreshold::QpsThreshold() :
-    m_unitHasBeenSet(false),
-    m_maxHasBeenSet(false)
+    m_maxHasBeenSet(false),
+    m_unitHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome QpsThreshold::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Unit") && !value["Unit"].IsNull())
-    {
-        if (!value["Unit"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `QpsThreshold.Unit` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_unit = string(value["Unit"].GetString());
-        m_unitHasBeenSet = true;
-    }
 
     if (value.HasMember("Max") && !value["Max"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome QpsThreshold::Deserialize(const rapidjson::Value &value)
         m_maxHasBeenSet = true;
     }
 
+    if (value.HasMember("Unit") && !value["Unit"].IsNull())
+    {
+        if (!value["Unit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QpsThreshold.Unit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unit = string(value["Unit"].GetString());
+        m_unitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void QpsThreshold::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_unitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Unit";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_maxHasBeenSet)
     {
@@ -74,24 +66,16 @@ void QpsThreshold::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, m_max, allocator);
     }
 
+    if (m_unitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Unit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string QpsThreshold::GetUnit() const
-{
-    return m_unit;
-}
-
-void QpsThreshold::SetUnit(const string& _unit)
-{
-    m_unit = _unit;
-    m_unitHasBeenSet = true;
-}
-
-bool QpsThreshold::UnitHasBeenSet() const
-{
-    return m_unitHasBeenSet;
-}
 
 int64_t QpsThreshold::GetMax() const
 {
@@ -107,5 +91,21 @@ void QpsThreshold::SetMax(const int64_t& _max)
 bool QpsThreshold::MaxHasBeenSet() const
 {
     return m_maxHasBeenSet;
+}
+
+string QpsThreshold::GetUnit() const
+{
+    return m_unit;
+}
+
+void QpsThreshold::SetUnit(const string& _unit)
+{
+    m_unit = _unit;
+    m_unitHasBeenSet = true;
+}
+
+bool QpsThreshold::UnitHasBeenSet() const
+{
+    return m_unitHasBeenSet;
 }
 

@@ -21,6 +21,7 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 AppTrigger::AppTrigger() :
+    m_agentIdHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_executeConfigHasBeenSet(false),
     m_executeTypeHasBeenSet(false),
@@ -42,6 +43,16 @@ CoreInternalOutcome AppTrigger::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("AgentId") && !value["AgentId"].IsNull())
+    {
+        if (!value["AgentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTrigger.AgentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentId = string(value["AgentId"].GetString());
+        m_agentIdHasBeenSet = true;
+    }
 
     if (value.HasMember("AppId") && !value["AppId"].IsNull())
     {
@@ -218,6 +229,14 @@ CoreInternalOutcome AppTrigger::Deserialize(const rapidjson::Value &value)
 void AppTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_agentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_appIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -336,6 +355,22 @@ void AppTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
 
 }
 
+
+string AppTrigger::GetAgentId() const
+{
+    return m_agentId;
+}
+
+void AppTrigger::SetAgentId(const string& _agentId)
+{
+    m_agentId = _agentId;
+    m_agentIdHasBeenSet = true;
+}
+
+bool AppTrigger::AgentIdHasBeenSet() const
+{
+    return m_agentIdHasBeenSet;
+}
 
 string AppTrigger::GetAppId() const
 {

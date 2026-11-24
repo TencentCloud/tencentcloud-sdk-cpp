@@ -31,7 +31,8 @@ Variable::Variable() :
     m_enableEndpointsHasBeenSet(false),
     m_endpointListHasBeenSet(false),
     m_isBuiltinHasBeenSet(false),
-    m_enableSandboxHasBeenSet(false)
+    m_enableSandboxHasBeenSet(false),
+    m_valueScopeHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome Variable::Deserialize(const rapidjson::Value &value)
         m_enableSandboxHasBeenSet = true;
     }
 
+    if (value.HasMember("ValueScope") && !value["ValueScope"].IsNull())
+    {
+        if (!value["ValueScope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Variable.ValueScope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_valueScope = value["ValueScope"].GetInt64();
+        m_valueScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void Variable::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "EnableSandbox";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableSandbox, allocator);
+    }
+
+    if (m_valueScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValueScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_valueScope, allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void Variable::SetEnableSandbox(const bool& _enableSandbox)
 bool Variable::EnableSandboxHasBeenSet() const
 {
     return m_enableSandboxHasBeenSet;
+}
+
+int64_t Variable::GetValueScope() const
+{
+    return m_valueScope;
+}
+
+void Variable::SetValueScope(const int64_t& _valueScope)
+{
+    m_valueScope = _valueScope;
+    m_valueScopeHasBeenSet = true;
+}
+
+bool Variable::ValueScopeHasBeenSet() const
+{
+    return m_valueScopeHasBeenSet;
 }
 

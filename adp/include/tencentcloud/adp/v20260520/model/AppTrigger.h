@@ -51,6 +51,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取<p>Agent ID，scope=USER 时可选。</p>
+                     * @return AgentId <p>Agent ID，scope=USER 时可选。</p>
+                     * 
+                     */
+                    std::string GetAgentId() const;
+
+                    /**
+                     * 设置<p>Agent ID，scope=USER 时可选。</p>
+                     * @param _agentId <p>Agent ID，scope=USER 时可选。</p>
+                     * 
+                     */
+                    void SetAgentId(const std::string& _agentId);
+
+                    /**
+                     * 判断参数 AgentId 是否已赋值
+                     * @return AgentId 是否已赋值
+                     * 
+                     */
+                    bool AgentIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>应用ID</p>
                      * @return AppId <p>应用ID</p>
                      * 
@@ -345,6 +366,12 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * <p>Agent ID，scope=USER 时可选。</p>
+                     */
+                    std::string m_agentId;
+                    bool m_agentIdHasBeenSet;
 
                     /**
                      * <p>应用ID</p>

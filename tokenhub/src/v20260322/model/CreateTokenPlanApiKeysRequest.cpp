@@ -29,7 +29,9 @@ CreateTokenPlanApiKeysRequest::CreateTokenPlanApiKeysRequest() :
     m_allowedModelsHasBeenSet(false),
     m_exclusiveQuotaHasBeenSet(false),
     m_totalQuotaHasBeenSet(false),
-    m_tPMHasBeenSet(false)
+    m_tPMHasBeenSet(false),
+    m_ipWhitelistHasBeenSet(false),
+    m_overageEnabledHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,27 @@ string CreateTokenPlanApiKeysRequest::ToJsonString() const
         string key = "TPM";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tPM, allocator);
+    }
+
+    if (m_ipWhitelistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpWhitelist";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipWhitelist.begin(); itr != m_ipWhitelist.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_overageEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OverageEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_overageEnabled, allocator);
     }
 
 
@@ -219,6 +242,38 @@ void CreateTokenPlanApiKeysRequest::SetTPM(const int64_t& _tPM)
 bool CreateTokenPlanApiKeysRequest::TPMHasBeenSet() const
 {
     return m_tPMHasBeenSet;
+}
+
+vector<string> CreateTokenPlanApiKeysRequest::GetIpWhitelist() const
+{
+    return m_ipWhitelist;
+}
+
+void CreateTokenPlanApiKeysRequest::SetIpWhitelist(const vector<string>& _ipWhitelist)
+{
+    m_ipWhitelist = _ipWhitelist;
+    m_ipWhitelistHasBeenSet = true;
+}
+
+bool CreateTokenPlanApiKeysRequest::IpWhitelistHasBeenSet() const
+{
+    return m_ipWhitelistHasBeenSet;
+}
+
+bool CreateTokenPlanApiKeysRequest::GetOverageEnabled() const
+{
+    return m_overageEnabled;
+}
+
+void CreateTokenPlanApiKeysRequest::SetOverageEnabled(const bool& _overageEnabled)
+{
+    m_overageEnabled = _overageEnabled;
+    m_overageEnabledHasBeenSet = true;
+}
+
+bool CreateTokenPlanApiKeysRequest::OverageEnabledHasBeenSet() const
+{
+    return m_overageEnabledHasBeenSet;
 }
 
 

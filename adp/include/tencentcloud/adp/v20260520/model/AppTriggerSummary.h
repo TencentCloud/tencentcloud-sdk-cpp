@@ -320,6 +320,27 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。
+                     * @return WebhookProvider Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。
+                     * 
+                     */
+                    int64_t GetWebhookProvider() const;
+
+                    /**
+                     * 设置Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。
+                     * @param _webhookProvider Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。
+                     * 
+                     */
+                    void SetWebhookProvider(const int64_t& _webhookProvider);
+
+                    /**
+                     * 判断参数 WebhookProvider 是否已赋值
+                     * @return WebhookProvider 是否已赋值
+                     * 
+                     */
+                    bool WebhookProviderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +420,12 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。
+                     */
+                    int64_t m_webhookProvider;
+                    bool m_webhookProviderHasBeenSet;
 
                 };
             }

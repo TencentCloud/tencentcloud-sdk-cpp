@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取
-                     * @return ServiceList 
+                     * 获取<p>服务及路由列表</p>
+                     * @return ServiceList <p>服务及路由列表</p>
                      * 
                      */
                     std::vector<KongServiceRoute> GetServiceList() const;
 
                     /**
-                     * 设置
-                     * @param _serviceList 
+                     * 设置<p>服务及路由列表</p>
+                     * @param _serviceList <p>服务及路由列表</p>
                      * 
                      */
                     void SetServiceList(const std::vector<KongServiceRoute>& _serviceList);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ServiceListHasBeenSet() const;
 
                     /**
-                     * 获取总数
-                     * @return TotalCount 总数
+                     * 获取<p>总数</p>
+                     * @return TotalCount <p>总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
-                     * 设置总数
-                     * @param _totalCount 总数
+                     * 设置<p>总数</p>
+                     * @param _totalCount <p>总数</p>
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 
+                     * <p>服务及路由列表</p>
                      */
                     std::vector<KongServiceRoute> m_serviceList;
                     bool m_serviceListHasBeenSet;
 
                     /**
-                     * 总数
+                     * <p>总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

@@ -25,6 +25,7 @@
 #include <tencentcloud/wedata/v20250806/model/WorkflowTriggerConfig.h>
 #include <tencentcloud/wedata/v20250806/model/WorkflowGeneralTaskParam.h>
 #include <tencentcloud/wedata/v20250806/model/WorkflowRunConfig.h>
+#include <tencentcloud/wedata/v20250806/model/WorkflowLabel.h>
 
 
 namespace TencentCloud
@@ -299,15 +300,15 @@ namespace TencentCloud
                     bool SchedulerStatusHasBeenSet() const;
 
                     /**
-                     * 获取<p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>
-                     * @return TriggerMode <p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>
+                     * 获取<p>触发方式：定时触发：TIME_TRIGGER、文件到达触发：FILE_ARRIVAL、表更新触发：TABLE_UPDATE。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li><li>TABLE_UPDATE： 表更新</li></ul>
+                     * @return TriggerMode <p>触发方式：定时触发：TIME_TRIGGER、文件到达触发：FILE_ARRIVAL、表更新触发：TABLE_UPDATE。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li><li>TABLE_UPDATE： 表更新</li></ul>
                      * 
                      */
                     std::string GetTriggerMode() const;
 
                     /**
-                     * 设置<p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>
-                     * @param _triggerMode <p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>
+                     * 设置<p>触发方式：定时触发：TIME_TRIGGER、文件到达触发：FILE_ARRIVAL、表更新触发：TABLE_UPDATE。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li><li>TABLE_UPDATE： 表更新</li></ul>
+                     * @param _triggerMode <p>触发方式：定时触发：TIME_TRIGGER、文件到达触发：FILE_ARRIVAL、表更新触发：TABLE_UPDATE。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li><li>TABLE_UPDATE： 表更新</li></ul>
                      * 
                      */
                     void SetTriggerMode(const std::string& _triggerMode);
@@ -339,6 +340,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ExecuteUserUinHasBeenSet() const;
+
+                    /**
+                     * 获取<p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>
+                     * @return WorkflowLabels <p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>
+                     * 
+                     */
+                    std::vector<WorkflowLabel> GetWorkflowLabels() const;
+
+                    /**
+                     * 设置<p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>
+                     * @param _workflowLabels <p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>
+                     * 
+                     */
+                    void SetWorkflowLabels(const std::vector<WorkflowLabel>& _workflowLabels);
+
+                    /**
+                     * 判断参数 WorkflowLabels 是否已赋值
+                     * @return WorkflowLabels 是否已赋值
+                     * 
+                     */
+                    bool WorkflowLabelsHasBeenSet() const;
 
                 private:
 
@@ -415,7 +437,7 @@ namespace TencentCloud
                     bool m_schedulerStatusHasBeenSet;
 
                     /**
-                     * <p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>
+                     * <p>触发方式：定时触发：TIME_TRIGGER、文件到达触发：FILE_ARRIVAL、表更新触发：TABLE_UPDATE。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li><li>TABLE_UPDATE： 表更新</li></ul>
                      */
                     std::string m_triggerMode;
                     bool m_triggerModeHasBeenSet;
@@ -425,6 +447,12 @@ namespace TencentCloud
                      */
                     std::string m_executeUserUin;
                     bool m_executeUserUinHasBeenSet;
+
+                    /**
+                     * <p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>
+                     */
+                    std::vector<WorkflowLabel> m_workflowLabels;
+                    bool m_workflowLabelsHasBeenSet;
 
                 };
             }

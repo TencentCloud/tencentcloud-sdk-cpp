@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取会话Id
-                     * @return Sid 会话Id
+                     * 获取<p>会话Id</p>
+                     * @return Sid <p>会话Id</p>
                      * 
                      */
                     std::string GetSid() const;
 
                     /**
-                     * 设置会话Id
-                     * @param _sid 会话Id
+                     * 设置<p>会话Id</p>
+                     * @param _sid <p>会话Id</p>
                      * 
                      */
                     void SetSid(const std::string& _sid);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SidHasBeenSet() const;
 
                     /**
-                     * 获取命令，可模糊搜索
-                     * @return Cmd 命令，可模糊搜索
+                     * 获取<p>命令，可模糊搜索</p>
+                     * @return Cmd <p>命令，可模糊搜索</p>
                      * 
                      */
                     std::string GetCmd() const;
 
                     /**
-                     * 设置命令，可模糊搜索
-                     * @param _cmd 命令，可模糊搜索
+                     * 设置<p>命令，可模糊搜索</p>
+                     * @param _cmd <p>命令，可模糊搜索</p>
                      * 
                      */
                     void SetCmd(const std::string& _cmd);
@@ -85,19 +85,15 @@ namespace TencentCloud
                     bool CmdHasBeenSet() const;
 
                     /**
-                     * 获取Cmd字段是前端传值是否进行base64.
-0:否，1：是
-                     * @return Encoding Cmd字段是前端传值是否进行base64.
-0:否，1：是
+                     * 获取<p>Cmd字段是前端传值是否进行base64.<br>0:否，1：是</p>
+                     * @return Encoding <p>Cmd字段是前端传值是否进行base64.<br>0:否，1：是</p>
                      * 
                      */
                     uint64_t GetEncoding() const;
 
                     /**
-                     * 设置Cmd字段是前端传值是否进行base64.
-0:否，1：是
-                     * @param _encoding Cmd字段是前端传值是否进行base64.
-0:否，1：是
+                     * 设置<p>Cmd字段是前端传值是否进行base64.<br>0:否，1：是</p>
+                     * @param _encoding <p>Cmd字段是前端传值是否进行base64.<br>0:否，1：是</p>
                      * 
                      */
                     void SetEncoding(const uint64_t& _encoding);
@@ -110,15 +106,15 @@ namespace TencentCloud
                     bool EncodingHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取<p>偏移量</p>
+                     * @return Offset <p>偏移量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置<p>偏移量</p>
+                     * @param _offset <p>偏移量</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -131,15 +127,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页容量，默认20，最大200
-                     * @return Limit 每页容量，默认20，最大200
+                     * 获取<p>每页容量，默认20，最大200</p>
+                     * @return Limit <p>每页容量，默认20，最大200</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页容量，默认20，最大200
-                     * @param _limit 每页容量，默认20，最大200
+                     * 设置<p>每页容量，默认20，最大200</p>
+                     * @param _limit <p>每页容量，默认20，最大200</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -152,15 +148,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取根据拦截状态进行过滤
-                     * @return AuditAction 根据拦截状态进行过滤
+                     * 获取<p>根据拦截状态进行过滤，1-已放行，2-已阻断，3-复核</p>
+                     * @return AuditAction <p>根据拦截状态进行过滤，1-已放行，2-已阻断，3-复核</p>
                      * 
                      */
                     std::vector<uint64_t> GetAuditAction() const;
 
                     /**
-                     * 设置根据拦截状态进行过滤
-                     * @param _auditAction 根据拦截状态进行过滤
+                     * 设置<p>根据拦截状态进行过滤，1-已放行，2-已阻断，3-复核</p>
+                     * @param _auditAction <p>根据拦截状态进行过滤，1-已放行，2-已阻断，3-复核</p>
                      * 
                      */
                     void SetAuditAction(const std::vector<uint64_t>& _auditAction);
@@ -175,38 +171,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 会话Id
+                     * <p>会话Id</p>
                      */
                     std::string m_sid;
                     bool m_sidHasBeenSet;
 
                     /**
-                     * 命令，可模糊搜索
+                     * <p>命令，可模糊搜索</p>
                      */
                     std::string m_cmd;
                     bool m_cmdHasBeenSet;
 
                     /**
-                     * Cmd字段是前端传值是否进行base64.
-0:否，1：是
+                     * <p>Cmd字段是前端传值是否进行base64.<br>0:否，1：是</p>
                      */
                     uint64_t m_encoding;
                     bool m_encodingHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * <p>偏移量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页容量，默认20，最大200
+                     * <p>每页容量，默认20，最大200</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 根据拦截状态进行过滤
+                     * <p>根据拦截状态进行过滤，1-已放行，2-已阻断，3-复核</p>
                      */
                     std::vector<uint64_t> m_auditAction;
                     bool m_auditActionHasBeenSet;

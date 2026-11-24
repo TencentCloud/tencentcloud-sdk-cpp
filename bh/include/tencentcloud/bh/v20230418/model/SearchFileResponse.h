@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取记录数
-                     * @return TotalCount 记录数
+                     * 获取<p>记录数</p>
+                     * @return TotalCount <p>记录数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取文件操作列表
-                     * @return Files 文件操作列表
+                     * 获取<p>文件操作列表</p>
+                     * @return Files <p>文件操作列表</p>
                      * 
                      */
                     std::vector<SearchFileResult> GetFiles() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 记录数
+                     * <p>记录数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 文件操作列表
+                     * <p>文件操作列表</p>
                      */
                     std::vector<SearchFileResult> m_files;
                     bool m_filesHasBeenSet;

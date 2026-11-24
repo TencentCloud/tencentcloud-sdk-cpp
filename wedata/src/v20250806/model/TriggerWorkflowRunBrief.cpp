@@ -57,7 +57,9 @@ TriggerWorkflowRunBrief::TriggerWorkflowRunBrief() :
     m_parentWorkflowExecutionIdHasBeenSet(false),
     m_parentTaskExecutionIdHasBeenSet(false),
     m_parentTaskExecutionNameHasBeenSet(false),
-    m_privilegeHasBeenSet(false)
+    m_privilegeHasBeenSet(false),
+    m_triggerTableUpdateRecordsHasBeenSet(false),
+    m_workflowLabelsHasBeenSet(false)
 {
 }
 
@@ -439,6 +441,46 @@ CoreInternalOutcome TriggerWorkflowRunBrief::Deserialize(const rapidjson::Value 
         m_privilegeHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerTableUpdateRecords") && !value["TriggerTableUpdateRecords"].IsNull())
+    {
+        if (!value["TriggerTableUpdateRecords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowRunBrief.TriggerTableUpdateRecords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TriggerTableUpdateRecords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TriggerTableUpdateRecord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_triggerTableUpdateRecords.push_back(item);
+        }
+        m_triggerTableUpdateRecordsHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkflowLabels") && !value["WorkflowLabels"].IsNull())
+    {
+        if (!value["WorkflowLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TriggerWorkflowRunBrief.WorkflowLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WorkflowLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WorkflowLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_workflowLabels.push_back(item);
+        }
+        m_workflowLabelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -745,6 +787,36 @@ void TriggerWorkflowRunBrief::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Privilege";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerTableUpdateRecordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerTableUpdateRecords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_triggerTableUpdateRecords.begin(); itr != m_triggerTableUpdateRecords.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_workflowLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_workflowLabels.begin(); itr != m_workflowLabels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1340,5 +1412,37 @@ void TriggerWorkflowRunBrief::SetPrivilege(const string& _privilege)
 bool TriggerWorkflowRunBrief::PrivilegeHasBeenSet() const
 {
     return m_privilegeHasBeenSet;
+}
+
+vector<TriggerTableUpdateRecord> TriggerWorkflowRunBrief::GetTriggerTableUpdateRecords() const
+{
+    return m_triggerTableUpdateRecords;
+}
+
+void TriggerWorkflowRunBrief::SetTriggerTableUpdateRecords(const vector<TriggerTableUpdateRecord>& _triggerTableUpdateRecords)
+{
+    m_triggerTableUpdateRecords = _triggerTableUpdateRecords;
+    m_triggerTableUpdateRecordsHasBeenSet = true;
+}
+
+bool TriggerWorkflowRunBrief::TriggerTableUpdateRecordsHasBeenSet() const
+{
+    return m_triggerTableUpdateRecordsHasBeenSet;
+}
+
+vector<WorkflowLabel> TriggerWorkflowRunBrief::GetWorkflowLabels() const
+{
+    return m_workflowLabels;
+}
+
+void TriggerWorkflowRunBrief::SetWorkflowLabels(const vector<WorkflowLabel>& _workflowLabels)
+{
+    m_workflowLabels = _workflowLabels;
+    m_workflowLabelsHasBeenSet = true;
+}
+
+bool TriggerWorkflowRunBrief::WorkflowLabelsHasBeenSet() const
+{
+    return m_workflowLabelsHasBeenSet;
 }
 

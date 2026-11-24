@@ -28,7 +28,8 @@ ModifyTokenPlanApiKeyRequest::ModifyTokenPlanApiKeyRequest() :
     m_exclusiveQuotaHasBeenSet(false),
     m_totalQuotaHasBeenSet(false),
     m_useStatusHasBeenSet(false),
-    m_tPMHasBeenSet(false)
+    m_tPMHasBeenSet(false),
+    m_ipWhitelistHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,19 @@ string ModifyTokenPlanApiKeyRequest::ToJsonString() const
         string key = "TPM";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tPM, allocator);
+    }
+
+    if (m_ipWhitelistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpWhitelist";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipWhitelist.begin(); itr != m_ipWhitelist.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -194,6 +208,22 @@ void ModifyTokenPlanApiKeyRequest::SetTPM(const int64_t& _tPM)
 bool ModifyTokenPlanApiKeyRequest::TPMHasBeenSet() const
 {
     return m_tPMHasBeenSet;
+}
+
+vector<string> ModifyTokenPlanApiKeyRequest::GetIpWhitelist() const
+{
+    return m_ipWhitelist;
+}
+
+void ModifyTokenPlanApiKeyRequest::SetIpWhitelist(const vector<string>& _ipWhitelist)
+{
+    m_ipWhitelist = _ipWhitelist;
+    m_ipWhitelistHasBeenSet = true;
+}
+
+bool ModifyTokenPlanApiKeyRequest::IpWhitelistHasBeenSet() const
+{
+    return m_ipWhitelistHasBeenSet;
 }
 
 

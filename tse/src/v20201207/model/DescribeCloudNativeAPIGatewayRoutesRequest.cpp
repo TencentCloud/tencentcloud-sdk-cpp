@@ -26,6 +26,7 @@ DescribeCloudNativeAPIGatewayRoutesRequest::DescribeCloudNativeAPIGatewayRoutesR
     m_gatewayIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
+    m_serviceIdHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
     m_routeNameHasBeenSet(false),
     m_filtersHasBeenSet(false),
@@ -67,6 +68,14 @@ string DescribeCloudNativeAPIGatewayRoutesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_serviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceNameHasBeenSet)
@@ -219,6 +228,22 @@ void DescribeCloudNativeAPIGatewayRoutesRequest::SetOffset(const int64_t& _offse
 bool DescribeCloudNativeAPIGatewayRoutesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayRoutesRequest::GetServiceId() const
+{
+    return m_serviceId;
+}
+
+void DescribeCloudNativeAPIGatewayRoutesRequest::SetServiceId(const string& _serviceId)
+{
+    m_serviceId = _serviceId;
+    m_serviceIdHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayRoutesRequest::ServiceIdHasBeenSet() const
+{
+    return m_serviceIdHasBeenSet;
 }
 
 string DescribeCloudNativeAPIGatewayRoutesRequest::GetServiceName() const

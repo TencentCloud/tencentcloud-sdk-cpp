@@ -775,6 +775,27 @@ namespace TencentCloud
                      */
                     bool ModifiedOnHasBeenSet() const;
 
+                    /**
+                     * 获取<p>构建规格客户契约</p><p>枚举值：</p><ul><li>standard： 4C6G，默认档，所有套餐可用</li><li>enhanced： 8C14G，专业版及以上可用；低配套餐声明时按 standard 处理并提示升级</li></ul><p>默认值：standard</p>
+                     * @return BuildMachine <p>构建规格客户契约</p><p>枚举值：</p><ul><li>standard： 4C6G，默认档，所有套餐可用</li><li>enhanced： 8C14G，专业版及以上可用；低配套餐声明时按 standard 处理并提示升级</li></ul><p>默认值：standard</p>
+                     * 
+                     */
+                    std::string GetBuildMachine() const;
+
+                    /**
+                     * 设置<p>构建规格客户契约</p><p>枚举值：</p><ul><li>standard： 4C6G，默认档，所有套餐可用</li><li>enhanced： 8C14G，专业版及以上可用；低配套餐声明时按 standard 处理并提示升级</li></ul><p>默认值：standard</p>
+                     * @param _buildMachine <p>构建规格客户契约</p><p>枚举值：</p><ul><li>standard： 4C6G，默认档，所有套餐可用</li><li>enhanced： 8C14G，专业版及以上可用；低配套餐声明时按 standard 处理并提示升级</li></ul><p>默认值：standard</p>
+                     * 
+                     */
+                    void SetBuildMachine(const std::string& _buildMachine);
+
+                    /**
+                     * 判断参数 BuildMachine 是否已赋值
+                     * @return BuildMachine 是否已赋值
+                     * 
+                     */
+                    bool BuildMachineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -979,6 +1000,12 @@ namespace TencentCloud
                      */
                     std::string m_modifiedOn;
                     bool m_modifiedOnHasBeenSet;
+
+                    /**
+                     * <p>构建规格客户契约</p><p>枚举值：</p><ul><li>standard： 4C6G，默认档，所有套餐可用</li><li>enhanced： 8C14G，专业版及以上可用；低配套餐声明时按 standard 处理并提示升级</li></ul><p>默认值：standard</p>
+                     */
+                    std::string m_buildMachine;
+                    bool m_buildMachineHasBeenSet;
 
                 };
             }

@@ -37,7 +37,9 @@ WorkflowTriggerConfig::WorkflowTriggerConfig() :
     m_triggerMinimumIntervalHasBeenSet(false),
     m_triggerWaitTimeHasBeenSet(false),
     m_triggerMinimumIntervalSecondHasBeenSet(false),
-    m_triggerWaitTimeSecondHasBeenSet(false)
+    m_triggerWaitTimeSecondHasBeenSet(false),
+    m_tableQualifiersHasBeenSet(false),
+    m_triggerPolicyHasBeenSet(false)
 {
 }
 
@@ -216,6 +218,29 @@ CoreInternalOutcome WorkflowTriggerConfig::Deserialize(const rapidjson::Value &v
         m_triggerWaitTimeSecondHasBeenSet = true;
     }
 
+    if (value.HasMember("TableQualifiers") && !value["TableQualifiers"].IsNull())
+    {
+        if (!value["TableQualifiers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WorkflowTriggerConfig.TableQualifiers` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TableQualifiers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tableQualifiers.push_back((*itr).GetString());
+        }
+        m_tableQualifiersHasBeenSet = true;
+    }
+
+    if (value.HasMember("TriggerPolicy") && !value["TriggerPolicy"].IsNull())
+    {
+        if (!value["TriggerPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowTriggerConfig.TriggerPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerPolicy = string(value["TriggerPolicy"].GetString());
+        m_triggerPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +382,27 @@ void WorkflowTriggerConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "TriggerWaitTimeSecond";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_triggerWaitTimeSecond, allocator);
+    }
+
+    if (m_tableQualifiersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableQualifiers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tableQualifiers.begin(); itr != m_tableQualifiers.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_triggerPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerPolicy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +678,37 @@ void WorkflowTriggerConfig::SetTriggerWaitTimeSecond(const int64_t& _triggerWait
 bool WorkflowTriggerConfig::TriggerWaitTimeSecondHasBeenSet() const
 {
     return m_triggerWaitTimeSecondHasBeenSet;
+}
+
+vector<string> WorkflowTriggerConfig::GetTableQualifiers() const
+{
+    return m_tableQualifiers;
+}
+
+void WorkflowTriggerConfig::SetTableQualifiers(const vector<string>& _tableQualifiers)
+{
+    m_tableQualifiers = _tableQualifiers;
+    m_tableQualifiersHasBeenSet = true;
+}
+
+bool WorkflowTriggerConfig::TableQualifiersHasBeenSet() const
+{
+    return m_tableQualifiersHasBeenSet;
+}
+
+string WorkflowTriggerConfig::GetTriggerPolicy() const
+{
+    return m_triggerPolicy;
+}
+
+void WorkflowTriggerConfig::SetTriggerPolicy(const string& _triggerPolicy)
+{
+    m_triggerPolicy = _triggerPolicy;
+    m_triggerPolicyHasBeenSet = true;
+}
+
+bool WorkflowTriggerConfig::TriggerPolicyHasBeenSet() const
+{
+    return m_triggerPolicyHasBeenSet;
 }
 

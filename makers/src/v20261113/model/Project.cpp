@@ -49,7 +49,8 @@ Project::Project() :
     m_agentFrameworkHasBeenSet(false),
     m_isTldHasBeenSet(false),
     m_createdOnHasBeenSet(false),
-    m_modifiedOnHasBeenSet(false)
+    m_modifiedOnHasBeenSet(false),
+    m_buildMachineHasBeenSet(false)
 {
 }
 
@@ -385,6 +386,16 @@ CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
         m_modifiedOnHasBeenSet = true;
     }
 
+    if (value.HasMember("BuildMachine") && !value["BuildMachine"].IsNull())
+    {
+        if (!value["BuildMachine"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.BuildMachine` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_buildMachine = string(value["BuildMachine"].GetString());
+        m_buildMachineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -643,6 +654,14 @@ void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ModifiedOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifiedOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buildMachineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildMachine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buildMachine.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1110,5 +1129,21 @@ void Project::SetModifiedOn(const string& _modifiedOn)
 bool Project::ModifiedOnHasBeenSet() const
 {
     return m_modifiedOnHasBeenSet;
+}
+
+string Project::GetBuildMachine() const
+{
+    return m_buildMachine;
+}
+
+void Project::SetBuildMachine(const string& _buildMachine)
+{
+    m_buildMachine = _buildMachine;
+    m_buildMachineHasBeenSet = true;
+}
+
+bool Project::BuildMachineHasBeenSet() const
+{
+    return m_buildMachineHasBeenSet;
 }
 

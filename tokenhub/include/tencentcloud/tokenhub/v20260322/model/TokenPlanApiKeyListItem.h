@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取API Key ID。
-                     * @return ApiKeyId API Key ID。
+                     * 获取<p>API Key ID。</p>
+                     * @return ApiKeyId <p>API Key ID。</p>
                      * 
                      */
                     std::string GetApiKeyId() const;
 
                     /**
-                     * 设置API Key ID。
-                     * @param _apiKeyId API Key ID。
+                     * 设置<p>API Key ID。</p>
+                     * @param _apiKeyId <p>API Key ID。</p>
                      * 
                      */
                     void SetApiKeyId(const std::string& _apiKeyId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ApiKeyIdHasBeenSet() const;
 
                     /**
-                     * 获取API Key 密钥值（脱敏）。
-                     * @return ApiKey API Key 密钥值（脱敏）。
+                     * 获取<p>API Key 密钥值（脱敏）。</p>
+                     * @return ApiKey <p>API Key 密钥值（脱敏）。</p>
                      * 
                      */
                     std::string GetApiKey() const;
 
                     /**
-                     * 设置API Key 密钥值（脱敏）。
-                     * @param _apiKey API Key 密钥值（脱敏）。
+                     * 设置<p>API Key 密钥值（脱敏）。</p>
+                     * @param _apiKey <p>API Key 密钥值（脱敏）。</p>
                      * 
                      */
                     void SetApiKey(const std::string& _apiKey);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ApiKeyHasBeenSet() const;
 
                     /**
-                     * 获取API Key 名称。
-                     * @return Name API Key 名称。
+                     * 获取<p>API Key 名称。</p>
+                     * @return Name <p>API Key 名称。</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置API Key 名称。
-                     * @param _name API Key 名称。
+                     * 设置<p>API Key 名称。</p>
+                     * @param _name <p>API Key 名称。</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取所属套餐 ID。
-                     * @return TeamId 所属套餐 ID。
+                     * 获取<p>所属套餐 ID。</p>
+                     * @return TeamId <p>所属套餐 ID。</p>
                      * 
                      */
                     std::string GetTeamId() const;
 
                     /**
-                     * 设置所属套餐 ID。
-                     * @param _teamId 所属套餐 ID。
+                     * 设置<p>所属套餐 ID。</p>
+                     * @param _teamId <p>所属套餐 ID。</p>
                      * 
                      */
                     void SetTeamId(const std::string& _teamId);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TeamIdHasBeenSet() const;
 
                     /**
-                     * 获取账号APP ID。
-                     * @return AppId 账号APP ID。
+                     * 获取<p>账号APP ID。</p>
+                     * @return AppId <p>账号APP ID。</p>
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置账号APP ID。
-                     * @param _appId 账号APP ID。
+                     * 设置<p>账号APP ID。</p>
+                     * @param _appId <p>账号APP ID。</p>
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取主账号 UIN。最大 128 字符。
-                     * @return Uin 主账号 UIN。最大 128 字符。
+                     * 获取<p>主账号 UIN。最大 128 字符。</p>
+                     * @return Uin <p>主账号 UIN。最大 128 字符。</p>
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置主账号 UIN。最大 128 字符。
-                     * @param _uin 主账号 UIN。最大 128 字符。
+                     * 设置<p>主账号 UIN。最大 128 字符。</p>
+                     * @param _uin <p>主账号 UIN。最大 128 字符。</p>
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取API Key 可用模型列表（JSON 数组字符串）。
-                     * @return AllowedModels API Key 可用模型列表（JSON 数组字符串）。
+                     * 获取<p>API Key 可用模型列表（JSON 数组字符串）。</p>
+                     * @return AllowedModels <p>API Key 可用模型列表（JSON 数组字符串）。</p>
                      * 
                      */
                     std::string GetAllowedModels() const;
 
                     /**
-                     * 设置API Key 可用模型列表（JSON 数组字符串）。
-                     * @param _allowedModels API Key 可用模型列表（JSON 数组字符串）。
+                     * 设置<p>API Key 可用模型列表（JSON 数组字符串）。</p>
+                     * @param _allowedModels <p>API Key 可用模型列表（JSON 数组字符串）。</p>
                      * 
                      */
                     void SetAllowedModels(const std::string& _allowedModels);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool AllowedModelsHasBeenSet() const;
 
                     /**
-                     * 获取API Key 是否可用。取值：enable（启用）、disable（停用）。
-                     * @return Status API Key 是否可用。取值：enable（启用）、disable（停用）。
+                     * 获取<p>API Key 是否可用。取值：enable（启用）、disable（停用）。</p>
+                     * @return Status <p>API Key 是否可用。取值：enable（启用）、disable（停用）。</p>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置API Key 是否可用。取值：enable（启用）、disable（停用）。
-                     * @param _status API Key 是否可用。取值：enable（启用）、disable（停用）。
+                     * 设置<p>API Key 是否可用。取值：enable（启用）、disable（停用）。</p>
+                     * @param _status <p>API Key 是否可用。取值：enable（启用）、disable（停用）。</p>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -216,15 +216,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）
-                     * @return StopReason API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）
+                     * 获取<p>API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）</p>
+                     * @return StopReason <p>API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）</p>
                      * 
                      */
                     std::string GetStopReason() const;
 
                     /**
-                     * 设置API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）
-                     * @param _stopReason API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）
+                     * 设置<p>API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）</p>
+                     * @param _stopReason <p>API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）</p>
                      * 
                      */
                     void SetStopReason(const std::string& _stopReason);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool StopReasonHasBeenSet() const;
 
                     /**
-                     * 获取用户侧开关。取值：enable（启用）、disable（停用）。
-                     * @return UseStatus 用户侧开关。取值：enable（启用）、disable（停用）。
+                     * 获取<p>用户侧开关。取值：enable（启用）、disable（停用）。</p>
+                     * @return UseStatus <p>用户侧开关。取值：enable（启用）、disable（停用）。</p>
                      * 
                      */
                     std::string GetUseStatus() const;
 
                     /**
-                     * 设置用户侧开关。取值：enable（启用）、disable（停用）。
-                     * @param _useStatus 用户侧开关。取值：enable（启用）、disable（停用）。
+                     * 设置<p>用户侧开关。取值：enable（启用）、disable（停用）。</p>
+                     * @param _useStatus <p>用户侧开关。取值：enable（启用）、disable（停用）。</p>
                      * 
                      */
                     void SetUseStatus(const std::string& _useStatus);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool UseStatusHasBeenSet() const;
 
                     /**
-                     * 获取密钥版本号。
-                     * @return KeyVersion 密钥版本号。
+                     * 获取<p>密钥版本号。</p>
+                     * @return KeyVersion <p>密钥版本号。</p>
                      * 
                      */
                     int64_t GetKeyVersion() const;
 
                     /**
-                     * 设置密钥版本号。
-                     * @param _keyVersion 密钥版本号。
+                     * 设置<p>密钥版本号。</p>
+                     * @param _keyVersion <p>密钥版本号。</p>
                      * 
                      */
                     void SetKeyVersion(const int64_t& _keyVersion);
@@ -279,15 +279,15 @@ namespace TencentCloud
                     bool KeyVersionHasBeenSet() const;
 
                     /**
-                     * 获取最近一次重置时间。（ISO 8601）
-                     * @return LastRotatedAt 最近一次重置时间。（ISO 8601）
+                     * 获取<p>最近一次重置时间。（ISO 8601）</p>
+                     * @return LastRotatedAt <p>最近一次重置时间。（ISO 8601）</p>
                      * 
                      */
                     std::string GetLastRotatedAt() const;
 
                     /**
-                     * 设置最近一次重置时间。（ISO 8601）
-                     * @param _lastRotatedAt 最近一次重置时间。（ISO 8601）
+                     * 设置<p>最近一次重置时间。（ISO 8601）</p>
+                     * @param _lastRotatedAt <p>最近一次重置时间。（ISO 8601）</p>
                      * 
                      */
                     void SetLastRotatedAt(const std::string& _lastRotatedAt);
@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool LastRotatedAtHasBeenSet() const;
 
                     /**
-                     * 获取创建人，如果是子账号创建，则该值为子账号UIN。
-                     * @return Creator 创建人，如果是子账号创建，则该值为子账号UIN。
+                     * 获取<p>创建人，如果是子账号创建，则该值为子账号UIN。</p>
+                     * @return Creator <p>创建人，如果是子账号创建，则该值为子账号UIN。</p>
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置创建人，如果是子账号创建，则该值为子账号UIN。
-                     * @param _creator 创建人，如果是子账号创建，则该值为子账号UIN。
+                     * 设置<p>创建人，如果是子账号创建，则该值为子账号UIN。</p>
+                     * @param _creator <p>创建人，如果是子账号创建，则该值为子账号UIN。</p>
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool CreatorHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedAt 创建时间。
+                     * 获取<p>创建时间。</p>
+                     * @return CreatedAt <p>创建时间。</p>
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdAt 创建时间。
+                     * 设置<p>创建时间。</p>
+                     * @param _createdAt <p>创建时间。</p>
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取更新时间。
-                     * @return UpdatedAt 更新时间。
+                     * 获取<p>更新时间。</p>
+                     * @return UpdatedAt <p>更新时间。</p>
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
-                     * 设置更新时间。
-                     * @param _updatedAt 更新时间。
+                     * 设置<p>更新时间。</p>
+                     * @param _updatedAt <p>更新时间。</p>
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取API Key 额度用量信息
-                     * @return Balance API Key 额度用量信息
+                     * 获取<p>API Key 额度用量信息</p>
+                     * @return Balance <p>API Key 额度用量信息</p>
                      * 
                      */
                     SubPackageBalance GetBalance() const;
 
                     /**
-                     * 设置API Key 额度用量信息
-                     * @param _balance API Key 额度用量信息
+                     * 设置<p>API Key 额度用量信息</p>
+                     * @param _balance <p>API Key 额度用量信息</p>
                      * 
                      */
                     void SetBalance(const SubPackageBalance& _balance);
@@ -384,15 +384,15 @@ namespace TencentCloud
                     bool BalanceHasBeenSet() const;
 
                     /**
-                     * 获取套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。
-                     * @return ProductType 套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。
+                     * 获取<p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>
+                     * @return ProductType <p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>
                      * 
                      */
                     std::string GetProductType() const;
 
                     /**
-                     * 设置套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。
-                     * @param _productType 套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。
+                     * 设置<p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>
+                     * @param _productType <p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>
                      * 
                      */
                     void SetProductType(const std::string& _productType);
@@ -404,109 +404,163 @@ namespace TencentCloud
                      */
                     bool ProductTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>IP 白名单列表。支持 IPv4 单地址与 IPv4 CIDR 格式，空数组表示不限制。</p>
+                     * @return IpWhitelist <p>IP 白名单列表。支持 IPv4 单地址与 IPv4 CIDR 格式，空数组表示不限制。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetIpWhitelist() const;
+
+                    /**
+                     * 设置<p>IP 白名单列表。支持 IPv4 单地址与 IPv4 CIDR 格式，空数组表示不限制。</p>
+                     * @param _ipWhitelist <p>IP 白名单列表。支持 IPv4 单地址与 IPv4 CIDR 格式，空数组表示不限制。</p>
+                     * 
+                     */
+                    void SetIpWhitelist(const std::vector<std::string>& _ipWhitelist);
+
+                    /**
+                     * 判断参数 IpWhitelist 是否已赋值
+                     * @return IpWhitelist 是否已赋值
+                     * 
+                     */
+                    bool IpWhitelistHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否开启超额按量计费。开启后，若 APIKey 用量达到总额度上限，并且使用的模型已开启按量计费，将自动切换至按量计费模式；未开启时用量达上限后调用报错。</p>
+                     * @return OverageEnabled <p>是否开启超额按量计费。开启后，若 APIKey 用量达到总额度上限，并且使用的模型已开启按量计费，将自动切换至按量计费模式；未开启时用量达上限后调用报错。</p>
+                     * 
+                     */
+                    bool GetOverageEnabled() const;
+
+                    /**
+                     * 设置<p>是否开启超额按量计费。开启后，若 APIKey 用量达到总额度上限，并且使用的模型已开启按量计费，将自动切换至按量计费模式；未开启时用量达上限后调用报错。</p>
+                     * @param _overageEnabled <p>是否开启超额按量计费。开启后，若 APIKey 用量达到总额度上限，并且使用的模型已开启按量计费，将自动切换至按量计费模式；未开启时用量达上限后调用报错。</p>
+                     * 
+                     */
+                    void SetOverageEnabled(const bool& _overageEnabled);
+
+                    /**
+                     * 判断参数 OverageEnabled 是否已赋值
+                     * @return OverageEnabled 是否已赋值
+                     * 
+                     */
+                    bool OverageEnabledHasBeenSet() const;
+
                 private:
 
                     /**
-                     * API Key ID。
+                     * <p>API Key ID。</p>
                      */
                     std::string m_apiKeyId;
                     bool m_apiKeyIdHasBeenSet;
 
                     /**
-                     * API Key 密钥值（脱敏）。
+                     * <p>API Key 密钥值（脱敏）。</p>
                      */
                     std::string m_apiKey;
                     bool m_apiKeyHasBeenSet;
 
                     /**
-                     * API Key 名称。
+                     * <p>API Key 名称。</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 所属套餐 ID。
+                     * <p>所属套餐 ID。</p>
                      */
                     std::string m_teamId;
                     bool m_teamIdHasBeenSet;
 
                     /**
-                     * 账号APP ID。
+                     * <p>账号APP ID。</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 主账号 UIN。最大 128 字符。
+                     * <p>主账号 UIN。最大 128 字符。</p>
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * API Key 可用模型列表（JSON 数组字符串）。
+                     * <p>API Key 可用模型列表（JSON 数组字符串）。</p>
                      */
                     std::string m_allowedModels;
                     bool m_allowedModelsHasBeenSet;
 
                     /**
-                     * API Key 是否可用。取值：enable（启用）、disable（停用）。
+                     * <p>API Key 是否可用。取值：enable（启用）、disable（停用）。</p>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）
+                     * <p>API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）</p>
                      */
                     std::string m_stopReason;
                     bool m_stopReasonHasBeenSet;
 
                     /**
-                     * 用户侧开关。取值：enable（启用）、disable（停用）。
+                     * <p>用户侧开关。取值：enable（启用）、disable（停用）。</p>
                      */
                     std::string m_useStatus;
                     bool m_useStatusHasBeenSet;
 
                     /**
-                     * 密钥版本号。
+                     * <p>密钥版本号。</p>
                      */
                     int64_t m_keyVersion;
                     bool m_keyVersionHasBeenSet;
 
                     /**
-                     * 最近一次重置时间。（ISO 8601）
+                     * <p>最近一次重置时间。（ISO 8601）</p>
                      */
                     std::string m_lastRotatedAt;
                     bool m_lastRotatedAtHasBeenSet;
 
                     /**
-                     * 创建人，如果是子账号创建，则该值为子账号UIN。
+                     * <p>创建人，如果是子账号创建，则该值为子账号UIN。</p>
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * <p>创建时间。</p>
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 更新时间。
+                     * <p>更新时间。</p>
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * API Key 额度用量信息
+                     * <p>API Key 额度用量信息</p>
                      */
                     SubPackageBalance m_balance;
                     bool m_balanceHasBeenSet;
 
                     /**
-                     * 套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。
+                     * <p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>
                      */
                     std::string m_productType;
                     bool m_productTypeHasBeenSet;
+
+                    /**
+                     * <p>IP 白名单列表。支持 IPv4 单地址与 IPv4 CIDR 格式，空数组表示不限制。</p>
+                     */
+                    std::vector<std::string> m_ipWhitelist;
+                    bool m_ipWhitelistHasBeenSet;
+
+                    /**
+                     * <p>是否开启超额按量计费。开启后，若 APIKey 用量达到总额度上限，并且使用的模型已开启按量计费，将自动切换至按量计费模式；未开启时用量达上限后调用报错。</p>
+                     */
+                    bool m_overageEnabled;
+                    bool m_overageEnabledHasBeenSet;
 
                 };
             }

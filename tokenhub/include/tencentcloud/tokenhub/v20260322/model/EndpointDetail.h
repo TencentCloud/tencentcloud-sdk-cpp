@@ -68,6 +68,48 @@ namespace TencentCloud
                     bool EndpointIdHasBeenSet() const;
 
                     /**
+                     * 获取<p>所属企业空间 ID。</p>
+                     * @return WorkspaceId <p>所属企业空间 ID。</p>
+                     * 
+                     */
+                    std::string GetWorkspaceId() const;
+
+                    /**
+                     * 设置<p>所属企业空间 ID。</p>
+                     * @param _workspaceId <p>所属企业空间 ID。</p>
+                     * 
+                     */
+                    void SetWorkspaceId(const std::string& _workspaceId);
+
+                    /**
+                     * 判断参数 WorkspaceId 是否已赋值
+                     * @return WorkspaceId 是否已赋值
+                     * 
+                     */
+                    bool WorkspaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>跨空间展开时的原始推理服务 ID；未展开时与 EndpointId 相同。</p>
+                     * @return OriginEndpointId <p>跨空间展开时的原始推理服务 ID；未展开时与 EndpointId 相同。</p>
+                     * 
+                     */
+                    std::string GetOriginEndpointId() const;
+
+                    /**
+                     * 设置<p>跨空间展开时的原始推理服务 ID；未展开时与 EndpointId 相同。</p>
+                     * @param _originEndpointId <p>跨空间展开时的原始推理服务 ID；未展开时与 EndpointId 相同。</p>
+                     * 
+                     */
+                    void SetOriginEndpointId(const std::string& _originEndpointId);
+
+                    /**
+                     * 判断参数 OriginEndpointId 是否已赋值
+                     * @return OriginEndpointId 是否已赋值
+                     * 
+                     */
+                    bool OriginEndpointIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>服务名称。</p>
                      * @return EndpointName <p>服务名称。</p>
                      * 
@@ -340,6 +382,27 @@ namespace TencentCloud
                      */
                     bool ModelStatusHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>
+                     * @return NightDiscountEnabled <p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>
+                     * 
+                     */
+                    bool GetNightDiscountEnabled() const;
+
+                    /**
+                     * 设置<p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>
+                     * @param _nightDiscountEnabled <p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>
+                     * 
+                     */
+                    void SetNightDiscountEnabled(const bool& _nightDiscountEnabled);
+
+                    /**
+                     * 判断参数 NightDiscountEnabled 是否已赋值
+                     * @return NightDiscountEnabled 是否已赋值
+                     * 
+                     */
+                    bool NightDiscountEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +410,18 @@ namespace TencentCloud
                      */
                     std::string m_endpointId;
                     bool m_endpointIdHasBeenSet;
+
+                    /**
+                     * <p>所属企业空间 ID。</p>
+                     */
+                    std::string m_workspaceId;
+                    bool m_workspaceIdHasBeenSet;
+
+                    /**
+                     * <p>跨空间展开时的原始推理服务 ID；未展开时与 EndpointId 相同。</p>
+                     */
+                    std::string m_originEndpointId;
+                    bool m_originEndpointIdHasBeenSet;
 
                     /**
                      * <p>服务名称。</p>
@@ -425,6 +500,12 @@ namespace TencentCloud
                      */
                     std::string m_modelStatus;
                     bool m_modelStatusHasBeenSet;
+
+                    /**
+                     * <p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>
+                     */
+                    bool m_nightDiscountEnabled;
+                    bool m_nightDiscountEnabledHasBeenSet;
 
                 };
             }

@@ -21,7 +21,9 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 OriginACLInfo::OriginACLInfo() :
+    m_l7EnableModeHasBeenSet(false),
     m_l7HostsHasBeenSet(false),
+    m_l4EnableModeHasBeenSet(false),
     m_l4ProxyIdsHasBeenSet(false),
     m_currentOriginACLHasBeenSet(false),
     m_nextOriginACLHasBeenSet(false),
@@ -35,6 +37,16 @@ CoreInternalOutcome OriginACLInfo::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
+    if (value.HasMember("L7EnableMode") && !value["L7EnableMode"].IsNull())
+    {
+        if (!value["L7EnableMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginACLInfo.L7EnableMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_l7EnableMode = string(value["L7EnableMode"].GetString());
+        m_l7EnableModeHasBeenSet = true;
+    }
+
     if (value.HasMember("L7Hosts") && !value["L7Hosts"].IsNull())
     {
         if (!value["L7Hosts"].IsArray())
@@ -46,6 +58,16 @@ CoreInternalOutcome OriginACLInfo::Deserialize(const rapidjson::Value &value)
             m_l7Hosts.push_back((*itr).GetString());
         }
         m_l7HostsHasBeenSet = true;
+    }
+
+    if (value.HasMember("L4EnableMode") && !value["L4EnableMode"].IsNull())
+    {
+        if (!value["L4EnableMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginACLInfo.L4EnableMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_l4EnableMode = string(value["L4EnableMode"].GetString());
+        m_l4EnableModeHasBeenSet = true;
     }
 
     if (value.HasMember("L4ProxyIds") && !value["L4ProxyIds"].IsNull())
@@ -122,6 +144,14 @@ CoreInternalOutcome OriginACLInfo::Deserialize(const rapidjson::Value &value)
 void OriginACLInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_l7EnableModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "L7EnableMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_l7EnableMode.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_l7HostsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -133,6 +163,14 @@ void OriginACLInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_l4EnableModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "L4EnableMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_l4EnableMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_l4ProxyIdsHasBeenSet)
@@ -185,6 +223,22 @@ void OriginACLInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
 }
 
 
+string OriginACLInfo::GetL7EnableMode() const
+{
+    return m_l7EnableMode;
+}
+
+void OriginACLInfo::SetL7EnableMode(const string& _l7EnableMode)
+{
+    m_l7EnableMode = _l7EnableMode;
+    m_l7EnableModeHasBeenSet = true;
+}
+
+bool OriginACLInfo::L7EnableModeHasBeenSet() const
+{
+    return m_l7EnableModeHasBeenSet;
+}
+
 vector<string> OriginACLInfo::GetL7Hosts() const
 {
     return m_l7Hosts;
@@ -199,6 +253,22 @@ void OriginACLInfo::SetL7Hosts(const vector<string>& _l7Hosts)
 bool OriginACLInfo::L7HostsHasBeenSet() const
 {
     return m_l7HostsHasBeenSet;
+}
+
+string OriginACLInfo::GetL4EnableMode() const
+{
+    return m_l4EnableMode;
+}
+
+void OriginACLInfo::SetL4EnableMode(const string& _l4EnableMode)
+{
+    m_l4EnableMode = _l4EnableMode;
+    m_l4EnableModeHasBeenSet = true;
+}
+
+bool OriginACLInfo::L4EnableModeHasBeenSet() const
+{
+    return m_l4EnableModeHasBeenSet;
 }
 
 vector<string> OriginACLInfo::GetL4ProxyIds() const

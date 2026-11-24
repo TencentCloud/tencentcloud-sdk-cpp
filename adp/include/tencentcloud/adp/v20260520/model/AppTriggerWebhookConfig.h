@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/AppTriggerWebhookParamSchemaConfig.h>
+#include <tencentcloud/adp/v20260520/model/AppTriggerWebhookConfigExt.h>
 
 
 namespace TencentCloud
@@ -69,6 +70,31 @@ namespace TencentCloud
                     bool ParamSchemaConfigHasBeenSet() const;
 
                     /**
+                     * 获取Webhook 来源扩展配置。通用 Webhook 不传；工蜂/TAPD 传对应配置及 OAuth 凭证，GongfengConfig 与 TAPDConfig 互斥且须与 WebhookProvider 一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WebhookConfigExt Webhook 来源扩展配置。通用 Webhook 不传；工蜂/TAPD 传对应配置及 OAuth 凭证，GongfengConfig 与 TAPDConfig 互斥且须与 WebhookProvider 一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AppTriggerWebhookConfigExt GetWebhookConfigExt() const;
+
+                    /**
+                     * 设置Webhook 来源扩展配置。通用 Webhook 不传；工蜂/TAPD 传对应配置及 OAuth 凭证，GongfengConfig 与 TAPDConfig 互斥且须与 WebhookProvider 一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _webhookConfigExt Webhook 来源扩展配置。通用 Webhook 不传；工蜂/TAPD 传对应配置及 OAuth 凭证，GongfengConfig 与 TAPDConfig 互斥且须与 WebhookProvider 一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWebhookConfigExt(const AppTriggerWebhookConfigExt& _webhookConfigExt);
+
+                    /**
+                     * 判断参数 WebhookConfigExt 是否已赋值
+                     * @return WebhookConfigExt 是否已赋值
+                     * 
+                     */
+                    bool WebhookConfigExtHasBeenSet() const;
+
+                    /**
                      * 获取<p>webhook的key</p>
                      * @return WebhookKey <p>webhook的key</p>
                      * 
@@ -88,6 +114,27 @@ namespace TencentCloud
                      * 
                      */
                     bool WebhookKeyHasBeenSet() const;
+
+                    /**
+                     * 获取Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。
+                     * @return WebhookProvider Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。
+                     * 
+                     */
+                    int64_t GetWebhookProvider() const;
+
+                    /**
+                     * 设置Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。
+                     * @param _webhookProvider Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。
+                     * 
+                     */
+                    void SetWebhookProvider(const int64_t& _webhookProvider);
+
+                    /**
+                     * 判断参数 WebhookProvider 是否已赋值
+                     * @return WebhookProvider 是否已赋值
+                     * 
+                     */
+                    bool WebhookProviderHasBeenSet() const;
 
                     /**
                      * 获取<p>webhook的密钥</p>
@@ -140,10 +187,23 @@ namespace TencentCloud
                     bool m_paramSchemaConfigHasBeenSet;
 
                     /**
+                     * Webhook 来源扩展配置。通用 Webhook 不传；工蜂/TAPD 传对应配置及 OAuth 凭证，GongfengConfig 与 TAPDConfig 互斥且须与 WebhookProvider 一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AppTriggerWebhookConfigExt m_webhookConfigExt;
+                    bool m_webhookConfigExtHasBeenSet;
+
+                    /**
                      * <p>webhook的key</p>
                      */
                     std::string m_webhookKey;
                     bool m_webhookKeyHasBeenSet;
+
+                    /**
+                     * Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。
+                     */
+                    int64_t m_webhookProvider;
+                    bool m_webhookProviderHasBeenSet;
 
                     /**
                      * <p>webhook的密钥</p>

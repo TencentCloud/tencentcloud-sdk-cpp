@@ -22,6 +22,8 @@ using namespace std;
 
 EndpointDetail::EndpointDetail() :
     m_endpointIdHasBeenSet(false),
+    m_workspaceIdHasBeenSet(false),
+    m_originEndpointIdHasBeenSet(false),
     m_endpointNameHasBeenSet(false),
     m_modelNameHasBeenSet(false),
     m_modelIdHasBeenSet(false),
@@ -34,7 +36,8 @@ EndpointDetail::EndpointDetail() :
     m_tPMHasBeenSet(false),
     m_autoAdjustQuotaHasBeenSet(false),
     m_rPMHasBeenSet(false),
-    m_modelStatusHasBeenSet(false)
+    m_modelStatusHasBeenSet(false),
+    m_nightDiscountEnabledHasBeenSet(false)
 {
 }
 
@@ -51,6 +54,26 @@ CoreInternalOutcome EndpointDetail::Deserialize(const rapidjson::Value &value)
         }
         m_endpointId = string(value["EndpointId"].GetString());
         m_endpointIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkspaceId") && !value["WorkspaceId"].IsNull())
+    {
+        if (!value["WorkspaceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndpointDetail.WorkspaceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workspaceId = string(value["WorkspaceId"].GetString());
+        m_workspaceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginEndpointId") && !value["OriginEndpointId"].IsNull())
+    {
+        if (!value["OriginEndpointId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndpointDetail.OriginEndpointId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originEndpointId = string(value["OriginEndpointId"].GetString());
+        m_originEndpointIdHasBeenSet = true;
     }
 
     if (value.HasMember("EndpointName") && !value["EndpointName"].IsNull())
@@ -183,6 +206,16 @@ CoreInternalOutcome EndpointDetail::Deserialize(const rapidjson::Value &value)
         m_modelStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("NightDiscountEnabled") && !value["NightDiscountEnabled"].IsNull())
+    {
+        if (!value["NightDiscountEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndpointDetail.NightDiscountEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_nightDiscountEnabled = value["NightDiscountEnabled"].GetBool();
+        m_nightDiscountEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -196,6 +229,22 @@ void EndpointDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "EndpointId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endpointId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workspaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originEndpointIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginEndpointId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originEndpointId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endpointNameHasBeenSet)
@@ -302,6 +351,14 @@ void EndpointDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_modelStatus.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nightDiscountEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NightDiscountEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nightDiscountEnabled, allocator);
+    }
+
 }
 
 
@@ -319,6 +376,38 @@ void EndpointDetail::SetEndpointId(const string& _endpointId)
 bool EndpointDetail::EndpointIdHasBeenSet() const
 {
     return m_endpointIdHasBeenSet;
+}
+
+string EndpointDetail::GetWorkspaceId() const
+{
+    return m_workspaceId;
+}
+
+void EndpointDetail::SetWorkspaceId(const string& _workspaceId)
+{
+    m_workspaceId = _workspaceId;
+    m_workspaceIdHasBeenSet = true;
+}
+
+bool EndpointDetail::WorkspaceIdHasBeenSet() const
+{
+    return m_workspaceIdHasBeenSet;
+}
+
+string EndpointDetail::GetOriginEndpointId() const
+{
+    return m_originEndpointId;
+}
+
+void EndpointDetail::SetOriginEndpointId(const string& _originEndpointId)
+{
+    m_originEndpointId = _originEndpointId;
+    m_originEndpointIdHasBeenSet = true;
+}
+
+bool EndpointDetail::OriginEndpointIdHasBeenSet() const
+{
+    return m_originEndpointIdHasBeenSet;
 }
 
 string EndpointDetail::GetEndpointName() const
@@ -527,5 +616,21 @@ void EndpointDetail::SetModelStatus(const string& _modelStatus)
 bool EndpointDetail::ModelStatusHasBeenSet() const
 {
     return m_modelStatusHasBeenSet;
+}
+
+bool EndpointDetail::GetNightDiscountEnabled() const
+{
+    return m_nightDiscountEnabled;
+}
+
+void EndpointDetail::SetNightDiscountEnabled(const bool& _nightDiscountEnabled)
+{
+    m_nightDiscountEnabled = _nightDiscountEnabled;
+    m_nightDiscountEnabledHasBeenSet = true;
+}
+
+bool EndpointDetail::NightDiscountEnabledHasBeenSet() const
+{
+    return m_nightDiscountEnabledHasBeenSet;
 }
 

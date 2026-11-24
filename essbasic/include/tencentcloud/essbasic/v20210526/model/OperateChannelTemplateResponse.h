@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第三方应用平台的应用ID
-                     * @return AppId 第三方应用平台的应用ID
+                     * 获取<p>第三方应用平台的应用ID</p>
+                     * @return AppId <p>第三方应用平台的应用ID</p>
                      * 
                      */
                     std::string GetAppId() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取合同模板ID
-                     * @return TemplateId 合同模板ID
+                     * 获取<p>合同模板ID</p>
+                     * @return TemplateId <p>合同模板ID</p>
                      * 
                      */
                     std::string GetTemplateId() const;
@@ -73,18 +73,8 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取描述模板可见性更改的结果。
-<ul>
-<li>all-success: 全部成功</li>
-<li>part-success: 部分成功,失败的会在FailMessageList中展示</li>
-<li>fail:全部失败, 失败的会在FailMessageList中展示</li>
-</ul>
-                     * @return OperateResult 描述模板可见性更改的结果。
-<ul>
-<li>all-success: 全部成功</li>
-<li>part-success: 部分成功,失败的会在FailMessageList中展示</li>
-<li>fail:全部失败, 失败的会在FailMessageList中展示</li>
-</ul>
+                     * 获取<p>描述模板可见性更改的结果。</p><ul><li>all-success: 全部成功</li><li>part-success: 部分成功,失败的会在FailMessageList中展示</li><li>fail:全部失败, 失败的会在FailMessageList中展示</li></ul>
+                     * @return OperateResult <p>描述模板可见性更改的结果。</p><ul><li>all-success: 全部成功</li><li>part-success: 部分成功,失败的会在FailMessageList中展示</li><li>fail:全部失败, 失败的会在FailMessageList中展示</li></ul>
                      * 
                      */
                     std::string GetOperateResult() const;
@@ -97,12 +87,8 @@ namespace TencentCloud
                     bool OperateResultHasBeenSet() const;
 
                     /**
-                     * 获取模板可见范围:
-**all**: 所有本第三方应用合作企业可见
-**part**: 指定的本第三方应用合作企业
-                     * @return AuthTag 模板可见范围:
-**all**: 所有本第三方应用合作企业可见
-**part**: 指定的本第三方应用合作企业
+                     * 获取<p>模板可见范围:<br><strong>all</strong>: 所有本第三方应用合作企业可见<br><strong>part</strong>: 指定的本第三方应用合作企业</p>
+                     * @return AuthTag <p>模板可见范围:<br><strong>all</strong>: 所有本第三方应用合作企业可见<br><strong>part</strong>: 指定的本第三方应用合作企业</p>
                      * 
                      */
                     std::string GetAuthTag() const;
@@ -115,8 +101,8 @@ namespace TencentCloud
                     bool AuthTagHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业标识列表，仅在select 模式下返回
-                     * @return ProxyOrganizationOpenIds 第三方平台子客企业标识列表，仅在select 模式下返回
+                     * 获取<p>第三方平台子客企业标识列表，仅在select 模式下返回</p>
+                     * @return ProxyOrganizationOpenIds <p>第三方平台子客企业标识列表，仅在select 模式下返回</p>
                      * 
                      */
                     std::vector<std::string> GetProxyOrganizationOpenIds() const;
@@ -129,8 +115,8 @@ namespace TencentCloud
                     bool ProxyOrganizationOpenIdsHasBeenSet() const;
 
                     /**
-                     * 获取操作失败信息数组
-                     * @return FailMessageList 操作失败信息数组
+                     * 获取<p>操作失败信息数组</p>
+                     * @return FailMessageList <p>操作失败信息数组</p>
                      * 
                      */
                     std::vector<AuthFailMessage> GetFailMessageList() const;
@@ -143,8 +129,8 @@ namespace TencentCloud
                     bool FailMessageListHasBeenSet() const;
 
                     /**
-                     * 获取授权的平台子企业数量，OperateType 为select 时返回。
-                     * @return Total 授权的平台子企业数量，OperateType 为select 时返回。
+                     * 获取<p>授权的平台子企业数量，OperateType 为select 时返回。</p>
+                     * @return Total <p>授权的平台子企业数量，OperateType 为select 时返回。</p>
                      * 
                      */
                     int64_t GetTotal() const;
@@ -159,50 +145,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 第三方应用平台的应用ID
+                     * <p>第三方应用平台的应用ID</p>
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 合同模板ID
+                     * <p>合同模板ID</p>
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 描述模板可见性更改的结果。
-<ul>
-<li>all-success: 全部成功</li>
-<li>part-success: 部分成功,失败的会在FailMessageList中展示</li>
-<li>fail:全部失败, 失败的会在FailMessageList中展示</li>
-</ul>
+                     * <p>描述模板可见性更改的结果。</p><ul><li>all-success: 全部成功</li><li>part-success: 部分成功,失败的会在FailMessageList中展示</li><li>fail:全部失败, 失败的会在FailMessageList中展示</li></ul>
                      */
                     std::string m_operateResult;
                     bool m_operateResultHasBeenSet;
 
                     /**
-                     * 模板可见范围:
-**all**: 所有本第三方应用合作企业可见
-**part**: 指定的本第三方应用合作企业
+                     * <p>模板可见范围:<br><strong>all</strong>: 所有本第三方应用合作企业可见<br><strong>part</strong>: 指定的本第三方应用合作企业</p>
                      */
                     std::string m_authTag;
                     bool m_authTagHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业标识列表，仅在select 模式下返回
+                     * <p>第三方平台子客企业标识列表，仅在select 模式下返回</p>
                      */
                     std::vector<std::string> m_proxyOrganizationOpenIds;
                     bool m_proxyOrganizationOpenIdsHasBeenSet;
 
                     /**
-                     * 操作失败信息数组
+                     * <p>操作失败信息数组</p>
                      */
                     std::vector<AuthFailMessage> m_failMessageList;
                     bool m_failMessageListHasBeenSet;
 
                     /**
-                     * 授权的平台子企业数量，OperateType 为select 时返回。
+                     * <p>授权的平台子企业数量，OperateType 为select 时返回。</p>
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

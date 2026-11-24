@@ -4090,6 +4090,56 @@ TioneClient::ModifyServiceGroupWeightsOutcomeCallable TioneClient::ModifyService
     return prom->get_future();
 }
 
+TioneClient::ModifyTrainingTaskSchedulingPolicyOutcome TioneClient::ModifyTrainingTaskSchedulingPolicy(const ModifyTrainingTaskSchedulingPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTrainingTaskSchedulingPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTrainingTaskSchedulingPolicyResponse rsp = ModifyTrainingTaskSchedulingPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTrainingTaskSchedulingPolicyOutcome(rsp);
+        else
+            return ModifyTrainingTaskSchedulingPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTrainingTaskSchedulingPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyTrainingTaskSchedulingPolicyAsync(const ModifyTrainingTaskSchedulingPolicyRequest& request, const ModifyTrainingTaskSchedulingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyTrainingTaskSchedulingPolicyRequest&;
+    using Resp = ModifyTrainingTaskSchedulingPolicyResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyTrainingTaskSchedulingPolicy", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TioneClient::ModifyTrainingTaskSchedulingPolicyOutcomeCallable TioneClient::ModifyTrainingTaskSchedulingPolicyCallable(const ModifyTrainingTaskSchedulingPolicyRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyTrainingTaskSchedulingPolicyOutcome>>();
+    ModifyTrainingTaskSchedulingPolicyAsync(
+    request,
+    [prom](
+        const TioneClient*,
+        const ModifyTrainingTaskSchedulingPolicyRequest&,
+        ModifyTrainingTaskSchedulingPolicyOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TioneClient::ModifyUserGrantOutcome TioneClient::ModifyUserGrant(const ModifyUserGrantRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUserGrant");

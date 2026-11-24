@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 解析失败的页数
+                * 解析失败的页码
                 */
                 class ReconstructDocumentFailedPage : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>解析失败页数。</p>
-                     * @return PageNumber <p>解析失败页数。</p>
+                     * 获取<p>解析失败页码。</p>
+                     * @return PageNumber <p>解析失败页码。</p>
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置<p>解析失败页数。</p>
-                     * @param _pageNumber <p>解析失败页数。</p>
+                     * 设置<p>解析失败页码。</p>
+                     * @param _pageNumber <p>解析失败页码。</p>
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>解析失败页数。</p>
+                     * <p>解析失败页码。</p>
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;

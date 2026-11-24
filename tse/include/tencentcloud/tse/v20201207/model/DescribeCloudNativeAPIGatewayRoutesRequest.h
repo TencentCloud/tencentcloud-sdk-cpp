@@ -108,6 +108,27 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
+                     * 获取<p>按服务 ID 查询路由。</p>
+                     * @return ServiceId <p>按服务 ID 查询路由。</p>
+                     * 
+                     */
+                    std::string GetServiceId() const;
+
+                    /**
+                     * 设置<p>按服务 ID 查询路由。</p>
+                     * @param _serviceId <p>按服务 ID 查询路由。</p>
+                     * 
+                     */
+                    void SetServiceId(const std::string& _serviceId);
+
+                    /**
+                     * 判断参数 ServiceId 是否已赋值
+                     * @return ServiceId 是否已赋值
+                     * 
+                     */
+                    bool ServiceIdHasBeenSet() const;
+
+                    /**
                      * 获取<p>服务的名字，精确匹配</p>
                      * @return ServiceName <p>服务的名字，精确匹配</p>
                      * 
@@ -315,6 +336,12 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * <p>按服务 ID 查询路由。</p>
+                     */
+                    std::string m_serviceId;
+                    bool m_serviceIdHasBeenSet;
 
                     /**
                      * <p>服务的名字，精确匹配</p>

@@ -36,7 +36,8 @@ CreateTriggerWorkflowRequest::CreateTriggerWorkflowRequest() :
     m_triggerWorkflowRunConfigurationHasBeenSet(false),
     m_schedulerStatusHasBeenSet(false),
     m_triggerModeHasBeenSet(false),
-    m_executeUserUinHasBeenSet(false)
+    m_executeUserUinHasBeenSet(false),
+    m_workflowLabelsHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,21 @@ string CreateTriggerWorkflowRequest::ToJsonString() const
         string key = "ExecuteUserUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_executeUserUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowLabels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_workflowLabels.begin(); itr != m_workflowLabels.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -411,6 +427,22 @@ void CreateTriggerWorkflowRequest::SetExecuteUserUin(const string& _executeUserU
 bool CreateTriggerWorkflowRequest::ExecuteUserUinHasBeenSet() const
 {
     return m_executeUserUinHasBeenSet;
+}
+
+vector<WorkflowLabel> CreateTriggerWorkflowRequest::GetWorkflowLabels() const
+{
+    return m_workflowLabels;
+}
+
+void CreateTriggerWorkflowRequest::SetWorkflowLabels(const vector<WorkflowLabel>& _workflowLabels)
+{
+    m_workflowLabels = _workflowLabels;
+    m_workflowLabelsHasBeenSet = true;
+}
+
+bool CreateTriggerWorkflowRequest::WorkflowLabelsHasBeenSet() const
+{
+    return m_workflowLabelsHasBeenSet;
 }
 
 

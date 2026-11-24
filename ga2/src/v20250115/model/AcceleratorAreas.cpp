@@ -22,6 +22,7 @@ using namespace std;
 
 AcceleratorAreas::AcceleratorAreas() :
     m_accelerateRegionHasBeenSet(false),
+    m_accelerateRegionNameHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_ispTypeHasBeenSet(false),
     m_ipVersionHasBeenSet(false),
@@ -44,6 +45,16 @@ CoreInternalOutcome AcceleratorAreas::Deserialize(const rapidjson::Value &value)
         }
         m_accelerateRegion = string(value["AccelerateRegion"].GetString());
         m_accelerateRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccelerateRegionName") && !value["AccelerateRegionName"].IsNull())
+    {
+        if (!value["AccelerateRegionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AcceleratorAreas.AccelerateRegionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accelerateRegionName = string(value["AccelerateRegionName"].GetString());
+        m_accelerateRegionNameHasBeenSet = true;
     }
 
     if (value.HasMember("Bandwidth") && !value["Bandwidth"].IsNull())
@@ -134,6 +145,14 @@ void AcceleratorAreas::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_accelerateRegion.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_accelerateRegionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccelerateRegionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accelerateRegionName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_bandwidthHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -211,6 +230,22 @@ void AcceleratorAreas::SetAccelerateRegion(const string& _accelerateRegion)
 bool AcceleratorAreas::AccelerateRegionHasBeenSet() const
 {
     return m_accelerateRegionHasBeenSet;
+}
+
+string AcceleratorAreas::GetAccelerateRegionName() const
+{
+    return m_accelerateRegionName;
+}
+
+void AcceleratorAreas::SetAccelerateRegionName(const string& _accelerateRegionName)
+{
+    m_accelerateRegionName = _accelerateRegionName;
+    m_accelerateRegionNameHasBeenSet = true;
+}
+
+bool AcceleratorAreas::AccelerateRegionNameHasBeenSet() const
+{
+    return m_accelerateRegionNameHasBeenSet;
 }
 
 uint64_t AcceleratorAreas::GetBandwidth() const

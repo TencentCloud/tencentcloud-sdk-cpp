@@ -185,6 +185,8 @@
 #include <tencentcloud/tione/v20211111/model/ModifyRoleUserGrantResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyTrainingTaskSchedulingPolicyRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyTrainingTaskSchedulingPolicyResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyUserGrantRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyUserGrantResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyWorkspaceMembersRequest.h>
@@ -464,6 +466,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyServiceGroupWeightsResponse> ModifyServiceGroupWeightsOutcome;
                 typedef std::future<ModifyServiceGroupWeightsOutcome> ModifyServiceGroupWeightsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyServiceGroupWeightsRequest&, ModifyServiceGroupWeightsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceGroupWeightsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTrainingTaskSchedulingPolicyResponse> ModifyTrainingTaskSchedulingPolicyOutcome;
+                typedef std::future<ModifyTrainingTaskSchedulingPolicyOutcome> ModifyTrainingTaskSchedulingPolicyOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyTrainingTaskSchedulingPolicyRequest&, ModifyTrainingTaskSchedulingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTrainingTaskSchedulingPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserGrantResponse> ModifyUserGrantOutcome;
                 typedef std::future<ModifyUserGrantOutcome> ModifyUserGrantOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyUserGrantRequest&, ModifyUserGrantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserGrantAsyncHandler;
@@ -1484,6 +1489,15 @@ X-TC-ProjectId: 123456
                 ModifyServiceGroupWeightsOutcome ModifyServiceGroupWeights(const Model::ModifyServiceGroupWeightsRequest &request);
                 void ModifyServiceGroupWeightsAsync(const Model::ModifyServiceGroupWeightsRequest& request, const ModifyServiceGroupWeightsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyServiceGroupWeightsOutcomeCallable ModifyServiceGroupWeightsCallable(const Model::ModifyServiceGroupWeightsRequest& request);
+
+                /**
+                 *更新训练任务的调度策略
+                 * @param req ModifyTrainingTaskSchedulingPolicyRequest
+                 * @return ModifyTrainingTaskSchedulingPolicyOutcome
+                 */
+                ModifyTrainingTaskSchedulingPolicyOutcome ModifyTrainingTaskSchedulingPolicy(const Model::ModifyTrainingTaskSchedulingPolicyRequest &request);
+                void ModifyTrainingTaskSchedulingPolicyAsync(const Model::ModifyTrainingTaskSchedulingPolicyRequest& request, const ModifyTrainingTaskSchedulingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTrainingTaskSchedulingPolicyOutcomeCallable ModifyTrainingTaskSchedulingPolicyCallable(const Model::ModifyTrainingTaskSchedulingPolicyRequest& request);
 
                 /**
                  *更新用户授权

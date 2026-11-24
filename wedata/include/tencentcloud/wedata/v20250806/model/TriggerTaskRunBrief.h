@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20250806/model/TriggerTableUpdateRecord.h>
 
 
 namespace TencentCloud
@@ -1546,6 +1547,31 @@ namespace TencentCloud
                      */
                     bool PrivilegeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>所属工作流运行中本次触发涉及的表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerTableUpdateRecords <p>所属工作流运行中本次触发涉及的表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TriggerTableUpdateRecord> GetTriggerTableUpdateRecords() const;
+
+                    /**
+                     * 设置<p>所属工作流运行中本次触发涉及的表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _triggerTableUpdateRecords <p>所属工作流运行中本次触发涉及的表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTriggerTableUpdateRecords(const std::vector<TriggerTableUpdateRecord>& _triggerTableUpdateRecords);
+
+                    /**
+                     * 判断参数 TriggerTableUpdateRecords 是否已赋值
+                     * @return TriggerTableUpdateRecords 是否已赋值
+                     * 
+                     */
+                    bool TriggerTableUpdateRecordsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1967,6 +1993,13 @@ namespace TencentCloud
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
+
+                    /**
+                     * <p>所属工作流运行中本次触发涉及的表</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TriggerTableUpdateRecord> m_triggerTableUpdateRecords;
+                    bool m_triggerTableUpdateRecordsHasBeenSet;
 
                 };
             }

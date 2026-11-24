@@ -33,7 +33,8 @@ AppTriggerSummary::AppTriggerSummary() :
     m_triggerStatusHasBeenSet(false),
     m_triggerTypeHasBeenSet(false),
     m_unreadRunLogCountHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_webhookProviderHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,16 @@ CoreInternalOutcome AppTriggerSummary::Deserialize(const rapidjson::Value &value
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("WebhookProvider") && !value["WebhookProvider"].IsNull())
+    {
+        if (!value["WebhookProvider"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTriggerSummary.WebhookProvider` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_webhookProvider = value["WebhookProvider"].GetInt64();
+        m_webhookProviderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +300,14 @@ void AppTriggerSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webhookProviderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebhookProvider";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webhookProvider, allocator);
     }
 
 }
@@ -500,5 +519,21 @@ void AppTriggerSummary::SetUserId(const string& _userId)
 bool AppTriggerSummary::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+int64_t AppTriggerSummary::GetWebhookProvider() const
+{
+    return m_webhookProvider;
+}
+
+void AppTriggerSummary::SetWebhookProvider(const int64_t& _webhookProvider)
+{
+    m_webhookProvider = _webhookProvider;
+    m_webhookProviderHasBeenSet = true;
+}
+
+bool AppTriggerSummary::WebhookProviderHasBeenSet() const
+{
+    return m_webhookProviderHasBeenSet;
 }
 

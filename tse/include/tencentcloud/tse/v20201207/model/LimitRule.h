@@ -24,10 +24,10 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tse/v20201207/model/AccurateQpsThreshold.h>
 #include <tencentcloud/tse/v20201207/model/RuleFilter.h>
 #include <tencentcloud/tse/v20201207/model/KeyValue.h>
 #include <tencentcloud/tse/v20201207/model/QpsThreshold.h>
-#include <tencentcloud/tse/v20201207/model/AccurateQpsThreshold.h>
 
 
 namespace TencentCloud
@@ -49,6 +49,27 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取精确限流阈值
+                     * @return AccurateQpsThresholds 精确限流阈值
+                     * 
+                     */
+                    std::vector<AccurateQpsThreshold> GetAccurateQpsThresholds() const;
+
+                    /**
+                     * 设置精确限流阈值
+                     * @param _accurateQpsThresholds 精确限流阈值
+                     * 
+                     */
+                    void SetAccurateQpsThresholds(const std::vector<AccurateQpsThreshold>& _accurateQpsThresholds);
+
+                    /**
+                     * 判断参数 AccurateQpsThresholds 是否已赋值
+                     * @return AccurateQpsThresholds 是否已赋值
+                     * 
+                     */
+                    bool AccurateQpsThresholdsHasBeenSet() const;
 
                     /**
                      * 获取请求匹配条件
@@ -114,27 +135,33 @@ namespace TencentCloud
                     bool QpsThresholdsHasBeenSet() const;
 
                     /**
-                     * 获取精确限流阈值
-                     * @return AccurateQpsThresholds 精确限流阈值
+                     * 获取是否启用该条参数限流规则。不传或 true 表示启用；false 表示禁用，配置保留但不对流量生效。与 LimitDetail.Enabled（整个限流插件开关）相互独立。
+                     * @return Enabled 是否启用该条参数限流规则。不传或 true 表示启用；false 表示禁用，配置保留但不对流量生效。与 LimitDetail.Enabled（整个限流插件开关）相互独立。
                      * 
                      */
-                    std::vector<AccurateQpsThreshold> GetAccurateQpsThresholds() const;
+                    bool GetEnabled() const;
 
                     /**
-                     * 设置精确限流阈值
-                     * @param _accurateQpsThresholds 精确限流阈值
+                     * 设置是否启用该条参数限流规则。不传或 true 表示启用；false 表示禁用，配置保留但不对流量生效。与 LimitDetail.Enabled（整个限流插件开关）相互独立。
+                     * @param _enabled 是否启用该条参数限流规则。不传或 true 表示启用；false 表示禁用，配置保留但不对流量生效。与 LimitDetail.Enabled（整个限流插件开关）相互独立。
                      * 
                      */
-                    void SetAccurateQpsThresholds(const std::vector<AccurateQpsThreshold>& _accurateQpsThresholds);
+                    void SetEnabled(const bool& _enabled);
 
                     /**
-                     * 判断参数 AccurateQpsThresholds 是否已赋值
-                     * @return AccurateQpsThresholds 是否已赋值
+                     * 判断参数 Enabled 是否已赋值
+                     * @return Enabled 是否已赋值
                      * 
                      */
-                    bool AccurateQpsThresholdsHasBeenSet() const;
+                    bool EnabledHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 精确限流阈值
+                     */
+                    std::vector<AccurateQpsThreshold> m_accurateQpsThresholds;
+                    bool m_accurateQpsThresholdsHasBeenSet;
 
                     /**
                      * 请求匹配条件
@@ -155,10 +182,10 @@ namespace TencentCloud
                     bool m_qpsThresholdsHasBeenSet;
 
                     /**
-                     * 精确限流阈值
+                     * 是否启用该条参数限流规则。不传或 true 表示启用；false 表示禁用，配置保留但不对流量生效。与 LimitDetail.Enabled（整个限流插件开关）相互独立。
                      */
-                    std::vector<AccurateQpsThreshold> m_accurateQpsThresholds;
-                    bool m_accurateQpsThresholdsHasBeenSet;
+                    bool m_enabled;
+                    bool m_enabledHasBeenSet;
 
                 };
             }

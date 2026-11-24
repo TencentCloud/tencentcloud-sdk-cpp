@@ -51,35 +51,41 @@ CoreInternalOutcome WebSecurity::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("HostPolicy") && !value["HostPolicy"].IsNull())
     {
-        if (!value["HostPolicy"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `WebSecurity.HostPolicy` is not object type").SetRequestId(requestId));
-        }
+        if (!value["HostPolicy"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WebSecurity.HostPolicy` is not array type"));
 
-        CoreInternalOutcome outcome = m_hostPolicy.Deserialize(value["HostPolicy"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = value["HostPolicy"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            HostPolicy item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_hostPolicy.push_back(item);
         }
-
         m_hostPolicyHasBeenSet = true;
     }
 
     if (value.HasMember("Templates") && !value["Templates"].IsNull())
     {
-        if (!value["Templates"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `WebSecurity.Templates` is not object type").SetRequestId(requestId));
-        }
+        if (!value["Templates"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WebSecurity.Templates` is not array type"));
 
-        CoreInternalOutcome outcome = m_templates.Deserialize(value["Templates"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = value["Templates"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            WebSecurityTemplates item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_templates.push_back(item);
         }
-
         m_templatesHasBeenSet = true;
     }
 
@@ -104,8 +110,14 @@ void WebSecurity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HostPolicy";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_hostPolicy.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hostPolicy.begin(); itr != m_hostPolicy.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_templatesHasBeenSet)
@@ -113,8 +125,14 @@ void WebSecurity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Templates";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_templates.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_templates.begin(); itr != m_templates.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -136,12 +154,12 @@ bool WebSecurity::ZoneDefaultPolicyHasBeenSet() const
     return m_zoneDefaultPolicyHasBeenSet;
 }
 
-HostPolicy WebSecurity::GetHostPolicy() const
+vector<HostPolicy> WebSecurity::GetHostPolicy() const
 {
     return m_hostPolicy;
 }
 
-void WebSecurity::SetHostPolicy(const HostPolicy& _hostPolicy)
+void WebSecurity::SetHostPolicy(const vector<HostPolicy>& _hostPolicy)
 {
     m_hostPolicy = _hostPolicy;
     m_hostPolicyHasBeenSet = true;
@@ -152,12 +170,12 @@ bool WebSecurity::HostPolicyHasBeenSet() const
     return m_hostPolicyHasBeenSet;
 }
 
-WebSecurityTemplates WebSecurity::GetTemplates() const
+vector<WebSecurityTemplates> WebSecurity::GetTemplates() const
 {
     return m_templates;
 }
 
-void WebSecurity::SetTemplates(const WebSecurityTemplates& _templates)
+void WebSecurity::SetTemplates(const vector<WebSecurityTemplates>& _templates)
 {
     m_templates = _templates;
     m_templatesHasBeenSet = true;

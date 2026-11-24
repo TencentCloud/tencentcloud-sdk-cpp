@@ -328,6 +328,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/DeleteGroupResponse.h
   include/tencentcloud/organization/v20210331/model/UpdateOrganizationMembersPolicyResponse.h
   include/tencentcloud/organization/v20210331/model/RoleConfiguration.h
+  include/tencentcloud/organization/v20210331/model/MemberPermissionOption.h
   include/tencentcloud/organization/v20210331/model/JoinedGroups.h
   include/tencentcloud/organization/v20210331/model/CreateRoleConfigurationResponse.h
   include/tencentcloud/organization/v20210331/model/GroupMembers.h
@@ -715,6 +716,7 @@ set(organization_src
   src/v20210331/model/DeleteGroupResponse.cpp
   src/v20210331/model/UpdateOrganizationMembersPolicyResponse.cpp
   src/v20210331/model/RoleConfiguration.cpp
+  src/v20210331/model/MemberPermissionOption.cpp
   src/v20210331/model/JoinedGroups.cpp
   src/v20210331/model/CreateRoleConfigurationResponse.cpp
   src/v20210331/model/GroupMembers.cpp

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/adp/v20260520/model/AppTriggerWebhookCredential.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>工蜂/TAPD 触发器绑定的凭证；其他触发器不返回</p>
+                     * @return Credential <p>工蜂/TAPD 触发器绑定的凭证；其他触发器不返回</p>
+                     * 
+                     */
+                    AppTriggerWebhookCredential GetCredential() const;
+
+                    /**
+                     * 判断参数 Credential 是否已赋值
+                     * @return Credential 是否已赋值
+                     * 
+                     */
+                    bool CredentialHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>工蜂/TAPD 触发器绑定的凭证；其他触发器不返回</p>
+                     */
+                    AppTriggerWebhookCredential m_credential;
+                    bool m_credentialHasBeenSet;
 
                 };
             }

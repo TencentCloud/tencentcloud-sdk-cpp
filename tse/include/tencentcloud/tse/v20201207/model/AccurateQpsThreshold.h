@@ -47,27 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取qps阈值控制维度,包含:second、minute、hour、day、month、year
-                     * @return Unit qps阈值控制维度,包含:second、minute、hour、day、month、year
-                     * 
-                     */
-                    std::string GetUnit() const;
-
-                    /**
-                     * 设置qps阈值控制维度,包含:second、minute、hour、day、month、year
-                     * @param _unit qps阈值控制维度,包含:second、minute、hour、day、month、year
-                     * 
-                     */
-                    void SetUnit(const std::string& _unit);
-
-                    /**
-                     * 判断参数 Unit 是否已赋值
-                     * @return Unit 是否已赋值
-                     * 
-                     */
-                    bool UnitHasBeenSet() const;
-
-                    /**
                      * 获取全局配置ID
                      * @return GlobalConfigId 全局配置ID
                      * 
@@ -88,19 +67,40 @@ namespace TencentCloud
                      */
                     bool GlobalConfigIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取qps阈值控制维度,包含:second、minute、hour、day、month、year
+                     * @return Unit qps阈值控制维度,包含:second、minute、hour、day、month、year
+                     * 
+                     */
+                    std::string GetUnit() const;
 
                     /**
-                     * qps阈值控制维度,包含:second、minute、hour、day、month、year
+                     * 设置qps阈值控制维度,包含:second、minute、hour、day、month、year
+                     * @param _unit qps阈值控制维度,包含:second、minute、hour、day、month、year
+                     * 
                      */
-                    std::string m_unit;
-                    bool m_unitHasBeenSet;
+                    void SetUnit(const std::string& _unit);
+
+                    /**
+                     * 判断参数 Unit 是否已赋值
+                     * @return Unit 是否已赋值
+                     * 
+                     */
+                    bool UnitHasBeenSet() const;
+
+                private:
 
                     /**
                      * 全局配置ID
                      */
                     std::string m_globalConfigId;
                     bool m_globalConfigIdHasBeenSet;
+
+                    /**
+                     * qps阈值控制维度,包含:second、minute、hour、day、month、year
+                     */
+                    std::string m_unit;
+                    bool m_unitHasBeenSet;
 
                 };
             }

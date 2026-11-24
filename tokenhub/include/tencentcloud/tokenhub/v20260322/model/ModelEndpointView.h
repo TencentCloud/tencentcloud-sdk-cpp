@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tokenhub/v20260322/model/ModelImage.h>
 
 
 namespace TencentCloud
@@ -194,6 +195,27 @@ namespace TencentCloud
                     bool ModelStatusHasBeenSet() const;
 
                     /**
+                     * 获取<p>模型计费单位（模型维度属性，区别于计费方式 ChargeType）。取值：TOKEN（词元）、COUNT（次）、CREDIT（积分）、PICTURE（张）。未激活时为空。</p>
+                     * @return ModelChargeUnit <p>模型计费单位（模型维度属性，区别于计费方式 ChargeType）。取值：TOKEN（词元）、COUNT（次）、CREDIT（积分）、PICTURE（张）。未激活时为空。</p>
+                     * 
+                     */
+                    std::string GetModelChargeUnit() const;
+
+                    /**
+                     * 设置<p>模型计费单位（模型维度属性，区别于计费方式 ChargeType）。取值：TOKEN（词元）、COUNT（次）、CREDIT（积分）、PICTURE（张）。未激活时为空。</p>
+                     * @param _modelChargeUnit <p>模型计费单位（模型维度属性，区别于计费方式 ChargeType）。取值：TOKEN（词元）、COUNT（次）、CREDIT（积分）、PICTURE（张）。未激活时为空。</p>
+                     * 
+                     */
+                    void SetModelChargeUnit(const std::string& _modelChargeUnit);
+
+                    /**
+                     * 判断参数 ModelChargeUnit 是否已赋值
+                     * @return ModelChargeUnit 是否已赋值
+                     * 
+                     */
+                    bool ModelChargeUnitHasBeenSet() const;
+
+                    /**
                      * 获取<p>服务类型。固定为 TEXT_GENERATION（文本生成）。</p>
                      * @return ServiceType <p>服务类型。固定为 TEXT_GENERATION（文本生成）。</p>
                      * 
@@ -340,6 +362,90 @@ namespace TencentCloud
                      */
                     bool TPMHasBeenSet() const;
 
+                    /**
+                     * 获取<p>模型图标。</p>
+                     * @return ModelImage <p>模型图标。</p>
+                     * 
+                     */
+                    ModelImage GetModelImage() const;
+
+                    /**
+                     * 设置<p>模型图标。</p>
+                     * @param _modelImage <p>模型图标。</p>
+                     * 
+                     */
+                    void SetModelImage(const ModelImage& _modelImage);
+
+                    /**
+                     * 判断参数 ModelImage 是否已赋值
+                     * @return ModelImage 是否已赋值
+                     * 
+                     */
+                    bool ModelImageHasBeenSet() const;
+
+                    /**
+                     * 获取<p>模型下线时间，Status=pre-offline 时，会配置模型下线时间</p>
+                     * @return OfflineAt <p>模型下线时间，Status=pre-offline 时，会配置模型下线时间</p>
+                     * 
+                     */
+                    std::string GetOfflineAt() const;
+
+                    /**
+                     * 设置<p>模型下线时间，Status=pre-offline 时，会配置模型下线时间</p>
+                     * @param _offlineAt <p>模型下线时间，Status=pre-offline 时，会配置模型下线时间</p>
+                     * 
+                     */
+                    void SetOfflineAt(const std::string& _offlineAt);
+
+                    /**
+                     * 判断参数 OfflineAt 是否已赋值
+                     * @return OfflineAt 是否已赋值
+                     * 
+                     */
+                    bool OfflineAtHasBeenSet() const;
+
+                    /**
+                     * 获取<p>停止新购时间</p>
+                     * @return DiscontinuedAt <p>停止新购时间</p>
+                     * 
+                     */
+                    std::string GetDiscontinuedAt() const;
+
+                    /**
+                     * 设置<p>停止新购时间</p>
+                     * @param _discontinuedAt <p>停止新购时间</p>
+                     * 
+                     */
+                    void SetDiscontinuedAt(const std::string& _discontinuedAt);
+
+                    /**
+                     * 判断参数 DiscontinuedAt 是否已赋值
+                     * @return DiscontinuedAt 是否已赋值
+                     * 
+                     */
+                    bool DiscontinuedAtHasBeenSet() const;
+
+                    /**
+                     * 获取<p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>
+                     * @return NightDiscountEnabled <p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>
+                     * 
+                     */
+                    bool GetNightDiscountEnabled() const;
+
+                    /**
+                     * 设置<p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>
+                     * @param _nightDiscountEnabled <p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>
+                     * 
+                     */
+                    void SetNightDiscountEnabled(const bool& _nightDiscountEnabled);
+
+                    /**
+                     * 判断参数 NightDiscountEnabled 是否已赋值
+                     * @return NightDiscountEnabled 是否已赋值
+                     * 
+                     */
+                    bool NightDiscountEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -385,6 +491,12 @@ namespace TencentCloud
                     bool m_modelStatusHasBeenSet;
 
                     /**
+                     * <p>模型计费单位（模型维度属性，区别于计费方式 ChargeType）。取值：TOKEN（词元）、COUNT（次）、CREDIT（积分）、PICTURE（张）。未激活时为空。</p>
+                     */
+                    std::string m_modelChargeUnit;
+                    bool m_modelChargeUnitHasBeenSet;
+
+                    /**
                      * <p>服务类型。固定为 TEXT_GENERATION（文本生成）。</p>
                      */
                     std::string m_serviceType;
@@ -425,6 +537,30 @@ namespace TencentCloud
                      */
                     int64_t m_tPM;
                     bool m_tPMHasBeenSet;
+
+                    /**
+                     * <p>模型图标。</p>
+                     */
+                    ModelImage m_modelImage;
+                    bool m_modelImageHasBeenSet;
+
+                    /**
+                     * <p>模型下线时间，Status=pre-offline 时，会配置模型下线时间</p>
+                     */
+                    std::string m_offlineAt;
+                    bool m_offlineAtHasBeenSet;
+
+                    /**
+                     * <p>停止新购时间</p>
+                     */
+                    std::string m_discontinuedAt;
+                    bool m_discontinuedAtHasBeenSet;
+
+                    /**
+                     * <p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>
+                     */
+                    bool m_nightDiscountEnabled;
+                    bool m_nightDiscountEnabledHasBeenSet;
 
                 };
             }

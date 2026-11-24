@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
-ModifyAppTriggerResponse::ModifyAppTriggerResponse()
+ModifyAppTriggerResponse::ModifyAppTriggerResponse() :
+    m_credentialHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome ModifyAppTriggerResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Credential") && !rsp["Credential"].IsNull())
+    {
+        if (!rsp["Credential"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Credential` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_credential.Deserialize(rsp["Credential"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_credentialHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string ModifyAppTriggerResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_credentialHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Credential";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_credential.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string ModifyAppTriggerResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+AppTriggerWebhookCredential ModifyAppTriggerResponse::GetCredential() const
+{
+    return m_credential;
+}
+
+bool ModifyAppTriggerResponse::CredentialHasBeenSet() const
+{
+    return m_credentialHasBeenSet;
+}
 
 

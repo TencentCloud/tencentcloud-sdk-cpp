@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总记录数
-                     * @return TotalCount 总记录数
+                     * 获取<p>总记录数</p>
+                     * @return TotalCount <p>总记录数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取命令列表
-                     * @return Commands 命令列表
+                     * 获取<p>命令列表</p>
+                     * @return Commands <p>命令列表</p>
                      * 
                      */
                     std::vector<SearchCommandResult> GetCommands() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总记录数
+                     * <p>总记录数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 命令列表
+                     * <p>命令列表</p>
                      */
                     std::vector<SearchCommandResult> m_commands;
                     bool m_commandsHasBeenSet;

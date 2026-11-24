@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool SaveModerationFileHasBeenSet() const;
 
                     /**
-                     * 获取<p>是否回调所有内容理解结果:0 默认回调所有结果 1 仅回调命中结果</p>
-                     * @return CallbackAllResults <p>是否回调所有内容理解结果:0 默认回调所有结果 1 仅回调命中结果</p>
+                     * 获取<p>是否回调所有内容理解结果: 0 默认回调所有结果 1 仅回调命中结果</p>
+                     * @return CallbackAllResults <p>是否回调所有内容理解结果: 0 默认回调所有结果 1 仅回调命中结果</p>
                      * 
                      */
                     uint64_t GetCallbackAllResults() const;
 
                     /**
-                     * 设置<p>是否回调所有内容理解结果:0 默认回调所有结果 1 仅回调命中结果</p>
-                     * @param _callbackAllResults <p>是否回调所有内容理解结果:0 默认回调所有结果 1 仅回调命中结果</p>
+                     * 设置<p>是否回调所有内容理解结果: 0 默认回调所有结果 1 仅回调命中结果</p>
+                     * @param _callbackAllResults <p>是否回调所有内容理解结果: 0 默认回调所有结果 1 仅回调命中结果</p>
                      * 
                      */
                     void SetCallbackAllResults(const uint64_t& _callbackAllResults);
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_saveModerationFileHasBeenSet;
 
                     /**
-                     * <p>是否回调所有内容理解结果:0 默认回调所有结果 1 仅回调命中结果</p>
+                     * <p>是否回调所有内容理解结果: 0 默认回调所有结果 1 仅回调命中结果</p>
                      */
                     uint64_t m_callbackAllResults;
                     bool m_callbackAllResultsHasBeenSet;

@@ -468,6 +468,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeTaskDetailDsResponse.h
   include/tencentcloud/wedata/v20210820/model/LineageProperty.h
   include/tencentcloud/wedata/v20210820/model/CreateTaskResponse.h
+  include/tencentcloud/wedata/v20210820/model/WorkflowLabel.h
   include/tencentcloud/wedata/v20210820/model/ModifyIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/BatchStopIntegrationTasksResponse.h
   include/tencentcloud/wedata/v20210820/model/EventListenerTaskInfo.h
@@ -1032,6 +1033,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/SystemRole.h
   include/tencentcloud/wedata/v20250806/model/ListOpsTriggerWorkflowsResponse.h
   include/tencentcloud/wedata/v20250806/model/ListWorkflowPermissionsResponse.h
+  include/tencentcloud/wedata/v20250806/model/TriggerTableUpdateRecord.h
   include/tencentcloud/wedata/v20250806/model/ListProcessLineageResponse.h
   include/tencentcloud/wedata/v20250806/model/GetWorkflowFolderRequest.h
   include/tencentcloud/wedata/v20250806/model/WorkflowInfo.h
@@ -1076,6 +1078,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20250806/model/CreateSQLFolderRequest.h
   include/tencentcloud/wedata/v20250806/model/GetOpsTaskResponse.h
   include/tencentcloud/wedata/v20250806/model/UpdateTriggerTaskResponse.h
+  include/tencentcloud/wedata/v20250806/model/WorkflowLabel.h
   include/tencentcloud/wedata/v20250806/model/DeleteQualityRuleGroupRequest.h
   include/tencentcloud/wedata/v20250806/model/ListTriggerTaskInfo.h
   include/tencentcloud/wedata/v20250806/model/SQLStopResult.h
@@ -2131,6 +2134,7 @@ set(wedata_src
   src/v20210820/model/DescribeTaskDetailDsResponse.cpp
   src/v20210820/model/LineageProperty.cpp
   src/v20210820/model/CreateTaskResponse.cpp
+  src/v20210820/model/WorkflowLabel.cpp
   src/v20210820/model/ModifyIntegrationTaskResponse.cpp
   src/v20210820/model/BatchStopIntegrationTasksResponse.cpp
   src/v20210820/model/EventListenerTaskInfo.cpp
@@ -2695,6 +2699,7 @@ set(wedata_src
   src/v20250806/model/SystemRole.cpp
   src/v20250806/model/ListOpsTriggerWorkflowsResponse.cpp
   src/v20250806/model/ListWorkflowPermissionsResponse.cpp
+  src/v20250806/model/TriggerTableUpdateRecord.cpp
   src/v20250806/model/ListProcessLineageResponse.cpp
   src/v20250806/model/GetWorkflowFolderRequest.cpp
   src/v20250806/model/WorkflowInfo.cpp
@@ -2739,6 +2744,7 @@ set(wedata_src
   src/v20250806/model/CreateSQLFolderRequest.cpp
   src/v20250806/model/GetOpsTaskResponse.cpp
   src/v20250806/model/UpdateTriggerTaskResponse.cpp
+  src/v20250806/model/WorkflowLabel.cpp
   src/v20250806/model/DeleteQualityRuleGroupRequest.cpp
   src/v20250806/model/ListTriggerTaskInfo.cpp
   src/v20250806/model/SQLStopResult.cpp

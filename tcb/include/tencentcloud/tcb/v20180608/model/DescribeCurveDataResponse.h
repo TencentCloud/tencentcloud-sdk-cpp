@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取<p>各数据点的时间戳数组（Unix 时间戳，秒级），与  ⁠Values⁠  一一对应</p>
-                     * @return Time <p>各数据点的时间戳数组（Unix 时间戳，秒级），与  ⁠Values⁠  一一对应</p>
+                     * 获取<p>各数据点的时间戳数组（Unix 时间戳，秒级），与  Values  一一对应</p>
+                     * @return Time <p>各数据点的时间戳数组（Unix 时间戳，秒级），与  Values  一一对应</p>
                      * 
                      */
                     std::vector<int64_t> GetTime() const;
@@ -142,8 +142,8 @@ namespace TencentCloud
                     bool NewValuesHasBeenSet() const;
 
                     /**
-                     * 获取<p>聚合方式， ⁠&quot;last&quot;⁠  表示取时间段内最后一个值，“max”表示取时间段内最大值，“avg”表示取时间段内的平均值</p>
-                     * @return Statistics <p>聚合方式， ⁠&quot;last&quot;⁠  表示取时间段内最后一个值，“max”表示取时间段内最大值，“avg”表示取时间段内的平均值</p>
+                     * 获取<p>聚合方式， &quot;last&quot;  表示取时间段内最后一个值，“max”表示取时间段内最大值，“avg”表示取时间段内的平均值</p>
+                     * @return Statistics <p>聚合方式， &quot;last&quot;  表示取时间段内最后一个值，“max”表示取时间段内最大值，“avg”表示取时间段内的平均值</p>
                      * 
                      */
                     std::string GetStatistics() const;
@@ -188,7 +188,7 @@ namespace TencentCloud
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * <p>各数据点的时间戳数组（Unix 时间戳，秒级），与  ⁠Values⁠  一一对应</p>
+                     * <p>各数据点的时间戳数组（Unix 时间戳，秒级），与  Values  一一对应</p>
                      */
                     std::vector<int64_t> m_time;
                     bool m_timeHasBeenSet;
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_newValuesHasBeenSet;
 
                     /**
-                     * <p>聚合方式， ⁠&quot;last&quot;⁠  表示取时间段内最后一个值，“max”表示取时间段内最大值，“avg”表示取时间段内的平均值</p>
+                     * <p>聚合方式， &quot;last&quot;  表示取时间段内最后一个值，“max”表示取时间段内最大值，“avg”表示取时间段内的平均值</p>
                      */
                     std::string m_statistics;
                     bool m_statisticsHasBeenSet;

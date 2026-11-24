@@ -21,11 +21,14 @@ set(cdz_public_header
 set(cdz_public_header_model
   include/tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneResourceSummaryRequest.h
   include/tencentcloud/cdz/v20221123/model/CloudDedicatedZoneResourceStatisticsInfo.h
-  include/tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneHostsResponse.h
+  include/tencentcloud/cdz/v20221123/model/DescribeUserAvailableCloudDedicatedZonesRequest.h
+  include/tencentcloud/cdz/v20221123/model/CloudDedicatedZone.h
   include/tencentcloud/cdz/v20221123/model/ExtraInfo.h
   include/tencentcloud/cdz/v20221123/model/CloudDedicatedZoneHostsInfo.h
-  include/tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneHostsRequest.h
   include/tencentcloud/cdz/v20221123/model/CloudDedicatedZoneResourceSummaryInfo.h
+  include/tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneHostsRequest.h
+  include/tencentcloud/cdz/v20221123/model/DescribeUserAvailableCloudDedicatedZonesResponse.h
+  include/tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneHostsResponse.h
   include/tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneResourceSummaryResponse.h
   )
 
@@ -33,11 +36,14 @@ set(cdz_src
   src/v20221123/CdzClient.cpp
   src/v20221123/model/DescribeCloudDedicatedZoneResourceSummaryRequest.cpp
   src/v20221123/model/CloudDedicatedZoneResourceStatisticsInfo.cpp
-  src/v20221123/model/DescribeCloudDedicatedZoneHostsResponse.cpp
+  src/v20221123/model/DescribeUserAvailableCloudDedicatedZonesRequest.cpp
+  src/v20221123/model/CloudDedicatedZone.cpp
   src/v20221123/model/ExtraInfo.cpp
   src/v20221123/model/CloudDedicatedZoneHostsInfo.cpp
-  src/v20221123/model/DescribeCloudDedicatedZoneHostsRequest.cpp
   src/v20221123/model/CloudDedicatedZoneResourceSummaryInfo.cpp
+  src/v20221123/model/DescribeCloudDedicatedZoneHostsRequest.cpp
+  src/v20221123/model/DescribeUserAvailableCloudDedicatedZonesResponse.cpp
+  src/v20221123/model/DescribeCloudDedicatedZoneHostsResponse.cpp
   src/v20221123/model/DescribeCloudDedicatedZoneResourceSummaryResponse.cpp
   )
 

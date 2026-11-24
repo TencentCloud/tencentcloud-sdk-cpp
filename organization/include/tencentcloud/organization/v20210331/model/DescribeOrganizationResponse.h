@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/organization/v20210331/model/OrgPermission.h>
+#include <tencentcloud/organization/v20210331/model/MemberPermissionOption.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取企业组织ID。
-                     * @return OrgId 企业组织ID。
+                     * 获取<p>企业组织ID。</p>
+                     * @return OrgId <p>企业组织ID。</p>
                      * 
                      */
                     int64_t GetOrgId() const;
@@ -59,8 +60,8 @@ namespace TencentCloud
                     bool OrgIdHasBeenSet() const;
 
                     /**
-                     * 获取创建者UIN。
-                     * @return HostUin 创建者UIN。
+                     * 获取<p>创建者UIN。</p>
+                     * @return HostUin <p>创建者UIN。</p>
                      * 
                      */
                     int64_t GetHostUin() const;
@@ -73,8 +74,8 @@ namespace TencentCloud
                     bool HostUinHasBeenSet() const;
 
                     /**
-                     * 获取创建者昵称。
-                     * @return NickName 创建者昵称。
+                     * 获取<p>创建者昵称。</p>
+                     * @return NickName <p>创建者昵称。</p>
                      * 
                      */
                     std::string GetNickName() const;
@@ -87,8 +88,8 @@ namespace TencentCloud
                     bool NickNameHasBeenSet() const;
 
                     /**
-                     * 获取企业组织类型。
-                     * @return OrgType 企业组织类型。
+                     * 获取<p>企业组织类型。</p>
+                     * @return OrgType <p>企业组织类型。</p>
                      * 
                      */
                     int64_t GetOrgType() const;
@@ -101,8 +102,8 @@ namespace TencentCloud
                     bool OrgTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否组织管理员。是：true ，否：false
-                     * @return IsManager 是否组织管理员。是：true ，否：false
+                     * 获取<p>是否组织管理员。是：true ，否：false</p>
+                     * @return IsManager <p>是否组织管理员。是：true ，否：false</p>
                      * 
                      */
                     bool GetIsManager() const;
@@ -115,8 +116,8 @@ namespace TencentCloud
                     bool IsManagerHasBeenSet() const;
 
                     /**
-                     * 获取策略类型。财务管理：Financial
-                     * @return OrgPolicyType 策略类型。财务管理：Financial
+                     * 获取<p>策略类型。财务管理：Financial</p>
+                     * @return OrgPolicyType <p>策略类型。财务管理：Financial</p>
                      * 
                      */
                     std::string GetOrgPolicyType() const;
@@ -129,8 +130,8 @@ namespace TencentCloud
                     bool OrgPolicyTypeHasBeenSet() const;
 
                     /**
-                     * 获取策略名。
-                     * @return OrgPolicyName 策略名。
+                     * 获取<p>策略名。</p>
+                     * @return OrgPolicyName <p>策略名。</p>
                      * 
                      */
                     std::string GetOrgPolicyName() const;
@@ -143,8 +144,8 @@ namespace TencentCloud
                     bool OrgPolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取成员财务权限列表。
-                     * @return OrgPermission 成员财务权限列表。
+                     * 获取<p>成员财务权限列表。</p>
+                     * @return OrgPermission <p>成员财务权限列表。</p>
                      * 
                      */
                     std::vector<OrgPermission> GetOrgPermission() const;
@@ -157,8 +158,8 @@ namespace TencentCloud
                     bool OrgPermissionHasBeenSet() const;
 
                     /**
-                     * 获取组织根节点ID。
-                     * @return RootNodeId 组织根节点ID。
+                     * 获取<p>组织根节点ID。</p>
+                     * @return RootNodeId <p>组织根节点ID。</p>
                      * 
                      */
                     int64_t GetRootNodeId() const;
@@ -171,8 +172,8 @@ namespace TencentCloud
                     bool RootNodeIdHasBeenSet() const;
 
                     /**
-                     * 获取组织创建时间。
-                     * @return CreateTime 组织创建时间。
+                     * 获取<p>组织创建时间。</p>
+                     * @return CreateTime <p>组织创建时间。</p>
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -185,8 +186,8 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取成员加入时间。
-                     * @return JoinTime 成员加入时间。
+                     * 获取<p>成员加入时间。</p>
+                     * @return JoinTime <p>成员加入时间。</p>
                      * 
                      */
                     std::string GetJoinTime() const;
@@ -199,8 +200,8 @@ namespace TencentCloud
                     bool JoinTimeHasBeenSet() const;
 
                     /**
-                     * 获取成员是否允许退出。允许：Allow，不允许：Denied
-                     * @return IsAllowQuit 成员是否允许退出。允许：Allow，不允许：Denied
+                     * 获取<p>成员是否允许退出。允许：Allow，不允许：Denied</p>
+                     * @return IsAllowQuit <p>成员是否允许退出。允许：Allow，不允许：Denied</p>
                      * 
                      */
                     std::string GetIsAllowQuit() const;
@@ -213,8 +214,8 @@ namespace TencentCloud
                     bool IsAllowQuitHasBeenSet() const;
 
                     /**
-                     * 获取代付者Uin。
-                     * @return PayUin 代付者Uin。
+                     * 获取<p>代付者Uin。</p>
+                     * @return PayUin <p>代付者Uin。</p>
                      * 
                      */
                     std::string GetPayUin() const;
@@ -227,8 +228,8 @@ namespace TencentCloud
                     bool PayUinHasBeenSet() const;
 
                     /**
-                     * 获取代付者名称。
-                     * @return PayName 代付者名称。
+                     * 获取<p>代付者名称。</p>
+                     * @return PayName <p>代付者名称。</p>
                      * 
                      */
                     std::string GetPayName() const;
@@ -241,8 +242,8 @@ namespace TencentCloud
                     bool PayNameHasBeenSet() const;
 
                     /**
-                     * 获取是否可信服务管理员。是：true，否：false
-                     * @return IsAssignManager 是否可信服务管理员。是：true，否：false
+                     * 获取<p>是否可信服务管理员。是：true，否：false</p>
+                     * @return IsAssignManager <p>是否可信服务管理员。是：true，否：false</p>
                      * 
                      */
                     bool GetIsAssignManager() const;
@@ -255,8 +256,8 @@ namespace TencentCloud
                     bool IsAssignManagerHasBeenSet() const;
 
                     /**
-                     * 获取是否实名主体管理员。是：true，否：false
-                     * @return IsAuthManager 是否实名主体管理员。是：true，否：false
+                     * 获取<p>是否实名主体管理员。是：true，否：false</p>
+                     * @return IsAuthManager <p>是否实名主体管理员。是：true，否：false</p>
                      * 
                      */
                     bool GetIsAuthManager() const;
@@ -268,103 +269,143 @@ namespace TencentCloud
                      */
                     bool IsAuthManagerHasBeenSet() const;
 
+                    /**
+                     * 获取<p>创建/邀请成员时可设置的财务权限列表</p>
+                     * @return MemberPermissionOptions <p>创建/邀请成员时可设置的财务权限列表</p>
+                     * 
+                     */
+                    std::vector<MemberPermissionOption> GetMemberPermissionOptions() const;
+
+                    /**
+                     * 判断参数 MemberPermissionOptions 是否已赋值
+                     * @return MemberPermissionOptions 是否已赋值
+                     * 
+                     */
+                    bool MemberPermissionOptionsHasBeenSet() const;
+
+                    /**
+                     * 获取<p>创建/邀请成员时的默认付费方式。</p><p>枚举值：</p><ul><li>SelfPay： 自付</li><li>BehalfPay： 代付</li></ul>
+                     * @return DefaultPayType <p>创建/邀请成员时的默认付费方式。</p><p>枚举值：</p><ul><li>SelfPay： 自付</li><li>BehalfPay： 代付</li></ul>
+                     * 
+                     */
+                    std::string GetDefaultPayType() const;
+
+                    /**
+                     * 判断参数 DefaultPayType 是否已赋值
+                     * @return DefaultPayType 是否已赋值
+                     * 
+                     */
+                    bool DefaultPayTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 企业组织ID。
+                     * <p>企业组织ID。</p>
                      */
                     int64_t m_orgId;
                     bool m_orgIdHasBeenSet;
 
                     /**
-                     * 创建者UIN。
+                     * <p>创建者UIN。</p>
                      */
                     int64_t m_hostUin;
                     bool m_hostUinHasBeenSet;
 
                     /**
-                     * 创建者昵称。
+                     * <p>创建者昵称。</p>
                      */
                     std::string m_nickName;
                     bool m_nickNameHasBeenSet;
 
                     /**
-                     * 企业组织类型。
+                     * <p>企业组织类型。</p>
                      */
                     int64_t m_orgType;
                     bool m_orgTypeHasBeenSet;
 
                     /**
-                     * 是否组织管理员。是：true ，否：false
+                     * <p>是否组织管理员。是：true ，否：false</p>
                      */
                     bool m_isManager;
                     bool m_isManagerHasBeenSet;
 
                     /**
-                     * 策略类型。财务管理：Financial
+                     * <p>策略类型。财务管理：Financial</p>
                      */
                     std::string m_orgPolicyType;
                     bool m_orgPolicyTypeHasBeenSet;
 
                     /**
-                     * 策略名。
+                     * <p>策略名。</p>
                      */
                     std::string m_orgPolicyName;
                     bool m_orgPolicyNameHasBeenSet;
 
                     /**
-                     * 成员财务权限列表。
+                     * <p>成员财务权限列表。</p>
                      */
                     std::vector<OrgPermission> m_orgPermission;
                     bool m_orgPermissionHasBeenSet;
 
                     /**
-                     * 组织根节点ID。
+                     * <p>组织根节点ID。</p>
                      */
                     int64_t m_rootNodeId;
                     bool m_rootNodeIdHasBeenSet;
 
                     /**
-                     * 组织创建时间。
+                     * <p>组织创建时间。</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 成员加入时间。
+                     * <p>成员加入时间。</p>
                      */
                     std::string m_joinTime;
                     bool m_joinTimeHasBeenSet;
 
                     /**
-                     * 成员是否允许退出。允许：Allow，不允许：Denied
+                     * <p>成员是否允许退出。允许：Allow，不允许：Denied</p>
                      */
                     std::string m_isAllowQuit;
                     bool m_isAllowQuitHasBeenSet;
 
                     /**
-                     * 代付者Uin。
+                     * <p>代付者Uin。</p>
                      */
                     std::string m_payUin;
                     bool m_payUinHasBeenSet;
 
                     /**
-                     * 代付者名称。
+                     * <p>代付者名称。</p>
                      */
                     std::string m_payName;
                     bool m_payNameHasBeenSet;
 
                     /**
-                     * 是否可信服务管理员。是：true，否：false
+                     * <p>是否可信服务管理员。是：true，否：false</p>
                      */
                     bool m_isAssignManager;
                     bool m_isAssignManagerHasBeenSet;
 
                     /**
-                     * 是否实名主体管理员。是：true，否：false
+                     * <p>是否实名主体管理员。是：true，否：false</p>
                      */
                     bool m_isAuthManager;
                     bool m_isAuthManagerHasBeenSet;
+
+                    /**
+                     * <p>创建/邀请成员时可设置的财务权限列表</p>
+                     */
+                    std::vector<MemberPermissionOption> m_memberPermissionOptions;
+                    bool m_memberPermissionOptionsHasBeenSet;
+
+                    /**
+                     * <p>创建/邀请成员时的默认付费方式。</p><p>枚举值：</p><ul><li>SelfPay： 自付</li><li>BehalfPay： 代付</li></ul>
+                     */
+                    std::string m_defaultPayType;
+                    bool m_defaultPayTypeHasBeenSet;
 
                 };
             }

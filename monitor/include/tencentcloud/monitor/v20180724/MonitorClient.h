@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/monitor/v20180724/model/AddSubnetToManagedClusterRequest.h>
+#include <tencentcloud/monitor/v20180724/model/AddSubnetToManagedClusterResponse.h>
 #include <tencentcloud/monitor/v20180724/model/BindPrometheusManagedGrafanaRequest.h>
 #include <tencentcloud/monitor/v20180724/model/BindPrometheusManagedGrafanaResponse.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyObjectRequest.h>
@@ -409,6 +411,9 @@ namespace TencentCloud
                 MonitorClient(const Credential &credential, const std::string &region);
                 MonitorClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddSubnetToManagedClusterResponse> AddSubnetToManagedClusterOutcome;
+                typedef std::future<AddSubnetToManagedClusterOutcome> AddSubnetToManagedClusterOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::AddSubnetToManagedClusterRequest&, AddSubnetToManagedClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddSubnetToManagedClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindPrometheusManagedGrafanaResponse> BindPrometheusManagedGrafanaOutcome;
                 typedef std::future<BindPrometheusManagedGrafanaOutcome> BindPrometheusManagedGrafanaOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::BindPrometheusManagedGrafanaRequest&, BindPrometheusManagedGrafanaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindPrometheusManagedGrafanaAsyncHandler;
@@ -969,6 +974,15 @@ namespace TencentCloud
                 typedef std::function<void(const MonitorClient*, const Model::UpgradeGrafanaInstanceRequest&, UpgradeGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeGrafanaInstanceAsyncHandler;
 
 
+
+                /**
+                 *添加子网到 Prometheus 的托管集群
+                 * @param req AddSubnetToManagedClusterRequest
+                 * @return AddSubnetToManagedClusterOutcome
+                 */
+                AddSubnetToManagedClusterOutcome AddSubnetToManagedCluster(const Model::AddSubnetToManagedClusterRequest &request);
+                void AddSubnetToManagedClusterAsync(const Model::AddSubnetToManagedClusterRequest& request, const AddSubnetToManagedClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddSubnetToManagedClusterOutcomeCallable AddSubnetToManagedClusterCallable(const Model::AddSubnetToManagedClusterRequest& request);
 
                 /**
                  *绑定 Grafana 可视化服务实例

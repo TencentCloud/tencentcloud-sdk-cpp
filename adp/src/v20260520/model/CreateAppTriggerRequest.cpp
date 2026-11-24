@@ -23,6 +23,7 @@ using namespace TencentCloud::Adp::V20260520::Model;
 using namespace std;
 
 CreateAppTriggerRequest::CreateAppTriggerRequest() :
+    m_agentIdHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_executeConfigHasBeenSet(false),
     m_executeTypeHasBeenSet(false),
@@ -41,6 +42,14 @@ string CreateAppTriggerRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_agentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_agentId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_appIdHasBeenSet)
     {
@@ -124,6 +133,22 @@ string CreateAppTriggerRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateAppTriggerRequest::GetAgentId() const
+{
+    return m_agentId;
+}
+
+void CreateAppTriggerRequest::SetAgentId(const string& _agentId)
+{
+    m_agentId = _agentId;
+    m_agentIdHasBeenSet = true;
+}
+
+bool CreateAppTriggerRequest::AgentIdHasBeenSet() const
+{
+    return m_agentIdHasBeenSet;
+}
 
 string CreateAppTriggerRequest::GetAppId() const
 {

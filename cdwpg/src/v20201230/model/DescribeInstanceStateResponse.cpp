@@ -32,8 +32,9 @@ DescribeInstanceStateResponse::DescribeInstanceStateResponse() :
     m_flowProgressHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
     m_instanceStateDescHasBeenSet(false),
+    m_instanceStatesHasBeenSet(false),
     m_processNameHasBeenSet(false),
-    m_instanceStatesHasBeenSet(false)
+    m_recoveryStateHasBeenSet(false)
 {
 }
 
@@ -151,16 +152,6 @@ CoreInternalOutcome DescribeInstanceStateResponse::Deserialize(const string &pay
         m_instanceStateDescHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ProcessName") && !rsp["ProcessName"].IsNull())
-    {
-        if (!rsp["ProcessName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ProcessName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_processName = string(rsp["ProcessName"].GetString());
-        m_processNameHasBeenSet = true;
-    }
-
     if (rsp.HasMember("InstanceStates") && !rsp["InstanceStates"].IsNull())
     {
         if (!rsp["InstanceStates"].IsArray())
@@ -179,6 +170,26 @@ CoreInternalOutcome DescribeInstanceStateResponse::Deserialize(const string &pay
             m_instanceStates.push_back(item);
         }
         m_instanceStatesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessName") && !rsp["ProcessName"].IsNull())
+    {
+        if (!rsp["ProcessName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_processName = string(rsp["ProcessName"].GetString());
+        m_processNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RecoveryState") && !rsp["RecoveryState"].IsNull())
+    {
+        if (!rsp["RecoveryState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecoveryState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recoveryState = string(rsp["RecoveryState"].GetString());
+        m_recoveryStateHasBeenSet = true;
     }
 
 
@@ -255,14 +266,6 @@ string DescribeInstanceStateResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_instanceStateDesc.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_processNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProcessName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_processName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_instanceStatesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -276,6 +279,22 @@ string DescribeInstanceStateResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_processNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_processName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recoveryStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecoveryState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recoveryState.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -370,6 +389,16 @@ bool DescribeInstanceStateResponse::InstanceStateDescHasBeenSet() const
     return m_instanceStateDescHasBeenSet;
 }
 
+vector<InstanceStateItem> DescribeInstanceStateResponse::GetInstanceStates() const
+{
+    return m_instanceStates;
+}
+
+bool DescribeInstanceStateResponse::InstanceStatesHasBeenSet() const
+{
+    return m_instanceStatesHasBeenSet;
+}
+
 string DescribeInstanceStateResponse::GetProcessName() const
 {
     return m_processName;
@@ -380,14 +409,14 @@ bool DescribeInstanceStateResponse::ProcessNameHasBeenSet() const
     return m_processNameHasBeenSet;
 }
 
-vector<InstanceStateItem> DescribeInstanceStateResponse::GetInstanceStates() const
+string DescribeInstanceStateResponse::GetRecoveryState() const
 {
-    return m_instanceStates;
+    return m_recoveryState;
 }
 
-bool DescribeInstanceStateResponse::InstanceStatesHasBeenSet() const
+bool DescribeInstanceStateResponse::RecoveryStateHasBeenSet() const
 {
-    return m_instanceStatesHasBeenSet;
+    return m_recoveryStateHasBeenSet;
 }
 
 

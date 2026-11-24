@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件传输的时间
-                     * @return Time 文件传输的时间
+                     * 获取<p>文件传输的时间</p>
+                     * @return Time <p>文件传输的时间</p>
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置文件传输的时间
-                     * @param _time 文件传输的时间
+                     * 设置<p>文件传输的时间</p>
+                     * @param _time <p>文件传输的时间</p>
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return UserName 用户名
+                     * 获取<p>用户名</p>
+                     * @return UserName <p>用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名
-                     * @param _userName 用户名
+                     * 设置<p>用户名</p>
+                     * @param _userName <p>用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取姓名
-                     * @return RealName 姓名
+                     * 获取<p>姓名</p>
+                     * @return RealName <p>姓名</p>
                      * 
                      */
                     std::string GetRealName() const;
 
                     /**
-                     * 设置姓名
-                     * @param _realName 姓名
+                     * 设置<p>姓名</p>
+                     * @param _realName <p>姓名</p>
                      * 
                      */
                     void SetRealName(const std::string& _realName);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool RealNameHasBeenSet() const;
 
                     /**
-                     * 获取资产ID
-                     * @return InstanceId 资产ID
+                     * 获取<p>资产ID</p>
+                     * @return InstanceId <p>资产ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置资产ID
-                     * @param _instanceId 资产ID
+                     * 设置<p>资产ID</p>
+                     * @param _instanceId <p>资产ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取资产名称
-                     * @return DeviceName 资产名称
+                     * 获取<p>资产名称</p>
+                     * @return DeviceName <p>资产名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置资产名称
-                     * @param _deviceName 资产名称
+                     * 设置<p>资产名称</p>
+                     * @param _deviceName <p>资产名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取资产公网IP
-                     * @return PublicIp 资产公网IP
+                     * 获取<p>资产公网IP</p>
+                     * @return PublicIp <p>资产公网IP</p>
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
-                     * 设置资产公网IP
-                     * @param _publicIp 资产公网IP
+                     * 设置<p>资产公网IP</p>
+                     * @param _publicIp <p>资产公网IP</p>
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool PublicIpHasBeenSet() const;
 
                     /**
-                     * 获取资产内网IP
-                     * @return PrivateIp 资产内网IP
+                     * 获取<p>资产内网IP</p>
+                     * @return PrivateIp <p>资产内网IP</p>
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
-                     * 设置资产内网IP
-                     * @param _privateIp 资产内网IP
+                     * 设置<p>资产内网IP</p>
+                     * @param _privateIp <p>资产内网IP</p>
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool PrivateIpHasBeenSet() const;
 
                     /**
-                     * 获取操作结果：1 - 已执行，2 - 已阻断
-                     * @return Action 操作结果：1 - 已执行，2 - 已阻断
+                     * 获取<p>操作结果：1 - 已放行，2 - 已阻断</p>
+                     * @return Action <p>操作结果：1 - 已放行，2 - 已阻断</p>
                      * 
                      */
                     uint64_t GetAction() const;
 
                     /**
-                     * 设置操作结果：1 - 已执行，2 - 已阻断
-                     * @param _action 操作结果：1 - 已执行，2 - 已阻断
+                     * 设置<p>操作结果：1 - 已放行，2 - 已阻断</p>
+                     * @param _action <p>操作结果：1 - 已放行，2 - 已阻断</p>
                      * 
                      */
                     void SetAction(const uint64_t& _action);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹
-                     * @return Method 操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹
+                     * 获取<p>操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹</p>
+                     * @return Method <p>操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹</p>
                      * 
                      */
                     uint64_t GetMethod() const;
 
                     /**
-                     * 设置操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹
-                     * @param _method 操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹
+                     * 设置<p>操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹</p>
+                     * @param _method <p>操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹</p>
                      * 
                      */
                     void SetMethod(const uint64_t& _method);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取下载的文件（夹）路径及名称
-                     * @return FileCurr 下载的文件（夹）路径及名称
+                     * 获取<p>下载的文件（夹）路径及名称</p>
+                     * @return FileCurr <p>下载的文件（夹）路径及名称</p>
                      * 
                      */
                     std::string GetFileCurr() const;
 
                     /**
-                     * 设置下载的文件（夹）路径及名称
-                     * @param _fileCurr 下载的文件（夹）路径及名称
+                     * 设置<p>下载的文件（夹）路径及名称</p>
+                     * @param _fileCurr <p>下载的文件（夹）路径及名称</p>
                      * 
                      */
                     void SetFileCurr(const std::string& _fileCurr);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool FileCurrHasBeenSet() const;
 
                     /**
-                     * 获取上传或新建文件（夹）路径及名称
-                     * @return FileNew 上传或新建文件（夹）路径及名称
+                     * 获取<p>上传或新建文件（夹）路径及名称</p>
+                     * @return FileNew <p>上传或新建文件（夹）路径及名称</p>
                      * 
                      */
                     std::string GetFileNew() const;
 
                     /**
-                     * 设置上传或新建文件（夹）路径及名称
-                     * @param _fileNew 上传或新建文件（夹）路径及名称
+                     * 设置<p>上传或新建文件（夹）路径及名称</p>
+                     * @param _fileNew <p>上传或新建文件（夹）路径及名称</p>
                      * 
                      */
                     void SetFileNew(const std::string& _fileNew);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool FileNewHasBeenSet() const;
 
                     /**
-                     * 获取会话id
-                     * @return Sid 会话id
+                     * 获取<p>会话id</p>
+                     * @return Sid <p>会话id</p>
                      * 
                      */
                     std::string GetSid() const;
 
                     /**
-                     * 设置会话id
-                     * @param _sid 会话id
+                     * 设置<p>会话id</p>
+                     * @param _sid <p>会话id</p>
                      * 
                      */
                     void SetSid(const std::string& _sid);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool SidHasBeenSet() const;
 
                     /**
-                     * 获取账号
-                     * @return Account 账号
+                     * 获取<p>账号</p>
+                     * @return Account <p>账号</p>
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
-                     * 设置账号
-                     * @param _account 账号
+                     * 设置<p>账号</p>
+                     * @param _account <p>账号</p>
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
-                     * 获取来源id
-                     * @return FromIp 来源id
+                     * 获取<p>来源id</p>
+                     * @return FromIp <p>来源id</p>
                      * 
                      */
                     std::string GetFromIp() const;
 
                     /**
-                     * 设置来源id
-                     * @param _fromIp 来源id
+                     * 设置<p>来源id</p>
+                     * @param _fromIp <p>来源id</p>
                      * 
                      */
                     void SetFromIp(const std::string& _fromIp);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool FromIpHasBeenSet() const;
 
                     /**
-                     * 获取协议
-                     * @return Protocol 协议
+                     * 获取<p>协议</p>
+                     * @return Protocol <p>协议</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议
-                     * @param _protocol 协议
+                     * 设置<p>协议</p>
+                     * @param _protocol <p>协议</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取文件大小
-                     * @return Size 文件大小
+                     * 获取<p>文件大小</p>
+                     * @return Size <p>文件大小</p>
                      * 
                      */
                     uint64_t GetSize() const;
 
                     /**
-                     * 设置文件大小
-                     * @param _size 文件大小
+                     * 设置<p>文件大小</p>
+                     * @param _size <p>文件大小</p>
                      * 
                      */
                     void SetSize(const uint64_t& _size);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取复核时间
-                     * @return ConfirmTime 复核时间
+                     * 获取<p>复核时间</p>
+                     * @return ConfirmTime <p>复核时间</p>
                      * 
                      */
                     std::string GetConfirmTime() const;
 
                     /**
-                     * 设置复核时间
-                     * @param _confirmTime 复核时间
+                     * 设置<p>复核时间</p>
+                     * @param _confirmTime <p>复核时间</p>
                      * 
                      */
                     void SetConfirmTime(const std::string& _confirmTime);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool ConfirmTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户部门id
-                     * @return UserDepartmentId 用户部门id
+                     * 获取<p>用户部门id</p>
+                     * @return UserDepartmentId <p>用户部门id</p>
                      * 
                      */
                     std::string GetUserDepartmentId() const;
 
                     /**
-                     * 设置用户部门id
-                     * @param _userDepartmentId 用户部门id
+                     * 设置<p>用户部门id</p>
+                     * @param _userDepartmentId <p>用户部门id</p>
                      * 
                      */
                     void SetUserDepartmentId(const std::string& _userDepartmentId);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool UserDepartmentIdHasBeenSet() const;
 
                     /**
-                     * 获取用户部门name
-                     * @return UserDepartmentName 用户部门name
+                     * 获取<p>用户部门name</p>
+                     * @return UserDepartmentName <p>用户部门name</p>
                      * 
                      */
                     std::string GetUserDepartmentName() const;
 
                     /**
-                     * 设置用户部门name
-                     * @param _userDepartmentName 用户部门name
+                     * 设置<p>用户部门name</p>
+                     * @param _userDepartmentName <p>用户部门name</p>
                      * 
                      */
                     void SetUserDepartmentName(const std::string& _userDepartmentName);
@@ -446,15 +446,15 @@ namespace TencentCloud
                     bool UserDepartmentNameHasBeenSet() const;
 
                     /**
-                     * 获取设备部门id
-                     * @return DeviceDepartmentId 设备部门id
+                     * 获取<p>设备部门id</p>
+                     * @return DeviceDepartmentId <p>设备部门id</p>
                      * 
                      */
                     std::string GetDeviceDepartmentId() const;
 
                     /**
-                     * 设置设备部门id
-                     * @param _deviceDepartmentId 设备部门id
+                     * 设置<p>设备部门id</p>
+                     * @param _deviceDepartmentId <p>设备部门id</p>
                      * 
                      */
                     void SetDeviceDepartmentId(const std::string& _deviceDepartmentId);
@@ -467,15 +467,15 @@ namespace TencentCloud
                     bool DeviceDepartmentIdHasBeenSet() const;
 
                     /**
-                     * 获取设备部门name	
-                     * @return DeviceDepartmentName 设备部门name	
+                     * 获取<p>设备部门name</p>
+                     * @return DeviceDepartmentName <p>设备部门name</p>
                      * 
                      */
                     std::string GetDeviceDepartmentName() const;
 
                     /**
-                     * 设置设备部门name	
-                     * @param _deviceDepartmentName 设备部门name	
+                     * 设置<p>设备部门name</p>
+                     * @param _deviceDepartmentName <p>设备部门name</p>
                      * 
                      */
                     void SetDeviceDepartmentName(const std::string& _deviceDepartmentName);
@@ -488,15 +488,15 @@ namespace TencentCloud
                     bool DeviceDepartmentNameHasBeenSet() const;
 
                     /**
-                     * 获取签名值
-                     * @return SignValue 签名值
+                     * 获取<p>签名值</p>
+                     * @return SignValue <p>签名值</p>
                      * 
                      */
                     std::string GetSignValue() const;
 
                     /**
-                     * 设置签名值
-                     * @param _signValue 签名值
+                     * 设置<p>签名值</p>
+                     * @param _signValue <p>签名值</p>
                      * 
                      */
                     void SetSignValue(const std::string& _signValue);
@@ -511,133 +511,133 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件传输的时间
+                     * <p>文件传输的时间</p>
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 姓名
+                     * <p>姓名</p>
                      */
                     std::string m_realName;
                     bool m_realNameHasBeenSet;
 
                     /**
-                     * 资产ID
+                     * <p>资产ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 资产名称
+                     * <p>资产名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 资产公网IP
+                     * <p>资产公网IP</p>
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
-                     * 资产内网IP
+                     * <p>资产内网IP</p>
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;
 
                     /**
-                     * 操作结果：1 - 已执行，2 - 已阻断
+                     * <p>操作结果：1 - 已放行，2 - 已阻断</p>
                      */
                     uint64_t m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹
+                     * <p>操作类型：1 - 文件上传，2 - 文件下载，3 - 文件删除，4 - 文件(夹)移动，5 - 文件(夹)重命名，6 - 新建文件夹，9 - 删除文件夹</p>
                      */
                     uint64_t m_method;
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 下载的文件（夹）路径及名称
+                     * <p>下载的文件（夹）路径及名称</p>
                      */
                     std::string m_fileCurr;
                     bool m_fileCurrHasBeenSet;
 
                     /**
-                     * 上传或新建文件（夹）路径及名称
+                     * <p>上传或新建文件（夹）路径及名称</p>
                      */
                     std::string m_fileNew;
                     bool m_fileNewHasBeenSet;
 
                     /**
-                     * 会话id
+                     * <p>会话id</p>
                      */
                     std::string m_sid;
                     bool m_sidHasBeenSet;
 
                     /**
-                     * 账号
+                     * <p>账号</p>
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;
 
                     /**
-                     * 来源id
+                     * <p>来源id</p>
                      */
                     std::string m_fromIp;
                     bool m_fromIpHasBeenSet;
 
                     /**
-                     * 协议
+                     * <p>协议</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 文件大小
+                     * <p>文件大小</p>
                      */
                     uint64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 复核时间
+                     * <p>复核时间</p>
                      */
                     std::string m_confirmTime;
                     bool m_confirmTimeHasBeenSet;
 
                     /**
-                     * 用户部门id
+                     * <p>用户部门id</p>
                      */
                     std::string m_userDepartmentId;
                     bool m_userDepartmentIdHasBeenSet;
 
                     /**
-                     * 用户部门name
+                     * <p>用户部门name</p>
                      */
                     std::string m_userDepartmentName;
                     bool m_userDepartmentNameHasBeenSet;
 
                     /**
-                     * 设备部门id
+                     * <p>设备部门id</p>
                      */
                     std::string m_deviceDepartmentId;
                     bool m_deviceDepartmentIdHasBeenSet;
 
                     /**
-                     * 设备部门name	
+                     * <p>设备部门name</p>
                      */
                     std::string m_deviceDepartmentName;
                     bool m_deviceDepartmentNameHasBeenSet;
 
                     /**
-                     * 签名值
+                     * <p>签名值</p>
                      */
                     std::string m_signValue;
                     bool m_signValueHasBeenSet;

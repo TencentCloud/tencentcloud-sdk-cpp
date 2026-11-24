@@ -190,6 +190,56 @@ BhClient::AddUserGroupMembersOutcomeCallable BhClient::AddUserGroupMembersCallab
     return prom->get_future();
 }
 
+BhClient::ApproveTicketOutcome BhClient::ApproveTicket(const ApproveTicketRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApproveTicket");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApproveTicketResponse rsp = ApproveTicketResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApproveTicketOutcome(rsp);
+        else
+            return ApproveTicketOutcome(o.GetError());
+    }
+    else
+    {
+        return ApproveTicketOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::ApproveTicketAsync(const ApproveTicketRequest& request, const ApproveTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ApproveTicketRequest&;
+    using Resp = ApproveTicketResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ApproveTicket", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::ApproveTicketOutcomeCallable BhClient::ApproveTicketCallable(const ApproveTicketRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ApproveTicketOutcome>>();
+    ApproveTicketAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const ApproveTicketRequest&,
+        ApproveTicketOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 BhClient::BindDeviceAccountKubeconfigOutcome BhClient::BindDeviceAccountKubeconfig(const BindDeviceAccountKubeconfigRequest &request)
 {
     auto outcome = MakeRequest(request, "BindDeviceAccountKubeconfig");
@@ -2932,6 +2982,56 @@ BhClient::DescribeSourceTypesOutcomeCallable BhClient::DescribeSourceTypesCallab
         const BhClient*,
         const DescribeSourceTypesRequest&,
         DescribeSourceTypesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+BhClient::DescribeTicketsOutcome BhClient::DescribeTickets(const DescribeTicketsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTickets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTicketsResponse rsp = DescribeTicketsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTicketsOutcome(rsp);
+        else
+            return DescribeTicketsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTicketsOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeTicketsAsync(const DescribeTicketsRequest& request, const DescribeTicketsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeTicketsRequest&;
+    using Resp = DescribeTicketsResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeTickets", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+BhClient::DescribeTicketsOutcomeCallable BhClient::DescribeTicketsCallable(const DescribeTicketsRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeTicketsOutcome>>();
+    DescribeTicketsAsync(
+    request,
+    [prom](
+        const BhClient*,
+        const DescribeTicketsRequest&,
+        DescribeTicketsOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

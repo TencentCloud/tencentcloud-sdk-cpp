@@ -140,3 +140,53 @@ CdzClient::DescribeCloudDedicatedZoneResourceSummaryOutcomeCallable CdzClient::D
     return prom->get_future();
 }
 
+CdzClient::DescribeUserAvailableCloudDedicatedZonesOutcome CdzClient::DescribeUserAvailableCloudDedicatedZones(const DescribeUserAvailableCloudDedicatedZonesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserAvailableCloudDedicatedZones");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserAvailableCloudDedicatedZonesResponse rsp = DescribeUserAvailableCloudDedicatedZonesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserAvailableCloudDedicatedZonesOutcome(rsp);
+        else
+            return DescribeUserAvailableCloudDedicatedZonesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserAvailableCloudDedicatedZonesOutcome(outcome.GetError());
+    }
+}
+
+void CdzClient::DescribeUserAvailableCloudDedicatedZonesAsync(const DescribeUserAvailableCloudDedicatedZonesRequest& request, const DescribeUserAvailableCloudDedicatedZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeUserAvailableCloudDedicatedZonesRequest&;
+    using Resp = DescribeUserAvailableCloudDedicatedZonesResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeUserAvailableCloudDedicatedZones", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+CdzClient::DescribeUserAvailableCloudDedicatedZonesOutcomeCallable CdzClient::DescribeUserAvailableCloudDedicatedZonesCallable(const DescribeUserAvailableCloudDedicatedZonesRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeUserAvailableCloudDedicatedZonesOutcome>>();
+    DescribeUserAvailableCloudDedicatedZonesAsync(
+    request,
+    [prom](
+        const CdzClient*,
+        const DescribeUserAvailableCloudDedicatedZonesRequest&,
+        DescribeUserAvailableCloudDedicatedZonesOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+

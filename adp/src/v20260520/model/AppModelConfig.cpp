@@ -27,7 +27,9 @@ AppModelConfig::AppModelConfig() :
     m_multiModalQaModelHasBeenSet(false),
     m_multiModalUnderstandingModelHasBeenSet(false),
     m_promptRewriteModelHasBeenSet(false),
-    m_thinkModelHasBeenSet(false)
+    m_thinkModelHasBeenSet(false),
+    m_fileSplitModelHasBeenSet(false),
+    m_headerExtractModelHasBeenSet(false)
 {
 }
 
@@ -155,6 +157,40 @@ CoreInternalOutcome AppModelConfig::Deserialize(const rapidjson::Value &value)
         m_thinkModelHasBeenSet = true;
     }
 
+    if (value.HasMember("FileSplitModel") && !value["FileSplitModel"].IsNull())
+    {
+        if (!value["FileSplitModel"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModelConfig.FileSplitModel` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fileSplitModel.Deserialize(value["FileSplitModel"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fileSplitModelHasBeenSet = true;
+    }
+
+    if (value.HasMember("HeaderExtractModel") && !value["HeaderExtractModel"].IsNull())
+    {
+        if (!value["HeaderExtractModel"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModelConfig.HeaderExtractModel` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_headerExtractModel.Deserialize(value["HeaderExtractModel"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_headerExtractModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -223,6 +259,24 @@ void AppModelConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_thinkModel.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fileSplitModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSplitModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileSplitModel.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_headerExtractModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeaderExtractModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_headerExtractModel.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -338,5 +392,37 @@ void AppModelConfig::SetThinkModel(const ThinkModel& _thinkModel)
 bool AppModelConfig::ThinkModelHasBeenSet() const
 {
     return m_thinkModelHasBeenSet;
+}
+
+FileSplitModel AppModelConfig::GetFileSplitModel() const
+{
+    return m_fileSplitModel;
+}
+
+void AppModelConfig::SetFileSplitModel(const FileSplitModel& _fileSplitModel)
+{
+    m_fileSplitModel = _fileSplitModel;
+    m_fileSplitModelHasBeenSet = true;
+}
+
+bool AppModelConfig::FileSplitModelHasBeenSet() const
+{
+    return m_fileSplitModelHasBeenSet;
+}
+
+HeaderExtractModel AppModelConfig::GetHeaderExtractModel() const
+{
+    return m_headerExtractModel;
+}
+
+void AppModelConfig::SetHeaderExtractModel(const HeaderExtractModel& _headerExtractModel)
+{
+    m_headerExtractModel = _headerExtractModel;
+    m_headerExtractModelHasBeenSet = true;
+}
+
+bool AppModelConfig::HeaderExtractModelHasBeenSet() const
+{
+    return m_headerExtractModelHasBeenSet;
 }
 

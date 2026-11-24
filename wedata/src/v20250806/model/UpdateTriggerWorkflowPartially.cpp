@@ -32,7 +32,8 @@ UpdateTriggerWorkflowPartially::UpdateTriggerWorkflowPartially() :
     m_triggerWorkflowRunConfigurationHasBeenSet(false),
     m_schedulerStatusHasBeenSet(false),
     m_triggerModeHasBeenSet(false),
-    m_executeUserUinHasBeenSet(false)
+    m_executeUserUinHasBeenSet(false),
+    m_workflowLabelsHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,26 @@ CoreInternalOutcome UpdateTriggerWorkflowPartially::Deserialize(const rapidjson:
         m_executeUserUinHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkflowLabels") && !value["WorkflowLabels"].IsNull())
+    {
+        if (!value["WorkflowLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UpdateTriggerWorkflowPartially.WorkflowLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WorkflowLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WorkflowLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_workflowLabels.push_back(item);
+        }
+        m_workflowLabelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -321,6 +342,21 @@ void UpdateTriggerWorkflowPartially::ToJsonObject(rapidjson::Value &value, rapid
         string key = "ExecuteUserUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executeUserUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_workflowLabels.begin(); itr != m_workflowLabels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -516,5 +552,21 @@ void UpdateTriggerWorkflowPartially::SetExecuteUserUin(const string& _executeUse
 bool UpdateTriggerWorkflowPartially::ExecuteUserUinHasBeenSet() const
 {
     return m_executeUserUinHasBeenSet;
+}
+
+vector<WorkflowLabel> UpdateTriggerWorkflowPartially::GetWorkflowLabels() const
+{
+    return m_workflowLabels;
+}
+
+void UpdateTriggerWorkflowPartially::SetWorkflowLabels(const vector<WorkflowLabel>& _workflowLabels)
+{
+    m_workflowLabels = _workflowLabels;
+    m_workflowLabelsHasBeenSet = true;
+}
+
+bool UpdateTriggerWorkflowPartially::WorkflowLabelsHasBeenSet() const
+{
+    return m_workflowLabelsHasBeenSet;
 }
 

@@ -27,6 +27,8 @@
 #include <tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneHostsResponse.h>
 #include <tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneResourceSummaryRequest.h>
 #include <tencentcloud/cdz/v20221123/model/DescribeCloudDedicatedZoneResourceSummaryResponse.h>
+#include <tencentcloud/cdz/v20221123/model/DescribeUserAvailableCloudDedicatedZonesRequest.h>
+#include <tencentcloud/cdz/v20221123/model/DescribeUserAvailableCloudDedicatedZonesResponse.h>
 
 
 namespace TencentCloud
@@ -47,6 +49,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudDedicatedZoneResourceSummaryResponse> DescribeCloudDedicatedZoneResourceSummaryOutcome;
                 typedef std::future<DescribeCloudDedicatedZoneResourceSummaryOutcome> DescribeCloudDedicatedZoneResourceSummaryOutcomeCallable;
                 typedef std::function<void(const CdzClient*, const Model::DescribeCloudDedicatedZoneResourceSummaryRequest&, DescribeCloudDedicatedZoneResourceSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudDedicatedZoneResourceSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserAvailableCloudDedicatedZonesResponse> DescribeUserAvailableCloudDedicatedZonesOutcome;
+                typedef std::future<DescribeUserAvailableCloudDedicatedZonesOutcome> DescribeUserAvailableCloudDedicatedZonesOutcomeCallable;
+                typedef std::function<void(const CdzClient*, const Model::DescribeUserAvailableCloudDedicatedZonesRequest&, DescribeUserAvailableCloudDedicatedZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAvailableCloudDedicatedZonesAsyncHandler;
 
 
 
@@ -67,6 +72,15 @@ namespace TencentCloud
                 DescribeCloudDedicatedZoneResourceSummaryOutcome DescribeCloudDedicatedZoneResourceSummary(const Model::DescribeCloudDedicatedZoneResourceSummaryRequest &request);
                 void DescribeCloudDedicatedZoneResourceSummaryAsync(const Model::DescribeCloudDedicatedZoneResourceSummaryRequest& request, const DescribeCloudDedicatedZoneResourceSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudDedicatedZoneResourceSummaryOutcomeCallable DescribeCloudDedicatedZoneResourceSummaryCallable(const Model::DescribeCloudDedicatedZoneResourceSummaryRequest& request);
+
+                /**
+                 *查询用户可使用的专属可用区列表
+                 * @param req DescribeUserAvailableCloudDedicatedZonesRequest
+                 * @return DescribeUserAvailableCloudDedicatedZonesOutcome
+                 */
+                DescribeUserAvailableCloudDedicatedZonesOutcome DescribeUserAvailableCloudDedicatedZones(const Model::DescribeUserAvailableCloudDedicatedZonesRequest &request);
+                void DescribeUserAvailableCloudDedicatedZonesAsync(const Model::DescribeUserAvailableCloudDedicatedZonesRequest& request, const DescribeUserAvailableCloudDedicatedZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserAvailableCloudDedicatedZonesOutcomeCallable DescribeUserAvailableCloudDedicatedZonesCallable(const Model::DescribeUserAvailableCloudDedicatedZonesRequest& request);
 
             };
         }

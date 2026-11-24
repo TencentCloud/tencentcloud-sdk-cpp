@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话
-                     * @return Sid 若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话
+                     * 获取<p>若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话</p>
+                     * @return Sid <p>若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话</p>
                      * 
                      */
                     std::string GetSid() const;
 
                     /**
-                     * 设置若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话
-                     * @param _sid 若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话
+                     * 设置<p>若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话</p>
+                     * @param _sid <p>若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话</p>
                      * 
                      */
                     void SetSid(const std::string& _sid);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SidHasBeenSet() const;
 
                     /**
-                     * 获取是否创建审计日志,通过查看按钮调用时为true,其他为false
-                     * @return AuditLog 是否创建审计日志,通过查看按钮调用时为true,其他为false
+                     * 获取<p>是否创建审计日志,通过查看按钮调用时为true,其他为false</p>
+                     * @return AuditLog <p>是否创建审计日志,通过查看按钮调用时为true,其他为false</p>
                      * 
                      */
                     bool GetAuditLog() const;
 
                     /**
-                     * 设置是否创建审计日志,通过查看按钮调用时为true,其他为false
-                     * @param _auditLog 是否创建审计日志,通过查看按钮调用时为true,其他为false
+                     * 设置<p>是否创建审计日志,通过查看按钮调用时为true,其他为false</p>
+                     * @param _auditLog <p>是否创建审计日志,通过查看按钮调用时为true,其他为false</p>
                      * 
                      */
                     void SetAuditLog(const bool& _auditLog);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool AuditLogHasBeenSet() const;
 
                     /**
-                     * 获取分页的页内记录数，默认为20，最大200
-                     * @return Limit 分页的页内记录数，默认为20，最大200
+                     * 获取<p>分页的页内记录数，默认为20，最大200</p>
+                     * @return Limit <p>分页的页内记录数，默认为20，最大200</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页的页内记录数，默认为20，最大200
-                     * @param _limit 分页的页内记录数，默认为20，最大200
+                     * 设置<p>分页的页内记录数，默认为20，最大200</p>
+                     * @param _limit <p>分页的页内记录数，默认为20，最大200</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取可填写路径名或文件名
-                     * @return FileName 可填写路径名或文件名
+                     * 获取<p>可填写路径名或文件名</p>
+                     * @return FileName <p>可填写路径名或文件名</p>
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置可填写路径名或文件名
-                     * @param _fileName 可填写路径名或文件名
+                     * 设置<p>可填写路径名或文件名</p>
+                     * @param _fileName <p>可填写路径名或文件名</p>
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取分页用偏移量
-                     * @return Offset 分页用偏移量
+                     * 获取<p>分页用偏移量</p>
+                     * @return Offset <p>分页用偏移量</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页用偏移量
-                     * @param _offset 分页用偏移量
+                     * 设置<p>分页用偏移量</p>
+                     * @param _offset <p>分页用偏移量</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取1-已执行，  2-被阻断
-                     * @return AuditAction 1-已执行，  2-被阻断
+                     * 获取<p>1-已放行，  2-已阻断</p>
+                     * @return AuditAction <p>1-已放行，  2-已阻断</p>
                      * 
                      */
                     int64_t GetAuditAction() const;
 
                     /**
-                     * 设置1-已执行，  2-被阻断
-                     * @param _auditAction 1-已执行，  2-被阻断
+                     * 设置<p>1-已放行，  2-已阻断</p>
+                     * @param _auditAction <p>1-已放行，  2-已阻断</p>
                      * 
                      */
                     void SetAuditAction(const int64_t& _auditAction);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool AuditActionHasBeenSet() const;
 
                     /**
-                     * 获取1-已执行，  2-被阻断
-                     * @return AuditActionSet 1-已执行，  2-被阻断
+                     * 获取<p>1-已放行，  2-已阻断</p>
+                     * @return AuditActionSet <p>1-已放行，  2-已阻断</p>
                      * 
                      */
                     std::vector<int64_t> GetAuditActionSet() const;
 
                     /**
-                     * 设置1-已执行，  2-被阻断
-                     * @param _auditActionSet 1-已执行，  2-被阻断
+                     * 设置<p>1-已放行，  2-已阻断</p>
+                     * @param _auditActionSet <p>1-已放行，  2-已阻断</p>
                      * 
                      */
                     void SetAuditActionSet(const std::vector<int64_t>& _auditActionSet);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool AuditActionSetHasBeenSet() const;
 
                     /**
-                     * 获取以Protocol和Method为条件查询
-                     * @return TypeFilters 以Protocol和Method为条件查询
+                     * 获取<p>以Protocol和Method为条件查询</p>
+                     * @return TypeFilters <p>以Protocol和Method为条件查询</p>
                      * 
                      */
                     std::vector<SearchFileTypeFilter> GetTypeFilters() const;
 
                     /**
-                     * 设置以Protocol和Method为条件查询
-                     * @param _typeFilters 以Protocol和Method为条件查询
+                     * 设置<p>以Protocol和Method为条件查询</p>
+                     * @param _typeFilters <p>以Protocol和Method为条件查询</p>
                      * 
                      */
                     void SetTypeFilters(const std::vector<SearchFileTypeFilter>& _typeFilters);
@@ -214,49 +214,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话
+                     * <p>若入参为Id，则其他入参字段不作为搜索依据，仅按照Id来搜索会话</p>
                      */
                     std::string m_sid;
                     bool m_sidHasBeenSet;
 
                     /**
-                     * 是否创建审计日志,通过查看按钮调用时为true,其他为false
+                     * <p>是否创建审计日志,通过查看按钮调用时为true,其他为false</p>
                      */
                     bool m_auditLog;
                     bool m_auditLogHasBeenSet;
 
                     /**
-                     * 分页的页内记录数，默认为20，最大200
+                     * <p>分页的页内记录数，默认为20，最大200</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 可填写路径名或文件名
+                     * <p>可填写路径名或文件名</p>
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 分页用偏移量
+                     * <p>分页用偏移量</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 1-已执行，  2-被阻断
+                     * <p>1-已放行，  2-已阻断</p>
                      */
                     int64_t m_auditAction;
                     bool m_auditActionHasBeenSet;
 
                     /**
-                     * 1-已执行，  2-被阻断
+                     * <p>1-已放行，  2-已阻断</p>
                      */
                     std::vector<int64_t> m_auditActionSet;
                     bool m_auditActionSetHasBeenSet;
 
                     /**
-                     * 以Protocol和Method为条件查询
+                     * <p>以Protocol和Method为条件查询</p>
                      */
                     std::vector<SearchFileTypeFilter> m_typeFilters;
                     bool m_typeFiltersHasBeenSet;

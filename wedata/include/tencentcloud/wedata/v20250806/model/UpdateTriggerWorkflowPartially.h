@@ -28,6 +28,7 @@
 #include <tencentcloud/wedata/v20250806/model/WorkflowTriggerConfig.h>
 #include <tencentcloud/wedata/v20250806/model/WorkflowGeneralTaskParam.h>
 #include <tencentcloud/wedata/v20250806/model/WorkflowRunConfig.h>
+#include <tencentcloud/wedata/v20250806/model/WorkflowLabel.h>
 
 
 namespace TencentCloud
@@ -302,6 +303,27 @@ namespace TencentCloud
                      */
                     bool ExecuteUserUinHasBeenSet() const;
 
+                    /**
+                     * 获取<p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>
+                     * @return WorkflowLabels <p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>
+                     * 
+                     */
+                    std::vector<WorkflowLabel> GetWorkflowLabels() const;
+
+                    /**
+                     * 设置<p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>
+                     * @param _workflowLabels <p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>
+                     * 
+                     */
+                    void SetWorkflowLabels(const std::vector<WorkflowLabel>& _workflowLabels);
+
+                    /**
+                     * 判断参数 WorkflowLabels 是否已赋值
+                     * @return WorkflowLabels 是否已赋值
+                     * 
+                     */
+                    bool WorkflowLabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -375,6 +397,12 @@ namespace TencentCloud
                      */
                     std::string m_executeUserUin;
                     bool m_executeUserUinHasBeenSet;
+
+                    /**
+                     * <p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>
+                     */
+                    std::vector<WorkflowLabel> m_workflowLabels;
+                    bool m_workflowLabelsHasBeenSet;
 
                 };
             }

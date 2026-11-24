@@ -21,10 +21,11 @@ using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
 LimitRule::LimitRule() :
+    m_accurateQpsThresholdsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_limitByHasBeenSet(false),
     m_qpsThresholdsHasBeenSet(false),
-    m_accurateQpsThresholdsHasBeenSet(false)
+    m_enabledHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,26 @@ CoreInternalOutcome LimitRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("AccurateQpsThresholds") && !value["AccurateQpsThresholds"].IsNull())
+    {
+        if (!value["AccurateQpsThresholds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LimitRule.AccurateQpsThresholds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AccurateQpsThresholds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AccurateQpsThreshold item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_accurateQpsThresholds.push_back(item);
+        }
+        m_accurateQpsThresholdsHasBeenSet = true;
+    }
 
     if (value.HasMember("Filters") && !value["Filters"].IsNull())
     {
@@ -93,24 +114,14 @@ CoreInternalOutcome LimitRule::Deserialize(const rapidjson::Value &value)
         m_qpsThresholdsHasBeenSet = true;
     }
 
-    if (value.HasMember("AccurateQpsThresholds") && !value["AccurateQpsThresholds"].IsNull())
+    if (value.HasMember("Enabled") && !value["Enabled"].IsNull())
     {
-        if (!value["AccurateQpsThresholds"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `LimitRule.AccurateQpsThresholds` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["AccurateQpsThresholds"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["Enabled"].IsBool())
         {
-            AccurateQpsThreshold item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_accurateQpsThresholds.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `LimitRule.Enabled` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_accurateQpsThresholdsHasBeenSet = true;
+        m_enabled = value["Enabled"].GetBool();
+        m_enabledHasBeenSet = true;
     }
 
 
@@ -119,6 +130,21 @@ CoreInternalOutcome LimitRule::Deserialize(const rapidjson::Value &value)
 
 void LimitRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_accurateQpsThresholdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccurateQpsThresholds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_accurateQpsThresholds.begin(); itr != m_accurateQpsThresholds.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     if (m_filtersHasBeenSet)
     {
@@ -165,23 +191,32 @@ void LimitRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         }
     }
 
-    if (m_accurateQpsThresholdsHasBeenSet)
+    if (m_enabledHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AccurateQpsThresholds";
+        string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_accurateQpsThresholds.begin(); itr != m_accurateQpsThresholds.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, m_enabled, allocator);
     }
 
 }
 
+
+vector<AccurateQpsThreshold> LimitRule::GetAccurateQpsThresholds() const
+{
+    return m_accurateQpsThresholds;
+}
+
+void LimitRule::SetAccurateQpsThresholds(const vector<AccurateQpsThreshold>& _accurateQpsThresholds)
+{
+    m_accurateQpsThresholds = _accurateQpsThresholds;
+    m_accurateQpsThresholdsHasBeenSet = true;
+}
+
+bool LimitRule::AccurateQpsThresholdsHasBeenSet() const
+{
+    return m_accurateQpsThresholdsHasBeenSet;
+}
 
 vector<RuleFilter> LimitRule::GetFilters() const
 {
@@ -231,19 +266,19 @@ bool LimitRule::QpsThresholdsHasBeenSet() const
     return m_qpsThresholdsHasBeenSet;
 }
 
-vector<AccurateQpsThreshold> LimitRule::GetAccurateQpsThresholds() const
+bool LimitRule::GetEnabled() const
 {
-    return m_accurateQpsThresholds;
+    return m_enabled;
 }
 
-void LimitRule::SetAccurateQpsThresholds(const vector<AccurateQpsThreshold>& _accurateQpsThresholds)
+void LimitRule::SetEnabled(const bool& _enabled)
 {
-    m_accurateQpsThresholds = _accurateQpsThresholds;
-    m_accurateQpsThresholdsHasBeenSet = true;
+    m_enabled = _enabled;
+    m_enabledHasBeenSet = true;
 }
 
-bool LimitRule::AccurateQpsThresholdsHasBeenSet() const
+bool LimitRule::EnabledHasBeenSet() const
 {
-    return m_accurateQpsThresholdsHasBeenSet;
+    return m_enabledHasBeenSet;
 }
 

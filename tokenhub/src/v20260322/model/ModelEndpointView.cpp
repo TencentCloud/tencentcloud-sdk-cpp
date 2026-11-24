@@ -28,13 +28,18 @@ ModelEndpointView::ModelEndpointView() :
     m_modelNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_modelStatusHasBeenSet(false),
+    m_modelChargeUnitHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_paymentEnabledHasBeenSet(false),
     m_chargeDetailHasBeenSet(false),
     m_stopReasonHasBeenSet(false),
     m_rPMHasBeenSet(false),
-    m_tPMHasBeenSet(false)
+    m_tPMHasBeenSet(false),
+    m_modelImageHasBeenSet(false),
+    m_offlineAtHasBeenSet(false),
+    m_discontinuedAtHasBeenSet(false),
+    m_nightDiscountEnabledHasBeenSet(false)
 {
 }
 
@@ -116,6 +121,16 @@ CoreInternalOutcome ModelEndpointView::Deserialize(const rapidjson::Value &value
         m_modelStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelChargeUnit") && !value["ModelChargeUnit"].IsNull())
+    {
+        if (!value["ModelChargeUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelEndpointView.ModelChargeUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelChargeUnit = string(value["ModelChargeUnit"].GetString());
+        m_modelChargeUnitHasBeenSet = true;
+    }
+
     if (value.HasMember("ServiceType") && !value["ServiceType"].IsNull())
     {
         if (!value["ServiceType"].IsString())
@@ -186,6 +201,53 @@ CoreInternalOutcome ModelEndpointView::Deserialize(const rapidjson::Value &value
         m_tPMHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelImage") && !value["ModelImage"].IsNull())
+    {
+        if (!value["ModelImage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelEndpointView.ModelImage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_modelImage.Deserialize(value["ModelImage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_modelImageHasBeenSet = true;
+    }
+
+    if (value.HasMember("OfflineAt") && !value["OfflineAt"].IsNull())
+    {
+        if (!value["OfflineAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelEndpointView.OfflineAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_offlineAt = string(value["OfflineAt"].GetString());
+        m_offlineAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiscontinuedAt") && !value["DiscontinuedAt"].IsNull())
+    {
+        if (!value["DiscontinuedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelEndpointView.DiscontinuedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_discontinuedAt = string(value["DiscontinuedAt"].GetString());
+        m_discontinuedAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("NightDiscountEnabled") && !value["NightDiscountEnabled"].IsNull())
+    {
+        if (!value["NightDiscountEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelEndpointView.NightDiscountEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_nightDiscountEnabled = value["NightDiscountEnabled"].GetBool();
+        m_nightDiscountEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -254,6 +316,14 @@ void ModelEndpointView::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_modelStatus.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_modelChargeUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelChargeUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelChargeUnit.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_serviceTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -308,6 +378,39 @@ void ModelEndpointView::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TPM";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tPM, allocator);
+    }
+
+    if (m_modelImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modelImage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_offlineAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OfflineAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_offlineAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_discontinuedAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscontinuedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_discontinuedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nightDiscountEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NightDiscountEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nightDiscountEnabled, allocator);
     }
 
 }
@@ -425,6 +528,22 @@ bool ModelEndpointView::ModelStatusHasBeenSet() const
     return m_modelStatusHasBeenSet;
 }
 
+string ModelEndpointView::GetModelChargeUnit() const
+{
+    return m_modelChargeUnit;
+}
+
+void ModelEndpointView::SetModelChargeUnit(const string& _modelChargeUnit)
+{
+    m_modelChargeUnit = _modelChargeUnit;
+    m_modelChargeUnitHasBeenSet = true;
+}
+
+bool ModelEndpointView::ModelChargeUnitHasBeenSet() const
+{
+    return m_modelChargeUnitHasBeenSet;
+}
+
 string ModelEndpointView::GetServiceType() const
 {
     return m_serviceType;
@@ -535,5 +654,69 @@ void ModelEndpointView::SetTPM(const int64_t& _tPM)
 bool ModelEndpointView::TPMHasBeenSet() const
 {
     return m_tPMHasBeenSet;
+}
+
+ModelImage ModelEndpointView::GetModelImage() const
+{
+    return m_modelImage;
+}
+
+void ModelEndpointView::SetModelImage(const ModelImage& _modelImage)
+{
+    m_modelImage = _modelImage;
+    m_modelImageHasBeenSet = true;
+}
+
+bool ModelEndpointView::ModelImageHasBeenSet() const
+{
+    return m_modelImageHasBeenSet;
+}
+
+string ModelEndpointView::GetOfflineAt() const
+{
+    return m_offlineAt;
+}
+
+void ModelEndpointView::SetOfflineAt(const string& _offlineAt)
+{
+    m_offlineAt = _offlineAt;
+    m_offlineAtHasBeenSet = true;
+}
+
+bool ModelEndpointView::OfflineAtHasBeenSet() const
+{
+    return m_offlineAtHasBeenSet;
+}
+
+string ModelEndpointView::GetDiscontinuedAt() const
+{
+    return m_discontinuedAt;
+}
+
+void ModelEndpointView::SetDiscontinuedAt(const string& _discontinuedAt)
+{
+    m_discontinuedAt = _discontinuedAt;
+    m_discontinuedAtHasBeenSet = true;
+}
+
+bool ModelEndpointView::DiscontinuedAtHasBeenSet() const
+{
+    return m_discontinuedAtHasBeenSet;
+}
+
+bool ModelEndpointView::GetNightDiscountEnabled() const
+{
+    return m_nightDiscountEnabled;
+}
+
+void ModelEndpointView::SetNightDiscountEnabled(const bool& _nightDiscountEnabled)
+{
+    m_nightDiscountEnabled = _nightDiscountEnabled;
+    m_nightDiscountEnabledHasBeenSet = true;
+}
+
+bool ModelEndpointView::NightDiscountEnabledHasBeenSet() const
+{
+    return m_nightDiscountEnabledHasBeenSet;
 }
 

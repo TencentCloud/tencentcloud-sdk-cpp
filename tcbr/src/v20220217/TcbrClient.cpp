@@ -690,6 +690,56 @@ TcbrClient::DescribeServerManageTaskOutcomeCallable TcbrClient::DescribeServerMa
     return prom->get_future();
 }
 
+TcbrClient::DescribeStableIPOutcome TcbrClient::DescribeStableIP(const DescribeStableIPRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStableIP");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStableIPResponse rsp = DescribeStableIPResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStableIPOutcome(rsp);
+        else
+            return DescribeStableIPOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStableIPOutcome(outcome.GetError());
+    }
+}
+
+void TcbrClient::DescribeStableIPAsync(const DescribeStableIPRequest& request, const DescribeStableIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribeStableIPRequest&;
+    using Resp = DescribeStableIPResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribeStableIP", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+TcbrClient::DescribeStableIPOutcomeCallable TcbrClient::DescribeStableIPCallable(const DescribeStableIPRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribeStableIPOutcome>>();
+    DescribeStableIPAsync(
+    request,
+    [prom](
+        const TcbrClient*,
+        const DescribeStableIPRequest&,
+        DescribeStableIPOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 TcbrClient::DescribeStableIPTaskOutcome TcbrClient::DescribeStableIPTask(const DescribeStableIPTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStableIPTask");

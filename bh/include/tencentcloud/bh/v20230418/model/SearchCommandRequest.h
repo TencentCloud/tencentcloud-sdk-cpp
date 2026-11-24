@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取搜索区间的开始时间
-                     * @return StartTime 搜索区间的开始时间
+                     * 获取<p>搜索区间的开始时间</p>
+                     * @return StartTime <p>搜索区间的开始时间</p>
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置搜索区间的开始时间
-                     * @param _startTime 搜索区间的开始时间
+                     * 设置<p>搜索区间的开始时间</p>
+                     * @param _startTime <p>搜索区间的开始时间</p>
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取搜索区间的结束时间，不填默认为开始时间到现在为止
-                     * @return EndTime 搜索区间的结束时间，不填默认为开始时间到现在为止
+                     * 获取<p>搜索区间的结束时间，不填默认为开始时间到现在为止</p>
+                     * @return EndTime <p>搜索区间的结束时间，不填默认为开始时间到现在为止</p>
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置搜索区间的结束时间，不填默认为开始时间到现在为止
-                     * @param _endTime 搜索区间的结束时间，不填默认为开始时间到现在为止
+                     * 设置<p>搜索区间的结束时间，不填默认为开始时间到现在为止</p>
+                     * @param _endTime <p>搜索区间的结束时间，不填默认为开始时间到现在为止</p>
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return UserName 用户名
+                     * 获取<p>用户名</p>
+                     * @return UserName <p>用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名
-                     * @param _userName 用户名
+                     * 设置<p>用户名</p>
+                     * @param _userName <p>用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取姓名
-                     * @return RealName 姓名
+                     * 获取<p>姓名</p>
+                     * @return RealName <p>姓名</p>
                      * 
                      */
                     std::string GetRealName() const;
 
                     /**
-                     * 设置姓名
-                     * @param _realName 姓名
+                     * 设置<p>姓名</p>
+                     * @param _realName <p>姓名</p>
                      * 
                      */
                     void SetRealName(const std::string& _realName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool RealNameHasBeenSet() const;
 
                     /**
-                     * 获取资产实例ID
-                     * @return InstanceId 资产实例ID
+                     * 获取<p>资产实例ID</p>
+                     * @return InstanceId <p>资产实例ID</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置资产实例ID
-                     * @param _instanceId 资产实例ID
+                     * 设置<p>资产实例ID</p>
+                     * @param _instanceId <p>资产实例ID</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取资产名称
-                     * @return DeviceName 资产名称
+                     * 获取<p>资产名称</p>
+                     * @return DeviceName <p>资产名称</p>
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
-                     * 设置资产名称
-                     * @param _deviceName 资产名称
+                     * 设置<p>资产名称</p>
+                     * @param _deviceName <p>资产名称</p>
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取资产的公网IP
-                     * @return PublicIp 资产的公网IP
+                     * 获取<p>资产的公网IP</p>
+                     * @return PublicIp <p>资产的公网IP</p>
                      * 
                      */
                     std::string GetPublicIp() const;
 
                     /**
-                     * 设置资产的公网IP
-                     * @param _publicIp 资产的公网IP
+                     * 设置<p>资产的公网IP</p>
+                     * @param _publicIp <p>资产的公网IP</p>
                      * 
                      */
                     void SetPublicIp(const std::string& _publicIp);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool PublicIpHasBeenSet() const;
 
                     /**
-                     * 获取资产的内网IP
-                     * @return PrivateIp 资产的内网IP
+                     * 获取<p>资产的内网IP</p>
+                     * @return PrivateIp <p>资产的内网IP</p>
                      * 
                      */
                     std::string GetPrivateIp() const;
 
                     /**
-                     * 设置资产的内网IP
-                     * @param _privateIp 资产的内网IP
+                     * 设置<p>资产的内网IP</p>
+                     * @param _privateIp <p>资产的内网IP</p>
                      * 
                      */
                     void SetPrivateIp(const std::string& _privateIp);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool PrivateIpHasBeenSet() const;
 
                     /**
-                     * 获取执行的命令
-                     * @return Cmd 执行的命令
+                     * 获取<p>执行的命令</p>
+                     * @return Cmd <p>执行的命令</p>
                      * 
                      */
                     std::string GetCmd() const;
 
                     /**
-                     * 设置执行的命令
-                     * @param _cmd 执行的命令
+                     * 设置<p>执行的命令</p>
+                     * @param _cmd <p>执行的命令</p>
                      * 
                      */
                     void SetCmd(const std::string& _cmd);
@@ -232,19 +232,15 @@ namespace TencentCloud
                     bool CmdHasBeenSet() const;
 
                     /**
-                     * 获取Cmd字段是前端传值是否进行base64.
-0:否，1：是
-                     * @return Encoding Cmd字段是前端传值是否进行base64.
-0:否，1：是
+                     * 获取<p>Cmd字段是前端传值是否进行base64.<br>0:否，1：是</p>
+                     * @return Encoding <p>Cmd字段是前端传值是否进行base64.<br>0:否，1：是</p>
                      * 
                      */
                     uint64_t GetEncoding() const;
 
                     /**
-                     * 设置Cmd字段是前端传值是否进行base64.
-0:否，1：是
-                     * @param _encoding Cmd字段是前端传值是否进行base64.
-0:否，1：是
+                     * 设置<p>Cmd字段是前端传值是否进行base64.<br>0:否，1：是</p>
+                     * @param _encoding <p>Cmd字段是前端传值是否进行base64.<br>0:否，1：是</p>
                      * 
                      */
                     void SetEncoding(const uint64_t& _encoding);
@@ -257,15 +253,15 @@ namespace TencentCloud
                     bool EncodingHasBeenSet() const;
 
                     /**
-                     * 获取根据拦截状态进行过滤：1 - 已执行，2 - 被阻断
-                     * @return AuditAction 根据拦截状态进行过滤：1 - 已执行，2 - 被阻断
+                     * 获取<p>根据拦截状态进行过滤：1 - 已放行，2 - 已阻断</p>
+                     * @return AuditAction <p>根据拦截状态进行过滤：1 - 已放行，2 - 已阻断</p>
                      * 
                      */
                     std::vector<uint64_t> GetAuditAction() const;
 
                     /**
-                     * 设置根据拦截状态进行过滤：1 - 已执行，2 - 被阻断
-                     * @param _auditAction 根据拦截状态进行过滤：1 - 已执行，2 - 被阻断
+                     * 设置<p>根据拦截状态进行过滤：1 - 已放行，2 - 已阻断</p>
+                     * @param _auditAction <p>根据拦截状态进行过滤：1 - 已放行，2 - 已阻断</p>
                      * 
                      */
                     void SetAuditAction(const std::vector<uint64_t>& _auditAction);
@@ -278,15 +274,15 @@ namespace TencentCloud
                     bool AuditActionHasBeenSet() const;
 
                     /**
-                     * 获取每页容量，默认20，最大200
-                     * @return Limit 每页容量，默认20，最大200
+                     * 获取<p>每页容量，默认20，最大200</p>
+                     * @return Limit <p>每页容量，默认20，最大200</p>
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页容量，默认20，最大200
-                     * @param _limit 每页容量，默认20，最大200
+                     * 设置<p>每页容量，默认20，最大200</p>
+                     * @param _limit <p>每页容量，默认20，最大200</p>
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -299,15 +295,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移位置，默认值为0
-                     * @return Offset 分页偏移位置，默认值为0
+                     * 获取<p>分页偏移位置，默认值为0</p>
+                     * @return Offset <p>分页偏移位置，默认值为0</p>
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移位置，默认值为0
-                     * @param _offset 分页偏移位置，默认值为0
+                     * 设置<p>分页偏移位置，默认值为0</p>
+                     * @param _offset <p>分页偏移位置，默认值为0</p>
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -322,80 +318,79 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 搜索区间的开始时间
+                     * <p>搜索区间的开始时间</p>
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 搜索区间的结束时间，不填默认为开始时间到现在为止
+                     * <p>搜索区间的结束时间，不填默认为开始时间到现在为止</p>
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 姓名
+                     * <p>姓名</p>
                      */
                     std::string m_realName;
                     bool m_realNameHasBeenSet;
 
                     /**
-                     * 资产实例ID
+                     * <p>资产实例ID</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 资产名称
+                     * <p>资产名称</p>
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 资产的公网IP
+                     * <p>资产的公网IP</p>
                      */
                     std::string m_publicIp;
                     bool m_publicIpHasBeenSet;
 
                     /**
-                     * 资产的内网IP
+                     * <p>资产的内网IP</p>
                      */
                     std::string m_privateIp;
                     bool m_privateIpHasBeenSet;
 
                     /**
-                     * 执行的命令
+                     * <p>执行的命令</p>
                      */
                     std::string m_cmd;
                     bool m_cmdHasBeenSet;
 
                     /**
-                     * Cmd字段是前端传值是否进行base64.
-0:否，1：是
+                     * <p>Cmd字段是前端传值是否进行base64.<br>0:否，1：是</p>
                      */
                     uint64_t m_encoding;
                     bool m_encodingHasBeenSet;
 
                     /**
-                     * 根据拦截状态进行过滤：1 - 已执行，2 - 被阻断
+                     * <p>根据拦截状态进行过滤：1 - 已放行，2 - 已阻断</p>
                      */
                     std::vector<uint64_t> m_auditAction;
                     bool m_auditActionHasBeenSet;
 
                     /**
-                     * 每页容量，默认20，最大200
+                     * <p>每页容量，默认20，最大200</p>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移位置，默认值为0
+                     * <p>分页偏移位置，默认值为0</p>
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

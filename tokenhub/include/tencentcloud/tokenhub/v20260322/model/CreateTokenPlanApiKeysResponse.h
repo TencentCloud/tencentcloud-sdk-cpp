@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取成功创建的项列表。
-                     * @return Items 成功创建的项列表。
+                     * 获取<p>成功创建的项列表。</p>
+                     * @return Items <p>成功创建的项列表。</p>
                      * 
                      */
                     std::vector<CreateApiKeysResultItem> GetItems() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool ItemsHasBeenSet() const;
 
                     /**
-                     * 获取创建失败的项列表。
-                     * @return FailedItems 创建失败的项列表。
+                     * 获取<p>创建失败的项列表。</p>
+                     * @return FailedItems <p>创建失败的项列表。</p>
                      * 
                      */
                     std::vector<BatchCreateFailedItem> GetFailedItems() const;
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 成功创建的项列表。
+                     * <p>成功创建的项列表。</p>
                      */
                     std::vector<CreateApiKeysResultItem> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
-                     * 创建失败的项列表。
+                     * <p>创建失败的项列表。</p>
                      */
                     std::vector<BatchCreateFailedItem> m_failedItems;
                     bool m_failedItemsHasBeenSet;

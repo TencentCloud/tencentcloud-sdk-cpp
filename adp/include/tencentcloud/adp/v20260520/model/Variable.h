@@ -277,6 +277,27 @@ namespace TencentCloud
                      */
                     bool EnableSandboxHasBeenSet() const;
 
+                    /**
+                     * 获取<p>值作用域</p><p>枚举值：</p><ul><li>0： 同一用户跨会话(默认): 同一用户的所有会话共用一份变量值</li><li>1： 仅当前会话: 变量值按会话隔离, 各会话互不影响</li></ul>
+                     * @return ValueScope <p>值作用域</p><p>枚举值：</p><ul><li>0： 同一用户跨会话(默认): 同一用户的所有会话共用一份变量值</li><li>1： 仅当前会话: 变量值按会话隔离, 各会话互不影响</li></ul>
+                     * 
+                     */
+                    int64_t GetValueScope() const;
+
+                    /**
+                     * 设置<p>值作用域</p><p>枚举值：</p><ul><li>0： 同一用户跨会话(默认): 同一用户的所有会话共用一份变量值</li><li>1： 仅当前会话: 变量值按会话隔离, 各会话互不影响</li></ul>
+                     * @param _valueScope <p>值作用域</p><p>枚举值：</p><ul><li>0： 同一用户跨会话(默认): 同一用户的所有会话共用一份变量值</li><li>1： 仅当前会话: 变量值按会话隔离, 各会话互不影响</li></ul>
+                     * 
+                     */
+                    void SetValueScope(const int64_t& _valueScope);
+
+                    /**
+                     * 判断参数 ValueScope 是否已赋值
+                     * @return ValueScope 是否已赋值
+                     * 
+                     */
+                    bool ValueScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +365,12 @@ namespace TencentCloud
                      */
                     bool m_enableSandbox;
                     bool m_enableSandboxHasBeenSet;
+
+                    /**
+                     * <p>值作用域</p><p>枚举值：</p><ul><li>0： 同一用户跨会话(默认): 同一用户的所有会话共用一份变量值</li><li>1： 仅当前会话: 变量值按会话隔离, 各会话互不影响</li></ul>
+                     */
+                    int64_t m_valueScope;
+                    bool m_valueScopeHasBeenSet;
 
                 };
             }

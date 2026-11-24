@@ -39,7 +39,9 @@ DescribeOrganizationResponse::DescribeOrganizationResponse() :
     m_payUinHasBeenSet(false),
     m_payNameHasBeenSet(false),
     m_isAssignManagerHasBeenSet(false),
-    m_isAuthManagerHasBeenSet(false)
+    m_isAuthManagerHasBeenSet(false),
+    m_memberPermissionOptionsHasBeenSet(false),
+    m_defaultPayTypeHasBeenSet(false)
 {
 }
 
@@ -247,6 +249,36 @@ CoreInternalOutcome DescribeOrganizationResponse::Deserialize(const string &payl
         m_isAuthManagerHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MemberPermissionOptions") && !rsp["MemberPermissionOptions"].IsNull())
+    {
+        if (!rsp["MemberPermissionOptions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MemberPermissionOptions` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["MemberPermissionOptions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MemberPermissionOption item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_memberPermissionOptions.push_back(item);
+        }
+        m_memberPermissionOptionsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DefaultPayType") && !rsp["DefaultPayType"].IsNull())
+    {
+        if (!rsp["DefaultPayType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DefaultPayType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultPayType = string(rsp["DefaultPayType"].GetString());
+        m_defaultPayTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -390,6 +422,29 @@ string DescribeOrganizationResponse::ToJsonString() const
         string key = "IsAuthManager";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAuthManager, allocator);
+    }
+
+    if (m_memberPermissionOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberPermissionOptions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_memberPermissionOptions.begin(); itr != m_memberPermissionOptions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_defaultPayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultPayType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultPayType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -562,6 +617,26 @@ bool DescribeOrganizationResponse::GetIsAuthManager() const
 bool DescribeOrganizationResponse::IsAuthManagerHasBeenSet() const
 {
     return m_isAuthManagerHasBeenSet;
+}
+
+vector<MemberPermissionOption> DescribeOrganizationResponse::GetMemberPermissionOptions() const
+{
+    return m_memberPermissionOptions;
+}
+
+bool DescribeOrganizationResponse::MemberPermissionOptionsHasBeenSet() const
+{
+    return m_memberPermissionOptionsHasBeenSet;
+}
+
+string DescribeOrganizationResponse::GetDefaultPayType() const
+{
+    return m_defaultPayType;
+}
+
+bool DescribeOrganizationResponse::DefaultPayTypeHasBeenSet() const
+{
+    return m_defaultPayTypeHasBeenSet;
 }
 
 

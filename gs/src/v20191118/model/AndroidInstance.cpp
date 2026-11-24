@@ -29,6 +29,8 @@ AndroidInstance::AndroidInstance() :
     m_androidInstanceImageIdHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
+    m_dPIHasBeenSet(false),
+    m_fPSHasBeenSet(false),
     m_hostSerialNumberHasBeenSet(false),
     m_androidInstanceGroupIdHasBeenSet(false),
     m_androidInstanceLabelsHasBeenSet(false),
@@ -125,6 +127,26 @@ CoreInternalOutcome AndroidInstance::Deserialize(const rapidjson::Value &value)
         }
         m_height = value["Height"].GetUint64();
         m_heightHasBeenSet = true;
+    }
+
+    if (value.HasMember("DPI") && !value["DPI"].IsNull())
+    {
+        if (!value["DPI"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstance.DPI` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dPI = value["DPI"].GetUint64();
+        m_dPIHasBeenSet = true;
+    }
+
+    if (value.HasMember("FPS") && !value["FPS"].IsNull())
+    {
+        if (!value["FPS"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstance.FPS` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fPS = value["FPS"].GetUint64();
+        m_fPSHasBeenSet = true;
     }
 
     if (value.HasMember("HostSerialNumber") && !value["HostSerialNumber"].IsNull())
@@ -306,6 +328,22 @@ void AndroidInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Height";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_dPIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DPI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dPI, allocator);
+    }
+
+    if (m_fPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fPS, allocator);
     }
 
     if (m_hostSerialNumberHasBeenSet)
@@ -524,6 +562,38 @@ void AndroidInstance::SetHeight(const uint64_t& _height)
 bool AndroidInstance::HeightHasBeenSet() const
 {
     return m_heightHasBeenSet;
+}
+
+uint64_t AndroidInstance::GetDPI() const
+{
+    return m_dPI;
+}
+
+void AndroidInstance::SetDPI(const uint64_t& _dPI)
+{
+    m_dPI = _dPI;
+    m_dPIHasBeenSet = true;
+}
+
+bool AndroidInstance::DPIHasBeenSet() const
+{
+    return m_dPIHasBeenSet;
+}
+
+uint64_t AndroidInstance::GetFPS() const
+{
+    return m_fPS;
+}
+
+void AndroidInstance::SetFPS(const uint64_t& _fPS)
+{
+    m_fPS = _fPS;
+    m_fPSHasBeenSet = true;
+}
+
+bool AndroidInstance::FPSHasBeenSet() const
+{
+    return m_fPSHasBeenSet;
 }
 
 string AndroidInstance::GetHostSerialNumber() const

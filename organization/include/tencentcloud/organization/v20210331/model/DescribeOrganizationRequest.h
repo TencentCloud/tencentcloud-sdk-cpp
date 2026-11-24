@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取国际站：en，国内站：zh
-                     * @return Lang 国际站：en，国内站：zh
+                     * 获取<p>国际站：en，国内站：zh</p>
+                     * @return Lang <p>国际站：en，国内站：zh</p>
                      * 
                      */
                     std::string GetLang() const;
 
                     /**
-                     * 设置国际站：en，国内站：zh
-                     * @param _lang 国际站：en，国内站：zh
+                     * 设置<p>国际站：en，国内站：zh</p>
+                     * @param _lang <p>国际站：en，国内站：zh</p>
                      * 
                      */
                     void SetLang(const std::string& _lang);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LangHasBeenSet() const;
 
                     /**
-                     * 获取可信服务产品简称。查询是否该可信服务管理员时必须指定
-                     * @return Product 可信服务产品简称。查询是否该可信服务管理员时必须指定
+                     * 获取<p>可信服务产品简称。查询是否该可信服务管理员时必须指定</p>
+                     * @return Product <p>可信服务产品简称。查询是否该可信服务管理员时必须指定</p>
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置可信服务产品简称。查询是否该可信服务管理员时必须指定
-                     * @param _product 可信服务产品简称。查询是否该可信服务管理员时必须指定
+                     * 设置<p>可信服务产品简称。查询是否该可信服务管理员时必须指定</p>
+                     * @param _product <p>可信服务产品简称。查询是否该可信服务管理员时必须指定</p>
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 国际站：en，国内站：zh
+                     * <p>国际站：en，国内站：zh</p>
                      */
                     std::string m_lang;
                     bool m_langHasBeenSet;
 
                     /**
-                     * 可信服务产品简称。查询是否该可信服务管理员时必须指定
+                     * <p>可信服务产品简称。查询是否该可信服务管理员时必须指定</p>
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;

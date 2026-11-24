@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预付费包 id
-                     * @return PreResourceId 预付费包 id
+                     * 获取<p>预付费包 id</p>
+                     * @return PreResourceId <p>预付费包 id</p>
                      * 
                      */
                     std::string GetPreResourceId() const;
 
                     /**
-                     * 设置预付费包 id
-                     * @param _preResourceId 预付费包 id
+                     * 设置<p>预付费包 id</p>
+                     * @param _preResourceId <p>预付费包 id</p>
                      * 
                      */
                     void SetPreResourceId(const std::string& _preResourceId);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 预付费包 id
+                     * <p>预付费包 id</p>
                      */
                     std::string m_preResourceId;
                     bool m_preResourceIdHasBeenSet;

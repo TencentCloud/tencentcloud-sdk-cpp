@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return AndroidInstanceId 实例 ID
+                     * 获取<p>实例 ID</p>
+                     * @return AndroidInstanceId <p>实例 ID</p>
                      * 
                      */
                     std::string GetAndroidInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param _androidInstanceId 实例 ID
+                     * 设置<p>实例 ID</p>
+                     * @param _androidInstanceId <p>实例 ID</p>
                      * 
                      */
                     void SetAndroidInstanceId(const std::string& _androidInstanceId);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AndroidInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例所在区域
-                     * @return AndroidInstanceRegion 实例所在区域
+                     * 获取<p>实例所在区域</p>
+                     * @return AndroidInstanceRegion <p>实例所在区域</p>
                      * 
                      */
                     std::string GetAndroidInstanceRegion() const;
 
                     /**
-                     * 设置实例所在区域
-                     * @param _androidInstanceRegion 实例所在区域
+                     * 设置<p>实例所在区域</p>
+                     * @param _androidInstanceRegion <p>实例所在区域</p>
                      * 
                      */
                     void SetAndroidInstanceRegion(const std::string& _androidInstanceRegion);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool AndroidInstanceRegionHasBeenSet() const;
 
                     /**
-                     * 获取实例可用区
-                     * @return AndroidInstanceZone 实例可用区
+                     * 获取<p>实例可用区</p>
+                     * @return AndroidInstanceZone <p>实例可用区</p>
                      * 
                      */
                     std::string GetAndroidInstanceZone() const;
 
                     /**
-                     * 设置实例可用区
-                     * @param _androidInstanceZone 实例可用区
+                     * 设置<p>实例可用区</p>
+                     * @param _androidInstanceZone <p>实例可用区</p>
                      * 
                      */
                     void SetAndroidInstanceZone(const std::string& _androidInstanceZone);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AndroidInstanceZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例状态：INITIALIZING，NORMAL，PROCESSING
-                     * @return State 实例状态：INITIALIZING，NORMAL，PROCESSING
+                     * 获取<p>实例状态：INITIALIZING，NORMAL，PROCESSING</p>
+                     * @return State <p>实例状态：INITIALIZING，NORMAL，PROCESSING</p>
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置实例状态：INITIALIZING，NORMAL，PROCESSING
-                     * @param _state 实例状态：INITIALIZING，NORMAL，PROCESSING
+                     * 设置<p>实例状态：INITIALIZING，NORMAL，PROCESSING</p>
+                     * @param _state <p>实例状态：INITIALIZING，NORMAL，PROCESSING</p>
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取实例规格
-                     * @return AndroidInstanceType 实例规格
+                     * 获取<p>实例规格</p>
+                     * @return AndroidInstanceType <p>实例规格</p>
                      * 
                      */
                     std::string GetAndroidInstanceType() const;
 
                     /**
-                     * 设置实例规格
-                     * @param _androidInstanceType 实例规格
+                     * 设置<p>实例规格</p>
+                     * @param _androidInstanceType <p>实例规格</p>
                      * 
                      */
                     void SetAndroidInstanceType(const std::string& _androidInstanceType);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool AndroidInstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例镜像 ID
-                     * @return AndroidInstanceImageId 实例镜像 ID
+                     * 获取<p>实例镜像 ID</p>
+                     * @return AndroidInstanceImageId <p>实例镜像 ID</p>
                      * 
                      */
                     std::string GetAndroidInstanceImageId() const;
 
                     /**
-                     * 设置实例镜像 ID
-                     * @param _androidInstanceImageId 实例镜像 ID
+                     * 设置<p>实例镜像 ID</p>
+                     * @param _androidInstanceImageId <p>实例镜像 ID</p>
                      * 
                      */
                     void SetAndroidInstanceImageId(const std::string& _androidInstanceImageId);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool AndroidInstanceImageIdHasBeenSet() const;
 
                     /**
-                     * 获取分辨率宽度
-                     * @return Width 分辨率宽度
+                     * 获取<p>分辨率宽度</p>
+                     * @return Width <p>分辨率宽度</p>
                      * 
                      */
                     uint64_t GetWidth() const;
 
                     /**
-                     * 设置分辨率宽度
-                     * @param _width 分辨率宽度
+                     * 设置<p>分辨率宽度</p>
+                     * @param _width <p>分辨率宽度</p>
                      * 
                      */
                     void SetWidth(const uint64_t& _width);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取分辨率高度
-                     * @return Height 分辨率高度
+                     * 获取<p>分辨率高度</p>
+                     * @return Height <p>分辨率高度</p>
                      * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
-                     * 设置分辨率高度
-                     * @param _height 分辨率高度
+                     * 设置<p>分辨率高度</p>
+                     * @param _height <p>分辨率高度</p>
                      * 
                      */
                     void SetHeight(const uint64_t& _height);
@@ -216,15 +216,57 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取宿主机 ID
-                     * @return HostSerialNumber 宿主机 ID
+                     * 获取<p>每英寸像素点。</p>
+                     * @return DPI <p>每英寸像素点。</p>
+                     * 
+                     */
+                    uint64_t GetDPI() const;
+
+                    /**
+                     * 设置<p>每英寸像素点。</p>
+                     * @param _dPI <p>每英寸像素点。</p>
+                     * 
+                     */
+                    void SetDPI(const uint64_t& _dPI);
+
+                    /**
+                     * 判断参数 DPI 是否已赋值
+                     * @return DPI 是否已赋值
+                     * 
+                     */
+                    bool DPIHasBeenSet() const;
+
+                    /**
+                     * 获取<p>帧率</p>
+                     * @return FPS <p>帧率</p>
+                     * 
+                     */
+                    uint64_t GetFPS() const;
+
+                    /**
+                     * 设置<p>帧率</p>
+                     * @param _fPS <p>帧率</p>
+                     * 
+                     */
+                    void SetFPS(const uint64_t& _fPS);
+
+                    /**
+                     * 判断参数 FPS 是否已赋值
+                     * @return FPS 是否已赋值
+                     * 
+                     */
+                    bool FPSHasBeenSet() const;
+
+                    /**
+                     * 获取<p>宿主机 ID</p>
+                     * @return HostSerialNumber <p>宿主机 ID</p>
                      * 
                      */
                     std::string GetHostSerialNumber() const;
 
                     /**
-                     * 设置宿主机 ID
-                     * @param _hostSerialNumber 宿主机 ID
+                     * 设置<p>宿主机 ID</p>
+                     * @param _hostSerialNumber <p>宿主机 ID</p>
                      * 
                      */
                     void SetHostSerialNumber(const std::string& _hostSerialNumber);
@@ -237,15 +279,15 @@ namespace TencentCloud
                     bool HostSerialNumberHasBeenSet() const;
 
                     /**
-                     * 获取分组 ID
-                     * @return AndroidInstanceGroupId 分组 ID
+                     * 获取<p>分组 ID</p>
+                     * @return AndroidInstanceGroupId <p>分组 ID</p>
                      * 
                      */
                     std::string GetAndroidInstanceGroupId() const;
 
                     /**
-                     * 设置分组 ID
-                     * @param _androidInstanceGroupId 分组 ID
+                     * 设置<p>分组 ID</p>
+                     * @param _androidInstanceGroupId <p>分组 ID</p>
                      * 
                      */
                     void SetAndroidInstanceGroupId(const std::string& _androidInstanceGroupId);
@@ -258,15 +300,15 @@ namespace TencentCloud
                     bool AndroidInstanceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return AndroidInstanceLabels 标签列表
+                     * 获取<p>标签列表</p>
+                     * @return AndroidInstanceLabels <p>标签列表</p>
                      * 
                      */
                     std::vector<AndroidInstanceLabel> GetAndroidInstanceLabels() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _androidInstanceLabels 标签列表
+                     * 设置<p>标签列表</p>
+                     * @param _androidInstanceLabels <p>标签列表</p>
                      * 
                      */
                     void SetAndroidInstanceLabels(const std::vector<AndroidInstanceLabel>& _androidInstanceLabels);
@@ -279,15 +321,15 @@ namespace TencentCloud
                     bool AndroidInstanceLabelsHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取<p>名称</p>
+                     * @return Name <p>名称</p>
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置<p>名称</p>
+                     * @param _name <p>名称</p>
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -300,15 +342,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用户ID
-                     * @return UserId 用户ID
+                     * 获取<p>用户ID</p>
+                     * @return UserId <p>用户ID</p>
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户ID
-                     * @param _userId 用户ID
+                     * 设置<p>用户ID</p>
+                     * @param _userId <p>用户ID</p>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -321,15 +363,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取内网 IP
-                     * @return PrivateIP 内网 IP
+                     * 获取<p>内网 IP</p>
+                     * @return PrivateIP <p>内网 IP</p>
                      * 
                      */
                     std::string GetPrivateIP() const;
 
                     /**
-                     * 设置内网 IP
-                     * @param _privateIP 内网 IP
+                     * 设置<p>内网 IP</p>
+                     * @param _privateIP <p>内网 IP</p>
                      * 
                      */
                     void SetPrivateIP(const std::string& _privateIP);
@@ -342,15 +384,15 @@ namespace TencentCloud
                     bool PrivateIPHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -363,15 +405,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取机箱 ID
-                     * @return HostServerSerialNumber 机箱 ID
+                     * 获取<p>机箱 ID</p>
+                     * @return HostServerSerialNumber <p>机箱 ID</p>
                      * 
                      */
                     std::string GetHostServerSerialNumber() const;
 
                     /**
-                     * 设置机箱 ID
-                     * @param _hostServerSerialNumber 机箱 ID
+                     * 设置<p>机箱 ID</p>
+                     * @param _hostServerSerialNumber <p>机箱 ID</p>
                      * 
                      */
                     void SetHostServerSerialNumber(const std::string& _hostServerSerialNumber);
@@ -384,23 +426,15 @@ namespace TencentCloud
                     bool HostServerSerialNumberHasBeenSet() const;
 
                     /**
-                     * 获取服务状态。
-IDLE：未连接
-ESTABLISHED：连接中
-                     * @return ServiceStatus 服务状态。
-IDLE：未连接
-ESTABLISHED：连接中
+                     * 获取<p>服务状态。<br>IDLE：未连接<br>ESTABLISHED：连接中</p>
+                     * @return ServiceStatus <p>服务状态。<br>IDLE：未连接<br>ESTABLISHED：连接中</p>
                      * 
                      */
                     std::string GetServiceStatus() const;
 
                     /**
-                     * 设置服务状态。
-IDLE：未连接
-ESTABLISHED：连接中
-                     * @param _serviceStatus 服务状态。
-IDLE：未连接
-ESTABLISHED：连接中
+                     * 设置<p>服务状态。<br>IDLE：未连接<br>ESTABLISHED：连接中</p>
+                     * @param _serviceStatus <p>服务状态。<br>IDLE：未连接<br>ESTABLISHED：连接中</p>
                      * 
                      */
                     void SetServiceStatus(const std::string& _serviceStatus);
@@ -413,23 +447,15 @@ ESTABLISHED：连接中
                     bool ServiceStatusHasBeenSet() const;
 
                     /**
-                     * 获取安卓实例型号。
-YS1：默认值，基础型云手机
-GC0、GC1、GC2：三种性能型云手机
-                     * @return AndroidInstanceModel 安卓实例型号。
-YS1：默认值，基础型云手机
-GC0、GC1、GC2：三种性能型云手机
+                     * 获取<p>安卓实例型号。<br>YS1：默认值，基础型云手机<br>GC0、GC1、GC2：三种性能型云手机</p>
+                     * @return AndroidInstanceModel <p>安卓实例型号。<br>YS1：默认值，基础型云手机<br>GC0、GC1、GC2：三种性能型云手机</p>
                      * 
                      */
                     std::string GetAndroidInstanceModel() const;
 
                     /**
-                     * 设置安卓实例型号。
-YS1：默认值，基础型云手机
-GC0、GC1、GC2：三种性能型云手机
-                     * @param _androidInstanceModel 安卓实例型号。
-YS1：默认值，基础型云手机
-GC0、GC1、GC2：三种性能型云手机
+                     * 设置<p>安卓实例型号。<br>YS1：默认值，基础型云手机<br>GC0、GC1、GC2：三种性能型云手机</p>
+                     * @param _androidInstanceModel <p>安卓实例型号。<br>YS1：默认值，基础型云手机<br>GC0、GC1、GC2：三种性能型云手机</p>
                      * 
                      */
                     void SetAndroidInstanceModel(const std::string& _androidInstanceModel);
@@ -444,113 +470,121 @@ GC0、GC1、GC2：三种性能型云手机
                 private:
 
                     /**
-                     * 实例 ID
+                     * <p>实例 ID</p>
                      */
                     std::string m_androidInstanceId;
                     bool m_androidInstanceIdHasBeenSet;
 
                     /**
-                     * 实例所在区域
+                     * <p>实例所在区域</p>
                      */
                     std::string m_androidInstanceRegion;
                     bool m_androidInstanceRegionHasBeenSet;
 
                     /**
-                     * 实例可用区
+                     * <p>实例可用区</p>
                      */
                     std::string m_androidInstanceZone;
                     bool m_androidInstanceZoneHasBeenSet;
 
                     /**
-                     * 实例状态：INITIALIZING，NORMAL，PROCESSING
+                     * <p>实例状态：INITIALIZING，NORMAL，PROCESSING</p>
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 实例规格
+                     * <p>实例规格</p>
                      */
                     std::string m_androidInstanceType;
                     bool m_androidInstanceTypeHasBeenSet;
 
                     /**
-                     * 实例镜像 ID
+                     * <p>实例镜像 ID</p>
                      */
                     std::string m_androidInstanceImageId;
                     bool m_androidInstanceImageIdHasBeenSet;
 
                     /**
-                     * 分辨率宽度
+                     * <p>分辨率宽度</p>
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 分辨率高度
+                     * <p>分辨率高度</p>
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 宿主机 ID
+                     * <p>每英寸像素点。</p>
+                     */
+                    uint64_t m_dPI;
+                    bool m_dPIHasBeenSet;
+
+                    /**
+                     * <p>帧率</p>
+                     */
+                    uint64_t m_fPS;
+                    bool m_fPSHasBeenSet;
+
+                    /**
+                     * <p>宿主机 ID</p>
                      */
                     std::string m_hostSerialNumber;
                     bool m_hostSerialNumberHasBeenSet;
 
                     /**
-                     * 分组 ID
+                     * <p>分组 ID</p>
                      */
                     std::string m_androidInstanceGroupId;
                     bool m_androidInstanceGroupIdHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * <p>标签列表</p>
                      */
                     std::vector<AndroidInstanceLabel> m_androidInstanceLabels;
                     bool m_androidInstanceLabelsHasBeenSet;
 
                     /**
-                     * 名称
+                     * <p>名称</p>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用户ID
+                     * <p>用户ID</p>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 内网 IP
+                     * <p>内网 IP</p>
                      */
                     std::string m_privateIP;
                     bool m_privateIPHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 机箱 ID
+                     * <p>机箱 ID</p>
                      */
                     std::string m_hostServerSerialNumber;
                     bool m_hostServerSerialNumberHasBeenSet;
 
                     /**
-                     * 服务状态。
-IDLE：未连接
-ESTABLISHED：连接中
+                     * <p>服务状态。<br>IDLE：未连接<br>ESTABLISHED：连接中</p>
                      */
                     std::string m_serviceStatus;
                     bool m_serviceStatusHasBeenSet;
 
                     /**
-                     * 安卓实例型号。
-YS1：默认值，基础型云手机
-GC0、GC1、GC2：三种性能型云手机
+                     * <p>安卓实例型号。<br>YS1：默认值，基础型云手机<br>GC0、GC1、GC2：三种性能型云手机</p>
                      */
                     std::string m_androidInstanceModel;
                     bool m_androidInstanceModelHasBeenSet;

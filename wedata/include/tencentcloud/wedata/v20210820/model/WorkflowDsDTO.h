@@ -27,6 +27,7 @@
 #include <tencentcloud/wedata/v20210820/model/TaskDsDTO.h>
 #include <tencentcloud/wedata/v20210820/model/TaskLinkDsDTO.h>
 #include <tencentcloud/wedata/v20210820/model/ParameterTaskDsDto.h>
+#include <tencentcloud/wedata/v20210820/model/WorkflowLabel.h>
 
 
 namespace TencentCloud
@@ -574,6 +575,31 @@ namespace TencentCloud
                      */
                     bool PrivilegeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>工作流标签列表，仅工作流调度模式返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkflowLabels <p>工作流标签列表，仅工作流调度模式返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<WorkflowLabel> GetWorkflowLabels() const;
+
+                    /**
+                     * 设置<p>工作流标签列表，仅工作流调度模式返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workflowLabels <p>工作流标签列表，仅工作流调度模式返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkflowLabels(const std::vector<WorkflowLabel>& _workflowLabels);
+
+                    /**
+                     * 判断参数 WorkflowLabels 是否已赋值
+                     * @return WorkflowLabels 是否已赋值
+                     * 
+                     */
+                    bool WorkflowLabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -722,6 +748,13 @@ namespace TencentCloud
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
+
+                    /**
+                     * <p>工作流标签列表，仅工作流调度模式返回</p>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<WorkflowLabel> m_workflowLabels;
+                    bool m_workflowLabelsHasBeenSet;
 
                 };
             }

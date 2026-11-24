@@ -49,6 +49,8 @@
 #include <tencentcloud/tcbr/v20220217/model/DescribeReleaseOrderResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/DescribeServerManageTaskRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/DescribeServerManageTaskResponse.h>
+#include <tencentcloud/tcbr/v20220217/model/DescribeStableIPRequest.h>
+#include <tencentcloud/tcbr/v20220217/model/DescribeStableIPResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/DescribeStableIPTaskRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/DescribeStableIPTaskResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/DescribeVersionDetailRequest.h>
@@ -126,6 +128,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServerManageTaskResponse> DescribeServerManageTaskOutcome;
                 typedef std::future<DescribeServerManageTaskOutcome> DescribeServerManageTaskOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::DescribeServerManageTaskRequest&, DescribeServerManageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerManageTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStableIPResponse> DescribeStableIPOutcome;
+                typedef std::future<DescribeStableIPOutcome> DescribeStableIPOutcomeCallable;
+                typedef std::function<void(const TcbrClient*, const Model::DescribeStableIPRequest&, DescribeStableIPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStableIPAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStableIPTaskResponse> DescribeStableIPTaskOutcome;
                 typedef std::future<DescribeStableIPTaskOutcome> DescribeStableIPTaskOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::DescribeStableIPTaskRequest&, DescribeStableIPTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStableIPTaskAsyncHandler;
@@ -281,6 +286,15 @@ namespace TencentCloud
                 DescribeServerManageTaskOutcome DescribeServerManageTask(const Model::DescribeServerManageTaskRequest &request);
                 void DescribeServerManageTaskAsync(const Model::DescribeServerManageTaskRequest& request, const DescribeServerManageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServerManageTaskOutcomeCallable DescribeServerManageTaskCallable(const Model::DescribeServerManageTaskRequest& request);
+
+                /**
+                 *获取固定IP地址
+                 * @param req DescribeStableIPRequest
+                 * @return DescribeStableIPOutcome
+                 */
+                DescribeStableIPOutcome DescribeStableIP(const Model::DescribeStableIPRequest &request);
+                void DescribeStableIPAsync(const Model::DescribeStableIPRequest& request, const DescribeStableIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStableIPOutcomeCallable DescribeStableIPCallable(const Model::DescribeStableIPRequest& request);
 
                 /**
                  *本接口 DescribeStableIPTask 用于修改固定 IP 任务状态

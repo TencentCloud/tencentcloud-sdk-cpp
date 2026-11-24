@@ -740,6 +740,106 @@ AdpClient::CreatePluginOutcomeCallable AdpClient::CreatePluginCallable(const Cre
     return prom->get_future();
 }
 
+AdpClient::CreatePromptTemplateOutcome AdpClient::CreatePromptTemplate(const CreatePromptTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePromptTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePromptTemplateResponse rsp = CreatePromptTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePromptTemplateOutcome(rsp);
+        else
+            return CreatePromptTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePromptTemplateOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreatePromptTemplateAsync(const CreatePromptTemplateRequest& request, const CreatePromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePromptTemplateRequest&;
+    using Resp = CreatePromptTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePromptTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreatePromptTemplateOutcomeCallable AdpClient::CreatePromptTemplateCallable(const CreatePromptTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePromptTemplateOutcome>>();
+    CreatePromptTemplateAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreatePromptTemplateRequest&,
+        CreatePromptTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::CreatePromptTemplateLabelOutcome AdpClient::CreatePromptTemplateLabel(const CreatePromptTemplateLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePromptTemplateLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePromptTemplateLabelResponse rsp = CreatePromptTemplateLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePromptTemplateLabelOutcome(rsp);
+        else
+            return CreatePromptTemplateLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePromptTemplateLabelOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::CreatePromptTemplateLabelAsync(const CreatePromptTemplateLabelRequest& request, const CreatePromptTemplateLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const CreatePromptTemplateLabelRequest&;
+    using Resp = CreatePromptTemplateLabelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "CreatePromptTemplateLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::CreatePromptTemplateLabelOutcomeCallable AdpClient::CreatePromptTemplateLabelCallable(const CreatePromptTemplateLabelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<CreatePromptTemplateLabelOutcome>>();
+    CreatePromptTemplateLabelAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const CreatePromptTemplateLabelRequest&,
+        CreatePromptTemplateLabelOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::CreateQAGenerationTaskOutcome AdpClient::CreateQAGenerationTask(const CreateQAGenerationTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateQAGenerationTask");
@@ -1882,6 +1982,106 @@ AdpClient::DeletePluginOutcomeCallable AdpClient::DeletePluginCallable(const Del
         const AdpClient*,
         const DeletePluginRequest&,
         DeletePluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DeletePromptTemplateOutcome AdpClient::DeletePromptTemplate(const DeletePromptTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePromptTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePromptTemplateResponse rsp = DeletePromptTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePromptTemplateOutcome(rsp);
+        else
+            return DeletePromptTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePromptTemplateOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DeletePromptTemplateAsync(const DeletePromptTemplateRequest& request, const DeletePromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeletePromptTemplateRequest&;
+    using Resp = DeletePromptTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeletePromptTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DeletePromptTemplateOutcomeCallable AdpClient::DeletePromptTemplateCallable(const DeletePromptTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeletePromptTemplateOutcome>>();
+    DeletePromptTemplateAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DeletePromptTemplateRequest&,
+        DeletePromptTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DeletePromptTemplateLabelOutcome AdpClient::DeletePromptTemplateLabel(const DeletePromptTemplateLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePromptTemplateLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePromptTemplateLabelResponse rsp = DeletePromptTemplateLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePromptTemplateLabelOutcome(rsp);
+        else
+            return DeletePromptTemplateLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePromptTemplateLabelOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DeletePromptTemplateLabelAsync(const DeletePromptTemplateLabelRequest& request, const DeletePromptTemplateLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DeletePromptTemplateLabelRequest&;
+    using Resp = DeletePromptTemplateLabelResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DeletePromptTemplateLabel", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DeletePromptTemplateLabelOutcomeCallable AdpClient::DeletePromptTemplateLabelCallable(const DeletePromptTemplateLabelRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DeletePromptTemplateLabelOutcome>>();
+    DeletePromptTemplateLabelAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DeletePromptTemplateLabelRequest&,
+        DeletePromptTemplateLabelOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -4040,6 +4240,206 @@ AdpClient::DescribePluginSummaryListOutcomeCallable AdpClient::DescribePluginSum
     return prom->get_future();
 }
 
+AdpClient::DescribePromptTemplateOutcome AdpClient::DescribePromptTemplate(const DescribePromptTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePromptTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePromptTemplateResponse rsp = DescribePromptTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePromptTemplateOutcome(rsp);
+        else
+            return DescribePromptTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePromptTemplateOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribePromptTemplateAsync(const DescribePromptTemplateRequest& request, const DescribePromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePromptTemplateRequest&;
+    using Resp = DescribePromptTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePromptTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribePromptTemplateOutcomeCallable AdpClient::DescribePromptTemplateCallable(const DescribePromptTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePromptTemplateOutcome>>();
+    DescribePromptTemplateAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribePromptTemplateRequest&,
+        DescribePromptTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribePromptTemplateCategoryListOutcome AdpClient::DescribePromptTemplateCategoryList(const DescribePromptTemplateCategoryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePromptTemplateCategoryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePromptTemplateCategoryListResponse rsp = DescribePromptTemplateCategoryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePromptTemplateCategoryListOutcome(rsp);
+        else
+            return DescribePromptTemplateCategoryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePromptTemplateCategoryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribePromptTemplateCategoryListAsync(const DescribePromptTemplateCategoryListRequest& request, const DescribePromptTemplateCategoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePromptTemplateCategoryListRequest&;
+    using Resp = DescribePromptTemplateCategoryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePromptTemplateCategoryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribePromptTemplateCategoryListOutcomeCallable AdpClient::DescribePromptTemplateCategoryListCallable(const DescribePromptTemplateCategoryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePromptTemplateCategoryListOutcome>>();
+    DescribePromptTemplateCategoryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribePromptTemplateCategoryListRequest&,
+        DescribePromptTemplateCategoryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribePromptTemplateLabelListOutcome AdpClient::DescribePromptTemplateLabelList(const DescribePromptTemplateLabelListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePromptTemplateLabelList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePromptTemplateLabelListResponse rsp = DescribePromptTemplateLabelListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePromptTemplateLabelListOutcome(rsp);
+        else
+            return DescribePromptTemplateLabelListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePromptTemplateLabelListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribePromptTemplateLabelListAsync(const DescribePromptTemplateLabelListRequest& request, const DescribePromptTemplateLabelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePromptTemplateLabelListRequest&;
+    using Resp = DescribePromptTemplateLabelListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePromptTemplateLabelList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribePromptTemplateLabelListOutcomeCallable AdpClient::DescribePromptTemplateLabelListCallable(const DescribePromptTemplateLabelListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePromptTemplateLabelListOutcome>>();
+    DescribePromptTemplateLabelListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribePromptTemplateLabelListRequest&,
+        DescribePromptTemplateLabelListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::DescribePromptTemplateSummaryListOutcome AdpClient::DescribePromptTemplateSummaryList(const DescribePromptTemplateSummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePromptTemplateSummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePromptTemplateSummaryListResponse rsp = DescribePromptTemplateSummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePromptTemplateSummaryListOutcome(rsp);
+        else
+            return DescribePromptTemplateSummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePromptTemplateSummaryListOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::DescribePromptTemplateSummaryListAsync(const DescribePromptTemplateSummaryListRequest& request, const DescribePromptTemplateSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const DescribePromptTemplateSummaryListRequest&;
+    using Resp = DescribePromptTemplateSummaryListResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "DescribePromptTemplateSummaryList", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::DescribePromptTemplateSummaryListOutcomeCallable AdpClient::DescribePromptTemplateSummaryListCallable(const DescribePromptTemplateSummaryListRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<DescribePromptTemplateSummaryListOutcome>>();
+    DescribePromptTemplateSummaryListAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const DescribePromptTemplateSummaryListRequest&,
+        DescribePromptTemplateSummaryListOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::DescribeQAOutcome AdpClient::DescribeQA(const DescribeQARequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQA");
@@ -4990,6 +5390,56 @@ AdpClient::FavoritePluginOutcomeCallable AdpClient::FavoritePluginCallable(const
     return prom->get_future();
 }
 
+AdpClient::FavoritePromptTemplateOutcome AdpClient::FavoritePromptTemplate(const FavoritePromptTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "FavoritePromptTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FavoritePromptTemplateResponse rsp = FavoritePromptTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FavoritePromptTemplateOutcome(rsp);
+        else
+            return FavoritePromptTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return FavoritePromptTemplateOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::FavoritePromptTemplateAsync(const FavoritePromptTemplateRequest& request, const FavoritePromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const FavoritePromptTemplateRequest&;
+    using Resp = FavoritePromptTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "FavoritePromptTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::FavoritePromptTemplateOutcomeCallable AdpClient::FavoritePromptTemplateCallable(const FavoritePromptTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<FavoritePromptTemplateOutcome>>();
+    FavoritePromptTemplateAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const FavoritePromptTemplateRequest&,
+        FavoritePromptTemplateOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 AdpClient::FavoriteSkillOutcome AdpClient::FavoriteSkill(const FavoriteSkillRequest &request)
 {
     auto outcome = MakeRequest(request, "FavoriteSkill");
@@ -5782,6 +6232,56 @@ AdpClient::ModifyPluginOutcomeCallable AdpClient::ModifyPluginCallable(const Mod
         const AdpClient*,
         const ModifyPluginRequest&,
         ModifyPluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::ModifyPromptTemplateOutcome AdpClient::ModifyPromptTemplate(const ModifyPromptTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPromptTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPromptTemplateResponse rsp = ModifyPromptTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPromptTemplateOutcome(rsp);
+        else
+            return ModifyPromptTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPromptTemplateOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::ModifyPromptTemplateAsync(const ModifyPromptTemplateRequest& request, const ModifyPromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const ModifyPromptTemplateRequest&;
+    using Resp = ModifyPromptTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "ModifyPromptTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::ModifyPromptTemplateOutcomeCallable AdpClient::ModifyPromptTemplateCallable(const ModifyPromptTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<ModifyPromptTemplateOutcome>>();
+    ModifyPromptTemplateAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const ModifyPromptTemplateRequest&,
+        ModifyPromptTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {
@@ -6732,6 +7232,56 @@ AdpClient::UnfavoritePluginOutcomeCallable AdpClient::UnfavoritePluginCallable(c
         const AdpClient*,
         const UnfavoritePluginRequest&,
         UnfavoritePluginOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
+AdpClient::UnfavoritePromptTemplateOutcome AdpClient::UnfavoritePromptTemplate(const UnfavoritePromptTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnfavoritePromptTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnfavoritePromptTemplateResponse rsp = UnfavoritePromptTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnfavoritePromptTemplateOutcome(rsp);
+        else
+            return UnfavoritePromptTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return UnfavoritePromptTemplateOutcome(outcome.GetError());
+    }
+}
+
+void AdpClient::UnfavoritePromptTemplateAsync(const UnfavoritePromptTemplateRequest& request, const UnfavoritePromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const UnfavoritePromptTemplateRequest&;
+    using Resp = UnfavoritePromptTemplateResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "UnfavoritePromptTemplate", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+AdpClient::UnfavoritePromptTemplateOutcomeCallable AdpClient::UnfavoritePromptTemplateCallable(const UnfavoritePromptTemplateRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<UnfavoritePromptTemplateOutcome>>();
+    UnfavoritePromptTemplateAsync(
+    request,
+    [prom](
+        const AdpClient*,
+        const UnfavoritePromptTemplateRequest&,
+        UnfavoritePromptTemplateOutcome resp,
         const std::shared_ptr<const AsyncCallerContext>&
     )
     {

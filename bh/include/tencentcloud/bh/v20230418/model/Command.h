@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命令
-                     * @return Cmd 命令
+                     * 获取<p>命令</p>
+                     * @return Cmd <p>命令</p>
                      * 
                      */
                     std::string GetCmd() const;
 
                     /**
-                     * 设置命令
-                     * @param _cmd 命令
+                     * 设置<p>命令</p>
+                     * @param _cmd <p>命令</p>
                      * 
                      */
                     void SetCmd(const std::string& _cmd);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CmdHasBeenSet() const;
 
                     /**
-                     * 获取命令输入的时间
-                     * @return Time 命令输入的时间
+                     * 获取<p>命令输入的时间</p>
+                     * @return Time <p>命令输入的时间</p>
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置命令输入的时间
-                     * @param _time 命令输入的时间
+                     * 设置<p>命令输入的时间</p>
+                     * @param _time <p>命令输入的时间</p>
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取命令执行时间相对于所属会话开始时间的偏移量，单位ms
-                     * @return TimeOffset 命令执行时间相对于所属会话开始时间的偏移量，单位ms
+                     * 获取<p>命令执行时间相对于所属会话开始时间的偏移量，单位ms</p>
+                     * @return TimeOffset <p>命令执行时间相对于所属会话开始时间的偏移量，单位ms</p>
                      * 
                      */
                     uint64_t GetTimeOffset() const;
 
                     /**
-                     * 设置命令执行时间相对于所属会话开始时间的偏移量，单位ms
-                     * @param _timeOffset 命令执行时间相对于所属会话开始时间的偏移量，单位ms
+                     * 设置<p>命令执行时间相对于所属会话开始时间的偏移量，单位ms</p>
+                     * @param _timeOffset <p>命令执行时间相对于所属会话开始时间的偏移量，单位ms</p>
                      * 
                      */
                     void SetTimeOffset(const uint64_t& _timeOffset);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TimeOffsetHasBeenSet() const;
 
                     /**
-                     * 获取命令执行情况，1--允许，2--拒绝，3--确认
-                     * @return Action 命令执行情况，1--允许，2--拒绝，3--确认
+                     * 获取<p>命令执行情况，1--已放行，2--已阻断，3--确认</p>
+                     * @return Action <p>命令执行情况，1--已放行，2--已阻断，3--确认</p>
                      * 
                      */
                     int64_t GetAction() const;
 
                     /**
-                     * 设置命令执行情况，1--允许，2--拒绝，3--确认
-                     * @param _action 命令执行情况，1--允许，2--拒绝，3--确认
+                     * 设置<p>命令执行情况，1--已放行，2--已阻断，3--确认</p>
+                     * @param _action <p>命令执行情况，1--已放行，2--已阻断，3--确认</p>
                      * 
                      */
                     void SetAction(const int64_t& _action);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取会话id
-                     * @return Sid 会话id
+                     * 获取<p>会话id</p>
+                     * @return Sid <p>会话id</p>
                      * 
                      */
                     std::string GetSid() const;
 
                     /**
-                     * 设置会话id
-                     * @param _sid 会话id
+                     * 设置<p>会话id</p>
+                     * @param _sid <p>会话id</p>
                      * 
                      */
                     void SetSid(const std::string& _sid);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool SidHasBeenSet() const;
 
                     /**
-                     * 获取用户名
-                     * @return UserName 用户名
+                     * 获取<p>用户名</p>
+                     * @return UserName <p>用户名</p>
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名
-                     * @param _userName 用户名
+                     * 设置<p>用户名</p>
+                     * @param _userName <p>用户名</p>
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取设备account
-                     * @return Account 设备account
+                     * 获取<p>设备account</p>
+                     * @return Account <p>设备account</p>
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
-                     * 设置设备account
-                     * @param _account 设备account
+                     * 设置<p>设备account</p>
+                     * @param _account <p>设备account</p>
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
-                     * 获取设备ip
-                     * @return InstanceId 设备ip
+                     * 获取<p>设备ip</p>
+                     * @return InstanceId <p>设备ip</p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置设备ip
-                     * @param _instanceId 设备ip
+                     * 设置<p>设备ip</p>
+                     * @param _instanceId <p>设备ip</p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取source ip
-                     * @return FromIp source ip
+                     * 获取<p>source ip</p>
+                     * @return FromIp <p>source ip</p>
                      * 
                      */
                     std::string GetFromIp() const;
 
                     /**
-                     * 设置source ip
-                     * @param _fromIp source ip
+                     * 设置<p>source ip</p>
+                     * @param _fromIp <p>source ip</p>
                      * 
                      */
                     void SetFromIp(const std::string& _fromIp);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool FromIpHasBeenSet() const;
 
                     /**
-                     * 获取该命令所属会话的会话开始时间
-                     * @return SessTime 该命令所属会话的会话开始时间
+                     * 获取<p>该命令所属会话的会话开始时间</p>
+                     * @return SessTime <p>该命令所属会话的会话开始时间</p>
                      * 
                      */
                     std::string GetSessTime() const;
 
                     /**
-                     * 设置该命令所属会话的会话开始时间
-                     * @param _sessTime 该命令所属会话的会话开始时间
+                     * 设置<p>该命令所属会话的会话开始时间</p>
+                     * @param _sessTime <p>该命令所属会话的会话开始时间</p>
                      * 
                      */
                     void SetSessTime(const std::string& _sessTime);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool SessTimeHasBeenSet() const;
 
                     /**
-                     * 获取该命令所属会话的会话开始时间
-                     * @return SessionTime 该命令所属会话的会话开始时间
+                     * 获取<p>该命令所属会话的会话开始时间</p>
+                     * @return SessionTime <p>该命令所属会话的会话开始时间</p>
                      * 
                      */
                     std::string GetSessionTime() const;
 
                     /**
-                     * 设置该命令所属会话的会话开始时间
-                     * @param _sessionTime 该命令所属会话的会话开始时间
+                     * 设置<p>该命令所属会话的会话开始时间</p>
+                     * @param _sessionTime <p>该命令所属会话的会话开始时间</p>
                      * 
                      */
                     void SetSessionTime(const std::string& _sessionTime);
@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool SessionTimeHasBeenSet() const;
 
                     /**
-                     * 获取复核时间
-                     * @return ConfirmTime 复核时间
+                     * 获取<p>复核时间</p>
+                     * @return ConfirmTime <p>复核时间</p>
                      * 
                      */
                     std::string GetConfirmTime() const;
 
                     /**
-                     * 设置复核时间
-                     * @param _confirmTime 复核时间
+                     * 设置<p>复核时间</p>
+                     * @param _confirmTime <p>复核时间</p>
                      * 
                      */
                     void SetConfirmTime(const std::string& _confirmTime);
@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool ConfirmTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户部门id
-                     * @return UserDepartmentId 用户部门id
+                     * 获取<p>用户部门id</p>
+                     * @return UserDepartmentId <p>用户部门id</p>
                      * 
                      */
                     std::string GetUserDepartmentId() const;
 
                     /**
-                     * 设置用户部门id
-                     * @param _userDepartmentId 用户部门id
+                     * 设置<p>用户部门id</p>
+                     * @param _userDepartmentId <p>用户部门id</p>
                      * 
                      */
                     void SetUserDepartmentId(const std::string& _userDepartmentId);
@@ -320,15 +320,15 @@ namespace TencentCloud
                     bool UserDepartmentIdHasBeenSet() const;
 
                     /**
-                     * 获取用户部门name
-                     * @return UserDepartmentName 用户部门name
+                     * 获取<p>用户部门name</p>
+                     * @return UserDepartmentName <p>用户部门name</p>
                      * 
                      */
                     std::string GetUserDepartmentName() const;
 
                     /**
-                     * 设置用户部门name
-                     * @param _userDepartmentName 用户部门name
+                     * 设置<p>用户部门name</p>
+                     * @param _userDepartmentName <p>用户部门name</p>
                      * 
                      */
                     void SetUserDepartmentName(const std::string& _userDepartmentName);
@@ -341,15 +341,15 @@ namespace TencentCloud
                     bool UserDepartmentNameHasBeenSet() const;
 
                     /**
-                     * 获取设备部门id
-                     * @return DeviceDepartmentId 设备部门id
+                     * 获取<p>设备部门id</p>
+                     * @return DeviceDepartmentId <p>设备部门id</p>
                      * 
                      */
                     std::string GetDeviceDepartmentId() const;
 
                     /**
-                     * 设置设备部门id
-                     * @param _deviceDepartmentId 设备部门id
+                     * 设置<p>设备部门id</p>
+                     * @param _deviceDepartmentId <p>设备部门id</p>
                      * 
                      */
                     void SetDeviceDepartmentId(const std::string& _deviceDepartmentId);
@@ -362,15 +362,15 @@ namespace TencentCloud
                     bool DeviceDepartmentIdHasBeenSet() const;
 
                     /**
-                     * 获取设备部门name
-                     * @return DeviceDepartmentName 设备部门name
+                     * 获取<p>设备部门name</p>
+                     * @return DeviceDepartmentName <p>设备部门name</p>
                      * 
                      */
                     std::string GetDeviceDepartmentName() const;
 
                     /**
-                     * 设置设备部门name
-                     * @param _deviceDepartmentName 设备部门name
+                     * 设置<p>设备部门name</p>
+                     * @param _deviceDepartmentName <p>设备部门name</p>
                      * 
                      */
                     void SetDeviceDepartmentName(const std::string& _deviceDepartmentName);
@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool DeviceDepartmentNameHasBeenSet() const;
 
                     /**
-                     * 获取会话大小
-                     * @return Size 会话大小
+                     * 获取<p>会话大小</p>
+                     * @return Size <p>会话大小</p>
                      * 
                      */
                     uint64_t GetSize() const;
 
                     /**
-                     * 设置会话大小
-                     * @param _size 会话大小
+                     * 设置<p>会话大小</p>
+                     * @param _size <p>会话大小</p>
                      * 
                      */
                     void SetSize(const uint64_t& _size);
@@ -404,15 +404,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取签名值
-                     * @return SignValue 签名值
+                     * 获取<p>签名值</p>
+                     * @return SignValue <p>签名值</p>
                      * 
                      */
                     std::string GetSignValue() const;
 
                     /**
-                     * 设置签名值
-                     * @param _signValue 签名值
+                     * 设置<p>签名值</p>
+                     * @param _signValue <p>签名值</p>
                      * 
                      */
                     void SetSignValue(const std::string& _signValue);
@@ -425,15 +425,15 @@ namespace TencentCloud
                     bool SignValueHasBeenSet() const;
 
                     /**
-                     * 获取资产类型
-                     * @return DeviceKind 资产类型
+                     * 获取<p>资产类型</p>
+                     * @return DeviceKind <p>资产类型</p>
                      * 
                      */
                     std::string GetDeviceKind() const;
 
                     /**
-                     * 设置资产类型
-                     * @param _deviceKind 资产类型
+                     * 设置<p>资产类型</p>
+                     * @param _deviceKind <p>资产类型</p>
                      * 
                      */
                     void SetDeviceKind(const std::string& _deviceKind);
@@ -448,115 +448,115 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命令
+                     * <p>命令</p>
                      */
                     std::string m_cmd;
                     bool m_cmdHasBeenSet;
 
                     /**
-                     * 命令输入的时间
+                     * <p>命令输入的时间</p>
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 命令执行时间相对于所属会话开始时间的偏移量，单位ms
+                     * <p>命令执行时间相对于所属会话开始时间的偏移量，单位ms</p>
                      */
                     uint64_t m_timeOffset;
                     bool m_timeOffsetHasBeenSet;
 
                     /**
-                     * 命令执行情况，1--允许，2--拒绝，3--确认
+                     * <p>命令执行情况，1--已放行，2--已阻断，3--确认</p>
                      */
                     int64_t m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 会话id
+                     * <p>会话id</p>
                      */
                     std::string m_sid;
                     bool m_sidHasBeenSet;
 
                     /**
-                     * 用户名
+                     * <p>用户名</p>
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 设备account
+                     * <p>设备account</p>
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;
 
                     /**
-                     * 设备ip
+                     * <p>设备ip</p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * source ip
+                     * <p>source ip</p>
                      */
                     std::string m_fromIp;
                     bool m_fromIpHasBeenSet;
 
                     /**
-                     * 该命令所属会话的会话开始时间
+                     * <p>该命令所属会话的会话开始时间</p>
                      */
                     std::string m_sessTime;
                     bool m_sessTimeHasBeenSet;
 
                     /**
-                     * 该命令所属会话的会话开始时间
+                     * <p>该命令所属会话的会话开始时间</p>
                      */
                     std::string m_sessionTime;
                     bool m_sessionTimeHasBeenSet;
 
                     /**
-                     * 复核时间
+                     * <p>复核时间</p>
                      */
                     std::string m_confirmTime;
                     bool m_confirmTimeHasBeenSet;
 
                     /**
-                     * 用户部门id
+                     * <p>用户部门id</p>
                      */
                     std::string m_userDepartmentId;
                     bool m_userDepartmentIdHasBeenSet;
 
                     /**
-                     * 用户部门name
+                     * <p>用户部门name</p>
                      */
                     std::string m_userDepartmentName;
                     bool m_userDepartmentNameHasBeenSet;
 
                     /**
-                     * 设备部门id
+                     * <p>设备部门id</p>
                      */
                     std::string m_deviceDepartmentId;
                     bool m_deviceDepartmentIdHasBeenSet;
 
                     /**
-                     * 设备部门name
+                     * <p>设备部门name</p>
                      */
                     std::string m_deviceDepartmentName;
                     bool m_deviceDepartmentNameHasBeenSet;
 
                     /**
-                     * 会话大小
+                     * <p>会话大小</p>
                      */
                     uint64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 签名值
+                     * <p>签名值</p>
                      */
                     std::string m_signValue;
                     bool m_signValueHasBeenSet;
 
                     /**
-                     * 资产类型
+                     * <p>资产类型</p>
                      */
                     std::string m_deviceKind;
                     bool m_deviceKindHasBeenSet;

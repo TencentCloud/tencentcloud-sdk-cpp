@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取API Key ID。
-                     * @return ApiKeyId API Key ID。
+                     * 获取<p>API Key ID。</p>
+                     * @return ApiKeyId <p>API Key ID。</p>
                      * 
                      */
                     std::string GetApiKeyId() const;
 
                     /**
-                     * 设置API Key ID。
-                     * @param _apiKeyId API Key ID。
+                     * 设置<p>API Key ID。</p>
+                     * @param _apiKeyId <p>API Key ID。</p>
                      * 
                      */
                     void SetApiKeyId(const std::string& _apiKeyId);
@@ -64,39 +64,15 @@ namespace TencentCloud
                     bool ApiKeyIdHasBeenSet() const;
 
                     /**
-                     * 获取可用模型列表。不传则不修改。
-
-- 如果套餐类型为企业版专业套餐：
-1）传入“all“ ：使用套餐支持的所有模型
-2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。
-
-- 如果套餐类型为企业版轻享套餐，不允许传该参数。
-                     * @return AllowedModels 可用模型列表。不传则不修改。
-
-- 如果套餐类型为企业版专业套餐：
-1）传入“all“ ：使用套餐支持的所有模型
-2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。
-
-- 如果套餐类型为企业版轻享套餐，不允许传该参数。
+                     * 获取<p>可用模型列表。不传则不修改。</p><ul><li><p>如果套餐类型为企业版专业套餐：<br>1）传入“all“ ：使用套餐支持的所有模型<br>2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。</p></li><li><p>如果套餐类型为企业版轻享套餐，不允许传该参数。</p></li></ul>
+                     * @return AllowedModels <p>可用模型列表。不传则不修改。</p><ul><li><p>如果套餐类型为企业版专业套餐：<br>1）传入“all“ ：使用套餐支持的所有模型<br>2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。</p></li><li><p>如果套餐类型为企业版轻享套餐，不允许传该参数。</p></li></ul>
                      * 
                      */
                     std::vector<std::string> GetAllowedModels() const;
 
                     /**
-                     * 设置可用模型列表。不传则不修改。
-
-- 如果套餐类型为企业版专业套餐：
-1）传入“all“ ：使用套餐支持的所有模型
-2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。
-
-- 如果套餐类型为企业版轻享套餐，不允许传该参数。
-                     * @param _allowedModels 可用模型列表。不传则不修改。
-
-- 如果套餐类型为企业版专业套餐：
-1）传入“all“ ：使用套餐支持的所有模型
-2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。
-
-- 如果套餐类型为企业版轻享套餐，不允许传该参数。
+                     * 设置<p>可用模型列表。不传则不修改。</p><ul><li><p>如果套餐类型为企业版专业套餐：<br>1）传入“all“ ：使用套餐支持的所有模型<br>2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。</p></li><li><p>如果套餐类型为企业版轻享套餐，不允许传该参数。</p></li></ul>
+                     * @param _allowedModels <p>可用模型列表。不传则不修改。</p><ul><li><p>如果套餐类型为企业版专业套餐：<br>1）传入“all“ ：使用套餐支持的所有模型<br>2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。</p></li><li><p>如果套餐类型为企业版轻享套餐，不允许传该参数。</p></li></ul>
                      * 
                      */
                     void SetAllowedModels(const std::vector<std::string>& _allowedModels);
@@ -109,27 +85,15 @@ namespace TencentCloud
                     bool AllowedModelsHasBeenSet() const;
 
                     /**
-                     * 获取独占额度，不传则不修改。单位说明：
-
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @return ExclusiveQuota 独占额度，不传则不修改。单位说明：
-
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 获取<p>独占额度，不传则不修改。单位说明：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @return ExclusiveQuota <p>独占额度，不传则不修改。单位说明：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     int64_t GetExclusiveQuota() const;
 
                     /**
-                     * 设置独占额度，不传则不修改。单位说明：
-
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @param _exclusiveQuota 独占额度，不传则不修改。单位说明：
-
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 设置<p>独占额度，不传则不修改。单位说明：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @param _exclusiveQuota <p>独占额度，不传则不修改。单位说明：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     void SetExclusiveQuota(const int64_t& _exclusiveQuota);
@@ -142,23 +106,15 @@ namespace TencentCloud
                     bool ExclusiveQuotaHasBeenSet() const;
 
                     /**
-                     * 获取总额度上限。-1 表示不限，必须为 -1 或 >= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @return TotalQuota 总额度上限。-1 表示不限，必须为 -1 或 >= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 获取<p>总额度上限。-1 表示不限，必须为 -1 或 &gt;= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @return TotalQuota <p>总额度上限。-1 表示不限，必须为 -1 或 &gt;= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     int64_t GetTotalQuota() const;
 
                     /**
-                     * 设置总额度上限。-1 表示不限，必须为 -1 或 >= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
-                     * @param _totalQuota 总额度上限。-1 表示不限，必须为 -1 或 >= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * 设置<p>总额度上限。-1 表示不限，必须为 -1 或 &gt;= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
+                     * @param _totalQuota <p>总额度上限。-1 表示不限，必须为 -1 或 &gt;= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      * 
                      */
                     void SetTotalQuota(const int64_t& _totalQuota);
@@ -171,15 +127,15 @@ namespace TencentCloud
                     bool TotalQuotaHasBeenSet() const;
 
                     /**
-                     * 获取是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。
-                     * @return UseStatus 是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。
+                     * 获取<p>是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。</p>
+                     * @return UseStatus <p>是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。</p>
                      * 
                      */
                     std::string GetUseStatus() const;
 
                     /**
-                     * 设置是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。
-                     * @param _useStatus 是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。
+                     * 设置<p>是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。</p>
+                     * @param _useStatus <p>是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。</p>
                      * 
                      */
                     void SetUseStatus(const std::string& _useStatus);
@@ -192,15 +148,15 @@ namespace TencentCloud
                     bool UseStatusHasBeenSet() const;
 
                     /**
-                     * 获取TPM（Tokens Per Minute）限制。不传则不修改。必须 >= 0 且 <= 套餐 TPM。
-                     * @return TPM TPM（Tokens Per Minute）限制。不传则不修改。必须 >= 0 且 <= 套餐 TPM。
+                     * 获取<p>TPM（Tokens Per Minute）限制。不传则不修改。必须 &gt;= 0 且 &lt;= 套餐 TPM。</p>
+                     * @return TPM <p>TPM（Tokens Per Minute）限制。不传则不修改。必须 &gt;= 0 且 &lt;= 套餐 TPM。</p>
                      * 
                      */
                     int64_t GetTPM() const;
 
                     /**
-                     * 设置TPM（Tokens Per Minute）限制。不传则不修改。必须 >= 0 且 <= 套餐 TPM。
-                     * @param _tPM TPM（Tokens Per Minute）限制。不传则不修改。必须 >= 0 且 <= 套餐 TPM。
+                     * 设置<p>TPM（Tokens Per Minute）限制。不传则不修改。必须 &gt;= 0 且 &lt;= 套餐 TPM。</p>
+                     * @param _tPM <p>TPM（Tokens Per Minute）限制。不传则不修改。必须 &gt;= 0 且 &lt;= 套餐 TPM。</p>
                      * 
                      */
                     void SetTPM(const int64_t& _tPM);
@@ -212,54 +168,70 @@ namespace TencentCloud
                      */
                     bool TPMHasBeenSet() const;
 
+                    /**
+                     * 获取<p>IP 白名单列表。不传则不修改；传空数组表示清空（不限制 IP）；传非空数组表示覆盖。支持 IPv4 单地址（如 1.2.3.4）和 IPv4 CIDR（如 10.0.0.0/24）格式，最多 50 个条目，不允许重复；不支持 IPv6 与 IP 范围。</p>
+                     * @return IpWhitelist <p>IP 白名单列表。不传则不修改；传空数组表示清空（不限制 IP）；传非空数组表示覆盖。支持 IPv4 单地址（如 1.2.3.4）和 IPv4 CIDR（如 10.0.0.0/24）格式，最多 50 个条目，不允许重复；不支持 IPv6 与 IP 范围。</p>
+                     * 
+                     */
+                    std::vector<std::string> GetIpWhitelist() const;
+
+                    /**
+                     * 设置<p>IP 白名单列表。不传则不修改；传空数组表示清空（不限制 IP）；传非空数组表示覆盖。支持 IPv4 单地址（如 1.2.3.4）和 IPv4 CIDR（如 10.0.0.0/24）格式，最多 50 个条目，不允许重复；不支持 IPv6 与 IP 范围。</p>
+                     * @param _ipWhitelist <p>IP 白名单列表。不传则不修改；传空数组表示清空（不限制 IP）；传非空数组表示覆盖。支持 IPv4 单地址（如 1.2.3.4）和 IPv4 CIDR（如 10.0.0.0/24）格式，最多 50 个条目，不允许重复；不支持 IPv6 与 IP 范围。</p>
+                     * 
+                     */
+                    void SetIpWhitelist(const std::vector<std::string>& _ipWhitelist);
+
+                    /**
+                     * 判断参数 IpWhitelist 是否已赋值
+                     * @return IpWhitelist 是否已赋值
+                     * 
+                     */
+                    bool IpWhitelistHasBeenSet() const;
+
                 private:
 
                     /**
-                     * API Key ID。
+                     * <p>API Key ID。</p>
                      */
                     std::string m_apiKeyId;
                     bool m_apiKeyIdHasBeenSet;
 
                     /**
-                     * 可用模型列表。不传则不修改。
-
-- 如果套餐类型为企业版专业套餐：
-1）传入“all“ ：使用套餐支持的所有模型
-2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。
-
-- 如果套餐类型为企业版轻享套餐，不允许传该参数。
+                     * <p>可用模型列表。不传则不修改。</p><ul><li><p>如果套餐类型为企业版专业套餐：<br>1）传入“all“ ：使用套餐支持的所有模型<br>2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。</p></li><li><p>如果套餐类型为企业版轻享套餐，不允许传该参数。</p></li></ul>
                      */
                     std::vector<std::string> m_allowedModels;
                     bool m_allowedModelsHasBeenSet;
 
                     /**
-                     * 独占额度，不传则不修改。单位说明：
-
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * <p>独占额度，不传则不修改。单位说明：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      */
                     int64_t m_exclusiveQuota;
                     bool m_exclusiveQuotaHasBeenSet;
 
                     /**
-                     * 总额度上限。-1 表示不限，必须为 -1 或 >= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：
-- 套餐类型为专业套餐，单位取值为积分；
-- 套餐类型为轻享套餐，单位取值为 token。
+                     * <p>总额度上限。-1 表示不限，必须为 -1 或 &gt;= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>
                      */
                     int64_t m_totalQuota;
                     bool m_totalQuotaHasBeenSet;
 
                     /**
-                     * 是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。
+                     * <p>是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。</p>
                      */
                     std::string m_useStatus;
                     bool m_useStatusHasBeenSet;
 
                     /**
-                     * TPM（Tokens Per Minute）限制。不传则不修改。必须 >= 0 且 <= 套餐 TPM。
+                     * <p>TPM（Tokens Per Minute）限制。不传则不修改。必须 &gt;= 0 且 &lt;= 套餐 TPM。</p>
                      */
                     int64_t m_tPM;
                     bool m_tPMHasBeenSet;
+
+                    /**
+                     * <p>IP 白名单列表。不传则不修改；传空数组表示清空（不限制 IP）；传非空数组表示覆盖。支持 IPv4 单地址（如 1.2.3.4）和 IPv4 CIDR（如 10.0.0.0/24）格式，最多 50 个条目，不允许重复；不支持 IPv6 与 IP 范围。</p>
+                     */
+                    std::vector<std::string> m_ipWhitelist;
+                    bool m_ipWhitelistHasBeenSet;
 
                 };
             }

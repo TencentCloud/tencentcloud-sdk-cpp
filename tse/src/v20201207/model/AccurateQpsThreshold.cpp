@@ -21,8 +21,8 @@ using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
 AccurateQpsThreshold::AccurateQpsThreshold() :
-    m_unitHasBeenSet(false),
-    m_globalConfigIdHasBeenSet(false)
+    m_globalConfigIdHasBeenSet(false),
+    m_unitHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome AccurateQpsThreshold::Deserialize(const rapidjson::Value &va
 {
     string requestId = "";
 
-
-    if (value.HasMember("Unit") && !value["Unit"].IsNull())
-    {
-        if (!value["Unit"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccurateQpsThreshold.Unit` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_unit = string(value["Unit"].GetString());
-        m_unitHasBeenSet = true;
-    }
 
     if (value.HasMember("GlobalConfigId") && !value["GlobalConfigId"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome AccurateQpsThreshold::Deserialize(const rapidjson::Value &va
         m_globalConfigIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Unit") && !value["Unit"].IsNull())
+    {
+        if (!value["Unit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccurateQpsThreshold.Unit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unit = string(value["Unit"].GetString());
+        m_unitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void AccurateQpsThreshold::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_unitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Unit";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_globalConfigIdHasBeenSet)
     {
@@ -74,24 +66,16 @@ void AccurateQpsThreshold::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         value.AddMember(iKey, rapidjson::Value(m_globalConfigId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_unitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Unit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string AccurateQpsThreshold::GetUnit() const
-{
-    return m_unit;
-}
-
-void AccurateQpsThreshold::SetUnit(const string& _unit)
-{
-    m_unit = _unit;
-    m_unitHasBeenSet = true;
-}
-
-bool AccurateQpsThreshold::UnitHasBeenSet() const
-{
-    return m_unitHasBeenSet;
-}
 
 string AccurateQpsThreshold::GetGlobalConfigId() const
 {
@@ -107,5 +91,21 @@ void AccurateQpsThreshold::SetGlobalConfigId(const string& _globalConfigId)
 bool AccurateQpsThreshold::GlobalConfigIdHasBeenSet() const
 {
     return m_globalConfigIdHasBeenSet;
+}
+
+string AccurateQpsThreshold::GetUnit() const
+{
+    return m_unit;
+}
+
+void AccurateQpsThreshold::SetUnit(const string& _unit)
+{
+    m_unit = _unit;
+    m_unitHasBeenSet = true;
+}
+
+bool AccurateQpsThreshold::UnitHasBeenSet() const
+{
+    return m_unitHasBeenSet;
 }
 

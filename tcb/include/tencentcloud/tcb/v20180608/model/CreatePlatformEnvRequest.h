@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/PGConfig.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,27 @@ namespace TencentCloud
                      */
                     bool ReqKeyHasBeenSet() const;
 
+                    /**
+                     * 获取<p>postgresql可选参数配置，不传默认发货1c2g独享pg</p>
+                     * @return PGConfig <p>postgresql可选参数配置，不传默认发货1c2g独享pg</p>
+                     * 
+                     */
+                    PGConfig GetPGConfig() const;
+
+                    /**
+                     * 设置<p>postgresql可选参数配置，不传默认发货1c2g独享pg</p>
+                     * @param _pGConfig <p>postgresql可选参数配置，不传默认发货1c2g独享pg</p>
+                     * 
+                     */
+                    void SetPGConfig(const PGConfig& _pGConfig);
+
+                    /**
+                     * 判断参数 PGConfig 是否已赋值
+                     * @return PGConfig 是否已赋值
+                     * 
+                     */
+                    bool PGConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +146,12 @@ namespace TencentCloud
                      */
                     std::string m_reqKey;
                     bool m_reqKeyHasBeenSet;
+
+                    /**
+                     * <p>postgresql可选参数配置，不传默认发货1c2g独享pg</p>
+                     */
+                    PGConfig m_pGConfig;
+                    bool m_pGConfigHasBeenSet;
 
                 };
             }

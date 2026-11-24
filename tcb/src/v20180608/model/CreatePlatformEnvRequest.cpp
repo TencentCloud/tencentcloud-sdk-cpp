@@ -25,7 +25,8 @@ using namespace std;
 CreatePlatformEnvRequest::CreatePlatformEnvRequest() :
     m_aliasHasBeenSet(false),
     m_platformIdHasBeenSet(false),
-    m_reqKeyHasBeenSet(false)
+    m_reqKeyHasBeenSet(false),
+    m_pGConfigHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,15 @@ string CreatePlatformEnvRequest::ToJsonString() const
         string key = "ReqKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_reqKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pGConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PGConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_pGConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -114,6 +124,22 @@ void CreatePlatformEnvRequest::SetReqKey(const string& _reqKey)
 bool CreatePlatformEnvRequest::ReqKeyHasBeenSet() const
 {
     return m_reqKeyHasBeenSet;
+}
+
+PGConfig CreatePlatformEnvRequest::GetPGConfig() const
+{
+    return m_pGConfig;
+}
+
+void CreatePlatformEnvRequest::SetPGConfig(const PGConfig& _pGConfig)
+{
+    m_pGConfig = _pGConfig;
+    m_pGConfigHasBeenSet = true;
+}
+
+bool CreatePlatformEnvRequest::PGConfigHasBeenSet() const
+{
+    return m_pGConfigHasBeenSet;
 }
 
 

@@ -22,9 +22,9 @@ using namespace std;
 
 RuleFilter::RuleFilter() :
     m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_valuesHasBeenSet(false)
 {
 }
 
@@ -43,17 +43,14 @@ CoreInternalOutcome RuleFilter::Deserialize(const rapidjson::Value &value)
         m_keyHasBeenSet = true;
     }
 
-    if (value.HasMember("Values") && !value["Values"].IsNull())
+    if (value.HasMember("Name") && !value["Name"].IsNull())
     {
-        if (!value["Values"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `RuleFilter.Values` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Values"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["Name"].IsString())
         {
-            m_values.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `RuleFilter.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_valuesHasBeenSet = true;
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
     }
 
     if (value.HasMember("Operator") && !value["Operator"].IsNull())
@@ -66,14 +63,17 @@ CoreInternalOutcome RuleFilter::Deserialize(const rapidjson::Value &value)
         m_operatorHasBeenSet = true;
     }
 
-    if (value.HasMember("Name") && !value["Name"].IsNull())
+    if (value.HasMember("Values") && !value["Values"].IsNull())
     {
-        if (!value["Name"].IsString())
+        if (!value["Values"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleFilter.Values` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Values"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `RuleFilter.Name` IsString=false incorrectly").SetRequestId(requestId));
+            m_values.push_back((*itr).GetString());
         }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
+        m_valuesHasBeenSet = true;
     }
 
 
@@ -91,6 +91,22 @@ void RuleFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_valuesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,22 +118,6 @@ void RuleFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -139,20 +139,20 @@ bool RuleFilter::KeyHasBeenSet() const
     return m_keyHasBeenSet;
 }
 
-vector<string> RuleFilter::GetValues() const
+string RuleFilter::GetName() const
 {
-    return m_values;
+    return m_name;
 }
 
-void RuleFilter::SetValues(const vector<string>& _values)
+void RuleFilter::SetName(const string& _name)
 {
-    m_values = _values;
-    m_valuesHasBeenSet = true;
+    m_name = _name;
+    m_nameHasBeenSet = true;
 }
 
-bool RuleFilter::ValuesHasBeenSet() const
+bool RuleFilter::NameHasBeenSet() const
 {
-    return m_valuesHasBeenSet;
+    return m_nameHasBeenSet;
 }
 
 string RuleFilter::GetOperator() const
@@ -171,19 +171,19 @@ bool RuleFilter::OperatorHasBeenSet() const
     return m_operatorHasBeenSet;
 }
 
-string RuleFilter::GetName() const
+vector<string> RuleFilter::GetValues() const
 {
-    return m_name;
+    return m_values;
 }
 
-void RuleFilter::SetName(const string& _name)
+void RuleFilter::SetValues(const vector<string>& _values)
 {
-    m_name = _name;
-    m_nameHasBeenSet = true;
+    m_values = _values;
+    m_valuesHasBeenSet = true;
 }
 
-bool RuleFilter::NameHasBeenSet() const
+bool RuleFilter::ValuesHasBeenSet() const
 {
-    return m_nameHasBeenSet;
+    return m_valuesHasBeenSet;
 }
 

@@ -45,35 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识: Agent.AppId</li>
-</ul>
-                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识: Agent.AppId</li>
-</ul>
+                     * 获取<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识: Agent.AppId</li></ul>
+                     * @return Agent <p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识: Agent.AppId</li></ul>
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识: Agent.AppId</li>
-</ul>
-                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识: Agent.AppId</li>
-</ul>
+                     * 设置<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识: Agent.AppId</li></ul>
+                     * @param _agent <p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识: Agent.AppId</li></ul>
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -86,35 +66,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取操作类型，可取值如下:
-<ul>
-<li>SELECT:  查询</li>
-<li>DELETE:  删除</li>
-<li>UPDATE: 更新</li>
-</ul>
-                     * @return OperateType 操作类型，可取值如下:
-<ul>
-<li>SELECT:  查询</li>
-<li>DELETE:  删除</li>
-<li>UPDATE: 更新</li>
-</ul>
+                     * 获取<p>操作类型，可取值如下:</p><ul><li>SELECT:  查询</li><li>DELETE:  删除</li><li>UPDATE: 更新</li><li> DELETETEMPLATE: 删除指定的模板</li></ul>
+                     * @return OperateType <p>操作类型，可取值如下:</p><ul><li>SELECT:  查询</li><li>DELETE:  删除</li><li>UPDATE: 更新</li><li> DELETETEMPLATE: 删除指定的模板</li></ul>
                      * 
                      */
                     std::string GetOperateType() const;
 
                     /**
-                     * 设置操作类型，可取值如下:
-<ul>
-<li>SELECT:  查询</li>
-<li>DELETE:  删除</li>
-<li>UPDATE: 更新</li>
-</ul>
-                     * @param _operateType 操作类型，可取值如下:
-<ul>
-<li>SELECT:  查询</li>
-<li>DELETE:  删除</li>
-<li>UPDATE: 更新</li>
-</ul>
+                     * 设置<p>操作类型，可取值如下:</p><ul><li>SELECT:  查询</li><li>DELETE:  删除</li><li>UPDATE: 更新</li><li> DELETETEMPLATE: 删除指定的模板</li></ul>
+                     * @param _operateType <p>操作类型，可取值如下:</p><ul><li>SELECT:  查询</li><li>DELETE:  删除</li><li>UPDATE: 更新</li><li> DELETETEMPLATE: 删除指定的模板</li></ul>
                      * 
                      */
                     void SetOperateType(const std::string& _operateType);
@@ -127,19 +87,15 @@ namespace TencentCloud
                     bool OperateTypeHasBeenSet() const;
 
                     /**
-                     * 获取合同模板ID，为32位字符串。
-注: ` 此处为第三方应用平台模板库模板ID，非子客模板ID`
-                     * @return TemplateId 合同模板ID，为32位字符串。
-注: ` 此处为第三方应用平台模板库模板ID，非子客模板ID`
+                     * 获取<p>合同模板ID，为32位字符串。<br>注: <code>此处为第三方应用平台模板库模板ID，非子客模板ID</code></p>
+                     * @return TemplateId <p>合同模板ID，为32位字符串。<br>注: <code>此处为第三方应用平台模板库模板ID，非子客模板ID</code></p>
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置合同模板ID，为32位字符串。
-注: ` 此处为第三方应用平台模板库模板ID，非子客模板ID`
-                     * @param _templateId 合同模板ID，为32位字符串。
-注: ` 此处为第三方应用平台模板库模板ID，非子客模板ID`
+                     * 设置<p>合同模板ID，为32位字符串。<br>注: <code>此处为第三方应用平台模板库模板ID，非子客模板ID</code></p>
+                     * @param _templateId <p>合同模板ID，为32位字符串。<br>注: <code>此处为第三方应用平台模板库模板ID，非子客模板ID</code></p>
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -152,19 +108,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取第三方平台子客企业的唯一标识，支持批量(用,分割) 
-一次批量操作最多支持100个第三方平台子客
-                     * @return ProxyOrganizationOpenIds 第三方平台子客企业的唯一标识，支持批量(用,分割) 
-一次批量操作最多支持100个第三方平台子客
+                     * 获取<p>第三方平台子客企业的唯一标识，支持批量(用,分割)<br>一次批量操作最多支持100个第三方平台子客</p>
+                     * @return ProxyOrganizationOpenIds <p>第三方平台子客企业的唯一标识，支持批量(用,分割)<br>一次批量操作最多支持100个第三方平台子客</p>
                      * 
                      */
                     std::string GetProxyOrganizationOpenIds() const;
 
                     /**
-                     * 设置第三方平台子客企业的唯一标识，支持批量(用,分割) 
-一次批量操作最多支持100个第三方平台子客
-                     * @param _proxyOrganizationOpenIds 第三方平台子客企业的唯一标识，支持批量(用,分割) 
-一次批量操作最多支持100个第三方平台子客
+                     * 设置<p>第三方平台子客企业的唯一标识，支持批量(用,分割)<br>一次批量操作最多支持100个第三方平台子客</p>
+                     * @param _proxyOrganizationOpenIds <p>第三方平台子客企业的唯一标识，支持批量(用,分割)<br>一次批量操作最多支持100个第三方平台子客</p>
                      * 
                      */
                     void SetProxyOrganizationOpenIds(const std::string& _proxyOrganizationOpenIds);
@@ -177,43 +129,15 @@ namespace TencentCloud
                     bool ProxyOrganizationOpenIdsHasBeenSet() const;
 
                     /**
-                     * 获取模板可见范围, 可以设置的值如下:
-
-**all**: 所有本第三方应用合作企业可见
-**part**: 指定的本第三方应用合作企业
-
-对应控制台的位置
-![image](https://qcloudimg.tencent-cloud.cn/raw/68b97812c68d6af77a5991e3bff5c790.png)
-
-                     * @return AuthTag 模板可见范围, 可以设置的值如下:
-
-**all**: 所有本第三方应用合作企业可见
-**part**: 指定的本第三方应用合作企业
-
-对应控制台的位置
-![image](https://qcloudimg.tencent-cloud.cn/raw/68b97812c68d6af77a5991e3bff5c790.png)
-
+                     * 获取<p>模板可见范围, 可以设置的值如下:</p><p><strong>all</strong>: 所有本第三方应用合作企业可见<br><strong>part</strong>: 指定的本第三方应用合作企业</p><p>对应控制台的位置<br><img src="https://qcloudimg.tencent-cloud.cn/raw/68b97812c68d6af77a5991e3bff5c790.png" alt="image"></p>
+                     * @return AuthTag <p>模板可见范围, 可以设置的值如下:</p><p><strong>all</strong>: 所有本第三方应用合作企业可见<br><strong>part</strong>: 指定的本第三方应用合作企业</p><p>对应控制台的位置<br><img src="https://qcloudimg.tencent-cloud.cn/raw/68b97812c68d6af77a5991e3bff5c790.png" alt="image"></p>
                      * 
                      */
                     std::string GetAuthTag() const;
 
                     /**
-                     * 设置模板可见范围, 可以设置的值如下:
-
-**all**: 所有本第三方应用合作企业可见
-**part**: 指定的本第三方应用合作企业
-
-对应控制台的位置
-![image](https://qcloudimg.tencent-cloud.cn/raw/68b97812c68d6af77a5991e3bff5c790.png)
-
-                     * @param _authTag 模板可见范围, 可以设置的值如下:
-
-**all**: 所有本第三方应用合作企业可见
-**part**: 指定的本第三方应用合作企业
-
-对应控制台的位置
-![image](https://qcloudimg.tencent-cloud.cn/raw/68b97812c68d6af77a5991e3bff5c790.png)
-
+                     * 设置<p>模板可见范围, 可以设置的值如下:</p><p><strong>all</strong>: 所有本第三方应用合作企业可见<br><strong>part</strong>: 指定的本第三方应用合作企业</p><p>对应控制台的位置<br><img src="https://qcloudimg.tencent-cloud.cn/raw/68b97812c68d6af77a5991e3bff5c790.png" alt="image"></p>
+                     * @param _authTag <p>模板可见范围, 可以设置的值如下:</p><p><strong>all</strong>: 所有本第三方应用合作企业可见<br><strong>part</strong>: 指定的本第三方应用合作企业</p><p>对应控制台的位置<br><img src="https://qcloudimg.tencent-cloud.cn/raw/68b97812c68d6af77a5991e3bff5c790.png" alt="image"></p>
                      * 
                      */
                     void SetAuthTag(const std::string& _authTag);
@@ -226,51 +150,15 @@ namespace TencentCloud
                     bool AuthTagHasBeenSet() const;
 
                     /**
-                     * 获取当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
-<ul>
-<li>0: 不修改模板可用状态</li>
-<li>1:  启用模板</li>
-<li>2: 停用模板</li>
-</ul>
-启用后模板可以正常领取。
-
-停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。
-如果Available更新失败，会直接返回错误。
-                     * @return Available 当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
-<ul>
-<li>0: 不修改模板可用状态</li>
-<li>1:  启用模板</li>
-<li>2: 停用模板</li>
-</ul>
-启用后模板可以正常领取。
-
-停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。
-如果Available更新失败，会直接返回错误。
+                     * 获取<p>当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。</p><ul><li>0: 不修改模板可用状态</li><li>1:  启用模板</li><li>2: 停用模板</li></ul>启用后模板可以正常领取。<p>停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。<br>如果Available更新失败，会直接返回错误。</p>
+                     * @return Available <p>当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。</p><ul><li>0: 不修改模板可用状态</li><li>1:  启用模板</li><li>2: 停用模板</li></ul>启用后模板可以正常领取。<p>停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。<br>如果Available更新失败，会直接返回错误。</p>
                      * 
                      */
                     int64_t GetAvailable() const;
 
                     /**
-                     * 设置当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
-<ul>
-<li>0: 不修改模板可用状态</li>
-<li>1:  启用模板</li>
-<li>2: 停用模板</li>
-</ul>
-启用后模板可以正常领取。
-
-停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。
-如果Available更新失败，会直接返回错误。
-                     * @param _available 当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
-<ul>
-<li>0: 不修改模板可用状态</li>
-<li>1:  启用模板</li>
-<li>2: 停用模板</li>
-</ul>
-启用后模板可以正常领取。
-
-停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。
-如果Available更新失败，会直接返回错误。
+                     * 设置<p>当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。</p><ul><li>0: 不修改模板可用状态</li><li>1:  启用模板</li><li>2: 停用模板</li></ul>启用后模板可以正常领取。<p>停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。<br>如果Available更新失败，会直接返回错误。</p>
+                     * @param _available <p>当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。</p><ul><li>0: 不修改模板可用状态</li><li>1:  启用模板</li><li>2: 停用模板</li></ul>启用后模板可以正常领取。<p>停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。<br>如果Available更新失败，会直接返回错误。</p>
                      * 
                      */
                     void SetAvailable(const int64_t& _available);
@@ -283,15 +171,15 @@ namespace TencentCloud
                     bool AvailableHasBeenSet() const;
 
                     /**
-                     * 获取暂未开放
-                     * @return Operator 暂未开放
+                     * 获取<p>暂未开放</p>
+                     * @return Operator <p>暂未开放</p>
                      * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置暂未开放
-                     * @param _operator 暂未开放
+                     * 设置<p>暂未开放</p>
+                     * @param _operator <p>暂未开放</p>
                      * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -304,19 +192,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取指定分页每页返回的数据条数，单页最大支持 100。
-不传默认值为 20
-                     * @return Limit 指定分页每页返回的数据条数，单页最大支持 100。
-不传默认值为 20
+                     * 获取<p>指定分页每页返回的数据条数，单页最大支持 100。<br>不传默认值为 20</p>
+                     * @return Limit <p>指定分页每页返回的数据条数，单页最大支持 100。<br>不传默认值为 20</p>
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置指定分页每页返回的数据条数，单页最大支持 100。
-不传默认值为 20
-                     * @param _limit 指定分页每页返回的数据条数，单页最大支持 100。
-不传默认值为 20
+                     * 设置<p>指定分页每页返回的数据条数，单页最大支持 100。<br>不传默认值为 20</p>
+                     * @param _limit <p>指定分页每页返回的数据条数，单页最大支持 100。<br>不传默认值为 20</p>
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -329,15 +213,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页查询偏移量，默认为0
-                     * @return Offset 分页查询偏移量，默认为0
+                     * 获取<p>分页查询偏移量，默认为0</p>
+                     * @return Offset <p>分页查询偏移量，默认为0</p>
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页查询偏移量，默认为0
-                     * @param _offset 分页查询偏移量，默认为0
+                     * 设置<p>分页查询偏移量，默认为0</p>
+                     * @param _offset <p>分页查询偏移量，默认为0</p>
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -352,84 +236,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
-
-此接口下面信息必填。
-<ul>
-<li>渠道应用标识: Agent.AppId</li>
-</ul>
+                     * <p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识: Agent.AppId</li></ul>
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 操作类型，可取值如下:
-<ul>
-<li>SELECT:  查询</li>
-<li>DELETE:  删除</li>
-<li>UPDATE: 更新</li>
-</ul>
+                     * <p>操作类型，可取值如下:</p><ul><li>SELECT:  查询</li><li>DELETE:  删除</li><li>UPDATE: 更新</li><li> DELETETEMPLATE: 删除指定的模板</li></ul>
                      */
                     std::string m_operateType;
                     bool m_operateTypeHasBeenSet;
 
                     /**
-                     * 合同模板ID，为32位字符串。
-注: ` 此处为第三方应用平台模板库模板ID，非子客模板ID`
+                     * <p>合同模板ID，为32位字符串。<br>注: <code>此处为第三方应用平台模板库模板ID，非子客模板ID</code></p>
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 第三方平台子客企业的唯一标识，支持批量(用,分割) 
-一次批量操作最多支持100个第三方平台子客
+                     * <p>第三方平台子客企业的唯一标识，支持批量(用,分割)<br>一次批量操作最多支持100个第三方平台子客</p>
                      */
                     std::string m_proxyOrganizationOpenIds;
                     bool m_proxyOrganizationOpenIdsHasBeenSet;
 
                     /**
-                     * 模板可见范围, 可以设置的值如下:
-
-**all**: 所有本第三方应用合作企业可见
-**part**: 指定的本第三方应用合作企业
-
-对应控制台的位置
-![image](https://qcloudimg.tencent-cloud.cn/raw/68b97812c68d6af77a5991e3bff5c790.png)
-
+                     * <p>模板可见范围, 可以设置的值如下:</p><p><strong>all</strong>: 所有本第三方应用合作企业可见<br><strong>part</strong>: 指定的本第三方应用合作企业</p><p>对应控制台的位置<br><img src="https://qcloudimg.tencent-cloud.cn/raw/68b97812c68d6af77a5991e3bff5c790.png" alt="image"></p>
                      */
                     std::string m_authTag;
                     bool m_authTagHasBeenSet;
 
                     /**
-                     * 当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。
-<ul>
-<li>0: 不修改模板可用状态</li>
-<li>1:  启用模板</li>
-<li>2: 停用模板</li>
-</ul>
-启用后模板可以正常领取。
-
-停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。
-如果Available更新失败，会直接返回错误。
+                     * <p>当OperateType=UPDATE时，可以通过设置此字段对模板启停用状态进行操作。</p><ul><li>0: 不修改模板可用状态</li><li>1:  启用模板</li><li>2: 停用模板</li></ul>启用后模板可以正常领取。<p>停用后，推送方式为【自动推送】的模板则无法被子客使用，推送方式为【手动领取】的模板则无法出现被模板库被子客领用。<br>如果Available更新失败，会直接返回错误。</p>
                      */
                     int64_t m_available;
                     bool m_availableHasBeenSet;
 
                     /**
-                     * 暂未开放
+                     * <p>暂未开放</p>
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 指定分页每页返回的数据条数，单页最大支持 100。
-不传默认值为 20
+                     * <p>指定分页每页返回的数据条数，单页最大支持 100。<br>不传默认值为 20</p>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页查询偏移量，默认为0
+                     * <p>分页查询偏移量，默认为0</p>
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

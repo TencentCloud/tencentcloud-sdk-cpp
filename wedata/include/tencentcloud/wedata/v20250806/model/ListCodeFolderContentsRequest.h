@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/
-                     * @return ParentFolderPath 父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/
+                     * 获取<p>父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/</p>
+                     * @return ParentFolderPath <p>父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/</p>
                      * 
                      */
                     std::string GetParentFolderPath() const;
 
                     /**
-                     * 设置父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/
-                     * @param _parentFolderPath 父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/
+                     * 设置<p>父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/</p>
+                     * @param _parentFolderPath <p>父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/</p>
                      * 
                      */
                     void SetParentFolderPath(const std::string& _parentFolderPath);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ParentFolderPathHasBeenSet() const;
 
                     /**
-                     * 获取文件夹名称/代码文件名称搜索
-                     * @return Keyword 文件夹名称/代码文件名称搜索
+                     * 获取<p>文件夹名称/代码文件名称搜索</p>
+                     * @return Keyword <p>文件夹名称/代码文件名称搜索</p>
                      * 
                      */
                     std::string GetKeyword() const;
 
                     /**
-                     * 设置文件夹名称/代码文件名称搜索
-                     * @param _keyword 文件夹名称/代码文件名称搜索
+                     * 设置<p>文件夹名称/代码文件名称搜索</p>
+                     * @param _keyword <p>文件夹名称/代码文件名称搜索</p>
                      * 
                      */
                     void SetKeyword(const std::string& _keyword);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取只查询文件夹
-                     * @return OnlyFolderNode 只查询文件夹
+                     * 获取<p>只查询文件夹</p>
+                     * @return OnlyFolderNode <p>只查询文件夹</p>
                      * 
                      */
                     bool GetOnlyFolderNode() const;
 
                     /**
-                     * 设置只查询文件夹
-                     * @param _onlyFolderNode 只查询文件夹
+                     * 设置<p>只查询文件夹</p>
+                     * @param _onlyFolderNode <p>只查询文件夹</p>
                      * 
                      */
                     void SetOnlyFolderNode(const bool& _onlyFolderNode);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool OnlyFolderNodeHasBeenSet() const;
 
                     /**
-                     * 获取是否只查询用户自己创建的代码文件
-                     * @return OnlyUserSelfScript 是否只查询用户自己创建的代码文件
+                     * 获取<p>是否只查询用户自己创建的代码文件</p>
+                     * @return OnlyUserSelfScript <p>是否只查询用户自己创建的代码文件</p>
                      * 
                      */
                     bool GetOnlyUserSelfScript() const;
 
                     /**
-                     * 设置是否只查询用户自己创建的代码文件
-                     * @param _onlyUserSelfScript 是否只查询用户自己创建的代码文件
+                     * 设置<p>是否只查询用户自己创建的代码文件</p>
+                     * @param _onlyUserSelfScript <p>是否只查询用户自己创建的代码文件</p>
                      * 
                      */
                     void SetOnlyUserSelfScript(const bool& _onlyUserSelfScript);
@@ -147,37 +147,64 @@ namespace TencentCloud
                      */
                     bool OnlyUserSelfScriptHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否只查询提交状态为提交成功的文件</p><p>默认值：false</p>
+                     * @return SubmitStatusFilter <p>是否只查询提交状态为提交成功的文件</p><p>默认值：false</p>
+                     * 
+                     */
+                    bool GetSubmitStatusFilter() const;
+
+                    /**
+                     * 设置<p>是否只查询提交状态为提交成功的文件</p><p>默认值：false</p>
+                     * @param _submitStatusFilter <p>是否只查询提交状态为提交成功的文件</p><p>默认值：false</p>
+                     * 
+                     */
+                    void SetSubmitStatusFilter(const bool& _submitStatusFilter);
+
+                    /**
+                     * 判断参数 SubmitStatusFilter 是否已赋值
+                     * @return SubmitStatusFilter 是否已赋值
+                     * 
+                     */
+                    bool SubmitStatusFilterHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/
+                     * <p>父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/</p>
                      */
                     std::string m_parentFolderPath;
                     bool m_parentFolderPathHasBeenSet;
 
                     /**
-                     * 文件夹名称/代码文件名称搜索
+                     * <p>文件夹名称/代码文件名称搜索</p>
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 只查询文件夹
+                     * <p>只查询文件夹</p>
                      */
                     bool m_onlyFolderNode;
                     bool m_onlyFolderNodeHasBeenSet;
 
                     /**
-                     * 是否只查询用户自己创建的代码文件
+                     * <p>是否只查询用户自己创建的代码文件</p>
                      */
                     bool m_onlyUserSelfScript;
                     bool m_onlyUserSelfScriptHasBeenSet;
+
+                    /**
+                     * <p>是否只查询提交状态为提交成功的文件</p><p>默认值：false</p>
+                     */
+                    bool m_submitStatusFilter;
+                    bool m_submitStatusFilterHasBeenSet;
 
                 };
             }

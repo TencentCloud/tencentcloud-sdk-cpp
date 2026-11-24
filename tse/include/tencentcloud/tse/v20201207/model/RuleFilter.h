@@ -68,25 +68,25 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取限流条件的Values
-                     * @return Values 限流条件的Values
+                     * 获取header或query对应的name
+                     * @return Name header或query对应的name
                      * 
                      */
-                    std::vector<std::string> GetValues() const;
+                    std::string GetName() const;
 
                     /**
-                     * 设置限流条件的Values
-                     * @param _values 限流条件的Values
+                     * 设置header或query对应的name
+                     * @param _name header或query对应的name
                      * 
                      */
-                    void SetValues(const std::vector<std::string>& _values);
+                    void SetName(const std::string& _name);
 
                     /**
-                     * 判断参数 Values 是否已赋值
-                     * @return Values 是否已赋值
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
                      * 
                      */
-                    bool ValuesHasBeenSet() const;
+                    bool NameHasBeenSet() const;
 
                     /**
                      * 获取操作符
@@ -110,25 +110,25 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取header或query对应的name
-                     * @return Name header或query对应的name
+                     * 获取限流条件的Values
+                     * @return Values 限流条件的Values
                      * 
                      */
-                    std::string GetName() const;
+                    std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置header或query对应的name
-                     * @param _name header或query对应的name
+                     * 设置限流条件的Values
+                     * @param _values 限流条件的Values
                      * 
                      */
-                    void SetName(const std::string& _name);
+                    void SetValues(const std::vector<std::string>& _values);
 
                     /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
+                     * 判断参数 Values 是否已赋值
+                     * @return Values 是否已赋值
                      * 
                      */
-                    bool NameHasBeenSet() const;
+                    bool ValuesHasBeenSet() const;
 
                 private:
 
@@ -139,10 +139,10 @@ namespace TencentCloud
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 限流条件的Values
+                     * header或query对应的name
                      */
-                    std::vector<std::string> m_values;
-                    bool m_valuesHasBeenSet;
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                     /**
                      * 操作符
@@ -151,10 +151,10 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * header或query对应的name
+                     * 限流条件的Values
                      */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
+                    std::vector<std::string> m_values;
+                    bool m_valuesHasBeenSet;
 
                 };
             }

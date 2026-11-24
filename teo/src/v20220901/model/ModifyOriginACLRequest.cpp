@@ -24,6 +24,8 @@ using namespace std;
 
 ModifyOriginACLRequest::ModifyOriginACLRequest() :
     m_zoneIdHasBeenSet(false),
+    m_l7EnableModeHasBeenSet(false),
+    m_l4EnableModeHasBeenSet(false),
     m_originACLEntitiesHasBeenSet(false),
     m_originACLFamilyHasBeenSet(false)
 {
@@ -42,6 +44,22 @@ string ModifyOriginACLRequest::ToJsonString() const
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_l7EnableModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "L7EnableMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_l7EnableMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_l4EnableModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "L4EnableMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_l4EnableMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_originACLEntitiesHasBeenSet)
@@ -89,6 +107,38 @@ void ModifyOriginACLRequest::SetZoneId(const string& _zoneId)
 bool ModifyOriginACLRequest::ZoneIdHasBeenSet() const
 {
     return m_zoneIdHasBeenSet;
+}
+
+string ModifyOriginACLRequest::GetL7EnableMode() const
+{
+    return m_l7EnableMode;
+}
+
+void ModifyOriginACLRequest::SetL7EnableMode(const string& _l7EnableMode)
+{
+    m_l7EnableMode = _l7EnableMode;
+    m_l7EnableModeHasBeenSet = true;
+}
+
+bool ModifyOriginACLRequest::L7EnableModeHasBeenSet() const
+{
+    return m_l7EnableModeHasBeenSet;
+}
+
+string ModifyOriginACLRequest::GetL4EnableMode() const
+{
+    return m_l4EnableMode;
+}
+
+void ModifyOriginACLRequest::SetL4EnableMode(const string& _l4EnableMode)
+{
+    m_l4EnableMode = _l4EnableMode;
+    m_l4EnableModeHasBeenSet = true;
+}
+
+bool ModifyOriginACLRequest::L4EnableModeHasBeenSet() const
+{
+    return m_l4EnableModeHasBeenSet;
 }
 
 vector<OriginACLEntity> ModifyOriginACLRequest::GetOriginACLEntities() const

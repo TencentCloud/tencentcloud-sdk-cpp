@@ -50,15 +50,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点级策略的配置详情。
-                     * @return ZoneDefaultPolicy 站点级策略的配置详情。
+                     * 获取<p>站点级策略的配置详情。</p>
+                     * @return ZoneDefaultPolicy <p>站点级策略的配置详情。</p>
                      * 
                      */
                     SecurityPolicy GetZoneDefaultPolicy() const;
 
                     /**
-                     * 设置站点级策略的配置详情。
-                     * @param _zoneDefaultPolicy 站点级策略的配置详情。
+                     * 设置<p>站点级策略的配置详情。</p>
+                     * @param _zoneDefaultPolicy <p>站点级策略的配置详情。</p>
                      * 
                      */
                     void SetZoneDefaultPolicy(const SecurityPolicy& _zoneDefaultPolicy);
@@ -71,18 +71,18 @@ namespace TencentCloud
                     bool ZoneDefaultPolicyHasBeenSet() const;
 
                     /**
-                     * 获取域名级策略的配置详情。
-                     * @return HostPolicy 域名级策略的配置详情。
+                     * 获取<p>域名级策略的配置详情。</p>
+                     * @return HostPolicy <p>域名级策略的配置详情。</p>
                      * 
                      */
-                    HostPolicy GetHostPolicy() const;
+                    std::vector<HostPolicy> GetHostPolicy() const;
 
                     /**
-                     * 设置域名级策略的配置详情。
-                     * @param _hostPolicy 域名级策略的配置详情。
+                     * 设置<p>域名级策略的配置详情。</p>
+                     * @param _hostPolicy <p>域名级策略的配置详情。</p>
                      * 
                      */
-                    void SetHostPolicy(const HostPolicy& _hostPolicy);
+                    void SetHostPolicy(const std::vector<HostPolicy>& _hostPolicy);
 
                     /**
                      * 判断参数 HostPolicy 是否已赋值
@@ -92,18 +92,18 @@ namespace TencentCloud
                     bool HostPolicyHasBeenSet() const;
 
                     /**
-                     * 获取策略模板的配置详情。
-                     * @return Templates 策略模板的配置详情。
+                     * 获取<p>策略模板的配置详情。</p>
+                     * @return Templates <p>策略模板的配置详情。</p>
                      * 
                      */
-                    WebSecurityTemplates GetTemplates() const;
+                    std::vector<WebSecurityTemplates> GetTemplates() const;
 
                     /**
-                     * 设置策略模板的配置详情。
-                     * @param _templates 策略模板的配置详情。
+                     * 设置<p>策略模板的配置详情。</p>
+                     * @param _templates <p>策略模板的配置详情。</p>
                      * 
                      */
-                    void SetTemplates(const WebSecurityTemplates& _templates);
+                    void SetTemplates(const std::vector<WebSecurityTemplates>& _templates);
 
                     /**
                      * 判断参数 Templates 是否已赋值
@@ -115,21 +115,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 站点级策略的配置详情。
+                     * <p>站点级策略的配置详情。</p>
                      */
                     SecurityPolicy m_zoneDefaultPolicy;
                     bool m_zoneDefaultPolicyHasBeenSet;
 
                     /**
-                     * 域名级策略的配置详情。
+                     * <p>域名级策略的配置详情。</p>
                      */
-                    HostPolicy m_hostPolicy;
+                    std::vector<HostPolicy> m_hostPolicy;
                     bool m_hostPolicyHasBeenSet;
 
                     /**
-                     * 策略模板的配置详情。
+                     * <p>策略模板的配置详情。</p>
                      */
-                    WebSecurityTemplates m_templates;
+                    std::vector<WebSecurityTemplates> m_templates;
                     bool m_templatesHasBeenSet;
 
                 };

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取记录数
-                     * @return TotalCount 记录数
+                     * 获取<p>记录数</p>
+                     * @return TotalCount <p>记录数</p>
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取某会话的文件操作列表
-                     * @return SearchFileBySidResult 某会话的文件操作列表
+                     * 获取<p>某会话的文件操作列表</p>
+                     * @return SearchFileBySidResult <p>某会话的文件操作列表</p>
                      * 
                      */
                     std::vector<SearchFileBySidResult> GetSearchFileBySidResult() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 记录数
+                     * <p>记录数</p>
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 某会话的文件操作列表
+                     * <p>某会话的文件操作列表</p>
                      */
                     std::vector<SearchFileBySidResult> m_searchFileBySidResult;
                     bool m_searchFileBySidResultHasBeenSet;

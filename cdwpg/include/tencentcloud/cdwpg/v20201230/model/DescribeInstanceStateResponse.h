@@ -157,6 +157,20 @@ namespace TencentCloud
                     bool InstanceStateDescHasBeenSet() const;
 
                     /**
+                     * 获取<p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>
+                     * @return InstanceStates <p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>
+                     * 
+                     */
+                    std::vector<InstanceStateItem> GetInstanceStates() const;
+
+                    /**
+                     * 判断参数 InstanceStates 是否已赋值
+                     * @return InstanceStates 是否已赋值
+                     * 
+                     */
+                    bool InstanceStatesHasBeenSet() const;
+
+                    /**
                      * 获取<p>当前步骤的名称，例如：”购买资源中“</p>
                      * @return ProcessName <p>当前步骤的名称，例如：”购买资源中“</p>
                      * 
@@ -171,18 +185,18 @@ namespace TencentCloud
                     bool ProcessNameHasBeenSet() const;
 
                     /**
-                     * 获取<p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>
-                     * @return InstanceStates <p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>
+                     * 获取<p>恢复状态，仅用于前端交互判断（不用于展示）。TableRecovering=表级恢复进行中；ClusterRecovering=集群恢复进行中（CBS 快照恢复/旧回档，不区分）；空字符串=无恢复进行中。批量请求时以 InstanceStates 内各项为准</p>
+                     * @return RecoveryState <p>恢复状态，仅用于前端交互判断（不用于展示）。TableRecovering=表级恢复进行中；ClusterRecovering=集群恢复进行中（CBS 快照恢复/旧回档，不区分）；空字符串=无恢复进行中。批量请求时以 InstanceStates 内各项为准</p>
                      * 
                      */
-                    std::vector<InstanceStateItem> GetInstanceStates() const;
+                    std::string GetRecoveryState() const;
 
                     /**
-                     * 判断参数 InstanceStates 是否已赋值
-                     * @return InstanceStates 是否已赋值
+                     * 判断参数 RecoveryState 是否已赋值
+                     * @return RecoveryState 是否已赋值
                      * 
                      */
-                    bool InstanceStatesHasBeenSet() const;
+                    bool RecoveryStateHasBeenSet() const;
 
                 private:
 
@@ -235,16 +249,22 @@ namespace TencentCloud
                     bool m_instanceStateDescHasBeenSet;
 
                     /**
+                     * <p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>
+                     */
+                    std::vector<InstanceStateItem> m_instanceStates;
+                    bool m_instanceStatesHasBeenSet;
+
+                    /**
                      * <p>当前步骤的名称，例如：”购买资源中“</p>
                      */
                     std::string m_processName;
                     bool m_processNameHasBeenSet;
 
                     /**
-                     * <p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>
+                     * <p>恢复状态，仅用于前端交互判断（不用于展示）。TableRecovering=表级恢复进行中；ClusterRecovering=集群恢复进行中（CBS 快照恢复/旧回档，不区分）；空字符串=无恢复进行中。批量请求时以 InstanceStates 内各项为准</p>
                      */
-                    std::vector<InstanceStateItem> m_instanceStates;
-                    bool m_instanceStatesHasBeenSet;
+                    std::string m_recoveryState;
+                    bool m_recoveryStateHasBeenSet;
 
                 };
             }

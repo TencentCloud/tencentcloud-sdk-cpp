@@ -51,6 +51,10 @@
 #include <tencentcloud/adp/v20260520/model/CreateMsgRecordCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreatePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreatePluginResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreatePromptTemplateRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreatePromptTemplateResponse.h>
+#include <tencentcloud/adp/v20260520/model/CreatePromptTemplateLabelRequest.h>
+#include <tencentcloud/adp/v20260520/model/CreatePromptTemplateLabelResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateQAGenerationTaskRequest.h>
 #include <tencentcloud/adp/v20260520/model/CreateQAGenerationTaskResponse.h>
 #include <tencentcloud/adp/v20260520/model/CreateQAListRequest.h>
@@ -97,6 +101,10 @@
 #include <tencentcloud/adp/v20260520/model/DeleteMsgRecordCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeletePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeletePluginResponse.h>
+#include <tencentcloud/adp/v20260520/model/DeletePromptTemplateRequest.h>
+#include <tencentcloud/adp/v20260520/model/DeletePromptTemplateResponse.h>
+#include <tencentcloud/adp/v20260520/model/DeletePromptTemplateLabelRequest.h>
+#include <tencentcloud/adp/v20260520/model/DeletePromptTemplateLabelResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteQAListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DeleteQAListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DeleteSkillRequest.h>
@@ -183,6 +191,14 @@
 #include <tencentcloud/adp/v20260520/model/DescribePluginResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribePluginSummaryListRequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribePluginSummaryListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribePromptTemplateRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribePromptTemplateResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribePromptTemplateCategoryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribePromptTemplateCategoryListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribePromptTemplateLabelListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribePromptTemplateLabelListResponse.h>
+#include <tencentcloud/adp/v20260520/model/DescribePromptTemplateSummaryListRequest.h>
+#include <tencentcloud/adp/v20260520/model/DescribePromptTemplateSummaryListResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeQARequest.h>
 #include <tencentcloud/adp/v20260520/model/DescribeQAResponse.h>
 #include <tencentcloud/adp/v20260520/model/DescribeQASummaryListRequest.h>
@@ -221,6 +237,8 @@
 #include <tencentcloud/adp/v20260520/model/ExportQAResponse.h>
 #include <tencentcloud/adp/v20260520/model/FavoritePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/FavoritePluginResponse.h>
+#include <tencentcloud/adp/v20260520/model/FavoritePromptTemplateRequest.h>
+#include <tencentcloud/adp/v20260520/model/FavoritePromptTemplateResponse.h>
 #include <tencentcloud/adp/v20260520/model/FavoriteSkillRequest.h>
 #include <tencentcloud/adp/v20260520/model/FavoriteSkillResponse.h>
 #include <tencentcloud/adp/v20260520/model/ImportDocListRequest.h>
@@ -253,6 +271,8 @@
 #include <tencentcloud/adp/v20260520/model/ModifyMsgRecordCategoryResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyPluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyPluginResponse.h>
+#include <tencentcloud/adp/v20260520/model/ModifyPromptTemplateRequest.h>
+#include <tencentcloud/adp/v20260520/model/ModifyPromptTemplateResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyQARequest.h>
 #include <tencentcloud/adp/v20260520/model/ModifyQAResponse.h>
 #include <tencentcloud/adp/v20260520/model/ModifyQAListRequest.h>
@@ -291,6 +311,8 @@
 #include <tencentcloud/adp/v20260520/model/StopWorkflowRunListResponse.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoritePluginRequest.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoritePluginResponse.h>
+#include <tencentcloud/adp/v20260520/model/UnfavoritePromptTemplateRequest.h>
+#include <tencentcloud/adp/v20260520/model/UnfavoritePromptTemplateResponse.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoriteSkillRequest.h>
 #include <tencentcloud/adp/v20260520/model/UnfavoriteSkillResponse.h>
 
@@ -349,6 +371,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePluginResponse> CreatePluginOutcome;
                 typedef std::future<CreatePluginOutcome> CreatePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreatePluginRequest&, CreatePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePluginAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePromptTemplateResponse> CreatePromptTemplateOutcome;
+                typedef std::future<CreatePromptTemplateOutcome> CreatePromptTemplateOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreatePromptTemplateRequest&, CreatePromptTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePromptTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePromptTemplateLabelResponse> CreatePromptTemplateLabelOutcome;
+                typedef std::future<CreatePromptTemplateLabelOutcome> CreatePromptTemplateLabelOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::CreatePromptTemplateLabelRequest&, CreatePromptTemplateLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePromptTemplateLabelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateQAGenerationTaskResponse> CreateQAGenerationTaskOutcome;
                 typedef std::future<CreateQAGenerationTaskOutcome> CreateQAGenerationTaskOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::CreateQAGenerationTaskRequest&, CreateQAGenerationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQAGenerationTaskAsyncHandler;
@@ -418,6 +446,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePluginResponse> DeletePluginOutcome;
                 typedef std::future<DeletePluginOutcome> DeletePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeletePluginRequest&, DeletePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePluginAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePromptTemplateResponse> DeletePromptTemplateOutcome;
+                typedef std::future<DeletePromptTemplateOutcome> DeletePromptTemplateOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DeletePromptTemplateRequest&, DeletePromptTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePromptTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePromptTemplateLabelResponse> DeletePromptTemplateLabelOutcome;
+                typedef std::future<DeletePromptTemplateLabelOutcome> DeletePromptTemplateLabelOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DeletePromptTemplateLabelRequest&, DeletePromptTemplateLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePromptTemplateLabelAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteQAListResponse> DeleteQAListOutcome;
                 typedef std::future<DeleteQAListOutcome> DeleteQAListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DeleteQAListRequest&, DeleteQAListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQAListAsyncHandler;
@@ -547,6 +581,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePluginSummaryListResponse> DescribePluginSummaryListOutcome;
                 typedef std::future<DescribePluginSummaryListOutcome> DescribePluginSummaryListOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribePluginSummaryListRequest&, DescribePluginSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginSummaryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePromptTemplateResponse> DescribePromptTemplateOutcome;
+                typedef std::future<DescribePromptTemplateOutcome> DescribePromptTemplateOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribePromptTemplateRequest&, DescribePromptTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePromptTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePromptTemplateCategoryListResponse> DescribePromptTemplateCategoryListOutcome;
+                typedef std::future<DescribePromptTemplateCategoryListOutcome> DescribePromptTemplateCategoryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribePromptTemplateCategoryListRequest&, DescribePromptTemplateCategoryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePromptTemplateCategoryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePromptTemplateLabelListResponse> DescribePromptTemplateLabelListOutcome;
+                typedef std::future<DescribePromptTemplateLabelListOutcome> DescribePromptTemplateLabelListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribePromptTemplateLabelListRequest&, DescribePromptTemplateLabelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePromptTemplateLabelListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePromptTemplateSummaryListResponse> DescribePromptTemplateSummaryListOutcome;
+                typedef std::future<DescribePromptTemplateSummaryListOutcome> DescribePromptTemplateSummaryListOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::DescribePromptTemplateSummaryListRequest&, DescribePromptTemplateSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePromptTemplateSummaryListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeQAResponse> DescribeQAOutcome;
                 typedef std::future<DescribeQAOutcome> DescribeQAOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::DescribeQARequest&, DescribeQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQAAsyncHandler;
@@ -604,6 +650,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FavoritePluginResponse> FavoritePluginOutcome;
                 typedef std::future<FavoritePluginOutcome> FavoritePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::FavoritePluginRequest&, FavoritePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FavoritePluginAsyncHandler;
+                typedef Outcome<Core::Error, Model::FavoritePromptTemplateResponse> FavoritePromptTemplateOutcome;
+                typedef std::future<FavoritePromptTemplateOutcome> FavoritePromptTemplateOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::FavoritePromptTemplateRequest&, FavoritePromptTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FavoritePromptTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::FavoriteSkillResponse> FavoriteSkillOutcome;
                 typedef std::future<FavoriteSkillOutcome> FavoriteSkillOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::FavoriteSkillRequest&, FavoriteSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FavoriteSkillAsyncHandler;
@@ -652,6 +701,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPluginResponse> ModifyPluginOutcome;
                 typedef std::future<ModifyPluginOutcome> ModifyPluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyPluginRequest&, ModifyPluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPluginAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPromptTemplateResponse> ModifyPromptTemplateOutcome;
+                typedef std::future<ModifyPromptTemplateOutcome> ModifyPromptTemplateOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::ModifyPromptTemplateRequest&, ModifyPromptTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPromptTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyQAResponse> ModifyQAOutcome;
                 typedef std::future<ModifyQAOutcome> ModifyQAOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::ModifyQARequest&, ModifyQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQAAsyncHandler;
@@ -709,6 +761,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnfavoritePluginResponse> UnfavoritePluginOutcome;
                 typedef std::future<UnfavoritePluginOutcome> UnfavoritePluginOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::UnfavoritePluginRequest&, UnfavoritePluginOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfavoritePluginAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnfavoritePromptTemplateResponse> UnfavoritePromptTemplateOutcome;
+                typedef std::future<UnfavoritePromptTemplateOutcome> UnfavoritePromptTemplateOutcomeCallable;
+                typedef std::function<void(const AdpClient*, const Model::UnfavoritePromptTemplateRequest&, UnfavoritePromptTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfavoritePromptTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnfavoriteSkillResponse> UnfavoriteSkillOutcome;
                 typedef std::future<UnfavoriteSkillOutcome> UnfavoriteSkillOutcomeCallable;
                 typedef std::function<void(const AdpClient*, const Model::UnfavoriteSkillRequest&, UnfavoriteSkillOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfavoriteSkillAsyncHandler;
@@ -840,6 +895,24 @@ namespace TencentCloud
                 CreatePluginOutcome CreatePlugin(const Model::CreatePluginRequest &request);
                 void CreatePluginAsync(const Model::CreatePluginRequest& request, const CreatePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePluginOutcomeCallable CreatePluginCallable(const Model::CreatePluginRequest& request);
+
+                /**
+                 *创建提示词模板
+                 * @param req CreatePromptTemplateRequest
+                 * @return CreatePromptTemplateOutcome
+                 */
+                CreatePromptTemplateOutcome CreatePromptTemplate(const Model::CreatePromptTemplateRequest &request);
+                void CreatePromptTemplateAsync(const Model::CreatePromptTemplateRequest& request, const CreatePromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePromptTemplateOutcomeCallable CreatePromptTemplateCallable(const Model::CreatePromptTemplateRequest& request);
+
+                /**
+                 *创建提示词模板标签
+                 * @param req CreatePromptTemplateLabelRequest
+                 * @return CreatePromptTemplateLabelOutcome
+                 */
+                CreatePromptTemplateLabelOutcome CreatePromptTemplateLabel(const Model::CreatePromptTemplateLabelRequest &request);
+                void CreatePromptTemplateLabelAsync(const Model::CreatePromptTemplateLabelRequest& request, const CreatePromptTemplateLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePromptTemplateLabelOutcomeCallable CreatePromptTemplateLabelCallable(const Model::CreatePromptTemplateLabelRequest& request);
 
                 /**
                  *创建 QA 生成任务
@@ -1048,6 +1121,24 @@ namespace TencentCloud
                 DeletePluginOutcome DeletePlugin(const Model::DeletePluginRequest &request);
                 void DeletePluginAsync(const Model::DeletePluginRequest& request, const DeletePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePluginOutcomeCallable DeletePluginCallable(const Model::DeletePluginRequest& request);
+
+                /**
+                 *删除提示词模板
+                 * @param req DeletePromptTemplateRequest
+                 * @return DeletePromptTemplateOutcome
+                 */
+                DeletePromptTemplateOutcome DeletePromptTemplate(const Model::DeletePromptTemplateRequest &request);
+                void DeletePromptTemplateAsync(const Model::DeletePromptTemplateRequest& request, const DeletePromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePromptTemplateOutcomeCallable DeletePromptTemplateCallable(const Model::DeletePromptTemplateRequest& request);
+
+                /**
+                 *删除提示词模板标签
+                 * @param req DeletePromptTemplateLabelRequest
+                 * @return DeletePromptTemplateLabelOutcome
+                 */
+                DeletePromptTemplateLabelOutcome DeletePromptTemplateLabel(const Model::DeletePromptTemplateLabelRequest &request);
+                void DeletePromptTemplateLabelAsync(const Model::DeletePromptTemplateLabelRequest& request, const DeletePromptTemplateLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePromptTemplateLabelOutcomeCallable DeletePromptTemplateLabelCallable(const Model::DeletePromptTemplateLabelRequest& request);
 
                 /**
                  *批量删除 QA
@@ -1437,6 +1528,42 @@ namespace TencentCloud
                 DescribePluginSummaryListOutcomeCallable DescribePluginSummaryListCallable(const Model::DescribePluginSummaryListRequest& request);
 
                 /**
+                 *查询提示词模板详情
+                 * @param req DescribePromptTemplateRequest
+                 * @return DescribePromptTemplateOutcome
+                 */
+                DescribePromptTemplateOutcome DescribePromptTemplate(const Model::DescribePromptTemplateRequest &request);
+                void DescribePromptTemplateAsync(const Model::DescribePromptTemplateRequest& request, const DescribePromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePromptTemplateOutcomeCallable DescribePromptTemplateCallable(const Model::DescribePromptTemplateRequest& request);
+
+                /**
+                 *查询提示词模板分类列表
+                 * @param req DescribePromptTemplateCategoryListRequest
+                 * @return DescribePromptTemplateCategoryListOutcome
+                 */
+                DescribePromptTemplateCategoryListOutcome DescribePromptTemplateCategoryList(const Model::DescribePromptTemplateCategoryListRequest &request);
+                void DescribePromptTemplateCategoryListAsync(const Model::DescribePromptTemplateCategoryListRequest& request, const DescribePromptTemplateCategoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePromptTemplateCategoryListOutcomeCallable DescribePromptTemplateCategoryListCallable(const Model::DescribePromptTemplateCategoryListRequest& request);
+
+                /**
+                 *查询提示词模板标签列表
+                 * @param req DescribePromptTemplateLabelListRequest
+                 * @return DescribePromptTemplateLabelListOutcome
+                 */
+                DescribePromptTemplateLabelListOutcome DescribePromptTemplateLabelList(const Model::DescribePromptTemplateLabelListRequest &request);
+                void DescribePromptTemplateLabelListAsync(const Model::DescribePromptTemplateLabelListRequest& request, const DescribePromptTemplateLabelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePromptTemplateLabelListOutcomeCallable DescribePromptTemplateLabelListCallable(const Model::DescribePromptTemplateLabelListRequest& request);
+
+                /**
+                 *查询提示词模板摘要列表
+                 * @param req DescribePromptTemplateSummaryListRequest
+                 * @return DescribePromptTemplateSummaryListOutcome
+                 */
+                DescribePromptTemplateSummaryListOutcome DescribePromptTemplateSummaryList(const Model::DescribePromptTemplateSummaryListRequest &request);
+                void DescribePromptTemplateSummaryListAsync(const Model::DescribePromptTemplateSummaryListRequest& request, const DescribePromptTemplateSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePromptTemplateSummaryListOutcomeCallable DescribePromptTemplateSummaryListCallable(const Model::DescribePromptTemplateSummaryListRequest& request);
+
+                /**
                  *查询 QA 详情
                  * @param req DescribeQARequest
                  * @return DescribeQAOutcome
@@ -1608,6 +1735,15 @@ namespace TencentCloud
                 FavoritePluginOutcomeCallable FavoritePluginCallable(const Model::FavoritePluginRequest& request);
 
                 /**
+                 *收藏提示词模板
+                 * @param req FavoritePromptTemplateRequest
+                 * @return FavoritePromptTemplateOutcome
+                 */
+                FavoritePromptTemplateOutcome FavoritePromptTemplate(const Model::FavoritePromptTemplateRequest &request);
+                void FavoritePromptTemplateAsync(const Model::FavoritePromptTemplateRequest& request, const FavoritePromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FavoritePromptTemplateOutcomeCallable FavoritePromptTemplateCallable(const Model::FavoritePromptTemplateRequest& request);
+
+                /**
                  *收藏skill
                  * @param req FavoriteSkillRequest
                  * @return FavoriteSkillOutcome
@@ -1750,6 +1886,15 @@ namespace TencentCloud
                 ModifyPluginOutcome ModifyPlugin(const Model::ModifyPluginRequest &request);
                 void ModifyPluginAsync(const Model::ModifyPluginRequest& request, const ModifyPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPluginOutcomeCallable ModifyPluginCallable(const Model::ModifyPluginRequest& request);
+
+                /**
+                 *修改提示词模板
+                 * @param req ModifyPromptTemplateRequest
+                 * @return ModifyPromptTemplateOutcome
+                 */
+                ModifyPromptTemplateOutcome ModifyPromptTemplate(const Model::ModifyPromptTemplateRequest &request);
+                void ModifyPromptTemplateAsync(const Model::ModifyPromptTemplateRequest& request, const ModifyPromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPromptTemplateOutcomeCallable ModifyPromptTemplateCallable(const Model::ModifyPromptTemplateRequest& request);
 
                 /**
                  *修改单个 QA
@@ -1921,6 +2066,15 @@ namespace TencentCloud
                 UnfavoritePluginOutcome UnfavoritePlugin(const Model::UnfavoritePluginRequest &request);
                 void UnfavoritePluginAsync(const Model::UnfavoritePluginRequest& request, const UnfavoritePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnfavoritePluginOutcomeCallable UnfavoritePluginCallable(const Model::UnfavoritePluginRequest& request);
+
+                /**
+                 *取消收藏提示词模板
+                 * @param req UnfavoritePromptTemplateRequest
+                 * @return UnfavoritePromptTemplateOutcome
+                 */
+                UnfavoritePromptTemplateOutcome UnfavoritePromptTemplate(const Model::UnfavoritePromptTemplateRequest &request);
+                void UnfavoritePromptTemplateAsync(const Model::UnfavoritePromptTemplateRequest& request, const UnfavoritePromptTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnfavoritePromptTemplateOutcomeCallable UnfavoritePromptTemplateCallable(const Model::UnfavoritePromptTemplateRequest& request);
 
                 /**
                  *取消收藏skill

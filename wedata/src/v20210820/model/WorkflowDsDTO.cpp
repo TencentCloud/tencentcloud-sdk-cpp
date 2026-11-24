@@ -41,7 +41,8 @@ WorkflowDsDTO::WorkflowDsDTO() :
     m_bundleInfoHasBeenSet(false),
     m_executeUserUinHasBeenSet(false),
     m_executeUserNameHasBeenSet(false),
-    m_privilegeHasBeenSet(false)
+    m_privilegeHasBeenSet(false),
+    m_workflowLabelsHasBeenSet(false)
 {
 }
 
@@ -290,6 +291,26 @@ CoreInternalOutcome WorkflowDsDTO::Deserialize(const rapidjson::Value &value)
         m_privilegeHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkflowLabels") && !value["WorkflowLabels"].IsNull())
+    {
+        if (!value["WorkflowLabels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WorkflowDsDTO.WorkflowLabels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WorkflowLabels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WorkflowLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_workflowLabels.push_back(item);
+        }
+        m_workflowLabelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -484,6 +505,21 @@ void WorkflowDsDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Privilege";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_privilege.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowLabels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_workflowLabels.begin(); itr != m_workflowLabels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -823,5 +859,21 @@ void WorkflowDsDTO::SetPrivilege(const string& _privilege)
 bool WorkflowDsDTO::PrivilegeHasBeenSet() const
 {
     return m_privilegeHasBeenSet;
+}
+
+vector<WorkflowLabel> WorkflowDsDTO::GetWorkflowLabels() const
+{
+    return m_workflowLabels;
+}
+
+void WorkflowDsDTO::SetWorkflowLabels(const vector<WorkflowLabel>& _workflowLabels)
+{
+    m_workflowLabels = _workflowLabels;
+    m_workflowLabelsHasBeenSet = true;
+}
+
+bool WorkflowDsDTO::WorkflowLabelsHasBeenSet() const
+{
+    return m_workflowLabelsHasBeenSet;
 }
 

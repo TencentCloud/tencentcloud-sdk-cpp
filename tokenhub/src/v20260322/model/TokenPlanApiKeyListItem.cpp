@@ -37,7 +37,9 @@ TokenPlanApiKeyListItem::TokenPlanApiKeyListItem() :
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_balanceHasBeenSet(false),
-    m_productTypeHasBeenSet(false)
+    m_productTypeHasBeenSet(false),
+    m_ipWhitelistHasBeenSet(false),
+    m_overageEnabledHasBeenSet(false)
 {
 }
 
@@ -223,6 +225,29 @@ CoreInternalOutcome TokenPlanApiKeyListItem::Deserialize(const rapidjson::Value 
         m_productTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IpWhitelist") && !value["IpWhitelist"].IsNull())
+    {
+        if (!value["IpWhitelist"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TokenPlanApiKeyListItem.IpWhitelist` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IpWhitelist"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ipWhitelist.push_back((*itr).GetString());
+        }
+        m_ipWhitelistHasBeenSet = true;
+    }
+
+    if (value.HasMember("OverageEnabled") && !value["OverageEnabled"].IsNull())
+    {
+        if (!value["OverageEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TokenPlanApiKeyListItem.OverageEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_overageEnabled = value["OverageEnabled"].GetBool();
+        m_overageEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +390,27 @@ void TokenPlanApiKeyListItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ProductType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipWhitelistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpWhitelist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipWhitelist.begin(); itr != m_ipWhitelist.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_overageEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OverageEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_overageEnabled, allocator);
     }
 
 }
@@ -640,5 +686,37 @@ void TokenPlanApiKeyListItem::SetProductType(const string& _productType)
 bool TokenPlanApiKeyListItem::ProductTypeHasBeenSet() const
 {
     return m_productTypeHasBeenSet;
+}
+
+vector<string> TokenPlanApiKeyListItem::GetIpWhitelist() const
+{
+    return m_ipWhitelist;
+}
+
+void TokenPlanApiKeyListItem::SetIpWhitelist(const vector<string>& _ipWhitelist)
+{
+    m_ipWhitelist = _ipWhitelist;
+    m_ipWhitelistHasBeenSet = true;
+}
+
+bool TokenPlanApiKeyListItem::IpWhitelistHasBeenSet() const
+{
+    return m_ipWhitelistHasBeenSet;
+}
+
+bool TokenPlanApiKeyListItem::GetOverageEnabled() const
+{
+    return m_overageEnabled;
+}
+
+void TokenPlanApiKeyListItem::SetOverageEnabled(const bool& _overageEnabled)
+{
+    m_overageEnabled = _overageEnabled;
+    m_overageEnabledHasBeenSet = true;
+}
+
+bool TokenPlanApiKeyListItem::OverageEnabledHasBeenSet() const
+{
+    return m_overageEnabledHasBeenSet;
 }
 

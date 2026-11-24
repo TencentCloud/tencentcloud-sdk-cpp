@@ -27,7 +27,8 @@ ListCodeFolderContentsRequest::ListCodeFolderContentsRequest() :
     m_parentFolderPathHasBeenSet(false),
     m_keywordHasBeenSet(false),
     m_onlyFolderNodeHasBeenSet(false),
-    m_onlyUserSelfScriptHasBeenSet(false)
+    m_onlyUserSelfScriptHasBeenSet(false),
+    m_submitStatusFilterHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ListCodeFolderContentsRequest::ToJsonString() const
         string key = "OnlyUserSelfScript";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_onlyUserSelfScript, allocator);
+    }
+
+    if (m_submitStatusFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubmitStatusFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_submitStatusFilter, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ListCodeFolderContentsRequest::SetOnlyUserSelfScript(const bool& _onlyUserS
 bool ListCodeFolderContentsRequest::OnlyUserSelfScriptHasBeenSet() const
 {
     return m_onlyUserSelfScriptHasBeenSet;
+}
+
+bool ListCodeFolderContentsRequest::GetSubmitStatusFilter() const
+{
+    return m_submitStatusFilter;
+}
+
+void ListCodeFolderContentsRequest::SetSubmitStatusFilter(const bool& _submitStatusFilter)
+{
+    m_submitStatusFilter = _submitStatusFilter;
+    m_submitStatusFilterHasBeenSet = true;
+}
+
+bool ListCodeFolderContentsRequest::SubmitStatusFilterHasBeenSet() const
+{
+    return m_submitStatusFilterHasBeenSet;
 }
 
 

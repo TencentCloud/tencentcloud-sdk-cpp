@@ -121,6 +121,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ModifyLoginConfigResponse.h
   include/tencentcloud/tcb/v20180608/model/BindStorageSourceRequest.h
   include/tencentcloud/tcb/v20180608/model/ManagedAIModelChargingInfo.h
+  include/tencentcloud/tcb/v20180608/model/PGConfig.h
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudAppVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionRequest.h
@@ -538,6 +539,7 @@ set(tcb_src
   src/v20180608/model/ModifyLoginConfigResponse.cpp
   src/v20180608/model/BindStorageSourceRequest.cpp
   src/v20180608/model/ManagedAIModelChargingInfo.cpp
+  src/v20180608/model/PGConfig.cpp
   src/v20180608/model/CheckTcbServiceResponse.cpp
   src/v20180608/model/DeleteCloudAppVersionResponse.cpp
   src/v20180608/model/DescribeCloudBaseRunServerVersionRequest.cpp

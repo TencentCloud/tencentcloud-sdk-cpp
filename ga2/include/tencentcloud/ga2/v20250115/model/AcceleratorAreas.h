@@ -69,6 +69,27 @@ namespace TencentCloud
                     bool AccelerateRegionHasBeenSet() const;
 
                     /**
+                     * 获取<p>加速地域名称。</p>
+                     * @return AccelerateRegionName <p>加速地域名称。</p>
+                     * 
+                     */
+                    std::string GetAccelerateRegionName() const;
+
+                    /**
+                     * 设置<p>加速地域名称。</p>
+                     * @param _accelerateRegionName <p>加速地域名称。</p>
+                     * 
+                     */
+                    void SetAccelerateRegionName(const std::string& _accelerateRegionName);
+
+                    /**
+                     * 判断参数 AccelerateRegionName 是否已赋值
+                     * @return AccelerateRegionName 是否已赋值
+                     * 
+                     */
+                    bool AccelerateRegionNameHasBeenSet() const;
+
+                    /**
                      * 获取<p>带宽。</p>
                      * @return Bandwidth <p>带宽。</p>
                      * 
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_accelerateRegion;
                     bool m_accelerateRegionHasBeenSet;
+
+                    /**
+                     * <p>加速地域名称。</p>
+                     */
+                    std::string m_accelerateRegionName;
+                    bool m_accelerateRegionNameHasBeenSet;
 
                     /**
                      * <p>带宽。</p>

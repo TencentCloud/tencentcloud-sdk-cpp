@@ -40,6 +40,56 @@ MonitorClient::MonitorClient(const Credential &credential, const string &region,
 }
 
 
+MonitorClient::AddSubnetToManagedClusterOutcome MonitorClient::AddSubnetToManagedCluster(const AddSubnetToManagedClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddSubnetToManagedCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddSubnetToManagedClusterResponse rsp = AddSubnetToManagedClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddSubnetToManagedClusterOutcome(rsp);
+        else
+            return AddSubnetToManagedClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return AddSubnetToManagedClusterOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::AddSubnetToManagedClusterAsync(const AddSubnetToManagedClusterRequest& request, const AddSubnetToManagedClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const AddSubnetToManagedClusterRequest&;
+    using Resp = AddSubnetToManagedClusterResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "AddSubnetToManagedCluster", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MonitorClient::AddSubnetToManagedClusterOutcomeCallable MonitorClient::AddSubnetToManagedClusterCallable(const AddSubnetToManagedClusterRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<AddSubnetToManagedClusterOutcome>>();
+    AddSubnetToManagedClusterAsync(
+    request,
+    [prom](
+        const MonitorClient*,
+        const AddSubnetToManagedClusterRequest&,
+        AddSubnetToManagedClusterOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MonitorClient::BindPrometheusManagedGrafanaOutcome MonitorClient::BindPrometheusManagedGrafana(const BindPrometheusManagedGrafanaRequest &request)
 {
     auto outcome = MakeRequest(request, "BindPrometheusManagedGrafana");
