@@ -24,7 +24,9 @@ using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
 AsyncTextToSpeechResponse::AsyncTextToSpeechResponse() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_currentTaskCountHasBeenSet(false),
+    m_maxTaskCountHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome AsyncTextToSpeechResponse::Deserialize(const string &payload
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CurrentTaskCount") && !rsp["CurrentTaskCount"].IsNull())
+    {
+        if (!rsp["CurrentTaskCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CurrentTaskCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentTaskCount = rsp["CurrentTaskCount"].GetUint64();
+        m_currentTaskCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MaxTaskCount") && !rsp["MaxTaskCount"].IsNull())
+    {
+        if (!rsp["MaxTaskCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxTaskCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxTaskCount = rsp["MaxTaskCount"].GetUint64();
+        m_maxTaskCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string AsyncTextToSpeechResponse::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_currentTaskCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentTaskCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentTaskCount, allocator);
+    }
+
+    if (m_maxTaskCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTaskCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxTaskCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ string AsyncTextToSpeechResponse::GetTaskId() const
 bool AsyncTextToSpeechResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+uint64_t AsyncTextToSpeechResponse::GetCurrentTaskCount() const
+{
+    return m_currentTaskCount;
+}
+
+bool AsyncTextToSpeechResponse::CurrentTaskCountHasBeenSet() const
+{
+    return m_currentTaskCountHasBeenSet;
+}
+
+uint64_t AsyncTextToSpeechResponse::GetMaxTaskCount() const
+{
+    return m_maxTaskCount;
+}
+
+bool AsyncTextToSpeechResponse::MaxTaskCountHasBeenSet() const
+{
+    return m_maxTaskCountHasBeenSet;
 }
 
 

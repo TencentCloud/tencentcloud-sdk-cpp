@@ -27,7 +27,8 @@ AgentPluginConfig::AgentPluginConfig() :
     m_enableCamRoleAuthHasBeenSet(false),
     m_authTypeHasBeenSet(false),
     m_oAuthConsentHasBeenSet(false),
-    m_credentialConfigHasBeenSet(false)
+    m_credentialConfigHasBeenSet(false),
+    m_knowledgeScopeHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,23 @@ CoreInternalOutcome AgentPluginConfig::Deserialize(const rapidjson::Value &value
         m_credentialConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("KnowledgeScope") && !value["KnowledgeScope"].IsNull())
+    {
+        if (!value["KnowledgeScope"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentPluginConfig.KnowledgeScope` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_knowledgeScope.Deserialize(value["KnowledgeScope"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_knowledgeScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -209,6 +227,15 @@ void AgentPluginConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_credentialConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_knowledgeScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_knowledgeScope.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -324,5 +351,21 @@ void AgentPluginConfig::SetCredentialConfig(const AgentPluginCredentialConfig& _
 bool AgentPluginConfig::CredentialConfigHasBeenSet() const
 {
     return m_credentialConfigHasBeenSet;
+}
+
+ConnectorKnowledgeScope AgentPluginConfig::GetKnowledgeScope() const
+{
+    return m_knowledgeScope;
+}
+
+void AgentPluginConfig::SetKnowledgeScope(const ConnectorKnowledgeScope& _knowledgeScope)
+{
+    m_knowledgeScope = _knowledgeScope;
+    m_knowledgeScopeHasBeenSet = true;
+}
+
+bool AgentPluginConfig::KnowledgeScopeHasBeenSet() const
+{
+    return m_knowledgeScopeHasBeenSet;
 }
 

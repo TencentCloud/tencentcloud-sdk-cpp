@@ -90,7 +90,9 @@ ServiceVO::ServiceVO() :
     m_mcpServerNumHasBeenSet(false),
     m_credentialIDHasBeenSet(false),
     m_credentialNameHasBeenSet(false),
-    m_requestProtocolTypeHasBeenSet(false)
+    m_requestProtocolTypeHasBeenSet(false),
+    m_serviceSecurityRulesHasBeenSet(false),
+    m_serviceSecurityRulesVOHasBeenSet(false)
 {
 }
 
@@ -947,6 +949,46 @@ CoreInternalOutcome ServiceVO::Deserialize(const rapidjson::Value &value)
         m_requestProtocolTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceSecurityRules") && !value["ServiceSecurityRules"].IsNull())
+    {
+        if (!value["ServiceSecurityRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceVO.ServiceSecurityRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ServiceSecurityRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BindMcpSecurityRuleDTO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serviceSecurityRules.push_back(item);
+        }
+        m_serviceSecurityRulesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceSecurityRulesVO") && !value["ServiceSecurityRulesVO"].IsNull())
+    {
+        if (!value["ServiceSecurityRulesVO"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceVO.ServiceSecurityRulesVO` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ServiceSecurityRulesVO"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            McpSecurityRulesVO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serviceSecurityRulesVO.push_back(item);
+        }
+        m_serviceSecurityRulesVOHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1595,6 +1637,36 @@ void ServiceVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RequestProtocolType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_requestProtocolType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceSecurityRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceSecurityRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceSecurityRules.begin(); itr != m_serviceSecurityRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_serviceSecurityRulesVOHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceSecurityRulesVO";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceSecurityRulesVO.begin(); itr != m_serviceSecurityRulesVO.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -2718,5 +2790,37 @@ void ServiceVO::SetRequestProtocolType(const string& _requestProtocolType)
 bool ServiceVO::RequestProtocolTypeHasBeenSet() const
 {
     return m_requestProtocolTypeHasBeenSet;
+}
+
+vector<BindMcpSecurityRuleDTO> ServiceVO::GetServiceSecurityRules() const
+{
+    return m_serviceSecurityRules;
+}
+
+void ServiceVO::SetServiceSecurityRules(const vector<BindMcpSecurityRuleDTO>& _serviceSecurityRules)
+{
+    m_serviceSecurityRules = _serviceSecurityRules;
+    m_serviceSecurityRulesHasBeenSet = true;
+}
+
+bool ServiceVO::ServiceSecurityRulesHasBeenSet() const
+{
+    return m_serviceSecurityRulesHasBeenSet;
+}
+
+vector<McpSecurityRulesVO> ServiceVO::GetServiceSecurityRulesVO() const
+{
+    return m_serviceSecurityRulesVO;
+}
+
+void ServiceVO::SetServiceSecurityRulesVO(const vector<McpSecurityRulesVO>& _serviceSecurityRulesVO)
+{
+    m_serviceSecurityRulesVO = _serviceSecurityRulesVO;
+    m_serviceSecurityRulesVOHasBeenSet = true;
+}
+
+bool ServiceVO::ServiceSecurityRulesVOHasBeenSet() const
+{
+    return m_serviceSecurityRulesVOHasBeenSet;
 }
 

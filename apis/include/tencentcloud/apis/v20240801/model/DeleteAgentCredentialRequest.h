@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>实例ID</p>
+                     * @return InstanceID <p>实例ID</p>
+                     * 
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 设置<p>实例ID</p>
+                     * @param _instanceID <p>实例ID</p>
+                     * 
+                     */
+                    void SetInstanceID(const std::string& _instanceID);
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     * 
+                     */
+                    bool InstanceIDHasBeenSet() const;
+
+                    /**
+                     * 获取<p>credential id</p>
+                     * @return ID <p>credential id</p>
+                     * 
+                     */
+                    std::string GetID() const;
+
+                    /**
+                     * 设置<p>credential id</p>
+                     * @param _iD <p>credential id</p>
+                     * 
+                     */
+                    void SetID(const std::string& _iD);
+
+                    /**
+                     * 判断参数 ID 是否已赋值
+                     * @return ID 是否已赋值
+                     * 
+                     */
+                    bool IDHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>实例ID</p>
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
+
+                    /**
+                     * <p>credential id</p>
+                     */
+                    std::string m_iD;
+                    bool m_iDHasBeenSet;
 
                 };
             }

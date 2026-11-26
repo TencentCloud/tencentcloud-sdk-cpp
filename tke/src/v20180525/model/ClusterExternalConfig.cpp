@@ -24,7 +24,8 @@ ClusterExternalConfig::ClusterExternalConfig() :
     m_networkTypeHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_clusterCIDRHasBeenSet(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_proxyCLBModeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ClusterExternalConfig::Deserialize(const rapidjson::Value &v
         m_enabledHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyCLBMode") && !value["ProxyCLBMode"].IsNull())
+    {
+        if (!value["ProxyCLBMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterExternalConfig.ProxyCLBMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyCLBMode = string(value["ProxyCLBMode"].GetString());
+        m_proxyCLBModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ClusterExternalConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Enabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enabled, allocator);
+    }
+
+    if (m_proxyCLBModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyCLBMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyCLBMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ClusterExternalConfig::SetEnabled(const bool& _enabled)
 bool ClusterExternalConfig::EnabledHasBeenSet() const
 {
     return m_enabledHasBeenSet;
+}
+
+string ClusterExternalConfig::GetProxyCLBMode() const
+{
+    return m_proxyCLBMode;
+}
+
+void ClusterExternalConfig::SetProxyCLBMode(const string& _proxyCLBMode)
+{
+    m_proxyCLBMode = _proxyCLBMode;
+    m_proxyCLBModeHasBeenSet = true;
+}
+
+bool ClusterExternalConfig::ProxyCLBModeHasBeenSet() const
+{
+    return m_proxyCLBModeHasBeenSet;
 }
 

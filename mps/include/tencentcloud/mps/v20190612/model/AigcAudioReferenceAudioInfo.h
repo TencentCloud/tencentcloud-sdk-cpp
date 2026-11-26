@@ -67,6 +67,27 @@ namespace TencentCloud
                      */
                     bool AudioUrlHasBeenSet() const;
 
+                    /**
+                     * 获取<p>参考类型。</p>
+                     * @return ReferenceType <p>参考类型。</p>
+                     * 
+                     */
+                    std::string GetReferenceType() const;
+
+                    /**
+                     * 设置<p>参考类型。</p>
+                     * @param _referenceType <p>参考类型。</p>
+                     * 
+                     */
+                    void SetReferenceType(const std::string& _referenceType);
+
+                    /**
+                     * 判断参数 ReferenceType 是否已赋值
+                     * @return ReferenceType 是否已赋值
+                     * 
+                     */
+                    bool ReferenceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +95,12 @@ namespace TencentCloud
                      */
                     std::string m_audioUrl;
                     bool m_audioUrlHasBeenSet;
+
+                    /**
+                     * <p>参考类型。</p>
+                     */
+                    std::string m_referenceType;
+                    bool m_referenceTypeHasBeenSet;
 
                 };
             }

@@ -397,15 +397,15 @@ namespace TencentCloud
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取<p>任务状态</p>
-                     * @return Status <p>任务状态</p>
+                     * 获取<p>任务状态</p><p>枚举值：</p><ul><li>waiting： 等待执行</li><li>processing： 执行中</li><li>success： 执行成功</li><li>fail： 任务失败</li><li>paused： 任务暂停（存量任务状态）</li><li>undoing： 回滚中</li><li>undoed： 任务已回滚</li></ul>
+                     * @return Status <p>任务状态</p><p>枚举值：</p><ul><li>waiting： 等待执行</li><li>processing： 执行中</li><li>success： 执行成功</li><li>fail： 任务失败</li><li>paused： 任务暂停（存量任务状态）</li><li>undoing： 回滚中</li><li>undoed： 任务已回滚</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置<p>任务状态</p>
-                     * @param _status <p>任务状态</p>
+                     * 设置<p>任务状态</p><p>枚举值：</p><ul><li>waiting： 等待执行</li><li>processing： 执行中</li><li>success： 执行成功</li><li>fail： 任务失败</li><li>paused： 任务暂停（存量任务状态）</li><li>undoing： 回滚中</li><li>undoed： 任务已回滚</li></ul>
+                     * @param _status <p>任务状态</p><p>枚举值：</p><ul><li>waiting： 等待执行</li><li>processing： 执行中</li><li>success： 执行成功</li><li>fail： 任务失败</li><li>paused： 任务暂停（存量任务状态）</li><li>undoing： 回滚中</li><li>undoed： 任务已回滚</li></ul>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -1036,7 +1036,7 @@ namespace TencentCloud
                     bool m_outputHasBeenSet;
 
                     /**
-                     * <p>任务状态</p>
+                     * <p>任务状态</p><p>枚举值：</p><ul><li>waiting： 等待执行</li><li>processing： 执行中</li><li>success： 执行成功</li><li>fail： 任务失败</li><li>paused： 任务暂停（存量任务状态）</li><li>undoing： 回滚中</li><li>undoed： 任务已回滚</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

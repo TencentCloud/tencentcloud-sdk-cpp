@@ -34,7 +34,9 @@ DescribePreCacheImageTaskResponse::DescribePreCacheImageTaskResponse() :
     m_sourceTypeHasBeenSet(false),
     m_cachedImageSizeBytesHasBeenSet(false),
     m_readyTimeHasBeenSet(false),
-    m_lastUsedTimeHasBeenSet(false)
+    m_lastUsedTimeHasBeenSet(false),
+    m_idleTTLHasBeenSet(false),
+    m_expireTimeHasBeenSet(false)
 {
 }
 
@@ -182,6 +184,26 @@ CoreInternalOutcome DescribePreCacheImageTaskResponse::Deserialize(const string 
         m_lastUsedTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IdleTTL") && !rsp["IdleTTL"].IsNull())
+    {
+        if (!rsp["IdleTTL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IdleTTL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idleTTL = string(rsp["IdleTTL"].GetString());
+        m_idleTTLHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpireTime") && !rsp["ExpireTime"].IsNull())
+    {
+        if (!rsp["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(rsp["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +300,22 @@ string DescribePreCacheImageTaskResponse::ToJsonString() const
         string key = "LastUsedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastUsedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idleTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdleTTL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idleTTL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -400,6 +438,26 @@ string DescribePreCacheImageTaskResponse::GetLastUsedTime() const
 bool DescribePreCacheImageTaskResponse::LastUsedTimeHasBeenSet() const
 {
     return m_lastUsedTimeHasBeenSet;
+}
+
+string DescribePreCacheImageTaskResponse::GetIdleTTL() const
+{
+    return m_idleTTL;
+}
+
+bool DescribePreCacheImageTaskResponse::IdleTTLHasBeenSet() const
+{
+    return m_idleTTLHasBeenSet;
+}
+
+string DescribePreCacheImageTaskResponse::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+bool DescribePreCacheImageTaskResponse::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
 }
 
 

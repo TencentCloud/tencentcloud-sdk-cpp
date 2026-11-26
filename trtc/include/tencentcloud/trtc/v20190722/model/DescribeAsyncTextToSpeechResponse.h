@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/AsyncTTSSegmentResult.h>
 
 
 namespace TencentCloud
@@ -44,16 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态
-- Processing，处理中
-- Success，任务成功
-- Failed，任务失败
-- Expired，任务过期
-                     * @return Status 任务状态
-- Processing，处理中
-- Success，任务成功
-- Failed，任务失败
-- Expired，任务过期
+                     * 获取<p>任务状态</p><ul><li>Processing，处理中</li><li>Success，任务成功</li><li>Failed，任务失败</li><li>Expired，任务过期</li></ul>
+                     * @return Status <p>任务状态</p><ul><li>Processing，处理中</li><li>Success，任务成功</li><li>Failed，任务失败</li><li>Expired，任务过期</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -66,8 +59,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取音频下载url
-                     * @return AudioDownloadUrl 音频下载url
+                     * 获取<p>音频下载url</p>
+                     * @return AudioDownloadUrl <p>音频下载url</p>
                      * 
                      */
                     std::string GetAudioDownloadUrl() const;
@@ -80,8 +73,8 @@ namespace TencentCloud
                     bool AudioDownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取字幕下载url
-                     * @return SubtitleDownloadUrl 字幕下载url
+                     * 获取<p>字幕下载url</p>
+                     * @return SubtitleDownloadUrl <p>字幕下载url</p>
                      * 
                      */
                     std::string GetSubtitleDownloadUrl() const;
@@ -94,8 +87,8 @@ namespace TencentCloud
                     bool SubtitleDownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取音频时长
-                     * @return TotalDurationMs 音频时长
+                     * 获取<p>音频时长</p>
+                     * @return TotalDurationMs <p>音频时长</p>
                      * 
                      */
                     uint64_t GetTotalDurationMs() const;
@@ -107,35 +100,51 @@ namespace TencentCloud
                      */
                     bool TotalDurationMsHasBeenSet() const;
 
+                    /**
+                     * 获取<p>分段文本对应的结果</p>
+                     * @return SegmentResults <p>分段文本对应的结果</p>
+                     * 
+                     */
+                    std::vector<AsyncTTSSegmentResult> GetSegmentResults() const;
+
+                    /**
+                     * 判断参数 SegmentResults 是否已赋值
+                     * @return SegmentResults 是否已赋值
+                     * 
+                     */
+                    bool SegmentResultsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务状态
-- Processing，处理中
-- Success，任务成功
-- Failed，任务失败
-- Expired，任务过期
+                     * <p>任务状态</p><ul><li>Processing，处理中</li><li>Success，任务成功</li><li>Failed，任务失败</li><li>Expired，任务过期</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 音频下载url
+                     * <p>音频下载url</p>
                      */
                     std::string m_audioDownloadUrl;
                     bool m_audioDownloadUrlHasBeenSet;
 
                     /**
-                     * 字幕下载url
+                     * <p>字幕下载url</p>
                      */
                     std::string m_subtitleDownloadUrl;
                     bool m_subtitleDownloadUrlHasBeenSet;
 
                     /**
-                     * 音频时长
+                     * <p>音频时长</p>
                      */
                     uint64_t m_totalDurationMs;
                     bool m_totalDurationMsHasBeenSet;
+
+                    /**
+                     * <p>分段文本对应的结果</p>
+                     */
+                    std::vector<AsyncTTSSegmentResult> m_segmentResults;
+                    bool m_segmentResultsHasBeenSet;
 
                 };
             }

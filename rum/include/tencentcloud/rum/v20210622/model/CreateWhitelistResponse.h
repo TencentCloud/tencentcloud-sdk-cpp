@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消息
-                     * @return Msg 消息
+                     * 获取<p>消息</p>
+                     * @return Msg <p>消息</p>
                      * 
                      */
                     std::string GetMsg() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool MsgHasBeenSet() const;
 
                     /**
-                     * 获取白名单ID
-                     * @return ID 白名单ID
+                     * 获取<p>白名单ID</p>
+                     * @return ID <p>白名单ID</p>
                      * 
                      */
                     uint64_t GetID() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 消息
+                     * <p>消息</p>
                      */
                     std::string m_msg;
                     bool m_msgHasBeenSet;
 
                     /**
-                     * 白名单ID
+                     * <p>白名单ID</p>
                      */
                     uint64_t m_iD;
                     bool m_iDHasBeenSet;

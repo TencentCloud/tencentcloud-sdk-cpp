@@ -27,7 +27,8 @@ DescribeAsyncTextToSpeechResponse::DescribeAsyncTextToSpeechResponse() :
     m_statusHasBeenSet(false),
     m_audioDownloadUrlHasBeenSet(false),
     m_subtitleDownloadUrlHasBeenSet(false),
-    m_totalDurationMsHasBeenSet(false)
+    m_totalDurationMsHasBeenSet(false),
+    m_segmentResultsHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,26 @@ CoreInternalOutcome DescribeAsyncTextToSpeechResponse::Deserialize(const string 
         m_totalDurationMsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SegmentResults") && !rsp["SegmentResults"].IsNull())
+    {
+        if (!rsp["SegmentResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SegmentResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SegmentResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AsyncTTSSegmentResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_segmentResults.push_back(item);
+        }
+        m_segmentResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +166,21 @@ string DescribeAsyncTextToSpeechResponse::ToJsonString() const
         string key = "TotalDurationMs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalDurationMs, allocator);
+    }
+
+    if (m_segmentResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_segmentResults.begin(); itr != m_segmentResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +233,16 @@ uint64_t DescribeAsyncTextToSpeechResponse::GetTotalDurationMs() const
 bool DescribeAsyncTextToSpeechResponse::TotalDurationMsHasBeenSet() const
 {
     return m_totalDurationMsHasBeenSet;
+}
+
+vector<AsyncTTSSegmentResult> DescribeAsyncTextToSpeechResponse::GetSegmentResults() const
+{
+    return m_segmentResults;
+}
+
+bool DescribeAsyncTextToSpeechResponse::SegmentResultsHasBeenSet() const
+{
+    return m_segmentResultsHasBeenSet;
 }
 
 

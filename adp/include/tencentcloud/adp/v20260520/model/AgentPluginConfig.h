@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/adp/v20260520/model/AgentPluginParameter.h>
 #include <tencentcloud/adp/v20260520/model/AgentPluginCredentialConfig.h>
+#include <tencentcloud/adp/v20260520/model/ConnectorKnowledgeScope.h>
 
 
 namespace TencentCloud
@@ -195,6 +196,27 @@ namespace TencentCloud
                      */
                     bool CredentialConfigHasBeenSet() const;
 
+                    /**
+                     * 获取<p>连接器知识范围，目前仅支持腾讯乐享配置</p>
+                     * @return KnowledgeScope <p>连接器知识范围，目前仅支持腾讯乐享配置</p>
+                     * 
+                     */
+                    ConnectorKnowledgeScope GetKnowledgeScope() const;
+
+                    /**
+                     * 设置<p>连接器知识范围，目前仅支持腾讯乐享配置</p>
+                     * @param _knowledgeScope <p>连接器知识范围，目前仅支持腾讯乐享配置</p>
+                     * 
+                     */
+                    void SetKnowledgeScope(const ConnectorKnowledgeScope& _knowledgeScope);
+
+                    /**
+                     * 判断参数 KnowledgeScope 是否已赋值
+                     * @return KnowledgeScope 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +260,12 @@ namespace TencentCloud
                      */
                     AgentPluginCredentialConfig m_credentialConfig;
                     bool m_credentialConfigHasBeenSet;
+
+                    /**
+                     * <p>连接器知识范围，目前仅支持腾讯乐享配置</p>
+                     */
+                    ConnectorKnowledgeScope m_knowledgeScope;
+                    bool m_knowledgeScopeHasBeenSet;
 
                 };
             }

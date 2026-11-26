@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取<p>项目ID</p>
+                     * @return ProjectId <p>项目ID</p>
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param _projectId 项目ID
+                     * 设置<p>项目ID</p>
+                     * @param _projectId <p>项目ID</p>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取uv访问量
-                     * @return Uv uv访问量
+                     * 获取<p>uv访问量</p>
+                     * @return Uv <p>uv访问量</p>
                      * 
                      */
                     std::string GetUv() const;
 
                     /**
-                     * 设置uv访问量
-                     * @param _uv uv访问量
+                     * 设置<p>uv访问量</p>
+                     * @param _uv <p>uv访问量</p>
                      * 
                      */
                     void SetUv(const std::string& _uv);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UvHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取<p>创建时间</p>
+                     * @return CreateTime <p>创建时间</p>
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置<p>创建时间</p>
+                     * @param _createTime <p>创建时间</p>
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目ID
+                     * <p>项目ID</p>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * uv访问量
+                     * <p>uv访问量</p>
                      */
                     std::string m_uv;
                     bool m_uvHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * <p>创建时间</p>
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

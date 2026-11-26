@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>是否开启输入限制</p>
-                     * @return EnableInputLimit <p>是否开启输入限制</p>
+                     * 获取<p>是否开启输入长度限制</p>
+                     * @return EnableInputLimit <p>是否开启输入长度限制</p>
                      * 
                      */
                     bool GetEnableInputLimit() const;
 
                     /**
-                     * 设置<p>是否开启输入限制</p>
-                     * @param _enableInputLimit <p>是否开启输入限制</p>
+                     * 设置<p>是否开启输入长度限制</p>
+                     * @param _enableInputLimit <p>是否开启输入长度限制</p>
                      * 
                      */
                     void SetEnableInputLimit(const bool& _enableInputLimit);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool EnableInputLimitHasBeenSet() const;
 
                     /**
-                     * 获取<p>最大输入字符数</p>
-                     * @return MaxInputChars <p>最大输入字符数</p>
+                     * 获取<p>最大输入长度字符数</p>
+                     * @return MaxInputChars <p>最大输入长度字符数</p>
                      * 
                      */
                     uint64_t GetMaxInputChars() const;
 
                     /**
-                     * 设置<p>最大输入字符数</p>
-                     * @param _maxInputChars <p>最大输入字符数</p>
+                     * 设置<p>最大输入长度字符数</p>
+                     * @param _maxInputChars <p>最大输入长度字符数</p>
                      * 
                      */
                     void SetMaxInputChars(const uint64_t& _maxInputChars);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>是否开启输入限制</p>
+                     * <p>是否开启输入长度限制</p>
                      */
                     bool m_enableInputLimit;
                     bool m_enableInputLimitHasBeenSet;
 
                     /**
-                     * <p>最大输入字符数</p>
+                     * <p>最大输入长度字符数</p>
                      */
                     uint64_t m_maxInputChars;
                     bool m_maxInputCharsHasBeenSet;

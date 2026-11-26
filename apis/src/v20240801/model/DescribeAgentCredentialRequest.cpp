@@ -22,7 +22,9 @@
 using namespace TencentCloud::Apis::V20240801::Model;
 using namespace std;
 
-DescribeAgentCredentialRequest::DescribeAgentCredentialRequest()
+DescribeAgentCredentialRequest::DescribeAgentCredentialRequest() :
+    m_instanceIDHasBeenSet(false),
+    m_iDHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string DescribeAgentCredentialRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_iD.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string DescribeAgentCredentialRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeAgentCredentialRequest::GetInstanceID() const
+{
+    return m_instanceID;
+}
+
+void DescribeAgentCredentialRequest::SetInstanceID(const string& _instanceID)
+{
+    m_instanceID = _instanceID;
+    m_instanceIDHasBeenSet = true;
+}
+
+bool DescribeAgentCredentialRequest::InstanceIDHasBeenSet() const
+{
+    return m_instanceIDHasBeenSet;
+}
+
+string DescribeAgentCredentialRequest::GetID() const
+{
+    return m_iD;
+}
+
+void DescribeAgentCredentialRequest::SetID(const string& _iD)
+{
+    m_iD = _iD;
+    m_iDHasBeenSet = true;
+}
+
+bool DescribeAgentCredentialRequest::IDHasBeenSet() const
+{
+    return m_iDHasBeenSet;
+}
 
 

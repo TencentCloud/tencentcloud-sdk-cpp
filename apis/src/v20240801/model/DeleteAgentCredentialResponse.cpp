@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Apis::V20240801::Model;
 using namespace std;
 
-DeleteAgentCredentialResponse::DeleteAgentCredentialResponse()
+DeleteAgentCredentialResponse::DeleteAgentCredentialResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DeleteAgentCredentialResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DeleteAgentCredentialResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DeleteAgentCredentialResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+ResultIDVO DeleteAgentCredentialResponse::GetData() const
+{
+    return m_data;
+}
+
+bool DeleteAgentCredentialResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
+}
 
 

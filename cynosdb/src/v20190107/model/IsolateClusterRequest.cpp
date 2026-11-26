@@ -27,7 +27,8 @@ IsolateClusterRequest::IsolateClusterRequest() :
     m_dbTypeHasBeenSet(false),
     m_isolateReasonTypesHasBeenSet(false),
     m_isolateReasonHasBeenSet(false),
-    m_saveBackupHasBeenSet(false)
+    m_saveBackupHasBeenSet(false),
+    m_immediateRecycleRoHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string IsolateClusterRequest::ToJsonString() const
         string key = "SaveBackup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_saveBackup, allocator);
+    }
+
+    if (m_immediateRecycleRoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImmediateRecycleRo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_immediateRecycleRo, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void IsolateClusterRequest::SetSaveBackup(const bool& _saveBackup)
 bool IsolateClusterRequest::SaveBackupHasBeenSet() const
 {
     return m_saveBackupHasBeenSet;
+}
+
+bool IsolateClusterRequest::GetImmediateRecycleRo() const
+{
+    return m_immediateRecycleRo;
+}
+
+void IsolateClusterRequest::SetImmediateRecycleRo(const bool& _immediateRecycleRo)
+{
+    m_immediateRecycleRo = _immediateRecycleRo;
+    m_immediateRecycleRoHasBeenSet = true;
+}
+
+bool IsolateClusterRequest::ImmediateRecycleRoHasBeenSet() const
+{
+    return m_immediateRecycleRoHasBeenSet;
 }
 
 

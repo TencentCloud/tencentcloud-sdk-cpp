@@ -47,6 +47,8 @@
 #include <tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetActionSequenceRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetActionSequenceResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetAttackDetailRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetAttackDetailResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetDetectInfoRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetDetectInfoResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedRequest.h>
@@ -147,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetActionSequenceResponse> GetActionSequenceOutcome;
                 typedef std::future<GetActionSequenceOutcome> GetActionSequenceOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetActionSequenceRequest&, GetActionSequenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetActionSequenceAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetAttackDetailResponse> GetAttackDetailOutcome;
+                typedef std::future<GetAttackDetailOutcome> GetAttackDetailOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetAttackDetailRequest&, GetAttackDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAttackDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetDetectInfoResponse> GetDetectInfoOutcome;
                 typedef std::future<GetDetectInfoOutcome> GetDetectInfoOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetDetectInfoRequest&, GetDetectInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDetectInfoAsyncHandler;
@@ -332,6 +337,19 @@ namespace TencentCloud
                 GetActionSequenceOutcome GetActionSequence(const Model::GetActionSequenceRequest &request);
                 void GetActionSequenceAsync(const Model::GetActionSequenceRequest& request, const GetActionSequenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetActionSequenceOutcomeCallable GetActionSequenceCallable(const Model::GetActionSequenceRequest& request);
+
+                /**
+                 *根据 AI 人脸防护盾接口返回的 SeqId，查询本次检测命中的攻击区域坐标与攻击描述信息。常用于在 AttackRiskLevel 为 High 或 Mid 时，对原始图片/视频帧进行可视化标注与人工复核。
+
+检测结果默认保留 3 天，超过保留期后无法再查询。
+
+默认接口请求频率限制：10次/秒。
+                 * @param req GetAttackDetailRequest
+                 * @return GetAttackDetailOutcome
+                 */
+                GetAttackDetailOutcome GetAttackDetail(const Model::GetAttackDetailRequest &request);
+                void GetAttackDetailAsync(const Model::GetAttackDetailRequest& request, const GetAttackDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAttackDetailOutcomeCallable GetAttackDetailCallable(const Model::GetAttackDetailRequest& request);
 
                 /**
                  *完成验证后，用BizToken调用本接口获取结果信息，BizToken生成后三天内（3\*24\*3,600秒）可多次拉取。

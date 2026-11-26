@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID：taw-123
-                     * @return InstanceID 实例ID：taw-123
+                     * 获取<p>实例ID：taw-123</p>
+                     * @return InstanceID <p>实例ID：taw-123</p>
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例ID：taw-123
-                     * @param _instanceID 实例ID：taw-123
+                     * 设置<p>实例ID：taw-123</p>
+                     * @param _instanceID <p>实例ID：taw-123</p>
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取备注（暂未作字节数限制）
-                     * @return Remark 备注（暂未作字节数限制）
+                     * 获取<p>备注（暂未作字节数限制）</p>
+                     * @return Remark <p>备注（暂未作字节数限制）</p>
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注（暂未作字节数限制）
-                     * @param _remark 备注（暂未作字节数限制）
+                     * 设置<p>备注（暂未作字节数限制）</p>
+                     * @param _remark <p>备注（暂未作字节数限制）</p>
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取uin：业务方标识
-                     * @return WhitelistUin uin：业务方标识
+                     * 获取<p>uin：业务方标识</p>
+                     * @return WhitelistUin <p>uin：业务方标识</p>
                      * 
                      */
                     std::string GetWhitelistUin() const;
 
                     /**
-                     * 设置uin：业务方标识
-                     * @param _whitelistUin uin：业务方标识
+                     * 设置<p>uin：业务方标识</p>
+                     * @param _whitelistUin <p>uin：业务方标识</p>
                      * 
                      */
                     void SetWhitelistUin(const std::string& _whitelistUin);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool WhitelistUinHasBeenSet() const;
 
                     /**
-                     * 获取业务方标识
-                     * @return Aid 业务方标识
+                     * 获取<p>业务方标识</p>
+                     * @return Aid <p>业务方标识</p>
                      * 
                      */
                     std::string GetAid() const;
 
                     /**
-                     * 设置业务方标识
-                     * @param _aid 业务方标识
+                     * 设置<p>业务方标识</p>
+                     * @param _aid <p>业务方标识</p>
                      * 
                      */
                     void SetAid(const std::string& _aid);
@@ -129,25 +129,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID：taw-123
+                     * <p>实例ID：taw-123</p>
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 备注（暂未作字节数限制）
+                     * <p>备注（暂未作字节数限制）</p>
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * uin：业务方标识
+                     * <p>uin：业务方标识</p>
                      */
                     std::string m_whitelistUin;
                     bool m_whitelistUinHasBeenSet;
 
                     /**
-                     * 业务方标识
+                     * <p>业务方标识</p>
                      */
                     std::string m_aid;
                     bool m_aidHasBeenSet;

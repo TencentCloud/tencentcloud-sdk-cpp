@@ -24,7 +24,11 @@ using namespace std;
 
 DescribeSupportProxyVersionRequest::DescribeSupportProxyVersionRequest() :
     m_clusterIdHasBeenSet(false),
-    m_proxyGroupIdHasBeenSet(false)
+    m_proxyGroupIdHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_dbVersionHasBeenSet(false),
+    m_cynosVersionHasBeenSet(false),
+    m_storageVersionHasBeenSet(false)
 {
 }
 
@@ -49,6 +53,38 @@ string DescribeSupportProxyVersionRequest::ToJsonString() const
         string key = "ProxyGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_proxyGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dbVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cynosVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CynosVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cynosVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +125,70 @@ void DescribeSupportProxyVersionRequest::SetProxyGroupId(const string& _proxyGro
 bool DescribeSupportProxyVersionRequest::ProxyGroupIdHasBeenSet() const
 {
     return m_proxyGroupIdHasBeenSet;
+}
+
+string DescribeSupportProxyVersionRequest::GetZone() const
+{
+    return m_zone;
+}
+
+void DescribeSupportProxyVersionRequest::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool DescribeSupportProxyVersionRequest::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+string DescribeSupportProxyVersionRequest::GetDbVersion() const
+{
+    return m_dbVersion;
+}
+
+void DescribeSupportProxyVersionRequest::SetDbVersion(const string& _dbVersion)
+{
+    m_dbVersion = _dbVersion;
+    m_dbVersionHasBeenSet = true;
+}
+
+bool DescribeSupportProxyVersionRequest::DbVersionHasBeenSet() const
+{
+    return m_dbVersionHasBeenSet;
+}
+
+string DescribeSupportProxyVersionRequest::GetCynosVersion() const
+{
+    return m_cynosVersion;
+}
+
+void DescribeSupportProxyVersionRequest::SetCynosVersion(const string& _cynosVersion)
+{
+    m_cynosVersion = _cynosVersion;
+    m_cynosVersionHasBeenSet = true;
+}
+
+bool DescribeSupportProxyVersionRequest::CynosVersionHasBeenSet() const
+{
+    return m_cynosVersionHasBeenSet;
+}
+
+string DescribeSupportProxyVersionRequest::GetStorageVersion() const
+{
+    return m_storageVersion;
+}
+
+void DescribeSupportProxyVersionRequest::SetStorageVersion(const string& _storageVersion)
+{
+    m_storageVersion = _storageVersion;
+    m_storageVersionHasBeenSet = true;
+}
+
+bool DescribeSupportProxyVersionRequest::StorageVersionHasBeenSet() const
+{
+    return m_storageVersionHasBeenSet;
 }
 
 

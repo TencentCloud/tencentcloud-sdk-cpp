@@ -640,6 +640,56 @@ FaceidClient::GetActionSequenceOutcomeCallable FaceidClient::GetActionSequenceCa
     return prom->get_future();
 }
 
+FaceidClient::GetAttackDetailOutcome FaceidClient::GetAttackDetail(const GetAttackDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAttackDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAttackDetailResponse rsp = GetAttackDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAttackDetailOutcome(rsp);
+        else
+            return GetAttackDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAttackDetailOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::GetAttackDetailAsync(const GetAttackDetailRequest& request, const GetAttackDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const GetAttackDetailRequest&;
+    using Resp = GetAttackDetailResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "GetAttackDetail", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+FaceidClient::GetAttackDetailOutcomeCallable FaceidClient::GetAttackDetailCallable(const GetAttackDetailRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<GetAttackDetailOutcome>>();
+    GetAttackDetailAsync(
+    request,
+    [prom](
+        const FaceidClient*,
+        const GetAttackDetailRequest&,
+        GetAttackDetailOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 FaceidClient::GetDetectInfoOutcome FaceidClient::GetDetectInfo(const GetDetectInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "GetDetectInfo");

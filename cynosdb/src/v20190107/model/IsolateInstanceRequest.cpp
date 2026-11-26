@@ -28,7 +28,8 @@ IsolateInstanceRequest::IsolateInstanceRequest() :
     m_dbTypeHasBeenSet(false),
     m_isolateReasonTypesHasBeenSet(false),
     m_isolateReasonHasBeenSet(false),
-    m_saveBackupHasBeenSet(false)
+    m_saveBackupHasBeenSet(false),
+    m_immediateRecycleRoHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string IsolateInstanceRequest::ToJsonString() const
         string key = "SaveBackup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_saveBackup, allocator);
+    }
+
+    if (m_immediateRecycleRoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImmediateRecycleRo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_immediateRecycleRo, allocator);
     }
 
 
@@ -199,6 +208,22 @@ void IsolateInstanceRequest::SetSaveBackup(const bool& _saveBackup)
 bool IsolateInstanceRequest::SaveBackupHasBeenSet() const
 {
     return m_saveBackupHasBeenSet;
+}
+
+bool IsolateInstanceRequest::GetImmediateRecycleRo() const
+{
+    return m_immediateRecycleRo;
+}
+
+void IsolateInstanceRequest::SetImmediateRecycleRo(const bool& _immediateRecycleRo)
+{
+    m_immediateRecycleRo = _immediateRecycleRo;
+    m_immediateRecycleRoHasBeenSet = true;
+}
+
+bool IsolateInstanceRequest::ImmediateRecycleRoHasBeenSet() const
+{
+    return m_immediateRecycleRoHasBeenSet;
 }
 
 

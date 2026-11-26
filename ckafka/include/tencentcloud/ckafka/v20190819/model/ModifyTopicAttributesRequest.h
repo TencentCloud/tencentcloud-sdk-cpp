@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool UncleanLeaderElectionEnableHasBeenSet() const;
 
                     /**
-                     * 获取<p>Segment分片滚动的时长</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
-                     * @return RetentionMs <p>Segment分片滚动的时长</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
+                     * 获取<p>Segment分片滚动的时长</p><p>取值范围：[86400000, 31536000000]</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
+                     * @return RetentionMs <p>Segment分片滚动的时长</p><p>取值范围：[86400000, 31536000000]</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
                      * 
                      */
                     int64_t GetRetentionMs() const;
 
                     /**
-                     * 设置<p>Segment分片滚动的时长</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
-                     * @param _retentionMs <p>Segment分片滚动的时长</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
+                     * 设置<p>Segment分片滚动的时长</p><p>取值范围：[86400000, 31536000000]</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
+                     * @param _retentionMs <p>Segment分片滚动的时长</p><p>取值范围：[86400000, 31536000000]</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
                      * 
                      */
                     void SetRetentionMs(const int64_t& _retentionMs);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool SegmentMsHasBeenSet() const;
 
                     /**
-                     * 获取<p>消息删除策略，可以选择delete 或者compact</p>
-                     * @return CleanUpPolicy <p>消息删除策略，可以选择delete 或者compact</p>
+                     * 获取<p>消息删除策略，可以选择delete 或者compact</p><p>枚举值：</p><ul><li>delete： 按保留时间/大小删除旧消息</li><li>compact： 日志压缩，按 Key 保留最新值</li></ul>
+                     * @return CleanUpPolicy <p>消息删除策略，可以选择delete 或者compact</p><p>枚举值：</p><ul><li>delete： 按保留时间/大小删除旧消息</li><li>compact： 日志压缩，按 Key 保留最新值</li></ul>
                      * 
                      */
                     std::string GetCleanUpPolicy() const;
 
                     /**
-                     * 设置<p>消息删除策略，可以选择delete 或者compact</p>
-                     * @param _cleanUpPolicy <p>消息删除策略，可以选择delete 或者compact</p>
+                     * 设置<p>消息删除策略，可以选择delete 或者compact</p><p>枚举值：</p><ul><li>delete： 按保留时间/大小删除旧消息</li><li>compact： 日志压缩，按 Key 保留最新值</li></ul>
+                     * @param _cleanUpPolicy <p>消息删除策略，可以选择delete 或者compact</p><p>枚举值：</p><ul><li>delete： 按保留时间/大小删除旧消息</li><li>compact： 日志压缩，按 Key 保留最新值</li></ul>
                      * 
                      */
                     void SetCleanUpPolicy(const std::string& _cleanUpPolicy);
@@ -481,7 +481,7 @@ namespace TencentCloud
                     bool m_uncleanLeaderElectionEnableHasBeenSet;
 
                     /**
-                     * <p>Segment分片滚动的时长</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
+                     * <p>Segment分片滚动的时长</p><p>取值范围：[86400000, 31536000000]</p><p>单位：毫秒</p><p>默认值：86400000</p><p>最小值为86400000ms（1天）</p>
                      */
                     int64_t m_retentionMs;
                     bool m_retentionMsHasBeenSet;
@@ -499,7 +499,7 @@ namespace TencentCloud
                     bool m_segmentMsHasBeenSet;
 
                     /**
-                     * <p>消息删除策略，可以选择delete 或者compact</p>
+                     * <p>消息删除策略，可以选择delete 或者compact</p><p>枚举值：</p><ul><li>delete： 按保留时间/大小删除旧消息</li><li>compact： 日志压缩，按 Key 保留最新值</li></ul>
                      */
                     std::string m_cleanUpPolicy;
                     bool m_cleanUpPolicyHasBeenSet;

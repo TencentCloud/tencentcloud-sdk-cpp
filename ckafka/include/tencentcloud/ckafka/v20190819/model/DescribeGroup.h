@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消费分组名称
-                     * @return Group 消费分组名称
+                     * 获取<p>消费分组名称</p>
+                     * @return Group <p>消费分组名称</p>
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
-                     * 设置消费分组名称
-                     * @param _group 消费分组名称
+                     * 设置<p>消费分组名称</p>
+                     * @param _group <p>消费分组名称</p>
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取该 group 使用的协议。
-                     * @return Protocol 该 group 使用的协议。
+                     * 获取<p>该 group 使用的协议。</p>
+                     * @return Protocol <p>该 group 使用的协议。</p>
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置该 group 使用的协议。
-                     * @param _protocol 该 group 使用的协议。
+                     * 设置<p>该 group 使用的协议。</p>
+                     * @param _protocol <p>该 group 使用的协议。</p>
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 消费分组名称
+                     * <p>消费分组名称</p>
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
 
                     /**
-                     * 该 group 使用的协议。
+                     * <p>该 group 使用的协议。</p>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

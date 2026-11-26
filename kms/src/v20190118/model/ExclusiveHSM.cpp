@@ -22,7 +22,9 @@ using namespace std;
 
 ExclusiveHSM::ExclusiveHSM() :
     m_hsmClusterIdHasBeenSet(false),
-    m_hsmClusterNameHasBeenSet(false)
+    m_hsmClusterNameHasBeenSet(false),
+    m_cmkUserCountHasBeenSet(false),
+    m_cmkLimitHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome ExclusiveHSM::Deserialize(const rapidjson::Value &value)
         m_hsmClusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CmkUserCount") && !value["CmkUserCount"].IsNull())
+    {
+        if (!value["CmkUserCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExclusiveHSM.CmkUserCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cmkUserCount = value["CmkUserCount"].GetUint64();
+        m_cmkUserCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("CmkLimit") && !value["CmkLimit"].IsNull())
+    {
+        if (!value["CmkLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExclusiveHSM.CmkLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cmkLimit = value["CmkLimit"].GetUint64();
+        m_cmkLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void ExclusiveHSM::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "HsmClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hsmClusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cmkUserCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CmkUserCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cmkUserCount, allocator);
+    }
+
+    if (m_cmkLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CmkLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cmkLimit, allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void ExclusiveHSM::SetHsmClusterName(const string& _hsmClusterName)
 bool ExclusiveHSM::HsmClusterNameHasBeenSet() const
 {
     return m_hsmClusterNameHasBeenSet;
+}
+
+uint64_t ExclusiveHSM::GetCmkUserCount() const
+{
+    return m_cmkUserCount;
+}
+
+void ExclusiveHSM::SetCmkUserCount(const uint64_t& _cmkUserCount)
+{
+    m_cmkUserCount = _cmkUserCount;
+    m_cmkUserCountHasBeenSet = true;
+}
+
+bool ExclusiveHSM::CmkUserCountHasBeenSet() const
+{
+    return m_cmkUserCountHasBeenSet;
+}
+
+uint64_t ExclusiveHSM::GetCmkLimit() const
+{
+    return m_cmkLimit;
+}
+
+void ExclusiveHSM::SetCmkLimit(const uint64_t& _cmkLimit)
+{
+    m_cmkLimit = _cmkLimit;
+    m_cmkLimitHasBeenSet = true;
+}
+
+bool ExclusiveHSM::CmkLimitHasBeenSet() const
+{
+    return m_cmkLimitHasBeenSet;
 }
 

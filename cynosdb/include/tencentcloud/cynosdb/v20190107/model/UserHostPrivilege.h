@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取授权用户
-                     * @return DbUserName 授权用户
+                     * 获取<p>授权用户</p>
+                     * @return DbUserName <p>授权用户</p>
                      * 
                      */
                     std::string GetDbUserName() const;
 
                     /**
-                     * 设置授权用户
-                     * @param _dbUserName 授权用户
+                     * 设置<p>授权用户</p>
+                     * @param _dbUserName <p>授权用户</p>
                      * 
                      */
                     void SetDbUserName(const std::string& _dbUserName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DbUserNameHasBeenSet() const;
 
                     /**
-                     * 获取客户端ip
-                     * @return DbHost 客户端ip
+                     * 获取<p>客户端ip</p>
+                     * @return DbHost <p>客户端ip</p>
                      * 
                      */
                     std::string GetDbHost() const;
 
                     /**
-                     * 设置客户端ip
-                     * @param _dbHost 客户端ip
+                     * 设置<p>客户端ip</p>
+                     * @param _dbHost <p>客户端ip</p>
                      * 
                      */
                     void SetDbHost(const std::string& _dbHost);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DbHostHasBeenSet() const;
 
                     /**
-                     * 获取用户权限
-                     * @return DbPrivilege 用户权限
+                     * 获取<p>用户权限</p>
+                     * @return DbPrivilege <p>用户权限</p>
                      * 
                      */
                     std::string GetDbPrivilege() const;
 
                     /**
-                     * 设置用户权限
-                     * @param _dbPrivilege 用户权限
+                     * 设置<p>用户权限</p>
+                     * @param _dbPrivilege <p>用户权限</p>
                      * 
                      */
                     void SetDbPrivilege(const std::string& _dbPrivilege);
@@ -109,25 +109,52 @@ namespace TencentCloud
                      */
                     bool DbPrivilegeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>权限明细列表</p>
+                     * @return PrivilegeList <p>权限明细列表</p>
+                     * 
+                     */
+                    std::vector<std::string> GetPrivilegeList() const;
+
+                    /**
+                     * 设置<p>权限明细列表</p>
+                     * @param _privilegeList <p>权限明细列表</p>
+                     * 
+                     */
+                    void SetPrivilegeList(const std::vector<std::string>& _privilegeList);
+
+                    /**
+                     * 判断参数 PrivilegeList 是否已赋值
+                     * @return PrivilegeList 是否已赋值
+                     * 
+                     */
+                    bool PrivilegeListHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 授权用户
+                     * <p>授权用户</p>
                      */
                     std::string m_dbUserName;
                     bool m_dbUserNameHasBeenSet;
 
                     /**
-                     * 客户端ip
+                     * <p>客户端ip</p>
                      */
                     std::string m_dbHost;
                     bool m_dbHostHasBeenSet;
 
                     /**
-                     * 用户权限
+                     * <p>用户权限</p>
                      */
                     std::string m_dbPrivilege;
                     bool m_dbPrivilegeHasBeenSet;
+
+                    /**
+                     * <p>权限明细列表</p>
+                     */
+                    std::vector<std::string> m_privilegeList;
+                    bool m_privilegeListHasBeenSet;
 
                 };
             }

@@ -29,6 +29,8 @@ set(makers_public_header_model
   include/tencentcloud/makers/v20261113/model/DescribeProjectsRequest.h
   include/tencentcloud/makers/v20261113/model/CosCredentials.h
   include/tencentcloud/makers/v20261113/model/CustomDomainItem.h
+  include/tencentcloud/makers/v20261113/model/DescribeCosTempTokenRequest.h
+  include/tencentcloud/makers/v20261113/model/BlockProjectRequest.h
   include/tencentcloud/makers/v20261113/model/DescribeEnvironmentsResponse.h
   include/tencentcloud/makers/v20261113/model/ModifyZoneCustomDomainEnvRequest.h
   include/tencentcloud/makers/v20261113/model/DescribeProjectsResponse.h
@@ -50,6 +52,7 @@ set(makers_public_header_model
   include/tencentcloud/makers/v20261113/model/ModifyProjectRequest.h
   include/tencentcloud/makers/v20261113/model/ModifyZoneCustomDomainEnvResponse.h
   include/tencentcloud/makers/v20261113/model/EnvironmentEnvVar.h
+  include/tencentcloud/makers/v20261113/model/BlockProjectResponse.h
   include/tencentcloud/makers/v20261113/model/DescribeCosTempTokenResponse.h
   include/tencentcloud/makers/v20261113/model/Project.h
   include/tencentcloud/makers/v20261113/model/CreateProjectResponse.h
@@ -61,7 +64,6 @@ set(makers_public_header_model
   include/tencentcloud/makers/v20261113/model/DescribeProjectEnvsRequest.h
   include/tencentcloud/makers/v20261113/model/CreateDeploymentResponse.h
   include/tencentcloud/makers/v20261113/model/Regions.h
-  include/tencentcloud/makers/v20261113/model/DeploymentFilter.h
   include/tencentcloud/makers/v20261113/model/ZoneDomain.h
   include/tencentcloud/makers/v20261113/model/HstsConfig.h
   include/tencentcloud/makers/v20261113/model/ProjectEnvVar.h
@@ -70,7 +72,7 @@ set(makers_public_header_model
   include/tencentcloud/makers/v20261113/model/ForceRedirectConfig.h
   include/tencentcloud/makers/v20261113/model/ModifyProjectEnvsResponse.h
   include/tencentcloud/makers/v20261113/model/EnvVar.h
-  include/tencentcloud/makers/v20261113/model/DescribeCosTempTokenRequest.h
+  include/tencentcloud/makers/v20261113/model/DeploymentFilter.h
   include/tencentcloud/makers/v20261113/model/CreateProjectRequest.h
   )
 
@@ -86,6 +88,8 @@ set(makers_src
   src/v20261113/model/DescribeProjectsRequest.cpp
   src/v20261113/model/CosCredentials.cpp
   src/v20261113/model/CustomDomainItem.cpp
+  src/v20261113/model/DescribeCosTempTokenRequest.cpp
+  src/v20261113/model/BlockProjectRequest.cpp
   src/v20261113/model/DescribeEnvironmentsResponse.cpp
   src/v20261113/model/ModifyZoneCustomDomainEnvRequest.cpp
   src/v20261113/model/DescribeProjectsResponse.cpp
@@ -107,6 +111,7 @@ set(makers_src
   src/v20261113/model/ModifyProjectRequest.cpp
   src/v20261113/model/ModifyZoneCustomDomainEnvResponse.cpp
   src/v20261113/model/EnvironmentEnvVar.cpp
+  src/v20261113/model/BlockProjectResponse.cpp
   src/v20261113/model/DescribeCosTempTokenResponse.cpp
   src/v20261113/model/Project.cpp
   src/v20261113/model/CreateProjectResponse.cpp
@@ -118,7 +123,6 @@ set(makers_src
   src/v20261113/model/DescribeProjectEnvsRequest.cpp
   src/v20261113/model/CreateDeploymentResponse.cpp
   src/v20261113/model/Regions.cpp
-  src/v20261113/model/DeploymentFilter.cpp
   src/v20261113/model/ZoneDomain.cpp
   src/v20261113/model/HstsConfig.cpp
   src/v20261113/model/ProjectEnvVar.cpp
@@ -127,7 +131,7 @@ set(makers_src
   src/v20261113/model/ForceRedirectConfig.cpp
   src/v20261113/model/ModifyProjectEnvsResponse.cpp
   src/v20261113/model/EnvVar.cpp
-  src/v20261113/model/DescribeCosTempTokenRequest.cpp
+  src/v20261113/model/DeploymentFilter.cpp
   src/v20261113/model/CreateProjectRequest.cpp
   )
 

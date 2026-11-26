@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TPMLimitHasBeenSet() const;
 
                     /**
-                     * 获取<p>并发限流数</p>
-                     * @return ConcurrentCountLimit <p>并发限流数</p>
+                     * 获取<p>并发数限流</p>
+                     * @return ConcurrentCountLimit <p>并发数限流</p>
                      * 
                      */
                     int64_t GetConcurrentCountLimit() const;
 
                     /**
-                     * 设置<p>并发限流数</p>
-                     * @param _concurrentCountLimit <p>并发限流数</p>
+                     * 设置<p>并发数限流</p>
+                     * @param _concurrentCountLimit <p>并发数限流</p>
                      * 
                      */
                     void SetConcurrentCountLimit(const int64_t& _concurrentCountLimit);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_tPMLimitHasBeenSet;
 
                     /**
-                     * <p>并发限流数</p>
+                     * <p>并发数限流</p>
                      */
                     int64_t m_concurrentCountLimit;
                     bool m_concurrentCountLimitHasBeenSet;

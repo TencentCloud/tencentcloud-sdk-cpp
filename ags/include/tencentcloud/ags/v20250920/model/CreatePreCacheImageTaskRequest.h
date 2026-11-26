@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool PreCacheTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>闲置清理时间</p><p>枚举值：</p><ul><li>inherit： 继承账号配置的自动清理策略</li><li>0： 永不自动清理</li><li>正整数加 m/h/d： 空闲相应时间后自动清理</li></ul><p>默认值：inherit</p>
+                     * @return IdleTTL <p>闲置清理时间</p><p>枚举值：</p><ul><li>inherit： 继承账号配置的自动清理策略</li><li>0： 永不自动清理</li><li>正整数加 m/h/d： 空闲相应时间后自动清理</li></ul><p>默认值：inherit</p>
+                     * 
+                     */
+                    std::string GetIdleTTL() const;
+
+                    /**
+                     * 设置<p>闲置清理时间</p><p>枚举值：</p><ul><li>inherit： 继承账号配置的自动清理策略</li><li>0： 永不自动清理</li><li>正整数加 m/h/d： 空闲相应时间后自动清理</li></ul><p>默认值：inherit</p>
+                     * @param _idleTTL <p>闲置清理时间</p><p>枚举值：</p><ul><li>inherit： 继承账号配置的自动清理策略</li><li>0： 永不自动清理</li><li>正整数加 m/h/d： 空闲相应时间后自动清理</li></ul><p>默认值：inherit</p>
+                     * 
+                     */
+                    void SetIdleTTL(const std::string& _idleTTL);
+
+                    /**
+                     * 判断参数 IdleTTL 是否已赋值
+                     * @return IdleTTL 是否已赋值
+                     * 
+                     */
+                    bool IdleTTLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_preCacheType;
                     bool m_preCacheTypeHasBeenSet;
+
+                    /**
+                     * <p>闲置清理时间</p><p>枚举值：</p><ul><li>inherit： 继承账号配置的自动清理策略</li><li>0： 永不自动清理</li><li>正整数加 m/h/d： 空闲相应时间后自动清理</li></ul><p>默认值：inherit</p>
+                     */
+                    std::string m_idleTTL;
+                    bool m_idleTTLHasBeenSet;
 
                 };
             }

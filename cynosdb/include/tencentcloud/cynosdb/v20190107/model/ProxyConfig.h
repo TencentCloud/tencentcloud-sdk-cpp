@@ -215,6 +215,27 @@ namespace TencentCloud
                      */
                     bool ProxyZonesHasBeenSet() const;
 
+                    /**
+                     * 获取<p>proxy版本号</p>
+                     * @return ProxyVersion <p>proxy版本号</p>
+                     * 
+                     */
+                    std::string GetProxyVersion() const;
+
+                    /**
+                     * 设置<p>proxy版本号</p>
+                     * @param _proxyVersion <p>proxy版本号</p>
+                     * 
+                     */
+                    void SetProxyVersion(const std::string& _proxyVersion);
+
+                    /**
+                     * 判断参数 ProxyVersion 是否已赋值
+                     * @return ProxyVersion 是否已赋值
+                     * 
+                     */
+                    bool ProxyVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +285,12 @@ namespace TencentCloud
                      */
                     std::vector<ProxyZone> m_proxyZones;
                     bool m_proxyZonesHasBeenSet;
+
+                    /**
+                     * <p>proxy版本号</p>
+                     */
+                    std::string m_proxyVersion;
+                    bool m_proxyVersionHasBeenSet;
 
                 };
             }

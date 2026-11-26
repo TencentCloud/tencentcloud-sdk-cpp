@@ -197,6 +197,34 @@ namespace TencentCloud
                      */
                     bool LastUsedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>镜像预热闲置清理时间</p><p>枚举值：</p><ul><li>inherit： 继承账号配置的自动清理策略</li><li>0： 永不自动清理</li><li>正整数加 m/h/d： 空闲相应时间后自动清理</li></ul>
+                     * @return IdleTTL <p>镜像预热闲置清理时间</p><p>枚举值：</p><ul><li>inherit： 继承账号配置的自动清理策略</li><li>0： 永不自动清理</li><li>正整数加 m/h/d： 空闲相应时间后自动清理</li></ul>
+                     * 
+                     */
+                    std::string GetIdleTTL() const;
+
+                    /**
+                     * 判断参数 IdleTTL 是否已赋值
+                     * @return IdleTTL 是否已赋值
+                     * 
+                     */
+                    bool IdleTTLHasBeenSet() const;
+
+                    /**
+                     * 获取<p>预计过期清理时间</p>
+                     * @return ExpireTime <p>预计过期清理时间</p>
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +292,18 @@ namespace TencentCloud
                      */
                     std::string m_lastUsedTime;
                     bool m_lastUsedTimeHasBeenSet;
+
+                    /**
+                     * <p>镜像预热闲置清理时间</p><p>枚举值：</p><ul><li>inherit： 继承账号配置的自动清理策略</li><li>0： 永不自动清理</li><li>正整数加 m/h/d： 空闲相应时间后自动清理</li></ul>
+                     */
+                    std::string m_idleTTL;
+                    bool m_idleTTLHasBeenSet;
+
+                    /**
+                     * <p>预计过期清理时间</p>
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
 
                 };
             }

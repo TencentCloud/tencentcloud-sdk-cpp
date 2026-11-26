@@ -65,6 +65,7 @@ set(apis_public_header_model
   include/tencentcloud/apis/v20240801/model/ToolConfigVO.h
   include/tencentcloud/apis/v20240801/model/DescribeAgentAppResponse.h
   include/tencentcloud/apis/v20240801/model/ResultIDVO.h
+  include/tencentcloud/apis/v20240801/model/DescribeAgentCredentialsResp.h
   include/tencentcloud/apis/v20240801/model/LimitWindowsDTO.h
   include/tencentcloud/apis/v20240801/model/DescribeModelRequest.h
   include/tencentcloud/apis/v20240801/model/AgentCredentialContentHeaderDTO.h
@@ -88,7 +89,7 @@ set(apis_public_header_model
   include/tencentcloud/apis/v20240801/model/McpUrlObj.h
   include/tencentcloud/apis/v20240801/model/ModifyAgentAppModelServicesRequest.h
   include/tencentcloud/apis/v20240801/model/DescribeModelServiceRequest.h
-  include/tencentcloud/apis/v20240801/model/DeleteAgentAppMcpServersRequest.h
+  include/tencentcloud/apis/v20240801/model/DeleteModelRequest.h
   include/tencentcloud/apis/v20240801/model/DescribeAgentAppResp.h
   include/tencentcloud/apis/v20240801/model/CreateMcpServerRequest.h
   include/tencentcloud/apis/v20240801/model/DeleteModelServiceRequest.h
@@ -141,6 +142,7 @@ set(apis_public_header_model
   include/tencentcloud/apis/v20240801/model/CreateAgentAppMcpServersResponse.h
   include/tencentcloud/apis/v20240801/model/DescribeServicesResponse.h
   include/tencentcloud/apis/v20240801/model/ModifyMcpServerRequest.h
+  include/tencentcloud/apis/v20240801/model/DeleteAgentAppMcpServersRequest.h
   include/tencentcloud/apis/v20240801/model/DescribeModelResponse.h
   include/tencentcloud/apis/v20240801/model/DescribeAgentAppMcpServersRequest.h
   include/tencentcloud/apis/v20240801/model/DescribeAgentAppServicesVO.h
@@ -160,7 +162,7 @@ set(apis_public_header_model
   include/tencentcloud/apis/v20240801/model/CreateAgentCredentialResponse.h
   include/tencentcloud/apis/v20240801/model/DescribeAgentAppModelServicesResponse.h
   include/tencentcloud/apis/v20240801/model/ModifyMcpServerResponse.h
-  include/tencentcloud/apis/v20240801/model/DeleteModelRequest.h
+  include/tencentcloud/apis/v20240801/model/DescribeAgentCredentialsSortDTO.h
   include/tencentcloud/apis/v20240801/model/DescribeModelsResponse.h
   include/tencentcloud/apis/v20240801/model/DescribeAgentAppServicesRequest.h
   include/tencentcloud/apis/v20240801/model/DescribeModelServicesResponse.h
@@ -216,6 +218,7 @@ set(apis_src
   src/v20240801/model/ToolConfigVO.cpp
   src/v20240801/model/DescribeAgentAppResponse.cpp
   src/v20240801/model/ResultIDVO.cpp
+  src/v20240801/model/DescribeAgentCredentialsResp.cpp
   src/v20240801/model/LimitWindowsDTO.cpp
   src/v20240801/model/DescribeModelRequest.cpp
   src/v20240801/model/AgentCredentialContentHeaderDTO.cpp
@@ -239,7 +242,7 @@ set(apis_src
   src/v20240801/model/McpUrlObj.cpp
   src/v20240801/model/ModifyAgentAppModelServicesRequest.cpp
   src/v20240801/model/DescribeModelServiceRequest.cpp
-  src/v20240801/model/DeleteAgentAppMcpServersRequest.cpp
+  src/v20240801/model/DeleteModelRequest.cpp
   src/v20240801/model/DescribeAgentAppResp.cpp
   src/v20240801/model/CreateMcpServerRequest.cpp
   src/v20240801/model/DeleteModelServiceRequest.cpp
@@ -292,6 +295,7 @@ set(apis_src
   src/v20240801/model/CreateAgentAppMcpServersResponse.cpp
   src/v20240801/model/DescribeServicesResponse.cpp
   src/v20240801/model/ModifyMcpServerRequest.cpp
+  src/v20240801/model/DeleteAgentAppMcpServersRequest.cpp
   src/v20240801/model/DescribeModelResponse.cpp
   src/v20240801/model/DescribeAgentAppMcpServersRequest.cpp
   src/v20240801/model/DescribeAgentAppServicesVO.cpp
@@ -311,7 +315,7 @@ set(apis_src
   src/v20240801/model/CreateAgentCredentialResponse.cpp
   src/v20240801/model/DescribeAgentAppModelServicesResponse.cpp
   src/v20240801/model/ModifyMcpServerResponse.cpp
-  src/v20240801/model/DeleteModelRequest.cpp
+  src/v20240801/model/DescribeAgentCredentialsSortDTO.cpp
   src/v20240801/model/DescribeModelsResponse.cpp
   src/v20240801/model/DescribeAgentAppServicesRequest.cpp
   src/v20240801/model/DescribeModelServicesResponse.cpp

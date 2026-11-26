@@ -37,6 +37,8 @@
 #include <tencentcloud/apis/v20240801/model/TargetServerGroupDTO.h>
 #include <tencentcloud/apis/v20240801/model/FieldValueDTO.h>
 #include <tencentcloud/apis/v20240801/model/CustomMatch.h>
+#include <tencentcloud/apis/v20240801/model/BindMcpSecurityRuleDTO.h>
+#include <tencentcloud/apis/v20240801/model/McpSecurityRulesVO.h>
 
 
 namespace TencentCloud
@@ -1801,6 +1803,48 @@ namespace TencentCloud
                      */
                     bool RequestProtocolTypeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>安全规则</p>
+                     * @return ServiceSecurityRules <p>安全规则</p>
+                     * 
+                     */
+                    std::vector<BindMcpSecurityRuleDTO> GetServiceSecurityRules() const;
+
+                    /**
+                     * 设置<p>安全规则</p>
+                     * @param _serviceSecurityRules <p>安全规则</p>
+                     * 
+                     */
+                    void SetServiceSecurityRules(const std::vector<BindMcpSecurityRuleDTO>& _serviceSecurityRules);
+
+                    /**
+                     * 判断参数 ServiceSecurityRules 是否已赋值
+                     * @return ServiceSecurityRules 是否已赋值
+                     * 
+                     */
+                    bool ServiceSecurityRulesHasBeenSet() const;
+
+                    /**
+                     * 获取<p>安全规则</p>
+                     * @return ServiceSecurityRulesVO <p>安全规则</p>
+                     * 
+                     */
+                    std::vector<McpSecurityRulesVO> GetServiceSecurityRulesVO() const;
+
+                    /**
+                     * 设置<p>安全规则</p>
+                     * @param _serviceSecurityRulesVO <p>安全规则</p>
+                     * 
+                     */
+                    void SetServiceSecurityRulesVO(const std::vector<McpSecurityRulesVO>& _serviceSecurityRulesVO);
+
+                    /**
+                     * 判断参数 ServiceSecurityRulesVO 是否已赋值
+                     * @return ServiceSecurityRulesVO 是否已赋值
+                     * 
+                     */
+                    bool ServiceSecurityRulesVOHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2290,6 +2334,18 @@ namespace TencentCloud
                      */
                     std::string m_requestProtocolType;
                     bool m_requestProtocolTypeHasBeenSet;
+
+                    /**
+                     * <p>安全规则</p>
+                     */
+                    std::vector<BindMcpSecurityRuleDTO> m_serviceSecurityRules;
+                    bool m_serviceSecurityRulesHasBeenSet;
+
+                    /**
+                     * <p>安全规则</p>
+                     */
+                    std::vector<McpSecurityRulesVO> m_serviceSecurityRulesVO;
+                    bool m_serviceSecurityRulesVOHasBeenSet;
 
                 };
             }

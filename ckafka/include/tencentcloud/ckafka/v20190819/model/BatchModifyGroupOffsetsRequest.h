@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>消费分组名称</p>
-                     * @return GroupName <p>消费分组名称</p>
+                     * 获取<p>消费分组名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40840">DescribeGroup</a></p>
+                     * @return GroupName <p>消费分组名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40840">DescribeGroup</a></p>
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置<p>消费分组名称</p>
-                     * @param _groupName <p>消费分组名称</p>
+                     * 设置<p>消费分组名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40840">DescribeGroup</a></p>
+                     * @param _groupName <p>消费分组名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40840">DescribeGroup</a></p>
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PartitionsHasBeenSet() const;
 
                     /**
-                     * 获取<p>指定topic，默认所有topic</p>
-                     * @return TopicName <p>指定topic，默认所有topic</p>
+                     * 获取<p>指定topic，默认所有topic</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
+                     * @return TopicName <p>指定topic，默认所有topic</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
                      * 
                      */
                     std::vector<std::string> GetTopicName() const;
 
                     /**
-                     * 设置<p>指定topic，默认所有topic</p>
-                     * @param _topicName <p>指定topic，默认所有topic</p>
+                     * 设置<p>指定topic，默认所有topic</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
+                     * @param _topicName <p>指定topic，默认所有topic</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
                      * 
                      */
                     void SetTopicName(const std::vector<std::string>& _topicName);
@@ -130,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>消费分组名称</p>
+                     * <p>消费分组名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40840">DescribeGroup</a></p>
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_partitionsHasBeenSet;
 
                     /**
-                     * <p>指定topic，默认所有topic</p>
+                     * <p>指定topic，默认所有topic</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
                      */
                     std::vector<std::string> m_topicName;
                     bool m_topicNameHasBeenSet;

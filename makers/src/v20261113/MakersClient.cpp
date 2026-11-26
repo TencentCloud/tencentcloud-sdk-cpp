@@ -40,6 +40,56 @@ MakersClient::MakersClient(const Credential &credential, const string &region, c
 }
 
 
+MakersClient::BlockProjectOutcome MakersClient::BlockProject(const BlockProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "BlockProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BlockProjectResponse rsp = BlockProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BlockProjectOutcome(rsp);
+        else
+            return BlockProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return BlockProjectOutcome(outcome.GetError());
+    }
+}
+
+void MakersClient::BlockProjectAsync(const BlockProjectRequest& request, const BlockProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    using Req = const BlockProjectRequest&;
+    using Resp = BlockProjectResponse;
+
+    DoRequestAsync<Req, Resp>(
+        "BlockProject", request, {{{"Content-Type", "application/json"}}},
+        [this, context, handler](Req req, Outcome<Core::Error, Resp> resp)
+        {
+            handler(this, req, std::move(resp), context);
+        });
+}
+
+MakersClient::BlockProjectOutcomeCallable MakersClient::BlockProjectCallable(const BlockProjectRequest &request)
+{
+    const auto prom = std::make_shared<std::promise<BlockProjectOutcome>>();
+    BlockProjectAsync(
+    request,
+    [prom](
+        const MakersClient*,
+        const BlockProjectRequest&,
+        BlockProjectOutcome resp,
+        const std::shared_ptr<const AsyncCallerContext>&
+    )
+    {
+        prom->set_value(resp);
+    });
+    return prom->get_future();
+}
+
 MakersClient::CreateDeploymentOutcome MakersClient::CreateDeployment(const CreateDeploymentRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDeployment");

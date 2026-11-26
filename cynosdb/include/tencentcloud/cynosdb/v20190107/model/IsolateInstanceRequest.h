@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取<p>集群ID</p>
+                     * @return ClusterId <p>集群ID</p>
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置<p>集群ID</p>
+                     * @param _clusterId <p>集群ID</p>
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID数组，例如["cynosdbbmysql-ins-asd","cynosdbmysql-ins-zxc"]
-                     * @return InstanceIdList 实例ID数组，例如["cynosdbbmysql-ins-asd","cynosdbmysql-ins-zxc"]
+                     * 获取<p>实例ID数组，例如[&quot;cynosdbbmysql-ins-asd&quot;,&quot;cynosdbmysql-ins-zxc&quot;]</p>
+                     * @return InstanceIdList <p>实例ID数组，例如[&quot;cynosdbbmysql-ins-asd&quot;,&quot;cynosdbmysql-ins-zxc&quot;]</p>
                      * 
                      */
                     std::vector<std::string> GetInstanceIdList() const;
 
                     /**
-                     * 设置实例ID数组，例如["cynosdbbmysql-ins-asd","cynosdbmysql-ins-zxc"]
-                     * @param _instanceIdList 实例ID数组，例如["cynosdbbmysql-ins-asd","cynosdbmysql-ins-zxc"]
+                     * 设置<p>实例ID数组，例如[&quot;cynosdbbmysql-ins-asd&quot;,&quot;cynosdbmysql-ins-zxc&quot;]</p>
+                     * @param _instanceIdList <p>实例ID数组，例如[&quot;cynosdbbmysql-ins-asd&quot;,&quot;cynosdbmysql-ins-zxc&quot;]</p>
                      * 
                      */
                     void SetInstanceIdList(const std::vector<std::string>& _instanceIdList);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceIdListHasBeenSet() const;
 
                     /**
-                     * 获取该参数已废弃
-                     * @return DbType 该参数已废弃
+                     * 获取<p>该参数已废弃</p>
+                     * @return DbType <p>该参数已废弃</p>
                      * 
                      */
                     std::string GetDbType() const;
 
                     /**
-                     * 设置该参数已废弃
-                     * @param _dbType 该参数已废弃
+                     * 设置<p>该参数已废弃</p>
+                     * @param _dbType <p>该参数已废弃</p>
                      * 
                      */
                     void SetDbType(const std::string& _dbType);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DbTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例退还原因类型
-                     * @return IsolateReasonTypes 实例退还原因类型
+                     * 获取<p>实例退还原因类型</p>
+                     * @return IsolateReasonTypes <p>实例退还原因类型</p>
                      * 
                      */
                     std::vector<int64_t> GetIsolateReasonTypes() const;
 
                     /**
-                     * 设置实例退还原因类型
-                     * @param _isolateReasonTypes 实例退还原因类型
+                     * 设置<p>实例退还原因类型</p>
+                     * @param _isolateReasonTypes <p>实例退还原因类型</p>
                      * 
                      */
                     void SetIsolateReasonTypes(const std::vector<int64_t>& _isolateReasonTypes);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool IsolateReasonTypesHasBeenSet() const;
 
                     /**
-                     * 获取实例退还原因补充
-                     * @return IsolateReason 实例退还原因补充
+                     * 获取<p>实例退还原因补充</p>
+                     * @return IsolateReason <p>实例退还原因补充</p>
                      * 
                      */
                     std::string GetIsolateReason() const;
 
                     /**
-                     * 设置实例退还原因补充
-                     * @param _isolateReason 实例退还原因补充
+                     * 设置<p>实例退还原因补充</p>
+                     * @param _isolateReason <p>实例退还原因补充</p>
                      * 
                      */
                     void SetIsolateReason(const std::string& _isolateReason);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool IsolateReasonHasBeenSet() const;
 
                     /**
-                     * 获取保留备份
-                     * @return SaveBackup 保留备份
+                     * 获取<p>保留备份</p>
+                     * @return SaveBackup <p>保留备份</p>
                      * 
                      */
                     bool GetSaveBackup() const;
 
                     /**
-                     * 设置保留备份
-                     * @param _saveBackup 保留备份
+                     * 设置<p>保留备份</p>
+                     * @param _saveBackup <p>保留备份</p>
                      * 
                      */
                     void SetSaveBackup(const bool& _saveBackup);
@@ -168,43 +168,70 @@ namespace TencentCloud
                      */
                     bool SaveBackupHasBeenSet() const;
 
+                    /**
+                     * 获取<p>立即彻底删除RO实例</p>
+                     * @return ImmediateRecycleRo <p>立即彻底删除RO实例</p>
+                     * 
+                     */
+                    bool GetImmediateRecycleRo() const;
+
+                    /**
+                     * 设置<p>立即彻底删除RO实例</p>
+                     * @param _immediateRecycleRo <p>立即彻底删除RO实例</p>
+                     * 
+                     */
+                    void SetImmediateRecycleRo(const bool& _immediateRecycleRo);
+
+                    /**
+                     * 判断参数 ImmediateRecycleRo 是否已赋值
+                     * @return ImmediateRecycleRo 是否已赋值
+                     * 
+                     */
+                    bool ImmediateRecycleRoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群ID
+                     * <p>集群ID</p>
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 实例ID数组，例如["cynosdbbmysql-ins-asd","cynosdbmysql-ins-zxc"]
+                     * <p>实例ID数组，例如[&quot;cynosdbbmysql-ins-asd&quot;,&quot;cynosdbmysql-ins-zxc&quot;]</p>
                      */
                     std::vector<std::string> m_instanceIdList;
                     bool m_instanceIdListHasBeenSet;
 
                     /**
-                     * 该参数已废弃
+                     * <p>该参数已废弃</p>
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;
 
                     /**
-                     * 实例退还原因类型
+                     * <p>实例退还原因类型</p>
                      */
                     std::vector<int64_t> m_isolateReasonTypes;
                     bool m_isolateReasonTypesHasBeenSet;
 
                     /**
-                     * 实例退还原因补充
+                     * <p>实例退还原因补充</p>
                      */
                     std::string m_isolateReason;
                     bool m_isolateReasonHasBeenSet;
 
                     /**
-                     * 保留备份
+                     * <p>保留备份</p>
                      */
                     bool m_saveBackup;
                     bool m_saveBackupHasBeenSet;
+
+                    /**
+                     * <p>立即彻底删除RO实例</p>
+                     */
+                    bool m_immediateRecycleRo;
+                    bool m_immediateRecycleRoHasBeenSet;
 
                 };
             }

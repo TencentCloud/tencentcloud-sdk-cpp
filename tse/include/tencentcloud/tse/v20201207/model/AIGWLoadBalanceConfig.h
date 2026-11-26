@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>负载均衡算法</p>
-                     * @return Algorithm <p>负载均衡算法</p>
+                     * 获取<p>负载均衡类型</p><p>枚举值：</p><ul><li>RoundRobin： 轮询</li><li>WeightedRoundRobin： 加权轮询</li><li>LeastConnections： 最少连接</li><li>Random： 随机</li></ul><p>默认值：RoundRobin</p>
+                     * @return Algorithm <p>负载均衡类型</p><p>枚举值：</p><ul><li>RoundRobin： 轮询</li><li>WeightedRoundRobin： 加权轮询</li><li>LeastConnections： 最少连接</li><li>Random： 随机</li></ul><p>默认值：RoundRobin</p>
                      * 
                      */
                     std::string GetAlgorithm() const;
 
                     /**
-                     * 设置<p>负载均衡算法</p>
-                     * @param _algorithm <p>负载均衡算法</p>
+                     * 设置<p>负载均衡类型</p><p>枚举值：</p><ul><li>RoundRobin： 轮询</li><li>WeightedRoundRobin： 加权轮询</li><li>LeastConnections： 最少连接</li><li>Random： 随机</li></ul><p>默认值：RoundRobin</p>
+                     * @param _algorithm <p>负载均衡类型</p><p>枚举值：</p><ul><li>RoundRobin： 轮询</li><li>WeightedRoundRobin： 加权轮询</li><li>LeastConnections： 最少连接</li><li>Random： 随机</li></ul><p>默认值：RoundRobin</p>
                      * 
                      */
                     void SetAlgorithm(const std::string& _algorithm);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>负载均衡算法</p>
+                     * <p>负载均衡类型</p><p>枚举值：</p><ul><li>RoundRobin： 轮询</li><li>WeightedRoundRobin： 加权轮询</li><li>LeastConnections： 最少连接</li><li>Random： 随机</li></ul><p>默认值：RoundRobin</p>
                      */
                     std::string m_algorithm;
                     bool m_algorithmHasBeenSet;

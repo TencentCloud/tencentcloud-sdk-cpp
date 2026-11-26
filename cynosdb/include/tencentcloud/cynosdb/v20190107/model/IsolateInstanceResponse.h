@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务流id
-                     * @return FlowId 任务流id
+                     * 获取<p>任务流id</p>
+                     * @return FlowId <p>任务流id</p>
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取隔离实例的订单id（预付费实例）
+                     * 获取<p>隔离实例的订单id（预付费实例）</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DealNames 隔离实例的订单id（预付费实例）
+                     * @return DealNames <p>隔离实例的订单id（预付费实例）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务流id
+                     * <p>任务流id</p>
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 隔离实例的订单id（预付费实例）
+                     * <p>隔离实例的订单id（预付费实例）</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dealNames;

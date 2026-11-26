@@ -57,6 +57,34 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取<p>当前正在处理的任务数</p>
+                     * @return CurrentTaskCount <p>当前正在处理的任务数</p>
+                     * 
+                     */
+                    uint64_t GetCurrentTaskCount() const;
+
+                    /**
+                     * 判断参数 CurrentTaskCount 是否已赋值
+                     * @return CurrentTaskCount 是否已赋值
+                     * 
+                     */
+                    bool CurrentTaskCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>最大允许提交的任务数，默认1000，有提额需求请提交工单</p>
+                     * @return MaxTaskCount <p>最大允许提交的任务数，默认1000，有提额需求请提交工单</p>
+                     * 
+                     */
+                    uint64_t GetMaxTaskCount() const;
+
+                    /**
+                     * 判断参数 MaxTaskCount 是否已赋值
+                     * @return MaxTaskCount 是否已赋值
+                     * 
+                     */
+                    bool MaxTaskCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +92,18 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * <p>当前正在处理的任务数</p>
+                     */
+                    uint64_t m_currentTaskCount;
+                    bool m_currentTaskCountHasBeenSet;
+
+                    /**
+                     * <p>最大允许提交的任务数，默认1000，有提额需求请提交工单</p>
+                     */
+                    uint64_t m_maxTaskCount;
+                    bool m_maxTaskCountHasBeenSet;
 
                 };
             }

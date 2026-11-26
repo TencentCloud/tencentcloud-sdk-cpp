@@ -26,6 +26,7 @@ AsyncTextToSpeechRequest::AsyncTextToSpeechRequest() :
     m_textHasBeenSet(false),
     m_voiceHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
+    m_textSegmentsHasBeenSet(false),
     m_audioFormatHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_pronunciationDictHasBeenSet(false),
@@ -64,6 +65,21 @@ string AsyncTextToSpeechRequest::ToJsonString() const
         string key = "SdkAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sdkAppId, allocator);
+    }
+
+    if (m_textSegmentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextSegments";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_textSegments.begin(); itr != m_textSegments.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_audioFormatHasBeenSet)
@@ -168,6 +184,22 @@ void AsyncTextToSpeechRequest::SetSdkAppId(const uint64_t& _sdkAppId)
 bool AsyncTextToSpeechRequest::SdkAppIdHasBeenSet() const
 {
     return m_sdkAppIdHasBeenSet;
+}
+
+vector<AsyncTTSTextSegment> AsyncTextToSpeechRequest::GetTextSegments() const
+{
+    return m_textSegments;
+}
+
+void AsyncTextToSpeechRequest::SetTextSegments(const vector<AsyncTTSTextSegment>& _textSegments)
+{
+    m_textSegments = _textSegments;
+    m_textSegmentsHasBeenSet = true;
+}
+
+bool AsyncTextToSpeechRequest::TextSegmentsHasBeenSet() const
+{
+    return m_textSegmentsHasBeenSet;
 }
 
 AudioFormat AsyncTextToSpeechRequest::GetAudioFormat() const

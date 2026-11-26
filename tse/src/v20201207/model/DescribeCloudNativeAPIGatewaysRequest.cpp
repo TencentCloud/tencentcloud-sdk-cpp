@@ -25,7 +25,8 @@ using namespace std;
 DescribeCloudNativeAPIGatewaysRequest::DescribeCloudNativeAPIGatewaysRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_enableRegionFilterHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeCloudNativeAPIGatewaysRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableRegionFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRegionFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableRegionFilter, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeCloudNativeAPIGatewaysRequest::SetFilters(const vector<Filter>& _fi
 bool DescribeCloudNativeAPIGatewaysRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+bool DescribeCloudNativeAPIGatewaysRequest::GetEnableRegionFilter() const
+{
+    return m_enableRegionFilter;
+}
+
+void DescribeCloudNativeAPIGatewaysRequest::SetEnableRegionFilter(const bool& _enableRegionFilter)
+{
+    m_enableRegionFilter = _enableRegionFilter;
+    m_enableRegionFilterHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewaysRequest::EnableRegionFilterHasBeenSet() const
+{
+    return m_enableRegionFilterHasBeenSet;
 }
 
 

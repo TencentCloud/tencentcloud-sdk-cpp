@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/apis/v20240801/model/DescribeAgentCredentialResp.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取<p>Credential详情</p>
+                     * @return Data <p>Credential详情</p>
+                     * 
+                     */
+                    DescribeAgentCredentialResp GetData() const;
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     * 
+                     */
+                    bool DataHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * <p>Credential详情</p>
+                     */
+                    DescribeAgentCredentialResp m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

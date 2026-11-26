@@ -27,7 +27,8 @@ TmsConfigDTO::TmsConfigDTO() :
     m_mergeCountHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
     m_interceptMessageHasBeenSet(false),
-    m_contextScopeHasBeenSet(false)
+    m_contextScopeHasBeenSet(false),
+    m_checkTargetsHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,19 @@ CoreInternalOutcome TmsConfigDTO::Deserialize(const rapidjson::Value &value)
         m_contextScopeHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckTargets") && !value["CheckTargets"].IsNull())
+    {
+        if (!value["CheckTargets"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TmsConfigDTO.CheckTargets` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CheckTargets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_checkTargets.push_back((*itr).GetString());
+        }
+        m_checkTargetsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +189,19 @@ void TmsConfigDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ContextScope";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_contextScope.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkTargetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckTargets";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_checkTargets.begin(); itr != m_checkTargets.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -290,5 +317,21 @@ void TmsConfigDTO::SetContextScope(const string& _contextScope)
 bool TmsConfigDTO::ContextScopeHasBeenSet() const
 {
     return m_contextScopeHasBeenSet;
+}
+
+vector<string> TmsConfigDTO::GetCheckTargets() const
+{
+    return m_checkTargets;
+}
+
+void TmsConfigDTO::SetCheckTargets(const vector<string>& _checkTargets)
+{
+    m_checkTargets = _checkTargets;
+    m_checkTargetsHasBeenSet = true;
+}
+
+bool TmsConfigDTO::CheckTargetsHasBeenSet() const
+{
+    return m_checkTargetsHasBeenSet;
 }
 

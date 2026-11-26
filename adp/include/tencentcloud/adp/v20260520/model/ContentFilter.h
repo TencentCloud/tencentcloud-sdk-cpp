@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<p>图片最小高度（像素），小于则过滤；&lt;=0 表示不启用</p>
-                     * @return ImageMinHeight <p>图片最小高度（像素），小于则过滤；&lt;=0 表示不启用</p>
+                     * 获取图片最小高度（像素），小于则过滤；<=0 表示不启用
+                     * @return ImageMinHeight 图片最小高度（像素），小于则过滤；<=0 表示不启用
                      * 
                      */
                     int64_t GetImageMinHeight() const;
 
                     /**
-                     * 设置<p>图片最小高度（像素），小于则过滤；&lt;=0 表示不启用</p>
-                     * @param _imageMinHeight <p>图片最小高度（像素），小于则过滤；&lt;=0 表示不启用</p>
+                     * 设置图片最小高度（像素），小于则过滤；<=0 表示不启用
+                     * @param _imageMinHeight 图片最小高度（像素），小于则过滤；<=0 表示不启用
                      * 
                      */
                     void SetImageMinHeight(const int64_t& _imageMinHeight);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ImageMinHeightHasBeenSet() const;
 
                     /**
-                     * 获取<p>图片最小宽度（像素），小于则过滤；&lt;=0 表示不启用</p>
-                     * @return ImageMinWidth <p>图片最小宽度（像素），小于则过滤；&lt;=0 表示不启用</p>
+                     * 获取图片最小宽度（像素），小于则过滤；<=0 表示不启用
+                     * @return ImageMinWidth 图片最小宽度（像素），小于则过滤；<=0 表示不启用
                      * 
                      */
                     int64_t GetImageMinWidth() const;
 
                     /**
-                     * 设置<p>图片最小宽度（像素），小于则过滤；&lt;=0 表示不启用</p>
-                     * @param _imageMinWidth <p>图片最小宽度（像素），小于则过滤；&lt;=0 表示不启用</p>
+                     * 设置图片最小宽度（像素），小于则过滤；<=0 表示不启用
+                     * @param _imageMinWidth 图片最小宽度（像素），小于则过滤；<=0 表示不启用
                      * 
                      */
                     void SetImageMinWidth(const int64_t& _imageMinWidth);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ImageMinWidthHasBeenSet() const;
 
                     /**
-                     * 获取<p>图片名称过滤规则（用分号 &#39;;&#39; 分隔的多条正则，如 &#39;icon;notice;warning;info.*&#39;）</p>
-                     * @return ImageNamePatterns <p>图片名称过滤规则（用分号 &#39;;&#39; 分隔的多条正则，如 &#39;icon;notice;warning;info.*&#39;）</p>
+                     * 获取图片名称过滤规则（用分号 ';' 分隔的多条正则，如 'icon;notice;warning;info.*'）
+                     * @return ImageNamePatterns 图片名称过滤规则（用分号 ';' 分隔的多条正则，如 'icon;notice;warning;info.*'）
                      * 
                      */
                     std::string GetImageNamePatterns() const;
 
                     /**
-                     * 设置<p>图片名称过滤规则（用分号 &#39;;&#39; 分隔的多条正则，如 &#39;icon;notice;warning;info.*&#39;）</p>
-                     * @param _imageNamePatterns <p>图片名称过滤规则（用分号 &#39;;&#39; 分隔的多条正则，如 &#39;icon;notice;warning;info.*&#39;）</p>
+                     * 设置图片名称过滤规则（用分号 ';' 分隔的多条正则，如 'icon;notice;warning;info.*'）
+                     * @param _imageNamePatterns 图片名称过滤规则（用分号 ';' 分隔的多条正则，如 'icon;notice;warning;info.*'）
                      * 
                      */
                     void SetImageNamePatterns(const std::string& _imageNamePatterns);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <p>图片最小高度（像素），小于则过滤；&lt;=0 表示不启用</p>
+                     * 图片最小高度（像素），小于则过滤；<=0 表示不启用
                      */
                     int64_t m_imageMinHeight;
                     bool m_imageMinHeightHasBeenSet;
 
                     /**
-                     * <p>图片最小宽度（像素），小于则过滤；&lt;=0 表示不启用</p>
+                     * 图片最小宽度（像素），小于则过滤；<=0 表示不启用
                      */
                     int64_t m_imageMinWidth;
                     bool m_imageMinWidthHasBeenSet;
 
                     /**
-                     * <p>图片名称过滤规则（用分号 &#39;;&#39; 分隔的多条正则，如 &#39;icon;notice;warning;info.*&#39;）</p>
+                     * 图片名称过滤规则（用分号 ';' 分隔的多条正则，如 'icon;notice;warning;info.*'）
                      */
                     std::string m_imageNamePatterns;
                     bool m_imageNamePatternsHasBeenSet;

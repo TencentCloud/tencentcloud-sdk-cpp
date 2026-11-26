@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/makers/v20261113/model/BlockProjectRequest.h>
+#include <tencentcloud/makers/v20261113/model/BlockProjectResponse.h>
 #include <tencentcloud/makers/v20261113/model/CreateDeploymentRequest.h>
 #include <tencentcloud/makers/v20261113/model/CreateDeploymentResponse.h>
 #include <tencentcloud/makers/v20261113/model/CreateProjectRequest.h>
@@ -69,6 +71,9 @@ namespace TencentCloud
                 MakersClient(const Credential &credential, const std::string &region);
                 MakersClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BlockProjectResponse> BlockProjectOutcome;
+                typedef std::future<BlockProjectOutcome> BlockProjectOutcomeCallable;
+                typedef std::function<void(const MakersClient*, const Model::BlockProjectRequest&, BlockProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BlockProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeploymentResponse> CreateDeploymentOutcome;
                 typedef std::future<CreateDeploymentOutcome> CreateDeploymentOutcomeCallable;
                 typedef std::function<void(const MakersClient*, const Model::CreateDeploymentRequest&, CreateDeploymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeploymentAsyncHandler;
@@ -119,6 +124,15 @@ namespace TencentCloud
                 typedef std::function<void(const MakersClient*, const Model::ModifyZoneCustomDomainEnvRequest&, ModifyZoneCustomDomainEnvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneCustomDomainEnvAsyncHandler;
 
 
+
+                /**
+                 *封禁或解封当前账号指定站点下的项目及域名。Status 支持 Ban或Normal。
+                 * @param req BlockProjectRequest
+                 * @return BlockProjectOutcome
+                 */
+                BlockProjectOutcome BlockProject(const Model::BlockProjectRequest &request);
+                void BlockProjectAsync(const Model::BlockProjectRequest& request, const BlockProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BlockProjectOutcomeCallable BlockProjectCallable(const Model::BlockProjectRequest& request);
 
                 /**
                  *创建部署。上传制品时 ViaMeta 和 Provider 传 Upload，TempBucketPath 传已上传对象的路径。

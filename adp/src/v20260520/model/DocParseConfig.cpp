@@ -22,6 +22,7 @@ using namespace std;
 
 DocParseConfig::DocParseConfig() :
     m_contentFilterHasBeenSet(false),
+    m_parseStrategyHasBeenSet(false),
     m_splitRuleHasBeenSet(false)
 {
 }
@@ -46,6 +47,16 @@ CoreInternalOutcome DocParseConfig::Deserialize(const rapidjson::Value &value)
         }
 
         m_contentFilterHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParseStrategy") && !value["ParseStrategy"].IsNull())
+    {
+        if (!value["ParseStrategy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocParseConfig.ParseStrategy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_parseStrategy = value["ParseStrategy"].GetInt64();
+        m_parseStrategyHasBeenSet = true;
     }
 
     if (value.HasMember("SplitRule") && !value["SplitRule"].IsNull())
@@ -74,6 +85,14 @@ void DocParseConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         m_contentFilter.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_parseStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParseStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_parseStrategy, allocator);
+    }
+
     if (m_splitRuleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -99,6 +118,22 @@ void DocParseConfig::SetContentFilter(const ContentFilter& _contentFilter)
 bool DocParseConfig::ContentFilterHasBeenSet() const
 {
     return m_contentFilterHasBeenSet;
+}
+
+int64_t DocParseConfig::GetParseStrategy() const
+{
+    return m_parseStrategy;
+}
+
+void DocParseConfig::SetParseStrategy(const int64_t& _parseStrategy)
+{
+    m_parseStrategy = _parseStrategy;
+    m_parseStrategyHasBeenSet = true;
+}
+
+bool DocParseConfig::ParseStrategyHasBeenSet() const
+{
+    return m_parseStrategyHasBeenSet;
 }
 
 string DocParseConfig::GetSplitRule() const

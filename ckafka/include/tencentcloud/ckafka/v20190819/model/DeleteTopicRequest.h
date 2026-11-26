@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ckafka 实例Id
-                     * @return InstanceId ckafka 实例Id
+                     * 获取<p>ckafka 实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @return InstanceId <p>ckafka 实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置ckafka 实例Id
-                     * @param _instanceId ckafka 实例Id
+                     * 设置<p>ckafka 实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
+                     * @param _instanceId <p>ckafka 实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取ckafka 主题名称
-                     * @return TopicName ckafka 主题名称
+                     * 获取<p>ckafka 主题名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
+                     * @return TopicName <p>ckafka 主题名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置ckafka 主题名称
-                     * @param _topicName ckafka 主题名称
+                     * 设置<p>ckafka 主题名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
+                     * @param _topicName <p>ckafka 主题名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ckafka 实例Id
+                     * <p>ckafka 实例Id</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40835">DescribeInstances</a></p>
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * ckafka 主题名称
+                     * <p>ckafka 主题名称</p><p>取值参考：<a href="https://cloud.tencent.com/document/api/597/40847">DescribeTopic</a></p>
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

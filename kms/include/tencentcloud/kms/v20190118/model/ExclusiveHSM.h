@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取独享集群Id
-                     * @return HsmClusterId 独享集群Id
+                     * 获取<p>独享集群Id</p>
+                     * @return HsmClusterId <p>独享集群Id</p>
                      * 
                      */
                     std::string GetHsmClusterId() const;
 
                     /**
-                     * 设置独享集群Id
-                     * @param _hsmClusterId 独享集群Id
+                     * 设置<p>独享集群Id</p>
+                     * @param _hsmClusterId <p>独享集群Id</p>
                      * 
                      */
                     void SetHsmClusterId(const std::string& _hsmClusterId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool HsmClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取独享集群名称
-                     * @return HsmClusterName 独享集群名称
+                     * 获取<p>独享集群名称</p>
+                     * @return HsmClusterName <p>独享集群名称</p>
                      * 
                      */
                     std::string GetHsmClusterName() const;
 
                     /**
-                     * 设置独享集群名称
-                     * @param _hsmClusterName 独享集群名称
+                     * 设置<p>独享集群名称</p>
+                     * @param _hsmClusterName <p>独享集群名称</p>
                      * 
                      */
                     void SetHsmClusterName(const std::string& _hsmClusterName);
@@ -88,19 +88,73 @@ namespace TencentCloud
                      */
                     bool HsmClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取<p>根密钥的使用量</p><p>单位：个</p>
+                     * @return CmkUserCount <p>根密钥的使用量</p><p>单位：个</p>
+                     * 
+                     */
+                    uint64_t GetCmkUserCount() const;
+
+                    /**
+                     * 设置<p>根密钥的使用量</p><p>单位：个</p>
+                     * @param _cmkUserCount <p>根密钥的使用量</p><p>单位：个</p>
+                     * 
+                     */
+                    void SetCmkUserCount(const uint64_t& _cmkUserCount);
+
+                    /**
+                     * 判断参数 CmkUserCount 是否已赋值
+                     * @return CmkUserCount 是否已赋值
+                     * 
+                     */
+                    bool CmkUserCountHasBeenSet() const;
+
+                    /**
+                     * 获取<p>根密钥的额度</p><p>单位：个</p>
+                     * @return CmkLimit <p>根密钥的额度</p><p>单位：个</p>
+                     * 
+                     */
+                    uint64_t GetCmkLimit() const;
+
+                    /**
+                     * 设置<p>根密钥的额度</p><p>单位：个</p>
+                     * @param _cmkLimit <p>根密钥的额度</p><p>单位：个</p>
+                     * 
+                     */
+                    void SetCmkLimit(const uint64_t& _cmkLimit);
+
+                    /**
+                     * 判断参数 CmkLimit 是否已赋值
+                     * @return CmkLimit 是否已赋值
+                     * 
+                     */
+                    bool CmkLimitHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 独享集群Id
+                     * <p>独享集群Id</p>
                      */
                     std::string m_hsmClusterId;
                     bool m_hsmClusterIdHasBeenSet;
 
                     /**
-                     * 独享集群名称
+                     * <p>独享集群名称</p>
                      */
                     std::string m_hsmClusterName;
                     bool m_hsmClusterNameHasBeenSet;
+
+                    /**
+                     * <p>根密钥的使用量</p><p>单位：个</p>
+                     */
+                    uint64_t m_cmkUserCount;
+                    bool m_cmkUserCountHasBeenSet;
+
+                    /**
+                     * <p>根密钥的额度</p><p>单位：个</p>
+                     */
+                    uint64_t m_cmkLimit;
+                    bool m_cmkLimitHasBeenSet;
 
                 };
             }

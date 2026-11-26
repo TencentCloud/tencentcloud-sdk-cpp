@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取支持的数据库代理版本集合
-                     * @return SupportProxyVersions 支持的数据库代理版本集合
+                     * 获取<p>支持的数据库代理版本集合</p>
+                     * @return SupportProxyVersions <p>支持的数据库代理版本集合</p>
                      * 
                      */
                     std::vector<std::string> GetSupportProxyVersions() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool SupportProxyVersionsHasBeenSet() const;
 
                     /**
-                     * 获取当前proxy版本号
-                     * @return CurrentProxyVersion 当前proxy版本号
+                     * 获取<p>当前proxy版本号</p>
+                     * @return CurrentProxyVersion <p>当前proxy版本号</p>
                      * 
                      */
                     std::string GetCurrentProxyVersion() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool CurrentProxyVersionHasBeenSet() const;
 
                     /**
-                     * 获取代理版本详情
-                     * @return SupportProxyVersionDetail 代理版本详情
+                     * 获取<p>代理版本详情</p>
+                     * @return SupportProxyVersionDetail <p>代理版本详情</p>
                      * 
                      */
                     std::vector<ProxyVersionInfo> GetSupportProxyVersionDetail() const;
@@ -89,19 +89,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 支持的数据库代理版本集合
+                     * <p>支持的数据库代理版本集合</p>
                      */
                     std::vector<std::string> m_supportProxyVersions;
                     bool m_supportProxyVersionsHasBeenSet;
 
                     /**
-                     * 当前proxy版本号
+                     * <p>当前proxy版本号</p>
                      */
                     std::string m_currentProxyVersion;
                     bool m_currentProxyVersionHasBeenSet;
 
                     /**
-                     * 代理版本详情
+                     * <p>代理版本详情</p>
                      */
                     std::vector<ProxyVersionInfo> m_supportProxyVersionDetail;
                     bool m_supportProxyVersionDetailHasBeenSet;

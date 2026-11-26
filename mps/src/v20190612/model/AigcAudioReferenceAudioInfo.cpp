@@ -21,7 +21,8 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 AigcAudioReferenceAudioInfo::AigcAudioReferenceAudioInfo() :
-    m_audioUrlHasBeenSet(false)
+    m_audioUrlHasBeenSet(false),
+    m_referenceTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome AigcAudioReferenceAudioInfo::Deserialize(const rapidjson::Va
         m_audioUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("ReferenceType") && !value["ReferenceType"].IsNull())
+    {
+        if (!value["ReferenceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AigcAudioReferenceAudioInfo.ReferenceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_referenceType = string(value["ReferenceType"].GetString());
+        m_referenceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void AigcAudioReferenceAudioInfo::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "AudioUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_audioUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_referenceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReferenceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_referenceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void AigcAudioReferenceAudioInfo::SetAudioUrl(const string& _audioUrl)
 bool AigcAudioReferenceAudioInfo::AudioUrlHasBeenSet() const
 {
     return m_audioUrlHasBeenSet;
+}
+
+string AigcAudioReferenceAudioInfo::GetReferenceType() const
+{
+    return m_referenceType;
+}
+
+void AigcAudioReferenceAudioInfo::SetReferenceType(const string& _referenceType)
+{
+    m_referenceType = _referenceType;
+    m_referenceTypeHasBeenSet = true;
+}
+
+bool AigcAudioReferenceAudioInfo::ReferenceTypeHasBeenSet() const
+{
+    return m_referenceTypeHasBeenSet;
 }
 

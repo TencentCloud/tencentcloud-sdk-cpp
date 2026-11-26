@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取容器网络类型，支持：HostNetwork、CiliumBGP
-                     * @return NetworkType 容器网络类型，支持：HostNetwork、CiliumBGP
+                     * 获取<p>容器网络类型，支持：HostNetwork、CiliumBGP</p>
+                     * @return NetworkType <p>容器网络类型，支持：HostNetwork、CiliumBGP</p>
                      * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置容器网络类型，支持：HostNetwork、CiliumBGP
-                     * @param _networkType 容器网络类型，支持：HostNetwork、CiliumBGP
+                     * 设置<p>容器网络类型，支持：HostNetwork、CiliumBGP</p>
+                     * @param _networkType <p>容器网络类型，支持：HostNetwork、CiliumBGP</p>
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取子网ID
-                     * @return SubnetId 子网ID
+                     * 获取<p>子网ID</p>
+                     * @return SubnetId <p>子网ID</p>
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID
-                     * @param _subnetId 子网ID
+                     * 设置<p>子网ID</p>
+                     * @param _subnetId <p>子网ID</p>
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取集群CIDR，网络模式HostNetwork 时无需填写
+                     * 获取<p>集群CIDR，网络模式HostNetwork 时无需填写</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterCIDR 集群CIDR，网络模式HostNetwork 时无需填写
+                     * @return ClusterCIDR <p>集群CIDR，网络模式HostNetwork 时无需填写</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterCIDR() const;
 
                     /**
-                     * 设置集群CIDR，网络模式HostNetwork 时无需填写
+                     * 设置<p>集群CIDR，网络模式HostNetwork 时无需填写</p>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterCIDR 集群CIDR，网络模式HostNetwork 时无需填写
+                     * @param _clusterCIDR <p>集群CIDR，网络模式HostNetwork 时无需填写</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool ClusterCIDRHasBeenSet() const;
 
                     /**
-                     * 获取【已废弃】是否开启专线连接能力
-                     * @return Enabled 【已废弃】是否开启专线连接能力
+                     * 获取<p>【已废弃】是否开启专线连接能力</p>
+                     * @return Enabled <p>【已废弃】是否开启专线连接能力</p>
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置【已废弃】是否开启专线连接能力
-                     * @param _enabled 【已废弃】是否开启专线连接能力
+                     * 设置<p>【已废弃】是否开启专线连接能力</p>
+                     * @param _enabled <p>【已废弃】是否开启专线连接能力</p>
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -134,32 +134,59 @@ namespace TencentCloud
                      */
                     bool EnabledHasBeenSet() const;
 
+                    /**
+                     * 获取<p>ProxyCLBMode</p><p>枚举值：</p><ul><li>Dedicated： 默认，独立专属 CLB 元素</li><li>Shared： 复用支撑面 CLB</li></ul><p>默认值：Dedicated</p>
+                     * @return ProxyCLBMode <p>ProxyCLBMode</p><p>枚举值：</p><ul><li>Dedicated： 默认，独立专属 CLB 元素</li><li>Shared： 复用支撑面 CLB</li></ul><p>默认值：Dedicated</p>
+                     * 
+                     */
+                    std::string GetProxyCLBMode() const;
+
+                    /**
+                     * 设置<p>ProxyCLBMode</p><p>枚举值：</p><ul><li>Dedicated： 默认，独立专属 CLB 元素</li><li>Shared： 复用支撑面 CLB</li></ul><p>默认值：Dedicated</p>
+                     * @param _proxyCLBMode <p>ProxyCLBMode</p><p>枚举值：</p><ul><li>Dedicated： 默认，独立专属 CLB 元素</li><li>Shared： 复用支撑面 CLB</li></ul><p>默认值：Dedicated</p>
+                     * 
+                     */
+                    void SetProxyCLBMode(const std::string& _proxyCLBMode);
+
+                    /**
+                     * 判断参数 ProxyCLBMode 是否已赋值
+                     * @return ProxyCLBMode 是否已赋值
+                     * 
+                     */
+                    bool ProxyCLBModeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 容器网络类型，支持：HostNetwork、CiliumBGP
+                     * <p>容器网络类型，支持：HostNetwork、CiliumBGP</p>
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * 子网ID
+                     * <p>子网ID</p>
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 集群CIDR，网络模式HostNetwork 时无需填写
+                     * <p>集群CIDR，网络模式HostNetwork 时无需填写</p>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterCIDR;
                     bool m_clusterCIDRHasBeenSet;
 
                     /**
-                     * 【已废弃】是否开启专线连接能力
+                     * <p>【已废弃】是否开启专线连接能力</p>
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
+
+                    /**
+                     * <p>ProxyCLBMode</p><p>枚举值：</p><ul><li>Dedicated： 默认，独立专属 CLB 元素</li><li>Shared： 复用支撑面 CLB</li></ul><p>默认值：Dedicated</p>
+                     */
+                    std::string m_proxyCLBMode;
+                    bool m_proxyCLBModeHasBeenSet;
 
                 };
             }

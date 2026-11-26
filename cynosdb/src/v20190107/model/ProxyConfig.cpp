@@ -28,7 +28,8 @@ ProxyConfig::ProxyConfig() :
     m_openConnectionPoolHasBeenSet(false),
     m_connectionPoolTimeOutHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_proxyZonesHasBeenSet(false)
+    m_proxyZonesHasBeenSet(false),
+    m_proxyVersionHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome ProxyConfig::Deserialize(const rapidjson::Value &value)
         m_proxyZonesHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyVersion") && !value["ProxyVersion"].IsNull())
+    {
+        if (!value["ProxyVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyConfig.ProxyVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyVersion = string(value["ProxyVersion"].GetString());
+        m_proxyVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void ProxyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_proxyVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void ProxyConfig::SetProxyZones(const vector<ProxyZone>& _proxyZones)
 bool ProxyConfig::ProxyZonesHasBeenSet() const
 {
     return m_proxyZonesHasBeenSet;
+}
+
+string ProxyConfig::GetProxyVersion() const
+{
+    return m_proxyVersion;
+}
+
+void ProxyConfig::SetProxyVersion(const string& _proxyVersion)
+{
+    m_proxyVersion = _proxyVersion;
+    m_proxyVersionHasBeenSet = true;
+}
+
+bool ProxyConfig::ProxyVersionHasBeenSet() const
+{
+    return m_proxyVersionHasBeenSet;
 }
 

@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取<p>实例版本。目前支持当前支持&quot;2.4.1&quot;, &quot;2.4.2&quot;,&quot;2.8.1&quot;, &quot;3.2.3&quot;，默认取值&quot;2.4.1&quot;。&quot;2.4.1&quot; 与 &quot;2.4.2&quot; 属于同一个版本，传任意一个均可。</p>
-                     * @return KafkaVersion <p>实例版本。目前支持当前支持&quot;2.4.1&quot;, &quot;2.4.2&quot;,&quot;2.8.1&quot;, &quot;3.2.3&quot;，默认取值&quot;2.4.1&quot;。&quot;2.4.1&quot; 与 &quot;2.4.2&quot; 属于同一个版本，传任意一个均可。</p>
+                     * 获取<p>实例版本。目前支持当前支持&quot;2.4.1&quot;, &quot;2.4.2&quot;,&quot;2.8.1&quot;, &quot;3.2.3&quot;, &quot;3.9.2&quot;，默认取值&quot;2.4.1&quot;。&quot;2.4.1&quot; 与 &quot;2.4.2&quot; 属于同一个版本，传任意一个均可。</p>
+                     * @return KafkaVersion <p>实例版本。目前支持当前支持&quot;2.4.1&quot;, &quot;2.4.2&quot;,&quot;2.8.1&quot;, &quot;3.2.3&quot;, &quot;3.9.2&quot;，默认取值&quot;2.4.1&quot;。&quot;2.4.1&quot; 与 &quot;2.4.2&quot; 属于同一个版本，传任意一个均可。</p>
                      * 
                      */
                     std::string GetKafkaVersion() const;
 
                     /**
-                     * 设置<p>实例版本。目前支持当前支持&quot;2.4.1&quot;, &quot;2.4.2&quot;,&quot;2.8.1&quot;, &quot;3.2.3&quot;，默认取值&quot;2.4.1&quot;。&quot;2.4.1&quot; 与 &quot;2.4.2&quot; 属于同一个版本，传任意一个均可。</p>
-                     * @param _kafkaVersion <p>实例版本。目前支持当前支持&quot;2.4.1&quot;, &quot;2.4.2&quot;,&quot;2.8.1&quot;, &quot;3.2.3&quot;，默认取值&quot;2.4.1&quot;。&quot;2.4.1&quot; 与 &quot;2.4.2&quot; 属于同一个版本，传任意一个均可。</p>
+                     * 设置<p>实例版本。目前支持当前支持&quot;2.4.1&quot;, &quot;2.4.2&quot;,&quot;2.8.1&quot;, &quot;3.2.3&quot;, &quot;3.9.2&quot;，默认取值&quot;2.4.1&quot;。&quot;2.4.1&quot; 与 &quot;2.4.2&quot; 属于同一个版本，传任意一个均可。</p>
+                     * @param _kafkaVersion <p>实例版本。目前支持当前支持&quot;2.4.1&quot;, &quot;2.4.2&quot;,&quot;2.8.1&quot;, &quot;3.2.3&quot;, &quot;3.9.2&quot;，默认取值&quot;2.4.1&quot;。&quot;2.4.1&quot; 与 &quot;2.4.2&quot; 属于同一个版本，传任意一个均可。</p>
                      * 
                      */
                     void SetKafkaVersion(const std::string& _kafkaVersion);
@@ -544,7 +544,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * <p>实例版本。目前支持当前支持&quot;2.4.1&quot;, &quot;2.4.2&quot;,&quot;2.8.1&quot;, &quot;3.2.3&quot;，默认取值&quot;2.4.1&quot;。&quot;2.4.1&quot; 与 &quot;2.4.2&quot; 属于同一个版本，传任意一个均可。</p>
+                     * <p>实例版本。目前支持当前支持&quot;2.4.1&quot;, &quot;2.4.2&quot;,&quot;2.8.1&quot;, &quot;3.2.3&quot;, &quot;3.9.2&quot;，默认取值&quot;2.4.1&quot;。&quot;2.4.1&quot; 与 &quot;2.4.2&quot; 属于同一个版本，传任意一个均可。</p>
                      */
                     std::string m_kafkaVersion;
                     bool m_kafkaVersionHasBeenSet;

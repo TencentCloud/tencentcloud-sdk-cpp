@@ -145,6 +145,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/AgentPluginCredentialConfig.h
   include/tencentcloud/adp/v20260520/model/SaveWorkflowToolNodeOutputRequest.h
   include/tencentcloud/adp/v20260520/model/CallMCPToolResponse.h
+  include/tencentcloud/adp/v20260520/model/ConnectorResource.h
   include/tencentcloud/adp/v20260520/model/ComplexBillingItem.h
   include/tencentcloud/adp/v20260520/model/BackgroundImage.h
   include/tencentcloud/adp/v20260520/model/ModifyConflictQAResponse.h
@@ -160,6 +161,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/ConversationContent.h
   include/tencentcloud/adp/v20260520/model/CamAuthConfig.h
   include/tencentcloud/adp/v20260520/model/DescribeSkillReferenceListResponse.h
+  include/tencentcloud/adp/v20260520/model/ConnectorResourceRef.h
   include/tencentcloud/adp/v20260520/model/UnfavoritePluginResponse.h
   include/tencentcloud/adp/v20260520/model/CreateKBRequest.h
   include/tencentcloud/adp/v20260520/model/CreateWorkflowRunResponse.h
@@ -578,6 +580,7 @@ set(adp_public_header_model
   include/tencentcloud/adp/v20260520/model/DeleteAppResponse.h
   include/tencentcloud/adp/v20260520/model/CreateAppTriggerRequest.h
   include/tencentcloud/adp/v20260520/model/AppTriggerWebhookStatus.h
+  include/tencentcloud/adp/v20260520/model/ConnectorKnowledgeScope.h
   include/tencentcloud/adp/v20260520/model/ResumeAppTriggerResponse.h
   include/tencentcloud/adp/v20260520/model/AccessKeyParamConfig.h
   include/tencentcloud/adp/v20260520/model/CreatePromptTemplateLabelRequest.h
@@ -801,6 +804,7 @@ set(adp_src
   src/v20260520/model/AgentPluginCredentialConfig.cpp
   src/v20260520/model/SaveWorkflowToolNodeOutputRequest.cpp
   src/v20260520/model/CallMCPToolResponse.cpp
+  src/v20260520/model/ConnectorResource.cpp
   src/v20260520/model/ComplexBillingItem.cpp
   src/v20260520/model/BackgroundImage.cpp
   src/v20260520/model/ModifyConflictQAResponse.cpp
@@ -816,6 +820,7 @@ set(adp_src
   src/v20260520/model/ConversationContent.cpp
   src/v20260520/model/CamAuthConfig.cpp
   src/v20260520/model/DescribeSkillReferenceListResponse.cpp
+  src/v20260520/model/ConnectorResourceRef.cpp
   src/v20260520/model/UnfavoritePluginResponse.cpp
   src/v20260520/model/CreateKBRequest.cpp
   src/v20260520/model/CreateWorkflowRunResponse.cpp
@@ -1234,6 +1239,7 @@ set(adp_src
   src/v20260520/model/DeleteAppResponse.cpp
   src/v20260520/model/CreateAppTriggerRequest.cpp
   src/v20260520/model/AppTriggerWebhookStatus.cpp
+  src/v20260520/model/ConnectorKnowledgeScope.cpp
   src/v20260520/model/ResumeAppTriggerResponse.cpp
   src/v20260520/model/AccessKeyParamConfig.cpp
   src/v20260520/model/CreatePromptTemplateLabelRequest.cpp

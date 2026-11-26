@@ -121,6 +121,27 @@ namespace TencentCloud
                      */
                     bool ContextScopeHasBeenSet() const;
 
+                    /**
+                     * 获取<p>检测内容类型</p>
+                     * @return CheckTargets <p>检测内容类型</p>
+                     * 
+                     */
+                    std::vector<std::string> GetCheckTargets() const;
+
+                    /**
+                     * 设置<p>检测内容类型</p>
+                     * @param _checkTargets <p>检测内容类型</p>
+                     * 
+                     */
+                    void SetCheckTargets(const std::vector<std::string>& _checkTargets);
+
+                    /**
+                     * 判断参数 CheckTargets 是否已赋值
+                     * @return CheckTargets 是否已赋值
+                     * 
+                     */
+                    bool CheckTargetsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +164,12 @@ namespace TencentCloud
                      */
                     std::string m_contextScope;
                     bool m_contextScopeHasBeenSet;
+
+                    /**
+                     * <p>检测内容类型</p>
+                     */
+                    std::vector<std::string> m_checkTargets;
+                    bool m_checkTargetsHasBeenSet;
 
                 };
             }

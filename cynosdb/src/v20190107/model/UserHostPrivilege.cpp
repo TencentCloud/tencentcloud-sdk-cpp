@@ -23,7 +23,8 @@ using namespace std;
 UserHostPrivilege::UserHostPrivilege() :
     m_dbUserNameHasBeenSet(false),
     m_dbHostHasBeenSet(false),
-    m_dbPrivilegeHasBeenSet(false)
+    m_dbPrivilegeHasBeenSet(false),
+    m_privilegeListHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,19 @@ CoreInternalOutcome UserHostPrivilege::Deserialize(const rapidjson::Value &value
         m_dbPrivilegeHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivilegeList") && !value["PrivilegeList"].IsNull())
+    {
+        if (!value["PrivilegeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserHostPrivilege.PrivilegeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PrivilegeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_privilegeList.push_back((*itr).GetString());
+        }
+        m_privilegeListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +105,19 @@ void UserHostPrivilege::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "DbPrivilege";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dbPrivilege.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privilegeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivilegeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_privilegeList.begin(); itr != m_privilegeList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -142,5 +169,21 @@ void UserHostPrivilege::SetDbPrivilege(const string& _dbPrivilege)
 bool UserHostPrivilege::DbPrivilegeHasBeenSet() const
 {
     return m_dbPrivilegeHasBeenSet;
+}
+
+vector<string> UserHostPrivilege::GetPrivilegeList() const
+{
+    return m_privilegeList;
+}
+
+void UserHostPrivilege::SetPrivilegeList(const vector<string>& _privilegeList)
+{
+    m_privilegeList = _privilegeList;
+    m_privilegeListHasBeenSet = true;
+}
+
+bool UserHostPrivilege::PrivilegeListHasBeenSet() const
+{
+    return m_privilegeListHasBeenSet;
 }
 

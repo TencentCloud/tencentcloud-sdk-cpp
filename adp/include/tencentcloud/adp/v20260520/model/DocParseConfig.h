@@ -73,6 +73,27 @@ namespace TencentCloud
                     bool ContentFilterHasBeenSet() const;
 
                     /**
+                     * 获取<p>文档解析策略：1=OCR解析 2=智能解析 3=MLLM解析；不传默认智能解析<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>DOC_PARSE_STRATEGY_UNKNOWN</td><td>0</td><td>未指定，走服务端默认（智能解析）</td></tr><tr><td>DOC_PARSE_STRATEGY_OCR</td><td>1</td><td>OCR 解析</td></tr><tr><td>DOC_PARSE_STRATEGY_SMART</td><td>2</td><td>智能解析（按图片类型自动选择：数据图/思维导图/架构图/流程图用 MLLM，其他图片用 OCR）</td></tr><tr><td>DOC_PARSE_STRATEGY_MLLM</td><td>3</td><td>MLLM 解析</td></tr></tbody></table></p>
+                     * @return ParseStrategy <p>文档解析策略：1=OCR解析 2=智能解析 3=MLLM解析；不传默认智能解析<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>DOC_PARSE_STRATEGY_UNKNOWN</td><td>0</td><td>未指定，走服务端默认（智能解析）</td></tr><tr><td>DOC_PARSE_STRATEGY_OCR</td><td>1</td><td>OCR 解析</td></tr><tr><td>DOC_PARSE_STRATEGY_SMART</td><td>2</td><td>智能解析（按图片类型自动选择：数据图/思维导图/架构图/流程图用 MLLM，其他图片用 OCR）</td></tr><tr><td>DOC_PARSE_STRATEGY_MLLM</td><td>3</td><td>MLLM 解析</td></tr></tbody></table></p>
+                     * 
+                     */
+                    int64_t GetParseStrategy() const;
+
+                    /**
+                     * 设置<p>文档解析策略：1=OCR解析 2=智能解析 3=MLLM解析；不传默认智能解析<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>DOC_PARSE_STRATEGY_UNKNOWN</td><td>0</td><td>未指定，走服务端默认（智能解析）</td></tr><tr><td>DOC_PARSE_STRATEGY_OCR</td><td>1</td><td>OCR 解析</td></tr><tr><td>DOC_PARSE_STRATEGY_SMART</td><td>2</td><td>智能解析（按图片类型自动选择：数据图/思维导图/架构图/流程图用 MLLM，其他图片用 OCR）</td></tr><tr><td>DOC_PARSE_STRATEGY_MLLM</td><td>3</td><td>MLLM 解析</td></tr></tbody></table></p>
+                     * @param _parseStrategy <p>文档解析策略：1=OCR解析 2=智能解析 3=MLLM解析；不传默认智能解析<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>DOC_PARSE_STRATEGY_UNKNOWN</td><td>0</td><td>未指定，走服务端默认（智能解析）</td></tr><tr><td>DOC_PARSE_STRATEGY_OCR</td><td>1</td><td>OCR 解析</td></tr><tr><td>DOC_PARSE_STRATEGY_SMART</td><td>2</td><td>智能解析（按图片类型自动选择：数据图/思维导图/架构图/流程图用 MLLM，其他图片用 OCR）</td></tr><tr><td>DOC_PARSE_STRATEGY_MLLM</td><td>3</td><td>MLLM 解析</td></tr></tbody></table></p>
+                     * 
+                     */
+                    void SetParseStrategy(const int64_t& _parseStrategy);
+
+                    /**
+                     * 判断参数 ParseStrategy 是否已赋值
+                     * @return ParseStrategy 是否已赋值
+                     * 
+                     */
+                    bool ParseStrategyHasBeenSet() const;
+
+                    /**
                      * 获取<p>分割规则</p>
                      * @return SplitRule <p>分割规则</p>
                      * 
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     ContentFilter m_contentFilter;
                     bool m_contentFilterHasBeenSet;
+
+                    /**
+                     * <p>文档解析策略：1=OCR解析 2=智能解析 3=MLLM解析；不传默认智能解析<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>DOC_PARSE_STRATEGY_UNKNOWN</td><td>0</td><td>未指定，走服务端默认（智能解析）</td></tr><tr><td>DOC_PARSE_STRATEGY_OCR</td><td>1</td><td>OCR 解析</td></tr><tr><td>DOC_PARSE_STRATEGY_SMART</td><td>2</td><td>智能解析（按图片类型自动选择：数据图/思维导图/架构图/流程图用 MLLM，其他图片用 OCR）</td></tr><tr><td>DOC_PARSE_STRATEGY_MLLM</td><td>3</td><td>MLLM 解析</td></tr></tbody></table></p>
+                     */
+                    int64_t m_parseStrategy;
+                    bool m_parseStrategyHasBeenSet;
 
                     /**
                      * <p>分割规则</p>

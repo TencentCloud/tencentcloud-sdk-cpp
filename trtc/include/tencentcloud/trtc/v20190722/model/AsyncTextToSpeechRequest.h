@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/Voice.h>
+#include <tencentcloud/trtc/v20190722/model/AsyncTTSTextSegment.h>
 #include <tencentcloud/trtc/v20190722/model/AudioFormat.h>
 #include <tencentcloud/trtc/v20190722/model/PronunciationDict.h>
 
@@ -107,6 +108,27 @@ namespace TencentCloud
                      * 
                      */
                     bool SdkAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取<p>分段文本，优先级高于text，适用于定制长文本分句场景</p><p>入参限制：文本总长度不能超过50000字符，段数不能超过500</p>
+                     * @return TextSegments <p>分段文本，优先级高于text，适用于定制长文本分句场景</p><p>入参限制：文本总长度不能超过50000字符，段数不能超过500</p>
+                     * 
+                     */
+                    std::vector<AsyncTTSTextSegment> GetTextSegments() const;
+
+                    /**
+                     * 设置<p>分段文本，优先级高于text，适用于定制长文本分句场景</p><p>入参限制：文本总长度不能超过50000字符，段数不能超过500</p>
+                     * @param _textSegments <p>分段文本，优先级高于text，适用于定制长文本分句场景</p><p>入参限制：文本总长度不能超过50000字符，段数不能超过500</p>
+                     * 
+                     */
+                    void SetTextSegments(const std::vector<AsyncTTSTextSegment>& _textSegments);
+
+                    /**
+                     * 判断参数 TextSegments 是否已赋值
+                     * @return TextSegments 是否已赋值
+                     * 
+                     */
+                    bool TextSegmentsHasBeenSet() const;
 
                     /**
                      * 获取<p>文本转语音的输出音频的格式</p>
@@ -232,6 +254,12 @@ namespace TencentCloud
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
+
+                    /**
+                     * <p>分段文本，优先级高于text，适用于定制长文本分句场景</p><p>入参限制：文本总长度不能超过50000字符，段数不能超过500</p>
+                     */
+                    std::vector<AsyncTTSTextSegment> m_textSegments;
+                    bool m_textSegmentsHasBeenSet;
 
                     /**
                      * <p>文本转语音的输出音频的格式</p>

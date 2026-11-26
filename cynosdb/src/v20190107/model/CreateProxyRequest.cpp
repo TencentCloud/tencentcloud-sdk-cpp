@@ -26,6 +26,7 @@ CreateProxyRequest::CreateProxyRequest() :
     m_clusterIdHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memHasBeenSet(false),
+    m_proxyVersionHasBeenSet(false),
     m_uniqueVpcIdHasBeenSet(false),
     m_uniqueSubnetIdHasBeenSet(false),
     m_proxyCountHasBeenSet(false),
@@ -67,6 +68,14 @@ string CreateProxyRequest::ToJsonString() const
         string key = "Mem";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_mem, allocator);
+    }
+
+    if (m_proxyVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uniqueVpcIdHasBeenSet)
@@ -207,6 +216,22 @@ void CreateProxyRequest::SetMem(const int64_t& _mem)
 bool CreateProxyRequest::MemHasBeenSet() const
 {
     return m_memHasBeenSet;
+}
+
+string CreateProxyRequest::GetProxyVersion() const
+{
+    return m_proxyVersion;
+}
+
+void CreateProxyRequest::SetProxyVersion(const string& _proxyVersion)
+{
+    m_proxyVersion = _proxyVersion;
+    m_proxyVersionHasBeenSet = true;
+}
+
+bool CreateProxyRequest::ProxyVersionHasBeenSet() const
+{
+    return m_proxyVersionHasBeenSet;
 }
 
 string CreateProxyRequest::GetUniqueVpcId() const

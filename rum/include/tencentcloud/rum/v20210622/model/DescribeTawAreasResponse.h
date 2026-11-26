@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取片区总数
-                     * @return TotalCount 片区总数
+                     * 获取<p>片区总数</p>
+                     * @return TotalCount <p>片区总数</p>
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取片区列表
-                     * @return AreaSet 片区列表
+                     * 获取<p>片区列表</p>
+                     * @return AreaSet <p>片区列表</p>
                      * 
                      */
                     std::vector<RumAreaInfo> GetAreaSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 片区总数
+                     * <p>片区总数</p>
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 片区列表
+                     * <p>片区列表</p>
                      */
                     std::vector<RumAreaInfo> m_areaSet;
                     bool m_areaSetHasBeenSet;

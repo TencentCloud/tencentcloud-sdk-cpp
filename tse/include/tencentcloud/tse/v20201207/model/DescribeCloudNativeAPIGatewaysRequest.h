@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取<p>是否按照地域进行过滤</p>
+                     * @return EnableRegionFilter <p>是否按照地域进行过滤</p>
+                     * 
+                     */
+                    bool GetEnableRegionFilter() const;
+
+                    /**
+                     * 设置<p>是否按照地域进行过滤</p>
+                     * @param _enableRegionFilter <p>是否按照地域进行过滤</p>
+                     * 
+                     */
+                    void SetEnableRegionFilter(const bool& _enableRegionFilter);
+
+                    /**
+                     * 判断参数 EnableRegionFilter 是否已赋值
+                     * @return EnableRegionFilter 是否已赋值
+                     * 
+                     */
+                    bool EnableRegionFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * <p>是否按照地域进行过滤</p>
+                     */
+                    bool m_enableRegionFilter;
+                    bool m_enableRegionFilterHasBeenSet;
 
                 };
             }
